@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "6584649caa95199219a959979b0491a095d0d6a9",
+    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
     "role": "curator",
-    "statement": "The runtime settings reference explains that disabling idle cleanup keeps sessions open and that a session closed by another route retains its role record and can reopen.",
-    "task": "261112-BUG-L20",
+    "statement": "The settings reference still accurately covers the idle-cleanup switch and reopening a retained role record. Its first-tool paragraph describes the ordinary Claude Code server_info grant. The Codex guide describes the distinct startup policy for Codex.",
+    "task": "261112-BUG-L31",
     "uncommitted": true
   },
   "document": "docs/reference/settings-json.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -164,7 +164,7 @@
       "path": "mcp/src/agents_remember/worktrees/role_handover_locator.py"
     },
     {
-      "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+      "blob": "ed433f1461603a846547ab141a794294a4c4054a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },

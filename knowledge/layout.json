@@ -785,6 +785,9 @@
     "file:mcp/src/agents_remember/cli/paseo_runtime.py": [
       "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json"
     ],
+    "file:mcp/src/agents_remember/cli/paseo_seat_policy.py": [
+      "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json"
+    ],
     "file:mcp/src/agents_remember/cli/paseo_status.py": [
       "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
     ],

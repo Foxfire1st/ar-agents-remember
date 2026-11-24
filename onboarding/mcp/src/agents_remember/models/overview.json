@@ -4870,12 +4870,12 @@
         },
         {
           "anchor": {
-            "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+            "blob": "b592b03753c69d39f9ff885ce73bcd71732db57c",
             "content": "sha256:1eb8e1957f5909664f454c837caf8a859864958313ace8829f8d27b49f421736",
             "locator": {
-              "end": 267,
+              "end": 268,
               "kind": "line_range",
-              "start": 253
+              "start": 254
             },
             "path": "mcp/tests/test_paseo_catalog_r71.py"
           },

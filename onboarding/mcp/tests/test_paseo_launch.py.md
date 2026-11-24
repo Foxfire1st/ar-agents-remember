@@ -39,6 +39,8 @@ real start leaves in the task document.
 - **No-answer codes.** `NO_ANSWER_CODES` names the reply codes that do not count as an answer, so a reply
   is never read as a started seat by accident.
 
+The Codex case checks every public tool on the bound task server in the create payload and matches that list against the preapprovals recorded in the launch receipt.
+
 ### Conventions
 
 Cases use `SPRINT_REF`, `MASTER_REF` and `LEAF_REF` task-document references under a temporary

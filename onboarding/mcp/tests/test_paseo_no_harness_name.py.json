@@ -8,24 +8,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f68177dccb304f2cb49059be585530ae39334aab",
+            "blob": "9c560d00f39c9a582d979fd1bb974afbe6533f13",
             "content": "sha256:c6434a36356bd273c8217b3d5b9d1dc77c368c54d2ac3536372ccdcdd5e7a015",
             "locator": {
-              "end": 169,
+              "end": 168,
               "kind": "line_range",
-              "start": 94
+              "start": 93
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "f68177dccb304f2cb49059be585530ae39334aab",
+            "blob": "9c560d00f39c9a582d979fd1bb974afbe6533f13",
             "content": "sha256:6c7689f08d3aca8bef529d8516ded5819f1adb8b62bf949c253a853c69adc7b3",
             "locator": {
-              "end": 271,
+              "end": 270,
               "kind": "line_range",
-              "start": 236
+              "start": 235
             }
           },
           "kind": "test"
@@ -33,14 +33,14 @@
       ]
     },
     "2": {
-      "note": "The role-launch grant admission names only paseo_launch.py. The scan rejects unrelated provider names and silence on admitted paths.",
+      "note": "The grant admission names only paseo_seat_policy.py. The scan rejects unrelated provider names and silence on admitted paths.",
       "targets": [
         {
           "anchor": {
-            "blob": "f68177dccb304f2cb49059be585530ae39334aab",
-            "content": "sha256:46afafc14a4195b04698e05e858f78ca2b961846d8f31177fe3eff03dfcf78fe",
+            "blob": "9c560d00f39c9a582d979fd1bb974afbe6533f13",
+            "content": "sha256:72dc4fa57a957dcd7a58d487e598086868764810aadd7be4ff27a87211ecb848",
             "locator": {
-              "end": 46,
+              "end": 45,
               "kind": "line_range",
               "start": 34
             }
@@ -49,12 +49,12 @@
         },
         {
           "anchor": {
-            "blob": "f68177dccb304f2cb49059be585530ae39334aab",
-            "content": "sha256:c8d63b2f9bc0f365c7e45e1aa6bdd55f4620039ff1c882b46483fc7cc63c2fbc",
+            "blob": "9c560d00f39c9a582d979fd1bb974afbe6533f13",
+            "content": "sha256:2b2faacc31fce6100bc4e63935af3d7796748ee41222dd045d4ee9aeb2998de5",
             "locator": {
-              "end": 214,
+              "end": 213,
               "kind": "line_range",
-              "start": 178
+              "start": 181
             }
           },
           "kind": "test"
@@ -66,12 +66,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f68177dccb304f2cb49059be585530ae39334aab",
+            "blob": "9c560d00f39c9a582d979fd1bb974afbe6533f13",
             "content": "sha256:49c1e655ee924641da7dcb36490eeff3c88b2d74b36feced400a25e2eea54d4a",
             "locator": {
-              "end": 59,
+              "end": 58,
               "kind": "line_range",
-              "start": 49
+              "start": 48
             }
           },
           "kind": "test"
@@ -83,7 +83,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f68177dccb304f2cb49059be585530ae39334aab",
+            "blob": "9c560d00f39c9a582d979fd1bb974afbe6533f13",
             "content": "sha256:68ae0f617cfebe2e3e50cb19d92669a5fe80b01e029275620cb2306f138956b2",
             "locator": {
               "kind": "symbol",
@@ -99,12 +99,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f68177dccb304f2cb49059be585530ae39334aab",
+            "blob": "9c560d00f39c9a582d979fd1bb974afbe6533f13",
             "content": "sha256:4adddca69ae29de7be315a612c58c751853ec21c5f62bb05d0e7d885be4fa6f6",
             "locator": {
-              "end": 234,
+              "end": 233,
               "kind": "line_range",
-              "start": 231
+              "start": 230
             }
           },
           "kind": "test"
@@ -112,16 +112,16 @@
       ]
     },
     "6": {
-      "note": "The assignmentReadGrant receipt records identity-only launch preapproval.",
+      "note": "The assignmentReadGrant receipt records the preapprovals in the stored create call and describes their lifetime.",
       "targets": [
         {
           "anchor": {
-            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
-            "content": "sha256:63bcc138251a7a42a7ea58193dc9f1559b6a680b96b7365076d91d0f4b52a727",
+            "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+            "content": "sha256:7da98722eaf9fe41fb8bae0c0f679e4866945e360da91083bd3a806f9ad05c1e",
             "locator": {
-              "end": 112,
+              "end": 593,
               "kind": "line_range",
-              "start": 101
+              "start": 589
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -129,14 +129,27 @@
         },
         {
           "anchor": {
-            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
-            "content": "sha256:19c510776e1879acc85d6e6b921122652dbdf71a89d86b2b3456a00339503a95",
+            "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+            "content": "sha256:de784e5d3fb71ae32154fee207ffdb165e7b6ade06c310b3621167a96bdf0b7b",
             "locator": {
-              "end": 615,
+              "end": 614,
               "kind": "line_range",
-              "start": 581
+              "start": 607
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "989ca0f381fef0297fc725d0b00462680d20f095",
+            "content": "sha256:039274234510c7e793f8b089ac2395db01ae91790c622c316fbd22258ae26f35",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_seat_policy.py"
           },
           "kind": "code"
         }

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "711779a641b574d228218fbfe9ba70e6a05c81e0",
-    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
+    "codeTree": "054cfe375eb9e6ac2e04d1065912a87544545275",
+    "commit": "ae0341b9c2f26def91828aeda732b34bd9d7009d",
     "role": "curator",
-    "statement": "The architecture guide correctly places the disposable SQLite index outside Git working trees and limits reuse to the selected text tree and the loaded build’s source digest.",
-    "task": "261112-BUG-L23",
+    "statement": "The architecture guide's receipt-backed role registry and per-seat task-server definition still match the launch and delivery paths. The new grant belongs to that bound server, and the private evidence and recorded comparisons still govern read-side review.",
+    "task": "261112-BUG-L31",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
     {
-      "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+      "blob": "ed433f1461603a846547ab141a794294a4c4054a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },

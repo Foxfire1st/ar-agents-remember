@@ -569,14 +569,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d09cdc288861533fd56cd32869aedacf27642698",
-            "content": "sha256:daf294b5e755e885a5964eb3c99b9e92a7ba33dc30c8e0eab3246c9f6e46a755",
+            "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
+            "content": "sha256:054dffdb521b92130a38e43deb89648e515b22417fda605847a65212f315c0cc",
             "locator": {
-              "end": 200,
+              "end": 128,
               "kind": "line_range",
-              "start": 146
+              "start": 110
             },
             "path": "mcp/tests/test_paseo_launch_roles.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
+            "content": "sha256:5194b5c48482ab0a61b66b8e38c15efcd5fd28d92f57ae018884d24883c865e7",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 201
+            },
+            "path": "mcp/tests/test_paseo_launch_roles.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e5184451b8db1b5e2a7a13bd556106a742f34705",
+            "content": "sha256:24f5dbcc08c40cc834391fb6fee5739797a94a0c75a18be29a055878d7fdf199",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 291
+            },
+            "path": "mcp/tests/paseo_launch_test_support.py"
           },
           "kind": "test"
         }

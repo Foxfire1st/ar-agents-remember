@@ -16,6 +16,8 @@ The `canvas/` package owns the generated review page's sandboxed host and the le
 
 The present ordinary public roster has 44 names, including mounted `knowledge_write`, `user_settings_init`, architect `explainer_control` and leaf-scoped `citation_note_revision`; preceding 39/40/41/42-name source epochs stay historical. It excludes `dispatch_agent` and includes native `role_start` and `role_message`, task/worktree/memory operations, and knowledge read, diff, integrity and write. A launch-bound explainer process advertises AR’s general tools plus the explainer’s four tools and checks the launched seat on calls to those four; invalid or lost marker-backed binding refuses service. Public `retire_child` calls the native receipt-tracked owner; retained structural retirement code is not its handler. Historical counts of 63 or 66 tools are not the present inventory. The SEP-2640 skill surface remains resource/protocol transport: `skills/list`, `skills/get`, individual skill resources, and this server's convenience `skill://index.json`. Its registrar now registers resources rather than the historical capsule/catalog tools. Serving a skill grants no capability and does not turn supplied prose into local-file authority.
 
+The shared Paseo seat policy gives a newly created Codex seat the starting build's full public roster on its own bound task server. The explainer adds exactly its four bound tools. An ordinary Claude seat gets `server_info` for the session, and a Claude explainer also gets the four bound tools. A Codex seat retains its startup grant across resume and reload. Tools introduced by a later build require a replacement seat. Shell commands and other MCP servers follow the seat's permission mode.
+
 MIK-R112 changes the retrieval account: harness-native onboarding and source search replace CGC/GrepAI retrieval. Generated lifecycle settings contain an empty provider map and disabled `contextProviders`, regardless of the authority configuration. Retained provider implementation does not restore public provider tools or enabled lifecycle blocks. Runtime installation retains the old-watcher stop: a failed stop is recorded with recovery information and does not abort the install.
 
 ## Hot Path Summary
@@ -883,7 +885,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - **Retained historical source account — superseded by the current route account:** Replay retains agent identity and typed created/refused/no-answer outcomes. Held launch calls omit the first host prompt. [303]
+
 
 - **Retained historical source account — superseded by the current route account:** Git includes a fourth bulk-remote timeout and fixed parsed-diff options [307]
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** Finalization delegates task-document resolution/publication and checks blockers before cleanup/publication [308]
@@ -1056,7 +1060,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 - Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [203]
 
+
 - The repeatable saved launch call contains the agent identity, workspace, first-message state, parent identity and configured task tool-server binding. [229]
+
 
 - The knowledge-write CLI adapter validates the explicit authorization and hand-off input, then submits the leaf write to the shared application route and prints that route's report. [231]
 - The launch compiler routes task-attached requests through _compile_admitted_task, resolves the canonical task document, and compiles the admitted task capsule. [274]

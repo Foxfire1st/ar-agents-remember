@@ -1,0 +1,735 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L31",
+  "rows": [
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-058E0N",
+      "items": [],
+      "reason": "Reconfirmed against the synchronized source tree. The host guide's resume-after-stop and exact-agent Antigravity Retry descriptions still agree with host settings and bridge behavior. The new Codex startup grant changes neither route.",
+      "revision": 9,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3NBAFB",
+      "items": [
+        "sha256:08144f19c41aa7ac5537e28e57ea4cc952f808a8be4883d8048e55e45b02e806",
+        "sha256:0f708bfe0df673ad25f20d79b9ab3fc3c9755e4e5f4a74d933e2f0109c0459d6",
+        "sha256:5b7dec606b493b2f942a02bb48bdca86908080f666cd5c93bf4558573040974f",
+        "sha256:72c5f017e619d1669379a69927765cceb5a923721330d33ebc8553747f6403ca",
+        "sha256:8d6725a083ca2ed030f14927bfe67cf6b0a96df25172b1677e1cbe28e40446e9",
+        "sha256:acf2f50d093e961ea21685ef8cc29b7cdb21b06fd561eafab77f6af678d34ffe"
+      ],
+      "reason": "The guard test card places the exact four allowed provider spellings in the policy module and explains the applied-grant receipt field.",
+      "sources": [
+        {
+          "blob": "9c560d00f39c9a582d979fd1bb974afbe6533f13",
+          "path": "mcp/tests/test_paseo_no_harness_name.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_no_harness_name.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+            "content": "sha256:bb135a792b175c34fd96a2975a41092b0923ef7629e6b08aae28d3edfe7f0508",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:9c3b965c0d2c92736f231310bd1555795d3ef5aac786a2d132db22af28eb7bbe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-2GJ47Y"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-3WMN9F",
+      "items": [
+        "sha256:1d48fa869122c767362de3c09373d61709746a7399144a4baa67aa6d9f39a906"
+      ],
+      "reason": "The whole launch module still separates the arguments it applies from the arguments it records as unconsumed. The provider grant extraction leaves that separation intact.",
+      "revision": 1,
+      "subject": "INV-9DMNQS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-43JR7A",
+      "items": [
+        "sha256:53ca8d673ca983baeabbe6c5bc294b5d8650d50d45418f5e1774a1fe1e6ec0a5"
+      ],
+      "reason": "The explainer card now describes both exact provider grants from the shared policy, with evidence from creation and its payload fixture.",
+      "sources": [
+        {
+          "blob": "99662226cca319589b818f5083eff3400d12ae14",
+          "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_explainer_host.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-5TE54V",
+      "items": [],
+      "reason": "Reconfirmed against the synchronized source tree. The Claude Code guide's implicit Bootstrap and explicit Claude selection still agree with the offered provider. The ordinary Claude launch retains the server_info grant on its own task server.",
+      "revision": 8,
+      "subject": "DPD-3E9E2R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8PSBXX",
+      "items": [
+        "sha256:028397a00b55d0ac640207c4de6bdd5d6e6ee7ba84f8f8928a811da8825c3f55"
+      ],
+      "reason": "The test route overview records which fixtures assert full create payloads, exact provider grants and equality with mounted server advertisements.",
+      "sources": [
+        {
+          "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
+          "path": "mcp/tests/test_explainer_host.py"
+        },
+        {
+          "blob": "b9442850d82ee78b1f77e59a36260f1b5fc12f5b",
+          "path": "mcp/tests/test_explainer_surface.py"
+        },
+        {
+          "blob": "b592b03753c69d39f9ff885ce73bcd71732db57c",
+          "path": "mcp/tests/test_paseo_catalog_r71.py"
+        },
+        {
+          "blob": "c99b9690ae55e81fb7549053d9670f35c6c3b2c1",
+          "path": "mcp/tests/test_paseo_launch.py"
+        },
+        {
+          "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
+          "path": "mcp/tests/test_paseo_launch_roles.py"
+        },
+        {
+          "blob": "9c560d00f39c9a582d979fd1bb974afbe6533f13",
+          "path": "mcp/tests/test_paseo_no_harness_name.py"
+        },
+        {
+          "blob": "8b57f4aa75b82c8d2c0cd5ec549ebbce38ef23b5",
+          "path": "mcp/tests/test_role_handover_binding.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+            "content": "sha256:4a94897e5b7086e4c2830466bfa8e369b1ab4f22de2f1df6e407866cf57bda8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:247f7775ca177e633678d050cdb8e2f36158641801c1d73895e3a18e11ddcf59",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-DY24T1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-8S4NQ4",
+      "items": [
+        "sha256:689fc6d3aed31dd46b1872987bc00fc6c56c5d312c6f477ebb3cf0fda82fd355"
+      ],
+      "reason": "BUG-R31@v1 and the Architect's 18:21:13Z ruling give ordinary Codex starts a complete grant on the bound server. The existing capability guard, Claude identity grant and removal of assignment_read still apply.",
+      "revision": 3,
+      "subject": "INV-N9D91D"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-A9HDTQ",
+      "items": [],
+      "reason": "Reconfirmed against the synchronized source tree. The Hermes guide's provider setup, unmatched Bootstrap refusal, mode precedence and held delivery agree with the current launch routes. The grant policy leaves Hermes outside the two exact provider branches.",
+      "revision": 10,
+      "subject": "DPD-GHEXS9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+            "content": "sha256:4a94897e5b7086e4c2830466bfa8e369b1ab4f22de2f1df6e407866cf57bda8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:247f7775ca177e633678d050cdb8e2f36158641801c1d73895e3a18e11ddcf59",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-MKRHDV"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ANKYT0",
+      "items": [
+        "sha256:e01fd99d3f592dd512a0fc1a6a00af3f9e4f722f9987189b28fc6405c8feedbc"
+      ],
+      "reason": "The capability check still governs the server definition in the saved create call. Moving the provider grant does not widen that definition or claim actual ambient-host suppression.",
+      "revision": 1,
+      "subject": "INV-C8SVFY"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-CJ9384",
+      "items": [],
+      "reason": "Reconfirmed against the synchronized source tree. The canvas host design still describes the prepared inputs, stage files and video readiness. The explainer continues to create through the normal review-presenter settings route and now shares the provider grant policy on its bound server. The workspace writer's selected report digests and empty-notice root are preserved.",
+      "revision": 6,
+      "subject": "DPD-7YCJ2B"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HXS3P5",
+      "items": [
+        "sha256:f31d865baceb356fe9d02c953cc234646b6d4e976fd1e0b21ff936d135c19444"
+      ],
+      "reason": "The deleted import completed the move of provider policy ownership out of the old import block. Import removal establishes no separate behavior.",
+      "subject": "hunk:sha256:f31d865baceb356fe9d02c953cc234646b6d4e976fd1e0b21ff936d135c19444"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-K1V7GC",
+      "items": [
+        "sha256:98748a8261a2af563ce27dadaadc7ad7be02981963e97cf97c6de6f5c220cd3f"
+      ],
+      "reason": "The _launch_env body is unchanged. Creating the grant still supplies no PATH override, so the inherited host PATH remains an open observation. Existing measurement and provenance are preserved.",
+      "revision": 3,
+      "subject": "WKN-5AFFH6"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
+            "content": "sha256:a1a3c738bbd631de7ef74808256190cf14edbc5fea3fc65d2172fe2febd444aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
+            },
+            "path": "mcp/tests/test_paseo_launch_roles.py"
+          },
+          "before": {
+            "blob": "d09cdc288861533fd56cd32869aedacf27642698",
+            "content": "sha256:4437049c5c98b476c57900b5768540bee61555e2dc838fbc8502d113198d2fd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
+            },
+            "path": "mcp/tests/test_paseo_launch_roles.py"
+          },
+          "id": "PRF-TZXFK2"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-K3NP0Z",
+      "items": [
+        "sha256:84a153a827a90df86c4ddb4d193b9016000fbbb81ad39d2ec552a38ce88191a0"
+      ],
+      "reason": "The full-create fixture retains the saved-before-RPC receipts and agent bindings while extending the expected payload to include the grant.",
+      "revision": 1,
+      "subject": "INV-FMB2AG"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-C9SY1X",
+          "revision": 1
+        },
+        {
+          "id": "INV-EMEW6K",
+          "revision": 1
+        },
+        {
+          "id": "INV-GKNF5W",
+          "revision": 1
+        },
+        {
+          "id": "INV-HFREW1",
+          "revision": 1
+        },
+        {
+          "id": "INV-P8F6BT",
+          "revision": 1
+        },
+        {
+          "id": "INV-XJJ3NX",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZKEF8F",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZKV9B3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-K5KXEX",
+      "items": [
+        "sha256:46442828846eda2a2a3806d3f662f91f5dc5d0c8ed254eb3f02089b1dd59e033"
+      ],
+      "reason": "The provider-specific startup grant changes approval on the bound server. The applied deny lists, supplied server-map filter, user configuration, task-server marker and configuration-root subjects remain as before across all eight members.",
+      "revision": 1,
+      "subject": "FAM-QDEPNF"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-KHS6P6",
+      "items": [
+        "sha256:beab79addc759841ccfa7f4b7ddd64d72a9c2de9dbba71f927143afda2031b79"
+      ],
+      "reason": "Reconfirmed against the synchronized source tree. The architecture guide's receipt-backed role registry and per-seat task-server definition still match the launch and delivery paths. The new grant belongs to that bound server, and the private evidence and recorded comparisons still govern read-side review.",
+      "revision": 10,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MBK9R9",
+      "items": [
+        "sha256:259102c6a59fce7c7018420a0c28ecb24081154e30efe588c15aed4468d94cbc",
+        "sha256:30a9b0b43fa4f9db869da311a01aa091addc9b451a5a2be58f069a52660b7b96",
+        "sha256:31cb512e84cde506bda1f2a75014843b0f612c8130ccc952a81b13e3fab79c4f",
+        "sha256:b4b3d22809000462a6979a03313d7aa63b6b60ca6a6a740eb36ea8655d69300b",
+        "sha256:cc3eb0de73f5d1a964d9dfa7f5480ab9b5ae7dc77896d47921e64bae8546fd21"
+      ],
+      "reason": "The server advertisement test card includes exact equality with both the ordinary and bound Codex grants.",
+      "sources": [
+        {
+          "blob": "b9442850d82ee78b1f77e59a36260f1b5fc12f5b",
+          "path": "mcp/tests/test_explainer_surface.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_explainer_surface.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+            "content": "sha256:4a94897e5b7086e4c2830466bfa8e369b1ab4f22de2f1df6e407866cf57bda8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:247f7775ca177e633678d050cdb8e2f36158641801c1d73895e3a18e11ddcf59",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-8QRPKW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-MEPZ7E",
+      "items": [
+        "sha256:a328706419610e479b6d2881a32c05dca82fad5cf124702611fa78087940540c"
+      ],
+      "reason": "The builder still writes the applicable suppression options into the create definition and retains their applied record. The new bound-server grant uses its own policy field.",
+      "revision": 1,
+      "subject": "INV-P8F6BT"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MZXRC6",
+      "items": [
+        "sha256:2914545c430ea05b735aeeed45c2d68cd23c462db732e0b133dbcc1399466172",
+        "sha256:61101947921bbbc3542c515f4825af5430e53d1c3e06cedb877179a9e44d1097",
+        "sha256:963f35676b0c9c0a1c05be52188868ce6498ff163cf785260677c5b12383cdf7",
+        "sha256:bfd5bff1311329042e69b4c27452a6a4c46a1d863b67d89035b8d9ea6d7f03a3",
+        "sha256:e3f5f7a28e35721e44ae00d98c3a8f8f14374fc9ce43921ec469a8fa3bf2d067"
+      ],
+      "reason": "The explainer host test card now describes the asserted full Codex and narrow Claude rosters, each with the same four additions.",
+      "sources": [
+        {
+          "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
+          "path": "mcp/tests/test_explainer_host.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_explainer_host.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NCTSKQ",
+      "items": [
+        "sha256:114b69ed1d06935187e4037e1f365073ea482265e6e671960601fd0499878e61",
+        "sha256:3642c110cd465052ed848377b13076e692fed89ce1797344c6abccd6f5bcf7d1",
+        "sha256:375008dddc41910e096e1a747af15ffa4f69b7653dd34c88a02f2d4c0d397de2",
+        "sha256:8be116f5cef84666617edf55192ce87e10f8b780c97e83e0fecc8b6432927064",
+        "sha256:bdb9f13f46a4212e6dfd6aba49c29ad1389b6a59024fffc2f1f7ffd6e3e4d7e7",
+        "sha256:be30abe3a16d76d027f569e6df64015ca8be3c8c396fa31221e25f13f3e662a1",
+        "sha256:d79cbaa33c059c4110ea6a42d408bbcee32931501d2552fdd88d7c1b1d9ad483"
+      ],
+      "reason": "The handover test card describes the exact provider matrix and retains the separate external-folder refusal.",
+      "sources": [
+        {
+          "blob": "8b57f4aa75b82c8d2c0cd5ec549ebbce38ef23b5",
+          "path": "mcp/tests/test_role_handover_binding.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_handover_binding.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NSRM4V",
+      "items": [
+        "sha256:2471f287e71eed268a782d2b510a127767595e0cca15d8dc6fd8e38d0c3c8008",
+        "sha256:42b0c92a32e17cca902064a54eccd756037d05817e2ce9abc62a2eee6fbbc7b0",
+        "sha256:99ebf59384021c83ee6458aa4a9c8c827a731b159b2dbab0759a41ffbc942b70",
+        "sha256:b0f2c5e0a0e497a7b403f834e88dbc902837b735075d0febf3d05d021467372c",
+        "sha256:f2f9610b1d7d718742c91d9311d354dbd485c554d526ac0c6d30e4fe47bd7de8"
+      ],
+      "reason": "The catalog test card describes the role-by-provider grant assertions and their exclusion of a second configured server.",
+      "sources": [
+        {
+          "blob": "b592b03753c69d39f9ff885ce73bcd71732db57c",
+          "path": "mcp/tests/test_paseo_catalog_r71.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_catalog_r71.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QGMKC2",
+      "items": [
+        "sha256:1a5f6aea97bf74de7604e67d61d471949d42853db2d2e7d5d48ab3ff82924c86"
+      ],
+      "reason": "The new policy card explains exact provider selection, the bound scope, appending the explainer tools and the receipt's account of grant retention.",
+      "sources": [
+        {
+          "blob": "989ca0f381fef0297fc725d0b00462680d20f095",
+          "path": "mcp/src/agents_remember/cli/paseo_seat_policy.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_seat_policy.py"
+    },
+    {
+      "considered": [
+        "FAM-N17BB4",
+        "FAM-QDEPNF"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-SEV8QM",
+      "items": [],
+      "reason": "The shared startup grant has its own complete guarantee across both ordinary and explainer creation. The ordinary launch-choice family already covers its branch through INV-N9D91D. The per-launch suppression family covers the ambient server boundary, a separate operation.",
+      "revision": 1,
+      "subject": "membership:INV-Z17EHY"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SF5MFQ",
+      "items": [
+        "sha256:b825f1b69e8f84d88197492aa390952924cdeff022f2b630c76f9be785827539"
+      ],
+      "reason": "The deleted import removed the former policy name from the launch module. The replacement connection has its own source anchor in the caller.",
+      "subject": "hunk:sha256:b825f1b69e8f84d88197492aa390952924cdeff022f2b630c76f9be785827539"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-T582Z4",
+      "items": [
+        "sha256:045f7fa2b3fa5dc5a1a9607ea5fdc3a9a88da2387eb8d04b5d8d6445e80dcbc2"
+      ],
+      "reason": "L31-M1-F01. BUG-R31 withdrew two startup-grant clauses from the historical section of onboarding/mcp/src/agents_remember/cli/paseo_launch.py.md. The former wording is at lines 48 and 55 in base memory tree c69de3e53d854132536c3632ac5f0100d6ea5264, card blob 2478f544d2eb7adb561ceb7de913aa20e775a98a. Line 48 described a narrow Claude session grant for server_info. Line 55 described the create policy as Claude-only. The corrected card names both withdrawals. Its operative account keeps the current Codex and Claude grants, the stored create call as the receipt source, and the saved-call evidence.",
+      "sources": [
+        {
+          "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+          "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_launch.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-T5G9SK",
+      "items": [
+        "sha256:a1f56ab7e63fdb10634409300af11265defa67063d1a1759bbfee3c03cc7fafe",
+        "sha256:c9eb9327cfb969069527bd64284a59e1001dadbbc7384b366ea02285435ced1e",
+        "sha256:dab3af6d1585f20e049d2b483a3b0cb9cd3d7150f8ae68535712f0d641bd4086",
+        "sha256:f0cf5a70d46e6a2f158f884ad12f6c452abf2418feca2c54fdbbf4ee2b898630"
+      ],
+      "reason": "The launch test card describes the exact host create grant and the receipt’s saved grant.",
+      "sources": [
+        {
+          "blob": "c99b9690ae55e81fb7549053d9670f35c6c3b2c1",
+          "path": "mcp/tests/test_paseo_launch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_launch.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-TXXAMH",
+      "items": [
+        "sha256:c2dce9b9d6b326ee55d1fccd5d0b264a5ae585bf2e5ffb1e52d07438a83df0d9"
+      ],
+      "reason": "The explainer create now preapproves the bound task server. The payload still supplies no ambient-server exclusion for the user's configured server, so the earlier Claude observation remains open.",
+      "revision": 4,
+      "subject": "WKN-THTYAX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+            "content": "sha256:4a94897e5b7086e4c2830466bfa8e369b1ab4f22de2f1df6e407866cf57bda8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:247f7775ca177e633678d050cdb8e2f36158641801c1d73895e3a18e11ddcf59",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-CCXPRM"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-V1G4CS",
+      "items": [
+        "sha256:c7526c47e47e6a4b48a74724d6fa5e968600f6412e199956fa9e96b1fb3c32ae"
+      ],
+      "reason": "The role create builder still supplies the selected provider and accepted model, effort and feature values to Paseo, independently of the bound-server policy.",
+      "revision": 2,
+      "subject": "INV-AFTG56"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-V2JCWK",
+      "items": [
+        "sha256:f9accbd963ebade09797edd774b3aca94c3fb0fc4f7a92add6d947f30a69094a"
+      ],
+      "reason": "Reconfirmed against the synchronized source tree. The Codex guide still accurately describes implicit Bootstrap and exact Codex selection. Its startup section now describes the complete grant on the seat's own server, retaining that grant through resumes and reloads, replacing the seat for future tools, and separate approval-mode control for shell commands and other servers.",
+      "revision": 8,
+      "subject": "DPD-GNFCSM"
+    },
+    {
+      "disposition": "changed",
+      "effect": "replace",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 4
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 2
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 3
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-W13K9S",
+      "items": [
+        "sha256:7bf0658bb42ee3e06fc61ef9dca260ee06eefe9ac81141be7aeed3482af340e7"
+      ],
+      "reason": "The ordinary launch sends the shared provider grant with its bound server. The Codex branch makes the former identity-only account incomplete. The host-offering checks, routes and existing member set still account for the same creation route.",
+      "revision": 5,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WRRTE9",
+      "items": [
+        "sha256:8bec6bcfce0c3f8b17fd9a9d2d60e2ff7561bee803a892f62733681d82ba610c",
+        "sha256:975d323c4458cef01a10cff68e003559de0a95822349aacf634df3e60bff81a1"
+      ],
+      "reason": "The roles test card describes the complete Codex create payload and carries its file census and child-preparation evidence forward.",
+      "sources": [
+        {
+          "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
+          "path": "mcp/tests/test_paseo_launch_roles.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_launch_roles.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b9442850d82ee78b1f77e59a36260f1b5fc12f5b",
+            "content": "sha256:23342df5c046c7217bc9533877895ce34fa67e9507a43bc8969c01c2235fafea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_bound_server_advertises_ars_general_tools_and_exactly_the_explainers_four"
+            },
+            "path": "mcp/tests/test_explainer_surface.py"
+          },
+          "before": {
+            "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
+            "content": "sha256:6a6efe1727127736707b40ae40fdc8c10d1b129d2a37ef4b5aaa5e56a5e8273c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_bound_server_advertises_ars_general_tools_and_exactly_the_explainers_four"
+            },
+            "path": "mcp/tests/test_explainer_surface.py"
+          },
+          "id": "PRF-3SYW45"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-WZGPE5",
+      "items": [
+        "sha256:7fbc97a13531993f7b1d7277ccfd69595b3dd73173c5371918ba1ca03d50dbb7"
+      ],
+      "reason": "The expanded bound advertisement test still proves the recorded exact four-tool addition and continues to distinguish it from the public roster.",
+      "revision": 2,
+      "subject": "INV-48203N"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-XFH94H",
+      "items": [],
+      "reason": "Reconfirmed against the synchronized source tree. The review-page guide still describes offered-model selection and the explainer's own settings under the shared host-profile rule. The explainer's bound server and four dedicated tools are preserved when the startup policy sets their approvals.",
+      "revision": 9,
+      "subject": "DPD-PMZ21Z"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+            "content": "sha256:4a94897e5b7086e4c2830466bfa8e369b1ab4f22de2f1df6e407866cf57bda8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+            "content": "sha256:247f7775ca177e633678d050cdb8e2f36158641801c1d73895e3a18e11ddcf59",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-V0EBT3"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YBSBNK",
+      "items": [
+        "sha256:d5967da83cf5e552f61622cb591da2b0fe7742017010e5a640cd33194b67a4bb"
+      ],
+      "reason": "The saved create continues to carry mode and feature inputs at initial creation. Replaying the same request continues to use its recorded call, including whatever grant it saved.",
+      "revision": 1,
+      "subject": "INV-YDDMGJ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZFY7KV",
+      "items": [
+        "sha256:57c333325876975b5893c923c2c211dbc4d1021cbf21baef21dc3c67ab125ff5"
+      ],
+      "reason": "The operative MCP overview links the server roster to the provider-specific grant, the explainer additions and the retention of a Codex grant across resume and reload.",
+      "sources": [
+        {
+          "blob": "99662226cca319589b818f5083eff3400d12ae14",
+          "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+        },
+        {
+          "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+          "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+        },
+        {
+          "blob": "989ca0f381fef0297fc725d0b00462680d20f095",
+          "path": "mcp/src/agents_remember/cli/paseo_seat_policy.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZMK94C",
+      "items": [
+        "sha256:e66485fbee6d576f44b76128c58dbe33faf946e5d8ca906a5d10969ef4be6aab"
+      ],
+      "reason": "The added import links the explainer caller to the shared startup policy. The creation call, where the grant applies, carries the realization.",
+      "subject": "hunk:sha256:e66485fbee6d576f44b76128c58dbe33faf946e5d8ca906a5d10969ef4be6aab"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ZQJ18D",
+      "items": [],
+      "reason": "Reconfirmed against the synchronized source tree. The settings reference still accurately covers the idle-cleanup switch and reopening a retained role record. Its first-tool paragraph describes the ordinary Claude Code server_info grant. The Codex guide describes the distinct startup policy for Codex.",
+      "revision": 14,
+      "subject": "DPD-W0T9V9"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

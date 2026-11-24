@@ -193,6 +193,8 @@ Recorded-meaning regression uses `compose_review` over converted trees, exact ow
 
 `paseo_launch_test_support` owns the shared hand-written stateful runtime/catalog and fixture-derived dispatch expectations. Launch and status test classes inherit that support; the document-chat read/tree classes inherit it through `StatusTestCase`, while the first-start preparation class has its separate `RoleToolsTestCase` base. Document-chat source cases assert one-census tree discovery, unknown versus empty, corruption isolation, repeated receipt-path reads and byte budgets. `test_paseo_status_bridge` composes the production Node listing script with a controlled daemon client; `test_paseo_frame` asserts settings-bound provision-command disclosure. Catalog ownership and source assertions are not live-host or executed acceptance proof.
 
+Paseo startup tests check the exact create payload and the grant recorded in the receipt for the seat's own task server. The role-launch fixture covers the full create input for Architect, Orchestrator, Manager and Worker. The catalog fixture checks all seven role choices on Claude, Codex and Pi. Its payload and grants name only the seat's own task server even with a second server in the fixture's configuration. Mounted-server fixtures compare the ordinary and bound explainer advertisements with their respective Codex startup rosters. The explainer host fixture checks the full Codex roster with the four additions and preserves Claude's identity tool with those same additions.
+
 The enforced collected-case pair is 10,000 unit and 2,000 integration cases.
 
 ## Invariants And Boundaries

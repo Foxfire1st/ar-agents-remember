@@ -12,7 +12,7 @@ Tests the explainer seat’s host launch, capsule, settings-selected launch valu
 
 - A created seat carries the capsule as its instructions, takes no first prompt, and is left idle.
 - Its state is read from the host's own turn fields, so live, closed, archived and never-ran come from `turnActive` and `lastTurn` rather than from a request.
-- Claude is granted `server_info` and exactly `render`, `define_category`, `remove_category` and `grade`; Codex receives no `toolPolicy`. These assertions do not establish confinement of either harness.
+- The create-payload fixture asserts the exact Codex public roster plus `render`, `define_category`, `remove_category` and `grade`, and the exact Claude grant of `server_info` plus those four. The fixture observes the create payload through a fake bridge and checks both grants against the seat's own task server.
 - A host map with extra arguments and an unreadable daemon configuration still permits creating and sending to the explainer seat.
 - The cases refuse a host-reported model mismatch and a seat without the explainer label. A different or absent host-reported permission mode is recorded alongside the launch request's mode. The suite it belongs to exercises the four explainer-owned tools - `render`, `define_category`, `remove_category` and `grade` - and the workspace it writes into, not a read-back tool; removal archives the chat and deletes the workspace.
 
@@ -45,7 +45,9 @@ The cancel case sends the exact seat ID and request ID through the bridge, obser
 - The cancellation fixture checks the exact seat and request, a stopped turn, no open decision and the retained mode. [6]
 
 
-- The policy case grants Claude server_info and the four explainer tools, and omits toolPolicy for Codex. [8]
+
+- The policy case asserts the exact Codex public roster and Claude server_info, each with the four tools on the bound explainer server. [8]
+
 - A host map with extra arguments and an unreadable daemon configuration still permits creating and sending to the seat. [9]
 
 - The explainer records a differing observed mode separately from the request. [10]
