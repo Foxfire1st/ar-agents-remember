@@ -3415,7 +3415,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
+            "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
             "content": "sha256:6038ea35a7ffb093ab5e3f8084150b0e70be83ba152a5b957ba52622e78e7ff8",
             "locator": {
               "kind": "symbol",
@@ -4757,7 +4757,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
+            "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
             "content": "sha256:f5170fbc81eb536a5ecf8c2753b4da6055a3abec1975dd663c1504658e615abc",
             "locator": {
               "kind": "symbol",
@@ -4808,12 +4808,12 @@
         },
         {
           "anchor": {
-            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
+            "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
             "content": "sha256:021eb85f55e99154ae142ee9543beb0d1c61575ffe049fc36dae07dec85d004e",
             "locator": {
-              "end": 183,
+              "end": 184,
               "kind": "line_range",
-              "start": 183
+              "start": 184
             },
             "path": "mcp/src/agents_remember/models/task_doc.py"
           },

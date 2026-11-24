@@ -31,6 +31,8 @@ Task-document writes retain the changed-unit/value phrase, file-input digest whe
 
 ## Current source contract
 
+The ordinary task-document write projection retains a supplied review warning for the shared answer fitter. The whole result keeps the original warning and the short form fits its text and cut marker within the shared bound.
+
 Task-document dry-run answers and successful ordinary write answers retain a supplied alignmentSweep. The projection carries this producer advice without deriving sibling rows or turning it into release authority; the complete validated result remains separately logged.
 
 - Both task-doc dry and successful ordinary answer projections retain supplied alignmentSweep. [8]
@@ -79,3 +81,5 @@ Source: mcp/src/agents_remember/application/landing_answer_shapes.py
 
 
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [6]
+
+- The ordinary write roster retains the warning before shared answer fitting. [9]

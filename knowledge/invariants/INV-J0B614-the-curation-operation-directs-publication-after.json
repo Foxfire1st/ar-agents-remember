@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The authority-gates operation sets the publication threshold and the companion specifies exact scope. Omitting the nonempty path strands healthy curation after successful preparation."
+  },
+  "applicability": "A Curator publishing a leaf coherence record through curator_coherence.",
+  "conditions": [
+    "The complete scoped quality check found healthy memory and requested coherence.",
+    "Preparation succeeded and the bound code tree, memory tree and candidate-set digest still match."
+  ],
+  "exclusions": [
+    "A preparation with moved bindings requires a new current preparation.",
+    "Independent review and closeout are separate operations."
+  ],
+  "id": "INV-J0B614",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L25-W2-freeze-report.md, evidence item 2 and Sealed L25-F1. Exact candidate fresh cases A–C and seven instruction checks."
+      ],
+      "path": "L25-current-ingest.json"
+    },
+    "handoffEntry": "BUG-R25@v1 part 1",
+    "leaf": "261112-BUG-L25",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The curation operation directs publication after healthy memory requests coherence and preparation succeeds, with one judgment per candidate or none for an empty set.",
+  "status": "proposed",
+  "supersedes": []
+}

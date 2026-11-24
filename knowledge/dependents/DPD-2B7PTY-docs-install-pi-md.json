@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "eb92d53bd6de812e9d52fc2ae1898fbb432b5b1b",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "93057354d8e50736992889cbf7edeb4a8166f21c",
+    "commit": "c54f3316c39204306abde7213c87ba9dd78bd0a4",
     "role": "curator",
-    "statement": "The Pi guide correctly describes matching the offered Pi provider by a case-insensitive name or name segment and selecting it explicitly with agent=\"pi\".",
-    "task": "261112-BUG-L22",
+    "statement": "The Pi guide still describes case-insensitive matching by client name or name segment and explicit agent=\"pi\" selection, which are independent of the task-document warning field.",
+    "task": "261112-BUG-L25",
     "uncommitted": true
   },
   "document": "docs/install/pi.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,7 +61,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/named_choices.py"
     },
     {
-      "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
+      "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     }

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+        "blob": "2d49b714c233fb5cf4920faf8adff1f73b046edc",
         "content": "sha256:0b03de31cf43ea1cf640f3158faf6ba2bd807341f82e8eb828576e432e2b0dcc",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+        "blob": "2d49b714c233fb5cf4920faf8adff1f73b046edc",
+        "content": "sha256:34f8b6869ae20b06094cfc3521a171b657cb321932fd1262ea038fc6f959d69a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_recorded_review_answer_keeps_settings_warning"
+        }
+      },
+      "facet": "The registered tool sets the warning alongside persisted successful recording in ordinary and overflowing fixture responses, and the saved whole JSON validates with that same notice.",
+      "id": "PRF-F30MBR",
+      "invariant": "INV-SH4THY",
+      "origin": {
+        "handoffEntry": "BUG-R25@v1 part 2",
+        "leaf": "261112-BUG-L25"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2d49b714c233fb5cf4920faf8adff1f73b046edc",
         "content": "sha256:c49575f1730f7919a50d0984595d0396775d6ca69a5c56328e0969c54d97f35b",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+        "blob": "2d49b714c233fb5cf4920faf8adff1f73b046edc",
         "content": "sha256:6d9a5ca0cfbfddcf0249cba23e70897bb3d60c026295532de3be0cc16041839d",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+        "blob": "2d49b714c233fb5cf4920faf8adff1f73b046edc",
         "content": "sha256:401df67d2aef5b20d05d6157a194deffb1dfb22a91f69cd60db9b5dd0e684fdb",
         "locator": {
           "kind": "symbol",
@@ -73,7 +90,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+        "blob": "2d49b714c233fb5cf4920faf8adff1f73b046edc",
         "content": "sha256:0b03de31cf43ea1cf640f3158faf6ba2bd807341f82e8eb828576e432e2b0dcc",
         "locator": {
           "kind": "symbol",
@@ -96,7 +113,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+            "blob": "2d49b714c233fb5cf4920faf8adff1f73b046edc",
             "content": "sha256:e56585c767773429b0ffa2ba91fbaa39f5a0883d9f0eb4b7944b745ca98beeda",
             "locator": {
               "kind": "symbol",
@@ -107,7 +124,7 @@
         },
         {
           "anchor": {
-            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+            "blob": "2d49b714c233fb5cf4920faf8adff1f73b046edc",
             "content": "sha256:00419ea054129f76d8ba8dd489f4780566ffced6cd81eed892085f73bebf4685",
             "locator": {
               "kind": "symbol",
@@ -118,7 +135,7 @@
         },
         {
           "anchor": {
-            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+            "blob": "2d49b714c233fb5cf4920faf8adff1f73b046edc",
             "content": "sha256:651e659356b8f8924020e5693b932196883c09f61694d4f0a43e0c0821987753",
             "locator": {
               "kind": "symbol",
@@ -134,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+            "blob": "2d49b714c233fb5cf4920faf8adff1f73b046edc",
             "content": "sha256:3654fea8aca304c5ce8c2165352701935bb27115804e9d27b5cbbb78aed7b315",
             "locator": {
               "kind": "symbol",
@@ -150,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+            "blob": "2d49b714c233fb5cf4920faf8adff1f73b046edc",
             "content": "sha256:f31064f916dbdb3aa8348b2e6d65dc722502239b0b12d9a0d642b647006caf13",
             "locator": {
               "kind": "symbol",
@@ -166,7 +183,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+            "blob": "2d49b714c233fb5cf4920faf8adff1f73b046edc",
             "content": "sha256:6b1394fcd62e707c7c397c6b8a4e439ab26b64307149a072bcfe645d596e8dd9",
             "locator": {
               "kind": "symbol",
@@ -178,12 +195,12 @@
       ]
     },
     "5": {
-      "note": "Settings-budget exhaustion, recorded architect/developer approval, cumulative extra rounds and pending replay.\n\nAnchor: `test_public_review_api_enforces_cap_and_carries_explicit_extra_rounds`",
+      "note": "Settings-budget exhaustion, recorded architect/developer approval, cumulative extra rounds and pending replay.",
       "targets": [
         {
           "anchor": {
-            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
-            "content": "sha256:c798fc7f205432383da00a68252edfc59cfdc26913ed88b2374d5595a8fee95f",
+            "blob": "2d49b714c233fb5cf4920faf8adff1f73b046edc",
+            "content": "sha256:ea34af0b4ec1005a78db3882a9fa52b38369b18d3ee7bb5e81297f2ac0bbaff7",
             "locator": {
               "kind": "file"
             }
@@ -197,7 +214,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+            "blob": "2d49b714c233fb5cf4920faf8adff1f73b046edc",
             "content": "sha256:00419ea054129f76d8ba8dd489f4780566ffced6cd81eed892085f73bebf4685",
             "locator": {
               "kind": "symbol",
@@ -213,8 +230,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
-            "content": "sha256:c798fc7f205432383da00a68252edfc59cfdc26913ed88b2374d5595a8fee95f",
+            "blob": "2d49b714c233fb5cf4920faf8adff1f73b046edc",
+            "content": "sha256:ea34af0b4ec1005a78db3882a9fa52b38369b18d3ee7bb5e81297f2ac0bbaff7",
             "locator": {
               "kind": "file"
             }
@@ -228,11 +245,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "215ed7055142b82e77790b8cc2354acefa84cce7",
+            "blob": "2d49b714c233fb5cf4920faf8adff1f73b046edc",
             "content": "sha256:f901f94f28f7ce35f2b1c0eb27fae855bcea3a39484721e4bf78e44ca4a27096",
             "locator": {
               "kind": "symbol",
               "name": "test_failed_identity_reads_refuse_around_a_real_mutation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The registered MCP test checks persisted review, ordinary and overflow warnings, and the validated whole answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d49b714c233fb5cf4920faf8adff1f73b046edc",
+            "content": "sha256:34f8b6869ae20b06094cfc3521a171b657cb321932fd1262ea038fc6f959d69a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_recorded_review_answer_keeps_settings_warning"
             }
           },
           "kind": "test"

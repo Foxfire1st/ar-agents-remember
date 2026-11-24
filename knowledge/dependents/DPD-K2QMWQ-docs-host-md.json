@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "6584649caa95199219a959979b0491a095d0d6a9",
-    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
+    "codeTree": "93057354d8e50736992889cbf7edeb4a8166f21c",
+    "commit": "c54f3316c39204306abde7213c87ba9dd78bd0a4",
     "role": "curator",
-    "statement": "The host guide's resume-after-stop and exact-agent Antigravity Retry descriptions still agree with host settings and bridge behavior. The new Codex startup grant changes neither route.",
-    "task": "261112-BUG-L31",
+    "statement": "The host guide’s resume after a host stop and exact-agent Antigravity Retry remain accurate because the recorded-review warning changes only the task-document write roster, while the Codex startup grant leaves those host paths intact.",
+    "task": "261112-BUG-L25",
     "uncommitted": true
   },
   "document": "docs/host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -131,7 +131,7 @@
       "path": "mcp/src/agents_remember/application/agent_binding.py"
     },
     {
-      "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
+      "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     },
