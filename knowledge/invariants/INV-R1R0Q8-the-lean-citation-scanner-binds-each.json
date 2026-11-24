@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The header parser identifies the binders and target, the declaration scanner emits their shared extent, and the writer and reader regression checks both parts of this contract."
+  },
+  "applicability": "The built-in Lean source scanner reading symbol extents for a named alias.",
+  "conditions": [
+    "The masked command header supplies one simple binder or a two-slot bracketed pair, then := and a target identifier.",
+    "An established full name requires agreement across the retained namespace readings."
+  ],
+  "exclusions": [
+    "A bracketed underscore placeholder supplies no binder.",
+    "Names that require Lean elaboration or arise outside these source-written forms."
+  ],
+  "id": "INV-R1R0Q8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_lean_symbol_anchors.py::test_lean_alias_names_resolve_at_their_command_extents"
+      ],
+      "path": "W1-ingest.json"
+    },
+    "handoffEntry": "SUB-R02@v1 rule 4 alias commands",
+    "leaf": "261123-SUB-L2",
+    "task": "261123-SUB"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Lean citation scanner binds each source-written name in a simple or bracketed alias command at the command's keyword line and through the end of its target.",
+  "status": "proposed",
+  "supersedes": []
+}
