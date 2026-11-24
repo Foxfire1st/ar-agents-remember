@@ -6,12 +6,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
-            "content": "sha256:44560f69157a8e4c415357e36a9724de9d9a3b03f7c865be19a5df27910960e3",
+            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+            "content": "sha256:017d698e5b5183951caf4802373fca96a685edff9b182565566bebe832039dbc",
             "locator": {
-              "end": 136,
+              "end": 151,
               "kind": "line_range",
-              "start": 110
+              "start": 118
             },
             "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
           },

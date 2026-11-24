@@ -1,0 +1,1489 @@
+{
+  "closed": true,
+  "leaf": "261123-SUB-L1",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-0HMVD0",
+      "items": [
+        "sha256:382632848660c55aeb144ad662c602800af47fcd047e93775e40125d25f8a526"
+      ],
+      "reason": "The file card covers the exact Lean spellings, the distinction between ambiguity and uncertainty, and their source-cell forms.",
+      "sources": [
+        {
+          "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
+          "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-1FYJ9E",
+      "items": [
+        "sha256:db508e3c812fa6279044aed3f6b88fce896f4ab150d78943dee518fe969373b0"
+      ],
+      "reason": "Read the document against the exact candidate and renewed the source identities that support the confirmation.",
+      "revision": 11,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2R0C3H",
+      "items": [
+        "sha256:64d846ca002cd30f1d0d20e9c5ef19c5b52679d976b9cf0620ba404bf0bcb8e2"
+      ],
+      "reason": "The helper receives the selected grammar and hands it to the memo owner. Its docstring names the class split established in the key.",
+      "subject": "hunk:sha256:64d846ca002cd30f1d0d20e9c5ef19c5b52679d976b9cf0620ba404bf0bcb8e2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2TPKW1",
+      "items": [
+        "sha256:d80317f3d702907ffaaf045e42d361908da25d762fe978c63fa1847a4444939d"
+      ],
+      "reason": "The card distinguishes whole Lean keys, uncertain scope and dotted containment in the shared span lookup.",
+      "sources": [
+        {
+          "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2ZMQHM",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The card reports the current seven-lane population and the two new unit-regression modules.",
+      "sources": [
+        {
+          "blob": "be3c3cce8d9b34a1e87fd6179aa9798268a031c7",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3T7CQ1",
+      "items": [
+        "sha256:d521234a44c666c79f3e7760b7da94f5289cac7f4fbf27405d08d17aad2cf8e5"
+      ],
+      "reason": "The suffix map registers Lean with the selected reader key, whose shared extraction obligation is recorded at the binding dispatch.",
+      "subject": "hunk:sha256:d521234a44c666c79f3e7760b7da94f5289cac7f4fbf27405d08d17aad2cf8e5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3VZKGZ",
+      "items": [
+        "sha256:29e59c40c06683bf3e2db5e0d7d15c43fb874873186c19b47f1456063db98562",
+        "sha256:d9439600f490cb205d5c564a43d214f90461ef6a748a5592280fbcd7a362b113"
+      ],
+      "reason": "The new card explains the writer and recorded-reader name and scope cases.",
+      "sources": [
+        {
+          "blob": "1fe5a188016f103dd4be24355b9b017ebccb24e4",
+          "path": "mcp/tests/test_lean_symbol_anchors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_lean_symbol_anchors.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-44H5AP",
+      "items": [
+        "sha256:0363febc532fd2937e45df832e485b6a30e9bfca8eb50a6d1fec3690e63a71e1",
+        "sha256:15bbea20763b212c2741cb536e22c9d22d4004ab5821e19e22dbdf6d122f81e0",
+        "sha256:3366ed0b6c01a9e641c419f46f9b867fada97a261c85edf48ae6fa4b13601ece",
+        "sha256:46f29e977728912b7e933fc38a7890f4138dc1e57778fd723aa7e13d9660524b",
+        "sha256:4f00b8c9fa2d1113dc2cbae6a8598ce9b37edc06dbf55c167a25d95fc8bd0d72",
+        "sha256:597f649ae68095f92115630098de8a4978751d54520745eb8ff4a44e19a37ecd",
+        "sha256:5a528e6a388d6f1ad8ab13976b1bfd4b5b90683a022c1af56ff125be4f9ec13b",
+        "sha256:7c96b3d2baa57fc1d536f7ef432a6273ddf1d1e412f0bc57ef756812cea90416",
+        "sha256:7e0c86b3125612a01799000335135d492392079a71826bee31f91a0c246683d7",
+        "sha256:bee9cd8e9a3cf02db3f9bab6bf8a5948917c2b92693e82f72865f7c54fff8ad6",
+        "sha256:cc84383c3f03505a60bedd04477294c67f0d2f4b29dcd1aa52440a97b6de9102",
+        "sha256:dd6c64fa86962b868a274bdeb6bd6fcf38656955eed8c52b55b764c5bf3b49fc",
+        "sha256:edbb1ceea7fbb76876fb3a95d47dce076cbb88e608f5973681c7f1b1575e9ba2"
+      ],
+      "reason": "The card records the selected citation reader, grammar-tagged names and ordered sources.",
+      "sources": [
+        {
+          "blob": "10562d2f468a07ebaeb6c39b778748ddbf46995e",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/model.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/model.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-478TJ4",
+      "items": [
+        "sha256:cb4e3b8535bbdca411cde8259a0628c9c16f6701a1dfc6311088dc66f1854e17"
+      ],
+      "reason": "The import supplies the selected citation reader to the existing per-object definition lookup.",
+      "subject": "hunk:sha256:cb4e3b8535bbdca411cde8259a0628c9c16f6701a1dfc6311088dc66f1854e17"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4FFMPM",
+      "items": [
+        "sha256:0e738a2f200b1230da2b0cbd1caa276914015aae28ad1b3d468224162773d712",
+        "sha256:d6b49fbeb9a686d11126a3d777d7c275370a93db2c36ab54f0464de3ec009c87"
+      ],
+      "reason": "The new card records the pinned inventory and the deliberately conservative atom collection.",
+      "sources": [
+        {
+          "blob": "f260ea3df18a6981ad18bfa4817c15213036f3bd",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_tokens.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/lean_tokens.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ae16d74a33458080aa55a8b266d767c97f9d1bb1",
+            "content": "sha256:0c7dbdfd27c0c68515d19d296552a08e8c8d6b07d90151efa7107bbd3578b93d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "666b80bfb115f9356bce967e5e5ec9f37fe0eb2b",
+            "content": "sha256:73131678c3db3d9aec04f4be66fb3ac229f386778e51cc5ba0138f4ee9c4e832",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "be3c3cce8d9b34a1e87fd6179aa9798268a031c7",
+            "content": "sha256:c148d2e57b854a29bfbbf323d074936bd27e839783513b8875ac82618ce04a11",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+            "content": "sha256:1923bb64d30816f6f4bade6637863f95b0e86c12e2f4783411d87017b5275b5c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-4GVT5W",
+      "items": [
+        "sha256:99d776093b93e235ce915dafb03364c5c237d87147d33eae2fcda74119b0cee6"
+      ],
+      "reason": "The catalogs add two test module registrations in the existing unit-regression lane and six consumer edges while preserving the seven lane identities and unique registration.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e4c1d3fdaaf2c83ad98a3089a5f4a0bce0658406",
+            "content": "sha256:0ad0ffa3981573ec9e5bb232b0b35e485146ae2eaf8a556446c582a997aa790e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:d45c9ccf891b5c558a018c170e9b8c45048a3796c04c36ea33d9929f19e22e71",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-4W8Z0F",
+      "items": [
+        "sha256:f47e4c124cb27dcd69d2697152ecc106be835711042139f1aa8942cbdc9c4f89"
+      ],
+      "reason": "The measured Curator detail and its paired serving copy follow the existing checked budget facts and unchanged authored ceilings.",
+      "revision": 6,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e4c1d3fdaaf2c83ad98a3089a5f4a0bce0658406",
+            "content": "sha256:0ad0ffa3981573ec9e5bb232b0b35e485146ae2eaf8a556446c582a997aa790e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:d45c9ccf891b5c558a018c170e9b8c45048a3796c04c36ea33d9929f19e22e71",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9J6CEC"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-51BSNK",
+      "items": [
+        "sha256:10f681a1498be3526e32c2820a4c5fa4ca3799b8af31096c88209efe4448baeb"
+      ],
+      "reason": "The existing renewal entry point regenerates the paired Curator reference and capsule facts against the canonical source.",
+      "revision": 1,
+      "subject": "INV-EHJV8E"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-53ZY5W",
+      "items": [
+        "sha256:8ada8e310465e22ee15ca1284a91c84cd3aed0867f2fca82aae9942765aa1214"
+      ],
+      "reason": "The card states whole-name precedence, structured distinct spans, and the no-range response for uncertain Lean scope.",
+      "sources": [
+        {
+          "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+          "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5J2CNQ",
+      "items": [
+        "sha256:9458f14a1b452625e73f891962633ba9eecc12b8e106567c758a53fbce4e4e98"
+      ],
+      "reason": "The type-checking guard limits the import to annotation use.",
+      "subject": "hunk:sha256:9458f14a1b452625e73f891962633ba9eecc12b8e106567c758a53fbce4e4e98"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5JETEP",
+      "items": [
+        "sha256:b04119dc4223bb781e4d165dacd341f8e28c1d3ee8b31ee726dad93f6e015d01"
+      ],
+      "reason": "The route still builds and validates explainer targets through its existing proof-basis route and treats unresolved targets as stale.",
+      "sources": [
+        {
+          "blob": "a233ab3fe2581897d83112343d331b2f980d34fc",
+          "path": "mcp/src/agents_remember/canvas/explainer_target.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1RWT3JRR",
+          "revision": 1
+        },
+        {
+          "id": "INV-6W74GGC8",
+          "revision": 1
+        },
+        {
+          "id": "INV-716Q6QMV",
+          "revision": 1
+        },
+        {
+          "id": "INV-ENTFR23T",
+          "revision": 1
+        },
+        {
+          "id": "INV-RANN4DC0",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-5JK7WH",
+      "items": [
+        "sha256:dc65f3690f5534490ae84face4af2668ab5a4dc3174273453e3689884007f090"
+      ],
+      "reason": "Each family-review side still presents only the exact established region with its stored rationale and role. The guarantee already provides an explicit outcome when the resolver establishes no region, including uncertain scope.",
+      "revision": 2,
+      "subject": "FAM-BWQ4XYF9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5TCQXK",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The card records the six existing support-row associations for the two Lean modules.",
+      "sources": [
+        {
+          "blob": "ae16d74a33458080aa55a8b266d767c97f9d1bb1",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-5VYZD3",
+      "items": [
+        "sha256:9ad19b64cd2fcc46625a28ca3ee6dece7bd5c400fadf50c9eaf592f6771bda5e"
+      ],
+      "reason": "Read the document against the exact candidate and renewed the source identities that support the confirmation.",
+      "revision": 10,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6DJRYT",
+      "items": [
+        "sha256:341e5f5f7c922caa5377100bce0d313b024ae4fc14973072e3f46f58cb1b5576"
+      ],
+      "reason": "The guide explains name-selection and explicit line-range behavior already implemented by live citation resolution and the shared Lean symbol resolver.",
+      "subject": "hunk:sha256:341e5f5f7c922caa5377100bce0d313b024ae4fc14973072e3f46f58cb1b5576"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7F8849",
+      "items": [
+        "sha256:f2c23f8683def48564bdd97403e33f887814adce6485a149e20a8fba6dc5f26c"
+      ],
+      "reason": "The file card explains which grammar the canvas proof-basis lookup supplies and its existing one-span condition.",
+      "sources": [
+        {
+          "blob": "a233ab3fe2581897d83112343d331b2f980d34fc",
+          "path": "mcp/src/agents_remember/canvas/explainer_target.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/explainer_target.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7KT981",
+      "items": [
+        "sha256:5cf0807976c2660da7a4ae223cfa815b61d5400ca57cddd4f27d8ba51e616087"
+      ],
+      "reason": "The route carries current evidence counts and links the two Lean checks to their support responsibilities.",
+      "sources": [
+        {
+          "blob": "ae16d74a33458080aa55a8b266d767c97f9d1bb1",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "be3c3cce8d9b34a1e87fd6179aa9798268a031c7",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "d3d9cbc7eeaa3aa58474a960a7ac84e7dc2fd63c",
+          "path": "mcp/tests/test_lean_card_citations.py"
+        },
+        {
+          "blob": "1fe5a188016f103dd4be24355b9b017ebccb24e4",
+          "path": "mcp/tests/test_lean_symbol_anchors.py"
+        },
+        {
+          "blob": "e387e20d2d112b8a2e55682a24f40865dfcbc25c",
+          "path": "mcp/tests/test_read_anchor_memo.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7MD8AM",
+      "items": [
+        "sha256:54d86e0bd82d2097ce892bc508215c2234aeb0e50bacabc5ddcb243677456703"
+      ],
+      "reason": "Binding metadata represents full-name and scope facts established by the registered reader.",
+      "subject": "hunk:sha256:54d86e0bd82d2097ce892bc508215c2234aeb0e50bacabc5ddcb243677456703"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8BGBY7",
+      "items": [
+        "sha256:fd566beddbf8a388e965c321fdef80ce5b6bf12516f4a4d2dd376471459108c2"
+      ],
+      "reason": "The helper description explains why the existing per-blob cache distinguishes ordinary script files from test paths.",
+      "subject": "hunk:sha256:fd566beddbf8a388e965c321fdef80ce5b6bf12516f4a4d2dd376471459108c2"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-90KRRF",
+      "items": [
+        "sha256:6e9af264eb2df102bae317b28e13f25ec9546012eabffbefcff2ae68186bcc20"
+      ],
+      "reason": "Read the document against the exact candidate and renewed the source identities that support the confirmation.",
+      "revision": 15,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "considered": [
+        "FAM-04M3Z0"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-AFV7XN",
+      "items": [],
+      "reason": "The format 1 output pin governs historical conversion. Its proof is separate from the live Lean symbol identity shared by the scanner, writer and recorded reader.",
+      "revision": 1,
+      "subject": "membership:INV-4Y2AN9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
+            "content": "sha256:095caa7ea43283c436da50242be4a8f5e00c99b6b7e2785861aa611411aa9b6f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
+          },
+          "before": {
+            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+            "content": "sha256:2153844db803d3c3d74267cd8a69030b0944ec325aed82b3a16d04f5262abc0e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
+          },
+          "id": "RLZ-Z15J3Z"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-BJZMKC",
+      "items": [
+        "sha256:599ccdda11bd4e49a655b408cd8b0ad46cd475b4fafb9287c132edc97c9b3dd3"
+      ],
+      "reason": "Citation-check uncertainty is report-only. The strict publication validator still requires the paired blob and resolved content, so the realization moves with the current reference module.",
+      "revision": 1,
+      "subject": "INV-033XSD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BNQZ6E",
+      "items": [
+        "sha256:82bc4a580d7a39e13070b36fa144109df7886fa285bbb62e35de0293e7b13c9a"
+      ],
+      "reason": "The explanatory text distinguishes shared reader scopes and describes the Lean binding contract already covered by the extractor and exact lookup.",
+      "subject": "hunk:sha256:82bc4a580d7a39e13070b36fa144109df7886fa285bbb62e35de0293e7b13c9a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BPJBJA",
+      "items": [
+        "sha256:8dd6eb3e204940d4ac994052d30fdf661af2a5a31fd7da570686b008fbdb8ad3"
+      ],
+      "reason": "The overview explains the Lean declaration scan and exact scope uncertainty in the owning memory quality route.",
+      "sources": [
+        {
+          "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
+          "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
+        },
+        {
+          "blob": "e920d7fa46d0d8b4a3c60ce8c0f6e92c7bb3b71b",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/cells.py"
+        },
+        {
+          "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+        },
+        {
+          "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+        },
+        {
+          "blob": "65a4d912f645757bffe1c60412ae7026e4ede482",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_declarations.py"
+        },
+        {
+          "blob": "0ae68f32a7f4ef721e028192739767ec0bd6f212",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_lex.py"
+        },
+        {
+          "blob": "1444d2bdf47673f168110039cb9e5fb1217a7c18",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_names.py"
+        },
+        {
+          "blob": "e1b042dca12bfbc75a259eb1981be58f1c332d59",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_scopes.py"
+        },
+        {
+          "blob": "f260ea3df18a6981ad18bfa4817c15213036f3bd",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_tokens.py"
+        },
+        {
+          "blob": "10562d2f468a07ebaeb6c39b778748ddbf46995e",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/model.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "be3c3cce8d9b34a1e87fd6179aa9798268a031c7",
+            "content": "sha256:c148d2e57b854a29bfbbf323d074936bd27e839783513b8875ac82618ce04a11",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+            "content": "sha256:1923bb64d30816f6f4bade6637863f95b0e86c12e2f4783411d87017b5275b5c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "ae16d74a33458080aa55a8b266d767c97f9d1bb1",
+            "content": "sha256:0c7dbdfd27c0c68515d19d296552a08e8c8d6b07d90151efa7107bbd3578b93d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "666b80bfb115f9356bce967e5e5ec9f37fe0eb2b",
+            "content": "sha256:73131678c3db3d9aec04f4be66fb3ac229f386778e51cc5ba0138f4ee9c4e832",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CGHP7V",
+      "items": [
+        "sha256:0747d036cd89224f8a598069243577b57746dcb4f8ba029be1ca7095cd292e72"
+      ],
+      "reason": "The evidence catalogs retain the enclosed scratch root cases and their established support assignments alongside the added Lean evidence.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CX3DJT",
+      "items": [
+        "sha256:0661b2f302d9a73b3dacc182a0df51c29442661e6a59297f49c7db3008890791"
+      ],
+      "reason": "The card distinguishes report-only citation uncertainty from strict reference currentness and names the same-blob ordering.",
+      "sources": [
+        {
+          "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
+          "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/reference_state.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CZE5R9",
+      "items": [
+        "sha256:b447bc0078a5ac14ff9e29e24df8fa8dda00dec6ecb696752d9d6bf4b9320652"
+      ],
+      "reason": "The import connects the scanner to the existing shared binding dispatch.",
+      "subject": "hunk:sha256:b447bc0078a5ac14ff9e29e24df8fa8dda00dec6ecb696752d9d6bf4b9320652"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DCVG0Z",
+      "items": [
+        "sha256:769935a45218b71a70c8c2e58fc126ca55ae9714a8a1a97a3960f07f830d3bd4"
+      ],
+      "reason": "The Mapping import supplies the existing type annotation for the shared helper.",
+      "subject": "hunk:sha256:769935a45218b71a70c8c2e58fc126ca55ae9714a8a1a97a3960f07f830d3bd4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EE5CYX",
+      "items": [
+        "sha256:7d3dffe3cfabe01e073582f3133bd7fea3b9661347b4938ddba2f98efc4b93a1",
+        "sha256:b13e4873a0f31e940512455747bc724b2412961b2859e16049ef84f18bf8c5f6"
+      ],
+      "reason": "The new card records masking rules and preserved positions used by the scan and token inventory.",
+      "sources": [
+        {
+          "blob": "0ae68f32a7f4ef721e028192739767ec0bd6f212",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_lex.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/lean_lex.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EM15H8",
+      "items": [
+        "sha256:b1b15be5af1086ccd921a78c2ba6a3efd80ad6abb1f212144fd85649308c22cd"
+      ],
+      "reason": "The memo's annotation carries structured extents so the symbol lookup can retain scope. Its lifetime and weighting owners are unchanged.",
+      "subject": "hunk:sha256:b1b15be5af1086ccd921a78c2ba6a3efd80ad6abb1f212144fd85649308c22cd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F17Q15",
+      "items": [
+        "sha256:19fcc65598b0a67b40e45bd341965a9d7d92d6ea3fa7acbe3563321ea47c4963"
+      ],
+      "reason": "The definition adapter carries binding metadata into the extent value consumed by the qualified lookup.",
+      "subject": "hunk:sha256:19fcc65598b0a67b40e45bd341965a9d7d92d6ea3fa7acbe3563321ea47c4963"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-H2M6QQ",
+      "items": [
+        "sha256:94fdfdb5c02df7fbd608c8d31c096a2b490834de6ac89f4587e9c34f7604405b"
+      ],
+      "reason": "Serving copies and generated capsule measurements retain the package's role and generation boundaries.",
+      "sources": [
+        {
+          "blob": "e4c1d3fdaaf2c83ad98a3089a5f4a0bce0658406",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H54YZT",
+      "items": [
+        "sha256:34033d91853ca4d15ef571cfd0954b2298d314904d9f65cc519e3e63f4624bf4"
+      ],
+      "reason": "The card explains reader selection before memo admission and preserves the instance-owned LF-only blob-line contract.",
+      "sources": [
+        {
+          "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
+          "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/conversion/code_objects.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HFRMQG",
+      "items": [
+        "sha256:b98c0cf3404ba469cad25a98a964bf221004e3e34c1247234c07d0ac86dec105"
+      ],
+      "reason": "The module heading describes the existing source-span role.",
+      "subject": "hunk:sha256:b98c0cf3404ba469cad25a98a964bf221004e3e34c1247234c07d0ac86dec105"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HQ2DH8",
+      "items": [
+        "sha256:7733ecebe27e53c52d15eeaea608be9f67894643cc1a7bf28f7c45ee4fcf755c"
+      ],
+      "reason": "The application overview's anchor and writer ownership remains accurate. The file card carries the selected Lean reader detail.",
+      "sources": [
+        {
+          "blob": "f38edb131048b6babe92bde259bb2ab786de733c",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HRFNJN",
+      "items": [
+        "sha256:1808276fba66eb1f3981d20e95a79db7c4fc2a98d04b6121e25de1229cf7f750",
+        "sha256:6b2a2ddf01871a1cf90c908636de45725cc6a98e21fd6009685c512890b4cfe3",
+        "sha256:7fecb633fd515e7d84e095c71ec8efca141600e862bd61650a08c41623bf97fa",
+        "sha256:f30c8d4a82a5bd39381d87b17579dbbb7b6bfdf3ad3636ffaa65497d9980acef",
+        "sha256:f8135b0e594365ba750bef26b74af05c7adee97c3f210c93cbf291ceca968ccb"
+      ],
+      "reason": "The card identifies the selected citation reader for native authoring and format 1.",
+      "sources": [
+        {
+          "blob": "03051cbacb8036339a88d081bd2d239f054e5645",
+          "path": "mcp/src/agents_remember/memory/conversion/cards.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/conversion/cards.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J1BR96",
+      "items": [
+        "sha256:1a1156af0ae29df27b83a39dccba32e059693f4137b54d5f5dab1ce919f12802"
+      ],
+      "reason": "The module comment explains the current single-definition and ambiguity behavior already established by the writer's symbol resolver.",
+      "subject": "hunk:sha256:1a1156af0ae29df27b83a39dccba32e059693f4137b54d5f5dab1ce919f12802"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-J1W1B9",
+      "items": [
+        "sha256:61ad5c847a1a28c965b27b8054dce32ae3bb3f7db79c05debdb7e4932d223960",
+        "sha256:d23e706f7ec6ff53fcebb8b4213f63f1c67b318ba4c54cd9bcb37a32a659110d"
+      ],
+      "reason": "Read the document against the exact candidate and renewed the source identities that support the confirmation.",
+      "revision": 5,
+      "subject": "DPD-TXRND9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J9BTFR",
+      "items": [
+        "sha256:226101eaa7b18f4215bd02b52136ac20e2e8f7513bab7536d515eb9b2fd3f2fb",
+        "sha256:f1cf8ad83975de95a7b202c8d9e300a5d23bd971c08b0dfa5bd7f07847526884"
+      ],
+      "reason": "The new card explains the live row source tests, uncertainty handling and format 1 byte preservation.",
+      "sources": [
+        {
+          "blob": "d3d9cbc7eeaa3aa58474a960a7ac84e7dc2fd63c",
+          "path": "mcp/tests/test_lean_card_citations.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_lean_card_citations.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K0112W",
+      "items": [
+        "sha256:f549c8fdaf4b0e051b74048d01c92d4a847d61319df953dd06380caf7c0fedce"
+      ],
+      "reason": "The writer's current card explains exact Lean keys, ambiguity and the explicit line-range remedy.",
+      "sources": [
+        {
+          "blob": "f38edb131048b6babe92bde259bb2ab786de733c",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K1H7F1",
+      "items": [
+        "sha256:ed7ccb1c71f331a4d1af52150db218e27e345e88cd4c5818223d411708879c8d"
+      ],
+      "reason": "The card records the script test-file key class and extent metadata retained in the memo.",
+      "sources": [
+        {
+          "blob": "9bbf24c012731dfdae3512a392696c4bd872b695",
+          "path": "mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K4M47B",
+      "items": [
+        "sha256:2b2efedfa672291acf3b2737816a28f74c2ccb40578f77176cc7d8278ee89845"
+      ],
+      "reason": "The budget record regenerated the Curator guide's measured word count from 1,816 to 1,934 and refreshed its source digest. The authored limits and the overview's description of the budget record and renewal procedure still apply.",
+      "sources": [
+        {
+          "blob": "e4c1d3fdaaf2c83ad98a3089a5f4a0bce0658406",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K694QC",
+      "items": [
+        "sha256:d5b32bcebc1f48a0cb7bd0c947a73ad77a5e6e25cf4238dcdbd0bcb71689466f"
+      ],
+      "reason": "The overview identifies the shared recorded-anchor contract, native and historical card readers and memo boundaries.",
+      "sources": [
+        {
+          "blob": "03051cbacb8036339a88d081bd2d239f054e5645",
+          "path": "mcp/src/agents_remember/memory/conversion/cards.py"
+        },
+        {
+          "blob": "08ded641b59332a7998d4e7b8260204c83c07b18",
+          "path": "mcp/src/agents_remember/memory/conversion/citations.py"
+        },
+        {
+          "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
+          "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+        },
+        {
+          "blob": "2c089317e88d6adbfe8075934ce42527187dfe15",
+          "path": "mcp/src/agents_remember/memory/conversion/convert.py"
+        },
+        {
+          "blob": "9bbf24c012731dfdae3512a392696c4bd872b695",
+          "path": "mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py"
+        },
+        {
+          "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+          "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e4c1d3fdaaf2c83ad98a3089a5f4a0bce0658406",
+            "content": "sha256:0ad0ffa3981573ec9e5bb232b0b35e485146ae2eaf8a556446c582a997aa790e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:d45c9ccf891b5c558a018c170e9b8c45048a3796c04c36ea33d9929f19e22e71",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-RHRQZQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-KAVMJS",
+      "items": [
+        "sha256:50a8b2885ef71af01bc9329c798240d96e699080f763fafecc0ad0b112d0e649"
+      ],
+      "reason": "Regeneration measures the updated Curator reference under the established authored ceilings.",
+      "revision": 2,
+      "subject": "INV-4HZG3V"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KD58H9",
+      "items": [
+        "sha256:0423d0f76986702875344dbcf958e284c01829ce03ee9269fd4673fc452124cb",
+        "sha256:160367cf5796ebe1b01c1d54c99e74409d6d988aab65c0d0b3405010157a8ee9",
+        "sha256:2a9fe927959bffb93e96704d80889c2f0c3ae0c54b8716092d90eb2724c819f3",
+        "sha256:9e89f07a955257b80bf30aa8144358bbe845fb5233732740eda22ca7cdf558cc",
+        "sha256:efc1de371d827a0367f59fbbab3f98e2f9dbe8e6381de752f48b38c9f0c3c895"
+      ],
+      "reason": "The card identifies the explicit format 1 reader and its pinned conversion output.",
+      "sources": [
+        {
+          "blob": "2c089317e88d6adbfe8075934ce42527187dfe15",
+          "path": "mcp/src/agents_remember/memory/conversion/convert.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/conversion/convert.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KRW399",
+      "items": [
+        "sha256:54d0dadbfe24830e67a58e53dd0e48d301b1be4d0b832274cc8fb407db06b27f",
+        "sha256:8f563be411fe2f2f6f8516614ae3f1f2c72bc814265ded74bd387fa833e3305a"
+      ],
+      "reason": "The new card records how named and anonymous scopes converge or remain uncertain.",
+      "sources": [
+        {
+          "blob": "e1b042dca12bfbc75a259eb1981be58f1c332d59",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_scopes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/lean_scopes.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NCFAVH",
+      "items": [
+        "sha256:e1488402768a2490e7992ef4f2d082981ac746ab666ea59aee766bcc14f478bd"
+      ],
+      "reason": "Delete-only removal of the forwarding wrapper consolidates shared span lookup into the symbol resolver.",
+      "subject": "hunk:sha256:e1488402768a2490e7992ef4f2d082981ac746ab666ea59aee766bcc14f478bd"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+            "content": "sha256:39e53668a40407fc6d862ccbaa2d0ea7a63201fa4235d2e2fa9d9f0ace98c221",
+            "locator": {
+              "kind": "symbol",
+              "name": "definitions"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "before": {
+            "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
+            "content": "sha256:b3f425afc5bb667c1a95cf8843c82cfe77cfae99923d22e6947bbee4b0382a10",
+            "locator": {
+              "kind": "symbol",
+              "name": "definitions"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "id": "RLZ-CG0HFE"
+        },
+        {
+          "after": {
+            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
+            "content": "sha256:1c1600e3d6946320fed314492c2aea995907f1e5b0916b30b9097ea1476a29f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_case_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "before": {
+            "blob": "6304a991e5187181bfa80c1a5cf6e586c6069b99",
+            "content": "sha256:1c1600e3d6946320fed314492c2aea995907f1e5b0916b30b9097ea1476a29f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_case_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-H9QDPT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-NED8HX",
+      "items": [
+        "sha256:eaf8b357185c99d6b80fad5ad5e3cd9789384c5ac5b6b6c7fe6c2b8f9eeb1146"
+      ],
+      "reason": "The shared definition scopes and independent calls retain their lifetime and ownership. Their carrier now includes the metadata used by Lean.",
+      "revision": 1,
+      "subject": "INV-2NCG51"
+    },
+    {
+      "because": [
+        "DEC-P6BBXB"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "1fe5a188016f103dd4be24355b9b017ebccb24e4",
+            "content": "sha256:4fbb7d2fd4f5ccdd2ab4125995851a14166640a7cd034a8a0c74ca0bc38eb0d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lean_ambiguous_writer_names_full_choices_and_reader_returns_both_ranges"
+            },
+            "path": "mcp/tests/test_lean_symbol_anchors.py"
+          },
+          "before": "absent",
+          "id": "PRF-7VB19B"
+        },
+        {
+          "after": {
+            "blob": "1fe5a188016f103dd4be24355b9b017ebccb24e4",
+            "content": "sha256:c95f2367f2bb284020702358859d27fc9f8b6911289dad4c1261565604000409",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lean_syntax_tail_false_uncertainty_is_reported"
+            },
+            "path": "mcp/tests/test_lean_symbol_anchors.py"
+          },
+          "before": "absent",
+          "id": "PRF-R9PBNN"
+        },
+        {
+          "after": {
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "content": "sha256:7c8913e6f93a2983f673057c083f0363353f5be7bf3a68796b33241c7d14c306",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blob_definitions"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "before": "absent",
+          "id": "RLZ-1X4SZQ"
+        },
+        {
+          "after": {
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "content": "sha256:911cbd8d9c75d410970d007d6f459319cf2e36c93b147f44d4ce62340b6a6af9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_symbol"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "before": {
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "content": "sha256:bfc0319d634856fb8f98a46fa53fcb0eb7fbba8a55532e4e7e19bc8d804a5b5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_symbol"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "id": "RLZ-GB76X8G2"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-P4XT91",
+      "items": [
+        "sha256:c27b00ac9d8f4a8cdd90c96083e8299ede7e940a6d81704f63700305fc5a1b05"
+      ],
+      "reason": "The resolver preserves the exact-blob range boundary while admitting scanner-backed names and trying whole keys first. Uncertain Lean scope keeps the recorded identity and has a named diagnostic with no range. Evidence (SUB-R01-recorded-ranges-revision): mcp/tests/test_lean_symbol_anchors.py::test_lean_ambiguous_writer_names_full_choices_and_reader_returns_both_ranges",
+      "revision": 2,
+      "subject": "INV-RANN4DC0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P6MREZ",
+      "items": [
+        "sha256:eaa84475644f8464896e95438ebbb086dc909d79ac5613d76ae4928804efc301"
+      ],
+      "reason": "The canonical and served measurements refresh the citation-guide detail while their authored ceilings retain their current meaning.",
+      "sources": [
+        {
+          "blob": "e4c1d3fdaaf2c83ad98a3089a5f4a0bce0658406",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-P7PS2E",
+      "items": [
+        "sha256:85fdd9c6ef1d37f4bb0b659eab1f048438c5c595ca9a4c484ce270584f5e13c6"
+      ],
+      "reason": "Read the document against the exact candidate and renewed the source identities that support the confirmation.",
+      "revision": 3,
+      "subject": "DPD-GRXQW5"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-R70ZNH",
+      "items": [],
+      "reason": "Read the document against the exact candidate and renewed the source identities that support the confirmation.",
+      "revision": 4,
+      "subject": "DPD-A3XZ3Q"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "be3c3cce8d9b34a1e87fd6179aa9798268a031c7",
+            "content": "sha256:c148d2e57b854a29bfbbf323d074936bd27e839783513b8875ac82618ce04a11",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+            "content": "sha256:1923bb64d30816f6f4bade6637863f95b0e86c12e2f4783411d87017b5275b5c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "ae16d74a33458080aa55a8b266d767c97f9d1bb1",
+            "content": "sha256:0c7dbdfd27c0c68515d19d296552a08e8c8d6b07d90151efa7107bbd3578b93d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "666b80bfb115f9356bce967e5e5ec9f37fe0eb2b",
+            "content": "sha256:73131678c3db3d9aec04f4be66fb3ac229f386778e51cc5ba0138f4ee9c4e832",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RBKWHX",
+      "items": [
+        "sha256:d788070fa9cb221526ddb063e64adde59429f2e8f246980224059961a3cf85cd"
+      ],
+      "reason": "The two Lean evidence registrations and additive fixture consumers leave the silent-turn evidence and wake policy unchanged.",
+      "revision": 7,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RF33G8",
+      "items": [
+        "sha256:c39c117c795813f07b9637b7edfd433a31615be65be6e299b5e6c7eef0a7d8a5"
+      ],
+      "reason": "The path-reader description names the existing suffix selection and unsupported result.",
+      "subject": "hunk:sha256:c39c117c795813f07b9637b7edfd433a31615be65be6e299b5e6c7eef0a7d8a5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RK0ZSQ",
+      "items": [
+        "sha256:388bcfab017c725497e6bb2e2d4a7608743806ca8533f79a3fa62dbb54697123"
+      ],
+      "reason": "The existing canvas admission guard retains the selected grammar for the span lookup already owned by the shared resolver.",
+      "subject": "hunk:sha256:388bcfab017c725497e6bb2e2d4a7608743806ca8533f79a3fa62dbb54697123"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RMKBSK",
+      "items": [
+        "sha256:b5fb245ca75071575a932831f4c6f2e4a891f29848cfe8b8d7f356a670ea7b8a"
+      ],
+      "reason": "The module description identifies the two reader mechanisms without adding a separate obligation.",
+      "subject": "hunk:sha256:b5fb245ca75071575a932831f4c6f2e4a891f29848cfe8b8d7f356a670ea7b8a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RN07VC",
+      "items": [
+        "sha256:0cbe353f0a44169d0ada9bc0a5e5b138b6e3c7907ee7ec5b9d5310976d27d1d1",
+        "sha256:28a4915e281152773a5e7fd2322e19187979e830867eff42e390d04bc1f374c9",
+        "sha256:315f7963371c8a2c747158a4a639dfcf39398723a0ca56054fd10eafdd69d84c",
+        "sha256:342b50e23b1b90a329f9532b126375be7f9e50953aef6696a354406fed54d6e5",
+        "sha256:368007e958f4892900501035baebacfef3dec6545e70e094173cee4961570e57",
+        "sha256:3f8b708d40ccb0e0801aff353997d6c6fe4d34cde874a475d5194fadffa2c560",
+        "sha256:89bbfdd86485f824dfdc54a5b51d5883d39338e20384a2532dd74df2fe2a839b",
+        "sha256:c439ec766a3cbf2b08449efd447d3fd64448001d6f4f3617559d2df02f5d749d"
+      ],
+      "reason": "The card distinguishes native and legacy row resolution and the order and scope of ordinary and extended Lean source selection.",
+      "sources": [
+        {
+          "blob": "08ded641b59332a7998d4e7b8260204c83c07b18",
+          "path": "mcp/src/agents_remember/memory/conversion/citations.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/conversion/citations.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RP7DD2",
+      "items": [
+        "sha256:a63135fde5b4d5d5bb043b941516c3557fb2b9b8f37827d401948f4fc5dde023"
+      ],
+      "reason": "Optional extent metadata transports Lean's resolved name and scope condition to the verification already owned by the exact lookup.",
+      "subject": "hunk:sha256:a63135fde5b4d5d5bb043b941516c3557fb2b9b8f37827d401948f4fc5dde023"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+            "content": "sha256:428595608b8a1b54f76b915537355cc15a663140b16c860d5402290c44d27978",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "before": {
+            "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
+            "content": "sha256:44560f69157a8e4c415357e36a9724de9d9a3b03f7c865be19a5df27910960e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "id": "RLZ-071CY8"
+        },
+        {
+          "after": {
+            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
+            "content": "sha256:18e47251b894adc0e9a44597af517884741a485254614749d5168ae41d5d7ae3",
+            "locator": {
+              "kind": "symbol",
+              "name": "bindings"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "before": {
+            "blob": "6304a991e5187181bfa80c1a5cf6e586c6069b99",
+            "content": "sha256:abc681b358c6425341b33d6f24b534a5d321f04af8ef4292e0c228730894564f",
+            "locator": {
+              "kind": "symbol",
+              "name": "bindings"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+          },
+          "id": "RLZ-28F8AE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-SG3FBY",
+      "items": [
+        "sha256:133938ab2546924300aeedcf8cf6bdb37610681a31e172038f40be208267d881"
+      ],
+      "reason": "The script test-name extractor and exact unmapped case ranges retain their proof contract. Lean selects its own scanner before those script branches.",
+      "revision": 2,
+      "subject": "INV-B37MWR"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SHRDB5",
+      "items": [
+        "sha256:018b957826df8b3044c49ab26aa7ea7f44a911228680284ccf18a12206bb9dd0"
+      ],
+      "reason": "The memo preserves extent metadata so the anchored recorded symbol lookup can decide scope and deduplicate ranges at resolution.",
+      "subject": "hunk:sha256:018b957826df8b3044c49ab26aa7ea7f44a911228680284ccf18a12206bb9dd0"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-STESE7",
+      "items": [
+        "sha256:0f139dd1580e446e112f3b8b9de16e2c81dd130c6522858c4a3952c10e90c7ce"
+      ],
+      "reason": "Read the document against the exact candidate and renewed the source identities that support the confirmation.",
+      "revision": 17,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-T60NYV",
+      "items": [
+        "sha256:c456262648c94159ca7d7b016e8128a68a2890ae9b08db25677e4243c16c1c05",
+        "sha256:ca8b5dfa528f26374469c42875e2598f86e166927f89077c91358bbfbd0d1120"
+      ],
+      "reason": "The new card records pinned written-name spelling, guillemet components and preserved offsets.",
+      "sources": [
+        {
+          "blob": "1444d2bdf47673f168110039cb9e5fb1217a7c18",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_names.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/lean_names.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "be3c3cce8d9b34a1e87fd6179aa9798268a031c7",
+            "content": "sha256:c148d2e57b854a29bfbbf323d074936bd27e839783513b8875ac82618ce04a11",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+            "content": "sha256:1923bb64d30816f6f4bade6637863f95b0e86c12e2f4783411d87017b5275b5c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-THSCG7",
+      "items": [
+        "sha256:5974d25186c1ef18015bc64302c3a5f282db1d3276dbf187561a2a973bae4a2b"
+      ],
+      "reason": "Both added unit-regression modules exist in the exact candidate. The surviving lane and certification contract is preserved.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TSYFZ1",
+      "items": [
+        "sha256:9751f8131c227473316bbe6b6ffc7c627ec8d25b3a37eb8a7392b613cb326e51"
+      ],
+      "reason": "The reader imports the existing test-file classifier for the memo lookup.",
+      "subject": "hunk:sha256:9751f8131c227473316bbe6b6ffc7c627ec8d25b3a37eb8a7392b613cb326e51"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VD90XY",
+      "items": [
+        "sha256:a2160d1cdb0c1b7367733cec8ee250f9cec22552dfd0c76d363d74ad0257d75f"
+      ],
+      "reason": "The shared diagnostic states a line-range remedy after the source reader establishes scope uncertainty.",
+      "subject": "hunk:sha256:a2160d1cdb0c1b7367733cec8ee250f9cec22552dfd0c76d363d74ad0257d75f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-W2T64W",
+      "items": [
+        "sha256:056bdcda8788a45e91f02174f2dd84d3e19cdbe43313c42714315c2dcf2f19dc",
+        "sha256:0c164f0a8ce79f3efff2c57c0d8b5dfb64ae96ad872435fb06d5860c5b8af405",
+        "sha256:315d02a22687fe67ef19e03cdffe47608382c3941f45ce5d309eb0117faa32dc",
+        "sha256:ff376f96743ee8c68c7b8ffc6efa8721596060b16d12f6d1c09ad7174e665ff5"
+      ],
+      "reason": "The card identifies source-context selection before parsing row anchors.",
+      "sources": [
+        {
+          "blob": "e920d7fa46d0d8b4a3c60ce8c0f6e92c7bb3b71b",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/cells.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/cells.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WCNWAP",
+      "items": [
+        "sha256:98e9e2f56414568fd0ae604449a06630b0ac809ddb4b11a78fb55964b4cdc472"
+      ],
+      "reason": "The type-only extent import gives the memo the same structured values consumed by the recorded resolver.",
+      "subject": "hunk:sha256:98e9e2f56414568fd0ae604449a06630b0ac809ddb4b11a78fb55964b4cdc472"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
+            "content": "sha256:9385c1faf9dfe98ca553b3a98b666069bfdaed6c9e777ffa7b90edd8232aca96",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjects"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "before": {
+            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
+            "content": "sha256:70f0fc941d3161e665785cd0bf2d98d7c2acb972799d2901182a9ed5f0f324e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjects"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "id": "RLZ-VDX96S"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-X182C2",
+      "items": [
+        "sha256:6af1c57a52e87599371e0e1113ecee432060437ed28b0ab4a48fe049a991a91c"
+      ],
+      "reason": "Reader selection runs before memo access. LF-only blob splitting and per-instance reuse remain unchanged.",
+      "revision": 1,
+      "subject": "INV-V2QBEP"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XBP3EH",
+      "items": [
+        "sha256:59f10378f4ef7a0ccd2727d3f91418d62d130c6addd90538ca88b10b8a773e10"
+      ],
+      "reason": "The heading describes the actual memo key and retry boundary owned by the recorded resolver.",
+      "subject": "hunk:sha256:59f10378f4ef7a0ccd2727d3f91418d62d130c6addd90538ca88b10b8a773e10"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XKHGFH",
+      "items": [
+        "sha256:0e630ca1749815df35798e5f85f875ac99f5dccfaf23f4eed2922ea31387be20"
+      ],
+      "reason": "The card describes path reader selection and the metadata retained by the Lean binding adapter.",
+      "sources": [
+        {
+          "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-XWTCB4",
+      "items": [
+        "sha256:c01f5a5391f16fceae5835f23f86fdf7f43cba4900e44e8a46ce0de204acda90"
+      ],
+      "reason": "Read the document against the exact candidate and renewed the source identities that support the confirmation.",
+      "revision": 11,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z3JTW5",
+      "items": [
+        "sha256:14e18fec8be88de37c513137f0bd2c0c8eeab7a36fcf7aab1a6465c289d4deff",
+        "sha256:aebf88e180e005b092ed0049850a4c3746be007727982c02e4ada1e01f2efd18",
+        "sha256:c9154dd0b11d9076c092acef366586293d4ca9c40544d0b74c8fde09d9900e98",
+        "sha256:ca6171958f4377373c0ed3aa453c1fa6c12663569fc61aba36762ed69981a758"
+      ],
+      "reason": "The card identifies test-file class and retained Lean uncertainty coverage.",
+      "sources": [
+        {
+          "blob": "e387e20d2d112b8a2e55682a24f40865dfcbc25c",
+          "path": "mcp/tests/test_read_anchor_memo.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_read_anchor_memo.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZBPETT",
+      "items": [
+        "sha256:95ed61b2e455ec7c90dd1307ad4b2598687e1d275c734d314dcf4dc8fc2bfef4"
+      ],
+      "reason": "The named Lean constant identifies the registered route consumed by binding and lookup.",
+      "subject": "hunk:sha256:95ed61b2e455ec7c90dd1307ad4b2598687e1d275c734d314dcf4dc8fc2bfef4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZFG6J1",
+      "items": [
+        "sha256:8c5e9bd381872142b9656de3ab0c1d9e6001c34b1bdaaa074718a7640c981e5d",
+        "sha256:f8bc129075a166e7df1c4ac48525010699f309e10f22df56c5775b66f814cf06"
+      ],
+      "reason": "The new card records physical declaration extents, prefixes, continuation boundaries and source names.",
+      "sources": [
+        {
+          "blob": "65a4d912f645757bffe1c60412ae7026e4ede482",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_declarations.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/lean_declarations.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZGMM1A",
+      "items": [
+        "sha256:f2218958341bed8cc521275ff1fcad641ef80de2de5ee6261fe32f35c26482a4"
+      ],
+      "reason": "The canvas passes the selected grammar to shared span lookup and preserves its single-span requirement.",
+      "subject": "hunk:sha256:f2218958341bed8cc521275ff1fcad641ef80de2de5ee6261fe32f35c26482a4"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

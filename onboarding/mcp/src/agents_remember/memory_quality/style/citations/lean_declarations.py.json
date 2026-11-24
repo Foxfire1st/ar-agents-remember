@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_declarations.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "65a4d912f645757bffe1c60412ae7026e4ede482",
+        "content": "sha256:d164d1319891967fdbba7134933f8cff258ed6dbbdac38cae6061e54258a2cfa",
+        "locator": {
+          "kind": "symbol",
+          "name": "declarations"
+        }
+      },
+      "id": "RLZ-9MWVFQ",
+      "invariant": "INV-WZ8R0Q",
+      "origin": {
+        "handoffEntry": "SUB-R01-lean-source",
+        "leaf": "261123-SUB-L1"
+      },
+      "rationale": "Tracks command layout, prefixes and nesting to emit named extents.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`declarations` scans the masked physical lines and emits named source extents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65a4d912f645757bffe1c60412ae7026e4ede482",
+            "content": "sha256:d164d1319891967fdbba7134933f8cff258ed6dbbdac38cae6061e54258a2cfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "declarations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

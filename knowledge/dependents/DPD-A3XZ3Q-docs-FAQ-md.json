@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "81c44e32ad68941622722d4c7900016b8df585f0",
-    "commit": "5b50fca484c3b4ecb2514379d8bf6498c8871d71",
+    "codeTree": "bd31c6a162e2cc11d351593680fee5ce294aa26a",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The FAQ still describes path-based card reads, the index scoped to the loaded build and memory tree, and task creation through task_doc.",
-    "task": "261112-BUG-L12",
+    "statement": "The FAQ's path-based card and task workflow remains accurate alongside the clarified Lean citation examples.",
+    "task": "261123-SUB-L1",
     "uncommitted": true
   },
   "document": "docs/FAQ.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -81,7 +81,7 @@
       "path": "skills/l-01-agent-lifecycles/reference/curator/change-routing.md"
     },
     {
-      "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+      "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
     },

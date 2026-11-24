@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "860cbf9a7ac70f3fdb2423bcddc66b3a0b5c1106",
-    "commit": "3450a1a1552db524bdbace93c3992311a778a53e",
+    "codeTree": "6e8e0e0d5d8cc2950f90d4f5f67aa32a0b59f206",
+    "commit": "9bc700a73cc35d60ba80d7fb00fa883dabcf8227",
     "role": "curator",
-    "statement": "The concepts guide accurately describes archived seats and the plug-in’s hand-off signal, and it ties the leaf worklist and mandatory gate to the contract’s bases and the exact candidate trees.",
-    "task": "261112-BUG-L21",
+    "statement": "The document describes the contract-recorded leaf bases, the exact candidate gate, and the converted current and stale drift summary.",
+    "task": "261123-SUB-L1",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -386,7 +386,7 @@
       "path": "mcp/src/agents_remember/tasks/document_refs.py"
     },
     {
-      "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+      "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
     },

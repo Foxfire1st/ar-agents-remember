@@ -381,12 +381,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
             "content": "sha256:92172fc1b54d6354a218b204d498ade6b8411383066675a2aa0d97dc5756caf8",
             "locator": {
-              "end": 77,
+              "end": 92,
               "kind": "line_range",
-              "start": 77
+              "start": 92
             },
             "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
           },
@@ -513,7 +513,7 @@
         },
         {
           "anchor": {
-            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
             "content": "sha256:d1cb107832fa807b37b374922855df001cd309c13a97866d10628925183eadbb",
             "locator": {
               "end": 41,
@@ -840,7 +840,7 @@
         },
         {
           "anchor": {
-            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
             "content": "sha256:d2d292cf3d434dceae618e92e3928f83c2f728fc69c5870453f9396bceac4558",
             "locator": {
               "end": 17,
@@ -1711,7 +1711,7 @@
         },
         {
           "anchor": {
-            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
             "content": "sha256:4e75fbc5380b5de9de6fbf8fc60b2b909084bb91d10a987d17768f787b4d15e9",
             "locator": {
               "end": 47,
