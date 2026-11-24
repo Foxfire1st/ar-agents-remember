@@ -16,6 +16,8 @@ The control owner validates the addressed generation and current code and memory
 
 The public surface is `LifecycleControlCommand` and `control_operation`. It revalidates the configured contract and generation under lease. Direct cancellation checks the retained receipt and proves that the generation published no Git output before publishing cancellation. Direct recovery uses the admitted input and settles a completed closing receipt in the same call.
 
+For historical closeout and integration, an absent record or an exact matching historical generation receives the retired-operation answer and the corresponding synchronous call. A mismatched generation returns `lifecycle-generation-changed` with the requested and observed generations. Historical records remain available for audit.
+
 ### Conventions
 
 Pure classifiers return typed observations; mutation owners publish write-ahead intent and exact evidence before advancing. Public projections carry bounded expected/observed facts and executable task-addressed next actions without leaking private operation identity.
@@ -84,3 +86,10 @@ control classification, and public responses therefore share one exhaustive acti
 A result added to an operation projection uses the shared envelope binder so the projected identity and state remain tied to the exact record.
 
 - The direct recovery handler continues its admitted generation inline and settles a completed closing receipt. [5]
+
+- The public tool table describes absent, matching and stale generation cases and the replacement calls. [6]
+- The operation journal guide describes inline closeout, the historical audit record and generation-bound controls. [7]
+- The integration guide describes the inline call and its lack of an operation journal record. [8]
+- An absent or matching historical record receives the replacement tool, with record details when present. [9]
+- A matching record is checked for retirement before reconciliation. [10]
+- The generation check distinguishes absent historical records from a mismatch and binds the mismatch answer to both generations. [11]

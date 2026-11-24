@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "4e2b7861807756639324908d7a400831e20dc28c",
+    "commit": "3450a1a1552db524bdbace93c3992311a778a53e",
     "role": "curator",
-    "statement": "The package README’s dashboard entry points and tool groups still match the existing commands with registry recovery behind dashboard startup.",
-    "task": "261112-BUG-L20",
+    "statement": "The package README’s dashboard entry points and tool groups still apply with startup registry recovery, and its linked tool reference now explains warning retention.",
+    "task": "261112-BUG-L22",
     "uncommitted": true
   },
   "document": "mcp/README.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "e0f70f991c3b38c1dbc9f586c0c6b70303b451cd",
+      "blob": "4b07e4ba39d073330dfcddff8057990ce854bc40",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }

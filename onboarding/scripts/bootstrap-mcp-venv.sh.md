@@ -52,6 +52,8 @@ the venv and locked packages but cannot substitute a managed interpreter.
 
 The Git hook selects a complete checkout-local `mcp/.venv`, or the primary clone’s shared `mcp/.venv`. Before selection it probes the pinned runtime capabilities and imports both quality tools and scope reporting. An incomplete environment stops with the bootstrap repair command; repository-root venvs and system Python are not alternate hook environments.
 
+After selecting its interpreter, the Git hook prepends the current checkout's `mcp/src` to `PYTHONPATH`, including when it uses the complete environment from the primary clone.
+
 ### Todos
 
 None recorded.
@@ -83,3 +85,5 @@ This card uses repository-owned code and test references and invokes no sibling-
 
 The runtime version and provenance are declared in `scripts/python-runtime-contract.env`;
 bootstrap freezes dependency resolution with `uv sync --frozen` against the MCP project.
+
+- The hook prepends the checkout's code to any inherited Python search path. [6]

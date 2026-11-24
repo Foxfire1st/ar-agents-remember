@@ -38,7 +38,7 @@ The current ordinary public source roster has 44 names, including mounted knowle
 > **Retained historical source account — superseded by the current route account:**
 > The answer policy is presently mixed rather than uniformly final: L100's `retire_child` and `role_start_set`, and L109/L111 tools, retain named interim rows at 4,000 tokens; `role_message` and `server_info` have explicit 4,000-token exceptions. L110 memory/coherence tools now have `SHAPED_TOOL_BOUNDS` between 400 and 1,500 tokens, including 850 for curator coherence. Retained drift/migration bound entries do not advertise removed tools. L112 final rows assign `runtime_install` 600 tokens and `dispatch_agent` 1,500. Lookup checks exceptions, shaped bounds, interim ownership, then L112 final rows, and otherwise returns the 4,000-token net. General lists have a 20-entry cap; status projections use a 10-entry cap where selected, and overflow has a separate 400-token short form. These are source declarations, not a fresh measurement that every delivered answer meets them. Logging failure is reported without failing the underlying call.
 
-Over-bound answers keep the exact available result locator and the final cut hint. The shared short-form fitter keeps declared whole values or fitting names and sizes for omissions. Fitting outcome and next-action fields precede the locator in the delivered answer. The [declared-field helper](tools/tool_answer_short_fields.py.md) owns the tool/outcome declarations and their type checks.
+Over-bound answers keep the exact available result locator and the final cut hint. The shared short-form fitter keeps declared whole values or fitting names and sizes for omissions. Fitting outcome and next-action fields precede the locator in the delivered answer. The guard fits error text before warning text and warning text before optional scalars. A cut warning keeps its prefix and `warningCut`, or the marker alone when no text fits. The role_start bound is 600 tokens, and the role_message exception applies a 4,000-token bound. The [declared-field helper](tools/tool_answer_short_fields.py.md) owns the tool/outcome declarations and their type checks.
 
 Recorded landing uses a 700-token answer bound and the 400-token cut. Its short declaration offers the next-step sentence and tool, stale count and capped record keys. The exact saved-result locator takes priority. The guard keeps the next step and record keys when they fit and names omitted keys when their omission notice fits.
 
@@ -215,7 +215,7 @@ Historical citation receipt retained from reference 58 in the paired sidecar at 
 
 - **Retained historical source account — superseded by the current route account:** Capsule skill references and semantic digest exclude diagnostic output. [309]
 
-- The composed `PUBLIC_TOOLS` declares 44 names, and `SHAPED_TOOL_BOUNDS` carries the final task/landing/role delivery rows, including `direct_execution_grant` at 150 tokens. [315]
+- The public roster declares 44 tool names. Shaped delivery rows include role_start at 600 tokens and direct_execution_grant at 150 tokens. [315]
 
 - Citation responses carry optional background identity. [338]
 
@@ -533,7 +533,7 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 
 - Completion validates the whole result, selects a supplied/default answer and translates the selected answer's lifecycle guidance. [297]
 
-- L110 shaped bounds and L112 final bounds coexist with interim rows and exceptions. [298]
+- Shaped bounds, final rows, interim ownership and exceptions each participate in bound resolution. [298]
 
 - Provider diagnostics remains a schema default despite public removal. [299]
 

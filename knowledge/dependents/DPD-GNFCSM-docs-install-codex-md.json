@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
-    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
+    "codeTree": "eb92d53bd6de812e9d52fc2ae1898fbb432b5b1b",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The Codex guide correctly states the 300-second role-seat default, omission of a per-server timeout on both Paseo transports, and Codex’s rejection of a timeout-only server table.",
-    "task": "261112-BUG-L19",
+    "statement": "The Codex guide correctly describes implicit Bootstrap using the caller’s offered Codex provider and explicit selection with agent=\"codex\".",
+    "task": "261112-BUG-L22",
     "uncommitted": true
   },
   "document": "docs/install/codex.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,7 +61,7 @@
       "path": "mcp/src/agents_remember/models/role_agents.py"
     },
     {
-      "blob": "6fa1ea0b40930f3f7b7eecbf2e1e53d6a88e6b7d",
+      "blob": "210872f08a0a898df592f68e2330120a451b3ea5",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
     },

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "f656446d055ec17803e8feef2aeda987efd15699",
+    "commit": "9bc700a73cc35d60ba80d7fb00fa883dabcf8227",
     "role": "curator",
-    "statement": "The features page still describes exact-candidate judgments and paired closeout with code attribution on the memory commit.",
-    "task": "261112-BUG-L21",
+    "statement": "The features page accurately describes exact-candidate judgments and paired closeout with code attribution on the memory commit, alongside per-tool answer bounds and the log locator for the whole result when recording succeeds.",
+    "task": "261112-BUG-L22",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 16,
+  "revision": 17,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -58,7 +58,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
     },
     {
-      "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+      "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },

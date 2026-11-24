@@ -17,6 +17,8 @@ through `[project.urls]`.
 
 Package data explicitly includes cli/*.mjs in addition to package_data assets, so the installed wheel carries the native JavaScript bridge next to its Python caller. Development sandbox tooling under scripts remains outside this package.
 
+The editable distribution in the uv lock carries the package version declared here. The runtime reads the installed distribution metadata and uses the same version when running from a source checkout without an install.
+
 ## Code Commentary
 
 ### Logic
@@ -218,3 +220,7 @@ later reader does not have to reconstruct it from a report.
 - Root pytest configuration selects four workers by default. [2]
 
 - Package data declares the general package-data tree and the canvas Markdown and JavaScript resources. Tests pin the general and Markdown patterns and check the generated capability copy against the source. [18]
+
+- The editable locked distribution records version 3.0.6. [19]
+- The package metadata declares version 3.0.6. [20]
+- The runtime reads package metadata and uses version 3.0.6 in an uninstalled checkout. [21]

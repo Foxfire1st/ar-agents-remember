@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "860cbf9a7ac70f3fdb2423bcddc66b3a0b5c1106",
-    "commit": "3450a1a1552db524bdbace93c3992311a778a53e",
+    "codeTree": "f656446d055ec17803e8feef2aeda987efd15699",
+    "commit": "9bc700a73cc35d60ba80d7fb00fa883dabcf8227",
     "role": "curator",
-    "statement": "The concepts guide accurately describes archived seats and the plug-in’s hand-off signal, and it ties the leaf worklist and mandatory gate to the contract’s bases and the exact candidate trees.",
-    "task": "261112-BUG-L21",
+    "statement": "The concepts guide correctly describes archived-seat message refusal and the plug-in’s no-hand-off signal, ties the leaf worklist and mandatory knowledge gate to the recorded bases and exact candidate trees, and explains how a short answer marks overflow and locates the whole result when recording succeeds.",
+    "task": "261112-BUG-L22",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -371,7 +371,7 @@
       "path": "mcp/src/agents_remember/controlplane/closeout_queue_store.py"
     },
     {
-      "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+      "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },

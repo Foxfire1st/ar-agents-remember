@@ -322,7 +322,7 @@
       ]
     },
     "15": {
-      "note": "The starting receipt carries task-copy metadata. Missing requirement copies produce a warning and later canonical task publication refreshes them. The start answers with the projected identity and handover addresses.",
+      "note": "The starting receipt carries task-copy metadata and puts missing requirement filenames ahead of step-up advice. Later canonical task publication refreshes the copies when the files exist. The start answers with the projected identity and handover addresses.",
       "targets": [
         {
           "anchor": {
@@ -338,8 +338,8 @@
         },
         {
           "anchor": {
-            "blob": "6fa1ea0b40930f3f7b7eecbf2e1e53d6a88e6b7d",
-            "content": "sha256:8c1e0a60ea38f9776239de9e18393460648b8e07432b0c5ec3cdacd0e72df8ed",
+            "blob": "210872f08a0a898df592f68e2330120a451b3ea5",
+            "content": "sha256:b32995aafbb8bc8d800d958b09d2c247f3f3dbd21205dd4a19555053503feece",
             "locator": {
               "end": 57,
               "kind": "line_range",
@@ -426,12 +426,12 @@
       ]
     },
     "19": {
-      "note": "Missing-copy and step-up warnings coexist in the launch request rules.",
+      "note": "The launch-warning builder puts missing requirement filenames before the step-up notice.",
       "targets": [
         {
           "anchor": {
-            "blob": "6fa1ea0b40930f3f7b7eecbf2e1e53d6a88e6b7d",
-            "content": "sha256:8c1e0a60ea38f9776239de9e18393460648b8e07432b0c5ec3cdacd0e72df8ed",
+            "blob": "210872f08a0a898df592f68e2330120a451b3ea5",
+            "content": "sha256:b32995aafbb8bc8d800d958b09d2c247f3f3dbd21205dd4a19555053503feece",
             "locator": {
               "kind": "symbol",
               "name": "missing_copies_receipt_warning"

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+        "blob": "3a38c925df192a11e3212a55a233b79f01f81c71",
         "content": "sha256:2505e3288918d52310e2ebce75ac7047d1174261ac751084ccd2281d03768d59",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+        "blob": "3a38c925df192a11e3212a55a233b79f01f81c71",
         "content": "sha256:6e229ec25845c182a91164a420d5e2af3cedaef325edf411338c336ac35bf363",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,24 @@
     },
     {
       "anchor": {
-        "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+        "blob": "3a38c925df192a11e3212a55a233b79f01f81c71",
+        "content": "sha256:97084fbc730af1bfee192a8566cd72a0d6d048992b096d51e90c5a32e8a87023",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerGuardTests.test_warning_cut_marker_remains_when_error_uses_the_available_room"
+        }
+      },
+      "facet": "The marker remains when the error consumes the available warning space and survives a refit with logError.",
+      "id": "PRF-C3B3A3",
+      "invariant": "INV-2N79MT",
+      "origin": {
+        "handoffEntry": "BUG-R22@v1 §1",
+        "leaf": "261112-BUG-L22"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3a38c925df192a11e3212a55a233b79f01f81c71",
         "content": "sha256:9d4cd35afa708b7815a0297a614fafd90c70fda8ed9b015dac0aa846c8b8251d",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+        "blob": "3a38c925df192a11e3212a55a233b79f01f81c71",
         "content": "sha256:045dbe0d371b0bf690380e33826bf6495281226e8692ed7ad1db26dc642e2f8b",
         "locator": {
           "kind": "symbol",
@@ -71,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+        "blob": "3a38c925df192a11e3212a55a233b79f01f81c71",
         "content": "sha256:60f182440ed47401a9b84e23a1f57890cbef62a03c10afd55235025e8d76c0f7",
         "locator": {
           "kind": "symbol",
@@ -88,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+        "blob": "3a38c925df192a11e3212a55a233b79f01f81c71",
         "content": "sha256:1d0cf850f6ec871bc220463883fc4135837833f8000904eaedf43c43c9964ff8",
         "locator": {
           "kind": "symbol",
@@ -105,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+        "blob": "3a38c925df192a11e3212a55a233b79f01f81c71",
         "content": "sha256:43b7bfbc194dec81b846cc41f366f13b9d271e834e95e6f67cfa6d85dfde1ce4",
         "locator": {
           "kind": "symbol",
@@ -122,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+        "blob": "3a38c925df192a11e3212a55a233b79f01f81c71",
         "content": "sha256:cc5a344f405c871aa9e41e12ee4f32a049a2f80d7ab9438a204354d82c752887",
         "locator": {
           "kind": "symbol",
@@ -139,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+        "blob": "3a38c925df192a11e3212a55a233b79f01f81c71",
         "content": "sha256:189c5304d23232bc61adafda41caca2eb80be286a1c38c9a2bab3741e0320e25",
         "locator": {
           "kind": "symbol",
@@ -162,7 +179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+            "blob": "3a38c925df192a11e3212a55a233b79f01f81c71",
             "content": "sha256:893a4703b6b8e49bb45cfc1d2ef35f88622c6b80f7edc5773c604be7197f2eef",
             "locator": {
               "end": 170,
@@ -179,7 +196,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+            "blob": "3a38c925df192a11e3212a55a233b79f01f81c71",
             "content": "sha256:684365e317018704897be7d6c60c2006fb5dd5ce68c4ba854e8bfcc6d772ec93",
             "locator": {
               "end": 258,
@@ -191,12 +208,12 @@
         },
         {
           "anchor": {
-            "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+            "blob": "3a38c925df192a11e3212a55a233b79f01f81c71",
             "content": "sha256:cc5a344f405c871aa9e41e12ee4f32a049a2f80d7ab9438a204354d82c752887",
             "locator": {
-              "end": 491,
+              "end": 519,
               "kind": "line_range",
-              "start": 456
+              "start": 484
             }
           },
           "kind": "test"
@@ -208,12 +225,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+            "blob": "3a38c925df192a11e3212a55a233b79f01f81c71",
             "content": "sha256:dbe902e394a10fa889c8b4a21ee4078df166ebe964de5f29fd450796289e567c",
             "locator": {
-              "end": 531,
+              "end": 559,
               "kind": "line_range",
-              "start": 515
+              "start": 543
             }
           },
           "kind": "test"
@@ -225,7 +242,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+            "blob": "3a38c925df192a11e3212a55a233b79f01f81c71",
             "content": "sha256:43b7bfbc194dec81b846cc41f366f13b9d271e834e95e6f67cfa6d85dfde1ce4",
             "locator": {
               "end": 77,
@@ -237,12 +254,29 @@
         },
         {
           "anchor": {
-            "blob": "3977d6b54e7027a6f4cfffacf4fd7986e088bfe0",
+            "blob": "3a38c925df192a11e3212a55a233b79f01f81c71",
             "content": "sha256:189c5304d23232bc61adafda41caca2eb80be286a1c38c9a2bab3741e0320e25",
             "locator": {
               "end": 124,
               "kind": "line_range",
               "start": 79
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Error priority leaves a warning marker when no warning text fits. The marker remains on a refit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a38c925df192a11e3212a55a233b79f01f81c71",
+            "content": "sha256:97084fbc730af1bfee192a8566cd72a0d6d048992b096d51e90c5a32e8a87023",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 282
             }
           },
           "kind": "test"

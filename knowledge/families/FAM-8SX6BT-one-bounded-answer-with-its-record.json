@@ -5,7 +5,7 @@
     ],
     "justification": "Envelope/list shaping, overflow measurement and location retention, record placement/admission/redaction, authored row contracts and diagnostic consumers jointly preserve the caller answer and its retrievable whole record; no one member supplies that combined obligation. The revised overflow priority keeps exact recorded location and final hint even when mandatory content cannot fit the target. W8 restores final hint ordering after late logError changes without changing membership, routes or logging admission."
   },
-  "guarantee": "Every tool answer holds only what its caller needs next under its stated bound and overflow policy, and every admitted call leaves its whole record in the daily log under the byte budgets: the ordinary projection strips the envelope and recursively caps lists, a fitting declared list taken from the validated whole result stays whole, over-bound answers leave as measured short forms targeting 400 tokens while retaining the exact recorded-result location and final cut hint even when the recorded path and its hint cannot fit after other droppable content is removed, fitting declared values retain their complete type and value, fitting omission names and sizes hold their place before the next field, fitting outcomes and actions appear before the available locator, the log files lines and details with secrets omitted, terminating calls route to the root, and the per-tool table states each answer's fields, uses, cases and bounds — writes that cannot be admitted (folder-budget conflict, oversize detail, unwritable location) are dropped and counted, never failing the call — so a later leaf rebuilding any answer inherits the same bound and overflow priority, placement and contract.",
+  "guarantee": "Every tool answer holds only what its caller needs next under its stated bound and overflow policy, and every admitted call leaves its whole record in the daily log under the byte budgets: the ordinary projection strips the envelope and recursively caps lists, a fitting declared list taken from the validated whole result stays whole, over-bound answers leave as measured short forms targeting 400 tokens while retaining the exact recorded-result location and final cut hint even when the recorded path and its hint cannot fit after other droppable content is removed, fitting declared values retain their complete type and value, fitting omission names and sizes hold their place before the next field, fitting outcomes and actions appear before the available locator, the log files lines and details with secrets omitted, terminating calls route to the root, and the per-tool table states each answer's fields, uses, cases and bounds — writes that cannot be admitted (folder-budget conflict, oversize detail, unwritable location) are dropped and counted, never failing the call — so a later leaf rebuilding any answer inherits the same bound and overflow priority, placement and contract. The selected role_start bound is 600 tokens. In an over-bound answer, the guard fits warning text after error text and before optional scalars. A cut warning keeps its marker through refits and when no warning text fits. A role start puts missing filenames first. The warning prefix discloses the names that fit, and any recorded whole result keeps the original notice.",
   "id": "FAM-8SX6BT",
   "members": [
     "INV-B7J1PZ",
@@ -22,7 +22,10 @@
     "INV-KJFNBQ",
     "INV-180VCA",
     "INV-XJ7GV5",
-    "INV-WJ9ZD7"
+    "INV-WJ9ZD7",
+    "INV-2N79MT",
+    "INV-1N75CV",
+    "INV-RF4W8Q"
   ],
   "origin": {
     "handoff": {
@@ -32,7 +35,7 @@
     "leaf": "260928-MIK-L108",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "routes": [
     "mcp/src/agents_remember/models/tools",
     "mcp/src/agents_remember/application",
