@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "1fe5a188016f103dd4be24355b9b017ebccb24e4",
+        "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
         "content": "sha256:4fbb7d2fd4f5ccdd2ab4125995851a14166640a7cd034a8a0c74ca0bc38eb0d1",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "1fe5a188016f103dd4be24355b9b017ebccb24e4",
+        "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
+        "content": "sha256:86743b0257dbc111b96cbd5f6eacdf5633dd4cccc167f6321d00f0facf5f7069",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_lean_alias_names_resolve_at_their_command_extents"
+        }
+      },
+      "facet": "Checks writer and recorded-reader ranges per alias binder, including attached prefixes, a continued target, rooted and quoted spellings, skipped slots and the next definition.",
+      "id": "PRF-94XV9K",
+      "invariant": "INV-R1R0Q8",
+      "origin": {
+        "handoffEntry": "SUB-R02@v1 rule 4 alias commands",
+        "leaf": "261123-SUB-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
         "content": "sha256:4fbb7d2fd4f5ccdd2ab4125995851a14166640a7cd034a8a0c74ca0bc38eb0d1",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "1fe5a188016f103dd4be24355b9b017ebccb24e4",
+        "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
         "content": "sha256:29b2edaf4d24c7196fa1cc1ec0af99191e47b72aa8395e407a91386b4d52acb6",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "1fe5a188016f103dd4be24355b9b017ebccb24e4",
+        "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
         "content": "sha256:c95f2367f2bb284020702358859d27fc9f8b6911289dad4c1261565604000409",
         "locator": {
           "kind": "symbol",
@@ -71,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "1fe5a188016f103dd4be24355b9b017ebccb24e4",
+        "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
         "content": "sha256:c0a2151b9b63f794ea1c83db902d3e6257b8bac24b49a8871cf8046d5b0880a2",
         "locator": {
           "kind": "symbol",
@@ -88,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "1fe5a188016f103dd4be24355b9b017ebccb24e4",
+        "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
         "content": "sha256:7eb8b4addc97c11e0ffe7b22dadfb9ea9c2cb5a2a3e3490c67d7807e4037ca71",
         "locator": {
           "kind": "symbol",
@@ -111,11 +128,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fe5a188016f103dd4be24355b9b017ebccb24e4",
+            "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
             "content": "sha256:4fbb7d2fd4f5ccdd2ab4125995851a14166640a7cd034a8a0c74ca0bc38eb0d1",
             "locator": {
               "kind": "symbol",
               "name": "test_lean_ambiguous_writer_names_full_choices_and_reader_returns_both_ranges"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The writer and recorded reader agree on source extents for alias binders and the following definition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
+            "content": "sha256:86743b0257dbc111b96cbd5f6eacdf5633dd4cccc167f6321d00f0facf5f7069",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lean_alias_names_resolve_at_their_command_extents"
             }
           },
           "kind": "test"
