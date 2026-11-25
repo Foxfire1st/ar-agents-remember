@@ -6,7 +6,7 @@
 
 `retire_native_seat` resolves the bound caller and one native leaf agent from current and archived launch receipts before host effects. It refuses unknown, duplicated or callerless targets. The bound role caller must be the receipt’s original starter, including on an idempotent repeat. Dashboard replacement has its own explicit authority in the launch liveness owner; it is not a parentless admission to this MCP retirement entry. Empty IDs do not revive the removed hosted-seat implementation.
 
-An active turn requires `interrupt_turn`. Retirement archives rather than deletes, ends that recipient’s waiting messages, and records the caller, time and reason without giving the child a turn. A repeated authorized retirement returns already-retired; authorization is still checked on a repeat. A current plus history duplicate is ambiguous, not a preferred current record.
+An active turn requires `interrupt_turn`. Retirement archives rather than deletes, settles any waiting messages (recording their text in the launch receipt and removing the held-message store without creating an empty one) via `settle_held_store`, and records the caller, time and reason without giving the child a turn. A repeated authorized retirement checks authorization, settles any still-present held store on disk, and returns `already-retired`. A current plus history duplicate is ambiguous, not a preferred current record.
 
 The scan reads mixed report folders through `read_enumerated_receipt`, passing over valid JSON attachments that are not current-line launch receipts while retaining unreadable-document refusals.
 
@@ -19,7 +19,9 @@ The native retirement archives before `_record_retirement` writes the launch rec
 
 
 
+
 - The native entry checks original-starter authority before idempotent success or archive. Anchor: `_retire_seat` [1]
+
 
 
 
@@ -29,7 +31,9 @@ The native retirement archives before `_record_retirement` writes the launch rec
 
 
 
+
 - Host archive precedes receipt recording; failure is reported rather than rounded up. Anchor: `_archive_retiree` `_record_retirement` [3]
+
 
 
 

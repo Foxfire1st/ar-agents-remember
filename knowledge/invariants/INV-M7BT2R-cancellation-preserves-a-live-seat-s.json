@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Closure predicates in cli/role_held_store.py, liveness settlement in cli/role_launch_liveness.py, and selection checks in cli/paseo_role_recipients.py enforce the corrected closure boundary across three modules."
+  },
+  "applicability": "Closure evaluation in held-store settlement, liveness readings, and message recipient selection.",
+  "conditions": [
+    "Closure requires retiredBy, status rejected, leafArchive.closing, or host-confirmed archived or gone state.",
+    "A send validates request, agent, workspace, and heldStoreGeneration before filing or holding."
+  ],
+  "exclusions": [
+    "A stopped status alone (such as an idle seat after a cancelled turn) never closes a seat or settles its store."
+  ],
+  "id": "INV-M7BT2R",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The Worker freeze report binds focused verification on this tree."
+      ],
+      "path": "l38-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R38@v1 rule 3 closure evidence and send generation",
+    "leaf": "261112-BUG-L38",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Cancellation preserves a live seat's messages. Closure requires recorded retirement, rejected start, a closing archive mark, or host-confirmed archival or absence. A send keeps the generation it selected.",
+  "supersedes": [],
+  "title": "Seat closure needs durable or host proof and sends keep selected generation",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
+}

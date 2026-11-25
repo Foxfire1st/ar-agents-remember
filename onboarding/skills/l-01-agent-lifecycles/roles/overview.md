@@ -261,7 +261,9 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 
 
+
 - Native enclosure preparation reads contract-scoped status and refuses unsuccessful preparation; this alone does not prove the historical whole-path lineage claim. [43]
+
 
 
 - Graph absence declares no dependencies and resolves the atomic shape without serializing masters.  Anchor: `resolve_scheduling_mode`, `effective_execution_nature` [44]

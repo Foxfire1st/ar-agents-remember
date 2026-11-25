@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e3aeef936b42a9eed87c2c1bf4687b6b9cb36d62",
+        "content": "sha256:1d5b70c44cba43d536c59a80d8cf8a3895a22f10045427cc69aae85f75c87f32",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_terminal_archive"
+        }
+      },
+      "id": "RLZ-A24GS2",
+      "invariant": "INV-PB6BZ0",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 4 provider skip",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "Distinguishes the fresh request from one whose archive bytes already fix the operation and arguments.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The terminal preparation boundary refuses retained private preparation and ambiguous Git mutation intent.",
@@ -41,8 +60,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "679738f5c67a232503aaba3bd574cfe307d33620",
-            "content": "sha256:82bd75e61cab5ed4053e17c48428a418a317411caea5f88538830609b97e91d4",
+            "blob": "e3aeef936b42a9eed87c2c1bf4687b6b9cb36d62",
+            "content": "sha256:75a77fa2d5815ca7184865a79f11b4348562a0ca43b9251caedcdf292b4ed855",
             "locator": {
               "kind": "symbol",
               "name": "terminal_archive_required_result"
@@ -115,7 +134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "679738f5c67a232503aaba3bd574cfe307d33620",
+            "blob": "e3aeef936b42a9eed87c2c1bf4687b6b9cb36d62",
             "content": "sha256:7b167e9d5b7d98e5937478d9ba759c81ff92f854f5a3505184fa4445d32882d6",
             "locator": {
               "kind": "symbol",

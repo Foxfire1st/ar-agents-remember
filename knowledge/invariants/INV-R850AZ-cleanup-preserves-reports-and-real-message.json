@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Real-message move-out in worktrees/group_messages.py and held-store settlement in cli/role_held_store.py together guarantee no needed report or waiting message is lost at deletion."
+  },
+  "applicability": "Terminal move-out of a task folder and closure of any seat holding waiting messages.",
+  "conditions": [
+    "Regular files under a real workspace messages directory copy into canonical notes with collision-safe names before folder removal.",
+    "Closing a seat persists waiting message texts into heldStoreClosures on the launch receipt before unlinking the store."
+  ],
+  "exclusions": [
+    "A messages symlink is removed without being followed; canonical message files are never deleted."
+  ],
+  "id": "INV-R850AZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The Worker freeze report binds focused verification on this tree."
+      ],
+      "path": "l38-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R38@v1 rule 2",
+    "leaf": "261112-BUG-L38",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Cleanup preserves reports and real message files in canonical notes, and closing a seat records its waiting messages with their exact text in the launch record.",
+  "supersedes": [],
+  "title": "Move-out saves reports and real messages; seat close records waiting text",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
+}

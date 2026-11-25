@@ -31,7 +31,9 @@ Preparation calls composition; the receipt restoration path and delayed held-sea
 
 
 
+
 - Held-seat opening calls restoration before sending the opening message. With neither recorded artifact reference, the helper validates the saved instruction details directly. [4]
+
 
 
 
@@ -40,5 +42,3 @@ Preparation calls composition; the receipt restoration path and delayed held-sea
 
 - Detail content is link-bound against the shipped corpus and re-digested before it is frozen. [6]
 - The baseline is bound along its instruction origins, and incomplete origins or unbound relative links refuse. [7]
-
-- Receipt restoration invokes the detail validator. Anchor: `_restore_launch_handover` [4]

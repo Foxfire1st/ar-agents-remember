@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+        "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
         "content": "sha256:4783839ffb9f4263ff8babc726eeee096a034b7e538f7e4d6ac6d0ab385adf70",
         "locator": {
-          "end": 893,
+          "end": 894,
           "kind": "line_range",
-          "start": 893
+          "start": 894
         }
       },
       "id": "RLZ-13ZE2T",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+        "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
         "content": "sha256:cba32f5e008c1e624e17bde27b2724781142040bb9dcef401e396d64dc308d59",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+        "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
         "content": "sha256:cba32f5e008c1e624e17bde27b2724781142040bb9dcef401e396d64dc308d59",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+        "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
         "content": "sha256:3ddacb8bd5f0122befc3730a4c21219d9b5cee1a1ab9ae73fc27f26bb0dd1a2d",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+        "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
         "content": "sha256:0d4616c9c928bd4215f0cb657bfa5b9ec8bd5764b1eb62c24befb667145c76db",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+        "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
         "content": "sha256:4a4fbcdc676ad9917989247e03cc4a140247855c8d37a56e5289407799f4d305",
         "locator": {
           "kind": "symbol",
@@ -112,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+        "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
         "content": "sha256:0a1920a2dc1e0b2cc2579092042bd0ceee94bb1fc401b9038a32668a90e8d710",
         "locator": {
           "kind": "symbol",
@@ -135,8 +135,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
-            "content": "sha256:108053a14cda04d0e17993e2857e179f64c5761a9c7dc2f5b2bacd8a5881831f",
+            "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
+            "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
             "locator": {
               "kind": "symbol",
               "name": "run_runtime_install"
@@ -169,12 +169,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
+            "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
             "content": "sha256:b2a7e2beeba2fa2b9a24be0dcd2f4db50d65523ddd43812a1c2eceb6b64bc0ff",
             "locator": {
-              "end": 29,
+              "end": 42,
               "kind": "line_range",
-              "start": 26
+              "start": 39
             },
             "path": "mcp/src/agents_remember/application/runtime/install.py"
           },
@@ -187,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
             "content": "sha256:cba32f5e008c1e624e17bde27b2724781142040bb9dcef401e396d64dc308d59",
             "locator": {
               "kind": "symbol",
@@ -203,7 +203,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
             "content": "sha256:3ddacb8bd5f0122befc3730a4c21219d9b5cee1a1ab9ae73fc27f26bb0dd1a2d",
             "locator": {
               "kind": "symbol",
@@ -214,7 +214,7 @@
         },
         {
           "anchor": {
-            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
             "content": "sha256:4a4fbcdc676ad9917989247e03cc4a140247855c8d37a56e5289407799f4d305",
             "locator": {
               "kind": "symbol",
@@ -230,12 +230,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
             "content": "sha256:2ef38c918d540dc4358ecdd3376fb5320f8fe435146e03808c8d10e624feb0a0",
             "locator": {
-              "end": 739,
+              "end": 740,
               "kind": "line_range",
-              "start": 739
+              "start": 740
             }
           },
           "kind": "code"
@@ -264,7 +264,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
             "content": "sha256:5d9c5e9b23bf1ebd2591444a99b45bd6a3dcb5c14ea375393c4d5521cc611c84",
             "locator": {
               "kind": "symbol",
@@ -280,7 +280,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
             "content": "sha256:12806b18d77784455a5a12d4bb5375195bd0db2501210f860cc12a9491151241",
             "locator": {
               "kind": "symbol",
@@ -296,7 +296,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
             "content": "sha256:48d2a7fd0ef42986a9ec3e7c52a3fd10726d7ef7e0c1557a34c6fca70f100256",
             "locator": {
               "kind": "symbol",
@@ -312,7 +312,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
             "content": "sha256:e50df3e24f617cc0af0d8d9271e33df35749e8c9dab80a6fb473fe38b61cd1de",
             "locator": {
               "kind": "symbol",
@@ -328,12 +328,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
             "content": "sha256:95e0be886d78f206aeb81e2b4cf47e735b6d9a1f2328f6d72dbcf1717d4ced2f",
             "locator": {
-              "end": 688,
+              "end": 689,
               "kind": "line_range",
-              "start": 636
+              "start": 637
             }
           },
           "kind": "code"
@@ -345,12 +345,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
             "content": "sha256:04fbf5329c29670620a4617c8ccbf988d1dadcae8d3119a76b5a89909cd1e3c0",
             "locator": {
-              "end": 895,
+              "end": 896,
               "kind": "line_range",
-              "start": 886
+              "start": 887
             }
           },
           "kind": "code"
@@ -358,16 +358,16 @@
       ]
     },
     "21": {
-      "note": "The application entry adds the dashboard ensure and the running-server inventory to the install result.\n\nAnchor: `server_inventory(config)`",
+      "note": "The application entry adds the dashboard ensure and the running-server inventory to the install result. Anchor: `server_inventory(config)`",
       "targets": [
         {
           "anchor": {
-            "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
-            "content": "sha256:f749b3c6297d4f7e9a1dfc1204dad2aa0d3c50f8cb818255e85d73011d1780ef",
+            "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
+            "content": "sha256:3620af6e53ecd308683b7b34dd82a196be73dc8a9e45c9a7c4b87bc8dbd8b872",
             "locator": {
-              "end": 46,
+              "end": 77,
               "kind": "line_range",
-              "start": 30
+              "start": 43
             },
             "path": "mcp/src/agents_remember/application/runtime/install.py"
           },
@@ -380,7 +380,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
             "content": "sha256:e50df3e24f617cc0af0d8d9271e33df35749e8c9dab80a6fb473fe38b61cd1de",
             "locator": {
               "kind": "symbol",
@@ -396,12 +396,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
             "content": "sha256:a5b1cb83478f813c2f73aa99a54b77277b7d78efd1d1f651906e74bc2a6a8935",
             "locator": {
-              "end": 798,
+              "end": 799,
               "kind": "line_range",
-              "start": 795
+              "start": 796
             }
           },
           "kind": "code"
@@ -413,7 +413,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
             "content": "sha256:abfc956b9e0b363f04aa3a43dbb6fe7a376111e20d784182ec579cca5383d00e",
             "locator": {
               "kind": "symbol",
@@ -458,12 +458,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
             "content": "sha256:5da672fca24830b7c8cd2336508eb1a01245adcb6511a4bd59cfd921c62c0da7",
             "locator": {
-              "end": 829,
+              "end": 830,
               "kind": "line_range",
-              "start": 812
+              "start": 813
             }
           },
           "kind": "code"

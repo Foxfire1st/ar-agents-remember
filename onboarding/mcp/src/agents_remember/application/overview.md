@@ -1070,7 +1070,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 
 
 
+
 - **Retained historical source account — superseded by the current route account:** Native sibling preparation, held delivery and starter-owned retirement stay distinct from task acceptance. [480]
+
 
 - The reviewer projection reads the reviewed owner’s history from the resolved after index, ordered by attempt-file numbers, and supplies identical record-specific labels to outline and subject responses. [454]
 - The onboarding kind's five facts including sourceBlobs. [286]

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "90b927af24a44ebd73c846b887360ce7d3923270",
-        "content": "sha256:6332d11b071cc5e825c773e6dd90e91d6ae1aff3b7932c51633c1dff827721ce",
+        "blob": "88fbde767125f626b7b0982d05477b703c4962e9",
+        "content": "sha256:bd3af273ef1b49c2098d6c4bfbb2f9840ac49b7906c9cba912bef8f3410ed7dd",
         "locator": {
           "kind": "file"
         }
@@ -19,6 +19,58 @@
       "role": "presentation"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Coordination root scaffold and runtime-created dashboard, observer, server-registry, controlplane, and paseo-native-executions paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88fbde767125f626b7b0982d05477b703c4962e9",
+            "content": "sha256:0dd373eba9e248d409998a3e9a6aba76506833793b38b554a768ee27b62d4b60",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Host-home files under `<home>/agents-remember/` including `role-agents.json`, `host-activity.json`, and `provider-limits.json`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88fbde767125f626b7b0982d05477b703c4962e9",
+            "content": "sha256:ea78b1f23a7b0b0a574521721aabf8fe73b392625c5f1a494746468c7f2db43a",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 134
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Per-role scratch and report folders, `/var/tmp/agents-remember/` outside scratch, and handover-locator paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88fbde767125f626b7b0982d05477b703c4962e9",
+            "content": "sha256:c052360b3a3a7b7121464db09738624cc1d3cbaddc228717f33c7ad467f192ad",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

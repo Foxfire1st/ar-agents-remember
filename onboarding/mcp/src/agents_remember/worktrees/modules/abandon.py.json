@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "30231d7913eb526be260f641f1310d2349da4856",
+        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
         "content": "sha256:0e9e766c8340ff7875bf5d51602b28b28bf4db298606c2722b49ec966c455513",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "30231d7913eb526be260f641f1310d2349da4856",
+        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
         "content": "sha256:0133f2aed3e0146a26eeb89d0b71fc996abe5b86dccac45ca653fb8d1e1028fb",
         "locator": {
           "kind": "symbol",
@@ -39,12 +39,11 @@
     },
     {
       "anchor": {
-        "blob": "30231d7913eb526be260f641f1310d2349da4856",
-        "content": "sha256:3451c83cc9d0f29eb652854cdc8517a3e0ff3a66b12bbf8aaa30a8d2f3bae0f4",
+        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
+        "content": "sha256:7a8bc800a87e292fd8e32256ca718365cedf95d4154527b973cc9785fba22229",
         "locator": {
-          "end": 539,
-          "kind": "line_range",
-          "start": 483
+          "kind": "symbol",
+          "name": "_finish_abandon_without_remains"
         }
       },
       "id": "RLZ-6PXMTZ",
@@ -58,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "30231d7913eb526be260f641f1310d2349da4856",
+        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
         "content": "sha256:af34bd65f334ad4c015282ee8614c0dc2c1169e8bb7f9f4319e61c14e5da6bea",
         "locator": {
           "kind": "symbol",
@@ -76,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "30231d7913eb526be260f641f1310d2349da4856",
+        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
         "content": "sha256:041abe27538738bde04e44d55fed90807a912c4ffe40c64d7356ec59ae9cade6",
         "locator": {
           "kind": "symbol",
@@ -94,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "30231d7913eb526be260f641f1310d2349da4856",
-        "content": "sha256:f5a62b95d867cb9a5a376c224100b92df514de6fa4909cb4623fe3084dd2d182",
+        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
+        "content": "sha256:c15c995930ca31bdc5683cab6df878a9f9093926c581d04bc7d58245b931f64f",
         "locator": {
           "kind": "file"
         }
@@ -111,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "30231d7913eb526be260f641f1310d2349da4856",
+        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
         "content": "sha256:22bf37eb5fcf04e074994d4ff4942c4e2b8dcea156f5cf4af6ce765202373aa0",
         "locator": {
           "kind": "symbol",
@@ -129,12 +128,12 @@
     },
     {
       "anchor": {
-        "blob": "30231d7913eb526be260f641f1310d2349da4856",
+        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
         "content": "sha256:367c79d12a1064456921fa57c7b3d8ff8509efb2c529a25cc538d0e4b13fb901",
         "locator": {
-          "end": 372,
+          "end": 371,
           "kind": "line_range",
-          "start": 369
+          "start": 368
         }
       },
       "id": "RLZ-PJVT0S",
@@ -148,8 +147,8 @@
     },
     {
       "anchor": {
-        "blob": "30231d7913eb526be260f641f1310d2349da4856",
-        "content": "sha256:063d2be698dece9a4bfddd48f990cef97d9847ae4e36b564e34e0ef8f5b8354a",
+        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
+        "content": "sha256:def45ae4e1c84de55bbb63486136d4b5fa2db340d16fe804ee56f159372ece05",
         "locator": {
           "kind": "symbol",
           "name": "_abandon_directories"
@@ -166,8 +165,8 @@
     },
     {
       "anchor": {
-        "blob": "30231d7913eb526be260f641f1310d2349da4856",
-        "content": "sha256:87ad594177115fc04b50aff6eff5bd6b00773d0b5bc979042702cd18771592d2",
+        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
+        "content": "sha256:1ba9c0dffa1ddd34f2b4662131cc43b9fdf361c1bef09a63a8b9068027459139",
         "locator": {
           "kind": "symbol",
           "name": "_already_abandoned"
@@ -184,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "30231d7913eb526be260f641f1310d2349da4856",
+        "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
         "content": "sha256:603402e4b3b74ccb8366b134343edd9d49fb2bc215330335ee24450b0308e7db",
         "locator": {
           "kind": "symbol",
@@ -203,12 +202,12 @@
   ],
   "references": {
     "1": {
-      "note": "Successful abandon and exact terminal replay retain terminal atomic-series release in their admitted paths. The outer wrapper reconciles outside scratch and attaches a successful ancestry-based landed-work observation.  Anchor: `abandon_result`",
+      "note": "Successful abandon and exact terminal replay retain terminal atomic-series release in their admitted paths. The outer wrapper reconciles outside scratch and attaches a successful ancestry-based landed-work observation. Anchor: `abandon_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "30231d7913eb526be260f641f1310d2349da4856",
-            "content": "sha256:24bdbee9498e906825a7e32200734747f885c68476e0c518991de58bee14ebaa",
+            "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
+            "content": "sha256:af7d9d6a32c120c161bbaa8d687a897ccd429fa7de09243fdafb289843c029ba",
             "locator": {
               "kind": "symbol",
               "name": "_abandon_terminal_branch"
@@ -271,7 +270,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30231d7913eb526be260f641f1310d2349da4856",
+            "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
             "content": "sha256:22bf37eb5fcf04e074994d4ff4942c4e2b8dcea156f5cf4af6ce765202373aa0",
             "locator": {
               "kind": "symbol",
@@ -300,16 +299,40 @@
       ]
     },
     "14": {
-      "note": "`remove_registered_worktree` (from cleanup), `delete_branch_if_merged`, `delete_branch_force` (from `terminal_branch_retirement`), and `remove_empty_dir` are reused through the terminal owners.",
+      "note": "`remove_registered_worktree` (from cleanup), `delete_branch_if_merged` and `delete_branch_force` (from `terminal_branch_retirement`), and `remove_terminal_group` (from `terminal_group`) are reused through the terminal owners; `remove_empty_dir` remains only for `_abandon_directories`.",
       "targets": [
         {
           "anchor": {
-            "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
-            "content": "sha256:fee30c4fcfd11f9734404ad8bd80b39cc7981508be63ae8a98790bd6c96940fd",
+            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
+            "content": "sha256:6655686073ecd35f41f016b1c12f205ebc555fd6d064525522c7f429177bb9da",
             "locator": {
-              "end": 335,
+              "kind": "symbol",
+              "name": "remove_registered_worktree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+            "content": "sha256:5af32e9ea1f995605f5a9e53ac8cc584e908e9e67d93dfe6d2ee67e4187c13c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_terminal_group"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_group.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
+            "content": "sha256:18bbdf51031a00fed4c1d4c96c8b3f9bfd16c4a3e066ae07aa8c4da709a09ca4",
+            "locator": {
+              "end": 275,
               "kind": "line_range",
-              "start": 55
+              "start": 224
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },
@@ -340,7 +363,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30231d7913eb526be260f641f1310d2349da4856",
+            "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
             "content": "sha256:b06956e3484d8be45bc988d911c3cc804be80123b1df938433ab7abed48d84f6",
             "locator": {
               "kind": "symbol",
@@ -356,8 +379,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30231d7913eb526be260f641f1310d2349da4856",
-            "content": "sha256:1cd6600be0a0654cc885b6b086bc65fc722483f905dab9e515eccce97288f9bd",
+            "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
+            "content": "sha256:7a8bc800a87e292fd8e32256ca718365cedf95d4154527b973cc9785fba22229",
             "locator": {
               "kind": "symbol",
               "name": "_finish_abandon_without_remains"
@@ -372,12 +395,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30231d7913eb526be260f641f1310d2349da4856",
+            "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
             "content": "sha256:603402e4b3b74ccb8366b134343edd9d49fb2bc215330335ee24450b0308e7db",
             "locator": {
-              "end": 574,
+              "end": 577,
               "kind": "line_range",
-              "start": 515
+              "start": 518
             }
           },
           "kind": "code"
@@ -422,24 +445,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30231d7913eb526be260f641f1310d2349da4856",
+            "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
             "content": "sha256:88745092ffd1f6826305c5e1e88502233ec853e6d0d956e35eb197425d93354a",
             "locator": {
-              "end": 918,
+              "end": 913,
               "kind": "line_range",
-              "start": 897
+              "start": 892
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "5e9359a188c08b8bd4bfb076ce8fd0aa93cb4b49",
+            "blob": "29c9dca453518e83926e0dc616a4efb5436a4ff7",
             "content": "sha256:733fbe053eda73215af05b87422174ab0c5f72fae6ce6e94e8fa82d9a5b44a2d",
             "locator": {
-              "end": 110,
+              "end": 111,
               "kind": "line_range",
-              "start": 67
+              "start": 68
             },
             "path": "mcp/src/agents_remember/worktrees/modules/kept_tool_calls.py"
           },
@@ -452,19 +475,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30231d7913eb526be260f641f1310d2349da4856",
-            "content": "sha256:97310f133dfca42cf7c733d01b9c23d1ac7894702a084a69ba599541e3342102",
-            "locator": {
-              "kind": "symbol",
-              "name": "_abandon_outputs_result"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "30231d7913eb526be260f641f1310d2349da4856",
-            "content": "sha256:97310f133dfca42cf7c733d01b9c23d1ac7894702a084a69ba599541e3342102",
+            "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
+            "content": "sha256:d42faeb161f85770a298f8d66b60d41701008e07c21c0b2bb247deeddb766065",
             "locator": {
               "kind": "symbol",
               "name": "_abandon_outputs_result"
@@ -549,7 +561,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45bde9d2eae6681ae74e8f1a36fbf6efed8e8d23",
+            "blob": "99886f1b1bae224fcc65de23608c833a0262d37e",
             "content": "sha256:1a7dfc6f818e444df8a75d0f217c2d499b02cb4898523113feb6257e90ca2750",
             "locator": {
               "kind": "symbol",

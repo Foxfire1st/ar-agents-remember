@@ -119,6 +119,8 @@ No relevant external documentation found.
 - `docker_command` and `run_command` are provided by the provider lifecycle shared layer (re-paired to their real owners; the previous row had the two anchors swapped). [1]
 - The one removal path: a not-present path, a dry run, a plain `rmtree`, and the permission-denied reclaim retry whose surviving tree now carries its own reason. [2]
 - The port the worktree layer reaches this module through; its `teardown` and `remove_tree` members are what a worktree operation can call. [3]
+
 - The focused cases that pin the reason on every non-removal result and the surviving-tree cause. [4]
+
 
 - Ordinary start and retry return the non-enabled provider plan before the retained background-launch branch; neither retired ID becomes enabled.  Anchor: `plan_providers_for_start`, `run_or_launch_provider_setup`, `_retry_provider_setup_result`, `provider_enabled` [5]

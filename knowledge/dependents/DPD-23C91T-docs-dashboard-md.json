@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "81f40d54700ea65869339061d70182e7efc59dc1",
-    "commit": "c5122294b4110a744254dad2c686a82f392304c4",
+    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "The Operations table still requires an open session for helper-only work and for a declared wait with an armed check, and a task still pauses when known host activity shows neither work nor waiting.",
-    "task": "261112-BUG-L37",
+    "statement": "docs/dashboard.md (lines 560-561) accurately states that finalizing, cleaning up, or abandoning a task archives its role agents on the host and that an archived agent is not a document's chat; L38 enforces seat closure before whole-folder removal.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/dashboard.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -152,8 +152,8 @@
     },
     {
       "anchor": {
-        "blob": "aeecc2f8dab2b0b79f811ea855055ad72fb5e6d3",
-        "content": "sha256:de76bee4e74da0194ae142dbc65b2be6bb861bad77ccd3ca2550c4538ed0a36f",
+        "blob": "a87be69e9aaafcb8afa368494b4dcb61778aa5ee",
+        "content": "sha256:c8a19e3bd32373cb999c031b5396ad175a0f6debc7f4ccac2d80f50d62d1bee0",
         "locator": {
           "kind": "symbol",
           "name": "archive_terminal_agents"
@@ -335,7 +335,6 @@
         },
         "path": "dashboard/src/cockpit/roleChatModelOptions.ts"
       },
-      "heading": "Where the choices come from",
       "kind": "anchor"
     },
     {
@@ -349,7 +348,6 @@
         },
         "path": "dashboard/src/cockpit/roleChatModelOptions.ts"
       },
-      "heading": "Where the choices come from",
       "kind": "anchor"
     },
     {
@@ -363,7 +361,6 @@
         },
         "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts"
       },
-      "heading": "The buttons",
       "kind": "anchor"
     },
     {
@@ -377,7 +374,6 @@
         },
         "path": "dashboard/src/cockpit/RoleChatsView.tsx"
       },
-      "heading": "Where the choices come from",
       "kind": "anchor"
     },
     {
@@ -391,13 +387,12 @@
         },
         "path": "dashboard/src/cockpit/RoleChatsView.tsx"
       },
-      "heading": "The buttons",
       "kind": "anchor"
     },
     {
       "anchor": {
-        "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
-        "content": "sha256:5fe191cf7114f08dbe30c2f5ed30949cf9bfa98a663431f88b23d042f350baba",
+        "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
+        "content": "sha256:17b15511b4cbbaf380fd59450858321e052ec9081293c050537f3efc417fd394",
         "locator": {
           "end": 234,
           "kind": "line_range",
@@ -405,7 +400,6 @@
         },
         "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
       },
-      "heading": "Where the choices come from",
       "kind": "anchor"
     },
     {
@@ -444,5 +438,16 @@
       },
       "kind": "anchor"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

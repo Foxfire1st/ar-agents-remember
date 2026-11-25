@@ -1,6 +1,6 @@
 {
   "anchor": {
-    "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+    "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
     "content": "sha256:a8d7c447297ccb3d3f2925371266db4a811a78558b569e19ea40529984a5bba5",
     "locator": {
       "kind": "symbol",
@@ -18,12 +18,23 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928-MIK-L97"
   },
   "state": "open",
-  "statement": "The provider stop inside runtime_install reads a generated settings document that declares no provider, so it selects nothing whatever the settings file enables, while the dashboard's safety loop reads the file that --config names and a comment in providers/watcher_service.py says both use the same reader."
+  "statement": "The provider stop inside runtime_install reads a generated settings document that declares no provider, so it selects nothing whatever the settings file enables, while the dashboard's safety loop reads the file that --config names and a comment in providers/watcher_service.py says both use the same reader.",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

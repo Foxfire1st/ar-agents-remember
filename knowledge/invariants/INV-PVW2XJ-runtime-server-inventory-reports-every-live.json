@@ -6,9 +6,10 @@
     ],
     "justification": "Tests prove live records carry build, process and settings identity, dead or reused records are removed and stale servers get role-specific remedies; the inventory is how an install names the stale servers."
   },
-  "applicability": "The running-server inventory read from the coordination root's runtime server records.",
+  "applicability": "The running-server inventory read from the coordination root's runtime server records during server_info and runtime_install.",
   "conditions": [
-    "Each server writes its record when it starts and removes it at exit."
+    "Each server writes its record when it starts and removes it at exit.",
+    "Applied inventory reads prune dead or pid-reused records; dry-run preview reads them without unlinking."
   ],
   "exclusions": [
     "A record that cannot be written, which is logged once while the server keeps running.",
@@ -29,9 +30,20 @@
     "leaf": "260928-MIK-L84",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Runtime server inventory reports every live valid registered record with its loaded build, process identity and settings path while removing dead records.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "Runtime server inventory reports every live valid registered record with its loaded build, process identity and settings path, removing dead records on apply (`server_inventory`) while preserving them on read-only dry-run preview (`preview_server_inventory`).",
+  "supersedes": [],
+  "title": "Server inventory lists live records; apply prunes dead files, preview preserves",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

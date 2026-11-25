@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "47a5e5d81a58fa2fb152a21a03cba5dafdabd11e",
-        "content": "sha256:6db13b702c66670aa628a279da2d945489534e9a43310155cfc7e26328de6a20",
+        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+        "content": "sha256:ad4e89cf61d4470828a12e64839ca5bbcb43d39576b095d42364c6267ab1a391",
         "locator": {
           "kind": "symbol",
           "name": "test_cleanup_keeps_only_this_leafs_lines_before_removing_logs"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "47a5e5d81a58fa2fb152a21a03cba5dafdabd11e",
+        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
         "content": "sha256:71c42c296ebf0ed9a0ab66c651ebb70b5d902470a93cbb4de4596e32bd9076f3",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,42 @@
     },
     {
       "anchor": {
-        "blob": "47a5e5d81a58fa2fb152a21a03cba5dafdabd11e",
-        "content": "sha256:491b978ecdf52a494ea2df1f7a50c90de8e876f2d475460da154f0b5f8cf2c6f",
+        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+        "content": "sha256:f1786a5ad432dbb6a14a3535aae1640c625a040bfa65064c25dc7b2f12ae4612",
+        "locator": {
+          "kind": "symbol",
+          "name": "KeptToolCallsTests.test_a_failed_keep_leaves_the_log_and_blocks_the_cleanup_until_a_retry"
+        }
+      },
+      "facet": "Verifies KeptToolCallsTests.test_a_failed_keep_leaves_the_log_and_blocks_the_cleanup_until_a_retry for leaf tool-call lines are exported to master notes before whole-folder removal.",
+      "id": "PRF-475WH5",
+      "invariant": "INV-KA3FAN",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 1 · post-sync kept tool calls",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+        "content": "sha256:be89bc0477eb49a4c62e23630413435c3dcf2fac692f3b213e859ca5a75a794d",
+        "locator": {
+          "kind": "symbol",
+          "name": "KeptToolCallsTests.test_prepare_terminal_group_blocks_preview_and_apply_when_keep_fails"
+        }
+      },
+      "facet": "Verifies KeptToolCallsTests.test_prepare_terminal_group_blocks_preview_and_apply_when_keep_fails for terminal dry run and apply both block on a failed tool-call export.",
+      "id": "PRF-4X8EY2",
+      "invariant": "INV-Z69ZVF",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 4 · post-sync keep blocker",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+        "content": "sha256:f1786a5ad432dbb6a14a3535aae1640c625a040bfa65064c25dc7b2f12ae4612",
         "locator": {
           "kind": "symbol",
           "name": "test_a_failed_keep_leaves_the_log_and_blocks_the_cleanup_until_a_retry"
@@ -54,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "47a5e5d81a58fa2fb152a21a03cba5dafdabd11e",
-        "content": "sha256:2ae4f316eae7a8dfaf098767027ec5eefffa19b1e16332a432d73e7acab13ee8",
+        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+        "content": "sha256:82b95525d7ca863a7a295689f6f687bf21060447e845809c262f606aa01e5769",
         "locator": {
           "kind": "symbol",
           "name": "ToolAnswerEnclosureTests.test_cleanup_removes_logs_with_the_enclosure"
@@ -68,6 +102,23 @@
         "handoffEntry": "MIK-R108@v1 §3 enclosure-lifecycle",
         "leaf": "260928-MIK-L108"
       }
+    },
+    {
+      "anchor": {
+        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+        "content": "sha256:ad4e89cf61d4470828a12e64839ca5bbcb43d39576b095d42364c6267ab1a391",
+        "locator": {
+          "kind": "symbol",
+          "name": "KeptToolCallsTests.test_cleanup_keeps_only_this_leafs_lines_before_removing_logs"
+        }
+      },
+      "facet": "Verifies KeptToolCallsTests.test_cleanup_keeps_only_this_leafs_lines_before_removing_logs for leaf tool-call lines are exported to master notes before whole-folder removal.",
+      "id": "PRF-Q5BFJN",
+      "invariant": "INV-KA3FAN",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 1 · post-sync kept tool calls",
+        "leaf": "261112-BUG-L38"
+      }
     }
   ],
   "realizes": [],
@@ -77,8 +128,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47a5e5d81a58fa2fb152a21a03cba5dafdabd11e",
-            "content": "sha256:63f94a4b866dcdb21334003f73e365422f56d91004780718fba585fe1a97e060",
+            "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+            "content": "sha256:a63014083400058673166c1ca35354125ceb1485b964b2da0dbb240854a2fde1",
             "locator": {
               "kind": "file"
             }
@@ -92,8 +143,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47a5e5d81a58fa2fb152a21a03cba5dafdabd11e",
-            "content": "sha256:63f94a4b866dcdb21334003f73e365422f56d91004780718fba585fe1a97e060",
+            "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+            "content": "sha256:a63014083400058673166c1ca35354125ceb1485b964b2da0dbb240854a2fde1",
             "locator": {
               "kind": "file"
             }
@@ -107,12 +158,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47a5e5d81a58fa2fb152a21a03cba5dafdabd11e",
-            "content": "sha256:cbab7340022b6090643d0f00c591c2589b05518bc4f83e61b3338a1c0904e4a0",
+            "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+            "content": "sha256:3bc932dc8a0a6a6984bfb0b9e24c64bf7caf302e9deccfde2981b42d0e6242b4",
             "locator": {
-              "end": 398,
+              "end": 432,
               "kind": "line_range",
-              "start": 219
+              "start": 215
             }
           },
           "kind": "test"

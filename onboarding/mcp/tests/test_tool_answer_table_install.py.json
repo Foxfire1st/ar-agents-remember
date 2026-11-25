@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_tool_answer_table_install.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b1231febf1d6b5fd0fbfd9f0207fd50d14eaac97",
+        "content": "sha256:8f97b8736e3077d6cd3d58273f0394e32b8ed81d887a90feccddeb3ea517680f",
+        "locator": {
+          "kind": "symbol",
+          "name": "L112FinalRowProductionTests.test_row_fields_match_the_production_projection"
+        }
+      },
+      "facet": "Exercises test_row_fields_match_the_production_projection to verify runtime-install dry run counts shared settlements without mutating state.",
+      "id": "PRF-K7JG9P",
+      "invariant": "INV-XX08QF",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3 shared preview",
+        "leaf": "261112-BUG-L38"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Archive publication checks in worktrees/integration/terminal_enclosure_archive.py and provider-skip preview in worktrees/modules/terminal_group.py prevent stranding or silently overriding accepted cleanup arguments."
+  },
+  "applicability": "Fresh cleanup requests with teardown_providers=False and retries of already-accepted terminal archives.",
+  "conditions": [
+    "A fresh request with live provider-runtime state and teardown_providers=False refuses before publishing a terminal archive.",
+    "Once a terminal archive is published, retries preserve its saved operation and cleanupArguments."
+  ],
+  "exclusions": [
+    "Cleanups with teardown_providers=True proceed through normal provider teardown."
+  ],
+  "id": "INV-PB6BZ0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The Worker freeze report binds focused verification on this tree."
+      ],
+      "path": "l38-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R38@v1 rule 4 provider skip",
+    "leaf": "261112-BUG-L38",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Cleanup checks provider state before publishing a fresh archive and keeps the saved operation and arguments after acceptance.",
+  "supersedes": [],
+  "title": "Cleanup checks providers before archiving and keeps accepted retry arguments",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Move-out sequencing in worktrees/modules/terminal_group.py and destination validation in worktrees/modules/kept_tool_calls.py preserve leaf tool calls before folder deletion and are proved by enclosure tests."
+  },
+  "applicability": "Leaf terminal cleanup and abandon through terminal_group.py.",
+  "conditions": [
+    "keep_tool_calls_for_group runs during move-out and again immediately before whole-folder deletion.",
+    "A failed export returns a logs blocker and leaves the task folder and log file intact."
+  ],
+  "exclusions": [
+    "Series contracts without leaf tool-call logs do not create leaf export files."
+  ],
+  "id": "INV-KA3FAN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Independent focused run on code tree bebb70ce8a4582d088e0813c2842ce9007df592d: mcp/tests/test_tool_answer_table_enclosure.py passed; full 46-file focused set reproduced 652 passes."
+      ],
+      "path": "l38-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R38@v1 rule 1 · post-sync kept tool calls",
+    "leaf": "261112-BUG-L38",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A leaf's own tool-call lines are kept in its master's notes before the terminal task folder is removed, and a failed keep stops the removal with the log left in place.",
+  "supersedes": [],
+  "title": "Leaf tool-call lines are exported to master notes before whole-folder removal",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
+}

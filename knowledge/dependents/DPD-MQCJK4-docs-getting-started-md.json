@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "4ebb429de6b3034e7bff1922b3f8982b2ccafa07",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "d2d3845baf9541100f06371fde62c4c0bb678b04",
+    "commit": "3ee8f6ad584e509ef6df637c1bb42484993b35d0",
     "role": "curator",
-    "statement": "docs/getting-started.md remains accurate after the mcp>=1.30.0,<2 floor update, dashboard/package-lock.json refresh, and BUG-L36's UTC ISO-8601 dashboard log timestamps because Python 3.14, package 3.0.7, Bootstrap steps, dashboard --status behavior, and dashboard Node >=22.13 / >=24 engine ranges still hold.",
-    "task": "261125-DEP-L1",
+    "statement": "Verified against synced L38 candidate on 3ee8f6ad/b83cff67: docs/getting-started.md (lines 1-213) accurately describes Python 3.14, the five install steps, Bootstrap call, short overflow answers with log, and dashboard --status.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/getting-started.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -76,7 +76,7 @@
       "path": "dashboard/src/cockpit/paseoFrameControl.ts"
     },
     {
-      "blob": "0545be4ce99a465c6e590e0c19385c91e54191db",
+      "blob": "64084f98803199c3d7bae4ce76810611b0578a13",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -106,7 +106,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+      "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/runtime.py"
     },
@@ -132,14 +132,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T20:08:06+01:00",
+    "at": "2026-11-25T22:06:22+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L1",
+    "leaf": "261112-BUG-L38",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b5f00ccb-ae71-451c-bfff-3ee2a7ac6155",
-    "task": "261125-DEP"
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
   }
 }

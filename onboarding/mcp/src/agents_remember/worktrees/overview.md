@@ -87,7 +87,7 @@ Generated route indexes remain mechanically produced from explicit roots, not au
 
 Historical code-object retention measures custody and explicitly releases earlier pins; it creates no new pin. Only caller-named durable history counts, not arbitrary disposable branches, and custody examines named tips rather than searching their deeper history. A conservative retained observation does not itself release anything. Release requires the ref still point at its recorded commit and returns a record explaining unavailable history; comparison policy and lifetime stay with the caller.
 
-Review-artifact cleanup runs only after archived/would-archive results. Series archive skips invoke none. An absent hook reports not-bound; exceptions report failure without failing an already completed archive. The inherited application policy confines deletion to the task's review refs, exact legacy retained-code refs and content-matched legacy dataset copies, including unconverted tasks and curator scratch copies. Its accepted filesystem TOCTOU limit is retained below. Terminal leaf-agent archival likewise has an explicit port: dry run/non-leaf does nothing, absent capability reports not-bound, and host/receipt failure reports failed without refusing an admitted retirement. No fallback service is constructed.
+Review-artifact cleanup runs only after archived/would-archive results. Series archive skips invoke none. An absent hook reports not-bound; exceptions report failure without failing an already completed archive. The inherited application policy confines deletion to the task's review refs, exact legacy retained-code refs and content-matched legacy dataset copies, including unconverted tasks and curator scratch copies. Its accepted filesystem TOCTOU limit is retained below. Terminal seat archival likewise has an explicit port (with no fallback service): both leaf and modern series contracts inspect seats on dry run and close/archive them on apply (only legacy series skip it), and `not-bound` (when launch receipts exist), `failed`, `owed`, or `leftAlone` outcomes become terminal blockers that stop folder removal before deletion.
 
 The landing chain includes ordinary and merge commits. Final uses every canonical non-abandoned leaf; checkpoint and recorded landing use the landed population up to their actual endpoints. A line with no landed leaf contains only recorded bases and reconciled parent positions. Sync logs record produced code/memory heads for merge admission; legacy logs retain their explicit no-head compatibility. A repository-default sync's entry also records the default tips it reconciled with (`codeSourceCommit`, `memorySourceCommit`), which count as official positions, and a pull-request merge that publishes one recorded landing (two parents, the second a landed leaf commit, the merge's tree equal to it) is admitted by that shape.
 
@@ -145,7 +145,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 ## Message and evidence transport
 
-A leaf workspace may expose the shared task-owned messages folder through a link. Role-report cleanup unlinks that workspace view rather than deleting canonical message files. Canonical report collection/fsync/readback and transaction/removal authority remain with their existing owners; message filing is not a new report-read side effect.
+A leaf workspace may expose the shared task-owned messages folder through a link. Whole-folder terminal cleanup and abandon move out regular files from a real workspace `messages` directory into the canonical task-record folder before deleting the task folder, while removing a `messages` symlink without following it so canonical message files are never deleted (`remove_group_role_folders` keeps symlink-only unlinking for directory-only sprint-archive retirement). Canonical report collection/fsync/readback and transaction/removal authority remain with their existing owners; message filing is not a new report-read side effect.
 
 
 | Field | Value |
@@ -332,7 +332,9 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 - **Retained historical source account — superseded by the current route account:** Retirement refuses unfinished/unreadable current authority and selects remedies by locator availability [94]
 
-- **Retained historical source account — superseded by the current route account:** Terminal archival is explicit, skipped on preview/non-leaf and best effort after admission [95]
+
+- **Retained historical source account — superseded by the current route account:** Terminal archival is explicit, skipped on preview/non-leaf and best effort after admission Anchor: archive_terminal_agents [95]
+
 
 
 

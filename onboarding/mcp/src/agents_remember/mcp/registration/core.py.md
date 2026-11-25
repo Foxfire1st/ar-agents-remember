@@ -52,14 +52,18 @@ server_info describes optional toolServer and agentBinding of a launched server.
 - `read_ar_files_payload`, imported through the `mcp.tools` facade. [2]
 
 
-- The registration takes the keyword-only `experiment` parameter and builds the run's request itself. [4]
+
+- The registration takes the keyword-only `experiment` parameter and builds the run's request itself. Anchor: `RuntimeInstallRequest` [4]
+
 
 
 - Frozen implementation of `_register_identity_tools` supporting the stated file behavior. [5]
 
 
 
+
 - The installation tools and the `runtime_install` registration. [7]
+
 
 
 
@@ -80,7 +84,10 @@ server_info describes optional toolServer and agentBinding of a launched server.
 The `runtime_install` description says the call installs/refreshes the coordinator scaffold (docs, provider assets), preserves `memory-repos/` and `providers/data/`, keeps skills package-served, stops leftover watchers without starting any, provisions the pinned `paseoRuntime` host/plugin while deferring host restart and keeping user-settings protections, refreshes a running dashboard, reports server currentness, previews with `dry_run=true`, and points to `docs/tool-details.md`.
 
 
+
 - The install tool registration whose description states the scaffold install, running-server currentness report and running-dashboard refresh. [10]
+
+
 
 
 

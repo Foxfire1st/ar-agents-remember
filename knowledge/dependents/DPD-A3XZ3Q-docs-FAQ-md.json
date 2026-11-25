@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
-    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
+    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "On tree a5bb9a1f, the FAQ's account of deterministic card lookup, read_ar_files and context_packet (with include_drift and include_freshness), cache rebuilds, and task_doc still holds; CAP-L4 only shortened the MCP tool descriptions in registration/core.py without altering any argument, default, or behavior.",
-    "task": "261124-CAP-L4",
+    "statement": "docs/FAQ.md (lines 28-45, 67-84, 151-172) accurately describes mirrored-path lookup, read_ar_files brief/compact rows, knowledge_read, context_packet drift/freshness, and memory.md; L38 only adds optional reconcile_shared_held_stores=False on runtime_install.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/FAQ.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
     },
     {
-      "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
+      "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/core.py"
     },
@@ -115,8 +115,18 @@
         },
         "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
       },
-      "heading": "Loaded build identity",
       "kind": "anchor"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

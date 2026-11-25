@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_launch_publication.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3890ea32ea914e82e1f43b0a16a16ecfc7d59903",
+        "content": "sha256:fa82f32876c568f3bfdd572faf909406175c6919c256e3e450043c78f4712cfb",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_prepared_launch"
+        }
+      },
+      "id": "RLZ-8GKE14",
+      "invariant": "INV-4CJ7H0",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 1 generation ownership",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "Publishes the prepared handover and initial receipt under the active enclosure reservation.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`publish_prepared_launch` publishes handover files, constructs the launch call and initial receipt, and installs the receipt inside `role_launch_enclosure.publication_scope` without calling the host.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3890ea32ea914e82e1f43b0a16a16ecfc7d59903",
+            "content": "sha256:fa82f32876c568f3bfdd572faf909406175c6919c256e3e450043c78f4712cfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_prepared_launch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_publish_files` applies `successor_prompt`, non-held opening message, and ACP instruction before writing artifacts via `publish_handover_files` and building `first_message`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3890ea32ea914e82e1f43b0a16a16ecfc7d59903",
+            "content": "sha256:20824ea515423a46c033d33689c519daed6d56e3a09386a73b707fe2803d075b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_prepared_launch_call` mints the agent ID and builds the serialized launch call payload via `build_launch_call(RoleLaunch(...))`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3890ea32ea914e82e1f43b0a16a16ecfc7d59903",
+            "content": "sha256:f557ee91c4b936bae4a5780cb0fd89c382f1c94741ee1e5176e1d4b33010ec89",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepared_launch_call"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_launch_receipt` populates `RECEIPT_SCHEMA`, `heldStoreGeneration: 0`, `status: \"starting\"`, digests, `acpInstruction`, `replayRequest`, and conditional held-seat fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3890ea32ea914e82e1f43b0a16a16ecfc7d59903",
+            "content": "sha256:5836f0b781e4d5133a9dcc092fe046ff083b2444ceddeb506addf5bd14b58832",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_receipt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

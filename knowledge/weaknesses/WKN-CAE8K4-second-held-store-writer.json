@@ -1,0 +1,40 @@
+{
+  "anchor": {
+    "blob": "0bab3e5070078a9c42079e5b7a0a3f9b7ad2a96c",
+    "content": "sha256:35b66e9121f5448986cdcf7327d616b1d44ec4c09dad224e8782d9fd689d1458",
+    "locator": {
+      "kind": "symbol",
+      "name": "hold_message"
+    },
+    "path": "mcp/src/agents_remember/application/master_architect_record.py"
+  },
+  "id": "WKN-CAE8K4",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "l38-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R38 weakness master_architect_record.hold_message",
+    "leaf": "261112-BUG-L38",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "261112-BUG-L38"
+  },
+  "state": "open",
+  "statement": "The master-architect record module still exports a second held-store writer with no tracked runtime caller found in the Worker search.",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
+}

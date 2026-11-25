@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake",
+      "family_guarantee"
+    ],
+    "justification": "Wiring _message_seats and open_held_store across cli/product_messages.py, cli/paseo_role_tools.py, and cli/role_held_store.py prevents product notices from recreating a retired seat's store or task folder."
+  },
+  "applicability": "Product-authored start/notice messages routed through cli/product_messages.py.",
+  "conditions": [
+    "file_product_message and send_product_message pass _message_seats and translate HeldSeatClosed into recipient-archived."
+  ],
+  "exclusions": [
+    "Live open seats continue to receive product messages normally."
+  ],
+  "id": "INV-GV3NYM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Both files passed in the independent focused runs on code tree bebb70ce8a4582d088e0813c2842ce9007df592d. No dedicated product-message-closed-seat case exists; the shared fence is exercised by the role-message closure tests."
+      ],
+      "path": "l38-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R38@v1 rule 3 · post-sync product-message fence",
+    "leaf": "261112-BUG-L38",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A product message to a closed seat is refused by name before filing and opens no held store or task folder.",
+  "supersedes": [],
+  "title": "Product messages to closed seats refuse before filing or creating stores",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
+}
