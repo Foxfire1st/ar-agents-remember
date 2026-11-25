@@ -149,4 +149,4 @@ No meaningful cross-repo references found.
 
 - The generator checks this declared package copy against canonical skills. [14]
 
-- The manifest declares free-agent altitude, six requested tool IDs and three operations. Its tool requests include role_message, although the Bootstrap role forbids messaging. [8]
+- The manifest declares free-agent altitude, eight requested tool IDs and three operations. Its tool requests omit role_message, matching the Bootstrap role, which messages no role agent. [8]

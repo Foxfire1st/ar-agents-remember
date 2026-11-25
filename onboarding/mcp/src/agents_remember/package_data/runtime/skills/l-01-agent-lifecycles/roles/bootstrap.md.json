@@ -277,16 +277,16 @@
       ]
     },
     "8": {
-      "note": "The manifest declares free-agent altitude, six requested tool IDs and three operations. Its tool requests include role_message, although the Bootstrap role forbids messaging.",
+      "note": "The manifest declares free-agent altitude, eight requested tool IDs and three operations. Its tool requests omit role_message, matching the Bootstrap role, which messages no role agent.",
       "targets": [
         {
           "anchor": {
-            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
-            "content": "sha256:eb51143139c8e5fce5ed2255a17e45cfbffb2e18b739fc524acf70015ebcd33a",
+            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "content": "sha256:87493687e619f40c59eb325499aee24e8ebc16840f218eca3f0e673b6ab01a83",
             "locator": {
-              "end": 490,
+              "end": 548,
               "kind": "line_range",
-              "start": 466
+              "start": 516
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },

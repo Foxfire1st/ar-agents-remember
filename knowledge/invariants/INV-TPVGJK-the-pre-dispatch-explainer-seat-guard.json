@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A test calls render on a malformed mixed launch and requires the unknown-tool answer instead of a seat refusal."
+  },
+  "applicability": "Calls to explainer tools on a process that holds an explainer binding.",
+  "conditions": [
+    "The called name is one of the explainer's four tools."
+  ],
+  "exclusions": [
+    "AR's general tools, which answer the seat as they answer any agent."
+  ],
+  "id": "INV-TPVGJK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_tool_scope.py::test_a_malformed_mixed_launch_prunes_the_explainers_tools_too on tree b29f2e225c04fbcebb653d59f81cf895c42f5097"
+      ],
+      "path": "curator-handoff-cap-l1.json"
+    },
+    "handoffEntry": "CAP-R01@v1 §2 explainer guard",
+    "leaf": "261124-CAP-L1",
+    "task": "261124-CAP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The pre-dispatch explainer seat guard applies only to explainer tools the process still retains, so a pruned explainer tool takes the ordinary unknown-tool path instead of answering a seat refusal.",
+  "status": "proposed",
+  "supersedes": []
+}

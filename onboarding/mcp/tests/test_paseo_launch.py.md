@@ -39,7 +39,7 @@ real start leaves in the task document.
 - **No-answer codes.** `NO_ANSWER_CODES` names the reply codes that do not count as an answer, so a reply
   is never read as a started seat by accident.
 
-The Codex case checks every public tool on the bound task server in the create payload and matches that list against the preapprovals recorded in the launch receipt.
+The Codex case starts a Worker and checks that the create payload preapproves exactly the Worker's allowlist (`tools_for_role("worker")`) on the bound task server, and that the launch receipt records the same list.
 
 ### Conventions
 

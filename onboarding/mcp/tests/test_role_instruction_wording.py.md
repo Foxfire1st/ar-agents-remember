@@ -20,7 +20,9 @@ copy, and it compiles capsules with `role_capsules.compilation` and `skill_resou
 
 - **Scope and authority.** `test_investigator_scope_report_and_authority_are_explicit` and
   `test_retired_investigator_wording_is_detected_when_reinserted` pin the Investigator's scope, report and
-  authority and prove the retired wording is caught when reinserted.
+  authority and prove the retired wording is caught when reinserted; the first case also pins the
+  Investigator's manifest tool list, ten tools from `server_info` to `knowledge_integrity_check` in
+  public roster order.
 - **Coordination and curation.** `test_current_coordination_and_curator_rules` and
   `test_direct_closeout_keeps_the_architect_and_its_existing_gates` keep the current coordination rules, read
   from the shared `CURRENT_COORDINATION_CLAUSES` table with section-bound deletion and relocation controls on each
@@ -86,5 +88,7 @@ Named-section deletion and relocation controls cover construction-cost escalatio
 ### Repo-Internal References (renewed)
 
 - Instruction cases assert Investigator scope/report/mutation boundaries, current coordination, positive leaf-seat obligations, the task-tool-server vocabulary and compiled return/await channels. Their assertions distinguish a stored file from an explicit handover and establish no fresh test run. Anchor: `test_investigator_scope_report_and_authority_are_explicit` [1]
+
 - The Investigator wording case checks scoped concern intake, report and remediation authority, and the canonical investigator role; no system-specialist role file, manifest entry or router mention remains. Anchor: `test_investigator_scope_report_and_authority_are_explicit` [2]
+
 - The census pins the router, the eight launcher role files and their nine operations in delivered order. Anchor: `InstructionFileWordingTests.test_the_surfaces_are_the_router_seven_roles_and_their_eight_operations` [11]

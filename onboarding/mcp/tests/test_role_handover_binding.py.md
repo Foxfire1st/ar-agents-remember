@@ -30,7 +30,7 @@ and one timed-out creation.
   selected sprint with the worktree owner when the leaf enclosure is missing.
 - **Report paths.** `RoleReportPathIsolationTests` keeps manager reports master-local and request-unique,
   and leaf reports task-local with one file per request.
-- **Folder and grant.** `R71FolderAndGrantTests` checks the exact ordinary grant for Codex and Claude and its omission for Pi and Hermes. A separate case refuses an external link before creating any child.
+- **Folder and grant.** `R71FolderAndGrantTests` checks the Architect's exact grant, `server_info` for Claude and the Architect allowlist (`tools_for_role("architect")`) for Codex, and its omission for Pi and Hermes. A separate case refuses an external link before creating any child.
 
 ### Conventions
 

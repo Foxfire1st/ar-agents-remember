@@ -35,16 +35,16 @@
       ]
     },
     "3": {
-      "note": "The MCP dispatch takes the reading and runs the call inside the context manager.\n\nAnchor: `tool_build_currentness`",
+      "note": "The MCP dispatch takes the reading and runs the call inside the context manager.",
       "targets": [
         {
           "anchor": {
-            "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
-            "content": "sha256:42073337113eeba96c34475b0a5f72f174fd73f76fa83a389cd6b48f4a9e3910",
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:b89f2c5568723263595319af533725ee79dc14ad39a656450d754b24c7607adc",
             "locator": {
-              "end": 163,
+              "end": 171,
               "kind": "line_range",
-              "start": 140
+              "start": 150
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },

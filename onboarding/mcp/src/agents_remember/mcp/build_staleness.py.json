@@ -176,16 +176,16 @@
       ]
     },
     "8": {
-      "note": "Dispatch consults this module only for a stale installed build, after argument validation.\n\nAnchor: `is_stale_build_write`",
+      "note": "Dispatch consults this module only for a stale installed build, after argument validation.",
       "targets": [
         {
           "anchor": {
-            "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
-            "content": "sha256:0cd7a5c9b310f08d74b90ea0b080cbae900b6002e2587c4df5eff6f01c240cbc",
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:207ae7df84639f0d2b60fb3d51ae6b2c357acf9c3584d098d243ac38692c7de2",
             "locator": {
-              "end": 162,
+              "end": 171,
               "kind": "line_range",
-              "start": 148
+              "start": 149
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },

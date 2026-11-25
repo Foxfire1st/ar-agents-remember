@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized in paseo_seat_policy.py, which resolves the roster, and in paseo_launch.py, which passes the role; tests compare the grant with the advertised allowlist per role and pin it on the launch path."
+  },
+  "applicability": "Fresh ordinary Paseo role launches and bound explainer seats that attach agents-remember-task.",
+  "conditions": [
+    "The provider ID is exactly codex or claude.",
+    "The grant is built at creation, not replayed from a saved launch call."
+  ],
+  "exclusions": [
+    "Saved launch calls and resumed seats, which keep the grant recorded at their start.",
+    "Other provider IDs, which receive no preapproval."
+  ],
+  "id": "INV-DWNKBC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_tool_scope.py::test_the_bound_grant_and_the_advertised_surface_are_the_same_ordered_tuple; mcp/tests/test_paseo_launch.py::LaunchToolApprovalTests::test_codex_start_preapproves_its_task_server_roster; mcp/tests/test_paseo_launch_roles.py and mcp/tests/test_paseo_catalog_r71.py::test_r71_each_role_grant_excludes_a_second_configured_ar_server on tree b29f2e225c04fbcebb653d59f81cf895c42f5097"
+      ],
+      "path": "curator-handoff-cap-l1.json"
+    },
+    "handoffEntry": "CAP-R01@v1 §3 codex grant",
+    "leaf": "261124-CAP-L1",
+    "task": "261124-CAP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A fresh ordinary Codex role launch grants and records exactly that role's ordered allowlist, while a roleless explainer grant keeps the full public roster and Claude keeps server_info.",
+  "status": "proposed",
+  "supersedes": []
+}
