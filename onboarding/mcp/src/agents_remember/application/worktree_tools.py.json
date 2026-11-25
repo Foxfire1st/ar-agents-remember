@@ -518,7 +518,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
             "content": "sha256:3d9b939eb29f132e44d631724a82208fb910a5a42a3da32fb3c2a6b242b0316f",
             "locator": {
               "kind": "symbol",
@@ -530,7 +530,7 @@
         },
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
             "content": "sha256:f2d48e829c48e0115cac7a0d635247156399f2224432ba170608f7bb0f1157d9",
             "locator": {
               "kind": "symbol",
@@ -542,12 +542,12 @@
         },
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
             "content": "sha256:c521c1b8c49d71b804d98ca9e0c0177113fd0e4b705512fe43a030c50e6d8e25",
             "locator": {
-              "end": 225,
+              "end": 229,
               "kind": "line_range",
-              "start": 218
+              "start": 222
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
           },
@@ -555,12 +555,12 @@
         },
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
             "content": "sha256:7589d51a4d6e9c7a67f55144cbe1b6a4b471362ce4ec250739a63f8227bced88",
             "locator": {
-              "end": 222,
+              "end": 226,
               "kind": "line_range",
-              "start": 215
+              "start": 219
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
           },
@@ -568,12 +568,12 @@
         },
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
             "content": "sha256:06bab63fb9ab27153221140baab7aceef098f405436923f24d87eef153a5b704",
             "locator": {
-              "end": 162,
+              "end": 166,
               "kind": "line_range",
-              "start": 155
+              "start": 159
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
           },

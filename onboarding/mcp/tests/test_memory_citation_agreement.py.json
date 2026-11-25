@@ -80,12 +80,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
             "content": "sha256:bc47276b36ad1e38c4275ef5087cbb9fc9326d534c045037d3371af8a1654198",
             "locator": {
-              "end": 228,
+              "end": 229,
               "kind": "line_range",
-              "start": 176
+              "start": 177
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -93,12 +93,12 @@
         },
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
             "content": "sha256:d522a8e1b616c33b16a521cba815ee29e5c2aa831ab1edca50b5c7ca77b1f966",
             "locator": {
-              "end": 543,
+              "end": 544,
               "kind": "line_range",
-              "start": 507
+              "start": 508
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -404,7 +404,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be3c3cce8d9b34a1e87fd6179aa9798268a031c7",
+            "blob": "038ae9f6e2473e76ca8db8fa677acbea16b370f0",
             "content": "sha256:f077da38793d14168158a19a2d41f7fbcff188affdbc98de0e9dccf33bef430a",
             "locator": {
               "end": 332,

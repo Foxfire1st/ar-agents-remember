@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "7b04c967bf1b21442083337aae1f6d1f1f9f8eea",
-    "commit": "fcb1e3645040b00998912e0cfece35ccd116d4a3",
+    "codeTree": "6584649caa95199219a959979b0491a095d0d6a9",
+    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
     "role": "curator",
-    "statement": "The host design names prepared inputs, six stage files and video readiness. The workspace writer lists selected report paths and digests and names the root in the empty notice. The serving route link tracks the exact A7 source.",
-    "task": "261112-BUG-L13",
+    "statement": "The canvas host design still describes the prepared inputs, stage files and video readiness. The explainer continues to create through the normal review-presenter settings route and now shares the provider grant policy on its bound server. The workspace writer's selected report digests and empty-notice root are preserved.",
+    "task": "261112-BUG-L31",
     "uncommitted": true
   },
   "document": "docs/design/canvas-host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -91,7 +91,7 @@
       "path": "mcp/src/agents_remember/cli/role_instructions.py"
     },
     {
-      "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+      "blob": "99662226cca319589b818f5083eff3400d12ae14",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
     },

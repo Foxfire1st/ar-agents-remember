@@ -77,12 +77,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
-            "content": "sha256:fbc845ca4136164eb34326e37e70dbd2f85612fd718321f3d76bc113c85e1515",
+            "blob": "b2cb52a7cdcd2d8f0d4a8d4d49d3f83b36f4f590",
+            "content": "sha256:f507597356d5b6e60ca4cc5aa43aba9ed7dbecd686da5e1feef61d646ccdecdf",
             "locator": {
-              "end": 1144,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "test_a_moved_row_whose_after_names_another_path_relocates_the_entry"
             },
             "path": "mcp/tests/test_knowledge_writer.py"
           },
@@ -371,12 +370,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
-            "content": "sha256:fbc845ca4136164eb34326e37e70dbd2f85612fd718321f3d76bc113c85e1515",
+            "blob": "b2cb52a7cdcd2d8f0d4a8d4d49d3f83b36f4f590",
+            "content": "sha256:255af836e84031a6a7adb2e0aeda1bdb666b54f884f1031cfe4a0d73b2a3ef22",
             "locator": {
-              "end": 1144,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "test_a_decision_a_realization_and_a_tested_evidence_produce_validated_files"
             },
             "path": "mcp/tests/test_knowledge_writer.py"
           },
@@ -389,7 +387,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "blob": "b2cb52a7cdcd2d8f0d4a8d4d49d3f83b36f4f590",
             "content": "sha256:3a9d6a609a1e3eeb2e279c87d61f4ebcd2bbd6600eb0be404a287788ef5ba97a",
             "locator": {
               "kind": "symbol",
@@ -406,7 +404,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "blob": "b2cb52a7cdcd2d8f0d4a8d4d49d3f83b36f4f590",
             "content": "sha256:3b523eaeeb4be4815040d0d69bdb3f8f3a1bd22fded4df9de4a2574b908ff11c",
             "locator": {
               "kind": "symbol",
@@ -439,8 +437,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
-            "content": "sha256:2d5a2622dbbef6146c60cda6f9e170aee71c3676175792825f24c3964eb33697",
+            "blob": "ac53ee63e71fc1466cc080cb13729c0064c5ed03",
+            "content": "sha256:64199980e04bacd5446fb60d74f0fb714df06b254824411b8f76c63359db8354",
             "locator": {
               "kind": "symbol",
               "name": "test_a_record_both_sides_changed_is_resolved_at_one_more_than_the_higher_side"
@@ -456,12 +454,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "166a2dccebfa1bd1deeb7b24c7edd12b59e8193c",
+            "blob": "346618fc1ffeaea60a35ac57fadcb471ac70984e",
             "content": "sha256:b64fdc0cac89f7775edd996539b1f5f3cd0409f62f5dc7ecb8f1389d2b0e2bdc",
             "locator": {
-              "end": 503,
+              "end": 556,
               "kind": "line_range",
-              "start": 460
+              "start": 513
             },
             "path": "mcp/tests/test_onboarding_trace_gate.py"
           },
@@ -490,7 +488,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "blob": "b2cb52a7cdcd2d8f0d4a8d4d49d3f83b36f4f590",
             "content": "sha256:1712a1257f62c997aec217ec04a8dda4094703d092abc8e1cecb1330d4581348",
             "locator": {
               "kind": "symbol",

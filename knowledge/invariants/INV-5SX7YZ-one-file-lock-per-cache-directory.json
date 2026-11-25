@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The subprocess and injected lock cases exercise real serialization and both permitted exceptions, and distinguish ordinary acquisition errors."
+  },
+  "applicability": "Cold known-build cache lookups that share a directory.",
+  "conditions": [
+    "The lock covers a second reuse check and the build when needed.",
+    "The cache directory and lock remain in place while in use.",
+    "Only the lock capability error and the 60-second acquisition timeout leave coordination process-local. Ordinary acquisition and builder errors reach the caller."
+  ],
+  "exclusions": [
+    "A warm reuse.",
+    "Private unknown-build index files.",
+    "Builds outside this cache."
+  ],
+  "id": "INV-5SX7YZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_knowledge_index_build_identity.py::test_two_processes_share_one_cold_index, mcp/tests/test_knowledge_index_build_identity.py::test_eight_cold_callers_share_one_build, mcp/tests/test_knowledge_index_build_identity.py::test_ordinary_lock_error_reaches_caller_without_building"
+      ],
+      "path": "full-ingest.json"
+    },
+    "handoffEntry": "BUG-R23@v1 rule 2",
+    "leaf": "261112-BUG-L23",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "One file lock per cache directory serializes cold builds, and only an ineffective lock or a 60-second acquisition timeout allows process-local coordination alone.",
+  "status": "proposed",
+  "supersedes": []
+}

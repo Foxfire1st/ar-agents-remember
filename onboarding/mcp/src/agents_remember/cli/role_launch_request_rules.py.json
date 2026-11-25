@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "210872f08a0a898df592f68e2330120a451b3ea5",
+        "content": "sha256:b32995aafbb8bc8d800d958b09d2c247f3f3dbd21205dd4a19555053503feece",
+        "locator": {
+          "kind": "symbol",
+          "name": "missing_copies_receipt_warning"
+        }
+      },
+      "id": "RLZ-4RC28W",
+      "invariant": "INV-1N75CV",
+      "origin": {
+        "handoffEntry": "BUG-R22@v1 §2",
+        "leaf": "261112-BUG-L22"
+      },
+      "rationale": "Builds the missing-copy sentence ahead of the step-up text, before other producers append notices.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The free seat bound to the caller's harness, or refused with the list the host runs.",
       "targets": [
         {
           "anchor": {
-            "blob": "6fa1ea0b40930f3f7b7eecbf2e1e53d6a88e6b7d",
+            "blob": "210872f08a0a898df592f68e2330120a451b3ea5",
             "content": "sha256:6d5b6e5692c764792426f3fb13ad35c0cd9a5a8adb1c6ef8cf677be48ad72703",
             "locator": {
               "kind": "symbol",
@@ -19,12 +38,12 @@
       ]
     },
     "2": {
-      "note": "The missing-copy warning that keeps the start succeeding.",
+      "note": "The missing-copy receipt warning puts the filenames before a step-up notice.",
       "targets": [
         {
           "anchor": {
-            "blob": "6fa1ea0b40930f3f7b7eecbf2e1e53d6a88e6b7d",
-            "content": "sha256:8c1e0a60ea38f9776239de9e18393460648b8e07432b0c5ec3cdacd0e72df8ed",
+            "blob": "210872f08a0a898df592f68e2330120a451b3ea5",
+            "content": "sha256:b32995aafbb8bc8d800d958b09d2c247f3f3dbd21205dd4a19555053503feece",
             "locator": {
               "kind": "symbol",
               "name": "missing_copies_receipt_warning"
@@ -56,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6fa1ea0b40930f3f7b7eecbf2e1e53d6a88e6b7d",
+            "blob": "210872f08a0a898df592f68e2330120a451b3ea5",
             "content": "sha256:40b9b78a5d624b34e69c7053ecc525efc5c313167f38d9dac20a56bfc5682e88",
             "locator": {
               "kind": "symbol",

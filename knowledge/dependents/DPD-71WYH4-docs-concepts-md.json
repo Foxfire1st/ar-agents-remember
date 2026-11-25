@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "6e8e0e0d5d8cc2950f90d4f5f67aa32a0b59f206",
-    "commit": "9bc700a73cc35d60ba80d7fb00fa883dabcf8227",
-    "role": "curator",
-    "statement": "The document describes the contract-recorded leaf bases, the exact candidate gate, and the converted current and stale drift summary.",
-    "task": "261123-SUB-L1",
-    "uncommitted": true
+    "codeTree": "55049f6c73b5660adaa6e3b0637185a3167751c3",
+    "commit": "54d242820ff7f9941cadebf9f543c857314b368f",
+    "role": "manager",
+    "statement": "The guide correctly explains path-based memory reads, cache identity, drift reporting and exact-pair knowledge gates on the merged code.",
+    "task": "261123-SUB",
+    "uncommitted": false
   },
   "document": "docs/concepts.md",
   "id": "DPD-71WYH4",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 17,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -121,7 +121,7 @@
       "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py"
     },
     {
-      "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+      "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
     },
@@ -371,7 +371,7 @@
       "path": "mcp/src/agents_remember/controlplane/closeout_queue_store.py"
     },
     {
-      "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+      "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -412,8 +412,8 @@
     },
     {
       "anchor": {
-        "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
-        "content": "sha256:c953503aa6afe66c046070e4713c0438b86ccab1d9e76a42e4cf596ea1ad226a",
+        "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+        "content": "sha256:5e934e7c35e4b849bc5713c201ec85cee9227fc4aff9ce16b0331e69779ca539",
         "locator": {
           "kind": "symbol",
           "name": "KnowledgeIndexCache"

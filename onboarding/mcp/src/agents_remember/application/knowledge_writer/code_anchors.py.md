@@ -38,12 +38,7 @@ through `models/knowledge_files/anchor_content.py`.
   `None`. The object is a regular file's blob, a symlink's blob or a submodule's commit; `absent` means C holds
   nothing at the path. Any other subject passes. The refusal reads "names no change at C: the code candidate
   holds … (unknown subject)".
-- **`CodeSnapshot.at_commit(repository, commit)` (L37).** The tree C of a committed code state: the crossing
-  owner's route resolves anchors at the series' code work branch, not at a working tree. A commit with no tree
-  raises `AnchorResolutionError`. `at_commit` reads the tree through `of_tree(root, tree, commit=commit)` and keeps
-  that commit on the snapshot; `capture` reads the working tree through the same constructor and carries no commit,
-  because a tree with uncommitted changes is named by none. That recorded commit is the code state a dependent's
-  confirmation names for the values its links were read at (MIK-R124 rule 1).
+- **`CodeSnapshot.at_commit(repository, commit)`.** A committed snapshot resolves the supplied operand to a Git commit and records its full ID beside the commit's tree. A tree or blob operand raises `AnchorResolutionError`. The constructor checks 40- or 64-character hexadecimal syntax for a supplied commit ID. `capture` reads the working tree and carries no commit. The crossing route supplies the sync's settled commit, which identifies the code used to confirm dependent links.
 
 ### Conventions
 
@@ -121,4 +116,4 @@ No cross-repo boundary is crossed by this file.
 
 - The writer passes the selected grammar to shared qualified lookup. Lean keys are exact. Other readers can use dotted containment after an exact-key miss. [7]
 
-- The writer refuses an unverifiable Lean key with a line-range remedy and reports full-name choices for a multiply bound alias. [13]
+- The writer refuses an unverifiable Lean key with a line-range remedy and reports full-name choices for a multiply bound alias. [14]

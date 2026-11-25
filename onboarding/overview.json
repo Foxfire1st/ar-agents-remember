@@ -4241,7 +4241,7 @@
       ]
     },
     "354": {
-      "note": "Converted carryover prepares equal-format paired content and missing records in a recovery worktree without importing history or committing; ordinary leaf judgments and gated closeout own publication.",
+      "note": "Converted carryover prepares equal-format paired content and missing records in a recovery worktree without importing history or committing. The public apply proof covers eligible dot-directory pairs. Ordinary leaf judgments and gated closeout own publication.",
       "targets": [
         {
           "anchor": {
@@ -4271,12 +4271,12 @@
         },
         {
           "anchor": {
-            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "blob": "736a9d388c150a826532e5a204f6e473991d6711",
             "content": "sha256:93f20e53753f18e1b1db20174f095af6c2114477ae33eb6b6b8dd1fb2c34c195",
             "locator": {
-              "end": 293,
+              "end": 294,
               "kind": "line_range",
-              "start": 197
+              "start": 198
             },
             "path": "mcp/src/agents_remember/memory/carryover_apply.py"
           },
@@ -4284,12 +4284,12 @@
         },
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
-            "content": "sha256:1b77c7102d619e92795861dac4712a6cc902d38e355639c21713f63669ebb10a",
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
+            "content": "sha256:59f849752ce2df7f7714eb4917d83048dc8ea423791bd2d2211216a85892943e",
             "locator": {
-              "end": 621,
+              "end": 635,
               "kind": "line_range",
-              "start": 601
+              "start": 605
             },
             "path": "mcp/tests/test_converted_carryover.py"
           },
@@ -4517,7 +4517,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4c1d3fdaaf2c83ad98a3089a5f4a0bce0658406",
+            "blob": "87767258a37971b10921c8a62554894a4a00036b",
             "content": "sha256:1556b38430b0b91643d0aca13936052e01cf50233bcb7f447833531577dd9011",
             "locator": {
               "end": 15,
@@ -4530,7 +4530,7 @@
         },
         {
           "anchor": {
-            "blob": "e4c1d3fdaaf2c83ad98a3089a5f4a0bce0658406",
+            "blob": "87767258a37971b10921c8a62554894a4a00036b",
             "content": "sha256:c50f9e867d6d8ecfd6d01aba46170a274d11249ebb6817911173b74efc6ebea7",
             "locator": {
               "end": 5111,
@@ -4543,7 +4543,7 @@
         },
         {
           "anchor": {
-            "blob": "e4c1d3fdaaf2c83ad98a3089a5f4a0bce0658406",
+            "blob": "87767258a37971b10921c8a62554894a4a00036b",
             "content": "sha256:a21d8fbeade96f460c50dc5451345a3d1b287f7a4a3bb84239ef8d0d75a3f85b",
             "locator": {
               "end": 5396,
@@ -4556,7 +4556,7 @@
         },
         {
           "anchor": {
-            "blob": "e4c1d3fdaaf2c83ad98a3089a5f4a0bce0658406",
+            "blob": "87767258a37971b10921c8a62554894a4a00036b",
             "content": "sha256:9c5f28574f34d8206f5408394964aaf4ccfd8c658438df035a4fce7285c6ca7e",
             "locator": {
               "end": 6178,
@@ -4569,8 +4569,8 @@
         },
         {
           "anchor": {
-            "blob": "e4c1d3fdaaf2c83ad98a3089a5f4a0bce0658406",
-            "content": "sha256:0f1113edff7dc2799413bf1344e5d84badf581c179c84a7f2aacbccad6be07aa",
+            "blob": "87767258a37971b10921c8a62554894a4a00036b",
+            "content": "sha256:ab7e2dbcef969025ee9335cdba0d2e9900211d0654ce4381cc7061e1b9197228",
             "locator": {
               "end": 6265,
               "kind": "line_range",
@@ -5395,7 +5395,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+            "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
             "content": "sha256:6ea1a6086fc01dc18f9bfda9d7f0f859bedde538a3b906d26eb1dd273768545e",
             "locator": {
               "end": 122,
@@ -5737,7 +5737,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
             "content": "sha256:3b0c228ab352698cf746ed3ee50615da3a505370ac106c479079610e6fa0d5be",
             "locator": {
               "kind": "symbol",

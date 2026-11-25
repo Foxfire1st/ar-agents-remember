@@ -118,12 +118,12 @@
       ]
     },
     "2": {
-      "note": "Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership.\n\nAnchor: `drift_check_tool`",
+      "note": "Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership.\n\nAnchor: “drift_check_tool”",
       "targets": [
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
-            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+            "content": "sha256:8891b392f2b5e7518a285b274b4b3d1a344bdc32eb8b09eab3aa7640aa5119a4",
             "locator": {
               "kind": "file"
             },

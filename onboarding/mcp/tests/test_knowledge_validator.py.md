@@ -89,7 +89,7 @@ Representative cases; the full list is in the module.
 - The hand-added marker is refused. [3]
 
 
-- A dot-named card and its sidecar are validated. [4]
+- A malformed dot-named card is validated against its sidecar. The predicate keeps a sidecar under a dot directory and excludes the route-index cache. [4]
 
 - The retired record the history fixtures keep in every tree (records are never deleted, MIK-R22 rule 3; L09 R2-1). [6]
 - A closed history file is frozen. [7]

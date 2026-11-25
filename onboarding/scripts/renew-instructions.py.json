@@ -17,6 +17,24 @@
       },
       "rationale": "The planner computes a complete deterministic replacement set and the entry point publishes it or reports staleness without writes.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "388fa4ba0118396a9905774abb83b2d001238bbe",
+        "content": "sha256:8178a0e42cd92fe6e36bf2c03e609e76204e0bd3b69e9d4f504ab1f72c7c81af",
+        "locator": {
+          "kind": "symbol",
+          "name": "main"
+        }
+      },
+      "id": "RLZ-QXPTKB",
+      "invariant": "INV-J2CHWZ",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 8",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The public renewal entry point builds the plan and dispatches its check or apply mode. The contributor procedure, skills reference and release checklist are cited separately.",
+      "role": "presentation"
     }
   ],
   "references": {
@@ -31,6 +49,24 @@
               "kind": "symbol",
               "name": "main"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The targeted tier invokes the fast tier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
+            "content": "sha256:e58af3797b578f908d94c631fe6777b9237bcc89dd6cc5ee8dd49c83e90e84d4",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 237
+            },
+            "path": ".githooks/_gate.sh"
           },
           "kind": "code"
         }
@@ -90,6 +126,114 @@
               "start": 10
             },
             "path": "scripts/instruction_renewal/pointers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The contributor guide gives the command for instruction facts and the generated skills and tool-details copies, with a read-only check mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e27262761cee5ab5e0177ca4774cc2a60bf3fcb5",
+            "content": "sha256:42a9e92ade669055808420d32249af664fc66fe70b463643090dacc68c31429e",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "CONTRIBUTING.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The skills reference names the exact renewal command for the generated skills copy and points to the contributor rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0e2d842b7397b60ad5e7d962fd0ccfc1f00dfdc",
+            "content": "sha256:d2791604d141e390a28188675352a91716a73bfab73ca0247fcf3eaf750dba7b",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "docs/reference/skills.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The release checklist requires a clean renewal check and current instruction facts and package copies, including tool-details.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b79471742cbf709d5dc406cb17677202909d3b0d",
+            "content": "sha256:d1cd85f8a5e5b1d5b950f4f1fbbd6c58c46bf02fb8cdfc4d4e99b1b8d75a1c2b",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "docs/release-checklist.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The hook checks projection, skills and runtime copies. Skills use the instruction renewal command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
+            "content": "sha256:e76b38247a58a8949f9ec1d865953f4c5988b1c6e8970d3345a10c8ae2764201",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The hook runs the named copy checker with the check flag.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
+            "content": "sha256:5efac00700b2dce39d53e18404bec6661e98143d6832d044427f527d1db629a7",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The fast tier invokes the generated copy checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
+            "content": "sha256:546bc728787e0b965d56a8aa417f8fc7e23f834cd422d3dbfd22ba05507596e0",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": ".githooks/_gate.sh"
           },
           "kind": "code"
         }

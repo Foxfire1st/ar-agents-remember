@@ -1,0 +1,62 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c5279f52c1fae8958059bbbe48c65a4fd296bc4a",
+        "content": "sha256:a613bdc8bb462b6c654e826568c9dad8bdacb1eec88e84471cfe8de251a9f5da",
+        "locator": {
+          "end": 291,
+          "kind": "line_range",
+          "start": 285
+        }
+      },
+      "id": "RLZ-55Y8YZ",
+      "invariant": "INV-Q1GFQS",
+      "origin": {
+        "handoffEntry": "RSM-R01-A10",
+        "leaf": "261112-RSM-L1"
+      },
+      "rationale": "The served contract binds the master and any commanding sprint and names the exact caller document by role.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The served tool contract binds the master and any commanding sprint and names the caller's task document by role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5279f52c1fae8958059bbbe48c65a4fd296bc4a",
+            "content": "sha256:9b879f65dbefa8750cc1afa554fa42afe06c6ae19871f9d4d4734f31935e341c",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 285
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The canonical tool contract names the leaf for a Curator and the commanding sprint or standalone master for other authorized callers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5279f52c1fae8958059bbbe48c65a4fd296bc4a",
+            "content": "sha256:9b879f65dbefa8750cc1afa554fa42afe06c6ae19871f9d4d4734f31935e341c",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 285
+            },
+            "path": "docs/tool-details.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

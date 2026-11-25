@@ -56,7 +56,7 @@ The options and dispatch endpoints share a `launcher_catalog_question` context f
 - Frozen takeover and requested reason are recorded before the host call. [18]
 
 
-- Missing-copy and step-up warnings coexist in the launch request rules. [19]
+- The launch-warning builder puts missing requirement filenames before the step-up notice. [19]
 
 
 
@@ -87,7 +87,9 @@ Investigator dispatch uses the existing selection admission lock; options expose
 ## Refreshed current evidence
 
 
+
 - Before workspace-open and agent-create, the observer sees the starting receipt, its saved agent ID and the stored artifact. [5]
+
 
 
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [7]
@@ -117,7 +119,7 @@ Investigator dispatch uses the existing selection admission lock; options expose
 
 
 
-- The starting receipt carries task-copy metadata. Missing requirement copies produce a warning and later canonical task publication refreshes them. The start answers with the projected identity and handover addresses. [15]
+- The starting receipt carries task-copy metadata and puts missing requirement filenames ahead of step-up advice. Later canonical task publication refreshes the copies when the files exist. The start answers with the projected identity and handover addresses. [15]
 
 
 

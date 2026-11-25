@@ -3415,7 +3415,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
+            "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
             "content": "sha256:6038ea35a7ffb093ab5e3f8084150b0e70be83ba152a5b957ba52622e78e7ff8",
             "locator": {
               "kind": "symbol",
@@ -3704,11 +3704,23 @@
       ]
     },
     "298": {
-      "note": "L110 shaped bounds and L112 final bounds coexist with interim rows and exceptions.",
+      "note": "Shaped bounds, final rows, interim ownership and exceptions each participate in bound resolution.\n\nAnchor: `SHAPED_TOOL_BOUNDS`, `L112_FINAL_BOUNDS`, `TOOL_ANSWER_EXCEPTIONS`, `INTERIM_TOOL_LEAF`, `bound_for`",
       "targets": [
         {
           "anchor": {
-            "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+            "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
+            "content": "sha256:461007092af6980f587ac3f4247b21c30e23eb0438420eed416cbec5434274ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHAPED_TOOL_BOUNDS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
             "content": "sha256:468fd1fbdb3ea15ffcb8cbdf5a6e0fc636dde3828211d1c92416d70a2096a8db",
             "locator": {
               "kind": "symbol",
@@ -3720,7 +3732,7 @@
         },
         {
           "anchor": {
-            "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+            "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
             "content": "sha256:c76332afe13123b0b73e10d09a7627a72a187c2596a2fb4f2cdd8822a47cf595",
             "locator": {
               "kind": "symbol",
@@ -3732,19 +3744,7 @@
         },
         {
           "anchor": {
-            "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
-            "content": "sha256:073375c21901f5c3efc5913b9f4c23941b7904ce8c52cad35aba88ac01eda632",
-            "locator": {
-              "kind": "symbol",
-              "name": "SHAPED_TOOL_BOUNDS"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+            "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
             "content": "sha256:33e4ed2d3861fd039a9f96d63057667271d5c333e3cbda21457c31bf87a263fe",
             "locator": {
               "kind": "symbol",
@@ -3756,7 +3756,7 @@
         },
         {
           "anchor": {
-            "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+            "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
             "content": "sha256:2e99ebc88b34119361b6f1e751e9d985b9048cc76430a5c331272b689bb45d44",
             "locator": {
               "kind": "symbol",
@@ -4196,30 +4196,29 @@
       ]
     },
     "315": {
-      "note": "The composed `PUBLIC_TOOLS` declares 44 names, and `SHAPED_TOOL_BOUNDS` carries the final task/landing/role delivery rows, including `direct_execution_grant` at 150 tokens.",
+      "note": "The public roster declares 44 tool names. Shaped delivery rows include role_start at 600 tokens and direct_execution_grant at 150 tokens.\n\nAnchor: `PUBLIC_TOOLS`, `SHAPED_TOOL_BOUNDS`",
       "targets": [
         {
           "anchor": {
-            "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
-            "content": "sha256:073375c21901f5c3efc5913b9f4c23941b7904ce8c52cad35aba88ac01eda632",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:77300d3d8d990814a8c85c25a0c314254dde308fd394c4a03ff87c1fd34e2cb3",
             "locator": {
               "kind": "symbol",
-              "name": "SHAPED_TOOL_BOUNDS"
+              "name": "PUBLIC_TOOLS"
             },
-            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
-            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
+            "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
+            "content": "sha256:461007092af6980f587ac3f4247b21c30e23eb0438420eed416cbec5434274ef",
             "locator": {
-              "end": 74,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "SHAPED_TOOL_BOUNDS"
             },
-            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
           },
           "kind": "code"
         }
@@ -4758,7 +4757,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
+            "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
             "content": "sha256:f5170fbc81eb536a5ecf8c2753b4da6055a3abec1975dd663c1504658e615abc",
             "locator": {
               "kind": "symbol",
@@ -4809,12 +4808,12 @@
         },
         {
           "anchor": {
-            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
+            "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
             "content": "sha256:021eb85f55e99154ae142ee9543beb0d1c61575ffe049fc36dae07dec85d004e",
             "locator": {
-              "end": 183,
+              "end": 184,
               "kind": "line_range",
-              "start": 183
+              "start": 184
             },
             "path": "mcp/src/agents_remember/models/task_doc.py"
           },
@@ -4871,12 +4870,12 @@
         },
         {
           "anchor": {
-            "blob": "ac36179eb70b82f159033db5fa11da3ded82ae74",
+            "blob": "b592b03753c69d39f9ff885ce73bcd71732db57c",
             "content": "sha256:1eb8e1957f5909664f454c837caf8a859864958313ace8829f8d27b49f421736",
             "locator": {
-              "end": 267,
+              "end": 268,
               "kind": "line_range",
-              "start": 253
+              "start": 254
             },
             "path": "mcp/tests/test_paseo_catalog_r71.py"
           },
@@ -4889,7 +4888,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+            "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
             "content": "sha256:333201f187b41ee930ef52be503736779fc0ce24c41edcaa97b8cc87bc728a44",
             "locator": {
               "end": 176,

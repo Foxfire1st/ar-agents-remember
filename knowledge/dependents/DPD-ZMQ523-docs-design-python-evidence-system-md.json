@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "6e8e0e0d5d8cc2950f90d4f5f67aa32a0b59f206",
-    "commit": "9bc700a73cc35d60ba80d7fb00fa883dabcf8227",
-    "role": "curator",
-    "statement": "The document describes the unit-regression and stress-durability assignments and the source catalogs that declare support and evidence relationships.",
-    "task": "261123-SUB-L1",
-    "uncommitted": true
+    "codeTree": "55049f6c73b5660adaa6e3b0637185a3167751c3",
+    "commit": "54d242820ff7f9941cadebf9f543c857314b368f",
+    "role": "manager",
+    "statement": "The evidence-system guide accurately describes lane and lifecycle authority, including canonical ordering and source-derived consumers, on the merged catalogs.",
+    "task": "261123-SUB",
+    "uncommitted": false
   },
   "document": "docs/design/python-evidence-system.md",
   "id": "DPD-ZMQ523",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "be3c3cce8d9b34a1e87fd6179aa9798268a031c7",
+      "blob": "30fe276ea103c0bc2f37afe7affc8436d89f64bd",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "ae16d74a33458080aa55a8b266d767c97f9d1bb1",
+      "blob": "f40ae40bdb8b2ebc0829ec0c3684f413e66edfee",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },

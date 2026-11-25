@@ -125,12 +125,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3768b4016fd921a34a69b6dcfcf2df78901c48a7",
+            "blob": "8c3d7127e9f29ec6f3774e36a1ed7c9f9b0939c5",
             "content": "sha256:4f0adf7e76356668861fdbafaf5028f592f47b86b055ae658a3e439e74825d0d",
             "locator": {
-              "end": 524,
+              "end": 542,
               "kind": "line_range",
-              "start": 496
+              "start": 514
             },
             "path": "mcp/tests/test_knowledge_validator_routes.py"
           },
@@ -174,12 +174,12 @@
         },
         {
           "anchor": {
-            "blob": "3768b4016fd921a34a69b6dcfcf2df78901c48a7",
+            "blob": "8c3d7127e9f29ec6f3774e36a1ed7c9f9b0939c5",
             "content": "sha256:8b988f8c6609629b959976cbbbf8e3e81d41c98a61c810caee5f4ab898518292",
             "locator": {
-              "end": 516,
+              "end": 534,
               "kind": "line_range",
-              "start": 516
+              "start": 534
             },
             "path": "mcp/tests/test_knowledge_validator_routes.py"
           },
@@ -228,12 +228,12 @@
         },
         {
           "anchor": {
-            "blob": "3768b4016fd921a34a69b6dcfcf2df78901c48a7",
+            "blob": "8c3d7127e9f29ec6f3774e36a1ed7c9f9b0939c5",
             "content": "sha256:8b988f8c6609629b959976cbbbf8e3e81d41c98a61c810caee5f4ab898518292",
             "locator": {
-              "end": 516,
+              "end": 534,
               "kind": "line_range",
-              "start": 516
+              "start": 534
             },
             "path": "mcp/tests/test_knowledge_validator_routes.py"
           },

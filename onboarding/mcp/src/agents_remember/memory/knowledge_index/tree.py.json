@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+        "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
         "content": "sha256:32bc74b80edd95d50932572792ffcff965811133b5ae9e8292c8b84eb3f7819d",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+        "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
         "content": "sha256:1be104f151ba2e36a25c7964d8f0f289639e01b01c3d840dd472ddd4467bdc4f",
         "locator": {
           "kind": "symbol",
@@ -36,18 +36,36 @@
       },
       "rationale": "Copies the repository's index with that function before it adds the working tree to the copy, so the directory key, and the cached index served for it, follow a rewrite made in the second the index was written.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+        "content": "sha256:d71611ad0d963ab92c2b1745793d6b17d0538ab0cfd339a35a1dfe0a4413f3f9",
+        "locator": {
+          "kind": "symbol",
+          "name": "is_indexed_path"
+        }
+      },
+      "id": "RLZ-DDFMSB",
+      "invariant": "INV-EYSSS1",
+      "origin": {
+        "handoffEntry": "BUG-R24@v1 rule 1",
+        "leaf": "261112-BUG-L24"
+      },
+      "rationale": "Admits JSON within the memory roots through the shared filter while reserving census JSON for its owner.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
     "1": {
-      "note": "The two sources, the captured-state key and what the capture never writes.",
+      "note": "The Git reader and the working-directory capture share a tree key. Isolated index and object storage protect the repository, and the captured blob check detects an intervening edit.",
       "targets": [
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
-            "content": "sha256:850c703c1382729ca90d15985a3d67475619a02d928f2f0d6cfd1952ae61ab46",
+            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+            "content": "sha256:d5a89b3533581c426681ac544336379d2501a6a736edd8cb935cd77b41f24b58",
             "locator": {
-              "end": 23,
+              "end": 19,
               "kind": "line_range",
               "start": 1
             }
@@ -61,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
             "content": "sha256:3007d8585749684673308283898e1f6eaf462f5e65c7fae88c8cb098dc6a8c22",
             "locator": {
               "kind": "symbol",
@@ -78,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
             "content": "sha256:c77b2e30ff8713de34339f4acfa6ffd2a3426edd3f10eb9b47e3a1a6f8ef211a",
             "locator": {
               "kind": "symbol",
@@ -94,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
             "content": "sha256:8831b5ebf0b198554d591226affe2fc269569c598d70b2772803282d07604f84",
             "locator": {
               "kind": "symbol",
@@ -105,7 +123,7 @@
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
             "content": "sha256:d4e33c81f422699f0b992028e2335ef954d00d97daabc504bea3f9cc1733bfe2",
             "locator": {
               "kind": "symbol",
@@ -117,12 +135,12 @@
       ]
     },
     "3": {
-      "note": "The indexed JSON filter, sharing the validator's exclusion predicate.",
+      "note": "The indexed JSON filter uses the validator’s route-cache exclusion and includes JSON in dot directories under knowledge or onboarding. The census reader owns knowledge/census.",
       "targets": [
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
-            "content": "sha256:c8f3617e60a552ac6ed46dc46a9d31804229f2ed6d7a6f4084a91aed24fd024d",
+            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+            "content": "sha256:d71611ad0d963ab92c2b1745793d6b17d0538ab0cfd339a35a1dfe0a4413f3f9",
             "locator": {
               "kind": "symbol",
               "name": "is_indexed_path"
@@ -137,7 +155,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
             "content": "sha256:e70fd64cf24693b7ce3eaff463bfec6e3a8b2485539c76d5f929e1c626524dcd",
             "locator": {
               "kind": "symbol",
@@ -145,27 +163,15 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
-            "content": "sha256:d1b8c0db0e18e582f9b1ae541d260aead57801ed55ee1914babe91c410ffbb9b",
-            "locator": {
-              "end": 94,
-              "kind": "line_range",
-              "start": 82
-            }
-          },
-          "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "The directory reader and its key, with the blob-id check and retry.",
+      "note": "The directory reader and its key, with the blob-id check and retry.\n\nAnchor: `directory_snapshot` `directory_key` `_blob_id`",
       "targets": [
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
             "content": "sha256:b0aab9fa4ff35fa98d257c8cc68305cc45903451e4a5a348bf6dc04678e8fd2d",
             "locator": {
               "kind": "symbol",
@@ -176,7 +182,7 @@
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
             "content": "sha256:7533862bf260a31d0b8e01d10c0bfab20c7bf053da5d5893177e372620c8da05",
             "locator": {
               "kind": "symbol",
@@ -187,7 +193,7 @@
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
             "content": "sha256:cb1e87d9dade93080b3a8f57130b378089e9f2bccf89e33d1b48433964294797",
             "locator": {
               "kind": "symbol",
@@ -198,19 +204,7 @@
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
-            "content": "sha256:8c5b4f99dff71a4cfad8a924effda4001dc2033863d3e38ae5adb4183d690360",
-            "locator": {
-              "end": 115,
-              "kind": "line_range",
-              "start": 97
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
             "content": "sha256:de640f5bb615ffac784f3707f20126e5484780338c9777e96add99747f248bfd",
             "locator": {
               "end": 137,
@@ -219,27 +213,15 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
-            "content": "sha256:d2963032f408ee35d1e6db3f9548a6248541f8572e94e336a89b1d389a6d1488",
-            "locator": {
-              "end": 252,
-              "kind": "line_range",
-              "start": 247
-            }
-          },
-          "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "The isolated capture and the index-flag clearing on the scratch copy.\n\nAnchor: `_capture` `_clear_index_flags`",
+      "note": "The isolated capture copies the index and clears flags on that copy. Sparse-checkout omission keeps the committed bytes.\n\nAnchor: “_capture” “_clear_index_flags”",
       "targets": [
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
             "content": "sha256:1be104f151ba2e36a25c7964d8f0f289639e01b01c3d840dd472ddd4467bdc4f",
             "locator": {
               "kind": "symbol",
@@ -250,7 +232,7 @@
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
             "content": "sha256:b495a008cd21af0c07cb2bb10571bf0922a36d31a29464149c08b2a50f05d576",
             "locator": {
               "kind": "symbol",
@@ -261,7 +243,7 @@
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
             "content": "sha256:71cd9f164d50483d6fe89fd2d2bcb077de7835b06afef57f10204d90550a8384",
             "locator": {
               "end": 164,
@@ -273,7 +255,7 @@
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
             "content": "sha256:ed198f3652d3690f812e5c3f4b5c56f2afb954702b4246607bcc1f067389932f",
             "locator": {
               "end": 205,
@@ -285,8 +267,8 @@
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
-            "content": "sha256:a03bad9d2d1411340c45ef861aa66367dd3fc0e6da7b13584792eb0f5a34f457",
+            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+            "content": "sha256:4846f4b24324e1d2e4bdfdddfc3b9610b3ae70a5b29022254c84741752fe42c0",
             "locator": {
               "kind": "file"
             }
@@ -300,7 +282,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
             "content": "sha256:4f5e7839a69f10608877cc1e90b137beb7881916f32d53fcb8fd89d73784cf0f",
             "locator": {
               "kind": "symbol",
@@ -312,7 +294,7 @@
         },
         {
           "anchor": {
-            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
             "content": "sha256:776552925e0329a0aea2d430a2c5ff23230b95817d9ac17828d91e7b61df93ee",
             "locator": {
               "kind": "symbol",
@@ -324,7 +306,7 @@
         },
         {
           "anchor": {
-            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
             "content": "sha256:0192a81c7926b0136d85730b4afd3e3c01ffbaf42fff78921cb5e0a354c184a1",
             "locator": {
               "kind": "symbol",
@@ -336,7 +318,7 @@
         },
         {
           "anchor": {
-            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
             "content": "sha256:4f22ceac571421f9d57e3ea62ed673bd5a691939d2d751aa34a7fc51b8103a01",
             "locator": {
               "kind": "symbol",
@@ -348,7 +330,7 @@
         },
         {
           "anchor": {
-            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
             "content": "sha256:ee3d6ba56bbcc79bd02686428c920ff24e9353edbb4aab6fc2a2f2c87836f1d1",
             "locator": {
               "kind": "symbol",
@@ -361,11 +343,11 @@
       ]
     },
     "8": {
-      "note": "An index flag never hides an edit; the index reads the files the validator reads.",
+      "note": "Index flags cannot hide edits from the key. Directory and Git snapshots retain the workflow card and sidecar under a dot directory, and the index resolves its realization while excluding generated route caches.",
       "targets": [
         {
           "anchor": {
-            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
             "content": "sha256:93866b5f5e3c1acbc66fc058c05a4d6d69319c43571f8b292bdbf91a9fa09d13",
             "locator": {
               "kind": "symbol",
@@ -377,8 +359,8 @@
         },
         {
           "anchor": {
-            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
-            "content": "sha256:c8999ab04c577798d25a8c6bd580dfcbb840665bd0ef9d95e844a0aabdf20f76",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
+            "content": "sha256:5cc44865399a1a82ad7eed979bb661d103b8482a410bd386adc1bb330ae8207e",
             "locator": {
               "kind": "symbol",
               "name": "test_the_index_reads_the_files_the_validator_reads"
@@ -394,7 +376,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
             "content": "sha256:1be104f151ba2e36a25c7964d8f0f289639e01b01c3d840dd472ddd4467bdc4f",
             "locator": {
               "kind": "symbol",
@@ -405,20 +387,20 @@
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
-            "content": "sha256:71cd9f164d50483d6fe89fd2d2bcb077de7835b06afef57f10204d90550a8384",
+            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+            "content": "sha256:c0a0d9f1a80ad217cbc4848a7e455292988d8ca57e693c53747ed5bd5fa8f507",
             "locator": {
-              "end": 164,
+              "end": 191,
               "kind": "line_range",
-              "start": 140
+              "start": 185
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
-            "content": "sha256:a03bad9d2d1411340c45ef861aa66367dd3fc0e6da7b13584792eb0f5a34f457",
+            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+            "content": "sha256:4846f4b24324e1d2e4bdfdddfc3b9610b3ae70a5b29022254c84741752fe42c0",
             "locator": {
               "kind": "file"
             }

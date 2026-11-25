@@ -1,0 +1,42 @@
+{
+  "path": "mcp/tests/test_knowledge_crossing_git_paths.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4f86d23d20ed3519a361727a64f56e6232b9223a",
+        "content": "sha256:3f8ada5fbfe62998c5bb31d50616bf4325ec7ae8f4115a52b5a577efc4b8ac96",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_structural_sync_keeps_gits_unmodeled_entries"
+        }
+      },
+      "facet": "Compares exact mode, object and stage tuples to native Git for every unmodeled fixture path.",
+      "id": "PRF-92DSJ6",
+      "invariant": "INV-EPF322",
+      "origin": {
+        "handoffEntry": "BUG-R43-3",
+        "leaf": "261112-BUG-L43"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The structural merge preserves Git's tuple map and reports surviving conflicts for the selected fixture paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f86d23d20ed3519a361727a64f56e6232b9223a",
+            "content": "sha256:3f8ada5fbfe62998c5bb31d50616bf4325ec7ae8f4115a52b5a577efc4b8ac96",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_structural_sync_keeps_gits_unmodeled_entries"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

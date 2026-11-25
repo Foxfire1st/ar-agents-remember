@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+        "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+        "content": "sha256:7dcebc5be7932e9974e6e8a3ae261d8b3207c1233f7a82133a1527cb2ff0ab9a",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeIndexCache._lookup"
+        }
+      },
+      "id": "RLZ-0BN8JJ",
+      "invariant": "INV-8SMQAE",
+      "origin": {
+        "handoffEntry": "BUG-R23@v1 rule 1",
+        "leaf": "261112-BUG-L23"
+      },
+      "rationale": "This lookup joins by destination and gives each follower an independent validated index.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
         "content": "sha256:574ff7370b00f611674304a60bd72a659b3f523ebe44b905022d72d4cd3b6b2e",
         "locator": {
           "kind": "symbol",
@@ -21,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
-        "content": "sha256:c953503aa6afe66c046070e4713c0438b86ccab1d9e76a42e4cf596ea1ad226a",
+        "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+        "content": "sha256:5e934e7c35e4b849bc5713c201ec85cee9227fc4aff9ce16b0331e69779ca539",
         "locator": {
           "kind": "symbol",
           "name": "KnowledgeIndexCache"
@@ -36,6 +54,96 @@
       },
       "rationale": "The cache captures loaded source identity once, selects only its own namespace and keeps the existing single eviction.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+        "content": "sha256:26c42b50a81846d9ea27e077047b921fdcdc057a74548b66c93df562d8a1da19",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeIndexCache._build"
+        }
+      },
+      "id": "RLZ-FF34ST",
+      "invariant": "INV-2B865P",
+      "origin": {
+        "handoffEntry": "BUG-R23@v1 rule 3",
+        "leaf": "261112-BUG-L23"
+      },
+      "rationale": "A local temporary path is registered before file creation and remains registered through cleanup.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+        "content": "sha256:dc62fc59e55fa8633279c7d7d9fd2673e579221133fdf4fb58fbfe1967157349",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeIndexCache._build_cold"
+        }
+      },
+      "id": "RLZ-QKPCB1",
+      "invariant": "INV-5SX7YZ",
+      "origin": {
+        "handoffEntry": "BUG-R23@v1 rule 2",
+        "leaf": "261112-BUG-L23"
+      },
+      "rationale": "The cold path uses the cache directory lock and checks reuse again before building, with only the ruled acquisition conditions allowing a build without the file lock.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+        "content": "sha256:8332e8158cc6a3ca9388292f2499957b38bf6fee207fda06a82c48fd9b5e4c89",
+        "locator": {
+          "kind": "symbol",
+          "name": "_builder_is_gone"
+        }
+      },
+      "id": "RLZ-W3905F",
+      "invariant": "INV-2B865P",
+      "origin": {
+        "handoffEntry": "BUG-R23@v1 rule 3",
+        "leaf": "261112-BUG-L23"
+      },
+      "rationale": "The registry protects the exact registered temporary path. For every unregistered recognized path, including one named with the current PID, this check requires the PID probe to raise ProcessLookupError before reporting the builder gone.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+        "content": "sha256:58acd08123b6a50374b98c6e2791ad55d22c234aa4083439191c8f2d5445c600",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeIndexCache._prune_temporary"
+        }
+      },
+      "id": "RLZ-WAKV85",
+      "invariant": "INV-2B865P",
+      "origin": {
+        "handoffEntry": "BUG-R23@v1 rule 3",
+        "leaf": "261112-BUG-L23"
+      },
+      "rationale": "The eviction path selects only recognized cache temporary names and consults the builder liveness check before unlinking.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+        "content": "sha256:5b9fac4a0a50793b128040d9b72c0e267cc5a604c1e915138b0c70484c2d76df",
+        "locator": {
+          "kind": "symbol",
+          "name": "_complete_build"
+        }
+      },
+      "id": "RLZ-YT82R5",
+      "invariant": "INV-8SMQAE",
+      "origin": {
+        "handoffEntry": "BUG-R23@v1 rule 1",
+        "leaf": "261112-BUG-L23"
+      },
+      "rationale": "This operation publishes the outcome shared by waiters and retires the flight for a later attempt.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -44,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+            "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
             "content": "sha256:e1edb9c0000b5af1a403e9bf1a822a4bcd8ea7846b5af47dcd8ccf84e67aa97c",
             "locator": {
               "kind": "symbol",
@@ -55,7 +163,7 @@
         },
         {
           "anchor": {
-            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+            "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
             "content": "sha256:c2a8d161f346fb4f777e75b89cf8cc9fb971a3296a960a95bd67a2465031abb9",
             "locator": {
               "kind": "symbol",
@@ -66,7 +174,7 @@
         },
         {
           "anchor": {
-            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+            "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
             "content": "sha256:a86e9b04cf2b0c189f9121360acdb900a16e9c3fd5f929c81931e23eb7161584",
             "locator": {
               "kind": "symbol",
@@ -77,7 +185,7 @@
         },
         {
           "anchor": {
-            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+            "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
             "content": "sha256:2ed879b0f9b7814345cc200e0a0f193f95d3a71131cd5fdad1f9ecc9abc70951",
             "locator": {
               "kind": "symbol",
@@ -89,28 +197,28 @@
       ]
     },
     "4": {
-      "note": "Lookups recompute the key and reuse or build.\n\nAnchor: `KnowledgeIndexCache.for_directory`; `KnowledgeIndexCache.for_git_tree`",
+      "note": "Directory lookups derive the current key, and Git lookups resolve the requested tree before both enter the shared cache lookup.",
       "targets": [
         {
           "anchor": {
-            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
-            "content": "sha256:02e94e270206fcff7c9c8d2b8fbfc3482a7a4773d9ac9f8f5e4aaba68a4629b8",
+            "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+            "content": "sha256:facbb0e99ca4012ac0921e6ae1a47d1462da8b9cbaf514176b02a848a539c2ac",
             "locator": {
-              "end": 137,
+              "end": 174,
               "kind": "line_range",
-              "start": 130
+              "start": 171
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
-            "content": "sha256:ba1317a1173b1dc40cdd89993f21225dd8ae9327aeecc674a1a9ed2c66c68a49",
+            "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+            "content": "sha256:6cddefbb7f50f355e21015e5770ab5ac1b4581935e509060dbf3ab8e012a67d2",
             "locator": {
-              "end": 151,
+              "end": 186,
               "kind": "line_range",
-              "start": 139
+              "start": 176
             }
           },
           "kind": "code"
@@ -118,11 +226,11 @@
       ]
     },
     "6": {
-      "note": "Reuse selects the loaded build's matching tree key and index format; builds publish through a temporary file and rename.\n\nAnchor: `KnowledgeIndexCache._reuse`; `KnowledgeIndexCache._build`",
+      "note": "Reuse selects the loaded build's matching tree key and index format; builds publish through a temporary file and rename.",
       "targets": [
         {
           "anchor": {
-            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+            "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
             "content": "sha256:43fa1633ca0c74b6f5f06bce3bb07d37d2c457e65bc0037eb2c682693ab0cc62",
             "locator": {
               "kind": "symbol",
@@ -133,36 +241,36 @@
         },
         {
           "anchor": {
-            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+            "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
             "content": "sha256:7d0cb5e1b178150691f431feddd8e0914c28f6fdbba9904d4b3048cbae187d87",
             "locator": {
-              "end": 188,
+              "end": 270,
               "kind": "line_range",
-              "start": 179
+              "start": 261
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
-            "content": "sha256:d1c331001482861e1910646efc5b8e4b364f567b5521404c198c86086fa22cb6",
+            "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+            "content": "sha256:26c42b50a81846d9ea27e077047b921fdcdc057a74548b66c93df562d8a1da19",
             "locator": {
-              "end": 201,
+              "end": 289,
               "kind": "line_range",
-              "start": 190
+              "start": 272
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+            "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
             "content": "sha256:9b0916ca1391163288fab37233b0388d44868ca78cb30cec27ba627356f00581",
             "locator": {
-              "end": 128,
+              "end": 169,
               "kind": "line_range",
-              "start": 122
+              "start": 163
             }
           },
           "kind": "code"
@@ -170,12 +278,12 @@
       ]
     },
     "7": {
-      "note": "The cache cases: reuse, rebuild and deletion, eviction, and the working-tree refusal.",
+      "note": "The cache tests cover reuse, rebuilding after corruption or quiescent directory deletion, eviction, and refusal to create a cache inside a Git working tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
-            "content": "sha256:ccd626cf9b37cd415c7884de3676c23a4063275d726554246aec0865768aa106",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
+            "content": "sha256:706c00f8e2bd01f9559c938864789083a69952c129a4aff3e06f389a692a02fb",
             "locator": {
               "kind": "symbol",
               "name": "test_the_cache_reuses_rebuilds_and_loses_nothing_when_deleted"
@@ -186,7 +294,7 @@
         },
         {
           "anchor": {
-            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
             "content": "sha256:f6cc02aeae7ad68edf6715db1a5657f50ed03633b5677c517b4cf0d854a232a7",
             "locator": {
               "kind": "symbol",
@@ -198,8 +306,8 @@
         },
         {
           "anchor": {
-            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
-            "content": "sha256:f2001808a18864adeafdddb1615972f8aad215d103b38d9f0b49748d5f6b6859",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
+            "content": "sha256:ee9c19362228759d6042ca51a14b379e565fbca5bebb997309e8b0d947220a4a",
             "locator": {
               "kind": "symbol",
               "name": "test_the_cache_is_never_placed_inside_a_git_working_tree"
@@ -215,7 +323,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
             "content": "sha256:ba9a51bb05419c5c919c4516d9bfb58c2c822519aa7098289778528e6d48114f",
             "locator": {
               "kind": "symbol",

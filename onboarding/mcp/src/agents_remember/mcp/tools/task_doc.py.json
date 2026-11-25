@@ -41,8 +41,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
-            "content": "sha256:94f747b86d9b9d6a5b82c223ebcbd4c31bb795fbf3d0c63f919f661a7840fdc4",
+            "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
+            "content": "sha256:8eec489a710525c3e91a090ce1b59e685b3823f0fd354ac7a44af83b8b9e1b1b",
             "locator": {
               "kind": "symbol",
               "name": "TaskDocResponse"

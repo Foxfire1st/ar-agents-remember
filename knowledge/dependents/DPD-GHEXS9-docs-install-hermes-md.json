@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "93057354d8e50736992889cbf7edeb4a8166f21c",
+    "commit": "c54f3316c39204306abde7213c87ba9dd78bd0a4",
     "role": "curator",
-    "statement": "The Hermes guide’s permission-mode priority and message holds still apply with the registry command and parent delivery changes.",
-    "task": "261112-BUG-L20",
+    "statement": "The Hermes guide still describes the ACP provider, the unmatched Bootstrap refusal, launch mode precedence and held delivery accurately, and the grant policy remains scoped to its two named provider branches.",
+    "task": "261112-BUG-L25",
     "uncommitted": true
   },
   "document": "docs/install/hermes.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_provision.py"
     },
     {
-      "blob": "6fa1ea0b40930f3f7b7eecbf2e1e53d6a88e6b7d",
+      "blob": "210872f08a0a898df592f68e2330120a451b3ea5",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
     },
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+      "blob": "ed433f1461603a846547ab141a794294a4c4054a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
@@ -86,7 +86,7 @@
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
     {
-      "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
+      "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -96,7 +96,7 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/background_wait.ts"
     },
     {
-      "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
+      "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     },

@@ -1,6 +1,58 @@
 {
   "path": "mcp/tests/test_knowledge_file_canonical.py",
-  "proves": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a4ecbb879e692e08b8c029e0c8ab567479c6a44f",
+        "content": "sha256:88059d60faf5233cf5a46cee794b0899b2dce4d35fa185678f76e6a55a6efb22",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_knowledge_format_prunes_dot_directories_in_unconverted_memory"
+        }
+      },
+      "facet": "An unconverted root formats ordinary settings and preserves the hidden knowledge sentinel byte for byte.",
+      "id": "PRF-14N2ZV",
+      "invariant": "INV-FSWRVN",
+      "origin": {
+        "handoffEntry": "BUG-R24@v1 rule 1 formatter",
+        "leaf": "261112-BUG-L24"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a4ecbb879e692e08b8c029e0c8ab567479c6a44f",
+        "content": "sha256:52f97ece781280dfce7651dfb24c2b71a685be2d74a4d4fe0e88d43d3cb3ef1b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_knowledge_format_command_checks_rewrites_and_skips_caches"
+        }
+      },
+      "facet": "Equivalent and containing operands find the eligible hidden card and retain visible settings selection while independently skipping the route cache and outside hidden sentinel.",
+      "id": "PRF-AECGM8",
+      "invariant": "INV-FSWRVN",
+      "origin": {
+        "handoffEntry": "BUG-R24@v1 rule 1 formatter",
+        "leaf": "261112-BUG-L24"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a4ecbb879e692e08b8c029e0c8ab567479c6a44f",
+        "content": "sha256:af51ea7537283868e4bb0288a8fe3a12c377f2f51c5fc57c9ae46fb3e8b0f3e6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_knowledge_format_preserves_dot_directories_outside_memory_roots"
+        }
+      },
+      "facet": "An outside operand with same-named children formats ordinary settings and preserves the outside hidden sentinels byte for byte.",
+      "id": "PRF-AXNA1T",
+      "invariant": "INV-FSWRVN",
+      "origin": {
+        "handoffEntry": "BUG-R24@v1 rule 1 formatter",
+        "leaf": "261112-BUG-L24"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "10": {
@@ -25,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
+            "blob": "a4ecbb879e692e08b8c029e0c8ab567479c6a44f",
             "content": "sha256:a1338079a9ad7b07014e6231cb17a13f3b612bf23432e87eaa3012c263f1499e",
             "locator": {
               "kind": "symbol",
@@ -41,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
+            "blob": "a4ecbb879e692e08b8c029e0c8ab567479c6a44f",
             "content": "sha256:8541b33337e09e7893cfebe2f435692d357238c8c9ac4eec5066bfc39961bdff",
             "locator": {
               "kind": "symbol",
@@ -57,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
+            "blob": "a4ecbb879e692e08b8c029e0c8ab567479c6a44f",
             "content": "sha256:831e34a9dc6775dea664bc8d3f172ba9987a5d15bda92b18b2de19d646fc48fc",
             "locator": {
               "kind": "symbol",
@@ -68,7 +120,7 @@
         },
         {
           "anchor": {
-            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
+            "blob": "a4ecbb879e692e08b8c029e0c8ab567479c6a44f",
             "content": "sha256:ccdb3577de53514bff4082230da5412a6e8697144893f9a14d59d8bf3dfb832a",
             "locator": {
               "end": 86,
@@ -81,15 +133,16 @@
       ]
     },
     "14": {
-      "note": "The command's exit codes and skip rules.",
+      "note": "The outside-root and unconverted-root cases format ordinary settings while preserving dot-directory sentinel bytes.",
       "targets": [
         {
           "anchor": {
-            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
-            "content": "sha256:218d5b1303ee29ab8c8f199c4965e801ccad2985a0d147ce67a32543ee9c4701",
+            "blob": "a4ecbb879e692e08b8c029e0c8ab567479c6a44f",
+            "content": "sha256:268c76f2176646162b18c3e1739c270102ba34045c4cdc9089c0a346d3c65571",
             "locator": {
-              "kind": "symbol",
-              "name": "test_knowledge_format_command_checks_rewrites_and_skips_caches"
+              "end": 189,
+              "kind": "line_range",
+              "start": 156
             }
           },
           "kind": "test"
@@ -101,12 +154,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be3c3cce8d9b34a1e87fd6179aa9798268a031c7",
+            "blob": "038ae9f6e2473e76ca8db8fa677acbea16b370f0",
             "content": "sha256:f5b00d251564d154c7eb7dd3bc8abd69a02828ecb60413351ebebf2ab0b4587a",
             "locator": {
-              "end": 236,
+              "end": 238,
               "kind": "line_range",
-              "start": 236
+              "start": 238
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -119,7 +172,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
+            "blob": "a4ecbb879e692e08b8c029e0c8ab567479c6a44f",
             "content": "sha256:a1338079a9ad7b07014e6231cb17a13f3b612bf23432e87eaa3012c263f1499e",
             "locator": {
               "kind": "symbol",
@@ -135,7 +188,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
+            "blob": "a4ecbb879e692e08b8c029e0c8ab567479c6a44f",
             "content": "sha256:8541b33337e09e7893cfebe2f435692d357238c8c9ac4eec5066bfc39961bdff",
             "locator": {
               "kind": "symbol",
@@ -151,7 +204,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
+            "blob": "a4ecbb879e692e08b8c029e0c8ab567479c6a44f",
             "content": "sha256:831e34a9dc6775dea664bc8d3f172ba9987a5d15bda92b18b2de19d646fc48fc",
             "locator": {
               "kind": "symbol",
@@ -163,12 +216,12 @@
       ]
     },
     "9": {
-      "note": "The command's exit codes and skipped files.",
+      "note": "Check mode reports noncanonical files without writing. Rewrite mode formats dot-directory content inside converted memory and ordinary settings, preserves the route cache and .git sentinel, and returns exit 2 for invalid JSON.",
       "targets": [
         {
           "anchor": {
-            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
-            "content": "sha256:218d5b1303ee29ab8c8f199c4965e801ccad2985a0d147ce67a32543ee9c4701",
+            "blob": "a4ecbb879e692e08b8c029e0c8ab567479c6a44f",
+            "content": "sha256:52f97ece781280dfce7651dfb24c2b71a685be2d74a4d4fe0e88d43d3cb3ef1b",
             "locator": {
               "kind": "symbol",
               "name": "test_knowledge_format_command_checks_rewrites_and_skips_caches"

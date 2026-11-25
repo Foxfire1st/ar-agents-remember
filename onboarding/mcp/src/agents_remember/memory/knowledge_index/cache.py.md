@@ -16,8 +16,8 @@
 - `for_directory(directory)` recomputes the tree key (`directory_key`) on every call, reuses the file for that key when it opens as that key's index, and otherwise builds from `directory_snapshot`.
 - `for_git_tree(repository, revision)` resolves `revision^{tree}`, reuses or builds from `git_tree_snapshot`.
 - `_reuse(key)` opens `KnowledgeIndex(path, expected_key=key)`; a mismatch is treated as absent. Reuse refreshes a zero-byte `.sqlite.used` marker while preserving the index bytes and timestamps.
-- `_build(snapshot)` writes a temporary file in the cache directory and `os.replace`s it into place, so a reader never sees a half-built index and two concurrent builds both end with a whole file. It then evicts and opens the result with its key.
-- `evict(keep=…)` removes files unused longer than `max_age`, then the oldest until the directory fits `max_bytes`; the file just built is kept.
+- A cold known-build lookup elects one builder per resolved destination in the process. Other callers wait, then recheck reuse, or receive the builder’s error. A later lookup can try again. The builder rechecks reuse under one lock per cache directory. If the lock cannot exclude or acquisition takes 60 seconds, process-local coordination still applies. The builder atomically installs the finished temporary file, evicts, and opens the result with its key.
+- `evict(keep=…)` removes files unused longer than `max_age`, then the oldest until the directory fits `max_bytes`; the file just built is kept. Eviction removes a recognized temporary file only when its builder PID is known to be gone. Registered local files and files with live or indeterminate PIDs stay.
 - A cache object captures the immutable loaded source digest at construction. Without that digest, it uses a private UUID namespace and never reuses a file. Private files support dataset reopening and participate in the same eviction.
 - `open_cached_index` opens only an existing index for the loaded build and writes no usage bookkeeping.
 - `last_outcome` (`CacheOutcome`: key, reused, build report) records how the last lookup was served.
@@ -30,7 +30,7 @@
 
 - **An index is never placed where it could be staged or committed**: a cache directory inside any Git working tree is refused.
 - An edited working tree is never answered from the previous content: the key is recomputed on every lookup and the opened file is checked against it.
-- Deleting the directory, or any file in it, loses nothing: every index is rebuilt from its tree.
+- SQLite indexes can be rebuilt from their source trees. Keep `.build.lock` and the cache directory in place while any process can use the cache.
 
 ### Todos
 
@@ -63,11 +63,17 @@ No meaningful cross-repo references found: the index reads one memory tree, addr
 
 No cross-repo boundary is crossed by this file.
 
-- The cache contract: where, what, freshness, eviction, and that deleting it loses nothing.  Anchor: "Deleting the directory, or any file in it, loses nothing"
+- The cache contract covers location, key selection, freshness, eviction and quiescent regeneration.
 - A location inside a Git working tree is refused before anything is created.  Anchor: "inside a Git working tree"
 
 - The chosen location and eviction defaults. [2]
-- Lookups recompute the key and reuse or build. [4]
+
+- Directory lookups derive the current key, and Git lookups resolve the requested tree before both enter the shared cache lookup. [4]
+
+
 - Reuse selects the loaded build's matching tree key and index format; builds publish through a temporary file and rename. [6]
-- The cache cases: reuse, rebuild and deletion, eviction, and the working-tree refusal. [7]
+
+
+- The cache tests cover reuse, rebuilding after corruption or quiescent directory deletion, eviction, and refusal to create a cache inside a Git working tree. [7]
+
 - An edited working tree is never answered from the previous content. [8]

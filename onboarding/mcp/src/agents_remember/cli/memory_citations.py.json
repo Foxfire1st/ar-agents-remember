@@ -113,7 +113,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
             "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
             "locator": {
               "kind": "symbol",
@@ -125,21 +125,8 @@
         },
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
-            "content": "sha256:0f0c734630b026feb275f60ff129107cdf091fad6ce837783b161ebe23950c10",
-            "locator": {
-              "end": 80,
-              "kind": "line_range",
-              "start": 69
-            },
-            "path": "mcp/src/agents_remember/application/memory_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
-            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+            "content": "sha256:8891b392f2b5e7518a285b274b4b3d1a344bdc32eb8b09eab3aa7640aa5119a4",
             "locator": {
               "kind": "file"
             },
@@ -187,11 +174,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
             "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
             "locator": {
               "kind": "symbol",
               "name": "CitationOperationScope"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Additional source for the preceding evidence on mcp/src/agents_remember/application/memory_tools.py.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+            "content": "sha256:0f0c734630b026feb275f60ff129107cdf091fad6ce837783b161ebe23950c10",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 70
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },

@@ -65,6 +65,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 
 - The scope that carries the caller’s named documents and refuses both selectors, an empty list, and a list outside citation_fix. [3]
+- Additional source for the preceding evidence on mcp/src/agents_remember/application/memory_tools.py. [8]
 
 
 

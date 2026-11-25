@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
-        "content": "sha256:1857e1beb8ca9269588a3c811ad6b395f112edd2e0ddc81dc5bbb03b504b5a3a",
+        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "content": "sha256:cc9d8feff01ce8f45d541bc6f486c47d8489ff0065635e7b9bf8cbd61b9befe2",
         "locator": {
           "kind": "file"
         }
@@ -16,6 +16,25 @@
         "leaf": "260928-MIK-L71"
       },
       "rationale": "The mcp/src/agents_remember/package_data/runtime shipped copy propagates the skills/l-01-agent-lifecycles/operations/curation.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "content": "sha256:eb4e198080760eef7c684698ae343c4e2b0cbb66042e8d6ef3ff20e23a57596a",
+        "locator": {
+          "end": 105,
+          "kind": "line_range",
+          "start": 105
+        }
+      },
+      "id": "RLZ-Y2N80G",
+      "invariant": "INV-J0B614",
+      "origin": {
+        "handoffEntry": "BUG-R25@v1 part 1",
+        "leaf": "261112-BUG-L25"
+      },
+      "rationale": "Carries the authored publication condition to the installed tool server.",
       "role": "propagation-persistence"
     }
   ],
@@ -38,12 +57,12 @@
       ]
     },
     "10": {
-      "note": "Authority gates and failure handling keep source and transaction ownership, tool scope and coherence with their owners; the memory candidate goes directly to the Reviewer and harness permission decisions are not bypassed.\n\nAnchor: `## Authority gates`",
+      "note": "Authority gates and failure handling keep source and transaction ownership, tool scope and coherence with their owners; the memory candidate goes directly to the Reviewer and harness permission decisions are not bypassed.",
       "targets": [
         {
           "anchor": {
-            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
-            "content": "sha256:d425ad5c184df86babd811ca704babb39a260a336271e1a2e33398a01130bd57",
+            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+            "content": "sha256:c635b5be074d3969eaac93c07c843732ffe7e3ffcfecf262bdd44f0abf8d990a",
             "locator": {
               "end": 137,
               "kind": "line_range",
@@ -95,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
             "content": "sha256:db65dc985969ebc8e5b64d0ce9593b984258d567b99e8d79fe21a045b106b5d8",
             "locator": {
               "end": 86,
@@ -130,7 +149,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
             "content": "sha256:3029b7de9d851727fdb01a288c2986818568e774026d1de8c2630c376165bf35",
             "locator": {
               "end": 18,
@@ -166,7 +185,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
             "content": "sha256:57609ea7e4e2cd15478ea2d6a06753c91909f3cf40087357408bc3bef38e2ca4",
             "locator": {
               "end": 48,
@@ -183,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
             "content": "sha256:9b8f0427496a9f6ddafd3ab290ea85087319adc63dceb9ea6be818a8f888d084",
             "locator": {
               "end": 86,

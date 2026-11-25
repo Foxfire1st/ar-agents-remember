@@ -533,7 +533,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
             "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
             "locator": {
               "kind": "symbol",
@@ -1916,8 +1916,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
-            "content": "sha256:837a11c3a1c94fa8f478adf644caabc3aa542e311d4816774dd4e939ae1cfcd9",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
+            "content": "sha256:2e88d511bfe0590c8a1fd90b5d219a49baaf0729d043ced73d66c2d521ec2fc4",
             "locator": {
               "kind": "symbol",
               "name": "SyncSideRecord"
@@ -1974,14 +1974,15 @@
       ]
     },
     "228": {
-      "note": "The transaction seam that routes the conflict and narrows the agent's list.\n\nAnchor: `_continue_memory_merge`",
+      "note": "The transaction seam that routes the conflict and narrows the agent's list.",
       "targets": [
         {
           "anchor": {
-            "blob": "a63984305b167f217f656a85724a6f70fad04702",
-            "content": "sha256:0b4bb60005807ea000e1df8845b0ef48d8052337664eb956852106008263c3fe",
+            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "content": "sha256:1ec537f6f0422a1b506ca91c06b7b979e369716ad77db2e41cb8d0e1df516525",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_continue_memory_merge"
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
@@ -1989,11 +1990,10 @@
         },
         {
           "anchor": {
-            "blob": "a63984305b167f217f656a85724a6f70fad04702",
-            "content": "sha256:45f12690c7c34b7b6660e1eeb4c41e28c8d7d611c2b4a0688d0891870e9ab303",
+            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "content": "sha256:b51d50df3113ad1306d8c689cc735c315fd8d6aea7c3e7f1f6e07941e5b74760",
             "locator": {
-              "kind": "symbol",
-              "name": "_continue_memory_merge"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
@@ -2856,7 +2856,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
+            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
             "content": "sha256:6b948cc0a0a6cfabb5116fc3fabbb632de3c30b476b462856555207593d221e0",
             "locator": {
               "kind": "symbol",
@@ -3138,7 +3138,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
             "content": "sha256:6a04802ea6586dd0e323bb3072fa8615e8bea72dc3298eeef2972754f9982cbb",
             "locator": {
               "kind": "symbol",
@@ -3150,7 +3150,7 @@
         },
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
             "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
             "locator": {
               "kind": "symbol",
@@ -3616,7 +3616,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ae57afe1c74336cfdb85cc88d70b5350558272fa",
+            "blob": "cea9d89696b869613b28b77a0fada0d6372c4fda",
             "content": "sha256:7d7033eb55d61ea493a14827a03b2aef1a3d98b6ac7c0fccada25e8e405f98cc",
             "locator": {
               "kind": "symbol",
@@ -5443,12 +5443,12 @@
         },
         {
           "anchor": {
-            "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
+            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
             "content": "sha256:850a2319a8785535fd245d221d37bfcc366ae3bb91862f477a7b9df038743ed1",
             "locator": {
-              "end": 306,
+              "end": 307,
               "kind": "line_range",
-              "start": 300
+              "start": 301
             },
             "path": "mcp/src/agents_remember/worktrees/services.py"
           },
@@ -8537,7 +8537,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
             "content": "sha256:8c65e3e2c3189e734ba712345192bbded574e515ac072393fe88545fb38adddb",
             "locator": {
               "kind": "symbol",
@@ -8549,7 +8549,7 @@
         },
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
             "content": "sha256:7b520fc9b22cbf25310bc93079df0b862908d53ceb2833165f870ee544025537",
             "locator": {
               "kind": "symbol",
@@ -8561,7 +8561,7 @@
         },
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
             "content": "sha256:ff465974c2ff2904981ae7f7b0fe9990369387c39693b2aad43fa9ae5f18cb61",
             "locator": {
               "kind": "symbol",

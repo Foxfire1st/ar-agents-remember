@@ -27,7 +27,7 @@ The added source cases compare each delivered decisions/carriedPaths/reportPath 
 - Public plan rejects a null layout on either side before instrumented head/cleanliness/change-path/record-context calls despite an invalid official code ref. [3]
 - Native planning rejects an unconverted side before code/candidate reads and preserves both observed byte trees. [4]
 - Mismatched conversion, unreadable/malformed markers and missing memory retain named format refusal; missing memory is not mislabeled legacy. [5]
-- Public file-card apply carries Markdown/sidecar with no memory commit or raw-index change, returns a worklist and repeats as nothing-to-carryover. [6]
+- Public apply carries matching Markdown and sidecar bytes for both an ordinary file and a workflow under a dot directory. It returns a worklist, preserves HEAD and the raw Git index, and repeats as nothing-to-carryover. [6]
 - Route-overview, memory-only and entity-catalog pairs stay intact under plan/apply with unchanged HEAD. [7]
 - Needed record pairs travel; differing records refuse without byte writes, source history is reading-only/not copied and HEAD stays unchanged. [8]
 - Partial document retry validates unrelated \ onboarding, refuses with validator diagnostics after refresh, names the existing member and restores bytes, HEAD and raw index without writes. [10]

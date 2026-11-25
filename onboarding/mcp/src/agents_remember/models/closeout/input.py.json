@@ -255,11 +255,11 @@
       ]
     },
     "8": {
-      "note": "The census that enforces the one definition this route now depends on — the key identifier and its interpolation in exactly one production module, and all five producers reaching a shared renderer entry, this model's method included.\n\nAnchor: `test_the_attribution_key_is_named_and_rendered_in_exactly_one_module` `test_every_census_producer_reaches_the_shared_renderer`",
+      "note": "The census that enforces the one definition this route now depends on — the key identifier and its interpolation in exactly one production module, and all five producers reaching a shared renderer entry, this model's method included.\n\nAnchor: “test_the_attribution_key_is_named_and_rendered_in_exactly_one_module” “test_every_census_producer_reaches_the_shared_renderer”",
       "targets": [
         {
           "anchor": {
-            "blob": "eff75cfe71497b48d454a561d5d3aca2ae1159fe",
+            "blob": "6ab05091b01f84c4711b9973d5b08e5467bdd92f",
             "content": "sha256:2d54a909f329b7644cb4e9d713567c0c0efd8d0c4fd2b369998949e685d01a51",
             "locator": {
               "kind": "symbol",
@@ -271,7 +271,7 @@
         },
         {
           "anchor": {
-            "blob": "eff75cfe71497b48d454a561d5d3aca2ae1159fe",
+            "blob": "6ab05091b01f84c4711b9973d5b08e5467bdd92f",
             "content": "sha256:41abd9b7675b6a614e19ffa3d765ecdb9acb65c973876ff336042dc1069d18af",
             "locator": {
               "kind": "symbol",
@@ -283,8 +283,8 @@
         },
         {
           "anchor": {
-            "blob": "eff75cfe71497b48d454a561d5d3aca2ae1159fe",
-            "content": "sha256:b3b163e90641170b5ed89ce084eabbe56863b01c866821d4bdb7848fcbd98e0d",
+            "blob": "6ab05091b01f84c4711b9973d5b08e5467bdd92f",
+            "content": "sha256:94a77e2e4cd16caf9215affed7ae126824f6c0681f65aa62384a3049bd9eb4d7",
             "locator": {
               "kind": "file"
             },

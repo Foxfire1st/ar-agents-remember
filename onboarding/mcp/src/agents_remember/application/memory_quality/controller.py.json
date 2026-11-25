@@ -219,7 +219,7 @@
         },
         {
           "anchor": {
-            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
             "content": "sha256:53ec00387e7306cd1e352c660296331a45c01a1cc25f1b8c2a409ada67d4277e",
             "locator": {
               "kind": "symbol",
@@ -241,8 +241,8 @@
         },
         {
           "anchor": {
-            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
-            "content": "sha256:0860cab26f7e5d70b2a1f337343d94382f3e23a8bc1411dfcd644d11cfd5b007",
+            "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
+            "content": "sha256:951d610f5929ba7ec37554507c5c693c8e77970153d096c4b8a7b27e9dec8d3a",
             "locator": {
               "kind": "file"
             },
@@ -257,12 +257,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "166a2dccebfa1bd1deeb7b24c7edd12b59e8193c",
+            "blob": "346618fc1ffeaea60a35ac57fadcb471ac70984e",
             "content": "sha256:7ee1d97610a7dae11b6e65ca08578bcec3f2535952e02809d307d9e7ae5ef1cc",
             "locator": {
-              "end": 786,
+              "end": 836,
               "kind": "line_range",
-              "start": 763
+              "start": 813
             },
             "path": "mcp/tests/test_onboarding_trace_gate.py"
           },

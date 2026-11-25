@@ -1,0 +1,360 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L23",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-05PYZE",
+      "items": [
+        "sha256:c2d0786f5c8fd9fd7f125994d33cda350b3b10c7653fdc5ceadfc252563a6e03",
+        "sha256:ccef23032637b97985580ce4f99fdd5cad01c3a2db3135bdfb9003ffb4cfdffe"
+      ],
+      "reason": "The cache test card identifies the quiescent regeneration case and the exact expected SQLite file, usage marker and lock.",
+      "sources": [
+        {
+          "blob": "7164ce2913bb49a4a09c10b5a1e098e2f07ae21c",
+          "path": "mcp/tests/test_knowledge_index.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_index.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0Q2SPB",
+      "items": [
+        "sha256:0b657f12ff9fb6097f6561cb6fa5a658e68cf52441014e3177d902b32bea58cb"
+      ],
+      "reason": "The comment states that the existing 1 GiB budget counts SQLite files.",
+      "subject": "hunk:sha256:0b657f12ff9fb6097f6561cb6fa5a658e68cf52441014e3177d902b32bea58cb"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1JD7V8",
+      "items": [
+        "sha256:5e4c7bcaf9b4f11a5e3b36c1cd632e36a17235fba64c1b40a073b6e2bb08d560"
+      ],
+      "reason": "Callable types the capture function and Future transports the already governed build outcome.",
+      "subject": "hunk:sha256:5e4c7bcaf9b4f11a5e3b36c1cd632e36a17235fba64c1b40a073b6e2bb08d560"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6AAVNV",
+      "items": [
+        "sha256:377af4d3a77bd94ff0ffc662078df26ad5fbd3aefee9e133a26d9f2cfde0dd07"
+      ],
+      "reason": "The cache card replaces duplicate-build and blanket deletion claims with the shared miss, lock exception, atomic installation and temporary-file rules.",
+      "sources": [
+        {
+          "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+          "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/knowledge_index/cache.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-6BMT6H",
+      "items": [
+        "sha256:8fb7e5555b9b197fa9be535b058b408713ef7e2d6967ab57e9c5cea9fccd8871"
+      ],
+      "reason": "The confirmation keeps the FAQ’s path-based reads and build-and-tree cache description and refreshes the cache class anchor.",
+      "revision": 4,
+      "subject": "DPD-A3XZ3Q"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7PSXPV",
+      "items": [
+        "sha256:7c352b50a88f2885cf55b0bf28a6844a7bbf18309d19c602ced70a38a0cbeb93"
+      ],
+      "reason": "Importing threading supplies the guards for registries supporting the stated cache obligations.",
+      "subject": "hunk:sha256:7c352b50a88f2885cf55b0bf28a6844a7bbf18309d19c602ced70a38a0cbeb93"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-7RQC2R",
+      "items": [
+        "sha256:d23e706f7ec6ff53fcebb8b4213f63f1c67b318ba4c54cd9bcb37a32a659110d"
+      ],
+      "reason": "The composed reference covers both the incoming recorded-base worklist contract and the new cold-build and cleanup rules. The confirmation retains all 42 incoming targets and adds three exact cache anchors.",
+      "revision": 5,
+      "subject": "DPD-TXRND9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7VHX2H",
+      "items": [
+        "sha256:8f8d5480a46fd17bf50fb37002abf7bd10481656bf49216741c2dfc711a0d765"
+      ],
+      "reason": "The constants, recognizer and registries supply parameters and state to the three recorded runtime obligations.",
+      "subject": "hunk:sha256:8f8d5480a46fd17bf50fb37002abf7bd10481656bf49216741c2dfc711a0d765"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BXFETP",
+      "items": [
+        "sha256:b5245a9238afec8442de468ea1ea7e85d3078b59e947379cd171295329d539d6"
+      ],
+      "reason": "The module overview documents the temporary-file pruning rule already carried at the liveness check.",
+      "subject": "hunk:sha256:b5245a9238afec8442de468ea1ea7e85d3078b59e947379cd171295329d539d6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DMQ8VY",
+      "items": [
+        "sha256:d4fd84deccec1332494c6d6a7291610f14d1daa85898e86bf36b443718201ecc"
+      ],
+      "reason": "The maintenance advice explains cache regeneration and preserves the lock path during use. It establishes no separate runtime invariant.",
+      "subject": "hunk:sha256:d4fd84deccec1332494c6d6a7291610f14d1daa85898e86bf36b443718201ecc"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-FQETY1",
+      "items": [
+        "sha256:d6245a1c225a2d9ab3dfd42a747608f1048800caf7d332fbee3f819fc78842a6"
+      ],
+      "reason": "The confirmation keeps the tool reference’s distinction between the loaded source digest and the current package source, and refreshes its changed cache anchor.",
+      "revision": 12,
+      "subject": "DPD-10YCT2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FQZFWD",
+      "items": [
+        "sha256:baf83b4084f8c11ee97939d1d110ac5674bee09fc26da7d61e1d7f63a427d53c"
+      ],
+      "reason": "The partial import supports deferring capture for the selected key.",
+      "subject": "hunk:sha256:baf83b4084f8c11ee97939d1d110ac5674bee09fc26da7d61e1d7f63a427d53c"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FVDPY8",
+      "items": [
+        "sha256:0cb8ff8e8b293ad56a137103930f5206590eff6cf85606834be975b01151cdff",
+        "sha256:15d404d1eff62d84abd3a6a40c57331be5d18c1ffdfe9ffdb33a003a19e44a04",
+        "sha256:1eb0980d5a194d4254a146741236910716aaf5e19224fe05582d9f92c7225823",
+        "sha256:2f587c251164c7ac7084fb5c3389bb53d0a172c81406afde2b6ce95cc1b1c94c",
+        "sha256:7bec3feba59dbb6c83c82ed1448588108a80179e1eef7ecbcc0ab504c5d422de",
+        "sha256:9795b811c2557bded43f0568307f1f5946bba701e2147a14c962f43daea7d3e8",
+        "sha256:a181a676959a22ce61d180309343cad5b1a94d2a0cf324dbe9945fa5d3fbee7c",
+        "sha256:e47da28f19e1e6bdba63531af32c15b745c8aee3b50642edb635811aa4dd2fd5"
+      ],
+      "reason": "The file card describes the new cache coordination tests and the existing-lock assertion after unknown-build SQLite eviction.",
+      "sources": [
+        {
+          "blob": "544c37c322180c6c245802bb0f9de5e02d7e6260",
+          "path": "mcp/tests/test_knowledge_index_build_identity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_index_build_identity.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GPAGS7",
+      "items": [
+        "sha256:cb45b24368f89e3da9e522b09afd969645af98571abea7682afe435bc53a249f"
+      ],
+      "reason": "The confirmation keeps the features page’s build-and-tree cache identity and shared SQLite age/size policy and updates both cache links.",
+      "revision": 18,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MAM501",
+      "items": [
+        "sha256:7a452673188e6abc78baec7370ad281ae130f5586f51d6ef8e9f9342a10ff54b"
+      ],
+      "reason": "The module overview describes already implemented behavior for shared outcomes and the directory lock, with the obligations carried by the runtime realizations.",
+      "subject": "hunk:sha256:7a452673188e6abc78baec7370ad281ae130f5586f51d6ef8e9f9342a10ff54b"
+    },
+    {
+      "considered": [
+        "FAM-4ZNEN9",
+        "FAM-61DY2V",
+        "FAM-VDDPC6",
+        "FAM-VZ9C23",
+        "FAM-Q5J2ZC"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-MFZR8W",
+      "items": [],
+      "reason": "This record constrains a process-local miss and failure result independently of the directory lock. The reviewed live-reuse and publication families govern exact review inputs or readiness, and their guarantees need no membership change.",
+      "revision": 1,
+      "subject": "membership:INV-8SMQAE"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MM052K",
+      "items": [
+        "sha256:8017f0447c8e60b127e514af74a971fa0ee71a894479b935346d20c208f2505b"
+      ],
+      "reason": "These imports expose the existing shared lock and its exception to the governed cold path.",
+      "subject": "hunk:sha256:8017f0447c8e60b127e514af74a971fa0ee71a894479b935346d20c208f2505b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MSRVTA",
+      "items": [
+        "sha256:f03eecbde8b3cb00ed5bc3c3f93d8a1707e08e26f6579866392988d319e2d80c"
+      ],
+      "reason": "Importing re supplies the implementation of recognized temporary filenames.",
+      "subject": "hunk:sha256:f03eecbde8b3cb00ed5bc3c3f93d8a1707e08e26f6579866392988d319e2d80c"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-N750VA",
+      "items": [
+        "sha256:42db5b06415773125777fddce4fae1182767f35d4967de78e47b478204df5307"
+      ],
+      "reason": "The confirmation keeps the reusable derived index and authored text distinction, and updates both linked cache identities.",
+      "revision": 16,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "considered": [
+        "FAM-4ZNEN9",
+        "FAM-61DY2V",
+        "FAM-VDDPC6",
+        "FAM-VZ9C23",
+        "FAM-Q5J2ZC"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-PTB1YW",
+      "items": [],
+      "reason": "This record constrains file-lock acquisition in the index cache. The reviewed live-reuse, publication and recovery families govern other contracts and stand independently of directory-wide exclusion.",
+      "revision": 1,
+      "subject": "membership:INV-5SX7YZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QWBX8N",
+      "items": [
+        "sha256:58946a9125cd260fe8fb9a3c89850f71794c45f0856465b5151b33e1cade12b5"
+      ],
+      "reason": "The owning tests overview adds the observed source scope for contention, retry and temporary-file tests and reanchors the partial-index evidence.",
+      "sources": [
+        {
+          "blob": "7164ce2913bb49a4a09c10b5a1e098e2f07ae21c",
+          "path": "mcp/tests/test_knowledge_index.py"
+        },
+        {
+          "blob": "544c37c322180c6c245802bb0f9de5e02d7e6260",
+          "path": "mcp/tests/test_knowledge_index_build_identity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "considered": [
+        "FAM-4ZNEN9",
+        "FAM-61DY2V",
+        "FAM-VDDPC6",
+        "FAM-VZ9C23",
+        "FAM-Q5J2ZC"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-S39FHN",
+      "items": [],
+      "reason": "This record governs whether an abandoned construction file may be removed. The reviewed publication and converted-memory families govern resulting memory and publication, rather than cache temporary-file liveness.",
+      "revision": 1,
+      "subject": "membership:INV-2B865P"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SSPXBW",
+      "items": [
+        "sha256:1d8104cdfe8749eeb0cf1e87f8eb8de2609a17b69b50af989ad6b4a23e8d7dcd"
+      ],
+      "reason": "The owning memory overview explains process-local miss sharing, directory lock exclusion and abandoned temporary-file cleanup while preserving namespace rules.",
+      "sources": [
+        {
+          "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+          "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-WMPVYE",
+      "items": [
+        "sha256:b1121ef337483f5dff150339eef0f5992ad47069de676d405322eb7130197a4c"
+      ],
+      "reason": "The confirmation keeps the disposable SQLite index’s location and loaded-build identity and refreshes the cache class anchor.",
+      "revision": 9,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-XD82VS",
+      "items": [
+        "sha256:6f912e736b79325d8a3eca6a61ce0176032beadf2ba5b9e75aceed32423fed11"
+      ],
+      "reason": "The confirmation keeps the packaged tool reference’s loaded-build explanation and refreshes its changed cache anchor.",
+      "revision": 12,
+      "subject": "DPD-NGC2F6"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "544c37c322180c6c245802bb0f9de5e02d7e6260",
+            "content": "sha256:2f0b0ead154bae5aa85fd0f6c290cb22ad65acd09374623738cd41f00a3bb445",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unknown_build_private_files_support_real_reads_and_are_not_shared"
+            },
+            "path": "mcp/tests/test_knowledge_index_build_identity.py"
+          },
+          "before": {
+            "blob": "2bb0153ad1ec85bfd16714cae0945fc706106681",
+            "content": "sha256:11461e5e778643cdb18633ccef24d50b98e881a8488920a2f3ba778b3622ecde",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unknown_build_private_files_support_real_reads_and_are_not_shared"
+            },
+            "path": "mcp/tests/test_knowledge_index_build_identity.py"
+          },
+          "id": "PRF-MYD7PC"
+        },
+        {
+          "after": {
+            "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
+            "content": "sha256:5e934e7c35e4b849bc5713c201ec85cee9227fc4aff9ce16b0331e69779ca539",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeIndexCache"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
+          },
+          "before": {
+            "blob": "346ca4c2c0c80dea32c8cf622e7eadea2e82898e",
+            "content": "sha256:c953503aa6afe66c046070e4713c0438b86ccab1d9e76a42e4cf596ea1ad226a",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeIndexCache"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
+          },
+          "id": "RLZ-8GPEZZ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Y3H3CJ",
+      "items": [
+        "sha256:dc9ca6977bf7f44a09cebfd0acbc5028ddbd0c0573b148dd59b1b5dcb0160f63"
+      ],
+      "reason": "Reuse remains scoped to the immutable loaded build, unknown-build index files remain private, and eviction still accounts for all SQLite namespaces. The updated proof permits the directory lock left after shared SQLite eviction.",
+      "revision": 1,
+      "subject": "INV-AYMK61"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

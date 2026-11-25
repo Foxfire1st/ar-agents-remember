@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "6e8e0e0d5d8cc2950f90d4f5f67aa32a0b59f206",
-    "commit": "9bc700a73cc35d60ba80d7fb00fa883dabcf8227",
-    "role": "curator",
-    "statement": "The document identifies the native stress-durability case and the uninstrumented coverage boundary for native lifecycle evidence.",
-    "task": "261123-SUB-L1",
-    "uncommitted": true
+    "codeTree": "55049f6c73b5660adaa6e3b0637185a3167751c3",
+    "commit": "54d242820ff7f9941cadebf9f543c857314b368f",
+    "role": "manager",
+    "statement": "The pytest policy accurately describes integration and stress lane selection and the bounded-memory stdio case’s uninstrumented child coverage boundary.",
+    "task": "261123-SUB",
+    "uncommitted": false
   },
   "document": "docs/design/python-pytest-bootstrap.md",
   "id": "DPD-ZT8YY7",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "be3c3cce8d9b34a1e87fd6179aa9798268a031c7",
+      "blob": "30fe276ea103c0bc2f37afe7affc8436d89f64bd",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -106,12 +106,12 @@
     },
     {
       "anchor": {
-        "blob": "be3c3cce8d9b34a1e87fd6179aa9798268a031c7",
+        "blob": "30fe276ea103c0bc2f37afe7affc8436d89f64bd",
         "content": "sha256:bcc4ade20e19642e956536d6662d0c20a8343feed9984bdf943fe982348cd7d1",
         "locator": {
-          "end": 818,
+          "end": 822,
           "kind": "line_range",
-          "start": 815
+          "start": 819
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },

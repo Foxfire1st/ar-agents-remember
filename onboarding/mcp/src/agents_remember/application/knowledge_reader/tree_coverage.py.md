@@ -22,9 +22,9 @@ source files, cards, hashes or a persistent cache.
   enumeration failure in the result's `code` state or on each affected directory.
 - `_git_paths` runs one recursive `ls-tree -r -t` for the directory (blobs, trees and, for mode
   `100644`/`100755`, the source files), so coverage never asks Git per file.
-- `_memory_paths` walks `onboarding/<directory>` of the working tree (directories without dot names)
-  or enumerates the tree's objects, then applies the knowledge-format exclusions, so a generated or
-  excluded path never appears.
+- `_memory_paths` walks `onboarding/<directory>` in the working tree or enumerates its Git objects.
+  Both paths include dot directories and exclude generated route-index cache files through the
+  shared knowledge predicate.
 - `_presence` marks a row's `hasKnowledge` (a card/overview of its own, prose at or below it, or an
   indexed entry) and a directory's `hasOverview`; when the memory enumeration failed it omits both
   fields, because an unknown presence is not `false`.
@@ -49,7 +49,7 @@ source files, cards, hashes or a persistent cache.
   enumeration failed.
 - **No contents, hashes, per-file Git or persistent cache:** one code pass and one memory
   enumeration feed every row; this module reads only the selected scope settings besides names.
-- **Excluded and generated paths stay out** through the knowledge-format exclusions.
+- **Generated route-index cache files stay out.** Directory names beginning with a dot remain visible.
 
 ### Todos
 
@@ -69,7 +69,7 @@ No configured live documentation source was available for this pass.
 
 - The one listing entry point and its truthful failure states. [1]
 - One recursive code pass supplies names, kinds and source files. [2]
-- One memory enumeration, with excluded paths dropped. [3]
+- The selected memory enumeration includes dot directories and drops generated route-index cache files. [3]
 - Presence fields are omitted when the memory enumeration failed. [4]
 - Directory coverage counts cards against in-scope files or says unavailable. [5]
 

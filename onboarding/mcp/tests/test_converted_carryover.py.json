@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+        "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
         "content": "sha256:9be715e150c2ff560919cc40e78bde1cf2817d61ca9ffa2fe6a39f3a89252a2e",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+        "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
         "content": "sha256:2450dc5e83c70af1649757e74e4be1370e3704b9c78b21777755a800119be35b",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+        "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
         "content": "sha256:c84513471cb9677c5dc0d3ed12f8ca02ba31cc78b7b0afb8ea4b776fa0f27a1b",
         "locator": {
           "kind": "symbol",
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
-        "content": "sha256:1b77c7102d619e92795861dac4712a6cc902d38e355639c21713f63669ebb10a",
+        "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
+        "content": "sha256:59f849752ce2df7f7714eb4917d83048dc8ea423791bd2d2211216a85892943e",
         "locator": {
           "kind": "symbol",
           "name": "test_public_converted_apply_carries_pair_without_commit_and_repeats"
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+        "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
         "content": "sha256:e617848b973e20a7e5d26742f898f20ade93647b3481e0e1026c4eca925c4651",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,24 @@
     },
     {
       "anchor": {
-        "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+        "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
+        "content": "sha256:59f849752ce2df7f7714eb4917d83048dc8ea423791bd2d2211216a85892943e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_public_converted_apply_carries_pair_without_commit_and_repeats"
+        }
+      },
+      "facet": "The dot-directory parameter writes the workflow Markdown and sidecar together and a repeat skips the identical pair.",
+      "id": "PRF-9642WC",
+      "invariant": "INV-4YJZE0",
+      "origin": {
+        "handoffEntry": "BUG-R24@v1 rule 6 carry-over",
+        "leaf": "261112-BUG-L24"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
         "content": "sha256:915dd0e72e7bf735b607d9f5a5e16e0cab3477916bfa0aa4ebe5060438e1d596",
         "locator": {
           "kind": "symbol",
@@ -105,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+        "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
         "content": "sha256:5a81452729820dc4e42cd4b65318360624bce2683d3d49347d81c5ee0e0f8f6e",
         "locator": {
           "kind": "symbol",
@@ -122,8 +139,8 @@
     },
     {
       "anchor": {
-        "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
-        "content": "sha256:1b77c7102d619e92795861dac4712a6cc902d38e355639c21713f63669ebb10a",
+        "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
+        "content": "sha256:59f849752ce2df7f7714eb4917d83048dc8ea423791bd2d2211216a85892943e",
         "locator": {
           "kind": "symbol",
           "name": "test_public_converted_apply_carries_pair_without_commit_and_repeats"
@@ -139,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+        "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
         "content": "sha256:0e93af30a83abd1373cf3578acd8e3752a769c9477946fb755516279a6bcfcf2",
         "locator": {
           "kind": "symbol",
@@ -162,7 +179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
             "content": "sha256:234cdb4d7e217c9a1a55e129caa1ef75c5f30da258cdb703de0b93a4f75f8d52",
             "locator": {
               "kind": "symbol",
@@ -190,7 +207,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
             "content": "sha256:9bc20fdd336ee4576d79fbe03999e57e5f7ab5d0422feca2fc0ad697e5848a05",
             "locator": {
               "kind": "symbol",
@@ -206,7 +223,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
             "content": "sha256:9be715e150c2ff560919cc40e78bde1cf2817d61ca9ffa2fe6a39f3a89252a2e",
             "locator": {
               "kind": "symbol",
@@ -222,7 +239,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
             "content": "sha256:3fbca1099775f138a861a8587dfaad7b3f9f7d39fc3fae8467090ada9bb9b8d9",
             "locator": {
               "kind": "symbol",
@@ -238,7 +255,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
             "content": "sha256:5bb7a52b87dc0d26eba7db5f8092c4e10c6c1993b3a1a741d49013056a310247",
             "locator": {
               "kind": "symbol",
@@ -254,7 +271,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
             "content": "sha256:2ca557b0a9533963e99cfb7e9fd3cbbca4ef46730800f36064495efcd080e384",
             "locator": {
               "kind": "symbol",
@@ -270,7 +287,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
             "content": "sha256:38aa7743e03b7f8f61ba2e3d7b74a9d0ad496f96b9574b8f67800f0356b55132",
             "locator": {
               "kind": "symbol",
@@ -286,7 +303,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
             "content": "sha256:915dd0e72e7bf735b607d9f5a5e16e0cab3477916bfa0aa4ebe5060438e1d596",
             "locator": {
               "kind": "symbol",
@@ -309,16 +326,6 @@
         },
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
-            "content": "sha256:63d10d85beb30c291c55e0c3c0f1d966415ac5d00cbcc08dc24d68316b2bbbc4",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
             "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
             "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
             "locator": {
@@ -335,7 +342,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
             "content": "sha256:c84513471cb9677c5dc0d3ed12f8ca02ba31cc78b7b0afb8ea4b776fa0f27a1b",
             "locator": {
               "kind": "symbol",
@@ -346,7 +353,7 @@
         },
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
             "content": "sha256:c7784311ae347dfa345d80e854bb875d9f8fc138ef0cc315a4e0e53976866813",
             "locator": {
               "kind": "symbol",
@@ -363,7 +370,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
             "content": "sha256:5a81452729820dc4e42cd4b65318360624bce2683d3d49347d81c5ee0e0f8f6e",
             "locator": {
               "kind": "symbol",
@@ -379,7 +386,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
             "content": "sha256:e617848b973e20a7e5d26742f898f20ade93647b3481e0e1026c4eca925c4651",
             "locator": {
               "kind": "symbol",
@@ -390,7 +397,7 @@
         },
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
             "content": "sha256:9e5e5a621fd6f0a465cd2ae27129c507e5bad93fdbff59cff1bfd7dcc00e9778",
             "locator": {
               "kind": "symbol",
@@ -401,7 +408,7 @@
         },
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
             "content": "sha256:7cd993781a5e40381f58f34e066113cc91affdb83bcfe7dad111423589fe48bd",
             "locator": {
               "kind": "symbol",
@@ -413,12 +420,12 @@
       ]
     },
     "6": {
-      "note": "Public file-card apply carries Markdown/sidecar with no memory commit or raw-index change, returns a worklist and repeats as nothing-to-carryover.",
+      "note": "Public apply carries matching Markdown and sidecar bytes for both an ordinary file and a workflow under a dot directory. It returns a worklist, preserves HEAD and the raw Git index, and repeats as nothing-to-carryover.",
       "targets": [
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
-            "content": "sha256:1b77c7102d619e92795861dac4712a6cc902d38e355639c21713f63669ebb10a",
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
+            "content": "sha256:59f849752ce2df7f7714eb4917d83048dc8ea423791bd2d2211216a85892943e",
             "locator": {
               "kind": "symbol",
               "name": "test_public_converted_apply_carries_pair_without_commit_and_repeats"
@@ -433,7 +440,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
             "content": "sha256:2450dc5e83c70af1649757e74e4be1370e3704b9c78b21777755a800119be35b",
             "locator": {
               "kind": "symbol",
@@ -449,7 +456,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
             "content": "sha256:0e93af30a83abd1373cf3578acd8e3752a769c9477946fb755516279a6bcfcf2",
             "locator": {
               "kind": "symbol",
@@ -465,7 +472,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
             "content": "sha256:b555c9067ac4fc6a44286f58a4bbc71facf107b862a8eb5d004ee8509968e929",
             "locator": {
               "kind": "symbol",

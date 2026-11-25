@@ -422,7 +422,8 @@
       "knowledge/dependents/DPD-2B7PTY-docs-install-pi-md.json",
       "knowledge/dependents/DPD-3E9E2R-docs-install-claude-code-md.json",
       "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
-      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
     "file:mcp/src/agents_remember/application/master_architect_record.py": [
       "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
@@ -788,6 +789,9 @@
     "file:mcp/src/agents_remember/cli/paseo_runtime.py": [
       "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json"
     ],
+    "file:mcp/src/agents_remember/cli/paseo_seat_policy.py": [
+      "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json"
+    ],
     "file:mcp/src/agents_remember/cli/paseo_status.py": [
       "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
     ],
@@ -855,7 +859,8 @@
       "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
       "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json",
       "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json",
-      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json"
+      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
     "file:mcp/src/agents_remember/cli/role_launch_routes.py": [
       "knowledge/dependents/DPD-21GMJ5-docs-install-cursor-md.json",

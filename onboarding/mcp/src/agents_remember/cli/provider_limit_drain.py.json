@@ -3,22 +3,41 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "397666453e42dbbdec1c61cade273ede88d84e4b",
-        "content": "sha256:189a7b1117d3b83faa45356a2c39d841f615308ae94b787d085b61d1e3d24243",
+        "blob": "268758eb2e3109a51e5d86562485a0f72b4061f5",
+        "content": "sha256:fea77f45ef1670fbe923a6412ea418d4ee49adb5fa21ac583020292346ad77f4",
         "locator": {
-          "kind": "file"
+          "kind": "symbol",
+          "name": "pause_for_provider_limit"
         }
       },
-      "id": "RLZ-3FFFJ8",
-      "invariant": "INV-1ZKP4R",
+      "id": "RLZ-RX5FRC",
+      "invariant": "INV-4DQMNE",
       "origin": {
-        "handoffEntry": "INV-1ZKP4R",
-        "leaf": "260928-MIK-L184"
+        "handoffEntry": "L25-M1-F3 drain attribution",
+        "leaf": "261112-BUG-L25"
       },
-      "rationale": "The drain is what turns a reset into a delivery, so the release rule is realized here.",
+      "rationale": "This gate keeps native held messages waiting during an active provider limit, checks an ended stamp once and resolves confirmed archive or absence as undelivered. When the limit clears it returns to the held-message caller for ordinary readiness and delivery.",
       "role": "enforcement"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The drain uses one confirmation read per new ended stamp and resolves held messages on confirmed archive or absence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "268758eb2e3109a51e5d86562485a0f72b4061f5",
+            "content": "sha256:28c73012570098d0a7d4ae531715bbc79cf4566e7b7e4d43c5cd9f9e453da254",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

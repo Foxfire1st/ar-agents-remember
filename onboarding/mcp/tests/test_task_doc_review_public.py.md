@@ -7,9 +7,7 @@
 ## Purpose
 
 Focused public task-document API coverage for CCR-R27's bounded review-state transitions and
-CCR-R28's ordinary cap/direct recorded-permission behavior. The module exercises the registered
-application seam in an isolated task fixture and records the machine-readable `reviewState`
-contract; it does not perform an independent review or certify a candidate.
+CCR-R28's ordinary cap/direct recorded-permission behavior. The module exercises the application seam in an isolated task fixture and checks the machine-readable `reviewState` contract. A registered MCP case also verifies that a review is persisted when step-up settings are unavailable. It compares the warning in ordinary and overflowing answers with the validated whole JSON.
 
 ## Code Commentary
 
@@ -110,3 +108,5 @@ verification metadata remains blank until governed closeout stamps a genuine cod
 
 
 - The public review test patches the resolver used by candidate admission, changes tracked bytes, and verifies that ordinary same-round recording refuses an unproven candidate and preserves the recorded round and findings. [8]
+
+- The registered MCP test checks persisted review, ordinary and overflow warnings, and the validated whole answer. [9]

@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The concurrency and error cases guard single-build sharing, delivery of the failed outcome to current waiters and retry after the registry entry is released."
+  },
+  "applicability": "Known-build cache misses for one resolved index destination in a process.",
+  "conditions": [
+    "The process resolves each shared build by destination.",
+    "Waiters recheck reuse after success and receive the builder’s failure on error.",
+    "A working-tree snapshot whose key changed enters coordination for the captured destination."
+  ],
+  "exclusions": [
+    "A warm reuse.",
+    "Private unknown-build index files.",
+    "Exclusion between processes."
+  ],
+  "id": "INV-8SMQAE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_knowledge_index_build_identity.py::test_eight_cold_callers_share_one_build, mcp/tests/test_knowledge_index_build_identity.py::test_failed_build_reaches_all_waiters_and_a_later_lookup_rebuilds"
+      ],
+      "path": "full-ingest.json"
+    },
+    "handoffEntry": "BUG-R23@v1 rule 1",
+    "leaf": "261112-BUG-L23",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A known-build cache miss joins one in-process build for its resolved destination, and current waiters receive the builder's failure so that a later lookup can retry.",
+  "status": "proposed",
+  "supersedes": []
+}

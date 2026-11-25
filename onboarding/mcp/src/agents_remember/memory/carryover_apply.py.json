@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+        "blob": "736a9d388c150a826532e5a204f6e473991d6711",
+        "content": "sha256:e96b57a1661d8cc57c6ba7dcb0cf7adca55dfb9b20f3a5197a7ba396f705e434",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_payloads"
+        }
+      },
+      "id": "RLZ-755VSC",
+      "invariant": "INV-4YJZE0",
+      "origin": {
+        "handoffEntry": "BUG-R24@v1 rule 6 carry-over",
+        "leaf": "261112-BUG-L24"
+      },
+      "rationale": "Uses the shared exclusion for derived files while preserving path and pair validation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "736a9d388c150a826532e5a204f6e473991d6711",
         "content": "sha256:93f20e53753f18e1b1db20174f095af6c2114477ae33eb6b6b8dd1fb2c34c195",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+        "blob": "736a9d388c150a826532e5a204f6e473991d6711",
         "content": "sha256:a455a9fc904e4d7782e4f5f5b22f1e2052df0bc49bf3f230afad396df66763f9",
         "locator": {
           "kind": "symbol",
@@ -40,12 +58,12 @@
   ],
   "references": {
     "1": {
-      "note": "Payload confinement: Only onboarding Markdown/JSON pairs and schema record units enter the write extent. Paths must be canonical relative paths; derived indexes, hidden parents, symlinks and nonregular files are refused. Record JSON may omit an absent Markdown companion; onboarding units may not.",
+      "note": "Payload confinement covers canonical relative onboarding pairs, including pairs under dot directories, and admitted knowledge record units. The shared predicate rejects derived route indexes. The transaction rejects symlinks and nonregular files. A record JSON may stand alone, while an onboarding document needs both files.",
       "targets": [
         {
           "anchor": {
-            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
-            "content": "sha256:a3d5cd48aa87647d73776d1c5657de174bf0c17f8c9f0549bd3f58b4e3ffb0b7",
+            "blob": "736a9d388c150a826532e5a204f6e473991d6711",
+            "content": "sha256:e96b57a1661d8cc57c6ba7dcb0cf7adca55dfb9b20f3a5197a7ba396f705e434",
             "locator": {
               "kind": "symbol",
               "name": "_check_payloads"
@@ -55,7 +73,7 @@
         },
         {
           "anchor": {
-            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "blob": "736a9d388c150a826532e5a204f6e473991d6711",
             "content": "sha256:ed5f18a7bba7cde9e32cd65bd6a9d3072d155b3a5d9f87544f8984624f5e48f8",
             "locator": {
               "kind": "symbol",
@@ -71,24 +89,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "blob": "736a9d388c150a826532e5a204f6e473991d6711",
             "content": "sha256:e16fa5d0395c4b788502e374b4adb4357861d732cd6310243c8ac659cc9b0cfe",
             "locator": {
-              "end": 135,
+              "end": 136,
               "kind": "line_range",
-              "start": 122
+              "start": 123
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "blob": "736a9d388c150a826532e5a204f6e473991d6711",
             "content": "sha256:60507d6640efffe8e06ed10d2bf1f3d6a86612470bd17a85944ebbd7b5bcb31e",
             "locator": {
-              "end": 250,
+              "end": 251,
               "kind": "line_range",
-              "start": 214
+              "start": 215
             }
           },
           "kind": "code"
@@ -113,36 +131,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "blob": "736a9d388c150a826532e5a204f6e473991d6711",
             "content": "sha256:178fc9a30cc5cf8d7f8c1ab31d474b1c16992575ec91203bfcc06cde8a5eae64",
             "locator": {
-              "end": 293,
+              "end": 294,
               "kind": "line_range",
-              "start": 235
+              "start": 236
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "blob": "736a9d388c150a826532e5a204f6e473991d6711",
             "content": "sha256:a455a9fc904e4d7782e4f5f5b22f1e2052df0bc49bf3f230afad396df66763f9",
             "locator": {
-              "end": 157,
+              "end": 158,
               "kind": "line_range",
-              "start": 138
+              "start": 139
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "blob": "736a9d388c150a826532e5a204f6e473991d6711",
             "content": "sha256:ed5f18a7bba7cde9e32cd65bd6a9d3072d155b3a5d9f87544f8984624f5e48f8",
             "locator": {
-              "end": 88,
+              "end": 89,
               "kind": "line_range",
-              "start": 37
+              "start": 38
             }
           },
           "kind": "code"
@@ -154,12 +172,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "blob": "736a9d388c150a826532e5a204f6e473991d6711",
             "content": "sha256:c71c5f93f9045480841f80d1e9896337238a28cacb07f4a8539b7014223714a1",
             "locator": {
-              "end": 293,
+              "end": 294,
               "kind": "line_range",
-              "start": 265
+              "start": 266
             }
           },
           "kind": "code"

@@ -6,7 +6,7 @@ The native task-server environment carries the host AR_PLAYWRIGHT value when pre
 
 `StartingAgent` also carries the starter's canonical sprint/master/task references beside its native id, role and subject. Handover preparation uses those references to publish a role-addressed return route that survives parent replacement; they are not caller-supplied launch-mode authority or evidence that a host consumed a launch setting.
 
-The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+The current source facts below replace the former operative inventory. The historical section retains the earlier launch account with two grant clauses withdrawn during BUG-R31. History row `ROW-T582Z4` points to both clauses in the base memory card.
 
 - Saved calls carry serverExclusion alongside agent/workspace.
 - A held `RoleLaunch` retains all resolved creation choices but omits `agent.prompt`; its compiled opening handover remains in the receipt for the first addressed work. An ordinary launch still sends its prompt at creation. This is product-held state, not a rewrite of the host’s idle state.
@@ -14,13 +14,17 @@ The current source facts below replace the former operative inventory. The separ
 - serviceTier is projected into featureValues.service_tier.
 - Saved native Antigravity Retry uses a bridge-only existing-agent marker. The bridge can reconcile the exact recorded agent. A known absence returns the ACP-directed refusal before creation. The marker does not go to Paseo.
 
+For a provider that accepts MCP definitions, role creation attaches its own bound task server and asks the shared seat policy for that provider's startup grant. Codex gets the starting build's full public roster on that server. Claude gets `server_info` for the session. The creation receipt's retained `assignmentReadGrant` field records the MCP preapprovals in the stored create call and describes their lifetime.
+
 ## Recovery note bound
 
 `recovery_note` composes the role, the task references and one `Assignment file: <locator> (SHA-256 <digest>).` line. The path it names is the launch's bounded locator — the product-owned directory alias of the report folder — so the note's length does not grow with the folder the hand-over lives in. Task references are shortened, least specific first, before the note would cross `RECOVERY_NOTE_LIMIT` (600 characters); the locator and the digest stay whole. A note that still cannot fit is refused before the agent starts, and the refusal names the task references and the locator as the cause while saying that the folder is not one.
 
 ### Source and authority bounds
 
+
 - The repeatable call binds the selected provider, session choices, workspace and configured tool-server identity. [10]
+
 
 - The recovery note keeps its complete locator and digest within the 600-character bound. [11]
 
@@ -30,10 +34,10 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 The pre-successor CUR-C03 source overwrote mixed featureValues. The moving producer candidate now merges the retained map with service_tier, preserving other keys in source. Its genuine successor custody/independent disposition remains separate; The former metadata-only projection is historical. The current launch applies Claude disallowed-tools options; `secondCopyLoaded` is derived from the applied record. Codex, Hermes/ACP and Pi remain exception cases with the second copy reported as loaded.
 
-## Historical original card — preserved, not the current operative account
+## Historical launch and producer accounts
 
 <details>
-<summary>Retained original source accounts and producer history</summary>
+<summary>Retained launch accounts and producer history</summary>
 
 ## Governing Overview
 
@@ -45,14 +49,14 @@ Builds the exact saved native workspace/agent launch call and classifies its res
 
 ## Code Commentary
 
-RoleLaunch carries minted identity, canonical selection, actual folder/workspace and selected provider options. tool_server_definition uses this interpreter/source/settings and exact binding; recovery_note retains artifact path/digest within its bound. The saved call keeps first message as JSON data and native parent/mode/feature inputs: model, effort, mode and feature values go to the runtime at creation, and a Claude launch carries the narrow per-tool session grant for `server_info` on its own bound server. A reply is accepted only for the minted agent and expected server/workspace; unconfirmed replies remain retryable rather than reminting.
+RoleLaunch carries minted identity, canonical selection, actual folder/workspace and selected provider options. tool_server_definition uses this interpreter/source/settings and exact binding; recovery_note retains artifact path/digest within its bound. The saved call keeps first message as JSON data and native parent/mode/feature inputs: model, effort, mode and feature values go to the runtime at creation. A reply is accepted only for the minted agent and expected server/workspace; unconfirmed replies remain retryable rather than reminting.
 
 
 **L184 — NEW-R192-EXTRA-ARGS.** The launch is where a plan becomes provider options, so the separation between taken and noted arguments is realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
 
 ## Creation inputs and read grant
 
-`build_launch_call` writes `modeId` and `featureValues` into the agent creation payload so a first edit cannot race them, and adds a Claude-only `toolPolicy` preapproving exactly the `server_info` identity reads on the agent's own bound AR server. `_created_outcome` applies observed `mode`/`modeId` and feature values from the created agent beside model/effort/tier, and `applied_to_agent` reports the grant as `assignmentReadGrant` with its exact preapprovals.
+`build_launch_call` writes `modeId` and `featureValues` into the agent creation payload so a first edit cannot race them. `_created_outcome` applies observed `mode`/`modeId` and feature values from the created agent beside model/effort/tier, and `applied_to_agent` reports the grant as `assignmentReadGrant` with its exact preapprovals.
 
 ## Prepared-start closing mark (MIK-R76)
 
@@ -66,7 +70,9 @@ is archived and refused when the response returns. Ordinary launches without a m
 - Frozen implementation of tool_server_definition supporting the stated file behavior. [1]
 
 
+
 - The launch call preserves the selected provider, session choices, seat binding and first-message state for creation. [2]
+
 
 
 

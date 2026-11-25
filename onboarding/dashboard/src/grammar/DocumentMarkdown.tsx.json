@@ -179,6 +179,58 @@
           "kind": "code"
         }
       ]
+    },
+    "2": {
+      "note": "The dashboard sets the page-wide no-referrer policy before loading the app.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7fe64f3da7571f4d7e514183e7d3ed0ec7861009",
+            "content": "sha256:2d8519a61c3fa80d9b50f69884f5c332218ef94057713c4eb86f0e0de477b68e",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "dashboard/index.html"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Rendered images set their own no-referrer policy alongside media admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c09e8578f7549c73f5cd25986df660037db47615",
+            "content": "sha256:9418386df801af124398db36f4654e94cfe588a7ad57026939c883654b05a856",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Videos and nested sources admit their media addresses and use the page policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c09e8578f7549c73f5cd25986df660037db47615",
+            "content": "sha256:ade08069483bbd530f054bd6a30437308010ecf32131582970a0594e434c7c41",
+            "locator": {
+              "end": 278,
+              "kind": "line_range",
+              "start": 227
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The representative start row prevents a bound justified from just one short checkout path."
+  },
+  "applicability": "The shaped role_start row in shared answer-bound selection.",
+  "conditions": [
+    "The short-root and deep-root measurement refers to the missing-requirement start fixture with its log path.",
+    "The shaped bound is selected before the general fallback."
+  ],
+  "exclusions": [
+    "The role_message exception and bounds for other tools.",
+    "The shared 400-token short-form target is a separate limit."
+  ],
+  "id": "INV-RF4W8Q",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L22-W2-freeze-report.md — BUG-R22@v1 acceptance and commands"
+      ],
+      "path": "L22-W2-curated-handoff-v2"
+    },
+    "handoffEntry": "BUG-R22@v1 §4",
+    "leaf": "261112-BUG-L22",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The role start guard uses a 600-token bound after the missing-file fixture measured 236 tokens at a short root and 398 at a deep one.",
+  "status": "proposed",
+  "supersedes": []
+}

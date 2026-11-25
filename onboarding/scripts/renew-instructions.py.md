@@ -16,6 +16,8 @@ The command builds the complete plan before publishing replacements. `--check` r
 
 The planner owns computation and publication. This command renders its notices and errors and names `mcp/.venv/bin/python scripts/renew-instructions.py` as the remedy for stale generated values.
 
+The contributor guide prescribes renewal for instruction facts and the generated skills and tool-details copies. The skills reference directs contributors to run the same command for the generated skills copy and points to the contributor guide. The release checklist requires a clean renewal check and current facts and package copies. The Git hook checks the generated skills with renewal alongside the projection and runtime copy checks.
+
 ## Evidence
 
 
@@ -26,3 +28,11 @@ The planner owns computation and publication. This command renders its notices a
 ### Repo-Internal References (renewed)
 
 - The command and its manifest/pointer planners load repository test support. [3]
+
+- The contributor guide gives the command for instruction facts and the generated skills and tool-details copies, with a read-only check mode. [4]
+- The skills reference names the exact renewal command for the generated skills copy and points to the contributor rules. [5]
+- The release checklist requires a clean renewal check and current instruction facts and package copies, including tool-details. [6]
+- The hook checks projection, skills and runtime copies. Skills use the instruction renewal command. [7]
+- The hook runs the named copy checker with the check flag. [8]
+- The fast tier invokes the generated copy checks. [9]
+- The targeted tier invokes the fast tier. [10]
