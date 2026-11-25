@@ -1,0 +1,139 @@
+{
+  "path": "mcp/src/agents_remember/models/tools/role_tool_scope.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3a4a614c214f80c798bd135d20f846d9000ee211",
+        "content": "sha256:e116aaed8f4b46dae2d11e9a2cbf129a879911a7ab0f493d1395abeadd7e69d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "role_tool_roster"
+        }
+      },
+      "id": "RLZ-GFR748",
+      "invariant": "INV-KYKYPR",
+      "origin": {
+        "handoffEntry": "CAP-R01@v1 §1",
+        "leaf": "261124-CAP-L1"
+      },
+      "rationale": "The unbound case is decided once here: None keeps the whole public roster instead of an empty or unknown-role fallback.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "3a4a614c214f80c798bd135d20f846d9000ee211",
+        "content": "sha256:213379f66e141df7c83311a5a9b0f863a759b56cb244aac85a9e32e1a336894e",
+        "locator": {
+          "kind": "symbol",
+          "name": "ROLE_TOOL_ALLOWLISTS"
+        }
+      },
+      "id": "RLZ-KWFEC0",
+      "invariant": "INV-KYKYPR",
+      "origin": {
+        "handoffEntry": "CAP-R01@v1 §1",
+        "leaf": "261124-CAP-L1"
+      },
+      "rationale": "This mapping is the single authority every consumer reads: the server narrows from it and the Codex seat policy grants from it, so no second copy can drift.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "3a4a614c214f80c798bd135d20f846d9000ee211",
+        "content": "sha256:0fc6e34e5d9e4dec7ae11791b2e7698f317c92d60636c6245432e91d045a1e8b",
+        "locator": {
+          "kind": "symbol",
+          "name": "tools_for_role"
+        }
+      },
+      "id": "RLZ-NW6M5S",
+      "invariant": "INV-KYKYPR",
+      "origin": {
+        "handoffEntry": "CAP-R01@v1 §1",
+        "leaf": "261124-CAP-L1"
+      },
+      "rationale": "Every caller that needs one role's ordered tools resolves it here, including the system-specialist alias and the refusal of an unknown role name.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The table holds one ordered allowlist per canonical role, each a subsequence of the public roster.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a4a614c214f80c798bd135d20f846d9000ee211",
+            "content": "sha256:213379f66e141df7c83311a5a9b0f863a759b56cb244aac85a9e32e1a336894e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROLE_TOOL_ALLOWLISTS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An alias resolves to its canonical role and an unknown role raises instead of receiving the public roster.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a4a614c214f80c798bd135d20f846d9000ee211",
+            "content": "sha256:0fc6e34e5d9e4dec7ae11791b2e7698f317c92d60636c6245432e91d045a1e8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "tools_for_role"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A seat without a role keeps the public roster.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a4a614c214f80c798bd135d20f846d9000ee211",
+            "content": "sha256:e116aaed8f4b46dae2d11e9a2cbf129a879911a7ab0f493d1395abeadd7e69d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_tool_roster"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The task server narrows a role-bound process to its role's entry, and the Codex seat policy grants the same roster.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:3676027595eab60a93de89d550a933082300dd53f25fb20ee5b184eb7b85863b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bound_role_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4191e74318f5f34c0412b1564038c8484c35b816",
+            "content": "sha256:1f192df99fe43025b96a5f0c8462605f0b3d46b26fa32f0a7094f3fa8ac5155d",
+            "locator": {
+              "kind": "symbol",
+              "name": "preapproval_policy"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_seat_policy.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

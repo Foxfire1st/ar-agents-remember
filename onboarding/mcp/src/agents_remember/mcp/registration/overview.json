@@ -525,16 +525,16 @@
       ]
     },
     "41": {
-      "note": "The ordered ordinary registrar tuple includes explainer control, and the same server adds the bound explainer surface only for a launch that bound it as an explainer seat.\n\nAnchor: `register_explainer_surface`",
+      "note": "The ordered ordinary registrar tuple includes explainer control, and the same server adds the bound explainer surface only for a launch that bound it as an explainer seat.",
       "targets": [
         {
           "anchor": {
-            "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
-            "content": "sha256:37ac1a3d42b41a1bfab8b5e89e34290a66825c96cd886a12e9f14ae72b132ba9",
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:844900c90b52903fa18413aedb3a1eca8cda0b0cd016575ebe6bccd4d49359e0",
             "locator": {
-              "end": 406,
+              "end": 448,
               "kind": "line_range",
-              "start": 395
+              "start": 437
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },

@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf1ff630aa584ae1f28c8de20e28e954f7961c55",
+            "blob": "345ed4665ce228a5d509b235fce203c4473c24a3",
             "content": "sha256:e0f5339047af053e5cde5eb28cacba43cad9bec73f23b3611e781d3c3b5086b0",
             "locator": {
-              "end": 3578,
+              "end": 3580,
               "kind": "line_range",
-              "start": 3561
+              "start": 3563
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -38,12 +38,12 @@
         },
         {
           "anchor": {
-            "blob": "bf1ff630aa584ae1f28c8de20e28e954f7961c55",
+            "blob": "345ed4665ce228a5d509b235fce203c4473c24a3",
             "content": "sha256:dd29b9575318035917550d8cd687bff9d97bc8f7656afd6847e27186bf2bdcd1",
             "locator": {
-              "end": 5079,
+              "end": 5081,
               "kind": "line_range",
-              "start": 5076
+              "start": 5078
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -51,7 +51,7 @@
         }
       ]
     },
-    "15": {
+    "16": {
       "note": "The same revision keeps its seal when derived standing differs.",
       "targets": [
         {

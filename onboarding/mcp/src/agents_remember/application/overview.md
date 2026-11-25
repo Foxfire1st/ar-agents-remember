@@ -1169,9 +1169,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - Complete whole-file dependent version tokens are compared using exact confirmation and selected-tree project versions; unchanged other bytes and prefix identity are preserved, without claiming semantic package ownership for identical dependency tokens. \[522] [522]
 - For a complete paired leaf worklist, the closeout gate checks changed paths with the master landing entry-currentness predicate. It compares the recorded code base directly with the candidate tree. [523]
 
-- The write route resolves the caller outside the handoff and supplies the owner-specific stamp. [533]
-- The answer carries record standing independently of code currentness. [534]
-- The bounded writers view retains the report path and selection's counts. [535]
+- The write route resolves the caller outside the handoff and supplies the owner-specific stamp. [536]
+- The answer carries record standing independently of code currentness. [537]
+- The bounded writers view retains the report path and selection's counts. [538]
 
 - The writer reads and authors the handoff, checks history, renders changes, and validates the resulting candidate before it writes or refuses. [265]
 - The writer validates before finishing and appends raised questions before it writes the knowledge files. [462]

@@ -31,7 +31,7 @@ not the active renewal or a new source measurement.
 - Generated measurements cover current capsules, declared details and the shared digest without individual item limits. [2]
 
 
-The generated ordinary-template measurement records the Manager brief at 1,465 words and retains its exact source SHA-256.
+- Generated approved source sizes record the Manager brief at 1,465 words and its exact source SHA-256. [3]
 
 
 - Authored role, detail and digest ceilings are separate from generated measurements. [4]
