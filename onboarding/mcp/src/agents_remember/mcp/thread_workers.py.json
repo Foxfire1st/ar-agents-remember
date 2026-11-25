@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "16c9244c6c6d7b49e26f835cf992ae04304056f5",
-        "content": "sha256:8270eb64bb55bec46ee910fba95941cf2303221cd04753f4019076d6e81336e9",
+        "blob": "2ee450da7ed591e6d87e27ecd9b4835dffd5f825",
+        "content": "sha256:f9f96102a9fd64fbbcb983a3efe8069e163e8910abfb8c4c17582d29ab8a0771",
+        "locator": {
+          "kind": "symbol",
+          "name": "_DetachedWorker.run"
+        }
+      },
+      "id": "RLZ-8ZBNSX",
+      "invariant": "INV-F3DQ4G",
+      "origin": {
+        "handoffEntry": "BUG-R27@v1 Rule 2 raised error",
+        "leaf": "261112-BUG-L27"
+      },
+      "rationale": "Keeps start admission and error reporting in the worker when the request or event loop goes away.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2ee450da7ed591e6d87e27ecd9b4835dffd5f825",
+        "content": "sha256:b5db5630112f4a40dee5ef605a87c3210881efa621c460a89e72c461b567c3f3",
         "locator": {
           "kind": "symbol",
           "name": "run_in_request_thread"
@@ -18,19 +36,98 @@
       },
       "rationale": "The shared thread runner drains its worker before propagating cancellation.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2ee450da7ed591e6d87e27ecd9b4835dffd5f825",
+        "content": "sha256:b5db5630112f4a40dee5ef605a87c3210881efa621c460a89e72c461b567c3f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_in_request_thread"
+        }
+      },
+      "id": "RLZ-TGK6AE",
+      "invariant": "INV-F3DQ4G",
+      "origin": {
+        "handoffEntry": "BUG-R27@v1 Rule 2 raised error",
+        "leaf": "261112-BUG-L27"
+      },
+      "rationale": "Drains synchronous and role-start workers and returns their original error to the request's log owner before cancellation propagates.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2ee450da7ed591e6d87e27ecd9b4835dffd5f825",
+        "content": "sha256:555c1202a866f5f164bba644dde3b6812b84bed5dc3855fec4415df498225452",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_in_detached_request_thread"
+        }
+      },
+      "id": "RLZ-ZS34N7",
+      "invariant": "INV-F3DQ4G",
+      "origin": {
+        "handoffEntry": "BUG-R27@v1 Rule 2 raised error",
+        "leaf": "261112-BUG-L27"
+      },
+      "rationale": "Awaits the queued submission directly, then resolves ownership of any late error with the running thread.",
+      "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "The shielded worker drains before the caller propagates its exception.",
+      "note": "The worker drains under a shielded scope before the caller's cancellation propagates, and its error is kept for the request's log.",
       "targets": [
         {
           "anchor": {
-            "blob": "16c9244c6c6d7b49e26f835cf992ae04304056f5",
-            "content": "sha256:8270eb64bb55bec46ee910fba95941cf2303221cd04753f4019076d6e81336e9",
+            "blob": "2ee450da7ed591e6d87e27ecd9b4835dffd5f825",
+            "content": "sha256:b5db5630112f4a40dee5ef605a87c3210881efa621c460a89e72c461b567c3f3",
             "locator": {
               "kind": "symbol",
               "name": "run_in_request_thread"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The tracker binds the request's two log writers and clears the stored error on exit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ee450da7ed591e6d87e27ecd9b4835dffd5f825",
+            "content": "sha256:d63a8eccc3baae736d7d13ea2c0a34572fc5acdfcbdcc990879e43adf5b5b952",
+            "locator": {
+              "kind": "symbol",
+              "name": "track_worker_cancellation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The detached helper passes cancellation on at once, logs a still-queued wait, and lets the worker write its own late error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ee450da7ed591e6d87e27ecd9b4835dffd5f825",
+            "content": "sha256:555c1202a866f5f164bba644dde3b6812b84bed5dc3855fec4415df498225452",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_in_detached_request_thread"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ee450da7ed591e6d87e27ecd9b4835dffd5f825",
+            "content": "sha256:c3b5eb0499ceede5fa2ae8db4a0769317a2270485780905f1d42e381cce0371b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_DetachedWorker"
             }
           },
           "kind": "code"

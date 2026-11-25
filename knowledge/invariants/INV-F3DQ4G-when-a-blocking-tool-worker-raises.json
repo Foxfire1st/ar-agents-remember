@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A tool call that failed after its client stopped waiting left no tool-log row, so a caller who checked afterwards could not learn whether or why the call failed."
+  },
+  "applicability": "Tool calls whose blocking work runs in a worker thread through run_in_request_thread or run_in_detached_request_thread.",
+  "conditions": [
+    "The request is cancelled while the worker runs.",
+    "The worker then raises an exception."
+  ],
+  "exclusions": [
+    "A worker that returns a result after the cancellation; the tool logs that result as usual.",
+    "Asynchronous handlers that run on the event loop.",
+    "A request cancelled before its worker starts, which leaves a cancelled row instead."
+  ],
+  "id": "INV-F3DQ4G",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/27_a-closeout-says-what-it-lacks-before-it-works-and-never-ends-without-a-trace-ar/role-reports/worker/ab4c7795-d684-4499-b9ef-bb86badfde8a/role-launch/BUG-L27-post-sync-readback.md#checks"
+      ],
+      "path": "L27-writer-input"
+    },
+    "handoffEntry": "BUG-R27@v1 Rule 2 raised error",
+    "leaf": "261112-BUG-L27",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "When a blocking tool worker raises after its request was cancelled, the server logs the original raised error once with a cancellation marker and leaves ordinary result logging to the tool.",
+  "status": "proposed",
+  "supersedes": []
+}

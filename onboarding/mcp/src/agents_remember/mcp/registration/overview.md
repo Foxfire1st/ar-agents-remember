@@ -18,12 +18,9 @@ The current ordinary source has 44 public names, including the mounted user_sett
 
 An ordinary `create_server` calls ten registrars in order: core, native seat retirement, memory, worktrees, closeout, tasks, capsule/skill resources, native role agents, knowledge and explainer control. Nine declare tools; the capsule registrar publishes resources and installs skill protocol support without declaring tools. The explainer registrar's `render` answer carries the announce of a first browser fetch whole and adds the load's `browser` record to a publishing answer, so the seat reads the same state the review page draws. The current source `PUBLIC_TOOLS` literal contains 44 ordinary names, including native `retire_child`, `role_start_set`, the mounted `user_settings_init`, `citation_note_revision` and `explainer_control`, with `dispatch_agent` absent. This is the current source declaration, not a claim that adding those names to an old population alone computes its size or that a live server was interrogated.
 
-> **Retained historical source account — superseded by the current route account:**
-> A tool handler normally constructs its request value and forwards it to a payload builder. Memory quality dispatches its typed request by mode; native role calls use `asyncio.to_thread` around their payload builders. The shared `_tool_payload` adapter delegates the whole result and an optional compact answer to the application boundary; the boundary validates and logs the whole result and guards the delivered answer. Registration does not independently grant approval, retry, publication, or actor authority.
-
 ## Construction
 
-Both registered role-start handlers hand blocking work to the shared request-thread runner. Cancellation drains that work inside the still-active tool call. The outer request owns memo cleanup and the trim attempt.
+Both registered role-start handlers hand blocking work to the shared request-thread runner. Cancellation drains that work inside the still-active tool call. The outer request owns memo cleanup and the trim attempt. Role messages and the settings initializer use the detached request-thread runner instead: a cancellation ends the request at once, and an error the worker raises later is still written to the tool log.
 
 The closeout/direct-landing registrar adds the launch-bound architect direct_execution_grant function; the task registrar retains its document/reopen/finalizer/coherence/queue groups. Direct landing selects exact leaf/grant, either existing-code verification or previewed exact-pair creation with code_commit_message/memory_commit_message and same-generation recovery. Ordinary closeout/integration retains its separate no-test/review execution contract.
 
@@ -210,6 +207,7 @@ The mounted `knowledge_read` registration describes the `writers` view as per-wr
  mcp/src/agents_remember/mcp/registration/role_agents.py — symbol register_role_agent_tools
 
 
+
 - The role-agent registrar mounts role_start, role_start_set and role_message; the callables preserve their declared argument shapes and delegate to their application payload owners. [24]
 
 - The task registrar composes closeout queue, curator coherence, task reopen and finalizer tools with task_doc registration; the shared task_doc description names write operations and alignmentSweep. [33]
@@ -217,6 +215,7 @@ The mounted `knowledge_read` registration describes the `writers` view as per-wr
 
 
 - The current composed ordinary source has 44 public names, including the mounted user_settings_init, explainer_control and citation_note_revision. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action and the `repository-default` sync source, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn. [38]
+
 
 
 

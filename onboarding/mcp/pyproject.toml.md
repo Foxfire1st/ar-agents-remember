@@ -221,7 +221,6 @@ later reader does not have to reconstruct it from a report.
 
 - Package data declares the general package-data tree and the canvas Markdown and JavaScript resources. Tests pin the general and Markdown patterns and check the generated capability copy against the source. [18]
 
-- The editable locked distribution records version 3.0.6. [19]
-- The package metadata declares version 3.0.6. [20]
-- The runtime reads package metadata and uses version 3.0.6 in an uninstalled checkout. [21]
-- MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. Anchor: `_resolve_server_version` [9]
+- The editable locked distribution records version 3.0.7. [19]
+- The package metadata declares version 3.0.7. [20]
+- The runtime reads package metadata and uses version 3.0.7 in an uninstalled checkout. [21]

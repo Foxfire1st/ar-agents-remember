@@ -1,0 +1,262 @@
+{
+  "path": "mcp/tests/test_mcp_cancelled_tool_log.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "f96005f5f55fff9d3bf0551f1ea58fe8f01a2e24",
+        "content": "sha256:38c7115225c15d5992ad66484b190e32b8806081e366a25c4acef46590c12100",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_waiting_role_message_cancels_before_its_worker_returns"
+        }
+      },
+      "facet": "Cancelling a waiting role message does not wait for its worker, and a late successful result is logged as an ordinary row.",
+      "id": "PRF-39QZ8N",
+      "invariant": "INV-F3DQ4G",
+      "origin": {
+        "handoffEntry": "BUG-R27@v1 Rule 2 raised error",
+        "leaf": "261112-BUG-L27"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f96005f5f55fff9d3bf0551f1ea58fe8f01a2e24",
+        "content": "sha256:f93c22f8add748b67dc8da7d70a6b03b77dc0d83357ba5f424e280ed5b2b74f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cancelled_queued_role_work_never_starts"
+        }
+      },
+      "facet": "A role message still queued in the thread pool when it is cancelled never runs and leaves a cancelled row that names the worker-thread wait.",
+      "id": "PRF-48MPBS",
+      "invariant": "INV-8NDEQB",
+      "origin": {
+        "handoffEntry": "BUG-R27@v1 Rule 2 pre-handler cancellation",
+        "leaf": "261112-BUG-L27"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f96005f5f55fff9d3bf0551f1ea58fe8f01a2e24",
+        "content": "sha256:1f7401f02fb6b05627d88b99aaac0d04bef0ce7cd2a73645f2e1f13fcb918eec",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_detached_role_worker_logs_the_error_after_cancellation"
+        }
+      },
+      "facet": "A cancelled role message returns at once, and its worker's later error is logged as a raised row with the cancellation marker.",
+      "id": "PRF-8Q96QF",
+      "invariant": "INV-F3DQ4G",
+      "origin": {
+        "handoffEntry": "BUG-R27@v1 Rule 2 raised error",
+        "leaf": "261112-BUG-L27"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f96005f5f55fff9d3bf0551f1ea58fe8f01a2e24",
+        "content": "sha256:9a8c02ec0d16bc745ae16b797619a28e9df206766542ae5b7ef916cb7732f56a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_detached_role_worker_logs_during_runner_shutdown"
+        }
+      },
+      "facet": "The worker thread writes the late error row even after the event loop runner has shut down.",
+      "id": "PRF-G6AR2B",
+      "invariant": "INV-F3DQ4G",
+      "origin": {
+        "handoffEntry": "BUG-R27@v1 Rule 2 raised error",
+        "leaf": "261112-BUG-L27"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f96005f5f55fff9d3bf0551f1ea58fe8f01a2e24",
+        "content": "sha256:b913927e80462ec40a485238ef2182c329912bd3a176bca11bf951f331ae1804",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cancelled_running_writer_logs_once"
+        }
+      },
+      "facet": "A drained synchronous handler that raises after its request was cancelled leaves one raised row with the original error and the cancellation marker, and a late result leaves only the tool's own row.",
+      "id": "PRF-J8N58J",
+      "invariant": "INV-F3DQ4G",
+      "origin": {
+        "handoffEntry": "BUG-R27@v1 Rule 2 raised error",
+        "leaf": "261112-BUG-L27"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f96005f5f55fff9d3bf0551f1ea58fe8f01a2e24",
+        "content": "sha256:0ec98d59fa215b346098291cf4d381bbc2c1425697a3c48e020ec34371f49e58",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_both_registered_role_tools_use_the_detached_thread_helper"
+        }
+      },
+      "facet": "The settings initializer and role message tools both pass their work through the detached thread helper.",
+      "id": "PRF-N49DQE",
+      "invariant": "INV-F3DQ4G",
+      "origin": {
+        "handoffEntry": "BUG-R27@v1 Rule 2 raised error",
+        "leaf": "261112-BUG-L27"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f96005f5f55fff9d3bf0551f1ea58fe8f01a2e24",
+        "content": "sha256:f1e951662c150eb8c8480071b021a6ba05f6895533983e0a7e3a90614fcae0d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cancelled_before_dispatch_logs_wait"
+        }
+      },
+      "facet": "For the write-lock and build-currentness waits, the handler never runs and one cancelled row names the wait.",
+      "id": "PRF-XMF999",
+      "invariant": "INV-8NDEQB",
+      "origin": {
+        "handoffEntry": "BUG-R27@v1 Rule 2 pre-handler cancellation",
+        "leaf": "261112-BUG-L27"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The logging server and the one-row log readers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96005f5f55fff9d3bf0551f1ea58fe8f01a2e24",
+            "content": "sha256:9ea1761d7349993b87648b33eade8b61dbe50840d3f90641f4c2475c83213453",
+            "locator": {
+              "kind": "symbol",
+              "name": "logging_server"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f96005f5f55fff9d3bf0551f1ea58fe8f01a2e24",
+            "content": "sha256:c86ffad140d9db1255d15341af1783d59bad1d036d96632f5bf9a8f7eb62e726",
+            "locator": {
+              "kind": "symbol",
+              "name": "_logged_call"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A cancelled running tool logs its late error once, or its late result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96005f5f55fff9d3bf0551f1ea58fe8f01a2e24",
+            "content": "sha256:b913927e80462ec40a485238ef2182c329912bd3a176bca11bf951f331ae1804",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cancelled_running_writer_logs_once"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A request cancelled while it waits is logged as cancelled with its wait.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96005f5f55fff9d3bf0551f1ea58fe8f01a2e24",
+            "content": "sha256:f1e951662c150eb8c8480071b021a6ba05f6895533983e0a7e3a90614fcae0d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cancelled_before_dispatch_logs_wait"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A detached role worker logs its late error, also at runner shutdown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96005f5f55fff9d3bf0551f1ea58fe8f01a2e24",
+            "content": "sha256:1f7401f02fb6b05627d88b99aaac0d04bef0ce7cd2a73645f2e1f13fcb918eec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_detached_role_worker_logs_the_error_after_cancellation"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f96005f5f55fff9d3bf0551f1ea58fe8f01a2e24",
+            "content": "sha256:9a8c02ec0d16bc745ae16b797619a28e9df206766542ae5b7ef916cb7732f56a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_detached_role_worker_logs_during_runner_shutdown"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Both role tools use the detached helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96005f5f55fff9d3bf0551f1ea58fe8f01a2e24",
+            "content": "sha256:0ec98d59fa215b346098291cf4d381bbc2c1425697a3c48e020ec34371f49e58",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_both_registered_role_tools_use_the_detached_thread_helper"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Cancellation ends a waiting role message before its late result is logged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96005f5f55fff9d3bf0551f1ea58fe8f01a2e24",
+            "content": "sha256:38c7115225c15d5992ad66484b190e32b8806081e366a25c4acef46590c12100",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_waiting_role_message_cancels_before_its_worker_returns"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Cancelled queued role work never starts and is logged with the worker-thread wait.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96005f5f55fff9d3bf0551f1ea58fe8f01a2e24",
+            "content": "sha256:f93c22f8add748b67dc8da7d70a6b03b77dc0d83357ba5f424e280ed5b2b74f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cancelled_queued_role_work_never_starts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

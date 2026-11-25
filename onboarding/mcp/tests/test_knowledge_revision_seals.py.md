@@ -102,7 +102,7 @@ No meaningful cross-repo references found.
 
 
 
-- The same revision keeps its seal when derived standing differs. [14]
+- The same revision keeps its seal when derived standing differs. [15]
 
 - The unit-regression lane selects mcp/tests/test_knowledge_revision_seals.py. [9]
 

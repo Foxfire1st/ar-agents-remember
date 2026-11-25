@@ -27,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ce9014b62634b589b6ace0c0fb81e844f8fd659",
+            "blob": "15fd1a6fe8c446360c1fe100ecb9f279a34515ef",
             "content": "sha256:b12b7a0d62b351726c4377249d0b5bf0b95cd984581059e373f6e52de355d867",
             "locator": {
               "end": 36,
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ce9014b62634b589b6ace0c0fb81e844f8fd659",
+            "blob": "15fd1a6fe8c446360c1fe100ecb9f279a34515ef",
             "content": "sha256:a7dd2f1db2a5663f0d50ab1d69dc32bbd97bf4ba40e533fe36bf190216a02752",
             "locator": {
               "end": 112,
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ce9014b62634b589b6ace0c0fb81e844f8fd659",
+            "blob": "15fd1a6fe8c446360c1fe100ecb9f279a34515ef",
             "content": "sha256:337ab3ee7cffe9746a8e6c1f774530261ddd8dc8fe247d247efd2b22125f3e3c",
             "locator": {
               "end": 172,
@@ -74,12 +74,12 @@
       ]
     },
     "4": {
-      "note": "The Status section gives package version 3.0.6 and Python 3.14, then directs readers to the release notes before installation.",
+      "note": "The status section states release 3.0.7 and the Python requirement, and directs readers to the release notes before installing.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ce9014b62634b589b6ace0c0fb81e844f8fd659",
-            "content": "sha256:baa00e80b917aba767a72ca2300ede3c92982c8cf07c3364067aa201ac7e323e",
+            "blob": "15fd1a6fe8c446360c1fe100ecb9f279a34515ef",
+            "content": "sha256:fa2d6f67f2acd8c6e0fc9218ec3b7bd49745e09ba6e650eba9ddad25e9894ba5",
             "locator": {
               "end": 200,
               "kind": "line_range",

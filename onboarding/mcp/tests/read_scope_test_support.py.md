@@ -135,8 +135,8 @@ No meaningful cross-repo references found.
 ### Repo-Internal References (renewed)
 
 
-- The optional reviewer leaf creates an exact review fact for the fixture’s extra record. [29]
-- The fixture captures its Git tree through the isolated shared helper. [30]
+- The optional reviewer leaf creates an exact review fact for the fixture’s extra record. [31]
+- The fixture captures its Git tree through the isolated shared helper. [32]
 
 - Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [15]
 - `_create_revision` supplies the current fixture or assertion described above. [13]
