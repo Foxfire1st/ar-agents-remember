@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
             "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
             "locator": {
               "end": 144,
@@ -73,12 +73,12 @@
         },
         {
           "anchor": {
-            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
             "content": "sha256:624155b582a3231f31414747847276936708b61fe2e057cdd9dacd516d4ec9ee",
             "locator": {
-              "end": 536,
+              "end": 534,
               "kind": "line_range",
-              "start": 529
+              "start": 527
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },

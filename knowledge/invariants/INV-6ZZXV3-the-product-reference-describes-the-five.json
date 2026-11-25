@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The obligation is realized in two reference pages, and a reader who is not told that a limit can clear early would keep waiting or resend into it."
+  },
+  "applicability": "The product reference pages that describe held-message limits and the runtime's limit file.",
+  "conditions": [
+    "docs/reference/mcp-tools.md names the five-minute recheck and the early drain of held messages.",
+    "docs/reference/runtime-layout.md describes the recheck attempts and the early clear release in provider-limits.json."
+  ],
+  "exclusions": [
+    "No dashboard control to check a limit again."
+  ],
+  "id": "INV-6ZZXV3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "261112-BUG-L37-proof-evidence.tar.gz, 261112-BUG-L37-freeze-evidence.md, Evidence item 7 and memory follow-up"
+      ],
+      "path": "L37-curation-part1"
+    },
+    "handoffEntry": "BUG-R37@v1 rule 7",
+    "leaf": "261112-BUG-L37",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The product reference describes the five-minute recheck, the early release of held work and the plug-in's recorded clear time.",
+  "status": "proposed",
+  "supersedes": []
+}

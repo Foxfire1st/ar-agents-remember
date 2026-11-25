@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "cf41b9ab8a855953186f782960fd37a57225b56f",
-    "commit": "1d62157b755f5ab6b60ac89010b6a03160519352",
+    "codeTree": "81f40d54700ea65869339061d70182e7efc59dc1",
+    "commit": "c5122294b4110a744254dad2c686a82f392304c4",
     "role": "curator",
-    "statement": "On the merged code the pytest bootstrap guide still holds: integration and stress-durability make up the integration tests (now 119 integration modules with L27's two), and CAP-L1's unit-regression module changes no selection rule. The bootstrap guide says the bounded-memory stdio test's warm-index child and measured server run without child coverage, and the lane manifest keeps that test in stress-durability and the dependent-writer test in integration.",
-    "task": "261112-BUG-L26",
-    "uncommitted": false
+    "statement": "The pytest policy still describes integration and stress lane selection and the bounded-memory stdio case's coverage boundary.",
+    "task": "261112-BUG-L37",
+    "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
   "id": "DPD-ZT8YY7",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
+      "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -106,8 +106,8 @@
     },
     {
       "anchor": {
-        "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
-        "content": "sha256:04f035a94539c339229547bc5abfb353cc00b7723d8419ed60d2857df37925ae",
+        "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+        "content": "sha256:6a4c72186304a5e78ecdfd17e696fd9f9330c0b6038370aa3761b7e74436176b",
         "locator": {
           "end": 823,
           "kind": "line_range",
@@ -120,8 +120,8 @@
     },
     {
       "anchor": {
-        "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
-        "content": "sha256:bcc4ade20e19642e956536d6662d0c20a8343feed9984bdf943fe982348cd7d1",
+        "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+        "content": "sha256:9e57a692b844c1b8553d79dd25548a2eb74bc8f1047762640b1208d574b0cc61",
         "locator": {
           "end": 826,
           "kind": "line_range",

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "b29f2e225c04fbcebb653d59f81cf895c42f5097",
-    "commit": "180b6c153d21d01cbb14059d0219472ccdeba683",
+    "codeTree": "81f40d54700ea65869339061d70182e7efc59dc1",
+    "commit": "c5122294b4110a744254dad2c686a82f392304c4",
     "role": "curator",
-    "statement": "The host guide's role-agent account, the second agents-remember copy on non-Claude harnesses and the Claude Code exclusion still hold on b29f2e2; the Paseo 0.16.2 routes now documented in agent_binding.py agree with it.",
-    "task": "261124-CAP-L1",
+    "statement": "The host guide still describes resume after a host stop and exact-agent Antigravity Retry.",
+    "task": "261112-BUG-L37",
     "uncommitted": true
   },
   "document": "docs/host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -141,7 +141,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
     },
     {
-      "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
+      "blob": "07ae82d885e3cd87654354b19a373a5a9267b9db",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
     },
@@ -195,8 +195,8 @@
     },
     {
       "anchor": {
-        "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
-        "content": "sha256:88890c4ffbc0c6525cec6141638a35f4faa3e4e9cf958e1b6c6e522cccea024a",
+        "blob": "07ae82d885e3cd87654354b19a373a5a9267b9db",
+        "content": "sha256:6d3f96fe2a31cbb02bbde42b88d1b6e720a8985d9a29f6a74f755fcafeb193ea",
         "locator": {
           "end": 736,
           "kind": "line_range",

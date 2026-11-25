@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "81f40d54700ea65869339061d70182e7efc59dc1",
+    "commit": "c5122294b4110a744254dad2c686a82f392304c4",
     "role": "curator",
-    "statement": "The Operations table requires an open session for helper-only work and for a declared wait with an armed check still within its grace period. A task pauses when known host activity shows neither work nor waiting.",
-    "task": "261112-BUG-L20",
+    "statement": "The Operations table still requires an open session for helper-only work and for a declared wait with an armed check, and a task still pauses when known host activity shows neither work nor waiting.",
+    "task": "261112-BUG-L37",
     "uncommitted": true
   },
   "document": "docs/dashboard.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -195,7 +195,7 @@
       "path": "mcp/src/agents_remember/serving/changeset_endpoints.py"
     },
     {
-      "blob": "505ca868c7f3c031f538ca7709e1c2888ecc1ded",
+      "blob": "0e47c67d12a7ddb47908f7ea4f24d86bca76c892",
       "kind": "file",
       "path": "mcp/src/agents_remember/observer/provider_limits.py"
     },

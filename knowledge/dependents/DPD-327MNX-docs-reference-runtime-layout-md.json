@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "81f40d54700ea65869339061d70182e7efc59dc1",
+    "commit": "c5122294b4110a744254dad2c686a82f392304c4",
     "role": "curator",
-    "statement": "The host file table attributes role records to Python registration and dashboard reconciliation and distinguishes resumable closure from archived activity.",
-    "task": "261112-BUG-L20",
+    "statement": "The host file table still attributes role records and the provider-limits file to their current owners and now describes the recheck attempts and the early clear release.",
+    "task": "261112-BUG-L37",
     "uncommitted": true
   },
   "document": "docs/reference/runtime-layout.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "mcp/src/agents_remember/providers/metrics.py"
     },
     {
-      "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+      "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
     },
@@ -116,7 +116,7 @@
       "path": "mcp/src/agents_remember/serving/build_currentness.py"
     },
     {
-      "blob": "505ca868c7f3c031f538ca7709e1c2888ecc1ded",
+      "blob": "0e47c67d12a7ddb47908f7ea4f24d86bca76c892",
       "kind": "file",
       "path": "mcp/src/agents_remember/observer/provider_limits.py"
     },

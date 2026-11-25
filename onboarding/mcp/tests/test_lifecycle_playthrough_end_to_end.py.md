@@ -212,4 +212,6 @@ No meaningful cross-repo references found.
 
 - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" [13]
 
+
+
 - Five exact artifact-consumer entries name this suite, covering the user-settings guard, checkpoint landing, Curator coherence, the Node lockfile fixture and writer worklist support. [11]

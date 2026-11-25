@@ -40,7 +40,7 @@ Always-on task and series nodes omit the full reader body, not every body-derive
 
 ### L184 — the limit read and the running-subagent fields
 
-A new read-side module, `observer/provider_limits.py`, reads the product's one limit file at observer, so the status function needs no upward import to learn a seat's limit. The host-activity model in this route also admits the running-subagent fields: a supplied subagent count and its since-time travel with the agent facts, which is what lets a seat whose only work is a running subagent read as working rather than idle.
+A new read-side module, `observer/provider_limits.py`, reads the product's one limit file at observer, so the status function needs no upward import to learn a seat's limit. The host-activity model in this route also admits the running-subagent fields: a supplied subagent count and its since-time travel with the agent facts, which is what lets a seat whose only work is a running subagent read as working rather than idle. The limit record also carries each report's last claimed recheck time and each seat's early-clear marker.
 
 ### One native task model
 

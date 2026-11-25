@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The recheck claim, the serialized write, the delivery order, the clear marker, the pending-only plugin check and the shared read each fail the release alone: a clear without the marker waits for the old deadline, a marker without the pending check reaches no action, and a read without the delivery order reaches no message."
+  },
+  "guarantee": "When the host reports that a provider limit ended before the recorded deadline, the product records the attempt, writes the cleared release, drains the eligible held messages in their recorded order, and releases the plugin's pending resume and parent flush within one fifteen-second check period, with no turn end and no hand wake.",
+  "id": "FAM-FD58VB",
+  "members": [
+    "INV-795NRN",
+    "INV-YEQENJ",
+    "INV-JDZG62",
+    "INV-2KVT5S",
+    "INV-KM9V3K",
+    "INV-XN49FH",
+    "INV-6ZZXV3"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "L37-curation-part1"
+    },
+    "handoffEntry": "family-early-reset",
+    "leaf": "261112-BUG-L37",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/serving",
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/package_data/paseo_plugin/server",
+    "docs/reference"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "An early limit reset reaches the seats without a turn end"
+}

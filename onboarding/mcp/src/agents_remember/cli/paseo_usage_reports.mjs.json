@@ -1,0 +1,77 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_usage_reports.mjs",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "aee3de19d73cd6341556c4af080111a8b135951c",
+        "content": "sha256:6dd4593fd5736237084054c8af8278437f6ba84e92cd44c90fc63605e43a78f5",
+        "locator": {
+          "kind": "symbol",
+          "name": "readUsageReports"
+        }
+      },
+      "id": "RLZ-AM4R8J",
+      "invariant": "INV-BCXFH9",
+      "origin": {
+        "handoffEntry": "NEW-LIMIT-FROM-REPORT-ONLY",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "Reads host usage reports by agent and preserves the last observation if refresh fails.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "aee3de19d73cd6341556c4af080111a8b135951c",
+        "content": "sha256:6dd4593fd5736237084054c8af8278437f6ba84e92cd44c90fc63605e43a78f5",
+        "locator": {
+          "kind": "symbol",
+          "name": "readUsageReports"
+        }
+      },
+      "id": "RLZ-GK76ET",
+      "invariant": "INV-795NRN",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 1",
+        "leaf": "261112-BUG-L37"
+      },
+      "rationale": "The bridge tries the next mapped agent only after an Unknown agent reply and forces stale entries of the selected periodic seat.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "aee3de19d73cd6341556c4af080111a8b135951c",
+        "content": "sha256:6dd4593fd5736237084054c8af8278437f6ba84e92cd44c90fc63605e43a78f5",
+        "locator": {
+          "kind": "symbol",
+          "name": "readUsageReports"
+        }
+      },
+      "id": "RLZ-TXBR81",
+      "invariant": "INV-XN49FH",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 6",
+        "leaf": "261112-BUG-L37"
+      },
+      "rationale": "A shared result prevents duplicate refreshes and precedes an older stamped cache entry for the same report.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The extracted module keeps the request shape, the report-id-only refresh and each periodic outcome.\n\nAnchor: `readUsageReports`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aee3de19d73cd6341556c4af080111a8b135951c",
+            "content": "sha256:b2c10c5c20297d731f61ed6434361bd5127ae0606a412a64dbd639b8d610475a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -27,6 +27,7 @@ The existing canonical user-settings guard (`mcp/tests/_user_settings_guard.py`)
 
 The catalog declares `test_mcp_cancelled_tool_log.py` as an exact consumer of `_user_settings_guard.py`, `curator_coherence_test_support.py`, `tool_answer_l110_rows.py` and the Node fixture lockfile, and `test_git_hook_dashboard_prerequisites.py` as an exact consumer of the settings guard and the lockfile. These are source declarations, not invocation.
 
+
 - The two new modules appear on the settings-guard, coherence-support, L110-rows and Node-lockfile consumer lists. [327]
 
 ## Governing Overview
@@ -1075,8 +1076,10 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 - Diff-scope support declares the relationship line, movement and reach suites among its canonically ordered exact consumers. Target: mcp/tests/evidence-lifecycle.toml. Anchor: file [324]
 
 - The settings guard lists the crossing dependent writer test as a consumer. [339]
+
 - The portable Node lockfile lists the crossing dependent writer test as a consumer. [340]
 - Knowledge-writer test support lists the crossing dependent writer test as a consumer. [341]
+
 
 - The catalog declares nine fixture artifacts under mcp/tests/fixtures/knowledge_files/, each introduced by 260928-MIK-L21 and each naming node:mcp/tests/test_knowledge_census_files.py::test_every_census_file_parses_by_schema_and_is_canonical as its replacement contract. This is the complete named nine-artifact class; catalog declarations do not establish execution. Anchor: file [14]
 - The member-source cases are registered on the read-scope artifact's exact consumer list in canonical ascending order. Anchor: `mcp/tests/test_review_family_member_sources.py` Anchor: file [218]
@@ -1128,6 +1131,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 - The Node lockfile artifact declares test_worktree_own_environment.py as a consumer; this is dependency accounting, not evidence execution. Anchor: file [302]
 - The five test_review_evidence_ modules — bounded_collections, eof, intended, packet and residuals — are declared as exact consumers of _user_settings_guard.py and the portable Node package-lock fixture, and of no other artifact. Catalog membership is not execution. The portable Node package-lock fixture row lists the same five modules. No other artifact row in the catalog lists any of the five modules. Anchor: file [305]
 - The settings-guard artifact declares test_developer_messages.py as an exact consumer. Anchor: file [307]
+
 - The portable Node package-lock artifact declares test_developer_messages.py as an exact consumer and has independent-boundary fidelity. Anchor: file [308]
 - The current parsed catalog declares 18 contracts and 120 artifacts. These are source declarations, not execution or acceptance evidence. Anchor: file [311]
 - The current lifecycle catalog declares test_curator_instruction_wording.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_conversion_test_support.py, mcp/tests/lifecycle_enclosure_test_support.py, mcp/tests/paseo_launch_test_support.py, mcp/tests/paseo_role_tools_test_support.py, mcp/tests/paseo_runtime_test_support.py, mcp/tests/role_first_message_support.py, mcp/tests/role_instruction_wording_support.py and mcp/tests/writer_worklist_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. Anchor: file [313]

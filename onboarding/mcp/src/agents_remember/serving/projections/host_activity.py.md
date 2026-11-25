@@ -14,6 +14,8 @@ Intake runs only at startup/HOST_ACTIVITY invalidation. Known requires armed sup
 
 `turn_ended_agents` selects idle, closed or ended observations for held delivery. The held-delivery tick deduplicates available event stamps and also passes its selected IDs to the explainer callback where wired. The same tick shares its parsed publication with `new_stamped_ends`, which requires a changed stamped idle observation and a registered role-agent identity for usage. `agent_in_turn` independently checks whether a complete publication shows the recipient in a turn. Task projection still qualifies its activity on startup or host invalidation.
 
+`usage_read_batch` combines one tick's new stamped ends with the report ids due for a five-minute recheck. A due report names only the mapped agents still in the role record and not ended in the same publication; the batch shares the tick's stat-bound publication and role-record parse rather than reading either again. A due report with no eligible mapped seat is left to `provider_limit_hold` to log once per period.
+
 ## Evidence
 
 

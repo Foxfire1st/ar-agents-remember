@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "81f40d54700ea65869339061d70182e7efc59dc1",
+    "commit": "c5122294b4110a744254dad2c686a82f392304c4",
     "role": "curator",
     "statement": "The roles guide still distinguishes the archived-parent alternate and dashboard Revive from retirement.",
-    "task": "261112-BUG-L20",
+    "task": "261112-BUG-L37",
     "uncommitted": true
   },
   "document": "docs/roles.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -86,7 +86,7 @@
       "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
     },
     {
-      "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+      "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },

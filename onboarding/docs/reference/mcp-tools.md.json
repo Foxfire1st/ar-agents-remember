@@ -3,7 +3,24 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "12983a12e152abb84fc6fd051b48b48dcf1997d4",
+        "blob": "772fbecbaf1078b9778efd0314e9eaa39450bcea",
+        "content": "sha256:e3faaf646f82b98abc9ee8506687a9f1ae903e41d71759c2faa6003a818d9bc5",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7YMNE5",
+      "invariant": "INV-6ZZXV3",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 7",
+        "leaf": "261112-BUG-L37"
+      },
+      "rationale": "The message reference tells senders when a provider-limit hold can clear early.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "772fbecbaf1078b9778efd0314e9eaa39450bcea",
         "content": "sha256:c7540979d3a62a3a624f13deb0b007ef6ba180b93b928c00f2fd5e0070564323",
         "locator": {
           "end": 330,
@@ -22,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "12983a12e152abb84fc6fd051b48b48dcf1997d4",
+        "blob": "772fbecbaf1078b9778efd0314e9eaa39450bcea",
         "content": "sha256:0e7e68f341dd314364c32fd2ef4c5d6ba80ffdae6155d99d40f9774fba6f454f",
         "locator": {
           "end": 279,
@@ -46,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12983a12e152abb84fc6fd051b48b48dcf1997d4",
+            "blob": "772fbecbaf1078b9778efd0314e9eaa39450bcea",
             "content": "sha256:0e7e68f341dd314364c32fd2ef4c5d6ba80ffdae6155d99d40f9774fba6f454f",
             "locator": {
               "end": 279,
@@ -63,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12983a12e152abb84fc6fd051b48b48dcf1997d4",
+            "blob": "772fbecbaf1078b9778efd0314e9eaa39450bcea",
             "content": "sha256:c7540979d3a62a3a624f13deb0b007ef6ba180b93b928c00f2fd5e0070564323",
             "locator": {
               "end": 330,

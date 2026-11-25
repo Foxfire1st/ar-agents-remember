@@ -350,7 +350,7 @@ The clean-sync door module tests real Git path/blob/mode comparison and the orig
 
 The review-evidence and frame contracts are measured by `test_review_evidence_packet.py`, `test_review_evidence_residuals.py` and `test_review_frame_store.py`; the sidebar's step-tooltip contract by the dashboard's `stepTitles.test.tsx`. Registration in the evidence lanes selects the population and certifies no invocation.
 
-The suite has cases for provider subagents, the usage report judgement, the limit file, the held-message check and drain, the layering port, extra harness arguments and the projection types.
+The suite has cases for provider subagents, the usage report judgement and its periodic batch, the limit file's claimed rechecks and early clear, the held-message check and drain, the layering port, extra harness arguments and the projection types.
 
 `test_explainer_browser.py` covers the explainer’s browser: the product-owned folder and its two variable names, one fetch at the pin through the product Node, a refusal that names what is missing and the command, a named module used as given, and the notice prepared before the first fetch. The prospective, host and server suites cover the load's browser readiness, the module handed to a launch, and the announce answered at the serving path. The module is declared in `unit-regression`; selection is not a run.
 
@@ -1649,6 +1649,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
+
 - The plugin registers one in-memory turn tracker and forwards agent.turn.after with turn identity and outcome. A completed eligible silent end arms a sixty-second wait. A new turn cancels that wait and delivery checks current host facts. A failed held-line send stays queued for ordered retry. Helper and background declarations go through wait tracking and scheduling. [1836]
 
 
@@ -1679,6 +1680,8 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - Both hook tiers stop at missing dashboard dependencies or npm before Ruff. [1845]
 
 - The two modules are declared in the integration lane. [1846]
+
+
 
 - The current unit-regression lane selects test_knowledge_leaf_read.py. The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. [1445]
 - The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. [1446]

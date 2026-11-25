@@ -10,7 +10,7 @@
   "conditions": [
     "The host's usage report for that seat is the only source of a limit and of its reset.",
     "One reader writes one file, and every other reader reads that file only; a report holds work solely on an exhausted account-wide window with a future reset.",
-    "An enabled extra usage or a positive credits balance releases the seat, and a read happens only at a new stamped turn end."
+    "An enabled extra usage or a positive credits balance releases the seat, and a read happens at a new stamped turn end or at the five-minute recheck of a live report."
   ],
   "exclusions": [
     "Chat text, error strings and model names produce no limit, and no API key or login store is read.",
@@ -29,7 +29,7 @@
     "leaf": "260928-MIK-L184",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A limit comes from the host's usage report only: one reader, one file, one answer at a time, and no assumption that produces a limit.",
   "status": "proposed",

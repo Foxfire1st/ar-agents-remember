@@ -270,6 +270,8 @@ Membership selects evidence without proving invocation.
 
 - The integration lane registers the crossing dependent writer test once. [878]
 
+
+
 - Lane lists retain one path per module, with the worktree-environment guard registered in unit-regression. Anchor: file [837]
 - The current lane catalog declares test populations; no invocation or pass is implied. Anchor: file [839]
 - The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution. Anchor: file [840]

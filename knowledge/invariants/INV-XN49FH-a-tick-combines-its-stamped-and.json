@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The shared batch spans the adapter and the extracted reader, and prevents duplicate refreshes and a stale stamped entry from undoing a newer periodic verdict."
+  },
+  "applicability": "Every tick that has at least one new stamped end or one due report.",
+  "conditions": [
+    "One bridge process per tick receives both the stamped agents and the ordered seat candidates of each due report.",
+    "A forced refresh result is shared by every seat that names the report.",
+    "A successful periodic verdict beats a stamped-only cached entry for the same report."
+  ],
+  "exclusions": [
+    "A stamped-only seat with no forced refresh keeps its cached read.",
+    "A failed or empty result never erases a fact or a mapping."
+  ],
+  "id": "INV-XN49FH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "261112-BUG-L37-W2-receipts.tar.gz, green/pytest.log"
+      ],
+      "path": "L37-curation-part1"
+    },
+    "handoffEntry": "BUG-R37@v1 rule 6",
+    "leaf": "261112-BUG-L37",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A tick combines its stamped and periodic triggers in one bridge process and shares the forced result for each report.",
+  "status": "proposed",
+  "supersedes": []
+}

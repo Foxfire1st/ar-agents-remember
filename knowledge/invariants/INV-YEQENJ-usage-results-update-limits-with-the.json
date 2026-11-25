@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The serialized update spans the serving writer and the CLI adapter, and prevents a concurrent write or an unreadable periodic answer from erasing a live limit and releasing work into the limit."
+  },
+  "applicability": "Every update of provider-limits.json from one tick's usage results.",
+  "conditions": [
+    "The writer holds the file lock from the reread through the whole replacement.",
+    "A seat's usable non-empty answer replaces that seat's mapping; a refresh the bridge marks failed is not applied.",
+    "A failed, timed-out or identity-less answer keeps the prior fact and mapping."
+  ],
+  "exclusions": [
+    "A successful stamped read whose answer explicitly lists zero reports for the agent: that answer clears the seat's mapping.",
+    "A report with no live until is dropped from the file."
+  ],
+  "id": "INV-YEQENJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "261112-BUG-L37-W2-receipts.tar.gz, green/pytest.log"
+      ],
+      "path": "L37-curation-part1"
+    },
+    "handoffEntry": "BUG-R37@v1 rule 2",
+    "leaf": "261112-BUG-L37",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Usage results update limits with the existing report verdict under one read-merge-replace lock, and failed periodic reads retain the fact.",
+  "status": "proposed",
+  "supersedes": []
+}

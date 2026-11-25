@@ -3,8 +3,44 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6a3359ae15c2d365b6b2ce0c2ac0a52e1b99549f",
-        "content": "sha256:2d12534980356d2155caa960accda1df8251ad76f44a2b3bb0219dd880f513a9",
+        "blob": "20e391fe7fafb5ad842653dae85019c01bc1fc83",
+        "content": "sha256:213763126ed88f1398c8382d0c771a2f832d107c4a884bd37b859c57e40166a2",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_usage_for_agents"
+        }
+      },
+      "id": "RLZ-2CTNJ5",
+      "invariant": "INV-YEQENJ",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 2",
+        "leaf": "261112-BUG-L37"
+      },
+      "rationale": "The adapter logs one warning and sends usable results and unresolved periodic targets to the writer.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "20e391fe7fafb5ad842653dae85019c01bc1fc83",
+        "content": "sha256:213763126ed88f1398c8382d0c771a2f832d107c4a884bd37b859c57e40166a2",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_usage_for_agents"
+        }
+      },
+      "id": "RLZ-FWDYWN",
+      "invariant": "INV-XN49FH",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 6",
+        "leaf": "261112-BUG-L37"
+      },
+      "rationale": "One bridge call carries both trigger sets.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "20e391fe7fafb5ad842653dae85019c01bc1fc83",
+        "content": "sha256:7f76f13a9ea0605b42b054067afb4feb337298cb3b92c67a2fb63826cd840347",
         "locator": {
           "kind": "file"
         }

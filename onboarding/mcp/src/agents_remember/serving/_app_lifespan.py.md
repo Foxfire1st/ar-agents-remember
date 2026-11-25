@@ -23,6 +23,8 @@ The lifespan owns the refresher's lifetime, so no reaper of its own is needed. T
 
 `_held_delivery_loop` runs with serving under the shared background ledger and calls `_held_delivery_tick` every `HELD_TURN_END_TICK_SECONDS` (three). Each tick reads the host's activity publication through `turn_ended_agents` and hands the agents whose turn ended to `deliver_ended_turns`, which drains only the receipts a holder named. Every `HELD_DELIVERY_SWEEP_SECONDS` (fifteen) the same tick also runs `sweep_held_messages` as the fallback for receipts no holder named. A failed tick is logged and retried on the next interval; the store keeps everything that still waits, and each tick is one accounted worker unit.
 
+Before its delivery pass a tick runs one usage batch when a stamped end is new or a stored report is due for its five-minute recheck. `usage_read_batch` claims each due attempt and combines the report ids with the tick's eligible stamped agents, and the composition root's `usage_read` port performs the one bridge read. A tick with neither trigger starts no usage read, and a clear the batch records reaches this same tick's held messages.
+
 ## Periodic Provider Safety Boundary
 
 The provider loop remains periodic: sample labelled containers, record, evaluate degradation with the existing stop callback, compact, then sleep at the configured sample interval. Every stage uses the accounted cancellation-drained offload. A launch-authority map is not a fleet-retirement witness: empty, revoked or malformed authority and a dashboard restart do not prove leftover labelled stacks are gone. Neither page interest nor authority decoding gates this safety sequence. Launch refusal, sampler label discovery, degradation policy and Docker handling keep their own owners. This is the retained landed loop, not an accepted fleet-absence optimization; controlled real-loop regression tests are not a claim that a real fleet was launched.
@@ -78,6 +80,7 @@ This is current-source interpretation of the A9 candidate, not a new test result
 
 - Periodic safety samples, records, evaluates with its existing stop callback and compacts through accounted drained offload, with no page/authority gate. [27]
 - Controlled real-loop tests cover revoked, between-tick, restarted and malformed authority while keeping launch refusal separate. [28]
+
 
 - Held-delivery collaborators keep usage-read-before-delivery ordering, then trigger moved comparison after ended-seat delivery. The dedicated watcher task joins the owned shutdown task list. [29]
 

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "51bf0a91489d97231a1e1173b67d2087c170b08f",
-    "commit": "ff626cd445012fee408b4b6c292756bbe1438d2e",
+    "codeTree": "ab32fa776dc4d65f71367516a91342314414a967",
+    "commit": "c5122294b4110a744254dad2c686a82f392304c4",
     "role": "curator",
-    "statement": "The MCP reference still matches the role-agent tools, and its advice correctly sends a sync or closeout caller whose client stopped waiting to that call's tool-log row. The MCP reference describes planning and file writes without a Git commit, identifies the master contract and crossing selector for a parked master operation with open history, and explains that retained sync checks the staged resolution against both pinned parents by path, staged line and diagnosis.",
-    "task": "261112-BUG-L26",
+    "statement": "The MCP reference still matches the role-agent tools, including the one-time role tool set and the task-server sentence at line 640, and its provider-limit passage still states the five-minute recheck and the early drain of held messages.",
+    "task": "261112-BUG-L37",
     "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 18,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -153,7 +153,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
     {
-      "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+      "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },
@@ -400,7 +400,7 @@
       "kind": "anchor"
     },
     {
-      "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+      "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
