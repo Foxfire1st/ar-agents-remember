@@ -5,15 +5,14 @@
     ],
     "justification": "The compiled handover tests prove the parent condition for every parentable role, the leaf peer routes and every protected parentless/dashboard value, so no runtime behavior of another role is claimed."
   },
-  "applicability": "Handover preparation for any role a parent started through the native role launcher.",
+  "applicability": "Handover preparation and wire projection for any role started through the native role launcher.",
   "conditions": [
-    "The launch has a parent: the developerQuestions value routes every developer question to the parent's agent id with role_message, says what is held back and recommended, and never uses the own-chat sentence.",
-    "The role is Worker, Reviewer or Curator: ownerRelation also names the direct sibling seat routes in leafSeats.roleMessageArguments and sends no routine result to the parent.",
-    "The projection carries the parent route, the developer-question route and the leaf peer routes; their meaning is unchanged by where they stand."
+    "When the launch has a parent, host.developerQuestionRoute is {mode: parent, agentId: <parent_id>} in the wire projection and host.developerQuestions in .handover.json routes every developer question to that parent via role_message.",
+    "When the launch is parentless, host.developerQuestionRoute is {mode: own-chat} in the wire projection and host.developerQuestions in .handover.json states the own-chat rule.",
+    "For parented leaf roles (Worker, Reviewer, Curator), leafSeats.roleMessageArguments stands in the wire projection and host.ownerRelation in .handover.json directs routine results to sibling seats and above-leaf occasions to the parent."
   ],
   "exclusions": [
     "Unrelated Worker, Reviewer and Curator handover text and tool requests remain unchanged.",
-    "The six unrelated role/operation orientations change only the shared canonical role-name sentence.",
     "Native parent identity and peer-seat ownership are not derived from display names."
   ],
   "id": "INV-8AMSGV",
@@ -28,9 +27,20 @@
     "leaf": "260928-MIK-L72",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-invariant/v1",
-  "statement": "Every parented role handover routes developer questions to its actual parent ID; parented leaf roles route work directly to the named peer seats and only above-leaf occasions to the parent. Those routes stand in the hand-over projection the first message carries — `host.parent`, `host.developerQuestions` and `leafSeats` — and not only in the complete hand-over file. Parentless/dashboard handover behavior remains preserved, except the expressly approved Investigator concern wording and Architect/Orchestrator/Manager Investigator delegation edits; derived source and capsule seals follow those admitted source changes.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "Every parented role handover routes developer questions to its actual parent ID, and parented leaf roles route work directly to named peer seats and only above-leaf occasions to the parent. The inline handover projection carries `host.parent`, compact structured `host.developerQuestionRoute` (`parent` with `agentId`, or `own-chat`), and `leafSeats`, while the long prose fields `host.developerQuestions`, `host.ownerRelation`, `assignment`, and `canonicalTaskReportPath` remain in the immutable complete handover JSON file.",
+  "supersedes": [],
+  "title": "Parented handovers project compact developer-question and peer routes",
+  "writer": {
+    "at": "2026-11-25T20:08:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+    "task": "261124-CAP"
+  }
 }

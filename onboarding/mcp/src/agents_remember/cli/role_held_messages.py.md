@@ -4,7 +4,7 @@
 
 ## Contract
 
-Hold only still-waiting native role messages in `.ar-product/held-messages/<recipient>.json` under the recipient’s own workspace, with the store's schema strings, file names and bounds taken from the read-side layout owner `controlplane/held_store_layout.py` so the delivery machinery and the attention reader cannot disagree about them. Admission is locked, uses atomic replacement and fsync, admits at most twenty messages and never drops an existing message to make room. Text is limited by the message input boundary, not summarized by this module. The store is independent of hosted-seat/control-plane messaging.
+Hold only still-waiting native role messages in `.ar-product/held-messages/<recipient>.json` under the recipient's own workspace, with the store's schema strings, file names and bounds taken from the read-side layout owner `controlplane/held_store_layout.py` so the delivery machinery and the attention reader cannot disagree about them. Admission is locked, uses atomic replacement and fsync, admits at most twenty messages and never drops an existing message to make room. Hold-time admission stores texts accepted at the message input boundary without summarizing; at held-seat open time, `_open_held_seat` enforces `settings.role_message_limit` across the rendered FIFO batch via `role_opening_offload.prepare_held_opening_batch`, offloading over-limit batches to content-addressed `.held-batch-<sha256>.md`. The store is independent of hosted-seat/control-plane messaging.
 
 ## Delivery and recovery
 
@@ -26,45 +26,22 @@ The serving tick delivers what waits for a recipient the host's own activity rec
 
 Before a resend, a message attempted under a host id goes alone and under that id: the drain asks the recipient's timeline through the bridge's `agent-has-message` command and, when the copy is already there, records the delivery with no send. A drain that pauses — the host unreachable, the resume unconfirmed, the store unclaimed or unreadable — writes one warning line naming the recipient and the reason and recounts the receipt's waiting count from the store it holds.
 
-## Current Contract — Scoped Launch And Settings Changes
+## Held-seat opening and batch offload
 
-`_open_held_seat` invokes the receipt owner’s `_restore_launch_handover` with the saved launch call. The artifact-backed path validates frozen details and verifies the primary handover and any takeover material. With neither artifact reference, the helper validates the frozen details directly. A held leaf Reviewer or Curator receives its applicable product notice between the frozen handover and the claimed waiting messages.
+`_open_held_seat` invokes the receipt owner's `_restore_launch_handover` with the saved launch call (verifying and restoring `.handover.txt`, `.handover.json`, `.step-up.json`, `.opening-message.md`, and frozen details, or validating frozen details directly when no artifact references exist). After restoration succeeds, `_open_held_seat` calls `role_opening_offload.prepare_held_opening_batch(batch.config, batch.receipt, combined_text(messages))` to enforce `settings.role_message_limit` (offloading over-limit batches to `<report_stem>.held-batch-<sha256>.md`), and joins the restored `opening` (which ends with its suffix `artifact_line`), any applicable `product_start_message` for a held leaf Reviewer or Curator, and `bounded_batch` with `"\n\n"`.
 
-A ValueError releases the claim and returns cannot-open with the specific recovery detail; no host opening occurs and waiting messages remain. Existing successful opening stages terminal metadata before removal, and existing FIFO, batching, store limits, permission guards and bounded sweep contracts remain unchanged.
+A `ValueError` from `_restore_launch_handover` releases the claim and returns `cannot-open` with the recovery detail; an `(AgenticSettingsError, OSError, ValueError)` from `prepare_held_opening_batch` releases the claim, preserves all waiting messages without calling `run_launch_call`, and returns `open-failed`. Successful opening stages terminal metadata before removal, and FIFO, batching, store limits, permission guards, and bounded sweep contracts remain intact.
 
 ## Evidence
 
 
-
-- Admission appends under the store lock and refuses overflow without dropping text. Anchor: `hold_message` [1]
-
-
-
-- A drain delegates claim/readiness checks and whole-first FIFO delivery. Anchor: `drain_held` `_deliver_waiting` [2]
-
-
-
-- Terminal lines are published separately from ended text and retain failure state. Anchor: `apply_drain_to_receipt` [3]
-
-
-- Yielded receipt paths, reads and drains are capped; each directory stays open as a live filesystem-order scan. Delivery root discovery is synchronous and retains one walk per discovered root, without the attention reader's sixty-four-folder cap.
-
-Retired at the fifth freeze d59c3493: mcp/src/agents_remember/controlplane/held_store_discovery.py:70-95 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08; mcp/src/agents_remember/controlplane/held_store_discovery.py:158-191 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08. Retired means the anchor no longer stands, not that the cited subject was deleted [4]
-
-- Handover validation precedes prompt construction and host launch. Invalid handover details release the claim while preserving the waiting batch. [5]
-
-
-
-- Held-seat opening checks frozen details before composing its message. If artifact references are present, the helper also restores or verifies their files. [6]
-
-
+- Admission appends under the store lock and refuses overflow without dropping text. [1]
+- A drain delegates claim/readiness checks and whole-first FIFO delivery. [2]
+- Terminal lines are published separately from ended text and retain failure state. [3]
 
 - Test source checks cannot-open, zero second host calls and retained/reclaimable work. [7]
 
-**L184 — INV-1ZKP4R.** The held store is where a waiting row's fields are written and read, so the reset survives here or not at all. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
-
-## Retirements
-
-- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/controlplane/held_store_discovery.py:70-95 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08; mcp/src/agents_remember/controlplane/held_store_discovery.py:158-191 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08. Retired means the anchor no longer stands, not that the cited subject was deleted.
-
-- The held opening inserts its product notice between the restored prompt and the FIFO batch. [9]
+- Yielded receipt paths, reads and drains are capped; each directory stays open as a live filesystem-order scan. Delivery root discovery is synchronous and retains one walk per discovered root, without the attention reader's sixty-four-folder cap. [4]
+- `_open_held_seat` runs handover restoration (`cannot-open` on `ValueError`) and `prepare_held_opening_batch` (`open-failed` on `AgenticSettingsError`/`OSError`/`ValueError`) before host launch, releasing the claim and preserving waiting messages on failure. [5]
+- Held-seat opening checks frozen details and restores or verifies recorded handover/opening artifact files before composing its message. [6]
+- The held opening inserts its product notice between the restored prompt (ending with its suffix `artifact_line`) and the bounded FIFO batch. [9]

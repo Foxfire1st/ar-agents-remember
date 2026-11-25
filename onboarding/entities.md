@@ -786,7 +786,9 @@ Old citation custody (Git blobs): mcp/src/agents_remember/cli/role_instruction_d
 
 - Manager guidance distinguishes native stage publication from explicit correction and organizational-master completion. [21]
 
+
 - Selected operation passages and separately frozen named-step detail artifacts preserve source revisions without implying installation or new grants. [22]
+
 
 
 

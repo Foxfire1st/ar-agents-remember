@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e67b518ce70be78d1e52c7ff344223c0e027bf6b",
-        "content": "sha256:70e3935194b5215ff956ec9f8aa0fd9f6fce24b3e414e187fac1c9728edb6f98",
+        "blob": "4a2b44cfec79480593fdbf45c5a08f224c4fb1db",
+        "content": "sha256:abd8c0d78cf3351ec9fe33a1534c8c74cca60ddb5846be05b19c2e1bc17637d4",
         "locator": {
           "kind": "symbol",
           "name": "restore_launch_files"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "e67b518ce70be78d1e52c7ff344223c0e027bf6b",
+        "blob": "4a2b44cfec79480593fdbf45c5a08f224c4fb1db",
         "content": "sha256:bcee8bfdeb5157c306ce0125368c3d579f2ae722731f62cb7e021cbb9ac1ab1e",
         "locator": {
           "kind": "symbol",
@@ -36,15 +36,33 @@
       },
       "rationale": "The refusal type is the contract between three callers: the held opener, the retry route and the restore path. It is defined once here for that reason.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "4a2b44cfec79480593fdbf45c5a08f224c4fb1db",
+        "content": "sha256:abd8c0d78cf3351ec9fe33a1534c8c74cca60ddb5846be05b19c2e1bc17637d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "restore_launch_files"
+        }
+      },
+      "id": "RLZ-RAVVB7",
+      "invariant": "INV-87JRHY",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-87jrhy",
+        "leaf": "261124-CAP-L2"
+      },
+      "rationale": "Checks complete handoverFile before handoverArtifact, verifies and preflights openingMessageArtifact alongside sibling handover files, validates frozen details, and restores missing files atomically.",
+      "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "Every refusal of a saved launch's files is one ValueError the held opener and the retry route both recognise.",
+      "note": "`HandoverFileRefusal` wraps target-validation refusals in a `ValueError` recognized by the held opener and retry route, while preflight and detail checks raise `ValueError` directly.",
       "targets": [
         {
           "anchor": {
-            "blob": "e67b518ce70be78d1e52c7ff344223c0e027bf6b",
+            "blob": "4a2b44cfec79480593fdbf45c5a08f224c4fb1db",
             "content": "sha256:bcee8bfdeb5157c306ce0125368c3d579f2ae722731f62cb7e021cbb9ac1ab1e",
             "locator": {
               "kind": "symbol",
@@ -52,18 +70,31 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a2b44cfec79480593fdbf45c5a08f224c4fb1db",
+            "content": "sha256:1ce2197ea623c2980770a0cb7701075b3de5dd65c2adcc4010229923d44807a7",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 63
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "The saved launch's files are restored together, checked before the first write.\n\nAnchor: `restore_launch_files`",
+      "note": "`restore_launch_files` checks `handoverFile`, `handoverArtifact`, `stepUpArtifact`, and `openingMessageArtifact`, preflights all targets, validates details, and restores missing files together.",
       "targets": [
         {
           "anchor": {
-            "blob": "e67b518ce70be78d1e52c7ff344223c0e027bf6b",
-            "content": "sha256:386bfe82eecb7c0dc3e7d8d40531e370a14587636eebba1d7841cc01094019b6",
+            "blob": "4a2b44cfec79480593fdbf45c5a08f224c4fb1db",
+            "content": "sha256:abd8c0d78cf3351ec9fe33a1534c8c74cca60ddb5846be05b19c2e1bc17637d4",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "restore_launch_files"
             }
           },
           "kind": "code"
@@ -75,7 +106,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e67b518ce70be78d1e52c7ff344223c0e027bf6b",
+            "blob": "4a2b44cfec79480593fdbf45c5a08f224c4fb1db",
             "content": "sha256:d67762585df2cf1dc6ba7938db75c7e86dad4fce2dd862956f3e30d2abc93589",
             "locator": {
               "kind": "symbol",

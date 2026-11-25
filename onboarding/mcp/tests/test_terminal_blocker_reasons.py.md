@@ -10,8 +10,6 @@
 finalize blockage always names the component it stopped on and carries a non-empty reason, so a
 blockage an operator cannot read — and cannot tell apart from a spurious one — is impossible to emit.
 
-
-
 The cases are integration-lane members (`mcp/tests/test-evidence-lanes.toml:792`).
 The complete lifecycle catalog declares this module as an exact consumer on **12**
 artifact rows. That dependency ownership and the ambient-role runner declaration
@@ -138,9 +136,7 @@ No external source is required for this repository-owned blocker contract.
 
 ### Repo-Internal References
 
-
 - Public abandon preview returns would-abandon with no blockers and leaves the fixture’s code worktree in place. [1]
-
 
 - The injected already-absent teardown response allows one finalize call to complete. The case checks four empty notRemoved lists, absence of the code worktree and enclosure root, and completion of the contract and task document. [2]
 
@@ -149,7 +145,6 @@ No external source is required for this repository-owned blocker contract.
 - An unnameable blocker reason raises at the call site that detected it. [5]
 
 - Public abandon preview returns would-abandon with no blockers and leaves the fixture’s code worktree in place. [6]
-
 
 - The injected already-absent teardown response allows one finalize call to complete. The case checks four empty notRemoved lists, absence of the code worktree and enclosure root, and completion of the contract and task document. [7]
 
@@ -160,34 +155,20 @@ No external source is required for this repository-owned blocker contract.
 - The direct removal test checks the absent-path reason and the removed result for an existing path. [12]
 - The post-reclaim branch that could answer silently now names its own cause. [13]
 
-
 - The landed fixture and the public calls the whole-tool cases drive. [14]
 
-
-
-
 - The service rebinding and the citation-guard double the whole-tool cases run against. [15]
-
 
 - The only construction path for a terminal blockage; it refuses a missing, blank or non-string reason. [16]
 - The operator-language answer for a reasonless or malformed result item. [17]
 - The bundle and the builder the invariant-owner cases drive directly. [18]
 - The producer whose reason the refusal carries, including the post-reclaim branch this module forces. [19]
 
-
 - The port the L6 teardown answer is substituted on, and the services builder the fixture rebinds. Anchor: `ProviderLifecyclePort` `build_default_worktree_services` [20]
-
-
-
 
 - The public terminal route the whole-tool cases call. [21]
 
-
-
-
 - The landing fixture and the public configuration the whole-tool cases build on. [22]
-
-
 
 - The landing fixture and the public configuration the whole-tool cases build on. [24]
 
@@ -195,13 +176,9 @@ No external source is required for this repository-owned blocker contract.
 
 The two finalize cases and the tool-level cleanup preview build disposable code and external memory Git repositories under `tmp_path`. The helper-level cases exercise typed results or provider-runtime fixtures directly.
 
-
 ### Repo-Internal References (continued)
 
-
 - The landing world each whole-tool case builds is a real temporary repository pair. [27]
-
-
 
 ## Drift-Snapshot Preview Cases
 
@@ -209,13 +186,8 @@ The module has **489 physical lines** and **ten source test definitions**. Its p
 
 `test_a_drift_snapshot_preview_is_not_read_as_an_unreclaimed_result` (`:391-427`) drives the drift-snapshot expectation directly with `preview=True` and requires the entry to be pending rather than blocked; `test_a_real_reasonless_drift_snapshot_still_refuses_rather_than_passing_as_preview` (`:430-451`) preserves the real reasonless refusal; and `test_the_cleanup_preview_of_a_task_with_a_drift_snapshot_reports_no_blocker` (`:454-489`) drives the tool-level cleanup preview. These are static source-definition locations, not a fresh execution result.
 
-
 - The integration lane selects mcp/tests/test_terminal_blocker_reasons.py. Execution evidence is recorded separately. [23]
 
 - The lane manifest declares test_terminal_blocker_reasons.py in integration. Membership selects evidence and establishes no invocation. [25]
-
-
-
-
 
 - Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection. [28]

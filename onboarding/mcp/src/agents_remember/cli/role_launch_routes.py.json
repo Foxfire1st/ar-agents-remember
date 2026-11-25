@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
         "content": "sha256:c3a66e4689cfebaf00db5d8992bc622e70c428b23569f9a095b1895b8ade3a9c",
         "locator": {
-          "end": 243,
+          "end": 250,
           "kind": "line_range",
-          "start": 233
+          "start": 240
         }
       },
       "id": "RLZ-0GEZAR",
@@ -23,7 +23,7 @@
     },
     {
       "anchor": {
-        "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
         "content": "sha256:c66af9c85cd326f4a585ffaf27da472e2b8490f9b8ccc51ed0f0e125ca59bfbd",
         "locator": {
           "kind": "symbol",
@@ -41,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
-        "content": "sha256:f160230465540553045b0bd0c4e087c56fcc3e149b31c2d0ee3af4a68b0d6a0d",
+        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+        "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -59,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
-        "content": "sha256:f160230465540553045b0bd0c4e087c56fcc3e149b31c2d0ee3af4a68b0d6a0d",
+        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+        "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -77,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
         "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
         "locator": {
           "kind": "symbol",
@@ -95,8 +95,8 @@
     },
     {
       "anchor": {
-        "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
-        "content": "sha256:f160230465540553045b0bd0c4e087c56fcc3e149b31c2d0ee3af4a68b0d6a0d",
+        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+        "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -113,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
         "content": "sha256:fc2a1a7ef4a0889005c2cab69753b8915b5b64a9d172c1e25bc308028591a225",
         "locator": {
           "kind": "symbol",
@@ -131,8 +131,8 @@
     },
     {
       "anchor": {
-        "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
-        "content": "sha256:7152b9bb6fd4e457eb8393a3eb0e98a33ff3f54f739f0917db4ed72e909573a9",
+        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+        "content": "sha256:fc155db31aff43ff2d6b402f2550a29e8fc0b1f027585d10f21ebd122f40b3a3",
         "locator": {
           "kind": "file"
         }
@@ -148,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
         "content": "sha256:add318f5f52459454ace603b7301aeecf2076960e72cbde7ce198c17d4c4fc7a",
         "locator": {
           "kind": "symbol",
@@ -166,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
         "content": "sha256:4c24f13a69cee68fbd2c1dde8d15129b0122f9473303ec967c7745d772f6758b",
         "locator": {
           "kind": "symbol",
@@ -184,8 +184,8 @@
     },
     {
       "anchor": {
-        "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
-        "content": "sha256:f160230465540553045b0bd0c4e087c56fcc3e149b31c2d0ee3af4a68b0d6a0d",
+        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+        "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -202,7 +202,7 @@
     },
     {
       "anchor": {
-        "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
         "content": "sha256:8c83d02a661f8baef0a21913522f22a75806dcdec82e8958500fa64d354f04a3",
         "locator": {
           "kind": "symbol",
@@ -220,8 +220,8 @@
     },
     {
       "anchor": {
-        "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
-        "content": "sha256:f160230465540553045b0bd0c4e087c56fcc3e149b31c2d0ee3af4a68b0d6a0d",
+        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+        "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -243,12 +243,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
             "content": "sha256:fc2a1a7ef4a0889005c2cab69753b8915b5b64a9d172c1e25bc308028591a225",
             "locator": {
-              "end": 183,
-              "kind": "line_range",
-              "start": 165
+              "kind": "symbol",
+              "name": "register_role_launch_routes"
             }
           },
           "kind": "code"
@@ -256,16 +255,15 @@
       ]
     },
     "10": {
-      "note": "Checks size limit and refuses links without changing their target.\n\nAnchor: `HandoverArtifactTests.test_the_artifact_is_a_regular_file_of_bounded_size`",
+      "note": "Checks size limit and refuses links without changing their target.",
       "targets": [
         {
           "anchor": {
-            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
-            "content": "sha256:d03732758a233130c3a47ba56d498526a801430de6944fd6336095b90f602b9d",
+            "blob": "22a566752c83802f0d887f6d46f4548f962a6214",
+            "content": "sha256:3be784b682d17a0d01ae3b40071d847264f7777c4d62ec48665cca2020d9af22",
             "locator": {
-              "end": 759,
-              "kind": "line_range",
-              "start": 730
+              "kind": "symbol",
+              "name": "test_the_artifact_is_a_regular_file_of_bounded_size"
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
@@ -296,12 +294,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
             "content": "sha256:fc2a1a7ef4a0889005c2cab69753b8915b5b64a9d172c1e25bc308028591a225",
             "locator": {
-              "end": 183,
-              "kind": "line_range",
-              "start": 165
+              "kind": "symbol",
+              "name": "register_role_launch_routes"
             }
           },
           "kind": "code"
@@ -322,16 +319,15 @@
       ]
     },
     "15": {
-      "note": "The starting receipt carries task-copy metadata and warns of missing requirement copies, putting the missing filenames ahead of step-up advice. Later canonical task publication refreshes the copies when the files exist. The start answers with the projected identity and handover addresses; for a directly started Reviewer or Curator the whole `role_start` result can also carry the product start-message result (`productMessage`), which the compact answer projection does not keep.",
+      "note": "The starting receipt carries task-copy metadata and warns of missing requirement copies ahead of step-up advice; later canonical task publication refreshes copies; the start answer projects identity and handover addresses while whole `role_start` can carry `productMessage`.",
       "targets": [
         {
           "anchor": {
-            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
-            "content": "sha256:85b857c1481959d8c606e1bd3c79c89672b5d985e21cf6069f8d24e49826ad0a",
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+            "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
             "locator": {
-              "end": 672,
-              "kind": "line_range",
-              "start": 635
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
             }
           },
           "kind": "code"
@@ -400,18 +396,6 @@
             "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
-            "content": "sha256:85b857c1481959d8c606e1bd3c79c89672b5d985e21cf6069f8d24e49826ad0a",
-            "locator": {
-              "end": 672,
-              "kind": "line_range",
-              "start": 635
-            }
-          },
-          "kind": "code"
         }
       ]
     },
@@ -420,7 +404,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
             "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
             "locator": {
               "kind": "symbol",
@@ -436,7 +420,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
             "content": "sha256:de581ef4da625e4f6867fa2525c309ad0371fccedcf1af7e5e44c6a4af768d65",
             "locator": {
               "kind": "symbol",
@@ -452,12 +436,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
-            "content": "sha256:f160230465540553045b0bd0c4e087c56fcc3e149b31c2d0ee3af4a68b0d6a0d",
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+            "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
             "locator": {
-              "end": 744,
-              "kind": "line_range",
-              "start": 580
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
             }
           },
           "kind": "code"
@@ -482,11 +465,11 @@
       ]
     },
     "2": {
-      "note": "Frozen implementation of _start_execution supporting the stated file behavior.",
+      "note": "`_start_execution` wraps `role_start_execution.start_execution` while retaining route seams.",
       "targets": [
         {
           "anchor": {
-            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
             "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
             "locator": {
               "kind": "symbol",
@@ -502,7 +485,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
             "content": "sha256:add318f5f52459454ace603b7301aeecf2076960e72cbde7ce198c17d4c4fc7a",
             "locator": {
               "kind": "symbol",
@@ -543,28 +526,27 @@
       ]
     },
     "22": {
-      "note": "The Manager records an Architect address when available. An Orchestrator starter’s parent receipt determines whether the address can be recorded. The launch proceeds when the lookup or write fails.",
+      "note": "The Manager records an Architect address when available; an Orchestrator starter's parent receipt determines whether the address can be recorded; launch proceeds on lookup/write failure.",
       "targets": [
         {
           "anchor": {
-            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
-            "content": "sha256:11ac93940ae09c3e6dab5aed316edecff9d35b24ff25430011a774596438a24b",
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+            "content": "sha256:c66af9c85cd326f4a585ffaf27da472e2b8490f9b8ccc51ed0f0e125ca59bfbd",
             "locator": {
-              "end": 524,
-              "kind": "line_range",
-              "start": 480
+              "kind": "symbol",
+              "name": "remember_master_architect"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
             "content": "sha256:9da86ec6f57f01b56123c567c641a9054f0a635ec916a587d14d2b9a197e014d",
             "locator": {
-              "end": 744,
+              "end": 761,
               "kind": "line_range",
-              "start": 742
+              "start": 759
             }
           },
           "kind": "code"
@@ -576,12 +558,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
             "content": "sha256:f076572f04f0e9c03fa24b3fafdef6e5316cb3bc46928c311f8c1005b8bee60c",
             "locator": {
-              "end": 218,
-              "kind": "line_range",
-              "start": 205
+              "kind": "symbol",
+              "name": "_bind_dispatch_endpoint"
             }
           },
           "kind": "code"
@@ -606,12 +587,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
-            "content": "sha256:fee2704e4fb40d25296e22fe05153f6f597d95d400afbf8b9de2f70d9c191b60",
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+            "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
             "locator": {
-              "end": 699,
-              "kind": "line_range",
-              "start": 686
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
             }
           },
           "kind": "code"
@@ -645,16 +625,15 @@
       ]
     },
     "3": {
-      "note": "Frozen implementation of _launch_prepared_role_session supporting the stated file behavior.",
+      "note": "`_launch_prepared_role_session` bounds direct `opening_message` via `role_opening_offload`, preflights/writes `.opening-message.md` and both handover files, records `openingMessageArtifact` and `stepUpArtifact` in the starting receipt, and builds the saved host call.",
       "targets": [
         {
           "anchor": {
-            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
-            "content": "sha256:f160230465540553045b0bd0c4e087c56fcc3e149b31c2d0ee3af4a68b0d6a0d",
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+            "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
             "locator": {
-              "end": 744,
-              "kind": "line_range",
-              "start": 580
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
             }
           },
           "kind": "code"
@@ -662,11 +641,11 @@
       ]
     },
     "4": {
-      "note": "Frozen implementation of _revive_execution supporting the stated file behavior.",
+      "note": "`_revive_execution` verifies grant-aware leaf scope before native bridge revival.",
       "targets": [
         {
           "anchor": {
-            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
             "content": "sha256:4c24f13a69cee68fbd2c1dde8d15129b0122f9473303ec967c7745d772f6758b",
             "locator": {
               "kind": "symbol",
@@ -708,7 +687,7 @@
         },
         {
           "anchor": {
-            "blob": "e5184451b8db1b5e2a7a13bd556106a742f34705",
+            "blob": "6b24699cdac2fcb0afb79870ba07f3d71e743f2f",
             "content": "sha256:24f5dbcc08c40cc834391fb6fee5739797a94a0c75a18be29a055878d7fdf199",
             "locator": {
               "end": 299,
@@ -743,10 +722,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54a24300c0ac14f8e309b1cb70d30c4654bf0559",
-            "content": "sha256:8c0a07c684d4f9ef67e55dba4e6f28a432fe0531290b80c0e08e4aa0d87e86f1",
+            "blob": "ae9fff926e9a5a705fe7584131d1f775687f0a11",
+            "content": "sha256:f1353abee29eab16fbb0ba69a94223c6c561fca9fc12e1221d3444a1df625fa6",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_repeat_is_answered_from_its_receipt_whatever_changed_since_the_launch"
             },
             "path": "mcp/tests/test_paseo_launch_repeat.py"
           },
@@ -772,16 +752,15 @@
       ]
     },
     "9": {
-      "note": "Checks path, bytes, digest, read-only mode, exact reuse and conflicting-content refusal.\n\nAnchor: `HandoverArtifactTests.test_the_artifact_is_written_once_beside_the_report_and_named_by_one_line`",
+      "note": "Checks path, bytes, digest, read-only mode, exact reuse and conflicting-content refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
-            "content": "sha256:496454fa627fd47b499198b97f45a3fce80d6c89834ef07eb493b741803a9c63",
+            "blob": "22a566752c83802f0d887f6d46f4548f962a6214",
+            "content": "sha256:89a6195b6e820ef1cda784428f63965d46c1ed836adac69c780d2fbf4fc1bec9",
             "locator": {
-              "end": 678,
-              "kind": "line_range",
-              "start": 585
+              "kind": "symbol",
+              "name": "test_the_artifact_is_written_once_beside_the_report_and_named_by_one_line"
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },

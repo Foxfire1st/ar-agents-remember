@@ -1571,12 +1571,12 @@
         },
         {
           "anchor": {
-            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
+            "blob": "57ccf35179ee1d0293f1637fa77a2c26912e0a03",
             "content": "sha256:d11cef6c005f45844f7586e6723416924cdeeed44ed9c89c350f30aa33bc2b50",
             "locator": {
-              "end": 61,
+              "end": 63,
               "kind": "line_range",
-              "start": 55
+              "start": 57
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },
@@ -1584,12 +1584,12 @@
         },
         {
           "anchor": {
-            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
+            "blob": "57ccf35179ee1d0293f1637fa77a2c26912e0a03",
             "content": "sha256:4f75fac121af68398d8496570448aa47d51ee51d5601fe68a8c2a113ad75d017",
             "locator": {
-              "end": 124,
+              "end": 126,
               "kind": "line_range",
-              "start": 112
+              "start": 114
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },

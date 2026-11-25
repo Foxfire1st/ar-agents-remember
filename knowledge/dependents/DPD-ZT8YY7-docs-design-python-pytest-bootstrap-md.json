@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "40e2c033f5400b856352fc47dd738796945d289d",
-    "commit": "65c40d296ac2f951e9359eae653c7df43fed2436",
+    "codeTree": "dbad7514a44165de3d365b22e5de15dbf19a9cbb",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "On merged code the pytest bootstrap guide still holds: integration and stress-durability make up the integration tests (123 integration modules, including L27's two), CAP-L1's unit-regression module changes no selection rule, CAP-L4's test_tool_schema_compaction.py sits in unit-regression (675 of 825 total), and the bounded-memory stdio case's coverage boundary is unchanged (stress-durability, 1 test_mcp_memory_bounded_stdio.py).",
-    "task": "261112-BUG-L37",
-    "uncommitted": false
+    "statement": "Confirmed on post-sync CAP-L2 candidate dbad7514 (rebased onto main 3336406ea / BUG-L37): docs/design/python-pytest-bootstrap.md remains accurate with 676 unit-regression / 826 total modules, 123 integration, and stress-durability (1 module) re-anchored at test-evidence-lanes.toml lines 845-847.",
+    "task": "261124-CAP-L2",
+    "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
   "id": "DPD-ZT8YY7",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 18,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "41e4f40f552f5e6b287bcd178bbc5cf6bc1c5dd7",
+      "blob": "4bb2b5c79060fc9dbf38f851fb9b15b0e7abcd9e",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -106,12 +106,12 @@
     },
     {
       "anchor": {
-        "blob": "41e4f40f552f5e6b287bcd178bbc5cf6bc1c5dd7",
+        "blob": "4bb2b5c79060fc9dbf38f851fb9b15b0e7abcd9e",
         "content": "sha256:cd1aadd0727e9055f7406e87eef73a6c7dd5a3457bbfc784c93a7ed4fc7eccc7",
         "locator": {
-          "end": 846,
+          "end": 847,
           "kind": "line_range",
-          "start": 844
+          "start": 845
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
@@ -134,14 +134,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T15:29:55+01:00",
+    "at": "2026-11-25T21:08:40+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L37",
+    "leaf": "261124-CAP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "4e0ea222-083c-4c22-aef2-1fc120d81ee2",
-    "task": "261112-BUG"
+    "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+    "task": "261124-CAP"
   }
 }

@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "648b27458fcdf390c3905ab596aa5afbba2f9a20",
-        "content": "sha256:686f2e98a9233790ff099507551f4a1cc2982b6ea0be2526e70c263d70981e90",
+        "blob": "4e9b881ef4d15bd1567425e805194547028c7c99",
+        "content": "sha256:97114e5d36926f5e2f8c552d1fdc522ad4b6219f77b3eaf87cda12d7309b71d0",
         "locator": {
           "kind": "symbol",
           "name": "FirstMessageMatrixTests.test_a_held_seat_opens_through_the_delivery_path"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "648b27458fcdf390c3905ab596aa5afbba2f9a20",
+        "blob": "4e9b881ef4d15bd1567425e805194547028c7c99",
         "content": "sha256:17356a9c2c3c9d914e0d55281e7bffe3b560983ea30fe2991b196a5889a26910",
         "locator": {
           "kind": "symbol",
@@ -43,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "648b27458fcdf390c3905ab596aa5afbba2f9a20",
-            "content": "sha256:07fc9d0e221a3511ddc3e74efc1af5548acbd2faf50fbe30ff002e7fe0975336",
+            "blob": "4e9b881ef4d15bd1567425e805194547028c7c99",
+            "content": "sha256:8e58549d846c22ba8d31faaa231ea8bff679a0b2cc5efbaebd03364f7eac333d",
             "locator": {
               "kind": "file"
             }
@@ -58,8 +58,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "648b27458fcdf390c3905ab596aa5afbba2f9a20",
-            "content": "sha256:07fc9d0e221a3511ddc3e74efc1af5548acbd2faf50fbe30ff002e7fe0975336",
+            "blob": "4e9b881ef4d15bd1567425e805194547028c7c99",
+            "content": "sha256:8e58549d846c22ba8d31faaa231ea8bff679a0b2cc5efbaebd03364f7eac333d",
             "locator": {
               "kind": "file"
             }
@@ -73,8 +73,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "648b27458fcdf390c3905ab596aa5afbba2f9a20",
-            "content": "sha256:07fc9d0e221a3511ddc3e74efc1af5548acbd2faf50fbe30ff002e7fe0975336",
+            "blob": "4e9b881ef4d15bd1567425e805194547028c7c99",
+            "content": "sha256:8e58549d846c22ba8d31faaa231ea8bff679a0b2cc5efbaebd03364f7eac333d",
             "locator": {
               "kind": "file"
             }

@@ -345,10 +345,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54a24300c0ac14f8e309b1cb70d30c4654bf0559",
-            "content": "sha256:8c0a07c684d4f9ef67e55dba4e6f28a432fe0531290b80c0e08e4aa0d87e86f1",
+            "blob": "ae9fff926e9a5a705fe7584131d1f775687f0a11",
+            "content": "sha256:f1353abee29eab16fbb0ba69a94223c6c561fca9fc12e1221d3444a1df625fa6",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_repeat_is_answered_from_its_receipt_whatever_changed_since_the_launch"
             },
             "path": "mcp/tests/test_paseo_launch_repeat.py"
           },

@@ -1,0 +1,278 @@
+{
+  "path": "mcp/tests/test_role_wire_token_budgets.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "content": "sha256:9c1e6bd7df6048e946e9bedc46a81e0d92241262e06bb87eee542ddacde78f90",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_nested_details_symlink_confinement_and_report_exclusion"
+        }
+      },
+      "facet": "Verifies nested <stem>.details/<source> symlink confinement, absolute internal detail links, dual-layout restore validation, and canonical report exclusion of .details/** and offload sidecars.",
+      "id": "PRF-1RMT5E",
+      "invariant": "INV-7KDG7C",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-7kdg7c",
+        "leaf": "261124-CAP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "content": "sha256:2b586aa307f25e74c68d833793298d3b6b03df159684d8aa0a3529b85a98bfc5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_replay_tamper_symlink_and_locator_rebind"
+        }
+      },
+      "facet": "Verifies replay refuses tampered bytes, symlinked targets, and rebound locators without modifying receipt or files.",
+      "id": "PRF-25YFTQ",
+      "invariant": "INV-87JRHY",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-87jrhy",
+        "leaf": "261124-CAP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "content": "sha256:33ce48a4adf8b97501fae183bef9f6368987fbf9b6d384d44787cfa51d3d83f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "WireTokenBudgetMatrixTests.test_kv_cache_static_prefix_byte_identical_across_all_eight_pairs"
+        }
+      },
+      "facet": "Verifies all eight default role/operation pairs emit byte-identical static prefixes from byte 0 to ## Launch Context across distinct launches.",
+      "id": "PRF-2ZECKP",
+      "invariant": "INV-ZVD184",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-zvd184",
+        "leaf": "261124-CAP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "content": "sha256:754c5ed0108e58123b06248737181e4af64b2732b7a9826ef964ccdac0adda77",
+        "locator": {
+          "kind": "symbol",
+          "name": "WireTokenBudgetMatrixTests.test_direct_opening_offload_boundaries_replay_and_heading_safety"
+        }
+      },
+      "facet": "Verifies direct opening messages enforce Unicode settings.role_message_limit boundaries and write immutable .opening-message.md sidecars without breaking headings.",
+      "id": "PRF-3CTDGM",
+      "invariant": "INV-ZVD184",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-zvd184",
+        "leaf": "261124-CAP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "content": "sha256:f3986c8df48f48981c6a28e7759cca28df77b61529e66945ac481a42167cc69d",
+        "locator": {
+          "kind": "symbol",
+          "name": "WireTokenBudgetMatrixTests.test_held_opening_offload_reuse_distinct_batch_and_failure_safety"
+        }
+      },
+      "facet": "Verifies held opening batches enforce settings.role_message_limit at open time, write content-addressed .held-batch-<sha256>.md sidecars, and preserve held queues on failure.",
+      "id": "PRF-4CW0A1",
+      "invariant": "INV-ZVD184",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-zvd184",
+        "leaf": "261124-CAP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "content": "sha256:425d54709491cddcb98f70d5dc1a9bd8f15b8bff8aaaed1df810e6d50bc1ab9d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_opening_message_sidecar_restore_and_refusals"
+        }
+      },
+      "facet": "Verifies restore recovers a missing .opening-message.md sidecar from verified receipt bytes and refuses tampered or symlinked opening targets.",
+      "id": "PRF-4P44X9",
+      "invariant": "INV-87JRHY",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-87jrhy",
+        "leaf": "261124-CAP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "content": "sha256:f1fdaec0e47c0376afbfedd3baafac82e9c1962797203f5e5974da78c015015a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_filter_shared_block_seal_launcher_absent_source_and_markdown_edges"
+        }
+      },
+      "facet": "Verifies full-source semantic-digest sealing, launcher and absent-source pass-through, fenced code block preservation, and empty heading pruning.",
+      "id": "PRF-5TEZJB",
+      "invariant": "INV-40JW44",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-40jw44",
+        "leaf": "261124-CAP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "content": "sha256:8874451040e0826450dcce93250c33f473f7af7b9c17763ce5d8f87b7d698010",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_durable_corpus_root_archive_transition_and_compact_links"
+        }
+      },
+      "facet": "Verifies durable corpus root resolution across direct filesystem and archive cache transitions and confirms opt-in compact skill/ and detail/ links while keeping standalone callers absolute.",
+      "id": "PRF-6JRMPQ",
+      "invariant": "INV-ZA67WW",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-za67ww",
+        "leaf": "261124-CAP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "content": "sha256:0c632ca8f145e3f929ac4c2aab0254e78e31f4412246b76d4b31bbda9d387669",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_replay_legacy_prefix_new_suffix_and_diagnostic_priority"
+        }
+      },
+      "facet": "Verifies newly generated first messages append the handover artifact locator line as a suffix while replay continues to accept legacy prefix receipts.",
+      "id": "PRF-881XV8",
+      "invariant": "INV-5H5VR2",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-5h5vr2",
+        "leaf": "261124-CAP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "content": "sha256:d061a97a3031cad60e74799cbcbc06a5d8b2b56970eafb356953c4edd4e61c7a",
+        "locator": {
+          "kind": "symbol",
+          "name": "WireTokenBudgetMatrixTests.test_eight_default_pairs_pass_wire_token_ceilings_and_send_links"
+        }
+      },
+      "facet": "Verifies all eight default fresh base launch pairs pass bare PHASE_1_WIRE_TOKEN_CEILINGS under normalized o200k_base measurement with valid send links.",
+      "id": "PRF-GME8VE",
+      "invariant": "INV-ZVD184",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-zvd184",
+        "leaf": "261124-CAP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "content": "sha256:acaca9468c87ac2ea20e0fc8cfd468a2e12eb3253340c8121e9be06e81b272ba",
+        "locator": {
+          "kind": "symbol",
+          "name": "WireTokenBudgetMatrixTests.test_conditional_first_read_dedup_and_four_case_developer_question_route"
+        }
+      },
+      "facet": "Verifies all four parented/parentless host.developerQuestionRoute cases in wire projections and confirms omitted long prose fields remain in .handover.json.",
+      "id": "PRF-PHN9N9",
+      "invariant": "INV-8AMSGV",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-8amsgv",
+        "leaf": "261124-CAP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "content": "sha256:29d6656e8ed9d8bd17885cf26875aa23c2ac78757f1e64db1a9eaac3560d686e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_filter_shared_block_32_admitted_pairs_and_digest_map"
+        }
+      },
+      "facet": "Verifies role-filtered shared_block output across all 32 admitted role/operation pairs against the every-role digest map.",
+      "id": "PRF-XXQCNP",
+      "invariant": "INV-40JW44",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-40jw44",
+        "leaf": "261124-CAP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+        "content": "sha256:4f88449b87bc1b5674063634469b921d9107a750621cf4fcff5f335782e9135d",
+        "locator": {
+          "kind": "symbol",
+          "name": "WireTokenBudgetMatrixTests.test_held_openings_and_bounded_appendices_stay_capped"
+        }
+      },
+      "facet": "Verifies held reviewer/curator openings and worker direct launches with bounded appendices pass ceiling plus approved appendix allowances and rejects over-ceiling prompts.",
+      "id": "PRF-ZJCQH9",
+      "invariant": "INV-ZVD184",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-zvd184",
+        "leaf": "261124-CAP-L2"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`_wire_tokens` normalizes fixture root, isolated HOME, checkout corpus root, UUIDs, and all 64-hex digests for zero-variance `o200k_base` measurement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+            "content": "sha256:b960be80b31ff6f0174f2ca0122924b6caccf73dabc4883ae5f4a565eb7cab2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_wire_tokens"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Standalone filter, durable corpus, nested `.details/`, canonical report exclusion, dual-format replay, and `.opening-message.md` restore tests verify AC-1, AC-2, AC-4, and AC-6 contracts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+            "content": "sha256:29d6656e8ed9d8bd17885cf26875aa23c2ac78757f1e64db1a9eaac3560d686e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_filter_shared_block_32_admitted_pairs_and_digest_map"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`WireTokenBudgetMatrixTests` gates all 8 default fresh base launch pairs, held/launch ordinary-Latin appendix allowances with negative rejection, 8-pair KV static prefix byte equality, four-case `host.developerQuestionRoute`, and direct/held offload boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+            "content": "sha256:ac8b99166f169db0c268e36b174a2eb83b91c06e040da6a8bb812c4a48724154",
+            "locator": {
+              "kind": "symbol",
+              "name": "WireTokenBudgetMatrixTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

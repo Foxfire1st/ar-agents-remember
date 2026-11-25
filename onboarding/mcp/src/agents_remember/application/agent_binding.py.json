@@ -312,21 +312,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
+            "blob": "22a566752c83802f0d887f6d46f4548f962a6214",
             "content": "sha256:22bc349351bd8af2100aeac13fc4c7778bbc399dba5194344c66299f8b6c8f59",
-            "locator": {
-              "end": 201,
-              "kind": "line_range",
-              "start": 127
-            },
-            "path": "mcp/tests/test_paseo_agent_tools.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
-            "content": "sha256:2c1fa5fc562c7174dcaa4c45db2c0e143648ee7d6dbe903ec304e5a00fbd5ec0",
             "locator": {
               "end": 202,
               "kind": "line_range",
@@ -338,12 +325,25 @@
         },
         {
           "anchor": {
-            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
+            "blob": "22a566752c83802f0d887f6d46f4548f962a6214",
+            "content": "sha256:2c1fa5fc562c7174dcaa4c45db2c0e143648ee7d6dbe903ec304e5a00fbd5ec0",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "22a566752c83802f0d887f6d46f4548f962a6214",
             "content": "sha256:2d438796aceb5e76ff5fad176adea4f38eac4e80cd423f215e2fc9fa0092eb2f",
             "locator": {
-              "end": 193,
+              "end": 194,
               "kind": "line_range",
-              "start": 119
+              "start": 120
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
@@ -370,14 +370,15 @@
       ]
     },
     "5": {
-      "note": "Checks emitted binding and explicitly empty absent references and seat identities before round-trip.\n\nAnchor: `ToolServerDefinitionTests.test_the_tool_server_reads_the_binding_it_was_started_with_and_reports_it`",
+      "note": "Checks emitted binding and explicitly empty absent references and seat identities before round-trip.",
       "targets": [
         {
           "anchor": {
-            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
-            "content": "sha256:4f35ff68d93d5a2d91dec4249dcb214f8bdfdcd2086cb038be46eed7ddbe9b5a",
+            "blob": "22a566752c83802f0d887f6d46f4548f962a6214",
+            "content": "sha256:ee40f1e9e6c721898c621eadc7a225c73962f4cde850991be1dfc18fceb2ef24",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_the_tool_server_reads_the_binding_it_was_started_with_and_reports_it"
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },

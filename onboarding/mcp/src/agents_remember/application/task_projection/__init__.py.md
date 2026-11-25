@@ -93,4 +93,5 @@ No sibling-repository contract consumes this boundary.
 
 No meaningful cross-repo references found.
 
+
 - The task-context seam this package fills: the protocol, the DTO it converts into, and the compiler that re-verifies the digest. [5]

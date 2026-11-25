@@ -44,13 +44,8 @@ test cannot pass on a value production would never send.
 
 ## Evidence
 
-
 - The shared fixture records bridge calls and derives the handover artifacts, recovery note and task-server definition from each launch request. [1]
 
-
-
 - The stateful fake records calls, can fail before or after an effect, and supports incomplete live listings. Fixture message formatting uses the production artifact helper. [2]
-
-
 
 - Creation records supplied feature values and mode. It records a service tier only when the supplied feature map contains one. [3]

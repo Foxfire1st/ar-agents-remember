@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
-    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
+    "codeTree": "b60f09508b968b94502bfe295188d0da57858fb1",
+    "commit": "70a18acd683e44e6b99bbee07fe3fb6e07c505ed",
     "role": "curator",
-    "statement": "On tree a5bb9a1f, the review-page and explainer guide's description of explainer_control (update, claim, retire, their arguments, and refusals) and the explainer's four tools still holds because CAP-L4 only shortened the explainer_control docstring in explainer.py without changing parameters, dispatch, or the explainer tool surface.",
-    "task": "261124-CAP-L4",
+    "statement": "Confirmed against CAP-L2 candidate b60f0950: docs/guides/review-page-and-explainer.md remains accurate because CAP-L2 did not alter the review page or explainer guide behavior.",
+    "task": "261124-CAP-L2",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -251,7 +251,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer.py"
     },
     {
-      "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+      "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
@@ -306,5 +306,16 @@
       "heading": "The intent review before work starts",
       "kind": "anchor"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T20:08:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+    "task": "261124-CAP"
+  }
 }

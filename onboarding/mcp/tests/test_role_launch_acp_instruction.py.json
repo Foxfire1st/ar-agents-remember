@@ -1,0 +1,25 @@
+{
+  "path": "mcp/tests/test_role_launch_acp_instruction.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b69d3490dd4cbae26101cbef030d91cbd25b6ea5",
+        "content": "sha256:7fada956f70a417c651709caab7e4cd879f0cc86f32f1b724a81835f80fc34b1",
+        "locator": {
+          "kind": "symbol",
+          "name": "AcpInstructionLaunchTests.test_an_acp_seats_first_message_carries_the_wait_instruction"
+        }
+      },
+      "facet": "Verifies an ACP seat's stored first message appends ACP_WAIT_INSTRUCTION before the trailing handover artifact locator line.",
+      "id": "PRF-SRE6T7",
+      "invariant": "INV-G841F9",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-g841f9-proof",
+        "leaf": "261124-CAP-L2"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

@@ -541,6 +541,18 @@
       "targets": [
         {
           "anchor": {
+            "blob": "4a2b44cfec79480593fdbf45c5a08f224c4fb1db",
+            "content": "sha256:abd8c0d78cf3351ec9fe33a1534c8c74cca60ddb5846be05b19c2e1bc17637d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore_launch_files"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_restore.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "8af465a831b807b61b0df2d8374da5be208b1161",
             "content": "sha256:bda4d8d3528c67eee8738e776e727db2e1fd0f4afca58e9dbf566869b606e5ac",
             "locator": {
@@ -560,19 +572,6 @@
               "kind": "line_range",
               "start": 153
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e67b518ce70be78d1e52c7ff344223c0e027bf6b",
-            "content": "sha256:5899a836da03f44954f42aa5e1bc31e74ac9bf9193564be0a79953d6892b2659",
-            "locator": {
-              "end": 83,
-              "kind": "line_range",
-              "start": 53
-            },
-            "path": "mcp/src/agents_remember/cli/role_handover_restore.py"
           },
           "kind": "code"
         }
@@ -633,7 +632,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3597a8c769c981f6dc3d933c895420c3b6e9766",
+            "blob": "ae4f0c7a72eef5d4f15704c71322f633ef63e16c",
             "content": "sha256:140012d8899387d059b9e033e011bf0db1448125b40f693f41cf32aeea064279",
             "locator": {
               "kind": "symbol",
@@ -710,7 +709,7 @@
         },
         {
           "anchor": {
-            "blob": "e5184451b8db1b5e2a7a13bd556106a742f34705",
+            "blob": "6b24699cdac2fcb0afb79870ba07f3d71e743f2f",
             "content": "sha256:24f5dbcc08c40cc834391fb6fee5739797a94a0c75a18be29a055878d7fdf199",
             "locator": {
               "end": 299,
@@ -745,10 +744,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54a24300c0ac14f8e309b1cb70d30c4654bf0559",
-            "content": "sha256:8c0a07c684d4f9ef67e55dba4e6f28a432fe0531290b80c0e08e4aa0d87e86f1",
+            "blob": "ae9fff926e9a5a705fe7584131d1f775687f0a11",
+            "content": "sha256:f1353abee29eab16fbb0ba69a94223c6c561fca9fc12e1221d3444a1df625fa6",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_repeat_is_answered_from_its_receipt_whatever_changed_since_the_launch"
             },
             "path": "mcp/tests/test_paseo_launch_repeat.py"
           },
@@ -778,10 +778,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
-            "content": "sha256:4f35ff68d93d5a2d91dec4249dcb214f8bdfdcd2086cb038be46eed7ddbe9b5a",
+            "blob": "22a566752c83802f0d887f6d46f4548f962a6214",
+            "content": "sha256:9a49fbb2686ab68e1dc76b3c59ddb6a03f519fe3af76f0ee2196ba7b8d1e1766",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "HandoverArtifactOnTheRouteTests"
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },

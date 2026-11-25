@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ceb3cbb0ce1726b23a2b93da741e2f063302594",
+            "blob": "b332246fc987474cedb667a6fa57b589ff8e5a54",
             "content": "sha256:cdc413448c37d968304c451442889961335b75ccad15fa300d975f8e7d33e72c",
             "locator": {
               "kind": "symbol",
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ceb3cbb0ce1726b23a2b93da741e2f063302594",
-            "content": "sha256:fc46a96b625116fac58d8945e2404468d03082d099d90663c0241435e287a5c0",
+            "blob": "b332246fc987474cedb667a6fa57b589ff8e5a54",
+            "content": "sha256:342a1dbafc1c51760f08eefb7a60d751dcd047f2639931335240a17447d8f2da",
             "locator": {
               "kind": "symbol",
               "name": "test_receipt_contract_has_one_home_even_when_repeated_in_other_words"

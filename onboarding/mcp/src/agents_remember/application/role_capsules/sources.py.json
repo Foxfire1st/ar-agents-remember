@@ -62,16 +62,15 @@
       ]
     },
     "3": {
-      "note": "The application entry point that admits and then compiles, returning a refusal as a value. Anchor: `compile_admitted_capsule` `CapsuleCompilationOutcome`",
+      "note": "The application entry point that admits and then compiles, returning a refusal as a value.",
       "targets": [
         {
           "anchor": {
-            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
-            "content": "sha256:d83e2d57f2e37404de9d44a0dd51cfb781229885bb74bc9f34618a97fcef8b59",
+            "blob": "57ccf35179ee1d0293f1637fa77a2c26912e0a03",
+            "content": "sha256:03591741d23875c6fd4212f57300594ae1880a052a55585ae606e44577992b06",
             "locator": {
-              "end": 134,
-              "kind": "line_range",
-              "start": 93
+              "kind": "symbol",
+              "name": "compile_admitted_capsule"
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },
@@ -79,25 +78,11 @@
         },
         {
           "anchor": {
-            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
+            "blob": "57ccf35179ee1d0293f1637fa77a2c26912e0a03",
             "content": "sha256:7be3af594bb85101f4afaa7916d8c206942a3c220b384c15d5ff6e61b8a485d8",
             "locator": {
-              "end": 90,
-              "kind": "line_range",
-              "start": 45
-            },
-            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
-            "content": "sha256:27f665a3c0c821e21a0eaa4cafcf4389a35cce689e06e81a63d72b38079bec0f",
-            "locator": {
-              "end": 164,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "CapsuleCompilationOutcome"
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },

@@ -110,7 +110,7 @@
         "handoffEntry": "MIK-R84@v5 part1 / L62 shared digest",
         "leaf": "260928-MIK-L84"
       },
-      "rationale": "This file is the shared digest body delivered in first messages.",
+      "rationale": "Canonical shared every-role digest source that compile_admitted_capsule seals in full and filters per canonical role via filter_shared_block for admitted native role openings.",
       "role": "unclassified"
     },
     {

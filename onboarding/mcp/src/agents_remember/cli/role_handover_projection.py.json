@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "10fb7a51df0dc168eef360291e299855421627b7",
+        "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
+        "content": "sha256:3848eeeb3ac65293abf48699cd5416a27657501e70e7bc701e67e15d42151431",
+        "locator": {
+          "kind": "symbol",
+          "name": "project_handover"
+        }
+      },
+      "id": "RLZ-3A0K0B",
+      "invariant": "INV-8AMSGV",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-8amsgv",
+        "leaf": "261124-CAP-L2"
+      },
+      "rationale": "Projects PROJECTION_FIELDS and HOST_FIELDS (parent and developerQuestionRoute) while leaving assignment, canonicalTaskReportPath, host.ownerRelation, and host.developerQuestions exclusively in .handover.json.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
         "content": "sha256:231462c0f69b19a6c4d9fce70c209d5af66dc7649830bd96cf1dc8e16fa71a4c",
         "locator": {
           "kind": "symbol",
@@ -21,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "10fb7a51df0dc168eef360291e299855421627b7",
-        "content": "sha256:6d3074e2c9b530dc7b2c70272fa0852facab5d0f6bbec70cb8bf5ef97da27b81",
+        "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
+        "content": "sha256:d5fac2cd344face9e0e0c79a157df7570c9f162041e928544bb0e3428771b715",
         "locator": {
           "kind": "file"
         }
@@ -35,19 +53,49 @@
       },
       "rationale": "Defines and measures the emitted role projection rather than a synthetic audit substitute.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
+        "content": "sha256:5a6d4cdad0e47152e929be19cda81e12ef0fba2ff5b03ac49ca0b23e00b7ce33",
+        "locator": {
+          "kind": "symbol",
+          "name": "first_read_paragraph"
+        }
+      },
+      "id": "RLZ-TJS7TV",
+      "invariant": "INV-8AMSGV",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-8amsgv",
+        "leaf": "261124-CAP-L2"
+      },
+      "rationale": "Names assignment, host.ownerRelation, and host.developerQuestions as available in handoverFile so omitted prose fields remain discoverable.",
+      "role": "presentation"
     }
   ],
   "references": {
     "1": {
-      "note": "The projected fields are defined once, in the order the message states them.",
+      "note": "`PROJECTION_FIELDS`, `HOST_FIELDS`, `FILE_ONLY_FIELDS`, and `FILE_ONLY_NESTED` define the slim wire projection (`host.parent`, `host.developerQuestionRoute`) and keep `assignment`, `canonicalTaskReportPath`, `host.ownerRelation`, and `host.developerQuestions` exclusively in `.handover.json`.",
       "targets": [
         {
           "anchor": {
-            "blob": "10fb7a51df0dc168eef360291e299855421627b7",
-            "content": "sha256:8c8b039704da49294d04bfce2b0a1aa12c5245dd5e0b5cb46da89805bfa070f3",
+            "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
+            "content": "sha256:2038429ac405b1e6300c1d89899a1ce8d5dea6a72db1561ba8912e0cec40480e",
             "locator": {
               "kind": "symbol",
               "name": "PROJECTION_FIELDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
+            "content": "sha256:cf344ff79925098f79f55b26a798b22cd36300856f470c2febefb05c1d8d2144",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 62
             }
           },
           "kind": "code"
@@ -55,11 +103,11 @@
       ]
     },
     "2": {
-      "note": "The projection keeps permitted fields, drops absent and null ones, and names the complete file.",
+      "note": "`project_handover` subsets top-level, workspace, reader, host, and seat fields, dropping absent and `null` values and naming `handoverFile`.",
       "targets": [
         {
           "anchor": {
-            "blob": "10fb7a51df0dc168eef360291e299855421627b7",
+            "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
             "content": "sha256:3848eeeb3ac65293abf48699cd5416a27657501e70e7bc701e67e15d42151431",
             "locator": {
               "kind": "symbol",
@@ -71,12 +119,12 @@
       ]
     },
     "3": {
-      "note": "The first-read paragraph carries the sentences said nowhere else and names the file.",
+      "note": "`first_read_paragraph` carries the unique first-read rules and names `assignment`, `host.ownerRelation`, and `host.developerQuestions` as living in `handoverFile`.",
       "targets": [
         {
           "anchor": {
-            "blob": "10fb7a51df0dc168eef360291e299855421627b7",
-            "content": "sha256:aa7d6530dca53d71b93bfe7b02fbd76841b79ddad205c2829e68b30cb557a867",
+            "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
+            "content": "sha256:5a6d4cdad0e47152e929be19cda81e12ef0fba2ff5b03ac49ca0b23e00b7ce33",
             "locator": {
               "kind": "symbol",
               "name": "first_read_paragraph"
@@ -91,8 +139,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10fb7a51df0dc168eef360291e299855421627b7",
-            "content": "sha256:d30a565cdbd79a8c5a85bcb828f5c99ca0b1f305e171909967bfc11141c4391e",
+            "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
+            "content": "sha256:3b9a1f80ea245cb58e9335025c26fc602acfaa9485ebc9697d5b65a93d7b83ef",
             "locator": {
               "kind": "symbol",
               "name": "projection_tokens"

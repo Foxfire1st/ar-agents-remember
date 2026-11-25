@@ -1,7 +1,26 @@
 {
   "path": "mcp/src/agents_remember/application/role_capsules/compilation.py",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "57ccf35179ee1d0293f1637fa77a2c26912e0a03",
+        "content": "sha256:03591741d23875c6fd4212f57300594ae1880a052a55585ae606e44577992b06",
+        "locator": {
+          "kind": "symbol",
+          "name": "compile_admitted_capsule"
+        }
+      },
+      "id": "RLZ-TRR6MT",
+      "invariant": "INV-40JW44",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-40jw44",
+        "leaf": "261124-CAP-L2"
+      },
+      "rationale": "Applies filter_shared_block only to CapsuleCompilationOutcome.shared_block for CapsuleRoleSeat while keeping full-source admission and semantic-digest sealing intact.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The pure compiler this entry point calls and the refusal-shaped manifest builders it selects between.",
@@ -103,16 +122,15 @@
       ]
     },
     "3": {
-      "note": "The task-projection seam accepted here and verified inside the compiler.",
+      "note": "The task-projection seam accepted in `compile_admitted_capsule` and verified inside `compile_role_capsule`.",
       "targets": [
         {
           "anchor": {
-            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
-            "content": "sha256:d83e2d57f2e37404de9d44a0dd51cfb781229885bb74bc9f34618a97fcef8b59",
+            "blob": "57ccf35179ee1d0293f1637fa77a2c26912e0a03",
+            "content": "sha256:03591741d23875c6fd4212f57300594ae1880a052a55585ae606e44577992b06",
             "locator": {
-              "end": 134,
-              "kind": "line_range",
-              "start": 93
+              "kind": "symbol",
+              "name": "compile_admitted_capsule"
             }
           },
           "kind": "code"
@@ -191,29 +209,41 @@
       ]
     },
     "6": {
-      "note": "Admitted core/every-role.md now populates the shared_block outcome slot.",
+      "note": "`compile_admitted_capsule` seals the full `core/every-role.md` source in `compile_role_capsule` and filters `CapsuleCompilationOutcome.shared_block` per canonical role for `CapsuleRoleSeat` via `filter_shared_block`, leaving launcher seats unfiltered and absent sources `None`.",
       "targets": [
         {
           "anchor": {
-            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
-            "content": "sha256:d11cef6c005f45844f7586e6723416924cdeeed44ed9c89c350f30aa33bc2b50",
+            "blob": "57ccf35179ee1d0293f1637fa77a2c26912e0a03",
+            "content": "sha256:03591741d23875c6fd4212f57300594ae1880a052a55585ae606e44577992b06",
             "locator": {
-              "end": 61,
-              "kind": "line_range",
-              "start": 55
+              "kind": "symbol",
+              "name": "compile_admitted_capsule"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
-            "content": "sha256:e4d8d90cee918dc4771648da845eb6e9951b82429f3d684d973942c5fb9824d6",
+            "blob": "57ccf35179ee1d0293f1637fa77a2c26912e0a03",
+            "content": "sha256:b178ee708946a2472bef3c4f2c0ab990e1cddb42ed58b169488ccd8c261b36c3",
             "locator": {
-              "end": 134,
+              "end": 63,
               "kind": "line_range",
-              "start": 106
+              "start": 60
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "386b91bcc0de26be4fa223fdfcebd84df7091ce6",
+            "content": "sha256:ac23c18c452336757989b9964e7c9a1138617657a45322bde5bb27054bb4a0c8",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 188
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/shared_block.py"
           },
           "kind": "code"
         }

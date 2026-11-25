@@ -8,9 +8,9 @@
   },
   "applicability": "Every role a start operation launches, on every harness and in every kind of start: parentless, parented above a leaf, parented leaf seat, seat set, held seat opening, successor, step-up and the restore of a saved launch.",
   "conditions": [
-    "The projection's field list is defined once in code and the tests derive from it.",
-    "The projection stays within the token budget its role records, counted with the vendored vocabulary on the compact JSON as it stands in the message.",
-    "The projection's route values are the ones the role reads before its first tool call."
+    "The projection's field list (PROJECTION_FIELDS and HOST_FIELDS) is defined once in code and excludes long prose fields retained in .handover.json.",
+    "The projection stays within its role token budget and the complete Turn-1 prompt stays within PHASE_1_WIRE_TOKEN_CEILINGS plus approved appendix allowances (600 held, 900 launch) under o200k_base.",
+    "The static prefix before ## Launch Context is byte-identical across launches of the same role and operation, and the artifact locator line stands last."
   ],
   "exclusions": [
     "Messages after the first.",
@@ -29,9 +29,20 @@
     "leaf": "260928-MIK-L185",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A role first message contains its once-only immediate instructions and bounded reachable handover projection while the complete canonical handover is published immutably for later reads.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "A role first message places its static brief, direction, AR tool guidance, role-filtered shared block, and compiled capsule before the ## Launch Context boundary, keeps its inline handover projection within the role token budget while publishing the complete canonical handover immutably, caps direct and held opening appendices by settings.role_message_limit with immutable offload sidecars, appends the handover artifact locator line as a trailing suffix, and stays within the Phase 1 wire-token ceilings.",
+  "supersedes": [],
+  "title": "Turn-1 role messages lead with static instructions and bound dynamic context",
+  "writer": {
+    "at": "2026-11-25T20:08:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+    "task": "261124-CAP"
+  }
 }

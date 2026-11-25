@@ -97,9 +97,13 @@ An Investigator receipt address requires its exact request UUID.
 
 
 
+
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [7]
 
+
+
 - Through leaf/taskless routes checks restoration/refusal, exact advice and unchanged receipt/foreign link target. [9]
+
 
 
 Past-epoch account (retained wording): - Pins delivered worker doctrine: freeze the candidate and hand it directly to the leaf's Reviewer; the Manager receives no routine report notice. A dashboard-started Worker has no parent, and a finished turn is not AR acceptance.
@@ -124,7 +128,9 @@ A receipt moved by Start between inspection and reading is treated as absent.
 - Decision, artifacts, predecessor liveness and outcome reconciliation preserve saved identity. [16]
 
 
+
 - Ordinary Retry enters restoration for a recorded artifact reference. The restore path checks its targets and validates frozen detail references before writing. [17]
+
 
 
 

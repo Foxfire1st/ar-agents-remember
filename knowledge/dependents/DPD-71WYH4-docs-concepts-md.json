@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "4ebb429de6b3034e7bff1922b3f8982b2ccafa07",
+    "codeTree": "dbad7514a44165de3d365b22e5de15dbf19a9cbb",
     "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "docs/concepts.md remains accurate after the mcp>=1.30.0,<2 floor change in mcp/pyproject.toml because the memory concepts, briefs, index, and gate contracts are unchanged.",
-    "task": "261125-DEP-L1",
+    "statement": "Confirmed on post-sync CAP-L2 candidate dbad7514 (rebased onto main 3336406ea / BUG-L37): docs/concepts.md preserves BUG-L37's cancelled tool-log and worker-thread concepts as well as CAP-L2's unchanged high-level concept definitions.",
+    "task": "261124-CAP-L2",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 22,
+  "revision": 23,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -196,7 +196,7 @@
       "path": "mcp/src/agents_remember/application/tool_answer_log.py"
     },
     {
-      "blob": "62215ea0a5252c997ca76c7b1680713485391419",
+      "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/role_reports.py"
     },
@@ -241,7 +241,7 @@
       "path": "mcp/src/agents_remember/cli/role_message_files.py"
     },
     {
-      "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+      "blob": "489999cf6e93695e868a9dbdf3d6becac4375052",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_handover_file.py"
     },
@@ -471,14 +471,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T20:08:06+01:00",
+    "at": "2026-11-25T21:08:40+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L1",
+    "leaf": "261124-CAP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b5f00ccb-ae71-451c-bfff-3ee2a7ac6155",
-    "task": "261125-DEP"
+    "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+    "task": "261124-CAP"
   }
 }

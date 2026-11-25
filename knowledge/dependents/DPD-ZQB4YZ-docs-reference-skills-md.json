@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "51a44523acb6c29c3a029c7dde4a35acb96595f3",
-    "commit": "3bbaf460317e8572583d884bc0791a219ad1bcfa",
+    "codeTree": "b60f09508b968b94502bfe295188d0da57858fb1",
+    "commit": "70a18acd683e44e6b99bbee07fe3fb6e07c505ed",
     "role": "curator",
-    "statement": "The skills reference's account of l-01-agent-lifecycles (eight role files, operations, templates, criteria, one role file and operation per role agent) still holds on b29f2e2; it states no per-role tool list, so the renewed manifest arrays leave it true. On code 51a44523 (gen-8 sync onto CAP-L1 and BUG-L26) the composition manifest's knowledge-use step list now reads 'for a record you need whole' in place of the source-inspection steps; the reference enumerates no step list, and its account of the canonical and packaged instruction trees still holds.",
-    "task": "261112-KNO-L4",
+    "statement": "Confirmed against CAP-L2 candidate b60f0950: docs/reference/skills.md remains accurate because CAP-L2 made zero edits to skills/l-01-agent-lifecycles Markdown or the skill reference catalog.",
+    "task": "261124-CAP-L2",
     "uncommitted": true
   },
   "document": "docs/reference/skills.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
     },
     {
-      "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+      "blob": "6a63e05ad44a1cc23203aa0cc2ca606714fb6bf6",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/skill_resources/provider.py"
     },
@@ -70,5 +70,16 @@
       "kind": "file",
       "path": "scripts/instruction_renewal/plan.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T20:08:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+    "task": "261124-CAP"
+  }
 }

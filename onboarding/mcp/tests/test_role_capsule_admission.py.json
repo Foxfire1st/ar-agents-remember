@@ -179,12 +179,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
-            "content": "sha256:d83e2d57f2e37404de9d44a0dd51cfb781229885bb74bc9f34618a97fcef8b59",
+            "blob": "57ccf35179ee1d0293f1637fa77a2c26912e0a03",
+            "content": "sha256:03591741d23875c6fd4212f57300594ae1880a052a55585ae606e44577992b06",
             "locator": {
-              "end": 134,
+              "end": 138,
               "kind": "line_range",
-              "start": 93
+              "start": 95
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },
@@ -192,12 +192,12 @@
         },
         {
           "anchor": {
-            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
-            "content": "sha256:3582dec10d76cdc696f982f5c45c9c7cbe2a72abc7c9986c7c0633ec40c6983c",
+            "blob": "57ccf35179ee1d0293f1637fa77a2c26912e0a03",
+            "content": "sha256:7be3af594bb85101f4afaa7916d8c206942a3c220b384c15d5ff6e61b8a485d8",
             "locator": {
-              "end": 90,
+              "end": 92,
               "kind": "line_range",
-              "start": 46
+              "start": 47
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },
@@ -292,12 +292,12 @@
         },
         {
           "anchor": {
-            "blob": "d61a196728db8ea461a40f2efeebedf3bfb06078",
+            "blob": "f546a3e643d615e8d87e13e03715d706921a1fa4",
             "content": "sha256:880ffd52d0f2cf6093efe6e5f093589d3e3edfa8b37b6fa09509de74588f29ad",
             "locator": {
-              "end": 335,
+              "end": 336,
               "kind": "line_range",
-              "start": 308
+              "start": 309
             },
             "path": "mcp/tests/test_role_capsule_manifest_edges.py"
           },
@@ -305,12 +305,12 @@
         },
         {
           "anchor": {
-            "blob": "d61a196728db8ea461a40f2efeebedf3bfb06078",
+            "blob": "f546a3e643d615e8d87e13e03715d706921a1fa4",
             "content": "sha256:bf01b4cfe9a9ddff0257e9be358654f654a4d12a74732e1238bf18e5694a751e",
             "locator": {
-              "end": 397,
+              "end": 398,
               "kind": "line_range",
-              "start": 373
+              "start": 374
             },
             "path": "mcp/tests/test_role_capsule_manifest_edges.py"
           },
@@ -318,12 +318,12 @@
         },
         {
           "anchor": {
-            "blob": "d61a196728db8ea461a40f2efeebedf3bfb06078",
+            "blob": "f546a3e643d615e8d87e13e03715d706921a1fa4",
             "content": "sha256:eb7345d4fc079e261dd4ccdcb3ed61ae3cfe65bc41d803f477c155d7ea148a7b",
             "locator": {
-              "end": 438,
+              "end": 439,
               "kind": "line_range",
-              "start": 400
+              "start": 401
             },
             "path": "mcp/tests/test_role_capsule_manifest_edges.py"
           },
@@ -331,12 +331,12 @@
         },
         {
           "anchor": {
-            "blob": "d61a196728db8ea461a40f2efeebedf3bfb06078",
+            "blob": "f546a3e643d615e8d87e13e03715d706921a1fa4",
             "content": "sha256:a5bd4a6fd2dcc6ff5a853f1d1b99e516dd8a5370050380bdaead27722c897a0c",
             "locator": {
-              "end": 449,
+              "end": 450,
               "kind": "line_range",
-              "start": 441
+              "start": 442
             },
             "path": "mcp/tests/test_role_capsule_manifest_edges.py"
           },
@@ -344,12 +344,12 @@
         },
         {
           "anchor": {
-            "blob": "d61a196728db8ea461a40f2efeebedf3bfb06078",
+            "blob": "f546a3e643d615e8d87e13e03715d706921a1fa4",
             "content": "sha256:d30a4ab35d65243f4831bef69681de90577243916998e9dc48e4e03bfd01ce5b",
             "locator": {
-              "end": 479,
+              "end": 480,
               "kind": "line_range",
-              "start": 452
+              "start": 453
             },
             "path": "mcp/tests/test_role_capsule_manifest_edges.py"
           },
@@ -357,12 +357,12 @@
         },
         {
           "anchor": {
-            "blob": "d61a196728db8ea461a40f2efeebedf3bfb06078",
+            "blob": "f546a3e643d615e8d87e13e03715d706921a1fa4",
             "content": "sha256:43e607fc7ca33f080a794c760c1014fa2cbfed04c0ecea65b79028012ac92a46",
             "locator": {
-              "end": 530,
+              "end": 531,
               "kind": "line_range",
-              "start": 482
+              "start": 483
             },
             "path": "mcp/tests/test_role_capsule_manifest_edges.py"
           },

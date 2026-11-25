@@ -72,7 +72,9 @@ Selected-task Investigator starts reconcile their exact request instead of adopt
 ## Refreshed current evidence
 
 
+
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [4]
+
 
 
 

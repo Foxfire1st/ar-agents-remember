@@ -49,8 +49,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
-            "content": "sha256:95473e1da9c3027a19991c55617d9011c5c561e7d847352b7f7a018f5f21ea66",
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+            "content": "sha256:d9c3eee4a7c2b6fcb19706828dbc8d20f80a70dd8b9cbf91cb60eefe233bdc33",
             "locator": {
               "kind": "symbol",
               "name": "compose_launch_instructions"
@@ -66,7 +66,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
             "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
             "locator": {
               "kind": "symbol",
@@ -83,12 +83,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "blob": "5f6da7e9c840df9dc1a16d5efc2d6f75dd1cebd2",
             "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
             "locator": {
-              "end": 129,
+              "end": 132,
               "kind": "line_range",
-              "start": 114
+              "start": 117
             },
             "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
           },

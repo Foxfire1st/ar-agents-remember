@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "4ebb429de6b3034e7bff1922b3f8982b2ccafa07",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "b60f09508b968b94502bfe295188d0da57858fb1",
+    "commit": "70a18acd683e44e6b99bbee07fe3fb6e07c505ed",
     "role": "curator",
-    "statement": "docs/install/cursor.md remains accurate after bumping contract.json Node to 26.13.1 because the Cursor install guide hardcodes no Node release and its Bootstrap flow is unchanged.",
-    "task": "261125-DEP-L1",
+    "statement": "Confirmed against CAP-L2 candidate b60f0950: docs/install/cursor.md remains accurate because CAP-L2's launch-route opening offload changes preserve Cursor installation and launch configuration.",
+    "task": "261124-CAP-L2",
     "uncommitted": true
   },
   "document": "docs/install/cursor.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/application/caller_harness.py"
     },
     {
-      "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+      "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
@@ -57,14 +57,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T20:08:06+01:00",
+    "at": "2026-11-25T20:08:37+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L1",
+    "leaf": "261124-CAP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b5f00ccb-ae71-451c-bfff-3ee2a7ac6155",
-    "task": "261125-DEP"
+    "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+    "task": "261124-CAP"
   }
 }

@@ -88,9 +88,7 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
-
 - The frozen vocabulary and its completeness guard the vocabulary group pins. [1]
-
 
 - The manifest parser the shipped-manifest group exercises against the real file. [2]
 
@@ -105,7 +103,6 @@ No relevant documentation found after checking live sources.
 No sibling-repository contract is exercised by these cases.
 
 No meaningful cross-repo references found.
-
 
 ### Repo-Internal References (continued)
 

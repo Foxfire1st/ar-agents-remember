@@ -49,7 +49,6 @@ second path is caught by the same expectation.
 
 Current source: FirstMessageMatrixTests derives its start cases from imported role, harness, parent, leaf and taskless tables and checks emitted or held-opening messages for parentless, parented, held-seat, set-start, successor, step-up and restored launches. Separate controls require an admitted shared block exactly once and no heading when the source is undeclared.
 
-
 - Which emitted paths must exist is decided by one predicate in the shared first-message support. [2]
 
 - The guard case checks whole whitespace paths, send snapshots and absence of a required snapshot. [3]

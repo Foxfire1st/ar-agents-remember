@@ -375,12 +375,12 @@
         },
         {
           "anchor": {
-            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
             "content": "sha256:80aef136984e05536c634823ad28f449d12a06370b01b623979575f68b8ce9c7",
             "locator": {
-              "end": 270,
+              "end": 272,
               "kind": "line_range",
-              "start": 232
+              "start": 234
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
@@ -388,12 +388,12 @@
         },
         {
           "anchor": {
-            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
             "content": "sha256:3516329f6059493302ec76d225836a50edce02047537681817ca9bed27877f5b",
             "locator": {
-              "end": 414,
+              "end": 416,
               "kind": "line_range",
-              "start": 367
+              "start": 369
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
@@ -414,12 +414,12 @@
         },
         {
           "anchor": {
-            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
             "content": "sha256:cb91f3750f43ab30ba438bf51309fbc88be8b2f4a226faf22715731159bc07f4",
             "locator": {
-              "end": 984,
+              "end": 993,
               "kind": "line_range",
-              "start": 934
+              "start": 943
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
@@ -427,12 +427,12 @@
         },
         {
           "anchor": {
-            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
             "content": "sha256:a6e03ae162ead1a55e19cd540059d13548454e11de187ad32117171984471bad",
             "locator": {
-              "end": 1027,
+              "end": 1036,
               "kind": "line_range",
-              "start": 1001
+              "start": 1010
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },

@@ -14,7 +14,9 @@ The instruction reaches the seat through the launch, not through the turn-end pa
 holds it at the three places a launch is visible:
 
 - the stored prompt is exactly the caller's prompt, a blank line, then `ACP_WAIT_INSTRUCTION`
-  (`f"{prompt}\n\n{ACP_WAIT_INSTRUCTION}"`), byte for byte;
+  (`f"{prompt}\n\n{ACP_WAIT_INSTRUCTION}"`), byte for byte, and `resolve_handover_envelope` verifies
+  the delivered prompt places the handover artifact locator line as the trailing `suffix` after that
+  stored body;
 - the stored message of an ACP seat is the plain seat's stored bytes plus `b"\n\n"` plus the
   instruction encoded — so the append is additive and changes nothing else about the launch;
 - a seat whose provider is **not** ACP never sees `WAITING FOR SUBAGENTS` in its saved

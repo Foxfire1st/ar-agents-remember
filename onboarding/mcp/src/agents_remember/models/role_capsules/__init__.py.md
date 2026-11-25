@@ -83,4 +83,5 @@ No sibling-repository contract consumes this package directly.
 No meaningful cross-repo references found.
 
 - The frozen DTO surface this package re-exports. Anchor: `CapsuleAdmittedFacts` `CapsuleCapsule` `CapsuleCompilationResult` `CapsuleBinding` [1]
+
 - The I/O boundary this package deliberately does not contain. [2]

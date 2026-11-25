@@ -1,0 +1,4934 @@
+{
+  "closed": true,
+  "leaf": "261124-CAP-L2",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-25T21:56:07+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261124-CAP-L2",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+      "task": "261124-CAP"
+    },
+    "reviewer": {
+      "at": "2026-11-25T21:56:07+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261124-CAP-L2",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "54ba7878-0ec2-5c74-99da-133a885696ec",
+      "task": "261124-CAP",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 2,
+    "tree": "6d034df5fdcbb3d157f613c3a84937da3abc53c1",
+    "verdictRef": "notes/reports/reviewer/54ba7878-0ec2-5c74-99da-133a885696ec/role-launch/261124-CAP-L2-memory-review-verdict-r2.md"
+  },
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-0KHTZ0",
+      "items": [
+        "sha256:36f3244df8a807f3f4aee81a4e7be5a74e0e81f7ec3d9bfbc20c07ab386246c1",
+        "sha256:bfc88f42b16b96db0edf3ca64b4ce862bba77c5699c32db005c70172cb6daecf"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_role_handover_locator.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "a6fbd7c4a1b9b0255de476c2cba32b9ff48f121c",
+          "path": "mcp/tests/test_role_handover_locator.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_handover_locator.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0KPWA4",
+      "items": [
+        "sha256:e7a55441e2bd7ed07b371fbe6c546530144f5bb3f8f6ffaf7a2ac61eefcb54b0"
+      ],
+      "reason": "Imports from role_handover_artifacts and role_opening_offload supporting restore_launch_files (governed by INV-87JRHY); carries no separate invariant.",
+      "subject": "hunk:sha256:e7a55441e2bd7ed07b371fbe6c546530144f5bb3f8f6ffaf7a2ac61eefcb54b0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0RYZAX",
+      "items": [
+        "sha256:d70c1c946d17e93e4cb847ec2bc70f49a6aa41e0b5c55910cf502abe4c750a78"
+      ],
+      "reason": "Imports and local nested-detail path/confinement helpers supporting compose_launch_instructions and validate_instruction_detail_artifacts (governed by INV-7KDG7C); carries no separate invariant.",
+      "subject": "hunk:sha256:d70c1c946d17e93e4cb847ec2bc70f49a6aa41e0b5c55910cf502abe4c750a78"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0VZ35X",
+      "items": [
+        "sha256:d455c5cb8173fb9339e2f6375b3d7d25b0f7f8bedb294d7bcf487306e50604f4"
+      ],
+      "reason": "Imports, shipped-skill URI prefix constant, and internal link-formatting helpers supporting bind_markdown_links and compact_skill_uri_links (governed by INV-ZA67WW); carries no separate invariant.",
+      "subject": "hunk:sha256:d455c5cb8173fb9339e2f6375b3d7d25b0f7f8bedb294d7bcf487306e50604f4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-10JNDA",
+      "items": [
+        "sha256:f764281e7104e45e9a6013cd2d8aeeb383d4835de7b729554d1f6027c5a8d547"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_handover_file.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "489999cf6e93695e868a9dbdf3d6becac4375052",
+          "path": "mcp/src/agents_remember/cli/role_handover_file.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_handover_file.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-16XD95",
+      "items": [
+        "sha256:aec210a8cab67674c91fee07d0e6317efc2bbb2a2abafba842091ddcaf454436"
+      ],
+      "reason": "Imports, shipped-skill URI prefix constant, and internal link-formatting helpers supporting bind_markdown_links and compact_skill_uri_links (governed by INV-ZA67WW); carries no separate invariant.",
+      "subject": "hunk:sha256:aec210a8cab67674c91fee07d0e6317efc2bbb2a2abafba842091ddcaf454436"
+    },
+    {
+      "disposition": "rerouted",
+      "examined": [
+        {
+          "id": "INV-40JW44",
+          "revision": 2
+        },
+        {
+          "id": "INV-7KDG7C",
+          "revision": 2
+        },
+        {
+          "id": "INV-MQ3K06",
+          "revision": 1
+        },
+        {
+          "id": "INV-WR3J18",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZA67WW",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-170KXF",
+      "items": [
+        "sha256:927d279d8906327c1d2092ebcbee13eb42fb9b6e0f1c5df1e46cec3b4aec5133"
+      ],
+      "reason": "Added routes mcp/src/agents_remember/application/role_capsules, mcp/src/agents_remember/application/skill_resources, mcp/src/agents_remember/worktrees, and scripts/agent_evals to cover new CAP-L2 realizations of INV-40JW44, INV-7KDG7C, and INV-ZA67WW; the family's joint guarantee is unchanged.",
+      "revision": 4,
+      "subject": "FAM-N36SWD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1BX0CC",
+      "items": [
+        "sha256:b4657e82544bc553e03a5bf1471774dbae145244ad3cc1d191eccc3053a48518"
+      ],
+      "reason": "Test-support imports and structural/projection assertion helpers for first-message test suites; carries no separate production invariant.",
+      "subject": "hunk:sha256:b4657e82544bc553e03a5bf1471774dbae145244ad3cc1d191eccc3053a48518"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+            "content": "sha256:fc155db31aff43ff2d6b402f2550a29e8fc0b1f027585d10f21ebd122f40b3a3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+            "content": "sha256:7152b9bb6fd4e457eb8393a3eb0e98a33ff3f54f739f0917db4ed72e909573a9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-QQR1B1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-1X1VG9",
+      "items": [
+        "sha256:a33da057d3c018a3d87d38c5eb596646fa399c0efacb5c02f151614faf7f42bd"
+      ],
+      "reason": "Re-anchored INV-7DMXZ3 entries at CAP-L2 candidate b60f0950 after Turn-1 wire optimization and test catalog updates; the invariant's obligation is unchanged.",
+      "revision": 4,
+      "subject": "INV-7DMXZ3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "827067ee212738575496bb1098f70239c6e1b7d5",
+            "content": "sha256:02cd390350994d205f131377e60c00825c35d6607422c17b83bb1fe16ce6116e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_developer_question_wording.py"
+          },
+          "before": {
+            "blob": "49a3e4fe90b444796a6706538cf0c09fe4618ee8",
+            "content": "sha256:35b775cddd63020ac6494e3236217fc7738ee3bf1d24340243a57863b2772392",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_developer_question_wording.py"
+          },
+          "id": "RLZ-GPQWQP"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-241DEV",
+      "items": [
+        "sha256:5e6e38152266cfdf4c4befcd9e20581bee032577b61434224a79a67a47ef8149"
+      ],
+      "reason": "Re-anchored INV-DHKR4G entries at CAP-L2 candidate b60f0950 after Turn-1 wire optimization and test catalog updates; the invariant's obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-DHKR4G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-30HZFS",
+      "items": [
+        "sha256:a0dff163054fe5b248b01ae6f11937f89b224f27b126981bdae04db6323274ec"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_instruction_links.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "72476b45772eef50c40f5c16400e213b150c682b",
+          "path": "mcp/src/agents_remember/cli/role_instruction_links.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_instruction_links.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
+            "content": "sha256:3f10ae98a4c8761409810abb12b5452035f0958e86103f6e6475a726e402539c",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_execution_reports"
+            },
+            "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+          },
+          "before": {
+            "blob": "62215ea0a5252c997ca76c7b1680713485391419",
+            "content": "sha256:3f10ae98a4c8761409810abb12b5452035f0958e86103f6e6475a726e402539c",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_execution_reports"
+            },
+            "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+          },
+          "id": "RLZ-AA1ZJM"
+        },
+        {
+          "after": {
+            "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
+            "content": "sha256:b7648e0f834e8414dcbd1b97a0002253f9f5a0d162f8ff49cac5e6678c8d9143",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 213
+            },
+            "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+          },
+          "before": {
+            "blob": "62215ea0a5252c997ca76c7b1680713485391419",
+            "content": "sha256:750163d382064732d0055cae8addbfdc8eb0e46b149f82892d466bbe3ed6e7ce",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 213
+            },
+            "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+          },
+          "id": "RLZ-KK0WAS"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-33WXHK",
+      "items": [
+        "sha256:9a3d9ea8d0a6e1e4fec70510fe0c16c7936dece11a043db4499d89fab85dbcb5"
+      ],
+      "reason": "Re-anchored RLZ-KK0WAS to lines 213-288 of role_reports.py after _launch_carrier excluded .details/** and Turn-1 offload sidecars from canonical execution reports; obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-29DEHG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3A61YF",
+      "items": [
+        "sha256:f7e2e67629390c1f9e58dcd53c24f6c19611eecadcf8f278fd864b120a3e4c60"
+      ],
+      "reason": "Typing import update supporting handover_envelope_candidates (governed by INV-87JRHY); carries no separate invariant.",
+      "subject": "hunk:sha256:f7e2e67629390c1f9e58dcd53c24f6c19611eecadcf8f278fd864b120a3e4c60"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-47NR7E",
+          "revision": 1
+        },
+        {
+          "id": "INV-9Z6T69",
+          "revision": 1
+        },
+        {
+          "id": "INV-T50898",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-3AD80X",
+      "items": [
+        "sha256:fd8021910e1e52c0cb569e21457d7eb7fe5f4c3ee85b1ce51a19dbc27348a409"
+      ],
+      "reason": "Examined all members of FAM-0TR1G5 against CAP-L2 candidate b60f0950; member realizations were reconciled or re-anchored without changing the family's joint guarantee or route coverage.",
+      "revision": 1,
+      "subject": "FAM-0TR1G5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b69d3490dd4cbae26101cbef030d91cbd25b6ea5",
+            "content": "sha256:7fada956f70a417c651709caab7e4cd879f0cc86f32f1b724a81835f80fc34b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "AcpInstructionLaunchTests.test_an_acp_seats_first_message_carries_the_wait_instruction"
+            },
+            "path": "mcp/tests/test_role_launch_acp_instruction.py"
+          },
+          "before": "absent",
+          "id": "PRF-SRE6T7"
+        },
+        {
+          "after": {
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+            "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+            "content": "sha256:f160230465540553045b0bd0c4e087c56fcc3e149b31c2d0ee3af4a68b0d6a0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-D5Z9J7"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-3AGQYZ",
+      "items": [
+        "sha256:7090b5466be75baaf06cfb301060363178233620ec43012394fea061bd2ff769"
+      ],
+      "reason": "Re-anchored RLZ-D5Z9J7 after _launch_prepared_role_session added direct opening offload and attached its resolving ACP launch proof test; obligation is unchanged. Evidence (cap-l2-inv-g841f9-proof): CAP-R02@v1 proof attachment; freeze report 261124-CAP-L2-worker-4b8d88e2-c142-5f3f-a063-d08bf0daeaf6.md (Attempt A2, tree b60f09508b968b94502bfe295188d0da57858fb1); Reviewer R2 CODE PASS verdict 261124-CAP-L2-route-review-verdict-r2.md",
+      "revision": 3,
+      "subject": "INV-G841F9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4bb2b5c79060fc9dbf38f851fb9b15b0e7abcd9e",
+            "content": "sha256:0137e4f1cb26545fd069eaf537235e7328f4d0307d867cf539f54c53a05922b4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "41e4f40f552f5e6b287bcd178bbc5cf6bc1c5dd7",
+            "content": "sha256:761670ec6cb8ba4ea9478a723ea465def1cc74ea698e152d608946d9ee2dd48d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-3B1GGZ",
+      "items": [
+        "sha256:39eeed3801f55e9773f8117b6ae375ec8306eda0ce14ebe9fbabcd67888f7534"
+      ],
+      "reason": "Re-anchored INV-BXWQRD entry on post-sync CAP-L2 candidate dbad7514 (rebased onto main 3336406ea / BUG-L37) after test-evidence-lanes.toml merge; the invariant's obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3BWNWW",
+      "items": [
+        "sha256:0a16d3d0844ff28e5dd57b9c90629781f0a84ad7d0e7b3bc7b5889391807cc8f"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_role_instruction_wording.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "3f4c470dea80a5ffe84c8e660b84f8600d6b5cca",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_instruction_wording.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3PFSF4",
+      "items": [
+        "sha256:9fcf5897a8066b946a0c35781013d53b8dd2c9858bbe9d2f32c4d06ff6a32218"
+      ],
+      "reason": "Imports, shipped-skill URI prefix constant, and internal link-formatting helpers supporting bind_markdown_links and compact_skill_uri_links (governed by INV-ZA67WW); carries no separate invariant.",
+      "subject": "hunk:sha256:9fcf5897a8066b946a0c35781013d53b8dd2c9858bbe9d2f32c4d06ff6a32218"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3WRJ30",
+      "items": [
+        "sha256:cabd1c7c7f0bddd01b040d343df202ee5371fe6eea6263d380eb40508e5bd580"
+      ],
+      "reason": "Reviewed test_role_message_wording.py.md against CAP-L2 wording test adjustments; card prose remains accurate with no behavior change.",
+      "sources": [
+        {
+          "blob": "b16ddce247baeef0c2507c30e3814ad2992f3397",
+          "path": "mcp/tests/test_role_message_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_message_wording.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-42GBGV",
+      "items": [
+        "sha256:6092644ae6d956c9d47bff1edb6ad1480ba918eaed0348c1079850e8a66e7c2a"
+      ],
+      "reason": "Imports, shipped-skill URI prefix constant, and internal link-formatting helpers supporting bind_markdown_links and compact_skill_uri_links (governed by INV-ZA67WW); carries no separate invariant.",
+      "subject": "hunk:sha256:6092644ae6d956c9d47bff1edb6ad1480ba918eaed0348c1079850e8a66e7c2a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-452MYA",
+      "items": [
+        "sha256:9db9e051c94c1a39c35d62ce4d449e57add392d42c4ff32476a4f6982a57e023"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/application/overview for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "57ccf35179ee1d0293f1637fa77a2c26912e0a03",
+          "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+        },
+        {
+          "blob": "386b91bcc0de26be4fa223fdfcebd84df7091ce6",
+          "path": "mcp/src/agents_remember/application/role_capsules/shared_block.py"
+        },
+        {
+          "blob": "487170f65289d19227d8e1f14afa8663fa1ca276",
+          "path": "mcp/src/agents_remember/application/role_capsules/wire_budget.py"
+        },
+        {
+          "blob": "6a63e05ad44a1cc23203aa0cc2ca606714fb6bf6",
+          "path": "mcp/src/agents_remember/application/skill_resources/provider.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-4GMG1K",
+      "items": [
+        "sha256:bfe6e10fe3a058e286c955b0db60d39ed1079cda5077565cbb72904c8fcbfea0"
+      ],
+      "reason": "Reconfirmed docs/design/python-evidence-system.md on post-sync CAP-L2 candidate dbad7514 (676 unit-regression / 826 total modules); seven-lane and lifecycle design remains accurate.",
+      "revision": 17,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4JPTWD",
+      "items": [
+        "sha256:7e8bea2e8b2acd97c725582d4e30e189254e91a002df78370edf7d7d3894afb7"
+      ],
+      "reason": "Standard imports and __all__ export supporting durable_composition_corpus_root (governed by INV-ZA67WW); carries no separate invariant.",
+      "subject": "hunk:sha256:7e8bea2e8b2acd97c725582d4e30e189254e91a002df78370edf7d7d3894afb7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4MJ2W2",
+      "items": [
+        "sha256:c504be1c1d0c14308881cf0dd98114629991dc2bb4968fb3536936b1c22a3535"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/worktrees/overview for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
+          "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/overview"
+    },
+    {
+      "because": [
+        {
+          "id": "CAP-R02",
+          "packet": "requirements/CAP-R02-v1-mechanical-turn-1-wire-optimization-kv-prefix-offload-and-gate.md",
+          "task": {
+            "path": "261124_role-capsule-and-turn-1-context-optimization",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+            "content": "sha256:2b586aa307f25e74c68d833793298d3b6b03df159684d8aa0a3529b85a98bfc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_replay_tamper_symlink_and_locator_rebind"
+            },
+            "path": "mcp/tests/test_role_wire_token_budgets.py"
+          },
+          "before": "absent",
+          "id": "PRF-25YFTQ"
+        },
+        {
+          "after": {
+            "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+            "content": "sha256:425d54709491cddcb98f70d5dc1a9bd8f15b8bff8aaaed1df810e6d50bc1ab9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_opening_message_sidecar_restore_and_refusals"
+            },
+            "path": "mcp/tests/test_role_wire_token_budgets.py"
+          },
+          "before": "absent",
+          "id": "PRF-4P44X9"
+        },
+        {
+          "after": {
+            "blob": "5f6da7e9c840df9dc1a16d5efc2d6f75dd1cebd2",
+            "content": "sha256:ef7bef43638cc089a461f84dfdc5e901a662004017910adb87ac2ee88eb10b98",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_handover_envelope"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "before": "absent",
+          "id": "RLZ-6YSRC5"
+        },
+        {
+          "after": {
+            "blob": "489999cf6e93695e868a9dbdf3d6becac4375052",
+            "content": "sha256:30a50faf7be8858080ed4ba34e818bf7b52e323afa125490f0e5b6ac1a9c16c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_checked_handover_file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_file.py"
+          },
+          "before": "absent",
+          "id": "RLZ-DSA9VX"
+        },
+        {
+          "after": {
+            "blob": "4a2b44cfec79480593fdbf45c5a08f224c4fb1db",
+            "content": "sha256:abd8c0d78cf3351ec9fe33a1534c8c74cca60ddb5846be05b19c2e1bc17637d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore_launch_files"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_restore.py"
+          },
+          "before": "absent",
+          "id": "RLZ-RAVVB7"
+        },
+        {
+          "after": {
+            "blob": "489999cf6e93695e868a9dbdf3d6becac4375052",
+            "content": "sha256:ccbdba8f1dea4f864dd1bc19104b272b3fe8a0dde352068185158515be77c84b",
+            "locator": {
+              "kind": "symbol",
+              "name": "handover_envelope_candidates"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_file.py"
+          },
+          "before": "absent",
+          "id": "RLZ-VPZWMH"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-4QTAG4",
+      "items": [],
+      "reason": "Strengthened INV-87JRHY to cover dual-boundary handover_envelope_candidates/resolve_handover_envelope verification, complete-file diagnostic priority, and openingMessageArtifact preflight and restoration. Evidence (cap-l2-inv-87jrhy): CAP-R02@v1 AC-4; freeze report 261124-CAP-L2-worker-4b8d88e2-c142-5f3f-a063-d08bf0daeaf6.md (Attempt A2, tree b60f09508b968b94502bfe295188d0da57858fb1); Reviewer R2 CODE PASS verdict 261124-CAP-L2-route-review-verdict-r2.md",
+      "revision": 3,
+      "subject": "INV-87JRHY"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4SDGDA",
+      "items": [
+        "sha256:3a5353e96f196d6f2d8a9f6e35f8cb5f93b6e37375d2fae828d802c943e7f7f6",
+        "sha256:7dfa20f0d718693627296ee41ff5d8187b8cae3798a3d7d8d76bbbd232abb0f3",
+        "sha256:f0b778d5a0088b34a559eac05f78892d6b67ab474a8991732adc1d1fca6c42c8",
+        "sha256:f52fdb1447aca0f8f4f17b6410ce8db8c6a8999651ca631cac3fa80ef095f675"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/application/role_capsules/compilation.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "57ccf35179ee1d0293f1637fa77a2c26912e0a03",
+          "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/role_capsules/compilation.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-524DT9",
+      "items": [
+        "sha256:09713c2fd9e2d85fa8d3c8423b580aaf3154f2652f6b58183587604272cfc295"
+      ],
+      "reason": "Imports, shipped-skill URI prefix constant, and internal link-formatting helpers supporting bind_markdown_links and compact_skill_uri_links (governed by INV-ZA67WW); carries no separate invariant.",
+      "subject": "hunk:sha256:09713c2fd9e2d85fa8d3c8423b580aaf3154f2652f6b58183587604272cfc295"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5Q1WFB",
+      "items": [
+        "sha256:afec05361f9db4eb40665dec0e018f66eac16061d7649ec29e9e6d434c2e19f3"
+      ],
+      "reason": "Standard imports and __all__ export supporting durable_composition_corpus_root (governed by INV-ZA67WW); carries no separate invariant.",
+      "subject": "hunk:sha256:afec05361f9db4eb40665dec0e018f66eac16061d7649ec29e9e6d434c2e19f3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5QZJET",
+      "items": [
+        "sha256:5c85c27948d3ae0b52868ea221d1a8185ef70e70aaf8c0273d92ad261b108f1f"
+      ],
+      "reason": "Test-support imports and structural/projection assertion helpers for first-message test suites; carries no separate production invariant.",
+      "subject": "hunk:sha256:5c85c27948d3ae0b52868ea221d1a8185ef70e70aaf8c0273d92ad261b108f1f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-696JDP",
+      "items": [
+        "sha256:b1ab5fbdf79acac8ad390c0061a0b019ec4004f089ce88998adf0e9e5bb3dfdb"
+      ],
+      "reason": "Authored new onboarding card and sidecar for mcp/src/agents_remember/application/role_capsules/wire_budget.py introduced in CAP-L2 candidate b60f0950.",
+      "sources": [
+        {
+          "blob": "487170f65289d19227d8e1f14afa8663fa1ca276",
+          "path": "mcp/src/agents_remember/application/role_capsules/wire_budget.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/role_capsules/wire_budget.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cc7adb60be358cb33f7861af8a987c3ce1bd6663",
+            "content": "sha256:503e1aadceb778bf53ca02ea53a4f45da8d7e96afea7b5181115f2409d0698d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_composition_manifest_role_tools_match_allowlists_and_runtime_copy"
+            },
+            "path": "mcp/tests/test_role_tool_scope.py"
+          },
+          "before": "absent",
+          "id": "PRF-D9FNM8"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-6C7KX1",
+      "items": [
+        "sha256:3d8f6e49cd2d7a281c21554efe912b3a050a6df19b68e3477ac7704db2326298"
+      ],
+      "reason": "Refreshed CAP-R02@v1 AC-8 regression proof PRF-D9FNM8 (test_composition_manifest_role_tools_match_allowlists_and_runtime_copy) onto merged post-sync test_role_tool_scope.py blob cc7adb60 (candidate 8af62868); the invariant's obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-KYKYPR"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6NCT06",
+      "items": [
+        "sha256:0375c744564316969bfd0be5a858c349f6e7264626e00263ea6bf99b24df1514",
+        "sha256:147e21e0b0dd53e5fe6b66f10169c85b7adba57ff04c4f6f565c413c3a811bde",
+        "sha256:1cdf7bc8befa60b10ba719f0729a2b3f07f530a021d65bab53d980cf01c9aed8",
+        "sha256:2e50c1d37d5b1387b1127caf2ae6033e17d27a35fb1ab10c7a9bb7c460c13e4a",
+        "sha256:353d69fa025e774466a30fb7352afb53c9249ab86058635b7740fe9ce6c68efc",
+        "sha256:49f15c41599ad3563447569fad1c11ca75c954cb7d1e30dc768ad85ace6b0ab6",
+        "sha256:7305e46b4a3c7b583b5813f2dfae59ece0d1539e8ed73c0e49dbe59a70680151",
+        "sha256:b3d41c50537e161058901af4bb00927b75f898557e209b60f09b62f9b9757cef",
+        "sha256:cbdd35df6a74c6da530631b6b39998457263689061ab3a16543c9b23c959a16a",
+        "sha256:cd8f3d361792c62dc9ba7d6b9729fcc813a7336880d3d92fa29d2e63188c03db",
+        "sha256:f11fddc2a0801e30ac61a244fddaf48d7c6efcddcc749956d8a3a6451c9365fc"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_role_instruction_wording_handover.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "9da02ef4118eb49c317a7faed1ae09823335257e",
+          "path": "mcp/tests/test_role_instruction_wording_handover.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_instruction_wording_handover.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6X24GS",
+      "items": [
+        "sha256:25beb0771fa38cd7f82922bf1759f2ddfaf347424b949988ea3b834931d62f89"
+      ],
+      "reason": "Imports and local nested-detail path/confinement helpers supporting compose_launch_instructions and validate_instruction_detail_artifacts (governed by INV-7KDG7C); carries no separate invariant.",
+      "subject": "hunk:sha256:25beb0771fa38cd7f82922bf1759f2ddfaf347424b949988ea3b834931d62f89"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7046XN",
+      "items": [
+        "sha256:4b0354a67dc0fbba39a9334a0d7bde8ba0563034b381dea51b1c040fb4f54de7",
+        "sha256:932a6e89fed57b4103a782b3e3d22282b6938636cccb080e73638e5a4be9b272",
+        "sha256:a580600c3403caa8e267ddeb205c9e058b1ea839536ef86dc73a18e692db19a2",
+        "sha256:a7e2a47b43020709750be4770b34299d3d89d480fb1c54101768742415fd6462"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_role_launch_acp_instruction.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "b69d3490dd4cbae26101cbef030d91cbd25b6ea5",
+          "path": "mcp/tests/test_role_launch_acp_instruction.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_launch_acp_instruction.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
+            "content": "sha256:231462c0f69b19a6c4d9fce70c209d5af66dc7649830bd96cf1dc8e16fa71a4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORKSPACE_FIELDS"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_projection.py"
+          },
+          "before": {
+            "blob": "10fb7a51df0dc168eef360291e299855421627b7",
+            "content": "sha256:231462c0f69b19a6c4d9fce70c209d5af66dc7649830bd96cf1dc8e16fa71a4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORKSPACE_FIELDS"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_projection.py"
+          },
+          "id": "RLZ-94HJ1J"
+        },
+        {
+          "after": {
+            "blob": "4bb2b5c79060fc9dbf38f851fb9b15b0e7abcd9e",
+            "content": "sha256:0137e4f1cb26545fd069eaf537235e7328f4d0307d867cf539f54c53a05922b4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "41e4f40f552f5e6b287bcd178bbc5cf6bc1c5dd7",
+            "content": "sha256:761670ec6cb8ba4ea9478a723ea465def1cc74ea698e152d608946d9ee2dd48d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "60ff7d074cf59627c9240029892da48254ae0f1e",
+            "content": "sha256:997ce9327105a64a3d026015ccf7c4d3a01a4b414f69e8529b54703e4d64a0e1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "1d6be1d0f663db6e1c020b551df3eec199056488",
+            "content": "sha256:c52cb332453efa3b3ce503e8346df87fc8b1e28b99b1443e052b1512d800149e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-712XVC",
+      "items": [
+        "sha256:c26e2e327c3bdad67ef734f418f5e1382c1688719f5c58074ad4b038c0327b5c"
+      ],
+      "reason": "Re-anchored INV-T8672G entries on post-sync CAP-L2 candidate dbad7514 (rebased onto main 3336406ea / BUG-L37) after test catalog merges; the invariant's obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-7HVMXS",
+      "items": [
+        "sha256:400828ab480d346c13fdc4d0fe842b8dab29ecde9f5a0ecc3add4bf788021a0a"
+      ],
+      "reason": "Recorded DPD-21GMJ5 revision 10 on post-sync CAP-L2 candidate 8af62868 (main 3ee8f6ad5 / DEP-L1 + CAP-L2); Cursor installation and launch configuration remain accurate.",
+      "revision": 10,
+      "subject": "DPD-21GMJ5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1866eaa3a2c5a7a312f9f2f690697fa7914a7d15",
+            "content": "sha256:bacdefd5d070cb6983a3f4e5d6779049335b42e21716be39c82125498879fb91",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
+            "content": "sha256:6eed23ad423ed5702f143a24fff1b097ac49aba8d51aa8fb6ffaa48812812edb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-45D08P"
+        },
+        {
+          "after": {
+            "blob": "1866eaa3a2c5a7a312f9f2f690697fa7914a7d15",
+            "content": "sha256:d978199794e7d4da26ff9f5485d80bc07bebf8ca36115cb94b84d03f7587add1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_return_address"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
+            "content": "sha256:d978199794e7d4da26ff9f5485d80bc07bebf8ca36115cb94b84d03f7587add1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_return_address"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-CDC7AE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7T0BZN",
+      "items": [
+        "sha256:0c7b12556a1df8e6a76d5bc2ea45fe0818129511a2bbb499436e928f6fc7b8ef"
+      ],
+      "reason": "Re-anchored INV-3XH6Q0 entries at CAP-L2 candidate b60f0950 after Turn-1 wire optimization and test catalog updates; the invariant's obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-3XH6Q0"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-AV4AMJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-B31E3G",
+          "revision": 1
+        },
+        {
+          "id": "INV-Q9AV3B",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZBKDZR",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-7XYRGN",
+      "items": [
+        "sha256:eac470002a5bc43475357c07e00cc0ea85cc21968fd0ec0a2d3ada29e87f7b06"
+      ],
+      "reason": "Examined all members of FAM-40M4RD against CAP-L2 candidate b60f0950; member realizations were reconciled or re-anchored without changing the family's joint guarantee or route coverage.",
+      "revision": 1,
+      "subject": "FAM-40M4RD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-83CK8T",
+      "items": [
+        "sha256:10e55eebef94aca6a0f7a55710ceaf76b254a9dd7c473713a51a146e1ebec03f",
+        "sha256:ca48b4ac44d11daed08916d68817059912a91a5fd316dd8b4906cb701ada778a",
+        "sha256:ceafbea8c19376aedb8215163d63d0035f50e32e434ec4c942b9311037f529ae"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_curator_delivery_contracts.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
+          "path": "mcp/tests/test_curator_delivery_contracts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_curator_delivery_contracts.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-83ZRF2",
+      "items": [
+        "sha256:39d189e381813c8f32c14eae4d9f99bdfac68d08106eed344d85ba0c2202d16e",
+        "sha256:8b441a768046e3e0ce1f8e3e744c7d023cd3059f36d2cdd1815e4cfddd7ad515"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_role_first_message.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "722b2bb3bd05b4cd2b4a498a5ad7861346938703",
+          "path": "mcp/tests/test_role_first_message.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_first_message.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-887Y4N",
+      "items": [
+        "sha256:4a3f6f8211d72058f147ef20eb7fec909512cffd1c0336518e88b732c367d66a"
+      ],
+      "reason": "Reconfirmed docs/guides/review-page-and-explainer.md against CAP-L2 candidate b60f0950; review page and explainer guidance remains accurate.",
+      "revision": 12,
+      "subject": "DPD-PMZ21Z"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8E23WR",
+      "items": [
+        "sha256:658c22514e6295e75c38e9f8fb9273b5b24e589338bdd76eb6a5fa4af7e037db"
+      ],
+      "reason": "Imports and local nested-detail path/confinement helpers supporting compose_launch_instructions and validate_instruction_detail_artifacts (governed by INV-7KDG7C); carries no separate invariant.",
+      "subject": "hunk:sha256:658c22514e6295e75c38e9f8fb9273b5b24e589338bdd76eb6a5fa4af7e037db"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-995JRD",
+      "items": [
+        "sha256:60667ec1fcd2627ecb20406f5e82b879ec8d1c758bc194c7e4709b2da2fea1f9"
+      ],
+      "reason": "Authored new onboarding card and sidecar for mcp/tests/test_role_wire_token_budgets.py introduced in CAP-L2 candidate b60f0950.",
+      "sources": [
+        {
+          "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+          "path": "mcp/tests/test_role_wire_token_budgets.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_wire_token_budgets.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9Z4T22",
+      "items": [
+        "sha256:31065ac18caf5c3ab0b949f712d7be36d75431aaef1447cc44496cf43a47a336",
+        "sha256:8cd90ab949bae6b93666529cf33e79b57674256b159568feb5c3d330d17acdb7",
+        "sha256:fd6d15c33f93410e606c4a90080debdc3c045ceec8599dc2fde5ba5cdb6c241e"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_l84_reviewer_criterion_delivery.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "240fcf3da7c36d8e7a152d0888ec13ed5ca3f3fe",
+          "path": "mcp/tests/test_l84_reviewer_criterion_delivery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_l84_reviewer_criterion_delivery.py"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-A5T1WB",
+      "items": [
+        "sha256:ba01fbacaaad15f07d3e785dcfe1d8fa60686a203812a9907c18f4faa853b328"
+      ],
+      "reason": "CAP-L2 did not alter permission-mode resolution, harness default lookup, or Paseo mode ownership; INV-7DMXZ3 only received a mechanical moved re-anchor on RLZ-QQR1B1 after Turn-1 opening offload was added to role_launch_routes.py, so the reconsider_when condition is not met.",
+      "subject": "reconsider:DEC-6BZSX5#1"
+    },
+    {
+      "because": [
+        {
+          "id": "CAP-R02",
+          "packet": "requirements/CAP-R02-v1-mechanical-turn-1-wire-optimization-kv-prefix-offload-and-gate.md",
+          "task": {
+            "path": "261124_role-capsule-and-turn-1-context-optimization",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "9da02ef4118eb49c317a7faed1ae09823335257e",
+            "content": "sha256:817bc4526c68cf0586ec756f8419ed569e27df8d52b73e76b4b239503ff7ea4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverTextWordingTests.test_developer_question_channel_matches_role_and_parent"
+            },
+            "path": "mcp/tests/test_role_instruction_wording_handover.py"
+          },
+          "before": {
+            "blob": "45a4f4f24c97efbe9b6fcef2683158c86a6fb28f",
+            "content": "sha256:bfd543f8f89f301f5c3eab6e35f8bba6a78a2237bbedc36f5b3ecdf48a3d3901",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverTextWordingTests.test_developer_question_channel_matches_role_and_parent"
+            },
+            "path": "mcp/tests/test_role_instruction_wording_handover.py"
+          },
+          "id": "PRF-18H967"
+        },
+        {
+          "after": {
+            "blob": "9da02ef4118eb49c317a7faed1ae09823335257e",
+            "content": "sha256:78fcf669fcbacbd3346a116d4a28cd00ab76c916481a3ef6f8b7eca47377fedf",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverTextWordingTests.test_owner_relation_routes_developer_questions_and_preserves_coordinators"
+            },
+            "path": "mcp/tests/test_role_instruction_wording_handover.py"
+          },
+          "before": {
+            "blob": "45a4f4f24c97efbe9b6fcef2683158c86a6fb28f",
+            "content": "sha256:3efde9b8c1fc990a5c0eb061c7c8c49e42667b72632334189d15e3803e8ee7c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverTextWordingTests.test_owner_relation_routes_developer_questions_and_preserves_coordinators"
+            },
+            "path": "mcp/tests/test_role_instruction_wording_handover.py"
+          },
+          "id": "PRF-8AD3VX"
+        },
+        {
+          "after": {
+            "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+            "content": "sha256:acaca9468c87ac2ea20e0fc8cfd468a2e12eb3253340c8121e9be06e81b272ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "WireTokenBudgetMatrixTests.test_conditional_first_read_dedup_and_four_case_developer_question_route"
+            },
+            "path": "mcp/tests/test_role_wire_token_budgets.py"
+          },
+          "before": "absent",
+          "id": "PRF-PHN9N9"
+        },
+        {
+          "after": {
+            "blob": "827067ee212738575496bb1098f70239c6e1b7d5",
+            "content": "sha256:393e9f2d9dd43c40978f3a8d4acd60736b12c1658217067ed2fe476e76ac38d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_owner_relation_keeps_peer_results_and_named_parent_occasions"
+            },
+            "path": "mcp/tests/test_developer_question_wording.py"
+          },
+          "before": {
+            "blob": "49a3e4fe90b444796a6706538cf0c09fe4618ee8",
+            "content": "sha256:393e9f2d9dd43c40978f3a8d4acd60736b12c1658217067ed2fe476e76ac38d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_owner_relation_keeps_peer_results_and_named_parent_occasions"
+            },
+            "path": "mcp/tests/test_developer_question_wording.py"
+          },
+          "id": "PRF-WW6328"
+        },
+        {
+          "after": {
+            "blob": "1866eaa3a2c5a7a312f9f2f690697fa7914a7d15",
+            "content": "sha256:bacdefd5d070cb6983a3f4e5d6779049335b42e21716be39c82125498879fb91",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
+            "content": "sha256:6eed23ad423ed5702f143a24fff1b097ac49aba8d51aa8fb6ffaa48812812edb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-2E88NK"
+        },
+        {
+          "after": {
+            "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
+            "content": "sha256:3848eeeb3ac65293abf48699cd5416a27657501e70e7bc701e67e15d42151431",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_projection.py"
+          },
+          "before": "absent",
+          "id": "RLZ-3A0K0B"
+        },
+        {
+          "after": {
+            "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
+            "content": "sha256:5a6d4cdad0e47152e929be19cda81e12ef0fba2ff5b03ac49ca0b23e00b7ce33",
+            "locator": {
+              "kind": "symbol",
+              "name": "first_read_paragraph"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_projection.py"
+          },
+          "before": "absent",
+          "id": "RLZ-TJS7TV"
+        },
+        {
+          "after": {
+            "blob": "1866eaa3a2c5a7a312f9f2f690697fa7914a7d15",
+            "content": "sha256:7239e89abf19a0e115b20e40550cab8f02158f841b9f839ba1434cfb9191030a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owner_relation"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
+            "content": "sha256:7239e89abf19a0e115b20e40550cab8f02158f841b9f839ba1434cfb9191030a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owner_relation"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-Y18EZK"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-AAVQEG",
+      "items": [
+        "sha256:861196d2e3c6debdb03e1fdebd6aeb94bb18fd2818d4f33c24891278d9ad8c14"
+      ],
+      "reason": "Replaced INV-8AMSGV to record that wire projections carry compact structured host.developerQuestionRoute while complete prose fields host.developerQuestions, host.ownerRelation, assignment, and canonicalTaskReportPath remain in .handover.json. Evidence (cap-l2-inv-8amsgv): CAP-R02@v1 AC-5; freeze report 261124-CAP-L2-worker-4b8d88e2-c142-5f3f-a063-d08bf0daeaf6.md (Attempt A2, tree b60f09508b968b94502bfe295188d0da57858fb1); Reviewer R2 CODE PASS verdict 261124-CAP-L2-route-review-verdict-r2.md",
+      "revision": 5,
+      "subject": "INV-8AMSGV"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AF6VM3",
+      "items": [
+        "sha256:a2e8dbc204a2cd0842c202b462086d8b2c3c1e64c313d977c60c7c561b9c363f"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_capsule_replay_integrity.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "ae4f0c7a72eef5d4f15704c71322f633ef63e16c",
+          "path": "mcp/tests/test_capsule_replay_integrity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_capsule_replay_integrity.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-AFY26C",
+      "items": [
+        "sha256:ce105234a349414b6489f2cb3717771864346cc0ea0a9e6f8e93f06b885a4d07"
+      ],
+      "reason": "Recorded DPD-71WYH4 revision 23 on post-sync CAP-L2 candidate 8af62868 (main 3ee8f6ad5 / DEP-L1 + CAP-L2); docs/concepts.md high-level definitions remain accurate.",
+      "revision": 23,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ATBP8E",
+      "items": [
+        "sha256:39a0b49225b9c609cbb36b732fb880e77a7ae9f8424c833ace858323699e43ec"
+      ],
+      "reason": "Imports, shipped-skill URI prefix constant, and internal link-formatting helpers supporting bind_markdown_links and compact_skill_uri_links (governed by INV-ZA67WW); carries no separate invariant.",
+      "subject": "hunk:sha256:39a0b49225b9c609cbb36b732fb880e77a7ae9f8424c833ace858323699e43ec"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BC54RW",
+      "items": [
+        "sha256:5bbb158f1ba821f48ab328504f30c59e091421d44dcb354d6f81e86493bae086"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_role_locator_replay.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "ef248ec6750f70864884b189f733464bd4fb5955",
+          "path": "mcp/tests/test_role_locator_replay.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_locator_replay.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-C2YAP6",
+      "items": [
+        "sha256:b33a61929d0d0dff6d4a4eb642185af3165698aaeba59a67bed7dce800e55d42"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/worktrees/role_reports.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
+          "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/role_reports.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9da02ef4118eb49c317a7faed1ae09823335257e",
+            "content": "sha256:9fc5d97043e99ec035c54ac1e7dcfbca385939e70a9e238cd312b36d4eadd21c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_handover_names_the_tool_server_the_two_tools_and_the_host"
+            },
+            "path": "mcp/tests/test_role_instruction_wording_handover.py"
+          },
+          "before": {
+            "blob": "45a4f4f24c97efbe9b6fcef2683158c86a6fb28f",
+            "content": "sha256:99d9a15544fa7a90438783ee67bc3d615605f7261eba294f99750b4d940a1d4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_handover_names_the_tool_server_the_two_tools_and_the_host"
+            },
+            "path": "mcp/tests/test_role_instruction_wording_handover.py"
+          },
+          "id": "PRF-ERFTQ2"
+        },
+        {
+          "after": {
+            "blob": "1866eaa3a2c5a7a312f9f2f690697fa7914a7d15",
+            "content": "sha256:478d8b57224d171a9c8822d7c56f57912adf83d71f17e9e4f68469543d6450ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "BRIEFS_SENTENCES"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
+            "content": "sha256:378541733deb789fdfbab42d885da34ec45bb3d3e9a81301d2604620506667ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "BRIEFS_SENTENCES"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-ZWCSVM"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-C482HB",
+      "items": [
+        "sha256:ff9e24333eb7f0d296df7fde6b0111973664deb1727e32e715ff16b73d6870ac"
+      ],
+      "reason": "Re-anchored INV-T50898 entries at CAP-L2 candidate b60f0950 after Turn-1 wire optimization and test catalog updates; the invariant's obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-T50898"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "722b2bb3bd05b4cd2b4a498a5ad7861346938703",
+            "content": "sha256:a78b55a02afd509f1526dcc0ee691d20998840affad111e810dd08e5d8b033b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parented_starts_carry_the_projection"
+            },
+            "path": "mcp/tests/test_role_first_message.py"
+          },
+          "before": {
+            "blob": "40e936a5a64a4ba311f2ed74f5a78acb3dcaccf8",
+            "content": "sha256:a78b55a02afd509f1526dcc0ee691d20998840affad111e810dd08e5d8b033b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parented_starts_carry_the_projection"
+            },
+            "path": "mcp/tests/test_role_first_message.py"
+          },
+          "id": "PRF-4MZBZX"
+        },
+        {
+          "after": {
+            "blob": "ed6069dab9790c9a5ccd42e20dedf71aec9b3195",
+            "content": "sha256:672df456e123bbed706a81f4f036718a3f5fac6151021976251604b62efec3d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "FirstMessageMatrixBase.check_message"
+            },
+            "path": "mcp/tests/role_first_message_support.py"
+          },
+          "before": {
+            "blob": "53645da0cf810c4a213db900271ea1fb9405d417",
+            "content": "sha256:5978d9f71b82bb9df802bf3093e88d2dac1fb9fcefa3ac8a7fea897067a8513a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FirstMessageMatrixBase.check_message"
+            },
+            "path": "mcp/tests/role_first_message_support.py"
+          },
+          "id": "RLZ-2M7CY2"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CKFYDE",
+      "items": [
+        "sha256:7bb09549a68846953abbe7475ea3397419c10f8bcbe62b5d1fa4d80b0668961e"
+      ],
+      "reason": "Re-anchored INV-JKD5DE entries at CAP-L2 candidate b60f0950 after Turn-1 wire optimization and test catalog updates; the invariant's obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-JKD5DE"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+            "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+            "content": "sha256:f160230465540553045b0bd0c4e087c56fcc3e149b31c2d0ee3af4a68b0d6a0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-XG75PH"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-D4JKZZ",
+      "items": [
+        "sha256:1947ede2a32203c11efb91c15a5258f511de1255769e25e09a6533a5b4a8dd4c"
+      ],
+      "reason": "Re-anchored INV-HE16XQ entries at CAP-L2 candidate b60f0950 after Turn-1 wire optimization and test catalog updates; the invariant's obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-HE16XQ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DKZ4G8",
+      "items": [
+        "sha256:304338ac624c0b77956cfd9d9dad1726e917483964eb435a4537ce943a644981",
+        "sha256:5c34cc6b3bdbaf659d33a0355301851f1db30e6a9f63ad8280c4886c5f618e7d",
+        "sha256:8abf6e7799e332ca4f64b5ad191d9f15fa7f923a44a7f75d1f043cd024a45a03"
+      ],
+      "reason": "Reviewed test_role_first_message_guards.py.md against CAP-L2 candidate b60f0950; card prose remains accurate with only whole-file reference anchor refreshes in its sidecar and no counted Markdown change.",
+      "sources": [
+        {
+          "blob": "4e9b881ef4d15bd1567425e805194547028c7c99",
+          "path": "mcp/tests/test_role_first_message_guards.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_first_message_guards.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "62b9825c34c8eaed6c25f6efb0a1ec482df693d1",
+            "content": "sha256:3b997d7c8e812d3b584c33737ddac69af36a8024f6823a127cfa25d0e264ce30",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeepLaunchFolderTests.test_the_note_and_the_path_it_names_tell_the_same_at_any_depth"
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "before": "absent",
+          "id": "PRF-5Y115C"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "75bbc12dd0ffc86722b2b62853713cc6e782dde7",
+            "content": "sha256:f0f9a5e4c0af53589b67b72220b5355183cdd3e1625994fa8a50537ca21ed247",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeepLaunchFolderTests.test_the_note_and_the_path_it_names_tell_the_same_at_any_depth"
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "id": "PRF-D6D8M2"
+        },
+        {
+          "after": {
+            "blob": "a6fbd7c4a1b9b0255de476c2cba32b9ff48f121c",
+            "content": "sha256:a95be9b36d5e3f5590ade3d75fb7988f8a577bc4b18379e9807f50358bf26463",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublishedArtifactTests.test_a_deep_report_folder_publishes_one_bounded_locator_that_opens_its_bytes"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "before": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:ce10d2ea2950f64bfbbfce7b6ca5e9b20adb14a8f90866af18faefaacb9793b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublishedArtifactTests.test_a_deep_report_folder_publishes_one_bounded_locator_that_opens_its_bytes"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "id": "PRF-NB9ZSY"
+        },
+        {
+          "after": {
+            "blob": "5f6da7e9c840df9dc1a16d5efc2d6f75dd1cebd2",
+            "content": "sha256:f7bb8dd0cd606f27a23eb30f7e91508fd2b5b12037b8d4b6101768a6034a66c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "artifact_line"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "before": {
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:d0d663bcfc091bc0986e96a22e6e35d8feb333fd372356726da4595410e9fb4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "artifact_line"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "id": "RLZ-HQ32SR"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-DNWPCZ",
+      "items": [
+        "sha256:ae5c70308c96eebfe411f564b30f4177a2c22dcf70b47a7b3a9f910fef2c6e4a"
+      ],
+      "reason": "Re-anchored INV-B31E3G entries after CAP-L2 moved the artifact line to the trailing suffix and replaced stale-worded PRF-D6D8M2 with an updated proof facet naming the last line; obligation is unchanged. Evidence (cap-l2-inv-b31e3g-proof): CAP-R02@v1 proof wording refresh; freeze report 261124-CAP-L2-worker-4b8d88e2-c142-5f3f-a063-d08bf0daeaf6.md (Attempt A2, tree b60f09508b968b94502bfe295188d0da57858fb1); Reviewer R2 CODE PASS verdict 261124-CAP-L2-route-review-verdict-r2.md",
+      "revision": 1,
+      "subject": "INV-B31E3G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1866eaa3a2c5a7a312f9f2f690697fa7914a7d15",
+            "content": "sha256:9a2bdb3d61b3c67008c482805e04d48bfb7a466b72f345394d8a0e9fb8abf445",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_document_read_metadata"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
+            "content": "sha256:98fbd77b7672b4cca22fe605161433c316af3e43afe3fc9d0b5a2144001621dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_document_read_metadata"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-091N3N"
+        },
+        {
+          "after": {
+            "blob": "1866eaa3a2c5a7a312f9f2f690697fa7914a7d15",
+            "content": "sha256:bacdefd5d070cb6983a3f4e5d6779049335b42e21716be39c82125498879fb91",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
+            "content": "sha256:6eed23ad423ed5702f143a24fff1b097ac49aba8d51aa8fb6ffaa48812812edb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-KABSJ7"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-E56J3S",
+      "items": [
+        "sha256:c64de152e837c6217a979fd246c9ee7345de3a6d24e5aa874cf0a0fdef9bc50e"
+      ],
+      "reason": "Re-anchored INV-QZP9PM entries at CAP-L2 candidate b60f0950 after Turn-1 wire optimization and test catalog updates; the invariant's obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-QZP9PM"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-QZP9PM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-EAZV8F",
+      "items": [
+        "sha256:f73fe831d168e5d5fb032f061ede1763c0976c73bed31e02fbc40bad0dfda51d"
+      ],
+      "reason": "Examined all members of FAM-XX4TGY against CAP-L2 candidate b60f0950; member realizations were reconciled or re-anchored without changing the family's joint guarantee or route coverage.",
+      "revision": 2,
+      "subject": "FAM-XX4TGY"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EE94JG",
+      "items": [
+        "sha256:7c9ff12006be18f8f6622c8cc23f5df9cd4d410f41367d65824387cad7a452c6"
+      ],
+      "reason": "Authored new onboarding card and sidecar for mcp/src/agents_remember/cli/role_opening_offload.py introduced in CAP-L2 candidate b60f0950.",
+      "sources": [
+        {
+          "blob": "986035016a79f5bbea388aee0cdff3f2a2c1c0c5",
+          "path": "mcp/src/agents_remember/cli/role_opening_offload.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_opening_offload.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
+            "content": "sha256:eb280fb438737f80f512e6673551d06abef185c4477bc26bada04d554f76014e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_receipt_needs_drain"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+            "content": "sha256:eb280fb438737f80f512e6673551d06abef185c4477bc26bada04d554f76014e",
+            "locator": {
+              "end": 1062,
+              "kind": "line_range",
+              "start": 1047
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-3FQBKH"
+        },
+        {
+          "after": {
+            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
+            "content": "sha256:eb320b19dc2840e1a33a2d43f39f86e455155f3fda7c36d95d3c42c48c5fc111",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_part"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+            "content": "sha256:eb320b19dc2840e1a33a2d43f39f86e455155f3fda7c36d95d3c42c48c5fc111",
+            "locator": {
+              "end": 747,
+              "kind": "line_range",
+              "start": 719
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-EJV806"
+        },
+        {
+          "after": {
+            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
+            "content": "sha256:b72b5860593416a2806743b752812fe17decd773dc8e948d6b5635f905796700",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_held_seat"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+            "content": "sha256:6d02b989490eb847d8aabc6e91bd19cf465d4588439e617e4cca2296f07ebaf1",
+            "locator": {
+              "end": 541,
+              "kind": "line_range",
+              "start": 482
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-XRBVHQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ETCT2N",
+      "items": [
+        "sha256:0c492bfec7e2fd7bea002601d707654375b9be63d1102d68cbf35d5168616037"
+      ],
+      "reason": "Re-anchored shifted line-range realizations in role_held_messages.py to their exact post-CAP-L2 symbols/ranges after adding held opening batch offload; delivery staging obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-ATA2Z7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-F0ZDD8",
+      "items": [
+        "sha256:81506890ff4c6e320d530aeab96a848f8c9648904fccb0e744768aee88baa916"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_role_tool_scope.py for post-sync CAP-L2 candidate 8af62868 (rebased onto main 3ee8f6ad5 / DEP-L1), preserving both DEP-L1 RLZ-7R0R1D/ref [6] and CAP-L2 AC-8 proof PRF-D9FNM8 on merged blob cc7adb60.",
+      "sources": [
+        {
+          "blob": "cc7adb60be358cb33f7861af8a987c3ce1bd6663",
+          "path": "mcp/tests/test_role_tool_scope.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_tool_scope.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-F6D7AV",
+      "items": [
+        "sha256:c67e1f040712742cbe8dcf1d30d8b833212d28ca506abf6d9c43d32e269dcf19"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_handover_restore.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "4a2b44cfec79480593fdbf45c5a08f224c4fb1db",
+          "path": "mcp/src/agents_remember/cli/role_handover_restore.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_handover_restore.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1866eaa3a2c5a7a312f9f2f690697fa7914a7d15",
+            "content": "sha256:9a2bdb3d61b3c67008c482805e04d48bfb7a466b72f345394d8a0e9fb8abf445",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_document_read_metadata"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
+            "content": "sha256:3767742eb1562b12475352ffa77c55c949963aa02e68c37efbdb7ef62757e084",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 380
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-702R9Y"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-F857TW",
+      "items": [
+        "sha256:6cf382b94fd70c83771ffa1c06b4fbd6e0fe08f15ec0707c005dd08142022398"
+      ],
+      "reason": "Re-anchored RLZ-702R9Y to _task_document_read_metadata and updated its rationale for conditional refused-write ladder deduplication when shared_block already carries it; obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-8VNSKJ"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-3XH6Q0",
+          "revision": 1
+        },
+        {
+          "id": "INV-4R4PF0",
+          "revision": 1
+        },
+        {
+          "id": "INV-8PGMJB",
+          "revision": 1
+        },
+        {
+          "id": "INV-8V44VE",
+          "revision": 1
+        },
+        {
+          "id": "INV-97T18K",
+          "revision": 1
+        },
+        {
+          "id": "INV-HVXZ6N",
+          "revision": 1
+        },
+        {
+          "id": "INV-HYEKF9",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZYWR60",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-FHKK55",
+      "items": [
+        "sha256:cc005d270121954ed53ab8ecf6030960d2763b1fb08f12e35f79fea9232760fd"
+      ],
+      "reason": "Examined all members of FAM-MEH3SB against CAP-L2 candidate b60f0950; member realizations were reconciled or re-anchored without changing the family's joint guarantee or route coverage.",
+      "revision": 1,
+      "subject": "FAM-MEH3SB"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FQ8Z95",
+      "items": [
+        "sha256:2a7b947063d2f4a7fc36cb0100f34c9c1909609411a802b374a528c291b1f58d"
+      ],
+      "reason": "Updated onboarding:mcp/tests/overview for post-sync CAP-L2 candidate 8af62868 (rebased onto main 3ee8f6ad5 / DEP-L1), retaining exact 826-module lane counts and 0 stale citation anchors.",
+      "sources": [
+        {
+          "blob": "60ff7d074cf59627c9240029892da48254ae0f1e",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "6b24699cdac2fcb0afb79870ba07f3d71e743f2f",
+          "path": "mcp/tests/paseo_launch_test_support.py"
+        },
+        {
+          "blob": "ed6069dab9790c9a5ccd42e20dedf71aec9b3195",
+          "path": "mcp/tests/role_first_message_support.py"
+        },
+        {
+          "blob": "43430ce2219b5e06e9740608dcc295d56b6abab5",
+          "path": "mcp/tests/role_instruction_wording_support.py"
+        },
+        {
+          "blob": "4bb2b5c79060fc9dbf38f851fb9b15b0e7abcd9e",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "1588beb0134ca8994261a5fdae3eda4cefa8fef2",
+          "path": "mcp/tests/test_agent_eval_text_delivery.py"
+        },
+        {
+          "blob": "ae4f0c7a72eef5d4f15704c71322f633ef63e16c",
+          "path": "mcp/tests/test_capsule_replay_integrity.py"
+        },
+        {
+          "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
+          "path": "mcp/tests/test_curator_delivery_contracts.py"
+        },
+        {
+          "blob": "827067ee212738575496bb1098f70239c6e1b7d5",
+          "path": "mcp/tests/test_developer_question_wording.py"
+        },
+        {
+          "blob": "2db2f2e13ec76a35e278db4c9aa2dce5fefa1174",
+          "path": "mcp/tests/test_l84_capsule_delivery_proofs.py"
+        },
+        {
+          "blob": "240fcf3da7c36d8e7a152d0888ec13ed5ca3f3fe",
+          "path": "mcp/tests/test_l84_reviewer_criterion_delivery.py"
+        },
+        {
+          "blob": "2cb43d5db02c1a5a90e159b451bee6a9b73cacbe",
+          "path": "mcp/tests/test_l84_unique_detail_pointers.py"
+        },
+        {
+          "blob": "b332246fc987474cedb667a6fa57b589ff8e5a54",
+          "path": "mcp/tests/test_message_handover_contract.py"
+        },
+        {
+          "blob": "22a566752c83802f0d887f6d46f4548f962a6214",
+          "path": "mcp/tests/test_paseo_agent_tools.py"
+        },
+        {
+          "blob": "62b9825c34c8eaed6c25f6efb0a1ec482df693d1",
+          "path": "mcp/tests/test_paseo_launch.py"
+        },
+        {
+          "blob": "ae9fff926e9a5a705fe7584131d1f775687f0a11",
+          "path": "mcp/tests/test_paseo_launch_repeat.py"
+        },
+        {
+          "blob": "f546a3e643d615e8d87e13e03715d706921a1fa4",
+          "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+        },
+        {
+          "blob": "722b2bb3bd05b4cd2b4a498a5ad7861346938703",
+          "path": "mcp/tests/test_role_first_message.py"
+        },
+        {
+          "blob": "4e9b881ef4d15bd1567425e805194547028c7c99",
+          "path": "mcp/tests/test_role_first_message_guards.py"
+        },
+        {
+          "blob": "72726e02c9e9a4d67778291fb3872668592bc8ad",
+          "path": "mcp/tests/test_role_handover_binding.py"
+        },
+        {
+          "blob": "a6fbd7c4a1b9b0255de476c2cba32b9ff48f121c",
+          "path": "mcp/tests/test_role_handover_locator.py"
+        },
+        {
+          "blob": "3f4c470dea80a5ffe84c8e660b84f8600d6b5cca",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        },
+        {
+          "blob": "9da02ef4118eb49c317a7faed1ae09823335257e",
+          "path": "mcp/tests/test_role_instruction_wording_handover.py"
+        },
+        {
+          "blob": "b69d3490dd4cbae26101cbef030d91cbd25b6ea5",
+          "path": "mcp/tests/test_role_launch_acp_instruction.py"
+        },
+        {
+          "blob": "ef248ec6750f70864884b189f733464bd4fb5955",
+          "path": "mcp/tests/test_role_locator_replay.py"
+        },
+        {
+          "blob": "b16ddce247baeef0c2507c30e3814ad2992f3397",
+          "path": "mcp/tests/test_role_message_wording.py"
+        },
+        {
+          "blob": "cc7adb60be358cb33f7861af8a987c3ce1bd6663",
+          "path": "mcp/tests/test_role_tool_scope.py"
+        },
+        {
+          "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+          "path": "mcp/tests/test_role_wire_token_budgets.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7E3JNX",
+          "revision": 1
+        },
+        {
+          "id": "INV-RKGNF8",
+          "revision": 1
+        },
+        {
+          "id": "INV-V7M37D",
+          "revision": 5
+        },
+        {
+          "id": "INV-W24J6Q",
+          "revision": 2
+        },
+        {
+          "id": "INV-W58B84",
+          "revision": 3
+        },
+        {
+          "id": "INV-ZNJ14G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-FV10XN",
+      "items": [
+        "sha256:41665460e4eac367806f6cb960f60b8d64200d998bb57ca9ba7706f04df5fc1b"
+      ],
+      "reason": "Examined all members of FAM-83BTBD against CAP-L2 candidate b60f0950; member realizations were reconciled or re-anchored without changing the family's joint guarantee or route coverage.",
+      "revision": 2,
+      "subject": "FAM-83BTBD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-G27Z8J",
+      "items": [
+        "sha256:6fa9e6a5339cfceccfbc2a7aff3d4f0e588a83657bb43ae5089cc552b54be0c0"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_handover_projection.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
+          "path": "mcp/src/agents_remember/cli/role_handover_projection.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_handover_projection.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G6B7AA",
+      "items": [
+        "sha256:1f246a37a50960964595cf9ba4fbf202708a19be8935fa2d36c692b379b59dc6"
+      ],
+      "reason": "Imports and local nested-detail path/confinement helpers supporting compose_launch_instructions and validate_instruction_detail_artifacts (governed by INV-7KDG7C); carries no separate invariant.",
+      "subject": "hunk:sha256:1f246a37a50960964595cf9ba4fbf202708a19be8935fa2d36c692b379b59dc6"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-G7FKZQ",
+      "items": [
+        "sha256:4676eb78e22ebc58c4df2b60c6b90efc84359d03de6ccfcf86227331de9d72fb",
+        "sha256:e78c4bf6d40bd2d511f37ce72fdbcb2104299d171eb6b42c70339fde3e5681ac",
+        "sha256:fa6b54cc13a427df4417d993598067dbba6f84e8b084a885853b0db48181a802"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_paseo_launch_repeat.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "ae9fff926e9a5a705fe7584131d1f775687f0a11",
+          "path": "mcp/tests/test_paseo_launch_repeat.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_launch_repeat.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GXRE48",
+      "items": [
+        "sha256:12d83ce7c51c1a0c5379a330cca21729f669f1ae1bb8c9dda8c58cc78a938702"
+      ],
+      "reason": "Standard imports and __all__ export supporting durable_composition_corpus_root (governed by INV-ZA67WW); carries no separate invariant.",
+      "subject": "hunk:sha256:12d83ce7c51c1a0c5379a330cca21729f669f1ae1bb8c9dda8c58cc78a938702"
+    },
+    {
+      "because": [
+        {
+          "id": "CAP-R02",
+          "packet": "requirements/CAP-R02-v1-mechanical-turn-1-wire-optimization-kv-prefix-offload-and-gate.md",
+          "task": {
+            "path": "261124_role-capsule-and-turn-1-context-optimization",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+            "content": "sha256:0c632ca8f145e3f929ac4c2aab0254e78e31f4412246b76d4b31bbda9d387669",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_replay_legacy_prefix_new_suffix_and_diagnostic_priority"
+            },
+            "path": "mcp/tests/test_role_wire_token_budgets.py"
+          },
+          "before": "absent",
+          "id": "PRF-881XV8"
+        },
+        {
+          "after": {
+            "blob": "722b2bb3bd05b4cd2b4a498a5ad7861346938703",
+            "content": "sha256:a78b55a02afd509f1526dcc0ee691d20998840affad111e810dd08e5d8b033b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "FirstMessageMatrixTests.test_parented_starts_carry_the_projection"
+            },
+            "path": "mcp/tests/test_role_first_message.py"
+          },
+          "before": "absent",
+          "id": "PRF-F0B9XN"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "40e936a5a64a4ba311f2ed74f5a78acb3dcaccf8",
+            "content": "sha256:a78b55a02afd509f1526dcc0ee691d20998840affad111e810dd08e5d8b033b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parented_starts_carry_the_projection"
+            },
+            "path": "mcp/tests/test_role_first_message.py"
+          },
+          "id": "PRF-Q8HVRS"
+        },
+        {
+          "after": {
+            "blob": "5f6da7e9c840df9dc1a16d5efc2d6f75dd1cebd2",
+            "content": "sha256:1d2c509174ff83b26e0af9e31750f91e14cc3a10272e40e1c8e9c9c626413da6",
+            "locator": {
+              "kind": "symbol",
+              "name": "first_message"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "before": "absent",
+          "id": "RLZ-F6T19G"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-H1Y26A",
+      "items": [],
+      "reason": "Replaced INV-5H5VR2 to record that newly sent first messages append the handover artifact locator line as a trailing suffix line while replay retains compatibility for legacy prefix receipts. Evidence (cap-l2-inv-5h5vr2): CAP-R02@v1 AC-3/AC-4; freeze report 261124-CAP-L2-worker-4b8d88e2-c142-5f3f-a063-d08bf0daeaf6.md (Attempt A2, tree b60f09508b968b94502bfe295188d0da57858fb1); Reviewer R2 CODE PASS verdict 261124-CAP-L2-route-review-verdict-r2.md",
+      "revision": 2,
+      "subject": "INV-5H5VR2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f546a3e643d615e8d87e13e03715d706921a1fa4",
+            "content": "sha256:f98cb604e4e8ab1336d57cbc9031ac843b053513d2e20b74827589979853168a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_digest_line_and_unit_audiences_match_the_delivered_prefixes"
+            },
+            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+          },
+          "before": {
+            "blob": "d61a196728db8ea461a40f2efeebedf3bfb06078",
+            "content": "sha256:f98cb604e4e8ab1336d57cbc9031ac843b053513d2e20b74827589979853168a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_digest_line_and_unit_audiences_match_the_delivered_prefixes"
+            },
+            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+          },
+          "id": "PRF-D05M02"
+        },
+        {
+          "after": {
+            "blob": "b16ddce247baeef0c2507c30e3814ad2992f3397",
+            "content": "sha256:9c5c3210afd875d999199c50f11953f5739119f4a2bdad235b27f2669132277a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_role_message_wording.py"
+          },
+          "before": {
+            "blob": "6bc29f07b19a7f76879cf0985735e859aa6eb79d",
+            "content": "sha256:2a7fce6d91ede58a6f7c70692195afebdf88963885595f2d912e9f8f6665148c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_role_message_wording.py"
+          },
+          "id": "RLZ-3BBWHC"
+        },
+        {
+          "after": {
+            "blob": "3f4c470dea80a5ffe84c8e660b84f8600d6b5cca",
+            "content": "sha256:b9a7e21f226470471b4e991088d96afe447e97fb5dd881bd827e17d2faf10251",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+            "content": "sha256:5e5898fb95490974e8218bfc66a54ceefb37778c948ba7c591dea90e5e9705f5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "RLZ-B44GTW"
+        },
+        {
+          "after": {
+            "blob": "f546a3e643d615e8d87e13e03715d706921a1fa4",
+            "content": "sha256:8d338624b282e0906e5b9126b80b91be0a64c11eba4bddf0c836639b97d41ee5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+          },
+          "before": {
+            "blob": "d61a196728db8ea461a40f2efeebedf3bfb06078",
+            "content": "sha256:5736c93d8cb5ef289bab62dab5e0929ff23ec95838a5515c8eca7663df91c7ae",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+          },
+          "id": "RLZ-GWCXJE"
+        },
+        {
+          "after": {
+            "blob": "2db2f2e13ec76a35e278db4c9aa2dce5fefa1174",
+            "content": "sha256:c941e6c155000009fb8feb601ee101bf2c31fd258e8379acfd8f343fda925881",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_l84_capsule_delivery_proofs.py"
+          },
+          "before": {
+            "blob": "5b520d060d16ba6dd8ebff60b02c820993ce390e",
+            "content": "sha256:a32e3c782b055064579831c71bef9b20f0723fe2d2f15152fdb3930e370def89",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_l84_capsule_delivery_proofs.py"
+          },
+          "id": "RLZ-XPQV39"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-HC2DES",
+      "items": [
+        "sha256:c3bbeb468173ab7747c33b7630f2bb54eab22a67d986a585d351816a0facd252"
+      ],
+      "reason": "Re-anchored INV-AZTTPZ entries at CAP-L2 candidate b60f0950 after Turn-1 wire optimization and test catalog updates; the invariant's obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-AZTTPZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HR2AC7",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Updated onboarding:mcp/tests/evidence-lifecycle.toml for post-sync CAP-L2 candidate dbad7514 (rebased onto main 3336406ea / BUG-L37), corrected shifted consumer line references (859/3308), and refreshed all citation anchors to 0 stale.",
+      "sources": [
+        {
+          "blob": "60ff7d074cf59627c9240029892da48254ae0f1e",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HY804S",
+      "items": [
+        "sha256:4bfd8d22663bfdf0e5fff738767b6d95731bc688a826ae8f5f326570099bf433",
+        "sha256:4e1f8f503fe7e066bcb1c3788c4c5cf889e17390760cfab8d1e3218db21b2847",
+        "sha256:5dad4196f4945a76e4f2aa070e145eb5fc939d9e95ef4b450651de70a13c7665"
+      ],
+      "reason": "Updated onboarding:mcp/tests/paseo_launch_test_support.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "6b24699cdac2fcb0afb79870ba07f3d71e743f2f",
+          "path": "mcp/tests/paseo_launch_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/paseo_launch_test_support.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7FMDAS",
+          "revision": 2
+        },
+        {
+          "id": "INV-82ZTHK",
+          "revision": 3
+        },
+        {
+          "id": "INV-8AMSGV",
+          "revision": 5
+        },
+        {
+          "id": "INV-9S49CW",
+          "revision": 2
+        },
+        {
+          "id": "INV-HGSFJ8",
+          "revision": 5
+        }
+      ],
+      "id": "ROW-J57M07",
+      "items": [
+        "sha256:c8b425f5f869451cbb842e3de90cdab10519284406597a32c61639ce25e9c76b"
+      ],
+      "reason": "Examined all members of FAM-7AEA19 against CAP-L2 candidate b60f0950; member realizations were reconciled or re-anchored without changing the family's joint guarantee or route coverage.",
+      "revision": 2,
+      "subject": "FAM-7AEA19"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JGS5FQ",
+      "items": [
+        "sha256:68e1570098e27b6bb6dbd058168040b14044fd5adc2102c261ab25c619d266ed"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_agent_eval_text_delivery.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "1588beb0134ca8994261a5fdae3eda4cefa8fef2",
+          "path": "mcp/tests/test_agent_eval_text_delivery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_agent_eval_text_delivery.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JVHNWY",
+      "items": [
+        "sha256:7c2ea25649ead5e7a33d99d14080c05cfcd8ddb6ee366a01966a01843855665d"
+      ],
+      "reason": "Authored new onboarding card and sidecar for mcp/src/agents_remember/application/role_capsules/shared_block.py introduced in CAP-L2 candidate b60f0950.",
+      "sources": [
+        {
+          "blob": "386b91bcc0de26be4fa223fdfcebd84df7091ce6",
+          "path": "mcp/src/agents_remember/application/role_capsules/shared_block.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/role_capsules/shared_block.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-ATA2Z7",
+          "revision": 1
+        },
+        {
+          "id": "INV-PJA167",
+          "revision": 2
+        },
+        {
+          "id": "INV-TTYYP8",
+          "revision": 2
+        },
+        {
+          "id": "INV-Y1SDE2",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-JZSEH1",
+      "items": [
+        "sha256:902ee3be82e91cdc90e13bf4495710e46df522fa7419ee5d22b7036f9c666cb8"
+      ],
+      "reason": "Examined all members of FAM-S140B6 against CAP-L2 candidate b60f0950; member realizations were reconciled or re-anchored without changing the family's joint guarantee or route coverage.",
+      "revision": 2,
+      "subject": "FAM-S140B6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K1M2NY",
+      "items": [
+        "sha256:51b505e707fd65575ad6d71e6c8914c501c1fa8b0b23a8d894c5ecf016ae1102"
+      ],
+      "reason": "Imports from role_handover_artifacts and role_opening_offload supporting restore_launch_files (governed by INV-87JRHY); carries no separate invariant.",
+      "subject": "hunk:sha256:51b505e707fd65575ad6d71e6c8914c501c1fa8b0b23a8d894c5ecf016ae1102"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K1VK25",
+      "items": [
+        "sha256:ce06d3d16a39883fea56fd5449a6db55caf6055824161a7f1e4524d29a3af4ec"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_launch_routes.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+          "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_routes.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KWGMM5",
+      "items": [
+        "sha256:7ecf092d8626da2db1be10133b1dbd713c90005b181474ac68e23327a9b8cd9c"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_l84_unique_detail_pointers.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "2cb43d5db02c1a5a90e159b451bee6a9b73cacbe",
+          "path": "mcp/tests/test_l84_unique_detail_pointers.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_l84_unique_detail_pointers.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-M067RS",
+      "items": [
+        "sha256:b5ae7593a94611913cf4afac18ec137f1fda946694b1e1a21be63fbdb24925df"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_held_messages.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
+          "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_held_messages.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-MES6S8",
+      "items": [
+        "sha256:a0343f791f93b993541eb89c0103b7cd091f399119c6c1457a5ce2ab44ef2075"
+      ],
+      "reason": "Recorded DPD-6528VF revision 10 on post-sync CAP-L2 candidate 8af62868 (main 3ee8f6ad5 / DEP-L1 + CAP-L2); OpenClaw installation and launch configuration remain accurate.",
+      "revision": 10,
+      "subject": "DPD-6528VF"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MH67H4",
+      "items": [
+        "sha256:10286a3d7a075943c4f6742c37c2909c01e796a9a437d00efac62227ce66e7f3"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_launch_preparation.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "1866eaa3a2c5a7a312f9f2f690697fa7914a7d15",
+          "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_preparation.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MKGY77",
+      "items": [
+        "sha256:2e8f2f9a0e47c0854c656d6e05d6fe5a4104f75b95ab27d40128c9013538c8e0",
+        "sha256:9acc0ac843aa102501147759adcc1206aa0523f1f44831905114d909c42f3dd7",
+        "sha256:fff18292f74b2cd69c2cd22b6b80e5a8bb56a3ff838b28b807c0dfce4c3b34b1"
+      ],
+      "reason": "Updated onboarding:mcp/tests/role_instruction_wording_support.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "43430ce2219b5e06e9740608dcc295d56b6abab5",
+          "path": "mcp/tests/role_instruction_wording_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/role_instruction_wording_support.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "60ff7d074cf59627c9240029892da48254ae0f1e",
+            "content": "sha256:997ce9327105a64a3d026015ccf7c4d3a01a4b414f69e8529b54703e4d64a0e1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "1d6be1d0f663db6e1c020b551df3eec199056488",
+            "content": "sha256:c52cb332453efa3b3ce503e8346df87fc8b1e28b99b1443e052b1512d800149e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "4bb2b5c79060fc9dbf38f851fb9b15b0e7abcd9e",
+            "content": "sha256:0137e4f1cb26545fd069eaf537235e7328f4d0307d867cf539f54c53a05922b4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "41e4f40f552f5e6b287bcd178bbc5cf6bc1c5dd7",
+            "content": "sha256:761670ec6cb8ba4ea9478a723ea465def1cc74ea698e152d608946d9ee2dd48d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-MMASG2",
+      "items": [
+        "sha256:0e9138c417d21b209fbda591a5d45cc80a54cdf8de63d5579571f605d4678145"
+      ],
+      "reason": "Re-anchored INV-H1BCMX entries on post-sync CAP-L2 candidate dbad7514 (rebased onto main 3336406ea / BUG-L37) after test catalog merges; the invariant's obligation is unchanged.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3f4c470dea80a5ffe84c8e660b84f8600d6b5cca",
+            "content": "sha256:597d36c6d56948a3fc368f9e6f1220b886b9bae310bda2bac1a4485365b7a8fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_the_capsules_send_a_return_and_never_point_at_the_agent_chat"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+            "content": "sha256:597d36c6d56948a3fc368f9e6f1220b886b9bae310bda2bac1a4485365b7a8fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_the_capsules_send_a_return_and_never_point_at_the_agent_chat"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-CN33QG"
+        },
+        {
+          "after": {
+            "blob": "1866eaa3a2c5a7a312f9f2f690697fa7914a7d15",
+            "content": "sha256:bacdefd5d070cb6983a3f4e5d6779049335b42e21716be39c82125498879fb91",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
+            "content": "sha256:6eed23ad423ed5702f143a24fff1b097ac49aba8d51aa8fb6ffaa48812812edb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-TRMKTB"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-MMDGF0",
+      "items": [
+        "sha256:b6666ef66eccd1c106d7964013ff4083e289b2eca1b72fd3e9563f4c73dc5cf2"
+      ],
+      "reason": "Re-anchored INV-QZW2X2 entries at CAP-L2 candidate b60f0950 after Turn-1 wire optimization and test catalog updates; the invariant's obligation is unchanged.",
+      "revision": 2,
+      "subject": "INV-QZW2X2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N7RE10",
+      "items": [
+        "sha256:28661662d2bf23be682ef99c078af3818726b72693b6e01ae8d5d1d1f4a378e7"
+      ],
+      "reason": "Updated onboarding:mcp/overview for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "923141792af65d0d582fd9e68a5d8922574d85d5",
+          "path": "mcp/src/agents_remember/cli/role_brief_message.py"
+        },
+        {
+          "blob": "5f6da7e9c840df9dc1a16d5efc2d6f75dd1cebd2",
+          "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+        },
+        {
+          "blob": "489999cf6e93695e868a9dbdf3d6becac4375052",
+          "path": "mcp/src/agents_remember/cli/role_handover_file.py"
+        },
+        {
+          "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
+          "path": "mcp/src/agents_remember/cli/role_handover_projection.py"
+        },
+        {
+          "blob": "4a2b44cfec79480593fdbf45c5a08f224c4fb1db",
+          "path": "mcp/src/agents_remember/cli/role_handover_restore.py"
+        },
+        {
+          "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
+          "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+        },
+        {
+          "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+          "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+        },
+        {
+          "blob": "72476b45772eef50c40f5c16400e213b150c682b",
+          "path": "mcp/src/agents_remember/cli/role_instruction_links.py"
+        },
+        {
+          "blob": "1866eaa3a2c5a7a312f9f2f690697fa7914a7d15",
+          "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+        },
+        {
+          "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+          "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+        },
+        {
+          "blob": "986035016a79f5bbea388aee0cdff3f2a2c1c0c5",
+          "path": "mcp/src/agents_remember/cli/role_opening_offload.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N9JPT1",
+      "items": [
+        "sha256:2520c5315783df846e8b3e29d7db0b1312eb1dbedd25129ddc897db961c350e2"
+      ],
+      "reason": "Imports and local nested-detail path/confinement helpers supporting compose_launch_instructions and validate_instruction_detail_artifacts (governed by INV-7KDG7C); carries no separate invariant.",
+      "subject": "hunk:sha256:2520c5315783df846e8b3e29d7db0b1312eb1dbedd25129ddc897db961c350e2"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NBV518",
+      "items": [
+        "sha256:9dc0ddb77eebea977e6fdae7b75cbdbd2193752015be6908aaae59f84189e3a4"
+      ],
+      "reason": "Reviewed scripts/agent_evals/overview.md against CAP-L2 Curator-filtered shared_block verification in text.py; route-level architecture prose remains accurate.",
+      "sources": [
+        {
+          "blob": "dd7862a6e0c97b00404ce3c8152d35254de296a8",
+          "path": "scripts/agent_evals/text.py"
+        }
+      ],
+      "subject": "onboarding:scripts/agent_evals/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2cb43d5db02c1a5a90e159b451bee6a9b73cacbe",
+            "content": "sha256:19a2e8aea94c82a2b6cb970ba65afa39fd59bd6207e1f9fd4876a67daf8de5cd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_l84_unique_detail_pointers.py"
+          },
+          "before": {
+            "blob": "173251288a1b57db89277d5e00b1b962a4e98a8e",
+            "content": "sha256:49ff5c4cb2196adaae7b195c8ed0a970d1f1bc2f2756cb89ef6030039e430abc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_l84_unique_detail_pointers.py"
+          },
+          "id": "RLZ-NRDHDM"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-NCJ1DF",
+      "items": [
+        "sha256:a9526859b42ed26ae0d4a42df21f945b0c98a7bbf1f09df514628143aeb7d9dc"
+      ],
+      "reason": "Re-anchored INV-NDGJ3M entries at CAP-L2 candidate b60f0950 after Turn-1 wire optimization and test catalog updates; the invariant's obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-NDGJ3M"
+    },
+    {
+      "because": [
+        {
+          "id": "CAP-R02",
+          "packet": "requirements/CAP-R02-v1-mechanical-turn-1-wire-optimization-kv-prefix-offload-and-gate.md",
+          "task": {
+            "path": "261124_role-capsule-and-turn-1-context-optimization",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        },
+        "DEC-4PGWAW"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+            "content": "sha256:33ce48a4adf8b97501fae183bef9f6368987fbf9b6d384d44787cfa51d3d83f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "WireTokenBudgetMatrixTests.test_kv_cache_static_prefix_byte_identical_across_all_eight_pairs"
+            },
+            "path": "mcp/tests/test_role_wire_token_budgets.py"
+          },
+          "before": "absent",
+          "id": "PRF-2ZECKP"
+        },
+        {
+          "after": {
+            "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+            "content": "sha256:754c5ed0108e58123b06248737181e4af64b2732b7a9826ef964ccdac0adda77",
+            "locator": {
+              "kind": "symbol",
+              "name": "WireTokenBudgetMatrixTests.test_direct_opening_offload_boundaries_replay_and_heading_safety"
+            },
+            "path": "mcp/tests/test_role_wire_token_budgets.py"
+          },
+          "before": "absent",
+          "id": "PRF-3CTDGM"
+        },
+        {
+          "after": {
+            "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+            "content": "sha256:f3986c8df48f48981c6a28e7759cca28df77b61529e66945ac481a42167cc69d",
+            "locator": {
+              "kind": "symbol",
+              "name": "WireTokenBudgetMatrixTests.test_held_opening_offload_reuse_distinct_batch_and_failure_safety"
+            },
+            "path": "mcp/tests/test_role_wire_token_budgets.py"
+          },
+          "before": "absent",
+          "id": "PRF-4CW0A1"
+        },
+        {
+          "after": {
+            "blob": "4e9b881ef4d15bd1567425e805194547028c7c99",
+            "content": "sha256:97114e5d36926f5e2f8c552d1fdc522ad4b6219f77b3eaf87cda12d7309b71d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "FirstMessageMatrixTests.test_a_held_seat_opens_through_the_delivery_path"
+            },
+            "path": "mcp/tests/test_role_first_message_guards.py"
+          },
+          "before": {
+            "blob": "648b27458fcdf390c3905ab596aa5afbba2f9a20",
+            "content": "sha256:686f2e98a9233790ff099507551f4a1cc2982b6ea0be2526e70c263d70981e90",
+            "locator": {
+              "kind": "symbol",
+              "name": "FirstMessageMatrixTests.test_a_held_seat_opens_through_the_delivery_path"
+            },
+            "path": "mcp/tests/test_role_first_message_guards.py"
+          },
+          "id": "PRF-92WQRG"
+        },
+        {
+          "after": {
+            "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+            "content": "sha256:d061a97a3031cad60e74799cbcbc06a5d8b2b56970eafb356953c4edd4e61c7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "WireTokenBudgetMatrixTests.test_eight_default_pairs_pass_wire_token_ceilings_and_send_links"
+            },
+            "path": "mcp/tests/test_role_wire_token_budgets.py"
+          },
+          "before": "absent",
+          "id": "PRF-GME8VE"
+        },
+        {
+          "after": {
+            "blob": "722b2bb3bd05b4cd2b4a498a5ad7861346938703",
+            "content": "sha256:6810da7324de8e1aff30c83be7545f2ea752d05b23844deb0dfb1ba756c3a074",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parentless_starts_carry_the_projection"
+            },
+            "path": "mcp/tests/test_role_first_message.py"
+          },
+          "before": {
+            "blob": "40e936a5a64a4ba311f2ed74f5a78acb3dcaccf8",
+            "content": "sha256:6810da7324de8e1aff30c83be7545f2ea752d05b23844deb0dfb1ba756c3a074",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parentless_starts_carry_the_projection"
+            },
+            "path": "mcp/tests/test_role_first_message.py"
+          },
+          "id": "PRF-RV63CY"
+        },
+        {
+          "after": {
+            "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+            "content": "sha256:4f88449b87bc1b5674063634469b921d9107a750621cf4fcff5f335782e9135d",
+            "locator": {
+              "kind": "symbol",
+              "name": "WireTokenBudgetMatrixTests.test_held_openings_and_bounded_appendices_stay_capped"
+            },
+            "path": "mcp/tests/test_role_wire_token_budgets.py"
+          },
+          "before": "absent",
+          "id": "PRF-ZJCQH9"
+        },
+        {
+          "after": {
+            "blob": "986035016a79f5bbea388aee0cdff3f2a2c1c0c5",
+            "content": "sha256:4d4f0a93cfbbb9bafef8d1d877385e30c42b900b404155ede2b55e8fe7a08060",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_held_opening_batch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_opening_offload.py"
+          },
+          "before": "absent",
+          "id": "RLZ-40THES"
+        },
+        {
+          "after": {
+            "blob": "487170f65289d19227d8e1f14afa8663fa1ca276",
+            "content": "sha256:14801f721a729ffd7df12cd353c3c844bd89fb88b2ed5afa61d93f809457fc2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_wire_token_ceilings"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/wire_budget.py"
+          },
+          "before": "absent",
+          "id": "RLZ-E6AQ06"
+        },
+        {
+          "after": {
+            "blob": "5f6da7e9c840df9dc1a16d5efc2d6f75dd1cebd2",
+            "content": "sha256:1d2c509174ff83b26e0af9e31750f91e14cc3a10272e40e1c8e9c9c626413da6",
+            "locator": {
+              "kind": "symbol",
+              "name": "first_message"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "before": "absent",
+          "id": "RLZ-EQHT12"
+        },
+        {
+          "after": {
+            "blob": "8cb5f35a32eee0a582432b88da4bab607525c615",
+            "content": "sha256:d5fac2cd344face9e0e0c79a157df7570c9f162041e928544bb0e3428771b715",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_projection.py"
+          },
+          "before": {
+            "blob": "10fb7a51df0dc168eef360291e299855421627b7",
+            "content": "sha256:6d3074e2c9b530dc7b2c70272fa0852facab5d0f6bbec70cb8bf5ef97da27b81",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_projection.py"
+          },
+          "id": "RLZ-G40F37"
+        },
+        {
+          "after": {
+            "blob": "923141792af65d0d582fd9e68a5d8922574d85d5",
+            "content": "sha256:f284c59d1b80b9a080cc4ca8bac943b671f73be71d6c4a27da784621a9d9801e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_brief_message.py"
+          },
+          "before": {
+            "blob": "5afd69406b3cd0b91707240fdeca1842bf62f314",
+            "content": "sha256:fd77869720451152883208bbc8d7e70b85ccebbf8909cf1d18b24a2d25599433",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_brief_message.py"
+          },
+          "id": "RLZ-GKX7T9"
+        },
+        {
+          "after": {
+            "blob": "986035016a79f5bbea388aee0cdff3f2a2c1c0c5",
+            "content": "sha256:e55b84b8c5e8039e958c1c567dd4c1480ce35040a53b84aec880e41145b52589",
+            "locator": {
+              "kind": "symbol",
+              "name": "format_bounded_appendix"
+            },
+            "path": "mcp/src/agents_remember/cli/role_opening_offload.py"
+          },
+          "before": "absent",
+          "id": "RLZ-H7W98A"
+        },
+        {
+          "after": {
+            "blob": "986035016a79f5bbea388aee0cdff3f2a2c1c0c5",
+            "content": "sha256:1c3314f80b7b19d35f8627ec0e3b56286611568886c2dc438896c5c3bf3a704f",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_direct_opening_message"
+            },
+            "path": "mcp/src/agents_remember/cli/role_opening_offload.py"
+          },
+          "before": "absent",
+          "id": "RLZ-R7BCA1"
+        },
+        {
+          "after": {
+            "blob": "487170f65289d19227d8e1f14afa8663fa1ca276",
+            "content": "sha256:b97e9a3b0ec6b0d0d140a10ec57351dfb7cec95694c5e513bdcfab80a9d6a362",
+            "locator": {
+              "kind": "symbol",
+              "name": "measure_wire_tokens"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/wire_budget.py"
+          },
+          "before": "absent",
+          "id": "RLZ-X48KF9"
+        },
+        {
+          "after": {
+            "blob": "923141792af65d0d582fd9e68a5d8922574d85d5",
+            "content": "sha256:46add1de5e42fe70fcc08dca3d33d93eb35877a8ebde2b5a92dbb814cf541c68",
+            "locator": {
+              "kind": "symbol",
+              "name": "brief_prompt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_brief_message.py"
+          },
+          "before": "absent",
+          "id": "RLZ-YZWK7K"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-NWB6W8",
+      "items": [
+        "sha256:f790bcb8855d954882825c3f347da84f1f493f0849d8fb72465090a828a439b7"
+      ],
+      "reason": "Replaced INV-ZVD184 to record static-prefix-first ordering, suffix artifact line placement, slim wire projection, settings.role_message_limit Turn-1 offload sidecars, and Phase 1 wire-token ceilings with approved appendix allowances. Evidence (cap-l2-inv-zvd184): CAP-R02@v1 AC-3/AC-6/AC-7; freeze report 261124-CAP-L2-worker-4b8d88e2-c142-5f3f-a063-d08bf0daeaf6.md (Attempt A2, tree b60f09508b968b94502bfe295188d0da57858fb1); Reviewer R2 CODE PASS verdict 261124-CAP-L2-route-review-verdict-r2.md",
+      "revision": 2,
+      "subject": "INV-ZVD184"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NYDNPX",
+      "items": [
+        "sha256:9dce4b3deb252aebd159f05d89f60a78a2bba61c304476906774be26f91f74ea"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/application/skill_resources/provider.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "6a63e05ad44a1cc23203aa0cc2ca606714fb6bf6",
+          "path": "mcp/src/agents_remember/application/skill_resources/provider.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/skill_resources/provider.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NZZ1KJ",
+      "items": [
+        "sha256:657fd081448bec5148634d38481b4b48acccaa628e4b3e2fcdb302e87423c896"
+      ],
+      "reason": "Test-support imports and structural/projection assertion helpers for first-message test suites; carries no separate production invariant.",
+      "subject": "hunk:sha256:657fd081448bec5148634d38481b4b48acccaa628e4b3e2fcdb302e87423c896"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PHW4PM",
+      "items": [
+        "sha256:2b4b64e0417b31da2b1e7eae01d2c4b9e0436dc48b6fd620912eadeb173f635f"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_l84_capsule_delivery_proofs.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "2db2f2e13ec76a35e278db4c9aa2dce5fefa1174",
+          "path": "mcp/tests/test_l84_capsule_delivery_proofs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_l84_capsule_delivery_proofs.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q1YR70",
+      "items": [
+        "sha256:e362e571f2829f6342345ba2c10ffa4dc2da0e127f6557be69edbcdeccfa53f4"
+      ],
+      "reason": "Reviewed role_first_message_support.py.md against CAP-L2 candidate b60f0950; card prose remains accurate with only whole-file reference anchor refreshes in its sidecar and no counted Markdown change.",
+      "sources": [
+        {
+          "blob": "ed6069dab9790c9a5ccd42e20dedf71aec9b3195",
+          "path": "mcp/tests/role_first_message_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/role_first_message_support.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Q6XCJE",
+      "items": [
+        "sha256:047fc6a5d2972cc334bfb3d9f60b299792b04754b0b69f7286c9e9a77a45ebc6"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_brief_message.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "923141792af65d0d582fd9e68a5d8922574d85d5",
+          "path": "mcp/src/agents_remember/cli/role_brief_message.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_brief_message.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QF6B0V",
+      "items": [
+        "sha256:4c9afd1742af8df54848b9f432f80b1281067989c2ca9e947df97522d456c471",
+        "sha256:b3eaa0f0f5f563516f13b1d43a3cdfcf2df1ec0168d2daa038433a93d37535da",
+        "sha256:e11df3b0be28d4c8c99c0bf0ec6fcaf5e43a69d10a16fdcfd19365c74d63de7b",
+        "sha256:fe9c0b7d8b87631c0b4248fdea88b3a51cb72c35de1e2020b8f99e3e45b79917"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_message_handover_contract.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "b332246fc987474cedb667a6fa57b589ff8e5a54",
+          "path": "mcp/tests/test_message_handover_contract.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_message_handover_contract.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8AMSGV",
+          "revision": 5
+        },
+        {
+          "id": "INV-A6GAKX",
+          "revision": 1
+        },
+        {
+          "id": "INV-NFV5VJ",
+          "revision": 2
+        },
+        {
+          "id": "INV-P2WRNQ",
+          "revision": 2
+        },
+        {
+          "id": "INV-PEVJ6G",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-QFK44Y",
+      "items": [
+        "sha256:00ef15e87cd9de6d6e9e310150f6e960cd4e46f37d5e046962011bc442a966a9"
+      ],
+      "reason": "Examined all members of FAM-PNH1QS against CAP-L2 candidate b60f0950; member realizations were reconciled or re-anchored without changing the family's joint guarantee or route coverage.",
+      "revision": 4,
+      "subject": "FAM-PNH1QS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QTBW0B",
+      "items": [
+        "sha256:3a509db17bc9059ebd20ccc5a389be797bd3a1619dca40ef40d6f1b073bd54d9",
+        "sha256:56102767bc58b171a12ac861b669b2b59b6f04e85f512f2f2f9a81445fa323fa",
+        "sha256:82a337bd8d174819b8d60113f94582ddc9e8f9f1c6ff0a5c54f560689c3380a4",
+        "sha256:8e3cbb9048285cc22915dfcd64d8ece7ae175cc9499f3c94026d434603eab615",
+        "sha256:b38d43f9019a537f68818fcd4c88bd8825d82e94d6360401fbbf4d1529c73f35",
+        "sha256:bdb9f13f46a4212e6dfd6aba49c29ad1389b6a59024fffc2f1f7ffd6e3e4d7e7",
+        "sha256:d8e2e6b6681539899e095d389c7f0ec4b25bede33bd81c6546acf8b4909b1137"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_role_handover_binding.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "72726e02c9e9a4d67778291fb3872668592bc8ad",
+          "path": "mcp/tests/test_role_handover_binding.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_handover_binding.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9da02ef4118eb49c317a7faed1ae09823335257e",
+            "content": "sha256:9fc5d97043e99ec035c54ac1e7dcfbca385939e70a9e238cd312b36d4eadd21c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_handover_names_the_tool_server_the_two_tools_and_the_host"
+            },
+            "path": "mcp/tests/test_role_instruction_wording_handover.py"
+          },
+          "before": {
+            "blob": "45a4f4f24c97efbe9b6fcef2683158c86a6fb28f",
+            "content": "sha256:99d9a15544fa7a90438783ee67bc3d615605f7261eba294f99750b4d940a1d4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_handover_names_the_tool_server_the_two_tools_and_the_host"
+            },
+            "path": "mcp/tests/test_role_instruction_wording_handover.py"
+          },
+          "id": "PRF-WJQ7NC"
+        },
+        {
+          "after": {
+            "blob": "1866eaa3a2c5a7a312f9f2f690697fa7914a7d15",
+            "content": "sha256:19055abf235202b11824ff16dca9f33bf2ebe2e184e8609685bf9d5035215744",
+            "locator": {
+              "kind": "symbol",
+              "name": "_AR_TOOL_SERVER_USAGE_TAIL"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
+            "content": "sha256:0b132ecf5a590b87599449c0c4dbafb893d222229687460b9d4cd503d28910e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_AR_TOOL_SERVER_USAGE_TAIL"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-03BKZX"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-R48H14",
+      "items": [
+        "sha256:0df6f3cdb8a789684fb09580da7f1e6557dd92b2f0af547d313b11d3f9b74646"
+      ],
+      "reason": "Re-anchored RLZ-03BKZX and PRF-WJQ7NC after CAP-L2 condensed _AR_TOOL_SERVER_USAGE_TAIL while preserving every normative rule and updated RLZ-03BKZX rationale; obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-47NR7E"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1866eaa3a2c5a7a312f9f2f690697fa7914a7d15",
+            "content": "sha256:bacdefd5d070cb6983a3f4e5d6779049335b42e21716be39c82125498879fb91",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
+            "content": "sha256:6eed23ad423ed5702f143a24fff1b097ac49aba8d51aa8fb6ffaa48812812edb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-5DAQEC"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-S14TKM",
+      "items": [
+        "sha256:1ad5d3bb16c5f8de2379d2dc9b1d6d64d3afb17885969d7d9fc3c9a16e557bc7"
+      ],
+      "reason": "Re-anchored INV-W58B84 entries at CAP-L2 candidate b60f0950 after Turn-1 wire optimization and test catalog updates; the invariant's obligation is unchanged.",
+      "revision": 3,
+      "subject": "INV-W58B84"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+            "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+            "content": "sha256:f160230465540553045b0bd0c4e087c56fcc3e149b31c2d0ee3af4a68b0d6a0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-8H3HVX"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-SKR7F4",
+      "items": [
+        "sha256:2716ddbb8b85aa6f426629477da7f241376fa3dd0551ef2443a17c5c1c4c2675"
+      ],
+      "reason": "Re-anchored INV-FMB2AG entries at CAP-L2 candidate b60f0950 after Turn-1 wire optimization and test catalog updates; the invariant's obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-FMB2AG"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SMDD57",
+      "items": [
+        "sha256:beffb3d45d3e2bb15e8bd6d8b547f939a5ec71806e49fb96c9f5aaa8f57ef9f0"
+      ],
+      "reason": "Updated onboarding:scripts/agent_evals/text.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "dd7862a6e0c97b00404ce3c8152d35254de296a8",
+          "path": "scripts/agent_evals/text.py"
+        }
+      ],
+      "subject": "onboarding:scripts/agent_evals/text.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-SPSWJ2",
+      "items": [
+        "sha256:b8ebe1a423d5798dbb588bdaae0c26ed44c20d845fc87b157f3eead4324b2b1e"
+      ],
+      "reason": "Reconfirmed docs/design/python-pytest-bootstrap.md on post-sync CAP-L2 candidate dbad7514 and re-anchored stress-durability to lines 845-847 in test-evidence-lanes.toml; pytest bootstrap design remains accurate.",
+      "revision": 18,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a6fbd7c4a1b9b0255de476c2cba32b9ff48f121c",
+            "content": "sha256:7409bc4cab81e22f0634e10cf0158dde98d2b1d5c7ec67404b5ba66fe963782b",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublishedArtifactTests.test_the_locator_is_as_long_at_any_folder_depth"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "before": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:7409bc4cab81e22f0634e10cf0158dde98d2b1d5c7ec67404b5ba66fe963782b",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublishedArtifactTests.test_the_locator_is_as_long_at_any_folder_depth"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "id": "PRF-ABAV86"
+        },
+        {
+          "after": {
+            "blob": "a6fbd7c4a1b9b0255de476c2cba32b9ff48f121c",
+            "content": "sha256:e897e8926f2312791bafc34eb2ad7848969dbc82a61c18cf4814071abf57b8d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublishedArtifactTests.test_an_artifact_name_link_is_still_never_followed_through_a_locator"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "before": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:e897e8926f2312791bafc34eb2ad7848969dbc82a61c18cf4814071abf57b8d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublishedArtifactTests.test_an_artifact_name_link_is_still_never_followed_through_a_locator"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "id": "PRF-HT4SHX"
+        },
+        {
+          "after": {
+            "blob": "a6fbd7c4a1b9b0255de476c2cba32b9ff48f121c",
+            "content": "sha256:d2280da88f3fa7930af05ea49c353acde9286626435f9d5a8788939be3eaa428",
+            "locator": {
+              "kind": "symbol",
+              "name": "LocatorLinkTests.test_the_locator_is_one_link_of_the_report_folder_and_its_request_reuses_it"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "before": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:d2280da88f3fa7930af05ea49c353acde9286626435f9d5a8788939be3eaa428",
+            "locator": {
+              "kind": "symbol",
+              "name": "LocatorLinkTests.test_the_locator_is_one_link_of_the_report_folder_and_its_request_reuses_it"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "id": "PRF-J58273"
+        },
+        {
+          "after": {
+            "blob": "a6fbd7c4a1b9b0255de476c2cba32b9ff48f121c",
+            "content": "sha256:a95be9b36d5e3f5590ade3d75fb7988f8a577bc4b18379e9807f50358bf26463",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublishedArtifactTests.test_a_deep_report_folder_publishes_one_bounded_locator_that_opens_its_bytes"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "before": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:ce10d2ea2950f64bfbbfce7b6ca5e9b20adb14a8f90866af18faefaacb9793b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublishedArtifactTests.test_a_deep_report_folder_publishes_one_bounded_locator_that_opens_its_bytes"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "id": "PRF-QKJ2FE"
+        },
+        {
+          "after": {
+            "blob": "5f6da7e9c840df9dc1a16d5efc2d6f75dd1cebd2",
+            "content": "sha256:2511c8d3bf48b183947659848c4bfb2c5c58b1bccb9e9e15a51c7a84eb243e1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "handover_artifact_reference"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "before": {
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:2511c8d3bf48b183947659848c4bfb2c5c58b1bccb9e9e15a51c7a84eb243e1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "handover_artifact_reference"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "id": "RLZ-6Y2Y88"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-STXEAG",
+      "items": [
+        "sha256:e2f52e0c39b49e0b73d7bdd576023862a0583756112af4fb60ebf4c6bc1362f2"
+      ],
+      "reason": "Re-anchored INV-AV4AMJ entries at CAP-L2 candidate b60f0950 after Turn-1 wire optimization and test catalog updates; the invariant's obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-AV4AMJ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-T8RJSD",
+      "items": [
+        "sha256:35f2e7a5a89af0201550e5b375cdb360490e3832b2f74999c97df98fb50871df"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_role_capsule_manifest_edges.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "f546a3e643d615e8d87e13e03715d706921a1fa4",
+          "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_capsule_manifest_edges.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4ZA9SH",
+          "revision": 1
+        },
+        {
+          "id": "INV-B06F1V",
+          "revision": 1
+        },
+        {
+          "id": "INV-DWNKBC",
+          "revision": 1
+        },
+        {
+          "id": "INV-KYKYPR",
+          "revision": 1
+        },
+        {
+          "id": "INV-SJKVE0",
+          "revision": 1
+        },
+        {
+          "id": "INV-TPVGJK",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-THXG5A",
+      "items": [
+        "sha256:6acb6378e4c2a0f181a454ef3cb7a58eeaa285f2a0cd1a6b1628a8b9ff6c304a"
+      ],
+      "reason": "Examined all six members of FAM-0BVSZB after attaching CAP-R02@v1 AC-8 regression proof test_composition_manifest_role_tools_match_allowlists_and_runtime_copy to INV-KYKYPR; the family's joint guarantee and routes are unchanged.",
+      "revision": 1,
+      "subject": "FAM-0BVSZB"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TK4KMB",
+      "items": [
+        "sha256:03c6d0a94e3365e4f57f62a373b1fd8fbe130a79581fea7b508633beef0e9586"
+      ],
+      "reason": "Test-support imports and structural/projection assertion helpers for first-message test suites; carries no separate production invariant.",
+      "subject": "hunk:sha256:03c6d0a94e3365e4f57f62a373b1fd8fbe130a79581fea7b508633beef0e9586"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TTPB67",
+      "items": [
+        "sha256:5aa3d50b611512aa30da9c7e18602104b2fb1f6fcc755653ab24e91da4a24722"
+      ],
+      "reason": "Reviewed test_developer_question_wording.py.md against CAP-L2 test fixture adjustments for filtered shared_block and compact links; card prose remains accurate with no behavior change.",
+      "sources": [
+        {
+          "blob": "827067ee212738575496bb1098f70239c6e1b7d5",
+          "path": "mcp/tests/test_developer_question_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_developer_question_wording.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-TVB8NZ",
+      "items": [
+        "sha256:9cf35c10705d9cabd02502ae3711677869ffdef1aed7cee4285bde5c18457437"
+      ],
+      "reason": "Reconfirmed docs/reference/runtime-layout.md on post-sync CAP-L2 candidate dbad7514 (main 3336406ea + CAP-L2); coordination and workspace directory layout remains accurate.",
+      "revision": 7,
+      "subject": "DPD-327MNX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
+            "content": "sha256:f24e9b96d44f4e09ca101d1be3515fb986c4ac59609e93764a502a9751d9a305",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+            "content": "sha256:1769d135258474f57a7f085ee66736864d59ade96b1bfdd2fd24d9f5da90488e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-83E20B"
+        },
+        {
+          "after": {
+            "blob": "4bb2b5c79060fc9dbf38f851fb9b15b0e7abcd9e",
+            "content": "sha256:0137e4f1cb26545fd069eaf537235e7328f4d0307d867cf539f54c53a05922b4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "41e4f40f552f5e6b287bcd178bbc5cf6bc1c5dd7",
+            "content": "sha256:761670ec6cb8ba4ea9478a723ea465def1cc74ea698e152d608946d9ee2dd48d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "60ff7d074cf59627c9240029892da48254ae0f1e",
+            "content": "sha256:997ce9327105a64a3d026015ccf7c4d3a01a4b414f69e8529b54703e4d64a0e1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "1d6be1d0f663db6e1c020b551df3eec199056488",
+            "content": "sha256:c52cb332453efa3b3ce503e8346df87fc8b1e28b99b1443e052b1512d800149e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-V6GQTA",
+      "items": [
+        "sha256:13b8cbf35eda1c45870f2123b18f9a5a222b9988804a7eef7a9437ff2d67ce0c"
+      ],
+      "reason": "Re-anchored INV-1ZKP4R entries on post-sync CAP-L2 candidate dbad7514 (rebased onto main 3336406ea / BUG-L37) after test catalog merges; the invariant's obligation is unchanged.",
+      "revision": 7,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 4
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 2
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 4
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-W4EBH6",
+      "items": [
+        "sha256:f5b1713baabdcdc5e886ca8084e7d3dfc292c91123bfa331b9d8a6b6189677be"
+      ],
+      "reason": "Examined all members of FAM-N17BB4 against CAP-L2 candidate b60f0950; member realizations were reconciled or re-anchored without changing the family's joint guarantee or route coverage.",
+      "revision": 6,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "because": [
+        {
+          "id": "CAP-R02",
+          "packet": "requirements/CAP-R02-v1-mechanical-turn-1-wire-optimization-kv-prefix-offload-and-gate.md",
+          "task": {
+            "path": "261124_role-capsule-and-turn-1-context-optimization",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+            "content": "sha256:8874451040e0826450dcce93250c33f473f7af7b9c17763ce5d8f87b7d698010",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_durable_corpus_root_archive_transition_and_compact_links"
+            },
+            "path": "mcp/tests/test_role_wire_token_budgets.py"
+          },
+          "before": "absent",
+          "id": "PRF-6JRMPQ"
+        },
+        {
+          "after": {
+            "blob": "66309bfdc646e766a2053a4ba175d05fbf9724bc",
+            "content": "sha256:9204c82c1f30e8423b4a09cb75ae64bf36724a9cf69d8a6facffe7c862eb2ad2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_card_maintenance_links_resolve_from_the_actual_emitted_launch_file"
+            },
+            "path": "mcp/tests/test_curator_delivery_contracts.py"
+          },
+          "before": {
+            "blob": "9294c2a8602b327966426f2c71f5774e536f616b",
+            "content": "sha256:9204c82c1f30e8423b4a09cb75ae64bf36724a9cf69d8a6facffe7c862eb2ad2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_card_maintenance_links_resolve_from_the_actual_emitted_launch_file"
+            },
+            "path": "mcp/tests/test_curator_delivery_contracts.py"
+          },
+          "id": "PRF-KH8969"
+        },
+        {
+          "after": {
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+            "content": "sha256:d9c3eee4a7c2b6fcb19706828dbc8d20f80a70dd8b9cbf91cb60eefe233bdc33",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_launch_instructions"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "before": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:95473e1da9c3027a19991c55617d9011c5c561e7d847352b7f7a018f5f21ea66",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_launch_instructions"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "id": "RLZ-8SGCGM"
+        },
+        {
+          "after": {
+            "blob": "6a63e05ad44a1cc23203aa0cc2ca606714fb6bf6",
+            "content": "sha256:17aabecf1db0f7a55aa6bc46e3ea7de15aec069527a062adcd93039895b6b40e",
+            "locator": {
+              "kind": "symbol",
+              "name": "durable_composition_corpus_root"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/provider.py"
+          },
+          "before": "absent",
+          "id": "RLZ-GF3X8B"
+        },
+        {
+          "after": {
+            "blob": "72476b45772eef50c40f5c16400e213b150c682b",
+            "content": "sha256:b09a150b39c4cdc925457c1718fa4ae439c5f18797d96317d62501d682436099",
+            "locator": {
+              "kind": "symbol",
+              "name": "bind_markdown_links"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_links.py"
+          },
+          "before": {
+            "blob": "9ded4bca5ac476f63f808701e9c87d209d3868a7",
+            "content": "sha256:d19fed84aeb9534daac1453c7513d20ea358d5a78f58b703ae30bba9e5f921a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "bind_markdown_links"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_links.py"
+          },
+          "id": "RLZ-NJPF42"
+        },
+        {
+          "after": {
+            "blob": "72476b45772eef50c40f5c16400e213b150c682b",
+            "content": "sha256:64a328708a55a51c45e053a1e1c1e3973f6346a2223da679ba990fb61f4e1c60",
+            "locator": {
+              "kind": "symbol",
+              "name": "compact_skill_uri_links"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_links.py"
+          },
+          "before": "absent",
+          "id": "RLZ-Q7PR52"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-W9MY59",
+      "items": [
+        "sha256:84e3c230f91409f34030d21074d6234990850cb9d9eae2c51bb8de4ddb223c58"
+      ],
+      "reason": "Strengthened INV-ZA67WW to cover durable starting-build corpus root resolution and opt-in compact Turn-1 skill/ and detail/ link binding. Evidence (cap-l2-inv-za67ww): CAP-R02@v1 AC-2; freeze report 261124-CAP-L2-worker-4b8d88e2-c142-5f3f-a063-d08bf0daeaf6.md (Attempt A2, tree b60f09508b968b94502bfe295188d0da57858fb1); Reviewer R2 CODE PASS verdict 261124-CAP-L2-route-review-verdict-r2.md",
+      "revision": 2,
+      "subject": "INV-ZA67WW"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0B3Q36",
+          "revision": 1
+        },
+        {
+          "id": "INV-29DEHG",
+          "revision": 1
+        },
+        {
+          "id": "INV-453GX6",
+          "revision": 1
+        },
+        {
+          "id": "INV-ET42V0",
+          "revision": 1
+        },
+        {
+          "id": "INV-W55VKB",
+          "revision": 1
+        },
+        {
+          "id": "INV-X073BM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-W9XKYC",
+      "items": [
+        "sha256:e22fb87a70db54a6b2fe06b40c34faf9ea1feddb5bfbcfe92bb63a8080fd8b33"
+      ],
+      "reason": "Examined all members of FAM-MS7NC5 against CAP-L2 candidate b60f0950; member realizations were reconciled or re-anchored without changing the family's joint guarantee or route coverage.",
+      "revision": 1,
+      "subject": "FAM-MS7NC5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WC3GZ6",
+      "items": [
+        "sha256:15fa733f425179c359045dd9ca9b5846864476d5488a8e9d7507e70a5a49e756"
+      ],
+      "reason": "Standard imports and __all__ export supporting durable_composition_corpus_root (governed by INV-ZA67WW); carries no separate invariant.",
+      "subject": "hunk:sha256:15fa733f425179c359045dd9ca9b5846864476d5488a8e9d7507e70a5a49e756"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a6fbd7c4a1b9b0255de476c2cba32b9ff48f121c",
+            "content": "sha256:3a9797d2a5b91091712c27a5999e97ad9b69d5e7cfb4c10f6639ddfc1ec9affe",
+            "locator": {
+              "kind": "symbol",
+              "name": "LocatorLifeTests.test_the_end_of_resumability_removes_the_alias_and_never_the_reports"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "before": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:3a9797d2a5b91091712c27a5999e97ad9b69d5e7cfb4c10f6639ddfc1ec9affe",
+            "locator": {
+              "kind": "symbol",
+              "name": "LocatorLifeTests.test_the_end_of_resumability_removes_the_alias_and_never_the_reports"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "id": "PRF-0RVHG7"
+        },
+        {
+          "after": {
+            "blob": "ef248ec6750f70864884b189f733464bd4fb5955",
+            "content": "sha256:b21bde3e5a89536a62cee51c71950fb731db6c32734da4bcdc90f5c66ae6c952",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_detailed_receipt_rebuilds_only_its_lost_locator_before_host_replay"
+            },
+            "path": "mcp/tests/test_role_locator_replay.py"
+          },
+          "before": {
+            "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
+            "content": "sha256:b21bde3e5a89536a62cee51c71950fb731db6c32734da4bcdc90f5c66ae6c952",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_detailed_receipt_rebuilds_only_its_lost_locator_before_host_replay"
+            },
+            "path": "mcp/tests/test_role_locator_replay.py"
+          },
+          "id": "PRF-CP2GWP"
+        },
+        {
+          "after": {
+            "blob": "a6fbd7c4a1b9b0255de476c2cba32b9ff48f121c",
+            "content": "sha256:61a4e3414afdfeb6cc314c9d991e6844f3de4a3937b45f84cd0cfe980b74d4c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LocatorLifeTests.test_a_groups_cleanup_removes_its_launches_locators_and_keeps_the_collected_reports"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "before": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:61a4e3414afdfeb6cc314c9d991e6844f3de4a3937b45f84cd0cfe980b74d4c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LocatorLifeTests.test_a_groups_cleanup_removes_its_launches_locators_and_keeps_the_collected_reports"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "id": "PRF-H84XC1"
+        },
+        {
+          "after": {
+            "blob": "ef248ec6750f70864884b189f733464bd4fb5955",
+            "content": "sha256:0b9ad793835fc73ea359add4213f9333197eea67b79a6becb240849277c5e60a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_terminal_group_reclaims_each_alias_once_and_keeps_every_report"
+            },
+            "path": "mcp/tests/test_role_locator_replay.py"
+          },
+          "before": {
+            "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
+            "content": "sha256:0b9ad793835fc73ea359add4213f9333197eea67b79a6becb240849277c5e60a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_terminal_group_reclaims_each_alias_once_and_keeps_every_report"
+            },
+            "path": "mcp/tests/test_role_locator_replay.py"
+          },
+          "id": "PRF-J2KP1W"
+        },
+        {
+          "after": {
+            "blob": "a6fbd7c4a1b9b0255de476c2cba32b9ff48f121c",
+            "content": "sha256:dcf2a639603386ab3f76f4e4e033164304502ac873d338294bfdce907c5cfb04",
+            "locator": {
+              "kind": "symbol",
+              "name": "LocatorLinkTests.test_a_locator_that_would_lead_elsewhere_is_refused_before_anything_else_happens"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "before": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:dcf2a639603386ab3f76f4e4e033164304502ac873d338294bfdce907c5cfb04",
+            "locator": {
+              "kind": "symbol",
+              "name": "LocatorLinkTests.test_a_locator_that_would_lead_elsewhere_is_refused_before_anything_else_happens"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "id": "PRF-M441WS"
+        },
+        {
+          "after": {
+            "blob": "ef248ec6750f70864884b189f733464bd4fb5955",
+            "content": "sha256:1096bdd1377de89074cac4dd636bad0e861b01d88746e81f95a31f66e1356263",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_detailed_preparation_refuses_a_collision_before_artifact_writes"
+            },
+            "path": "mcp/tests/test_role_locator_replay.py"
+          },
+          "before": {
+            "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
+            "content": "sha256:6408998ff87b13b0cf599cf103c3dd4f9f4993098ea9d561f5d8b2a1887f7c64",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_detailed_preparation_refuses_a_collision_before_artifact_writes"
+            },
+            "path": "mcp/tests/test_role_locator_replay.py"
+          },
+          "id": "PRF-RK3Q1K"
+        },
+        {
+          "after": {
+            "blob": "a6fbd7c4a1b9b0255de476c2cba32b9ff48f121c",
+            "content": "sha256:00e8eb9d342fbc230a974b524fa2ba905d187038e5511b8b4ead4bba18d773ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "LocatorLifeTests.test_closing_an_execution_removes_its_locator_and_keeps_its_reports"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "before": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:00e8eb9d342fbc230a974b524fa2ba905d187038e5511b8b4ead4bba18d773ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "LocatorLifeTests.test_closing_an_execution_removes_its_locator_and_keeps_its_reports"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "id": "PRF-S6XRNB"
+        },
+        {
+          "after": {
+            "blob": "a6fbd7c4a1b9b0255de476c2cba32b9ff48f121c",
+            "content": "sha256:65194bff0ba9a28d5435463b30d9a5fc74163f590298c8fec6b0ad80d3b54559",
+            "locator": {
+              "kind": "symbol",
+              "name": "LocatorLifeTests.test_a_locator_that_leads_outside_the_reclaimed_folders_is_left_standing"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "before": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:65194bff0ba9a28d5435463b30d9a5fc74163f590298c8fec6b0ad80d3b54559",
+            "locator": {
+              "kind": "symbol",
+              "name": "LocatorLifeTests.test_a_locator_that_leads_outside_the_reclaimed_folders_is_left_standing"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "id": "PRF-T1EFEY"
+        },
+        {
+          "after": {
+            "blob": "a6fbd7c4a1b9b0255de476c2cba32b9ff48f121c",
+            "content": "sha256:fea9c0c3fcee0a07809199fb0368d309e924577c0acc8375b68bdae6dc85f203",
+            "locator": {
+              "kind": "symbol",
+              "name": "LocatorLinkTests.test_a_lost_locator_is_rebuilt_at_the_same_place_over_the_same_bytes"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "before": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:fea9c0c3fcee0a07809199fb0368d309e924577c0acc8375b68bdae6dc85f203",
+            "locator": {
+              "kind": "symbol",
+              "name": "LocatorLinkTests.test_a_lost_locator_is_rebuilt_at_the_same_place_over_the_same_bytes"
+            },
+            "path": "mcp/tests/test_role_handover_locator.py"
+          },
+          "id": "PRF-VCE6DC"
+        },
+        {
+          "after": {
+            "blob": "4a2b44cfec79480593fdbf45c5a08f224c4fb1db",
+            "content": "sha256:abd8c0d78cf3351ec9fe33a1534c8c74cca60ddb5846be05b19c2e1bc17637d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore_launch_files"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_restore.py"
+          },
+          "before": {
+            "blob": "e67b518ce70be78d1e52c7ff344223c0e027bf6b",
+            "content": "sha256:70e3935194b5215ff956ec9f8aa0fd9f6fce24b3e414e187fac1c9728edb6f98",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore_launch_files"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_restore.py"
+          },
+          "id": "RLZ-0DXGTP"
+        },
+        {
+          "after": {
+            "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
+            "content": "sha256:b1e7d9ecc88a6a7945c6db1705d79ffc520b5d0a6c080177d759daa775e8865f",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_group_role_folders"
+            },
+            "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+          },
+          "before": {
+            "blob": "62215ea0a5252c997ca76c7b1680713485391419",
+            "content": "sha256:b1e7d9ecc88a6a7945c6db1705d79ffc520b5d0a6c080177d759daa775e8865f",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_group_role_folders"
+            },
+            "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+          },
+          "id": "RLZ-8K7G9B"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-WJTWKY",
+      "items": [
+        "sha256:22c21a039efeae4ba913707d9efdf2ae592e97c703ab058bc98e22bee018b0f2"
+      ],
+      "reason": "Re-anchored INV-Q9AV3B entries at CAP-L2 candidate b60f0950 after Turn-1 wire optimization and test catalog updates; the invariant's obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-Q9AV3B"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WKPXBN",
+      "items": [
+        "sha256:43a167493328984e3a2f483bc85ddb32701040a7070e3de4569abc6d024dc8a3"
+      ],
+      "reason": "Imports, shipped-skill URI prefix constant, and internal link-formatting helpers supporting bind_markdown_links and compact_skill_uri_links (governed by INV-ZA67WW); carries no separate invariant.",
+      "subject": "hunk:sha256:43a167493328984e3a2f483bc85ddb32701040a7070e3de4569abc6d024dc8a3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WSMVT8",
+      "items": [
+        "sha256:fa19e0d3d5c366d18be04fa9df78494917301c242e262c26d716a16e310caade"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_instruction_details.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+          "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_instruction_details.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WWGXPV",
+      "items": [
+        "sha256:917ebd39f27664fe7f5f92e80ca50b73dc99cc2440d52e54a26195d5524df135"
+      ],
+      "reason": "Imports and local nested-detail path/confinement helpers supporting compose_launch_instructions and validate_instruction_detail_artifacts (governed by INV-7KDG7C); carries no separate invariant.",
+      "subject": "hunk:sha256:917ebd39f27664fe7f5f92e80ca50b73dc99cc2440d52e54a26195d5524df135"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+            "content": "sha256:add318f5f52459454ace603b7301aeecf2076960e72cbde7ce198c17d4c4fc7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_role_launch_dispatch_endpoint"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+            "content": "sha256:add318f5f52459454ace603b7301aeecf2076960e72cbde7ce198c17d4c4fc7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_role_launch_dispatch_endpoint"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-RA5JXR"
+        },
+        {
+          "after": {
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+            "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+            "content": "sha256:f160230465540553045b0bd0c4e087c56fcc3e149b31c2d0ee3af4a68b0d6a0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-SFNK16"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-WY5QCQ",
+      "items": [
+        "sha256:76bd190959d6ca6ec21507118e17df6a339e23493195b823553be450eba7d9c8"
+      ],
+      "reason": "Re-anchored INV-MGQ6ES entries at CAP-L2 candidate b60f0950 after Turn-1 wire optimization and test catalog updates; the invariant's obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-MGQ6ES"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1588beb0134ca8994261a5fdae3eda4cefa8fef2",
+            "content": "sha256:cf1d3fe026b3a94543fce728cd71ae2e9ddbbfade9776c6ea943bf819b8a5aa5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_captured_artifacts_bind_production_details_without_inline_bodies"
+            },
+            "path": "mcp/tests/test_agent_eval_text_delivery.py"
+          },
+          "before": "absent",
+          "id": "PRF-5PGAJN"
+        },
+        {
+          "after": {
+            "blob": "1588beb0134ca8994261a5fdae3eda4cefa8fef2",
+            "content": "sha256:b6133c24e2a5c4b9f3339d3b1f32fd297409926071da629112bcbc6dd2600b7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_capture_keeps_every_compiled_origin_after_the_shared_prefix"
+            },
+            "path": "mcp/tests/test_agent_eval_text_delivery.py"
+          },
+          "before": "absent",
+          "id": "PRF-RCAEK6"
+        },
+        {
+          "after": {
+            "blob": "1588beb0134ca8994261a5fdae3eda4cefa8fef2",
+            "content": "sha256:a5db3530e365e4ba03db1ca95d95bead9d09df7189e03e94f2826783cdae11ed",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_agent_eval_text_delivery.py"
+          },
+          "before": {
+            "blob": "1f2ab1ecef3bb7ccdfa70bba807351d825641baf",
+            "content": "sha256:18dadce292dd20f946ca1d819cd2191b7cb39f87d52b3ffb51869fdceb371382",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_agent_eval_text_delivery.py"
+          },
+          "id": "RLZ-5CBMSV"
+        },
+        {
+          "after": {
+            "blob": "dd7862a6e0c97b00404ce3c8152d35254de296a8",
+            "content": "sha256:a2a8fa290ecc306ffecf2c87f1557fd9cf5467303454b155594dd41a3af8714a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/text.py"
+          },
+          "before": {
+            "blob": "61f54b8a307b3bf2f2dc2cd47db9a95fd5b59474",
+            "content": "sha256:839f171018f053983e6349038b256a6fb6174c84e54459dbdf0d3bde826caae8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/text.py"
+          },
+          "id": "RLZ-67RXCS"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-WYSA07",
+      "items": [
+        "sha256:c0a5e615596ebfb54245ea9f6e1d49174c3c5b6c6afc27821ad1721b471381c0"
+      ],
+      "reason": "Re-anchored INV-HXTSVY realizations after eval text capture added Curator-filtered shared_block verification and attached two resolving proof tests; obligation is unchanged. Evidence (cap-l2-inv-hxtsvy-proofs): CAP-R02@v1 proof attachment; freeze report 261124-CAP-L2-worker-4b8d88e2-c142-5f3f-a063-d08bf0daeaf6.md (Attempt A2, tree b60f09508b968b94502bfe295188d0da57858fb1); Reviewer R2 CODE PASS verdict 261124-CAP-L2-route-review-verdict-r2.md",
+      "revision": 1,
+      "subject": "INV-HXTSVY"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XPZ0WZ",
+      "items": [
+        "sha256:007f8854d75d65c6061cf62b3194f2476a5ddbfc6ed1ff536376b471440bd044",
+        "sha256:051e0da915057f31d77426a387a91a562e3f5b77b8629af9cedabbf7811a47d1",
+        "sha256:64c7153534f934ef4de5b8fc6557ae7bae7dc4ab4ff6bb7456a825709c17a971",
+        "sha256:753d67600d98f9301505a13c6b3b15ac1a7e79d64f32d8100373a8a04daf2dc9",
+        "sha256:a84ebdd899e80531e03cf0facca840c0a6235d7c5017971eca4900c98eaa8362",
+        "sha256:c613276072c96d04dc9ce99e52b9e4b61ada3d91cc4c15f7ab602709711b260a"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_paseo_agent_tools.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "22a566752c83802f0d887f6d46f4548f962a6214",
+          "path": "mcp/tests/test_paseo_agent_tools.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_agent_tools.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XTRDD0",
+      "items": [
+        "sha256:de5b8981ffbcea6a8bd0fd48cb613f7a975813a13894db5ef394509c564b7082"
+      ],
+      "reason": "Imports and local nested-detail path/confinement helpers supporting compose_launch_instructions and validate_instruction_detail_artifacts (governed by INV-7KDG7C); carries no separate invariant.",
+      "subject": "hunk:sha256:de5b8981ffbcea6a8bd0fd48cb613f7a975813a13894db5ef394509c564b7082"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XYTJ13",
+      "items": [
+        "sha256:f0cf5a70d46e6a2f158f884ad12f6c452abf2418feca2c54fdbbf4ee2b898630"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_paseo_launch.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "62b9825c34c8eaed6c25f6efb0a1ec482df693d1",
+          "path": "mcp/tests/test_paseo_launch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_launch.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XZ8E5H",
+      "items": [
+        "sha256:b72635b87c1f7cd47ee4ceba97179fab769646ff5c4b53fdab96c38cdea8b752"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_handover_artifacts.py for CAP-L2 candidate b60f0950 and refreshed its citation table references via citation_fix.",
+      "sources": [
+        {
+          "blob": "5f6da7e9c840df9dc1a16d5efc2d6f75dd1cebd2",
+          "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_handover_artifacts.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Y6W0HA",
+      "items": [
+        "sha256:092ca0466fe84c084d098266308c6cc0d2fbcf67da180c09f2a90f33e3c28900"
+      ],
+      "reason": "Reconfirmed docs/reference/skills.md against CAP-L2 candidate b60f0950; zero edits were made to skills/l-01-agent-lifecycles Markdown and the skills reference remains accurate.",
+      "revision": 6,
+      "subject": "DPD-ZQB4YZ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "22a566752c83802f0d887f6d46f4548f962a6214",
+            "content": "sha256:89a6195b6e820ef1cda784428f63965d46c1ed836adac69c780d2fbf4fc1bec9",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverArtifactTests.test_the_artifact_is_written_once_beside_the_report_and_named_by_one_line"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "before": {
+            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
+            "content": "sha256:88ecec4dd65503f1c54ee16384abb8df0c3e80d639a9ae19e9850df2f58b6448",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverArtifactTests.test_the_artifact_is_written_once_beside_the_report_and_named_by_one_line"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "id": "PRF-0V86KJ"
+        },
+        {
+          "after": {
+            "blob": "22a566752c83802f0d887f6d46f4548f962a6214",
+            "content": "sha256:3be784b682d17a0d01ae3b40071d847264f7777c4d62ec48665cca2020d9af22",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverArtifactTests.test_the_artifact_is_a_regular_file_of_bounded_size"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "before": {
+            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
+            "content": "sha256:3be784b682d17a0d01ae3b40071d847264f7777c4d62ec48665cca2020d9af22",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverArtifactTests.test_the_artifact_is_a_regular_file_of_bounded_size"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "id": "PRF-HCQE56"
+        },
+        {
+          "after": {
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+            "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+            "content": "sha256:f160230465540553045b0bd0c4e087c56fcc3e149b31c2d0ee3af4a68b0d6a0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-3WT1SY"
+        },
+        {
+          "after": {
+            "blob": "5f6da7e9c840df9dc1a16d5efc2d6f75dd1cebd2",
+            "content": "sha256:809735a38872fe29b581beb1b1e8882d94a9b94bda9e214e296366398b21e235",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_handover_artifact"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "before": {
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:809735a38872fe29b581beb1b1e8882d94a9b94bda9e214e296366398b21e235",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_handover_artifact"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "id": "RLZ-70KS6M"
+        },
+        {
+          "after": {
+            "blob": "5f6da7e9c840df9dc1a16d5efc2d6f75dd1cebd2",
+            "content": "sha256:46b85505ab6f5f21991fbff2ee0adaa1a30644430f7a4a72276011123d76da29",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "before": {
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:94ad19414a723cec114d8614cd62cb4725235023dd00f52100f22520efe37873",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "id": "RLZ-MXZRHV"
+        },
+        {
+          "after": {
+            "blob": "1866eaa3a2c5a7a312f9f2f690697fa7914a7d15",
+            "content": "sha256:59b217d2d1457ec1c7f1366b50216bbef3e2d655ee9fc857c58ed461317f13bb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
+            "content": "sha256:2fcdc9ee022af4cf21b7361b81a1136e783c030638bfee14b87e013383ff7eee",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-T0T191"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YEA7AD",
+      "items": [
+        "sha256:16575b89c293659c8f677092d397a8003995bba5423304a02bbe682072740f22"
+      ],
+      "reason": "Re-anchored INV-X9GE8J entries after CAP-L2 moved the artifact line to a trailing suffix and updated RLZ-MXZRHV rationale accordingly; obligation is unchanged.",
+      "revision": 2,
+      "subject": "INV-X9GE8J"
+    },
+    {
+      "because": [
+        {
+          "id": "CAP-R02",
+          "packet": "requirements/CAP-R02-v1-mechanical-turn-1-wire-optimization-kv-prefix-offload-and-gate.md",
+          "task": {
+            "path": "261124_role-capsule-and-turn-1-context-optimization",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+            "content": "sha256:f1fdaec0e47c0376afbfedd3baafac82e9c1962797203f5e5974da78c015015a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_filter_shared_block_seal_launcher_absent_source_and_markdown_edges"
+            },
+            "path": "mcp/tests/test_role_wire_token_budgets.py"
+          },
+          "before": "absent",
+          "id": "PRF-5TEZJB"
+        },
+        {
+          "after": {
+            "blob": "f546a3e643d615e8d87e13e03715d706921a1fa4",
+            "content": "sha256:8360e0f5002784cc26ab5fe511cf7389607158c2eb6fc70a2507207f9a1a04d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_structured_shared_digest_is_delivered_once_and_seals_each_role"
+            },
+            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+          },
+          "before": "absent",
+          "id": "PRF-MZNQ5M"
+        },
+        {
+          "after": {
+            "blob": "2db2f2e13ec76a35e278db4c9aa2dce5fefa1174",
+            "content": "sha256:4247bc77064682c15de49425b810916a56eb9b2d123a798419af185b41b98538",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_digest_homes_declare_audiences_and_steps_without_injecting_the_map"
+            },
+            "path": "mcp/tests/test_l84_capsule_delivery_proofs.py"
+          },
+          "before": {
+            "blob": "5b520d060d16ba6dd8ebff60b02c820993ce390e",
+            "content": "sha256:4247bc77064682c15de49425b810916a56eb9b2d123a798419af185b41b98538",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_digest_homes_declare_audiences_and_steps_without_injecting_the_map"
+            },
+            "path": "mcp/tests/test_l84_capsule_delivery_proofs.py"
+          },
+          "id": "PRF-P23ZJ5"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "d61a196728db8ea461a40f2efeebedf3bfb06078",
+            "content": "sha256:b6d6d9ec61512564716e5e1456dd7f2f820f06db6499ed7e981c4f9f5cbce8db",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_structured_shared_digest_is_delivered_once_and_seals_each_role"
+            },
+            "path": "mcp/tests/test_role_capsule_manifest_edges.py"
+          },
+          "id": "PRF-S4KAMN"
+        },
+        {
+          "after": {
+            "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+            "content": "sha256:29d6656e8ed9d8bd17885cf26875aa23c2ac78757f1e64db1a9eaac3560d686e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_filter_shared_block_32_admitted_pairs_and_digest_map"
+            },
+            "path": "mcp/tests/test_role_wire_token_budgets.py"
+          },
+          "before": "absent",
+          "id": "PRF-XXQCNP"
+        },
+        {
+          "after": {
+            "blob": "dd7862a6e0c97b00404ce3c8152d35254de296a8",
+            "content": "sha256:6e4128ef42999eb3425d165ea73720ff86a80aac2e1c71aee30b5789f6c479d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_captured_origins"
+            },
+            "path": "scripts/agent_evals/text.py"
+          },
+          "before": "absent",
+          "id": "RLZ-H1BS2Z"
+        },
+        {
+          "after": {
+            "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+            "content": "sha256:5258a0a3b9d50a4e7b5fba3bdafde59bd139b5959876b4b3c6b2d81e3d50e7a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "before": {
+            "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+            "content": "sha256:5258a0a3b9d50a4e7b5fba3bdafde59bd139b5959876b4b3c6b2d81e3d50e7a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "id": "RLZ-HR7SPS"
+        },
+        {
+          "after": {
+            "blob": "57ccf35179ee1d0293f1637fa77a2c26912e0a03",
+            "content": "sha256:03591741d23875c6fd4212f57300594ae1880a052a55585ae606e44577992b06",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_admitted_capsule"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "before": "absent",
+          "id": "RLZ-TRR6MT"
+        },
+        {
+          "after": {
+            "blob": "386b91bcc0de26be4fa223fdfcebd84df7091ce6",
+            "content": "sha256:ac23c18c452336757989b9964e7c9a1138617657a45322bde5bb27054bb4a0c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "filter_shared_block"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/shared_block.py"
+          },
+          "before": "absent",
+          "id": "RLZ-Y5VB81"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-YFKDVK",
+      "items": [
+        "sha256:33e3c88145cd9bad9c4f6714ac89fa8ea9d9587acbddf2c67f017b2f6987f7b3"
+      ],
+      "reason": "Replaced INV-40JW44 to record deterministic per-role shared_block filtering via filter_shared_block during compile_admitted_capsule while preserving full-source semantic-digest sealing and unchanged launcher/absent-source behavior. Evidence (cap-l2-inv-40jw44): CAP-R02@v1 AC-1; freeze report 261124-CAP-L2-worker-4b8d88e2-c142-5f3f-a063-d08bf0daeaf6.md (Attempt A2, tree b60f09508b968b94502bfe295188d0da57858fb1); Reviewer R2 CODE PASS verdict 261124-CAP-L2-route-review-verdict-r2.md",
+      "revision": 2,
+      "subject": "INV-40JW44"
+    },
+    {
+      "because": [
+        {
+          "id": "CAP-R02",
+          "packet": "requirements/CAP-R02-v1-mechanical-turn-1-wire-optimization-kv-prefix-offload-and-gate.md",
+          "task": {
+            "path": "261124_role-capsule-and-turn-1-context-optimization",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "8bcb7af0bd9072179d78576fc60e15feea22f8fc",
+            "content": "sha256:9c1e6bd7df6048e946e9bedc46a81e0d92241262e06bb87eee542ddacde78f90",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nested_details_symlink_confinement_and_report_exclusion"
+            },
+            "path": "mcp/tests/test_role_wire_token_budgets.py"
+          },
+          "before": "absent",
+          "id": "PRF-1RMT5E"
+        },
+        {
+          "after": {
+            "blob": "ae4f0c7a72eef5d4f15704c71322f633ef63e16c",
+            "content": "sha256:974ddafaa5bca02dcb531fc26ef2a93ed3850ce2b5493de1d6e58b601e58a470",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_replay_refuses_a_rebound_report_folder_even_when_detail_bytes_are_unchanged"
+            },
+            "path": "mcp/tests/test_capsule_replay_integrity.py"
+          },
+          "before": {
+            "blob": "d3597a8c769c981f6dc3d933c895420c3b6e9766",
+            "content": "sha256:974ddafaa5bca02dcb531fc26ef2a93ed3850ce2b5493de1d6e58b601e58a470",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_replay_refuses_a_rebound_report_folder_even_when_detail_bytes_are_unchanged"
+            },
+            "path": "mcp/tests/test_capsule_replay_integrity.py"
+          },
+          "id": "PRF-2607SK"
+        },
+        {
+          "after": {
+            "blob": "ae4f0c7a72eef5d4f15704c71322f633ef63e16c",
+            "content": "sha256:93580a9199628c3c7f3eec8f84667fb9d247c0f80ef18dbf75ec0ef8e01bd75c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_leaf_preparation_restores_details_beside_local_handover"
+            },
+            "path": "mcp/tests/test_capsule_replay_integrity.py"
+          },
+          "before": {
+            "blob": "d3597a8c769c981f6dc3d933c895420c3b6e9766",
+            "content": "sha256:8a46591742facec3f20354e1a4addf1e3725784b5b990da40c6ce8c3fd9ee270",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_leaf_preparation_restores_details_beside_local_handover"
+            },
+            "path": "mcp/tests/test_capsule_replay_integrity.py"
+          },
+          "id": "PRF-PN3CXR"
+        },
+        {
+          "after": {
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+            "content": "sha256:d9c3eee4a7c2b6fcb19706828dbc8d20f80a70dd8b9cbf91cb60eefe233bdc33",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_launch_instructions"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "before": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:95473e1da9c3027a19991c55617d9011c5c561e7d847352b7f7a018f5f21ea66",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_launch_instructions"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "id": "RLZ-1PJFH4"
+        },
+        {
+          "after": {
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+            "content": "sha256:8e1ec8f2393b060b4f892fe792d15be749bb0c304ff55ed65b9dce1f32070e13",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bound_details"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "before": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:afa85dd99b0baaa9a1eea7771536e23bb5dbf22967538f0831c5708086aeed70",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bound_details"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "id": "RLZ-6FPCG9"
+        },
+        {
+          "after": {
+            "blob": "5f6da7e9c840df9dc1a16d5efc2d6f75dd1cebd2",
+            "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_detail_artifacts"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "before": {
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_detail_artifacts"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "id": "RLZ-EYJCHF"
+        },
+        {
+          "after": {
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+            "content": "sha256:af713057f7d2efdcf7ea25b91fdbefa41fa1eba12fbb28f6fb23b6d89eb10070",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bound_baseline"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "before": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:bcaf61b6df284746b209e3fc41f0178674b74047e1bb309fb11abc84ae696623",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bound_baseline"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "id": "RLZ-F3VP22"
+        },
+        {
+          "after": {
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+            "content": "sha256:6b3461d8b91ae83566cc1114a8130a1305e1e3e90db623ccd79200d1c3ceee72",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_detail_target"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "before": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:0b1e541356504b07899550c887ded86c43f93b01b01a0812db842171ebd7d0e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_detail_target"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "id": "RLZ-K57X9H"
+        },
+        {
+          "after": {
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+            "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_instruction_detail_artifacts"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "before": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_instruction_detail_artifacts"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "id": "RLZ-NN7YJ0"
+        },
+        {
+          "after": {
+            "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
+            "content": "sha256:b5a2436703661c7acbc3ccf3e9cd9fdd30e7dd64bc69359644ae1b66a2522728",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_carrier"
+            },
+            "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+          },
+          "before": "absent",
+          "id": "RLZ-WPBGF2"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-Z3X8NY",
+      "items": [
+        "sha256:3aee8a112b1f62541da3c8b77376b094c0311487aec58160b1748a54c3f9c40a"
+      ],
+      "reason": "Strengthened INV-7KDG7C to cover nested symlink-confined <stem>.details/<source> detail freezing, dual nested/flat restore validation, and canonical report exclusion of launch carriers. Evidence (cap-l2-inv-7kdg7c): CAP-R02@v1 AC-2; freeze report 261124-CAP-L2-worker-4b8d88e2-c142-5f3f-a063-d08bf0daeaf6.md (Attempt A2, tree b60f09508b968b94502bfe295188d0da57858fb1); Reviewer R2 CODE PASS verdict 261124-CAP-L2-route-review-verdict-r2.md",
+      "revision": 2,
+      "subject": "INV-7KDG7C"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZD8HS0",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test-evidence-lanes.toml for post-sync CAP-L2 candidate dbad7514 (rebased onto main 3336406ea / BUG-L37), updated post-sync counts to 676 unit-regression / 826 total modules (and line 652), and refreshed all citation anchors to 0 stale.",
+      "sources": [
+        {
+          "blob": "4bb2b5c79060fc9dbf38f851fb9b15b0e7abcd9e",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:d11ddf9474fe8659bdfd4ce63ed9b4f4c089c73cebd5b0a67ac9e7ad2ff73a0a",
+      "record": "DEC-4PGWAW",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-25T20:08:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:8b0dafb83f72fd3fa29ed3863033aec0f03913eb99310c33771365e4c2b04dd4",
+      "record": "DPD-21GMJ5",
+      "revision": 9,
+      "writer": {
+        "at": "2026-11-25T20:08:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:5818092b8e2fd5dc0265ce650a9a44be04318d1f3b694a00881f9a8d4546f529",
+      "record": "DPD-327MNX",
+      "revision": 6,
+      "writer": {
+        "at": "2026-11-25T20:08:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:1de2c3fb4cd5a7ba4be599f6f55d026018c9568b24dd979b874853e7f2bf41cf",
+      "record": "DPD-327MNX",
+      "revision": 7,
+      "writer": {
+        "at": "2026-11-25T21:08:40+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:9e80bc24b8e77973165308e1c4e517b343ff8aee269b1ac04c269a19344962d0",
+      "record": "DPD-6528VF",
+      "revision": 9,
+      "writer": {
+        "at": "2026-11-25T20:08:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:9ce798ecc21228041a752e946098cf970b2072d238373b35610e47c5b601d571",
+      "record": "DPD-71WYH4",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-25T20:08:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:f5e63ad62b830dba1945eeb5f8fef40b9b3f0f20fb3f514e9ff06521e44c83f5",
+      "record": "DPD-71WYH4",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-25T21:08:40+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:564537df12d1904f2f246c55c3c4033be4552fade08d4db300fb50abaf83664b",
+      "record": "DPD-PMZ21Z",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-25T20:08:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:ce2dde1ec806a2cb45773040771b020c59b306bbc0a428b6f79bdcf5d9d35c88",
+      "record": "DPD-ZMQ523",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-25T20:08:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:e1f22d1e80cd568b98f6b927e592b39bea34bfcfbc101ccbc4a977f44251a5e2",
+      "record": "DPD-ZMQ523",
+      "revision": 17,
+      "writer": {
+        "at": "2026-11-25T21:08:40+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:6fe645985670cc6a010efe7f1d5e9ffae7ac7fe35431d2febdc6ed2f2bdfdb24",
+      "record": "DPD-ZQB4YZ",
+      "revision": 6,
+      "writer": {
+        "at": "2026-11-25T20:08:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:0f8b43379ead98d53e7a732a752e75fdb5536c6829966dbc58a3d34676502219",
+      "record": "DPD-ZT8YY7",
+      "revision": 17,
+      "writer": {
+        "at": "2026-11-25T20:08:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:ea9a4943922bd77ad59a4226fe1f4fe8e81eaa1a6100db4fc2deaa96e623545b",
+      "record": "DPD-ZT8YY7",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-25T21:08:40+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:5168fa5621629371c46b574dcf7025ef84fdc875ec1546c0c6206dfe0eb78ac1",
+      "record": "FAM-N36SWD",
+      "revision": 4,
+      "writer": {
+        "at": "2026-11-25T20:08:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:f829428beb31adb6713b573a6114589c24cf2535402f441687031c59d8d23559",
+      "record": "INV-40JW44",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-25T20:08:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:916830e1fb11748f1844c71e4ea4a4dd4b58cf75c3671e54f9bf9d9ae7c636cf",
+      "record": "INV-5H5VR2",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-25T20:08:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:b6d66d34524fdec91d9cb29fd636432ebf3f8a30e7caee381f9dabcf334efe8f",
+      "record": "INV-7KDG7C",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-25T20:08:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:653addedf9b75441c8018d85df46f4696b83fa32b25838034435c690f0821496",
+      "record": "INV-87JRHY",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-25T20:08:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:55db57c137360c0b61590988018bfa7127193fb65afe80e7db0a2ba729006d60",
+      "record": "INV-8AMSGV",
+      "revision": 5,
+      "writer": {
+        "at": "2026-11-25T20:08:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:804adf31226713f479102066c73a7b781323cec506ce0d7a038f9e6cd229d6b9",
+      "record": "INV-ZA67WW",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-25T20:08:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    },
+    {
+      "contentDigest": "sha256:d1ac2269a4f30bcb05248ac34a4607336beb0bb9eedb8ee67c223eef2c22ac47",
+      "record": "INV-ZVD184",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-25T20:08:37+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-CAP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+        "task": "261124-CAP"
+      }
+    }
+  ]
+}

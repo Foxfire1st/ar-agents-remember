@@ -6,13 +6,16 @@
     ],
     "justification": "Realized by the digest file, the digest map and the manifest's audience and injection declarations; tests compile every role and operation pair and require the digest exactly once and the map never injected."
   },
-  "applicability": "The first message of every admitted native role start.",
+  "applicability": "The first message of every admitted native role start compiled for a CapsuleRoleSeat.",
   "conditions": [
-    "The manifest lists the role among the every-role digest's audiences."
+    "The manifest lists the role among the every-role digest's audiences.",
+    "filter_shared_block normalizes system-specialist to investigator, treats consecutive role-prefixed lines independently, preserves fenced code blocks, and prunes empty headings.",
+    "Full-source admission and semantic-digest sealing remain anchored to the complete core/every-role.md bytes."
   ],
   "exclusions": [
     "The digest map, an audit record that is never injected into an instruction block.",
-    "The capsule's own role and operation blocks, which never contain the digest."
+    "The capsule's own role and operation blocks, which never contain the digest.",
+    "Launcher and absent-source compilations, which receive no role-filtered shared block."
   ],
   "id": "INV-40JW44",
   "origin": {
@@ -26,9 +29,20 @@
     "leaf": "260928-MIK-L84",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The shared every-role digest reaches each admitted native role opening once while its audit map remains a separately named non-injected reference.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "The shared every-role digest is filtered deterministically per canonical role during role-capsule compilation so each admitted native role opening receives only its universal and role-applicable rules once, while the compiler retains the full-source semantic-digest seal, leaves launcher and absent-source compilations unchanged, and keeps the audit map as a separately named non-injected reference.",
+  "supersedes": [],
+  "title": "Role-filtered every-role digest reaches admitted role openings once",
+  "writer": {
+    "at": "2026-11-25T20:08:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+    "task": "261124-CAP"
+  }
 }

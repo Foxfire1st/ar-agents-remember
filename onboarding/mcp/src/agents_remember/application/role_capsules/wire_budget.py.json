@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/application/role_capsules/wire_budget.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "487170f65289d19227d8e1f14afa8663fa1ca276",
+        "content": "sha256:14801f721a729ffd7df12cd353c3c844bd89fb88b2ed5afa61d93f809457fc2f",
+        "locator": {
+          "kind": "symbol",
+          "name": "evaluate_wire_token_ceilings"
+        }
+      },
+      "id": "RLZ-E6AQ06",
+      "invariant": "INV-ZVD184",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-zvd184",
+        "leaf": "261124-CAP-L2"
+      },
+      "rationale": "Checks measured Turn-1 prompt token counts against PHASE_1_WIRE_TOKEN_CEILINGS and explicit appendix-adjusted ceilings (PHASE_1_HELD_APPENDIX_ALLOWANCE=600, PHASE_1_LAUNCH_APPENDIX_ALLOWANCE=900) and reports every exceeded or unconfigured key.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "487170f65289d19227d8e1f14afa8663fa1ca276",
+        "content": "sha256:b97e9a3b0ec6b0d0d140a10ec57351dfb7cec95694c5e513bdcfab80a9d6a362",
+        "locator": {
+          "kind": "symbol",
+          "name": "measure_wire_tokens"
+        }
+      },
+      "id": "RLZ-X48KF9",
+      "invariant": "INV-ZVD184",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-zvd184",
+        "leaf": "261124-CAP-L2"
+      },
+      "rationale": "Tokenizes normalized Turn-1 wire prompts with vendored o200k_base and disallowed_special=() for deterministic offline 0-variance measurement.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`PHASE_1_WIRE_TOKEN_CEILINGS` exports immutable Phase 1 base ceilings for all eight default launch pairs beside `PHASE_1_HELD_APPENDIX_ALLOWANCE` (600) and `PHASE_1_LAUNCH_APPENDIX_ALLOWANCE` (900).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "487170f65289d19227d8e1f14afa8663fa1ca276",
+            "content": "sha256:9c25b53a90804c9ca32da1e4d09ccf11d6a666986f90119d0eb3f2204519ba71",
+            "locator": {
+              "kind": "symbol",
+              "name": "PHASE_1_WIRE_TOKEN_CEILINGS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`measure_wire_tokens` loads the vendored offline `o200k_base` encoding, applies ordered normalizations, and tokenizes plain text with `disallowed_special=()`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "487170f65289d19227d8e1f14afa8663fa1ca276",
+            "content": "sha256:b97e9a3b0ec6b0d0d140a10ec57351dfb7cec95694c5e513bdcfab80a9d6a362",
+            "locator": {
+              "kind": "symbol",
+              "name": "measure_wire_tokens"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`evaluate_wire_token_ceilings` reports unconfigured keys and strictly over-ceiling totals without ratcheting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "487170f65289d19227d8e1f14afa8663fa1ca276",
+            "content": "sha256:14801f721a729ffd7df12cd353c3c844bd89fb88b2ed5afa61d93f809457fc2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_wire_token_ceilings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

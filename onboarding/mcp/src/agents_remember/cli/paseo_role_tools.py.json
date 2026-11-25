@@ -521,12 +521,12 @@
         },
         {
           "anchor": {
-            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
             "content": "sha256:7928e80a269ad98095e1ab1f7a6085424da6acfb557dc9969c3f5f15ec78cbbb",
             "locator": {
-              "end": 292,
+              "end": 299,
               "kind": "line_range",
-              "start": 253
+              "start": 260
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },

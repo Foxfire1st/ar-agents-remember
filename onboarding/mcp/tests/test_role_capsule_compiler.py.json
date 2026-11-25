@@ -293,12 +293,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
+            "blob": "57ccf35179ee1d0293f1637fa77a2c26912e0a03",
             "content": "sha256:3582dec10d76cdc696f982f5c45c9c7cbe2a72abc7c9986c7c0633ec40c6983c",
             "locator": {
-              "end": 90,
+              "end": 92,
               "kind": "line_range",
-              "start": 46
+              "start": 48
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },

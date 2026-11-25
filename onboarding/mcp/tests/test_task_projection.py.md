@@ -14,8 +14,6 @@ branch/admitted-revision refusals and invalidation after a real task-document re
 fact-plane separation and verbatim obligations. This describes source definitions and
 assertions, not a newly collected or executed test count.
 
-
-
 ## Code Commentary
 
 ### Logic
@@ -136,7 +134,6 @@ The cases, the fixture value objects that vary one fact at a time, and the seam 
 
 - The structural case scans direct task_projection Python modules. It rejects listed writer and transport import substrings and top-level json imports. [4]
 
-
 - The altitude fixture checks that the Orchestrator receives the sprint decision and the leaf excludes it. A separate assertion checks the leaf's master-log reference. [6]
 - Named resolution failures return their asserted projection statuses. The registry census also accounts for declared unreachable statuses. [7]
 - The seam case: the provider satisfies the compiler protocol, and the knowledge channel is optional. [8]
@@ -159,12 +156,7 @@ No meaningful cross-repo references found.
 
 - The population setting includes modules below mcp/tests. The retained historical collection comment names its default-unit-lane collection method. [15]
 
-
-
-
 - The compiler seam these cases verify through, including its digest refusal. [10]
-
-
 
 - The read-only case keeps task-document bytes and the task-tree digest unchanged after a successful projection, a projection-branch-mismatch refusal and a projection-requirement-packet-unresolved refusal. [5]
 

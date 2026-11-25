@@ -19,7 +19,9 @@ This is candidate-source onboarding, not execution, CODE/MEMORY acceptance, serv
 ## Evidence
 
 
+
 - Launch copies detail files, substitutes paths, and records frozen revisions. [1]
+
 
 - Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources. [2]
 

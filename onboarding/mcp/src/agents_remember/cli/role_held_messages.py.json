@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+        "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
         "content": "sha256:d689048c233bd9c614b78c52c0324727b53756342c2aef8d4af2b5dd444eae03",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+        "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
         "content": "sha256:b32993d54b51d3cdbe19363a305d9c116177bee4877055ddc0c37a6a4a187c62",
         "locator": {
           "kind": "symbol",
@@ -39,12 +39,11 @@
     },
     {
       "anchor": {
-        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+        "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
         "content": "sha256:eb280fb438737f80f512e6673551d06abef185c4477bc26bada04d554f76014e",
         "locator": {
-          "end": 1062,
-          "kind": "line_range",
-          "start": 1047
+          "kind": "symbol",
+          "name": "_receipt_needs_drain"
         }
       },
       "id": "RLZ-3FQBKH",
@@ -58,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+        "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
         "content": "sha256:1840845c59103e95fef82567c8c05000db7538c46bf821194f21667cfebdc0b7",
         "locator": {
           "kind": "symbol",
@@ -76,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+        "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
         "content": "sha256:f0ab63ad221fad88615e7e1e89220f57324a014f7fb591f16e2254735f703c8b",
         "locator": {
           "kind": "symbol",
@@ -94,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+        "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
         "content": "sha256:a6e03ae162ead1a55e19cd540059d13548454e11de187ad32117171984471bad",
         "locator": {
           "kind": "symbol",
@@ -112,8 +111,8 @@
     },
     {
       "anchor": {
-        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
-        "content": "sha256:1769d135258474f57a7f085ee66736864d59ade96b1bfdd2fd24d9f5da90488e",
+        "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
+        "content": "sha256:f24e9b96d44f4e09ca101d1be3515fb986c4ac59609e93764a502a9751d9a305",
         "locator": {
           "kind": "file"
         }
@@ -129,12 +128,12 @@
     },
     {
       "anchor": {
-        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+        "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
         "content": "sha256:1e1457bce15f5f3c12e6e4c173d24ae6251f1b7031469a07b672298a27afbe08",
         "locator": {
-          "end": 428,
+          "end": 430,
           "kind": "line_range",
-          "start": 419
+          "start": 421
         }
       },
       "id": "RLZ-A0MBR2",
@@ -148,12 +147,12 @@
     },
     {
       "anchor": {
-        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+        "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
         "content": "sha256:68d7ec3cfbf19c2da8316497a477f66c751f5bbb391bdd439f973416ceb91fe5",
         "locator": {
-          "end": 282,
+          "end": 284,
           "kind": "line_range",
-          "start": 240
+          "start": 242
         }
       },
       "id": "RLZ-D3TNNK",
@@ -167,12 +166,11 @@
     },
     {
       "anchor": {
-        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+        "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
         "content": "sha256:eb320b19dc2840e1a33a2d43f39f86e455155f3fda7c36d95d3c42c48c5fc111",
         "locator": {
-          "end": 747,
-          "kind": "line_range",
-          "start": 719
+          "kind": "symbol",
+          "name": "_commit_part"
         }
       },
       "id": "RLZ-EJV806",
@@ -186,7 +184,7 @@
     },
     {
       "anchor": {
-        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+        "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
         "content": "sha256:8eec25d18387148541c8897194b740b6cbbd476cb64885562105774a07c4b91d",
         "locator": {
           "kind": "symbol",
@@ -204,12 +202,12 @@
     },
     {
       "anchor": {
-        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+        "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
         "content": "sha256:cb91f3750f43ab30ba438bf51309fbc88be8b2f4a226faf22715731159bc07f4",
         "locator": {
-          "end": 984,
+          "end": 993,
           "kind": "line_range",
-          "start": 934
+          "start": 943
         }
       },
       "id": "RLZ-HDQJ4X",
@@ -223,12 +221,12 @@
     },
     {
       "anchor": {
-        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+        "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
         "content": "sha256:c9afd69b55ad86434fd6632bb6a481f2713473eaf4736d53ea0d997d4be257c5",
         "locator": {
-          "end": 315,
+          "end": 317,
           "kind": "line_range",
-          "start": 307
+          "start": 309
         }
       },
       "id": "RLZ-KV9BPM",
@@ -242,7 +240,7 @@
     },
     {
       "anchor": {
-        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+        "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
         "content": "sha256:cb91f3750f43ab30ba438bf51309fbc88be8b2f4a226faf22715731159bc07f4",
         "locator": {
           "kind": "symbol",
@@ -260,7 +258,7 @@
     },
     {
       "anchor": {
-        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+        "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
         "content": "sha256:b00d07d04aecedc7880a7aca5a95badc403766093996e091785e9a6b8831c535",
         "locator": {
           "kind": "symbol",
@@ -278,12 +276,11 @@
     },
     {
       "anchor": {
-        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
-        "content": "sha256:6d02b989490eb847d8aabc6e91bd19cf465d4588439e617e4cca2296f07ebaf1",
+        "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
+        "content": "sha256:b72b5860593416a2806743b752812fe17decd773dc8e948d6b5635f905796700",
         "locator": {
-          "end": 541,
-          "kind": "line_range",
-          "start": 482
+          "kind": "symbol",
+          "name": "_open_held_seat"
         }
       },
       "id": "RLZ-XRBVHQ",
@@ -298,12 +295,12 @@
   ],
   "references": {
     "1": {
-      "note": "Admission appends under the store lock and refuses overflow without dropping text. Anchor: `hold_message`",
+      "note": "Admission appends under the store lock and refuses overflow without dropping text.",
       "targets": [
         {
           "anchor": {
-            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
-            "content": "sha256:1769d135258474f57a7f085ee66736864d59ade96b1bfdd2fd24d9f5da90488e",
+            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
+            "content": "sha256:f24e9b96d44f4e09ca101d1be3515fb986c4ac59609e93764a502a9751d9a305",
             "locator": {
               "kind": "file"
             }
@@ -313,14 +310,26 @@
       ]
     },
     "2": {
-      "note": "A drain delegates claim/readiness checks and whole-first FIFO delivery. Anchor: `drain_held` `_deliver_waiting`",
+      "note": "A drain delegates claim/readiness checks and whole-first FIFO delivery.",
       "targets": [
         {
           "anchor": {
-            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
-            "content": "sha256:1769d135258474f57a7f085ee66736864d59ade96b1bfdd2fd24d9f5da90488e",
+            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
+            "content": "sha256:f77a37756bb2272099237e72cd55ab96d3998ac3111cbad149b58c61bc1c38d9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "drain_held"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
+            "content": "sha256:f0ab63ad221fad88615e7e1e89220f57324a014f7fb591f16e2254735f703c8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_waiting"
             }
           },
           "kind": "code"
@@ -328,14 +337,15 @@
       ]
     },
     "3": {
-      "note": "Terminal lines are published separately from ended text and retain failure state. Anchor: `apply_drain_to_receipt`",
+      "note": "Terminal lines are published separately from ended text and retain failure state.",
       "targets": [
         {
           "anchor": {
-            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
-            "content": "sha256:1769d135258474f57a7f085ee66736864d59ade96b1bfdd2fd24d9f5da90488e",
+            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
+            "content": "sha256:da5d00e4c3e5114a45f778ff637c3f68daf32565fb39bf463fd043b84fe6a380",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "apply_drain_to_receipt"
             }
           },
           "kind": "code"
@@ -347,12 +357,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
-            "content": "sha256:1ff8e08ba65d590af6adee9de481a0c5dbe86b460cbbdc19091694b8052620df",
+            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
+            "content": "sha256:cb91f3750f43ab30ba438bf51309fbc88be8b2f4a226faf22715731159bc07f4",
             "locator": {
-              "end": 984,
-              "kind": "line_range",
-              "start": 915
+              "kind": "symbol",
+              "name": "sweep_held_messages"
             }
           },
           "kind": "code"
@@ -360,16 +369,15 @@
       ]
     },
     "5": {
-      "note": "Handover validation precedes prompt construction and host launch. Invalid handover details release the claim while preserving the waiting batch.",
+      "note": "`_open_held_seat` runs handover restoration (`cannot-open` on `ValueError`) and `prepare_held_opening_batch` (`open-failed` on `AgenticSettingsError`/`OSError`/`ValueError`) before host launch, releasing the claim and preserving waiting messages on failure.",
       "targets": [
         {
           "anchor": {
-            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
-            "content": "sha256:2789ec3dc03414ac74f94ccab44be25eefbe95541c211f6d710ad7794a7a8a2f",
+            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
+            "content": "sha256:b72b5860593416a2806743b752812fe17decd773dc8e948d6b5635f905796700",
             "locator": {
-              "end": 510,
-              "kind": "line_range",
-              "start": 482
+              "kind": "symbol",
+              "name": "_open_held_seat"
             }
           },
           "kind": "code"
@@ -377,16 +385,15 @@
       ]
     },
     "6": {
-      "note": "Held-seat opening checks frozen details before composing its message. If artifact references are present, the helper also restores or verifies their files.",
+      "note": "Held-seat opening checks frozen details and restores or verifies recorded handover/opening artifact files before composing its message.",
       "targets": [
         {
           "anchor": {
-            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
-            "content": "sha256:ce88c353601da742174b256fcab92b12c1c0da2de36bb7a4acaaf3ad37c96c01",
+            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
+            "content": "sha256:b72b5860593416a2806743b752812fe17decd773dc8e948d6b5635f905796700",
             "locator": {
-              "end": 512,
-              "kind": "line_range",
-              "start": 482
+              "kind": "symbol",
+              "name": "_open_held_seat"
             }
           },
           "kind": "code"
@@ -406,12 +413,12 @@
         },
         {
           "anchor": {
-            "blob": "e67b518ce70be78d1e52c7ff344223c0e027bf6b",
-            "content": "sha256:5899a836da03f44954f42aa5e1bc31e74ac9bf9193564be0a79953d6892b2659",
+            "blob": "4a2b44cfec79480593fdbf45c5a08f224c4fb1db",
+            "content": "sha256:abd8c0d78cf3351ec9fe33a1534c8c74cca60ddb5846be05b19c2e1bc17637d4",
             "locator": {
-              "end": 83,
+              "end": 100,
               "kind": "line_range",
-              "start": 53
+              "start": 54
             },
             "path": "mcp/src/agents_remember/cli/role_handover_restore.py"
           },
@@ -424,7 +431,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3597a8c769c981f6dc3d933c895420c3b6e9766",
+            "blob": "ae4f0c7a72eef5d4f15704c71322f633ef63e16c",
             "content": "sha256:166c230ed1abed522ea3807eaa5e12ec65cb2ce592fd91c92c565be0cc15176a",
             "locator": {
               "kind": "symbol",
@@ -437,16 +444,15 @@
       ]
     },
     "9": {
-      "note": "The held opening inserts its product notice between the restored prompt and the FIFO batch.",
+      "note": "The held opening inserts its product notice between the restored prompt (ending with its suffix `artifact_line`) and the bounded FIFO batch.",
       "targets": [
         {
           "anchor": {
-            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
-            "content": "sha256:2789ec3dc03414ac74f94ccab44be25eefbe95541c211f6d710ad7794a7a8a2f",
+            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
+            "content": "sha256:b72b5860593416a2806743b752812fe17decd773dc8e948d6b5635f905796700",
             "locator": {
-              "end": 510,
-              "kind": "line_range",
-              "start": 482
+              "kind": "symbol",
+              "name": "_open_held_seat"
             }
           },
           "kind": "code"

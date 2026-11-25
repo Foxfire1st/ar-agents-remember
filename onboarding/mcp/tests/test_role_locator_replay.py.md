@@ -17,5 +17,7 @@ The `detailed_receipt` fixture prepares a real worker hand-over, publishes its a
 - A persisted detailed receipt rebuilds only its lost locator before host replay, and the next replay reuses the same link. [1]
 - The rebuilt locator opens the artifact's exact bytes, the saved opening reaches the host unchanged, and every frozen detail keeps its mode and identity. [2]
 - A locator that leads elsewhere refuses replay with a 409 before any host call, and an altered instruction detail is refused as not frozen. [3]
+
 - A real detailed preparation refuses a locator collision before any artifact write and leaves the foreign folder and its contents as they stood. [4]
+
 - A terminal group reclaims each alias exactly once and keeps every collected report byte at two and eight requests. [5]

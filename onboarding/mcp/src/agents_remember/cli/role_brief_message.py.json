@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5afd69406b3cd0b91707240fdeca1842bf62f314",
-        "content": "sha256:fd77869720451152883208bbc8d7e70b85ccebbf8909cf1d18b24a2d25599433",
+        "blob": "923141792af65d0d582fd9e68a5d8922574d85d5",
+        "content": "sha256:f284c59d1b80b9a080cc4ca8bac943b671f73be71d6c4a27da784621a9d9801e",
         "locator": {
           "kind": "file"
         }
@@ -17,19 +17,49 @@
       },
       "rationale": "Owns assembly of the once-only shared opening, first-read instructions and bounded role message.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "923141792af65d0d582fd9e68a5d8922574d85d5",
+        "content": "sha256:46add1de5e42fe70fcc08dca3d33d93eb35877a8ebde2b5a92dbb814cf541c68",
+        "locator": {
+          "kind": "symbol",
+          "name": "brief_prompt"
+        }
+      },
+      "id": "RLZ-YZWK7K",
+      "invariant": "INV-ZVD184",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-zvd184",
+        "leaf": "261124-CAP-L2"
+      },
+      "rationale": "Assembles the static immutable prefix before LAUNCH_CONTEXT_HEADING (## Launch Context) and places Started by, first_read_paragraph, Link roots, and the slim projection in the dynamic suffix.",
+      "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "The message is assembled in one fixed order and each part stands once.",
+      "note": "`brief_prompt` assembles the static immutable prefix before `LAUNCH_CONTEXT_HEADING` (`## Launch Context`) and places `Started by`, `first_read_paragraph`, optional `link_roots`, and the compact handover projection in the dynamic suffix.",
       "targets": [
         {
           "anchor": {
-            "blob": "5afd69406b3cd0b91707240fdeca1842bf62f314",
-            "content": "sha256:d682fec14d370a47ea5ba4e06a50e6366ad7f9937227203df3f78739289193b0",
+            "blob": "923141792af65d0d582fd9e68a5d8922574d85d5",
+            "content": "sha256:46add1de5e42fe70fcc08dca3d33d93eb35877a8ebde2b5a92dbb814cf541c68",
             "locator": {
               "kind": "symbol",
               "name": "brief_prompt"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "923141792af65d0d582fd9e68a5d8922574d85d5",
+            "content": "sha256:5434dfa0e6f9ae61fcc7992abc5c8a462c604feb949215399b52cb1dd5ecb311",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
             }
           },
           "kind": "code"
@@ -41,12 +71,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5afd69406b3cd0b91707240fdeca1842bf62f314",
-            "content": "sha256:a9af34c98c62049e3b6986b5dfdc8518eddb51a7a4b2f2ea179937bffdef062e",
+            "blob": "923141792af65d0d582fd9e68a5d8922574d85d5",
+            "content": "sha256:b78adeeacac8769e51e9f56a418d7b8522f3d1fdfac662157ab3465128fe3262",
             "locator": {
-              "end": 88,
+              "end": 97,
               "kind": "line_range",
-              "start": 83
+              "start": 92
             }
           },
           "kind": "code"
@@ -54,27 +84,15 @@
       ]
     },
     "3": {
-      "note": "The parts of one message are carried together rather than as separate arguments.",
+      "note": "`BriefParts` carries the message texts, including optional `shared_block` and `link_roots`, together as one value.",
       "targets": [
         {
           "anchor": {
-            "blob": "5afd69406b3cd0b91707240fdeca1842bf62f314",
-            "content": "sha256:39ffcb74027a5e0dfbce72f3af075023d94fe19a0d673d76712fc91d3cadb4e5",
+            "blob": "923141792af65d0d582fd9e68a5d8922574d85d5",
+            "content": "sha256:0df40b0943d42446208ba1aac762b23e2e4cea96f6aa90790885597d9c6791d3",
             "locator": {
               "kind": "symbol",
               "name": "BriefParts"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5afd69406b3cd0b91707240fdeca1842bf62f314",
-            "content": "sha256:24243f3304fed2fe78bab0b292aa348b2aeb79fe185b698b3519816b93c6004d",
-            "locator": {
-              "end": 44,
-              "kind": "line_range",
-              "start": 31
             }
           },
           "kind": "code"

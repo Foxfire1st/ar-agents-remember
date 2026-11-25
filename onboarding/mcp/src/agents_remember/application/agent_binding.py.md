@@ -41,7 +41,9 @@ AgentBinding.environment emits all seven binding variables and clears hosted-sea
 
 - `read_agent_binding` checks the minted IDs, role, absolute report path and role-specific reference pattern. [2]
 
+
 - Checks emitted binding and explicitly empty absent references and seat identities before round-trip. [5]
+
 
 - Investigator permits a taskless selection, a sprint, a standalone master or both sprint and master. [6]
 

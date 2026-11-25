@@ -1,0 +1,85 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Heading Architect weighed raising three base ceilings against explicit additive appendix allowances, and the chosen allowances govern the Phase 1 wire-token gate until Phase 2 ceilings replace them."
+  },
+  "alternatives": [
+    {
+      "option": "Option A: Keep the eight D976 Q5 Phase 1 base ceilings unchanged for bare launches and add explicit appendix allowances (PHASE_1_HELD_APPENDIX_ALLOWANCE=600 for held reviewer/curator openings, PHASE_1_LAUNCH_APPENDIX_ALLOWANCE=900 for direct worker launches with appendices).",
+      "reason": "Preserves the D976 Q5 bare-launch ceilings without weakening them while explicitly bounding the additive ordinary-Latin appendix populations enforced by settings.role_message_limit.",
+      "status": "chosen"
+    },
+    {
+      "option": "Option B: Raise the three leaf base ceilings in PHASE_1_WIRE_TOKEN_CEILINGS to absorb the appendix tokens inside the bare ceiling.",
+      "reason": "Raising base ceilings weakens non-ratcheting enforcement on bare default launches that carry no appendix.",
+      "reconsider_when": "When CAP-L3 replaces Phase 1 wire-token ceilings with Phase 2 ceilings or removes the separate appendix allowance model.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "All eight bare default launch pairs remain bounded by unchanged D976 Q5 ceilings; opened held reviewer/curator prompts are bounded by base + 600 tokens and direct worker launches with appendices by base + 900 tokens, enforced by wire_budget.evaluate_wire_token_ceilings and test_role_wire_token_budgets.py."
+  ],
+  "context": "During CAP-L2 Round 1 review (CAPL2-RV-01/02), opened held reviewer and curator prompts and direct worker launches carrying required bounded appendices (successor, step-up, ACP, and 1,000-character ordinary-Latin opening or held previews) exceeded bare D976 Q5 Phase 1 base ceilings while default bare launches remained under ceiling.",
+  "decider": "Heading Architect (seat 9bec7b58) Option A ruling recorded in renewed CAP-R02@v1 manifest (corpus_digest 5017a0b8)",
+  "id": "DEC-4PGWAW",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-ZVD184"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "487170f65289d19227d8e1f14afa8663fa1ca276",
+        "content": "sha256:9c25b53a90804c9ca32da1e4d09ccf11d6a666986f90119d0eb3f2204519ba71",
+        "locator": {
+          "kind": "symbol",
+          "name": "PHASE_1_WIRE_TOKEN_CEILINGS"
+        },
+        "path": "mcp/src/agents_remember/application/role_capsules/wire_budget.py"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "487170f65289d19227d8e1f14afa8663fa1ca276",
+        "content": "sha256:539af9c48530c265749c44f73e59ee3e82bbd8515bd9ff7e44972306e36d4426",
+        "locator": {
+          "kind": "symbol",
+          "name": "PHASE_1_HELD_APPENDIX_ALLOWANCE"
+        },
+        "path": "mcp/src/agents_remember/application/role_capsules/wire_budget.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "CAP-R02@v1 manifest corpus_digest 5017a0b8fb5178aba304f607669e8dd1c0816b649f8663b21daa7fa4f864e118; Reviewer R2 verdict 261124-CAP-L2-route-review-verdict-r2.md; freeze report 261124-CAP-L2-worker-4b8d88e2-c142-5f3f-a063-d08bf0daeaf6.md (Attempt A2, tree b60f09508b968b94502bfe295188d0da57858fb1); Reviewer R2 CODE PASS verdict 261124-CAP-L2-route-review-verdict-r2.md"
+      ],
+      "path": "cap-l2-handoff.json"
+    },
+    "handoffEntry": "CAPL2-RV-01-Option-A",
+    "leaf": "261124-CAP-L2",
+    "task": "261124-CAP"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-25T20:08:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+    "task": "261124-CAP"
+  }
+}

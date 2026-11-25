@@ -85,7 +85,9 @@ CapsuleCapsule additionally carries a default-empty tuple of CapsuleContractMark
 ## Evidence
 
 
+
 - Launch copies detail files, substitutes paths, and records frozen revisions. [7]
+
 
 - Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources. [8]
 
@@ -139,5 +141,7 @@ runtime boundary of this module; no eve code is imported here.
 No meaningful cross-repo references found.
 
 - The pure compiler that consumes these shapes and produces the sealed result. [3]
+
 - The application boundary that does the I/O this module refuses to do. [5]
+
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [10]

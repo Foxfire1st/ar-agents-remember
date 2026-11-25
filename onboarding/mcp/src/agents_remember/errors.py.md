@@ -144,7 +144,9 @@ No cross-repository evidence is required for these file-local claims.
 
 - Source-read unavailability carries a reason for the reference observer. [25]
 
-- The consumer that turns this family into a value with an explanation instead of an escaping exception. Anchor: `compile_admitted_capsule` `CapsuleCompilationOutcome` [10]
+
+- The consumer that turns this family into a value with an explanation instead of an escaping exception. [10]
+
 
 - **The tokenizer vocabulary and the grammar an install cannot supply: the counter's missing vendored vocabulary and a citation check's missing grammar, each raised rather than downloaded or approximated.** Current anchors: `TokenizerVocabularyError`, `GrammarUnavailableError`. The earlier `ConversationCompositionError`, `HarnessAdapterDisconnectedError` and `NativeHistoryLimitExceeded` names are historical, not classes in this source. [5]
 

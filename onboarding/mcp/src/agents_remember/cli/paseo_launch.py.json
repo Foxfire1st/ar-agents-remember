@@ -596,12 +596,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
+            "blob": "22a566752c83802f0d887f6d46f4548f962a6214",
             "content": "sha256:2c1fa5fc562c7174dcaa4c45db2c0e143648ee7d6dbe903ec304e5a00fbd5ec0",
             "locator": {
-              "end": 202,
+              "end": 203,
               "kind": "line_range",
-              "start": 128
+              "start": 129
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
@@ -628,14 +628,15 @@
       ]
     },
     "8": {
-      "note": "Checks emitted binding and explicitly empty absent references and seat identities before round-trip.\n\nAnchor: `ToolServerDefinitionTests.test_the_tool_server_reads_the_binding_it_was_started_with_and_reports_it`",
+      "note": "Checks emitted binding and explicitly empty absent references and seat identities before round-trip.",
       "targets": [
         {
           "anchor": {
-            "blob": "8a72d684bce67b530a7c70ee8df3d67280ac7cb3",
-            "content": "sha256:4f35ff68d93d5a2d91dec4249dcb214f8bdfdcd2086cb038be46eed7ddbe9b5a",
+            "blob": "22a566752c83802f0d887f6d46f4548f962a6214",
+            "content": "sha256:ee40f1e9e6c721898c621eadc7a225c73962f4cde850991be1dfc18fceb2ef24",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_the_tool_server_reads_the_binding_it_was_started_with_and_reports_it"
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
