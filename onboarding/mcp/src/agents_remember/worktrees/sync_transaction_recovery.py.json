@@ -171,7 +171,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
             "content": "sha256:888445edc330c6b525441a393fc1814ef0a452abccf4087af43ae902183bc703",
             "locator": {
               "kind": "symbol",
@@ -183,7 +183,7 @@
         },
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
             "content": "sha256:d4bc6b6f0f627f861dfed3e739f5288f508f957eea7a9e550c5b69aa8f3fb5fe",
             "locator": {
               "kind": "symbol",
@@ -245,8 +245,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a63984305b167f217f656a85724a6f70fad04702",
-            "content": "sha256:d97b331539bed08d8bb17a4fe08fb8c7706ee94b36bf4048fe03eedbc4a5800d",
+            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "content": "sha256:0b2d375f394beb24f307d5e12fbbdf23e88a25e56323f5ca82969204cb979de7",
             "locator": {
               "kind": "symbol",
               "name": "rollback_side"

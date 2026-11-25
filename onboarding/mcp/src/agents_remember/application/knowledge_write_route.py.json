@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
+        "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
+        "content": "sha256:7e26930973ae8a608db425d1527bd1f35b95e1f49767500ace79376ddeb698a0",
+        "locator": {
+          "kind": "symbol",
+          "name": "crossing_write_report"
+        }
+      },
+      "id": "RLZ-BF4RTT",
+      "invariant": "INV-6WBDM3",
+      "origin": {
+        "handoffEntry": "BUG-R43-1",
+        "leaf": "261112-BUG-L43"
+      },
+      "rationale": "The route joins the open crossing owner to the settled code snapshot and passes its commit into the writer request.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
         "content": "sha256:2105ef345d9479c31408dee38a5ba1f1a03b627d81fdd3e6e7e8a00228bd4682",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
+        "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
         "content": "sha256:ee024c46e11dd69a99ae879a6178508692907da75e6bea6bc285903adf52d5b2",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
+        "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
         "content": "sha256:4939767aced256f099dd7694079880510d556e4bd949f9526b61adcb5a6a7531",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
+        "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
         "content": "sha256:f2d33b0a8d65e2b5cb81516998f3280a3eb04dfa627971261b56bd36633d0f8f",
         "locator": {
           "kind": "symbol",
@@ -80,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
+            "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
             "content": "sha256:2105ef345d9479c31408dee38a5ba1f1a03b627d81fdd3e6e7e8a00228bd4682",
             "locator": {
               "kind": "symbol",
@@ -96,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
+            "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
             "content": "sha256:ae24b893172283fbc98e8fd3f76b9c9387a5d6f7c85b71a7f8cf3aa8e6ba3389",
             "locator": {
               "kind": "symbol",
@@ -112,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
+            "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
             "content": "sha256:4939767aced256f099dd7694079880510d556e4bd949f9526b61adcb5a6a7531",
             "locator": {
               "kind": "symbol",

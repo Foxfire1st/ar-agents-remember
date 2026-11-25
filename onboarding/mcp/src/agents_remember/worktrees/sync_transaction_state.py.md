@@ -68,9 +68,9 @@ frozen and `extra="forbid"`, these fields are part of the durable journal schema
 `worktrees/knowledge_crossing.write_crossing_report` into the worktree group's `reports/`. The
 producer writes a report for conflict versions, converted sides or nonzero reference-alignment
 diagnostics (renumbered references, kept evidence lines or skipped cards), including all-converted
-merges. The resolution payload names and summarises it; a nonempty `converted` report field selects
+merges. A master's structural content-conflict park also reports its open history. `crossingHistoryOwner` identifies the open file established by the retained merge. The resolution payload names and summarises the report; a nonempty `converted` report field selects
 crossing wording, otherwise it describes a structural knowledge merge. The wrap serializer
-`_omit_empty_optional_state` omits an empty `crossingReport`, an empty `omissionReport`, a zero `omittedItems` and empty retired database keys,
+`_omit_empty_optional_state` omits empty `crossingReport` and `crossingHistoryOwner` values, an empty `omissionReport`, a zero `omittedItems` and empty retired database keys,
 but preserves nonempty values. `retainedTreeDigests` remains serialized and defaults to `{}` for older journals.
 These defaults describe old-journal read tolerance, not executed compatibility with an older runtime.
 

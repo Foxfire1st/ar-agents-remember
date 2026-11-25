@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
-        "content": "sha256:78d0295cca9d2206e6161162136546049c854471bd75ab1a1ea7d9fd16ae5f46",
+        "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
+        "content": "sha256:8880866b9a6fe19937df1db477c9fa021e0a30f253b09d76525ec21afc2554c0",
         "locator": {
           "kind": "file"
         }
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
+            "blob": "745ae007ae4dd8bfe651b7510d6fe81c2269763b",
             "content": "sha256:a40c02202996c5392b3c97d7b5fc62421a46ff4db0d5a0db71efe9cbbbddc531",
             "locator": {
               "kind": "symbol",
@@ -74,8 +74,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
-            "content": "sha256:78d0295cca9d2206e6161162136546049c854471bd75ab1a1ea7d9fd16ae5f46",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
+            "content": "sha256:8880866b9a6fe19937df1db477c9fa021e0a30f253b09d76525ec21afc2554c0",
             "locator": {
               "kind": "file"
             }
@@ -89,8 +89,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
-            "content": "sha256:78d0295cca9d2206e6161162136546049c854471bd75ab1a1ea7d9fd16ae5f46",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
+            "content": "sha256:8880866b9a6fe19937df1db477c9fa021e0a30f253b09d76525ec21afc2554c0",
             "locator": {
               "kind": "file"
             }
@@ -104,8 +104,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
-            "content": "sha256:78d0295cca9d2206e6161162136546049c854471bd75ab1a1ea7d9fd16ae5f46",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
+            "content": "sha256:8880866b9a6fe19937df1db477c9fa021e0a30f253b09d76525ec21afc2554c0",
             "locator": {
               "kind": "file"
             }
@@ -119,8 +119,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
-            "content": "sha256:78d0295cca9d2206e6161162136546049c854471bd75ab1a1ea7d9fd16ae5f46",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
+            "content": "sha256:8880866b9a6fe19937df1db477c9fa021e0a30f253b09d76525ec21afc2554c0",
             "locator": {
               "kind": "file"
             }
@@ -134,8 +134,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
-            "content": "sha256:78d0295cca9d2206e6161162136546049c854471bd75ab1a1ea7d9fd16ae5f46",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
+            "content": "sha256:8880866b9a6fe19937df1db477c9fa021e0a30f253b09d76525ec21afc2554c0",
             "locator": {
               "kind": "file"
             }
@@ -149,12 +149,22 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
-            "content": "sha256:78d0295cca9d2206e6161162136546049c854471bd75ab1a1ea7d9fd16ae5f46",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
+            "content": "sha256:60beaaaedfdb85a4b2fad09193016c8cc5d3322a68a8c97ce613aae3fcca66ca",
             "locator": {
-              "end": 641,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "_retain_nonempty_knowledge_keys"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
+            "content": "sha256:0b5f83c6bea6af3a77f25f285c4d2ebfb66e46201c6169187eba39a8df889f24",
+            "locator": {
+              "kind": "symbol",
+              "name": "_active_sync_projection"
             }
           },
           "kind": "code"
@@ -164,9 +174,8 @@
             "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
             "content": "sha256:37d26dc6580a5156f8db068920c6b6bd8bf2336525e967f199ff2b34e0f481b5",
             "locator": {
-              "end": 195,
-              "kind": "line_range",
-              "start": 175
+              "kind": "symbol",
+              "name": "SyncResolutionProjection"
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },

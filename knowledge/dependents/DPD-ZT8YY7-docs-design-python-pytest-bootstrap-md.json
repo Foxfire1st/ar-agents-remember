@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "31f796fdd5680209f2b65787e26053d67e7d7ac9",
+    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
     "role": "curator",
-    "statement": "The pytest bootstrap guide still correctly describes the selected native stdio stress case and its uninstrumented warm-index child and measured server.",
-    "task": "261112-BUG-L21",
+    "statement": "The bootstrap guide still correctly places the native stdio bounded-memory case in stress-durability and explains that its warm-index child and measured server launch without child coverage.",
+    "task": "261112-BUG-L43",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+      "blob": "038ae9f6e2473e76ca8db8fa677acbea16b370f0",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -106,12 +106,12 @@
     },
     {
       "anchor": {
-        "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+        "blob": "038ae9f6e2473e76ca8db8fa677acbea16b370f0",
         "content": "sha256:bcc4ade20e19642e956536d6662d0c20a8343feed9984bdf943fe982348cd7d1",
         "locator": {
-          "end": 816,
+          "end": 820,
           "kind": "line_range",
-          "start": 813
+          "start": 817
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },

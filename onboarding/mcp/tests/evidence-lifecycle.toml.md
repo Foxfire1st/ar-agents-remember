@@ -598,15 +598,15 @@ Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_ve
 
 - The role-agent and role-message consumer additions belong to the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime artifact rows; declarations establish reachability, not execution.
 
-- The parked-candidate module consumes the existing checkpoint-landing support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:1033-1058`
+- The parked-candidate module consumes the existing checkpoint-landing support artifact without changing its lifecycle contract.
 
 Current source: The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of checkpoint_landing_test_support.py.
 
-- The parked-candidate module consumes the existing Curator coherence support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:1147-1312`
+- The parked-candidate module consumes the existing Curator coherence support artifact without changing its lifecycle contract.
 
 Current source: The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of curator_coherence_test_support.py.
 
-- The parked-candidate module consumes the existing knowledge-conversion support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:3480-3519`
+- The parked-candidate module consumes the existing knowledge-conversion support artifact without changing its lifecycle contract.
 
 Current source: The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of knowledge_conversion_test_support.py.
 

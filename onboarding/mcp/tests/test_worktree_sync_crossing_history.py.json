@@ -1,0 +1,140 @@
+{
+  "path": "mcp/tests/test_worktree_sync_crossing_history.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "3fd8be1e7bebc0c220756006409659de62da8d70",
+        "content": "sha256:8a50640ad255ec0f45a4e522fc1f407b23fe2192f90b4faf3ef0d012489c8d9e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_refused_continue_reopens_the_history_of_a_non_record_park"
+        }
+      },
+      "facet": "Checks open history after native validation refusal, then writes a confirmation and verifies the closed merge history.",
+      "id": "PRF-4N6V12",
+      "invariant": "INV-MXVTB7",
+      "origin": {
+        "handoffEntry": "BUG-R43-2",
+        "leaf": "261112-BUG-L43"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3fd8be1e7bebc0c220756006409659de62da8d70",
+        "content": "sha256:872a564157e30fe51795d10c6e321823b2860a05d044982972e348308ade0be3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_replay_recovers_owner_and_empty_history_closes_for_landing"
+        }
+      },
+      "facet": "Checks recovery of the parked owner and landing validation of the closed empty history.",
+      "id": "PRF-HSJ8RG",
+      "invariant": "INV-MXVTB7",
+      "origin": {
+        "handoffEntry": "BUG-R43-2",
+        "leaf": "261112-BUG-L43"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3fd8be1e7bebc0c220756006409659de62da8d70",
+        "content": "sha256:40c02830486f2e4cf256656213c9552bfc5b023333709f0354e64e88727bec4b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_resume_completes_only_the_exact_interrupted_open"
+        }
+      },
+      "facet": "Checks interrupted opening from exact owned state and retention of an intervening owner edit.",
+      "id": "PRF-NAKTGQ",
+      "invariant": "INV-MXVTB7",
+      "origin": {
+        "handoffEntry": "BUG-R43-2",
+        "leaf": "261112-BUG-L43"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A non-record park opens history and a refused continuation restores it before a dependent confirmation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fd8be1e7bebc0c220756006409659de62da8d70",
+            "content": "sha256:8a50640ad255ec0f45a4e522fc1f407b23fe2192f90b4faf3ef0d012489c8d9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_refused_continue_reopens_the_history_of_a_non_record_park"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Resume finishes only the exact interrupted open and preserves an intervening owner edit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fd8be1e7bebc0c220756006409659de62da8d70",
+            "content": "sha256:40c02830486f2e4cf256656213c9552bfc5b023333709f0354e64e88727bec4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_resume_completes_only_the_exact_interrupted_open"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Replay records the owner and the landing gate accepts committed closed empty history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fd8be1e7bebc0c220756006409659de62da8d70",
+            "content": "sha256:872a564157e30fe51795d10c6e321823b2860a05d044982972e348308ade0be3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_replay_recovers_owner_and_empty_history_closes_for_landing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Plain parks and clean structural merges have no crossing-history owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fd8be1e7bebc0c220756006409659de62da8d70",
+            "content": "sha256:97f616a3073a880fd9457522a98bb032a0069bf0a4000d5fb82a8e71f3dcde1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_history_is_opened_only_for_a_structural_merge_park"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A restore conflict after merge commit has no crossing-history owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fd8be1e7bebc0c220756006409659de62da8d70",
+            "content": "sha256:3b6f3945ff4c10f7245b3d9e04d9b983c8569c470dc5fc6794e1196493385694",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_post_commit_memory_restore_conflict_has_no_crossing_history"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

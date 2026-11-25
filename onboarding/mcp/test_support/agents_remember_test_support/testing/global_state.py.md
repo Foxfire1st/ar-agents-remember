@@ -21,7 +21,7 @@ helpers.
 The TypeScript parser and lifecycle journal reset entries name the process-owned caches. Request scopes clear their own owner maps when they leave.
 
 `PROCESS_MUTABLE_STATES` is a closed register of syntactically discovered product process state.
-Each row names its owner, one treatment and the reason: `restored`, `reset`, or `constant for tests`.
+Each row names its owner, treatment and reason. The four treatments are `restored`, `reset`, `constant for tests` and `quiescent`. The knowledge-index `_builds` dictionary and `_active_temps` set use `quiescent`. The cache owns their cleanup. The in-process thread success and failure tests check both collections for the fixture directory after the threads finish.
 The companion source guard rejects unregistered, stale and duplicate rows; this is a governed
 syntactic population, not a claim to discover every possible mutable object.
 

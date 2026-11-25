@@ -20,6 +20,8 @@ The concurrency cases check eight readers sharing one build with the real lock, 
 
 These tests exercise `KnowledgeIndexCache`, the process serving-build identity and actual indexed read APIs. Usage-marker preservation and age/size policy have separate tests in `test_knowledge_index_access_time.py`.
 
+Concurrent index tests use the shared hang guard around worker joins, events and build results. The in-process thread success and failure cases check that the `_builds` dictionary and `_active_temps` set have no entries for the fixture cache directory after the threads finish.
+
 ## Evidence
 
 - A foreign partial index is rebuilt and a matching build is reused. [1]
