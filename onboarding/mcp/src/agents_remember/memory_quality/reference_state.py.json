@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+        "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
         "content": "sha256:1b676566623ede7fef41052717338fc5b5ff0b89bc0cf883ab16ee803100edb9",
         "locator": {
           "kind": "symbol",
@@ -22,8 +22,44 @@
     },
     {
       "anchor": {
-        "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
-        "content": "sha256:2153844db803d3c3d74267cd8a69030b0944ec325aed82b3a16d04f5262abc0e",
+        "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
+        "content": "sha256:31222f497445e19f666cdd45ee545298c1ca442a542f08a59807a1b58b5a08c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_locate"
+        }
+      },
+      "id": "RLZ-B0W6E2",
+      "invariant": "INV-CK3F9Z",
+      "origin": {
+        "handoffEntry": "SUB-R01-live-citations",
+        "leaf": "261123-SUB-L1"
+      },
+      "rationale": "Re-resolves the recorded Lean symbol when the file changes.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
+        "content": "sha256:f98b639faf9af2bd6b8bcc593729a46563ee400c52f809e5a49d83423b41470c",
+        "locator": {
+          "kind": "symbol",
+          "name": "anchor_state"
+        }
+      },
+      "id": "RLZ-B3KDP5",
+      "invariant": "INV-0KYRK9",
+      "origin": {
+        "handoffEntry": "SUB-R01-uncertain-lean-scope",
+        "leaf": "261123-SUB-L1"
+      },
+      "rationale": "Reports uncertainty even on a matching working blob.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
+        "content": "sha256:095caa7ea43283c436da50242be4a8f5e00c99b6b7e2785861aa611411aa9b6f",
         "locator": {
           "kind": "file"
         }
@@ -44,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
             "content": "sha256:5222022946ed0872ef074f7f24e823e660c3d191c7983b3bdcd3731db2da5b2f",
             "locator": {
               "kind": "symbol",
@@ -76,8 +112,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
-            "content": "sha256:d5a4f8ee36bc919ed6b1287b5f92f206fe02510d168390e7b7bccff76cec6fc7",
+            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
+            "content": "sha256:0bc49fa5609ba5d0247613c9eaea07ce4fc313bf16eaf0b8260435ecf592896c",
             "locator": {
               "kind": "symbol",
               "name": "check_references"
@@ -92,8 +128,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
-            "content": "sha256:d5a78ce00a59a66e7d0d29b949c031082d0301ae2901b304f5781a3e56080dc3",
+            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
+            "content": "sha256:442660e594b462e1378d62bfd905740e26733b576b88d2f83d3d4e515ecc7cf2",
             "locator": {
               "kind": "symbol",
               "name": "located"
@@ -104,12 +140,12 @@
       ]
     },
     "3": {
-      "note": "An anchor's state in the working tree.",
+      "note": "The working-tree citation check reports an uncertain Lean key as unverifiable before considering an equal blob.",
       "targets": [
         {
           "anchor": {
-            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
-            "content": "sha256:3a48d929bee49d77e968dce8842e753c75ec437f33c6d3730a2a811c6c4ca49a",
+            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
+            "content": "sha256:f98b639faf9af2bd6b8bcc593729a46563ee400c52f809e5a49d83423b41470c",
             "locator": {
               "kind": "symbol",
               "name": "anchor_state"
@@ -119,7 +155,7 @@
         },
         {
           "anchor": {
-            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
             "content": "sha256:6d63bbaf8d5a866d9817c9baf298afafcd70c7f6920a11b44db26bd6e70d3554",
             "locator": {
               "kind": "symbol",
@@ -148,12 +184,12 @@
       ]
     },
     "5": {
-      "note": "Only mechanical moves are re-recorded; a range is re-found only when its bytes occur exactly once.\n\nAnchor: `_refreshed` `fix_references`",
+      "note": "The fixer refreshes a changed blob when the locator still resolves to the recorded bytes. It re-records a moved range when exactly one range of the original length matches those bytes. Cases that remain unresolved after mechanical repair, including uncertain Lean scope, require Curator judgment.",
       "targets": [
         {
           "anchor": {
-            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
-            "content": "sha256:2153844db803d3c3d74267cd8a69030b0944ec325aed82b3a16d04f5262abc0e",
+            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
+            "content": "sha256:095caa7ea43283c436da50242be4a8f5e00c99b6b7e2785861aa611411aa9b6f",
             "locator": {
               "kind": "file"
             }
@@ -183,7 +219,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
             "content": "sha256:1b676566623ede7fef41052717338fc5b5ff0b89bc0cf883ab16ee803100edb9",
             "locator": {
               "kind": "symbol",
@@ -199,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
             "content": "sha256:07a0bef1bc7377859aacb0aef7f7b38f3f96e55066de087d91841260ec44257f",
             "locator": {
               "kind": "symbol",
@@ -215,8 +251,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
-            "content": "sha256:d5a4f8ee36bc919ed6b1287b5f92f206fe02510d168390e7b7bccff76cec6fc7",
+            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
+            "content": "sha256:0bc49fa5609ba5d0247613c9eaea07ce4fc313bf16eaf0b8260435ecf592896c",
             "locator": {
               "kind": "symbol",
               "name": "check_references"

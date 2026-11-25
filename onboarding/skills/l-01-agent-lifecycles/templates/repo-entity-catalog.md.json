@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
             "content": "sha256:c0a501c3864c79e24304650639f6df67f29a6d45cd01682fac29089697197187",
             "locator": {
-              "end": 95,
+              "end": 110,
               "kind": "line_range",
-              "start": 95
+              "start": 110
             },
             "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
           },

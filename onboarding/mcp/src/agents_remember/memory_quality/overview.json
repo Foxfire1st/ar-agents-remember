@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6304a991e5187181bfa80c1a5cf6e586c6069b99",
+            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
             "content": "sha256:2b0b8c99d53f4dd8d589fcb9b4733318eb93a7d0f4c047a796c443a09c412c1c",
             "locator": {
               "kind": "symbol",
@@ -91,12 +91,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6304a991e5187181bfa80c1a5cf6e586c6069b99",
+            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
             "content": "sha256:5ee91f1754b7fd30c2cddccb4422ceb09dc7f9dae84fe99e647ba2c2e97fa5d2",
             "locator": {
-              "end": 222,
+              "end": 235,
               "kind": "line_range",
-              "start": 208
+              "start": 221
             },
             "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
           },
@@ -104,12 +104,12 @@
         },
         {
           "anchor": {
-            "blob": "6304a991e5187181bfa80c1a5cf6e586c6069b99",
+            "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
             "content": "sha256:830b0627214487b8f211874cfdb1802646d82908c88f1669a78f3c5ce1a66644",
             "locator": {
-              "end": 269,
+              "end": 282,
               "kind": "line_range",
-              "start": 264
+              "start": 277
             },
             "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
           },
@@ -590,8 +590,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
-            "content": "sha256:091607c5bb651e0733d98dbccc7285e4010bb1f1245273cc0f88b7568d98590c",
+            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+            "content": "sha256:487723f72105d320e816890abb2e0d9889deaa7a04a0ac8c86b3e008367174de",
             "locator": {
               "kind": "file"
             },
@@ -1220,12 +1220,12 @@
       ]
     },
     "74": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The re-recording scoped to one sidecar.\n\nAnchor: `fix_references`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The re-recording scoped to one sidecar. Anchor: `fix_references`",
       "targets": [
         {
           "anchor": {
-            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
-            "content": "sha256:2153844db803d3c3d74267cd8a69030b0944ec325aed82b3a16d04f5262abc0e",
+            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
+            "content": "sha256:095caa7ea43283c436da50242be4a8f5e00c99b6b7e2785861aa611411aa9b6f",
             "locator": {
               "kind": "file"
             },
@@ -1308,7 +1308,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
             "content": "sha256:1b676566623ede7fef41052717338fc5b5ff0b89bc0cf883ab16ee803100edb9",
             "locator": {
               "kind": "symbol",
@@ -1614,12 +1614,12 @@
       ]
     },
     "87": {
-      "note": "The retained `check_references` helper reports mechanical currentness. Full converted quality and publication separately refuse stale reference anchors through R198. Scoped fixing excludes refused sidecars before refresh/write, after parsing.\n\nAnchor: `anchor_state`, `check_references`, `fix_references`",
+      "note": "The retained `check_references` helper reports mechanical currentness. Full converted quality and publication separately refuse stale reference anchors through R198. Scoped fixing excludes refused sidecars before refresh/write, after parsing. Anchor: `anchor_state`, `check_references`, `fix_references`",
       "targets": [
         {
           "anchor": {
-            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
-            "content": "sha256:3a48d929bee49d77e968dce8842e753c75ec437f33c6d3730a2a811c6c4ca49a",
+            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
+            "content": "sha256:f98b639faf9af2bd6b8bcc593729a46563ee400c52f809e5a49d83423b41470c",
             "locator": {
               "kind": "symbol",
               "name": "anchor_state"
@@ -1630,8 +1630,8 @@
         },
         {
           "anchor": {
-            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
-            "content": "sha256:d5a4f8ee36bc919ed6b1287b5f92f206fe02510d168390e7b7bccff76cec6fc7",
+            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
+            "content": "sha256:0bc49fa5609ba5d0247613c9eaea07ce4fc313bf16eaf0b8260435ecf592896c",
             "locator": {
               "kind": "symbol",
               "name": "check_references"
@@ -1642,7 +1642,7 @@
         },
         {
           "anchor": {
-            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+            "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
             "content": "sha256:1b676566623ede7fef41052717338fc5b5ff0b89bc0cf883ab16ee803100edb9",
             "locator": {
               "kind": "symbol",
@@ -1911,7 +1911,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
+            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
             "content": "sha256:2c88a2e8c657049a41c91c344d81312faa596ac04fb38d3aeeb94f5a7c63d5b2",
             "locator": {
               "kind": "symbol",

@@ -29,6 +29,8 @@ Interactive `finalFullCatalog` remains a non-certifying readiness projection: th
 
 `extents.definition_scope` owns reusable definition results for one operation and enters `grammars.parsing_scope` for diagnostic parse trees. Nested operations join the active scope; both owners clear their retained state at scope exit. Definition extraction outside its definition scope parses independently.
 
+Lean symbol extents come from the built-in declaration scan. Each alias binder has its own symbol name and shares the command extent through the target identifier. Whole written and full names share the scan's extent, with verified full names taking precedence. If the scanner retains competing namespace qualifications for the requested declaration key, the key is unverifiable and a line range remains available. The sidecar citation check reports this state separately.
+
 TypeScript anchor parsing memoizes each exact input, including an unresolved spelling, in the active request. Callers without a request owner use the separate process memo.
 
 MCP tool dispatch and finite CLI handlers establish the operation boundary; the dashboard server handler remains outside it. A background quality worker enters its own fresh context and definition scope. Completed validation results remain independently computed.

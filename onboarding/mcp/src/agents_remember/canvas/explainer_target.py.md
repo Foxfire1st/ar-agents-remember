@@ -10,6 +10,8 @@ The target comparison's own answers, read from the bytes its bound trees hold an
 
 ## Code Commentary
 
+Symbol basis resolution supplies the selected path grammar to qualified-span lookup. One span is required, and Lean keys are resolved whole.
+
 For a complete blob, the reader directs Git into a private temporary file. It memoizes the bytes after a successful exit and the unavailable result after a nonzero exit. The temporary file closes on both return and exception.
 
 - An unreadable or malformed basis returns an unavailable result where the method's return type allows it. A readable history listing without the named file yields an empty row set.

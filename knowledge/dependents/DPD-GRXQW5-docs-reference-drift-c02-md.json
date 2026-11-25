@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "3149be148b3cfa3131e34f6101b07eba1ebd0080",
-    "commit": "1a6a3a7c29f2223ccd9ec9ccde3ea2e42a292184",
+    "codeTree": "bd31c6a162e2cc11d351593680fee5ce294aa26a",
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
     "role": "curator",
-    "statement": "The changed checklist passage distinguishes complete-file integrity, measured freshness and readable but stale older records, while the unchanged passages were not reverified.",
-    "task": "261112-BUG-L9",
+    "statement": "The revised state table describes the paired anchor identity and content required by converted drift and the named outcomes for a moved or unresolved reference.",
+    "task": "261123-SUB-L1",
     "uncommitted": true
   },
   "document": "docs/reference/drift-c02.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+      "blob": "5f6b5917f46c2dd54282ba4618e1a233819ef3aa",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
     },
@@ -179,6 +179,18 @@
         "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_binding.py"
       },
       "heading": "Measured coherence",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "a0efdfe20f3f77b6898242e2667f426ccbcef18f",
+        "content": "sha256:26ceed3838e1431853300000774efc6a5c725a1d07f7d2a3fabf846ccca698fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "observations_of"
+        },
+        "path": "mcp/src/agents_remember/memory_quality/reference_anchors.py"
+      },
       "kind": "anchor"
     }
   ]

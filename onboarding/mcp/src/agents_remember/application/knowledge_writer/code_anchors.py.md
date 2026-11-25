@@ -21,14 +21,12 @@ through `models/knowledge_files/anchor_content.py`.
 - `symbol`: a path in `CodeSnapshot.symlinks` raises a named `AnchorResolutionError` before blob
   parsing or extraction; cite the file or a line range of the link bytes instead. Otherwise, the one
   extent the shipped citation extractor (`memory_quality/style/citations/extents`) binds
-  for the name. A name bound nowhere, bound more than once, or in a language with no grammar does not
-  resolve. Symbol extraction requires valid UTF-8; malformed bytes produce a named
-  `AnchorResolutionError`, rather than being decoded with surrogate escapes. If no extent binds,
-  the resolver asks `grammars.test_case_refusal` for a case-specific explanation before falling
-  back to the ordinary undefined-name refusal. `Holder.method` is the `method` defined inside a `Holder` definition, so a same-named method
-  of another class does not make it ambiguous. Since MIK-R24 the rule itself lives in the extractor as
-  `extents.qualified_spans`; `_bound_spans` only calls it with the file's `extents.definitions`, so the
-  curator writer and the conversion (`memory/conversion/code_objects.py`) bind symbols through one rule.
+  for the name. Symbol extraction requires valid UTF-8 and an available reader. The resolver calls
+  `extents.qualified_spans` with the file's definitions and selected grammar. For Lean it looks up the
+  whole name and gives verified full names precedence over written aliases. If the scope is uncertain,
+  the refusal offers a line range. If several verified bindings share a written name, the refusal gives
+  their distinct full names when available. Outside Lean, an undefined symbol can still yield a
+  script test-case diagnostic.
 - `line_range`: the recorded lines, which must be lines the blob holds (`RangeOutsideBlobError` becomes
   `AnchorResolutionError`).
 - `file`: every byte of the entry blob; on a symlink this is the link-target text. `line_range` also
@@ -59,7 +57,7 @@ through `models/knowledge_files/anchor_content.py`.
 
 ### Strict symbol decoding and case diagnostics
 
-For a supported language, `_symbol_range` strictly decodes the candidate blob as UTF-8 before extracting definitions. A decoding failure is translated to `AnchorResolutionError` naming the source path. An unavailable grammar is also translated to that error type. If extraction returns no spans, `grammars.test_case_refusal(path, lines, name)` may supply the refusal; otherwise the error says that the path at C does not define the requested name. Multiple spans still refuse with their line ranges, and exactly one span is returned.
+For a supported language, `_symbol_range` strictly decodes the candidate blob as UTF-8 before extracting definitions. A decoding failure is translated to `AnchorResolutionError` naming the source path. An unavailable grammar is also translated to that error type. If extraction returns no spans, the writer checks for an uncertain Lean scope first, then asks `grammars.test_case_refusal(path, lines, name)` for a script test-case diagnostic. The ordinary refusal says the path at C does not define the requested name. Multiple spans still refuse with their line ranges, and exactly one span is returned.
 
 This decoding rule is specific to symbol extraction. File and line-range locators continue to bind the selected entry bytes, and the early symlink-symbol refusal remains before blob parsing. A case-specific refusal is diagnostic evidence, not proof that a test ran or that a dynamic case acquired a bindable extent.
 
@@ -116,4 +114,6 @@ No cross-repo boundary is crossed by this file.
 
 - Current source delta inspected statically: Fix regular-file/symlink snapshot scope and early symbol refusal; retain ordinary symbol/range binding. [10]
 
-- A qualified name's last part must sit inside its parents: the writer delegates to the one shared rule. [7]
+- The writer passes the selected grammar to shared qualified lookup. Lean keys are exact. Other readers can use dotted containment after an exact-key miss. [7]
+
+- The writer refuses an unverifiable Lean key with a line-range remedy and reports full-name choices for a multiply bound alias. [14]

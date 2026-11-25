@@ -67,6 +67,8 @@ The existing `_user_settings_guard.py`, Node-profile `package-lock.json` and `pa
 
 ## Code Commentary
 
+Both Lean test modules are registered as exact consumers of the settings guard and Node lockfile. The settings guard runs through the suite’s autouse fixture. The card citation module uses conversion support, and the symbol anchor module uses writer support.
+
 The existing settings-guard and portable Node-lockfile artifacts each declare test_knowledge_reader_media.py and test_serving_media.py among their exact consumers. These memberships retain the artifacts’ owners, lifetimes and replacement contracts.
 
 The deletion-cancellation module is declared as a consumer of the existing `_user_settings_guard.py` and Node-profile `package-lock.json` artifacts. Membership is dependency accounting, not proof of runtime artifact use or test execution.
@@ -1707,3 +1709,5 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 - The existing user-settings guard and portable Node-lockfile artifact rows each declare the digest, manifest and pointer instruction-renewal test modules as exact consumers. Membership establishes dependency reachability, not execution or acceptance. [326]
+
+- The existing artifact rows name the two Lean modules as consumers. [328]

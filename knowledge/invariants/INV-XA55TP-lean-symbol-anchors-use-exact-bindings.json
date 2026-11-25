@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The writer and recorded reader depend on the same exact-name rule, and a short name with several targets must not be silently reduced to one span."
+  },
+  "applicability": "Lean symbol anchor lookup for one file in the paired code tree.",
+  "conditions": [
+    "The requested key is a verified full name or is a name as written in the source.",
+    "A full-name hit takes precedence over a written alias."
+  ],
+  "exclusions": [
+    "Suffix search for a Lean name.",
+    "Requests with unverifiable scope."
+  ],
+  "id": "INV-XA55TP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_lean_symbol_anchors.py::test_lean_ambiguous_writer_names_full_choices_and_reader_returns_both_ranges"
+      ],
+      "path": "261123-SUB-L1 W9-S1 curation"
+    },
+    "handoffEntry": "SUB-R01-symbol-lookup",
+    "leaf": "261123-SUB-L1",
+    "task": "261123-SUB"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Lean symbol anchors use exact bindings with full-name precedence and expose ambiguity to the writer.",
+  "status": "proposed",
+  "supersedes": []
+}

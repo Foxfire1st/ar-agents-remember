@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "31f796fdd5680209f2b65787e26053d67e7d7ac9",
-    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
-    "role": "curator",
-    "statement": "The contributor guide’s seven-lane policy still applies because the manifest adds the crossing-writer and Git-path tests to unit regression and the history-interruption and master-sync-history tests to integration.",
-    "task": "261112-BUG-L43",
-    "uncommitted": true
+    "codeTree": "55049f6c73b5660adaa6e3b0637185a3167751c3",
+    "commit": "54d242820ff7f9941cadebf9f543c857314b368f",
+    "role": "manager",
+    "statement": "The contributor guide accurately describes the seven lanes, lane assignment for new tests and the canonical lifecycle catalog procedure on the merged source.",
+    "task": "261123-SUB",
+    "uncommitted": false
   },
   "document": "CONTRIBUTING.md",
   "id": "DPD-78737N",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "038ae9f6e2473e76ca8db8fa677acbea16b370f0",
+      "blob": "30fe276ea103c0bc2f37afe7affc8436d89f64bd",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },

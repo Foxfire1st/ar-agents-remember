@@ -13,7 +13,7 @@ through the shipped extractor.
 
 ## Code Commentary
 
-Shared symbol extents are keyed by repository, complete blob ID, source path and symbol. The memo allows 65,536 entries and a retained charge of 32 MiB. The qualified lookup still reads the blob through its object reader before looking for a retained answer.
+Shared symbol extents are keyed by repository, complete blob ID, source path and symbol. The memo allows 65,536 entries and a retained charge of 32 MiB. The qualified lookup selects the reader's grammar before admitting a lookup to the shared memo. It reads the blob through its object reader before looking for a retained answer.
 
 ### Logic
 
@@ -48,7 +48,7 @@ Shared symbol extents are keyed by repository, complete blob ID, source path and
   to "inert until the cutover": it is not behind a marker probe.
 - `symbol_span(path, blob, name, *, top_level=False)` returns the one extent the extractor binds.
   Each code-object reader parses definitions once per (blob, grammar, path) (`extents.definitions`, then `extents.qualified_spans`), so filename-dependent test-case eligibility cannot leak between paths sharing a blob.
-  A file without a grammar never binds. `top_level` is the export's reading of a recorded claim whose
+  A file outside the selected reader's supported suffixes has no symbol binding. `top_level` is the export's reading of a recorded claim whose
   name binds more than once (a module-level `def run` and a local `run = …`): if exactly one span is nested
   in no other definition of the file (`_outermost`), that span is the claim's construct.
 - `content(blob, locator, path)` is the anchor `content` for a `file`, `symbol` or `line_range` locator
@@ -65,7 +65,7 @@ Shared symbol extents are keyed by repository, complete blob ID, source path and
 - **The extractor is pinned by the conversion-format version.** A change to `qualified_spans`,
   `extents.definitions` or a grammar that alters conversion output must ship as a new version (see
   `convert.py`).
-- A missing grammar is a `CodeObjectError`, never a silent `line_range` fallback.
+- An unsupported path has no symbol span. A selected grammar that fails to load raises a named `CodeObjectError`.
 - **A Git failure is never read as a missing object** (`has_blob`, since MIK-R09). Proved by
   `test_a_recorded_blob_the_store_lacks_is_named_at_its_real_raise_site` (a missing blob: the worklist stays complete
   and the item names it) and `test_a_git_failure_asking_for_a_recorded_blob_is_incomplete_and_never_kept`

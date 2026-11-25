@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_aliases.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7b13560e4d5f8d0e379e0cfdeeac6e1ef0e3d9bd",
+        "content": "sha256:2f6249934abc348736adc5e8e6efa69d1536ddb308dc12f0e96298c976007034",
+        "locator": {
+          "kind": "symbol",
+          "name": "AliasHeader.read"
+        }
+      },
+      "id": "RLZ-D7TMZH",
+      "invariant": "INV-R1R0Q8",
+      "origin": {
+        "handoffEntry": "SUB-R02@v1 rule 4 alias commands",
+        "leaf": "261123-SUB-L2"
+      },
+      "rationale": "Reads the simple and bracketed alias forms and yields their names when it has a complete target.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The header reads a simple binder or a bracketed pair and completes at the target identifier.\n\nAnchor: `AliasHeader.read`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b13560e4d5f8d0e379e0cfdeeac6e1ef0e3d9bd",
+            "content": "sha256:2f6249934abc348736adc5e8e6efa69d1536ddb308dc12f0e96298c976007034",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

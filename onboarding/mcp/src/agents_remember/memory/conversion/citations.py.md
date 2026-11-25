@@ -6,8 +6,7 @@
 
 ## Purpose
 
-**One legacy citation row becomes one reference (MIK-R24 rules 1 and 2).** A row is anchored in the code
-tree of its card's anchor commit. Its targets are its bound symbols, its uncovered ranges, and its other
+**One citation row becomes one reference.** A conversion row uses its card's anchor tree, and a native converted-card row uses the captured code tree for authoring. Its targets are its bound symbols, its uncovered ranges, and its other
 sources. Any anchor text no target carries is kept in the reference's `note`, so no citation information
 is lost.
 
@@ -15,9 +14,7 @@ is lost.
 
 ### Logic
 
-- **Symbols (`_symbol_targets`).** Each symbol-kind anchor (a backticked identifier) that the shipped
-  extractor binds exactly once in one of the row's cited files, tried in citation order, becomes a `symbol`
-  target in that file (`CodeObjects.symbol_span` through `extents.qualified_spans`). `RowContext.symlinks`
+- **Symbols (`_symbol_targets`).** An ordinary identifier tries the row's ranged sources in order. An extended Lean spelling tries the cited Lean paths in order, including bare file paths. The first path with a unique eligible span supplies the symbol target through `CodeObjects.symbol_span`. `RowContext.symlinks`
   names symlink entries in this anchor-commit tree and is forwarded to `symbol_span` and `content`;
   a symbol request at one of those paths raises a named `CodeObjectError` before extraction, not
   a parsed link-target symbol. File and line-range locators still bind link-entry bytes, not referents.
@@ -90,4 +87,4 @@ No cross-repo boundary is crossed by this file.
 
 - Symbols bound exactly once in a cited file become targets; RowContext symlink paths refuse before extraction. [2]
 - An anchor records blob and content; path only when needed, with RowContext symlink modes forwarded to content resolution. [5]
-- Current source delta inspected statically: Document both symlink-mode propagation sites and named symbol refusal; retain coverage, deduplication and note preservation. [9]
+- Citation authoring forwards symlink modes to symbol extraction and content resolution. Symbol coverage, target deduplication and unbound anchor text handling stay with the row resolver. [9]
