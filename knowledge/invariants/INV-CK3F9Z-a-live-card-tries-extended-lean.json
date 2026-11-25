@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The parser's Lean name tag controls the source search in live card authoring and must survive through the conversion and reference-check paths."
+  },
+  "applicability": "Symbol target selection in native converted card citation rows.",
+  "conditions": [
+    "A grammar-tagged Lean spelling is tried only against the row's cited Lean paths, including bare paths.",
+    "Ordinary identifiers retain ranged-source lookup in row order.",
+    "A symbol target requires a unique eligible span."
+  ],
+  "exclusions": [
+    "Legacy conversion format 1.",
+    "Unresolved Lean scope, which can be cited by its line range."
+  ],
+  "id": "INV-CK3F9Z",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_lean_card_citations.py::test_live_card_tries_extended_lean_names_only_against_lean_sources"
+      ],
+      "path": "261123-SUB-L1 W9-S1 curation"
+    },
+    "handoffEntry": "SUB-R01-live-citations",
+    "leaf": "261123-SUB-L1",
+    "task": "261123-SUB"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A live card tries extended Lean names only in its cited Lean files and ordinary identifiers in citation order.",
+  "status": "proposed",
+  "supersedes": []
+}

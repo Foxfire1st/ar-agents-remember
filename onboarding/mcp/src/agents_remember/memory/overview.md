@@ -11,6 +11,8 @@ The route includes baseline adoption, converted recovery-leaf carryover, convers
 
 ## Hot Path Summary
 
+Recorded Lean symbol reads use whole-name lookup and preserve uncertain exact keys as unsupported locators with no ranges. The definitions memo retains scope metadata and separates script test-file classes. Native converted-card citation authoring uses the live reader. Legacy format 1 selects its historical reader before span lookup.
+
 MIK-R109 adds reverse-locator queries on `KnowledgeIndex`: `entry_sidecar`/`entry_sidecars` identify declaring sidecars, `record_paths` identifies authoritative record files, and `uuid_text_ids` resolves projected UUIDs to text IDs. They read the existing index tables; schema, derived-cache custody and text authority stay unchanged. Caller-visible naming/state projection remains in the application layer.
 
 A selected Git tree is read through objects without checkout; working-directory identity is captured with disposable Git index/object storage. Indexed JSON supplies parsed content. Nonexcluded onboarding Markdown and indexed-record Markdown companions ride alongside it unparsed for card and decision/facet comparison; record prose needs its indexed JSON sibling, onboarding prose does not. The builder skips Markdown before decoding JSON. JSON and comparison Markdown under the two knowledge roots can live in dot directories. Generated route caches and census data stay outside the index. Other tracked bytes can affect the captured tree key without becoming indexed documents.
@@ -180,7 +182,7 @@ Anchor: `_approved_packet_ref` `changed_observations`
 
 - Retained reference account (no fresh execution or acceptance inferred): The bound-checked line-range observation. [18]
 
-- Retained reference account (no fresh execution or acceptance inferred): The symbol observation carrying every defining extent. [19]
+- A recorded symbol observation returns the defining extents when the selected key is established. [19]
 
 - Retained reference account (no fresh execution or acceptance inferred): **The partition arithmetic and its four rules, with the one predicate behind both the bucket and the exclusive-outside label.** [20]
 

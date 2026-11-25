@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The lexer, name reader, declaration scanner and binding adapter share the source extent contract so symbol anchors and the scope walk use the same written declaration."
+  },
+  "applicability": "Source-written named declarations in a Lean file available to the paired code reader.",
+  "conditions": [
+    "The shipped source scan has the file's recorded UTF-8 bytes.",
+    "An established full name requires agreement on namespace qualification across retained scope readings."
+  ],
+  "exclusions": [
+    "Generated Lean declarations and unnamed instances.",
+    "Declarations whose extent or spelling requires elaboration beyond the shipped scan."
+  ],
+  "id": "INV-WZ8R0Q",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_lean_symbol_anchors.py::test_lean_anchors_reach_prefixes_and_column_zero_continuations",
+        "mcp/tests/test_lean_symbol_anchors.py::test_lean_full_name_takes_precedence_over_another_declarations_written_name"
+      ],
+      "path": "261123-SUB-L1 W9-S1 curation"
+    },
+    "handoffEntry": "SUB-R01-lean-source",
+    "leaf": "261123-SUB-L1",
+    "task": "261123-SUB"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Lean reader preserves source-written names and complete declaration extents, and binds full names where scope is known.",
+  "status": "proposed",
+  "supersedes": []
+}

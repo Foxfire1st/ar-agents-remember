@@ -84,4 +84,4 @@ ranges.
 - **The validator refusing ranges beside any resolution other than the exact recorded blob.** [20]
 - The re-export that keeps every existing `read.py` import of these names working. [21]
 - The read item field that carries the observation onto every realization-claim item. [22]
-- The resolver that fills `resolved_ranges` for symbol and line-range locators on the exact recorded blob. [23]
+- The resolver supplies structured ranges for established symbol and line-range locators on their exact recorded blob. [23]

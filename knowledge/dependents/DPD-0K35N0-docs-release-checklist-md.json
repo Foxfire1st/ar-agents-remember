@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "0feeaa54897944db6c3e7c26539e614dc29d3f98",
-    "commit": "e07c10b3a67036b4187dc2d6629a4c093e13242c",
+    "codeTree": "ce714f8fbee46339c39d7eec8c956e3763464c26",
+    "commit": "d1c92dc9d4606a0b48b8e6b13f9c41c9b9aa6cce",
     "role": "curator",
-    "statement": "The host release checklist still names the synchronized host and SDK pins, the whole-lock renewal and the separate browser-contract checks for the pinned build.",
-    "task": "261112-BUG-L10",
+    "statement": "The release checklist still names the hook's deterministic checks and the targeted gate the pull-request check runs; the hook's early look for the dashboard dependencies adds no check and passes there because the workflow installs them first.",
+    "task": "261112-BUG-L27",
     "uncommitted": true
   },
   "document": "docs/release-checklist.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
+      "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
       "kind": "file",
       "path": ".githooks/_gate.sh"
     },
@@ -36,12 +36,12 @@
       "path": ".github/workflows/publish-mcp-to-pypi.yml"
     },
     {
-      "blob": "ca9995dc80b930cf79bf812b2f6f58499671bc08",
+      "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "c02d5f6f0d5ffd938a425723eb62783233464520",
+      "blob": "393e94f256070902f2e90853cb7135bcea711381",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/primitives/version.py"
     },

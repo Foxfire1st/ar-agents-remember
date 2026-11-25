@@ -6,17 +6,17 @@
 
 ## Purpose
 
-Extract source bindings and test-case diagnostics with tree-sitter.
+Extract source bindings through the reader selected for the path and provide script test-case diagnostics.
 
 ## Code Commentary
 
 A scoped call reuses each exact TypeScript anchor input, including an unresolved spelling, until its request owner clears. Calls outside that scope use a separate process memo. Loaded grammars and parsed test-file trees keep their own owners.
 
-`Binding` records a construct's widened extent, its declaration line and whether it is a test case. A decorated Python definition includes its decorators in the extent while retaining the actual `def` or `class` declaration line. An exported script declaration includes its export syntax.
+`Binding` records a construct's widened extent, its declaration line and whether it is a test case. A decorated Python definition includes its decorators in the extent while retaining the actual `def` or `class` declaration line. An exported script declaration includes its export syntax. A Lean binding carries a verified full name or marks unresolved scope.
 
-`grammar_of` chooses a grammar by path; `parsed` tells whether the file supports parsed definitions. `typescript_anchor_identifier` recognizes a direct identifier rooted by a complete TypeScript call or generic spelling. `language` loads each grammar once; grammar-load failures propagate.
+`grammar_of` selects the reader by suffix. `parsed` identifies paths that support structural definitions. `typescript_anchor_identifier` recognizes a direct identifier rooted by a complete TypeScript call or generic spelling. `language` loads each registered tree-sitter grammar once. Grammar-load failures propagate.
 
-`bindings` walks the parsed tree in document order and emits declarations, assignment targets and recognized named script test cases. Python tuple/list assignments and script destructuring unpack their plain names. No case name is invented for an unsupported computed title. `_walk`, `_widened`, `_span` and `_text` own traversal, outward decoration/export ranges, shared one-based spans and source text extraction.
+For tree-sitter languages, `bindings` walks the parsed tree in document order and emits declarations, assignment targets and recognized named script test cases. Python tuple/list assignments and script destructuring unpack their plain names. No case name is invented for an unsupported computed title. `_walk`, `_widened`, `_span` and `_text` own traversal, outward decoration/export ranges, shared one-based spans and source text extraction.
 
 Within a definition scope, eligible JavaScript, TypeScript and TSX test inputs retain one parsed tree shared by bindings, refusal diagnostics and exact-case range lookup. The key includes path, contents and grammar. Ordinary source trees are not retained in this diagnostic table. Nested parsing scopes join the call; the outer scope clears it on every exit.
 
@@ -48,4 +48,6 @@ Within a definition scope, eligible JavaScript, TypeScript and TSX test inputs r
 - `_script_targets` unpacks script destructuring targets. [15]
 - Specialized unresolved-case diagnostics are restricted to script test files. [17]
 - Exact range lookup returns a case or its refusal using the caller's name resolver. [18]
-- Every extent uses the case module's span rule. [19]
+
+- Tree-sitter extents use the case module's span rule. [19]
+- The built-in Lean reader exposes exact written and full-name keys and retains the status of uncertain keys. [22]

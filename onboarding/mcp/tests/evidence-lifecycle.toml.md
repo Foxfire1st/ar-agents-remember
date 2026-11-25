@@ -21,6 +21,12 @@ The existing canonical user-settings guard (`mcp/tests/_user_settings_guard.py`)
 
 `test_review_delivered_comparison.py` is now named by the canonical user-settings guard's consumer list and by the portable Node-lockfile fixture's consumer list, which are the two source-derived lists the evidence-lifecycle validator checks for a new governed module. Membership establishes dependency reachability; it does not establish that the module ran.
 
+## Tool-log cancellation and hook prerequisite consumers
+
+The catalog declares `test_mcp_cancelled_tool_log.py` as an exact consumer of `_user_settings_guard.py`, `curator_coherence_test_support.py`, `tool_answer_l110_rows.py` and the Node fixture lockfile, and `test_git_hook_dashboard_prerequisites.py` as an exact consumer of the settings guard and the lockfile. These are source declarations, not invocation.
+
+- The two new modules appear on the settings-guard, coherence-support, L110-rows and Node-lockfile consumer lists. [327]
+
 ## Governing Overview
 
 The catalog declares `test_converted_onboarding_baseline.py` as a permanent unit-regression/local-composition migration proof owned by `memory/baseline.py`, with its stale-anchor refusal/repaired-adoption case as replacement node. Existing support/fixture consumer lists include the new census, publication-owner and note-revision suites. These are ownership and reachability declarations, not execution receipts.
@@ -66,6 +72,8 @@ The existing `tool_answer_l110_rows.py` artifact includes `test_legacy_refusal_e
 The existing `_user_settings_guard.py`, Node-profile `package-lock.json` and `paseo_runtime_test_support.py` artifacts declare `test_paseo_reopened_workspace.py` as a consumer. These consumer declarations do not establish test execution.
 
 ## Code Commentary
+
+Both Lean test modules are registered as exact consumers of the settings guard and Node lockfile. The settings guard runs through the suite’s autouse fixture. The card citation module uses conversion support, and the symbol anchor module uses writer support.
 
 The existing settings-guard and portable Node-lockfile artifacts each declare test_knowledge_reader_media.py and test_serving_media.py among their exact consumers. These memberships retain the artifacts’ owners, lifetimes and replacement contracts.
 
@@ -398,7 +406,7 @@ The current catalog names `test_dashboard_autostart_after_discovery.py` on the c
 
 The following source-bound captions restore this card's inherited evidence uses. The parsed current contract above controls today's population. Membership and retained captions establish neither invocation, a passing run nor acceptance.
 
-`mcp/tests/test_memory_quality_source_files.py` is a consumer of the settings-guard and portable Node-lockfile artifacts. The catalog declares 18 contracts and 120 artifacts.
+`mcp/tests/test_memory_quality_source_files.py` is a consumer of the settings-guard and portable Node-lockfile artifacts. The catalog declares 18 contracts and 121 artifacts.
 
 - Durable-artifact declarations include the R53 judgment-row and report-only consumers on the nine retained knowledge_files fixture rows; lane rows remain in test-evidence-lanes.toml.
 
@@ -598,15 +606,15 @@ Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_ve
 
 - The role-agent and role-message consumer additions belong to the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime artifact rows; declarations establish reachability, not execution.
 
-- The parked-candidate module consumes the existing checkpoint-landing support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:1063-1088`
+- The parked-candidate module consumes the existing checkpoint-landing support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:1069-1094`
 
 Current source: The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of checkpoint_landing_test_support.py.
 
-- The parked-candidate module consumes the existing Curator coherence support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:1170-1336`
+- The parked-candidate module consumes the existing Curator coherence support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:1176-1342`
 
 Current source: The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of curator_coherence_test_support.py.
 
-- The parked-candidate module consumes the existing knowledge-conversion support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:3533-3572`
+- The parked-candidate module consumes the existing knowledge-conversion support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:3545-3586`
 
 Current source: The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of knowledge_conversion_test_support.py.
 
@@ -1707,3 +1715,5 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 - The existing user-settings guard and portable Node-lockfile artifact rows each declare the digest, manifest and pointer instruction-renewal test modules as exact consumers. Membership establishes dependency reachability, not execution or acceptance. [326]
+
+- The existing artifact rows name the two Lean modules as consumers. [328]

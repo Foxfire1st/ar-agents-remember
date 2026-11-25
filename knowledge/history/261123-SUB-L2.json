@@ -1,0 +1,350 @@
+{
+  "closed": true,
+  "leaf": "261123-SUB-L2",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0GYZE8",
+      "items": [
+        "sha256:3d633f829484ac9e26b815cd2f0d792f8ef99ad46435b8820bb8005b3c0da2c6"
+      ],
+      "reason": "The finish method represents zero or one active declaration as a tuple. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:3d633f829484ac9e26b815cd2f0d792f8ef99ad46435b8820bb8005b3c0da2c6"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0RW7ST",
+      "items": [
+        "sha256:29e6db88a3e90c8ee5626918a9496c3c62e31c86fc1b1810d3d809e350fc8cc2",
+        "sha256:60204606a13e187869509cff1b085961603b14174bebf3a6e06286f2f4dc344a",
+        "sha256:7bfa1d6f398c68dcc92b302ef9b4d6dacfc66c1512b49439fc80c943ab6fe362",
+        "sha256:d9439600f490cb205d5c564a43d214f90461ef6a748a5592280fbcd7a362b113"
+      ],
+      "reason": "The test card accounts for the alias writer and recorded-reader regression and refreshes the existing lookup citation.",
+      "sources": [
+        {
+          "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
+          "path": "mcp/tests/test_lean_symbol_anchors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_lean_symbol_anchors.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-14WJJA",
+      "items": [
+        "sha256:9b7a06f77710e8df359b4733f23f87d32f282ca551f0b549334d0b7744e2280b"
+      ],
+      "reason": "The shared header delegates alias input and carries zero or more names. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:9b7a06f77710e8df359b4733f23f87d32f282ca551f0b549334d0b7744e2280b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1DKQGW",
+      "items": [
+        "sha256:779d6f31241ac067cfdb5868789724a595b0bb14908da0615bd3be43dd049464"
+      ],
+      "reason": "The consumed nameless instance uses the empty name tuple. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:779d6f31241ac067cfdb5868789724a595b0bb14908da0615bd3be43dd049464"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-22ZNGD",
+      "items": [
+        "sha256:ed47b5d90c95e2e649c50ba2f0db8451523ab1b01d8eff5e5c4c04221990c917"
+      ],
+      "reason": "The visit path yields finished or newly opened command results through one tuple-based path. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:ed47b5d90c95e2e649c50ba2f0db8451523ab1b01d8eff5e5c4c04221990c917"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-265E4A",
+      "items": [
+        "sha256:06092e411a4892bc45d41132ca7f0b3e45df3bd9858afdc050ec4ddb0663cadb"
+      ],
+      "reason": "Command start gives an alias head its own parser state. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:06092e411a4892bc45d41132ca7f0b3e45df3bd9858afdc050ec4ddb0663cadb"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5BD6AZ",
+      "items": [
+        "sha256:007dd2ff8847f0ab34dc4304b00e1ac8651351d1d8ad052d1a6c235499e1ad23"
+      ],
+      "reason": "The import makes the helper available to the scanner. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:007dd2ff8847f0ab34dc4304b00e1ac8651351d1d8ad052d1a6c235499e1ad23"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5W0RZX",
+      "items": [
+        "sha256:f29a02f709dd784a08a3a3c28272a25d3eb261fcff386ffffe0c7df65c20e9a0"
+      ],
+      "reason": "Command start carries a tuple so earlier and newly completed extents can be yielded together. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:f29a02f709dd784a08a3a3c28272a25d3eb261fcff386ffffe0c7df65c20e9a0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-81QMJX",
+      "items": [
+        "sha256:2be375dec52940402bef4766b1f7c32ab7c951adc99fd3542fc25716edf7b1a8"
+      ],
+      "reason": "The new parser card identifies both source forms, the skipped slot and the target boundary.",
+      "sources": [
+        {
+          "blob": "7b13560e4d5f8d0e379e0cfdeeac6e1ef0e3d9bd",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_aliases.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/lean_aliases.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8MCXG2",
+      "items": [
+        "sha256:b2a70e8e2c069cffa4d66315e0e07b5e573b01402e89fd741d8ffd830c815faf"
+      ],
+      "reason": "The pending header path accommodates zero or several completed aliases. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:b2a70e8e2c069cffa4d66315e0e07b5e573b01402e89fd741d8ffd830c815faf"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-924GYS",
+      "items": [
+        "sha256:89a0df3851c98bef0a10f68f2911e868d39570f7fe53705bd4897e0c65111f93"
+      ],
+      "reason": "The Lean section explains the shared source extent of separately named alias binders.",
+      "sources": [
+        {
+          "blob": "7b13560e4d5f8d0e379e0cfdeeac6e1ef0e3d9bd",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_aliases.py"
+        },
+        {
+          "blob": "bba91a94e7d5bb213a19b70affe980d1b3702429",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_declarations.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "bba91a94e7d5bb213a19b70affe980d1b3702429",
+            "content": "sha256:e58ae791370ebe8dbe7103fcdbeb1954facbbc067107978fb43f734f223b0937",
+            "locator": {
+              "kind": "symbol",
+              "name": "declarations"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_declarations.py"
+          },
+          "before": {
+            "blob": "65a4d912f645757bffe1c60412ae7026e4ede482",
+            "content": "sha256:d164d1319891967fdbba7134933f8cff258ed6dbbdac38cae6061e54258a2cfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "declarations"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_declarations.py"
+          },
+          "id": "RLZ-9MWVFQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-AN4GCJ",
+      "items": [
+        "sha256:0564d7c818ed683d34bbf9af7329fe6ff12e06e4671dd38c59702fbd0676b3c5"
+      ],
+      "reason": "The declarations iterator now yields multiple results from an alias command. Its existing source-name and inclusive-extent obligation and the prior proof facets still hold.",
+      "revision": 1,
+      "subject": "INV-WZ8R0Q"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-APRPNH",
+      "items": [
+        "sha256:abb358a7908110d0b9008d01a881c2ffae6dc8cd46b0ac6b0a8ba12ee139c0fd"
+      ],
+      "reason": "Ordinary heads retain single-name behavior with a tuple result. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:abb358a7908110d0b9008d01a881c2ffae6dc8cd46b0ac6b0a8ba12ee139c0fd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C3TVBM",
+      "items": [
+        "sha256:5d01d0470383bafca5ea7310acd1504d0cb3c4a68a08173da15717d1b1f3e859"
+      ],
+      "reason": "Command start forwards completed aliases along with the finished prior declaration. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:5d01d0470383bafca5ea7310acd1504d0cb3c4a68a08173da15717d1b1f3e859"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0KYRK9",
+          "revision": 1
+        },
+        {
+          "id": "INV-CK3F9Z",
+          "revision": 1
+        },
+        {
+          "id": "INV-WZ8R0Q",
+          "revision": 1
+        },
+        {
+          "id": "INV-XA55TP",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-D64GNB",
+      "items": [
+        "sha256:f084c2c5affb11eb5e0e4fd5a2c553d6b428de2cad8cbcf89d2eba53a519adc0"
+      ],
+      "reason": "Reviewed discovery, exact lookup, live selection and uncertain-scope handling. Alias discovery supplies more source names through the same identity chain and the four routes retain their roles.",
+      "revision": 1,
+      "subject": "FAM-04M3Z0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DAVZNC",
+      "items": [
+        "sha256:c3ff5d6c28d83850d490ec8b9ab8421701750b2c8989fa27987573343c9527ca"
+      ],
+      "reason": "A peer command still cancels a pending header, while a continued header can forward its bindings. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:c3ff5d6c28d83850d490ec8b9ab8421701750b2c8989fa27987573343c9527ca"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FK9P8S",
+      "items": [
+        "sha256:8c5e9bd381872142b9656de3ab0c1d9e6001c34b1bdaaa074718a7640c981e5d"
+      ],
+      "reason": "The declaration scanner card explains separate names with shared alias extents and qualifies the ordinary body behavior.",
+      "sources": [
+        {
+          "blob": "bba91a94e7d5bb213a19b70affe980d1b3702429",
+          "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_declarations.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/style/citations/lean_declarations.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HJ1M5S",
+      "items": [
+        "sha256:2164ef668157ca484f73d0ba38a0ed5ca8dd7847849e67b3b9fbd0cbde93bbed"
+      ],
+      "reason": "The Lean regression overview identifies the pair of anchor consumers checked for aliases.",
+      "sources": [
+        {
+          "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
+          "path": "mcp/tests/test_lean_symbol_anchors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JMHVQ0",
+      "items": [
+        "sha256:283116364fb98c0c03a09807759f254ad82c5e19af39b9e2de9a133eb6a924bc"
+      ],
+      "reason": "Continuing an ordinary body yields an empty tuple until the body closes. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:283116364fb98c0c03a09807759f254ad82c5e19af39b9e2de9a133eb6a924bc"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JXK5DZ",
+      "items": [
+        "sha256:80319d0d10e3e84262e4adf956d57e590d0ff1f9378ceb39c3daef3ff9345f8f"
+      ],
+      "reason": "The command-line method carries the same tuple as its callers. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:80319d0d10e3e84262e4adf956d57e590d0ff1f9378ceb39c3daef3ff9345f8f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MR1YYA",
+      "items": [
+        "sha256:f83fb9dfa29452205130cea6b861b9da3d434e8c831e37c7cf1a8bf97b8598b4"
+      ],
+      "reason": "The visit path forwards the pending header results before continuing with other lines. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:f83fb9dfa29452205130cea6b861b9da3d434e8c831e37c7cf1a8bf97b8598b4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MRT0CN",
+      "items": [
+        "sha256:d39e2f3fdf8e5b31efb1aacca84b5d4d0341e1a1034d3637d567e33dae3bc3ac"
+      ],
+      "reason": "Adding alias to the recognized heads selects the described alias reading path. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:d39e2f3fdf8e5b31efb1aacca84b5d4d0341e1a1034d3637d567e33dae3bc3ac"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NP2VDN",
+      "items": [
+        "sha256:7e5294b47d1f1e11a73680689a52f23a1f625e64316a85d4e79df948ad1e3231"
+      ],
+      "reason": "Clearing the active declaration preserves its emission through the tuple. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:7e5294b47d1f1e11a73680689a52f23a1f625e64316a85d4e79df948ad1e3231"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PNRXBW",
+      "items": [
+        "sha256:5ce8d185226dbea3714bc2d01fc7e9d10fc6641d1e5a241ba20a01c1b63ce2d2"
+      ],
+      "reason": "The same unfinished priority state now uses the shared pending value. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:5ce8d185226dbea3714bc2d01fc7e9d10fc6641d1e5a241ba20a01c1b63ce2d2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R45D13",
+      "items": [
+        "sha256:b57c728ba4622ef9b874e85afece4e09dd2254bb6ff7a317760bdedcc17417b3"
+      ],
+      "reason": "Prefix retention returns a tuple of finished declarations. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:b57c728ba4622ef9b874e85afece4e09dd2254bb6ff7a317760bdedcc17417b3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TGRJVB",
+      "items": [
+        "sha256:83560f8b2d3e57d4c5b621c4df776a6240a227b94a11980b499145431142dcba"
+      ],
+      "reason": "An absent header now uses the pending-name sentinel for no handling. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:83560f8b2d3e57d4c5b621c4df776a6240a227b94a11980b499145431142dcba"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VMF82Q",
+      "items": [
+        "sha256:c1f868369165cb004fc845938828647fab2d27a149d8caab5058aa8e6084b88c"
+      ],
+      "reason": "The optional header field holds the parser for the current command. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:c1f868369165cb004fc845938828647fab2d27a149d8caab5058aa8e6084b88c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VQ3BA7",
+      "items": [
+        "sha256:c4df7a056a942693ddc2ae3f8fbe24af8024718043f398fa0ed5b339a0b46e21"
+      ],
+      "reason": "Prelude handling yields an empty tuple because it supplies no declarations. This supports the recorded alias extent or preserves the ordinary scan without adding a separate obligation.",
+      "subject": "hunk:sha256:c4df7a056a942693ddc2ae3f8fbe24af8024718043f398fa0ed5b339a0b46e21"
+    },
+    {
+      "considered": [
+        "FAM-04M3Z0"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-WB4H8J",
+      "items": [],
+      "reason": "The alias obligation governs binder cardinality and where the source header ends. The extent chain already takes source extents from INV-WZ8R0Q and its downstream identity guarantee requires no separate alias member.",
+      "revision": 1,
+      "subject": "membership:INV-R1R0Q8"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "8b54b8c117747b1a757a00d6441308aa1f569669",
-    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
+    "codeTree": "fbabf6615252fe7ec8c3f6f8280d20c61e282878",
+    "commit": "94de536b30102c8e4e9dcef0ac78354b99996f60",
     "role": "curator",
     "statement": "The contributor guide’s seven-lane assignment and shared evidence-catalog procedure apply to the three added unit-regression suites and their reusable browser test support.",
     "task": "261124-EXP-L1",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "CONTRIBUTING.md",
   "id": "DPD-78737N",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "setup-hooks.sh"
     },
     {
-      "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
+      "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
       "kind": "file",
       "path": ".githooks/_gate.sh"
     },
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "7b3a681aa4f34a13b8739cc19381ce0ea2b6be7b",
+      "blob": "50ba2caf10d2f17dcee590873758c7f885762331",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },

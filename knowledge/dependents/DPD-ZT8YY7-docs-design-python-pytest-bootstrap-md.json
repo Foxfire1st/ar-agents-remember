@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "8b54b8c117747b1a757a00d6441308aa1f569669",
-    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
+    "codeTree": "fbabf6615252fe7ec8c3f6f8280d20c61e282878",
+    "commit": "94de536b30102c8e4e9dcef0ac78354b99996f60",
     "role": "curator",
-    "statement": "The bootstrap guide’s account of the lane families continues to apply, with all three new canvas suites assigned to unit-regression.",
+    "statement": "The bootstrap guide’s account of the lane families continues to apply: integration and stress-durability selection and the bounded-memory stdio case’s uninstrumented child coverage boundary, with all three added canvas suites assigned to unit-regression.",
     "task": "261124-EXP-L1",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "docs/design/python-pytest-bootstrap.md",
   "id": "DPD-ZT8YY7",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "7b3a681aa4f34a13b8739cc19381ce0ea2b6be7b",
+      "blob": "50ba2caf10d2f17dcee590873758c7f885762331",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -106,12 +106,12 @@
     },
     {
       "anchor": {
-        "blob": "7b3a681aa4f34a13b8739cc19381ce0ea2b6be7b",
+        "blob": "50ba2caf10d2f17dcee590873758c7f885762331",
         "content": "sha256:04f035a94539c339229547bc5abfb353cc00b7723d8419ed60d2857df37925ae",
         "locator": {
-          "end": 816,
+          "end": 824,
           "kind": "line_range",
-          "start": 813
+          "start": 821
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },

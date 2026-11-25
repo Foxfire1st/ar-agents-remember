@@ -42,13 +42,12 @@ Plans a converted/unconverted memory crossing from the actual three input trees 
   `markersNotMoved` for the report, never dropped silently (review R1 finding 9).
 - **Step 2, convert** every tree with the pinned version, and the own side's paired code commit for
   fallback cards (`_convert_sides`). A converted tree converts to itself.
-- **Step 3, merge** (`crossing.merge_trees`).
+- **Step 3, merge** (`crossing.merge_trees`). Paths reserved for Git and their descendants are removed before the structural plan merges the three trees.
 - **Step 4, conflicts.** They are returned with their converted base, own and incoming bytes. The report
   names `recordConflictHistoryOwner`: the leaf's own ID, or on a master line `next_crossing_owner`, the
   `<task-id>-crossing-<n>` one past any existing crossing file of the task on any side. For a master line
   with a conflicted record, the plan also opens that history file (`{crossing, closed: false, rows: []}`).
-  `worktrees/knowledge_crossing.close_crossing_history` closes it in the merge commit. The row itself is
-  the curator's, written while resolving the record conflict.
+  The managed transaction also opens history for a master whose structural merge pauses on a non-record content conflict. The Curator can write a resolution or confirmation while the history is open. The transaction closes the file in the merge commit.
 - **Step 5, validate**, is enforced where the merge is committed, not here. The managed sync's commit step
   runs `memory_commit_refusal` over the staged merge, with `GitBaseConverter` replacing the unconverted
   parent (review R1 finding 7).
@@ -112,7 +111,7 @@ The steps and their helpers.
 
 - - Many long markers fit one valid row. [23]
 
-- - A master-line record conflict opens a crossing history file, closed at commit. [24]
+- A conflicting master record makes the plan pre-seed open history. The close helper then stages it closed. [24]
 
 ### Cross-Repo References
 

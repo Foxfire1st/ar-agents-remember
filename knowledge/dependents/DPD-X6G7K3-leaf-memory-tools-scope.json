@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "8b54b8c117747b1a757a00d6441308aa1f569669",
-    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
+    "codeTree": "fbabf6615252fe7ec8c3f6f8280d20c61e282878",
+    "commit": "94de536b30102c8e4e9dcef0ac78354b99996f60",
     "role": "curator",
-    "statement": "The tools reference retains the master Architect’s update and retire operations, the four tools bound to the explainer’s supplied workspace, and render’s publication identity with run-file locations.",
+    "statement": "The MCP reference retains the master Architect’s update and retire operations, the four tools bound to the explainer’s supplied workspace, and render’s publication identity with run-file locations, and it describes planning and file writes without a Git commit and identifies the master contract and crossing selector for an open history from a crossing sync or structural merge parked before its merge commit.",
     "task": "261124-EXP-L1",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "docs/reference/mcp-tools.md",
   "id": "DPD-X6G7K3",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 17,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -93,7 +93,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },
     {
-      "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+      "blob": "33a226f6167e5507690914eecec03d960bd5a300",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
     },
@@ -248,7 +248,7 @@
       "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py"
     },
     {
-      "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
+      "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
     },

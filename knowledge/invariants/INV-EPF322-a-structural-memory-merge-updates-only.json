@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Applying an overlay outside the plan can silently drop a tracked path or destroy an unresolved native Git conflict."
+  },
+  "applicability": "The structural overlay executed after Git's three-way memory merge.",
+  "conditions": [
+    "The structural plan owns only admitted modeled paths.",
+    "Non-regular, mode-varying and file-directory-collision paths remain Git-owned."
+  ],
+  "exclusions": [
+    "A modeled record still follows structural resolutions, including removal against a mechanical-only edit."
+  ],
+  "id": "INV-EPF322",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_knowledge_crossing_git_paths.py::test_a_structural_sync_keeps_gits_unmodeled_entries"
+      ],
+      "path": "L43-W3-curator-invariant-intake"
+    },
+    "handoffEntry": "BUG-R43-3",
+    "leaf": "261112-BUG-L43",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A structural memory merge updates only modeled paths and preserves Git's mode, object ID and stages for each unmodeled path.",
+  "status": "proposed",
+  "supersedes": []
+}

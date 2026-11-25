@@ -228,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
             "content": "sha256:3d9b939eb29f132e44d631724a82208fb910a5a42a3da32fb3c2a6b242b0316f",
             "locator": {
               "kind": "symbol",
@@ -240,12 +240,12 @@
         },
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
             "content": "sha256:e0e4a9f87d31a3e90f98f58d5e2426559c2e901472a3df021f58adf1dcc098f3",
             "locator": {
-              "end": 501,
+              "end": 505,
               "kind": "line_range",
-              "start": 485
+              "start": 489
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
           },
@@ -253,12 +253,12 @@
         },
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
             "content": "sha256:cdbb70fe8b0319a8544a4e80e6d34e73417d82d9299e8aac73ac4ae9e2830d8a",
             "locator": {
-              "end": 498,
+              "end": 502,
               "kind": "line_range",
-              "start": 482
+              "start": 486
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
           },
@@ -266,12 +266,12 @@
         },
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
             "content": "sha256:0f256ea75a52abd9f0a697a3656161dc499ad83534e239f562be32d2c019208e",
             "locator": {
-              "end": 445,
+              "end": 449,
               "kind": "line_range",
-              "start": 429
+              "start": 433
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
           },

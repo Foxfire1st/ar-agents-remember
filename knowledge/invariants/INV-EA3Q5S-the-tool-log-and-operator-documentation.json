@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Without the pointer, an operator whose client stopped waiting on a closeout or sync has no documented place to learn how the call ended and may repeat a publication that already happened."
+  },
+  "applicability": "The tool-log section of the concepts guide and the sync and closeout sections of the tool reference.",
+  "conditions": [
+    "A client stops waiting before a closeout or sync call ends."
+  ],
+  "exclusions": [
+    "The client's own waiting limit.",
+    "The time limit of the sync's Git commands."
+  ],
+  "id": "INV-EA3Q5S",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/27_a-closeout-says-what-it-lacks-before-it-works-and-never-ends-without-a-trace-ar/role-reports/worker/ab4c7795-d684-4499-b9ef-bb86badfde8a/role-launch/BUG-L27-post-sync-readback.md#checks"
+      ],
+      "path": "L27-writer-input"
+    },
+    "handoffEntry": "BUG-R27@v1 Rule 4",
+    "leaf": "261112-BUG-L27",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The tool-log and operator documentation describe how to find closeout or sync outcomes after a client stops waiting.",
+  "status": "proposed",
+  "supersedes": []
+}

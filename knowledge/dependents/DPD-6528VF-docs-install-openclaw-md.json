@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "eb92d53bd6de812e9d52fc2ae1898fbb432b5b1b",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "ce714f8fbee46339c39d7eec8c956e3763464c26",
+    "commit": "d1c92dc9d4606a0b48b8e6b13f9c41c9b9aa6cce",
     "role": "curator",
-    "statement": "The OpenClaw guide accurately describes first-run preparation, refusal of an implicit Bootstrap when a known host catalog has no OpenClaw provider, and retry with an explicitly offered agent.",
-    "task": "261112-BUG-L22",
+    "statement": "The OpenClaw guide's first-run steps and its account of refusing a Bootstrap with no OpenClaw provider, then retrying with an offered agent, still hold.",
+    "task": "261112-BUG-L27",
     "uncommitted": true
   },
   "document": "docs/install/openclaw.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -46,7 +46,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon.py"
     },
     {
-      "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+      "blob": "33a226f6167e5507690914eecec03d960bd5a300",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
     },

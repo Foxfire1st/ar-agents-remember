@@ -10,12 +10,14 @@ Parse the anchor/source cells of the `Finding | Anchor | Source` form shared by 
 
 ## Code Commentary
 
+`parse_row` records local bare and ranged source paths in row order. It selects source grammars before parsing the anchor cell, so the Lean name parser can use the row's own source context.
+
 ### Logic
 
 Module-level surface:
 
 
-- `parse_row` (function, lines 28-37)
+- `parse_row` (function)
 
 
 

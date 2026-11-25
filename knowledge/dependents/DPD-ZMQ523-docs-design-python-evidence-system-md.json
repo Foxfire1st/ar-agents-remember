@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "8b54b8c117747b1a757a00d6441308aa1f569669",
-    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
+    "codeTree": "fbabf6615252fe7ec8c3f6f8280d20c61e282878",
+    "commit": "94de536b30102c8e4e9dcef0ac78354b99996f60",
     "role": "curator",
-    "statement": "The evidence-system design’s lane and lifecycle assignments still describe the three new canvas suites and the browser helper shared by the two browser suites.",
+    "statement": "The evidence-system design’s lane and lifecycle authority, including canonical ordering and source-derived consumers, still describes the merged catalogs, where the three added canvas suites sit in unit-regression and the two browser suites share one browser test support.",
     "task": "261124-EXP-L1",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "docs/design/python-evidence-system.md",
   "id": "DPD-ZMQ523",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "7b3a681aa4f34a13b8739cc19381ce0ea2b6be7b",
+      "blob": "50ba2caf10d2f17dcee590873758c7f885762331",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "9d55d258c73dae1ed32d177e81fce8db61565447",
+      "blob": "3dfc2ecf215f9af4db8c1189e76b31229f77792d",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },

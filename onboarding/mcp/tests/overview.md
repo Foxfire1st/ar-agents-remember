@@ -23,6 +23,8 @@ The initializer handover cases in `test_knowledge_bootstrap.py` assert state-fir
 
 ## Hot Path Summary
 
+The two Lean unit-regression modules exercise the writer, recorded reader, live card routes and legacy format 1 reproduction. The evidence catalog registers both modules as consumers of the settings guard and Node lockfile. The suite’s autouse fixture uses the settings guard. The card citation module uses conversion support, and the symbol anchor module uses writer support. The symbol anchor alias case checks that the writer and recorded reader agree on each binder’s command extent.
+
 The instruction-renewal test family separates authored authority from generated current facts. `test_instruction_digest_renewal.py` checks relocation, explicit unit/evidence/clause bindings, held-hash-proven HEAD diagnostics, copied repository-map cases and reader-level uncovered-prose decisions. `test_instruction_manifest_renewal.py` checks pointer-derived steps/audiences, authored role reasons and no-step decisions, live-manifest reason policy, and command check/renew/check journeys on copied trees. `test_instruction_pointer_renewal.py` checks withdrawal, retained-policy refusals and working command remedies; existing wording-pin and budget consumers keep their separate shape, authored-decision and measurement checks. These are source-defined assertion responsibilities, not a new execution or acceptance record.
 
 `test_fresh_repository_knowledge_path.py` uses `fresh_repository()` to initialize and baseline-adopt a repository, then opens its cardless baseline as a leaf whose onboarding directory is absent. `test_empty_leaf_memory_scope.py` uses `open_external_contract_fixture` for live-leaf scope and mode-owned roots; `test_empty_onboarding_readers.py` initializes memory and removes the empty onboarding directory for its reader cases, with a separate file-at-path refusal case. `test_cardless_knowledge_writer.py` plans and commits the first entries without a Markdown card while references still require one; `test_cardless_sidecar_validation.py` checks the validator's entries-only exception and keeps identity, link, anchor and history checks. Together their source assertions cover empty route/drift/baseline reads and first knowledge through a per-file sidecar without a Markdown card, full quality, writer, coherence and closeout preview. Their source assertions and catalog membership do not establish that a new execution or landing occurred.
@@ -276,7 +278,7 @@ The route metadata supports navigation and source custody. Their status/coverage
 
 - The Node fixture lockfile artifact currently declares `mcp/tests/test_family_route_conditions.py` and `mcp/tests/test_file_size_detector.py` as exact consumers; the retired final-catalog-plan test is absent. These are lifecycle consumer entries, not lane rows or execution evidence.
 
-Current declaration checked at `mcp/tests/evidence-lifecycle.toml:2491-2492`, with the two consumers at lines 2729 and 2731; the retired test is absent from the parsed Node fixture consumer list.
+Current declaration checked at `mcp/tests/evidence-lifecycle.toml:2497-2498`, with the two consumers at lines 2737 and 2739; the retired test is absent from the parsed Node fixture consumer list.
 
 - The lane manifest declares `mcp/tests/test_planned_knowledge_effects.py` in `unit-regression`; selection is not execution or acceptance.
 
@@ -307,7 +309,7 @@ Current declaration checked at `mcp/tests/evidence-lifecycle.toml:2491-2492`, wi
 
 - The lane manifest declares `mcp/tests/test_fresh_user_harness.py` in `unit-regression`; the retired citation-index-resilience test is absent. Membership is selection only.
 
-Current declaration checked at `mcp/tests/test-evidence-lanes.toml:4-5` and `mcp/tests/test-evidence-lanes.toml:190`; the retired test is absent from the parsed lane.
+Current declaration checked at `mcp/tests/test-evidence-lanes.toml:4-5` and `mcp/tests/test-evidence-lanes.toml:191`; the retired test is absent from the parsed lane.
 
 - The lifecycle catalog declares `scripts/e2e_harness/fresh_user_fixture.py`, `scripts/e2e_harness/fresh_user_scenario.py` and `scripts/e2e_harness/run_fresh_user.py` as permanent `shared-support` artifacts with exact-source consumer lists and their respective `node:` replacement contracts; registration alone is not acceptance.
 
@@ -356,7 +358,7 @@ The suite has cases for provider subagents, the usage report judgement, the limi
 
 ## Current discovery-startup test selection
 
-The current named regression is `test_dashboard_autostart_after_discovery.py`. Its two fresh autoStart=true processes assert the joint outside-scratch sweep and dashboard-supervision start: neither begins during preparation, server creation or the produced-list-answer snapshot before the event-loop callback; the later callback or the no-list first-call fallback starts each once through the same process latch. Dashboard and host launchers and the reconciliation seam are recorders. The parsed source declarations contain 18 lifecycle contracts, 121 artifacts and 797 distinct modules across seven lanes, including 656 in unit-regression. These are source assertions and selection metadata, not a new server, test or live-host run.
+The current named regression is `test_dashboard_autostart_after_discovery.py`. Its two fresh autoStart=true processes assert the joint outside-scratch sweep and dashboard-supervision start: neither begins during preparation, server creation or the produced-list-answer snapshot before the event-loop callback; the later callback or the no-list first-call fallback starts each once through the same process latch. Dashboard and host launchers and the reconciliation seam are recorders. The parsed source declarations contain 18 lifecycle contracts, 121 artifacts and 805 distinct modules across seven lanes, including 660 in unit-regression. These are source assertions and selection metadata, not a new server, test or live-host run.
 
 ## Additional source contracts
 
@@ -368,6 +370,8 @@ The current named regression is `test_dashboard_autostart_after_discovery.py`. I
 ## Concurrent dispatch and preview regressions
 
 `test_mcp_dispatch_concurrency.py` exercises real transport responsiveness, cancellation ordering, conditional bypass and ContextVar/cache/log separation. `test_citation_preview_runs.py` checks synchronous/background preview equality, unchanged memory bytes, shared registry capacity and identity, detached results, scope changes, worker failures and refusal of background writes. The log test separately prevents two concurrent detail writers from spending the same remaining budget. Catalog selection and these source assertions do not establish a fresh test execution.
+
+`test_mcp_cancelled_tool_log.py` checks that a cancelled request leaves exactly one tool-log row: `raised` with `requestCancelled` for a worker error that arrives after the cancellation, `cancelled` with `waitingFor` for a request stopped while it waited for the write lock, the build-currentness read or a queued worker, and the tool's ordinary row for a late result. `test_git_hook_dashboard_prerequisites.py` runs the real hook script in a small Git tree and checks that both tiers stop at missing dashboard dependencies or npm before Ruff.
 
 - Selected-case budgets and default worker/selection policy have one executable configuration owner.
 
@@ -389,6 +393,8 @@ Source cases separate named renames, copies, Git metadata, full-removal threshol
 The current references point to the landing-report tests, their support, the test-policy design note and root configuration.
 
 ### Test registration
+
+The lane manifest declares `test_git_hook_dashboard_prerequisites.py` and `test_mcp_cancelled_tool_log.py` in `integration`.
 
 The lane manifest registers `test_knowledge_writer.py` once.
 
@@ -484,14 +490,14 @@ Current source: The current unit-regression lane selects test_knowledge_leaf_rea
 Current source: The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance.
 
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 797 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 805 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
 
 
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 797 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 805 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
 
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 797 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 805 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
 
 
 
@@ -533,7 +539,7 @@ Current source: The lifecycle catalog declares four permanent scripts/e2e_harnes
 Current source: The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance.
 
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 797 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 805 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
 
 - The four `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.
 
@@ -585,7 +591,7 @@ Current source: The current lifecycle catalog declares test_landing_report.py as
 
 - The replacement after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes. The launchers and reconciliation seam are recorders; no execution is asserted here.
 
-Current source: The replacement after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes; parsed catalog declarations contain 18 lifecycle contracts, 121 artifacts and 797 selected lane members. The launchers and reconciliation seam are recorders; no execution is asserted here.
+Current source: The replacement after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes; parsed catalog declarations contain 18 lifecycle contracts, 121 artifacts and 805 selected lane members. The launchers and reconciliation seam are recorders; no execution is asserted here.
 
 The explainer tests check bound reading inputs, moved Update with preserved stage files, and exact essay-first defaults. The capability cases pin the shipped stage wording and 1,500-word budget. Separate video cases check the runner's media map, the static attributes and the store's publication and readback.
 
@@ -1290,7 +1296,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 797 distinct test modules across its lane identities. [1498]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 805 distinct test modules across its lane identities. [1498]
 
 
 
@@ -1353,7 +1359,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 797 distinct test modules across its lane identities. [1529]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 805 distinct test modules across its lane identities. [1529]
 
 
 
@@ -1362,7 +1368,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 797 distinct test modules across its lane identities. [1530]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 805 distinct test modules across its lane identities. [1530]
 
 
 
@@ -1532,7 +1538,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 797 distinct test modules across its lane identities. [1647]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 805 distinct test modules across its lane identities. [1647]
 
 
 
@@ -1688,7 +1694,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
-- The after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes. The launchers and reconciliation seam are recorders; no execution is asserted here. The parsed lifecycle catalog contains 18 lifecycle contracts and 121 artifacts. The parsed lane catalog contains 797 selected lane members. [1808]
+- The after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes. The launchers and reconciliation seam are recorders; no execution is asserted here. The parsed lifecycle catalog contains 18 lifecycle contracts and 121 artifacts. The parsed lane catalog contains 805 selected lane members. [1808]
 
 
 
@@ -1760,3 +1766,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - The mounted planned Build regression checks the words delivered to the seat. The direct service test separately checks the wording when passed planned history. [1841]
 
 - The landing answer matrix measures both states across five controlled delivery shapes. The shared guard regression checks the current drop count after scalar removal. [1842]
+
+- A cancelled request leaves one raised or cancelled tool-log row, or the tool's own row for a late result. [1844]
+
+- Both hook tiers stop at missing dashboard dependencies or npm before Ruff. [1845]
+
+- The two modules are declared in the integration lane. [1846]

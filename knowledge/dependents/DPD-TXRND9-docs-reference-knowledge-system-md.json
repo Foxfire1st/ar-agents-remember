@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "711779a641b574d228218fbfe9ba70e6a05c81e0",
-    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
-    "role": "curator",
-    "statement": "The reference correctly describes recorded-base ancestry for leaf worklists and known-build cold lookup coordination, including both lock acquisition exceptions and eviction of abandoned build files.",
-    "task": "261112-BUG-L23",
-    "uncommitted": true
+    "codeTree": "55049f6c73b5660adaa6e3b0637185a3167751c3",
+    "commit": "54d242820ff7f9941cadebf9f543c857314b368f",
+    "role": "manager",
+    "statement": "The reference correctly describes Lean symbol selection, exact dependent confirmation, contractual memory bases and the knowledge index’s bounded rebuild behavior.",
+    "task": "261123-SUB",
+    "uncommitted": false
   },
   "document": "docs/reference/knowledge-system.md",
   "id": "DPD-TXRND9",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -301,6 +301,42 @@
       "blob": "e3948d3c81258cf0fe5cb1c4855dcdddc8d3b152",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_worklist/recorded_base.py"
+    },
+    {
+      "anchor": {
+        "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
+        "content": "sha256:18e47251b894adc0e9a44597af517884741a485254614749d5168ae41d5d7ae3",
+        "locator": {
+          "kind": "symbol",
+          "name": "bindings"
+        },
+        "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+        "content": "sha256:428595608b8a1b54f76b915537355cc15a663140b16c860d5402290c44d27978",
+        "locator": {
+          "kind": "symbol",
+          "name": "qualified_spans"
+        },
+        "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "71af220596f317a833cf129c3bf80e2da22c1ed5",
+        "content": "sha256:28b6c99f63481db9ebafd92c051fe36b3afe9ed6106b9ac2c9159e42a17104e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_symbol_range"
+        },
+        "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+      },
+      "kind": "anchor"
     },
     {
       "anchor": {

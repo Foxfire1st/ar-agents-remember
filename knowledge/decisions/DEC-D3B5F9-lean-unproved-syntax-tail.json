@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The selected behavior determines which names can be safely emitted by the shared reader. The measured alternative remains relevant to future scanner changes."
+  },
+  "alternatives": [
+    {
+      "option": "Keep atoms possible across an unproved syntax extent.",
+      "reason": "Scope uncertainty stays visible and an explicit line range remains available.",
+      "status": "chosen"
+    },
+    {
+      "option": "Certify a syntax category tail using a source-only colon cutoff.",
+      "reason": "The pinned Lean fixtures show custom precedence and syntax grammar can make the colon part of the extensible body.",
+      "reconsider_when": "A validated grammar inventory or elaboration route proves the imported syntax boundary for the files in scope.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Retain a potentially unverifiable key when lawful scope readings disagree. Count the conservative false-uncertainty cause in the subsequent upstream measurement."
+  ],
+  "context": "A Lean syntax-declaration tail can be extended by imported prec and stx grammar. An unproved cutoff can drop an atom that affects whether an apparent scope label is a command token.",
+  "decider": "Architect ruling of 2026-11-23T22:01:41Z, on D922, D925 and D926",
+  "id": "DEC-D3B5F9",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-0KYRK9"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Architect ruling of 2026-11-23T22:01:41Z, on D922, D925 and D926"
+      ],
+      "path": "261123-SUB-L1 W9-S1 curation"
+    },
+    "handoffEntry": "lean-unproved-syntax-tail-ruling",
+    "leaf": "261123-SUB-L1",
+    "task": "261123-SUB"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}
