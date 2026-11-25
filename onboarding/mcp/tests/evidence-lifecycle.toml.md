@@ -600,15 +600,15 @@ Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_ve
 
 - The role-agent and role-message consumer additions belong to the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime artifact rows; declarations establish reachability, not execution.
 
-- The parked-candidate module consumes the existing checkpoint-landing support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:1033-1058`
+- The parked-candidate module consumes the existing checkpoint-landing support artifact without changing its lifecycle contract.
 
 Current source: The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of checkpoint_landing_test_support.py.
 
-- The parked-candidate module consumes the existing Curator coherence support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:1147-1312`
+- The parked-candidate module consumes the existing Curator coherence support artifact without changing its lifecycle contract.
 
 Current source: The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of curator_coherence_test_support.py.
 
-- The parked-candidate module consumes the existing knowledge-conversion support artifact without changing its lifecycle contract. Anchor: `mcp/tests/evidence-lifecycle.toml:3480-3519`
+- The parked-candidate module consumes the existing knowledge-conversion support artifact without changing its lifecycle contract.
 
 Current source: The parked-candidate module test_sync_parked_candidate.py is declared as an exact consumer of knowledge_conversion_test_support.py.
 
@@ -1064,9 +1064,9 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 - Diff-scope support declares the relationship line, movement and reach suites among its canonically ordered exact consumers. Target: mcp/tests/evidence-lifecycle.toml. Anchor: file [324]
 
-- The settings guard lists the crossing dependent writer test as a consumer. [327]
-- The portable Node lockfile lists the crossing dependent writer test as a consumer. [328]
-- Knowledge-writer test support lists the crossing dependent writer test as a consumer. [329]
+- The settings guard lists the crossing dependent writer test as a consumer. [330]
+- The portable Node lockfile lists the crossing dependent writer test as a consumer. [331]
+- Knowledge-writer test support lists the crossing dependent writer test as a consumer. [332]
 
 - The catalog declares nine fixture artifacts under mcp/tests/fixtures/knowledge_files/, each introduced by 260928-MIK-L21 and each naming node:mcp/tests/test_knowledge_census_files.py::test_every_census_file_parses_by_schema_and_is_canonical as its replacement contract. This is the complete named nine-artifact class; catalog declarations do not establish execution. Anchor: file [14]
 - The member-source cases are registered on the read-scope artifact's exact consumer list in canonical ascending order. Anchor: `mcp/tests/test_review_family_member_sources.py` Anchor: file [218]

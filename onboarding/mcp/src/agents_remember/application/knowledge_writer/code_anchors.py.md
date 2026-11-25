@@ -40,7 +40,7 @@ through `models/knowledge_files/anchor_content.py`.
   `None`. The object is a regular file's blob, a symlink's blob or a submodule's commit; `absent` means C holds
   nothing at the path. Any other subject passes. The refusal reads "names no change at C: the code candidate
   holds … (unknown subject)".
-- **`CodeSnapshot.at_commit(repository, commit)`.** A crossing resolves the series' code work branch to a commit ID. The snapshot reads the tree from that ID and stores the same ID. A name that cannot resolve to a commit, or a commit whose tree cannot be read, raises `AnchorResolutionError`. A dependent confirmation records the commit that supplied its links. `capture` instead reads the worktree candidate and can describe an uncommitted tree.
+- **`CodeSnapshot.at_commit(repository, commit)`.** A committed snapshot resolves the supplied operand to a full Git commit ID, reads the tree from that ID and records the same ID. A tree or blob operand raises `AnchorResolutionError`. The constructor checks 40- or 64-character hexadecimal syntax for a supplied commit ID. `capture` reads the working tree and carries no commit. The crossing route supplies the sync's settled commit, which identifies the code used to confirm dependent links.
 
 ### Conventions
 

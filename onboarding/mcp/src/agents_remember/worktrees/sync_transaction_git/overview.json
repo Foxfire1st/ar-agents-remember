@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f56826a17887834f619a63425e06602c15715faa",
+            "blob": "7ed3b6c446f9e25c40f4f4673933de79166f4847",
             "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
             "locator": {
               "kind": "symbol",
@@ -113,7 +113,7 @@
         }
       ]
     },
-    "7": {
+    "8": {
       "note": "The shared staged comparison intersects path and diagnostic across the two pinned parents.",
       "targets": [
         {

@@ -1,0 +1,141 @@
+{
+  "path": "mcp/tests/test_crossing_history_interruption.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "94c0929b5a763c32e1eaed59bed1290e3635380c",
+        "content": "sha256:97df15c5c65d0550f8a58a6b889d00bbc855080b131c7752af68483fba6f26a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_interrupted_close_recovery_respects_checkpoint_ownership"
+        }
+      },
+      "facet": "Covers partial closure, untouched state, later unstaged edits and mismatched parents.",
+      "id": "PRF-1BFQK9",
+      "invariant": "INV-MXVTB7",
+      "origin": {
+        "handoffEntry": "BUG-R43-2",
+        "leaf": "261112-BUG-L43"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "94c0929b5a763c32e1eaed59bed1290e3635380c",
+        "content": "sha256:3a1c190cf3087ea60257ce5ca00c95a34631de269f1d04e3635d0c5cf111518f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_rollback_retires_checkpoint_only_after_verified_reset"
+        }
+      },
+      "facet": "Checks that a failed rollback keeps the closure checkpoint and a verified rollback removes it.",
+      "id": "PRF-84TMBP",
+      "invariant": "INV-MXVTB7",
+      "origin": {
+        "handoffEntry": "BUG-R43-2",
+        "leaf": "261112-BUG-L43"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "94c0929b5a763c32e1eaed59bed1290e3635380c",
+        "content": "sha256:30f8d9fb97a3d98b2e354f3f56b25468090b16a74a9b85efd050d92eff95daea",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_interrupted_close_then_refused_retry_restores_open_history"
+        }
+      },
+      "facet": "Checks exact reopen on disk and in the index after interruption and refusal.",
+      "id": "PRF-8NT62E",
+      "invariant": "INV-MXVTB7",
+      "origin": {
+        "handoffEntry": "BUG-R43-2",
+        "leaf": "261112-BUG-L43"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "94c0929b5a763c32e1eaed59bed1290e3635380c",
+        "content": "sha256:ee1a1a7ca02dbf7de506e41e055af7e6fd46d0c930be1a2b4249369cb7723753",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_refused_retry_preserves_later_crossing_row"
+        }
+      },
+      "facet": "Checks that a later staged row survives a native validation refusal and remains in closed history after the successful follow-up merge.",
+      "id": "PRF-B2HATS",
+      "invariant": "INV-MXVTB7",
+      "origin": {
+        "handoffEntry": "BUG-R43-2",
+        "leaf": "261112-BUG-L43"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An interrupted close followed by a refused retry restores the writable open history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94c0929b5a763c32e1eaed59bed1290e3635380c",
+            "content": "sha256:30f8d9fb97a3d98b2e354f3f56b25468090b16a74a9b85efd050d92eff95daea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_interrupted_close_then_refused_retry_restores_open_history"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The later row survives refusal and remains in closed history after a successful follow-up merge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94c0929b5a763c32e1eaed59bed1290e3635380c",
+            "content": "sha256:ee1a1a7ca02dbf7de506e41e055af7e6fd46d0c930be1a2b4249369cb7723753",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_refused_retry_preserves_later_crossing_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Recovery distinguishes partial closure, untouched state, later edits and mismatched parents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94c0929b5a763c32e1eaed59bed1290e3635380c",
+            "content": "sha256:97df15c5c65d0550f8a58a6b889d00bbc855080b131c7752af68483fba6f26a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_interrupted_close_recovery_respects_checkpoint_ownership"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A rejected rollback keeps the checkpoint and a verified rollback removes it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94c0929b5a763c32e1eaed59bed1290e3635380c",
+            "content": "sha256:3a1c190cf3087ea60257ce5ca00c95a34631de269f1d04e3635d0c5cf111518f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_rollback_retires_checkpoint_only_after_verified_reset"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

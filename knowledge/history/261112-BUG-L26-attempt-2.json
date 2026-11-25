@@ -1,0 +1,64 @@
+{
+  "attempt": 2,
+  "closed": false,
+  "leaf": "261112-BUG-L26",
+  "rows": [
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-B1XYCJ",
+      "items": [
+        "sha256:db508e3c812fa6279044aed3f6b88fce896f4ab150d78943dee518fe969373b0"
+      ],
+      "reason": "The contributor guide's seven-lane policy still applies, with the dependent-writer, crossing-history interruption and worktree crossing-history tests in integration and the crossing knowledge-writer and crossing Git-path tests in unit regression.",
+      "revision": 12,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GXYM31",
+      "items": [
+        "sha256:c01f5a5391f16fceae5835f23f86fdf7f43cba4900e44e8a46ce0de204acda90"
+      ],
+      "reason": "The bootstrap guide says the bounded-memory stdio test's warm-index child and measured server run without child coverage, and the lane manifest keeps that test in stress-durability and the dependent-writer test in integration.",
+      "revision": 12,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Q45YEX",
+      "items": [
+        "sha256:b6b9e9efe7dcdc712fb2c800a88a610b4224b8240ab1bdbad6588460f49bdf9c"
+      ],
+      "reason": "The MCP package README points to the tools reference, whose Worktrees and Knowledge sections describe staged continuation against both pinned merge parents and the writer for an open master crossing.",
+      "revision": 13,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-S8HBHS",
+      "items": [
+        "sha256:a3ef935f2af3439c477fdc336d31e0e14d2f35435ba4f4f34965c9bd7b984d28",
+        "sha256:eed913c71dd8d4d0a7a0300d97411a1c1f85f69ddab8ffed6852139f26dcd61b"
+      ],
+      "reason": "The MCP reference describes planning and file writes without a Git commit, identifies the master contract and crossing selector for a parked master operation with open history, and explains that retained sync checks the staged resolution against both pinned parents by path, staged line and diagnosis.",
+      "revision": 16,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-WASEJB",
+      "items": [
+        "sha256:9ad19b64cd2fcc46625a28ca3ee6dece7bd5c400fadf50c9eaf592f6771bda5e"
+      ],
+      "reason": "The evidence-system guide's lane and shared-support rules match the settled catalogs, which assign each of the five crossing-related tests to one lane and name each in existing lifecycle consumer entries.",
+      "revision": 11,
+      "subject": "DPD-ZMQ523"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

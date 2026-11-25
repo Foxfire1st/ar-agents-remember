@@ -30,6 +30,8 @@ Restoration and cancellation ownership are distinct. Full parked inventory and n
 - Dirty-path classification checks both index and HEAD before selecting an untracked mirror. Staged deletions remain in the staged patch, unstaged deletions in the unstaged patch, and genuine untracked bytes are mirrored separately; deletion absence is not a missing-file save failure.
 - This package owns no task acceptance, final integration decision or Git closeout authority.
 
+A structural content-conflict park on a master opens crossing history before recording the retained merge. Close recovery pairs the exact parents with disk and stage-zero ownership checks so a later crossing row survives a refused retry.
+
 ## Evidence
 
 - Successful absence from both Git holders selects mirroring; native binary patches preserve staged and unstaged state before rollback. [6]
@@ -43,7 +45,7 @@ Restoration and cancellation ownership are distinct. Full parked inventory and n
 
 
 
-- The shared staged comparison intersects path and diagnostic across the two pinned parents. [7]
+- The shared staged comparison intersects path and diagnostic across the two pinned parents. [8]
 
 - Compatibility exports preserve qualified implementation boundaries. [1]
 - Incoming memory fast-forwards validate before moving refs. [5]

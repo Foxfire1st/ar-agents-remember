@@ -25,6 +25,6 @@ This module defines result/error vocabulary, not Git process execution. The Git 
 
 
 
-- The exception vocabulary identifies a failure of the staged merge commit command. [6]
+- The exception vocabulary identifies a failure of the staged merge commit command. [7]
 
 - SideMergeOutcome: qualified source contract. [5]

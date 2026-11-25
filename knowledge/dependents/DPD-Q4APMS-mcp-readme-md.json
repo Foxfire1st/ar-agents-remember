@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "b810bc180190b8646fccd2eb7a074e158fd790d2",
-    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
+    "codeTree": "ae80e60ea31a21e2880e045334e91760da0f41bc",
+    "commit": "bb6ad8aa5d5cff0f1d83e2782a0da16ff91a9724",
     "role": "curator",
-    "statement": "The MCP package README still routes readers to Worktrees, whose tool reference now explains the staged continuation check against both merge parents.",
+    "statement": "The MCP package README points to the tools reference, whose Worktrees and Knowledge sections describe staged continuation against both pinned merge parents and the writer for an open master crossing.",
     "task": "261112-BUG-L26",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "mcp/README.md",
   "id": "DPD-Q4APMS",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "7fef50e1f7fc7820a13313d9a318f80f7267d403",
+      "blob": "0c68c73d48d954d28cd9235686ce0d3ae52bc32b",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }

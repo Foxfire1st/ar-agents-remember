@@ -1181,6 +1181,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 
 - For a complete leaf worklist the closeout gate checks changed paths using the master landing entry-currentness predicate. It compares the recorded code base directly with the candidate tree. [523]
 
-- Crossing confirmation identifies the resolved commit that supplied the code tree. [524]
+- Crossing confirmation identifies the resolved commit that supplied the code tree. [525]
 
 - The transaction seam that routes the conflict and narrows the agent's list. [228]

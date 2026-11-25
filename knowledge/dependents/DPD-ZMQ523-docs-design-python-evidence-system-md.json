@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "b810bc180190b8646fccd2eb7a074e158fd790d2",
-    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
+    "codeTree": "ae80e60ea31a21e2880e045334e91760da0f41bc",
+    "commit": "bb6ad8aa5d5cff0f1d83e2782a0da16ff91a9724",
     "role": "curator",
-    "statement": "The evidence-system guide still describes lane and shared-support registration, which place the crossing writer test in integration and name it in the three existing consumer entries.",
+    "statement": "The evidence-system guide's lane and shared-support rules match the settled catalogs, which assign each of the five crossing-related tests to one lane and name each in existing lifecycle consumer entries.",
     "task": "261112-BUG-L26",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "docs/design/python-evidence-system.md",
   "id": "DPD-ZMQ523",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "cebf8697edac0ce507939faa1f98858435ad095f",
+      "blob": "855dbb0f6818b48d976e66080be99457471d1e3d",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "dcfcac10737a51e9d680534caeaa8280778151fd",
+      "blob": "736971842f53ebaeefbdbeeaee61a349ab254741",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },

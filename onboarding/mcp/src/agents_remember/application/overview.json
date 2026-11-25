@@ -1916,8 +1916,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
-            "content": "sha256:837a11c3a1c94fa8f478adf644caabc3aa542e311d4816774dd4e939ae1cfcd9",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
+            "content": "sha256:2e88d511bfe0590c8a1fd90b5d219a49baaf0729d043ced73d66c2d521ec2fc4",
             "locator": {
               "kind": "symbol",
               "name": "SyncSideRecord"
@@ -1978,8 +1978,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
-            "content": "sha256:45f12690c7c34b7b6660e1eeb4c41e28c8d7d611c2b4a0688d0891870e9ab303",
+            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "content": "sha256:1ec537f6f0422a1b506ca91c06b7b979e369716ad77db2e41cb8d0e1df516525",
             "locator": {
               "kind": "symbol",
               "name": "_continue_memory_merge"
@@ -1990,8 +1990,8 @@
         },
         {
           "anchor": {
-            "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
-            "content": "sha256:4911e65a6484be1b58144de028be3a0c196b461f1ae83fe4ba8d5311e8023c1d",
+            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "content": "sha256:b51d50df3113ad1306d8c689cc735c315fd8d6aea7c3e7f1f6e07941e5b74760",
             "locator": {
               "kind": "file"
             },
@@ -2856,7 +2856,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
+            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
             "content": "sha256:6b948cc0a0a6cfabb5116fc3fabbb632de3c30b476b462856555207593d221e0",
             "locator": {
               "kind": "symbol",
@@ -5443,12 +5443,12 @@
         },
         {
           "anchor": {
-            "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
+            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
             "content": "sha256:850a2319a8785535fd245d221d37bfcc366ae3bb91862f477a7b9df038743ed1",
             "locator": {
-              "end": 306,
+              "end": 307,
               "kind": "line_range",
-              "start": 300
+              "start": 301
             },
             "path": "mcp/src/agents_remember/worktrees/services.py"
           },
@@ -8694,7 +8694,7 @@
         }
       ]
     },
-    "524": {
+    "525": {
       "note": "Crossing confirmation identifies the resolved commit that supplied the code tree.\n\nAnchor: `CodeSnapshot.at_commit`",
       "targets": [
         {

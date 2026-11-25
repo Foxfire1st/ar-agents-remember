@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cebf8697edac0ce507939faa1f98858435ad095f",
+            "blob": "038ae9f6e2473e76ca8db8fa677acbea16b370f0",
             "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
             "locator": {
-              "end": 685,
+              "end": 687,
               "kind": "line_range",
-              "start": 685
+              "start": 687
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -234,7 +234,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcfcac10737a51e9d680534caeaa8280778151fd",
+            "blob": "eb121ee3f8e8799429c91a05931562c977eab548",
             "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
             "locator": {
               "end": 205,
@@ -247,12 +247,12 @@
         },
         {
           "anchor": {
-            "blob": "dcfcac10737a51e9d680534caeaa8280778151fd",
+            "blob": "eb121ee3f8e8799429c91a05931562c977eab548",
             "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
             "locator": {
-              "end": 1181,
+              "end": 1184,
               "kind": "line_range",
-              "start": 1181
+              "start": 1184
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -260,12 +260,12 @@
         },
         {
           "anchor": {
-            "blob": "dcfcac10737a51e9d680534caeaa8280778151fd",
+            "blob": "eb121ee3f8e8799429c91a05931562c977eab548",
             "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
             "locator": {
-              "end": 2602,
+              "end": 2605,
               "kind": "line_range",
-              "start": 2602
+              "start": 2605
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -273,12 +273,12 @@
         },
         {
           "anchor": {
-            "blob": "dcfcac10737a51e9d680534caeaa8280778151fd",
+            "blob": "eb121ee3f8e8799429c91a05931562c977eab548",
             "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
             "locator": {
-              "end": 4897,
+              "end": 4906,
               "kind": "line_range",
-              "start": 4897
+              "start": 4906
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

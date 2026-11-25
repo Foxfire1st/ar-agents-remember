@@ -165,12 +165,12 @@
       ]
     },
     "19": {
-      "note": "The process register declares separate reset, restored and constant-for-tests treatments.",
+      "note": "The process register declares separate reset, restored, constant-for-tests and quiescent treatments.",
       "targets": [
         {
           "anchor": {
-            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
-            "content": "sha256:e23411efa3b97522969687f9f5c342b3e7732d9c25c9994cd03f139d3db31a15",
+            "blob": "f1942589c08102eb7e5b7066309613c2d4cfcaf9",
+            "content": "sha256:5ecca7248d58f37853d0b620f0fa0e746ed9f605a5b06dea018a8c5bcd130fa6",
             "locator": {
               "kind": "file"
             },
@@ -367,8 +367,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
-            "content": "sha256:e23411efa3b97522969687f9f5c342b3e7732d9c25c9994cd03f139d3db31a15",
+            "blob": "f1942589c08102eb7e5b7066309613c2d4cfcaf9",
+            "content": "sha256:5ecca7248d58f37853d0b620f0fa0e746ed9f605a5b06dea018a8c5bcd130fa6",
             "locator": {
               "kind": "file"
             },
@@ -383,8 +383,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
-            "content": "sha256:e23411efa3b97522969687f9f5c342b3e7732d9c25c9994cd03f139d3db31a15",
+            "blob": "f1942589c08102eb7e5b7066309613c2d4cfcaf9",
+            "content": "sha256:5ecca7248d58f37853d0b620f0fa0e746ed9f605a5b06dea018a8c5bcd130fa6",
             "locator": {
               "kind": "file"
             },
@@ -399,8 +399,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
-            "content": "sha256:e23411efa3b97522969687f9f5c342b3e7732d9c25c9994cd03f139d3db31a15",
+            "blob": "f1942589c08102eb7e5b7066309613c2d4cfcaf9",
+            "content": "sha256:5ecca7248d58f37853d0b620f0fa0e746ed9f605a5b06dea018a8c5bcd130fa6",
             "locator": {
               "kind": "file"
             },
@@ -427,12 +427,12 @@
         },
         {
           "anchor": {
-            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+            "blob": "f1942589c08102eb7e5b7066309613c2d4cfcaf9",
             "content": "sha256:19c6e6c7e29f33c8d15fab937469b8310dcf0edb768fd10fdefd8da3d56f5884",
             "locator": {
-              "end": 233,
+              "end": 236,
               "kind": "line_range",
-              "start": 210
+              "start": 213
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
           },
@@ -440,12 +440,12 @@
         },
         {
           "anchor": {
-            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+            "blob": "f1942589c08102eb7e5b7066309613c2d4cfcaf9",
             "content": "sha256:a29c11eb2f4bbfd563f3f47e204c9476a2f69c46715c5414b189234884110a20",
             "locator": {
-              "end": 360,
+              "end": 377,
               "kind": "line_range",
-              "start": 356
+              "start": 373
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
           },

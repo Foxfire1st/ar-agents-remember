@@ -35,7 +35,7 @@ The recorded leaf memory base serves a separate onboarding-card comparison in th
   `MERGE_HEAD`).
 - **The code commit of the conversion.** `converted_base_files` reads the base's own `Code-Commit` trailer first.
   `BaseCode.fallback` is the commit-ish for a base without one: the leaf's code base B on the leaf route (the gate's
-  and the worklist's fallback) and the series' code work branch on the crossing route; with no fallback, the code
+  and the worklist's fallback) and the open sync's settled code commit on the crossing route; with no fallback, the code
   tree's `HEAD`.
 - `BaseCode(root, fallback, cache_directory)` carries what the conversion reads and where it is cached.
 

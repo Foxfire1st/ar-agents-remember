@@ -25,12 +25,11 @@ The conversion port loads worktree-owned plan/result/error types only when a cro
 
 ### Conventions
 
-- The adapter holds no state; each plan starts from Git objects.
+- Each plan starts from Git objects. The adapter reserves paths with non-regular or differing entry modes and paths that collide across file and directory forms. Those paths retain the native Git result when the structural overlay runs.
 
 ### Invariants And Boundaries
 
-- Nothing is written by the time a step fails: the plan is computed before the managed sync lets Git
-  touch the worktree.
+- A failed planning step leaves the managed worktree untouched. The adapter materializes its inputs in temporary storage.
 
 ### Todos
 

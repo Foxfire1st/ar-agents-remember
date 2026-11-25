@@ -1,0 +1,40 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A parked master needs to retain a writable history across validation failures and preserve confirmations written after an interrupted close."
+  },
+  "applicability": "Managed structural memory merges for a master that stop on content conflicts before committing.",
+  "conditions": [
+    "The open history belongs to the active merge parent pair.",
+    "Recovery restores closure state only when current disk and stage zero both remain operation-owned."
+  ],
+  "exclusions": [
+    "Plain merges, clean merges without a park, and restoration of parked authoring after commit."
+  ],
+  "id": "INV-MXVTB7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_worktree_sync_crossing_history.py::test_refused_continue_reopens_the_history_of_a_non_record_park",
+        "mcp/tests/test_worktree_sync_crossing_history.py::test_replay_recovers_owner_and_empty_history_closes_for_landing",
+        "mcp/tests/test_worktree_sync_crossing_history.py::test_resume_completes_only_the_exact_interrupted_open",
+        "mcp/tests/test_crossing_history_interruption.py::test_interrupted_close_then_refused_retry_restores_open_history",
+        "mcp/tests/test_crossing_history_interruption.py::test_refused_retry_preserves_later_crossing_row",
+        "mcp/tests/test_crossing_history_interruption.py::test_interrupted_close_recovery_respects_checkpoint_ownership",
+        "mcp/tests/test_crossing_history_interruption.py::test_rollback_retires_checkpoint_only_after_verified_reset"
+      ],
+      "path": "L43-W3-curator-invariant-intake"
+    },
+    "handoffEntry": "BUG-R43-2",
+    "leaf": "261112-BUG-L43",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A master's structural merge opens crossing history when it parks before commit, restores only checkpoint-owned closing state if continuation refuses, preserves later crossing rows, and retires close checkpoints after verified commit or rollback.",
+  "status": "proposed",
+  "supersedes": []
+}

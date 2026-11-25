@@ -84,7 +84,7 @@ or which task's `<task-id>-crossing-<n>.json` takes a record conflict's row (a m
 `SideMergeOutcome.crossing_report` path is journaled on the side record as `crossingReport`, both when
 the side needs resolution and when it completes. A structural all-converted merge can also emit a
 report for nonzero renumber/evidence/skip diagnostics; aligned-card count alone is not a trigger.
-When no report is produced it is empty, and the journal omits the key (`sync_transaction_state`).
+A master that pauses on a structural content conflict records the open history owner as `crossingHistoryOwner` beside the report and retained fingerprints. Exact replay can recover those fields after an interruption. The journal omits empty report and history-owner values.
 
 Retained output is attributed at the mutation boundary. `_run_side` passes the same settled paired code and crossing owner into the merge and `recapture_resumed_merge`. A resumed converted-memory merge earns retained fingerprints only after reproducing both Git and its structural crossing; the mere presence of an active merge does not establish byte ownership. `_persist_fresh_validator_stop` records fresh same-call staged memory output without changing the validator refusal. It does not bless an owner-resolved or unproved crash-window tree.
 
@@ -183,7 +183,7 @@ No external Domain Documentation entries are configured. Source and test asserti
 
 - Settled code pairing. [6]
 
-- Retained merge classifies the hook only after a failed commit command and retains comparison diagnostics. [49]
+- Retained merge classifies the hook only after a failed commit command and retains comparison diagnostics. [50]
 - Moving candidate park. [2]
 - The validator's refusal is mapped to its own state with a recovery line, on the automatic path and the retained-conflict continuation. [35]
 - The side run names the crossing owner (leaf or master, and the task ID) and journals the crossing report path. [36]

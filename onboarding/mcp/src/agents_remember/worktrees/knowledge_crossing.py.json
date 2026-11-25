@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+        "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
         "content": "sha256:53ec00387e7306cd1e352c660296331a45c01a1cc25f1b8c2a409ada67d4277e",
         "locator": {
           "kind": "symbol",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+        "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
         "content": "sha256:7cb5e728878c9f83736071027ced10ef6989208cf8f258cfc7e211ce330da909",
         "locator": {
-          "end": 377,
+          "end": 549,
           "kind": "line_range",
-          "start": 319
+          "start": 491
         }
       },
       "id": "RLZ-91VYMY",
@@ -38,6 +38,42 @@
       },
       "rationale": "The report writer persists the alignment counts; the emission predicate keeps every nonzero diagnostic population; the success projection carries the same summary view as resolution. Together they are the constructs the clause reports with.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
+        "content": "sha256:812283cd3a8b03e47dc38b0229596cb96ecaf3a2480062b250a978651ffd5984",
+        "locator": {
+          "kind": "symbol",
+          "name": "restore_crossing_history"
+        }
+      },
+      "id": "RLZ-B5HY3E",
+      "invariant": "INV-MXVTB7",
+      "origin": {
+        "handoffEntry": "BUG-R43-2",
+        "leaf": "261112-BUG-L43"
+      },
+      "rationale": "Interrupted close recovery reopens only exact checkpoint-owned disk and stage-0 entries while preserving any later crossing edits and retiring the checkpoint on matching parents.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
+        "content": "sha256:632eef7a49544aecbdeabf13240ea616ddc09c64cd167371716daf4ebc55245a",
+        "locator": {
+          "kind": "symbol",
+          "name": "apply_crossing"
+        }
+      },
+      "id": "RLZ-DN2NXT",
+      "invariant": "INV-EPF322",
+      "origin": {
+        "handoffEntry": "BUG-R43-3",
+        "leaf": "261112-BUG-L43"
+      },
+      "rationale": "The overlay writes and stages only explicit plan paths and leaves the rest of Git's index and worktree output in place.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -46,7 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
             "content": "sha256:30a54f3769edbfbc38a046484f4aa1a130ac442b881f2c7dd545e792a053b3a4",
             "locator": {
               "kind": "symbol",
@@ -62,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
             "content": "sha256:f7a0fc4572c73ecc54bb34f2dc3e20986303a06174cd1e1ede8615a339722fd2",
             "locator": {
               "kind": "symbol",
@@ -78,8 +114,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
-            "content": "sha256:0860cab26f7e5d70b2a1f337343d94382f3e23a8bc1411dfcd644d11cfd5b007",
+            "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
+            "content": "sha256:951d610f5929ba7ec37554507c5c693c8e77970153d096c4b8a7b27e9dec8d3a",
             "locator": {
               "kind": "file"
             }
@@ -93,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
             "content": "sha256:d75a23a84851f8574389dd80ff2ebd6eb8de1736e498e6eff825d3b5cf830bca",
             "locator": {
               "kind": "symbol",
@@ -109,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
             "content": "sha256:aa2c2719d400a40951748e06dd979d480eee5fc30387595467df93f30768aa66",
             "locator": {
               "kind": "symbol",
@@ -125,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
             "content": "sha256:30a54f3769edbfbc38a046484f4aa1a130ac442b881f2c7dd545e792a053b3a4",
             "locator": {
               "kind": "symbol",
@@ -141,7 +177,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
             "content": "sha256:f7a0fc4572c73ecc54bb34f2dc3e20986303a06174cd1e1ede8615a339722fd2",
             "locator": {
               "kind": "symbol",
@@ -153,12 +189,12 @@
       ]
     },
     "19": {
-      "note": "The merge's knowledge and onboarding paths become the plan; conflicted paths are unmerged with three stages.\n\nAnchor: `apply_crossing`",
+      "note": "The overlay writes only planned paths and recreates modeled conflict stages. Git retains the remaining index entries.\n\nAnchor: `apply_crossing`",
       "targets": [
         {
           "anchor": {
-            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
-            "content": "sha256:0860cab26f7e5d70b2a1f337343d94382f3e23a8bc1411dfcd644d11cfd5b007",
+            "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
+            "content": "sha256:951d610f5929ba7ec37554507c5c693c8e77970153d096c4b8a7b27e9dec8d3a",
             "locator": {
               "kind": "file"
             }
@@ -172,8 +208,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
-            "content": "sha256:0860cab26f7e5d70b2a1f337343d94382f3e23a8bc1411dfcd644d11cfd5b007",
+            "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
+            "content": "sha256:951d610f5929ba7ec37554507c5c693c8e77970153d096c4b8a7b27e9dec8d3a",
             "locator": {
               "kind": "file"
             }
@@ -187,8 +223,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
-            "content": "sha256:3302222db837b98bf5fef2034d41306d014a5ba2a0f0829d178b3ca479d7dab3",
+            "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
+            "content": "sha256:212ebec7ae24168987e648a864999368ce898460373d7a4445b8de61d6d7e9a6",
             "locator": {
               "kind": "symbol",
               "name": "close_crossing_history"
@@ -203,7 +239,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
             "content": "sha256:f3f0c7ee1f793ec67ce30436950163e72dd40e0a71753c28fe1c62ede4ff2921",
             "locator": {
               "kind": "symbol",
@@ -219,8 +255,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
-            "content": "sha256:0860cab26f7e5d70b2a1f337343d94382f3e23a8bc1411dfcd644d11cfd5b007",
+            "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
+            "content": "sha256:951d610f5929ba7ec37554507c5c693c8e77970153d096c4b8a7b27e9dec8d3a",
             "locator": {
               "kind": "file"
             }
@@ -234,7 +270,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
             "content": "sha256:8889988433959f51bbce82c0c730d0291f8d840ff3c978e4141ac0aa6e9b9744",
             "locator": {
               "kind": "symbol",
@@ -250,7 +286,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "blob": "ac53ee63e71fc1466cc080cb13729c0064c5ed03",
             "content": "sha256:c47e053eeef9b1a79299c2fbaf4b07dbb2a073343d67ef58acba8ee517470239",
             "locator": {
               "kind": "symbol",
@@ -267,7 +303,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "blob": "ac53ee63e71fc1466cc080cb13729c0064c5ed03",
             "content": "sha256:4e4830a84005983da07a3c5589b501f73475627a3565c79bb4c4e1725268f4fd",
             "locator": {
               "kind": "symbol",

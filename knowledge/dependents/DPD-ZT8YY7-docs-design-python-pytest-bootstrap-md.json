@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "b810bc180190b8646fccd2eb7a074e158fd790d2",
-    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
+    "codeTree": "ae80e60ea31a21e2880e045334e91760da0f41bc",
+    "commit": "bb6ad8aa5d5cff0f1d83e2782a0da16ff91a9724",
     "role": "curator",
-    "statement": "The pytest bootstrap guide still describes the stress-durability lane and its uninstrumented warm-index child after the crossing test was placed in integration.",
+    "statement": "The bootstrap guide says the bounded-memory stdio test's warm-index child and measured server run without child coverage, and the lane manifest keeps that test in stress-durability and the dependent-writer test in integration.",
     "task": "261112-BUG-L26",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "docs/design/python-pytest-bootstrap.md",
   "id": "DPD-ZT8YY7",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "cebf8697edac0ce507939faa1f98858435ad095f",
+      "blob": "855dbb0f6818b48d976e66080be99457471d1e3d",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -106,12 +106,12 @@
     },
     {
       "anchor": {
-        "blob": "cebf8697edac0ce507939faa1f98858435ad095f",
+        "blob": "855dbb0f6818b48d976e66080be99457471d1e3d",
         "content": "sha256:bcc4ade20e19642e956536d6662d0c20a8343feed9984bdf943fe982348cd7d1",
         "locator": {
-          "end": 817,
+          "end": 821,
           "kind": "line_range",
-          "start": 814
+          "start": 818
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },

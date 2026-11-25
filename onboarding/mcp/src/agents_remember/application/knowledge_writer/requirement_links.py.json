@@ -41,12 +41,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
-            "content": "sha256:fbc845ca4136164eb34326e37e70dbd2f85612fd718321f3d76bc113c85e1515",
+            "blob": "b2cb52a7cdcd2d8f0d4a8d4d49d3f83b36f4f590",
+            "content": "sha256:ef75fe3bb71580be8939b21649b4721f4e3e68e4353c4373a24976196eda9f48",
             "locator": {
-              "end": 1144,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "test_a_lifted_decision_round_trips_and_its_requirement_endpoints_are_reported"
             },
             "path": "mcp/tests/test_knowledge_writer.py"
           },
