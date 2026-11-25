@@ -18,6 +18,24 @@
       },
       "rationale": "Keeps the public roster consistent with the new tool's declared surface.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+        "content": "sha256:77300d3d8d990814a8c85c25a0c314254dde308fd394c4a03ff87c1fd34e2cb3",
+        "locator": {
+          "kind": "symbol",
+          "name": "PUBLIC_TOOLS"
+        }
+      },
+      "id": "RLZ-T7M017",
+      "invariant": "INV-KYKYPR",
+      "origin": {
+        "handoffEntry": "CAP-R01@v1 §1",
+        "leaf": "261124-CAP-L1"
+      },
+      "rationale": "The allowlists are subsequences of this literal, so the roster here is the order every role's entry must preserve.",
+      "role": "unclassified"
     }
   ],
   "references": {

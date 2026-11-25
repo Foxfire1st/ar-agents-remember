@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "fbabf6615252fe7ec8c3f6f8280d20c61e282878",
-    "commit": "94de536b30102c8e4e9dcef0ac78354b99996f60",
+    "codeTree": "51bf0a91489d97231a1e1173b67d2087c170b08f",
+    "commit": "ff626cd445012fee408b4b6c292756bbe1438d2e",
     "role": "curator",
-    "statement": "The MCP reference retains the master Architect’s update and retire operations, the four tools bound to the explainer’s supplied workspace, and render’s publication identity with run-file locations, and it describes planning and file writes without a Git commit and identifies the master contract and crossing selector for an open history from a crossing sync or structural merge parked before its merge commit.",
-    "task": "261124-EXP-L1",
-    "uncommitted": false
+    "statement": "The MCP reference still matches the role-agent tools, and its advice correctly sends a sync or closeout caller whose client stopped waiting to that call's tool-log row. The MCP reference describes planning and file writes without a Git commit, identifies the master contract and crossing selector for a parked master operation with open history, and explains that retained sync checks the staged resolution against both pinned parents by path, staged line and diagnosis.",
+    "task": "261112-BUG-L26",
+    "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
   "id": "DPD-X6G7K3",
@@ -73,7 +73,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
+      "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
     },
@@ -337,7 +337,6 @@
         },
         "path": "mcp/src/agents_remember/models/tools/tool_answer_short_fields.py"
       },
-      "heading": "Tool answers",
       "kind": "anchor"
     },
     {
@@ -350,7 +349,6 @@
         },
         "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
       },
-      "heading": "Tool answers",
       "kind": "anchor"
     },
     {
@@ -363,7 +361,6 @@
         },
         "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
       },
-      "heading": "Tool answers",
       "kind": "anchor"
     },
     {
@@ -376,7 +373,6 @@
         },
         "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
       },
-      "heading": "The answer of a start",
       "kind": "anchor"
     },
     {
@@ -389,7 +385,6 @@
         },
         "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
       },
-      "heading": "The answer of a start",
       "kind": "anchor"
     },
     {
@@ -402,7 +397,28 @@
         },
         "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
       },
-      "heading": "Wait",
+      "kind": "anchor"
+    },
+    {
+      "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/server.py"
+    },
+    {
+      "blob": "2ee450da7ed591e6d87e27ecd9b4835dffd5f825",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/thread_workers.py"
+    },
+    {
+      "anchor": {
+        "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
+        "content": "sha256:51adacb2027131fa579aafdcce7d397f57ddd50f264b97247df97d0bb7e3e4f0",
+        "locator": {
+          "kind": "symbol",
+          "name": "validate_staged_resolution"
+        },
+        "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+      },
       "kind": "anchor"
     }
   ]

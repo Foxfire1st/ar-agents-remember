@@ -66,6 +66,8 @@ On development installs the serving build is the producer ruler. A leaf changing
 
 The writer accepts a list or an object with `entries`, `records` and `history`. It owns identities, schema, origin, revisions, anchor resolution and canonical formatting. New records have writer-minted IDs; exported IDs derive from legacy identity. Records do not repeat their own locations, tests, families or decisions. Each relationship lives on its owner's side. `handoff:<key>` handles refer to records authored by the same document. A meaning change advances revision relative to the memory base; admission, status and origin alone are not meaning. Reruns reuse attributed identities and may remove this leaf's no-longer-named entries, never another leaf's entries. A document/model/anchor or refusing validation problem refuses the operation; reported-only findings remain visible. Family-route rules are reported within the writer so several runs can place routes, while commit routes retain their enforcement.
 
+For conflicting dependents on a master crossing, the ingestion template names the existing record, the open crossing and the one-sentence confirmation. Its writer plan is reviewed before apply.
+
 ### Families, external evidence and proofs
 
 A family is explicitly authored in `records`, with its own joint guarantee, member IDs, routes and admission. No directory, label, route or shared anchor implies a family. One obligation may belong to several families. Member or membership changes require fresh examination of the affected guarantee; implementation changes alone do not rewrite intent. Read recorded members and unchanged sibling realizations, name what was examined, and explain retained obligations. Do not revise an unchanged invariant merely to populate a family. The old successor/exact-membership/no-family plane account preserves this retention intent but is not the current file schema: `family` and `external_sources` entry keys are retired and ignored.
@@ -346,3 +348,5 @@ Before escalating, Manager reads its own rulings and the Architect rulings for t
 - The manifest composes the selected role followed by its operation and keeps shared core blocks out of that instruction stream; the shared digest accompanies the capsule in the first message. Anchor: `composition_order` [53]
 
 - Launch-time resolution chooses permission mode. Shared instructions assign the post-start feature check to the starter. [97]
+
+- The source template gives the conflicting-dependent crossing request. [99]

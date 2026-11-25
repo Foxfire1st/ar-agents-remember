@@ -51,7 +51,7 @@ No configured Domain Documentation source applies to this repository-owned contr
 
 ### Repo-Internal References
 
-- The producer contract keeps the entry, its shape and the producer rules; the Curator-authored keys, writer input, admission and decision records sit in the ingestion template. [31]
+
 
 ### Cross-Repo References
 
@@ -66,3 +66,5 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 - The authored source owns this contract; the distribution copy is not a separate authority. [21]
 
 - The Writing and meaning review section links the shared writing profile and keeps producer fields verbatim without changing the thirteen-field producer schema. [22]
+
+- The producer contract keeps the entry, its shape and the producer rules; the Curator-authored keys, writer input, admission and decision records sit in the ingestion template. [31]

@@ -37,7 +37,8 @@ text a seat receives, with `STARTERS` naming the starter roles the manifest desc
 - **Writer admission.** `test_the_curator_writer_is_admitted_for_the_selected_runtime` pins the admission in
   the role, detail and operation texts and requires the parser to refuse the removed options with exit 2.
 - **Grants.** `test_the_manifest_grants_the_role_tools_to_the_roles_that_may_use_them` checks the manifest
-  grants the role tools to exactly the roles allowed to use them, through `models.tools.public_roster` and
+  grants `role_message` to every launcher role except `bootstrap`, grants `role_start` to exactly the
+  starter roles and names no tool outside `models.tools.public_roster`; the launcher roles come through
   `models.role_identity`.
 
 ### Conventions

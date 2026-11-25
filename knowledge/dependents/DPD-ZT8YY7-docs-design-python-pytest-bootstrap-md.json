@@ -1,7 +1,7 @@
 {
   "confirmed": {
-    "codeTree": "fbabf6615252fe7ec8c3f6f8280d20c61e282878",
-    "commit": "94de536b30102c8e4e9dcef0ac78354b99996f60",
+    "codeTree": "bf8170a45b3fba98db218f8d5a9592630c893694",
+    "commit": "09954be4c846497f067bc721aeb58e9d8f5ee3b3",
     "role": "curator",
     "statement": "The bootstrap guide’s account of the lane families continues to apply: integration and stress-durability selection and the bounded-memory stdio case’s uninstrumented child coverage boundary, with all three added canvas suites assigned to unit-regression.",
     "task": "261124-EXP-L1",
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "50ba2caf10d2f17dcee590873758c7f885762331",
+      "blob": "75006e874ab9c238187bcf9044d224511529c135",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -106,12 +106,12 @@
     },
     {
       "anchor": {
-        "blob": "50ba2caf10d2f17dcee590873758c7f885762331",
+        "blob": "75006e874ab9c238187bcf9044d224511529c135",
         "content": "sha256:04f035a94539c339229547bc5abfb353cc00b7723d8419ed60d2857df37925ae",
         "locator": {
-          "end": 824,
+          "end": 826,
           "kind": "line_range",
-          "start": 821
+          "start": 823
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },

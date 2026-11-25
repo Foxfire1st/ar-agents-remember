@@ -1,5 +1,177 @@
 {
   "path": "mcp/tests/test_worktree_sync.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "8405a67e63f0953f978578c86150234c057c466e",
+        "content": "sha256:90dfbe4b62775cd65305c95c20d21475d34b23cee9f03198dd1981ec5aa48b43",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_sync_resolution_accepts_incoming_whitespace"
+        }
+      },
+      "facet": "A retained merge carries unchanged incoming whitespace in an untouched or automatically merged file.",
+      "id": "PRF-0FP83C",
+      "invariant": "INV-VG5BFX",
+      "origin": {
+        "handoffEntry": "BUG-R26@v1 rule 1",
+        "leaf": "261112-BUG-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8405a67e63f0953f978578c86150234c057c466e",
+        "content": "sha256:2572972c905ce5c18e02d3a14bb40ebb92040be6608ce7ef992a37ed5a9d36cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_sync_resolution_refuses_new_findings"
+        }
+      },
+      "facet": "Whitespace or conflict markers authored in or beside a conflict stop continuation.",
+      "id": "PRF-1X3EDF",
+      "invariant": "INV-VG5BFX",
+      "origin": {
+        "handoffEntry": "BUG-R26@v1 rule 1",
+        "leaf": "261112-BUG-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8405a67e63f0953f978578c86150234c057c466e",
+        "content": "sha256:64e62106c3065b3a940dec3372d6f72749787613472ad464aa15ce3172839387",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_sync_resolution_names_ambiguous_incoming_diagnostic"
+        }
+      },
+      "facet": "An ambiguous diagnostic is retained as an explicit refusal.",
+      "id": "PRF-24K8BM",
+      "invariant": "INV-VG5BFX",
+      "origin": {
+        "handoffEntry": "BUG-R26@v1 rule 1",
+        "leaf": "261112-BUG-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8405a67e63f0953f978578c86150234c057c466e",
+        "content": "sha256:974a5f7257281f9885f5a2d51aef7f35fe80f7a850197b9864c02e975409d984",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_sync_resolution_reports_commit_check_with_incoming_whitespace"
+        }
+      },
+      "facet": "A true hook refusal reports staged-file provenance despite inherited whitespace.",
+      "id": "PRF-4SWGHZ",
+      "invariant": "INV-VG5BFX",
+      "origin": {
+        "handoffEntry": "BUG-R26@v1 rule 1",
+        "leaf": "261112-BUG-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8405a67e63f0953f978578c86150234c057c466e",
+        "content": "sha256:26449a9e5626aeef97cce6f46e0a3db2eab55cc42b1a93555c994616bf660c14",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_sync_resolution_reports_failed_whitespace_comparison"
+        }
+      },
+      "facet": "A failed Git comparison does not produce an empty findings result.",
+      "id": "PRF-610DEK",
+      "invariant": "INV-VG5BFX",
+      "origin": {
+        "handoffEntry": "BUG-R26@v1 rule 1",
+        "leaf": "261112-BUG-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8405a67e63f0953f978578c86150234c057c466e",
+        "content": "sha256:a1642d5bca3489d770e91ed90367a9466d2d926e8acd839b3068fd037954bc6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_sync_resolution_refuses_authored_whitespace_in_multiline_path"
+        }
+      },
+      "facet": "A newly authored whitespace finding blocks even in a file with a multiline path.",
+      "id": "PRF-KQ987F",
+      "invariant": "INV-VG5BFX",
+      "origin": {
+        "handoffEntry": "BUG-R26@v1 rule 1",
+        "leaf": "261112-BUG-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8405a67e63f0953f978578c86150234c057c466e",
+        "content": "sha256:5ac16ffd0ea74d24f645eb9f5a49234cbcb3bdfcbff981735812772574bfdccb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_sync_resolution_preserves_rename_and_whitespace_attribute_checks"
+        }
+      },
+      "facet": "Git keeps its rename pairing and whitespace attribute behavior.",
+      "id": "PRF-SCBVHY",
+      "invariant": "INV-VG5BFX",
+      "origin": {
+        "handoffEntry": "BUG-R26@v1 rule 1",
+        "leaf": "261112-BUG-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8405a67e63f0953f978578c86150234c057c466e",
+        "content": "sha256:72a70397b934a2f3b2b24728f03f16a17166f4344c42374b10adf41a14cf5c75",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_automatic_memory_merge_accepts_incoming_whitespace"
+        }
+      },
+      "facet": "An automatically settled memory merge uses the same inherited-line rule.",
+      "id": "PRF-W3Y8KA",
+      "invariant": "INV-VG5BFX",
+      "origin": {
+        "handoffEntry": "BUG-R26@v1 rule 1",
+        "leaf": "261112-BUG-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8405a67e63f0953f978578c86150234c057c466e",
+        "content": "sha256:b24403e3c111f86864b43cb7c0c59eee7fe1ccebbbf92c90c085a2b7c86930a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_sync_resolution_reports_a_transient_comparison_failure_before_commit"
+        }
+      },
+      "facet": "Failed Git comparison keeps its first diagnostic without entering hook classification.",
+      "id": "PRF-X4T02Z",
+      "invariant": "INV-VG5BFX",
+      "origin": {
+        "handoffEntry": "BUG-R26@v1 rule 1",
+        "leaf": "261112-BUG-L26"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8405a67e63f0953f978578c86150234c057c466e",
+        "content": "sha256:b28e04cd5c860fb30d110a5ac57ea49195aa667c0a2a283d34319da621b80368",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_sync_resolution_keeps_identical_multiline_diagnostics_with_their_paths"
+        }
+      },
+      "facet": "Inherited diagnostics stay bound to their exact multiline paths.",
+      "id": "PRF-YM4XC0",
+      "invariant": "INV-VG5BFX",
+      "origin": {
+        "handoffEntry": "BUG-R26@v1 rule 1",
+        "leaf": "261112-BUG-L26"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "12": {
@@ -7,7 +179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
+            "blob": "8405a67e63f0953f978578c86150234c057c466e",
             "content": "sha256:cbc66ab67c19dc6755d15243f44a188d9eb5bcb57064847edc4f59073546575d",
             "locator": {
               "kind": "symbol",
@@ -23,7 +195,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
+            "blob": "8405a67e63f0953f978578c86150234c057c466e",
             "content": "sha256:c388396b74ed887acaa44ee6fabbca60a648c2b329996c09748d167dd80baacd",
             "locator": {
               "kind": "symbol",
@@ -39,7 +211,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
+            "blob": "8405a67e63f0953f978578c86150234c057c466e",
             "content": "sha256:5ef9871f0188d411455e5789a66e7f7be55e7206e43a441ab0039b6babe1c4d6",
             "locator": {
               "kind": "symbol",
@@ -55,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
+            "blob": "8405a67e63f0953f978578c86150234c057c466e",
             "content": "sha256:e083860378473a13a6e525857aeb7d7911db1f8520a7db13bf33ad73e24a8da1",
             "locator": {
               "kind": "symbol",
@@ -71,7 +243,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
+            "blob": "8405a67e63f0953f978578c86150234c057c466e",
             "content": "sha256:b11cca83b4e3bc23bfae5ce8fad3d08929203cdf21f308683d2930176f6a73e7",
             "locator": {
               "kind": "symbol",
@@ -87,7 +259,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
+            "blob": "8405a67e63f0953f978578c86150234c057c466e",
             "content": "sha256:09a93975b5fcdccf4989ce4a7ee6d24e7049ccafa78d2ec5abea56f07a19950b",
             "locator": {
               "kind": "symbol",
@@ -103,7 +275,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
+            "blob": "8405a67e63f0953f978578c86150234c057c466e",
             "content": "sha256:1b12c9c8fefc802490c855b78ae1f71e596f3ec7adfd966ee19d2a3792ce286b",
             "locator": {
               "kind": "symbol",
@@ -119,11 +291,56 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
+            "blob": "8405a67e63f0953f978578c86150234c057c466e",
             "content": "sha256:7641ca0bc19096ed37cd771b996d024e734975642b0c58e621c4ae98c302c37e",
             "locator": {
               "kind": "symbol",
               "name": "test_cancel_after_a_memory_conflict_restores_the_branch_and_its_tracked_cache"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The incoming-whitespace case continues a retained merge with unchanged incoming whitespace.\n\nAnchor: `test_sync_resolution_accepts_incoming_whitespace`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8405a67e63f0953f978578c86150234c057c466e",
+            "content": "sha256:d030e78e4d5c42252f504eb183ab578f0046cd01b01ec4a248697877ba62fca9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The transient comparison case keeps the first Git error in the resolution response.\n\nAnchor: `test_sync_resolution_reports_a_transient_comparison_failure_before_commit`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8405a67e63f0953f978578c86150234c057c466e",
+            "content": "sha256:d030e78e4d5c42252f504eb183ab578f0046cd01b01ec4a248697877ba62fca9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The automatic-memory case carries incoming whitespace through the shared staged check.\n\nAnchor: `test_automatic_memory_merge_accepts_incoming_whitespace`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8405a67e63f0953f978578c86150234c057c466e",
+            "content": "sha256:d030e78e4d5c42252f504eb183ab578f0046cd01b01ec4a248697877ba62fca9",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

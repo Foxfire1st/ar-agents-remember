@@ -1,7 +1,7 @@
 {
   "confirmed": {
-    "codeTree": "fbabf6615252fe7ec8c3f6f8280d20c61e282878",
-    "commit": "94de536b30102c8e4e9dcef0ac78354b99996f60",
+    "codeTree": "bf8170a45b3fba98db218f8d5a9592630c893694",
+    "commit": "09954be4c846497f067bc721aeb58e9d8f5ee3b3",
     "role": "curator",
     "statement": "The evidence-system design’s lane and lifecycle authority, including canonical ordering and source-derived consumers, still describes the merged catalogs, where the three added canvas suites sit in unit-regression and the two browser suites share one browser test support.",
     "task": "261124-EXP-L1",
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "50ba2caf10d2f17dcee590873758c7f885762331",
+      "blob": "75006e874ab9c238187bcf9044d224511529c135",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "3dfc2ecf215f9af4db8c1189e76b31229f77792d",
+      "blob": "d914a0a27f7f3953d73e5caec7138997a432ef82",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },

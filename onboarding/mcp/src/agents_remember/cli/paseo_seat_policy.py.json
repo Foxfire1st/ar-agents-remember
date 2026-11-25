@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "989ca0f381fef0297fc725d0b00462680d20f095",
+        "blob": "4191e74318f5f34c0412b1564038c8484c35b816",
+        "content": "sha256:1f192df99fe43025b96a5f0c8462605f0b3d46b26fa32f0a7094f3fa8ac5155d",
+        "locator": {
+          "kind": "symbol",
+          "name": "preapproval_policy"
+        }
+      },
+      "id": "RLZ-7TFBQA",
+      "invariant": "INV-DWNKBC",
+      "origin": {
+        "handoffEntry": "CAP-R01@v1 §3 codex grant",
+        "leaf": "261124-CAP-L1"
+      },
+      "rationale": "The provider branch and the roleless default are decided here, so Codex's grant and the server's advertised surface read the same table.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "4191e74318f5f34c0412b1564038c8484c35b816",
         "content": "sha256:039274234510c7e793f8b089ac2395db01ae91790c622c316fbd22258ae26f35",
         "locator": {
           "kind": "symbol",
@@ -21,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "989ca0f381fef0297fc725d0b00462680d20f095",
-        "content": "sha256:b39ac416b7f157c729239d1dc515a535a51899617e08cc0e81a623490c0b3f82",
+        "blob": "4191e74318f5f34c0412b1564038c8484c35b816",
+        "content": "sha256:1f192df99fe43025b96a5f0c8462605f0b3d46b26fa32f0a7094f3fa8ac5155d",
         "locator": {
           "kind": "symbol",
           "name": "preapproval_policy"
@@ -34,20 +52,20 @@
         "handoffEntry": "BUG-R31@v1-start-grant",
         "leaf": "261112-BUG-L31"
       },
-      "rationale": "The shared policy takes the ordinary roster and adds the explainer surface when supplied.",
+      "rationale": "The shared policy takes the roster of the seat's role, or the public roster when no role is named, and adds the explainer surface when supplied.",
       "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "The provider selects the startup roster, which binds each granted tool to the supplied server.",
+      "note": "The provider and the seat's role select the startup roster, which binds each granted tool to the supplied server.",
       "targets": [
         {
           "anchor": {
-            "blob": "989ca0f381fef0297fc725d0b00462680d20f095",
-            "content": "sha256:b39ac416b7f157c729239d1dc515a535a51899617e08cc0e81a623490c0b3f82",
+            "blob": "4191e74318f5f34c0412b1564038c8484c35b816",
+            "content": "sha256:1f192df99fe43025b96a5f0c8462605f0b3d46b26fa32f0a7094f3fa8ac5155d",
             "locator": {
-              "end": 37,
+              "end": 46,
               "kind": "line_range",
               "start": 21
             }
@@ -61,8 +79,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed433f1461603a846547ab141a794294a4c4054a",
-            "content": "sha256:a7988e1af587d13092b31708d17a1ffe42a07a213d48470d7afe91c683f5a8e4",
+            "blob": "0fc638828611b97d33b29b06297cc62431902dc2",
+            "content": "sha256:c70fe330d7e5e240c90e5e33e504814a8aa1e7a8383b5c7e76fdec94c8a060b4",
             "locator": {
               "end": 432,
               "kind": "line_range",
@@ -92,12 +110,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "989ca0f381fef0297fc725d0b00462680d20f095",
+            "blob": "4191e74318f5f34c0412b1564038c8484c35b816",
             "content": "sha256:039274234510c7e793f8b089ac2395db01ae91790c622c316fbd22258ae26f35",
             "locator": {
-              "end": 48,
+              "end": 57,
               "kind": "line_range",
-              "start": 40
+              "start": 49
             }
           },
           "kind": "code"

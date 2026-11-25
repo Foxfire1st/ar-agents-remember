@@ -22,7 +22,7 @@ Every `@server.tool()` declaration and its model-visible docstring lives in
 looking for what a tool advertises, what it refuses, or which payload builder it forwards to, that
 is the [registration route overview](registration/overview.md), not this file.
 
-Starts the configured MCP application with the ordinary registration families and adds the four explainer tools for a valid explainer launch.
+Starts the configured MCP application with the ordinary registration families, adds the four explainer tools for a valid explainer launch, and narrows the registered tools to the allowlist of a bound role.
 
 ## Code Commentary
 
@@ -43,12 +43,17 @@ A native invocation opens a lazy request memo and clears its shared owner map af
 5. `apply_read_only_marks(server)` applies the single `mcp/read_only.py` inventory to every registered
    tool. An unlisted name raises `UnknownReadOnlyMark`; server creation fails rather than advertising
    an unmarked tool. This step changes annotations, not registration order or handler ownership.
+6. `_bound_role_tools` reads the agent binding after the marks. An unbound process keeps the whole
+   registered roster. A readable role binding keeps that role's `tools_for_role` allowlist, plus the
+   explainer's four tools when an explainer seat is also bound, and `_scope_server_tools` removes every
+   other registered tool through FastMCP's `remove_tool`, so the survivors keep their registration
+   order, schemas and read-only annotations. A present but unreadable binding keeps only `server_info`.
 
 `run_server(config)` records this process in the running-server registry as an `"mcp"` server (`register_server`), runs `create_server(config).run()`, and calls the returned cleanup when serving ends; the cleanup removes the record and is also registered to run at normal process exit.
 
 ### Dispatch at the public transport boundary
 
-AgentsRememberMCP.list_tools first awaits the FastMCP answer, then schedules start_after_discovery(config) with the running loop’s call_soon and returns that already-produced answer. The shared latch starts outside-scratch reconciliation once, including on a bare no-config server, and dashboard autostart only with config/settings. call_tool reaches that same latch as the fallback for a client that never lists, before entering tool_call_context. Calls to the four explainer tools validate their launched seat before the registered handler; ordinary tools keep their own argument admission. The retained delegation and raised-call logging use the shared boundary. Tool argument admission belongs to each retained registered schema. The synchronous dispatch wrapper described below keeps that validation path while moving the handler body off the event loop.
+AgentsRememberMCP.list_tools first awaits the FastMCP answer, then schedules start_after_discovery(config) with the running loop’s call_soon and returns that already-produced answer. The shared latch starts outside-scratch reconciliation once, including on a bare no-config server, and dashboard autostart only with config/settings. call_tool reaches that same latch as the fallback for a client that never lists, before entering tool_call_context. Calls to an explainer tool that this process still serves validate their launched seat before the registered handler; a call to an explainer tool that role narrowing removed reaches dispatch and fails there as an unknown tool. Ordinary tools keep their own argument admission. The retained delegation and raised-call logging use the shared boundary. Tool argument admission belongs to each retained registered schema. The synchronous dispatch wrapper described below keeps that validation path while moving the handler body off the event loop.
 
 ### Stale installed builds refuse publication writes at dispatch
 
@@ -119,7 +124,7 @@ that skips this line loses no records — it just stops being distinguishable fr
 
 ### Role Runtime and Scope
 
-Readable launch binding supplies one canonical launched-server instruction line. Unbound or unreadable binding supplies no instructions; malformed binding still refuses at its actual server_info/bound-tool boundary rather than changing startup authority. create_server retains existing worktree services and application trust composition.
+Readable launch binding supplies one canonical launched-server instruction line. Unbound or unreadable binding supplies no instructions. An unreadable binding narrows the server to `server_info`, whose answer names what is wrong with the binding; every other tool is unknown to that process. create_server retains existing worktree services and application trust composition.
 
 ## Leaf agent archive binding (MIK-R76)
 
@@ -184,15 +189,13 @@ Potentially mutating synchronous calls hold one per-server lock until their work
 
 
 
-- `create_server` builds the FastMCP instance and invokes the registered tool families.  Anchor: `create_server` 
 
 
 
-- Frozen implementation of launched_server_instructions supporting the stated file behavior. [6]
+- `launched_server_instructions` returns the launched-server line for a readable binding and none for an absent or unreadable one. [6]
 
 
 
-- Frozen implementation of create_server supporting the stated file behavior.  Anchor: `create_server` 
 
 
 
@@ -203,13 +206,15 @@ Potentially mutating synchronous calls hold one per-server lock until their work
 
 
 
-- `create_server` builds the FastMCP instance and invokes the registered tool families. [1]
+- `create_server` builds the FastMCP instance, invokes the registered tool families, and narrows the result to the allowlist of a bound role. [1]
 
-- `create_server` installs compact content, initializes the application services, registers every tool family, adds a bound explainer surface and applies the read-only marks. [7]
+- `create_server` installs compact content, initializes the application services, registers every tool family, adds a bound explainer surface, applies the read-only marks, and then removes every tool outside the allowlist of a bound role. [7]
+
+- `_bound_role_tools` resolves the binding precedence, and `_scope_server_tools` removes every tool outside a role's allowlist after the read-only marks, keeping the survivors' order. [20]
 
 
 ## Retirements
 
-- Initialization installs the worktree supplier and every ordinary tool family, adding the four explainer tools for a bound launch. list_tools schedules start_after_discovery after its answer exists; call_tool invokes the same latch before applicable explainer-seat checks. The latch starts the sweep even without config and dashboard supervision only with config/settings. [9]
+- Initialization installs the worktree supplier and every ordinary tool family, adds the four explainer tools for a bound launch, and narrows the tools to the allowlist of a role-bound launch. list_tools schedules start_after_discovery after its answer exists; call_tool invokes the same latch before applicable explainer-seat checks. The latch starts the sweep even without config and dashboard supervision only with config/settings. [9]
 
-- The dashboard declares its durable-store role on the reload-worker and foreground or daemon entry paths. \[15] [15]
+- The dashboard declares its durable-store role on the reload-worker and foreground or daemon entry paths. [15]

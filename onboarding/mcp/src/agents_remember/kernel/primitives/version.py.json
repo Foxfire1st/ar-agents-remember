@@ -27,9 +27,10 @@
         {
           "anchor": {
             "blob": "eb999d6f1626d6b697870c0ca35f8d7d24eb77cb",
-            "content": "sha256:ccecb44936bec39ccd74729f05d998e73e447407ab03c4e53a3b389d257f092c",
+            "content": "sha256:75eaa3177fa4c066c1768b3374ead5fa2f490b9e37dce53d263fe68e5a2237a2",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_resolve_server_version"
             }
           },
           "kind": "code"
@@ -42,9 +43,10 @@
         {
           "anchor": {
             "blob": "eb999d6f1626d6b697870c0ca35f8d7d24eb77cb",
-            "content": "sha256:ccecb44936bec39ccd74729f05d998e73e447407ab03c4e53a3b389d257f092c",
+            "content": "sha256:75eaa3177fa4c066c1768b3374ead5fa2f490b9e37dce53d263fe68e5a2237a2",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_resolve_server_version"
             }
           },
           "kind": "code"

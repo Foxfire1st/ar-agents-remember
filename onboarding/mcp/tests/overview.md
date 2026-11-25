@@ -11,6 +11,8 @@ Reference-anchor coverage is split among census classification and captured-inpu
 
 `mcp/tests/` holds the package's Python behavioral tests, shared fixture and support modules, recordings and data, pytest composition, and two governed evidence catalogs. Its purpose is to preserve distinct user operations, consequential failures and regressions with the smallest maintainable protection. Module cards describe individual assertion sets; this overview explains composition, responsibility and authority across the route.
 
+The integration lane selects the crossing dependent writer test once. It checks that the mounted dry plan uses the settled code tree and that the branch name resolves to its commit.
+
 The native stdio memory regression uses a generated converted leaf and repeats its fixed 28-call selection three times in one bound process. It checks the completed task, paged knowledge, quality and writer receipts before applying the Linux memory limits.
 
 The canvas suite (MIK-R104, MIK-R105) protects the generated page's host and the presenter. `test_canvas_host` covers the served policy, the proof binding and the protocol boundary; `test_canvas_serving` the saved-first read, session document/asset isolation and revocation; `test_canvas_kit` and `test_canvas_kit_assets` the manifest inventory, byte verification and static self-containment (no browser runs in them; the browser smoke test is separate); the retained `test_canvas_presenter`, `_files`, `_host`, `_settings` and `_store` sources assert stored-attempt identity/activity, cancellation/publication races, symlink and held-parent IO confinement, host receipt/control fixtures, packet-tree source grants and attempt retention; `test_canvas_prospective` and `test_canvas_readiness` the load before publication and the static check; `test_canvas_capsule_text` the installed capability text against its canonical copy. These are source-declared assertions, not a fresh run. The governing route is [MCP package overview](../overview.md).
@@ -104,7 +106,7 @@ Both reopened-history changed-row refusal cases supply the gate’s worklist to 
 
 Three plugins are registered: pytest bootstrap, evidence lanes and database retirement. The latter is intended to catch production database access/file mutation outside its named allowed modules. `--certify` takes a separate genuine-Dagger admission path; ordinary test bootstrap supplies no lifecycle-worker or Dagger capability. The source policy distinguishes ordinary development feedback from immutable candidate-bound evidence issued by the pinned delivery graph and existing lifecycle owners.
 
-The root `pyproject.toml` owns test paths, default selection, four-worker file distribution, strict markers/configuration and collected-case budgets. The current candidate declares 10,000 unit and 2,000 integration cases (`pyproject.toml:334-335`). The current Python test-policy design note agrees on 10,000/2,000. This is source agreement, not fresh collection or execution. File distribution and collection refusal behavior remain their existing owners’ contracts.
+The root `pyproject.toml` owns test paths, default selection, four-worker file distribution, strict markers/configuration and collected-case budgets. The current candidate declares 10,000 unit and 2,119 integration cases (`pyproject.toml:334-335`). The current Python test-policy design note agrees on 10,000/2,000. This is source agreement, not fresh collection or execution. File distribution and collection refusal behavior remain their existing owners’ contracts.
 
 `test-evidence-lanes.toml` assigns the explicit base lane of every durable test module. The lane loader derives the repository test population and refuses missing/stale members, invalid categories, noncanonical lists and invalid overrides. Collection requires a Git checkout through that dependency discovery. Membership classifies selection, cost and fidelity; it is not execution or acceptance. Derive populations from the manifest instead of pinning counts in this overview.
 
@@ -212,7 +214,7 @@ Keep fixtures honest about fake inspectors, synthetic profiles, hand-built paylo
 ## Historical And Verification Limits
 
 
-Read the lane manifest for the selected test modules. The current configuration declares 10,000 unit and 2,000 integration selected cases. The testing design document agrees with the current configuration on 10,000 unit and 2,000 integration selected cases.
+Read the lane manifest for the selected test modules. The current configuration declares 10,000 unit and 2,119 integration selected cases. The testing design document agrees with the current configuration on 10,000 unit and 2,119 integration selected cases.
 
 The canonical catalog writer drops gone consumers but never removes an artifact row; its owner decides whether the artifact is retired and the row should be removed.
 
@@ -238,7 +240,7 @@ The route metadata supports navigation and source custody. Their status/coverage
 - The made-up-account child asserts its reviewed source and empty fake home on refusal. Recursive population, syntactic scanner and deliberately unexecuted unsafe controls are source-described assertions.
 
 
-- Candidate successor, changed-target/no-successor and unrelated-supersedes controls protect the boundary. The current configured collected-case budgets are 10,000 unit/2,000 integration. Neither source assertion nor policy declaration is execution evidence.
+- Candidate successor, changed-target/no-successor and unrelated-supersedes controls protect the boundary. The current configured collected-case budgets are 10,000 unit/2,119 integration. Neither source assertion nor policy declaration is execution evidence.
 
 
 - Recorded-meaning backend source assertions, mounted ReviewSurface capture-based assertions and retained capture/provenance records are distinct source/evidence classes; no new invocation or installed acceptance is inferred.
@@ -358,7 +360,7 @@ The suite has cases for provider subagents, the usage report judgement, the limi
 
 ## Current discovery-startup test selection
 
-The current named regression is `test_dashboard_autostart_after_discovery.py`. Its two fresh autoStart=true processes assert the joint outside-scratch sweep and dashboard-supervision start: neither begins during preparation, server creation or the produced-list-answer snapshot before the event-loop callback; the later callback or the no-list first-call fallback starts each once through the same process latch. Dashboard and host launchers and the reconciliation seam are recorders. The parsed source declarations contain 18 lifecycle contracts, 121 artifacts and 805 distinct modules across seven lanes, including 660 in unit-regression. These are source assertions and selection metadata, not a new server, test or live-host run.
+The current named regression is `test_dashboard_autostart_after_discovery.py`. Its two fresh autoStart=true processes assert the joint outside-scratch sweep and dashboard-supervision start: neither begins during preparation, server creation or the produced-list-answer snapshot before the event-loop callback; the later callback or the no-list first-call fallback starts each once through the same process latch. Dashboard and host launchers and the reconciliation seam are recorders. The parsed source declarations contain 18 lifecycle contracts, 121 artifacts and 807 distinct modules across seven lanes, including 661 in unit-regression. These are source assertions and selection metadata, not a new server, test or live-host run.
 
 ## Additional source contracts
 
@@ -377,12 +379,12 @@ The current named regression is `test_dashboard_autostart_after_discovery.py`. I
 
 - Source cases retain committed leaf deltas and exclude files already present in an updated base.
 
-The source-file regression exercises the synchronous public quality route with Git fixture repositories. It checks uncited listing and size/count cases, then readable citation mutation and unavailable link/large-file reasons. The current root selected-case ceilings are 10000 unit and 2000 integration; test_memory_quality_source_files.py is declared in integration without weakening the collection guard.
+The source-file regression exercises the synchronous public quality route with Git fixture repositories. It checks uncited listing and size/count cases, then readable citation mutation and unavailable link/large-file reasons. The current root selected-case ceilings are 10000 unit and 119 integration; test_memory_quality_source_files.py is declared in integration without weakening the collection guard.
 
 - **The fixture and the governed contract it is registered under.**
 
 
-> The root `pyproject.toml` owns test paths, default selection, four-worker file distribution, strict markers/configuration and collected-case budgets. The current candidate declares 10,000 unit and 2,000 integration cases (`pyproject.toml:334-335`). The current Python test-policy design note agrees on 10,000/2,000. This is source agreement, not fresh collection or execution. File distribution and collection refusal behavior remain their existing owners’ contracts.
+> The root `pyproject.toml` owns test paths, default selection, four-worker file distribution, strict markers/configuration and collected-case budgets. The current candidate declares 10,000 unit and 2,119 integration cases (`pyproject.toml:334-335`). The current Python test-policy design note agrees on 10,000/2,000. This is source agreement, not fresh collection or execution. File distribution and collection refusal behavior remain their existing owners’ contracts.
 
 
 
@@ -490,14 +492,14 @@ Current source: The current unit-regression lane selects test_knowledge_leaf_rea
 Current source: The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance.
 
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 805 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 807 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
 
 
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 805 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 807 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
 
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 805 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 807 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
 
 
 
@@ -539,7 +541,7 @@ Current source: The lifecycle catalog declares four permanent scripts/e2e_harnes
 Current source: The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. These declarations establish registration, not test execution or acceptance.
 
 
-Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 805 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
+Current source: The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 807 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.
 
 - The four `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.
 
@@ -591,7 +593,7 @@ Current source: The current lifecycle catalog declares test_landing_report.py as
 
 - The replacement after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes. The launchers and reconciliation seam are recorders; no execution is asserted here.
 
-Current source: The replacement after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes; parsed catalog declarations contain 18 lifecycle contracts, 121 artifacts and 805 selected lane members. The launchers and reconciliation seam are recorders; no execution is asserted here.
+Current source: The replacement after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes; parsed catalog declarations contain 18 lifecycle contracts, 121 artifacts and 807 selected lane members. The launchers and reconciliation seam are recorders; no execution is asserted here.
 
 The explainer tests check bound reading inputs, moved Update with preserved stage files, and exact essay-first defaults. The capability cases pin the shipped stage wording and 1,500-word budget. Separate video cases check the runner's media map, the static attributes and the store's publication and readback.
 
@@ -1098,7 +1100,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - The renewal family separates digest bindings, manifest routing/no-step authority and pointer withdrawal/refusal controls. [1832]
 
 - The default options select the unit population and four workers. [1]
-- The current repository-root collected-case declarations are 10,000 unit and 2,000 integration. [2]
+- The current repository-root collected-case declarations are 10,000 unit and 2,119 integration. [2]
 
 - Integration and stress-durability files are skipped before import when the marker expression is exactly `not integration`. [5]
 
@@ -1194,23 +1196,6 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 - A decision is never an export (review F6). [1444]
 
-
-
-
-- The current unit-regression lane selects test_knowledge_leaf_read.py. The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. [1445]
-
-
-
-
-
-
-
-
-- The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. [1446]
-
-
-
-
 - The conforming directory move. [1448]
 - A forged legacy ID does not make a record exported. [1449]
 - The writer refuses an unsupported admission claim. [1450]
@@ -1296,7 +1281,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 805 distinct test modules across its lane identities. [1498]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 807 distinct test modules across its lane identities. [1498]
 
 
 
@@ -1359,7 +1344,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 805 distinct test modules across its lane identities. [1529]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 807 distinct test modules across its lane identities. [1529]
 
 
 
@@ -1368,7 +1353,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 805 distinct test modules across its lane identities. [1530]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 807 distinct test modules across its lane identities. [1530]
 
 
 
@@ -1503,16 +1488,6 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - The multi-field refusal names every supplied field in model order, `judgments` included. [1634]
 - The freeze branch keeps its own named refusal. [1635]
 
-
-
-
-- The evidence registry has twelve exact-consumer rows that name `mcp/tests/test_terminal_blocker_reasons.py`. [1638]
-
-
-
-
-
-
 - The lifecycle catalog registers mcp/tests/read_scope_test_support.py with contract:knowledge-read-scope-cases and an exact consumer list; the contract separately names its owner and evidence node. This is declaration, not a read invocation. [1639]
 
 
@@ -1538,7 +1513,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
-- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 805 distinct test modules across its lane identities. [1647]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 807 distinct test modules across its lane identities. [1647]
 
 
 
@@ -1619,15 +1594,6 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 - The landing-report module (`mcp/tests/test_landing_report.py`) is selected in unit-regression; registration is not execution. [1722]
 
-
-
-
-
-- The lifecycle catalog declares test_landing_report.py among the consumers of _user_settings_guard.py, curator_coherence_test_support.py and the Node package-lock fixture; this named subset is not its whole declared artifact population. These are declarations and source assertions, not a fresh run. The `curator_coherence_test_support.py` artifact row declares `test_landing_report.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_landing_report.py` as an exact consumer. ENVELOPE_LOSING_RAISERS is empty. The sweep compares its observed error-arm population with that pin. No executable STATE_DEPENDENT_RAISERS or ambient lifecycle-state matrix remains in the sweep support. None remains in the entry-point world. None remains in the sweep module. lifecycle_finalize_task has an ordinary contract-addressed dry-run request in the main benign table. [1723]
-
-
-
-
 - Settings refusal compares account home or earliest observed home before returning a write path. [1724]
 - The support scanner derives nested support and checks supported syntactic bypasses. [1725]
 - The retained production ref transaction checks protected heads, ancestry and exact landing output. [1728]
@@ -1654,15 +1620,6 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 - Family-context cases distinguish recorded-empty from absent, retain before-context for additions and removals and preserve sparse authored populations. [1749]
 
-
-
-
-- The current lifecycle catalog declares test_landing_report.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/landing_report_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `curator_coherence_test_support.py` artifact row declares `test_landing_report.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_landing_report.py` as an exact consumer. The `landing_report_test_support.py` artifact row declares `test_landing_report.py` as an exact consumer. [1753]
-
-
-
-
-
 - The case asserts a missing before acceptance_ref and an after reference beginning with text-knowledge:. It asserts the lifecycle as proposed before and accepted after. [1755]
 
 
@@ -1679,7 +1636,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 - The Python comment describes a historical literal match. The current renderer uses its own fixture text to exercise added, removed, present and unresolved statements. [1765]
 
-- The current collected-case declarations are 10,000 unit and 2,000 integration; neither source assertions nor declarations establish execution. [1768]
+- The current collected-case declarations are 10,000 unit and 2,119 integration; neither source assertions nor declarations establish execution. [1768]
 - The changed-row refusal passes `world.gate().worklist` into `WriteRequest`. [1770]
 - The selected static task-entry case asserts authored-stage precedence over host activity and an unknown-host outcome (`test_task_entries.py::test_stage_has_priority_over_host_activity`); event contribution and the known-empty-host outcome are asserted by the module’s other case. Not executed here. [1776]
 - The selected evidence-packet case asserts that a foreign repository with equal trees is never this comparison (`test_review_evidence_packet.py::test_f01_a_foreign_repository_with_equal_trees_is_never_this_comparison`); the packet, read, claim and prepared-address contracts are asserted by the module's other cases, not by this one. [1787]
@@ -1694,49 +1651,49 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 
 
-- The after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes. The launchers and reconciliation seam are recorders; no execution is asserted here. The parsed lifecycle catalog contains 18 lifecycle contracts and 121 artifacts. The parsed lane catalog contains 805 selected lane members. [1808]
+- The after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes. The launchers and reconciliation seam are recorders; no execution is asserted here. The parsed lifecycle catalog contains 18 lifecycle contracts and 121 artifacts. The parsed lane catalog contains 807 selected lane members. [1808]
 
 
 
 
 
-- The current root and testing design agree on 10000 unit and 2000 integration selected cases; the named tests retain their independent source assertions. Target: mcp/tests/test_landing_report.py. [1814]
-- The current root and testing design agree on 10000 unit and 2000 integration selected cases; the named tests retain their independent source assertions. Target: mcp/tests/test_landing_report.py. [1815]
+- The current root and testing design agree on 10000 unit and 119 integration selected cases; the named tests retain their independent source assertions. Target: mcp/tests/test_landing_report.py. [1814]
+- The current root and testing design agree on 10000 unit and 119 integration selected cases; the named tests retain their independent source assertions. Target: mcp/tests/test_landing_report.py. [1815]
 
-- The current root and testing design agree on 10000 unit and 2000 integration selected cases; the named tests retain their independent source assertions. Target: docs/design/python-pytest-bootstrap.md. [1816]
-
-
-- Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: mcp/tests/test_landing_report.py. [1817]
+- The current root and testing design agree on 10000 unit and 119 integration selected cases; the named tests retain their independent source assertions. Target: docs/design/python-pytest-bootstrap.md. [1816]
 
 
-- Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: docs/design/python-pytest-bootstrap.md. [1818]
+- Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 119 integration cases. The root classifies scripts/agent_evals as verification. Target: mcp/tests/test_landing_report.py. [1817]
 
 
-- Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: pyproject.toml. [1819]
+- Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 119 integration cases. The root classifies scripts/agent_evals as verification. Target: docs/design/python-pytest-bootstrap.md. [1818]
 
 
-- Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: pyproject.toml. [1820]
+- Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 119 integration cases. The root classifies scripts/agent_evals as verification. Target: pyproject.toml. [1819]
+
+
+- Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 119 integration cases. The root classifies scripts/agent_evals as verification. Target: pyproject.toml. [1820]
 
 - Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence.  Anchor: rename, linked-worktree and removed-card controls Target: mcp/tests/test_landing_report.py. [1821]
 - Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence.  Anchor: rename, linked-worktree and removed-card controls Target: mcp/tests/test_landing_report.py. [1822]
 
-- Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: mcp/tests/test_landing_report.py. [1824]
+- Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 119 integration cases. The root classifies scripts/agent_evals as verification. Target: mcp/tests/test_landing_report.py. [1824]
 
 
-- Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: docs/design/python-pytest-bootstrap.md. [1825]
+- Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 119 integration cases. The root classifies scripts/agent_evals as verification. Target: docs/design/python-pytest-bootstrap.md. [1825]
 
 
-- Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: pyproject.toml. [1826]
+- Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 119 integration cases. The root classifies scripts/agent_evals as verification. Target: pyproject.toml. [1826]
 
 
-- Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: pyproject.toml. [1827]
+- Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 119 integration cases. The root classifies scripts/agent_evals as verification. Target: pyproject.toml. [1827]
 
-- Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. These are source assertions and policy declarations, not execution evidence. The current test and support own the case/fixture logic. The design note declares 10,000 unit and 2,000 integration cases. The current configuration declares the same pair. Target: mcp/tests/test_landing_report.py. [1828]
-- Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. These are source assertions and policy declarations, not execution evidence. The current test and support own the case/fixture logic. The design note declares 10,000 unit and 2,000 integration cases. The current configuration declares the same pair. Target: mcp/tests/landing_report_test_support.py. [1829]
+- Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. These are source assertions and policy declarations, not execution evidence. The current test and support own the case/fixture logic. The design note declares 10,000 unit and 2,119 integration cases. The current configuration declares the same pair. Target: mcp/tests/test_landing_report.py. [1828]
+- Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. These are source assertions and policy declarations, not execution evidence. The current test and support own the case/fixture logic. The design note declares 10,000 unit and 2,119 integration cases. The current configuration declares the same pair. Target: mcp/tests/landing_report_test_support.py. [1829]
 
-- Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. These are source assertions and policy declarations, not execution evidence. The current test and support own the case/fixture logic. The design note declares 10,000 unit and 2,000 integration cases. The current configuration declares the same pair. Target: docs/design/python-pytest-bootstrap.md. [1830]
+- Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. These are source assertions and policy declarations, not execution evidence. The current test and support own the case/fixture logic. The design note declares 10,000 unit and 2,119 integration cases. The current configuration declares the same pair. Target: docs/design/python-pytest-bootstrap.md. [1830]
 
-- Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. These are source assertions and policy declarations, not execution evidence. The current test and support own the case/fixture logic. The design note declares 10,000 unit and 2,000 integration cases. The current configuration declares the same pair. Target: pyproject.toml. [1831]
+- Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. These are source assertions and policy declarations, not execution evidence. The current test and support own the case/fixture logic. The design note declares 10,000 unit and 2,119 integration cases. The current configuration declares the same pair. Target: pyproject.toml. [1831]
 - The retained landing-check method invokes instruction renewal with the running interpreter. [1833]
 - Current fixtures compare body-only and final-trailer attribution with Git, exercise registered weakness writes and both reads across closure states and episodes, and assert that public closeout commits the judged memory tree without rewriting the reviewed record. These are source assertions, not a fresh execution or settlement of a live weakness. [1834]
 
@@ -1767,8 +1724,21 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 - The landing answer matrix measures both states across five controlled delivery shapes. The shared guard regression checks the current drop count after scalar removal. [1842]
 
+- The integration lane registers the crossing dependent writer test once. [1848]
+
 - A cancelled request leaves one raised or cancelled tool-log row, or the tool's own row for a late result. [1844]
 
 - Both hook tiers stop at missing dashboard dependencies or npm before Ruff. [1845]
 
 - The two modules are declared in the integration lane. [1846]
+
+- The current unit-regression lane selects test_knowledge_leaf_read.py. The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. [1445]
+- The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. [1446]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 807 distinct test modules across its lane identities. [1498]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 807 distinct test modules across its lane identities. [1529]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 807 distinct test modules across its lane identities. [1530]
+- The evidence registry has twelve exact-consumer rows that name `mcp/tests/test_terminal_blocker_reasons.py`. [1638]
+- The current mcp/tests/evidence-lifecycle.toml declares schema_version = "ar-test-evidence-lifecycle/v3", 18 contract records and 121 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 807 distinct test modules across its lane identities. [1647]
+- The lifecycle catalog declares test_landing_report.py among the consumers of _user_settings_guard.py, curator_coherence_test_support.py and the Node package-lock fixture; this named subset is not its whole declared artifact population. These are declarations and source assertions, not a fresh run. The `curator_coherence_test_support.py` artifact row declares `test_landing_report.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_landing_report.py` as an exact consumer. ENVELOPE_LOSING_RAISERS is empty. The sweep compares its observed error-arm population with that pin. No executable STATE_DEPENDENT_RAISERS or ambient lifecycle-state matrix remains in the sweep support. None remains in the entry-point world. None remains in the sweep module. lifecycle_finalize_task has an ordinary contract-addressed dry-run request in the main benign table. [1723]
+- The current lifecycle catalog declares test_landing_report.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/landing_report_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `curator_coherence_test_support.py` artifact row declares `test_landing_report.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_landing_report.py` as an exact consumer. The `landing_report_test_support.py` artifact row declares `test_landing_report.py` as an exact consumer. [1753]
+- The after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes. The launchers and reconciliation seam are recorders; no execution is asserted here. The parsed lifecycle catalog contains 18 lifecycle contracts and 121 artifacts. The parsed lane catalog contains 807 selected lane members. [1808]

@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "55049f6c73b5660adaa6e3b0637185a3167751c3",
-    "commit": "54d242820ff7f9941cadebf9f543c857314b368f",
-    "role": "manager",
-    "statement": "The reference correctly describes Lean symbol selection, exact dependent confirmation, contractual memory bases and the knowledge index’s bounded rebuild behavior.",
-    "task": "261123-SUB",
-    "uncommitted": false
+    "codeTree": "f3ee77dfac4162d06d4dba0121172674a8c4f7d3",
+    "commit": "653b42f6b47d4e59ba8b47047d0d31698080d369",
+    "role": "curator",
+    "statement": "The reference correctly describes Lean symbol selection, exact dependent confirmation, contractual memory bases and the knowledge index’s bounded rebuild behavior. The knowledge-system reference correctly says that an automatically settled memory merge also runs the staged check described in Worktrees.",
+    "task": "261112-BUG-L26",
+    "uncommitted": true
   },
   "document": "docs/reference/knowledge-system.md",
   "id": "DPD-TXRND9",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -237,7 +237,7 @@
       "path": "dashboard/src/panels/review/MeaningEffects.tsx"
     },
     {
-      "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+      "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
     },
@@ -375,6 +375,19 @@
         "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
       },
       "heading": "Derived index and reads",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
+        "content": "sha256:1ec537f6f0422a1b506ca91c06b7b979e369716ad77db2e41cb8d0e1df516525",
+        "locator": {
+          "kind": "symbol",
+          "name": "_continue_memory_merge"
+        },
+        "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+      },
+      "heading": "Staged memory merge check",
       "kind": "anchor"
     }
   ]

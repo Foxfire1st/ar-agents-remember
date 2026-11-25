@@ -55,6 +55,24 @@
       },
       "rationale": "The snapshot a write resolves against is the one place the writer takes a blob or a symbol range from, so an anchor is recorded at the tree the write ran on.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "71af220596f317a833cf129c3bf80e2da22c1ed5",
+        "content": "sha256:133f00961f17d0bcf5238f03869b7194c16aa4c2197c2bfaa40878ff7bc177fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "CodeSnapshot.at_commit"
+        }
+      },
+      "id": "RLZ-J31EBD",
+      "invariant": "INV-4EE7HQ",
+      "origin": {
+        "handoffEntry": "BUG-R26@v1 rule 2",
+        "leaf": "261112-BUG-L26"
+      },
+      "rationale": "Peels the selected name to the commit that supplies both the stored identity and the tree.",
+      "role": "unclassified"
     }
   ],
   "references": {
@@ -412,7 +430,7 @@
       ]
     },
     "8": {
-      "note": "The snapshot of a committed code state, for a master line's crossing.",
+      "note": "The crossing snapshot uses the resolved commit ID for both recorded identity and tree lookup.",
       "targets": [
         {
           "anchor": {
