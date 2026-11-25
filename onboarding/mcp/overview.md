@@ -32,7 +32,7 @@ Native read reuse remains an optimization of those owners. The app-local change-
 
 The packaged task templates (`leaf-task.md`, `master-task.md`, `requirement-packet.md`) are synchronized projections of the canonical l-01 skill's `templates/`; the renderer names the task templates as its authoring scaffolds and the packet projection takes its canonical packet shape from the requirement-packet template. Creation numbers are stable identities, the master list is an index, and exact same-master waitsFor fields authored through task_doc derive Order. Fixed prose belongs to its typed home rather than duplicated free-form sections or dependency notes; copied instructions are not separate authority or an executed workflow.
 
-MIK-R109 changes agent reads from document carriers to names. `read_ar_files` accepts up to twenty repository-relative path strings. A fuller reply can include the governing card, available state counts and action headings, and governing overviews once per call, nearest first. Eligible rows can add current rule text and related knowledge as space permits. Compact rows keep each path, its existence or refusal, card status where applicable, and any brief pointer with reported saved freshness. A pointer can name a missing or older brief, or one whose age is unknown. The next write covering the file or its folder renews a missing or older saved brief when the writer can refresh it. If refresh cannot proceed, the writer reports `briefsProblem` and leaves the saved brief as it was. Use native file tools for the source, card, overview and current saved brief. Use `knowledge_read` to locate whole records and proof evidence. The reader keeps no session delivery state. `knowledge_read` pages record IDs/kinds/states/locations, and `knowledge_diff` names trees/counts/decision records beside a whole comparison report. Agents open files natively. Mounted `context_packet` is the slim version-3 roots/task/actions/build/pair answer; the internal resolver and full context builder remain separate. Every registered tool receives `readOnlyHint` from `mcp/read_only.py`; context freshness and diff capture/report capability are marked false.
+MIK-R109 changes agent reads from document carriers to names. `read_ar_files` accepts up to twenty repository-relative path strings. A fuller reply can include the governing card, available state counts and action headings, and governing overviews once per call, nearest first. Eligible rows can add current rule text and related knowledge as space permits. Compact rows keep each path, its existence or refusal, card status where applicable, and any brief pointer with reported saved freshness. A pointer can name a missing or older brief, or one whose age is unknown. The next write covering the file or its folder renews a missing or older saved brief when the writer can refresh it. If refresh cannot proceed, the writer reports `briefsProblem` and leaves the saved brief as it was. Use native file tools for the source, card, overview and current saved brief. Use `knowledge_read` to locate whole records and proof evidence. The reader keeps no session delivery state. `knowledge_read` pages record IDs/kinds/states/locations, and `knowledge_diff` names trees/counts/decision records beside a whole comparison report. Agents open files natively. Mounted `context_packet` is the slim version-3 roots/task/actions/build/pair answer; the internal resolver and full context builder remain separate. Every registered tool receives `readOnlyHint` from `mcp/read_only.py`; context freshness and diff capture/report capability are marked false. After `apply_read_only_marks`, `create_server` runs `_compact_server_tool_schemas` (delegating to `models/tools/tool_schema_compaction.py::compact_tool_schema`) to losslessly compact every registered tool's advertised JSON input schema before optional role-allowlist scoping, and every ordinary registered description stays within the 500-character raw ceiling pinned by `test_role_tool_scope.py`.
 
 Historical L109 composition declared 41 names after removal of `resolve_context`; pre-sync R111 and other 42-name accounts are historical. The current ordinary successor declares 44 names, including mounted `knowledge_write`, `user_settings_init`, architect `explainer_control` and leaf-scoped `citation_note_revision`. Task authoring and public landing/role delivery now have their own final shaped rows, separate from whole-result logging and the location-free content measurements. task_doc.get/read_steps are removed: canonical JSON/rendered files are the observation route, writes deliver phrases, and linkage_report files its facts with counts/location. Reachable packet-owned landing refusals preserve the same sentence, code, check order and no-write boundary; conversion recovery uses the single central probe's case and either actual tool arguments or separately carried CLI values with a quoted display. Launch copies comprise the own leaf plus declared requirements and report missing sources without inventing authority. A successful role start puts missing requirement filenames before step-up advice so the names have priority in a short warning. These source facts supply no new code grade, installed acceptance, transaction permission or independent memory verdict.
 
@@ -661,13 +661,18 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 
 - **Retained historical source account — superseded by the current route account:** Baseline adoption commits memory content and returns a cache observation. Source caption: `adopt_initial_baseline` `memory_content_commit` [158]
 
+
 - The current task registration surface mounts task_reopen through _register_task_reopen_tools and delegates the call to its payload owner. [285]
+
+
 
 
 
 - Synchronous dispatch preserves the framework validation path and waits for the worker before releasing its write lock. [389]
 
+
 - Citation preview adds modes to the existing declaration. [390]
+
 - Raw Git output prevents newline normalization from collapsing pathname identities. [340]
 - A changed candidate tree needs the bounded clean-sync proof at the door. [341]
 - Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [336]
@@ -1003,7 +1008,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 - **The entry route's unwired answer: a named refusal with the "not served rather than served empty" reason, never an empty list.** [266]
 - **The status mapping success reads as `refusal is None`, so one function serves all three typed results; the four candidate codes answer `404` and the expansion's `source_content_unresolved` falls through to `400`.** [267]
 - The batch blob reader. [272]
+
 - The task reopening tool on the registration surface. [378]
+
 
 - The packaged Worker role text delegates candidate setup to repository tool notes and records the interpreter each run used. [286]
 
@@ -1159,6 +1166,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - **Retained historical source account — superseded by the current route account:** The history-row rule over every file's subjects and the leaf's own file. [6]
 
 - **Retained historical source account — superseded by the current route account:** The new module's whole surface, and the rule that a side's state is read rather than inferred from an empty string. [122]
+
 
 - The bounded live-agent census requests background agents and reports completeness only when the host explicitly ends its listing. [406]
 

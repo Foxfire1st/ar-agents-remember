@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e34c549a99b13f88e47c7120e9d50aed712501f6",
-    "commit": "3bbaf460317e8572583d884bc0791a219ad1bcfa",
+    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
+    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
     "role": "curator",
-    "statement": "The package README's tool-group table and reference pointers match the MCP reference and create_server's registered groups; On code e34c549a the Worker's correction of docs/reference/mcp-tools.md lines 669-672 (a host-run role agent receives the tools of its role once from agents-remember-task) changes only that sentence; the README's tool-group table, its role-agent group and its pointers to the reference sections still match.",
-    "task": "261112-KNO-L4",
+    "statement": "On tree a5bb9a1f, the MCP package README's tool-group table, explainer tool list, skill-resource note, and docs/reference/mcp-tools.md pointers still hold because CAP-L4's post-registration schema compaction in server.py (_compact_server_tool_schemas) leaves all registered tool names, groups, ordering, and role narrowing unchanged.",
+    "task": "261124-CAP-L4",
     "uncommitted": true
   },
   "document": "mcp/README.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 16,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -46,7 +46,7 @@
       "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
     },
     {
-      "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+      "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "51a44523acb6c29c3a029c7dde4a35acb96595f3",
-    "commit": "3bbaf460317e8572583d884bc0791a219ad1bcfa",
+    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
+    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
     "role": "curator",
-    "statement": "On the merged code the features page still holds: citation currentness, paired closeout, cache identity, answer bounds and the tool-log location (now also for a cancelled call, L27) are unchanged, and it names no per-role tool list for CAP-L1's narrowing to contradict. On code 51a44523 (gen-8 sync onto CAP-L1 and BUG-L26) publications now prepare the briefs ignore rule beside memory.md, closeout closes the history with the review fact before renewing derived files and reports briefsProblem, direct landing adds the no-pass sentence, baseline adoption refreshes briefs, role files point to read_ar_files and saved briefs, and invariant titles are bounded at 80 characters; the guide's paired closeout, memory.md as an ignored cache, read routes and answer bounds still hold.",
-    "task": "261112-KNO-L4",
+    "statement": "On tree a5bb9a1f, the features page's account of the tool server, typed tool boundaries, answer bounds, and tool-log locations still holds; CAP-L4's post-registration inputSchema compaction in server.py is lossless for parameter types and constraints and changes no runtime behavior.",
+    "task": "261124-CAP-L4",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 23,
+  "revision": 24,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -63,7 +63,7 @@
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
     {
-      "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+      "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },

@@ -177,6 +177,8 @@ The default application composition installs no `PreparedCloseoutContinuation` o
 
 
 
+
 - The services facade re-exports the shared binding functions and exception unchanged. Server startup registers a supplier. The first worktree operation imports service composition and builds the bundle. Cleanup uses the optional explainer root for task-owned retirement. An absent root leaves explainer files untouched. [24]
+
 
 - The worktree refresh port supplies the selected memory root and exact code pair to the composed brief service. [27]

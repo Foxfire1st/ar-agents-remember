@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "51a44523acb6c29c3a029c7dde4a35acb96595f3",
-    "commit": "3bbaf460317e8572583d884bc0791a219ad1bcfa",
+    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
+    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
     "role": "curator",
-    "statement": "On the merged code the pytest bootstrap guide still holds: integration and stress-durability make up the integration tests (now 119 integration modules with L27's two), and CAP-L1's unit-regression module changes no selection rule. The bootstrap guide says the bounded-memory stdio test's warm-index child and measured server run without child coverage, and the lane manifest keeps that test in stress-durability and the dependent-writer test in integration. On code 51a44523 (gen-8 sync onto CAP-L1 and BUG-L26) the lane manifest only added module paths (823 modules, 123 integration and one stress-durability); the default -m \"not integration\" selection and the integration marking of integration and stress-durability files are unchanged.",
-    "task": "261112-KNO-L4",
+    "statement": "On tree a5bb9a1f, the pytest bootstrap guide's lane-selection and bounded-memory stdio coverage rules still hold: CAP-L4 added test_tool_schema_compaction.py to unit-regression (674 unit-regression / 824 total), leaving integration (123) and stress-durability (1, test_mcp_memory_bounded_stdio.py) unchanged.",
+    "task": "261124-CAP-L4",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 16,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
+      "blob": "1d95700adc0206a02373ad7aca430393f0339cd8",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -106,8 +106,8 @@
     },
     {
       "anchor": {
-        "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
-        "content": "sha256:b7fcf78cc211d27c8a3118089499506925ae327ece07708dff5d571369981d03",
+        "blob": "1d95700adc0206a02373ad7aca430393f0339cd8",
+        "content": "sha256:a076d66d6984c935f86d91f8629fa8277f746eb790a4abd0ad31b4d5bdf868dd",
         "locator": {
           "end": 823,
           "kind": "line_range",
@@ -120,8 +120,8 @@
     },
     {
       "anchor": {
-        "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
-        "content": "sha256:012782b7817fe0bb1bf8e4a2431bc7d869a69d52876c2bfbafda9d418a5760fc",
+        "blob": "1d95700adc0206a02373ad7aca430393f0339cd8",
+        "content": "sha256:2ea8ed247988e4c9d0b795ccb3272f77575c6afeead9565c2475e5c710dee1c8",
         "locator": {
           "end": 826,
           "kind": "line_range",

@@ -105,12 +105,12 @@
       ]
     },
     "7": {
-      "note": "The example still carries inherited provider install, start/status, watcher and indexing guidance, while the runtime_install tool stops leftover provider watchers, reports unused provider keys and starts none; the template text is not evidence of managed provider availability or executed behavior.",
+      "note": "The example still carries inherited provider install, start/status, watcher and indexing guidance, while the runtime_install tool stops leftover provider watchers, reports unused provider keys and starts none; the template text is not evidence of managed provider availability or executed behavior.\n\nAnchor: `runtime_install`, `lifecycle_settings_from_config`, `PUBLIC_TOOLS`",
       "targets": [
         {
           "anchor": {
-            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
-            "content": "sha256:b3c1f7488d0a81ab76c56eef7d95fae6747472dd94ef6ad3bc0b0a443a55b998",
+            "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
+            "content": "sha256:5814bdad0a317ff07aef0b2cc443187d171e9b146dd6246203d3de337982e840",
             "locator": {
               "kind": "symbol",
               "name": "runtime_install"

@@ -113,6 +113,8 @@ Converted full-quality dispatch constructs `QualitySourceFiles` from the paired 
 
 - The registered `memory_quality_check` dispatches typed sync/start/poll requests to their payload builders; its description names candidate leaf-contract scope and required coherence validation.
 
+
 - The registered `memory_quality_check` dispatches typed sync/start/poll requests to their payload builders; its description names candidate leaf-contract scope and required coherence validation. [1]
+
 
 - The retained drift-summary entry point returns DriftSummaryPacket; full-quality dispatch calls the converted checker directly. [3]

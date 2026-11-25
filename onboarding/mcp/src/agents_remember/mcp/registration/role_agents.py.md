@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Registers role_start, the Manager-owned role_start_set, and role_message with their explicit caller-visible contracts.
+Registers `role_start`, the Manager-owned `role_start_set`, `user_settings_init`, and `role_message` with their explicit caller-visible contracts.
 
 ## Code Commentary
 
@@ -14,7 +14,7 @@ Role calls build their existing strict call models, then resolve the existing pa
 
 ### Current Contract
 
-The existing typed start/message/set registrars remain the public surface. Current compact descriptions advertise start ok/id/handover and message wait/held/cancellation outcomes plus the longer reference. Mode/feature policy, attachments/hashes, capacity, successor and receipt authority stay with the input/application/reference owners, not a claim that every detail is still inline in the short docstrings. Held answer overrides remain distinct from ordinary compact delivery.
+The existing typed start/message/set/settings registrars remain the public surface. Current compact descriptions advertise start agent-id/rejected outcomes (with 60-second serialization wait) and message wait/held/cancellation outcomes plus the longer reference. Mode/feature policy, attachments/hashes, capacity, successor and receipt authority stay with the input/application/reference owners, not a claim that every detail is still inline in the short docstrings. Held answer overrides remain distinct from ordinary compact delivery.
 
 ## Current Contract
 
@@ -22,7 +22,7 @@ The existing role_start registrar accepts optional step_up and passes it unchang
 
 ## Current source contract
 
-The role_message description distinguishes host acceptance from AR acceptance: a waited consuming turn ending is not AR acceptance. Held means queued for delivery when the recipient can take it, and the caller must never resend held; only a full twenty-message store is recipient-busy. Input shape, host delivery ownership and permission boundaries remain unchanged.
+The role_message description distinguishes host acceptance from AR acceptance: a waited consuming turn ending is not AR acceptance. Held means queued for delivery when the recipient can take it, and the caller must never resend held; hold-store capacity stays with the delivery/reference owners rather than inline in the shortened docstring. Input shape, host delivery ownership and permission boundaries remain unchanged.
 
 - Message docstring clarifies host-only acceptance, queued held delivery and no resend. [10]
 
@@ -32,12 +32,12 @@ The role_message description distinguishes host acceptance from AR acceptance: a
 
 - Reason admission, threshold and differing-harness/model inheritance boundary. [5]
 
-- The caller harness name comes from MCP initialization. Role start forwards step_up into RoleStartCall and delegates launch through the shared request thread. [6]
-
-- The registrar declares typed start/set/message inputs and delegates to their payload owners. The current role_message description distinguishes host acceptance from AR acceptance and says held is queued and must never be resent. [1]
+- The caller harness name comes from MCP initialization. Role start forwards `step_up` into `RoleStartCall` and delegates launch through the shared request thread. [6]
+- The registrar declares typed start/set/message inputs and delegates to their payload owners. The current `role_message` description distinguishes host acceptance from AR acceptance and says held is queued and must never be resent. [1]
 - The typed role start, role start set and role message declarations expose the public inputs and compact descriptions. The payload owners retain launch, message and receipt policy. [3]
 - The registration that mounts the role tools and the settings initializer. [8]
 - The role registrars build typed calls and delegate to their payload owners. Both start handlers use the shared request-thread helper, which drains blocking work before propagating cancellation. [9]
+
 - The settings initializer and role messages run through the detached request-thread helper. [11]
 
 ## The caller's harness name and the settings tool

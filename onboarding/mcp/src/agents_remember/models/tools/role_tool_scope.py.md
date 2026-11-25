@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Holds `ROLE_TOOL_ALLOWLISTS`, the one canonical table of the MCP tools each AR role may use, and the two lookups that read it. The task server narrows a role-bound process with this table and the Codex seat policy grants from it, so neither owns a second copy.
+Holds `ROLE_TOOL_ALLOWLISTS`, the one canonical table of the MCP tools each AR role may use, and the two lookups that read it. The task server narrows a role-bound process with this table and the seat's preapproval policy grants from it (currently for Codex seats), so neither owns a second copy.
 
 ## Code Commentary
 

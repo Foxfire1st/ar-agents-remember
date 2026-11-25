@@ -216,6 +216,7 @@ No meaningful cross-repository reference applies to this repository-owned bounda
 
 ### Repo-Internal References (continued)
 
+
 - The separate publication no case here reaches. Anchor: `worktree_checkpoint_landing` [15]
 
 - The `integration` lane selects `mcp/tests/test_pause_stop_only_end_to_end.py` (`mcp/tests/test-evidence-lanes.toml:743`). [11] [13]

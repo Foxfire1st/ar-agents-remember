@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "51a44523acb6c29c3a029c7dde4a35acb96595f3",
-    "commit": "3bbaf460317e8572583d884bc0791a219ad1bcfa",
+    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
+    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
     "role": "curator",
-    "statement": "On the merged code the packaged tool details still hold: write ordering and the stale-build refusal (L27) are described truly, and server_info lists no tools, reports toolServer and agentBinding on a launched server and stays served on every role and on a malformed binding (CAP-L1). On code 51a44523 (gen-8 sync onto CAP-L1 and BUG-L26) baseline adoption now prepares the briefs ignore rule on its private index and refreshes briefs after a created commit, reporting briefsProblem; a refusal or dry run still restores index, refs and files, and the memory_baseline_adopt section still holds.",
-    "task": "261112-KNO-L4",
+    "statement": "On synced tree a5bb9a1f, the packaged runtime docs/tool-details.md (byte-identical twin of docs/tool-details.md) accurately matches the codebase: Option B restored 'curator-coherence authority' in tasks.py (line 28), and CAP-L4's _compact_server_tool_schemas in server.py and tightened docstrings in memory.py and seat_retirement.py preserve all documented tool behavior.",
+    "task": "261124-CAP-L4",
     "uncommitted": true
   },
   "document": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 16,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -120,7 +120,7 @@
       "path": "mcp/src/agents_remember/memory_quality/landing_report.py"
     },
     {
-      "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+      "blob": "bbc1541e4379d1cf2c834fbc40cb53f596f21dfd",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },
@@ -130,7 +130,7 @@
       "path": "mcp/src/agents_remember/cli/role_retire.py"
     },
     {
-      "blob": "78d1d879651aca07ed8ab09f7022678801d0b38d",
+      "blob": "29ac4d5e75a9e54475ec617732ab37e9e4fa8983",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
     },
@@ -150,7 +150,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
     },
     {
-      "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+      "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },

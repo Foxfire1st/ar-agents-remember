@@ -44,9 +44,11 @@ already pass keywords. Registered tools are unchanged.
 
 `register_closeout_tools(server, config)` declares the **landing half** of a task:
 `direct_landing` (the explicitly selected branch-addressed delivery for a leaf implemented without
-an enclosure, requiring its current external canonical-leaf grant),
+an enclosure, requiring its current external canonical-leaf grant), `direct_execution_grant`
+(architect-only give/revoke/reclaim of direct-execution grants),
 `worktree_closeout_preview`, `worktree_closeout_apply`,
-`worktree_integrate`, `worktree_checkpoint_landing`, `worktree_cleanup`, `worktree_abandon`.
+`worktree_integrate`, `worktree_checkpoint_landing`, `worktree_record_landing`,
+`worktree_operation_control`, `worktree_cleanup`, `worktree_abandon`.
 
 > **Retained historical source account — superseded by the current contract:**
 > `worktree_checkpoint_landing` (260831-LOCR-L30, docstring corrected by 260831-LOCR-L34 and again by 260831-LOCR-L36) is the
@@ -89,7 +91,7 @@ Closeout, integration and reclamation signatures keep their declared requests wh
 
 ### Current Contract
 
-This registrar delegates transaction eligibility and execution to their established owners. Its compact descriptions name reached states, blocked/refused outcomes and state/next/log presentation, with docs/reference/mcp-tools.md carrying the longer account. Reachable task-state refusals retain original codes/check order and occur before writes; a blocked dry run agrees with the blocked real call rather than promising would-succeed. Short descriptions are not a substitute for checkpoint-versus-pause, archival, approval or publication predicates, and do not assert every internal exception was converted.
+This registrar delegates transaction eligibility and execution to their established owners. Its compact descriptions name reached states and blocked/refused outcomes (including `knowledge-gate-refused` findings on closeout preview/apply), with `docs/reference/mcp-tools.md` carrying the longer account. Reachable task-state refusals retain original codes/check order and occur before writes; a blocked dry run agrees with the blocked real call rather than promising would-succeed. Short descriptions are not a substitute for checkpoint-versus-pause, archival, approval or publication predicates, and do not assert every internal exception was converted.
 
 Closeout apply accepts typed `RedCatalogDisposition` values and forwards them as a tuple to the payload/application owner. These are explicit corrective dispositions, not permission to bypass a failed catalog or weaken gate authority.
 
@@ -201,10 +203,14 @@ No additional file-local TODO is established by this candidate review.
 
 ## Current source contract
 
-The closeout preview and apply descriptions explicitly state that converted-memory invariant judgment uses the exact candidate trees and returns knowledge-gate-refused with its findings. This is a registration-description change; the declaration introduces no additional transaction, quality suite or authority.
+The closeout preview and apply descriptions state that worktree closeout checks candidate trees through the invariant gate and that `knowledge-gate-refused` carries findings (apply also reports delivered-vs-reviewed status). This is a registration-description change; the declaration introduces no additional transaction, quality suite or authority.
 
 
-- Closeout docstrings name exact-tree invariant judgment and knowledge-gate-refused findings. [13]
+
+
+- Closeout docstrings name invariant-gate checking of candidate trees and `knowledge-gate-refused` findings. [13]
+
+
 
 
 ## Evidence
@@ -276,7 +282,9 @@ Worktree closeout and direct landing expose optional message fields syntacticall
 
 ### Reconciled Source Evidence
 
+
 - The registrar composes four command groups and mounts task-addressed control with retired-journal guidance. Enclosure adoption belongs to the separate worktree registrar. [10]
+
 
 ## 260821-CLIVE Final Closeout Tool Descriptions
 
@@ -310,10 +318,20 @@ Anchor:
 Source: mcp/src/agents_remember/mcp/registration/closeout.py
 
 
+
+
 - Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument. [1]
 
 
-- This registrar delegates transaction eligibility and execution to their established payload owners. Compact descriptions name reached states, next calls and retained logs; converted-memory closeout descriptions name exact-tree invariant judgment and knowledge-gate-refused findings. Descriptions alone grant no transaction authority or execution proof. [11]
+
+
+
+
+- This registrar delegates transaction eligibility and execution to their established payload owners. Compact descriptions name reached states and blocked/refused outcomes; converted-memory closeout descriptions name invariant-gate checking of candidate trees and `knowledge-gate-refused` findings. Descriptions alone grant no transaction authority or execution proof. [11]
+
+
+
+
 
 
 - Closeout, integration and reclamation signatures keep their declared requests while payload builders and DirectLandingRequest load only inside the call. [12]
