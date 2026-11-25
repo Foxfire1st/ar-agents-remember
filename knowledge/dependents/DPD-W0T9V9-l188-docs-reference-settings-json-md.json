@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "b29f2e225c04fbcebb653d59f81cf895c42f5097",
-    "commit": "180b6c153d21d01cbb14059d0219472ccdeba683",
+    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
+    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
     "role": "curator",
-    "statement": "The settings reference's launch bindings, role-mode keys and the Claude Code first-call server_info grant still hold on b29f2e2; build_launch_call only adds the role to the Codex preapproval.",
-    "task": "261124-CAP-L1",
+    "statement": "On synced tree a5bb9a1f, docs/reference/settings-json.md accurately describes the four settings files, tool-log rotation/redaction (ar-tools-YYYY-MM-DD.jsonl, keepDays=14, maxBytes=256 MiB, enclosureMaxBytes=64 MiB, <omitted>/<env>/200-char shortening, tool-log-stats in tool_answer_log.py), and role-settings/paseoRuntime rules.",
+    "task": "261124-CAP-L4",
     "uncommitted": true
   },
   "document": "docs/reference/settings-json.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 16,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -104,7 +104,7 @@
       "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
     },
     {
-      "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+      "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/tool_answer_log.py"
     },

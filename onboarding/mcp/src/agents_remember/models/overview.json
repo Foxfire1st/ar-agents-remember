@@ -4947,6 +4947,23 @@
         }
       ]
     },
+    "343": {
+      "note": "`compact_tool_schema` returns a lossless, deep-copied MCP tool JSON Schema that strips only schema-level `title`, redundant `default: null`, and immediate top-level `$defs` model descriptions while preserving literal property names and all wire constraints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28199dc6c776b8074c3b8b15a21068f6259fb122",
+            "content": "sha256:c59e97086a400bb95ba68d2e88a057ab25e6aa7a41e7818da1d5a6f96da7b8b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "compact_tool_schema"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_schema_compaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "346": {
       "note": "The models declare optional compact file briefs, optional stored titles and product start notice reports.",
       "targets": [

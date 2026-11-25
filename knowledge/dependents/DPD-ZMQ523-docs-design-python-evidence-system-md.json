@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "51a44523acb6c29c3a029c7dde4a35acb96595f3",
-    "commit": "3bbaf460317e8572583d884bc0791a219ad1bcfa",
+    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
+    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
     "role": "curator",
-    "statement": "On the merged code the evidence-system guide's lane and lifecycle rules still hold: L27's two integration modules and CAP-L1's unit-regression module each sit in one lane of the 804 and appear as declared lifecycle consumers. The evidence-system guide's lane and shared-support rules match the settled catalogs, which assign each of the five crossing-related tests to one lane and name each in existing lifecycle consumer entries. On code 51a44523 (gen-8 sync onto CAP-L1 and BUG-L26) the catalogs gained test-module and consumer registrations and one exact-scope shared-support artifact (knowledge_review_fact_test_support.py), now 823 modules, 18 contracts and 121 artifacts; the guide pins no count, and its lane authority, canonical form and source-derived consumer rules still hold.",
-    "task": "261112-KNO-L4",
+    "statement": "On tree a5bb9a1f, the evidence-system guide's lane, canonical-catalog, and lifecycle rules still hold: CAP-L4's new test_tool_schema_compaction.py sits in one lane (unit-regression, 674 of 824 modules) and is listed in the consumers of the two all-tests lifecycle artifacts.",
+    "task": "261124-CAP-L4",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
+      "blob": "1d95700adc0206a02373ad7aca430393f0339cd8",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
+      "blob": "e6315a90fc9e1bf5db6d433cb7642b26d3364097",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },

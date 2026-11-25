@@ -129,6 +129,7 @@ when this run would have created the marker (nothing was written), and the case'
 
 - The failed-Git early return reports the marker as not created. [10]
 
+
 - `memory_init` is wired through the Phase 04 application entry point. [1]
 
 - New-layout initialization creates the layout marker and missing scaffold files, preserving existing system files. A real new-layout call appends the briefs exclusion to an existing root ignore file if needed and preserves its authored rules. [12]

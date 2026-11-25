@@ -4,7 +4,24 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+        "blob": "2359df429c0d22338e319ed30232007a7559250f",
+        "content": "sha256:b149f927859a7092a7345412a160bf5b72531355b748050cb74e81c66b80a905",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9NQ3DF",
+      "invariant": "INV-06MGX9",
+      "origin": {
+        "handoffEntry": "CAP-R04@v1 §3 description optimization",
+        "leaf": "261124-CAP-L4"
+      },
+      "rationale": "Optimizes all five task tool descriptions while keeping _TASK_DOC_TOOL_DESCRIPTION as a module-level literal, all 9 curator_coherence publish fields, and Option B canonical phrases ('waiting-only closeout projection', 'curator-coherence authority').",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "2359df429c0d22338e319ed30232007a7559250f",
         "content": "sha256:f75bfc78f7b6cafbe4847030de23115333c08e4d02e817cd10a2533719847c83",
         "locator": {
           "kind": "symbol",
@@ -56,12 +73,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "blob": "2359df429c0d22338e319ed30232007a7559250f",
             "content": "sha256:59024859859a75b210005e367c13660aed8b93ef556d4bc1f49adb908de066f5",
             "locator": {
-              "end": 70,
+              "end": 59,
               "kind": "line_range",
-              "start": 65
+              "start": 54
             }
           },
           "kind": "code"
@@ -104,14 +121,14 @@
       ]
     },
     "5": {
-      "note": "The `task_doc` description lists `retire_master` among the compact operation vocabulary and states only that writes answer `ok` while dry runs answer `wouldLose` and the diff.",
+      "note": "The `task_doc` description lists `retire_master` among the compact operation vocabulary and points to `docs/reference/mcp-tools.md` for the longer account.",
       "targets": [
         {
           "anchor": {
-            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
-            "content": "sha256:bcc8f0cf4c36713979b2d314f88b10875dcb2216ce2e4afecaba44a15e14513f",
+            "blob": "2359df429c0d22338e319ed30232007a7559250f",
+            "content": "sha256:b149f927859a7092a7345412a160bf5b72531355b748050cb74e81c66b80a905",
             "locator": {
-              "end": 128,
+              "end": 117,
               "kind": "line_range",
               "start": 1
             }
@@ -121,14 +138,14 @@
       ]
     },
     "6": {
-      "note": "The compact task_doc description names write/linkage operations and canonical generated-file reading. get/read_steps are removed and answered with operation-removed; they are not usable observations. Flat fields_file/section_body_file inputs are forwarded to the authoring owner. Delivered writes use ok/updated phrases; dry answers use wouldLose/diff and retained locations. Review, linkage, retirement and curator-coherence authorities remain at their established application/reference owners; short descriptions and a finished tool turn do not certify them.",
+      "note": "The compact `task_doc` description names kind (`subTask` or `master`), write/linkage operations, canonical `.md` file reading, and `alignmentSweep` on packet writes; application owners enforce `operation-removed` for `get`/`read_steps`, forwarded `fields_file`/`section_body_file` inputs, and review/linkage/retirement/coherence authorities.",
       "targets": [
         {
           "anchor": {
-            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
-            "content": "sha256:bcc8f0cf4c36713979b2d314f88b10875dcb2216ce2e4afecaba44a15e14513f",
+            "blob": "2359df429c0d22338e319ed30232007a7559250f",
+            "content": "sha256:b149f927859a7092a7345412a160bf5b72531355b748050cb74e81c66b80a905",
             "locator": {
-              "end": 128,
+              "end": 117,
               "kind": "line_range",
               "start": 1
             }
@@ -142,24 +159,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
-            "content": "sha256:34e8f8dbbe5f8aba3eeb620c1efd62e02f631e307654b5d46738ae4ee15bdf14",
+            "blob": "2359df429c0d22338e319ed30232007a7559250f",
+            "content": "sha256:8c744c1be714fd841870f7dd9310d4d0736d6980a96f8fe35b8badd3ccd72015",
             "locator": {
-              "end": 80,
+              "end": 64,
               "kind": "line_range",
-              "start": 54
+              "start": 39
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
-            "content": "sha256:8a9fd0bcbaddafaa58cc24755ef325741fe8cd53e62d0036559686356ca00ebe",
+            "blob": "2359df429c0d22338e319ed30232007a7559250f",
+            "content": "sha256:977ad5f515623d643246fea2731b4e6f6d50c5dbef0bc74be772fe318bca710a",
             "locator": {
-              "end": 75,
+              "end": 64,
               "kind": "line_range",
-              "start": 75
+              "start": 64
             }
           },
           "kind": "code"
@@ -171,10 +188,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
-            "content": "sha256:bcc8f0cf4c36713979b2d314f88b10875dcb2216ce2e4afecaba44a15e14513f",
+            "blob": "2359df429c0d22338e319ed30232007a7559250f",
+            "content": "sha256:b149f927859a7092a7345412a160bf5b72531355b748050cb74e81c66b80a905",
             "locator": {
-              "end": 128,
+              "end": 117,
               "kind": "line_range",
               "start": 1
             }
@@ -188,12 +205,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
-            "content": "sha256:0b46ed9dbc692cb1f4902bdfdcf43bb80d677c1775f12b70381534740353c323",
+            "blob": "2359df429c0d22338e319ed30232007a7559250f",
+            "content": "sha256:977ad5f515623d643246fea2731b4e6f6d50c5dbef0bc74be772fe318bca710a",
             "locator": {
-              "end": 79,
+              "end": 64,
               "kind": "line_range",
-              "start": 75
+              "start": 64
             }
           },
           "kind": "code"

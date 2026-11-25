@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "cc81897b5c77098790701dfdb82dbf8ed0750807",
-    "commit": "a5a631ca5fe4e27d0b8affa2d8c077d09712b434",
+    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
+    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
     "role": "curator",
-    "statement": "The agent summary points from Bootstrap to the dashboard and explains how bounded file reads give rule text, then counts and a brief path for later eligible files, then compact rows with card status and brief freshness; its install steps match the 3.0.7 project metadata and console scripts.",
-    "task": "261112-KNO-L4",
+    "statement": "On synced tree a5bb9a1f, docs/llms.txt accurately summarizes the eight tool groups, read_ar_files short briefs/compact rows, knowledge_read names-and-locations-only contract, and install steps; CAP-L4's tightened core.py descriptions preserve all read_ar_files brief/freshness behavior.",
+    "task": "261124-CAP-L4",
     "uncommitted": true
   },
   "document": "docs/llms.txt",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -58,7 +58,7 @@
       "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
     },
     {
-      "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
+      "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/core.py"
     },

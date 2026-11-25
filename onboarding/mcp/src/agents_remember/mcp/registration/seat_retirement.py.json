@@ -4,8 +4,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "78d1d879651aca07ed8ab09f7022678801d0b38d",
-        "content": "sha256:d3d60e12ae88a513facb91043e0694e2b9ca55339fa17c0e54fa56c70304e245",
+        "blob": "29ac4d5e75a9e54475ec617732ab37e9e4fa8983",
+        "content": "sha256:4840210cc9347c841af2b4c440ce6decbf387a0bdb002881328e896e4c959c48",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-0F4MRE",
+      "invariant": "INV-06MGX9",
+      "origin": {
+        "handoffEntry": "CAP-R04@v1 §3 description optimization",
+        "leaf": "261124-CAP-L4"
+      },
+      "rationale": "Optimizes retire_child docstring from 207 to 142 chars while preserving starter-only, interrupt_turn, inert-repeat, and doc pointer facts.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "29ac4d5e75a9e54475ec617732ab37e9e4fa8983",
+        "content": "sha256:475620457edee297f7dbb79428b6537cc2f7e773fffd18b8f44b18602fa8db81",
         "locator": {
           "kind": "symbol",
           "name": "register_seat_retirement_tools"
@@ -23,12 +40,12 @@
   ],
   "references": {
     "1": {
-      "note": "Native child retirement registration: implementation/assertion boundary described above.\n\nAnchor: `register_seat_retirement_tools`",
+      "note": "Native child retirement registration: implementation/assertion boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "78d1d879651aca07ed8ab09f7022678801d0b38d",
-            "content": "sha256:10a78c48b534f636c8f1f8fdb9e6203f398e4cffc98292334dc6153d9050d1f3",
+            "blob": "29ac4d5e75a9e54475ec617732ab37e9e4fa8983",
+            "content": "sha256:4840210cc9347c841af2b4c440ce6decbf387a0bdb002881328e896e4c959c48",
             "locator": {
               "kind": "file"
             }
@@ -38,12 +55,12 @@
       ]
     },
     "2": {
-      "note": "The retire_child signature stays strict while the payload loads only when retirement is invoked.\n\nAnchor: `register_seat_retirement_tools`",
+      "note": "The `retire_child` signature stays strict while the payload loads only when retirement is invoked.",
       "targets": [
         {
           "anchor": {
-            "blob": "78d1d879651aca07ed8ab09f7022678801d0b38d",
-            "content": "sha256:10a78c48b534f636c8f1f8fdb9e6203f398e4cffc98292334dc6153d9050d1f3",
+            "blob": "29ac4d5e75a9e54475ec617732ab37e9e4fa8983",
+            "content": "sha256:4840210cc9347c841af2b4c440ce6decbf387a0bdb002881328e896e4c959c48",
             "locator": {
               "kind": "file"
             }

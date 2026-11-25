@@ -17,5 +17,6 @@ Declares the architect's one `explainer_control` tool — Update, Retire and cla
 ## Evidence
 
 - One tool declares exactly the selection arguments and no agent identity [1]
+
 - The declaration carries no behaviour: the payload builder is reached through the lazy view [2]
 - The leaf is named by id for the two leaf actions [3]

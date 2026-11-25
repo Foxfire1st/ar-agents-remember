@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "cc81897b5c77098790701dfdb82dbf8ed0750807",
-    "commit": "a5a631ca5fe4e27d0b8affa2d8c077d09712b434",
+    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
+    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
     "role": "curator",
-    "statement": "The refresh guide still accurately directs the reader from the drift counts to a scoped citation_fix preview and Curator refresh; the card enumeration change only altered which files are excluded.",
-    "task": "261112-KNO-L4",
+    "statement": "On tree a5bb9a1f, the stale-card refresh guide's instructions for memory_quality_check and citation_fix still hold because CAP-L4 only shortened the tool descriptions in memory.py without changing their parameters, validation, or repair behavior.",
+    "task": "261124-CAP-L4",
     "uncommitted": true
   },
   "document": "docs/guides/refresh-stale-onboarding.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/application/context_packet.py"
     },
     {
-      "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+      "blob": "bbc1541e4379d1cf2c834fbc40cb53f596f21dfd",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },

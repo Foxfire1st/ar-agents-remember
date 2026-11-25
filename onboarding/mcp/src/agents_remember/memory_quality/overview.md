@@ -178,7 +178,9 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 
 - The registered memory_quality_check dispatches sync/start/poll requests and returns findings, worklist and checklist evidence rather than semantic certification; formatting remains writer-owned.
 
+
 - The registered memory_quality_check dispatches sync/start/poll requests and returns findings, worklist and checklist evidence rather than semantic certification; formatting remains writer-owned. [3]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The missing-onboarding checker catches newly added worktree files before code commit. [4]
 - Retained reference account (no fresh execution or acceptance inferred): The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam. [6]
@@ -256,8 +258,8 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 - The memory registrar exposes `memory_quality_check` to agents and routes it to the start, poll or whole-run payload. Anchor: `memory_quality_check_payload` [2]
 
 
+
 - Retained reference account (no fresh execution or acceptance inferred): The application surface projects readiness with no affected-closure plan. [16]
-- Retained reference account (no fresh execution or acceptance inferred): The caller-exclude surface on the registered tool and the CLI. [25]
 - Interactive catalog projection supplies no affected-closure plan and does not claim certification eligibility. [89]
 
 - The curator checklist renderer owns deterministic grouping, closeout-provenance separation and atomic publication. [7]

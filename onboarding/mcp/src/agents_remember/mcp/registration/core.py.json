@@ -4,8 +4,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
-        "content": "sha256:f869e2889b096740d90a5f0ab8611334fbed1bf70e300f89137d188643eb311d",
+        "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
+        "content": "sha256:c4f79dee36ddb04c31c4e4bb78347c5e98b81414b8a929567191c4da7d19293d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1HMR42",
+      "invariant": "INV-06MGX9",
+      "origin": {
+        "handoffEntry": "CAP-R04@v1 §3 description optimization",
+        "leaf": "261124-CAP-L4"
+      },
+      "rationale": "Optimizes server_info, context_packet, read_ar_files (preserving KNO L4 saved-brief/briefsProblem wording in 446 chars), and runtime_install docstrings while preserving all 11 context_packet pins.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
+        "content": "sha256:486aea7cf1085901ed791ec718f389a35467c092ccc52019fc09b3ab6df8c946",
         "locator": {
           "end": 111,
           "kind": "line_range",
@@ -23,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
-        "content": "sha256:a5102a8f2f33abb478f24321f60f0b90518f4453a5e10852023ddcc17a06f452",
+        "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
+        "content": "sha256:c4f79dee36ddb04c31c4e4bb78347c5e98b81414b8a929567191c4da7d19293d",
         "locator": {
           "kind": "file"
         }
@@ -40,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
-        "content": "sha256:f382639fd4787b94b48a9c948e12fc0d831544d1a5495c7e67900fa959480820",
+        "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
+        "content": "sha256:61b7cd1cea341dfd3850e0179a1d9b4e12f14ebee091f841eb9e4b81ca6a9042",
         "locator": {
           "kind": "symbol",
           "name": "_register_orientation_tools"
@@ -63,8 +80,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
-            "content": "sha256:7826c72a7a27a46f2dff03a535a1e576667459cad0ad1b66aac3c83ab7df91f0",
+            "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
+            "content": "sha256:5bcaf05d5027a15558e807d7ded192245b3272e0c0d8b02f4109513bac386eb6",
             "locator": {
               "kind": "symbol",
               "name": "_register_installation_tools"
@@ -75,16 +92,16 @@
       ]
     },
     "11": {
-      "note": "Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; task_context remains typed on both readers and explicitly supplied refresh remains refused.",
+      "note": "Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; `task_context` remains typed on both readers and explicitly supplied `refresh` remains refused.",
       "targets": [
         {
           "anchor": {
-            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
-            "content": "sha256:f382639fd4787b94b48a9c948e12fc0d831544d1a5495c7e67900fa959480820",
+            "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
+            "content": "sha256:98ad36b1a89587d6b108e0e375d509b9e93b93c22032dc3faafe5d2a91262af5",
             "locator": {
-              "end": 120,
+              "end": 133,
               "kind": "line_range",
-              "start": 72
+              "start": 54
             }
           },
           "kind": "code"
@@ -140,12 +157,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
+            "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
             "content": "sha256:659f44a97ee634fa227884e9e5816bf543fbfc009d3d0da30be6e482b4e63904",
             "locator": {
-              "end": 150,
+              "end": 132,
               "kind": "line_range",
-              "start": 144
+              "start": 126
             }
           },
           "kind": "code"
@@ -153,12 +170,12 @@
       ]
     },
     "5": {
-      "note": "Frozen implementation of _register_identity_tools supporting the stated file behavior.",
+      "note": "Frozen implementation of `_register_identity_tools` supporting the stated file behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
-            "content": "sha256:dcb834f03fccd05554205c7589796d4f8d2da74c9ba8e718c9dfd370cb513481",
+            "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
+            "content": "sha256:a107f3dcff54020fa3b4f67b4816f2db0c52c3a645fd9ff0f729e6d07f32fc43",
             "locator": {
               "kind": "symbol",
               "name": "_register_identity_tools"
@@ -173,12 +190,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
-            "content": "sha256:f382639fd4787b94b48a9c948e12fc0d831544d1a5495c7e67900fa959480820",
+            "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
+            "content": "sha256:61b7cd1cea341dfd3850e0179a1d9b4e12f14ebee091f841eb9e4b81ca6a9042",
             "locator": {
-              "end": 120,
+              "end": 109,
               "kind": "line_range",
-              "start": 72
+              "start": 69
             }
           },
           "kind": "code"
@@ -186,12 +203,12 @@
       ]
     },
     "7": {
-      "note": "The installation tools and the runtime_install registration.",
+      "note": "The installation tools and the `runtime_install` registration.",
       "targets": [
         {
           "anchor": {
-            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
-            "content": "sha256:7826c72a7a27a46f2dff03a535a1e576667459cad0ad1b66aac3c83ab7df91f0",
+            "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
+            "content": "sha256:5bcaf05d5027a15558e807d7ded192245b3272e0c0d8b02f4109513bac386eb6",
             "locator": {
               "kind": "symbol",
               "name": "_register_installation_tools"
@@ -202,12 +219,12 @@
       ]
     },
     "8": {
-      "note": "The packet description states what include_drift measures and that omitting it measures nothing.",
+      "note": "The packet description states what `include_drift` measures and that omitting it measures nothing.",
       "targets": [
         {
           "anchor": {
-            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
-            "content": "sha256:4f8406d88a585b0f3f3c9f656cb6f58e31724246d0a9f20578e79d354bcc66c2",
+            "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
+            "content": "sha256:8aeef5ae7a9c584e2568ed4a23121e7a0d91e474cd520c3ad45c5849eddf7aeb",
             "locator": {
               "kind": "symbol",
               "name": "context_packet"
@@ -222,12 +239,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
-            "content": "sha256:08a3cac0c3fc80034bcf5e1347273b2005f1b3be7af895b9bb2eb027bdd53df0",
+            "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
+            "content": "sha256:db38acbcbee09ad039f216fa7e5ec6b2aa0096d1d5648d20b0ccc1a605e13eb6",
             "locator": {
-              "end": 69,
-              "kind": "line_range",
-              "start": 59
+              "kind": "symbol",
+              "name": "server_info"
             }
           },
           "kind": "code"

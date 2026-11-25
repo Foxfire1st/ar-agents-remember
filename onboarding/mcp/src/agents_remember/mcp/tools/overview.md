@@ -250,6 +250,7 @@ Anchor: `role_start_set_payload`, `role_start_payload`, `role_message_payload`, 
 - Read carries tree/index state and partial-index completeness. [34]
 - Legacy paths and unheld current seeds refuse truthfully. [35]
 
+
 - Current ordinary model roster has 44 names, including citation_note_revision, ten ordered registrars include explainer control, and the facade exports its DTO/builder; a valid explainer binding adds four tools to the ordinary registration. [63]
 
 - The seam that pages a converted tree's read, and the per-page extras. [4]

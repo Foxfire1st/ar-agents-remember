@@ -190,7 +190,9 @@ The following current source boundaries establish the ledger-retirement behavior
 
 - The dashboard PR probe whose `None`/`missing` polarity must not be read as "never landed". (`_pr_for`) [11]
 
+
 - The MCP tool and payload that expose this operation. (`worktree_record_landing`) [12]
+
 
 
 - The application-layer entry point that confines the contract and builds the arguments. (`worktree_record_landing_tool`) [13]

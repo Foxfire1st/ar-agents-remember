@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_tool_schema_compaction.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4bf12621aa5bd40b36b0b0ffa0a34e7ea67006bb",
+        "content": "sha256:97045a12c9da951dd17552627cda53011bbc1426ff5da17171c231895ece484e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_create_server_compacts_every_advertised_schema_with_contract_parity"
+        }
+      },
+      "facet": "Proves create_server compacts every advertised unbound and explainer tool schema with zero remaining title/default:null/top-level $defs descriptions while preserving exact parameter, required, enum, anyOf, $ref, and read-only annotation parity.",
+      "id": "PRF-5N52Q7",
+      "invariant": "INV-NZ27V7",
+      "origin": {
+        "handoffEntry": "CAP-R04@v1 §2 server wiring",
+        "leaf": "261124-CAP-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4bf12621aa5bd40b36b0b0ffa0a34e7ea67006bb",
+        "content": "sha256:768f68e936281e6833c04142f9e42e464c0d99783b066c499035c1a89d14f6ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_compact_tool_schema_is_lossless_and_immutable"
+        }
+      },
+      "facet": "Proves lossless stripping of schema-level title, default: null, and immediate top-level $defs descriptions while preserving literal property names, combinators, dependentSchemas, list/dict items, non-null defaults, and deep-copy immutability.",
+      "id": "PRF-ACXPXD",
+      "invariant": "INV-EG3M4J",
+      "origin": {
+        "handoffEntry": "CAP-R04@v1 §1 lossless compaction",
+        "leaf": "261124-CAP-L4"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Unit test proves the three lossless metadata drops, literal property and `$defs` name survival, idempotence, malformed-entry safety, and deep-copy immutability.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bf12621aa5bd40b36b0b0ffa0a34e7ea67006bb",
+            "content": "sha256:768f68e936281e6833c04142f9e42e464c0d99783b066c499035c1a89d14f6ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_compact_tool_schema_is_lossless_and_immutable"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Server parity test proves exact tool order, read-only annotation parity, zero residual compaction violations, and wire-contract parity on both unbound and explainer-mounted servers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bf12621aa5bd40b36b0b0ffa0a34e7ea67006bb",
+            "content": "sha256:97045a12c9da951dd17552627cda53011bbc1426ff5da17171c231895ece484e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_create_server_compacts_every_advertised_schema_with_contract_parity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

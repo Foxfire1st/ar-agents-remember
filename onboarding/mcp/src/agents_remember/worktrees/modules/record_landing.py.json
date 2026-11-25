@@ -273,12 +273,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
-            "content": "sha256:7b1130828c97fc13ad0c6c5c74b0e63baff4a713546aeba8cd5e8bf20aac96f1",
+            "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
+            "content": "sha256:009a4b46dd944bf1649016055e513d7df7b930ab08daf8c3b9bcf2048faeb18f",
             "locator": {
-              "end": 205,
+              "end": 166,
               "kind": "line_range",
-              "start": 186
+              "start": 149
             },
             "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
           },

@@ -605,12 +605,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
+            "blob": "1d95700adc0206a02373ad7aca430393f0339cd8",
             "content": "sha256:59e0e1653d5a589fe09a0646e0ece6d41f34bb59394ec582e7af93d79916c9f6",
             "locator": {
-              "end": 661,
+              "end": 662,
               "kind": "line_range",
-              "start": 661
+              "start": 662
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -936,12 +936,12 @@
         },
         {
           "anchor": {
-            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+            "blob": "728e1d545134c9f832582a1ef5e23a03ade92276",
             "content": "sha256:331b58139722f7fafdd3d8f2ba9b21a3de8a17159f4fd914b5a5ac2987e0fce5",
             "locator": {
-              "end": 155,
+              "end": 139,
               "kind": "line_range",
-              "start": 143
+              "start": 127
             },
             "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
           },

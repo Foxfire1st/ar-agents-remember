@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e08c810611259528c77765ddf47f51eb893f424b",
-    "commit": "10f2b5bb94ab96a48a5f226f6e63b9fe9f6fa4cb",
+    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
+    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
     "role": "curator",
-    "statement": "The tool details still accurately describe server_info's build fields, background previews and baseline adoption's staged validation; the index cache's new single-flight build, lock and temp pruning touch nothing this page states. Reconfirmed after the BUG-L27 sync (code e08c8106). The write ordering is unchanged; BUG-L27 only logs a call cancelled while it waits.",
-    "task": "261112-KNO-L4",
+    "statement": "On synced tree a5bb9a1f, docs/tool-details.md accurately matches the codebase: Option B restored 'curator-coherence authority' in tasks.py (line 28), and CAP-L4's description optimization in memory.py and seat_retirement.py preserves all server_info, background preview, citation_fix, baseline adoption, and seat-retirement behavior.",
+    "task": "261124-CAP-L4",
     "uncommitted": true
   },
   "document": "docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -92,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+        "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
         "content": "sha256:67fe0b7ee62d92936408e6bdce030fb715592e603ee194856fe2a7ae9ffb01ac",
         "locator": {
           "kind": "symbol",
@@ -163,7 +163,7 @@
       "path": "mcp/src/agents_remember/memory_quality/landing_report.py"
     },
     {
-      "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+      "blob": "bbc1541e4379d1cf2c834fbc40cb53f596f21dfd",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },
@@ -173,7 +173,7 @@
       "path": "mcp/src/agents_remember/cli/role_retire.py"
     },
     {
-      "blob": "78d1d879651aca07ed8ab09f7022678801d0b38d",
+      "blob": "29ac4d5e75a9e54475ec617732ab37e9e4fa8983",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
     },
