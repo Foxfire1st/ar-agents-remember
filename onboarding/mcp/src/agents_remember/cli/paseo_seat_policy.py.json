@@ -1,0 +1,122 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_seat_policy.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "989ca0f381fef0297fc725d0b00462680d20f095",
+        "content": "sha256:039274234510c7e793f8b089ac2395db01ae91790c622c316fbd22258ae26f35",
+        "locator": {
+          "kind": "symbol",
+          "name": "preapproval_detail"
+        }
+      },
+      "id": "RLZ-BK0QZG",
+      "invariant": "INV-Z17EHY",
+      "origin": {
+        "handoffEntry": "BUG-R31@v1-start-grant",
+        "leaf": "261112-BUG-L31"
+      },
+      "rationale": "The policy supplies the receipt wording for startup grant retention and seat replacement.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "989ca0f381fef0297fc725d0b00462680d20f095",
+        "content": "sha256:b39ac416b7f157c729239d1dc515a535a51899617e08cc0e81a623490c0b3f82",
+        "locator": {
+          "kind": "symbol",
+          "name": "preapproval_policy"
+        }
+      },
+      "id": "RLZ-QNGXHX",
+      "invariant": "INV-Z17EHY",
+      "origin": {
+        "handoffEntry": "BUG-R31@v1-start-grant",
+        "leaf": "261112-BUG-L31"
+      },
+      "rationale": "The shared policy takes the ordinary roster and adds the explainer surface when supplied.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The provider selects the startup roster, which binds each granted tool to the supplied server.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "989ca0f381fef0297fc725d0b00462680d20f095",
+            "content": "sha256:b39ac416b7f157c729239d1dc515a535a51899617e08cc0e81a623490c0b3f82",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Ordinary and explainer creates use the same policy. The explainer supplies its additional tools.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+            "content": "sha256:a7988e1af587d13092b31708d17a1ffe42a07a213d48470d7afe91c683f5a8e4",
+            "locator": {
+              "end": 432,
+              "kind": "line_range",
+              "start": 421
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99662226cca319589b818f5083eff3400d12ae14",
+            "content": "sha256:6b54ec544c14038fd21f98385bfefc02f9fe45a8f3dc699530f5896e51c83931",
+            "locator": {
+              "end": 413,
+              "kind": "line_range",
+              "start": 396
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The receipt describes the lifetime of the grant. The Codex guide explains when the seat needs replacing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "989ca0f381fef0297fc725d0b00462680d20f095",
+            "content": "sha256:039274234510c7e793f8b089ac2395db01ae91790c622c316fbd22258ae26f35",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76b62e95cf7bfbbdc4a21c8911dc7c4bcd59225d",
+            "content": "sha256:e94067b8d677a970518e17b77203700e9f161a5f452786f7cfdd25a8fdc15d5d",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "docs/install/codex.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

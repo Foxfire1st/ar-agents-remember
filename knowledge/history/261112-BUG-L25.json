@@ -1,0 +1,573 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L25",
+  "rows": [
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-02S49W",
+      "items": [
+        "sha256:26e53cad31a1cfce6186df51360f16b06023aa17be7561203d85c16723cdf56e"
+      ],
+      "reason": "The Hermes guide still describes the ACP provider, the unmatched Bootstrap refusal, launch mode precedence and held delivery accurately, and the grant policy remains scoped to its two named provider branches. The existing whole-file evidence was reconfirmed at the new projection blob.",
+      "revision": 11,
+      "subject": "DPD-GHEXS9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "268758eb2e3109a51e5d86562485a0f72b4061f5",
+            "content": "sha256:fea77f45ef1670fbe923a6412ea418d4ee49adb5fa21ac583020292346ad77f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pause_for_provider_limit"
+            },
+            "path": "mcp/src/agents_remember/cli/provider_limit_drain.py"
+          },
+          "before": "absent",
+          "id": "RLZ-RX5FRC"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-0H7BNS",
+      "items": [],
+      "reason": "The helper returns when no limit remains and handles waiting and one stamped confirmation under an active limit. This realization belongs to the native hold obligation. The held-message caller owns ordinary readiness and delivery after the return. Evidence (L25-M1-F3 drain attribution): L25-M1-F3, provider_limit_drain.py:51–82 and role_held_messages.py:304–308, 381–382. INV-1ZKP4R excludes the Python held-message sweep; INV-4DQMNE owns stamped confirmation and waiting.",
+      "revision": 3,
+      "subject": "INV-4DQMNE"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1F0CEB",
+      "items": [
+        "sha256:31ba0c32900094d4e3947cbd8292173cd7dee67c28dca858af4d31a1fb46339c"
+      ],
+      "reason": "The application route already assigns answer shaping and settings advice to distinct owners. Retaining one response field changes neither owner nor route.",
+      "sources": [
+        {
+          "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
+          "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "397666453e42dbbdec1c61cade273ede88d84e4b",
+            "content": "sha256:189a7b1117d3b83faa45356a2c39d841f615308ae94b787d085b61d1e3d24243",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/provider_limit_drain.py"
+          },
+          "id": "RLZ-3FFFJ8"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-1NYWKQ",
+      "items": [
+        "sha256:3e5b709263b3f59f07898dcc3e0f06db2a9b8fef3965c3132d36a0101c11be53"
+      ],
+      "reason": "The provider-limit helper enforces a Python held-message gate outside this plugin-turn obligation. Remove that attribution. The plugin obligation and its other realizations keep their existing meaning.",
+      "revision": 7,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1S8A4W",
+      "items": [
+        "sha256:ef944530df2a2f1e77f9ad2231578be6b88499959b4a4a5de44323e1608bd1d0"
+      ],
+      "reason": "This import supplies the registered warning proof fixture or its response-model assertion. The import carries no separate behavior obligation.",
+      "subject": "hunk:sha256:ef944530df2a2f1e77f9ad2231578be6b88499959b4a4a5de44323e1608bd1d0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3QN9MB",
+      "items": [
+        "sha256:2fc54adc6972542cfa9d2d08cdb2db318023966a68e96beead8ac847a151e0dc"
+      ],
+      "reason": "This import supplies the registered warning proof fixture or its response-model assertion. The import carries no separate behavior obligation.",
+      "subject": "hunk:sha256:2fc54adc6972542cfa9d2d08cdb2db318023966a68e96beead8ac847a151e0dc"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4K34JJ",
+      "items": [
+        "sha256:4c82d16d944da4d30364127bbbca2f31600bd092d552bf3b2e044aa0ca859c47"
+      ],
+      "reason": "This import supplies the registered warning proof fixture or its response-model assertion. The import carries no separate behavior obligation.",
+      "subject": "hunk:sha256:4c82d16d944da4d30364127bbbca2f31600bd092d552bf3b2e044aa0ca859c47"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-6641VD",
+      "items": [
+        "sha256:27c4e687ae87e472555ea1c0dbe9d6823f99a8e2022d7be99f20391b6c455c79"
+      ],
+      "reason": "The Claude Code guide still accurately describes explicit Claude selection, implicit Bootstrap and the ordinary seat’s server_info grant, which use launch bindings separate from the recorded-review warning projection. The existing whole-file evidence was reconfirmed at the new projection blob.",
+      "revision": 9,
+      "subject": "DPD-3E9E2R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6E33ZP",
+      "items": [
+        "sha256:eaa84475644f8464896e95438ebbb086dc909d79ac5613d76ae4928804efc301"
+      ],
+      "reason": "The card binds the refreshed curation capsule measurements and judgment detail size to the generated budget record.",
+      "sources": [
+        {
+          "blob": "87767258a37971b10921c8a62554894a4a00036b",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-70DC8T",
+      "items": [
+        "sha256:4f4b82de4b8faecaeb1d232e0405070af0c54b6b49ce7e7bcb6965478d3fa300"
+      ],
+      "reason": "The overview still distinguishes fixed-current policy clauses from retired-statement checks. Correcting one required clause preserves that split.",
+      "sources": [
+        {
+          "blob": "266bb77d9f283e6605193658145b39fd45228f6f",
+          "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7JTAMH",
+      "items": [
+        "sha256:2a1e9a0b6fd7735084ce04cc5fef938cc9638d89c3d03e1948921341e24e8b38"
+      ],
+      "reason": "The response card names the optional warning and its recorded-review source.",
+      "sources": [
+        {
+          "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
+          "path": "mcp/src/agents_remember/models/task_doc.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/task_doc.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7VHSYS",
+      "items": [
+        "sha256:47f59808861d5ae653c84009cb82186146a8f90e90bbde36794625bb598e2ba6",
+        "sha256:95f3c8762f772ccb1350c3049c57e403c5f6b99714e96534b77c452d2713d880"
+      ],
+      "reason": "The card and reference now require both the surface and its evidence to be unchanged, checked against current evidence. A change to surface, evidence or disposition requires a fresh judgment. A matching preparation still permits direct publication.",
+      "sources": [
+        {
+          "blob": "0933522e58be01db918406b80d48e1bc7e5d4822",
+          "path": "skills/l-01-agent-lifecycles/reference/curator/coherence-judgments.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/reference/curator/coherence-judgments.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "266bb77d9f283e6605193658145b39fd45228f6f",
+            "content": "sha256:7353c3d687fe5dd1b45f8382108f44fbb105f007224fcffe13bf4ac02d0b6a98",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURATION_POLICY_STATEMENTS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "before": {
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+            "content": "sha256:3659fd2d0978bf74bc0402c6b69bea03dd81b2c7c2e6765977a54c8bd65a88ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURATION_POLICY_STATEMENTS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "id": "RLZ-JGHMRV"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-848DTD",
+      "items": [
+        "sha256:c2b038a0136ca85d40c428b394bfac67bf362b6fb15d2caf8bc90445ad464893"
+      ],
+      "reason": "The corrected normalized policy clause changes the oracle bytes. The existing named-tool obligation of the curation pointers remains visible in the same registry.",
+      "revision": 1,
+      "subject": "INV-GWA6VR"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9S7JFP",
+      "items": [
+        "sha256:d30c72c0993f17dc788049592f82e4d9f0b882fb86860b7613b16ceb6cdc420b"
+      ],
+      "reason": "The canonical operation card includes both judgment cardinalities after successful preparation and validation before closeout.",
+      "sources": [
+        {
+          "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+          "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "87767258a37971b10921c8a62554894a4a00036b",
+            "content": "sha256:04f53f5702c0bb3657dcb43cec017f1c844bebbe5b23675d868b8aec93c2ec0f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:d45c9ccf891b5c558a018c170e9b8c45048a3796c04c36ea33d9929f19e22e71",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-RHRQZQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-A07NK5",
+      "items": [
+        "sha256:42965dd5c638172065eb7335375330f3d9e8b6e7313e9f14f9f70ee5e87c5587"
+      ],
+      "reason": "Renewal updates generated measurement and identity values. Authored ceiling authority and the separation from measured size still hold.",
+      "revision": 2,
+      "subject": "INV-4HZG3V"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AFHXYB",
+      "items": [
+        "sha256:bee9b22b163e4a086d16859841c1aa234de4d22d9989c8c26f447be3d85b7c43"
+      ],
+      "reason": "The card names ordinary and overflowing registered cases, the stored whole JSON and persisted review assertions.",
+      "sources": [
+        {
+          "blob": "2d49b714c233fb5cf4920faf8adff1f73b046edc",
+          "path": "mcp/tests/test_task_doc_review_public.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_task_doc_review_public.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BWXJ81",
+      "items": [
+        "sha256:901334c4ac666d8f8a001add6ad7de85b5581f481ab9070613b835aa13e0dd24"
+      ],
+      "reason": "The current account names the stamped host read, confirms archive or absence as terminal and preserves waiting when a found session is closed.",
+      "sources": [
+        {
+          "blob": "268758eb2e3109a51e5d86562485a0f72b4061f5",
+          "path": "mcp/src/agents_remember/cli/provider_limit_drain.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/provider_limit_drain.py"
+    },
+    {
+      "considered": [
+        "FAM-8SX6BT"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-ETXJ4V",
+      "items": [],
+      "reason": "The response schema and write projection preserve one producer outcome. The bounded-answer family already owns shared fitting, logging and warning priority; this producer-specific result does not change its joint guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-SH4THY"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-G0DSKN",
+      "items": [
+        "sha256:2fc06a62e5a85c891f9f3bf278870a7fb3a4f5c70bf2f480273855a2a78e1f00"
+      ],
+      "reason": "The ordinary write roster now carries a supplied review warning into the shared fitter.",
+      "sources": [
+        {
+          "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
+          "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/landing_answer_shapes.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-H1QSBJ",
+      "items": [
+        "sha256:17367c4a8762609683364719fbcf42a8ff9cf5ea9647b0527b48aa05ba8c4410"
+      ],
+      "reason": "The host guide’s resume after a host stop and exact-agent Antigravity Retry remain accurate because the recorded-review warning changes only the task-document write roster, while the Codex startup grant leaves those host paths intact. The existing whole-file evidence was reconfirmed at the new projection blob.",
+      "revision": 10,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "considered": [
+        "FAM-GDXSJG"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-MBB961",
+      "items": [],
+      "reason": "This procedure supplies the Curator publication sequence. The existing family concerns propagation and same-source installation, which both cardinality paths already honor.",
+      "revision": 1,
+      "subject": "membership:INV-J0B614"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QC24FA",
+      "items": [
+        "sha256:7cca71d963c2a25bdf8168ee9f2903e2b789bd9afccf940a6c849b2c81da798a"
+      ],
+      "reason": "The route keeps the general scoped raw-quality and coherence distinction. The candidate-specific preparation rule and warning delivery belong to the operation and projection cards.",
+      "sources": [
+        {
+          "blob": "268758eb2e3109a51e5d86562485a0f72b4061f5",
+          "path": "mcp/src/agents_remember/cli/provider_limit_drain.py"
+        },
+        {
+          "blob": "87767258a37971b10921c8a62554894a4a00036b",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "0933522e58be01db918406b80d48e1bc7e5d4822",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/curator/coherence-judgments.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RWGNV8",
+      "items": [
+        "sha256:4693f63b1d47adce864d3959805204f2a6bc37c2ca35e92c184b6990040b236e"
+      ],
+      "reason": "The overview still describes rich validated results and bounded answers. One optional notice field belongs to the TaskDocResponse card.",
+      "sources": [
+        {
+          "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
+          "path": "mcp/src/agents_remember/models/task_doc.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S3KT9Y",
+      "items": [
+        "sha256:6ca17395f058f43868fc7dc75b6db1584e9ff39a55cc414e8d39d9f5ece598b8",
+        "sha256:917f7a9627b44e97b6b6bec0874a13c12317d80578e779b4a1d4d81aa89b28d3",
+        "sha256:e9149cdf0a1c535c09f42f3cbe541d5b082aa5559ce68a2bee47e8ff18979d28",
+        "sha256:f6b25d2d426b612dff3605e2e25e79a33c58b90ab930843d68b2d5454f3f32e3"
+      ],
+      "reason": "The integrity case reads full validator details from the marked domain-unit result and checks the bounded status and validation window separately.",
+      "sources": [
+        {
+          "blob": "36c03d3ccd4444f50f14d99bf202049614349479",
+          "path": "mcp/tests/test_knowledge_index_surfaces.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_index_surfaces.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-SSANAD",
+      "items": [
+        "sha256:54d1bb301d30761d221f2798b2ea0c177720858df58fa475c74fb475d9f4be40"
+      ],
+      "reason": "The Pi guide still describes case-insensitive matching by client name or name segment and explicit agent=\"pi\" selection, which are independent of the task-document warning field. The existing whole-file evidence was reconfirmed at the new projection blob.",
+      "revision": 8,
+      "subject": "DPD-2B7PTY"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 4
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-T8MHFJ",
+      "items": [
+        "sha256:b4dfa7ecf96d730f9a2f2aa0cb139e4e33f371034d0dc889e118b27ffb8f54e9"
+      ],
+      "reason": "The existing dashboard launch surface and generation inputs retain their relationship. The authored operation and detail still mirror exactly to installed bytes, preserving the same-source propagation guarantee and routes.",
+      "revision": 8,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "87767258a37971b10921c8a62554894a4a00036b",
+            "content": "sha256:04f53f5702c0bb3657dcb43cec017f1c844bebbe5b23675d868b8aec93c2ec0f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:d45c9ccf891b5c558a018c170e9b8c45048a3796c04c36ea33d9929f19e22e71",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-VJEGCW",
+      "items": [
+        "sha256:aabf954996097e301fb77a5c81361ad496ef551db133604fcda66a0642c61847"
+      ],
+      "reason": "The budget record still reports compiled counts, caps and intake detail measurements. Only the measured values and corresponding identities change.",
+      "revision": 6,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VMJ3KR",
+      "items": [
+        "sha256:241f2f21ac9306ce846c43b0af112ce211bc31edb9fd338f7368579b44504264"
+      ],
+      "reason": "This import supplies the registered warning proof fixture or its response-model assertion. The import carries no separate behavior obligation.",
+      "subject": "hunk:sha256:241f2f21ac9306ce846c43b0af112ce211bc31edb9fd338f7368579b44504264"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+            "content": "sha256:cc9d8feff01ce8f45d541bc6f486c47d8489ff0065635e7b9bf8cbd61b9befe2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:1857e1beb8ca9269588a3c811ad6b395f112edd2e0ddc81dc5bbb03b504b5a3a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-JSEK7Q"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-WYVFB6",
+      "items": [
+        "sha256:b4a9c949a9262479c0be416007c75448dff29aac75f08128a455258c25984d9c"
+      ],
+      "reason": "The existing generated operation still follows the authored source byte for byte. The repaired publication rule propagates without a change in the mirror obligation.",
+      "revision": 3,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-X07332",
+      "items": [
+        "sha256:815b46cbcf7cd2343d05e3ffb8efe63908f240f052547959957dcfd6b2f74750"
+      ],
+      "reason": "The governing curation route now states the exact transition from healthy quality to preparation, full judgment publication and validation.",
+      "sources": [
+        {
+          "blob": "87767258a37971b10921c8a62554894a4a00036b",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+          "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "0933522e58be01db918406b80d48e1bc7e5d4822",
+          "path": "skills/l-01-agent-lifecycles/reference/curator/coherence-judgments.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X1PNXE",
+      "items": [
+        "sha256:ff62e6a3d68497c9fdcd2867211254eb2378458e506454f0efa3833565ed93a7"
+      ],
+      "reason": "This import supplies the registered warning proof fixture or its response-model assertion. The import carries no separate behavior obligation.",
+      "subject": "hunk:sha256:ff62e6a3d68497c9fdcd2867211254eb2378458e506454f0efa3833565ed93a7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XDSSWR",
+      "items": [
+        "sha256:431cd3b0d05597af6b41616a577c141898771d4691a20a9c7def500ccd4558ef"
+      ],
+      "reason": "The route still describes mounted answers, marked domain-unit results and authored review fixtures. The specific case assertions belong to their existing cards.",
+      "sources": [
+        {
+          "blob": "36c03d3ccd4444f50f14d99bf202049614349479",
+          "path": "mcp/tests/test_knowledge_index_surfaces.py"
+        },
+        {
+          "blob": "2d49b714c233fb5cf4920faf8adff1f73b046edc",
+          "path": "mcp/tests/test_task_doc_review_public.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XYAHDJ",
+      "items": [
+        "sha256:a17b713b39f8f1315a2943360d9811202a2327390ae8eb8959a967645c849246"
+      ],
+      "reason": "The current shared clause now makes both source and mirrored policy checks require the repaired publication sequence and cardinality.",
+      "sources": [
+        {
+          "blob": "266bb77d9f283e6605193658145b39fd45228f6f",
+          "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z4FR3X",
+      "items": [
+        "sha256:ed2e2502501e42f20f9ce8e8c2a299e1d5caf7ef6327e52121ce2b218834c431"
+      ],
+      "reason": "This import supplies the registered warning proof fixture or its response-model assertion. The import carries no separate behavior obligation.",
+      "subject": "hunk:sha256:ed2e2502501e42f20f9ce8e8c2a299e1d5caf7ef6327e52121ce2b218834c431"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

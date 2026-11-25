@@ -111,7 +111,7 @@ The steps and their helpers.
 
 - - Many long markers fit one valid row. [23]
 
-- - A master-line record conflict opens a crossing history file, closed at commit. [24]
+- A conflicting master record makes the plan pre-seed open history. The close helper then stages it closed. [24]
 
 ### Cross-Repo References
 
@@ -122,7 +122,7 @@ No cross-repo boundary is crossed by this file.
 - - Step 1: the leaf's added no-impact markers become onboarding_trace rows, with full text in `markers` and sources bound to the own side's paired code commit; file and overview provenance have different source sets. [17]
 - Current source delta inspected statically: Require paired-code marker provenance, distinguish overview history from future changed sets, and name fail-closed markers-step errors. [25]
 
-- The plan supplies product attribution to structural merging and keeps an existing crossing history document. [26]
+- The plan supplies product attribution to structural merging and keeps an existing crossing history document. [27]
 
 - The crossing result carries the alignment counts beside conflicts and cards. [14]
 - Steps 1-4 and the report: paired-code blobs are read before marker conversion; unreadable paired code raises the named `markers` failure rather than dropping source provenance. [20]

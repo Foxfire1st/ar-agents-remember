@@ -136,7 +136,7 @@ No cross-repo boundary is crossed by this file.
 
 - SELECT-only declaration and reverse maps support naming without Answer wrappers. [21]
 
-- Standing lookups batch supplied IDs and the writer view reads indexed named revisions. [22]
+- Standing lookups batch supplied IDs and the writer view reads indexed named revisions. [23]
 
 - The proofs of a set of invariants. [1]
 - The reverse lookup from a projected UUID to the text ID it stands for (rule 6's reverse map). [17]

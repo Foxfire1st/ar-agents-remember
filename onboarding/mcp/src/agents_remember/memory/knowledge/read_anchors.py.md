@@ -18,15 +18,15 @@ that used to collapse into one `None` are three genuinely different facts here:
 | Outcome | The fact | Who answers it |
 | --- | --- | --- |
 | `path_absent` | **Git answered, and the requested tree holds nothing at that path.** | `_observed_entry`'s `entry is None` branch — a real absence, the only thing that reports one |
-| `unsupported_locator` | **The spelling is not addressable as a confined tree path, so the tree was never asked.** The cause is in `detail`. | `_UnaddressableRecordedPath`, and the symbol-locator branch |
+| `unsupported_locator` | **The path spelling or the kind of locator prevents establishing the requested range.** The cause is in `detail`. | `_UnaddressableRecordedPath`, and the symbol-locator branch |
 | `recorded_object_unavailable` | **The lookup did not answer**: the requested tree is not in the repository, or Git ran and failed, or Git could not be run at all. | the availability guard, and `_TreeLookupFailed` |
 
-**It also remembers, for the life of the process, the answers Git and the parser gave about complete
-object ids** (tree entries, blob lines, per-blob definitions), so repeated observation of the same
-anchors — every owner of one review, every subject of one comparison — costs one Git read and one parse
-per object instead of one per observation. The tables live in
-[`read_anchor_memo.py`](read_anchor_memo.py.md); **what may be remembered, and what never is, is decided
-here** (see *The process-lifetime memo* below). Warmed content can remain available under its recorded identity when the requested tree and matching path still resolve after a blob becomes unavailable.
+The bounded process memo reuses a tree entry for the same repository, tree and path, and blob lines
+for the same repository and blob, when those entries are cached. A definition-cache hit reuses the
+parse for the same repository, blob, grammar and applicable script test-file class. Eviction permits
+a fresh read or parse. The tables live in [`read_anchor_memo.py`](read_anchor_memo.py.md). Warmed content
+can remain available under its recorded identity when the requested tree and matching path still
+resolve after a blob becomes unavailable.
 
 ## Code Commentary
 
@@ -54,9 +54,9 @@ statement:
 tree unavailable (`recorded_object_unavailable`) → the tree lookup (an unaddressable spelling is
 `unsupported_locator`, a lookup that did not answer is `recorded_object_unavailable`) → the entry, where
 a `symbol` or `line_range` locator on the exact recorded blob is measured. Only the entry step can
-report an absence. (An earlier account put a symbol-locator refusal before the tree check; since the
-symbol observer landed, a symbol locator is resolved *after* the exact-blob match, in `_observed_symbol`,
-and is `unsupported_locator` only when its path has no grammar or the grammar or blob cannot be read.)
+report an absence. After an exact-blob match, `_observed_symbol` reports `unsupported_locator`
+when the path has no reader, the blob or grammar cannot be read, or the requested Lean key has
+uncertain scope. The observation keeps the recorded blob identity and carries no resolved range.
 
 `_observed_entry` turns one `ls-tree` entry into the observation it supports:
 
@@ -75,7 +75,7 @@ locator addresses in those exact bytes, and the model refuses ranges beside any 
 
 | Locator kind | What `resolved_ranges` carries on `exact_recorded_blob` |
 | --- | --- |
-| `symbol` | **every** extent the shipped extractor finds defining the name, in order, de-duplicated (`_blob_definitions` parses the blob once and keeps each defined name's distinct `(start, end)` pairs; `_defining_extents` looks the name up in that mapping; the `detail` sentence is spelled from them and reads exactly as before) |
+| `symbol` | the distinct defining extents selected in document order. The reader tries the whole key first. Lean lookup ends at that key, while other readers can split a dotted name after a miss. The memo retains the extent metadata needed for scope decisions |
 | `line_range` | the recorded range itself **only if the blob holds those lines** — `_observed_line_range` reads the blob's lines once (`_recorded_lines`, the same read `_blob_definitions` makes for the symbol path) and compares the recorded `end_line` with `_line_count` |
 | `file` | nothing: a file locator addresses the whole blob and names no range |
 
@@ -145,7 +145,7 @@ the complete object id(s) the answer is a function of:
 | --- | --- | --- | --- |
 | `TREE_ENTRIES` | (root, tree id, confined path) | `_tree_entry` | the parsed `ls-tree` entry **or `None`** — Git's own "no entry at this path" about an existing immutable tree is as permanent as a found entry |
 | `BLOB_LINES` | (root, blob id) | `_recorded_lines` | the blob's lines as an immutable **tuple**, because one answer is shared by every later caller |
-| `BLOB_DEFINITIONS` | (root, blob id, grammar of the path's suffix) | `_blob_definitions` | a read-only mapping of every defined name to its distinct `(start, end)` extents — one parse serves every symbol anchored in the blob, and one grammar's parse is never served for another's |
+| `BLOB_DEFINITIONS` | (root, blob id, grammar and script test-file class) | `_blob_definitions` | a read-only mapping from names to extent tuples that preserves Lean scope information and is reused on a matching reader-class cache hit |
 
 The rules a successor must keep, because each was either a review finding or is what makes "never
 stale" true:
@@ -252,11 +252,11 @@ No meaningful cross-repo references found.
 - **`None` means only "Git looked and found nothing"; the entry kind comes from the entry mode, not the object kind.** [3]
 - The two resolvers, and why an unrequested tree is a supported state rather than a degraded one. [5]
 - **The dispatch that sends an exact-blob `symbol` or `line_range` locator to its range-measuring observer and answers a `file` locator with no range.** [7]
-- **A symbol's every defining extent carried as structured ranges, with the unchanged `detail` sentence spelled from them.**  Anchor: `resolved_ranges` [8]
+- An established symbol key returns its distinct defining extents as structured ranges. An uncertain Lean key retains the recorded blob identity and returns no range. [8]
 - **A recorded line range published as a resolved range only when the exact blob holds those lines; past the end, or unreadable, it keeps `exact_recorded_blob` and carries none.** [9]
 - How many lines a blob holds, where a final newline ends the last line. [10]
-- The extractor's defining extents as distinct `(start, end)` pairs rather than spelled strings, computed once per blob and grammar and looked up per name. [11]
-- **The memo's three content answers: a tree entry (or its definite absence), a blob's lines as a tuple and a blob's definitions per grammar — each remembered only after Git or the parser answered, and only for a complete id.** [12]
+- Definition memo values keep immutable extent tuples and Lean scope metadata. Symbol lookup selects the distinct ranges from those extents in document order. [11]
+- The memo keeps a tree entry or its definite absence, blob lines, and definitions per grammar and script test-file class. Entries require complete identities and successful observation. [12]
 
 
 
@@ -267,3 +267,6 @@ No meaningful cross-repo references found.
 
 
 - **The cases that pin the memo: one read per object and identical answers, a failure asked again, an abbreviation never remembered, a pruned or revoked tree reported unavailable, no cross-repository or cross-grammar reuse.**  Anchor: "test_repeated_observations_answer_identically_from_one_read_per_object"; "test_a_failure_is_never_remembered_and_the_later_success_is_observed"; "test_a_question_asked_with_an_abbreviated_tree_id_is_never_remembered"; "test_a_tree_that_stops_being_available_is_reported_unavailable_not_remembered"; "test_one_repositorys_answers_are_never_served_for_another"; "test_one_blob_is_parsed_per_grammar_whichever_is_asked_first" [15]
+
+- The recorded symbol reader preserves blob identity when an exact Lean key is unverifiable. [22]
+- Exact keys precede dotted fallback and Lean uses the exact key only. [23]

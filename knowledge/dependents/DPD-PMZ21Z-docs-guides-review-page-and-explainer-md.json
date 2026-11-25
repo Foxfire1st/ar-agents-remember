@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
-    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
+    "codeTree": "6584649caa95199219a959979b0491a095d0d6a9",
+    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
     "role": "curator",
-    "statement": "The review-page guide correctly describes the launcher listing the offered models for a harness and the explainer resolving its own settings through the shared host-profile rule.",
-    "task": "261112-BUG-L19",
+    "statement": "The review-page guide still describes offered-model selection and the explainer's own settings under the shared host-profile rule. The explainer's bound server and four dedicated tools are preserved when the startup policy sets their approvals.",
+    "task": "261112-BUG-L31",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -136,7 +136,7 @@
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     },
     {
-      "blob": "b4f6bf9fa43190d1c4267542c5679934fafff22c",
+      "blob": "99662226cca319589b818f5083eff3400d12ae14",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
     },

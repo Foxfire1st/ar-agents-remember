@@ -1,0 +1,70 @@
+{
+  "closed": true,
+  "crossing": "261123_SUBSCRIBED-REPOSITORIES-crossing-1",
+  "rows": [
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-4TB8DY",
+      "items": [],
+      "reason": "Re-read docs/FAQ.md at lines 29–36, 49–53, 99–105 on the merged SUB code. Preserve both parents’ recorded source-link identities and confirm the merged document.",
+      "revision": 5,
+      "subject": "DPD-A3XZ3Q"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-CQKP0M",
+      "items": [],
+      "reason": "Re-read docs/features.md at lines 123–149, 214–223, 239–246 on the merged SUB code. Preserve both parents’ recorded source-link identities and confirm the merged document.",
+      "revision": 20,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GZ9DGE",
+      "items": [],
+      "reason": "Re-read docs/design/python-pytest-bootstrap.md at lines 40–70 on the merged SUB code. Preserve both parents’ source-link identities and renew their binding to the merged catalogs.",
+      "revision": 12,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-H6A2MZ",
+      "items": [],
+      "reason": "Re-read docs/design/python-evidence-system.md at lines 79–117 on the merged SUB code. Preserve both parents’ source-link identities and renew their binding to the merged catalogs.",
+      "revision": 11,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-JSGPRR",
+      "items": [],
+      "reason": "Re-read CONTRIBUTING.md at lines 226–254 on the merged SUB code. Preserve both parents’ source-link identities and renew their binding to the merged catalogs.",
+      "revision": 12,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-M485RF",
+      "items": [],
+      "reason": "Re-read docs/concepts.md at lines 336–375, 415–423, 519–547 on the merged SUB code. Preserve both parents’ recorded source-link identities and confirm the merged document.",
+      "revision": 17,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-SB2500",
+      "items": [],
+      "reason": "Re-read docs/reference/knowledge-system.md at lines 73–99, 134–139, 262–282 on the merged SUB code. Preserve both parents’ recorded source-link identities and confirm the merged document.",
+      "revision": 6,
+      "subject": "DPD-TXRND9"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

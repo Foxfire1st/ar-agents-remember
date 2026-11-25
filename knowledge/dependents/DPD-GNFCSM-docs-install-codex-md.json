@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
-    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
+    "codeTree": "6584649caa95199219a959979b0491a095d0d6a9",
+    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
     "role": "curator",
-    "statement": "The Codex guide correctly states the 300-second role-seat default, omission of a per-server timeout on both Paseo transports, and Codex’s rejection of a timeout-only server table.",
-    "task": "261112-BUG-L19",
+    "statement": "The Codex guide still accurately describes implicit Bootstrap and exact Codex selection. Its startup section now describes the complete grant on the seat's own server, retaining that grant through resumes and reloads, replacing the seat for future tools, and separate approval-mode control for shell commands and other servers.",
+    "task": "261112-BUG-L31",
     "uncommitted": true
   },
   "document": "docs/install/codex.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+      "blob": "ed433f1461603a846547ab141a794294a4c4054a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
@@ -61,7 +61,7 @@
       "path": "mcp/src/agents_remember/models/role_agents.py"
     },
     {
-      "blob": "6fa1ea0b40930f3f7b7eecbf2e1e53d6a88e6b7d",
+      "blob": "210872f08a0a898df592f68e2330120a451b3ea5",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
     },
@@ -120,6 +120,32 @@
         "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js"
       },
       "heading": "Settings of this harness",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "989ca0f381fef0297fc725d0b00462680d20f095",
+        "content": "sha256:b39ac416b7f157c729239d1dc515a535a51899617e08cc0e81a623490c0b3f82",
+        "locator": {
+          "kind": "symbol",
+          "name": "preapproval_policy"
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_seat_policy.py"
+      },
+      "heading": "What this harness needs",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "989ca0f381fef0297fc725d0b00462680d20f095",
+        "content": "sha256:039274234510c7e793f8b089ac2395db01ae91790c622c316fbd22258ae26f35",
+        "locator": {
+          "kind": "symbol",
+          "name": "preapproval_detail"
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_seat_policy.py"
+      },
+      "heading": "What this harness needs",
       "kind": "anchor"
     }
   ]

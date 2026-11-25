@@ -137,7 +137,7 @@ Whole-file dependent links share their derived movement rule between knowledge r
 
 Currentness keeps current, stale and unverifiable separate. No tree is unverifiable; absent regular path is stale; unchanged blob is current before locator support is considered, except that a symbol anchor in a file that is not valid UTF-8 is unverifiable. Changed blobs require supported, uniquely resolving locators and matching content. Failed Git reads are marked as failed observations; unavailable historical objects/grammars remain named unverifiable causes. Proofs are observed alongside realizations and stale proofs can make an invariant stale. The bounded 8,192-entry observation cache stores answers, not failed observations, with blob/complete locator/path/extractor identity. Reads report currentness; they do not re-anchor or manufacture an authored judgment. Without-proof inventory is informational rather than curator actionability.
 
-The path-based knowledge_reader supplies taskless selection, directory/path/subtree, record/truth, code and timeline questions. Invariant views include membership-history documents with owner, ownerKind, closed, history path, row identity, subject and disposition; their timelines merge those rows with record-id history. Published/commit/leaf reads retain selected code-tree provenance; pairing and checkout HEAD are distinct. Directory/subtree views stay bounded at their selected tree. Absent, binary, too-large and unavailable facts remain distinct; decisions retain full alternatives and derived status. Unreadable links stay visible, and unsigned continuation tokens remain a design limit.
+The path-based knowledge_reader supplies taskless selection, directory/path/subtree, record/truth, code and timeline questions. Invariant views include membership-history documents with owner, ownerKind, closed, history path, row identity, subject and disposition; their timelines merge those rows with record-id history. Published/commit/leaf reads retain selected code-tree provenance; pairing and checkout HEAD are distinct. Directory/subtree views stay bounded at their selected tree. Absent, binary, too-large and unavailable facts remain distinct; decisions retain full alternatives and derived status. Unreadable links stay visible, and unsigned continuation tokens remain a design limit. The directory view includes eligible cards below dot directories when computing presence and coverage. The memory inventory filters generated route-index cache files.
 
 ### Review, delivery and reclamation
 
@@ -1169,9 +1169,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - Complete whole-file dependent version tokens are compared using exact confirmation and selected-tree project versions; unchanged other bytes and prefix identity are preserved, without claiming semantic package ownership for identical dependency tokens. \[522] [522]
 - For a complete paired leaf worklist, the closeout gate checks changed paths with the master landing entry-currentness predicate. It compares the recorded code base directly with the candidate tree. [523]
 
-- The write route resolves the caller outside the handoff and supplies the owner-specific stamp. [530]
-- The answer carries record standing independently of code currentness. [531]
-- The bounded writers view retains the report path and selection's counts. [532]
+- The write route resolves the caller outside the handoff and supplies the owner-specific stamp. [533]
+- The answer carries record standing independently of code currentness. [534]
+- The bounded writers view retains the report path and selection's counts. [535]
 
 - The writer reads and authors the handoff, checks history, renders changes, and validates the resulting candidate before it writes or refuses. [265]
 - The writer validates before finishing and appends raised questions before it writes the knowledge files. [462]

@@ -353,14 +353,15 @@
       ]
     },
     "14": {
-      "note": "Reference-only justifications are refused, and real prose is admitted.\n\nAnchor: `test_a_new_record_whose_justification_is_only_a_reference_is_refused`",
+      "note": "Reference-only justifications are refused, and real prose is admitted.\n\nAnchor: “test_a_new_record_whose_justification_is_only_a_reference_is_refused”",
       "targets": [
         {
           "anchor": {
-            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
-            "content": "sha256:2872079c064fd035ad0a25e8d43839a5893228d43b3b62f0c5e5de769d3b1504",
+            "blob": "4ca65397b8e96a8db7409c43db097e9532ba60e7",
+            "content": "sha256:2e1adff8e4ca30a9efc92007911cf11d3586e8d94d0c0d8310a01af0e0a3f5e2",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_new_record_whose_justification_is_only_a_reference_is_refused"
             },
             "path": "mcp/tests/test_knowledge_validator.py"
           },
@@ -373,7 +374,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+            "blob": "4ca65397b8e96a8db7409c43db097e9532ba60e7",
             "content": "sha256:ec67874178091892a6e34378d016f7adbe8bb9da1c31fc8b47f5a61bd0926a91",
             "locator": {
               "kind": "symbol",
@@ -477,14 +478,15 @@
       ]
     },
     "17": {
-      "note": "A forged legacy ID does not make a record exported.\n\nAnchor: `test_a_forged_legacy_id_does_not_make_a_record_exported`",
+      "note": "A forged legacy ID does not make a record exported.\n\nAnchor: “test_a_forged_legacy_id_does_not_make_a_record_exported”",
       "targets": [
         {
           "anchor": {
-            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
-            "content": "sha256:2872079c064fd035ad0a25e8d43839a5893228d43b3b62f0c5e5de769d3b1504",
+            "blob": "4ca65397b8e96a8db7409c43db097e9532ba60e7",
+            "content": "sha256:bbd9c327613f4d68d165ad77f34e957df6c2dfee8dd1cbecbd97c50031c16083",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_forged_legacy_id_does_not_make_a_record_exported"
             },
             "path": "mcp/tests/test_knowledge_validator.py"
           },
@@ -497,7 +499,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "blob": "b2cb52a7cdcd2d8f0d4a8d4d49d3f83b36f4f590",
             "content": "sha256:7e48993ba5bdb343df0182dfe1029efbb930397557db7522e8449a5cd59ea14b",
             "locator": {
               "kind": "symbol",

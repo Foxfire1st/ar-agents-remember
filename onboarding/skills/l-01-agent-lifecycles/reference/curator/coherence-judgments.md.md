@@ -10,6 +10,8 @@ The Curator's rules for preparing a coherence judgment: what the full catalog pr
 
 ## Code Commentary
 
+Use the candidate report from `prepare` to check the code tree, memory tree and candidate-set digest. If any binding changes, prepare again before publication. Once the binding matches, call `publish` directly. The tool has no separate write preview. Support every prepared surface with evidence you read. Carry an earlier judgment only after checking the current evidence and confirming that both the surface and its evidence are unchanged. Give a fresh judgment whenever the surface, its evidence or its disposition changes.
+
 In a full `memory_quality_check` answer, `finalFullCatalog` is the projection for later certification (affected closure, census certification, `finalizationEligible`) and not a leaf gate; the leaf's memory gates are closeout readiness, current coherence and integrity. A `curator_coherence` publication sets `semantic_requirement_revision` to the leaf's primary requirement as `<ID>@v<N>`, `delivery_attempt` to the Worker's attempt identifier, and each judgment's `evidenceRef` to one existing file with its namespace. Dispositions describe what happened to the artifact: `reconciled` (content corrected, one history row; a citation pointing elsewhere changes content, a refreshed hash of the same anchor does not), `extended` or `superseded` (cite the governing requirement or decision), `preserved`, `no-content-impact` and `no-route-impact` (bytes unchanged), `contradicted` (reported to its owner as a blocker) and `capture-candidate` (reported, never closing a judgment alone).
 
 ## Evidence
@@ -17,3 +19,6 @@ In a full `memory_quality_check` answer, `finalFullCatalog` is the projection fo
 - The full catalog projection is not a leaf gate. [1]
 - Publication binds the requirement revision, delivery attempt and per-judgment evidence file. [2]
 - The disposition table defines each judgment outcome. [3]
+
+- Read evidence for each prepared surface and resolve every judgment. Carry a judgment only after confirming from current evidence that its surface and evidence are unchanged. A change to the surface, evidence or disposition requires a fresh judgment. [4]
+- Preparation supplies the report for checking both trees and the candidate-set digest. A matching binding permits direct publication. [5]

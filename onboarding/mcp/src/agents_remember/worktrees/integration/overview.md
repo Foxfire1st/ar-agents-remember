@@ -97,7 +97,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 ## Evidence
 
-- The direct-landing success response carries an optional review note after publication proof. [31]
+- The direct-landing success response carries an optional review note after publication proof. [32]
 
 - Retained reference account (no fresh execution or acceptance inferred): Exact integration selection and original-publication readback precede suffix execution. [1]
 - Retained reference account (no fresh execution or acceptance inferred): Completed organizational proof binds original selected references through the operation owner. [2]

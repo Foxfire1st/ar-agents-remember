@@ -1,14 +1,33 @@
 {
   "path": "mcp/src/agents_remember/cli/knowledge_format.py",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e09b3eacede7c4b7bba1049696e3e1042aa0c9bf",
+        "content": "sha256:f2ca79362c322b5140484a1be3ead378e583235896169f6fcb4d5b6d1c57c2cc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_directory_json_files"
+        }
+      },
+      "id": "RLZ-MQ76S2",
+      "invariant": "INV-FSWRVN",
+      "origin": {
+        "handoffEntry": "BUG-R24@v1 rule 1 formatter",
+        "leaf": "261112-BUG-L24"
+      },
+      "rationale": "Uses the existing converted-memory predicate to bind dot-directory traversal to the resolved knowledge roots and still skips route-index caches.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Arguments.",
       "targets": [
         {
           "anchor": {
-            "blob": "afce21dceaadba6f8064fc3dec3b80af7bccf765",
+            "blob": "e09b3eacede7c4b7bba1049696e3e1042aa0c9bf",
             "content": "sha256:59d6797cdfe276925773aa379520e22400ea84cfb55c9262dac47adc36bc5707",
             "locator": {
               "kind": "symbol",
@@ -20,23 +39,23 @@
       ]
     },
     "2": {
-      "note": "Cache files and hidden directories are skipped through the validator's shared predicate.",
+      "note": "Directory operands include dot paths within the knowledge or onboarding subtrees of a converted memory root. The directory walk shares the validator’s generated-cache exclusion.",
       "targets": [
         {
           "anchor": {
-            "blob": "afce21dceaadba6f8064fc3dec3b80af7bccf765",
-            "content": "sha256:f92bfbf299e6245829812ffb5c6f0e29b453005a56e327d9120172061b11ab4a",
+            "blob": "e09b3eacede7c4b7bba1049696e3e1042aa0c9bf",
+            "content": "sha256:f2ca79362c322b5140484a1be3ead378e583235896169f6fcb4d5b6d1c57c2cc",
             "locator": {
               "kind": "symbol",
-              "name": "iter_json_files"
+              "name": "_directory_json_files"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
-            "content": "sha256:312f01489db650ccd1a6f99d36ea871efa7ddecdf6df5314c968292a8ec2e31a",
+            "blob": "c3103e5abc75d3a1f67a8bbb3fce61e729316ce7",
+            "content": "sha256:16c71a5be091ef28e6bbc5e00c9c31757940febf3bbafadfc8e5518f3ffd0221",
             "locator": {
               "kind": "symbol",
               "name": "is_excluded_from_knowledge"
@@ -52,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "afce21dceaadba6f8064fc3dec3b80af7bccf765",
+            "blob": "e09b3eacede7c4b7bba1049696e3e1042aa0c9bf",
             "content": "sha256:eb5fd9546e0db5a1f81f94a4cc67fb856a4ad1e5292ff29d2e069695feb1b7ef",
             "locator": {
               "kind": "symbol",
@@ -80,12 +99,12 @@
       ]
     },
     "5": {
-      "note": "The command's check, rewrite and skip behaviour is tested end to end.",
+      "note": "The formatter test checks rewrites across equivalent and containing operands, including hidden memory files, and preserves generated caches and Git metadata.",
       "targets": [
         {
           "anchor": {
-            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
-            "content": "sha256:218d5b1303ee29ab8c8f199c4965e801ccad2985a0d147ce67a32543ee9c4701",
+            "blob": "a4ecbb879e692e08b8c029e0c8ab567479c6a44f",
+            "content": "sha256:52f97ece781280dfce7651dfb24c2b71a685be2d74a4d4fe0e88d43d3cb3ef1b",
             "locator": {
               "kind": "symbol",
               "name": "test_knowledge_format_command_checks_rewrites_and_skips_caches"

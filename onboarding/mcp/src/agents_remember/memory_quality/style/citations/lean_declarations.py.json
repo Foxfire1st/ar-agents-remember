@@ -1,0 +1,77 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_declarations.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bba91a94e7d5bb213a19b70affe980d1b3702429",
+        "content": "sha256:e58ae791370ebe8dbe7103fcdbeb1954facbbc067107978fb43f734f223b0937",
+        "locator": {
+          "kind": "symbol",
+          "name": "declarations"
+        }
+      },
+      "id": "RLZ-9MWVFQ",
+      "invariant": "INV-WZ8R0Q",
+      "origin": {
+        "handoffEntry": "SUB-R01-lean-source",
+        "leaf": "261123-SUB-L1"
+      },
+      "rationale": "Tracks command layout, prefixes and nesting to emit named extents.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "bba91a94e7d5bb213a19b70affe980d1b3702429",
+        "content": "sha256:b870107ec2aaff03aec5941cca401328f839142654eac353671d3a2546c046d7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_Scan._read_name"
+        }
+      },
+      "id": "RLZ-HFS88S",
+      "invariant": "INV-R1R0Q8",
+      "origin": {
+        "handoffEntry": "SUB-R02@v1 rule 4 alias commands",
+        "leaf": "261123-SUB-L2"
+      },
+      "rationale": "Emits each alias name through the ordinary declaration binding path using the alias keyword start and target end.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`declarations` scans the masked physical lines and emits named source extents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bba91a94e7d5bb213a19b70affe980d1b3702429",
+            "content": "sha256:e58ae791370ebe8dbe7103fcdbeb1954facbbc067107978fb43f734f223b0937",
+            "locator": {
+              "kind": "symbol",
+              "name": "declarations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The scanner emits each alias binder with the shared command extent once the target is complete.\n\nAnchor: `_Scan._read_name`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bba91a94e7d5bb213a19b70affe980d1b3702429",
+            "content": "sha256:b870107ec2aaff03aec5941cca401328f839142654eac353671d3a2546c046d7",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 436
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

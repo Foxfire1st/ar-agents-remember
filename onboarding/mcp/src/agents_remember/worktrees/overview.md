@@ -31,7 +31,7 @@ Finalization proves completed branch results and settled parked work, writes the
 
 Closeout and landing use exact code/memory Git history. The current consumer ledger derives mappings solely from committed `Code-Commit:` attribution; a cached `memory.md` table cannot contribute missing mappings or Git proof. Absent, malformed or unreadable cache bytes are a cache miss, while unreadable Git history remains a distinct refusal. Invalid code attributions are reported. Current publication uses code plus at most one substantive memory output rather than the historical third ledger-commit leg. Memory content/status/index comparisons exclude root `memory.md`; ordinary code-file semantics, substantive conflicts, ancestry and compare-and-swap checks remain.
 
-A managed memory merge with any converted side obtains its structural knowledge/onboarding plan before Git starts. All-converted inputs merge structurally as they stand; crossing inputs convert legacy sides first. The plan replaces the started merge's knowledge/onboarding paths and retains real conflicts with their stage versions. A durable report is selected for conflicts, conversion, renumbered references, kept evidence lines or skipped cards; an otherwise clean plan does not gain a report merely because cards aligned. Before a memory merge commit, the route closes applicable crossing history, validates the exact staged tree against both parents and its settled code partner, and proves the resulting commit has the pinned parents. A validation refusal leaves the merge staged for repair and continuation. Fast-forward plans do not enter the staged-merge validator, but incoming converted-memory trees now validate separately before refs move; their refusal names source repair and a fresh sync. Skip and already-current plans do not invent a memory movement.
+A managed memory merge with any converted side obtains its structural knowledge/onboarding plan before Git starts. All-converted inputs merge structurally as they stand; crossing inputs convert legacy sides first. The plan overlays only modeled knowledge and onboarding paths. Git retains the mode, object and stage entries for unmodeled paths. A durable report is selected for conflicts, conversion, renumbered references, kept evidence lines or skipped cards; an otherwise clean plan does not gain a report merely because cards aligned. Before a memory merge commit, the route closes applicable crossing history, validates the exact staged tree against both parents and its settled code partner, and proves the resulting commit has the pinned parents. A master that pauses on a structural content conflict opens history for crossing writes. A validation refusal retains the merge for repair and reopens only checkpoint-owned closing history. Fast-forward plans do not enter the staged-merge validator, but incoming converted-memory trees now validate separately before refs move; their refusal names source repair and a fresh sync. Skip and already-current plans do not invent a memory movement.
 
 ## Construction And Ownership
 
@@ -209,8 +209,8 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 ## Evidence
 
-- History closing writes the eligible review fact in the same update and preserves already-closed bytes. [112]
-- Direct landing reads the selected owner's review against the checkout before the cache-ignore or history writes. [113]
+- History closing writes the eligible review fact in the same update and preserves already-closed bytes. [114]
+- Direct landing reads the selected owner's review against the checkout before the cache-ignore or history writes. [115]
 
 - Ancestry, disjoint byte paths and equal reviewed after-images define the clean-sync exception. [104]
 - The door keeps the original record-digest provenance while checking its other inputs. [105]
@@ -262,7 +262,7 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - Retained reference account (no fresh execution or acceptance inferred): The plan before Git, and its application to the started merge. [47]
 
 
-- Structural planning applies to all converted sides: conflicts, conversion, and since MIK-R66 the alignment diagnostics (aligned cards, renumbered references, kept evidence lines, skipped cards) are reported, even on a clean merge. [48]
+- The structural plan reports conflicts, conversion, renumbered references, kept evidence lines and skipped cards. A master's content-conflict park also reports its open history; aligned-card count alone does not select a report. [48]
 - Retained reference account (no fresh execution or acceptance inferred): The port and its request and view. [49]
 - The unconverted-line refusal (MIK-R46 rule 1): a tree whose official line is converted converts only through the crossing sync, and the cutover lock refuses any other attempt by name. [50]
 - Retained reference account (no fresh execution or acceptance inferred): The durable report and the master-line history file closed at commit. [51]

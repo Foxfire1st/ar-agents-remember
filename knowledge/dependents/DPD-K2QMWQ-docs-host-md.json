@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "93057354d8e50736992889cbf7edeb4a8166f21c",
+    "commit": "c54f3316c39204306abde7213c87ba9dd78bd0a4",
     "role": "curator",
-    "statement": "The host guide’s resumable-after-stop and Antigravity exact-agent Retry descriptions still match the host settings and bridge.",
-    "task": "261112-BUG-L20",
+    "statement": "The host guide’s resume after a host stop and exact-agent Antigravity Retry remain accurate because the recorded-review warning changes only the task-document write roster, while the Codex startup grant leaves those host paths intact.",
+    "task": "261112-BUG-L25",
     "uncommitted": true
   },
   "document": "docs/host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -86,7 +86,7 @@
       "path": "mcp/src/agents_remember/package_data/host-harness-homes.json"
     },
     {
-      "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+      "blob": "ed433f1461603a846547ab141a794294a4c4054a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
@@ -131,7 +131,7 @@
       "path": "mcp/src/agents_remember/application/agent_binding.py"
     },
     {
-      "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
+      "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     },
@@ -181,12 +181,12 @@
     },
     {
       "anchor": {
-        "blob": "ce8cb69bbf1c3497fde1756be28d4918ed4c3e29",
+        "blob": "ed433f1461603a846547ab141a794294a4c4054a",
         "content": "sha256:de3748c8e518eaf23bd7a75dcd82ba7c55338795f738f9d83c2ee19b9c071a54",
         "locator": {
-          "end": 579,
+          "end": 566,
           "kind": "line_range",
-          "start": 559
+          "start": 546
         },
         "path": "mcp/src/agents_remember/cli/paseo_launch.py"
       },

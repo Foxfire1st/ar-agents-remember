@@ -78,7 +78,7 @@ No additional work is asserted by this card.
 ## Evidence
 
 - The path view bounds its directory selection before adding indexed standing to record summaries. [15]
-- One query looks up the state and writer for summaries of records held by the selected index. [22]
+- One query looks up the state and writer for summaries of records held by the selected index. [23]
 
 ### Docs References
 

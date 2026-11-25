@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Reader selection keeps the historical converter reproducible when the live reader has already populated a shared code object memo with Lean spans."
+  },
+  "applicability": "Reproduction of the format 1 memory conversion.",
+  "conditions": [
+    "The format 1 converter selects the historical reader before parsing anchors or consulting a qualified-span memo."
+  ],
+  "exclusions": [
+    "Native converted card authoring."
+  ],
+  "id": "INV-4Y2AN9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_lean_card_citations.py::test_legacy_lean_citation_preserves_base_conversion_bytes"
+      ],
+      "path": "261123-SUB-L1 W9-S1 curation"
+    },
+    "handoffEntry": "SUB-R01-reproduce-legacy",
+    "leaf": "261123-SUB-L1",
+    "task": "261123-SUB"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Legacy conversion format 1 retains its pinned bytes for Lean sources.",
+  "status": "proposed",
+  "supersedes": []
+}

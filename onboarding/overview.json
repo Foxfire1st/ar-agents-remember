@@ -2912,12 +2912,12 @@
         },
         {
           "anchor": {
-            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
+            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
             "content": "sha256:ab2d1870feb094de29e4d04437eefe49a20c1bc949e4e6926fe96408cbb78683",
             "locator": {
-              "end": 192,
+              "end": 194,
               "kind": "line_range",
-              "start": 175
+              "start": 177
             },
             "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
           },
@@ -2925,12 +2925,12 @@
         },
         {
           "anchor": {
-            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
+            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
             "content": "sha256:da0b54225087c70b68ff362613557c5860bca7d5204c26c5b19d565be6316b87",
             "locator": {
-              "end": 182,
+              "end": 184,
               "kind": "line_range",
-              "start": 173
+              "start": 175
             },
             "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
           },
@@ -4269,7 +4269,7 @@
       ]
     },
     "354": {
-      "note": "Converted carryover prepares equal-format paired content and missing records in a recovery worktree without importing history or committing; ordinary leaf judgments and gated closeout own publication.",
+      "note": "Converted carryover prepares equal-format paired content and missing records in a recovery worktree without importing history or committing. The public apply proof covers eligible dot-directory pairs. Ordinary leaf judgments and gated closeout own publication.",
       "targets": [
         {
           "anchor": {
@@ -4299,12 +4299,12 @@
         },
         {
           "anchor": {
-            "blob": "6e4149f9214a030b71edf756e4be5b999668d79c",
+            "blob": "736a9d388c150a826532e5a204f6e473991d6711",
             "content": "sha256:93f20e53753f18e1b1db20174f095af6c2114477ae33eb6b6b8dd1fb2c34c195",
             "locator": {
-              "end": 293,
+              "end": 294,
               "kind": "line_range",
-              "start": 197
+              "start": 198
             },
             "path": "mcp/src/agents_remember/memory/carryover_apply.py"
           },
@@ -4312,12 +4312,12 @@
         },
         {
           "anchor": {
-            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
-            "content": "sha256:1b77c7102d619e92795861dac4712a6cc902d38e355639c21713f63669ebb10a",
+            "blob": "37e95a842b135b560393c5585b53eba5fa3d29c5",
+            "content": "sha256:59f849752ce2df7f7714eb4917d83048dc8ea423791bd2d2211216a85892943e",
             "locator": {
-              "end": 621,
+              "end": 635,
               "kind": "line_range",
-              "start": 601
+              "start": 605
             },
             "path": "mcp/tests/test_converted_carryover.py"
           },
@@ -4545,7 +4545,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63a618d4d424c0925a01f4c5ba6679895becaf04",
+            "blob": "66ef49816a8197d543c2a2962e28c19c42dc65c3",
             "content": "sha256:1556b38430b0b91643d0aca13936052e01cf50233bcb7f447833531577dd9011",
             "locator": {
               "end": 15,
@@ -4558,7 +4558,7 @@
         },
         {
           "anchor": {
-            "blob": "63a618d4d424c0925a01f4c5ba6679895becaf04",
+            "blob": "66ef49816a8197d543c2a2962e28c19c42dc65c3",
             "content": "sha256:c50f9e867d6d8ecfd6d01aba46170a274d11249ebb6817911173b74efc6ebea7",
             "locator": {
               "end": 5111,
@@ -4571,7 +4571,7 @@
         },
         {
           "anchor": {
-            "blob": "63a618d4d424c0925a01f4c5ba6679895becaf04",
+            "blob": "66ef49816a8197d543c2a2962e28c19c42dc65c3",
             "content": "sha256:a21d8fbeade96f460c50dc5451345a3d1b287f7a4a3bb84239ef8d0d75a3f85b",
             "locator": {
               "end": 5396,
@@ -4584,7 +4584,7 @@
         },
         {
           "anchor": {
-            "blob": "63a618d4d424c0925a01f4c5ba6679895becaf04",
+            "blob": "66ef49816a8197d543c2a2962e28c19c42dc65c3",
             "content": "sha256:9c5f28574f34d8206f5408394964aaf4ccfd8c658438df035a4fce7285c6ca7e",
             "locator": {
               "end": 6178,
@@ -4597,8 +4597,8 @@
         },
         {
           "anchor": {
-            "blob": "63a618d4d424c0925a01f4c5ba6679895becaf04",
-            "content": "sha256:46d23dbaf2444303fb7dd2238ff32d3d0b240ecac0bc18cba242c79d977237ab",
+            "blob": "66ef49816a8197d543c2a2962e28c19c42dc65c3",
+            "content": "sha256:4c344951152b09b79962c9208b8f21c5a84bd2b6bf77a5264c3c9556608b017b",
             "locator": {
               "end": 6265,
               "kind": "line_range",
@@ -5436,7 +5436,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+            "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
             "content": "sha256:6ea1a6086fc01dc18f9bfda9d7f0f859bedde538a3b906d26eb1dd273768545e",
             "locator": {
               "end": 122,
@@ -5778,7 +5778,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
             "content": "sha256:3b0c228ab352698cf746ed3ee50615da3a505370ac106c479079610e6fa0d5be",
             "locator": {
               "kind": "symbol",

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+        "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
         "content": "sha256:79eed616551e01614386dbb8a4a520173c0ab497f4b90b1c5e4fde40c80be8ea",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+        "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
         "content": "sha256:a1728df0ad659922a6e83babf6b38fba339cd29a309fd3d3aa0393ed8fe9d173",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,24 @@
     },
     {
       "anchor": {
-        "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+        "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
+        "content": "sha256:c0814aa6b2dc5cd9069d375e1720e3ae9953b5a7158eb7e97189aacec73b3467",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_policy_is_a_task_agents_with_the_four_tools_granted"
+        }
+      },
+      "facet": "The bound explainer create sends the complete Codex roster with the four explainer tools and preserves the exact Claude identity-and-explainer grant.",
+      "id": "PRF-J43X49",
+      "invariant": "INV-Z17EHY",
+      "origin": {
+        "handoffEntry": "BUG-R31@v1-start-grant",
+        "leaf": "261112-BUG-L31"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
         "content": "sha256:54ad25438155a8811374bf50638a5b9b379b41f033598f1478465f876bc15b60",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+        "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
         "content": "sha256:fc46c2a1810f4dcca0f8e000760e7ddd8a3c98eb48a69a3876d424e237e4a069",
         "locator": {
           "kind": "symbol",
@@ -71,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+        "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
         "content": "sha256:6ca1b39639c53c08ffa3877f362265824430318f6ef79c1cee2378483d333005",
         "locator": {
           "kind": "symbol",
@@ -94,12 +111,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+            "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
             "content": "sha256:806c45493bacbf420bba47f97bf25cb6003d7906be4a9a94fbf2a6ec1b2895c9",
             "locator": {
-              "end": 238,
+              "end": 239,
               "kind": "line_range",
-              "start": 195
+              "start": 196
             }
           },
           "kind": "test"
@@ -111,12 +128,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+            "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
             "content": "sha256:f8946e6b5d4c1f9500e0e367e3127eb1b79af72d81d49acb669eb914b6de309b",
             "locator": {
-              "end": 535,
+              "end": 534,
               "kind": "line_range",
-              "start": 490
+              "start": 489
             }
           },
           "kind": "test"
@@ -128,12 +145,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+            "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
             "content": "sha256:79eed616551e01614386dbb8a4a520173c0ab497f4b90b1c5e4fde40c80be8ea",
             "locator": {
-              "end": 578,
+              "end": 577,
               "kind": "line_range",
-              "start": 536
+              "start": 535
             }
           },
           "kind": "test"
@@ -145,12 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+            "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
             "content": "sha256:49f9670479181d7233316d5fe891df1d6ae5eb20a3f9ee03fb1e838d6bc7fabf",
             "locator": {
-              "end": 421,
+              "end": 420,
               "kind": "line_range",
-              "start": 346
+              "start": 345
             }
           },
           "kind": "test"
@@ -162,12 +179,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+            "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
             "content": "sha256:3a0c86d2bcf485900c7b00d80913123a80335e48a10af80758165d2dde7e0063",
             "locator": {
-              "end": 488,
+              "end": 487,
               "kind": "line_range",
-              "start": 423
+              "start": 422
             }
           },
           "kind": "test"
@@ -179,12 +196,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+            "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
             "content": "sha256:a1728df0ad659922a6e83babf6b38fba339cd29a309fd3d3aa0393ed8fe9d173",
             "locator": {
-              "end": 1128,
+              "end": 1127,
               "kind": "line_range",
-              "start": 1050
+              "start": 1049
             }
           },
           "kind": "test"
@@ -196,7 +213,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+            "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
             "content": "sha256:54ad25438155a8811374bf50638a5b9b379b41f033598f1478465f876bc15b60",
             "locator": {
               "kind": "symbol",
@@ -208,15 +225,16 @@
       ]
     },
     "8": {
-      "note": "The policy case grants Claude server_info and the four explainer tools, and omits toolPolicy for Codex.",
+      "note": "The policy case asserts the exact Codex public roster and Claude server_info, each with the four tools on the bound explainer server.",
       "targets": [
         {
           "anchor": {
-            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
-            "content": "sha256:3224a7f50c9b23d6f037bc49ec3703a792874e6a81a9966d7eef4ab201aa130f",
+            "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
+            "content": "sha256:ad3a4a473312f82d01d5ac34e89dbf810b07c52ccf0ff9fac9b1e9ca612c2fd1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_policy_is_a_task_agents_with_the_four_tools_granted"
+              "end": 279,
+              "kind": "line_range",
+              "start": 242
             }
           },
           "kind": "test"
@@ -228,7 +246,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d673532b0d0ca32da925c7dc7c5480b3b9ac63f5",
+            "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
             "content": "sha256:5589a062a0131069d27a1db2b7237611c1b4fb83ea41289d1ab023986803ff38",
             "locator": {
               "kind": "symbol",

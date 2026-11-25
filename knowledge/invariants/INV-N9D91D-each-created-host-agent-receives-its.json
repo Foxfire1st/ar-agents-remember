@@ -4,17 +4,17 @@
       "spans_locations",
       "family_guarantee"
     ],
-    "justification": "Spans host agents and the AR server: one bound server per created agent plus narrow Claude-only server_info preapproval, with D124's assignment_read removal, bounds the multi-agent surface FAM-N17BB4 launches into."
+    "justification": "The provider capability, agent-bound definition, provider-specific grant and retired assignment reader jointly bound what the role launch supplies to the host. FAM-N17BB4 accounts for this boundary with the other inputs of a valid create."
   },
   "applicability": "Role launches under the runtime provider capability branch.",
   "conditions": [
     "The task-server definition is supplied only when accepts_tool_servers is true.",
-    "Any preapproval is the Claude-only server_info identity read."
+    "The exact Codex provider gets the starting build's public roster on the bound server. The exact Claude provider gets only server_info. Other provider IDs get no preapproval."
   ],
   "exclusions": [
     "The removed assignment_read grant and any alternative task reader.",
-    "Broad tool grants, which no launch carries.",
-    "An unconditional one-server or host-actual exclusion claim for a provider that declares supportsMcpServers=false."
+    "An unconditional one-server or host-actual exclusion claim for a provider that declares supportsMcpServers=false.",
+    "Any claim that the first agent turn consumed the definition or that the grant governs ambient servers or shell commands."
   ],
   "id": "INV-N9D91D",
   "origin": {
@@ -28,9 +28,9 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "A created host agent whose provider accepts MCP definitions receives its own bound AR task-server definition; an explicitly unsupported provider receives no definition and no harness-configuration fallback. Claude-only preapproval remains narrow server_info identity access. D124 removes assignment_read and its former grant, not a replacement task reader.",
+  "statement": "An ordinary role launch supplies its own bound AR task-server definition when the provider accepts MCP definitions. The launch policy grants Codex the full starting public roster and grants Claude server_info for the session. A provider that explicitly refuses tool servers receives no definition or harness-configuration fallback. The assignment_read tool and its former grant stay retired under D124.",
   "status": "proposed",
   "supersedes": []
 }

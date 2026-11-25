@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
-        "content": "sha256:44560f69157a8e4c415357e36a9724de9d9a3b03f7c865be19a5df27910960e3",
+        "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+        "content": "sha256:428595608b8a1b54f76b915537355cc15a663140b16c860d5402290c44d27978",
         "locator": {
           "kind": "symbol",
           "name": "qualified_spans"
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
+        "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+        "content": "sha256:428595608b8a1b54f76b915537355cc15a663140b16c860d5402290c44d27978",
+        "locator": {
+          "kind": "symbol",
+          "name": "qualified_spans"
+        }
+      },
+      "id": "RLZ-2WHJT7",
+      "invariant": "INV-XA55TP",
+      "origin": {
+        "handoffEntry": "SUB-R01-symbol-lookup",
+        "leaf": "261123-SUB-L1"
+      },
+      "rationale": "Stops Lean lookup after the whole-name check.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
         "content": "sha256:2c88a2e8c657049a41c91c344d81312faa596ac04fb38d3aeeb94f5a7c63d5b2",
         "locator": {
           "kind": "symbol",
@@ -39,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
-        "content": "sha256:b3f425afc5bb667c1a95cf8843c82cfe77cfae99923d22e6947bbee4b0382a10",
+        "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+        "content": "sha256:39e53668a40407fc6d862ccbaa2d0ea7a63201fa4235d2e2fa9d9f0ace98c221",
         "locator": {
           "kind": "symbol",
           "name": "definitions"
@@ -54,6 +72,24 @@
       },
       "rationale": "Only parsed definitions are reused; each caller still computes its own observations.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+        "content": "sha256:6bfe2019d1c09093fa73eb95259cf83dc3a12cce93bad85b09b544beed31d850",
+        "locator": {
+          "kind": "symbol",
+          "name": "uncertain_lean_scope"
+        }
+      },
+      "id": "RLZ-ES6JD3",
+      "invariant": "INV-0KYRK9",
+      "origin": {
+        "handoffEntry": "SUB-R01-uncertain-lean-scope",
+        "leaf": "261123-SUB-L1"
+      },
+      "rationale": "Matches precise complete possible names and keeps separate verified names usable.",
+      "role": "unclassified"
     }
   ],
   "references": {
@@ -62,8 +98,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
-            "content": "sha256:091607c5bb651e0733d98dbccc7285e4010bb1f1245273cc0f88b7568d98590c",
+            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+            "content": "sha256:487723f72105d320e816890abb2e0d9889deaa7a04a0ac8c86b3e008367174de",
             "locator": {
               "kind": "file"
             }
@@ -77,8 +113,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
-            "content": "sha256:091607c5bb651e0733d98dbccc7285e4010bb1f1245273cc0f88b7568d98590c",
+            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+            "content": "sha256:487723f72105d320e816890abb2e0d9889deaa7a04a0ac8c86b3e008367174de",
             "locator": {
               "kind": "file"
             }
@@ -92,8 +128,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
-            "content": "sha256:091607c5bb651e0733d98dbccc7285e4010bb1f1245273cc0f88b7568d98590c",
+            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+            "content": "sha256:487723f72105d320e816890abb2e0d9889deaa7a04a0ac8c86b3e008367174de",
             "locator": {
               "kind": "file"
             }
@@ -107,8 +143,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
-            "content": "sha256:091607c5bb651e0733d98dbccc7285e4010bb1f1245273cc0f88b7568d98590c",
+            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+            "content": "sha256:487723f72105d320e816890abb2e0d9889deaa7a04a0ac8c86b3e008367174de",
             "locator": {
               "kind": "file"
             }
@@ -122,24 +158,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
-            "content": "sha256:67c0e29985a4dc3fb48a2cc4dfacb4f6047abe9c6817ff3805739d404ba192bd",
+            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+            "content": "sha256:c9b8899706995283bded3f872ea9063dec83fdd343744e56f30950c10e41ee02",
             "locator": {
-              "end": 101,
+              "end": 109,
               "kind": "line_range",
-              "start": 64
+              "start": 70
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
-            "content": "sha256:44560f69157a8e4c415357e36a9724de9d9a3b03f7c865be19a5df27910960e3",
+            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+            "content": "sha256:017d698e5b5183951caf4802373fca96a685edff9b182565566bebe832039dbc",
             "locator": {
-              "end": 136,
+              "end": 151,
               "kind": "line_range",
-              "start": 110
+              "start": 118
             }
           },
           "kind": "code"
@@ -151,11 +187,39 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b652fa3e2ccbb722fbc069b3cbb8904f2f9777f6",
+            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
             "content": "sha256:2c88a2e8c657049a41c91c344d81312faa596ac04fb38d3aeeb94f5a7c63d5b2",
             "locator": {
               "kind": "symbol",
               "name": "definition_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "53": {
+      "note": "Whole-name lookup preserves room for unresolved Lean scope and applies dotted containment only to other readers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+            "content": "sha256:428595608b8a1b54f76b915537355cc15a663140b16c860d5402290c44d27978",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_spans"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+            "content": "sha256:e41690e41befc5ab81f285a943ffa9f95c526b78f1c5671fff5fa03b5e7a6789",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 118
             }
           },
           "kind": "code"

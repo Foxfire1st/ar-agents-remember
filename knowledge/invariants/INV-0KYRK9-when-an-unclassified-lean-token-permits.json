@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The scanner and each anchor consumer carry uncertainty because replacing it with a guessed namespace could attach the record to a different declaration."
+  },
+  "applicability": "Lean symbols whose exact supplied key names a declaration subject to competing lawful scope readings.",
+  "conditions": [
+    "Possible tokens remain possible when the source scan cannot prove a syntax-body boundary.",
+    "Qualification disagreement is evaluated for the declaration and its exact candidate keys."
+  ],
+  "exclusions": [
+    "Verified keys in unaffected declarations.",
+    "File and line-range anchors."
+  ],
+  "id": "INV-0KYRK9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_lean_symbol_anchors.py::test_lean_custom_precedence_with_inner_colon_keeps_scope_unverifiable"
+      ],
+      "path": "261123-SUB-L1 W9-S1 curation"
+    },
+    "handoffEntry": "SUB-R01-uncertain-lean-scope",
+    "leaf": "261123-SUB-L1",
+    "task": "261123-SUB"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "When an unclassified Lean token permits different end closures, a symbol anchor in the uncertain scope is unverifiable.",
+  "status": "proposed",
+  "supersedes": []
+}

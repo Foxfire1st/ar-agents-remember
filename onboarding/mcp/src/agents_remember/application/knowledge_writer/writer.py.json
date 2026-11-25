@@ -168,7 +168,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "blob": "b2cb52a7cdcd2d8f0d4a8d4d49d3f83b36f4f590",
             "content": "sha256:654b94ba75c1212248cbaf2ffa17769545593edae0d2756d9d1ac199fdaf8df8",
             "locator": {
               "kind": "symbol",
@@ -276,7 +276,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "blob": "ac53ee63e71fc1466cc080cb13729c0064c5ed03",
             "content": "sha256:2d725e4fb04dce11fb1a3ea1efbdbf994c3716be4bfcb804a064de312f082d5d",
             "locator": {
               "kind": "symbol",
@@ -481,7 +481,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "blob": "b2cb52a7cdcd2d8f0d4a8d4d49d3f83b36f4f590",
             "content": "sha256:6c7cbd73e32d6bf4ffb6c62b50cb78bdafcae2eca6040400f369d53261122034",
             "locator": {
               "kind": "symbol",
@@ -498,8 +498,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
-            "content": "sha256:d1cd4aa18e61cf8e9032f531fbc01e548926a54b068b8a8bacdb8294cdd8fddf",
+            "blob": "b2cb52a7cdcd2d8f0d4a8d4d49d3f83b36f4f590",
+            "content": "sha256:1ebecb0567ffa34ae3829b597e68e306500c2158f5b6e3bcd45630bfebfcd00c",
             "locator": {
               "kind": "symbol",
               "name": "test_a_master_line_crossing_records_its_rows_through_the_writer"
@@ -726,7 +726,7 @@
         }
       ]
     },
-    "41": {
+    "44": {
       "note": "The request carries a resolved caller stamp in addition to the hand-off and contract inputs.",
       "targets": [
         {
@@ -742,7 +742,7 @@
         }
       ]
     },
-    "42": {
+    "45": {
       "note": "The writer passes the resolved stamp to virtual authoring before validation and file publication.",
       "targets": [
         {
@@ -758,7 +758,7 @@
         }
       ]
     },
-    "43": {
+    "46": {
       "note": "The authoring operation assigns an unknown stamp with a reason when no caller was resolved.",
       "targets": [
         {

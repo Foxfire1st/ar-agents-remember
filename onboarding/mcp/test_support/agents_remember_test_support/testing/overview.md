@@ -10,7 +10,7 @@
 
 ## What This Area Is
 
-Repository-owned pytest isolation and evidence infrastructure. Ordinary pytest bootstrap and certifying startup are distinct. `pytest_bootstrap.py` supplies optional seeded collection ordering, an isolated cache directory for the pytest process, and the check that a test restores owned module-level state. Per-test restored rows, module-boundary reset rows and constant-for-tests rows have distinct treatments in a closed register; the register's collection-reset pass touches only already-loaded product owners. The module fixture separately imports the explicit kernel worktree-service holder and resets that object before and after the module; it is outside the syntactic collection census. The ordinary bootstrap carries no certifying or external-service capability. `certifying_bootstrap.py` admits a Dagger quality process before resolving the candidate test process.
+Repository-owned pytest isolation and evidence infrastructure. Ordinary pytest bootstrap and certifying startup are distinct. `pytest_bootstrap.py` supplies optional seeded collection ordering, an isolated cache directory for the pytest process, and the check that a test restores owned module-level state. The closed register gives per-test restored, module-boundary reset, constant-for-tests and owner-quiescent states separate treatments. Only reset rows for already-loaded product owners are reset at module boundaries. The module fixture separately imports the explicit kernel worktree-service holder and resets that object before and after the module; it is outside the syntactic collection census. The ordinary bootstrap carries no certifying or external-service capability. `certifying_bootstrap.py` admits a Dagger quality process before resolving the candidate test process.
 
 The route also owns the instruction-wording registries, readers, delivery and pointer checks, and capsule audience and budget fixtures used to check the shipped instruction corpus, plus a few single-regression helpers. The [tool-answer fixture helper](tool_answer_fixtures.py.md) owns real temporary paths of controlled width and temporary XDG settings for row measurements. These helpers do not hold an AR seat or author knowledge. Test qualification, completed curation, semantic acceptance and Git publication retain their separate authorities; running a bootstrap or validator does not itself supply acceptance. Canonical skill sources and their sole generated package copy belong to the synchronization owner, `scripts/sync-skills.py`; no harness skill mirror is produced.
 
@@ -134,7 +134,7 @@ The generated route index lists the source files of this route and their cards.
 
 
 
-- The process register declares separate reset, restored and constant-for-tests treatments. [19]
+- The process register declares separate reset, restored, constant-for-tests and quiescent treatments. [19]
 
 
 
@@ -155,5 +155,5 @@ The generated route index lists the source files of this route and their cards.
 - Manifest step derivation collects actions and reader-role associations for classified Markdown references from first-message and detail pointers. [31]
 
 - The shared factory bounds selector idle waits, and pytest restores its two factory aliases at cleanup. [32]
-- Fixture Git uses a private HOME and captures command failure output. [36]
-- Crossing fixture controls compare attributed state and writer before and after selecting or converting bytes. [37]
+- Fixture Git uses a private HOME and captures command failure output. [38]
+- Crossing fixture controls compare attributed state and writer before and after selecting or converting bytes. [39]

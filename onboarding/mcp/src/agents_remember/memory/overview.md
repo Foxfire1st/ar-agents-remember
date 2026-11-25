@@ -11,9 +11,11 @@ The route includes baseline adoption, converted recovery-leaf carryover, convers
 
 ## Hot Path Summary
 
+Recorded Lean symbol reads use whole-name lookup and preserve uncertain exact keys as unsupported locators with no ranges. The definitions memo retains scope metadata and separates script test-file classes. Native converted-card citation authoring uses the live reader. Legacy format 1 selects its historical reader before span lookup.
+
 MIK-R109 adds reverse-locator queries on `KnowledgeIndex`: `entry_sidecar`/`entry_sidecars` identify declaring sidecars, `record_paths` identifies authoritative record files, and `uuid_text_ids` resolves projected UUIDs to text IDs. They read the existing index tables; schema, derived-cache custody and text authority stay unchanged. Caller-visible naming/state projection remains in the application layer.
 
-A selected Git tree is read through objects without checkout; working-directory identity is captured with disposable Git index/object storage. Indexed JSON supplies parsed content. Nonexcluded onboarding Markdown and indexed-record Markdown companions ride alongside it unparsed for card and decision/facet comparison; record prose needs its indexed JSON sibling, onboarding prose does not. The builder skips Markdown before decoding JSON. Other tracked bytes affect the captured tree key without becoming indexed documents; derived route caches, paths under hidden directories and censuses stay excluded.
+A selected Git tree is read through objects without checkout; working-directory identity is captured with disposable Git index/object storage. Indexed JSON supplies parsed content. Nonexcluded onboarding Markdown and indexed-record Markdown companions ride alongside it unparsed for card and decision/facet comparison; record prose needs its indexed JSON sibling, onboarding prose does not. The builder skips Markdown before decoding JSON. JSON and comparison Markdown under the two knowledge roots can live in dot directories. Generated route caches and census data stay outside the index. Other tracked bytes can affect the captured tree key without becoming indexed documents.
 
 The builder parses recorded files, writes `ix_*` relationships and projects the surviving logical tables. Parsing/schema/location/duplicate-ID problems name the offending file and make the index partial; cross-document integrity belongs to the knowledge validator. A complete build is consequently not a substitute for validator acceptance. The query surface carries tree key, converted state, completeness and problems in `Answer` values for its substantive lookups. The UUID-to-text-ID helper returns a plain optional string rather than an `Answer`.
 
@@ -91,7 +93,7 @@ The separate revision-standing conversion operates on an existing text tree. It 
 
 `card_authoring.py` is a distinct converted-card reference authoring route using the code working tree. Citation rows become evidence lines and resolved sidecar references; an existing trailing reference number reauthors that number, placeholders remain prose, and missing sidecars can be constructed. Removing unreferenced entries is limited to the explicitly named card. Invalid sidecars, conflicting reuse of a cited number, and adjacent merged tables involving citations produce named card refusals. Every card is prepared before the write phase, but passing cards are written even when others were refused. Markdown and sidecar are consecutive `write_text` calls; this is not a demonstrated atomic pair or batch transaction. Cards without citation tables are untouched except the named-card pruning case.
 
-`knowledge_census/inventory.py` mechanically inventories pinned code and memory commits through Git objects. It identifies sources/artifacts and nearest governing overview routes, importing the actual overview-route selector from the lower `memory_quality/knowledge_census/files.py` reader while retaining the public census-package re-export, excluding generated caches/hidden directories; it does not read source content or author semantic claims. Unreadable baseline commits/trees refuse without an inventory. `writer.py` checks census candidate files against the existing base before publication, refuses unconverted memory and uses per-file atomic writes. Initial creation writes inventory first and baseline last as its commit point; inventory-only interrupted creation is refused by validation and can be completed by retry. This is not an all-files transaction. Bounded census measurement/reporting belongs to memory-quality owners; the earlier migration-to-canonical-store writer is retired.
+`knowledge_census/inventory.py` mechanically inventories pinned code and memory commits through Git objects. It identifies sources/artifacts and nearest governing overview routes, importing the actual overview-route selector from the lower `memory_quality/knowledge_census/files.py` reader while retaining the public census-package re-export. Artifact enumeration includes dot directories and excludes generated route caches. It inventories paths without reading source content or authoring semantic claims. Unreadable baseline commits/trees refuse without an inventory. `writer.py` checks census candidate files against the existing base before publication, refuses unconverted memory and uses per-file atomic writes. Initial creation writes inventory first and baseline last as its commit point; inventory-only interrupted creation is refused by validation and can be completed by retry. This is not an all-files transaction. Bounded census measurement/reporting belongs to memory-quality owners; the earlier migration-to-canonical-store writer is retired.
 
 `durable_evidence.py` defines `<task_root>/notes/reports` once because evidence must survive cleanup of enclosure/worktree-group directories. Single-artifact publication retains its one-plain-filename rule; directory-shaped comparison generations derive their root here instead of inventing a second durable location.
 
@@ -181,7 +183,7 @@ Anchor: Build charter, `ParsedTree`, `_parse_knowledge_file`
 
 - Retained reference account (no fresh execution or acceptance inferred): The bound-checked line-range observation. [18]
 
-- Retained reference account (no fresh execution or acceptance inferred): The symbol observation carrying every defining extent. [19]
+- A recorded symbol observation returns the defining extents when the selected key is established. [19]
 
 - Retained reference account (no fresh execution or acceptance inferred): **The partition arithmetic and its four rules, with the one predicate behind both the bucket and the exclusive-outside label.** [20]
 
@@ -372,13 +374,15 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowle
 - Carryover admits matching converted roots; unconverted inputs retain central conversion refusal. Planning reads candidate evidence without writing memory. [116]
 - Carryover checks the central cutover refusal for an unconverted input; converted apply requires the exact configured open recovery leaf. [149]
 
+
 - KnowledgeIndexCache binds its namespace to the loaded build digest and uses a private namespace when that digest is unavailable; only known-build datasets are reused. [175]
+
 - open_cached_index opens only the loaded build namespace and performs no usage bookkeeping; an unknown digest yields no reusable index. [176]
 
-- Index build derives current standing and writer evidence from one selected tree. [185]
-- The declared cache schema stores both current standing and per-revision writer evidence. [186]
-- Revision-standing conversion plans stored state-word removal and companion review facts. [187]
-- Crossing merges authored fields and applies selected-side or product writer evidence. [188]
+- Index build derives current standing and writer evidence from one selected tree. [189]
+- The declared cache schema stores both current standing and per-revision writer evidence. [190]
+- Revision-standing conversion plans stored state-word removal and companion review facts. [191]
+- Crossing merges authored fields and applies selected-side or product writer evidence. [192]
 
 - Retained reference account (no fresh execution or acceptance inferred): The two proof lookups. [113]
 - Retained reference account (no fresh execution or acceptance inferred): The count model that refuses its own arithmetic contradiction at construction. [44]

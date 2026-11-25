@@ -17,6 +17,8 @@ The explainer seat’s adapter to the Paseo host: create or adopt without a firs
 - `create_seat` refuses an unlabelled repository, a capability label other than the class's own, and a role setting the runtime cannot honour; `send` reconciles a lost outcome by asking the host whether the message id is present before anything is re-sent, and reports a busy or permission-pending answer as held rather than as denied.
 - `cancel` names this one agent and request and leaves the seat unarchived — reporting the request uncertain when the host knows no such seat — while `in_turn` fails closed on absent turn facts yet reads a host-named `closed` seat as not in a turn.
 
+Create supplies the capsule as instructions and uses the shared seat policy for the bound task server. Codex receives the full public roster and the four explainer tools. Claude receives `server_info` and the four explainer tools.
+
 ## Evidence
 
 
@@ -40,7 +42,9 @@ The explainer seat’s adapter to the Paseo host: create or adopt without a firs
 
 
 
-- Create carries the capsule as instructions. Claude receives preapproval for server_info and the four explainer tools, while Codex receives no toolPolicy. [4]
+
+- Creation carries the capsule as instructions and grants each seat its provider's tools on its own server. Codex gets the public roster plus the four explainer additions. Claude gets server_info plus those additions. [4]
+
 
 
 - Create and adoption store the normalized host mode separately from the requested choice. A differing or absent report remains observable. [8]

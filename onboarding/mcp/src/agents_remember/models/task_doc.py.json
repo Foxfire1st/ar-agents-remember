@@ -4,7 +4,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
+        "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
+        "content": "sha256:8eec489a710525c3e91a090ce1b59e685b3823f0fd354ac7a44af83b8b9e1b1b",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocResponse"
+        }
+      },
+      "id": "RLZ-7R8G44",
+      "invariant": "INV-SH4THY",
+      "origin": {
+        "handoffEntry": "BUG-R25@v1 part 2",
+        "leaf": "261112-BUG-L25"
+      },
+      "rationale": "Admits the optional warning in the validated whole result.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
         "content": "sha256:534988e751301562441c516dc17d4837682b91d24e56d158ab9677bd92d87581",
         "locator": {
           "kind": "symbol",
@@ -85,16 +103,16 @@
       ]
     },
     "11": {
-      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L215–L237",
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
+            "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
             "content": "sha256:5c30e0ea7d83307edc26375e86a6a52b98fee24e8dd5b11983ff02b40b31a8a1",
             "locator": {
-              "end": 278,
+              "end": 279,
               "kind": "line_range",
-              "start": 256
+              "start": 257
             }
           },
           "kind": "code"
@@ -106,7 +124,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
+            "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
             "content": "sha256:aaa38972ef8dd03ed155819997608978c0d0ae462167c6d9b2c4ef58d1b7d968",
             "locator": {
               "end": 151,
@@ -118,12 +136,12 @@
         },
         {
           "anchor": {
-            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
+            "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
             "content": "sha256:bdef489820cb7c1b84c43ed89b4da3c50307f638d2d5bb2341705c0633378b3a",
             "locator": {
-              "end": 185,
+              "end": 186,
               "kind": "line_range",
-              "start": 179
+              "start": 180
             }
           },
           "kind": "code"
@@ -131,14 +149,31 @@
       ]
     },
     "13": {
-      "note": "Optional rowSurvey and taskArchive admit the archive producers' survey and enclosure outcomes. [13]\n\nAnchor: `TaskDocResponse`",
+      "note": "Optional rowSurvey and taskArchive admit the archive producers' survey and enclosure outcomes. \\[13]",
       "targets": [
         {
           "anchor": {
-            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
-            "content": "sha256:9f194297b90b3506084075dd0ab19c5e0d585da2b540db98b51381c09352e4b3",
+            "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
+            "content": "sha256:25752fb8654fed659e66ca16cf1045938d6510a457aa38b3b47be5ef3bbb8101",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The strict response accepts optional warning text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
+            "content": "sha256:3c1b62900a6a565b835921ab4df1492a70613f3b5f37ab18c2448a815482c229",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 173
             }
           },
           "kind": "code"
@@ -232,8 +267,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
-            "content": "sha256:94f747b86d9b9d6a5b82c223ebcbd4c31bb795fbf3d0c63f919f661a7840fdc4",
+            "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
+            "content": "sha256:8eec489a710525c3e91a090ce1b59e685b3823f0fd354ac7a44af83b8b9e1b1b",
             "locator": {
               "kind": "symbol",
               "name": "TaskDocResponse"
@@ -248,8 +283,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7686f712ca0ec8f72ebe994c6927c2f9131ebba3",
-            "content": "sha256:9f194297b90b3506084075dd0ab19c5e0d585da2b540db98b51381c09352e4b3",
+            "blob": "4ee2396b00090b45f5cc2518d5bb66b4197b979a",
+            "content": "sha256:25752fb8654fed659e66ca16cf1045938d6510a457aa38b3b47be5ef3bbb8101",
             "locator": {
               "kind": "file"
             }

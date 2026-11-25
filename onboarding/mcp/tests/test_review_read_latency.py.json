@@ -389,12 +389,12 @@
         },
         {
           "anchor": {
-            "blob": "b6f33379e6184a3f66a3f15339e17ad8fc5e0e1a",
+            "blob": "e387e20d2d112b8a2e55682a24f40865dfcbc25c",
             "content": "sha256:5dd651d82824d450983570afcf4503c02f16853a8a398fd7e04f9688b38f7c3c",
             "locator": {
-              "end": 369,
+              "end": 373,
               "kind": "line_range",
-              "start": 334
+              "start": 338
             },
             "path": "mcp/tests/test_read_anchor_memo.py"
           },

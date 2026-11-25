@@ -37,8 +37,8 @@ A record request with `remove: true` removes the stored record file and its Mark
 - Placement delegates revision calculation and records the writer before storing the record. [33]
 - Record fields are merged and links are resolved before placement. The decision default is its lifecycle word active. [34]
 - An unmerged record resolves above the higher side. Other records compare meaning with the applicable base. [44]
-- A raised or new revision carries the resolved writer and its exact meaning digest in the open attempt. [65]
-- Base-number placements retain the base stamp and unchanged same-writer placements retain the prior stamp. [66]
+- A raised or new revision carries the resolved writer and its exact meaning digest in the open attempt. [67]
+- Base-number placements retain the base stamp and unchanged same-writer placements retain the prior stamp. [68]
 
 - Every dependent write is a confirmation of the task's tip, refused without this task's attribution and judgment.
 

@@ -295,7 +295,7 @@
         }
       ]
     },
-    "14": {
+    "16": {
       "note": "The index builds record standing and the named-revision rows together in its write transaction.",
       "targets": [
         {
@@ -312,7 +312,7 @@
         }
       ]
     },
-    "15": {
+    "17": {
       "note": "A converted review catalog is parsed as review evidence separately from owner attempts.",
       "targets": [
         {
@@ -489,7 +489,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
             "content": "sha256:c8d0758a2993716516d8d13d17f86d4c5bcf9a31877b3cb01af414839345552c",
             "locator": {
               "kind": "symbol",
@@ -501,7 +501,7 @@
         },
         {
           "anchor": {
-            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "blob": "17293208a581880a1492f64ecf8750ba44e9dde5",
             "content": "sha256:072445b5f786964f51e85ccdb9940ef25ff81dd1fb13da0b74564894bbb565ea",
             "locator": {
               "kind": "symbol",

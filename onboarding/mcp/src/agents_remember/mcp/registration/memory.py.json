@@ -119,14 +119,15 @@
       ]
     },
     "12": {
-      "note": "The scope object the citation operations share: it carries one named document or a bounded list of them, and refuses both selectors, an empty list, or a list outside `citation_fix`.\n\nAnchor: `CitationOperationScope`",
+      "note": "The scope object the citation operations share: it carries one named document or a bounded list of them, and refuses both selectors, an empty list, or a list outside `citation_fix`.\n\nAnchor: “CitationOperationScope”",
       "targets": [
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
-            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+            "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "CitationOperationScope"
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -135,14 +136,16 @@
       ]
     },
     "13": {
-      "note": "The one scope value the citation operations share: the application entry points default to `DEFAULT_CITATION_OPERATION_SCOPE`, and the registration constructs the named-document scope it passes in.\n\nAnchor: `_citation_trees`",
+      "note": "The shared citation scope defaults to the whole card population when no document selector is supplied.\n\nAnchor: “CitationOperationScope.selected_documents”",
       "targets": [
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
-            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+            "content": "sha256:1097b7eff21eb1bb2d638e2c489b80a505a819022fbf2f938440fca4da1b65ea",
             "locator": {
-              "kind": "file"
+              "end": 126,
+              "kind": "line_range",
+              "start": 70
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -334,7 +337,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
             "content": "sha256:33ec530cd7ea134f868737123e2ef344fae4d4c7609e21308019028ba0037442",
             "locator": {
               "kind": "symbol",
@@ -346,12 +349,12 @@
         },
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
             "content": "sha256:7229f6c95646f4b67b1e52b84d4ca859d73135a8eb1643a853d7a320c4370ced",
             "locator": {
-              "end": 518,
+              "end": 519,
               "kind": "line_range",
-              "start": 506
+              "start": 507
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -359,8 +362,8 @@
         },
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
-            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+            "content": "sha256:8891b392f2b5e7518a285b274b4b3d1a344bdc32eb8b09eab3aa7640aa5119a4",
             "locator": {
               "kind": "file"
             },
@@ -375,7 +378,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
             "content": "sha256:9d8d695f42fefc4b5e4d8e2094742e6eb75f0700834a0beee3387672628132f3",
             "locator": {
               "kind": "symbol",
@@ -387,12 +390,12 @@
         },
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
             "content": "sha256:67b61bfc06f10cc6b6c8812296acb9e5f8c7403e341eb1b125c454c767a736ba",
             "locator": {
-              "end": 864,
+              "end": 866,
               "kind": "line_range",
-              "start": 853
+              "start": 855
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -400,12 +403,12 @@
         },
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
             "content": "sha256:679ecdf25b3ab8b1325aad109c73f91fbbbcecad5273268146aa079cb2d3829d",
             "locator": {
-              "end": 1115,
+              "end": 1117,
               "kind": "line_range",
-              "start": 1096
+              "start": 1098
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -413,23 +416,12 @@
         },
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
-            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/memory_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
             "content": "sha256:7eaec590e90cef9afda608cb18f4d74465b0695311c5b03d70bb5de17e1d7cf7",
             "locator": {
-              "end": 949,
+              "end": 951,
               "kind": "line_range",
-              "start": 930
+              "start": 932
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -437,12 +429,23 @@
         },
         {
           "anchor": {
-            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
             "content": "sha256:5f9010a8552ff0068c4a2ab61496010f48e619d70d04cba02104791ce038249b",
             "locator": {
-              "end": 950,
+              "end": 952,
               "kind": "line_range",
-              "start": 931
+              "start": 933
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+            "content": "sha256:8891b392f2b5e7518a285b274b4b3d1a344bdc32eb8b09eab3aa7640aa5119a4",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },

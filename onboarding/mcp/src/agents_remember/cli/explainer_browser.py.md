@@ -24,3 +24,5 @@ The command-line adapter over the explainer's browser: report what this installa
 - A fetch reports the browser owner's record and answers 1 on a named refusal. [2]
 - Reporting names the pin, the folder, the module, the browsers folder and what is missing, with the remedy. [3]
 - A refusal is reported as data with its code and message. [4]
+
+- The install page shows which review-page failure states give the exact fetch command. [5]

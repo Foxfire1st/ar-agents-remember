@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "31f796fdd5680209f2b65787e26053d67e7d7ac9",
+    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
     "role": "curator",
-    "statement": "The package README’s dashboard entry points and tool groups still match the existing commands with registry recovery behind dashboard startup.",
-    "task": "261112-BUG-L20",
+    "statement": "The package README’s tool groups still lead to the MCP reference, whose Knowledge section now documents the master crossing-history writer for a parked crossing sync or structural merge.",
+    "task": "261112-BUG-L43",
     "uncommitted": true
   },
   "document": "mcp/README.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
+      "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "e0f70f991c3b38c1dbc9f586c0c6b70303b451cd",
+      "blob": "d19d84731a99303c3f511194e3db11bea197b84c",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }

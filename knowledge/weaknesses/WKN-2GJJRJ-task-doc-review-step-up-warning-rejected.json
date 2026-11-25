@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "4275baa402a6f13e77dcd678521ef0f41bc31980",
+    "content": "sha256:ed485682ea1932553c8bb311feee6a8a6325803be1652fb23a46403a22af9d4d",
+    "locator": {
+      "kind": "symbol",
+      "name": "with_review_step_up"
+    },
+    "path": "mcp/src/agents_remember/application/task_docs/task_review_step_up.py"
+  },
+  "id": "WKN-2GJJRJ",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "L22-W2-curated-handoff-v2"
+    },
+    "handoffEntry": "L22-task-doc-warning-schema",
+    "leaf": "261112-BUG-L22",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "261112-BUG-L22"
+  },
+  "state": "open",
+  "statement": "When review step-up advice cannot read settings, task_doc adds a warning after recording the review and the response validator rejects that field."
+}

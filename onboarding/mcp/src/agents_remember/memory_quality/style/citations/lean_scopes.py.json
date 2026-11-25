@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_scopes.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e1b042dca12bfbc75a259eb1981be58f1c332d59",
+        "content": "sha256:2bbdcdaced563b3b25e9bbf155ec357a4eb9e77c2ece0f019a2029abcbd63bc5",
+        "locator": {
+          "kind": "symbol",
+          "name": "Scopes.close"
+        }
+      },
+      "id": "RLZ-YBYZS9",
+      "invariant": "INV-0KYRK9",
+      "origin": {
+        "handoffEntry": "SUB-R01-uncertain-lean-scope",
+        "leaf": "261123-SUB-L1"
+      },
+      "rationale": "Carries the lawful bare and matching suffix exits until the declaration scope agrees.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`Scopes.close` updates the retained scope stacks for an exit.\n\nAnchor: `Scopes.close`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1b042dca12bfbc75a259eb1981be58f1c332d59",
+            "content": "sha256:2bbdcdaced563b3b25e9bbf155ec357a4eb9e77c2ece0f019a2029abcbd63bc5",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 126
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

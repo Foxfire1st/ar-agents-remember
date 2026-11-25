@@ -131,7 +131,7 @@ The cases and the plan check.
 
 - Markers first, conversion, then structural merge and validation in a pure `cross` plan, not a managed transaction. [4]
 
-- The master-line crossing history file. [6]
+- A conflicting master record makes the plan pre-seed open history. The close helper then stages it closed. [6]
 
 - Managed crossing sync follows an all-unconverted preflight refusal without a journal, commits the exact two-parent merge, and persists its complete worklist at the new base pair. [8]
 

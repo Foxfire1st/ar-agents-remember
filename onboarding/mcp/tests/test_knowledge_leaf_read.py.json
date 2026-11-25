@@ -476,7 +476,7 @@
         }
       ]
     },
-    "40": {
+    "41": {
       "note": "The old typed value yields an empty record lifecycle field in the fixture result.\n\nAnchor: `legacy-unassessed`",
       "targets": [
         {

@@ -65,7 +65,7 @@ No cross-repo boundary is crossed by this file.
 
 - Retired invariants and families are never selected as live and are answered as retired. [9]
 
-- Each live projected revision receives its state from the supplied standing. [10]
+- Each live projected revision receives its state from the supplied standing. [11]
 
 - The module's statement of the mapping: identities, namespace, provenance, retired records, the store's own seals (MIK-R25) and what is not projected. [1]
 - Logical invariant and family revision seals cover authored content. Each projected state comes from the selected tree's derived standing. [7]

@@ -17,7 +17,7 @@
         }
       ]
     },
-    "10": {
+    "11": {
       "note": "Each live projected revision receives its state from the supplied standing.",
       "targets": [
         {
@@ -319,7 +319,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f1b239d7d6b3244c5deb82eb2a651620e26d6e1",
+            "blob": "36c03d3ccd4444f50f14d99bf202049614349479",
             "content": "sha256:5f9ef05754573b3b60836d951f5fa95e29012c6759d43150204cba2149e23200",
             "locator": {
               "kind": "symbol",
@@ -331,7 +331,7 @@
         },
         {
           "anchor": {
-            "blob": "3f1b239d7d6b3244c5deb82eb2a651620e26d6e1",
+            "blob": "36c03d3ccd4444f50f14d99bf202049614349479",
             "content": "sha256:7194126f77942be5b011aac4423f276edf1d4c69dbc4538ada04bcf761264d16",
             "locator": {
               "kind": "symbol",

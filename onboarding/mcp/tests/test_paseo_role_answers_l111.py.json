@@ -1,9 +1,79 @@
 {
   "path": "mcp/tests/test_paseo_role_answers_l111.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "fb67cfa16bb74ac8a7974434e310488e8a50a320",
+        "content": "sha256:cd79e8ab32e518527b1945b765ef769a3c6384bab3b50bea5d6ad25aec798403",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleStartAnswerTests.test_start_with_missing_requirement_file_names_it_and_succeeds"
+        }
+      },
+      "facet": "The missing-requirement fixture exercises a successful start that identifies the missing file.",
+      "id": "PRF-5GRFV1",
+      "invariant": "INV-RF4W8Q",
+      "origin": {
+        "handoffEntry": "BUG-R22@v1 §4",
+        "leaf": "261112-BUG-L22"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fb67cfa16bb74ac8a7974434e310488e8a50a320",
+        "content": "sha256:93fa3e46b9d3ea81504deb83a5407d74e251c88c161ec160219cb00c3176c1b9",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleStartAnswerTests.test_short_start_warning_keeps_the_missing_file_before_a_long_step_up_notice"
+        }
+      },
+      "facet": "A forced cut retains the missing filename ahead of a long step-up notice and keeps the complete warning in the detail.",
+      "id": "PRF-BXFYQX",
+      "invariant": "INV-2N79MT",
+      "origin": {
+        "handoffEntry": "BUG-R22@v1 §1",
+        "leaf": "261112-BUG-L22"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fb67cfa16bb74ac8a7974434e310488e8a50a320",
+        "content": "sha256:93fa3e46b9d3ea81504deb83a5407d74e251c88c161ec160219cb00c3176c1b9",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleStartAnswerTests.test_short_start_warning_keeps_the_missing_file_before_a_long_step_up_notice"
+        }
+      },
+      "facet": "The combined notice yields a shortened warning that still contains the missing filename.",
+      "id": "PRF-ENXNCF",
+      "invariant": "INV-1N75CV",
+      "origin": {
+        "handoffEntry": "BUG-R22@v1 §2",
+        "leaf": "261112-BUG-L22"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fb67cfa16bb74ac8a7974434e310488e8a50a320",
+        "content": "sha256:e25d00b3dac6756b2566560a7a52abdc428ff78997e355911af4f2dfade5262d",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageWarningTests.test_short_message_answer_keeps_a_fitting_warning"
+        }
+      },
+      "facet": "The over-bound message answer keeps a fitting warning whole when it takes the shared overflow route.",
+      "id": "PRF-FZXYDD",
+      "invariant": "INV-2N79MT",
+      "origin": {
+        "handoffEntry": "BUG-R22@v1 §1",
+        "leaf": "261112-BUG-L22"
+      }
+    }
+  ],
   "realizes": [
     {
       "anchor": {
-        "blob": "106a292fc7ef655cb72f6b7be318622b8d4acf5f",
+        "blob": "fb67cfa16bb74ac8a7974434e310488e8a50a320",
         "content": "sha256:e9fb6f2b7432650bdaff536d9da57eeefcd27746cc7b11801a549a28ed7acae5",
         "locator": {
           "kind": "symbol",
@@ -26,12 +96,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "106a292fc7ef655cb72f6b7be318622b8d4acf5f",
+            "blob": "fb67cfa16bb74ac8a7974434e310488e8a50a320",
             "content": "sha256:ed2c24816699bb9a51ea4b33e8b0dbf66bcc20ace1d2fc7f6edb1954cdf181f6",
             "locator": {
-              "end": 276,
+              "end": 312,
               "kind": "line_range",
-              "start": 247
+              "start": 283
             }
           },
           "kind": "test"
@@ -43,12 +113,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "106a292fc7ef655cb72f6b7be318622b8d4acf5f",
+            "blob": "fb67cfa16bb74ac8a7974434e310488e8a50a320",
             "content": "sha256:483c522993b355c50e19fc2d45f2a00c1619be4c3b13921829b7332cce86ceb1",
             "locator": {
-              "end": 207,
+              "end": 243,
               "kind": "line_range",
-              "start": 190
+              "start": 226
             }
           },
           "kind": "test"
@@ -60,12 +130,41 @@
       "targets": [
         {
           "anchor": {
-            "blob": "106a292fc7ef655cb72f6b7be318622b8d4acf5f",
+            "blob": "fb67cfa16bb74ac8a7974434e310488e8a50a320",
             "content": "sha256:b73380c337276694be99c9ca524a2751c7d89dd33ca531abbd30c3508bb22a08",
             "locator": {
-              "end": 315,
+              "end": 351,
               "kind": "line_range",
-              "start": 291
+              "start": 327
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Forced overflow checks the missing filename in the shortened start warning, full warning in the log and a fitting warning in a short message answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb67cfa16bb74ac8a7974434e310488e8a50a320",
+            "content": "sha256:32f537004155c638d387942b8bb4a021e8a443cb7074ecf8affde37b0c1f7ea4",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fb67cfa16bb74ac8a7974434e310488e8a50a320",
+            "content": "sha256:e25d00b3dac6756b2566560a7a52abdc428ff78997e355911af4f2dfade5262d",
+            "locator": {
+              "end": 416,
+              "kind": "line_range",
+              "start": 396
             }
           },
           "kind": "test"

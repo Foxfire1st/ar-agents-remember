@@ -114,9 +114,9 @@ No configured live documentation source was available for this pass.
 
 The operation and its stages.
 
-- The request carries a resolved caller stamp in addition to the hand-off and contract inputs. [41]
-- The writer passes the resolved stamp to virtual authoring before validation and file publication. [42]
-- The authoring operation assigns an unknown stamp with a reason when no caller was resolved. [43]
+- The request carries a resolved caller stamp in addition to the hand-off and contract inputs. [44]
+- The writer passes the resolved stamp to virtual authoring before validation and file publication. [45]
+- The authoring operation assigns an unknown stamp with a reason when no caller was resolved. [46]
 
 - Existing trace subjects retain source-set priority, including exclusion of malformed trace metadata from group selection. [26]
 - Uncovered unexplained items contribute a sorted union of matching member paths; supplied blob values are not adopted. [27]

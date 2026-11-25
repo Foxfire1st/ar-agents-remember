@@ -202,6 +202,24 @@
           "kind": "code"
         }
       ]
+    },
+    "6": {
+      "note": "The hook prepends the checkout's code to any inherited Python search path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
+            "content": "sha256:6a5bd62fa977d3a2d4f8828c971a811cecb68a2c02ddf3da8c782d698c71ba94",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

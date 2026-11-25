@@ -79,8 +79,8 @@ No cross-repo boundary is crossed by this file.
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/memory/knowledge_index/build.py::parse_tree - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/memory/knowledge_index/build.py::_parse_onboarding_file - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/memory/knowledge_index/build.py::_parse_knowledge_file - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-- The index builds record standing and the named-revision rows together in its write transaction. [14]
-- A converted review catalog is parsed as review evidence separately from owner attempts. [15]
+- The index builds record standing and the named-revision rows together in its write transaction. [16]
+- A converted review catalog is parsed as review evidence separately from owner attempts. [17]
 
 - The builder names parse problems and derives revision standing from the selected memory tree's history and exact review evidence. [1]
 - The parsed tree keeps each history file by path and each owner's merged history. [10]

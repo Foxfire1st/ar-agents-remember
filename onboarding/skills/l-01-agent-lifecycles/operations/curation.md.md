@@ -22,6 +22,8 @@ Repository foundation is regular task work inside the registered leaf the user-s
 
 ## Code Commentary
 
+When healthy leaf memory reports `coherence-required`, prepare the coherence record. After successful preparation, publish one judgment per prepared candidate, or an empty judgment list when there are none. Validate the published record before closeout.
+
 The family rules live in `reference/curator/family-obligations.md`, which the Curator role reads before deciding family coverage or updating a family: restating a guarantee needs a `changed` family history row with the Curator's effect, the writer fills the family revision, families are read back with `knowledge_read` `view="family"`, and every unattributed location the prepared context names is attributed or explained.
 
 Converted-memory closeout additionally requires a non-author second reader. That seat checks every changed card, sidecar and record statement against final code, every history disposition/effect/reason against the diff, and important omissions. Blocking findings are repaired, with a full curation-operation rerun after each repair. This is a lifecycle duty, explicitly not an automated closeout predicate or a Curator-helper self-check.
@@ -67,3 +69,5 @@ Before writing memory, the Curator reads `worktree_status` for the assigned task
 - MEMORY review stays separately sealed/counted and never opens or resets CODE review. Beyond the settings limit the architect or developer authorizes the pass and Manager records it. Curator owns corrected input/body/coherence work; transaction steps and external effects stay with their owners. The installed-build quality/coherence outcome and direct Reviewer handover remain separate from independent acceptance. [1]
 
 - Foundation authoring is regular work in the real Architect task, with its leaf admission, actual enclosure and task/Manager ownership; no incidental code delta is required. Setup reads and reports state. [3]
+
+- Successful preparation precedes publication with one judgment per candidate, or an empty list, and validation. [15]

@@ -29,8 +29,7 @@ The leaf route establishes the contract's recorded memory base before passing it
 - `LeafQuestions` publishes a raised question through `task_doc` with the settings the **caller** supplies —
   the command line's discovered settings or the mounted server's own — so a `raise` is never left without a
   task-document authority; without usable settings it is refused.
-- `crossing_write_report` resolves the crossing memory worktree (`_crossing_memory_root`) and records the rows
-  into the open `<task-id>-crossing-<n>` file, authoring no entry and no new record.
+- `crossing_write_report` locates the open sync for the named crossing and appends rows to its open history file. It can resolve or reconfirm existing records. The writer refuses new records, handoff entries and rulings on this route. The settled code commit supplies both the snapshot and the writer's code base. A missing sync, a different crossing, an unfinished code side or a moved code branch refuses the write.
 - `wave_write_report(target, submission)` runs the taskless wave write.
 - Leaf, crossing and wave writes pass the resolved owner and one caller stamp to the writer. The stamp uses the runtime binding and launch receipt. Unresolved identity or a missing coordination root yields an unknown stamp with the reason.
 - The writer itself is `application.knowledge_writer.write_knowledge`; this module holds no argument parser and
@@ -60,9 +59,9 @@ No additional work is asserted by this card.
 ## Evidence
 
 - Both entry points share leaf-write admission and pass the request's owner, question port and caller stamp to the writer. [3]
-- The caller stamp comes from the runtime binding and receipt, with a reason when the coordination root is missing. [7]
-- The crossing writer carries its owner and caller stamp with the selected series code. [8]
-- The wave writer carries the wave owner and a caller stamp. [9]
+- The caller stamp comes from the runtime binding and receipt, with a reason when the coordination root is missing. [10]
+- The crossing writer carries its owner and caller stamp with the selected series code. [11]
+- The wave writer carries the wave owner and a caller stamp. [12]
 
 ### Docs References
 

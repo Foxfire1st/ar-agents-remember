@@ -14,6 +14,8 @@ availability changes, and check isolation. A separate in-memory case checks the 
 
 ## Code Commentary
 
+The shared TypeScript blob is parsed once per ordinary or test-file class in either read order. The Lean memo case checks that exact-key uncertainty, the exact blob identity and the line-range remedy survive reuse without changing a verified neighboring key.
+
 The byte memo case charges both the key and the value, evicts by least recent use and skips oversized entries. The request ownership case shares owners with a joined thread, isolates concurrent scopes and checks that copied scope state is clear at exit.
 
 ### Logic
@@ -52,8 +54,7 @@ Registered in the `unit-regression` lane of `test-evidence-lanes.toml` (an unreg
 refused by the lane gate). The fixture’s `_git` helper supplies `GIT_CONFIG_NOSYSTEM=1` and uses
 the fixture repository as `HOME`. The observation spies delegate to the production Git and parser
 runners. `_claim` gives every claim a fresh uuid `anchor_id`, so cases that build claims
-separately compare resolutions and ranges rather than whole observations (worker event E2). Eight test
-functions, one parametrised twice, make the nine cases.
+separately compare resolutions and ranges rather than whole observations (worker event E2).
 
 ### Invariants And Boundaries
 

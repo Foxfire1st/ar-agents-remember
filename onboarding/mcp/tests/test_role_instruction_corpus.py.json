@@ -55,6 +55,23 @@
     {
       "anchor": {
         "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
+        "content": "sha256:43d488b8f085d000371db395f0f9ded1d856123893b2225ad1ea8b29d291e4d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "CurationPolicyTests.test_each_compact_curation_source_states_its_complete_quality_policy"
+        }
+      },
+      "facet": "The canonical policy source contains the required successful-prepare, per-candidate or empty publish, and validate sequence.",
+      "id": "PRF-9SYCP8",
+      "invariant": "INV-J0B614",
+      "origin": {
+        "handoffEntry": "BUG-R25@v1 part 1",
+        "leaf": "261112-BUG-L25"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
         "content": "sha256:a1c68282fc876f23e3507165b6a1ad9454eaf58a35ef929883ccbb71e56c0036",
         "locator": {
           "kind": "symbol",
@@ -84,6 +101,23 @@
       "origin": {
         "handoffEntry": "L72/MIK-R72@v2-retired-wording-register",
         "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
+        "content": "sha256:ef738d1a825cef58aaf8872ce65669d47f77d5bc104e6d3ced0145517000bcef",
+        "locator": {
+          "kind": "symbol",
+          "name": "CurationPolicyTests.test_every_generated_copy_carries_the_policy_its_canonical_original_states"
+        }
+      },
+      "facet": "The generated operation preserves the current required clause. Removing the clause from a seeded generated copy is detected.",
+      "id": "PRF-Q219B1",
+      "invariant": "INV-J0B614",
+      "origin": {
+        "handoffEntry": "BUG-R25@v1 part 1",
+        "leaf": "261112-BUG-L25"
       }
     },
     {

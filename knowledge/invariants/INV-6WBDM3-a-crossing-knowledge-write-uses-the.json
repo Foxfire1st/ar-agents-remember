@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Without a shared settled commit, a crossing can confirm the wrong code or serialize a branch name as a commit ID."
+  },
+  "applicability": "Knowledge writes for a master's open crossing sync.",
+  "conditions": [
+    "The named crossing owns an open history file.",
+    "The code side is completed and its branch points to the sync result."
+  ],
+  "exclusions": [
+    "Leaf writes resolve their own candidate; waves use their wave authority."
+  ],
+  "id": "INV-6WBDM3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_crossing_knowledge_writer.py::test_crossing_confirmation_uses_the_same_settled_commit_for_snapshot_and_base",
+        "mcp/tests/test_crossing_knowledge_writer.py::test_crossing_write_refuses_unsettled_or_different_sync_authority",
+        "mcp/tests/test_crossing_knowledge_writer.py::test_code_snapshot_resolves_a_commit_ref_and_refuses_noncommits"
+      ],
+      "path": "L43-W3-curator-invariant-intake"
+    },
+    "handoffEntry": "BUG-R43-1",
+    "leaf": "261112-BUG-L43",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A crossing knowledge write uses the open sync's settled full code commit ID for both the snapshot and the code base.",
+  "status": "proposed",
+  "supersedes": []
+}

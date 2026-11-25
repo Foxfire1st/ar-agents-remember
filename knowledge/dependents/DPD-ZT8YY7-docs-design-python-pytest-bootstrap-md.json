@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
-    "role": "curator",
-    "statement": "The pytest bootstrap guide still correctly describes the selected native stdio stress case and its uninstrumented warm-index child and measured server.",
-    "task": "261112-BUG-L21",
-    "uncommitted": true
+    "codeTree": "55049f6c73b5660adaa6e3b0637185a3167751c3",
+    "commit": "54d242820ff7f9941cadebf9f543c857314b368f",
+    "role": "manager",
+    "statement": "The pytest policy accurately describes integration and stress lane selection and the bounded-memory stdio case’s uninstrumented child coverage boundary.",
+    "task": "261123-SUB",
+    "uncommitted": false
   },
   "document": "docs/design/python-pytest-bootstrap.md",
   "id": "DPD-ZT8YY7",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+      "blob": "30fe276ea103c0bc2f37afe7affc8436d89f64bd",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -106,12 +106,12 @@
     },
     {
       "anchor": {
-        "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+        "blob": "30fe276ea103c0bc2f37afe7affc8436d89f64bd",
         "content": "sha256:bcc4ade20e19642e956536d6662d0c20a8343feed9984bdf943fe982348cd7d1",
         "locator": {
-          "end": 816,
+          "end": 822,
           "kind": "line_range",
-          "start": 813
+          "start": 819
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },

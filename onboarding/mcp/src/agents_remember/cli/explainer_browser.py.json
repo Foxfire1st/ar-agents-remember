@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/cli/explainer_browser.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0d91d5d53527ae0d509c0ab880b87323474a745a",
+        "content": "sha256:aacb91e3df5a6559b7b1562f493c5d9511040fec168aa36fa6f9df16c0241158",
+        "locator": {
+          "kind": "symbol",
+          "name": "run"
+        }
+      },
+      "id": "RLZ-WETCPZ",
+      "invariant": "INV-Q3GMWZ",
+      "origin": {
+        "handoffEntry": "L1-B07",
+        "leaf": "261112-BUG-L1"
+      },
+      "rationale": "This registered command's entry point dispatches browser-status reporting or the explicit fetch. The separate installation passage shows where the reader is told the fetch command.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The command selects reporting or fetching with one flag and delegates the fetch to the browser owner.",
@@ -61,6 +80,24 @@
               "kind": "symbol",
               "name": "_failure"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The install page shows which review-page failure states give the exact fetch command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f555894fb593d11cc54be3386fe56f2c7d0f99",
+            "content": "sha256:b15e3e051c3a6e2371c192a775d0c5c7f819540642b34e5e0a270fe6f5770bf3",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "docs/install/README.md"
           },
           "kind": "code"
         }

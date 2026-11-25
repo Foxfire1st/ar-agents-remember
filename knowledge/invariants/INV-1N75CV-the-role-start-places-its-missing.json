@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The launch regression protects the caller from losing the missing filename behind a longer piece of provider advice."
+  },
+  "applicability": "A role start that warns about missing requirement copies.",
+  "conditions": [
+    "The launch receipt builds the missing-copy notice before appending step-up advice.",
+    "Later producers append their notices to the receipt warning.",
+    "The shared guard fits a measured warning prefix into the remaining space."
+  ],
+  "exclusions": [
+    "Role starts with no missing requirement copies.",
+    "An unusually long list of filenames can extend beyond the retained prefix."
+  ],
+  "id": "INV-1N75CV",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L22-W2-freeze-report.md — BUG-R22@v1 acceptance and commands"
+      ],
+      "path": "L22-W2-curated-handoff-v2"
+    },
+    "handoffEntry": "BUG-R22@v1 §2",
+    "leaf": "261112-BUG-L22",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The role start places its missing requirement filenames ahead of its other notices so the warning prefix keeps the names that fit.",
+  "status": "proposed",
+  "supersedes": []
+}

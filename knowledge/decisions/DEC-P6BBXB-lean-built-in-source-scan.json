@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The selected behavior determines which names can be safely emitted by the shared reader. The measured alternative remains relevant to future scanner changes."
+  },
+  "alternatives": [
+    {
+      "option": "Use a product-owned Python scan.",
+      "reason": "The scan follows the named declarations in the target corpus and can be compared to pinned Lean independently.",
+      "status": "chosen"
+    },
+    {
+      "option": "Add the tested tree-sitter Lean grammar.",
+      "reason": "The grammar missed declarations in the measured upstream sample that the scan recovered.",
+      "reconsider_when": "An independently tested Lean grammar covers the declaration names and line extents needed by the product.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Use pinned Lean for comparison evidence and ship the source scanner."
+  ],
+  "context": "The product needs usable symbol anchors for Lean sources without installing the Lean toolchain as a runtime dependency.",
+  "decider": "Developer D911 and the Architect's SUB-L1 first-report ruling",
+  "id": "DEC-P6BBXB",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-WZ8R0Q"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Developer D911 and the Architect's SUB-L1 first-report ruling"
+      ],
+      "path": "261123-SUB-L1 W9-S1 curation"
+    },
+    "handoffEntry": "lean-built-in-source-scan-ruling",
+    "leaf": "261123-SUB-L1",
+    "task": "261123-SUB"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

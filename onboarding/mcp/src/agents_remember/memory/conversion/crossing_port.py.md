@@ -29,8 +29,7 @@ The conversion port loads worktree-owned plan/result/error types only when a cro
 
 ### Invariants And Boundaries
 
-- Nothing is written by the time a step fails: the plan is computed before the managed sync lets Git
-  touch the worktree.
+- A failed planning step leaves the managed worktree untouched. The adapter materializes its inputs in temporary storage.
 
 ### Todos
 
@@ -65,7 +64,7 @@ No meaningful cross-repo references found: the file reads and writes only the me
 No cross-repo boundary is crossed by this file.
 
 
-- The plan binds product stamp time to the two input commits. [6]
+- The plan binds product stamp time to the two input commits. [7]
 
 - The adapter. [1]
 - The conversion port loads worktree-owned plan/result/error types only when a crossing plan is requested; it preserves conversion and failed-step behavior. [4]

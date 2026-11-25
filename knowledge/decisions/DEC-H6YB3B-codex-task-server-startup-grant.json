@@ -1,0 +1,126 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The Architect considered renewing the grant and carrying provider inheritance, and decided where the exact provider check may live. These decisions govern future changes to seat resume, provider selection and the startup roster."
+  },
+  "alternatives": [
+    {
+      "option": "Centralize the provider policy in Agents Remember and grant the full offered roster to newly created seats with the exact Codex provider ID.",
+      "reason": "The complete list keeps every currently advertised tool available. The existing Paseo create contract carries that list, and the launch and explainer share the same owner for the decision.",
+      "status": "chosen"
+    },
+    {
+      "option": "Refresh the grant of an existing seat when it resumes or reloads.",
+      "reason": "Paseo retains the start grant and exposes no supported update for the same seat. A product-owned host adapter would exceed the implementation boundary under D895.",
+      "reconsider_when": "Paseo exposes a supported update to the grant of a running seat.",
+      "status": "rejected"
+    },
+    {
+      "option": "Thread provider inheritance through launch and discovery to give derived providers the same grant.",
+      "reason": "No installed provider extends Codex on the ruled host. The extra identity path has no current consumer.",
+      "reconsider_when": "A supported provider derives from Codex and requires the same startup grant.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A Codex seat obtains newly added tool names when a replacement seat starts.",
+    "The ordinary Claude identity grant and the four additional bound explainer tools retain their existing scope.",
+    "The guard admits the exact provider spellings in the shared policy module. Other launch files continue through the ordinary name scan."
+  ],
+  "context": "Under BUG-R31@v1 and D919, ordinary use of a new Codex seat's own task server should proceed without a permission prompt. Paseo uses an explicit per-tool grant as the seat's enabled list and retains it across resume and reload.",
+  "decider": "Architect rulings of 2026-11-23 at 18:21:13Z and 19:27:48Z, on developer decision D919 and under D895.",
+  "id": "DEC-H6YB3B",
+  "links": [
+    {
+      "relation": "explains",
+      "target": "INV-Z17EHY"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-N9D91D"
+    },
+    {
+      "relation": "explains",
+      "target": "FAM-N17BB4"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "989ca0f381fef0297fc725d0b00462680d20f095",
+        "content": "sha256:b39ac416b7f157c729239d1dc515a535a51899617e08cc0e81a623490c0b3f82",
+        "locator": {
+          "kind": "symbol",
+          "name": "preapproval_policy"
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_seat_policy.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "989ca0f381fef0297fc725d0b00462680d20f095",
+        "content": "sha256:039274234510c7e793f8b089ac2395db01ae91790c622c316fbd22258ae26f35",
+        "locator": {
+          "kind": "symbol",
+          "name": "preapproval_detail"
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_seat_policy.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+        "content": "sha256:4a94897e5b7086e4c2830466bfa8e369b1ab4f22de2f1df6e407866cf57bda8e",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_launch_call"
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "99662226cca319589b818f5083eff3400d12ae14",
+        "content": "sha256:318dcb6f417dbc3a28c9abc6f6342c97457f07768d949e3bf7927acbc1d493b1",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoExplainerHost.create_seat"
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "9c560d00f39c9a582d979fd1bb974afbe6533f13",
+        "content": "sha256:2b2faacc31fce6100bc4e63935af3d7796748ee41222dd045d4ee9aeb2998de5",
+        "locator": {
+          "end": 213,
+          "kind": "line_range",
+          "start": 181
+        },
+        "path": "mcp/tests/test_paseo_no_harness_name.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "BUG-R31-W3-freeze.md and the F07 full launch-payload comparison in the W2 controls archive."
+      ],
+      "path": "l31-knowledge-authoring-reviewed.json"
+    },
+    "handoffEntry": "BUG-R31@v1-start-grant",
+    "leaf": "261112-BUG-L31",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

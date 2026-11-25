@@ -60,6 +60,6 @@ No cross-repo boundary is crossed by this file.
 - The package map and the rule that no writer writes the index and it is never merged. [1]
 - Public index surface includes prose companions without making prose an indexed model. [3]
 
-- The public lookup types include record standing and its writer projection. [4]
+- The public lookup types include record standing and its writer projection. [5]
 
 - The re-exported public surface. [2]

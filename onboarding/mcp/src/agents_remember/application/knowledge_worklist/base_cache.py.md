@@ -24,9 +24,9 @@ byte-identical worklists.
 - `ConvertedBaseCache.open(directory)` walks to the nearest existing ancestor, asks Git whether it is inside
   a working tree (`rev-parse --is-inside-work-tree`), and returns `None` (no cache) when it is, or when the
   directory cannot be created. Nothing is created before that check.
-- `load(key)` gunzips and parses the file, and returns the files only when `format` is
-  `knowledge-worklist-base/v2` (since MIK-R30; it was `v1`) and the stored `key` matches; any read or parse failure is a miss. A hit
-  touches the file's mtime.
+- `load(key)` gunzips and parses the file and returns its files only for
+  `knowledge-worklist-base/v3` with the matching stored key. A failed read or parse is a miss.
+  A hit touches the file’s modification time.
 - `store(key, files)` writes `{format, key, files}` (the converted tree's indexed JSON files and, since
   MIK-R30, its onboarding Markdown, as text) with
   `atomic_write_bytes` and a zero gzip mtime; a non-UTF-8 file makes the base uncacheable and a write
@@ -67,24 +67,24 @@ K_B on every run (about 30 s on the real tree):
   (`onboarding_trace.onboarding_trace_sides`). It moved here from `leaf.py` unchanged in substance: it picks
   K_B's own paired code commit when the code store holds it, B otherwise, and keys the cache on (K_B commit,
   version, that code commit).
-- **`is_cached_path(path)`** selects what is stored: an indexed JSON file, or Markdown under `onboarding/`
-  outside any dot-directory.
-- **`FORMAT` is `knowledge-worklist-base/v2`.** A v1 file holds no Markdown and would make every card look
-  new to the gate, so a v1 file is ignored and rewritten, as the format rule already did for any other
-  format (ruling 19:23:45 N3; pinned by a test).
+- **`is_cached_path(path)`** keeps indexed JSON and Markdown under `onboarding/`, including
+  descendants of dot directories. Generated route-index cache files stay excluded.
+- **`FORMAT` is `knowledge-worklist-base/v3`.** The v1 projection lacked Markdown. The v2
+  projection excluded dot directories. A different projection format is read as a miss and
+  rebuilt from the converted base.
 - Location, key, eviction and the refusal inside a Git working tree are unchanged. The worker measured the
   gate's sides at 29.4 s cold and 0.7 to 0.8 s from the cache on the real ICR L47 scratch copy.
 
 - The docstring's contents rule: JSON for the worklist, Markdown for the gate, v1 never read. [1]
-- The v2 format constant. [2]
-- What the cache holds. [3]
+- The converted-base cache format is knowledge-worklist-base/v3. [2]
+- The converted-base cache keeps indexed JSON and onboarding Markdown, including cards in dot directories. [3]
 - The one read-or-convert path both consumers use. [4]
 
 - The gate reads its converted K_B through it. [5]
 
 
 
-- The cache holds the Markdown, and a v1 file is ignored and rewritten. Anchor: `test_the_conversion_itself_counts_for_nothing_at_the_converting_leaf` [6]
+- The gate cache retains onboarding Markdown and rebuilds both v1 and v2 projections as v3. [6]
 
 
 
@@ -115,7 +115,7 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The key, location, contents and eviction rules. [7]
-- The cache location and format constants. [8]
+- The cache location and eviction limit. [8]
 - The default directory and the key. [9]
 - A location inside a working tree is refused before anything is created. [10]
 - A hit only for this format and key. [11]

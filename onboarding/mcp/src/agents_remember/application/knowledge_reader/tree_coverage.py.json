@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "be05f862f8abdce1e737a3b7888b6bf27b93274c",
+        "blob": "587f7c66a2347f7f8fd2baa361cddeaeb6a5453c",
+        "content": "sha256:4e63ed424166604f07aaec0dd5c3818db03dd34e862991806b2d776e491acea9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_memory_paths"
+        }
+      },
+      "id": "RLZ-C1KGEK",
+      "invariant": "INV-EYSSS1",
+      "origin": {
+        "handoffEntry": "BUG-R24@v1 rule 1",
+        "leaf": "261112-BUG-L24"
+      },
+      "rationale": "Lists dot directories in the selected memory tree and filters derived files before measuring coverage.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "587f7c66a2347f7f8fd2baa361cddeaeb6a5453c",
         "content": "sha256:e30411e974f4928ed61a0842df97860d39fb56f38660c9e6656b7846281c1a06",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "be05f862f8abdce1e737a3b7888b6bf27b93274c",
+        "blob": "587f7c66a2347f7f8fd2baa361cddeaeb6a5453c",
         "content": "sha256:d0f1509ea5458109bc4dfbe88da026017a5d42e988949d4716f931635ebe5301",
         "locator": {
           "kind": "symbol",
@@ -40,14 +58,15 @@
   ],
   "references": {
     "1": {
-      "note": "The one listing entry point and its truthful failure states.\n\nAnchor: `read_tree_listing`",
+      "note": "The one listing entry point and its truthful failure states.\n\nAnchor: “read_tree_listing”",
       "targets": [
         {
           "anchor": {
-            "blob": "be05f862f8abdce1e737a3b7888b6bf27b93274c",
-            "content": "sha256:adfabe1875671003c723cc24fd2c77503984f45db46aa4c77090f99e845e2f7c",
+            "blob": "587f7c66a2347f7f8fd2baa361cddeaeb6a5453c",
+            "content": "sha256:d0f1509ea5458109bc4dfbe88da026017a5d42e988949d4716f931635ebe5301",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "read_tree_listing"
             }
           },
           "kind": "code"
@@ -55,14 +74,15 @@
       ]
     },
     "2": {
-      "note": "One recursive code pass supplies names, kinds and source files.\n\nAnchor: `_git_paths`",
+      "note": "One recursive code pass supplies names, kinds and source files.\n\nAnchor: “_git_paths”",
       "targets": [
         {
           "anchor": {
-            "blob": "be05f862f8abdce1e737a3b7888b6bf27b93274c",
-            "content": "sha256:adfabe1875671003c723cc24fd2c77503984f45db46aa4c77090f99e845e2f7c",
+            "blob": "587f7c66a2347f7f8fd2baa361cddeaeb6a5453c",
+            "content": "sha256:354cf8ca291853926ac168e38ef13294f5336d36294da34b7c835016d9d614ba",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_git_paths"
             }
           },
           "kind": "code"
@@ -70,14 +90,15 @@
       ]
     },
     "3": {
-      "note": "One memory enumeration, with excluded paths dropped.\n\nAnchor: `_memory_paths`",
+      "note": "The selected memory enumeration includes dot directories and drops generated route-index cache files.\n\nAnchor: “_memory_paths”",
       "targets": [
         {
           "anchor": {
-            "blob": "be05f862f8abdce1e737a3b7888b6bf27b93274c",
-            "content": "sha256:adfabe1875671003c723cc24fd2c77503984f45db46aa4c77090f99e845e2f7c",
+            "blob": "587f7c66a2347f7f8fd2baa361cddeaeb6a5453c",
+            "content": "sha256:4e63ed424166604f07aaec0dd5c3818db03dd34e862991806b2d776e491acea9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_memory_paths"
             }
           },
           "kind": "code"
@@ -85,14 +106,16 @@
       ]
     },
     "4": {
-      "note": "Presence fields are omitted when the memory enumeration failed.\n\nAnchor: `_presence`",
+      "note": "Presence fields are omitted when the memory enumeration failed.\n\nAnchor: “_presence”",
       "targets": [
         {
           "anchor": {
-            "blob": "be05f862f8abdce1e737a3b7888b6bf27b93274c",
-            "content": "sha256:adfabe1875671003c723cc24fd2c77503984f45db46aa4c77090f99e845e2f7c",
+            "blob": "587f7c66a2347f7f8fd2baa361cddeaeb6a5453c",
+            "content": "sha256:d0f1509ea5458109bc4dfbe88da026017a5d42e988949d4716f931635ebe5301",
             "locator": {
-              "kind": "file"
+              "end": 69,
+              "kind": "line_range",
+              "start": 43
             }
           },
           "kind": "code"
@@ -100,12 +123,12 @@
       ]
     },
     "5": {
-      "note": "Directory coverage counts cards against in-scope files or says unavailable.\n\nAnchor: `_coverage`",
+      "note": "Directory coverage counts cards against in-scope files or says unavailable.\n\nAnchor: “_coverage”",
       "targets": [
         {
           "anchor": {
-            "blob": "be05f862f8abdce1e737a3b7888b6bf27b93274c",
-            "content": "sha256:adfabe1875671003c723cc24fd2c77503984f45db46aa4c77090f99e845e2f7c",
+            "blob": "587f7c66a2347f7f8fd2baa361cddeaeb6a5453c",
+            "content": "sha256:c61f9b2656ce86c2dd655d98011a466c8c4e7d841ce77eccc3637d76f9030000",
             "locator": {
               "kind": "file"
             }

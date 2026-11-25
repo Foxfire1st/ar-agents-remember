@@ -23,6 +23,8 @@ The initializer handover cases in `test_knowledge_bootstrap.py` assert state-fir
 
 ## Hot Path Summary
 
+The two Lean unit-regression modules exercise the writer, recorded reader, live card routes and legacy format 1 reproduction. The evidence catalog registers both modules as consumers of the settings guard and Node lockfile. The suite’s autouse fixture uses the settings guard. The card citation module uses conversion support, and the symbol anchor module uses writer support. The symbol anchor alias case checks that the writer and recorded reader agree on each binder’s command extent.
+
 The instruction-renewal test family separates authored authority from generated current facts. `test_instruction_digest_renewal.py` checks relocation, explicit unit/evidence/clause bindings, held-hash-proven HEAD diagnostics, copied repository-map cases and reader-level uncovered-prose decisions. `test_instruction_manifest_renewal.py` checks pointer-derived steps/audiences, authored role reasons and no-step decisions, live-manifest reason policy, and command check/renew/check journeys on copied trees. `test_instruction_pointer_renewal.py` checks withdrawal, retained-policy refusals and working command remedies; existing wording-pin and budget consumers keep their separate shape, authored-decision and measurement checks. These are source-defined assertion responsibilities, not a new execution or acceptance record.
 
 `test_fresh_repository_knowledge_path.py` uses `fresh_repository()` to initialize and baseline-adopt a repository, then opens its cardless baseline as a leaf whose onboarding directory is absent. `test_empty_leaf_memory_scope.py` uses `open_external_contract_fixture` for live-leaf scope and mode-owned roots; `test_empty_onboarding_readers.py` initializes memory and removes the empty onboarding directory for its reader cases, with a separate file-at-path refusal case. `test_cardless_knowledge_writer.py` plans and commits the first entries without a Markdown card while references still require one; `test_cardless_sidecar_validation.py` checks the validator's entries-only exception and keeps identity, link, anchor and history checks. Together their source assertions cover empty route/drift/baseline reads and first knowledge through a per-file sidecar without a Markdown card, full quality, writer, coherence and closeout preview. Their source assertions and catalog membership do not establish that a new execution or landing occurred.
@@ -169,7 +171,7 @@ Landing regression suites distinguish exact-pair refusal, authentic history owne
 
 ### Call-scoped parsing, build identity and measured coherence
 
-`test_definition_scope.py` covers scope reuse, fresh operations and source-content identity. `test_definition_scope_boundaries.py` covers MCP, finite CLI and background operation boundaries. `test_knowledge_index_build_identity.py` covers loaded-build cache isolation, unknown-build non-reuse and same-build reuse after a process restart. `test_curator_coherence_measured_quality.py` covers unchanged quality after publication, measured-binding invalidation and historical record readability. These are source-described assertions and establish no new execution result.
+`test_definition_scope.py` covers scope reuse, fresh operations and source-content identity. `test_definition_scope_boundaries.py` covers MCP, finite CLI and background operation boundaries. `test_knowledge_index_build_identity.py` covers loaded-build cache isolation, private unknown-build reads, reuse after restart, cold lookup contention, shared failure and retry, and pruning of abandoned build files. `test_curator_coherence_measured_quality.py` covers unchanged quality after publication, measured-binding invalidation and historical record readability. These are source-described assertions and establish no new execution result.
 
 ### Landing-report regression scope
 
@@ -192,6 +194,8 @@ The reconsideration suite contains candidate-side supersession assertions: a suc
 Recorded-meaning regression uses `compose_review` over converted trees, exact owner/attempt selection, outline and continuation assertions, portable L37 historical fixtures and retired/before-only UUID witnesses. Mounted `ReviewSurface` source cases over retained captures assert badges, step fields, keyboard explanations and missing-versus-empty state. Capture/provenance bytes and the F04 real-ingest attribution are retained evidence classes, not reconstructed invocations; registration or mounted display alone claims no new execution or installed acceptance.
 
 `paseo_launch_test_support` owns the shared hand-written stateful runtime/catalog and fixture-derived dispatch expectations. Launch and status test classes inherit that support; the document-chat read/tree classes inherit it through `StatusTestCase`, while the first-start preparation class has its separate `RoleToolsTestCase` base. Document-chat source cases assert one-census tree discovery, unknown versus empty, corruption isolation, repeated receipt-path reads and byte budgets. `test_paseo_status_bridge` composes the production Node listing script with a controlled daemon client; `test_paseo_frame` asserts settings-bound provision-command disclosure. Catalog ownership and source assertions are not live-host or executed acceptance proof.
+
+Paseo startup tests check the exact create payload and the grant recorded in the receipt for the seat's own task server. The role-launch fixture covers the full create input for Architect, Orchestrator, Manager and Worker. The catalog fixture checks all seven role choices on Claude, Codex and Pi. Its payload and grants name only the seat's own task server even with a second server in the fixture's configuration. Mounted-server fixtures compare the ordinary and bound explainer advertisements with their respective Codex startup rosters. The explainer host fixture checks the full Codex roster with the four additions and preserves Claude's identity tool with those same additions.
 
 The enforced collected-case pair is 10,000 unit and 2,000 integration cases.
 
@@ -562,7 +566,7 @@ Current source: The lifecycle catalog declares four permanent scripts/e2e_harnes
 
 Current source: The lifecycle catalog declares test_landing_report.py among the consumers of _user_settings_guard.py, curator_coherence_test_support.py and the Node package-lock fixture; this named subset is not its whole declared artifact population. ENVELOPE_LOSING_RAISERS is empty, and the sweep compares its observed error-arm population with that pin. No executable STATE_DEPENDENT_RAISERS or ambient lifecycle-state matrix remains in the sweep/support/world; lifecycle_finalize_task has an ordinary contract-addressed dry-run request in the main benign table. These are declarations and source assertions, not a fresh run.
 
-The envelope-loss pin is empty. Current source pins distinguish44 advertised tools,14 modules and46 handlers; the source declaration is not fresh collection, execution or live advertisement. ENVELOPE_LOSING_RAISERS is empty. the current assembled table imports ToolAnswerRow and _apply_l111_shaped_rows from tool_answer_l111_test_support and applies nonempty L111 shaped rows after L109; interim-map declarations and retained L100/L109 rows remain separate. Removed task reads are asserted as operation-removed; review, linkage and retirement assertions inspect canonical task state, whole application results or retained whole logs rather than assuming every field survives the delivered answer. Fixed40 roots normalize ordinary token controls, distinct from content/location measurements. Packet-owned refusal tests preserve positive gates and full no-write frames; the runnable-step tests use answer-supplied arguments/display on space/quote/dollar roots, with converted-line and unknown seam limits explicit. Requirement-copy fixtures cover metadata, missing notices, source drift and rollback seams, not real-host acceptance. declaration, source assertions and prior grades remain different evidence classes.
+The envelope-loss pin is empty. Current source pins distinguish44 advertised tools,14 modules and46 handlers; the source declaration is not fresh collection, execution or live advertisement. ENVELOPE_LOSING_RAISERS is empty. the current assembled table imports ToolAnswerRow and _apply_l111_shaped_rows from tool_answer_l111_test_support and applies nonempty L111 shaped rows after L109; interim-map declarations and retained L100/L109 rows remain separate. Removed task reads are asserted as operation-removed; review, linkage and retirement assertions inspect canonical task state, whole application results or retained whole logs rather than assuming every field survives the delivered answer. Fixed40 roots normalize ordinary token controls, distinct from content/location measurements. Packet-owned refusal tests preserve positive gates and full no-write frames; the runnable-step tests use answer-supplied arguments/display on space/quote/dollar roots, with converted-line and unknown seam limits explicit. Requirement-copy fixtures cover metadata, missing notices, source drift and rollback seams, not real-host acceptance. Role-answer tests force overflow to check a missing filename in a shortened start warning and a whole fitting message warning. A guard test retains `warningCut` through a refit when error text takes the available room. The start row’s sizing fixture models a deep-root capture with representative absolute paths and its log field. declaration, source assertions and prior grades remain different evidence classes.
 
 Current source: The conformance source declares ROSTER_SIZE = 44, TOOL_MODULE_COUNT = 14 and TOOL_HANDLER_COUNT = 46. Its structural tests compare registry and adapter populations in both directions, compare PUBLIC_TOOLS with the registered surface, reject duplicate roster entries and unadvertised registrations, and assert the roster count. These are source declarations and assertions, not a recorded test run or a measurement of the developer’s host.
 
@@ -668,7 +672,9 @@ The recorded-base suite tests inheritance across an untrailed memory merge, exac
 
 
 
+
 - The partial-index case preserves the remaining invariant answer and marks that answer and the cache report partial. [1472]
+
 
 
 
@@ -1219,7 +1225,7 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 - The lane manifest declares test_knowledge_index.py in unit-regression. Membership establishes no execution. [1473]
 
-- The baseline and the pinned report-only set. [1474]
+- The based converted fixture passes with carried legacy debt. Registration pins the merge-report and migration-debt sets and contains zero plain report-only rules. [1474]
 - The managed sync refuses, keeps the merge staged, and syncs after the repair. [1475]
 
 - The lane manifest declares test_knowledge_validator.py in unit-regression. Membership establishes no execution. [1476]
@@ -1547,7 +1553,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 - The current lifecycle catalog declares test_landing_report.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/landing_report_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `curator_coherence_test_support.py` artifact row declares `test_landing_report.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_landing_report.py` as an exact consumer. The `landing_report_test_support.py` artifact row declares `test_landing_report.py` as an exact consumer. [1753]
 - The case asserts the proposed and reviewed values in the single lifecycle field row. A separate assertion checks structured key-order canonicality. [1755]
 
+
 - The partial-index case preserves the remaining invariant answer and marks that answer and the cache report partial. [1756]
+
 - The synthetic catalog builder writes artifact category and fidelity metadata; this is fixture declaration. [1757]
 - The four exception/unwired transport controls require ACTIONABLE fields; typed domain refusals are asserted separately in their own body shape. [1758]
 - The shared synthetic evidence catalog builder produces fixture metadata; its declarations do not establish production composition or test execution. [1759]
@@ -1621,7 +1629,9 @@ Artifact discovery and exact consumer comparison have bounded source owners. [17
 
 - The definition-scope tests check native MCP, finite CLI, dashboard and detached quality boundaries. The journal cases distinguish request-local reuse from process ownership. [1838]
 
-- test_knowledge_index_build_identity.py declares focused checks for loaded-build cache isolation, unknown-build non-reuse and same-build reuse after a process restart; this is source-described coverage, not a new test execution. [1839]
+
+- The build-identity tests cover loaded-build isolation, reuse after restart, private unknown-build reads, cold lookup contention, failure and retry, and temporary-file eviction. [1839]
+
 - test_curator_coherence_measured_quality.py declares focused checks for unchanged quality after publication, measured-binding invalidation and historical record readability; this is source-described coverage, not a new test execution. [1840]
 
 - Task-context endpoint cases retain a measured source inventory when knowledge is wholly unavailable or one knowledge half is damaged; both named-subject requests refuse with 404 candidate_dataset_absent. [1659]

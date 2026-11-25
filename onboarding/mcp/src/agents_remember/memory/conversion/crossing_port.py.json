@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "488e2cae3d25f2a60f88059dd38570143d8c6d14",
-        "content": "sha256:b685716c066fff27f91529be61ef0ddb02fa0b6738f331546bebaa5cf2d6056b",
+        "blob": "1f058dbc3bdb98a8178b81b81e36bb18eed3aee6",
+        "content": "sha256:a5a8f0a2b69e81032a1b4f187f8bbc27e38e4b9f9b0b05e563c286455920dd57",
         "locator": {
           "kind": "symbol",
           "name": "GitKnowledgeCrossing"
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
+            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
             "content": "sha256:8f96680898f7f47505195bd2aa85e34b5d6ac2fa29060e19da8ebdc618203b6f",
             "locator": {
               "kind": "symbol",
@@ -74,7 +74,7 @@
         },
         {
           "anchor": {
-            "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
+            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
             "content": "sha256:10d81f79abdf38659f44010a5b9c65c7a311ee40ed2b6ad9be2937df7577de6a",
             "locator": {
               "kind": "symbol",
@@ -86,8 +86,8 @@
         },
         {
           "anchor": {
-            "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
-            "content": "sha256:e34f9c8dba1e627374789d808cc8164b9fe72317a29b0ea8244f32c2a2a3bcd2",
+            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
+            "content": "sha256:bbcaa73b855c3188b4a8b6d415c7e2d516caaa06c5048e7ef7b2782b8996ae9d",
             "locator": {
               "kind": "symbol",
               "name": "CrossingPlanView"
@@ -141,7 +141,7 @@
         }
       ]
     },
-    "6": {
+    "7": {
       "note": "The plan binds product stamp time to the two input commits.",
       "targets": [
         {

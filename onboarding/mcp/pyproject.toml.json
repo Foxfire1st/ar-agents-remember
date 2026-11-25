@@ -346,6 +346,24 @@
         }
       ]
     },
+    "19": {
+      "note": "The editable locked distribution records version 3.0.6.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dae9040baa0515a180e80c9087493f4f174f64c",
+            "content": "sha256:c098fec03adfe064a72d4f49e5ef885c4639117fc5bd1d9c0bab73f2ad040f7d",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/uv.lock"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Root pytest configuration selects four workers by default. The retained historical comments record an earlier four-worker runtime and the earlier population-growth boundary.\n\nAnchor: \"-n=4\"",
       "targets": [
@@ -385,6 +403,41 @@
               "start": 345
             },
             "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The package metadata declares version 3.0.6.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
+            "content": "sha256:780e2e62d63243b1d16ca6fce86db386b03b63818b07777b6f09f478c78689df",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The runtime reads package metadata and uses version 3.0.6 in an uninstalled checkout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "393e94f256070902f2e90853cb7135bcea711381",
+            "content": "sha256:343d3a559e4162769dbd646f53825e8513f4bc169c5dd9266049c712f7ab2f41",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/version.py"
           },
           "kind": "code"
         }

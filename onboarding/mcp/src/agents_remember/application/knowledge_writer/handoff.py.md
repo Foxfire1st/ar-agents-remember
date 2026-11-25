@@ -183,9 +183,9 @@ read_handoff_shapes uses the same entry, record and history decoders as full wri
 
 ## Evidence
 
-- Entry status refuses typed revision state through the shared input guard. [32]
-- Record fields refuse supplied identity, revision, writer metadata and typed revision state before authoring. [33]
-- The four state words receive a refusal that identifies the product's ownership of derived state. [34]
+- Entry status refuses typed revision state through the shared input guard. [35]
+- Record fields refuse supplied identity, revision, writer metadata and typed revision state before authoring. [36]
+- The four state words receive a refusal that identifies the product's ownership of derived state. [37]
 
 ### Docs References
 

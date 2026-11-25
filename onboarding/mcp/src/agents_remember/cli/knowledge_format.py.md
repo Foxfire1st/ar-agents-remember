@@ -6,23 +6,23 @@
 
 ## Purpose
 
-**`agents-remember knowledge-format [--check] PATH...`: the command that applies the canonical
-knowledge formatting (MIK-R21 rule 8).** Each PATH is a file or a directory; a directory contributes
-every `*.json` below it except the generated route-index cache (`*.index.json`) and anything under a
-hidden directory (such as `.ar-index`). A dot-named *file* is still formatted. It is the command the
-validator (MIK-R22) names, as `agents-remember knowledge-format <path>`, when it refuses a
-non-canonical file.
+**`agents-remember knowledge-format [--check] PATH...` applies canonical knowledge formatting**
+(MIK-R21 rule 8). Each operand can name a file or directory. Directory walks format JSON and
+skip generated route-index caches. Within a converted memory root’s `knowledge/` and
+`onboarding/` subtrees, those walks include dot directories. Elsewhere the walk prunes dot
+directories. The converted validator names `agents-remember knowledge-format <path>` when
+it refuses a noncanonical file.
 
 ## Code Commentary
 
 ### Logic
 
 - `add_arguments` declares `paths` (one or more) and `--check`.
-- `iter_json_files` yields a named file as-is, and for a directory the sorted `rglob("*.json")`
-  minus every path that `memory_quality.knowledge_validator.trees.is_excluded_from_knowledge` excludes:
-  a `*.index.json` cache, or a path with a dot-named *directory* component. Since MIK-R22 this is the
-  validator's own predicate, so the formatter and the validator cannot disagree about which files are
-  knowledge. The module's former `CACHE_SUFFIX` constant and its own copy of the rule are gone.
+- `iter_json_files` yields a named file as supplied. For a directory it sorts the JSON paths from
+  `_directory_json_files`. That walker resolves the operand and recognizes converted memory
+  ancestors or roots it reaches. It enables dot-directory descent inside their actual
+  `knowledge/` and `onboarding/` subtrees. Same-named directories outside those subtrees
+  retain ordinary pruning. Every walked JSON path uses the validator’s generated-cache filter.
 - `run` reads each file, formats it with `canonical.format_bytes`, and: on `OSError` or
   `CanonicalFormatError` prints `invalid <path>: …` and sets status 2 (file untouched); if already
   canonical, continues; with `--check` prints `not canonical <path>` and sets status ≥1; otherwise
@@ -38,11 +38,10 @@ non-canonical file.
 - Exit status: 0 all canonical (after rewriting), 1 `--check` found a non-canonical file, 2 a file
   could not be read or parsed. `--check` writes nothing.
 - It formats only; it validates nothing and changes no content.
-- **The formatter and the validator share one "is this a knowledge file" predicate.** The import runs
-  from the CLI layer down to `memory_quality`, which is the permitted direction.
-- **Nothing in the installed runtime reads or writes these files before MIK-R37.** The package is
-  reached only from `agents-remember knowledge-format` and the tests; the live memory repository
-  is still read and written through the SQLite knowledge store until the layout switch.
+- **Directory operands share the validator’s generated-cache predicate.** Converted-root detection
+  and traversal belong to the CLI walker. An explicit file operand retains its separate path.
+- The pre-layout runtime used the SQLite knowledge store. The converted validator consumes
+  the canonical knowledge files.
 
 ### Todos
 
@@ -65,10 +64,10 @@ No configured live documentation source was available for this pass.
 The formatting rules live in the model package; this adapter only walks paths and writes.
 
 - Arguments. [1]
-- Cache files and hidden directories are skipped through the validator's shared predicate. [2]
+- Directory operands include dot paths within the knowledge or onboarding subtrees of a converted memory root. The directory walk shares the validator’s generated-cache exclusion. [2]
 - Exit statuses and the atomic rewrite. [3]
 - Registration in the umbrella.
-- The command's check, rewrite and skip behaviour is tested end to end. [5]
+- The formatter test checks rewrites across equivalent and containing operands, including hidden memory files, and preserves generated caches and Git metadata. [5]
 
 ### Cross-Repo References
 

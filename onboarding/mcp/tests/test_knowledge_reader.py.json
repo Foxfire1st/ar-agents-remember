@@ -19,14 +19,15 @@
       ]
     },
     "15": {
-      "note": "The listing entry point the route uses.\n\nAnchor: `read_tree_listing`",
+      "note": "The listing entry point the route uses.\n\nAnchor: “read_tree_listing”",
       "targets": [
         {
           "anchor": {
-            "blob": "be05f862f8abdce1e737a3b7888b6bf27b93274c",
-            "content": "sha256:adfabe1875671003c723cc24fd2c77503984f45db46aa4c77090f99e845e2f7c",
+            "blob": "587f7c66a2347f7f8fd2baa361cddeaeb6a5453c",
+            "content": "sha256:d0f1509ea5458109bc4dfbe88da026017a5d42e988949d4716f931635ebe5301",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "read_tree_listing"
             },
             "path": "mcp/src/agents_remember/application/knowledge_reader/tree_coverage.py"
           },

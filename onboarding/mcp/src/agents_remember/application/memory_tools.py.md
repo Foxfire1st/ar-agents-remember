@@ -46,7 +46,7 @@ The module defines three parameter objects for separate application contracts: `
 
 `CitationOperationScope.documents` admits a finite fix list beside singleton `document`. Both selectors together, an empty list and a list over `MAX_CURATOR_SOURCE_CANDIDATES` refuse before resolving trees; that shared constant is the only list bound. Only fix passes `allow_documents=True`; check rejects a multi-card selector. Each fix member has singleton authoring/refresher semantics, and a refused member does not prevent other named cards from being processed. No snapshot or caller-exclusion operand remains. Unconverted check/fix refuse instead of acquiring or repairing legacy citations.
 
-Converted fixing forwards each selected document to card authoring and reference repair, excluding authoring-refused sidecars from mechanical refresh. This internal exclusion set protects refused cards; it is not a caller-glob interface. The removed `_citation_trees`, citation source-index build and internal citation migration helpers supply no fallback.
+Converted fixing forwards each selected document to card authoring and reference repair, excluding authoring-refused sidecars from mechanical refresh. This internal exclusion set protects refused cards; it is not a caller-glob interface. The removed `_citation_trees`, citation source-index build and internal citation migration helpers supply no fallback. If the fixer reports no scanned-document count and the caller names no documents, the response counts onboarding Markdown using memory-relative paths and the generated-cache predicate, retaining files under dot directories.
 
 Citation selection is application-owned. The CLI and registered fixer construct the same document-only scope; converted reference authoring and mechanical refresh remain distinct stages. Neither public surface exposes legacy snapshot, caller-exclude, source-index-build or migration operands.
 
@@ -202,7 +202,7 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 - Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. [1]
 - The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. [2]
 
-- Carryover's options carry the approval intent and the explicit review selections, not a memory commit subject, and the apply adapter forwards those fields. [3]
+- Carryover apply forwards approval intent and explicit review selections to the converted worktree import. [3]
 
 - Canonical quality scope is owned by the focused scope module. [4]
 
@@ -216,15 +216,15 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 - The route-index builder receives storage authority explicitly in its typed signature. [8]
 
 
-- The apply entry point that forwards that subject and nothing else. [9]
+- The carryover apply entry point passes the selected recovery request and its approval and review options. [9]
 
 - Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. [10]
 - The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. [11]
 
-- Carryover's options carry the approval intent and the explicit review selections, not a memory commit subject, and the apply adapter forwards those fields. [12]
+- Carryover apply forwards approval intent and explicit review selections to the converted worktree import. [12]
 
 
-- The apply entry point that forwards that subject and nothing else. [13]
+- The carryover apply adapter delegates to the converted importer and sets ok from its returned state. [13]
 
 - Canonical quality scope is owned by the focused scope module. [14]
 - Its resolver, which binds a repository to the scope the quality surface runs against. [15]
@@ -239,16 +239,16 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 
 - The shared converted fixer authors references, then refreshes mechanical moves, excluding every authoring-refused sidecar; one named document scopes both stages. [19]
 
-- The scope object the caller's named documents ride with, validated at construction. [21]
+- CitationOperationScope carries the named documents and validates their structural shape at construction. [21]
 
 - **The memory initializer now reports the knowledge foundation beside the memory root it scaffolds (`ICR-R29@v1`).** [23]
 - **The admission whose location this block reports, so the location a curator is told to populate is the one the bootstrap publishes to.** [24]
 - The read that decides the block's state, and the unavailable form its states come from. [25]
 
-- The scope's own check: one named `document`, or a `documents` list only for `citation_fix`, refused before the memory tree is resolved. [26]
+- Citation scope rejects conflicting selectors, empty or oversized lists, and lists outside citation fixing before tree resolution. [26]
 
 
-- The two card writers, which ask no cutover lock. Anchor: `citation_fix_tool`, `route_index_refresh_tool` [27]
+- Citation fixing and route-index apply use the ordinary leaf write guard or the measured converted pre-baseline admission. [27]
 
 - Frozen implementation of _refuse_official_memory supporting the stated file behavior. [28]
 - Frozen implementation of _leaf_memory_writer_scope supporting the stated file behavior. [29]
@@ -262,7 +262,7 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 
 - The operation-specific shared legacy refusal preserves short-message/full-detail conversion guidance; only recognized caller RuntimeErrors are translated. [35]
 
-- The public apply catches only the recognized legacy refusal; success and converted-target refusal remain distinct. [36]
+- Public carryover apply envelopes the recognized legacy refusal, re-raises other runtime errors, and sets ok from a returned refused state. [36]
 
 
 - Memory initialization reports the foundation without authoring records. Complete resolved states and nonlegacy unavailable publication name the measured state before the Architect/regular-task/Curator handover; partial-index repair, legacy conversion and admission refusals retain their distinct next actions. [42]

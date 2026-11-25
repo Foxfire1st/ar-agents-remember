@@ -1,6 +1,24 @@
 {
   "path": "mcp/tests/test_tool_answer_table.py",
-  "proves": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "16022b2bbe9b55a19f4ac57de9ef00bc8baf5aa0",
+        "content": "sha256:00c55123b2e969e80aad098a1c902d86843b84a96f9a25519da44895f92d05e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerTableTests.test_every_row_passes_the_gates"
+        }
+      },
+      "facet": "The table validates the representative deep-root authored start case and its 600-token bound.",
+      "id": "PRF-42YB96",
+      "invariant": "INV-RF4W8Q",
+      "origin": {
+        "handoffEntry": "BUG-R22@v1 §4",
+        "leaf": "261112-BUG-L22"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

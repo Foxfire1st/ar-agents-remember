@@ -17,23 +17,6 @@
       },
       "rationale": "The knowledge_read row describes writer aggregates and the complete report.",
       "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "e0f70f991c3b38c1dbc9f586c0c6b70303b451cd",
-        "content": "sha256:8c9fe4e5e16f91df0f3c45a00356d8bcefc9400fd0b71e7891581bd34aee2c5f",
-        "locator": {
-          "kind": "file"
-        }
-      },
-      "id": "RLZ-RZ1XP1",
-      "invariant": "INV-760TKM",
-      "origin": {
-        "handoffEntry": "BUG-R15@v1 item 5",
-        "leaf": "261112-BUG-L15"
-      },
-      "rationale": "Documents the tool response and how callers distinguish absent, matching and stale historical generations.",
-      "role": "unclassified"
     }
   ],
   "references": {},

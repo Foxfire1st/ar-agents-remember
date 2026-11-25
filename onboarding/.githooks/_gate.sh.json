@@ -1,0 +1,24 @@
+{
+  "path": ".githooks/_gate.sh",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
+        "content": "sha256:1a620a415506dc0a512414cb185c764f35f1ce04b0f946c17f2d7cc40ea645dd",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-TKDWW5",
+      "invariant": "INV-DHKR4G",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 2",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The existing copy or hook obligation directs stale instruction facts and copies to the single renewal command.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

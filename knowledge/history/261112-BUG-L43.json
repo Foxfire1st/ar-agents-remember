@@ -1,0 +1,1950 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L43",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-03G85K",
+      "items": [
+        "sha256:09414b9df4d918574f46e552372d9aa3ce14d10ec18da5747ab8b242103b5662",
+        "sha256:26aa8e14a8982bb4593af7b87f850b45c990e502949f6cee9231c647755605cf",
+        "sha256:36299c5c42975b9891e143e589216cc6209ed7bbe648066ae2378f8ccedcdc48",
+        "sha256:4888366ba5be83104da672ea815bc166e73ab0b868a6b66c02468575a1f17fd2",
+        "sha256:6f921b586bc3f8ca71c384b104421920ada972520da5e42dd7e3f12291685eb6",
+        "sha256:90318212c7cc145008b9bab736b6baac2cbb55957a5a8f3a9964e9d3a6742645",
+        "sha256:955409ae3e7c33c87aa05fd71a6ac7871ce296ba3d446973558ecf9ba3f3d213",
+        "sha256:e3aef6d9b5e290675285fa2ba2137719069e07a948131b7c4ce768880f315349",
+        "sha256:faac7fdb2230358bb318bb2955cc5c8b62999eb508cef630acbd9fb0d1691464"
+      ],
+      "reason": "The crossing writer test now creates an active sync record and expects the full settled commit rather than a branch name.",
+      "sources": [
+        {
+          "blob": "b2cb52a7cdcd2d8f0d4a8d4d49d3f83b36f4f590",
+          "path": "mcp/tests/test_knowledge_writer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_writer.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "09e47d143974f1fded313e9101a73975660d04b7",
+            "content": "sha256:0a6283662bd22e60f8b821e90bbe9975fb1588ed7e1c7b656d9991ae0d736fcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_eviction_removes_dead_builder_temp_and_keeps_live_builder_temp"
+            },
+            "path": "mcp/tests/test_knowledge_index_build_identity.py"
+          },
+          "before": {
+            "blob": "544c37c322180c6c245802bb0f9de5e02d7e6260",
+            "content": "sha256:4b36eae371f5c7f9e120ee35820d99b084587aa0f5059886f59fb37dea08f0f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_eviction_removes_dead_builder_temp_and_keeps_live_builder_temp"
+            },
+            "path": "mcp/tests/test_knowledge_index_build_identity.py"
+          },
+          "id": "PRF-HK8C2M"
+        },
+        {
+          "after": {
+            "blob": "09e47d143974f1fded313e9101a73975660d04b7",
+            "content": "sha256:06814611e535f53d7a45f8efa28ecaef3de7f2260d5c265576c9bf7f4bd5ba11",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_processes_share_one_cold_index"
+            },
+            "path": "mcp/tests/test_knowledge_index_build_identity.py"
+          },
+          "before": {
+            "blob": "544c37c322180c6c245802bb0f9de5e02d7e6260",
+            "content": "sha256:1d6286f436d83c135bc775479ba6264a9ffb9c9f33c85ebccbb1a0a61a19e5c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_processes_share_one_cold_index"
+            },
+            "path": "mcp/tests/test_knowledge_index_build_identity.py"
+          },
+          "id": "PRF-MRFNTH"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-0557AK",
+      "items": [
+        "sha256:125fc89127eb47d23501900108e4796c3ad6faad75769f0d6e96f359459dc363"
+      ],
+      "reason": "The touched tests still distinguish live, ambiguous and gone temporary owners. Shared wait bounds leave the eviction condition and test assertions intact.",
+      "revision": 1,
+      "subject": "INV-2B865P"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-07RPXV",
+      "items": [
+        "sha256:b1009aca35ec8b965e22bdd53f379b6b1abc0ebc4b2fe5f90e5dc549ecb26e0f"
+      ],
+      "reason": "crossing_sync.py:324 in cross. This planning or report plumbing supports the existing converted plan, the Git-owned path boundary and the managed history-opening contract.",
+      "subject": "hunk:sha256:b1009aca35ec8b965e22bdd53f379b6b1abc0ebc4b2fe5f90e5dc549ecb26e0f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-122XAH",
+      "items": [
+        "sha256:51924ac07baef70e28bce5bd956df521b8b9c19ea101a45348cc2827522b0b69"
+      ],
+      "reason": "crossing_port.py:17. The adapter supplies the explicit set of Git-owned paths for the recorded structural overlay. The conversion port retains its integration contract.",
+      "subject": "hunk:sha256:51924ac07baef70e28bce5bd956df521b8b9c19ea101a45348cc2827522b0b69"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1MJQ4D",
+      "items": [
+        "sha256:200c69d7ee8799788cb20caa326e14cdef43b5967962d6ecab05496e63b639ef"
+      ],
+      "reason": "The side journal keeps its optional history owner alongside the report and the retained-tree proof data.",
+      "sources": [
+        {
+          "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3EKYBG",
+      "items": [
+        "sha256:e46e79f9212c6e3358cc5ee22d7bd8e46518846cde4f01631ab2cd787da6f269"
+      ],
+      "reason": "The conversion route retains text ownership and structural alignment. The implementation cards distinguish the native Git paths and the transaction's history owner.",
+      "sources": [
+        {
+          "blob": "1f058dbc3bdb98a8178b81b81e36bb18eed3aee6",
+          "path": "mcp/src/agents_remember/memory/conversion/crossing_port.py"
+        },
+        {
+          "blob": "8bd3921a319370f6de5252c38d6ae03458c23b1a",
+          "path": "mcp/src/agents_remember/memory/conversion/crossing_sync.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-3V9MT3",
+      "items": [],
+      "reason": "The evidence-system guide’s lane and lifecycle descriptions still match the manifests, which assign the four new test modules to unit regression and integration and record their consumers on existing lifecycle entries.",
+      "revision": 10,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-41GC5M",
+      "items": [
+        "sha256:5cd84f67e7218e7cd1e4c40af827a747c3998a9529187fc8292de2b252674b2d"
+      ],
+      "reason": "knowledge_crossing.py:146 removes an implementation fragment. The helper or removed code implements the recorded bounded overlay and operation-owned history recovery. The caller-visible behavior is recorded at the structural overlay and retained merge boundary.",
+      "subject": "hunk:sha256:5cd84f67e7218e7cd1e4c40af827a747c3998a9529187fc8292de2b252674b2d"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4BRX9X",
+      "items": [
+        "sha256:94109d564c9bbf58ef72b60cfa80217b5a948f338c96ab7d7956dcba5f00bb78"
+      ],
+      "reason": "The new test card explains checkpoint interruption, exact disk and stage ownership, later row preservation and verified rollback.",
+      "sources": [
+        {
+          "blob": "94c0929b5a763c32e1eaed59bed1290e3635380c",
+          "path": "mcp/tests/test_crossing_history_interruption.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_crossing_history_interruption.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4H5J3Q",
+      "items": [
+        "sha256:a4a7be8b45b4799598f7f6e6c6003e8115c0b621d0957d41f1a92481d11e0406"
+      ],
+      "reason": "The testing overview distinguishes register treatment, module resets and owner-managed quiescence.",
+      "sources": [
+        {
+          "blob": "f1942589c08102eb7e5b7066309613c2d4cfcaf9",
+          "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4QT3R8",
+      "items": [
+        "sha256:a5ef91db7e17e83661a15c79f03fb9983e584e1a8e10fc7518a8ad8f29b3fa53"
+      ],
+      "reason": "global_state.py:19. This declaration supports the closed process register's quiescent treatment. The affected register and tests carry the semantic obligation.",
+      "subject": "hunk:sha256:a5ef91db7e17e83661a15c79f03fb9983e584e1a8e10fc7518a8ad8f29b3fa53"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4R7K9T",
+      "items": [
+        "sha256:f9aee4feb3d32a4fe7370e668d7592d31ecf2890299807e7daa09d48fbc38576"
+      ],
+      "reason": "services.py:195 in CrossingPlanView. This docstring clarifies the already-recorded overlay boundary for the existing crossing plan type.",
+      "subject": "hunk:sha256:f9aee4feb3d32a4fe7370e668d7592d31ecf2890299807e7daa09d48fbc38576"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4Y1MBA",
+      "items": [
+        "sha256:e46437b8313aa878bfd1bf55044aeb5b89fcf369efb7f15b308c3e84f9d1b2b2"
+      ],
+      "reason": "crossing_sync.py:39. This planning or report plumbing supports the existing converted plan, the Git-owned path boundary and the managed history-opening contract.",
+      "subject": "hunk:sha256:e46437b8313aa878bfd1bf55044aeb5b89fcf369efb7f15b308c3e84f9d1b2b2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4Z94ZM",
+      "items": [
+        "sha256:6b728227fb1584ef4a3687fb81d276d4af5515f5624a3619ed9462836a46299f"
+      ],
+      "reason": "The port card records the inspection of native entries that reserves modes, types and path collisions for Git.",
+      "sources": [
+        {
+          "blob": "1f058dbc3bdb98a8178b81b81e36bb18eed3aee6",
+          "path": "mcp/src/agents_remember/memory/conversion/crossing_port.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/conversion/crossing_port.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "replace",
+      "examined": [
+        {
+          "id": "INV-5YPFVJ",
+          "revision": 4
+        },
+        {
+          "id": "INV-KE2ZHT",
+          "revision": 2
+        },
+        {
+          "id": "INV-KJN5GP",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-5BT13Z",
+      "items": [
+        "sha256:da5346fdfe48316416efca4ccdd27e1bc063e7571b8a398eda159479c139fc49"
+      ],
+      "reason": "The suite's isolation guarantee now combines registered callbacks for module-boundary resets with owner-managed cleanup for quiescent populations. The explicit kernel-holder reset, exact treatment census and private tmux lifecycle continue to govern the same three family members.",
+      "revision": 5,
+      "subject": "FAM-3FTGSA"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5H2PW2",
+      "items": [],
+      "reason": "Two sidecar citations now point to the exact moved-row relocation test and the tested decision, realization and evidence test. They replace file-wide ranges and bind the unchanged card claims to the assertions that support them.",
+      "sources": [
+        {
+          "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/authoring.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5NJJ2H",
+      "items": [
+        "sha256:cae3e898d0c566e350ca1837fd92fb45a10255e5d4cc718a7806772168534b1a"
+      ],
+      "reason": "The crossing plan contract now names modeled files and Git ownership for omitted paths. The existing service interfaces retain their roles.",
+      "sources": [
+        {
+          "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
+          "path": "mcp/src/agents_remember/worktrees/services.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/services.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-603JR8",
+      "items": [
+        "sha256:a8a62e21c0ced8ba07e96234115c6e7c66be7411e6c47d6bdbd27e3732ceff5e"
+      ],
+      "reason": "crossing_port.py:24. The adapter supplies the explicit set of Git-owned paths for the recorded structural overlay. The conversion port retains its integration contract.",
+      "subject": "hunk:sha256:a8a62e21c0ced8ba07e96234115c6e7c66be7411e6c47d6bdbd27e3732ceff5e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6G6HCE",
+      "items": [
+        "sha256:068d1dcfcdef4f7966d6f079a0b22b3d26d603403e5a0f13f5dd38195765da33"
+      ],
+      "reason": "knowledge_crossing.py:160 in _write_plan_files. The helper or removed code implements the recorded bounded overlay and operation-owned history recovery. The caller-visible behavior is recorded at the structural overlay and retained merge boundary.",
+      "subject": "hunk:sha256:068d1dcfcdef4f7966d6f079a0b22b3d26d603403e5a0f13f5dd38195765da33"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-72PAYV",
+      "items": [
+        "sha256:381cf0dee53b66cebf9a866cbe626c41cd1958af44d55dadc805811ef6e1beb8",
+        "sha256:3b91f378c8996b8132baad8de217ab9c530c82d25b11781d3b2a8df741d59d65",
+        "sha256:4aca9a69726f2c3c44893ef0c396400a131676add2f8474f4ca2fa899c8ffe5e",
+        "sha256:5a07524f0650480fdbe119e11c2c4e3100d7281fb526e014528af993469f121b",
+        "sha256:7b8aa89992835d08adac05bec96edb99c9db7507e59a92a088359bc03bbb8f67"
+      ],
+      "reason": "The fixture adjustments preserve the structural alignment and reporting cases. The history evidence names the exact staged closure this unit test observes.",
+      "sources": [
+        {
+          "blob": "ac53ee63e71fc1466cc080cb13729c0064c5ed03",
+          "path": "mcp/tests/test_knowledge_crossing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_crossing.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7985HZ",
+      "items": [
+        "sha256:9a77ffa76284c5a2d3c7dd6a2266ff1c057cd3f66342a484c021e78c9da2de82"
+      ],
+      "reason": "crossing_port.py:13. The adapter supplies the explicit set of Git-owned paths for the recorded structural overlay. The conversion port retains its integration contract.",
+      "subject": "hunk:sha256:9a77ffa76284c5a2d3c7dd6a2266ff1c057cd3f66342a484c021e78c9da2de82"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7ECGMQ",
+      "items": [
+        "sha256:09d3ccafe1f924e9f69beacdeb14c5a4956a9ac73df10db7cbfc2f44d473e7ac"
+      ],
+      "reason": "The added _crossing_code_snapshot at knowledge_write_route.py:394-406 requires a completed code side and a branch tip equal to resultHead, then loads the commit snapshot. This is the snapshot step of INV-6WBDM3 at crossing_write_report.",
+      "subject": "hunk:sha256:09d3ccafe1f924e9f69beacdeb14c5a4956a9ac73df10db7cbfc2f44d473e7ac"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7NPXVH",
+      "items": [
+        "sha256:f90be20b65d9147151bef368f5ea57f0371d5fe2ad5d419ef17de69f236b2d68"
+      ],
+      "reason": "_proof.py:342 in _scratch_tree_matches. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:f90be20b65d9147151bef368f5ea57f0371d5fe2ad5d419ef17de69f236b2d68"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7RJAZW",
+      "items": [
+        "sha256:c1f4a49eb6ac539ce6bf00aa5f158bf586a3519f12c31ed3bcca87ea284411ba"
+      ],
+      "reason": "knowledge_crossing.py:49. The helper or removed code implements the recorded bounded overlay and operation-owned history recovery. The caller-visible behavior is recorded at the structural overlay and retained merge boundary.",
+      "subject": "hunk:sha256:c1f4a49eb6ac539ce6bf00aa5f158bf586a3519f12c31ed3bcca87ea284411ba"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7S6K26",
+      "items": [
+        "sha256:8dcc8d395bd354ec51bdd8d867853cd36de2ed0efa1ad513781b0a687033041b"
+      ],
+      "reason": "crossing_sync.py:319 in cross. This planning or report plumbing supports the existing converted plan, the Git-owned path boundary and the managed history-opening contract.",
+      "subject": "hunk:sha256:8dcc8d395bd354ec51bdd8d867853cd36de2ed0efa1ad513781b0a687033041b"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "038ae9f6e2473e76ca8db8fa677acbea16b370f0",
+            "content": "sha256:88dfa5f27cf6b2e28e46a25d2a0dda53d35bf6f0b07b66cd1d2a92c51f3a8a08",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+            "content": "sha256:1923bb64d30816f6f4bade6637863f95b0e86c12e2f4783411d87017b5275b5c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-7X8RKN",
+      "items": [
+        "sha256:15b8be13086cf2ae345c37d0f117c0ed63f3baf268026315881bd6d715dcdc78"
+      ],
+      "reason": "The lane changes add four present crossing test modules. They preserve the certification boundary and do not reintroduce a removed provider rail or a missing test path.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8C3ZBC",
+      "items": [
+        "sha256:4a7cef742e046e635be8e835ec01dae3a671a925b81b2504671d87f0e89fa949"
+      ],
+      "reason": "The merge card distinguishes the modeled plan from Git-owned paths and describes the transaction's open-history path for non-record conflicts.",
+      "sources": [
+        {
+          "blob": "8bd3921a319370f6de5252c38d6ae03458c23b1a",
+          "path": "mcp/src/agents_remember/memory/conversion/crossing_sync.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/conversion/crossing_sync.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-94GMCH",
+      "items": [
+        "sha256:10746cf60b5fdc857959c7da9eecd56dee00fc87bb5a2aa6705ecef4847dc151"
+      ],
+      "reason": "The added _crossing_operation at knowledge_write_route.py:356-378 checks the open sync phase, contract and requested crossing owner. The same hunk adjusts _crossing_history_refusal to take the memory root. These checks implement the settled crossing-write contract that INV-6WBDM3 realizes at crossing_write_report.",
+      "subject": "hunk:sha256:10746cf60b5fdc857959c7da9eecd56dee00fc87bb5a2aa6705ecef4847dc151"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-99Y8ZN",
+      "items": [
+        "sha256:175a98c5afaf3b18606a8f9181a11738a00a9700135abc235afbd69b5df324ee"
+      ],
+      "reason": "knowledge_crossing.py:15. The helper or removed code implements the recorded bounded overlay and operation-owned history recovery. The caller-visible behavior is recorded at the structural overlay and retained merge boundary.",
+      "subject": "hunk:sha256:175a98c5afaf3b18606a8f9181a11738a00a9700135abc235afbd69b5df324ee"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9DZDCZ",
+      "items": [
+        "sha256:6d5deda4b9a7bae453e4dba88c20fba0ee96f1ac7164ab680029e110e78cca53"
+      ],
+      "reason": "The new test card explains the comparison with Git's full native mode, object and stage tuples.",
+      "sources": [
+        {
+          "blob": "4f86d23d20ed3519a361727a64f56e6232b9223a",
+          "path": "mcp/tests/test_knowledge_crossing_git_paths.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_crossing_git_paths.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A68Q7C",
+      "items": [
+        "sha256:3306033f3dfbc340e35ec42f5bdc798900905a6e7c0cfb3c9a621d27786503f8"
+      ],
+      "reason": "crossing_port.py:33 in _git_owned_paths. The adapter supplies the explicit set of Git-owned paths for the recorded structural overlay. The conversion port retains its integration contract.",
+      "subject": "hunk:sha256:3306033f3dfbc340e35ec42f5bdc798900905a6e7c0cfb3c9a621d27786503f8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ASAX31",
+      "items": [
+        "sha256:a7db391eeb0a0ae2b89b8a02430a7f79c7e37b44e2721b47316b5aeb4f5926bd"
+      ],
+      "reason": "knowledge_crossing.py:222 in _unmerge. The helper or removed code implements the recorded bounded overlay and operation-owned history recovery. The caller-visible behavior is recorded at the structural overlay and retained merge boundary.",
+      "subject": "hunk:sha256:a7db391eeb0a0ae2b89b8a02430a7f79c7e37b44e2721b47316b5aeb4f5926bd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AXFMG5",
+      "items": [
+        "sha256:329e9a04357161b52d0a18403ce09630dfdb33dbc1221e918dd74eead83a88fd"
+      ],
+      "reason": "code_anchors.py:23. Commit peeling and format checks support the crossing write's settled commit binding and are described by the snapshot card and its regression proofs.",
+      "subject": "hunk:sha256:329e9a04357161b52d0a18403ce09630dfdb33dbc1221e918dd74eead83a88fd"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "09e47d143974f1fded313e9101a73975660d04b7",
+            "content": "sha256:06814611e535f53d7a45f8efa28ecaef3de7f2260d5c265576c9bf7f4bd5ba11",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_processes_share_one_cold_index"
+            },
+            "path": "mcp/tests/test_knowledge_index_build_identity.py"
+          },
+          "before": {
+            "blob": "544c37c322180c6c245802bb0f9de5e02d7e6260",
+            "content": "sha256:1d6286f436d83c135bc775479ba6264a9ffb9c9f33c85ebccbb1a0a61a19e5c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_processes_share_one_cold_index"
+            },
+            "path": "mcp/tests/test_knowledge_index_build_identity.py"
+          },
+          "id": "PRF-D95K7C"
+        },
+        {
+          "after": {
+            "blob": "09e47d143974f1fded313e9101a73975660d04b7",
+            "content": "sha256:1965c7a3ff4be3c8a0a6fb110c9903166c26562a4d5935c2b90c4bb1380e30e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_eight_cold_callers_share_one_build"
+            },
+            "path": "mcp/tests/test_knowledge_index_build_identity.py"
+          },
+          "before": {
+            "blob": "544c37c322180c6c245802bb0f9de5e02d7e6260",
+            "content": "sha256:b267740009ed53c911adec4d12076c89d689d409ec79dea0ca0008b5f59dbd27",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_eight_cold_callers_share_one_build"
+            },
+            "path": "mcp/tests/test_knowledge_index_build_identity.py"
+          },
+          "id": "PRF-JB1C2C"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-AZT876",
+      "items": [
+        "sha256:3fe50ee7fabbb090766307f1875caeb45fb45aaf7484ff46ccc67dc07c1b16ef"
+      ],
+      "reason": "The touched tests still verify single build coordination and effective lock ownership. The common hang guard replaces test-local wait bounds while the production lock rule remains unchanged.",
+      "revision": 1,
+      "subject": "INV-5SX7YZ"
+    },
+    {
+      "considered": [
+        "FAM-Q0MQAE"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-B7WWAA",
+      "items": [
+        "sha256:05121bff303560b9ac15338b7bf6ab083076e2c472c1b79537794d0a5cf3566d"
+      ],
+      "reason": "The alignment family binds modeled reference correspondence. This obligation governs the crossing writer or transaction boundary, outside that joint reference guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-EPF322"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-C993H1",
+      "items": [
+        "sha256:f681e2ab62f54736da86f5bdc5ca148df2cb29f365650d0b785ea874ccbb08c0"
+      ],
+      "reason": "The retained proof still checks pinned parents and exact ownership. Its recovery now recognizes the operation-owned interrupted open before parking.",
+      "sources": [
+        {
+          "blob": "7ed3b6c446f9e25c40f4f4673933de79166f4847",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_proof.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/sync_transaction_git/_proof.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CFKFW8",
+      "items": [
+        "sha256:3f0db468b367fabbcdfea0927f4549932db66e7226eab8888cd08f6fd004f029"
+      ],
+      "reason": "_proof.py:27. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:3f0db468b367fabbcdfea0927f4549932db66e7226eab8888cd08f6fd004f029"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CJY9PM",
+      "items": [
+        "sha256:a8e004a495fefeb71f147c987391f166ad4628063dc7cfa115a581272ce9eb3a"
+      ],
+      "reason": "knowledge_crossing.py:68 removes an implementation fragment. The helper or removed code implements the recorded bounded overlay and operation-owned history recovery. The caller-visible behavior is recorded at the structural overlay and retained merge boundary.",
+      "subject": "hunk:sha256:a8e004a495fefeb71f147c987391f166ad4628063dc7cfa115a581272ce9eb3a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DHXKSA",
+      "items": [
+        "sha256:93b6584aaece39fc22c04b6a522f733733826e297645d38bfd1f538936cee1ca"
+      ],
+      "reason": "_proof.py:356. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:93b6584aaece39fc22c04b6a522f733733826e297645d38bfd1f538936cee1ca"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DKS5ZT",
+      "items": [
+        "sha256:43ab04c2b221395e47b1397bcb8ccff1f9732db0ff85179dda7cc3c41a69b480"
+      ],
+      "reason": "_proof.py:32. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:43ab04c2b221395e47b1397bcb8ccff1f9732db0ff85179dda7cc3c41a69b480"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-DND8F4",
+      "items": [
+        "sha256:a3ef935f2af3439c477fdc336d31e0e14d2f35435ba4f4f34965c9bd7b984d28"
+      ],
+      "reason": "The MCP reference accurately describes planning and file writes without a Git commit and identifies the master contract and crossing selector for an open history from a crossing sync or structural merge parked before its merge commit.",
+      "revision": 15,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ac53ee63e71fc1466cc080cb13729c0064c5ed03",
+            "content": "sha256:49682b415cfa7183ea106bc52b4aae1225ea1ed91c943e6e0ec94719d4297ba7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_ordinary_converted_sync_aligns_through_the_same_merge"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "before": {
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:ecec5b2c71859262a27d872d6327ecdfbea51da2f10b9b6d9cbe7b92e5d29d90",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_ordinary_converted_sync_aligns_through_the_same_merge"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "id": "PRF-WZ1FP7"
+        },
+        {
+          "after": {
+            "blob": "8bd3921a319370f6de5252c38d6ae03458c23b1a",
+            "content": "sha256:adc432bc93fe6eb22b59a42aa6d6ea2cf8aa7dd7fe0eeb5ac827e07f60a24458",
+            "locator": {
+              "kind": "symbol",
+              "name": "cross"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/crossing_sync.py"
+          },
+          "before": {
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:930dde8e49031aed35627898bdc80525f96e22aca48e3661d9086b0527a819a8",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 228
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/crossing_sync.py"
+          },
+          "id": "RLZ-F3GNJK"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-E0GFTW",
+      "items": [
+        "sha256:f8ad6f84575d2dd65a8215a42c6e2f9f31b2e97876adabc7405f68916580fc5b"
+      ],
+      "reason": "Both converted sync modes enter cross and call merge_trees over the modeled paths. Bind the realization to cross, which includes the Git-owned path exclusion and the shared merge call. The existing ordinary converted sync proof still exercises reference alignment through that call.",
+      "revision": 1,
+      "subject": "INV-B644A4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-E59TJG",
+      "items": [
+        "sha256:72806fe1e1efed4d1e06c431345cddf5d89ed44348728ef2aa7413530c450741"
+      ],
+      "reason": "The overview describes a scoped structural overlay and the retained history of an interrupted or refused master merge.",
+      "sources": [
+        {
+          "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
+          "path": "mcp/src/agents_remember/worktrees/knowledge_crossing.py"
+        },
+        {
+          "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
+          "path": "mcp/src/agents_remember/worktrees/services.py"
+        },
+        {
+          "blob": "745ae007ae4dd8bfe651b7510d6fe81c2269763b",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+        },
+        {
+          "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E8PR88",
+      "items": [
+        "sha256:e9f7a83e1191f5db9903d91d909234218e97eb53c8391ae8b78169355ef7e7bb"
+      ],
+      "reason": "crossing_sync.py:86. This planning or report plumbing supports the existing converted plan, the Git-owned path boundary and the managed history-opening contract.",
+      "subject": "hunk:sha256:e9f7a83e1191f5db9903d91d909234218e97eb53c8391ae8b78169355ef7e7bb"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EAD344",
+      "items": [
+        "sha256:becbc4e1f3175f7b929efb2287c5c29a322ce1218ecbfef8ba35f4610ad47835"
+      ],
+      "reason": "knowledge_write_route.py:339 in _crossing_contract_refusal. This setup, validation or result plumbing implements the same settled crossing-write contract recorded at crossing_write_report.",
+      "subject": "hunk:sha256:becbc4e1f3175f7b929efb2287c5c29a322ce1218ecbfef8ba35f4610ad47835"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EVVAZ2",
+      "items": [
+        "sha256:40f6e54b3cbabfe2fc506b8dff9a36a421a30e8d38f0d6c46bd34f90c9587f2b"
+      ],
+      "reason": "The transaction's existing side ordering and retry ownership still govern; the structural park now carries its crossing-history owner into that journal.",
+      "sources": [
+        {
+          "blob": "745ae007ae4dd8bfe651b7510d6fe81c2269763b",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/sync_transaction.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EWZKWN",
+      "items": [
+        "sha256:2bef457e94c52d24bfec3c590eeaec83a487288a3e7dbe87b984014193eb1ce5"
+      ],
+      "reason": "_proof.py:49. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:2bef457e94c52d24bfec3c590eeaec83a487288a3e7dbe87b984014193eb1ce5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FHF45N",
+      "items": [
+        "sha256:7bec3feba59dbb6c83c82ed1448588108a80179e1eef7ecbcc0ab504c5d422de"
+      ],
+      "reason": "The index test card distinguishes the _builds dictionary from the _active_temps set and names the two in-process thread paths that assert both collections are quiescent for their fixture directory.",
+      "sources": [
+        {
+          "blob": "09e47d143974f1fded313e9101a73975660d04b7",
+          "path": "mcp/tests/test_knowledge_index_build_identity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_index_build_identity.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G4H6M7",
+      "items": [
+        "sha256:74fee9c19d1d8e6d06b4f43a0c5024ff4fe345e40ced80b94f4a0743aa1cd6d7"
+      ],
+      "reason": "crossing_sync.py:61. This planning or report plumbing supports the existing converted plan, the Git-owned path boundary and the managed history-opening contract.",
+      "subject": "hunk:sha256:74fee9c19d1d8e6d06b4f43a0c5024ff4fe345e40ced80b94f4a0743aa1cd6d7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G82F9Z",
+      "items": [
+        "sha256:a30a5127c8dc3f8ab207e28bece021b351fd605307a8deeefc12da65cef3a5e1"
+      ],
+      "reason": "knowledge_crossing.py:361 removes an implementation fragment. The helper or removed code implements the recorded bounded overlay and operation-owned history recovery. The caller-visible behavior is recorded at the structural overlay and retained merge boundary.",
+      "subject": "hunk:sha256:a30a5127c8dc3f8ab207e28bece021b351fd605307a8deeefc12da65cef3a5e1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GBAEYA",
+      "items": [
+        "sha256:23be792e40bffe545d0829e872b2e4c0f98e480a4286a98fc97f4aa529c701f6"
+      ],
+      "reason": "_proof.py:390 in run. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:23be792e40bffe545d0829e872b2e4c0f98e480a4286a98fc97f4aa529c701f6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HX90GB",
+      "items": [
+        "sha256:02c589510ebca63e1a87040704e090bfa92a7c95ab173b5966a1bde9f9c62b62"
+      ],
+      "reason": "global_state.py:150. This declaration supports the closed process register's quiescent treatment. The affected register and tests carry the semantic obligation.",
+      "subject": "hunk:sha256:02c589510ebca63e1a87040704e090bfa92a7c95ab173b5966a1bde9f9c62b62"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R43",
+          "packet": "requirements/BUG-R43-v1-release-repairs-before-3-0-7.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-J32544",
+      "items": [
+        "sha256:6d67872ebb32bfcce244b976b926ef9181d88cbae6ea0b609d972032a03022e9"
+      ],
+      "reason": "Module-boundary resets now apply to already-imported collection owners with registered callbacks. The two cache-owned quiescent populations have no registered callback and clean up through their owning operations. The dedicated kernel holder retains its explicit reset.",
+      "revision": 4,
+      "subject": "INV-5YPFVJ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J5ADWR",
+      "items": [
+        "sha256:ace1fe0f542833a924fc602ec64197a2262fd62282f6e4a9edb106a1edb1a5bb"
+      ],
+      "reason": "_proof.py:369 in _reproduce_in_scratch. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:ace1fe0f542833a924fc602ec64197a2262fd62282f6e4a9edb106a1edb1a5bb"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J6KZWK",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The card removes obsolete raw line numbers from three parked-candidate consumer descriptions and retains the current anchored artifact declarations. The artifact and contract identities are preserved. The source adds the four crossing test modules to the applicable consumer lists.",
+      "sources": [
+        {
+          "blob": "eb121ee3f8e8799429c91a05931562c977eab548",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J8Z809",
+      "items": [
+        "sha256:65bc56d2412b544b8f7c636d620427d64fc9c5759bdd90b1bc30e500e3896d98"
+      ],
+      "reason": "_proof.py:472 in recapture_resumed_merge. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:65bc56d2412b544b8f7c636d620427d64fc9c5759bdd90b1bc30e500e3896d98"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JJ1HJG",
+      "items": [
+        "sha256:c97a56305c491cc18fa0dd83d500c9d4be6b58e4254e82c00d0b585f29306cb1"
+      ],
+      "reason": "knowledge_crossing.py:42. The helper or removed code implements the recorded bounded overlay and operation-owned history recovery. The caller-visible behavior is recorded at the structural overlay and retained merge boundary.",
+      "subject": "hunk:sha256:c97a56305c491cc18fa0dd83d500c9d4be6b58e4254e82c00d0b585f29306cb1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JMHH3W",
+      "items": [
+        "sha256:ae1e91a24149c9e49c161f6fc7ecbd09cbdd09b1171e27d73344dae6108a8492"
+      ],
+      "reason": "_proof.py:338 in _scratch_tree_matches. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:ae1e91a24149c9e49c161f6fc7ecbd09cbdd09b1171e27d73344dae6108a8492"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JV2YXH",
+      "items": [
+        "sha256:93b267e11d7625ab0bd26dab0b4ba37d3bc3f6c556968bb0b944b309bc687996"
+      ],
+      "reason": "_proof.py:392 in run. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:93b267e11d7625ab0bd26dab0b4ba37d3bc3f6c556968bb0b944b309bc687996"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JW94Y0",
+      "items": [
+        "sha256:f28452d389346d524a2ff320c4d0cbdb75097063dcf09b7426e70197104e66e4"
+      ],
+      "reason": "_proof.py:363 in _scratch_replay_worktree. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:f28452d389346d524a2ff320c4d0cbdb75097063dcf09b7426e70197104e66e4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K1M0W6",
+      "items": [
+        "sha256:feb320e9bc7fd612f54efddd6924afa1e0abbe751ca00151ebb0cc7ed71407ef"
+      ],
+      "reason": "knowledge_crossing.py:178 in _stage_plan_files. The helper or removed code implements the recorded bounded overlay and operation-owned history recovery. The caller-visible behavior is recorded at the structural overlay and retained merge boundary.",
+      "subject": "hunk:sha256:feb320e9bc7fd612f54efddd6924afa1e0abbe751ca00151ebb0cc7ed71407ef"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K7WA91",
+      "items": [
+        "sha256:88aedeabb4127e2e4ebe8fa4e4ca70748df8e904b55c8838b3288bfc5d4ab4ff"
+      ],
+      "reason": "knowledge_crossing.py:166 removes an implementation fragment. The helper or removed code implements the recorded bounded overlay and operation-owned history recovery. The caller-visible behavior is recorded at the structural overlay and retained merge boundary.",
+      "subject": "hunk:sha256:88aedeabb4127e2e4ebe8fa4e4ca70748df8e904b55c8838b3288bfc5d4ab4ff"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "eb121ee3f8e8799429c91a05931562c977eab548",
+            "content": "sha256:d6ebd0d0bdf42458ce8b67ad62a4539f8c5991d2395efd9bf68d66b219a2fac8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "666b80bfb115f9356bce967e5e5ec9f37fe0eb2b",
+            "content": "sha256:73131678c3db3d9aec04f4be66fb3ac229f386778e51cc5ba0138f4ee9c4e832",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "038ae9f6e2473e76ca8db8fa677acbea16b370f0",
+            "content": "sha256:88dfa5f27cf6b2e28e46a25d2a0dda53d35bf6f0b07b66cd1d2a92c51f3a8a08",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+            "content": "sha256:1923bb64d30816f6f4bade6637863f95b0e86c12e2f4783411d87017b5275b5c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-KAXTCM",
+      "items": [
+        "sha256:0f82f240c67e40f6877704fe63bc7dcb27cfe7b795e99e5b568a86b3b09d79d9"
+      ],
+      "reason": "The catalogs register four existing test files in one lane each and add them only to the applicable fixture consumer lists. The governed lists retain their existing identities.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KPBT38",
+      "items": [
+        "sha256:64e7da3aa49f916efe1b996b014e5ebf7f164754d82de8513a6937145709d51e"
+      ],
+      "reason": "_proof.py:407 in verify_crashed_reapply. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:64e7da3aa49f916efe1b996b014e5ebf7f164754d82de8513a6937145709d51e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N15EQ0",
+      "items": [
+        "sha256:64e76025e29dc77c1106a7161ba3d6ff6996e599822f71cb6c7fd36665ecb457"
+      ],
+      "reason": "_proof.py:437 in run. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:64e76025e29dc77c1106a7161ba3d6ff6996e599822f71cb6c7fd36665ecb457"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N3XDZF",
+      "items": [
+        "sha256:f1008ee38cf461222815978c7f107ffa9f0c740d7637faed447ca2ca13ac1716"
+      ],
+      "reason": "The card explains activation of open history for a structural master park and exact checkpoint recovery after refusal.",
+      "sources": [
+        {
+          "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N4ZTRS",
+      "items": [
+        "sha256:0cd1f46e11173dcc9f9160c0862888e78dedf7c25fd4e6659893171b865f7f23"
+      ],
+      "reason": "knowledge_write_route.py:61. This setup, validation or result plumbing implements the same settled crossing-write contract recorded at crossing_write_report.",
+      "subject": "hunk:sha256:0cd1f46e11173dcc9f9160c0862888e78dedf7c25fd4e6659893171b865f7f23"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "09e47d143974f1fded313e9101a73975660d04b7",
+            "content": "sha256:166bdaf96e4b06b996673ce835e9ace0071bea9500566992f39169387f712cdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_build_reaches_all_waiters_and_a_later_lookup_rebuilds"
+            },
+            "path": "mcp/tests/test_knowledge_index_build_identity.py"
+          },
+          "before": {
+            "blob": "544c37c322180c6c245802bb0f9de5e02d7e6260",
+            "content": "sha256:15e8722df950a49200a3c3e20331c8413212108bae0cb2811f4dc8072c67ffea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_build_reaches_all_waiters_and_a_later_lookup_rebuilds"
+            },
+            "path": "mcp/tests/test_knowledge_index_build_identity.py"
+          },
+          "id": "PRF-74KB5Y"
+        },
+        {
+          "after": {
+            "blob": "09e47d143974f1fded313e9101a73975660d04b7",
+            "content": "sha256:1965c7a3ff4be3c8a0a6fb110c9903166c26562a4d5935c2b90c4bb1380e30e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_eight_cold_callers_share_one_build"
+            },
+            "path": "mcp/tests/test_knowledge_index_build_identity.py"
+          },
+          "before": {
+            "blob": "544c37c322180c6c245802bb0f9de5e02d7e6260",
+            "content": "sha256:b267740009ed53c911adec4d12076c89d689d409ec79dea0ca0008b5f59dbd27",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_eight_cold_callers_share_one_build"
+            },
+            "path": "mcp/tests/test_knowledge_index_build_identity.py"
+          },
+          "id": "PRF-PWG6NF"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-NGKBZR",
+      "items": [
+        "sha256:98658ccc496e69f0a0f26feb16602b455e297b275311601773a213a1c227a0a1"
+      ],
+      "reason": "Shared waits and additional quiescence assertions preserve the existing one-builder, shared-failure and retry assertions.",
+      "revision": 1,
+      "subject": "INV-8SMQAE"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NMFWAD",
+      "items": [
+        "sha256:f2cbca45fdaa1366255ea5dc71c3513f08c19ab65e92539b91bea8867b2a0999"
+      ],
+      "reason": "crossing_sync.py:218 in next_crossing_owner. This planning or report plumbing supports the existing converted plan, the Git-owned path boundary and the managed history-opening contract.",
+      "subject": "hunk:sha256:f2cbca45fdaa1366255ea5dc71c3513f08c19ab65e92539b91bea8867b2a0999"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P7PTNM",
+      "items": [
+        "sha256:e0f575a207824d93bfef2daffa280700532a5aa546ea7f699893e32fa0b5718a"
+      ],
+      "reason": "_proof.py:14. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:e0f575a207824d93bfef2daffa280700532a5aa546ea7f699893e32fa0b5718a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P9EREM",
+      "items": [
+        "sha256:aa9d170fa06655140fc82cd7d18f142357c4ba388f1a774298d3c073eb87e121"
+      ],
+      "reason": "knowledge_crossing.py:372 in _open_history_entries. The helper or removed code implements the recorded bounded overlay and operation-owned history recovery. The caller-visible behavior is recorded at the structural overlay and retained merge boundary.",
+      "subject": "hunk:sha256:aa9d170fa06655140fc82cd7d18f142357c4ba388f1a774298d3c073eb87e121"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PEZCAV",
+      "items": [
+        "sha256:f549c8fdaf4b0e051b74048d01c92d4a847d61319df953dd06380caf7c0fedce"
+      ],
+      "reason": "The snapshot account records commit peeling, full-ID syntax and the uncommitted capture path.",
+      "sources": [
+        {
+          "blob": "fbe033f2881d48daf12ff7b4e793d6c806408356",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PHQ32C",
+      "items": [],
+      "reason": "The converted comparison-base reference now identifies the crossing test by symbol in its targets and removes the repeated anchor from the note. The named test supplies the converted-base evidence.",
+      "sources": [
+        {
+          "blob": "cca63e02198c777c714652d517c3489224c4a42a",
+          "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-PMMJER",
+      "items": [],
+      "reason": "The contributor guide’s seven-lane policy still applies because the manifest adds the crossing-writer and Git-path tests to unit regression and the history-interruption and master-sync-history tests to integration.",
+      "revision": 11,
+      "subject": "DPD-78737N"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1f058dbc3bdb98a8178b81b81e36bb18eed3aee6",
+            "content": "sha256:a5a8f0a2b69e81032a1b4f187f8bbc27e38e4b9f9b0b05e563c286455920dd57",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitKnowledgeCrossing"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/crossing_port.py"
+          },
+          "before": {
+            "blob": "ecf97d719a2ae7eb21bbef87608f77daabb9841a",
+            "content": "sha256:afe3a4f71dacf61278c5951dcccd26adb05431c4fbb4f02e6fe8ed9549c246b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitKnowledgeCrossing"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/crossing_port.py"
+          },
+          "id": "RLZ-G1PCJN"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-PWQZV7",
+      "items": [
+        "sha256:94d42fbda0e7249bc6a16dac2859b952b8e91dbe094e43f52f2aec8ab069d9de"
+      ],
+      "reason": "The crossing adapter still loads the Git-side request types inside planning. Reservation of Git-owned paths occurs in a requested plan, preserving deferred initialization and startup behavior.",
+      "revision": 1,
+      "subject": "INV-990KQM"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Q7Y74J",
+      "items": [],
+      "reason": "The sidecar citation for moved-row handling now binds the exact relocation test symbol instead of a broad file range.",
+      "sources": [
+        {
+          "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/handoff.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "content": "sha256:b51d50df3113ad1306d8c689cc735c315fd8d6aea7c3e7f1f6e07941e5b74760",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "before": {
+            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "content": "sha256:0b4bb60005807ea000e1df8845b0ef48d8052337664eb956852106008263c3fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "id": "RLZ-1HZCA0"
+        },
+        {
+          "after": {
+            "blob": "2a12724dc7309e520a831d7b53a646b5f828b088",
+            "content": "sha256:c5206c6a1e8b0e24bb74079dc21a1cec2df1dc949579fb4ee14a5360d1ce90e8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_base.py"
+          },
+          "before": {
+            "blob": "8ef609ef616e41d1e2b6d0dfe336e1672a0918b5",
+            "content": "sha256:3bff9663b9e2a498ecd9201e10afc56746ccf9a6f963dcd3a7f46c8d33ca96e0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_base.py"
+          },
+          "id": "RLZ-1WYQEQ"
+        },
+        {
+          "after": {
+            "blob": "745ae007ae4dd8bfe651b7510d6fe81c2269763b",
+            "content": "sha256:2b87fd89e7d1963fd6341c2f75ffdbcba50be4de5606d8811f2a3e7b7ee9a221",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "before": {
+            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
+            "content": "sha256:6ca6441940c2a59539a1da57c4e60adf31f06b1b57c9d240d2ac99e12a400adc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "id": "RLZ-YA5QN6"
+        },
+        {
+          "after": {
+            "blob": "bcd4a677b194bae8f3100d53a7ee3a2ff788aaa3",
+            "content": "sha256:8880866b9a6fe19937df1db477c9fa021e0a30f253b09d76525ec21afc2554c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "before": {
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:78d0295cca9d2206e6161162136546049c854471bd75ab1a1ea7d9fd16ae5f46",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "id": "RLZ-Z3NKMZ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Q8Y5M7",
+      "items": [
+        "sha256:f0f6a0bcc47b591067c485aef66fdad61d95cbf93911a24de515dfd19c041892"
+      ],
+      "reason": "Converted publication still checks the exact staged tree and paired code against the two bases. The transaction changes how history is reopened on refusal, while the anchor validation and debt boundaries retain their meaning.",
+      "revision": 1,
+      "subject": "INV-033XSD"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-QA1R93",
+      "items": [],
+      "reason": "The package README’s tool groups still lead to the MCP reference, whose Knowledge section now documents the master crossing-history writer for a parked crossing sync or structural merge.",
+      "revision": 12,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "considered": [
+        "FAM-Q0MQAE"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-QAJCRM",
+      "items": [
+        "sha256:9c9d817a2ddc60b4d140a8312d01a5a55ebe00dde4fd4071e37934e2caed4238"
+      ],
+      "reason": "The alignment family binds modeled reference correspondence. This obligation governs the crossing writer or transaction boundary, outside that joint reference guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-6WBDM3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QFDCP7",
+      "items": [
+        "sha256:4ea91e317d9c1f802a2d33394fa72ac0902dc888201663301ddeb7ded3167540"
+      ],
+      "reason": "knowledge_crossing.py:303. The helper or removed code implements the recorded bounded overlay and operation-owned history recovery. The caller-visible behavior is recorded at the structural overlay and retained merge boundary.",
+      "subject": "hunk:sha256:4ea91e317d9c1f802a2d33394fa72ac0902dc888201663301ddeb7ded3167540"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QFVVZS",
+      "items": [
+        "sha256:46a8f6f4fd845d2a4651ffd197a13020e20f8f720932fc9757ae6ebffb275f64"
+      ],
+      "reason": "knowledge_write_route.py:386 in _crossing_history_refusal. This setup, validation or result plumbing implements the same settled crossing-write contract recorded at crossing_write_report.",
+      "subject": "hunk:sha256:46a8f6f4fd845d2a4651ffd197a13020e20f8f720932fc9757ae6ebffb275f64"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QG43P6",
+      "items": [
+        "sha256:8e60a5ccb0931fec352d5df216cd344c102350d7225b5bca4c3c17c9c2ba2f19"
+      ],
+      "reason": "knowledge_crossing.py:36. The helper or removed code implements the recorded bounded overlay and operation-owned history recovery. The caller-visible behavior is recorded at the structural overlay and retained merge boundary.",
+      "subject": "hunk:sha256:8e60a5ccb0931fec352d5df216cd344c102350d7225b5bca4c3c17c9c2ba2f19"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R51R5X",
+      "items": [
+        "sha256:be28d7bd15544bcc3582b258b44744f78fccc8bc9dc61e680dd3aa682cf1681d"
+      ],
+      "reason": "The register card identifies the _builds dictionary and _active_temps set as quiescent populations and bounds the per-directory checks to the in-process thread cases.",
+      "sources": [
+        {
+          "blob": "f1942589c08102eb7e5b7066309613c2d4cfcaf9",
+          "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/global_state.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R6HMFC",
+      "items": [
+        "sha256:573f16248fdc53effbd06a224f9537c30f572707fae0920e85ebda659b3e4c5d"
+      ],
+      "reason": "global_state.py:33 in ProcessMutableState. This declaration supports the closed process register's quiescent treatment. The affected register and tests carry the semantic obligation.",
+      "subject": "hunk:sha256:573f16248fdc53effbd06a224f9537c30f572707fae0920e85ebda659b3e4c5d"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RMV79B",
+      "items": [
+        "sha256:80dae529ae9f108e60ecfc81335cd7c674fc41afe5fc5b206266d4abe27f2722"
+      ],
+      "reason": "The qualified Git overview now identifies ownership checks for the structural park and close checkpoint.",
+      "sources": [
+        {
+          "blob": "2a12724dc7309e520a831d7b53a646b5f828b088",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_base.py"
+        },
+        {
+          "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+        },
+        {
+          "blob": "7ed3b6c446f9e25c40f4f4673933de79166f4847",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_proof.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/sync_transaction_git/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RTH9Q8",
+      "items": [
+        "sha256:fc69c26ad1b4798798ee55a3af12b9ad6714b4b1fb92a68e17fabe567c13b177"
+      ],
+      "reason": "crossing_sync.py:343 in cross. This planning or report plumbing supports the existing converted plan, the Git-owned path boundary and the managed history-opening contract.",
+      "subject": "hunk:sha256:fc69c26ad1b4798798ee55a3af12b9ad6714b4b1fb92a68e17fabe567c13b177"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S1T9FE",
+      "items": [
+        "sha256:949308f846aade0ac33ba2f5a9d362320ab248d60c15e371a7c640cab6c5f8c8"
+      ],
+      "reason": "global_state.py:143 in _row. This declaration supports the closed process register's quiescent treatment. The affected register and tests carry the semantic obligation.",
+      "subject": "hunk:sha256:949308f846aade0ac33ba2f5a9d362320ab248d60c15e371a7c640cab6c5f8c8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S45F2F",
+      "items": [
+        "sha256:7c867e29f81b5c273d978fe77d4b179731dd51eb7439a9ab244ecaf91314b875"
+      ],
+      "reason": "knowledge_crossing.py:363 in _open_history_entries. The helper or removed code implements the recorded bounded overlay and operation-owned history recovery. The caller-visible behavior is recorded at the structural overlay and retained merge boundary.",
+      "subject": "hunk:sha256:7c867e29f81b5c273d978fe77d4b179731dd51eb7439a9ab244ecaf91314b875"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SBRFFB",
+      "items": [
+        "sha256:144c6b5faf32b004ff5d68206bcddfb93f577c6d5f596753c28c7ef1783b60d7"
+      ],
+      "reason": "knowledge_crossing.py:217 in _unmerge. The helper or removed code implements the recorded bounded overlay and operation-owned history recovery. The caller-visible behavior is recorded at the structural overlay and retained merge boundary.",
+      "subject": "hunk:sha256:144c6b5faf32b004ff5d68206bcddfb93f577c6d5f596753c28c7ef1783b60d7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-SEWJ94",
+      "items": [],
+      "reason": "The bootstrap guide still correctly places the native stdio bounded-memory case in stress-durability and explains that its warm-index child and measured server launch without child coverage.",
+      "revision": 11,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SFWRTZ",
+      "items": [
+        "sha256:55f8b863ee64242cb0bcf3048b556a11f2a285ad508d27575711e2879e99c635"
+      ],
+      "reason": "knowledge_crossing.py:226 in _unmerge. The helper or removed code implements the recorded bounded overlay and operation-owned history recovery. The caller-visible behavior is recorded at the structural overlay and retained merge boundary.",
+      "subject": "hunk:sha256:55f8b863ee64242cb0bcf3048b556a11f2a285ad508d27575711e2879e99c635"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ac53ee63e71fc1466cc080cb13729c0064c5ed03",
+            "content": "sha256:09dfc0eeadf37817d1f3e2e882f2fb98eef14b9462b2a658fa75026ee55f4e18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_crossing_report_counts_alignment"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "before": {
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:1e6a1d6dad53024741d97571fb309513706ad8c8116fe3d920cd21d853cafb54",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_crossing_report_counts_alignment"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "id": "PRF-GDGS7C"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-SHRX8T",
+      "items": [
+        "sha256:3c032a1d1692e898edb4c7bfdcad0f9059d71230576808e06e56fedca897b7fc"
+      ],
+      "reason": "The report and summary still count alignment, renumbering, kept evidence and skipped cards. The changed fixture constructor does not change its count or report assertions.",
+      "revision": 2,
+      "subject": "INV-0J9FS1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SSZRNJ",
+      "items": [
+        "sha256:043e1741eac52610e1435ab3bd27afd50cb5cb662554d3e6bacd6d9b3f7b5ba4"
+      ],
+      "reason": "The tests overview keeps the named fixture consumers and lane declarations, with their current sidecar references. It drops two redundant sentences with obsolete raw source lines.",
+      "sources": [
+        {
+          "blob": "eb121ee3f8e8799429c91a05931562c977eab548",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "e8f2fa822755d9f7d0033340e9dcb70d18c583b2",
+          "path": "mcp/tests/knowledge_writer_test_support.py"
+        },
+        {
+          "blob": "038ae9f6e2473e76ca8db8fa677acbea16b370f0",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "94c0929b5a763c32e1eaed59bed1290e3635380c",
+          "path": "mcp/tests/test_crossing_history_interruption.py"
+        },
+        {
+          "blob": "1b89286170fdd907d0e63439d8d9c1ae1fe648e2",
+          "path": "mcp/tests/test_crossing_knowledge_writer.py"
+        },
+        {
+          "blob": "ac53ee63e71fc1466cc080cb13729c0064c5ed03",
+          "path": "mcp/tests/test_knowledge_crossing.py"
+        },
+        {
+          "blob": "4f86d23d20ed3519a361727a64f56e6232b9223a",
+          "path": "mcp/tests/test_knowledge_crossing_git_paths.py"
+        },
+        {
+          "blob": "09e47d143974f1fded313e9101a73975660d04b7",
+          "path": "mcp/tests/test_knowledge_index_build_identity.py"
+        },
+        {
+          "blob": "b2cb52a7cdcd2d8f0d4a8d4d49d3f83b36f4f590",
+          "path": "mcp/tests/test_knowledge_writer.py"
+        },
+        {
+          "blob": "3fd8be1e7bebc0c220756006409659de62da8d70",
+          "path": "mcp/tests/test_worktree_sync_crossing_history.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T63FNH",
+      "items": [
+        "sha256:74579f3374a9ec35f0045a4e708e2e1026e940e099b0f8d3e8d639f827c9c7d3"
+      ],
+      "reason": "knowledge_crossing.py:52. The helper or removed code implements the recorded bounded overlay and operation-owned history recovery. The caller-visible behavior is recorded at the structural overlay and retained merge boundary.",
+      "subject": "hunk:sha256:74579f3374a9ec35f0045a4e708e2e1026e940e099b0f8d3e8d639f827c9c7d3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T9WPE1",
+      "items": [
+        "sha256:5c80ec757f51afcaf2778c68aa7874c09a511bb6c7cf1864e6061580f337a4b9"
+      ],
+      "reason": "The qualified side outcome preserves the existing Git proof contract and carries the optional history owner with the retained merge.",
+      "sources": [
+        {
+          "blob": "2a12724dc7309e520a831d7b53a646b5f828b088",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_base.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/sync_transaction_git/_base.py"
+    },
+    {
+      "considered": [
+        "FAM-Q0MQAE"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-TJZCTP",
+      "items": [
+        "sha256:a1a6945b2874734859a2b8d0b1dc6db19a64a1b7cfc71ceab91e0e57c75f84f2"
+      ],
+      "reason": "The alignment family binds modeled reference correspondence. This obligation governs the crossing writer or transaction boundary, outside that joint reference guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-MXVTB7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TTHEJ9",
+      "items": [
+        "sha256:8d497d253a75357a27eb2f0c383946e48605d22351a0c7143108a7175df503a8"
+      ],
+      "reason": "knowledge_crossing.py:307 in open_crossing_history. The helper or removed code implements the recorded bounded overlay and operation-owned history recovery. The caller-visible behavior is recorded at the structural overlay and retained merge boundary.",
+      "subject": "hunk:sha256:8d497d253a75357a27eb2f0c383946e48605d22351a0c7143108a7175df503a8"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VQ9268",
+      "items": [],
+      "reason": "The sidecar citation now binds the lifted-decision round trip that checks the reported requirement endpoints. This scopes the evidence to the assertions that support the endpoint-link explanation.",
+      "sources": [
+        {
+          "blob": "ca45c13cbedb2dcb7a89b993d6423e60ba43e1ff",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/requirement_links.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/requirement_links.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VZ0DEN",
+      "items": [
+        "sha256:d61cea7590a5e39f0befff689effc9e526c1107eaad3ba7d530a0b3bdf011a36"
+      ],
+      "reason": "_proof.py:346 in _scratch_tree_matches. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:d61cea7590a5e39f0befff689effc9e526c1107eaad3ba7d530a0b3bdf011a36"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W499P7",
+      "items": [
+        "sha256:2c6118af5fb4228276b6206dfa171eae6df0024869c7c4c70422038767ece449"
+      ],
+      "reason": "_proof.py:464 in recapture_resumed_merge. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:2c6118af5fb4228276b6206dfa171eae6df0024869c7c4c70422038767ece449"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "038ae9f6e2473e76ca8db8fa677acbea16b370f0",
+            "content": "sha256:88dfa5f27cf6b2e28e46a25d2a0dda53d35bf6f0b07b66cd1d2a92c51f3a8a08",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+            "content": "sha256:1923bb64d30816f6f4bade6637863f95b0e86c12e2f4783411d87017b5275b5c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "eb121ee3f8e8799429c91a05931562c977eab548",
+            "content": "sha256:d6ebd0d0bdf42458ce8b67ad62a4539f8c5991d2395efd9bf68d66b219a2fac8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "666b80bfb115f9356bce967e5e5ec9f37fe0eb2b",
+            "content": "sha256:73131678c3db3d9aec04f4be66fb3ac229f386778e51cc5ba0138f4ee9c4e832",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-WBBFER",
+      "items": [
+        "sha256:ce1e2ddd037317550ea519ea86fee11143ffcaaaae78f1827470cf534d6a5f69"
+      ],
+      "reason": "The catalog consumer additions leave the enclosure generation and outside-scratch ownership tests intact. No path-ownership code changed.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WFZZE7",
+      "items": [
+        "sha256:6fea1be026c3ee09f60532a4a1d003c9f95fda9b74aeb5e11f8b845b14645a47"
+      ],
+      "reason": "_proof.py:477 in recapture_resumed_merge. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:6fea1be026c3ee09f60532a4a1d003c9f95fda9b74aeb5e11f8b845b14645a47"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WH8X83",
+      "items": [
+        "sha256:9d617bf3f0f52edf0fd7bd0e33fa270d57978c94300bda8697ac565c11dbe74b"
+      ],
+      "reason": "The crossing route prose states its active sync owner, open history and settled code commit for both of the writer's code inputs.",
+      "sources": [
+        {
+          "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
+          "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_write_route.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WMG29B",
+      "items": [
+        "sha256:69eac4e7b0cc66bc4a4048a8e15eca9a058a10de1e3f7cf580c0c0c7b4c7c93f"
+      ],
+      "reason": "_proof.py:448 in run. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:69eac4e7b0cc66bc4a4048a8e15eca9a058a10de1e3f7cf580c0c0c7b4c7c93f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WPVF4D",
+      "items": [
+        "sha256:f4944905789b457c45c1b6bd2a3c690ea6c241d56782af7becd09a49404ce936"
+      ],
+      "reason": "_proof.py:20. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:f4944905789b457c45c1b6bd2a3c690ea6c241d56782af7becd09a49404ce936"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WSCW5K",
+      "items": [
+        "sha256:afb58f69632a6ec87a65ef511c2835ee39e21347858fa0ab656dd64c0bbace8d"
+      ],
+      "reason": "crossing_sync.py:333 in cross. This planning or report plumbing supports the existing converted plan, the Git-owned path boundary and the managed history-opening contract.",
+      "subject": "hunk:sha256:afb58f69632a6ec87a65ef511c2835ee39e21347858fa0ab656dd64c0bbace8d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WT7BDS",
+      "items": [
+        "sha256:1ce3eb802f583a16135718721bea2ab5d64e3b6dd4ce7ca7f74d74ff42d59620",
+        "sha256:a7a4dfcf91fb503f7ec1818ce729bca120cb3670f1a2a49e2316c30a45920fbb",
+        "sha256:ac3cafc060ec8b4bbe5f70ece1ad2d2f7025a137587b69413c9796547303265c"
+      ],
+      "reason": "The fixtures prepare a parked master transaction and bind the real journal result for the crossing tests.",
+      "sources": [
+        {
+          "blob": "e8f2fa822755d9f7d0033340e9dcb70d18c583b2",
+          "path": "mcp/tests/knowledge_writer_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/knowledge_writer_test_support.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WW4JE4",
+      "items": [
+        "sha256:6a3affa2b4f804410db94a9d4458b4675f0c99258a0569bda2758b88036de732"
+      ],
+      "reason": "code_anchors.py:174 in _snapshot_revision. Commit peeling and format checks support the crossing write's settled commit binding and are described by the snapshot card and its regression proofs.",
+      "subject": "hunk:sha256:6a3affa2b4f804410db94a9d4458b4675f0c99258a0569bda2758b88036de732"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-X0NP4Z",
+      "items": [
+        "sha256:048216886b7d74f49040e37203c2ec1b048a3e93819fca80c82dbfa5109b06ec"
+      ],
+      "reason": "The new test card covers open-history park ownership, interruption recovery, empty-history landing and the plain-merge and post-commit boundaries.",
+      "sources": [
+        {
+          "blob": "3fd8be1e7bebc0c220756006409659de62da8d70",
+          "path": "mcp/tests/test_worktree_sync_crossing_history.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_worktree_sync_crossing_history.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XGEHKS",
+      "items": [
+        "sha256:720f80f01698cba32a773f7b54e5bb1c0d93c009bacb3cac9beefb6d1beee393"
+      ],
+      "reason": "code_anchors.py:33. Commit peeling and format checks support the crossing write's settled commit binding and are described by the snapshot card and its regression proofs.",
+      "subject": "hunk:sha256:720f80f01698cba32a773f7b54e5bb1c0d93c009bacb3cac9beefb6d1beee393"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XNRW28",
+      "items": [
+        "sha256:e24f98b50f1d5e82215cd102569dc187c2c4a574b9f2e78f28e8148f624e033e"
+      ],
+      "reason": "The card now explains the explicit overlay, Git ownership outside it and the checkpoint's disk and index recovery boundary.",
+      "sources": [
+        {
+          "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
+          "path": "mcp/src/agents_remember/worktrees/knowledge_crossing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/knowledge_crossing.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R43",
+          "packet": "requirements/BUG-R43-v1-release-repairs-before-3-0-7.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "f1942589c08102eb7e5b7066309613c2d4cfcaf9",
+            "content": "sha256:b5b30225570cccb39961ba4a30e988a89cb653516850680b239c01e1bd837ac8",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "before": {
+            "blob": "81923935053ac297774802ccd8d52f40ca26c724",
+            "content": "sha256:9fcb6f70c40e8c8624e088d4eb8a8db1b14109fa1fe66489391bd7f5da3c6954",
+            "locator": {
+              "end": 438,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "id": "RLZ-1563PY"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-Y0B51G",
+      "items": [
+        "sha256:14cf8020329357b04be139dafab316fe13137f946b2e9a6cb67d2bd4774a8c2b"
+      ],
+      "reason": "The closed census replaces its old treatment set with the registered reset, restored, constant-for-tests and quiescent treatments. The cache owns cleanup of the _builds dictionary and _active_temps set. The in-process thread success and failure tests check the fixture directory for both collections after the threads finish. Per-test restore checks and module-boundary reset checks keep their existing scopes.",
+      "revision": 2,
+      "subject": "INV-KE2ZHT"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Y3EA6N",
+      "items": [
+        "sha256:41fe37819effeb8381df20bcd597bdea5118b9e01c9a2ea0c60b835f3e868eca"
+      ],
+      "reason": "The application route retains the same writer boundary. Committed crossing snapshot authority is described in the route and snapshot cards.",
+      "sources": [
+        {
+          "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
+          "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+        },
+        {
+          "blob": "fbe033f2881d48daf12ff7b4e793d6c806408356",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fbe033f2881d48daf12ff7b4e793d6c806408356",
+            "content": "sha256:7e7d95e708d73ec0ed905b3df7566991cff9e716af4dce6cd90bd78cb247576e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeSnapshot"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+          },
+          "before": {
+            "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+            "content": "sha256:6470b981c92f94b696f29418f6f77189fa5aeb44ca43c902f91ccadd0f00a103",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeSnapshot"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+          },
+          "id": "RLZ-GMH0JZ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YMX96K",
+      "items": [
+        "sha256:37db52cb284f8e7e95c39615d6c5a491c6f61c4c6b21ca00ba2be8cdb55406ca"
+      ],
+      "reason": "The invariant governs leaf writes. They still read dependent values from the leaf candidate. Commit peeling affects the crossing snapshot and keeps the leaf capture path intact.",
+      "revision": 1,
+      "subject": "INV-VWRJR7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YNCW25",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The lane account records the four added modules in their declared lanes and the current parsed population.",
+      "sources": [
+        {
+          "blob": "038ae9f6e2473e76ca8db8fa677acbea16b370f0",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "038ae9f6e2473e76ca8db8fa677acbea16b370f0",
+            "content": "sha256:88dfa5f27cf6b2e28e46a25d2a0dda53d35bf6f0b07b66cd1d2a92c51f3a8a08",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+            "content": "sha256:1923bb64d30816f6f4bade6637863f95b0e86c12e2f4783411d87017b5275b5c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "eb121ee3f8e8799429c91a05931562c977eab548",
+            "content": "sha256:d6ebd0d0bdf42458ce8b67ad62a4539f8c5991d2395efd9bf68d66b219a2fac8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "666b80bfb115f9356bce967e5e5ec9f37fe0eb2b",
+            "content": "sha256:73131678c3db3d9aec04f4be66fb3ac229f386778e51cc5ba0138f4ee9c4e832",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YR8XW6",
+      "items": [
+        "sha256:ab832e7d1f24935e301c0d39dd28196b8a3e46c5790595dac8146c87052f6085"
+      ],
+      "reason": "The four registered test modules exercise crossing knowledge and preserve the existing silent-turn, handover and wait contracts and their evidence consumers.",
+      "revision": 7,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0J9FS1",
+          "revision": 2
+        },
+        {
+          "id": "INV-ADT7XM",
+          "revision": 1
+        },
+        {
+          "id": "INV-B644A4",
+          "revision": 1
+        },
+        {
+          "id": "INV-CRWXXC",
+          "revision": 1
+        },
+        {
+          "id": "INV-F8QQYN",
+          "revision": 1
+        },
+        {
+          "id": "INV-FRG5GT",
+          "revision": 1
+        },
+        {
+          "id": "INV-MXFA2F",
+          "revision": 1
+        },
+        {
+          "id": "INV-Q0NS0N",
+          "revision": 1
+        },
+        {
+          "id": "INV-W6QBYB",
+          "revision": 1
+        },
+        {
+          "id": "INV-XHSR3S",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-Z8QPER",
+      "items": [
+        "sha256:fdb36bfc8a053ec3b015ac3b8f2c528bed606611485c21d7005dcf0e6016e163"
+      ],
+      "reason": "All ten member obligations still govern alignment of eligible modeled cards. The plan now leaves unmodeled modes and collisions to Git, and retained history ownership is a separate transaction contract.",
+      "revision": 1,
+      "subject": "FAM-Q0MQAE"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZHA0FZ",
+      "items": [
+        "sha256:3c5117e1e1790c57b38dea0d47a22a5fabe8b833b52d0c136160cfdbcc3be105"
+      ],
+      "reason": "_proof.py:434 in _crossing_setup. This proof code supports the same retained structural park. It binds exact operation state before restoring the parked history owner and does not introduce a separate user-facing route.",
+      "subject": "hunk:sha256:3c5117e1e1790c57b38dea0d47a22a5fabe8b833b52d0c136160cfdbcc3be105"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZQ3RQC",
+      "items": [
+        "sha256:1d5a417833c8f9c95e89688ffee4cb2283de801aa40ce73c5b636200a078e1d6"
+      ],
+      "reason": "The new test card explains the settled commit and authority refusals, through both dependent confirmation and snapshot tests.",
+      "sources": [
+        {
+          "blob": "1b89286170fdd907d0e63439d8d9c1ae1fe648e2",
+          "path": "mcp/tests/test_crossing_knowledge_writer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_crossing_knowledge_writer.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZWEYPW",
+      "items": [
+        "sha256:eea0fbae1095215ead89a231af578758304dda381e028569779f489145413f16"
+      ],
+      "reason": "knowledge_crossing.py:215 in _unmerge. The helper or removed code implements the recorded bounded overlay and operation-owned history recovery. The caller-visible behavior is recorded at the structural overlay and retained merge boundary.",
+      "subject": "hunk:sha256:eea0fbae1095215ead89a231af578758304dda381e028569779f489145413f16"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

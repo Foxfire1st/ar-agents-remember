@@ -392,6 +392,10 @@
     "file:mcp/src/agents_remember/application/knowledge_write_route.py": [
       "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
+    "file:mcp/src/agents_remember/application/knowledge_writer/code_anchors.py": [
+      "knowledge/dependents/DPD-2Z4WN0-card-formats-and-citations.json",
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
     "file:mcp/src/agents_remember/application/knowledge_writer/file_publication.py": [
       "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
     ],
@@ -418,7 +422,8 @@
       "knowledge/dependents/DPD-2B7PTY-docs-install-pi-md.json",
       "knowledge/dependents/DPD-3E9E2R-docs-install-claude-code-md.json",
       "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
-      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
     "file:mcp/src/agents_remember/application/master_architect_record.py": [
       "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
@@ -784,6 +789,9 @@
     "file:mcp/src/agents_remember/cli/paseo_runtime.py": [
       "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json"
     ],
+    "file:mcp/src/agents_remember/cli/paseo_seat_policy.py": [
+      "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json"
+    ],
     "file:mcp/src/agents_remember/cli/paseo_status.py": [
       "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
     ],
@@ -851,7 +859,8 @@
       "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
       "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json",
       "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json",
-      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json"
+      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
     "file:mcp/src/agents_remember/cli/role_launch_routes.py": [
       "knowledge/dependents/DPD-21GMJ5-docs-install-cursor-md.json",
@@ -1251,6 +1260,9 @@
     "file:mcp/src/agents_remember/memory/conversion/card_authoring.py": [
       "knowledge/dependents/DPD-TCXJRQ-docs-guides-refresh-stale-onboarding-md.json"
     ],
+    "file:mcp/src/agents_remember/memory/conversion/citations.py": [
+      "knowledge/dependents/DPD-2Z4WN0-card-formats-and-citations.json"
+    ],
     "file:mcp/src/agents_remember/memory/knowledge_index/cache.py": [
       "knowledge/dependents/DPD-10YCT2-docs-tool-details-md.json",
       "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
@@ -1322,8 +1334,18 @@
       "knowledge/dependents/DPD-10YCT2-docs-tool-details-md.json",
       "knowledge/dependents/DPD-NGC2F6-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
     ],
+    "file:mcp/src/agents_remember/memory_quality/style/citations/cells.py": [
+      "knowledge/dependents/DPD-2Z4WN0-card-formats-and-citations.json"
+    ],
     "file:mcp/src/agents_remember/memory_quality/style/citations/extents.py": [
-      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json"
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json",
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/style/citations/grammars.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/style/citations/model.py": [
+      "knowledge/dependents/DPD-2Z4WN0-card-formats-and-citations.json"
     ],
     "file:mcp/src/agents_remember/memory_quality/style/citations/test_case_ranges.py": [
       "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"

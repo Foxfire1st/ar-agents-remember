@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The shared filter is realized in validator, index and coverage code, and the validator, index and census tests each establish their own hidden-workflow behavior."
+  },
+  "applicability": "Converted memory knowledge paths beneath knowledge/ and onboarding/.",
+  "conditions": [
+    "The reader selects a direct memory directory or its paired Git tree."
+  ],
+  "exclusions": [
+    "Generated route-index cache files ending in .index.json are excluded.",
+    "Source-file eligibility and each reader’s file-type rules still apply."
+  ],
+  "id": "INV-EYSSS1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/24_a-card-under-a-dot-directory-is-knowledge-ar/role-reports/worker/e92cbcbf-2651-4fc9-8194-309aed746b98/role-launch/261112-BUG-L24-worker-e92cbcbf-2651-4fc9-8194-309aed746b98.W3.md — Primary acceptance and Checks"
+      ],
+      "path": "L24-curator-current-pair-ingest.json"
+    },
+    "handoffEntry": "BUG-R24@v1 rule 1",
+    "leaf": "261112-BUG-L24",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Knowledge paths under either memory root include dot directories and exclude generated route-index caches.",
+  "status": "proposed",
+  "supersedes": []
+}

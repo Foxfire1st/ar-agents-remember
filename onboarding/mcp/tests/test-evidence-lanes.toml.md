@@ -321,3 +321,5 @@ Membership selects evidence without proving invocation.
 
 
 - The browser suite is selected in the unit-regression lane. Anchor: file [871]
+
+- The unit lane selects both Lean test modules. [875]

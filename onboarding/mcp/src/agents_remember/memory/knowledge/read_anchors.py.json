@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+        "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+        "content": "sha256:7c8913e6f93a2983f673057c083f0363353f5be7bf3a68796b33241c7d14c306",
+        "locator": {
+          "kind": "symbol",
+          "name": "_blob_definitions"
+        }
+      },
+      "id": "RLZ-1X4SZQ",
+      "invariant": "INV-RANN4DC0",
+      "origin": {
+        "handoffEntry": "SUB-R01-recorded-ranges-revision",
+        "leaf": "261123-SUB-L1"
+      },
+      "rationale": "The memo retains exact symbol extents by selected grammar and script test-file class so equal bytes cannot return a definition from the wrong reader context.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
         "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
         "locator": {
           "kind": "symbol",
@@ -20,8 +38,26 @@
     },
     {
       "anchor": {
-        "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
-        "content": "sha256:bfc0319d634856fb8f98a46fa53fcb0eb7fbba8a55532e4e7e19bc8d804a5b5f",
+        "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+        "content": "sha256:6561c5b5b4cd6e4b6210dc59ae255fa8020b966507cd8fdd13e6db8f13f9c08b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_defining_extents"
+        }
+      },
+      "id": "RLZ-FFM155",
+      "invariant": "INV-XA55TP",
+      "origin": {
+        "handoffEntry": "SUB-R01-symbol-lookup",
+        "leaf": "261123-SUB-L1"
+      },
+      "rationale": "Looks up the complete name and retains all distinct defining ranges.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+        "content": "sha256:911cbd8d9c75d410970d007d6f459319cf2e36c93b147f44d4ce62340b6a6af9",
         "locator": {
           "kind": "symbol",
           "name": "_observed_symbol"
@@ -32,12 +68,12 @@
       "origin": {
         "leaf": "260921-ICR-L44"
       },
-      "rationale": "_observed_symbol (memory/knowledge/read_anchors.py) places every defining extent of a symbol on the exact recorded blob; _observed_line_range places a recorded line range only when that blob holds the lines; AnchorResolution (models/knowledge/read_anchor.py) carries the resulting structured resolved_ranges and refuses them beside any other resolution.",
+      "rationale": "The symbol observer selects defining ranges only when the recorded blob and name can establish them, and reports uncertain Lean scope with no range.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+        "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
         "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
         "locator": {
           "kind": "symbol",
@@ -51,6 +87,24 @@
       },
       "rationale": "_observed_symbol (memory/knowledge/read_anchors.py) places every defining extent of a symbol on the exact recorded blob; _observed_line_range places a recorded line range only when that blob holds the lines; AnchorResolution (models/knowledge/read_anchor.py) carries the resulting structured resolved_ranges and refuses them beside any other resolution.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+        "content": "sha256:911cbd8d9c75d410970d007d6f459319cf2e36c93b147f44d4ce62340b6a6af9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_observed_symbol"
+        }
+      },
+      "id": "RLZ-QB5ZDY",
+      "invariant": "INV-0KYRK9",
+      "origin": {
+        "handoffEntry": "SUB-R01-uncertain-lean-scope",
+        "leaf": "261123-SUB-L1"
+      },
+      "rationale": "Preserves recorded blob identity and reports uncertainty without ranges.",
+      "role": "unclassified"
     }
   ],
   "references": {
@@ -59,7 +113,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:78f51cadba3736693dc26c7dd8de2b34bb8d1fe0814bef12295b72b2e648ee5a",
             "locator": {
               "kind": "symbol",
@@ -70,7 +124,7 @@
         },
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:2ca33e9b6a9aae9d879c6a71c5a75c3a67319d81f43cc9a874ab00ec556ae305",
             "locator": {
               "kind": "symbol",
@@ -81,7 +135,7 @@
         },
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:20abb41e24de5aa9b91673cccec7a7452e4c9c3c496acfb8227ae17dbcb9931e",
             "locator": {
               "kind": "symbol",
@@ -97,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:8965416a0ebb24e6b5812c1db2cc986cfdeae20b5fb4286abb99dd215cf027e3",
             "locator": {
               "kind": "symbol",
@@ -109,12 +163,12 @@
       ]
     },
     "11": {
-      "note": "The extractor's defining extents as distinct `(start, end)` pairs rather than spelled strings, computed once per blob and grammar and looked up per name.",
+      "note": "Definition memo values keep immutable extent tuples and Lean scope metadata. Symbol lookup selects the distinct ranges from those extents in document order.",
       "targets": [
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
-            "content": "sha256:92c9da2995279e3b764e4cc6fe382bbcc5a8d9f1b61084a7ce1e474c6a21ab73",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "content": "sha256:7c8913e6f93a2983f673057c083f0363353f5be7bf3a68796b33241c7d14c306",
             "locator": {
               "kind": "symbol",
               "name": "_blob_definitions"
@@ -124,8 +178,8 @@
         },
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
-            "content": "sha256:0dfba156d4b68b4209cbcdf8a83a178b85ee40c3f42191190a5412cbafee7fc3",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "content": "sha256:6561c5b5b4cd6e4b6210dc59ae255fa8020b966507cd8fdd13e6db8f13f9c08b",
             "locator": {
               "kind": "symbol",
               "name": "_defining_extents"
@@ -136,11 +190,11 @@
       ]
     },
     "12": {
-      "note": "**The memo's three content answers: a tree entry (or its definite absence), a blob's lines as a tuple and a blob's definitions per grammar — each remembered only after Git or the parser answered, and only for a complete id.**",
+      "note": "The memo keeps a tree entry or its definite absence, blob lines, and definitions per grammar and script test-file class. Entries require complete identities and successful observation.",
       "targets": [
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:62cf932e19d9cc3abd4240c043a0c4f0d7ad0f9f5a39d59002b045cce748f5fc",
             "locator": {
               "kind": "symbol",
@@ -151,7 +205,7 @@
         },
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:5af787370ce4411072fd753185ec3ebadbc2553e231c6cf12b33c96f766c5c31",
             "locator": {
               "kind": "symbol",
@@ -162,8 +216,8 @@
         },
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
-            "content": "sha256:92c9da2995279e3b764e4cc6fe382bbcc5a8d9f1b61084a7ce1e474c6a21ab73",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "content": "sha256:7c8913e6f93a2983f673057c083f0363353f5be7bf3a68796b33241c7d14c306",
             "locator": {
               "kind": "symbol",
               "name": "_blob_definitions"
@@ -178,48 +232,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:0245345ac16f6155c43ef2f82a434cffddd7453659999acaa0d29a95d68f6d0d",
             "locator": {
-              "end": 166,
+              "end": 165,
               "kind": "line_range",
-              "start": 84
+              "start": 83
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:cccae8bed2f4f9d0e92903bd9872801ea2401c83cb41cb6b6e52aaaa3d0e72e7",
             "locator": {
-              "end": 248,
+              "end": 247,
               "kind": "line_range",
-              "start": 195
+              "start": 194
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
-            "content": "sha256:0d50cccef16dfdc1e1798c646bbc47948783e6662cc59dd7de3373dc37942128",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "content": "sha256:8bd367138526f93a692d46ced7707b7fb84197c2a3266455b0237d194420d4fd",
             "locator": {
-              "end": 298,
+              "end": 283,
               "kind": "line_range",
-              "start": 287
+              "start": 272
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
-            "content": "sha256:a95a9a2f387ca01240586b929093e4cf4c1103565f83612c6fd63a8c82749fcf",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "content": "sha256:10a7107dfebe4e9ccf2ecca87934960852a18560c7af27010f1f872c7c3a4c9b",
             "locator": {
-              "end": 431,
+              "end": 427,
               "kind": "line_range",
-              "start": 387
+              "start": 383
             }
           },
           "kind": "code"
@@ -231,7 +285,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
+            "blob": "9bbf24c012731dfdae3512a392696c4bd872b695",
             "content": "sha256:a1e619b09a94dc7184ec1cddedce393267506cd55c6b29341d82885c08d8b05c",
             "locator": {
               "kind": "symbol",
@@ -243,7 +297,7 @@
         },
         {
           "anchor": {
-            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
+            "blob": "9bbf24c012731dfdae3512a392696c4bd872b695",
             "content": "sha256:891f54bfde7ea955ccfd00677b92922fda14e8be7672f51bdcf33a802eb58c8b",
             "locator": {
               "kind": "symbol",
@@ -255,7 +309,7 @@
         },
         {
           "anchor": {
-            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
+            "blob": "9bbf24c012731dfdae3512a392696c4bd872b695",
             "content": "sha256:ed6a6768e30a5ae6ce728d95ce8d94089466ddf369ed22d678550f1a1b9b1f4d",
             "locator": {
               "kind": "symbol",
@@ -267,7 +321,7 @@
         },
         {
           "anchor": {
-            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
+            "blob": "9bbf24c012731dfdae3512a392696c4bd872b695",
             "content": "sha256:c4ba63173ceac4c2cbe54e5f9fc9b50dbd88e7258425f570017b9bc44d16bf4d",
             "locator": {
               "kind": "symbol",
@@ -284,12 +338,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b6f33379e6184a3f66a3f15339e17ad8fc5e0e1a",
+            "blob": "e387e20d2d112b8a2e55682a24f40865dfcbc25c",
             "content": "sha256:bd36e26e779aac9628ad337ed5e71785b8a28b394d4dfa1f46e4611a276f62e1",
             "locator": {
-              "end": 301,
+              "end": 305,
               "kind": "line_range",
-              "start": 190
+              "start": 194
             },
             "path": "mcp/tests/test_read_anchor_memo.py"
           },
@@ -297,12 +351,12 @@
         },
         {
           "anchor": {
-            "blob": "b6f33379e6184a3f66a3f15339e17ad8fc5e0e1a",
+            "blob": "e387e20d2d112b8a2e55682a24f40865dfcbc25c",
             "content": "sha256:a1d35d0d1ae71413dd8872293e990a39da151935110d1f8693df927cc563e0e9",
             "locator": {
-              "end": 569,
+              "end": 573,
               "kind": "line_range",
-              "start": 445
+              "start": 449
             },
             "path": "mcp/tests/test_read_anchor_memo.py"
           },
@@ -400,7 +454,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:b3d613826a8ec1517125e0879403fe1c4aad88032371f0b956871b9ec1832875",
             "locator": {
               "kind": "symbol",
@@ -460,12 +514,44 @@
         }
       ]
     },
+    "22": {
+      "note": "The recorded symbol reader preserves blob identity when an exact Lean key is unverifiable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "content": "sha256:911cbd8d9c75d410970d007d6f459319cf2e36c93b147f44d4ce62340b6a6af9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_symbol"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Exact keys precede dotted fallback and Lean uses the exact key only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "content": "sha256:6561c5b5b4cd6e4b6210dc59ae255fa8020b966507cd8fdd13e6db8f13f9c08b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_defining_extents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "**`None` means only \"Git looked and found nothing\"; the entry kind comes from the entry mode, not the object kind.**",
       "targets": [
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:62cf932e19d9cc3abd4240c043a0c4f0d7ad0f9f5a39d59002b045cce748f5fc",
             "locator": {
               "kind": "symbol",
@@ -476,7 +562,7 @@
         },
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:4c5aac44aba12702668c799f1f4d4f1bc11570169d3ec88466bd81459f94afe3",
             "locator": {
               "kind": "symbol",
@@ -487,7 +573,7 @@
         },
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:cccae8bed2f4f9d0e92903bd9872801ea2401c83cb41cb6b6e52aaaa3d0e72e7",
             "locator": {
               "kind": "symbol",
@@ -498,7 +584,7 @@
         },
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:1c0602e811691ffa334ba461731dc248fd78e3ec14ee74d212cd44bbfa774b80",
             "locator": {
               "kind": "symbol",
@@ -531,7 +617,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:d4531f57e5c69f17628ad313df7a9555b7b0492aa986e742f7ea79ab28a539a6",
             "locator": {
               "kind": "symbol",
@@ -542,7 +628,7 @@
         },
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:0ea7ecb27d8f5ea4cbc904337efa60921100c10580d0d46e8410af162baa896e",
             "locator": {
               "kind": "symbol",
@@ -553,7 +639,7 @@
         },
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:46148201232cbdca872d79c8aff9237655b6ab64c9d5aed52734a51c62d32e2d",
             "locator": {
               "kind": "symbol",
@@ -564,7 +650,7 @@
         },
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:a9aa35c34fadaba98e6b29155e8c793d17dcd253fce1600d2ae30823baa9c594",
             "locator": {
               "kind": "symbol",
@@ -621,7 +707,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
             "locator": {
               "kind": "symbol",
@@ -632,8 +718,8 @@
         },
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
-            "content": "sha256:bfc0319d634856fb8f98a46fa53fcb0eb7fbba8a55532e4e7e19bc8d804a5b5f",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "content": "sha256:911cbd8d9c75d410970d007d6f459319cf2e36c93b147f44d4ce62340b6a6af9",
             "locator": {
               "kind": "symbol",
               "name": "_observed_symbol"
@@ -643,12 +729,12 @@
         },
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:cccae8bed2f4f9d0e92903bd9872801ea2401c83cb41cb6b6e52aaaa3d0e72e7",
             "locator": {
-              "end": 248,
+              "end": 247,
               "kind": "line_range",
-              "start": 195
+              "start": 194
             }
           },
           "kind": "code"
@@ -656,12 +742,12 @@
       ]
     },
     "8": {
-      "note": "**A symbol's every defining extent carried as structured ranges, with the unchanged `detail` sentence spelled from them.**  Anchor: `resolved_ranges`",
+      "note": "An established symbol key returns its distinct defining extents as structured ranges. An uncertain Lean key retains the recorded blob identity and returns no range.",
       "targets": [
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
-            "content": "sha256:bfc0319d634856fb8f98a46fa53fcb0eb7fbba8a55532e4e7e19bc8d804a5b5f",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "content": "sha256:911cbd8d9c75d410970d007d6f459319cf2e36c93b147f44d4ce62340b6a6af9",
             "locator": {
               "kind": "symbol",
               "name": "_observed_symbol"
@@ -676,7 +762,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
             "locator": {
               "kind": "symbol",

@@ -1,0 +1,936 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L22",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-07NRWM",
+      "items": [
+        "sha256:63e534c0f61b4a9c3c0c843973bc7c8dce410ea9f0e9a954bc7e1bf45332dfd8",
+        "sha256:b336911f4ccdd4983a54941ffe5864a9b48d7123bb0c702299a1e17255cc3ddc",
+        "sha256:ba5c9b0de4dda843d8a66d34805bf86a10f27f6a32d9cd7e9310e8b838be3c87"
+      ],
+      "reason": "The card and its evidence explain why the launch receipt places missing names before step-up advice.",
+      "sources": [
+        {
+          "blob": "210872f08a0a898df592f68e2330120a451b3ea5",
+          "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_request_rules.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-0Z9KSY",
+      "items": [
+        "sha256:ed8ec8f6a85cc0a4d35886865f126ce648b3ed399baa798aaa1456e45b0b94f0"
+      ],
+      "reason": "Reconfirmed the document after its dependencies changed at mcp/src/agents_remember/cli/role_launch_request_rules.py. Its W2 document blob retains the checked account.",
+      "revision": 9,
+      "subject": "DPD-GHEXS9"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-1EZ6QX",
+      "items": [
+        "sha256:6e9af264eb2df102bae317b28e13f25ec9546012eabffbefcff2ae68186bcc20"
+      ],
+      "reason": "Reconfirmed the document after its dependencies changed at mcp/src/agents_remember/models/tools/tool_answer.py. Its W2 document blob retains the checked account.",
+      "revision": 15,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-30MJMW",
+      "items": [],
+      "reason": "Cite the editable lock version, declared project version and runtime package metadata behavior separately.",
+      "sources": [
+        {
+          "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
+          "path": "mcp/pyproject.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/pyproject.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c5279f52c1fae8958059bbbe48c65a4fd296bc4a",
+            "content": "sha256:a613bdc8bb462b6c654e826568c9dad8bdacb1eec88e84471cfe8de251a9f5da",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 285
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md"
+          },
+          "before": {
+            "blob": "c5279f52c1fae8958059bbbe48c65a4fd296bc4a",
+            "content": "sha256:a613bdc8bb462b6c654e826568c9dad8bdacb1eec88e84471cfe8de251a9f5da",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 285
+            },
+            "path": "docs/tool-details.md"
+          },
+          "id": "RLZ-55Y8YZ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-3QCTDA",
+      "items": [],
+      "reason": "Anchor the caller and topology contract in the eligible served copy with identical bytes. The short card cites the canonical and served passages separately.",
+      "revision": 1,
+      "subject": "INV-Q1GFQS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4J2KM8",
+      "items": [
+        "sha256:5dfe924c06a139ce038697b4e27e83bf191fc2952d582fd4a9ef250eb96d29d1",
+        "sha256:a2b5af671fa9dbfbfd91b37de038972e29d50179a1bc5156469ec8dd4ccd2d36"
+      ],
+      "reason": "The card and evidence identify the marker-only case and its refit.",
+      "sources": [
+        {
+          "blob": "3a38c925df192a11e3212a55a233b79f01f81c71",
+          "path": "mcp/tests/test_tool_answer_table_guards.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_answer_table_guards.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-51Q13G",
+      "items": [
+        "sha256:2b26a7067e675afd5defb36af5cc4d6c149b6c7cadead41cc23c11d74d1d3a9f"
+      ],
+      "reason": "The card and its evidence update the effective bound, optional-field order and warning cut/refit policy.",
+      "sources": [
+        {
+          "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
+          "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/tools/tool_answer.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-539HR5",
+      "items": [
+        "sha256:e683b95b5133708660cab608cc232b4c0fd84b087e7288c2cf71d447810c67a8"
+      ],
+      "reason": "Reconfirmed the document after its dependencies changed at docs/reference/mcp-tools.md. Its W2 document blob retains the checked account.",
+      "revision": 11,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-55G3WV",
+      "items": [
+        "sha256:67df8d5d97d849db9c76e4a2c6dddf1e33cb311f032761dee861c2577b8df72b"
+      ],
+      "reason": "The card and evidence identify the start and message regressions and the start detail readback.",
+      "sources": [
+        {
+          "blob": "fb67cfa16bb74ac8a7974434e310488e8a50a320",
+          "path": "mcp/tests/test_paseo_role_answers_l111.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_role_answers_l111.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-5HT518",
+      "items": [],
+      "reason": "Reconfirmed the document after its dependencies changed at mcp/src/agents_remember/cli/role_launch_request_rules.py. Its W2 document blob retains the checked account.",
+      "revision": 7,
+      "subject": "DPD-GNFCSM"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5M85HR",
+      "items": [
+        "sha256:b267172a6ea282df19d29a98acd9056895778f38a08f80e71c094038b35af67a"
+      ],
+      "reason": "The card and evidence describe the representative deep-root role_start case exercised by the table gate.",
+      "sources": [
+        {
+          "blob": "0c2abf4f59eac736e33bff7ef190b469990ce8ae",
+          "path": "mcp/tests/tool_answer_l111_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/tool_answer_l111_test_support.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-5ZERX4",
+      "items": [
+        "sha256:3c1f931c01381b908b83059502e85f0480349fe8e3e4c29f9fbd6b984d458eeb",
+        "sha256:7d6786ea7be484f60fa635c37f672832d6bf56cbb1282191c5711f51fa7fdbe7"
+      ],
+      "reason": "The confirmed reference now addresses warning retention, its cut marker and role-start missing names.",
+      "revision": 14,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-60VP3G",
+      "items": [],
+      "reason": "Explain the master, optional sprint and caller document binding from the identical canonical and served tool-details passages.",
+      "sources": [
+        {
+          "blob": "c5279f52c1fae8958059bbbe48c65a4fd296bc4a",
+          "path": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/docs/tool-details.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0d91d5d53527ae0d509c0ab880b87323474a745a",
+            "content": "sha256:aacb91e3df5a6559b7b1562f493c5d9511040fec168aa36fa6f9df16c0241158",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/cli/explainer_browser.py"
+          },
+          "before": {
+            "blob": "02f555894fb593d11cc54be3386fe56f2c7d0f99",
+            "content": "sha256:b15e3e051c3a6e2371c192a775d0c5c7f819540642b34e5e0a270fe6f5770bf3",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "docs/install/README.md"
+          },
+          "id": "RLZ-WETCPZ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8E12DT",
+      "items": [],
+      "reason": "Attach the install-page placement to the existing explainer command entry point and preserve the exact installation passage as a separate citation.",
+      "revision": 1,
+      "subject": "INV-Q3GMWZ"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "examined": [
+        {
+          "id": "INV-0VAC47",
+          "revision": 2
+        },
+        {
+          "id": "INV-180VCA",
+          "revision": 2
+        },
+        {
+          "id": "INV-1N75CV",
+          "revision": 1
+        },
+        {
+          "id": "INV-2N79MT",
+          "revision": 1
+        },
+        {
+          "id": "INV-ANKVYJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-B7J1PZ",
+          "revision": 2
+        },
+        {
+          "id": "INV-CQSY2Z",
+          "revision": 3
+        },
+        {
+          "id": "INV-E8S0YF",
+          "revision": 1
+        },
+        {
+          "id": "INV-GWG9HD",
+          "revision": 1
+        },
+        {
+          "id": "INV-JRV850",
+          "revision": 1
+        },
+        {
+          "id": "INV-KJFNBQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-MDE1ZN",
+          "revision": 1
+        },
+        {
+          "id": "INV-QN78E9",
+          "revision": 2
+        },
+        {
+          "id": "INV-RF4W8Q",
+          "revision": 1
+        },
+        {
+          "id": "INV-SYBT3F",
+          "revision": 2
+        },
+        {
+          "id": "INV-WJ9ZD7",
+          "revision": 1
+        },
+        {
+          "id": "INV-XJ7GV5",
+          "revision": 2
+        },
+        {
+          "id": "INV-Y3TD13",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-8NYFV9",
+      "items": [
+        "sha256:690948a620f15b7194b68c32aa9ab64cec58d85231496b7b9e1c2390a12180c9"
+      ],
+      "reason": "The warning fit and role-start warning order combine with the bounded answer and recorded-result pointer, so the caller learns about missing copies while preserving access to any recorded whole result.",
+      "revision": 4,
+      "subject": "FAM-8SX6BT"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-8WKHMQ",
+      "items": [
+        "sha256:0f139dd1580e446e112f3b8b9de16e2c81dd130c6522858c4a3952c10e90c7ce"
+      ],
+      "reason": "Reconfirmed the document after its dependencies changed at mcp/src/agents_remember/models/tools/tool_answer.py. Its W2 document blob retains the checked account.",
+      "revision": 17,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9XPJHM",
+      "items": [
+        "sha256:6d47d74e5a71a2fa51a272a3e2d8310e3a4c6c10e72a12c1587c2be5c6905a60"
+      ],
+      "reason": "The import supplies a harness patching dependency for tests. The relevant proof is the executable test case.",
+      "subject": "hunk:sha256:6d47d74e5a71a2fa51a272a3e2d8310e3a4c6c10e72a12c1587c2be5c6905a60"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BZC8EK",
+      "items": [],
+      "reason": "Explain matching, missing and mismatched historical generations with separate implementation and public-document citations.",
+      "sources": [
+        {
+          "blob": "65597f52711773d7755f813da12995da8fc98197",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CDMGPH",
+      "items": [],
+      "reason": "Keep the Git hook's checkout-first module path alongside the existing interpreter-selection and import-probe evidence.",
+      "sources": [
+        {
+          "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+          "path": "scripts/bootstrap-mcp-venv.sh"
+        }
+      ],
+      "subject": "onboarding:scripts/bootstrap-mcp-venv.sh"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "c0e2d842b7397b60ad5e7d962fd0ccfc1f00dfdc",
+            "content": "sha256:7596a656e8bcdc1999cd319193b9473384cf10a98299d04dbf9106b2ca085fa1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/skills.md"
+          },
+          "id": "RLZ-PN2Q7F"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "b79471742cbf709d5dc406cb17677202909d3b0d",
+            "content": "sha256:fcbcd53b8295835c24f8bd4f733310fa16810ff242aa8a308c3f24be0b8098e2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/release-checklist.md"
+          },
+          "id": "RLZ-Q12QM2"
+        },
+        {
+          "after": {
+            "blob": "388fa4ba0118396a9905774abb83b2d001238bbe",
+            "content": "sha256:8178a0e42cd92fe6e36bf2c03e609e76204e0bd3b69e9d4f504ab1f72c7c81af",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "scripts/renew-instructions.py"
+          },
+          "before": {
+            "blob": "e27262761cee5ab5e0177ca4774cc2a60bf3fcb5",
+            "content": "sha256:5d693a03aab2136af7f21e4c62b1e1b691a62acc14ff129b6a466b0882b3df2e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "CONTRIBUTING.md"
+          },
+          "id": "RLZ-QXPTKB"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-CE8DK5",
+      "items": [],
+      "reason": "Move the contributor entry-point placement to the renewal command. Keep the contributor guide, skills reference and release checklist as three exact citations to their distinct procedures. Retire the two excluded documentary attachments after readback, including the skills-reference attachment released by the 09:04:43 UTC decision.",
+      "revision": 1,
+      "subject": "INV-J2CHWZ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
+            "content": "sha256:42d4b3573baea1dc0a2279318b8c4a4b31d5244eb568245ce5c2596ce998443c",
+            "locator": {
+              "kind": "symbol",
+              "name": "short_form"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": {
+            "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+            "content": "sha256:852062ae280e8d15d269ecbe54d76cc87a521383905c2e83595463a4b627966d",
+            "locator": {
+              "kind": "symbol",
+              "name": "short_form"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "id": "RLZ-ASGW6W"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-EREKGS",
+      "items": [
+        "sha256:f225174fe82eb2ff506d8edee108a53c9c12dc7798cbd789944ce9c7c2659a6b"
+      ],
+      "reason": "The note-revision operation and scope still apply. The shared guard now fits warnings separately while continuing to fit the declared note-revision answer.",
+      "revision": 1,
+      "subject": "INV-Q7KYQH"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
+            "content": "sha256:7e183b8bebbed26c70ee829f7813fdfcea64a27b4d784721084cf0ffa265d98e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fit_short_text"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": {
+            "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+            "content": "sha256:8061f6fe7812b5ab10b00cd8e4e8b8bfb476711f345649512273cc4291852368",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fit_error"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "id": "RLZ-SVSZ9P"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-G8RE1J",
+      "items": [
+        "sha256:530e9388f14a92865f26fef0f8849fe62e7fefbfa6742e2bb04a415f44677514"
+      ],
+      "reason": "The shared text fitter still keeps the error and shortens its text under the measured target. Re-anchor the error obligation from the replaced error-only helper.",
+      "revision": 2,
+      "subject": "INV-0VAC47"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-GG75W8",
+      "items": [],
+      "reason": "Reconfirmed the document after its dependencies changed at mcp/src/agents_remember/cli/role_launch_request_rules.py. Its W2 document blob retains the checked account.",
+      "revision": 5,
+      "subject": "DPD-PYMM5P"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GN6MZR",
+      "items": [
+        "sha256:675241c9ca497ed53715b3fb5ae5a135db2272fbe6a417d5e11fb646d738a8d5"
+      ],
+      "reason": "The launch account states that missing requirement filenames take priority in the warning prefix.",
+      "sources": [
+        {
+          "blob": "210872f08a0a898df592f68e2330120a451b3ea5",
+          "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "7dae9040baa0515a180e80c9087493f4f174f64c",
+            "content": "sha256:eb78367acff80eb3189230d261e74d46b7ed9a8134362980c647ea6e62176f41",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/uv.lock"
+          },
+          "id": "RLZ-7M3P2R"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-GZFSR2",
+      "items": [],
+      "reason": "Preserve the editable distribution version as its own lock citation beside the project and runtime version evidence. The lock remains the cited authority for the resolved distribution.",
+      "revision": 4,
+      "subject": "INV-BQFZCR"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-HD38EE",
+      "items": [],
+      "reason": "Reconfirmed the document after its dependencies changed at mcp/src/agents_remember/cli/role_launch_request_rules.py. Its W2 document blob retains the checked account.",
+      "revision": 7,
+      "subject": "DPD-3E9E2R"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HMP4V9",
+      "items": [
+        "sha256:327b29fa82c33b92c92223b90da1ed8060907ce7cd4b9841b88546551e4dc037"
+      ],
+      "reason": "The import supplies a type annotation used by the test. It makes no delivered-answer promise.",
+      "subject": "hunk:sha256:327b29fa82c33b92c92223b90da1ed8060907ce7cd4b9841b88546551e4dc037"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-JT63J0",
+      "items": [],
+      "reason": "Reconfirmed the document after its dependencies changed at mcp/src/agents_remember/cli/role_launch_request_rules.py. Its W2 document blob retains the checked account.",
+      "revision": 5,
+      "subject": "DPD-21GMJ5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M0YAHQ",
+      "items": [
+        "sha256:c956107a633d51bed0a0cf4869465c30231870bd7ef6542b1c007bd17489b47b"
+      ],
+      "reason": "The comment describes the shared character cap. The executable fitter and its guard proof carry the obligation.",
+      "subject": "hunk:sha256:c956107a633d51bed0a0cf4869465c30231870bd7ef6542b1c007bd17489b47b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N3QAAW",
+      "items": [
+        "sha256:744c429bff8d02111f1112cd1afea0047b1dfff23da1ffd3af34f49c2a343078"
+      ],
+      "reason": "The test imports the guard-bound control it needs to force the shared short form at any checkout depth. The proof resides in the forced-overflow cases.",
+      "subject": "hunk:sha256:744c429bff8d02111f1112cd1afea0047b1dfff23da1ffd3af34f49c2a343078"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N42BHJ",
+      "items": [
+        "sha256:763f4e296cbe5f734646bb9a81e3357ff9257dbab34818d075ad492bf74440e2"
+      ],
+      "reason": "The comment explains the bound from the short-root and deep-root measurements. The declaration and sizing fixture carry the bound obligation.",
+      "subject": "hunk:sha256:763f4e296cbe5f734646bb9a81e3357ff9257dbab34818d075ad492bf74440e2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NSFSAX",
+      "items": [],
+      "reason": "Keep the exact contributor, skills, release and Git hook passages that prescribe or invoke instruction renewal.",
+      "sources": [
+        {
+          "blob": "388fa4ba0118396a9905774abb83b2d001238bbe",
+          "path": "scripts/renew-instructions.py"
+        }
+      ],
+      "subject": "onboarding:scripts/renew-instructions.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PDP192",
+      "items": [
+        "sha256:652766005ac431f3c37d0c1e19ad4cb4746fa62eb87da64bfd953e476f5b833e"
+      ],
+      "reason": "The shared model account states the warning priority, cut signal and effective role bounds.",
+      "sources": [
+        {
+          "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
+          "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QWQA43",
+      "items": [
+        "sha256:91a9a224712772e2bc56e25367e1361821d6755d0c1ecc3b31ab8f8c19fc571c"
+      ],
+      "reason": "The framework registry identifies warningCut as shared metadata. The guard behavior is already attributed to the dedicated fitter and marker proof.",
+      "subject": "hunk:sha256:91a9a224712772e2bc56e25367e1361821d6755d0c1ecc3b31ab8f8c19fc571c"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "12b844e73e094832ea6ba548a11a0b589af699ee",
+            "content": "sha256:d45c9ccf891b5c558a018c170e9b8c45048a3796c04c36ea33d9929f19e22e71",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9J6CEC"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "fdb34f6fa92fd408d955060d2f7109174d2c84dd",
+            "content": "sha256:3469d5b598957f407ab42a40355bcfc4b66280b572b1035a0062e0cb289b2b74",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/pointer-actions.json"
+          },
+          "id": "RLZ-A55V4B"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-GFYNKH"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "0f949f25dbc9776cefceeb19908cd6f8f97fe559",
+            "content": "sha256:827ed75068692a0ab25d1923378870a5555c97fcbfd3b3b1daecc51211720e32",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/pointer-actions-derived.json"
+          },
+          "id": "RLZ-QAAFFF"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "6648361625e005c24039fcfbc19fdd7e9311f29d",
+            "content": "sha256:89f2ed6bd144353ab24726fb2237ff4c177f9d6412f6272fb1ada9b152345d58",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-WZZ5BF"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-QYW1A6",
+      "items": [],
+      "reason": "The measured budgets, composition manifest, digest map, authored pointer actions and their generated wording are covered by the canonical inputs and the renewal plan. Retire the five byte-identical package-copy placements and retain incoming references to the exact packaged manifest.",
+      "revision": 1,
+      "subject": "INV-EHJV8E"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-R8KG4X",
+      "items": [],
+      "reason": "Reconfirmed the document after its dependencies changed at mcp/src/agents_remember/cli/role_launch_request_rules.py. Its W2 document blob retains the checked account.",
+      "revision": 7,
+      "subject": "DPD-2B7PTY"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-RC71Y8",
+      "items": [],
+      "reason": "Reconfirmed the document after its dependencies changed at mcp/src/agents_remember/cli/role_launch_request_rules.py. Its W2 document blob retains the checked account.",
+      "revision": 5,
+      "subject": "DPD-6528VF"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
+            "content": "sha256:42d4b3573baea1dc0a2279318b8c4a4b31d5244eb568245ce5c2596ce998443c",
+            "locator": {
+              "kind": "symbol",
+              "name": "short_form"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": {
+            "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+            "content": "sha256:852062ae280e8d15d269ecbe54d76cc87a521383905c2e83595463a4b627966d",
+            "locator": {
+              "kind": "symbol",
+              "name": "short_form"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "id": "RLZ-3CFKGK"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RSF6G0",
+      "items": [
+        "sha256:b38f70825ed730817fcd5b982e4e79619c05c6fea16f91c70e21b592f028b27f"
+      ],
+      "reason": "Declared whole values and fitting omissions keep their priority and placement. Warning fitting follows the existing declared-field fit.",
+      "revision": 1,
+      "subject": "INV-WJ9ZD7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S8BDB3",
+      "items": [],
+      "reason": "Explain the image policy and the HTML page policy for video, poster and nested source requests with separate evidence.",
+      "sources": [
+        {
+          "blob": "c09e8578f7549c73f5cd25986df660037db47615",
+          "path": "dashboard/src/grammar/DocumentMarkdown.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/grammar/DocumentMarkdown.tsx"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-SB3F5G",
+      "items": [
+        "sha256:4e66149b8ea1cf859ea72021aecd7b4ba925c0bedf8a294f184aa24bbf4bec6e"
+      ],
+      "reason": "Reconfirmed the document after its dependencies changed at mcp/src/agents_remember/cli/role_launch_request_rules.py, mcp/src/agents_remember/models/tools/tool_answer.py. Its W2 document blob retains the checked account.",
+      "revision": 10,
+      "subject": "DPD-MQCJK4"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-SJ6GB8",
+      "items": [],
+      "reason": "Reconfirmed the document after its dependencies changed at mcp/src/agents_remember/models/tools/tool_answer.py. Its W2 document blob retains the checked account.",
+      "revision": 6,
+      "subject": "DPD-EJ2Y7Z"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WEGZCQ",
+      "items": [
+        "sha256:43b4bc5872cb9034cb0bfd7bc7669c87f448861138e1a4ce71e16dbd1eb17daf"
+      ],
+      "reason": "The test overview connects the two role overflow cases, guard refit and representative deep-root sizing fixture.",
+      "sources": [
+        {
+          "blob": "fb67cfa16bb74ac8a7974434e310488e8a50a320",
+          "path": "mcp/tests/test_paseo_role_answers_l111.py"
+        },
+        {
+          "blob": "3a38c925df192a11e3212a55a233b79f01f81c71",
+          "path": "mcp/tests/test_tool_answer_table_guards.py"
+        },
+        {
+          "blob": "0c2abf4f59eac736e33bff7ef190b469990ce8ae",
+          "path": "mcp/tests/tool_answer_l111_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "2c7dc6d83d1492b30d3948afc4f131805f1a373f",
+            "content": "sha256:453d9a870d9851efbe6b14951f7fcafa2bd3c35ccb39788e91263ae44cf9b3a6",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "id": "RLZ-7DMQ2V"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
+            "content": "sha256:945370bb3e81b497caa81cdcea193019874b15f37f40168732ea1649c1c32559",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "id": "RLZ-8EPQ40"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "f18b21d0d255bce3024a2cd8726367c521764fab",
+            "content": "sha256:e336fcebbb5bfa5752a5f8a4cad8567f3efb2bee13a963ddda04df90cc8941a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/worktrees-c09.md"
+          },
+          "id": "RLZ-9SXB41"
+        },
+        {
+          "after": {
+            "blob": "65597f52711773d7755f813da12995da8fc98197",
+            "content": "sha256:65cf92ff20a4a676d1185a9ef72af907d6993e0ffd81ab360d45ffd4f6f30830",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_generation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+          },
+          "before": {
+            "blob": "e0f70f991c3b38c1dbc9f586c0c6b70303b451cd",
+            "content": "sha256:8c9fe4e5e16f91df0f3c45a00356d8bcefc9400fd0b71e7891581bd34aee2c5f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-RZ1XP1"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-XGPZH4",
+      "items": [
+        "sha256:bafdd7ca4acfb659cf5434cd98174ae249b898c1bbf38ee33047016e4b64843a"
+      ],
+      "reason": "The public reference still describes inline closeout and integration and their matching synchronous retry tools. Keep its exact table range as a separate citation and bind its realization to the historical generation check. Keep the worktrees guide evidence in the controls card and retire the duplicate packaged coordination and Manager brief entries after comparing their canonical counterparts.",
+      "revision": 1,
+      "subject": "INV-760TKM"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
+            "content": "sha256:cb478c0c0e219a70c603903ba21758bfe08d61062d120c4fd84c06f227c34686",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fit_the_cut_hint"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": {
+            "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+            "content": "sha256:72a688f915684c1ddd30725f3df07c80b1a8fc7f31547b33d6ccd51253735983",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fit_the_cut_hint"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "id": "RLZ-395R92"
+        },
+        {
+          "after": {
+            "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
+            "content": "sha256:42d4b3573baea1dc0a2279318b8c4a4b31d5244eb568245ce5c2596ce998443c",
+            "locator": {
+              "kind": "symbol",
+              "name": "short_form"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "before": {
+            "blob": "bc62e7d90bdbe8c9494cde5e0215265ce175c19e",
+            "content": "sha256:852062ae280e8d15d269ecbe54d76cc87a521383905c2e83595463a4b627966d",
+            "locator": {
+              "kind": "symbol",
+              "name": "short_form"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "id": "RLZ-DS4GQG"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YMZ8AZ",
+      "items": [
+        "sha256:5f839be9d05d9a84d7c7a8c288b09459459dcffdbf7c463735ae0155266fd9af"
+      ],
+      "reason": "The final form still counts its locator, hint and late logging changes against 400 tokens. Warning text now participates in the same final measurement.",
+      "revision": 2,
+      "subject": "INV-QN78E9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZZ3Q7C",
+      "items": [],
+      "reason": "Cite the install guide passage that gives the explicit browser fetch command.",
+      "sources": [
+        {
+          "blob": "0d91d5d53527ae0d509c0ab880b87323474a745a",
+          "path": "mcp/src/agents_remember/cli/explainer_browser.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/explainer_browser.py"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

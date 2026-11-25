@@ -1,14 +1,33 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/style/citations/cells.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e920d7fa46d0d8b4a3c60ce8c0f6e92c7bb3b71b",
+        "content": "sha256:8089f5fa988854b214b7063c76d64f4f11f755889c07d12fc6fc2aade897e642",
+        "locator": {
+          "kind": "symbol",
+          "name": "parse_row"
+        }
+      },
+      "id": "RLZ-7H7WPV",
+      "invariant": "INV-CK3F9Z",
+      "origin": {
+        "handoffEntry": "SUB-R01-live-citations",
+        "leaf": "261123-SUB-L1"
+      },
+      "rationale": "Provides the cited paths' language context to the anchor parser.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "2": {
       "note": "parse_row unescapes GFM pipes and parses anchor/source cells for conversion and converted card authoring.",
       "targets": [
         {
           "anchor": {
-            "blob": "9c6014f3a546afa2040c69e91e6541a134fc2212",
-            "content": "sha256:d8ec422536c14895afb176814e4f6a18d8fd6f9d960bc845f6ae3ecccdda6342",
+            "blob": "e920d7fa46d0d8b4a3c60ce8c0f6e92c7bb3b71b",
+            "content": "sha256:8089f5fa988854b214b7063c76d64f4f11f755889c07d12fc6fc2aade897e642",
             "locator": {
               "kind": "symbol",
               "name": "parse_row"
