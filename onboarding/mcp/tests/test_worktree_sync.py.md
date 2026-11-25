@@ -14,6 +14,8 @@ Exercise real code/external-memory sync, retained conflicts, cache independence,
 
 SyncFixture drives the public transaction with an explicit code and memory pair. Cases check paired fast-forward and contract bases, code-conflict continuation, source-ref resolution, cache exclusions, cancelled restoration and memory-content conflict recovery. Memory conflicts are current knowledge-file/content conflicts; the canonical dataset reconciliation engine and its old helper vocabulary are retired. The transaction journal must describe its actual stop/continue state rather than infer completion from matching HEADs. No source or index operation is authorized by reading these tests, and no run is claimed.
 
+Retained-resolution tests distinguish inherited whitespace from staged findings authored in or beside a conflict. They exercise reported commit-hook refusal, failed Git comparisons and multiline path attribution. The automatic memory case covers the same inherited-line rule without a manual resolution.
+
 ### Logic
 
 `SyncFixture` creates disposable code/memory worktrees and canonical contracts. Its default converted=True seeds knowledge/layout.json into the attributed base so ordinary scenarios reach converted judgment; converted=False is explicit legacy-format/refusal/crossing setup, not permission for ordinary legacy sync. Some setup deliberately retains or commits historical tracked memory.md states; these are inputs to prove cache independence, not cache commits created by the sync under test. `map_official_memory` writes attribution in a real memory-content commit. A `source_branch` argument (default `main`) names the official line: both repositories switch to it, the contract's code and memory plans and both worktrees start from it, and `move_official_code`/`map_official_memory` return its tip.
@@ -69,6 +71,10 @@ These current source spans identify the implementation owners and the specific a
 - Cache-independent source admission, start, and candidate identity. [17]
 - Nonregular journal quarantine preserves the outside target. [18]
 - Cancel after a memory conflict restores the branch and its tracked cache. [19]
+
+- The incoming-whitespace case continues a retained merge with unchanged incoming whitespace. [20]
+- The transient comparison case keeps the first Git error in the resolution response. [21]
+- The automatic-memory case carries incoming whitespace through the shared staged check. [22]
 
 ### Cross-Repo References
 

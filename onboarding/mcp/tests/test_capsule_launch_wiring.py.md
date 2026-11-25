@@ -236,8 +236,4 @@ the fixture it is pinned against lives in this repository.
 
 - The lane row D9's fail-closed loader requires for every new test module. Anchor: "mcp/tests/test_capsule_launch_wiring.py" Anchor: "mcp/tests/test_capsule_launch_wiring.py" [15]
 
-
-
-
-
 - The three governed-artifact rows registering this module as a consumer, beginning with the _user_settings_guard.py row. The `curator_coherence_test_support.py` row registers `test_capsule_launch_wiring.py` as a consumer. The `fixtures/repository_profiles/node/package-lock.json` row registers `test_capsule_launch_wiring.py` as a consumer. [21]

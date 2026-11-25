@@ -21,6 +21,8 @@ A selecting start, attach, dispatch or sync identifies the canonical series cont
 
 Managed sync pins base, pre-sync and source commits for code and external memory, journals progress below the enclosure root and advances the participating sides. A dirty, non-temporary side that will actually move parks its candidate, including untracked files, and records the stash identity, a bounded path sample and total path count. Dry run performs preflight and returns a preview without parking. Unmerged indexes and unprovable checkouts remain refusals. Restore is part of completion, resumption and cancellation; finalization refuses while a candidate remains parked. An unprovable restore retains recovery material and reports the proof failure. Restoration proves the complete stash-derived reapply, not whole-file equality or the bounded journal sample: an edit the carried line already holds is restored even beside unrelated landed changes. A failed proof keeps the stash, names failed paths and cancellation recovery, and prohibits editing until the transaction is closed. With `sync_source="repository-default"` the sync pulls each repository's default branch instead of the contract's own source line: it pins each default tip under a default-source ref whose name carries the branch, keeps the contract's base pair, and appends one sync-log entry naming the source branches, incoming tips and produced heads; resume and cancel read the journal and its pins only, and a continue refuses with `sync-source-moved` when a recorded default is no longer the repository's default. A continue of a resolved parked reapply measures the parked authoring against the resolved tree: while authored lines or files are missing it answers `sync-resolution-incomplete` with an omission report in the enclosure's scratch, keeps the stash, and settles only when each omission is restored or reconciled with evidence the sync re-measures.
 
+The staged check compares a retained resolution against both verified merge parents. A normal finding must match the same path, staged line and diagnosis in both comparisons. Automatic memory merges share the check. Git comparison failure returns resolution evidence, while a failed commit command may enter repository-hook diagnosis.
+
 Cancellation proves all-side ownership before record or tree mutation. Exact operation-created worktree and index state may be discarded because the kept stash still holds the parked candidate; already-restored sides are returned again after rollback. Later owner work and unproved crash-window bytes are saved by the product before discard and rollback; exact patch/path/mirror files and digests are named. Unknown attribution is never blessed as transaction output. A save or discard failure retains the saved state and journal for public cancel retry. Interrupted converted-memory replay includes the same structural merge, paired code and owner before it can earn fingerprints. Stash authority survives restoration and is retired only after terminal publication.
 
 A genuine merge conflict stays in the operation-owned worktree. The restore proof and cancellation share one native carried-first reapply expectation in the actual reapply worktree, using carried-head attributes and effective configuration, including an explicitly handed-over diff algorithm. Reproducing a different algorithm's bytes or succeeding through a plain-file fallback is not ownership. Staged binary bytes are compared without text newline conversion. Native acquisition failure retains recovery authority. Restoration inline command/exit/reason is conditional on native acquisition being needed and failing during recomputation of the first ten named failures; a later native-dependent failure need not supply that inline reason. Cancellation carries the fault actually observed by its ownership assessments; exact raw stash holders and retained fingerprints keep their separate, narrower cancellation admission. These repairs preserve complete inventory, pre-mutation ownership assessment and terminal-before-stash-retirement rather than replacing them.
@@ -225,12 +227,12 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 - Sync recovery reads its canonical enclosure-root reports journal first, with the old lifecycle location only a legacy fallback; operation observations do not derive transaction state from task prose. [15]
 
-- Retained reference account (no fresh execution or acceptance inferred): The sync driver retains content conflicts for continuation, permits only continue or cancel as resolution actions, and validates a staged retained merge before completing it; knowledge content is resolved in the memory worktree, not through an authored-reconcile action. [16]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): Cancellation restores only operation-owned heads; malformed or missing journals recover only through explicit pinned-ref proof. Anchor: `cancel_sync` `recover_unreadable_journal` `recover_missing_journal` [17]
 
 
-- Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution (validated by the MIK-R22 knowledge validator before its commit when the memory is converted, after a crossing sync's history file is closed), and the completed branch — and none of them reads a ledger row list. [18]
+
 - Retained reference account (no fresh execution or acceptance inferred): A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state. [19]
 - Retained reference account (no fresh execution or acceptance inferred): Checkpoint captures the current code and memory branch tips without a ledger mapping prerequisite. [20]
 - Retained reference account (no fresh execution or acceptance inferred): Consumer source rows are derived only from Git attribution. [21]
@@ -245,16 +247,16 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 - Retained reference account (no fresh execution or acceptance inferred): Both directions of the step rule are pinned by one collected case, because both lanes sit at exactly their budget, and the descending-position counter-case is untouched. [37]
 - Retained reference account (no fresh execution or acceptance inferred): The order the spine walk consumes: non-empty leaves are proved landed before ordering by the pair predicate, refusing unless exactly one minimum exists; empty landings are excluded from that ordering and separately proved at a joint chain position. Source caption: `_require_exact_atomic_landing_chain` `_ordered_atomic_landing_chain` [38]
-- Retained reference account (no fresh execution or acceptance inferred): Continue/cancel inputs and specific old-journal read tolerance. [40]
 
-- Supported staged continuation and cancellation guidance. [41]
+
+
 - Retained reference account (no fresh execution or acceptance inferred): The route helper: marker probe, fail-closed on unreadable trees, refusal without a paired code commit or a bound validator. [42]
 
 - Retained reference account (no fresh execution or acceptance inferred): The port the helper calls (since MIK-R09 with a `leaf_refusal` twin) and the bundle field that carries it (beside `knowledge_crossing`, since MIK-R24, `knowledge_worklist`, since MIK-R08, `review_artifact_cleanup`, since MIK-R25, and `knowledge_gate`, since MIK-R09). Anchor: `KnowledgeValidationPort` `WorktreeServices` [43]
 
 
-- The sync validates the staged memory merge before its commit, against a converted base when a parent is unconverted (MIK-R24 rule 7). [44]
-- Retained reference account (no fresh execution or acceptance inferred): The driver maps the refusal to its own state with a recovery line. [45]
+
+
 - Retained reference account (no fresh execution or acceptance inferred): The route never commits converted memory unvalidated, and an unreadable tree is refused. [46]
 - Retained reference account (no fresh execution or acceptance inferred): The plan before Git, and its application to the started merge. [47]
 
@@ -296,7 +298,7 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 - Retained reference account (no fresh execution or acceptance inferred): The worktree layer's helper that names the leaf's line. Anchor: `leaf_cutover_refusal` [66]
 
-- Retained reference account (no fresh execution or acceptance inferred): The managed sync asks the lock at admission. [67]
+
 - Retained reference account (no fresh execution or acceptance inferred): The closeout closes a reopened leaf's latest attempt. [68]
 
 - The rollback restores the cache before the merge abort. [69]
@@ -317,7 +319,7 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 - **Retained historical source account — superseded by the current route account:** Sync lock skips absent, already-current and skip sides; moving candidates alone park [82]
 - **Retained historical source account — superseded by the current route account:** Report selection does not include aligned-card count alone [83]
-- **Retained historical source account — superseded by the current route account:** Memory merge validates exact staged tree before commit and proves pinned parents [84]
+
 
 - **Retained historical source account — superseded by the current route account:** Completion publishes journal before cleanup; worklist failures omit summary [85]
 
@@ -360,3 +362,15 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - Abandon publication restores task and contract sources on publication failure; this does not recreate prior reclaimed resources. [103]
 
 - The neutral process holder supports an explicitly named lazy supplier: first lookup retains its bundle and reset clears bundle and supplier. Start/creation checks every leaf stage, planning attach checks before re-entry, and task-stage publication refuses planning/abandoned-to-inProgress while intent review is open; existing later-stage attach remains separate. [106]
+
+- Retained continuation validates the staged merge against both recorded parents. [110]
+- Only a retained merge commit failure enters hook diagnosis. [111]
+
+- Retained reference account (no fresh execution or acceptance inferred): The sync driver retains content conflicts for continuation, permits only continue or cancel as resolution actions, and validates a staged retained merge before completing it; knowledge content is resolved in the memory worktree, not through an authored-reconcile action. [16]
+- Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution (validated by the MIK-R22 knowledge validator before its commit when the memory is converted, after a crossing sync's history file is closed), and the completed branch — and none of them reads a ledger row list. [18]
+- Retained reference account (no fresh execution or acceptance inferred): Continue/cancel inputs and specific old-journal read tolerance. [40]
+- Supported staged continuation and cancellation guidance. [41]
+- The sync validates the staged memory merge before its commit, against a converted base when a parent is unconverted (MIK-R24 rule 7). [44]
+- Retained reference account (no fresh execution or acceptance inferred): The driver maps the refusal to its own state with a recovery line. [45]
+- Retained reference account (no fresh execution or acceptance inferred): The managed sync asks the lock at admission. [67]
+- **Retained historical source account — superseded by the current route account:** Memory merge validates exact staged tree before commit and proves pinned parents [84]

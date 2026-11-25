@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8218f7f1a8e331130c15bf463ddcc88a51a34fbd",
-    "commit": "180b6c153d21d01cbb14059d0219472ccdeba683",
+    "codeTree": "51bf0a91489d97231a1e1173b67d2087c170b08f",
+    "commit": "ff626cd445012fee408b4b6c292756bbe1438d2e",
     "role": "curator",
-    "statement": "The contributor guide accurately describes the seven lanes, lane assignment for new tests and the canonical lifecycle catalog procedure on the merged source. The contributor guide's hook and lane sections still hold: both hooks need the dashboard's dependencies and stop with the install command when they are missing, and the two new test files sit in the integration lane.",
-    "task": "261112-BUG-L27",
+    "statement": "The contributor guide accurately describes the seven lanes, lane assignment for new tests and the canonical lifecycle catalog procedure on the merged source. The contributor guide's hook and lane sections still hold: both hooks need the dashboard's dependencies and stop with the install command when they are missing, and the two new test files sit in the integration lane. The contributor guide's seven-lane policy still applies, with the dependent-writer, crossing-history interruption and worktree crossing-history tests in integration and the crossing knowledge-writer and crossing Git-path tests in unit regression.",
+    "task": "261112-BUG-L26",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "2ecce6228d45fcc9dee1eb05aad3aab8da869859",
+      "blob": "e6aa1452b7816dbfafa14d559b014d62af9a0df3",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },

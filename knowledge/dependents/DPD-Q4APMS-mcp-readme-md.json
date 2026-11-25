@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "e0899a2899dd251331ac48aa874f17126a84a541",
-    "commit": "b28b99ce065e7db8ce1e79328e29861967e9bcb6",
+    "codeTree": "cf41b9ab8a855953186f782960fd37a57225b56f",
+    "commit": "1d62157b755f5ab6b60ac89010b6a03160519352",
     "role": "curator",
-    "statement": "On the merged code the package README's tool-group table and reference pointers still match: create_server still registers every group before a role binding narrows the served list (CAP-L1), and the tool-log advice sits in the same reference sections (L27).",
-    "task": "261124-CAP-L1",
-    "uncommitted": true
+    "statement": "On the merged code the package README's tool-group table and reference pointers still match: create_server still registers every group before a role binding narrows the served list (CAP-L1), and the tool-log advice sits in the same reference sections (L27). The MCP package README points to the tools reference, whose Worktrees and Knowledge sections describe staged continuation against both pinned merge parents and the writer for an open master crossing.",
+    "task": "261112-BUG-L26",
+    "uncommitted": false
   },
   "document": "mcp/README.md",
   "id": "DPD-Q4APMS",
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "dafcb46cf916143c0a91d5da2ebac79c173196c2",
+      "blob": "12983a12e152abb84fc6fd051b48b48dcf1997d4",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }

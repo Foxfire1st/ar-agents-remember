@@ -6297,12 +6297,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
             "content": "sha256:e8d4a28e6c3fbf9995a4547295f0e43b349db309ab92d30fc59dac8307765819",
             "locator": {
-              "end": 224,
+              "end": 231,
               "kind": "line_range",
-              "start": 206
+              "start": 213
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },

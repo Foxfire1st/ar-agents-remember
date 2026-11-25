@@ -38,7 +38,7 @@ through `models/knowledge_files/anchor_content.py`.
   `None`. The object is a regular file's blob, a symlink's blob or a submodule's commit; `absent` means C holds
   nothing at the path. Any other subject passes. The refusal reads "names no change at C: the code candidate
   holds … (unknown subject)".
-- **`CodeSnapshot.at_commit(repository, commit)`.** A committed snapshot resolves the supplied operand to a Git commit and records its full ID beside the commit's tree. A tree or blob operand raises `AnchorResolutionError`. The constructor checks 40- or 64-character hexadecimal syntax for a supplied commit ID. `capture` reads the working tree and carries no commit. The crossing route supplies the sync's settled commit, which identifies the code used to confirm dependent links.
+- **`CodeSnapshot.at_commit(repository, commit)`.** A committed snapshot resolves the supplied operand to a full Git commit ID, reads the tree from that ID and records the same ID. A tree or blob operand raises `AnchorResolutionError`. The constructor checks 40- or 64-character hexadecimal syntax for a supplied commit ID. `capture` reads the working tree and carries no commit. The crossing route supplies the sync's settled commit, which identifies the code used to confirm dependent links.
 
 ### Conventions
 
@@ -81,22 +81,25 @@ Capture and resolution.
 
 - A locator that does not resolve at C. [1]
 
-- The captured tree C and its blobs. [2]
+
 
 - A `file:` row subject must name the path's object at C, or `absent` (MIK-R10). [3]
 - Capture through the private-index candidate tree. [4]
 
-- A symbol must bind exactly once. [6]
 
 
 
 
 
-- The snapshot of a committed code state, for a master line's crossing. [8]
+
 
 
 - Symbol extraction rejects invalid UTF-8 with a named anchor error and uses case-specific diagnostics when no definition binds. [11]
 - Symlink symbols refuse before blob parsing; file and line-range anchors still hash the selected entry bytes. [12]
+
+- The crossing snapshot uses the resolved commit ID for both recorded identity and tree lookup. [8]
+- The captured tree C and its blobs. [2]
+- A symbol must bind exactly once. [6]
 
 ### Cross-Repo References
 
