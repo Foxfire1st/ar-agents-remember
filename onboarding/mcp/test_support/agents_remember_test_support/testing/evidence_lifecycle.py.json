@@ -144,12 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
+            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
             "content": "sha256:fc6469a9464ab758dd3c4c3acb722ba1b7d402c2af1e273501edb9c149baa0ff",
             "locator": {
-              "end": 231,
+              "end": 236,
               "kind": "line_range",
-              "start": 224
+              "start": 229
             },
             "path": ".githooks/_gate.sh"
           },

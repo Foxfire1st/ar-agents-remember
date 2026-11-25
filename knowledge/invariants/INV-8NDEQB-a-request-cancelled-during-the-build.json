@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A request cancelled while it waited left no tool-log row, so a caller could not tell whether the tool had run or what held it up."
+  },
+  "applicability": "Tool calls on the tool server that are cancelled before their handler starts.",
+  "conditions": [
+    "The cancellation arrives while the server reads its build currentness, while a writing call waits for the write lock, or while a detached worker is still queued in the thread pool."
+  ],
+  "exclusions": [
+    "A cancellation after the handler started, which the raised-error row or the tool's own result row covers.",
+    "A draining worker queued in the thread pool, which still runs to its end.",
+    "A server without settings, which skips the currentness read."
+  ],
+  "id": "INV-8NDEQB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/27_a-closeout-says-what-it-lacks-before-it-works-and-never-ends-without-a-trace-ar/role-reports/worker/ab4c7795-d684-4499-b9ef-bb86badfde8a/role-launch/BUG-L27-post-sync-readback.md#checks"
+      ],
+      "path": "L27-writer-input"
+    },
+    "handoffEntry": "BUG-R27@v1 Rule 2 pre-handler cancellation",
+    "leaf": "261112-BUG-L27",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A request cancelled during the build-currentness check, while queued for the write lock, or before a detached worker starts leaves one tool-log row naming the wait and stating that the tool never ran.",
+  "status": "proposed",
+  "supersedes": []
+}

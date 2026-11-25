@@ -21,6 +21,40 @@
       "role": "propagation-persistence"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The packaged copy carries the judgment verification and publication steps.\n\nAnchor: `prepare`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0933522e58be01db918406b80d48e1bc7e5d4822",
+            "content": "sha256:c1bc82c219d78ddd1220a4533b8605d77cb1200678efdb51cc9f5e615e5f8df1",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The package data skills folder is a declared generated copy.\n\nAnchor: \"mcp package data\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+            "content": "sha256:3e317251168bcda42f7a0f9a00a7e1763990a7d2204d6512415b528df6a006f1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "generated-copies.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

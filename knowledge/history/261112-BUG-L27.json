@@ -1,0 +1,1217 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L27",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-07Z7JQ",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "A section names the consumer declarations of the two new test modules on the settings-guard, coherence-support, L110-rows and Node-lockfile artifacts; the contract and artifact counts stay 18 and 120.",
+      "sources": [
+        {
+          "blob": "bf1ff630aa584ae1f28c8de20e28e954f7961c55",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-09KDNG",
+      "items": [
+        "sha256:9dfb2f3c43949b5878a7054cefb3930107bd3f18260366630b7cb09bf3b69b9d"
+      ],
+      "reason": "The card no longer says the helper shields the worker task or propagates the caller's original exception: run_in_request_thread now waits for its own worker task, drains it under a shielded cancel scope and records the worker's error for the request's log. The card adds track_worker_cancellation, the detached helper and its users, and re-authors reference 1 at the new helper lines.",
+      "sources": [
+        {
+          "blob": "2ee450da7ed591e6d87e27ecd9b4835dffd5f825",
+          "path": "mcp/src/agents_remember/mcp/thread_workers.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/thread_workers.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0S4PBE",
+      "items": [
+        "sha256:b1e8e4ff440027accfec8fcfca9460b923528fddfcc4267f1366bbdec29e4239"
+      ],
+      "reason": "Construction now says that role messages and the settings initializer use the detached runner. The historical hot-path block that said native role calls use asyncio.to_thread is removed as a past account; its _tool_payload adapter claim is not in the current source either. References 24 and 40 are re-authored at the candidate.",
+      "sources": [
+        {
+          "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+          "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1SP40X",
+      "items": [
+        "sha256:05c7268456b952d9a1ac930cea03458cde37d5d2bb78f55f0dc676e2e7c16713"
+      ],
+      "reason": "The module docstring re-describes the module; it has no behavior.",
+      "subject": "hunk:sha256:05c7268456b952d9a1ac930cea03458cde37d5d2bb78f55f0dc676e2e7c16713"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-2GFFZE",
+      "items": [
+        "sha256:7888ea4ffc5e38f2a7b27c1b3c436b109a6e81e0e73e4231c834016f0d0a84b6"
+      ],
+      "reason": "The stress-durability block of the lane catalog moved two lines down; the anchor is re-pointed to lines 819-822, which hold the recorded content, and every other link is re-confirmed at the candidate. The bootstrap guide still correctly says that the integration and stress-durability lanes make up the integration tests, and the native stdio bounded-memory case is still the only stress-durability file.",
+      "revision": 13,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+            "content": "sha256:af06a2422ac2a91eab5c15ecad95777c61ed5def424c7fa88a64d887933aa5c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP.call_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "content": "sha256:af06a2422ac2a91eab5c15ecad95777c61ed5def424c7fa88a64d887933aa5c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP.call_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-60GHTP"
+        },
+        {
+          "after": {
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+            "content": "sha256:e73c3919f9745cc0652821e92130026445e86e4ed89ca4ba1b3b9d76a256ec01",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_role_agent_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "before": {
+            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+            "content": "sha256:3dfaee2e3ffded7b5e8f92fed3374836e045a980851cdb3704fd2807f7340f5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_role_agent_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "id": "RLZ-6ND0CV"
+        },
+        {
+          "after": {
+            "blob": "2ee450da7ed591e6d87e27ecd9b4835dffd5f825",
+            "content": "sha256:b5db5630112f4a40dee5ef605a87c3210881efa621c460a89e72c461b567c3f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_in_request_thread"
+            },
+            "path": "mcp/src/agents_remember/mcp/thread_workers.py"
+          },
+          "before": {
+            "blob": "16c9244c6c6d7b49e26f835cf992ae04304056f5",
+            "content": "sha256:8270eb64bb55bec46ee910fba95941cf2303221cd04753f4019076d6e81336e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_in_request_thread"
+            },
+            "path": "mcp/src/agents_remember/mcp/thread_workers.py"
+          },
+          "id": "RLZ-A35Y1N"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-2RXP3Y",
+      "items": [
+        "sha256:3f1d97c01cca67c204ff61ff8893d23f4fb49cde3d45d2d7541c706c51336879"
+      ],
+      "reason": "role_start and role_start_set still drain their worker through run_in_request_thread before the request memo is cleared and pages are trimmed; the detached helper serves only role_message, user_settings_init and the stale-build refusal. Its entries in the changed files are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-V4WR2R"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+            "content": "sha256:312d3f75f123cb354fd03fd95f8dd3fc94d3693499546a4be82abdd2bf7cf3a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worktree_services"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "content": "sha256:312d3f75f123cb354fd03fd95f8dd3fc94d3693499546a4be82abdd2bf7cf3a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worktree_services"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-6Z7M7P"
+        },
+        {
+          "after": {
+            "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+            "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-8T6VV2"
+        },
+        {
+          "after": {
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+            "content": "sha256:e73c3919f9745cc0652821e92130026445e86e4ed89ca4ba1b3b9d76a256ec01",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_role_agent_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "before": {
+            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+            "content": "sha256:3dfaee2e3ffded7b5e8f92fed3374836e045a980851cdb3704fd2807f7340f5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_role_agent_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "id": "RLZ-GA7X4W"
+        },
+        {
+          "after": {
+            "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+            "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-KQGYHP"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-31QTYE",
+      "items": [
+        "sha256:f4c595f2e5325bbae999c491ba7c9200573661490faaa8fc208b1ebec8b59fd2"
+      ],
+      "reason": "Registration still resolves operation payloads on invocation through the lazy tools; only the thread helper that runs some payloads changed. Its entries in the changed files are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-990KQM"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-3QM3Z5",
+      "items": [],
+      "reason": "Every link is re-confirmed at the candidate; the document's text stays true of the code that moved under it. The packaged tool details, identical to the docs copy, still describe write ordering and the stale-build refusal truly.",
+      "revision": 13,
+      "subject": "DPD-NGC2F6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3VX34S",
+      "items": [
+        "sha256:09892f73d95ad618fd99a92c6fa23ec89f99ed906e54dabb1230a4c0e6c02861"
+      ],
+      "reason": "Imports the three worker-thread helpers; their behavior is held where they are called.",
+      "subject": "hunk:sha256:09892f73d95ad618fd99a92c6fa23ec89f99ed906e54dabb1230a4c0e6c02861"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-451DBB",
+      "items": [
+        "sha256:69563a174b2689ba90ef519dc12606f18803247a67c4f8cf404ad46281db8433"
+      ],
+      "reason": "The shared failed-call writer takes the row's code from the record it is given; the raised and cancelled guarantees are held where those records are built.",
+      "subject": "hunk:sha256:69563a174b2689ba90ef519dc12606f18803247a67c4f8cf404ad46281db8433"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4F5N4M",
+      "items": [
+        "sha256:6fe8085ffdfe25f086082cd3f464c7368331ea2d414901f194a4026b4070baf1"
+      ],
+      "reason": "The false sentence that role messages keep their direct thread offload is replaced: role_message and user_settings_init run through the detached request-thread runner. References 1, 3, 8 and 9 are re-authored at the candidate, and a reference for the two detached calls is added. Removed as past accounts: the three 'Retained historical source account' blocks under Current Contract, the Investigator-scope historical block, the 'Refreshed current evidence' historical paragraph and the leftover 'Retained authoring-row wording' blocks, and the sentence binding the account to a candidate source.",
+      "sources": [
+        {
+          "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+          "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/role_agents.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4NY66J",
+      "items": [
+        "sha256:663111bed3bdcb9c2b37e18a1a85132563b2233993805b95b010d9a8439d9347"
+      ],
+      "reason": "The dispatch-regression section names the cancelled-tool-log and hook-prerequisite tests, test registration names both modules in integration, and every lane total now reads 802 modules and 118 integration members; references 1498, 1529, 1530, 1647 and 1808 are re-authored with the corrected totals.",
+      "sources": [
+        {
+          "blob": "bf1ff630aa584ae1f28c8de20e28e954f7961c55",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "2ecce6228d45fcc9dee1eb05aad3aab8da869859",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "3062265c916aba7ab95a32129ac477b4bb9b47a3",
+          "path": "mcp/tests/test_git_hook_dashboard_prerequisites.py"
+        },
+        {
+          "blob": "f96005f5f55fff9d3bf0551f1ea58fe8f01a2e24",
+          "path": "mcp/tests/test_mcp_cancelled_tool_log.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4XW2JE",
+      "items": [
+        "sha256:84b403b9f984b23772e1ab3edd6dd81d78eef705bb9b51f36a74e00e9b643d76"
+      ],
+      "reason": "The concurrent-transport section now says that a cancelled request still leaves one tool-log row. References 389, 399 and 405 are re-authored at the candidate lines of dispatch, the stale-writer check and the explainer seat check.",
+      "sources": [
+        {
+          "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+          "path": "mcp/src/agents_remember/mcp/server.py"
+        },
+        {
+          "blob": "2ee450da7ed591e6d87e27ecd9b4835dffd5f825",
+          "path": "mcp/src/agents_remember/mcp/thread_workers.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6R4EXM",
+      "items": [],
+      "reason": "New card for the packaged copy of the coherence-judgment reference, whose sidecar held a realization without Markdown; it names the canonical source and the generated-copy declaration.",
+      "sources": [
+        {
+          "blob": "0933522e58be01db918406b80d48e1bc7e5d4822",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/curator/coherence-judgments.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/curator/coherence-judgments.md"
+    },
+    {
+      "considered": [
+        "FAM-7EBNVZ",
+        "FAM-AHHW29"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-6YXPYK",
+      "items": [
+        "sha256:8fba66be131b38c8d78b26392b3a04b9e0e532252bea37374b7f05af20c2234e"
+      ],
+      "reason": "INV-8NDEQB says a request cancelled during the build-currentness check, while queued for the write lock or before a detached worker starts leaves one tool-log row naming the wait and stating that the tool never ran; test_mcp_cancelled_tool_log.py proves it. FAM-7EBNVZ covers what a stale build reports and refuses, not what a cancelled wait for that reading logs, and FAM-AHHW29 covers observation lifetime, not logging; the invariant stays local.",
+      "revision": 1,
+      "subject": "membership:INV-8NDEQB"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-7627GT",
+      "items": [
+        "sha256:4e75fa0f7ba8133b18f7c63587f160697153e9de41bc92c3f8a3be722fdb58d8",
+        "sha256:6135fbfe73422c4f7555f95f088675ad784ed052908a9f3139db2587a23cd60b"
+      ],
+      "reason": "The document now carries tool-log text about cancelled requests that rests on the tool server's cancellation logging, so the record adds links to that code and re-confirms every existing link at the candidate. The concepts guide's tool-log entry correctly explains how a cancelled request is recorded: a late error as a raised row marked requestCancelled, and a request stopped before its tool ran as a cancelled row whose waitingFor names the wait.",
+      "revision": 18,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-7NMGB7",
+      "items": [],
+      "reason": "Every link is re-confirmed at the candidate; the document's text stays true of the code that moved under it. The security policy's account of the tool server as a local stdio process that starts the dashboard only under autoStart still holds, and the cancellation rows add no listener and no new kind of logged value.",
+      "revision": 7,
+      "subject": "DPD-8PE0G9"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-7RAM48",
+      "items": [],
+      "reason": "Every link is re-confirmed at the candidate; the document's text stays true of the code that moved under it. The Cursor guide's first-run steps and its account of refusing a Bootstrap with no Cursor provider, then retrying with an offered agent, still hold.",
+      "revision": 6,
+      "subject": "DPD-21GMJ5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+            "content": "sha256:f5c0202c793f9efcc41f3a8831cabacdb7b95b7899129dc6611afa8bf14ac104",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "content": "sha256:8d3ef09438ee2c52caadee125063bfefca466ce0885983ac124914895a396457",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-VWKSMD"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8HGEPD",
+      "items": [
+        "sha256:532c2b81150981260d3683a7d07a88b36df455378c8fdad47a43a2a6e6d41ef5"
+      ],
+      "reason": "The stale-build refusal still returns before the handler is dispatched; it now runs through the detached thread helper instead of a plain thread call. Its entries in the changed files are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-9SKGX1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+            "content": "sha256:665a2353891a4675e64485f289f4a1aa463be468cf0c5f80d8db38a8ca5f91dc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "before": {
+            "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
+            "content": "sha256:1a620a415506dc0a512414cb185c764f35f1ce04b0f946c17f2d7cc40ea645dd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "id": "RLZ-TKDWW5"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-963ZNJ",
+      "items": [
+        "sha256:253248960116c36c3b555e8cdfa1bc9f00c74b1ef06604aa25208f8b035f3f2a"
+      ],
+      "reason": "The fast tier still reaches the generated-copy check that names the renewal command; the new dashboard prerequisite look runs before it without changing what a detected drift reports. Its entries in the changed files are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-DHKR4G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9BRHH0",
+      "items": [],
+      "reason": "New card for an existing file whose sidecar held two realizations without Markdown; it explains the page's no-referrer policy and module entry.",
+      "sources": [
+        {
+          "blob": "7fe64f3da7571f4d7e514183e7d3ed0ec7861009",
+          "path": "dashboard/index.html"
+        }
+      ],
+      "subject": "onboarding:dashboard/index.html"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9MHZ05",
+      "items": [],
+      "reason": "New card for the hook script, which this leaf changes and whose sidecar held a realization without Markdown; it explains the tiers, the environment check and the early dashboard dependency look.",
+      "sources": [
+        {
+          "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+          "path": ".githooks/_gate.sh"
+        }
+      ],
+      "subject": "onboarding:.githooks/_gate.sh"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A0KSQ9",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Every lane total now reads 802 distinct modules and 118 integration members, a section names the two new integration modules, and references 864, 867, 869 and 870 are re-authored with the corrected totals.",
+      "sources": [
+        {
+          "blob": "2ecce6228d45fcc9dee1eb05aad3aab8da869859",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AT1F0H",
+      "items": [
+        "sha256:6baa5dad7dd1b820d7cb297642b46e85df0803e0ae2f2b840f9ea1844258808f"
+      ],
+      "reason": "Imports the typing names for the failed-call record; type annotations carry no behavior.",
+      "subject": "hunk:sha256:6baa5dad7dd1b820d7cb297642b46e85df0803e0ae2f2b840f9ea1844258808f"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+            "content": "sha256:67fe0b7ee62d92936408e6bdce030fb715592e603ee194856fe2a7ae9ffb01ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._dispatch_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "content": "sha256:fdfd078bb233e7616bdacc47766168eea5c696b7cf50c0a719787b863b635663",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._dispatch_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-CPPWJQ"
+        },
+        {
+          "after": {
+            "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+            "content": "sha256:30f6f571cc68f363ec3ce74d65e1543d2a13a29bc8af4eb6ea08403d1b5d65cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_threaded"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "content": "sha256:30f6f571cc68f363ec3ce74d65e1543d2a13a29bc8af4eb6ea08403d1b5d65cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_threaded"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-GA8TM7"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-BP95T4",
+      "items": [
+        "sha256:1ba30475fc1034e2067e7ea4938b9109a2de931acd50d2ee4d1e46e28386c8e8"
+      ],
+      "reason": "Synchronous writes still wait in one first-in-first-out lock that is held until the drained worker returns; the leaf only takes the lock explicitly so that a cancelled wait can be logged. Its entries in the changed files are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-T3CE64"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-BYEW1S",
+      "items": [],
+      "reason": "Every link is re-confirmed at the candidate; the document's text stays true of the code that moved under it. The release checklist still names the hook's deterministic checks and the targeted gate the pull-request check runs; the hook's early look for the dashboard dependencies adds no check and passes there because the workflow installs them first.",
+      "revision": 6,
+      "subject": "DPD-0K35N0"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 4
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 2
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 3
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-CN187F",
+      "items": [
+        "sha256:9b75ed60c5b5bad5173fb7eae117d6aea801a3956c5297b98ee78e2911234b83"
+      ],
+      "reason": "The leaf leaves role_start and role_start_set, their parameters and the resolution of launch choices untouched.",
+      "revision": 5,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-CTRS1Z",
+      "items": [],
+      "reason": "Every link is re-confirmed at the candidate; the document's text stays true of the code that moved under it. The architecture guide still describes the tool server correctly: every call, including a cancelled request, gets a tool-log row, and each MCP call still runs inside one definition scope.",
+      "revision": 11,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CY29DP",
+      "items": [],
+      "reason": "New card for the glossary, whose sidecar this leaf's write gave the Rule 4 realization without Markdown; it explains the Tool log entry, including the raised and cancelled rows of a cancelled request.",
+      "sources": [
+        {
+          "blob": "e534e5488c39544030abb9ef2b6f4bef14945eee",
+          "path": "docs/concepts.md"
+        }
+      ],
+      "subject": "onboarding:docs/concepts.md"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-D23ZAC",
+      "items": [],
+      "reason": "Every link is re-confirmed at the candidate; the document's text stays true of the code that moved under it. The roadmap's links into the concepts guide all still resolve, and the worklist passage it cites still says that a change brings a named decision back for the Curator's answer.",
+      "revision": 7,
+      "subject": "DPD-3P9XTZ"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-19ZN9E",
+          "revision": 1
+        },
+        {
+          "id": "INV-9SKGX1",
+          "revision": 1
+        },
+        {
+          "id": "INV-AN0K8G",
+          "revision": 1
+        },
+        {
+          "id": "INV-B6D2SA",
+          "revision": 1
+        },
+        {
+          "id": "INV-GJTCT9",
+          "revision": 1
+        },
+        {
+          "id": "INV-HCG93S",
+          "revision": 1
+        },
+        {
+          "id": "INV-PVW2XJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-D2F2WC",
+      "items": [
+        "sha256:33260e8a4df9dde000027aeefe36dd95918bddd406e798de56d4948819ff5475"
+      ],
+      "reason": "Every member still holds: publications are refused before the handler, and reads, dry runs and messages still carry the stale note. Only the thread helper of the refusal changed.",
+      "revision": 1,
+      "subject": "FAM-7EBNVZ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+            "content": "sha256:8822ec08395ec2ea6b32818287af14f4bc59d1078bf22128eb5469047c8cc999",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "before": {
+            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+            "content": "sha256:5799bdee2243f040ff359fe66b08402b0228dc5b300306480febb2bf14c6d980",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "id": "RLZ-C3R4TK"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-E8R710",
+      "items": [
+        "sha256:3d940ccce0123dfcf5d2652710e637ac96a2c032d512575b7d647a4f141168d3"
+      ],
+      "reason": "role_start and role_start_set still take no permission-mode parameter; the leaf only changed the thread helper of user_settings_init and role_message. Its entries in the changed files are re-anchored at the candidate.",
+      "revision": 4,
+      "subject": "INV-7DMXZ3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+            "content": "sha256:f5c0202c793f9efcc41f3a8831cabacdb7b95b7899129dc6611afa8bf14ac104",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "content": "sha256:8d3ef09438ee2c52caadee125063bfefca466ce0885983ac124914895a396457",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-FSMKXF"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-G09Y7A",
+      "items": [
+        "sha256:b65d1def5ac405d16ea21c75febaa31a6d66525c7b695af2e076faa31e7a3cca"
+      ],
+      "reason": "Each MCP call still runs its dispatch inside one definition scope; the cancellation logging added to _execute_tool_call stays inside that scope. Its entries in the changed files are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-F1J9BH"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2ecce6228d45fcc9dee1eb05aad3aab8da869859",
+            "content": "sha256:95013772aa42bbc5d9513868beb5ed49cee18a560d98e7a02611fbbdbcad4b14",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "038ae9f6e2473e76ca8db8fa677acbea16b370f0",
+            "content": "sha256:88dfa5f27cf6b2e28e46a25d2a0dda53d35bf6f0b07b66cd1d2a92c51f3a8a08",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "bf1ff630aa584ae1f28c8de20e28e954f7961c55",
+            "content": "sha256:c33c3f256f46b2fd53e0a6e82a4a5d3f714619e18c99d57cca1aab4e06e698fd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "eb121ee3f8e8799429c91a05931562c977eab548",
+            "content": "sha256:d6ebd0d0bdf42458ce8b67ad62a4539f8c5991d2395efd9bf68d66b219a2fac8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-G9E7DS",
+      "items": [
+        "sha256:012cc6dbc4b36dc1044910e05769b73a14f3edc33b7cb98caef932f2393e5ec6"
+      ],
+      "reason": "The catalogs still register the held-delivery tests this invariant names; the leaf only added lines for two unrelated test modules. Its entries in the changed files are re-anchored at the candidate.",
+      "revision": 7,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-GTBDFQ",
+      "items": [],
+      "reason": "Every link is re-confirmed at the candidate; the document's text stays true of the code that moved under it. The OpenClaw guide's first-run steps and its account of refusing a Bootstrap with no OpenClaw provider, then retrying with an offered agent, still hold.",
+      "revision": 6,
+      "subject": "DPD-6528VF"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+            "content": "sha256:6001adf4a6a060910a2a797ffbacc1dd80b35f37d5c78273ca46835e9702f77a",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_message"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "before": {
+            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+            "content": "sha256:d5fccfa00edaf41799345ca2547bb87aaf2a0a09355e4a3997599019a505cd27",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_message"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "id": "RLZ-7RVFSN"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-HKP7GF",
+      "items": [
+        "sha256:6d2e2dc6e30acbb1d5a625668138a09961181315ec7c887b79fcf6c232836e3d"
+      ],
+      "reason": "role_message is still the one registered message tool with the same inputs; only its thread helper changed. Its entries in the changed files are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-XZ766Y"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J6YF0A",
+      "items": [
+        "sha256:5d36f2390dde2e09cfb456d2cac4e52c8f8296839811de46f469ad53538e9cb8"
+      ],
+      "reason": "New card for the new test module: its fixture tree and the four checks of the hook's early dependency look.",
+      "sources": [
+        {
+          "blob": "3062265c916aba7ab95a32129ac477b4bb9b47a3",
+          "path": "mcp/tests/test_git_hook_dashboard_prerequisites.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_git_hook_dashboard_prerequisites.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JRR757",
+      "items": [
+        "sha256:433eec5aced9a03172d77c5d0f32498ae39d5e097eb81317f88530e9e23e4784"
+      ],
+      "reason": "Imports for the new helpers; imports have no behavior.",
+      "subject": "hunk:sha256:433eec5aced9a03172d77c5d0f32498ae39d5e097eb81317f88530e9e23e4784"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KDGFJQ",
+      "items": [
+        "sha256:eb0fc89816b215eb1df1658407bf3092b7b41d3bbb11bc513cb1bdc05430de78"
+      ],
+      "reason": "The logging section now explains the cancelled and late-error rows (code cancelled with waitingFor, raised with requestCancelled) and their writers; the stale-build section says the refusal runs in a detached worker; the write-ordering section names the logged lock wait. Reference 12 no longer calls the drained worker shielded, and references 10, 12 and 13 are re-authored at the candidate.",
+      "sources": [
+        {
+          "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+          "path": "mcp/src/agents_remember/mcp/server.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/server.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-KZ648S",
+      "items": [
+        "sha256:b5ffaa923db8c0819d4e0fa53780d6ea320c819b63f9b6b93bd108152714457e"
+      ],
+      "reason": "Every link is re-confirmed at the candidate; the document's text stays true of the code that moved under it. The features page's account of the tool server's answer bounds and of where the tool log lies still holds, now that a cancelled call also leaves its row in that log.",
+      "revision": 21,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-M8H9SG",
+      "items": [
+        "sha256:91051855ff608d53cad33c348a379decdb538f7a8301a410e753f6c2b9cbc29a"
+      ],
+      "reason": "Every link is re-confirmed at the candidate; the document's text stays true of the code that moved under it. The evidence-system guide's lane and lifecycle-catalog rules still hold: the two new test files each sit in one lane and appear as consumers in the catalog.",
+      "revision": 12,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "considered": [
+        "FAM-61DY2V"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-MADM54",
+      "items": [
+        "sha256:790815252500b1abe195063a6fcb070ffc648ce0ba7a4c695d50e74ead185041"
+      ],
+      "reason": "INV-H49FH8 says the fast and targeted Git checks refuse absent dashboard dependencies or npm before the first long check, keeping the package-manifest skip and the tier failure line; its proofs are the four checks of test_git_hook_dashboard_prerequisites.py. FAM-61DY2V guarantees that closeout and direct landing admit the staged tree through the repository pre-commit check and refuse a failed check; it says nothing about the order or content of the hook's own checks, so the invariant stays local.",
+      "revision": 1,
+      "subject": "membership:INV-H49FH8"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-MMDBB4",
+      "items": [],
+      "reason": "Every link is re-confirmed at the candidate; the document's text stays true of the code that moved under it. The Bootstrap guide's description of what the settings initializer writes and of the per-start overrides still holds; only the way a cancelled request to those tools ends and is logged changed.",
+      "revision": 5,
+      "subject": "DPD-1DXK6Q"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-PJNEBG",
+      "items": [],
+      "reason": "Every link is re-confirmed at the candidate; the document's text stays true of the code that moved under it. The package README's tool groups and its pointer to the reference sections still match; the reference's advice on finding a sync or closeout outcome in the tool log sits inside those same sections.",
+      "revision": 13,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PPVBS2",
+      "items": [],
+      "reason": "New card for the tool reference, whose sidecar this leaf's write gave the two Rule 4 realizations without Markdown; it explains the sync and closeout directions to the tool-log row.",
+      "sources": [
+        {
+          "blob": "dafcb46cf916143c0a91d5da2ebac79c173196c2",
+          "path": "docs/reference/mcp-tools.md"
+        }
+      ],
+      "subject": "onboarding:docs/reference/mcp-tools.md"
+    },
+    {
+      "considered": [
+        "FAM-AHHW29",
+        "FAM-7EBNVZ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-QQJ8WM",
+      "items": [
+        "sha256:5b3d65a1eab0f47335041c34cb63dba4a2e18394c1b4a4e2226f6e3aa5612003"
+      ],
+      "reason": "INV-F3DQ4G says that a blocking tool worker raising after its request was cancelled is logged once as the original raised error with a cancellation marker, leaving ordinary result logging to the tool; test_mcp_cancelled_tool_log.py proves it. FAM-AHHW29 guarantees the lifetime of a native invocation's Git observations until its worker drains, and FAM-7EBNVZ the stale-build report and refusal; neither covers the tool-log row of a cancelled request, so the invariant stays local.",
+      "revision": 1,
+      "subject": "membership:INV-F3DQ4G"
+    },
+    {
+      "considered": [
+        "FAM-1SEJYW"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-QQQG7P",
+      "items": [
+        "sha256:746918dcc9bc343169d97881bb7d8c2917b06d5a6a19e9c56991d9bfccf1f2a5"
+      ],
+      "reason": "INV-EA3Q5S says the tool-log and operator documentation tell a caller how to find a closeout or sync outcome after the client stops waiting; its realizations are the Tool log entry of docs/concepts.md and the sync and closeout directions of docs/reference/mcp-tools.md. FAM-1SEJYW guarantees parked-work restoration and safe sync cancellation in the product, not the documentation of where a finished call's outcome is read, so the invariant stays local.",
+      "revision": 1,
+      "subject": "membership:INV-EA3Q5S"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QVFAN7",
+      "items": [
+        "sha256:f7c235e953d23b73e85c9e4502c6c8c6b341d8edf5191db2a6f7fc8498007bd4"
+      ],
+      "reason": "New card for the new test module: its logging server and the cancelled, raised and late-result cases of the tool log.",
+      "sources": [
+        {
+          "blob": "f96005f5f55fff9d3bf0551f1ea58fe8f01a2e24",
+          "path": "mcp/tests/test_mcp_cancelled_tool_log.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_mcp_cancelled_tool_log.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QY88MB",
+      "items": [
+        "sha256:009ff0747564a90c0eb8623ec563c110ae34fb7e3f22722938b4689e04f08033"
+      ],
+      "reason": "Imports the helper that binds the request's log writers; the import has no behavior of its own.",
+      "subject": "hunk:sha256:009ff0747564a90c0eb8623ec563c110ae34fb7e3f22722938b4689e04f08033"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-R13JG5",
+      "items": [],
+      "reason": "Every link is re-confirmed at the candidate; the document's text stays true of the code that moved under it. The tool details' account of serialized writes is still true: one queue in arrival order, a cancelled running write held in place until its thread ends, asynchronous tools outside the queue, and a stale build refusing publishing calls.",
+      "revision": 13,
+      "subject": "DPD-10YCT2"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-SGEVJ3",
+      "items": [
+        "sha256:15239c790a2b719dd55a15a07e3b57c7dfe2ae0187d9c17567720965344aef99"
+      ],
+      "reason": "The weakness still stands: the AgentsRememberMCP docstring still promises to reject undeclared dispatch inputs, and no dispatch step rejects them. Its symbol anchor is re-recorded at the candidate because this leaf edited _execute_tool_call and _dispatch_tool inside the class.",
+      "revision": 4,
+      "subject": "WKN-P01MFZ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T4106N",
+      "items": [
+        "sha256:58e92d13b3fe8417f00dfa87b4fb8746728d9ec0e23d876b9e6ab26ff406dd05"
+      ],
+      "reason": "The per-request carrier hands the request's own log writers to the worker helpers; the late-error and unstarted-wait guarantees it serves are held by run_in_request_thread and run_in_detached_request_thread.",
+      "subject": "hunk:sha256:58e92d13b3fe8417f00dfa87b4fb8746728d9ec0e23d876b9e6ab26ff406dd05"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "bf1ff630aa584ae1f28c8de20e28e954f7961c55",
+            "content": "sha256:c33c3f256f46b2fd53e0a6e82a4a5d3f714619e18c99d57cca1aab4e06e698fd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "eb121ee3f8e8799429c91a05931562c977eab548",
+            "content": "sha256:d6ebd0d0bdf42458ce8b67ad62a4539f8c5991d2395efd9bf68d66b219a2fac8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "2ecce6228d45fcc9dee1eb05aad3aab8da869859",
+            "content": "sha256:95013772aa42bbc5d9513868beb5ed49cee18a560d98e7a02611fbbdbcad4b14",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "038ae9f6e2473e76ca8db8fa677acbea16b370f0",
+            "content": "sha256:88dfa5f27cf6b2e28e46a25d2a0dda53d35bf6f0b07b66cd1d2a92c51f3a8a08",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-VA235H",
+      "items": [
+        "sha256:a638e8b958ea6355195dab7d0a68332dab74e0fc418ae5867cb9bfe7eef00b16"
+      ],
+      "reason": "The catalogs register the two new test modules once each and record their consumers without duplicate identities. Its entries in the changed files are re-anchored at the candidate.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-141H2J",
+          "revision": 1
+        },
+        {
+          "id": "INV-HPHVCN",
+          "revision": 1
+        },
+        {
+          "id": "INV-JB9D62",
+          "revision": 1
+        },
+        {
+          "id": "INV-V4WR2R",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-X787QB",
+      "items": [
+        "sha256:a80bc15496cf07f252d29e3d28c68af4d04de4bb028fd86a266c2357b6307e5b"
+      ],
+      "reason": "Role starts and synchronous handlers still drain their worker before the request memo scope clears and pages are trimmed. The detached helper's behavior on cancellation predates this leaf, where those tools used a plain thread call.",
+      "revision": 1,
+      "subject": "FAM-AHHW29"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XKH2PM",
+      "items": [
+        "sha256:33ef40a47f509440dd682134637441a2da247c82bc8e9fb29d8e4844390f230f"
+      ],
+      "reason": "The hook account now says that both tiers look for the dashboard dependencies and npm first, and links the new card of .githooks/_gate.sh.",
+      "sources": [
+        {
+          "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+          "path": ".githooks/_gate.sh"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-Y9JTV9",
+      "items": [
+        "sha256:6c0d97323a329cf8d51a2a78534d45321d76200511fc024af608aafe0552294e"
+      ],
+      "reason": "The document now carries tool-log text about cancelled requests that rests on the tool server's cancellation logging, so the record adds links to that code and re-confirms every existing link at the candidate. The MCP reference still matches the role-agent tools, and its advice correctly sends a sync or closeout caller whose client stopped waiting to that call's tool-log row.",
+      "revision": 16,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2ecce6228d45fcc9dee1eb05aad3aab8da869859",
+            "content": "sha256:95013772aa42bbc5d9513868beb5ed49cee18a560d98e7a02611fbbdbcad4b14",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "038ae9f6e2473e76ca8db8fa677acbea16b370f0",
+            "content": "sha256:88dfa5f27cf6b2e28e46a25d2a0dda53d35bf6f0b07b66cd1d2a92c51f3a8a08",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "bf1ff630aa584ae1f28c8de20e28e954f7961c55",
+            "content": "sha256:c33c3f256f46b2fd53e0a6e82a4a5d3f714619e18c99d57cca1aab4e06e698fd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "eb121ee3f8e8799429c91a05931562c977eab548",
+            "content": "sha256:d6ebd0d0bdf42458ce8b67ad62a4539f8c5991d2395efd9bf68d66b219a2fac8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YEYTPF",
+      "items": [
+        "sha256:fb608be85c3ad5fbea65a218b910076b403d5d3a5f06e63dc5b414d05ed85434"
+      ],
+      "reason": "The catalogs still register the scratch-root tests this invariant names; the leaf only added lines for two unrelated test modules. Its entries in the changed files are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2ecce6228d45fcc9dee1eb05aad3aab8da869859",
+            "content": "sha256:95013772aa42bbc5d9513868beb5ed49cee18a560d98e7a02611fbbdbcad4b14",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "038ae9f6e2473e76ca8db8fa677acbea16b370f0",
+            "content": "sha256:88dfa5f27cf6b2e28e46a25d2a0dda53d35bf6f0b07b66cd1d2a92c51f3a8a08",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YFB27E",
+      "items": [
+        "sha256:906621a00e30db3d70bebdca9e9965260a1627cf70d2063ce4077682de46593e"
+      ],
+      "reason": "The lane catalog adds two test modules that exist on the tree and removes none, so it still lists only existing modules. Its entries in the changed files are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-ZDSCXX",
+      "items": [
+        "sha256:9340fc2ae9f334d0fae472fda117e73eac510a8871135f4fa4422af0f45ae73c"
+      ],
+      "reason": "Every link is re-confirmed at the candidate; the document's text stays true of the code that moved under it. The contributor guide's hook and lane sections still hold: both hooks need the dashboard's dependencies and stop with the install command when they are missing, and the two new test files sit in the integration lane.",
+      "revision": 13,
+      "subject": "DPD-78737N"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

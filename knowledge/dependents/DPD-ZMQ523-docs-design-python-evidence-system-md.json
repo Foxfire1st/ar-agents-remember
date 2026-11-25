@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "f3ee77dfac4162d06d4dba0121172674a8c4f7d3",
-    "commit": "653b42f6b47d4e59ba8b47047d0d31698080d369",
+    "codeTree": "51bf0a91489d97231a1e1173b67d2087c170b08f",
+    "commit": "ff626cd445012fee408b4b6c292756bbe1438d2e",
     "role": "curator",
-    "statement": "The evidence-system guide accurately describes lane and lifecycle authority, including canonical ordering and source-derived consumers, on the merged catalogs. The evidence-system guide's lane and shared-support rules match the settled catalogs, which assign each of the five crossing-related tests to one lane and name each in existing lifecycle consumer entries.",
+    "statement": "The evidence-system guide accurately describes lane and lifecycle authority, including canonical ordering and source-derived consumers, on the merged catalogs. The evidence-system guide's lane and lifecycle-catalog rules still hold: the two new test files each sit in one lane and appear as consumers in the catalog. The evidence-system guide's lane and shared-support rules match the settled catalogs, which assign each of the five crossing-related tests to one lane and name each in existing lifecycle consumer entries.",
     "task": "261112-BUG-L26",
     "uncommitted": true
   },
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "1b86940bc46b71084969cf30a1e9f6ca99007379",
+      "blob": "e6aa1452b7816dbfafa14d559b014d62af9a0df3",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "607aaf2231d167f9e02682ffa426418b21f0600e",
+      "blob": "722993b9bdb8d784090d510d61b97fb0eeb4135c",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },

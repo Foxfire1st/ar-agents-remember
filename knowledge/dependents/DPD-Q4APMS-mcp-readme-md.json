@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "ae80e60ea31a21e2880e045334e91760da0f41bc",
-    "commit": "bb6ad8aa5d5cff0f1d83e2782a0da16ff91a9724",
+    "codeTree": "51bf0a91489d97231a1e1173b67d2087c170b08f",
+    "commit": "ff626cd445012fee408b4b6c292756bbe1438d2e",
     "role": "curator",
-    "statement": "The MCP package README points to the tools reference, whose Worktrees and Knowledge sections describe staged continuation against both pinned merge parents and the writer for an open master crossing.",
+    "statement": "The package README's tool groups and its pointer to the reference sections still match; the reference's advice on finding a sync or closeout outcome in the tool log sits inside those same sections. The MCP package README points to the tools reference, whose Worktrees and Knowledge sections describe staged continuation against both pinned merge parents and the writer for an open master crossing.",
     "task": "261112-BUG-L26",
-    "uncommitted": false
+    "uncommitted": true
   },
   "document": "mcp/README.md",
   "id": "DPD-Q4APMS",
@@ -46,7 +46,7 @@
       "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
     },
     {
-      "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+      "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "0c68c73d48d954d28cd9235686ce0d3ae52bc32b",
+      "blob": "12983a12e152abb84fc6fd051b48b48dcf1997d4",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }

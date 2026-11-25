@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Without the early look, a commit in a tree that lacks the dashboard's installed dependencies or npm runs minutes of Python checks before it fails, long enough for a closeout's client to stop waiting without a result."
+  },
+  "applicability": "The fast and targeted tiers of the repository's Git check script in a tree that holds dashboard/package.json.",
+  "conditions": [
+    "The dashboard/node_modules folder is missing, or npm is not on the search path."
+  ],
+  "exclusions": [
+    "A tree without dashboard/package.json, where the dashboard checks are skipped as before.",
+    "The full tier, which runs only in the clean-room pipeline.",
+    "Installing the dashboard's dependencies."
+  ],
+  "id": "INV-H49FH8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/27_a-closeout-says-what-it-lacks-before-it-works-and-never-ends-without-a-trace-ar/role-reports/worker/ab4c7795-d684-4499-b9ef-bb86badfde8a/role-launch/BUG-L27-post-sync-readback.md#checks"
+      ],
+      "path": "L27-writer-input"
+    },
+    "handoffEntry": "BUG-R27@v1 Rule 1",
+    "leaf": "261112-BUG-L27",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The fast and targeted Git checks refuse absent dashboard dependencies or npm before the first long check, keeping the package-manifest skip and tier failure line.",
+  "status": "proposed",
+  "supersedes": []
+}

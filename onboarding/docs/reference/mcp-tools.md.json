@@ -1,0 +1,80 @@
+{
+  "path": "docs/reference/mcp-tools.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "dafcb46cf916143c0a91d5da2ebac79c173196c2",
+        "content": "sha256:c7540979d3a62a3a624f13deb0b007ef6ba180b93b928c00f2fd5e0070564323",
+        "locator": {
+          "end": 323,
+          "kind": "line_range",
+          "start": 321
+        }
+      },
+      "id": "RLZ-WA23J8",
+      "invariant": "INV-EA3Q5S",
+      "origin": {
+        "handoffEntry": "BUG-R27@v1 Rule 4",
+        "leaf": "261112-BUG-L27"
+      },
+      "rationale": "Directs closeout callers to the row for the operation that outlived their wait.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "dafcb46cf916143c0a91d5da2ebac79c173196c2",
+        "content": "sha256:0e7e68f341dd314364c32fd2ef4c5d6ba80ffdae6155d99d40f9774fba6f454f",
+        "locator": {
+          "end": 272,
+          "kind": "line_range",
+          "start": 270
+        }
+      },
+      "id": "RLZ-YKJ4F4",
+      "invariant": "INV-EA3Q5S",
+      "origin": {
+        "handoffEntry": "BUG-R27@v1 Rule 4",
+        "leaf": "261112-BUG-L27"
+      },
+      "rationale": "Directs sync callers to their tool-log row and the current sync state.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A sync caller who stopped waiting finds the outcome in the tool log and the current state through worktree_status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dafcb46cf916143c0a91d5da2ebac79c173196c2",
+            "content": "sha256:0e7e68f341dd314364c32fd2ef4c5d6ba80ffdae6155d99d40f9774fba6f454f",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 270
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A closeout caller who stopped waiting finds the outcome in the tool log.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dafcb46cf916143c0a91d5da2ebac79c173196c2",
+            "content": "sha256:c7540979d3a62a3a624f13deb0b007ef6ba180b93b928c00f2fd5e0070564323",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 321
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

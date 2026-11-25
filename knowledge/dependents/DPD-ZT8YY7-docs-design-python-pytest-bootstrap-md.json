@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "f3ee77dfac4162d06d4dba0121172674a8c4f7d3",
-    "commit": "653b42f6b47d4e59ba8b47047d0d31698080d369",
+    "codeTree": "51bf0a91489d97231a1e1173b67d2087c170b08f",
+    "commit": "ff626cd445012fee408b4b6c292756bbe1438d2e",
     "role": "curator",
-    "statement": "The pytest policy accurately describes integration and stress lane selection and the bounded-memory stdio case’s uninstrumented child coverage boundary. The bootstrap guide says the bounded-memory stdio test's warm-index child and measured server run without child coverage, and the lane manifest keeps that test in stress-durability and the dependent-writer test in integration.",
+    "statement": "The pytest policy accurately describes integration and stress lane selection and the bounded-memory stdio case’s uninstrumented child coverage boundary. The bootstrap guide still correctly says that the integration and stress-durability lanes make up the integration tests, and the native stdio bounded-memory case is still the only stress-durability file. The bootstrap guide says the bounded-memory stdio test's warm-index child and measured server run without child coverage, and the lane manifest keeps that test in stress-durability and the dependent-writer test in integration.",
     "task": "261112-BUG-L26",
     "uncommitted": true
   },
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "1b86940bc46b71084969cf30a1e9f6ca99007379",
+      "blob": "e6aa1452b7816dbfafa14d559b014d62af9a0df3",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -106,12 +106,12 @@
     },
     {
       "anchor": {
-        "blob": "1b86940bc46b71084969cf30a1e9f6ca99007379",
+        "blob": "e6aa1452b7816dbfafa14d559b014d62af9a0df3",
         "content": "sha256:bcc4ade20e19642e956536d6662d0c20a8343feed9984bdf943fe982348cd7d1",
         "locator": {
-          "end": 823,
+          "end": 825,
           "kind": "line_range",
-          "start": 820
+          "start": 822
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
