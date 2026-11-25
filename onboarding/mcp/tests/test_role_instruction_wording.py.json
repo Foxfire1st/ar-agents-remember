@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+        "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+        }
+      },
+      "facet": "The wording check asserts exactly the ten Investigator manifest requests in PUBLIC_TOOLS order and pins the role's no-mutation boundaries.",
+      "id": "PRF-1Y1V3P",
+      "invariant": "INV-YNHABM",
+      "origin": {
+        "handoffEntry": "curator-ynhabm-ten-request-proof",
+        "leaf": "261124-CAP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
         "content": "sha256:4b198cf4afbc62422b01831badf05d3c18e915c9bfc1ce1755d3a36e58759c8c",
         "locator": {
           "kind": "symbol",
@@ -20,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
-        "content": "sha256:ec2c59d9717d9c1a8ee7ebc5791216fa8a7706d4c2beae58379e5c3aed63a27f",
+        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+        "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
         "content": "sha256:274ce8ef931c7d14a8253190b0a287b975ede8ccb31d977a87154f10aa7f2266",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
         "content": "sha256:723a5dc6ca79feb36850e6576218d7da572544a06b7652b47f9e9cae1b7272d2",
         "locator": {
           "kind": "symbol",
@@ -71,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
         "content": "sha256:597d36c6d56948a3fc368f9e6f1220b886b9bae310bda2bac1a4485365b7a8fc",
         "locator": {
           "kind": "symbol",
@@ -88,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
         "content": "sha256:7d62713e2925b032145b1422f140b529ba59fef6ed9510341bd8e2e8119bcd26",
         "locator": {
           "kind": "symbol",
@@ -105,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
         "content": "sha256:07db58677dcdeecd3935f1f54f3c5c4d09f71fdfeb07e2ade7d7af74760a5b6c",
         "locator": {
           "kind": "symbol",
@@ -122,8 +139,8 @@
     },
     {
       "anchor": {
-        "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
-        "content": "sha256:ec2c59d9717d9c1a8ee7ebc5791216fa8a7706d4c2beae58379e5c3aed63a27f",
+        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+        "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
@@ -139,8 +156,8 @@
     },
     {
       "anchor": {
-        "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
-        "content": "sha256:ec2c59d9717d9c1a8ee7ebc5791216fa8a7706d4c2beae58379e5c3aed63a27f",
+        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+        "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
@@ -156,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
         "content": "sha256:7d62713e2925b032145b1422f140b529ba59fef6ed9510341bd8e2e8119bcd26",
         "locator": {
           "kind": "symbol",
@@ -173,7 +190,7 @@
     },
     {
       "anchor": {
-        "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
         "content": "sha256:7d62713e2925b032145b1422f140b529ba59fef6ed9510341bd8e2e8119bcd26",
         "locator": {
           "kind": "symbol",
@@ -190,8 +207,8 @@
     },
     {
       "anchor": {
-        "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
-        "content": "sha256:ec2c59d9717d9c1a8ee7ebc5791216fa8a7706d4c2beae58379e5c3aed63a27f",
+        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+        "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
@@ -207,8 +224,8 @@
     },
     {
       "anchor": {
-        "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
-        "content": "sha256:ec2c59d9717d9c1a8ee7ebc5791216fa8a7706d4c2beae58379e5c3aed63a27f",
+        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+        "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
@@ -221,30 +238,13 @@
         "handoffEntry": "L112-current-proof-INV-A8E0YE",
         "leaf": "260928-MIK-L112"
       }
-    },
-    {
-      "anchor": {
-        "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
-        "content": "sha256:ec2c59d9717d9c1a8ee7ebc5791216fa8a7706d4c2beae58379e5c3aed63a27f",
-        "locator": {
-          "kind": "symbol",
-          "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
-        }
-      },
-      "facet": "The wording check asserts exactly the seven retained Investigator requests in canonical order and pins the role no-mutation boundaries; fourteen legacy provider/search requests are not the current assertion.",
-      "id": "PRF-SQW3RM",
-      "invariant": "INV-YNHABM",
-      "origin": {
-        "handoffEntry": "L112-current-proof-INV-YNHABM",
-        "leaf": "260928-MIK-L112"
-      }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
-        "content": "sha256:5a372180e2d50c3b500f66adfe0baf17a6a132804cddd97ed4da8ee928195a9b",
+        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+        "content": "sha256:5e5898fb95490974e8218bfc66a54ceefb37778c948ba7c591dea90e5e9705f5",
         "locator": {
           "kind": "file"
         }
@@ -265,8 +265,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
-            "content": "sha256:5a372180e2d50c3b500f66adfe0baf17a6a132804cddd97ed4da8ee928195a9b",
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+            "content": "sha256:5e5898fb95490974e8218bfc66a54ceefb37778c948ba7c591dea90e5e9705f5",
             "locator": {
               "kind": "file"
             }
@@ -280,7 +280,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
             "content": "sha256:07db58677dcdeecd3935f1f54f3c5c4d09f71fdfeb07e2ade7d7af74760a5b6c",
             "locator": {
               "kind": "symbol",
@@ -296,12 +296,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
             "content": "sha256:55093994ed36b5cdba470e68ec76b9905f2fd0e34ffc06daecdd2486bd38b4c5",
             "locator": {
-              "end": 654,
+              "end": 657,
               "kind": "line_range",
-              "start": 630
+              "start": 633
             }
           },
           "kind": "test"
@@ -331,8 +331,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
-            "content": "sha256:5a372180e2d50c3b500f66adfe0baf17a6a132804cddd97ed4da8ee928195a9b",
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+            "content": "sha256:5e5898fb95490974e8218bfc66a54ceefb37778c948ba7c591dea90e5e9705f5",
             "locator": {
               "kind": "file"
             }
@@ -346,8 +346,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
-            "content": "sha256:5a372180e2d50c3b500f66adfe0baf17a6a132804cddd97ed4da8ee928195a9b",
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+            "content": "sha256:5e5898fb95490974e8218bfc66a54ceefb37778c948ba7c591dea90e5e9705f5",
             "locator": {
               "kind": "file"
             }
@@ -449,7 +449,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
             "content": "sha256:7d62713e2925b032145b1422f140b529ba59fef6ed9510341bd8e2e8119bcd26",
             "locator": {
               "kind": "symbol",
@@ -465,7 +465,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
             "content": "sha256:55093994ed36b5cdba470e68ec76b9905f2fd0e34ffc06daecdd2486bd38b4c5",
             "locator": {
               "kind": "symbol",
@@ -498,7 +498,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
             "content": "sha256:3b34393f0b357d071f668e74480e8e725c621bfc56c982345066a9634b462213",
             "locator": {
               "kind": "symbol",

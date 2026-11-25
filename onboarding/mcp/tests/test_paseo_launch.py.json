@@ -3,24 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "c99b9690ae55e81fb7549053d9670f35c6c3b2c1",
-        "content": "sha256:1337cbf401d469643979f6bc9b4d98b0b28eb7d1a1d2caacef23dd811897f8de",
+        "blob": "75bbc12dd0ffc86722b2b62853713cc6e782dde7",
+        "content": "sha256:075ae1c1a8142264d8f1e0827602e18cc86dc817387f335fce8797c7d342f4fa",
         "locator": {
           "kind": "symbol",
           "name": "LaunchToolApprovalTests.test_codex_start_preapproves_its_task_server_roster"
         }
       },
-      "facet": "The fake-runtime start sends an exact bound-server grant for every public name and records the same list in the receipt.",
-      "id": "PRF-1321AV",
-      "invariant": "INV-Z17EHY",
+      "facet": "A fresh Codex Worker start preapproves exactly the Worker allowlist on the bound server and records the same list in the receipt.",
+      "id": "PRF-5FTB87",
+      "invariant": "INV-DWNKBC",
       "origin": {
-        "handoffEntry": "BUG-R31@v1-start-grant",
-        "leaf": "261112-BUG-L31"
+        "handoffEntry": "CAP-R01@v1 §3 codex grant",
+        "leaf": "261124-CAP-L1"
       }
     },
     {
       "anchor": {
-        "blob": "c99b9690ae55e81fb7549053d9670f35c6c3b2c1",
+        "blob": "75bbc12dd0ffc86722b2b62853713cc6e782dde7",
         "content": "sha256:f0f9a5e4c0af53589b67b72220b5355183cdd3e1625994fa8a50537ca21ed247",
         "locator": {
           "kind": "symbol",
@@ -34,6 +34,23 @@
         "handoffEntry": "restore-l199-proof-inv-b31e3g",
         "leaf": "260928-MIK-L188"
       }
+    },
+    {
+      "anchor": {
+        "blob": "75bbc12dd0ffc86722b2b62853713cc6e782dde7",
+        "content": "sha256:075ae1c1a8142264d8f1e0827602e18cc86dc817387f335fce8797c7d342f4fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "LaunchToolApprovalTests.test_codex_start_preapproves_its_task_server_roster"
+        }
+      },
+      "facet": "A fresh Codex Worker start sends an exact bound-server grant for every tool the Worker's task server offers and records the same list in the receipt.",
+      "id": "PRF-FEVC9A",
+      "invariant": "INV-Z17EHY",
+      "origin": {
+        "handoffEntry": "curator-z17ehy-role-grant-proofs",
+        "leaf": "261124-CAP-L1"
+      }
     }
   ],
   "realizes": [],
@@ -43,36 +60,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c99b9690ae55e81fb7549053d9670f35c6c3b2c1",
+            "blob": "75bbc12dd0ffc86722b2b62853713cc6e782dde7",
             "content": "sha256:a0daaf995c2dc0376fd231379af2941a560be614a99f96b9d31a2c408b5b1aeb",
             "locator": {
-              "end": 508,
+              "end": 509,
               "kind": "line_range",
-              "start": 431
+              "start": 432
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "c99b9690ae55e81fb7549053d9670f35c6c3b2c1",
+            "blob": "75bbc12dd0ffc86722b2b62853713cc6e782dde7",
             "content": "sha256:0a5160ca9ebeb61bdc94f39b22a3a7f9491dd0f4dbc7ea59c3254602fabb0634",
             "locator": {
-              "end": 542,
+              "end": 543,
               "kind": "line_range",
-              "start": 511
+              "start": 512
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "c99b9690ae55e81fb7549053d9670f35c6c3b2c1",
+            "blob": "75bbc12dd0ffc86722b2b62853713cc6e782dde7",
             "content": "sha256:668ffe27060a19a1eb16440b4ef4481e1838a3e7ccf0e334c45ba828dc9b1c9a",
             "locator": {
-              "end": 633,
+              "end": 634,
               "kind": "line_range",
-              "start": 545
+              "start": 546
             }
           },
           "kind": "test"
@@ -84,7 +101,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c99b9690ae55e81fb7549053d9670f35c6c3b2c1",
+            "blob": "75bbc12dd0ffc86722b2b62853713cc6e782dde7",
             "content": "sha256:97d148c3198db7f7a9eddc7a2ac7686220c621d6e466840331e5fa2ad8e6685b",
             "locator": {
               "end": 59,
@@ -96,7 +113,7 @@
         },
         {
           "anchor": {
-            "blob": "c99b9690ae55e81fb7549053d9670f35c6c3b2c1",
+            "blob": "75bbc12dd0ffc86722b2b62853713cc6e782dde7",
             "content": "sha256:3dee2092f41e3488e8ff7b7cbfbf8eb628ba7320eece84735aebb56db62ea406",
             "locator": {
               "end": 263,

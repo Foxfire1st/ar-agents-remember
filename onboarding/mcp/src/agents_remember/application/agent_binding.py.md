@@ -6,12 +6,13 @@
 - A role that names a master accepts two reference shapes: the sprint with that master when a sprint commands it, and the master alone when it stands on its own. An investigator may name none, a sprint, a standalone master, or a sprint and master; a sprint-bound role such as the orchestrator keeps its one shape.
 - This file owns the per-launch host exclusion record and provider-option construction. On Paseo 0.16.2, a launch carrying the task server supplies the exact `mcp__agents-remember` disallowed-tools rule for Claude alone, merged with existing host deny rules; Codex, Hermes/ACP, Pi and unknown providers receive no verified exclusion. No user or folder configuration is rewritten.
 - Unknown harnesses have no verified exclusion; no user/folder configuration rewrite is authorized.
+- The `launch_server_exclusion` docstring names the only routes along which pinned Paseo 0.16.2 narrows a non-Claude harness's tools: `codex/options.js` and `codex-app-server-agent.js` for a server the same create request names, and `acp-agent.js` and `pi/agent.js`, where a session receives the request's servers and nothing else. Keeping the other server out of Codex, ACP or Pi needs an upstream host capability.
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/src/agents_remember/application/agent_binding.py:40-106`.
-- Source comparison: `mcp/src/agents_remember/application/agent_binding.py:115-173`.
-- Source comparison: `mcp/src/agents_remember/application/agent_binding.py:179-260`.
+- Source comparison: `mcp/src/agents_remember/application/agent_binding.py:40-114`.
+- Source comparison: `mcp/src/agents_remember/application/agent_binding.py:123-181`.
+- Source comparison: `mcp/src/agents_remember/application/agent_binding.py:187-268`.
 
 ## Historical original card — preserved, not the current operative account
 

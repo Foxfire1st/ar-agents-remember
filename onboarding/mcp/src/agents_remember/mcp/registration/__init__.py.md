@@ -21,6 +21,7 @@ Family modules own tool declarations. The package imports the registrars; the se
 ## Evidence
 
 - `create_server` iterates the ordinary registrar tuple. [1]
+
 - The public tool-name list has one model-owned definition re-exported by the adapter. [2]
 - The live tool-list comparison checks the advertised registration against the roster. [7]
 - `TOOL_REGISTRARS` declares the ten family registrars in order. [8]

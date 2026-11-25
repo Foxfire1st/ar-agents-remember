@@ -1,0 +1,243 @@
+{
+  "path": "mcp/tests/test_role_tool_scope.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e60dd2908ee70cf9eedd8c4336445008b2d25f1b",
+        "content": "sha256:6c6069e9ea7342eea593c2e1c6306dcde41366be74e67e036b64a70ea1ce54cf",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_real_stdio_session_on_a_malformed_binding_serves_only_server_info"
+        }
+      },
+      "facet": "Over real stdio a malformed binding initializes without instructions, lists only server_info, whose call fails naming AR_PASEO_AGENT_ID, and answers task_doc and render as unknown tools.",
+      "id": "PRF-3JDH6G",
+      "invariant": "INV-B06F1V",
+      "origin": {
+        "handoffEntry": "CAP-R01@v1 §2 precedence",
+        "leaf": "261124-CAP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e60dd2908ee70cf9eedd8c4336445008b2d25f1b",
+        "content": "sha256:c0db0ab405ff37624bce2d629e4288a51eb1f8047fa9a5ae94dc4cb9c744ef7e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_read_only_mark_still_validates_a_tool_the_role_excludes"
+        }
+      },
+      "facet": "An unclassified tool that a Worker excludes still makes create_server raise UnknownReadOnlyMark, so classification runs before narrowing.",
+      "id": "PRF-AMSV86",
+      "invariant": "INV-4ZA9SH",
+      "origin": {
+        "handoffEntry": "CAP-R01@v1 §2 bound pruning",
+        "leaf": "261124-CAP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e60dd2908ee70cf9eedd8c4336445008b2d25f1b",
+        "content": "sha256:1e79c839e9fb85e9e512ae755210df915a301e20de470bc08b159ea5e25ca7dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_bound_server_advertises_only_its_roles_tools_in_public_order"
+        }
+      },
+      "facet": "For every role and the alias, a bound server advertises exactly tools_for_role in PUBLIC_TOOLS order and each survivor keeps its central readOnlyHint.",
+      "id": "PRF-E1DN29",
+      "invariant": "INV-4ZA9SH",
+      "origin": {
+        "handoffEntry": "CAP-R01@v1 §2 bound pruning",
+        "leaf": "261124-CAP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e60dd2908ee70cf9eedd8c4336445008b2d25f1b",
+        "content": "sha256:58f2429687301a1733aa5defe277ac5e9a4779aad6ddee24851ba314072a5b24",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_explainer_only_launch_keeps_the_public_roster_then_its_four_tools"
+        }
+      },
+      "facet": "An explainer-only launch advertises PUBLIC_TOOLS followed by render, define_category, remove_category and grade.",
+      "id": "PRF-HG0821",
+      "invariant": "INV-B06F1V",
+      "origin": {
+        "handoffEntry": "CAP-R01@v1 §2 precedence",
+        "leaf": "261124-CAP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e60dd2908ee70cf9eedd8c4336445008b2d25f1b",
+        "content": "sha256:0623b958efeea4e222802a8c09a2e27e206f3908d3311ec30719a469f0a17f5f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_bound_grant_and_the_advertised_surface_are_the_same_ordered_tuple"
+        }
+      },
+      "facet": "For every role the Codex grant equals tools_for_role, a roleless Codex grant equals PUBLIC_TOOLS and the Claude grant is server_info.",
+      "id": "PRF-K6BYZ7",
+      "invariant": "INV-DWNKBC",
+      "origin": {
+        "handoffEntry": "CAP-R01@v1 §3 codex grant",
+        "leaf": "261124-CAP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e60dd2908ee70cf9eedd8c4336445008b2d25f1b",
+        "content": "sha256:ecb7681a5dfd900a55e69c81b510c1ee8586afab67c2c8cc419e19d91d4eaafa",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unbound_server_keeps_the_whole_public_roster"
+        }
+      },
+      "facet": "A server without a binding advertises PUBLIC_TOOLS unchanged.",
+      "id": "PRF-P678ZF",
+      "invariant": "INV-B06F1V",
+      "origin": {
+        "handoffEntry": "CAP-R01@v1 §2 precedence",
+        "leaf": "261124-CAP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e60dd2908ee70cf9eedd8c4336445008b2d25f1b",
+        "content": "sha256:8de16b038258f0e120ce3411a4c3ad24dfa1e2337c3129761b3eb6fa9cd739cc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_malformed_mixed_launch_prunes_the_explainers_tools_too"
+        }
+      },
+      "facet": "A malformed binding mixed with a valid explainer serves only server_info, and render fails as an unknown tool.",
+      "id": "PRF-RF7X33",
+      "invariant": "INV-TPVGJK",
+      "origin": {
+        "handoffEntry": "CAP-R01@v1 §2 explainer guard",
+        "leaf": "261124-CAP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e60dd2908ee70cf9eedd8c4336445008b2d25f1b",
+        "content": "sha256:255edf60832b4652ad1bb28e8391c7ad83fa6009ca0d64af25a90f694e43a6cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_allowlist_is_an_ordered_public_subsequence_and_the_union_is_the_roster"
+        }
+      },
+      "facet": "Every allowlist is a non-empty duplicate-free subsequence in PUBLIC_TOOLS order, the eight entries cover the roster, the alias resolves to the Investigator entry and an unknown role raises ValueError.",
+      "id": "PRF-V203VJ",
+      "invariant": "INV-KYKYPR",
+      "origin": {
+        "handoffEntry": "CAP-R01@v1 §1",
+        "leaf": "261124-CAP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e60dd2908ee70cf9eedd8c4336445008b2d25f1b",
+        "content": "sha256:89bebb4a6ead042648aaf276397c9bd029f8658018f7e447a3c4140216900b30",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_valid_mixed_launch_serves_the_roles_tools_then_the_explainers_four"
+        }
+      },
+      "facet": "A valid Worker binding with an explainer binding advertises the Worker allowlist followed by the explainer's four tools.",
+      "id": "PRF-WBTKYW",
+      "invariant": "INV-B06F1V",
+      "origin": {
+        "handoffEntry": "CAP-R01@v1 §2 precedence",
+        "leaf": "261124-CAP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e60dd2908ee70cf9eedd8c4336445008b2d25f1b",
+        "content": "sha256:7528732686c754febaaf73ac8d4adf20be775ffac0e7aa77e962a47010600a87",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_real_stdio_session_advertises_and_dispatches_only_the_bound_roles_tools"
+        }
+      },
+      "facet": "Over real stdio a bound Worker lists exactly its allowlist, and role_start fails before and after the list with two raised-call log rows.",
+      "id": "PRF-WXWK07",
+      "invariant": "INV-SJKVE0",
+      "origin": {
+        "handoffEntry": "CAP-R01@v1 §2 excluded dispatch",
+        "leaf": "261124-CAP-L1"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The table case checks order, union, alias and the unknown-role refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e60dd2908ee70cf9eedd8c4336445008b2d25f1b",
+            "content": "sha256:255edf60832b4652ad1bb28e8391c7ad83fa6009ca0d64af25a90f694e43a6cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_allowlist_is_an_ordered_public_subsequence_and_the_union_is_the_roster"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A malformed binding mixed with an explainer serves only server_info and answers render as an unknown tool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e60dd2908ee70cf9eedd8c4336445008b2d25f1b",
+            "content": "sha256:8de16b038258f0e120ce3411a4c3ad24dfa1e2337c3129761b3eb6fa9cd739cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_malformed_mixed_launch_prunes_the_explainers_tools_too"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Architect case asserts the exact unbound and bound byte counts and the 45,000-byte bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e60dd2908ee70cf9eedd8c4336445008b2d25f1b",
+            "content": "sha256:5847dc300d2c8fe9a3eb431f95029f035d5d831e9d856ce638a308e11b9c4caf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_architect_schema_budget_holds_on_the_bound_and_unbound_server"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A real stdio Worker session lists its allowlist and leaves two raised-call rows for refused role_start calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e60dd2908ee70cf9eedd8c4336445008b2d25f1b",
+            "content": "sha256:7528732686c754febaaf73ac8d4adf20be775ffac0e7aa77e962a47010600a87",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_real_stdio_session_advertises_and_dispatches_only_the_bound_roles_tools"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

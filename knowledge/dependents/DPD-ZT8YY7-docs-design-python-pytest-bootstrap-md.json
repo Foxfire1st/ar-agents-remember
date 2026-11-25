@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8218f7f1a8e331130c15bf463ddcc88a51a34fbd",
-    "commit": "180b6c153d21d01cbb14059d0219472ccdeba683",
+    "codeTree": "e0899a2899dd251331ac48aa874f17126a84a541",
+    "commit": "b28b99ce065e7db8ce1e79328e29861967e9bcb6",
     "role": "curator",
-    "statement": "The pytest policy accurately describes integration and stress lane selection and the bounded-memory stdio case’s uninstrumented child coverage boundary. The bootstrap guide still correctly says that the integration and stress-durability lanes make up the integration tests, and the native stdio bounded-memory case is still the only stress-durability file.",
-    "task": "261112-BUG-L27",
+    "statement": "On the merged code the pytest bootstrap guide still holds: integration and stress-durability make up the integration tests (now 118 integration modules with L27's two), and CAP-L1's unit-regression module changes no selection rule.",
+    "task": "261124-CAP-L1",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "2ecce6228d45fcc9dee1eb05aad3aab8da869859",
+      "blob": "382eeb25cf59674f7f5b68cd94fbd8a39b9ee0e1",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -106,12 +106,12 @@
     },
     {
       "anchor": {
-        "blob": "2ecce6228d45fcc9dee1eb05aad3aab8da869859",
-        "content": "sha256:bcc4ade20e19642e956536d6662d0c20a8343feed9984bdf943fe982348cd7d1",
+        "blob": "382eeb25cf59674f7f5b68cd94fbd8a39b9ee0e1",
+        "content": "sha256:04f035a94539c339229547bc5abfb353cc00b7723d8419ed60d2857df37925ae",
         "locator": {
-          "end": 824,
+          "end": 822,
           "kind": "line_range",
-          "start": 821
+          "start": 819
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },

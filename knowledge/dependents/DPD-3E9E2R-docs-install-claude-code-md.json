@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "93057354d8e50736992889cbf7edeb4a8166f21c",
-    "commit": "c54f3316c39204306abde7213c87ba9dd78bd0a4",
+    "codeTree": "b29f2e225c04fbcebb653d59f81cf895c42f5097",
+    "commit": "180b6c153d21d01cbb14059d0219472ccdeba683",
     "role": "curator",
-    "statement": "The Claude Code guide still accurately describes explicit Claude selection, implicit Bootstrap and the ordinary seat’s server_info grant, which use launch bindings separate from the recorded-review warning projection.",
-    "task": "261112-BUG-L25",
+    "statement": "The Claude Code guide's permission-mode account and the server_info-only pre-approval still hold on b29f2e2; the role-scoped Codex grant does not touch the Claude branch.",
+    "task": "261124-CAP-L1",
     "uncommitted": true
   },
   "document": "docs/install/claude-code.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,12 +26,12 @@
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+      "blob": "0fc638828611b97d33b29b06297cc62431902dc2",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
     {
-      "blob": "9e10958ad95558f1846ccfe0170975c559d03227",
+      "blob": "5598442d7754f520edb9f950f12afd0bd77e86c2",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/agent_binding.py"
     },

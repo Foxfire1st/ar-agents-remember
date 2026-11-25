@@ -1,0 +1,116 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The requirement weighed per-turn filtering, private-table mutation, configuration edits and list-only filtering against static construction-time narrowing, and the choice binds every later change to a role's tool surface."
+  },
+  "alternatives": [
+    {
+      "option": "Narrow each role-launched task server once at construction from one static per-role table, removing excluded tools through FastMCP's public remove_tool, and grant a fresh Codex seat the same ordered list.",
+      "reason": "A static surface keeps the tool list stable across turns for the harness prompt cache, gives least-privilege discovery and dispatch from one table, and brings the Architect's eager schema under antigravity-acp's pack size.",
+      "status": "chosen"
+    },
+    {
+      "option": "Filter the advertised tools per turn.",
+      "reason": "Every change of the tool list breaks the harness's prompt cache.",
+      "reconsider_when": "Harnesses keep their prompt cache across changes of the tool list.",
+      "status": "rejected"
+    },
+    {
+      "option": "Remove tools by mutating FastMCP's private tool table.",
+      "reason": "It couples the server to FastMCP internals while the locked mcp release offers a public remove_tool.",
+      "reconsider_when": "The supported mcp release no longer offers a public way to remove a registered tool.",
+      "status": "rejected"
+    },
+    {
+      "option": "Edit the user's Codex or Antigravity configuration at launch.",
+      "reason": "It writes user configuration, which the single-server rule forbids, and changes concurrent sessions of the developer.",
+      "reconsider_when": "The developer admits a launch-time change to user harness configuration.",
+      "status": "rejected"
+    },
+    {
+      "option": "Hide tools in list_tools only and keep them callable.",
+      "reason": "A hidden tool stays callable through call_tool, so the narrowing would not hold at dispatch.",
+      "reconsider_when": "The host itself enforces the advertised tool list at dispatch.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A tool added to PUBLIC_TOOLS reaches a role only when that role's table entry names it.",
+    "A seat started from an earlier saved launch call keeps the grant recorded at its start."
+  ],
+  "context": "Every role-launched agents-remember-task server registered all 44 public tools and every Codex seat was granted all of them, which bloated each seat's first turn and made antigravity-acp drop its largest tools, including task_doc and role_start.",
+  "decider": "The developer, through decisions D971, D972, D974, D976 and D979, which approved CAP-R01@v1.",
+  "id": "DEC-0Q16QQ",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "3a4a614c214f80c798bd135d20f846d9000ee211",
+        "content": "sha256:213379f66e141df7c83311a5a9b0f863a759b56cb244aac85a9e32e1a336894e",
+        "locator": {
+          "kind": "symbol",
+          "name": "ROLE_TOOL_ALLOWLISTS"
+        },
+        "path": "mcp/src/agents_remember/models/tools/role_tool_scope.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "31ef0c75a9a7f18d7f903b44a4d5b47b0e61c682",
+        "content": "sha256:2c7ca4d5dad59f8b023dd667801f46709868ff8a2ded5237f78c461f3947f661",
+        "locator": {
+          "kind": "symbol",
+          "name": "_scope_server_tools"
+        },
+        "path": "mcp/src/agents_remember/mcp/server.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "4191e74318f5f34c0412b1564038c8484c35b816",
+        "content": "sha256:1f192df99fe43025b96a5f0c8462605f0b3d46b26fa32f0a7094f3fa8ac5155d",
+        "locator": {
+          "kind": "symbol",
+          "name": "preapproval_policy"
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_seat_policy.py"
+      }
+    },
+    {
+      "relation": "explains",
+      "target": "FAM-0BVSZB"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "CAP-R01",
+        "packet": "requirements/CAP-R01-v1-role-scoped-mcp-tool-surface.md",
+        "task": {
+          "path": "261124_role-capsule-and-turn-1-context-optimization",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_tool_scope.py::test_a_bound_server_advertises_only_its_roles_tools_in_public_order and ::test_a_read_only_mark_still_validates_a_tool_the_role_excludes on tree b29f2e225c04fbcebb653d59f81cf895c42f5097"
+      ],
+      "path": "curator-handoff-cap-l1.json"
+    },
+    "handoffEntry": "CAP-R01@v1 §2 bound pruning",
+    "leaf": "261124-CAP-L1",
+    "task": "261124-CAP"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

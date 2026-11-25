@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "edc7edc63f5d05b34445dfe30d8e141ec5300efc",
-    "commit": "a2f0fced8896b92d31fd3f78351d01f5302be97e",
+    "codeTree": "b29f2e225c04fbcebb653d59f81cf895c42f5097",
+    "commit": "180b6c153d21d01cbb14059d0219472ccdeba683",
     "role": "curator",
-    "statement": "The skills reference names the instruction-renewal command while its skill, role, operation and MCP inventory remains consistent with the composed authored and derived manifest.",
-    "task": "261112-BUG-L8",
+    "statement": "The skills reference's account of l-01-agent-lifecycles (eight role files, operations, templates, criteria, one role file and operation per role agent) still holds on b29f2e2; it states no per-role tool list, so the renewed manifest arrays leave it true.",
+    "task": "261124-CAP-L1",
     "uncommitted": true
   },
   "document": "docs/reference/skills.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "skills/l-01-agent-lifecycles/SKILL.md"
     },
     {
-      "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+      "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
     },

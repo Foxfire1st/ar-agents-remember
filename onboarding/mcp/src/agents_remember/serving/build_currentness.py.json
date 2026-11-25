@@ -151,16 +151,16 @@
       ]
     },
     "7": {
-      "note": "The tool dispatcher refuses a declared write of an installed stale build.\n\nAnchor: `is_stale_build_write`",
+      "note": "The tool dispatcher refuses a declared write of an installed stale build.",
       "targets": [
         {
           "anchor": {
-            "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
-            "content": "sha256:0cd7a5c9b310f08d74b90ea0b080cbae900b6002e2587c4df5eff6f01c240cbc",
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:787157d63559c22d8c1e77c726f26627b7435f6c103d9c64f022fa1edaf0a009",
             "locator": {
-              "end": 162,
+              "end": 170,
               "kind": "line_range",
-              "start": 148
+              "start": 149
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },

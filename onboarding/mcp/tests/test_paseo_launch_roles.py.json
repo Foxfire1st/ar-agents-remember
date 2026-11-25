@@ -3,24 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
-        "content": "sha256:a1a3c738bbd631de7ef74808256190cf14edbc5fea3fc65d2172fe2febd444aa",
+        "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
+        "content": "sha256:26bb611ca7ffab6c2bc2e5a498b7f7c2c07afbeed451057b87d0b267326f310d",
         "locator": {
           "kind": "symbol",
           "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
         }
       },
-      "facet": "The complete create payload for Architect, Orchestrator, Manager and Worker includes the bound Codex preapproval for each name in PUBLIC_TOOLS.",
-      "id": "PRF-58KYVX",
+      "facet": "The complete create payload for Architect, Orchestrator, Manager and Worker includes the bound Codex preapproval for each tool of that role's allowlist.",
+      "id": "PRF-BYC6RY",
       "invariant": "INV-Z17EHY",
       "origin": {
-        "handoffEntry": "BUG-R31@v1-start-grant",
-        "leaf": "261112-BUG-L31"
+        "handoffEntry": "curator-z17ehy-role-grant-proofs",
+        "leaf": "261124-CAP-L1"
       }
     },
     {
       "anchor": {
-        "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
+        "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
         "content": "sha256:6f8f73bbd0ca2b47008d31312529a915e665f412e8eeb3e58b2829507fd558f5",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
+        "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
         "content": "sha256:815ab33c18ab4bf09cd07fd01e0ddbd0bc8bee09a6923e6a1cab07f26d6e6438",
         "locator": {
           "kind": "symbol",
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
-        "content": "sha256:a1a3c738bbd631de7ef74808256190cf14edbc5fea3fc65d2172fe2febd444aa",
+        "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
+        "content": "sha256:26bb611ca7ffab6c2bc2e5a498b7f7c2c07afbeed451057b87d0b267326f310d",
         "locator": {
           "kind": "symbol",
           "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
@@ -77,8 +77,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
-            "content": "sha256:a1a3c738bbd631de7ef74808256190cf14edbc5fea3fc65d2172fe2febd444aa",
+            "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
+            "content": "sha256:26bb611ca7ffab6c2bc2e5a498b7f7c2c07afbeed451057b87d0b267326f310d",
             "locator": {
               "end": 273,
               "kind": "line_range",
@@ -94,8 +94,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
-            "content": "sha256:23345d4bccda212ba54e15d5e802c7e6e077b31df7a3f324550eedb9c80a93a4",
+            "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
+            "content": "sha256:3c6b8d4e03e7461dabff90d40c6daf9d7fc9a5c9137df239185810afae72b8ff",
             "locator": {
               "kind": "file"
             }
@@ -109,8 +109,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
-            "content": "sha256:23345d4bccda212ba54e15d5e802c7e6e077b31df7a3f324550eedb9c80a93a4",
+            "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
+            "content": "sha256:3c6b8d4e03e7461dabff90d40c6daf9d7fc9a5c9137df239185810afae72b8ff",
             "locator": {
               "kind": "file"
             }
@@ -124,8 +124,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
-            "content": "sha256:23345d4bccda212ba54e15d5e802c7e6e077b31df7a3f324550eedb9c80a93a4",
+            "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
+            "content": "sha256:3c6b8d4e03e7461dabff90d40c6daf9d7fc9a5c9137df239185810afae72b8ff",
             "locator": {
               "kind": "file"
             }

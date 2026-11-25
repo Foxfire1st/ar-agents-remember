@@ -9,7 +9,7 @@
   "applicability": "Role launches under the runtime provider capability branch.",
   "conditions": [
     "The task-server definition is supplied only when accepts_tool_servers is true.",
-    "The exact Codex provider gets the starting build's public roster on the bound server. The exact Claude provider gets only server_info. Other provider IDs get no preapproval."
+    "The exact Codex provider gets the ordered allowlist of the seat's role on the bound server, the same tools that server advertises. The exact Claude provider gets only server_info. Other provider IDs get no preapproval."
   ],
   "exclusions": [
     "The removed assignment_read grant and any alternative task reader.",
@@ -28,9 +28,9 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "An ordinary role launch supplies its own bound AR task-server definition when the provider accepts MCP definitions. The launch policy grants Codex the full starting public roster and grants Claude server_info for the session. A provider that explicitly refuses tool servers receives no definition or harness-configuration fallback. The assignment_read tool and its former grant stay retired under D124.",
+  "statement": "An ordinary role launch supplies its own bound AR task-server definition when the provider accepts MCP definitions. The launch policy grants Codex the ordered tool allowlist of the seat's role on that server and grants Claude server_info for the session. A provider that explicitly refuses tool servers receives no definition or harness-configuration fallback. The assignment_read tool and its former grant stay retired under D124.",
   "status": "proposed",
   "supersedes": []
 }
