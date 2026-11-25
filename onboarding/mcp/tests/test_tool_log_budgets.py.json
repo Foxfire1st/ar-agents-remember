@@ -21,6 +21,23 @@
     {
       "anchor": {
         "blob": "ef86757e8d7fad446df84b039451289247461f7d",
+        "content": "sha256:e86f0665279b41efd7dc1f181b34dda87512eaee11197f2611977b30e0cff0c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_oversize_detail_not_written_line_holds_size_and_digest"
+        }
+      },
+      "facet": "The tool-call line keeps result size and digest when the detail file is skipped.",
+      "id": "PRF-MZ007J",
+      "invariant": "INV-B1DZ6W",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 13",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ef86757e8d7fad446df84b039451289247461f7d",
         "content": "sha256:6b5c830e4bdcbcea8f74df8629f8230cfa89b981f02278682c69a1778377e07e",
         "locator": {
           "kind": "symbol",

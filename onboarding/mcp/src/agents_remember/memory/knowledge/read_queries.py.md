@@ -119,7 +119,6 @@ No configured domain documentation could be checked.
 - **The one cell decoder a read page and the logical digest share, made public for exactly this reuse.** [9]
 
 
-- The declarations these statements are built from. [10]
 
 
 ### Cross-Repo References
@@ -127,3 +126,5 @@ No configured domain documentation could be checked.
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+- The declarations these statements are built from. [10]

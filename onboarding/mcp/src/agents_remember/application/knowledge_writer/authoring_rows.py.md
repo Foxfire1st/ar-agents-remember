@@ -6,9 +6,11 @@
 
 ## Purpose
 
-The writer's history-row authoring.
+Author judgment rows in the owner's writable history while preserving product-recorded revision evidence.
 
 ## Code Commentary
+
+`_write_rows` reads the owner's writable attempt before building judgment rows and refuses a closed one. An authored judgment can place a record and add its stamped revision to that same attempt. The history writer reloads the in-memory attempt after building those judgments, then replaces its `rows` while keeping the produced `written` section and other product-owned fields.
 
 It validates and writes eight judgment row kinds -- invariant, family, onboarding trace, unexplained change, planned, reconsideration, membership and record -- and fills each row's items, revisions, source bindings and anchors. Membership and decision/facet record judgments are separate kinds, not family rows.
 
@@ -24,7 +26,7 @@ A record row's subject kinds are one list, `RECORD_ROW_KINDS`: decisions, incide
 
 `HistoryRowAuthoring._family_row` is the single constructor
 for family history rows: it resolves the candidate family record, stores that
-record's own revision with the curator's authored effect label, and refuses
+record's own revision and the effect authored for a changed row. It delegates effect admission to `family_effect_refusal` and refuses
 unsupported input (missing or invalid effect, curator-supplied revision, member
 revision, effect on another disposition) before anything is written.
 
@@ -44,6 +46,9 @@ A reconsideration `raise` checks the task-owner question port before changing th
 ## Evidence
 
 ### Repo-Internal References
+
+- History-row assembly reloads the attempt after any row placements and preserves its produced written revisions. [10]
+- The re-point revision's writer evidence survives beside its judgment row. [11]
 
 
 

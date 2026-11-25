@@ -28,7 +28,7 @@ The role_message description distinguishes host acceptance from AR acceptance: a
 
 ## Evidence
 
-- Workers read failed tries from typed code rounds and Curators from typed memory rounds. Record-only checks create no counted review round. Incomplete typed history leaves the count unknown. [4]
+- Workers read failed tries from typed code rounds and Curators from typed memory rounds. A record-only correction revises the existing round without counting as another try. Incomplete typed history leaves the count unknown. [4]
 
 - Reason admission, threshold and differing-harness/model inheritance boundary. [5]
 

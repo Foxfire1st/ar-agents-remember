@@ -1,0 +1,132 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/record_state.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7b53cdabd1bfa8178f16a5f339bbb896d79d9e75",
+        "content": "sha256:f52368bbcd14b98d6522392acb8ed4f66476fcc3856cd6973116fe695ec63461",
+        "locator": {
+          "kind": "symbol",
+          "name": "RevisionStates.conversion_writer"
+        }
+      },
+      "id": "RLZ-9RPK20",
+      "invariant": "INV-69M737",
+      "origin": {
+        "handoffEntry": "L3-W1-07",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Selects the archived exact review before making a legacy writer stamp.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7b53cdabd1bfa8178f16a5f339bbb896d79d9e75",
+        "content": "sha256:e3d86dad2e311d601c3c66745f2a52ad57c6e7ab38a4ed220a9ae5e99e4e7d63",
+        "locator": {
+          "kind": "symbol",
+          "name": "RevisionStates._review_proof"
+        }
+      },
+      "id": "RLZ-MN5M31",
+      "invariant": "INV-X8FRT8",
+      "origin": {
+        "handoffEntry": "L3-W1-04",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Collects the relevant facts and answers their exact-content questions before the current reader or crossing chooses attribution.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7b53cdabd1bfa8178f16a5f339bbb896d79d9e75",
+        "content": "sha256:32a8792d05cdb217237b380afabee768606ae49c7dab85ff5f76dcc4288a07b1",
+        "locator": {
+          "kind": "symbol",
+          "name": "RevisionStates._proven_writes"
+        }
+      },
+      "id": "RLZ-SVPHZ2",
+      "invariant": "INV-0R04WY",
+      "origin": {
+        "handoffEntry": "KNO-L3-F20",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Retains eligible exact legacy facts for an ownerless conversion stamp without choosing an author.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "7b53cdabd1bfa8178f16a5f339bbb896d79d9e75",
+        "content": "sha256:08bbe93ed175bf941dbb3f726302133fe510e3eb6d57c0e9ae242e9efc2e2084",
+        "locator": {
+          "kind": "symbol",
+          "name": "RevisionStates.resolve_current"
+        }
+      },
+      "id": "RLZ-SZP2VR",
+      "invariant": "INV-Z0FRT0",
+      "origin": {
+        "handoffEntry": "KNO-R03@v1",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Projects evidence for the retained revision to the common standing consumed by the record and writers views.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "7b53cdabd1bfa8178f16a5f339bbb896d79d9e75",
+        "content": "sha256:f52368bbcd14b98d6522392acb8ed4f66476fcc3856cd6973116fe695ec63461",
+        "locator": {
+          "kind": "symbol",
+          "name": "RevisionStates.conversion_writer"
+        }
+      },
+      "id": "RLZ-VM9Q1N",
+      "invariant": "INV-0R04WY",
+      "origin": {
+        "handoffEntry": "KNO-L3-F20",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Finds the exact supported legacy owner when one review uniquely proves the retained content.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "7b53cdabd1bfa8178f16a5f339bbb896d79d9e75",
+        "content": "sha256:db519a9abc9842187a02b9eaa12476ab6053e88a94e57d9e7242c5877a3980c3",
+        "locator": {
+          "kind": "symbol",
+          "name": "RevisionStates"
+        }
+      },
+      "id": "RLZ-Z3HRBT",
+      "invariant": "INV-X8FRT8",
+      "origin": {
+        "handoffEntry": "L3-W1-04",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The rule itself: one index of the tree's history files answering each revision's state by lookup.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The resolver distinguishes confirmed standing, exact selected-side evidence and ambiguous legacy authorship.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b53cdabd1bfa8178f16a5f339bbb896d79d9e75",
+            "content": "sha256:db519a9abc9842187a02b9eaa12476ab6053e88a94e57d9e7242c5877a3980c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "RevisionStates"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

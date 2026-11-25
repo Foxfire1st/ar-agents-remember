@@ -64,5 +64,4 @@ No cross-repo boundary is crossed by this file.
 - UTF-8 summaries are byte bounded while whole-prose reads retain full text and selected-tree identity, with named invalid, absent and unavailable outcomes. [5]
 - Timeline pages retain event identity and bound continuations; instrumentation asserts one build and one hash walk. Bounded memo checks cover byte pricing, eviction, mutation isolation and unretained over-budget reads. [6]
 
-
-- The suite's lane membership in the evidence catalog. [3]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_reader_tree_coverage.py`. [3]

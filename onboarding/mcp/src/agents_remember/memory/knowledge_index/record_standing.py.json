@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge_index/record_standing.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "29804aa8a9044eaa2a915584a51369a404529fc8",
+        "content": "sha256:6826d0f340795e7a0b3a07aa51bf0e1ea29cb92f5b2e76a4c2040057c9e59a4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "StandingDeriver"
+        }
+      },
+      "id": "RLZ-3XSMR4",
+      "invariant": "INV-X8FRT8",
+      "origin": {
+        "handoffEntry": "L3-W1-04",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Applies the rule once per index build and names the writer of the current revision, `unknown` for an unstamped one.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The index derives standing from the selected record and eligible history evidence, omitting state for a retired record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29804aa8a9044eaa2a915584a51369a404529fc8",
+            "content": "sha256:6826d0f340795e7a0b3a07aa51bf0e1ea29cb92f5b2e76a4c2040057c9e59a4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "StandingDeriver"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

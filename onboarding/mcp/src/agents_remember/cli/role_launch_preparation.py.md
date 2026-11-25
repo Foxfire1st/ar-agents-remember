@@ -19,7 +19,7 @@ Canonical task JSON/rendered copy metadata, missingCopies disclosure, report/scr
 ## Current operative account — MIK-R112
 
 - Launch-aware AR guidance follows the launch's actual exclusion record, not a universal exclusion_applied=False. A known AR server on Claude gets record-backed providerOptions MCP exclusion and omits the other-server choice; unknown/indeterminate acceptance and other harnesses retain their conditional choice wording. This is source-owned instruction selection, not new real-host acceptance.
-- MIK-R109 changes the read guidance to a `files` list of repository-relative path strings. `read_ar_files` names knowledge locations and carries no file text; the agent opens named files with its harness's own file tool. Exact leaf `readerArguments` and the missing-`task_context` capability refusal remain unchanged.
+- MIK-R109 changes the read guidance to a `files` list of repository-relative path strings. `read_ar_files` names knowledge locations and can carry a bounded short brief with governing rule text. Use native file tools for the current saved brief when present and for named source or card files. A compact reply can point to a missing saved brief. Exact leaf `readerArguments` and the missing-`task_context` capability refusal remain unchanged.
 - The compiled role-message guidance distinguishes host acceptance from product holding: permission prompts, unfinished starts and unwritable turns are held and later delivered in order. A held permission wait still reports permission-pending. Actual parent identity, leaf peer references, permission non-bypass and report ownership do not change; product holding grants no right to answer a harness permission prompt.
 
 ### Source and authority bounds
@@ -81,6 +81,9 @@ Task-document first-read metadata says to use task_doc first. A correct-input re
 Resolves role defaults, workspace, admitted reader scope, compiled capsule and handover before native creation.
 
 ## Code Commentary
+
+The shared launch message directs opening a saved source brief before editing when available. It explains which compact fields can be present and that fuller rows can carry rule text. The next write covering the file or its folder renews a missing or older saved brief when the writer can refresh it. It explains the directory indexes, the reserved index-free task moment directory and the conditions under which a source has a brief.
+
 
 ### Current Contract
 
@@ -205,8 +208,14 @@ Source: mcp/src/agents_remember/cli/role_launch_preparation.py:1-963
 
 - The `_resolve_workspace` implementation now lives in its extracted owner.  Anchor: actual current supporting source [3]
 
+
+
 - The parented handover values: `ownerRelation` from `_owner_relation`, and a `developerQuestions` value that sends developer decisions to the actual parent agent id; a parentless launch keeps the own-chat sentence. [4]
 
-- An Investigator's assignment comes from `investigator_assignment` with the actual starting parent: a parented start takes its concern from the parent's first message, a parentless start asks the developer. [8]
+
+
+
+- An Investigator's assignment comes from `investigator_assignment` with the actual starting parent: a parented start takes its concern from the parent's first message, a parentless start asks the developer. Anchor: `investigator_assignment` [8]
+
 
 - Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [9]

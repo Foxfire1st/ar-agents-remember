@@ -69,9 +69,7 @@ and the logical digest unchanged, and one node measuring file-selected topology 
 
 ### Conventions
 
-- `pytestmark = pytest.mark.evidence_unit`; the lane is declared in `mcp/tests/test-evidence-lanes.toml`
-  and the module's support artifact in `mcp/tests/evidence-lifecycle.toml`. **An unregistered module makes
-  `load_lane_manifest` refuse the repository**, so a row is a precondition rather than bookkeeping.
+- `pytestmark = pytest.mark.evidence_unit`. The evidence-lifecycle catalog names support relationships. `load_lane_manifest` refuses the repository when a test module has no lane row.
 - Every case builds its own fixture; none inserts rows directly.
 - Assertions name the property, not the implementation's internal shape.
 
@@ -129,9 +127,7 @@ No Domain Documentation source is configured for this slice.
 
 - `test_every_page_declares_the_same_snapshot_and_manifest_and_the_union_equals_the_selection` supplies the current fixture or assertion described above. [21]
 - `test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged` supplies the current fixture or assertion described above. [22]
-- The shared read-scope builder uses test-only text/row construction, not the retired canonical writer. [23]
 
-- RowStore writes text-tree fixture rows without the retired production admission plane. [24]
 
 
 ### Docs References
@@ -178,5 +174,8 @@ No meaningful cross-repo references found.
 
 - The count-separation node and the overlapping family's two unique member revisions and membership rows. [31]
 
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_read_scope.py`. [34]
 
-- The lane row this module occupies. Anchor: `test_knowledge_read_scope` Anchor: `test_knowledge_read_scope` [34]
+- The shared read-scope builder uses test-only text/row construction, not the retired canonical writer. [23]
+
+- RowStore writes text-tree fixture rows without the retired production admission plane. [24]

@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A converted memory with a derived knowledge index and a selected code tree. The cited tests exercise this rule where a regression could change a reader or lifecycle outcome."
+  },
+  "applicability": "Admitted whole-memory and touched-source writes to converted task memory.",
+  "conditions": [
+    "A live rule, open file weakness, decision or standing document makes a source path eligible.",
+    "A whole-memory writer refreshes the source briefs and folder indexes from its resulting memory tree and paired code.",
+    "A leaf knowledge write or citation fix refreshes the affected sources. A knowledge write includes former locations when the earlier index is available.",
+    "Publication requires a declared root ignore rule and effective Git exclusion. A deferred derived refresh is reported with the durable write result."
+  ],
+  "exclusions": [
+    "Readers, index selection, preview, replay, no-op and failed writes do not publish source briefs.",
+    "Card-only paths and task-moment files are outside the source-brief set."
+  ],
+  "id": "INV-T50898",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "KNO-R04 evidence E01–E03 and W3 proof for F14. The L3 join's E13 proof compares brief and short answer to two carried records.",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/04_the-brief-of-a-file-0df6c23e90-ar/role-reports/worker/db647361-59b7-4042-bb9f-6d7638bd5e03/role-launch/d884-round5/REPORT.md#requirement-acceptance",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/04_the-brief-of-a-file-0df6c23e90-ar/role-reports/worker/db647361-59b7-4042-bb9f-6d7638bd5e03/role-launch/d861-round8/W8-RUNTIME-COVER.md",
+        "Exact W8 R8 verdict, independent public replay and retained owner-edit controls. W8 _proof.py:412–438 calls the same settlement as the live route."
+      ],
+      "path": "kno-l4-w3-new-rules.json"
+    },
+    "handoffEntry": "KNO-R04@v1 rules 1–5",
+    "leaf": "261112-KNO-L4",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The product derives Git-ignored source-file briefs from the memory as a whole after an admitted whole-folder write, and refreshes the affected briefs after a leaf knowledge write.",
+  "status": "proposed",
+  "supersedes": []
+}

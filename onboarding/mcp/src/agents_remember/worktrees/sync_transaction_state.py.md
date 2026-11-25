@@ -86,7 +86,7 @@ No external Domain Documentation entries are configured. Source and test asserti
 
 
 
-- Recovery archives damaged entries, writes quarantine, or reconstructs cancellation from refs. Anchor: `cancel_sync` [12]
+- Explicit cancellation attempts to preserve a damaged journal before recovering it. It writes terminal quarantine when rollback refs are absent or reconstructs cancellation from sufficient refs. Missing proof produces a typed repair result. [12]
 
 
 

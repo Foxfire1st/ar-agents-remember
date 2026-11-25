@@ -113,16 +113,16 @@
       ]
     },
     "15": {
-      "note": "The module's lane row. Anchor: \"mcp/tests/test_review_unexplained_lane.py\" Anchor: \"mcp/tests/test_review_unexplained_lane.py\"",
+      "note": "The unit-regression lane selects mcp/tests/test_review_unexplained_lane.py.\n\nAnchor: `mcp/tests/test_review_unexplained_lane.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
             "content": "sha256:b0c27202ed59ec54a257432a16b62a693c98392521825624d61a89c55996e17c",
             "locator": {
-              "end": 525,
+              "end": 539,
               "kind": "line_range",
-              "start": 525
+              "start": 539
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

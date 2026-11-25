@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "4e2b7861807756639324908d7a400831e20dc28c",
-    "commit": "3450a1a1552db524bdbace93c3992311a778a53e",
+    "codeTree": "cc81897b5c77098790701dfdb82dbf8ed0750807",
+    "commit": "a5a631ca5fe4e27d0b8affa2d8c077d09712b434",
     "role": "curator",
-    "statement": "The setup guide’s Bootstrap and dashboard opening sequence remains current with registry recovery, and its refusal guidance explains how to find an omitted detail and select an offered harness.",
-    "task": "261112-BUG-L22",
+    "statement": "The setup guide still accurately describes the Bootstrap call, its stage refusals with an oversized detail moved to the log, and the unmatched-harness retry after the role_start bound and warning-fitting changes.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/getting-started.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
+      "blob": "9326dfaf2cd0d2a38d6b07e618cae824b747b12f",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
     },
     {
-      "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+      "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
@@ -61,7 +61,7 @@
       "path": "mcp/src/agents_remember/application/user_settings_init.py"
     },
     {
-      "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
+      "blob": "0789f3ccacb2b41e5dd90b05efda788cbd713c23",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/memory_init.py"
     },
@@ -76,7 +76,7 @@
       "path": "dashboard/src/cockpit/paseoFrameControl.ts"
     },
     {
-      "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
+      "blob": "0545be4ce99a465c6e590e0c19385c91e54191db",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },

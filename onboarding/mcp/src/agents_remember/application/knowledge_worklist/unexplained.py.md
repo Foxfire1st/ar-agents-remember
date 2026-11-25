@@ -169,7 +169,7 @@ No configured live documentation source was available for this pass.
 - Covered hunk: no_invariant, attach or author; never onboarding. [23]
 - Delete-only hunk: only no_invariant. [24]
 
-- An uncovered file: its onboarding trace; its no_invariant row is unnecessary. [25]
+- An uncovered file: its onboarding trace; its no_invariant row is unnecessary. Anchor: `test_an_uncovered_new_file_is_satisfied_by_its_onboarding_trace` [25]
 
 
 ### Cross-Repo References

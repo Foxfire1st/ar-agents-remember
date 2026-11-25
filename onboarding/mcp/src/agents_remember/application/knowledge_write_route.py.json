@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
-        "content": "sha256:7e26930973ae8a608db425d1527bd1f35b95e1f49767500ace79376ddeb698a0",
+        "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
+        "content": "sha256:965ad4804ab1dc97631b571e2c1688256ccd404047e0121f89f8b1aa52137657",
+        "locator": {
+          "end": 537,
+          "kind": "line_range",
+          "start": 513
+        }
+      },
+      "id": "RLZ-696Y32",
+      "invariant": "INV-G8AX2H",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-G8AX2H",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The wave route supplies the caller stamp at the same writer boundary.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
+        "content": "sha256:1d608a739ddd16bdad6b8fa9ff55c769d5eeaa56bdc641df8a10b9772aac2ac3",
         "locator": {
           "kind": "symbol",
           "name": "crossing_write_report"
@@ -21,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
+        "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
         "content": "sha256:2105ef345d9479c31408dee38a5ba1f1a03b627d81fdd3e6e7e8a00228bd4682",
         "locator": {
           "kind": "symbol",
@@ -39,7 +58,25 @@
     },
     {
       "anchor": {
-        "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
+        "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
+        "content": "sha256:8acaf257337c68f74fb264fa9559d059455226ff859e264478413f15bb186012",
+        "locator": {
+          "kind": "symbol",
+          "name": "write_stamp"
+        }
+      },
+      "id": "RLZ-M3AEMD",
+      "invariant": "INV-G8AX2H",
+      "origin": {
+        "handoffEntry": "L3-W1-01",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The leaf, crossing and wave routes of knowledge_write resolve the stamp once per call here, so no hand-off field can supply one.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
         "content": "sha256:ee024c46e11dd69a99ae879a6178508692907da75e6bea6bc285903adf52d5b2",
         "locator": {
           "kind": "symbol",
@@ -57,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
-        "content": "sha256:4939767aced256f099dd7694079880510d556e4bd949f9526b61adcb5a6a7531",
+        "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
+        "content": "sha256:bedb2af9a11bbabae30bd314cc95d43d8850d3a4d6a0792a3af507e0d0d16eff",
         "locator": {
           "kind": "symbol",
           "name": "leaf_write_report"
@@ -75,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
+        "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
         "content": "sha256:f2d33b0a8d65e2b5cb81516998f3280a3eb04dfa627971261b56bd36633d0f8f",
         "locator": {
           "kind": "symbol",
@@ -90,6 +127,24 @@
       },
       "rationale": "Is knowledge-ingest's route to the unconverted-line refusal for a leaf's memory worktree, and through it to the lock.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
+        "content": "sha256:1d608a739ddd16bdad6b8fa9ff55c769d5eeaa56bdc641df8a10b9772aac2ac3",
+        "locator": {
+          "kind": "symbol",
+          "name": "crossing_write_report"
+        }
+      },
+      "id": "RLZ-VRSVJP",
+      "invariant": "INV-G8AX2H",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-G8AX2H",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The crossing route supplies a stamp resolved from its bound caller and coordination root.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -98,11 +153,75 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
+            "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
             "content": "sha256:2105ef345d9479c31408dee38a5ba1f1a03b627d81fdd3e6e7e8a00228bd4682",
             "locator": {
               "kind": "symbol",
               "name": "_open"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The caller stamp comes from the runtime binding and receipt, with a reason when the coordination root is missing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
+            "content": "sha256:8acaf257337c68f74fb264fa9559d059455226ff859e264478413f15bb186012",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_stamp"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The crossing writer carries its owner and caller stamp with the settled code commit the open sync recorded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
+            "content": "sha256:1d608a739ddd16bdad6b8fa9ff55c769d5eeaa56bdc641df8a10b9772aac2ac3",
+            "locator": {
+              "kind": "symbol",
+              "name": "crossing_write_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The wave writer carries the wave owner and a caller stamp.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
+            "content": "sha256:f3a3121dd4ca3be312e76af23ed5bf31c30665d223c1b9882f67ab0db5c3b7e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "wave_write_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "After a written leaf report, the route refreshes briefs from changed and removed memory paths and records its outcome in notes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
+            "content": "sha256:527288166ed1c5020d1ad088f369897f85d2525d2bb51e1d1b7e09d7e703ab81",
+            "locator": {
+              "kind": "symbol",
+              "name": "_with_briefs"
             }
           },
           "kind": "code"
@@ -114,7 +233,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
+            "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
             "content": "sha256:ae24b893172283fbc98e8fd3f76b9c9387a5d6f7c85b71a7f8cf3aa8e6ba3389",
             "locator": {
               "kind": "symbol",
@@ -126,12 +245,12 @@
       ]
     },
     "3": {
-      "note": "One leaf write runs the same guard, worklist checks and writer for the command and the mounted tool, differing only in the route that supplies the question port.",
+      "note": "Both entry points share leaf-write admission and pass the request's owner, question port and caller stamp to the writer.",
       "targets": [
         {
           "anchor": {
-            "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
-            "content": "sha256:4939767aced256f099dd7694079880510d556e4bd949f9526b61adcb5a6a7531",
+            "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
+            "content": "sha256:bedb2af9a11bbabae30bd314cc95d43d8850d3a4d6a0792a3af507e0d0d16eff",
             "locator": {
               "kind": "symbol",
               "name": "leaf_write_report"

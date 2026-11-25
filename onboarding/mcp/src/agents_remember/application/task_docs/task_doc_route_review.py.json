@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
         "content": "sha256:af358db9ecedfb71478020b72b40386707ad8829336bd9ce4b9bae14c45cfa73",
         "locator": {
-          "end": 442,
+          "end": 449,
           "kind": "line_range",
-          "start": 442
+          "start": 449
         }
       },
       "id": "RLZ-4GBF8D",
@@ -23,12 +23,12 @@
     },
     {
       "anchor": {
-        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
         "content": "sha256:402323846ac2def37c00ac34c94243ba1dd34df90dc3f1e4f911ab4f6f312686",
         "locator": {
-          "end": 486,
+          "end": 493,
           "kind": "line_range",
-          "start": 482
+          "start": 489
         }
       },
       "id": "RLZ-4J29G2",
@@ -42,7 +42,7 @@
     },
     {
       "anchor": {
-        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
         "content": "sha256:6ebd3d2977e14e21a18bc025bddd1eb80d10d6adfdcf687eafacd096d3fdcb74",
         "locator": {
           "kind": "symbol",
@@ -79,7 +79,7 @@
     },
     {
       "anchor": {
-        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
         "content": "sha256:727a920d86623acd77232bba20dded771443ce2defee389e665c52932a30c9ab",
         "locator": {
           "kind": "symbol",
@@ -97,7 +97,7 @@
     },
     {
       "anchor": {
-        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
         "content": "sha256:6aba0097d56ada16731dab87617af5e7cf99708fdb95ec181d35e838eec7933d",
         "locator": {
           "kind": "symbol",
@@ -115,12 +115,12 @@
     },
     {
       "anchor": {
-        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
         "content": "sha256:3028e7aa4280f636859aaac53c537c9474766f4d80f4c9556a7b9208206b8749",
         "locator": {
-          "end": 167,
+          "end": 168,
           "kind": "line_range",
-          "start": 167
+          "start": 168
         }
       },
       "id": "RLZ-KHQFJD",
@@ -134,12 +134,12 @@
     },
     {
       "anchor": {
-        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
         "content": "sha256:53681c3952521c95f18c99f897d1775df8622116ee11c1416f11a3ed71c3cd9c",
         "locator": {
-          "end": 205,
+          "end": 206,
           "kind": "line_range",
-          "start": 202
+          "start": 203
         }
       },
       "id": "RLZ-MQDT4W",
@@ -153,12 +153,12 @@
     },
     {
       "anchor": {
-        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
         "content": "sha256:f3a40986ea257482e8124b20796a2163c0dd316e1f24dec060834fb5bd1db4a0",
         "locator": {
-          "end": 464,
+          "end": 471,
           "kind": "line_range",
-          "start": 446
+          "start": 453
         }
       },
       "id": "RLZ-N7DB82",
@@ -190,12 +190,31 @@
     },
     {
       "anchor": {
-        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
+        "content": "sha256:c5b640ca552afb7158a7a3a9269eb46b7cffdbf3d048e616b801c340effe6daf",
+        "locator": {
+          "end": 337,
+          "kind": "line_range",
+          "start": 315
+        }
+      },
+      "id": "RLZ-RC2V5V",
+      "invariant": "INV-AV04NY",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-AV04NY",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The bound review route forwards recorder and handover stamps to the shared recording transition.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
         "content": "sha256:1b8610144ea70b607558c8009e6a68f9cb43c388bfda10a687377904a3984328",
         "locator": {
-          "end": 179,
+          "end": 180,
           "kind": "line_range",
-          "start": 172
+          "start": 173
         }
       },
       "id": "RLZ-S67Y7F",
@@ -209,7 +228,7 @@
     },
     {
       "anchor": {
-        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
         "content": "sha256:323e719d110aa071de09e3206eb25dab1112f86273de629521817c9926883b89",
         "locator": {
           "kind": "symbol",
@@ -227,7 +246,7 @@
     },
     {
       "anchor": {
-        "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+        "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
         "content": "sha256:053c06b33c063ad5db944d7b08e92717c8092fa45cc43a7fbcbafdd6b4bf20ea",
         "locator": {
           "kind": "symbol",
@@ -246,46 +265,48 @@
   ],
   "references": {
     "1": {
-      "note": "Call-level knobs and the branch-addressed policy gate.\n\nAnchor: `TaskDocCall` `_enforce_branch_addressed_policy`",
+      "note": "Call-level knobs and the branch-addressed policy gate.",
       "targets": [
         {
           "anchor": {
-            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
-            "content": "sha256:5b0b1da1b7bddbef985732db4362271d8eef6d8cd459c67301688f0e548ac47b",
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
+            "content": "sha256:c426fca6f0e5c9143e75da33d1aaf3aa705141920cd34167cd3d605e1f16a096",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskDocCall"
+              "end": 70,
+              "kind": "line_range",
+              "start": 62
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
             "content": "sha256:19aad386da9c48607155adfeb5de918b8135089ba67641f65b2f3c37e5a59f4d",
             "locator": {
-              "kind": "symbol",
-              "name": "_enforce_branch_addressed_policy"
+              "end": 114,
+              "kind": "line_range",
+              "start": 77
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
             "content": "sha256:ec5cbf5520d96b9d79914936c7895b3acfaca595518db455a2c23b2ae7404438",
             "locator": {
-              "end": 55,
+              "end": 56,
               "kind": "line_range",
-              "start": 46
+              "start": 47
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
-            "content": "sha256:ef0b3450271ff5deefeb67ff31a2f2e3978eac177cdb638a9acc305fa54e7f6b",
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
+            "content": "sha256:6d634a10937512126b0d2057d3edc7b13f1fd7a93f1e0b1bdb8eb59fade135ac",
             "locator": {
               "kind": "file"
             }
@@ -295,16 +316,16 @@
       ]
     },
     "10": {
-      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "note": "Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round.",
       "targets": [
         {
           "anchor": {
-            "blob": "feb0861fd2096c6a955af98d73ccecccabcc33ad",
-            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "blob": "268fb78a4dd9640215b95691eb653e535db39358",
+            "content": "sha256:f682a022160f36e9b08ef27945830cddde96f1d87c31fa42f791aa898204e58c",
             "locator": {
-              "end": 251,
+              "end": 309,
               "kind": "line_range",
-              "start": 186
+              "start": 236
             },
             "path": "mcp/src/agents_remember/worktrees/review_history.py"
           },
@@ -335,12 +356,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
             "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
             "locator": {
-              "end": 311,
+              "end": 312,
               "kind": "line_range",
-              "start": 266
+              "start": 267
             }
           },
           "kind": "code"
@@ -352,7 +373,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
             "content": "sha256:aaa681c1652a4cb8c278283614c8031199a9af2663097f8b1a3e2bf9a4743c13",
             "locator": {
               "kind": "symbol",
@@ -368,12 +389,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
             "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
             "locator": {
-              "end": 311,
+              "end": 312,
               "kind": "line_range",
-              "start": 266
+              "start": 267
             }
           },
           "kind": "code"
@@ -385,12 +406,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
             "content": "sha256:a34f31385bd6041c8953f37f1f823f2da4314abb3609b96573aff1dec13cb366",
             "locator": {
-              "end": 443,
+              "end": 450,
               "kind": "line_range",
-              "start": 378
+              "start": 385
             }
           },
           "kind": "code"
@@ -402,12 +423,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
             "content": "sha256:fd496c2c78f8fbceeb940b6e0f4ea57864326819f6c295a34484e1a6cb5daf6f",
             "locator": {
-              "end": 585,
+              "end": 592,
               "kind": "line_range",
-              "start": 549
+              "start": 556
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Generic review recording forwards captured stamps to the bound review state transition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
+            "content": "sha256:b20c04ec1b9587546203f3b557619d409ae1f11ef51a285e54104065456181a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_task_review_bound"
             }
           },
           "kind": "code"
@@ -419,7 +456,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
             "content": "sha256:aaa681c1652a4cb8c278283614c8031199a9af2663097f8b1a3e2bf9a4743c13",
             "locator": {
               "kind": "symbol",
@@ -435,7 +472,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
             "content": "sha256:2c13594de1ce9714a2b21408eb4f1d0d3d9d08c1abc8382b0b0234296596edb3",
             "locator": {
               "kind": "symbol",
@@ -451,7 +488,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
             "content": "sha256:fb124fced687eb7abeb40d511d845fc4d1b44e290bf302c1be359e2cfd9eb2a9",
             "locator": {
               "kind": "symbol",
@@ -467,7 +504,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
             "content": "sha256:48dfee1d461e823fbfdf24959e8586573b2ebeda396a91a30cd0b0fa8dc7124e",
             "locator": {
               "kind": "symbol",
@@ -517,8 +554,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
-            "content": "sha256:d7e70d984a470c5bc403b5afc7e2fcbd7ec816f8793f135902c3c0769d94a78d",
+            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "content": "sha256:ff25b03705992c520a07360cf2d7c294bf5612b02ea06adb13e861b8a1d1450a",
             "locator": {
               "kind": "symbol",
               "name": "_prepare_task_doc_edit"
@@ -534,7 +571,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12b99d0d4ac7283ef7d9238043b102ae768aa1dd",
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
             "content": "sha256:19aad386da9c48607155adfeb5de918b8135089ba67641f65b2f3c37e5a59f4d",
             "locator": {
               "kind": "symbol",

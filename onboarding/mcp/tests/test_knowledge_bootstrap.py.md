@@ -67,7 +67,7 @@ wrong path or a missing rationale fails as it would in production.
 
 - The fixture is a real code checkout, a real external memory repository and a real settings document. [38]
 - The hand-off list builder. [39]
-- The hand-off entry builder writes each target's authored `rationale`, because the writer refuses a new realization without one. [40]
+- The hand-off entry builder; since leaf `260921-ICR-L45` each target it writes carries its own authored `rationale`, because the writer refuses a new realization with none (`realization_rationale_absent`) and no longer generates one. [40]
 - An undeclared repository is refused by name through the shipped command line. [41]
 
 - The initializer distinguishes complete empty/recorded states, emits the Architect/regular-task/Curator handover for those states, preserves exact partial-index and legacy guidance, and compares authored memory bodies around reporting. [42]

@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/application/writer_stamp_source.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ed559f1762217c9126446890710030b0edc5f81f",
+        "content": "sha256:c2ffbbdc8be11864e1f52c6e4012dedd980f8b14ad6ce53c07270ac23383f881",
+        "locator": {
+          "kind": "symbol",
+          "name": "caller_stamp"
+        }
+      },
+      "id": "RLZ-72S99X",
+      "invariant": "INV-G8AX2H",
+      "origin": {
+        "handoffEntry": "L3-W1-01",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Reads the caller's launch binding and finds its receipt by request id; a missing or unreadable binding gives an explained unknown stamp instead of a refusal.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The stamp resolves the exact caller and records why a launch value is unknown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed559f1762217c9126446890710030b0edc5f81f",
+            "content": "sha256:c2ffbbdc8be11864e1f52c6e4012dedd980f8b14ad6ce53c07270ac23383f881",
+            "locator": {
+              "kind": "symbol",
+              "name": "caller_stamp"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

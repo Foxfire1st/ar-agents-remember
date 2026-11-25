@@ -10,7 +10,7 @@ Creates a missing leaf enclosure through a short-lived process of the same AR bu
 
 ## Code Commentary
 
-The dashboard cannot directly write tool-server-owned worktree stores. start_leaf_enclosure_in_child launches this build with the selected config and canonical task context; the child calls the existing worktree start route and returns bounded written/refused facts. The parent passes the expected roots and checks the child’s typed reply and exit. After success the caller rereads the addressed enclosure contract through status.
+The dashboard cannot directly write tool-server-owned worktree stores. `start_leaf_enclosure_in_child` launches this build with the selected config and canonical task context. The child checks its expected roots before it runs the worktree start route. The parent checks the typed reply and exit status. A successful start may carry a file-brief advisory back, and the caller rereads the addressed enclosure contract through status.
 
 ## Current Contract — Scoped Launch And Settings Changes
 
@@ -23,6 +23,8 @@ This is not a public worktree-reader relaxation or permission to erase broken re
 - Root validation and refusal precede the child-local diagnostic scope. [4]
 - Only review-lane validation failures can be isolated. [5]
 - Incidental publication retains raw broken evidence. [6]
+
+
 
 - Frozen implementation of start_leaf_enclosure_in_child supporting the stated file behavior. [1]
 

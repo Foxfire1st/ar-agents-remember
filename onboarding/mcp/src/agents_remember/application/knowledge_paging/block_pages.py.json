@@ -144,12 +144,12 @@
       ]
     },
     "7": {
-      "note": "The envelope the block is measured in.\n\nAnchor: `_tree_block`",
+      "note": "The envelope the block is measured in. Anchor: `_tree_block`",
       "targets": [
         {
           "anchor": {
-            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
-            "content": "sha256:ed945298901c54ce9411f7391b4d3b19bb0e13b0f246be1cbad4704f98383880",
+            "blob": "9608622801bb9494b2ece9a1de71e8772b738e87",
+            "content": "sha256:c0c268aeebf6c982de49524c15b384c47d31995825ed32900e2082bc0029e200",
             "locator": {
               "kind": "file"
             },

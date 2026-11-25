@@ -1,0 +1,44 @@
+{
+  "path": "docs/guides/use-external-memory.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "19783aba4f19ac9264a6665e4d201c1ebee34dde",
+        "content": "sha256:cec968c928e1559fb86eaf08a9200bcb80d77abaa78cfd97054e5367eea76678",
+        "locator": {
+          "end": 140,
+          "kind": "line_range",
+          "start": 136
+        }
+      },
+      "id": "RLZ-86M8QZ",
+      "invariant": "INV-AV04NY",
+      "origin": {
+        "handoffEntry": "L3-W1-05",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Step 4 explains that the qualifying review fact is written in the history closing before derived files refresh, with restoration on refresh failure.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The external memory guide locates the separate memory repository under coordination and explains paired code and memory closeout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19783aba4f19ac9264a6665e4d201c1ebee34dde",
+            "content": "sha256:14189e2458562ccdbb377ae69aaabcd731b48e0d82f73507e695c7a4b50751e9",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

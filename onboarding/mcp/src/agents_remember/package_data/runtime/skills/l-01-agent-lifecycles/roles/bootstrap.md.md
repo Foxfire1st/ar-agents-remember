@@ -18,7 +18,7 @@ Bootstrap starts no role and messages none; developer questions go in its own ch
 
 ## Synced current-source qualification
 
-The read surface names `context_packet`, `server_info` and `read_ar_files` on `agents-remember-task`. Ask `read_ar_files` which cards govern a path, then open them natively. The prohibition names `retire_child` alongside task, role-start, closeout and other mutations outside the setup surface.
+The read surface names `context_packet`, `server_info` and `read_ar_files` on `agents-remember-task`. Ask `read_ar_files` which cards govern a path and which rules are recorded there, then open the named files natively. The prohibition names `retire_child` alongside task, role-start, closeout and other mutations outside the setup surface.
 
 
 - The packaged Bootstrap copy forbids retire_child alongside the other task, role-start and closeout calls outside its setup surfaces. [17]
@@ -139,7 +139,10 @@ No meaningful cross-repo references found.
 
 - Bootstrap writes one report at the launch handover's taskReportPath and states that exact path on the report's first line. [3]
 
+
+
 - The permitted surfaces are the five setup tools plus read-only context_packet, server_info and read_ar_files and native state reads; the report's sections and state fields come from the Bootstrap report template. [6]
+
 
 - Bootstrap starts no role and messages no one; it asks the developer in its own chat and routes no setup finding through a task transaction. [15]
 
@@ -150,3 +153,4 @@ No meaningful cross-repo references found.
 - The generator checks this declared package copy against canonical skills. [14]
 
 - The manifest declares free-agent altitude, eight requested tool IDs and three operations. Its tool requests omit role_message, matching the Bootstrap role, which messages no role agent. [8]
+- Bootstrap uses read_ar_files to name governing cards and recorded rules. It opens the files with its own tools under the existing read-only authority. [19]

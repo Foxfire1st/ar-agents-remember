@@ -38,6 +38,8 @@ Since MIK-R09 the bundle also binds `knowledge_gate=KnowledgeGate()` (`applicati
   when `HEAD` is unconverted. No production closeout caller of the retained phase helpers was found by the production AST/reference census with CLI and declared entry-point inspection;
   adapter composition does not establish a closeout quality-phase run.
 
+The default bundle binds `file_briefs` to `_file_briefs_problem`. The callback takes the selected memory root, paired code and coordination root. It requests a full writer refresh and returns any problem text as an advisory.
+
 ### Conventions
 
 Keep imports of providers and memory_quality at this composition boundary. Worktree modules consume protocols from worktrees.services; they do not locate those packages dynamically or construct fallback implementations.
@@ -76,7 +78,10 @@ supply `LeafAgentArchive(config)`; a bundle built without it reports `not-bound`
 
 Inherited numbered findings retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
 
+
+
 - Default worktree services retain converted validation, crossing and gate ports without prepared continuation/certification adapters. [14]
+
 
 
 ### Docs References
@@ -90,7 +95,10 @@ External domain documentation is not configured.
 The cited source establishes the current contracts and boundaries described above. Source verification is documentation evidence, not acceptance of the implementation.
 
 - Provider translation/delegation [2]
+
+
 - Memory-rail and memory-quality adapters [3]
+
 
 - The citation guard delegates terminal namespace protection. [4]
 
@@ -99,6 +107,8 @@ The cited source establishes the current contracts and boundaries described abov
 
 
 - The default bundle composes the declared worktree services, including the knowledge validator with its base converter and the knowledge crossing. [11]
+
+
 
 
 - The default bundle's MIK-R09 binding: the mandatory gate's port adapter. [6]
@@ -114,7 +124,9 @@ The cited source establishes the current contracts and boundaries described abov
 
 
 
+
 - The default bundle's MIK-R25 binding: the review-artifact archive hook. [8]
+
 
 - The canonical binding owner installs the explicit service bundle. [9]
 
@@ -125,3 +137,5 @@ The cited source establishes the current contracts and boundaries described abov
 No separate cross-repository protocol is established by this file. The configured cross-repository allowance is empty; no external source is relied upon here.
 
 No cross-repository evidence is required for these file-local claims.
+
+- The bound file-brief callback refreshes the selected writer's memory scope and returns any advisory from the refresh. [16]

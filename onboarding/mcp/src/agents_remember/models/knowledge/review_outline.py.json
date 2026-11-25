@@ -1,13 +1,31 @@
 {
   "path": "mcp/src/agents_remember/models/knowledge/review_outline.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3ee07845c4e4643bd3533516718c6d5864c8a964",
+        "content": "sha256:09fb50a4a2e68f982e663dc23c7752753d007344eeabea1635ddeeaf7bfb3cdc",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-CPG11V",
+      "invariant": "INV-TRMMZA",
+      "origin": {
+        "handoffEntry": "L3-W1-08",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Documents explicit unknown role and model for indexed candidates without attribution.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Members pair selector identity with join/leave membership",
       "targets": [
         {
           "anchor": {
-            "blob": "7e24140649ed6b8694133a25702f2cd0ac201e5c",
+            "blob": "3ee07845c4e4643bd3533516718c6d5864c8a964",
             "content": "sha256:8c256f6084e026691d90502512322865d4af158f42b70c01f064a05d566fd5f6",
             "locator": {
               "kind": "symbol",
@@ -19,12 +37,12 @@
       ]
     },
     "2": {
-      "note": "Families carry title, change and ordered members",
+      "note": "Family rows carry title, change and members in the supplied order.",
       "targets": [
         {
           "anchor": {
-            "blob": "7e24140649ed6b8694133a25702f2cd0ac201e5c",
-            "content": "sha256:9061a9f3e36e3731a9cf76eff9e1710c1c901ffa5c16030424cc312150a2beb9",
+            "blob": "3ee07845c4e4643bd3533516718c6d5864c8a964",
+            "content": "sha256:4462185a4a6c2e6f5960d93e3ef9f91f742250c41a1de57972c03f407eab5669",
             "locator": {
               "kind": "symbol",
               "name": "ReviewOutlineFamily"
@@ -39,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e24140649ed6b8694133a25702f2cd0ac201e5c",
+            "blob": "3ee07845c4e4643bd3533516718c6d5864c8a964",
             "content": "sha256:dd986d2c96aa968a9ae1b4907f22b090e3b33ec128eeab659839c0d1d8d9c90d",
             "locator": {
               "kind": "symbol",
@@ -55,7 +73,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e24140649ed6b8694133a25702f2cd0ac201e5c",
+            "blob": "3ee07845c4e4643bd3533516718c6d5864c8a964",
             "content": "sha256:4147cb8d92ef0df9eb88fac6ad2526e4b011df951fdd9e975c37ab9ec4f36a03",
             "locator": {
               "kind": "symbol",
@@ -67,14 +85,33 @@
       ]
     },
     "5": {
-      "note": "Every family, member and invariant outline row carries a required ReviewOutlineMeaning.",
+      "note": "Family, member and invariant rows each carry the recorded meaning projection.",
       "targets": [
         {
           "anchor": {
-            "blob": "7e24140649ed6b8694133a25702f2cd0ac201e5c",
-            "content": "sha256:e116af9fd6b95c9b9fda221994e96dbb028bff201e9a969bb77273f6c2f313a4",
+            "blob": "3ee07845c4e4643bd3533516718c6d5864c8a964",
+            "content": "sha256:4b6e9a7d13c31039c80249ac98731c21e06616015faf201c4c7fc87273f4a0e0",
             "locator": {
-              "kind": "file"
+              "end": 66,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Candidate revision state and writer travel in a separate outline shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ee07845c4e4643bd3533516718c6d5864c8a964",
+            "content": "sha256:644bda6910f1fea713f4d08808fc64beefbaad49f5aa4b065cc7ffa17bdc4ec5",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 30
             }
           },
           "kind": "code"

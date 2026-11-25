@@ -151,8 +151,34 @@
       ]
     },
     "3": {
-      "note": "The finalizer and reopen resolve an unnamed leaf through the same helper.\n\nAnchor: `_folder_parent` `_reopen_master_path`",
+      "note": "The finalizer and reopen resolve an unnamed leaf through the same helper.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:f0f80037ed6b27ed55c27287495e1f6316b673120cc9900124efa61a89b1a260",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 169
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "55752b049b88124a221620b663ee036c825d85ae",
+            "content": "sha256:d546a0f7bf88067270d5f5275480d80245749402682caf8f9cc10587271e7b00",
+            "locator": {
+              "end": 699,
+              "kind": "line_range",
+              "start": 691
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
@@ -166,34 +192,10 @@
         },
         {
           "anchor": {
-            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
-            "content": "sha256:f798f8b474c24ccf0049bcc21a17d966f51f6bb4cb2afe7b876f5b82d3285be8",
+            "blob": "55752b049b88124a221620b663ee036c825d85ae",
+            "content": "sha256:386cb1530c8942a8f910ba28b8d34f60d4fd575715873cd83fc6a4d9aa02b3c8",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/reopen.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
-            "content": "sha256:f0f80037ed6b27ed55c27287495e1f6316b673120cc9900124efa61a89b1a260",
-            "locator": {
-              "kind": "symbol",
-              "name": "_folder_parent"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
-            "content": "sha256:d546a0f7bf88067270d5f5275480d80245749402682caf8f9cc10587271e7b00",
-            "locator": {
-              "kind": "symbol",
-              "name": "_reopen_master_path"
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },

@@ -32,7 +32,7 @@ the table through `models.tools.tool_answer` and compare it with the live regist
   `test_no_built_row_names_the_landed_l110` and `test_no_row_names_l109` keep a row from claiming a leaf that has
   landed, and `test_l109_shaped_rows_are_the_table_rows` keeps the shaped rows the table's own rows.
 - **Largest production.** `L109LargestProductionTests` requires the largest `read_ar_files`, `knowledge_read` and
-  `knowledge_diff` answers to be produced by the operation and pinned, with `_pinned()` reading the pinned case.
+  `knowledge_diff` answers to be produced by the operation and pinned, with `_pinned()` reading the pinned case. The file-reader case checks the twenty-row named wire result within its bound and compares the bytes returned by the producer with the pinned artifact.
 
 ### Conventions
 
@@ -46,16 +46,18 @@ table is caught.
 
 ## Evidence
 
-- The table covers every registered tool with no extras and each task-document row covers every operation. [8]
-- The three largest answers are operation-produced and pinned. [9]
+- The table covers every registered tool with no extras and each task-document row covers every operation. Anchor: `ToolAnswerTableTests` [8]
+- The three largest answers are operation-produced and pinned. Anchor: `L109LargestProductionTests` [9]
 
 - Table construction retains each row's fields, uses, cases, bound and interim ownership. [1]
 
 - Cases are checked against missing uses, extra fields and bounds. [2]
 
-- An explicitly over-long log path becomes its exact length and digest. [3]
+- An explicitly over-long log path becomes its exact length and digest. Anchor: `ToolAnswerLogTests.test_overlong_path_shortens_to_length_and_digest` [3]
 - Produced install answers read the sandbox MCP authority, without an XDG user-settings precondition. [4]
 
 - The delivery observer patches record_tool_completed and compares delivered tokens with returned and logged counts. [6]
 
 - Ordinary and largest install fixtures pin copiedFiles=15 and createdDirs=42/41 as projection-equality fixtures under the existing answer bounds. [7]
+
+- The mounted file-reader artifact check retains twenty rows, the response bound and exact pinned bytes. [12]

@@ -150,16 +150,16 @@
       ]
     },
     "15": {
-      "note": "The lane this module is registered in, so the fail-closed manifest admits it. Source caption: \"mcp/tests/test_instrument_discipline.py\"",
+      "note": "The architecture-fitness lane selects mcp/tests/test_instrument_discipline.py.\n\nAnchor: `mcp/tests/test_instrument_discipline.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
             "content": "sha256:ee4eb7586ba07eecc385389cc326ab1d5410e536abb37587aa94612e2f21128e",
             "locator": {
-              "end": 800,
+              "end": 819,
               "kind": "line_range",
-              "start": 800
+              "start": 819
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

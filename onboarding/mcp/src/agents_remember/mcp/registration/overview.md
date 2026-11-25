@@ -12,7 +12,10 @@ Ordinary registration declares payload handlers lazily through registration.lazy
 
 ## Hot Path Summary
 
-MIK-R109: core registration removes `resolve_context`; `context_packet` advertises roots/task/actions/build/pair, not the full resolver blocks. `read_ar_files` accepts up to twenty string paths and returns knowledge locations, not document text; `refresh` is absent from the advertised schema but any supplied value reaches `argument-removed`, as do object-form entries. Knowledge registration names paged records and whole comparison reports. `create_server` applies every tool’s annotation from `mcp/read_only.py` after the registrars, refusing unlisted names. `read_ar_files`/`knowledge_read` are marked true; the freshness-capable context and report/capture-capable diff are false.
+The read_ar_files registration describes a bounded short brief for eligible paths. The read-only tool can name source, card and overview locations and carry rule text in a fuller reply. Compact rows keep each path and can give applicable existence, card status and a brief pointer with saved freshness. The description explains covering-write renewal, the refresh condition and the writer's report when refresh cannot proceed. The knowledge_read tool keeps its record naming and separate writers view.
+
+
+MIK-R109: core registration removes `resolve_context`; `context_packet` advertises roots/task/actions/build/pair, not the full resolver blocks. `read_ar_files` accepts up to twenty string paths and can return knowledge locations and rule text as space permits. The document bodies stay in their files; `refresh` is absent from the advertised schema but any supplied value reaches `argument-removed`, as do object-form entries. Knowledge registration names paged records and whole comparison reports. `create_server` applies every tool’s annotation from `mcp/read_only.py` after the registrars, refusing unlisted names. `read_ar_files`/`knowledge_read` are marked true; the freshness-capable context and report/capture-capable diff are false.
 
 The current ordinary source has 44 public names, including the mounted user_settings_init, explainer_control and citation_note_revision. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action and the `repository-default` sync source, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn.
 
@@ -189,6 +192,8 @@ The memory family extends the existing `citation_fix` declaration with flat `mod
 
 
 
+The mounted `knowledge_read` registration describes the `writers` view as per-writer aggregates with revision counts and a complete report path. Record rows still carry IDs, kinds, states and locations.
+
 ## Evidence
 
 - \[7] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol register_knowledge_tools
@@ -223,7 +228,10 @@ The memory family extends the existing `citation_fix` declaration with flat `mod
 
 - One registered citation operation forwards the extended signature. [42]
 [1] mcp/src/agents_remember/mcp/registration/tasks.py — symbol lifecycle_finalize_task
+
+
 - Current single literal PUBLIC_TOOLS contains 44 ordinary public names, including mounted `user_settings_init`, `explainer_control` and `citation_note_revision`, and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The retained base export is the same roster object. [10]
+
 - Current composed PUBLIC_TOOLS declares 44 ordinary names; the 41-name predecessor membership is historical. This is source declaration only, not runtime advertisement or execution. [29]
 [2] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 95-97
 [3] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 90-99
@@ -231,18 +239,24 @@ The memory family extends the existing `citation_fix` declaration with flat `mod
 [5] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 89-91
 [6] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check
 [7] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol register_knowledge_tools
-[9] mcp/src/agents_remember/mcp/tools/base.py — symbol _tool_payload
+
+
+- The shared MCP adapter declares _tool_payload and forwards the whole tool result, optional projection and optional fitter into response completion. [9]
+
 [10] mcp/src/agents_remember/models/tools/public_roster.py — symbol PUBLIC_TOOLS; mcp/src/agents_remember/mcp/tools/base.py — symbol __all__
 [12] mcp/src/agents_remember/application/task_docs/task_ref.py — symbol TaskRef
 [13] mcp/src/agents_remember/models/closeout/input.py — symbol CloseoutMessageInput; mcp/src/agents_remember/models/closeout/input.py — symbol CloseoutInvalidField
 [14] mcp/src/agents_remember/mcp/registration/worktrees.py — lines 32-37
 [17] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol register_knowledge_tools
-[22] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_read; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_diff; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check
 [26] mcp/src/agents_remember/mcp/registration/__init__.py — symbol TOOL_REGISTRARS
 [29] mcp/src/agents_remember/models/tools/public_roster.py — code file
 [31] mcp/src/agents_remember/mcp/registration/capsule_serving.py — lines 69-116; mcp/src/agents_remember/mcp/registration/capsule_serving.py — lines 126-183
 [32] mcp/src/agents_remember/mcp/registration/skills_extension.py — lines 133-214; mcp/src/agents_remember/mcp/registration/skills_extension.py — lines 235-294
 - \[10] mcp/src/agents_remember/models/tools/public_roster.py — symbol PUBLIC_TOOLS; mcp/src/agents_remember/mcp/tools/base.py — symbol __all__ The root PLR0913 exception supports the flat MCP registration signatures; it is not itself the PUBLIC_TOOLS or __all__ declaration. [11]
-- \[22] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_read; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_diff; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check [23]
+- \ mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_read; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_diff; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check [23]
 
 - The ordered ordinary registrar tuple includes explainer control, and the same server adds the bound explainer surface only for a launch that bound it as an explainer seat. [41]
+
+
+
+- The mounted knowledge tool registrar delegates read, diff, integrity and writing to their distinct registrations. [22]

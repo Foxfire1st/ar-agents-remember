@@ -107,16 +107,16 @@
       ]
     },
     "24": {
-      "note": "The lane manifest registers this module in unit-regression. The lifecycle catalog names it as a consumer of `_user_settings_guard.py` and the Node package-lock fixture.",
+      "note": "The unit-regression lane selects `mcp/tests/test_review_final_output_receipt.py`. The lifecycle catalog lists `mcp/tests/test_review_final_output_receipt.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
             "content": "sha256:67f58c58dbc55122e84f30cab52617992ecf9b03d80f0738288afe38aac190bf",
             "locator": {
-              "end": 491,
+              "end": 505,
               "kind": "line_range",
-              "start": 491
+              "start": 505
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -124,12 +124,12 @@
         },
         {
           "anchor": {
-            "blob": "727966894e1eff97fab8bb6bf26931dc0d1fd092",
-            "content": "sha256:67f58c58dbc55122e84f30cab52617992ecf9b03d80f0738288afe38aac190bf",
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
+            "content": "sha256:1febbc651081272e104887b243b22e5ee8e0fe50477c4dbef664a7d7e8924c86",
             "locator": {
-              "end": 662,
+              "end": 678,
               "kind": "line_range",
-              "start": 662
+              "start": 65
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -137,12 +137,12 @@
         },
         {
           "anchor": {
-            "blob": "727966894e1eff97fab8bb6bf26931dc0d1fd092",
-            "content": "sha256:67f58c58dbc55122e84f30cab52617992ecf9b03d80f0738288afe38aac190bf",
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
+            "content": "sha256:e3b851a69e900647a791cca0066794ebdb3636732cf117a5aadfd0717450708e",
             "locator": {
-              "end": 3069,
+              "end": 3123,
               "kind": "line_range",
-              "start": 3069
+              "start": 2510
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

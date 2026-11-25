@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/cli/product_messages.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "babab7b807a90ce171ce109978a001eeed20e81d",
+        "content": "sha256:fb2bea01e21e991efab9a6fdf58da8ac7872de1512e321b115f536fe766870ea",
+        "locator": {
+          "kind": "symbol",
+          "name": "send_product_message"
+        }
+      },
+      "id": "RLZ-0CMYDV",
+      "invariant": "INV-9Z6T69",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 9–10",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Uses the product identity and the ordinary delivery or held-message route.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The sender uses the shared filing, delivery and hold steps with the product identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "babab7b807a90ce171ce109978a001eeed20e81d",
+            "content": "sha256:fb2bea01e21e991efab9a6fdf58da8ac7872de1512e321b115f536fe766870ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "send_product_message"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

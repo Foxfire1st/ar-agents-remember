@@ -63,8 +63,8 @@
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:fcda0ef88d408509dffd590094d9147e49e38c059acd65bdd20c4857078fe2c1",
             "locator": {
               "kind": "file"
             },
@@ -75,41 +75,16 @@
       ]
     },
     "4": {
-      "note": "The external-memory commit owner runs the refresh and the memory/ledger commits; it no longer combines a memory-quality gate result.\n\nAnchor: \"def external_closeout_commits(\"; \"def combine_memory_quality(\"",
+      "note": "External closeout publishes or reuses a memory-content commit and refreshes the disposable ledger cache separately.",
       "targets": [
         {
           "anchor": {
-            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
-            "content": "sha256:b309983d7bf830a9b76b8a571c2ab9743d19a1361c927d2c6276cdc0f215ca47",
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "content": "sha256:6423e8939c68890285aa49a61eae3833909fefffc40aed63c8f3e52ec83090dc",
             "locator": {
-              "end": 73,
+              "end": 135,
               "kind": "line_range",
-              "start": 73
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "10bb6161832a6940af1f8770935ba0e8bcd36f96",
-            "content": "sha256:93b86960f817975b4b69315def901350bad2575115dedf42adaf9b7a4aaf5468",
-            "locator": {
-              "end": 56,
-              "kind": "line_range",
-              "start": 56
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
-            "content": "sha256:64b3a0ab502d4792d8af8c0305da95a427c5130fe0086c260147bbd6bf980c10",
-            "locator": {
-              "end": 66,
-              "kind": "line_range",
-              "start": 66
+              "start": 112
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -122,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
+            "blob": "83ac3348ea2e987b6e16f37ea49e959dc9e9a9f1",
             "content": "sha256:8385b407d04ef3482b301045b0cabb8d93f69f6102d0b3c2c13d1b52ceceffb6",
             "locator": {
               "end": 134,
@@ -135,7 +110,7 @@
         },
         {
           "anchor": {
-            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
+            "blob": "83ac3348ea2e987b6e16f37ea49e959dc9e9a9f1",
             "content": "sha256:7c22d91e6252549ff5ff5b8f63dbc7bd68f9eb0498b32b119f296e52cc962e5d",
             "locator": {
               "end": 140,
@@ -148,7 +123,7 @@
         },
         {
           "anchor": {
-            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
+            "blob": "83ac3348ea2e987b6e16f37ea49e959dc9e9a9f1",
             "content": "sha256:5d5d779dd74b12741f4568c99eafe0b34ef4537996a3e158236c205e5da99841",
             "locator": {
               "end": 124,
@@ -162,16 +137,16 @@
       ]
     },
     "6": {
-      "note": "The injected service bundle keeps memory quality and certification continuation as distinct ports.",
+      "note": "The service bundle carries a memory-quality port and a separate optional port for certification rail definitions.",
       "targets": [
         {
           "anchor": {
-            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
-            "content": "sha256:a22230d4939b490a9a8a620bea45791e3feed11a85e2ca29164e8751e0942ac9",
+            "blob": "83ac3348ea2e987b6e16f37ea49e959dc9e9a9f1",
+            "content": "sha256:8bd788b545abf9cf8fac90f2a6d4d317a674decd8560962592353b00a552af47",
             "locator": {
-              "end": 366,
+              "end": 390,
               "kind": "line_range",
-              "start": 360
+              "start": 378
             },
             "path": "mcp/src/agents_remember/worktrees/services.py"
           },

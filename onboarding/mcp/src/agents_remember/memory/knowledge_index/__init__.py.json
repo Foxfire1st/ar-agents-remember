@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "020ab9577b41d0cc406ad580d3f840d5d606458d",
+            "blob": "77645306ed2222f9c6634abdb7e1307e3f7cdb70",
             "content": "sha256:af262f382ce5480f3ad4aa5912d578dc41f8bc83507153a56a80ff1511fe25f5",
             "locator": {
               "end": 19,
@@ -24,10 +24,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "020ab9577b41d0cc406ad580d3f840d5d606458d",
-            "content": "sha256:d2ca85982d559c355cd921c36ab3ddc9f4661ff11a85e71a54f31821f8950229",
+            "blob": "77645306ed2222f9c6634abdb7e1307e3f7cdb70",
+            "content": "sha256:4476ec1ae1f55eb38290a1336591f3873687bfa93b16c53869eb60c7eaa90c33",
             "locator": {
-              "end": 89,
+              "end": 92,
               "kind": "line_range",
               "start": 23
             }
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
             "content": "sha256:c77b2e30ff8713de34339f4acfa6ffd2a3426edd3f10eb9b47e3a1a6f8ef211a",
             "locator": {
               "kind": "symbol",
@@ -53,24 +53,41 @@
         },
         {
           "anchor": {
-            "blob": "020ab9577b41d0cc406ad580d3f840d5d606458d",
+            "blob": "77645306ed2222f9c6634abdb7e1307e3f7cdb70",
             "content": "sha256:f33e496c3db55628e5968b929d7cc7b5e5577826d87f8893bf449ab714804b4b",
             "locator": {
-              "end": 56,
+              "end": 57,
               "kind": "line_range",
-              "start": 49
+              "start": 50
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "020ab9577b41d0cc406ad580d3f840d5d606458d",
+            "blob": "77645306ed2222f9c6634abdb7e1307e3f7cdb70",
             "content": "sha256:f91447a425b1cfb8eca83dcc605004b0db75e36c068d690fea95a0ba24be03ec",
             "locator": {
-              "end": 88,
+              "end": 91,
               "kind": "line_range",
-              "start": 85
+              "start": 88
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The public lookup types include record standing and its writer projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77645306ed2222f9c6634abdb7e1307e3f7cdb70",
+            "content": "sha256:88f01fa45e877b0f7ef34969bd0bc65ab2354c59171b2b19413bb21ce5f1325e",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 48
             }
           },
           "kind": "code"

@@ -4,8 +4,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
-        "content": "sha256:fe269adba5522b5fc3243b19d52c6a9a2796d487fc613bd4b0d2d33f88ff1fca",
+        "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
+        "content": "sha256:f869e2889b096740d90a5f0ab8611334fbed1bf70e300f89137d188643eb311d",
+        "locator": {
+          "end": 111,
+          "kind": "line_range",
+          "start": 103
+        }
+      },
+      "id": "RLZ-3Y3JWS",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Advertises which fields apply to compact rows and reports writer deferral when a saved brief cannot be refreshed.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
+        "content": "sha256:a5102a8f2f33abb478f24321f60f0b90518f4453a5e10852023ddcc17a06f452",
         "locator": {
           "kind": "file"
         }
@@ -21,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
-        "content": "sha256:77aaf76054d694febd932671143e3a4d603210f203a54a1c1c7999e4562dccdd",
+        "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
+        "content": "sha256:f382639fd4787b94b48a9c948e12fc0d831544d1a5495c7e67900fa959480820",
         "locator": {
           "kind": "symbol",
           "name": "_register_orientation_tools"
@@ -44,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
             "content": "sha256:7826c72a7a27a46f2dff03a535a1e576667459cad0ad1b66aac3c83ab7df91f0",
             "locator": {
               "kind": "symbol",
@@ -60,11 +79,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
-            "content": "sha256:77aaf76054d694febd932671143e3a4d603210f203a54a1c1c7999e4562dccdd",
+            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
+            "content": "sha256:f382639fd4787b94b48a9c948e12fc0d831544d1a5495c7e67900fa959480820",
             "locator": {
-              "kind": "symbol",
-              "name": "_register_orientation_tools"
+              "end": 120,
+              "kind": "line_range",
+              "start": 72
             }
           },
           "kind": "code"
@@ -76,13 +96,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
-            "content": "sha256:c7655e0400019bf4eed28ab2247d04ba6fe6d4707d672bcb3e4d8e36138b8450",
+            "blob": "199e11defd0b76b05c36376eba08000fef48412e",
+            "content": "sha256:3b47ad62623da9756613b04e68bf45b2d7ed8b3a67dd34e6e4341d2c59438040",
             "locator": {
-              "kind": "symbol",
-              "name": "read_ar_files_payload"
+              "end": 62,
+              "kind": "line_range",
+              "start": 26
             },
             "path": "mcp/src/agents_remember/mcp/tools/read_files.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:02bd16b49b3267737a5fa3c7adc4a8c6a10c39e827867488105fe45600c770b4",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:18618657c54185fb816cb0b325c953a857d92cc319eec414d45858f2a4372952",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/__init__.py"
           },
           "kind": "code"
         }
@@ -93,7 +140,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
             "content": "sha256:659f44a97ee634fa227884e9e5816bf543fbfc009d3d0da30be6e482b4e63904",
             "locator": {
               "end": 150,
@@ -110,7 +157,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
             "content": "sha256:dcb834f03fccd05554205c7589796d4f8d2da74c9ba8e718c9dfd370cb513481",
             "locator": {
               "kind": "symbol",
@@ -122,15 +169,16 @@
       ]
     },
     "6": {
-      "note": "`_register_orientation_tools` declares the read-only orientation tools `context_packet` and `read_ar_files` and scrubs the removed `refresh` argument from the advertised schema.",
+      "note": "`_register_orientation_tools` declares `context_packet` and `read_ar_files` and removes the obsolete `refresh` argument from the advertised schema.",
       "targets": [
         {
           "anchor": {
-            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
-            "content": "sha256:77aaf76054d694febd932671143e3a4d603210f203a54a1c1c7999e4562dccdd",
+            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
+            "content": "sha256:f382639fd4787b94b48a9c948e12fc0d831544d1a5495c7e67900fa959480820",
             "locator": {
-              "kind": "symbol",
-              "name": "_register_orientation_tools"
+              "end": 120,
+              "kind": "line_range",
+              "start": 72
             }
           },
           "kind": "code"
@@ -142,7 +190,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
             "content": "sha256:7826c72a7a27a46f2dff03a535a1e576667459cad0ad1b66aac3c83ab7df91f0",
             "locator": {
               "kind": "symbol",
@@ -158,7 +206,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
             "content": "sha256:4f8406d88a585b0f3f3c9f656cb6f58e31724246d0a9f20578e79d354bcc66c2",
             "locator": {
               "kind": "symbol",
@@ -174,7 +222,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
             "content": "sha256:08a3cac0c3fc80034bcf5e1347273b2005f1b3be7af895b9bb2eb027bdd53df0",
             "locator": {
               "end": 69,

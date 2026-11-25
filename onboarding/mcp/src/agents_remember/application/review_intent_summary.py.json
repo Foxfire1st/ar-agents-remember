@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "381116756a49c43ba3161b123d2f65708d31334c",
-        "content": "sha256:07b010d39b737ca0f657594d827cc59ed1d6a3a42cd6d1c6e5fb0052acc6565f",
+        "blob": "b7675b1ab0f4daa9a594640fa1a2d23de8c6da85",
+        "content": "sha256:8ecedb7d38dd3475e74e7ffd37ba0d5f5daff9c7d4b4ea5bc6517e7f586e6f8d",
+        "locator": {
+          "end": 90,
+          "kind": "line_range",
+          "start": 79
+        }
+      },
+      "id": "RLZ-0TG09V",
+      "invariant": "INV-WCEGX72X",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-WCEGX72X",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Only authored statements and guarantees govern meaning equality for the selected revision-head counts.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7675b1ab0f4daa9a594640fa1a2d23de8c6da85",
+        "content": "sha256:5d675151b55516f2dfdd01303f92638a1a80e6516f28f9535e93fb78f770057d",
         "locator": {
           "kind": "symbol",
           "name": "_classify"
@@ -20,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "381116756a49c43ba3161b123d2f65708d31334c",
-        "content": "sha256:f6fae8068874ff76274d2cc2a0bc3c6d689ce10a0475c460a7390cc9d6b6ab0c",
+        "blob": "b7675b1ab0f4daa9a594640fa1a2d23de8c6da85",
+        "content": "sha256:50c0f4871987e80819ec8ded8230148ef7af5bb2481eba7dd621bc6e17277ddf",
         "locator": {
           "end": 407,
           "kind": "line_range",
@@ -38,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "381116756a49c43ba3161b123d2f65708d31334c",
-        "content": "sha256:07b010d39b737ca0f657594d827cc59ed1d6a3a42cd6d1c6e5fb0052acc6565f",
+        "blob": "b7675b1ab0f4daa9a594640fa1a2d23de8c6da85",
+        "content": "sha256:5d675151b55516f2dfdd01303f92638a1a80e6516f28f9535e93fb78f770057d",
         "locator": {
           "kind": "symbol",
           "name": "_classify"
@@ -55,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "381116756a49c43ba3161b123d2f65708d31334c",
+        "blob": "b7675b1ab0f4daa9a594640fa1a2d23de8c6da85",
         "content": "sha256:674871b6d55c8ca9bca48c6646bfb18bc2d4803efe437858e39857762981bb31",
         "locator": {
           "kind": "symbol",
@@ -73,8 +92,8 @@
     },
     {
       "anchor": {
-        "blob": "381116756a49c43ba3161b123d2f65708d31334c",
-        "content": "sha256:f1ca2059e256eb7c1449aa1e27de969c2918988c46fbc1d5bab614d0cce4e3a6",
+        "blob": "b7675b1ab0f4daa9a594640fa1a2d23de8c6da85",
+        "content": "sha256:68b69388f160000e58daab7f238f27a473c0f588559c195dadd0dd4d37883959",
         "locator": {
           "kind": "symbol",
           "name": "_STATEMENT_FIELDS"
@@ -95,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "381116756a49c43ba3161b123d2f65708d31334c",
+            "blob": "b7675b1ab0f4daa9a594640fa1a2d23de8c6da85",
             "content": "sha256:cb35971cc2b261543c2446dce31e214215baa50c1913d03b142df0ae02abc208",
             "locator": {
               "end": 180,
@@ -112,7 +131,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "381116756a49c43ba3161b123d2f65708d31334c",
+            "blob": "b7675b1ab0f4daa9a594640fa1a2d23de8c6da85",
             "content": "sha256:4952bc51a66691f49128ad39ef9b181b7a5147702173362b16eca45946208c54",
             "locator": {
               "end": 241,
@@ -125,16 +144,15 @@
       ]
     },
     "18": {
-      "note": "Compared content fields separate authored wording/status from provenance/display version.\n\nAnchor: \"# The invariant revision fields compared between two heads: the authored statement and its record\"",
+      "note": "Content comparison uses authored invariant fields or the joint family guarantee.",
       "targets": [
         {
           "anchor": {
-            "blob": "381116756a49c43ba3161b123d2f65708d31334c",
-            "content": "sha256:70b21e3337bae97dc5fd3495b88a3b375ecefd26a79db3812c71c14d345ad2d4",
+            "blob": "b7675b1ab0f4daa9a594640fa1a2d23de8c6da85",
+            "content": "sha256:68b69388f160000e58daab7f238f27a473c0f588559c195dadd0dd4d37883959",
             "locator": {
-              "end": 90,
-              "kind": "line_range",
-              "start": 78
+              "kind": "symbol",
+              "name": "_STATEMENT_FIELDS"
             }
           },
           "kind": "code"
@@ -146,7 +164,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "381116756a49c43ba3161b123d2f65708d31334c",
+            "blob": "b7675b1ab0f4daa9a594640fa1a2d23de8c6da85",
             "content": "sha256:b4ee51e545b6678437aa6dd1db685033f6b392540745a86484ddc39c2d5334c0",
             "locator": {
               "end": 268,
@@ -159,16 +177,15 @@
       ]
     },
     "20": {
-      "note": "One tally distinguishes counted successor, relationship-only and unequal ambiguous heads.\n\nAnchor: \"def _tally(before: _KindSide, after: _KindSide) -> _Tally:\"",
+      "note": "The tally separates counted successors, relationship-only changes and different ambiguous heads.",
       "targets": [
         {
           "anchor": {
-            "blob": "381116756a49c43ba3161b123d2f65708d31334c",
-            "content": "sha256:b4f3d2d5b99c6d900b298ba8bd70d0ad5065f7c81728a8c1018277aedc44c715",
+            "blob": "b7675b1ab0f4daa9a594640fa1a2d23de8c6da85",
+            "content": "sha256:5d675151b55516f2dfdd01303f92638a1a80e6516f28f9535e93fb78f770057d",
             "locator": {
-              "end": 407,
-              "kind": "line_range",
-              "start": 364
+              "kind": "symbol",
+              "name": "_classify"
             }
           },
           "kind": "code"

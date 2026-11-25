@@ -209,11 +209,11 @@
       ]
     },
     "6": {
-      "note": "The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_capsule_experiment_install.py` as an exact consumer.",
+      "note": "The lifecycle catalog lists `mcp/tests/test_capsule_experiment_install.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "727966894e1eff97fab8bb6bf26931dc0d1fd092",
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
             "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
             "locator": {
               "end": 166,
@@ -226,12 +226,12 @@
         },
         {
           "anchor": {
-            "blob": "727966894e1eff97fab8bb6bf26931dc0d1fd092",
-            "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
+            "content": "sha256:5c9d7c62ef8ec1ae67994cf679b546ac22b30b0de1dc03fbfff24d48a263bf89",
             "locator": {
-              "end": 2573,
+              "end": 2611,
               "kind": "line_range",
-              "start": 2573
+              "start": 2510
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -240,11 +240,11 @@
       ]
     },
     "7": {
-      "note": "The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_capsule_experiment_install.py` as an exact consumer.",
+      "note": "The lifecycle catalog lists `mcp/tests/test_capsule_experiment_install.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "727966894e1eff97fab8bb6bf26931dc0d1fd092",
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
             "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
             "locator": {
               "end": 166,
@@ -257,12 +257,12 @@
         },
         {
           "anchor": {
-            "blob": "727966894e1eff97fab8bb6bf26931dc0d1fd092",
-            "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
+            "content": "sha256:5c9d7c62ef8ec1ae67994cf679b546ac22b30b0de1dc03fbfff24d48a263bf89",
             "locator": {
-              "end": 2573,
+              "end": 2611,
               "kind": "line_range",
-              "start": 2573
+              "start": 2510
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

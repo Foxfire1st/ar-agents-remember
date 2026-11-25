@@ -96,16 +96,16 @@
       ]
     },
     "13": {
-      "note": "The module's own unit-regression lane row; catalog membership selects evidence and does not establish execution.",
+      "note": "The unit-regression lane selects mcp/tests/test_task_projection.py. Execution evidence is recorded separately.\n\nAnchor: `mcp/tests/test_task_projection.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
             "content": "sha256:1e63282d454a81385c60d01480ef8f81c883423862b512a38619e46453b702f6",
             "locator": {
-              "end": 603,
+              "end": 617,
               "kind": "line_range",
-              "start": 603
+              "start": 617
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -242,16 +242,16 @@
       ]
     },
     "21": {
-      "note": "The module's own unit-regression lane row; catalog membership selects evidence and does not establish execution.",
+      "note": "The unit-regression lane selects mcp/tests/test_task_projection.py. Execution evidence is recorded separately.\n\nAnchor: `mcp/tests/test_task_projection.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
             "content": "sha256:1e63282d454a81385c60d01480ef8f81c883423862b512a38619e46453b702f6",
             "locator": {
-              "end": 603,
+              "end": 617,
               "kind": "line_range",
-              "start": 603
+              "start": 617
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

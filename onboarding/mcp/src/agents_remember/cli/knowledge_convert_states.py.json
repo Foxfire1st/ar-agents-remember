@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/cli/knowledge_convert_states.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8cf366a3dfdb3bd5a1d9c3a652ca1aa3f86deb20",
+        "content": "sha256:e1759148efc87bd89f1db4c22c96310a8a8a499dc90d47aa004140040f6d8c47",
+        "locator": {
+          "kind": "symbol",
+          "name": "_write_result"
+        }
+      },
+      "id": "RLZ-KFN4G7",
+      "invariant": "INV-69M737",
+      "origin": {
+        "handoffEntry": "L3-W1-07",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Publishes the full ASCII JSON result before the first memory write.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The command takes a named memory tree, task roots and an explicit apply option.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8cf366a3dfdb3bd5a1d9c3a652ca1aa3f86deb20",
+            "content": "sha256:d52e7ee463f152bfe31649bf147f359e7956c8aaa3c887045ab9055346f66568",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The command builds and reports a plan before an optional write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8cf366a3dfdb3bd5a1d9c3a652ca1aa3f86deb20",
+            "content": "sha256:db2f8b0a0a8810538fdebeb50788971c89a3d0fb9cfc5dacf01fc34f35fb3240",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

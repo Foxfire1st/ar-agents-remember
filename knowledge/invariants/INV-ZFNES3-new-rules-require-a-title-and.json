@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Invariant publication and display by builds that serve the KNO-R04 title contract. The cited tests exercise this rule where a regression could change a reader or lifecycle outcome."
+  },
+  "applicability": "Invariant publication and display by builds that serve the KNO-R04 title contract.",
+  "conditions": [
+    "New invariants require a one-line title of at most 80 characters.",
+    "A legacy untitled revision remains writable with a notice; the brief and short answer derive a display title from its first six statement words.",
+    "A title-only edit preserves the invariant revision."
+  ],
+  "exclusions": [
+    "The title has no effect on statement meaning, review identity or state/writer standing."
+  ],
+  "id": "INV-ZFNES3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "KNO-R04 evidence E07 and focused rule-title tests."
+      ],
+      "path": "kno-l4-w3-new-rules.json"
+    },
+    "handoffEntry": "KNO-R04@v1 rule 11",
+    "leaf": "261112-KNO-L4",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "New rules require a title and legacy rules without one can still be displayed and revised.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -42,12 +42,13 @@ Plans a converted/unconverted memory crossing from the actual three input trees 
   `markersNotMoved` for the report, never dropped silently (review R1 finding 9).
 - **Step 2, convert** every tree with the pinned version, and the own side's paired code commit for
   fallback cards (`_convert_sides`). A converted tree converts to itself.
-- **Step 3, merge** (`crossing.merge_trees`). Paths reserved for Git and their descendants are removed before the structural plan merges the three trees.
+- **Step 3, merge.** `merge_with_writers` merges authored fields separately from writer attribution. A retained revision keeps the selected side's stamp. A clean combination of both sides' authored edits uses product attribution with the supplied deterministic crossing time.
 - **Step 4, conflicts.** They are returned with their converted base, own and incoming bytes. The report
   names `recordConflictHistoryOwner`: the leaf's own ID, or on a master line `next_crossing_owner`, the
   `<task-id>-crossing-<n>` one past any existing crossing file of the task on any side. For a master line
-  with a conflicted record, the plan also opens that history file (`{crossing, closed: false, rows: []}`).
-  The managed transaction also opens history for a master whose structural merge pauses on a non-record content conflict. The Curator can write a resolution or confirmation while the history is open. The transaction closes the file in the merge commit.
+  with a conflicted record, the plan opens that history file when the product merge has not already supplied it (`{crossing, closed: false, rows: []}`).
+  `worktrees/knowledge_crossing.close_crossing_history` closes it in the merge commit. The row itself is
+  the curator's, written while resolving the record conflict.
 - **Step 5, validate**, is enforced where the merge is committed, not here. The managed sync's commit step
   runs `memory_commit_refusal` over the staged merge, with `GitBaseConverter` replacing the unconverted
   parent (review R1 finding 7).
@@ -92,7 +93,6 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 
-- The crossing result carries the alignment counts beside conflicts and cards. [14]
 
 
 - `_convert_sides` owns the current boundary described above. [12]
@@ -120,5 +120,9 @@ No meaningful cross-repo references found: the file reads and writes only the me
 No cross-repo boundary is crossed by this file.
 
 - - Step 1: the leaf's added no-impact markers become onboarding_trace rows, with full text in `markers` and sources bound to the own side's paired code commit; file and overview provenance have different source sets. [17]
-- - Steps 1-4 and the report: paired-code blobs are read before marker conversion; unreadable paired code raises the named `markers` failure rather than dropping source provenance. [20]
 - Current source delta inspected statically: Require paired-code marker provenance, distinguish overview history from future changed sets, and name fail-closed markers-step errors. [25]
+
+- The plan supplies product attribution to structural merging and keeps an existing crossing history document. [27]
+
+- The crossing result carries the alignment counts beside conflicts and cards. [14]
+- Steps 1-4 and the report: paired-code blobs are read before marker conversion; unreadable paired code raises the named `markers` failure rather than dropping source provenance. [20]

@@ -177,7 +177,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98cfe3dd544cbeb61461ffaba7de58541d847381",
+            "blob": "c7d85b5931a46d14bdb382b4c1831af93fa58eaf",
             "content": "sha256:bf5acec652c95bfd9f6bcd4a65b6552acfd85e5daaa3d61da73bdec1228bc8ec",
             "locator": {
               "end": 172,
@@ -190,7 +190,7 @@
         },
         {
           "anchor": {
-            "blob": "98cfe3dd544cbeb61461ffaba7de58541d847381",
+            "blob": "c7d85b5931a46d14bdb382b4c1831af93fa58eaf",
             "content": "sha256:1d6e7d0990e843d357c7d547d9a1a175a67b015180df4a504c907f1710f0bf9d",
             "locator": {
               "end": 174,
@@ -292,7 +292,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98cfe3dd544cbeb61461ffaba7de58541d847381",
+            "blob": "c7d85b5931a46d14bdb382b4c1831af93fa58eaf",
             "content": "sha256:1d089161607d90824fe59de64326c237bbf95a35d2fb36419072dbf0d13a02c2",
             "locator": {
               "end": 176,
@@ -305,12 +305,12 @@
         },
         {
           "anchor": {
-            "blob": "98cfe3dd544cbeb61461ffaba7de58541d847381",
+            "blob": "c7d85b5931a46d14bdb382b4c1831af93fa58eaf",
             "content": "sha256:6d4e408bb816f366df596be9bed03bb9fbd3b4a3e00dffae3150b874caa8b56b",
             "locator": {
-              "end": 311,
+              "end": 315,
               "kind": "line_range",
-              "start": 307
+              "start": 311
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },
@@ -318,7 +318,7 @@
         },
         {
           "anchor": {
-            "blob": "98cfe3dd544cbeb61461ffaba7de58541d847381",
+            "blob": "c7d85b5931a46d14bdb382b4c1831af93fa58eaf",
             "content": "sha256:54cd3c8190fb0392574c7a66f56c6795e7355449c00a2bd44457c3596a827db9",
             "locator": {
               "end": 175,
@@ -331,12 +331,12 @@
         },
         {
           "anchor": {
-            "blob": "98cfe3dd544cbeb61461ffaba7de58541d847381",
+            "blob": "c7d85b5931a46d14bdb382b4c1831af93fa58eaf",
             "content": "sha256:36ea23db1c3db012fc05f73163d4fa4440dbd8c79775eecb66063ec36bb1662b",
             "locator": {
-              "end": 314,
+              "end": 318,
               "kind": "line_range",
-              "start": 310
+              "start": 314
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },
@@ -798,7 +798,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98cfe3dd544cbeb61461ffaba7de58541d847381",
+            "blob": "c7d85b5931a46d14bdb382b4c1831af93fa58eaf",
             "content": "sha256:7797fce17a19d4ce6aa361624920dd63f12724edb7472c68660f80c5564acde2",
             "locator": {
               "kind": "symbol",
@@ -878,7 +878,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98cfe3dd544cbeb61461ffaba7de58541d847381",
+            "blob": "c7d85b5931a46d14bdb382b4c1831af93fa58eaf",
             "content": "sha256:e04927094ef5db07cd0f4474a9f0112e8387f8ac05e9141b7c77147e3e6406d8",
             "locator": {
               "end": 104,
@@ -891,7 +891,7 @@
         },
         {
           "anchor": {
-            "blob": "98cfe3dd544cbeb61461ffaba7de58541d847381",
+            "blob": "c7d85b5931a46d14bdb382b4c1831af93fa58eaf",
             "content": "sha256:019f86026d576c4883cbaf64efe1367850b80a41fb657d271442991d2fb6d4e0",
             "locator": {
               "end": 210,
@@ -904,7 +904,7 @@
         },
         {
           "anchor": {
-            "blob": "98cfe3dd544cbeb61461ffaba7de58541d847381",
+            "blob": "c7d85b5931a46d14bdb382b4c1831af93fa58eaf",
             "content": "sha256:4e77b2a1a88bc765ec36507e0e735caefa2e8b5fc79ab93ed78346ea10fddc65",
             "locator": {
               "end": 106,
@@ -962,7 +962,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
+            "blob": "5b7e751298ebcd50dae4f6724680aa5e48ed7568",
             "content": "sha256:bb9e4d7f72614b2c40a65b6ea61d5215136f91bcc3e9ecbc9290052804819ce0",
             "locator": {
               "kind": "symbol",
@@ -1072,7 +1072,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
+            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
             "content": "sha256:da66207966111f9ba7d9196396a13f7c5325ea40eed2fe489f1170ec78500d91",
             "locator": {
               "kind": "symbol",
@@ -1171,21 +1171,8 @@
       ]
     },
     "55": {
-      "note": "Code reviewState and memoryReviewState are independent persisted evidence lanes. Recorded rounds retain their kind and findings-remain facts for step-up counts; record-only checks add no try, and a memory result cannot reset passed code. Ordinary reads remain strict. The private launch-only fallback preserves malformed raw review evidence without making it a counted or accepted round; in-flight pre-rollout memory checks are not migrated.",
+      "note": "Code `reviewState` and the candidate’s pre-closeout `memoryReviewState` are independent persisted evidence lanes. Recorded rounds retain their kind and findings-remain facts for step-up counts; record-only checks add no try, and a memory result cannot reset passed code. Ordinary reads remain strict. The private launch-only fallback preserves malformed raw review evidence without making it a counted or accepted round; in-flight pre-rollout memory checks are not migrated.",
       "targets": [
-        {
-          "anchor": {
-            "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
-            "content": "sha256:739797bbe01cdc1ed505f627a4b3f8143ebdc152e4e1792c58c360ab40c11a8d",
-            "locator": {
-              "end": 332,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/tasks/route_review.py"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "f960a935d832cbf64b99d7e8ef97475006c2ded2",
@@ -1198,6 +1185,45 @@
             "path": "mcp/src/agents_remember/tasks/launch_review_read.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b7e751298ebcd50dae4f6724680aa5e48ed7568",
+            "content": "sha256:3d604efaab6a75d6970dccefc8c8cf10d144b80675fb8a945a35168ed1add23e",
+            "locator": {
+              "end": 312,
+              "kind": "line_range",
+              "start": 142
+            },
+            "path": "mcp/src/agents_remember/tasks/route_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "268fb78a4dd9640215b95691eb653e535db39358",
+            "content": "sha256:991f82b482bbe5b8174706650358272c4a65fe53069ffddf676f9d70d34b2609",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "268fb78a4dd9640215b95691eb653e535db39358",
+            "content": "sha256:f682a022160f36e9b08ef27945830cddde96f1d87c31fa42f791aa898204e58c",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 236
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -1206,7 +1232,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
+            "blob": "5b7e751298ebcd50dae4f6724680aa5e48ed7568",
             "content": "sha256:6ed63343af3afbd56bb16cd2f0f222463397202e9ab9d04f2f4d1e428a3fbf4b",
             "locator": {
               "kind": "symbol",
@@ -1223,12 +1249,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98cfe3dd544cbeb61461ffaba7de58541d847381",
-            "content": "sha256:99ae2ffaedb12ed191ec78b544ae2abccfa3f36500a279960afc4bfcf349c67a",
+            "blob": "c7d85b5931a46d14bdb382b4c1831af93fa58eaf",
+            "content": "sha256:8c6164a0da39267da6c2fb851f66d53a17040f5bf14b9a1cda540d0909dd944d",
             "locator": {
-              "end": 272,
+              "end": 268,
               "kind": "line_range",
-              "start": 261
+              "start": 259
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },
@@ -1236,12 +1262,12 @@
         },
         {
           "anchor": {
-            "blob": "98cfe3dd544cbeb61461ffaba7de58541d847381",
+            "blob": "c7d85b5931a46d14bdb382b4c1831af93fa58eaf",
             "content": "sha256:646814c90d5daa9fda4778ee2bdad1b002add88f6c64243cad57dc151fe69bf1",
             "locator": {
-              "end": 275,
+              "end": 279,
               "kind": "line_range",
-              "start": 264
+              "start": 268
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },
@@ -1368,6 +1394,40 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/tasks/master_sync.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "The persisted round distinguishes code and memory evidence and carries optional reviewed-tree and writer facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b7e751298ebcd50dae4f6724680aa5e48ed7568",
+            "content": "sha256:f9627f286b9dfa9a36436255389dc0c904f24312ce62f9d13a28b75939b1672d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRound"
+            },
+            "path": "mcp/src/agents_remember/tasks/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "62": {
+      "note": "Closeout records a memory review fact only when the memory review lane has no open findings and its last recorded round passes, carries a usable verdict reference, and names the exact pre-write memory tree. A later block leaves an earlier pass ineligible. An open finding withholds the fact even when the earlier passing round remains recorded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc31aafc47ebd1a0d8d17360af43ca54966abe82",
+            "content": "sha256:d22ffdf50b1d404388965867ce2f010b210b430bd30626f960f240f3cd3a06b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualifying_round"
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_fact_source.py"
           },
           "kind": "code"
         }

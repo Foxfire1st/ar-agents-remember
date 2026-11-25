@@ -351,7 +351,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "417ebaf9a63383080fa4e65b4a78376050b55121",
+            "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
             "content": "sha256:24721572f575894b915f5f8db78f5871a6688aae3dcadad1969af45942dc481b",
             "locator": {
               "kind": "symbol",
@@ -386,10 +386,11 @@
         {
           "anchor": {
             "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
-            "content": "sha256:f433c3c68677873c10e71d1164bd9fe87b5f8e54f93857c1c3288179bcecd59f",
+            "content": "sha256:7e716ac6584867289e6f76add9d128005371606599426f28da1e374d7f302eca",
             "locator": {
-              "kind": "symbol",
-              "name": "OnboardingTraceInputs"
+              "end": 687,
+              "kind": "line_range",
+              "start": 673
             }
           },
           "kind": "code"
@@ -399,19 +400,21 @@
             "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
             "content": "sha256:b3b3c880f3d968f51fa56d6131b9233363d37388ca4337c3934ecffe0899ed17",
             "locator": {
-              "kind": "symbol",
-              "name": "onboarding_trace_gate_for_context"
+              "end": 773,
+              "kind": "line_range",
+              "start": 735
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "blob": "9583cdcb4e627f7edb2b978ba060b06fc7a3c63c",
             "content": "sha256:f29abc65adc6897d368884b642b99ccdf5dd964dd3a1923daa8057b4083f9532",
             "locator": {
-              "kind": "symbol",
-              "name": "_onboarding_trace_open"
+              "end": 445,
+              "kind": "line_range",
+              "start": 421
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
           },
@@ -422,8 +425,9 @@
             "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:a9ce0154bceaa1f9de90686202afce80831ad1f1264b3a7a1e092b63474d9793",
             "locator": {
-              "kind": "symbol",
-              "name": "_worklist_identical_changes"
+              "end": 879,
+              "kind": "line_range",
+              "start": 859
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -431,8 +435,8 @@
         },
         {
           "anchor": {
-            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
-            "content": "sha256:fe0280b08b4ea7b0e88aab3497f039783cbab20591f724696c0547175e9c231c",
+            "blob": "9583cdcb4e627f7edb2b978ba060b06fc7a3c63c",
+            "content": "sha256:784de798a8c3c9191340ec2722592cdc36fef6983f1813b9d399c957259d1844",
             "locator": {
               "kind": "file"
             },

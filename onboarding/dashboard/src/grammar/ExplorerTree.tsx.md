@@ -8,9 +8,8 @@
 
 One shared async tree for the File Viewer and the Knowledge reader (MIK-R79 rules 3 and 15). The
 headless tree owns loading, selection, expansion and keyboard traversal; the caller owns what a row
-opens, what its suffix says and which row marks the current address. The File Viewer and the
-Knowledge reader each pass their own row type, loader and open behavior, so no page keeps a second
-tree implementation.
+opens, what its suffix or optional detail line says and which row marks the current address.
+File Viewer, Knowledge and Notes pass their own row data, loaders and open behaviour.
 
 ## Code Commentary
 
@@ -19,6 +18,8 @@ tree implementation.
 - `ExplorerTree` renders the library's `getItems()` as indented buttons, spreads `item.getProps()`
   for keyboard and ARIA behavior, and keeps the click fully controlled: select, toggle a folder, then
   call `onOpen` when the caller says a folder opens on click (`openFolders`).
+- `renderDetail` can supply a wrapping second line inside the same row button. The first line
+  carries the glyph, name and optional bounded suffix.
 - `useExplorerTree` caches loaded rows by path in a ref, loads children through `loadChildren`, and
   records a failed load as a visible `role="alert"` line with the loader's error text instead of an
   empty result; the line does not guarantee the directory's own name, and a later successful reload
@@ -64,12 +65,15 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The shared tree composes the headless library with one caller-supplied loader and open behavior. [1]
-- A failed load is shown as an alert with the loader's error text instead of an empty result; no directory name is guaranteed and a successful reload clears it. [2]
-- A new address can re-read one loaded parent, once, when the filter had hidden the row. [3]
 - The File Viewer consumes the shared tree through its own row adapter. [4]
-- The Knowledge reader consumes the same tree for paths and the Records branch. [5]
 
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- The shared tree composes the headless library with one caller-supplied loader and open behavior. [1]
+- A failed child read displays the loader's error text in an alert. A successful read clears the error for that parent. [2]
+- A new address can re-read one loaded parent, once, when the filter had hidden the row. [3]
+- The Knowledge reader consumes the same tree for paths and the Records branch. [5]
+- Caller-owned details wrap within the row while the optional suffix stays on the first line. [6]
+- A detail is an optional second line in the same row and leaves the first-line content in place. [7]

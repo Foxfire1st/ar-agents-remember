@@ -20,8 +20,46 @@
       ]
     },
     "10": {
-      "note": "The current renderer dispatch assembles the typed payload through the read-only StoreViewReader and its opener.\n\nAnchor: `_render` `StoreViewReader` `open_view_reader`",
+      "note": "The current renderer dispatch assembles the typed payload through the read-only StoreViewReader and its opener.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "5348eabe513b62ad118f8618a0082b954ba50c78",
+            "content": "sha256:ea58f15bb490f183abffb4d8cf303fe73804d7c5c301011024ae907b1c157302",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92357df3b5f672835db05dca8249c400d2e6c0f6",
+            "content": "sha256:9dc88f254bd217cd41d60990cdf01166aefc147074ceb25a0121e82b3b8dfc5d",
+            "locator": {
+              "end": 302,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/view_source.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92357df3b5f672835db05dca8249c400d2e6c0f6",
+            "content": "sha256:f30563b53bfcc5327203ee8ef47ed0b031346af44b2b1e2294b8beb53770330d",
+            "locator": {
+              "end": 329,
+              "kind": "line_range",
+              "start": 305
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/view_source.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "5348eabe513b62ad118f8618a0082b954ba50c78",
@@ -34,45 +72,10 @@
         },
         {
           "anchor": {
-            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
-            "content": "sha256:b4b96302f20338518c4e0f72a5915ddad984e20ec735face8560bd9dbfbe28fa",
+            "blob": "92357df3b5f672835db05dca8249c400d2e6c0f6",
+            "content": "sha256:c93af928a64ef54937f32740d47e5c2e240bd304af7fe9cede3f4b12dc3b77f1",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/view_source.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5348eabe513b62ad118f8618a0082b954ba50c78",
-            "content": "sha256:ea58f15bb490f183abffb4d8cf303fe73804d7c5c301011024ae907b1c157302",
-            "locator": {
-              "kind": "symbol",
-              "name": "_render"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
-            "content": "sha256:8b072d8f88112c0e5d5fc510697f8f58215dcb25f4be2f9081763112603b781a",
-            "locator": {
-              "kind": "symbol",
-              "name": "StoreViewReader"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/view_source.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
-            "content": "sha256:f30563b53bfcc5327203ee8ef47ed0b031346af44b2b1e2294b8beb53770330d",
-            "locator": {
-              "kind": "symbol",
-              "name": "open_view_reader"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/view_source.py"
           },
@@ -85,7 +88,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
+            "blob": "83cfe34627d9dcaa9894b14c2817c34ce71be7ea",
             "content": "sha256:6b647ae2b2899fda0ee87e4a0ece8ee472286d84ea3c7ae0af7c40357020543a",
             "locator": {
               "kind": "symbol",
@@ -97,7 +100,7 @@
         },
         {
           "anchor": {
-            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
+            "blob": "83cfe34627d9dcaa9894b14c2817c34ce71be7ea",
             "content": "sha256:99be41327e0c65a7860f4e27a0cdcb006ceed078e7f954e1565ddea04a6dfe18",
             "locator": {
               "kind": "symbol",
@@ -122,16 +125,17 @@
       ]
     },
     "12": {
-      "note": "The three view renderers the dispatch table serves — source context, invariant and family; a curation-queue view is refused rather than rendered.\n\nAnchor: `ORDERING_INPUTS` `render_source_context` `render_curation_queue`",
+      "note": "The row-rendering module supplies the source context, invariant and family renderers.",
       "targets": [
         {
           "anchor": {
-            "blob": "5a6fb2a1b51ed3b6cf2ec54110b9d62b67c078df",
-            "content": "sha256:ae3b9df468e99401230b566f25b1ec8ad76884b2760237c953fc0baea2b1621c",
+            "blob": "5348eabe513b62ad118f8618a0082b954ba50c78",
+            "content": "sha256:855526dbef4ec8c95e10312f359cb94fa6136ef1cacaf8c364e0521049eeb57a",
             "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/classification.py"
+              "end": 255,
+              "kind": "line_range",
+              "start": 245
+            }
           },
           "kind": "code"
         },
@@ -149,26 +153,16 @@
       ]
     },
     "15": {
-      "note": "The former projection writer and MCP seam call were retired. The current public knowledge tool reads a converted tree through read_tree_page, rather than calling read_knowledge_view.\n\nAnchor: `knowledge_read_payload` `_read_result`",
+      "note": "The mounted knowledge read projects the converted tree result. Its paged reader uses read_knowledge_view internally to collect the renderer’s ordered slices.",
       "targets": [
         {
           "anchor": {
-            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
-            "content": "sha256:58a863d9629d8136b4391ddbdcb60bda18d0b49a97546cd6562ad2367bfbf44e",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "blob": "7698616abcd31cb08bba4a158474703b7916d978",
             "content": "sha256:399c47806fb8a166316ff7d19aacc27f1dbb760787c49d8d109455617c117099",
             "locator": {
-              "kind": "symbol",
-              "name": "knowledge_read_payload"
+              "end": 909,
+              "kind": "line_range",
+              "start": 864
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
@@ -176,13 +170,40 @@
         },
         {
           "anchor": {
-            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
-            "content": "sha256:93c7759704b09c467fd687995b04d1c59d568e4fd0000132c97717261892fd53",
+            "blob": "7698616abcd31cb08bba4a158474703b7916d978",
+            "content": "sha256:c45fb78e112c526d891f699d9ece6ce7222c6787947686b57847fd26a3ad82f9",
             "locator": {
-              "kind": "symbol",
-              "name": "_read_result"
+              "end": 1054,
+              "kind": "line_range",
+              "start": 1000
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "content": "sha256:fa865c6227e5472b5d644a83b55b69a227a166860b67beea1270e435bee27bbd",
+            "locator": {
+              "end": 643,
+              "kind": "line_range",
+              "start": 621
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3611974d4c194883823a8342d07e110763d9cc2c",
+            "content": "sha256:e1137f6964efb9a7b596ff7263e598d4323b03228314abcc85edb0a7e04b140f",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_paging/view_pages.py"
           },
           "kind": "code"
         }
@@ -452,7 +473,7 @@
         },
         {
           "anchor": {
-            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
+            "blob": "467b6e3bb025fa7895853353aab838036e694400",
             "content": "sha256:ff1d0757634a679ac3562e14b6bebc4f9374872ace1d66284c10fa9bff5c0e56",
             "locator": {
               "kind": "symbol",
@@ -469,7 +490,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
+            "blob": "83cfe34627d9dcaa9894b14c2817c34ce71be7ea",
             "content": "sha256:3cae35e67bbc183ad8ccd2be57dce006ff6f072ad2d4cbbbf96cb0480b06530c",
             "locator": {
               "kind": "symbol",
@@ -481,7 +502,7 @@
         },
         {
           "anchor": {
-            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
+            "blob": "83cfe34627d9dcaa9894b14c2817c34ce71be7ea",
             "content": "sha256:e295bef9c435ecafa63062e8c522ce3746b858de763a03f9d434ffd0b2abb9fc",
             "locator": {
               "kind": "symbol",
@@ -493,7 +514,7 @@
         },
         {
           "anchor": {
-            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
+            "blob": "83cfe34627d9dcaa9894b14c2817c34ce71be7ea",
             "content": "sha256:7f93145bd948d6c405de9361898a7c2d374c9be1e5b917f32e633f05c16853e3",
             "locator": {
               "kind": "symbol",
@@ -529,7 +550,7 @@
         },
         {
           "anchor": {
-            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
+            "blob": "83cfe34627d9dcaa9894b14c2817c34ce71be7ea",
             "content": "sha256:cd6285f143a0c60181f1f433083e2b5e81ad85970be45852c0a55fbbe79294a3",
             "locator": {
               "end": 539,
@@ -542,7 +563,7 @@
         },
         {
           "anchor": {
-            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
+            "blob": "83cfe34627d9dcaa9894b14c2817c34ce71be7ea",
             "content": "sha256:b6cbd7e01eb475b5342ca8f768c1c5395fc9c51096a75290fe45ba60e0a6485e",
             "locator": {
               "end": 536,
@@ -560,7 +581,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
+            "blob": "83cfe34627d9dcaa9894b14c2817c34ce71be7ea",
             "content": "sha256:a82705f1540ce1ba058c083942e0fd9d1261f4b1a29ed167bb7b588a71c8cf83",
             "locator": {
               "kind": "symbol",
@@ -572,7 +593,7 @@
         },
         {
           "anchor": {
-            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
+            "blob": "83cfe34627d9dcaa9894b14c2817c34ce71be7ea",
             "content": "sha256:aff482448a3b603ee7de02dc7042aa6cca6ad453dc35d25db526a57ad4803533",
             "locator": {
               "kind": "symbol",

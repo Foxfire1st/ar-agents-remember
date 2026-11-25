@@ -21,14 +21,16 @@
       ]
     },
     "10": {
-      "note": "The published-intent consumer since MIK-R02, at its resolved source tree and inside the bounded block.\n\nAnchor: `read_published_intent`",
+      "note": "The published-intent consumer since MIK-R02, at its resolved source tree and inside the bounded block. Anchor: `read_published_intent`",
       "targets": [
         {
           "anchor": {
-            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
-            "content": "sha256:ed945298901c54ce9411f7391b4d3b19bb0e13b0f246be1cbad4704f98383880",
+            "blob": "9608622801bb9494b2ece9a1de71e8772b738e87",
+            "content": "sha256:5be26a3a71d66ee5e95d4c7c1cb3a5049375cd567aaefe7db04b6dbbcb789b91",
             "locator": {
-              "kind": "file"
+              "end": 308,
+              "kind": "line_range",
+              "start": 293
             },
             "path": "mcp/src/agents_remember/application/published_intent.py"
           },
@@ -36,11 +38,10 @@
         },
         {
           "anchor": {
-            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
-            "content": "sha256:5be26a3a71d66ee5e95d4c7c1cb3a5049375cd567aaefe7db04b6dbbcb789b91",
+            "blob": "9608622801bb9494b2ece9a1de71e8772b738e87",
+            "content": "sha256:c0c268aeebf6c982de49524c15b384c47d31995825ed32900e2082bc0029e200",
             "locator": {
-              "kind": "symbol",
-              "name": "read_published_intent"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/published_intent.py"
           },
@@ -221,7 +222,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "blob": "7698616abcd31cb08bba4a158474703b7916d978",
             "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
             "locator": {
               "kind": "symbol",

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+        "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
         "content": "sha256:742b961c2627856b947d888db1109b6f5de62b948f133f94fa4b964325399375",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,24 @@
     },
     {
       "anchor": {
-        "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+        "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
+        "content": "sha256:741db78a9b9b52cb1fe80a4f91660b1e692a06bc4dead9b32262ee300d0f0cc9",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-8V05MM",
+      "invariant": "INV-TRMMZA",
+      "origin": {
+        "handoffEntry": "L3-W1-08",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The reader header shows the state with the existing StateBadge and the writer as role and model.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
         "content": "sha256:e5b046f59385698cb78db05a11ab22d3585d546bce0bc6742ad4a4eb86a2b271",
         "locator": {
           "kind": "symbol",
@@ -39,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+        "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
         "content": "sha256:269a5e24e24f377b10526ef0f2b86ce216978270c52577652107cab68ea1946f",
         "locator": {
           "kind": "symbol",
@@ -57,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+        "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
         "content": "sha256:21b59260d833536eea5d0008e531f401473a8d9e2040fdb8d1b1ca390bb521f8",
         "locator": {
           "kind": "symbol",
@@ -75,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+        "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
         "content": "sha256:a3e174e0dc69e7e3d004205e36adbacd5cf1a1dfe006655b1816bccd625eea4f",
         "locator": {
           "kind": "symbol",
@@ -98,7 +115,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
             "content": "sha256:e5b046f59385698cb78db05a11ab22d3585d546bce0bc6742ad4a4eb86a2b271",
             "locator": {
               "kind": "symbol",
@@ -110,15 +127,16 @@
       ]
     },
     "15": {
-      "note": "Kind/id/state/derived-or-stored status/revision are supplied by the current header.",
+      "note": "The heading renders kind, identity and revision alongside available source currentness, record status, revision state and writer.\n\nAnchor: TruthHeader",
       "targets": [
         {
           "anchor": {
-            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
-            "content": "sha256:e40b40b41f51c0c33bb8d92a433fb713261fe7fbfc6b3d885c3c37a85edb29f6",
+            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
+            "content": "sha256:f673690b626565279523bd132f23983fcbf90fc2fad3c1a1ca308afcc6dccb0e",
             "locator": {
-              "kind": "symbol",
-              "name": "TruthHeader"
+              "end": 189,
+              "kind": "line_range",
+              "start": 163
             }
           },
           "kind": "code"
@@ -130,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
             "content": "sha256:6440eb45ffbb3f78274f7f3ae23ab88a0c81d0fb76e1a476293d51d125a96e14",
             "locator": {
               "end": 133,
@@ -147,7 +165,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
             "content": "sha256:c26126084494697f388bf8f331bad688049ed66e0c86ea9423ed7aa3dfcb1933",
             "locator": {
               "kind": "symbol",
@@ -163,7 +181,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
             "content": "sha256:e2e2b2ac9c1e434185387f29ff4dd4d96a59df862b394eb753c5cd0df920544e",
             "locator": {
               "kind": "symbol",
@@ -179,7 +197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
             "content": "sha256:a3e174e0dc69e7e3d004205e36adbacd5cf1a1dfe006655b1816bccd625eea4f",
             "locator": {
               "kind": "symbol",
@@ -195,12 +213,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
             "content": "sha256:e25f972421141b9d037c99c97ddf85fef1e96eec6847a026bd00bf63a2534f74",
             "locator": {
-              "end": 603,
+              "end": 612,
               "kind": "line_range",
-              "start": 534
+              "start": 543
             }
           },
           "kind": "code"
@@ -212,12 +230,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
             "content": "sha256:c7c930d8e5e879a81aec126a415bb727c84060ab6acfd0eed60519ca7e0a91a9",
             "locator": {
-              "end": 486,
+              "end": 495,
               "kind": "line_range",
-              "start": 429
+              "start": 438
             }
           },
           "kind": "code"

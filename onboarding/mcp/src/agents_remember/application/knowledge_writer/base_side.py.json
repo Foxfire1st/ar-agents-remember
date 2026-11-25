@@ -151,12 +151,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+            "blob": "c2e414add7552a590a135ea6fa8870759ec7a6be",
             "content": "sha256:5a1fb5ce64d36ed8a536fb2a134ac7dd791974824b19c496b518883ab6718e14",
             "locator": {
-              "end": 228,
+              "end": 230,
               "kind": "line_range",
-              "start": 206
+              "start": 208
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/memory_state.py"
           },

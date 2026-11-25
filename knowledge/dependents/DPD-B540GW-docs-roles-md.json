@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "978e410ca88ebabc20fc598a05870dd8f8efed1a",
+    "commit": "e8a96f6e2255155d733dd15dcba56bd26e46097e",
     "role": "curator",
-    "statement": "The roles guide still distinguishes the archived-parent alternate and dashboard Revive from retirement.",
-    "task": "261112-BUG-L20",
+    "statement": "The Roles guide distinguishes dashboard role selection, per-start execution overrides and permission-mode precedence, preserves the review and curation order, and routes an archived parent’s turn-end line to the current Manager while reserving Revive for closed sessions.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/roles.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,12 +36,12 @@
       "path": "mcp/src/agents_remember/application/role_launch_context.py"
     },
     {
-      "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+      "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
     {
-      "blob": "fa7edd155c1b68898b05d219f757fec23ddf56b6",
+      "blob": "f1ec784fb712132b80aeefee987941d3ebcf5feb",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_caller.py"
     },
@@ -56,12 +56,12 @@
       "path": "mcp/src/agents_remember/cli/role_retire.py"
     },
     {
-      "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+      "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },
     {
-      "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+      "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
@@ -111,17 +111,17 @@
       "path": "skills/l-01-agent-lifecycles/roles/architect.md"
     },
     {
-      "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+      "blob": "1932e1048e02929da857033da376474be2f5bb19",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
     },
     {
-      "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+      "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/curator.md"
     },
     {
-      "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
+      "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
     },
@@ -136,12 +136,12 @@
       "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
     },
     {
-      "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
+      "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
     },
     {
-      "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+      "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
@@ -161,7 +161,7 @@
       "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
     },
     {
-      "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
+      "blob": "5b7e751298ebcd50dae4f6724680aa5e48ed7568",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/route_review.py"
     },
@@ -171,7 +171,7 @@
       "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
     },
     {
-      "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+      "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     }

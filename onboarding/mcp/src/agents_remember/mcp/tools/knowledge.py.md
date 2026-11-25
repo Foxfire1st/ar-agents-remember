@@ -7,12 +7,11 @@
 ## Current source contract evidence
 
 
-- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [82]
 
 
 ## Purpose
 
-Payload builders for four mounted knowledge operations over converted trees: read, diff, integrity check and write.
+Payload builders for four mounted knowledge operations over converted trees: read, diff, integrity check and write. The writer route delegates response shaping to `write_answer`, which returns bounded notes, problems and violations with their truncation flags and the whole report path.
 
 ## Code Commentary
 
@@ -22,13 +21,13 @@ Cutover refusal helpers, worktree candidate capture and contract loading are imp
 
 Read selects the converted tree’s derived index, computes a rich page internally, then projects its rows, proofs and family references to text ID, kind, computed state and file/heading or line locations. Selection-time commit/dirtiness and a shared revalidated resolver bind sizing and projection to one epoch; a moved checkout refuses `snapshot_unavailable`. No record body is delivered by a naming projection: its rows carry names and derived state. The requested marks views are the exception the requirements name — a `weakness` row carries that weakness's own statement and, where the record holds one, its measurement — and neither view carries a document body. Source-resolution pairs remain complete or absent. [1]
 
-Diff compares knowledge/onboarding Git files, privately captures the memory working tree when afterRevision is absent, and writes the whole selected comparison as a report before projecting the answer. `_reported_body` returns both compared trees, counts by kind, decision-ordered record names up to `TOOL_ANSWER_LIST_MAX`, their total `decisionRecordCount`, and the report location. The report holds patches and source/record groups; the mounted answer carries no comparison body, `diff`, `complete` or `leftOut`, and infers no semantic effect label. A report write failure refuses `report-unwritable`, retaining the actual cleanup/residual facts. [2]
+Diff compares knowledge/onboarding Git files, privately captures the memory working tree when afterRevision is absent, and writes the whole selected comparison as a report before projecting the answer. `_reported_body` returns both compared trees, counts by kind, decision-ordered record names up to `TOOL_ANSWER_LIST_MAX`, their total `decisionRecordCount`, and the report location. The report holds patches and source/record groups; the mounted answer carries no comparison body, `diff`, `complete` or `leftOut`, and infers no semantic effect label. A report write failure refuses `report-unwritable`, retaining the actual cleanup/residual facts.
 
 Integrity runs the knowledge validator and retains the latest leaf worklist for a contract in its
 whole result, not a canonical detection run or compatibility verdict. Its delivered status
 projection retains whole-report counts, bounded refusing-first violation entries and worklist
 state, while the complete violation population remains in the logged detail. Legacy roots and
-database files refuse before an open; change/project and selected-run fields are removed. [3] [51] [56]
+database files refuse before an open; change/project and selected-run fields are removed. [3] [56]
 
 ### Invariants And Boundaries
 
@@ -38,7 +37,7 @@ database files refuse before an open; change/project and selected-run fields are
 
 ### Logic
 
-`knowledge_read_payload` refuses a view outside its admitted six — `source_context`, `invariant`, `family`, `record`, `weakness`, `dependent` — through `_refused_read(view, repositoryId, "unknown_view", ...)` rather than picking a default view (`review_matrix` and `curation_queue` left with the retired envelope tables, so they earn the unknown-view refusal); a read the seam refused is returned as its typed refusal rather than as an empty page.
+`knowledge_read_payload` refuses a view outside its admitted views — `source_context`, `invariant`, `family`, `record`, `weakness`, `dependent`, `writers` — through `_refused_read(view, repositoryId, "unknown_view", ...)` rather than picking a default view (`review_matrix` and `curation_queue` left with the retired envelope tables, so they earn the unknown-view refusal); a read the seam refused is returned as its typed refusal rather than as an empty page.
 
 **The read context's source-resolution pair is completed rather than half-supplied, and the mount hands
 over a default repository rather than half a pair.** `_source_resolution(request, workspace_root)`
@@ -72,7 +71,7 @@ view instead of a raw `KnowledgeReadContext` validation error.
 
 ## MIK-R118 Rule 6 And MIK-R124 Rule 7 — The Two Marks Views
 
-The read admits two views beside `record`, and no tool is added. `_one_view` sends `record` to `_record_view` and `weakness` or `dependent` to `_marks_view`, which selects the same converted tree and refuses `snapshot_unavailable` where the selection names no converted memory tree.
+The selected-tree reader sends `record` to `_record_view`, `weakness` and `dependent` to `_marks_view`, and `writers` to `_writers_view`. The record view retains derived revision state and writer attribution. The writers view returns aggregate rows and a full report path through the same mounted read.
 
 `weakness` lists the tree's open weaknesses — `weaknessKind` picks one kind, `sourcePath` a folder, `includeClosed` adds closed records — and a row holds the id, the file, the kind, the statement and the state, with the measurement and the closing where the record holds them and the anchor's state at the read's code tree. `dependent` lists the documents — `sourcePath` a folder of documents, `staleOnly` the stale ones, `standsOn` those with a link at a named code file — and a row holds the id, the document, the derived state, the last confirmation and the revision, with `movedLinks` naming each link that moved where it is stale. Neither view writes: a weakness anchor is observed, a dependent's state is derived, and no byte of a record changes.
 
@@ -186,7 +185,6 @@ No configured domain documentation could be checked.
 - The public read projects names from its selected rich page; source-resolution pairs and internally prepared proof/currentness extras remain distinct. [1]
 
 
-- The whole selected comparison is filed before the answer names both trees, counts and bounded decision records with their total; no carried comparison body. [2]
 
 
 - Integrity delivers bounded validator/worklist status beside the whole internal result, not selected-run identities or a semantic verdict. [3]
@@ -198,7 +196,6 @@ No configured domain documentation could be checked.
 
 
 
-- The strict integrity model carries validator totals, bounded violations and the optional persisted leaf worklist, not a CODE/currentness verdict. [51]
 
 
 
@@ -211,7 +208,6 @@ No configured domain documentation could be checked.
 
 - - The integrity check's request value. [60]
 
-- - Dataset, leaf, both or neither; the leaf's worklist fields added when a contract is named. [61]
 
 - - The worklist fields read from the persisted file. [62]
 - - The tool returns the latest worklist. [63]
@@ -226,11 +222,9 @@ No configured domain documentation could be checked.
 - - A failing step never refuses the view. [67]
 
 
-- - A converted tree's read is handed to the paged tree read right after the selection. [68]
 
 - - The default ordering, applied only when the caller named none. [69]
 
-- - A refused read states the threshold block beside its refusal code and detail; a page states the same block in its own answer. [70]
 
 
 - - The paged tree read this module hands a converted selection to. [71]
@@ -241,14 +235,14 @@ No configured domain documentation could be checked.
 - - The leaf read the tree read routes a `source_context` path read to (and, since MIK-R05, a read naming only `familyRevisionId`, as a family seed). [74]
 
 
-- - The flat read request as one frozen value: the continuation, the two revision selectors, the optional source roots, and an ordering left `None` unless the caller names one. [75]
 
 
-- - The flat read request's optional source-path seed, beside the unnamed-by-default ordering MIK-R02 introduced. [76]
 
 - - The one refusal envelope the read operation returns for an unknown view and for a view the seam refused. [77]
 - - The one refusal envelope the read operation returns for an unknown view and for a view the seam refused. [78]
-- The internal read admits six views — `source_context`, `invariant`, `family`, `record`, `weakness` and `dependent`, the last two being the marks views MIK-R118 rule 6 and MIK-R124 rule 7 read through — and carries its selected tree and shared resolver beside the rich page, binding sizing/projection to one revalidated epoch. [79]
+
+- The mounted reader dispatches the writers aggregate and distinguishes it from record and mark results. Anchor: `_one_view` [79]
+
 - - The source-resolution pair completed rather than half-supplied: the caller's own root with its current tree (refused by name when it has none, since MIK-R01), the mount's workspace default used only when a tree can be resolved from it, and neither half when Git cannot answer for it. [80]
 - - **Every way resolving and opening a selection can fail, refused the same way on every handler: a named root with no code tree is `selected_input_unavailable` naming the root (MIK-R01), a tree, Git or cache failure is `snapshot_unavailable` naming the tree, anything else the dataset refusal it was before.** [81]
 
@@ -256,6 +250,19 @@ No configured domain documentation could be checked.
 
 No cross-repository contract is established by this file.
 
-- Cutover refusal helpers, worktree candidate capture and contract loading are imported at the operation branches that need them; existing legacy-format and root-selector refusals remain. [83]
 
 - All three tools refuse legacy/database selections without opening them; a partial read retains incomplete status. [56]
+
+- Dataset, leaf, both or neither; the leaf's worklist fields added when a contract is named. [61]
+- The flat read request as one frozen value: the continuation, the two revision selectors, the optional source roots, and an ordering left `None` unless the caller names one. [75]
+- The flat read request's optional source-path seed, beside the unnamed-by-default ordering MIK-R02 introduced. [76]
+
+- A converted tree's read is handed to the paged tree read right after the selection. [68]
+- A refused read states the threshold block beside its refusal code and detail; a page states the same block in its own answer. [70]
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [82]
+- Cutover refusal helpers, worktree candidate capture and contract loading are imported at the operation branches that need them; existing legacy-format and root-selector refusals remain. [83]
+
+- The whole selected comparison is filed before the answer names both trees, counts and bounded decision records with their total; no carried comparison body. [2]
+- The strict integrity model carries validator totals, bounded violations and the optional persisted leaf worklist, not a CODE/currentness verdict. [51]
+
+- The writer route publishes a bounded answer of problems, violations and notes beside its full report. [86]

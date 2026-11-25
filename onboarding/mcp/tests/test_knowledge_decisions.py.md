@@ -10,8 +10,7 @@
 knowledge validator over a small converted tree built in the file (`_tree`: the layout marker, one assumption
 record `ASM-100K0R` and the given decisions); the derived reads are checked on the models; requirement endpoints are
 resolved by the requirement owner against a real task directory under `tmp_path`. The writer round trip is in
-`test_knowledge_writer.py`. This module defines its decision fixtures and is registered in the
-`unit-regression` lane (`test-evidence-lanes.toml`).
+`test_knowledge_writer.py`. This module defines its decision fixtures.
 
 ## Code Commentary
 
@@ -115,5 +114,4 @@ No cross-repo boundary is crossed by this file.
 
 - Reordering preserves option-text identity for reconsideration links, with an independently misbound-index control; the assertions filter R14. [14]
 
-
-- The lane row. Anchor: "mcp/tests/test_knowledge_decisions.py" Anchor: "mcp/tests/test_knowledge_decisions.py" [12]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_decisions.py`. [12]

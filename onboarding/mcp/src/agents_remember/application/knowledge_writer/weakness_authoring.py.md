@@ -6,7 +6,7 @@
 
 ## Purpose
 
-`author_weakness` fills a weakness record's anchored place and checks its authored closure against the writer's admitted code repository. `Authoring._write_record` calls it before placing a weakness record. This helper edits the operation's in-memory document and collects problems through `Authoring`; it does not publish files itself. [1]
+`author_weakness` fills a weakness record's anchored place and checks its authored closure against the writer's admitted code repository. `Authoring._write_record` calls it before placing a weakness record. This helper edits the operation's in-memory document and collects problems through `Authoring`; it does not publish files itself.
 
 ## Code Commentary
 
@@ -24,7 +24,8 @@ The record model separately requires a task and a reason when no commit is suppl
 
 ### Repo-Internal References
 
-- The record authoring route delegates weakness checks before placing the record. [1]
 - Anchor authoring resolves at C or retains the complete stored anchor only for the same recorded path. [2]
 - Closure checks admit the running task's deferred attribution and validate an explicitly supplied commit. [3]
 - The closure and weakness models own the stored shape and state agreement. [4]
+
+- Record authoring delegates weakness anchoring and closure checks before placing the record. [1]

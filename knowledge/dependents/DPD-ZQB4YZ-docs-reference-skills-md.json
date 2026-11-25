@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "b29f2e225c04fbcebb653d59f81cf895c42f5097",
-    "commit": "180b6c153d21d01cbb14059d0219472ccdeba683",
+    "codeTree": "51a44523acb6c29c3a029c7dde4a35acb96595f3",
+    "commit": "3bbaf460317e8572583d884bc0791a219ad1bcfa",
     "role": "curator",
-    "statement": "The skills reference's account of l-01-agent-lifecycles (eight role files, operations, templates, criteria, one role file and operation per role agent) still holds on b29f2e2; it states no per-role tool list, so the renewed manifest arrays leave it true.",
-    "task": "261124-CAP-L1",
+    "statement": "The skills reference's account of l-01-agent-lifecycles (eight role files, operations, templates, criteria, one role file and operation per role agent) still holds on b29f2e2; it states no per-role tool list, so the renewed manifest arrays leave it true. On code 51a44523 (gen-8 sync onto CAP-L1 and BUG-L26) the composition manifest's knowledge-use step list now reads 'for a record you need whole' in place of the source-inspection steps; the reference enumerates no step list, and its account of the canonical and packaged instruction trees still holds.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/reference/skills.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "skills/l-01-agent-lifecycles/SKILL.md"
     },
     {
-      "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+      "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
     },

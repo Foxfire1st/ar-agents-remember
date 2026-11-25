@@ -1,0 +1,110 @@
+{
+  "path": "mcp/tests/test_writer_rule_titles.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b5a43c2c8a3f1d15688656d049dd4513ab2efc2b",
+        "content": "sha256:6ee21983d280343ef8522fbb2b5fb62bf96c2259df6d945cc38053d491f57d65",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_new_rule_is_written_with_its_title"
+        }
+      },
+      "facet": "The new rule stores the supplied title separately.",
+      "id": "PRF-5DQ92J",
+      "invariant": "INV-ZFNES3",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 11",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b5a43c2c8a3f1d15688656d049dd4513ab2efc2b",
+        "content": "sha256:a20b02b31f87ea9c450704d2b84b7d9a7faf675a56b0623248b108fa6b142a2c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_invariant_title_keeps_review_and_crossing_identity"
+        }
+      },
+      "facet": "Retitling preserves invariant meaning and crossing selection while other changed fields still affect selection.",
+      "id": "PRF-AK125K",
+      "invariant": "INV-ZFNES3",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 11",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b5a43c2c8a3f1d15688656d049dd4513ab2efc2b",
+        "content": "sha256:6abed6d4672ae2855f4b9301e64c88319449e36e5a64a9f7574243b9b9b49f43",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_new_revision_of_an_untitled_rule_is_taken_and_the_answer_says_it_has_none"
+        }
+      },
+      "facet": "A revision preserves its untitled state and reports that in the writer result.",
+      "id": "PRF-DXX10G",
+      "invariant": "INV-ZFNES3",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 11",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b5a43c2c8a3f1d15688656d049dd4513ab2efc2b",
+        "content": "sha256:943088ef9727fe0fd5b384c51a62efd2a5a3ea0f9402894abd5c042d7df1f42a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_write_of_a_title_alone_raises_no_revision"
+        }
+      },
+      "facet": "An existing rule gains a title without changing revision.",
+      "id": "PRF-RBH4HA",
+      "invariant": "INV-ZFNES3",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 11",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b5a43c2c8a3f1d15688656d049dd4513ab2efc2b",
+        "content": "sha256:f2439111076bd19ec7e90ac1d885e6f5c3f439747477524b7d16b9a319f88e95",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_new_rule_without_a_title_is_refused_with_its_text"
+        }
+      },
+      "facet": "Both admitted authoring sections refuse a new untitled rule.",
+      "id": "PRF-TSVEJ3",
+      "invariant": "INV-ZFNES3",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 11",
+        "leaf": "261112-KNO-L4"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A title-only write changes the stored title while retaining the statement and revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5a43c2c8a3f1d15688656d049dd4513ab2efc2b",
+            "content": "sha256:943088ef9727fe0fd5b384c51a62efd2a5a3ea0f9402894abd5c042d7df1f42a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_write_of_a_title_alone_raises_no_revision"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

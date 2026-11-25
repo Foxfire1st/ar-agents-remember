@@ -100,5 +100,4 @@ cross-repo reference row is recorded for this module.
 
 ### Repo-Internal References (continued)
 
-
-- **The lane registration that makes these cases part of the governed `integration` population.** Source caption: `test_review_external_git_movement_read` [27]
+- The `integration` lane selects `mcp/tests/test_review_external_git_movement_read.py`. [27]

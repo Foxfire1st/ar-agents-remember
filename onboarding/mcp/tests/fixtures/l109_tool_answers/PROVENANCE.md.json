@@ -3,14 +3,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The fixture account distinguishes recorded samples, named operation producers and regeneration.",
+      "note": "The named producer rebuilds the largest file-reader fixture from cold task memory. It checks twenty compact rows with relative brief pointers and missing freshness, and verifies that files, tree identity and Git status are unchanged.",
       "targets": [
         {
           "anchor": {
-            "blob": "99d615614c71db2ef816d3861cf84ffc5d2a90a4",
-            "content": "sha256:a2d3df1b118e7ac79d8235647f5d91ef05311b96e3ecda560ce76082b0e7a297",
+            "blob": "a5d58ef6d8473431037c09911a33cd2f7500d012",
+            "content": "sha256:21760fb77d11c2eb39f290e2a18187bac4f2944580847a9a73babcbb0fc7fdf9",
             "locator": {
-              "kind": "file"
+              "end": 13,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a5d58ef6d8473431037c09911a33cd2f7500d012",
+            "content": "sha256:9c6ab77380a87f5fdf07c9518d2bb24a4dadd9bf566631c8fb7b9bc9a97a22f2",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 33
             }
           },
           "kind": "test"

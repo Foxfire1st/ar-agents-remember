@@ -25,12 +25,7 @@ The five install steps stand under the heading `Install steps` and keep the numb
 - The five install steps keep the number, order, titles and command lines of the getting-started page. [3]
 
 
-
-
-- The status section states release 3.0.7 and the Python requirement, and directs readers to the release notes before installing. [4]
-
-
-
+- The Status section gives package version 3.0.7 and Python 3.14, then directs readers to the release notes before installation. [4]
 
 - A file under docs/ that is no page is reached when the front page shows or links it by a relative path; a page stays out of this set. [5]
 - The front page owes links to docs/README.md, getting-started.md, install/README.md and ROADMAP.md. [6]

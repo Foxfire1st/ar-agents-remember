@@ -67,14 +67,11 @@ The module imports the production declaration rather than a copy (`PUBLICATION_M
 `CuratorCoherenceRequest`), and reads `JUDGMENTS_FILE_MEMBER` through the imported `coherence_models` module. The three content-member names are used as constants so the exclusion
 set and the shape validator that refuses them cannot drift apart. `_CONTRACT_PATH` (`:52`) is a real
 enclosure-shaped path, and `_REFUSAL_PREFIX` (`:53`) is asserted before being stripped. The module
-carries **no `pytestmark`**; its current lane declaration is `unit-regression` at
-`mcp/tests/test-evidence-lanes.toml:134`. The former card recorded append-only
-registration at its earlier source epoch; this is not a claim that the current row
-was appended at the end of the catalog. Its direct imports include `agents_remember`
+carries **no `pytestmark`**. The former card recorded append-only registration at its earlier source epoch. Its direct imports include `agents_remember`
 models, `pydantic` and `pytest`; direct imports do not determine the complete governed
 consumer population. The merged `mcp/tests/evidence-lifecycle.toml` declares this module
-on exactly two artifact consumer lists: `mcp/tests/_user_settings_guard.py` at line 237
-and `mcp/tests/fixtures/repository_profiles/node/package-lock.json` at line 2629.
+on exactly two artifact consumer lists: `mcp/tests/_user_settings_guard.py` at line 239
+and `mcp/tests/fixtures/repository_profiles/node/package-lock.json` at line 2659.
 These are catalog declarations, not fresh collection or execution evidence.
 
 ### Invariants And Boundaries
@@ -151,5 +148,4 @@ No meaningful cross-repo references found.
 
 - **The `prepare` case: all nine names in order, the judgments phrase, and `.get` returning `None` for both caller-supplied delivery identities.** [12]
 
-
-- The lane manifest declares mcp/tests/test_curator_coherence_publication_discoverability.py in unit-regression. Membership is selection, not invocation. [16]
+- The `unit-regression` lane selects `mcp/tests/test_curator_coherence_publication_discoverability.py` (`mcp/tests/test-evidence-lanes.toml:136`). [16]

@@ -112,13 +112,14 @@ their own builder.
   the port declares `family_member_rows` so that read is a typed method call rather
   than a string a caller can spell wrong, and `_member_row` is the only row builder for that statement.
 
+The invariant and family projections read each selected revision's `state` as the lifecycle observation. The authored provenance still supplies its author reference. The record payload carries the authored text and clauses.
+
 ## Evidence
 
 
 ### Repo-Internal References
 
 
-- `StoreViewReader` owns the current boundary described above. [19]
 
 - `open_view_reader` owns the current boundary described above. [20]
 
@@ -134,22 +135,18 @@ below cite the reader's statements, builders and entry points, the vocabulary it
 re-declares, and the layer where selection, ordering and provenance classification actually happen.
 
 
-- The port returns recorded rows in deterministic query order while the view layer owns semantic selection, ordering and provenance classification. [21]
 
 - The read-only handle this module opens through, with the read-only APSW flag and the busy timeout it does set. [22]
 - `open_view_reader` composes a snapshot from the dataset digest and supplied namespace/schema identity; direct reader construction retains its supplied snapshot. [23]
 - The two registered totals, each counted from its own table and returned as one counts value. [25]
-- Each entity read by its own statement: invariant revisions, family revisions, memberships and realization claims. [26]
 - The family-membership read: its own statement, executed from its own port method. [27]
 - The realization-claim read and the source anchor it joins, so a claim arrives with the location it attributes. [28]
 - The typed-JSON decoding and the never-defaulted author lookup every stored payload passes through. [30]
 
-- The reader class, built from an already-open connection and the declared snapshot, holding no path of its own, and the port it answers. [31]
 
 - The snapshot accessor, the registered counts and the per-statement read with its lifetime cache. [32]
 - The entity row readers plus the count helper that refuses an empty count result. [33]
 - The anchor-state answer: not-requested when there is no resolver, a typed error when the resolver is not callable. [34]
-- The row builders, each naming its record kind and schema and building its payload from named columns. [35]
 - Where selection and ordering actually live, with an unclassifiable value withheld rather than defaulted. [36]
 - The eight logical tables the single schema declares. [37]
 
@@ -160,3 +157,9 @@ path through a read-only handle, every identity it returns is a store-local row 
 vocabulary member, and nothing here reaches another repository, another dataset or a remote.
 
 No meaningful cross-repo references found.
+
+- The declared logical schema supplies the typed reader's rows through queries over its own index tables. [26]
+- The row builders, each naming its record kind and schema and building its payload from named columns. [35]
+- `StoreViewReader` owns the current boundary described above. [19]
+- The port returns recorded rows in deterministic query order while the view layer owns semantic selection, ordering and provenance classification. [21]
+- The reader class, built from an already-open connection and the declared snapshot, holding no path of its own, and the port it answers. [31]

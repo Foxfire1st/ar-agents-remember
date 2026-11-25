@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "91a458aeeb1ea642a75f5bcbc6490d09fa0cfc1e",
+        "blob": "ae453baae098fc1e02aea846d51ca8d868d9da9b",
         "content": "sha256:427a3170de3c18a4b9b2fa18b40b88af6155a0aacd80a820c91eff7804374dd4",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91a458aeeb1ea642a75f5bcbc6490d09fa0cfc1e",
+            "blob": "ae453baae098fc1e02aea846d51ca8d868d9da9b",
             "content": "sha256:6be004876566af4fb359eb573dfe228b38b5dcddc428b3d473dc3cde3724f4a8",
             "locator": {
               "end": 15,
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91a458aeeb1ea642a75f5bcbc6490d09fa0cfc1e",
+            "blob": "ae453baae098fc1e02aea846d51ca8d868d9da9b",
             "content": "sha256:2f859d67e363d8825234bae19243c1c04126b54199f024989db9ba1d661ffb6d",
             "locator": {
               "kind": "symbol",
@@ -54,7 +54,7 @@
         },
         {
           "anchor": {
-            "blob": "91a458aeeb1ea642a75f5bcbc6490d09fa0cfc1e",
+            "blob": "ae453baae098fc1e02aea846d51ca8d868d9da9b",
             "content": "sha256:d27c728453b05311cdabba3e09a4707d0338480561b76601cd867bd1d70bf274",
             "locator": {
               "kind": "symbol",
@@ -65,7 +65,7 @@
         },
         {
           "anchor": {
-            "blob": "91a458aeeb1ea642a75f5bcbc6490d09fa0cfc1e",
+            "blob": "ae453baae098fc1e02aea846d51ca8d868d9da9b",
             "content": "sha256:26b0faeab708d7820dd37a46e72fdd4391e1f1fdd4e015a02000041d38ef220a",
             "locator": {
               "kind": "symbol",
@@ -77,12 +77,12 @@
       ]
     },
     "3": {
-      "note": "The fixture converter and its head selection.\n\nAnchor: `convert_dataset` `_convert` `_heads` `_convert_realizations`",
+      "note": "The fixture converter and its head selection.",
       "targets": [
         {
           "anchor": {
-            "blob": "91a458aeeb1ea642a75f5bcbc6490d09fa0cfc1e",
-            "content": "sha256:82f46e87d3e1f76e27eb9117b0ed6aac7a4435061036490cc2913cb4d9b45bb9",
+            "blob": "ae453baae098fc1e02aea846d51ca8d868d9da9b",
+            "content": "sha256:ea9c385d85e84bc90db14b98bd0d156d9c1ffab7c01ea5088421944280f6aeaf",
             "locator": {
               "kind": "file"
             }
@@ -96,8 +96,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91a458aeeb1ea642a75f5bcbc6490d09fa0cfc1e",
-            "content": "sha256:82f46e87d3e1f76e27eb9117b0ed6aac7a4435061036490cc2913cb4d9b45bb9",
+            "blob": "ae453baae098fc1e02aea846d51ca8d868d9da9b",
+            "content": "sha256:ea9c385d85e84bc90db14b98bd0d156d9c1ffab7c01ea5088421944280f6aeaf",
             "locator": {
               "kind": "file"
             }
@@ -111,10 +111,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91a458aeeb1ea642a75f5bcbc6490d09fa0cfc1e",
-            "content": "sha256:82f46e87d3e1f76e27eb9117b0ed6aac7a4435061036490cc2913cb4d9b45bb9",
+            "blob": "ae453baae098fc1e02aea846d51ca8d868d9da9b",
+            "content": "sha256:ea9c385d85e84bc90db14b98bd0d156d9c1ffab7c01ea5088421944280f6aeaf",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The fixture adapter exports text records without a proposed or accepted field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae453baae098fc1e02aea846d51ca8d868d9da9b",
+            "content": "sha256:50f6af626a8fd02dc530b9329f28e8dc72a6c3bab0aa72cc09cb029330080c4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_convert"
             }
           },
           "kind": "test"

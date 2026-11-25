@@ -10,6 +10,9 @@ What a launched role is told: the handover text the launch builds in code, and t
 
 ## Code Commentary
 
+The fixtures check the task-serving namespace, the exact reader contract and concise handover guidance for reading a saved brief before editing. The composed handover case pins the compact-field sentence with its applicability qualifier and the saved-brief opening text. It checks both exact phrases and their position before the role capsule.
+
+
 The fixture compiles a role's capsule and builds the handover for taskless, sprint, master and leaf selections admitted by the production resolver, isolating only the task-reader and enclosure plumbing: no launch, model or lifecycle operation runs. The cases require the developer question channel to match the role and its parent, the owner relation to route developer questions and preserve coordinators, and the first message to name no forbidden host string. The reader context must name the readers of the task tool server, the handover must name that server, its two tools and the host, and a role without a parent must be told it needs none while a started role is told who started it. The description cases hold the three role-tool descriptions to the same forbidden list.
 
 ## Invariants And Boundaries
@@ -29,7 +32,18 @@ Current source: The handover test asserts Paseo and agents-remember-task host fi
 
 Current source: The first-message control rejects forbidden host strings across generated role prompts. The description control checks three role-agent tool descriptions—role_start, role_message and role_start_set—and separately checks user_settings_init; no stored description or first-message assertion proves host delivery.
 
-- The handover test asserts Paseo and agents-remember-task host fields, the role_start/role_message tool names, scoped reader-discovery instructions and held/permission wording. The parentless control requires no invented parent; a started role records its actual starter and role/task return address. [1]
+
+
+
+
+- The handover test asserts Paseo and agents-remember-task host fields, the role_start/role_message tool names, scoped reader-discovery instructions and held/permission wording. The parentless control requires no invented parent; a started role records its actual starter and role/task return address. The shared handover case pins the two wording fragments and checks their once-only placement before the role capsule. [1]
+
+
+
+
 - The first-message control rejects forbidden host strings across generated role prompts. The description control checks three role-agent tool descriptions—role_start, role_message and role_start_set—and separately checks user_settings_init; no stored description or first-message assertion proves host delivery. [2]
+
+
+
 
 - The compact role_message description stays within 600 characters and states the host mid-turn promise, queued held delivery and no resend of held messages. Host acceptance or consuming-turn completion is distinct from AR acceptance; the source check remains separate from live message delivery. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [3]

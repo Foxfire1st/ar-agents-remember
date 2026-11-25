@@ -122,15 +122,16 @@
       ]
     },
     "5": {
-      "note": "Both weakness-list and truth-view callers consume the shared returned display. [5]",
+      "note": "Both weakness-list and truth-view callers consume the shared returned display.",
       "targets": [
         {
           "anchor": {
             "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
             "content": "sha256:11dfb5b83ffca0d6a81454454e2b5fb17581d75518ba70bf0b1d5dc83ba92e41",
             "locator": {
-              "kind": "symbol",
-              "name": "weakness_list"
+              "end": 167,
+              "kind": "line_range",
+              "start": 127
             },
             "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
           },
@@ -138,11 +139,12 @@
         },
         {
           "anchor": {
-            "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
-            "content": "sha256:a46b62e7daf4ec88266192e5c464b83d13d505f37a7d3dbab7579dcb0ba11215",
+            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
+            "content": "sha256:42d1689332e335ab8aa631adcdce364e4421b43753d4e2ab80435f6d5f402692",
             "locator": {
-              "kind": "symbol",
-              "name": "record_view"
+              "end": 123,
+              "kind": "line_range",
+              "start": 78
             },
             "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
           },

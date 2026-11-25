@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "270962a16350811bc340eccce4355bb1da621c11",
-    "commit": "b37cfb6356f892c7b39b818b886afba7bc2ccae8",
+    "codeTree": "33a879fe63de8ef94f792a0510424676d819e8ee",
+    "commit": "79d3d3a18fb39302c203314bd1e96110df66f973",
     "role": "curator",
-    "statement": "A held start still preserves its opening handover, and the launcher marks the selected bound role as held.",
-    "task": "261112-BUG-L19",
+    "statement": "The capsule reference still names the saved launch handover and held-message route, while generated guidance inside that handover tells readers to open an available brief and treats compact fields as applicable.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/reference/role-capsules.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -46,7 +46,7 @@
       "path": "mcp/src/agents_remember/cli/role_handover_projection.py"
     },
     {
-      "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+      "blob": "411af9bcc0ee7e14580f70910fd96aec495deefc",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_start_answer.py"
     },
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
     },
     {
-      "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+      "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },

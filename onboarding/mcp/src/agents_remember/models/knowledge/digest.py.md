@@ -12,7 +12,7 @@ The canonical invariant and family revision payload mappings and their SHA-256 d
 
 ### Logic
 
-canonical_revision_payload includes the payload version, repository/invariant/revision identities, display version, statement, applicability, ordered conditions and exclusions, origin state, acceptance reference, provenance and sorted predecessors. canonical_family_revision_payload uses the family's own identity and joint guarantee together with the same origin/provenance/predecessor rule. Neither mapping includes its digest.
+The v2 invariant payload binds the payload version, repository, invariant and revision identities, display version, statement, applicability, ordered conditions and exclusions, provenance and sorted predecessors. The family payload binds its own identity and guarantee with the same provenance and predecessor rules. The selected tree's derived revision state and the computed digest are outside both seals.
 
 revision_payload_digest and family_revision_payload_digest hash those exact mappings through kernel.canonical_json.sha256_digest. The predecessor set is sorted because its order is not authored meaning; conditions and exclusions keep their authored order.
 
@@ -39,23 +39,17 @@ No configured domain documentation could be checked.
 ### Repo-Internal References
 
 
-- The invariant payload includes authored scope and sorted predecessors while excluding its digest. [1]
 
 
 - The retained invariant digest computation hashes the canonical mapping. [2]
 
 
-- The family payload seals its joint guarantee and sorted predecessors. [3]
-
-- The recorded payload versions, separate so one payload's digest cannot be read as the other's. [4]
-
-- Both index revision decoders verify the recorded aggregate seal. [5]
 
 
-- Index decoders recompute seals on read; draft-sealing writers are retired. [6]
 
 
-- The node that proves each sealed field is load-bearing rather than incidentally covered. [7]
+
+
 
 - The canonical encoder the digest is computed through. [8]
 
@@ -64,3 +58,11 @@ No configured domain documentation could be checked.
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+- The invariant payload includes authored scope and sorted predecessors while excluding its digest. [1]
+- The family payload seals its joint guarantee and sorted predecessors. [3]
+- The recorded payload versions, separate so one payload's digest cannot be read as the other's. [4]
+- Both index revision decoders verify the recorded aggregate seal. [5]
+- Index decoders recompute seals on read; draft-sealing writers are retired. [6]
+
+- The node that proves each sealed field is load-bearing rather than incidentally covered. [7]

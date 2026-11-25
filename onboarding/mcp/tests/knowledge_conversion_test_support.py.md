@@ -90,4 +90,4 @@ No cross-repo boundary is crossed by this file.
 
 ### Repo-Internal References (continued)
 
-- Its catalog row. [6]
+- The lifecycle catalog governs knowledge_conversion_test_support.py as a shared-support artifact. [6]

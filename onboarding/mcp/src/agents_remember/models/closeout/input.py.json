@@ -295,16 +295,16 @@
       ]
     },
     "9": {
-      "note": "The worktree and direct routes render attributed memory messages at their real commit seams (since MIK-R09 the worktree route first validates a converted leaf's exact tree); no ledger commit is produced. Anchor: `_commit_memory_content` `_direct_memory_commit`",
+      "note": "Worktree closeout and direct landing attribute each new memory-content commit to the verified code commit. Ordinary converted-leaf closeout gates its exact memory output first. Ledger data is a derived cache.",
       "targets": [
         {
           "anchor": {
-            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
-            "content": "sha256:840ba0fb8dfdf16660bb52454a5f3658895880ef4ab80bb75355c8d1a06abb64",
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "content": "sha256:2ebc30a949453e20780dadcdf895672250a9a544f939dcff7b4b8ecd3816ffc2",
             "locator": {
-              "end": 590,
+              "end": 126,
               "kind": "line_range",
-              "start": 543
+              "start": 112
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -312,12 +312,51 @@
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:6c129d1c95a4e718fb3a409087939b3eb724506a25b42af45eef40519238d6e5",
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "content": "sha256:ba297d9a6ac2eb98a51f9dd34097afe92f5679abc2836f7a354018fed78848a3",
             "locator": {
-              "end": 393,
+              "end": 590,
               "kind": "line_range",
-              "start": 308
+              "start": 573
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "content": "sha256:28f08459dbaf7f2f4697ac990f32e19cc13ab1771b1d68a8acad991577c93d84",
+            "locator": {
+              "end": 614,
+              "kind": "line_range",
+              "start": 609
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:17c88789d9f2043e0ff779e6f68efd13bfebadcc26b5d175053ab4e3c6ddcbca",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 327
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:0c748bdb532b9cc684a22a8ee6c7560047aa800e441140694f52bd8fd40dc93c",
+            "locator": {
+              "end": 386,
+              "kind": "line_range",
+              "start": 381
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },

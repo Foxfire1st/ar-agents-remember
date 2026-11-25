@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd06da88d5ad9adf9118d8b596913833424647d9",
+            "blob": "60acb4e656c3cee5e477c3de736bb696ae8579ef",
             "content": "sha256:3280553d881865f2e8397c1c277ef20ac88389bfbc0f0be3b41a322729ed8b3f",
             "locator": {
               "kind": "symbol",
@@ -19,11 +19,11 @@
       ]
     },
     "2": {
-      "note": "Each of the three cycles requires a complete leaf quality receipt, a successful preview and a successful write. Quality memory trees and written paths must be distinct across cycles.",
+      "note": "Each cycle requires a complete leaf quality receipt and one successful preview and apply. Each write report agrees with its reply and names its revision-one weakness and owning leaf history. The first apply also lists `.gitignore`. The three quality trees and three applied weakness paths are distinct.",
       "targets": [
         {
           "anchor": {
-            "blob": "fd06da88d5ad9adf9118d8b596913833424647d9",
+            "blob": "60acb4e656c3cee5e477c3de736bb696ae8579ef",
             "content": "sha256:0c79b914b7b41c2421ca4fb91b2498ab05eeeaa6ca92d08d5fbf098d8d52d07d",
             "locator": {
               "end": 11,
@@ -35,12 +35,12 @@
         },
         {
           "anchor": {
-            "blob": "fd06da88d5ad9adf9118d8b596913833424647d9",
-            "content": "sha256:d07804f973ea1660c116e454dcbf28e3b2fdd97468985a266d50c1510bc708fd",
+            "blob": "60acb4e656c3cee5e477c3de736bb696ae8579ef",
+            "content": "sha256:e3fe2b9fc65da0d9e0e6cabde73ca0a9107c85896656f41eab613b9eb2aecb4a",
             "locator": {
-              "end": 164,
+              "end": 183,
               "kind": "line_range",
-              "start": 149
+              "start": 138
             }
           },
           "kind": "test"
@@ -52,8 +52,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd06da88d5ad9adf9118d8b596913833424647d9",
-            "content": "sha256:88477a1db753c47ade1774922ece4e40521fa136d8c91b77e1c7f9e9c6dbc805",
+            "blob": "60acb4e656c3cee5e477c3de736bb696ae8579ef",
+            "content": "sha256:7e9544217ab694228bcc99b68bc0f06d9bb247b19cb50383842a23531b53d0d2",
             "locator": {
               "kind": "symbol",
               "name": "read_completed_workload"

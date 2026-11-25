@@ -7,16 +7,16 @@
 ## Purpose
 
 The sealed revision payloads, at the model and through the read path. A revision's
-`payload_digest` seals its stored row: a row whose text was rewritten behind its identity is
+`payload_digest` seals the authored cells of its stored row: a row whose text was rewritten behind its identity is
 refused on decode rather than served as the revision that identity names. The predecessors field
 is still inside the digest — sealing with and without a predecessor changes it — but decoded
 predecessors are always `()`: the edge tables are gone with the schema (rule 1), so there is no
 edge table left to tamper with. This module owns the executable evidence for that seal on both
 payloads:
 
-- the digest covers the stored cells (the seal unit test pins one field's contribution);
+- the digest covers authored cells and excludes derived standing;
 - the aggregates refuse self-contradictory construction (a predecessor named twice, a revision as
-  its own predecessor, acceptance mismatches);
+  its own predecessor, or an unrecognized state);
 - each decoder case reads a stored row into a Python list, changes its statement or guarantee
   cell, and requires the production decoder to refuse the altered input with a payload-digest
   error. These cases do not rewrite the database.
@@ -62,6 +62,8 @@ None recorded for this slice. The node-count and mutation-array claims this modu
 in the fix-verification round; the corrected accounting is in the worker report's `C2`/`C3` rows rather
 than being restated here.
 
+The regression compares the same revision read in proposed and reviewed states and requires equal authored payload digests.
+
 ## Evidence
 
 ### Docs References
@@ -77,11 +79,8 @@ No configured domain documentation could be checked.
 - Why this module owns the shared seal evidence rather than either single-graph module. [1]
 
 
-- The field-isolating digest node for the invariant payload. [3]
 
-- The payloads that seal the predecessor set, one per revision kind. [7]
 
-- The read-path recomputation that turns a row whose stored cells were rewritten behind its seal into a storage defect. [8]
 
 
 
@@ -100,13 +99,18 @@ No meaningful cross-repo references found.
 
 
 
-- The family revision test changes the guarantee in a copied stored row and requires decode_family_revision_row to refuse with payload digest. [4]
-
-- The invariant revision test changes the statement in a copied stored row and requires decode_revision_row to refuse with payload digest. [5]
 
 
-- The unit-regression lane row this module is registered by. Anchor: "mcp/tests/test_knowledge_revision_seals.py" Anchor: "mcp/tests/test_knowledge_revision_seals.py" [9]
 
+- The same revision keeps its seal when derived standing differs. [17]
 
+- The unit-regression lane selects mcp/tests/test_knowledge_revision_seals.py. [9]
 
 - The knowledge identity-branching fixture artifact names contract:knowledge-identity-branching-fixture as its replacement and test_knowledge_revision_seals.py as an exact consumer. These declarations do not establish execution. [10]
+
+- The payloads that seal the predecessor set, one per revision kind. [7]
+- The read-path recomputation that turns a row whose stored cells were rewritten behind its seal into a storage defect. [8]
+
+- The field-isolating digest node for the invariant payload. [3]
+- The family revision test changes the guarantee in a copied stored row and requires decode_family_revision_row to refuse with payload digest. [4]
+- The invariant revision test changes the statement in a copied stored row and requires decode_revision_row to refuse with payload digest. [5]

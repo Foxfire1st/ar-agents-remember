@@ -413,16 +413,16 @@
       ]
     },
     "40": {
-      "note": "The current lane catalog selects mcp/tests/test_tool_entry_point_sweep.py once in unit-regression. This declaration selects evidence and establishes no invocation or passing result.",
+      "note": "The unit-regression lane selects mcp/tests/test_tool_entry_point_sweep.py. Execution evidence is recorded separately.\n\nAnchor: `mcp/tests/test_tool_entry_point_sweep.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
             "content": "sha256:171ddebacbf664d00fdcf83eaa546bb02da4596111fc8eb2e16c6cc0785397b1",
             "locator": {
-              "end": 630,
+              "end": 644,
               "kind": "line_range",
-              "start": 630
+              "start": 644
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -487,7 +487,7 @@
       ]
     },
     "43": {
-      "note": "The extracted bypass control returns a raw dictionary past the adapter choke point and checks that the support classifier sees an unvalidatable result.",
+      "note": "The extracted bypass control returns a raw dictionary past `_tool_payload` and checks that the support classifier sees an unvalidatable result.",
       "targets": [
         {
           "anchor": {
@@ -504,10 +504,10 @@
         },
         {
           "anchor": {
-            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
-            "content": "sha256:c0e54f12b9211f7fb26dd24d118a8562de4972ce6d7beb7a43b920a7fc979f42",
+            "blob": "c1de505d6e140874b674a3f0afbfccb01590e362",
+            "content": "sha256:f08077545aa7d2728aaac7112b4c5cbf28bd5bfaabf3925590f563c00be67d14",
             "locator": {
-              "end": 31,
+              "end": 35,
               "kind": "line_range",
               "start": 22
             },

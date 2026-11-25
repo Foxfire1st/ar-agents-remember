@@ -1,0 +1,60 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/kept_tool_calls.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5e9359a188c08b8bd4bfb076ce8fd0aa93cb4b49",
+        "content": "sha256:6adc98e2046b05875133bd1d5e154a21b75b84f108be0c422db552f78f405d01",
+        "locator": {
+          "kind": "symbol",
+          "name": "keep_tool_calls"
+        }
+      },
+      "id": "RLZ-EQKER1",
+      "invariant": "INV-B1DZ6W",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 13",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Persists a deduplicated retention artifact derived from the task’s own tool log.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "5e9359a188c08b8bd4bfb076ce8fd0aa93cb4b49",
+        "content": "sha256:a720cc79882f954dd8afaa7676e64d44c995a5da4281d80d623685082b20a6ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "removal_after_keep"
+        }
+      },
+      "id": "RLZ-G95GYK",
+      "invariant": "INV-B1DZ6W",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 13",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Allows terminal removal after the export succeeds and exposes the blocker on failure.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Terminal removal depends on a successful export and retries merge kept and current lines.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e9359a188c08b8bd4bfb076ce8fd0aa93cb4b49",
+            "content": "sha256:6adc98e2046b05875133bd1d5e154a21b75b84f108be0c422db552f78f405d01",
+            "locator": {
+              "kind": "symbol",
+              "name": "keep_tool_calls"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

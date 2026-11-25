@@ -21,26 +21,16 @@
       ]
     },
     "10": {
-      "note": "The index lookups it reads.\n\nAnchor: `proofs_of` `invariants_without_proof`",
+      "note": "The index lookups it reads.",
       "targets": [
         {
           "anchor": {
-            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
-            "content": "sha256:c31c1c5d3eac9b8386f76b007c96642f04f5440aa47d89ab4328bc1b8b9f3512",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "blob": "258a492fa3eae9ead64a87ba63994487563b27f1",
             "content": "sha256:180f6b20120e23836587447f5aca479a3d6eaad25b8250f9e364bdcb2086892e",
             "locator": {
-              "kind": "symbol",
-              "name": "proofs_of"
+              "end": 351,
+              "kind": "line_range",
+              "start": 340
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
           },
@@ -48,11 +38,23 @@
         },
         {
           "anchor": {
-            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "blob": "258a492fa3eae9ead64a87ba63994487563b27f1",
             "content": "sha256:3221a86238001c33500bbad81bf286b5bab780327c041996360bcfce6afdbc36",
             "locator": {
-              "kind": "symbol",
-              "name": "invariants_without_proof"
+              "end": 365,
+              "kind": "line_range",
+              "start": 353
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "258a492fa3eae9ead64a87ba63994487563b27f1",
+            "content": "sha256:daea986192a956918d0185b6b1b394c436f1257c65c60e6f57bdd52d089b08fc",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
           },
@@ -250,7 +252,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "blob": "7698616abcd31cb08bba4a158474703b7916d978",
             "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
             "locator": {
               "kind": "symbol",

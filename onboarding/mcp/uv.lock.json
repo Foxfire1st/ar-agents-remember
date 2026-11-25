@@ -1,0 +1,44 @@
+{
+  "path": "mcp/uv.lock",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "edc25c85341bf3ee90872391c4b485846886169e",
+        "content": "sha256:d5a8e1e6271f728c24f98fcac92de295a4138c9ec737b76bd0abb2873c06027f",
+        "locator": {
+          "end": 7,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-7M3P2R",
+      "invariant": "INV-BQFZCR",
+      "origin": {
+        "handoffEntry": "MIK-L36@v10 e1",
+        "leaf": "260928-MIK-L36"
+      },
+      "rationale": "The lock records the resolved editable distribution with its version; an unlocked mismatch would resolve a different package than the source it locks.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "2": {
+      "note": "The lock records the editable Agents Remember distribution, its Python requirement and its resolved dependencies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edc25c85341bf3ee90872391c4b485846886169e",
+            "content": "sha256:416bdab7eb793d4ccef0afc33f6b673f0f89b410090405337964732e25ab78ab",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

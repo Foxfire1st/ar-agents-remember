@@ -426,11 +426,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
-            "content": "sha256:62372c24c148ec8d3027528f6e0b457600727d7e4bc6bacebf3df10af9774c8e",
+            "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
+            "content": "sha256:e7cc96f6a9d23307b431e91d1c33fd9e215b3cd906dbae97bd13762e2abc7674",
             "locator": {
-              "kind": "symbol",
-              "name": "record_tool_call"
+              "end": 1187,
+              "kind": "line_range",
+              "start": 1136
             },
             "path": "mcp/src/agents_remember/application/tool_answer_log.py"
           },

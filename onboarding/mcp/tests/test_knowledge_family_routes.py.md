@@ -107,4 +107,4 @@ No cross-repo boundary is crossed by this file.
 
 
 
-- The lane registration. Anchor: "mcp/tests/test_knowledge_family_routes.py" Anchor: "mcp/tests/test_knowledge_family_routes.py" [9]
+- The unit-regression lane selects mcp/tests/test_knowledge_family_routes.py. [9]

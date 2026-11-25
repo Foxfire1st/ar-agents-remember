@@ -10,11 +10,17 @@
 
 ## Code Commentary
 
+The applied adoption case checks a fresh publication's derived brief refresh and paired code source. The drift acceptance control still reaches the reference-anchor validator.
+
+
 The module imports shared builders from `converted_onboarding_drift_support`. Its local `bound_validation` fixture installs the real `WorktreeServices`/`GitKnowledgeValidation` binding. The case first requires a stale-anchor world to refuse as `blocked-drift`; `accept_drift=True` still refuses as `blocked-invalid` naming `R198.1-reference-anchor`. It then creates a separate `card=True` repaired world, requires adoption and checks the paired `Code-Commit:` trailer. These are source assertions, not a fresh run.
 
 ## Evidence
 
 
-- Related baseline coverage in the retained drift suite: `accept_drift` never clears a validator violation. [2]
+
+
+- Accepting drift removes the preliminary drift refusal while the R198.1 anchor validator continues to block the baseline. [2]
+
 
 - A stale anchor refuses the baseline even when drift is accepted, and the repaired tree adopts with its code trailer [3]

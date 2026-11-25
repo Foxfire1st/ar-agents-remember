@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ed769cabdb7274515cf681f7ad55b1bd1e724580",
-    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
+    "codeTree": "cc81897b5c77098790701dfdb82dbf8ed0750807",
+    "commit": "a5a631ca5fe4e27d0b8affa2d8c077d09712b434",
     "role": "curator",
-    "statement": "The legacy-adoption guide still describes the actual blocker because its stated scope is all of onboarding and the scan now includes legacy markers in cards under dot directories.",
-    "task": "261112-BUG-L24",
+    "statement": "The adoption guide still accurately describes legacy-card blocking, scoped citation_fix repair before a baseline and the distinct preview and apply calls after the card scans stopped skipping dot-folders.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/guides/adopt-existing-memory.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "bfbe2e81d84a8bfc86b538760f6510133897cc83",
+      "blob": "74906e090cbaf56d8b60a978f4ada2a8b13bda8f",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory/baseline.py"
     },
     {
-      "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+      "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/memory_tools.py"
     },

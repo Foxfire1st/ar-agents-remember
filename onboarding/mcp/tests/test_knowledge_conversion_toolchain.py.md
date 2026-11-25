@@ -7,14 +7,14 @@
 ## Current source contract evidence
 
 
-- Say-once refusal checks message, detail and nextAction before real conversion and successful first adoption; direct naming separately asserts existence and omission of one known statement after fixture conversion, not executed general no-text proof.
+- Say-once refusal checks message, detail and nextAction before real conversion and successful first adoption; the direct reader asserts existence and places the fixture rule only inside its short brief.
 
 
 
 
 ## Purpose
 
-**MIK-R24 rules 5 and 9: converted-format tooling and the legacy boundary.** Unconverted memory remains readable as legacy-format but ordinary memory operations refuse it whether or not any line is converted. The direct file reader names converted records rather than carrying text. Existing unit-regression cases remain; composed first-conversion cases explicitly carry `pytest.mark.integration`.
+**MIK-R24 rules 5 and 9: converted-format tooling and the legacy boundary.** Unconverted memory remains readable as legacy-format but ordinary memory operations refuse it whether or not any line is converted. The direct file reader names converted records and includes the relevant rule text in the short brief. Existing unit-regression cases remain; composed first-conversion cases explicitly carry `pytest.mark.integration`.
 
 ## Code Commentary
 
@@ -22,9 +22,8 @@
 
 - `test_read_ar_files_names_the_converted_records_without_carrying_them` converts fixture memory, then
   calls the direct application reader with a string path. It asserts `state=named`, source existence,
-  and absence of the known `Alpha adds one.` statement in the serialized answer. The earlier
-  legacy/read-text/sidecar/reference-summary assertions were removed. This limited source assertion
-  is neither registered-handler execution nor a universal no-text proof.
+  and a single brief rule whose text is `Alpha adds one.`. Removing `brief` from the row leaves the
+  rest of the answer without that sentence. This is a source assertion against the direct application reader.
 - `test_references_are_checked_and_only_mechanical_moves_are_fixed`:
   - stale references are report-only (`findingCount` 0);
   - a quoted literal moved two lines down is re-found exactly once;
@@ -117,7 +116,7 @@ No cross-repo boundary is crossed by this file.
 
 
 
-- Direct read_ar_files names converted records, reports source existence and omits the fixture Alpha adds one. statement; no general no-text or registered-handler execution is claimed. [1]
+- The direct `read_ar_files` assertion checks source existence and confines `Alpha adds one.` to the row's sole short-brief rule. Anchor: `test_read_ar_files_names_the_converted_records_without_carrying_them` [1]
 
 
 
@@ -162,10 +161,7 @@ No cross-repo boundary is crossed by this file.
 
 - Static source checks cover the converted quality refusal and catalog drift item, the carried-versus-new anchor distinction, and the ten-entry delivery limit. Separate cases cover the content-only stale-reference advisory and the L46 conversion instructions. [17]
 
+- Producer results and their projections, finalized detail inputs, log destination, redaction and write budgets have separate implementation evidence. The conversion test contains no log-readback assertion. [18]
 
 
-- The test and implementation references cover producer results and their projections, detail inputs, log destination, redaction and write budgets. [18]
-
-
-
-- Its lane row. [6]
+- The unit-regression lane selects mcp/tests/test_knowledge_conversion_toolchain.py. [6]

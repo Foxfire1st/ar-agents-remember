@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "65a22267d1c85b114460c09b8c5ba15c53fc7fa8",
-        "content": "sha256:4ed24e1d7d6d437782fe1de5542d88ee3dd7d3bb8f0778183afab8f3911833c6",
+        "blob": "1e2e355c1da61d56ca7b0745abbe5f339123f7f9",
+        "content": "sha256:567ac684a891089c67be2c8da2cfa0a45668420c4f483c3b608eaf66da1a50f9",
         "locator": {
           "kind": "symbol",
           "name": "test_native_stdio_memory_stays_bounded"
@@ -22,8 +22,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "65a22267d1c85b114460c09b8c5ba15c53fc7fa8",
-        "content": "sha256:4ed24e1d7d6d437782fe1de5542d88ee3dd7d3bb8f0778183afab8f3911833c6",
+        "blob": "1e2e355c1da61d56ca7b0745abbe5f339123f7f9",
+        "content": "sha256:567ac684a891089c67be2c8da2cfa0a45668420c4f483c3b608eaf66da1a50f9",
         "locator": {
           "kind": "symbol",
           "name": "test_native_stdio_memory_stays_bounded"
@@ -41,12 +41,12 @@
   ],
   "references": {
     "1": {
-      "note": "The test verifies the persisted records from the three applied writes.",
+      "note": "The test matches each of the three distinct applied weakness records to its cycle, revision, writer stamp and content digest in the owning leaf history.",
       "targets": [
         {
           "anchor": {
-            "blob": "65a22267d1c85b114460c09b8c5ba15c53fc7fa8",
-            "content": "sha256:4eb3b9b7002ca9489657ea09649cb7f80b1054225213c54dd170eaf076444e9e",
+            "blob": "1e2e355c1da61d56ca7b0745abbe5f339123f7f9",
+            "content": "sha256:9002cecf5636aa0d13d545934267c209f453a0f693bdc0082d69e94674eca6dd",
             "locator": {
               "kind": "symbol",
               "name": "_verify_applied_writes"
@@ -57,12 +57,12 @@
       ]
     },
     "2": {
-      "note": "The executable case checks workload completion and memory bounds.",
+      "note": "The executable case checks workload completion, absent preview records, effective brief exclusion from Git and the existing memory bounds.",
       "targets": [
         {
           "anchor": {
-            "blob": "65a22267d1c85b114460c09b8c5ba15c53fc7fa8",
-            "content": "sha256:4ed24e1d7d6d437782fe1de5542d88ee3dd7d3bb8f0778183afab8f3911833c6",
+            "blob": "1e2e355c1da61d56ca7b0745abbe5f339123f7f9",
+            "content": "sha256:567ac684a891089c67be2c8da2cfa0a45668420c4f483c3b608eaf66da1a50f9",
             "locator": {
               "kind": "symbol",
               "name": "test_native_stdio_memory_stays_bounded"
@@ -90,12 +90,12 @@
         },
         {
           "anchor": {
-            "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
             "content": "sha256:bcc4ade20e19642e956536d6662d0c20a8343feed9984bdf943fe982348cd7d1",
             "locator": {
-              "end": 826,
+              "end": 845,
               "kind": "line_range",
-              "start": 823
+              "start": 842
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

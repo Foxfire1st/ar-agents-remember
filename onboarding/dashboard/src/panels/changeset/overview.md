@@ -198,7 +198,6 @@ Historical entry construction used review:{historical:true} for a closed leaf; t
 
 - **The reviewer entry is offered for every leaf beside the working/committed actions and opens review:{} for both live and closed leaves.** [62]
 
-- **The read that supplies the subject now belongs to the reviewer, taking the comparison's task context and nothing else.** [64]
 
 - **The entry’s code-or-memory worktree existence flags gate the working control and change the Intent review label; they do not select a different review target.** [65]
 
@@ -292,3 +291,5 @@ Anchor: `ChangeSetButton` [57]
 
 
 - The surface that receives it and asks for the task's own review. [69]
+
+- The review catalogue hook takes the comparison's task context for the subject read. [64]

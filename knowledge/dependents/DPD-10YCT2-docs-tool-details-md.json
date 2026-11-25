@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ce714f8fbee46339c39d7eec8c956e3763464c26",
-    "commit": "d1c92dc9d4606a0b48b8e6b13f9c41c9b9aa6cce",
+    "codeTree": "e08c810611259528c77765ddf47f51eb893f424b",
+    "commit": "10f2b5bb94ab96a48a5f226f6e63b9fe9f6fa4cb",
     "role": "curator",
-    "statement": "The tool details' account of serialized writes is still true: one queue in arrival order, a cancelled running write held in place until its thread ends, asynchronous tools outside the queue, and a stale build refusing publishing calls.",
-    "task": "261112-BUG-L27",
+    "statement": "The tool details still accurately describe server_info's build fields, background previews and baseline adoption's staged validation; the index cache's new single-flight build, lock and temp pruning touch nothing this page states. Reconfirmed after the BUG-L27 sync (code e08c8106). The write ordering is unchanged; BUG-L27 only logs a call cancelled while it waits.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -213,7 +213,7 @@
       "path": "mcp/src/agents_remember/application/knowledge_worklist/route_context.py"
     },
     {
-      "blob": "bfbe2e81d84a8bfc86b538760f6510133897cc83",
+      "blob": "74906e090cbaf56d8b60a978f4ada2a8b13bda8f",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory/baseline.py"
     },
@@ -227,7 +227,6 @@
         },
         "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
       },
-      "heading": "Loaded build identity",
       "kind": "anchor"
     },
     {
@@ -240,7 +239,6 @@
         },
         "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_binding.py"
       },
-      "heading": "Measured coherence",
       "kind": "anchor"
     }
   ]

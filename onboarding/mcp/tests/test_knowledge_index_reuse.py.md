@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**MIK-R23 rule 6: the existing read, view and comparison code runs over the index unchanged.** Parity between a text-backed fixture index and its converted tree index, the view seam, the two-snapshot comparison over index files, and the ordinary read's published-memory selection of a converted tree. Registered in the `unit-regression` lane; the source declares six test functions.
+**MIK-R23 rule 6: the existing read, view and comparison code runs over the index unchanged.** Parity between a text-backed fixture index and its converted tree index, the view seam, the two-snapshot comparison over index files, and the ordinary read's published-memory selection of a converted tree. The source declares six test functions.
 
 ## Code Commentary
 
@@ -81,5 +81,4 @@ No cross-repo boundary is crossed by this file.
 
 ### Repo-Internal References (continued)
 
-
-- The lane row. Anchor: `test_knowledge_index_reuse` Anchor: `test_knowledge_index_reuse` [13]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_index_reuse.py`. [13]

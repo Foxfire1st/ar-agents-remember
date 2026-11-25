@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "978e410ca88ebabc20fc598a05870dd8f8efed1a",
+    "commit": "e8a96f6e2255155d733dd15dcba56bd26e46097e",
     "role": "curator",
-    "statement": "The host file table attributes role records to Python registration and dashboard reconciliation and distinguishes resumable closure from archived activity.",
-    "task": "261112-BUG-L20",
+    "statement": "The runtime layout places Worker, Reviewer and Curator scratch and report folders under the task enclosure, gives other roles separate execution folders, and distinguishes a resumable closed session from archived host activity.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/reference/runtime-layout.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,12 +56,12 @@
       "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
     },
     {
-      "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+      "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
     {
-      "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+      "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },

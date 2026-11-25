@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "51bf0a91489d97231a1e1173b67d2087c170b08f",
-    "commit": "ff626cd445012fee408b4b6c292756bbe1438d2e",
+    "codeTree": "e34c549a99b13f88e47c7120e9d50aed712501f6",
+    "commit": "3bbaf460317e8572583d884bc0791a219ad1bcfa",
     "role": "curator",
-    "statement": "The MCP reference still matches the role-agent tools, and its advice correctly sends a sync or closeout caller whose client stopped waiting to that call's tool-log row. The MCP reference describes planning and file writes without a Git commit, identifies the master contract and crossing selector for a parked master operation with open history, and explains that retained sync checks the staged resolution against both pinned parents by path, staged line and diagnosis.",
-    "task": "261112-BUG-L26",
+    "statement": "On code e34c549a the MCP reference is accurate for this leaf and the gen-8 sync: read_ar_files compact rows carry the brief pointer and saved freshness; knowledge_read names the writers view; knowledge_write refuses typed states and stamps each revision from the caller's launch; a Reviewer or Curator start reports productMessage; and the role-agent tool sentence (lines 669-672, corrected under Architect ruling (b)) now says a host-run role agent receives the tools of its role once from agents-remember-task, matching role_tool_scope.py and server.py's role narrowing.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 18,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -58,7 +58,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
     },
     {
-      "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+      "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/core.py"
     },
@@ -78,7 +78,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
     },
     {
-      "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+      "blob": "15d0552bac287633d62cf82579e745dd56050256",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
     },
@@ -118,7 +118,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
     },
     {
-      "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
+      "blob": "0545be4ce99a465c6e590e0c19385c91e54191db",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -128,7 +128,7 @@
       "path": "mcp/src/agents_remember/mcp/read_only.py"
     },
     {
-      "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+      "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
@@ -138,7 +138,7 @@
       "path": "mcp/src/agents_remember/application/role_launch_context.py"
     },
     {
-      "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+      "blob": "411af9bcc0ee7e14580f70910fd96aec495deefc",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_start_answer.py"
     },
@@ -163,7 +163,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
     },
     {
-      "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
+      "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
@@ -183,7 +183,7 @@
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_field_homes.py"
     },
     {
-      "blob": "feb0861fd2096c6a955af98d73ccecccabcc33ad",
+      "blob": "268fb78a4dd9640215b95691eb653e535db39358",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/review_history.py"
     },
@@ -193,7 +193,7 @@
       "path": "mcp/src/agents_remember/tasks/document.py"
     },
     {
-      "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+      "blob": "d510d9d58081286c07420229dbc887d205b07902",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/read_files.py"
     },
@@ -248,7 +248,7 @@
       "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py"
     },
     {
-      "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
+      "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
     },
@@ -283,7 +283,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/master_review_gate.py"
     },
     {
-      "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+      "blob": "44965514704f09508b78c29839ced880346b1479",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/tool_response.py"
     },
@@ -293,7 +293,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
     },
     {
-      "blob": "2cf0cb36145dd6c7182ecc769e9a59d8d7ada07f",
+      "blob": "ba0a4d4cc4a64d12dfe74f442b18765bc198f5e0",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
     },
@@ -313,12 +313,12 @@
       "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
     },
     {
-      "blob": "7f83c251787e23ac79b7a31c5ebb7727d5ccc698",
+      "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
     },
     {
-      "blob": "1fe83d48a75d16c7f66764ad45c34bc03f6becff",
+      "blob": "30231d7913eb526be260f641f1310d2349da4856",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
     },
@@ -341,7 +341,7 @@
     },
     {
       "anchor": {
-        "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+        "blob": "7698616abcd31cb08bba4a158474703b7916d978",
         "content": "sha256:3ebb97025105171a88b5a176c9a9d9e5317c5116b3bc90648c6a27d044a3dbe7",
         "locator": {
           "kind": "symbol",
@@ -353,7 +353,7 @@
     },
     {
       "anchor": {
-        "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
+        "blob": "0545be4ce99a465c6e590e0c19385c91e54191db",
         "content": "sha256:42d4b3573baea1dc0a2279318b8c4a4b31d5244eb568245ce5c2596ce998443c",
         "locator": {
           "kind": "symbol",
@@ -377,7 +377,7 @@
     },
     {
       "anchor": {
-        "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
+        "blob": "58ee640a8f53ac7e3e3b4aa884d750d6ad8eead7",
         "content": "sha256:17a7d71678f73331b855d34651afd5b6d482dcd202ef6c383205ab26fc74adc2",
         "locator": {
           "kind": "symbol",
@@ -389,7 +389,7 @@
     },
     {
       "anchor": {
-        "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
+        "blob": "58ee640a8f53ac7e3e3b4aa884d750d6ad8eead7",
         "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
         "locator": {
           "kind": "symbol",
@@ -400,7 +400,7 @@
       "kind": "anchor"
     },
     {
-      "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+      "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -411,7 +411,7 @@
     },
     {
       "anchor": {
-        "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
+        "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
         "content": "sha256:51adacb2027131fa579aafdcce7d397f57ddd50f264b97247df97d0bb7e3e4f0",
         "locator": {
           "kind": "symbol",

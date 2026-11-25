@@ -22,7 +22,8 @@ The governing workflow opens an independent memory review after CODE PASS on the
 ## Evidence
 
 
-- Worker/Curator typed review census, record-only exclusion and unknown history. [1]
 - Reason admission, threshold and differing-harness/model inheritance boundary. [2]
 - Record-only memory identity comes from memory authority, never the sibling code root. [3]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [4]
+
+- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [1]

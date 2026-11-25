@@ -14,7 +14,12 @@ The literal knowledge answer contains names, state/currentness qualifiers, locat
 
 The answer-table tests consume these exact fixture bytes. Production versus recorded provenance and regeneration belong to PROVENANCE.md and the test producer, not manual edits of identities, tokens or output counts. No secret or current operational credential is represented by these static values.
 
+The captured answer includes recordState proposed and the compact writer unknown/unknown for seven record rows. Their source currentness remains unverifiable and the continuation remains bound to its snapshot.
+
 ## Evidence
 
+
+
+- The fixture’s record standing is separate from its source currentness. [2]
 
 - This static answer records the naming/compact fields and its own epoch qualifiers. [1]

@@ -1,0 +1,74 @@
+{
+  "path": "mcp/tests/test_knowledge_record_state.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "65c2b1cff672c13df70860c47c551d2ed8fc4c77",
+        "content": "sha256:6d4b262b45d38cfa2fa329aa36287565eb0bde86024c486cd0c0674e67184ab8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_revision_reads_proposed_before_closeout_and_reviewed_after"
+        }
+      },
+      "facet": "The same revision changes from proposed to reviewed only after its closeout records the pass.",
+      "id": "PRF-RG1KX4",
+      "invariant": "INV-X8FRT8",
+      "origin": {
+        "handoffEntry": "L3-W1-04",
+        "leaf": "261112-KNO-L3"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An exact pass holds after closeout closes the writing history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65c2b1cff672c13df70860c47c551d2ed8fc4c77",
+            "content": "sha256:6d4b262b45d38cfa2fa329aa36287565eb0bde86024c486cd0c0674e67184ab8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_revision_reads_proposed_before_closeout_and_reviewed_after"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A shared revision number does not transfer credit to different content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65c2b1cff672c13df70860c47c551d2ed8fc4c77",
+            "content": "sha256:eb1db77c8c03664a3cc314abbbcda7496c7d5067e5ccf68b14cf38a7bc11065f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_closed_contents_under_one_number_read_proposed_without_the_records_stamp"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "An already built index returns standing without opening the history files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65c2b1cff672c13df70860c47c551d2ed8fc4c77",
+            "content": "sha256:b7bcf2a98fac8e5f2aa5bb0f4661beea93854b6cf7be0533446937bdfac95077",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_index_answers_state_and_writer_without_the_history_files"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

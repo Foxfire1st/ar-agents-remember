@@ -602,7 +602,7 @@
       ]
     },
     "24": {
-      "note": "The shared catalogue hook takes repository/task context and calls the existing subject catalogue client.",
+      "note": "The shared catalogue hook takes repository/task context and calls the existing subject catalogue client.\n\nAnchor: useReviewCatalogue, intentReviewEntries",
       "targets": [
         {
           "anchor": {
@@ -619,36 +619,12 @@
         },
         {
           "anchor": {
-            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
-            "content": "sha256:8e782d547cb8a35eef706f164ee528a2375c1c9b1357a02ae164273ece6e4e8b",
+            "blob": "35cf6991372a9b8389d9991cf851018c84f456a5",
+            "content": "sha256:abdd1cbe8d6a47bada1d3fd40ae2164bf3c5db68c8165db955bda24317416d81",
             "locator": {
-              "end": 673,
+              "end": 681,
               "kind": "line_range",
-              "start": 649
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
-            "content": "sha256:780491a1b7a07a5c0592961ed3caf204693ee543c04870c0e337bbc9af03b168",
-            "locator": {
-              "kind": "symbol",
-              "name": "useReviewCatalogue"
-            },
-            "path": "dashboard/src/data/useReviewCatalogue.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
-            "content": "sha256:e470c7af378ec882122a77bf080a3c8d115848d26b0bbe570bf422af45d7c4bb",
-            "locator": {
-              "kind": "symbol",
-              "name": "intentReviewEntries"
+              "start": 667
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -744,14 +720,16 @@
       ]
     },
     "28": {
-      "note": "**The client's inventory types and the request that omits the selector when there is none.**\n\nAnchor: `ReviewSourceInventory` `intentReview`",
+      "note": "The review client mirrors the source inventory and omits the subject selector when absent.\n\nAnchor: ReviewSourceInventory, intentReview",
       "targets": [
         {
           "anchor": {
-            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
-            "content": "sha256:3a72132f0e91797658680ee56804a30bd93c76a74d449d6f3d58b4e7c0b8e002",
+            "blob": "35cf6991372a9b8389d9991cf851018c84f456a5",
+            "content": "sha256:98098bcb151268c1cdee7226d8a6716c8eb559d5a6dce762c84d25cbbf86140c",
             "locator": {
-              "kind": "file"
+              "end": 244,
+              "kind": "line_range",
+              "start": 235
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -759,11 +737,12 @@
         },
         {
           "anchor": {
-            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
-            "content": "sha256:950d3b870b93a5113e6a5ee6a9023583438a80b65df212ca5ca4dbe31e289909",
+            "blob": "35cf6991372a9b8389d9991cf851018c84f456a5",
+            "content": "sha256:7fc340dfd567807e7043ee04adf76d30ae951109c7f7fc411100aa6de8010b53",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewSourceInventory"
+              "end": 467,
+              "kind": "line_range",
+              "start": 435
             },
             "path": "dashboard/src/data/review.ts"
           },

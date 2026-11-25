@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/memory/conversion/state_owners.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fa5c03fb4578b27cded12d8784cdaace491ceea5",
+        "content": "sha256:22bc369023cb1ac3b4b658e634a22569bba11450684b3feaa1de9fb0e6e6cd9a",
+        "locator": {
+          "kind": "symbol",
+          "name": "revision_owner"
+        }
+      },
+      "id": "RLZ-K9JDBR",
+      "invariant": "INV-69M737",
+      "origin": {
+        "handoffEntry": "L3-W1-07",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Finds the owner of a current revision from the origin or the changed row, and none where neither says it.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Origin and history supply candidate ownership for a legacy revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa5c03fb4578b27cded12d8784cdaace491ceea5",
+            "content": "sha256:22bc369023cb1ac3b4b658e634a22569bba11450684b3feaa1de9fb0e6e6cd9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "revision_owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The conversion attribution preserves the known owner and explains unresolved identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa5c03fb4578b27cded12d8784cdaace491ceea5",
+            "content": "sha256:543f8b00e4152a3ad92ddac19e76a0964e5d869c7cd4e82996492cc46c69ccce",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_stamp"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

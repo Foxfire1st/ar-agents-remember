@@ -36,11 +36,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
-            "content": "sha256:c0e54f12b9211f7fb26dd24d118a8562de4972ce6d7beb7a43b920a7fc979f42",
+            "blob": "c1de505d6e140874b674a3f0afbfccb01590e362",
+            "content": "sha256:f08077545aa7d2728aaac7112b4c5cbf28bd5bfaabf3925590f563c00be67d14",
             "locator": {
-              "kind": "symbol",
-              "name": "_tool_payload"
+              "end": 35,
+              "kind": "line_range",
+              "start": 22
             }
           },
           "kind": "code"
@@ -52,7 +53,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "blob": "c1de505d6e140874b674a3f0afbfccb01590e362",
             "content": "sha256:b0053d26dc1ddbfeaa7d8e65af358e70b68734e5f38ed18b4c107d6c7d9f9c89",
             "locator": {
               "end": 19,
@@ -106,25 +107,26 @@
       ]
     },
     "4": {
-      "note": "The shared adapter finalizes one application result.\n\nAnchor: `_tool_payload`",
+      "note": "The shared adapter finalizes one application result. Anchor: `_tool_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
-            "content": "sha256:e65598ad08d511a5ffa26a3099d273596eea7844d5c2a00685c2ccb183271c43",
+            "blob": "c1de505d6e140874b674a3f0afbfccb01590e362",
+            "content": "sha256:f08077545aa7d2728aaac7112b4c5cbf28bd5bfaabf3925590f563c00be67d14",
             "locator": {
-              "kind": "file"
+              "end": 35,
+              "kind": "line_range",
+              "start": 22
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
-            "content": "sha256:c0e54f12b9211f7fb26dd24d118a8562de4972ce6d7beb7a43b920a7fc979f42",
+            "blob": "c1de505d6e140874b674a3f0afbfccb01590e362",
+            "content": "sha256:11b1fc8e2810d5677e38dee186495dae46d165ae39a1e63e3058fab306d145d2",
             "locator": {
-              "kind": "symbol",
-              "name": "_tool_payload"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -166,7 +168,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "blob": "c1de505d6e140874b674a3f0afbfccb01590e362",
             "content": "sha256:ce29b753f5c354c1ae64c4aeed6c4e8047661de316f0b1c0db7560214913beb8",
             "locator": {
               "end": 16,
@@ -201,7 +203,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "blob": "c1de505d6e140874b674a3f0afbfccb01590e362",
             "content": "sha256:e25b91ef7e59f5708d629d8411b56fd5ec7c03af9f7b3e1ce4a3d5713fbb8cff",
             "locator": {
               "end": 17,
@@ -218,7 +220,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "blob": "c1de505d6e140874b674a3f0afbfccb01590e362",
             "content": "sha256:02861ec722ea4c0fc6571e07ac18f67ec72c64be18bf5754811b91af64bbe1f4",
             "locator": {
               "end": 22,

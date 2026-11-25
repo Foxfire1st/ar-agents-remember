@@ -18,6 +18,8 @@ Canonical changes classified as affecting semantic topology or completion readin
 
 Closeout preview describes code and memory-content writes plus informational cache refresh. Ordinary closeout recovery checks exact Git refs and accepted output identities. The direct-landing owner settles the kept history-closing receipt for its generation. Ledger refresh stays informational.
 
+If recovered memory history was closed without a review fact, the success response can explain that the leaf’s revisions stay proposed. Recovery reads the owner history from the memory commit it already proved.
+
 ## Construction
 
 ### Canonical source census and publication
@@ -85,7 +87,9 @@ Historical labels such as final, landed, and resolved describe earlier curation 
 
 ## Evidence
 
-- Recovery proves the accepted code and memory outputs without a cache lookup. [1]
+- Recovery derives the no-pass sentence only after finding the exact recorded memory output. [9]
+
+
 - Canonical census, readiness, source planes, and immutable snapshots construct fresh membership. [2]
 
 
@@ -99,6 +103,11 @@ Historical labels such as final, landed, and resolved describe earlier curation 
 
 
 
-- Preview, exact Git-output recovery, cache handling, explicitly selected staged quality, ordinary invariant-gated memory publication and protected-ref integration have separate owners; disposable scheduling projection grants none of their publication or certification authority. [6]
 
 - Curator evidence comes from the structured currentness validator and is consumed as door candidate provenance. [5]
+
+
+
+- Preview, exact Git-output recovery, cache handling, explicitly selected staged quality, ordinary invariant-gated memory publication and protected-ref integration have separate owners; disposable scheduling projection grants none of their publication or certification authority. [6]
+
+- Recovery proves the accepted code and memory outputs without a cache lookup. [1]

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "f3ee77dfac4162d06d4dba0121172674a8c4f7d3",
-    "commit": "653b42f6b47d4e59ba8b47047d0d31698080d369",
+    "codeTree": "51a44523acb6c29c3a029c7dde4a35acb96595f3",
+    "commit": "3bbaf460317e8572583d884bc0791a219ad1bcfa",
     "role": "curator",
-    "statement": "The reference correctly describes Lean symbol selection, exact dependent confirmation, contractual memory bases and the knowledge index’s bounded rebuild behavior. The knowledge-system reference correctly says that an automatically settled memory merge also runs the staged check described in Worktrees.",
-    "task": "261112-BUG-L26",
+    "statement": "The reference correctly describes Lean symbol selection, exact dependent confirmation, contractual memory bases and the knowledge index’s bounded rebuild behavior. The knowledge-system reference correctly says that an automatically settled memory merge also runs the staged check described in Worktrees. On code 51a44523 (gen-8 sync onto CAP-L1 and BUG-L26) records, history, hand-off and writer now carry writer stamps, derived states, invariant titles and review facts, which the reference's title paragraph and 'State, writer and review' section describe; the governing-row and family-effect rules moved unchanged to history_governing_rows.py and family_effect.py; _continue_memory_merge settles a generated-briefs .gitignore conflict and still runs the staged check, as 'Memory merges in a sync' says.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/reference/knowledge-system.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "2cf0cb36145dd6c7182ecc769e9a59d8d7ada07f",
+      "blob": "ba0a4d4cc4a64d12dfe74f442b18765bc198f5e0",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
     },
     {
-      "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+      "blob": "3d0a518fede1ad24a4a085fd8a401d9ea6695ac1",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
     },
@@ -107,12 +107,12 @@
       "path": "mcp/src/agents_remember/kernel/generated_copies.py"
     },
     {
-      "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+      "blob": "9583cdcb4e627f7edb2b978ba060b06fc7a3c63c",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
     },
     {
-      "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
+      "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/landing.py"
     },
@@ -128,7 +128,7 @@
     },
     {
       "anchor": {
-        "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+        "blob": "7698616abcd31cb08bba4a158474703b7916d978",
         "content": "sha256:cd6baad3af0eca70673d6da336f2d0a97e064578948a9ecef96d7be5dda01776",
         "locator": {
           "kind": "symbol",
@@ -187,7 +187,7 @@
       "kind": "anchor"
     },
     {
-      "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+      "blob": "4a81b6d9ab671887286c74a241af468320dd3f0d",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
     },
@@ -217,7 +217,7 @@
       "path": "mcp/src/agents_remember/application/knowledge_worklist/registry.py"
     },
     {
-      "blob": "1bfaeefbe94488a2653472dbc6aed964092e1f84",
+      "blob": "648f677f2d1078b75d56a057d89ea2a439311248",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/shapes.py"
     },
@@ -227,7 +227,7 @@
       "path": "mcp/src/agents_remember/application/knowledge_write_command.py"
     },
     {
-      "blob": "a980cc93e1c8141ce2b8fb3a94224a554f69f9e4",
+      "blob": "d526b667f96765bf304f2867766fdf4e0873cab0",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
     },
@@ -237,7 +237,7 @@
       "path": "dashboard/src/panels/review/MeaningEffects.tsx"
     },
     {
-      "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+      "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
     },
@@ -379,8 +379,8 @@
     },
     {
       "anchor": {
-        "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
-        "content": "sha256:1ec537f6f0422a1b506ca91c06b7b979e369716ad77db2e41cb8d0e1df516525",
+        "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+        "content": "sha256:7d21b4b91cc06b4564b507277a082a02550f797f8dd8c8671cfd9ab47c0b816a",
         "locator": {
           "kind": "symbol",
           "name": "_continue_memory_merge"

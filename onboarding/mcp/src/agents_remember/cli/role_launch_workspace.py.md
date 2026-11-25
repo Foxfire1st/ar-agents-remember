@@ -10,6 +10,9 @@ The role start's preparation owner derives the admitted working group: non-leaf 
 
 ## Code Commentary
 
+The existing enclosure child can report a brief refresh advisory. The prepared workspace carries that advisory with the successful result and the launch answer can display it.
+
+
 Every leaf role checks the canonical review before direct-grant or enclosure resolution; refusal makes no enclosure or seat and instructs the caller to await the Architect go rather than retry.
 
 The found live enclosure path invokes publish_start_task_facts(started=True) only for planning, after all workspace checks; TaskLeafBindingError becomes RolePreparationError with original status/detail and no seat.
@@ -27,7 +30,10 @@ In the enclosed-leaf branch, the real leaf-workspace owner creates the group's `
 
 ## Evidence
 
-- The recorded master contract supplies the parent hint unless it names the master itself, where the commanding sprint — or the master's own folder when no sprint commands it — supplies it; an absent contract falls back to the sprint, or to the master when it stands alone, to bootstrap.  Anchor: `_recorded_parent` [1]
+
+
+- The recorded master contract supplies the parent hint unless it names the master itself, where the commanding sprint — or the master's own folder when no sprint commands it — supplies it; an absent contract falls back to the sprint, or to the master when it stands alone, to bootstrap. Anchor: `_recorded_parent` Anchor: `_recorded_parent` [1]
+
 
 
 - A refusal keeps the native status and reason and names an owner-derived next action. [2]
@@ -35,7 +41,10 @@ In the enclosed-leaf branch, the real leaf-workspace owner creates the group's `
 
 - The common resolver creates or finds the enclosure and returns its validated roots and preparation outcome. [4]
 
-- Terminal generations refuse before any root use or materialization, and a missing or reopened enclosure is created through the child — a reopened one under the worktree name its contract already owns.  Anchor: `_ensure_leaf_enclosure` [5]
+
+
+- Terminal generations refuse before any root use or materialization, and a missing or reopened enclosure is created through the child — a reopened one under the worktree name its contract already owns. Anchor: `_ensure_leaf_enclosure` [5]
+
 
 - Both role-start entry points use the existing checked preparation child for this operation, retaining its root, writer-admission and cut-off checks; public worktree_start retains its caller semantics. [6]
 
@@ -46,5 +55,7 @@ In the enclosed-leaf branch, the real leaf-workspace owner creates the group's `
 ## Leaf outside-scratch workspace identity
 
 Both workspace branches now carry `outsideScratchRoot` beside `scratchRoot`, and the key is always present. A granted direct leaf gets it from `_outside_scratch_field(series)`, which ensures an existing recorded root before returning its path as text and returns an empty string when that contract records none. An enclosed leaf gets it from `_ensure_leaf_root(contract_path, group)`, which asks `outside_scratch.recorded_root_in_group` about the group's published manifest first and returns an empty string without loading the contract when the manifest records no root. When the manifest does record one, `_ensure_leaf_root` loads the contract, calls `outside_scratch.ensure_recorded_root`, and returns the recorded path. `ensure_recorded_root` treats the record as the identity: it recreates a root that ageing removed with the same marker bytes, recreates an unmarked remnant empty, and refuses a tree whose complete marker names another generation instead of deleting it.
+
+
 
 - Every leaf role checks the canonical review before direct-grant or enclosure resolution; refusal makes no enclosure or seat and instructs the caller to await the Architect go rather than retry. The found live enclosure path invokes publish_start_task_facts(started=True) only for planning, after all workspace checks; TaskLeafBindingError becomes RolePreparationError with original status/detail and no seat. Found/created workspace preparation records referenceRoot and named copy warning without substituting another reference or blocking a start solely because copying failed. [8]

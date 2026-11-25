@@ -73,9 +73,10 @@ No configured live documentation source was available for this pass.
 - Presence fields are omitted when the memory enumeration failed. [4]
 - Directory coverage counts cards against in-scope files or says unavailable. [5]
 
-- The route entry that delegates its listing here. [6]
 
 
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- The route entry that delegates its listing here. [6]

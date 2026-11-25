@@ -76,13 +76,8 @@ the production path to drive.
 
 ### Conventions
 
-- Registered in `mcp/tests/test-evidence-lanes.toml` as an **integration** member: it stands up real
-  repositories and an external-memory enclosure, which is the population that measures that behaviour.
-- The complete `mcp/tests/evidence-lifecycle.toml` declares this module as an exact
-  consumer of `_user_settings_guard.py`, `curator_coherence_test_support.py` and
-  `fixtures/repository_profiles/node/package-lock.json`. The current catalog has
-  **18 contracts and 120 artifacts**. The earlier 13/54 consumer-addition account
-  describes the creating leaf's source epoch and is not the current catalog population.
+- The cases stand up real repositories and an external-memory enclosure.
+- The current lifecycle catalog has **18 contracts and 121 artifacts**. The earlier 13/54 consumer-addition account describes the creating leaf's source epoch.
 - `_tool_publish` and `_tool_publish_bare_name` reach the **application** boundary
   (`curator_coherence_tool`) for returned refusal-code assertions. The author-field case instead
   checks request-model `ValidationError`; direct evidence-byte cases inspect
@@ -170,24 +165,15 @@ closeout entry point the rest of the integration suite uses.
 At that `260921-ICR-L15` source epoch, the recorded account was: the module grew 948 → 988 lines. Nothing else in it changed: the same fixture, the same published
 assessment, and the same `curator_coherence_subject_assessment_state` projection under test.
 
-- The lifecycle catalog declares this suite as an exact consumer of curator_coherence_test_support.py and the Node package-lock fixture. Declaration is not invocation.
 
-- The lifecycle catalog declares this suite as an exact consumer of curator_coherence_test_support.py and the Node package-lock fixture. Declaration is not invocation.
 
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1951-1951 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
+- The `integration` lane selects `mcp/tests/test_curator_review_assessment_publication.py`. [1] [2]
 
-
-- The lane catalog declares this suite in integration. [1]
-
-
-
-
-- The lane catalog declares this suite in integration. [2]
-
+- The lifecycle catalog lists this module as an exact consumer of `mcp/tests/curator_coherence_test_support.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. [3]
+- The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py`.
 - The publication wiring the cases drive, including the exact-coverage obligation they leave untouched. [4]
 - The record's `assessments` collection that the publish action accepts holds each assessment identity once, a rule kept separate from judgment-to-candidate coverage. [6]
-
-- The lifecycle catalog declares this suite as an exact consumer of curator_coherence_test_support.py and the Node package-lock fixture. Declaration is not invocation. [3]

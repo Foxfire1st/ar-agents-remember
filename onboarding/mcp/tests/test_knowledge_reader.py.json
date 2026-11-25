@@ -250,16 +250,16 @@
       ]
     },
     "40": {
-      "note": "The lane row. Anchor: `test_knowledge_reader` Anchor: `test_knowledge_reader`",
+      "note": "The unit-regression lane selects mcp/tests/test_knowledge_reader.py.\n\nAnchor: `mcp/tests/test_knowledge_reader.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
             "content": "sha256:a76d28987255bc973fec0d29a9e3b41a0704330037508157d8de6058c414cd94",
             "locator": {
-              "end": 257,
+              "end": 262,
               "kind": "line_range",
-              "start": 257
+              "start": 262
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

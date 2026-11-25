@@ -3,16 +3,50 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "A graded location row is drawn as three cells, with the grade chip whole in the trailing one",
+      "note": "The location cases check three cells, presence of the grade chip only where expected and the ungraded reason cell.",
       "targets": [
         {
           "anchor": {
-            "blob": "b611b0d0c950dd21facb3aae23819e7713e4d93b",
-            "content": "sha256:129d1f08d9ca66cc3d8ee6d2d164942a8aa985a5719f5435f5e97cb19d06952d",
+            "blob": "cd79e5c3fe4d42e28b8c0ce63624c50178c5dd37",
+            "content": "sha256:1bcba1ced190f8227e5b8904d5a2e667baf067752309472ecc6905abdc2bf025",
             "locator": {
-              "end": 45,
+              "end": 102,
               "kind": "line_range",
-              "start": 45
+              "start": 52
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Subject cases cover state and writer in the trailing cell, accessible text, omitted state and a null writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd79e5c3fe4d42e28b8c0ce63624c50178c5dd37",
+            "content": "sha256:fb02ea0070526cf1ca9d692961433b46ffc18139297c484628f0f24f670aa237",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The family case includes role and model in the title and accessible name alongside the visible state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd79e5c3fe4d42e28b8c0ce63624c50178c5dd37",
+            "content": "sha256:36f86ceab782c86d0e54c7a64e086440fba165ca6027025ae29db12db0441bd2",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 149
             }
           },
           "kind": "test"

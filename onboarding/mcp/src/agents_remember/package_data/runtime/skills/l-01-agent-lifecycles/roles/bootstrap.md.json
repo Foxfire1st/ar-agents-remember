@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
-        "content": "sha256:11994559aec49ff91c037d4b276c7870c355754696cf062692a875802ca61d3f",
+        "blob": "1932e1048e02929da857033da376474be2f5bb19",
+        "content": "sha256:dfeb754dd69851760d35bc2eb5df1bcb46d26ce4ed11aee2c72342a72e04e795",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "blob": "1932e1048e02929da857033da376474be2f5bb19",
             "content": "sha256:10142a79d25fd343a320bd8f36a2d54aef2f38490150509c33882ef53e4c3ecc",
             "locator": {
               "end": 6,
@@ -127,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "blob": "1932e1048e02929da857033da376474be2f5bb19",
             "content": "sha256:7b8d340a98eb0b9052c3424ad3724e50c6a2ffb13b4c652870ab7352a5a30fd2",
             "locator": {
               "end": 54,
@@ -144,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "blob": "1932e1048e02929da857033da376474be2f5bb19",
             "content": "sha256:55cedd4e1047d6fccf5eb7144465570629955bb8e2e94d4c930cd1cc8d03284d",
             "locator": {
               "end": 56,
@@ -161,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "blob": "1932e1048e02929da857033da376474be2f5bb19",
             "content": "sha256:3f30fb22a3ae0c687f7ed7bee416dd8703a39f834bad19ac758598b462c6d51d",
             "locator": {
               "end": 52,
@@ -173,12 +173,29 @@
         }
       ]
     },
+    "19": {
+      "note": "Bootstrap uses read_ar_files to name governing cards and recorded rules. It opens the files with its own tools under the existing read-only authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1932e1048e02929da857033da376474be2f5bb19",
+            "content": "sha256:ab0fc702804139ad3d25c7fdf4f1e78faab801095a504651729d98d374efa671",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Bootstrap is a free agent: a setup role started from the dashboard with no task document, brief or parent; the user starts it with one call from their own chat.",
       "targets": [
         {
           "anchor": {
-            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "blob": "1932e1048e02929da857033da376474be2f5bb19",
             "content": "sha256:88d0e5d8af61ab95a4f7d53858384b803b38aeedc380afc1d97b79662f34a115",
             "locator": {
               "end": 10,
@@ -195,7 +212,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "blob": "1932e1048e02929da857033da376474be2f5bb19",
             "content": "sha256:6ecfc010da88268e8f8db34b32a17fd822a5ce6a658660a9e60655d9c4d275b5",
             "locator": {
               "end": 30,
@@ -212,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "blob": "1932e1048e02929da857033da376474be2f5bb19",
             "content": "sha256:a6b15da7b714cd52cd84c2b2069e22b94dfa322c98a39212a5ed889b13462c44",
             "locator": {
               "end": 8,
@@ -229,7 +246,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "blob": "1932e1048e02929da857033da376474be2f5bb19",
             "content": "sha256:438ad4eb5d6591c52774e4a61d059086e5acc76493169fa81a5272631c335c25",
             "locator": {
               "end": 10,
@@ -246,8 +263,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
-            "content": "sha256:090c319e73b1d5d3503e9ab910fdc6a274b2bdfc9fadc4367a66b1a7e4361325",
+            "blob": "1932e1048e02929da857033da376474be2f5bb19",
+            "content": "sha256:a80f57ec0706719baa69b4d611cac8a3f89ecf18a688d6df317e309f8cf58652",
             "locator": {
               "end": 44,
               "kind": "line_range",
@@ -281,7 +298,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
             "content": "sha256:87493687e619f40c59eb325499aee24e8ebc16840f218eca3f0e673b6ab01a83",
             "locator": {
               "end": 548,
@@ -294,7 +311,7 @@
         },
         {
           "anchor": {
-            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "blob": "1932e1048e02929da857033da376474be2f5bb19",
             "content": "sha256:7b8d340a98eb0b9052c3424ad3724e50c6a2ffb13b4c652870ab7352a5a30fd2",
             "locator": {
               "end": 54,

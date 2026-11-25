@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+        "blob": "d8d7bc1899968211dae2c1f0a7f51a66b18bcf55",
         "content": "sha256:2d0df6a17726c69577bbc1e97c6f3e4dbef468d49b15c98c1e12a7e52a050748",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,27 @@
     },
     {
       "anchor": {
-        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
-        "content": "sha256:67021a87fbc959540a2d8159025c1be96534e8fe2fc2bca10ec89b49e7f89b23",
+        "blob": "d8d7bc1899968211dae2c1f0a7f51a66b18bcf55",
+        "content": "sha256:faf3e54191bd8e15f48fc4d9f2992a0f7cd10a000480b761397b587064e028ed",
+        "locator": {
+          "end": 342,
+          "kind": "line_range",
+          "start": 337
+        }
+      },
+      "id": "RLZ-5PYRA2",
+      "invariant": "INV-TRMMZA",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-TRMMZA",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The feature projects available candidate standing without changing the primary change badge.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "d8d7bc1899968211dae2c1f0a7f51a66b18bcf55",
+        "content": "sha256:15d4538a8702e0edaef0ea4abbe22123e54a1c8adea67a98c577d9d9ec0458c7",
         "locator": {
           "kind": "symbol",
           "name": "OutlineRow"
@@ -39,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+        "blob": "d8d7bc1899968211dae2c1f0a7f51a66b18bcf55",
         "content": "sha256:fdc196cb19a7c70584c0b801040b63442ef16756771ab468b9eb70694dcc0b3b",
         "locator": {
           "kind": "symbol",
@@ -57,8 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
-        "content": "sha256:6bcb8092a7dfb48e27330e128175271baa3645cc39fe32450d562c10b2421f09",
+        "blob": "d8d7bc1899968211dae2c1f0a7f51a66b18bcf55",
+        "content": "sha256:b7481fcf97cb58e6a7350432dd5c246c9d7e187c925d38b5c7cc97317af4b240",
         "locator": {
           "kind": "symbol",
           "name": "outlineGroups"
@@ -75,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+        "blob": "d8d7bc1899968211dae2c1f0a7f51a66b18bcf55",
         "content": "sha256:ea8ed2719c7ec65af7f238bf6c73c2fcdc029d4e966e9fa74401683eae89d21a",
         "locator": {
           "kind": "symbol",
@@ -93,8 +112,8 @@
     },
     {
       "anchor": {
-        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
-        "content": "sha256:791ae8cdfdcf77cf20b6623da26682eaa80cf9f18f561af5d1f7e812a4eebed7",
+        "blob": "d8d7bc1899968211dae2c1f0a7f51a66b18bcf55",
+        "content": "sha256:c6b7ff90d7cbfd1522072a9854c7d1ca3679b10614bc49dc4ae6713608c6d6e0",
         "locator": {
           "kind": "symbol",
           "name": "outlineMember"
@@ -111,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+        "blob": "d8d7bc1899968211dae2c1f0a7f51a66b18bcf55",
         "content": "sha256:337ba80dab213fb248cd6b26bc7665661fb136a4418411f59e6df99a84523be0",
         "locator": {
           "end": 169,
@@ -130,12 +149,12 @@
     },
     {
       "anchor": {
-        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+        "blob": "d8d7bc1899968211dae2c1f0a7f51a66b18bcf55",
         "content": "sha256:5fea8733c57c751d5c17cd298929b2dd88f842a447f600c037ffc65304fa3324",
         "locator": {
-          "end": 305,
+          "end": 307,
           "kind": "line_range",
-          "start": 292
+          "start": 294
         }
       },
       "id": "RLZ-T3D6WD",
@@ -154,7 +173,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+            "blob": "d8d7bc1899968211dae2c1f0a7f51a66b18bcf55",
             "content": "sha256:f48cc6f159b3c1a61e7564bc14a61282dac9a5e995f0b933183acabfe4a580da",
             "locator": {
               "end": 203,
@@ -171,12 +190,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+            "blob": "d8d7bc1899968211dae2c1f0a7f51a66b18bcf55",
             "content": "sha256:c420556c483fcff972c5fd101b339539f7c8070914f7f195a8b7610f451c5a86",
             "locator": {
-              "end": 355,
+              "end": 363,
               "kind": "line_range",
-              "start": 340
+              "start": 348
             }
           },
           "kind": "code"
@@ -184,16 +203,31 @@
       ]
     },
     "26": {
-      "note": "changeTriage.ts current behavior at this source owner.\n\nAnchor: \"function unknownImplementation(fact: ReviewMemberChange \\| ReviewCodeChange \\| undefined): boolean {\"",
+      "note": "The admitted outline groups its family and member rows and falls back to plain catalogue groups without an outline.",
       "targets": [
         {
           "anchor": {
-            "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
-            "content": "sha256:7f96b29a523f36f53510c1e9862887eeeaffda3d227aae3223b8c2f30ea09d80",
+            "blob": "d8d7bc1899968211dae2c1f0a7f51a66b18bcf55",
+            "content": "sha256:b7481fcf97cb58e6a7350432dd5c246c9d7e187c925d38b5c7cc97317af4b240",
             "locator": {
-              "end": 425,
-              "kind": "line_range",
-              "start": 252
+              "kind": "symbol",
+              "name": "outlineGroups"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The outline projection copies the available candidate state and writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8d7bc1899968211dae2c1f0a7f51a66b18bcf55",
+            "content": "sha256:4fcd044436eab81570e055048c893ee471df587f863d86bf3bf9d1311c003d89",
+            "locator": {
+              "kind": "symbol",
+              "name": "standingOf"
             }
           },
           "kind": "code"

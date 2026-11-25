@@ -108,7 +108,10 @@ None recorded.
 - **The ordered chain, where no step is skipped because a later one might have answered.** [37]
 - Why an absent coordination root is refused rather than created by Git. [38]
 
+
+
 - The memory initializer this module's authority document is shared with (since MIK-R24 it also writes `knowledge/layout.json` for a brand-new root, and never for an existing one). [50]
+
 - `bootstrap_scope` owns the current boundary described above. [29]
 - `_source_revisions` owns the current boundary described above. [30]
 

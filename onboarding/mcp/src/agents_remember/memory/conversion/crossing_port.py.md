@@ -25,7 +25,7 @@ The conversion port loads worktree-owned plan/result/error types only when a cro
 
 ### Conventions
 
-- Each plan starts from Git objects. The adapter reserves paths with non-regular or differing entry modes and paths that collide across file and directory forms. Those paths retain the native Git result when the structural overlay runs.
+- The adapter holds no state. Each plan starts from Git objects. It obtains the product stamp time from the later committer time of the own and incoming commits, so repeated planning over those commits supplies the same time.
 
 ### Invariants And Boundaries
 
@@ -52,10 +52,12 @@ No configured live documentation source was available for this pass.
 
 The adapter and the port it implements.
 
-- The adapter. [1]
 - The port, its request and its view. [2]
 
-- The default composition binds it. [3]
+
+
+- The default composition binds it. Anchor: `build_default_worktree_services` [3]
+
 
 
 ### Cross-Repo References
@@ -64,4 +66,8 @@ No meaningful cross-repo references found: the file reads and writes only the me
 
 No cross-repo boundary is crossed by this file.
 
+
+- The plan binds product stamp time to the two input commits. [7]
+
+- The adapter. [1]
 - The conversion port loads worktree-owned plan/result/error types only when a crossing plan is requested; it preserves conversion and failed-step behavior. [4]

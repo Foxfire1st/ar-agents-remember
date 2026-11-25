@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
-        "content": "sha256:07182f3ea45d8fbf8c0f452d68a919c7313a740053b13a68ee94b4a1f8088f1f",
+        "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
+        "content": "sha256:a90eb6c48f7c3efc3556c8c137175b17f797aa9ea49ea5d6c2c6e01fbaf53552",
         "locator": {
           "kind": "symbol",
           "name": "Authoring"
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
+        "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
         "content": "sha256:a4c41d3c98ce6a56172c053956a57f3597e2120040c6efbda688f3669e299cf0",
         "locator": {
           "kind": "symbol",
@@ -77,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2cb52a7cdcd2d8f0d4a8d4d49d3f83b36f4f590",
+            "blob": "32777b4722cd8757e70012bf2eb01aecd41199fe",
             "content": "sha256:f507597356d5b6e60ca4cc5aa43aba9ed7dbecd686da5e1feef61d646ccdecdf",
             "locator": {
               "kind": "symbol",
@@ -94,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
             "content": "sha256:fee521803ddef20678e3aeaac0e262945fb2c78b482eacbeca598716fae9403f",
             "locator": {
-              "end": 361,
+              "end": 338,
               "kind": "line_range",
-              "start": 361
+              "start": 338
             }
           },
           "kind": "code"
@@ -111,11 +111,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
-            "content": "sha256:07c0a6f52da4aec57d535f03e3d11f53164cb8942f4fa90a4a3cffd6e9ed6d40",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
+            "content": "sha256:779d6e5a546129a629d0f47d22228e4416346aed281921fe16d0cedf928419e9",
             "locator": {
-              "kind": "symbol",
-              "name": "_attaches_to_retired"
+              "end": 375,
+              "kind": "line_range",
+              "start": 363
             }
           },
           "kind": "code"
@@ -144,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
+            "blob": "4510eb09db2a5f95a8b33ba5a8d0de15dc079129",
             "content": "sha256:e1f0bc73ca0cf2a24b29abe88e25baa3226cd7235b151762c7c5994ca1683a29",
             "locator": {
               "kind": "symbol",
@@ -161,12 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
             "content": "sha256:edd926493d0834ce5adb30157679d0e72aec3cc0fcaf72709e5456f61c5ef908",
             "locator": {
-              "end": 180,
+              "end": 173,
               "kind": "line_range",
-              "start": 175
+              "start": 168
             }
           },
           "kind": "code"
@@ -208,16 +209,16 @@
       ]
     },
     "30": {
-      "note": "The operation: entries, records, rows, then unstored foreign evidence refuses. Anchor: `run`",
+      "note": "The writer assigns handles and restores refreshes before processing entries. It writes other records before dependents and then writes history rows. Unstored foreign evidence is a refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
-            "content": "sha256:ed2150dfe9dd776647089206456dcfc5220854fa98c093b3895ed8760e8dbfff",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
+            "content": "sha256:859cea6301bda8cd8267bf45ff5961f5117e619d555f3a713b74e1fee5430313",
             "locator": {
-              "end": 230,
+              "end": 227,
               "kind": "line_range",
-              "start": 196
+              "start": 191
             }
           },
           "kind": "code"
@@ -225,16 +226,16 @@
       ]
     },
     "31": {
-      "note": "ID assignment and rerun reuse. Anchor: `_assign_ids`",
+      "note": "An explicit ID addresses an existing record. Otherwise the writer reuses the owner’s origin match or mints an ID.",
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
-            "content": "sha256:6bc2f8032e26f8f29cc5601189dc79a3ec865b766cee53536ecffd1155661511",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
+            "content": "sha256:e7bac2de8ef95ef10ebb88e98dbbd2e734c6972145064196079a47c417d0769b",
             "locator": {
-              "end": 261,
+              "end": 258,
               "kind": "line_range",
-              "start": 245
+              "start": 232
             }
           },
           "kind": "code"
@@ -242,16 +243,41 @@
       ]
     },
     "32": {
-      "note": "Origin: own records gain evidence, another owner's origin is kept exactly. Anchor: `_origin`",
+      "note": "The owner can append or replace its own evidence. The writer keeps foreign origin and queues its evidence for the current owner’s history row.",
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
             "content": "sha256:f4a2c39596c4fd9719c0cc0fc8295b81b9e1343ade289004b20c9f67d1d640a9",
             "locator": {
-              "end": 303,
+              "end": 300,
               "kind": "line_range",
-              "start": 296
+              "start": 293
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3cc74f8529f185441f0fdd1265d9a199b0fcd0fe",
+            "content": "sha256:1bfcba76a40155401337125035b5a0fd1428c89b394e0c06672f666e719a18af",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/record_updates.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
+            "content": "sha256:31893175616383a576d821d9a9b721552aec2ae3e84b3354f01909e0ab1d9ec2",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 210
             }
           },
           "kind": "code"
@@ -259,12 +285,12 @@
       ]
     },
     "33": {
-      "note": "Revision once per leaf against the base.",
+      "note": "Placement delegates revision calculation and records the writer before storing the record.",
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
-            "content": "sha256:82eb6e68a7d23678c22c1c9d04f73b0dea3b1a423372980d365572d6fee6c236",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
+            "content": "sha256:6f7ee60d4719d4490c49c861d699a401fba174621108a6a9f12a25803830ad79",
             "locator": {
               "kind": "symbol",
               "name": "_place_record"
@@ -275,16 +301,16 @@
       ]
     },
     "34": {
-      "note": "Records of any kind, with defaults and resolved links. Anchor: `_write_record`",
+      "note": "The writer merges fields and resolves links before placement. A decision defaults to the active lifecycle word when status is absent.",
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
-            "content": "sha256:aa18820dd30bdc940d08485f2cfce2bbb108a4fd9f4039e38faa7a766d4a5a1a",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
+            "content": "sha256:92fc2c96174e7d68f805566a59bb0d0f9eb971d8c02bb092e10532b5078f014a",
             "locator": {
-              "end": 473,
+              "end": 453,
               "kind": "line_range",
-              "start": 434
+              "start": 414
             }
           },
           "kind": "code"
@@ -296,7 +322,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
             "content": "sha256:f716245a6fd1349f069b43c806505951201ce697ba6e608804ed0c0685e12ab3",
             "locator": {
               "kind": "symbol",
@@ -312,7 +338,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
             "content": "sha256:53926f4e827946ff962bfa59a403c211b9e15765120e3732b82d57cbcd9fa2ee",
             "locator": {
               "kind": "symbol",
@@ -324,41 +350,16 @@
       ]
     },
     "37": {
-      "note": "What became of a test the evidence names, and a test file named without a test is `unresolvable`.",
+      "note": "The writer reports a resolved proof, a test awaiting a curator facet, or an unresolvable reference. A bare test file needs a test name.",
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
             "content": "sha256:76ff7413200b246c8762c46a4263e8ca643682274e3fdd6f032432bad3c4e827",
             "locator": {
-              "end": 906,
+              "end": 886,
               "kind": "line_range",
-              "start": 880
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "76786439114f226a0d86cd2ace9d96bfa582e9d7",
-            "content": "sha256:63928396cb488e1e29cec97e52093d3b51de45b0cdbd2acf122140aa40b8b1df",
-            "locator": {
-              "end": 66,
-              "kind": "line_range",
-              "start": 28
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_writer/weakness_authoring.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
-            "content": "sha256:45cc555f9bdb0fcd7879e852da219f658f466a59af27c5edb7b4eea36ce4ea2b",
-            "locator": {
-              "end": 906,
-              "kind": "line_range",
-              "start": 888
+              "start": 860
             }
           },
           "kind": "code"
@@ -370,7 +371,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2cb52a7cdcd2d8f0d4a8d4d49d3f83b36f4f590",
+            "blob": "32777b4722cd8757e70012bf2eb01aecd41199fe",
             "content": "sha256:255af836e84031a6a7adb2e0aeda1bdb666b54f884f1031cfe4a0d73b2a3ef22",
             "locator": {
               "kind": "symbol",
@@ -387,7 +388,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2cb52a7cdcd2d8f0d4a8d4d49d3f83b36f4f590",
+            "blob": "32777b4722cd8757e70012bf2eb01aecd41199fe",
             "content": "sha256:3a9d6a609a1e3eeb2e279c87d61f4ebcd2bbd6600eb0be404a287788ef5ba97a",
             "locator": {
               "kind": "symbol",
@@ -404,7 +405,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2cb52a7cdcd2d8f0d4a8d4d49d3f83b36f4f590",
+            "blob": "32777b4722cd8757e70012bf2eb01aecd41199fe",
             "content": "sha256:3b523eaeeb4be4815040d0d69bdb3f8f3a1bd22fded4df9de4a2574b908ff11c",
             "locator": {
               "kind": "symbol",
@@ -417,16 +418,17 @@
       ]
     },
     "44": {
-      "note": "The record's revision after this operation: an unmerged record at the higher side's plus one.",
+      "note": "An unmerged record resolves above the higher side. Other records compare meaning with the applicable base.",
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
-            "content": "sha256:070caafa05f32c7929b17938986cf96b2317d410d469068981009f39ad5306a0",
+            "blob": "ba38a0f158a19be4a09d480da2325cef2d55e8b5",
+            "content": "sha256:abe8687a97a00bf57def8b407162c410d07826ed3106c3907abdd0e50bf33740",
             "locator": {
               "kind": "symbol",
-              "name": "_revision"
-            }
+              "name": "revision_step"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/revision_stamps.py"
           },
           "kind": "code"
         }
@@ -488,7 +490,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2cb52a7cdcd2d8f0d4a8d4d49d3f83b36f4f590",
+            "blob": "32777b4722cd8757e70012bf2eb01aecd41199fe",
             "content": "sha256:1712a1257f62c997aec217ec04a8dda4094703d092abc8e1cecb1330d4581348",
             "locator": {
               "kind": "symbol",
@@ -501,16 +503,29 @@
       ]
     },
     "52": {
-      "note": "Row mechanics record the invariant's or family's own revision.",
+      "note": "An invariant history row records its invariant’s revision. A family history row records its family’s revision and the revisions of the examined members.",
       "targets": [
         {
           "anchor": {
-            "blob": "fda2d33b76fa7dc7d21a24af285e448572786400",
-            "content": "sha256:21bb4a01fa50696780d839833c75c030cbeb2d7ff03befa4317ed36fa8c08e05",
+            "blob": "4bc61b218672e67bf8c40ecc57e37154c69e4ff5",
+            "content": "sha256:5b8879c490d132c9b72287b2bdbdb45297cc55676682a85c9ecfc329343cdbaf",
             "locator": {
-              "end": 1086,
+              "end": 1042,
               "kind": "line_range",
-              "start": 1038
+              "start": 1023
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4bc61b218672e67bf8c40ecc57e37154c69e4ff5",
+            "content": "sha256:66ad56024e95901d412615fe9037f62d14bdae1b888ad9a1aa64f9cb702c963b",
+            "locator": {
+              "end": 1071,
+              "kind": "line_range",
+              "start": 1045
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },
@@ -523,36 +538,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
             "content": "sha256:2e0315b77a0aade21dd447b527a79bc0d8752baa74f743afb5aa2171b836d6b3",
             "locator": {
-              "end": 189,
+              "end": 182,
               "kind": "line_range",
-              "start": 181
+              "start": 174
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
             "content": "sha256:2386f242db20894208162c539810305a9936e54fdf5a2f84c3c2c4eee7c79251",
             "locator": {
-              "end": 192,
+              "end": 185,
               "kind": "line_range",
-              "start": 190
+              "start": 183
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "fda2d33b76fa7dc7d21a24af285e448572786400",
+            "blob": "4bc61b218672e67bf8c40ecc57e37154c69e4ff5",
             "content": "sha256:fcdab3d118135e6affc8fc2928e02152ac9ffd84f16c1cb2d278bf368ee2ddd2",
             "locator": {
-              "end": 402,
+              "end": 384,
               "kind": "line_range",
-              "start": 399
+              "start": 381
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },
@@ -560,12 +575,12 @@
         },
         {
           "anchor": {
-            "blob": "fda2d33b76fa7dc7d21a24af285e448572786400",
+            "blob": "4bc61b218672e67bf8c40ecc57e37154c69e4ff5",
             "content": "sha256:ac826aad197bd8c30e21c747b9b91cb941662eb2851a3012aac8ec7bfb7fd737",
             "locator": {
-              "end": 403,
+              "end": 385,
               "kind": "line_range",
-              "start": 403
+              "start": 385
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },
@@ -573,12 +588,12 @@
         },
         {
           "anchor": {
-            "blob": "fda2d33b76fa7dc7d21a24af285e448572786400",
+            "blob": "4bc61b218672e67bf8c40ecc57e37154c69e4ff5",
             "content": "sha256:ea8972baf54078883b35035d50e6930a0b8025d7c9f77f53b25407dcab79a82a",
             "locator": {
-              "end": 513,
+              "end": 495,
               "kind": "line_range",
-              "start": 485
+              "start": 467
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },
@@ -586,12 +601,12 @@
         },
         {
           "anchor": {
-            "blob": "fda2d33b76fa7dc7d21a24af285e448572786400",
+            "blob": "4bc61b218672e67bf8c40ecc57e37154c69e4ff5",
             "content": "sha256:301101d6e241cc5442f4cf8613a7bbea68c8a54a96db6e5e2ee83ae1bf89523d",
             "locator": {
-              "end": 258,
+              "end": 240,
               "kind": "line_range",
-              "start": 252
+              "start": 234
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },
@@ -599,12 +614,12 @@
         },
         {
           "anchor": {
-            "blob": "fda2d33b76fa7dc7d21a24af285e448572786400",
+            "blob": "4bc61b218672e67bf8c40ecc57e37154c69e4ff5",
             "content": "sha256:1fe9a871942bf023371cd910843be102113e8bc75638f1a980ec68e6cd969518",
             "locator": {
-              "end": 261,
+              "end": 243,
               "kind": "line_range",
-              "start": 259
+              "start": 241
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },
@@ -617,12 +632,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
             "content": "sha256:f4a2c39596c4fd9719c0cc0fc8295b81b9e1343ade289004b20c9f67d1d640a9",
             "locator": {
-              "end": 303,
+              "end": 300,
               "kind": "line_range",
-              "start": 296
+              "start": 293
             }
           },
           "kind": "code"
@@ -634,7 +649,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
             "content": "sha256:a4c41d3c98ce6a56172c053956a57f3597e2120040c6efbda688f3669e299cf0",
             "locator": {
               "kind": "symbol",
@@ -646,16 +661,16 @@
       ]
     },
     "58": {
-      "note": "A range proof's locator and pairing titles are resolved by this one helper, which refuses a range that is no such case. Anchor: `_proof_locator`",
+      "note": "The proof locator resolves a symbol or checks a range for one running case and returns its pairing titles.",
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
             "content": "sha256:4a59e5225f3cc20391580fa37fa464aef1ce43d048f7ea9a2fb93ad676e2df3f",
             "locator": {
-              "end": 878,
+              "end": 858,
               "kind": "line_range",
-              "start": 860
+              "start": 840
             }
           },
           "kind": "code"
@@ -663,17 +678,30 @@
       ]
     },
     "59": {
-      "note": "The authoring class inherits the re-point row authoring, so a `still_rejected` row's `repoint` is judged where the row is written. Anchor: `Authoring`",
+      "note": "Authoring inherits the re-point row owner. That owner judges a requested re-point on the still_rejected row.",
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
-            "content": "sha256:07182f3ea45d8fbf8c0f452d68a919c7313a740053b13a68ee94b4a1f8088f1f",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
+            "content": "sha256:50262ee403cd63f940139ccadf98c7cdf5df77cb85475ca8f52f99b1f441e4cd",
             "locator": {
-              "end": 906,
+              "end": 148,
               "kind": "line_range",
-              "start": 153
+              "start": 147
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f6dd3fa6bb431ea9ffec7301f9ab7bd2bda866df",
+            "content": "sha256:a0af69df703f3bc25d7a75053089efdff8fa168c3aba76235138867cb5d99836",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 328
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/repoint.py"
           },
           "kind": "code"
         }
@@ -684,7 +712,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
             "content": "sha256:298b0c2b84e265e2f9e1e1fbe602c5578ef7453d6e8109d3bbb60f4ddb604d3e",
             "locator": {
               "kind": "symbol",
@@ -700,12 +728,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
-            "content": "sha256:38ca3be541cb75c6f2d59bee3553cd37ccf9b3155570310fbc6c3c2b284d6760",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
+            "content": "sha256:b146b2eef75c53a212bb80c7eef9a23a27fa6ebc1c2ade7de5ecad244014356d",
             "locator": {
-              "end": 212,
+              "end": 217,
               "kind": "line_range",
-              "start": 196
+              "start": 191
             }
           },
           "kind": "code"
@@ -717,12 +745,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
             "content": "sha256:3ab56441d4990b3ed0d2eb0b64bce808b3ce2edc95615c6c8a0bc8e697e1d9e0",
             "locator": {
-              "end": 448,
+              "end": 428,
               "kind": "line_range",
-              "start": 434
+              "start": 414
             }
           },
           "kind": "code"
@@ -730,15 +758,16 @@
       ]
     },
     "62": {
-      "note": "Weakness authoring delegates its anchored-place and closure checks to the extracted helper; the model requires a reason when no commit is supplied. [62]",
+      "note": "The writer delegates the anchored place and closure checks to the weakness helper. A current closure without a commit records its reason and owning task.",
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
-            "content": "sha256:aa18820dd30bdc940d08485f2cfce2bbb108a4fd9f4039e38faa7a766d4a5a1a",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
+            "content": "sha256:92fc2c96174e7d68f805566a59bb0d0f9eb971d8c02bb092e10532b5078f014a",
             "locator": {
-              "kind": "symbol",
-              "name": "_write_record"
+              "end": 453,
+              "kind": "line_range",
+              "start": 414
             }
           },
           "kind": "code"
@@ -748,8 +777,9 @@
             "blob": "76786439114f226a0d86cd2ace9d96bfa582e9d7",
             "content": "sha256:a492e0d90eac0e0e3028522e503fe8920237ea9ac76fe99b4902a00aa6141caa",
             "locator": {
-              "kind": "symbol",
-              "name": "author_weakness"
+              "end": 25,
+              "kind": "line_range",
+              "start": 16
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/weakness_authoring.py"
           },
@@ -760,8 +790,9 @@
             "blob": "76786439114f226a0d86cd2ace9d96bfa582e9d7",
             "content": "sha256:63928396cb488e1e29cec97e52093d3b51de45b0cdbd2acf122140aa40b8b1df",
             "locator": {
-              "kind": "symbol",
-              "name": "_weakness_anchor"
+              "end": 66,
+              "kind": "line_range",
+              "start": 28
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/weakness_authoring.py"
           },
@@ -772,8 +803,9 @@
             "blob": "76786439114f226a0d86cd2ace9d96bfa582e9d7",
             "content": "sha256:f99a95a29f7edca84b57b2a85046d47bcddcfc760c96c1194d9f9136236a124c",
             "locator": {
-              "kind": "symbol",
-              "name": "_closure"
+              "end": 96,
+              "kind": "line_range",
+              "start": 69
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/weakness_authoring.py"
           },
@@ -781,13 +813,77 @@
         },
         {
           "anchor": {
-            "blob": "2cf0cb36145dd6c7182ecc769e9a59d8d7ada07f",
+            "blob": "ba0a4d4cc4a64d12dfe74f442b18765bc198f5e0",
             "content": "sha256:5cd2080047a44536e4d5ce6d980404ecc045113e6eecc0c272913b7d5267b2a3",
             "locator": {
-              "kind": "symbol",
-              "name": "Closure"
+              "end": 357,
+              "kind": "line_range",
+              "start": 343
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "67": {
+      "note": "A raised or new revision carries the resolved writer and its exact meaning digest in the open attempt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba38a0f158a19be4a09d480da2325cef2d55e8b5",
+            "content": "sha256:b7767f56a3cb7bf3b787faa74ef4326eee7d449f55332b255f64f19326490b8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_written_revision"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/revision_stamps.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "68": {
+      "note": "Base-number placements retain the base stamp and unchanged same-writer placements retain the prior stamp.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba38a0f158a19be4a09d480da2325cef2d55e8b5",
+            "content": "sha256:2b7269590c0c665475587d9b1e97d41be495901ef8f10829ed72880b548fed46",
+            "locator": {
+              "kind": "symbol",
+              "name": "_set_writer"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/revision_stamps.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "Entry authoring stores a supplied title and the placement adds a note for an updated rule still without a title.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
+            "content": "sha256:b96fea918d7ad6c90c06627cbe669a91db03133844b6d701b7f391c4e1054ebd",
+            "locator": {
+              "end": 329,
+              "kind": "line_range",
+              "start": 320
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
+            "content": "sha256:6a982ac5349ceb5387dc11ef9a5a3a3e36daf32343094f7771d78eeeb0887d25",
+            "locator": {
+              "end": 400,
+              "kind": "line_range",
+              "start": 392
+            }
           },
           "kind": "code"
         }
@@ -798,12 +894,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a53693558a7de19d2330660e69b6d17d6af2264c",
+            "blob": "26db03789c1eafd204877e6e97c6aad5f7f1ec28",
             "content": "sha256:d50e77207a0cdeab22c56b029ac732cf46ed57f4e1fa7a9cc30a8063abef356f",
             "locator": {
-              "end": 174,
+              "end": 167,
               "kind": "line_range",
-              "start": 174
+              "start": 167
             }
           },
           "kind": "code"

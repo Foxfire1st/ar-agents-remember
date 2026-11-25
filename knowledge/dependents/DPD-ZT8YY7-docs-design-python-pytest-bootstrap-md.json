@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "cf41b9ab8a855953186f782960fd37a57225b56f",
-    "commit": "1d62157b755f5ab6b60ac89010b6a03160519352",
+    "codeTree": "51a44523acb6c29c3a029c7dde4a35acb96595f3",
+    "commit": "3bbaf460317e8572583d884bc0791a219ad1bcfa",
     "role": "curator",
-    "statement": "On the merged code the pytest bootstrap guide still holds: integration and stress-durability make up the integration tests (now 119 integration modules with L27's two), and CAP-L1's unit-regression module changes no selection rule. The bootstrap guide says the bounded-memory stdio test's warm-index child and measured server run without child coverage, and the lane manifest keeps that test in stress-durability and the dependent-writer test in integration.",
-    "task": "261112-BUG-L26",
-    "uncommitted": false
+    "statement": "On the merged code the pytest bootstrap guide still holds: integration and stress-durability make up the integration tests (now 119 integration modules with L27's two), and CAP-L1's unit-regression module changes no selection rule. The bootstrap guide says the bounded-memory stdio test's warm-index child and measured server run without child coverage, and the lane manifest keeps that test in stress-durability and the dependent-writer test in integration. On code 51a44523 (gen-8 sync onto CAP-L1 and BUG-L26) the lane manifest only added module paths (823 modules, 123 integration and one stress-durability); the default -m \"not integration\" selection and the integration marking of integration and stress-durability files are unchanged.",
+    "task": "261112-KNO-L4",
+    "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
   "id": "DPD-ZT8YY7",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
+      "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -106,8 +106,8 @@
     },
     {
       "anchor": {
-        "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
-        "content": "sha256:04f035a94539c339229547bc5abfb353cc00b7723d8419ed60d2857df37925ae",
+        "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
+        "content": "sha256:b7fcf78cc211d27c8a3118089499506925ae327ece07708dff5d571369981d03",
         "locator": {
           "end": 823,
           "kind": "line_range",
@@ -120,8 +120,8 @@
     },
     {
       "anchor": {
-        "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
-        "content": "sha256:bcc4ade20e19642e956536d6662d0c20a8343feed9984bdf943fe982348cd7d1",
+        "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
+        "content": "sha256:012782b7817fe0bb1bf8e4a2431bc7d869a69d52876c2bfbafda9d418a5760fc",
         "locator": {
           "end": 826,
           "kind": "line_range",

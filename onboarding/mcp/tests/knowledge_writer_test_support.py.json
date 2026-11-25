@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8f2fa822755d9f7d0033340e9dcb70d18c583b2",
+            "blob": "b25b6134d3a62c28c973544a49fcc484db5e3d11",
             "content": "sha256:7f9d0c1c4c3e52ceb41cdb6d4a683067a1872d9328c2137a576c046dee4d2aea",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "e8f2fa822755d9f7d0033340e9dcb70d18c583b2",
+            "blob": "b25b6134d3a62c28c973544a49fcc484db5e3d11",
             "content": "sha256:e8c76c86b895def67f869a45a10db6f84fa6bdcb44aee1b270676856affb0248",
             "locator": {
               "kind": "symbol",
@@ -34,7 +34,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8f2fa822755d9f7d0033340e9dcb70d18c583b2",
+            "blob": "b25b6134d3a62c28c973544a49fcc484db5e3d11",
             "content": "sha256:b9598a0c0a3f7899cdec2a0861054807a5d33ff68e3edabe6221da0737ca78cf",
             "locator": {
               "kind": "symbol",
@@ -46,12 +46,12 @@
       ]
     },
     "3": {
-      "note": "The base memory: one exported invariant, one realization, one exported family.\n\nAnchor: `base_memory`",
+      "note": "The base memory: one exported invariant, one realization, one exported family. Anchor: `base_memory`",
       "targets": [
         {
           "anchor": {
-            "blob": "e8f2fa822755d9f7d0033340e9dcb70d18c583b2",
-            "content": "sha256:145b41469bf818f51ae790d47889d0dff5d4cc70180ab2a7aee35dfe3e31eeaf",
+            "blob": "b25b6134d3a62c28c973544a49fcc484db5e3d11",
+            "content": "sha256:cadbf9600083ae5249989f0e3ea6413a35072f22ca9a9084d1e2126b8fe2294d",
             "locator": {
               "kind": "file"
             }
@@ -65,7 +65,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8f2fa822755d9f7d0033340e9dcb70d18c583b2",
+            "blob": "b25b6134d3a62c28c973544a49fcc484db5e3d11",
             "content": "sha256:ac49805023d0500563f03fb85a5f9c407941fb6846ca74e0fe3263cb318ece6b",
             "locator": {
               "kind": "symbol",
@@ -81,7 +81,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8f2fa822755d9f7d0033340e9dcb70d18c583b2",
+            "blob": "b25b6134d3a62c28c973544a49fcc484db5e3d11",
             "content": "sha256:0fc5a478fcf80d90b46e0fb1e3c3d70e1fef0ebe5338b838274b68cec2421b53",
             "locator": {
               "kind": "symbol",
@@ -93,12 +93,27 @@
       ]
     },
     "6": {
-      "note": "A producer entry with curator keys.",
+      "note": "A producer entry with curator keys.\n\nAnchor: `entry`",
       "targets": [
         {
           "anchor": {
-            "blob": "e8f2fa822755d9f7d0033340e9dcb70d18c583b2",
-            "content": "sha256:6cbd7fd3d9a20f92fea426f38228a3e2c5c3bb5ce37aa777c35c4728637b6c52",
+            "blob": "b25b6134d3a62c28c973544a49fcc484db5e3d11",
+            "content": "sha256:cadbf9600083ae5249989f0e3ea6413a35072f22ca9a9084d1e2126b8fe2294d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The entry helper supplies the title required for new-rule fixtures and honors explicit omission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b25b6134d3a62c28c973544a49fcc484db5e3d11",
+            "content": "sha256:0662d98a9bb03df56b2e7b0e72f16164900acd0458a0c5b82a6ff4cbc0b427a6",
             "locator": {
               "kind": "symbol",
               "name": "entry"

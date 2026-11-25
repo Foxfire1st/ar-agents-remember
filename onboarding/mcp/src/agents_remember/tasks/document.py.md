@@ -237,7 +237,6 @@ The document API re-exports the review-addition request and amended-round types 
 ## Evidence
 
 
-- Worker/Curator typed review census, record-only exclusion and unknown history. [23]
 - Reason admission, threshold and differing-harness/model inheritance boundary. [24]
 - Launch scope opts in to review-only tolerance and forwards the same request reason. [25]
 - Child start enters the review-tolerance scope after root validation. Context variables do not cross exec. [26]
@@ -261,7 +260,6 @@ No relevant external documentation was available after checking the configured s
 - The persisted graph delegates admission and waves to one indexed analysis while preserving the schema validation surface. [11]
 - Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans. [12]
 
-- The route-review record validates its typed dependency declaration and self-digest. [13]
 
 
 - EvidenceDependencies and its required-kind/currentness and canonical-hash helpers own the R03 declaration vocabulary; preserve the unchanged helper targets while relocating the stale model definition extent. [14]
@@ -338,3 +336,7 @@ Current finalization does not append that exact decision; it stamps own `complet
 - Exact legacy Finalize text and removed/skip-step prefixes still classify product records by text; collisions remain possible. Current finalization stamps own completedAt and leaves logs intact, so this constant is not a claim of current Finalize decision writing. [21]
 
 - IntentReview admits only pending/review-first/go; agreedRevision rides go and carries nonblank revisionId, sha256 and unique packetVersions. Agreement resolver searches retained decimal revision directories and refuses symlink parents/entries. digest_verified accepts either the retained manifest byte SHA-256 or its declared artifactDigest/artifact_digest matching the recorded digest; otherwise it is false. This does not authenticate every manifest byte in declared-artifact mode. [30]
+
+- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [23]
+
+- The route-review record validates its typed dependency declaration and self-digest. [13]

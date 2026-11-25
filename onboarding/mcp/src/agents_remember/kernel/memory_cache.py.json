@@ -3,11 +3,11 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
-        "content": "sha256:c391838ec9de06b1a7883cda8aad7a7051b54b8ad0e80bfa8c1359001fe9de53",
+        "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
+        "content": "sha256:b530432f24cf3ec49d6be9b0ad71aef71c773598e64a998ae6e6f0b75a6540ad",
         "locator": {
           "kind": "symbol",
-          "name": "ignore_memory_cache"
+          "name": "ignore_memory_publication"
         }
       },
       "id": "RLZ-1TR608",
@@ -16,16 +16,16 @@
         "handoffEntry": "L37-judged-tree-commit",
         "leaf": "260928-MIK-L37"
       },
-      "rationale": "Is the one write the cache preparation makes to memory content, split out so that the closeout records the ignore rule before it judges the tree.",
+      "rationale": "Ordinary closeout prepares the ledger and brief ignore rules before candidate capture.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
-        "content": "sha256:5893805cb01008e3ddc3e197d8f95acc2686af8fd50333197501ed7aaa9d213d",
+        "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
+        "content": "sha256:f7cae33f75779edf99c2919b5738f2cd180d77a60897a61cc693c0f509757a92",
         "locator": {
           "kind": "symbol",
-          "name": "prepare_memory_cache"
+          "name": "prepare_memory_publication"
         }
       },
       "id": "RLZ-929JJ1",
@@ -34,13 +34,13 @@
         "handoffEntry": "L44-M1-01",
         "leaf": "260928-MIK-L44"
       },
-      "rationale": "Performs the cache exclusion against the private index file when asked and returns the prepared ignore bytes, so the refusing route can tell its own change apart from a concurrent edit.",
+      "rationale": "Private-index apply includes the publication ignore bytes while excluding the derived ledger from the staged content.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
-        "content": "sha256:5893805cb01008e3ddc3e197d8f95acc2686af8fd50333197501ed7aaa9d213d",
+        "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
+        "content": "sha256:667958cd75fe79c0dfc7eb9b8f7dbe3033746a8d99749ca55dd4fc96262e6b1c",
         "locator": {
           "kind": "symbol",
           "name": "prepare_memory_cache"
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
             "content": "sha256:3ce2dafbfeb64e05c0e9d47e4ff9e69d06c53c8adc7ffbac6089f73b70f7d392",
             "locator": {
               "kind": "symbol",
@@ -74,15 +74,45 @@
       ]
     },
     "10": {
-      "note": "The ignore rule is the one content write, and its exact bytes are returned.",
+      "note": "The ledger-only ignore helper's content write records the ledger ignore line and returns the exact prepared bytes.",
       "targets": [
         {
           "anchor": {
-            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
-            "content": "sha256:c391838ec9de06b1a7883cda8aad7a7051b54b8ad0e80bfa8c1359001fe9de53",
+            "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
+            "content": "sha256:708aa8ba13c3984b2756ee94fe1209376c61ea11a94c8882289ee93864176750",
             "locator": {
-              "kind": "symbol",
-              "name": "ignore_memory_cache"
+              "end": 67,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The durable publication helper prepares both derived ignore rules and excludes the ledger on the selected private index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
+            "content": "sha256:905f5ea8badfcd63a4ee394054d6b9920519a236b1059dfbeee748c30d7f1704",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
+            "content": "sha256:7d27d971509e60e699a76531bb76d682164f11cdacea9e61eb137430e956b8e8",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 109
             }
           },
           "kind": "code"
@@ -94,7 +124,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
             "content": "sha256:ea1d987c140051b594ad30280582128ace4e4fb085a34d95d14fc369a5a66131",
             "locator": {
               "kind": "symbol",
@@ -110,11 +140,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
-            "content": "sha256:5893805cb01008e3ddc3e197d8f95acc2686af8fd50333197501ed7aaa9d213d",
+            "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
+            "content": "sha256:76bb636e949af9a6600f08ac5f1f442adf150b3781f882ff17889ab5b97df57f",
             "locator": {
-              "kind": "symbol",
-              "name": "prepare_memory_cache"
+              "end": 123,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
+            "content": "sha256:c78452ed7ceb254a1fbc11b8b11d3249b5bce2ef40c8a10c55f4b2a7fd9e5dd6",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 127
             }
           },
           "kind": "code"
@@ -198,15 +241,28 @@
       ]
     },
     "7": {
-      "note": "The ignore rule alone: the one write the preparation makes to content.",
+      "note": "Ledger-only cache preparation has one content write, the ledger ignore line. Durable publication uses the combined ignore preparation.",
       "targets": [
         {
           "anchor": {
-            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
-            "content": "sha256:c391838ec9de06b1a7883cda8aad7a7051b54b8ad0e80bfa8c1359001fe9de53",
+            "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
+            "content": "sha256:f9586a782d0baac3522c8ac2592f596b858d95ca855145b55406d0c815991cb1",
             "locator": {
-              "kind": "symbol",
-              "name": "ignore_memory_cache"
+              "end": 82,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
+            "content": "sha256:76bb636e949af9a6600f08ac5f1f442adf150b3781f882ff17889ab5b97df57f",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 91
             }
           },
           "kind": "code"
@@ -218,11 +274,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
-            "content": "sha256:5893805cb01008e3ddc3e197d8f95acc2686af8fd50333197501ed7aaa9d213d",
+            "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
+            "content": "sha256:76bb636e949af9a6600f08ac5f1f442adf150b3781f882ff17889ab5b97df57f",
             "locator": {
-              "kind": "symbol",
-              "name": "prepare_memory_cache"
+              "end": 123,
+              "kind": "line_range",
+              "start": 91
             }
           },
           "kind": "code"
@@ -234,11 +291,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
-            "content": "sha256:5893805cb01008e3ddc3e197d8f95acc2686af8fd50333197501ed7aaa9d213d",
+            "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
+            "content": "sha256:76bb636e949af9a6600f08ac5f1f442adf150b3781f882ff17889ab5b97df57f",
             "locator": {
-              "kind": "symbol",
-              "name": "prepare_memory_cache"
+              "end": 123,
+              "kind": "line_range",
+              "start": 91
             }
           },
           "kind": "code"

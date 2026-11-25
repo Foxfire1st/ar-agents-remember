@@ -24,7 +24,10 @@ link is a navigation (rule 5). The tree row carries optional `hasKnowledge`, `ha
   `PathViewAnswer` declares optional numeric `deeperEntries`; `TimelineEvent.attempt` is optional and
   nullable. `Timeline` declares optional string `state`, `code` and `detail`, nullable optional
   `continuation`, and optional `page` with numeric `start`, `rowsOnPage` and `total`. `CodeAnswer` also declares optional `mediaType` and byte `size`. These are DTO
-  fields; their declarations do not establish which fields a panel renders.
+  fields; their declarations do not establish which fields a panel renders. `RecordSummary` also
+  carries optional nullable `recordState` and `writer` for the record view and its summary rows.
+  `recordState` is the selected revision's derived state. The display-facing writer shape names
+  role, harness and model.
 - **The tree row.** `TreeChild` carries the name, kind, `inCode`, `onboarding` and entry count. The
   MIK-R79 fields are optional because an unavailable memory enumeration has no answer:
   `hasKnowledge` and `hasOverview` are present only when the enumeration succeeded (a missing value
@@ -89,7 +92,6 @@ No configured live documentation source was available for this pass.
 - The address a code citation opens. [18]
 
 
-- The tree that renders the optional fields without claiming an unknown. [19]
 
 ### Cross-Repo References
 
@@ -98,3 +100,7 @@ No cross-repo boundary is crossed by this file.
 - readerGet returns a parsed body with string state regardless of HTTP status. Fetch failures propagate; malformed JSON becomes null, and a body without string state causes ReaderTransportError. [17]
 - FileRead adds optional boolean truncated and numeric fullSize; PathViewAnswer adds optional numeric deeperEntries. These declarations specify DTO shape without enforcing runtime population, size units or rendering. [20]
 - TimelineEvent adds optional nullable numeric attempt. Timeline retains required sources and events while adding optional string state, code and detail, optional nullable continuation, and optional page containing numeric start, rowsOnPage and total. [21]
+
+- Record summaries carry optional revision state and writer metadata. [19]
+
+- The record view and its summary rows carry optional revision state and writer fields. [22]

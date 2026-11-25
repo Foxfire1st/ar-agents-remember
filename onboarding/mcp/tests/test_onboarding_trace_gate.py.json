@@ -211,16 +211,16 @@
       ]
     },
     "18": {
-      "note": "The unit-lane registration. Source caption: \"mcp/tests/test_onboarding_trace_gate.py\"",
+      "note": "The unit-regression lane selects mcp/tests/test_onboarding_trace_gate.py.\n\nAnchor: `mcp/tests/test_onboarding_trace_gate.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
             "content": "sha256:79a8d877ec357f8b310cb4b80ed0f26d2680b4f318fde7fab86362ba3b4ede36",
             "locator": {
-              "end": 372,
+              "end": 385,
               "kind": "line_range",
-              "start": 372
+              "start": 385
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

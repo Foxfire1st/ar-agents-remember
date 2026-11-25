@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
         "content": "sha256:d689048c233bd9c614b78c52c0324727b53756342c2aef8d4af2b5dd444eae03",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
         "content": "sha256:b32993d54b51d3cdbe19363a305d9c116177bee4877055ddc0c37a6a4a187c62",
         "locator": {
           "kind": "symbol",
@@ -39,12 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
         "content": "sha256:eb280fb438737f80f512e6673551d06abef185c4477bc26bada04d554f76014e",
         "locator": {
-          "end": 1056,
+          "end": 1062,
           "kind": "line_range",
-          "start": 1041
+          "start": 1047
         }
       },
       "id": "RLZ-3FQBKH",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
         "content": "sha256:1840845c59103e95fef82567c8c05000db7538c46bf821194f21667cfebdc0b7",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
         "content": "sha256:f0ab63ad221fad88615e7e1e89220f57324a014f7fb591f16e2254735f703c8b",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
         "content": "sha256:a6e03ae162ead1a55e19cd540059d13548454e11de187ad32117171984471bad",
         "locator": {
           "kind": "symbol",
@@ -112,8 +112,8 @@
     },
     {
       "anchor": {
-        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
-        "content": "sha256:ff3043421a9684683ef76bdabd1c830cf82011365c230d0dc30e1a42ac35921e",
+        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+        "content": "sha256:1769d135258474f57a7f085ee66736864d59ade96b1bfdd2fd24d9f5da90488e",
         "locator": {
           "kind": "file"
         }
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
         "content": "sha256:1e1457bce15f5f3c12e6e4c173d24ae6251f1b7031469a07b672298a27afbe08",
         "locator": {
           "end": 428,
@@ -148,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
         "content": "sha256:68d7ec3cfbf19c2da8316497a477f66c751f5bbb391bdd439f973416ceb91fe5",
         "locator": {
           "end": 282,
@@ -167,12 +167,12 @@
     },
     {
       "anchor": {
-        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
         "content": "sha256:eb320b19dc2840e1a33a2d43f39f86e455155f3fda7c36d95d3c42c48c5fc111",
         "locator": {
-          "end": 741,
+          "end": 747,
           "kind": "line_range",
-          "start": 713
+          "start": 719
         }
       },
       "id": "RLZ-EJV806",
@@ -186,7 +186,7 @@
     },
     {
       "anchor": {
-        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
         "content": "sha256:8eec25d18387148541c8897194b740b6cbbd476cb64885562105774a07c4b91d",
         "locator": {
           "kind": "symbol",
@@ -204,12 +204,12 @@
     },
     {
       "anchor": {
-        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
         "content": "sha256:cb91f3750f43ab30ba438bf51309fbc88be8b2f4a226faf22715731159bc07f4",
         "locator": {
-          "end": 978,
+          "end": 984,
           "kind": "line_range",
-          "start": 928
+          "start": 934
         }
       },
       "id": "RLZ-HDQJ4X",
@@ -223,7 +223,7 @@
     },
     {
       "anchor": {
-        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
         "content": "sha256:c9afd69b55ad86434fd6632bb6a481f2713473eaf4736d53ea0d997d4be257c5",
         "locator": {
           "end": 315,
@@ -242,7 +242,7 @@
     },
     {
       "anchor": {
-        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
         "content": "sha256:cb91f3750f43ab30ba438bf51309fbc88be8b2f4a226faf22715731159bc07f4",
         "locator": {
           "kind": "symbol",
@@ -260,7 +260,7 @@
     },
     {
       "anchor": {
-        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
         "content": "sha256:b00d07d04aecedc7880a7aca5a95badc403766093996e091785e9a6b8831c535",
         "locator": {
           "kind": "symbol",
@@ -278,10 +278,10 @@
     },
     {
       "anchor": {
-        "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
-        "content": "sha256:77ad6d5c3491628e1461b97995707bd7917951f16a6b1280adf22bfc4c443e5c",
+        "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+        "content": "sha256:6d02b989490eb847d8aabc6e91bd19cf465d4588439e617e4cca2296f07ebaf1",
         "locator": {
-          "end": 535,
+          "end": 541,
           "kind": "line_range",
           "start": 482
         }
@@ -298,12 +298,12 @@
   ],
   "references": {
     "1": {
-      "note": "Admission appends under the store lock and refuses overflow without dropping text.\n\nAnchor: `hold_message`",
+      "note": "Admission appends under the store lock and refuses overflow without dropping text. Anchor: `hold_message`",
       "targets": [
         {
           "anchor": {
-            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
-            "content": "sha256:ff3043421a9684683ef76bdabd1c830cf82011365c230d0dc30e1a42ac35921e",
+            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+            "content": "sha256:1769d135258474f57a7f085ee66736864d59ade96b1bfdd2fd24d9f5da90488e",
             "locator": {
               "kind": "file"
             }
@@ -313,12 +313,12 @@
       ]
     },
     "2": {
-      "note": "A drain delegates claim/readiness checks and whole-first FIFO delivery.\n\nAnchor: `drain_held` `_deliver_waiting`",
+      "note": "A drain delegates claim/readiness checks and whole-first FIFO delivery. Anchor: `drain_held` `_deliver_waiting`",
       "targets": [
         {
           "anchor": {
-            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
-            "content": "sha256:ff3043421a9684683ef76bdabd1c830cf82011365c230d0dc30e1a42ac35921e",
+            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+            "content": "sha256:1769d135258474f57a7f085ee66736864d59ade96b1bfdd2fd24d9f5da90488e",
             "locator": {
               "kind": "file"
             }
@@ -328,12 +328,12 @@
       ]
     },
     "3": {
-      "note": "Terminal lines are published separately from ended text and retain failure state.\n\nAnchor: `apply_drain_to_receipt`",
+      "note": "Terminal lines are published separately from ended text and retain failure state. Anchor: `apply_drain_to_receipt`",
       "targets": [
         {
           "anchor": {
-            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
-            "content": "sha256:ff3043421a9684683ef76bdabd1c830cf82011365c230d0dc30e1a42ac35921e",
+            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+            "content": "sha256:1769d135258474f57a7f085ee66736864d59ade96b1bfdd2fd24d9f5da90488e",
             "locator": {
               "kind": "file"
             }
@@ -347,12 +347,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
             "content": "sha256:1ff8e08ba65d590af6adee9de481a0c5dbe86b460cbbdc19091694b8052620df",
             "locator": {
-              "end": 978,
+              "end": 984,
               "kind": "line_range",
-              "start": 909
+              "start": 915
             }
           },
           "kind": "code"
@@ -360,14 +360,14 @@
       ]
     },
     "5": {
-      "note": "Validation precedes prompt construction and host launch; failures retain waiting work.\n\nAnchor: Current source; preserved L88 property 5",
+      "note": "Handover validation precedes prompt construction and host launch. Invalid handover details release the claim while preserving the waiting batch.",
       "targets": [
         {
           "anchor": {
-            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
-            "content": "sha256:77ad6d5c3491628e1461b97995707bd7917951f16a6b1280adf22bfc4c443e5c",
+            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+            "content": "sha256:2789ec3dc03414ac74f94ccab44be25eefbe95541c211f6d710ad7794a7a8a2f",
             "locator": {
-              "end": 535,
+              "end": 510,
               "kind": "line_range",
               "start": 482
             }
@@ -381,10 +381,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
-            "content": "sha256:098c33dab7a0ef8167a0807a3f3733f13c5b32d876513b784f185fb564027f7e",
+            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+            "content": "sha256:ce88c353601da742174b256fcab92b12c1c0da2de36bb7a4acaaf3ad37c96c01",
             "locator": {
-              "end": 506,
+              "end": 512,
               "kind": "line_range",
               "start": 482
             }
@@ -393,12 +393,12 @@
         },
         {
           "anchor": {
-            "blob": "413fe7d9f7f1d9f719e39495e704dacf50ad5fc8",
+            "blob": "8af465a831b807b61b0df2d8374da5be208b1161",
             "content": "sha256:f5c487e735e506bf84e89636232d3d09d9c4fa9b21c675b058a268d843496cac",
             "locator": {
-              "end": 163,
+              "end": 170,
               "kind": "line_range",
-              "start": 146
+              "start": 153
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
@@ -433,6 +433,23 @@
             "path": "mcp/tests/test_capsule_replay_integrity.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The held opening inserts its product notice between the restored prompt and the FIFO batch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
+            "content": "sha256:2789ec3dc03414ac74f94ccab44be25eefbe95541c211f6d710ad7794a7a8a2f",
+            "locator": {
+              "end": 510,
+              "kind": "line_range",
+              "start": 482
+            }
+          },
+          "kind": "code"
         }
       ]
     }

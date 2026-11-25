@@ -82,7 +82,10 @@ missing components retain `FileNotFoundError`.
 
 
 
+
+
 - The read_ar_files naming entry point imports confine_rel and route_sidecar_status under their private aliases. [1]
+
 
 
 
@@ -96,9 +99,9 @@ missing components retain `FileNotFoundError`.
 
 
 
-- The `AuthorityError` raised on an out-of-root / absolute path. [7]
-
 
 
 
 - `sidecar_status` + `INDEX_FILE_NAME` / `ROUTE_OVERVIEW_NAME` / `ENTITY_CATALOG_NAME` consumed read-only. Anchor: `sidecar_status` [3]
+
+- The `AuthorityError` raised on an out-of-root / absolute path. [7]

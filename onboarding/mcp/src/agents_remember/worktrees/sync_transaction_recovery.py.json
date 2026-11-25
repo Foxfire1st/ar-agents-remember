@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+        "blob": "13ca170bad52685e8caca7967a429b1f4acf71fc",
         "content": "sha256:9bdf79f0a04fb919cae29d06ddad576b1c37fc0efd8afd1f82c9e25e788a6b22",
         "locator": {
           "kind": "symbol",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
-        "content": "sha256:508ca301ab0193366606183c55a9dc3ecca5ca52fb0b3c65d03d7e2044c5b87d",
+        "blob": "13ca170bad52685e8caca7967a429b1f4acf71fc",
+        "content": "sha256:5efa82de6d0d3e84e5c095af5e805234fe01270be2441dfc5bc0c0a9ebed87e8",
         "locator": {
           "kind": "symbol",
           "name": "finalize_sync"
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+        "blob": "13ca170bad52685e8caca7967a429b1f4acf71fc",
         "content": "sha256:02d57382c57ea567e0fcccfaba7683fa79d0fb6c3e188093380aa2dcf1e1a1b3",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+        "blob": "13ca170bad52685e8caca7967a429b1f4acf71fc",
         "content": "sha256:04826373a8d9ddf73380e7b2ba50c211c807877982552b8f87fb4bb713946f82",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+        "blob": "13ca170bad52685e8caca7967a429b1f4acf71fc",
         "content": "sha256:d74213ca3a35f9ea8fedc15c9e4e70fa2bd9985de2a2135a5ef02a4a6501ce15",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+        "blob": "13ca170bad52685e8caca7967a429b1f4acf71fc",
         "content": "sha256:fd0e23734436b2909e009702074052701c260e24c095433ec2fedd77e52d2859",
         "locator": {
           "kind": "symbol",
@@ -112,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+        "blob": "13ca170bad52685e8caca7967a429b1f4acf71fc",
         "content": "sha256:623c602c56b0f4916455eebdf721c1054250241c39689bbda00f8b9a709d7352",
         "locator": {
           "kind": "symbol",
@@ -130,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+        "blob": "13ca170bad52685e8caca7967a429b1f4acf71fc",
         "content": "sha256:69212e85879f40faac09a803e1ba0be55d01f8cc96e4c381698319d6abf03e32",
         "locator": {
           "kind": "symbol",
@@ -148,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+        "blob": "13ca170bad52685e8caca7967a429b1f4acf71fc",
         "content": "sha256:4c9f8abe5298d2c423826aa01083af4f953758b9cfcc23f02d5bb45ac231cf79",
         "locator": {
           "kind": "symbol",
@@ -200,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+            "blob": "13ca170bad52685e8caca7967a429b1f4acf71fc",
             "content": "sha256:04826373a8d9ddf73380e7b2ba50c211c807877982552b8f87fb4bb713946f82",
             "locator": {
               "kind": "symbol",
@@ -245,7 +245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
+            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
             "content": "sha256:0b2d375f394beb24f307d5e12fbbdf23e88a25e56323f5ca82969204cb979de7",
             "locator": {
               "kind": "symbol",
@@ -258,28 +258,41 @@
       ]
     },
     "4": {
-      "note": "Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair. Anchor: `finalize_sync` `cancel_sync`",
+      "note": "Finalization refuses while a side still parks its candidate. Cancellation clears a conflicted reapply, rolls back and restores the parked candidate, or returns a typed manual-repair result.",
       "targets": [
         {
           "anchor": {
-            "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
-            "content": "sha256:508ca301ab0193366606183c55a9dc3ecca5ca52fb0b3c65d03d7e2044c5b87d",
+            "blob": "13ca170bad52685e8caca7967a429b1f4acf71fc",
+            "content": "sha256:5efa82de6d0d3e84e5c095af5e805234fe01270be2441dfc5bc0c0a9ebed87e8",
             "locator": {
-              "end": 102,
+              "end": 107,
               "kind": "line_range",
-              "start": 78
+              "start": 79
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+            "content": "sha256:606f33b5558e4d0d873beea4fe998a3cb0c73c6d13d9bbd301b1eeebf754f308",
+            "locator": {
+              "end": 739,
+              "kind": "line_range",
+              "start": 732
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "13ca170bad52685e8caca7967a429b1f4acf71fc",
             "content": "sha256:d74213ca3a35f9ea8fedc15c9e4e70fa2bd9985de2a2135a5ef02a4a6501ce15",
             "locator": {
-              "end": 186,
+              "end": 191,
               "kind": "line_range",
-              "start": 137
+              "start": 142
             }
           },
           "kind": "code"
@@ -291,12 +304,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+            "blob": "13ca170bad52685e8caca7967a429b1f4acf71fc",
             "content": "sha256:7926ebf7315e7bd723648ace8311a8f8b0f7d5a3c8d533cc284ee6b8e21bf7ca",
             "locator": {
-              "end": 134,
+              "end": 139,
               "kind": "line_range",
-              "start": 105
+              "start": 110
             }
           },
           "kind": "code"
@@ -308,7 +321,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+            "blob": "13ca170bad52685e8caca7967a429b1f4acf71fc",
             "content": "sha256:4c14ef1128e8d76827f7b5aad6fdd4f416ba99102bb37715a114928c26fcb5a9",
             "locator": {
               "kind": "symbol",
@@ -341,7 +354,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+            "blob": "13ca170bad52685e8caca7967a429b1f4acf71fc",
             "content": "sha256:02d57382c57ea567e0fcccfaba7683fa79d0fb6c3e188093380aa2dcf1e1a1b3",
             "locator": {
               "kind": "symbol",
@@ -357,7 +370,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+            "blob": "13ca170bad52685e8caca7967a429b1f4acf71fc",
             "content": "sha256:69212e85879f40faac09a803e1ba0be55d01f8cc96e4c381698319d6abf03e32",
             "locator": {
               "kind": "symbol",

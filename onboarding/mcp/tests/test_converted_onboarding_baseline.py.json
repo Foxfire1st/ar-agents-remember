@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "8ceab3920c976eb5e944bb64dd1d78704749eb3d",
+        "blob": "2a46e73d94d5704fd8e20390449cac551d787a23",
         "content": "sha256:7c44f0dfb472e332c8a2feb00d14c2eb6a3bbfd074c74945d14edd59a7f0c56e",
         "locator": {
           "kind": "symbol",
@@ -22,14 +22,16 @@
   "realizes": [],
   "references": {
     "2": {
-      "note": "`accept_drift` never clears a validator violation\n\nAnchor: `test_accept_drift_never_clears_a_validator_violation`",
+      "note": "Accepting drift removes the preliminary drift refusal while the R198.1 anchor validator continues to block the baseline.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ceab3920c976eb5e944bb64dd1d78704749eb3d",
-            "content": "sha256:f0e6e83e68a9f71df573d5016356ceaed1cb97cf0de450e90aac252748f5823f",
+            "blob": "2a46e73d94d5704fd8e20390449cac551d787a23",
+            "content": "sha256:7c44f0dfb472e332c8a2feb00d14c2eb6a3bbfd074c74945d14edd59a7f0c56e",
             "locator": {
-              "kind": "file"
+              "end": 68,
+              "kind": "line_range",
+              "start": 38
             }
           },
           "kind": "test"
@@ -41,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ceab3920c976eb5e944bb64dd1d78704749eb3d",
+            "blob": "2a46e73d94d5704fd8e20390449cac551d787a23",
             "content": "sha256:7c44f0dfb472e332c8a2feb00d14c2eb6a3bbfd074c74945d14edd59a7f0c56e",
             "locator": {
               "kind": "symbol",

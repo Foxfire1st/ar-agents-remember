@@ -65,7 +65,6 @@ usesRequestReceipts separates per-request execution cardinality from isTasklessR
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [6]
 
 
-- Worker/Curator typed review census, record-only exclusion and unknown history. [7]
 
 
 - The backend checks the explicit reason and the configured failed-review threshold. A step-up reads mode from its own settings row. Other launch fields follow the same-harness and model inheritance rule. [8]
@@ -76,5 +75,6 @@ usesRequestReceipts separates per-request execution cardinality from isTasklessR
 
 - The same start-only reason enters saved retry payload and POST body. [10]
 
-
 - The launcher model carries the requested step-up reason, an explicit mode override, and optional receipt choice metadata with a distinct observed-mode field. [11]
+
+- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [7]

@@ -10,7 +10,7 @@ Converts a completed capture from one native stdio server into regression measur
 
 ## Code Commentary
 
-The reader matches call starts and replies by process, cycle, position and variant. It requires successful typed task and knowledge reads and the expected cursor use. Each cycle must produce a leaf-candidate quality receipt with a complete worklist, one successful planned write preview, and one successful applied write. Across three cycles, that gives three quality receipts with distinct memory trees, three previews and three applied writes with distinct paths. It checks cap and OOM counters when available. After validation it computes growth from cycle two to cycle three and the peak sampled values.
+The reader matches call starts and replies by process, cycle, position and variant. It requires successful typed task and knowledge reads and the expected cursor use. Each cycle requires a leaf-candidate quality receipt with a complete worklist, one planned write and one applied write. The full report and recorded reply agree on the write state and exact paths. Each preview names its planned weakness and the owning leaf history. Each apply names its created weakness and that history. The first apply also lists `.gitignore`. The three quality trees and three applied weakness paths are distinct. The reader checks cap and OOM counters when available, then computes growth from cycle two to cycle three and the peak sampled values.
 
 ## Relationships
 
@@ -20,6 +20,6 @@ The driver shares the cursor predicate. The executable test consumes these measu
 
 - Each completed pair must match its expected call identity and read outcome. [1]
 
-- Each of the three cycles requires a complete leaf quality receipt, a successful preview and a successful write. Quality memory trees and written paths must be distinct across cycles. [2]
+- Each cycle requires a complete leaf quality receipt and one successful preview and apply. Each write report agrees with its reply and names its revision-one weakness and owning leaf history. The first apply also lists `.gitignore`. The three quality trees and three applied weakness paths are distinct. [2]
 
 - Only a completed workload produces the measured result. [3]

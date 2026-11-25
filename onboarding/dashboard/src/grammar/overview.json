@@ -202,6 +202,23 @@
         }
       ]
     },
+    "18": {
+      "note": "The shared tree places a supplied wrapping detail line below the row’s name and suffix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbf159dceda64eb56de2db2d2435fb33995356d7",
+            "content": "sha256:5d711999ee49203da67f581e8c388b562cfa212f6649dc9f1ed8be6fa475a7cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "RowContent"
+            },
+            "path": "dashboard/src/grammar/ExplorerTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The React Aria condition reconciliation (data-hovered/-focused).\n\nAnchor: `[data-hovered]`",
       "targets": [

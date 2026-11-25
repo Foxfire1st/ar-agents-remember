@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_gate/change_reach.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The path reader identifies record IDs from knowledge record filenames.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8d75011d6376ece2105fbae1bea05055ab8ec91",
+            "content": "sha256:d16680f71bcaa5e2cfbdbfe52a46e09a739f0083e87a5e98ec8e441ca5719f47",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_id_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reach check compares file and anchor paths and record-link IDs with the changed sets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8d75011d6376ece2105fbae1bea05055ab8ec91",
+            "content": "sha256:1232426d9f6e7c26f18aa497dbbdad851e04ce53efdadfe5057ab07b375f6342",
+            "locator": {
+              "kind": "symbol",
+              "name": "dependent_touches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -106,6 +106,8 @@ taxonomy reproduced on the frozen bytes** under the final verification round's o
 mutation applications, 126 scored node runs, 41 assertion kills, 1 exception death, 0 broken mutations,
 0 refusals), and the residue was four line numbers and three strings in report text.
 
+The single-field comparison matrix includes a lifecycle value of reviewed. The case substitutes one field in the selected output and expects exactly that key in the comparison. The two authored fixtures still agree on all compared fields.
+
 ## Evidence
 
 
@@ -127,7 +129,6 @@ No Domain Documentation source is configured for this slice.
 - The continuation case opens its candidate fixture with the test-only row store and creates one invariant with one revision. [31]
 
 
-- The test-only RowStore changes its text tree, rebuilds the index and reopens the read connection; candidate construction is independent, not a closed-database copy. [32]
 
 
 
@@ -149,7 +150,6 @@ No configured domain documentation could be checked.
 
 
 
-- Expansion asserts requested trees/roots and delimiter-safe command without HEAD; authored changed paths are an attributed subset, disjoint from the singleton unattributed gap, not an exact attributed-set census. [35]
 
 
 - **The changed path no recorded realization attributes, listed as a visible gap that survives a filter.** [36]
@@ -203,4 +203,7 @@ No configured cross-repository evidence is claimed.
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:353-353 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:801-801 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1203-1203 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2030-2030 - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2741-2741 - the bytes it recorded now occur 92 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2784-2784 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:624-624 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1937-1937 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1981-1981 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2336-2336 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-- The lane catalog registers this module in integration. Seven lifecycle artifact rows declare it as a consumer. [50]
+- The actual comparison matrix changes one payload field at a time. [58]
+- The lane catalog registers this module in integration. The lifecycle catalog lists `test_knowledge_diff_boundaries.py` as an exact consumer of `_user_settings_guard.py`, `anchor_fixture_models.py`, `diff_scope_test_support.py`, `fixtures/repository_profiles/node/package-lock.json`, `knowledge_review_fact_test_support.py`, `knowledge_row_codec_test_support.py`, `knowledge_rows_test_support.py`, `read_scope_test_support.py`. [50]
+- The test-only RowStore changes its text tree, rebuilds the index and reopens the read connection; candidate construction is independent, not a closed-database copy. [32]
+- Expansion asserts requested trees/roots and delimiter-safe command without HEAD; authored changed paths are an attributed subset, disjoint from the singleton unattributed gap, not an exact attributed-set census. [35]

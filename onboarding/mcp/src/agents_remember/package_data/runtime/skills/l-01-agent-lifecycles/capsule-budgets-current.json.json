@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
+        "content": "sha256:c0ea2ca65b1e9902437153e20f00c936b05f9f670212149ca4f668a5ace6ce9a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9J6CEC",
+      "invariant": "INV-EHJV8E",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 1",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "This carrier is byte-for-byte generated from its canonical skills source after the same renewal plan computes current facts.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "2": {
+      "note": "The packaged budget registry records approved word ceilings and the current renewal measurements for instruction capsules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
+            "content": "sha256:e52ca62acff886770ef025cf39dfe1b0483ecfb496ada8c7e3e7ea985e564291",
+            "locator": {
+              "end": 6188,
+              "kind": "line_range",
+              "start": 6165
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

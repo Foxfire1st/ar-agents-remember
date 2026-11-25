@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/kernel/memory_ignore.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c9bf1c3796d802a6e64211b892b057ae34c8939e",
+        "content": "sha256:148e6748af78bcc8c40d5112002ccfe4940644ad53a971303d9c1da692f5db58",
+        "locator": {
+          "kind": "symbol",
+          "name": "briefs_ignored"
+        }
+      },
+      "id": "RLZ-TGTD43",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Requires both the root declaration and its effective Git exclusion before writing derived files in memory.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The helper adds the canonical ignore rule once and retains the existing text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9bf1c3796d802a6e64211b892b057ae34c8939e",
+            "content": "sha256:25e7625654a032d203b3c6dd9a56d55886f8eeff5fd39c5270cce5d31c63a085",
+            "locator": {
+              "kind": "symbol",
+              "name": "ignore_briefs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The publication check verifies the root declaration and asks Git whether it excludes the directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9bf1c3796d802a6e64211b892b057ae34c8939e",
+            "content": "sha256:148e6748af78bcc8c40d5112002ccfe4940644ad53a971303d9c1da692f5db58",
+            "locator": {
+              "kind": "symbol",
+              "name": "briefs_ignored"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

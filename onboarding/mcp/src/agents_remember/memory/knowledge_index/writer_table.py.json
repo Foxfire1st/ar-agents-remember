@@ -1,0 +1,76 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge_index/writer_table.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e83a44156a179873831fa67fbde3555170acc87d",
+        "content": "sha256:5609132436a1be42880b6f10dca38f29ab69dfef9210a7b60557931e655af2b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "named_revisions"
+        }
+      },
+      "id": "RLZ-ARHRVN",
+      "invariant": "INV-X8FRT8",
+      "origin": {
+        "handoffEntry": "L3-W1-04",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Takes each named revision's one recorded stamp, none where two writes share the number, so the writers table does not depend on file order.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e83a44156a179873831fa67fbde3555170acc87d",
+        "content": "sha256:c22222337ef6f1c732a38a199390a666ce833a95d025d5227f925581521767a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "writer_table"
+        }
+      },
+      "id": "RLZ-ENDBZT",
+      "invariant": "INV-5GEDEX",
+      "origin": {
+        "handoffEntry": "L3-W1-09",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Counts stored revision rows; the rows are built once at index build by one pass over each written list.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The table aggregates written, reviewed, changed and retired revisions by attribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e83a44156a179873831fa67fbde3555170acc87d",
+            "content": "sha256:c22222337ef6f1c732a38a199390a666ce833a95d025d5227f925581521767a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "writer_table"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Named records and written entries identify the revisions available as evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e83a44156a179873831fa67fbde3555170acc87d",
+            "content": "sha256:5609132436a1be42880b6f10dca38f29ab69dfef9210a7b60557931e655af2b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "named_revisions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

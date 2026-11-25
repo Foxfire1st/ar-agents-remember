@@ -1,0 +1,57 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/converted_reviews.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bc221a6239abe56bfeada8c00626513f0ec75b39",
+        "content": "sha256:634833e2b0c21db1c7750a8a06a9139b12c6f8d8405b9d288d329e21c8de787e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-TVF750",
+      "invariant": "INV-69M737",
+      "origin": {
+        "handoffEntry": "L3-W1-07",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The product file that holds the old owners' facts beside the frozen history files.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The catalog stores uniquely identified converted review facts beside the closed histories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc221a6239abe56bfeada8c00626513f0ec75b39",
+            "content": "sha256:e24a275c2518bcf6118a586986fc4cd1e18d0c86aa67a5531c2f77c114e9ddae",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConvertedReviews"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The catalog has a reserved history-relative path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc221a6239abe56bfeada8c00626513f0ec75b39",
+            "content": "sha256:1fed412f14e57736df4e6eaa5b7d9e9840d4aeac59f767e1ca417b18ce5b053c",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_converted_reviews_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

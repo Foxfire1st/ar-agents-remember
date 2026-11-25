@@ -5,7 +5,7 @@
     ],
     "justification": "Outline, badges, views, traversal and filter only together make the tree navigable: an outline without one-line rows is unreadable, badges without the Changed view hide changes, and traversal without kept rows loses the walk. No member alone delivers finding one's way."
   },
-  "guarantee": "The sidebar and reading column project one bound change-set model in the same deterministic active order. Shared resolved regions draw once while keeping every comparison-bound entry identity and authored voice; aliases do not become duplicate traversal stops, and counts remain by entry. Families, invariants, locations and counted group rows stay one line with one sort-dependent reason; established change classification and eligible owner-recorded effect sequences remain separate facts. Changed is the default with All one switch away, and the filter narrows admitted tree rows without replacing the reading model or the retained walk. Group actions open their reading-column groups; Worklist and Code without invariant remain pinned navigation, with one All changes link in the heading. Tree arrows move focus while j/k walk the drawn changed blocks once per shared region. An unnamed entry selects nothing, and an unavailable outline uses named plain catalogue fallback. Guarantees, statements, changed code, judgment facts and effect explanations live in the reading column; raw provenance remains in Technical details, with abnormal family state named outside it.",
+  "guarantee": "The sidebar and reading column project one bound change-set model in the same deterministic active order. Shared resolved regions draw once while keeping every comparison-bound entry identity and authored voice; aliases do not become duplicate traversal stops, and counts remain by entry. Families, invariants, locations and counted group rows stay one line with one sort-dependent reason. A family or invariant row can also show the candidate revision's state in its trailing cell, with the revision writer's role and model in the state title and the row's accessible name. Established change classification and eligible owner-recorded effect sequences remain separate facts. Changed is the default with All one switch away, and the filter narrows admitted tree rows without replacing the reading model or the retained walk. Group actions open their reading-column groups; Worklist and Code without invariant remain pinned navigation, with one All changes link in the heading. Tree arrows move focus while j/k walk the drawn changed blocks once per shared region. An unnamed entry selects nothing, and an unavailable outline uses named plain catalogue fallback. Guarantees, statements, changed code, judgment facts and effect explanations live in the reading column; raw provenance remains in Technical details, with abnormal family state named outside it.",
   "id": "FAM-A3YKR5",
   "members": [
     "INV-S44D2D",
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "routes": [
     "dashboard/src/panels/review",
     "dashboard/src/data",

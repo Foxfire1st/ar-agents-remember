@@ -145,7 +145,6 @@ frozen: only a row in its own closed winning file retains legacy eligibility; op
 answer nothing. Marker transport and root subject `onboarding:overview` retain their earlier forms.
 
 
-- The row-kind docstring: `updated`/`no_impact`, writer-filled sources and legacy closed/open distinction. [1]
 
 
 - The gate reads source currency, counted-change requirements and each winning row's own closure provenance. [2]
@@ -175,7 +174,6 @@ the kinds that have landed.
 - The ref: exactly one key. [4]
 - The planned row and its disposition-bound ref. [5]
 
-- The registry test, since MIK-R53 eight kinds compared as a set. [6]
 
 
 ## 260928-MIK-L10 The No-Invariant Row (MIK-R10 Rule 3)
@@ -215,7 +213,6 @@ order (review F9); subject disjointness remains asserted (review N4, accepted as
 - The row's subject pattern and dispositions come from the one spelling. [11]
 
 
-- The reconsideration row: its kind, pattern and two dispositions. [12]
 
 - Registered sixth, owned by MIK-R14. [13]
 - The row kind registered with its owner, and the subject parsed. [14]
@@ -229,6 +226,8 @@ changed row must carry both facts, and a half-recorded changed row or an effect 
 any other disposition is refused naming the family and the row.
 
 - Recorded rows keep missing effect and revision missing on rewrite. [38]
+
+A history file can contain `written`, `review`, `sharedRevisions` and `crossingSelections` beside the Curator's judgment rows. The product writes the revision and crossing evidence. Closeout writes the eligible review fact when it closes an open owner attempt, and closed source history remains frozen.
 
 ## Evidence
 
@@ -252,34 +251,26 @@ each rule.
 
 - The invariant and family disposition vocabularies. [15]
 
-- The shared row shape and kind dispatch check. [16]
 
 - Covered entries: anchors with a path, or absent on one side. [17]
 - What each disposition's covers must show. [18]
 - The invariant row. [19]
 
-- The family row and its examined members. [20]
 
 
 - Many long marker lines move into one valid row. [23]
 
-- The file: one owner, one row per subject. [24]
 - The freeze predicate. [25]
 - Re-anchoring checked against K_C. [26]
 
 - The revision binding for invariant and family rows. [27]
 
-- The history schema is dispatched by `documents.py`. [28]
 - Closed files stay byte-identical, even when reformatted. [29]
 
-- The optional attempt of a reopened leaf's file. [30]
 - The attempt a write or closeout goes to. [31]
 - All of an owner's history files read as one history. [32]
 
 - A changed row at an unchanged revision is accepted only as a restatement. [33]
-- The dispositions that may govern a record its leaf changed. [34]
-- Why a row cannot govern an invariant whose revision the leaf changed. [35]
-- Why a row cannot govern a family whose guarantee the leaf changed. [36]
 - The three rules on their own, for every disposition. [37]
 
 ### Cross-Repo References
@@ -298,3 +289,17 @@ No cross-repo boundary is crossed by this file.
 `ReconsiderationRow` gains one optional field, `repoint`, a nonempty list of `Repoint` items (`{link, before, after}`). A validator refuses it on any disposition but `still_rejected` — a raise leaves the links as they are — and refuses a list that names one link twice. Both ends of a re-point name their path, because the row is read apart from any sidecar.
 
 - A `still_rejected` reconsideration row may carry the re-points whose code moved, and no other disposition may. [41]
+
+- The dispositions that may govern a record its leaf changed. [34]
+- Why a row cannot govern an invariant whose revision the leaf changed. [35]
+- Why a row cannot govern a family whose guarantee the leaf changed. [36]
+
+- The row-kind docstring: `updated`/`no_impact`, writer-filled sources and legacy closed/open distinction. [1]
+- The reconsideration row: its kind, pattern and two dispositions. [12]
+- The shared row shape and kind dispatch check. [16]
+- The family row and its examined members. [20]
+- The registry test, since MIK-R53 eight kinds compared as a set. [6]
+
+- The history schema is dispatched by `documents.py`. [28]
+- The file: one owner, one row per subject. [24]
+- The optional attempt of a reopened leaf's file. [30]

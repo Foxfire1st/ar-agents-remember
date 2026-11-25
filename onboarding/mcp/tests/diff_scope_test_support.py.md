@@ -89,7 +89,6 @@ No Domain Documentation source is configured for this slice.
 
 
 
-- RowStore writes text-tree fixture rows without the retired production admission plane. [43]
 
 
 
@@ -110,10 +109,8 @@ No Domain Documentation source is configured for this slice.
 
 - **The fixture's loud-failure rule: a building step that does not do what it says fails the fixture.** [63]
 
-- **The baseline fixture this module builds on.** [64]
 
 
-- The fixture value the baseline side is read from. [65]
 
 
 - **The evidence node the contract names: the removed realization keeps its baseline source in the union.** [67]
@@ -130,3 +127,7 @@ No configured cross-repository evidence is claimed.
 ### Repo-Internal References (continued)
 
 - **The contract this module's artifact row is registered under.** Anchor: `knowledge-diff-cases` Anchor: `knowledge-diff-cases` [66]
+
+- **The baseline fixture this module builds on.** [64]
+- The fixture value the baseline side is read from. [65]
+- RowStore writes text-tree fixture rows without the retired production admission plane. [43]

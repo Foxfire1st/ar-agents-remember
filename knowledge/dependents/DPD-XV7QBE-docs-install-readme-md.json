@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "978e410ca88ebabc20fc598a05870dd8f8efed1a",
+    "commit": "e8a96f6e2255155d733dd15dcba56bd26e46097e",
     "role": "curator",
-    "statement": "The install overview still gives the Bootstrap and dashboard opening sequence without a separate registry recovery operation.",
-    "task": "261112-BUG-L20",
+    "statement": "The install overview gives the one Bootstrap call from the registered harness and directs the user to the returned dashboard address to continue in that seat’s chat.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/install/README.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
+      "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
     },
     {
-      "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+      "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },

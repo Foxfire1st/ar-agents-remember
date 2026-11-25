@@ -37,7 +37,7 @@
       ]
     },
     "11": {
-      "note": "The test scans literal lifecycle next_tool values and takes worktree_closeout_apply and worktree_integrate from the historical closeout and integration refusal producer. A separate response-boundary probe inserts each collected value in a constructed closeout-candidate-state-moved refusal, runs the public response adapter, and verifies the model retains nextTool.",
+      "note": "The test scans literal `next_tool` values and calls `_retired_generation_refusal` for closeout and integrate to collect `worktree_closeout_apply` and `worktree_integrate`. A response-boundary probe submits each of the four collected successors in a constructed `closeout-candidate-state-moved` refusal through the public response adapter and checks that the typed model retains `nextTool`.",
       "targets": [
         {
           "anchor": {
@@ -54,14 +54,16 @@
       ]
     },
     "17": {
-      "note": "The choke point whose guarantee this module moves into the suite.\n\nAnchor: `_tool_payload`",
+      "note": "The choke point whose guarantee this module moves into the suite. Anchor: `_tool_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
-            "content": "sha256:e65598ad08d511a5ffa26a3099d273596eea7844d5c2a00685c2ccb183271c43",
+            "blob": "c1de505d6e140874b674a3f0afbfccb01590e362",
+            "content": "sha256:f08077545aa7d2728aaac7112b4c5cbf28bd5bfaabf3925590f563c00be67d14",
             "locator": {
-              "kind": "file"
+              "end": 35,
+              "kind": "line_range",
+              "start": 22
             },
             "path": "mcp/src/agents_remember/mcp/tools/base.py"
           },
@@ -69,11 +71,10 @@
         },
         {
           "anchor": {
-            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
-            "content": "sha256:c0e54f12b9211f7fb26dd24d118a8562de4972ce6d7beb7a43b920a7fc979f42",
+            "blob": "c1de505d6e140874b674a3f0afbfccb01590e362",
+            "content": "sha256:11b1fc8e2810d5677e38dee186495dae46d165ae39a1e63e3058fab306d145d2",
             "locator": {
-              "kind": "symbol",
-              "name": "_tool_payload"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/tools/base.py"
           },
@@ -138,16 +139,16 @@
       ]
     },
     "20": {
-      "note": "The lane manifest registers mcp/tests/test_tool_response_conformance.py in architecture-fitness. Membership selects evidence and does not establish execution.",
+      "note": "The architecture-fitness lane selects mcp/tests/test_tool_response_conformance.py. Execution evidence is recorded separately.\n\nAnchor: `mcp/tests/test_tool_response_conformance.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
             "content": "sha256:9bedbc4065fdfc05429289b99eac1e9736fd504528bdcf8432e49d781e4c3f98",
             "locator": {
-              "end": 814,
+              "end": 833,
               "kind": "line_range",
-              "start": 814
+              "start": 833
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

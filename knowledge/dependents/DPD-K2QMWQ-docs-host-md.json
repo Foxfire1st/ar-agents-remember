@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "b29f2e225c04fbcebb653d59f81cf895c42f5097",
-    "commit": "180b6c153d21d01cbb14059d0219472ccdeba683",
+    "codeTree": "51a44523acb6c29c3a029c7dde4a35acb96595f3",
+    "commit": "3bbaf460317e8572583d884bc0791a219ad1bcfa",
     "role": "curator",
-    "statement": "The host guide's role-agent account, the second agents-remember copy on non-Claude harnesses and the Claude Code exclusion still hold on b29f2e2; the Paseo 0.16.2 routes now documented in agent_binding.py agree with it.",
-    "task": "261124-CAP-L1",
+    "statement": "The host guide's role-agent account, the second agents-remember copy on non-Claude harnesses and the Claude Code exclusion still hold on b29f2e2; the Paseo 0.16.2 routes now documented in agent_binding.py agree with it. On code 51a44523 (gen-8 sync onto CAP-L1 and BUG-L26) the landing answer rosters only add the key briefsProblem; the guide describes no landing roster, and its restart, resume and refusal descriptions still hold.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -131,7 +131,7 @@
       "path": "mcp/src/agents_remember/application/agent_binding.py"
     },
     {
-      "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
+      "blob": "58ee640a8f53ac7e3e3b4aa884d750d6ad8eead7",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     },
@@ -167,8 +167,8 @@
     },
     {
       "anchor": {
-        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
-        "content": "sha256:bfd43cdf46e5c32a4de2c2ed61c10d966ef1d8d86de4e336e599dd21ec8e0658",
+        "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
+        "content": "sha256:8b89d4ca063e0692378d8fb0b624e947ad562bc0de0b790c1837269b6f497258",
         "locator": {
           "end": 247,
           "kind": "line_range",

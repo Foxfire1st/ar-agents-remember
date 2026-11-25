@@ -16,7 +16,7 @@
 
 - The cache groups files by loaded build and memory-tree key; `open_cached_index` exposes read-only reuse of an existing matching file.
 
-- `__all__` re-exports the public names of those modules, so callers (`application/published_intent.py`, `mcp/tools/knowledge.py`, `cli/knowledge_index.py`) import from the package.
+- `__all__` re-exports `RecordStanding` and `RecordWriter` alongside the public names of those modules, so callers (`application/published_intent.py`, `mcp/tools/knowledge.py`, `cli/knowledge_index.py`) import from the package.
 
 ### Conventions
 
@@ -58,5 +58,8 @@ No meaningful cross-repo references found: the index reads one memory tree, addr
 No cross-repo boundary is crossed by this file.
 
 - The package map and the rule that no writer writes the index and it is never merged. [1]
-- The re-exported public surface. [2]
 - Public index surface includes prose companions without making prose an indexed model. [3]
+
+- The public lookup types include record standing and its writer projection. [5]
+
+- The re-exported public surface. [2]

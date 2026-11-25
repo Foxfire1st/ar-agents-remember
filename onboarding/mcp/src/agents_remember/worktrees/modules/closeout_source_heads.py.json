@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/closeout_source_heads.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Recorded completed and checkpointed outputs are read for each paired side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef6b3907a744393a084d80e10ed797a1b4624211",
+            "content": "sha256:2159239d57aafec5c9f4c6a0e29fc943d60185d29da584e470ef5931db87fcb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "landed_source_heads"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Code and applicable external-memory source heads are checked separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef6b3907a744393a084d80e10ed797a1b4624211",
+            "content": "sha256:954e4e8da0dfeea9dc2d1989a7f44298a1baa6bc6213ffb4514363beecd8778a",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_closeout_source_heads"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -80,12 +80,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
             "content": "sha256:bc47276b36ad1e38c4275ef5087cbb9fc9326d534c045037d3371af8a1654198",
             "locator": {
-              "end": 229,
+              "end": 223,
               "kind": "line_range",
-              "start": 177
+              "start": 171
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -93,12 +93,12 @@
         },
         {
           "anchor": {
-            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
             "content": "sha256:d522a8e1b616c33b16a521cba815ee29e5c2aa831ab1edca50b5c7ca77b1f966",
             "locator": {
-              "end": 544,
+              "end": 538,
               "kind": "line_range",
-              "start": 508
+              "start": 502
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -400,16 +400,16 @@
       ]
     },
     "29": {
-      "note": "The module's own unit-regression lane row; catalog membership selects evidence and does not establish execution.",
+      "note": "The unit-regression lane selects mcp/tests/test_memory_citation_agreement.py. Execution evidence is recorded separately.\n\nAnchor: `mcp/tests/test_memory_citation_agreement.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
             "content": "sha256:f077da38793d14168158a19a2d41f7fbcff188affdbc98de0e9dccf33bef430a",
             "locator": {
-              "end": 334,
+              "end": 346,
               "kind": "line_range",
-              "start": 334
+              "start": 346
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

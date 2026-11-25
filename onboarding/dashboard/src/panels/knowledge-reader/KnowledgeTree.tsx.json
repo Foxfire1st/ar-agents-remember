@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
-        "content": "sha256:25c9e306dd970c149e6586cf95313277c9495436f65764d0cec0604a903f114f",
+        "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
+        "content": "sha256:698bf432d174828a4f738aa1ba96d4d31d3d8f1beaeaf47c91ad0ad930494d61",
         "locator": {
           "kind": "symbol",
           "name": "KnowledgeTree"
@@ -21,7 +21,24 @@
     },
     {
       "anchor": {
-        "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
+        "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
+        "content": "sha256:dcc316e5573cb6e252fc3cc09adfb2e033a0b132e31660922c09d6992c552942",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-49T61G",
+      "invariant": "INV-TRMMZA",
+      "origin": {
+        "handoffEntry": "L3-W1-08",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Gives each record row of the sidebar its state and writer as the row's second line.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
         "content": "sha256:850b3a42cabc9276dbe59a2665989300ba30bcdc5b47b22202fc95d93568e94d",
         "locator": {
           "kind": "symbol",
@@ -39,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
+        "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
         "content": "sha256:708feff445a22e0529fff26cc868d1c5267461e1582bf3ccaff6b30f84a4ac80",
         "locator": {
           "kind": "symbol",
@@ -57,8 +74,8 @@
     },
     {
       "anchor": {
-        "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
-        "content": "sha256:e100f28516f46c13ac878b7f3b923d8624bd960653f1170fcf0505650ec4b130",
+        "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
+        "content": "sha256:da6bb29a84213cac54a04e62bc66e070ca3e1c8808100e3aadca24363d4c06c5",
         "locator": {
           "kind": "symbol",
           "name": "recordRows"
@@ -76,14 +93,16 @@
   ],
   "references": {
     "10": {
-      "note": "A row's marks, entry count and truthful coverage suffix.\n\nAnchor: `RowSuffix`",
+      "note": "A row's marks, entry count and truthful coverage suffix.\n\nAnchor: RowSuffix",
       "targets": [
         {
           "anchor": {
-            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
-            "content": "sha256:18b76f62cd63b8e28d425c57a04f3ae86c37c25bc9552187150f795ba4708dc3",
+            "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
+            "content": "sha256:8b1cfb103784deadd215c68a4339cff07e19529ae86fe73c9d6d036134038dc0",
             "locator": {
-              "kind": "file"
+              "end": 171,
+              "kind": "line_range",
+              "start": 142
             }
           },
           "kind": "code"
@@ -91,14 +110,16 @@
       ]
     },
     "11": {
-      "note": "The filter keeps the open path and knowledge rows visible.\n\nAnchor: `showPath`",
+      "note": "The filter keeps the open path and knowledge rows visible.\n\nAnchor: showPath",
       "targets": [
         {
           "anchor": {
-            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
-            "content": "sha256:18b76f62cd63b8e28d425c57a04f3ae86c37c25bc9552187150f795ba4708dc3",
+            "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
+            "content": "sha256:c3c259a69c08e74755525ba4d289ece60a3fd289853295dbedd0715885d3db83",
             "locator": {
-              "kind": "file"
+              "end": 261,
+              "kind": "line_range",
+              "start": 256
             }
           },
           "kind": "code"
@@ -106,14 +127,16 @@
       ]
     },
     "12": {
-      "note": "The shared tree that owns loading and traversal.\n\nAnchor: `ExplorerTree`",
+      "note": "The shared tree that owns loading and traversal.\n\nAnchor: ExplorerTree",
       "targets": [
         {
           "anchor": {
-            "blob": "dcf0163353aa753e3985ca03bebd9323116a5a56",
-            "content": "sha256:22f74377d6feb31b6c266659ec71e398753609598b9443b23877d5749629d70d",
+            "blob": "cbf159dceda64eb56de2db2d2435fb33995356d7",
+            "content": "sha256:35cb5350b560d2a932fea93ca555de2eba5ed590d9faa5544089401299af5ab4",
             "locator": {
-              "kind": "file"
+              "end": 183,
+              "kind": "line_range",
+              "start": 60
             },
             "path": "dashboard/src/grammar/ExplorerTree.tsx"
           },
@@ -121,15 +144,34 @@
         }
       ]
     },
-    "7": {
-      "note": "The root rows, the Records branch and the two count rows.\n\nAnchor: `rootRows`",
+    "13": {
+      "note": "The tree adapter hands record standing to the shared detail slot alongside the existing suffix.",
       "targets": [
         {
           "anchor": {
-            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
-            "content": "sha256:18b76f62cd63b8e28d425c57a04f3ae86c37c25bc9552187150f795ba4708dc3",
+            "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
+            "content": "sha256:2019b9557cb526182c3db1fe431f0f88de8afd4203b5502f498a3a0060ddb627",
             "locator": {
-              "kind": "file"
+              "end": 224,
+              "kind": "line_range",
+              "start": 205
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The root rows, the Records branch and the two count rows.\n\nAnchor: rootRows",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
+            "content": "sha256:d920a54cd30c104a914440edf8f05c59a46ee9cbf07ef240e2c2aae176c0d737",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 57
             }
           },
           "kind": "code"
@@ -137,14 +179,15 @@
       ]
     },
     "8": {
-      "note": "The record kinds come from the shared acquisition, invariants excluded.\n\nAnchor: `recordRows`",
+      "note": "The shared acquisition supplies the Records kinds and rows. A record row keeps its own address and optional standing detail.",
       "targets": [
         {
           "anchor": {
-            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
-            "content": "sha256:18b76f62cd63b8e28d425c57a04f3ae86c37c25bc9552187150f795ba4708dc3",
+            "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
+            "content": "sha256:da6bb29a84213cac54a04e62bc66e070ca3e1c8808100e3aadca24363d4c06c5",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "recordRows"
             }
           },
           "kind": "code"
@@ -152,14 +195,16 @@
       ]
     },
     "9": {
-      "note": "The loader routes a directory to root, records or one tree read.\n\nAnchor: `useKnowledgeLoader`",
+      "note": "The loader routes a directory to root, records or one tree read.\n\nAnchor: useKnowledgeLoader",
       "targets": [
         {
           "anchor": {
-            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
-            "content": "sha256:18b76f62cd63b8e28d425c57a04f3ae86c37c25bc9552187150f795ba4708dc3",
+            "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
+            "content": "sha256:ed4798a17f2efac53fdc4f16a3a335d5cc301edfcff2aa940a0265c6afbf2b14",
             "locator": {
-              "kind": "file"
+              "end": 140,
+              "kind": "line_range",
+              "start": 123
             }
           },
           "kind": "code"

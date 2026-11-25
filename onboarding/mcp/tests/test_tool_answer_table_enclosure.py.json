@@ -3,8 +3,59 @@
   "proves": [
     {
       "anchor": {
-        "blob": "f4dae3bfd03107129533aae974c8934d80c0db32",
-        "content": "sha256:026483ba11f142c72dede8032d4b161a278a5353ab2d9ccbc33479b8fe5f5566",
+        "blob": "47a5e5d81a58fa2fb152a21a03cba5dafdabd11e",
+        "content": "sha256:6db13b702c66670aa628a279da2d945489534e9a43310155cfc7e26328de6a20",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cleanup_keeps_only_this_leafs_lines_before_removing_logs"
+        }
+      },
+      "facet": "Cleanup exports only the leaf’s own calls before removing its log directory.",
+      "id": "PRF-192KN5",
+      "invariant": "INV-B1DZ6W",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 13",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "47a5e5d81a58fa2fb152a21a03cba5dafdabd11e",
+        "content": "sha256:71c42c296ebf0ed9a0ab66c651ebb70b5d902470a93cbb4de4596e32bd9076f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_line_whose_text_holds_a_unicode_line_separator_is_kept_whole"
+        }
+      },
+      "facet": "Retention preserves one complete JSON line when a text value contains a Unicode line separator.",
+      "id": "PRF-1NAWGY",
+      "invariant": "INV-B1DZ6W",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 13",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "47a5e5d81a58fa2fb152a21a03cba5dafdabd11e",
+        "content": "sha256:491b978ecdf52a494ea2df1f7a50c90de8e876f2d475460da154f0b5f8cf2c6f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_failed_keep_leaves_the_log_and_blocks_the_cleanup_until_a_retry"
+        }
+      },
+      "facet": "An export failure preserves the source log and blocks cleanup until retry.",
+      "id": "PRF-G6PS6X",
+      "invariant": "INV-B1DZ6W",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 13",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "47a5e5d81a58fa2fb152a21a03cba5dafdabd11e",
+        "content": "sha256:2ae4f316eae7a8dfaf098767027ec5eefffa19b1e16332a432d73e7acab13ee8",
         "locator": {
           "kind": "symbol",
           "name": "ToolAnswerEnclosureTests.test_cleanup_removes_logs_with_the_enclosure"
@@ -26,8 +77,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4dae3bfd03107129533aae974c8934d80c0db32",
-            "content": "sha256:bea79d7cd3bfe36d437b8a2e4889e2eca60150fbf86b3693fff262691086478d",
+            "blob": "47a5e5d81a58fa2fb152a21a03cba5dafdabd11e",
+            "content": "sha256:63f94a4b866dcdb21334003f73e365422f56d91004780718fba585fe1a97e060",
             "locator": {
               "kind": "file"
             }
@@ -41,10 +92,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4dae3bfd03107129533aae974c8934d80c0db32",
-            "content": "sha256:bea79d7cd3bfe36d437b8a2e4889e2eca60150fbf86b3693fff262691086478d",
+            "blob": "47a5e5d81a58fa2fb152a21a03cba5dafdabd11e",
+            "content": "sha256:63f94a4b866dcdb21334003f73e365422f56d91004780718fba585fe1a97e060",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The terminal cases check the selected call lines, export-before-removal ordering, retry and path rewriting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47a5e5d81a58fa2fb152a21a03cba5dafdabd11e",
+            "content": "sha256:cbab7340022b6090643d0f00c591c2589b05518bc4f83e61b3338a1c0904e4a0",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 219
             }
           },
           "kind": "test"

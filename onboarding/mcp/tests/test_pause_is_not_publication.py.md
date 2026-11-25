@@ -78,8 +78,7 @@ that no dynamic-import path exists.
 - The publication set is a `frozenset` literal in the test, not derived from a registry, so adding a
   publication module means editing the guard — the deliberate cost of a guard whose subject is "these
   specific planes must stay unreachable".
-- The lane is `architecture-fitness` in `mcp/tests/test-evidence-lanes.toml`: a structural guard over
-  the source tree, not a behavioral test of a running service.
+- The guard inspects the source tree.
 
 ### Todos
 
@@ -113,5 +112,4 @@ No meaningful cross-repository reference applies to this repository-owned struct
 
 - The route this guard exists to keep the stop away from. Anchor: `worktree_checkpoint_landing` [6]
 
-
-- The lane this module is registered in. Source caption: "mcp/tests/test_pause_is_not_publication.py" [8]
+- The `architecture-fitness` lane selects `mcp/tests/test_pause_is_not_publication.py`. [8]

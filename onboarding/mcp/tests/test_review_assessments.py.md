@@ -48,9 +48,7 @@ pairs one citation with one supplied evidence-byte object for the citation-match
 
 ### Conventions
 
-- Registered in `mcp/tests/test-evidence-lanes.toml` as a **unit-regression** member: every case is
-  hermetic (temporary directories, in-process state, no integration marker, no repository or
-  subprocess), so the default unit lane is each one's behaviour-preserving classification.
+- Every case uses temporary directories and in-process state. The cases require no integration marker, repository or subprocess.
 - The behavioral cases check model inputs, state projections, binding identities, and checklist output.
 
 ### Invariants And Boundaries
@@ -94,6 +92,4 @@ would be a source census rather than a behavioural check; and the leaf recorded 
 
 - The archived KS-R15@v1 packet preserves the creating leaf’s distinct-type requirement, former external-memory scope rail and report-only checklist boundary (§3.2, §6.9 and §8.2). This document supports the historical omission rationale, not a current implementation claim. \[6] [6]
 
-
-
-- The lane manifest declares the unit-regression group and names this module as a member. [1]
+- The `unit-regression` lane selects `mcp/tests/test_review_assessments.py`. [1]

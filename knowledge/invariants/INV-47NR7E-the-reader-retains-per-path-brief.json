@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The converted-memory short brief added to an eligible read_ar_files row. The cited tests exercise this rule where a regression could change a reader or lifecycle outcome."
+  },
+  "applicability": "The short brief added to an eligible read_ar_files row in converted memory.",
+  "conditions": [
+    "The answer assembles current recorded memory against the same code observation as the naming read.",
+    "The saved header supplies disk freshness. A missing, older or unrecognized header leaves the file untouched and the answer advises a covering write.",
+    "Whole rows progress in requested order and moved anchors come first within each brief. Count-only rows and then compact status rows keep every admitted path with its brief pointer when available.",
+    "The reader-owned fitter measures actual delivery metadata before the shared guard and can fit again if a late log error adds material."
+  ],
+  "exclusions": [
+    "The rule does not govern bodies of source files or onboarding cards, or pagination in knowledge_read."
+  ],
+  "id": "INV-47NR7E",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "W3 F02 exact ordered E04 replay and the reader bound regressions. The L3 join's E13 proof compares brief and short answer to two carried records.",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/04_the-brief-of-a-file-0df6c23e90-ar/role-reports/worker/db647361-59b7-4042-bb9f-6d7638bd5e03/role-launch/d884-round5/REPORT.md#requirement-acceptance",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/04_the-brief-of-a-file-0df6c23e90-ar/role-reports/worker/db647361-59b7-4042-bb9f-6d7638bd5e03/role-launch/d861-round7/W7-RUNTIME-COVER.md",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/04_the-brief-of-a-file-0df6c23e90-ar/role-reports/worker/db647361-59b7-4042-bb9f-6d7638bd5e03/role-launch/f30-round9-revised/W9-READER-INSTRUCTIONS.md",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/04_the-brief-of-a-file-0df6c23e90-ar/role-reports/worker/db647361-59b7-4042-bb9f-6d7638bd5e03/role-launch/f31-round10/W10-PUBLIC-READER-INSTRUCTIONS.md"
+      ],
+      "path": "kno-l4-w3-new-rules.json"
+    },
+    "handoffEntry": "KNO-R04@v1 rules 6–8",
+    "leaf": "261112-KNO-L4",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The reader assembles the file's brief in memory without modifying the memory folder and delivers its disk freshness and moved-rule precedence within the existing answer budget.",
+  "status": "proposed",
+  "supersedes": []
+}

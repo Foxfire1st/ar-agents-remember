@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+        "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
         "content": "sha256:72a6c65ceaf42298f4600ff0414c42ba14b22ae9f5042957809356bd264ee1f7",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+        "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
         "content": "sha256:901c01cfa86229c133bf5491b6319dd5cb12e12740b379379cb57ccd39e5be8c",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+        "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
         "content": "sha256:ff0bdb1dc968c0373323d439b207245b6fc7fe4cbc5924e640deaed00013143b",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+        "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
         "content": "sha256:cee7c130cb2c2e7d47da4ec3eef10aa0ad4132eaa0c7fabb2c0ca6d33070ecd6",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+        "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
         "content": "sha256:88f0c64b90b85023d675ba0db630e7046bcbefbad6d478b8d697e7e8747ddcf0",
         "locator": {
           "kind": "symbol",
@@ -94,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-        "content": "sha256:8857d6720d5c936d3e59c15217ad0115e4086b9dfe9d08ebf85bb447fa5a8ccd",
+        "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+        "content": "sha256:b3ec513e24f1491f629b9764f4b55f5e8a6741245f1807d37e017d9dfde13495",
         "locator": {
           "kind": "symbol",
           "name": "_closed_result_payload"
@@ -112,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+        "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
         "content": "sha256:bf6a4fd82ce4b7c37dad975706df9dfa2e512477491776e2ed885bf2569e2279",
         "locator": {
           "kind": "symbol",
@@ -130,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+        "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
         "content": "sha256:8051cd1b0ce6c524c37ca9bbeb9f2e077b17f254335985310d4ad655df1ebaae",
         "locator": {
           "kind": "symbol",
@@ -148,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+        "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
         "content": "sha256:edee97bbd27e310531ad25d8367e1ce1b68d4f32c367d57c4290d56452db3d99",
         "locator": {
           "kind": "symbol",
@@ -166,7 +166,25 @@
     },
     {
       "anchor": {
-        "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+        "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+        "content": "sha256:586750be188df447b4edb84a4cadd2919c6b8d639cdbe8fe6f58a01be0b76045",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_closeout_candidate"
+        }
+      },
+      "id": "RLZ-K806AW",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Refreshes published leaf memory after the closeout has proved and recorded the exact pair.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
         "content": "sha256:4af59765f940af1a42be4a8141c0700127633ca8a23a8bbd6453e39df90b4b91",
         "locator": {
           "kind": "symbol",
@@ -185,26 +203,42 @@
   ],
   "references": {
     "1": {
-      "note": "`closeout_preview_payload` asks approval for the actual code/memory transaction and reports cache refresh separately; a converted leaf the gate refuses gets the refused preview instead, which asks for no approval.\n\nAnchor: `closeout_preview_payload`",
+      "note": "`closeout_preview_payload` asks approval for the actual code/memory transaction and reports cache refresh separately; a converted leaf the gate refuses gets the refused preview instead, which asks for no approval.",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:8051cd1b0ce6c524c37ca9bbeb9f2e077b17f254335985310d4ad655df1ebaae",
             "locator": {
-              "kind": "file"
+              "end": 328,
+              "kind": "line_range",
+              "start": 231
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:8051cd1b0ce6c524c37ca9bbeb9f2e077b17f254335985310d4ad655df1ebaae",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:2fa3ef59a9516bac1d8691252b63004d9018f168dbdd2c402ead073a42079019",
             "locator": {
-              "kind": "symbol",
-              "name": "closeout_preview_payload"
+              "end": 489,
+              "kind": "line_range",
+              "start": 470
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afd3e04e6f97eed9e8fb84f61f2e587708c814b4",
+            "content": "sha256:614485dd9c49fc6a25104e348d2e9cf966ff042ac403f8ea4327da3e3fa0960a",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_preview.py"
           },
           "kind": "code"
         }
@@ -266,24 +300,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:ca25847faae6280c0d3b8d101453d1626646a66d82cd26afc1a33c821616dbec",
             "locator": {
-              "end": 51,
+              "end": 52,
               "kind": "line_range",
-              "start": 51
+              "start": 52
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:59f58439e285ea46afb088aa8b43aebb0471e1fc1b6ea40940b2dbb5377048ae",
             "locator": {
-              "end": 50,
+              "end": 51,
               "kind": "line_range",
-              "start": 50
+              "start": 51
             }
           },
           "kind": "code"
@@ -308,36 +342,28 @@
       ]
     },
     "15": {
-      "note": "Closeout revalidates the accepted candidate tree and refuses a candidate that moved after admission before publishing; the reversible code-quality preflight no longer exists in the transaction. (`_revalidate_candidate`; `closeout_result`)\n\nAnchor: `_revalidate_candidate` `closeout_result`",
+      "note": "Closeout revalidates the accepted candidate tree and refuses a candidate that moved after admission before publishing; the reversible code-quality preflight no longer exists in the transaction. (`_revalidate_candidate`; `closeout_result`)",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:a5755c08457fba7204c121392c83d69fd73f97df800cd5796fa7e5fdf429b35f",
             "locator": {
-              "kind": "symbol",
-              "name": "_revalidate_candidate"
+              "end": 828,
+              "kind": "line_range",
+              "start": 819
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:edee97bbd27e310531ad25d8367e1ce1b68d4f32c367d57c4290d56452db3d99",
             "locator": {
-              "kind": "symbol",
-              "name": "closeout_result"
+              "end": 969,
+              "kind": "line_range",
+              "start": 924
             }
           },
           "kind": "code"
@@ -463,16 +489,18 @@
       ]
     },
     "2": {
-      "note": "`_validate_closeout_source_heads` proves code and memory source tips against their recorded base or landed output.",
+      "note": "The source-head validator compares the current source tips with their recorded base or this contract's own landed output.",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:d3cd50045f8b6c79d866084720477390733553d0ab7262bd149c9e9659d091c1",
+            "blob": "ef6b3907a744393a084d80e10ed797a1b4624211",
+            "content": "sha256:954e4e8da0dfeea9dc2d1989a7f44298a1baa6bc6213ffb4514363beecd8778a",
             "locator": {
-              "kind": "symbol",
-              "name": "_validate_closeout_source_heads"
-            }
+              "end": 63,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_source_heads.py"
           },
           "kind": "code"
         }
@@ -483,33 +511,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:27502a84ab1a28a5c8ace3d8b4facc50dedf942ad12f1cbdfef928ed528911a5",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:e3beb841a6c996df2c17602c60600c7414456c93abcabd0dd2a710cd1e639389",
             "locator": {
-              "kind": "symbol",
-              "name": "_amended_closeout_contract"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:526b0326aa31de06c50ae7abfa7a6eb7f049b210635dfe8d4b96de243b24f94b",
-            "locator": {
-              "end": 709,
+              "end": 664,
               "kind": "line_range",
-              "start": 675
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
-            "locator": {
-              "kind": "file"
+              "start": 625
             }
           },
           "kind": "code"
@@ -517,25 +524,40 @@
       ]
     },
     "21": {
-      "note": "The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary.\n\nAnchor: `closeout_changed_paths` `closeout_result`",
+      "note": "The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:428391c26b29328327876a717508157f6b7a6653a90f0f5a858b74c7fa70d544",
             "locator": {
-              "kind": "file"
+              "end": 48,
+              "kind": "line_range",
+              "start": 42
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:8051cd1b0ce6c524c37ca9bbeb9f2e077b17f254335985310d4ad655df1ebaae",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 231
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:edee97bbd27e310531ad25d8367e1ce1b68d4f32c367d57c4290d56452db3d99",
             "locator": {
-              "kind": "symbol",
-              "name": "closeout_result"
+              "end": 969,
+              "kind": "line_range",
+              "start": 924
             }
           },
           "kind": "code"
@@ -543,114 +565,100 @@
       ]
     },
     "22": {
-      "note": "The source-state boundary self-heals a settleable stale break and re-proves the immediate heads on the healed contract; candidate revalidation returns that healed contract. (`_validate_closeout_source_state`; `_validate_closeout_source_heads`; `_revalidate_candidate`)\n\nAnchor: `_validate_closeout_source_state` `_revalidate_candidate`",
+      "note": "The source-state boundary settles an admitted stale break and validates the healed contract's immediate source heads. Candidate revalidation returns that contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:29c6ca7208dd0891b999f8e9522d1f4f31eeae66a761b3c5df8c1eb8c511e913",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:47e476e56bd4a3636cc315da3ffaa561ab439add9021ba2edd7daafcda8aaed2",
             "locator": {
-              "kind": "symbol",
-              "name": "_validate_closeout_source_state"
+              "end": 502,
+              "kind": "line_range",
+              "start": 492
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:a5755c08457fba7204c121392c83d69fd73f97df800cd5796fa7e5fdf429b35f",
             "locator": {
-              "kind": "symbol",
-              "name": "_revalidate_candidate"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:1338ab764072d8d002089f8e7747c234198902cc9b8c4cccbf5615005cc5ae8a",
-            "locator": {
-              "end": 704,
+              "end": 828,
               "kind": "line_range",
-              "start": 669
+              "start": 819
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
+            "blob": "ef6b3907a744393a084d80e10ed797a1b4624211",
+            "content": "sha256:954e4e8da0dfeea9dc2d1989a7f44298a1baa6bc6213ffb4514363beecd8778a",
             "locator": {
-              "kind": "file"
-            }
+              "end": 63,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_source_heads.py"
           },
           "kind": "code"
         }
       ]
     },
     "23": {
-      "note": "The expected source heads a contract's own landing may have produced, now covering a checkpoint's recorded move. (`_landed_source_heads`; `contract.integration_status in {\"completed\", \"checkpointed\"} and integrated`)",
+      "note": "The accepted source heads include the base and the result of this contract's recorded checkpoint or completed integration.",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a78ffd6d3d92c4fb25cbde809372d8d24a0e9affe0645d5d0d9aeb89104c7d50",
+            "blob": "ef6b3907a744393a084d80e10ed797a1b4624211",
+            "content": "sha256:2159239d57aafec5c9f4c6a0e29fc943d60185d29da584e470ef5931db87fcb2",
             "locator": {
-              "kind": "symbol",
-              "name": "_landed_source_heads"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:6261ac2793c349868c1f8558ac523024d853f49d9c84738a7e985bd2c48672f4",
-            "locator": {
-              "end": 161,
+              "end": 27,
               "kind": "line_range",
-              "start": 139
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:3b678df52d1b0981dcecfde843eca1b4fe67035d03b15b641f1b9bea75507cb8",
-            "locator": {
-              "end": 183,
-              "kind": "line_range",
-              "start": 161
-            }
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_source_heads.py"
           },
           "kind": "code"
         }
       ]
     },
     "24": {
-      "note": "The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary.\n\nAnchor: `closeout_changed_paths` `closeout_result`",
+      "note": "The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:428391c26b29328327876a717508157f6b7a6653a90f0f5a858b74c7fa70d544",
             "locator": {
-              "kind": "file"
+              "end": 48,
+              "kind": "line_range",
+              "start": 42
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:8051cd1b0ce6c524c37ca9bbeb9f2e077b17f254335985310d4ad655df1ebaae",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 231
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:edee97bbd27e310531ad25d8367e1ce1b68d4f32c367d57c4290d56452db3d99",
             "locator": {
-              "kind": "symbol",
-              "name": "closeout_result"
+              "end": 969,
+              "kind": "line_range",
+              "start": 924
             }
           },
           "kind": "code"
@@ -658,125 +666,88 @@
       ]
     },
     "25": {
-      "note": "The source-state boundary self-heals a settleable stale break and re-proves the immediate heads on the healed contract; candidate revalidation returns that healed contract. (`_validate_closeout_source_state`; `_validate_closeout_source_heads`; `_revalidate_candidate`)\n\nAnchor: `_validate_closeout_source_state` `_revalidate_candidate`",
+      "note": "The source-state boundary settles an admitted stale break and validates the healed contract's immediate source heads. Candidate revalidation returns that contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:29c6ca7208dd0891b999f8e9522d1f4f31eeae66a761b3c5df8c1eb8c511e913",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:47e476e56bd4a3636cc315da3ffaa561ab439add9021ba2edd7daafcda8aaed2",
             "locator": {
-              "kind": "symbol",
-              "name": "_validate_closeout_source_state"
+              "end": 502,
+              "kind": "line_range",
+              "start": 492
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:a5755c08457fba7204c121392c83d69fd73f97df800cd5796fa7e5fdf429b35f",
             "locator": {
-              "kind": "symbol",
-              "name": "_revalidate_candidate"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:1338ab764072d8d002089f8e7747c234198902cc9b8c4cccbf5615005cc5ae8a",
-            "locator": {
-              "end": 704,
+              "end": 828,
               "kind": "line_range",
-              "start": 669
+              "start": 819
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
+            "blob": "ef6b3907a744393a084d80e10ed797a1b4624211",
+            "content": "sha256:954e4e8da0dfeea9dc2d1989a7f44298a1baa6bc6213ffb4514363beecd8778a",
             "locator": {
-              "kind": "file"
-            }
+              "end": 63,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_source_heads.py"
           },
           "kind": "code"
         }
       ]
     },
     "26": {
-      "note": "The expected source heads a contract's own landing may have produced, now covering a checkpoint's recorded move. (`_landed_source_heads`; `contract.integration_status in {\"completed\", \"checkpointed\"} and integrated`)",
+      "note": "The accepted source heads include the base and the result of this contract's recorded checkpoint or completed integration.",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a78ffd6d3d92c4fb25cbde809372d8d24a0e9affe0645d5d0d9aeb89104c7d50",
+            "blob": "ef6b3907a744393a084d80e10ed797a1b4624211",
+            "content": "sha256:2159239d57aafec5c9f4c6a0e29fc943d60185d29da584e470ef5931db87fcb2",
             "locator": {
-              "kind": "symbol",
-              "name": "_landed_source_heads"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:6261ac2793c349868c1f8558ac523024d853f49d9c84738a7e985bd2c48672f4",
-            "locator": {
-              "end": 161,
+              "end": 27,
               "kind": "line_range",
-              "start": 139
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:3b678df52d1b0981dcecfde843eca1b4fe67035d03b15b641f1b9bea75507cb8",
-            "locator": {
-              "end": 183,
-              "kind": "line_range",
-              "start": 161
-            }
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_source_heads.py"
           },
           "kind": "code"
         }
       ]
     },
     "27": {
-      "note": "The single closeout entry and the entry helper that reaches the validator for series contracts too. (`closeout_result`; `_closeout_entry`)\n\nAnchor: `closeout_result` `_closeout_entry`",
+      "note": "The single closeout entry and the entry helper that reaches the validator for series contracts too. (`closeout_result`; `_closeout_entry`)",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:edee97bbd27e310531ad25d8367e1ce1b68d4f32c367d57c4290d56452db3d99",
             "locator": {
-              "kind": "symbol",
-              "name": "closeout_result"
+              "end": 969,
+              "kind": "line_range",
+              "start": 924
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:cee7c130cb2c2e7d47da4ec3eef10aa0ad4132eaa0c7fabb2c0ca6d33070ecd6",
             "locator": {
-              "kind": "symbol",
-              "name": "_closeout_entry"
+              "end": 1077,
+              "kind": "line_range",
+              "start": 1044
             }
           },
           "kind": "code"
@@ -784,47 +755,40 @@
       ]
     },
     "28": {
-      "note": "The closeout entry threads the healed contract through preflight, the gate's preflight and the locked publication callback. (`closeout_result`; `_publish_closeout_candidate`; `_closeout_entry`)\n\nAnchor: `closeout_result` `_publish_closeout_candidate` `_closeout_entry`",
+      "note": "The closeout entry threads the healed contract through preflight, the gate's preflight and the locked publication callback. (`closeout_result`; `_publish_closeout_candidate`; `_closeout_entry`)",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:edee97bbd27e310531ad25d8367e1ce1b68d4f32c367d57c4290d56452db3d99",
             "locator": {
-              "kind": "symbol",
-              "name": "closeout_result"
+              "end": 969,
+              "kind": "line_range",
+              "start": 924
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:586750be188df447b4edb84a4cadd2919c6b8d639cdbe8fe6f58a01be0b76045",
             "locator": {
-              "kind": "symbol",
-              "name": "_publish_closeout_candidate"
+              "end": 1041,
+              "kind": "line_range",
+              "start": 982
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:cee7c130cb2c2e7d47da4ec3eef10aa0ad4132eaa0c7fabb2c0ca6d33070ecd6",
             "locator": {
-              "kind": "symbol",
-              "name": "_closeout_entry"
+              "end": 1077,
+              "kind": "line_range",
+              "start": 1044
             }
           },
           "kind": "code"
@@ -832,14 +796,28 @@
       ]
     },
     "29": {
-      "note": "**Retained historical source account — superseded by the current contract:** The apply asks the gate before it publishes the closeout.\n\nAnchor: `closeout_result`",
+      "note": "**Retained historical source account — superseded by the current contract:** The apply asks the gate before it publishes the closeout.",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:edee97bbd27e310531ad25d8367e1ce1b68d4f32c367d57c4290d56452db3d99",
             "locator": {
-              "kind": "file"
+              "end": 969,
+              "kind": "line_range",
+              "start": 924
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:586750be188df447b4edb84a4cadd2919c6b8d639cdbe8fe6f58a01be0b76045",
+            "locator": {
+              "end": 1041,
+              "kind": "line_range",
+              "start": 982
             }
           },
           "kind": "code"
@@ -851,33 +829,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:27502a84ab1a28a5c8ace3d8b4facc50dedf942ad12f1cbdfef928ed528911a5",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:e3beb841a6c996df2c17602c60600c7414456c93abcabd0dd2a710cd1e639389",
             "locator": {
-              "kind": "symbol",
-              "name": "_amended_closeout_contract"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:526b0326aa31de06c50ae7abfa7a6eb7f049b210635dfe8d4b96de243b24f94b",
-            "locator": {
-              "end": 709,
+              "end": 664,
               "kind": "line_range",
-              "start": 675
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
-            "locator": {
-              "kind": "file"
+              "start": 625
             }
           },
           "kind": "code"
@@ -885,14 +842,28 @@
       ]
     },
     "30": {
-      "note": "**Retained historical source account — superseded by the current contract:** The preview asks the same verdict and answers the refused preview.\n\nAnchor: `closeout_preview_payload`",
+      "note": "**Retained historical source account — superseded by the current contract:** The preview asks the same verdict and answers the refused preview.",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:8051cd1b0ce6c524c37ca9bbeb9f2e077b17f254335985310d4ad655df1ebaae",
             "locator": {
-              "kind": "file"
+              "end": 328,
+              "kind": "line_range",
+              "start": 231
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:2fa3ef59a9516bac1d8691252b63004d9018f168dbdd2c402ead073a42079019",
+            "locator": {
+              "end": 489,
+              "kind": "line_range",
+              "start": 470
             }
           },
           "kind": "code"
@@ -904,7 +875,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:72a6c65ceaf42298f4600ff0414c42ba14b22ae9f5042957809356bd264ee1f7",
             "locator": {
               "kind": "symbol",
@@ -916,14 +887,16 @@
       ]
     },
     "32": {
-      "note": "**Retained historical source account — superseded by the current contract:** A refused preview returns code 2.\n\nAnchor: `_closeout_entry`",
+      "note": "**Retained historical source account — superseded by the current contract:** A refused preview returns code 2.",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:2fa3ef59a9516bac1d8691252b63004d9018f168dbdd2c402ead073a42079019",
             "locator": {
-              "kind": "file"
+              "end": 489,
+              "kind": "line_range",
+              "start": 470
             }
           },
           "kind": "code"
@@ -931,14 +904,16 @@
       ]
     },
     "33": {
-      "note": "**Retained historical source account — superseded by the current contract:** A recovered closeout is finalized only for a gated memory commit.\n\nAnchor: `_recover_closeout_finalization`",
+      "note": "**Retained historical source account — superseded by the current contract:** A recovered closeout is finalized only for a gated memory commit.",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:ff0bdb1dc968c0373323d439b207245b6fc7fe4cbc5924e640deaed00013143b",
             "locator": {
-              "kind": "file"
+              "end": 756,
+              "kind": "line_range",
+              "start": 675
             }
           },
           "kind": "code"
@@ -950,7 +925,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8337b4050677130c0b74516ccd45aa01994f542a",
+            "blob": "094b505e035fdb9ccfa830d17ddf2bc49162e872",
             "content": "sha256:aa0ecd37addf835e503ac1efe0a04d95ac7b03f0ad2bf20e2ae319faf89b2278",
             "locator": {
               "kind": "symbol",
@@ -967,7 +942,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8337b4050677130c0b74516ccd45aa01994f542a",
+            "blob": "094b505e035fdb9ccfa830d17ddf2bc49162e872",
             "content": "sha256:588c1d1ace1607293b82d6c1209d6e0e998b4cf6ca9fb7927159b87a1aa0feeb",
             "locator": {
               "kind": "symbol",
@@ -984,11 +959,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
-            "content": "sha256:62372c24c148ec8d3027528f6e0b457600727d7e4bc6bacebf3df10af9774c8e",
+            "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
+            "content": "sha256:e7cc96f6a9d23307b431e91d1c33fd9e215b3cd906dbae97bd13762e2abc7674",
             "locator": {
-              "kind": "symbol",
-              "name": "record_tool_call"
+              "end": 1187,
+              "kind": "line_range",
+              "start": 1136
             },
             "path": "mcp/src/agents_remember/application/tool_answer_log.py"
           },
@@ -1018,7 +994,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:898e93e3b9293f0d73cf0a0d75f3957c93b6674e723b354c817400d511ef73bf",
             "locator": {
               "kind": "symbol",
@@ -1030,42 +1006,126 @@
       ]
     },
     "4": {
-      "note": "`_recover_closeout_finalization` asks the recovery gate and re-proves existing output commits before exact contract publication.\n\nAnchor: `_recover_closeout_finalization`",
+      "note": "`_recover_closeout_finalization` asks the recovery gate and re-proves existing output commits before exact contract publication.",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:ff0bdb1dc968c0373323d439b207245b6fc7fe4cbc5924e640deaed00013143b",
             "locator": {
-              "kind": "symbol",
-              "name": "_recover_closeout_finalization"
+              "end": 756,
+              "kind": "line_range",
+              "start": 675
             }
           },
           "kind": "code"
         }
       ]
     },
-    "5": {
-      "note": "Closeout retains entity-fingerprint and derived route-index refresh before exact converted-memory publication, not legacy metadata stamps. Anchor: `_refresh_external_memory`",
+    "45": {
+      "note": "The extracted validator compares code and applicable external-memory heads to the contract's base and legitimate integrated heads.",
       "targets": [
         {
           "anchor": {
-            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
-            "content": "sha256:dcf76e699746ce6261ae83ad37ffcde7a86ee11fd269821e5461df2be4cf9a90",
+            "blob": "ef6b3907a744393a084d80e10ed797a1b4624211",
+            "content": "sha256:954e4e8da0dfeea9dc2d1989a7f44298a1baa6bc6213ffb4514363beecd8778a",
             "locator": {
-              "end": 105,
+              "kind": "symbol",
+              "name": "validate_closeout_source_heads"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_source_heads.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The contract accepts the recorded base and its own completed or checkpointed output.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef6b3907a744393a084d80e10ed797a1b4624211",
+            "content": "sha256:2159239d57aafec5c9f4c6a0e29fc943d60185d29da584e470ef5931db87fcb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "landed_source_heads"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_source_heads.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "The final successful result appends the note supplied by the memory outcome.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:b3ec513e24f1491f629b9764f4b55f5e8a6741245f1807d37e017d9dfde13495",
+            "locator": {
+              "end": 797,
               "kind": "line_range",
-              "start": 93
+              "start": 759
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "A new forward closeout memory commit triggers the file brief refresh and reports any advisory in the completed result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:ffad3d5560d1779663729a2284d3abc1e2b079344c76dfa6761651b931ec67e6",
+            "locator": {
+              "end": 1041,
+              "kind": "line_range",
+              "start": 1029
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:d592ea11dc484d08ede42076fb226fb8610e662570437137ac26c01777981126",
+            "locator": {
+              "end": 797,
+              "kind": "line_range",
+              "start": 789
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "content": "sha256:061ffd638423d4f2ed18aef028ccf0e7f9bebcaf0c115a5147e5a91e0b8c55cb",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 143
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Closeout refreshes entity fingerprints and derived route indexes before the exact converted memory publication. The refresh leaves the legacy stamp lists empty.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "content": "sha256:8b73ea2ce6ce7a32fdeffa965ef2011d411c5a3bc5629f4f2437db30d0abf7ec",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 103
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -1073,12 +1133,12 @@
         },
         {
           "anchor": {
-            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
             "content": "sha256:10ce5b547e465ec1531e4b6cd70f0cd3cfa872e71008466f7b03f79cd2bde23d",
             "locator": {
-              "end": 655,
+              "end": 689,
               "kind": "line_range",
-              "start": 634
+              "start": 668
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
