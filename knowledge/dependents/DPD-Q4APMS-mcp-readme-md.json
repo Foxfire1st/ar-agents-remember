@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
+      "blob": "9326dfaf2cd0d2a38d6b07e618cae824b747b12f",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },

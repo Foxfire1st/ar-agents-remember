@@ -3,7 +3,7 @@
     "criteria": [
       "guarded_by_test"
     ],
-    "justification": "The crossing integration test proves that a branch name supplies a valid commit ID and its exact tree to the writer."
+    "justification": "The crossing integration test proves that the planned write reads the code tree of a committed snapshot, and that the snapshot's commit and tree equal the peeled commit and tree of the settled code commit."
   },
   "applicability": "Committed code snapshots opened by the crossing knowledge writer.",
   "conditions": [

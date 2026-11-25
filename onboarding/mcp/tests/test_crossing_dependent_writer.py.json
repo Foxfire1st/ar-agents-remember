@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "3ec1dfc8b0af1e07faeaec856a5e7e47333635a2",
-        "content": "sha256:a7f6049694d1aa1fff5cca71f07648d5576b8fe0cd9273ddf0fb52a968fff299",
+        "blob": "fbd015737dedc31686b1689c30d10bf220716829",
+        "content": "sha256:b772f70caf536ce4a4257ab01fdd0ddbf75a660c3634385d94eeda3168c892f7",
         "locator": {
           "kind": "symbol",
           "name": "test_a_crossing_plans_the_resolution_of_a_conflicted_dependent"
@@ -26,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ec1dfc8b0af1e07faeaec856a5e7e47333635a2",
-            "content": "sha256:a7f6049694d1aa1fff5cca71f07648d5576b8fe0cd9273ddf0fb52a968fff299",
+            "blob": "fbd015737dedc31686b1689c30d10bf220716829",
+            "content": "sha256:b772f70caf536ce4a4257ab01fdd0ddbf75a660c3634385d94eeda3168c892f7",
             "locator": {
               "kind": "symbol",
               "name": "test_a_crossing_plans_the_resolution_of_a_conflicted_dependent"
