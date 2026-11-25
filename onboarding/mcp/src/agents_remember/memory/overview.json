@@ -323,8 +323,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
-            "content": "sha256:bd790652bb6b7faa32731fc6c57555aa064bce0f77dd95380f7896c80643b87d",
+            "blob": "8bd3921a319370f6de5252c38d6ae03458c23b1a",
+            "content": "sha256:64f5f3bc5599065b329d1d0b3e281cf08c869a2087423c00abb9d70c87dfa37d",
             "locator": {
               "kind": "file"
             },
@@ -1564,12 +1564,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "blob": "8bd3921a319370f6de5252c38d6ae03458c23b1a",
             "content": "sha256:47a2ab86090172919d01338f4406d11de0028e861b3d8682e1e820f72bcda83b",
             "locator": {
-              "end": 167,
+              "end": 175,
               "kind": "line_range",
-              "start": 113
+              "start": 121
             },
             "path": "mcp/src/agents_remember/memory/conversion/crossing_sync.py"
           },

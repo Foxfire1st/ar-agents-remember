@@ -2254,7 +2254,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
+            "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
             "content": "sha256:a112b2c3820ab58c029bff65415f3dd36e0fdcb72fc9d69ca74a838382440604",
             "locator": {
               "kind": "symbol",
@@ -3355,12 +3355,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
+            "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
             "content": "sha256:ee024c46e11dd69a99ae879a6178508692907da75e6bea6bc285903adf52d5b2",
             "locator": {
-              "end": 257,
+              "end": 263,
               "kind": "line_range",
-              "start": 251
+              "start": 257
             },
             "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
           },
@@ -3368,12 +3368,12 @@
         },
         {
           "anchor": {
-            "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
+            "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
             "content": "sha256:74a26b655bbd9f86f841ede9828294b4d252d790ab67d5dfa1da70a2a6778801",
             "locator": {
-              "end": 329,
+              "end": 335,
               "kind": "line_range",
-              "start": 301
+              "start": 307
             },
             "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
           },
@@ -4761,7 +4761,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28b35ecd1e43b71beca2e1ab7909254e764a7859",
+            "blob": "b3622532935d2dcd1027bdf4e884547bfa7f06c9",
             "content": "sha256:a112b2c3820ab58c029bff65415f3dd36e0fdcb72fc9d69ca74a838382440604",
             "locator": {
               "kind": "symbol",
@@ -6417,8 +6417,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
-            "content": "sha256:0860cab26f7e5d70b2a1f337343d94382f3e23a8bc1411dfcd644d11cfd5b007",
+            "blob": "1bd9e82bcc3a9339d513291bf8724241880ad221",
+            "content": "sha256:951d610f5929ba7ec37554507c5c693c8e77970153d096c4b8a7b27e9dec8d3a",
             "locator": {
               "kind": "file"
             },

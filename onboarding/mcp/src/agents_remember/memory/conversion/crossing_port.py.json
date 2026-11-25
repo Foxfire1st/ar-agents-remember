@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ecf97d719a2ae7eb21bbef87608f77daabb9841a",
-        "content": "sha256:afe3a4f71dacf61278c5951dcccd26adb05431c4fbb4f02e6fe8ed9549c246b5",
+        "blob": "1f058dbc3bdb98a8178b81b81e36bb18eed3aee6",
+        "content": "sha256:a5a8f0a2b69e81032a1b4f187f8bbc27e38e4b9f9b0b05e563c286455920dd57",
         "locator": {
           "kind": "symbol",
           "name": "GitKnowledgeCrossing"
@@ -23,12 +23,12 @@
   ],
   "references": {
     "1": {
-      "note": "The adapter.\n\nAnchor: `plan`",
+      "note": "The adapter.",
       "targets": [
         {
           "anchor": {
-            "blob": "ecf97d719a2ae7eb21bbef87608f77daabb9841a",
-            "content": "sha256:afe3a4f71dacf61278c5951dcccd26adb05431c4fbb4f02e6fe8ed9549c246b5",
+            "blob": "1f058dbc3bdb98a8178b81b81e36bb18eed3aee6",
+            "content": "sha256:a5a8f0a2b69e81032a1b4f187f8bbc27e38e4b9f9b0b05e563c286455920dd57",
             "locator": {
               "kind": "symbol",
               "name": "GitKnowledgeCrossing"
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
+            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
             "content": "sha256:8f96680898f7f47505195bd2aa85e34b5d6ac2fa29060e19da8ebdc618203b6f",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
         },
         {
           "anchor": {
-            "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
+            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
             "content": "sha256:10d81f79abdf38659f44010a5b9c65c7a311ee40ed2b6ad9be2937df7577de6a",
             "locator": {
               "kind": "symbol",
@@ -67,8 +67,8 @@
         },
         {
           "anchor": {
-            "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
-            "content": "sha256:e34f9c8dba1e627374789d808cc8164b9fe72317a29b0ea8244f32c2a2a3bcd2",
+            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
+            "content": "sha256:bbcaa73b855c3188b4a8b6d415c7e2d516caaa06c5048e7ef7b2782b8996ae9d",
             "locator": {
               "kind": "symbol",
               "name": "CrossingPlanView"
@@ -112,8 +112,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ecf97d719a2ae7eb21bbef87608f77daabb9841a",
-            "content": "sha256:ae3bbab5deeab7231a580d9e99a17f6f564f77f59badf1aa84120fccd4751219",
+            "blob": "1f058dbc3bdb98a8178b81b81e36bb18eed3aee6",
+            "content": "sha256:c0c5ddc70a3b7cb6aacbcf6d256fa616377adb4ef554ec645bc543a71cf7a12d",
             "locator": {
               "kind": "file"
             }

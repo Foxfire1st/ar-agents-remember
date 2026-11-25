@@ -1,0 +1,124 @@
+{
+  "path": "mcp/tests/test_crossing_knowledge_writer.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "1b89286170fdd907d0e63439d8d9c1ae1fe648e2",
+        "content": "sha256:a772791f90d4ab8589902ed4feb4acf37d401b627b23d25857ec256540ad3ce8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_crossing_write_refuses_unsettled_or_different_sync_authority"
+        }
+      },
+      "facet": "Exercises four authority refusals and compares the memory bytes after each.",
+      "id": "PRF-N9YAF4",
+      "invariant": "INV-6WBDM3",
+      "origin": {
+        "handoffEntry": "BUG-R43-1",
+        "leaf": "261112-BUG-L43"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1b89286170fdd907d0e63439d8d9c1ae1fe648e2",
+        "content": "sha256:d4ed1fa888cbcc6e7e2b1f049de85f7524acba471fd64afd9ae7bce8976b00ff",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_crossing_confirmation_uses_the_same_settled_commit_for_snapshot_and_base"
+        }
+      },
+      "facet": "Checks the real dependent stamp, code base and tree against the settled sync result.",
+      "id": "PRF-TY81XF",
+      "invariant": "INV-6WBDM3",
+      "origin": {
+        "handoffEntry": "BUG-R43-1",
+        "leaf": "261112-BUG-L43"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1b89286170fdd907d0e63439d8d9c1ae1fe648e2",
+        "content": "sha256:20dd0e1b662fdbf7e6e7fe0d11752c79e3b43175cd9831916fda7a0e0f23eddc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_code_snapshot_resolves_a_commit_ref_and_refuses_noncommits"
+        }
+      },
+      "facet": "Checks full commit serialization from a ref and refusal of tree and blob operands.",
+      "id": "PRF-YWH5MQ",
+      "invariant": "INV-6WBDM3",
+      "origin": {
+        "handoffEntry": "BUG-R43-1",
+        "leaf": "261112-BUG-L43"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A crossing confirmation uses one settled commit for both evidence and the writer base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b89286170fdd907d0e63439d8d9c1ae1fe648e2",
+            "content": "sha256:d4ed1fa888cbcc6e7e2b1f049de85f7524acba471fd64afd9ae7bce8976b00ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_crossing_confirmation_uses_the_same_settled_commit_for_snapshot_and_base"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Missing, different, unsettled or displaced sync authority refuses the write without changing memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b89286170fdd907d0e63439d8d9c1ae1fe648e2",
+            "content": "sha256:a772791f90d4ab8589902ed4feb4acf37d401b627b23d25857ec256540ad3ce8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_crossing_write_refuses_unsettled_or_different_sync_authority"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The snapshot resolves a commit ref and refuses tree and blob operands.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b89286170fdd907d0e63439d8d9c1ae1fe648e2",
+            "content": "sha256:20dd0e1b662fdbf7e6e7fe0d11752c79e3b43175cd9831916fda7a0e0f23eddc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_code_snapshot_resolves_a_commit_ref_and_refuses_noncommits"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The constructor checks full commit ID syntax without a Git lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b89286170fdd907d0e63439d8d9c1ae1fe648e2",
+            "content": "sha256:2b66ee1e137f2b4b12c049395e9ee59cdf69e9a5dfec0ab878cb756ed0a702dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_code_snapshot_requires_a_full_commit_id_without_looking_it_up"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

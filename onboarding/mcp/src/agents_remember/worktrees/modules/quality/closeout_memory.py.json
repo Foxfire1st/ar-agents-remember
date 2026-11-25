@@ -122,7 +122,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
+            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
             "content": "sha256:8385b407d04ef3482b301045b0cabb8d93f69f6102d0b3c2c13d1b52ceceffb6",
             "locator": {
               "end": 134,
@@ -135,7 +135,7 @@
         },
         {
           "anchor": {
-            "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
+            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
             "content": "sha256:7c22d91e6252549ff5ff5b8f63dbc7bd68f9eb0498b32b119f296e52cc962e5d",
             "locator": {
               "end": 140,
@@ -148,7 +148,7 @@
         },
         {
           "anchor": {
-            "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
+            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
             "content": "sha256:5d5d779dd74b12741f4568c99eafe0b34ef4537996a3e158236c205e5da99841",
             "locator": {
               "end": 124,
@@ -166,12 +166,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11b8b5573d9055c1be2cd3ab11d0e6b6882a94b3",
+            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
             "content": "sha256:a22230d4939b490a9a8a620bea45791e3feed11a85e2ca29164e8751e0942ac9",
             "locator": {
-              "end": 365,
+              "end": 366,
               "kind": "line_range",
-              "start": 359
+              "start": 360
             },
             "path": "mcp/src/agents_remember/worktrees/services.py"
           },

@@ -12,6 +12,8 @@ Prove the complete parked-work reapply against the carried Git result.
 
 Proof compares each substantive parked entry with its exact expected reapply, not dirty-path presence or a capped journal sample. One lazy native git merge-tree uses the stash parent as base, carried side first, carried-head attributes and actual reapply configuration, including configured diff.algorithm. Neither merge-file nor another algorithm can stand in. Identical/base-equal sides need no native merge; absent, conflicted or failed native output cannot pass. Prescribed driver output is authoritative, not a separate promise to retain every parked line. Rename-aware matching follows the supported carried destination. Cancellation restoration proves the complete parked work and exact original index, separately from live ownership assessment. Scratch reproduction can establish retained attribution; failure does not authorize blessing owner bytes.
 
+Scratch replay reconstructs the pinned structural merge and open history. It completes an interrupted opening when that history path is the sole difference, has no index entry, and any on-disk bytes match replay. A later edit prevents the replay from recording fingerprints or history ownership.
+
 ## Evidence
 
 - prove_parked_wip_restored: qualified source contract. [1]

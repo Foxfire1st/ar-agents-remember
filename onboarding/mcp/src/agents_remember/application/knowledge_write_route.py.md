@@ -30,8 +30,7 @@ The leaf route establishes the contract's recorded memory base before passing it
 - `LeafQuestions` publishes a raised question through `task_doc` with the settings the **caller** supplies —
   the command line's discovered settings or the mounted server's own — so a `raise` is never left without a
   task-document authority; without usable settings it is refused.
-- `crossing_write_report` resolves the crossing memory worktree (`_crossing_memory_root`) and records the rows
-  into the open `<task-id>-crossing-<n>` file, authoring no entry and no new record.
+- `crossing_write_report` locates the open sync for the named crossing and appends rows to its open history file. It can resolve or reconfirm existing records. The writer refuses new records, handoff entries and rulings on this route. The settled code commit supplies both the snapshot and the writer's code base. A missing sync, a different crossing, an unfinished code side or a moved code branch refuses the write.
 - `wave_write_report(target, submission)` runs the taskless wave write.
 - The writer itself is `application.knowledge_writer.write_knowledge`; this module holds no argument parser and
   prints nothing. A caller receives the `WriteReport`, or a string naming why the invocation is refused.

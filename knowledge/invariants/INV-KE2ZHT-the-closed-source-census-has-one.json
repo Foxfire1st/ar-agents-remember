@@ -7,8 +7,8 @@
   },
   "applicability": "The registered module-level mutable product state population checked by test_suite_load_independence.",
   "conditions": [
-    "Every discovered state has an explicit reset, restored, read-only or benign treatment and reason.",
-    "Reset rows are exercised at module boundaries and restored rows checked around each test."
+    "Each state has a reset, restored, constant-for-tests or quiescent treatment with a reason.",
+    "The knowledge-index cache owns the cleanup of its _builds dictionary and _active_temps set. The in-process thread success and failure tests check both for the fixture directory after the threads finish."
   ],
   "exclusions": [
     "Object, closure and library state outside the scanner census.",
@@ -26,9 +26,9 @@
     "leaf": "260928-MIK-L87",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The closed source census has one explicit treatment and reason per process state, with restored rows checked per test and reset rows checked at module boundaries.",
+  "statement": "The closed source census gives each process state one treatment and a reason. Tests check restored rows per test and reset rows at module boundaries, and check owner-quiescent state in the tests that exercise it.",
   "status": "proposed",
   "supersedes": []
 }

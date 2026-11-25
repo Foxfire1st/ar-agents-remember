@@ -20,15 +20,7 @@ memory-quality runs and (later) closeouts call.
   commit is unknown (the fallback cards would have no code tree), or when no `knowledge_crossing` is bound
   (a crossing sync is never merged as plain Git). Otherwise it calls the port with a `CrossingRequest`. A
   `CrossingStepFailed` becomes `CrossingSyncError`, and the worktree is untouched.
-- `apply_crossing(worktree, plan)` runs after `git merge --no-commit`:
-  1. removes every `knowledge/` and `onboarding/` path from the index;
-  2. writes the plan (`_write_plan_files`: tracked paths the plan drops are deleted, and every kept path
-     is written);
-  3. stages it with `git add -A`;
-  4. leaves each conflicted path unmerged, with its converted base, own and incoming bytes as index
-     stages 1-3 (`_unmerge`, through `hash-object -w` and `update-index --index-info`).
-
-  The ordinary resolution route (`continue`) then finishes the sync. It returns the conflicted paths.
+- `apply_crossing(worktree, plan)` applies the structural plan after `git merge --no-commit`. It writes and stages only the plan's explicit files and deletions. For each modeled conflict, `_unmerge` installs the plan's available base, own and incoming stages. Unmodeled entries keep Git's mode, object and stage tuples. The ordinary `continue` route handles the retained resolution.
 - `write_crossing_report(worktree, own, incoming, plan)` writes
   `crossing-sync-report-<own12>-<incoming12>.json` into the worktree group's `reports/`, beside the sync
   journal and outside every repository. It holds the plan's report (every conflict with its base, own and
@@ -42,7 +34,7 @@ memory-quality runs and (later) closeouts call.
   the merge itself, so a curator never renumbers a reference by hand to clear a conflict.
 - `close_crossing_history(worktree, parents)` runs in the commit step. It sets `closed: true` on, and
   stages, each `knowledge/history/<task>-crossing-<n>.json` that the merge adds and that neither parent
-  holds, so the file is frozen from that commit on (MIK-R07 rule 7).
+  holds, so the file is frozen from that commit on (MIK-R07 rule 7). Before closing, it records the open and closed bytes and index entries for the pinned parents. Recovery restores both disk and stage zero only while both still match states owned by that checkpoint. A later row or edit keeps its bytes and index entry. The merge transaction clears the matching checkpoint after verified commit recovery or rollback.
 - `unconverted_line_refusal(*, memory_worktree, memory_repository, official_branch, operation)` returns
   `None` when the leaf tree is converted or there is no repository directory. Every unconverted leaf in an actual repository is refused through the central legacy-format message.
   A converted official line names crossing sync with `merge-memory`; otherwise the cutover helper names first
@@ -50,8 +42,7 @@ memory-quality runs and (later) closeouts call.
 
 ### Conventions
 
-- `KNOWLEDGE_ROOTS = ("knowledge", "onboarding")` are the only paths the crossing replaces. Code-side
-  paths and the rest of the memory tree keep ordinary Git merge semantics.
+- The structural overlay is confined to the explicit plan under `knowledge/` and `onboarding/`. Git owns unmodeled paths there and the rest of the merge.
 - Wired callers: `sync_transaction_git` (the crossing branch and the commit step),
   `sync_transaction_results` (the summary), `cli/knowledge_write_route` and
   `application/memory_quality/controller` (the refusal).
@@ -100,7 +91,7 @@ No cross-repo boundary is crossed by this file.
 - A crossing sync: one tree unconverted and one converted. [17]
 - The plan through the bound port, refused without a paired code commit or a bound crossing. [18]
 
-- The merge's knowledge and onboarding paths become the plan; conflicted paths are unmerged with three stages. [19]
+- The overlay writes only planned paths and recreates modeled conflict stages. Git retains the remaining index entries. [19]
 
 
 - The shared legacy refusal names crossing sync for a converted official line and first conversion otherwise. [20]
