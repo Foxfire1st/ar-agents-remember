@@ -226,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
+            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
             "content": "sha256:573f3e4c7bc29659eb6f4310ed8543bb75d26ab23cdd75834e2dc5e42411657b",
             "locator": {
               "kind": "symbol",
@@ -238,12 +238,12 @@
         },
         {
           "anchor": {
-            "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
+            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
             "content": "sha256:4c86521612be2517f89c2085c7b3a5bed24d086752973b41125c1a4071905a2f",
             "locator": {
-              "end": 684,
+              "end": 605,
               "kind": "line_range",
-              "start": 684
+              "start": 605
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },

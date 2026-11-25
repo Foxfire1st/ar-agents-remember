@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "4ebb429de6b3034e7bff1922b3f8982b2ccafa07",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "d2d3845baf9541100f06371fde62c4c0bb678b04",
+    "commit": "3ee8f6ad584e509ef6df637c1bb42484993b35d0",
     "role": "curator",
-    "statement": "docs/install/cursor.md remains accurate after bumping contract.json Node to 26.13.1 because the Cursor install guide hardcodes no Node release and its Bootstrap flow is unchanged.",
-    "task": "261125-DEP-L1",
+    "statement": "Verified against synced L38 candidate on 3ee8f6ad/b83cff67: docs/install/cursor.md (lines 1-85) accurately describes the unmatched Bootstrap refusal, explicit agent retry, and paseo status fields, preserved across L38 publish_prepared_launch.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/install/cursor.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/application/caller_harness.py"
     },
     {
-      "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+      "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
@@ -57,14 +57,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T20:08:06+01:00",
+    "at": "2026-11-25T22:06:22+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L1",
+    "leaf": "261112-BUG-L38",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b5f00ccb-ae71-451c-bfff-3ee2a7ac6155",
-    "task": "261125-DEP"
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
   }
 }

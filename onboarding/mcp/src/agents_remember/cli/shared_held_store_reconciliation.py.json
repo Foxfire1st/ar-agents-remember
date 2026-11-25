@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/cli/shared_held_store_reconciliation.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0a4d22c5c160adc0fc4879bea3f4644a35df6b9f",
+        "content": "sha256:00294c702defca05fdd202e9abd2cf96671f06061401051b10084d0b527fc57e",
+        "locator": {
+          "kind": "symbol",
+          "name": "reconcile_shared_held_stores"
+        }
+      },
+      "id": "RLZ-3E9EYT",
+      "invariant": "INV-J8FGWF",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3 shared stores",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "Matches shared store owners and checks the serving build before choosing preview or apply.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`reconcile_shared_held_stores` blocks live mutation when older writers remain or directory confinement fails, then previews or reconciles each discovered minted agent ID.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a4d22c5c160adc0fc4879bea3f4644a35df6b9f",
+            "content": "sha256:00294c702defca05fdd202e9abd2cf96671f06061401051b10084d0b527fc57e",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconcile_shared_held_stores"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_older_writer_refusal` checks `process_serving_build().source_digest` against every running server's `loadedDigest` and refuses reconciliation if any mismatch or unknown digest exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a4d22c5c160adc0fc4879bea3f4644a35df6b9f",
+            "content": "sha256:e2c80e5f47a383a489e9042772c7bb32a93e28590f6224d5262dc2acf84345f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_older_writer_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_shared_agent_ids` confines the held-messages directory against symlinks and recognizes minted agent IDs from both `.json` stores and standalone `.json.lock` files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a4d22c5c160adc0fc4879bea3f4644a35df6b9f",
+            "content": "sha256:ad9d8691346f457793bbfb33280169f8b40f639dbd0c65961dc33286d9b3acd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_shared_agent_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_reconcile_agent` preserves zero/ambiguous owners and errors, checks `_host_closure` for open receipts, and dispatches to `preview_held_store_reconciliation` or `reconcile_held_store`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a4d22c5c160adc0fc4879bea3f4644a35df6b9f",
+            "content": "sha256:7b053d4c29b16c90910c661be48b99c6e2b207a0834bc1694158e7248047705e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconcile_agent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

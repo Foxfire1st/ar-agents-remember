@@ -98,9 +98,9 @@ manifests to survive cleanup with survival **verified** rather than assumed; and
 archive.
 
 The two measurements the choice rests on, recorded so a later reader can re-take them rather than
-trust them: terminal cleanup removes only `worktree_group/"reports"` and `worktree_group/".lifecycle"`
-(`worktrees/modules/cleanup.py`, `_removed_directories`), so both destinations this leaf uses are
-under `task_root` and outside that removal set; and the terminal archive's scanner admits a fixed
+trust them: terminal cleanup removes the entire `worktree_group` folder after move-out
+(`worktrees/modules/terminal_group.py`, `remove_terminal_group`), so both destinations this leaf uses are
+under `task_root` and outside that removed `worktree_group`; and the terminal archive's scanner admits a fixed
 artifact set, so it could not hold these bytes even if they were offered to it.
 
 The following declarations carry the changed boundary.

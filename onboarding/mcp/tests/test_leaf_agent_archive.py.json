@@ -3,8 +3,25 @@
   "proves": [
     {
       "anchor": {
-        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
-        "content": "sha256:528ac6eac7b764f7ece5e9177d34a6a9e1c382dc018fd49e808bb7f027752f00",
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
+        "content": "sha256:c2006597e56dbf6313127b89ab413861c216466a8038e8439a958072b4b80fea",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafAgentArchiveTests.test_cleanup_blocks_on_owed_in_group_seat"
+        }
+      },
+      "facet": "Exercises test_cleanup_blocks_on_owed_in_group_seat to verify terminal removal closes in-group seats and blocks on unresolved archive debt.",
+      "id": "PRF-0BYK37",
+      "invariant": "INV-HBMPXC",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 5",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
+        "content": "sha256:0bcc778792cd16dd2251fb29ae28cc8bcbe4f559357fdb7d21f7344706eda4b7",
         "locator": {
           "kind": "symbol",
           "name": "test_stale_publication_keeps_archive_and_only_exact_leaf_mark_refuses"
@@ -20,8 +37,25 @@
     },
     {
       "anchor": {
-        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
-        "content": "sha256:c5962a53a527cbcd050fdf17aeeea129b955854e807395b3323dcf91f00d312d",
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
+        "content": "sha256:03ae80f4d0130180ac0d422b7e0c82d4c906a2915bc90ae984f3c9727b52a806",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafAgentArchiveTests.test_cleanup_records_held_message_before_group_removal"
+        }
+      },
+      "facet": "Exercises test_cleanup_records_held_message_before_group_removal to verify move-out saves reports and real messages; seat close records waiting text.",
+      "id": "PRF-37M4VX",
+      "invariant": "INV-R850AZ",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 2",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
+        "content": "sha256:2901bb886fe0d0199f2237eec1e56a468ab9c46906c634b49cb5869916cfd9ff",
         "locator": {
           "kind": "symbol",
           "name": "test_debt_write_failure_recovers_from_terminal_truth_after_restart"
@@ -37,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
         "content": "sha256:ac69d4d1986a4994607373a71b844487bdf4454beb310733145069edfa15ca81",
         "locator": {
           "kind": "symbol",
@@ -54,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
         "content": "sha256:b0130c48fddbfe3e1e7ecb1282c5f4538457f6608479a33755a8e613746769cf",
         "locator": {
           "kind": "symbol",
@@ -71,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
         "content": "sha256:d68a2077c263ec62a9a28e3eedeba77b6d154acaa4bea2409c9dab2cb3d83dc5",
         "locator": {
           "kind": "symbol",
@@ -88,8 +122,8 @@
     },
     {
       "anchor": {
-        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
-        "content": "sha256:7c5646d2ecefbca4f02c8bad28c0666a5b791cc615334813c1bf867827a3ecc6",
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
+        "content": "sha256:5d1dbbfb6b7267c32509550fd1de7d2aa75443b7f008cf391a4607c75ab3ae61",
         "locator": {
           "kind": "symbol",
           "name": "test_admitted_cleanup_and_abandon_archive_before_destructive_outputs"
@@ -105,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
         "content": "sha256:8e153538962107e06018680998f683661070ac76e15b5a6e1edd4cb76adc84d6",
         "locator": {
           "kind": "symbol",
@@ -122,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
         "content": "sha256:18d2ce8a3fcb641a2a66fd339db8f4ab84ad824861caefdbd6341035b82ca697",
         "locator": {
           "kind": "symbol",
@@ -139,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
         "content": "sha256:18d2ce8a3fcb641a2a66fd339db8f4ab84ad824861caefdbd6341035b82ca697",
         "locator": {
           "kind": "symbol",
@@ -156,7 +190,7 @@
     },
     {
       "anchor": {
-        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
         "content": "sha256:8e153538962107e06018680998f683661070ac76e15b5a6e1edd4cb76adc84d6",
         "locator": {
           "kind": "symbol",
@@ -173,7 +207,24 @@
     },
     {
       "anchor": {
-        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
+        "content": "sha256:b356fd36d87dab4e3f0fef7df0fd1a9579b938b472fad61d66c75f095bc6e7bf",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafAgentArchiveTests.test_enumerated_receipt_preserves_debt_when_native_create_enters"
+        }
+      },
+      "facet": "Exercises test_enumerated_receipt_preserves_debt_when_native_create_enters to verify terminal removal closes in-group seats and blocks on unresolved archive debt.",
+      "id": "PRF-B2T062",
+      "invariant": "INV-HBMPXC",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 5",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
         "content": "sha256:cee50f53233cb103ee53b83c0907fa26698eab2368d32191a50e0c89dc60331f",
         "locator": {
           "kind": "symbol",
@@ -190,7 +241,24 @@
     },
     {
       "anchor": {
-        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
+        "content": "sha256:d90f35bd5cdd3d75b73f82f2fbe97a1659ab14058d57c11913767035712c5c5f",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafAgentArchiveTests.test_forced_abandon_records_held_message_before_group_removal"
+        }
+      },
+      "facet": "Exercises test_forced_abandon_records_held_message_before_group_removal to verify move-out saves reports and real messages; seat close records waiting text.",
+      "id": "PRF-DP1QQH",
+      "invariant": "INV-R850AZ",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 2",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
         "content": "sha256:d68a2077c263ec62a9a28e3eedeba77b6d154acaa4bea2409c9dab2cb3d83dc5",
         "locator": {
           "kind": "symbol",
@@ -207,8 +275,8 @@
     },
     {
       "anchor": {
-        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
-        "content": "sha256:528ac6eac7b764f7ece5e9177d34a6a9e1c382dc018fd49e808bb7f027752f00",
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
+        "content": "sha256:0bcc778792cd16dd2251fb29ae28cc8bcbe4f559357fdb7d21f7344706eda4b7",
         "locator": {
           "kind": "symbol",
           "name": "test_stale_publication_keeps_archive_and_only_exact_leaf_mark_refuses"
@@ -224,8 +292,8 @@
     },
     {
       "anchor": {
-        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
-        "content": "sha256:7c5646d2ecefbca4f02c8bad28c0666a5b791cc615334813c1bf867827a3ecc6",
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
+        "content": "sha256:5d1dbbfb6b7267c32509550fd1de7d2aa75443b7f008cf391a4607c75ab3ae61",
         "locator": {
           "kind": "symbol",
           "name": "test_admitted_cleanup_and_abandon_archive_before_destructive_outputs"
@@ -241,7 +309,7 @@
     },
     {
       "anchor": {
-        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
         "content": "sha256:a880c0177a240d2896820f228da1fb7c994f78f6cff1e7cedad523c464e8a444",
         "locator": {
           "kind": "symbol",
@@ -258,7 +326,7 @@
     },
     {
       "anchor": {
-        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
         "content": "sha256:be1f8cd8a5ed11c91fe99e39ba7a0326e9520a488daa4bb66e8e3a0d45d93e20",
         "locator": {
           "kind": "symbol",
@@ -275,7 +343,7 @@
     },
     {
       "anchor": {
-        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
         "content": "sha256:b0130c48fddbfe3e1e7ecb1282c5f4538457f6608479a33755a8e613746769cf",
         "locator": {
           "kind": "symbol",
@@ -292,7 +360,7 @@
     },
     {
       "anchor": {
-        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
         "content": "sha256:aefb84456fcb89d52f52aa0a2b6f1f255edee581fff37a129e9c4c5fe755d3c8",
         "locator": {
           "kind": "symbol",
@@ -309,7 +377,24 @@
     },
     {
       "anchor": {
-        "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
+        "content": "sha256:f818a4e17b312da48ddb8bfe6db8e7be027a34a8b6a671e1be912ffe3d2b64e6",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafAgentArchiveTests.test_cleanup_preview_reports_persisted_archive_debt_without_writing"
+        }
+      },
+      "facet": "Exercises test_cleanup_preview_reports_persisted_archive_debt_without_writing to verify terminal removal closes in-group seats and blocks on unresolved archive debt.",
+      "id": "PRF-VHDAXY",
+      "invariant": "INV-HBMPXC",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 5",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
         "content": "sha256:d68a2077c263ec62a9a28e3eedeba77b6d154acaa4bea2409c9dab2cb3d83dc5",
         "locator": {
           "kind": "symbol",
@@ -332,7 +417,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+            "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
             "content": "sha256:18d2ce8a3fcb641a2a66fd339db8f4ab84ad824861caefdbd6341035b82ca697",
             "locator": {
               "kind": "symbol",
@@ -348,7 +433,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+            "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
             "content": "sha256:be1f8cd8a5ed11c91fe99e39ba7a0326e9520a488daa4bb66e8e3a0d45d93e20",
             "locator": {
               "kind": "symbol",
@@ -364,7 +449,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+            "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
             "content": "sha256:79bbc786fb190c5a766e26a73f1a0d3f34583fa8ff0b96d36573f536c3c2c3e9",
             "locator": {
               "kind": "symbol",
@@ -380,7 +465,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+            "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
             "content": "sha256:d4283f274198660d3720edde7a76e684c2c80d0941a458948ba4781ceed20c78",
             "locator": {
               "kind": "symbol",
@@ -396,7 +481,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+            "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
             "content": "sha256:ac69d4d1986a4994607373a71b844487bdf4454beb310733145069edfa15ca81",
             "locator": {
               "kind": "symbol",
@@ -412,8 +497,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
-            "content": "sha256:7c5646d2ecefbca4f02c8bad28c0666a5b791cc615334813c1bf867827a3ecc6",
+            "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
+            "content": "sha256:5d1dbbfb6b7267c32509550fd1de7d2aa75443b7f008cf391a4607c75ab3ae61",
             "locator": {
               "kind": "symbol",
               "name": "test_admitted_cleanup_and_abandon_archive_before_destructive_outputs"
@@ -428,7 +513,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+            "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
             "content": "sha256:543fb4aa5de77e5a8f8d0cf62dc0d18b01eaf13aa3077cfb8fcf8467bd4d6492",
             "locator": {
               "kind": "symbol",
@@ -444,7 +529,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+            "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
             "content": "sha256:b903ed9d82f7cc5d72d64a250fa5cd509f498ee321a52c01759da3b6111371dc",
             "locator": {
               "kind": "symbol",
@@ -460,7 +545,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+            "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
             "content": "sha256:b0130c48fddbfe3e1e7ecb1282c5f4538457f6608479a33755a8e613746769cf",
             "locator": {
               "kind": "symbol",
@@ -476,7 +561,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+            "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
             "content": "sha256:cee50f53233cb103ee53b83c0907fa26698eab2368d32191a50e0c89dc60331f",
             "locator": {
               "kind": "symbol",
@@ -492,8 +577,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
-            "content": "sha256:528ac6eac7b764f7ece5e9177d34a6a9e1c382dc018fd49e808bb7f027752f00",
+            "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
+            "content": "sha256:0bcc778792cd16dd2251fb29ae28cc8bcbe4f559357fdb7d21f7344706eda4b7",
             "locator": {
               "kind": "symbol",
               "name": "test_stale_publication_keeps_archive_and_only_exact_leaf_mark_refuses"
@@ -508,7 +593,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+            "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
             "content": "sha256:d68a2077c263ec62a9a28e3eedeba77b6d154acaa4bea2409c9dab2cb3d83dc5",
             "locator": {
               "kind": "symbol",
@@ -524,7 +609,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+            "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
             "content": "sha256:aefb84456fcb89d52f52aa0a2b6f1f255edee581fff37a129e9c4c5fe755d3c8",
             "locator": {
               "kind": "symbol",
@@ -540,8 +625,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
-            "content": "sha256:c5962a53a527cbcd050fdf17aeeea129b955854e807395b3323dcf91f00d312d",
+            "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
+            "content": "sha256:2901bb886fe0d0199f2237eec1e56a468ab9c46906c634b49cb5869916cfd9ff",
             "locator": {
               "kind": "symbol",
               "name": "test_debt_write_failure_recovers_from_terminal_truth_after_restart"
@@ -556,7 +641,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa63e5f1aeede3e64cb0007a88faad8cf7510f4d",
+            "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
             "content": "sha256:8e153538962107e06018680998f683661070ac76e15b5a6e1edd4cb76adc84d6",
             "locator": {
               "kind": "symbol",

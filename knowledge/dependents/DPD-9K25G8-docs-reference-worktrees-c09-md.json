@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "978e410ca88ebabc20fc598a05870dd8f8efed1a",
-    "commit": "e8a96f6e2255155d733dd15dcba56bd26e46097e",
+    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "The worktree reference describes the shared preview and apply verdict on exact code and memory trees and requires verified archive bytes and a terminal locator before destructive enclosure cleanup.",
-    "task": "261112-KNO-L4",
+    "statement": "docs/reference/worktrees-c09.md (lines 104-113, 317-349) accurately describes exact-pair closeout/landing, terminal archive verification, and archived cleanupArguments retries without asserting a subfolder inclusion list or empty-only guard.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/reference/worktrees-c09.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -274,7 +274,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/landing.py"
     },
     {
-      "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
+      "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
     },
@@ -283,5 +283,16 @@
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

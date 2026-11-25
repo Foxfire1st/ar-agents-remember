@@ -34,7 +34,9 @@ No finished turn accepts AR work or frees a live leaf holder. Held-state persist
 
 
 
+
 - The current reading updates changed lifecycle fields. An unreachable reading preserves the receipt and labels the response as last known. [2]
+
 
 
 
@@ -65,14 +67,18 @@ Selected-task Investigator starts reconcile their exact request instead of adopt
 
 
 
+
 - The current source implements this file’s stated Investigator boundary. [13]
+
 
 
 
 ## Refreshed current evidence
 
 
+
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [4]
+
 
 
 
@@ -90,7 +96,10 @@ Custody: the preceding sentence is detached from live reference 12; original tar
 - The test joins the shipped Architect/review, Manager/coordination and Orchestrator/coordination source texts, checks their candidate-evidence and owner-acceptance clauses, and detects removal of Manager inspection. This checks that source composition’s wording; it runs no capsule admission/compilation and proves no runtime no-mutation property.
 
 
-- Digest-bound same-request replay reconciles decisions and empty successors. [14]
+
+- Digest-bound same-request replay reconciles decisions and empty successors. Anchor: Current source; preserved L88 property 14 [14]
+
+
 
 
 - Replacement authority remains while step-up adds unconditional idle/prompt checks. [15]
@@ -98,7 +107,10 @@ Custody: the preceding sentence is detached from live reference 12; original tar
 
 
 
+
+
 - The saved-call executor rechecks the named step-up predecessor before archiving it. A found, unarchived predecessor must be idle and prompt-free. [16]
+
 
 
 

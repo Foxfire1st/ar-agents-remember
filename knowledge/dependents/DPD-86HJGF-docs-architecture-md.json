@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "4ebb429de6b3034e7bff1922b3f8982b2ccafa07",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "d2d3845baf9541100f06371fde62c4c0bb678b04",
+    "commit": "3ee8f6ad584e509ef6df637c1bb42484993b35d0",
     "role": "curator",
-    "statement": "docs/architecture.md remains accurate after the mcp>=1.30.0,<2 floor change in mcp/pyproject.toml and BUG-L36's UTC ISO-8601 dashboard log timestamps because the tool-server architecture, call dispatch, dashboard daemon startup, serving_collaborators composition, and ownership boundaries are unchanged.",
-    "task": "261125-DEP-L1",
+    "statement": "Verified against synced L38 candidate on 3ee8f6ad/b83cff67: docs/architecture.md (lines 1-303) accurately describes runtime_install ownership, runtime/servers/ process records, settings files, and the read/dry-run boundary reinforced by preview_server_inventory and opt-in reconcile_shared_held_stores=false.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 16,
+  "revision": 17,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
     {
-      "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+      "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/runtime.py"
     },
@@ -96,7 +96,7 @@
       "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
     },
     {
-      "blob": "ab649fa5dd2402a61b2ddd4c6fb9e3a2be7ee979",
+      "blob": "00e0026c74c9ae008642aa171b70ec87da5fb234",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/server_registry.py"
     },
@@ -301,14 +301,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T20:08:06+01:00",
+    "at": "2026-11-25T22:06:22+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L1",
+    "leaf": "261112-BUG-L38",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b5f00ccb-ae71-451c-bfff-3ee2a7ac6155",
-    "task": "261125-DEP"
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
   }
 }

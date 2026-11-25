@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "40e2c033f5400b856352fc47dd738796945d289d",
-    "commit": "65c40d296ac2f951e9359eae653c7df43fed2436",
+    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "On merged code the evidence-system guide keeps its lane and lifecycle rules: L27's two integration modules and CAP-L1's unit-regression module each sit in one lane of the 825 and appear as declared lifecycle consumers; lane and lifecycle authority, canonical ordering and source-derived consumers still hold on the merged catalogs, and CAP-L4's new test_tool_schema_compaction.py sits in unit-regression (675 of 825 modules) and is listed in the consumers of the two all-tests lifecycle artifacts.",
-    "task": "261112-BUG-L37",
-    "uncommitted": false
+    "statement": "docs/design/python-evidence-system.md (lines 62-144) pins no test counts and accurately describes the seven accepting lanes, canonical catalog form, and source-derived consumers updated by L38.",
+    "task": "261112-BUG-L38",
+    "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
   "id": "DPD-ZMQ523",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 16,
+  "revision": 17,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "41e4f40f552f5e6b287bcd178bbc5cf6bc1c5dd7",
+      "blob": "950bfd7c3c2db68a87d13d58bc6ce7e2d52ff634",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "1d6be1d0f663db6e1c020b551df3eec199056488",
+      "blob": "f2c4c96f66a6b968683a0d56f273c64d6114ac22",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },
@@ -107,14 +107,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T15:29:55+01:00",
+    "at": "2026-11-25T19:57:06+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L37",
+    "leaf": "261112-BUG-L38",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "4e0ea222-083c-4c22-aef2-1fc120d81ee2",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
     "task": "261112-BUG"
   }
 }

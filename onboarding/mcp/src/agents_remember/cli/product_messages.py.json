@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "babab7b807a90ce171ce109978a001eeed20e81d",
-        "content": "sha256:fb2bea01e21e991efab9a6fdf58da8ac7872de1512e321b115f536fe766870ea",
+        "blob": "37d9a8acf6e7d28de71d95053f0105f70e84703d",
+        "content": "sha256:ec42d7a551087a715add90f8fe6d60528533e6b54d751f7c2de44f6d418916e2",
         "locator": {
           "kind": "symbol",
           "name": "send_product_message"
@@ -18,6 +18,42 @@
       },
       "rationale": "Uses the product identity and the ordinary delivery or held-message route.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "37d9a8acf6e7d28de71d95053f0105f70e84703d",
+        "content": "sha256:ec42d7a551087a715add90f8fe6d60528533e6b54d751f7c2de44f6d418916e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "send_product_message"
+        }
+      },
+      "id": "RLZ-ABPR61",
+      "invariant": "INV-GV3NYM",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3 · post-sync product-message fence",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "The sending path uses the same seat fence and converts a closure refusal into the named recipient-archived refusal.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "37d9a8acf6e7d28de71d95053f0105f70e84703d",
+        "content": "sha256:01288bd85a76b68b269de5b86b6c73dae8cab6e338c1469ddb63cc1fff1b6fcc",
+        "locator": {
+          "kind": "symbol",
+          "name": "file_product_message"
+        }
+      },
+      "id": "RLZ-TFYB68",
+      "invariant": "INV-GV3NYM",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3 · post-sync product-message fence",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "The filing path now resolves the recipient seat and passes it to the shared message writer, so closure is checked before a message file is stored.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -26,8 +62,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "babab7b807a90ce171ce109978a001eeed20e81d",
-            "content": "sha256:fb2bea01e21e991efab9a6fdf58da8ac7872de1512e321b115f536fe766870ea",
+            "blob": "37d9a8acf6e7d28de71d95053f0105f70e84703d",
+            "content": "sha256:ec42d7a551087a715add90f8fe6d60528533e6b54d751f7c2de44f6d418916e2",
             "locator": {
               "kind": "symbol",
               "name": "send_product_message"

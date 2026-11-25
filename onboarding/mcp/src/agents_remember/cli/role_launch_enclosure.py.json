@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_launch_enclosure.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "21ec67eb44139f33fbdaa0a356026b1d93ebe3df",
+        "content": "sha256:0639c69b2a17d6ea9bb8d871aab56ecc8e2d795bda21ca156622f32c91cad8be",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_role_folders"
+        }
+      },
+      "id": "RLZ-5H4QN7",
+      "invariant": "INV-8XCZY1",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-09",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Preparation allocates request/role-local report and scratch roots, so another agent half-writing a file cannot block this agent collection.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "21ec67eb44139f33fbdaa0a356026b1d93ebe3df",
+        "content": "sha256:61a2d8b65d0e424a88d4760893e05da5ed66a9d35e99eb336e9937d44dc97115",
+        "locator": {
+          "kind": "symbol",
+          "name": "publication_scope"
+        }
+      },
+      "id": "RLZ-5J35HR",
+      "invariant": "INV-4CJ7H0",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 1 generation ownership",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "Reserves the exact live enclosure generation for filesystem writes during preparation and publication.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`EnclosurePublicationRefusal` returns HTTP 409 with `worktree_status` guidance when a handover targets an inactive enclosure generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21ec67eb44139f33fbdaa0a356026b1d93ebe3df",
+            "content": "sha256:3063732cd40b20701f1e75c112fa66513a75cc9d471f7a48202d90eb6f5108ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosurePublicationRefusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`publication_scope` serializes on `lifecycle_location_reservation`, reloads the contract, and verifies coordination root, lifecycle ID, worktree group, and creation eligibility before admitting writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21ec67eb44139f33fbdaa0a356026b1d93ebe3df",
+            "content": "sha256:61a2d8b65d0e424a88d4760893e05da5ed66a9d35e99eb336e9937d44dc97115",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`prepare_role_folders` assigns leaf and non-leaf report/scratch paths, rejects symlinks or escapes outside the workspace root, and creates the local directories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21ec67eb44139f33fbdaa0a356026b1d93ebe3df",
+            "content": "sha256:0639c69b2a17d6ea9bb8d871aab56ecc8e2d795bda21ca156622f32c91cad8be",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_folders"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

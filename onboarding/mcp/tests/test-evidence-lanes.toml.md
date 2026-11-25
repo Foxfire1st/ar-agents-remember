@@ -6,7 +6,7 @@
 
 ## Purpose
 
-The canonical evidence-lane catalog: which test modules belong to which lane, so a leaf's checks can name the population they ran. Membership declares the selected population, never that an invocation ran or passed. The current parsed catalog declares 675 unit-regression, 3 public-contract, 123 integration and 23 architecture-fitness and one stress-durability member (825 total); stress-durability selects the native stdio memory regression, and provider-conformance and migration are empty. No module sits in two lanes, no lane repeats a module, and every named module exists on this tree.
+The canonical evidence-lane catalog: which test modules belong to which lane, so a leaf's checks can name the population they ran. Membership declares the selected population, never that an invocation ran or passed. The current parsed catalog declares 675 unit-regression, 3 public-contract, 125 integration and 23 architecture-fitness and one stress-durability member (827 total); stress-durability selects the native stdio memory regression, and provider-conformance and migration are empty. No module sits in two lanes, no lane repeats a module, and every named module exists on this tree. The integration lane includes `test_closed_held_store.py` and `test_role_launch_terminal_publication.py`.
 
 The integration lane selects the crossing dependent writer test once. It checks that the mounted dry plan uses the settled code tree and that the branch name resolves to its commit.
 
@@ -262,14 +262,20 @@ Membership selects evidence without proving invocation.
 - Developer-message tests are selected once in the existing unit-regression lane. Anchor: mcp/tests/test_developer_messages.py. Anchor: mcp/tests/test_developer_messages.py. Anchor: file [862]
 
 
+
 - The seven lane identities remain declared; this is membership, not execution. Anchor: file [863]
+
+
 
 
 - The lane catalog declares 825 distinct modules across seven lanes: 675 unit-regression, 3 public-contract, 123 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [864]
 
+
 - The current source declares lane membership, including the three MIK-R53 modules in unit-regression. Membership does not establish invocation or PASS. Anchor: file [866]
 
+
 - The lane catalog declares 825 distinct modules across seven lanes: 675 unit-regression, 3 public-contract, 123 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [867]
+
 
 - The lane catalog selects landing-workflow, publication-merge, explainer and after-discovery regressions; the after-discovery source asserts scheduling after the discovery answer and a no-list first-call fallback through one latch. These are declarations and source assertions, not execution. [868]
 
@@ -278,13 +284,20 @@ Membership selects evidence without proving invocation.
 - The integration lane registers the crossing dependent writer test once. [878]
 
 
+
 - The lane catalog declares 825 distinct modules across seven lanes: 675 unit-regression, 3 public-contract, 123 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. The catalog retains the after-discovery, explainer, publication and landing-workflow cases and all nine L192 retired-provider regression modules. The retired provider-current-state suite has no lane registration. [869]
+
+
 
 
 - The lane catalog declares 825 distinct modules across seven lanes: 675 unit-regression, 3 public-contract, 123 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [870]
 
 
+
+
 - Lane lists retain one path per module, with the worktree-environment guard registered in unit-regression. Anchor: file [837]
+
+
 
 
 
@@ -294,7 +307,11 @@ Membership selects evidence without proving invocation.
 
 
 
+
+
 - The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution. Anchor: file [840]
+
+
 
 
 
@@ -304,7 +321,10 @@ Membership selects evidence without proving invocation.
 
 
 
+
+
 - The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution. Anchor: file [859]
+
 
 
 - The unit lane selects both Lean test modules. [875]

@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Terminal retry and role-launch publication coordinate across worktrees/modules/terminal_retry.py, cli/role_launch_enclosure.py, and cli/role_launch_publication.py and are verified by reopen and concurrent-launch tests."
+  },
+  "applicability": "Completed-generation terminal retries and concurrent role-launch publication into an enclosed task folder.",
+  "conditions": [
+    "Operations serialize under the shared lifecycle_location_reservation lock and recheck contract identity and lifecycle generation."
+  ],
+  "exclusions": [
+    "Non-enclosed roles without a worktree contract path."
+  ],
+  "id": "INV-4CJ7H0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The Worker freeze report binds focused verification on this tree."
+      ],
+      "path": "l38-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R38@v1 rule 1 generation ownership",
+    "leaf": "261112-BUG-L38",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An accepted terminal retry removes only its own enclosure generation. A prepared role launch publishes only into the active generation it prepared.",
+  "supersedes": [],
+  "title": "Terminal retries and role launches stay fenced to one generation",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
+}

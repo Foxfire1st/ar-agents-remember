@@ -6,27 +6,21 @@
 
 ## Purpose
 
-The best-effort host-archival boundary for an admitted leaf retirement. It lets the admitted
-finalize, cleanup and abandon transactions archive the leaf's recorded agents without letting a host
-or receipt failure refuse an already admitted retirement.
+The seat-archival and blocker boundary for an admitted terminal worktree retirement (leaf or series). It invokes the bound archive service on both dry-run and apply, captures unbound, host, and receipt failures as structured reports, and translates unresolved or failed seat outcomes into terminal blockers that prevent folder removal.
 
 ## Code Commentary
 
 ### Logic
 
-`archive_terminal_agents(contract, *, dry_run)` returns an empty report for a dry run or a non-leaf
-contract. It reads the bound `leaf_agent_archive` port from `worktree_services()`; an unbound service
-bundle reports `state: not-bound` and a missing port is not an error. Any exception from the port is
-caught and reported as `state: failed` with the exception type and message, because host and receipt
-failures cannot refuse the admitted retirement — the recurring observer derives the debt from
-terminal truth instead.
+`archive_terminal_agents(contract, *, dry_run, check_census=None)` reads `worktree_services().leaf_agent_archive` for both leaf and series contracts and forwards `dry_run` (and optional `check_census`) to `port.archive(...)`. When no port is bound, it returns `state: "not-bound"` with a reason if `receipt_holder(contract.task_root)` exists, or `{}` when no launch receipt directory exists. `(OSError, ValueError, RuntimeError)` from the port is caught as `state: "failed"` with the exception type and message. `terminal_agent_blockers(archive)` turns `not-bound`, `failed`, and every row in `owed` or `leftAlone` into named terminal blockers.
 
 ### Invariants And Boundaries
 
-- A dry run archives nobody.
-- A failure returns a report; it never raises into the retirement transaction.
-- Only leaf contracts enter the archive boundary.
+- A dry run invokes the port with `dry_run=True` to inspect recorded seats and unowned stores without mutating host or receipt state.
+- Expected port failures (`OSError`, `ValueError`, `RuntimeError`) and missing bindings (when receipts exist) return structured reports that `terminal_agent_blockers` converts into terminal blockers.
+- Both leaf and modern series contracts enter the archive boundary (only legacy series skip it in `terminal_group.py`).
 
 ## Evidence
 
-- The boundary contains host and discovery failures and never refuses retirement. [1]
+
+- The boundary captures expected port and binding failures into structured reports and converts `not-bound`, `failed`, `owed`, and `leftAlone` outcomes into terminal blockers. [1]

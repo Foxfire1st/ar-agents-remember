@@ -5,7 +5,7 @@
     ],
     "justification": "The comparison, the publication refusal, the dashboard stamp, the server inventory, the dashboard replacement and its owner proof each cover one surface; only together do they keep an old build from working on unnoticed after an install."
   },
-  "guarantee": "After an install, an MCP server or dashboard that still runs an older Python build than the one installed reports that it is stale, with both digests, the first time the difference was seen and its remedy, wherever it reports its build; it refuses every declared publication before the handler runs while reads, dry runs and messages still answer; the install lists every live server with its state; and the dashboard is replaced on a digest change by acting only on a process proven to be its own.",
+  "guarantee": "After an install, an MCP server or dashboard that still runs an older Python build than the one installed reports that it is stale, with both digests, the first time the difference was seen and its remedy, wherever it reports its build; it refuses every declared publication before the handler runs while reads, dry runs and messages still answer; the install lists every live server with its state (removing dead records on apply and preserving dead records and shared stores on read-only dry-run preview); and the dashboard is replaced on a digest change by acting only on a process proven to be its own.",
   "id": "FAM-7EBNVZ",
   "members": [
     "INV-HCG93S",
@@ -14,7 +14,8 @@
     "INV-PVW2XJ",
     "INV-19ZN9E",
     "INV-GJTCT9",
-    "INV-AN0K8G"
+    "INV-AN0K8G",
+    "INV-XX08QF"
   ],
   "origin": {
     "handoff": {
@@ -24,7 +25,7 @@
     "leaf": "260928-MIK-L84",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/src/agents_remember/serving",
     "mcp/src/agents_remember/mcp",
@@ -34,6 +35,16 @@
     "mcp/src/agents_remember/application"
   ],
   "schema": "ar-family/v1",
-  "status": "proposed",
-  "title": "After an install an old running build knows it, says it and lands nothing"
+  "title": "After an install an old running build knows it, says it and lands nothing",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

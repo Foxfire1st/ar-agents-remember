@@ -5,13 +5,14 @@
     ],
     "justification": "Truthful outcome reporting is proved by the focused suite."
   },
-  "applicability": "Every closing answer and every repeated finalize.",
+  "applicability": "Every leaf or modern series closing answer, repeated finalize, and terminal cleanup/abandon retry.",
   "conditions": [
     "The answer separates archived, already archived, gone, owed and left-alone targets.",
-    "A leaf with no recorded agents says so in one line."
+    "A task with no recorded agents says so in one line.",
+    "While a task folder would be removed, any owed, left-alone, failed, or unbound-with-receipts outcome produces a terminal blocker before deletion."
   ],
   "exclusions": [
-    "The answer is not turned into a refusal because a target is owed or left alone."
+    "Legacy series whose worktree_group equals enclosures/ skip seat archival."
   ],
   "id": "INV-FEB6Y6",
   "origin": {
@@ -25,9 +26,20 @@
     "leaf": "260928-MIK-L76",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Closing responses identify archived, already archived, gone, owed and left-alone targets, and a leaf with no recorded role agents states that plainly.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "Closing responses identify archived, already archived, gone, owed and left-alone targets, state plainly when a task has no recorded role agents, and block task-folder removal whenever any owed, left-alone, failed, or unbound-with-receipts outcome remains.",
+  "supersedes": [],
+  "title": "Closing responses name seat archive outcomes and block folder removal on debt",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

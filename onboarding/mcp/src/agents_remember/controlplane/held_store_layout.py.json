@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ab10f3cdc3aba28b9e189c902501164cc29da34b",
-        "content": "sha256:59c9eb1476fe870013236122582ee9aa1c01b8741ea299979540626b6b835b29",
+        "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
+        "content": "sha256:826c25994825fc05cae0e5ceadf840cbf2d53956fbd92ce947f1f5694772635a",
         "locator": {
           "kind": "symbol",
           "name": "hold_message"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "ab10f3cdc3aba28b9e189c902501164cc29da34b",
-        "content": "sha256:3aac71ee590e6a7db3a5d999de81ce2fafada3d4d018020e2bae4858fcbaf019",
+        "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
+        "content": "sha256:5e764c9362c1ea94888f55139c88aa1c87a661476ec7626e0e1e902ee0f80575",
         "locator": {
           "kind": "symbol",
           "name": "recount_waiting"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "ab10f3cdc3aba28b9e189c902501164cc29da34b",
+        "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
         "content": "sha256:27ffe03bf9c089d4876d4cad2d8668ce8cacc517d2d5ba08186da7c9caf31ae0",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "ab10f3cdc3aba28b9e189c902501164cc29da34b",
-        "content": "sha256:f5ffe8a4f996d53319d551e983b36367a833d2d978ec0800bb78b3f6f5d6175b",
+        "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
+        "content": "sha256:90362b84f00eb85735c4304141c8d887b7bdbb9243fc56b0a1196b36f398cfb7",
         "locator": {
           "kind": "file"
         }
@@ -74,8 +74,26 @@
     },
     {
       "anchor": {
-        "blob": "ab10f3cdc3aba28b9e189c902501164cc29da34b",
-        "content": "sha256:f5ffe8a4f996d53319d551e983b36367a833d2d978ec0800bb78b3f6f5d6175b",
+        "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
+        "content": "sha256:a41edec100c7976149674e9e1d0fe9a85a423ccdd9a651d8ba443ba07627f944",
+        "locator": {
+          "kind": "symbol",
+          "name": "waiting_total"
+        }
+      },
+      "id": "RLZ-JQWS0G",
+      "invariant": "INV-HJ790A",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "Reads the atomic store for a count without opening a store lock.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
+        "content": "sha256:90362b84f00eb85735c4304141c8d887b7bdbb9243fc56b0a1196b36f398cfb7",
         "locator": {
           "kind": "file"
         }

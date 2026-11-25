@@ -21,6 +21,58 @@
       "role": "presentation"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Product summary covering the eight MCP tool groups, harnesses, Paseo host, dashboard tabs, roles, and intent-review gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "550b410b2451344f2d985f845ca6383e049be7ab",
+            "content": "sha256:42bbc253547ace9ce1525151cc118f668a35ef741cd792af0ba322a14db4e36d",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Memory discovery via mirrored paths, `read_ar_files` brief/compact row shapes, and names-only `knowledge_read`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "550b410b2451344f2d985f845ca6383e049be7ab",
+            "content": "sha256:b95bae0b7537da15f9daef4ab3b99f1fa4018dda1b0e0325bf2c7fbeb4fc796c",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Five canonical install steps from `uv tool install` through Bootstrap call and dashboard open.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "550b410b2451344f2d985f845ca6383e049be7ab",
+            "content": "sha256:5ae0fd6a088ab012ac2d07a996d75c10f1d3d3b9c820dd4369d6853d39946ec0",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

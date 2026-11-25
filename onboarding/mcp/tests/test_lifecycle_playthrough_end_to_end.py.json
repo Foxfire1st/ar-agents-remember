@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41e4f40f552f5e6b287bcd178bbc5cf6bc1c5dd7",
+            "blob": "950bfd7c3c2db68a87d13d58bc6ce7e2d52ff634",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 746,
+              "end": 747,
               "kind": "line_range",
-              "start": 746
+              "start": 747
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -42,10 +42,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d6be1d0f663db6e1c020b551df3eec199056488",
-            "content": "sha256:95983c731fd147d5a8a69b6faaaef11d3c747f68812c50cb9c39f869903d15c3",
+            "blob": "f2c4c96f66a6b968683a0d56f273c64d6114ac22",
+            "content": "sha256:63b9994b066074e169b8c5ee1254576887ed6a161cd3656390035cefff52bfee",
             "locator": {
-              "end": 472,
+              "end": 473,
               "kind": "line_range",
               "start": 65
             },
@@ -55,12 +55,12 @@
         },
         {
           "anchor": {
-            "blob": "1d6be1d0f663db6e1c020b551df3eec199056488",
+            "blob": "f2c4c96f66a6b968683a0d56f273c64d6114ac22",
             "content": "sha256:7396e75e725df3a259d4ccf761f84f5bdcc09169afb826ffe4395541e5971e0c",
             "locator": {
-              "end": 1093,
+              "end": 1097,
               "kind": "line_range",
-              "start": 1073
+              "start": 1077
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -68,12 +68,12 @@
         },
         {
           "anchor": {
-            "blob": "1d6be1d0f663db6e1c020b551df3eec199056488",
+            "blob": "f2c4c96f66a6b968683a0d56f273c64d6114ac22",
             "content": "sha256:5ebf994c5f317d76a56f846a67bde4409598cb8a16f8a943d3aabe7dfde3015e",
             "locator": {
-              "end": 1271,
+              "end": 1278,
               "kind": "line_range",
-              "start": 1181
+              "start": 1188
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -81,12 +81,12 @@
         },
         {
           "anchor": {
-            "blob": "1d6be1d0f663db6e1c020b551df3eec199056488",
-            "content": "sha256:b2e4546319cb4fe05def2338493f38fbdc22c6faeeba4d9e22d0b6d9d3a37a16",
+            "blob": "f2c4c96f66a6b968683a0d56f273c64d6114ac22",
+            "content": "sha256:81022cb73a5f01af15b875823879beb1bb4a92592b9131a6dff8c3d9e01b00bf",
             "locator": {
-              "end": 2919,
+              "end": 2928,
               "kind": "line_range",
-              "start": 2512
+              "start": 2520
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -94,12 +94,12 @@
         },
         {
           "anchor": {
-            "blob": "1d6be1d0f663db6e1c020b551df3eec199056488",
-            "content": "sha256:0752a9b1a5274a24bff06d3c0ad5f8c7f7de0e0185797f00a5f977b14d0e8d53",
+            "blob": "f2c4c96f66a6b968683a0d56f273c64d6114ac22",
+            "content": "sha256:47b6a5fa55d37ea03c77bd20b9ea2cc9e1b42ccf187812726a747f166f401139",
             "locator": {
-              "end": 5090,
+              "end": 5127,
               "kind": "line_range",
-              "start": 5041
+              "start": 5073
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -130,12 +130,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41e4f40f552f5e6b287bcd178bbc5cf6bc1c5dd7",
+            "blob": "950bfd7c3c2db68a87d13d58bc6ce7e2d52ff634",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 746,
+              "end": 747,
               "kind": "line_range",
-              "start": 746
+              "start": 747
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

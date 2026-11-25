@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "4ebb429de6b3034e7bff1922b3f8982b2ccafa07",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "d2d3845baf9541100f06371fde62c4c0bb678b04",
+    "commit": "3ee8f6ad584e509ef6df637c1bb42484993b35d0",
     "role": "curator",
-    "statement": "docs/concepts.md remains accurate after the mcp>=1.30.0,<2 floor change in mcp/pyproject.toml because the memory concepts, briefs, index, and gate contracts are unchanged.",
-    "task": "261125-DEP-L1",
+    "statement": "Verified against synced L38 candidate on 3ee8f6ad/b83cff67: docs/concepts.md (lines 1-972) accurately defines tool answers, archived role agents (recipient-archived), message filing, held messages, and archive-before-enclosure-removal, consistent with L38.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 22,
+  "revision": 23,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -196,7 +196,7 @@
       "path": "mcp/src/agents_remember/application/tool_answer_log.py"
     },
     {
-      "blob": "62215ea0a5252c997ca76c7b1680713485391419",
+      "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/role_reports.py"
     },
@@ -226,7 +226,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+      "blob": "9124be375703846117abf9f0f4fee05c1044befd",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
@@ -236,7 +236,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_first_run.py"
     },
     {
-      "blob": "d926d3af762b8b31579204690834fb6f694fae7f",
+      "blob": "80babc20d5489293a2655a12c1216434ca7313d5",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_message_files.py"
     },
@@ -371,7 +371,7 @@
       "path": "mcp/src/agents_remember/controlplane/closeout_queue_store.py"
     },
     {
-      "blob": "0545be4ce99a465c6e590e0c19385c91e54191db",
+      "blob": "64084f98803199c3d7bae4ce76810611b0578a13",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -471,14 +471,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T20:08:06+01:00",
+    "at": "2026-11-25T22:06:22+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L1",
+    "leaf": "261112-BUG-L38",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b5f00ccb-ae71-451c-bfff-3ee2a7ac6155",
-    "task": "261125-DEP"
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
   }
 }

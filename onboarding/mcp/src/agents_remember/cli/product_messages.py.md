@@ -14,4 +14,5 @@ The operation resolves the recipient by task references, checks the task message
 
 ## Evidence
 
+
 - The sender uses the shared filing, delivery and hold steps with the product identity. [1]

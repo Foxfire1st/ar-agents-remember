@@ -21,6 +21,58 @@
       "role": "presentation"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Deterministic mirrored-path card lookup, bounded `read_ar_files` brief/compact row degradation, and names-and-locations-only `knowledge_read`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "091b5825d902374c8f55297f96a361589fef324b",
+            "content": "sha256:4cc6834b980a2cd8af4426c181b80fab081ccbc9238a49a036804809ace5f79f",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Anchor staleness reporting (`context_packet` `include_drift`, `knowledge_read`, `citation_fix`) versus exact-tree closeout knowledge-gate blocking.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "091b5825d902374c8f55297f96a361589fef324b",
+            "content": "sha256:167bd538b709724d2d471d6663d0794948de9661d87246f0c6f1276c6c6b621b",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Separate Git memory repository and Git-ignored `memory.md` computed from `Code-Commit` trailers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "091b5825d902374c8f55297f96a361589fef324b",
+            "content": "sha256:946d6089867f7b5fe0acc9d3512555d32765b8640402305fc2cbced816a21471",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

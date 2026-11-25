@@ -53,7 +53,7 @@ worktree group, `worktrees/<repo>/<master>-ar`, since L10 — before censusing l
 `task_root / "enclosures"`; a legacy series contract still recording the task enclosure root as
 its group is refused here. `series_reports_is_child_enclosure` detects a child leaf literally
 named `reports` whose enclosure shares the series reports directory. `legacy_series_reports_is_child_enclosure`
-— the guard `cleanup.py` / `abandon.py` actually call before removing the series reports tree —
+— called by `terminal_group.legacy_series_directories` (for terminal cleanup and abandon) and `abandon._abandon_directories` (for sprint archive) —
 restricts that preservation to legacy-shape contracts (group still equal to the task enclosure
 root), because current contracts keep series reports under the worktree group, where no child
 enclosure can live.
@@ -115,22 +115,30 @@ None.
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
 
+
 - External-memory preflight excludes the root cache while preserving other dirtiness. [1]
+
 
 - Defines the class `BranchTarget`. [2]
 - Defines the class `TerminalPreflight`. [3]
 - The series child census fails closed on a non-canonical worktree group; the legacy guard preserves a colliding child `reports` enclosure only for legacy-shape contracts. [4]
 
-- Defines the function `terminal_preflight`. [5]
+
+- Defines the function `terminal_preflight`. Anchor: `terminal_preflight` [5]
+
 
 - `TerminalExpectation` states what one collection must show: the field that proves reclamation, whether it is a preview, and the benign reasons. [6]
 - `TerminalResult` bundles one terminal operation's output collections with whether they are a preview or what happened. [7]
 - Defines the function `terminal_result_blockers`. [8]
 
+
 - Defines the function `_worktree_preflight`. [9]
 
 
+
+
 - Builds the exact code and optional external-memory terminal branch targets owned by the validated contract. [10]
+
 
 - Defines the function `_branch_preflight`. [11]
 - Defines the function `_local_absent_remote_preflight`. [12]
@@ -138,14 +146,20 @@ This module defines the top-level symbols cited below; each row points at the ex
 - Defines the function `_branch_refs_refusal`. [14]
 - Defines the function `_branch_checkout_refusal`. [15]
 
+
 - Defines the function `_cleanup_branch_preflight`. [16]
+
 
 - Defines the function `_abandon_branch_preflight`. [17]
 - Defines the function `_branch_presence`. [18]
 - Defines the function `_checked_out_paths`. [19]
 - Defines the function `_remote_branch_preflight`. [20]
+
 - Defines the function `_provider_blockers`; every provider, container and network blockage it emits goes through `_blocker`. [21]
+
+
 - Defines the function `_result_blockers`, which reads each collection through a `TerminalExpectation`. [22]
+
 - Every entry the expectation says must have been reclaimed and was not. [23]
 - The remote half of a branch entry, reported separately from the local half. [24]
 - Answers a result item's reason, or why it carries none: `invalid-result` for a malformed item, operator language for a reasonless one. [25]

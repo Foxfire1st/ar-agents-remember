@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake",
+      "family_guarantee"
+    ],
+    "justification": "Focused blocker-reason tests verify that valid provider teardowns are not misclassified as blockers while real provider refusals never lose their diagnostic reason."
+  },
+  "applicability": "Terminal validation of provider teardown outputs (containers, networks, and provider-runtime directories).",
+  "conditions": [
+    "Validation reads removed and would_remove from the provider result contract and retains producer refusal reasons on blockers."
+  ],
+  "exclusions": [
+    "Reasons from non-provider terminal collections keep their own component validators."
+  ],
+  "id": "INV-2XN0BV",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The Worker freeze report binds focused verification on this tree."
+      ],
+      "path": "l38-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R38@v1 rule 4 provider results",
+    "leaf": "261112-BUG-L38",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Cleanup accepts removed provider containers, networks and runtime directories and keeps the producer's reason when removal is refused.",
+  "supersedes": [],
+  "title": "Cleanup accepts removed provider resources and keeps refusal reasons",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
+}

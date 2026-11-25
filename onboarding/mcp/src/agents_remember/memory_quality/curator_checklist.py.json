@@ -180,18 +180,17 @@
       ]
     },
     "8": {
-      "note": "Leaf cleanup processes the reserved reports and lifecycle directories and the retained logs before it attempts to remove the enclosure.",
+      "note": "Terminal cleanup moves out preserved reports, real messages, and leaf tool calls before removing the entire worktree group.",
       "targets": [
         {
           "anchor": {
-            "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
-            "content": "sha256:50aaee163db9558cc7a39c19053653d60eb4d0140ab608c84b3c77405c8685f1",
+            "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+            "content": "sha256:5af32e9ea1f995605f5a9e53ac8cc584e908e9e67d93dfe6d2ee67e4187c13c5",
             "locator": {
-              "end": 412,
-              "kind": "line_range",
-              "start": 353
+              "kind": "symbol",
+              "name": "remove_terminal_group"
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_group.py"
           },
           "kind": "code"
         }

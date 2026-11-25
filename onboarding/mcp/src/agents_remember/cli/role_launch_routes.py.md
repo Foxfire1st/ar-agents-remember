@@ -55,7 +55,9 @@ The options and dispatch endpoints share a `launcher_catalog_question` context f
 
 
 
+
 - Frozen takeover and requested reason are recorded before the host call. [18]
+
 
 
 - The launch-warning builder puts missing requirement filenames before the step-up notice. [19]
@@ -66,7 +68,9 @@ The options and dispatch endpoints share a `launcher_catalog_question` context f
 - Interrupts between receipt and call and checks retry retains one agent identity. [6]
 
 
-- Races publication and checks one persisted winner; competing request cannot issue another launch. [8]
+
+- Races publication and checks one persisted winner; competing request cannot issue another launch. Anchor: `RepeatAndConflictTests.test_a_task_bound_receipt_is_created_exclusively` [8]
+
 
 - Checks path, bytes, digest, read-only mode, exact reuse and conflicting-content refusal. [9]
 - Checks size limit and refuses links without changing their target. [10]
@@ -94,7 +98,9 @@ Investigator dispatch uses the existing selection admission lock; options expose
 
 
 
+
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [7]
+
 
 
 
@@ -109,7 +115,9 @@ Investigator dispatch uses the existing selection admission lock; options expose
 
 
 
+
 - Frozen implementation of _launch_prepared_role_session supporting the stated file behavior. [3]
+
 
 
 
@@ -122,7 +130,9 @@ Investigator dispatch uses the existing selection admission lock; options expose
 
 - The route registrar mounts the document-chat tree beside the selected read and report routes. The tree handler uses one live-agent census for its receipt-derived answer. [14]
 
+
 - The starting receipt carries task-copy metadata and warns of missing requirement copies, putting the missing filenames ahead of step-up advice. Later canonical task publication refreshes the copies when the files exist. The start answers with the projected identity and handover addresses; for a directly started Reviewer or Curator the whole `role_start` result can also carry the product start-message result (`productMessage`), which the compact answer projection does not keep. [15]
+
 
 
 
@@ -145,5 +155,6 @@ After creating the starting receipt, the launch calls `_record_manager_start` be
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/role_launch_routes.py:1-640 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b40efb87cc614ff1751c296da2c47e6f85b195f4; mcp/src/agents_remember/cli/role_launch_routes.py:1-906 - the region it cited is not in the file at the candidate and no re-point was possible. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 - The launcher invokes the notice owner after a successful dispatch response. [28]
+
 
 - The starting receipt retains the workspace brief advisory in preparation, and the role start answer can carry it in the warning. [29]

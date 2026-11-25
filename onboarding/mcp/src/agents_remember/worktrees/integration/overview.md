@@ -146,7 +146,9 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 
 
+
 - Default services bind the current memory/gate ports without a prepared producer or continuation; separately, explicit core finalization authority requires exact green Gates 1–5 and current Gate-5 memory inputs. These contracts do not make certification an ordinary closeout prerequisite. [22]
+
 
 
 

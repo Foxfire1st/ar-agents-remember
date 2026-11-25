@@ -5,7 +5,7 @@
     ],
     "justification": "Removing the agents alone still lets a closing lie about an owed target or let a prepared start publish a live execution past the boundary; the rules together promise an outcome none promises alone."
   },
-  "guarantee": "A closed leaf archives exactly its own recorded role agents before the worktrees are removed, whether idle or in a turn, and reports the truth about every archived, already-archived, gone, owed and left-alone target. A prepared start whose agent is not yet created is refused once its leaf's closing mark is present and its settlement says so; a start whose creation is already entered is not waited for — its minted target stays receipt-owned debt until the returned agent is archived and the start refused, without erasing the retirement record. The family does not promise an instantaneous no-live state while an entered creation's archival is still owed.",
+  "guarantee": "A closing leaf or modern series task archives exactly its own recorded in-group role agents before worktrees and the task folder are removed, settles each closed seat's waiting held messages into the launch receipt before removing its store, reports the truth about every archived, already-archived, gone, owed and left-alone target, and blocks task-folder removal whenever any seat remains owed, left alone, failed, or unbound with receipts. Prepared role launches publish only into their active enclosure generation, and terminal retries remove only their own generation: a prepared start whose agent is not yet created is refused once its closing mark is present or its enclosure is terminal, while an already-entered creation stays receipt-owned debt until archived.",
   "id": "FAM-VNK792",
   "members": [
     "INV-F1TY2E",
@@ -17,7 +17,9 @@
     "INV-FEB6Y6",
     "INV-GM5MS3",
     "INV-VPXD65",
-    "INV-AJKQV2"
+    "INV-AJKQV2",
+    "INV-HBMPXC",
+    "INV-4CJ7H0"
   ],
   "origin": {
     "handoff": {
@@ -27,7 +29,7 @@
     "leaf": "260928-MIK-L76",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "mcp/src/agents_remember/application",
     "mcp/src/agents_remember/cli",
@@ -37,6 +39,16 @@
     "mcp/src/agents_remember/worktrees"
   ],
   "schema": "ar-family/v1",
-  "status": "proposed",
-  "title": "A closed leaf archives its recorded role agents and publishes no prepared start as running past the closing mark; an entered creation is archived on return"
+  "title": "Closing tasks archive in-group seats, settle stores, and fence launches",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

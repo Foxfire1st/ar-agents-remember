@@ -1,6 +1,41 @@
 {
   "path": "mcp/tests/test_automatic_post_integration_cleanup.py",
-  "proves": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "173134e236126cc023f3cdc9c052f77d724a174b",
+        "content": "sha256:697ce62f15baf2a8d852be75129db889e3ce85f8ece4f90ff953fd561dad9568",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_finalize_removes_unlisted_task_folder_contents"
+        }
+      },
+      "facet": "Exercises test_finalize_removes_unlisted_task_folder_contents to verify move-out saves reports and real messages; seat close records waiting text.",
+      "id": "PRF-35WA07",
+      "invariant": "INV-R850AZ",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 2",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "173134e236126cc023f3cdc9c052f77d724a174b",
+        "content": "sha256:697ce62f15baf2a8d852be75129db889e3ce85f8ece4f90ff953fd561dad9568",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_finalize_removes_unlisted_task_folder_contents"
+        }
+      },
+      "facet": "Exercises test_finalize_removes_unlisted_task_folder_contents to verify terminal cleanup and abandon remove the task folder in full.",
+      "id": "PRF-516PCK",
+      "invariant": "INV-JCDV4P",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 1",
+        "leaf": "261112-BUG-L38"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -8,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aeaa62aa1862b85d188edb28925a8d39123c27ad",
+            "blob": "173134e236126cc023f3cdc9c052f77d724a174b",
             "content": "sha256:dd8c6de904bc709f1c4d75be216102cc95ad5b63ffbe0b646b86237b99c0bef8",
             "locator": {
               "end": 28,
@@ -43,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
-            "content": "sha256:0ca1fc1d90191c59879780dfa605be2927cea690034f76e7255aff81f1bd1cf7",
+            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "content": "sha256:033a560188ccb2030f55658d9c9c6188196cf5dbba375b84f3599a150fde0d75",
             "locator": {
-              "end": 371,
+              "end": 373,
               "kind": "line_range",
-              "start": 312
+              "start": 310
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
           },
@@ -56,11 +91,12 @@
         },
         {
           "anchor": {
-            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
-            "content": "sha256:0ca1fc1d90191c59879780dfa605be2927cea690034f76e7255aff81f1bd1cf7",
+            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "content": "sha256:e87a6de9f58d5c1f93635715c5e87e37bdc6fe1fbcdbbc5628b6b494ed021013",
             "locator": {
-              "kind": "symbol",
-              "name": "_run_or_verify_cleanup"
+              "end": 373,
+              "kind": "line_range",
+              "start": 312
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
           },

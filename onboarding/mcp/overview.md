@@ -993,7 +993,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 - The contract loader reads through the recorder. [375]
 - The removed repository memory root is resolved through the recorder. [250]
 
+
 - The host step of the install. [251]
+
 
 - The packaged host contract. [252]
 - The shared application route owns the converted-layout marker check that the CLI routes import. [376]
@@ -1033,7 +1035,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 
 - Complete current-boot host reconciliation and the supervisor subscription precede binding activity to tasks. [325]
 
+
 - Replayed role launch publishes receipt identity before invoking its host launch call. [326]
+
 - TaskSummary bodies use a separate bounded generation-qualified cache, with content-derived revision. [327]
 - Obsolete terminal lock cleanup requires a complete canonical-contract census and preserves any subject not proved terminal. [328]
 - The current declared pair is 10000 unit and 2000 integration selected cases. Earlier unit-only raises kept their integration ceiling unchanged at that time. [329]
@@ -1042,13 +1046,17 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 
 - Worker code and Curator memory failures count independently; incomplete history stays unknown. [331]
 
+
 - The saved-call executor rechecks the named step-up predecessor before archiving it. A found, unarchived predecessor must be idle and prompt-free. [332]
+
 
 - Step-up launch metadata is reconciled through the canonical task writer. [333]
 - Frozen detail identities and bytes are checked rather than recomputed. [334]
 
 
+
 - An eligible settled empty step-up retains its ordinary retryable call. If the recorded native Antigravity agent is absent, Retry settles the refusal and drops the call. [335]
+
 
 
 - The response requires judgment and retains knowledge/source identity without the removed supporting-record fields. [337]
@@ -1133,7 +1141,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - Supported code media is returned before text-size refusal and the reader renders its media state. [403]
 - Knowledge media URLs use the selected memory commit; byte delivery applies its actual16MiB bound. [404]
 
-- The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md. [402]
+
+- The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. [402]
+
 
 - General families plus four explainer additions, narrowed to the allowlist of a bound role; the seat check covers only those four while the process still serves them [405]
 

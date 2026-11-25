@@ -15,6 +15,8 @@ Fixtures assert existing master code/memory checkouts, no leaf enclosure materia
 ## Evidence
 
 
+
 - Pins grant-backed direct workspace preparation and scoped-reader admission [1]
+
 
 - The Reviewer start-moment request uses the direct leaf's series checkouts and base. [2]

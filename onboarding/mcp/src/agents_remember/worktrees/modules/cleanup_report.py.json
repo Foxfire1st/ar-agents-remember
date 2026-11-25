@@ -204,12 +204,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
-            "content": "sha256:0ca1fc1d90191c59879780dfa605be2927cea690034f76e7255aff81f1bd1cf7",
+            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "content": "sha256:033a560188ccb2030f55658d9c9c6188196cf5dbba375b84f3599a150fde0d75",
             "locator": {
-              "end": 371,
+              "end": 373,
               "kind": "line_range",
-              "start": 312
+              "start": 310
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
           },
@@ -222,7 +222,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
+            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
             "content": "sha256:ff54030cc900be402922f368567c3a8c559d371293fe19f30e703709e05c7a7d",
             "locator": {
               "kind": "symbol",

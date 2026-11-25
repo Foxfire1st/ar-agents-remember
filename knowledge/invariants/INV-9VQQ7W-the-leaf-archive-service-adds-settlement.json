@@ -5,13 +5,13 @@
     ],
     "justification": "Artifact preservation is proved by the focused suite."
   },
-  "applicability": "Every report, handover artifact, launch record and host chat of an archived leaf agent.",
+  "applicability": "Every launch receipt admitted by the closing archive service.",
   "conditions": [
-    "Archiving removes the agent from the host's live list only.",
-    "The product deletes nothing it authored."
+    "Waiting messages are persisted with their exact text onto the launch receipt before the held store file is removed.",
+    "Launch status, report paths, handover references, and retained host chat/artifacts are preserved."
   ],
   "exclusions": [
-    "The host's chat retention duration is the host's behaviour and is not claimed."
+    "Unreadable, malformed, or conflicting receipts are reported in leftAlone rather than modified."
   ],
   "id": "INV-9VQQ7W",
   "origin": {
@@ -25,9 +25,20 @@
     "leaf": "260928-MIK-L76",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The leaf archive service adds settlement to launch receipts while preserving launch/report/handover fields and uses host archival rather than deleting retained chat or artifacts.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "The leaf archive service adds settlement to launch receipts and settles each closed seat's held-message store (recording waiting text in heldStoreClosures and unlinking the store) while preserving launch/report/handover fields and using host archival rather than deleting retained chat or artifacts.",
+  "supersedes": [],
+  "title": "Archive service settles receipts and held stores while preserving artifacts",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

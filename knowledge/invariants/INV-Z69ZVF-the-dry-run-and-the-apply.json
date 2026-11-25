@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Dry-run target checking in worktrees/modules/kept_tool_calls.py and preview/apply blocker wiring in worktrees/modules/terminal_group.py keep dry-run parity with real removal."
+  },
+  "applicability": "Preview and live apply of leaf terminal cleanup and abandon.",
+  "conditions": [
+    "Dry-run destination checks verify symlink safety, target kind, and parent writability before any deletion."
+  ],
+  "exclusions": [
+    "Leaves with no tool-call log files report no keep blocker."
+  ],
+  "id": "INV-Z69ZVF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The preview/apply blocker test passed in the independent focused run on code tree bebb70ce8a4582d088e0813c2842ce9007df592d."
+      ],
+      "path": "l38-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R38@v1 rule 4 · post-sync keep blocker",
+    "leaf": "261112-BUG-L38",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The dry run and the apply name a failed tool-call keep as the directory blocker that stops the whole-folder removal.",
+  "supersedes": [],
+  "title": "Terminal dry run and apply both block on a failed tool-call export",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
+}

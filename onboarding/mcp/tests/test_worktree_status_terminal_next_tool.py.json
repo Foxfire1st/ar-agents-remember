@@ -76,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "679738f5c67a232503aaba3bd574cfe307d33620",
-            "content": "sha256:82bd75e61cab5ed4053e17c48428a418a317411caea5f88538830609b97e91d4",
+            "blob": "e3aeef936b42a9eed87c2c1bf4687b6b9cb36d62",
+            "content": "sha256:7f8d00e896a1e4b11565212c96ec2fc81e764ba9b9be8742dccd1c8c4ceca4e8",
             "locator": {
-              "end": 123,
+              "end": 132,
               "kind": "line_range",
-              "start": 61
+              "start": 59
             },
             "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py"
           },

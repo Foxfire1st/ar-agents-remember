@@ -85,7 +85,9 @@ No configured domain documentation could be checked.
 - - **The read-back operation itself.** [21]
 - - The destination rule that makes a traversal or a nested name unrepresentable. [22]
 - - The shipped curator-coherence route that owns "leaf evidence parked where it survives". [23]
-- - The cleanup that removes an enclosure-local `reports/` directory, which is why that path is refused. [24]
+
+- The cleanup module that owns enclosure-local `reports/` and whole-folder removal (`terminal_group.py`), which is why that path is refused for durable evidence. [24]
+
 - - The terminal-evidence owner bounds canonical artifact admission; archives retain that exact content set. [25]
 
 ### Cross-Repo References

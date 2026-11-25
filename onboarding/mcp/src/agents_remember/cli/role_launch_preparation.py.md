@@ -112,13 +112,15 @@ The `roleTools.usage` value this module compiles now tells a role that a reply i
 ## Evidence
 
 
+
 - The shared preparer resolves launch choices before workspace preparation, then compiles the bound task readers and handover. [1]
+
 
 
 - Frozen implementation of _ar_mcp_context supporting the stated file behavior. [2]
 
 
-> Retained earlier citation wording: - The `_resolve_workspace` implementation now lives in its extracted owner. [3]
+> Retained earlier citation wording: - The `_resolve_workspace` implementation now lives in its extracted owner.
 
 
 
@@ -181,16 +183,22 @@ Source: mcp/src/agents_remember/cli/role_launch_preparation.py:1-963
 ## Evidence
 
 
+
 - Selection validation and the native Antigravity refusal run before workspace and enclosure preparation. [11]
+
 
 
 - Defaults extraction preserves host-role lookup. [12]
 
 
+
 - The preparer compiles instructions, names the canonical task and copied documents, and records the starter and leaf peers through their bound role addresses. [10]
 
 
+
+
 - The handover composes source-bound details and includes the resulting instruction digest in the immutable message binding. [13]
+
 
 
 
@@ -206,7 +214,9 @@ Source: mcp/src/agents_remember/cli/role_launch_preparation.py:1-963
 - The assignment the bootstrap seat carries, which names no task. [16]
 
 
-- The `_resolve_workspace` implementation now lives in its extracted owner.  Anchor: actual current supporting source [3]
+
+- The `_resolve_workspace` implementation now lives in its extracted owner. Anchor: actual current supporting source [3]
+
 
 
 

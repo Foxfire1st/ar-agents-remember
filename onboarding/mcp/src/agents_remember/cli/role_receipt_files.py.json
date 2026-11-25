@@ -1,0 +1,108 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_receipt_files.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "88a95ecfda6809b6b8259b8b7c9ec01ff0fef9f8",
+        "content": "sha256:f24e033cca1cc382a8d8a78fa54bc07b7926b514890f44120f3d0c2b55f083b1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_create_receipt"
+        }
+      },
+      "id": "RLZ-E1BBP0",
+      "invariant": "INV-FMB2AG",
+      "origin": {
+        "handoffEntry": "PNT-R03@v1 §4 / D2",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Publishes the finished receipt exclusively before workspace/agent launch.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "88a95ecfda6809b6b8259b8b7c9ec01ff0fef9f8",
+        "content": "sha256:f24e033cca1cc382a8d8a78fa54bc07b7926b514890f44120f3d0c2b55f083b1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_create_receipt"
+        }
+      },
+      "id": "RLZ-W0BJG0",
+      "invariant": "INV-HE16XQ",
+      "origin": {
+        "handoffEntry": "PNT-R03@v1 §12 / G6 / A9 / A18",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Links a finished temporary receipt under its final name with exclusive creation.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`_install_initial_receipt` writes an fsynced temp file and links it with `os.link(..., follow_symlinks=False)`, returning `False` on `FileExistsError` without overwriting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88a95ecfda6809b6b8259b8b7c9ec01ff0fef9f8",
+            "content": "sha256:cafe0534213b85ff5f0809e6021ef3d1ca5458b65b99dfa6ff20f60eb2d2ce92",
+            "locator": {
+              "kind": "symbol",
+              "name": "_install_initial_receipt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_leaf_before_create` verifies same-request identity, non-closed state, and `leaf_workspace_allows_creation` under the receipt lock before recording `heldOpenPending` or `leafCreateEntered`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88a95ecfda6809b6b8259b8b7c9ec01ff0fef9f8",
+            "content": "sha256:98a3724deb8980c3692427443cb8f5ad58efa0ce54aff8288b8bfaf03bb30995",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_before_create"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_archive_receipt` settles the seat's held store under the receipt lock when closed or host-confirmed before moving the receipt into history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88a95ecfda6809b6b8259b8b7c9ec01ff0fef9f8",
+            "content": "sha256:bb68d9e8c51e68d409b10c045b2fe99d8290a5b7e5ad84c794031527f53ed950",
+            "locator": {
+              "kind": "symbol",
+              "name": "_archive_receipt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_move_receipt_to_history` closes settled predecessor folders, rejects existing history collisions, strips `reportCollectionFiles`, and moves the receipt via `path.replace`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88a95ecfda6809b6b8259b8b7c9ec01ff0fef9f8",
+            "content": "sha256:147ddb0b34ad26572b0856e1c48a3ee1aa2d09ef671309575dad2a678b08fbcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_move_receipt_to_history"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

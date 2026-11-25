@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "978e410ca88ebabc20fc598a05870dd8f8efed1a",
-    "commit": "e8a96f6e2255155d733dd15dcba56bd26e46097e",
+    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "The workflow guide describes granted leaves in the master pair, the exact candidate gate and direct-landing controls, and how a participating source-line sync advances the recorded memory base while a repository-default sync preserves the recorded pair.",
-    "task": "261112-KNO-L4",
+    "statement": "docs/workflows.md (lines 109-132, 207-219) accurately describes enclosure creation, lifecycle_finalize_task/worktree_cleanup/worktree_abandon removing worktrees and the enclosure folder, and agentArchive reporting {archived, alreadyArchived, gone, owed, leftAlone}.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/workflows.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "mcp/src/agents_remember/models/task_document.py"
     },
     {
-      "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
+      "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },
@@ -61,7 +61,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
     },
     {
-      "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+      "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
     },
@@ -155,5 +155,16 @@
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

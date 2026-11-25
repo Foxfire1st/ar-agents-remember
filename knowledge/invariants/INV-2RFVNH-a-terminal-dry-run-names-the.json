@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Preview coordination in worktrees/modules/terminal_group.py and dry-run target verification in worktrees/role_reports.py surface move-out and directory blockers before destructive execution."
+  },
+  "applicability": "Dry-run preview of worktree_cleanup and worktree_abandon for leaf and series enclosures.",
+  "conditions": [
+    "Preview inspects directory writability, symlink boundaries, report/message/tool-call move-out, and seat readiness before any deletion."
+  ],
+  "exclusions": [
+    "Dry run never mutates worktrees, branches, receipts, or task folders."
+  ],
+  "id": "INV-2RFVNH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The Worker freeze report binds focused verification on this tree."
+      ],
+      "path": "l38-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R38@v1 rule 4",
+    "leaf": "261112-BUG-L38",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A terminal dry run names the task folder and any directory or move-out blocker before deletion.",
+  "supersedes": [],
+  "title": "Terminal dry run names the task folder and every directory or move-out blocker",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
+}
