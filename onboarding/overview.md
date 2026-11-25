@@ -340,6 +340,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 
+
 - Retained reference account (no fresh execution or acceptance inferred): The order declares `certification` between `models` and `controlplane`. [31]
 
 - Retained reference account (no fresh execution or acceptance inferred): The layering checker loads that one contract, rejects undeclared package directories and reports an invalid dependency direction. [32]
@@ -690,7 +691,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 
+
 - The registrar mounts the knowledge read, diff, integrity and write operations; change and project are removed. [30]
+
 - Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's writer input section. Anchor: `## The writer's input sections` [21]
 
 - Canonical source-bound onboarding and separate row domains. [331]

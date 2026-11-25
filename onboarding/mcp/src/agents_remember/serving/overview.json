@@ -739,12 +739,12 @@
         },
         {
           "anchor": {
-            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
-            "content": "sha256:6c2f39c65cda4d255ad701f825e72b8c99dbd6746255ec0b19deb70dafeaecd1",
+            "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
+            "content": "sha256:afe208da1375b31816ed0a9d1825ec726f09e649a6a28c733576e072ef19c953",
             "locator": {
-              "end": 459,
+              "end": 470,
               "kind": "line_range",
-              "start": 437
+              "start": 446
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },

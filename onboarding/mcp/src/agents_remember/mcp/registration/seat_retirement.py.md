@@ -26,5 +26,4 @@ No Domain Documentation source is configured for this repository-specific bounda
 
 
 - Native child retirement registration: implementation/assertion boundary described above. [1]
-
-- The retire_child signature stays strict while the payload loads only when retirement is invoked. [2]
+- The `retire_child` signature stays strict while the payload loads only when retirement is invoked. [2]

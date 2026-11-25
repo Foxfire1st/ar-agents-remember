@@ -531,12 +531,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
+            "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
             "content": "sha256:7403fc53f7d92a57cb8563f17fa2ce8a42b91877c7139744ada91dedc03874f5",
             "locator": {
-              "end": 253,
+              "end": 215,
               "kind": "line_range",
-              "start": 253
+              "start": 215
             },
             "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
           },

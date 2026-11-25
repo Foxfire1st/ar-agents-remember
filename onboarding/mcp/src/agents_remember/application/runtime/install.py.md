@@ -62,7 +62,11 @@ currentness (`server_inventory`); that read removes the record files of dead pro
 
 - The tool maps its booleans into `RuntimeInstallRequest` and hands that request unchanged to `runtime_install_payload`. [1]
 
+
+
 - The tool declaration exposes `runtime_install` as a public tool. [2]
+
+
 
 - The service layer defines `RuntimeInstallRequest` and performs the actual runtime install. [3]
 

@@ -56,23 +56,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
-            "content": "sha256:092f9f87d66101442e093263ffeb49572740bf2f5dfa6b927c9eb32c6690dc38",
+            "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
+            "content": "sha256:28d4eca46f082d6da92d994016488d10bf4d6c730e8d5a8b3d196a30057b7bbd",
             "locator": {
-              "end": 88,
-              "kind": "line_range",
-              "start": 36
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
-            "content": "sha256:5ff6a6bff7142aa143d48f6f69a04f78bed3515004ad96ff98ce847d02c44705",
-            "locator": {
-              "end": 87,
+              "end": 74,
               "kind": "line_range",
               "start": 36
             },

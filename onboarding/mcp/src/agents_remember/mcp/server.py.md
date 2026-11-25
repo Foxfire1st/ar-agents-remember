@@ -22,7 +22,7 @@ Every `@server.tool()` declaration and its model-visible docstring lives in
 looking for what a tool advertises, what it refuses, or which payload builder it forwards to, that
 is the [registration route overview](registration/overview.md), not this file.
 
-Starts the configured MCP application with the ordinary registration families, adds the four explainer tools for a valid explainer launch, and narrows the registered tools to the allowlist of a bound role.
+Starts the configured MCP application with the ordinary registration families, adds the four explainer tools for a valid explainer launch, compacts every registered tool's advertised `inputSchema` in place (`_compact_server_tool_schemas`), and narrows the registered tools to the allowlist of a bound role.
 
 ## Code Commentary
 
@@ -43,11 +43,15 @@ A native invocation opens a lazy request memo and clears its shared owner map af
 5. `apply_read_only_marks(server)` applies the single `mcp/read_only.py` inventory to every registered
    tool. An unlisted name raises `UnknownReadOnlyMark`; server creation fails rather than advertising
    an unmarked tool. This step changes annotations, not registration order or handler ownership.
-6. `_bound_role_tools` reads the agent binding after the marks. An unbound process keeps the whole
+6. `_compact_server_tool_schemas(server)` compacts every registered tool's advertised `parameters`
+   (`inputSchema`) in place through `models.tools.tool_schema_compaction.compact_tool_schema`,
+   covering unbound, role-bound, and explainer surfaces alike without altering registration order,
+   read-only annotations, or runtime Pydantic argument validation (`fn_metadata.arg_model`).
+7. `_bound_role_tools` reads the agent binding after compaction. An unbound process keeps the whole
    registered roster. A readable role binding keeps that role's `tools_for_role` allowlist, plus the
    explainer's four tools when an explainer seat is also bound, and `_scope_server_tools` removes every
    other registered tool through FastMCP's `remove_tool`, so the survivors keep their registration
-   order, schemas and read-only annotations. A present but unreadable binding keeps only `server_info`.
+   order, compacted schemas and read-only annotations. A present but unreadable binding keeps only `server_info`.
 
 `run_server(config)` records this process in the running-server registry as an `"mcp"` server (`register_server`), runs `create_server(config).run()`, and calls the returned cleanup when serving ends; the cleanup removes the record and is also registered to run at normal process exit.
 
@@ -206,9 +210,8 @@ Potentially mutating synchronous calls hold one per-server lock until their work
 
 
 
-- `create_server` builds the FastMCP instance, invokes the registered tool families, and narrows the result to the allowlist of a bound role. [1]
-
-- `create_server` installs compact content, initializes the application services, registers every tool family, adds a bound explainer surface, applies the read-only marks, and then removes every tool outside the allowlist of a bound role. [7]
+- `create_server` builds the FastMCP instance, invokes the registered tool families, compacts every advertised `inputSchema` in place (`_compact_server_tool_schemas`), and narrows the result to the allowlist of a bound role. [1]
+- `create_server` installs compact content, initializes the application services, registers every tool family, adds a bound explainer surface, applies the read-only marks, compacts every registered tool's advertised `inputSchema` in place (`_compact_server_tool_schemas`), and then removes every tool outside the allowlist of a bound role. [7]
 
 - `_bound_role_tools` resolves the binding precedence, and `_scope_server_tools` removes every tool outside a role's allowlist after the read-only marks, keeping the survivors' order. [20]
 

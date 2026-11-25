@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "764f146c5670470b3c8c10f5a5a7be9b66df5fac",
-    "commit": "e51f75630087a00bdcacaab646541e9cb04356d6",
+    "codeTree": "40e2c033f5400b856352fc47dd738796945d289d",
+    "commit": "65c40d296ac2f951e9359eae653c7df43fed2436",
     "role": "curator",
-    "statement": "On merged code e51f75630 the concepts guide still explains path-based memory reads, cache identity, drift reporting and exact-pair knowledge gates; it also explains briefs, derived record states, writer stamps, the knowledge index and the tool log, including the cancelled-request rows added by BUG-L27.",
+    "statement": "On merged code the concepts guide still explains path-based memory reads, cache identity, drift reporting and exact-pair knowledge gates; it also explains briefs, derived record states, writer stamps, the knowledge index and the tool log, including the cancelled-request rows added by BUG-L27, and CAP-L4's lossless schema compaction and 44-tool description optimization preserve those concepts while the synced closeout/tasks text keeps 'invariant gate' (closeout.py lines 85 and 105) and 'waiting-only closeout projection' (tasks.py line 21).",
     "task": "261112-BUG-L37",
     "uncommitted": false
   },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 20,
+  "revision": 21,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -131,17 +131,17 @@
       "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
     },
     {
-      "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
+      "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
     },
     {
-      "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+      "blob": "bbc1541e4379d1cf2c834fbc40cb53f596f21dfd",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },
     {
-      "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+      "blob": "728e1d545134c9f832582a1ef5e23a03ade92276",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
     },
@@ -440,7 +440,7 @@
     },
     {
       "anchor": {
-        "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+        "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
         "content": "sha256:f399b92836a8c99c6001040ff99ac8146c3f7cf6d7eb4526c5996a6ffc97159a",
         "locator": {
           "kind": "symbol",
@@ -453,7 +453,7 @@
     },
     {
       "anchor": {
-        "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+        "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
         "content": "sha256:bc5079ebff54878518d0de262728685e89d6d820723ee8478daa47377d0c274a",
         "locator": {
           "kind": "symbol",
@@ -469,5 +469,16 @@
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/thread_workers.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T15:29:55+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L37",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "4e0ea222-083c-4c22-aef2-1fc120d81ee2",
+    "task": "261112-BUG"
+  }
 }

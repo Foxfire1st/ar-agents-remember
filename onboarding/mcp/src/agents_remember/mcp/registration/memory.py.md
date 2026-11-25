@@ -31,14 +31,18 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 The retained `citation_fix` declaration adds flat `mode="sync"|"start"|"poll"` and optional `run_id` beside its repository, contract, document selection and `dry_run` arguments. Start is a preview only and polling repeats the admitted scope without document selectors. This flat interface is distinct from the memory-quality tool's discriminated `request` object. No background write mode is advertised or admitted.
 
 
+
 - The public declaration forwards mode, run ID and frozen selectors through one payload owner. [20]
+
 
 
 ## Current source contract
 
-The memory-quality description names knowledgeWorklist state/path/digest/counts/unreadable inputs and knowledgeGate exact-tree verdict/finding counts in full leaf logs. It keeps validated curator_coherence separate and states that conversion, index building, formatting and worklist computation have no separate MCP tool. These descriptions do not change the admitted request or make the quality result semantic certification.
+The memory-quality description names findings, counts, and checklist location (not semantic certification), mode sync/start/poll with `contract_path` for candidate runs, full leaf logs including `knowledgeWorklist` and `knowledgeGate`, and separate validated `curator_coherence` (pointing to `docs/tool-details.md`). These descriptions do not change the admitted request or make the quality result semantic certification.
 
-- MQC docstring names knowledgeWorklist and knowledgeGate full-log fields and retains coherence boundary. [21]
+
+- MQC docstring names findings/counts/checklist, mode sync/start/poll, full-log knowledgeWorklist and knowledgeGate, and separate validated curator_coherence. [21]
+
 
 ## Historical original card — preserved, not the current operative account
 
@@ -142,7 +146,9 @@ No configured external domain source applies.
 
 
 
+
 - The `MemoryBranches` parameter object. [4]
+
 - The `CarryoverSelection` parameter object. [5]
 
 
@@ -151,7 +157,9 @@ No configured external domain source applies.
 
 
 - The scope object the citation operations share: it carries one named document or a bounded list of them, and refuses both selectors, an empty list, or a list outside `citation_fix`. [12]
+
 - The application entry points use DEFAULT_CITATION_OPERATION_SCOPE by default; a scope with no document selector covers the whole card population. The mounted citation_fix registrar constructs the scope from the caller’s document or documents selector. [13]
+
 
 ### Cross-Repo References
 
@@ -220,10 +228,15 @@ The registration advertises repository-only calls as official diagnostics and re
 polls to repeat the original contract path. It does not imply that repository id can select an
 acceptance pair.
 
+
+
 - The drift description states the anchor measurement, the non-blocking stale rule, and the no-repair boundary. [14]
 
 
+
+
 </details>
+
 
 
 
@@ -283,7 +296,9 @@ acceptance pair.
 
 
 
+
 - The `citation_fix` registration with its one-card or bounded-card selectors, optional `contract_path` and `dry_run`; no caller exclude is declared. Source caption: `citation_fix` [11]
+
 
 
 
@@ -291,7 +306,9 @@ acceptance pair.
 
 
 
+
 - Registration exposes converted worktree-only carryover and finite citation selectors without retired commit-message, caller-exclude or expected-snapshot arguments. [18]
+
 
 
 
@@ -302,5 +319,6 @@ Finding: Memory health, baseline and carryover declarations retain their models 
 Anchor:
 
 Source: mcp/src/agents_remember/mcp/registration/memory.py
+
 
 - Memory health, baseline and carryover declarations retain their models and request discriminators, but payloads and operation-only memory request types are resolved on the matching call.  Anchor: `_register_memory_health_tools` [19]

@@ -1,0 +1,148 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Rejects four concrete architectural alternatives (Manager allowlist trimming, lossy anyOf rewriting, untyped dict parameters, and mutating Python model docstrings) and constrains future MCP tool registrations and schema changes to preserve lossless post-registration compaction and <= 500-char raw descriptions."
+  },
+  "alternatives": [
+    {
+      "option": "Apply a pure, lossless post-registration JSON Schema compaction pass in create_server (stripping only schema-level title, default: null, and immediate top-level $defs model descriptions) combined with across-the-board description optimization across all 44 PUBLIC_TOOLS (<= 500 raw chars, preserving all contract pins and AST docstring shapes).",
+      "reason": "D987 and D988: brings Manager (32 tools) to 41,467 B (<= 45,000 B, > 7 KB under the 48,312 B pack cap) and Unbound (44 tools) to 50,641 B (<= 55,000 B) without dropping any Manager tool, altering runtime Pydantic validation, or risking cross-harness JSON Schema incompatibility.",
+      "status": "chosen"
+    },
+    {
+      "option": "Remove curator_coherence or worktree_operation_control from Manager's allowlist.",
+      "reason": "Weakens Manager capabilities required by coordination and knowledge commands and ignores systemic schema bloat across the other 42 tools (D988).",
+      "reconsider_when": "A future architectural change transfers curator_coherence or worktree_operation_control ownership away from Manager and COMPACT_BYTE_BUDGETS is updated accordingly.",
+      "status": "rejected"
+    },
+    {
+      "option": "Rewrite anyOf: [{type: T}, {type: 'null'}] to type: [T, 'null'] or drop 'null' from optional schemas.",
+      "reason": "Risks OpenAPI 3.0 / Gemini parser incompatibility or strict client rejection of explicit null arguments, and is unnecessary once lossless compaction and description optimization already bring Manager to 41,467 B.",
+      "reconsider_when": "Future tool growth pushes Manager above 45,000 B despite lossless compaction and description optimization and every supported harness verifies support for type-array nullability.",
+      "status": "rejected"
+    },
+    {
+      "option": "Replace nested Pydantic request models (such as CuratorCoherenceRequest or RedCatalogDisposition) with untyped dict[str, Any] parameters.",
+      "reason": "Destroys machine-readable nested schema guidance and weakens tool discoverability.",
+      "reconsider_when": "A tool explicitly adopts an external schema negotiation protocol that supersedes inline JSON Schema parameters.",
+      "status": "rejected"
+    },
+    {
+      "option": "Edit Pydantic BaseModel docstrings across models/ solely to shrink MCP schemas.",
+      "reason": "Couples internal Python developer documentation to MCP wire size; central post-registration compaction in create_server keeps model docstrings intact while compacting wire JSON once.",
+      "reconsider_when": "FastMCP or Pydantic natively provides lossless wire-only schema compaction making _compact_server_tool_schemas redundant.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Every tool registered in create_server has its advertised inputSchema losslessly compacted after apply_read_only_marks and before _scope_server_tools without modifying fn_metadata.arg_model validation.",
+    "All 44 PUBLIC_TOOLS across the nine registration modules stay at or below 500 raw description characters and within COMPACT_BYTE_BUDGETS per-role ceilings."
+  ],
+  "context": "After 261124-CAP-L1 landed role-scoped tool surfaces, Manager's 32-tool allowlist still serialized at 59,618 B (11,306 B above Antigravity's ~48,312 B eager MCP pack cap), leaving curator_coherence and worktree_operation_control clipped, because Pydantic's JSON schema generator emits 15,279 B of title/default:null/top-level-$defs-description metadata across all 44 PUBLIC_TOOLS atop 18,574 B of verbose descriptions.",
+  "decider": "Developer decisions D987, D988, and D989 recorded in CAP-R04@v1 rev 3",
+  "id": "DEC-XQS1H8",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "28199dc6c776b8074c3b8b15a21068f6259fb122",
+        "content": "sha256:c59e97086a400bb95ba68d2e88a057ab25e6aa7a41e7818da1d5a6f96da7b8b0",
+        "locator": {
+          "kind": "symbol",
+          "name": "compact_tool_schema"
+        },
+        "path": "mcp/src/agents_remember/models/tools/tool_schema_compaction.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
+        "content": "sha256:eed34d6bb0ab3cac65162813c6786e6929da3877ae6f7dc50599472138a0d31c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_compact_server_tool_schemas"
+        },
+        "path": "mcp/src/agents_remember/mcp/server.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-EG3M4J"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-NZ27V7"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-06MGX9"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "CAP-R04",
+        "packet": "requirements/CAP-R04-v1-mcp-tool-schema-and-description-optimization.md",
+        "task": {
+          "path": "261124_role-capsule-and-turn-1-context-optimization",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "82b90b7ec289037925f8392601e4debb5d700327",
+        "content": "sha256:62082b5a6f2889a9760b82649b553bc684ee163bb94204e4adf5559bda2fbac3",
+        "locator": {
+          "kind": "symbol",
+          "name": "COMPACT_BYTE_BUDGETS"
+        },
+        "path": "mcp/tests/test_role_tool_scope.py"
+      }
+    },
+    {
+      "alternative": 2,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "82b90b7ec289037925f8392601e4debb5d700327",
+        "content": "sha256:62082b5a6f2889a9760b82649b553bc684ee163bb94204e4adf5559bda2fbac3",
+        "locator": {
+          "kind": "symbol",
+          "name": "COMPACT_BYTE_BUDGETS"
+        },
+        "path": "mcp/tests/test_role_tool_scope.py"
+      }
+    },
+    {
+      "alternative": 4,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "28199dc6c776b8074c3b8b15a21068f6259fb122",
+        "content": "sha256:705444322602d63bb38529a703d09c34f466528ef0e4a7149425238020c22de6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_compact_schema_node"
+        },
+        "path": "mcp/src/agents_remember/models/tools/tool_schema_compaction.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "cap-l4-curator-ingest.json"
+    },
+    "handoffEntry": "CAP-R04-DEC-01",
+    "leaf": "261124-CAP-L4",
+    "task": "261124-CAP"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}
