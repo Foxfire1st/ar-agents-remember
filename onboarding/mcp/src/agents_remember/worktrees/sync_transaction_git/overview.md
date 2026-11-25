@@ -16,6 +16,8 @@ Exact Git reading, carrying, parking, reapply proof and cancellation support for
 
 The driver journals authority and orders code before memory. These helpers prove actual Git state; a status label, sample, cached row or another merge algorithm cannot substitute for that proof. Converted memory merges are structurally planned and validated against both parents and paired code; incoming fast-forwards validate before refs move. Content, validator and repository-hook stops retain different recovery meanings.
 
+The merge helper checks staged content against both verified parents for retained resolutions and automatic memory merges. It matches path, staged line and diagnosis so existing incoming whitespace survives. Failed Git comparisons retain their proof error.
+
 Restoration and cancellation ownership are distinct. Full parked inventory and native reapply equality establish restoration; exact index/stash or retained fingerprints establish attribution. Failed attribution never blesses owner work. Cancellation first saves later/unproved bytes with verified manifests and binary patches, then discards and rolls back. The original stash remains authority until terminal recovery. Only the memory root memory.md is disposable cache; a code file with that name remains ordinary content.
 
 ## Invariants And Boundaries
@@ -33,10 +35,15 @@ Restoration and cancellation ownership are distinct. Full parked inventory and n
 - Successful absence from both Git holders selects mirroring; native binary patches preserve staged and unstaged state before rollback. [6]
 
 
-- Compatibility exports preserve qualified implementation boundaries. [1]
+
 
 - Complete stash inventory is distinct from its display sample. [2]
 - Native expected reapply has one configured merge owner. [3]
 - Saved unproved state is written before destructive cancellation. [4]
 
+
+
+- The shared staged comparison intersects path and diagnostic across the two pinned parents. [7]
+
+- Compatibility exports preserve qualified implementation boundaries. [1]
 - Incoming memory fast-forwards validate before moving refs. [5]

@@ -175,8 +175,4 @@ No cross-repo boundary is crossed by this file.
 
 - The unit-lane row. Source caption: "mcp/tests/test_unexplained_change_disposition.py" [13]
 
-
-
-
-
 - The catalog consumer row: the reconsideration shared-support artifact lists this module among its consumers. [14]

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "711779a641b574d228218fbfe9ba70e6a05c81e0",
-    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
+    "codeTree": "b810bc180190b8646fccd2eb7a074e158fd790d2",
+    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
     "role": "curator",
-    "statement": "The reference correctly describes recorded-base ancestry for leaf worklists and known-build cold lookup coordination, including both lock acquisition exceptions and eviction of abandoned build files.",
-    "task": "261112-BUG-L23",
+    "statement": "The knowledge-system reference correctly says that an automatically settled memory merge also runs the staged check described in Worktrees.",
+    "task": "261112-BUG-L26",
     "uncommitted": true
   },
   "document": "docs/reference/knowledge-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -237,7 +237,7 @@
       "path": "dashboard/src/panels/review/MeaningEffects.tsx"
     },
     {
-      "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+      "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
     },
@@ -339,6 +339,19 @@
         "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
       },
       "heading": "Derived index and reads",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
+        "content": "sha256:45f12690c7c34b7b6660e1eeb4c41e28c8d7d611c2b4a0688d0891870e9ab303",
+        "locator": {
+          "kind": "symbol",
+          "name": "_continue_memory_merge"
+        },
+        "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+      },
+      "heading": "Staged memory merge check",
       "kind": "anchor"
     }
   ]

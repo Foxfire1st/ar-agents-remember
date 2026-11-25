@@ -1974,14 +1974,15 @@
       ]
     },
     "228": {
-      "note": "The transaction seam that routes the conflict and narrows the agent's list.\n\nAnchor: `_continue_memory_merge`",
+      "note": "The transaction seam that routes the conflict and narrows the agent's list.",
       "targets": [
         {
           "anchor": {
-            "blob": "a63984305b167f217f656a85724a6f70fad04702",
-            "content": "sha256:0b4bb60005807ea000e1df8845b0ef48d8052337664eb956852106008263c3fe",
+            "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
+            "content": "sha256:45f12690c7c34b7b6660e1eeb4c41e28c8d7d611c2b4a0688d0891870e9ab303",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_continue_memory_merge"
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
@@ -1989,11 +1990,10 @@
         },
         {
           "anchor": {
-            "blob": "a63984305b167f217f656a85724a6f70fad04702",
-            "content": "sha256:45f12690c7c34b7b6660e1eeb4c41e28c8d7d611c2b4a0688d0891870e9ab303",
+            "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
+            "content": "sha256:4911e65a6484be1b58144de028be3a0c196b461f1ae83fe4ba8d5311e8023c1d",
             "locator": {
-              "kind": "symbol",
-              "name": "_continue_memory_merge"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
@@ -8689,6 +8689,24 @@
               "start": 397
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "524": {
+      "note": "Crossing confirmation identifies the resolved commit that supplied the code tree.\n\nAnchor: `CodeSnapshot.at_commit`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d1b818af3377a1a1b14ef714829d91adfc6d5fc",
+            "content": "sha256:56e9278cf0808a2df8e64e513c9e3661ee03a85088aa43b7ccb1a7668d0c68f0",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
           },
           "kind": "code"
         }

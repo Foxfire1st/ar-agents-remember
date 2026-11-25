@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8ef609ef616e41d1e2b6d0dfe336e1672a0918b5",
-        "content": "sha256:3bff9663b9e2a498ecd9201e10afc56746ccf9a6f963dcd3a7f46c8d33ca96e0",
+        "blob": "5de875ea328565c555ecc35042eb919eea5fa320",
+        "content": "sha256:d4186e12ad2f10870988ca58fd4e60936fb388761ba8cc8a9cce6746f5130ed1",
         "locator": {
           "kind": "file"
         }
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "8ef609ef616e41d1e2b6d0dfe336e1672a0918b5",
+        "blob": "5de875ea328565c555ecc35042eb919eea5fa320",
         "content": "sha256:c753c76b82ecbd9f4cf4fa83f7019149bbbc9ae4b476454a90720543b76764a9",
         "locator": {
           "kind": "symbol",
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ef609ef616e41d1e2b6d0dfe336e1672a0918b5",
+            "blob": "5de875ea328565c555ecc35042eb919eea5fa320",
             "content": "sha256:6508ef4680f64e01842873a126da83a6825a46f2fae7a2caf28c659bb0ccc31e",
             "locator": {
               "kind": "symbol",
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ef609ef616e41d1e2b6d0dfe336e1672a0918b5",
+            "blob": "5de875ea328565c555ecc35042eb919eea5fa320",
             "content": "sha256:c753c76b82ecbd9f4cf4fa83f7019149bbbc9ae4b476454a90720543b76764a9",
             "locator": {
               "kind": "symbol",
@@ -76,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ef609ef616e41d1e2b6d0dfe336e1672a0918b5",
+            "blob": "5de875ea328565c555ecc35042eb919eea5fa320",
             "content": "sha256:10d691ea942699bad6c7ea325310a36c8b56eef36d52dcb8454c95907ce7aadf",
             "locator": {
               "kind": "symbol",
@@ -92,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ef609ef616e41d1e2b6d0dfe336e1672a0918b5",
+            "blob": "5de875ea328565c555ecc35042eb919eea5fa320",
             "content": "sha256:aaa5550ce1bc4dadf6c6b437d32b31534628e9a6c1a1c98aa173ce468fb9efb2",
             "locator": {
               "kind": "symbol",
@@ -104,14 +104,30 @@
       ]
     },
     "5": {
-      "note": "SideMergeOutcome: qualified source contract.\n\nAnchor: `SideMergeOutcome`",
+      "note": "SideMergeOutcome: qualified source contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ef609ef616e41d1e2b6d0dfe336e1672a0918b5",
-            "content": "sha256:3bff9663b9e2a498ecd9201e10afc56746ccf9a6f963dcd3a7f46c8d33ca96e0",
+            "blob": "5de875ea328565c555ecc35042eb919eea5fa320",
+            "content": "sha256:d4186e12ad2f10870988ca58fd4e60936fb388761ba8cc8a9cce6746f5130ed1",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The exception vocabulary identifies a failure of the staged merge commit command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5de875ea328565c555ecc35042eb919eea5fa320",
+            "content": "sha256:e69ac060c7d8ff13151ac6d8f787c540515fddb90cdf90ec3b2d3f8bda96e324",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncMergeCommitError"
             }
           },
           "kind": "code"

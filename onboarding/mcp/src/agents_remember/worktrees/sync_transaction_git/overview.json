@@ -6,8 +6,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1062725d27dbcdf1ebcf6efb1b6d1eb255655174",
-            "content": "sha256:d5812b623ffca1d5e58405196495f79c40ffc512d7e973791186a195c40fa843",
+            "blob": "f210a63c087b81ef18169dc48a9c0d1e1a734442",
+            "content": "sha256:66efd61cac2438615d12a98868681b882ff9e3f5212ad99a7ef5cb9a9a21c3a0",
             "locator": {
               "kind": "file"
             },
@@ -69,12 +69,12 @@
       ]
     },
     "5": {
-      "note": "Incoming memory fast-forwards validate before moving refs.\n\nAnchor: `validate_memory_fast_forward`",
+      "note": "Incoming memory fast-forwards validate before moving refs.",
       "targets": [
         {
           "anchor": {
-            "blob": "a63984305b167f217f656a85724a6f70fad04702",
-            "content": "sha256:0b4bb60005807ea000e1df8845b0ef48d8052337664eb956852106008263c3fe",
+            "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
+            "content": "sha256:4911e65a6484be1b58144de028be3a0c196b461f1ae83fe4ba8d5311e8023c1d",
             "locator": {
               "kind": "file"
             },
@@ -108,6 +108,23 @@
               "name": "_save_unproven_side"
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_cancel.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The shared staged comparison intersects path and diagnostic across the two pinned parents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
+            "content": "sha256:640d54f5d8461b73c58943a8b7bde273e0f2d43ee1fdcda4a37e3755d47ba2c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_staged_merge_findings"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
           "kind": "code"
         }

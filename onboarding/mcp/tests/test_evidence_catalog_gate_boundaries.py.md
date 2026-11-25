@@ -85,14 +85,6 @@ Current source: The current lifecycle catalog declares test_evidence_catalog_gat
 
 - The lane manifest declares mcp/tests/test_evidence_catalog_gate_boundaries.py in unit-regression. Membership is selection, not invocation. [25]
 
-
-
-
+- The lane row this module holds in the sorted `unit-regression` list. Anchor: "mcp/tests/test_evidence_catalog_gate_boundaries.py" Anchor: "mcp/tests/test_evidence_catalog_gate_boundaries.py" [27]
 
 - The lifecycle catalog declares test_evidence_catalog_gate_boundaries.py as an exact consumer of mcp/tests/_evidence_catalog_fixture.py, mcp/tests/_user_settings_guard.py and mcp/tests/fixtures/repository_profiles/node/package-lock.json. These artifact registrations establish no invocation or passing result. [26]
-
-
-
-
-
-- The lane row this module holds in the sorted `unit-regression` list. Anchor: "mcp/tests/test_evidence_catalog_gate_boundaries.py" Anchor: "mcp/tests/test_evidence_catalog_gate_boundaries.py" [27]

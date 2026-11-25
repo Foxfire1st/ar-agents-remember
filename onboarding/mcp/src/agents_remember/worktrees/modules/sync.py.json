@@ -122,7 +122,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
+            "blob": "ab5a34ad28e37f7a09970508d6753b22a855870a",
             "content": "sha256:ce81740d2e4cb263c942716af0d464e2cbb0d81cb98bf15d04ba52d79ae18843",
             "locator": {
               "kind": "symbol",
@@ -233,7 +233,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
+            "blob": "8405a67e63f0953f978578c86150234c057c466e",
             "content": "sha256:b11cca83b4e3bc23bfae5ce8fad3d08929203cdf21f308683d2930176f6a73e7",
             "locator": {
               "kind": "symbol",
@@ -245,12 +245,12 @@
         },
         {
           "anchor": {
-            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
+            "blob": "8405a67e63f0953f978578c86150234c057c466e",
             "content": "sha256:90300c8308c8d7bcdd095cbf7b67fbe5375bd3925973e9732342578b43e689bb",
             "locator": {
-              "end": 201,
+              "end": 204,
               "kind": "line_range",
-              "start": 166
+              "start": 169
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },
@@ -258,12 +258,12 @@
         },
         {
           "anchor": {
-            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
+            "blob": "8405a67e63f0953f978578c86150234c057c466e",
             "content": "sha256:09a93975b5fcdccf4989ce4a7ee6d24e7049ccafa78d2ec5abea56f07a19950b",
             "locator": {
-              "end": 229,
+              "end": 232,
               "kind": "line_range",
-              "start": 203
+              "start": 206
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },
@@ -271,12 +271,12 @@
         },
         {
           "anchor": {
-            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
+            "blob": "8405a67e63f0953f978578c86150234c057c466e",
             "content": "sha256:3b0303542991bb45b8c52d7aa4a80fafe5aab7c09493db6cf8512947d8413af0",
             "locator": {
-              "end": 434,
+              "end": 437,
               "kind": "line_range",
-              "start": 348
+              "start": 351
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },
@@ -284,12 +284,12 @@
         },
         {
           "anchor": {
-            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
+            "blob": "8405a67e63f0953f978578c86150234c057c466e",
             "content": "sha256:6081c02d296f913bc548c83dd6ce560ba47e6170bafae9cd2e1e1be50a8021bb",
             "locator": {
-              "end": 217,
+              "end": 220,
               "kind": "line_range",
-              "start": 191
+              "start": 194
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },
@@ -297,12 +297,12 @@
         },
         {
           "anchor": {
-            "blob": "df90d6e9e99524a3af886bbd71dced595ebee823",
+            "blob": "8405a67e63f0953f978578c86150234c057c466e",
             "content": "sha256:a1bc00041cb9f35447f1610dfa02c1a7c78305a6cd74d37cc7547f304bc911c1",
             "locator": {
-              "end": 422,
+              "end": 425,
               "kind": "line_range",
-              "start": 336
+              "start": 339
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },

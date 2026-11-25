@@ -16,6 +16,8 @@ Input validation and stable journal routing precede mutation. Only merge-memory/
 
 Code settles before memory; _paired_code supplies its result for structural memory merge and validation. _continue_resolution selects the retained side and finishes staged merge or parked reapply before automatic progress resumes. Journal merge/converted-fast-forward refusal violations (first 50 plus total). Merge repair revalidates; incoming-tree refusal names source repair, cancel and fresh sync. Memory completion clears refusal. [4] [6] [9]
 
+A retained merge reaches repository-hook diagnosis only after the commit command fails. A failed staged comparison keeps its Git diagnostic and returns `sync-resolution-incomplete`. If hook diagnosis itself fails, its distinct diagnostic is added to the original evidence.
+
 Structural report paths survive retained conflicts/conversion. No canonical row conflict, accepted decision list or reconcile-cycling state is authored. [5]
 
 
@@ -128,7 +130,7 @@ No external Domain Documentation entries are configured. Source and test asserti
 - Real content conflict continuation scenario. [18]
 
 
-- Moving candidate park. [2]
+
 
 
 - Dirty work admission and parking use complete typed side records. [33]
@@ -136,11 +138,11 @@ No external Domain Documentation entries are configured. Source and test asserti
 - Currentness and continuation use Git facts and content-only conflicts. [34]
 
 
-- The validator's refusal is mapped to its own state with a recovery line, on the automatic path and the retained-conflict continuation. [35]
 
 
 
-- The side run names the crossing owner (leaf or master, and the task ID) and journals the crossing report path. [36]
+
+
 
 
 - The memory merge is paired with the code side's settled result commit, or with nothing before it settles. [37]
@@ -150,7 +152,7 @@ No external Domain Documentation entries are configured. Source and test asserti
 - **The side the retained phase names is read in one place, so phase and side cannot disagree.** [39]
 
 
-- Validator refusal retains repair state. [4]
+
 
 
 - Pinned authority and parked-work restoration remain separate owners. [41]
@@ -170,20 +172,25 @@ No external Domain Documentation entries are configured. Source and test asserti
 - The one continuation a hand-staged resolution ends in; no authored decision is stored. [46]
 
 
-- The driver uses one paired-code/owner context for merge and resumed capture. [47]
+
 
 
 - Fresh validator-stop output is captured without blessing an owner window. [48]
 
 
-- Structural report journaling. [5]
+
 
 
 - Settled code pairing. [6]
 
-
+- Retained merge classifies the hook only after a failed commit command and retains comparison diagnostics. [49]
+- Moving candidate park. [2]
+- The validator's refusal is mapped to its own state with a recovery line, on the automatic path and the retained-conflict continuation. [35]
+- The side run names the crossing owner (leaf or master, and the task ID) and journals the crossing report path. [36]
+- Validator refusal retains repair state. [4]
+- The driver uses one paired-code/owner context for merge and resumed capture. [47]
+- Structural report journaling. [5]
 - Current continuation. [9]
-
 
 ### Cross-Repo References
 

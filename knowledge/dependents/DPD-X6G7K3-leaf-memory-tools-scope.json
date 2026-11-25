@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "f656446d055ec17803e8feef2aeda987efd15699",
-    "commit": "9bc700a73cc35d60ba80d7fb00fa883dabcf8227",
+    "codeTree": "b810bc180190b8646fccd2eb7a074e158fd790d2",
+    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
     "role": "curator",
-    "statement": "The MCP reference accurately describes the knowledge writer’s plan and file-write modes and delivery of a turn-end line to the current Manager when the recorded parent is archived. It describes warning retention and warningCut in short role-start and role-message answers, with missing requirement filenames first in a role-start warning.",
-    "task": "261112-BUG-L22",
+    "statement": "The Worktrees reference explains that a retained sync continues after its resolution is staged, and that the staged check compares both pinned merge parents and matches findings by path, staged line and diagnosis.",
+    "task": "261112-BUG-L26",
     "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -381,7 +381,7 @@
     },
     {
       "anchor": {
-        "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
+        "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
         "content": "sha256:17a7d71678f73331b855d34651afd5b6d482dcd202ef6c383205ab26fc74adc2",
         "locator": {
           "kind": "symbol",
@@ -394,7 +394,7 @@
     },
     {
       "anchor": {
-        "blob": "14c2602c2b4552310e5f00620ccc61aaacda2d0b",
+        "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
         "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
         "locator": {
           "kind": "symbol",
@@ -403,6 +403,19 @@
         "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
       },
       "heading": "Wait",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
+        "content": "sha256:51adacb2027131fa579aafdcce7d397f57ddd50f264b97247df97d0bb7e3e4f0",
+        "locator": {
+          "kind": "symbol",
+          "name": "validate_staged_resolution"
+        },
+        "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+      },
+      "heading": "Staged resolution validation",
       "kind": "anchor"
     }
   ]

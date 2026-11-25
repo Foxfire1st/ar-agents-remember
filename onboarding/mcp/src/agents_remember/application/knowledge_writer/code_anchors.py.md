@@ -40,12 +40,7 @@ through `models/knowledge_files/anchor_content.py`.
   `None`. The object is a regular file's blob, a symlink's blob or a submodule's commit; `absent` means C holds
   nothing at the path. Any other subject passes. The refusal reads "names no change at C: the code candidate
   holds … (unknown subject)".
-- **`CodeSnapshot.at_commit(repository, commit)` (L37).** The tree C of a committed code state: the crossing
-  owner's route resolves anchors at the series' code work branch, not at a working tree. A commit with no tree
-  raises `AnchorResolutionError`. `at_commit` reads the tree through `of_tree(root, tree, commit=commit)` and keeps
-  that commit on the snapshot; `capture` reads the working tree through the same constructor and carries no commit,
-  because a tree with uncommitted changes is named by none. That recorded commit is the code state a dependent's
-  confirmation names for the values its links were read at (MIK-R124 rule 1).
+- **`CodeSnapshot.at_commit(repository, commit)`.** A crossing resolves the series' code work branch to a commit ID. The snapshot reads the tree from that ID and stores the same ID. A name that cannot resolve to a commit, or a commit whose tree cannot be read, raises `AnchorResolutionError`. A dependent confirmation records the commit that supplied its links. `capture` instead reads the worktree candidate and can describe an uncommitted tree.
 
 ### Conventions
 
@@ -88,22 +83,25 @@ Capture and resolution.
 
 - A locator that does not resolve at C. [1]
 
-- The captured tree C and its blobs. [2]
+
 
 - A `file:` row subject must name the path's object at C, or `absent` (MIK-R10). [3]
 - Capture through the private-index candidate tree. [4]
 
-- A symbol must bind exactly once. [6]
 
 
 
 
 
-- The snapshot of a committed code state, for a master line's crossing. [8]
+
 
 
 - Symbol extraction rejects invalid UTF-8 with a named anchor error and uses case-specific diagnostics when no definition binds. [11]
 - Symlink symbols refuse before blob parsing; file and line-range anchors still hash the selected entry bytes. [12]
+
+- The crossing snapshot uses the resolved commit ID for both recorded identity and tree lookup. [8]
+- The captured tree C and its blobs. [2]
+- A symbol must bind exactly once. [6]
 
 ### Cross-Repo References
 
@@ -120,5 +118,8 @@ No cross-repo boundary is crossed by this file.
 
 
 - Current source delta inspected statically: Fix regular-file/symlink snapshot scope and early symbol refusal; retain ordinary symbol/range binding. [10]
+
+
+
 
 - A qualified name's last part must sit inside its parents: the writer delegates to the one shared rule. [7]

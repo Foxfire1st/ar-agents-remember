@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a63984305b167f217f656a85724a6f70fad04702",
-        "content": "sha256:0b4bb60005807ea000e1df8845b0ef48d8052337664eb956852106008263c3fe",
+        "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
+        "content": "sha256:4911e65a6484be1b58144de028be3a0c196b461f1ae83fe4ba8d5311e8023c1d",
         "locator": {
           "kind": "file"
         }
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "a63984305b167f217f656a85724a6f70fad04702",
+        "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
         "content": "sha256:6d9acb80e9fa246b2a26664452a8b1ca81fce26d91578019b2d9da128b76bab8",
         "locator": {
           "kind": "symbol",
@@ -36,16 +36,52 @@
       },
       "rationale": "The emission predicate is the gate that keeps evidence-only and skip-only diagnostics.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
+        "content": "sha256:51adacb2027131fa579aafdcce7d397f57ddd50f264b97247df97d0bb7e3e4f0",
+        "locator": {
+          "kind": "symbol",
+          "name": "validate_staged_resolution"
+        }
+      },
+      "id": "RLZ-BW95D0",
+      "invariant": "INV-VG5BFX",
+      "origin": {
+        "handoffEntry": "BUG-R26@v1 rule 1",
+        "leaf": "261112-BUG-L26"
+      },
+      "rationale": "Checks the staged snapshot after verifying the active merge.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
+        "content": "sha256:af6a482129ed902e37ddb6de27c933d70c5b5c3e60a3049d8963227c37f64d87",
+        "locator": {
+          "kind": "symbol",
+          "name": "commit_check_staged_files"
+        }
+      },
+      "id": "RLZ-RFKB1C",
+      "invariant": "INV-VG5BFX",
+      "origin": {
+        "handoffEntry": "BUG-R26@v1 rule 1",
+        "leaf": "261112-BUG-L26"
+      },
+      "rationale": "Uses the same staged findings to distinguish a commit-hook refusal from an incomplete resolution.",
+      "role": "unclassified"
     }
   ],
   "references": {
     "1": {
-      "note": "validate_memory_fast_forward: qualified source contract.\n\nAnchor: `validate_memory_fast_forward`",
+      "note": "validate_memory_fast_forward: qualified source contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "a63984305b167f217f656a85724a6f70fad04702",
-            "content": "sha256:0b4bb60005807ea000e1df8845b0ef48d8052337664eb956852106008263c3fe",
+            "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
+            "content": "sha256:4911e65a6484be1b58144de028be3a0c196b461f1ae83fe4ba8d5311e8023c1d",
             "locator": {
               "kind": "file"
             }
@@ -59,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
             "content": "sha256:eb1fed75ae6bdd3627ae2f50b590865656ddb09e3c7080e05ebe45dd8aec1ea5",
             "locator": {
               "kind": "symbol",
@@ -75,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
             "content": "sha256:bf6f2da12671f7ce7b698d8c61875ab0cc51965fe457d3f17792ce054468617d",
             "locator": {
               "kind": "symbol",
@@ -91,8 +127,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a63984305b167f217f656a85724a6f70fad04702",
-            "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
+            "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
+            "content": "sha256:bb49d4171edcccc46ccb58f07cfdb369834483278b098b5b698c774fd90650aa",
             "locator": {
               "kind": "symbol",
               "name": "_finish_staged_memory_merge"
@@ -107,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
             "content": "sha256:0e6cf6d56529608b97be6084200c05095b9ad60ba8841fe6c95913845c7e7725",
             "locator": {
               "kind": "symbol",
@@ -123,11 +159,43 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
             "content": "sha256:d97b331539bed08d8bb17a4fe08fb8c7706ee94b36bf4048fe03eedbc4a5800d",
             "locator": {
               "kind": "symbol",
               "name": "rollback_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The shared merge comparison preserves diagnostics that match both sides and ambiguous framing evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
+            "content": "sha256:640d54f5d8461b73c58943a8b7bde273e0f2d43ee1fdcda4a37e3755d47ba2c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_staged_merge_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Retained code and memory continuation validate the staged snapshot before committing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
+            "content": "sha256:51adacb2027131fa579aafdcce7d397f57ddd50f264b97247df97d0bb7e3e4f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_staged_resolution"
             }
           },
           "kind": "code"

@@ -14,11 +14,17 @@ The memory domain excludes only its root memory.md cache; the code domain retain
 
 This module defines result/error vocabulary, not Git process execution. The Git mechanics use shared runners, while the repository commit-check owner can start Git/hook processes directly. `SyncGitProofError` exposes an unproved transition; its `SyncKnowledgeValidationError` subclass is handled first by the driver as `sync-knowledge-validation-refused`. Domain/path-specific cache stripping is never an ours/theirs policy for other files.
 
+`SyncMergeCommitError` identifies a failed staged merge commit command. The driver can then check for repository-hook evidence without treating an earlier Git proof error as a failed commit.
+
 ## Evidence
 
 - ExpectedReappliedContent: qualified source contract. [1]
 - CancelTreeAssessment: qualified source contract. [2]
 - SyncKnowledgeValidationError: qualified source contract. [3]
 - SyncFastForwardValidationError: qualified source contract. [4]
+
+
+
+- The exception vocabulary identifies a failure of the staged merge commit command. [6]
 
 - SideMergeOutcome: qualified source contract. [5]

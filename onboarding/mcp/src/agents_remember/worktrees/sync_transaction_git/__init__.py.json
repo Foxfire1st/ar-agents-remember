@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1062725d27dbcdf1ebcf6efb1b6d1eb255655174",
-        "content": "sha256:d5812b623ffca1d5e58405196495f79c40ffc512d7e973791186a195c40fa843",
+        "blob": "f210a63c087b81ef18169dc48a9c0d1e1a734442",
+        "content": "sha256:66efd61cac2438615d12a98868681b882ff9e3f5212ad99a7ef5cb9a9a21c3a0",
         "locator": {
           "kind": "file"
         }
@@ -26,10 +26,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1062725d27dbcdf1ebcf6efb1b6d1eb255655174",
-            "content": "sha256:d5812b623ffca1d5e58405196495f79c40ffc512d7e973791186a195c40fa843",
+            "blob": "f210a63c087b81ef18169dc48a9c0d1e1a734442",
+            "content": "sha256:66efd61cac2438615d12a98868681b882ff9e3f5212ad99a7ef5cb9a9a21c3a0",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The facade exports the commit-specific error supplied by the shared base module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f210a63c087b81ef18169dc48a9c0d1e1a734442",
+            "content": "sha256:294aec8daa6969eba0f97449cd63606ce32ae917be3cd83f9154a4382598e29b",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 18
             }
           },
           "kind": "code"

@@ -14,13 +14,21 @@ Converted memory is structurally planned before Git mutation: converted sides me
 
 The report gate selects real conflicts, a converted side, nonzero renumbered references, kept evidence lines or skipped cards; aligned-card count alone does not select a report. Staged continuation threads the settled paired-code commit into `_finish_staged_memory_merge`, closes crossing history, stages the cache ignore rule and validates the exact written index tree against both pinned parents before ordinary `git commit --no-edit`. A refusal leaves HEAD, MERGE_HEAD and the staged merge intact. The result must still prove the exact two-parent ordering.
 
+The shared staged check reads Git comparisons against the task and incoming parents. It uses the NUL-delimited destination paths from those comparisons to attribute each diagnostic. An ordinary finding requires the same staged line and diagnosis for the same path on both sides. An unattributable diagnostic is preserved in the refusal. The continuation and the automatic memory commit use this check, and a Git comparison error retains its proof diagnostic.
+
 ## Evidence
 
 
-- validate_memory_fast_forward: qualified source contract. [1]
+
 
 - _knowledge_merge: qualified source contract. [2]
 - _apply_knowledge_merge: qualified source contract. [3]
-- _finish_staged_memory_merge: qualified source contract. [4]
+
 - commit_check_report: qualified source contract. [5]
 - rollback_side: qualified source contract. [6]
+
+- The shared merge comparison preserves diagnostics that match both sides and ambiguous framing evidence. [7]
+- Retained code and memory continuation validate the staged snapshot before committing. [8]
+
+- validate_memory_fast_forward: qualified source contract. [1]
+- _finish_staged_memory_merge: qualified source contract. [4]

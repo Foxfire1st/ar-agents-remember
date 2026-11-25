@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The crossing integration test proves that a branch name supplies a valid commit ID and its exact tree to the writer."
+  },
+  "applicability": "Committed code snapshots opened by the crossing knowledge writer.",
+  "conditions": [
+    "The supplied name resolves to a commit and its tree can be read."
+  ],
+  "exclusions": [
+    "Worktree snapshots can describe uncommitted code."
+  ],
+  "id": "INV-4EE7HQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "W2 crossing dry-plan base refusal, planned update and exact commit identity."
+      ],
+      "path": "L26 W3 invariant and onboarding judgments"
+    },
+    "handoffEntry": "BUG-R26@v1 rule 2",
+    "leaf": "261112-BUG-L26",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A committed code snapshot stores the resolved commit ID and reads its tree from that same commit.",
+  "status": "proposed",
+  "supersedes": []
+}

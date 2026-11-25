@@ -12,7 +12,13 @@ Compatibility import surface for the split managed-sync Git helpers.
 
 The facade re-exports the prior public names; it is not a second implementation. Readers, native reapply proof, parking, save-first cancellation and memory merging have qualified owners in the adjacent modules. Internal evidence belongs to those owners, not to an import-only symbol in this facade.
 
+The facade exports `SyncMergeCommitError` so the driver can restrict hook diagnosis to a failure at the merge commit boundary.
+
 ## Evidence
 
+
+
+
+- The facade exports the commit-specific error supplied by the shared base module. [2]
 
 - Compatibility exports have qualified implementation owners. [1]

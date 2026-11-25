@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "b810bc180190b8646fccd2eb7a074e158fd790d2",
+    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
     "role": "curator",
-    "statement": "The contributor guide's seven-lane assignment and catalog procedure still apply to the new worklist test's unit-regression placement.",
-    "task": "261112-BUG-L21",
+    "statement": "The contributor guide still describes the seven-lane assignment and catalog procedure after the crossing writer test was registered once in the integration lane.",
+    "task": "261112-BUG-L26",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+      "blob": "cebf8697edac0ce507939faa1f98858435ad095f",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },

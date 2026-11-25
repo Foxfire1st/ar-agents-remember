@@ -1,0 +1,812 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L26",
+  "rows": [
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-0C0SAC",
+      "items": [],
+      "reason": "The MCP package README still routes readers to Worktrees, whose tool reference now explains the staged continuation check against both merge parents.",
+      "revision": 12,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0MXN0E",
+      "items": [
+        "sha256:5c80ec757f51afcaf2778c68aa7874c09a511bb6c7cf1864e6061580f337a4b9"
+      ],
+      "reason": "The card describes the commit-specific error subtype and the proof error boundary.",
+      "sources": [
+        {
+          "blob": "5de875ea328565c555ecc35042eb919eea5fa320",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_base.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/sync_transaction_git/_base.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-17DFBG",
+      "items": [
+        "sha256:be67b599316def8d8e5b0e5b7486321869c8d86720631fec82545d641d8068c1"
+      ],
+      "reason": "The skills overview routes conflicting dependent resolutions through the crossing writer template.",
+      "sources": [
+        {
+          "blob": "4597aaa2a56f663b9c56a69f0f7819d5594a8fc8",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+          "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1R5XZ3",
+      "items": [
+        "sha256:cc864de8ee852978b12b70052fa445ca4c67f291ea1de7f34fa4b639e6dda73f"
+      ],
+      "reason": "The package overview already locates authorship in canonical instruction sources and treats the shipped files as generated carriers.",
+      "sources": [
+        {
+          "blob": "4597aaa2a56f663b9c56a69f0f7819d5594a8fc8",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "content": "sha256:ee43cb9d8a1c996c2415a3dca0c24404866f4cc85155c5464b30c67fdfdc8f89",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "before": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:dd23a25922a2c283ffe07c5c02d0248ff9e43c68bec2c70bd61e2638d44ae19a",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "id": "RLZ-ZBPWGR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-2WK0CY",
+      "items": [
+        "sha256:4c0eefcf455e9e54ee467d339da7ac899f5b6e2c20b1ddb11c9bb571a9a4ddd7"
+      ],
+      "reason": "The reference retains the required writer authority and now explains the existing master crossing handoff.",
+      "revision": 1,
+      "subject": "INV-37TMDD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-31X6BZ",
+      "items": [
+        "sha256:ce5ed40f338adfe906977b2d6681b0dee1d237ef13b952d80fd05b0abaaf895d"
+      ],
+      "reason": "The new card explains the conflicting dependent dry plan and its exact committed snapshot proof.",
+      "sources": [
+        {
+          "blob": "3ec1dfc8b0af1e07faeaec856a5e7e47333635a2",
+          "path": "mcp/tests/test_crossing_dependent_writer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_crossing_dependent_writer.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
+            "content": "sha256:4911e65a6484be1b58144de028be3a0c196b461f1ae83fe4ba8d5311e8023c1d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "before": {
+            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "content": "sha256:0b4bb60005807ea000e1df8845b0ef48d8052337664eb956852106008263c3fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "id": "RLZ-1HZCA0"
+        },
+        {
+          "after": {
+            "blob": "5de875ea328565c555ecc35042eb919eea5fa320",
+            "content": "sha256:d4186e12ad2f10870988ca58fd4e60936fb388761ba8cc8a9cce6746f5130ed1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_base.py"
+          },
+          "before": {
+            "blob": "8ef609ef616e41d1e2b6d0dfe336e1672a0918b5",
+            "content": "sha256:3bff9663b9e2a498ecd9201e10afc56746ccf9a6f963dcd3a7f46c8d33ca96e0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_base.py"
+          },
+          "id": "RLZ-1WYQEQ"
+        },
+        {
+          "after": {
+            "blob": "f210a63c087b81ef18169dc48a9c0d1e1a734442",
+            "content": "sha256:66efd61cac2438615d12a98868681b882ff9e3f5212ad99a7ef5cb9a9a21c3a0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/__init__.py"
+          },
+          "before": {
+            "blob": "1062725d27dbcdf1ebcf6efb1b6d1eb255655174",
+            "content": "sha256:d5812b623ffca1d5e58405196495f79c40ffc512d7e973791186a195c40fa843",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/__init__.py"
+          },
+          "id": "RLZ-3ZBGM7"
+        },
+        {
+          "after": {
+            "blob": "ab5a34ad28e37f7a09970508d6753b22a855870a",
+            "content": "sha256:43565e49cd3b755f24a487269cdc83017e5656ba72c117f76f212c7444c0ea21",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "before": {
+            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
+            "content": "sha256:6ca6441940c2a59539a1da57c4e60adf31f06b1b57c9d240d2ac99e12a400adc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "id": "RLZ-YA5QN6"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-3923BG",
+      "items": [
+        "sha256:440109e2745e97d48fa81c98ba395aa805b24995e110b92ebc0fcf0a6143a1b0"
+      ],
+      "reason": "The sync helper files retain the same converted-anchor validation boundary while the staged merge reads both verified parents.",
+      "revision": 1,
+      "subject": "INV-033XSD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-44RW9R",
+      "items": [
+        "sha256:35377f85d9deb3f58839b363a18d8a248e43272164d3e4822abe6839b2cb4cdd"
+      ],
+      "reason": "The tests overview gives current lane membership and the crossing writer proof purpose.",
+      "sources": [
+        {
+          "blob": "dcfcac10737a51e9d680534caeaa8280778151fd",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "cebf8697edac0ce507939faa1f98858435ad095f",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "3ec1dfc8b0af1e07faeaec856a5e7e47333635a2",
+          "path": "mcp/tests/test_crossing_dependent_writer.py"
+        },
+        {
+          "blob": "8405a67e63f0953f978578c86150234c057c466e",
+          "path": "mcp/tests/test_worktree_sync.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4MBG6P",
+      "items": [
+        "sha256:1f64b88e672021ca92de84705c4d8d8f97a37be0d9bd714e62aa75b6394c055e"
+      ],
+      "reason": "The facade card explains the added commit-specific error export.",
+      "sources": [
+        {
+          "blob": "f210a63c087b81ef18169dc48a9c0d1e1a734442",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/__init__.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/sync_transaction_git/__init__.py"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-4R2XES",
+      "items": [],
+      "reason": "The source template names the exact crossing request and accepted record kinds as an independent documentation obligation.",
+      "revision": 1,
+      "subject": "membership:INV-30KTSG"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-57TE5E",
+      "items": [
+        "sha256:f1008ee38cf461222815978c7f107ffa9f0c740d7637faed447ca2ca13ac1716"
+      ],
+      "reason": "The card records two-parent finding attribution, ambiguous diagnostics and automatic memory reuse.",
+      "sources": [
+        {
+          "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5VSYPY",
+      "items": [
+        "sha256:f549c8fdaf4b0e051b74048d01c92d4a847d61319df953dd06380caf7c0fedce"
+      ],
+      "reason": "The card explains that the tree lookup and stored identity use the same resolved commit ID.",
+      "sources": [
+        {
+          "blob": "0d1b818af3377a1a1b14ef714829d91adfc6d5fc",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4597aaa2a56f663b9c56a69f0f7819d5594a8fc8",
+            "content": "sha256:3ed1e441c459c04c1d1c8907892d00a0522d06fa96cde6971b7ab6318455e5bc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "87767258a37971b10921c8a62554894a4a00036b",
+            "content": "sha256:04f53f5702c0bb3657dcb43cec017f1c844bebbe5b23675d868b8aec93c2ec0f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7DH7QB",
+      "items": [
+        "sha256:ab64eccad661028ebe9d0ba8a0c186ad0f993e864fc07fb76b3053b6bfda9ce0"
+      ],
+      "reason": "Generated size data records the revised source template without changing authored budget authority.",
+      "revision": 6,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-87FKRX",
+      "items": [
+        "sha256:a3ef935f2af3439c477fdc336d31e0e14d2f35435ba4f4f34965c9bd7b984d28"
+      ],
+      "reason": "The Worktrees reference explains that a retained sync continues after its resolution is staged, and that the staged check compares both pinned merge parents and matches findings by path, staged line and diagnosis.",
+      "revision": 15,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8REQ5K",
+      "items": [
+        "sha256:037c0ce549668d49f8cc8bb7db88a9a5d456dbc182be2d26c272675e2de922e6"
+      ],
+      "reason": "The managed-sync overview describes both-parent staged validation and the commit-specific diagnosis boundary.",
+      "sources": [
+        {
+          "blob": "ab5a34ad28e37f7a09970508d6753b22a855870a",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cebf8697edac0ce507939faa1f98858435ad095f",
+            "content": "sha256:a79dae34b1eabb74624fa115d0d640a7fbbbf5092db9357faf3c7c6a42c65143",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+            "content": "sha256:1923bb64d30816f6f4bade6637863f95b0e86c12e2f4783411d87017b5275b5c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "dcfcac10737a51e9d680534caeaa8280778151fd",
+            "content": "sha256:a24fed6dfbd33ae5a10d42996f8fc4fb8cff457f95a7b0a5f61a7ad7c23fb34c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "666b80bfb115f9356bce967e5e5ec9f37fe0eb2b",
+            "content": "sha256:73131678c3db3d9aec04f4be66fb3ac229f386778e51cc5ba0138f4ee9c4e832",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-9ST1Y7",
+      "items": [
+        "sha256:31d38a81d06d2c886cb74299770d7891f571466752555fa7f56845aef9fb325d"
+      ],
+      "reason": "The crossing test has a single integration lane and existing catalog ownership still separates declarations from execution.",
+      "revision": 7,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D5CCXW",
+      "items": [
+        "sha256:74b7b1c3c77a5bbb1002b718179539ae23acd13e286d6a02792240ceeffb2073"
+      ],
+      "reason": "The route overview explains the common staged check for manual resolution and automatic memory merges.",
+      "sources": [
+        {
+          "blob": "f210a63c087b81ef18169dc48a9c0d1e1a734442",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/__init__.py"
+        },
+        {
+          "blob": "5de875ea328565c555ecc35042eb919eea5fa320",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_base.py"
+        },
+        {
+          "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/sync_transaction_git/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DNX17P",
+      "items": [
+        "sha256:003701a4a50c0394fa72c3887eb532801d5bc7f69f5156088dd9c90bc198d136"
+      ],
+      "reason": "The template card records the crossing request and the complete dependent and weakness kind coverage.",
+      "sources": [
+        {
+          "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+          "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EN2PHH",
+      "items": [
+        "sha256:eaa84475644f8464896e95438ebbb086dc909d79ac5613d76ae4928804efc301"
+      ],
+      "reason": "The card names the regenerated 6,357-word source measurement and preserves ceiling authority.",
+      "sources": [
+        {
+          "blob": "4597aaa2a56f663b9c56a69f0f7819d5594a8fc8",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H7DZRX",
+      "items": [
+        "sha256:40f6e54b3cbabfe2fc506b8dff9a36a421a30e8d38f0d6c46bd34f90c9587f2b"
+      ],
+      "reason": "The card explains the distinction between failed comparisons and hook provenance after a commit-command failure.",
+      "sources": [
+        {
+          "blob": "ab5a34ad28e37f7a09970508d6753b22a855870a",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/sync_transaction.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-K6XA2M",
+      "items": [],
+      "reason": "The evidence-system guide still describes lane and shared-support registration, which place the crossing writer test in integration and name it in the three existing consumer entries.",
+      "revision": 10,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cebf8697edac0ce507939faa1f98858435ad095f",
+            "content": "sha256:a79dae34b1eabb74624fa115d0d640a7fbbbf5092db9357faf3c7c6a42c65143",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+            "content": "sha256:1923bb64d30816f6f4bade6637863f95b0e86c12e2f4783411d87017b5275b5c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "dcfcac10737a51e9d680534caeaa8280778151fd",
+            "content": "sha256:a24fed6dfbd33ae5a10d42996f8fc4fb8cff457f95a7b0a5f61a7ad7c23fb34c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "666b80bfb115f9356bce967e5e5ec9f37fe0eb2b",
+            "content": "sha256:73131678c3db3d9aec04f4be66fb3ac229f386778e51cc5ba0138f4ee9c4e832",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-M5WP85",
+      "items": [
+        "sha256:4ff5783b9892286567ab9dfee68595dc4b5beab268a2bb3ee6221b8582315863"
+      ],
+      "reason": "The catalog changes add evidence without changing enclosure generation or the maintenance boundary.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4597aaa2a56f663b9c56a69f0f7819d5594a8fc8",
+            "content": "sha256:3ed1e441c459c04c1d1c8907892d00a0522d06fa96cde6971b7ab6318455e5bc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "87767258a37971b10921c8a62554894a4a00036b",
+            "content": "sha256:04f53f5702c0bb3657dcb43cec017f1c844bebbe5b23675d868b8aec93c2ec0f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-RHRQZQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-MC97TY",
+      "items": [
+        "sha256:f0eb5f436159bb4fdaa74fda20c8b8bf4b33b009933c7154307a1480d8ff1f8d"
+      ],
+      "reason": "The regenerated template measurement and digest change while the authored ceiling remains in force.",
+      "revision": 2,
+      "subject": "INV-4HZG3V"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "content": "sha256:f617e86553bf90fa8dc82096be3bd4746ee5d7e099082164e08a8610b5032b10",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "before": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:01e775dcc2a9d6b7caced10f3ecc847b5e0d550782f94c388502f1542f3c5ad8",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "id": "RLZ-AA8X6M"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-MVQZY9",
+      "items": [
+        "sha256:61fdbcf64d2f35bc372f9ef8bcb1d8d28ce0f2baffac9ea8f0b6ba8d8155d64f"
+      ],
+      "reason": "The crossing paragraph extends the same reference without changing worklist, link and raise guidance.",
+      "revision": 2,
+      "subject": "INV-CKJ6AZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NRK8TJ",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The catalog card names the three existing artifact consumer relationships for the crossing test.",
+      "sources": [
+        {
+          "blob": "dcfcac10737a51e9d680534caeaa8280778151fd",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NW6MFV",
+      "items": [
+        "sha256:39e9318468593835d2b5479d292c5336d2b1cd25a9b14bf1684b30270e86266f",
+        "sha256:773b36ee94ea6e00f5bf86ce19ed00eca599daf8adc1920b58526ef4735f7442",
+        "sha256:bd4a0e771fb0c7b3dc439816e3dde261b9c2ada0ea786e852ae06642bdfd9a80",
+        "sha256:f1e7ded381c02353a214603ce009b9cfd36e5ff6b55405527e6ba74142ced471"
+      ],
+      "reason": "The card records the real merge tests for inherited and authored findings, commit classification and automatic memory validation.",
+      "sources": [
+        {
+          "blob": "8405a67e63f0953f978578c86150234c057c466e",
+          "path": "mcp/tests/test_worktree_sync.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_worktree_sync.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cebf8697edac0ce507939faa1f98858435ad095f",
+            "content": "sha256:a79dae34b1eabb74624fa115d0d640a7fbbbf5092db9357faf3c7c6a42c65143",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+            "content": "sha256:1923bb64d30816f6f4bade6637863f95b0e86c12e2f4783411d87017b5275b5c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-PBYX5G",
+      "items": [
+        "sha256:2dcd3ddfbbd2d9f60029df467dd1ee2546e87fe07910580aef0b8faf175ac986"
+      ],
+      "reason": "The additional integration registration leaves retirement and current catalog membership policy intact.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "dcfcac10737a51e9d680534caeaa8280778151fd",
+            "content": "sha256:a24fed6dfbd33ae5a10d42996f8fc4fb8cff457f95a7b0a5f61a7ad7c23fb34c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "666b80bfb115f9356bce967e5e5ec9f37fe0eb2b",
+            "content": "sha256:73131678c3db3d9aec04f4be66fb3ac229f386778e51cc5ba0138f4ee9c4e832",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "cebf8697edac0ce507939faa1f98858435ad095f",
+            "content": "sha256:a79dae34b1eabb74624fa115d0d640a7fbbbf5092db9357faf3c7c6a42c65143",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "eb1d053e6a886ab5df81503b2f01b1feeb7a38f1",
+            "content": "sha256:1923bb64d30816f6f4bade6637863f95b0e86c12e2f4783411d87017b5275b5c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-PKRT1S",
+      "items": [
+        "sha256:ee37608fde4d79714b73cb8c21fe9c268f4d8ca978b1b198e4517cd5b8d1eb2e"
+      ],
+      "reason": "The crossing test is registered once and uses the three existing support declarations.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-R86SPR",
+      "items": [],
+      "reason": "The pytest bootstrap guide still describes the stress-durability lane and its uninstrumented warm-index child after the crossing test was placed in integration.",
+      "revision": 11,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-REX3R9",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The lane card records one integration registration and current parsed totals without claiming execution.",
+      "sources": [
+        {
+          "blob": "cebf8697edac0ce507939faa1f98858435ad095f",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-T20R1B",
+      "items": [],
+      "reason": "The contributor guide still describes the seven-lane assignment and catalog procedure after the crossing writer test was registered once in the integration lane.",
+      "revision": 11,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-TWC8QG",
+      "items": [
+        "sha256:a625744dc96b2bf9442aab5ba60c3c9e38ac4901d4e82a0a98d744273c39ad26"
+      ],
+      "reason": "The knowledge-system reference correctly says that an automatically settled memory merge also runs the staged check described in Worktrees.",
+      "revision": 6,
+      "subject": "DPD-TXRND9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0d1b818af3377a1a1b14ef714829d91adfc6d5fc",
+            "content": "sha256:a9d8b1da60d3dd0447321b0f47113974e3fb2c3f981f1abe7ef819eac5939a05",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeSnapshot"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+          },
+          "before": {
+            "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+            "content": "sha256:6470b981c92f94b696f29418f6f77189fa5aeb44ca43c902f91ccadd0f00a103",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeSnapshot"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+          },
+          "id": "RLZ-GMH0JZ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-V1Z5CZ",
+      "items": [
+        "sha256:4787c5b3b12ba998253f0290e2d454936f21ba88e7fae10981471bfa7eb8f88f"
+      ],
+      "reason": "CodeSnapshot now records the exact commit that supplies the crossing tree, directly realizing the existing confirmation rule.",
+      "revision": 1,
+      "subject": "INV-VWRJR7"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-V7J43Q",
+      "items": [],
+      "reason": "The staged sync check has its own verified merge-parent condition and requires no joint family guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-VG5BFX"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-WYM7K5",
+      "items": [],
+      "reason": "The committed snapshot identity is a writer obligation with a distinct branch-resolution test.",
+      "revision": 1,
+      "subject": "membership:INV-4EE7HQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-X43C4E",
+      "items": [
+        "sha256:7733ecebe27e53c52d15eeaea608be9f67894643cc1a7bf28f7c45ee4fcf755c"
+      ],
+      "reason": "The overview names the resolved committed code snapshot that supplies crossing confirmations.",
+      "sources": [
+        {
+          "blob": "0d1b818af3377a1a1b14ef714829d91adfc6d5fc",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

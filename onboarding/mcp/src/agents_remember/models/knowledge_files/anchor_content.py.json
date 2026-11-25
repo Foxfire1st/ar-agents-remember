@@ -101,12 +101,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+            "blob": "0d1b818af3377a1a1b14ef714829d91adfc6d5fc",
             "content": "sha256:318ebb51a6b0ea119ee47b8b9ec40eb74ddf5ebd916796988de78a4550e23305",
             "locator": {
-              "end": 167,
+              "end": 176,
               "kind": "line_range",
-              "start": 145
+              "start": 154
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
           },
