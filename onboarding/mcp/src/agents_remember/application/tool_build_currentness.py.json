@@ -57,12 +57,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "blob": "44965514704f09508b78c29839ced880346b1479",
             "content": "sha256:31d7d911b48f84f5f7e06c94f42e1c39f9b55cf8565323fb4fac3725db07ec7e",
             "locator": {
-              "end": 135,
+              "end": 138,
               "kind": "line_range",
-              "start": 132
+              "start": 135
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },

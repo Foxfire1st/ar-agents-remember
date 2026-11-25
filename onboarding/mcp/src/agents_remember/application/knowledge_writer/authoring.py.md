@@ -12,9 +12,11 @@ This source-bound correction covers the described L54 seams and the current row-
 
 ### Record revisions and writer provenance
 
-`_place_record` asks `revision_step` for the revision and the base writer. A changed meaning advances once from the owner's base. A new record starts at revision 1, and a record a merge left unmerged is resolved at one more than the higher side's revision. The meaning comparison excludes identity, origin, revision, admission, lifecycle status and writer metadata.
+`_place_record` asks `revision_step` for the revision and the base writer. A changed meaning advances once from the owner's base. A new record starts at revision 1, and a record a merge left unmerged is resolved at one more than the higher side's revision. The meaning comparison excludes identity, origin, revision, admission, lifecycle status, writer metadata and the invariant title.
 
 The placement stamps each new or advanced revision with the resolved caller. The owner's writable history names that revision, the same stamp and its meaning digest in `written`. An unchanged rerun by the same writer preserves the existing stamp. A base-number placement keeps the base stamp or its absence. A rewritten record drops legacy stored state words; a decision may default to its lifecycle word `active`.
+
+An entry with a supplied title puts it in the invariant document. A title-only edit writes the supplied title at the same revision. An updated legacy invariant still lacking a title adds a note naming the rule and the title field.
 
 ### Weakness and dependent records (MIK-R118, MIK-R124)
 
@@ -431,3 +433,5 @@ The following complete predecessor retains useful explanations, old observations
 
 - The refusal names the invariant and the alternatives. [18]
 - The writer delegates the anchored place and closure checks to the weakness helper. A current closure without a commit records its reason and owning task. [62]
+
+- Entry authoring stores a supplied title and the placement adds a note for an updated rule still without a title. [69]

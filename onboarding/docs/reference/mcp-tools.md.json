@@ -3,10 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "73762fd57ea1208ba1c2a8fe6999f52290f62b4d",
-        "content": "sha256:9257b4f61552fa1b6e107ea93d4a3e1ea3d496ce3c2c2c123734e9e4b52668e1",
+        "blob": "62a081810a427c2de6e3ea193686f973d238ea49",
+        "content": "sha256:5d38041c61e04900f04a05f44d7075f36d2b8e6523fc5998170ad1e52355a4eb",
         "locator": {
-          "kind": "file"
+          "end": 193,
+          "kind": "line_range",
+          "start": 193
         }
       },
       "id": "RLZ-QGFMNE",
@@ -20,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "12983a12e152abb84fc6fd051b48b48dcf1997d4",
+        "blob": "62a081810a427c2de6e3ea193686f973d238ea49",
         "content": "sha256:c7540979d3a62a3a624f13deb0b007ef6ba180b93b928c00f2fd5e0070564323",
         "locator": {
-          "end": 330,
+          "end": 349,
           "kind": "line_range",
-          "start": 328
+          "start": 347
         }
       },
       "id": "RLZ-WA23J8",
@@ -39,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "12983a12e152abb84fc6fd051b48b48dcf1997d4",
+        "blob": "62a081810a427c2de6e3ea193686f973d238ea49",
         "content": "sha256:0e7e68f341dd314364c32fd2ef4c5d6ba80ffdae6155d99d40f9774fba6f454f",
         "locator": {
-          "end": 279,
+          "end": 298,
           "kind": "line_range",
-          "start": 277
+          "start": 296
         }
       },
       "id": "RLZ-YKJ4F4",
@@ -63,12 +65,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12983a12e152abb84fc6fd051b48b48dcf1997d4",
+            "blob": "62a081810a427c2de6e3ea193686f973d238ea49",
             "content": "sha256:0e7e68f341dd314364c32fd2ef4c5d6ba80ffdae6155d99d40f9774fba6f454f",
             "locator": {
-              "end": 279,
+              "end": 298,
               "kind": "line_range",
-              "start": 277
+              "start": 296
             }
           },
           "kind": "code"
@@ -80,12 +82,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12983a12e152abb84fc6fd051b48b48dcf1997d4",
+            "blob": "62a081810a427c2de6e3ea193686f973d238ea49",
             "content": "sha256:c7540979d3a62a3a624f13deb0b007ef6ba180b93b928c00f2fd5e0070564323",
             "locator": {
-              "end": 330,
+              "end": 349,
               "kind": "line_range",
-              "start": 328
+              "start": 347
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The MCP reference groups tools and their main arguments. The mounted schema supplies the complete argument contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a081810a427c2de6e3ea193686f973d238ea49",
+            "content": "sha256:160b175698e090ecf9d4d4ad876435efdba2304db6d6e355814d7360742bf932",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

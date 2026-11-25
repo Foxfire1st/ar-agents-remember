@@ -6,15 +6,18 @@
 
 ## Purpose
 
-Retain the largest read_ar_files answer-table sample as a static transport-shape witness.
+Preserve the operation-produced compact reply for the largest-case read_ar_files answer-table scenario.
 
 ## Code Commentary
 
-The literal file-naming answer carries existence/card/state/record-count locations rather than source/card/overview bodies. The ordinary sample honestly records unconverted memory without cards; the largest sample represents governed converted paths, not a universal guarantee of populated memory.
+The fixture has twenty governed paths in converted leaf memory. Each compact row records the source path, existence, card status and a brief path relative to the reported memory root. The omission message directs the reader to that brief.
 
 The answer-table tests consume these exact fixture bytes. Production versus recorded provenance and regeneration belong to PROVENANCE.md and the test producer, not manual edits of identities, tokens or output counts. No secret or current operational credential is represented by these static values.
 
 ## Evidence
 
 
-- This static answer records the naming/compact fields and its own epoch qualifiers. [1]
+
+
+
+- The twenty compact rows name each source, existence, card status and relative brief pointer with missing freshness. The answer explains how a covering write renews the saved brief. [1]

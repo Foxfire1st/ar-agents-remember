@@ -12,6 +12,9 @@ Coordinates explicitly selected publication for a granted canonical leaf on its 
 
 ## Code Commentary
 
+After checking the reviewed owner, the direct route prepares both tracked ignore lines and closes history before it judges the prepared memory tree.
+
+
 ### Logic
 
 DirectLandingRequest selects the exact canonical leaf and requires its current external grant. With code_commit, it verifies the existing local series HEAD; without code_commit, create mode requires code_commit_message, memory_commit_message and the prior code candidate_tree proof on apply. Configured series admission and branch/root identity remain mandatory; a harness switch supplies no authority.
@@ -99,7 +102,10 @@ No new file-local follow-up is established by this documentation pass.
 
 ## Evidence
 
+
+
 - Direct apply captures review eligibility before memory writes, closes the selected owner history and judges the resulting tree. [17]
+
 - Review proof is read before direct landing mutates the checkout and passed to the deferred closing. [18]
 
 ### Docs References
@@ -148,7 +154,18 @@ source is configured for this file's claims.
 
 No additional configured cross-repository evidence is claimed.
 
+
+
 - Direct landing separates verify-existing from pre-code judged create mode and same-generation paired recovery. [13]
+
+
+
 - Exact direct replay retains its generation; only a changed request may replace retired completed evidence. [14]
+
+
+
 - Current direct request, canonical-leaf grant admission, verify-existing code proof and pure pair preview; the retired settings gate is not current. [7]
+
+
+
 - Generation creation and action-required public projection. [9]

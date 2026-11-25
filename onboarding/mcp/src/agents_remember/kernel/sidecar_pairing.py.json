@@ -25,11 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
-            "content": "sha256:13aef717a76a0b04deda44628d0f376574a6688d50f5279af8119a75234a7eda",
+            "blob": "d510d9d58081286c07420229dbc887d205b07902",
+            "content": "sha256:9a3c77f45d534bcbd50d7c8606feb9b1106a366345ef05a801fa7ac6ffcc99b9",
             "locator": {
-              "kind": "symbol",
-              "name": "read_ar_files_tool"
+              "end": 82,
+              "kind": "line_range",
+              "start": 76
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -37,12 +38,12 @@
         },
         {
           "anchor": {
-            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
-            "content": "sha256:ccfb04dd79543eabb345c2fa4041a7b53cad7e2a7155d43c251637dddbc2df86",
+            "blob": "d510d9d58081286c07420229dbc887d205b07902",
+            "content": "sha256:025f512946ec6d2e14fbda9f6ca7eccf7df332eeba2a93c7b233aa2c5ea48260",
             "locator": {
-              "end": 133,
+              "end": 292,
               "kind": "line_range",
-              "start": 77
+              "start": 234
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -166,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e931d4c5f94a3e979b7183a63eb07870effcde78",
+            "blob": "b6179873041bc0bbb9c542b051c7b0ebb1a06dbb",
             "content": "sha256:6b60d43c9ef5c7c9675d1b65bbc5b3b96af08cd1f6b69c9126f03b1a2022d010",
             "locator": {
               "end": 108,
@@ -179,7 +180,7 @@
         },
         {
           "anchor": {
-            "blob": "e931d4c5f94a3e979b7183a63eb07870effcde78",
+            "blob": "b6179873041bc0bbb9c542b051c7b0ebb1a06dbb",
             "content": "sha256:fb800266240f36af9f14de537ed4d581198f01f8f68c8fb12005119ee5900e72",
             "locator": {
               "end": 120,
@@ -192,8 +193,8 @@
         },
         {
           "anchor": {
-            "blob": "e931d4c5f94a3e979b7183a63eb07870effcde78",
-            "content": "sha256:4ebb8455ea5be8a3ab44fc0e489115d8600ce01bfb231272598a61fd924cd468",
+            "blob": "b6179873041bc0bbb9c542b051c7b0ebb1a06dbb",
+            "content": "sha256:7b162e209b5e54ac2c14fe14b536a0806151564456377c71b8e7d87b75caa9c3",
             "locator": {
               "kind": "file"
             },

@@ -39,16 +39,16 @@
       ]
     },
     "12": {
-      "note": "Recovery archives damaged entries, writes quarantine, or reconstructs cancellation from refs. Anchor: `cancel_sync`",
+      "note": "Explicit cancellation attempts to preserve a damaged journal before recovering it. It writes terminal quarantine when rollback refs are absent or reconstructs cancellation from sufficient refs. Missing proof produces a typed repair result.",
       "targets": [
         {
           "anchor": {
-            "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
-            "content": "sha256:444d17161f68e749e5db42f23b58cd06eecfb7566f09ac3f42dfb4f13f559144",
+            "blob": "13ca170bad52685e8caca7967a429b1f4acf71fc",
+            "content": "sha256:02d4c1b7b9aed8051fbe1d5465a8ab5a3e6f2322a9994c54e75c1f1c4dd937c2",
             "locator": {
-              "end": 490,
+              "end": 474,
               "kind": "line_range",
-              "start": 399
+              "start": 404
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
           },
@@ -56,12 +56,12 @@
         },
         {
           "anchor": {
-            "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
+            "blob": "13ca170bad52685e8caca7967a429b1f4acf71fc",
             "content": "sha256:9bdf79f0a04fb919cae29d06ddad576b1c37fc0efd8afd1f82c9e25e788a6b22",
             "locator": {
-              "end": 599,
+              "end": 604,
               "kind": "line_range",
-              "start": 532
+              "start": 537
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
           },

@@ -63,12 +63,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
             "content": "sha256:5a0c8c8d38f12b2a398e74c1a64f73ee81bb882375a5dcb2200c28c603c7f6fe",
             "locator": {
-              "end": 113,
+              "end": 153,
               "kind": "line_range",
-              "start": 87
+              "start": 127
             },
             "path": "mcp/src/agents_remember/kernel/memory_cache.py"
           },
@@ -76,12 +76,12 @@
         },
         {
           "anchor": {
-            "blob": "c4209fdf661a5b390ed3fd2ecd3d234ef4b09d63",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:edee97bbd27e310531ad25d8367e1ce1b68d4f32c367d57c4290d56452db3d99",
             "locator": {
-              "end": 967,
+              "end": 969,
               "kind": "line_range",
-              "start": 922
+              "start": 924
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -89,8 +89,8 @@
         },
         {
           "anchor": {
-            "blob": "3e0ad4a62fe65adb86fac18115c7da4416065bbe",
-            "content": "sha256:c1a362ea32cc6491ccc848bd2f4e93d060a26235c2da93951aaf66f7cdb36a72",
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "content": "sha256:5c3f0c44bb9c1ca2c8046747bd32786050de5a3f3eda7013c7c59e8a6a60c548",
             "locator": {
               "kind": "file"
             },

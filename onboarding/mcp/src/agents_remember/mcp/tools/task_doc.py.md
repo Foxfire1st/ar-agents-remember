@@ -46,7 +46,10 @@ two objects, because a model-typed tool parameter would republish `task_doc` as 
 - The application entry point this builder forwards to.
 
 
-- The shared validation/emission choke point. [2]
+
+
+- The shared validation/emission choke point. Anchor: `_tool_payload` [2]
+
 
 
 - The response model the payload validates against.

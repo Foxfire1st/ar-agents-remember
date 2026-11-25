@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "6584649caa95199219a959979b0491a095d0d6a9",
-    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
+    "codeTree": "cc81897b5c77098790701dfdb82dbf8ed0750807",
+    "commit": "a5a631ca5fe4e27d0b8affa2d8c077d09712b434",
     "role": "curator",
-    "statement": "The review-page guide still describes offered-model selection and the explainer's own settings under the shared host-profile rule. The explainer's bound server and four dedicated tools are preserved when the startup policy sets their approvals.",
-    "task": "261112-BUG-L31",
+    "statement": "The review-page guide's explainer settings, mode and four-tool description stay accurate; the moved explainer grant code makes no claim in this guide false.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,7 +66,7 @@
       "path": "dashboard/src/panels/review/ChangeBadges.tsx"
     },
     {
-      "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+      "blob": "d8d7bc1899968211dae2c1f0a7f51a66b18bcf55",
       "kind": "file",
       "path": "dashboard/src/panels/review/changeTriage.ts"
     },
@@ -161,7 +161,7 @@
       "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
     },
     {
-      "blob": "223fdc99b9ff6ebdff6821a97b0c2247738cb0a1",
+      "blob": "8deeaee292cf24c87c8f5bbab9fade899932b6f6",
       "kind": "file",
       "path": "dashboard/src/panels/review/reading/SubjectSection.tsx"
     },
@@ -206,12 +206,12 @@
       "path": "mcp/src/agents_remember/application/master_architect_record.py"
     },
     {
-      "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+      "blob": "3d0a518fede1ad24a4a085fd8a401d9ea6695ac1",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
     },
     {
-      "blob": "2cf0cb36145dd6c7182ecc769e9a59d8d7ada07f",
+      "blob": "ba0a4d4cc4a64d12dfe74f442b18765bc198f5e0",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
     },
@@ -251,7 +251,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer.py"
     },
     {
-      "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+      "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },

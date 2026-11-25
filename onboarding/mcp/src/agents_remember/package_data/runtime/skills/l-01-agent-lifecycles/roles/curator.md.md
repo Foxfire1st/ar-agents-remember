@@ -23,6 +23,8 @@ The Curator owns one selected leaf’s intent/onboarding/knowledge coherence pas
 
 ## Current Contract
 
+The Curator opens each current saved brief when present before checking code and memory. Use the touched-rule file if the start notice names one. `read_ar_files` can report paths and saved freshness, with rule text where it fits. `knowledge_read` locates the whole records used in the check.
+
 
 Read the bound task files with the harness’s own file tools. Edit canonical task documents through task_doc first; only its covered correct-write refusal admits the logged recovery. Rendered copies remain generated and are never parsed back. Use actual bound schemas and immutable baseline/candidate knowledge. Missing field/capability is a named blocker. Knowledge/onboarding outputs stay inside the selected memory root; evidence and working files stay in task/scratch custody. Another installation’s writer cannot substitute for the admitted source-bound command.
 
@@ -162,3 +164,7 @@ Read authoring at Curation workflow 1: Reconcile, and card formats/citations at 
 - The leaf pass starts only on a leaf task document, never taskless; registered tasks belong to a master, and no standalone leaf, fake task, worktree or enclosure is fabricated for the leaf or foundation route. [13]
 
 - The mirror carries the same effect contract as the canonical role. [1]
+
+
+
+- The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. Knowledge_read names whole records and their evidence. [17]

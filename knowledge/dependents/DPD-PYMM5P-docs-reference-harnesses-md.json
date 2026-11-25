@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "eb92d53bd6de812e9d52fc2ae1898fbb432b5b1b",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "cc81897b5c77098790701dfdb82dbf8ed0750807",
+    "commit": "a5a631ca5fe4e27d0b8affa2d8c077d09712b434",
     "role": "curator",
-    "statement": "The harness reference correctly scopes the permission mode of a settings row to its harness and distinguishes the role launcher’s per-start override from the role_start request.",
-    "task": "261112-BUG-L22",
+    "statement": "The Harnesses reference still accurately describes role-row keys, harness-scoped modes and step-up choices; the reordered start warning concerns nothing this page states.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/reference/harnesses.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,7 +66,7 @@
       "path": "mcp/src/agents_remember/cli/role_agent_override.py"
     },
     {
-      "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+      "blob": "411af9bcc0ee7e14580f70910fd96aec495deefc",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_start_answer.py"
     },

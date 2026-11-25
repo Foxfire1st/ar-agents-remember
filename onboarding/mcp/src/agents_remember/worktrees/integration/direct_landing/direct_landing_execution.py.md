@@ -14,6 +14,9 @@ Executes and recovers the memory-content output of an accepted direct-landing ge
 
 ## Code Commentary
 
+Once the journal records successful completion, a newly made memory commit can trigger a brief refresh for its paired code commit. The advisory goes in the returned result.
+
+
 ### Logic
 
 The successful direct-landing result reads the latest history for the admitted leaf in the published memory commit. It adds the no-pass sentence when that history was closed without a review fact. The owner comes from the operation’s leaf ID or its canonical task reference. Commit and tree proof still come from the publication transaction.
@@ -98,6 +101,14 @@ source is configured for this file's claims.
 
 No additional configured cross-repository evidence is claimed.
 
-- Execution publishes or reuses real memory output and refreshes the cache afterward. [1]
+
+
+- Execution publishes or reuses real memory output and refreshes the ledger cache. After journal completion, a newly made memory commit triggers brief refresh against its paired code commit and can add an advisory. [1]
+
+
+
 - Memory execution converges the same accepted create generation without a second code publication. [6]
+
+
+
 - Prepared attempts preserve repository and exact pre-commit tree evidence. [2]

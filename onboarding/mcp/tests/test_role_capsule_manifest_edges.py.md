@@ -14,6 +14,8 @@ Owns six whole edge tests covering role/skill lookup, specialization shape/blank
 
 The shared-digest cases read `core/digest-map.json` against `core/every-role.md`: every digest place, clause and unit has exactly one home with matching line hashes, headings and role-prefix audiences, retired core units must carry the exact recorded retirement decision and no live binding, and lost, overlapping, unknown or ambiguous bindings fail on mutants. For every shipped role and operation the every-role digest is delivered once as the shared block outside the capsule instructions, carries the round-archive and evidence-catalog rules once for the Worker, Reviewer and Curator, and a one-byte change to it moves the semantic digest without changing the rendered instructions. The Git-root scope rule has one source unit and one digest place addressed to every role. The Reviewer's complete-diff rule is read from the real tree: it stands inline once in its role file and not in the knowledge-use detail. The two moved-piece witnesses, for the Architect's template pointers and the Curator's inline workflow paragraphs, live in `test_role_capsule_moved_piece_reach.py`.
 
+The knowledge-use consumer table checks the Worker, Reviewer, Curator and Investigator pointers to whole-record reads. The existing source-derived audience and structural checks remain the owners of delivery evidence.
+
 ## Evidence Boundaries
 
 - Good common/addressed and excluded-role controls distinguish delivered content. Digit/uppercase/comma-space/unknown recipient controls exercise the production launch compiler, not a separate parser imitation.
@@ -52,3 +54,5 @@ Real-corpus cases bind the Investigator's instruction-shortfall review, the Arch
 - The Git-root scope rule has one complete source unit and one digest home for every role. [14]
 
 - Real-corpus cases bind the Investigator's instruction-shortfall review, the Architect's and Manager's third-rejected-round progress judgment and the Architect's Curator-measurement detail to their declared source, roles and step and to the exact read action that links them, with clause-removal and displaced-action controls. The composed core-unit map checks each range digest and exact non-heading line coverage. Inherited detail audiences retain source and undeclared-file negative controls. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [9]
+
+- The current pointer fixtures bind whole-record retrieval to its named knowledge-use detail. [18]

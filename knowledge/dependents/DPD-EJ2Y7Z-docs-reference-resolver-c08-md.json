@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "eb92d53bd6de812e9d52fc2ae1898fbb432b5b1b",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "cc81897b5c77098790701dfdb82dbf8ed0750807",
+    "commit": "a5a631ca5fe4e27d0b8affa2d8c077d09712b434",
     "role": "curator",
-    "statement": "The resolver reference accurately describes the shaped context packet and the blocks in its recorded whole result.",
-    "task": "261112-BUG-L22",
+    "statement": "The resolver reference still accurately binds context_packet to the leaf's task reference and places the full fact blocks in the log file; the role_start bound and warning-fitting changes do not touch it.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/reference/resolver-c08.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -68,7 +68,7 @@
       "path": "mcp/src/agents_remember/kernel/git_facts.py"
     },
     {
-      "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
+      "blob": "0545be4ce99a465c6e590e0c19385c91e54191db",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },

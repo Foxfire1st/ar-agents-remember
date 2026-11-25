@@ -67,7 +67,13 @@ Named-section deletion and relocation controls cover construction-cost escalatio
 
 - Compiled parented handovers distinguish fixed starter identity from ordinary return role/task addresses; leaf returns name the current Manager. [3]
 
+
+
+
+
 - Current instruction cases require staged individual Manager starts: Worker at build, Reviewer at freeze and Curator after code PASS. Handover tests keep actual-parent developer questions distinct from ordinary role/task returns and pin held-message ordering and permission boundaries. The tool-description census still covers role_start_set beside role_start and role_message; those source-text checks prove no live recipient or host consumption. [4]
+
+
 
 - The current source declares positive instruction-clause deletion controls and task-tool-server/host naming assertions; source presence supplies no executed test result or acceptance. [5]
 

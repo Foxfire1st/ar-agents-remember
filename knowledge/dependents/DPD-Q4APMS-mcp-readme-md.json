@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "cf41b9ab8a855953186f782960fd37a57225b56f",
-    "commit": "1d62157b755f5ab6b60ac89010b6a03160519352",
+    "codeTree": "e34c549a99b13f88e47c7120e9d50aed712501f6",
+    "commit": "3bbaf460317e8572583d884bc0791a219ad1bcfa",
     "role": "curator",
-    "statement": "On the merged code the package README's tool-group table and reference pointers still match: create_server still registers every group before a role binding narrows the served list (CAP-L1), and the tool-log advice sits in the same reference sections (L27). The MCP package README points to the tools reference, whose Worktrees and Knowledge sections describe staged continuation against both pinned merge parents and the writer for an open master crossing.",
-    "task": "261112-BUG-L26",
-    "uncommitted": false
+    "statement": "The package README's tool-group table and reference pointers match the MCP reference and create_server's registered groups; On code e34c549a the Worker's correction of docs/reference/mcp-tools.md lines 669-672 (a host-run role agent receives the tools of its role once from agents-remember-task) changes only that sentence; the README's tool-group table, its role-agent group and its pointers to the reference sections still match.",
+    "task": "261112-KNO-L4",
+    "uncommitted": true
   },
   "document": "mcp/README.md",
   "id": "DPD-Q4APMS",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
     },
     {
-      "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+      "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "12983a12e152abb84fc6fd051b48b48dcf1997d4",
+      "blob": "62a081810a427c2de6e3ea193686f973d238ea49",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }

@@ -89,7 +89,7 @@ No configured live documentation source was available for this pass.
 - A re-authoring is refused while another evidence line still cites its number. [5]
 - The sidecar a card without one gets. [6]
 
-- Converted citation fixing authors the references of the selected card. A document list applies that operation to each named card. [7]
+- Converted citation fixing authors the references of the selected card. A document list applies that operation to each named card, and a call naming no document authors every converted card of the selected memory tree. [7]
 
 
 - Bulk enumeration visits Markdown under onboarding, including dot directories, and applies the shared predicate to memory-root-relative paths. An explicitly named Markdown card follows its own selection path. [11]
@@ -97,7 +97,7 @@ No configured live documentation source was available for this pass.
 - Two tables with no blank line between them are refused when either holds citations. [8]
 - A delimiter row: every cell three dashes or more. [9]
 
-- Merged tables are refused by name and nothing is written; a single-dash row is a placeholder. [10]
+- Merged tables are refused by name and nothing is written; a single-dash row is a placeholder. Anchor: `test_two_tables_with_no_blank_line_between_them_are_refused_by_name` [10]
 
 
 ### Cross-Repo References

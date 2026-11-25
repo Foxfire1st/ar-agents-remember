@@ -12,7 +12,7 @@ The module is a data-only registry of reviewed lifecycle-skill wording and byte 
 
 The module defines no functions. Its tables hold:
 
-- each role's reference-pointer actions as `(reference path, action prefix)` pairs, and the operation-level pointer actions per operation and role;
+- each role's reference-pointer actions as `(reference path, action prefix)` pairs, and the operation-level pointer actions per operation and role. Current knowledge-use prefixes address whole-record retrieval for the Worker, Curator, Reviewer and Investigator;
 
 - retained historical SHA-256 tables for operation sources and per-role compiled stages, plus the role set each operation addresses;
 - exact Curator clauses for message timing and content, the serving-stage boundary and semantic-scope fields;
@@ -34,3 +34,5 @@ The base source at `a2f0fced8896b92d31fd3f78351d01f5302be97e` held `ORDINARY_DET
 - A grouped detail read names several actions and keeps their owner clauses. [4]
 
 - The module is data only; consumer tests own compilation and assertions. [5]
+
+- The current pointer fixtures bind whole-record retrieval to its named knowledge-use detail. [7]

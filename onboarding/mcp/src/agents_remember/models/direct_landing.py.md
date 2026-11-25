@@ -11,6 +11,9 @@ addressed direct landing result with a typed `state` (`landed` / `would-land` / 
 
 ## Code Commentary
 
+The response has an optional briefsProblem advisory alongside the actual published commit identities and the separately reported ledger cache observation.
+
+
 ### Logic
 
 `codeCommit` and `memoryContentCommit` are the real output identities. `ledgerCache` is
@@ -59,10 +62,16 @@ No configured external domain-documentation source applies.
 ### Repo-Internal References
 
 
-- Real code/memory SHAs are separate from optional ledgerCache diagnostics. [1]
 
 
-- The response model shape for the direct landing operation. [2]
+- The result identifies the real code and memory commits and reports ledger cache observations and any brief refresh advisory in their own fields. [1]
+
+
+
+
+
+- The response model shape for the direct landing operation. Anchor: `DirectLandingResponse` [2]
+
 
 
 - Registered as the `direct_landing` tool response model. [3]
@@ -102,7 +111,10 @@ The current source seams include `DirectLandingResponse`. The response vocabular
 ### Reconciled Source Evidence
 
 
-- The current module exposes `DirectLandingResponse` at this ownership boundary. [9]
+
+
+- The current module exposes `DirectLandingResponse` at this ownership boundary. Anchor: `DirectLandingResponse` [9]
+
 
 
 ## 260821-DAGQC-L2 Closed Outcome Vocabulary
@@ -115,8 +127,16 @@ once carried was removed by the closeout-door cut (commit `fad9808e`); a direct 
 carries or reports a door generation.
 
 
+
+
 - The strict response adds optional candidateTree, candidatePaths and codeCommitMessage for code-create preview/output evidence. [10]
 
+
+
+
 - Memory-content execution and same-generation recovery are journaled below the coordinator. [5]
+
+
+
 
 - Produced by the admitted direct-landing coordinator. [4]

@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
+        "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+        "content": "sha256:c395c3d2296f24a2d442417398c09681c24db546f13efeeb27c88fd6accbbfd4",
+        "locator": {
+          "kind": "symbol",
+          "name": "execute_direct_landing"
+        }
+      },
+      "id": "RLZ-32RV9P",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Refreshes after forward direct landing produces its admitted memory commit.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
         "content": "sha256:b9305c3bc5b156027ba6da8574ac256628432061178f4065072357ef4ddf5e4f",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
+        "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
         "content": "sha256:e197e7904a2347e0d103e2ebfe29bb601570a8c76ff9f3f0d7aeb20433236535",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
+        "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
         "content": "sha256:8a5524012b9b572fde9e8ed4d61b5176cecb347c8610ac4826666de7da0ead42",
         "locator": {
           "kind": "symbol",
@@ -58,24 +76,24 @@
   ],
   "references": {
     "1": {
-      "note": "Execution publishes or reuses real memory output and refreshes the cache afterward.",
+      "note": "Execution publishes or reuses real memory output and refreshes the ledger cache. After journal completion, a newly made memory commit triggers brief refresh against its paired code commit and can add an advisory.",
       "targets": [
         {
           "anchor": {
-            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
-            "content": "sha256:bd8451039a34cb7ca620810fe40f034694ff2e8ac3eef1cf374ad2ec292443fa",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:c395c3d2296f24a2d442417398c09681c24db546f13efeeb27c88fd6accbbfd4",
             "locator": {
-              "end": 84,
+              "end": 94,
               "kind": "line_range",
-              "start": 51
+              "start": 53
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
-            "content": "sha256:c7a648e0cc49aa01a8b8861aa83965e9b16354ecdb6e2340b175caeaa7e5fdaf",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:2e74df889c7ce46e84c0378bc4b9d0c58650ddd24d012e314583bc7d2747fef8",
             "locator": {
               "kind": "file"
             }
@@ -89,44 +107,44 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
             "content": "sha256:cd45b2305222e7a01b8cf90918e4bfc0aa663889712936c7d5608c97b083a8f4",
             "locator": {
-              "end": 439,
+              "end": 449,
               "kind": "line_range",
-              "start": 423
+              "start": 433
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
             "content": "sha256:ca950dc7f3c5055a50c38ff9505d804052841476cb989ec5be27b9d2a8a755e5",
             "locator": {
-              "end": 471,
+              "end": 481,
               "kind": "line_range",
-              "start": 442
+              "start": 452
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
             "content": "sha256:7f06d053086fcdd8b0384f1aaf6b06bed18c8e89141b2b8750c7c2139386189e",
             "locator": {
-              "end": 257,
+              "end": 267,
               "kind": "line_range",
-              "start": 241
+              "start": 251
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
-            "content": "sha256:c7a648e0cc49aa01a8b8861aa83965e9b16354ecdb6e2340b175caeaa7e5fdaf",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:2e74df889c7ce46e84c0378bc4b9d0c58650ddd24d012e314583bc7d2747fef8",
             "locator": {
               "kind": "file"
             }
@@ -201,8 +219,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
-            "content": "sha256:c7a648e0cc49aa01a8b8861aa83965e9b16354ecdb6e2340b175caeaa7e5fdaf",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:2e74df889c7ce46e84c0378bc4b9d0c58650ddd24d012e314583bc7d2747fef8",
             "locator": {
               "kind": "file"
             }
@@ -216,7 +234,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
             "content": "sha256:20e5807354ef02250712841ec0af798cdcaa447778a73d792a4db04fceb954cb",
             "locator": {
               "kind": "symbol",
@@ -232,7 +250,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
             "content": "sha256:9bd63e9799bcc04f581c85a279f4d150f703e8b18b82f940f85ded943d0724f0",
             "locator": {
               "kind": "symbol",

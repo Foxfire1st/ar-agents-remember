@@ -87,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bfbe2e81d84a8bfc86b538760f6510133897cc83",
+            "blob": "74906e090cbaf56d8b60a978f4ada2a8b13bda8f",
             "content": "sha256:90564862944969df9ce94f1879758f8292bfd1d26c38277e85cea02eeff7c139",
             "locator": {
               "kind": "symbol",
@@ -131,15 +131,16 @@
       ]
     },
     "5": {
-      "note": "External closeout applies the shared exclusions to its dirty check and exact memory-tree capture.\n\nAnchor: `_exact_memory_tree`, `_commit_memory_content`",
+      "note": "External closeout applies the shared exclusions to its dirty check and exact memory-tree capture. Anchor: `_exact_memory_tree`, `_commit_memory_content`",
       "targets": [
         {
           "anchor": {
-            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
             "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
             "locator": {
-              "kind": "symbol",
-              "name": "_exact_memory_tree"
+              "end": 197,
+              "kind": "line_range",
+              "start": 189
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -147,11 +148,12 @@
         },
         {
           "anchor": {
-            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
-            "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "content": "sha256:3e22d398f99072599657b0eb648c6ae1cbd7dd15c54a6e8ed712d7c3de83c441",
             "locator": {
-              "kind": "symbol",
-              "name": "_commit_memory_content"
+              "end": 625,
+              "kind": "line_range",
+              "start": 524
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -164,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
             "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
             "locator": {
               "kind": "symbol",
@@ -176,7 +178,7 @@
         },
         {
           "anchor": {
-            "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
+            "blob": "f6c05e150769e32c8c67cd6f806b4d4ec29d7140",
             "content": "sha256:02b7b8473248163ebad747818ab63a8a92f103861c010144b196e2dd0163295f",
             "locator": {
               "kind": "symbol",
@@ -193,7 +195,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
+            "blob": "f6c05e150769e32c8c67cd6f806b4d4ec29d7140",
             "content": "sha256:02b7b8473248163ebad747818ab63a8a92f103861c010144b196e2dd0163295f",
             "locator": {
               "kind": "symbol",

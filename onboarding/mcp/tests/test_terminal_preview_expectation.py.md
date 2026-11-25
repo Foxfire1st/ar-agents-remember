@@ -155,4 +155,4 @@ No meaningful cross-repo references found.
 
 - The drift-snapshot branch uses a preview-aware expectation; its adjacent comment records the earlier missing-keyword cause and merge provenance. [2]
 
-- The `unit-regression` lane selects `mcp/tests/test_terminal_preview_expectation.py` (`mcp/tests/test-evidence-lanes.toml:617`). [13]
+- The `unit-regression` lane selects `mcp/tests/test_terminal_preview_expectation.py` (`mcp/tests/test-evidence-lanes.toml:625`). [13]

@@ -389,26 +389,16 @@
       ]
     },
     "13": {
-      "note": "The raw count is 2 and the response count 1; only the stray row remains.\n\nAnchor: `test_an_onboarding_row_that_answers_an_uncovered_item_is_not_reported_unnecessary`",
+      "note": "The raw count is 2 and the response count 1; only the stray row remains. Anchor: `test_an_onboarding_row_that_answers_an_uncovered_item_is_not_reported_unnecessary`",
       "targets": [
         {
           "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:66b6cbe0523bee0559e9bd323bd871e4d0c69c177ace2e539a62ba7c626ca2e0",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_unexplained_change_disposition.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
+            "blob": "4510eb09db2a5f95a8b33ba5a8d0de15dc079129",
             "content": "sha256:f34bb4121c1918a7114ec168bed963c6dcf5c63bc4c5759a2d9c55975fd8e44e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_onboarding_row_that_answers_an_uncovered_item_is_not_reported_unnecessary"
+              "end": 719,
+              "kind": "line_range",
+              "start": 678
             },
             "path": "mcp/tests/test_unexplained_change_disposition.py"
           },

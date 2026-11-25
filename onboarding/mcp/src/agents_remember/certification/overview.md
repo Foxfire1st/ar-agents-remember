@@ -159,7 +159,10 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 - Retained reference account (no fresh execution or acceptance inferred): Typed R05 finalization and leg authorization exist as library functions; existence is not caller proof. [10]
 
+
+
 - Memory rails remain a required catalog-derived port; default composition retains knowledge services without prepared-memory or continuation bindings. [15]
+
 
 - A published terminal generation is processed before nonzero run refusal; supplied catalogs remain distinct from missing publication. [16]
 

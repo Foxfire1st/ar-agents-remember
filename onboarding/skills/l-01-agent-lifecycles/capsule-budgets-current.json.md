@@ -10,9 +10,9 @@ The current size record keeps authored capsule, detail and digest ceilings separ
 
 ## Code Commentary
 
-The generated curation entries record 4,423 words for the Curator and 3,299 for the Manager. The coherence-judgments detail measures 353 words. These measurements sit below the authored ceilings.
+The generated curation entries record 4,536 words for the Curator and 3,299 for the Manager. The coherence-judgments detail measures 353 words. These measurements sit below the authored ceilings.
 
-The generated measurement for the Curator handoff ingestion template is 6,357 words and carries the current source digest. The measurement leaves the authored ceilings unchanged.
+The generated measurement for the Curator handoff ingestion template is 6,630 words and carries the current source digest. The measurement leaves the authored ceilings unchanged.
 
 The record has schema `ar-role-capsule-budget-current/v1`. Its `derived.current_measurements` records 34 capsule sizes, 38 declared step-detail sizes, the every-role digest and eight ordinary linked templates. Authored capsule ceilings are Architect 5,500 words, Manager 4,600, Curator 4,537, Reviewer 4,200, Bootstrap 4,000, Orchestrator 3,800 and every other role 3,742; the detail ceiling is 2,500 and the digest ceiling 2,327. Current measurements are facts, not individual item limits.
 
@@ -46,6 +46,12 @@ not the active renewal or a new source measurement.
 
 - The generated size record holds the current curation capsule and judgment detail measurements. [8]
 
-- The generated template measurement records 6,357 words and the current source digest. [11]
+- The generated template measurement records 6,630 words and the current source digest. [11]
 - The decision block retains authority and frozen historical registry and predecessor identities. [1]
+
+
+
+
+
+
 - Current generated measurements include ordinary linked templates. [3]

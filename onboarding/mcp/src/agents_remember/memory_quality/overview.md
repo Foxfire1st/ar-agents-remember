@@ -251,7 +251,10 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 - Named converted-base refusal depends on the supplied port; no-port HEAD reads can yield no bases; reported base failure withholds anchor-path refusals.  Anchor: `_comparison_bases` `converted_knowledge_check` [81]
 - Retained reference account (no fresh execution or acceptance inferred): The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner.  Anchor: `run_memory_quality_request` `_execute_memory_quality` [1]
 
-- The memory registrar exposes `memory_quality_check` to agents and routes it to the start, poll or whole-run payload. [2]
+
+
+- The memory registrar exposes `memory_quality_check` to agents and routes it to the start, poll or whole-run payload. Anchor: `memory_quality_check_payload` [2]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The application surface projects readiness with no affected-closure plan. [16]
 - Retained reference account (no fresh execution or acceptance inferred): The caller-exclude surface on the registered tool and the CLI. [25]

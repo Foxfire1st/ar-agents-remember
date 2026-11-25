@@ -32,6 +32,7 @@ The leaf route establishes the contract's recorded memory base before passing it
 - `crossing_write_report` locates the open sync for the named crossing and appends rows to its open history file. It can resolve or reconfirm existing records. The writer refuses new records, handoff entries and rulings on this route. The settled code commit supplies both the snapshot and the writer's code base. A missing sync, a different crossing, an unfinished code side or a moved code branch refuses the write.
 - `wave_write_report(target, submission)` runs the taskless wave write.
 - Leaf, crossing and wave writes pass the resolved owner and one caller stamp to the writer. The stamp uses the runtime binding and launch receipt. Unresolved identity or a missing coordination root yields an unknown stamp with the reason.
+- The leaf route captures the prior occurrence index and passes the written and removed memory paths to brief regeneration after the report reaches `written`. The report notes the regeneration outcome. A brief-writing problem leaves the primary writer state intact.
 - The writer itself is `application.knowledge_writer.write_knowledge`; this module holds no argument parser and
   prints nothing. A caller receives the `WriteReport`, or a string naming why the invocation is refused.
 
@@ -60,7 +61,7 @@ No additional work is asserted by this card.
 
 - Both entry points share leaf-write admission and pass the request's owner, question port and caller stamp to the writer. [3]
 - The caller stamp comes from the runtime binding and receipt, with a reason when the coordination root is missing. [10]
-- The crossing writer carries its owner and caller stamp with the selected series code. [11]
+- The crossing writer carries its owner and caller stamp with the settled code commit the open sync recorded. [11]
 - The wave writer carries the wave owner and a caller stamp. [12]
 
 ### Docs References
@@ -83,3 +84,5 @@ None: one memory worktree, named by the contract the caller supplies.
 
 - The raise question's port is built from the mounted settings or from the command's own route, and only the command half's refusal names another route. [1]
 - A command route whose loader answers a clause is refused with the mounted `knowledge_write` call, and a loaded settings root that differs keeps its own refusal. [2]
+
+- After a written leaf report, the route refreshes briefs from changed and removed memory paths and records its outcome in notes. [13]

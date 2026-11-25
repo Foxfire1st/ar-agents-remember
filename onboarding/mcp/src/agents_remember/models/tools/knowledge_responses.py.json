@@ -4,12 +4,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
-            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
             "locator": {
               "kind": "file"
             }
@@ -19,12 +19,12 @@
       ]
     },
     "10": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
-            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
             "locator": {
               "kind": "file"
             }
@@ -34,12 +34,12 @@
       ]
     },
     "11": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
-            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
             "locator": {
               "kind": "file"
             }
@@ -49,12 +49,12 @@
       ]
     },
     "13": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
-            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
             "locator": {
               "kind": "file"
             }
@@ -64,12 +64,12 @@
       ]
     },
     "14": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
-            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
             "locator": {
               "kind": "file"
             }
@@ -83,7 +83,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
             "content": "sha256:4889da96e4a539fa55d10bd7a94ae233269cd690271782d68de54eab67c5f048",
             "locator": {
               "kind": "symbol",
@@ -95,12 +95,12 @@
       ]
     },
     "17": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
-            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
             "locator": {
               "kind": "file"
             }
@@ -114,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
             "content": "sha256:56378eecacf2289549c32aa3be01be39ff48699acd6d564caa98ce7f3a1f9f15",
             "locator": {
               "kind": "symbol",
@@ -126,12 +126,12 @@
       ]
     },
     "2": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
-            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
             "locator": {
               "kind": "file"
             }
@@ -145,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
             "content": "sha256:ff68ce0fc9bc2b83bb37171633d836ca0617299821e55922d8e477a2db9c0f3f",
             "locator": {
               "end": 212,
@@ -179,8 +179,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ce0bfc646a94b8e533c52d7c93d1acae2c8ab4d",
-            "content": "sha256:ff8872d395271a4b79daeffce3cd5e759f1501cafdc016d77dee731a514b3483",
+            "blob": "7698616abcd31cb08bba4a158474703b7916d978",
+            "content": "sha256:f869436153df02f28bb874f092fb52f9f4aaf7238e085ac6b57865589b534653",
             "locator": {
               "kind": "file"
             },
@@ -191,12 +191,12 @@
       ]
     },
     "3": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
-            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
             "locator": {
               "kind": "file"
             }
@@ -210,12 +210,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ce0bfc646a94b8e533c52d7c93d1acae2c8ab4d",
+            "blob": "7698616abcd31cb08bba4a158474703b7916d978",
             "content": "sha256:8e7c9a32a5512b0e950e88d0ac614b3d937d29bf3f3cc3b73101b5107a856cba",
             "locator": {
-              "end": 1179,
+              "end": 1180,
               "kind": "line_range",
-              "start": 1124
+              "start": 1125
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
@@ -223,12 +223,12 @@
         },
         {
           "anchor": {
-            "blob": "1ce0bfc646a94b8e533c52d7c93d1acae2c8ab4d",
+            "blob": "7698616abcd31cb08bba4a158474703b7916d978",
             "content": "sha256:5cda69a9b9460268ec55dd98cec9a656d57179d1d5dd9788afebf5475bcabe89",
             "locator": {
-              "end": 1608,
+              "end": 1609,
               "kind": "line_range",
-              "start": 1552
+              "start": 1553
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
@@ -254,12 +254,12 @@
       ]
     },
     "34": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
-            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
             "locator": {
               "kind": "file"
             }
@@ -322,7 +322,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
             "content": "sha256:9ee8b471f0b95c456599695ba98ec742061906fd02621c2b9428049911d031f8",
             "locator": {
               "end": 55,
@@ -339,7 +339,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
             "content": "sha256:fbd01d0c7c951913f1e136c887504d64992f022dab4d5997529d09d349d3cc8f",
             "locator": {
               "end": 49,
@@ -352,12 +352,12 @@
       ]
     },
     "4": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
-            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
             "locator": {
               "kind": "file"
             }
@@ -371,7 +371,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
             "content": "sha256:b03a0dc7c64a4da94332b901394040442cc1e759c8a1508021916450f92e4a9c",
             "locator": {
               "end": 33,
@@ -388,7 +388,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
             "content": "sha256:9fee503dba31f601e1e1cbfff0294a73785e2560900da5dc4147bc5486d5d9c7",
             "locator": {
               "end": 43,
@@ -405,7 +405,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
             "content": "sha256:c589de1ee20de654ac3253797544a684657522c5d8bd9b5806ece7a43597da60",
             "locator": {
               "end": 28,
@@ -422,7 +422,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
             "content": "sha256:a34bd31ebc5bb301452e68cbf31f389ccde5fd78b373c0b8768a96e4d52b14c7",
             "locator": {
               "end": 20,
@@ -439,8 +439,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
-            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
             "locator": {
               "kind": "file"
             }
@@ -454,8 +454,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
-            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
             "locator": {
               "kind": "file"
             }
@@ -469,8 +469,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
-            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
             "locator": {
               "kind": "file"
             }
@@ -480,12 +480,12 @@
       ]
     },
     "47": {
-      "note": "The read response: which view and which snapshot it was read at, echoed beside the payload verbatim, plus the optional memory-tree binding and index completeness when the read went through a converted tree's index.",
+      "note": "The read model declares view, snapshot, memory tree and index completeness fields. The mounted projection names record locations.",
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
-            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
             "locator": {
               "kind": "file"
             }
@@ -495,12 +495,12 @@
       ]
     },
     "48": {
-      "note": "The read handler that stores the view payload's own JSON and echoes the snapshot, the completeness statement (forced to `false` by a partial index) and the continuation token, beside `memoryTree` and `indexComplete`.",
+      "note": "The read model declares completeness and continuation beside its memory-tree and index fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
-            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
             "locator": {
               "kind": "file"
             }
@@ -514,7 +514,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
             "content": "sha256:7a2f75a44c9d5d7656be66496e43cddf4a25bfd79e14a04f473849e592463bf7",
             "locator": {
               "kind": "symbol",
@@ -526,12 +526,12 @@
       ]
     },
     "5": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
-            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
             "locator": {
               "kind": "file"
             }
@@ -545,7 +545,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
             "content": "sha256:18a5ecb48926b0e6097d1f1fcec4be8c743c236f66212d0d43eede17154d126d",
             "locator": {
               "kind": "symbol",
@@ -612,8 +612,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
-            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
             "locator": {
               "kind": "file"
             }
@@ -622,13 +622,30 @@
         }
       ]
     },
-    "6": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+    "55": {
+      "note": "The write response declares notes and a separate truncation flag alongside the full report location.",
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
-            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:c4fe79fc47bbeed7a3bdd07b631a74d466cc1a4aafc59c2b7bacb88c0da6de3d",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
             "locator": {
               "kind": "file"
             }
@@ -642,7 +659,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
             "content": "sha256:ff68ce0fc9bc2b83bb37171633d836ca0617299821e55922d8e477a2db9c0f3f",
             "locator": {
               "end": 212,
@@ -659,12 +676,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ce0bfc646a94b8e533c52d7c93d1acae2c8ab4d",
+            "blob": "7698616abcd31cb08bba4a158474703b7916d978",
             "content": "sha256:5cda69a9b9460268ec55dd98cec9a656d57179d1d5dd9788afebf5475bcabe89",
             "locator": {
-              "end": 1608,
+              "end": 1609,
               "kind": "line_range",
-              "start": 1552
+              "start": 1553
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },

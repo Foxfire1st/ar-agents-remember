@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+        "blob": "d510d9d58081286c07420229dbc887d205b07902",
         "content": "sha256:7e56c6535b587a4cf7ecd40e927c3be28c4e6028f673f090d6e7ab81bbac4bc1",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+        "blob": "d510d9d58081286c07420229dbc887d205b07902",
         "content": "sha256:662a9b2bd247da02231525a4f1e84b884b45deed59716b33884b7130e021ec6b",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,43 @@
     },
     {
       "anchor": {
-        "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+        "blob": "d510d9d58081286c07420229dbc887d205b07902",
+        "content": "sha256:025f512946ec6d2e14fbda9f6ca7eccf7df332eeba2a93c7b233aa2c5ea48260",
+        "locator": {
+          "kind": "symbol",
+          "name": "_named_files"
+        }
+      },
+      "id": "RLZ-9H26JQ",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Uses the paired brief source for eligible rows and gives the assembled reply to the reader's final fitter.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d510d9d58081286c07420229dbc887d205b07902",
+        "content": "sha256:94109dec2ed3237f4828413be163ef7458b0076a5a15b34d23795495c3717bc0",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_ar_files_reply"
+        }
+      },
+      "id": "RLZ-AX6VG6",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Binds the selected memory index and its tree to the single observed code pair used during the naming read.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d510d9d58081286c07420229dbc887d205b07902",
         "content": "sha256:662a9b2bd247da02231525a4f1e84b884b45deed59716b33884b7130e021ec6b",
         "locator": {
           "kind": "symbol",
@@ -58,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+        "blob": "d510d9d58081286c07420229dbc887d205b07902",
         "content": "sha256:770411dbdccb58c01683a0f96ea9172b357a13e489d2d7ddec5af5982235a463",
         "locator": {
           "kind": "symbol",
@@ -77,26 +113,16 @@
   ],
   "references": {
     "1": {
-      "note": "The thin payload wrapper that returns this application entry point's dict through the token choke point.\n\nAnchor: `read_ar_files_payload`",
+      "note": "The mounted payload delegates to the reply wrapper and passes its fitter to the shared completion boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
-            "content": "sha256:a4d551b212d541a2081c10c0ac75510824aec6cff5e1d0c5b7da1ebe7adc1641",
+            "blob": "199e11defd0b76b05c36376eba08000fef48412e",
+            "content": "sha256:f13f7eadcbe28bce1f248b18e9d7f540a0611c5c9ef199cee438b063e5a1eb1a",
             "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/read_files.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
-            "content": "sha256:c7655e0400019bf4eed28ab2247d04ba6fe6d4707d672bcb3e4d8e36138b8450",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_ar_files_payload"
+              "end": 62,
+              "kind": "line_range",
+              "start": 53
             },
             "path": "mcp/src/agents_remember/mcp/tools/read_files.py"
           },
@@ -105,11 +131,11 @@
       ]
     },
     "3": {
-      "note": "The memory-format switch: a tree counts as converted only with its layout marker, text format and readable dataset selection; other trees name no card.",
+      "note": "The memory-format switch selects the converted index when available and names no card for other memory states.",
       "targets": [
         {
           "anchor": {
-            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "blob": "d510d9d58081286c07420229dbc887d205b07902",
             "content": "sha256:f0b5aaa14a19ede6854fbd25460c1942f35362646778ad73ea404eed04184294",
             "locator": {
               "kind": "symbol",
@@ -136,12 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "blob": "d510d9d58081286c07420229dbc887d205b07902",
             "content": "sha256:130c097d6557419be46eb765137e0adf91bc26c50c8db90e662a20cea5931a77",
             "locator": {
-              "end": 42,
+              "end": 45,
               "kind": "line_range",
-              "start": 37
+              "start": 40
             }
           },
           "kind": "code"
@@ -149,15 +175,68 @@
       ]
     },
     "6": {
-      "note": "NamedFile types the card location, card status, record counts, action-needed records and per-row refusals.",
+      "note": "A fuller naming row can carry its governing card and action records. A compact row keeps its path and any recorded existence. A refusal has its code. Other compact rows give card status and any brief pointer with saved freshness.",
       "targets": [
         {
           "anchor": {
-            "blob": "d06589a7eab5d08e42cab27bd828a7d5226df3a8",
-            "content": "sha256:92a385cf5ff6bcece2e5ce18a267972d5e681b4f724b4cb09d8ef7f082bf150b",
+            "blob": "62a081810a427c2de6e3ea193686f973d238ea49",
+            "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
-              "kind": "symbol",
-              "name": "NamedFile"
+              "end": 90,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "content": "sha256:471da92ea95b622c6fcabcbf2c3ee284c21b03fa248586ea8e61e90211f6a18a",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/application/read_files_briefs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "content": "sha256:6e80ad899e73b4af5891915a7bb47a67abe595b035b57a607ffc06149ee9941a",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "mcp/src/agents_remember/application/read_files_briefs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b1c36e5ae6160b8579f2f1783a7ac45cdb961d74",
+            "content": "sha256:d12893bc8963ee3c8f1abcaf553337e94c78a293eb0cf399ee18707e7dd51be3",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "mcp/tests/tool_answer_l109_cases.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e394b2900e76d878df293cc337529013c0392f4f",
+            "content": "sha256:875e5792d131d91b7f77b28ecdb29d5b9b105e67b04cef19515d711351448cb9",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 109
             },
             "path": "mcp/src/agents_remember/models/read_files.py"
           },
@@ -170,7 +249,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "blob": "d510d9d58081286c07420229dbc887d205b07902",
             "content": "sha256:4a39ad0343d62dc2efcbff5fbdb4d7d84e1d8b0125e69500aa3b82414018c188",
             "locator": {
               "kind": "symbol",

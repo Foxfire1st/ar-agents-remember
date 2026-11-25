@@ -41,7 +41,10 @@ Read `selection.py` for exact stored object type checks, original terminal publi
 
 - Exact original terminal readback verifies retained publication/evidence and constructs terminal selections, without complete-graph journal CAS. [4]
 
+
+
 - Default application composition retains rails and knowledge adapters but no prepared-closeout continuation or producer. [7]
+
 
 - The surviving observation utility recursively projects typed finding evidence and raises structured refusal. [10]
 

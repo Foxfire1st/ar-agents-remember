@@ -19,8 +19,8 @@
         },
         {
           "anchor": {
-            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
-            "content": "sha256:8ecf8d42ace1b7b2403bfe710d8c6cb3ab03a7c3e146586c11c6e386098e3bea",
+            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "content": "sha256:23cdb14e179afb144de78dca77e4a9a9a18fa57e61d8aa99ee721f62ed32cdd9",
             "locator": {
               "kind": "file"
             },
@@ -74,8 +74,8 @@
         },
         {
           "anchor": {
-            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
-            "content": "sha256:8ecf8d42ace1b7b2403bfe710d8c6cb3ab03a7c3e146586c11c6e386098e3bea",
+            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "content": "sha256:23cdb14e179afb144de78dca77e4a9a9a18fa57e61d8aa99ee721f62ed32cdd9",
             "locator": {
               "kind": "file"
             },
@@ -222,8 +222,8 @@
         },
         {
           "anchor": {
-            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
-            "content": "sha256:8ecf8d42ace1b7b2403bfe710d8c6cb3ab03a7c3e146586c11c6e386098e3bea",
+            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
+            "content": "sha256:23cdb14e179afb144de78dca77e4a9a9a18fa57e61d8aa99ee721f62ed32cdd9",
             "locator": {
               "kind": "file"
             },
@@ -251,12 +251,12 @@
         },
         {
           "anchor": {
-            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
+            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
             "content": "sha256:190f75581818fdfe52e3d44c0c4174725dc23c441333a60cd230274e0abcc3b9",
             "locator": {
-              "end": 460,
+              "end": 431,
               "kind": "line_range",
-              "start": 379
+              "start": 350
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -264,12 +264,12 @@
         },
         {
           "anchor": {
-            "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
+            "blob": "58ee640a8f53ac7e3e3b4aa884d750d6ad8eead7",
             "content": "sha256:a7c7dce2e7f1889ec03211fca275ead24d98e28898bf7631070920d51b9ea0ca",
             "locator": {
-              "end": 711,
+              "end": 715,
               "kind": "line_range",
-              "start": 672
+              "start": 676
             },
             "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
           },
@@ -277,12 +277,12 @@
         },
         {
           "anchor": {
-            "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
+            "blob": "58ee640a8f53ac7e3e3b4aa884d750d6ad8eead7",
             "content": "sha256:3838533d65cb4855c05eba6a16d5d9e19afdc7f1ac73231021306d47816b97fd",
             "locator": {
-              "end": 669,
+              "end": 673,
               "kind": "line_range",
-              "start": 653
+              "start": 657
             },
             "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
           },
@@ -324,12 +324,12 @@
       ]
     },
     "26": {
-      "note": "The generic route records round evidence separately from code route-review evidence.",
+      "note": "A generic `record_review` call can publish a route BLOCK when it records a sanctioned code addition through `addedFindings` and prior route evidence exists.",
       "targets": [
         {
           "anchor": {
-            "blob": "97c992a319dabd974411f6174e279b7426d100cf",
-            "content": "sha256:b964e6c1ffd990bad0197b5559b8c7f9f32dcbcb90c602bdf0d4477f208c49e5",
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
+            "content": "sha256:b20c04ec1b9587546203f3b557619d409ae1f11ef51a285e54104065456181a7",
             "locator": {
               "kind": "symbol",
               "name": "_record_task_review_bound"

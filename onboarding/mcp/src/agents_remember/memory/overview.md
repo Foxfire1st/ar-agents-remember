@@ -11,6 +11,8 @@ The route includes baseline adoption, converted recovery-leaf carryover, convers
 
 ## Hot Path Summary
 
+A successful new converted baseline can refresh source briefs, folder indexes and the tree stamp after durable publication. The refresh uses the paired code source and requires effective exclusion of the derived folder.
+
 Recorded Lean symbol reads use whole-name lookup and preserve uncertain exact keys as unsupported locators with no ranges. The definitions memo retains scope metadata and separates script test-file classes. Native converted-card citation authoring uses the live reader. Legacy format 1 selects its historical reader before span lookup.
 
 MIK-R109 adds reverse-locator queries on `KnowledgeIndex`: `entry_sidecar`/`entry_sidecars` identify declaring sidecars, `record_paths` identifies authoritative record files, and `uuid_text_ids` resolves projected UUIDs to text IDs. They read the existing index tables; schema, derived-cache custody and text authority stay unchanged. Caller-visible naming/state projection remains in the application layer.
@@ -318,7 +320,10 @@ Numbered findings [116] and [149] describe converted carryover planning, convers
 
 - Knowledge text is authority; the retained package owns derived schema/codecs/reads rather than canonical writers or approval. [146]
 
+
+
 - Converted baseline validates a paired immutable tree; publication reads its comparison parent after validation. [147]
+
 
 - Adoption distinguishes legacy-card/validator/drift refusals and drift acceptance cannot clear the first two. [148]
 

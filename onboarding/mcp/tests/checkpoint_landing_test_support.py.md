@@ -16,6 +16,9 @@ Provide shared real-Git builders and readers for checkpoint and ordinary series/
 
 ## Code Commentary
 
+The shared builders accept authored ignore bytes for the test branch and read the committed ignore blob from the nominated revision. They keep the source and accumulated memory parents explicit.
+
+
 ### Logic
 
 `close_out_leaf` authors code, closes the owning leaf's history before its attributed memory-content commit, refreshes an untracked cache, and records the pair. `accumulate_master_line` selects an unlanded leaf enclosure or authors and starts a fresh one, preserves existing rows in its open history attempt, appends the label file's onboarding trace row with its actual `sources` path/blob from `CodeSnapshot.capture(leaf.code_worktree)` after the label file is written, applies public closeout, reloads the contract, and integrates ff-only. Its LedgerRow names the integrated code/memory pair, not a cached-history row or direct master-branch commits.
@@ -59,8 +62,17 @@ The operation and fixture boundaries described here are defined by same-reposito
 
 
 
-- The public boundary scenarios consume the shared builders. [4]
+
+
+- The public boundary scenarios consume the shared builders. Anchor: `checkpoint_landing_test_support` [4]
+
+
+
 
 - Leaf and accumulated-master pairs are built from real code/memory commits. [1]
+
+
+
 - Temporary branch ownership and real source-content reconciliation. [2]
+
 - Public checkpoint and canonical master status helpers. [3]

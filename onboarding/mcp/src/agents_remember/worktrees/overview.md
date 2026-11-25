@@ -35,6 +35,10 @@ Closeout and landing use exact code/memory Git history. The current consumer led
 
 A managed memory merge with any converted side obtains its structural knowledge/onboarding plan before Git starts. All-converted inputs merge structurally as they stand; crossing inputs convert legacy sides first. The plan overlays only modeled knowledge and onboarding paths. Git retains the mode, object and stage entries for unmodeled paths. A durable report is selected for conflicts, conversion, renumbered references, kept evidence lines or skipped cards; an otherwise clean plan does not gain a report merely because cards aligned. Before a memory merge commit, the route closes applicable crossing history, validates the exact staged tree against both parents and its settled code partner, and proves the resulting commit has the pinned parents. A master that pauses on a structural content conflict opens history for crossing writes. A validation refusal retains the merge for repair and reopens only checkpoint-owned closing history. Fast-forward plans do not enter the staged-merge validator, but incoming converted-memory trees now validate separately before refs move; their refusal names source repair and a fresh sync. Skip and already-current plans do not invent a memory movement.
 
+After persistent sync durably settles a changed converted memory side, it refreshes briefs for the exact settled code/memory pair. A preview, skipped memory, temporary side, equal heads or a ledger-only delta leaves briefs alone. A staged persistent converted merge with content changes prepares the tracked briefs ignore line before validating the tree and restores its preparation on refusal. The completed answer carries a refresh advisory when present.
+
+Live converted-memory sync and its scratch proof share the generated ignore-rule settlement. They remove the canonical briefs stanza, terminate nonempty authored stages with a newline if needed, and restore the stanza after a clean three-way merge. Authored conflicts and owner edits to the conflict file remain for resolution.
+
 ## Construction And Ownership
 
 `start_task_publication.py` prepares current leaf-enclosure binding and stage together: start promotes planning or an admitted abandoned successor to inProgress, whereas explicit attach does not promote stage. An already-exact binding does not skip needed promotion. Completed documents keep reopen/finalize gates; absent documents are not invented and dry runs publish nothing. `task_stage.py` captures exact sources, prepares matching master-row synchronization, revalidates before writing and uses the rollback-safe JSON/Markdown batch writer. Shared task-fact publication derives affected sprint scopes from explicit (path, document) candidates, publishes truth, then records invalidation/rebuild effects; these derived effects grant neither truth nor publication permission.
@@ -212,14 +216,17 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 ## Evidence
 
 - History closing writes the eligible review fact in the same update and preserves already-closed bytes. [116]
+
+
 - Direct landing reads the selected owner's review against the checkout before the cache-ignore or history writes. [117]
+
 
 - Ancestry, disjoint byte paths and equal reviewed after-images define the clean-sync exception. [104]
 - The door keeps the original record-digest provenance while checking its other inputs. [105]
 
 - Retained reference account (no fresh execution or acceptance inferred): Current custody/release of historical pins; no creation. [1] [6]
 
-- The worktree service bundle exposes typed ports for memory-quality task observation, knowledge validation, crossings, worklist recomputation, review-artifact cleanup and the invariant gate. [8]
+- The worktree service bundle exposes typed ports for memory-quality task observation, knowledge validation, crossings, worklist recomputation, review-artifact cleanup and the invariant gate. The optional brief service receives the memory root and exact code pair. [8]
 
 - Retained reference account (no fresh execution or acceptance inferred): The activation record is a strict per-contract fingerprinted snapshot with explicit selection states. [9]
 - Retained reference account (no fresh execution or acceptance inferred): The route's stop: release this contract's selection, refuse a non-series contract, report a released master as `paused` or a master that held no selection as `atomic-series-already-vacant`, and propose no next call in either success. [10]
@@ -236,6 +243,7 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 
 
+- Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution (validated by the MIK-R22 knowledge validator before its commit when the memory is converted, after a crossing sync's history file is closed), and the completed branch — and none of them reads a ledger row list. [18]
 - Retained reference account (no fresh execution or acceptance inferred): A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state. [19]
 - Retained reference account (no fresh execution or acceptance inferred): Checkpoint captures the current code and memory branch tips without a ledger mapping prerequisite. [20]
 - Retained reference account (no fresh execution or acceptance inferred): Consumer source rows are derived only from Git attribution. [21]
@@ -260,6 +268,8 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 
 
+- The sync validates the staged memory merge before its commit, against a converted base when a parent is unconverted (MIK-R24 rule 7). [44]
+- Retained reference account (no fresh execution or acceptance inferred): The driver maps the refusal to its own state with a recovery line. [45]
 - Retained reference account (no fresh execution or acceptance inferred): The route never commits converted memory unvalidated, and an unreadable tree is refused. [46]
 - Retained reference account (no fresh execution or acceptance inferred): The plan before Git, and its application to the started merge. [47]
 
@@ -279,6 +289,8 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - Retained reference account (no fresh execution or acceptance inferred): The conditional finalizer helper acts only on archived or would-archive results; a series archive skip invokes no cleanup. [56]
 - Retained reference account (no fresh execution or acceptance inferred): Finalize resolves a leaf naming none through the shared helper. [57]
 - Retained reference account (no fresh execution or acceptance inferred): Reopen resolves a leaf naming none through the same helper. [58]
+
+
 - Retained reference account (no fresh execution or acceptance inferred): The port, the landing request and the direct verdict. [63]
 
 
@@ -306,6 +318,7 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - **Retained historical source account — superseded by the current route account:** Sync lock skips absent, already-current and skip sides; moving candidates alone park [82]
 - **Retained historical source account — superseded by the current route account:** Report selection does not include aligned-card count alone [83]
 
+- **Retained historical source account — superseded by the current route account:** Memory merge validates exact staged tree before commit and proves pinned parents [84]
 
 - **Retained historical source account — superseded by the current route account:** Completion publishes journal before cleanup; worklist failures omit summary [85]
 
@@ -341,6 +354,7 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 
 
+
 - The start-progress owner suppresses lineage-refused beats before any progress write. [100]
 
 - Start binds and mirrors admitted stage through task-fact publication; explicit attach preserves stage and dry-run publishes nothing. [101]
@@ -356,12 +370,12 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - The worktree helper names the leaf's line when it reports a cutover refusal. [66]
 
 - Retained reference account (no fresh execution or acceptance inferred): The sync driver retains content conflicts for continuation, permits only continue or cancel as resolution actions, and validates a staged retained merge before completing it; knowledge content is resolved in the memory worktree, not through an authored-reconcile action. [16]
-- Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution (validated by the MIK-R22 knowledge validator before its commit when the memory is converted, after a crossing sync's history file is closed), and the completed branch — and none of them reads a ledger row list. [18]
 - Retained reference account (no fresh execution or acceptance inferred): Continue/cancel inputs and specific old-journal read tolerance. [40]
 - Supported staged continuation and cancellation guidance. [41]
-- The sync validates the staged memory merge before its commit, against a converted base when a parent is unconverted (MIK-R24 rule 7). [44]
-- Retained reference account (no fresh execution or acceptance inferred): The driver maps the refusal to its own state with a recovery line. [45]
-- **Retained historical source account — superseded by the current route account:** Memory merge validates exact staged tree before commit and proves pinned parents [84]
 - Retained reference account (no fresh execution or acceptance inferred): Reopen's placement guard on the leaf and the master. [59]
 - The worktree layer probes whether the converted leaf gate applies, refuses an unbound gate, and defines closeout's separate owner-history write. [60]
 - Direct apply selects the history source, closes it, then judges the retained closed tree with restore on refusal; exact retry reuses the retained generation. [64]
+
+- Persistent sync uses its settled committed content before asking for a full brief refresh. The reply keeps a brief advisory if the refresh has a problem. [119]
+
+- Live converted-memory sync and its scratch proof share the generated ignore-rule settlement. They remove the canonical briefs stanza, terminate nonempty authored stages with a newline if needed, and restore the stanza after a clean three-way merge. Authored conflicts and owner edits to the conflict file remain for resolution. [120]

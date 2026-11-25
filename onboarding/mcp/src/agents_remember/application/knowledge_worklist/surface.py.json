@@ -57,12 +57,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ce0bfc646a94b8e533c52d7c93d1acae2c8ab4d",
+            "blob": "7698616abcd31cb08bba4a158474703b7916d978",
             "content": "sha256:0db9e2433f3b9b4f873c4de9cb281a6131d173726c3c66ed79e4dedf58072b44",
             "locator": {
-              "end": 1433,
+              "end": 1434,
               "kind": "line_range",
-              "start": 1420
+              "start": 1421
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },

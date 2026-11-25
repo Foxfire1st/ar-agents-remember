@@ -74,7 +74,7 @@
       ]
     },
     "4": {
-      "note": "The status section states release 3.0.7 and the Python requirement, and directs readers to the release notes before installing.",
+      "note": "The Status section gives package version 3.0.7 and Python 3.14, then directs readers to the release notes before installation.",
       "targets": [
         {
           "anchor": {

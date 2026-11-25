@@ -229,7 +229,10 @@ the `NextStep` model, the worktree guidance state machine, the contract loader,
 and the ambient lifecycle / phase definitions.
 
 
-- The response boundary preserves an explicit producer hint or computes one, rejects contradictory task addresses, and enriches the validated model before final serialization. [1]
+
+
+- The response boundary preserves an explicit producer hint or computes one, withholds a hint whose task address contradicts the result, and enriches the validated model before final serialization. [1]
+
 
 
 - `NextStep` model + the `nextStep` field on the response envelopes — the declaration that makes setting it at the choke point legal. [2]

@@ -10,7 +10,7 @@ Owns the external-memory content leg of the admitted closeout transaction after 
 
 A series delegates to its series owner. An ordinary leaf resumes a recorded memory output only after the recovery gate; otherwise it reads the qualifying review fact against the pre-write memory tree and closes the latest owner history file with that fact when available. It then refreshes entity fingerprints and generated route indexes and calls `_commit_memory_content`. Card/overview stamping is removed and the corresponding refreshed lists are empty. Unconverted leaf input refuses before refresh/publication.
 
-For converted memory, the history closing and cache ignore rule are present before `_exact_memory_tree` captures the intended output. `_refuse_ungated_memory` validates that exact tree against the parent memory tip and runs the leaf invariant gate with the exact accepted code tree. Even a clean output reused as HEAD is judged. This is the closeout's mandatory invariant gate, not an additional full MQC or curator-coherence operation. Preview reads the same candidate verdict; recovered outputs are judged against the parent line as it stands when recovery reads it. An earlier pass does not guarantee a later pass on moved inputs. A refusal after code publication names the actual code commit, says nothing is integrated and explains that rerunning completes the pair.
+For converted memory, the history closing and both derived ignore rules are present before `_exact_memory_tree` captures the intended output. `_refuse_ungated_memory` validates that exact tree against the parent memory tip and runs the leaf invariant gate with the exact accepted code tree. Even a clean output reused as HEAD is judged. This is the closeout's mandatory invariant gate, not an additional full MQC or curator-coherence operation. Preview reads the same candidate verdict; recovered outputs are judged against the parent line as it stands when recovery reads it. An earlier pass does not guarantee a later pass on moved inputs. A refusal after code publication names the actual code commit, says nothing is integrated and explains that rerunning completes the pair.
 
 `_commit_memory_content` binds the contract work branch and the tip observed before judgment. It rechecks that admission, prepares the cache exclusion, and refuses a staged output different from the judged tree before mutation intent. It publishes the judged object through `publish_tree_commit`; content written after the final check cannot enter that commit and stays uncommitted. The exact accepted memory message supplies code attribution. The legacy staging helper was deleted. The admitted ordinary content leg always captures and gates the exact judged tree, sets `use_current_candidate=False`, and publishes `tree=judged`; unconverted input refuses before publication.
 
@@ -21,7 +21,7 @@ The publication primitive's Git behavior is separate from prepared closeout poli
 
 `external_closeout_commits` receives the accepted code change and normalized input. After closing the leaf's history, it refreshes entity fingerprints and generated route indexes and returns empty card/overview refreshed lists. It creates a memory-content commit only if real memory content changed. The prepared staged-index commit is published through `publish_tree_commit`; this owner does not introduce an additional quality or curator gate, except MIK-R09's closing, exact-tree validation and mandatory gate on converted memory (sections below).
 
-Attribution is rendered before the commit object is created: `effective_input.memory_content_message(code_commit)` supplies the accepted message body and the `Code-Commit:` trailer, and `prove_git_commit` records the exact output. The later cache refresh derives from Git history and returns only informational state. Failure to render or write that cache cannot undo or block a proven memory output.
+Attribution is rendered before the commit object is created: `effective_input.memory_content_message(code_commit)` supplies the accepted message body and the `Code-Commit:` trailer, and `prove_git_commit` records the exact output. The later ledger cache refresh derives from Git history and returns informational state. A new durable memory commit also makes the result composer call `closeout_briefs_result`, which pairs the accepted code with that leaf memory root. A brief refresh problem is reported as `briefsProblem`. Clean reuse and recorded recovery do not renew the briefs.
 ## 260928-MIK-L09 The Closeout Memory Commit Closes The Leaf's History File And Validates Its Exact Tree (MIK-R09 Rule 3)
 
 On a converted leaf (`worktrees.knowledge_gate.leaf_memory_converted`: the memory worktree's layout marker, or the
@@ -52,8 +52,7 @@ and `test_the_closeout_s_exact_tree_re_anchor_checks_the_file_it_has_just_closed
   An open item, an incomplete run or a validator failure raises, and the message names every finding. A failed or
   timed-out read of the parent tip or of the code commit's tree is a named refusal. No argument skips either check.
 - **`_commit_memory_content`** judges before the memory commit's Git mutation begins, in this order:
-  1. `ignore_memory_cache` writes the ledger cache's ignore rule when content is dirty, so the judged tree already
-     holds the `.gitignore` line the commit will record;
+  1. `ignore_memory_publication` writes the ledger and briefs ignore rules when content is dirty. The judged tree holds those `.gitignore` lines. The route records the expected bytes for take-back;
   2. `_exact_memory_tree` captures the tree and `_refuse_ungated_memory` judges it. A converted leaf with nothing
      left to commit is judged all the same: the commit the closeout records is its `HEAD`;
   3. `prepare_memory_cache`, which removes the ledger file from the index (the one index write before the mutation
@@ -200,7 +199,12 @@ historical evidence. Ledger refresh reports its disposable cache result separate
 
 - Cache rendering returns informational state and creates no Git commit. [45]
 - The public closeout refuses an open item and commits once it is answered. [46]
+
+
 - A file rewritten while the gate runs is never committed unjudged. [47]
+
+
+
 
 
 
@@ -208,11 +212,28 @@ historical evidence. Ledger refresh reports its disposable cache result separate
 - `_commit_memory_content` supplies the exact current transaction boundary above. [24]
 
 
+
+
+
 - External closeout closes history with the qualifying review fact before refreshing derived files. A failed refresh calls the history closing's restore operation. [30]
+
+
+
 
 - The closeout rejudges recovered memory output. Fresh leaf output closes history and refreshes derived files before recording the memory output and refreshing its cache. [33]
 
-- Closeout reuses clean memory or publishes the judged tree with root memory.md excluded; unpublished refusal restores only unchanged owned preparations. [34]
+
+
+
+- Closeout reuses clean memory or publishes the exact judged tree with the root ledger excluded. Before a successful publish return it takes back only unchanged owned preparation bytes. [34]
+
+
+
 
 - `external_closeout_commits` supplies the exact current transaction boundary above. [23]
+
+
+
 - The lock is asked before any stamping or commit of unconverted memory. [37]
+
+- Closeout asks for a full file-brief refresh after the leaf creates a durable memory commit and returns any brief advisory. [59]

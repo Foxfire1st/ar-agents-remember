@@ -87,4 +87,6 @@ wrapper around `kind="closeout-approval"`; `CloseoutGuard` aliases `GateGuard`.
 
 - `CONSUMED_APPROVAL_GATE_KINDS` — what keeps the `applied` snapshot this resolver's refusal depends on from being reclaimed. [5]
 
+
+
 - The mutating tool that enforces this policy: `_refuse_unsatisfied_closeout_gate` (deny-only, writes nothing) and `_claim_closeout_gate`, which spends the approval through `GateStore.claim_approval`. It no longer appends an `applied` snapshot itself. [3]

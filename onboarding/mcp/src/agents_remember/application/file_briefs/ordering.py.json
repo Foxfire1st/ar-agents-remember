@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/file_briefs/ordering.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Weakness placement uses rule links and symbol matches, with a loose section for the remaining weaknesses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27c31e6b3ba38bd749fb5c5a73d956963a2acd15",
+            "content": "sha256:61e6344f7f2c0b0cfcdec95d621a3ca828b67fcb473135067b360e1a6dc21a2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "place_weaknesses"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

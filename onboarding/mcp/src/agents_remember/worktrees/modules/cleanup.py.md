@@ -3,10 +3,7 @@
 ## Purpose
 
 Owns post-integration cleanup of registered worktrees, merged task branches,
-worktree-owned observer drift snapshots, empty worktree folders, and the enclosure generation's outside scratch root. Under MIK-R108
-rule 3 cleanup also removes `<enclosure>/logs/` whole with the enclosure — no age
-pruning there before cleanup, nothing archived, copied or left as a marker — and the
-cleanup call's own line goes to the coordination root, never into the enclosure it removes.
+worktree-owned observer drift snapshots, empty worktree folders, and the enclosure generation's outside scratch root. The terminal route removes `<enclosure>/logs/` with the enclosure. On a leaf it first copies the leaf's own tool-call lines to the master's notes and omits the detail links. A keep failure records `tool-calls-not-kept` and leaves the log folder for retry. The cleanup call's own line goes to the coordination root.
 
 ## Code Commentary
 
@@ -357,3 +354,5 @@ Rule 5 terminal cases: branch retirement primitives moved whole into `terminal_b
 
 
 - `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. [9]
+
+- Cleanup keeps leaf call lines before deleting its log folder and carries the keep outcome. [27]

@@ -1,29 +1,49 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/startup/start_result.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2ce4c1ebd56b1a68e30cc4ee26cc64ec6bd73207",
+        "content": "sha256:ac03a20a143b20e320df1e812ada390104c3497242c07c92ab67bd174fb37821",
+        "locator": {
+          "kind": "symbol",
+          "name": "_started_briefs_problem"
+        }
+      },
+      "id": "RLZ-0MG1AG",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Refreshes a successfully materialized memory worktree using the code checkout created with it.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "Real starts distinguish terminal start from background provider setup while preserving task-addressed guidance.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6b31b9bf73de7f399a59d1217cb197da7256ea0",
-            "content": "sha256:3f162e70f7e2adfcae930a63faffa656858932e15670692de18244c55ebffe3f",
+            "blob": "2ce4c1ebd56b1a68e30cc4ee26cc64ec6bd73207",
+            "content": "sha256:276e3be751deaaa7d12f03511c4776e5bb1fee9a543bacbb168b8a8df57e7f6e",
             "locator": {
-              "kind": "symbol",
-              "name": "started_result"
+              "end": 73,
+              "kind": "line_range",
+              "start": 30
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a6b31b9bf73de7f399a59d1217cb197da7256ea0",
-            "content": "sha256:83bec015347b2cc5aca71031090542578f137ee288c7d2d05de61740e7da1ab7",
+            "blob": "2ce4c1ebd56b1a68e30cc4ee26cc64ec6bd73207",
+            "content": "sha256:3a7a7fe0fa4ea5879369888317d2d673ec0dec7a829a1e0bc00075d232927b9d",
             "locator": {
-              "end": 50,
+              "end": 55,
               "kind": "line_range",
-              "start": 16
+              "start": 20
             }
           },
           "kind": "code"
@@ -35,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6b31b9bf73de7f399a59d1217cb197da7256ea0",
+            "blob": "2ce4c1ebd56b1a68e30cc4ee26cc64ec6bd73207",
             "content": "sha256:69c936038c913fc60962e81e12bf8d893df6758bacd3a22f2493ccabf85fcd24",
             "locator": {
               "kind": "symbol",
@@ -46,7 +66,7 @@
         },
         {
           "anchor": {
-            "blob": "a6b31b9bf73de7f399a59d1217cb197da7256ea0",
+            "blob": "2ce4c1ebd56b1a68e30cc4ee26cc64ec6bd73207",
             "content": "sha256:c13ad15a30eb4f48ec0dcad6a26221d22686865d5d77690222afc6d9510d8515",
             "locator": {
               "kind": "symbol",

@@ -385,7 +385,7 @@ Current source: The ordinary EntryPointWorld source constructs one temporary coo
 
 
 
-- The extracted bypass control returns a raw dictionary past the adapter choke point and checks that the support classifier sees an unvalidatable result. [43]
+- The extracted bypass control returns a raw dictionary past `_tool_payload` and checks that the support classifier sees an unvalidatable result. [43]
 
 
 

@@ -2,7 +2,9 @@
 
 ## Current paired source contract — scoped assertions and incoming catalogs
 
-The current parsed catalog declares 18 contracts and 121 artifacts. The recorded leaf memory-base test is an exact consumer of the canonical user-settings guard, portable Node lockfile and read-boundary oracle support. The bounded native tool-server memory contract names the stdio regression as its executable evidence and the corpus, fixture, driver and receipt reader as its permanent support. Compared with base91bb7e2d, L57 adds two permanent integration/local-composition shared supports: `review_curator_fixture_support.py`, with three consumers and an integrity-rejection replacement node, and `reviewer_leaf_view_support.py`, with five consumers and a real-child-parity replacement node. The current catalog declares three exact consumers for `review_curator_fixture_support.py` and eight for `reviewer_leaf_view_support.py`. The latter includes `test_review_validation_reuse.py`. The merged A3 snapshot had three and seven. Eight existing artifact consumer lists change; that earlier delta preserved then-existing non-consumer fields and contract rows. Three permanent shared-support artifacts cover reconsideration setup, writer-correction fixtures and the native persisted-worklist prerequisite; their replacement nodes and exact consumer lists declare reusable evidence ownership, not invocation. The earlier 12-contract/70-artifact catalog preceded these support declarations. Its regeneration account—25 added settings-guard consumers and six deleted plus one duplicate Node-fixture consumers removed—remains historical, as do the older 14-contract/102-artifact populations. Source-owned canonicalization preserves unaffected lifecycle metadata and applies the owner’s complete supported delta.
+The settings-guard and portable Node-lockfile artifact rows each declare the file-brief, moment, product-start, writer-title, checkpoint-ignore and worktree-brief test modules as exact consumers. These six modules extend 16 existing artifact consumer lists. The catalog retains the existing contracts and artifact identities.
+
+The current parsed catalog declares 18 contracts and 121 artifacts. The settings guard, portable Node lockfile and read-boundary oracle support each name `test_recorded_leaf_memory_base.py` as an exact consumer. The bounded native tool-server memory contract names the stdio regression as its executable evidence and the corpus, fixture, driver and receipt reader as its permanent support. Compared with base91bb7e2d, L57 adds two permanent integration/local-composition shared supports: `review_curator_fixture_support.py`, with three consumers and an integrity-rejection replacement node, and `reviewer_leaf_view_support.py`, with five consumers and a real-child-parity replacement node. The current catalog declares three exact consumers for `review_curator_fixture_support.py` and eight for `reviewer_leaf_view_support.py`. The latter includes `test_review_validation_reuse.py`. The merged A3 snapshot had three and seven. Eight existing artifact consumer lists change; that earlier delta preserved then-existing non-consumer fields and contract rows. Three permanent shared-support artifacts cover reconsideration setup, writer-correction fixtures and the native persisted-worklist prerequisite; their replacement nodes and exact consumer lists declare reusable evidence ownership, not invocation. The earlier 12-contract/70-artifact catalog preceded these support declarations. Its regeneration account—25 added settings-guard consumers and six deleted plus one duplicate Node-fixture consumers removed—remains historical, as do the older 14-contract/102-artifact populations. Source-owned canonicalization preserves unaffected lifecycle metadata and applies the owner’s complete supported delta.
 
 The crossing dependent writer test consumes the existing canonical user-settings guard, portable Node lockfile and knowledge-writer test support. The manifest records those relationships as catalog data.
 
@@ -14,6 +16,10 @@ The held catalog declares consumers for held queues, native retirement, role_sta
 The exact consumer lists for the existing settings guard (`_user_settings_guard.py`), portable Node lockfile (`fixtures/repository_profiles/node/package-lock.json`), Paseo launch support, Paseo role-tools support and Paseo runtime support now also name `mcp/tests/test_developer_messages.py`. Registration establishes dependency reachability; it does not establish a test invocation or change a lane, fixture authority, replacement contract or native-host qualification.
 
 The workflow, launch, sweep, table and other split supports retain explicit replacement nodes and lifetimes. These are source declarations of reuse and ownership, not test invocation or a newly measured evidence lifetime.
+
+## Crossing-history and lean-anchor consumers
+
+Existing artifact consumer lists also name `test_crossing_history_interruption.py`, `test_crossing_knowledge_writer.py`, `test_knowledge_crossing_git_paths.py`, `test_lean_card_citations.py`, `test_lean_symbol_anchors.py` and `test_worktree_sync_crossing_history.py`. Every module exists on this tree. These memberships account for dependency reachability; they establish no execution or passing result.
 
 ## Instruction-renewal regression consumers
 
@@ -94,7 +100,7 @@ Native reapply and task-document Order remain declared on the existing Node lock
 
 ### Current Contract
 
-The shared review-fact fixture is a permanent, affected test-support artifact. Its row names the replacement test and 39 exact consumers, with no implication that a consumer ran.
+The shared review-fact fixture is a permanent, affected test-support artifact. Its row names the replacement test and 40 exact consumers, with no implication that a consumer ran.
 
 The current source TOML declares 18 contract rows and 121 artifact rows, including the retained `canvas-host-and-presenter-cases` contract and its shared-support artifact. The retired closeout fixture-support artifact is absent from this current catalog. The remaining R111 shaped-row support retains its declaration and replacement contract. Counts are source inventory, not executed catalog validation or acceptance.
 Native source-reference currency alone cannot establish semantic correspondence.
@@ -926,6 +932,9 @@ These are retained prior measurements, not renewed source locations or present r
 The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on the existing curator-coherence support row and `test_tool_answer_table_guards.py` on the existing sweep-support row. Across the L3 comparison from code base `a874131c25b919356a3bd507713ead449b8491cd` to candidate tree `cb321e2ad3b69d960c4ca1ddf9442663278f429c`, 26 existing artifact consumer lists gain 49 edges and lose none; all 17 contract rows, all 116 artifact identities, all non-consumer metadata and all previous consumer edges are preserved. These are registration declarations, not test execution or acceptance.
 
 
+
+
+- The shared review-fact support declares test_file_briefs.py among its 40 exact consumers. [342]
 
 - The schema version and the large-fixture threshold at the top of the file. Anchor: file [1]
 

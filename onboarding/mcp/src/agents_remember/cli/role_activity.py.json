@@ -39,12 +39,12 @@
         },
         {
           "anchor": {
-            "blob": "413fe7d9f7f1d9f719e39495e704dacf50ad5fc8",
+            "blob": "8af465a831b807b61b0df2d8374da5be208b1161",
             "content": "sha256:aed9f9a03506e91a515043a8ae70dfe190916c7ef7ec5b90ca3652dccf310007",
             "locator": {
-              "end": 126,
+              "end": 133,
               "kind": "line_range",
-              "start": 111
+              "start": 118
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },

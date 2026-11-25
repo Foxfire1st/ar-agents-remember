@@ -13,6 +13,8 @@ touched document canonically and validates its model (`_render`), rebuilds the l
 (`validate_tree`) over the **whole resulting tree**, with the state's validation bases: the memory worktree's `HEAD`, or
 its conversion when `HEAD` is unconverted and the candidate is converted, and during a merge the incoming parent `MERGE_HEAD` converted the same way. Only then does it write, and only in a committing run.
 
+A committing leaf forwards its admitted owner to file publication. When records or onboarding changed, publication includes a required briefs ignore line with the memory changes. The mounted route uses the resulting changed paths to refresh the affected source briefs.
+
 ## Code Commentary
 
 ### Logic
@@ -64,13 +66,15 @@ its conversion when `HEAD` is unconverted and the candidate is converted, and du
   this write did not remove and is written into the marker at `LAYOUT_MARKER_PATH`; the field is absent when
   there are none. The landing reads this index to find the dependents a change can move, instead of opening
   every dependent record body.
-- **The base and what makes a tree unwritable.** `_load(request)` loads the state with
-  `BaseCode(request.code_root, request.code_base, <coordination root>/runtime/knowledge-worklist-bases)`, so the
-  writer, the worklist, the onboarding gate and the validator read one converted base, cached once. It returns a
-  problem for an unconverted tree (`UNCONVERTED`, which says that an unconverted line crosses the boundary
-  first once its repository holds converted memory) and for a base that cannot be built, `HEAD`'s or during a merge the incoming parent's (`state.base_problem`).
-  `WriteRequest.code_base` is the commit a trailerless unconverted `HEAD` is converted at: the leaf route passes
-  the contract's code base B, the gate's and the worklist's fallback, so all three share one cache key.
+- **The base and what makes a tree unwritable.** The writer loads the memory worktree’s `HEAD` as
+  its operation base and also uses `MERGE_HEAD` for validation during a merge. It converts an
+  unconverted operation base for a converted candidate. `_load` returns `UNCONVERTED` for an
+  unconverted candidate and a `base` problem if it cannot read or build either required operation base.
+  The counted-card comparison separately uses the recorded leaf memory base when readable.
+  Conversion uses the base’s paired code commit when available. Otherwise it uses `WriteRequest.code_base`
+  when supplied, or the code worktree’s `HEAD`. The leaf route supplies the recorded leaf code base when
+  set. The writer, worklist and gate can reuse a cached conversion when the memory commit, format
+  version and resolved code commit match.
 - **A crossing owner resolves and records, it does not author.** For an owner of kind
   `crossing`, `_crossing_problems` refuses `entries`, rulings and any record without an `id`
   (`CROSSING_ROWS_ONLY`): the owner may update an existing record its sync left conflicted, which the writer
@@ -115,7 +119,10 @@ No configured live documentation source was available for this pass.
 The operation and its stages.
 
 - The request carries a resolved caller stamp in addition to the hand-off and contract inputs. [44]
+
+
 - The writer passes the resolved stamp to virtual authoring before validation and file publication. [45]
+
 - The authoring operation assigns an unknown stamp with a reason when no caller was resolved. [46]
 
 - Existing trace subjects retain source-set priority, including exclusion of malformed trace metadata from group selection. [26]
@@ -136,7 +143,10 @@ The operation and its stages.
 
 - The carry-forward call and its report field. [29]
 - The carry itself. [8]
+
+
 - Planned or written. [30]
+
 
 - Canonical text is model-validated before its bytes enter the publication set. [31]
 - The registry side of the writer-reported rules. [12]
@@ -182,8 +192,39 @@ The current converted writer checks persisted leaf worklist shape and authored i
 - Worklist and changed-link admission precede validation and file publication. [37]
 
 
+
+
 - File publication reports actual restoration and already-published question recovery. [24]
 
+
 - A stored derived superseded field refuses before canonical rendering. [25]
+
+- Current request inputs include paired memory-base binding and leaf-required worklist admission [2]
+
+
+- Paired-base/source projection and registry-driven writer reports retain validation, carry and conversion; later refusal preserves actual question effects and distinguishes verified from incomplete file restoration. [36]
+
+- A leaf requires the persisted worklist before capture; question publication has its separate task-owner port [4]
+
+
+- New or changed unresolved requirement links refuse when the coordination root is supplied; absent-root observations do not [15]
+
+
+
+- Endpoints are resolved with stored prior-link identity before the pre-publication refusal check [16]
+
+
+
+- After validation, committing runs publish raised questions before knowledge files. [28]
+
+
+
+- Read, author, check history, render, validate, then finish or refuse. [3]
+
+
+
+- Worklist and changed-link admission precede validation and file publication. [37]
+
+- The committing writer supplies the admitted owner to file publication. A leaf mutation that changes a record or onboarding bytes participates in the tracked brief ignore preparation. [47]
 
 - A leaf requires the persisted worklist before capture; question publication has its separate task-owner port [4]

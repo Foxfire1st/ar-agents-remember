@@ -12,6 +12,9 @@
 
 ## Purpose
 
+Cold converted reads compare files, memory-tree identity and Git status, and check that brief reading leaves them unchanged. Other cases cover ineligible paths, card-only paths and the freshness of saved headers.
+
+
 Pins read_ar_files naming, path confinement and removed-argument refusals under MIK-R109. Source, cards and overviews are opened by the caller's own file tools, not carried in this answer.
 
 ## Current source contract

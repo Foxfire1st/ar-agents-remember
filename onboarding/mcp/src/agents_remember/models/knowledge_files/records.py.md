@@ -18,8 +18,8 @@ models refuse the fields that would give it a second owner.
 
 - `_Record` holds `id` and `origin` and checks that the ID carries the kind's own prefix and that
   every `links` relation is in `RELATIONS_BY_KIND[kind]`.
-- `InvariantRecord` (`statement`, `applicability`, `conditions`, `exclusions`, `supersedes[]`,
-  `admission`) lists **no** realizations, tests, families or decisions; `extra="forbid"` refuses them.
+- `InvariantRecord` carries an optional `title` of type `InvariantTitle`. An older record may still omit this display name. Its rule fields (`statement`, `applicability`, `conditions`, `exclusions`, `supersedes[]`,
+  `admission`) own the rule's meaning and preserve single ownership of realizations, tests, families and decisions; `extra="forbid"` refuses them.
 - `FamilyRecord` owns `members` (invariant IDs) and `routes`, both unique. Since MIK-R04 (leaf 260928-MIK-L04, ruling Q3) `routes` is `tuple[RoutePath, ...]`: a repository directory, or `.` for the repository root route, which a family uses only when it genuinely has no narrower home. `RoutePath` comes from `sidecars.py` and reuses the route sidecar's root handling; every other spelling of the root (`""`, `"./"`, `"./mcp"`, `".."`, `"/"`, `"mcp/"`) is still refused, and every other path field stays `RepositoryPath`.
 - `DecisionRecord` owns `alternatives` (`option`, `status` chosen/rejected/deferred, `reason`,
   `reconsider_when?`), `consequences`, `decider`, `supersedes[]` and its `links`; its status is
@@ -114,7 +114,7 @@ No cross-repo boundary is crossed by this file.
 - Prefix and relation checks shared by every record. [2]
 - Revision and status on incident and facet records. [3]
 - The family record: members and routes, a route being a repository directory or `.`. [4]
-- The invariant record: no second-owner fields. [6]
+- The invariant model permits an optional display title and refuses relationship fields owned elsewhere. [6]
 
 - The per-kind relation vocabulary. [1]
 - The kind → model table. [8]

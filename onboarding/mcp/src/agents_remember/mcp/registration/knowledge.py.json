@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
-        "content": "sha256:135bbf4d1475d2acdc24a2c7f9a396b8b5594ad91f211606b0bdf464bc5fac5e",
+        "blob": "15d0552bac287633d62cf82579e745dd56050256",
+        "content": "sha256:13d9eac88f8641f2ad4dc68014366afb230e62a5d29da417d6933514cb8f86ca",
         "locator": {
           "kind": "symbol",
           "name": "_register_knowledge_read"
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+        "blob": "15d0552bac287633d62cf82579e745dd56050256",
         "content": "sha256:f58d64f0f2b089ba2ea8fdeaad07ea16024320aba7ec5ef63f5c7db369457bbf",
         "locator": {
           "kind": "symbol",
@@ -40,10 +40,12 @@
     },
     {
       "anchor": {
-        "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
-        "content": "sha256:e92626429978d5815d2e1f838e9f6e5ba241d5fc2beaf4908290b0f3786c113c",
+        "blob": "15d0552bac287633d62cf82579e745dd56050256",
+        "content": "sha256:59204def4b221563d2459f76e031cd2335c0e292367a9f4e5a34012bd747b677",
         "locator": {
-          "kind": "file"
+          "end": 116,
+          "kind": "line_range",
+          "start": 106
         }
       },
       "id": "RLZ-ADCJCR",
@@ -57,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+        "blob": "15d0552bac287633d62cf82579e745dd56050256",
         "content": "sha256:996856950511320ea19a5c78de08ab93cba16a5c5e9b8c0ad5787ddfdd412f28",
         "locator": {
           "kind": "symbol",
@@ -75,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+        "blob": "15d0552bac287633d62cf82579e745dd56050256",
         "content": "sha256:af5bc3d53ac74fde60450bcb05450ed18d8201c7533d803475ec675d4e314053",
         "locator": {
           "kind": "symbol",
@@ -93,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+        "blob": "15d0552bac287633d62cf82579e745dd56050256",
         "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
         "locator": {
           "kind": "symbol",
@@ -111,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+        "blob": "15d0552bac287633d62cf82579e745dd56050256",
         "content": "sha256:f3078a4e98981f5d6e048c7f7fb374f92a598b01f561b1203460b72c8507ccf7",
         "locator": {
           "end": 34,
@@ -130,7 +132,7 @@
     },
     {
       "anchor": {
-        "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+        "blob": "15d0552bac287633d62cf82579e745dd56050256",
         "content": "sha256:462eafa5b1361a6c9e781fea4ba3dfd5cb3f6a441b4d85111a77abbcfe0ee0e0",
         "locator": {
           "kind": "symbol",
@@ -153,7 +155,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
             "content": "sha256:c81044bcca1bebd8e9882cf2186e6a9e265245c2c3a5d233d233422ff01f1e94",
             "locator": {
               "end": 85,
@@ -188,7 +190,7 @@
         },
         {
           "anchor": {
-            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
             "content": "sha256:68c92743fa0578a21f3a218d54838b2a109c91279fc3153c3b97fc99cb509649",
             "locator": {
               "end": 76,
@@ -205,8 +207,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
-            "content": "sha256:e92626429978d5815d2e1f838e9f6e5ba241d5fc2beaf4908290b0f3786c113c",
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
+            "content": "sha256:4e24d83951f841cb167aea0786f46536aef4663bd8dd1f9dfc32a535abc01814",
             "locator": {
               "kind": "file"
             }
@@ -220,13 +222,39 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
-            "content": "sha256:135bbf4d1475d2acdc24a2c7f9a396b8b5594ad91f211606b0bdf464bc5fac5e",
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
+            "content": "sha256:13d9eac88f8641f2ad4dc68014366afb230e62a5d29da417d6933514cb8f86ca",
             "locator": {
-              "end": 139,
+              "end": 140,
               "kind": "line_range",
               "start": 84
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7582390ac1d3008bcf49f5a9d82b0f9373aad7a9",
+            "content": "sha256:9668e7aee0a2ea4dc01c15eff907b83cc425ee0e127380d356899e04e4a99eb9",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writers_view.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7582390ac1d3008bcf49f5a9d82b0f9373aad7a9",
+            "content": "sha256:d7e476a537052e89f17ff7f266709ee32bea506d7abda05c7446b8122f859201",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writers_view.py"
           },
           "kind": "code"
         }
@@ -237,7 +265,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
             "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
             "locator": {
               "end": 81,
@@ -249,8 +277,8 @@
         },
         {
           "anchor": {
-            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
-            "content": "sha256:e92626429978d5815d2e1f838e9f6e5ba241d5fc2beaf4908290b0f3786c113c",
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
+            "content": "sha256:4e24d83951f841cb167aea0786f46536aef4663bd8dd1f9dfc32a535abc01814",
             "locator": {
               "kind": "file"
             }
@@ -264,24 +292,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
             "content": "sha256:462eafa5b1361a6c9e781fea4ba3dfd5cb3f6a441b4d85111a77abbcfe0ee0e0",
             "locator": {
-              "end": 214,
+              "end": 215,
               "kind": "line_range",
-              "start": 185
+              "start": 186
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "1ce0bfc646a94b8e533c52d7c93d1acae2c8ab4d",
+            "blob": "7698616abcd31cb08bba4a158474703b7916d978",
             "content": "sha256:8e7c9a32a5512b0e950e88d0ac614b3d937d29bf3f3cc3b73101b5107a856cba",
             "locator": {
-              "end": 1179,
+              "end": 1180,
               "kind": "line_range",
-              "start": 1124
+              "start": 1125
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
@@ -294,7 +322,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
             "content": "sha256:996856950511320ea19a5c78de08ab93cba16a5c5e9b8c0ad5787ddfdd412f28",
             "locator": {
               "kind": "symbol",
@@ -305,7 +333,7 @@
         },
         {
           "anchor": {
-            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
             "content": "sha256:79fa732d612509a624a09e79e3e8da5aed6af660c6713eed0f3d8c2f9ab12542",
             "locator": {
               "kind": "symbol",
@@ -321,7 +349,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
             "content": "sha256:a1f16b45885148fac14d82548380f25a2c15b678876d308ab40e6f5f41c27ca6",
             "locator": {
               "end": 41,
@@ -499,11 +527,11 @@
       ]
     },
     "20": {
-      "note": "The strict response classes preserve the read view's payload, the diff's file changes and the validator's report/worklist as distinct responsibilities; the current integrity response has no compatible field.",
+      "note": "The read response carries its projected view. The diff response names the report for changed files. The integrity response carries validation and the persisted worklist when the caller names a leaf.",
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
             "content": "sha256:e5464ff0a8d01c017910a5500c6559110c4eaf511038b4ddd254f271b0df809f",
             "locator": {
               "end": 144,
@@ -516,7 +544,7 @@
         },
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
             "content": "sha256:56378eecacf2289549c32aa3be01be39ff48699acd6d564caa98ce7f3a1f9f15",
             "locator": {
               "end": 177,
@@ -529,7 +557,7 @@
         },
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
             "content": "sha256:ff68ce0fc9bc2b83bb37171633d836ca0617299821e55922d8e477a2db9c0f3f",
             "locator": {
               "end": 212,
@@ -542,8 +570,8 @@
         },
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
-            "content": "sha256:4c75b3e98a618a7c08b5266cf2dfa2bd57994b3a135ceef42d1424ba6ce7103c",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
+            "content": "sha256:27149e89790f268fe7e328609d54e6d504295bd9dc01c91ac85326c764605768",
             "locator": {
               "kind": "file"
             },
@@ -558,8 +586,21 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
-            "content": "sha256:e92626429978d5815d2e1f838e9f6e5ba241d5fc2beaf4908290b0f3786c113c",
+            "blob": "8a44a33b7d21bf257d8af143ae86666f3177c995",
+            "content": "sha256:99ef1ebc33bef5537b26a50d7cf64faed500ead678c2f51b91d46681416fa034",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/lazy.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
+            "content": "sha256:4e24d83951f841cb167aea0786f46536aef4663bd8dd1f9dfc32a535abc01814",
             "locator": {
               "kind": "file"
             }
@@ -568,24 +609,28 @@
         }
       ]
     },
-    "9": {
-      "note": "The family module's own statement of its scope — appended rather than inserted, the three operations in the design's spelling, no domain reasoning and nothing mounted for the reviewer — together with the one entry point whose four `_register_*` calls are made in the read, diff, integrity, write order.",
+    "23": {
+      "note": "The registration keeps record naming, the writer commands and the writers view with the short-answer pointer.",
       "targets": [
         {
           "anchor": {
-            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
-            "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
+            "content": "sha256:13d9eac88f8641f2ad4dc68014366afb230e62a5d29da417d6933514cb8f86ca",
             "locator": {
-              "end": 81,
-              "kind": "line_range",
-              "start": 68
+              "kind": "symbol",
+              "name": "_register_knowledge_read"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "9": {
+      "note": "The shared registrar tuple lists this family before the explainer. Its entry point registers read, diff, integrity and write in that order. The initial three-operation description remains in the module docstring.",
+      "targets": [
         {
           "anchor": {
-            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
             "content": "sha256:5c366de560a4c27865c213800f58e9f76617a44c965ccd2d618af79be758865f",
             "locator": {
               "end": 25,
@@ -597,11 +642,26 @@
         },
         {
           "anchor": {
-            "blob": "e91b3e6453bf5759b3babaf1d21328809e9d41cf",
-            "content": "sha256:e92626429978d5815d2e1f838e9f6e5ba241d5fc2beaf4908290b0f3786c113c",
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
+            "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
             "locator": {
-              "kind": "file"
+              "end": 81,
+              "kind": "line_range",
+              "start": 68
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "content": "sha256:ba5f80c4312577cf05ce7edf0740f0539e8ca3817e94705c6d618c18813ab107",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
           },
           "kind": "code"
         }

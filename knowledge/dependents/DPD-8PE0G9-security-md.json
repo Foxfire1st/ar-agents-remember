@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e0899a2899dd251331ac48aa874f17126a84a541",
-    "commit": "b28b99ce065e7db8ce1e79328e29861967e9bcb6",
+    "codeTree": "51a44523acb6c29c3a029c7dde4a35acb96595f3",
+    "commit": "3bbaf460317e8572583d884bc0791a219ad1bcfa",
     "role": "curator",
-    "statement": "On the merged code the security policy's account of the local stdio tool server, autoStart-only dashboard start, private values in files and server_info reporting the version still holds; L27's cancellation rows add no listener and CAP-L1's narrowing keeps server_info on every role and on a malformed binding.",
-    "task": "261124-CAP-L1",
+    "statement": "On the merged code the security policy's account of the local stdio tool server, autoStart-only dashboard start, private values in files and server_info reporting the version still holds; L27's cancellation rows add no listener and CAP-L1's narrowing keeps server_info on every role and on a malformed binding. On code 51a44523 (gen-8 sync onto CAP-L1 and BUG-L26) role_start_answer.py now joins the workspace briefsProblem into a start answer's warning; the policy describes no start warning, so its account of the local stdio tool server, loopback listeners, write-origin checks and server_info version reporting still holds.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "SECURITY.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -101,7 +101,7 @@
       "path": "mcp/src/agents_remember/serving/daemon.py"
     },
     {
-      "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+      "blob": "411af9bcc0ee7e14580f70910fd96aec495deefc",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_start_answer.py"
     },

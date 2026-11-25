@@ -1,0 +1,57 @@
+{
+  "path": "mcp/src/agents_remember/application/file_briefs/folder.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "aad6dfa09cc5b86a0255048ea903ea89e0e2fbc4",
+        "content": "sha256:92fd589d75d0117572744cdf884842cb034502b9a53448c4c4bb491eccc6a4ca",
+        "locator": {
+          "kind": "symbol",
+          "name": "BriefFolder.write_all"
+        }
+      },
+      "id": "RLZ-CBFWK4",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Replaces the worktree’s derived brief set and its folder indexes.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The folder writer serializes publication and preserves the task-moment directory during a full refresh.\n\nAnchor: `BriefFolder`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aad6dfa09cc5b86a0255048ea903ea89e0e2fbc4",
+            "content": "sha256:22e1a02fb777e438e320466be6ffcfe1de960b390e52e5a0432e2289e3acf5d1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The first-line reader distinguishes a missing file from unreadable or unrecognized header bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aad6dfa09cc5b86a0255048ea903ea89e0e2fbc4",
+            "content": "sha256:c03326cfab8c4c68c11e92af7db3bbf56bd44023190d7a6e977ee5b95380eb5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "tree_named"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

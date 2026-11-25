@@ -11,7 +11,7 @@
 
 ## Purpose
 
-Payload builders for four mounted knowledge operations over converted trees: read, diff, integrity check and write.
+Payload builders for four mounted knowledge operations over converted trees: read, diff, integrity check and write. The writer route delegates response shaping to `write_answer`, which returns bounded notes, problems and violations with their truncation flags and the whole report path.
 
 ## Code Commentary
 
@@ -241,7 +241,7 @@ No configured domain documentation could be checked.
 - - The one refusal envelope the read operation returns for an unknown view and for a view the seam refused. [77]
 - - The one refusal envelope the read operation returns for an unknown view and for a view the seam refused. [78]
 
-- The mounted reader dispatches the writers aggregate and distinguishes it from record and mark results. [79]
+- The mounted reader dispatches the writers aggregate and distinguishes it from record and mark results. Anchor: `_one_view` [79]
 
 - - The source-resolution pair completed rather than half-supplied: the caller's own root with its current tree (refused by name when it has none, since MIK-R01), the mount's workspace default used only when a tree can be resolved from it, and neither half when Git cannot answer for it. [80]
 - - **Every way resolving and opening a selection can fail, refused the same way on every handler: a named root with no code tree is `selected_input_unavailable` naming the root (MIK-R01), a tree, Git or cache failure is `snapshot_unavailable` naming the tree, anything else the dataset refusal it was before.** [81]
@@ -264,3 +264,5 @@ No cross-repository contract is established by this file.
 
 - The whole selected comparison is filed before the answer names both trees, counts and bounded decision records with their total; no carried comparison body. [2]
 - The strict integrity model carries validator totals, bounded violations and the optional persisted leaf worklist, not a CODE/currentness verdict. [51]
+
+- The writer route publishes a bounded answer of problems, violations and notes beside its full report. [86]

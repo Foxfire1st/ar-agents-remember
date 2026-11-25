@@ -14,6 +14,9 @@ Recovery proves accepted code trees and exact code and memory refs. The shared p
 
 ## Code Commentary
 
+External closeout recovery exposes whether completion created a memory commit. The forward brief refresh reads this result from the existing publication owner.
+
+
 ### Logic
 
 `MemoryCloseoutOutcome` can carry a review note. Resuming an interrupted external pair derives it from the latest owner history in the already-proven memory commit. A closed history without a review fact yields the same no-pass sentence used in the ordinary closeout result.

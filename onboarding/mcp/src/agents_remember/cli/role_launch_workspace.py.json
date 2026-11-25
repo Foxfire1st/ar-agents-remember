@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
         "content": "sha256:c80dfdf8d84f1ec625798c15cf8ff02716fb4a6dcba5473eb4a59d2274b388c4",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
         "content": "sha256:ec4b80ce7bcb474c798c09e757a0654f93f8379c7b643fe202a09974d16b101f",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-        "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
+        "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
+        "content": "sha256:bb72b4cd9e9f5cb8d5e50a9284dc243e626b8cf76c46ccd069cbc9cb3d0ee1f4",
         "locator": {
           "kind": "symbol",
           "name": "_ensure_leaf_enclosure"
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
         "content": "sha256:f72fa6142476526701388ac9b1347e39da25751aeae2c4f450518dd750d177fa",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
         "content": "sha256:7d04281a96e03b141611709a8b855a47b2c90cbfd6fd649203388e94022c9ec7",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
         "content": "sha256:f72fa6142476526701388ac9b1347e39da25751aeae2c4f450518dd750d177fa",
         "locator": {
           "kind": "symbol",
@@ -112,8 +112,8 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-        "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
+        "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
+        "content": "sha256:bb72b4cd9e9f5cb8d5e50a9284dc243e626b8cf76c46ccd069cbc9cb3d0ee1f4",
         "locator": {
           "kind": "symbol",
           "name": "_ensure_leaf_enclosure"
@@ -130,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
         "content": "sha256:cb430d253a9c2b63fcc122062f3be8cd0ca6fade4f825ee4dc4c97f3af2b9795",
         "locator": {
           "kind": "symbol",
@@ -148,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
         "content": "sha256:b33be824ef668ce76c604903f9e01959a1f62d28f83b5409fecff7cfb8d903a1",
         "locator": {
           "kind": "symbol",
@@ -166,8 +166,8 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-        "content": "sha256:4fe15b2ee88843880e03ea04135e37d40fc91f3a56c707b9375fa00b9e4fdb5b",
+        "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
+        "content": "sha256:efc1cd043667a9615bf2fc0095598a41c67a840812a4a67e915af53d394a4666",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_workspace"
@@ -184,8 +184,8 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-        "content": "sha256:6fb9a6c4a040e1c4ce4fe114e890d8df382db93758791f65d13b28ca134b1a02",
+        "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
+        "content": "sha256:0050219765a6fc631088255983be119527db95320d7f1187cebdb5613a2a13b0",
         "locator": {
           "kind": "file"
         }
@@ -201,8 +201,8 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-        "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
+        "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
+        "content": "sha256:bb72b4cd9e9f5cb8d5e50a9284dc243e626b8cf76c46ccd069cbc9cb3d0ee1f4",
         "locator": {
           "kind": "symbol",
           "name": "_ensure_leaf_enclosure"
@@ -219,8 +219,8 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-        "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
+        "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
+        "content": "sha256:bb72b4cd9e9f5cb8d5e50a9284dc243e626b8cf76c46ccd069cbc9cb3d0ee1f4",
         "locator": {
           "kind": "symbol",
           "name": "_ensure_leaf_enclosure"
@@ -237,7 +237,7 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
         "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
         "locator": {
           "kind": "symbol",
@@ -255,8 +255,8 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-        "content": "sha256:4fe15b2ee88843880e03ea04135e37d40fc91f3a56c707b9375fa00b9e4fdb5b",
+        "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
+        "content": "sha256:efc1cd043667a9615bf2fc0095598a41c67a840812a4a67e915af53d394a4666",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_workspace"
@@ -273,8 +273,8 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-        "content": "sha256:4fe15b2ee88843880e03ea04135e37d40fc91f3a56c707b9375fa00b9e4fdb5b",
+        "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
+        "content": "sha256:efc1cd043667a9615bf2fc0095598a41c67a840812a4a67e915af53d394a4666",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_workspace"
@@ -291,7 +291,7 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
         "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
         "locator": {
           "kind": "symbol",
@@ -309,7 +309,7 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
         "content": "sha256:26cbb4abc68e5d67daed1998e00b4db205be18fc3eefa6d190344b501db21ec8",
         "locator": {
           "kind": "symbol",
@@ -328,12 +328,12 @@
   ],
   "references": {
     "1": {
-      "note": "The recorded master contract supplies the parent hint unless it names the master itself, where the commanding sprint — or the master's own folder when no sprint commands it — supplies it; an absent contract falls back to the sprint, or to the master when it stands alone, to bootstrap.  Anchor: `_recorded_parent`\n\nAnchor: `_recorded_parent`",
+      "note": "The recorded master contract supplies the parent hint unless it names the master itself, where the commanding sprint — or the master's own folder when no sprint commands it — supplies it; an absent contract falls back to the sprint, or to the master when it stands alone, to bootstrap. Anchor: `_recorded_parent` Anchor: `_recorded_parent`",
       "targets": [
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-            "content": "sha256:6fb9a6c4a040e1c4ce4fe114e890d8df382db93758791f65d13b28ca134b1a02",
+            "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
+            "content": "sha256:0050219765a6fc631088255983be119527db95320d7f1187cebdb5613a2a13b0",
             "locator": {
               "kind": "file"
             }
@@ -347,7 +347,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+            "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
             "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
             "locator": {
               "kind": "symbol",
@@ -363,7 +363,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+            "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
             "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
             "locator": {
               "kind": "symbol",
@@ -379,7 +379,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+            "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
             "content": "sha256:c813bc0f9c0a255097094d1cf57b2b16a0762ea40490fbdd35f35cd3453af780",
             "locator": {
               "end": 256,
@@ -392,14 +392,14 @@
       ]
     },
     "5": {
-      "note": "Terminal generations refuse before any root use or materialization, and a missing or reopened enclosure is created through the child — a reopened one under the worktree name its contract already owns.  Anchor: `_ensure_leaf_enclosure`",
+      "note": "Terminal generations refuse before any root use or materialization, and a missing or reopened enclosure is created through the child — a reopened one under the worktree name its contract already owns. Anchor: `_ensure_leaf_enclosure`",
       "targets": [
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-            "content": "sha256:bd6e9e56e6b9708a3185142544b43168686ca030c6c2f7928afb2d0d95d15f81",
+            "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
+            "content": "sha256:954280ae327bf88c86810d293eebacadf16e0aec8cee0e2969545559ae9bed24",
             "locator": {
-              "end": 388,
+              "end": 391,
               "kind": "line_range",
               "start": 310
             }
@@ -413,7 +413,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+            "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
             "content": "sha256:c80dfdf8d84f1ec625798c15cf8ff02716fb4a6dcba5473eb4a59d2274b388c4",
             "locator": {
               "kind": "symbol",
@@ -429,7 +429,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+            "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
             "content": "sha256:89a718153e30da7fa3470ac7e81627bb7842889c24466829a48fd84bbc17f879",
             "locator": {
               "end": 256,
@@ -446,7 +446,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+            "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
             "content": "sha256:b33be824ef668ce76c604903f9e01959a1f62d28f83b5409fecff7cfb8d903a1",
             "locator": {
               "end": 247,
@@ -458,7 +458,7 @@
         },
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+            "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
             "content": "sha256:7d04281a96e03b141611709a8b855a47b2c90cbfd6fd649203388e94022c9ec7",
             "locator": {
               "end": 288,
@@ -470,12 +470,12 @@
         },
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-            "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
+            "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
+            "content": "sha256:bb72b4cd9e9f5cb8d5e50a9284dc243e626b8cf76c46ccd069cbc9cb3d0ee1f4",
             "locator": {
-              "end": 456,
+              "end": 461,
               "kind": "line_range",
-              "start": 389
+              "start": 392
             }
           },
           "kind": "code"

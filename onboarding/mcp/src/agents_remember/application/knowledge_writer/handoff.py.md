@@ -16,8 +16,8 @@ checks the document's own shape and collects every problem, so one refusal names
 ### Logic
 
 - **Entries** keep producer-owned fields unchanged. Curator keys beside them decide what the entry
-  becomes: `scope` and `admission` author a new invariant from the verbatim `statement`.
-  The invariant's `status` may be supplied to retire it. `invariant_id` updates a stored invariant;
+  becomes: `scope`, `admission` and `title` author a new invariant from the verbatim `statement`.
+  The title is a one-line name of up to 80 characters. The invariant's `status` may be supplied to retire it. `invariant_id` updates a stored invariant and the title is optional on that update;
   `supersedes` takes `INV-…` IDs or entry IDs;
   `proofs: [{test, facet}]` records curator-confirmed proofs; every `target` becomes a realization entry.
   `replace_evidence` is an optional boolean curator input, defaulting to false; malformed types
@@ -32,7 +32,7 @@ checks the document's own shape and collects every problem, so one refusal names
   silently.
 - **Records** are `{key, kind, entry?, id?, slug?, fields, remove?}`; `kind` is one of the twelve record kinds of
   `RECORD_PREFIXES`; the writer owns `id`, `schema`, `origin`, `revision` and `writer` (`WRITER_OWNED_FIELDS`)
-  and refuses them in `fields`. A new record needs a `slug`. `remove` is an optional boolean: it says the stored
+  and refuses them in `fields`. A new record needs a `slug`. A new invariant in `records` also needs a valid `fields.title`. `remove` is an optional boolean: it says the stored
   record leaves the tree, and the reader carries it to `RecordRequest.remove` without deciding whether that
   kind may go. Only a dependent record whose document the task deleted is removed here; a weakness is closed
   and every older kind is retired (MIK-R124 rule 5).
@@ -177,7 +177,7 @@ The reader adds three distinct inputs without resolving their authority. Case ev
 
 ## Current source contract
 
-read_handoff_shapes uses the same entry, record and history decoders as full writer intake, but reads entries through read_producer_entry and skips attached-ruling enforcement. It therefore checks producer shapes without inventing Curator scope/admission decisions. read_handoff still takes the full path: _entry requires the applicable scope and new-invariant admission, and _read_document enforces ruling attachment. Both paths retain distinct-handle and shared field checks.
+read_handoff_shapes uses the same entry, record and history decoders as full writer intake, but reads entries through read_producer_entry and skips attached-ruling enforcement. It therefore checks producer shapes without inventing Curator scope/admission decisions. read_handoff still takes the full path: _entry requires the applicable scope and new-invariant admission and title, and _read_document enforces ruling attachment. Both paths retain distinct-handle and shared field checks.
 
 - Shared producer shape decoding is separated from full Curator intake, without weakening full-writer scope/admission checks.
 
@@ -311,11 +311,11 @@ Source: mcp/src/agents_remember/application/knowledge_writer/handoff.py
 
 - An entry and its curator keys; a ruling authors no invariant; the tests its evidence cites come from `tests_named_in`. [10]
 - The two test forms and the bare test module, read in order and once each. [11]
-- An entry: new invariant needs scope, admission and a statement. [17]
-- A record: kind, fields, and the writer-owned fields refused. [18]
+- Full writer intake requires scope, admission, a verbatim statement and a title for a new invariant. [17]
+- Record intake checks the kind and fields, refuses writer-owned fields and validates the invariant title. [18]
 - History input refuses caller-owned id/revision/sources and malformed considered examinations; the empty list remains intentional. [19]
 - The row keys and the request field a planned row's `ref` travels in. [20]
 - A `repoint` row item names one fired link's position, the path and the locator, and is refused if it renames a link. [30]
 
 - The entry reader validates replace_evidence as a boolean before constructing the request, and only literal true sets its flag. [27]
-- Shared producer shape decoding is separated from full Curator intake, without weakening full-writer scope/admission checks. [31]
+- The shared producer entry decoder serves producer shape checks. Full writer entry intake applies scope, admission, title and ruling-attachment checks. [31]

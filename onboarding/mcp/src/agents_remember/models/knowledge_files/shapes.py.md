@@ -22,6 +22,7 @@ admission and origin blocks. They check shape only — presence, closed vocabula
 - `Text` (non-blank prose), `Label` (non-blank, no surrounding whitespace) and `RepositoryPath` (plain
   repository-relative POSIX path, no `.`/`..`/empty segments, no drive letter, then the shipped
   `require_plain_git_path`) refuse rather than clean.
+- `InvariantTitle` validates a title of one to 80 characters on a single line, with surrounding whitespace refused and authored spelling preserved.
 - `OneSentence` (MIK-R118 rule 1) is the type of a weakness' statement: non-blank, at most 400
   characters. A longer statement is refused with its field rather than split or trimmed, so the
   author decides where the sentence ends.
@@ -107,3 +108,5 @@ No meaningful cross-repo references found: the module reads and writes only file
 repository layout it declares, and calls no sibling repository or external service.
 
 No cross-repo boundary is crossed by this file.
+
+- InvariantTitle enforces a one-line name up to 80 characters and refuses surrounding whitespace. [11]

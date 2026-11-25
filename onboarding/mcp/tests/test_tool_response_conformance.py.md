@@ -185,9 +185,12 @@ they make no acceptance claim.
 
 - The registered description and the refusal name the same `kind` vocabulary.
 
-- The test scans literal lifecycle next_tool values and takes worktree_closeout_apply and worktree_integrate from the historical closeout and integration refusal producer. A separate response-boundary probe inserts each collected value in a constructed closeout-candidate-state-moved refusal, runs the public response adapter, and verifies the model retains nextTool.
+- The test scans literal `next_tool` values and calls `_retired_generation_refusal` for closeout and integrate to collect `worktree_closeout_apply` and `worktree_integrate`. A response-boundary probe submits each of the four collected successors in a constructed `closeout-candidate-state-moved` refusal through the public response adapter and checks that the typed model retains `nextTool`.
 
-- The choke point whose guarantee this module moves into the suite. [17]
+
+
+- The choke point whose guarantee this module moves into the suite. Anchor: `_tool_payload` [17]
+
 
 - The registry whose models the structural layer sweeps. [18]
 
@@ -215,7 +218,7 @@ Current source: The literal PUBLIC_TOOLS source tuple contains 44 names. The con
 - A constructed series contract reaches the result builder and activates the emitting arm. The case requires both payload keys, validates finalized state and checks an already-vacant release. [6]
 - The registered description and the refusal name the same `kind` vocabulary. Anchor: `test_task_doc_description_and_refusal_name_the_same_kind_vocabulary` [10]
 
-- The test scans literal lifecycle next_tool values and takes worktree_closeout_apply and worktree_integrate from the historical closeout and integration refusal producer. A separate response-boundary probe inserts each collected value in a constructed closeout-candidate-state-moved refusal, runs the public response adapter, and verifies the model retains nextTool. [11]
+- The test scans literal `next_tool` values and calls `_retired_generation_refusal` for closeout and integrate to collect `worktree_closeout_apply` and `worktree_integrate`. A response-boundary probe submits each of the four collected successors in a constructed `closeout-candidate-state-moved` refusal through the public response adapter and checks that the typed model retains `nextTool`. [11]
 
 
 

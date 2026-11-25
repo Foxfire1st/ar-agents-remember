@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "An admitted start of a leaf Reviewer or Curator through the product. The cited tests exercise this rule where a regression could change a reader or lifecycle outcome."
+  },
+  "applicability": "An admitted start of a leaf Reviewer or Curator through the product.",
+  "conditions": [
+    "The start has an exact paired workspace and a resolved recipient.",
+    "A genuine new start or replacement gets a fresh notice. A replay of the same start sends no duplicate.",
+    "A busy or opening seat uses held delivery under the product sender.",
+    "The converted-memory moment uses effectively ignored briefs/_task/ or the recipient's recorded task scratch. The unconverted notice has no moment file."
+  ],
+  "exclusions": [
+    "Other roles, edits and extra rounds in the same seat do not produce a start moment."
+  ],
+  "id": "INV-9Z6T69",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "W3 F04 mounted dashboard and direct-grant tests for both roles, replay and replacement.",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/04_the-brief-of-a-file-0df6c23e90-ar/role-reports/worker/db647361-59b7-4042-bb9f-6d7638bd5e03/role-launch/d884-round5/REPORT.md#requirement-acceptance"
+      ],
+      "path": "kno-l4-w3-new-rules.json"
+    },
+    "handoffEntry": "KNO-R04@v1 rules 9–10",
+    "leaf": "261112-KNO-L4",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "New Reviewer and Curator starts send one bounded product notice, with the moment file in ignored task memory or the recipient's task scratch for converted memory, and a no-file notice for unconverted memory.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -49,9 +49,9 @@ Selected closeout certification publishes/readbacks objects and selects them thr
 
 Retained preparation models and selection separate private output identity from published mutation authority. Default services no longer expose a prepared-memory producer or continuation. Core finalization independently validates exact green Gates 1–5 and current memory/pair/task/journal authority; the removed prepared finalization caller supplies no production publication. Ordinary closeout retains exact candidate, approval, invariant gate and code-then-memory publication through its transaction owners.
 
-Direct landing retains accepted input and journals memory mutation before proving its actual output. A proven commit or retained recovery commit is reused; an accepted clean memory snapshot may reuse the existing memory HEAD without manufacturing attribution or a cache-maintenance commit. Changed memory content receives the shared `Code-Commit:` trailer at object creation. The disposable mutation snapshot excludes root `memory.md` from status and from isolated head/index/candidate trees. Direct publication stages the exact judged tree and confirms the admitted state around publication; it does not merely trust whatever the live index contains. Cache refresh follows output proof and is informational. A provably unpublished refusal cancels/restores its preparations so a new request can judge current state; an irreversible or ambiguous output retains same-generation recovery or developer decision.
+Direct landing retains accepted input and journals memory mutation before proving its actual output. A proven commit or retained recovery commit is reused; an accepted clean memory snapshot may reuse the existing memory HEAD without manufacturing attribution or a cache-maintenance commit. Changed memory content receives the shared `Code-Commit:` trailer at object creation. The disposable mutation snapshot excludes root `memory.md` from status and from isolated head/index/candidate trees. Direct publication stages the exact judged tree and confirms the admitted state around publication; it does not merely trust whatever the live index contains. Cache refresh follows output proof and is informational. A new direct memory commit also refreshes the file briefs using the operation's paired code commit. The returned result carries `briefsProblem` if the derived refresh encountered a problem. A provably unpublished refusal cancels/restores its preparations so a new request can judge current state; an irreversible or ambiguous output retains same-generation recovery or developer decision.
 
-Completed-integration reopening is an ancestry decision over newly produced legs: differing code or memory output reopens only when it is not already on the recorded source branch. Exact source-head admission is a separate owner in `modules/closeout.py`: permitted heads include the recorded base and, for completed or checkpointed integration, that contract's recorded landed head. Unrelated source movement still refuses. The older settings-only description should not be used as the complete current reopen predicate.
+Completed-integration reopening is an ancestry decision over newly produced legs: differing code or memory output reopens only when it is not already on the recorded source branch. Exact source-head admission belongs to `modules/closeout_source_heads.py`: permitted heads include the recorded base and, for completed or checkpointed integration, that contract's recorded landed head. Unrelated source movement still refuses. The older settings-only description should not be used as the complete current reopen predicate.
 
 Terminal evidence reading and archive publication have separate owners. The reader accepts owned enclosure artifacts, checks operation-kind filenames and archivable records, and bounds archived entries to 1,024 files and 64 MiB. It requires the exact terminal status, valid cleanup disposition and resolved mutation or publication evidence.
 
@@ -144,8 +144,14 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Ordinary closeout and integration run in their tools. Direct landings keep generation-bound journal controls. [21]
 
 
+
+
 - Default services bind the current memory/gate ports without a prepared producer or continuation; separately, explicit core finalization authority requires exact green Gates 1–5 and current Gate-5 memory inputs. These contracts do not make certification an ordinary closeout prerequisite. [22]
+
+
+
 - Memory cache exclusion occurs in isolated tree capture; direct publication stages the exact judged tree. [23]
+
 - Index copy obtains bytes and timestamp from one open file and restores the timestamp. [24]
 
 - Terminal enclosure evidence checks the exact stored disposition and preserved ownership. [25]
@@ -155,21 +161,37 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 - Sync explicitly permits conflict resolution between calls without a lock held across the call. [27]
 
+
+
 - The internal leaf-enclosure adapter starts this build in a child process, passes the backend-held repository roots, and accepts only a successful JSON reply. [14]
+
 
 
 - Configured-contract mutation authority rereads the canonical contract, re-proves configured repository identity, and requires its matching lifecycle location before returning current authority. [13]
 
 
+
+
 - Direct memory writes exclude the consumer cache. [10]
 
 
+
+
+
 - Direct memory writes exclude the consumer cache. [11]
+
 
 - Landing and finalization have separate reclamation/task-publication owners; application integration has configurable seat effects.  Anchor: `_integrated_result` `finalize_result` [26]
 
 
 - Locator-manifest-journal authority and all publication I/O/state transitions. [3]
 
+
+
 - Reopen projection uses changed-output ancestry; exact source-head admission also accepts recorded checkpoint landings. [28]
+
+
+
 - Retained reference account (no fresh execution or acceptance inferred): Direct landing recovery. [6]
+
+- The direct route records its normal publication result and then refreshes file briefs only for a newly made memory commit. [34]

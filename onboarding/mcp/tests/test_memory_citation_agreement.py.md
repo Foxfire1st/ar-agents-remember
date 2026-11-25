@@ -364,4 +364,4 @@ No repository or external-system boundary is proved by this module.
 
 - The qualified-heading census pins the one-entry tuple ("mcp/tests/overview.md:4833",). [20]
 
-- The `unit-regression` lane selects `mcp/tests/test_memory_citation_agreement.py` in the default test population (`mcp/tests/test-evidence-lanes.toml:341`). [29]
+- The `unit-regression` lane selects `mcp/tests/test_memory_citation_agreement.py` in the default test population (`mcp/tests/test-evidence-lanes.toml:346`). [29]

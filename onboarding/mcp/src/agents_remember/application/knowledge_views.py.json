@@ -125,16 +125,17 @@
       ]
     },
     "12": {
-      "note": "The three view renderers the dispatch table serves — source context, invariant and family; a curation-queue view is refused rather than rendered.\n\nAnchor: `ORDERING_INPUTS` `render_source_context` `render_curation_queue`",
+      "note": "The row-rendering module supplies the source context, invariant and family renderers.",
       "targets": [
         {
           "anchor": {
-            "blob": "5a6fb2a1b51ed3b6cf2ec54110b9d62b67c078df",
-            "content": "sha256:ae3b9df468e99401230b566f25b1ec8ad76884b2760237c953fc0baea2b1621c",
+            "blob": "5348eabe513b62ad118f8618a0082b954ba50c78",
+            "content": "sha256:855526dbef4ec8c95e10312f359cb94fa6136ef1cacaf8c364e0521049eeb57a",
             "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/classification.py"
+              "end": 255,
+              "kind": "line_range",
+              "start": 245
+            }
           },
           "kind": "code"
         },
@@ -152,16 +153,16 @@
       ]
     },
     "15": {
-      "note": "The former projection writer and MCP seam call were retired. The current public knowledge tool reads a converted tree through read_tree_page, rather than calling read_knowledge_view.",
+      "note": "The mounted knowledge read projects the converted tree result. Its paged reader uses read_knowledge_view internally to collect the renderer’s ordered slices.",
       "targets": [
         {
           "anchor": {
-            "blob": "1ce0bfc646a94b8e533c52d7c93d1acae2c8ab4d",
+            "blob": "7698616abcd31cb08bba4a158474703b7916d978",
             "content": "sha256:399c47806fb8a166316ff7d19aacc27f1dbb760787c49d8d109455617c117099",
             "locator": {
-              "end": 908,
+              "end": 909,
               "kind": "line_range",
-              "start": 863
+              "start": 864
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
@@ -169,12 +170,12 @@
         },
         {
           "anchor": {
-            "blob": "1ce0bfc646a94b8e533c52d7c93d1acae2c8ab4d",
-            "content": "sha256:8914dfd2cc5461420263a41a397d1f706724e9dca9c0a7a2199f4ed0eb6a3e2c",
+            "blob": "7698616abcd31cb08bba4a158474703b7916d978",
+            "content": "sha256:c45fb78e112c526d891f699d9ece6ce7222c6787947686b57847fd26a3ad82f9",
             "locator": {
-              "end": 1061,
+              "end": 1054,
               "kind": "line_range",
-              "start": 970
+              "start": 1000
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
@@ -182,12 +183,27 @@
         },
         {
           "anchor": {
-            "blob": "1ce0bfc646a94b8e533c52d7c93d1acae2c8ab4d",
-            "content": "sha256:ff8872d395271a4b79daeffce3cd5e759f1501cafdc016d77dee731a514b3483",
+            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "content": "sha256:fa865c6227e5472b5d644a83b55b69a227a166860b67beea1270e435bee27bbd",
             "locator": {
-              "kind": "file"
+              "end": 643,
+              "kind": "line_range",
+              "start": 621
             },
-            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+            "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3611974d4c194883823a8342d07e110763d9cc2c",
+            "content": "sha256:e1137f6964efb9a7b596ff7263e598d4323b03228314abcc85edb0a7e04b140f",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_paging/view_pages.py"
           },
           "kind": "code"
         }

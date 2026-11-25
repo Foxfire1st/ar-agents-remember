@@ -318,15 +318,14 @@
       ]
     },
     "23": {
-      "note": "Covered hunk: no_invariant, attach or author; never onboarding.",
+      "note": "Covered hunk: no_invariant, attach or author; never onboarding.\n\nAnchor: `test_a_covered_hunk_is_answered_by_no_invariant_attach_or_author_and_never_by_onboarding`",
       "targets": [
         {
           "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:f825d81bd20d8cf7850de9ef4ce58be1edd7e52c35259ddf0b59e1dd617218e2",
+            "blob": "4510eb09db2a5f95a8b33ba5a8d0de15dc079129",
+            "content": "sha256:cf593755756349250354a7aa04b5631e86ade85945921310d5324a60ab1962f3",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_covered_hunk_is_answered_by_no_invariant_attach_or_author_and_never_by_onboarding"
+              "kind": "file"
             },
             "path": "mcp/tests/test_unexplained_change_disposition.py"
           },
@@ -339,7 +338,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
+            "blob": "4510eb09db2a5f95a8b33ba5a8d0de15dc079129",
             "content": "sha256:d60461cab31a7c45c0e524c82d34be464ca2c9d9459174deddd897f0e1e51c71",
             "locator": {
               "kind": "symbol",
@@ -352,12 +351,12 @@
       ]
     },
     "25": {
-      "note": "An uncovered file: its onboarding trace; its no_invariant row is unnecessary.\n\nAnchor: `test_an_uncovered_new_file_is_satisfied_by_its_onboarding_trace`",
+      "note": "An uncovered file: its onboarding trace; its no_invariant row is unnecessary. Anchor: `test_an_uncovered_new_file_is_satisfied_by_its_onboarding_trace`",
       "targets": [
         {
           "anchor": {
-            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
-            "content": "sha256:66b6cbe0523bee0559e9bd323bd871e4d0c69c177ace2e539a62ba7c626ca2e0",
+            "blob": "4510eb09db2a5f95a8b33ba5a8d0de15dc079129",
+            "content": "sha256:cf593755756349250354a7aa04b5631e86ade85945921310d5324a60ab1962f3",
             "locator": {
               "kind": "file"
             },

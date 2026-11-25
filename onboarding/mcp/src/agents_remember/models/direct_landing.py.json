@@ -4,25 +4,26 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Real code/memory SHAs are separate from optional ledgerCache diagnostics.\n\nAnchor: `DirectLandingResponse`",
+      "note": "The result identifies the real code and memory commits and reports ledger cache observations and any brief refresh advisory in their own fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "31048889278d6365efd062ce9a763eb01e7a6f76",
-            "content": "sha256:45eb9916aeb8f9308845fbea7990d1756a0fa4a46f959b0fe96fb5044d9565eb",
+            "blob": "b1b7022af28fee364bdae2a0785c76fdf75ae8ab",
+            "content": "sha256:985d65ef1c12a52ee13f9d6ee37104d43d9aa1b5bdf271f994585f6ee6471606",
             "locator": {
-              "kind": "file"
+              "end": 59,
+              "kind": "line_range",
+              "start": 20
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "31048889278d6365efd062ce9a763eb01e7a6f76",
-            "content": "sha256:60dba587f6596668bc87031ec3228b416a2c0da1868d0c15f2052f618e6a43fe",
+            "blob": "b1b7022af28fee364bdae2a0785c76fdf75ae8ab",
+            "content": "sha256:a1937cf166bcc3a21b8bef714c4bcd4eb1c59c032b98b614a4616699d870f3b8",
             "locator": {
-              "kind": "symbol",
-              "name": "DirectLandingResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -34,10 +35,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31048889278d6365efd062ce9a763eb01e7a6f76",
-            "content": "sha256:5680fee4285af3fd64fc8f65d140a6c1796ce1bba0060b0562a0c996b77a44fb",
+            "blob": "b1b7022af28fee364bdae2a0785c76fdf75ae8ab",
+            "content": "sha256:e121e59cc28c0b48760de94a843f89e77b3f3bf9873ca3b227ebfd50af4c9e05",
             "locator": {
-              "end": 57,
+              "end": 58,
               "kind": "line_range",
               "start": 1
             }
@@ -47,25 +48,26 @@
       ]
     },
     "2": {
-      "note": "The response model shape for the direct landing operation.\n\nAnchor: `DirectLandingResponse`",
+      "note": "The response model shape for the direct landing operation. Anchor: `DirectLandingResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "31048889278d6365efd062ce9a763eb01e7a6f76",
-            "content": "sha256:45eb9916aeb8f9308845fbea7990d1756a0fa4a46f959b0fe96fb5044d9565eb",
+            "blob": "b1b7022af28fee364bdae2a0785c76fdf75ae8ab",
+            "content": "sha256:985d65ef1c12a52ee13f9d6ee37104d43d9aa1b5bdf271f994585f6ee6471606",
             "locator": {
-              "kind": "file"
+              "end": 59,
+              "kind": "line_range",
+              "start": 20
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "31048889278d6365efd062ce9a763eb01e7a6f76",
-            "content": "sha256:60dba587f6596668bc87031ec3228b416a2c0da1868d0c15f2052f618e6a43fe",
+            "blob": "b1b7022af28fee364bdae2a0785c76fdf75ae8ab",
+            "content": "sha256:a1937cf166bcc3a21b8bef714c4bcd4eb1c59c032b98b614a4616699d870f3b8",
             "locator": {
-              "kind": "symbol",
-              "name": "DirectLandingResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -147,7 +149,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db589409c3978e101a4ec6c68b9a35303e180cbb",
+            "blob": "f6c05e150769e32c8c67cd6f806b4d4ec29d7140",
             "content": "sha256:a3283de749cb1a03b7546976ec5eecf7c08f1a4387bed56459a864ddc166bb27",
             "locator": {
               "kind": "symbol",
@@ -159,12 +161,12 @@
         },
         {
           "anchor": {
-            "blob": "db589409c3978e101a4ec6c68b9a35303e180cbb",
+            "blob": "f6c05e150769e32c8c67cd6f806b4d4ec29d7140",
             "content": "sha256:5062876e01618e41a17bc08127b800452bd3411f605343afd40a6fddd9597cec",
             "locator": {
-              "end": 1254,
+              "end": 1258,
               "kind": "line_range",
-              "start": 1187
+              "start": 1191
             },
             "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
           },
@@ -177,12 +179,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
-            "content": "sha256:bd8451039a34cb7ca620810fe40f034694ff2e8ac3eef1cf374ad2ec292443fa",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:c395c3d2296f24a2d442417398c09681c24db546f13efeeb27c88fd6accbbfd4",
             "locator": {
-              "end": 84,
+              "end": 94,
               "kind": "line_range",
-              "start": 51
+              "start": 53
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -190,8 +192,8 @@
         },
         {
           "anchor": {
-            "blob": "45768b97f907bceb6df8cf870335a9e67e2ddecf",
-            "content": "sha256:c7a648e0cc49aa01a8b8861aa83965e9b16354ecdb6e2340b175caeaa7e5fdaf",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:2e74df889c7ce46e84c0378bc4b9d0c58650ddd24d012e314583bc7d2747fef8",
             "locator": {
               "kind": "file"
             },
@@ -206,7 +208,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31048889278d6365efd062ce9a763eb01e7a6f76",
+            "blob": "b1b7022af28fee364bdae2a0785c76fdf75ae8ab",
             "content": "sha256:09884457665159ef96de86f506692a9dd735ef8d65b8d6ae50c0be2e01fa52bf",
             "locator": {
               "kind": "symbol",
@@ -217,7 +219,7 @@
         },
         {
           "anchor": {
-            "blob": "31048889278d6365efd062ce9a763eb01e7a6f76",
+            "blob": "b1b7022af28fee364bdae2a0785c76fdf75ae8ab",
             "content": "sha256:b756d3cf5678d19529f2d692da67f67a010a7429f32b7b8357663f050e2404d9",
             "locator": {
               "kind": "symbol",
@@ -228,7 +230,7 @@
         },
         {
           "anchor": {
-            "blob": "31048889278d6365efd062ce9a763eb01e7a6f76",
+            "blob": "b1b7022af28fee364bdae2a0785c76fdf75ae8ab",
             "content": "sha256:48dc1ffbf0f21f0c57b0f0f76977f67799863226dd22877d54fcbb2eb68fe6a7",
             "locator": {
               "kind": "symbol",
@@ -244,7 +246,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31048889278d6365efd062ce9a763eb01e7a6f76",
+            "blob": "b1b7022af28fee364bdae2a0785c76fdf75ae8ab",
             "content": "sha256:09884457665159ef96de86f506692a9dd735ef8d65b8d6ae50c0be2e01fa52bf",
             "locator": {
               "kind": "symbol",
@@ -255,7 +257,7 @@
         },
         {
           "anchor": {
-            "blob": "31048889278d6365efd062ce9a763eb01e7a6f76",
+            "blob": "b1b7022af28fee364bdae2a0785c76fdf75ae8ab",
             "content": "sha256:b756d3cf5678d19529f2d692da67f67a010a7429f32b7b8357663f050e2404d9",
             "locator": {
               "kind": "symbol",
@@ -266,7 +268,7 @@
         },
         {
           "anchor": {
-            "blob": "31048889278d6365efd062ce9a763eb01e7a6f76",
+            "blob": "b1b7022af28fee364bdae2a0785c76fdf75ae8ab",
             "content": "sha256:48dc1ffbf0f21f0c57b0f0f76977f67799863226dd22877d54fcbb2eb68fe6a7",
             "locator": {
               "kind": "symbol",
@@ -282,7 +284,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31048889278d6365efd062ce9a763eb01e7a6f76",
+            "blob": "b1b7022af28fee364bdae2a0785c76fdf75ae8ab",
             "content": "sha256:09884457665159ef96de86f506692a9dd735ef8d65b8d6ae50c0be2e01fa52bf",
             "locator": {
               "kind": "symbol",
@@ -293,7 +295,7 @@
         },
         {
           "anchor": {
-            "blob": "31048889278d6365efd062ce9a763eb01e7a6f76",
+            "blob": "b1b7022af28fee364bdae2a0785c76fdf75ae8ab",
             "content": "sha256:b756d3cf5678d19529f2d692da67f67a010a7429f32b7b8357663f050e2404d9",
             "locator": {
               "kind": "symbol",
@@ -304,7 +306,7 @@
         },
         {
           "anchor": {
-            "blob": "31048889278d6365efd062ce9a763eb01e7a6f76",
+            "blob": "b1b7022af28fee364bdae2a0785c76fdf75ae8ab",
             "content": "sha256:48dc1ffbf0f21f0c57b0f0f76977f67799863226dd22877d54fcbb2eb68fe6a7",
             "locator": {
               "kind": "symbol",
@@ -316,25 +318,26 @@
       ]
     },
     "9": {
-      "note": "The current module exposes `DirectLandingResponse` at this ownership boundary.\n\nAnchor: `DirectLandingResponse`",
+      "note": "The current module exposes `DirectLandingResponse` at this ownership boundary. Anchor: `DirectLandingResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "31048889278d6365efd062ce9a763eb01e7a6f76",
-            "content": "sha256:45eb9916aeb8f9308845fbea7990d1756a0fa4a46f959b0fe96fb5044d9565eb",
+            "blob": "b1b7022af28fee364bdae2a0785c76fdf75ae8ab",
+            "content": "sha256:985d65ef1c12a52ee13f9d6ee37104d43d9aa1b5bdf271f994585f6ee6471606",
             "locator": {
-              "kind": "file"
+              "end": 59,
+              "kind": "line_range",
+              "start": 20
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "31048889278d6365efd062ce9a763eb01e7a6f76",
-            "content": "sha256:60dba587f6596668bc87031ec3228b416a2c0da1868d0c15f2052f618e6a43fe",
+            "blob": "b1b7022af28fee364bdae2a0785c76fdf75ae8ab",
+            "content": "sha256:a1937cf166bcc3a21b8bef714c4bcd4eb1c59c032b98b614a4616699d870f3b8",
             "locator": {
-              "kind": "symbol",
-              "name": "DirectLandingResponse"
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -109,15 +109,16 @@
       ]
     },
     "3": {
-      "note": "The scope that carries the caller’s named documents and refuses both selectors, an empty list, and a list outside citation_fix.",
+      "note": "This scope carries a named document or a bounded list of documents. It refuses both selectors together, empty or oversized lists and lists supplied outside citation_fix.",
       "targets": [
         {
           "anchor": {
-            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
-            "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
+            "content": "sha256:1d21952b311063e9cd16123903890775ed49fd77e3bd2000cb5c2e85ec34aeb3",
             "locator": {
-              "kind": "symbol",
-              "name": "CitationOperationScope"
+              "end": 117,
+              "kind": "line_range",
+              "start": 64
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -125,10 +126,25 @@
         },
         {
           "anchor": {
-            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
-            "content": "sha256:8891b392f2b5e7518a285b274b4b3d1a344bdc32eb8b09eab3aa7640aa5119a4",
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
+            "content": "sha256:ebfc927001f17f75b88dfbd04affbee29237243e3579778a08094d524c717f0c",
             "locator": {
-              "kind": "file"
+              "end": 325,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
+            "content": "sha256:a9ee9b55b6d8de98051f14785b1a8a531a67fb778ea0912bc9c6676d45feacff",
+            "locator": {
+              "end": 544,
+              "kind": "line_range",
+              "start": 502
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -174,7 +190,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
             "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
             "locator": {
               "kind": "symbol",
@@ -191,12 +207,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
             "content": "sha256:0f0c734630b026feb275f60ff129107cdf091fad6ce837783b161ebe23950c10",
             "locator": {
-              "end": 81,
+              "end": 75,
               "kind": "line_range",
-              "start": 70
+              "start": 64
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },

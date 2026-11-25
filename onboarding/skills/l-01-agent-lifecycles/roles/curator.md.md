@@ -22,6 +22,8 @@ Batch changed-card citation previews and repairs with one documents list per wav
 
 This canonical role/operation requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and the packaged copy the tool server serves share this contract; transport does not change their write/start powers, peer destinations or independent acceptance authority.
 
+The Curator opens each current saved brief when present before checking code and memory. Use the touched-rule file if the start notice names one. `read_ar_files` can report paths and saved freshness, with rule text where it fits. `knowledge_read` locates the whole records used in the check.
+
 The leaf intake includes the task, accepted requirement revision, captured change set, existing onboarding, producer handoff, exact worktree contract and the cards, sidecars and records of that leaf’s memory worktree; there is no dataset to publish. Producer fields remain owned by their producer; the curator supplies semantic scope, family/source examination and resolved outcomes.
 
 Current curation continues from a report to the next authorized step without a new Manager go. It verifies card sentences against source, repairs wrong or missing memory encountered along its way beyond quality-check findings, names each repair and makes no broad sweep. Code changes, requirement decisions and another leaf’s work return to their owner. A correction qualifies every affected false body claim; full checks and the independent fact-check run before handover.
@@ -190,3 +192,7 @@ The Curator's closing paragraph admits `workspace.outsideScratchRoot` for what m
 - Normal knowledge authoring uses mounted knowledge_write or the admitted serving-build knowledge-ingest route. Only a covered correct-input refusal admits the same-tool/input-class recovery procedure, with owner notice, declared provenance and working checks. [26]
 
 - A changed family guarantee carries a Curator-authored effect. The writer fills the revision. [8]
+
+
+
+- The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. Knowledge_read names whole records and their evidence. [30]

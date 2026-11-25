@@ -204,12 +204,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb3c2272e5d24ca02331ff792609423b79c238aa",
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
             "content": "sha256:6c6eb717921aed553123e6ec0c05af608f1f0bb22e31ccf714a7e2642a3bd270",
             "locator": {
-              "end": 271,
+              "end": 274,
               "kind": "line_range",
-              "start": 271
+              "start": 274
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -217,12 +217,12 @@
         },
         {
           "anchor": {
-            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
-            "content": "sha256:6c6eb717921aed553123e6ec0c05af608f1f0bb22e31ccf714a7e2642a3bd270",
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
+            "content": "sha256:7146dc257d151c5fe1fe4041c2e4a0c39f0f86443f712a018a5471824d073e3b",
             "locator": {
-              "end": 3804,
+              "end": 3856,
               "kind": "line_range",
-              "start": 3804
+              "start": 3808
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -230,12 +230,12 @@
         },
         {
           "anchor": {
-            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
-            "content": "sha256:6c6eb717921aed553123e6ec0c05af608f1f0bb22e31ccf714a7e2642a3bd270",
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
+            "content": "sha256:07593240d99226dcaa751e563ddc667da5f3e6cf9008fba7719d55447752bcce",
             "locator": {
-              "end": 4394,
+              "end": 4460,
               "kind": "line_range",
-              "start": 4394
+              "start": 4432
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -248,12 +248,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
-            "content": "sha256:6c6eb717921aed553123e6ec0c05af608f1f0bb22e31ccf714a7e2642a3bd270",
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
+            "content": "sha256:be27c195ff4a24b972d1ffc8e202773296e9bfa37b65f0e6a6bd5f058c18cbc8",
             "locator": {
-              "end": 400,
+              "end": 407,
               "kind": "line_range",
-              "start": 400
+              "start": 65
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -261,12 +261,12 @@
         },
         {
           "anchor": {
-            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
-            "content": "sha256:6c6eb717921aed553123e6ec0c05af608f1f0bb22e31ccf714a7e2642a3bd270",
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
+            "content": "sha256:512a6032c52007fffd0f895b51a3fbac033eca3d7439d8d27c7d8185d0091550",
             "locator": {
-              "end": 935,
+              "end": 953,
               "kind": "line_range",
-              "start": 935
+              "start": 905
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -274,12 +274,12 @@
         },
         {
           "anchor": {
-            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
-            "content": "sha256:6c6eb717921aed553123e6ec0c05af608f1f0bb22e31ccf714a7e2642a3bd270",
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
+            "content": "sha256:ca12d8cf56a0bf492bc8f9aefb4fbeed22d2d88fd6733ea5369b07a41a81f0b8",
             "locator": {
-              "end": 2820,
+              "end": 2852,
               "kind": "line_range",
-              "start": 2820
+              "start": 2510
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -287,12 +287,12 @@
         },
         {
           "anchor": {
-            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
-            "content": "sha256:6c6eb717921aed553123e6ec0c05af608f1f0bb22e31ccf714a7e2642a3bd270",
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
+            "content": "sha256:9d7d25f1ce8104d1b42eeed028a8a95bd90d4aafb787a85d610384b77d945c73",
             "locator": {
-              "end": 3694,
+              "end": 3745,
               "kind": "line_range",
-              "start": 3694
+              "start": 3713
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -300,12 +300,12 @@
         },
         {
           "anchor": {
-            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
-            "content": "sha256:6c6eb717921aed553123e6ec0c05af608f1f0bb22e31ccf714a7e2642a3bd270",
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
+            "content": "sha256:7146dc257d151c5fe1fe4041c2e4a0c39f0f86443f712a018a5471824d073e3b",
             "locator": {
-              "end": 3804,
+              "end": 3856,
               "kind": "line_range",
-              "start": 3804
+              "start": 3808
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -313,12 +313,12 @@
         },
         {
           "anchor": {
-            "blob": "7178fce23be04cf60c372444162f6776dc05069e",
-            "content": "sha256:6c6eb717921aed553123e6ec0c05af608f1f0bb22e31ccf714a7e2642a3bd270",
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
+            "content": "sha256:07593240d99226dcaa751e563ddc667da5f3e6cf9008fba7719d55447752bcce",
             "locator": {
-              "end": 4394,
+              "end": 4460,
               "kind": "line_range",
-              "start": 4394
+              "start": 4432
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -401,14 +401,16 @@
       ]
     },
     "20": {
-      "note": "An invariant text record stores one numeric revision and one statement, distinct from the former retained-revision model.",
+      "note": "An invariant text record stores one numeric revision and one statement. It accepts a separate optional title.",
       "targets": [
         {
           "anchor": {
-            "blob": "d6a81b841bf29a345dc9d7857710af32751ee689",
-            "content": "sha256:a96b864da4a6f62a1e4ee4dd00e773d860de5dda3cad27051ebad487db7b4dab",
+            "blob": "ba0a4d4cc4a64d12dfe74f442b18765bc198f5e0",
+            "content": "sha256:8519d657496c95ffbf3f69c61a5c305082c63a50b04c9a2dd5b1b2a08156be8c",
             "locator": {
-              "kind": "file"
+              "end": 162,
+              "kind": "line_range",
+              "start": 138
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
           },

@@ -8,6 +8,9 @@
 Checks append-only leaf attempt histories and the exact-tree memory gate on closeout and recovery.
 
 ## Code Commentary
+
+The concurrent-rewrite case also preserves the effective ignore file's exact working bytes through a refusal and checks the judged memory tree on retry.
+
 A reopened leaf writes its next attempt without reopening a closed history file; the latest row about a subject governs across attempts. Closeout closes the latest attempt, preview reads its verdict, and an unconverted preview now refuses with the central legacy-format message before invariant evaluation. A continued leaf creates its next attempt. A file rewritten while the gate runs must not be committed unjudged, and a missing landed history refuses by name. Removed canonical-dataset reopen scenarios are historical, not current helpers or tests. This card records assertions, not a passing run.
 
 The same-size, same-second Git rewrite scenario imports the single `rewrite_in_the_second_of_the_index_write` owner from [knowledge_index_test_support.py](knowledge_index_test_support.py.md). Its real clock alignment is the scenario's subject; the 120-second alignment guard does not assert scheduler speed. The original captured-tree/currentness assertions remain at this file's test owner.
@@ -118,7 +121,10 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 
 - Legacy preview refuses without evaluating the invariant gate or changing the compared sides. [40]
 
+
+
 - A file rewritten while the gate runs is never committed unjudged. [42]
+
 - A world whose contract records the leaf's completed closeout that was not integrated. [44]
 - The public closeout, run whole. [45]
 
@@ -144,7 +150,10 @@ No cross-repo boundary is crossed by this file.
 
 
 
+
+
 - `test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged` owns the current boundary described above. [27]
+
 
 
 

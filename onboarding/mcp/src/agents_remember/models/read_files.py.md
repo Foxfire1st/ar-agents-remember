@@ -8,7 +8,9 @@
 
 ## Current naming-reader contract — MIK-R109
 
-`NamedRecord` names only action-asking records by ID, kind, state and heading (with disclosed titleFallback). `NamedFile` names source existence, governing card location, card state, per-state counts and action records, plus two one-line counts where they are non-zero: `openWeaknesses` (open weaknesses anchored to that file) and `dependentDocuments` (documents whose dependent record stands on it). A confined-row refusal carries unknown existence and a reason, without dropping valid siblings. `ReadArFilesResponse` is strict, `state` is named/refused, `codeState`/`codeTree` say the observed code and `memoryState` says whether memory can be named. Governing overview locations are once per call, nearest first. `cardStatus` admits `found`, `missing` and `sidecar-only`; an existing JSON half with no Markdown half is named at its JSON path. No source/onboarding/overview text, sidecar/reference document, published_intent block, session dedup or continuation is in this model. Token stamping remains at the shared choke.
+`NamedRecord` names only action-asking records by ID, kind, state and heading (with disclosed titleFallback). `NamedFile` names source existence, governing card location, card state, per-state counts and action records, plus two one-line counts where they are non-zero: `openWeaknesses` (open weaknesses anchored to that file) and `dependentDocuments` (documents whose dependent record stands on it). A confined-row refusal carries unknown existence and a reason, without dropping valid siblings. `ReadArFilesResponse` is strict, `state` is named/refused, `codeState`/`codeTree` say the observed code and `memoryState` says whether memory can be named. Governing overview locations are once per call, nearest first. `cardStatus` admits `found`, `missing` and `sidecar-only`; an existing JSON half with no Markdown half is named at its JSON path. No source/onboarding/overview text, sidecar/reference document, published_intent block, session dedup or continuation is in this model. Token stamping remains at the shared response finalizer.
+
+`NamedFile.brief` is optional. The full form can include rule text, recorded or derived titles, state, writer, anchor evidence and related knowledge. A smaller brief can carry the pointer and counts. A compact reply can retain the pointer and saved freshness with no counts. A pointer can name a missing saved file. A card-only path can carry `none`. `ReadArFilesResponse` declares `briefsProblem` and `briefsLeftOut` for the brief failure or omission reports.
 
 ## Current source contract evidence
 
@@ -75,4 +77,11 @@ sets them.
 
 
 
-- The strict ReadArFilesResponse names governing files and overviews and observed state; it carries no published-intent body. [6]
+
+
+- The strict file-reader response declares named files, governing overviews, observed state and optional brief status. Anchor: `ReadArFilesResponse` [6]
+
+
+
+
+- The strict model declares rule text, compact brief variants and the failure and omission fields. [7]

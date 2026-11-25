@@ -256,12 +256,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1658d25605f14af674edda23f9d53f59b9eaa529",
-            "content": "sha256:bd0e6fe4943fbe368d04f63206bc9f889341d54fa1f9b32a6c60a0ad89548662",
+            "blob": "5b7e751298ebcd50dae4f6724680aa5e48ed7568",
+            "content": "sha256:6ed63343af3afbd56bb16cd2f0f222463397202e9ab9d04f2f4d1e428a3fbf4b",
             "locator": {
-              "end": 330,
+              "end": 381,
               "kind": "line_range",
-              "start": 268
+              "start": 313
             },
             "path": "mcp/src/agents_remember/tasks/route_review.py"
           },

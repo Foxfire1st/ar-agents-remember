@@ -8,6 +8,9 @@ Architect owns the developer conversation, requirement meaning and semantic plan
 
 ## Hot Path Summary
 
+The Worker, Reviewer, Curator and Investigator retrieve briefs for their relevant files. Fuller replies can include rule text. Compact rows can retain a pointer even when the saved brief is missing. Open the current saved brief when present. Each role uses knowledge_read and its own file tools for whole records and supporting evidence.
+
+
 Worker and Bootstrap intake now obtain naming/orientation and open source/card/overview files natively; this changes reading, not grants, scratch placement, CODE/MEMORY ownership, question provenance or peer handover. Curator family authoring follows its operation and the family-obligations detail.
 
 Landing cut/add observations are report-only; use the measurement owner and canonical Curator/Reviewer duties for independent memory judgment.
@@ -256,7 +259,10 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 - Families are authored as records items and external documents as card references; the file writer does not read the entry keys family and external_sources. [38]
 
+
+
 - Native enclosure preparation reads contract-scoped status and refuses unsuccessful preparation; this alone does not prove the historical whole-path lineage claim. [43]
+
 
 - Graph absence declares no dependencies and resolves the atomic shape without serializing masters.  Anchor: `resolve_scheduling_mode`, `effective_execution_nature` [44]
 

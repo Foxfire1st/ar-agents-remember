@@ -80,7 +80,10 @@ The format switch and the two readings.
 
 
 
-- read_ar_files names the converted records that govern a path - existence, the card's location and the records' states - and carries none of their text; an unconverted tree is answered as unconverted rather than with a knowledge section. [5]
+
+
+- The converted reader names the source and carries the invariant's text in its short brief. [5]
+
 
 
 ### Cross-Repo References

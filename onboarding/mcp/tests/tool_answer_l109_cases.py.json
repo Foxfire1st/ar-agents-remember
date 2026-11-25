@@ -3,14 +3,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Each producer rebuilds one largest answer from a hermetic fixture with a fixed git environment.",
+      "note": "The producer checks the delivered bound and the twenty relative pointers with missing freshness. It compares the files, memory tree and Git status before and after the read.",
       "targets": [
         {
           "anchor": {
-            "blob": "850c08dd01fdd31329e5a79826b2cd417fe393aa",
-            "content": "sha256:7e69b6b4babdc61ce36e668bdf938dcc5aa75700ee5cb31a7e849fa96c90ac47",
+            "blob": "b1c36e5ae6160b8579f2f1783a7ac45cdb961d74",
+            "content": "sha256:22678d50ee11b222cf4b0e3ae02eb67144bb39dc98e9d0b0318dd3870cf0f718",
             "locator": {
-              "kind": "file"
+              "end": 158,
+              "kind": "line_range",
+              "start": 142
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b1c36e5ae6160b8579f2f1783a7ac45cdb961d74",
+            "content": "sha256:ea087b46acaf8bde96acba7e4ae0638a1d93fbdc3ee3446c7b7fb771932a36bb",
+            "locator": {
+              "end": 255,
+              "kind": "line_range",
+              "start": 233
             }
           },
           "kind": "test"
@@ -18,14 +32,40 @@
       ]
     },
     "2": {
-      "note": "The built answer is sanitized of scratch paths and identities before it is compared with the stored case.",
+      "note": "The fixture normalizes scratch paths and volatile log fields while retaining stable Git identities.",
       "targets": [
         {
           "anchor": {
-            "blob": "850c08dd01fdd31329e5a79826b2cd417fe393aa",
-            "content": "sha256:7e69b6b4babdc61ce36e668bdf938dcc5aa75700ee5cb31a7e849fa96c90ac47",
+            "blob": "b1c36e5ae6160b8579f2f1783a7ac45cdb961d74",
+            "content": "sha256:9c1383de8a995308475bc82526f2afb85cb0efbda0f54f85429c418a823a3515",
             "locator": {
-              "kind": "file"
+              "end": 27,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b1c36e5ae6160b8579f2f1783a7ac45cdb961d74",
+            "content": "sha256:e410f2995d6091ffec9c372aaf64a7ec5ccc9d96ff25bb362d70b7868d704283",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b1c36e5ae6160b8579f2f1783a7ac45cdb961d74",
+            "content": "sha256:abe4eb36fb78d08d6503248b549cd10731d2bbd17a933624e5f1a231a2988eb2",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 60
             }
           },
           "kind": "test"

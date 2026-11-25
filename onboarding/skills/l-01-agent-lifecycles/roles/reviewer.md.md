@@ -22,6 +22,9 @@ each stable requirement ID from the same applicable set dispatched to the worker
 
 ## Code Commentary
 
+The Reviewer opens current saved briefs when present for the changed files and uses the touched-rule file when the start notice names one for the exact freeze. Fuller read replies can carry rule text. Compact rows can keep a brief pointer with saved freshness. `knowledge_read` locates whole records and their proof evidence for independent review.
+
+
 ### Bound native review intake
 
 Review only the owner’s explicit assignment. Read the rendered task document and canonical JSON at `documents[0].taskDocReadArgs.rendered_path` and `documents[0].taskDocReadArgs.json_path`, and use the tools on `agents-remember-task` only, with `arMcpContext.readerArguments` and actual bound schemas; per-call context includes the canonical task and enclosure contract. Read only the documents required by the assigned seam and write only contained task-local report artifacts. Missing fields/capabilities are reported gaps, not permission to switch AR servers or retrieve unscoped material.
@@ -56,11 +59,11 @@ The append target is the same single physical leaf journal that contains the wor
 reviewer's separately authored verdict links that journal anchor instead of duplicating the
 adjudication as another authority.
 
-**The declared knowledge effects.** Step 7 (`:73`) also checks: when the leaf's task document declares `expectedKnowledgeEffects`, the reviewer checks
+**The declared knowledge effects.** Step 7 (`:74`) also checks: when the leaf's task document declares `expectedKnowledgeEffects`, the reviewer checks
 that declaration against the leaf's requirement packet — its declared subjects and effects match what the
 packet requires, with no effect missing and none invented — and a mismatch is a finding. The check is stated inline in step 7; it is not a criteria catalog entry. Who writes the declaration stays procedural; `task_doc` has no per-field role gate.
 
-Beside the verdict, the reviewer emits **its own curator hand-off list** (`:93`) — its verdicts and
+Beside the verdict, the reviewer emits **its own curator hand-off list** (`:94`) — its verdicts and
 findings in the shape `../templates/curator-handoff-list.md` owns, as data rather than as verdict prose
 for the curator to re-read. Each entry is one finding or one requirement adjudication, carrying the
 source it came from and the place it was found at, and a finding the reviewer minted carries its own
@@ -154,7 +157,13 @@ The Reviewer's closing paragraph sends temporary files, experiments and working 
 
 - Reviewer requires the dispatched exact stable IDs and versions, the durable approval record, exact candidate and Worker attempts and the repository's tools; the catalogs come from the review type's row in the binding table, never from the brief or a choice during the review, and the verdict's Catalog Binding section names them. [11]
 
+
+
+
+
 - Reviewer inspects every changed file of the complete candidate diff and reads the baseline detail at step 4; a subset never replaces the Curator's complete authoring memory-quality operation. [12]
+
+
 
 - Baseline is sealed under the step-4 baseline detail; fix verification reuses that sealed evidence and only listed IDs without a new-lens or whole-seam rediscovery mandate. [13]
 

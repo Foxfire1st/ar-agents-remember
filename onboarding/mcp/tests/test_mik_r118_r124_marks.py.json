@@ -1,0 +1,24 @@
+{
+  "path": "mcp/tests/test_mik_r118_r124_marks.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The brief refresh assertions cover dependent removal and the previous and new file on a move.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6fc77d0a72ef25e2ae6880de59938ccd98284a9",
+            "content": "sha256:43a0d7e3473c7d3c6b21472e41af53126fe291cdc51acb98a967c6e11229a353",
+            "locator": {
+              "end": 1306,
+              "kind": "line_range",
+              "start": 1258
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

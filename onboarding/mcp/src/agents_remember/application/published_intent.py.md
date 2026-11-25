@@ -12,7 +12,7 @@ Select published text knowledge for the ordinary paired read. Its coordination c
 
 ### Logic
 
-`resolve_published_intent` selects a converted memory tree or reports `legacy-format`. `converted_memory_tree` accepts only a directory holding `knowledge/layout.json`; a `knowledge.sqlite` file and a parent inferred from its filename are not accepted tree inputs. Selection requires a coordination root for the derived cache, and partial indexes stay incomplete.
+`resolve_published_intent` selects a converted memory tree or reports `legacy-format`. `converted_memory_tree` accepts only a directory holding `knowledge/layout.json`; a `knowledge.sqlite` file and a parent inferred from its filename are not accepted tree inputs. Selection requires a coordination root for the derived cache, and partial indexes stay incomplete. Selecting the index leaves the memory folder untouched.
 
 Source resolution is a root/tree pair or is unrequested, never half-invented. Path seeds prepare family-complete leaf selections; identity seeds use the scope walk. The whole knowledge block fits the shared threshold and resumes through `knowledge_read`.
 
@@ -34,7 +34,7 @@ and each family's stale members, computed once per block by `knowledge_paging.cu
 inside `_tree_block`, so the block is measured with it (MIK-R02, ruling F3 of 2026-09-29 20:40:40). **The tree it observes
 is the one this route already resolved for the source it returns** (architect ruling 1, 2026-09-29T18:42:37):
 the `sourceResolution` pair, the code root's `HEAD^{tree}`. That is the read's own resolved tree, not a
-fallback. The block names it (`codeTree.treeId`) and states its scope in `treeScope` (`_TREE_SCOPE`: "states
+fallback. The block names it (`codeTree.treeId`) and states its scope in `treeScope` (`_TREE_SCOPES`: "states
 observed at the committed code tree <id> this read resolved; uncommitted working-tree edits are not
 reflected"). When the route resolves no pair, `codeTree` is `null`, there is no `treeScope`, and every realized
 invariant is `unverifiable` ("no code tree was requested"). The computation never raises (ruling N2,
@@ -48,7 +48,7 @@ prepared by `knowledge_leaf.pages.prepare_leaf` (below), and an **identity** see
 `read_published_intent` then returns `bounded_block(blocks, envelope)` (`knowledge_paging/block_pages.py`),
 with `_tree_block` as the envelope: the recorded block around the laid-out seeds, plus `threshold` and the
 `currentness` with its `treeScope`, so everything the block carries beside its seeds is inside the measured
-block. **The threshold bounds the knowledge block of a `read_ar_files` response as a whole, not each seed**
+block. **The threshold bounds the emitted published-intent block as a whole**
 (architect ruling Q1, 2026-09-29 19:56:40); source files and onboarding are outside it. Seeds are laid out in
 order; once the block is full, each remaining seed is `state: "deferred"` with only its counts and a
 position-0 continuation, and when those would not fit they collapse into one deferred entry listing its
@@ -57,8 +57,7 @@ position-0 continuation, and when those would not fit they collapse into one def
 `knowledge-continuation/v2` token the mounted tool resumes. `_candidates` hands every row a **scope** seed
 could carry to the one scope currentness computation (`_code_tree` is the source pair's tree); a leaf seed
 computed its own selection's currentness when it was prepared. `PUBLISHED_INTENT_MAX_UTF8_BYTES`
-left the public API (ruling Q2): the database page keeps the bound privately until MIK-R26 (L26) retires that
-route. The database path is unchanged and keeps a `cast`, because it never prepares a scope.
+left the public API (ruling Q2). The current direct blocks read converted memory. Mounted file naming reuses the selector and adds its separate short-brief rows.
 
 **A path on a memory tree is read family-complete (MIK-R01).** For a converted tree, `_tree_page_block`
 prepares a `PathSeed` with `prepare_leaf(LeafRequest(...))`: the index file, the tree key, the index state, the
@@ -136,31 +135,52 @@ No configured domain documentation could be checked.
 - The selected index supplies its own identity; no canonical dataset or caller-asserted identity is selected. [4]
 
 
+
+
 - **The source-resolution pair, resolved together or left unrequested because the read context refuses either half alone.** [6]
+
 
 
 - The ordinary route selects converted text knowledge or reports legacy format without a database fallback. [7]
 
 
+
+
 - **The read itself: the shipped taskless context constructor plus the shipped selective read, with `task_ref` left unset and identity seeds passed through; every page is then bound to the tree's index state.** [8]
+
+
+
 
 
 - **The converted-tree route: which path names a converted tree, the one dataset resolution every knowledge read applies, the refusal without a coordination root, and the index selection that recomputes the tree key.** [9]
 
 
+
+
+
 - **The ordinary read's converted-tree selection: `None` for an unconverted root, an `unusable` state when the tree cannot be indexed, and no authority-home check because the index is keyed by its tree alone.** [10]
 
 
-- **MIK-R03: the `currentness` block at the resolved source tree, named with its `treeScope` and computed once inside the bounded block; with no pair, every realized invariant is unverifiable.** [12]
+
+
+
+- The bounded block includes currentness and names the observed code tree in `treeScope` when available. It reuses currentness observations while fitting pages and reports realized invariants as unverifiable without a code pair. [12]
+
+
+
 
 
 
 - The complete text-tree knowledge block is bounded by the shared threshold. [13]
 
 
+
 - **MIK-R02: a memory-tree seed is prepared for the block, not read as a budgeted page; since MIK-R01 a path seed by the leaf read, an identity seed by the scope read.** [14]
 
+
+
 - **MIK-R01: the block's currentness merges the leaf and scope subsets, and its top-level policy follows the seeds asked (rulings Q5 and N5).** [15]
+
 
 - **MIK-R01: an index that is not the selected tree's is a named seed failure.** [16]
 - **MIK-R05: a path seed's `registration_absent` refusal carries its route chain.** [19]
@@ -202,7 +222,10 @@ No configured domain documentation could be checked.
 
 
 
+
+
 - Only a converted root directory is admitted as a knowledge selection; a database path is refused. [46]
+
 
 
 ### Cross-Repo References
@@ -219,3 +242,5 @@ No meaningful cross-repo references found.
 - Unconverted roots refuse retired database selection and mounted tools open no legacy database. [44]
 
 - The refusal and item shapes this route renders without re-spelling. [37]
+
+- Selection derives its external index from a converted directory without editing the memory. [50]

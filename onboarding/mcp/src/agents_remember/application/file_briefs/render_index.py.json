@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/file_briefs/render_index.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The index renders file rows and child folder links in a stable order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8afc96924f7fcce0f6604575529865f616f22c3c",
+            "content": "sha256:675cfc209ce5116bc03289efd90e854480a83263007d8e0d7fba17124eb256f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "index_markdown"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

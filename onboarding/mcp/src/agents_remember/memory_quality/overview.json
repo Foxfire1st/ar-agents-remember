@@ -224,7 +224,7 @@
       ]
     },
     "2": {
-      "note": "The memory registrar exposes `memory_quality_check` to agents and routes it to the start, poll or whole-run payload.\n\nAnchor: `memory_quality_check_payload`",
+      "note": "The memory registrar exposes `memory_quality_check` to agents and routes it to the start, poll or whole-run payload. Anchor: `memory_quality_check_payload`",
       "targets": [
         {
           "anchor": {
@@ -241,8 +241,8 @@
         },
         {
           "anchor": {
-            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
-            "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
+            "blob": "24bff159b2050395f07c6fdb1507b922bea79ad0",
+            "content": "sha256:46e292d965f7d73261d3e5baab9b977c7a2f00a645edd58005fe2ec02620f133",
             "locator": {
               "kind": "file"
             },

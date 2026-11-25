@@ -167,12 +167,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37329737a189b8d896479b59f8fc53af8f17d21e",
+            "blob": "268fb78a4dd9640215b95691eb653e535db39358",
             "content": "sha256:f682a022160f36e9b08ef27945830cddde96f1d87c31fa42f791aa898204e58c",
             "locator": {
-              "end": 298,
+              "end": 309,
               "kind": "line_range",
-              "start": 225
+              "start": 236
             },
             "path": "mcp/src/agents_remember/worktrees/review_history.py"
           },

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "b29f2e225c04fbcebb653d59f81cf895c42f5097",
-    "commit": "180b6c153d21d01cbb14059d0219472ccdeba683",
+    "codeTree": "51a44523acb6c29c3a029c7dde4a35acb96595f3",
+    "commit": "3bbaf460317e8572583d884bc0791a219ad1bcfa",
     "role": "curator",
-    "statement": "The Claude Code guide's permission-mode account and the server_info-only pre-approval still hold on b29f2e2; the role-scoped Codex grant does not touch the Claude branch.",
-    "task": "261124-CAP-L1",
+    "statement": "The Claude Code guide's permission-mode account and the server_info-only pre-approval still hold on b29f2e2; the role-scoped Codex grant does not touch the Claude branch. On code 51a44523 (gen-8 sync onto CAP-L1 and BUG-L26) the landing answer rosters only add the key briefsProblem; the guide's Claude selection, implicit Bootstrap and server_info-only pre-approval are untouched.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/install/claude-code.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon_config.py"
     },
     {
-      "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
+      "blob": "58ee640a8f53ac7e3e3b4aa884d750d6ad8eead7",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     },

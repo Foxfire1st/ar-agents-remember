@@ -181,7 +181,7 @@ No external domain claim is required.
 
 
 
-- The leaf closeout recording it imports rather than duplicating. [9]
+- The playthrough calls the shared `close_out_leaf` test helper to record leaf closeout. [9]
 
 - The integration-case budget this module's membership is accounted against.  Anchor: `integration_case_budget` [12]
 
@@ -199,6 +199,6 @@ No meaningful cross-repo references found.
 ### Repo-Internal References (continued)
 
 
-- The `integration` lane selects `mcp/tests/test_lifecycle_playthrough_end_to_end.py` (`mcp/tests/test-evidence-lanes.toml:731`). [10] [13]
+- The `integration` lane selects `mcp/tests/test_lifecycle_playthrough_end_to_end.py` (`mcp/tests/test-evidence-lanes.toml:742`). [10] [13]
 
 - The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/checkpoint_landing_test_support.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json` and `mcp/tests/writer_worklist_test_support.py`. [11]

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/file_briefs/model.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "RuleHead carries the standing and measured currentness of one rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87d35273aaac07d3de322776cdfece4d409e1841",
+            "content": "sha256:a871b515cb08ed0894c0b3c22b3bd4f8ad8d68e5d9d8522d79f7f8423b3dc87f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RuleHead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

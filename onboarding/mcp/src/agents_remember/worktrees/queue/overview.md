@@ -106,5 +106,8 @@ Historical labels such as final, landed, and resolved describe earlier curation 
 
 - Curator evidence comes from the structured currentness validator and is consumed as door candidate provenance. [5]
 
+
+
 - Preview, exact Git-output recovery, cache handling, explicitly selected staged quality, ordinary invariant-gated memory publication and protected-ref integration have separate owners; disposable scheduling projection grants none of their publication or certification authority. [6]
+
 - Recovery proves the accepted code and memory outputs without a cache lookup. [1]

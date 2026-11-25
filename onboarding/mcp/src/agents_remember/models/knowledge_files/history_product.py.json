@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "45f6d2721de57e546373a03fdb8a4a45e4cc39a9",
-        "content": "sha256:f7b8bced100b280e5ed1448150c613f467b3ca3a358f9fb790f8f3f9163aa5af",
+        "blob": "a032fb8c639f1e3257864fd9c2be959fbc6b84e4",
+        "content": "sha256:66a5ee68f322f9469e7044e21af740a08705e7eca37e6f995f2ddca29db7d9c4",
+        "locator": {
+          "kind": "symbol",
+          "name": "crossing_selection_digest"
+        }
+      },
+      "id": "RLZ-257DGR",
+      "invariant": "INV-ZFNES3",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 11",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Matches the selected record across invariant retitling and retirement while retaining the other populated fields in its digest.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a032fb8c639f1e3257864fd9c2be959fbc6b84e4",
+        "content": "sha256:823717931e4215b09271fcac97ba87cc4ae2e470bd0be29e0e6e7cc0eaaecd4a",
         "locator": {
           "kind": "symbol",
           "name": "record_meaning"
@@ -21,7 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "45f6d2721de57e546373a03fdb8a4a45e4cc39a9",
+        "blob": "a032fb8c639f1e3257864fd9c2be959fbc6b84e4",
+        "content": "sha256:823717931e4215b09271fcac97ba87cc4ae2e470bd0be29e0e6e7cc0eaaecd4a",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_meaning"
+        }
+      },
+      "id": "RLZ-D288C4",
+      "invariant": "INV-ZFNES3",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 11",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Preserves revision meaning and state/writer evidence when an invariant alone gains or changes a title.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "a032fb8c639f1e3257864fd9c2be959fbc6b84e4",
         "content": "sha256:21dcba2317db3f5ef6032e13f0b67d9c5aa6b4eea83ce9aa9d8924b914ed57d3",
         "locator": {
           "kind": "symbol",
@@ -36,19 +72,50 @@
       },
       "rationale": "Hashes the fields that distinguish a revision's meaning so its written row can prove exactly which content the writer stored.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a032fb8c639f1e3257864fd9c2be959fbc6b84e4",
+        "content": "sha256:a564a7901cb33b67b2d0a7568d4b9d465539cc228742a903a4827f5883e8b627",
+        "locator": {
+          "kind": "symbol",
+          "name": "_invariant_title_field"
+        }
+      },
+      "id": "RLZ-T4MAY8",
+      "invariant": "INV-ZFNES3",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 11",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Identifies an invariant title as display metadata for the record meaning and crossing selection comparisons.",
+      "role": "support"
     }
   ],
   "references": {
     "1": {
-      "note": "The semantic projection excludes derived attribution fields.",
+      "note": "The semantic projection excludes derived attribution and the invariant title. Crossing selection also excludes the invariant title.",
       "targets": [
         {
           "anchor": {
-            "blob": "45f6d2721de57e546373a03fdb8a4a45e4cc39a9",
-            "content": "sha256:f7b8bced100b280e5ed1448150c613f467b3ca3a358f9fb790f8f3f9163aa5af",
+            "blob": "a032fb8c639f1e3257864fd9c2be959fbc6b84e4",
+            "content": "sha256:c616a4fa80453695c6dfdb8a52dbabf56d31ec3ad452d6b9b9fc1f173f554532",
             "locator": {
-              "kind": "symbol",
-              "name": "record_meaning"
+              "end": 47,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a032fb8c639f1e3257864fd9c2be959fbc6b84e4",
+            "content": "sha256:7eb4fd68c90ca0cbee8d74986469fcaa1da1995631dd96144a2a0345853127e3",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 90
             }
           },
           "kind": "code"
@@ -60,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45f6d2721de57e546373a03fdb8a4a45e4cc39a9",
+            "blob": "a032fb8c639f1e3257864fd9c2be959fbc6b84e4",
             "content": "sha256:ede2cd60ea72cd633acd1193438fd06a37140abfd058cedddd1f78dc2afb6c32",
             "locator": {
               "kind": "symbol",
@@ -76,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45f6d2721de57e546373a03fdb8a4a45e4cc39a9",
+            "blob": "a032fb8c639f1e3257864fd9c2be959fbc6b84e4",
             "content": "sha256:80bf96ea0a460e56bd173e261b9cdf83e58a394cad34f86a1ef145b3f4f7f28e",
             "locator": {
               "kind": "symbol",

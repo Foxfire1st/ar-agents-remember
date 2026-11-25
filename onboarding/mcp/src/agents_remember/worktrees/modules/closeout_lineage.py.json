@@ -189,12 +189,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4209fdf661a5b390ed3fd2ecd3d234ef4b09d63",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:47e476e56bd4a3636cc315da3ffaa561ab439add9021ba2edd7daafcda8aaed2",
             "locator": {
-              "end": 501,
+              "end": 502,
               "kind": "line_range",
-              "start": 491
+              "start": 492
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -202,12 +202,12 @@
         },
         {
           "anchor": {
-            "blob": "c4209fdf661a5b390ed3fd2ecd3d234ef4b09d63",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:a5755c08457fba7204c121392c83d69fd73f97df800cd5796fa7e5fdf429b35f",
             "locator": {
-              "end": 826,
+              "end": 828,
               "kind": "line_range",
-              "start": 817
+              "start": 819
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -215,12 +215,12 @@
         },
         {
           "anchor": {
-            "blob": "c4209fdf661a5b390ed3fd2ecd3d234ef4b09d63",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:304c5787e940f53c2429b91d3dd0b83d21c85bdbcff0631a4a95d9e58500a472",
             "locator": {
-              "end": 516,
+              "end": 517,
               "kind": "line_range",
-              "start": 504
+              "start": 505
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -228,12 +228,12 @@
         },
         {
           "anchor": {
-            "blob": "c4209fdf661a5b390ed3fd2ecd3d234ef4b09d63",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:e7edcf7323a8ffca4197f73999e078abe56628d966e106ddf919b3a438eb07f6",
             "locator": {
-              "end": 859,
+              "end": 861,
               "kind": "line_range",
-              "start": 847
+              "start": 849
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },

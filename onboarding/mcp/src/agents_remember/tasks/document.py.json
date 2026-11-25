@@ -751,12 +751,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef07cbf9743d369be2ddfe76bd02738aecb7efb9",
+            "blob": "0f0fffaaf83d9536e496a576e33ce9e6053c8f9b",
             "content": "sha256:2a61f4d4086fb6d31da1fb4bd4defb2ce5f029010c277dc0984df8b005b5d848",
             "locator": {
-              "end": 212,
+              "end": 218,
               "kind": "line_range",
-              "start": 199
+              "start": 205
             },
             "path": "mcp/src/agents_remember/cli/leaf_enclosure_start.py"
           },

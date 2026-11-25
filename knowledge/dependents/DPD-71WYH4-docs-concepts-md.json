@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8218f7f1a8e331130c15bf463ddcc88a51a34fbd",
-    "commit": "180b6c153d21d01cbb14059d0219472ccdeba683",
+    "codeTree": "e08c810611259528c77765ddf47f51eb893f424b",
+    "commit": "10f2b5bb94ab96a48a5f226f6e63b9fe9f6fa4cb",
     "role": "curator",
-    "statement": "The guide correctly explains path-based memory reads, cache identity, drift reporting and exact-pair knowledge gates on the merged code. The concepts guide's tool-log entry correctly explains how a cancelled request is recorded: a late error as a raised row marked requestCancelled, and a request stopped before its tool ran as a cancelled row whose waitingFor names the wait.",
-    "task": "261112-BUG-L27",
+    "statement": "The concepts guide still correctly explains briefs, derived record states, writer stamps, the knowledge index and the tool log, including the cancelled-request log rows added by BUG-L27. Reconfirmed after the BUG-L27 sync (code e08c8106).",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 18,
+  "revision": 19,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -46,7 +46,7 @@
       "path": "mcp/src/agents_remember/kernel/memory_mode.py"
     },
     {
-      "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+      "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/memory_cache.py"
     },
@@ -101,12 +101,12 @@
       "path": "mcp/src/agents_remember/models/knowledge_files/sidecars.py"
     },
     {
-      "blob": "1bfaeefbe94488a2653472dbc6aed964092e1f84",
+      "blob": "648f677f2d1078b75d56a057d89ea2a439311248",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/shapes.py"
     },
     {
-      "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+      "blob": "3d0a518fede1ad24a4a085fd8a401d9ea6695ac1",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
     },
@@ -191,7 +191,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/control_vocabulary.py"
     },
     {
-      "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+      "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/tool_answer_log.py"
     },
@@ -206,7 +206,7 @@
       "path": "mcp/src/agents_remember/tasks/task_paths.py"
     },
     {
-      "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
+      "blob": "5b7e751298ebcd50dae4f6724680aa5e48ed7568",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/route_review.py"
     },
@@ -361,7 +361,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
     },
     {
-      "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
+      "blob": "f6c05e150769e32c8c67cd6f806b4d4ec29d7140",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },
@@ -371,12 +371,12 @@
       "path": "mcp/src/agents_remember/controlplane/closeout_queue_store.py"
     },
     {
-      "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
+      "blob": "0545be4ce99a465c6e590e0c19385c91e54191db",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
     {
-      "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+      "blob": "44965514704f09508b78c29839ced880346b1479",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/tool_response.py"
     },
@@ -437,37 +437,6 @@
       "blob": "e3948d3c81258cf0fe5cb1c4855dcdddc8d3b152",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_worklist/recorded_base.py"
-    },
-    {
-      "anchor": {
-        "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
-        "content": "sha256:f399b92836a8c99c6001040ff99ac8146c3f7cf6d7eb4526c5996a6ffc97159a",
-        "locator": {
-          "kind": "symbol",
-          "name": "_log_raised_tool_call"
-        },
-        "path": "mcp/src/agents_remember/mcp/server.py"
-      },
-      "heading": "Tool log",
-      "kind": "anchor"
-    },
-    {
-      "anchor": {
-        "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
-        "content": "sha256:bc5079ebff54878518d0de262728685e89d6d820723ee8478daa47377d0c274a",
-        "locator": {
-          "kind": "symbol",
-          "name": "_log_cancelled_wait"
-        },
-        "path": "mcp/src/agents_remember/mcp/server.py"
-      },
-      "heading": "Tool log",
-      "kind": "anchor"
-    },
-    {
-      "blob": "2ee450da7ed591e6d87e27ecd9b4835dffd5f825",
-      "kind": "file",
-      "path": "mcp/src/agents_remember/mcp/thread_workers.py"
     }
   ]
 }

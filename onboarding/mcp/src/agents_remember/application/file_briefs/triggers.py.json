@@ -1,0 +1,130 @@
+{
+  "path": "mcp/src/agents_remember/application/file_briefs/triggers.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ddad0f969d66593f5e0df695106118dfa33e1856",
+        "content": "sha256:350a39d813051fc8c344d53cacb3424835286a4ac7da33a0fa1170ee47f39e77",
+        "locator": {
+          "kind": "symbol",
+          "name": "refresh_written_memory_folder"
+        }
+      },
+      "id": "RLZ-1N9KED",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Derives the resulting directory tree's briefs against the publishing operation's exact code commit, using the prepared ignore.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ddad0f969d66593f5e0df695106118dfa33e1856",
+        "content": "sha256:9296bb375a7a290f1642417120ee84e225d3761d078a2a98eb17b1b7cc2e5a70",
+        "locator": {
+          "kind": "symbol",
+          "name": "after_memory_files_written"
+        }
+      },
+      "id": "RLZ-4BC5XA",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Rematerializes source briefs affected by both sides of an admitted memory change.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ddad0f969d66593f5e0df695106118dfa33e1856",
+        "content": "sha256:4b259321886588a9866ff8fbd5dc5f2649c7a68881d19b64997fecc7416262d6",
+        "locator": {
+          "kind": "symbol",
+          "name": "records_source_paths"
+        }
+      },
+      "id": "RLZ-H0TMN2",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Maps changed family members to the locations of their rules on each side of a touched-source write.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "ddad0f969d66593f5e0df695106118dfa33e1856",
+        "content": "sha256:1ddd5de40abca2a9cdd1550b709c094b1c9639c01b1dcfe62493557051529da4",
+        "locator": {
+          "kind": "symbol",
+          "name": "source_paths_of"
+        }
+      },
+      "id": "RLZ-J6TG5J",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Maps ordinary changed cards and sidecars, including overview-prefixed source names, to the brief touched by citation correction.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "ddad0f969d66593f5e0df695106118dfa33e1856",
+        "content": "sha256:14d0939cf9309d0b3331c021baa7dc907c2f1dde02717556e659f4c0cc3d11f2",
+        "locator": {
+          "kind": "symbol",
+          "name": "after_citation_fix"
+        }
+      },
+      "id": "RLZ-KW3KJX",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Includes changed cards and new sidecars from authoring even when no sidecar needed mechanical re-recording.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The post-write hook refreshes current sources and uses former locations when the earlier index is available.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ddad0f969d66593f5e0df695106118dfa33e1856",
+            "content": "sha256:9296bb375a7a290f1642417120ee84e225d3761d078a2a98eb17b1b7cc2e5a70",
+            "locator": {
+              "kind": "symbol",
+              "name": "after_memory_files_written"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The source mapper skips the exact route artifact names and keeps ordinary source-file names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ddad0f969d66593f5e0df695106118dfa33e1856",
+            "content": "sha256:1ddd5de40abca2a9cdd1550b709c094b1c9639c01b1dcfe62493557051529da4",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_paths_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -68,7 +68,7 @@ The role-message facade, native held ordering, recipient identity, parent contai
 ## Evidence
 
 
-- Frozen implementation of _start_role supporting the stated file behavior. [2]
+- The start path validates the dispatch request, checks the caller’s authority and sends it through the shared endpoint. [2]
 
 - Frozen implementation of _resolve_recipient supporting the stated file behavior. [3]
 

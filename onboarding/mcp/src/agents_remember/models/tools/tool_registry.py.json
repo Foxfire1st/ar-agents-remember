@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a69c755883ce4f4c99204b5cec9b93d74224666d",
+            "blob": "9d776e2cefbf2c39092247b832a4edfb8961579d",
             "content": "sha256:4889da96e4a539fa55d10bd7a94ae233269cd690271782d68de54eab67c5f048",
             "locator": {
               "kind": "symbol",
@@ -209,11 +209,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
-            "content": "sha256:c0e54f12b9211f7fb26dd24d118a8562de4972ce6d7beb7a43b920a7fc979f42",
+            "blob": "c1de505d6e140874b674a3f0afbfccb01590e362",
+            "content": "sha256:f08077545aa7d2728aaac7112b4c5cbf28bd5bfaabf3925590f563c00be67d14",
             "locator": {
-              "kind": "symbol",
-              "name": "_tool_payload"
+              "end": 35,
+              "kind": "line_range",
+              "start": 22
             },
             "path": "mcp/src/agents_remember/mcp/tools/base.py"
           },

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_write_answer.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The response retains the writer’s outcome and points to the complete report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "448fdfb59f717baa56d555f7c4bce32edda1ded1",
+            "content": "sha256:c9c0b1b100ce23cdc812c3bb9fab6a2427540ca942ed229bec7903f222299dc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

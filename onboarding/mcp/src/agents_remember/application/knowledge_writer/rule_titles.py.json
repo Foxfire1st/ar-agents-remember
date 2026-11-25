@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/rule_titles.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a1036c669842c33cf6d62d33bfd441d4a22352d9",
+        "content": "sha256:0caf0c2da1c9906218ea043390159cc2f299e70a6c713da73ddeeff37d105678",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_title"
+        }
+      },
+      "id": "RLZ-EESR5A",
+      "invariant": "INV-ZFNES3",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 11",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Distinguishes new rule title validation from an existing rule’s revision.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A new rule needs a title and an existing untitled revision receives a note.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1036c669842c33cf6d62d33bfd441d4a22352d9",
+            "content": "sha256:0caf0c2da1c9906218ea043390159cc2f299e70a6c713da73ddeeff37d105678",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_title"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

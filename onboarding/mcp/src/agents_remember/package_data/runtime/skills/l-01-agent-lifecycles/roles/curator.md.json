@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bc300235dafe08d8a72fbae41def1143a55e10e7",
-        "content": "sha256:aa5112af73e980dfc70e18c25ca3f766fd29e2b39f7c3c4002e40deb80d6dc75",
+        "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
+        "content": "sha256:7363f5370b24126642617c1ae874859e212932c806efd20dac9153d4c7086a9e",
         "locator": {
           "kind": "file"
         }
@@ -79,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc300235dafe08d8a72fbae41def1143a55e10e7",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:7d29c8551fceea6befa2bb3368b9e56702729dafe74d57b7b0f84a8c5bd9f7f6",
             "locator": {
               "end": 49,
@@ -96,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc300235dafe08d8a72fbae41def1143a55e10e7",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:6038be5814e8f452acee52a8e9f79ebec01003bfacf61434586409c39243e5d7",
             "locator": {
               "end": 118,
@@ -113,12 +113,81 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc300235dafe08d8a72fbae41def1143a55e10e7",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:f898ec3148ecaeb74251252927c4c5e8ce0edfffdb5573f0e13004aec0353bc2",
             "locator": {
               "end": 172,
               "kind": "line_range",
               "start": 172
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. Knowledge_read names whole records and their evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a081810a427c2de6e3ea193686f973d238ea49",
+            "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "content": "sha256:471da92ea95b622c6fcabcbf2c3ee284c21b03fa248586ea8e61e90211f6a18a",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/application/read_files_briefs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "content": "sha256:6e80ad899e73b4af5891915a7bb47a67abe595b035b57a607ffc06149ee9941a",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "mcp/src/agents_remember/application/read_files_briefs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b1c36e5ae6160b8579f2f1783a7ac45cdb961d74",
+            "content": "sha256:d12893bc8963ee3c8f1abcaf553337e94c78a293eb0cf399ee18707e7dd51be3",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "mcp/tests/tool_answer_l109_cases.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
+            "content": "sha256:eb40ba533104177bb0209bbc9be90e6ea79d63e654c5164be02061b7adf1b66d",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 14
             }
           },
           "kind": "code"
@@ -148,7 +217,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc300235dafe08d8a72fbae41def1143a55e10e7",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:637b17373ac98070d32d4516a78c49d38c8233bce7ee4b07ac8d3cb86e6853e7",
             "locator": {
               "end": 162,
@@ -183,7 +252,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc300235dafe08d8a72fbae41def1143a55e10e7",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:f953dbf193ecbbd1527e89392eaa4537e6ce4fd6f806fec28da1e4bf3612cbb1",
             "locator": {
               "end": 144,
@@ -200,7 +269,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc300235dafe08d8a72fbae41def1143a55e10e7",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:9fc1029ada509e1f4ceb7fbf037f09f8d905cba800f712197f1a8dad7bf6151f",
             "locator": {
               "end": 180,
@@ -217,7 +286,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc300235dafe08d8a72fbae41def1143a55e10e7",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:fbbb91d1e376a5e9ec3a62fa0d7d79a423bb0647697d35d74ef38507471effb9",
             "locator": {
               "end": 176,

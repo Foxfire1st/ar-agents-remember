@@ -65,8 +65,8 @@ rather than against a shape that could be anything.
 ### Conventions
 
 `pytestmark = pytest.mark.evidence_unit` is the module's whole lane declaration; its membership is the
-`unit-regression` row at `mcp/tests/test-evidence-lanes.toml:271`, and its consumption of
-`read_scope_test_support` is the consumer row at `mcp/tests/evidence-lifecycle.toml:4394` on that
+`unit-regression` row at `mcp/tests/test-evidence-lanes.toml:274`, and its consumption of
+`read_scope_test_support` is the consumer row at `mcp/tests/evidence-lifecycle.toml:4455` on that
 artifact's `consumer_scope = "exact"` list. The import block is alphabetical within its groups, and
 the case functions are full sentences naming the rendering obligation they measure. Constants are
 module-level and upper-case, and each case's docstring states the property rather than the mechanics.
@@ -174,9 +174,9 @@ Current source: The current lifecycle catalog declares test_knowledge_review_one
 - The exact lifecycle field row carries proposed and reviewed on the same authored revision. [9]
 - The renderer exercises synthetic before and after statement values in its own component fixture. [18]
 - The pair is built from independent fixtures. The after fixture names the leaf whose closed history proves the shared revision. [15]
-- The `unit-regression` lane selects `mcp/tests/test_knowledge_review_one_sided_statements.py`. The lifecycle catalog lists this module as an exact consumer of `mcp/tests/knowledge_rows_test_support.py` and `mcp/tests/read_scope_test_support.py`. [16]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_review_one_sided_statements.py` (`mcp/tests/test-evidence-lanes.toml:274`). [16]
 - The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_rows_test_support.py` and `mcp/tests/read_scope_test_support.py`. [17]
-- An invariant text record stores one numeric revision and one statement, distinct from the former retained-revision model. [20]
+- An invariant text record stores one numeric revision and one statement. It accepts a separate optional title. [20]
 - Two independently built snapshots exercise one addition, one removal and the same retained revision whose lifecycle becomes reviewed. [6]
 - **The module's own scope statement: six cases over the real adapter and two real datasets, and the load-bearing properties each one owns.** [1]
 - The shared and one-sided statement constants supply the backend fixture values. [3]
@@ -185,3 +185,7 @@ Current source: The current lifecycle catalog declares test_knowledge_review_one
 - The one composition call, with the hand-assembled resolution and the loud failure on a refusal. [7]
 - The one-sided record reported by coverage with an empty roster, against the conditions the after side really recorded. [11]
 - **The task-context case: no comparison, both sides unresolved with the same reason and no text, and no roster.** [12]
+
+- The lifecycle catalog lists `test_knowledge_review_one_sided_statements.py` among the exact consumers of `knowledge_rows_test_support.py`, `read_scope_test_support.py`. The lane catalog selects this same module. [16]
+
+- The lifecycle catalog lists `test_knowledge_review_one_sided_statements.py` as an exact consumer of `_user_settings_guard.py`, `anchor_fixture_models.py`, `fixtures/repository_profiles/node/package-lock.json`, `knowledge_review_fact_test_support.py`, `knowledge_rows_test_support.py`, `read_scope_test_support.py`. [17]

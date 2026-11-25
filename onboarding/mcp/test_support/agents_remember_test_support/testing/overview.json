@@ -676,6 +676,50 @@
         }
       ]
     },
+    "42": {
+      "note": "The current pointer fixtures bind whole-record retrieval to its named knowledge-use detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
+            "content": "sha256:df18848be7c15a5a88359f8ab84a22b9cb123b63aa5b4744e97b95a4bcddc31a",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
+            "content": "sha256:a7d33684a6845eef90c133841154faff0149c780d50d3a950fefe377a35bc0d0",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
+            "content": "sha256:c2d62ad1c7932d8d58d1f1b1b9d5d795f71c5f1abcf5ac77dbc9a374cf82455d",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "6": {
       "note": "The rewrite computes both new catalogs before it writes either.",
       "targets": [

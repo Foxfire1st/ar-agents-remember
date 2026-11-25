@@ -49,6 +49,8 @@ The independent Reviewer examines one explicitly assigned seam or loop round, re
 
 ## Current Contract
 
+The Reviewer opens current saved briefs when present for the changed files and uses the touched-rule file when the start notice names one for the exact freeze. Fuller read replies can carry rule text. Compact rows can keep a brief pointer with saved freshness. `knowledge_read` locates whole records and their proof evidence for independent review.
+
 Native intake reads the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Each call carries its task/contract scope; use actual reader schemas. Write only contained task-local review artifacts. Missing authority or capability is reported rather than substituted.
 
 A baseline inspects the complete diff, including unattributed files, against the applicable standing catalog, three lenses and exact requirement evidence class. Knowledge mapping adds before/after family and unchanged-sibling examination. Preserve producer handoff fields for co-resolution.
@@ -185,3 +187,7 @@ No meaningful cross-repo references found.
 - The Reviewer reads the current review-state limit from the task_doc answer and never runs an unapproved round or splits the scope to avoid that limit. [31]
 
 - The stage ends with a recorded verdict covering the whole requirement, its findings and coverage; the review step is marked done through task_doc only after the last round is recorded as passed. [32]
+
+
+
+- The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. Knowledge_read names whole records and their evidence. [36]

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e0899a2899dd251331ac48aa874f17126a84a541",
-    "commit": "b28b99ce065e7db8ce1e79328e29861967e9bcb6",
+    "codeTree": "51a44523acb6c29c3a029c7dde4a35acb96595f3",
+    "commit": "3bbaf460317e8572583d884bc0791a219ad1bcfa",
     "role": "curator",
-    "statement": "On the merged code the architecture guide still holds for both changes: every call, including a cancelled request, gets a tool-log row inside one definition scope (L27), and the role narrowing in create_server and the narrowed explainer guard change no described duty or lifetime (CAP-L1).",
-    "task": "261124-CAP-L1",
+    "statement": "On the merged code the architecture guide still holds for both changes: every call, including a cancelled request, gets a tool-log row inside one definition scope (L27), and the role narrowing in create_server and the narrowed explainer guard change no described duty or lifetime (CAP-L1). On code 51a44523 (gen-8 sync onto CAP-L1 and BUG-L26) memory_init now writes the briefs ignore rule into a new memory repository's .gitignore and publications prepare it beside /memory.md, and every tool-log line carries resultDigest; the guide's layout, its ignored memory.md account, memory_init and brief-based reads still hold.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -76,12 +76,12 @@
       "path": "mcp/src/agents_remember/kernel/memory_mode.py"
     },
     {
-      "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+      "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/memory_cache.py"
     },
     {
-      "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
+      "blob": "0789f3ccacb2b41e5dd90b05efda788cbd713c23",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/memory_init.py"
     },
@@ -101,7 +101,7 @@
       "path": "mcp/src/agents_remember/serving/server_registry.py"
     },
     {
-      "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+      "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/tool_answer_log.py"
     },
@@ -148,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "74167e7f80f1b9391a5f2c9b1c8c6d2fa2f69402",
+        "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
         "content": "sha256:fffab67491f1245146827f300b9e3bb69c5acfc098526d57b932c830de6b2bc9",
         "locator": {
           "kind": "symbol",
@@ -161,7 +161,7 @@
     },
     {
       "anchor": {
-        "blob": "74167e7f80f1b9391a5f2c9b1c8c6d2fa2f69402",
+        "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
         "content": "sha256:84a887e1f19233f80852c6b5d9c76b54475d5156b7caa84e25b9eb108138c9a9",
         "locator": {
           "kind": "symbol",

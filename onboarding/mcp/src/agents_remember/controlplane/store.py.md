@@ -214,4 +214,6 @@ does not replace exclusion or the checkout guard.
 
 - Durable exclusion guards the checkout target before invoking shared kernel locking and preserves typed unsafe-filesystem refusal. [9]
 
+
+
 - `_claim_closeout_gate` consumes approval under the gate-store lock; its closeout call site precedes journaled mutation intent and Git. Approval consumption does not itself prove mutation or retain a generation. [7]

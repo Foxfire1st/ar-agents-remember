@@ -41,6 +41,8 @@ L61 publication qualification: before protected ref movement, integration requir
 > **Retained historical source account — superseded by the current route account:**
 > Finalization proves completed closeout/integration, local ancestry of the landed code and exact code/memory carryover. It resolves task targets before cleanup, refuses unresolved declared leaf work, runs or verifies reclamation, then atomically reconciles selected task documents after source rechecks. Cleanup refusal preserves its blockers and prevents task-document completion; preview retains cleanup's own plan instead of claiming actual reclamation. A later task-publication refusal is reported separately from cleanup already performed. Series finalization completes the master and any proven single commanding-sprint row while retaining the master folder; individual master retirement and whole-sprint archival have separate task-document routes.
 
+A forward converted leaf closeout prepares the tracked briefs ignore line with the ledger ignore line before the memory tree is judged. The completed result asks for a full refresh only after the closeout creates durable memory output. The refresh uses the verified paired code commit and returns any problem as a brief advisory.
+
 ## Construction And Ownership
 
 A private kept index can serve successive captures. The native request owns its in-memory witness and revalidates it under the capture lock. A later request can run the settled private-index capture again.
@@ -74,7 +76,7 @@ The read-local baseline memo now carries an optional capture observer, restored 
 
 Task-fact projection receives exact canonical JSON-path/document pairs, including finalize's selected leaf/parent, rather than guessing document paths from the contract folder. Abandon validates its task/parent stage before destructive output and rechecks after the terminal reread. Its existing guard publishes contract abandonment with task/parent stage and provides task-source/contract restoration on that publication's failure; this does not promise rollback of worktrees already reclaimed. Projection failures retain the shared task-fact publisher's separate reported-effect semantics.
 
-`cleanup.py` and `abandon.py` expose terminal operations, with admitted transactions extracted to `terminal_cleanup.py` and `terminal_abandon.py`. Terminal archive authority is obtained and reread before destructive output. Their capability/identity helpers constrain exact owned worktree, branch and remote deletion targets; branch ancestry and real edits remain protected. Cleanup retires the current child edge, preserving parent/source branches. Group removal occurs only when actually empty; preview models scheduled removals. Contract-owned drift snapshots, reports, logs and provider resources have explicit terminal inventories and reasons, and the enclosure generation's recorded outside scratch root joins them. `terminal_validation.py` carries preview interpretation into drift-snapshot expectations. `cleanup_report.py` shapes successful real reclamation and owns no operation.
+`cleanup.py` and `abandon.py` expose terminal operations, with admitted transactions extracted to `terminal_cleanup.py` and `terminal_abandon.py`. Terminal archive authority is obtained and reread before destructive output. Their capability/identity helpers constrain exact owned worktree, branch and remote deletion targets; branch ancestry and real edits remain protected. Cleanup retires the current child edge, preserving parent/source branches. Group removal occurs only when actually empty; preview models scheduled removals. Contract-owned drift snapshots, reports, logs and provider resources have explicit terminal inventories and reasons. The recorded outside scratch root joins them. Leaf cleanup and abandon keep the leaf's own tool-call lines in the master notes before they remove the log. The kept lines omit detail links and replace removed paths with the leaf ID. A keep error preserves the log and the terminal result reports the block. `terminal_validation.py` carries preview interpretation into drift-snapshot expectations. `cleanup_report.py` shapes successful real reclamation and owns no operation.
 
 `terminal_agents.py` attempts host archival of recorded leaf agents after admission and before destructive output. It does nothing for preview or series. An unbound service or host/receipt failure is reported and does not refuse an already-admitted retirement; completed cleanup can retry archival. The review-artifact archive hook likewise runs only for an actual/would-be archive, uses the task-root name for the review namespace, and reports unbound/failure rather than raising after a task has moved. Current series finalization receives the archive owner's skip, so hook existence is not evidence that a master was archived.
 
@@ -379,7 +381,10 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Start and retry share the retired-provider gate and return before the retained background setup branch. [93]
 
+
+
 - External closeout reads the review before closing history, closes before derived refresh and calls the closing's restore operation if refresh fails. [96]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): Closeout public execution boundary. [41]
 - Retained reference account (no fresh execution or acceptance inferred): The preview answers the refused preview for a leaf the gate refuses. [56]
@@ -389,7 +394,14 @@ These superseded descriptions retain their historical wording; the current accou
 - A fresh leaf closeout checks the cutover lock if its memory is unconverted. Recovery of an already recorded memory output takes the recovery path first. [51]
 - The packet-owned landing and terminal routes preserve domain predicates, check order and refusal-before-write while returning recognized task-state failures as state/code/sentence answers. Dry abandon, cleanup and refused closeout agree with the blocked real call rather than promising success; recognized CloseoutQueueError retains its original code. Cleanup's archive-ready/non-rejudgment branch is now factored through _cleanup_terminal_branch, not a new cleanup permission or force override. Integration distinguishes unfinished checkpoint from completed master. Record landing's conversion next step consumes one central probe-made case: exact merge-memory arguments for a converted line, actual first-conversion argv plus shlex.join display for never-converted input, none for unknown. Unrecognized caller/I/O/internal errors remain fail-closed exceptions, and this presentation changes neither sync nor publication authority. [86]
 
+
+
+
 - Closeout asks the converted candidate gate before publication, then rereads authority/candidate inside the publication owner. [64]
 - Fresh leaf closeout checks unconverted-memory cutover, closes owner history, commits or reuses the admitted memory output, and refreshes the cache. Converted recovery separately gates an already recorded output. [66]
 - The validator and mandatory gate judge the exact converted memory output, including recovered output. [67]
 - Memory publication rechecks the admitted tip and judged tree. A failure before publication returns restores its owned preparations where their bytes still match. Proof of the published commit runs afterwards. [68]
+
+- The terminal keep owner copies exact leaf call lines to the master report ahead of log removal. [99]
+
+- Before capturing the exact memory tree, the memory leg prepares the cache and brief ignore lines. A newly committed closeout reports an advisory if the derived brief refresh returns a problem. [100]

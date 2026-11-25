@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "feb0861fd2096c6a955af98d73ccecccabcc33ad",
+            "blob": "268fb78a4dd9640215b95691eb653e535db39358",
             "content": "sha256:be91a03f7c25cf3c966cca8e65af7a960cefab7604604a96f66b2a121ead2861",
             "locator": {
               "kind": "symbol",
@@ -92,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "feb0861fd2096c6a955af98d73ccecccabcc33ad",
+            "blob": "268fb78a4dd9640215b95691eb653e535db39358",
             "content": "sha256:d156649dee6626036467c78b24418be0fddb44d7cdd18fbd9d1f2ba4845c34bb",
             "locator": {
               "kind": "symbol",
@@ -139,12 +139,12 @@
         },
         {
           "anchor": {
-            "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+            "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
             "content": "sha256:002082cab6d8e0e50e216016e007ee4393ff8d98442ead0d1d9d3d10f6e777c8",
             "locator": {
-              "end": 238,
+              "end": 250,
               "kind": "line_range",
-              "start": 233
+              "start": 245
             },
             "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
           },

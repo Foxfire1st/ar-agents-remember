@@ -6,7 +6,7 @@
 
 ## Purpose
 
-The application seam for three knowledge views over a memory tree's derived index. It admits, opens, dispatches and returns a typed answer; it decides no semantic authority and keeps no durable state. `review_matrix` and `curation_queue` left with the envelope tables they read (MIK-R74 rule 1); the seam serves `source_context`, `invariant` and `family` only.
+The application seam for three knowledge views over a memory tree's derived index. It admits, opens, dispatches and returns a typed answer; it decides no semantic authority and keeps no durable state. The seam serves `source_context`, `invariant` and `family`.
 
 ## Code Commentary
 
@@ -24,7 +24,7 @@ None recorded.
 
 ### Logic
 
-**`read_knowledge_view` is the whole public operation, and its four steps are the module's shape.**
+**`read_knowledge_view` supplies typed slices to the paged reader.**
 It admits the request through `_admit` and returns `_refused(...)` immediately when that yields a
 refusal; opens the database read-only through `open_read_only_database` and reads its schema identity
 through `inspect_schema`, closing the probe in a `finally` before the real reader exists; builds the
@@ -61,42 +61,24 @@ is the continuation binding, and a request with no continuation returns `None` a
 screens — so an ordering input that is not admitted is refused before the namespace is even compared.
 All three happen before the database is opened: `read_knowledge_view` calls `_admit` before it touches
 `database_path`, so a refused request never opens the file. `_refused` is the one builder that turns any
-of those refusals into `ViewResult(state="refused", repository_id=..., refusal=...)`, which is why every
-failure in this module leaves through the shipped `ViewRefusal` vocabulary instead of an exception.
+of those refusals into `ViewResult(state="refused", repository_id=..., refusal=...)`. The database probe and reader open run outside a refusal conversion.
 
 **`_render` dispatches one view, converts a raised ordering error back into a refusal, and assembles the
 typed payload around the rows it got.**
 An `UnadmittedOrderingInput` raised below the table is caught and returned as a
-`ViewRefusal(code="unadmitted_ordering_input")`, so the renderer's exception never escapes the public
-function. The row set is then checked with `require_distinct_row_subjects`
+`ViewRefusal(code="unadmitted_ordering_input")`, so the named ordering error leaves as a typed result. The row set is then checked with `require_distinct_row_subjects`
 (`code="ambiguous_row_identity"`), and a duplicate subject refuses the whole view rather than letting the
 seam choose which of two rows is authoritative. Counts come from `_counts`, and `ViewCompleteness` is
 built with `complete_within_declared_scope=continuation is None` — a completeness statement that is a
 fact about this page's paging rather than a claim about the dataset.
 
-**The required quantity set is measured from the reader and the selection, and the quantities that have
-no meaning for a view say so.** `_counts` reads `reader.registered_counts()` for the two registered
-totals, reports `rows_returned` as the page's own length, and sets `facets_omitted` to `None` for
-`invariant` and `source_context` (the quantity "says so in the state it carries" rather than reporting a
-zero) and to `0` for the other three. `dependency_content_identity_mismatches` is computed only for
-`review_matrix`, through `_dependency_mismatches`, which walks `reader.rows("verification_observation")`
-and counts rows whose `result_artifact` records `digest_checked_against_bytes is False`. Rows the
-renderer withheld for want of a class are counted by the payload's `limitations` and by
-`unresolved_references`, "because a withheld row is an unresolved input and not an absent fact." The
-`ViewCounts` model itself is not owned here: the seam passes the named quantities to the shipped
-`view_counts` constructor and the payload shape stays in the models layer.
+**`_counts` reports the measured size of the walk.** It reads the registered realization and
+family totals, counts the returned rows and subtracts the next position from the selection total for
+`rows_remaining`. `facets_omitted` is `None` for `invariant` and `source_context`, and zero for
+`family`. The result uses the model layer's `view_counts` constructor.
 
-**Two lookup tables keyed by the same five view names exist because the seam dispatches on one thing and
-builds on another.** `_RENDERERS` maps each view name to the function that selects, orders and pages its
-rows, importing all five render functions (`render_curation_queue`, `render_family`, `render_invariant`,
-`render_review_matrix`, `render_source_context`) from `knowledge_view_rows`, with only
-`UnadmittedOrderingInput` coming from `knowledge_view_render`; `_PAYLOADS` maps the same five names to the
-shipped payload classes (`SourceContextView`, `InvariantView`, `FamilyView`, `ReviewMatrixView`,
-`CurationQueueView`) and imports those from `models/knowledge/view.py`. The tables are separate
-declarations of one vocabulary, which is what lets either an unhandled view name or a mismatched pair
-fail as a `KeyError` at dispatch rather than producing an untyped payload. The view names themselves are
-not spelled here as a vocabulary at all: they arrive on the request and are looked up, so adding a sixth
-view requires an entry in both tables.
+**The renderer and payload tables use the same three view names.** `_RENDERERS` dispatches
+`source_context`, `invariant` and `family`. `_PAYLOADS` pairs those keys with their typed models.
 
 **`VIEW_RENDERER_VERSION` is a recorded value, not a package version read at display time.**
 `"knowledge-view-renderer/1"` travels as the `extractors` member of `ViewScope` and again as the
@@ -109,19 +91,10 @@ inputs it was made about: one snapshot, one graph, one policy, plus the extracto
 
 ### Conventions
 
-The module holds no model of its own: no class is declared here, and every value it returns is a shipped
-type imported from the models layer — `ViewResult`, `ViewRefusal`, `ViewRequest`, `ViewScope`,
-`ViewCompleteness`, `ViewCounts` and the five payload classes — while
-`KnowledgeReadContext`, `KnowledgeReadSnapshot` and `KnowledgeRefusal` come from
-`models/knowledge/read.py` and `models/knowledge/result.py`. The reader port is imported, not
-re-declared: `KnowledgeViewReader` is the protocol, `open_view_reader` is the store-side constructor, and
- The ordering vocabulary is likewise imported — `ORDERING_INPUTS` from
-`models/knowledge/classification.py` — so the seam's admission check and the renderer's raise test the
-same tuple rather than two spellings of it. The five view names are a lookup, not a restated vocabulary:
-the only place they appear is as the keys of the two dispatch tables `_snapshot_of` and `_refused` are deliberately one-line wrappers over
-`snapshot_of_context` and the refusal/payload constructors, so the seam's own vocabulary is visible at
-the call sites and no second implementation of either exists. `__all__` names exactly the two public
-names
+The module uses the model layer's requests, refusals, counts and three payload classes. The
+`open_view_reader` function supplies the reader and connection. `ORDERING_INPUTS` supplies the
+admitted ordering vocabulary. The module exports `VIEW_RENDERER_VERSION` and
+`read_knowledge_view`.
 
 ### Invariants And Boundaries
 
@@ -135,11 +108,10 @@ names
   classifies nothing and stores nothing; the request is passed through to the renderer and the rows come
   back already ordered and already classified.
 - **The two dispatch tables must stay in step, and their disagreement is loud.** `_RENDERERS` and
-  `_PAYLOADS` are two declarations of one five-name vocabulary, so a view present in one and absent from
+  `_PAYLOADS` are two declarations of one three-name vocabulary, so a view present in one and absent from
   the other fails at the lookup rather than yielding a payload of the wrong type.
-- **Every failure leaves as a typed refusal.** `_refused` wraps a `ViewRefusal` into
-  `ViewResult(state="refused", ...)`, the `UnadmittedOrderingInput` raised by the renderer is converted
-  the same way, and no code path in this module raises out of `read_knowledge_view`.
+- **Admission and ordering refusals are typed.** `_refused` wraps a `ViewRefusal` in a
+  `ViewResult`. The renderer's `UnadmittedOrderingInput` is converted to that same result.
 - **The connection the reader is opened with is closed by this seam.** `open_view_reader` returns the
   reader and the handle together, and `read_knowledge_view` closes the handle in a `finally`, so the
   reader's lifetime cannot outlive the call.
@@ -157,7 +129,7 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
-The current seam, derived-index reader and typed cursor models establish the boundaries below. The public converted-tree tool is a separate entry path; the former projection writer is retired.
+The current seam, derived-index reader and typed cursor models establish the boundaries below. The mounted tool projects the paged read. The paged reader uses this seam for the ordered view slices.
 
 
 - The seam admits the request, opens a read-only reader, renders its typed result and closes the handle. [1]
@@ -184,14 +156,7 @@ The current seam, derived-index reader and typed cursor models establish the bou
 
 - The request the seam admits, the result it returns, and the refusal vocabulary both of them use. [11]
 
-
-- The three view renderers the dispatch table serves — source context, invariant and family; a curation-queue view is refused rather than rendered. [12]
-
-
-
-
-
-
+- The row-rendering module supplies the source context, invariant and family renderers. [12]
 
 ### Cross-Repo References
 
@@ -211,5 +176,5 @@ No meaningful cross-repo references found.
 
 - The four admitted ordering inputs the admission gate screens the request against, and the three renderers the dispatch table imports one per view name. [18]
 
-- The former projection writer and MCP seam call were retired. The current public knowledge tool reads a converted tree through read_tree_page, rather than calling read_knowledge_view. [15]
+- The mounted knowledge read projects the converted tree result. Its paged reader uses read_knowledge_view internally to collect the renderer’s ordered slices. [15]
 - The current renderer dispatch assembles the typed payload through the read-only StoreViewReader and its opener. [10]

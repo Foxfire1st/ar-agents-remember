@@ -69,7 +69,10 @@ The adapter, the port it implements and its binding.
 - The port it implements. [6]
 
 
-- The default composition binds it. [7]
+
+
+- The default composition binds it. Anchor: `build_default_worktree_services` [7]
+
 
 - The adapter refuses naming every violation. [8]
 

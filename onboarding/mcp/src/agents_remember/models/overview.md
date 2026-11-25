@@ -18,7 +18,12 @@ Knowledge is text in Git after MIK-R26. `knowledge_files/` owns the record, onbo
 role_capsules/contracts.py retains source-addressed needs/gives endpoints, validates marker shape before operation audience selection and removes valid markers from instruction text. CapsuleCapsule carries those endpoints separately. TaskDocResponse carries optional bounded alignmentSweep advice; these value objects establish neither actual endpoint delivery nor packet release or persisted task state.
 
 ## Hot Path Summary
-MIK-R109 wire contracts name knowledge, not its text. `NamedFile` carries existence, card location/state/counts and per-row limitations/refusals; `NamedRecord` identifies actionable records and exact heading or explicit title fallback. `ReadArFilesResponse` carries call-local overview locations and code/memory observation state, not source/card/overview bodies or `published_intent`. `SlimContextPacket` is the version-3 agent roots/task/actions/build/pair shape beside the retained full `ContextPacketV2` builder contract. Knowledge-read rows carry text ID/kind/state/location with selection provenance; diff answers carry compared trees, counts, bounded decision records and whole-report location. The review models carry the resolved four-tree comparison, the leaf's highest recorded comparison number and the delivered notice value, which names the pair a landed leaf delivered and whether the comparison on screen is that pair; carrying them reviews nothing. `resolve_context` is removed from the public roster/response route, and all four L109 reads have final answer bounds, not interim rows.
+
+Direct landing can report a brief refresh advisory separately from ledger diagnostics and the exact commits.
+
+
+`read_files.py` declares named file rows with optional compact briefs. A fuller brief can carry rule text and local knowledge. The counts form can include counts with the brief pointer. A compact row can carry the pointer and saved freshness without counts. `tools/knowledge_responses.py` declares bounded writer notes and the full report location.
+The MIK-R109 naming fields still identify locations and state. `NamedFile` carries existence, card location/state/counts and per-row limitations/refusals; `NamedRecord` identifies actionable records and exact heading or explicit title fallback. `ReadArFilesResponse` carries call-local overview locations and code/memory observation state, not source/card/overview bodies or `published_intent`. `SlimContextPacket` is the version-3 agent roots/task/actions/build/pair shape beside the retained full `ContextPacketV2` builder contract. Knowledge-read rows carry text ID/kind/state/location with selection provenance; diff answers carry compared trees, counts, bounded decision records and whole-report location. The review models carry the resolved four-tree comparison, the leaf's highest recorded comparison number and the delivered notice value, which names the pair a landed leaf delivered and whether the comparison on screen is that pair; carrying them reviews nothing. `resolve_context` is removed from the public roster/response route, and all four L109 reads have final answer bounds, not interim rows.
 
 A tool result is first validated through `tools/tool_registry.py::TOOL_RESPONSE_MODELS`, except a `server-build-stale` dispatch refusal, which validates through `base.py::StaleBuildRefusalResponse`. `tools/tool_response.py::finalize_tool_response` optionally enriches the validated envelope, serializes it with absent optional fields omitted, and finalizes token accounting. The application boundary then constructs the answer delivered to an agent: `application/tool_response.py::complete_tool_response` selects a supplied compact answer or, by default, strips `tokens`, `tokenizer`, `tokenCountExact`, and `operation` and truncates long lists from the finalized whole result. It translates the selected answer's `nextStep` into `next`, records the whole result where possible, and applies the delivered-answer bound. A supplied projection does not automatically inherit whole-result enrichment. Dashboard and command-line consumers retain the whole-result path. Consequently, token fields belong to the modeled whole result and log accounting; they are not promised on the delivered agent answer.
 
@@ -68,7 +73,7 @@ The enduring vocabulary rule is one declaration consumed by producers and reader
 > **Retained historical source account — superseded by the current route account:**
 > **Task, structural, and native role identities.** `TaskDocumentRef` is a frozen repository-qualified JSON task-document identity, hashed by repository and normalized confined path. Repository identity prevents cross-repository collisions; task altitude remains topology-owned. `TaskScopedReaderContext` adds the canonical absolute enclosure contract address rather than a provider actor/workspace identity. `task_document.py` owns `MasterExecutionNature` (`organizational|atomic`). Structural agent/gate contracts separate public task/role outcomes from internal runtime correlation and occupant identity.
 
-`role_agents.py` and `role_launcher.py` own single/set role starts, messaging and launcher request/response shapes. Start/message status vocabularies admit product-held state; set responses carry per-seat results, and message responses carry held-message identity and waiting counts. Calls declare replacement and held-message withdrawal operands. The dashboard launcher can submit `agentOverride.modeId`. The options request carries an optional provider and model pair for a selected-model read. The metadata request can ask for provider discovery to refresh. Role-start tool inputs omit a mode. The host decides whether to apply a mode, while the shared launch selector refuses permission-bearing feature overrides. `structural/agent.py` separately restores `RetireChildRequest` and `RetireChildResponse` for native receipt-tracked retirement; original-starter authorization belongs to `cli/role_retire.py`. The inherited native-launch intent separates canonical task/workspace identity, explicit requested model/effort/mode/feature choices, per-choice provenance, and actual host observations. Requested immutable `sessionOptions` are not proof that the host observed mode or service tier. Dynamic validation and launch/replay behavior belong to the native launcher owners, not these schemas. This proposal does not independently certify that full launch path.
+`role_agents.py` and `role_launcher.py` own single/set role starts, messaging and launcher request/response shapes. Start and message statuses admit held delivery. A direct start may carry the product notice report with delivery state, file paths, hold ID or problem; set responses carry per-seat results, and message responses carry held-message identity and waiting counts. Calls declare replacement and held-message withdrawal operands. The dashboard launcher can submit `agentOverride.modeId`. A launcher options request can select one model by giving both `agentId` and `modelId`. The same request can set `refreshCatalog` for a catalog read. Role-start tool inputs omit a mode. The host decides whether to apply a mode, while the shared launch selector refuses permission-bearing feature overrides. `structural/agent.py` separately restores `RetireChildRequest` and `RetireChildResponse` for native receipt-tracked retirement; original-starter authorization belongs to `cli/role_retire.py`. The inherited native-launch intent separates canonical task/workspace identity, explicit requested model/effort/mode/feature choices, per-choice provenance, and actual host observations. Requested immutable `sessionOptions` are not proof that the host observed mode or service tier. Dynamic validation and launch/replay behavior belong to the native launcher owners, not these schemas. This proposal does not independently certify that full launch path.
 
 The removed terminal/dispatch DTO family is not a current model home. Native role launch request/response and receipt-owned retirement remain separate retained models; their structural identities do not become a promise about removed carrier, terminal readiness or dispatch-brief transport.
 
@@ -88,7 +93,7 @@ Tool requests are narrowed against admitted policy and cannot grant new capabili
 
 `role_capsule_resources.py` and `skill_resources.py` own response/discovery formats, origin-plus-name identity, declared provenance and server-supplied-data trust statements. Enumeration returns references and metadata rather than opening bodies; an observed declared tool set is not applied permission. These model owners do not import the MCP protocol layer. The removed Eve carrier has no current parsing, serialization or environment-vocabulary contract. Retained LaunchCapsule values carry compiled instructions; native writer/launch consumers own their actual reading, delivery and execution admission.
 
-**Text knowledge construction.** `knowledge_files/documents.py` maps the twelve record kinds, layout marker, file/route sidecars, history and four census schemas to models and refuses unknown schemas. `FileModel` is frozen, extra-forbidden and alias-serialized, and refuses explicit null keys at its model boundary. Canonical formatting is formatting only; it must not silently change content. IDs distinguish minted six-character suffixes from legacy-derived eight-character suffixes; slugs are display rather than identity. Each relationship has one owning record/sidecar surface, rather than duplicate second-owner fields.
+**Text knowledge construction.** `knowledge_files/documents.py` maps the twelve record kinds, layout marker, file/route sidecars, history and four census schemas to models and refuses unknown schemas. `FileModel` is frozen, extra-forbidden and alias-serialized, and refuses explicit null keys at its model boundary. Canonical formatting preserves content. Invariant display titles are optional in stored records and leave invariant meaning and crossing-selection digests stable. IDs distinguish minted six-character suffixes from legacy-derived eight-character suffixes; slugs are display rather than identity. Each relationship has one owning record/sidecar surface, rather than duplicate second-owner fields.
 
 Repository paths use the confined plain-Git-path rule. `RoutePath` alone also admits `.` for the root route; inherited intent permits a family there only when no narrower home exists. That semantic placement policy is not inferred from the type's ability to represent `.`. Leading-colon pathspec magic is refused, while literal glob characters are permitted as names. Anchor content identity is `sha256:` over the exact blob bytes: one-based inclusive line ranges preserve each terminator and split on newline only; whole-file anchors use all bytes; symbol resolution supplies a range to this shared hasher. It never decodes the bytes to establish identity.
 
@@ -308,7 +313,10 @@ The stored record's writer stamp is product metadata. Owner history carries revi
 - The entry's facts describe exactly its returned members. [63]
 
 
+
+
 - Public MCP payload builders validate through the response model registry. [67]
+
 
 - The advertised public roster's single definition, in this route's zero-import `tools/` leaf; the adapter re-exports the identical object. [68]
 
@@ -340,7 +348,10 @@ The stored record's writer stamp is product metadata. Owner history carries revi
 
 - The drift-status vocabulary `DriftStatus`, declared in `models/drift.py`, and the `DriftSummaryPacket` that imports it (`memory_quality/integrity/onboarding_drift_check/models.py`). [86]
 
+
+
 - Direct landing returns cache observations separately from commits. [87]
+
 
 - Public message transport names only code and memory. [88]
 
@@ -430,7 +441,10 @@ The stored record's writer stamp is product metadata. Owner history carries revi
 
 - **The entry read's typed outcome, whose validators refuse a refused read that offers any entry, non-zero totals beside a refusal, and a total smaller than the page beside it (`ICR-R09@v1`).** [237]
 
-- The strict ReadArFilesResponse names governing files and overviews and observed state; it carries no published-intent body. [242]
+
+
+- The strict file-reader response declares named files, governing overviews, observed state and optional brief status. Anchor: `ReadArFilesResponse` [242]
+
 
 - The strict envelope base the field joined. [244]
 
@@ -481,7 +495,9 @@ The stored record's writer stamp is product metadata. Owner history carries revi
 - The attempt-qualified history path. [273]
 
 
-- Current imported source owns this scoped route boundary. [275] [277] [278]
+- Current imported source owns this scoped route boundary. [275]
+- Current imported source owns this scoped route boundary. [277]
+- Current imported source owns this scoped route boundary. [278]
 
 - Current imported source owns this scoped route boundary. [276]
 
@@ -714,3 +730,7 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 - **Retained historical source account — superseded by the current route account:** Text schema dispatch is distinct from legacy writer exports. [303]
 - The history file: one owner, one row per subject, a strict `closed` flag. [265]
 - The reconsideration row retains its own subject and disposition grammar. [66]
+
+
+
+- The models declare optional compact file briefs, optional stored titles and product start notice reports. [346]
