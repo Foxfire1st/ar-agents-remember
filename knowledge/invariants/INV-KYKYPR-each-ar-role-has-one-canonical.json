@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized in role_tool_scope.py, which holds the table and its lookups, and in public_roster.py, whose order every entry keeps; a test checks the order, the union and the unknown-role refusal."
+  },
+  "applicability": "The eight canonical AR roles and the role-tool lookups of models/tools/role_tool_scope.py.",
+  "conditions": [
+    "The role is named canonically or by the supported system-specialist alias."
+  ],
+  "exclusions": [
+    "The explainer's four tools, which are not public roster tools.",
+    "The tools a role's instruction text names or its manifest array requests."
+  ],
+  "id": "INV-KYKYPR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_tool_scope.py::test_every_allowlist_is_an_ordered_public_subsequence_and_the_union_is_the_roster on tree b29f2e225c04fbcebb653d59f81cf895c42f5097"
+      ],
+      "path": "curator-handoff-cap-l1.json"
+    },
+    "handoffEntry": "CAP-R01@v1 §1",
+    "leaf": "261124-CAP-L1",
+    "task": "261124-CAP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Each AR role has one canonical MCP tool allowlist in models/tools/role_tool_scope.py, every entry a non-empty ordered subsequence of PUBLIC_TOOLS, and the union of the eight entries is exactly the 44-tool public roster.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,7 +1,7 @@
 {
   "anchor": {
-    "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
-    "content": "sha256:c1078abe60dafde5832233cac8dbfc94f3857af3c1929c9da0a1802bb699834b",
+    "blob": "31ef0c75a9a7f18d7f903b44a4d5b47b0e61c682",
+    "content": "sha256:57b8b7d6d02c8e7faff1dc60414d1a5f21808b6817abd466063c4cb19e6ae02f",
     "locator": {
       "kind": "symbol",
       "name": "AgentsRememberMCP"

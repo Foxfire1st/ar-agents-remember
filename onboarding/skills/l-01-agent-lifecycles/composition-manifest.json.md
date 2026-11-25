@@ -14,7 +14,7 @@ declared vocabulary is authoritative over the manifest, not the other way round"
 
 ## Current Source Qualification
 
-The `bootstrap` role's tool list holds `runtime_install`, `memory_init`, `memory_baseline_status`, `memory_baseline_adopt`, `role_message` and `user_settings_init`, and its one template is `bootstrap-report.md`. Its two Bootstrap-only step details are `bootstrap/foundation-state` (`reference/bootstrap/foundation-state.md`, "the foundation state this seat reports and the Architect handover that follows it") and `bootstrap/failure-states` (`reference/bootstrap/failure-states.md`, "the states a new user's setup actually hits, and the move for each", read when a step returns a state the seat cannot name). Both stay non-injected step details for the `bootstrap` role, which also reads the shared step details `refused-write`, `knowledge/use`, `knowledge/commands`, `tasks/document-authoring` and `sandbox-actors`.
+The `bootstrap` role's tool list holds `server_info`, `context_packet`, `read_ar_files`, `runtime_install`, `memory_init`, `memory_baseline_status`, `memory_baseline_adopt` and `user_settings_init`, and no `role_message`, because the setup seat reports in its own chat and messages no role agent; its one template is `bootstrap-report.md`. Its two Bootstrap-only step details are `bootstrap/foundation-state` (`reference/bootstrap/foundation-state.md`, "the foundation state this seat reports and the Architect handover that follows it") and `bootstrap/failure-states` (`reference/bootstrap/failure-states.md`, "the states a new user's setup actually hits, and the move for each", read when a step returns a state the seat cannot name). Both stay non-injected step details for the `bootstrap` role, which also reads the shared step details `refused-write`, `knowledge/use`, `knowledge/commands`, `tasks/document-authoring` and `sandbox-actors`.
 
 ## Code Commentary
 
@@ -145,7 +145,7 @@ Operations declare `audience`: `sections` for the eight marked operation sources
 
 The references registry declares 38 non-injected step-detail entries, including the writing profile and visual explainer. Authored reference entries own membership, sources, descriptions, `injected` and `step_detail` classification, optional `rolesReason` explanations and legal explicit `step: null` decisions. No authored reference entry carries `roles`; current reader roles and step wording come from `derived.references` through `compose_manifest`. Five authored references carry `rolesReason`, and six ordinary references explicitly carry `step: null`. The generated `derived.core.every-role.roles` carries the shared digest audience. An empty generated audience remains a recorded derived value rather than a new admission gate. Registration is not proof of a real start or a read at the named step.
 
-Retained core metadata remains non-injected for native role capsules; the eight-role, nine-operation vocabulary matches the native launcher roster. Requested tools are metadata, not grants; public start admission owns may-start permission.
+Retained core metadata remains non-injected for native role capsules; the eight-role, nine-operation vocabulary matches the native launcher roster. Requested tools are metadata, not grants; public start admission owns may-start permission. Each role's `tools` array lists the same tools, in the same `PUBLIC_TOOLS` order, as that role's entry in `ROLE_TOOL_ALLOWLISTS` in `mcp/src/agents_remember/models/tools/role_tool_scope.py`: Architect 26, Orchestrator 27, Manager 32, Worker 8, Curator 17, Reviewer 11, Investigator 10, Bootstrap 8. That table, not this array, decides what a role-bound task server advertises and what a Codex seat is granted. No code derives the array from the table and no test compares the two; tests pin the Investigator array and every role's `role_message` and `role_start` membership.
 
 The current template lists are: Architect, Investigator and the launcher none; Orchestrator `manager-brief.md`, `master-handover-packet.md`, `impact-analysis.md`, `onboarding-coherency.md` and `curator-handoff-list.md`; Manager `manager-brief.md`, `curator-brief.md`, `master-handover-packet.md`, `verdict.md` and `turn-report.md`; Worker `turn-report.md` and `curator-handoff-list.md`; Curator `curator-brief.md`, `curator-handoff-list.md` and `curator-handoff-ingestion.md`; Reviewer `verdict.md`, `impact-analysis.md`, `onboarding-coherency.md` and `curator-handoff-list.md`; Bootstrap `bootstrap-report.md`. No seat lists `architect-brief.md`, `worker-brief.md` or `conversation-handover-packet.md`. The Reviewer seat is an independent Reviewer hosted on a leaf whose intake selects the reviewed candidate, requirement and seam.
 
@@ -195,17 +195,23 @@ No meaningful cross-repo references found.
 ### Repo-Internal References (renewed)
 
 - The role registry itself and the two role entries that show the per-seat shape. Anchor: `"roles": {` [5]
+
 - The launcher entry: a routing condition with its own core block and its operations; it compiles no template. Anchor: `is_role` [8]
+
 - The role registry itself and the two role entries that show the per-seat shape. Anchor: `"roles": {` [18]
+
 - The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four). Anchor: `templates` [20]
 - The launcher entry: a routing condition with its own core block and its operations; it compiles no template. Anchor: `is_role` [21]
+
 - All nine operation entries declare audience selection. The references registry contains 50 entries, 38 marked step_detail; the shared digest is declared separately in core metadata. These are parsed registry declarations, not a compiled capsule or execution result. Anchor: `references` Anchor: `references` [29]
+
 - The manifest declares audience selection for all nine operations and records 50 reference entries, 38 marked step_detail. The role/operation order and the separately delivered shared digest are explicit routing declarations. Anchor: `composition_order` Anchor: `composition_order` [30]
+
 - The registry contains 38 non-injected step-detail entries, including `refused-write` and `writing/visual-explainers`. Authored entries keep topology, rolesReason explanations and legal no-step decisions; derived references hold current reader roles and action wording, and derived.core holds the shared digest audience. These values do not prove that a particular role read a file. [33]
 
 ## Current Investigator contract impact
 
-The manifest exposes canonical Investigator among the eight native roles, requests the seven Investigator reading tools and preserves explicit Projects/sprint/master launch scope. The single earlier spelling is read normalization outside this routing metadata, not another manifest role. Registry/compiler vocabulary is not a permission grant.
+The manifest exposes canonical Investigator among the eight native roles, requests the ten tools of its allowlist (`server_info`, `context_packet`, `read_ar_files`, `memory_quality_check`, `worktree_status`, `task_doc`, `role_message`, `knowledge_read`, `knowledge_diff`, `knowledge_integrity_check`) and preserves explicit Projects/sprint/master launch scope. The single earlier spelling is read normalization outside this routing metadata, not another manifest role. Registry/compiler vocabulary is not a permission grant.
 
 ## Refreshed current evidence
 
@@ -223,14 +229,14 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 
 ## Current account — the curator's requested tool list
 
-The curator role's `tools` list requests `knowledge_write` beside `knowledge_read`. The list requests tools: it is checked against the published tool roster and enters the seal digest, so it records what the role may reach and grants nothing by itself. The mounted `knowledge_write` runs the same leaf writer with the same arguments as `knowledge-ingest`, which is why the curator's role text may name it as an authoring route.
+The curator role's `tools` list requests `knowledge_write` beside `knowledge_read`. The list requests tools: it is checked against the published tool roster and enters the seal digest, so it grants nothing by itself; the Curator's served and granted surface is its `ROLE_TOOL_ALLOWLISTS` entry, which the list mirrors. The mounted `knowledge_write` runs the same leaf writer with the same arguments as `knowledge-ingest`, which is why the curator's role text may name it as an authoring route.
 
 
 
 - The core-source map's lifecycle-frame entry names task worktree records and the landing chain's lifecycle, not session adoption; the lifecycle-frame source points to the public worktree_start, worktree_attach and terminal-lifecycle references. [4]
 
 
-- The manifest retains canonical Investigator with seven declared tool IDs and separately names Bootstrap; the current public LauncherRole roster has eight canonical roles plus the system-specialist alias, not a second Investigator role. [14]
+- The manifest retains canonical Investigator with ten declared tool IDs, matching its allowlist entry, and separately names Bootstrap; the current public LauncherRole roster has eight canonical roles plus the system-specialist alias, not a second Investigator role. [14]
 
 
 

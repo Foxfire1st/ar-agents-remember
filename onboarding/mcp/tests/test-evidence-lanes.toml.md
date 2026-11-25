@@ -6,7 +6,7 @@
 
 ## Purpose
 
-The canonical evidence-lane catalog: which test modules belong to which lane, so a leaf's checks can name the population they ran. Membership declares the selected population, never that an invocation ran or passed. The current parsed catalog declares 657 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness and one stress-durability member (803 total); stress-durability selects the native stdio memory regression, and provider-conformance and migration are empty. No module sits in two lanes, no lane repeats a module, and every named module exists on this tree.
+The canonical evidence-lane catalog: which test modules belong to which lane, so a leaf's checks can name the population they ran. Membership declares the selected population, never that an invocation ran or passed. The current parsed catalog declares 658 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness and one stress-durability member (804 total); stress-durability selects the native stdio memory regression, and provider-conformance and migration are empty. No module sits in two lanes, no lane repeats a module, and every named module exists on this tree.
 
 The integration lane selects the crossing dependent writer test once. It checks that the mounted dry plan uses the settled code tree and that the branch name resolves to its commit.
 
@@ -164,7 +164,9 @@ The existing unit-regression lane declares `test_l192_projection_watch_roots.py`
 
 Membership selects evidence without proving invocation.
 
-`test_memory_quality_source_files.py` is declared in integration. The current catalog therefore has 803 modules, including 119 integration modules; membership selects evidence and claims no execution result.
+`test_memory_quality_source_files.py` is declared in integration. The current catalog therefore has 804 modules, including 119 integration modules; membership selects evidence and claims no execution result.
+
+`test_role_tool_scope.py` is declared once, in unit-regression, between `test_role_step_up.py` and `test_route_index_memory_scope.py`; membership selects evidence and certifies no invocation.
 
 - The current lane catalog declares test populations; no invocation or pass is implied.
 
@@ -198,13 +200,13 @@ Membership selects evidence without proving invocation.
 
 - The seven lane identities remain declared; this is membership, not execution.
 
-- The current lane catalog declares seven lanes and 803 distinct module paths: 657 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness; stress-durability selects the native stdio memory regression, and provider-conformance and migration are empty. These current registrations establish no invocation or passing result.
+- The current lane catalog declares seven lanes and 804 distinct module paths: 658 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness; stress-durability selects the native stdio memory regression, and provider-conformance and migration are empty. These current registrations establish no invocation or passing result.
 
-- The current catalog declares 803 distinct modules: 657 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness; stress-durability selects the native stdio memory regression, and provider-conformance and migration are empty. These declarations establish no invocation or passing result.
+- The current catalog declares 804 distinct modules: 658 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness; stress-durability selects the native stdio memory regression, and provider-conformance and migration are empty. These declarations establish no invocation or passing result.
 
 - The current catalog selects `test_landing_workflow_setting.py` and `test_publication_merge_admission.py`, the existing explainer suites, and `test_dashboard_autostart_after_discovery.py`. The after-discovery suite’s source asserts scheduling after the discovery answer and a no-list first-call fallback through one latch. Membership names the selected population and supplies no invocation or passing result.
 
-- The parsed source selects 803 distinct modules across the seven existing lane identities: 657 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness; stress-durability selects the native stdio memory regression, and provider-conformance and migration are empty. It retains the after-discovery, explainer and publication/landing-workflow modules together with the nine retired-provider regressions, and omits the retired provider-current-state module. The declarations select evidence; they establish no invocation or passing result.
+- The parsed source selects 804 distinct modules across the seven existing lane identities: 658 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness; stress-durability selects the native stdio memory regression, and provider-conformance and migration are empty. It retains the after-discovery, explainer and publication/landing-workflow modules together with the nine retired-provider regressions, and omits the retired provider-current-state module. The declarations select evidence; they establish no invocation or passing result.
 
 
 
@@ -266,7 +268,7 @@ Membership selects evidence without proving invocation.
 
 - The browser suite is selected in the unit-regression lane. Anchor: file [871]
 
-- The integration lane registers the crossing dependent writer test once. [877]
+- The integration lane registers the crossing dependent writer test once. [878]
 
 - Lane lists retain one path per module, with the worktree-environment guard registered in unit-regression. Anchor: file [837]
 - The current lane catalog declares test populations; no invocation or pass is implied. Anchor: file [839]
@@ -274,9 +276,9 @@ Membership selects evidence without proving invocation.
 - The current lane catalog declares test populations; no invocation or pass is implied. Anchor: file [858]
 - The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution. Anchor: file [859]
 - The seven lane identities remain declared; this is membership, not execution. Anchor: file [863]
-- The current lane catalog declares seven lanes and 803 distinct module paths: 657 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness, and one stress-durability module. Provider-conformance and migration are empty. These current registrations establish no invocation or passing result. [864]
-- The current catalog declares 803 distinct modules: 657 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness, and one stress-durability module. Provider-conformance and migration are empty. These declarations establish no invocation or passing result. [867]
-- The parsed source selects 803 distinct modules across the seven existing lane identities: 657 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness, and one stress-durability module. Provider-conformance and migration are empty. It retains the after-discovery, explainer and publication/landing-workflow modules together with the nine retired-provider regressions, and omits the retired provider-current-state module. The declarations select evidence; they establish no invocation or passing result. [869]
-- The current catalog declares 803 distinct modules: 657 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness, and one stress-durability module. Provider-conformance and migration are empty. These declarations establish no invocation or passing result. [870]
+- The current lane catalog declares seven lanes and 804 distinct module paths: 658 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness, and one stress-durability module. Provider-conformance and migration are empty. These current registrations establish no invocation or passing result. [864]
+- The current catalog declares 804 distinct modules: 658 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness, and one stress-durability module. Provider-conformance and migration are empty. These declarations establish no invocation or passing result. [867]
+- The parsed source selects 804 distinct modules across the seven existing lane identities: 658 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness, and one stress-durability module. Provider-conformance and migration are empty. It retains the after-discovery, explainer and publication/landing-workflow modules together with the nine retired-provider regressions, and omits the retired provider-current-state module. The declarations select evidence; they establish no invocation or passing result. [869]
+- The current catalog declares 804 distinct modules: 658 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness, and one stress-durability module. Provider-conformance and migration are empty. These declarations establish no invocation or passing result. [870]
 
 - The unit lane selects both Lean test modules. [875]

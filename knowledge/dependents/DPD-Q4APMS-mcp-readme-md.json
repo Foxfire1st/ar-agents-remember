@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "51bf0a91489d97231a1e1173b67d2087c170b08f",
-    "commit": "ff626cd445012fee408b4b6c292756bbe1438d2e",
+    "codeTree": "cf41b9ab8a855953186f782960fd37a57225b56f",
+    "commit": "1d62157b755f5ab6b60ac89010b6a03160519352",
     "role": "curator",
-    "statement": "The package README's tool groups and its pointer to the reference sections still match; the reference's advice on finding a sync or closeout outcome in the tool log sits inside those same sections. The MCP package README points to the tools reference, whose Worktrees and Knowledge sections describe staged continuation against both pinned merge parents and the writer for an open master crossing.",
+    "statement": "On the merged code the package README's tool-group table and reference pointers still match: create_server still registers every group before a role binding narrows the served list (CAP-L1), and the tool-log advice sits in the same reference sections (L27). The MCP package README points to the tools reference, whose Worktrees and Knowledge sections describe staged continuation against both pinned merge parents and the writer for an open master crossing.",
     "task": "261112-BUG-L26",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "mcp/README.md",
   "id": "DPD-Q4APMS",
@@ -46,7 +46,7 @@
       "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
     },
     {
-      "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+      "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },

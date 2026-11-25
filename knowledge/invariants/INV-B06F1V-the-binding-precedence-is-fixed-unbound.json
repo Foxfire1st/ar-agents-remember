@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized in server.py, which resolves the precedence, and in agent_binding.py, whose reader decides unbound against unreadable; tests cover the unbound, explainer-only, valid mixed and malformed cases."
+  },
+  "applicability": "Every create_server call, whatever launch bindings its environment carries.",
+  "conditions": [
+    "A role binding is present when AR_PASEO_AGENT_ID is nonempty.",
+    "An explainer binding is present when its environment variable names a valid seat."
+  ],
+  "exclusions": [
+    "Invalid or lost explainer bindings, which keep their existing startup refusal."
+  ],
+  "id": "INV-B06F1V",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_tool_scope.py::test_an_unbound_server_keeps_the_whole_public_roster, ::test_an_explainer_only_launch_keeps_the_public_roster_then_its_four_tools, ::test_a_valid_mixed_launch_serves_the_roles_tools_then_the_explainers_four and ::test_a_real_stdio_session_on_a_malformed_binding_serves_only_server_info on tree b29f2e225c04fbcebb653d59f81cf895c42f5097"
+      ],
+      "path": "curator-handoff-cap-l1.json"
+    },
+    "handoffEntry": "CAP-R01@v1 §2 precedence",
+    "leaf": "261124-CAP-L1",
+    "task": "261124-CAP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The binding precedence is fixed: unbound keeps all 44 tools, a valid explainer alone keeps the 44 plus the explainer's four in registration order, a valid role keeps its allowlist plus those four, and a malformed role binding alone or mixed serves only server_info while starting without launched instructions.",
+  "status": "proposed",
+  "supersedes": []
+}

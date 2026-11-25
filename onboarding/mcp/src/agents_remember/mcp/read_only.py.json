@@ -22,6 +22,24 @@
     {
       "anchor": {
         "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
+        "content": "sha256:7fae5cf30851fea2b6957ce1017b9a79794b5429844f648ff405f9e69a408e6d",
+        "locator": {
+          "kind": "symbol",
+          "name": "apply_read_only_marks"
+        }
+      },
+      "id": "RLZ-667KAE",
+      "invariant": "INV-4ZA9SH",
+      "origin": {
+        "handoffEntry": "CAP-R01@v1 §2 bound pruning",
+        "leaf": "261124-CAP-L1"
+      },
+      "rationale": "Running this before pruning is what keeps an unclassified tool excluded for the role from shipping unmarked; it still fails server construction.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
         "content": "sha256:d8260c994fa518cd0167acf9f5c1a60be55c84f659414bd6bb9116f2d890ef22",
         "locator": {
           "kind": "symbol",

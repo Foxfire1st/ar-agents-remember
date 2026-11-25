@@ -10,11 +10,11 @@ The current source facts below replace the former operative inventory. The histo
 
 - Saved calls carry serverExclusion alongside agent/workspace.
 - A held `RoleLaunch` retains all resolved creation choices but omits `agent.prompt`; its compiled opening handover remains in the receipt for the first addressed work. An ordinary launch still sends its prompt at creation. This is product-held state, not a rewrite of the host’s idle state.
-- agent_create_input removes only agents-remember from an eligible supplied MCP map and forwards the provider options already saved in the agent definition. The internal serverExclusion record is not a host payload key. build_launch_call constructed the supported Claude providerOptions.disallowedTools with existing host deny rules preserved.
+- agent_create_input removes only agents-remember from an eligible supplied MCP map and forwards the provider options already saved in the agent definition. The internal serverExclusion record is not a host payload key. build_launch_call writes the supported Claude providerOptions.disallowedTools rule beside the host's existing deny rules.
 - serviceTier is projected into featureValues.service_tier.
 - Saved native Antigravity Retry uses a bridge-only existing-agent marker. The bridge can reconcile the exact recorded agent. A known absence returns the ACP-directed refusal before creation. The marker does not go to Paseo.
 
-For a provider that accepts MCP definitions, role creation attaches its own bound task server and asks the shared seat policy for that provider's startup grant. Codex gets the starting build's full public roster on that server. Claude gets `server_info` for the session. The creation receipt's retained `assignmentReadGrant` field records the MCP preapprovals in the stored create call and describes their lifetime.
+For a provider that accepts MCP definitions, role creation attaches its own bound task server and asks the shared seat policy for that provider's startup grant. Codex gets the ordered tool allowlist of the seat's role on that server, the same list the task server advertises for that binding. Claude gets `server_info` for the session. The creation receipt's retained `assignmentReadGrant` field records the MCP preapprovals in the stored create call and describes their lifetime.
 
 ## Recovery note bound
 
@@ -32,7 +32,7 @@ For a provider that accepts MCP definitions, role creation attaches its own boun
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
-The pre-successor CUR-C03 source overwrote mixed featureValues. The moving producer candidate now merges the retained map with service_tier, preserving other keys in source. Its genuine successor custody/independent disposition remains separate; The former metadata-only projection is historical. The current launch applies Claude disallowed-tools options; `secondCopyLoaded` is derived from the applied record. Codex, Hermes/ACP and Pi remain exception cases with the second copy reported as loaded.
+build_launch_call merges the saved featureValues with service_tier and keeps the other keys. The launch applies Claude disallowed-tools options; `secondCopyLoaded` is derived from the applied record. Codex, Hermes/ACP and Pi remain exception cases with the second copy reported as loaded.
 
 ## Historical launch and producer accounts
 

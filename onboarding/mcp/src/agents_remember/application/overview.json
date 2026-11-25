@@ -7202,8 +7202,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e10958ad95558f1846ccfe0170975c559d03227",
-            "content": "sha256:b2f0cb7b94e3dafa7d280e836159aeccd592b57d7d7ded1274769761662edf7d",
+            "blob": "5598442d7754f520edb9f950f12afd0bd77e86c2",
+            "content": "sha256:0b74b509c2dc1379a2665072be73152337d1106a3bc63c2f1cba57a2d4c580bd",
             "locator": {
               "kind": "symbol",
               "name": "launch_server_exclusion"
@@ -8694,7 +8694,7 @@
         }
       ]
     },
-    "526": {
+    "527": {
       "note": "Crossing confirmation identifies the resolved commit that supplied the code tree.\n\nAnchor: `CodeSnapshot.at_commit`",
       "targets": [
         {

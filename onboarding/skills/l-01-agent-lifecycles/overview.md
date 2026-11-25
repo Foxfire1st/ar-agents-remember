@@ -349,4 +349,4 @@ Before escalating, Manager reads its own rulings and the Architect rulings for t
 
 - Launch-time resolution chooses permission mode. Shared instructions assign the post-start feature check to the starter. [97]
 
-- The source template gives the conflicting-dependent crossing request. [98]
+- The source template gives the conflicting-dependent crossing request. [99]

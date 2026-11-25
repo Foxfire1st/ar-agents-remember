@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A real stdio test calls an excluded tool before and after listing and requires two errors and two raised-call rows."
+  },
+  "applicability": "Calls on a role-bound or malformed-bound server to a tool its narrowing removed.",
+  "conditions": [
+    "The call arrives through call_tool, before or after a tools/list."
+  ],
+  "exclusions": [
+    "A raised-call row when the tool log cannot be written; the logging stays best-effort."
+  ],
+  "id": "INV-SJKVE0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_tool_scope.py::test_a_real_stdio_session_advertises_and_dispatches_only_the_bound_roles_tools on tree b29f2e225c04fbcebb653d59f81cf895c42f5097"
+      ],
+      "path": "curator-handoff-cap-l1.json"
+    },
+    "handoffEntry": "CAP-R01@v1 §2 excluded dispatch",
+    "leaf": "261124-CAP-L1",
+    "task": "261124-CAP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Calling a tool a bound server excluded fails as an unknown tool without invoking its handler, before or after an explicit tools/list, and records one raised-call row through the existing best-effort path.",
+  "status": "proposed",
+  "supersedes": []
+}

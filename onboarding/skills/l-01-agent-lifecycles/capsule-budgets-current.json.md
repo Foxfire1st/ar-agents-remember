@@ -39,7 +39,7 @@ not the active renewal or a new source measurement. [1]
 
 
 
-- Generated ordinary-template measurements record the Manager brief at 1,465 words and its exact source SHA-256. [3]
+- Generated approved source sizes record the Manager brief at 1,465 words and its exact source SHA-256. [3]
 
 
 
@@ -54,4 +54,4 @@ not the active renewal or a new source measurement. [1]
 
 - The generated size record holds the current curation capsule and judgment detail measurements. [8]
 
-- The generated template measurement records 6,357 words and the current source digest. [10]
+- The generated template measurement records 6,357 words and the current source digest. [11]

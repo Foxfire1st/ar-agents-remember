@@ -1,0 +1,2215 @@
+{
+  "closed": true,
+  "leaf": "261124-CAP-L1",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0fc638828611b97d33b29b06297cc62431902dc2",
+            "content": "sha256:dc8d3435354a13b5726e7fce39e7cd546d827ec13f8820633739f55fdf4a8749",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+            "content": "sha256:4a94897e5b7086e4c2830466bfa8e369b1ab4f22de2f1df6e407866cf57bda8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-8QRPKW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-052V5T",
+      "items": [
+        "sha256:463e22ccdc37255bdca8f322c0c480aab6f1e77985575d98770b476359326b14"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-P8F6BT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+            "content": "sha256:5e5898fb95490974e8218bfc66a54ceefb37778c948ba7c591dea90e5e9705f5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+            "content": "sha256:5a372180e2d50c3b500f66adfe0baf17a6a132804cddd97ed4da8ee928195a9b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "RLZ-B44GTW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-0FDTA8",
+      "items": [
+        "sha256:d45f065b74619fe879c419b7f3edbc4fb84bd415458364d8cd4edaf931bbe22b"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-AZTTPZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0H4YE1",
+      "items": [
+        "sha256:eaa84475644f8464896e95438ebbb086dc909d79ac5613d76ae4928804efc301"
+      ],
+      "reason": "The Manager-brief reference now names the approved source sizes it is recorded in; the renewed manifest digest needs no prose change.",
+      "sources": [
+        {
+          "blob": "d513aa962182a621f4e7111b4d7f350891976ba9",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-A8E0YE",
+          "revision": 1
+        },
+        {
+          "id": "INV-H0WCGX",
+          "revision": 1
+        },
+        {
+          "id": "INV-MM63KX",
+          "revision": 1
+        },
+        {
+          "id": "INV-WAY665",
+          "revision": 1
+        },
+        {
+          "id": "INV-YNHABM",
+          "revision": 2
+        },
+        {
+          "id": "INV-YT1AD8",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-0KVE65",
+      "items": [
+        "sha256:fd158951d4dd5c873a55db2a8c2e187d4d16330f1e3f9c8789485e6f37f3ab41"
+      ],
+      "reason": "Every member was examined at its current revision; the role-scoped tool surface leaves the joint guarantee and the routes unchanged.",
+      "revision": 3,
+      "subject": "FAM-TYQYTP"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-18CKNT",
+      "items": [
+        "sha256:975d323c4458cef01a10cff68e003559de0a95822349aacf634df3e60bff81a1",
+        "sha256:e6574a0b2274f39476aaab7d5de086c94f08e0b850d1573d0e1ddd926fd26fda"
+      ],
+      "reason": "The create-payload expectation now names each role's own Codex allowlist.",
+      "sources": [
+        {
+          "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
+          "path": "mcp/tests/test_paseo_launch_roles.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_launch_roles.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-1G8EDE",
+      "items": [],
+      "reason": "Re-read docs/host.md against code tree b29f2e2: The host guide's role-agent account, the second agents-remember copy on non-Claude harnesses and the Claude Code exclusion still hold on b29f2e2; the Paseo 0.16.2 routes now documented in agent_binding.py agree with it.",
+      "revision": 11,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-23JS50",
+      "items": [
+        "sha256:b1f66305689e82f5de0cb8da089edfcae795a8ac69bed467c9081f40dbad3b0e"
+      ],
+      "reason": "The card now says Codex gets the role roster from role_tool_roster, and the callers pass the launch role or none.",
+      "sources": [
+        {
+          "blob": "4191e74318f5f34c0412b1564038c8484c35b816",
+          "path": "mcp/src/agents_remember/cli/paseo_seat_policy.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_seat_policy.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-29KGC3",
+      "items": [
+        "sha256:07922b1ec7481d3cb2bf0debca9d14eb6b0d224e737b1271dd035992e8e3c141"
+      ],
+      "reason": "Reviewed: agent_binding.py gained docstring text only, and the route account of launch exclusion stays true.",
+      "sources": [
+        {
+          "blob": "5598442d7754f520edb9f950f12afd0bd77e86c2",
+          "path": "mcp/src/agents_remember/application/agent_binding.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "345ed4665ce228a5d509b235fce203c4473c24a3",
+            "content": "sha256:ad0fa111c7a3a366d769673cfe6a7a0c57ddf8eab2e91e8a798f5b78130d2d4b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "bf1ff630aa584ae1f28c8de20e28e954f7961c55",
+            "content": "sha256:c33c3f256f46b2fd53e0a6e82a4a5d3f714619e18c99d57cca1aab4e06e698fd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "382eeb25cf59674f7f5b68cd94fbd8a39b9ee0e1",
+            "content": "sha256:2b080e39c74a7f0c47fe23a6e50470b88ee7fc4af3583b45bb37e9e8a9874433",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "2ecce6228d45fcc9dee1eb05aad3aab8da869859",
+            "content": "sha256:95013772aa42bbc5d9513868beb5ed49cee18a560d98e7a02611fbbdbcad4b14",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-2R678N",
+      "items": [
+        "sha256:97fb2002fff710cc11d1a2badc2c3baa881f93d7cf752c4e55e36bfdc1e5dc45"
+      ],
+      "reason": "Re-anchored at the merged code (main b28b99ce0 with the CAP-L1 change): the lifecycle catalog still declares owners and exact consumers (18 contracts, 120 artifacts) and the lane catalog exact unique selections (803 modules).",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-39PSVS",
+      "items": [],
+      "reason": "Re-read docs/install/claude-code.md against code tree b29f2e2: The Claude Code guide's permission-mode account and the server_info-only pre-approval still hold on b29f2e2; the role-scoped Codex grant does not touch the Claude branch.",
+      "revision": 10,
+      "subject": "DPD-3E9E2R"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "content": "sha256:7e882a8cb7ce70657940d3724027df8a5092cb1c1d15d6ed40d0167816d03247",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-T8GFX9"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-3CBPTX",
+      "items": [
+        "sha256:7b789aecf5823e6ea0361659fb7883901e0ce16c47dc2d16cd4c6699470882ac"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-40JW44"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:eff1edcfd08e666800b6b18c844c0671f01e872a311839119c510b1fb3f30cd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-THMGJK"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-3HAT3C",
+      "items": [
+        "sha256:eeb17f1c4b45e7b75795a6fbbe32f509dde5cba02047ec34dbc9929efb8978e4"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-F1TY2E"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0V8R02",
+          "revision": 1
+        },
+        {
+          "id": "INV-HJ5A68",
+          "revision": 1
+        },
+        {
+          "id": "INV-Q2HENX",
+          "revision": 1
+        },
+        {
+          "id": "INV-W6HBYY",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-439580",
+      "items": [
+        "sha256:7b89f4b193140ec167cc25e3892d325a9fc6ef795d984ba269446d09f71749e8"
+      ],
+      "reason": "Every member was examined at its current revision; the role-scoped tool surface leaves the joint guarantee and the routes unchanged.",
+      "revision": 1,
+      "subject": "FAM-8DPMB4"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-59THY0",
+      "items": [
+        "sha256:bf85073ebf2be829053223eaadeeb8a3e110e644eb19f2101e3ab379fe8199ef"
+      ],
+      "reason": "Re-read the packaged tool-details.md against the merged code (main b28b99ce0 with the CAP-L1 change): On the merged code the packaged tool details still hold: write ordering and the stale-build refusal (L27) are described truly, and server_info lists no tools, reports toolServer and agentBinding on a launched server and stays served on every role and on a malformed binding (CAP-L1).",
+      "revision": 14,
+      "subject": "DPD-NGC2F6"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "content": "sha256:7e882a8cb7ce70657940d3724027df8a5092cb1c1d15d6ed40d0167816d03247",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-QF8NBD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-5R5CZ8",
+      "items": [
+        "sha256:a634e31d638328843613c6b1e4fd468cd003dc42c12404b8decfc018e54ae23e"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-W6HBYY"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5598442d7754f520edb9f950f12afd0bd77e86c2",
+            "content": "sha256:0b74b509c2dc1379a2665072be73152337d1106a3bc63c2f1cba57a2d4c580bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "launch_server_exclusion"
+            },
+            "path": "mcp/src/agents_remember/application/agent_binding.py"
+          },
+          "before": {
+            "blob": "9e10958ad95558f1846ccfe0170975c559d03227",
+            "content": "sha256:b2f0cb7b94e3dafa7d280e836159aeccd592b57d7d7ded1274769761662edf7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "launch_server_exclusion"
+            },
+            "path": "mcp/src/agents_remember/application/agent_binding.py"
+          },
+          "id": "RLZ-7AWSDS"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-5SNJJE",
+      "items": [
+        "sha256:7c2a4ade2564f6ace84c4185faee84c7ed67837660c647b51ae3dbd0848b9c81"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-ZKEF8F"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6VTSQ7",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Re-bound at the merged code (main b28b99ce0 with the CAP-L1 change): the lane counts read 803 modules with 658 unit-regression and 118 integration, and the card names the new unit-regression member.",
+      "sources": [
+        {
+          "blob": "382eeb25cf59674f7f5b68cd94fbd8a39b9ee0e1",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7EAFM4",
+      "items": [
+        "sha256:1c9b00cc5ad9e19dc49c9774d4abfe938b652c5fd7b28936b78fe27f1ec86e2c"
+      ],
+      "reason": "New card for the canonical per-role allowlist module.",
+      "sources": [
+        {
+          "blob": "3a4a614c214f80c798bd135d20f846d9000ee211",
+          "path": "mcp/src/agents_remember/models/tools/role_tool_scope.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/tools/role_tool_scope.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-7H2WGB",
+      "items": [],
+      "reason": "Re-read docs/reference/settings-json.md against code tree b29f2e2: The settings reference's launch bindings, role-mode keys and the Claude Code first-call server_info grant still hold on b29f2e2; build_launch_call only adds the role to the Codex preapproval.",
+      "revision": 15,
+      "subject": "DPD-W0T9V9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7XFGE1",
+      "items": [
+        "sha256:bdb9f13f46a4212e6dfd6aba49c29ad1389b6a59024fffc2f1f7ffd6e3e4d7e7",
+        "sha256:c7d41d4ee7f7f09c7c8c5bebfa41c61220e1d1d42ed01a78e41702241facf98a"
+      ],
+      "reason": "The folder-and-grant case now names the Architect allowlist expected for Codex.",
+      "sources": [
+        {
+          "blob": "29649ff5dd27a56b78c5ef15eceac9c837955243",
+          "path": "mcp/tests/test_role_handover_binding.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_handover_binding.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0fc638828611b97d33b29b06297cc62431902dc2",
+            "content": "sha256:dc8d3435354a13b5726e7fce39e7cd546d827ec13f8820633739f55fdf4a8749",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+            "content": "sha256:4a94897e5b7086e4c2830466bfa8e369b1ab4f22de2f1df6e407866cf57bda8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-MKRHDV"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-85QMXK",
+      "items": [
+        "sha256:3426f7b7b19a28634bdccdf90a05c88db6e837ecbfa330a4004c63bd44c665a1"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-C8SVFY"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8BH7JD",
+      "items": [
+        "sha256:c39bc24ce8c06835a154c154bc23e89b1625d0782647de07616454aed7aba53b",
+        "sha256:f0cf5a70d46e6a2f158f884ad12f6c452abf2418feca2c54fdbbf4ee2b898630"
+      ],
+      "reason": "The Codex case now checks the Worker allowlist instead of every public tool.",
+      "sources": [
+        {
+          "blob": "75bbc12dd0ffc86722b2b62853713cc6e782dde7",
+          "path": "mcp/tests/test_paseo_launch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_launch.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8X38Q4",
+      "items": [
+        "sha256:a37e320fea9ee9b9f553eccab5a6202bb0b543b4007b2efabcf7e2dde8988a8c"
+      ],
+      "reason": "Reviewed: the skill overview states no role tool list, so the renewed manifest arrays leave it true.",
+      "sources": [
+        {
+          "blob": "d513aa962182a621f4e7111b4d7f350891976ba9",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+          "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:eff1edcfd08e666800b6b18c844c0671f01e872a311839119c510b1fb3f30cd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-HD5W8S"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-9Q80D8",
+      "items": [
+        "sha256:4c40173ac8fa3e316a5feb295e060db0ffea5b58ffb5b704567f0c6165a1b9f1"
+      ],
+      "reason": "The explainer surface and its seat validation are unchanged for a served explainer seat; create_server now narrows a role-bound process afterwards, and the guard skips explainer tools that narrowing removed.",
+      "revision": 2,
+      "subject": "INV-48203N"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AE7PHQ",
+      "items": [
+        "sha256:9ceea1d746c2959165c96fcb045a85a30d09c805829cf07c2780be30e98b8a79"
+      ],
+      "reason": "This hunk only swaps the import of PUBLIC_TOOLS for role_tool_roster. The Codex grant it serves is the obligation INV-DWNKBC states over preapproval_policy's body; the import line adds no separate obligation.",
+      "subject": "hunk:sha256:9ceea1d746c2959165c96fcb045a85a30d09c805829cf07c2780be30e98b8a79"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AH9CHM",
+      "items": [
+        "sha256:762fa59d9ba04ea43f129aeee4d4f1883c7dac70ea164140fbbaf708e2d8df2e"
+      ],
+      "reason": "Re-bound at the merged code (main b28b99ce0 with the CAP-L1 change): the catalog counts in the tests overview read 803 lane modules, combining L27's two integration modules with CAP-L1's unit-regression module.",
+      "sources": [
+        {
+          "blob": "345ed4665ce228a5d509b235fce203c4473c24a3",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "382eeb25cf59674f7f5b68cd94fbd8a39b9ee0e1",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "16ffb789d40b2cad5b4542891d4a93cf24cd0efe",
+          "path": "mcp/tests/test_curator_instruction_wording.py"
+        },
+        {
+          "blob": "5117015e5b0b1b276b1b86ea559bb8fe93f79bcf",
+          "path": "mcp/tests/test_paseo_catalog_r71.py"
+        },
+        {
+          "blob": "75bbc12dd0ffc86722b2b62853713cc6e782dde7",
+          "path": "mcp/tests/test_paseo_launch.py"
+        },
+        {
+          "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
+          "path": "mcp/tests/test_paseo_launch_roles.py"
+        },
+        {
+          "blob": "29649ff5dd27a56b78c5ef15eceac9c837955243",
+          "path": "mcp/tests/test_role_handover_binding.py"
+        },
+        {
+          "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        },
+        {
+          "blob": "e60dd2908ee70cf9eedd8c4336445008b2d25f1b",
+          "path": "mcp/tests/test_role_tool_scope.py"
+        },
+        {
+          "blob": "f25bcda3b5a15695767db6f838c80f77f12060fe",
+          "path": "mcp/tests/test_server_startup_imports.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AHG6ZH",
+      "items": [
+        "sha256:9537216caaae29392351fb9e0b5ce642134a6953b750b65d0ae3809d7096e76c"
+      ],
+      "reason": "New card for the role-scoped surface test module.",
+      "sources": [
+        {
+          "blob": "e60dd2908ee70cf9eedd8c4336445008b2d25f1b",
+          "path": "mcp/tests/test_role_tool_scope.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_tool_scope.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f25bcda3b5a15695767db6f838c80f77f12060fe",
+            "content": "sha256:aa9de274d36c42cf54fd8fa63cd4bfff185a14189597d52e48d9de6ab7bd3537",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_discovery_loads_no_implementation_module"
+            },
+            "path": "mcp/tests/test_server_startup_imports.py"
+          },
+          "before": {
+            "blob": "1a51e42c0efc8105efea450f4971eeb99b1f40a9",
+            "content": "sha256:3420f3760eeed0ad9bbc5d8edb8aa82ea4cffd9eba13cfa2169933417fdcd948",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_discovery_loads_no_implementation_module"
+            },
+            "path": "mcp/tests/test_server_startup_imports.py"
+          },
+          "id": "PRF-DH2X31"
+        },
+        {
+          "after": {
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:eff1edcfd08e666800b6b18c844c0671f01e872a311839119c510b1fb3f30cd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-8T6VV2"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-B39TEC",
+      "items": [
+        "sha256:80857948b908242582a288bd84de5f6e1b6e7f344d1ef32b6eb908a983504202"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-990KQM"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BEVWKG",
+      "items": [
+        "sha256:d4b37b3fc36e8e403437279eae95db0e1d08c327b01d29ccc94bc64fc216e297"
+      ],
+      "reason": "The card now states that every role's tools array mirrors its ROLE_TOOL_ALLOWLISTS entry, with the new Bootstrap and Investigator lists.",
+      "sources": [
+        {
+          "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+          "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/composition-manifest.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BX95HH",
+      "items": [
+        "sha256:0a16d3d0844ff28e5dd57b9c90629781f0a84ad7d0e7b3bc7b5889391807cc8f"
+      ],
+      "reason": "The scope case now records the ten-tool Investigator manifest list it pins.",
+      "sources": [
+        {
+          "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_instruction_wording.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BZYSEB",
+      "items": [
+        "sha256:00470062fd69343fe8cf576b4f0ead91779262600400d436f7fd215185617f28",
+        "sha256:027a19a18b151af7dad1daecf43313c88fc2a9da6214e136c9548b6dffa9c11e",
+        "sha256:a10865085a330e6d788d05c3f2e7e3abba37842d6591c582ee6bc2c32536844f",
+        "sha256:d01554bea07153c9c93c4c699bd4fcce978c045b6240bc54015efafa169d7686"
+      ],
+      "reason": "The launched-command case now states the three expected tool counts, including the bound Worker's.",
+      "sources": [
+        {
+          "blob": "f25bcda3b5a15695767db6f838c80f77f12060fe",
+          "path": "mcp/tests/test_server_startup_imports.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_server_startup_imports.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-C4HBN7",
+      "items": [
+        "sha256:15239c790a2b719dd55a15a07e3b57c7dfe2ae0187d9c17567720965344aef99"
+      ],
+      "reason": "The weakness still stands: the AgentsRememberMCP docstring still promises rejection of every undeclared dispatch input. Its anchor moves with the class.",
+      "revision": 4,
+      "subject": "WKN-P01MFZ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C6F90R",
+      "items": [
+        "sha256:7a965a3876cae717a7c66424493ec61829b3ba45292ead24dab772ba840682b3"
+      ],
+      "reason": "This hunk only imports tools_for_role into server.py. The bound narrowing it serves is the obligation INV-4ZA9SH states over _bound_role_tools and _scope_server_tools; the import line adds no separate obligation.",
+      "subject": "hunk:sha256:7a965a3876cae717a7c66424493ec61829b3ba45292ead24dab772ba840682b3"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-CBSZ4X",
+      "items": [
+        "sha256:636ec534a7f285b0397446fcbf8501b47d714443acc58c6898a2445efe5044ff"
+      ],
+      "reason": "Re-read docs/architecture.md against the merged code (main b28b99ce0 with the CAP-L1 change): On the merged code the architecture guide still holds for both changes: every call, including a cancelled request, gets a tool-log row inside one definition scope (L27), and the role narrowing in create_server and the narrowed explainer guard change no described duty or lifetime (CAP-L1).",
+      "revision": 12,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:925f22aaec219d7cc891620d30da65a2a438c565a3d5007c733106e8f2644582",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+            "content": "sha256:f5c0202c793f9efcc41f3a8831cabacdb7b95b7899129dc6611afa8bf14ac104",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-RM2JDK"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CZWFJ1",
+      "items": [
+        "sha256:6202d4053c8eefdadb3bc34a0da0bd544c77996ea3f465b7eaa40028430755ec"
+      ],
+      "reason": "Re-anchored at the merged code (main b28b99ce0 with the CAP-L1 change): CAP-L1 changes only the explainer guard's condition inside _execute_tool_call and adds role narrowing at create_server; the build-currentness wait, the write-lock wait and the worker-queue cancellation rows L27 added are unchanged.",
+      "revision": 1,
+      "subject": "INV-8NDEQB"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d513aa962182a621f4e7111b4d7f350891976ba9",
+            "content": "sha256:b27c45673494137bfa073fe9b4ed1e476613b1391439cfa04d18e2c7ae8fec1d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "87767258a37971b10921c8a62554894a4a00036b",
+            "content": "sha256:04f53f5702c0bb3657dcb43cec017f1c844bebbe5b23675d868b8aec93c2ec0f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-D73SG4",
+      "items": [
+        "sha256:9e02d7c542daa8e5a04bab1b209948cda0061028bce4ae7fe8c6961d9a9f684d"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 6,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "because": [
+        {
+          "id": "CAP-R01",
+          "packet": "requirements/CAP-R01-v1-role-scoped-mcp-tool-surface.md",
+          "task": {
+            "path": "261124_role-capsule-and-turn-1-context-optimization",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "0fc638828611b97d33b29b06297cc62431902dc2",
+            "content": "sha256:dc8d3435354a13b5726e7fce39e7cd546d827ec13f8820633739f55fdf4a8749",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+            "content": "sha256:4a94897e5b7086e4c2830466bfa8e369b1ab4f22de2f1df6e407866cf57bda8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-DY24T1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-D7RE1N",
+      "items": [
+        "sha256:ec1e752562ef54fe132a647582082808411d8531bbf97c0044b4e72d5f76a63e"
+      ],
+      "reason": "CAP-R01@v1 replaces the full-roster Codex grant with the ordered allowlist of the seat's role; the definition, Claude grant, refused-provider and assignment_read clauses are unchanged.",
+      "revision": 4,
+      "subject": "INV-N9D91D"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-D7TYZG",
+      "items": [
+        "sha256:8d9b6235fc5700d9390cdf8daec22d696bb11ecb24b28d8b0daef8094468b582"
+      ],
+      "reason": "Re-read docs/features.md against the merged code (main b28b99ce0 with the CAP-L1 change): On the merged code the features page still holds: citation currentness, paired closeout, cache identity, answer bounds and the tool-log location (now also for a cancelled call, L27) are unchanged, and it names no per-role tool list for CAP-L1's narrowing to contradict.",
+      "revision": 22,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+            "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": "absent",
+          "id": "PRF-1Y1V3P"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+            "content": "sha256:ec2c59d9717d9c1a8ee7ebc5791216fa8a7706d4c2beae58379e5c3aed63a27f",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-SQW3RM"
+        },
+        {
+          "after": {
+            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "content": "sha256:812e7f5347026e3aac286e5ebc82ffbbe83bb3077d34605462ff46d4bf442331",
+            "locator": {
+              "end": 503,
+              "kind": "line_range",
+              "start": 484
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:f63b06707e1c361d62ec6467bfe4b95d9f69925c0094e10b6ede103867b43d45",
+            "locator": {
+              "end": 453,
+              "kind": "line_range",
+              "start": 437
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-6W76SN"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-D84X8X",
+      "items": [
+        "sha256:fd129a25d330ccc8413b4e270afdd88d8846bd7885cc97f3140fe5e02ad1d431"
+      ],
+      "reason": "The Investigator now requests ten tools, all context, source, knowledge, task-status or role-message interfaces, so the statement holds; the proof whose facet counted seven requests is replaced by one on the same test that counts ten, and the manifest entry is re-anchored at the Investigator entry. Evidence (curator-ynhabm-ten-request-proof): mcp/tests/test_role_instruction_wording.py on tree b29f2e225c04fbcebb653d59f81cf895c42f5097",
+      "revision": 2,
+      "subject": "INV-YNHABM"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:eff1edcfd08e666800b6b18c844c0671f01e872a311839119c510b1fb3f30cd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-562GH4"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-DENH8A",
+      "items": [
+        "sha256:2b04b19d630d1ded0e5a9774ced0e809035798daa54ff781a4d82108e20fe15c"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-QCMCJX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:67fe0b7ee62d92936408e6bdce030fb715592e603ee194856fe2a7ae9ffb01ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._dispatch_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+            "content": "sha256:67fe0b7ee62d92936408e6bdce030fb715592e603ee194856fe2a7ae9ffb01ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._dispatch_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-CPPWJQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-DF5MW0",
+      "items": [
+        "sha256:0434000d76f16fbf80bfe3ecb0144db7004dc4e4545faa7013335922fcc05ecf"
+      ],
+      "reason": "Re-anchored at the merged code (main b28b99ce0 with the CAP-L1 change): _dispatch_tool still keeps FastMCP validation and conversion while running synchronous handlers threaded under the FIFO write lock; CAP-L1 only narrows which tools are registered before dispatch.",
+      "revision": 1,
+      "subject": "INV-T3CE64"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-E8XNYY",
+      "items": [
+        "sha256:84ee4453c196a87d455393ca45702a22d3afb40d35ebd9e9f46cc68af0b20486"
+      ],
+      "reason": "Re-read docs/design/python-evidence-system.md against the merged code (main b28b99ce0 with the CAP-L1 change): On the merged code the evidence-system guide's lane and lifecycle rules still hold: L27's two integration modules and CAP-L1's unit-regression module each sit in one lane of the 803 and appear as declared lifecycle consumers.",
+      "revision": 13,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EJ2JC1",
+      "items": [
+        "sha256:045f7fa2b3fa5dc5a1a9607ea5fdc3a9a88da2387eb8d04b5d8d6445e80dcbc2"
+      ],
+      "reason": "The Codex grant sentence now names the role allowlist, and two change-history sentences are restated as current behaviour.",
+      "sources": [
+        {
+          "blob": "0fc638828611b97d33b29b06297cc62431902dc2",
+          "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_launch.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+            "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+            "content": "sha256:ec2c59d9717d9c1a8ee7ebc5791216fa8a7706d4c2beae58379e5c3aed63a27f",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-RF6C6D"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GD9JT1",
+      "items": [
+        "sha256:a19334b041f6bd1b59ae80ace7d94d21ad9ad506cd81f48eebdaf308101b6fe9"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-H0WCGX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d513aa962182a621f4e7111b4d7f350891976ba9",
+            "content": "sha256:b27c45673494137bfa073fe9b4ed1e476613b1391439cfa04d18e2c7ae8fec1d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "87767258a37971b10921c8a62554894a4a00036b",
+            "content": "sha256:04f53f5702c0bb3657dcb43cec017f1c844bebbe5b23675d868b8aec93c2ec0f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-RHRQZQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-H1CGRV",
+      "items": [
+        "sha256:9d4463b9eed45a75bd0edb92cb3ae3ea0c65f11a610f93fdb405f0a3219a1e3b"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 2,
+      "subject": "INV-4HZG3V"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-HRJSZD",
+      "items": [
+        "sha256:39ec688dc0b8926b3f7f4fc35ef0746e82a66a9f3a836a547660db1bdcc56007"
+      ],
+      "reason": "Re-read mcp/README.md against the merged code (main b28b99ce0 with the CAP-L1 change): On the merged code the package README's tool-group table and reference pointers still match: create_server still registers every group before a role binding narrows the served list (CAP-L1), and the tool-log advice sits in the same reference sections (L27).",
+      "revision": 14,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J0VA3H",
+      "items": [
+        "sha256:3cfa748613e7bac09fc83c56b9f9b031ec33d233983ffdba025493cac302087f",
+        "sha256:88feb184effff82b663efe4a99d6b83001338ef4fe4a3aa2495031e93e408a9f"
+      ],
+      "reason": "The grants case is described as checking role_message for every role but bootstrap and role_start for the starters.",
+      "sources": [
+        {
+          "blob": "16ffb789d40b2cad5b4542891d4a93cf24cd0efe",
+          "path": "mcp/tests/test_curator_instruction_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_curator_instruction_wording.py"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "c99b9690ae55e81fb7549053d9670f35c6c3b2c1",
+            "content": "sha256:1337cbf401d469643979f6bc9b4d98b0b28eb7d1a1d2caacef23dd811897f8de",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchToolApprovalTests.test_codex_start_preapproves_its_task_server_roster"
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "id": "PRF-1321AV"
+        },
+        {
+          "after": {
+            "blob": "5117015e5b0b1b276b1b86ea559bb8fe93f79bcf",
+            "content": "sha256:67505a9bb9e5ba97cd716167b3ee44ccd519d2b8cb6519a237e2c384aaf79903",
+            "locator": {
+              "kind": "symbol",
+              "name": "R71RoleChoicesTests.test_r71_each_role_grant_excludes_a_second_configured_ar_server"
+            },
+            "path": "mcp/tests/test_paseo_catalog_r71.py"
+          },
+          "before": {
+            "blob": "b592b03753c69d39f9ff885ce73bcd71732db57c",
+            "content": "sha256:bf46041faffc5af917302e254acf84ee9186c6ded5e0d34a8f979fa4e8b92bf6",
+            "locator": {
+              "kind": "symbol",
+              "name": "R71RoleChoicesTests.test_r71_each_role_grant_excludes_a_second_configured_ar_server"
+            },
+            "path": "mcp/tests/test_paseo_catalog_r71.py"
+          },
+          "id": "PRF-2CHGDT"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
+            "content": "sha256:a1a3c738bbd631de7ef74808256190cf14edbc5fea3fc65d2172fe2febd444aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
+            },
+            "path": "mcp/tests/test_paseo_launch_roles.py"
+          },
+          "id": "PRF-58KYVX"
+        },
+        {
+          "after": {
+            "blob": "29649ff5dd27a56b78c5ef15eceac9c837955243",
+            "content": "sha256:842cb14dd4dee97ccd5a5a8bc05d99d9d734df461e6994754b46e1be3cf37a86",
+            "locator": {
+              "kind": "symbol",
+              "name": "R71FolderAndGrantTests.test_r71_launch_builder_grants_its_task_server_tools_by_provider"
+            },
+            "path": "mcp/tests/test_role_handover_binding.py"
+          },
+          "before": {
+            "blob": "8b57f4aa75b82c8d2c0cd5ec549ebbce38ef23b5",
+            "content": "sha256:231a41c3c31657121c933a059703ff01525158dc836d3bff5cf8de63b6e0c697",
+            "locator": {
+              "kind": "symbol",
+              "name": "R71FolderAndGrantTests.test_r71_launch_builder_grants_its_task_server_tools_by_provider"
+            },
+            "path": "mcp/tests/test_role_handover_binding.py"
+          },
+          "id": "PRF-999KRN"
+        },
+        {
+          "after": {
+            "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
+            "content": "sha256:26bb611ca7ffab6c2bc2e5a498b7f7c2c07afbeed451057b87d0b267326f310d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
+            },
+            "path": "mcp/tests/test_paseo_launch_roles.py"
+          },
+          "before": "absent",
+          "id": "PRF-BYC6RY"
+        },
+        {
+          "after": {
+            "blob": "75bbc12dd0ffc86722b2b62853713cc6e782dde7",
+            "content": "sha256:075ae1c1a8142264d8f1e0827602e18cc86dc817387f335fce8797c7d342f4fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchToolApprovalTests.test_codex_start_preapproves_its_task_server_roster"
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "before": "absent",
+          "id": "PRF-FEVC9A"
+        },
+        {
+          "after": {
+            "blob": "0fc638828611b97d33b29b06297cc62431902dc2",
+            "content": "sha256:dc8d3435354a13b5726e7fce39e7cd546d827ec13f8820633739f55fdf4a8749",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+            "content": "sha256:4a94897e5b7086e4c2830466bfa8e369b1ab4f22de2f1df6e407866cf57bda8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-9ZCX7V"
+        },
+        {
+          "after": {
+            "blob": "4191e74318f5f34c0412b1564038c8484c35b816",
+            "content": "sha256:1f192df99fe43025b96a5f0c8462605f0b3d46b26fa32f0a7094f3fa8ac5155d",
+            "locator": {
+              "kind": "symbol",
+              "name": "preapproval_policy"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_seat_policy.py"
+          },
+          "before": {
+            "blob": "989ca0f381fef0297fc725d0b00462680d20f095",
+            "content": "sha256:b39ac416b7f157c729239d1dc515a535a51899617e08cc0e81a623490c0b3f82",
+            "locator": {
+              "kind": "symbol",
+              "name": "preapproval_policy"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_seat_policy.py"
+          },
+          "id": "RLZ-QNGXHX"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-K042PJ",
+      "items": [
+        "sha256:34dcf5e401c88cce1443467bbae68b3ccf90ca257d3ea1f62dabc13f42f3d269"
+      ],
+      "reason": "The statement still holds: a new Codex seat is approved for every tool its task server offers, which is now its role's allowlist. Two proofs whose facets named the whole public roster are replaced by proofs on the same tests with facets for the role allowlist; the other entries are re-anchored. Evidence (curator-z17ehy-role-grant-proofs): mcp/tests/test_paseo_launch.py and mcp/tests/test_paseo_launch_roles.py on tree b29f2e225c04fbcebb653d59f81cf895c42f5097",
+      "revision": 1,
+      "subject": "INV-Z17EHY"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0fc638828611b97d33b29b06297cc62431902dc2",
+            "content": "sha256:dc8d3435354a13b5726e7fce39e7cd546d827ec13f8820633739f55fdf4a8749",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+            "content": "sha256:4a94897e5b7086e4c2830466bfa8e369b1ab4f22de2f1df6e407866cf57bda8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-V0EBT3"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-KFD4KY",
+      "items": [
+        "sha256:2bae75ead92458990036393ee371611fe0e477b1c15416fac9dd5e060bc786b1"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-YDDMGJ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "382eeb25cf59674f7f5b68cd94fbd8a39b9ee0e1",
+            "content": "sha256:2b080e39c74a7f0c47fe23a6e50470b88ee7fc4af3583b45bb37e9e8a9874433",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "2ecce6228d45fcc9dee1eb05aad3aab8da869859",
+            "content": "sha256:95013772aa42bbc5d9513868beb5ed49cee18a560d98e7a02611fbbdbcad4b14",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "345ed4665ce228a5d509b235fce203c4473c24a3",
+            "content": "sha256:ad0fa111c7a3a366d769673cfe6a7a0c57ddf8eab2e91e8a798f5b78130d2d4b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "bf1ff630aa584ae1f28c8de20e28e954f7961c55",
+            "content": "sha256:c33c3f256f46b2fd53e0a6e82a4a5d3f714619e18c99d57cca1aab4e06e698fd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-KN50QD",
+      "items": [
+        "sha256:557776f14b778ea9005ca7845b4496a003fd68cbf36a00b3cffd53566e9ce204"
+      ],
+      "reason": "Re-anchored at the merged code (main b28b99ce0 with the CAP-L1 change): both catalogs still register test_provider_limit_hold.py and test_held_delivery_tick_cost.py; L27's two new integration modules and CAP-L1's test_role_tool_scope.py moved the files around them.",
+      "revision": 7,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MBX803",
+      "items": [
+        "sha256:43d515e400d97be88b5b6fbef7a9558a5ef9cafbc2247914030e30307f923146"
+      ],
+      "reason": "The card names the pinned Paseo 0.16.2 non-Claude routes documented beside launch_server_exclusion and renews its source ranges.",
+      "sources": [
+        {
+          "blob": "5598442d7754f520edb9f950f12afd0bd77e86c2",
+          "path": "mcp/src/agents_remember/application/agent_binding.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/agent_binding.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0fc638828611b97d33b29b06297cc62431902dc2",
+            "content": "sha256:cc212fc75eaa958de5e56631d1e2c050bb8493548b40157f9e8e3e685238abff",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+            "content": "sha256:bb135a792b175c34fd96a2975a41092b0923ef7629e6b08aae28d3edfe7f0508",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-2GJ47Y"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-MSVX2D",
+      "items": [
+        "sha256:eba91b008ced708894da185d162d6923078aa88af418f3ffa54a7abe4a837694"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-9DMNQS"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-19ZN9E",
+          "revision": 1
+        },
+        {
+          "id": "INV-9SKGX1",
+          "revision": 1
+        },
+        {
+          "id": "INV-AN0K8G",
+          "revision": 1
+        },
+        {
+          "id": "INV-B6D2SA",
+          "revision": 1
+        },
+        {
+          "id": "INV-GJTCT9",
+          "revision": 1
+        },
+        {
+          "id": "INV-HCG93S",
+          "revision": 1
+        },
+        {
+          "id": "INV-PVW2XJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-MZX721",
+      "items": [
+        "sha256:33260e8a4df9dde000027aeefe36dd95918bddd406e798de56d4948819ff5475"
+      ],
+      "reason": "Every member was examined at its current revision on the merged code (main b28b99ce0 with the CAP-L1 change); INV-9SKGX1 is re-anchored only, and the stale-build guarantee and the routes are unchanged.",
+      "revision": 1,
+      "subject": "FAM-7EBNVZ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "content": "sha256:7e882a8cb7ce70657940d3724027df8a5092cb1c1d15d6ed40d0167816d03247",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-NWY918"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-N21YB8",
+      "items": [
+        "sha256:bd3931629e04b7884301396fafa376f77858e7818bd338e09dac47d6ed44b3bf"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-Q432XE"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+            "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+            "content": "sha256:ec2c59d9717d9c1a8ee7ebc5791216fa8a7706d4c2beae58379e5c3aed63a27f",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-6YJJ90"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-N2WDAB",
+      "items": [
+        "sha256:4166a7f828b004b7dac9725738f2505561d311adbfaf08751cfb20801a579c6f"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-MM63KX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N3RGMJ",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Re-bound at the merged code (main b28b99ce0 with the CAP-L1 change): the card names test_role_tool_scope.py as an exact consumer of the settings guard and Node lockfile artifacts, beside L27's two new consumers.",
+      "sources": [
+        {
+          "blob": "345ed4665ce228a5d509b235fce203c4473c24a3",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5598442d7754f520edb9f950f12afd0bd77e86c2",
+            "content": "sha256:0b74b509c2dc1379a2665072be73152337d1106a3bc63c2f1cba57a2d4c580bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "launch_server_exclusion"
+            },
+            "path": "mcp/src/agents_remember/application/agent_binding.py"
+          },
+          "before": {
+            "blob": "9e10958ad95558f1846ccfe0170975c559d03227",
+            "content": "sha256:b2f0cb7b94e3dafa7d280e836159aeccd592b57d7d7ded1274769761662edf7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "launch_server_exclusion"
+            },
+            "path": "mcp/src/agents_remember/application/agent_binding.py"
+          },
+          "id": "RLZ-81H4FV"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-P2ZWPH",
+      "items": [
+        "sha256:0fb12cd38264709c24084c8e49bc26a66f8e80af1318018d8138fb9e97dc16a3"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-EMEW6K"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "382eeb25cf59674f7f5b68cd94fbd8a39b9ee0e1",
+            "content": "sha256:2b080e39c74a7f0c47fe23a6e50470b88ee7fc4af3583b45bb37e9e8a9874433",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "2ecce6228d45fcc9dee1eb05aad3aab8da869859",
+            "content": "sha256:95013772aa42bbc5d9513868beb5ed49cee18a560d98e7a02611fbbdbcad4b14",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-PGNFAR",
+      "items": [
+        "sha256:7c69e65852fcb0684855599a4305ff97efc586c9b739db14c008fce83c67903a"
+      ],
+      "reason": "Re-anchored at the merged code (main b28b99ce0 with the CAP-L1 change): every one of the 803 lane-catalog modules exists on the merged tree.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-QEXCF9",
+      "items": [
+        "sha256:0fb54458988fa8a28571a06e9f107cfd35633c80a683494737d1451453fb7284"
+      ],
+      "reason": "Re-read docs/design/python-pytest-bootstrap.md against the merged code (main b28b99ce0 with the CAP-L1 change): On the merged code the pytest bootstrap guide still holds: integration and stress-durability make up the integration tests (now 118 integration modules with L27's two), and CAP-L1's unit-regression module changes no selection rule.",
+      "revision": 14,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:925f22aaec219d7cc891620d30da65a2a438c565a3d5007c733106e8f2644582",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+            "content": "sha256:f5c0202c793f9efcc41f3a8831cabacdb7b95b7899129dc6611afa8bf14ac104",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-FSMKXF"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-QMKBZC",
+      "items": [
+        "sha256:3aee38bd1ed1e4f30c48a5cb0269486cceff5c7e41cd2c490e886f2297a769df"
+      ],
+      "reason": "Re-anchored at the merged code (main b28b99ce0 with the CAP-L1 change): every public call still delegates to _execute_tool_call inside its request memo scope; the method gained L27's cancellation tracking and CAP-L1's narrowed guard.",
+      "revision": 1,
+      "subject": "INV-F1J9BH"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "content": "sha256:7e882a8cb7ce70657940d3724027df8a5092cb1c1d15d6ed40d0167816d03247",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-APV7WA"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-QRYMBT",
+      "items": [
+        "sha256:48b2125ea0ccf7f3d3ddefd0422766b45c62ca3a3c1c770a9c6134c64dc4e5ee"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-MQ3K06"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+            "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+            "content": "sha256:ec2c59d9717d9c1a8ee7ebc5791216fa8a7706d4c2beae58379e5c3aed63a27f",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-NEMYKT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-R36Z7C",
+      "items": [
+        "sha256:e0cd94badc11561f5689be5e981d1012ac31718a808ac5e2c60e857e28217662"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-WAY665"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R4W26B",
+      "items": [
+        "sha256:6d415e76f5ef530c10c6c5d877987174cb48703add72f7866f7ba4b636d2c90a"
+      ],
+      "reason": "The models overview names role_tool_scope.py as the owner of the canonical per-role allowlist.",
+      "sources": [
+        {
+          "blob": "3a4a614c214f80c798bd135d20f846d9000ee211",
+          "path": "mcp/src/agents_remember/models/tools/role_tool_scope.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "replace",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 4
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 2
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 4
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-R64WDW",
+      "items": [
+        "sha256:9b75ed60c5b5bad5173fb7eae117d6aea801a3956c5297b98ee78e2911234b83"
+      ],
+      "reason": "The guarantee's Codex grant clause now names the ordered allowlist of the seat's role instead of the full public roster, following INV-N9D91D; the other members and the routes are unchanged.",
+      "revision": 6,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RHE0X9",
+      "items": [
+        "sha256:99ebf59384021c83ee6458aa4a9c8c827a731b159b2dbab0759a41ffbc942b70",
+        "sha256:c30220296c06f13057079021681656d608dfa63a71ec6e0f513b424dccda7f11"
+      ],
+      "reason": "The role-grant case now names the role allowlist expected for Codex.",
+      "sources": [
+        {
+          "blob": "5117015e5b0b1b276b1b86ea559bb8fe93f79bcf",
+          "path": "mcp/tests/test_paseo_catalog_r71.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_catalog_r71.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+            "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+            "content": "sha256:ec2c59d9717d9c1a8ee7ebc5791216fa8a7706d4c2beae58379e5c3aed63a27f",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-K30NGN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-RRF5ET",
+      "items": [
+        "sha256:6a14ed9507e3d1ad5c05916e00ccb621dcf8a7b9102134eb4ea27597aee96865"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 2,
+      "subject": "INV-YT1AD8"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-RSF663",
+      "items": [
+        "sha256:e4dce038944465347bb53c0c4e5d476bf365c9b1a7e405d1e36376735ff1ec14"
+      ],
+      "reason": "Re-read SECURITY.md against the merged code (main b28b99ce0 with the CAP-L1 change): On the merged code the security policy's account of the local stdio tool server, autoStart-only dashboard start, private values in files and server_info reporting the version still holds; L27's cancellation rows add no listener and CAP-L1's narrowing keeps server_info on every role and on a malformed binding.",
+      "revision": 8,
+      "subject": "DPD-8PE0G9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3f168e2655efbeca9dccb5813e4bf6f3a88c8c11",
+            "content": "sha256:26bb611ca7ffab6c2bc2e5a498b7f7c2c07afbeed451057b87d0b267326f310d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
+            },
+            "path": "mcp/tests/test_paseo_launch_roles.py"
+          },
+          "before": {
+            "blob": "b70f6e4e2cce30153b1cd5d796ffba9ad2f293a8",
+            "content": "sha256:a1a3c738bbd631de7ef74808256190cf14edbc5fea3fc65d2172fe2febd444aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
+            },
+            "path": "mcp/tests/test_paseo_launch_roles.py"
+          },
+          "id": "PRF-TZXFK2"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-SR03NJ",
+      "items": [
+        "sha256:41bf5d22ce98d05bb6f158ff36dd8dc28d0d87f71ea39fdd42fb236309776ccb"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-FMB2AG"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-C9SY1X",
+          "revision": 1
+        },
+        {
+          "id": "INV-EMEW6K",
+          "revision": 1
+        },
+        {
+          "id": "INV-GKNF5W",
+          "revision": 1
+        },
+        {
+          "id": "INV-HFREW1",
+          "revision": 1
+        },
+        {
+          "id": "INV-P8F6BT",
+          "revision": 1
+        },
+        {
+          "id": "INV-XJJ3NX",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZKEF8F",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZKV9B3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-T0MPQK",
+      "items": [
+        "sha256:46442828846eda2a2a3806d3f662f91f5dc5d0c8ed254eb3f02089b1dd59e033"
+      ],
+      "reason": "Every member was examined at its current revision; the role-scoped tool surface leaves the joint guarantee and the routes unchanged.",
+      "revision": 1,
+      "subject": "FAM-QDEPNF"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "content": "sha256:7e882a8cb7ce70657940d3724027df8a5092cb1c1d15d6ed40d0167816d03247",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "d60b43130c3fb6a275d8b5b36c5c22be2a394cbb",
+            "content": "sha256:8ed97cba6c7933aded1ba950ce99b8c6e4c0a243e517897b1e59673d58581719",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-76VDXB"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-TWQRNX",
+      "items": [
+        "sha256:4eb86f297bf55084716e5a56d7ce8ca4ac2c5b72c5679c3c46ced56093c1505d"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-HJ5A68"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0fc638828611b97d33b29b06297cc62431902dc2",
+            "content": "sha256:dc8d3435354a13b5726e7fce39e7cd546d827ec13f8820633739f55fdf4a8749",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "ed433f1461603a846547ab141a794294a4c4054a",
+            "content": "sha256:4a94897e5b7086e4c2830466bfa8e369b1ab4f22de2f1df6e407866cf57bda8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-CCXPRM"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-VDXCCR",
+      "items": [
+        "sha256:ba87b9d416df2c2c9994182b0b7dbae8f7257054ab463e73280ccad8d99f7e41"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 2,
+      "subject": "INV-AFTG56"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-W6ASB5",
+      "items": [
+        "sha256:eb0fc89816b215eb1df1658407bf3092b7b41d3bbb11bc513cb1bdc05430de78"
+      ],
+      "reason": "Re-bound at the merged code (main b28b99ce0 with the CAP-L1 change): the card describes the role narrowing step of create_server, the malformed-binding server_info surface and the guard limited to retained explainer tools; the narrowing reference is renumbered [20] beside main's [16]-[19].",
+      "sources": [
+        {
+          "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+          "path": "mcp/src/agents_remember/mcp/server.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/server.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:925f22aaec219d7cc891620d30da65a2a438c565a3d5007c733106e8f2644582",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+            "content": "sha256:f5c0202c793f9efcc41f3a8831cabacdb7b95b7899129dc6611afa8bf14ac104",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP._execute_tool_call"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-VWKSMD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-X46ZPG",
+      "items": [
+        "sha256:06acc5f992e6216239c6a9ade77703337c4aca00f93020e7614ff4e5820e4a60"
+      ],
+      "reason": "Re-anchored at the merged code (main b28b99ce0 with the CAP-L1 change): _execute_tool_call still checks installed stale currentness and returns the structured refusal before dispatch; L27's cancellation tracking and CAP-L1's narrowed explainer guard changed the method around that check.",
+      "revision": 1,
+      "subject": "INV-9SKGX1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "382eeb25cf59674f7f5b68cd94fbd8a39b9ee0e1",
+            "content": "sha256:2b080e39c74a7f0c47fe23a6e50470b88ee7fc4af3583b45bb37e9e8a9874433",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "2ecce6228d45fcc9dee1eb05aad3aab8da869859",
+            "content": "sha256:95013772aa42bbc5d9513868beb5ed49cee18a560d98e7a02611fbbdbcad4b14",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "345ed4665ce228a5d509b235fce203c4473c24a3",
+            "content": "sha256:ad0fa111c7a3a366d769673cfe6a7a0c57ddf8eab2e91e8a798f5b78130d2d4b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "bf1ff630aa584ae1f28c8de20e28e954f7961c55",
+            "content": "sha256:c33c3f256f46b2fd53e0a6e82a4a5d3f714619e18c99d57cca1aab4e06e698fd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-X6Y7P3",
+      "items": [
+        "sha256:2d7edb3d3a2eee999c34b6f9d73f0953e2d615ff02d6cf6ffe17783991ec784d"
+      ],
+      "reason": "Re-anchored at the merged code (main b28b99ce0 with the CAP-L1 change): both catalogs still register test_outside_scratch_root.py and test_worktree_start_preview.py.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-40JW44",
+          "revision": 1
+        },
+        {
+          "id": "INV-7KDG7C",
+          "revision": 1
+        },
+        {
+          "id": "INV-MQ3K06",
+          "revision": 1
+        },
+        {
+          "id": "INV-WR3J18",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZA67WW",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-XD357X",
+      "items": [
+        "sha256:927d279d8906327c1d2092ebcbee13eb42fb9b6e0f1c5df1e46cec3b4aec5133"
+      ],
+      "reason": "Every member was examined at its current revision; the role-scoped tool surface leaves the joint guarantee and the routes unchanged.",
+      "revision": 3,
+      "subject": "FAM-N36SWD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+            "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "489debdcee964f58b33d011a6a00c1cbbd7ab5f6",
+            "content": "sha256:ec2c59d9717d9c1a8ee7ebc5791216fa8a7706d4c2beae58379e5c3aed63a27f",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-RKBZZC"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YF8XQT",
+      "items": [
+        "sha256:2b751d60b1641d4d705b007cc7f0c808716779ab5cb60ad3881b2d6e1c4ccf37"
+      ],
+      "reason": "The meaning is unchanged by the role-scoped tool surface; the covered entries are re-anchored at the candidate, where their content moved or changed around them.",
+      "revision": 1,
+      "subject": "INV-A8E0YE"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Z93ZY3",
+      "items": [],
+      "reason": "Re-read docs/reference/skills.md against code tree b29f2e2: The skills reference's account of l-01-agent-lifecycles (eight role files, operations, templates, criteria, one role file and operation per role agent) still holds on b29f2e2; it states no per-role tool list, so the renewed manifest arrays leave it true.",
+      "revision": 4,
+      "subject": "DPD-ZQB4YZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZCT389",
+      "items": [
+        "sha256:fc7e8c10b04a07f7dc343dcb5afcba8ad139b038c7393dc68ad151ac780bf6d1"
+      ],
+      "reason": "Re-bound at the merged code (main b28b99ce0 with the CAP-L1 change): the seat-policy paragraph says a Codex role seat is granted its role's ordered allowlist, the explainer-surface reference [405] names the narrowing beside main's guard targets, and the references are re-anchored.",
+      "sources": [
+        {
+          "blob": "0fc638828611b97d33b29b06297cc62431902dc2",
+          "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+        },
+        {
+          "blob": "4191e74318f5f34c0412b1564038c8484c35b816",
+          "path": "mcp/src/agents_remember/cli/paseo_seat_policy.py"
+        },
+        {
+          "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+          "path": "mcp/src/agents_remember/mcp/server.py"
+        },
+        {
+          "blob": "d513aa962182a621f4e7111b4d7f350891976ba9",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8WCSQ7",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VQQ7W",
+          "revision": 1
+        },
+        {
+          "id": "INV-AJKQV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-F1TY2E",
+          "revision": 1
+        },
+        {
+          "id": "INV-FEB6Y6",
+          "revision": 1
+        },
+        {
+          "id": "INV-GM5MS3",
+          "revision": 1
+        },
+        {
+          "id": "INV-K43DJZ",
+          "revision": 2
+        },
+        {
+          "id": "INV-PRP52X",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPXD65",
+          "revision": 1
+        },
+        {
+          "id": "INV-W41C85",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-ZXX491",
+      "items": [
+        "sha256:99ed69d11c80bd194b92276ee4ce29f9b735d997f3fcfa79d80cd62ac2d2edfa"
+      ],
+      "reason": "Every member was examined at its current revision; the role-scoped tool surface leaves the joint guarantee and the routes unchanged.",
+      "revision": 2,
+      "subject": "FAM-VNK792"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

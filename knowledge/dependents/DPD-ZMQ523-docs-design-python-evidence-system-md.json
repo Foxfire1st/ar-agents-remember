@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "51bf0a91489d97231a1e1173b67d2087c170b08f",
-    "commit": "ff626cd445012fee408b4b6c292756bbe1438d2e",
+    "codeTree": "cf41b9ab8a855953186f782960fd37a57225b56f",
+    "commit": "1d62157b755f5ab6b60ac89010b6a03160519352",
     "role": "curator",
-    "statement": "The evidence-system guide accurately describes lane and lifecycle authority, including canonical ordering and source-derived consumers, on the merged catalogs. The evidence-system guide's lane and lifecycle-catalog rules still hold: the two new test files each sit in one lane and appear as consumers in the catalog. The evidence-system guide's lane and shared-support rules match the settled catalogs, which assign each of the five crossing-related tests to one lane and name each in existing lifecycle consumer entries.",
+    "statement": "On the merged code the evidence-system guide's lane and lifecycle rules still hold: L27's two integration modules and CAP-L1's unit-regression module each sit in one lane of the 804 and appear as declared lifecycle consumers. The evidence-system guide's lane and shared-support rules match the settled catalogs, which assign each of the five crossing-related tests to one lane and name each in existing lifecycle consumer entries.",
     "task": "261112-BUG-L26",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "docs/design/python-evidence-system.md",
   "id": "DPD-ZMQ523",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "e6aa1452b7816dbfafa14d559b014d62af9a0df3",
+      "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "722993b9bdb8d784090d510d61b97fb0eeb4135c",
+      "blob": "727966894e1eff97fab8bb6bf26931dc0d1fd092",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },

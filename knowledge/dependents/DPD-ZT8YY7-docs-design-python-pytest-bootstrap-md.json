@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "51bf0a91489d97231a1e1173b67d2087c170b08f",
-    "commit": "ff626cd445012fee408b4b6c292756bbe1438d2e",
+    "codeTree": "cf41b9ab8a855953186f782960fd37a57225b56f",
+    "commit": "1d62157b755f5ab6b60ac89010b6a03160519352",
     "role": "curator",
-    "statement": "The pytest policy accurately describes integration and stress lane selection and the bounded-memory stdio case’s uninstrumented child coverage boundary. The bootstrap guide still correctly says that the integration and stress-durability lanes make up the integration tests, and the native stdio bounded-memory case is still the only stress-durability file. The bootstrap guide says the bounded-memory stdio test's warm-index child and measured server run without child coverage, and the lane manifest keeps that test in stress-durability and the dependent-writer test in integration.",
+    "statement": "On the merged code the pytest bootstrap guide still holds: integration and stress-durability make up the integration tests (now 119 integration modules with L27's two), and CAP-L1's unit-regression module changes no selection rule. The bootstrap guide says the bounded-memory stdio test's warm-index child and measured server run without child coverage, and the lane manifest keeps that test in stress-durability and the dependent-writer test in integration.",
     "task": "261112-BUG-L26",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "docs/design/python-pytest-bootstrap.md",
   "id": "DPD-ZT8YY7",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "e6aa1452b7816dbfafa14d559b014d62af9a0df3",
+      "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -106,12 +106,26 @@
     },
     {
       "anchor": {
-        "blob": "e6aa1452b7816dbfafa14d559b014d62af9a0df3",
+        "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
+        "content": "sha256:04f035a94539c339229547bc5abfb353cc00b7723d8419ed60d2857df37925ae",
+        "locator": {
+          "end": 823,
+          "kind": "line_range",
+          "start": 820
+        },
+        "path": "mcp/tests/test-evidence-lanes.toml"
+      },
+      "heading": "Stress-durability case selection",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "d8b5fbb6c2e813798d9e4505d50342f95af887f6",
         "content": "sha256:bcc4ade20e19642e956536d6662d0c20a8343feed9984bdf943fe982348cd7d1",
         "locator": {
-          "end": 825,
+          "end": 826,
           "kind": "line_range",
-          "start": 822
+          "start": 823
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
