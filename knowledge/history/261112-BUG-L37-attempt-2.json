@@ -1,6 +1,6 @@
 {
   "attempt": 2,
-  "closed": false,
+  "closed": true,
   "leaf": "261112-BUG-L37",
   "rows": [
     {
@@ -37,6 +37,45 @@
       "subject": "DPD-B540GW"
     },
     {
+      "disposition": "no_impact",
+      "id": "ROW-86Y0YC",
+      "items": [
+        "sha256:f03f62e707b0921bda27e28130981cd728498259c5c90893c13dc2009d1ec67c"
+      ],
+      "reason": "The merged 764f146c sources still match the suite overview's account; no statement or reference changed.",
+      "sources": [
+        {
+          "blob": "ac6abaf94fbc1b38d2d243883737a007bceebd64",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "1d507fdc65ccae97964aff0845b248628c937775",
+          "path": "mcp/tests/test_held_delivery_tick_cost.py"
+        },
+        {
+          "blob": "2183eb643d529969a2fe786cd22a8f3710afc2a9",
+          "path": "mcp/tests/test_paseo_usage_reports.py"
+        },
+        {
+          "blob": "21c0c7f05e235f165b00aa33dcccb82f2bee57d5",
+          "path": "mcp/tests/test_provider_limit_hold.py"
+        },
+        {
+          "blob": "16d4a1133648d32cee39318ad939a25f1b00f180",
+          "path": "mcp/tests/test_provider_limit_layering.py"
+        },
+        {
+          "blob": "d049615ffc7af3252c708e17a3ee39e38583ef77",
+          "path": "mcp/tests/test_provider_limit_storage.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
       "disposition": "changed",
       "effect": "merge",
       "id": "ROW-B9BS7F",
@@ -46,6 +85,338 @@
       "reason": "Resolved the KNO-L4/L37 crossing conflict: the merged confirmation covers both leaves' facts and every stands_on link is re-anchored at merged code e51f75630.",
       "revision": 16,
       "subject": "DPD-Q4APMS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:46f75f27dec8fe1e77dd16ea211046bb9b62e75a49d0d9828953f71a17782c7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliverSeatWake"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:46f75f27dec8fe1e77dd16ea211046bb9b62e75a49d0d9828953f71a17782c7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliverSeatWake"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-0DRPF9"
+        },
+        {
+          "after": {
+            "blob": "099b1c7377936f9de6e000d4170f8127c4444258",
+            "content": "sha256:05a4d19b129290a19fa5447d3e70b29cba084690b816e892186a23d89427bc72",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "099b1c7377936f9de6e000d4170f8127c4444258",
+            "content": "sha256:05a4d19b129290a19fa5447d3e70b29cba084690b816e892186a23d89427bc72",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-1HAN2T"
+        },
+        {
+          "after": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:ea4ee6a5deb59fabe2891dba85d6e451e883faac544880e999873127c050d949",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnStarted"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:ea4ee6a5deb59fabe2891dba85d6e451e883faac544880e999873127c050d949",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnStarted"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-1V0Y9T"
+        },
+        {
+          "after": {
+            "blob": "099b1c7377936f9de6e000d4170f8127c4444258",
+            "content": "sha256:5d84bc8c98f333afbe2951168f2924a2d0614ce5e3b389313b2cc3f0e1729c2b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "099b1c7377936f9de6e000d4170f8127c4444258",
+            "content": "sha256:5d84bc8c98f333afbe2951168f2924a2d0614ce5e3b389313b2cc3f0e1729c2b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-55H239"
+        },
+        {
+          "after": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:d8d6bb954a53bc0bd3b1c5bb837d7297341c14e8481d23b55d8a0d6c0fa97454",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:d8d6bb954a53bc0bd3b1c5bb837d7297341c14e8481d23b55d8a0d6c0fa97454",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-78JFRR"
+        },
+        {
+          "after": {
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
+            "content": "sha256:5f30f5ae211ed23d01c49489e7067183d112b572e426d623ee1d2af26ff28c5b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
+            "content": "sha256:75ed2e35f46d9a5e9f5347bfaef816ac8db8824354465b895366ce51d93fe399",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
+            "content": "sha256:049289c5ff4c64a83c89bd9f6b86ec449cbf8f975022160d476cece37d01ce71",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
+            "content": "sha256:049289c5ff4c64a83c89bd9f6b86ec449cbf8f975022160d476cece37d01ce71",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "RLZ-CTTYCZ"
+        },
+        {
+          "after": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:d90b91a4d9d768ce1944e54bffd416f8bcf0c7232f616d0f36ff2c09a8ca8418",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteAgentArchived"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:d90b91a4d9d768ce1944e54bffd416f8bcf0c7232f616d0f36ff2c09a8ca8418",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteAgentArchived"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-D5653M"
+        },
+        {
+          "after": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:f398551e0b60aa224a1d5ba84482bc93af74e39c65a541bf971f2a6db206062c",
+            "locator": {
+              "kind": "symbol",
+              "name": "parentMayTakeLineNow"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:f398551e0b60aa224a1d5ba84482bc93af74e39c65a541bf971f2a6db206062c",
+            "locator": {
+              "kind": "symbol",
+              "name": "parentMayTakeLineNow"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-DKJY6H"
+        },
+        {
+          "after": {
+            "blob": "21c0c7f05e235f165b00aa33dcccb82f2bee57d5",
+            "content": "sha256:2a5b2b81c64fdac912ba671ff7194dd42dde9214eeb4c008d6cf7880881b857c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_provider_limit_hold.py"
+          },
+          "before": {
+            "blob": "21c0c7f05e235f165b00aa33dcccb82f2bee57d5",
+            "content": "sha256:2a5b2b81c64fdac912ba671ff7194dd42dde9214eeb4c008d6cf7880881b857c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_provider_limit_hold.py"
+          },
+          "id": "RLZ-G2ZAMP"
+        },
+        {
+          "after": {
+            "blob": "ac6abaf94fbc1b38d2d243883737a007bceebd64",
+            "content": "sha256:9afc47e406751a88e6e28605f88126962fa34010cdda963e48200aa96188f73d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
+            "content": "sha256:a5588ad7d8f1bfea57b39e5a7be94110d0a0cd13030f12a82dd340b249681da8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        },
+        {
+          "after": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:42a6a98ce2c964b993d736e5d0c9f0d0aeeadc940b35b9ffd7739ed014289e68",
+            "locator": {
+              "kind": "symbol",
+              "name": "createTurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:42a6a98ce2c964b993d736e5d0c9f0d0aeeadc940b35b9ffd7739ed014289e68",
+            "locator": {
+              "kind": "symbol",
+              "name": "createTurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-H3YF9Z"
+        },
+        {
+          "after": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:0bdf8b7eb484ffe76cf076320b68b9b2285092386d40daf72ad782e3a1725ebf",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanupSeatWaits"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:0bdf8b7eb484ffe76cf076320b68b9b2285092386d40daf72ad782e3a1725ebf",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanupSeatWaits"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-HTHGJ3"
+        },
+        {
+          "after": {
+            "blob": "20e391fe7fafb5ad842653dae85019c01bc1fc83",
+            "content": "sha256:7f76f13a9ea0605b42b054067afb4feb337298cb3b92c67a2fb63826cd840347",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/provider_limit_hold.py"
+          },
+          "before": {
+            "blob": "20e391fe7fafb5ad842653dae85019c01bc1fc83",
+            "content": "sha256:7f76f13a9ea0605b42b054067afb4feb337298cb3b92c67a2fb63826cd840347",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/provider_limit_hold.py"
+          },
+          "id": "RLZ-N27ZQQ"
+        },
+        {
+          "after": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:9978a2f2e314754edb4bbdfd1510c5551daeede393fdc6d629e897155d394885",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:9978a2f2e314754edb4bbdfd1510c5551daeede393fdc6d629e897155d394885",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-RDK1XC"
+        },
+        {
+          "after": {
+            "blob": "1d507fdc65ccae97964aff0845b248628c937775",
+            "content": "sha256:09aae2d468748ed65b33db63dc6058acf3de8389b84ade0e743e36ba0f4f22ba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_held_delivery_tick_cost.py"
+          },
+          "before": {
+            "blob": "1d507fdc65ccae97964aff0845b248628c937775",
+            "content": "sha256:09aae2d468748ed65b33db63dc6058acf3de8389b84ade0e743e36ba0f4f22ba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_held_delivery_tick_cost.py"
+          },
+          "id": "RLZ-SQ7ZGB"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-BMBV2M",
+      "items": [
+        "sha256:68ea22ec6051c645f6aca35463103e37523ef1b0941947c46ae4663b38a6c332"
+      ],
+      "reason": "The merged evidence and lane catalogs register the same consumer tests at new blobs; the early-clear, silent-end and held-line rules are unchanged, and every realization of the invariant remains current at 764f146c.",
+      "revision": 7,
+      "subject": "INV-1ZKP4R"
     },
     {
       "disposition": "changed",
@@ -60,6 +431,21 @@
       "subject": "DPD-X6G7K3"
     },
     {
+      "disposition": "updated",
+      "id": "ROW-EQVRAP",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Post-merge re-anchored the catalog's realization entry to the merged 764f146c blob after the KNO-L4 catalog changes; the card statements are unchanged.",
+      "sources": [
+        {
+          "blob": "ac6abaf94fbc1b38d2d243883737a007bceebd64",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
       "disposition": "changed",
       "effect": "merge",
       "id": "ROW-FK8YD5",
@@ -69,6 +455,121 @@
       "reason": "Resolved the KNO-L4/L37 crossing conflict: the merged confirmation covers both leaves' facts and every stands_on link is re-anchored at merged code e51f75630.",
       "revision": 16,
       "subject": "DPD-ZT8YY7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
+            "content": "sha256:5f30f5ae211ed23d01c49489e7067183d112b572e426d623ee1d2af26ff28c5b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
+            "content": "sha256:75ed2e35f46d9a5e9f5347bfaef816ac8db8824354465b895366ce51d93fe399",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "ac6abaf94fbc1b38d2d243883737a007bceebd64",
+            "content": "sha256:9afc47e406751a88e6e28605f88126962fa34010cdda963e48200aa96188f73d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
+            "content": "sha256:a5588ad7d8f1bfea57b39e5a7be94110d0a0cd13030f12a82dd340b249681da8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GTCH3H",
+      "items": [
+        "sha256:77b8fc26cd35a96e5ae47f13a6c2a6e8e879269bbc35263835a4aa2509bd8f44"
+      ],
+      "reason": "The merged catalogs list the same enclosure-generation tests at new blobs; the scratch-root rule is unchanged.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HFZ2YM",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Post-merge re-anchored the lane catalog's realization entry to the merged 764f146c blob; the lane statements are unchanged.",
+      "sources": [
+        {
+          "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ac6abaf94fbc1b38d2d243883737a007bceebd64",
+            "content": "sha256:9afc47e406751a88e6e28605f88126962fa34010cdda963e48200aa96188f73d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
+            "content": "sha256:a5588ad7d8f1bfea57b39e5a7be94110d0a0cd13030f12a82dd340b249681da8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
+            "content": "sha256:5f30f5ae211ed23d01c49489e7067183d112b572e426d623ee1d2af26ff28c5b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
+            "content": "sha256:75ed2e35f46d9a5e9f5347bfaef816ac8db8824354465b895366ce51d93fe399",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-MVMSF9",
+      "items": [
+        "sha256:2d4629cf1c4b979d94680445b0514a0f786f9bb1f9129efcb586e58a8d245784"
+      ],
+      "reason": "The merged evidence and lane catalogs declare the same artifact consumers at new blobs; the identity and deletion rules are unchanged.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
     },
     {
       "disposition": "changed",
@@ -81,6 +582,37 @@
       "reason": "Resolved the KNO-L4/L37 crossing conflict: the merged confirmation covers both leaves' facts and every stands_on link is re-anchored at merged code e51f75630.",
       "revision": 6,
       "subject": "DPD-327MNX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
+            "content": "sha256:5f30f5ae211ed23d01c49489e7067183d112b572e426d623ee1d2af26ff28c5b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
+            "content": "sha256:75ed2e35f46d9a5e9f5347bfaef816ac8db8824354465b895366ce51d93fe399",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-R4XJGN",
+      "items": [
+        "sha256:62a375145685358988029331ddb08a46c4b8db7b7367bc5960c9045da63ff29f"
+      ],
+      "reason": "The merged lane catalog lists only existing test modules at a new blob; the rule is unchanged.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
     },
     {
       "disposition": "changed",
