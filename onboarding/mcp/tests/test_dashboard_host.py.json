@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e92399cd242a8924adfdaf5605b63bdb171931a0",
+        "blob": "6d75fd069ddf4ba8c07f548d848a240924405fc8",
         "content": "sha256:23a9af3a896fdf1b909b96722a7984b9d94d71d165c74c9608a49a623f17190b",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "e92399cd242a8924adfdaf5605b63bdb171931a0",
+        "blob": "6d75fd069ddf4ba8c07f548d848a240924405fc8",
         "content": "sha256:c161d8fc1a2b35d8e4fd200afa55f22684d34ff8f2901d64a2fad5e6cc075068",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "e92399cd242a8924adfdaf5605b63bdb171931a0",
+        "blob": "6d75fd069ddf4ba8c07f548d848a240924405fc8",
         "content": "sha256:c754b364b3024ac8b1e9c142faed44c3c209f887fadeaf625da8d6ef558bc793",
         "locator": {
           "kind": "symbol",
@@ -51,6 +51,40 @@
         "handoffEntry": "RP07",
         "leaf": "260928-MIK-L89"
       }
+    },
+    {
+      "anchor": {
+        "blob": "6d75fd069ddf4ba8c07f548d848a240924405fc8",
+        "content": "sha256:021ef935663f3176f4131eaa50f05459332d2f92577fe558c41bdef02b3daaaf",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_both_serve_paths_hand_uvicorn_the_package_log_config"
+        }
+      },
+      "facet": "Both foreground and reload dashboard serve paths pass dashboard_log_config() and access_log=not no_access_log to uvicorn.run across both values of no_access_log.",
+      "id": "PRF-9ZZ32A",
+      "invariant": "INV-EKG8M4",
+      "origin": {
+        "handoffEntry": "BUG-R36@v1 Required Behavior 1–5",
+        "leaf": "261112-BUG-L36"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6d75fd069ddf4ba8c07f548d848a240924405fc8",
+        "content": "sha256:547802fc7dff0499692e6eba5b71bb941ecc2e96b8c16b4a64d39973a5223c4b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_package_log_config_prints_the_packages_info_lines_once"
+        }
+      },
+      "facet": "Applying a pickle round-tripped dashboard_log_config() in a piped child interpreter under TZ=UTC+05 emits UTC ISO-8601 seconds prefixes on package stderr, uvicorn.error stderr, and uvicorn.access stdout lines, prints package INFO once while dropping package DEBUG and foreign INFO, and leaves logging.Formatter.converter unchanged.",
+      "id": "PRF-HTTMY1",
+      "invariant": "INV-EKG8M4",
+      "origin": {
+        "handoffEntry": "BUG-R36@v1 Required Behavior 1–5",
+        "leaf": "261112-BUG-L36"
+      }
     }
   ],
   "realizes": [],
@@ -60,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e92399cd242a8924adfdaf5605b63bdb171931a0",
+            "blob": "6d75fd069ddf4ba8c07f548d848a240924405fc8",
             "content": "sha256:c161d8fc1a2b35d8e4fd200afa55f22684d34ff8f2901d64a2fad5e6cc075068",
             "locator": {
               "kind": "symbol",
@@ -76,12 +110,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e92399cd242a8924adfdaf5605b63bdb171931a0",
+            "blob": "6d75fd069ddf4ba8c07f548d848a240924405fc8",
             "content": "sha256:7c3834d757bb86f2430d54e844f24741e1369ca276ccae78151f58d514d62914",
             "locator": {
-              "end": 191,
+              "end": 192,
               "kind": "line_range",
-              "start": 137
+              "start": 138
             }
           },
           "kind": "test"
@@ -93,12 +127,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e92399cd242a8924adfdaf5605b63bdb171931a0",
+            "blob": "6d75fd069ddf4ba8c07f548d848a240924405fc8",
             "content": "sha256:7ee563ba1401fff8a3733740392022cd7ccaf3857875dded217b1e5226200dda",
             "locator": {
-              "end": 231,
+              "end": 232,
               "kind": "line_range",
-              "start": 194
+              "start": 195
             }
           },
           "kind": "test"
@@ -110,11 +144,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e92399cd242a8924adfdaf5605b63bdb171931a0",
+            "blob": "6d75fd069ddf4ba8c07f548d848a240924405fc8",
             "content": "sha256:1ae2242351f774ef20f0253b3f155f2a4293adbe4cc3e91b1aac363c395a0817",
             "locator": {
               "kind": "symbol",
               "name": "test_supervised_child_does_not_start_host_again"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Both serve paths pass `dashboard_log_config()` and `access_log` to Uvicorn, and a piped child interpreter under `TZ=UTC+05` verifies pickleability, UTC ISO-8601 output across package, `uvicorn.error`, and `uvicorn.access` loggers, and unchanged `logging.Formatter.converter`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d75fd069ddf4ba8c07f548d848a240924405fc8",
+            "content": "sha256:021ef935663f3176f4131eaa50f05459332d2f92577fe558c41bdef02b3daaaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_both_serve_paths_hand_uvicorn_the_package_log_config"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6d75fd069ddf4ba8c07f548d848a240924405fc8",
+            "content": "sha256:547802fc7dff0499692e6eba5b71bb941ecc2e96b8c16b4a64d39973a5223c4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_package_log_config_prints_the_packages_info_lines_once"
             }
           },
           "kind": "test"

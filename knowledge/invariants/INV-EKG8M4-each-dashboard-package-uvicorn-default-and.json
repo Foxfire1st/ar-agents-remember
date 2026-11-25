@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Without formatter-scoped UTC ISO-8601 timestamps and dotted pickleable formatter classes, dashboard.log lines cannot be correlated with UTC tool and event logs, non-UTC host timezones shift log ordering, mutating global logging.Formatter.converter leaks across the process, and uvicorn --reload fails to pickle the log configuration; two tests in mcp/tests/test_dashboard_host.py prove emitted UTC output, pickleability, unchanged global converter, and serve-path wiring."
+  },
+  "applicability": "Every log record formatted by dashboard_log_config() for the agents_remember package logger and Uvicorn default and access loggers across foreground, daemon-child, and reload dashboard serving.",
+  "conditions": [
+    "dashboard_log_config() returns a deep-copied dictConfig dictionary referencing dotted import paths for _UtcDefaultFormatter and _UtcAccessFormatter with datefmt '%Y-%m-%dT%H:%M:%SZ' and '%(asctime)s ' prefixed to the package, default, and access format strings.",
+    "Each UTC formatter subclass binds converter = staticmethod(time.gmtime) on the subclass so process-global logging.Formatter.converter is never mutated.",
+    "The agents_remember logger remains at INFO with propagate False on an uncolored stderr StreamHandler, and --no-access-log continues to control Uvicorn access logging without enabling daemon access logs."
+  ],
+  "exclusions": [
+    "Pre-uvicorn load_config warnings, raw print output, multiline traceback continuation lines, and JSONL tool or event logs.",
+    "Callers that stub uvicorn.run without applying the returned dictConfig."
+  ],
+  "id": "INV-EKG8M4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/36_dashboard-log-lines-carry-utc-timesta-a9eb84692d-ar/role-reports/worker/b9fa624f-c90c-483d-8907-149f0c4a1d3e/role-launch/261112-BUG-L36-worker-b9fa624f-c90c-483d-8907-149f0c4a1d3e.md#checks"
+      ],
+      "path": "l36-curator-handoff.json"
+    },
+    "handoffEntry": "BUG-R36@v1 Required Behavior 1–5",
+    "leaf": "261112-BUG-L36",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Each dashboard package, Uvicorn default and Uvicorn access record starts with its UTC ISO-8601 timestamp, with formatter conversion scoped to these handlers and the configuration kept pickleable for reload workers.",
+  "status": "proposed",
+  "supersedes": []
+}
