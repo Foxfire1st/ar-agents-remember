@@ -12,7 +12,7 @@
     "The route has established that its memory input lacks knowledge/layout.json; missing, unreadable and corrupt inputs retain their own errors."
   ],
   "exclusions": [
-    "read_ar_files retains legacy cards marked legacy-format with no knowledge section, and the conversion command remains supported.",
+    "read_ar_files reports unconverted memory without naming a card. The conversion command remains supported.",
     "An already-current or skip-memory sync moves no memory side; an in-flight sync can continue or cancel.",
     "A legacy target may adopt a converted source by fast-forward; mixed merges retain the crossing sync and all-converted sides retain their normal route.",
     "A converted target cannot fast-forward from a legacy source; marker presence alone is not validator acceptance.",
@@ -30,7 +30,7 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "Every ordinary check, write, managed memory sync, closeout or landing with legacy memory input refuses with the central legacy-format conversion message whether or not converted memory exists elsewhere; named probe failures are never classified as legacy, and converted or converting candidates retain their validator and gate.",
   "status": "proposed",

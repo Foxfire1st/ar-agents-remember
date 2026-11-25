@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/application/memory_checkout_state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The dirtiness observation reads the selected checkout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d1f4115c1a8db4c107590ebcb885029dc3a8c9c",
+            "content": "sha256:973139e4838afcef140d6f4c10deafc30e1e378da74b2b7efd5bf04f3f553798",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_checkout_dirty"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The commit observation names the selected memory checkout's HEAD when it can be resolved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d1f4115c1a8db4c107590ebcb885029dc3a8c9c",
+            "content": "sha256:34f369ec3473c5434eb239a3fde71a1e326ba80bdd4c52d3810f78cd2120a521",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_checkout_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

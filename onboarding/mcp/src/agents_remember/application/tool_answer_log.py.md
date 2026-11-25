@@ -13,7 +13,7 @@ The daily tool-call log (MIK-R108 rule 3): one line per admitted call plus the w
 ### Logic
 
 - Destinations: `resolve_log_roots` routes enclosure-bound role calls to `<enclosure>/logs/` and every other call (controllers, chat, CLI, pre-enclosure agents) to the resolved transcript root; terminating operations (cleanup, abandon, finalize) always route to the root and never recreate a removed enclosure folder. `ensure_enclosure_logs_dir` makes the enclosure folder at enclosure creation.
-- Lines and details: `append_call_line` appends one whole UTC-day JSONL line (time, tool, caller, outcome, duration, answer tokens, bytes, guard-cut flag, detail name, arguments with long values shortened) with an exclusion-guarded byte append that counts short writes on the next persisted line; `record_tool_call` files the whole result as an indented detail JSON beside the log. A failed write never fails the call: the answer carries `logError` instead.
+- Lines and details: `append_call_line` appends one whole UTC-day JSONL line (time, tool, caller, outcome, duration, answer tokens, bytes, the whole result digest, guard-cut flag, detail name, arguments with long values shortened) with an exclusion-guarded byte append that counts short writes on the next persisted line; `record_tool_call` files the whole result as an indented detail JSON beside the log. A failed write never fails the call: the answer carries `logError` instead.
 - Budgets: `prune_old_tool_logs` / `_evict_older_days` keep each folder within its byte budget (256 MiB transcript root, 64 MiB per enclosure when absent — both configurable — 8 MiB per detail, fixed) against one coherent folder census with 60-second listings. Age sweeping removes whole oldest days first, at most 31 per call with continuation at the next call; pressure eviction separately removes whole oldest prior days until the write fits, and drops counted writes when only the current day is left; only confirmed reclaimed bytes leave the census. `prepare_log_folder` carries successful sweep continuation across same-day calls. Enclosure logs have no age pruning: the budget is the only pre-cleanup removal, with no marker.
 - Redaction: `_redact_value` retains credential-naming keys with `<omitted>` values at any depth. Credential-naming environment variables (KEY, TOKEN, SECRET, PASSWORD, PASSWD, CREDENTIAL, AUTH, COOKIE, any case) supply searched values from six characters on: call arguments scrub embedded matches, while detail strings use whole-value matches and the shared secret-redaction rules. Ordinary environment values, including home-folder paths, do not enter that searched set.
 - Caller identity is read from the hosted agent binding, not ambient lifecycle state. A unique canonical leaf enclosure registration supplies an eligible live log destination; missing/unreadable/ambiguous binding falls back to the transcript root. `tool_call_context` brackets one production call with its arguments, start time and config for the answer boundary; raised calls are logged at the dispatch site and re-raised.
@@ -22,7 +22,7 @@ The daily tool-call log (MIK-R108 rule 3): one line per admitted call plus the w
 ### Invariants And Boundaries
 
 - The system comes before the record: on any conflict the record is dropped, and a dropped write never fails the call.
-- An enclosure's log goes with the enclosure: cleanup and abandon remove it whole, with nothing archived, copied or left as a marker, and never a reason to wait or refuse.
+- On leaf cleanup and abandon, the terminal route keeps the leaf's own call lines in the master notes before removing the enclosure log. The kept lines omit the detail reference. An export error preserves the log for retry.
 - Several servers may write one folder; the stated census/listing margin is the admitted overshoot bound.
 
 ## Evidence
@@ -43,7 +43,7 @@ A process-local reentrant lock now encloses shared budget accounting across fold
 - The shared in-process budget state is serialized by one reentrant lock. [6]
 
 
-- Concurrent detail writes cannot both spend the same remaining folder budget. [7]
+- Concurrent detail writes cannot both spend the same remaining folder budget. Anchor: `test_concurrent_details_cannot_both_spend_the_same_log_budget` [7]
 
 
 
@@ -65,3 +65,5 @@ A process-local reentrant lock now encloses shared budget accounting across fold
 
 
 - A caller diff has its own bounded readable report, or no report when oversize or unwritable; it is independent of detail retention. [5]
+
+- Each admitted log line carries the result digest independently of where the detail is filed. [8]

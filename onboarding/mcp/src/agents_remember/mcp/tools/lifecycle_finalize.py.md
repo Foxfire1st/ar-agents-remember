@@ -39,13 +39,19 @@ No external Domain Documentation source is configured for this memory repo.
 
 
 
-- The shared payload helper is `_tool_payload`. [2]
+
+
+- The shared payload helper is `_tool_payload`. Anchor: `_tool_payload` [2]
+
+
+
 
 
 
 
 
 - The tool response boundary is complete_tool_response. [3]
+
 
 
 

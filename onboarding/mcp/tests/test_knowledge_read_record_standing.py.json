@@ -1,0 +1,74 @@
+{
+  "path": "mcp/tests/test_knowledge_read_record_standing.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d52d2d7a20f51d5aaab5bc946bf6f2f20cd10ba7",
+        "content": "sha256:b0241ffac23d020aa515616ab6f01b8b5277b886485222dc13d44154f39b99a2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_review_outline_rows_carry_the_candidate_sides_state_and_writer"
+        }
+      },
+      "facet": "The intent-review outline receives the candidate-side derived standing and writer.",
+      "id": "PRF-P57XR8",
+      "invariant": "INV-TRMMZA",
+      "origin": {
+        "handoffEntry": "L3-W1-08",
+        "leaf": "261112-KNO-L3"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The legacy record reads proposed with unknown attribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d52d2d7a20f51d5aaab5bc946bf6f2f20cd10ba7",
+            "content": "sha256:aafc61e5a470e13a68db5fec48e0cd370eed83f6498cfc0ffd8666a169634690",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_record_view_reads_an_unconverted_record_as_proposed_by_unknown"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The review outline carries the candidate side's state and writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d52d2d7a20f51d5aaab5bc946bf6f2f20cd10ba7",
+            "content": "sha256:b0241ffac23d020aa515616ab6f01b8b5277b886485222dc13d44154f39b99a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_review_outline_rows_carry_the_candidate_sides_state_and_writer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Path and list results both expose revision standing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d52d2d7a20f51d5aaab5bc946bf6f2f20cd10ba7",
+            "content": "sha256:7c1c76131b248d77f3bf4b1386495b431e910b33cb79a6fb9318e4e6070da851",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_readers_path_view_and_record_list_name_state_and_writer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

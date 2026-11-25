@@ -56,6 +56,8 @@ ever deleted to make the database look clean, and SQLite already does the right 
 
 Canonical repository/invariant/revision creation, candidate locks, immediate-transaction wrappers, batch insert primitives, label mutation, lineage write guards and their mutation refusals were retired. The earlier no-unlink correction remains a bounded resource-ownership lesson: closing a handle is not authority to delete another connection's SQLite recovery files. None of that retired writer account grants a current mutation path here.
 
+The revision read selects the current schema's `state` column. It passes the selected row to the codec, which decodes the derived state and independently verifies the authored payload seal.
+
 ## Evidence
 
 
@@ -70,7 +72,6 @@ No configured domain documentation could be checked.
 
 
 
-- The opened read store holds path, namespace, validated schema and read connection. [1]
 
 
 
@@ -78,7 +79,6 @@ No configured domain documentation could be checked.
 
 
 
-- `get_revision` reads one revision row by repository and revision id and decodes it with the stored seal verified; a text record holds no predecessor edge, so the decoded revision carries no predecessors. [3]
 
 
 
@@ -93,7 +93,6 @@ No configured domain documentation could be checked.
 
 - **The close that unlinks nothing**, and the reason the peer unlink was removed rather than made conditional. [16]
 
-- The read surface, including the seal-verifying single-revision read. [17]
 
 - **The two enumerating reads the Intent Reviewer's entry list is built on: every recorded invariant and family identity, ordered by the identity's own column, with no filter and no count — because a reader that must be handed a subject cannot enumerate a candidate it was not pointed at.** [18]
 
@@ -102,3 +101,8 @@ No configured domain documentation could be checked.
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+- The opened read store holds path, namespace, validated schema and read connection. [1]
+- The read surface, including the seal-verifying single-revision read. [17]
+
+- `get_revision` reads one revision row by repository and revision id and decodes it with the stored seal verified; a text record holds no predecessor edge, so the decoded revision carries no predecessors. [3]

@@ -124,12 +124,12 @@
       ]
     },
     "25": {
-      "note": "Supporting current owner mcp/src/agents_remember/application/review_statement_sides.py\n\nAnchor: `side_content`",
+      "note": "Supporting current owner mcp/src/agents_remember/application/review_statement_sides.py",
       "targets": [
         {
           "anchor": {
-            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
-            "content": "sha256:77b2dd0bb6c24c9d35c29ad70bec1e7b9d25270df8c4c135d518fef6673f6ecf",
+            "blob": "56666dc93a6726525e67f850eb7fbe4fdf2988f0",
+            "content": "sha256:432e5393826c8b731f0a64a0aa65899dd9818e56cd74a73ec6a6643e71eae315",
             "locator": {
               "kind": "file"
             },

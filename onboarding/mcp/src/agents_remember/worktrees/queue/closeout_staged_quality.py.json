@@ -139,12 +139,12 @@
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:e843910b5bfaed01bdf269f09215a71349d149d857ac5a3d1c6bd142cae57b4a",
             "locator": {
-              "end": 83,
+              "end": 84,
               "kind": "line_range",
-              "start": 79
+              "start": 80
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },

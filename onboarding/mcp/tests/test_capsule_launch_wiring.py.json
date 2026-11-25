@@ -87,11 +87,11 @@
       ]
     },
     "15": {
-      "note": "The lane row D9's fail-closed loader requires for every new test module. Anchor: \"mcp/tests/test_capsule_launch_wiring.py\" Anchor: \"mcp/tests/test_capsule_launch_wiring.py\"",
+      "note": "The unit-regression lane selects mcp/tests/test_capsule_launch_wiring.py.\n\nAnchor: `mcp/tests/test_capsule_launch_wiring.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
             "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
             "locator": {
               "end": 84,
@@ -169,11 +169,11 @@
       ]
     },
     "21": {
-      "note": "The three governed-artifact rows registering this module as a consumer, beginning with the _user_settings_guard.py row. The `curator_coherence_test_support.py` row registers `test_capsule_launch_wiring.py` as a consumer. The `fixtures/repository_profiles/node/package-lock.json` row registers `test_capsule_launch_wiring.py` as a consumer.",
+      "note": "The lifecycle catalog lists `mcp/tests/test_capsule_launch_wiring.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "d5599c0cbdea08d820a9774eec5c020ce86d35ba",
+            "blob": "ac6abaf94fbc1b38d2d243883737a007bceebd64",
             "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
             "locator": {
               "end": 167,
@@ -186,10 +186,10 @@
         },
         {
           "anchor": {
-            "blob": "d5599c0cbdea08d820a9774eec5c020ce86d35ba",
-            "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
+            "blob": "ac6abaf94fbc1b38d2d243883737a007bceebd64",
+            "content": "sha256:66dd32bd84c34d64a7057bf730f58dba22ab5ba1236d46c64f7d5bfeee4aa031",
             "locator": {
-              "end": 1180,
+              "end": 1206,
               "kind": "line_range",
               "start": 1180
             },
@@ -199,12 +199,12 @@
         },
         {
           "anchor": {
-            "blob": "d5599c0cbdea08d820a9774eec5c020ce86d35ba",
-            "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
+            "blob": "ac6abaf94fbc1b38d2d243883737a007bceebd64",
+            "content": "sha256:ff4d77aa07accf4c0d9a24989bb1b31334781411bc08972eb32bd477b9344519",
             "locator": {
-              "end": 2575,
+              "end": 2613,
               "kind": "line_range",
-              "start": 2575
+              "start": 2511
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

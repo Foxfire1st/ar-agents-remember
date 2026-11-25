@@ -1,0 +1,109 @@
+{
+  "path": "mcp/tests/test_worktree_file_briefs.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "46fe7d30588ae9e6cac056e5031aa5c76c71ed2a",
+        "content": "sha256:743917ec626d7950fbc73e0e3ef98d5add3809c7d00c5d58d5205c822bc8ba9e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_memory_merge_prepares_ignore_before_committing_and_refreshes"
+        }
+      },
+      "facet": "The merge prepares the tracked rule before its commit and refreshes briefs for the settled pair.",
+      "id": "PRF-8NA5RH",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "46fe7d30588ae9e6cac056e5031aa5c76c71ed2a",
+        "content": "sha256:d7d0bbe379da333f5d01e6f26290c1bfec0e6cddbe344ceba9b228d4dd54088a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_fast_forward_adopts_existing_ignore_and_refreshes_the_settled_pair"
+        }
+      },
+      "facet": "A forward sync publishes briefs from the settled converted pair with an existing ignore rule.",
+      "id": "PRF-9G9WRF",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "46fe7d30588ae9e6cac056e5031aa5c76c71ed2a",
+        "content": "sha256:9226217694babcdc6a8693424447b381c5d59bb5ef9ada76b4dfea73cb9a12dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_start_refreshes_the_new_memory_checkout_after_preview"
+        }
+      },
+      "facet": "Start preview writes no brief. Materialization writes with effective exclusion and defers with absent or negated exclusion.",
+      "id": "PRF-9Z1VT9",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The live start cases verify when briefs are published and preserve the inherited ignore bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46fe7d30588ae9e6cac056e5031aa5c76c71ed2a",
+            "content": "sha256:9226217694babcdc6a8693424447b381c5d59bb5ef9ada76b4dfea73cb9a12dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_start_refreshes_the_new_memory_checkout_after_preview"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A successful fast-forward refreshes the settled pair while previews, completed replay and already-current sync leave briefs untouched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46fe7d30588ae9e6cac056e5031aa5c76c71ed2a",
+            "content": "sha256:d7d0bbe379da333f5d01e6f26290c1bfec0e6cddbe344ceba9b228d4dd54088a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_fast_forward_adopts_existing_ignore_and_refreshes_the_settled_pair"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A fresh merge commits the tracked ignore rule and refreshes the settled brief. Refusal preserves memory HEAD and the prior ignore bytes. Parking and cancellation preserve the prior ignore bytes. The brief directory stays absent on the refusal and conflict paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46fe7d30588ae9e6cac056e5031aa5c76c71ed2a",
+            "content": "sha256:18bf353547147c772517579b535e169663739f87fb47cf3ca2aca5c83f383bd4",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 180
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

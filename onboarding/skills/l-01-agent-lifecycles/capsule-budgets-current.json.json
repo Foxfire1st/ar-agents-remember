@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d513aa962182a621f4e7111b4d7f350891976ba9",
-        "content": "sha256:b27c45673494137bfa073fe9b4ed1e476613b1391439cfa04d18e2c7ae8fec1d",
+        "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
+        "content": "sha256:c0ea2ca65b1e9902437153e20f00c936b05f9f670212149ca4f668a5ace6ce9a",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "cd235e7687ab55feb05120203fef07c8c8c7a5cf",
+        "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
         "content": "sha256:a0abc4ead569d8a67d67a8e01a8d07edd5dc33813d24be486be77735cda4a99a",
         "locator": {
           "end": 6163,
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "cd235e7687ab55feb05120203fef07c8c8c7a5cf",
+        "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
         "content": "sha256:86ffd298030ed1ed89b21939e6217dcec9fce742e95fc56ab8222d99068d4014",
         "locator": {
           "end": 5103,
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "d513aa962182a621f4e7111b4d7f350891976ba9",
-        "content": "sha256:b27c45673494137bfa073fe9b4ed1e476613b1391439cfa04d18e2c7ae8fec1d",
+        "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
+        "content": "sha256:c0ea2ca65b1e9902437153e20f00c936b05f9f670212149ca4f668a5ace6ce9a",
         "locator": {
           "kind": "file"
         }
@@ -80,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd235e7687ab55feb05120203fef07c8c8c7a5cf",
+            "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
             "content": "sha256:1556b38430b0b91643d0aca13936052e01cf50233bcb7f447833531577dd9011",
             "locator": {
               "end": 15,
@@ -92,7 +92,7 @@
         },
         {
           "anchor": {
-            "blob": "cd235e7687ab55feb05120203fef07c8c8c7a5cf",
+            "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
             "content": "sha256:e0384fd7a2fb1b964c2b6d2a3453d3456017a6a0751411176817ae3633b28718",
             "locator": {
               "end": 6163,
@@ -118,12 +118,12 @@
       ]
     },
     "11": {
-      "note": "The generated template measurement records 6,357 words and the current source digest.",
+      "note": "The generated template measurement records 6,630 words and the current source digest.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd235e7687ab55feb05120203fef07c8c8c7a5cf",
-            "content": "sha256:9bbe6e3ca82aa2d4527b7481dc5ca379fd679b43a17010977b6b2c356030c42d",
+            "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
+            "content": "sha256:38eebf79b769526a9b800339890549a3d844221e8c082e88e5dd43645b879372",
             "locator": {
               "end": 6633,
               "kind": "line_range",
@@ -157,7 +157,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd235e7687ab55feb05120203fef07c8c8c7a5cf",
+            "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
             "content": "sha256:729ad9ab17f38fcc282f57aeb4b3661dded8ee274d2fa1fa5b67eed5b8858973",
             "locator": {
               "end": 6651,
@@ -174,7 +174,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd235e7687ab55feb05120203fef07c8c8c7a5cf",
+            "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
             "content": "sha256:f8f8b8c92cf7bbc546918ecbd81a64ce055160bc40252f448e919df93cc9d4ed",
             "locator": {
               "end": 6177,
@@ -245,8 +245,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd235e7687ab55feb05120203fef07c8c8c7a5cf",
-            "content": "sha256:b2f0d74d9e03be62ce83d8a30f7e52420ccac11569140085748772dcba3ec911",
+            "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
+            "content": "sha256:0a6ce397bfad014ce8df05bacdcff23fae42c33ca85d7b960b9a8bb3be9cad3c",
             "locator": {
               "end": 6239,
               "kind": "line_range",

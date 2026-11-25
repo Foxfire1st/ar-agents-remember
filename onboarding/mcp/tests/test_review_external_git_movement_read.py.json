@@ -83,16 +83,16 @@
       ]
     },
     "27": {
-      "note": "**The lane registration that makes these cases part of the governed `integration` population.** Source caption: `test_review_external_git_movement_read`",
+      "note": "The integration lane selects mcp/tests/test_review_external_git_movement_read.py.\n\nAnchor: `mcp/tests/test_review_external_git_movement_read.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
             "content": "sha256:8a4b6c56f0180bedc3c443a06d93c7c8674441a5c20feb3eac7e0f16dd5c29d4",
             "locator": {
-              "end": 753,
+              "end": 770,
               "kind": "line_range",
-              "start": 753
+              "start": 770
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

@@ -151,7 +151,7 @@ No configured external domain source applies.
 
 
 - The scope object the citation operations share: it carries one named document or a bounded list of them, and refuses both selectors, an empty list, or a list outside `citation_fix`. [12]
-- The shared citation scope defaults to the whole card population when no document selector is supplied. [13]
+- The application entry points use DEFAULT_CITATION_OPERATION_SCOPE by default; a scope with no document selector covers the whole card population. The mounted citation_fix registrar constructs the scope from the caller’s document or documents selector. [13]
 
 ### Cross-Repo References
 
@@ -234,31 +234,52 @@ acceptance pair.
 
 
 
-- The payload builders for the carryover plan and report-filing apply pair.  Anchor: `memory_carryover_plan_payload` [2]
+
+
+- The payload builders for the carryover plan and report-filing apply pair. Anchor: `memory_carryover_plan_payload` [2]
 
 
 
-- The typed sync/start/poll payload builders.  Anchor: `memory_quality_check_payload` [3]
 
 
 
-- The payload builder for the carryover plan.  Anchor: `memory_carryover_plan_payload` [6]
+- The typed sync/start/poll payload builders. Anchor: `memory_quality_check_payload` [3]
 
 
 
-- The payload builder for the report-filing apply.  Anchor: `memory_carryover_apply_payload` [7]
 
 
 
-- The typed sync payload builder.  Anchor: `memory_quality_check_payload` [8]
+- The payload builder for the carryover plan. Anchor: `memory_carryover_plan_payload` [6]
 
 
 
-- The typed start payload builder.  Anchor: `memory_quality_check_start_payload` [9]
 
 
 
-- The typed poll payload builder.  Anchor: `memory_quality_check_poll_payload` [10]
+- The payload builder for the report-filing apply. Anchor: `memory_carryover_apply_payload` [7]
+
+
+
+
+
+
+- The typed sync payload builder. Anchor: `memory_quality_check_payload` [8]
+
+
+
+
+
+
+- The typed start payload builder. Anchor: `memory_quality_check_start_payload` [9]
+
+
+
+
+
+
+- The typed poll payload builder. Anchor: `memory_quality_check_poll_payload` [10]
+
 
 
 

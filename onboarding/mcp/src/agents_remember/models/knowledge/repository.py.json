@@ -23,12 +23,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "blob": "6869b696c169705ffdb8dcf595685df0bc2fb6b5",
             "content": "sha256:e3d7c3be7f0d028f3f130f6997b0e77e52361078fdc06563d8cff467df1b6156",
             "locator": {
-              "end": 123,
+              "end": 121,
               "kind": "line_range",
-              "start": 118
+              "start": 116
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
           },
@@ -36,12 +36,12 @@
         },
         {
           "anchor": {
-            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "blob": "6869b696c169705ffdb8dcf595685df0bc2fb6b5",
             "content": "sha256:3af5982a81b1ac20e0c0455e33681e976661b9104fbc971bca2af85f91ab84f7",
             "locator": {
-              "end": 291,
+              "end": 287,
               "kind": "line_range",
-              "start": 284
+              "start": 280
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
           },
@@ -70,7 +70,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:5a7d444f6d5aa6950d3170e1dfb74ced2b56bfcb496f38dd0485d8bcd71c6898",
             "locator": {
               "kind": "symbol",
@@ -82,7 +82,7 @@
         },
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:e6d4e725d111f5a961626b85278bd8696a5f851a65bc42c2aba348b5aa7d6fbc",
             "locator": {
               "end": 106,

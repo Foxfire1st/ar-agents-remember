@@ -14,6 +14,9 @@ path the candidate lacks, and that an add-only leaf still closes out as it did.
 
 ## Code Commentary
 
+In both re-pointed row cases, the callback sees the tracked ignore rule in the committed memory and receives the admitted paired code revision. Closeout returns the callback's advisory and the recomputed fingerprint remains correct. The runtime's separate refresh guard requires a newly created memory commit and an available memory worktree (`mcp/src/agents_remember/worktrees/modules/closeout_external.py:143-155`).
+
+
 ### One verdict, asked before either commit
 
 The cases enter through two different routes, and they are not the same seam. `_preview` calls
@@ -65,7 +68,10 @@ store.
 - A planned row without a fingerprint value is still refused, naming the missing value and the row. [11]
 
 - A deleted evidence path stops the preview and the apply's preflight, naming the catalogue, the row, the path and the re-point remedy, with both HEADs unchanged. [1]
+
+
 - A re-pointed row is recomputed over the code commit's tree, both when its new set keeps a changed path and when it names unchanged files only, and the value equals an independent `git-blob-set-v1`. [2]
+
 - The curator's memory-quality check names the row and the absent path and counts it as one actionable finding, and reports nothing once the row is re-pointed. [4]
 - An unexpected Git failure inside the refresh is reported with its step, its evidence paths and the tree it read. [5]
 - A row whose only evidence the leaf deletes is refused before the code commit even though the refresh plan never selects it. [6]

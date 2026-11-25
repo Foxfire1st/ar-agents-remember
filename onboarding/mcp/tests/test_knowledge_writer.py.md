@@ -17,7 +17,7 @@ in the `unit-regression` lane, using real Git repository fixtures. This card rec
   content is the sha256 of the symbol's lines), and a proof from tested evidence. The source checks
   post-write validation against the explicit memory `HEAD` comparison base, not a baseless run.
 - `knowledge-ingest --commit` round-trips every kind: all ten record kinds, a realization, a proof, a
-  `moved` invariant row and a `no_impact` family row; a second run exits 0.
+  `moved` invariant row and a `no_impact` family row. A second run exits 0. The case requires no SQLite file outside the shared coordination `runtime/knowledge-index` cache and no retired per-leaf `provider-runtime` directory.
 - Idempotence: a rerun is byte-identical with every action `unchanged`.
 - Evidence naming no resolvable test is reported and kept; four problems refuse in one report; a colliding
   ID is refused by `R22.2-identity` with the tree unchanged.
@@ -113,7 +113,7 @@ The cases.
 
 
 
-- A master line's crossing records its rows through the writer.
+- A master line's crossing records its rows through the writer. The test writes a prepared open sync from `build_crossing_world`. A leaf contract, a different crossing, a blank authorization and an unreadable contract are refused. The writer receives the sync's settled code commit as its code base, rows land in the sync's memory worktree, entries are refused on this route, and a closed history file refuses the write.
 
 
 - A cover revises a realization entry's rationale in place. [16]
@@ -147,3 +147,5 @@ The leaf fixtures supply the persisted worklist the current admission requires. 
 - A master line's crossing records its rows through the writer. Anchor: `test_a_master_line_crossing_records_its_rows_through_the_writer` [15]
 
 - Producer-shape validation accepts absent Curator scope/admission without authorizing a writer call. Full intake refuses that partial input without changing memory bytes. Malformed rationale, locator, evidence and proof fields yield identical structural refusals through both readers. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [19]
+
+- The SQLite absence check excludes only the shared coordination index cache and still forbids a provider-runtime directory. [21]

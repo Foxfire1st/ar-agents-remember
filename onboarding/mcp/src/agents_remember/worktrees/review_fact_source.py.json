@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/review_fact_source.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fc31aafc47ebd1a0d8d17360af43ca54966abe82",
+        "content": "sha256:44b4f94a2799693e4a1946ca7a8118463e54f17e8fdabf8885c978b1446d6f62",
+        "locator": {
+          "kind": "symbol",
+          "name": "leaf_review_fact"
+        }
+      },
+      "id": "RLZ-BGD7V3",
+      "invariant": "INV-AV04NY",
+      "origin": {
+        "handoffEntry": "L3-W1-05",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Takes the last memory round, builds the fact only when that round passed, with the reviewer's and the hand-over agent's stamps.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The last recorded memory round must be a pass with a usable reference and the exact pre-closeout memory tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc31aafc47ebd1a0d8d17360af43ca54966abe82",
+            "content": "sha256:d22ffdf50b1d404388965867ce2f010b210b430bd30626f960f240f3cd3a06b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualifying_round"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fact preserves the recorded attribution, with reasoned unknown values where the older review did not capture them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc31aafc47ebd1a0d8d17360af43ca54966abe82",
+            "content": "sha256:f443a80d9f96b11892e32c37f441bd55bf6c13b1646b8a00b35abe4654d49def",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_fact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

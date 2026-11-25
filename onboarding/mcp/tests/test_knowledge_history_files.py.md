@@ -88,11 +88,9 @@ The cases cover `models/knowledge_files/history.py` and its registration in `doc
 
 - The conforming example and the owner path. [1]
 
-- File shape, owner and uniqueness. [2]
 
 - Invariant dispositions, covers and effects. [4]
 
-- Family rows. [5]
 
 - Re-anchoring against the candidate. [6]
 
@@ -119,5 +117,7 @@ No cross-repo boundary is crossed by this file.
 - Stored closed comparison-base legacy items parse, validate and round-trip unchanged. \ [14]
 - Item tokens are judged only in the files the re-anchor check reads: five file/base/route shapes. \ [15]
 
+- The unit-regression lane selects mcp/tests/test_knowledge_history_files.py. [10]
 
-- Lane registration. Anchor: "mcp/tests/test_knowledge_history_files.py" Anchor: "mcp/tests/test_knowledge_history_files.py" [10]
+- File shape, owner and uniqueness. [2]
+- Family rows. [5]

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cf08e8157e068057d468f3f2c751344fcd1838cc",
+        "blob": "c81ba1ab9b2c6d33032c432c8a78e13655a4617c",
         "content": "sha256:b6c59a6eae3d3bbe1c83e40fba8fc2c26f4827f108e5491203c53cec52f4839d",
         "locator": {
           "end": 29,
@@ -19,6 +19,25 @@
       },
       "rationale": "The knowledge-use detail an agent reads before a knowledge read defines both counts once: the unresolved-anchor count covers anchors not established against their exact recorded blob, and currentness counts describe the named invariant population, including related invariants selected by expansion.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c81ba1ab9b2c6d33032c432c8a78e13655a4617c",
+        "content": "sha256:0fc4768a76075386cb7852dab353afd3a0ee65f9ca293922d01bebfc4f121a65",
+        "locator": {
+          "end": 7,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-RHS0GR",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Distinguishes absence of a saved copy from the absence of qualifying knowledge in the current memory.",
+      "role": "presentation"
     }
   ],
   "references": {
@@ -27,8 +46,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf08e8157e068057d468f3f2c751344fcd1838cc",
-            "content": "sha256:352d299899ecd6421cbce47b0b8a6f11b6cd8a62dbb5eeb9101bdab79b31cec2",
+            "blob": "c81ba1ab9b2c6d33032c432c8a78e13655a4617c",
+            "content": "sha256:19012c1d4b391b64b343e0cd2e64e796b003cc67a8a9f7a197edc897524d7b72",
             "locator": {
               "end": 9,
               "kind": "line_range",
@@ -44,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf08e8157e068057d468f3f2c751344fcd1838cc",
+            "blob": "c81ba1ab9b2c6d33032c432c8a78e13655a4617c",
             "content": "sha256:ef66b633bf750bece0f2dad580a1259471c071a93239f6c422a6ffd2c153d83d",
             "locator": {
               "end": 25,
@@ -61,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf08e8157e068057d468f3f2c751344fcd1838cc",
+            "blob": "c81ba1ab9b2c6d33032c432c8a78e13655a4617c",
             "content": "sha256:2c76c3eef6ae563704aac4b0345e7779468e83acfc1fb8c307cc59f0c521040a",
             "locator": {
               "end": 29,
@@ -78,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf08e8157e068057d468f3f2c751344fcd1838cc",
+            "blob": "c81ba1ab9b2c6d33032c432c8a78e13655a4617c",
             "content": "sha256:e07994749484189f4f01e220b70b550bf96f66dcd9e8b259ac974c628a4447da",
             "locator": {
               "end": 33,
@@ -95,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf08e8157e068057d468f3f2c751344fcd1838cc",
+            "blob": "c81ba1ab9b2c6d33032c432c8a78e13655a4617c",
             "content": "sha256:d52fe755f52601f5e0b2b58ad4ad4d22a9aafb6b943c22d30aab13d43a6e8944",
             "locator": {
               "end": 55,
@@ -112,14 +131,96 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
-            "content": "sha256:6276f61bb90fb517f1f42e8583cbafca5bfd28dd34ebec8780dbc2d7baa594b9",
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
+            "content": "sha256:d5658ed4652da3bfa455043e9cf1f887e9078ec6e75677387e870eaad18704bc",
             "locator": {
               "end": 70,
               "kind": "line_range",
               "start": 70
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The knowledge-use detail names `briefs/<path>.md` under the memory root. The Worker role directs the pre-edit brief read. Fuller runtime rows can include rule text. Compact rows can retain a pointer even when the saved brief is missing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac6f348d86bc935cc81808f5d926c899261e44d3",
+            "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "content": "sha256:471da92ea95b622c6fcabcbf2c3ee284c21b03fa248586ea8e61e90211f6a18a",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/application/read_files_briefs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "content": "sha256:6e80ad899e73b4af5891915a7bb47a67abe595b035b57a607ffc06149ee9941a",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "mcp/src/agents_remember/application/read_files_briefs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b1c36e5ae6160b8579f2f1783a7ac45cdb961d74",
+            "content": "sha256:d12893bc8963ee3c8f1abcaf553337e94c78a293eb0cf399ee18707e7dd51be3",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "mcp/tests/tool_answer_l109_cases.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c81ba1ab9b2c6d33032c432c8a78e13655a4617c",
+            "content": "sha256:0fc4768a76075386cb7852dab353afd3a0ee65f9ca293922d01bebfc4f121a65",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
+            "content": "sha256:9691fd1d3c554b52dd4d2a9a812ad2c8309faa55906ad5fdc130cc34eaf6dd17",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
           "kind": "code"
         }

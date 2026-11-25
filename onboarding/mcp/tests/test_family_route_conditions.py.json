@@ -82,16 +82,16 @@
       ]
     },
     "13": {
-      "note": "The lane registration. Anchor: \"mcp/tests/test_family_route_conditions.py\" Anchor: \"mcp/tests/test_family_route_conditions.py\"",
+      "note": "The unit-regression lane selects mcp/tests/test_family_route_conditions.py.\n\nAnchor: `mcp/tests/test_family_route_conditions.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
             "content": "sha256:701dfc16e90a57bb20b47a098c9f3f67419c2cde1a56b17ed586636dbbe4c6e5",
             "locator": {
-              "end": 182,
+              "end": 184,
               "kind": "line_range",
-              "start": 182
+              "start": 184
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

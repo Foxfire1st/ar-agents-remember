@@ -27,6 +27,7 @@ the dashboard refuses, in the same words.
   would: they are registered under their names and answer inside the envelope; `mode` is absent from the
   tool schema and rejected by the HTTP route; a chat without a role starts a parentless Architect; and
   the registered tool refuses what the dashboard refuses in the same words.
+- **Brief deferral.** The first start and same-request retry both warn about deferral. The log linked from each response reports `preparation.briefsProblem`, running status and the same agent ID. The fixture records one seat and one enclosure start, leaves `.gitignore` unchanged and creates no `briefs/` directory. The ordinary start omits the advisory and the preparation model rejects an unrelated field.
 - **Reads during catalog discovery.**
   `test_fresh_catalog_wait_leaves_registered_reads_responsive` holds a registered `role_start`
   in fresh catalog discovery, receives a successful registered read while that start remains

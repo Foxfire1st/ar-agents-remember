@@ -150,16 +150,16 @@
       ]
     },
     "15": {
-      "note": "Lane registration. Anchor: `test_knowledge_file_canonical` Anchor: `test_knowledge_file_canonical`",
+      "note": "The unit-regression lane selects mcp/tests/test_knowledge_file_canonical.py.\n\nAnchor: `mcp/tests/test_knowledge_file_canonical.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
             "content": "sha256:f5b00d251564d154c7eb7dd3bc8abd69a02828ecb60413351ebebf2ab0b4587a",
             "locator": {
-              "end": 238,
+              "end": 242,
               "kind": "line_range",
-              "start": 238
+              "start": 242
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

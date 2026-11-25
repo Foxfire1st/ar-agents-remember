@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "7c62c589df16d5d131f1a73999a929b82891b9e1",
+        "blob": "85e6dacbcf44c6a53a83275eecb193f53cdf49fe",
         "content": "sha256:008d1de8ee70e6764dc3fa288398174d95886173264d99e50ce02315094b1d5c",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "7c62c589df16d5d131f1a73999a929b82891b9e1",
+        "blob": "85e6dacbcf44c6a53a83275eecb193f53cdf49fe",
         "content": "sha256:6a851f9c0e6795cc2f006b88ef3f20dabac2a91510a7618ec694ed89bc8aa69b",
         "locator": {
           "kind": "symbol",
@@ -43,24 +43,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c62c589df16d5d131f1a73999a929b82891b9e1",
+            "blob": "85e6dacbcf44c6a53a83275eecb193f53cdf49fe",
             "content": "sha256:0f53a460554f384b6997cb16bc1901bff34b4b821f95de8a8cdd7133b695b506",
             "locator": {
-              "end": 251,
+              "end": 265,
               "kind": "line_range",
-              "start": 203
+              "start": 217
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "7c62c589df16d5d131f1a73999a929b82891b9e1",
+            "blob": "85e6dacbcf44c6a53a83275eecb193f53cdf49fe",
             "content": "sha256:6a851f9c0e6795cc2f006b88ef3f20dabac2a91510a7618ec694ed89bc8aa69b",
             "locator": {
-              "end": 267,
+              "end": 281,
               "kind": "line_range",
-              "start": 253
+              "start": 267
             }
           },
           "kind": "test"
@@ -68,16 +68,16 @@
       ]
     },
     "2": {
-      "note": "The real child exercises launch-only unreadable review tolerance and preserves the raw review payload. The ordinary reader still refuses outside that context.",
+      "note": "The real child exercises launch-only unreadable review tolerance and preserves the raw review payload through a task write. The parent rereads it and the ordinary reader still refuses outside that context.",
       "targets": [
         {
           "anchor": {
-            "blob": "7c62c589df16d5d131f1a73999a929b82891b9e1",
+            "blob": "85e6dacbcf44c6a53a83275eecb193f53cdf49fe",
             "content": "sha256:661b93fa10c84e758add2ad0d1e96eb3ffd63daf142c6ff280613179888e0266",
             "locator": {
-              "end": 594,
+              "end": 608,
               "kind": "line_range",
-              "start": 527
+              "start": 541
             }
           },
           "kind": "test"
@@ -89,12 +89,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c62c589df16d5d131f1a73999a929b82891b9e1",
+            "blob": "85e6dacbcf44c6a53a83275eecb193f53cdf49fe",
             "content": "sha256:5f633e6b464feda55cb9b97faaf46820741b365f6c30e7bc30ea722614cc4ded",
             "locator": {
-              "end": 267,
+              "end": 281,
               "kind": "line_range",
-              "start": 203
+              "start": 217
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The test asserts exit status zero and the same reader brief advisory in the child command's JSON and in the parent wrapper result with a stubbed child.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85e6dacbcf44c6a53a83275eecb193f53cdf49fe",
+            "content": "sha256:bf3e698e5e04a17fdf16d147209199d60bdf3e217725bada9de39ac691515826",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 153
             }
           },
           "kind": "test"

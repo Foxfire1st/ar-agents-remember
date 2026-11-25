@@ -89,8 +89,7 @@ None.
 
 ## Current Contract
 
-memoryReviewState is classified EVIDENCE, as are ReviewState.recordedRounds and every ReviewRound field (round, kind, findingsRemain, verdictRef). Recursive classification therefore handles the new nested model and pure review-evidence deltas remain acceptance-evidence rather than topology/intent/readiness invalidation. The added finding references, amended round records and blocking route finding IDs are also
-classified as evidence. Exhaustiveness remains fail-closed; classification itself does not authenticate verdicts or choose launch escalation.
+The review evidence plane includes `memoryReviewState`, `ReviewState.recordedRounds` and every `ReviewRound` field: `round`, `kind`, `findingsRemain`, `verdictRef`, `memoryTree`, `recordedBy`, `handedOverBy` and `verdict`. It also includes `ReviewState.addedFindings`, `ReviewState.addedFindingRounds`, their nested fields and `RouteReviewRecord.addedFindingIds`. Recursive classification treats these deltas as acceptance evidence and requires complete coverage of persisted fields. The caller authenticates verdicts and owns launch escalation.
 
 
 The governing workflow opens an independent memory review after CODE PASS on the same task using begin_review/record_review with reviewKind=memory. It has its own immutable baseline and shrinking IDs, under the same settings limit and extra-round approval rule, and never resets code reviewState. The signed rollout applies only to memory reviews begun after L88 lands; already-underway reviews (L168, L56, L57, L59) finish with their sealed-report workflow, with no migration/backfill. This describes the candidate contract, not a claim that the serving build already supports it.
@@ -103,14 +102,15 @@ RouteReviewRecord.baseCommit is classified EVIDENCE beside candidateTree. The fi
 
 ## Evidence
 
+- The evidence classifier marks every recorded review round field, including the exact tree and attributed review facts, as EVIDENCE. [19]
+
+
 - The new review-base stamp belongs to the existing evidence plane. [16]
 
 
 
-- Worker/Curator typed review census, record-only exclusion and unknown history. [12]
 - Reason admission, threshold and differing-harness/model inheritance boundary. [13]
 - Record-only memory identity comes from memory authority, never the sibling code root. [14]
-- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [15]
 
 ### Docs References
 
@@ -123,7 +123,6 @@ evidenced by the repository-owned references below.
 
 
 
-- R04 taxonomy and task-first projection scope remain separate owners; the root map now classifies completedAt as audit, waitsFor as topology, and nonGoals/acceptance as intent. Invalidation follows recursive classified deltas, never operation-name inference. [1]
 
 
 
@@ -135,7 +134,6 @@ evidenced by the repository-owned references below.
 - The closed effect vocabulary and projector are declared together. [4]
 
 
-- The exhaustive map covers root and nested persisted models, including the four new root fields; display-only major counting does not weaken nested readiness memberships. [5]
 
 
 
@@ -152,8 +150,14 @@ None; this is the task-schema authority inside agents-remember.
 
 - Exact mutation effects recurse through nested models; identical inputs have no delta. [11]
 
-- intentReview and its state/decisionRef/agreedRevision, plus revisionId/sha256/packetVersions, are NORMATIVE fields. [17]
 
 - Runtime schema discovery refuses missing, stale, or empty classifications. [8]
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/tasks/document_field_effects.py::validate_task_document_field_effects - the bytes it recorded now occur 8 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [12]
+
+- R04 taxonomy and task-first projection scope remain separate owners; the root map now classifies completedAt as audit, waitsFor as topology, and nonGoals/acceptance as intent. Invalidation follows recursive classified deltas, never operation-name inference. [1]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [15]
+- intentReview and its state/decisionRef/agreedRevision, plus revisionId/sha256/packetVersions, are NORMATIVE fields. [17]
+- The exhaustive map covers root and nested persisted models, including the four new root fields; display-only major counting does not weaken nested readiness memberships. [5]

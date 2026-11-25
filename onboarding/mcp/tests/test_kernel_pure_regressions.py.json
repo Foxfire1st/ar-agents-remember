@@ -64,16 +64,16 @@
       ]
     },
     "2": {
-      "note": "The explicit unit lane owns the module. Anchor: \"mcp/tests/test_kernel_pure_regressions.py\" Anchor: \"mcp/tests/test_kernel_pure_regressions.py\"",
+      "note": "The unit-regression lane selects mcp/tests/test_kernel_pure_regressions.py.\n\nAnchor: `mcp/tests/test_kernel_pure_regressions.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
             "content": "sha256:cad8724903fb4b53cc5f31ed61dd6ff3592baeecfde98c48e196704bd5a14898",
             "locator": {
-              "end": 215,
+              "end": 219,
               "kind": "line_range",
-              "start": 215
+              "start": 219
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

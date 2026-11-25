@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_ignore_merge.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1cede7fd85adc25a65ce77967cbdc426af1f9842",
+        "content": "sha256:c750813c7c4751a3a5efd3d79af6e667fd77bd71f07c5eb4df718fcdc4855a4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "settle_generated_briefs_ignore"
+        }
+      },
+      "id": "RLZ-2QGCQ3",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Restores the canonical briefs ignore after a clean merge of the authored rules.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The resolver checks the memory layout, pins both parent blobs and compares the conflict bytes again before staging.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cede7fd85adc25a65ce77967cbdc426af1f9842",
+            "content": "sha256:c750813c7c4751a3a5efd3d79af6e667fd77bd71f07c5eb4df718fcdc4855a4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "settle_generated_briefs_ignore"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The authored merge removes the generated stanza, normalizes terminal newlines in nonempty stages and restores the stanza only after a clean merge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cede7fd85adc25a65ce77967cbdc426af1f9842",
+            "content": "sha256:ce4c21b9be726a1175d36a2049316b92ec94fb6b9fd9305c90e6a808d5272e10",
+            "locator": {
+              "kind": "symbol",
+              "name": "_authored_merge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

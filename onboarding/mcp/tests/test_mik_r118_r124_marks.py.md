@@ -34,7 +34,7 @@ history file is written already closed. No case in the module runs a closeout op
   the master's end refuses and then passes after the confirmation.
 - **The writer.** Both kinds are recorded with each value read from the candidate, each refusal names its
   field, a record link names the record rather than the file it lives in, a deleted document takes its
-  dependent record, and a confirming task names itself and its judgment. The history-row writer case supplies the fixture code repository's actual HEAD as its explicit closing commit.
+  dependent record, and a confirming task names itself and its judgment. The brief-refresh fixtures verify that a removal clears the old file mention and that a move refreshes both the prior and the new file brief. The history-row writer case supplies the fixture code repository's actual HEAD as its explicit closing commit.
 - **Cost.** An ordinary landing reads only the dependents a change can move — a series master's end reads
   every document — measured at the two populations the packet names, and metadata scans are not counted as
   body reads.
@@ -59,7 +59,11 @@ history file is written already closed. No case in the module runs a closeout op
 
 ## Evidence
 
-- The module is the leaf's own expected evidence for both packets: 63 test functions over the schemas, the
+- The module is the leaf's own expected evidence for both packets: 65 test functions over the schemas, the
   reads, the rows, the landing routes and the writer. That number is the module's declared test-function
   count; it is not a separately collected or executed case count, and the leaf's accepted native runs are
   evidence of their own that this module does not contain.
+
+
+
+- The brief refresh assertions cover dependent removal and the previous and new file on a move. [1]

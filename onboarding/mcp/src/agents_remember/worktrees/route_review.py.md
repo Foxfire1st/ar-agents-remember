@@ -103,7 +103,6 @@ No configured Domain Documentation source applies.
 - CCR-R25 maps observed route-review refusals into bounded structured recovery guidance. [4]
 
 
-- The route-review record's content-addressed fields and self-digest validator. [5]
 
 
 ### Cross-Repo References
@@ -126,4 +125,6 @@ record; the closeout door fingerprints review provenance as `recordDigest` inste
 recomputed evidence tuple (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
 
 
-- Inspection guidance and mutation guidance are separate. inspect_task_document for a task_doc plan names taskDocumentPath and file-reading prose, with no nextTool/nextArgs invoking a removed read. record_route_review carries the dedicated routed-review address and required review value. A sanctioned generic addition can publish a route BLOCK for an existing route verdict. Currentness and developer-decision mappings remain governed by their existing owners; file reading does not record an intent verdict. [6]
+- Inspection guidance and mutation guidance are separate. inspect_task_document for a task_doc plan names taskDocumentPath and file-reading prose, with no nextTool/nextArgs invoking a removed read. record_route_review carries the dedicated `task_doc` address and required review value. A sanctioned generic addition can publish a route BLOCK for an existing route verdict. Currentness and developer-decision mappings remain governed by their existing owners; file reading does not record an intent verdict. [6]
+
+- The route-review record's content-addressed fields and self-digest validator. [5]

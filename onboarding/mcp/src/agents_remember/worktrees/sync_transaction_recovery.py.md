@@ -12,6 +12,9 @@ heads were restored when deterministic authority is absent or incomplete.
 
 ## Code Commentary
 
+After terminal publication and cleanup, the completed result can carry an advisory from refreshing its settled persistent converted memory side. The route recomputes the worklist after building that result.
+
+
 ### Logic
 
 `finalize_sync` re-reads and validates the contract and completed work branches, writes the new base
@@ -92,7 +95,7 @@ No external Domain Documentation entries are configured. Source and test asserti
 
 
 
-- Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair. Anchor: `finalize_sync` `cancel_sync` [4]
+- Finalization refuses while a side still parks its candidate. Cancellation clears a conflicted reapply, rolls back and restores the parked candidate, or returns a typed manual-repair result. [4]
 
 
 

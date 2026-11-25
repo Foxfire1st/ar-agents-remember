@@ -10,8 +10,7 @@ Git path spelling and lookup failure remain distinct from an absent source.
 
 The sizes and catalog line addresses in the following original account are historical observations, not measurements of the present source tip.
 
-**What a *path* is to this read: an address, not a pattern.** Five nodes in `integration` (row
-`mcp/tests/test-evidence-lanes.toml`) covering the one contract the review corrected most sharply — the
+**What a *path* is to this read: an address, not a pattern.** Five nodes covering the one contract the review corrected most sharply — the
 predicate that decides which spellings are addressable, and the requirement that **a refusal describe the
 actual cause**.
 
@@ -78,7 +77,7 @@ command a stored anchor path is handed to.
 
 ### Conventions
 
-- `pytestmark = pytest.mark.integration`; the module is registered in the integration lane.
+- `pytestmark = pytest.mark.integration`.
 - Every Git fact the module relies on is measured by the module itself with `subprocess`, against a tree it
   commits in `tmp_path`.
 - A refusal node asserts the resolution state **and** the `detail`'s distinguishing content, because for
@@ -180,5 +179,4 @@ No meaningful cross-repo references found.
 
 - **The test-support anchor-draft boundary applies the shared path-spelling rule, so a fixture draft refuses malformed path spellings.** [16]
 
-
-- The lane row this module occupies. Source caption: `test_knowledge_read_paths` [18]
+- The `integration` lane selects `mcp/tests/test_knowledge_read_paths.py`. [18]

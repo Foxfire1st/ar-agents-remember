@@ -91,8 +91,7 @@ real invalid argument (`citation_fix` without its required `repo_id`) to its own
 
 ### Conventions
 
-`unittest.TestCase` throughout; no `pytest` marks and no `-m` override, so the cases are in the
-default selection and their lane is **`unit-regression`**.
+The cases use `unittest.TestCase` without `pytest` marks or an `-m` override.
 The coverage case reads the literal public roster, the response-model registry and the live advertisement. It requires exact roster equality with both the invocation table and the advertisement, and requires a response model for every public tool.
 
 ### Invariants And Boundaries
@@ -386,7 +385,7 @@ Current source: The ordinary EntryPointWorld source constructs one temporary coo
 
 
 
-- The extracted bypass control returns a raw dictionary past the adapter choke point and checks that the support classifier sees an unvalidatable result. [43]
+- The extracted bypass control returns a raw dictionary past `_tool_payload` and checks that the support classifier sees an unvalidatable result. [43]
 
 
 
@@ -439,11 +438,9 @@ No repository or external-system boundary is proved by this module.
 
 - The main probe retains exact equality between observed raisers and the current pin.
 
-- The lane row that keeps this module in the default selection.
 
 
 
-Current source: The current lane catalog selects mcp/tests/test_tool_entry_point_sweep.py once in unit-regression. This declaration selects evidence and establishes no invocation or passing result.
 
 - The current support source declares ENVELOPE_LOSING_RAISERS as an empty frozenset and T34_REPAIRED_TOOLS as the one-member memory_baseline_adopt set. The sweep source asserts equality with observed error-arm tools in both directions and a named refusal for that surviving T34 member. These are source declarations/assertions, not a fresh run or current four-tool backlog. [26]
 
@@ -472,5 +469,4 @@ Current source: The current lane catalog selects mcp/tests/test_tool_entry_point
 
 - Completed sweep results receive per-tool subTests for unvalidatable and boundary-validation arms, followed by separate global raiser, unmarked and census subTests. [48]
 
-
-- The current lane catalog selects mcp/tests/test_tool_entry_point_sweep.py once in unit-regression. This declaration selects evidence and establishes no invocation or passing result. [40]
+- The `unit-regression` lane selects `mcp/tests/test_tool_entry_point_sweep.py` in the default test population. [40]

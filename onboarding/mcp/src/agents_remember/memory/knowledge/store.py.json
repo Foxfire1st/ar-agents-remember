@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The opened read store holds path, namespace, validated schema and read connection.\n\nAnchor: `OpenedKnowledgeStore`",
+      "note": "The opened read store holds path, namespace, validated schema and read connection.",
       "targets": [
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
-            "content": "sha256:06f9fa0b997c9bd42569065fb5f62ea39d370764509c8c2467b0985cdde68958",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
+            "content": "sha256:5bcf5198fd4a1acdfe1204a75222796dfe7008c3fd063f96f925c5de466e45a0",
             "locator": {
-              "kind": "file"
+              "end": 194,
+              "kind": "line_range",
+              "start": 52
             }
           },
           "kind": "code"
@@ -22,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:6fe2cc957dc11a8690591a9d84bf1ef8b232f5a9772df1f9241a4bc43ae0da28",
             "locator": {
               "kind": "symbol",
@@ -33,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:5a7d444f6d5aa6950d3170e1dfb74ced2b56bfcb496f38dd0485d8bcd71c6898",
             "locator": {
               "kind": "symbol",
@@ -49,7 +51,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:947779ca6c56d2d2b3f19731a4d47c06e558fe68abe6d4f9e91cdeb7abde9d4a",
             "locator": {
               "kind": "symbol",
@@ -61,14 +63,16 @@
       ]
     },
     "17": {
-      "note": "The read surface, including the seal-verifying single-revision read.\n\nAnchor: `get_revision`",
+      "note": "The read surface, including the seal-verifying single-revision read.",
       "targets": [
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
-            "content": "sha256:06f9fa0b997c9bd42569065fb5f62ea39d370764509c8c2467b0985cdde68958",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
+            "content": "sha256:2e540ff07bf9ce6d5bb8729e6af47ad0bf61d92b8ffd4c791d267bd4a2ccad6c",
             "locator": {
-              "kind": "file"
+              "end": 177,
+              "kind": "line_range",
+              "start": 158
             }
           },
           "kind": "code"
@@ -80,7 +84,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:00a449d876919d3de040d15c7ea870e221d332a11a45dc654d9be90b89b323ab",
             "locator": {
               "kind": "symbol",
@@ -96,7 +100,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:947779ca6c56d2d2b3f19731a4d47c06e558fe68abe6d4f9e91cdeb7abde9d4a",
             "locator": {
               "end": 90,
@@ -109,11 +113,11 @@
       ]
     },
     "3": {
-      "note": "`get_revision` reads one revision row by repository and revision id and decodes it with the stored seal verified; a text record holds no predecessor edge, so the decoded revision carries no predecessors.\n\nAnchor: `decode_revision_row`",
+      "note": "`get_revision` reads one revision row by repository and revision id and decodes it with the stored seal verified; a text record holds no predecessor edge, so the decoded revision carries no predecessors.",
       "targets": [
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:4d67cf075d6c300945eb4d42eeae768b15118046370b46da3c2227fc57a0dc7a",
             "locator": {
               "end": 173,
@@ -125,8 +129,8 @@
         },
         {
           "anchor": {
-            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
-            "content": "sha256:92d4353cb71f442af226829358fd09ea8dd54591ffed608d4b7a3779190116b8",
+            "blob": "382764f1d33cd50a7b8c7ff1757afd64f2b3306d",
+            "content": "sha256:f39ec63fd764b1e65b361b991d8c7774adca867237d96bcccf6674330a924e4c",
             "locator": {
               "kind": "file"
             },
@@ -141,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:00a449d876919d3de040d15c7ea870e221d332a11a45dc654d9be90b89b323ab",
             "locator": {
               "end": 139,
@@ -153,7 +157,7 @@
         },
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:3cb70a429652780066956ae4318d55c822d42865aa70e7aa796bf0aba0adb22b",
             "locator": {
               "end": 156,
@@ -170,7 +174,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:3c4b8b862d43ce91d9dd2905d7ea638814dd8a6a21c2c28d3ea3107abb8d5fd6",
             "locator": {
               "end": 194,

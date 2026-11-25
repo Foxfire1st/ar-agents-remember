@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/writer_stamp.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6def42213c6e8a9ef9407d1a9fa4efd7086fda83",
+        "content": "sha256:91fb034055bd6e221b2e6906c35805cd8b878e9a8e1a91b4297989ebe6771e6a",
+        "locator": {
+          "kind": "symbol",
+          "name": "WriterStamp"
+        }
+      },
+      "id": "RLZ-6DFCWB",
+      "invariant": "INV-G8AX2H",
+      "origin": {
+        "handoffEntry": "L3-W1-01",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The stamp's shape: it refuses an unknown value without its reason and an operation on an agent's stamp.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The model admits one optional history owner and validates operation and unknown-reason consistency.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6def42213c6e8a9ef9407d1a9fa4efd7086fda83",
+            "content": "sha256:91fb034055bd6e221b2e6906c35805cd8b878e9a8e1a91b4297989ebe6771e6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "WriterStamp"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The writer key groups the attribution by role, harness and model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6def42213c6e8a9ef9407d1a9fa4efd7086fda83",
+            "content": "sha256:8fa8a6832c7cfb2d7f4b9f907ce639234f929ac05d8a9c1855cde64fb1fa2f8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "writer_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

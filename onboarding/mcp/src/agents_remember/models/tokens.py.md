@@ -141,7 +141,10 @@ operation-less responses such as `ping`.
 - Shared response envelopes define the token metadata fields on the `ResponseModel` base. [1]
 
 
-- `_tool_payload` finalizes token metadata on every public tool response via this module. [2]
+
+
+- `_tool_payload` finalizes token metadata on every public tool response via this module. Anchor: `_tool_payload` [2]
+
 
 - `TokenizerVocabularyError` — the typed refusal raised instead of downloading a vocabulary this package does not ship. [3]
 - The shipped vocabulary, why its name is `sha1(url)`, the SHA-256 this module checks before every load, and how to refresh it (including replacing `VENDORED_VOCABULARY_SHA256`). [4]

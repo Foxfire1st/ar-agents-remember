@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bb5ffe981f83aa58ff262974a165fd286c14bef",
+            "blob": "61c0964a4a0ac9acb189c97ba8ecbc68ff66acb0",
             "content": "sha256:7e478e3d46b8261aa04fa8ae8c23fd232a97784a05268e0eb8ebcca24650bb3e",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "8bb5ffe981f83aa58ff262974a165fd286c14bef",
+            "blob": "61c0964a4a0ac9acb189c97ba8ecbc68ff66acb0",
             "content": "sha256:30e9aad669bb4970266f7e2053be487cfbf3ddd32a0a986a38c24a028ced6190",
             "locator": {
               "kind": "symbol",
@@ -30,58 +30,31 @@
       ]
     },
     "2": {
-      "note": "The complete revision aggregate and its validators, including the self-predecessor rule.",
+      "note": "The invariant revision validates its scoped authored fields and excludes self-predecessors.\n\nAnchor: `InvariantRevision`",
       "targets": [
         {
           "anchor": {
-            "blob": "8bb5ffe981f83aa58ff262974a165fd286c14bef",
-            "content": "sha256:a5149a9a6c73e01baad0c1c1141feaada9913738ad9530481dcd957649afe0fe",
+            "blob": "61c0964a4a0ac9acb189c97ba8ecbc68ff66acb0",
+            "content": "sha256:7e4c26831d230f4601e1180ce80d5fadbbf9f08e11ce53244946aede0a28d0e1",
             "locator": {
-              "kind": "symbol",
-              "name": "InvariantRevision"
+              "kind": "file"
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8bb5ffe981f83aa58ff262974a165fd286c14bef",
-            "content": "sha256:d07550d2e2173dd9ca4054097aa74437b737c47741d195797212d4c056590b46",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_self_consistent_acceptance"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The shared accepted/proposed rule this validator now delegates to.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
-            "content": "sha256:13cc663044dee904e0ef554d6776f2c58837847c4cc915a9688f715dd1172a37",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_consistent_acceptance"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/base.py"
           },
           "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "The read-back shape that pins the sorted predecessor set.\n\nAnchor: `StoredInvariantRevision`",
+      "note": "The read-back shape that pins the sorted predecessor set.",
       "targets": [
         {
           "anchor": {
-            "blob": "8bb5ffe981f83aa58ff262974a165fd286c14bef",
-            "content": "sha256:971fcb1ae80d4ea0b79533167b3bb74bffae8e1a98eb2fc7ed2dc4864e9ad267",
+            "blob": "61c0964a4a0ac9acb189c97ba8ecbc68ff66acb0",
+            "content": "sha256:d514e075d540b8dfde5476ded6948892a2d164e9129619a5df167b328d2368ce",
             "locator": {
-              "kind": "file"
+              "end": 115,
+              "kind": "line_range",
+              "start": 112
             }
           },
           "kind": "code"
@@ -93,12 +66,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
-            "content": "sha256:06e82c4037ac7680e4b651f09348637c8d608920d2d30c538355cf34701597d5",
+            "blob": "6869b696c169705ffdb8dcf595685df0bc2fb6b5",
+            "content": "sha256:85ea62b091e8903899be0c38cc161157f3f0cf89626f821847e0b8a81413c960",
             "locator": {
-              "end": 188,
+              "end": 185,
               "kind": "line_range",
-              "start": 168
+              "start": 166
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
           },
@@ -106,12 +79,12 @@
         },
         {
           "anchor": {
-            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "blob": "6869b696c169705ffdb8dcf595685df0bc2fb6b5",
             "content": "sha256:6c8f88cecd16447744536c141916dc4325c42c3f4d8f9222f307950beab6ca2c",
             "locator": {
-              "end": 361,
+              "end": 357,
               "kind": "line_range",
-              "start": 353
+              "start": 349
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
           },
@@ -120,11 +93,11 @@
       ]
     },
     "6": {
-      "note": "The current exact revision read and decoder verify a retained aggregate rather than writing it.\n\nAnchor: `decode_revision_row`",
+      "note": "The current exact revision read and decoder verify a retained aggregate rather than writing it.",
       "targets": [
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
             "content": "sha256:4d67cf075d6c300945eb4d42eeae768b15118046370b46da3c2227fc57a0dc7a",
             "locator": {
               "end": 173,
@@ -137,8 +110,8 @@
         },
         {
           "anchor": {
-            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
-            "content": "sha256:92d4353cb71f442af226829358fd09ea8dd54591ffed608d4b7a3779190116b8",
+            "blob": "382764f1d33cd50a7b8c7ff1757afd64f2b3306d",
+            "content": "sha256:f39ec63fd764b1e65b361b991d8c7774adca867237d96bcccf6674330a924e4c",
             "locator": {
               "kind": "file"
             },

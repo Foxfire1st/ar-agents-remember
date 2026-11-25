@@ -64,7 +64,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 - Dispatch requires a contract for modes other than fix and forwards the fixer's optional contract to its application owner. [2]
 
 
-- The scope that carries the caller’s named documents and refuses both selectors, an empty list, and a list outside citation_fix. [3]
+- This scope carries a named document or a bounded list of documents. It refuses both selectors together, empty or oversized lists and lists supplied outside citation_fix. [3]
 - Additional source for the preceding evidence on mcp/src/agents_remember/application/memory_tools.py. [8]
 
 

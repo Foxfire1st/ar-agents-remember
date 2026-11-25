@@ -1,0 +1,26 @@
+{
+  "path": "docs/llms.txt",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "550b410b2451344f2d985f845ca6383e049be7ab",
+        "content": "sha256:5c2661f85968c32df81f35597e552b9c14d2c0e56106e97256ac74c8a44949e3",
+        "locator": {
+          "end": 55,
+          "kind": "line_range",
+          "start": 51
+        }
+      },
+      "id": "RLZ-TPGPXF",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "The standalone agent summary names both smaller reply shapes and the route to omitted content.",
+      "role": "presentation"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

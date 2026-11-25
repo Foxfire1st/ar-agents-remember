@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_knowledge_writer_stamp_shape.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Unknown values require a reason in the stamp.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef610f9be96531c3bd6ad56d8d5c4ad353871855",
+            "content": "sha256:a8126ac986dd4ed365610f754b566a4ed4c1eef58af29273aa8f3e482cd2e3c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unknown_stamp_value_is_refused_without_its_reason"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Product and conversion stamps name their operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef610f9be96531c3bd6ad56d8d5c4ad353871855",
+            "content": "sha256:46abcf182f85a4716506f5dae716f0145a6f47be6f5e714aca94a3065174dfa4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_a_product_or_conversion_stamp_names_an_operation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Host-observed launch choices outrank requested values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef610f9be96531c3bd6ad56d8d5c4ad353871855",
+            "content": "sha256:621234bf02029266ed619a04463b4bedde21aca104af8228539481e22461889b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_receipt_values_prefer_the_hosts_observation_and_explain_what_is_missing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

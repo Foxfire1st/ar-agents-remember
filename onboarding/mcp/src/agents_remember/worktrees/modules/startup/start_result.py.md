@@ -12,6 +12,9 @@ different recovery guidance.
 
 ## Code Commentary
 
+The successful worktree-start result can refresh derived briefs against the new persistent converted pair. It reports an advisory when the inherited checkout does not yet provide an effective tracked ignore rule.
+
+
 ### Logic
 
 `started_result` returns either the preview builder or a completed `started` result and adjusts the
@@ -46,7 +49,10 @@ No configured Domain Documentation source applies.
 
 ### Repo-Internal References
 
+
+
 - Real starts distinguish terminal start from background provider setup while preserving task-addressed guidance. [1]
+
 - Preview builds the explicit apply packet and common task identity without mutation. [2]
 
 ### Cross-Repo References

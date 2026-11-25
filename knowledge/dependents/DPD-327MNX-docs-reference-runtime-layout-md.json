@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "81f40d54700ea65869339061d70182e7efc59dc1",
-    "commit": "c5122294b4110a744254dad2c686a82f392304c4",
+    "codeTree": "764f146c5670470b3c8c10f5a5a7be9b66df5fac",
+    "commit": "e51f75630087a00bdcacaab646541e9cb04356d6",
     "role": "curator",
-    "statement": "The host file table still attributes role records and the provider-limits file to their current owners and now describes the recheck attempts and the early clear release.",
+    "statement": "On merged code e51f75630 the runtime-layout reference keeps both leaves' facts: role records are attributed to Python registration and dashboard reconciliation, with Worker, Reviewer and Curator scratch and report folders under the task enclosure and other roles in separate execution folders; a closed session stays resumable apart from archived host activity, and the provider-limits file now describes the recheck attempts and the early clear release.",
     "task": "261112-BUG-L37",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "docs/reference/runtime-layout.md",
   "id": "DPD-327MNX",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,12 +56,12 @@
       "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
     },
     {
-      "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+      "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
     {
-      "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+      "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },

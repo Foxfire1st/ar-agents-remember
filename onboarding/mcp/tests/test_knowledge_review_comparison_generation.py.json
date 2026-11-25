@@ -36,16 +36,16 @@
       ]
     },
     "27": {
-      "note": "The lane row this module occupies, inside the array whose own key declares the classification. Anchor: `test_knowledge_review_comparison_generation`",
+      "note": "The unit-regression lane selects mcp/tests/test_knowledge_review_comparison_generation.py.\n\nAnchor: `mcp/tests/test_knowledge_review_comparison_generation.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
             "content": "sha256:8b2f74e3b128e63ee59f6931d5d72751705a6ffc61e56d7ff1719aa7f74df984",
             "locator": {
-              "end": 266,
+              "end": 272,
               "kind": "line_range",
-              "start": 266
+              "start": 272
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "55049f6c73b5660adaa6e3b0637185a3167751c3",
-    "commit": "54d242820ff7f9941cadebf9f543c857314b368f",
-    "role": "manager",
-    "statement": "The FAQ correctly describes deterministic card lookup, cache rebuilds for the selected memory tree and loaded build, and task creation through task_doc.",
-    "task": "261123-SUB",
-    "uncommitted": false
+    "codeTree": "cc81897b5c77098790701dfdb82dbf8ed0750807",
+    "commit": "a5a631ca5fe4e27d0b8affa2d8c077d09712b434",
+    "role": "curator",
+    "statement": "The FAQ still accurately describes path-based card lookup, the brief-carrying read_ar_files rows, the memory.md ignore rule and task creation through task_doc after the briefs, ignore-rule and review-fact changes.",
+    "task": "261112-KNO-L4",
+    "uncommitted": true
   },
   "document": "docs/FAQ.md",
   "id": "DPD-A3XZ3Q",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
     },
     {
-      "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+      "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/core.py"
     },
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
     },
     {
-      "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+      "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/memory_cache.py"
     },
@@ -66,7 +66,7 @@
       "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
     },
     {
-      "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
+      "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
@@ -86,7 +86,7 @@
       "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
     },
     {
-      "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+      "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
@@ -96,7 +96,7 @@
       "path": "mcp/src/agents_remember/kernel/coordination_context/setting_values.py"
     },
     {
-      "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+      "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
     },

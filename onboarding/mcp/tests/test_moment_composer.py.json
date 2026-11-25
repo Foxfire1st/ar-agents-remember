@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_moment_composer.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Both moment kinds retain non-ASCII paths and write the moved rule’s full text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be8849eef47e70142c0851635ee4d2e0e9566e90",
+            "content": "sha256:9af13360cbc361dbb0ff2815f1053648714025ada9d083dfab3a75cff8ac3bf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_both_moments_count_the_rules_of_non_ascii_paths"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

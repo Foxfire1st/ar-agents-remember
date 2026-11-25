@@ -41,6 +41,9 @@ The added source cases compare each delivered decisions/carriedPaths/reportPath 
 
 - Conversion/publication remain in the full report, not as raw compact fields; recovery guidance is separately exposed by the current compactor. [1]
 
-- Public plan logs full candidate/conversion/publication review facts and delivers curator/own-row/closeout guidance plus log, without candidates, raw publication or reportPath; observed memory bytes stay equal.  Anchor: `test_public_plan_logs_complete_review_facts_and_delivers_recovery_guidance` `memory_carryover_plan_payload` [2]
+
+
+- Public plan logs full candidate/conversion/publication review facts and delivers curator/own-row/closeout guidance plus log, without candidates, raw publication or reportPath; observed memory bytes stay equal. Anchor: `test_public_plan_logs_complete_review_facts_and_delivers_recovery_guidance` `memory_carryover_plan_payload` [2]
+
 
 - For either Markdown/JSON member cut, equal bytes resume the missing companion without rewriting the existing bytes/mtime; differing cuts stay review-required and do not write; HEAD stays unchanged. [9]

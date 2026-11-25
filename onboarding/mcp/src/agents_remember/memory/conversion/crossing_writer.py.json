@@ -1,0 +1,112 @@
+{
+  "path": "mcp/src/agents_remember/memory/conversion/crossing_writer.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "96c35994086c74900f3cdb9b4cf6ff990c8a4143",
+        "content": "sha256:f54bae30862ab00ad8d1c401808dc3fddda85df3888306298b7b785f4948e725",
+        "locator": {
+          "kind": "symbol",
+          "name": "name_crossing_evidence"
+        }
+      },
+      "id": "RLZ-1T7KAM",
+      "invariant": "INV-KPK1WT",
+      "origin": {
+        "handoffEntry": "L3-W1-10",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Carries observed selected attribution and competing review identities in the crossing's own history without changing the two source histories.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "96c35994086c74900f3cdb9b4cf6ff990c8a4143",
+        "content": "sha256:5a09b579a139bfaf6ff63ff8c318951fc7236de395a708b00c5b0471afcf6d0e",
+        "locator": {
+          "kind": "symbol",
+          "name": "merge_with_writers"
+        }
+      },
+      "id": "RLZ-50T7KK",
+      "invariant": "INV-KPK1WT",
+      "origin": {
+        "handoffEntry": "L3-W1-10",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Merges without writers, then stamps each stored record from the line it equals, or with the product's stamp.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "96c35994086c74900f3cdb9b4cf6ff990c8a4143",
+        "content": "sha256:37b5e10b99b96a51f441d75907a4007b5763836732c0990013ec30730e82b4dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "product_write"
+        }
+      },
+      "id": "RLZ-JCMGYV",
+      "invariant": "INV-KPK1WT",
+      "origin": {
+        "handoffEntry": "L3-W1-10",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Builds the product's stamp and the history or crossing file that names its revisions.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "96c35994086c74900f3cdb9b4cf6ff990c8a4143",
+        "content": "sha256:2a5c48c81486a05e9adea3ddc4ad5e90c3a6b7e8e69cb0870968ad06f4fefaad",
+        "locator": {
+          "kind": "symbol",
+          "name": "_crossing_selection"
+        }
+      },
+      "id": "RLZ-N7JVJH",
+      "invariant": "INV-KPK1WT",
+      "origin": {
+        "handoffEntry": "L3-W1-10",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Resolves the stored content against both source histories before binding selected review eligibility or allowing a tie to use merged facts.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The merge selects record meaning before attaching writer provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96c35994086c74900f3cdb9b4cf6ff990c8a4143",
+            "content": "sha256:5a09b579a139bfaf6ff63ff8c318951fc7236de395a708b00c5b0471afcf6d0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_with_writers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The crossing binds retained content to admissible evidence from its selected side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96c35994086c74900f3cdb9b4cf6ff990c8a4143",
+            "content": "sha256:2a5c48c81486a05e9adea3ddc4ad5e90c3a6b7e8e69cb0870968ad06f4fefaad",
+            "locator": {
+              "kind": "symbol",
+              "name": "_crossing_selection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

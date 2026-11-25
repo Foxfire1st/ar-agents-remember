@@ -127,7 +127,10 @@ and D-33 names the memory-quality and citation surfaces.
 
 
 
-- Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership. [2]
+
+
+- Other memory MCP application entry points retain drift, citation, route-index, baseline, and carryover ownership; memory_init_tool is re-exported from memory_initialization.py. Anchor: `drift_check_tool` [2]
+
 
 
 

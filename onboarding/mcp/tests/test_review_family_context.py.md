@@ -137,7 +137,6 @@ No Domain Documentation source is configured for this slice.
 - Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [47]
 
 
-- RowStore writes text-tree fixture rows without the retired production admission plane. [48]
 
 
 Every claim on this card is checkable in the module's own cases and in the owners they drive. The three
@@ -240,3 +239,5 @@ No cross-repository behavior is exercised by these cases. The enclosure, the two
 code trees and the served application all belong to this repository's own fixture support and to the
 leaf enclosure the resolution selected. No remote, credential, network or external system is involved, so
 no cross-repo reference row is recorded.
+
+- RowStore writes text-tree fixture rows without the retired production admission plane. [48]

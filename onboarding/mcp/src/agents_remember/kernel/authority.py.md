@@ -66,8 +66,6 @@ Two module-level helpers operate on an `McpRuntimeConfig`:
 
 
 
-- `AuthorityError` is the authority-violation error type raised by both guards. [2]
-
 
 
 - Worktree application entry points consume these guards for repo resolution and path confinement. [3]
@@ -75,3 +73,5 @@ Two module-level helpers operate on an `McpRuntimeConfig`:
 
 - Authority guard returning the repository scope for a configured `repo_id` or raising `AuthorityError`. [5]
 - Authority guard resolving and confining a caller value to the coordination root. [6]
+
+- `AuthorityError` is the authority-violation error type raised by both guards. [2]

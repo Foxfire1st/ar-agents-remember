@@ -1,0 +1,98 @@
+{
+  "attempt": 2,
+  "closed": false,
+  "leaf": "261112-BUG-L37",
+  "rows": [
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-1HKEZD",
+      "items": [
+        "sha256:3f2c61f0086d0ec4bf586260bc93509867a9685820a730fa44b4fd1e94a35fd6"
+      ],
+      "reason": "Resolved the KNO-L4/L37 crossing conflict: the merged confirmation covers both leaves' facts and every stands_on link is re-anchored at merged code e51f75630.",
+      "revision": 20,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-5NBHER",
+      "items": [
+        "sha256:abfc6136631631154a7433a5637c14c0b00b0ab61cd5d2e1d5e34670edd8f956"
+      ],
+      "reason": "Resolved the KNO-L4/L37 crossing conflict: the merged confirmation covers both leaves' facts and every stands_on link is re-anchored at merged code e51f75630.",
+      "revision": 15,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-6HBV0M",
+      "items": [
+        "sha256:857205b8b29c641f1659385b76f56a3fef2f022fd0c662fa21bcba11933845e8"
+      ],
+      "reason": "Resolved the KNO-L4/L37 crossing conflict: the merged confirmation covers both leaves' facts and every stands_on link is re-anchored at merged code e51f75630.",
+      "revision": 10,
+      "subject": "DPD-B540GW"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-B9BS7F",
+      "items": [
+        "sha256:e5e0849e1d12470ce5655c3a012d63a432694e7c9a86d69eb8882d5c86a8d8ca"
+      ],
+      "reason": "Resolved the KNO-L4/L37 crossing conflict: the merged confirmation covers both leaves' facts and every stands_on link is re-anchored at merged code e51f75630.",
+      "revision": 16,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-DG9P4P",
+      "items": [
+        "sha256:34e63519f90d27fc369a47e87220b0fbf29eff53ceab0ef0b1195c448b65b8a1",
+        "sha256:56987102a3b13af1cf0901ba3da44cd5363e54191d07f17e10783b624bc3ec09"
+      ],
+      "reason": "Resolved the KNO-L4/L37 crossing conflict: the merged confirmation covers both leaves' facts and every stands_on link is re-anchored at merged code e51f75630.",
+      "revision": 19,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-FK8YD5",
+      "items": [
+        "sha256:465e9f1bd8fdd9502ebd8a2ae576f1ed915bf72ea2e92b302cb237476e4114ac"
+      ],
+      "reason": "Resolved the KNO-L4/L37 crossing conflict: the merged confirmation covers both leaves' facts and every stands_on link is re-anchored at merged code e51f75630.",
+      "revision": 16,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-PSEKVN",
+      "items": [
+        "sha256:0482b801f9de99758f7ec86497242b5b8ec50b7d0f7a1c9804729bea54bfb466",
+        "sha256:c7eaf99f5b3b9c75ac83572b8e50cc3590afa0d4d49635c9295a73db0f07f96c"
+      ],
+      "reason": "Resolved the KNO-L4/L37 crossing conflict: the merged confirmation covers both leaves' facts and every stands_on link is re-anchored at merged code e51f75630.",
+      "revision": 6,
+      "subject": "DPD-327MNX"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-W44QBW",
+      "items": [
+        "sha256:8d0223b476d7225d86040046310f840b0cb82a6cc535ce257c210e289c95a2d8"
+      ],
+      "reason": "Resolved the KNO-L4/L37 crossing conflict: the merged confirmation covers both leaves' facts and every stands_on link is re-anchored at merged code e51f75630.",
+      "revision": 13,
+      "subject": "DPD-K2QMWQ"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

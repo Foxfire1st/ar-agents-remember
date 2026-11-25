@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "fba297f078a4f8bfc008311ec7860b3216a51041",
-        "content": "sha256:04cc4761df5e5a170c7099764e3e728f03c332edf4de8257e0f6a50d5b96b5bf",
+        "blob": "669986d61fa3820a856e4ee3ae1ae6cb29a96276",
+        "content": "sha256:338237acb0368982aa034d85c0bfa93ba95019bced2f494cf9a313f91a1e00dc",
         "locator": {
           "kind": "symbol",
           "name": "test_a_refused_closeout_leaves_an_edited_ignore_file_alone_and_names_it"
@@ -26,11 +26,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fba297f078a4f8bfc008311ec7860b3216a51041",
-            "content": "sha256:5b45722830e70a20a795d9ef0638ba9861aff6171ee86e3d835e7c17f3c6fdf0",
+            "blob": "669986d61fa3820a856e4ee3ae1ae6cb29a96276",
+            "content": "sha256:4fd1895b8354c55c16a600ec1f68dcceee1cc979930ff6b1eeb3b4ddcc0a1081",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_closeout_refusal_after_the_code_commit_says_what_is_true"
+              "end": 85,
+              "kind": "line_range",
+              "start": 62
             }
           },
           "kind": "test"
@@ -42,11 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fba297f078a4f8bfc008311ec7860b3216a51041",
-            "content": "sha256:04cc4761df5e5a170c7099764e3e728f03c332edf4de8257e0f6a50d5b96b5bf",
+            "blob": "669986d61fa3820a856e4ee3ae1ae6cb29a96276",
+            "content": "sha256:338237acb0368982aa034d85c0bfa93ba95019bced2f494cf9a313f91a1e00dc",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_refused_closeout_leaves_an_edited_ignore_file_alone_and_names_it"
+              "end": 119,
+              "kind": "line_range",
+              "start": 88
             }
           },
           "kind": "test"

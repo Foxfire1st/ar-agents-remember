@@ -216,7 +216,7 @@
       ]
     },
     "8": {
-      "note": "The parent’s single records acquisition feeds lookup and the Records loader.",
+      "note": "The parent’s single records acquisition feeds lookup and the Records loader.\n\nAnchor: KnowledgeReader, useKnowledgeLoader",
       "targets": [
         {
           "anchor": {
@@ -233,12 +233,12 @@
         },
         {
           "anchor": {
-            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
-            "content": "sha256:850b3a42cabc9276dbe59a2665989300ba30bcdc5b47b22202fc95d93568e94d",
+            "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
+            "content": "sha256:ed4798a17f2efac53fdc4f16a3a335d5cc301edfcff2aa940a0265c6afbf2b14",
             "locator": {
-              "end": 131,
+              "end": 140,
               "kind": "line_range",
-              "start": 118
+              "start": 123
             },
             "path": "dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx"
           },

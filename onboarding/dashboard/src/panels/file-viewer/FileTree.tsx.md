@@ -58,7 +58,6 @@ No configured live documentation source was available for this pass.
 - The loader reads one directory listing and returns the requested side. [6]
 
 
-- The shared explorer that owns loading, traversal and selection. [7]
 
 
 
@@ -69,3 +68,5 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- The shared explorer that owns loading, traversal and selection. [7]

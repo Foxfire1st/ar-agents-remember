@@ -88,16 +88,16 @@
       ]
     },
     "14": {
-      "note": "The module's own unit-regression lane row.",
+      "note": "The unit-regression lane selects mcp/tests/test_knowledge_review_attribution_precedence.py.\n\nAnchor: `mcp/tests/test_knowledge_review_attribution_precedence.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
             "content": "sha256:a030c166ca646be6ba8660755a3045e04d6f7e624177ca6a9292fb454ccf9e2c",
             "locator": {
-              "end": 265,
+              "end": 271,
               "kind": "line_range",
-              "start": 265
+              "start": 271
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

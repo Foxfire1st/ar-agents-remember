@@ -50,6 +50,8 @@ An explicit `waitsFor` field on `create`/`replace`/`set_field`, or a changed nor
 
 ### Settings-owned review state
 
+For `record_review` on memory, edit preparation derives the recorder and handover stamps using the resolved task folder, task document and repository, then passes them to the generic review transition. By-file fields and section bodies still undergo their operation-specific shape checks here, while `task_doc_file_inputs.read_text_input` owns UTF-8 decoding and the digest of the raw bytes.
+
 > **Retained historical source account — superseded by the current contract:**
 > `_prepare_task_doc_edit` loads the settings number for each begin and each record. Both generic and route results receive the authority-resolved identity of the candidate root, distinct from a checked-tree claim. `_get_task_doc_result` does no write: absent state receives the readable settings number, and a legacy state with `limit == 0` receives that number plus approved extras in the answer only. A positive stored limit stays the last begun limit. If settings cannot be read, get remains readable from stored state, while begin/record refuse. Preparation still precedes validation and transactional publication.
 
@@ -226,6 +228,11 @@ The generic review operation delegates through the route-aware recorder with the
 
 ## Evidence
 
+- Edit preparation binds review stamps before recording the memory round. [45]
+- File-option dispatch preserves mutual exclusion and uses the returned raw-byte digest. [46]
+- The extracted reader accepts the same confined class of file inputs and computes the same SHA-256 digest. [47]
+
+
 
 
 - The facade serializes source preparation through run_task_doc_call and dispatches flat decision/question edits through their extracted owner. [33]
@@ -234,7 +241,6 @@ The generic review operation delegates through the route-aware recorder with the
 ### Repo-Internal References
 
 
-- `replace` remains in the current operation list; dispatcher preparation uses `_replace` and then candidate validation/publication. The archived operation inventory is not the live read surface. [1]
 
 - The operation table now registers the step plane split by intent (`set_step` update-only, `add_step` create-only, `remove_step` delete-only) alongside the moved `skip_step`. [2]
 
@@ -290,7 +296,6 @@ Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py:503-588;
 - The `replace` arm of candidate preparation, which builds its candidate through the shared create/replace builder. [19]
 - The two end-to-end cases that pin the refusal's message and the still-working planning flow. [20]
 
-- Task edits are prepared with exact accepted sources before candidate validation/publication; removed scaffolding tests are not current execution evidence. [21]
 - Generic task-document edits preserve complete retired rows. [27]
 
 - A special operation's answer reads its identity from the archive path when the called master has moved. [28]
@@ -433,7 +438,6 @@ Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py:463-500;
 
 - Ordinary and remove operations prepare per-root document pairs for the same source-CAS transaction. [34]
 
-- Worker/Curator typed review census, record-only exclusion and unknown history. [35]
 
 - Reason admission, threshold and differing-harness/model inheritance boundary. [36]
 
@@ -463,10 +467,16 @@ Anchor:
 
 Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py
 
-- Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. Anchor: "master_sync = plan_master_sync(task_root" [8]
-- Normal dispatch prepares and validates the complete candidate; publication retains accepted sources and includes a resolved parent for changed sync, explicit waitsFor refresh, or changed normalized dependencies, requires accepted parent bytes and a selected named parent to agree with its in-place write target, and supplies prepared-batch overrides to dry-run rendering. [15]
-- This facade exposes TaskDocTarget, TaskDocEdit and task_doc_tool, while scalar/prose implementations are imported from task_doc_content_edits. [26]
-- Canonical mutation, removed-read refusal, inline/by-file exclusivity and post-read byte budget, prepared-candidate validation, validly addressed answered sync failure, invalid named-master refusal, parent in-place guard and parent Order refresh remain separate boundaries. Shared field filtering belongs to phrases/content_edits; review evidence is not a grant. [31]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [38]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [39]
+
+- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [35]
+
+- Normal dispatch prepares and validates the complete candidate; publication retains accepted sources and includes a resolved parent for changed sync, explicit waitsFor refresh, or changed normalized dependencies, requires accepted parent bytes and a selected named parent to agree with its in-place write target, and supplies prepared-batch overrides to dry-run rendering. [15]
 - Create defaults a new subTask to pending; replace preserves an omitted existing review and candidate validation checks caller authority, erasure and stage refusal before publication. [40]
+- Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. Anchor: "master_sync = plan_master_sync(task_root" [8]
+
+- `replace` remains in the current operation list; dispatcher preparation uses `_replace` and then candidate validation/publication. The archived operation inventory is not the live read surface. [1]
+- Task edits are prepared with exact accepted sources before candidate validation/publication; removed scaffolding tests are not current execution evidence. [21]
+- This facade exposes TaskDocTarget, TaskDocEdit and task_doc_tool, while scalar/prose implementations are imported from task_doc_content_edits. [26]
+- Canonical mutation, removed-read refusal, inline/by-file exclusivity and post-read byte budget, prepared-candidate validation, validly addressed answered sync failure, invalid named-master refusal, parent in-place guard and parent Order refresh remain separate boundaries. Shared field filtering belongs to phrases/content_edits; review evidence is not a grant. [31]

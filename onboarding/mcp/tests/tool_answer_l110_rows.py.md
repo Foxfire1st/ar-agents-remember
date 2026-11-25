@@ -18,7 +18,7 @@ The `NOTE_REVISION_` block declares the note-only revision outcome, selected ref
 Each subject is a block of four values — a `*_ROW_FIELDS` set of the keys an answer may carry, a `*_ROW_USES` map
 of what each field is for, a `*_ROW_BOUND` token ceiling and a `*_PRODUCTION_PATHS` tuple of the paths the answer
 is produced on. The blocks cover the coherence, citation-fix, quality, route, integrity, knowledge-write, drift,
-migrate and baseline-adopt/status answers.
+migrate and baseline-adopt/status answers. The knowledge-write row declares `notes` and `notesTruncated`; the latter points readers to the full report when the answer lists only some notes.
 
 - The `COHERENCE_` block bounds the coherence answer at 850 tokens over `status`, `prepare`, `publish` and
   `validate`.
@@ -54,3 +54,5 @@ these structures and asserts on the answers the product returns.
 - The quality row names informational proof coverage and actual cache-build/stale/error counters without changing its bound or production paths — mcp/tests/tool_answer_l110_rows.py:158-234. [9]
 
 - The user-settings row declares its caller uses and 900-token bound without returning the settings file text. [10]
+
+- The knowledge-write answer row includes notes and notesTruncated. [11]

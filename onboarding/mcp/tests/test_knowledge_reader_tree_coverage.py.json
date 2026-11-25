@@ -54,16 +54,16 @@
       ]
     },
     "3": {
-      "note": "The suite's lane membership in the evidence catalog.",
+      "note": "The unit-regression lane selects mcp/tests/test_knowledge_reader_tree_coverage.py.\n\nAnchor: `mcp/tests/test_knowledge_reader_tree_coverage.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
             "content": "sha256:ca4e0f4726a7b894a9ac5a2f5c43c5aefa74beaaf5f1b6037a07097d866ba16d",
             "locator": {
-              "end": 259,
+              "end": 264,
               "kind": "line_range",
-              "start": 259
+              "start": 264
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

@@ -58,7 +58,7 @@ The package surface.
 - The package's public surface: the owner, the report, the request and the one operation. [1]
 
 
-- The one operation it exports. Anchor: `write_knowledge` [2]
+- The package exports the writer operation. [2]
 
 
 - The module map names the reconsideration rows and the task-document question (MIK-R14). [3]

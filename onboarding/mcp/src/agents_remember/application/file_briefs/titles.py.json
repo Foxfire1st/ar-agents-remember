@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/file_briefs/titles.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The title selector distinguishes an existing title from a derived display title.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e219ac6ddf09b8d1767c9b4acdfd83e3f6cbda8d",
+            "content": "sha256:93b417ad3d0e3167655bc4270c480ed29e05d0a5f76d80655db72a201bb73550",
+            "locator": {
+              "kind": "symbol",
+              "name": "rule_title"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

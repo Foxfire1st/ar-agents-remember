@@ -44,7 +44,8 @@ No Domain Documentation source is configured for this slice.
 - `test_a_membership_recorded_again_under_another_family_revision_is_a_retraction` supplies the current fixture or assertion described above. [15]
 
 
-- Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [16]
 
 
 - RowStore writes text-tree fixture rows without the retired production admission plane. [17]
+
+- Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [16]

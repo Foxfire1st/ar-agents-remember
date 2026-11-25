@@ -51,7 +51,10 @@ No Domain Documentation entries are configured in `system/sources.md`. These are
 
 - Only newly authored history rows are passed through the same-run governing-row check. [4]
 - Every matching stale/touched/family item is examined until a genuine shared-predicate violation is found. [5]
-- The writer performs leaf shape admission and collects worklist problems after virtual authoring, before publication. [6]
 - The retained CLI fixture orders both stale/touched items and then reverses them; each refused disposition preserves both current memory bytes and the closed attempt. [7]
 - The family fixture requires refusal of no_impact and assigned judgments over a changed guarantee. [8]
 - A leaf without a persisted worklist is refused with memory_quality_check guidance. [9]
+
+
+
+- The writer performs leaf shape admission and collects worklist problems after virtual authoring, before publication. [6]

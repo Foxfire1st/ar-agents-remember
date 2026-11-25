@@ -34,7 +34,6 @@
   side's range unresolved, or changes it, which is a re-anchor), so the FAM-F00003 case pins it through its own reason
   ("pkg/data.bin changed as a non-text file … RLZ-N00001 is not a file entry") beside the after side's
   unresolved-range reason.
-- Registered in the `unit-regression` lane (`test-evidence-lanes.toml`).
 
 ### Conventions
 
@@ -148,5 +147,4 @@ The index-only outline case includes `comparison` in the exact serialized field 
 
 - The index-only outline preserves exact catalogue fields including comparison. [13]
 
-
-- Its lane row. Anchor: "mcp/tests/test_review_change_kinds.py" Anchor: "mcp/tests/test_review_change_kinds.py" [7]
+- The `unit-regression` lane selects `mcp/tests/test_review_change_kinds.py`. [7]

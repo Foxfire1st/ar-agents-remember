@@ -7,9 +7,9 @@
 ## Purpose
 
 `cli/__main__.py` is the umbrella `agents-remember` console entrypoint: a single front door
-that dispatches subcommands. It registers **twenty** of them — `dashboard`, `memory-citations`,
+that dispatches subcommands. Its subcommands include `dashboard`, `memory-citations`,
 `memory-backfill`, `handoff-check`, `knowledge-ingest`, `knowledge-bootstrap`, `knowledge-format`,
-`knowledge-convert`, `knowledge-validate`, `knowledge-index`, `knowledge-worklist`, `knowledge-routes`,
+`knowledge-convert`, `knowledge-convert-states`, `knowledge-validate`, `knowledge-index`, `knowledge-worklist`, `knowledge-routes`,
 `knowledge-census`, `knowledge-copies`, `explainer-browser`, `tool-log-stats` (MIK-R108 rule 8), `paseo`, `upgrade-user-settings`, `providers-remove` and `removed-stores` — and
 further CLI adapters slot in as subparsers. Backed by the
 `agents-remember = agents_remember.cli.__main__:main` console script.
@@ -64,6 +64,8 @@ as its first memory change, then close out and land. Other open lines cross thro
 reader and conversion-format version 1 are permanent product parts; retirement
 requires a separate developer decision, because other clones can retain unconverted lines.
 
+`knowledge-convert-states` serves a separate conversion of already-converted memory. The command defaults to planning and writes the state-format conversion only on explicit apply.
+
 `knowledge-validate` (MIK-R22) is the formatter's read-only companion: the curator's standalone run of the
 mandatory knowledge validator over a memory working tree, against a code checkout and optional
 base commits. It writes nothing, and like the formatter it has no effect on unconverted memory: it
@@ -116,6 +118,10 @@ The knowledge-command registry also exposes handoff-check, delegating its argume
 - Registers read-only handoff-check command. [20]
 
 ## Evidence
+
+- The command parser registers text conversion and standing/state conversion separately. [24]
+- The derived-state adapter selects a plan by default and exposes an explicit apply operation. [25]
+
 
 ### Repo-Internal References
 
@@ -177,6 +183,8 @@ Source: mcp/src/agents_remember/cli/__main__.py
 - **The `knowledge-worklist` subparser: the change-to-knowledge worklist of a leaf or of four named sides.** [12]
 - **The `knowledge-routes` subparser: the read-only family route report with the mechanical suggestion.** [13]
 - **The `knowledge-census` subparser: the migration census’s inventory and report.** [14]
-- Frozen implementation of build_parser supporting the stated file behavior. [16]
 - Frozen implementation of main supporting the stated file behavior. [17]
+
+- Frozen implementation of build_parser supporting the stated file behavior. [16]
+
 - The runtime-command registry registers upgrade-user-settings with its existing adapter; handoff-check is registered separately in the knowledge-command registry. [18]

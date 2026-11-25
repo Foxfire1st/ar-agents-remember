@@ -15,6 +15,9 @@ The recorded card base is read separately from the operation's revision and vali
 
 ## Code Commentary
 
+A real leaf record or onboarding write can prepare the tracked briefs ignore entry inside the same rollback-aware publication as the authored files. History-only writes take no ignore preparation.
+
+
 ### Logic
 
 - `Owner(task, kind, id)`: the task and the leaf, wave or crossing that owns the history file. A `crossing` owner
@@ -98,7 +101,10 @@ The candidate, the owner, the base and the write.
 - Entries this owner wrote for an invariant from a hand-off entry. [6]
 - A record as the base holds it. [7]
 - An entry's anchor as the base holds it. [8]
-- Memory publication delegates to the rollback-aware file owner. [9]
+
+
+- The rollback-aware publisher includes tracked briefs ignore preparation when a real leaf record or onboarding write requires it. History-only writes skip this preparation. [9]
+
 
 - Publication snapshots affected bytes; rollback verifies restoration and reports failures instead of promising unconditional atomicity. [13]
 

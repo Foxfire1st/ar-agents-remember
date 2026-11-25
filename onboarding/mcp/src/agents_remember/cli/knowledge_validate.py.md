@@ -93,7 +93,7 @@ The following complete predecessor retains useful explanations, old observations
 >
 > - Printing the report or its JSON. [2]
 > - Inputs, the out-of-scope answer and the exit statuses. [3]
-> - Registration in the umbrella. [4]
+> - Registration in the umbrella.
 >
 > ### Cross-Repo References
 >
@@ -104,5 +104,7 @@ The following complete predecessor retains useful explanations, old observations
 > - Arguments, RawDescriptionHelpFormatter and the ten-rule reason/refusing-route table. [1]
 > - Current source assertions distinguish the fixture pass with `--base` (carried legacy report) from the baseless malformed-marker JSON refusal (both marker and legacy debt refuse); no command was run for this account. [5]
 > - Current source delta inspected statically: Add the preserved help-table policy and correct the stale blanket fixture-pass caption while retaining arguments, read-only/no-skip behavior and exit codes. [6]
+
+- Registration in the umbrella.
 
 - Registration in the umbrella. [4]

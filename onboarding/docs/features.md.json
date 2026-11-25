@@ -1,0 +1,26 @@
+{
+  "path": "docs/features.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ccd3992d3d12badb82405243e1e23a27e010dc1c",
+        "content": "sha256:0fde5d8cd47bb2f1a93883513895d6a7ab6904057288c608518251d63519c7c5",
+        "locator": {
+          "end": 203,
+          "kind": "line_range",
+          "start": 199
+        }
+      },
+      "id": "RLZ-SHWMZJ",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "The feature description keeps the source-file path available as the reader changes row shape.",
+      "role": "presentation"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

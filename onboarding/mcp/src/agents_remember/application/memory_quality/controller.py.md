@@ -473,7 +473,7 @@ measured at all.
 
 
 
-- The raw count is 2 and the response count 1; only the stray row remains. [13]
+- The raw count is 2 and the response count 1; only the stray row remains. Anchor: `test_an_onboarding_row_that_answers_an_uncovered_item_is_not_reported_unnecessary` [13]
 
 
 

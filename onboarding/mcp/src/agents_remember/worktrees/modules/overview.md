@@ -26,7 +26,7 @@ Sync is contract-addressed and resumable. Preview skips fetch and delegates obse
 > **Retained historical source account — superseded by the current route account:**
 > Closeout validates effective input, enclosure and branch authority, source lineage and exact candidate identity. A series cannot use closeout to create workbench code: it records already-landed clean code. A leaf's changed-path worklist includes working files and the unverified committed range so transported changes remain visible. Before publication, converted-memory candidate refusal prevents spending approval or committing code. Inside the publication owner, the contract and candidate are reread/reproved; approval is claimed or its journal-authorized claim is resumed, code is published, and `closeout_external.py` performs memory refresh and output. The response names its own `contractPath` and reports refresh paths using source identity or the regenerated document identity, with bounded nonblank samples.
 
-External leaf closeout refuses an unconverted-memory cutover lock before refresh. Converted output closes the owner's history file, computes the exact memory tree with content exclusions, validates it against the parent line and paired code, and asks the mandatory invariant gate. The admitted memory branch/tip is rechecked after that work. A changed would-be publication tree refuses; successful publication uses the judged tree object, so later file writes remain uncommitted rather than entering that commit. Preparation rollback covers history closing and any added cache-ignore rule only while those files still hold the closeout's own bytes. Git publication restores its index on refusal; a partial ref publication or a later proof failure has distinct recovery consequences and is not described as unconditional rollback.
+External leaf closeout refuses an unconverted-memory cutover lock before refresh. Converted output closes the owner's latest history file with the qualifying review fact when available, then refreshes entity fingerprints and generated route indexes. It computes the exact resulting memory tree with content exclusions, validates it against the parent line and paired code, and asks the mandatory invariant gate. The admitted memory branch/tip is rechecked after that work. A changed would-be publication tree refuses; successful publication uses the judged tree object, so later file writes remain uncommitted rather than entering that commit. A failed derived refresh restores the history closing while the history still holds the closeout's own bytes. On later failure the preparation rollback covers history and cache-ignore files while their bytes still match the closeout's writes. Git publication restores its index on refusal; a partial ref publication or a later proof failure has distinct recovery consequences and is not described as unconditional rollback.
 
 The memory output is one substantive content commit rendered with Code-Commit attribution and a tree-bound Commit-Check-Pass in the same trailer block, or the actual admitted unchanged tip. Converted no-change and recovered outputs are still judged. Mutation intent precedes publication and proof follows it. The root ledger cache is excluded from content and refreshed after output; cache-only changes do not request another commit. Series memory output delegates to the series owner.
 
@@ -40,6 +40,8 @@ L61 publication qualification: before protected ref movement, integration requir
 
 > **Retained historical source account — superseded by the current route account:**
 > Finalization proves completed closeout/integration, local ancestry of the landed code and exact code/memory carryover. It resolves task targets before cleanup, refuses unresolved declared leaf work, runs or verifies reclamation, then atomically reconciles selected task documents after source rechecks. Cleanup refusal preserves its blockers and prevents task-document completion; preview retains cleanup's own plan instead of claiming actual reclamation. A later task-publication refusal is reported separately from cleanup already performed. Series finalization completes the master and any proven single commanding-sprint row while retaining the master folder; individual master retirement and whole-sprint archival have separate task-document routes.
+
+A forward converted leaf closeout prepares the tracked briefs ignore line with the ledger ignore line before the memory tree is judged. The completed result asks for a full refresh only after the closeout creates durable memory output. The refresh uses the verified paired code commit and returns any problem as a brief advisory.
 
 ## Construction And Ownership
 
@@ -74,7 +76,7 @@ The read-local baseline memo now carries an optional capture observer, restored 
 
 Task-fact projection receives exact canonical JSON-path/document pairs, including finalize's selected leaf/parent, rather than guessing document paths from the contract folder. Abandon validates its task/parent stage before destructive output and rechecks after the terminal reread. Its existing guard publishes contract abandonment with task/parent stage and provides task-source/contract restoration on that publication's failure; this does not promise rollback of worktrees already reclaimed. Projection failures retain the shared task-fact publisher's separate reported-effect semantics.
 
-`cleanup.py` and `abandon.py` expose terminal operations, with admitted transactions extracted to `terminal_cleanup.py` and `terminal_abandon.py`. Terminal archive authority is obtained and reread before destructive output. Their capability/identity helpers constrain exact owned worktree, branch and remote deletion targets; branch ancestry and real edits remain protected. Cleanup retires the current child edge, preserving parent/source branches. Group removal occurs only when actually empty; preview models scheduled removals. Contract-owned drift snapshots, reports, logs and provider resources have explicit terminal inventories and reasons, and the enclosure generation's recorded outside scratch root joins them. `terminal_validation.py` carries preview interpretation into drift-snapshot expectations. `cleanup_report.py` shapes successful real reclamation and owns no operation.
+`cleanup.py` and `abandon.py` expose terminal operations, with admitted transactions extracted to `terminal_cleanup.py` and `terminal_abandon.py`. Terminal archive authority is obtained and reread before destructive output. Their capability/identity helpers constrain exact owned worktree, branch and remote deletion targets; branch ancestry and real edits remain protected. Cleanup retires the current child edge, preserving parent/source branches. Group removal occurs only when actually empty; preview models scheduled removals. Contract-owned drift snapshots, reports, logs and provider resources have explicit terminal inventories and reasons. The recorded outside scratch root joins them. Leaf cleanup and abandon keep the leaf's own tool-call lines in the master notes before they remove the log. The kept lines omit detail links and replace removed paths with the leaf ID. A keep error preserves the log and the terminal result reports the block. `terminal_validation.py` carries preview interpretation into drift-snapshot expectations. `cleanup_report.py` shapes successful real reclamation and owns no operation.
 
 `terminal_agents.py` attempts host archival of recorded leaf agents after admission and before destructive output. It does nothing for preview or series. An unbound service or host/receipt failure is reported and does not refuse an already-admitted retirement; completed cleanup can retry archival. The review-artifact archive hook likewise runs only for an actual/would-be archive, uses the task-root name for the review namespace, and reports unbound/failure rather than raising after a task has moved. Current series finalization receives the archive owner's skip, so hook existence is not evidence that a master was archived.
 
@@ -150,14 +152,12 @@ These superseded descriptions retain their historical wording; the current accou
 
 ## Evidence
 
+
 - **Retained historical source account — superseded by the current route account:** Future-code identity uses system-temporary capture and complete equality.
 
 - **Historical source-bound reference account, not an operative override:** Future-code identity uses system-temporary capture and complete equality.
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:79-106 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 806649b91bdce18f7b915bfbbf6727967f4e7a88. Retired means the anchor no longer stands, not that the cited subject was deleted.
-
-
-- Retained reference account. Ordinary converted closeout closes its history file and validates the exact memory output. The memory publication block restores its own unchanged preparations on refusal before publication returns. [1]
 
 
 
@@ -220,9 +220,6 @@ These superseded descriptions retain their historical wording; the current accou
 - Retained reference account (no fresh execution or acceptance inferred): `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. [28]
 
 
-- Retained reference account (no fresh execution or acceptance inferred): External closeout chooses substantive memory output and refreshes the cache afterwards. Anchor: `external_closeout_commits` [29]
-
-
 - Retained reference account (no fresh execution or acceptance inferred): Carryover completion is actual memory ancestry. [31]
 
 - Retained reference account (no fresh execution or acceptance inferred): Returned terminals are recorded and selected before recording/process refusal propagation. [32]
@@ -243,7 +240,6 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): Execution progress retains per-step outcomes, the gate catalog, publication bytes/file handles and environment reconstruction observations. [40]
 
-- Retained reference account (no fresh execution or acceptance inferred): Closeout public execution boundary. [41]
 
 
 
@@ -263,9 +259,6 @@ These superseded descriptions retain their historical wording; the current accou
 
 
 
-- Retained reference account (no fresh execution or acceptance inferred): The closeout's memory side asks the lock before any stamping or commit. Anchor: `external_closeout_commits` [51]
-
-
 - Historical cutover-only leaf-integration account. Current _leaf_landing_lock rejudges a converted landed/landing-line memory pair; only the neither-side-converted branch falls back to leaf_cutover_refusal. [52]
 
 
@@ -278,7 +271,6 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): The validator and the mandatory gate over the leaf's exact memory output. [55]
 
-- Retained reference account (no fresh execution or acceptance inferred): The preview answers the refused preview for a leaf the gate refuses. [56]
 
 - Retained reference account (no fresh execution or acceptance inferred): Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted. [58]
 
@@ -288,20 +280,10 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): The registered proof preserves startup/Git state and checks the call records. [63]
 
-- Closeout asks the converted candidate gate before publication, then rereads authority/candidate inside the publication owner. [64]
 
 - Fresh approval claim precedes code output, then external-memory output; journal-authorized resume uses its recorded claim. [65]
 
 
-- External output locks unconverted cutover, closes converted owner history, commits/reuses output and refreshes cache afterwards. Anchor: `external_closeout_commits` [66]
-
-
-
-- Exact converted output receives validator plus mandatory gate, and recovered output is judged again. Anchor: `_refuse_ungated_memory` `require_gated_recovery` [67]
-
-
-
-- Memory publication rechecks the admitted tip and judged tree, restores owned preparations on failure before publication returns, and proves the published commit afterwards. [68]
 
 
 - Integration/checkpoint apply shares handover and knowledge admission before ancestry proof and preview/apply split. [69]
@@ -336,7 +318,6 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Source-bound item construction and stored predicate. [85]
 
-- **Retained historical source account — superseded by the current route account:** Closeout asks the converted candidate gate before publication, then rereads authority/candidate inside the publication owner. [64]
 
 - **Retained historical source account — superseded by the current route account:** Fresh approval claim precedes code output, then external-memory output; journal-authorized resume uses its recorded claim. [65]
 
@@ -371,7 +352,6 @@ These superseded descriptions retain their historical wording; the current accou
 
 
 
-- The packet-owned landing and terminal routes preserve domain predicates, check order and refusal-before-write while returning recognized task-state failures as state/code/sentence answers. Dry abandon, cleanup and refused closeout agree with the blocked real call rather than promising success; recognized CloseoutQueueError retains its original code. Cleanup's archive-ready/non-rejudgment branch is now factored through _cleanup_terminal_branch, not a new cleanup permission or force override. Integration distinguishes unfinished checkpoint from completed master. Record landing's conversion next step consumes one central probe-made case: exact merge-memory arguments for a converted line, actual first-conversion argv plus shlex.join display for never-converted input, none for unknown. Unrecognized caller/I/O/internal errors remain fail-closed exceptions, and this presentation changes neither sync nor publication authority. [86]
 
 
 
@@ -400,3 +380,28 @@ These superseded descriptions retain their historical wording; the current accou
 - start_result and attach_result place canonical intent-review checks before their admitted create/re-entry paths, with planning-only attach behavior and a second pre-create guard. [92]
 
 - Start and retry share the retired-provider gate and return before the retained background setup branch. [93]
+
+
+
+- External closeout reads the review before closing history, closes before derived refresh and calls the closing's restore operation if refresh fails. [96]
+
+
+- Retained reference account (no fresh execution or acceptance inferred): Closeout public execution boundary. [41]
+- Retained reference account (no fresh execution or acceptance inferred): The preview answers the refused preview for a leaf the gate refuses. [56]
+
+- Ordinary converted closeout closes its history file and validates and gates the exact memory output. A failure before memory publication returns restores the preparations still holding the bytes closeout wrote. [1]
+- External closeout selects the substantive memory output and refreshes the cache afterwards. [29]
+- A fresh leaf closeout checks the cutover lock if its memory is unconverted. Recovery of an already recorded memory output takes the recovery path first. [51]
+- The packet-owned landing and terminal routes preserve domain predicates, check order and refusal-before-write while returning recognized task-state failures as state/code/sentence answers. Dry abandon, cleanup and refused closeout agree with the blocked real call rather than promising success; recognized CloseoutQueueError retains its original code. Cleanup's archive-ready/non-rejudgment branch is now factored through _cleanup_terminal_branch, not a new cleanup permission or force override. Integration distinguishes unfinished checkpoint from completed master. Record landing's conversion next step consumes one central probe-made case: exact merge-memory arguments for a converted line, actual first-conversion argv plus shlex.join display for never-converted input, none for unknown. Unrecognized caller/I/O/internal errors remain fail-closed exceptions, and this presentation changes neither sync nor publication authority. [86]
+
+
+
+
+- Closeout asks the converted candidate gate before publication, then rereads authority/candidate inside the publication owner. [64]
+- Fresh leaf closeout checks unconverted-memory cutover, closes owner history, commits or reuses the admitted memory output, and refreshes the cache. Converted recovery separately gates an already recorded output. [66]
+- The validator and mandatory gate judge the exact converted memory output, including recovered output. [67]
+- Memory publication rechecks the admitted tip and judged tree. A failure before publication returns restores its owned preparations where their bytes still match. Proof of the published commit runs afterwards. [68]
+
+- The terminal keep owner copies exact leaf call lines to the master report ahead of log removal. [99]
+
+- Before capturing the exact memory tree, the memory leg prepares the cache and brief ignore lines. A newly committed closeout reports an advisory if the derived brief refresh returns a problem. [100]

@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "A memory record answers through the Curator lane without reopening passed code.\n\nAnchor: `test_memory_record_answer_uses_curator_lane_without_reopening_passed_code`",
+      "note": "A memory record answers through the Curator lane without reopening passed code.",
       "targets": [
         {
           "anchor": {
-            "blob": "fda633bc75bb56bf4e2a885fc0d9af3821af66b2",
-            "content": "sha256:cf9d5b9ad82f2e7c46a1a7d3a7a83bc93c5d3e6003f84122e5807da7f05df15f",
+            "blob": "6695abd83a65263ec8bb8d9ad3df6a0c17274c2d",
+            "content": "sha256:4ec9b1dcfd57f74a7ff355ad88278d93741ea4c12cd715054db7e1618477fc87",
             "locator": {
-              "kind": "file"
+              "end": 121,
+              "kind": "line_range",
+              "start": 48
             }
           },
           "kind": "test"
@@ -22,11 +24,45 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fda633bc75bb56bf4e2a885fc0d9af3821af66b2",
+            "blob": "6695abd83a65263ec8bb8d9ad3df6a0c17274c2d",
             "content": "sha256:f5ebe74b66284674f1052ac89d13f150b89c65f533b8948624b63c1de2c30b5b",
             "locator": {
               "kind": "symbol",
               "name": "test_invalid_kinds_and_incomplete_memory_count_fail_closed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The same review round keeps its original handover after registration or verdict corrections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6695abd83a65263ec8bb8d9ad3df6a0c17274c2d",
+            "content": "sha256:82b19f0dce0fcb1b32720bdec87ff23ccc564baad3de36b301463463e485d513",
+            "locator": {
+              "end": 365,
+              "kind": "line_range",
+              "start": 270
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "An unbound recorder and absent handover registration have explicit unknown reasons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6695abd83a65263ec8bb8d9ad3df6a0c17274c2d",
+            "content": "sha256:157f02a3db8bbd93805a9f3466cd037436f08bb5db40ef255ee08e9572914e89",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 124
             }
           },
           "kind": "test"
@@ -38,11 +74,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fda633bc75bb56bf4e2a885fc0d9af3821af66b2",
-            "content": "sha256:5219bc2cd798e49ce90d5b43adc554ec8ca4db95baaa3be41985356e1e81c183",
+            "blob": "6695abd83a65263ec8bb8d9ad3df6a0c17274c2d",
+            "content": "sha256:c4f878739f35fa74c620ffdeadde206f0a8599b955f2a0c17bd853eed862c2e9",
             "locator": {
-              "kind": "symbol",
-              "name": "test_memory_baseline_after_code_pass_is_independent_and_persisted"
+              "end": 178,
+              "kind": "line_range",
+              "start": 124
             }
           },
           "kind": "test"
@@ -54,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fda633bc75bb56bf4e2a885fc0d9af3821af66b2",
+            "blob": "6695abd83a65263ec8bb8d9ad3df6a0c17274c2d",
             "content": "sha256:bcf3c8cef187c47c2deec746e98ba73ae9d695b00d095741acf9bc84065ec194",
             "locator": {
               "kind": "symbol",
@@ -70,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fda633bc75bb56bf4e2a885fc0d9af3821af66b2",
+            "blob": "6695abd83a65263ec8bb8d9ad3df6a0c17274c2d",
             "content": "sha256:3bc51e9be9962f5f0e501c30443f4f934f3aa4276b4eff8dfc1b0a3df22ec200",
             "locator": {
               "kind": "symbol",
@@ -86,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fda633bc75bb56bf4e2a885fc0d9af3821af66b2",
+            "blob": "6695abd83a65263ec8bb8d9ad3df6a0c17274c2d",
             "content": "sha256:7e7eba2185cd42fd69b1ba8df5f576a42921be35551db44329a7f54eca7ee4de",
             "locator": {
               "kind": "symbol",
@@ -102,7 +139,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fda633bc75bb56bf4e2a885fc0d9af3821af66b2",
+            "blob": "6695abd83a65263ec8bb8d9ad3df6a0c17274c2d",
             "content": "sha256:90b7e6e47a040d99562ac08e2a1067d38178ad8a58766187d7b2b720d2fd8797",
             "locator": {
               "kind": "symbol",
@@ -118,7 +155,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fda633bc75bb56bf4e2a885fc0d9af3821af66b2",
+            "blob": "6695abd83a65263ec8bb8d9ad3df6a0c17274c2d",
             "content": "sha256:efb64a8ded064c4c33f85dcfca8ea6e6eebcec666951993c37073cb6699ba20a",
             "locator": {
               "kind": "symbol",
@@ -134,7 +171,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fda633bc75bb56bf4e2a885fc0d9af3821af66b2",
+            "blob": "6695abd83a65263ec8bb8d9ad3df6a0c17274c2d",
             "content": "sha256:677fcc3474efeb644e25ec094364c3a8054b1efafb528533eaf0329cd46cd64d",
             "locator": {
               "kind": "symbol",
@@ -150,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fda633bc75bb56bf4e2a885fc0d9af3821af66b2",
+            "blob": "6695abd83a65263ec8bb8d9ad3df6a0c17274c2d",
             "content": "sha256:10ac835b644d6c1fcbcd070bd07e91e353a55d7b02ce15498a373d35cb5a9bc7",
             "locator": {
               "kind": "symbol",

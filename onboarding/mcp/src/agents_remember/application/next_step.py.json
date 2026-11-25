@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The response boundary preserves an explicit producer hint or computes one, rejects contradictory task addresses, and enriches the validated model before final serialization.",
+      "note": "The response boundary preserves an explicit producer hint or computes one, withholds a hint whose task address contradicts the result, and enriches the validated model before final serialization.",
       "targets": [
         {
           "anchor": {
-            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "blob": "44965514704f09508b78c29839ced880346b1479",
             "content": "sha256:60e27a120bfb8dc9f33714fb08d00eefa653f16db19cf2acb29230f633cf6a6c",
             "locator": {
-              "kind": "symbol",
-              "name": "_attach_contract_guidance"
+              "end": 153,
+              "kind": "line_range",
+              "start": 135
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -19,8 +20,8 @@
         },
         {
           "anchor": {
-            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
-            "content": "sha256:e65598ad08d511a5ffa26a3099d273596eea7844d5c2a00685c2ccb183271c43",
+            "blob": "c1de505d6e140874b674a3f0afbfccb01590e362",
+            "content": "sha256:11b1fc8e2810d5677e38dee186495dae46d165ae39a1e63e3058fab306d145d2",
             "locator": {
               "kind": "file"
             },

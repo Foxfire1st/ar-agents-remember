@@ -30,11 +30,11 @@ Landing cut/add observations are report-only; use the measurement owner and cano
 
 A role launch resolves canonical sprint/master/leaf selections through task topology. An Orchestrator is sprint-bound. A Manager names a master, and its sprint when a sprint commands that master. A Worker, Reviewer or Curator names a master and a task, with the sprint when one commands the master. A master that no sprint commands is named alone, and a sprint named for it is refused. Actor, role, request and task references travel in the launched server binding. Native folder names and display titles do not create task authority. `task_scoped_mcp` derives a call-local configuration from the exact canonical leaf and its admitted enclosure, retaining the original repository authority while replacing its scoped workspace/code/memory roots. A reader without task context retains configured Projects roots; a task-scoped reader cannot supply alternative roots. Investigator admits Projects, a sprint, a master that no sprint commands, or a sprint and master, and refuses leaf selection.
 
-`read_files.py` composes the registered `read_ar_files` naming route: source existence, governing card location or no card, record-state counts and actionable IDs/kinds/states/card headings. The answer lists governing overview locations once per call and carries no source/card/overview bodies, `published_intent`, session-delivery state or continuation. An unconverted tree is named as `memoryState="unconverted"` and supplies no card; source existence is independent of whether a governing card can be named.
-Source existence is checked before card lookup, so a source-absent row cannot acquire a card or record counts through this route. `read_files_format` remains an internal format owner, not the retired body-serving response contract.
+`read_files.py` composes the registered `read_ar_files` naming route: source existence, governing card location or no card, record-state counts and actionable IDs/kinds/states/card headings. A fuller answer can list governing overviews once and add bounded rule text and a brief pointer for eligible paths. If the minimum full rows exceed the answer budget, compact rows keep every path and its available brief pointer and freshness. The reader reports a missing, older or unrecognized saved brief without writing memory files. The next write covering the file or its folder renews a missing or older saved brief when the writer can refresh it. The source, card and overview bodies remain in their files. The reader uses no `published_intent`, session-delivery state or continuation. An unconverted tree is named as `memoryState="unconverted"` and supplies no card; source existence is independent of whether a governing card can be named.
+Source existence is checked before card lookup, so a source-absent row has no card, card-state counts or brief. The separate weakness and dependent-document counts can be returned before the existence check. `read_files_format` remains an internal format owner, not the retired body-serving response contract.
 
 
-The separate `knowledge_read` route selects text trees through derived indexes. Its source-context path selections use family-complete selection and continuation machinery: entries at the path, their invariants, one expanded family hop, other families advertised without recursive expansion, and the governing route chain. A family seed expands that family directly. Currentness observes the code tree the read names; it does not replace that tree with working-tree bytes. Paired ordinary reads historically observe `HEAD^{tree}` and disclose that uncommitted edits are excluded; explicit knowledge reads use their declared code tree.
+The separate `knowledge_read` route selects text trees through derived indexes. Its source-context path selections use family-complete selection and continuation machinery: entries at the path, their invariants, one expanded family hop, other families advertised without recursive expansion, and the governing route chain. A family seed expands that family directly. Currentness observes the code tree the read names; it does not replace that tree with working-tree bytes. A read with an explicit code tree observes that tree. A checkout read without one uses its commit when clean and holds a working-tree capture when dirty. The working-tree selector requests a capture directly.
 
 The file writer reads a handoff, authors records/entries/history, mechanically carries surviving anchors and validates the whole output before writing. During a merge it validates against both merge parents, `HEAD` and `MERGE_HEAD`, each converted when the candidate needs it, and the memory-quality check reads the same bases through `knowledge_writer/base_side.py`. A proof may name a JavaScript or TypeScript case by its exact lines when no name reaches it, and a still_rejected reconsideration row may re-point a fired link to where its code now lives; the range is resolved in `knowledge_writer/case_proof.py`, the re-point in `knowledge_writer/repoint.py`, and the command's own raise refusal and its four fixed causes in `knowledge_write_command.py`. A `raise` the command cannot publish is refused whole and names the mounted `knowledge_write` with the absolute contract and hand-off paths. Onboarding rows receive candidate source sets and counted flags, and the writer compares cards against the readable recorded leaf memory base in the candidate's format. An unavailable recorded comparison uses a persisted count for the subject when present, then the operation base. Leaf worklist, trace and live review use the memory base recorded by the leaf contract, with ancestry established against the memory worktree's HEAD or the judged memory commit. Membership/no-family and decision/facet record rows use canonical subject aliases, stable rerun identities and candidate revisions; foreign-owner evidence survives reason-only rewrites without duplication. New row kinds do not authorize unsupported producers. Registry-declared writer reports allow across-run repair and name the later refusing route. The existing overview-order/numbered-citation validation and task-owned reconsideration questions remain. File writing is explicit and is not Git acceptance.
 
@@ -73,7 +73,7 @@ MCP registrations and payload builders own protocol signatures and response vali
 
 Parameter objects remain domain concepts beside their entry points. `CloseoutApproval` stays separate from commit messages so preview cannot masquerade as approved apply. Carryover approval intent stays separate from the selected content. Memory quality's strict sync/start/poll request is deliberately a public discriminated contract; mixed-mode fields are not silently accepted. Route-index composition forwards resolver-owned repository/storage/path-rule authority to the deterministic builder rather than inferring permission from a directory.
 
-`worktree_services` binds memory quality, citation guarding, certification rail definitions, knowledge validation with `GitBaseConverter`, crossing, worklist recomputation, the knowledge gate, review artifact cleanup and the optional leaf-agent archive port. Binding composes these owners; it does not give this module their authority. Internal provider lifecycle composition remains present, while runtime installation now attempts to stop leftover watchers and reports enabled legacy provider keys as unused. A failed stop is reported while installation continues without watcher recovery. Runtime installation also refreshes a running dashboard to the installed build (a dry run only plans that refresh) and reports the running servers with their build currentness.
+`worktree_services` binds memory quality, citation guarding, certification rail definitions, knowledge validation with `GitBaseConverter`, crossing, worklist recomputation, the knowledge gate, review artifact cleanup, the optional leaf-agent archive port and the file-brief refresh port. Whole-memory writers call the brief port with the settled folder and paired code and carry any problem as an advisory. Binding composes these owners; it does not give this module their authority. Internal provider lifecycle composition remains present, while runtime installation now attempts to stop leftover watchers and reports enabled legacy provider keys as unused. A failed stop is reported while installation continues without watcher recovery. Runtime installation also refreshes a running dashboard to the installed build (a dry run only plans that refresh) and reports the running servers with their build currentness.
 
 `tool_answer_log.py` obtains actor/role/task from the native agent binding and resolves a canonical single leaf-enclosure binding for report/log placement only while the contract and group survive. Terminating tools retain coordination-root logging; caller records carry no lifecycleId. `knowledge_reports.py` uses this resolved destination rather than an ambient lifecycle. Logs and the workspace River remain diagnostic records, not task stage or host activity authority.
 
@@ -94,7 +94,7 @@ The removed Eve materializer/carrier, launch points and terminal resolver are no
 
 `knowledge_write_admission` now records taskless repository-bootstrap provenance only. Its enclosure adapter and converted-database refusal retired with the database writer. Leaf writes obtain their facts through their current contract-addressed file route; bootstrap admission derives repository/settings authority and exact checkout revisions without fabricating an enclosure. The frozen admission value records what its resolver proved and decides neither destination nor identity itself.
 
-The enduring authoring intent separates authored meaning from mechanical identity/provenance. A local handoff label is not a canonical truth identity. Historical database allocation used fresh invariant/revision identities under separate retry keys, exact endpoint-derived citation/membership identities, explicit stored reuse and content-conflict refusal. Those mechanisms are archival; they must not be silently described as the current file writer. Current file authoring retains origin/handoff identity, record revision policy, exact code anchors, per-owner history and canonical validation. No-family with its basis, unexamined family scope and an examined empty external-source plane remain distinct semantic outcomes. Families express an independent joint guarantee, never one inferred from shared paths, labels or anchors. External sources retain authored origin references as an `external` reference target carrying document identity and, when known, version, rather than fabricated Git anchors; the current writer keeps no manifest of external sources.
+The enduring authoring intent separates authored meaning from mechanical identity/provenance. A local handoff label is not a canonical truth identity. Historical database allocation used fresh invariant/revision identities under separate retry keys, exact endpoint-derived citation/membership identities, explicit stored reuse and content-conflict refusal. Those mechanisms are archival; they must not be silently described as the current file writer. Current file authoring retains origin/handoff identity, record revision policy, exact code anchors, per-owner history and canonical validation. The writer derives the caller's stamp from its launch binding and receipt, and an unresolved value carries its reason. A new or advanced revision stores the stamp in the record and the exact meaning digest with that stamp in the writable attempt. Handoff status keys accept the record kind's permitted lifecycle words. The product derives revision state. No-family with its basis, unexamined family scope and an examined empty external-source plane remain distinct semantic outcomes. Families express an independent joint guarantee, never one inferred from shared paths, labels or anchors. External sources retain authored origin references as an `external` reference target carrying document identity and, when known, version, rather than fabricated Git anchors; the current writer keeps no manifest of external sources.
 
 The historical L45 rationale policy remains an authored-intent boundary: explanations are not generated from filenames, per-target authored rationale/role can override explicitly declared entry defaults, a missing role is unclassified, and committed historical retries must not be rewritten merely to invent rationale. Its old five admission codes and allocation-journal exceptions describe the retired ingest owner, not a fresh claim about every current file-writer admission. Stored generated explanations require authored successors rather than silent repair.
 
@@ -127,9 +127,11 @@ Requirement endpoint resolution is reporting: unresolved links remain authored a
 
 ### Knowledge reads and currentness
 
-The six public knowledge views are `source_context`, `invariant`, `family`, `record`, `weakness` and `dependent`. The first three use tree-bound paging. `weakness` and `dependent` list their record kinds with `rows:<n>` mark cursors; `record` is an unpaged projection selected by a `recordId` text identity (for example `INV-…` or `FAM-…`). The record view serves a bounded field, link-state and timeline projection with the record's location and no record prose; the paged views and the record view share one truth delegation, so the mounted answer and the dashboard record view cannot disagree about a link's state. Factored shared writer, report and code-observation owners keep their own guards: moving writer construction into the application module transfers no admission, refusal or report boundary to the mounted route. Removed review-matrix/curation-queue mechanisms and canonical supporting-record tables are not reintroduced by surviving read helpers. Derived-index storage has its own declared schema rather than a registry of openable canonical generations. Historical generation migration, mixed-generation comparison and portable export/import claims remain history.
+Public `knowledge_read` provides `source_context`, `invariant`, `family`, `record`, `weakness`, `dependent` and `writers`. The first three use tree-bound paging. `weakness` and `dependent` list their record kinds with `rows:<n>` mark cursors; `record` is an unpaged projection selected by a `recordId` text identity (for example `INV-…` or `FAM-…`). The record view serves a bounded field, link-state and timeline projection with the record's location and no record prose; the paged views and the record view share one truth delegation, so the mounted answer and the dashboard record view cannot disagree about a link's state. Factored shared writer, report and code-observation owners keep their own guards: moving writer construction into the application module transfers no admission, refusal or report boundary to the mounted route. Removed review-matrix/curation-queue mechanisms and canonical supporting-record tables are not reintroduced by surviving read helpers. Derived-index storage has its own declared schema rather than a registry of openable canonical generations. Historical generation migration, mixed-generation comparison and portable export/import claims remain history.
 
-Selection distinguishes no seed from a named seed selecting nothing. Missing identity/revision is `selector_absent`; an entry-less path can still have a governing route chain. A recorded empty subject is not an absent subject. Family route chains include equal/ancestor directories, nearest route first, then family identity, never child/sibling territory. Already expanded families still have chain rows; the retained `shorten_served` helper uses only its caller-supplied predicate and owns no session/lifecycle state. The mounted names-only `read_ar_files` does not deliver or shorten these chain bodies. A family seed uses exact revision checking on fresh reads and continuation alike.
+Record standing and source currentness answer different questions. The selected memory index supplies the derived `recordState` and writer of the shown revision. The selected code tree determines whether its attributed source evidence is current, stale or unverifiable. Compact tool rows use a role/model string. Dashboard record summaries carry the writer's role, harness and model. The `writers` view counts revisions by role, harness and model and retains the complete per-writer rows and contributing revision IDs in a caller-readable report. The tool answer keeps a bounded subset, totals and the report's path.
+
+Selection distinguishes no seed from a named seed selecting nothing. Missing identity/revision is `selector_absent`; an entry-less path can still have a governing route chain. A recorded empty subject is not an absent subject. Family route chains include equal/ancestor directories, nearest route first, then family identity, never child/sibling territory. Already expanded families still have chain rows; the retained `shorten_served` helper uses only its caller-supplied predicate and owns no session/lifecycle state. A fuller `read_ar_files` brief can carry directly related families by title and counts. The current saved brief, when present, supplies their context. A family seed uses exact revision checking on fresh reads and continuation alike.
 
 Mounted `knowledge_read` pages are cut at the 4,000-token `knowledge_read` bound, beside whole rows and a shared binding to memory tree, seed, policy, effective ordering and page-one code tree; the paging package's own declared shared threshold remains 8,000 tokens. Tokens contain no local root path and require the resolved repository to hold their tree. A mismatch refuses without a partial page or server cursor state. A continuing family starts with its literal header reference. Oversized-row and insufficient-page cases stay distinct; deferred seed tails collapse and an excessive queue has its named `seed_queue_exceeded` refusal. The earlier projection artifact bound and first-64-row issue are historical, not current projection functionality. Token accounting now records counts in the answer log rather than restoring the old response envelope.
 
@@ -219,7 +221,7 @@ These retired source accounts preserve earlier intent only. Their former citatio
 
 The route gained the two modules the one call a new user makes needs. `caller_harness.py` answers which provider is the calling chat's own harness from the MCP client name the transport reports, and answers none rather than substituting the first provider the host lists. `user_settings_init.py` owns the one write into the developer's user settings file — the harness of each role, created exclusively at mode 0600 only when that destination is absent, with an existing file read and reported and never written, merged, completed or re-moded. The host block is not written here: `paseoRuntime` belongs to the MCP authority settings file and the launcher's first-run stage establishes it. `application/runtime/skills.py` was removed with the skill-install entry it fronted.
 
-`memory_init_tool` reports the knowledge state without authoring knowledge. For a complete tree, its `nextAction` reports `recorded` or `not-recorded` before asking the developer to start the Architect, which organizes a regular foundation task with a Curator. The nonlegacy unavailable-publication branch uses the same state-first handover while retaining its state, path, code and detail. A partial index keeps its named-file repair and index-rebuild action; legacy format keeps its conversion route, and context admission keeps its own refusal and next action.
+`memory_init_tool` in `memory_initialization.py` measures the knowledge foundation without authoring records. A changed non-preview scaffold with admitted converted storage refreshes eligible briefs from the paired code branch and returns any refresh advisory. For a complete tree, its `nextAction` reports `recorded` or `not-recorded` before asking the developer to start the Architect, which organizes a regular foundation task with a Curator. The nonlegacy unavailable-publication branch uses the same state-first handover while retaining its state, path, code and detail. A partial index keeps its named-file repair and index-rebuild action; legacy format keeps its conversion route, and context admission keeps its own refusal and next action.
 
 The explainer composition binds serving to the existing comparison, evidence and frame owners. Build and every explicit Update prepare the exact recorded or planned comparison with measured side states, supplemental packet/document/reference receipts and the verified agreed manifest. Measured loss stays a limitation; absent required preparation input is a named refusal. Planned owner/reference and intended claim authority remain distinct from numbered recorded comparisons. The frame store persists admitted part maps, enforces revision/task byte bounds without silent revision eviction, and receipts only explicit developer removal or task archive reclamation. Archive cleanup first retires each explainer, then removes only its admitted task or named explainer-root artifacts while preserving pending recovery material and lock files.
 
@@ -675,10 +677,11 @@ The frame store accepts WebM and MP4 through the usual asset admission and publi
 
 - Task application authoring is distinct from observation: removed get/read_steps return operation-removed and canonical-file guidance, while surviving linkage_report writes its facts report and delivers counts/location. Ordinary writes and review mutations have phrase/reviewState delivery separate from their whole identity, preview and synchronization records. The by-file input branch reads one absolute regular UTF-8 input once before checking its measured byte budget. Role launch preparation supplies the own leaf and declared requirements with explicit missingCopies; later publication refreshes that set transactionally. None of these adapters moves canonical task, approval, projection, observer or coherence authority.
 
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_tree_knowledge.py:258-326 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 9547923129aa0b49d6b4f93a758f4fce70233745. Retired means the anchor no longer stands, not that the cited subject was deleted
+
 - The capsule compilation outcome shape: `CapsuleCompilationOutcome` carries exactly one of a compiled capsule or the typed refusal explaining it, with the manifest present in both shapes (`role_capsules/compilation.py:46-90`). The operation itself is `_compile_task_capsule` → `_compile_routed` (`skill_resources/capsule.py:223,257`). [99]
 - The capsule compilation outcome shape: `CapsuleCompilationOutcome` carries exactly one of a compiled capsule or the typed refusal explaining it, with the manifest present in both shapes (`role_capsules/compilation.py:46-90`). The operation itself is `_compile_task_capsule` → `_compile_routed` (`skill_resources/capsule.py:223,257`). [423]
 
-- Task application authoring is distinct from observation: removed get/read_steps return operation-removed and canonical-file guidance, while surviving linkage_report writes its facts report and delivers counts/location. Ordinary writes and review mutations have phrase/reviewState delivery separate from their whole identity, preview and synchronization records. The by-file input branch reads one absolute regular UTF-8 input once before checking its measured byte budget. Role launch preparation supplies the own leaf and declared requirements with explicit missingCopies; later publication refreshes that set transactionally. None of these adapters moves canonical task, approval, projection, observer or coherence authority. [487]
 
 - Preview admission reuses the registry and scope controller. [519]
 - Run identity includes operation and selection. [520]
@@ -719,16 +722,21 @@ The frame store accepts WebM and MP4 through the usual asset admission and publi
 - **The one durable-root owner the layout asks instead of restating `<task_root>/notes/reports`.** [66]
 - **The two typed failures this route's deletion and retention boundaries raise.** [67]
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: These old freeze/publication tests are no longer the current test functions; retained legacy manifests remain readers, not a current freeze producer. Historical account: **The cases that measure the whole journey, the convergence, the typed absences and the per-channel damage.** [68]
-- The statement-side projection's whole surface: the three-outcome side contract, the conditions reader, the comparison's own field roster, and the value reader that reserves `None` for absence. [69]
 - **The structured-value projection: canonical, bracketed as the pane's own rendering, and bounded with a visible truncation.** [70]
 - **The contract that makes `None` mean absence — and therefore the reason a structured value is projected rather than nulled.** [71]
 - The structured-value helper assertion checks equal canonical text for equal mappings with different key order. Its fixture-driven both-sides composition/round-trip is retired. [73]
 - The one-sided statement cases: the complete present-side statement beside the named absent side, with the comparison's own side-absence code. [74]
 - The renderer that owns how the two sides are drawn, and the four branches it decides from declared state. [75]
+
+
 - Historical canonical-publication declaration account; references and targets remain for custody. Current resolve_published_intent selects the converted memory tree through its derived index; published_dataset_path and PUBLISHED_DATASET_NAME are retired. [78]
+
 - The context owner that decides *which* memory root the declared location is. [79]
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: The current CLI is the converted file handoff route, not this retired destination/allocation/publication adapter. Historical account: **The CLI side of the seam: the destination selection it now owns, its three refusals, and the route line it completes from the report.** [80]
+
+
 - The consequence repair this landing forced, stated on the card where the claims live. [82]
+
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: The before-half placement adapter retired; current file authoring uses the admitted memory route. Historical account: **The CLI side of the seam: the one gate that decides whether the run may fill the half, and the handoff that delegates what the half then is.** [88]
 - Historical baseline-placement argument/refusal account; references and targets remain for custody. The current run loads its contract before dispatching the converted leaf or crossing writer. The baseline-placement argument/check is retired. [89]
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current knowledge_before_half retains dataset-identity readability checks and NOT_RECORDED, not the old BeforeHalf writer product. Historical account: The before half's layout, its origin record, and the four states a writer must consult before it writes anything. [93]
@@ -759,7 +767,10 @@ The frame store accepts WebM and MP4 through the usual asset admission and publi
 - `DriftSummaryPacket`, the typed drift seam `_drift_packet` returns. [120]
 
 
+
+
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current models/read_files declares NamedFile and ReadArFilesResponse, not FileReadStatus. Historical account: `FileReadStatus` is defined in the models type. [121]
+
 
 
 
@@ -771,8 +782,6 @@ The frame store accepts WebM and MP4 through the usual asset admission and publi
 - Landing input carries the actual two outputs. [124]
 - Closed application admission. [125]
 - The layer charter paragraph that fixes the one-way direction this seam implements. [132]
-- The storage operation this seam delegates to. [133]
-- Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current knowledge store retains reads/index operations; canonical create_revision is retired. Historical account: The storage operation this seam delegates to. [133]
 - The capsule surface this package consumes and does not re-implement. [137] [428]
 - The resolution shape whose missing dataset-identity field makes the read the only source of that value. [151]
 - The seam's three original entry points (MIK-R02 later added `select_knowledge_scope` beside them). [175]
@@ -810,17 +819,21 @@ The frame store accepts WebM and MP4 through the usual asset admission and publi
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: The old ingest placement/baseline adapter is retired; current file ingest does not place that database half. Historical account: **The adapter that declares the baseline argument and passes it into that selection — and, since 260915-KS-L45, derives its candidate directory from the contract and places the baseline into the review's own half.** [222]
 - Historical baseline-argument account; references and targets remain for custody. Current knowledge-ingest declares contract, hand-off list, authorization, commit/json and crossing arguments, with no settings option, and dispatches the admitted converted file writer. The baseline-placement argument and route are retired. [509]
 
+- Converted-memory sync attempts to settle the generated briefs ignore stanza before reporting remaining conflicts. An authored conflict or an edit to the working conflict stays open for resolution. [228]
 - The layer rule that forces the split, enforced by a test rather than documented. [229]
-- Historical canonical-publication dataset-path account; references and targets retained for custody. Current boundary: published_dataset_path is absent. select_knowledge_dataset accepts only converted memory roots and selects their derived index. published_intent_block still resolves the converted tree, seeds the requested paths and calls the retained bounded read_published_intent route; it is not attached to the names-only read_ar_files response. Historical account: **The new module's public surface: resolve the repository's publication, seed it with the requested paths, and read one bounded page per path.** [239]
+
+
+
+- Historical canonical-publication dataset-path account; references and targets retained for custody. Current boundary: published_dataset_path is absent. select_knowledge_dataset accepts only converted memory roots and selects their derived index. published_intent_block still resolves the converted tree, seeds the requested paths and calls the retained bounded read_published_intent route; it is not attached to the registered `read_ar_files` response. Historical account: **The new module's public surface: resolve the repository's publication, seed it with the requested paths, and read one bounded page per path.** [239]
+
+
+
+
 - Historical canonical-publication authority/absence account; references and targets retained for custody. Current boundary: published_intent_block still resolves converted-memory tree/index selection and returns named unavailable states. The old _absence_state and _authority_mismatch helpers are absent; an unconverted root is refused as legacy-format rather than selecting a canonical publication database. Historical account: **The named states the route answers with, and the guard that makes "never silently select another repository" a verified fact.** [431]
+
 - **The shipped read the new route delegates to, reused unchanged by this leaf.** [241]
 
-
-- The current `read_ar_files` attach points (MIK-R109 rule 1): `application/read_files.py` opens by denying body and continuation delivery, and `models/read_files.py` declares `ReadArFilesResponse` with no `published_intent` field. The removed field is retained as history, not as a current anchor. [242]
-
-
-
-
+- The `read_ar_files` application entry point can name cards and overviews and add rule text in a fuller reply. A compact reply can keep only the bounded row fields and brief pointer. The response model has no `published_intent` field. [242]
 
 - A memory tree other than converted names no governing card. [243]
 
@@ -837,19 +850,31 @@ The frame store accepts WebM and MP4 through the usual asset admission and publi
 - Both family sides use the existing family/head/roster owners. [255]
 - Ambiguity remains explicit rather than selecting a membership-bearing head. [256]
 - The shared preflight in its fixed order. [258]
-- The default bundle binds the knowledge validator. [260] [434]
+
+
+- The default bundle binds the knowledge validator. [434]
+
+
+- The default bundle binds the knowledge validator. [260]
+
 - The converted-tree selection for the ordinary read, tried first. [262]
+
+
 - The one dataset resolution every knowledge read applies. [263]
+
 - A page from a partial index is never presented as complete. [264]
-
-- The operation: read, author, check history, render, validate, then write or refuse. [265]
-
 - Route rules are reports inside the writer only. [266]
 - Another owner's origin is kept exactly; its evidence is queued for this owner's history row. [267]
 - Every row of the owner's history file is checked against the candidate. [268]
 - The format switch in the read tool. [269]
-- Citation tools route by format. [270]
-- The composition binds the base converter and the crossing. [272] [435]
+- Citation checks report converted references. Citation fixes update converted references and can select a leaf card or card list. Both refuse unconverted memory. [270]
+
+
+- The composition binds the base converter and the crossing. [435]
+
+
+- The composition binds the base converter and the crossing. [272]
+
 - The two readings of proofs. [273]
 - The evidence parser's two forms and the bare test module. [274]
 - The bare test module is reported `unresolvable`. [275]
@@ -857,13 +882,16 @@ The frame store accepts WebM and MP4 through the usual asset admission and publi
 - The writer's carry. [279]
 - The package map. [281]
 - The check order and the cache contract. [282]
+
+
 - The retained internal published-intent tree/block construction; it is not a published_intent field on the current registered read_ar_files naming response. [285]
+
 - The sides, refusing mixed formats. [287]
 - The cache path shared by the worklist and the gate. [290]
 - The paging package map and the seam for MIK-R01 and MIK-R05. [291]
 - The one declared threshold. [292]
 - A cut of whole rows: blocked versus oversized. [293]
-- Retained internal whole-block published-intent computation and per-seed tail; current mounted `read_ar_files` delivers names/locations with no knowledge body, continuation or session delivery state. [294]
+- Retained internal whole-block published-intent computation and per-seed tail. [294]
 - The converted-tree branch of `knowledge_read`. [295]
 - The whole verified selection a page is cut from. [296]
 - The kind, registered on import. [298]
@@ -897,9 +925,7 @@ The frame store accepts WebM and MP4 through the usual asset admission and publi
 - The family seed's selection. [336]
 - The family seed on the mounted read, and one rule for a named revision. [337]
 
-
-- The read_ar_files naming entry point returns knowledge locations and measured states, with no source, card, overview or published-intent body. [338]
-
+- The mounted read_ar_files route can return governing locations, states and rule text when space permits. Compact rows can retain paths, status and brief pointers with freshness. Source, card and overview bodies stay in their files. [338]
 
 - A proof entry links its path in a tree index. [343]
 - The entry point, its views and the envelope. [345]
@@ -976,7 +1002,10 @@ The frame store accepts WebM and MP4 through the usual asset admission and publi
 - The task reopening tool beside the task_doc entry point. [445]
 
 
+
+
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current models/read_files uses NamedFile and named/refused response state, not the retired file-read status vocabulary. Historical account: The file-read status vocabulary. [446]
+
 
 
 
@@ -986,7 +1015,10 @@ The frame store accepts WebM and MP4 through the usual asset admission and publi
 
 
 
+
+
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current models/read_files has no FileReadStatus literal. Historical account: The file-read status literal and its value set. [448]
+
 
 
 
@@ -1009,8 +1041,6 @@ The frame store accepts WebM and MP4 through the usual asset admission and publi
 - **Retained historical source account — superseded by the current route account:** Projection scope includes explicit role and launcher rows. [461]
 
 
-- Writer validates before finish and appends raised questions before knowledge files. [462]
-
 
 - **Retained historical source account — superseded by the current route account:** Each gate kind has its own predicate and changed records require governing rows. [463]
 - **Retained historical source account — superseded by the current route account:** Every retained revision is a head; multiple heads remain ambiguous. [464]
@@ -1021,10 +1051,15 @@ The frame store accepts WebM and MP4 through the usual asset admission and publi
 - **Retained historical source account — superseded by the current route account:** Current receipt publication binds delivered code and memory trees; no memory tree writes no receipt. [470]
 - **Retained historical source account — superseded by the current route account:** Receipt selection uses retained tree records and explicitly labels historical-only limits. [471]
 - **Retained historical source account — superseded by the current route account:** Code release records first, but snapshot discard removes before its deletion record. [472]
+
+
 - **Retained historical source account — superseded by the current route account:** Default worktree services bind validator, crossing, worklist, gate and cleanup. [474]
+
 - **Retained historical source account — superseded by the current route account:** Runtime installation attempts leftover watcher stop and reports unused enabled keys. [475]
 - **Retained historical source account — superseded by the current route account:** Child computation limits are two active, eight outstanding, 60-second request and 65-second child. [476]
 - **Retained historical source account — superseded by the current route account:** Knowledge threshold remains 8,000 tokens; count belongs to the log under MIK-R108. [477]
+
+
 
 
 
@@ -1032,8 +1067,11 @@ The frame store accepts WebM and MP4 through the usual asset admission and publi
 
 
 
+
+
+
 - **Retained historical source account — superseded by the current route account:** Native sibling preparation, held delivery and starter-owned retirement stay distinct from task acceptance. [480]
-Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_tree_knowledge.py:258-326 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 9547923129aa0b49d6b4f93a758f4fce70233745. Retired means the anchor no longer stands, not that the cited subject was deleted [481]
+
 - The reviewer projection reads the reviewed owner’s history from the resolved after index, ordered by attempt-file numbers, and supplies identical record-specific labels to outline and subject responses. [454]
 - The onboarding kind's five facts including sourceBlobs. [286]
 - Current typed onboarding and distinct membership/record predicates. [482]
@@ -1071,8 +1109,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - **Historical source-bound reference account, not an operative override:** **The declaration of the inventory's own limit at the top level of the response.** [251]
 
 - **Historical source-bound reference account, not an operative override:** **The cases that measure the route's new entry and the source half through the real composition and the real route.** [253]
-
-- **Historical source-bound reference account, not an operative override:** The summary: preflight, both sides read, classification. [257]
 - **Historical source-bound reference account, not an operative override:** The catalogue caller delegating to it. [259]
 - **Historical source-bound reference account, not an operative override:** The one recompute entry point L08's triggers call (since MIK-R09 a Git failure is named `git`; the gate recomputes over its exact candidate) and the port adapter. [278]
 - **Historical source-bound reference account, not an operative override:** The declaration read fail-closed. [301]
@@ -1115,9 +1151,15 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - **Historical source-bound reference account, not an operative override:** The one observation both the review's inventory and the comparison's expansion read, with the two Git questions it asks. [245] [432]
 - **Historical source-bound reference account, not an operative override:** The leaf-wide parts: memo, one recorded computation, one more when an input moved, then the inputs_changing refusal; a process failure is refused and not kept. [409] [440]
 - **Historical source-bound reference account, not an operative override:** The adapter's re-export of the sibling surface, which is what keeps the dashboard CLI's import resolving. [450] [451]
+
+
 - Historical canonical-publication authority/absence account; references and targets retained for custody. Current boundary: published_intent_block still resolves converted-memory tree/index selection and returns named unavailable states. The old _absence_state and _authority_mismatch helpers are absent; an unconverted root is refused as legacy-format rather than selecting a canonical publication database. Historical account: **The named states the route answers with, and the guard that makes "never silently select another repository" a verified fact.** [240]
 
+
+
+
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current mounted read_ar_files reports memoryState=unconverted and card=None; the legacy block belongs to the retired body-serving route. Historical account: Legacy onboarding returns a named legacy knowledge block; converted references use sidecars. [459]
+
 
 
 - Explicit recovery and exact-call approval stops remain ahead of derived contract guidance. [489]
@@ -1148,7 +1190,10 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The one role-harness write, made only when the destination is absent. [514]
 
 - Existing trace authority precedes uncovered grouped source selection; the collector supplies member paths. [515]
+
+
 - The initializer reports knowledge state and the two admitted response branches name state-first Architect/regular-task/Curator continuation; partial-index, legacy-format and context-admission actions remain distinct. [516]
+
 - The current module constructs only the review read’s refusal and read-only submission states. `refused(repository_id, refusal_value)` returns a refused result carrying the supplied named refusal and no supplied payload. `submission(stale)` uses the caller’s boolean: `disabled_stale` asks for a new comparison; otherwise `unavailable` says the review is read-only and directs authoring through the existing writer with author/task/authority provenance. Both branches carry the existing proposed-disposition vocabulary. No record collections are composed here. Historical predecessor claim (superseded): **The record renderer, and the one reason it is a module: two compositions render the same records, so one copy is what keeps an unassessed collection reading identically in both.** [517]
 - A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range). Anchor: "def _linked("; "hunk.new_count > 0 and any(hits_new(hunk, span) for span in candidate_spans)" The Anchor caption above records the historical `_linked`/`candidate_spans` spelling. Current enforcement is `linkage._classify_hunk`: the before and after comprehensions require changed lines on their own side (`old_count > 0` with `hits_old`, and `new_count > 0` with `hits_new`). [518]
 - The typed quality controller owns sync/start/poll execution and checklist publication without changing verification metadata. [116]
@@ -1177,10 +1222,22 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 
 - evaluate_answer computes the named records' currentness and may raise CURRENTNESS_FAILURES; failure_document separately constructs the failure block with unverifiableReason. [284]
 - Complete whole-file dependent version tokens are compared using exact confirmation and selected-tree project versions; unchanged other bytes and prefix identity are preserved, without claiming semantic package ownership for identical dependency tokens. \[522] [522]
+- For a complete paired leaf worklist, the closeout gate checks changed paths with the master landing entry-currentness predicate. It compares the recorded code base directly with the candidate tree. [523]
+
+- The write route resolves the caller outside the handoff and supplies the owner-specific stamp. [539]
+- The answer carries record standing independently of code currentness. [540]
+- The bounded writers view retains the report path and selection's counts. [541]
+
+- The writer reads and authors the handoff, checks history, renders changes, and validates the resulting candidate before it writes or refuses. [265]
+- The writer validates before finishing and appends raised questions before it writes the knowledge files. [462]
+- Task application authoring is distinct from observation: removed get/read_steps return operation-removed and canonical-file guidance, while surviving linkage_report writes its facts report and delivers counts/location. Ordinary writes and review mutations have phrase/reviewState delivery separate from their whole identity, preview and synchronization records. The by-file input branch reads one absolute regular UTF-8 input once before checking its measured byte budget. Role launch preparation supplies the own leaf and declared requirements with explicit missingCopies; later publication refreshes that set transactionally. None of these adapters moves canonical task, approval, projection, observer or coherence authority. [487]
 
 
-- For a complete leaf worklist the closeout gate checks changed paths using the master landing entry-currentness predicate. It compares the recorded code base directly with the candidate tree. [523]
+- Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current knowledge store retains reads/index operations; canonical create_revision is retired. Historical account: The storage operation this seam delegates to. [133]
+- **Historical source-bound reference account, not an operative override:** The summary: preflight, both sides read, classification. [257]
+- **Retained historical source account — superseded by the current route account:** Index-only outline enumeration and leaf worklist/currentness replace source-explorer and leaf memory-diff composition. [481]
 
+- The statement-side projection's whole surface: the three-outcome side contract, the conditions reader, the comparison's own field roster, and the value reader that reserves `None` for absence. [69]
 - Crossing confirmation identifies the resolved commit that supplied the code tree. [527]
 
-- The transaction seam that routes the conflict and narrows the agent's list. [228]
+- The reply fits bounded rule rows against final delivery metadata and can refit after a late log error. [542]

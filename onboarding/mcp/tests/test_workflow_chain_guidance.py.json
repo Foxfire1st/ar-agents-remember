@@ -601,16 +601,16 @@
       ]
     },
     "35": {
-      "note": "The lane manifest declares test_workflow_chain_guidance.py in unit-regression; membership selects evidence and establishes no invocation.",
+      "note": "The unit-regression lane selects mcp/tests/test_workflow_chain_guidance.py. Execution evidence is recorded separately.\n\nAnchor: `mcp/tests/test_workflow_chain_guidance.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
             "content": "sha256:59e0e1653d5a589fe09a0646e0ece6d41f34bb59394ec582e7af93d79916c9f6",
             "locator": {
-              "end": 648,
+              "end": 662,
               "kind": "line_range",
-              "start": 648
+              "start": 662
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -672,7 +672,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "blob": "44965514704f09508b78c29839ced880346b1479",
             "content": "sha256:129afbc7db95453225dc24dc3d91b07668c255b319898fb911556658fe5c0777",
             "locator": {
               "kind": "symbol",
@@ -719,7 +719,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:27502a84ab1a28a5c8ace3d8b4facc50dedf942ad12f1cbdfef928ed528911a5",
             "locator": {
               "kind": "symbol",

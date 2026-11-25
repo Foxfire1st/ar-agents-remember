@@ -56,11 +56,10 @@ The route gate and its callers.
 
 
 
+- The sync's memory merge calls it before committing, after closing any master-line crossing history file the merge adds (MIK-R24). [5]
 - The route never commits converted memory unvalidated. [6]
 
 - The route entry takes a leaf publication that may name the frozen commits. [7]
-
-- The sync's memory merge calls it before committing, after closing any master-line crossing history file the merge adds (MIK-R24). [5]
 
 ### Cross-Repo References
 

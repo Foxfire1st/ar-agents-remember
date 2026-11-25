@@ -3,64 +3,64 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Converted citation tests assert clean, stale, unreadable-sidecar and two-document projections, plus bounded delivery and a pathological overflow control.",
+      "note": "Converted citation tests assert clean, stale, unreadable-sidecar and two-document projections, bounded delivery and a pathological overflow control.",
       "targets": [
         {
           "anchor": {
-            "blob": "2524f2197f53a8474d423633edf762391ff9053a",
-            "content": "sha256:b4be3ad18855e763e928e154c05986fa4e69b98875816fb202a2e9f9abe478ed",
+            "blob": "391c37c04a04ebec6f9fe19a183035fd5da0739b",
+            "content": "sha256:727eab004e9b14afd12736cbc0156f62fbeea9e77443ff3b6675df2c96f34885",
             "locator": {
-              "end": 311,
+              "end": 315,
               "kind": "line_range",
-              "start": 197
+              "start": 198
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "2524f2197f53a8474d423633edf762391ff9053a",
+            "blob": "391c37c04a04ebec6f9fe19a183035fd5da0739b",
             "content": "sha256:c13a2f07734cdcca464f86b8cd7dd555ae59b9eb9c1e6508e5303c9de2ed91cf",
             "locator": {
-              "end": 127,
+              "end": 128,
               "kind": "line_range",
-              "start": 87
+              "start": 88
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "2524f2197f53a8474d423633edf762391ff9053a",
+            "blob": "391c37c04a04ebec6f9fe19a183035fd5da0739b",
             "content": "sha256:f88629b38a93ffeac2e8ddce6eb88c654277fa48c07a34a30c9557e2064e610f",
             "locator": {
-              "end": 138,
+              "end": 139,
               "kind": "line_range",
-              "start": 130
+              "start": 131
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "2524f2197f53a8474d423633edf762391ff9053a",
+            "blob": "391c37c04a04ebec6f9fe19a183035fd5da0739b",
             "content": "sha256:67681919a04bf6e71cfc6f0c42d2628d1b4b4aaf23d9a0a6145076d8b500d41d",
             "locator": {
-              "end": 171,
+              "end": 172,
               "kind": "line_range",
-              "start": 162
+              "start": 163
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "2524f2197f53a8474d423633edf762391ff9053a",
+            "blob": "391c37c04a04ebec6f9fe19a183035fd5da0739b",
             "content": "sha256:635dfd6e531417768a53bbc659c63bd75777957a90af7374d0e483c23f26c47f",
             "locator": {
-              "end": 194,
+              "end": 195,
               "kind": "line_range",
-              "start": 174
+              "start": 175
             }
           },
           "kind": "test"
@@ -72,12 +72,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2524f2197f53a8474d423633edf762391ff9053a",
+            "blob": "391c37c04a04ebec6f9fe19a183035fd5da0739b",
             "content": "sha256:1006235188208eecdd7335dd780a0ad67dec64882cb3291b302e5c54686ee1a2",
             "locator": {
-              "end": 180,
+              "end": 181,
               "kind": "line_range",
-              "start": 177
+              "start": 178
             }
           },
           "kind": "test"

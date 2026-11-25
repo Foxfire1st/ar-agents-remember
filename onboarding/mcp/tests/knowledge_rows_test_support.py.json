@@ -7,10 +7,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
-            "content": "sha256:43a32e8370a3aa07c1e8247bd8b4d445a42caab3b630d2ed5783e663bc3c824e",
+            "blob": "63570d7606856b5028b51268077f62b8b3d27781",
+            "content": "sha256:a9a84c441f17b2b5a04d286f7aa9739d56b5e38f1cee90c5bef9ed86359d81fe",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fixture tree renders and preserves test-owned histories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63570d7606856b5028b51268077f62b8b3d27781",
+            "content": "sha256:ad943e2c511e23acba417f300390cc9f3be320e1427a70c8f93e8542834cfdec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TextTree"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "63570d7606856b5028b51268077f62b8b3d27781",
+            "content": "sha256:c20ae72e98a40c1989f06089aeff7b650c5bfa38878100c03969055cdf53dcb2",
+            "locator": {
+              "end": 500,
+              "kind": "line_range",
+              "start": 315
             }
           },
           "kind": "test"

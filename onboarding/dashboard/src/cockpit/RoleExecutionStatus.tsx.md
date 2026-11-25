@@ -26,7 +26,6 @@ This account is bound to the candidate source, not a claim of a running serving 
 ## Evidence
 
 
-- Worker/Curator typed review census, record-only exclusion and unknown history. [1]
 - Reason admission, threshold and differing-harness/model inheritance boundary. [2]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [3]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [4]
@@ -35,3 +34,5 @@ The current source and test assertions below establish the documented ownership;
 
 - Current source owner or exact assertion described above. [5]
 - Current source owner or exact assertion described above. [6]
+
+- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [1]

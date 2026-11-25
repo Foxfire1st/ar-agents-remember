@@ -74,15 +74,16 @@
       ]
     },
     "10": {
-      "note": "The typed poll payload builder.  Anchor: `memory_quality_check_poll_payload`",
+      "note": "The typed poll payload builder. Anchor: `memory_quality_check_poll_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "blob": "24bff159b2050395f07c6fdb1507b922bea79ad0",
             "content": "sha256:703c72ae680dd86cb5bd28174d3c0c965dc3fb04dede227d6000c50e5f0c30d0",
             "locator": {
-              "kind": "symbol",
-              "name": "memory_quality_check_poll_payload"
+              "end": 145,
+              "kind": "line_range",
+              "start": 138
             },
             "path": "mcp/src/agents_remember/mcp/tools/memory.py"
           },
@@ -90,8 +91,8 @@
         },
         {
           "anchor": {
-            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
-            "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
+            "blob": "24bff159b2050395f07c6fdb1507b922bea79ad0",
+            "content": "sha256:46e292d965f7d73261d3e5baab9b977c7a2f00a645edd58005fe2ec02620f133",
             "locator": {
               "kind": "file"
             },
@@ -123,7 +124,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
             "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
             "locator": {
               "kind": "symbol",
@@ -136,16 +137,54 @@
       ]
     },
     "13": {
-      "note": "The shared citation scope defaults to the whole card population when no document selector is supplied.\n\nAnchor: “CitationOperationScope.selected_documents”",
+      "note": "The application entry points use DEFAULT_CITATION_OPERATION_SCOPE by default; a scope with no document selector covers the whole card population. The mounted citation_fix registrar constructs the scope from the caller’s document or documents selector.\n\nAnchor: “CitationOperationScope.selected_documents”",
       "targets": [
         {
           "anchor": {
-            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
+            "content": "sha256:19aef4f088ed5f04e3897b14e52731719a79adc88e87960ab6c095b61112470d",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
+            "content": "sha256:700d6499e0da26ababbb02e54e49766d23294028bb180547f113e8e1f0172db6",
+            "locator": {
+              "end": 521,
+              "kind": "line_range",
+              "start": 502
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+            "content": "sha256:8c8970683147f31767f3c402cb5be5e66ff82056236a64dead9f16f9747fc52e",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
             "content": "sha256:1097b7eff21eb1bb2d638e2c489b80a505a819022fbf2f938440fca4da1b65ea",
             "locator": {
-              "end": 126,
+              "end": 120,
               "kind": "line_range",
-              "start": 70
+              "start": 64
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -158,7 +197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
             "content": "sha256:4f8406d88a585b0f3f3c9f656cb6f58e31724246d0a9f20578e79d354bcc66c2",
             "locator": {
               "kind": "symbol",
@@ -175,7 +214,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bfbe2e81d84a8bfc86b538760f6510133897cc83",
+            "blob": "74906e090cbaf56d8b60a978f4ada2a8b13bda8f",
             "content": "sha256:4a22ee9b6321b636b8277d22c6d5fd5735eb65cc24655fd564b6b99b9760dce1",
             "locator": {
               "kind": "symbol",
@@ -244,15 +283,16 @@
       ]
     },
     "2": {
-      "note": "The payload builders for the carryover plan and report-filing apply pair.  Anchor: `memory_carryover_plan_payload`",
+      "note": "The payload builders for the carryover plan and report-filing apply pair. Anchor: `memory_carryover_plan_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "blob": "24bff159b2050395f07c6fdb1507b922bea79ad0",
             "content": "sha256:8512bf49ed060b04bc987a87a99f12c2e9bf03d022426c17124c865589a1f38c",
             "locator": {
-              "kind": "symbol",
-              "name": "memory_carryover_plan_payload"
+              "end": 606,
+              "kind": "line_range",
+              "start": 587
             },
             "path": "mcp/src/agents_remember/mcp/tools/memory.py"
           },
@@ -260,8 +300,8 @@
         },
         {
           "anchor": {
-            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
-            "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
+            "blob": "24bff159b2050395f07c6fdb1507b922bea79ad0",
+            "content": "sha256:46e292d965f7d73261d3e5baab9b977c7a2f00a645edd58005fe2ec02620f133",
             "locator": {
               "kind": "file"
             },
@@ -305,15 +345,16 @@
       ]
     },
     "3": {
-      "note": "The typed sync/start/poll payload builders.  Anchor: `memory_quality_check_payload`",
+      "note": "The typed sync/start/poll payload builders. Anchor: `memory_quality_check_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "blob": "24bff159b2050395f07c6fdb1507b922bea79ad0",
             "content": "sha256:e222cae706209ad8af15c382443e44ca8a37e989ea5e6271f39e1f4598f1e78b",
             "locator": {
-              "kind": "symbol",
-              "name": "memory_quality_check_payload"
+              "end": 125,
+              "kind": "line_range",
+              "start": 120
             },
             "path": "mcp/src/agents_remember/mcp/tools/memory.py"
           },
@@ -321,8 +362,8 @@
         },
         {
           "anchor": {
-            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
-            "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
+            "blob": "24bff159b2050395f07c6fdb1507b922bea79ad0",
+            "content": "sha256:46e292d965f7d73261d3e5baab9b977c7a2f00a645edd58005fe2ec02620f133",
             "locator": {
               "kind": "file"
             },
@@ -337,24 +378,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
-            "content": "sha256:33ec530cd7ea134f868737123e2ef344fae4d4c7609e21308019028ba0037442",
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
+            "content": "sha256:b9e7f678702a79d5ec39f13a39f051b28f808f09afb88da2766a8c919864afe2",
             "locator": {
-              "kind": "symbol",
-              "name": "MemoryBranches"
-            },
-            "path": "mcp/src/agents_remember/application/memory_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
-            "content": "sha256:7229f6c95646f4b67b1e52b84d4ca859d73135a8eb1643a853d7a320c4370ced",
-            "locator": {
-              "end": 519,
+              "end": 832,
               "kind": "line_range",
-              "start": 507
+              "start": 822
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -362,12 +391,26 @@
         },
         {
           "anchor": {
-            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
-            "content": "sha256:8891b392f2b5e7518a285b274b4b3d1a344bdc32eb8b09eab3aa7640aa5119a4",
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
+            "content": "sha256:876d9f90ef4444730e458173ce3750fb3752c11887cc927f080fd812f989ae38",
             "locator": {
-              "kind": "file"
+              "end": 909,
+              "kind": "line_range",
+              "start": 872
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+            "content": "sha256:2b5b730124ac809456149550b815fc27b84348d6225be1a4b897e6a8d99338f8",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 142
+            }
           },
           "kind": "code"
         }
@@ -378,7 +421,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
             "content": "sha256:9d8d695f42fefc4b5e4d8e2094742e6eb75f0700834a0beee3387672628132f3",
             "locator": {
               "kind": "symbol",
@@ -390,12 +433,12 @@
         },
         {
           "anchor": {
-            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
-            "content": "sha256:67b61bfc06f10cc6b6c8812296acb9e5f8c7403e341eb1b125c454c767a736ba",
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
+            "content": "sha256:9d8d695f42fefc4b5e4d8e2094742e6eb75f0700834a0beee3387672628132f3",
             "locator": {
-              "end": 866,
+              "end": 852,
               "kind": "line_range",
-              "start": 855
+              "start": 835
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -403,12 +446,12 @@
         },
         {
           "anchor": {
-            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
             "content": "sha256:679ecdf25b3ab8b1325aad109c73f91fbbbcecad5273268146aa079cb2d3829d",
             "locator": {
-              "end": 1117,
+              "end": 1009,
               "kind": "line_range",
-              "start": 1098
+              "start": 990
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -416,12 +459,12 @@
         },
         {
           "anchor": {
-            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
             "content": "sha256:7eaec590e90cef9afda608cb18f4d74465b0695311c5b03d70bb5de17e1d7cf7",
             "locator": {
-              "end": 951,
+              "end": 843,
               "kind": "line_range",
-              "start": 932
+              "start": 824
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -429,12 +472,12 @@
         },
         {
           "anchor": {
-            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
             "content": "sha256:5f9010a8552ff0068c4a2ab61496010f48e619d70d04cba02104791ce038249b",
             "locator": {
-              "end": 952,
+              "end": 844,
               "kind": "line_range",
-              "start": 933
+              "start": 825
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -442,27 +485,92 @@
         },
         {
           "anchor": {
-            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
-            "content": "sha256:8891b392f2b5e7518a285b274b4b3d1a344bdc32eb8b09eab3aa7640aa5119a4",
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
+            "content": "sha256:0d2d7de2a46b62011cda2d14fdacb54c9e5e8b97dd1e1a78ff1d67e5b5655b04",
             "locator": {
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
+            "content": "sha256:9d8d695f42fefc4b5e4d8e2094742e6eb75f0700834a0beee3387672628132f3",
+            "locator": {
+              "end": 852,
+              "kind": "line_range",
+              "start": 835
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
+            "content": "sha256:c7784311ae347dfa345d80e854bb875d9f8fc138ef0cc315a4e0e53976866813",
+            "locator": {
+              "end": 949,
+              "kind": "line_range",
+              "start": 939
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
+            "content": "sha256:a66b5a66bf7ecf6503cf826bcc6f5ab6403af0a5d8cbfeef615a0bf35ad9134f",
+            "locator": {
+              "end": 1009,
+              "kind": "line_range",
+              "start": 984
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
+            "content": "sha256:bcef0c37ff112aa74d46841c63da360e80b7ebc0faef8a86699b200874d66ada",
+            "locator": {
+              "end": 1056,
+              "kind": "line_range",
+              "start": 1021
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+            "content": "sha256:0f58de04386645e18c71d58e19784800d9b3b9d989fb1858be3a4324b15d9705",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "The payload builder for the carryover plan.  Anchor: `memory_carryover_plan_payload`",
+      "note": "The payload builder for the carryover plan. Anchor: `memory_carryover_plan_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "blob": "24bff159b2050395f07c6fdb1507b922bea79ad0",
             "content": "sha256:8512bf49ed060b04bc987a87a99f12c2e9bf03d022426c17124c865589a1f38c",
             "locator": {
-              "kind": "symbol",
-              "name": "memory_carryover_plan_payload"
+              "end": 606,
+              "kind": "line_range",
+              "start": 587
             },
             "path": "mcp/src/agents_remember/mcp/tools/memory.py"
           },
@@ -470,8 +578,8 @@
         },
         {
           "anchor": {
-            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
-            "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
+            "blob": "24bff159b2050395f07c6fdb1507b922bea79ad0",
+            "content": "sha256:46e292d965f7d73261d3e5baab9b977c7a2f00a645edd58005fe2ec02620f133",
             "locator": {
               "kind": "file"
             },
@@ -482,15 +590,16 @@
       ]
     },
     "7": {
-      "note": "The payload builder for the report-filing apply.  Anchor: `memory_carryover_apply_payload`",
+      "note": "The payload builder for the report-filing apply. Anchor: `memory_carryover_apply_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "blob": "24bff159b2050395f07c6fdb1507b922bea79ad0",
             "content": "sha256:0d77a2578f522b633677c3faa6193c4284366efd62363687351f961d31f5b994",
             "locator": {
-              "kind": "symbol",
-              "name": "memory_carryover_apply_payload"
+              "end": 629,
+              "kind": "line_range",
+              "start": 609
             },
             "path": "mcp/src/agents_remember/mcp/tools/memory.py"
           },
@@ -498,8 +607,8 @@
         },
         {
           "anchor": {
-            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
-            "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
+            "blob": "24bff159b2050395f07c6fdb1507b922bea79ad0",
+            "content": "sha256:46e292d965f7d73261d3e5baab9b977c7a2f00a645edd58005fe2ec02620f133",
             "locator": {
               "kind": "file"
             },
@@ -510,15 +619,16 @@
       ]
     },
     "8": {
-      "note": "The typed sync payload builder.  Anchor: `memory_quality_check_payload`",
+      "note": "The typed sync payload builder. Anchor: `memory_quality_check_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "blob": "24bff159b2050395f07c6fdb1507b922bea79ad0",
             "content": "sha256:e222cae706209ad8af15c382443e44ca8a37e989ea5e6271f39e1f4598f1e78b",
             "locator": {
-              "kind": "symbol",
-              "name": "memory_quality_check_payload"
+              "end": 125,
+              "kind": "line_range",
+              "start": 120
             },
             "path": "mcp/src/agents_remember/mcp/tools/memory.py"
           },
@@ -526,8 +636,8 @@
         },
         {
           "anchor": {
-            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
-            "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
+            "blob": "24bff159b2050395f07c6fdb1507b922bea79ad0",
+            "content": "sha256:46e292d965f7d73261d3e5baab9b977c7a2f00a645edd58005fe2ec02620f133",
             "locator": {
               "kind": "file"
             },
@@ -538,15 +648,16 @@
       ]
     },
     "9": {
-      "note": "The typed start payload builder.  Anchor: `memory_quality_check_start_payload`",
+      "note": "The typed start payload builder. Anchor: `memory_quality_check_start_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "blob": "24bff159b2050395f07c6fdb1507b922bea79ad0",
             "content": "sha256:e6c73d4e2c546f68a386d3a10225edcd035ef64461d721740f28cb4b313093ae",
             "locator": {
-              "kind": "symbol",
-              "name": "memory_quality_check_start_payload"
+              "end": 135,
+              "kind": "line_range",
+              "start": 128
             },
             "path": "mcp/src/agents_remember/mcp/tools/memory.py"
           },
@@ -554,8 +665,8 @@
         },
         {
           "anchor": {
-            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
-            "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
+            "blob": "24bff159b2050395f07c6fdb1507b922bea79ad0",
+            "content": "sha256:46e292d965f7d73261d3e5baab9b977c7a2f00a645edd58005fe2ec02620f133",
             "locator": {
               "kind": "file"
             },

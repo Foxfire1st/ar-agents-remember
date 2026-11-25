@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "978e410ca88ebabc20fc598a05870dd8f8efed1a",
+    "commit": "e8a96f6e2255155d733dd15dcba56bd26e46097e",
     "role": "curator",
-    "statement": "The certification profile's schema refusals and selections still apply after the separate leaf memory-base error was added.",
-    "task": "261112-BUG-L21",
+    "statement": "The repository certification profile reference still accurately describes the typed profile and executor refusals, required mode selections and separation of requested Dagger certification from ordinary closeout, with leaf memory-base and one-time state-conversion errors remaining separate.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/reference/repository-certification-profile.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -81,7 +81,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
     },
     {
-      "blob": "e931d4c5f94a3e979b7183a63eb07870effcde78",
+      "blob": "b6179873041bc0bbb9c542b051c7b0ebb1a06dbb",
       "kind": "file",
       "path": "mcp/src/agents_remember/errors.py"
     },
@@ -128,7 +128,7 @@
       "path": ".dagger/src/agents_remember_quality/profile_execution.py"
     },
     {
-      "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
+      "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     }

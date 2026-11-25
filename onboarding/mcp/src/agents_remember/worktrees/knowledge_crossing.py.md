@@ -108,4 +108,4 @@ No cross-repo boundary is crossed by this file.
 - Overlapping edits go to the curator with markers; a failed step changes nothing. [26]
 
 
-- The refusal fires on legacy leaf memory independent of converted memory elsewhere. [27]
+- The refusal fires on legacy leaf memory independent of converted memory elsewhere. Anchor: `test_an_unconverted_leaf_is_refused_with_the_conversion_step_on_any_line` [27]

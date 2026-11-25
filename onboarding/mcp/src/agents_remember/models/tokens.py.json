@@ -21,12 +21,12 @@
       ]
     },
     "2": {
-      "note": "`_tool_payload` finalizes token metadata on every public tool response via this module.\n\nAnchor: `_tool_payload`",
+      "note": "`_tool_payload` finalizes token metadata on every public tool response via this module. Anchor: `_tool_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
-            "content": "sha256:e65598ad08d511a5ffa26a3099d273596eea7844d5c2a00685c2ccb183271c43",
+            "blob": "c1de505d6e140874b674a3f0afbfccb01590e362",
+            "content": "sha256:11b1fc8e2810d5677e38dee186495dae46d165ae39a1e63e3058fab306d145d2",
             "locator": {
               "kind": "file"
             },
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e931d4c5f94a3e979b7183a63eb07870effcde78",
+            "blob": "b6179873041bc0bbb9c542b051c7b0ebb1a06dbb",
             "content": "sha256:04d03b51a0e2def2231844a1f5415c5289fedb25fe94f50ca32bcfbdb7fd163e",
             "locator": {
               "kind": "symbol",

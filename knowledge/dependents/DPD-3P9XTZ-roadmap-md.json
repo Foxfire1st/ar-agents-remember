@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ce714f8fbee46339c39d7eec8c956e3763464c26",
-    "commit": "d1c92dc9d4606a0b48b8e6b13f9c41c9b9aa6cce",
+    "codeTree": "e08c810611259528c77765ddf47f51eb893f424b",
+    "commit": "10f2b5bb94ab96a48a5f226f6e63b9fe9f6fa4cb",
     "role": "curator",
-    "statement": "The roadmap's links into the concepts guide all still resolve, and the worklist passage it cites still says that a change brings a named decision back for the Curator's answer.",
-    "task": "261112-BUG-L27",
+    "statement": "The roadmap links to the Concepts explanations of records, drift and worklist judgments and to the benchmark runner and benchmark case design. Reconfirmed after the BUG-L27 sync (code e08c8106).",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "ROADMAP.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
     },
     {
-      "blob": "e534e5488c39544030abb9ef2b6f4bef14945eee",
+      "blob": "7eb31a98c36e64a405175740315e3170b66f448d",
       "kind": "file",
       "path": "docs/concepts.md"
     },

@@ -13,6 +13,8 @@ or queue state. Leaves, dry-runs, and blocked abandon results do not mutate the 
 
 ## Code Commentary
 
+When abandoning a leaf, both force and ordinary paths keep its own tool-call lines in the master notes before the removal that would delete the enclosure log. A failed keep blocks that removal and reports the reason for retry.
+
 `abandon_result` measures `_landed_work_fact` before its removal path runs. When the recorded code work branch exists, differs from the source branch and is its ancestor, the fact names `on-source-line`, the branch and the line. `_with_landed_work_answer` adds `landedWork` and its sentence only to a successful result; missing branches and refused abandonment gain no such claim. This observation does not bypass terminal admission or dirty/unmerged-work checks.
 
 ### Current Contract
@@ -240,3 +242,5 @@ Rule 5 no-remains exception: with no locator, no worktree folder, no work branch
 
 
 - The cleanup vocabulary includes abandoned and reopened as declared terminal/reopen states. [9]
+
+- Both leaf abandon paths preserve the leaf call lines before deleting the folder that contains the log. [21]

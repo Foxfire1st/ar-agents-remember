@@ -1,0 +1,110 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/revision_stamps.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ba38a0f158a19be4a09d480da2325cef2d55e8b5",
+        "content": "sha256:4f0df0f9f470ed18d0158f94c682adb36cc9f5d6d8e88cbfc4dc365aea907169",
+        "locator": {
+          "kind": "symbol",
+          "name": "stamp_record"
+        }
+      },
+      "id": "RLZ-09GRQE",
+      "invariant": "INV-BNDKC8",
+      "origin": {
+        "handoffEntry": "L3-W1-02",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Sets or keeps the record's writer for the step and drops an old typed state word from a record the write changes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ba38a0f158a19be4a09d480da2325cef2d55e8b5",
+        "content": "sha256:b7767f56a3cb7bf3b787faa74ef4326eee7d449f55332b255f64f19326490b8c",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_written_revision"
+        }
+      },
+      "id": "RLZ-BKJJJH",
+      "invariant": "INV-BNDKC8",
+      "origin": {
+        "handoffEntry": "L3-W1-02",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Keeps the owner's `written` list in step with the record: one row per raised revision, renewed by a later write of it.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ba38a0f158a19be4a09d480da2325cef2d55e8b5",
+        "content": "sha256:abe8687a97a00bf57def8b407162c410d07826ed3106c3907abdd0e50bf33740",
+        "locator": {
+          "kind": "symbol",
+          "name": "revision_step"
+        }
+      },
+      "id": "RLZ-BKYR6G",
+      "invariant": "INV-BNDKC8",
+      "origin": {
+        "handoffEntry": "L3-W1-02",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Decides the revision number and whether it is this owner's own (raised), the input of every stamping decision.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The comparison with the owner's base decides which revision the write owns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba38a0f158a19be4a09d480da2325cef2d55e8b5",
+            "content": "sha256:abe8687a97a00bf57def8b407162c410d07826ed3106c3907abdd0e50bf33740",
+            "locator": {
+              "kind": "symbol",
+              "name": "revision_step"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An owned written revision gets the caller's stamp while a base-number placement preserves its base stamp.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba38a0f158a19be4a09d480da2325cef2d55e8b5",
+            "content": "sha256:4f0df0f9f470ed18d0158f94c682adb36cc9f5d6d8e88cbfc4dc365aea907169",
+            "locator": {
+              "kind": "symbol",
+              "name": "stamp_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The owner's writable history identifies the stored revision and its meaning.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba38a0f158a19be4a09d480da2325cef2d55e8b5",
+            "content": "sha256:b7767f56a3cb7bf3b787faa74ef4326eee7d449f55332b255f64f19326490b8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_written_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

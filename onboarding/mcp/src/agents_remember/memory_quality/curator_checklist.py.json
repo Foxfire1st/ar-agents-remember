@@ -180,16 +180,16 @@
       ]
     },
     "8": {
-      "note": "Cleanup removes the reserved reports directory before it attempts to remove the enclosure.  Anchor: `_removed_directories`",
+      "note": "Leaf cleanup processes the reserved reports and lifecycle directories and the retained logs before it attempts to remove the enclosure.",
       "targets": [
         {
           "anchor": {
-            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
-            "content": "sha256:25e998f3f16f213c9d25c733eca9fd492a0e7d89763ecd2663869b70fb163d43",
+            "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
+            "content": "sha256:50aaee163db9558cc7a39c19053653d60eb4d0140ab608c84b3c77405c8685f1",
             "locator": {
-              "end": 408,
+              "end": 412,
               "kind": "line_range",
-              "start": 352
+              "start": 353
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },

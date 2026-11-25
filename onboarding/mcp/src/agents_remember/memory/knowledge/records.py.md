@@ -10,7 +10,7 @@ Decodes sealed invariant, family and membership rows from the derived index and 
 
 ## Code Commentary
 
-Typed columns, authorship and state-at-origin are decoded under their recorded schema. Revision and membership decoders verify the declared payload seals before returning values. The former row-building, source-anchor and predecessor write helpers were removed. This codec does not insert canonical records or authorize a writer; the index is a projection of admitted text knowledge.
+The codec decodes typed columns, authored provenance and the selected index row's derived state under the declared schema. Revision and membership decoders verify the declared payload seals before returning values. The former row-building, source-anchor and predecessor write helpers were removed. This codec does not insert canonical records or authorize a writer; the index is a projection of admitted text knowledge.
 
 ### Logic
 
@@ -28,8 +28,7 @@ Row codecs: `decode_repository_row`, `decode_invariant_row` (which also derives
 `decode_family_revision_row`, `member_row_digest` / `decode_member_row`. Each expected-row digest is computed over a mapping carrying
 an explicit `"table"` key, so a digest from one table can never be mistaken for another table's.
 
-`decode_state_at_origin` narrows a
-stored origin state to the two authored states and raises `KnowledgeStorageError` for anything else.
+`decode_state` accepts `proposed`, `reviewed` or `consolidated` and raises `KnowledgeStorageError` for other stored values.
 
 ### Conventions
 
@@ -48,8 +47,7 @@ content without rewriting the row itself, and the reason the seal is verified ra
 - The row codecs never write and never decide a refusal: they convert. Refusal policy belongs to `store.py`, and
   the factories to `refusals.py`.
 
-- A stored origin state outside `proposed`/`accepted` is a
-  storage defect, not a refused request — hence `KnowledgeStorageError` rather than a typed `KnowledgeRefusal`.
+- An unexpected derived-state value in the index raises `KnowledgeStorageError`. The authored revision seal is checked independently.
 
 - **Expected-row digests are table-scoped.** The `"table"` key inside each digest mapping means a
   `family_row_digest` can never validate a `source_anchor` row.
@@ -71,17 +69,12 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
-- `decode_revision_row` owns the current boundary described above. [12]
-- `decode_family_revision_row` owns the current boundary described above. [13]
 - `decode_member_row` owns the current boundary described above. [14]
 - `decode_typed_column` owns the current boundary described above. [15]
 
 - - The canonical JSON typed-column encoding used for every structured column. [16]
-- - The read path re-derives the seal and treats a mismatch as a damaged store. [17]
 
-- - The predecessor edge tables are gone, so no edge rows are decoded and decoded predecessors are always (). [18]
 
-- - The family identity and family revision codecs, including the seal-verifying decode over the stored cells. [19]
 - - The relation codecs and their table-scoped expected-row digests. [20]
 - - The digest the read path recomputes, for both payloads. [21]
 - - The canonical encoder and duplicate-key-refusing decoder this module stores through. [22]
@@ -91,3 +84,9 @@ No configured domain documentation could be checked.
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+- `decode_revision_row` owns the current boundary described above. [12]
+- `decode_family_revision_row` owns the current boundary described above. [13]
+- The read path re-derives the seal and treats a mismatch as a damaged store. [17]
+- The family identity and revision codecs verify the authored revision seal. The logical projection supplies no predecessor edge rows. [19]
+- The predecessor edge tables are gone, so no edge rows are decoded and decoded predecessors are always (). [18]

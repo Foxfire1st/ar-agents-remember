@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/tasks/document_stamp_owner.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A leaf's stamp identifies the leaf and its master task when the master can be read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db58d960315372a731ea91eb1cf31803ff5974f4",
+            "content": "sha256:ffd6dc48429b553d98de5954ceaec38fd010b16773521fb101dbeecdd6237460",
+            "locator": {
+              "kind": "symbol",
+              "name": "document_stamp_owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

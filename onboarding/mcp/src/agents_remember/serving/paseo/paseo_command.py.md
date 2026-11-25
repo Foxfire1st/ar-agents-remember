@@ -19,7 +19,7 @@ The runner builds every Paseo call's environment through the product's `host_env
 - The command boundary: the product environment for every call, the product Node for a host start or a staged install root, the communication Node for every other call. [1]
 
 
-- The named failure type shared with the host modules. [2]
-
 
 - A call that does not start a host selects its Node through the running-node selector. [3]
+
+- The named failure type shared with the host modules. [2]

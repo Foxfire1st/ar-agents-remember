@@ -17,6 +17,8 @@ The Investigator reports what is and what is not, with evidence for each. It sta
 
 ## Code Commentary
 
+The Investigator opens relevant current saved briefs when present before investigating code. Fuller reader replies can carry rule text. Compact rows can retain a brief pointer with saved freshness. `knowledge_read` names whole records and their attributed evidence.
+
 The canonical skills/l-01-agent-lifecycles/roles/investigator.md owns the concern, selection and read/report/mutation boundaries. scripts/sync-skills.py regenerates this packaged copy, the sole generated skill target the tool server serves as MCP resources; this file authors no independent role. The scoped concern may be of any kind, checks remain scratch/sandbox-only, code/memory/task mutations remain with their owners, and provider/system remediation remains report-first and explicitly ordered. Projects, sprint and sprint/master starts preserve the actual parent concern channel and no invented task identity.
 
 ## Working folders and reports
@@ -30,8 +32,12 @@ Agent-authored temporary files, experiments and working copies live only in the 
 
 - The Investigator reports what is and what is not, with evidence for each. It states no requirement, ruling or duty of its own; a needed change is an open question for the parent, not a fix to apply.
 
-- The Investigator starts without a task reference, on a sprint, or on a sprint and master, never on a leaf; its concern arrives in its parent's first role_message, or from the developer's request when it has no parent, and a missing concern or scope is asked for, never invented. [1]
+- The Investigator starts without a task reference, on a sprint, or on a sprint and master, never on a leaf; its concern arrives in its parent's first role_message, or from the developer's request when it has no parent, and a missing concern or scope is asked for, never invented. Anchor: `role_message` [1]
 
 
 
 - The Investigator reports what is and what is not, with evidence for each. It states no requirement, ruling or duty of its own; a needed change is an open question for the parent, not a fix to apply. [2]
+
+
+
+- The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. Knowledge_read names whole records and their evidence. [3]

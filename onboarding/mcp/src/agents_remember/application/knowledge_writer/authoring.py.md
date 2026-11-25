@@ -8,15 +8,23 @@
 
 Authoring remains an in-memory editor rather than the disk publisher. It allocates same-document handles through assign_entries, restores recorded refreshes, and processes authoring entries before attachments through ordered_entries. Origin evidence handling is delegated to record_origin, including explicit replacement for an owned record while foreign origin remains intact. Decision alternative edits without explicit links invoke remap_links, which preserves addressed option identity or refuses ambiguity. coordination_root is carried as a separate task-plane input.
 
-This source-bound correction covers the described L54 seams only. Unrelated inherited prose and references below are preserved, not recertified; no installed behavior, test execution, permission, landing or MEMORY acceptance is inferred.
+This source-bound correction covers the described L54 seams and the current row-input binding. Authoring passes the recorded card-comparison base and worklist source and count facts to the history mixin. The mixin compares a readable recorded base in the candidate’s format, then uses the persisted subject count or operation base when unavailable. Unrelated inherited prose and references below are preserved, not recertified; no installed behavior, test execution, permission, landing or MEMORY acceptance is inferred.
+
+### Record revisions and writer provenance
+
+`_place_record` asks `revision_step` for the revision and the base writer. A changed meaning advances once from the owner's base. A new record starts at revision 1, and a record a merge left unmerged is resolved at one more than the higher side's revision. The meaning comparison excludes identity, origin, revision, admission, lifecycle status, writer metadata and the invariant title.
+
+The placement stamps each new or advanced revision with the resolved caller. The owner's writable history names that revision, the same stamp and its meaning digest in `written`. An unchanged rerun by the same writer preserves the existing stamp. A base-number placement keeps the base stamp or its absence. A rewritten record drops legacy stored state words; a decision may default to its lifecycle word `active`.
+
+An entry with a supplied title puts it in the invariant document. A title-only edit writes the supplied title at the same revision. An updated legacy invariant still lacking a title adds a note naming the rule and the title field.
 
 ### Weakness and dependent records (MIK-R118, MIK-R124)
 
-`_write_record` authors a weakness and a dependent beside the older kinds. Neither carries a `status`: the writer adds its default status only to the kinds that store one, so a weakness keeps its own `state` and a dependent stores neither.
+`_write_record` authors a weakness and a dependent beside the older kinds. A weakness keeps its own `state` field. A dependent stores neither `state` nor `status`.
 
 A weakness records the place its cause occurs. `_write_record` delegates its anchor and closure checks to `author_weakness` in `weakness_authoring.py`. The curator authors `anchor: {path, locator}`; the helper resolves it at C and stores the resolved `blob` and `content`. If resolution fails and the prior record has an anchor at the same path, that complete stored anchor is kept. Without that same-path stored anchor, the unresolved place is refused. This preservation does not rewrite `seen` to make the anchor resolve.
 
-For a closed record, the helper checks a supplied commit against the code repository and requires its full commit identity. A newly authored closure without a commit names the running leaf, or the task of a non-leaf owner. An unchanged closure already stored on a closed record may remain when a later task edits other metadata. The `Closure` model separately requires a reason when the commit is absent. [62]
+For a closed record, the helper checks a supplied commit against the code repository and requires its full commit identity. A newly authored closure without a commit names the running leaf, or the task of a non-leaf owner. An unchanged closure already stored on a closed record may remain when a later task edits other metadata. The `Closure` model separately requires a reason when the commit is absent.
 
 Every write of a dependent is a confirmation. The writer checks that `document` is a tracked file at C and that no other dependent record names it, and that `stands_on` holds at least one link. Each link's recorded value is read at the task's tip: an anchor's `blob` and `content` from C, a whole file's `blob` from C, and a record link's stored revision from the candidate. `confirmed` is completed with this task's `task`, `role` and one-sentence `statement`, plus the code state the values were read from: `commit`, `codeTree` and `uncommitted`. No attribution is taken from the record being updated, so a second task never refreshes a document under the previous task's name, and a confirmation without its judgment is refused.
 
@@ -28,23 +36,19 @@ A record request with `remove: true` removes the stored record file and its Mark
 
 ## Current evidence
 
-- Weakness anchor preservation and closure admission are delegated to `weakness_authoring.py`; a same-path stored anchor is retained only when the current locator cannot resolve. [62]
+- Placement delegates revision calculation and records the writer before storing the record. [33]
+- Record fields are merged and links are resolved before placement. The decision default is its lifecycle word active. [34]
+- An unmerged record resolves above the higher side. Other records compare meaning with the applicable base. [44]
+- A raised or new revision carries the resolved writer and its exact meaning digest in the open attempt. [67]
+- Base-number placements retain the base stamp and unchanged same-writer placements retain the prior stamp. [68]
+
 - Every dependent write is a confirmation of the task's tip, refused without this task's attribution and judgment.
-
-
-
-
-- Handle assignment and refresh restoration precede ordered entry processing, records and rows. [60]
-
 
 
 - Origin/evidence and decision alternatives delegate to their explicit owners. [55]
 
 
-
 - Decision updates remap links before anchored link resolution. [61]
-
-
 
 
 ## Inherited source-epoch account (non-operative)
@@ -70,20 +74,14 @@ The following complete predecessor retains useful explanations, old observations
 >   is the one this owner already wrote from the same hand-off entry (`record_by_origin`) or a freshly minted
 >   one unique against `known_ids`. Records do the same by `(kind, handoff entry)`; two records of one kind
 >   from one hand-off entry are refused.
-> - **Revisions** (`_place_record`): against the base record, `revision` is the base revision plus one when
->   `meaning` differs, else unchanged; `NON_MEANING_FIELDS` are `id`, `schema`, `origin`, `revision`,
->   `admission` and `status`, so a status change does not increment it (architect ruling 6). With no Git
->   base, the pre-operation file is the reference.
+> - **Revisions.** This predecessor compared meaning against the base and used the pre-operation file when there was no Git base. The current revision account above owns the writer and metadata fields.
 > - **Origin and evidence** (`_origin`): a new record's origin names the task, the leaf or wave, the hand-off
 >   path and entry, and the entry's evidence. A record this owner authored gains this run's evidence. A record
 >   **another** leaf or wave authored keeps its origin exactly; the evidence is queued and must be stored in
 >   this owner's history row about that record (`_reason_with_evidence` appends `Evidence (<entry>): …` to the
 >   row's `reason`); without such a row the run is refused (ruling R2-1). Evidence is never only reported.
 > - **Records of any kind** (`_write_record`): `fields` are merged over the stored record; `handoff:` handles
->   are resolved; a link whose target is `{path, locator}` gets its anchor resolved at C (`_link`). A new
->   record's `status` defaults to `proposed` (`active` for a decision) — only for the kinds that store a
->   status: a weakness carries `state` and a dependent neither, so no status is added to them (see the
->   current account above).
+>   are resolved; a link whose target is `{path, locator}` gets its anchor resolved at C (`_link`).
 > - **Entries** (`_upsert_entry`): a realization per target and a proof per curator `proofs[]` item go into
 >   the source file's sidecar (`realizes` / `proves`), matched on invariant, owner, hand-off entry and
 >   locator; entry origin is `{leaf, handoffEntry}`. `_remove_unnamed_entries` removes, and reports
@@ -120,7 +118,7 @@ The following complete predecessor retains useful explanations, old observations
 > - **Only a `moved` row may relocate an entry** (L06 ruling Q6). A cover naming a path on any other
 >   disposition is refused; a rerun that finds the entry already at the path is a plain re-anchor.
 > - **A record both sides of a merge changed is resolved at one more than the higher side's revision (L37, MIK-R24
->   rule 8 step 4).** `_place_record` takes the revision from `_revision`: when `state.merged_sides_revision` finds
+>   rule 8 step 4).** In the predecessor, `_place_record` took the revision from its local `_revision` helper. The current implementation delegates this rule to `revision_step`. When `state.merged_sides_revision` finds
 >   the record's path unmerged (a crossing sync leaves it so), the result is that maximum plus one; a
 >   `MergeStageError` is a named problem and no revision is guessed. Every other record keeps the earlier rule: the
 >   base's revision, plus one when the meaning changed, and 1 for a record new to the base. The rule keys on the
@@ -241,7 +239,7 @@ The following complete predecessor retains useful explanations, old observations
 >   The current writer refuses an unconverted tree; this history is not a preserved legacy-write branch.
 >
 > - The retired-attach guard, called before the record is placed. [17]
-> - The refusal names the invariant and the alternatives. [18]
+> - The refusal names the invariant and the alternatives.
 > - The writer's refusals: absent and retired invariants, a blank reason, covers, another disposition. [21]
 >
 > ## 260928-MIK-L14 The Reconsideration Rows Through The Writer (MIK-R14 Rule 4)
@@ -260,7 +258,7 @@ The following complete predecessor retains useful explanations, old observations
 >   (a dry run of the task-document edit); with no port the row is refused ("a raise appends a question to the leaf's
 >   task document, and this write has no task owner"), and a check refusal refuses it too ("the raise is refused, so
 >   the item stays open: …"). Otherwise the decision's `status` becomes `under_reconsideration` through `state.put`
->   (status is in `NON_MEANING_FIELDS`, so the revision stays), the `(key, question)` pair is queued in `raised` for
+>   (lifecycle status carries no revision meaning), the `(key, question)` pair is queued in `raised` for
 >   `writer.py` to append before any file is written, and the note names the question. A `raise` leaves the links
 >   as they are.
 > - **`still_rejected` (`_refresh`, rulings 04:37:56 Q2/Q3, 05:31:11 F1–F4 and reviews R3–R5).** `_answered_item`
@@ -308,7 +306,7 @@ The following complete predecessor retains useful explanations, old observations
 > meaning: the revision fill for family rows happens in `HistoryRowAuthoring`, and
 > this module only records what the row construction resolved.
 >
-> - Row mechanics record the invariant's or family's own revision. [52]
+> - Row mechanics record the invariant's or family's own revision.
 >
 > ## Evidence
 >
@@ -327,14 +325,12 @@ The following complete predecessor retains useful explanations, old observations
 >
 > The mechanical fields, by concern.
 >
-> - The operation: entries, records, rows, then unstored foreign evidence refuses. [30]
-> - ID assignment and rerun reuse. [31]
-> - Origin: own records gain evidence, another owner's origin is kept exactly. [32]
-> - Revision once per leaf against the base. [33]
-> - Records of any kind, with defaults and resolved links. [34]
+> - The operation: entries, records, rows, then unstored foreign evidence refuses.
+> - ID assignment and rerun reuse.
+> - Origin: own records gain evidence, another owner's origin is kept exactly.
 > - Realization and proof entries upserted in the sidecar. [35]
 > - A rerun removes only this owner's unnamed entries. [36]
-> - What became of a test the evidence names, and a test file named without a test is `unresolvable`. [37]
+> - What became of a test the evidence names, and a test file named without a test is `unresolvable`.
 >
 >
 >
@@ -343,7 +339,6 @@ The following complete predecessor retains useful explanations, old observations
 > - Rerun idempotence. [42]
 > - Revision increments once; foreign evidence goes to this leaf's row. [43]
 >
-> - The record's revision after this operation: an unmerged record at the higher side's plus one. [44]
 >
 >
 > - A record both sides changed is resolved at one more than the higher side. [46]
@@ -367,10 +362,7 @@ The following complete predecessor retains useful explanations, old observations
 - A range proof's locator and pairing titles are resolved by this one helper, which refuses a range that is no such case. Anchor: `_proof_locator` [58]
 
 
-
-
 - The authoring class inherits the re-point row authoring, so a `still_rejected` row's `repoint` is judged where the row is written. Anchor: `Authoring` [59]
-
 
 
 - Both forms become proofs once faceted; an absent test and a bare test file are reported. [1]
@@ -390,55 +382,42 @@ The following complete predecessor retains useful explanations, old observations
 - A moved row relocates the entry; before and after name the old and new paths; a rerun is byte-identical.
 
 - The retired-attach guard, called before the record is placed. [17]
-- The refusal names the invariant and the alternatives. [18]
+- The refusal names the invariant and the alternatives.
 - The writer's refusals: absent and retired invariants, a blank reason, covers, another disposition. [21]
 - The port, the queued questions and the worklist's items. [22]
 - The refusals of a wrong subject or an extra field. [27]
 - A `raise` refused without a task owner, on a check refusal and on an append refusal writes nothing. [28]
 
 
-- The operation: entries, records, rows, then unstored foreign evidence refuses. Anchor: `run` [30]
+- The writer assigns handles, restores refreshes, processes entries and records, and writes judgment rows. Foreign evidence requires the current owner’s row. [30]
 
 
+- An explicit ID addresses a stored record. Otherwise the writer reuses the owner’s origin match or mints an ID. [31]
 
 
-- ID assignment and rerun reuse. Anchor: `_assign_ids` [31]
+- An owning record can append or replace its evidence. Foreign origin is preserved and its evidence goes to the current owner’s history row. [32]
 
 
-
-
-- Origin: own records gain evidence, another owner's origin is kept exactly. Anchor: `_origin` [32]
-
-
-- Revision once per leaf against the base. [33]
-
-
-- Records of any kind, with defaults and resolved links. Anchor: `_write_record` [34]
+- Fields and links are resolved before record placement. A decision without a lifecycle status defaults to active. [34]
 
 
 - Realization and proof entries upserted in the sidecar. [35]
 - A rerun removes only this owner's unnamed entries. [36]
 
-
-- What became of a test the evidence names, and a test file named without a test is `unresolvable`. [37]
-
+- A named test yields a proof, awaits a curator facet, or is reported unresolvable. A bare test file needs a test name. [37]
 
 
 - The conforming example: decision, realization and proof, validated.
 
 - Rerun idempotence. [42]
 - Revision increments once; foreign evidence goes to this leaf's row. [43]
-- The record's revision after this operation: an unmerged record at the higher side's plus one. [44]
 - A record both sides changed is resolved at one more than the higher side. [46]
 
 - The writer fills row items from the worklist after the unchanged case moved to governing-row tests. [50]
 
 - A cover revises a realization entry's rationale in place. [51]
 
-
-- Row mechanics record the invariant's or family's own revision. [52]
-
-
+- The history row records the resolved invariant or family’s own revision. [52]
 
 
 - The authoring state carries worklist item, trace source and count inputs and the recorded memory base for fresh card comparison. The row author checks the counted change and dispatches requests by their typed subjects. [53]
@@ -446,3 +425,13 @@ The following complete predecessor retains useful explanations, old observations
 
 - A moved row relocates the entry; before and after name the old and new paths; a rerun is byte-identical. Anchor: `test_a_moved_row_whose_after_names_another_path_relocates_the_entry` [16]
 - The conforming example: decision, realization and proof, validated. Anchor: `test_a_decision_a_realization_and_a_tested_evidence_produce_validated_files` [41]
+
+- A range proof's locator and pairing titles are resolved by this one helper, which refuses a range that is no such case. [58]
+
+- Handle assignment and refresh restoration precede ordered entry processing, records and rows. [60]
+- The authoring class inherits the re-point row authoring, so a `still_rejected` row's `repoint` is judged where the row is written. [59]
+
+- The refusal names the invariant and the alternatives. [18]
+- The writer delegates the anchored place and closure checks to the weakness helper. A current closure without a commit records its reason and owning task. [62]
+
+- Entry authoring stores a supplied title and the placement adds a note for an updated rule still without a title. [69]

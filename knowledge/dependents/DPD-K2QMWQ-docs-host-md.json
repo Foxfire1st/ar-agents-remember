@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "81f40d54700ea65869339061d70182e7efc59dc1",
-    "commit": "c5122294b4110a744254dad2c686a82f392304c4",
+    "codeTree": "764f146c5670470b3c8c10f5a5a7be9b66df5fac",
+    "commit": "e51f75630087a00bdcacaab646541e9cb04356d6",
     "role": "curator",
-    "statement": "The host guide still describes resume after a host stop and exact-agent Antigravity Retry.",
+    "statement": "On merged code e51f75630 the Host guide keeps its role-agent account, the second agents-remember copy on non-Claude harnesses and the Claude Code exclusion; it describes resume after a host stop and exact-agent Antigravity Retry, and its Paseo 0.16.2 routes agree with the current agent binding.",
     "task": "261112-BUG-L37",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "docs/host.md",
   "id": "DPD-K2QMWQ",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -131,7 +131,7 @@
       "path": "mcp/src/agents_remember/application/agent_binding.py"
     },
     {
-      "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
+      "blob": "58ee640a8f53ac7e3e3b4aa884d750d6ad8eead7",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     },
@@ -167,8 +167,8 @@
     },
     {
       "anchor": {
-        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
-        "content": "sha256:bfd43cdf46e5c32a4de2c2ed61c10d966ef1d8d86de4e336e599dd21ec8e0658",
+        "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
+        "content": "sha256:8b89d4ca063e0692378d8fb0b624e947ad562bc0de0b790c1837269b6f497258",
         "locator": {
           "end": 247,
           "kind": "line_range",

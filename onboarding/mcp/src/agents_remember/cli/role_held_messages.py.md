@@ -28,7 +28,7 @@ Before a resend, a message attempted under a host id goes alone and under that i
 
 ## Current Contract — Scoped Launch And Settings Changes
 
-_open_held_seat now invokes the receipt owner’s _restore_launch_handover with the saved launch call before adding waiting messages to the frozen opening prompt. For an artifact-backed receipt, restoration validates frozen details and verifies the primary handover and takeover material. With neither artifact reference, the helper validates the frozen details directly.
+`_open_held_seat` invokes the receipt owner’s `_restore_launch_handover` with the saved launch call. The artifact-backed path validates frozen details and verifies the primary handover and any takeover material. With neither artifact reference, the helper validates the frozen details directly. A held leaf Reviewer or Curator receives its applicable product notice between the frozen handover and the claimed waiting messages.
 
 A ValueError releases the claim and returns cannot-open with the specific recovery detail; no host opening occurs and waiting messages remain. Existing successful opening stages terminal metadata before removal, and existing FIFO, batching, store limits, permission guards and bounded sweep contracts remain unchanged.
 
@@ -36,22 +36,22 @@ A ValueError releases the claim and returns cannot-open with the specific recove
 
 
 
-- Admission appends under the store lock and refuses overflow without dropping text. [1]
+- Admission appends under the store lock and refuses overflow without dropping text. Anchor: `hold_message` [1]
 
 
 
-- A drain delegates claim/readiness checks and whole-first FIFO delivery. [2]
+- A drain delegates claim/readiness checks and whole-first FIFO delivery. Anchor: `drain_held` `_deliver_waiting` [2]
 
 
 
-- Terminal lines are published separately from ended text and retain failure state. [3]
+- Terminal lines are published separately from ended text and retain failure state. Anchor: `apply_drain_to_receipt` [3]
 
 
 - Yielded receipt paths, reads and drains are capped; each directory stays open as a live filesystem-order scan. Delivery root discovery is synchronous and retains one walk per discovered root, without the attention reader's sixty-four-folder cap.
 
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/controlplane/held_store_discovery.py:70-95 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08; mcp/src/agents_remember/controlplane/held_store_discovery.py:158-191 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08. Retired means the anchor no longer stands, not that the cited subject was deleted [4]
 
-- Validation precedes prompt construction and host launch; failures retain waiting work. [5]
+- Handover validation precedes prompt construction and host launch. Invalid handover details release the claim while preserving the waiting batch. [5]
 
 
 
@@ -66,3 +66,5 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/controlplane/held_
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/controlplane/held_store_discovery.py:70-95 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08; mcp/src/agents_remember/controlplane/held_store_discovery.py:158-191 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The held opening inserts its product notice between the restored prompt and the FIFO batch. [9]

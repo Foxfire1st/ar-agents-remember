@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "870189f5459113cf50b9e6445dec96d05af548af",
-        "content": "sha256:9e4f97fe530cdad584898ac3f3b5b1adc0ab91870a285bf624284c3de405aedc",
+        "blob": "0625ffff60b212b9f4e6620621454af7047bf025",
+        "content": "sha256:48c4dded800331d806325571ec67b82b7f285b0da5e32d7b166ee999e852aaf3",
         "locator": {
           "kind": "symbol",
           "name": "UNDOCUMENTED_COMMANDS"
@@ -21,12 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "870189f5459113cf50b9e6445dec96d05af548af",
+        "blob": "0625ffff60b212b9f4e6620621454af7047bf025",
         "content": "sha256:1daf22836cae45bb9b0b55af64cdfcceb54bcca51955a76c8dffa6e4aff8944d",
         "locator": {
-          "end": 341,
+          "end": 344,
           "kind": "line_range",
-          "start": 313
+          "start": 316
         }
       },
       "id": "RLZ-ESCY24",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "870189f5459113cf50b9e6445dec96d05af548af",
+        "blob": "0625ffff60b212b9f4e6620621454af7047bf025",
         "content": "sha256:5c0f8ecbb0cdbde47fcbbe6ed8dc1c9cec0d36502d9d70c94982fdb70c41f9a5",
         "locator": {
           "kind": "symbol",
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "870189f5459113cf50b9e6445dec96d05af548af",
-        "content": "sha256:9e4f97fe530cdad584898ac3f3b5b1adc0ab91870a285bf624284c3de405aedc",
+        "blob": "0625ffff60b212b9f4e6620621454af7047bf025",
+        "content": "sha256:48c4dded800331d806325571ec67b82b7f285b0da5e32d7b166ee999e852aaf3",
         "locator": {
           "kind": "symbol",
           "name": "UNDOCUMENTED_COMMANDS"
@@ -77,14 +77,15 @@
   ],
   "references": {
     "1": {
-      "note": "Commands, tools and operations come from the real parser, live registration and the dispatcher, without starting a server. (whole file)",
+      "note": "The parser, tool registration and task-document dispatcher supply executable vocabularies.",
       "targets": [
         {
           "anchor": {
-            "blob": "870189f5459113cf50b9e6445dec96d05af548af",
-            "content": "sha256:bf2835aa15276af13f3e30d37cd2b801dd7aa9b6b0d2484bbb0be6b4c28db631",
+            "blob": "0625ffff60b212b9f4e6620621454af7047bf025",
+            "content": "sha256:34f6e1354229d128f9898b5c3707710e9462523c4c6204eb13ef34fa9622cdc0",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "load_registry"
             }
           },
           "kind": "code"
@@ -92,14 +93,15 @@
       ]
     },
     "2": {
-      "note": "The corpus is every text file in skills and docs plus the root README. (whole file)",
+      "note": "The reader takes UTF-8 text from the instruction and document corpus.",
       "targets": [
         {
           "anchor": {
-            "blob": "870189f5459113cf50b9e6445dec96d05af548af",
-            "content": "sha256:bf2835aa15276af13f3e30d37cd2b801dd7aa9b6b0d2484bbb0be6b4c28db631",
+            "blob": "0625ffff60b212b9f4e6620621454af7047bf025",
+            "content": "sha256:6e1830355fc54f0df130590f5a1304e608a6512837b2965d379422a0a7cd01fa",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "read_corpus"
             }
           },
           "kind": "code"
@@ -107,14 +109,15 @@
       ]
     },
     "3": {
-      "note": "Per-line findings cover retired terms, unregistered names, unknown operations and missing paths. (whole file)",
+      "note": "The consistency check reports invalid terms, names, operations and paths.",
       "targets": [
         {
           "anchor": {
-            "blob": "870189f5459113cf50b9e6445dec96d05af548af",
-            "content": "sha256:bf2835aa15276af13f3e30d37cd2b801dd7aa9b6b0d2484bbb0be6b4c28db631",
+            "blob": "0625ffff60b212b9f4e6620621454af7047bf025",
+            "content": "sha256:4d8f3a325d2d05b071eef123c2cd6149996ca1d6eb05325b2667e9a5a2dc9342",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "check_consistency"
             }
           },
           "kind": "code"
@@ -122,12 +125,12 @@
       ]
     },
     "4": {
-      "note": "The full check adds knowledge-name coverage; a migration command of an earlier installation needs no documentation row. (whole file)",
+      "note": "The full check applies command-table coverage and reserves entries in UNDOCUMENTED_COMMANDS outside the table.",
       "targets": [
         {
           "anchor": {
-            "blob": "870189f5459113cf50b9e6445dec96d05af548af",
-            "content": "sha256:bf2835aa15276af13f3e30d37cd2b801dd7aa9b6b0d2484bbb0be6b4c28db631",
+            "blob": "0625ffff60b212b9f4e6620621454af7047bf025",
+            "content": "sha256:15cf98b17a41c52fd99d09bbcd0d87eea1f7a3f56a059dab70c49ce607a242b5",
             "locator": {
               "kind": "file"
             }

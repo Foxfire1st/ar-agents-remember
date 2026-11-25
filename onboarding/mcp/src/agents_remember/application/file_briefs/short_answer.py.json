@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/application/file_briefs/short_answer.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ad4d2d850a016720a5f59a58a02edcb0b0f32f5f",
+        "content": "sha256:da9c14ba4d45dc6f94de1659096a2b3af6c32f5fd3fdeb96f8f1e9f5e3a5f5e8",
+        "locator": {
+          "kind": "symbol",
+          "name": "fit"
+        }
+      },
+      "id": "RLZ-ZVY6EM",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Reserves a count and path for every brief before adding complete answers in request order.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The fitter reserves minimum rows, adds whole rows in request order and clips rule text only in the first candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad4d2d850a016720a5f59a58a02edcb0b0f32f5f",
+            "content": "sha256:da9c14ba4d45dc6f94de1659096a2b3af6c32f5fd3fdeb96f8f1e9f5e3a5f5e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "fit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

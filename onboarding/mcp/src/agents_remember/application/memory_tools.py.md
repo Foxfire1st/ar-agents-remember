@@ -12,7 +12,7 @@
 route-index refresh, memory initialization, baseline adoption, and memory carryover. Memory-quality
 scope, execution, and async control now belong to the dedicated typed controller.
 
-Provides the memory-facing application entry points and the ordinary leaf writer guard. Citation fixing and route-index apply also share one measured pre-baseline admission on the configured converted memory root.
+Provides the memory-facing application entry points and the ordinary leaf writer guard. After applied citation fixing in converted leaf memory, the route uses the changed card and sidecar paths to refresh their source file briefs. An empty change list skips refresh. A refresh failure is reported in `briefsProblem`. Citation fixing and route-index apply also share one measured pre-baseline admission on the configured converted memory root.
 
 `memory_init_tool` scaffolds the memory root and reports the measured knowledge state; it does not author
 knowledge. For a complete resolved tree reported as `not-recorded` or `recorded`, the next action names
@@ -119,7 +119,7 @@ The unconverted `citation_fix_tool` whole result now explicitly carries `nextAct
 
 ## Evidence
 
-Inherited numbered findings [3], [12], [9], [13], [36], [21], [26], [27] retain their separate historical custody; no currentness is inferred from those inherited targets. The source-bound account below distinguishes surviving owners from the legacy implementation removed by this task. Removed projection, source-index and prepared-continuation captions are not retained as executable behavior.
+The references below bind the current carryover apply and citation selector implementations. The initializer entry point delegates to memory_initialization.py. An applied citation fix in a converted leaf asks for an affected-source brief refresh after the citation work.
 
 
 - The carryover adapter forwards converted worktree import, derives ok from refused state and translates only the recognized legacy RuntimeError. [38]
@@ -224,7 +224,7 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 - Carryover apply forwards approval intent and explicit review selections to the converted worktree import. [12]
 
 
-- The carryover apply adapter delegates to the converted importer and sets ok from its returned state. [13]
+- The converted carryover apply adapter takes an approval intent note and selected reviews, delegates to the converted importer, and sets ok from its returned state. [13]
 
 - Canonical quality scope is owned by the focused scope module. [14]
 - Its resolver, which binds a repository to the scope the quality surface runs against. [15]
@@ -242,10 +242,11 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 - CitationOperationScope carries the named documents and validates their structural shape at construction. [21]
 
 - **The memory initializer now reports the knowledge foundation beside the memory root it scaffolds (`ICR-R29@v1`).** [23]
+
 - **The admission whose location this block reports, so the location a curator is told to populate is the one the bootstrap publishes to.** [24]
 - The read that decides the block's state, and the unavailable form its states come from. [25]
 
-- Citation scope rejects conflicting selectors, empty or oversized lists, and lists outside citation fixing before tree resolution. [26]
+- Citation scope accepts one document, or a finite document list for citation fixing only; conflicting selectors, empty or oversized lists, and lists outside citation fixing are rejected before tree resolution. [26]
 
 
 - Citation fixing and route-index apply use the ordinary leaf write guard or the measured converted pre-baseline admission. [27]
@@ -255,7 +256,10 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 - The drift tool binds the leaf's converted base with a contract, else the checkout HEAD. [30]
 - Contractless writes share the measured declared-root, converted-format, no-baseline and no-linked-worktree admission; every failed condition names the leaf route. [31]
 
+
+
 - This application function selects pre-baseline admission or the ordinary leaf contract. Its pre-baseline and unconverted-refusal returns explicitly add measuring_build_stamp(); its converted-leaf return calls _citation_fix_result. [32]
+
 
 - Route-index apply uses the same pre-baseline admission; scoped operations still use the resolver-owned roots and storage. [33]
 - Finite fix selection is validated before reads with the shared bound. [34]
@@ -267,6 +271,7 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 
 - Memory initialization reports the foundation without authoring records. Complete resolved states and nonlegacy unavailable publication name the measured state before the Architect/regular-task/Curator handover; partial-index repair, legacy conversion and admission refusals retain their distinct next actions. [42]
 
+
 - Typed quality execution and public run translation are owned by the controller. [5]
 
 - This controller function revalidates the scope, calls the scoped memory-quality check and composes its result. [16]
@@ -274,3 +279,7 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 - The controller attaches the curator checklist and enclosure-local worklist for the full scoped publication. [17]
 
 - Carryover options forward approval intent and explicit review selection without a commit subject. [37]
+
+
+
+- An applied converted leaf citation fix refreshes briefs of changed cards and reports a brief failure. [44]

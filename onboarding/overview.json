@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98cfe3dd544cbeb61461ffaba7de58541d847381",
+            "blob": "c7d85b5931a46d14bdb382b4c1831af93fa58eaf",
             "content": "sha256:4e77b2a1a88bc765ec36507e0e735caefa2e8b5fc79ab93ed78346ea10fddc65",
             "locator": {
               "kind": "symbol",
@@ -513,7 +513,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
             "content": "sha256:d464b721ab61acb5e0c79ad3210870eadeddf5510a8dc5f096c0c0468b32f7e5",
             "locator": {
               "end": 5,
@@ -562,10 +562,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74167e7f80f1b9391a5f2c9b1c8c6d2fa2f69402",
-            "content": "sha256:6aeecf20a2907123509200cddca4d89812690e6d3896f345dcd8bf1aa3e52aff",
+            "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
+            "content": "sha256:fffab67491f1245146827f300b9e3bb69c5acfc098526d57b932c830de6b2bc9",
             "locator": {
-              "kind": "file"
+              "end": 60,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
+            "content": "sha256:f19eec9780ea0b5e9f5a21b773f4e71b405e9d40607de2897a7088e3e00679b3",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 225
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -755,12 +770,12 @@
       ]
     },
     "146": {
-      "note": "The Investigator examines one scoped concern and writes a report, distinguishes observed facts from hypotheses, and names the owning Worker or Curator for needed code or memory changes. It edits no code checkout, memory or task document and starts no role; a separate order grants no Worker or Curator authority.\n\nAnchor: `A separate order never grants this role Worker or Curator authority`",
+      "note": "The Investigator examines one scoped concern and writes a report, distinguishes observed facts from hypotheses, and names the owning Worker or Curator for needed code or memory changes. It edits no code checkout, memory or task document and starts no role; a separate order grants no Worker or Curator authority. Anchor: `A separate order never grants this role Worker or Curator authority`",
       "targets": [
         {
           "anchor": {
-            "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
-            "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+            "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
+            "content": "sha256:54134483bed0c0cb45fbe46de56fa2b3b643f940f8a38ac4f0a0b4a645c4e31c",
             "locator": {
               "kind": "file"
             },
@@ -844,12 +859,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
             "content": "sha256:7d321a5423a7926b46b266b29a647850e6973d13194d4a82d47eaae2c243bb3b",
             "locator": {
-              "end": 189,
+              "end": 192,
               "kind": "line_range",
-              "start": 131
+              "start": 134
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -862,7 +877,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a980cc93e1c8141ce2b8fb3a94224a554f69f9e4",
+            "blob": "d526b667f96765bf304f2867766fdf4e0873cab0",
             "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
             "locator": {
               "kind": "symbol",
@@ -879,12 +894,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
             "content": "sha256:232c783c7ade9b3d42addb6e01b45f65db2eebbfff4e51e48877c51f02bab19c",
             "locator": {
-              "end": 130,
+              "end": 133,
               "kind": "line_range",
-              "start": 100
+              "start": 103
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -893,12 +908,12 @@
       ]
     },
     "25": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): A converted memory tree is selected as a tree, and the database file inside it is not read.\n\nAnchor: `converted_memory_tree`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): A converted memory tree is selected as a tree, and the database file inside it is not read. Anchor: `converted_memory_tree`",
       "targets": [
         {
           "anchor": {
-            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
-            "content": "sha256:ed945298901c54ce9411f7391b4d3b19bb0e13b0f246be1cbad4704f98383880",
+            "blob": "9608622801bb9494b2ece9a1de71e8772b738e87",
+            "content": "sha256:c0c268aeebf6c982de49524c15b384c47d31995825ed32900e2082bc0029e200",
             "locator": {
               "kind": "file"
             },
@@ -913,7 +928,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:589f2cf80782d37464131fb8068c59515ac08c384d15c0618850501e0161bff4",
             "locator": {
               "end": 73,
@@ -931,12 +946,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
             "content": "sha256:42ccd373d58b66c5eaaed5d3fc930f224b98bd91de3a8cfe7dca2b21e9ba42f4",
             "locator": {
-              "end": 601,
+              "end": 622,
               "kind": "line_range",
-              "start": 537
+              "start": 558
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -967,12 +982,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
             "content": "sha256:96952fe2b6e3e3803e98684dad12ee79cab8b00b0a24cf35db01ff7daf0ea906",
             "locator": {
-              "end": 405,
+              "end": 419,
               "kind": "line_range",
-              "start": 391
+              "start": 405
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -980,12 +995,12 @@
         },
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
             "content": "sha256:96952fe2b6e3e3803e98684dad12ee79cab8b00b0a24cf35db01ff7daf0ea906",
             "locator": {
-              "end": 405,
+              "end": 419,
               "kind": "line_range",
-              "start": 391
+              "start": 405
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -998,8 +1013,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
-            "content": "sha256:57b461db3dcb97557fa3361023f8de23e327901659cd1425b5889f368fd94649",
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
+            "content": "sha256:17538afae1916517f0462bf87bd603bf99f090e25a67cf48fb364d02bbeacb5a",
             "locator": {
               "end": 74,
               "kind": "line_range",
@@ -1016,12 +1031,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
             "content": "sha256:bd27d39bc2630d02815698d413a388bd45d1b29ced1eb46bc3a697acd1eae241",
             "locator": {
-              "end": 369,
+              "end": 383,
               "kind": "line_range",
-              "start": 357
+              "start": 371
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -1050,12 +1065,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
             "content": "sha256:4b174f522ee608fc284dbb773f1105135b7cd2e97b115c5c6f55b68e53fcc47b",
             "locator": {
-              "end": 247,
+              "end": 261,
               "kind": "line_range",
-              "start": 240
+              "start": 254
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -1103,7 +1118,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a980cc93e1c8141ce2b8fb3a94224a554f69f9e4",
+            "blob": "d526b667f96765bf304f2867766fdf4e0873cab0",
             "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
             "locator": {
               "kind": "symbol",
@@ -1120,12 +1135,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
             "content": "sha256:232c783c7ade9b3d42addb6e01b45f65db2eebbfff4e51e48877c51f02bab19c",
             "locator": {
-              "end": 130,
+              "end": 133,
               "kind": "line_range",
-              "start": 100
+              "start": 103
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -1563,16 +1578,16 @@
       ]
     },
     "288": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one actual memory-content output (since MIK-R09, on converted memory, after closing the leaf's history file and validating and gating the exact tree). Anchor: `external_closeout_commits`",
+      "note": "Fresh converted-leaf closeout validates and gates the exact memory tree after closing owner history. It then writes one memory-content output or reuses the unchanged tip. Recovery judges the recorded output again.",
       "targets": [
         {
           "anchor": {
-            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
-            "content": "sha256:ed5c156b596e3fc22f63b820167b53a26bcdc91d1480a687c5ac8bee6e61bb08",
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "content": "sha256:b0815590ccbc8c19323c4f8d4c46d8d6cfaf6cb4a6821ec208f94b17c4492d92",
             "locator": {
-              "end": 121,
+              "end": 135,
               "kind": "line_range",
-              "start": 73
+              "start": 77
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -1580,12 +1595,12 @@
         },
         {
           "anchor": {
-            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
-            "content": "sha256:fea0d2afa03e0381a722732efed577f89691a06ffe9a6c760f0f9bf43f069e0e",
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
-              "end": 205,
+              "end": 238,
               "kind": "line_range",
-              "start": 164
+              "start": 200
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -1593,12 +1608,25 @@
         },
         {
           "anchor": {
-            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
+            "locator": {
+              "end": 521,
+              "kind": "line_range",
+              "start": 493
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
             "content": "sha256:75c289abc3d8965a92f8dad4580ae6df9a5ea99250b245cbd3e79237bfce6251",
             "locator": {
-              "end": 590,
+              "end": 624,
               "kind": "line_range",
-              "start": 547
+              "start": 581
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -1688,72 +1716,59 @@
       ]
     },
     "293": {
-      "note": "The read_ar_files naming entry point returns knowledge locations and measured states, with no source, card, overview or published-intent body.",
+      "note": "A fuller naming reply can carry governing locations, measured states and rule text. Compact rows can keep a pointer whose saved brief is missing. Source, card and overview bodies stay in their files.",
       "targets": [
         {
           "anchor": {
-            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
-            "content": "sha256:13aef717a76a0b04deda44628d0f376574a6688d50f5279af8119a75234a7eda",
+            "blob": "ac6f348d86bc935cc81808f5d926c899261e44d3",
+            "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
-              "end": 172,
+              "end": 90,
               "kind": "line_range",
-              "start": 95
+              "start": 90
             },
-            "path": "mcp/src/agents_remember/application/read_files.py"
+            "path": "docs/reference/mcp-tools.md"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
-            "content": "sha256:23017282a2fbe499dc6c541d39d01fe1936b53a4601e94586bbae3072145b164",
+            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "content": "sha256:471da92ea95b622c6fcabcbf2c3ee284c21b03fa248586ea8e61e90211f6a18a",
             "locator": {
-              "end": 241,
+              "end": 120,
               "kind": "line_range",
-              "start": 189
+              "start": 96
             },
-            "path": "mcp/src/agents_remember/application/read_files.py"
+            "path": "mcp/src/agents_remember/application/read_files_briefs.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
-            "content": "sha256:cdcfc004869c645eab4f12a5af42f63b738d496c3dd008cdaf80caa8d7f7efab",
+            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "content": "sha256:6e80ad899e73b4af5891915a7bb47a67abe595b035b57a607ffc06149ee9941a",
             "locator": {
-              "end": 453,
+              "end": 215,
               "kind": "line_range",
-              "start": 336
+              "start": 158
             },
-            "path": "mcp/src/agents_remember/application/read_files.py"
+            "path": "mcp/src/agents_remember/application/read_files_briefs.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
-            "content": "sha256:3b2156ab21bec6a7efd7ab01ac59968f14308df1549e426636f4524406b2246d",
+            "blob": "b1c36e5ae6160b8579f2f1783a7ac45cdb961d74",
+            "content": "sha256:d12893bc8963ee3c8f1abcaf553337e94c78a293eb0cf399ee18707e7dd51be3",
             "locator": {
-              "end": 548,
+              "end": 254,
               "kind": "line_range",
-              "start": 507
+              "start": 238
             },
-            "path": "mcp/src/agents_remember/application/read_files.py"
+            "path": "mcp/tests/tool_answer_l109_cases.py"
           },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
-            "content": "sha256:4a39ad0343d62dc2efcbff5fbdb4d7d84e1d8b0125e69500aa3b82414018c188",
-            "locator": {
-              "end": 644,
-              "kind": "line_range",
-              "start": 615
-            },
-            "path": "mcp/src/agents_remember/application/read_files.py"
-          },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },
@@ -1762,7 +1777,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
+            "blob": "e1f70b40e8089bc303ccf91511733ce53753e0bc",
             "content": "sha256:f3ab3f5f550064a33b571010a4b2b533e8d00dce981cbfbf811be0d30c03ac82",
             "locator": {
               "kind": "symbol",
@@ -1793,12 +1808,12 @@
       ]
     },
     "30": {
-      "note": "The registrar mounts the knowledge read, diff, integrity and write operations; change and project are removed.\n\nAnchor: `register_knowledge_tools`",
+      "note": "The registrar mounts the knowledge read, diff, integrity and write operations; change and project are removed.",
       "targets": [
         {
           "anchor": {
-            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
-            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
+            "content": "sha256:4e24d83951f841cb167aea0786f46536aef4663bd8dd1f9dfc32a535abc01814",
             "locator": {
               "kind": "file"
             },
@@ -1813,12 +1828,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
             "content": "sha256:0772ab426655bb9cabbb8843bde61bb96fa44a5e3d4dc93d14e0c145a152c00c",
             "locator": {
-              "end": 417,
+              "end": 431,
               "kind": "line_range",
-              "start": 406
+              "start": 420
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -1831,12 +1846,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
             "content": "sha256:9b642ac7b31e57dbf18e34e1fe06b93824ae50350a9c471a9ca163aa01b06498",
             "locator": {
-              "end": 669,
+              "end": 690,
               "kind": "line_range",
-              "start": 602
+              "start": 623
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -1849,7 +1864,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:589f2cf80782d37464131fb8068c59515ac08c384d15c0618850501e0161bff4",
             "locator": {
               "end": 73,
@@ -1867,12 +1882,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
             "content": "sha256:ccd9e3d67103b6c60abda2ff13052d5622116c07eace6a130db924956e51fb24",
             "locator": {
-              "end": 483,
+              "end": 497,
               "kind": "line_range",
-              "start": 418
+              "start": 432
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -1885,12 +1900,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
             "content": "sha256:a33ad250e5a93cd08005a63314140fbd0850b7d84bd6544215836d0382df3079",
             "locator": {
-              "end": 645,
+              "end": 666,
               "kind": "line_range",
-              "start": 642
+              "start": 663
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -1903,12 +1918,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
             "content": "sha256:4b174f522ee608fc284dbb773f1105135b7cd2e97b115c5c6f55b68e53fcc47b",
             "locator": {
-              "end": 247,
+              "end": 261,
               "kind": "line_range",
-              "start": 240
+              "start": 254
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -1921,12 +1936,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
             "content": "sha256:bd27d39bc2630d02815698d413a388bd45d1b29ced1eb46bc3a697acd1eae241",
             "locator": {
-              "end": 369,
+              "end": 383,
               "kind": "line_range",
-              "start": 357
+              "start": 371
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -1986,7 +2001,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:527858aaaf2a6ebe16c028201fbd79c8c09ed72cf4237f0f087a999d6d5295c3",
             "locator": {
               "end": 25,
@@ -2000,20 +2015,59 @@
       ]
     },
     "311": {
-      "note": "Retrieval guidance keeps the names-only read route: `read_ar_files` names the knowledge governing up to twenty paths and returns no file text.",
+      "note": "Retrieval uses `read_ar_files` for up to twenty paths. Fuller rows can carry rule text. Use native file tools for current saved briefs and named source files.",
       "targets": [
         {
           "anchor": {
-            "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
-            "content": "sha256:0c07decd0dffc1f6b1ed47687bcb5d7671e037b245bc61ee8fe4d6f8dd6036cc",
+            "blob": "ac6f348d86bc935cc81808f5d926c899261e44d3",
+            "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
-              "end": 79,
+              "end": 90,
               "kind": "line_range",
-              "start": 79
+              "start": 90
             },
-            "path": "skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
+            "path": "docs/reference/mcp-tools.md"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "content": "sha256:471da92ea95b622c6fcabcbf2c3ee284c21b03fa248586ea8e61e90211f6a18a",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/application/read_files_briefs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "content": "sha256:6e80ad899e73b4af5891915a7bb47a67abe595b035b57a607ffc06149ee9941a",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "mcp/src/agents_remember/application/read_files_briefs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b1c36e5ae6160b8579f2f1783a7ac45cdb961d74",
+            "content": "sha256:d12893bc8963ee3c8f1abcaf553337e94c78a293eb0cf399ee18707e7dd51be3",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "mcp/tests/tool_answer_l109_cases.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -2080,7 +2134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:f92257258b367d72bbd631cea723d0aadb374da016944c9f7a3c0144a0d9e470",
             "locator": {
               "end": 93,
@@ -2093,12 +2147,12 @@
         },
         {
           "anchor": {
-            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:6876558a17c3bc01d04c1964ce78d2ac92f2ddef5ea7be0610c8117c1b7570ec",
             "locator": {
-              "end": 101,
+              "end": 107,
               "kind": "line_range",
-              "start": 101
+              "start": 107
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -2106,12 +2160,12 @@
         },
         {
           "anchor": {
-            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:878d348b595aabf49ea9b0d43f9fc3ec919aa1e5fdd810d3c2687369165c182b",
             "locator": {
-              "end": 138,
+              "end": 144,
               "kind": "line_range",
-              "start": 134
+              "start": 140
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -2119,12 +2173,12 @@
         },
         {
           "anchor": {
-            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:adb8bc6672eb5d8e744cb5cfce52ef86901751d39a8ae5772a2b985655ca8acc",
             "locator": {
-              "end": 196,
+              "end": 202,
               "kind": "line_range",
-              "start": 194
+              "start": 200
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -2202,12 +2256,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:6038be5814e8f452acee52a8e9f79ebec01003bfacf61434586409c39243e5d7",
             "locator": {
-              "end": 112,
+              "end": 118,
               "kind": "line_range",
-              "start": 112
+              "start": 118
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -2246,7 +2300,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
             "content": "sha256:3975ddc1f60620446aeac3015498f3a7bf168671a74106312224692c56a7b0a4",
             "locator": {
               "end": 76,
@@ -2740,12 +2794,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
             "content": "sha256:bd27d39bc2630d02815698d413a388bd45d1b29ced1eb46bc3a697acd1eae241",
             "locator": {
-              "end": 369,
+              "end": 383,
               "kind": "line_range",
-              "start": 357
+              "start": 371
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -2753,12 +2807,12 @@
         },
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
-            "content": "sha256:5d85da3a65b01e9260a3ee8cc28dfa62faf6c7fdf3a6a69e2682c5a90cfeaf73",
+            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
+            "content": "sha256:d66f3d65ba099404f3205ff1237c0f61fd7ae84b52fb70ffcae08ee9134a57e0",
             "locator": {
-              "end": 282,
+              "end": 296,
               "kind": "line_range",
-              "start": 257
+              "start": 271
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -2766,12 +2820,12 @@
         },
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
             "content": "sha256:b187e47db04e37ba4b49769e91def72010881d141e8f9eeb151f776a885ff04a",
             "locator": {
-              "end": 368,
+              "end": 382,
               "kind": "line_range",
-              "start": 324
+              "start": 338
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -2823,7 +2877,7 @@
         },
         {
           "anchor": {
-            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
             "content": "sha256:14c2243e12309bd8e1e3c72aa1055f543743dd9a46ce321deaecbdc3f586fc85",
             "locator": {
               "end": 138,
@@ -3032,7 +3086,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -3058,7 +3112,7 @@
         },
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
               "end": 159,
@@ -3071,12 +3125,12 @@
         },
         {
           "anchor": {
-            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
             "locator": {
-              "end": 174,
+              "end": 180,
               "kind": "line_range",
-              "start": 170
+              "start": 176
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -3084,7 +3138,7 @@
         },
         {
           "anchor": {
-            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -3146,7 +3200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -3172,7 +3226,7 @@
         },
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
               "end": 159,
@@ -3185,12 +3239,12 @@
         },
         {
           "anchor": {
-            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
             "locator": {
-              "end": 174,
+              "end": 180,
               "kind": "line_range",
-              "start": 170
+              "start": 176
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -3198,7 +3252,7 @@
         },
         {
           "anchor": {
-            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -3286,7 +3340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -3312,7 +3366,7 @@
         },
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
               "end": 159,
@@ -3325,12 +3379,12 @@
         },
         {
           "anchor": {
-            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
             "locator": {
-              "end": 174,
+              "end": 180,
               "kind": "line_range",
-              "start": 170
+              "start": 176
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -3338,7 +3392,7 @@
         },
         {
           "anchor": {
-            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -3382,7 +3436,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -3408,7 +3462,7 @@
         },
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
               "end": 159,
@@ -3421,12 +3475,12 @@
         },
         {
           "anchor": {
-            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
             "locator": {
-              "end": 174,
+              "end": 180,
               "kind": "line_range",
-              "start": 170
+              "start": 176
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -3434,7 +3488,7 @@
         },
         {
           "anchor": {
-            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -3478,7 +3532,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -3504,7 +3558,7 @@
         },
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
               "end": 159,
@@ -3517,12 +3571,12 @@
         },
         {
           "anchor": {
-            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
             "locator": {
-              "end": 174,
+              "end": 180,
               "kind": "line_range",
-              "start": 170
+              "start": 176
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -3530,7 +3584,7 @@
         },
         {
           "anchor": {
-            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -3574,7 +3628,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -3600,7 +3654,7 @@
         },
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
               "end": 159,
@@ -3613,12 +3667,12 @@
         },
         {
           "anchor": {
-            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
             "locator": {
-              "end": 174,
+              "end": 180,
               "kind": "line_range",
-              "start": 170
+              "start": 176
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -3626,7 +3680,7 @@
         },
         {
           "anchor": {
-            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -3670,7 +3724,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -3696,7 +3750,7 @@
         },
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
               "end": 159,
@@ -3709,12 +3763,12 @@
         },
         {
           "anchor": {
-            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
             "locator": {
-              "end": 174,
+              "end": 180,
               "kind": "line_range",
-              "start": 170
+              "start": 176
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -3722,7 +3776,7 @@
         },
         {
           "anchor": {
-            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -3810,7 +3864,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -3836,7 +3890,7 @@
         },
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
               "end": 159,
@@ -3849,12 +3903,12 @@
         },
         {
           "anchor": {
-            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
             "locator": {
-              "end": 174,
+              "end": 180,
               "kind": "line_range",
-              "start": 170
+              "start": 176
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -3862,7 +3916,7 @@
         },
         {
           "anchor": {
-            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -3906,7 +3960,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -3932,7 +3986,7 @@
         },
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
               "end": 159,
@@ -3945,12 +3999,12 @@
         },
         {
           "anchor": {
-            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
             "locator": {
-              "end": 174,
+              "end": 180,
               "kind": "line_range",
-              "start": 170
+              "start": 176
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -3958,7 +4012,7 @@
         },
         {
           "anchor": {
-            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -4018,7 +4072,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -4044,7 +4098,7 @@
         },
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
               "end": 159,
@@ -4057,12 +4111,12 @@
         },
         {
           "anchor": {
-            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
             "locator": {
-              "end": 174,
+              "end": 180,
               "kind": "line_range",
-              "start": 170
+              "start": 176
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -4070,7 +4124,7 @@
         },
         {
           "anchor": {
-            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -4114,7 +4168,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -4140,7 +4194,7 @@
         },
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:185e960d10f717a33a8942f96843be1411f6ff810200d92c14fbaf73d02a6d28",
             "locator": {
               "end": 159,
@@ -4153,12 +4207,12 @@
         },
         {
           "anchor": {
-            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:ebb832ee1211d1ffd8dd832fd6bfb6828da0dae3e9a1017c2306b76a6f5e3f9d",
             "locator": {
-              "end": 174,
+              "end": 180,
               "kind": "line_range",
-              "start": 170
+              "start": 176
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -4166,7 +4220,7 @@
         },
         {
           "anchor": {
-            "blob": "76634d32c2ccb25e76e772591fc28ca71f1be782",
+            "blob": "33e76eba84ca8eff2e9b4bbd4354b3f284a4ec2a",
             "content": "sha256:e01055993301832d63cb5bec0c561f0f82cab2f8e25ff2e1daaa0ac787ef5e87",
             "locator": {
               "end": 143,
@@ -4348,7 +4402,7 @@
       ]
     },
     "358": {
-      "note": "The source roster contains 44 tools, including knowledge_write and user_settings_init. Converted memory-quality status includes bounded first rows and cut and added counts. Complete lists stay in the whole result and its detail log when recording succeeds.",
+      "note": "The source roster contains 44 public tools, including knowledge_write and user_settings_init. Converted memory quality replies show cut and added counts with bounded first rows. The whole result holds the complete lists, and the detail log exposes them when it was retained.",
       "targets": [
         {
           "anchor": {
@@ -4366,9 +4420,9 @@
         {
           "anchor": {
             "blob": "0be87d00a47ea321e70ece47c29392d112e29571",
-            "content": "sha256:8bef79894c0947f448c7278f193249786d766046c9866c84aa1e39235f388db3",
+            "content": "sha256:54d8c177f0a3b4d8bd2b13ee321b8eb286c35087b882f46c49ba97dec3fa7ef3",
             "locator": {
-              "end": 289,
+              "end": 255,
               "kind": "line_range",
               "start": 202
             },
@@ -4378,12 +4432,12 @@
         },
         {
           "anchor": {
-            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
-            "content": "sha256:4c2bc2920a357eef0d156c67cd563ab28b002bf28b82727f905e3202a7d41be0",
+            "blob": "44965514704f09508b78c29839ced880346b1479",
+            "content": "sha256:0c12fa9c31ce381fe205de03f84185ff7e54e4e2cb2d9e7718d12f8c0a4b15d3",
             "locator": {
-              "end": 527,
+              "end": 531,
               "kind": "line_range",
-              "start": 401
+              "start": 407
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -4517,7 +4571,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd235e7687ab55feb05120203fef07c8c8c7a5cf",
+            "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
             "content": "sha256:1556b38430b0b91643d0aca13936052e01cf50233bcb7f447833531577dd9011",
             "locator": {
               "end": 15,
@@ -4530,7 +4584,7 @@
         },
         {
           "anchor": {
-            "blob": "cd235e7687ab55feb05120203fef07c8c8c7a5cf",
+            "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
             "content": "sha256:c50f9e867d6d8ecfd6d01aba46170a274d11249ebb6817911173b74efc6ebea7",
             "locator": {
               "end": 5111,
@@ -4543,7 +4597,7 @@
         },
         {
           "anchor": {
-            "blob": "cd235e7687ab55feb05120203fef07c8c8c7a5cf",
+            "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
             "content": "sha256:a21d8fbeade96f460c50dc5451345a3d1b287f7a4a3bb84239ef8d0d75a3f85b",
             "locator": {
               "end": 5396,
@@ -4556,7 +4610,7 @@
         },
         {
           "anchor": {
-            "blob": "cd235e7687ab55feb05120203fef07c8c8c7a5cf",
+            "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
             "content": "sha256:9c5f28574f34d8206f5408394964aaf4ccfd8c658438df035a4fce7285c6ca7e",
             "locator": {
               "end": 6178,
@@ -4569,8 +4623,8 @@
         },
         {
           "anchor": {
-            "blob": "cd235e7687ab55feb05120203fef07c8c8c7a5cf",
-            "content": "sha256:4c344951152b09b79962c9208b8f21c5a84bd2b6bf77a5264c3c9556608b017b",
+            "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
+            "content": "sha256:8276638dc93c91a1eeb0192fd044ed6b2b45c284b315a911dd9ffdcfd7b30718",
             "locator": {
               "end": 6265,
               "kind": "line_range",
@@ -4626,7 +4680,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
             "content": "sha256:6972732a323a1716d214c70492f757c0525de69e4b0452aa56e968ae4625ea42",
             "locator": {
               "end": 162,
@@ -4639,7 +4693,7 @@
         },
         {
           "anchor": {
-            "blob": "2c0be86673dbb72b62afb614a3acc027a5ec0e3e",
+            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
             "content": "sha256:85f0069967d8022d66da476fb7a406248f51928c04d53541fb5d52f1e763af48",
             "locator": {
               "end": 14,
@@ -4678,7 +4732,7 @@
         },
         {
           "anchor": {
-            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
             "content": "sha256:d464b721ab61acb5e0c79ad3210870eadeddf5510a8dc5f096c0c0468b32f7e5",
             "locator": {
               "end": 5,
@@ -4704,7 +4758,7 @@
         },
         {
           "anchor": {
-            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
             "content": "sha256:14c2243e12309bd8e1e3c72aa1055f543743dd9a46ce321deaecbdc3f586fc85",
             "locator": {
               "end": 138,
@@ -4717,12 +4771,12 @@
         },
         {
           "anchor": {
-            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
             "content": "sha256:26314183153c205234615424aaee58bbfa3120a3fd659c0fd3c256f1c4ac5c00",
             "locator": {
-              "end": 892,
+              "end": 902,
               "kind": "line_range",
-              "start": 834
+              "start": 844
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -4730,12 +4784,12 @@
         },
         {
           "anchor": {
-            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
             "content": "sha256:21054e547db35c4914f56821694f436ea35b2a6a0ba612deb4b68c010c7c69ac",
             "locator": {
-              "end": 951,
+              "end": 961,
               "kind": "line_range",
-              "start": 941
+              "start": 951
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -4769,7 +4823,7 @@
         },
         {
           "anchor": {
-            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
             "content": "sha256:f77a37756bb2272099237e72cd55ab96d3998ac3111cbad149b58c61bc1c38d9",
             "locator": {
               "end": 310,
@@ -4782,7 +4836,7 @@
         },
         {
           "anchor": {
-            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
             "content": "sha256:b9978f817c44d4baf77ebbba05c5636e584fb804353c7f267d88ebcd64c053b0",
             "locator": {
               "end": 415,
@@ -4795,12 +4849,12 @@
         },
         {
           "anchor": {
-            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+            "blob": "c1326c98f273ba60ace365ede5d6343b45cd6c27",
             "content": "sha256:59a0eb823728c48f997c8a649d7eff38f2a31940edb0adecb7ead040bff3e07b",
             "locator": {
-              "end": 1083,
+              "end": 1089,
               "kind": "line_range",
-              "start": 1059
+              "start": 1065
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
@@ -5212,7 +5266,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
             "content": "sha256:ea1d987c140051b594ad30280582128ace4e4fb085a34d95d14fc369a5a66131",
             "locator": {
               "kind": "symbol",
@@ -5225,16 +5279,16 @@
       ]
     },
     "51": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one memory-content output; on converted memory it first closes the leaf's history file and validates and gates the exact tree. Anchor: `external_closeout_commits` `_commit_memory_content`",
+      "note": "Fresh converted-leaf closeout closes owner history and gates the exact memory output before committing it or reusing the unchanged tip. Recovery gates the already recorded output.",
       "targets": [
         {
           "anchor": {
-            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
-            "content": "sha256:ed5c156b596e3fc22f63b820167b53a26bcdc91d1480a687c5ac8bee6e61bb08",
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "content": "sha256:b0815590ccbc8c19323c4f8d4c46d8d6cfaf6cb4a6821ec208f94b17c4492d92",
             "locator": {
-              "end": 121,
+              "end": 135,
               "kind": "line_range",
-              "start": 73
+              "start": 77
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -5242,12 +5296,12 @@
         },
         {
           "anchor": {
-            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
-            "content": "sha256:fea0d2afa03e0381a722732efed577f89691a06ffe9a6c760f0f9bf43f069e0e",
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
-              "end": 205,
+              "end": 238,
               "kind": "line_range",
-              "start": 164
+              "start": 200
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -5255,12 +5309,25 @@
         },
         {
           "anchor": {
-            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
+            "locator": {
+              "end": 521,
+              "kind": "line_range",
+              "start": 493
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
             "content": "sha256:75c289abc3d8965a92f8dad4580ae6df9a5ea99250b245cbd3e79237bfce6251",
             "locator": {
-              "end": 590,
+              "end": 624,
               "kind": "line_range",
-              "start": 547
+              "start": 581
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -5290,12 +5357,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
             "content": "sha256:9b642ac7b31e57dbf18e34e1fe06b93824ae50350a9c471a9ca163aa01b06498",
             "locator": {
-              "end": 669,
+              "end": 690,
               "kind": "line_range",
-              "start": 602
+              "start": 623
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -5304,19 +5371,59 @@
       ]
     },
     "61": {
-      "note": "The read_ar_files naming entry point returns knowledge locations and measured states, with no source, card, overview or published-intent body.",
+      "note": "A fuller naming reply can carry governing locations, measured states and rule text. Compact rows can keep a pointer whose saved brief is missing. Source, card and overview bodies stay in their files.",
       "targets": [
         {
           "anchor": {
-            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
-            "content": "sha256:13aef717a76a0b04deda44628d0f376574a6688d50f5279af8119a75234a7eda",
+            "blob": "ac6f348d86bc935cc81808f5d926c899261e44d3",
+            "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
-              "kind": "symbol",
-              "name": "read_ar_files_tool"
+              "end": 90,
+              "kind": "line_range",
+              "start": 90
             },
-            "path": "mcp/src/agents_remember/application/read_files.py"
+            "path": "docs/reference/mcp-tools.md"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "content": "sha256:471da92ea95b622c6fcabcbf2c3ee284c21b03fa248586ea8e61e90211f6a18a",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/application/read_files_briefs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "content": "sha256:6e80ad899e73b4af5891915a7bb47a67abe595b035b57a607ffc06149ee9941a",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "mcp/src/agents_remember/application/read_files_briefs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b1c36e5ae6160b8579f2f1783a7ac45cdb961d74",
+            "content": "sha256:d12893bc8963ee3c8f1abcaf553337e94c78a293eb0cf399ee18707e7dd51be3",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "mcp/tests/tool_answer_l109_cases.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -5325,12 +5432,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
             "content": "sha256:0444cb8a8a73eb0a6819da8feda60678cb07f14a34b7b96efcb287a7e07f9276",
             "locator": {
-              "end": 174,
+              "end": 180,
               "kind": "line_range",
-              "start": 162
+              "start": 168
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -5395,12 +5502,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
+            "blob": "0545be4ce99a465c6e590e0c19385c91e54191db",
             "content": "sha256:6ea1a6086fc01dc18f9bfda9d7f0f859bedde538a3b906d26eb1dd273768545e",
             "locator": {
-              "end": 122,
+              "end": 123,
               "kind": "line_range",
-              "start": 119
+              "start": 120
             },
             "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
           },
@@ -5460,12 +5567,12 @@
       ]
     },
     "75": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The closeout preview asks the mandatory gate and answers with the refusal when the gate refuses.\n\nAnchor: `closeout_preview_payload`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The closeout preview asks the mandatory gate and answers with the refusal when the gate refuses.",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:fcda0ef88d408509dffd590094d9147e49e38c059acd65bdd20c4857078fe2c1",
             "locator": {
               "kind": "file"
             },
@@ -5598,7 +5705,7 @@
       ]
     },
     "86": {
-      "note": "The launcher and role-start tool share one locked dispatch path for preparation, launch, receipts and same-request reconciliation. The role-start facade accepts an AR-bound caller or a genuinely unbound chat caller; malformed bindings, bound policy violations and other caller refusals return their named refusal rather than switching to the unbound route. The unbound caller has no parent and cannot replace a seat holder.  Anchor: `Handle a developer-declared takeover`",
+      "note": "The launcher and role-start tool share one locked dispatch path for preparation, launch, receipts and same-request reconciliation. The role-start facade accepts an AR-bound caller or a genuinely unbound chat caller; malformed bindings, bound policy violations and other caller refusals return their named refusal rather than switching to the unbound route. The unbound caller has no parent and cannot replace a seat holder. Anchor: `Handle a developer-declared takeover`",
       "targets": [
         {
           "anchor": {
@@ -5615,12 +5722,12 @@
         },
         {
           "anchor": {
-            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
-            "content": "sha256:e7268b9f4c5403a6a21dbbab92cdcb9c1b618744aa3bb35686d800f61282bbf1",
+            "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
+            "content": "sha256:fd13901b63b884818ab4ff83a348e2348c54ed968c292052262368fc3a87febc",
             "locator": {
-              "end": 249,
+              "end": 254,
               "kind": "line_range",
-              "start": 213
+              "start": 219
             },
             "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
           },
@@ -5628,12 +5735,12 @@
         },
         {
           "anchor": {
-            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
-            "content": "sha256:fdfabe9aeeafc86f1e349dab1e6e2ad832f1860b144a923121c92e8fc45d0009",
+            "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
+            "content": "sha256:6415ec332c1f98499e528ffaabfdcfde8a827e885c1331bba8f4c443c9bd575c",
             "locator": {
               "end": 329,
               "kind": "line_range",
-              "start": 252
+              "start": 257
             },
             "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
           },
@@ -5641,12 +5748,12 @@
         },
         {
           "anchor": {
-            "blob": "fa7edd155c1b68898b05d219f757fec23ddf56b6",
+            "blob": "f1ec784fb712132b80aeefee987941d3ebcf5feb",
             "content": "sha256:7a2998b8a51aa687f2dd434bad08d920d5b891c756400a798a9f519dfc01ce7f",
             "locator": {
-              "end": 42,
+              "end": 47,
               "kind": "line_range",
-              "start": 32
+              "start": 37
             },
             "path": "mcp/src/agents_remember/cli/paseo_role_caller.py"
           },
@@ -5654,12 +5761,12 @@
         },
         {
           "anchor": {
-            "blob": "fa7edd155c1b68898b05d219f757fec23ddf56b6",
+            "blob": "f1ec784fb712132b80aeefee987941d3ebcf5feb",
             "content": "sha256:7d1e77434f1ece959cd8f20db179a9a3f78d0a06c010410e11bbf2635a3c8323",
             "locator": {
-              "end": 132,
+              "end": 137,
               "kind": "line_range",
-              "start": 122
+              "start": 127
             },
             "path": "mcp/src/agents_remember/cli/paseo_role_caller.py"
           },
@@ -5667,12 +5774,12 @@
         },
         {
           "anchor": {
-            "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
-            "content": "sha256:7928e80a269ad98095e1ab1f7a6085424da6acfb557dc9969c3f5f15ec78cbbb",
+            "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+            "content": "sha256:cb94ffe1a8e22c556f660c379c37ca5bcf1d117726726a9acc80b91e8f7edb04",
             "locator": {
-              "end": 283,
+              "end": 291,
               "kind": "line_range",
-              "start": 244
+              "start": 253
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -5703,12 +5810,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
             "content": "sha256:42ccd373d58b66c5eaaed5d3fc930f224b98bd91de3a8cfe7dca2b21e9ba42f4",
             "locator": {
-              "end": 601,
+              "end": 622,
               "kind": "line_range",
-              "start": 537
+              "start": 558
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -5923,12 +6030,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
+            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
             "content": "sha256:ac79289be96ec4ae39eb257c5d7f746466b05dc237ddb41377085cffaca6b20e",
             "locator": {
-              "end": 839,
+              "end": 817,
               "kind": "line_range",
-              "start": 822
+              "start": 800
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },

@@ -72,16 +72,16 @@
       ]
     },
     "13": {
-      "note": "The lane manifest registers mcp/tests/test_terminal_preview_expectation.py in unit-regression. Membership selects evidence and does not establish execution.",
+      "note": "The unit-regression lane selects mcp/tests/test_terminal_preview_expectation.py. Execution evidence is recorded separately.\n\nAnchor: `mcp/tests/test_terminal_preview_expectation.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
             "content": "sha256:11dc123b5aea780e250e25816f2595c33acabe2cfa9800b858604e73a3abe0c0",
             "locator": {
-              "end": 613,
+              "end": 627,
               "kind": "line_range",
-              "start": 613
+              "start": 627
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

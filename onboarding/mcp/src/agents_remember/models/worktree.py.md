@@ -90,7 +90,7 @@ The following source-backed definitions and producer seams retain the broader re
 
 
 
-- Worktree status saves all operation projections and their count. Its compact answer reports a live line only for a queued or running direct landing. [134]
+- WorktreeStatusResponse carries the status operation literal, the complete lifecycle operation list and its count, and the sync projection. The saved result retains the full list. The compact answer keeps the count and gives a live sentence for a queued or running direct landing. [134]
 
 
 

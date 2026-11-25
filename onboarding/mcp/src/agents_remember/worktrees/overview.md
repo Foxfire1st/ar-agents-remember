@@ -35,6 +35,10 @@ Closeout and landing use exact code/memory Git history. The current consumer led
 
 A managed memory merge with any converted side obtains its structural knowledge/onboarding plan before Git starts. All-converted inputs merge structurally as they stand; crossing inputs convert legacy sides first. The plan overlays only modeled knowledge and onboarding paths. Git retains the mode, object and stage entries for unmodeled paths. A durable report is selected for conflicts, conversion, renumbered references, kept evidence lines or skipped cards; an otherwise clean plan does not gain a report merely because cards aligned. Before a memory merge commit, the route closes applicable crossing history, validates the exact staged tree against both parents and its settled code partner, and proves the resulting commit has the pinned parents. A master that pauses on a structural content conflict opens history for crossing writes. A validation refusal retains the merge for repair and reopens only checkpoint-owned closing history. Fast-forward plans do not enter the staged-merge validator, but incoming converted-memory trees now validate separately before refs move; their refusal names source repair and a fresh sync. Skip and already-current plans do not invent a memory movement.
 
+After persistent sync durably settles a changed converted memory side, it refreshes briefs for the exact settled code/memory pair. A preview, skipped memory, temporary side, equal heads or a ledger-only delta leaves briefs alone. A staged persistent converted merge with content changes prepares the tracked briefs ignore line before validating the tree and restores its preparation on refusal. The completed answer carries a refresh advisory when present.
+
+Live converted-memory sync and its scratch proof share the generated ignore-rule settlement. They remove the canonical briefs stanza, terminate nonempty authored stages with a newline if needed, and restore the stanza after a clean three-way merge. Authored conflicts and owner edits to the conflict file remain for resolution.
+
 ## Construction And Ownership
 
 `start_task_publication.py` prepares current leaf-enclosure binding and stage together: start promotes planning or an admitted abandoned successor to inProgress, whereas explicit attach does not promote stage. An already-exact binding does not skip needed promotion. Completed documents keep reopen/finalize gates; absent documents are not invented and dry runs publish nothing. `task_stage.py` captures exact sources, prepares matching master-row synchronization, revalidates before writing and uses the rollback-safe JSON/Markdown batch writer. Shared task-fact publication derives affected sprint scopes from explicit (path, document) candidates, publishes truth, then records invalidation/rebuild effects; these derived effects grant neither truth nor publication permission.
@@ -96,7 +100,7 @@ The mandatory invariant gate enforces exact structured knowledge-maintenance jud
 > **Retained historical source account — superseded by the current route account:**
 > When all relevant sides are unconverted, the current public routes refuse legacy operational input unconditionally, including never-converted repositories. The shared `legacy-format` detail names crossing sync with `merge-memory` from a converted source or first conversion. Converted-location probes word the recovery message rather than decide permission. A failed Git probe keeps its named error; a definite non-repository or absent repository path is a distinct local no-repository case, not permission on an actual legacy line. A converting candidate proceeds to the converted gate. Fresh managed sync performs its exact-side preflight before selecting reconciling; no memory side, skip and already-current shapes do not invent a memory movement, and existing continue/cancel recovery retains its owner. Legacy card reads remain available with no knowledge section, but card writers require converted memory; citation_migrate and memory-citations --migrate are unregistered. DEC-FCNRNT and DEC-VMMJDN retain superseded historical choices, not current permissions.
 
-History closing changes the latest attempt-qualified owner file, or the plain file when no attempt exists; missing history is created closed with no rows. Existing rows are not rewritten. Malformed history is left for the validator to refuse. Restoration compares exact written bytes and preserves later edits. Only the memory commit recorded by a completed leaf closeout freezes earlier closed history; a hand-closed file does not acquire that authority. LeafPublication and LandingGateRequest carry the recorded frozen commits to validation.
+History closing changes the latest attempt-qualified owner file, or the plain file when no attempt exists. It creates a missing file closed with no rows, preserves existing judgment rows, and keeps already-closed files byte-identical. When a memory review fact qualifies, closing stores it in the same write that sets the flag. The memory review lane must have no open findings, and its last recorded round must pass, carry a usable verdict reference, and name the exact pre-write checkout tree. An open finding withholds the review fact while closing proceeds through its ordinary checks. The earlier passing row stays recorded. Malformed history is left for the validator to refuse. Restoration compares exact written bytes and preserves later edits. Only the memory commit recorded by a completed leaf closeout freezes earlier closed history; a hand-closed file does not acquire that authority. LeafPublication and LandingGateRequest carry the recorded frozen commits to validation.
 
 Direct landing keeps history-closing receipts per generation until landing or cancellation decides them. Receipts retain exact closed-blob identity, refuse unreadability and restore only without overwriting later edits. An exact in-flight retry reaches retained generation authority before creating a new closing. Cancellation checks receipts before movement. Prepared certified closeout remains a named converted-memory refusal: its candidate is curator-attested and the current path cannot add the required closed history flag. Unconverted prepared paths are independently subject to the cutover lock.
 
@@ -135,7 +139,7 @@ Retain the inherited review-artifact deletion policy's accepted TOCTOU window an
 
 | Route | Source | Current boundary |
 | --- | --- | --- |
-| Direct landing | [`direct_landing.py`](direct_landing.py.md) | Apply selects the exact history source, closes its owner, then judges and validates the retained closed tree; refusal restores the closing. The proven bound leaf takes precedence over optional supplied leaf_id; only absence of both permits legacy sole-open inference. Exact in-flight retry reuses the retained record without preparation/admission or another gate/review claim. A newly admitted generation keeps its closing until decided. |
+| Direct landing | [`direct_landing.py`](direct_landing.py.md) | Apply selects the exact history source, reads a qualifying review fact before memory writes, and closes the owner history with that fact when available. It judges and validates the retained closed tree and restores the owned closing on refusal. The proven bound leaf takes precedence over optional supplied leaf_id; only absence of both permits legacy sole-open inference. Exact in-flight retry reuses the retained record without preparation/admission or another gate/review claim. A newly admitted generation keeps its closing until decided. |
 
 These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
 
@@ -211,12 +215,18 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 ## Evidence
 
+- History closing writes the eligible review fact in the same update and preserves already-closed bytes. [116]
+
+
+- Direct landing reads the selected owner's review against the checkout before the cache-ignore or history writes. [117]
+
+
 - Ancestry, disjoint byte paths and equal reviewed after-images define the clean-sync exception. [104]
 - The door keeps the original record-digest provenance while checking its other inputs. [105]
 
 - Retained reference account (no fresh execution or acceptance inferred): Current custody/release of historical pins; no creation. [1] [6]
 
-- The worktree service bundle exposes typed ports for memory-quality task observation, knowledge validation, crossings, worklist recomputation, review-artifact cleanup and the invariant gate. [8]
+- The worktree service bundle exposes typed ports for memory-quality task observation, knowledge validation, crossings, worklist recomputation, review-artifact cleanup and the invariant gate. The optional brief service receives the memory root and exact code pair. [8]
 
 - Retained reference account (no fresh execution or acceptance inferred): The activation record is a strict per-contract fingerprinted snapshot with explicit selection states. [9]
 - Retained reference account (no fresh execution or acceptance inferred): The route's stop: release this contract's selection, refuse a non-series contract, report a released master as `paused` or a master that held no selection as `atomic-series-already-vacant`, and propose no next call in either success. [10]
@@ -233,6 +243,7 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 
 
+- Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution (validated by the MIK-R22 knowledge validator before its commit when the memory is converted, after a crossing sync's history file is closed), and the completed branch — and none of them reads a ledger row list. [18]
 - Retained reference account (no fresh execution or acceptance inferred): A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state. [19]
 - Retained reference account (no fresh execution or acceptance inferred): Checkpoint captures the current code and memory branch tips without a ledger mapping prerequisite. [20]
 - Retained reference account (no fresh execution or acceptance inferred): Consumer source rows are derived only from Git attribution. [21]
@@ -257,6 +268,8 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 
 
+- The sync validates the staged memory merge before its commit, against a converted base when a parent is unconverted (MIK-R24 rule 7). [44]
+- Retained reference account (no fresh execution or acceptance inferred): The driver maps the refusal to its own state with a recovery line. [45]
 - Retained reference account (no fresh execution or acceptance inferred): The route never commits converted memory unvalidated, and an unreadable tree is refused. [46]
 - Retained reference account (no fresh execution or acceptance inferred): The plan before Git, and its application to the started merge. [47]
 
@@ -276,29 +289,14 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - Retained reference account (no fresh execution or acceptance inferred): The conditional finalizer helper acts only on archived or would-archive results; a series archive skip invokes no cleanup. [56]
 - Retained reference account (no fresh execution or acceptance inferred): Finalize resolves a leaf naming none through the shared helper. [57]
 - Retained reference account (no fresh execution or acceptance inferred): Reopen resolves a leaf naming none through the same helper. [58]
-- Retained reference account (no fresh execution or acceptance inferred): Reopen's placement guard on the leaf and the master. [59]
-
-- Retained reference account (no fresh execution or acceptance inferred): The layer's probes, the unbound refusal and the closeout's own write. Anchor: `converted_memory` `GATE_UNBOUND` `close_owner_history` [60]
 
 
-- Retained reference account (no fresh execution or acceptance inferred): The closeout validator's and the landings' gate. Anchor: `leaf_gate_refusal` `landing_gate_refusal` [61]
-
-
-- Retained reference account (no fresh execution or acceptance inferred): The direct landing's closing, kept and settled per generation. Anchor: `keep_direct_closing` `settle_direct_closing` [62]
-
-
-- Retained reference account (no fresh execution or acceptance inferred): The port, the landing request and the direct verdict. Anchor: `KnowledgeGatePort` `LandingGateRequest` `DirectGateVerdict` [63]
-
-
-- Direct apply selects the history source, closes it, then judges the retained closed tree with restore on refusal; exact retry reuses the retained generation. [64]
+- Retained reference account (no fresh execution or acceptance inferred): The port, the landing request and the direct verdict. [63]
 
 
 - The unconditional legacy-input refusal and its recovery wording. [65]
 - Task recovery guidance never invokes removed get: an established safe leaf can offer task_doc.replace with the exact slug, contract and fields, while an unknown leaf or parent path offers file repair without a guessed mutation. Launch copies contain the own leaf plus declared local requirements, name missing sources without failing launch solely for absence, and refresh/reclaim on canonical publication under the existing rollback and copy budgets. Status copy drift is informational; missing notice is not universal byte equality. Packet-owned refusal presentation preserves the central conversion sentence and single probe-made case, with exact sync args or quoted separate first-conversion argv and no step for unknown. These accounts change neither canonical-file authority, checkpoint/pause distinction, cleanup/reclamation eligibility, paired source lineage nor sync behavior. [99]
-
-- Retained reference account (no fresh execution or acceptance inferred): The worktree layer's helper that names the leaf's line. Anchor: `leaf_cutover_refusal` [66]
-
-
+- Retained reference account (no fresh execution or acceptance inferred): The managed sync asks the lock at admission. [67]
 - Retained reference account (no fresh execution or acceptance inferred): The closeout closes a reopened leaf's latest attempt. [68]
 
 - The rollback restores the cache before the merge abort. [69]
@@ -320,6 +318,7 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - **Retained historical source account — superseded by the current route account:** Sync lock skips absent, already-current and skip sides; moving candidates alone park [82]
 - **Retained historical source account — superseded by the current route account:** Report selection does not include aligned-card count alone [83]
 
+- **Retained historical source account — superseded by the current route account:** Memory merge validates exact staged tree before commit and proves pinned parents [84]
 
 - **Retained historical source account — superseded by the current route account:** Completion publishes journal before cleanup; worklist failures omit summary [85]
 
@@ -355,6 +354,7 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 
 
+
 - The start-progress owner suppresses lineage-refused beats before any progress write. [100]
 
 - Start binds and mirrors admitted stage through task-fact publication; explicit attach preserves stage and dry-run publishes nothing. [101]
@@ -365,12 +365,17 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 - Retained continuation validates the staged merge against both recorded parents. [110]
 - Only a retained merge commit failure enters hook diagnosis. [111]
+- The closeout validator and landing routes use their respective knowledge gate entry points. [61]
+- Direct landing keeps and settles its history closing per generation. [62]
+- The worktree helper names the leaf's line when it reports a cutover refusal. [66]
 
 - Retained reference account (no fresh execution or acceptance inferred): The sync driver retains content conflicts for continuation, permits only continue or cancel as resolution actions, and validates a staged retained merge before completing it; knowledge content is resolved in the memory worktree, not through an authored-reconcile action. [16]
-- Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution (validated by the MIK-R22 knowledge validator before its commit when the memory is converted, after a crossing sync's history file is closed), and the completed branch — and none of them reads a ledger row list. [18]
 - Retained reference account (no fresh execution or acceptance inferred): Continue/cancel inputs and specific old-journal read tolerance. [40]
 - Supported staged continuation and cancellation guidance. [41]
-- The sync validates the staged memory merge before its commit, against a converted base when a parent is unconverted (MIK-R24 rule 7). [44]
-- Retained reference account (no fresh execution or acceptance inferred): The driver maps the refusal to its own state with a recovery line. [45]
-- Retained reference account (no fresh execution or acceptance inferred): The managed sync asks the lock at admission. [67]
-- **Retained historical source account — superseded by the current route account:** Memory merge validates exact staged tree before commit and proves pinned parents [84]
+- Retained reference account (no fresh execution or acceptance inferred): Reopen's placement guard on the leaf and the master. [59]
+- The worktree layer probes whether the converted leaf gate applies, refuses an unbound gate, and defines closeout's separate owner-history write. [60]
+- Direct apply selects the history source, closes it, then judges the retained closed tree with restore on refusal; exact retry reuses the retained generation. [64]
+
+- Persistent sync uses its settled committed content before asking for a full brief refresh. The reply keeps a brief advisory if the refresh has a problem. [119]
+
+- Live converted-memory sync and its scratch proof share the generated ignore-rule settlement. They remove the canonical briefs stanza, terminate nonempty authored stages with a newline if needed, and restore the stanza after a clean three-way merge. Authored conflicts and owner edits to the conflict file remain for resolution. [120]

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0f9d5162c03303344b3de1d89bcc1b8f7498c0d1",
+        "blob": "8cb2d947f4bb7b2a2452fec1b9da932372e55403",
         "content": "sha256:c22a107c42b96e1ac97bc1dd2c054b52f36e955fb72d6d5ca6d36eeaeb9338e3",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,44 @@
       },
       "rationale": "The changed family guarantee passes fit to DiffPane so the guarantee adds no independent content scroller.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8cb2d947f4bb7b2a2452fec1b9da932372e55403",
+        "content": "sha256:789d928cdcac930f4345f10c91600f1454da0c5c652af0efd67bca7be9323b4c",
+        "locator": {
+          "end": 46,
+          "kind": "line_range",
+          "start": 9
+        }
+      },
+      "id": "RLZ-R7589S",
+      "invariant": "INV-1QE8YM",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-family-guarantee-standing",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "State is labelled by the side that supplied it and remains visible alongside the guarantee.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "8cb2d947f4bb7b2a2452fec1b9da932372e55403",
+        "content": "sha256:6b139b2632b10805ebe73e82cbee7e55d9cd4064e84085a8970c9d3d35e7d79a",
+        "locator": {
+          "end": 118,
+          "kind": "line_range",
+          "start": 48
+        }
+      },
+      "id": "RLZ-Y4T9TX",
+      "invariant": "INV-1QE8YM",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-family-guarantee-standing",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The rendered branches present both available states even when guarantee wording is drawn once.",
+      "role": "presentation"
     }
   ],
   "references": {
@@ -26,12 +64,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f9d5162c03303344b3de1d89bcc1b8f7498c0d1",
+            "blob": "8cb2d947f4bb7b2a2452fec1b9da932372e55403",
             "content": "sha256:6f28beab90f1b8c782ab247acd34b1872b85398eccfbeccda3e3a50b6c1a116e",
             "locator": {
-              "end": 48,
+              "end": 63,
               "kind": "line_range",
-              "start": 33
+              "start": 48
             }
           },
           "kind": "code"
@@ -39,16 +77,31 @@
       ]
     },
     "5": {
-      "note": "FamilyGuarantees.tsx current behavior at this source owner.\n\nAnchor: \"import type { ReviewFamilyContextEntry, ReviewFamilyGuarantee } from '../../data/review';\"",
+      "note": "The comparison renders the available side, a shared guarantee or the changed guarantee.",
       "targets": [
         {
           "anchor": {
-            "blob": "0f9d5162c03303344b3de1d89bcc1b8f7498c0d1",
-            "content": "sha256:4e45f67f20749d0ca3ebb377ca4578f3597f5b9ea45250e743cde871c32c608f",
+            "blob": "8cb2d947f4bb7b2a2452fec1b9da932372e55403",
+            "content": "sha256:51f070665a486c563d30b5452d1652436ed6523c94641fc3951c98d142942313",
             "locator": {
-              "end": 122,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "GuaranteeComparisonBlock"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The side labels compare the state returned by the two memory trees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8cb2d947f4bb7b2a2452fec1b9da932372e55403",
+            "content": "sha256:24085934f1efb7eda6189acc414d09e214fed1bb2dfbcd01edef7ad15a40106c",
+            "locator": {
+              "kind": "symbol",
+              "name": "sidesState"
             }
           },
           "kind": "code"

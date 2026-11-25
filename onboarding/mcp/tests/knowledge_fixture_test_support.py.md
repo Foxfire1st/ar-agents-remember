@@ -20,7 +20,7 @@ revision, its recorded realizations (including an absent source path) and the ov
 
 Construction builds a real text tree through the rows builder, never by inserting rows — so a later
 leaf inherits a real index it can trust. The module is test support, not production code: it decides
-nothing and is imported by tests and later leaves' fixtures only. [5]
+nothing and is imported by tests and later leaves' fixtures only.
 
 ### Invariants And Boundaries
 
@@ -149,7 +149,6 @@ No configured domain documentation could be checked.
 
 
 
-- The text-backed builder supplies rows without canonical write rules. [5]
 
 
 
@@ -167,7 +166,6 @@ No configured domain documentation could be checked.
 - The graph-half construction phases, each authored through the public operations. [18]
 
 
-- The operations the fixture authors through, both halves. [19]
 
 
 
@@ -177,3 +175,7 @@ No cross-repository behavior is implemented in this file.
 
 
 No cross-repository contract is established by this file.
+
+- The operations the fixture authors through, both halves. [19]
+
+- The text-backed builder supplies rows without canonical write rules. [5]

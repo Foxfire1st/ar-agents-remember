@@ -99,16 +99,16 @@
       ]
     },
     "11": {
-      "note": "The lane this module is registered in. Source caption: \"mcp/tests/test_pause_stop_only_end_to_end.py\"",
+      "note": "The integration lane selects mcp/tests/test_pause_stop_only_end_to_end.py.\n\nAnchor: `mcp/tests/test_pause_stop_only_end_to_end.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
             "content": "sha256:732f1903a69af76a07aa2cbdff538529f00d9eecb4145aa164f538dc6a461b59",
             "locator": {
-              "end": 742,
+              "end": 759,
               "kind": "line_range",
-              "start": 742
+              "start": 759
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -174,16 +174,16 @@
       ]
     },
     "13": {
-      "note": "The lane this module is registered in. Source caption: \"mcp/tests/test_pause_stop_only_end_to_end.py\"",
+      "note": "The integration lane selects mcp/tests/test_pause_stop_only_end_to_end.py.\n\nAnchor: `mcp/tests/test_pause_stop_only_end_to_end.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
             "content": "sha256:732f1903a69af76a07aa2cbdff538529f00d9eecb4145aa164f538dc6a461b59",
             "locator": {
-              "end": 742,
+              "end": 759,
               "kind": "line_range",
-              "start": 742
+              "start": 759
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

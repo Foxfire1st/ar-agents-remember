@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "860cbf9a7ac70f3fdb2423bcddc66b3a0b5c1106",
-    "commit": "3450a1a1552db524bdbace93c3992311a778a53e",
+    "codeTree": "978e410ca88ebabc20fc598a05870dd8f8efed1a",
+    "commit": "e8a96f6e2255155d733dd15dcba56bd26e46097e",
     "role": "curator",
-    "statement": "The README’s Status version agrees with project metadata, and its paired-closeout account still applies with dashboard startup registry recovery and the leaf gate’s exact-candidate checks.",
-    "task": "261112-BUG-L21",
+    "statement": "The README’s package version matches the project metadata, its Bootstrap instructions use one fresh role-start request and the dashboard address, and its paired closeout follows the gate on exact code and memory.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "README.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
     },
     {
-      "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+      "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },

@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/memory/conversion/state_files.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1ac16637dbf5f053baa1adc4c2f513bd9ba42f93",
+        "content": "sha256:bc7d2f5b660b27519d66fa62569496fa8a2957cf6c3e689efb076379eef55997",
+        "locator": {
+          "kind": "symbol",
+          "name": "write_all_or_nothing"
+        }
+      },
+      "id": "RLZ-TH1HKF",
+      "invariant": "INV-69M737",
+      "origin": {
+        "handoffEntry": "L3-W1-07",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Writes the plan as one atomic change, refusing files that moved since the plan.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The input reader detects an unsuccessful knowledge JSON load.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ac16637dbf5f053baa1adc4c2f513bd9ba42f93",
+            "content": "sha256:39c25ee2c8738e88f29f83c74e48f8540bca5fcbe6981b6b5b5fc7623d2c394d",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_knowledge_json"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Publication checks the planned inputs and reports any targets changed after failed rollback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ac16637dbf5f053baa1adc4c2f513bd9ba42f93",
+            "content": "sha256:bc7d2f5b660b27519d66fa62569496fa8a2957cf6c3e689efb076379eef55997",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_all_or_nothing"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -8,8 +8,7 @@
 
 **The twelve global record kinds, one JSON file per truth under `knowledge/<kind-dir>/` (MIK-R21 rule
 4).** Each record declares `schema: ar-<kind>/v1`, its stable `id`, its `origin` and a `revision` (≥1,
-increments only when meaning changes). The kinds before MIK-R118 also carry a `status`; a weakness
-carries a `state` (`open` | `closed`) instead, and a dependent carries neither. The module also fixes
+increments only when meaning changes). The current revision can carry a product-owned `writer` stamp. Invariants, families and facets use `status: retired` when retired. Decisions carry their own status and weaknesses carry `state` (`open` or `closed`). The module also fixes
 **relationship ownership** (Doc14 §2): a relationship is written once, on its owner's side, and the
 models refuse the fields that would give it a second owner.
 
@@ -19,16 +18,14 @@ models refuse the fields that would give it a second owner.
 
 - `_Record` holds `id` and `origin` and checks that the ID carries the kind's own prefix and that
   every `links` relation is in `RELATIONS_BY_KIND[kind]`.
-- `InvariantRecord` (`statement`, `applicability`, `conditions`, `exclusions`, `supersedes[]`,
-  `admission`) lists **no** realizations, tests, families or decisions; `extra="forbid"` refuses them.
+- `InvariantRecord` carries an optional `title` of type `InvariantTitle`. An older record may still omit this display name. Its rule fields (`statement`, `applicability`, `conditions`, `exclusions`, `supersedes[]`,
+  `admission`) own the rule's meaning and preserve single ownership of realizations, tests, families and decisions; `extra="forbid"` refuses them.
 - `FamilyRecord` owns `members` (invariant IDs) and `routes`, both unique. Since MIK-R04 (leaf 260928-MIK-L04, ruling Q3) `routes` is `tuple[RoutePath, ...]`: a repository directory, or `.` for the repository root route, which a family uses only when it genuinely has no narrower home. `RoutePath` comes from `sidecars.py` and reuses the route sidecar's root handling; every other spelling of the root (`""`, `"./"`, `"./mcp"`, `".."`, `"/"`, `"mcp/"`) is still refused, and every other path field stays `RepositoryPath`.
 - `DecisionRecord` owns `alternatives` (`option`, `status` chosen/rejected/deferred, `reason`,
   `reconsider_when?`), `consequences`, `decider`, `supersedes[]` and its `links`; its status is
   `active` | `under_reconsideration` — `superseded` is derived from a later record's `supersedes`,
   never stored.
-- `_FacetRecord` (incident and the six other facets) adds `revision` and `status`
-  (`proposed`|`accepted`|`retired`) — added in repair round 1 so MIK-R24 rule 8 (conflict revision)
-  and MIK-R22 rule 3 (retire, never delete) apply to every facet kind. Facets carry no `admission`.
+- `_FacetRecord` carries a revision and an optional stored lifecycle word. The parser also accepts old `proposed` and `accepted` words so older trees can be read. The lifecycle helper treats those old words as empty, and standing is derived from the selected tree. Facets carry no `admission`.
 - IncidentRecord requires recovery and corrective_actions unless applicability is unresolved. The other six facet record classes declare their text-file meanings directly. The canonical-database facet payload models and the old cross-model field-set comparison were retired by MIK-R26; these records remain the text format's own declarations.
 - `WeaknessRecord` (`ar-weakness/v1`, MIK-R118) records a weakness of the code where it occurs:
   `kind` (one of `context`, `compute`, `storage`, `time`, `fault`, `debt`), a one-sentence
@@ -47,8 +44,7 @@ models refuse the fields that would give it a second owner.
   `stands_on`, an anchor link with no path, and extra fields. It stores neither the document's text
   nor whether the document is stale; that is derived.
 - `RECORD_MODELS` maps kind → model; `schema_name(kind)` spells `ar-<kind>/v1` with `-` for `_`;
-  `record_status(record)` gives the lifecycle word — `state` for a weakness, `status` for the older
-  kinds, and the empty string for a dependent, whose currency is never stored.
+  `record_status(record)` returns a weakness's own state or a kind's stored lifecycle word. It returns empty for legacy standing words and for a dependent, whose currency is computed when read.
 
 ### Conventions
 
@@ -99,16 +95,10 @@ No configured live documentation source was available for this pass.
 The facet payload models this mirrors live in the shipped knowledge vocabulary.
 
 
-- The per-kind relation vocabulary. [1]
 
-- Prefix and relation checks shared by every record. [2]
-- Revision and status on incident and facet records. [3]
-- The family record: members and routes, a route being a repository directory or `.`. [4]
 - A family route is a repository path or the root route. [5]
-- The invariant record: no second-owner fields. [6]
 - Incident recovery is required once not unresolved. [7]
 
-- The kind → model table. [8]
 
 
 - Text facet records declare their own fields, with current kind parsing and malformed-field checks. [9]
@@ -120,3 +110,11 @@ No meaningful cross-repo references found: the module reads and writes only file
 repository layout it declares, and calls no sibling repository or external service.
 
 No cross-repo boundary is crossed by this file.
+
+- Prefix and relation checks shared by every record. [2]
+- Revision and status on incident and facet records. [3]
+- The family record: members and routes, a route being a repository directory or `.`. [4]
+- The invariant model permits an optional display title and refuses relationship fields owned elsewhere. [6]
+
+- The per-kind relation vocabulary. [1]
+- The kind → model table. [8]

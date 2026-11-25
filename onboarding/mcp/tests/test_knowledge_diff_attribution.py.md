@@ -11,8 +11,7 @@ exact path-namespace lookup and the partition in which each measured changed pat
 [`test_knowledge_diff_scope.py`](test_knowledge_diff_scope.py.md). `260921-ICR-L57` moved them here
 verbatim when that module crossed the 1200-line rail; the split itself added, dropped or changed no case. The current module additionally defines the exact path-namespace lookup test. The module
 runs the same real comparison, over the fixture-built candidate snapshots and real Git trees that
-`diff_scope_test_support` builds. It is marked `pytest.mark.evidence_unit` and registered in the
-**unit-regression** lane beside its sibling.
+`diff_scope_test_support` builds. It is marked `pytest.mark.evidence_unit`.
 
 The properties, one case each:
 
@@ -94,7 +93,6 @@ No Domain Documentation source is configured for this slice.
 - The stale-mapping case builds its candidate with test-only realization seeds and the text-tree fixture builder. [18]
 
 
-- RowStore writes text-tree fixture rows without the retired production admission plane. [19]
 
 
 ### Docs References
@@ -145,17 +143,13 @@ No cross-repository behaviour is exercised here. The fixture's Git trees are tem
 
 No configured cross-repository evidence is claimed.
 
-- The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution.
 
-- The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution.
 
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:352-352 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:800-800 - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1202-1202 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2029-2029 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2740-2740 - the bytes it recorded now occur 50 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2783-2783 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3299-3299 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 
-- The module's own unit-regression lane row. [30]
-
-
-
-- The unit-regression lane registers this module. Seven lifecycle artifact rows declare it as a consumer, including the diff-scope, row-codec, row, and read-scope support artifacts. [31]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_diff_attribution.py`. [30]
+- The lifecycle catalog lists the module as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. [31]
+- RowStore writes text-tree fixture rows without the retired production admission plane. [19]

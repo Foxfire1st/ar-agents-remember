@@ -90,16 +90,7 @@ only the packet's boundary forbids it.
 
 ### Conventions
 
-`pytestmark = pytest.mark.evidence_unit` is the module's marker; its current
-`unit-regression` declaration is `mcp/tests/test-evidence-lanes.toml:272`.
-The complete merged lifecycle catalog declares seven exact artifact-consumer
-relationships: `_user_settings_guard.py` (`:400`), `anchor_fixture_models.py`
-(`:926`), `diff_scope_test_support.py` (`:1335`), the Node `package-lock.json`
-fixture (`:2792`), `knowledge_row_codec_test_support.py` (`:3644`),
-`knowledge_rows_test_support.py` (`:3706`) and `read_scope_test_support.py`
-(`:4218`). These are catalog ownership declarations, not invocation or runtime
-consumption evidence. The earlier two-artifact account is superseded; its named
-diff-scope/read-scope supports remain members of this complete seven-artifact population. This module has no artifact or contract row of its own in this catalog.
+`pytestmark = pytest.mark.evidence_unit` is the module's marker. The module has no artifact or contract row of its own in this catalog.
 
 The Git observations pin `PATH`, `HOME` and `GIT_CONFIG_NOSYSTEM`; Git fixture setup also uses
 subprocesses. The routes run in-process through `TestClient`, with no live server, network request
@@ -205,6 +196,4 @@ Anchor: `_served` `register_review_routes` `read_review_source_content` [6]
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-3372 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-
-
-- The unit-regression lane and all seven exact artifact-consumer entries declare this module’s evidence selection and support ownership. [22]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_review_source_content.py` (`mcp/tests/test-evidence-lanes.toml:280`). The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py` and `mcp/tests/read_scope_test_support.py`. [22]

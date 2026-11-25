@@ -20,3 +20,4 @@ The page sets `<meta name="referrer" content="no-referrer">` in its head, before
 
 - The page sets a no-referrer policy before any asset loads. [1]
 - The page holds the root element and loads the module entry. [2]
+- The dashboard HTML mounts the application at `#root`, loads `/src/main.tsx` as a module and sets the referrer policy to `no-referrer`. [3]

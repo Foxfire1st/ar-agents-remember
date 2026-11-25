@@ -1,0 +1,179 @@
+{
+  "path": "mcp/tests/test_file_briefs.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+        "content": "sha256:0bd49c8f638bb99786fe83a2324b2b8cc0fbf8a1306e2e41a54d2df8b5f44ed5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_full_writing_replaces_the_folder_and_keeps_the_task_folder"
+        }
+      },
+      "facet": "A full rebuild replaces old derived output and retains role-start files.",
+      "id": "PRF-0X4WK3",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+        "content": "sha256:f6e29e3921b9b52d2d76294818ad9f569db24e241962984d6810f994ab2c85df",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_brief_and_short_answer_use_the_same_two_records_standing"
+        }
+      },
+      "facet": "The saved brief and short answer agree on both rules' derived state and resolved writer. The fixture removes stored status and records the reviewed revision's history fact.",
+      "id": "PRF-67JRSH",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+        "content": "sha256:36974ea2e34dca39fea9659cf33da5355188afada7c2a55e2cf2203a786f77ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_untitled_rule_is_named_by_its_first_six_words"
+        }
+      },
+      "facet": "The brief gives a legacy rule a display title without changing the stored rule.",
+      "id": "PRF-6S5E97",
+      "invariant": "INV-ZFNES3",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 11",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+        "content": "sha256:f6e29e3921b9b52d2d76294818ad9f569db24e241962984d6810f994ab2c85df",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_brief_and_short_answer_use_the_same_two_records_standing"
+        }
+      },
+      "facet": "The read reply uses the same current state and writer as the file brief.",
+      "id": "PRF-9B9DZ7",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+        "content": "sha256:7c4a7aa7593b0037cfe230c6eaea2b42fbb4d4e358cea3e4d32f8e067dd2aa32",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_one_file_over_the_bound_keeps_its_moved_rule_in_front"
+        }
+      },
+      "facet": "A moved rule remains at the front when one path exceeds the budget.",
+      "id": "PRF-GQ83N0",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+        "content": "sha256:5288608329df3db5b3593288df9cc17ebb71a488986bea3d850ab383edc678e7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_changed_memory_files_name_their_source_files"
+        }
+      },
+      "facet": "The trigger identifies source files associated with changed memory.",
+      "id": "PRF-M05SRY",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+        "content": "sha256:d504774814665d3278dbbcc1e28059f95fae3e4997bf6e38712b1ab9f169adce",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_which_files_get_a_brief"
+        }
+      },
+      "facet": "A live recorded fact qualifies a file while a card alone does not.",
+      "id": "PRF-TPHKZP",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+        "content": "sha256:b64fb0ed9b3be57547ef1cca65e17f9168346ca78058e1de751d702ccff8e675",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_new_memory_ignores_the_briefs_folder_from_its_first_commit"
+        }
+      },
+      "facet": "Initialization supplies the tracked ignore rule before the first memory commit.",
+      "id": "PRF-XE4SMN",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+        "content": "sha256:6da80e69bc05d98325d8a675e2c4845edf971d8a84262426fd4aab08de758337",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_overbound_card_rows_keep_every_requested_path_in_the_delivered_answer"
+        }
+      },
+      "facet": "The direct response fitter and finalizer retain all admitted paths and the eligible relative pointer marked missing within the bound. The brief directory remains absent.",
+      "id": "PRF-Y2H735",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The direct response fitter and finalizer keep every requested path and the one eligible relative brief pointer marked missing within the answer bound. The brief directory remains absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f54f1fd0d1caa7341ce364111f2b30eadccc02a1",
+            "content": "sha256:6da80e69bc05d98325d8a675e2c4845edf971d8a84262426fd4aab08de758337",
+            "locator": {
+              "end": 571,
+              "kind": "line_range",
+              "start": 518
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_handover_registered_stamp.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Receipts for another leaf do not establish handover.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27189e7b7a950004aaec3f5bc9ff321e03463df1",
+            "content": "sha256:9c14a2566002543161fe194e81ed80abcb0fbee9831b0d8a254410f01aceab9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_receipt_that_does_not_name_the_leaf_is_no_hand_over"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Two receipt files for one seat count as one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27189e7b7a950004aaec3f5bc9ff321e03463df1",
+            "content": "sha256:b8857b1051f9b403835c04d3f74511362899f60b8ccbe826b999fb8ea97cbbec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_seat_in_two_receipt_files_is_one_seat"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "An invalid attribution value yields a reasoned unknown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27189e7b7a950004aaec3f5bc9ff321e03463df1",
+            "content": "sha256:6dd3b56766cae925f2571495c1e15f81b3787e816fd6a3cf48f054467386bbb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_receipt_value_no_stamp_can_hold_reads_unknown_and_never_refuses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -19,7 +19,7 @@ memory-content commit; the consumer ledger is computed from Git and refreshed as
 a disposable cache. On a converted tree the first baseline is validated before
 it is made: adoption stages content on a private index, validates the staged tree
 with no comparison bases paired with the attributed code commit, and records
-exactly that tree. The prepare/stage/validate interval uses a private index and attempts restoration of provably-owned ignore bytes on refusal or error. Restoration mutations can themselves fail; the required named-error and owned-state guarantees of INV-ZCRMS7 and INV-DZB7MC do not hold on that inherited branch. This is not a promise of rollback after publication starts.
+exactly that tree. A new adoption prepares both derived ignore lines before capturing the validated tree. After publication it refreshes briefs using the attributed code commit. Clean reuse has no new memory output and does not refresh briefs. The prepare/stage/validate interval uses a private index and attempts restoration of provably-owned ignore bytes on refusal or error. Restoration mutations can themselves fail; the required named-error and owned-state guarantees of INV-ZCRMS7 and INV-DZB7MC do not hold on that inherited branch. This is not a promise of rollback after publication starts.
 
 ## Code Commentary
 
@@ -135,7 +135,10 @@ No new file-local follow-up is established by this documentation pass.
 Inherited numbered findings [9] retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
 
 
-- Private baseline staging applies the shared content exclusions and removes excluded entries before exact-tree validation/publication. [21]
+
+
+- Private baseline staging applies the shared content exclusions and removes excluded entries before exact-tree validation and publication. [21]
+
 
 
 
@@ -171,7 +174,10 @@ No additional configured cross-repository evidence is claimed.
 
 
 
+
+
 - Cache preparation and refresh are separate from Git commit publication. [3]
+
 - The branch-authority cases this leaf added: adoption follows the recorded branch, and `bootstrap/` never enters the baseline commit. [10]
 
 - Context, drift, and Git-history adoption decisions. [1]
@@ -189,7 +195,12 @@ No additional configured cross-repository evidence is claimed.
 
 
 
+
+
 - The owned prepare/stage/validate interval uses a private index. Restoration is called before re-raising, but unlink/write/chmod errors can replace the named validation error and leave owned state unrestored, contrary to INV-ZCRMS7 and INV-DZB7MC. [15]
+
+
+
 
 
 
@@ -198,7 +209,13 @@ No additional configured cross-repository evidence is claimed.
 - Dry runs and validation refusals discard the private index and attempt restoration of provably-owned ignore bytes; concurrent or unreadable contents are preserved. The inherited restore-mutation failure violates the unchanged owned-state/named-error promise. [16]
 
 
+
 - Publication records exactly the validated tree; a moved branch refuses instead of publishing past validation. [17]
+
+
 - Converted adoption stages, validates with no bases paired with the code commit, and commits exactly that tree. [18]
+
 - Registered status requests select unfiled measurement; an absent report pointer is omitted while measurement and explicit producer behavior remain intact. [19]
 - Adoption previews select suppression before measuring; mutating adoption preserves its report-producing mode. [20]
+
+- Only adoption that creates durable memory content refreshes briefs, using the attributed source branch commit. [24]

@@ -74,12 +74,12 @@
       ]
     },
     "43": {
-      "note": "RowStore writes text-tree fixture rows without the retired production admission plane.\n\nAnchor: `RowStore`",
+      "note": "RowStore writes text-tree fixture rows without the retired production admission plane.",
       "targets": [
         {
           "anchor": {
-            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
-            "content": "sha256:43a32e8370a3aa07c1e8247bd8b4d445a42caab3b630d2ed5783e663bc3c824e",
+            "blob": "63570d7606856b5028b51268077f62b8b3d27781",
+            "content": "sha256:a9a84c441f17b2b5a04d286f7aa9739d56b5e38f1cee90c5bef9ed86359d81fe",
             "locator": {
               "kind": "file"
             },
@@ -211,14 +211,16 @@
       ]
     },
     "64": {
-      "note": "**The baseline fixture this module builds on.**\n\nAnchor: `build_read_scope_fixture`",
+      "note": "**The baseline fixture this module builds on.**",
       "targets": [
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:269b1bb5848bfa06ae7f0b5f2138690cc4cc9475afc3d513873e274139d3eeea",
             "locator": {
-              "kind": "file"
+              "end": 407,
+              "kind": "line_range",
+              "start": 309
             },
             "path": "mcp/tests/read_scope_test_support.py"
           },
@@ -226,11 +228,10 @@
         },
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:269b1bb5848bfa06ae7f0b5f2138690cc4cc9475afc3d513873e274139d3eeea",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:a1bdfdfd0d9b6cc8cddc939c7e361a27f6c1091c22442fd93486d4fe3b56144f",
             "locator": {
-              "kind": "symbol",
-              "name": "build_read_scope_fixture"
+              "kind": "file"
             },
             "path": "mcp/tests/read_scope_test_support.py"
           },
@@ -239,14 +240,16 @@
       ]
     },
     "65": {
-      "note": "The fixture value the baseline side is read from.\n\nAnchor: `ReadScopeFixture`",
+      "note": "The fixture value the baseline side is read from.",
       "targets": [
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:c263be04555ec323e5befcd3a184e80c2add8dfa1c679cda5fcda7e39e72932f",
             "locator": {
-              "kind": "file"
+              "end": 293,
+              "kind": "line_range",
+              "start": 228
             },
             "path": "mcp/tests/read_scope_test_support.py"
           },
@@ -254,11 +257,10 @@
         },
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:41cd5ec8cdecaaf838b95079b0239b3e1803add55b6b39c6095b56ba680b4b8f",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:a1bdfdfd0d9b6cc8cddc939c7e361a27f6c1091c22442fd93486d4fe3b56144f",
             "locator": {
-              "kind": "symbol",
-              "name": "ReadScopeFixture"
+              "kind": "file"
             },
             "path": "mcp/tests/read_scope_test_support.py"
           },
@@ -271,12 +273,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5599c0cbdea08d820a9774eec5c020ce86d35ba",
+            "blob": "ac6abaf94fbc1b38d2d243883737a007bceebd64",
             "content": "sha256:5187759dd6296819d4d34463de47bcd6c46909ea7c53d6a826bbb51edef3ba1a",
             "locator": {
-              "end": 1359,
+              "end": 1388,
               "kind": "line_range",
-              "start": 1323
+              "start": 1352
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -284,12 +286,12 @@
         },
         {
           "anchor": {
-            "blob": "d5599c0cbdea08d820a9774eec5c020ce86d35ba",
+            "blob": "ac6abaf94fbc1b38d2d243883737a007bceebd64",
             "content": "sha256:2e75aecef7732387589ac0894f66fe040076563eefec8e87d1a4b653ba254593",
             "locator": {
-              "end": 5076,
+              "end": 5222,
               "kind": "line_range",
-              "start": 5073
+              "start": 5219
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

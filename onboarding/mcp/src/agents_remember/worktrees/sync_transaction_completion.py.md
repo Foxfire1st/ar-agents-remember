@@ -24,4 +24,6 @@ Build the answer of a completed sync pass, live at finalization or replayed from
 - "Moved again" reads the recorded source branches. [2]
 - Crossing summaries come from the journaled reports. [3]
 - Journaled memory repair debt is named with its rules and statement. [4]
-- Finalization answers through the completed result. [5]
+
+
+- Finalization publishes its terminal record, cleans residue and builds the completed result. The settled, changed persistent memory side can add a brief refresh advisory before recomputing the worklist. [5]

@@ -214,16 +214,16 @@
       ]
     },
     "8": {
-      "note": "The lane this module is registered in. Source caption: \"mcp/tests/test_pause_is_not_publication.py\"",
+      "note": "The architecture-fitness lane selects mcp/tests/test_pause_is_not_publication.py.\n\nAnchor: `mcp/tests/test_pause_is_not_publication.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
             "content": "sha256:13097fa856c7a30ea33fb6e87fb9236a60d1e67383850f3c5ec4599801591a78",
             "locator": {
-              "end": 805,
+              "end": 824,
               "kind": "line_range",
-              "start": 805
+              "start": 824
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

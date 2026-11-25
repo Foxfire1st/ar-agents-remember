@@ -104,15 +104,16 @@
       ]
     },
     "5": {
-      "note": "Finalization answers through the completed result.",
+      "note": "Finalization publishes its terminal record, cleans residue and builds the completed result. The settled, changed persistent memory side can add a brief refresh advisory before recomputing the worklist.",
       "targets": [
         {
           "anchor": {
-            "blob": "39d2f4bc5c1502b93a6032d6cdf5adde2acef2a8",
-            "content": "sha256:508ca301ab0193366606183c55a9dc3ecca5ca52fb0b3c65d03d7e2044c5b87d",
+            "blob": "13ca170bad52685e8caca7967a429b1f4acf71fc",
+            "content": "sha256:5efa82de6d0d3e84e5c095af5e805234fe01270be2441dfc5bc0c0a9ebed87e8",
             "locator": {
-              "kind": "symbol",
-              "name": "finalize_sync"
+              "end": 107,
+              "kind": "line_range",
+              "start": 79
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
           },

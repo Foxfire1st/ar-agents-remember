@@ -113,16 +113,16 @@
       ]
     },
     "15": {
-      "note": "The lane registration. Anchor: \"mcp/tests/test_knowledge_worklist.py\" Anchor: \"mcp/tests/test_knowledge_worklist.py\"",
+      "note": "The unit-regression lane selects mcp/tests/test_knowledge_worklist.py.\n\nAnchor: `mcp/tests/test_knowledge_worklist.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
             "content": "sha256:f1eb15b922e2fc0f023cf3d20bc6030966d637f78693ee2f7948e9cc24017663",
             "locator": {
-              "end": 284,
+              "end": 292,
               "kind": "line_range",
-              "start": 284
+              "start": 292
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

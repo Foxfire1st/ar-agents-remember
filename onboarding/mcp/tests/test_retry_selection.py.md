@@ -22,7 +22,6 @@ loudly.
 ### Conventions
 
 - Tests invoke the hook directly with typed mocks; they do not create a second pytest route.
-- The file is explicitly classified as `unit-regression` in the lane manifest.
 
 ### Invariants And Boundaries
 
@@ -58,5 +57,4 @@ Temporary paths and mocks remain local to the test process.
 
 ### Repo-Internal References (continued)
 
-
-- The suite has explicit unit-regression membership. Source caption: "mcp/tests/test_retry_selection.py" [3]
+- The `unit-regression` lane selects `mcp/tests/test_retry_selection.py`. [3]

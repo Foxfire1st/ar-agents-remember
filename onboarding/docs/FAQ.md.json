@@ -1,0 +1,26 @@
+{
+  "path": "docs/FAQ.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "091b5825d902374c8f55297f96a361589fef324b",
+        "content": "sha256:59e8b174b18d57cc153ef83030d81a402067726189bdcb210a664f2f29bd615e",
+        "locator": {
+          "end": 39,
+          "kind": "line_range",
+          "start": 36
+        }
+      },
+      "id": "RLZ-ZXSPSK",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "The FAQ tells users how rule text, counts and a brief pointer relate to the lookup budget.",
+      "role": "presentation"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

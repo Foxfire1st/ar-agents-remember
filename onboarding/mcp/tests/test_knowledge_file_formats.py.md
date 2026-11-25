@@ -9,7 +9,7 @@
 **MIK-R21's model, ID and location cases.** It proves the text knowledge format's shapes accept the
 Doc14 §4 worked examples (as fixtures in `fixtures/knowledge_files/`, adapted to the packet's
 normative shape) and refuse the non-conforming ones, pins the ID derivation with golden values, and
-checks the layout paths. Registered in the `unit-regression` lane.
+checks the layout paths.
 
 ## Code Commentary
 
@@ -81,5 +81,4 @@ No cross-repo boundary is exercised.
 
 - Every kind round-trips and refuses a foreign prefix; kinds whose fixture has links also refuse relations outside their vocabulary. [3]
 
-
-- Lane registration. Anchor: "mcp/tests/test_knowledge_file_formats.py" Anchor: "mcp/tests/test_knowledge_file_formats.py" [6]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_file_formats.py`. [6]

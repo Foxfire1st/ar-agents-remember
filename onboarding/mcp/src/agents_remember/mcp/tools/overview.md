@@ -11,7 +11,7 @@
 
 ## Hot Path Summary
 
-MIK-R109 adapters answer names, not documents. `core.context_packet_payload` keeps the full builder as an internal/CLI/dashboard route and finalizes its slim version-3 projection; do not describe the slim answer as all resolver settings or assume this adapter logs omitted full context. `read_ar_files_payload` preserves canonical reader/task scope and refuses removed/object inputs before delegating to card-location naming. `knowledge_read_payload` reuses its exact selected epoch for ID/kind/state/location projection and projected page sizing; a moved checkout refuses instead of mixing snapshots. `knowledge_diff_payload` keeps the full comparison in a caller-readable report and returns trees/counts/bounded changed-record names/report location. These adapters acquire no semantic verdict authority.
+The reader adapters preserve their individual result shapes. `core.context_packet_payload` keeps the full builder as an internal/CLI/dashboard route and finalizes its slim version-3 projection; do not describe the slim answer as all resolver settings or assume this adapter logs omitted full context. `read_ar_files_payload` preserves canonical reader/task scope and refuses removed/object inputs before delegating to card-location naming and the bounded source file brief fitter, which can deliver fuller rule text or compact pointers with saved freshness. `knowledge_read_payload` reuses its exact selected epoch for ID/kind/state/location projection and projected page sizing; a moved checkout refuses instead of mixing snapshots. `knowledge_diff_payload` keeps the full comparison in a caller-readable report and returns trees/counts/bounded changed-record names/report location. These adapters acquire no semantic verdict authority.
 
 The composed model-owned ordinary roster has 44 names, including `user_settings_init`, `citation_note_revision` and `explainer_control`; the pre-sync R11142-name account is historical. The payload facade still delegates typed requests and whole-result completion rather than becoming policy authority. role_start_payload and role_message_payload keep the addressed target-role context through _tool_payload completion and reset it in finally, with held projections supplied explicitly. This fixes message observer context without changing id resolution, target-role arguments, sender receipt custody or registration ownership.
 
@@ -54,9 +54,9 @@ Explicit enclosure adoption is present and advertised. Its adapter confines the 
 
 Task-document and reopen builders forward to task-domain application services. The adapter accepts `operation` as a string; it is not the authoritative validator or inventory of task operations. Task authoring is independent of queue activation. Curator coherence delegates a typed request to its contract-owned application authority without adding aliases or publication policy. Closeout queue is a thin adapter over a disposable projection; scheduling and persistence semantics belong to its application owner. The three memory-quality adapters forward synchronous, start and poll DTOs to one controller and use the same response name; they do not reproduce wait, capacity or poll-error policy. Each retains the whole application result beside an answer projected by `application/memory_quality/answer.py`; the common boundary guards the delivered mapping and records the whole material where logging succeeds.
 
-The three knowledge operations are imported by their registration family directly rather than exported by the facade. `knowledge_read` selects a caller-named converted memory root holding `knowledge/layout.json`, then selects the derived index of its current tree state. The namespace is server-owned. Missing roots return `selected_input_unavailable`; existing unconverted directories and database files return `legacy-format` with conversion guidance. There is no database-path fallback and no mounted projection destination. The family does mount an authoring builder: `knowledge_write` shares the command's plan, write, refusal and report behaviour and the same leaf, crossing and wave target selection, and commits no Git. Records and assessments are attributed data; this route must not invent classifications, effect labels, drafts or decisions to resolve ambiguity.
+The registration family imports the read, diff, integrity and write operations directly. The writer answer includes the bounded note, problem and violation lists beside its full report. `knowledge_read` selects a caller-named converted memory root holding `knowledge/layout.json`, then selects the derived index of its current tree state. The namespace is server-owned. Missing roots return `selected_input_unavailable`; existing unconverted directories and database files return `legacy-format` with conversion guidance. There is no database-path fallback and no mounted projection destination. The family does mount an authoring builder: `knowledge_write` shares the command's plan, write, refusal and report behaviour and the same leaf, crossing and wave target selection, and commits no Git. Records and assessments are attributed data; this route must not invent classifications, effect labels, drafts or decisions to resolve ambiguity.
 
-Read admits six views: `source_context`, `invariant`, `family`, `record`, `weakness` and `dependent`. The first three use tree-bound paging; `weakness` and `dependent` use bounded lists with `rows:<n>` mark cursors. The unpaged `record` view takes a `recordId` text identity and returns a bounded link-state, timeline, count and location projection without record prose. Ordering is validated before opening the tree; the default applies only when the caller supplies none. Selection and indexing failures map to named refusals, including index-key mismatch and a named repository root that cannot resolve a code tree. Anchor-context construction can complete a caller root with its current Git tree, or use the workspace when neither half was requested and a tree is available. Git resolution has a 20-second timeout and validates a 40- or 64-character hexadecimal tree id. This context-completion step is distinct from paging currentness: a fresh walk binds only the requested `codeTreeId`, and a continuation restores its bound tree. With no requested walk tree, the pager clears source resolution for the walk rather than treating resolved HEAD as currentness evidence.
+Read admits `source_context`, `invariant`, `family`, `record`, `weakness`, `dependent` and `writers`. The `writers` view uses writer aggregates instead of individual record rows. The first three use tree-bound paging; `weakness` and `dependent` use bounded lists with `rows:<n>` mark cursors. The unpaged `record` view takes a `recordId` text identity and returns a bounded link-state, timeline, count and location projection without record prose. Ordering is validated before opening the tree; the default applies only when the caller supplies none. Selection and indexing failures map to named refusals, including index-key mismatch and a named repository root that cannot resolve a code tree. Anchor-context construction can complete a caller root with its current Git tree, or use the workspace when neither half was requested and a tree is available. Git resolution has a 20-second timeout and validates a 40- or 64-character hexadecimal tree id. This context-completion step is distinct from paging currentness: a fresh walk binds only the requested `codeTreeId`, and a continuation restores its bound tree. With no requested walk tree, the pager clears source resolution for the walk rather than treating resolved HEAD as currentness evidence.
 
 Converted reads delegate to the shared pager. Continuations bind memory selection, policy/version, subject, ordering and code tree; mismatches refuse. Unheld seeds return `selector_absent` rather than an empty complete view. Path source-context reads and leaf continuations use the family-complete leaf path; family seeds have their own resolution. Nondefault ordering is refused for a fresh leaf read. Leaf selection preserves its shared manifest/selection machinery with published intent, while invariant responses name containing families. Tree/index state remains visible, partial indexes remain explicitly incomplete, and post-selection refusals include the memory tree and threshold. Page rendering measures fixed tree/index fields and prepared extras with the page. Proof entries identify recorded evidence, not successful tests or established invariant truth. Currentness is prepared for candidate records and cut to the answer; the documented currentness failure set becomes a failure document rather than a fresh read refusal. This is narrower than a promise to swallow every possible exception.
 
@@ -123,9 +123,11 @@ The memory payload owner routes synchronous citation repair and background previ
 
 
 
+The `knowledge_read` adapter routes `writers` through the same selected memory view and delegates aggregation to the application. Its answer includes the writer rows and complete report path. The record view keeps derived revision state and compact writer attribution beside the existing result state.
+
 ## Evidence
 
-- **Retained historical source account — superseded by the current route account:** Single-role adapters scope target-role observation; set starts have no single target role; the caller owner requires actual binding and runtime. 
+- **Retained historical source account — superseded by the current route account:** Single-role adapters scope target-role observation; set starts have no single target role; the caller owner requires actual binding and runtime.
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_role_caller.py::_caller - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
@@ -137,7 +139,6 @@ The memory payload owner routes synchronous citation repair and background previ
 
 - The leaf response the paged tree read routes to, for a path or (since MIK-R05) a family seed, a path's refusal carrying its route chain. [3]
 
-- The seam that pages a converted tree's read, and the per-page extras. [4]
 
 - Converted-tree refusals state the threshold. [5]
 
@@ -151,7 +152,10 @@ The memory payload owner routes synchronous citation repair and background previ
 
 - Three delegates serve read, Git diff and tree validation. [10]
 
+
+
 - The MCP adapter delegates completed-response ownership to the application. [11]
+
 
 
 - The application attaches bounded guidance and records the completed result after finalization. [12]
@@ -206,13 +210,13 @@ The memory payload owner routes synchronous citation repair and background previ
 
 
 
+
 - Guidance uses the exact response address, and enrichment precedes serialization. [48]
 
 - Server info reports the agent binding and serving build rather than a roster, and the context-packet reader is task-scoped. [49]
 
 - **Retained historical source account — superseded by the current route account:** Adoption is explicit, confined and preview-identity approved [50]
 
-- **Retained historical source account — superseded by the current route account:** Knowledge selection and paging replace database-facing requests. [53]
 
 - **Retained historical source account — superseded by the current route account:** Fresh and resumed walks retain explicit tree binding and incomplete-index facts [54]
 
@@ -231,9 +235,15 @@ The memory payload owner routes synchronous citation repair and background previ
 - The server-info answer without a harness skill root. [62]
 
 
+
+
 - - A converted tree's citation-fix result is bounded for transport. [43]
 
-- **Retained historical source account — superseded by the current route account:** Citation repair projects selected actionable lists; the retained 50-entry helper is not called by the builder.  Anchor: `citation_fix_payload`, `_citation_fix_answer`, `_bounded_lists`, `_bounded_citation_fix` [56]
+
+
+
+- **Retained historical source account — superseded by the current route account:** Citation repair projects selected actionable lists; the retained 50-entry helper is not called by the builder. Anchor: `citation_fix_payload`, `_citation_fix_answer`, `_bounded_lists`, `_bounded_citation_fix` [56]
+
 
 Anchor: `role_start_set_payload`, `role_start_payload`, `role_message_payload`, `_caller` [52]
 
@@ -241,3 +251,8 @@ Anchor: `role_start_set_payload`, `role_start_payload`, `role_message_payload`, 
 - Legacy paths and unheld current seeds refuse truthfully. [35]
 
 - Current ordinary model roster has 44 names, including citation_note_revision, ten ordered registrars include explainer control, and the facade exports its DTO/builder; a valid explainer binding adds four tools to the ordinary registration. [63]
+
+- The seam that pages a converted tree's read, and the per-page extras. [4]
+- **Retained historical source account — superseded by the current route account:** Knowledge selection and paging replace database-facing requests. [53]
+
+- The writer answer carries bounded notes and a full report location. The writers branch returns a writer aggregate. [69]

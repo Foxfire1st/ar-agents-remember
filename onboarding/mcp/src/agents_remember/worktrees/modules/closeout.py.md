@@ -22,7 +22,7 @@ Refused closeout previews include knowledge/opt-out, undecided approval as close
 
 ### Logic
 
-Closeout records code and memory-content commits, then publishes the exact contract state. External cache refresh is informational: it supplies no approval message, source-head expectation, recovery completeness cell, or integration output. Source-head validation uses `integrated_memory_content_commit`, and no-op finalization proves the existing two outputs without inventing a cache-maintenance commit.
+Closeout records code and memory-content commits, then publishes the exact contract state. External cache refresh is informational: it supplies no approval message, source-head expectation, recovery completeness cell, or integration output. The completed closeout asks for a full brief refresh when it creates a new memory commit. It uses the paired code commit and reports a refresh problem as `briefsProblem`. Source-head validation uses `integrated_memory_content_commit`, and no-op finalization proves the existing two outputs without inventing a cache-maintenance commit.
 
 The current `_closeout_entry` checks the disabled-memory refusal, canonical contract/leaf binding, normalized effective input, recovery, source lineage and series-workbench authority, then dispatches dry-run preview or apply. This module has no `selected-closeout-operation-required` leaf refusal or requirement to enter a selected certification operation. That older selected-preparation account belongs to retained separate certification/preparation owners, not the ordinary entry predicate.
 
@@ -33,7 +33,7 @@ transitive lineage projection, and that projection self-heals a settleable stale
 refusing it. `_validate_closeout_source_state(contract, *, dry_run)` runs
 `heal_current_source_lineage` first — carrying a `behind > 0` break through the existing
 `worktree_sync` transaction — and then re-proves the exact immediate source heads with
-`_validate_closeout_source_heads` against the reloaded contract the sync left on disk. It returns
+`validate_closeout_source_heads` against the reloaded contract the sync left on disk. It returns
 that healed contract, so lineage-first ordering means a source branch that moved while only its
 ancestry is stale is settled by the sync rather than refused as a moved source. That source state is
 checked at preflight and again on the last reversible line before approval claim. An unprovable break
@@ -303,7 +303,17 @@ always has.
   through the typed record so pyright checks them; `replace` carries only the fields that have no
   vocabulary to be checked against. The reopen logic itself is unchanged.
 
+The successful closed result appends any no-pass sentence from the memory closeout outcome.
+
 ## Evidence
+
+- The extracted validator compares code and applicable external-memory heads to the contract's base and legitimate integrated heads. [45]
+- The contract accepts the recorded base and its own completed or checkpointed output. [46]
+
+
+- The final successful result appends the note supplied by the memory outcome. [47]
+
+
 
 ### Approval Claim And Mutation Evidence
 
@@ -330,22 +340,15 @@ No configured external source applies.
 The following current source boundaries establish the ledger-retirement behavior.
 
 
-- `closeout_preview_payload` asks approval for the actual code/memory transaction and reports cache refresh separately; a converted leaf the gate refuses gets the refused preview instead, which asks for no approval. [1]
-
-- `_validate_closeout_source_heads` proves code and memory source tips against their recorded base or landed output. [2]
-
-
-- `_amended_closeout_contract` records actual code/memory output and clears integration fields only when reopening. [3]
-
-
-
-- `_recover_closeout_finalization` asks the recovery gate and re-proves existing output commits before exact contract publication. [4]
 
 
 
 
 
-- Closeout retains entity-fingerprint and derived route-index refresh before exact converted-memory publication, not legacy metadata stamps. Anchor: `_refresh_external_memory` [5]
+
+
+
+
 
 
 
@@ -371,7 +374,6 @@ The following current source boundaries establish the ledger-retirement behavior
 - Closeout's import block takes the queue preview and recovery owners and imports no code-quality gate; the staged-quality owner `gate_staged_code` lives only in its own module. [14]
 
 
-- Closeout revalidates the accepted candidate tree and refuses a candidate that moved after admission before publishing; the reversible code-quality preflight no longer exists in the transaction. (`_revalidate_candidate`; `closeout_result`) [15]
 
 
 - The extracted owner binds and certifies the exact staged candidate. (`gate_staged_code`) [16]
@@ -381,7 +383,6 @@ The following current source boundaries establish the ledger-retirement behavior
 > Retained earlier citation wording: - `ContractCells` and `amend_contract` define the contract-cell amendment API. [19]
 
 
-- Closeout amends its contract through `amend_contract`, passing the free-text commit and approval fields by `replace` and the vocabulary cells through `ContractCells`. (`_amended_closeout_contract`) [20]
 
 
 ### Historical DAG-L3 Claim/Certification And Journal Evidence
@@ -425,16 +426,16 @@ No additional cross-repository evidence applies.
 
 ## A Checkpointed Series Passes Its Own Landed Source Head (260831-LOCR-L30)
 
-`_validate_closeout_source_heads` asserts that the live source-branch head is one *this contract's
+`validate_closeout_source_heads` asserts that the live source-branch head is one *this contract's
 own landing legitimately produced*: the recorded base, plus the commit the contract records as
-landed. That set is computed by `_landed_source_heads(contract, base, integrated)`
-cit:([`_landed_source_heads`], mcp/src/agents_remember/worktrees/modules/closeout.py:167-181) — the
+landed. That set is computed by `landed_source_heads(contract, base, integrated)`
+cit:([`landed_source_heads`], mcp/src/agents_remember/worktrees/modules/closeout_source_heads.py:13-26) — the
 former `_completed_integration_source_heads`, renamed because its condition is no longer about
 "completed" integration.
 
 The condition widened from `contract.integration_status == "completed"` to
 `contract.integration_status in {"completed", "checkpointed"}`
-cit:(["contract.integration_status in {\"completed\", \"checkpointed\"} and integrated"], mcp/src/agents_remember/worktrees/modules/closeout.py:173-173).
+cit:(["contract.integration_status in {\"completed\", \"checkpointed\"} and integrated"], mcp/src/agents_remember/worktrees/modules/closeout_source_heads.py:24-25).
 
 **Why the old form was wrong.** A checkpoint also moves the source branch forward, and it records the
 commit it moved the branch to. Keying the expected set on `completed` alone therefore made the
@@ -554,26 +555,18 @@ coherence validation precede apply under the separate Manager procedure.
 ### Reconciled Source Evidence
 
 
-- The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary. [21]
 
 
 
-- The source-state boundary self-heals a settleable stale break and re-proves the immediate heads on the healed contract; candidate revalidation returns that healed contract. (`_validate_closeout_source_state`; `_validate_closeout_source_heads`; `_revalidate_candidate`) [22]
-
-- The expected source heads a contract's own landing may have produced, now covering a checkpoint's recorded move. (`_landed_source_heads`; `contract.integration_status in {"completed", "checkpointed"} and integrated`) [23]
 
 
-- The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary. [24]
 
 
-- The source-state boundary self-heals a settleable stale break and re-proves the immediate heads on the healed contract; candidate revalidation returns that healed contract. (`_validate_closeout_source_state`; `_validate_closeout_source_heads`; `_revalidate_candidate`) [25]
-- The expected source heads a contract's own landing may have produced, now covering a checkpoint's recorded move. (`_landed_source_heads`; `contract.integration_status in {"completed", "checkpointed"} and integrated`) [26]
 
 
-- The single closeout entry and the entry helper that reaches the validator for series contracts too. (`closeout_result`; `_closeout_entry`) [27]
 
 
-- The closeout entry threads the healed contract through preflight, the gate's preflight and the locked publication callback. (`closeout_result`; `_publish_closeout_candidate`; `_closeout_entry`) [28]
+
 
 
 ## Historical 260821-CLIVE Journal-Owned Claim Boundary
@@ -669,17 +662,13 @@ On converted memory three places of this module ask the mandatory invariant gate
 >   recovered commits, so the contract is finalized only for a memory commit the gate passes.
 
 
-- **Retained historical source account — superseded by the current contract:** The apply asks the gate before it publishes the closeout. [29]
 
 
-- **Retained historical source account — superseded by the current contract:** The preview asks the same verdict and answers the refused preview. [30]
 
 - **Retained historical source account — superseded by the current contract:** The refused preview: the findings, no approval, no next tool. [31]
 
-- **Retained historical source account — superseded by the current contract:** A refused preview returns code 2. [32]
 
 
-- **Retained historical source account — superseded by the current contract:** A recovered closeout is finalized only for a gated memory commit. [33]
 
 
 
@@ -708,3 +697,65 @@ On converted memory three places of this module ask the mandatory invariant gate
 
 
 - Registered calls keep the daily call record independently of closeout publication. [36]
+
+- The source-head validator compares the current source tips with their recorded base or this contract's own landed output. [2]
+
+
+- Closeout refreshes entity fingerprints and derived route indexes before the exact converted memory publication. The refresh leaves the legacy stamp lists empty. [5]
+- The accepted source heads include the base and the result of this contract's recorded checkpoint or completed integration. [23]
+- The accepted source heads include the base and the result of this contract's recorded checkpoint or completed integration. [26]
+- The source-state boundary settles an admitted stale break and validates the healed contract's immediate source heads. Candidate revalidation returns that contract. [22]
+- The source-state boundary settles an admitted stale break and validates the healed contract's immediate source heads. Candidate revalidation returns that contract. [25]
+
+
+- `closeout_preview_payload` asks approval for the actual code/memory transaction and reports cache refresh separately; a converted leaf the gate refuses gets the refused preview instead, which asks for no approval. [1]
+
+
+
+- Closeout revalidates the accepted candidate tree and refuses a candidate that moved after admission before publishing; the reversible code-quality preflight no longer exists in the transaction. (`_revalidate_candidate`; `closeout_result`) [15]
+
+
+
+- Closeout amends its contract through `amend_contract`, passing the free-text commit and approval fields by `replace` and the vocabulary cells through `ContractCells`. (`_amended_closeout_contract`) [20]
+
+
+
+- The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary. [21]
+
+
+
+- The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary. [24]
+
+
+
+- The single closeout entry and the entry helper that reaches the validator for series contracts too. (`closeout_result`; `_closeout_entry`) [27]
+
+
+
+- The closeout entry threads the healed contract through preflight, the gate's preflight and the locked publication callback. (`closeout_result`; `_publish_closeout_candidate`; `_closeout_entry`) [28]
+
+
+
+- **Retained historical source account — superseded by the current contract:** The apply asks the gate before it publishes the closeout. [29]
+
+
+
+- `_amended_closeout_contract` records actual code/memory output and clears integration fields only when reopening. [3]
+
+
+
+- **Retained historical source account — superseded by the current contract:** The preview asks the same verdict and answers the refused preview. [30]
+
+
+
+- **Retained historical source account — superseded by the current contract:** A refused preview returns code 2. [32]
+
+
+
+- **Retained historical source account — superseded by the current contract:** A recovered closeout is finalized only for a gated memory commit. [33]
+
+
+
+- `_recover_closeout_finalization` asks the recovery gate and re-proves existing output commits before exact contract publication. [4]
+
+- A new forward closeout memory commit triggers the file brief refresh and reports any advisory in the completed result. [48]

@@ -8,11 +8,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0013d582a92b9fdab6624ebf661afb233b1284ae",
-            "content": "sha256:fcd79cb0a4d62dcc5b96dd84a3e4456abfb8e81681b143db618add7a9902a04f",
+            "blob": "f58e13e959c87886b4d3e0233f9ba9dabf0ccf69",
+            "content": "sha256:fd996180f4573872409da307a0b97c32c7566a6ec80d0e24587c0725099c45c7",
             "locator": {
-              "kind": "symbol",
-              "name": "__all__"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -20,28 +19,15 @@
       ]
     },
     "3": {
-      "note": "The current export list contains no retired mutation outcome helpers; the acceptance helper remains at its own base owner.",
+      "note": "The facade exports the retained read and provenance vocabulary.\n\nAnchor: `__all__`",
       "targets": [
         {
           "anchor": {
-            "blob": "0013d582a92b9fdab6624ebf661afb233b1284ae",
-            "content": "sha256:fcd79cb0a4d62dcc5b96dd84a3e4456abfb8e81681b143db618add7a9902a04f",
+            "blob": "f58e13e959c87886b4d3e0233f9ba9dabf0ccf69",
+            "content": "sha256:fd996180f4573872409da307a0b97c32c7566a6ec80d0e24587c0725099c45c7",
             "locator": {
-              "kind": "symbol",
-              "name": "__all__"
+              "kind": "file"
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
-            "content": "sha256:13cc663044dee904e0ef554d6776f2c58837847c4cc915a9688f715dd1172a37",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_consistent_acceptance"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/base.py"
           },
           "kind": "code"
         }
@@ -52,54 +38,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0013d582a92b9fdab6624ebf661afb233b1284ae",
-            "content": "sha256:fcd79cb0a4d62dcc5b96dd84a3e4456abfb8e81681b143db618add7a9902a04f",
+            "blob": "f58e13e959c87886b4d3e0233f9ba9dabf0ccf69",
+            "content": "sha256:fd996180f4573872409da307a0b97c32c7566a6ec80d0e24587c0725099c45c7",
             "locator": {
-              "kind": "symbol",
-              "name": "__all__"
+              "kind": "file"
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Retired mutation outcome helpers are absent from the current facade; internal acceptance validation stays in base.py.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0013d582a92b9fdab6624ebf661afb233b1284ae",
-            "content": "sha256:fcd79cb0a4d62dcc5b96dd84a3e4456abfb8e81681b143db618add7a9902a04f",
-            "locator": {
-              "kind": "symbol",
-              "name": "__all__"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
-            "content": "sha256:13cc663044dee904e0ef554d6776f2c58837847c4cc915a9688f715dd1172a37",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_consistent_acceptance"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/base.py"
           },
           "kind": "code"
         }
       ]
     },
     "7": {
-      "note": "The production store consumes these retained values through read-only operations.\n\nAnchor: `OpenedKnowledgeStore` `open_read_only_store`",
+      "note": "The production store consumes these retained values through read-only operations.",
       "targets": [
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
-            "content": "sha256:06f9fa0b997c9bd42569065fb5f62ea39d370764509c8c2467b0985cdde68958",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
+            "content": "sha256:5bcf5198fd4a1acdfe1204a75222796dfe7008c3fd063f96f925c5de466e45a0",
             "locator": {
-              "kind": "file"
+              "end": 194,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
+            "content": "sha256:5a7d444f6d5aa6950d3170e1dfb74ced2b56bfcb496f38dd0485d8bcd71c6898",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 209
             },
             "path": "mcp/src/agents_remember/memory/knowledge/store.py"
           },

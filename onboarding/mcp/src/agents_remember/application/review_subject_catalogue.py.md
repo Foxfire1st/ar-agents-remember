@@ -139,7 +139,6 @@ the adapter that delegates to it, and the ten-case module that measures it.
 - **The module's own statement of the contract: both snapshots, no comparison, no silent drops, zero subjects an empty catalogue.** [1]
 - The published surface: one name. [2]
 
-- The one entry point: both stores opened under the record-beside-the-bytes namespace, each read and closed, then merged. [3]
 
 - The per-side read through the store's own two list operations, with each label travelling beside its side. [4]
 - **The globally kind-grouped union: the outer loop is the subject kind, the after label wins on overlap, and retired rows keep the before snapshot's own wording.** [5]
@@ -160,3 +159,5 @@ No cross-repository behavior is implemented in this file. The catalogue reads th
 server resolved and names one repository namespace.
 
 No applicable cross-repository source was found.
+
+- The one entry point: both stores opened under the record-beside-the-bytes namespace, each read and closed, then merged. [3]

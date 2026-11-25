@@ -21,9 +21,9 @@ The registered response model is selected and validated before final output. Con
 and the `buildCurrentness` reading of a call served by a stale installed build, are attached as model fields through the finalizer's enrichment callback;
 whole-result serialization then retains that finalized payload. An explicit caller-sized `answer`
 projection wins when supplied. Without it, `_select_shaped_answer` applies the task/landing/role
-projectors only to their owned tools; unrelated tools retain the stripped whole result. That default selection invokes `truncate_lists`, except for a `server-build-stale` refusal, which keeps its stripped whole result without projection or list cap. Whichever answer is shaped, a finalized `buildCurrentness` is copied onto it. An explicit `answer` is instead dict-copied and does not pass through that default list-cap function; an under-bound explicit mapping returns unchanged by the token guard. Both paths retain whole-result validation/logging and the final delivered-token guard, whose short form is not a universal per-list cap.
+projectors only to their owned tools; unrelated tools retain the stripped whole result. That default selection invokes `truncate_lists`, except for a `server-build-stale` refusal, which keeps its stripped whole result without projection or list cap. Whichever answer is shaped, a finalized `buildCurrentness` is copied onto it. An explicit `answer` is instead dict-copied and does not pass through that default list-cap function; an under-bound explicit mapping returns unchanged by the token guard. Both paths retain whole-result validation, logging and the final delivered-token guard. A tool-supplied fitter may size its projection against the complete delivery metadata before that guard.
 Explicit producer recovery guidance takes precedence; cross-task guidance is omitted. Observer
-completion receives the finalized whole payload with the delivered answer count, not a rebuilt result.
+completion receives the finalized whole payload with the delivered answer count, not a rebuilt result. The log derives its outcome from that finalized result. A `state` or `status` of `refused` produces `ok: false` and the refusal code on the log line while the returned answer keeps its own fields.
 
 Caller diffs are separate readable reports: `_attach_caller_diff_report` attempts to retain the
 complete diff independently of the investigation detail. A cut diff names that report when it
@@ -46,7 +46,7 @@ envelope count fields are stripped, over-bound answers leave as the measured sho
 whole result is filed beside the daily log when detail recording succeeds. The guard uses the tool name and outcome to select approved typed fields from the validated whole result when cutting an over-bound answer. `_write_delivered_line` re-runs the guard after every
 late line failure and keeps the 400-token short-form target once the answer is cut, retaining the exact recorded-result location and final cut hint when mandatory content cannot fit; the observer and the log
 line count the delivered answer, and `_canonical_json` is the canonical form used for whole-result
-byte accounting. After attaching a late `logError` and refitting waited reply text, the writer moves an existing `cut` field to the end before re-guarding; a retained mapping keeps that order, and a rebuilt short form appends its hint last.
+byte accounting. After attaching a late `logError`, the writer refits a waited reply or invokes the tool-supplied fitter when present. It then moves an existing `cut` field to the end before re-guarding; a retained mapping keeps that order, and a rebuilt short form appends its hint last.
 
 ### Conventions
 
@@ -82,6 +82,7 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 
 
+
 - The enrichment sets `buildCurrentness` on the validated envelope only when the call carries a stale installed-build reading. [5]
 
 
@@ -89,4 +90,8 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 
 
-- Whichever answer is shaped, the finalized buildCurrentness is copied onto it. [7]
+- The selected answer carries `buildCurrentness` when the finalized result has it. [7]
+
+- The finalizer classifies the log outcome and hashes the whole serialized result before logging. [10]
+
+- A tool's optional fitter sees delivery metadata before the common guard and can fit again after an initial line-write error. [11]

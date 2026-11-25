@@ -1,10 +1,11 @@
 {
   "anchor": {
-    "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
-    "content": "sha256:795e0c5fae9855b3f222f6821a504c3d9617f730e6e7b4dbec07e23f4d2d6d75",
+    "blob": "0789f3ccacb2b41e5dd90b05efda788cbd713c23",
+    "content": "sha256:d389051abd6dbec674a368b4456745fb8b1ca9ccd135f5b3c690077fdb8d8872",
     "locator": {
-      "kind": "symbol",
-      "name": "initialize_memory"
+      "end": 253,
+      "kind": "line_range",
+      "start": 247
     },
     "path": "mcp/src/agents_remember/kernel/memory_init.py"
   },
@@ -18,7 +19,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",

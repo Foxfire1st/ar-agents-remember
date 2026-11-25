@@ -107,16 +107,16 @@
       ]
     },
     "15": {
-      "note": "The lane row that keeps the fail-closed evidence registry loading clean.",
+      "note": "The unit-regression lane selects mcp/tests/test_memory_branch_authority.py.\n\nAnchor: `mcp/tests/test_memory_branch_authority.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
             "content": "sha256:b20b064c91520d94fcdf7dc82d5b2995f278685264e074f07a9a11eef4d4addf",
             "locator": {
-              "end": 332,
+              "end": 344,
               "kind": "line_range",
-              "start": 332
+              "start": 344
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -308,7 +308,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
+            "blob": "0789f3ccacb2b41e5dd90b05efda788cbd713c23",
             "content": "sha256:146937e16fd824a608ac19762df41deef935edb47841424ee14191f9d319c783",
             "locator": {
               "kind": "symbol",
@@ -320,7 +320,7 @@
         },
         {
           "anchor": {
-            "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
+            "blob": "0789f3ccacb2b41e5dd90b05efda788cbd713c23",
             "content": "sha256:17d6b151a1a6cab6499a784b624374619cc10bb2bc662f0e563be79e5808af7c",
             "locator": {
               "kind": "symbol",
@@ -332,7 +332,7 @@
         },
         {
           "anchor": {
-            "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
+            "blob": "0789f3ccacb2b41e5dd90b05efda788cbd713c23",
             "content": "sha256:f84ab27ebc2b039315ba342c8fa57216bb189da9bd6fb3efb3f21450b0c1119c",
             "locator": {
               "kind": "symbol",
@@ -344,7 +344,7 @@
         },
         {
           "anchor": {
-            "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
+            "blob": "0789f3ccacb2b41e5dd90b05efda788cbd713c23",
             "content": "sha256:a8bf483e9d0c92132707b9fd2be141c04b1eb58ec69f8582b79c5b19f63fbaf9",
             "locator": {
               "kind": "symbol",
@@ -361,7 +361,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bfbe2e81d84a8bfc86b538760f6510133897cc83",
+            "blob": "74906e090cbaf56d8b60a978f4ada2a8b13bda8f",
             "content": "sha256:ae0d53d8ece2974def4f707eff77ab5d8955a1b916fbfa0cd0bf4b88e11fd199",
             "locator": {
               "kind": "symbol",

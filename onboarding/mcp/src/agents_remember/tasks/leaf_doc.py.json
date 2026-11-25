@@ -4,16 +4,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The atomic reopen plan refuses a leaf the store would write to another file, then clears the doc's stamp before the next start restamps it.\n\nAnchor: \"def _plan_leaf_doc_reset(\"; \"require_task_document_in_place(json_path, doc, ReopenTaskDocumentError)\"",
+      "note": "The atomic reopen plan refuses a leaf the store would write to another file, then clears the doc's stamp before the next start restamps it.",
       "targets": [
         {
           "anchor": {
-            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
-            "content": "sha256:3800c4595e1f9a984649face53b7226fad3aae0895f842726784da91c9f124bb",
+            "blob": "55752b049b88124a221620b663ee036c825d85ae",
+            "content": "sha256:386cb1530c8942a8f910ba28b8d34f60d4fd575715873cd83fc6a4d9aa02b3c8",
             "locator": {
-              "end": 527,
-              "kind": "line_range",
-              "start": 485
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },
@@ -263,12 +261,12 @@
         },
         {
           "anchor": {
-            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "blob": "55752b049b88124a221620b663ee036c825d85ae",
             "content": "sha256:971ac8ba4f870866276d1dd33c74c891ee4a6d024f9ca800245d524b5e88d6e9",
             "locator": {
-              "end": 670,
+              "end": 671,
               "kind": "line_range",
-              "start": 670
+              "start": 671
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },
@@ -276,12 +274,12 @@
         },
         {
           "anchor": {
-            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "blob": "55752b049b88124a221620b663ee036c825d85ae",
             "content": "sha256:d7782ce6052e83ac288d7cabfb28de5d383ce8d9c38045f425ed8f3f94d0c83c",
             "locator": {
-              "end": 496,
+              "end": 497,
               "kind": "line_range",
-              "start": 496
+              "start": 497
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },

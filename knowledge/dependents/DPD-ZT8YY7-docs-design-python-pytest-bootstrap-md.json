@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "81f40d54700ea65869339061d70182e7efc59dc1",
-    "commit": "c5122294b4110a744254dad2c686a82f392304c4",
+    "codeTree": "764f146c5670470b3c8c10f5a5a7be9b66df5fac",
+    "commit": "e51f75630087a00bdcacaab646541e9cb04356d6",
     "role": "curator",
-    "statement": "The pytest policy still describes integration and stress lane selection and the bounded-memory stdio case's coverage boundary.",
+    "statement": "On merged code e51f75630 the pytest bootstrap guide still holds: integration and stress-durability make up the integration tests (119 integration modules with L27's two), CAP-L1's unit-regression module changes no selection rule, and the bounded-memory stdio case's coverage boundary is unchanged.",
     "task": "261112-BUG-L37",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "docs/design/python-pytest-bootstrap.md",
   "id": "DPD-ZT8YY7",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 16,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+      "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -106,8 +106,8 @@
     },
     {
       "anchor": {
-        "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
-        "content": "sha256:6a4c72186304a5e78ecdfd17e696fd9f9330c0b6038370aa3761b7e74436176b",
+        "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
+        "content": "sha256:a076d66d6984c935f86d91f8629fa8277f746eb790a4abd0ad31b4d5bdf868dd",
         "locator": {
           "end": 823,
           "kind": "line_range",
@@ -120,8 +120,8 @@
     },
     {
       "anchor": {
-        "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
-        "content": "sha256:9e57a692b844c1b8553d79dd25548a2eb74bc8f1047762640b1208d574b0cc61",
+        "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
+        "content": "sha256:2ea8ed247988e4c9d0b795ccb3272f77575c6afeead9565c2475e5c710dee1c8",
         "locator": {
           "end": 826,
           "kind": "line_range",

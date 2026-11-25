@@ -441,16 +441,16 @@
       ]
     },
     "40": {
-      "note": "The current lifecycle catalog declares test_knowledge_worklist_leaf.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. This is the complete declared two-artifact set; it establishes no invocation or earlier occurrence/identity-recovery event.",
+      "note": "The lifecycle catalog lists `mcp/tests/test_knowledge_worklist_leaf.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "d5599c0cbdea08d820a9774eec5c020ce86d35ba",
-            "content": "sha256:dfd4223af6cc1abfd7ff62be6523ce9ffbdf6cd366929876a167e5e5e9c111de",
+            "blob": "ac6abaf94fbc1b38d2d243883737a007bceebd64",
+            "content": "sha256:ab6a3a16a8d549b096b4a89837adbeeb6ac65cbc7d66587fcb77ce5642cabb5a",
             "locator": {
-              "end": 416,
+              "end": 426,
               "kind": "line_range",
-              "start": 416
+              "start": 65
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -458,23 +458,12 @@
         },
         {
           "anchor": {
-            "blob": "d5599c0cbdea08d820a9774eec5c020ce86d35ba",
-            "content": "sha256:dfd4223af6cc1abfd7ff62be6523ce9ffbdf6cd366929876a167e5e5e9c111de",
+            "blob": "ac6abaf94fbc1b38d2d243883737a007bceebd64",
+            "content": "sha256:bf6deaf70c539e6d9f6bc75f1c22745d756c2966aa491c9ef3c3aaef58fd918b",
             "locator": {
-              "end": 2824,
+              "end": 2872,
               "kind": "line_range",
-              "start": 2824
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d5599c0cbdea08d820a9774eec5c020ce86d35ba",
-            "content": "sha256:bfea083a52937f36f666d11027446f572fc87d8c785eeb64b61728ad468f6702",
-            "locator": {
-              "kind": "file"
+              "start": 2511
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

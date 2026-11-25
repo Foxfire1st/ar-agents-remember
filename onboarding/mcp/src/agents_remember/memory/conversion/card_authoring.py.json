@@ -58,14 +58,16 @@
       ]
     },
     "10": {
-      "note": "Merged tables are refused by name and nothing is written; a single-dash row is a placeholder.\n\nAnchor: `test_two_tables_with_no_blank_line_between_them_are_refused_by_name`",
+      "note": "Merged tables are refused by name and nothing is written; a single-dash row is a placeholder. Anchor: `test_two_tables_with_no_blank_line_between_them_are_refused_by_name`",
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
-            "content": "sha256:28fd122ff2c33d1107d06aa386bb795f4dba57257da61e80f4c61dd118335d22",
+            "blob": "ac83299d9d3037c91b21a3dc5cb939646aa6a01f",
+            "content": "sha256:ecddbc8c41e4d415f6fd4ec38c51bdc8f206c6c50abbd120783ba9ae47eeab23",
             "locator": {
-              "kind": "file"
+              "end": 983,
+              "kind": "line_range",
+              "start": 938
             },
             "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
           },
@@ -250,11 +252,37 @@
       ]
     },
     "7": {
-      "note": "Converted citation fixing authors the references of the selected card. A document list applies that operation to each named card.\n\nAnchor: “_converted_citation_fix”",
+      "note": "Converted citation fixing authors the references of the selected card. A document list applies that operation to each named card, and a call naming no document authors every converted card of the selected memory tree.\n\nAnchor: “_converted_citation_fix”",
       "targets": [
         {
           "anchor": {
-            "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
+            "content": "sha256:674f94931e095b19b536d547f440927333f4ee5e4cbc0c32a4a2ffe6c56fa024",
+            "locator": {
+              "end": 654,
+              "kind": "line_range",
+              "start": 630
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
+            "content": "sha256:5341d23a5b03cdaf667bbe234478e3c94a2691baa313b75ef28be5ff47e59ab9",
+            "locator": {
+              "end": 744,
+              "kind": "line_range",
+              "start": 729
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
             "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
             "locator": {
               "kind": "symbol",

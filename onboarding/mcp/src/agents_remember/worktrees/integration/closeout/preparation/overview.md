@@ -44,4 +44,6 @@ Ordinary closeout and direct landing still publish code plus memory content unde
 - Selected preparation checks the retained leg intent and output against the owning operation and certification. [1]
 
 
+
+
 - Ordinary code/memory publication and informational cache refresh survive outside the removed prepared finalizer. [4]

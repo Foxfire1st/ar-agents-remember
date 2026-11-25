@@ -101,16 +101,16 @@
       ]
     },
     "7": {
-      "note": "The call in every writer operation. Anchor: `write_knowledge`",
+      "note": "The writer calls carry_entries after authoring and before checking the owner’s history.",
       "targets": [
         {
           "anchor": {
-            "blob": "a980cc93e1c8141ce2b8fb3a94224a554f69f9e4",
+            "blob": "d526b667f96765bf304f2867766fdf4e0873cab0",
             "content": "sha256:3f87edf8c07c7b3127661d4099c999ef868b78f14488f3ead434784fb55c0931",
             "locator": {
-              "end": 160,
+              "end": 166,
               "kind": "line_range",
-              "start": 158
+              "start": 164
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
           },

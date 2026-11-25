@@ -20,7 +20,9 @@ This is candidate-source onboarding, not execution, CODE/MEMORY acceptance, serv
 ## Evidence
 
 
-- Worker/Curator typed review census, record-only exclusion and unknown history. [1]
+- Reason admission, threshold and differing-harness/model inheritance boundary. [2]
+
+- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [1]
 
 - The backend checks the explicit reason and the configured failed-review threshold. A step-up reads mode from its own settings row. Other launch fields follow the same-harness and model inheritance rule. [2]
 
@@ -31,5 +33,4 @@ This is candidate-source onboarding, not execution, CODE/MEMORY acceptance, serv
 
 
 - The same start-only reason enters saved retry payload and POST body. [4]
-
 - The configured Step up button sends canonical document scope and a trimmed nonblank reason. The status shows the host’s observed mode when present and uses the requested choice’s provenance in hover. Without an observation it labels the mode unreported. [5]

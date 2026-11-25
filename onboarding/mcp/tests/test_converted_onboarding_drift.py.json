@@ -133,7 +133,7 @@
         },
         {
           "anchor": {
-            "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
+            "blob": "32f6bd5c19f15de6e7a867989ab03269ba4936c2",
             "content": "sha256:677b08a743ccc029a935bfddeea1563408ab3ee04ae20644e5bece03ac5c0b63",
             "locator": {
               "end": 87,
@@ -146,12 +146,12 @@
         },
         {
           "anchor": {
-            "blob": "8ceab3920c976eb5e944bb64dd1d78704749eb3d",
+            "blob": "2a46e73d94d5704fd8e20390449cac551d787a23",
             "content": "sha256:7de0d5829e831ea53723945679674aa0166ea2774fa08c9af8165e2b91d83324",
             "locator": {
-              "end": 56,
+              "end": 58,
               "kind": "line_range",
-              "start": 36
+              "start": 38
             },
             "path": "mcp/tests/test_converted_onboarding_baseline.py"
           },

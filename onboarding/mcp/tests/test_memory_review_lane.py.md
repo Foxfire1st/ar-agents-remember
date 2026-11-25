@@ -45,12 +45,12 @@ documents built in memory, without a launch world or a persisted review.
 - A memory review never reopens a passed code record, and the code lane never writes the memory lane.
 - An unknown kind or an incomplete count refuses; it is not defaulted.
 
+The recorded memory verdict retains recorder and handover stamps. Correcting the same round on the same tree retains the first handover fact through registration changes, and a new round uses its current registration. Unbound recorder and missing handover cases preserve explicit unknown reasons.
+
 ## Evidence
 
 
-- A memory record answers through the Curator lane without reopening passed code. [1]
 
-- A memory baseline after a code pass is independent and persisted. [2]
 - A memory record binds memory bytes, not code bytes. [3]
 - The strict reader and launch-only diagnostic preserve raw state. [4]
 - The memory lane cannot be authored or erased by generic task mutations. [5]
@@ -60,3 +60,10 @@ documents built in memory, without a launch world or a persisted review.
 
 - Source assertion: test_legacy_mixed_code_records_are_not_migrated_into_curator_count. The declaration is not an execution receipt — `test_legacy_mixed_code_records_are_not_migrated_into_curator_count` in mcp/tests/test_memory_review_lane.py. [9]
 - Source assertion: test_invalid_kinds_and_incomplete_memory_count_fail_closed. The declaration is not an execution receipt — `test_invalid_kinds_and_incomplete_memory_count_fail_closed` in mcp/tests/test_memory_review_lane.py. [10]
+
+- The same review round keeps its original handover after registration or verdict corrections. [11]
+- An unbound recorder and absent handover registration have explicit unknown reasons. [12]
+
+- A memory record answers through the Curator lane without reopening passed code. [1]
+
+- Source assertion: test_memory_baseline_after_code_pass_is_independent_and_persisted. The declaration is not an execution receipt. [2]

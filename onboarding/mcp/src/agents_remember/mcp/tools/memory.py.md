@@ -10,6 +10,9 @@ Adapt retained memory quality, citations, route indexes, initialization, baselin
 
 ## Code Commentary
 
+The bounded citation fix projection carries briefsProblem when the later derived refresh reports an issue. The ordinary citation repair counts and refusal details keep their own fields.
+
+
 The payload now computes whole first and supplies the filtered answer only for legacy-format; full is still handed to _tool_payload. Other changes defer cutover imports with the same error semantics.
 
 Quality sync/start/poll wrappers forward their discriminated typed requests to the matching
@@ -82,7 +85,10 @@ The configured-contract-authority catch in the synchronous computation stays nar
 - Start and poll enforce their distinct argument shapes. [2]
 
 
+
+
 - Completed preview projections retain ordinary citation counts and failure work orders. [3]
+
 
 
 ## Historical superseded account (non-operative)

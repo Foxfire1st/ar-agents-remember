@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
+        "blob": "e5203dff574d5e8031868eeb4bec33dc0fd64fa4",
         "content": "sha256:47d02ce4c83243c402d501789605db2db56c8ce56ac0aac9f75f6aa8c64ce20f",
         "locator": {
-          "end": 467,
+          "end": 471,
           "kind": "line_range",
-          "start": 417
+          "start": 421
         }
       },
       "id": "RLZ-P2XBAV",
@@ -19,18 +19,39 @@
       },
       "rationale": "ProseWithReferences owns the rendering or source-selection boundary that implements this obligation: The shared Markdown renderer supports opt-in heading hierarchy, heading identifiers, text-only numbered references and caller-owned card links.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e5203dff574d5e8031868eeb4bec33dc0fd64fa4",
+        "content": "sha256:d59191207825004ced9755b2fb6b03df50d896ce4d9f82f9f9e82ae8543aa2a2",
+        "locator": {
+          "end": 180,
+          "kind": "line_range",
+          "start": 154
+        }
+      },
+      "id": "RLZ-RHSC93",
+      "invariant": "INV-TRMMZA",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-TRMMZA",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The record link places the supplied standing alongside the link.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
     "12": {
-      "note": "The prose renderer, its marker buttons and its link mapping.\n\nAnchor: `ProseWithReferences`",
+      "note": "The prose renderer, its marker buttons and its link mapping.\n\nAnchor: ProseWithReferences",
       "targets": [
         {
           "anchor": {
-            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
-            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
+            "blob": "e5203dff574d5e8031868eeb4bec33dc0fd64fa4",
+            "content": "sha256:47d02ce4c83243c402d501789605db2db56c8ce56ac0aac9f75f6aa8c64ce20f",
             "locator": {
-              "kind": "file"
+              "end": 471,
+              "kind": "line_range",
+              "start": 421
             }
           },
           "kind": "code"
@@ -38,14 +59,16 @@
       ]
     },
     "13": {
-      "note": "A `[n]` marker becomes a reference button only when the reference resolves.\n\nAnchor: `ReferenceList`",
+      "note": "A numbered marker becomes a button when its number appears in the delivered reference list. A marker with no matching entry stays plain text.\n\nAnchor: ProseWithReferences",
       "targets": [
         {
           "anchor": {
-            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
-            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
+            "blob": "e5203dff574d5e8031868eeb4bec33dc0fd64fa4",
+            "content": "sha256:5745d109fa90768d13b2416455f18294682a5f765241a5aca94c8e28fff5e1b0",
             "locator": {
-              "kind": "file"
+              "end": 452,
+              "kind": "line_range",
+              "start": 430
             }
           },
           "kind": "code"
@@ -53,14 +76,16 @@
       ]
     },
     "14": {
-      "note": "The authored-link to memory-path mapping.\n\nAnchor: `proseLinkPath`",
+      "note": "The authored-link to memory-path mapping.\n\nAnchor: proseLinkPath",
       "targets": [
         {
           "anchor": {
-            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
-            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
+            "blob": "e5203dff574d5e8031868eeb4bec33dc0fd64fa4",
+            "content": "sha256:7a2d56f248a00d66fe9aa9ed8acfdd127d0e42a4c47f9565a99e564c2facdc19",
             "locator": {
-              "kind": "file"
+              "end": 486,
+              "kind": "line_range",
+              "start": 476
             }
           },
           "kind": "code"
@@ -68,14 +93,16 @@
       ]
     },
     "15": {
-      "note": "An unsupported link stays readable as text.\n\nAnchor: `ProseLink`",
+      "note": "An unsupported link stays readable as text.\n\nAnchor: ProseLink",
       "targets": [
         {
           "anchor": {
-            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
-            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
+            "blob": "e5203dff574d5e8031868eeb4bec33dc0fd64fa4",
+            "content": "sha256:fc8df0743a661d17de3763a01cee9b6c27b78670b451258c02452f283986ce30",
             "locator": {
-              "kind": "file"
+              "end": 525,
+              "kind": "line_range",
+              "start": 488
             }
           },
           "kind": "code"
@@ -83,14 +110,16 @@
       ]
     },
     "16": {
-      "note": "The one navigation context every link uses.\n\nAnchor: `ReaderNavContext`",
+      "note": "The one navigation context every link uses.\n\nAnchor: ReaderNavContext",
       "targets": [
         {
           "anchor": {
-            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
-            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
+            "blob": "e5203dff574d5e8031868eeb4bec33dc0fd64fa4",
+            "content": "sha256:be186aca92088c583c488f2e1aa0e4a875e9eabf8ed17a311654ca87fed269c1",
             "locator": {
-              "kind": "file"
+              "end": 40,
+              "kind": "line_range",
+              "start": 33
             }
           },
           "kind": "code"
@@ -98,14 +127,32 @@
       ]
     },
     "17": {
-      "note": "The decision card with its alternatives.\n\nAnchor: `DecisionCard`",
+      "note": "The decision card with its alternatives.\n\nAnchor: DecisionCard",
       "targets": [
         {
           "anchor": {
-            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
-            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
+            "blob": "e5203dff574d5e8031868eeb4bec33dc0fd64fa4",
+            "content": "sha256:ce757978a7e3145b39070aa7c619bae13fba5489aa071ba3296e991b4f7923ef",
             "locator": {
-              "kind": "file"
+              "end": 375,
+              "kind": "line_range",
+              "start": 341
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "An available record renders a navigation button and can carry its own state and writer note. A missing record renders inert text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5203dff574d5e8031868eeb4bec33dc0fd64fa4",
+            "content": "sha256:261f966dfd76d07d2d8382230b97e7684bd4494c9c325198aa6c8e9967c34826",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordLink"
             }
           },
           "kind": "code"

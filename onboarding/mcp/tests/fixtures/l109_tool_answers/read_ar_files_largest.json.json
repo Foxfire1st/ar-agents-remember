@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "This static answer records the naming/compact fields and its own epoch qualifiers.",
+      "note": "The twenty compact rows name each source, existence, card status and relative brief pointer with missing freshness. The answer explains how a covering write renews the saved brief.",
       "targets": [
         {
           "anchor": {
-            "blob": "561d62632c58cdbb7f99aa47a8f381f24eecc30b",
-            "content": "sha256:217f651639c2d255a6eac44f3ea6112f8e779851ce31f167e1ba6f2d18a94ef8",
+            "blob": "f6619fbd9d3966d80bd4310fb572ca37ed22a03a",
+            "content": "sha256:85ecefcebb61597263570c84776106907a2db57500028125f3c20e8815c72809",
             "locator": {
-              "kind": "file"
+              "end": 194,
+              "kind": "line_range",
+              "start": 2
             }
           },
           "kind": "test"

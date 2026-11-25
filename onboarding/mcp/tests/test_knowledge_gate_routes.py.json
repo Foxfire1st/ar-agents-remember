@@ -317,16 +317,16 @@
       ]
     },
     "30": {
-      "note": "The lane row.",
+      "note": "The unit-regression lane selects mcp/tests/test_knowledge_gate_routes.py.\n\nAnchor: `mcp/tests/test_knowledge_gate_routes.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
             "content": "sha256:ef900a5b38b3a4393ac60a6d42f336d540dcb806538d4acca19a65c9c1fc194c",
             "locator": {
-              "end": 240,
+              "end": 244,
               "kind": "line_range",
-              "start": 240
+              "start": 244
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

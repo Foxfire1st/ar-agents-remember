@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "25a62ce8cd26fc5756a36e67dab66aecf362adae",
-        "content": "sha256:335539ef0a4371d1f6225cd7787bed8640a1e660f591e826312915df4901d8f1",
+        "blob": "a2373b697bbeca8395cc639ff1f5be34d1bd95ea",
+        "content": "sha256:fc5c4aa0bbb3634633a6e5d466fa8cba34ceb928f977a9cfff278f67d78de622",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "25a62ce8cd26fc5756a36e67dab66aecf362adae",
+        "blob": "a2373b697bbeca8395cc639ff1f5be34d1bd95ea",
         "content": "sha256:d10f8d609ff66668285da439880b9b2b15b13a3308e2f34506cd4451b8295b24",
         "locator": {
           "kind": "symbol",
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "25a62ce8cd26fc5756a36e67dab66aecf362adae",
+        "blob": "a2373b697bbeca8395cc639ff1f5be34d1bd95ea",
         "content": "sha256:415034a8c55f43eb013e6342602e6dc3461372e3d65b3a51c85645723375637b",
         "locator": {
           "kind": "symbol",
@@ -55,6 +55,23 @@
       "role": "enforcement"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The taskless receipt address is derived from the shared holder and role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2373b697bbeca8395cc639ff1f5be34d1bd95ea",
+            "content": "sha256:c1abb1b34c880c32bca9301b2cb1933441c50adb6d4a37a86aaf5b9a5220e1c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskless_session_directory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

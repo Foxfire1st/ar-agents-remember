@@ -4,12 +4,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Three separately recorded single-revision records stay independently addressable with their exact statements.\n\nAnchor: `test_three_separately_recorded_revisions_stay_independently_addressable`",
+      "note": "Three separately recorded single-revision records stay independently addressable with their exact statements.",
       "targets": [
         {
           "anchor": {
-            "blob": "5f731d6ab3a1c91c71cde6d2bb338c768b057fe1",
-            "content": "sha256:706064eecc17d776c1f88fa9983ef9ced9e464af39b699ea8ba47e04fe1e7152",
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
+            "content": "sha256:3650fefb3c2cea27384b04961de4cad977b8478873d1a562e8796d2a34c323a0",
             "locator": {
               "kind": "file"
             }
@@ -19,14 +19,16 @@
       ]
     },
     "13": {
-      "note": "Read-only production store and test-only builder.\n\nAnchor: `open_read_only_store` `RowStore` `test_a_reader_opens_a_dataset_through_a_connection_that_cannot_write`",
+      "note": "Read-only production store and test-only builder.",
       "targets": [
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
-            "content": "sha256:06f9fa0b997c9bd42569065fb5f62ea39d370764509c8c2467b0985cdde68958",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
+            "content": "sha256:5a7d444f6d5aa6950d3170e1dfb74ced2b56bfcb496f38dd0485d8bcd71c6898",
             "locator": {
-              "kind": "file"
+              "end": 227,
+              "kind": "line_range",
+              "start": 209
             },
             "path": "mcp/src/agents_remember/memory/knowledge/store.py"
           },
@@ -34,10 +36,12 @@
         },
         {
           "anchor": {
-            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
-            "content": "sha256:43a32e8370a3aa07c1e8247bd8b4d445a42caab3b630d2ed5783e663bc3c824e",
+            "blob": "63570d7606856b5028b51268077f62b8b3d27781",
+            "content": "sha256:c72b75d2968dbdbe083fe569dcfce5a51bf29b7437c814ab1ee6a4c69b43ca38",
             "locator": {
-              "kind": "file"
+              "end": 663,
+              "kind": "line_range",
+              "start": 573
             },
             "path": "mcp/tests/knowledge_rows_test_support.py"
           },
@@ -45,21 +49,22 @@
         },
         {
           "anchor": {
-            "blob": "5f731d6ab3a1c91c71cde6d2bb338c768b057fe1",
-            "content": "sha256:706064eecc17d776c1f88fa9983ef9ced9e464af39b699ea8ba47e04fe1e7152",
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
+            "content": "sha256:4de47cca5bc0e56f1b6380695d0f67d93f04d563412cff9710b20efcafdbdcbb",
             "locator": {
-              "kind": "file"
+              "end": 131,
+              "kind": "line_range",
+              "start": 112
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
-            "content": "sha256:5a7d444f6d5aa6950d3170e1dfb74ced2b56bfcb496f38dd0485d8bcd71c6898",
+            "blob": "974cb80cf0b52e2967827cccbed74d0e3567d17b",
+            "content": "sha256:848be0d0d6874871096e89d30bd6d058792fc8f108f4db8cb2391740e8a8968c",
             "locator": {
-              "kind": "symbol",
-              "name": "open_read_only_store"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/store.py"
           },
@@ -67,11 +72,10 @@
         },
         {
           "anchor": {
-            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
-            "content": "sha256:d9c7bd2f6f17f175008858f09a85cd9f5d2f7eb7b157523ccacd8976c11547c5",
+            "blob": "63570d7606856b5028b51268077f62b8b3d27781",
+            "content": "sha256:a9a84c441f17b2b5a04d286f7aa9739d56b5e38f1cee90c5bef9ed86359d81fe",
             "locator": {
-              "kind": "symbol",
-              "name": "RowStore"
+              "kind": "file"
             },
             "path": "mcp/tests/knowledge_rows_test_support.py"
           },
@@ -79,11 +83,10 @@
         },
         {
           "anchor": {
-            "blob": "5f731d6ab3a1c91c71cde6d2bb338c768b057fe1",
-            "content": "sha256:4de47cca5bc0e56f1b6380695d0f67d93f04d563412cff9710b20efcafdbdcbb",
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
+            "content": "sha256:3650fefb3c2cea27384b04961de4cad977b8478873d1a562e8796d2a34c323a0",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_reader_opens_a_dataset_through_a_connection_that_cannot_write"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -91,12 +94,12 @@
       ]
     },
     "14": {
-      "note": "The current separate-record revision read: three single-revision records stay independently addressable, and the former divergent-successor population is not this fixture's executable coverage.\n\nAnchor: `test_three_separately_recorded_revisions_stay_independently_addressable`",
+      "note": "The current separate-record revision read: three single-revision records stay independently addressable, and the former divergent-successor population is not this fixture's executable coverage.",
       "targets": [
         {
           "anchor": {
-            "blob": "5f731d6ab3a1c91c71cde6d2bb338c768b057fe1",
-            "content": "sha256:706064eecc17d776c1f88fa9983ef9ced9e464af39b699ea8ba47e04fe1e7152",
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
+            "content": "sha256:3650fefb3c2cea27384b04961de4cad977b8478873d1a562e8796d2a34c323a0",
             "locator": {
               "kind": "file"
             }
@@ -106,25 +109,26 @@
       ]
     },
     "15": {
-      "note": "The database-level immutability proof against the stored revision rows.\n\nAnchor: `test_stored_revision_rows_refuse_update_and_delete`",
+      "note": "The database-level immutability proof against the stored revision rows.",
       "targets": [
         {
           "anchor": {
-            "blob": "5f731d6ab3a1c91c71cde6d2bb338c768b057fe1",
-            "content": "sha256:706064eecc17d776c1f88fa9983ef9ced9e464af39b699ea8ba47e04fe1e7152",
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
+            "content": "sha256:3d5e94bf9cbb221275517bce7459e1e5684be054e3021c82931cf27980d7de4d",
             "locator": {
-              "kind": "file"
+              "end": 163,
+              "kind": "line_range",
+              "start": 134
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "5f731d6ab3a1c91c71cde6d2bb338c768b057fe1",
-            "content": "sha256:3d5e94bf9cbb221275517bce7459e1e5684be054e3021c82931cf27980d7de4d",
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
+            "content": "sha256:3650fefb3c2cea27384b04961de4cad977b8478873d1a562e8796d2a34c323a0",
             "locator": {
-              "kind": "symbol",
-              "name": "test_stored_revision_rows_refuse_update_and_delete"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -132,25 +136,26 @@
       ]
     },
     "16": {
-      "note": "The seal covering more than the statement.\n\nAnchor: `test_payload_digest_seals_more_than_the_statement`",
+      "note": "The seal covering more than the statement.",
       "targets": [
         {
           "anchor": {
-            "blob": "5f731d6ab3a1c91c71cde6d2bb338c768b057fe1",
-            "content": "sha256:706064eecc17d776c1f88fa9983ef9ced9e464af39b699ea8ba47e04fe1e7152",
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
+            "content": "sha256:33705288b73e234ae9b184b303010c01d394ab99a4cab40401e81c5643bed8e7",
             "locator": {
-              "kind": "file"
+              "end": 197,
+              "kind": "line_range",
+              "start": 166
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "5f731d6ab3a1c91c71cde6d2bb338c768b057fe1",
-            "content": "sha256:97a1a495b35cfe9f5fd917bc288797283c07e57bfc5177c61dd777a68271c0b1",
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
+            "content": "sha256:3650fefb3c2cea27384b04961de4cad977b8478873d1a562e8796d2a34c323a0",
             "locator": {
-              "kind": "symbol",
-              "name": "test_payload_digest_seals_more_than_the_statement"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -162,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5f731d6ab3a1c91c71cde6d2bb338c768b057fe1",
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
             "content": "sha256:1c162353d3f25d8f5abeb326b08d895a8b08a5afe8bf5f6990aabc56a12e2d2e",
             "locator": {
               "kind": "symbol",
@@ -203,16 +208,16 @@
       ]
     },
     "19": {
-      "note": "The current unit-regression lane registration makes this module part of the manifest. Anchor: `test_knowledge_store`",
+      "note": "The unit-regression lane selects mcp/tests/test_knowledge_store.py.\n\nAnchor: `mcp/tests/test_knowledge_store.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
             "content": "sha256:ab4c000ebb434e9339018678bac61a62e5a6bd96d610521ef2e3883e622b137f",
             "locator": {
-              "end": 280,
+              "end": 288,
               "kind": "line_range",
-              "start": 280
+              "start": 288
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -221,25 +226,26 @@
       ]
     },
     "2": {
-      "note": "Identity/schema preserved on reopen.\n\nAnchor: `test_reopening_the_same_path_keeps_identity_and_schema`",
+      "note": "Identity/schema preserved on reopen.",
       "targets": [
         {
           "anchor": {
-            "blob": "5f731d6ab3a1c91c71cde6d2bb338c768b057fe1",
-            "content": "sha256:706064eecc17d776c1f88fa9983ef9ced9e464af39b699ea8ba47e04fe1e7152",
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
+            "content": "sha256:f7607407412bbcd86fe1f0ad7b70b3b9f74e495ab0cb3e0efae6e55b47d480c3",
             "locator": {
-              "kind": "file"
+              "end": 109,
+              "kind": "line_range",
+              "start": 86
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "5f731d6ab3a1c91c71cde6d2bb338c768b057fe1",
-            "content": "sha256:f7607407412bbcd86fe1f0ad7b70b3b9f74e495ab0cb3e0efae6e55b47d480c3",
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
+            "content": "sha256:3650fefb3c2cea27384b04961de4cad977b8478873d1a562e8796d2a34c323a0",
             "locator": {
-              "kind": "symbol",
-              "name": "test_reopening_the_same_path_keeps_identity_and_schema"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -247,16 +253,16 @@
       ]
     },
     "20": {
-      "note": "The fixture's registered stable contract and evidence node. Source caption: `knowledge-identity-branching-fixture`",
+      "note": "The identity-branching replacement contract declares mcp/tests/test_knowledge_store.py::test_three_separately_recorded_revisions_stay_independently_addressable as its evidence node.",
       "targets": [
         {
           "anchor": {
-            "blob": "d5599c0cbdea08d820a9774eec5c020ce86d35ba",
+            "blob": "ac6abaf94fbc1b38d2d243883737a007bceebd64",
             "content": "sha256:e0f5339047af053e5cde5eb28cacba43cad9bec73f23b3611e781d3c3b5086b0",
             "locator": {
-              "end": 3584,
+              "end": 3645,
               "kind": "line_range",
-              "start": 3567
+              "start": 3628
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -264,12 +270,12 @@
         },
         {
           "anchor": {
-            "blob": "d5599c0cbdea08d820a9774eec5c020ce86d35ba",
+            "blob": "ac6abaf94fbc1b38d2d243883737a007bceebd64",
             "content": "sha256:dd29b9575318035917550d8cd687bff9d97bc8f7656afd6847e27186bf2bdcd1",
             "locator": {
-              "end": 5086,
+              "end": 5232,
               "kind": "line_range",
-              "start": 5083
+              "start": 5229
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -277,26 +283,61 @@
         }
       ]
     },
-    "6": {
-      "note": "Stored revisions reject mutation.\n\nAnchor: `test_stored_revision_rows_refuse_update_and_delete`",
+    "33": {
+      "note": "The schema pin observes the new generation and verifies table drift refusal.\n\nAnchor: `CURRENT_GENERATION.schema_name`",
       "targets": [
         {
           "anchor": {
-            "blob": "5f731d6ab3a1c91c71cde6d2bb338c768b057fe1",
-            "content": "sha256:706064eecc17d776c1f88fa9983ef9ced9e464af39b699ea8ba47e04fe1e7152",
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
+            "content": "sha256:1d0ee5ec589326b4ca5ba1cbec6ee8cbaa9bff6f6cabe06fc094346722a8e6e7",
             "locator": {
-              "kind": "file"
+              "end": 273,
+              "kind": "line_range",
+              "start": 246
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "The declared derived table set includes ix_revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
+            "content": "sha256:b8add9b402e125602768f0504c529431f26566d08e71f974725555f3099c4536",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 221
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Stored revisions reject mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
+            "content": "sha256:3d5e94bf9cbb221275517bce7459e1e5684be054e3021c82931cf27980d7de4d",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 134
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "5f731d6ab3a1c91c71cde6d2bb338c768b057fe1",
-            "content": "sha256:3d5e94bf9cbb221275517bce7459e1e5684be054e3021c82931cf27980d7de4d",
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
+            "content": "sha256:3650fefb3c2cea27384b04961de4cad977b8478873d1a562e8796d2a34c323a0",
             "locator": {
-              "kind": "symbol",
-              "name": "test_stored_revision_rows_refuse_update_and_delete"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -304,25 +345,26 @@
       ]
     },
     "7": {
-      "note": "Decode verifies seal beyond statement.\n\nAnchor: `test_payload_digest_seals_more_than_the_statement`",
+      "note": "Decode verifies seal beyond statement.",
       "targets": [
         {
           "anchor": {
-            "blob": "5f731d6ab3a1c91c71cde6d2bb338c768b057fe1",
-            "content": "sha256:706064eecc17d776c1f88fa9983ef9ced9e464af39b699ea8ba47e04fe1e7152",
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
+            "content": "sha256:33705288b73e234ae9b184b303010c01d394ab99a4cab40401e81c5643bed8e7",
             "locator": {
-              "kind": "file"
+              "end": 197,
+              "kind": "line_range",
+              "start": 166
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "5f731d6ab3a1c91c71cde6d2bb338c768b057fe1",
-            "content": "sha256:97a1a495b35cfe9f5fd917bc288797283c07e57bfc5177c61dd777a68271c0b1",
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
+            "content": "sha256:3650fefb3c2cea27384b04961de4cad977b8478873d1a562e8796d2a34c323a0",
             "locator": {
-              "kind": "symbol",
-              "name": "test_payload_digest_seals_more_than_the_statement"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -330,36 +372,38 @@
       ]
     },
     "8": {
-      "note": "Schema drift and unsupported files refuse.\n\nAnchor: `test_the_declared_schema_is_pinned_and_a_changed_table_definition_fails_the_pin` `test_a_database_that_is_not_this_schema_refuses_to_open`",
+      "note": "Schema drift and unsupported files refuse.",
       "targets": [
         {
           "anchor": {
-            "blob": "5f731d6ab3a1c91c71cde6d2bb338c768b057fe1",
-            "content": "sha256:706064eecc17d776c1f88fa9983ef9ced9e464af39b699ea8ba47e04fe1e7152",
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
+            "content": "sha256:3b7dabe008c3c2889b3ae44dcc9f4ab59fe9e9c6bbfd87170dff9b606109fc53",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 244
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
+            "content": "sha256:088eff4954eee64d47d4561ad33bc2a798ad670b4667ed169d24775be7824987",
+            "locator": {
+              "end": 310,
+              "kind": "line_range",
+              "start": 274
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4a8e08744b1f05ab77c01f58d876a031f53cbe53",
+            "content": "sha256:3650fefb3c2cea27384b04961de4cad977b8478873d1a562e8796d2a34c323a0",
             "locator": {
               "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "5f731d6ab3a1c91c71cde6d2bb338c768b057fe1",
-            "content": "sha256:7495c3d51ba1180f62474e8003d4fe060c077c4fd49a71c4beaaeb1f3df59904",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_declared_schema_is_pinned_and_a_changed_table_definition_fails_the_pin"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "5f731d6ab3a1c91c71cde6d2bb338c768b057fe1",
-            "content": "sha256:9abec06ac0b4ae746be660704479f56815b1d97a40eaca2e7c85f0c97ed11b1e",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_database_that_is_not_this_schema_refuses_to_open"
             }
           },
           "kind": "test"

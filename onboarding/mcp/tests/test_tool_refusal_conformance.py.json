@@ -205,16 +205,16 @@
       ]
     },
     "16": {
-      "note": "The lane row that keeps this module in the default selection. Source caption: \"mcp/tests/test_tool_refusal_conformance.py\"",
+      "note": "The unit-regression lane selects mcp/tests/test_tool_refusal_conformance.py.\n\nAnchor: `mcp/tests/test_tool_refusal_conformance.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
             "content": "sha256:b78fff81f43c6d30e5e8b25d49358e2b1ed7d8595b49fe2de0249401357402bf",
             "locator": {
-              "end": 635,
+              "end": 649,
               "kind": "line_range",
-              "start": 635
+              "start": 649
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

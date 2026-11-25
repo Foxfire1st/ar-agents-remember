@@ -1,6 +1,6 @@
 {
   "anchor": {
-    "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+    "blob": "27110dfe47d3506ccb232754d4961744f5a3c59c",
     "content": "sha256:7826c72a7a27a46f2dff03a535a1e576667459cad0ad1b66aac3c83ab7df91f0",
     "locator": {
       "kind": "symbol",
@@ -18,12 +18,12 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928-MIK-L97"
   },
   "state": "open",
-  "statement": "The served descriptions of runtime_install and server_info tell of provider assets, provider watchers and provider keys, which every agent reads although no part of the product starts or queries a provider."
+  "statement": "The tool descriptions of runtime_install and server_info still mention provider assets, provider watchers or unused provider keys after the older search-provider workflow was withdrawn."
 }

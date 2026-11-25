@@ -26,7 +26,7 @@ This read never consults `memory.md`.
 already authorized memory-content workflow. It adds the root cache ignore rule and removes the cache
 from the Git index while retaining the disk file. With `index_path` the exclusion writes a private
 index file instead of the worktree's own index — this is how the converted baseline adoption stages
-without touching the real index before validation passes; without it the worktree's own index is
+without touching the real index during preview validation. Without it the worktree's own index is
 prepared. It returns the prepared `.gitignore` bytes, so a refusing route can tell its own change
 apart from a concurrent external edit without re-reading the file. That housekeeping belongs to
 ordinary content staging; the helper does not create a commit, select a publication ref, or decide
@@ -40,10 +40,7 @@ already completed Git action succeeded.
 
 `ignore_memory_cache(repository)` records the cache's ignore rule in `.gitignore` and does nothing else. It is
 the one write `prepare_memory_cache` makes to memory content, and `prepare_memory_cache` calls it first. It
-returns the exact bytes written. A route that judges the exact tree it is about to commit calls it before
-it reads that tree, so the judged tree already holds the line, and restores `.gitignore` when it refuses:
-the converted worktree closeout does (INV-49E649), and the converted baseline adoption restores only
-bytes provably still its own, preserving a concurrent external edit.
+returns the exact bytes written. Durable memory publication uses `ignore_memory_publication` to prepare both the ledger and the `/briefs/` lines before exact tree judgment. `prepare_memory_publication` also excludes the ledger using the publication's private index. Each caller owns its take-back and preserves a later external edit.
 
 ### Conventions
 
@@ -94,9 +91,25 @@ No additional configured external or sibling-repository evidence is claimed.
 
 No additional configured cross-repository evidence.
 
+
+
 - Preparation writes a private index file when asked, and returns the prepared ignore bytes. [9]
-- The ignore rule is the one content write, and its exact bytes are returned. [10]
+
+
+
+- The ledger-only ignore helper's content write records the ledger ignore line and returns the exact prepared bytes. [10]
+
+
+
 
 - Preparation excludes the cache and refresh reports materialization outcomes. [3]
-- The ignore rule alone: the one write the preparation makes to content. [7]
+
+
+
+- Ledger-only cache preparation has one content write, the ledger ignore line. Durable publication uses the combined ignore preparation. [7]
+
+
+
 - The preparation records the rule first, then removes the cache from the index. [8]
+
+- The durable publication helper prepares both derived ignore rules and excludes the ledger on the selected private index. [11]

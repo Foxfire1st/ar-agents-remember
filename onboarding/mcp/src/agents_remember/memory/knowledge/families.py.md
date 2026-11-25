@@ -16,7 +16,7 @@ get_family reads one family identity or returns None. get_family_revision reads 
 
 ### Invariants And Boundaries
 
-- Reading a revision verifies its guarantee, origin state, acceptance reference and provenance as one sealed aggregate.
+- Reading a family revision verifies the seal over its authored guarantee and provenance with its identity and predecessor set. State comes separately from the selected tree's index.
 - Memberships are separate authored relations; these readers do not derive or complete a guarantee from members.
 - These functions only read through the supplied opened store. They create no family, revision or lineage edge and manufacture no acceptance or Git state.
 - The derived-index table declarations remain separate from the text-file authoring route.
@@ -33,9 +33,7 @@ The canonical database's create_family, create_family_revision, insert helpers, 
 
 ### Invariants And Boundaries
 
-- **A family revision is immutable and its payload is sealed.** The joint guarantee, the origin
-  state, the acceptance reference, the provenance and the *sorted* predecessor set are one
-  aggregate. Changing the guarantee means authoring a separately identified successor; a membership
+- **A family revision is immutable and its payload is sealed.** The joint guarantee, provenance and the sorted predecessor set are part of the sealed aggregate. The derived state is outside the seal. Changing the guarantee means authoring a separately identified successor; a membership
   citing the original revision keeps resolving the original text.
 - **The guarantee is never derived from the members.** Nothing in this module reads a membership to
   compose or complete a guarantee.
@@ -56,16 +54,13 @@ No configured domain documentation could be checked.
 
 
 
-- Families are authored joint guarantees; these functions only read the derived index. [1]
 
 
 
 
-- The retained family identity, exact revision and revision enumeration reads. [9]
 
 
 
-- The family revision payload mapping and digest. [12]
 
 
 - The retained family revision value shapes. [13]
@@ -73,14 +68,10 @@ No configured domain documentation could be checked.
 The requirement this module's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it.
 
 
-- - The two rules this module is shaped by, stated in its own docstring. [14]
 
 
-- - The read surface, including the seal-verifying revision read. [15]
 
-- - The payload a family revision's digest seals, including the sorted predecessor set. [16]
 
-- - The declared `family`, `family_revision` and `family_member` tables and their indexes. [17]
 
 
 ### Cross-Repo References
@@ -88,3 +79,13 @@ The requirement this module's first delivered slice belongs to: requirement pack
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+- Families are authored joint guarantees; these functions only read the derived index. [1]
+- The read surface, including the seal-verifying revision read. [15]
+- The retained family identity, exact revision and revision enumeration reads. [9]
+
+- The family revision payload mapping and digest include the sorted predecessor set. [12]
+- The payload a family revision's digest seals, including the sorted predecessor set. [16]
+
+- The declared `family`, `family_revision` and `family_member` tables and their indexes. [17]
+- The two rules this module is shaped by, stated in its own docstring. [14]

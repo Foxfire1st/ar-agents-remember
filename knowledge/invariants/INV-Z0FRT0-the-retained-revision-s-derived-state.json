@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Conversion uses the retained record's exact meaning rather than a competing claim for its revision number."
+  },
+  "applicability": "Matching an immutable reviewed tree to a retained revision when its record filename has changed.",
+  "conditions": [
+    "Stable record ID, revision and semantic content identify the proof."
+  ],
+  "exclusions": [
+    "An unresolvable or different recorded revision supplies no exact proof."
+  ],
+  "id": "INV-Z0FRT0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/reviewer/e0769575-0bab-4e1f-86a6-44c8cb307f53/round-9/verdict.md, R9-W10 exact attempt and verification.md."
+      ],
+      "path": "revision-standing-authoring.json"
+    },
+    "handoffEntry": "KNO-R03@v1",
+    "leaf": "261112-KNO-L3",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The retained revision's derived state and credit follow eligible evidence for its stable record ID, revision and meaning, including when the reviewed filename differs.",
+  "status": "proposed",
+  "supersedes": []
+}

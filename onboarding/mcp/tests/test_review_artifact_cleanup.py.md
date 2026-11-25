@@ -10,8 +10,7 @@
 task's own review artifacts, and a repeated attempt keeps its receipts.** The `task`
 fixture is a coordination task root with its task document and one leaf enclosure contract, a plain code and a
 plain memory repository and no converted-memory fixture. The hook inspects refs, manifests and file content, including SQLite datasets. The core cleanup and ownership cases assert what another task still holds. Cache-only cases assert the addressed task’s preview, deletion, remainder and receipt replay. The file is self-contained (no shared
-support module); it runs in the `unit-regression` lane
-(`test-evidence-lanes.toml`).
+support module).
 
 ## Code Commentary
 
@@ -127,5 +126,4 @@ The cases use two disposable repositories and a temporary coordination root.
 
 - The receipt's planned-key set carries the frame-revision class. [10]
 
-
-- The lane row. Source caption: "mcp/tests/test_review_artifact_cleanup.py" [8]
+- The `unit-regression` lane selects `mcp/tests/test_review_artifact_cleanup.py`. [8]

@@ -67,8 +67,8 @@ now contains only `relationship_union`, `source_inventory`, `join_key` and `deta
 alone, not the retired wire value `ambiguous`.
 
 **The value tree mirrors the server's models field for field.** `ReviewFamilyGuarantee` carries the
-family revision's authored text (`joint_guarantee`), its identities, `state_at_origin`, the optional
-`acceptance_ref`, its `provenance` and its `payload_digest`. `ReviewFamilyMemberSource` carries one
+family revision's authored text (`joint_guarantee`), its identities, provenance, payload digest
+and the revision state derived for the snapshot that supplied it. `ReviewFamilyMemberSource` carries one
 realization claim's `claim_id`, `invariant_revision_id`, `role`, `rationale` and `detail`, with
 `path`, `recorded_source_identity`, `observed_source_identity` and `resolution` optional because the
 address and the resolution travel together or not at all — the server refuses one without the other.
@@ -129,7 +129,9 @@ It reads the two `guarantee` fields and nothing else. When the before side recor
 `unrecorded` (with the entry's own `detail`) if the after side recorded none too, otherwise
 `one_sided` for `after`; when only the after side is absent it returns `one_sided` for `before`;
 when both are present it delegates to `twoRecordedGuarantees`. That private helper compares the two
-`revision_id` values first: equal means `unchanged_revision` from identity alone — it does not compare those two texts in that branch. Otherwise it
+`revision_id` values first. Equal identities yield `unchanged_revision` with the candidate in
+`guarantee` and the baseline in `before`. This preserves both snapshots' derived states for the same
+revision. Otherwise it
 compares `joint_guarantee` text and returns `identical_text` for two distinct revisions whose
 recorded text happens to be equal (a revision was authored; the text is what did not move) or
 `changed` for two distinct texts. The five shapes are therefore distinct answers about the store,
@@ -183,9 +185,10 @@ it.
   much of it this page carried.
 - **The exported join key is `invariant_revision_id`.** It declares the recorded cross-collection
   association, not runtime enforcement and not the removed evidence/assessment owners.
-- **Identity and supplied wording are separate.** The helper's `unchanged_revision` is identity-based;
-  current tree-comparison rendering checks changed wording first. `identical_text` records distinct
-  revisions with equal text, while `one_sided` lacks the other operand.
+- **Identity, supplied wording and snapshot state are separate.** The helper's `unchanged_revision`
+  is identity-based and retains both snapshot operands. Current tree-comparison rendering checks
+  changed wording first. `identical_text` records distinct revisions with equal text, while
+  `one_sided` lacks the other operand.
 - **`memberComparison` carries no sentence.** It answers with a kind and the operands it reached;
   what may be said about a missing side is decided by the caller from that side's own `state` and its
   roster page's completeness.
@@ -231,7 +234,7 @@ beside it, and every anchor in a row occurs inside the range that row cites.
 
 - **The one join key, held as a value rather than prose because joining on a label or a path would be inventing the association.** [5]
 
-- The family revision's own authored guarantee, printed from the stored text rather than assembled from members. [6]
+- The family guarantee DTO keeps authored text, snapshot-derived revision state and provenance as separate fields. [6]
 
 - One realization claim's source reference: the address and what the read resolved it to travel together or not at all; required stored role and rationale; the structured locator, this side's resolved ranges and the locator state. [7]
 
@@ -261,13 +264,10 @@ beside it, and every anchor in a row occurs inside the range that row cites.
 
 - The exported unresolved-selection list contains unresolved only, distinct from a measured empty roster. [20]
 
-- **The five shapes of a guarantee comparison.** [21]
-
-- The helper separates same identity, distinct identities with equal wording and a missing second operand; these cases must not be conflated. [22]
-
-- The pure guarantee helper reads supplied sides and checks revision identity before text; it is not the current renderer's complete wording decision. [23]
-
-- The private second half: identities decide first, then the recorded text. [24]
+- Five comparison shapes preserve the supplied operands. The same-revision shape keeps the two snapshots' guarantees. [21]
+- Same revision, distinct revisions with equal wording and an absent operand carry distinct comparison meanings. [22]
+- The pure helper handles absent operands and delegates the comparison when both sides supplied guarantees. [23]
+- The helper retains after and before for equal revision IDs. It compares wording when the revisions differ. [24]
 
 - **`MemberComparison`'s four shapes, and the `not_on_page` / `one_sided` distinction that the caller must decide rather than the value.** [25]
 
@@ -286,7 +286,6 @@ beside it, and every anchor in a row occurs inside the range that row cites.
 - The server's own rules the mirror carries across: a guarantee is the family's authored text and the five status dimensions stay separate. [31]
 
 
-- The tree retains side order and member-row reduction; guarantee rendering lives in FamilyGuarantees and selected statements use their own text-first owner. [32]
 
 
 - The change literals and one member occurrence's facts, primary, marks and three reason lists kept apart (MIK-L33). [33]
@@ -302,3 +301,5 @@ one association it carries is an in-repository contract rather than a cross-repo
 No meaningful cross-repo references found.
 
 - Selected revisions carry owner-supplied display versions and writer facts without browser defaulting. [35]
+
+- The tree retains side order and member-row reduction; guarantee rendering lives in FamilyGuarantees and selected statements use their own text-first owner. [32]

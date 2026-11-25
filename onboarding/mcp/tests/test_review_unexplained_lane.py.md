@@ -7,10 +7,7 @@
 ## Purpose
 
 **MIK-R32's backend evidence: file buckets, hunk classes, destinations, the per-file response and the entry count
-(11 named test definitions).** The core comparison reopens base and candidate trees from two temporary Git repositories with `reopened_trees`.
-The failure cases can supply a tree ID Git cannot read. The focused route test binds a stub port, while the live-leaf
-route and dataset cases use the `world` fixture imported from `test_review_git_trees.py`. Registered in the
-`unit-regression` lane (`mcp/tests/test-evidence-lanes.toml:520`).
+(11 named test definitions).** The core comparison reopens base and candidate trees from two temporary Git repositories with `reopened_trees`. Failure cases can supply a tree ID Git cannot read. The focused route binds a stub port, and the live-leaf route and dataset cases use `world` from `test_review_git_trees.py`.
 
 ## Code Commentary
 
@@ -130,6 +127,4 @@ No cross-repo boundary is crossed by this file.
 
 - A dataset review's entry has no attribution. [14]
 
-
-
-- The module's lane row. Anchor: "mcp/tests/test_review_unexplained_lane.py" Anchor: "mcp/tests/test_review_unexplained_lane.py" [15]
+- The `unit-regression` lane selects `mcp/tests/test_review_unexplained_lane.py` (`mcp/tests/test-evidence-lanes.toml:539`). [15]

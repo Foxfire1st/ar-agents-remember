@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e534e5488c39544030abb9ef2b6f4bef14945eee",
+        "blob": "7eb31a98c36e64a405175740315e3170b66f448d",
+        "content": "sha256:300474691b7260131f6c019a5988045bc68fee8bc0552531fc64b0dfed20c2a2",
+        "locator": {
+          "end": 430,
+          "kind": "line_range",
+          "start": 427
+        }
+      },
+      "id": "RLZ-103Z8D",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "The linked Concepts explanation distinguishes later counts and whole-batch compact rows.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7eb31a98c36e64a405175740315e3170b66f448d",
         "content": "sha256:2db133bc80fbbbe64238d764eb8b5fe39627e9b12ec714f523b1d5b4d1b7f33d",
         "locator": {
           "end": 224,
@@ -27,7 +46,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e534e5488c39544030abb9ef2b6f4bef14945eee",
+            "blob": "7eb31a98c36e64a405175740315e3170b66f448d",
             "content": "sha256:f51e4d8e668c840fbb8b6087e3426a1234dcaffd0724be55fb7e265f684fd6c2",
             "locator": {
               "end": 217,
@@ -44,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e534e5488c39544030abb9ef2b6f4bef14945eee",
+            "blob": "7eb31a98c36e64a405175740315e3170b66f448d",
             "content": "sha256:2db133bc80fbbbe64238d764eb8b5fe39627e9b12ec714f523b1d5b4d1b7f33d",
             "locator": {
               "end": 224,

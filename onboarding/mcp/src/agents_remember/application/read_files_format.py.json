@@ -88,7 +88,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+            "blob": "d510d9d58081286c07420229dbc887d205b07902",
             "content": "sha256:f0b5aaa14a19ede6854fbd25460c1942f35362646778ad73ea404eed04184294",
             "locator": {
               "kind": "symbol",
@@ -101,14 +101,16 @@
       ]
     },
     "5": {
-      "note": "read_ar_files names the converted records that govern a path - existence, the card's location and the records' states - and carries none of their text; an unconverted tree is answered as unconverted rather than with a knowledge section.\n\nAnchor: `test_read_ar_files_returns_legacy_format_or_resolved_references`",
+      "note": "The converted reader names the source and carries the invariant's text in its short brief.",
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
-            "content": "sha256:28fd122ff2c33d1107d06aa386bb795f4dba57257da61e80f4c61dd118335d22",
+            "blob": "ac83299d9d3037c91b21a3dc5cb939646aa6a01f",
+            "content": "sha256:5da10bdbccd082f19e57ab7c3285566e27636e786d95cff5d45e2e1685b4fc17",
             "locator": {
-              "kind": "file"
+              "end": 138,
+              "kind": "line_range",
+              "start": 111
             },
             "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
           },

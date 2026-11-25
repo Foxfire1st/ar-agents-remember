@@ -74,6 +74,23 @@
           "kind": "code"
         }
       ]
+    },
+    "3": {
+      "note": "The dashboard HTML mounts the application at `#root`, loads `/src/main.tsx` as a module and sets the referrer policy to `no-referrer`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7fe64f3da7571f4d7e514183e7d3ed0ec7861009",
+            "content": "sha256:296b6bea928dec7ed4ec9aa4921b7d59ec9e625148a496415829010848158ab8",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

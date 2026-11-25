@@ -1,0 +1,149 @@
+{
+  "path": "mcp/src/agents_remember/application/memory_initialization.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
+        "content": "sha256:ae5997c75a3f9b9702040723b9c6b0a30ddef7a3a651258c3b1344406c65d441",
+        "locator": {
+          "end": 152,
+          "kind": "line_range",
+          "start": 148
+        }
+      },
+      "id": "RLZ-GFATR9",
+      "invariant": "INV-09DXWE",
+      "origin": {
+        "handoffEntry": "L188-curator-B12-regular-task-next-action-a740",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The indexed-memory result sends recorded/not-recorded states to the same developer-started Architect and regular-task continuation, while an unusable partial index keeps its explicit repair action. The initializer reports; it performs no foundation production.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
+        "content": "sha256:910178dbc0247244e141b02e44b602b499401c0af9db5b9fa94e9d992bb89e05",
+        "locator": {
+          "end": 30,
+          "kind": "line_range",
+          "start": 26
+        }
+      },
+      "id": "RLZ-MF9P9F",
+      "invariant": "INV-09DXWE",
+      "origin": {
+        "handoffEntry": "L188-curator-B12-regular-task-next-action-a740",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The shared guidance names the developer-started Architect, a regular foundation task and its Curator. It presents the existing setup-to-foundation continuation rather than authorizing taskless foundation production.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
+        "content": "sha256:ff465974c2ff2904981ae7f7b0fe9990369387c39693b2aad43fa9ae5f18cb61",
+        "locator": {
+          "kind": "symbol",
+          "name": "_knowledge_foundation_state"
+        }
+      },
+      "id": "RLZ-PA1SGN",
+      "invariant": "INV-TJADR1",
+      "origin": {
+        "handoffEntry": "L8-CURATION-INV-TJADR1",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "The measured knowledge block retains admission-specific state and nextAction before a revision, and reports the current converted-tree knowledge state with Architect foundation guidance after adoption.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
+        "content": "sha256:7ef380476ad350970442b0914c3a71a14bb4114fe50df852a1834179bc78e67f",
+        "locator": {
+          "end": 124,
+          "kind": "line_range",
+          "start": 116
+        }
+      },
+      "id": "RLZ-PCQR3A",
+      "invariant": "INV-09DXWE",
+      "origin": {
+        "handoffEntry": "L188-curator-B12-regular-task-next-action-a740",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The unavailable-publication result uses that state-first Architect handover for nonlegacy states; the legacy-format branch retains its separate conversion refusal. This returns continuation guidance and does not start the Architect or write foundation records.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
+        "content": "sha256:9e36940de741d304953544f51f183e8a51bce7e0cacf3f31dab4b1febe4b73fb",
+        "locator": {
+          "kind": "symbol",
+          "name": "memory_init_tool"
+        }
+      },
+      "id": "RLZ-X96Y02",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Starts derived full publication after an actual successful initialization.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Actual scaffold creation invokes the brief refresh and retains any resulting advisory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
+            "content": "sha256:9e36940de741d304953544f51f183e8a51bce7e0cacf3f31dab4b1febe4b73fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_init_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Brief publication uses the initialized root and the selected code branch commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
+            "content": "sha256:d29b7b083d56d64b9754c1c069410bdec6ed9e2d02656f1895a0e6c92cc9f9ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_initialized_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The knowledge measurement reports an unavailable, partial, recorded or empty foundation without authoring records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28523929a6851e3c13f7a38a577ffac66e716200",
+            "content": "sha256:ff465974c2ff2904981ae7f7b0fe9990369387c39693b2aad43fa9ae5f18cb61",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_foundation_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

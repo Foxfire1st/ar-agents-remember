@@ -83,16 +83,16 @@
       ]
     },
     "3": {
-      "note": "The suite has explicit unit-regression membership. Source caption: \"mcp/tests/test_retry_selection.py\"",
+      "note": "The unit-regression lane selects mcp/tests/test_retry_selection.py.\n\nAnchor: `mcp/tests/test_retry_selection.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
             "content": "sha256:ffe7fe2d34ee681b5de1f90380260e2deca5bd2666cfac315ec010ce02294d9d",
             "locator": {
-              "end": 463,
+              "end": 477,
               "kind": "line_range",
-              "start": 463
+              "start": 477
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

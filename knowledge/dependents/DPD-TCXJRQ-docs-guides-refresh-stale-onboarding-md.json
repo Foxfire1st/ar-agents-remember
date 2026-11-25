@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ed769cabdb7274515cf681f7ad55b1bd1e724580",
-    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
+    "codeTree": "cc81897b5c77098790701dfdb82dbf8ed0750807",
+    "commit": "a5a631ca5fe4e27d0b8affa2d8c077d09712b434",
     "role": "curator",
-    "statement": "The named-card repair guidance still holds because selecting a card relative to onboarding and distinguishing mechanically moved anchors from stale content work the same for cards below dot directories.",
-    "task": "261112-BUG-L24",
+    "statement": "The refresh guide still accurately directs the reader from the drift counts to a scoped citation_fix preview and Curator refresh; the card enumeration change only altered which files are excluded.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/guides/refresh-stale-onboarding.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,12 +51,12 @@
       "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reference_anchors.py"
     },
     {
-      "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+      "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/memory_tools.py"
     },
     {
-      "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+      "blob": "44965514704f09508b78c29839ced880346b1479",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/tool_response.py"
     }

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "978e410ca88ebabc20fc598a05870dd8f8efed1a",
+    "commit": "e8a96f6e2255155d733dd15dcba56bd26e46097e",
     "role": "curator",
-    "statement": "The workflow correctly explains that a participating contract-source memory sync advances the recorded base to the incoming tip and a repository-default sync keeps the recorded pair.",
-    "task": "261112-BUG-L21",
+    "statement": "The workflow guide describes granted leaves in the master pair, the exact candidate gate and direct-landing controls, and how a participating source-line sync advances the recorded memory base while a repository-default sync preserves the recorded pair.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/workflows.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
+      "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
@@ -51,7 +51,7 @@
       "path": "mcp/src/agents_remember/models/task_document.py"
     },
     {
-      "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+      "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },
@@ -91,7 +91,7 @@
       "path": "mcp/src/agents_remember/application/direct_execution_grants.py"
     },
     {
-      "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
+      "blob": "f6c05e150769e32c8c67cd6f806b4d4ec29d7140",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },

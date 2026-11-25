@@ -66,11 +66,10 @@ The preserved table statuses are onboarding metadata, not operative lifecycle pr
 - Configured admission checks repository and contract-location authority while permitting only an explicit candidate-identity delegation. [2]
 
 
-- Ordinary converted-leaf closeout checks its mandatory gate before approval or code publication and validates its exact memory output and recovered output before memory publication. Anchor: `closeout_result` `_refuse_ungated_memory` `require_gated_recovery` [3]
-
-
 
 - The application projects the selected certification admission findings and their bounded detail. [4]
 
 
 - Unreadable contract observations prefer retained strict journals and otherwise preserve proven initial publication loss as a developer-decision refusal. [5]
+
+- Ordinary converted-leaf closeout checks its mandatory gate before claiming approval or publishing code. It validates and gates its exact memory output, including a recovered output, before recording it. [3]

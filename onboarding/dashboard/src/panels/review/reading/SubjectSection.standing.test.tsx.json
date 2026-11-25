@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/reading/SubjectSection.standing.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A rule's candidate state and writer appear beside its counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78b957b77f7fd6f4185fbf5d4a64f0239266e321",
+            "content": "sha256:946939a9750c965d04a3d0a639459e68f964f7d2240a5bb24952b89230a06b30",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The selected family heading uses the family's own standing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78b957b77f7fd6f4185fbf5d4a64f0239266e321",
+            "content": "sha256:d5fbedca79610e576f9dcd1cad7febe501837d34b147ff806cb2f274db8cde70",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

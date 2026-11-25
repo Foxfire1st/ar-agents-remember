@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "81f40d54700ea65869339061d70182e7efc59dc1",
-    "commit": "c5122294b4110a744254dad2c686a82f392304c4",
+    "codeTree": "764f146c5670470b3c8c10f5a5a7be9b66df5fac",
+    "commit": "e51f75630087a00bdcacaab646541e9cb04356d6",
     "role": "curator",
-    "statement": "The evidence-system guide still describes lane and lifecycle authority, canonical ordering and source-derived consumers on the merged catalogs.",
+    "statement": "On merged code e51f75630 the evidence-system guide keeps its lane and lifecycle rules: L27's two integration modules and CAP-L1's unit-regression module each sit in one lane of the 804 and appear as declared lifecycle consumers; lane and lifecycle authority, canonical ordering and source-derived consumers still hold on the merged catalogs.",
     "task": "261112-BUG-L37",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "docs/design/python-evidence-system.md",
   "id": "DPD-ZMQ523",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+      "blob": "33486deeeac8885eb645f3aea36f24ab3099f26e",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "d5599c0cbdea08d820a9774eec5c020ce86d35ba",
+      "blob": "ac6abaf94fbc1b38d2d243883737a007bceebd64",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },

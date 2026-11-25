@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "81f40d54700ea65869339061d70182e7efc59dc1",
-    "commit": "c5122294b4110a744254dad2c686a82f392304c4",
+    "codeTree": "764f146c5670470b3c8c10f5a5a7be9b66df5fac",
+    "commit": "e51f75630087a00bdcacaab646541e9cb04356d6",
     "role": "curator",
-    "statement": "The concepts guide still explains path-based memory reads, cache identity, drift reporting and exact-pair knowledge gates on the merged code.",
+    "statement": "On merged code e51f75630 the concepts guide still explains path-based memory reads, cache identity, drift reporting and exact-pair knowledge gates; it also explains briefs, derived record states, writer stamps, the knowledge index and the tool log, including the cancelled-request rows added by BUG-L27.",
     "task": "261112-BUG-L37",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "docs/concepts.md",
   "id": "DPD-71WYH4",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 19,
+  "revision": 20,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -46,7 +46,7 @@
       "path": "mcp/src/agents_remember/kernel/memory_mode.py"
     },
     {
-      "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+      "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/memory_cache.py"
     },
@@ -101,12 +101,12 @@
       "path": "mcp/src/agents_remember/models/knowledge_files/sidecars.py"
     },
     {
-      "blob": "1bfaeefbe94488a2653472dbc6aed964092e1f84",
+      "blob": "648f677f2d1078b75d56a057d89ea2a439311248",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/shapes.py"
     },
     {
-      "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+      "blob": "3d0a518fede1ad24a4a085fd8a401d9ea6695ac1",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
     },
@@ -191,7 +191,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/control_vocabulary.py"
     },
     {
-      "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+      "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/tool_answer_log.py"
     },
@@ -206,7 +206,7 @@
       "path": "mcp/src/agents_remember/tasks/task_paths.py"
     },
     {
-      "blob": "48ce4a89ba25d7592587e3b41ede77603e1ba9a5",
+      "blob": "5b7e751298ebcd50dae4f6724680aa5e48ed7568",
       "kind": "file",
       "path": "mcp/src/agents_remember/tasks/route_review.py"
     },
@@ -361,7 +361,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
     },
     {
-      "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
+      "blob": "f6c05e150769e32c8c67cd6f806b4d4ec29d7140",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },
@@ -371,12 +371,12 @@
       "path": "mcp/src/agents_remember/controlplane/closeout_queue_store.py"
     },
     {
-      "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
+      "blob": "0545be4ce99a465c6e590e0c19385c91e54191db",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
     {
-      "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+      "blob": "44965514704f09508b78c29839ced880346b1479",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/tool_response.py"
     },

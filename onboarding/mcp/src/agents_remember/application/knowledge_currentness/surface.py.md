@@ -92,7 +92,10 @@ No configured live documentation source was available for this pass.
 - The degraded block's reason text. [8]
 - The `knowledge_read` consumer since MIK-R02: currentness once per page at the walk's code tree. [9]
 
-- The published-intent consumer since MIK-R02, at its resolved source tree and inside the bounded block. [10]
+
+
+- The published-intent consumer since MIK-R02, at its resolved source tree and inside the bounded block. Anchor: `read_published_intent` [10]
+
 
 
 - No tree, or only a repository, is unverifiable and never reads `HEAD`. [11]

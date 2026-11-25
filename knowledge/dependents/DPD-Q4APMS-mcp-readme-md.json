@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "ab32fa776dc4d65f71367516a91342314414a967",
-    "commit": "c5122294b4110a744254dad2c686a82f392304c4",
+    "codeTree": "764f146c5670470b3c8c10f5a5a7be9b66df5fac",
+    "commit": "e51f75630087a00bdcacaab646541e9cb04356d6",
     "role": "curator",
-    "statement": "The package README still points to the tools reference, whose Worktrees and Knowledge sections describe staged continuation and the writer for an open master crossing.",
+    "statement": "On merged code e51f75630 the package README's tool-group table and reference pointers still match create_server's registered groups and the MCP reference: the Worktrees and Knowledge sections describe staged continuation and the open-master-crossing writer, and the reference's role-tool sentence now reads that a host-run role agent receives its role tools once from agents-remember-task.",
     "task": "261112-BUG-L37",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "mcp/README.md",
   "id": "DPD-Q4APMS",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 16,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
     },
     {
-      "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+      "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "772fbecbaf1078b9778efd0314e9eaa39450bcea",
+      "blob": "ac6f348d86bc935cc81808f5d926c899261e44d3",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }

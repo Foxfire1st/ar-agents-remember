@@ -14,6 +14,8 @@ Paseo hosts agents and supplies host delivery. AR persists held role messages an
 
 Ordinary closeout apply and integration return the state reached in their own calls. Read saved ordinary operation records as history. For direct landing, read the current generation and use only the controls it advertises.
 
+A file brief can supply bounded rule text. Use `knowledge_read` on `agents-remember-task` for the complete attributed record. Changing only an invariant’s title preserves its meaning and revision.
+
 The canonical frame, roles, review criteria and handoff/impact templates ask AR where governing knowledge lies and open those files with harness-native tools. `context_packet` supplies compact orientation, `read_ar_files` card/overview locations and `knowledge_read` record locations; no provider argument or old resolver call is prescribed. The existing peer loop, exact scoped readers, writer-owned fields, effect/revision obligations and role powers remain.
 
 A launch uses explicit supported role, operation, canonical selection and workspace facts. Missing, conflicting or inapplicable bindings are reported rather than inferred from chat titles, nearby documents or runtime directories. Task-bound seats read the selected requirement packets and rendered task documents through their admitted interfaces; edits to rendered copies are not canonical task changes. Existing approvals survive reconnects and compaction.
@@ -157,6 +159,8 @@ Before escalating, Manager reads its own rulings and the Architect rulings for t
 `capsule-budgets-current.json` keeps authored per-role capsule ceilings, the step-detail ceiling and the digest ceiling separate from its generated `derived` measurements. `mcp/.venv/bin/python scripts/renew-instructions.py` renews those measurements, passage bindings, pointer wording, manifest audiences and steps, and declared package copies. Renewal checks capsule, detail and digest sizes against their ceilings; source and template sizes are measurements, not individual-item ceilings. Canonical sources remain the owners; the packaged copy adds no permission.
 
 ## Retained Evidence Context
+
+Knowledge curation authors the obligation and its scoped judgment. The product supplies the revision's writer stamp and state. A closeout records an eligible memory review in history only for the candidate it closes.
 
 ## Evidence
 

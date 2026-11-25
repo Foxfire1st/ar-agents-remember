@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 1 rows of the inventory of changes are told here.",
-    "task": "260928-MIK-L97",
+    "codeTree": "a9d741205dc7378fea98847b3f2a913fa08f6ee6",
+    "commit": "575e852918b109d7c5f52c36b6da536b7b43b4e6",
+    "role": "curator",
+    "statement": "The scaffold prepares the tracked root ignore rule on new layout creation while preserving authored text. The reader describes eligible briefs, bounded rule text and saved freshness.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/guides/onboard-existing-repo.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
+      "blob": "0789f3ccacb2b41e5dd90b05efda788cbd713c23",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/memory_init.py"
     },
@@ -54,6 +54,16 @@
       "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/context_packet.py"
+    },
+    {
+      "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/read_files_briefs.py"
+    },
+    {
+      "blob": "b56ccd34cb5675adf602c701eac1aec9ae27ce52",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/file_briefs/render_brief.py"
     }
   ]
 }

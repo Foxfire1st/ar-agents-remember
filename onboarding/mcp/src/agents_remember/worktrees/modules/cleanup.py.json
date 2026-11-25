@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+        "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
         "content": "sha256:25e44519d8c52fa20b1c7a9de674a0f6be77dcd794d22f6dcae868cc057786b5",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+        "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
         "content": "sha256:475bbca5dcda63307c3fcbc1b6653e2ff65523e22b8123487a5ac760be470890",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
-        "content": "sha256:ed5a7fe9d8ac86b932b39a57c71f48e4316c1ef16873e2d35c6fb8748daf4118",
+        "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
+        "content": "sha256:c522aba6436d331e718e9512c9f29b924aeab419d6ed171a2e79ebc7b1c561de",
         "locator": {
           "kind": "file"
         }
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+        "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
         "content": "sha256:2368f70df2faf1324dd191deef40f750922150fbcd6151482a5e7525c4c22114",
         "locator": {
           "kind": "symbol",
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+        "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
         "content": "sha256:573f3e4c7bc29659eb6f4310ed8543bb75d26ab23cdd75834e2dc5e42411657b",
         "locator": {
           "kind": "symbol",
@@ -92,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+        "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
         "content": "sha256:3dc75e6a086bac5c74ae79fc1e3d77487cde15f62c2a22b47cb9d83f863bb191",
         "locator": {
           "kind": "symbol",
@@ -110,8 +110,8 @@
     },
     {
       "anchor": {
-        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
-        "content": "sha256:25e998f3f16f213c9d25c733eca9fd492a0e7d89763ecd2663869b70fb163d43",
+        "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
+        "content": "sha256:50aaee163db9558cc7a39c19053653d60eb4d0140ab608c84b3c77405c8685f1",
         "locator": {
           "kind": "symbol",
           "name": "_removed_directories"
@@ -128,7 +128,7 @@
     },
     {
       "anchor": {
-        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+        "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
         "content": "sha256:104810b533eb6302e6c24edb0ccac715dfc7b5e77e0332d612c3986dbc6aafde",
         "locator": {
           "kind": "symbol",
@@ -146,7 +146,7 @@
     },
     {
       "anchor": {
-        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+        "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
         "content": "sha256:3dc75e6a086bac5c74ae79fc1e3d77487cde15f62c2a22b47cb9d83f863bb191",
         "locator": {
           "kind": "symbol",
@@ -169,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+            "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
             "content": "sha256:6655686073ecd35f41f016b1c12f205ebc555fd6d064525522c7f429177bb9da",
             "locator": {
               "kind": "symbol",
@@ -351,7 +351,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+            "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
             "content": "sha256:e53fa354fbef957aa8a30ccad004dd332621b3421cc4ed9047f72f22bb6540cf",
             "locator": {
               "kind": "symbol",
@@ -367,7 +367,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+            "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
             "content": "sha256:e53fa354fbef957aa8a30ccad004dd332621b3421cc4ed9047f72f22bb6540cf",
             "locator": {
               "kind": "symbol",
@@ -417,12 +417,42 @@
       "targets": [
         {
           "anchor": {
-            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+            "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
             "content": "sha256:573f3e4c7bc29659eb6f4310ed8543bb75d26ab23cdd75834e2dc5e42411657b",
             "locator": {
               "kind": "symbol",
               "name": "_cleanup_integration_refusal"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Cleanup keeps leaf call lines before deleting its log folder and carries the keep outcome.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
+            "content": "sha256:5150983f061249d4e7dd95cebf422de509e80efe2b2bf5b7d9db7507ad421934",
+            "locator": {
+              "end": 381,
+              "kind": "line_range",
+              "start": 353
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e9359a188c08b8bd4bfb076ce8fd0aa93cb4b49",
+            "content": "sha256:733fbe053eda73215af05b87422174ab0c5f72fae6ce6e94e8fa82d9a5b44a2d",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/kept_tool_calls.py"
           },
           "kind": "code"
         }
@@ -503,12 +533,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+            "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
             "content": "sha256:2368f70df2faf1324dd191deef40f750922150fbcd6151482a5e7525c4c22114",
             "locator": {
-              "end": 168,
+              "end": 169,
               "kind": "line_range",
-              "start": 108
+              "start": 109
             }
           },
           "kind": "code"
@@ -537,12 +567,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fe83d48a75d16c7f66764ad45c34bc03f6becff",
+            "blob": "30231d7913eb526be260f641f1310d2349da4856",
             "content": "sha256:0cc7abbf055f6ec82fdb09ae3a167512e6cc5066d15c8fd6ab22645275e53dea",
             "locator": {
-              "end": 816,
+              "end": 817,
               "kind": "line_range",
-              "start": 644
+              "start": 645
             },
             "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
           },

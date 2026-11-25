@@ -35,7 +35,6 @@ No additional work is asserted by this card. Actual project publication and sema
 
 A changed family history row needs the Curator's authored effect; the writer records the family's own revision, and the writer's input gate enforces it. The history-row rules sit in `templates/curator-handoff-ingestion.md`.
 
-- Changed family rows need an authored effect; the revision is the writer's. [16]
 
 ## Current composition and authoring contract
 
@@ -66,5 +65,7 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 - The authored source owns this contract; the distribution copy is not a separate authority. [21]
 
 - The Writing and meaning review section links the shared writing profile and keeps producer fields verbatim without changing the thirteen-field producer schema. [22]
+
+- Changed family rows need an authored effect; the revision is the writer's. [16]
 
 - The producer contract keeps the entry, its shape and the producer rules; the Curator-authored keys, writer input, admission and decision records sit in the ingestion template. [31]

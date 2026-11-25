@@ -65,3 +65,6 @@ No configured domain documentation was available.
 No cross-repository implementation participates.
 
 No meaningful cross-repo references found.
+
+- Package metadata and source-checkout fallback are selected through the explicit resolver. Anchor: `_resolve_server_version` [1]
+- Installed metadata is authoritative; only missing package metadata selects the explicit source-checkout release identity. Anchor: `_resolve_server_version` [2]

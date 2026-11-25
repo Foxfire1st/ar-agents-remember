@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ce714f8fbee46339c39d7eec8c956e3763464c26",
-    "commit": "d1c92dc9d4606a0b48b8e6b13f9c41c9b9aa6cce",
+    "codeTree": "e08c810611259528c77765ddf47f51eb893f424b",
+    "commit": "10f2b5bb94ab96a48a5f226f6e63b9fe9f6fa4cb",
     "role": "curator",
-    "statement": "The Cursor guide's first-run steps and its account of refusing a Bootstrap with no Cursor provider, then retrying with an offered agent, still hold.",
-    "task": "261112-BUG-L27",
+    "statement": "The Cursor guide still accurately describes the implicit Bootstrap refusal and the retry naming an installed role harness; reordering the start warning's notices affects nothing it states. Reconfirmed after the BUG-L27 sync (code e08c8106).",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/install/cursor.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/application/caller_harness.py"
     },
     {
-      "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+      "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },

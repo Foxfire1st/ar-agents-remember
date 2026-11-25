@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The crossing keeps the standing of the selected content under both input orders."
+  },
+  "applicability": "An admitted crossing of two memory lines selecting or combining record meaning.",
+  "conditions": [
+    "An input may lack a writer stamp, review evidence or both. The crossing preserves the selected content's writer stamp when available. Eligible unambiguous legacy standing can survive without usable exact reviewed-tree proof when the crossing introduces no different content at that revision number.",
+    "Same-number different content receives credit only for exact reviewed meaning."
+  ],
+  "exclusions": [
+    "Only combined meaning that differs from both sides earns a new product stamp.",
+    "Unresolved meaning conflicts remain conflicts."
+  ],
+  "id": "INV-KPK1WT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_worktree_sync_crossing_writer.py::test_crossing_preserves_the_standing_of_its_selected_bytes, archived prior-filename proof, and W10 expanded evidence."
+      ],
+      "path": "revision-standing-authoring.json"
+    },
+    "handoffEntry": "L3-W1-10",
+    "leaf": "261112-KNO-L3",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A crossing retains the selected record bytes and their admissible review facts. Equal bytes take standing from the merged histories. A genuinely combined revision receives the product stamp and derives state from ordinary history rules. Conflicting meaning fields remain conflicts.",
+  "status": "proposed",
+  "supersedes": []
+}
