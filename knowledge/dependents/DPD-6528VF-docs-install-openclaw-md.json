@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
-    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
+    "codeTree": "4ebb429de6b3034e7bff1922b3f8982b2ccafa07",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "On tree a5bb9a1f, the OpenClaw install guide's account of calling role_start(role='bootstrap', ...) and retrying with agent after the MCP initialize client-name check still holds because CAP-L4 only shortened tool descriptions in role_agents.py without changing caller_harness_name or role_start's signature and dispatch.",
-    "task": "261124-CAP-L4",
+    "statement": "docs/install/openclaw.md remains accurate after bumping contract.json Node to 26.13.1 because the OpenClaw install guide hardcodes no Node release and its Bootstrap flow is unchanged.",
+    "task": "261125-DEP-L1",
     "uncommitted": true
   },
   "document": "docs/install/openclaw.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,9 +51,20 @@
       "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
     },
     {
-      "blob": "a6a401b6a3c3dcc96be3616338f4d2bfe1c7e4d1",
+      "blob": "d564766a2112b76c74a5277a83fdcec6409845b1",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T20:08:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L1",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "b5f00ccb-ae71-451c-bfff-3ee2a7ac6155",
+    "task": "261125-DEP"
+  }
 }

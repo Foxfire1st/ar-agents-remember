@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Spans mcp/pyproject.toml and mcp/uv.lock, is proven by test_installed_mcp_meets_declared_floor_and_server_lists_tools, and prevents PyPI installs from selecting an mcp release below 1.17.0 (missing FastMCP.remove_tool and crashing server startup) or below 1.30.0 (re-exposing known 1.29.1 advisories)."
+  },
+  "applicability": "The installable agents-remember-mcp package's mcp dependency specifier, its resolved Python lockfile, and the FastMCP server startup path.",
+  "conditions": [
+    "mcp/pyproject.toml declares a single mcp dependency with a >=1.30.0 floor and <2 ceiling.",
+    "The installed mcp release satisfies the declared specifier and exposes FastMCP.remove_tool."
+  ],
+  "exclusions": [
+    "A later migration to mcp 2.x that replaces the FastMCP 1.x API.",
+    "Other dependency version ranges declared in mcp/pyproject.toml."
+  ],
+  "id": "INV-DY0898",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/worker/0c2f9455-404d-480e-bcd8-1ab5a211f884/role-launch/producer-list-post-sync.json (DEP-R01@v2 §1); mcp/tests/test_role_tool_scope.py::test_installed_mcp_meets_declared_floor_and_server_lists_tools PASS on tree fce8c2b95943 (base 185de8077/25b91e457); notes/reports/reviewer/80a2b92a-be39-44da-a11b-74d5f12a0e07/role-launch/261125-DEP-L1-route-review-verdict.md"
+      ],
+      "path": "261125-DEP-L1-curator-handoff"
+    },
+    "handoffEntry": "DEP-R01@v2 §1",
+    "leaf": "261125-DEP-L1",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The mcp dependency in mcp/pyproject.toml requires at least 1.30.0 and below 2, mcp/uv.lock resolves an admissible 1.x release, and the installed distribution exposes FastMCP.remove_tool so unbound and role-bound servers list their tools.",
+  "supersedes": [],
+  "title": "Declared mcp floor stays at least 1.30.0 and below 2",
+  "writer": {
+    "at": "2026-11-25T18:32:41+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L1",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "b5f00ccb-ae71-451c-bfff-3ee2a7ac6155",
+    "task": "261125-DEP"
+  }
+}

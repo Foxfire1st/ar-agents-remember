@@ -26,7 +26,7 @@ The editable distribution in the uv lock carries the package version declared he
 The package builds with `setuptools`, publishes as `agents-remember-mcp`, uses
 `mcp/README.md` as its package README, and supports exactly the Python 3.14 minor line
 (`>=3.14,<3.15`).
-Runtime dependencies include `mcp`, `pydantic`, `tiktoken`, `fastapi` (built-in
+Runtime dependencies include `mcp` (`>=1.30.0,<2`), `pydantic`, `tiktoken`, `fastapi` (built-in
 `fastapi.sse`), `uvicorn`, and `websockets`: Pydantic owns public response validation,
 tiktoken backs response token accounting, and FastAPI/uvicorn serve the local dashboard. `python-multipart` is also declared as a runtime dependency. `watchfiles` (`>=1.1,<2`) is the native filesystem watcher behind the dashboard's
 change-driven projection pacing (`serving/change_watcher.py`); the serving layer degrades
@@ -172,6 +172,7 @@ later reader does not have to reconstruct it from a report.
 
 
 - Public response contracts depend on Pydantic and token accounting depends on tiktoken. [3]
+- The declared `mcp` dependency requires `>=1.30.0,<2` so installs carry `FastMCP.remove_tool` and stay on the 1.x line without the 1.29.1 advisories. [22]
 
 
 - The derived knowledge index uses an exact-pinned SQLite binding, with its schema-feature reason recorded inline above the entry. [4]

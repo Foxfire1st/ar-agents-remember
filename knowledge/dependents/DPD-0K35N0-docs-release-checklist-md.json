@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ce714f8fbee46339c39d7eec8c956e3763464c26",
-    "commit": "d1c92dc9d4606a0b48b8e6b13f9c41c9b9aa6cce",
+    "codeTree": "4ebb429de6b3034e7bff1922b3f8982b2ccafa07",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "The release checklist still names the hook's deterministic checks and the targeted gate the pull-request check runs; the hook's early look for the dashboard dependencies adds no check and passes there because the workflow installs them first.",
-    "task": "261112-BUG-L27",
+    "statement": "docs/release-checklist.md remains accurate after the mcp>=1.30.0,<2 floor update, contract.json Node 26.13.1 bump, and version.py 3.0.7 alignment because release checks and contract field rules stay unchanged.",
+    "task": "261125-DEP-L1",
     "uncommitted": true
   },
   "document": "docs/release-checklist.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,12 +36,12 @@
       "path": ".github/workflows/publish-mcp-to-pypi.yml"
     },
     {
-      "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
+      "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "393e94f256070902f2e90853cb7135bcea711381",
+      "blob": "eb999d6f1626d6b697870c0ca35f8d7d24eb77cb",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/primitives/version.py"
     },
@@ -51,7 +51,7 @@
       "path": "scripts/check-host-contract.py"
     },
     {
-      "blob": "a6a401b6a3c3dcc96be3616338f4d2bfe1c7e4d1",
+      "blob": "d564766a2112b76c74a5277a83fdcec6409845b1",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json"
     },
@@ -135,5 +135,16 @@
       "kind": "file",
       "path": "scripts/instruction_renewal/plan.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T20:08:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L1",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "b5f00ccb-ae71-451c-bfff-3ee2a7ac6155",
+    "task": "261125-DEP"
+  }
 }

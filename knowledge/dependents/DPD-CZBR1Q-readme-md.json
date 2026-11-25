@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "3cb6b6318dccbbfa454a1477b02159091fb37a05",
-    "commit": "185de80773e5201f62a6f37b99965c754535a288",
+    "codeTree": "4ebb429de6b3034e7bff1922b3f8982b2ccafa07",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "On synced 185de807, the README package version (3.0.7) and Python 3.14 requirement match mcp/pyproject.toml, its Bootstrap instructions use one fresh role-start request and the dashboard address, and its paired closeout gate and dashboard overview remain accurate with UTC ISO-8601 timestamps on dashboard log lines.",
-    "task": "261112-BUG-L36",
+    "statement": "README.md remains accurate after mcp/pyproject.toml raised the mcp floor to >=1.30.0,<2 and BUG-L36 added UTC ISO-8601 timestamps on dashboard log lines because package version 3.0.7, Python 3.14 support, Bootstrap setup, and paired closeout guidance are unchanged and no old mcp floor is cited.",
+    "task": "261125-DEP-L1",
     "uncommitted": true
   },
   "document": "README.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "9326dfaf2cd0d2a38d6b07e618cae824b747b12f",
+      "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -92,14 +92,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T17:08:47+01:00",
+    "at": "2026-11-25T20:08:06+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L36",
+    "leaf": "261125-DEP-L1",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "49ed01b9-6f40-49c1-a3a2-793936eb61f8",
-    "task": "261112-BUG"
+    "seat": "b5f00ccb-ae71-451c-bfff-3ee2a7ac6155",
+    "task": "261125-DEP"
   }
 }

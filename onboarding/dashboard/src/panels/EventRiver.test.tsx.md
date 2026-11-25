@@ -20,7 +20,7 @@ The suite now mounts the host-path rows (caller, refused-with-code, reached stat
 role, chat rows, silent-river line) and the newest-timestamp head: late older arrivals
 never move it back, and an empty window falls back to the store time.
 
-ev uses typed observerEvent with default id/time/model actor and caller overrides. Restored nonzero layout getters let TanStack mount virtual rows in jsdom. Store setup is raw events/hydration/time, not lifecycle-context fixtures.
+ev uses typed observerEvent with default id/time/model actor and caller overrides. Restored nonzero layout getters (`clientHeight`, `clientWidth`, `offsetHeight`, `offsetWidth` at 600×320, saved in `beforeAll` and restored in `afterAll`) let TanStack Virtual mount virtual rows in jsdom. Store setup is raw events/hydration/time, not lifecycle-context fixtures.
 
 - a single `read.packet` (its `data` carrying `repoId` + a one-entry `files` allowlist `{path, lines,
   status, bytes}`) renders the label **"Read: contracts.py"** (basename of the repo-relative path), its
