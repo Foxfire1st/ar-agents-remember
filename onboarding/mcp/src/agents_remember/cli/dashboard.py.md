@@ -12,7 +12,7 @@ Run dashboard supervision or live/reload/sim serving and bind configuration-scop
 
 The composition root wires PaseoExplainerHost, application ports and the master contract locator into serving. _master_contract uses the declared master series contract or existing canonical folder contract; no other line is borrowed.
 
-serving_collaborators is the rank boundary: complete review, numbered entry catalogue, source content, summary, tree and knowledge reader are injected application callables. It creates one app-local ReviewerWorklistProcesses, supplies tree reads and its shutdown, and wraps recorded intent/catalogue/tree questions in RecordedReviewAnswers. The application owners define their payloads; retained all-owner-record and knowledge-diff docstrings do not restore retired channels.
+serving_collaborators is the rank boundary: complete review, numbered entry catalogue, source content, summary, tree and knowledge reader are injected application callables. It creates app-local ReviewerWorklistProcesses pools (tree reads and lowered-priority _leaf_build precompute), supplies tree reads and their shutdown, and wraps recorded intent/catalogue/tree questions in RecordedReviewAnswers. The application owners define their payloads; retained all-owner-record and knowledge-diff docstrings do not restore retired channels.
 
 review_entries_port now takes optional number and calls list_comparison_review_entries with that exact selector through the reuse owner. api_routes registers native role launch, then developer chat/tray seat/send/sent-pick routes, supplying the same admitted leaf-memory resolver for review references. This is composition, not a second developer-delivery implementation.
 
@@ -21,6 +21,8 @@ _review_memory_root requires valid simple repo/master/leaf names, an external le
 run declares the process dashboard role, loads explicit settings or trusted discovery, binds archive-aware worktree services and chooses daemon/status/stop, reload or foreground serving. Config/discovery failures print and return1. Process roles are declared at entry points, including the spawned _dev_app factory, not create_app; they do not replace unconditional durable-log locking.
 
 Foreground and reload Uvicorn calls now request h11_max_incomplete_event_size=64*1024 as well as the existing3-second graceful window. The finite request-head allowance supports the up-to500-invariant card query named in the source rationale. This is explicit configuration, not a fresh network/runtime/version measurement or a whole-process shutdown guarantee.
+
+Both foreground and reload Uvicorn calls pass `log_config=dashboard_log_config()`. `dashboard_log_config()` deep-copies `uvicorn.config.LOGGING_CONFIG`, references dotted subclasses `_UtcDefaultFormatter` and `_UtcAccessFormatter` (each setting `converter = staticmethod(time.gmtime)` without mutating global `logging.Formatter.converter`) with `datefmt="%Y-%m-%dT%H:%M:%SZ"` on the `default`, `access`, and `package` formatters so every formatted line carries a UTC ISO-8601 prefix while keeping the config pickleable for `--reload`, and binds the `agents_remember` logger at `INFO` with `propagate: False` on an uncolored `stderr` `StreamHandler`. Uvicorn applies this configuration in foreground and reload workers; stubbing `uvicorn.run` leaves the caller's logging unconfigured.
 
 Reload carries config/interval/explicit heartbeat through AR_DASHBOARD_DEV_* and uses an import-string factory; reload+sim is refused. Live apps receive interval/heartbeat. Sim uses interval plus ProjectionReplay, retains SimSetup for the server lifetime and cleans its temporary root in finally. Shared composition is not byte-equivalence proof.
 
@@ -62,3 +64,5 @@ Configuration identity, admitted watch/reference roots, read availability, deliv
 
 
 - The dashboard binds a registry-aware activity reader. A qualifying attempt checks role records before reading the activity snapshot. [74]
+
+- Foreground and reload Uvicorn paths pass `dashboard_log_config()`, configuring UTC ISO-8601 timestamps through `_UtcDefaultFormatter` and `_UtcAccessFormatter` and binding `agents_remember` `INFO` logging on stderr without mutating global `logging.Formatter.converter`. [75]

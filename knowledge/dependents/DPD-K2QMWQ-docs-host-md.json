@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "764f146c5670470b3c8c10f5a5a7be9b66df5fac",
-    "commit": "e51f75630087a00bdcacaab646541e9cb04356d6",
+    "codeTree": "3cb6b6318dccbbfa454a1477b02159091fb37a05",
+    "commit": "185de80773e5201f62a6f37b99965c754535a288",
     "role": "curator",
-    "statement": "On merged code e51f75630 the Host guide keeps its role-agent account, the second agents-remember copy on non-Claude harnesses and the Claude Code exclusion; it describes resume after a host stop and exact-agent Antigravity Retry, and its Paseo 0.16.2 routes agree with the current agent binding.",
-    "task": "261112-BUG-L37",
-    "uncommitted": false
+    "statement": "On synced 185de807, the Host guide accurately describes role agents, the second agents-remember copy on non-Claude harnesses and Claude Code exclusion, resume after a host stop, exact-agent Antigravity Retry, Paseo 0.16.2 routes, and dashboard daemon/status/stop/port commands and port-held log reporting, all unchanged by UTC ISO-8601 timestamps on dashboard log lines.",
+    "task": "261112-BUG-L36",
+    "uncommitted": true
   },
   "document": "docs/host.md",
   "id": "DPD-K2QMWQ",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -101,7 +101,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_frame.py"
     },
     {
-      "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -249,5 +249,16 @@
       "heading": "Antigravity role agents",
       "kind": "anchor"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T17:08:47+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L36",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "49ed01b9-6f40-49c1-a3a2-793936eb61f8",
+    "task": "261112-BUG"
+  }
 }

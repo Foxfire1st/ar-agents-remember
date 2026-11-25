@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "cc81897b5c77098790701dfdb82dbf8ed0750807",
-    "commit": "a5a631ca5fe4e27d0b8affa2d8c077d09712b434",
+    "codeTree": "3cb6b6318dccbbfa454a1477b02159091fb37a05",
+    "commit": "185de80773e5201f62a6f37b99965c754535a288",
     "role": "curator",
-    "statement": "The setup guide still accurately describes the Bootstrap call, its stage refusals with an oversized detail moved to the log, and the unmatched-harness retry after the role_start bound and warning-fitting changes.",
-    "task": "261112-KNO-L4",
+    "statement": "On synced 185de807, the getting-started guide accurately describes install steps, the Bootstrap call, stage refusals with oversized detail moved to the log, unmatched-harness retry, and dashboard --status output and exit codes, all unaffected by UTC ISO-8601 timestamps on dashboard log lines.",
+    "task": "261112-BUG-L36",
     "uncommitted": true
   },
   "document": "docs/getting-started.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -130,5 +130,16 @@
       "kind": "file",
       "path": ".github/workflows/publish-mcp-to-pypi.yml"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T17:08:47+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L36",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "49ed01b9-6f40-49c1-a3a2-793936eb61f8",
+    "task": "261112-BUG"
+  }
 }

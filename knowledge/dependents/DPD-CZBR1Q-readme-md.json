@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "978e410ca88ebabc20fc598a05870dd8f8efed1a",
-    "commit": "e8a96f6e2255155d733dd15dcba56bd26e46097e",
+    "codeTree": "3cb6b6318dccbbfa454a1477b02159091fb37a05",
+    "commit": "185de80773e5201f62a6f37b99965c754535a288",
     "role": "curator",
-    "statement": "The README’s package version matches the project metadata, its Bootstrap instructions use one fresh role-start request and the dashboard address, and its paired closeout follows the gate on exact code and memory.",
-    "task": "261112-KNO-L4",
+    "statement": "On synced 185de807, the README package version (3.0.7) and Python 3.14 requirement match mcp/pyproject.toml, its Bootstrap instructions use one fresh role-start request and the dashboard address, and its paired closeout gate and dashboard overview remain accurate with UTC ISO-8601 timestamps on dashboard log lines.",
+    "task": "261112-BUG-L36",
     "uncommitted": true
   },
   "document": "README.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
+      "blob": "9326dfaf2cd0d2a38d6b07e618cae824b747b12f",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -90,5 +90,16 @@
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T17:08:47+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L36",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "49ed01b9-6f40-49c1-a3a2-793936eb61f8",
+    "task": "261112-BUG"
+  }
 }

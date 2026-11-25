@@ -1953,12 +1953,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+            "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
             "content": "sha256:07a9ae9b329c050c8b413bd1b7a773428e7e1405bad0dae4dd1dcafcc2b53c1c",
             "locator": {
-              "end": 325,
+              "end": 352,
               "kind": "line_range",
-              "start": 315
+              "start": 342
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -1966,12 +1966,12 @@
         },
         {
           "anchor": {
-            "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+            "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
             "content": "sha256:14b5262c837d857baf356888a7eb27a796635f0c27d9c90ddb014fae99fb24e8",
             "locator": {
-              "end": 329,
+              "end": 356,
               "kind": "line_range",
-              "start": 319
+              "start": 346
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -2158,7 +2158,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+            "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
             "content": "sha256:307e3408785c8695c9f67245e4f509609475552c72121ffa430684a886b3241d",
             "locator": {
               "kind": "symbol",
@@ -2258,12 +2258,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+            "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
             "content": "sha256:eaca7c5320c469289fa232e9891afbca3e36745b1e0237e67b2beab03203e18a",
             "locator": {
-              "end": 394,
+              "end": 421,
               "kind": "line_range",
-              "start": 394
+              "start": 421
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -2271,12 +2271,12 @@
         },
         {
           "anchor": {
-            "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+            "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
             "content": "sha256:877aa536d3b04674fff41070bb0164e99e2f79107ce8e8f2ac02dc1f7fd6de99",
             "locator": {
-              "end": 403,
+              "end": 430,
               "kind": "line_range",
-              "start": 403
+              "start": 430
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },

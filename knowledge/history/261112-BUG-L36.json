@@ -1,0 +1,623 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L36",
+  "rows": [
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-1K61RS",
+      "items": [],
+      "reason": "Combined incoming 25b91e45 CAP-L4 confirmation with L36 UTC ISO-8601 dashboard_log_config() timestamps on synced 185de807 and refreshed stands_on anchors for docs/llms.txt.",
+      "revision": 12,
+      "subject": "DPD-633P3W"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2XB8B4",
+      "items": [
+        "sha256:889fd363c38bdd69e6d3edfc8ed4e469d8234edde25ac3ef6c228db0a266bcff"
+      ],
+      "reason": "Added current-truth prose and citation for dashboard_log_config(), _UtcDefaultFormatter, and _UtcAccessFormatter UTC ISO-8601 logging; corrected the pre-existing single-pool ReviewerWorklistProcesses prose inaccuracy in serving_collaborators; and refreshed shifted sidecar references.",
+      "sources": [
+        {
+          "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+          "path": "mcp/src/agents_remember/cli/dashboard.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/dashboard.py"
+    },
+    {
+      "considered": [
+        "FAM-QDY93G",
+        "FAM-V05YXP",
+        "FAM-14NZRC",
+        "FAM-CAG581",
+        "FAM-CR0HHJ",
+        "FAM-P7XS4J",
+        "FAM-7EBNVZ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-4A7TXK",
+      "items": [
+        "sha256:1b3d020774f1ca1ad917ff3bd2c75dc22d8f91e7c9ceeefb3181db856009ca1e"
+      ],
+      "reason": "Inspected all 33 families routed through mcp/src/agents_remember/cli and the closest dashboard, host, and serving families (FAM-QDY93G, FAM-V05YXP, FAM-14NZRC, FAM-CAG581, FAM-CR0HHJ, FAM-P7XS4J, FAM-7EBNVZ); none govern dashboard log formatting or UTC timestamps, and INV-EKG8M4 is a standalone server-configuration invariant requiring no joint guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-EKG8M4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5NAZ7J",
+      "items": [
+        "sha256:08490b8de91c470d8c84618eb8a360f8f64ef3fd58ccb28f33d2d28e694a26f1",
+        "sha256:16fe5efc43758c5b275546393c3f5e814098ae4e70d7edf6b8917117383b04cf",
+        "sha256:2b0503d47381c91f8017b050221a4534d6bf6b616f168d0e4855cfbccd6b12ec",
+        "sha256:318219fcb951ed9959d901e3266ce0c99d7b7d8962aa24134265c52dfdeb137f",
+        "sha256:56093e88561a9d5769f2d33e74271ce515419b34b3c992c1206099e6040b8d78",
+        "sha256:64b0c72ae276be5a8e22595b4896bcfc0610de9e0ea4c2c7eda4c5e15d6d56e7",
+        "sha256:8daaf509333ebfb03ec293a12062a2e7adde723134367e985a3eee0ef3532f33",
+        "sha256:8f393f8559b6671517ef1a67dbca298f52f0c8e42303519216f6f3895f474de9",
+        "sha256:a4a41f03eec74fd7538ff3d130ab9fafd3a90142f2e7bb0c5edce07cf0ff02ff",
+        "sha256:c9938a9b6eae7de1ad2ea976340eec01dd86df6681c7f07baa4d792342b9f44f",
+        "sha256:f9532c299a8b00e9d33b1d00727315b5673020e0858bbb36dd50e602d4967cdc"
+      ],
+      "reason": "Added current-truth prose and citation for the serve-path log_config/no_access_log parity test and non-UTC child-interpreter UTC ISO-8601 logging test, and refreshed shifted sidecar line ranges.",
+      "sources": [
+        {
+          "blob": "6d75fd069ddf4ba8c07f548d848a240924405fc8",
+          "path": "mcp/tests/test_dashboard_host.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_dashboard_host.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-8MBH4M",
+      "items": [],
+      "reason": "Combined incoming 25b91e45 KNO-L4 confirmation with L36 UTC ISO-8601 dashboard_log_config() timestamps on synced 185de807 and refreshed stands_on anchors for docs/getting-started.md.",
+      "revision": 12,
+      "subject": "DPD-MQCJK4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+            "content": "sha256:35c7d85a100fc70bfe223393ba98313f517361ad5eeee3d5bd3844a75552d196",
+            "locator": {
+              "end": 820,
+              "kind": "line_range",
+              "start": 818
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "before": {
+            "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+            "content": "sha256:9c2b10ff46f1eb778182d3526a2b06674f3a358fac622d45893af1c078f88413",
+            "locator": {
+              "end": 455,
+              "kind": "line_range",
+              "start": 411
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "id": "RLZ-4SKB8D"
+        },
+        {
+          "after": {
+            "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+            "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
+            "locator": {
+              "end": 726,
+              "kind": "line_range",
+              "start": 692
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "before": {
+            "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+            "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
+            "locator": {
+              "end": 699,
+              "kind": "line_range",
+              "start": 665
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "id": "RLZ-V8EXDR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-AN50A7",
+      "items": [],
+      "reason": "Re-anchored RLZ-4SKB8D from pre-existing drifted line range 411-455 to lines 818-820 in run() where LeafAgentArchive(config) is bound into worktree services, and shifted RLZ-V8EXDR +27 lines to 692-726 (_dev_app) after L36's dashboard_log_config() additions; the invariant's meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-F1TY2E"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-D6ZYNT",
+      "items": [
+        "sha256:ea9e2e59b81e1f0847a02a23c5f880e7b95e55b3113a51dd364de8aca80d90b2"
+      ],
+      "reason": "Verified mcp/overview.md prose against synced 185de807 + L36: it makes no claims about dashboard_log_config() or dashboard log timestamps, its 64 KiB request-head statement still holds, and its shifted sidecar line-range references match live code.",
+      "sources": [
+        {
+          "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+          "path": "mcp/src/agents_remember/cli/dashboard.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-D7TKHY",
+      "items": [],
+      "reason": "Combined incoming 25b91e45 BUG-L37 confirmation with L36 UTC ISO-8601 dashboard_log_config() timestamps on synced 185de807 and refreshed stands_on anchors for docs/host.md.",
+      "revision": 14,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-FC8BG2",
+      "items": [],
+      "reason": "Combined incoming 25b91e45 BUG-L37/CAP-L4 confirmation with L36 UTC ISO-8601 dashboard_log_config() timestamps on synced 185de807 and refreshed stands_on anchors for mcp/README.md.",
+      "revision": 18,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-G8YNS8",
+      "items": [],
+      "reason": "Combined incoming 25b91e45 KNO-L4 confirmation with L36 UTC ISO-8601 dashboard_log_config() timestamps on synced 185de807 and refreshed stands_on anchors (including mcp/pyproject.toml and cli/dashboard.py) for docs/install/README.md.",
+      "revision": 7,
+      "subject": "DPD-XV7QBE"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GXG5N3",
+      "items": [],
+      "reason": "Combined incoming 25b91e45 CAP-L4 confirmation with L36 UTC ISO-8601 dashboard_log_config() timestamps on synced 185de807 and refreshed stands_on anchors for SECURITY.md.",
+      "revision": 11,
+      "subject": "DPD-8PE0G9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JYES39",
+      "items": [
+        "sha256:25496de2879f2ec177107f79285649e6b939473c97a46392b27c7c8b971f952a"
+      ],
+      "reason": "Verified mcp/tests/overview.md prose against synced 185de807 + L36: its only reference to test_dashboard_host.py covers the unchanged 500-invariant h11 request-head test, and all sidecar symbol blobs match live code.",
+      "sources": [
+        {
+          "blob": "6d75fd069ddf4ba8c07f548d848a240924405fc8",
+          "path": "mcp/tests/test_dashboard_host.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+            "content": "sha256:3a6d0e4da549e07bd36e7fc2e52554dc02854d5ed72b9b49b54d9d4e45f41fe5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "before": {
+            "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+            "content": "sha256:ffa380e9b6a04ea1453e40bd8c9763381fd8b150fa0792cd81270331c6a6d73e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "id": "RLZ-DDMK3M"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-KBFJPD",
+      "items": [
+        "sha256:78a2f576b6187b39f952e1797a2bdb70b8172132aecb880bb43e989dc291f608"
+      ],
+      "reason": "Re-anchored file-level realization RLZ-DDMK3M on mcp/src/agents_remember/cli/dashboard.py to candidate blob f773661b after L36 added stdlib time and uvicorn.logging imports plus UTC log formatters; no upward layer import or cycle was added, serving_collaborators is unchanged, and the invariant's meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-QBWBNV"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-KT1QR3",
+      "items": [],
+      "reason": "Combined incoming 25b91e45 KNO-L4 confirmation with L36 UTC ISO-8601 dashboard_log_config() timestamps on synced 185de807 and refreshed stands_on anchors (including mcp/pyproject.toml and cli/dashboard.py) for docs/README.md.",
+      "revision": 7,
+      "subject": "DPD-06057Y"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8WCSQ7",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VQQ7W",
+          "revision": 1
+        },
+        {
+          "id": "INV-AJKQV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-F1TY2E",
+          "revision": 1
+        },
+        {
+          "id": "INV-FEB6Y6",
+          "revision": 1
+        },
+        {
+          "id": "INV-GM5MS3",
+          "revision": 1
+        },
+        {
+          "id": "INV-K43DJZ",
+          "revision": 2
+        },
+        {
+          "id": "INV-PRP52X",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPXD65",
+          "revision": 1
+        },
+        {
+          "id": "INV-W41C85",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-M8WZ8V",
+      "items": [
+        "sha256:99ed69d11c80bd194b92276ee4ce29f9b735d997f3fcfa79d80cd62ac2d2edfa"
+      ],
+      "reason": "Examined all ten members of FAM-VNK792 after re-anchoring INV-F1TY2E's realizations RLZ-4SKB8D (to run() lines 818-820) and RLZ-V8EXDR (+27 lines to _dev_app lines 692-726); L36 altered only dashboard_log_config() and its UTC formatter subclasses, leaving leaf archival and the family guarantee unchanged.",
+      "revision": 2,
+      "subject": "FAM-VNK792"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+            "content": "sha256:c95c3e91d64438425c730a0ed849858ecf0e1742975c22b815c1b9beea36bcc4",
+            "locator": {
+              "end": 786,
+              "kind": "line_range",
+              "start": 784
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "before": {
+            "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+            "content": "sha256:c95c3e91d64438425c730a0ed849858ecf0e1742975c22b815c1b9beea36bcc4",
+            "locator": {
+              "end": 759,
+              "kind": "line_range",
+              "start": 757
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "id": "RLZ-AFAE3X"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-PZQGJS",
+      "items": [],
+      "reason": "Shifted RLZ-AFAE3X +27 lines from 757-759 to 784-786 on the unchanged --daemon help text after L36's dashboard_log_config() additions; the invariant's meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-72X9AJ"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-19P897",
+          "revision": 1
+        },
+        {
+          "id": "INV-BBPPS5",
+          "revision": 3
+        },
+        {
+          "id": "INV-HHZP57",
+          "revision": 1
+        },
+        {
+          "id": "INV-PKBCZ0",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z2HVKA",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-SWAE39",
+      "items": [
+        "sha256:f61af7cf7dd3a7fdc8e9e555bf6e44bc8509928792b4b30ab95b1597620081a5"
+      ],
+      "reason": "Examined all five members of FAM-TYKA3T after re-anchoring INV-HHZP57's drifted realization RLZ-9D25GS to serving_collaborators in cli/dashboard.py; L36 altered only dashboard_log_config() and its UTC formatter subclasses, leaving worklist child lifetime and the family guarantee unchanged.",
+      "revision": 1,
+      "subject": "FAM-TYKA3T"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+            "content": "sha256:3a6d0e4da549e07bd36e7fc2e52554dc02854d5ed72b9b49b54d9d4e45f41fe5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "before": {
+            "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+            "content": "sha256:ffa380e9b6a04ea1453e40bd8c9763381fd8b150fa0792cd81270331c6a6d73e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "id": "RLZ-HPJZAR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-T4B8E5",
+      "items": [
+        "sha256:609ad2c542c8657822f6cc2bf84d0e68446c995ec5f288c527bc32d81b1de42e"
+      ],
+      "reason": "Re-anchored file-level realization RLZ-HPJZAR on mcp/src/agents_remember/cli/dashboard.py to candidate blob f773661b after L36 added UTC log formatters in dashboard_log_config(); serving_collaborators and its read_usage_for_agents binding are byte-identical on synced 185de807 and INV-BCXFH9 revision 2 meaning (including the five-minute live-report recheck) is unchanged.",
+      "revision": 2,
+      "subject": "INV-BCXFH9"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-WKB1P0",
+      "items": [],
+      "reason": "Combined incoming 25b91e45 CAP-L4 confirmation with L36 UTC ISO-8601 dashboard_log_config() timestamps on synced 185de807 and refreshed stands_on anchors for docs/architecture.md.",
+      "revision": 15,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+            "content": "sha256:c233018d6eb0b24616c32a67cf4ed520bfcb81313f598e4304bbedb695b0acae",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 327
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "before": {
+            "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+            "content": "sha256:c233018d6eb0b24616c32a67cf4ed520bfcb81313f598e4304bbedb695b0acae",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "id": "RLZ-HM528R"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-X3GT0G",
+      "items": [],
+      "reason": "Shifted RLZ-HM528R +27 lines from 300-303 to 327-330 on the unchanged review_port delegation after L36's dashboard_log_config() additions; the invariant's meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-61Y147"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-YF18FK",
+      "items": [],
+      "reason": "Combined incoming 25b91e45 KNO-L4 confirmation with L36 UTC ISO-8601 dashboard_log_config() timestamps on synced 185de807 and refreshed stands_on anchors for README.md.",
+      "revision": 10,
+      "subject": "DPD-CZBR1Q"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
+            "content": "sha256:f17911c1f0a21f888ea3a15a8177d6138c86961b685bacb7cb49f126b4e5ed66",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving_collaborators"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "before": {
+            "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+            "content": "sha256:e6b4b2a9f51af1ced1c19772b46eaf9141cd9b110a5fe252f063146499f7ccac",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "id": "RLZ-9D25GS"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Z721GC",
+      "items": [],
+      "reason": "Re-anchored RLZ-9D25GS from pre-existing drifted line range 119-243 (which shifted +27 lines onto return config through _bound_worktree_watch) to symbol serving_collaborators, where worklist_processes is created, passed to _card_carrying_trees, and wired to review_trees_shutdown; the invariant's meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-HHZP57"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:f536e2799e036e13f769df37e02c85aee567e757a7288bd38603ad9a459a0ac2",
+      "record": "DPD-06057Y",
+      "revision": 7,
+      "writer": {
+        "at": "2026-11-25T17:08:47+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L36",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "49ed01b9-6f40-49c1-a3a2-793936eb61f8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:806b55cc9e41579e93b928033e39dee8dc1111960681960e4d6130356cdb8be1",
+      "record": "DPD-633P3W",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-25T17:08:47+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L36",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "49ed01b9-6f40-49c1-a3a2-793936eb61f8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:b55c13e0b259ab4ad87e6b202172b3fd02df473c7c85d41530b2a2f2dc17ce52",
+      "record": "DPD-86HJGF",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-25T17:08:47+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L36",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "49ed01b9-6f40-49c1-a3a2-793936eb61f8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:609a6365830f064c80bffdd6805e3597f613de77c33d121200b2c94519f9d184",
+      "record": "DPD-8PE0G9",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-25T17:08:47+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L36",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "49ed01b9-6f40-49c1-a3a2-793936eb61f8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:2c6d3a6b6cf2bbb5d98fc6ac976b946a24e2e9897542490801c264145a4f740a",
+      "record": "DPD-CZBR1Q",
+      "revision": 10,
+      "writer": {
+        "at": "2026-11-25T17:08:47+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L36",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "49ed01b9-6f40-49c1-a3a2-793936eb61f8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:384d949d650bf102a5cf9c9a9b8bd0d1c10f461b68fb0364f62bba47995a304c",
+      "record": "DPD-K2QMWQ",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-25T17:08:47+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L36",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "49ed01b9-6f40-49c1-a3a2-793936eb61f8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:a77a6b25ad2912578661679951724fb871e67b18424f1a59f88a1d0fd62a5c27",
+      "record": "DPD-MQCJK4",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-25T17:08:47+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L36",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "49ed01b9-6f40-49c1-a3a2-793936eb61f8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:82996abc3ae9183f8018243d116c26c1677d3f674cf662e2b79a2f575b3f501d",
+      "record": "DPD-Q4APMS",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-25T17:08:47+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L36",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "49ed01b9-6f40-49c1-a3a2-793936eb61f8",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:b8ca62fe0c1fc292ed2aab664fca8198d304109b521fbaa7c687b1bf8ca9353c",
+      "record": "DPD-XV7QBE",
+      "revision": 7,
+      "writer": {
+        "at": "2026-11-25T17:08:47+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L36",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "49ed01b9-6f40-49c1-a3a2-793936eb61f8",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

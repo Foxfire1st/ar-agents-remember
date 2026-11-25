@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "40e2c033f5400b856352fc47dd738796945d289d",
-    "commit": "65c40d296ac2f951e9359eae653c7df43fed2436",
+    "codeTree": "3cb6b6318dccbbfa454a1477b02159091fb37a05",
+    "commit": "185de80773e5201f62a6f37b99965c754535a288",
     "role": "curator",
-    "statement": "On merged code the package README's tool-group table, explainer tool list, skill-resource note and reference pointers still match create_server's registered groups and the MCP reference: the Worktrees and Knowledge sections describe staged continuation and the open-master-crossing writer, the role-tool sentence says a host-run role agent receives its role tools once from agents-remember-task, and CAP-L4's post-registration schema compaction (_compact_server_tool_schemas) leaves registered tool names, groups, ordering and role narrowing unchanged.",
-    "task": "261112-BUG-L37",
-    "uncommitted": false
+    "statement": "On synced 185de807, the MCP package README accurately describes its tool-group table, explainer tool list, skill-resource note, Worktrees/Knowledge staged continuation and open-master-crossing writer, host-run role-agent agents-remember-task delivery, CAP-L4 post-registration schema compaction, Bootstrap startup, and dashboard command summary with UTC ISO-8601 timestamps on dashboard log lines.",
+    "task": "261112-BUG-L36",
+    "uncommitted": true
   },
   "document": "mcp/README.md",
   "id": "DPD-Q4APMS",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 18,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -62,14 +62,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T15:29:55+01:00",
+    "at": "2026-11-25T17:08:47+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L37",
+    "leaf": "261112-BUG-L36",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "4e0ea222-083c-4c22-aef2-1fc120d81ee2",
+    "seat": "49ed01b9-6f40-49c1-a3a2-793936eb61f8",
     "task": "261112-BUG"
   }
 }

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
-    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
+    "codeTree": "3cb6b6318dccbbfa454a1477b02159091fb37a05",
+    "commit": "185de80773e5201f62a6f37b99965c754535a288",
     "role": "curator",
-    "statement": "On tree a5bb9a1f, the security policy's account of the local stdio tool server, autoStart-only dashboard start, private values in files, and server_info reporting the version still holds; CAP-L4's post-registration inputSchema compaction in create_server adds no listener, changes no dispatch or role-narrowing boundary, and leaves server_info's runtime payload unchanged.",
-    "task": "261124-CAP-L4",
+    "statement": "On synced 185de807, the security policy accurately describes the local stdio tool server, CAP-L4 post-registration inputSchema compaction, autoStart-only dashboard start, loopback bind defaults, host/port semantics, request guards, server_info version reporting, and non-logging of private values, all unchanged by UTC ISO-8601 timestamps in dashboard_log_config().",
+    "task": "261112-BUG-L36",
     "uncommitted": true
   },
   "document": "SECURITY.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/serving/app.py"
     },
     {
-      "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -115,5 +115,16 @@
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_host/package-lock.json"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T17:08:47+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L36",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "49ed01b9-6f40-49c1-a3a2-793936eb61f8",
+    "task": "261112-BUG"
+  }
 }
