@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "40e2c033f5400b856352fc47dd738796945d289d",
-    "commit": "65c40d296ac2f951e9359eae653c7df43fed2436",
+    "codeTree": "4ebb429de6b3034e7bff1922b3f8982b2ccafa07",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "On merged code the concepts guide still explains path-based memory reads, cache identity, drift reporting and exact-pair knowledge gates; it also explains briefs, derived record states, writer stamps, the knowledge index and the tool log, including the cancelled-request rows added by BUG-L27, and CAP-L4's lossless schema compaction and 44-tool description optimization preserve those concepts while the synced closeout/tasks text keeps 'invariant gate' (closeout.py lines 85 and 105) and 'waiting-only closeout projection' (tasks.py line 21).",
-    "task": "261112-BUG-L37",
-    "uncommitted": false
+    "statement": "docs/concepts.md remains accurate after the mcp>=1.30.0,<2 floor change in mcp/pyproject.toml because the memory concepts, briefs, index, and gate contracts are unchanged.",
+    "task": "261125-DEP-L1",
+    "uncommitted": true
   },
   "document": "docs/concepts.md",
   "id": "DPD-71WYH4",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 21,
+  "revision": 22,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "9326dfaf2cd0d2a38d6b07e618cae824b747b12f",
+      "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -471,14 +471,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T15:29:55+01:00",
+    "at": "2026-11-25T20:08:06+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L37",
+    "leaf": "261125-DEP-L1",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "4e0ea222-083c-4c22-aef2-1fc120d81ee2",
-    "task": "261112-BUG"
+    "seat": "b5f00ccb-ae71-451c-bfff-3ee2a7ac6155",
+    "task": "261125-DEP"
   }
 }

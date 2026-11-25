@@ -27,9 +27,11 @@ missing globals. Grown in slice 5f S1 from an empty placeholder to carry those s
   when one is absent — `useShouldAnimate`/`shouldAnimate` call `matchMedia("(prefers-reduced-motion …)")`,
   which jsdom does not implement.
 - Defines a no-op `ResizeObserver` class when absent — React Aria components reference it.
-- Defines an inert `Element.prototype.scrollIntoView` when absent (260715-FEUI-L1) — cmdk (the
-  sessions command palette) calls it on the selected item; tests assert selection state, never
-  scroll geometry.
+- Defines an inert `Element.prototype.scrollIntoView` when absent — the readers and the reviewer call it
+  on the element they bring into view; tests assert selection state, never scroll geometry.
+- Defines a guarded `globalThis.CSS.escape` stub when `CSS` or `CSS.escape` is absent, escaping
+  non-identifier characters for attribute selectors — jsdom 25 omits `CSS.escape`, and React Aria calls
+  it for meta-tag and collection lookups.
 - Assigns inert SVG geometry stubs (`getBBox`/`getTotalLength`/`getPointAtLength`) across the SVG prototype
   chain (`SVGElement`/`SVGGraphicsElement`/`SVGGeometryElement`) — GSAP's DrawSVG/MotionPath (the engine-room
   timeline, 05n) call these when the effects-on GSAP-gate test builds the context, and **jsdom omits them**
@@ -79,6 +81,8 @@ calls without relying on browser playback that jsdom does not implement.
 - Wired as the vitest setup file. [2]
 
 - The render test that depends on these stubs. [3]
+
+- Guarded `globalThis.CSS.escape` stub supplies selector-safe escaping omitted by jsdom 25 for React Aria lookups. [4]
 
 
 

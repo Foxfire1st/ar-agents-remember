@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
-        "content": "sha256:780e2e62d63243b1d16ca6fce86db386b03b63818b07777b6f09f478c78689df",
+        "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
+        "content": "sha256:1adbf980d8cdc2c10834c762274971b216536225227b2c9669b4ba65043fce05",
         "locator": {
           "end": 7,
           "kind": "line_range",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "9326dfaf2cd0d2a38d6b07e618cae824b747b12f",
+        "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
         "content": "sha256:80c99862448ab92d6ee65fde88d7667d360c1d35eedfa1e7fe46ebea3024294a",
         "locator": {
           "end": 17,
@@ -37,6 +37,25 @@
         "leaf": "260928-MIK-L91"
       },
       "rationale": "requires-python and the Python classifier are what a consumer's installer reads; they admit every 3.14 release, and the exact managed pin lives in the runtime contract, not in the package metadata.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
+        "content": "sha256:cd4997f04f9c45b5cd8bebc4ee0ed70af10a02a9a3bf1390b20f48fbec0d469f",
+        "locator": {
+          "end": 29,
+          "kind": "line_range",
+          "start": 29
+        }
+      },
+      "id": "RLZ-WE8ASS",
+      "invariant": "INV-DY0898",
+      "origin": {
+        "handoffEntry": "DEP-R01@v2 §1",
+        "leaf": "261125-DEP-L1"
+      },
+      "rationale": "Declares mcp>=1.30.0,<2 so PyPI installs require FastMCP.remove_tool and exclude the known advisories fixed in 1.30.0 while keeping mcp below 2.",
       "role": "primary-authority"
     }
   ],
@@ -291,7 +310,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9326dfaf2cd0d2a38d6b07e618cae824b747b12f",
+            "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
             "content": "sha256:67390565a8665a2378ea8acf015a4c3ac444ae57f5394d6f15e32a44bf786726",
             "locator": {
               "end": 20,
@@ -308,7 +327,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9326dfaf2cd0d2a38d6b07e618cae824b747b12f",
+            "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
             "content": "sha256:56d5658353a8b7c8d238f402dd65aa85f57d171c9bbc54740712e71650b8f7ab",
             "locator": {
               "end": 108,
@@ -351,7 +370,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "edc25c85341bf3ee90872391c4b485846886169e",
+            "blob": "6620d5bfb2114f7794aa7f0f2b64cdf5b7a446a7",
             "content": "sha256:6e5ec9f0cbd69007b4ab4a51307daa63ccd840145b15e73c247f6c147704ff29",
             "locator": {
               "end": 8,
@@ -413,7 +432,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9326dfaf2cd0d2a38d6b07e618cae824b747b12f",
+            "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
             "content": "sha256:1adbf980d8cdc2c10834c762274971b216536225227b2c9669b4ba65043fce05",
             "locator": {
               "end": 7,
@@ -443,24 +462,29 @@
         }
       ]
     },
+    "22": {
+      "note": "The declared `mcp` dependency requires `>=1.30.0,<2` so installs carry `FastMCP.remove_tool` and stay on the 1.x line without the 1.29.1 advisories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
+            "content": "sha256:cd4997f04f9c45b5cd8bebc4ee0ed70af10a02a9a3bf1390b20f48fbec0d469f",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "Public response contracts depend on Pydantic and token accounting depends on tiktoken.",
       "targets": [
         {
           "anchor": {
-            "blob": "9326dfaf2cd0d2a38d6b07e618cae824b747b12f",
-            "content": "sha256:e6b563e4acbcd80bd201904b19939ce2f5ff3a1958b8d7af3c1296e2e7249a98",
-            "locator": {
-              "end": 24,
-              "kind": "line_range",
-              "start": 23
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9326dfaf2cd0d2a38d6b07e618cae824b747b12f",
+            "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
             "content": "sha256:9c5ba653b34073b7260267abaceaece0ed46baa9e23deed1dff116c6916189c2",
             "locator": {
               "end": 31,
@@ -477,7 +501,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9326dfaf2cd0d2a38d6b07e618cae824b747b12f",
+            "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
             "content": "sha256:a54495272c498240b0b62b979361f67333f5a98614710880ec29424282256341",
             "locator": {
               "end": 28,
@@ -512,7 +536,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "edc25c85341bf3ee90872391c4b485846886169e",
+            "blob": "6620d5bfb2114f7794aa7f0f2b64cdf5b7a446a7",
             "content": "sha256:6dc0cecbeac8ccc41e1a05a96799d5652d7940b5d02dc7f4ca1f476d278107e1",
             "locator": {
               "end": 43,
@@ -525,12 +549,12 @@
         },
         {
           "anchor": {
-            "blob": "edc25c85341bf3ee90872391c4b485846886169e",
+            "blob": "6620d5bfb2114f7794aa7f0f2b64cdf5b7a446a7",
             "content": "sha256:580b200c0d480ad867ae427f11fe588174b8408f3b0487eb5068933f04f651b0",
             "locator": {
-              "end": 111,
+              "end": 112,
               "kind": "line_range",
-              "start": 102
+              "start": 103
             },
             "path": "mcp/uv.lock"
           },

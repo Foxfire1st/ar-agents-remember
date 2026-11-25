@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "978e410ca88ebabc20fc598a05870dd8f8efed1a",
-    "commit": "e8a96f6e2255155d733dd15dcba56bd26e46097e",
+    "codeTree": "4ebb429de6b3034e7bff1922b3f8982b2ccafa07",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "The repository certification profile reference still accurately describes the typed profile and executor refusals, required mode selections and separation of requested Dagger certification from ordinary closeout, with leaf memory-base and one-time state-conversion errors remaining separate.",
-    "task": "261112-KNO-L4",
+    "statement": "docs/reference/repository-certification-profile.md remains accurate after the mcp>=1.30.0,<2 floor update in mcp/pyproject.toml because certification profiles, Dagger modes, and closeout boundaries are unchanged.",
+    "task": "261125-DEP-L1",
     "uncommitted": true
   },
   "document": "docs/reference/repository-certification-profile.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -128,9 +128,20 @@
       "path": ".dagger/src/agents_remember_quality/profile_execution.py"
     },
     {
-      "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
+      "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T20:08:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L1",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "b5f00ccb-ae71-451c-bfff-3ee2a7ac6155",
+    "task": "261125-DEP"
+  }
 }
