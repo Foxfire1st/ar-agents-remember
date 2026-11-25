@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "ae80e60ea31a21e2880e045334e91760da0f41bc",
-    "commit": "bb6ad8aa5d5cff0f1d83e2782a0da16ff91a9724",
+    "codeTree": "f3ee77dfac4162d06d4dba0121172674a8c4f7d3",
+    "commit": "653b42f6b47d4e59ba8b47047d0d31698080d369",
     "role": "curator",
-    "statement": "The contributor guide's seven-lane policy still applies, with the dependent-writer, crossing-history interruption and worktree crossing-history tests in integration and the crossing knowledge-writer and crossing Git-path tests in unit regression.",
+    "statement": "The contributor guide accurately describes the seven lanes, lane assignment for new tests and the canonical lifecycle catalog procedure on the merged source. The contributor guide's seven-lane policy still applies, with the dependent-writer, crossing-history interruption and worktree crossing-history tests in integration and the crossing knowledge-writer and crossing Git-path tests in unit regression.",
     "task": "261112-BUG-L26",
-    "uncommitted": false
+    "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
   "id": "DPD-78737N",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "855dbb0f6818b48d976e66080be99457471d1e3d",
+      "blob": "1b86940bc46b71084969cf30a1e9f6ca99007379",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },

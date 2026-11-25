@@ -69,6 +69,8 @@ The existing `_user_settings_guard.py`, Node-profile `package-lock.json` and `pa
 
 ## Code Commentary
 
+Both Lean test modules are registered as exact consumers of the settings guard and Node lockfile. The settings guard runs through the suite’s autouse fixture. The card citation module uses conversion support, and the symbol anchor module uses writer support.
+
 The existing settings-guard and portable Node-lockfile artifacts each declare test_knowledge_reader_media.py and test_serving_media.py among their exact consumers. These memberships retain the artifacts’ owners, lifetimes and replacement contracts.
 
 The deletion-cancellation module is declared as a consumer of the existing `_user_settings_guard.py` and Node-profile `package-lock.json` artifacts. Membership is dependency accounting, not proof of runtime artifact use or test execution.
@@ -1064,9 +1066,9 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 - Diff-scope support declares the relationship line, movement and reach suites among its canonically ordered exact consumers. Target: mcp/tests/evidence-lifecycle.toml. Anchor: file [324]
 
-- The settings guard lists the crossing dependent writer test as a consumer. [330]
-- The portable Node lockfile lists the crossing dependent writer test as a consumer. [331]
-- Knowledge-writer test support lists the crossing dependent writer test as a consumer. [332]
+- The settings guard lists the crossing dependent writer test as a consumer. [333]
+- The portable Node lockfile lists the crossing dependent writer test as a consumer. [334]
+- Knowledge-writer test support lists the crossing dependent writer test as a consumer. [335]
 
 - The catalog declares nine fixture artifacts under mcp/tests/fixtures/knowledge_files/, each introduced by 260928-MIK-L21 and each naming node:mcp/tests/test_knowledge_census_files.py::test_every_census_file_parses_by_schema_and_is_canonical as its replacement contract. This is the complete named nine-artifact class; catalog declarations do not establish execution. Anchor: file [14]
 - The member-source cases are registered on the read-scope artifact's exact consumer list in canonical ascending order. Anchor: `mcp/tests/test_review_family_member_sources.py` Anchor: file [218]
@@ -1129,5 +1131,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 - The catalog declares 26 recording artifacts with their consumer ownership. [320]
 - The catalog declares the browser suite as a consumer of the settings-guard and portable Node-lockfile artifacts. Anchor: file [325]
 - The existing user-settings guard and portable Node-lockfile artifact rows each declare the digest, manifest and pointer instruction-renewal test modules as exact consumers. Membership establishes dependency reachability, not execution or acceptance. [326]
+
+- The existing artifact rows name the two Lean modules as consumers. [328]
 - The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers. Anchor: file [95]
 - The current lifecycle catalog declares test_converted_onboarding_drift.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/converted_onboarding_drift_support.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These are source declarations, not invocation, code delivery or acceptance evidence. The `converted_onboarding_drift_support.py` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. The `curator_coherence_test_support.py` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. It is not declared on knowledge_conversion_test_support.py. Anchor: file [99]

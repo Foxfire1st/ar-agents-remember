@@ -1,0 +1,160 @@
+{
+  "path": "mcp/tests/test_lean_symbol_anchors.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
+        "content": "sha256:4fbb7d2fd4f5ccdd2ab4125995851a14166640a7cd034a8a0c74ca0bc38eb0d1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_lean_ambiguous_writer_names_full_choices_and_reader_returns_both_ranges"
+        }
+      },
+      "facet": "The verified written Lean alias returns both distinct defining ranges on the exact recorded blob.",
+      "id": "PRF-7VB19B",
+      "invariant": "INV-RANN4DC0",
+      "origin": {
+        "handoffEntry": "SUB-R01-recorded-ranges-revision",
+        "leaf": "261123-SUB-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
+        "content": "sha256:86743b0257dbc111b96cbd5f6eacdf5633dd4cccc167f6321d00f0facf5f7069",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_lean_alias_names_resolve_at_their_command_extents"
+        }
+      },
+      "facet": "Checks writer and recorded-reader ranges per alias binder, including attached prefixes, a continued target, rooted and quoted spellings, skipped slots and the next definition.",
+      "id": "PRF-94XV9K",
+      "invariant": "INV-R1R0Q8",
+      "origin": {
+        "handoffEntry": "SUB-R02@v1 rule 4 alias commands",
+        "leaf": "261123-SUB-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
+        "content": "sha256:4fbb7d2fd4f5ccdd2ab4125995851a14166640a7cd034a8a0c74ca0bc38eb0d1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_lean_ambiguous_writer_names_full_choices_and_reader_returns_both_ranges"
+        }
+      },
+      "facet": "Checks that the writer offers the verified full-name choices and the reader returns both defining ranges for the written alias.",
+      "id": "PRF-G7XZ80",
+      "invariant": "INV-XA55TP",
+      "origin": {
+        "handoffEntry": "SUB-R01-symbol-lookup",
+        "leaf": "261123-SUB-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
+        "content": "sha256:29b2edaf4d24c7196fa1cc1ec0af99191e47b72aa8395e407a91386b4d52acb6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_lean_anchors_reach_prefixes_and_column_zero_continuations"
+        }
+      },
+      "facet": "Checks attached prefixes and column-zero continuations through the writer and the recorded reader.",
+      "id": "PRF-NZ0RAD",
+      "invariant": "INV-WZ8R0Q",
+      "origin": {
+        "handoffEntry": "SUB-R01-lean-source",
+        "leaf": "261123-SUB-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
+        "content": "sha256:c95f2367f2bb284020702358859d27fc9f8b6911289dad4c1261565604000409",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_lean_syntax_tail_false_uncertainty_is_reported"
+        }
+      },
+      "facet": "For each unproved syntax tail in the fixture, both possible names return unsupported_locator with no resolved ranges. The writer reports uncertain scope and recommends an explicit line range for each name.",
+      "id": "PRF-R9PBNN",
+      "invariant": "INV-RANN4DC0",
+      "origin": {
+        "handoffEntry": "SUB-R01-recorded-ranges-revision",
+        "leaf": "261123-SUB-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
+        "content": "sha256:c0a2151b9b63f794ea1c83db902d3e6257b8bac24b49a8871cf8046d5b0880a2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_lean_full_name_takes_precedence_over_another_declarations_written_name"
+        }
+      },
+      "facet": "The verified full name takes precedence over a second declaration's written alias.",
+      "id": "PRF-VWJMQC",
+      "invariant": "INV-WZ8R0Q",
+      "origin": {
+        "handoffEntry": "SUB-R01-shared-lean-binding-realization",
+        "leaf": "261123-SUB-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
+        "content": "sha256:7eb8b4addc97c11e0ffe7b22dadfb9ea9c2cb5a2a3e3490c67d7807e4037ca71",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_lean_custom_precedence_with_inner_colon_keeps_scope_unverifiable"
+        }
+      },
+      "facet": "With an inner colon in a custom precedence, Outer.before still resolves to line 11 and both possible keys for middle remain unverifiable.",
+      "id": "PRF-WRN5DW",
+      "invariant": "INV-0KYRK9",
+      "origin": {
+        "handoffEntry": "SUB-R01-uncertain-lean-scope",
+        "leaf": "261123-SUB-L1"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "This test checks the writer's qualified-name suggestions and the reader's two defining extents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
+            "content": "sha256:4fbb7d2fd4f5ccdd2ab4125995851a14166640a7cd034a8a0c74ca0bc38eb0d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lean_ambiguous_writer_names_full_choices_and_reader_returns_both_ranges"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The writer and recorded reader agree on source extents for alias binders and the following definition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17ebbf106b391ed41bdd8903b03d79c6ca0a7fb0",
+            "content": "sha256:86743b0257dbc111b96cbd5f6eacdf5633dd4cccc167f6321d00f0facf5f7069",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lean_alias_names_resolve_at_their_command_extents"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

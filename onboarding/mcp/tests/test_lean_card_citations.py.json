@@ -1,0 +1,59 @@
+{
+  "path": "mcp/tests/test_lean_card_citations.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d3d9cbc7eeaa3aa58474a960a7ac84e7dc2fd63c",
+        "content": "sha256:893835547d25256effbd21822816974f14d08255d8c888b9029193fcac9bd012",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_live_card_tries_extended_lean_names_only_against_lean_sources"
+        }
+      },
+      "facet": "Checks that an extended Lean name resolves only against the Lean source in a mixed row while the ordinary identifier retains its source order.",
+      "id": "PRF-5VEHAQ",
+      "invariant": "INV-CK3F9Z",
+      "origin": {
+        "handoffEntry": "SUB-R01-live-citations",
+        "leaf": "261123-SUB-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d3d9cbc7eeaa3aa58474a960a7ac84e7dc2fd63c",
+        "content": "sha256:7a277efac2b014ad322c91da3d70f2d7d87cf1a05a4702bfed87ef06998b980d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_legacy_lean_citation_preserves_base_conversion_bytes"
+        }
+      },
+      "facet": "Checks the pinned conversion output digest for a legacy row citing a Lean source.",
+      "id": "PRF-V3JVGY",
+      "invariant": "INV-4Y2AN9",
+      "origin": {
+        "handoffEntry": "SUB-R01-reproduce-legacy",
+        "leaf": "261123-SUB-L1"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "This test checks that candidate Lean scope uncertainty is reported even on an identical blob.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d9cbc7eeaa3aa58474a960a7ac84e7dc2fd63c",
+            "content": "sha256:4aa2def5449deb73301c7d8432e7d41083014b241d5b4fd75c027610c527abdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_citation_check_reports_an_uncertain_lean_scope_even_on_the_recorded_blob"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

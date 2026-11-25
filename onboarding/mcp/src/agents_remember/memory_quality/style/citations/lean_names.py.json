@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_names.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1444d2bdf47673f168110039cb9e5fb1217a7c18",
+        "content": "sha256:3e54b6e1649be34c321d66ddade7a5e1458534f3f68d29e7fe83ca95b8c70c77",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_name"
+        }
+      },
+      "id": "RLZ-YWV4P0",
+      "invariant": "INV-WZ8R0Q",
+      "origin": {
+        "handoffEntry": "SUB-R01-lean-source",
+        "leaf": "261123-SUB-L1"
+      },
+      "rationale": "Reads each name part with the pinned identifier rule.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`read_name` reads dotted and quoted name parts at the supplied offset.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1444d2bdf47673f168110039cb9e5fb1217a7c18",
+            "content": "sha256:3e54b6e1649be34c321d66ddade7a5e1458534f3f68d29e7fe83ca95b8c70c77",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_name"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -54,4 +54,4 @@ not the active renewal or a new source measurement. [1]
 
 - The generated size record holds the current curation capsule and judgment detail measurements. [8]
 
-- The generated template measurement records 6,357 words and the current source digest. [9]
+- The generated template measurement records 6,357 words and the current source digest. [10]

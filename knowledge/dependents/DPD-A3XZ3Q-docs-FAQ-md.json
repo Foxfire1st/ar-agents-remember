@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "711779a641b574d228218fbfe9ba70e6a05c81e0",
-    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
-    "role": "curator",
-    "statement": "The FAQ correctly describes path-based card reads and a derived cache that rebuilds when the loaded build and selected memory tree have no matching index.",
-    "task": "261112-BUG-L23",
-    "uncommitted": true
+    "codeTree": "55049f6c73b5660adaa6e3b0637185a3167751c3",
+    "commit": "54d242820ff7f9941cadebf9f543c857314b368f",
+    "role": "manager",
+    "statement": "The FAQ correctly describes deterministic card lookup, cache rebuilds for the selected memory tree and loaded build, and task creation through task_doc.",
+    "task": "261123-SUB",
+    "uncommitted": false
   },
   "document": "docs/FAQ.md",
   "id": "DPD-A3XZ3Q",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -81,7 +81,7 @@
       "path": "skills/l-01-agent-lifecycles/reference/curator/change-routing.md"
     },
     {
-      "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+      "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
     },

@@ -22,7 +22,7 @@ output template. `render_card` writes the converted Markdown once every real row
 - **Update History.** Every `## Update History` section is removed, and its bytes are counted
   (`_drop_history`). Git keeps the text.
 - **Citation tables.** Every `| Finding | Anchor | Source |` table outside fenced code is replaced in
-  place (`_take_table`). A real row becomes a template slot for `- <finding> [n]`. A placeholder row
+  place (`_take_table`). The selected citation reader supplies the row's language context. Native authoring uses the live reader and format 1 conversion passes its historical reader. A real row becomes a template slot for `- <finding> [n]`. A placeholder row
   (anchor and source both empty, `—` or `n/a`) produces no reference, and its finding stays as a prose line.
 - **One Evidence section (`_assemble`).** Every `##` section whose heading ends in `References` or
   `Evidence` moves, in document order and one heading level lower, into one `## Evidence` section. That

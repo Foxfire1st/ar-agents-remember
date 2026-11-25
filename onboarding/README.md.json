@@ -74,7 +74,7 @@
       ]
     },
     "4": {
-      "note": "The status section states release 3.0.6, the Python requirement, and where to read release notes.",
+      "note": "The status section states release 3.0.6 and the Python requirement, and directs readers to the release notes before installing.",
       "targets": [
         {
           "anchor": {

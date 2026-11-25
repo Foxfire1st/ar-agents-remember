@@ -193,12 +193,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
             "content": "sha256:2cc04074e2b8b952374bfb92cc248bd6cd66ab87112c84d938b25a6132c3daa9",
             "locator": {
-              "end": 368,
+              "end": 361,
               "kind": "line_range",
-              "start": 359
+              "start": 352
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },
@@ -206,7 +206,7 @@
         },
         {
           "anchor": {
-            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
             "content": "sha256:18335e300d5992f900e660f52c27342608a26cf3cabb4a304efe5b15b3248861",
             "locator": {
               "end": 51,
@@ -638,7 +638,7 @@
         },
         {
           "anchor": {
-            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
             "content": "sha256:53f8ac0bd312cffac2f3a8f388a1629488c7dd01caeee330629ed5390b3217bb",
             "locator": {
               "end": 19,

@@ -214,8 +214,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
-            "content": "sha256:2ce00211f0e556d927091ddb1985ea255f143356e7d6fe10e0dec936a1dbc7fd",
+            "blob": "2c089317e88d6adbfe8075934ce42527187dfe15",
+            "content": "sha256:ad2354729235ca10d7280a8b2a87ce8fdd2f1436ba8753817421e917bf4c4ca3",
             "locator": {
               "kind": "symbol",
               "name": "convert_memory"
@@ -226,7 +226,7 @@
         },
         {
           "anchor": {
-            "blob": "121edfb1328d74cf689a952ccebd72153bfc37cb",
+            "blob": "2c089317e88d6adbfe8075934ce42527187dfe15",
             "content": "sha256:99a15c7917b4c9f702d22c5448dcbf99c67a7fd8975c16ec72405239cc934f70",
             "locator": {
               "kind": "symbol",
@@ -243,7 +243,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca851a7ad416ce12946800d1b5cbe0dcd62a643c",
+            "blob": "08ded641b59332a7998d4e7b8260204c83c07b18",
             "content": "sha256:bc17b517227631b5ae60f4d2dbd2f079cdb0f8ed3116ff35ab1aa48f992f3d1e",
             "locator": {
               "kind": "symbol",
@@ -1203,12 +1203,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:cccae8bed2f4f9d0e92903bd9872801ea2401c83cb41cb6b6e52aaaa3d0e72e7",
             "locator": {
-              "end": 248,
+              "end": 247,
               "kind": "line_range",
-              "start": 195
+              "start": 194
             },
             "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
           },
@@ -1216,12 +1216,12 @@
         },
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:ed64a5daddb1ed12baaf24282cd1149aed2469a528b5fc52b182ea1712d1c43b",
             "locator": {
-              "end": 373,
+              "end": 369,
               "kind": "line_range",
-              "start": 326
+              "start": 322
             },
             "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
           },
@@ -1229,12 +1229,12 @@
         },
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
-            "content": "sha256:a95a9a2f387ca01240586b929093e4cf4c1103565f83612c6fd63a8c82749fcf",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "content": "sha256:10a7107dfebe4e9ccf2ecca87934960852a18560c7af27010f1f872c7c3a4c9b",
             "locator": {
-              "end": 431,
+              "end": 427,
               "kind": "line_range",
-              "start": 387
+              "start": 383
             },
             "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
           },
@@ -1276,12 +1276,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:e8c77574bd5ade8cf84872075080d750f769cb2e722e4cddd4810394d0dcbf06",
             "locator": {
-              "end": 127,
+              "end": 126,
               "kind": "line_range",
-              "start": 76
+              "start": 75
             },
             "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
           },
@@ -1493,12 +1493,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca851a7ad416ce12946800d1b5cbe0dcd62a643c",
-            "content": "sha256:7c54e7a20013f73a3612265c1b51bbe7ec33020dd50fa561e6b5eecb033ba45e",
+            "blob": "08ded641b59332a7998d4e7b8260204c83c07b18",
+            "content": "sha256:83c81c45414d8c0341c34cff9880616ffff920d4382e43006428ae55742e59e7",
             "locator": {
               "end": 118,
               "kind": "line_range",
-              "start": 64
+              "start": 73
             },
             "path": "mcp/src/agents_remember/memory/conversion/citations.py"
           },
@@ -1511,7 +1511,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
+            "blob": "9bbf24c012731dfdae3512a392696c4bd872b695",
             "content": "sha256:c4ba63173ceac4c2cbe54e5f9fc9b50dbd88e7258425f570017b9bc44d16bf4d",
             "locator": {
               "kind": "symbol",
@@ -1523,7 +1523,7 @@
         },
         {
           "anchor": {
-            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
+            "blob": "9bbf24c012731dfdae3512a392696c4bd872b695",
             "content": "sha256:a1e619b09a94dc7184ec1cddedce393267506cd55c6b29341d82885c08d8b05c",
             "locator": {
               "kind": "symbol",
@@ -1535,7 +1535,7 @@
         },
         {
           "anchor": {
-            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
+            "blob": "9bbf24c012731dfdae3512a392696c4bd872b695",
             "content": "sha256:891f54bfde7ea955ccfd00677b92922fda14e8be7672f51bdcf33a802eb58c8b",
             "locator": {
               "kind": "symbol",
@@ -1547,7 +1547,7 @@
         },
         {
           "anchor": {
-            "blob": "baed24c92765f5b2dd139d3e4348fa50ab683391",
+            "blob": "9bbf24c012731dfdae3512a392696c4bd872b695",
             "content": "sha256:ed6a6768e30a5ae6ce728d95ce8d94089466ddf369ed22d678550f1a1b9b1f4d",
             "locator": {
               "kind": "symbol",
@@ -1685,7 +1685,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
             "locator": {
               "kind": "symbol",
@@ -1698,12 +1698,12 @@
       ]
     },
     "19": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The symbol observation carrying every defining extent.",
+      "note": "A recorded symbol observation returns the defining extents when the selected key is established.",
       "targets": [
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
-            "content": "sha256:bfc0319d634856fb8f98a46fa53fcb0eb7fbba8a55532e4e7e19bc8d804a5b5f",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
+            "content": "sha256:911cbd8d9c75d410970d007d6f459319cf2e36c93b147f44d4ce62340b6a6af9",
             "locator": {
               "kind": "symbol",
               "name": "_observed_symbol"
@@ -1719,7 +1719,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
+            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
             "content": "sha256:a955743b9fa00eb0e6ea52f2d310950bf517c2471adc80030d5478c815e6a1e0",
             "locator": {
               "kind": "symbol",
@@ -1731,12 +1731,12 @@
         },
         {
           "anchor": {
-            "blob": "01a537e164b364be5e8d6ec5a1421c29d894f0e7",
+            "blob": "06a1266eb40b7d7a055d7387470323eabf7daf10",
             "content": "sha256:57c63d42827354cbfafd543d94611297372fa8a782554d7a775f5f21371749d3",
             "locator": {
-              "end": 229,
+              "end": 231,
               "kind": "line_range",
-              "start": 229
+              "start": 231
             },
             "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
           },
@@ -2132,7 +2132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:78f51cadba3736693dc26c7dd8de2b34bb8d1fe0814bef12295b72b2e648ee5a",
             "locator": {
               "kind": "symbol",
@@ -2144,7 +2144,7 @@
         },
         {
           "anchor": {
-            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "blob": "d1ac0261b2cdbd4171767d95c5852417f709c403",
             "content": "sha256:b3d613826a8ec1517125e0879403fe1c4aad88032371f0b956871b9ec1832875",
             "locator": {
               "kind": "symbol",

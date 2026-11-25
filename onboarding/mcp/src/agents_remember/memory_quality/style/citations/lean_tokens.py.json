@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/lean_tokens.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f260ea3df18a6981ad18bfa4817c15213036f3bd",
+        "content": "sha256:4f453660b38ea03197c2e0b843dd1603c7a45080964febb8981ae187ec73d2de",
+        "locator": {
+          "kind": "symbol",
+          "name": "ScopeTokens.read_label"
+        }
+      },
+      "id": "RLZ-3DHW8B",
+      "invariant": "INV-0KYRK9",
+      "origin": {
+        "handoffEntry": "SUB-R01-uncertain-lean-scope",
+        "leaf": "261123-SUB-L1"
+      },
+      "rationale": "Uses pinned token precedence while source atom collection retains unproved syntax extents.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`ScopeTokens.read_label` classifies the optional label for the scope reader.\n\nAnchor: `ScopeTokens.read_label`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f260ea3df18a6981ad18bfa4817c15213036f3bd",
+            "content": "sha256:4f453660b38ea03197c2e0b843dd1603c7a45080964febb8981ae187ec73d2de",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 474
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

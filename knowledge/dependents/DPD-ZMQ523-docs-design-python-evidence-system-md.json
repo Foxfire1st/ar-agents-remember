@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "ae80e60ea31a21e2880e045334e91760da0f41bc",
-    "commit": "bb6ad8aa5d5cff0f1d83e2782a0da16ff91a9724",
+    "codeTree": "f3ee77dfac4162d06d4dba0121172674a8c4f7d3",
+    "commit": "653b42f6b47d4e59ba8b47047d0d31698080d369",
     "role": "curator",
-    "statement": "The evidence-system guide's lane and shared-support rules match the settled catalogs, which assign each of the five crossing-related tests to one lane and name each in existing lifecycle consumer entries.",
+    "statement": "The evidence-system guide accurately describes lane and lifecycle authority, including canonical ordering and source-derived consumers, on the merged catalogs. The evidence-system guide's lane and shared-support rules match the settled catalogs, which assign each of the five crossing-related tests to one lane and name each in existing lifecycle consumer entries.",
     "task": "261112-BUG-L26",
-    "uncommitted": false
+    "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
   "id": "DPD-ZMQ523",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "855dbb0f6818b48d976e66080be99457471d1e3d",
+      "blob": "1b86940bc46b71084969cf30a1e9f6ca99007379",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "736971842f53ebaeefbdbeeaee61a349ab254741",
+      "blob": "607aaf2231d167f9e02682ffa426418b21f0600e",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },

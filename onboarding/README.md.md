@@ -27,7 +27,7 @@ The five install steps stand under the heading `Install steps` and keep the numb
 
 
 
-- The status section states release 3.0.6, the Python requirement, and where to read release notes. [4]
+- The status section states release 3.0.6 and the Python requirement, and directs readers to the release notes before installing. [4]
 
 
 

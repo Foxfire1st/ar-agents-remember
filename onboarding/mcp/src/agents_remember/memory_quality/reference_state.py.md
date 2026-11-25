@@ -8,9 +8,7 @@
 
 **Reference currentness over sidecars, and the mechanical reference fixer (MIK-R24 rule 5).** On a
 converted memory tree the citation checker and fixer work over sidecar `references` instead of citation
-tables. `application/memory_tools` routes `citation_check` and `citation_fix` here; the memory-quality
-run's converted check measures the same states, and the validator's `R198.1-reference-anchor` rule
-refuses a non-current anchor at publication (MIK-R198 rule 5).
+tables. `application/memory_tools` routes `citation_check` and `citation_fix` here. The converted reference census has its own current and stale counts. The validator's `R198.1-reference-anchor` rule refuses a non-current anchor at publication.
 
 ## Code Commentary
 
@@ -18,7 +16,8 @@ refuses a non-current anchor at publication (MIK-R198 rule 5).
 
 - `is_converted_memory(root)` holds exactly when the tree has `knowledge/layout.json`.
 - `anchor_state(path, anchor, files)` reads the code working tree:
-  - `current` if the file's Git blob ID (`git_blob_id`, computed without Git) equals the anchor's `blob`,
+  - `unverifiable` if a requested Lean key has uncertain scope, including on a matching blob. The report offers a line range.
+  - Otherwise, `current` if the file's Git blob ID (`git_blob_id`, computed without Git) equals the anchor's `blob`,
     or if the located bytes still hash to its `content` (the MIK-R03 entry rule);
   - `stale` if the content differs;
   - `stale:unresolved` if a symbol no longer binds uniquely (`located`, through `extents.qualified_spans`)
@@ -26,22 +25,20 @@ refuses a non-current anchor at publication (MIK-R198 rule 5).
   - `stale:path-absent` if the file is gone.
 - `check_references(memory_root, code_root)` walks every sidecar with `references` (`_sidecars`, skipping
   `*.index.json`) and every `code` or `test` target (`_anchor_targets`; a file sidecar's own path fills an
-  anchor without one). Every non-current target is returned as a **report-only** finding
-  `knowledge.references.stale`, naming the onboarding gate (MIK-R30) as the refresh route. The result is
+  anchor without one). Non-current targets are report-only. Uncertain Lean scope has its own `unverifiable` state and line-range remedy. Stale anchors name the onboarding gate as their refresh route. The result is
   `ok` with `findingCount: 0`, and the counts are by state.
-- Only sidecars that actually hold references are counted or observed: a sidecar with an empty
-  references map holds nothing to observe, so it is neither read nor unreadable here (the fixer still
-  visits it to author references). A sidecar whose references name only non-code targets is counted
-  while its anchors stay out of the observed code/test counts, and a sidecar whose references cannot
-  be read as targets is named in `unreadableSidecars` and excluded from every count. The result
-  carries `sidecarCount` alongside `states` and `unreadableSidecars`, so zero means an empty tree,
-  never an unread one.
-- `fix_references(memory_root, code_root, *, dry_run)` re-records only **mechanical** moves
-  (`_refreshed`, `_refresh_document`):
-  - an anchor whose located content is unchanged but whose blob moved gets the new blob;
-  - a `line_range` whose exact bytes now occur exactly once elsewhere gets the new lines and blob.
-
-  It never touches a stale anchor, a note or a target list, and it returns the remaining stale findings.
+- `sidecarCount` counts successfully inspected sidecars with nonempty reference maps, including
+  sidecars with only non-code targets. `states` counts the observed code and test targets by state.
+  The checker skips empty maps. JSON parse and reference inspection failures appear separately in
+  `unreadableSidecars`, and those sidecars contribute to neither count. Each count describes only
+  the population it measures.
+- `fix_references(memory_root, code_root, *, dry_run)` refreshes anchors through `refreshed_anchor`
+  and `_refresh_document`. It re-records a changed blob when the existing locator finds the recorded
+  bytes. If a line range moved, it re-records the lines and blob when exactly one range of the
+  original length matches those bytes. It preserves notes and target lists. The working-tree check
+  can report a repairable move as stale at its old lines. The strict paired-tree census identifies
+  blob refreshes and unique range moves as `stale:blob` and `moved:range`. Cases that remain unresolved
+  after mechanical repair, including uncertain Lean scope, require Curator judgment.
 - **One sidecar, and unreadable sidecars (L37 fix round P1b, review R3-3).** `fix_references(memory_root,
   code_root, *, dry_run=False, only=None)`: with `only` (a memory-root-relative sidecar path) no other sidecar is
   read or rewritten, which is how `citation_fix` with one `document` stays on that card. `_sidecars` names a
@@ -59,9 +56,8 @@ refuses a non-current anchor at publication (MIK-R198 rule 5).
 
 ### Invariants And Boundaries
 
-- **A stale reference is reported here, and a gate finding wherever publication is judged.** The
-  onboarding gate (MIK-R30) is one route by which a curator refreshes it (rule 5); the validator's
-  `R198.1-reference-anchor` refuses it at publication and in the full quality run (MIK-R198 rule 5).
+- The working-tree check reports non-current references. At publication and in the full quality
+  run, `R198.1-reference-anchor` requires the paired blob and matching locator content.
 - On the real converted copy at `cd3e943d`: 34,607 current and 476 stale references in 330 sidecars. A
   fixer dry run would refresh 1,303 mechanically moved anchors and leaves the 476 stale ones.
 
@@ -88,10 +84,10 @@ The format test, the anchor states, the check and the fixer.
 
 - A tree is converted exactly when it has the layout marker. [1]
 - The located bytes of a file, symbol or range locator. [2]
-- An anchor's state in the working tree. [3]
+- The working-tree citation check reports an uncertain Lean key as unverifiable before considering an equal blob. [3]
 
 
-- Only mechanical moves are re-recorded; a range is re-found only when its bytes occur exactly once. [5]
+- The fixer refreshes a changed blob when the locator still resolves to the recorded bytes. It re-records a moved range when exactly one range of the original length matches those bytes. Cases that remain unresolved after mechanical repair, including uncertain Lean scope, require Curator judgment. [5]
 
 
 

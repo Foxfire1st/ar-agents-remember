@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "b810bc180190b8646fccd2eb7a074e158fd790d2",
-    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
+    "codeTree": "f3ee77dfac4162d06d4dba0121172674a8c4f7d3",
+    "commit": "653b42f6b47d4e59ba8b47047d0d31698080d369",
     "role": "curator",
-    "statement": "The knowledge-system reference correctly says that an automatically settled memory merge also runs the staged check described in Worktrees.",
+    "statement": "The reference correctly describes Lean symbol selection, exact dependent confirmation, contractual memory bases and the knowledge index’s bounded rebuild behavior. The knowledge-system reference correctly says that an automatically settled memory merge also runs the staged check described in Worktrees.",
     "task": "261112-BUG-L26",
     "uncommitted": true
   },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -304,6 +304,42 @@
     },
     {
       "anchor": {
+        "blob": "99df0c0c84ad04bf21bdf64a7cf57391d5ad4274",
+        "content": "sha256:18e47251b894adc0e9a44597af517884741a485254614749d5168ae41d5d7ae3",
+        "locator": {
+          "kind": "symbol",
+          "name": "bindings"
+        },
+        "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "b8f2342af05c247e2c8b4050161705280a76f1bc",
+        "content": "sha256:428595608b8a1b54f76b915537355cc15a663140b16c860d5402290c44d27978",
+        "locator": {
+          "kind": "symbol",
+          "name": "qualified_spans"
+        },
+        "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "71af220596f317a833cf129c3bf80e2da22c1ed5",
+        "content": "sha256:28b6c99f63481db9ebafd92c051fe36b3afe9ed6106b9ac2c9159e42a17104e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_symbol_range"
+        },
+        "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
         "blob": "3f98b8e6d698ba4d1ac8e4ba3a6850e6959016dc",
         "content": "sha256:7dcebc5be7932e9974e6e8a3ae261d8b3207c1233f7a82133a1527cb2ff0ab9a",
         "locator": {
@@ -343,8 +379,8 @@
     },
     {
       "anchor": {
-        "blob": "c3618ab6d92e22ecdbd730278cc50944da467c08",
-        "content": "sha256:45f12690c7c34b7b6660e1eeb4c41e28c8d7d611c2b4a0688d0891870e9ab303",
+        "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
+        "content": "sha256:1ec537f6f0422a1b506ca91c06b7b979e369716ad77db2e41cb8d0e1df516525",
         "locator": {
           "kind": "symbol",
           "name": "_continue_memory_merge"
