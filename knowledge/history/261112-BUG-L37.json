@@ -1,0 +1,1478 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L37",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "099b1c7377936f9de6e000d4170f8127c4444258",
+            "content": "sha256:05a4d19b129290a19fa5447d3e70b29cba084690b816e892186a23d89427bc72",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+            "content": "sha256:a34076072c31c9d2ff07aed12fe89607e7e8a32988dbf045f9d87ecc0258c328",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-HAGFJ4"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-01G97N",
+      "items": [
+        "sha256:cc548d2405ea90e0cc656562fce835246188086519fae972312bde77883cb39f"
+      ],
+      "reason": "The parent-wake registration now passes the limit reader into the shared check; the timeline-refetch rule is unchanged.",
+      "revision": 2,
+      "subject": "INV-HERZ7X"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0M6SEW",
+      "items": [
+        "sha256:3a477f3dadbcf3565cd005872ea8ec73256799fca94c9a4eddb6ea5d4f7af08f"
+      ],
+      "reason": "Named the shared limit reader passed into the tracker.",
+      "sources": [
+        {
+          "blob": "099b1c7377936f9de6e000d4170f8127c4444258",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
+            "content": "sha256:836ec813a206794d67df289bb17481bbdb3f482aeaf7d22b82e3871f1c7cc29f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_held_delivery_tick"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "before": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:5dcd3af06b4b19698cc77d3ad124c7a4165a49f254bb380b22fd8a78fe2a6813",
+            "locator": {
+              "kind": "symbol",
+              "name": "_held_delivery_tick"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "id": "RLZ-GY7QM8"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-1WANN4",
+      "items": [
+        "sha256:fe1be5e9e4e548c2f6f95ddd487b51f54aebd6396a4e2e93458da9269bdace5a"
+      ],
+      "reason": "The held-delivery tick claims a due usage read before delivery and then passes its ended agents to the move watcher; the watcher call and its position are unchanged.",
+      "revision": 1,
+      "subject": "INV-15M226"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2F4BEW",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Re-authored the lane catalog references after the new storage test's unit-regression declaration.",
+      "sources": [
+        {
+          "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2Z41RF",
+      "items": [
+        "sha256:1f04f5794e86cfc12bfbbb7b0ec5bbdfb9a8450b8b1a28e4e209065b218c7324"
+      ],
+      "reason": "Added the usage batch and its shared publication.",
+      "sources": [
+        {
+          "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
+          "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3G7YG9",
+      "items": [
+        "sha256:1b70493a36fecb2061560f801f34861da0d6aa622a13cb1926df40a64eb65836"
+      ],
+      "reason": "Added the stamped empty-list mapping case.",
+      "sources": [
+        {
+          "blob": "21c0c7f05e235f165b00aa33dcccb82f2bee57d5",
+          "path": "mcp/tests/test_provider_limit_hold.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_provider_limit_hold.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-3HZ6C6",
+      "items": [
+        "sha256:465e9f1bd8fdd9502ebd8a2ae576f1ed915bf72ea2e92b302cb237476e4114ac"
+      ],
+      "reason": "Reconfirmed the document at the task tip after its recorded dependencies changed; the confirmation states the document's current judgment.",
+      "revision": 15,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:46f75f27dec8fe1e77dd16ea211046bb9b62e75a49d0d9828953f71a17782c7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliverSeatWake"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:40a86abf268f8db09d6a33f368dcbe2eabd92235ef6472baba9e5bd15ab0ea79",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliverSeatWake"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-0DRPF9"
+        },
+        {
+          "after": {
+            "blob": "099b1c7377936f9de6e000d4170f8127c4444258",
+            "content": "sha256:05a4d19b129290a19fa5447d3e70b29cba084690b816e892186a23d89427bc72",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+            "content": "sha256:a34076072c31c9d2ff07aed12fe89607e7e8a32988dbf045f9d87ecc0258c328",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-1HAN2T"
+        },
+        {
+          "after": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:ea4ee6a5deb59fabe2891dba85d6e451e883faac544880e999873127c050d949",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnStarted"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:1b458b1f78c056665985f224ceca9c45945b5480ba223148289e59730fd0595c",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnStarted"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-1V0Y9T"
+        },
+        {
+          "after": {
+            "blob": "099b1c7377936f9de6e000d4170f8127c4444258",
+            "content": "sha256:5d84bc8c98f333afbe2951168f2924a2d0614ce5e3b389313b2cc3f0e1729c2b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+            "content": "sha256:ddb73c38f72efb8147723458eeb998bb570b22285988b20f69fa587c41dfcf9b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-55H239"
+        },
+        {
+          "after": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:d8d6bb954a53bc0bd3b1c5bb837d7297341c14e8481d23b55d8a0d6c0fa97454",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:c26d4f857189685526dda3be63e065c8a620bca4f7ce8f111867f7eed85531ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-78JFRR"
+        },
+        {
+          "after": {
+            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "content": "sha256:e7b91cc8315103fef2ec3033e638b47016391dbaa77cffd6d3c3ccabac94bcba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "382eeb25cf59674f7f5b68cd94fbd8a39b9ee0e1",
+            "content": "sha256:2b080e39c74a7f0c47fe23a6e50470b88ee7fc4af3583b45bb37e9e8a9874433",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
+            "content": "sha256:049289c5ff4c64a83c89bd9f6b86ec449cbf8f975022160d476cece37d01ce71",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": {
+            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "content": "sha256:08571a69b76192b77f97c0e7dc71810f9fee02ba406c5975c01c5f1ef7b73382",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "id": "RLZ-CTTYCZ"
+        },
+        {
+          "after": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:d90b91a4d9d768ce1944e54bffd416f8bcf0c7232f616d0f36ff2c09a8ca8418",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteAgentArchived"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:1f6e34d477cb1bdce6d40ecfb641d39cd938d5af505b9d22bbf204eb430a7ff3",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteAgentArchived"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-D5653M"
+        },
+        {
+          "after": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:f398551e0b60aa224a1d5ba84482bc93af74e39c65a541bf971f2a6db206062c",
+            "locator": {
+              "kind": "symbol",
+              "name": "parentMayTakeLineNow"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:e5c1eca9c1f3fbe1a426f837a47e845ff07ebe2195a9ba72b709fa0ccd72dec7",
+            "locator": {
+              "kind": "symbol",
+              "name": "parentMayTakeLineNow"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-DKJY6H"
+        },
+        {
+          "after": {
+            "blob": "21c0c7f05e235f165b00aa33dcccb82f2bee57d5",
+            "content": "sha256:2a5b2b81c64fdac912ba671ff7194dd42dde9214eeb4c008d6cf7880881b857c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_provider_limit_hold.py"
+          },
+          "before": {
+            "blob": "1d4a994a29693ad93a517d83984c99e9db3d58f3",
+            "content": "sha256:6c6724171859e2ff71a5ef7a8f025ac8e01f7093a91bcb81b6b6a56e6b24ab5b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_provider_limit_hold.py"
+          },
+          "id": "RLZ-G2ZAMP"
+        },
+        {
+          "after": {
+            "blob": "d5599c0cbdea08d820a9774eec5c020ce86d35ba",
+            "content": "sha256:bfea083a52937f36f666d11027446f572fc87d8c785eeb64b61728ad468f6702",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "345ed4665ce228a5d509b235fce203c4473c24a3",
+            "content": "sha256:ad0fa111c7a3a366d769673cfe6a7a0c57ddf8eab2e91e8a798f5b78130d2d4b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        },
+        {
+          "after": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:42a6a98ce2c964b993d736e5d0c9f0d0aeeadc940b35b9ffd7739ed014289e68",
+            "locator": {
+              "kind": "symbol",
+              "name": "createTurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:61657ff8afe0e3ecc8a3984c539c5eba715d81dd147997eb2003c696fe2525cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "createTurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-H3YF9Z"
+        },
+        {
+          "after": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:0bdf8b7eb484ffe76cf076320b68b9b2285092386d40daf72ad782e3a1725ebf",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanupSeatWaits"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:470225853713d92c49d01fc42b1cc1c9ec438bc4bc353370afcf3febd7bc07aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanupSeatWaits"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-HTHGJ3"
+        },
+        {
+          "after": {
+            "blob": "20e391fe7fafb5ad842653dae85019c01bc1fc83",
+            "content": "sha256:7f76f13a9ea0605b42b054067afb4feb337298cb3b92c67a2fb63826cd840347",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/provider_limit_hold.py"
+          },
+          "before": {
+            "blob": "6a3359ae15c2d365b6b2ce0c2ac0a52e1b99549f",
+            "content": "sha256:2d12534980356d2155caa960accda1df8251ad76f44a2b3bb0219dd880f513a9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/provider_limit_hold.py"
+          },
+          "id": "RLZ-N27ZQQ"
+        },
+        {
+          "after": {
+            "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+            "content": "sha256:9978a2f2e314754edb4bbdfd1510c5551daeede393fdc6d629e897155d394885",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+            "content": "sha256:28463891a1ab18c88bdd18386b8dda2e7de35ce0eed0a13592f2c0d9a857b0b1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-RDK1XC"
+        },
+        {
+          "after": {
+            "blob": "1d507fdc65ccae97964aff0845b248628c937775",
+            "content": "sha256:09aae2d468748ed65b33db63dc6058acf3de8389b84ade0e743e36ba0f4f22ba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_held_delivery_tick_cost.py"
+          },
+          "before": {
+            "blob": "2b4312936a2e00d347d8affe118775496e853029",
+            "content": "sha256:b7ba6bb2e4b709f60415bb7e86ffd51189c78f3701a4280a05b2d7186d85f6de",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_held_delivery_tick_cost.py"
+          },
+          "id": "RLZ-SQ7ZGB"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-3Q9G0W",
+      "items": [
+        "sha256:1703e8faf72e53593233ee053a3b26476a90608430b2367c2ac4e7dfc8bc0391"
+      ],
+      "reason": "The turn-ended paths gained early-clear resume and flush plumbing and their cases; the silent-end, send-back and held-line rules are unchanged.",
+      "revision": 7,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3T4F44",
+      "items": [
+        "sha256:faa4529baea0d0962cb8bee372e2c9da76f462e658acef136588e008f3b8e479"
+      ],
+      "reason": "New card for the pending-only early-clear check, its shared snapshot and its stop condition.",
+      "sources": [
+        {
+          "blob": "0ca3af476487351cb190e7e8f38b5dc0681fda5f",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/provider_limit_check.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/provider_limit_check.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
+            "content": "sha256:6abc1fd809bfa912fcca09aac3ce51496d89c6f096543317acb082bd20a69a9d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "before": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:1a4bc34ceb1e312705da19ede3a5a6bbb8dfa5ca44f318fc6ad7612cb127d7f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "id": "RLZ-8MGWMB"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-4CP8T1",
+      "items": [
+        "sha256:7e0bd8d510272e8c37018bc172813025118584b77022b0918068e43afd9e5a71"
+      ],
+      "reason": "The serving tick takes its usage read through the UsageReadPort and UsageReadBatch the composition root binds; the no-upward-import rule is unchanged.",
+      "revision": 1,
+      "subject": "INV-QBWBNV"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-4EPBH4",
+      "items": [
+        "sha256:8d0223b476d7225d86040046310f840b0cb82a6cc535ce257c210e289c95a2d8"
+      ],
+      "reason": "Reconfirmed the document at the task tip after its recorded dependencies changed; the confirmation states the document's current judgment.",
+      "revision": 12,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5VZEBY",
+      "items": [
+        "sha256:795f9ad0ac563bd31dd6b65785d6856a12c3ac4cd23ac4855b00576b951929f5"
+      ],
+      "reason": "Added the five-minute recheck and the extracted usage-read module to the L184 limit account.",
+      "sources": [
+        {
+          "blob": "07ae82d885e3cd87654354b19a373a5a9267b9db",
+          "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+        },
+        {
+          "blob": "aee3de19d73cd6341556c4af080111a8b135951c",
+          "path": "mcp/src/agents_remember/cli/paseo_usage_reports.mjs"
+        },
+        {
+          "blob": "20e391fe7fafb5ad842653dae85019c01bc1fc83",
+          "path": "mcp/src/agents_remember/cli/provider_limit_hold.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6CNSD1",
+      "items": [
+        "sha256:87d97284f7f7c452458fdb4d5bceb0dc428259767a5c4f702427c4dd82a6d63d"
+      ],
+      "reason": "Added the early-clear resume, flush and departure rules.",
+      "sources": [
+        {
+          "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6TD5TN",
+      "items": [
+        "sha256:3875a8e91349eb7a1a8453fe60257109d4c7abb3bffb03d27195d676b7356375"
+      ],
+      "reason": "The fault stands: _held_delivery_loop is byte-identical at C and still catches every Exception from a tick, including one raised while the tick's arguments are evaluated, and only logs it;",
+      "revision": 1,
+      "subject": "WKN-NQ5HBZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6VWTKJ",
+      "items": [
+        "sha256:f4038426dfaf512e330b650734b4e47246f1ecfe4a484ea41b02087d7724f81f"
+      ],
+      "reason": "Added the claimed-attempt time and the clearedSeats marker to the reader model.",
+      "sources": [
+        {
+          "blob": "0e47c67d12a7ddb47908f7ea4f24d86bca76c892",
+          "path": "mcp/src/agents_remember/observer/provider_limits.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/observer/provider_limits.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7S7D8Z",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Re-authored the catalog references after the new storage test and usage-read cases changed the catalog rows.",
+      "sources": [
+        {
+          "blob": "d5599c0cbdea08d820a9774eec5c020ce86d35ba",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-8HF3EE",
+      "items": [
+        "sha256:34e63519f90d27fc369a47e87220b0fbf29eff53ceab0ef0b1195c448b65b8a1",
+        "sha256:56987102a3b13af1cf0901ba3da44cd5363e54191d07f17e10783b624bc3ec09"
+      ],
+      "reason": "Reconfirmed the MCP reference at codeTree ab32fa77 after the role-tool sentence at line 640 changed; the confirmation states the document's current judgment.",
+      "revision": 18,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8V26TE",
+      "items": [
+        "sha256:feb51b4cd247f462945f5e309df2c5e3a3ad9606ebc4b97627002d2403ff2ffa"
+      ],
+      "reason": "Added the usage batch before delivery and its two triggers.",
+      "sources": [
+        {
+          "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
+          "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/_app_lifespan.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "aee3de19d73cd6341556c4af080111a8b135951c",
+            "content": "sha256:6dd4593fd5736237084054c8af8278437f6ba84e92cd44c90fc63605e43a78f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "readUsageReports"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_usage_reports.mjs"
+          },
+          "before": {
+            "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
+            "content": "sha256:628dfca1128773e22c2b092fad35ad24aa219a2fff93af60b6442948df59aef2",
+            "locator": {
+              "end": 705,
+              "kind": "line_range",
+              "start": 651
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-AM4R8J"
+        },
+        {
+          "after": {
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
+            "content": "sha256:6abc1fd809bfa912fcca09aac3ce51496d89c6f096543317acb082bd20a69a9d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "before": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:1a4bc34ceb1e312705da19ede3a5a6bbb8dfa5ca44f318fc6ad7612cb127d7f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "id": "RLZ-Z58FSG"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-8VJDJ8",
+      "items": [
+        "sha256:0a8516afa4993bf67d68165b08c8bc1717b2379cb7cbbe5033baa188aab5d871"
+      ],
+      "reason": "The condition that allowed a read only at a new stamped turn end now also allows the five-minute recheck of a live report; the single-reader and account-window rules are unchanged.",
+      "revision": 2,
+      "subject": "INV-BCXFH9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "099b1c7377936f9de6e000d4170f8127c4444258",
+            "content": "sha256:05a4d19b129290a19fa5447d3e70b29cba084690b816e892186a23d89427bc72",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "a0e569e78c1d222d4bb20306a85fb06b0bc142d0",
+            "content": "sha256:a34076072c31c9d2ff07aed12fe89607e7e8a32988dbf045f9d87ecc0258c328",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-X67Y54"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-98PBFQ",
+      "items": [
+        "sha256:95daf8f6a768d5c9ba577332614415a0a2a05a91a0a7a0428e6cfe5a87705a5f"
+      ],
+      "reason": "The parent-wake registration now shares one limit reader; the closure and held-parent-line rules are unchanged.",
+      "revision": 1,
+      "subject": "INV-TD175J"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-9BJ9WW",
+      "items": [
+        "sha256:0482b801f9de99758f7ec86497242b5b8ec50b7d0f7a1c9804729bea54bfb466",
+        "sha256:c7eaf99f5b3b9c75ac83572b8e50cc3590afa0d4d49635c9295a73db0f07f96c"
+      ],
+      "reason": "Reconfirmed the document at the task tip after its recorded dependencies changed; the confirmation states the document's current judgment.",
+      "revision": 5,
+      "subject": "DPD-327MNX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9YV8G5",
+      "items": [
+        "sha256:c75e66513c9cb0750d9ce9c1bd28ba4702e9123b56fdfcc223f81754dacfce4c"
+      ],
+      "reason": "Added the clearedSeats document and the separate fifteen-second checker.",
+      "sources": [
+        {
+          "blob": "bf9285b3a78cf8e4a5fa858b1b69b14faefeb129",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/provider_limits.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/provider_limits.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "content": "sha256:e7b91cc8315103fef2ec3033e638b47016391dbaa77cffd6d3c3ccabac94bcba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "382eeb25cf59674f7f5b68cd94fbd8a39b9ee0e1",
+            "content": "sha256:2b080e39c74a7f0c47fe23a6e50470b88ee7fc4af3583b45bb37e9e8a9874433",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "d5599c0cbdea08d820a9774eec5c020ce86d35ba",
+            "content": "sha256:bfea083a52937f36f666d11027446f572fc87d8c785eeb64b61728ad468f6702",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "345ed4665ce228a5d509b235fce203c4473c24a3",
+            "content": "sha256:ad0fa111c7a3a366d769673cfe6a7a0c57ddf8eab2e91e8a798f5b78130d2d4b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-BVTAVZ",
+      "items": [
+        "sha256:4e6c34fca9e2c167e32dd1e7145830c94c5a4be4b83bb693c3e3b7e5a24bfdf9"
+      ],
+      "reason": "The lane catalogs gained one consumer line; the enclosure-generation scratch rule is unchanged.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-MGGEBY",
+          "revision": 2
+        },
+        {
+          "id": "INV-VDWN33",
+          "revision": 4
+        },
+        {
+          "id": "INV-WQ8YGE",
+          "revision": 2
+        },
+        {
+          "id": "INV-X0KED3",
+          "revision": 3
+        },
+        {
+          "id": "INV-XZYGEB",
+          "revision": 3
+        },
+        {
+          "id": "INV-YK0D2W",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0BXKJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-C210QX",
+      "items": [
+        "sha256:741f134f56043bf1ed1f8208111e3b239d9c724e9d2bcdbed968a908f5860fb9"
+      ],
+      "reason": "The host-activity projection now builds the usage batch and the ended set from the same publication; the family's task-entry, waiting and limited-word guarantees are unchanged. Examined all seven members.",
+      "revision": 5,
+      "subject": "FAM-14NZRC"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "content": "sha256:e7b91cc8315103fef2ec3033e638b47016391dbaa77cffd6d3c3ccabac94bcba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "382eeb25cf59674f7f5b68cd94fbd8a39b9ee0e1",
+            "content": "sha256:2b080e39c74a7f0c47fe23a6e50470b88ee7fc4af3583b45bb37e9e8a9874433",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CMYTKD",
+      "items": [
+        "sha256:6ff9306c1c01b373ff1a4690db2e00032f9f69c7126218420878815087eb1ac4"
+      ],
+      "reason": "The lane catalog gained one consumer line for the new storage test; the surviving rail declarations and measured digests are unchanged.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DEZBF7",
+      "items": [
+        "sha256:8463d88e79efb91f31d722cd051e23cd0a4c14274293b5b731abdcb9d33f2d18"
+      ],
+      "reason": "Stated the five-minute recheck and the batch-before-delivery order.",
+      "sources": [
+        {
+          "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
+          "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+        },
+        {
+          "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
+          "path": "mcp/src/agents_remember/serving/paseo/provider_limits.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DTDNPR",
+      "items": [],
+      "reason": "New card for the extracted usage-report reader, its request shape and periodic verdicts.",
+      "sources": [
+        {
+          "blob": "aee3de19d73cd6341556c4af080111a8b135951c",
+          "path": "mcp/src/agents_remember/cli/paseo_usage_reports.mjs"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_usage_reports.mjs"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DX351M",
+      "items": [
+        "sha256:f03f62e707b0921bda27e28130981cd728498259c5c90893c13dc2009d1ec67c"
+      ],
+      "reason": "Added the periodic usage batch and the limit file's rechecks and early clear to the suite account.",
+      "sources": [
+        {
+          "blob": "d5599c0cbdea08d820a9774eec5c020ce86d35ba",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "1d507fdc65ccae97964aff0845b248628c937775",
+          "path": "mcp/tests/test_held_delivery_tick_cost.py"
+        },
+        {
+          "blob": "2183eb643d529969a2fe786cd22a8f3710afc2a9",
+          "path": "mcp/tests/test_paseo_usage_reports.py"
+        },
+        {
+          "blob": "21c0c7f05e235f165b00aa33dcccb82f2bee57d5",
+          "path": "mcp/tests/test_provider_limit_hold.py"
+        },
+        {
+          "blob": "16d4a1133648d32cee39318ad939a25f1b00f180",
+          "path": "mcp/tests/test_provider_limit_layering.py"
+        },
+        {
+          "blob": "d049615ffc7af3252c708e17a3ee39e38583ef77",
+          "path": "mcp/tests/test_provider_limit_storage.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
+            "content": "sha256:836ec813a206794d67df289bb17481bbdb3f482aeaf7d22b82e3871f1c7cc29f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_held_delivery_tick"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "before": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:5dcd3af06b4b19698cc77d3ad124c7a4165a49f254bb380b22fd8a78fe2a6813",
+            "locator": {
+              "kind": "symbol",
+              "name": "_held_delivery_tick"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "id": "RLZ-MQ79S4"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-FJZT5K",
+      "items": [
+        "sha256:0cc38544f47d3035f4356b56640f2ccbb5dbb638a9e9a906bae417ffc3f6a865"
+      ],
+      "reason": "The tick claims due usage reads before its delivery pass; the held-message, provider-limit and archive-confirmation rules are unchanged.",
+      "revision": 3,
+      "subject": "INV-4DQMNE"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-HERM4V",
+      "items": [
+        "sha256:857205b8b29c641f1659385b76f56a3fef2f022fd0c662fa21bcba11933845e8"
+      ],
+      "reason": "Reconfirmed the document at the task tip after its recorded dependencies changed; the confirmation states the document's current judgment.",
+      "revision": 9,
+      "subject": "DPD-B540GW"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d5599c0cbdea08d820a9774eec5c020ce86d35ba",
+            "content": "sha256:bfea083a52937f36f666d11027446f572fc87d8c785eeb64b61728ad468f6702",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "345ed4665ce228a5d509b235fce203c4473c24a3",
+            "content": "sha256:ad0fa111c7a3a366d769673cfe6a7a0c57ddf8eab2e91e8a798f5b78130d2d4b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "89195287e6120a5d533de926140fa2c2e4e5fcec",
+            "content": "sha256:e7b91cc8315103fef2ec3033e638b47016391dbaa77cffd6d3c3ccabac94bcba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "382eeb25cf59674f7f5b68cd94fbd8a39b9ee0e1",
+            "content": "sha256:2b080e39c74a7f0c47fe23a6e50470b88ee7fc4af3583b45bb37e9e8a9874433",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-HNE2KW",
+      "items": [
+        "sha256:a6e9343d98fa7619238895dafe568e539cb43013add1c10adc219940c363d6f8"
+      ],
+      "reason": "The two evidence catalogs gained the new storage test as a consumer; their identity and deletion rules are unchanged.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-JY49EQ",
+      "items": [
+        "sha256:c2ad9927c9aefc753ca1517dd6475ba0fd7c3c50545f67a60baa52ee8762bde6"
+      ],
+      "reason": "Reconfirmed the document at the task tip after its recorded dependencies changed; the confirmation states the document's current judgment.",
+      "revision": 8,
+      "subject": "DPD-23C91T"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K1R1K3",
+      "items": [
+        "sha256:7f850a55444049e0c98374279926bfc4b8e54bf9446fa48adb5d361129ccf81f"
+      ],
+      "reason": "Added the five-minute claim and the early-clear marker rules.",
+      "sources": [
+        {
+          "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
+          "path": "mcp/src/agents_remember/serving/paseo/provider_limits.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/paseo/provider_limits.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "16d4a1133648d32cee39318ad939a25f1b00f180",
+            "content": "sha256:ec646887794da85b488e30120bdea19bb2ab94a2bfd6b91b0e07d6a83859c84b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_provider_limit_layering.py"
+          },
+          "before": {
+            "blob": "d5b65c16dce66c551bb15789faef21ae631b0390",
+            "content": "sha256:047ee5ca3daa22e194bfcf5819237fe2623fb7496ff3516a996abe7b29240765",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_provider_limit_layering.py"
+          },
+          "id": "RLZ-1TPMKP"
+        },
+        {
+          "after": {
+            "blob": "0e47c67d12a7ddb47908f7ea4f24d86bca76c892",
+            "content": "sha256:896219c4d8e90529af6322d9fb741c96c9c8b8b99cf0ad73ae322c7e7f138e42",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/provider_limits.py"
+          },
+          "before": {
+            "blob": "505ca868c7f3c031f538ca7709e1c2888ecc1ded",
+            "content": "sha256:eb78793301c5336abef1f2df9f36402cd5755d7a4a1fb5983bc1b1a99093dbc4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/provider_limits.py"
+          },
+          "id": "RLZ-7MGDYE"
+        },
+        {
+          "after": {
+            "blob": "bf9285b3a78cf8e4a5fa858b1b69b14faefeb129",
+            "content": "sha256:2563b0cafcb88426cc6c84fc5ba8b29588448462ddbad54ffbb9e36a9fd631da",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/provider_limits.ts"
+          },
+          "before": {
+            "blob": "94105449e12aac1ddbfabe5b87f268d93f6e8a84",
+            "content": "sha256:3645bf19dc5f0cddc021991baceda2366a2e80fb0a7590e407cb3ce0b8256d4c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/provider_limits.ts"
+          },
+          "id": "RLZ-NSA23C"
+        },
+        {
+          "after": {
+            "blob": "2183eb643d529969a2fe786cd22a8f3710afc2a9",
+            "content": "sha256:b86df8314c059bed55e7159474fe54467b812b7285e25a81026abf661ebfeedf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_paseo_usage_reports.py"
+          },
+          "before": {
+            "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
+            "content": "sha256:e85791b988676d4f8e810ad43520ee21bbe0c6024dd77ab1dd942c75f92e2b9f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_paseo_usage_reports.py"
+          },
+          "id": "RLZ-Q4595S"
+        },
+        {
+          "after": {
+            "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
+            "content": "sha256:d16984d86d7774ca319d5ea164894248586823e014cfcb2a0f588bd38f09310a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/provider_limits.py"
+          },
+          "before": {
+            "blob": "77a6a6dc37f2cd00dcbfaaf953c7b97720fdbf74",
+            "content": "sha256:a36e3845b4994024c57c92662e8b632b61dba33ac0e282387d40407480ac579f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/provider_limits.py"
+          },
+          "id": "RLZ-XATWX1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-KWPNAG",
+      "items": [
+        "sha256:be1d2dedc9910ffe89f95ed13f42c14e2da84cfbc2f8abb9550a9bbcc877f500"
+      ],
+      "reason": "A live report is now re-read when five minutes have passed since its observation or last claimed attempt; the earlier condition allowed a read only at a new stamped turn end.",
+      "revision": 3,
+      "subject": "INV-4T6KSE"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
+            "content": "sha256:d64f2d6a5a5bff85890f694507bc691b989fb85db3666dcc22892876a9143c4b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "before": {
+            "blob": "dcc6cc5f606fe5fc2b2b837b3608580d0592151b",
+            "content": "sha256:3f58f05948f03bafa6ae12c93570f7bd48488df0aedf038b557876d67c9af63d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "id": "RLZ-MZV75N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-MM0GD9",
+      "items": [
+        "sha256:61871d46d139752dc960e2bbe11e33d6c0c71a043875a056f36827f53946720b"
+      ],
+      "reason": "The host-activity projection now builds the usage batch and the ended set from the same publication; the task-stage and limited-word rules are unchanged.",
+      "revision": 4,
+      "subject": "INV-VDWN33"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "07ae82d885e3cd87654354b19a373a5a9267b9db",
+            "content": "sha256:153f8e1f9a1edfbccb18bffb56a99d6908a418df3bedd28dcb2d0d4d6a0bbb09",
+            "locator": {
+              "end": 703,
+              "kind": "line_range",
+              "start": 671
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": {
+            "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
+            "content": "sha256:327d5fbcc12efdf4f28c687485e0a6234298c271026cb333385fb3334a86b999",
+            "locator": {
+              "end": 703,
+              "kind": "line_range",
+              "start": 671
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-8FFN5K"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-MQVR5A",
+      "items": [
+        "sha256:c1092b8f72638fa96797d1ef5ff2954ebe1e5f06e150b1e18606a04724a71418"
+      ],
+      "reason": "The forced refresh moved from the bridge into the extracted usage-read module; the reportIds-only rule is unchanged at its new home.",
+      "revision": 1,
+      "subject": "INV-DY1KSB"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ND94PD",
+      "items": [
+        "sha256:3614156e5568f7a5f4fcf954628c0e8af8e39c6888e95f2192f83c535a252158"
+      ],
+      "reason": "Added the shared batch, failure, no-seat and clear-delivery cases.",
+      "sources": [
+        {
+          "blob": "1d507fdc65ccae97964aff0845b248628c937775",
+          "path": "mcp/tests/test_held_delivery_tick_cost.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_held_delivery_tick_cost.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PQ5XXN",
+      "items": [
+        "sha256:950d11395806d65d2a60f14ccbec26cf13e04fa4ed2ca27b69b076fdab69d3d6"
+      ],
+      "reason": "The change only moves the usage-report read into cli/paseo_usage_reports.mjs and updates the bridge's import and dispatch; the bridge's own contract is unchanged.",
+      "subject": "hunk:sha256:950d11395806d65d2a60f14ccbec26cf13e04fa4ed2ca27b69b076fdab69d3d6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QJ1PMN",
+      "items": [
+        "sha256:3c08687cdd655e45fe998c572ae13867381c6e10c54c9a8de5472c6a17fee4d4"
+      ],
+      "reason": "The change only moves the usage-report read into cli/paseo_usage_reports.mjs and updates the bridge's import and dispatch; the bridge's own contract is unchanged.",
+      "subject": "hunk:sha256:3c08687cdd655e45fe998c572ae13867381c6e10c54c9a8de5472c6a17fee4d4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R2CWPM",
+      "items": [
+        "sha256:3808f93abf51ad7f17e84c812e18c11f3005e932a9252cca3d461177b196a8c8"
+      ],
+      "reason": "Added the early-clear registration and ordering cases.",
+      "sources": [
+        {
+          "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S3Q50B",
+      "items": [
+        "sha256:02cecfef7f2f4d7485844905f36c7e6a8a3421b12974db1e3458c4ffafabff51"
+      ],
+      "reason": "Added the one-batch read, its failed-refresh handling and the no-seat log.",
+      "sources": [
+        {
+          "blob": "20e391fe7fafb5ad842653dae85019c01bc1fc83",
+          "path": "mcp/src/agents_remember/cli/provider_limit_hold.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/provider_limit_hold.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SE9CVH",
+      "items": [
+        "sha256:32615260edd7c080a9951bd273d0c7b60accc2d751658a17c189c99dc4617370"
+      ],
+      "reason": "Added usage_read_batch and its eligible-seat selection.",
+      "sources": [
+        {
+          "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
+          "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/host_activity.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TJM8YT",
+      "items": [
+        "sha256:cec4d7ca9018d0cb66bf6b5caf8ded7beaf983fa5dd1cd61a306c01c43cfa9e8"
+      ],
+      "reason": "Added the pending-only early-clear check and its module to the plugin account.",
+      "sources": [
+        {
+          "blob": "0ca3af476487351cb190e7e8f38b5dc0681fda5f",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/provider_limit_check.ts"
+        },
+        {
+          "blob": "bf9285b3a78cf8e4a5fa858b1b69b14faefeb129",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/provider_limits.ts"
+        },
+        {
+          "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+        },
+        {
+          "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+        },
+        {
+          "blob": "099b1c7377936f9de6e000d4170f8127c4444258",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-V1ZSB0",
+      "items": [
+        "sha256:23975da92b1277898d9fbec573ec142744b99584c354ddfeb4debb775935c999"
+      ],
+      "reason": "Added the claimed recheck time and the early-clear marker to the limit record account.",
+      "sources": [
+        {
+          "blob": "0e47c67d12a7ddb47908f7ea4f24d86bca76c892",
+          "path": "mcp/src/agents_remember/observer/provider_limits.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/observer/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-VB3HKC",
+      "items": [
+        "sha256:e5e0849e1d12470ce5655c3a012d63a432694e7c9a86d69eb8882d5c86a8d8ca"
+      ],
+      "reason": "Reconfirmed the package README at codeTree ab32fa77 after its tools-reference stand-on moved to the new role-tool sentence; the confirmation states the document current judgment.",
+      "revision": 15,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VW06V4",
+      "items": [
+        "sha256:57a0f9eecf7c41799ab3f1258e19af2b9f0517730e18ef1b9ab0a0907d476d9b"
+      ],
+      "reason": "L37 does not claim CONTRIBUTING.md: it is outside the L37 base change (only docs/reference/mcp-tools.md line 640 moved between 81f40d54 and ab32fa77), and its contradicted CAP-L1 passages stay on CAP's deferred stale list (D167). The recorded confirmation is restored to its e4687e0a base state, not re-confirmed.",
+      "revision": 13,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-W3H8KT",
+      "items": [
+        "sha256:abfc6136631631154a7433a5637c14c0b00b0ab61cd5d2e1d5e34670edd8f956"
+      ],
+      "reason": "Reconfirmed the document at the task tip after its recorded dependencies changed; the confirmation states the document's current judgment.",
+      "revision": 14,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WEYNDX",
+      "items": [
+        "sha256:a3e97d2b2efa9b33d80d93f05824016ff8921818d69c2a62680a074850c83069"
+      ],
+      "reason": "The change only moves the usage-report read into cli/paseo_usage_reports.mjs and updates the bridge's import and dispatch; the bridge's own contract is unchanged.",
+      "subject": "hunk:sha256:a3e97d2b2efa9b33d80d93f05824016ff8921818d69c2a62680a074850c83069"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-XM09AY",
+      "items": [
+        "sha256:3f2c61f0086d0ec4bf586260bc93509867a9685820a730fa44b4fd1e94a35fd6"
+      ],
+      "reason": "Reconfirmed the document at the task tip after its recorded dependencies changed; the confirmation states the document's current judgment.",
+      "revision": 19,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XNADVB",
+      "items": [
+        "sha256:aa64a36a041f81cfcfdff1b9baba2715d64d61f72a2e32c2197bcbc925ed2328"
+      ],
+      "reason": "Added the periodic batch cases and the report-id-only refresh.",
+      "sources": [
+        {
+          "blob": "2183eb643d529969a2fe786cd22a8f3710afc2a9",
+          "path": "mcp/tests/test_paseo_usage_reports.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_usage_reports.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XY0GG7",
+      "items": [
+        "sha256:95f06d3f835178862b7ac9094df1804e155726ad3ba1191e20be6b5a46a74fa3"
+      ],
+      "reason": "New card for the limit file's cross-attempt storage cases.",
+      "sources": [
+        {
+          "blob": "d049615ffc7af3252c708e17a3ee39e38583ef77",
+          "path": "mcp/tests/test_provider_limit_storage.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_provider_limit_storage.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y4SME5",
+      "items": [
+        "sha256:c473092f61e3460ef9ffd833c5b94e8b8972bfaf24ea45fa694530a1991624dc"
+      ],
+      "reason": "The change only moves the usage-report read into cli/paseo_usage_reports.mjs and updates the bridge's import and dispatch; the bridge's own contract is unchanged.",
+      "subject": "hunk:sha256:c473092f61e3460ef9ffd833c5b94e8b8972bfaf24ea45fa694530a1991624dc"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YPZMAC",
+      "items": [
+        "sha256:b37096ec2186d6d125d595cb19b8d65390934d5917eeaed06901b8517b141ef6"
+      ],
+      "reason": "Added the batch port to the layering account.",
+      "sources": [
+        {
+          "blob": "16d4a1133648d32cee39318ad939a25f1b00f180",
+          "path": "mcp/tests/test_provider_limit_layering.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_provider_limit_layering.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZQCJQ4",
+      "items": [
+        "sha256:d7f3f85d36d21f8974f49c7babe23f5ce7e9df7732fe5499a056f2aff361007a"
+      ],
+      "reason": "L37 does not claim docs/install/hermes.md: it is outside the L37 base change (only docs/reference/mcp-tools.md line 640 moved between 81f40d54 and ab32fa77), and its contradicted CAP-L1 passages stay on CAP's deferred stale list (D167). The recorded confirmation is restored to its e4687e0a base state, not re-confirmed.",
+      "revision": 11,
+      "subject": "DPD-GHEXS9"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

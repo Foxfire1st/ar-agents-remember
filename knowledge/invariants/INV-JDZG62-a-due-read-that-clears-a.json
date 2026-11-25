@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "This clause names the order of the existing tick's usage read and its delivery pass, whose reversal would deliver against a stale limit or delay a cleared seat to the sweep."
+  },
+  "applicability": "Every held-delivery tick that runs a usage batch before its delivery pass.",
+  "conditions": [
+    "The batch runs before deliver_ended_turns and before the sweep in the same tick.",
+    "A limit the batch cleared lets the existing drain deliver the eligible held messages in their recorded order."
+  ],
+  "exclusions": [
+    "A recipient still in a turn, archived, or owing a permission is not delivered by this clause.",
+    "A delivery that needs a later receipt-cursor tick."
+  ],
+  "id": "INV-JDZG62",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "261112-BUG-L37-W2-receipts.tar.gz, green/pytest.log"
+      ],
+      "path": "L37-curation-part1"
+    },
+    "handoffEntry": "BUG-R37@v1 rule 3",
+    "leaf": "261112-BUG-L37",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A due read that clears a limit lets the eligible held messages drain in order without a turn end.",
+  "status": "proposed",
+  "supersedes": []
+}

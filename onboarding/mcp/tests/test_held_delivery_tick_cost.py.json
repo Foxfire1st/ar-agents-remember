@@ -1,10 +1,97 @@
 {
   "path": "mcp/tests/test_held_delivery_tick_cost.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "1d507fdc65ccae97964aff0845b248628c937775",
+        "content": "sha256:7d53b9c3fbfd37ad99415f8c6d0cc8527bbf6c3cf9cb17eb808d479c86af4970",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_due_provider_clear_releases_held_work_without_a_turn_end"
+        }
+      },
+      "facet": "A due read that clears a limit releases held work without a turn end.",
+      "id": "PRF-BVF151",
+      "invariant": "INV-JDZG62",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 3",
+        "leaf": "261112-BUG-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1d507fdc65ccae97964aff0845b248628c937775",
+        "content": "sha256:4d36a38104535747f47a85fe10bfdfed983c20ec2ec7f8818776fe8564f2e44a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unchanged_quiet_ticks_parse_both_inputs_once"
+        }
+      },
+      "facet": "An unchanged quiet tick parses both inputs once and starts no usage read.",
+      "id": "PRF-E0P1JN",
+      "invariant": "INV-KM9V3K",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 5",
+        "leaf": "261112-BUG-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1d507fdc65ccae97964aff0845b248628c937775",
+        "content": "sha256:671c9151df61521e15578a1b699585057ae696693424b8509bb000cf45778f56",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_due_report_without_a_registered_seat_logs_once_per_period"
+        }
+      },
+      "facet": "A due report with no registered seat logs once per period and reads nothing.",
+      "id": "PRF-RK3ZHP",
+      "invariant": "INV-795NRN",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 1",
+        "leaf": "261112-BUG-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1d507fdc65ccae97964aff0845b248628c937775",
+        "content": "sha256:9507957a0c32e489038c9b77a095bf656d69803e4468b4e409e5f8276b5d5a95",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_failed_periodic_read_retains_the_fact_and_mapping"
+        }
+      },
+      "facet": "A failed periodic read keeps the fact and the mapping.",
+      "id": "PRF-WGSEGM",
+      "invariant": "INV-YEQENJ",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 2",
+        "leaf": "261112-BUG-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1d507fdc65ccae97964aff0845b248628c937775",
+        "content": "sha256:a9602491353dd2f90c539ce14160ae8a72cee86fabe1be0dc4138bfa630b6049",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_two_due_reports_and_a_stamped_end_share_one_usage_batch"
+        }
+      },
+      "facet": "Two due reports and a stamped end share one usage batch.",
+      "id": "PRF-WN1J18",
+      "invariant": "INV-XN49FH",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 6",
+        "leaf": "261112-BUG-L37"
+      }
+    }
+  ],
   "realizes": [
     {
       "anchor": {
-        "blob": "2b4312936a2e00d347d8affe118775496e853029",
-        "content": "sha256:b7ba6bb2e4b709f60415bb7e86ffd51189c78f3701a4280a05b2d7186d85f6de",
+        "blob": "1d507fdc65ccae97964aff0845b248628c937775",
+        "content": "sha256:09aae2d468748ed65b33db63dc6058acf3de8389b84ade0e743e36ba0f4f22ba",
         "locator": {
           "kind": "file"
         }

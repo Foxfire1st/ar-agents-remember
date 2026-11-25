@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
-    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
+    "codeTree": "40e2c033f5400b856352fc47dd738796945d289d",
+    "commit": "65c40d296ac2f951e9359eae653c7df43fed2436",
     "role": "curator",
-    "statement": "On tree a5bb9a1f, the evidence-system guide's lane, canonical-catalog, and lifecycle rules still hold: CAP-L4's new test_tool_schema_compaction.py sits in one lane (unit-regression, 674 of 824 modules) and is listed in the consumers of the two all-tests lifecycle artifacts.",
-    "task": "261124-CAP-L4",
-    "uncommitted": true
+    "statement": "On merged code the evidence-system guide keeps its lane and lifecycle rules: L27's two integration modules and CAP-L1's unit-regression module each sit in one lane of the 825 and appear as declared lifecycle consumers; lane and lifecycle authority, canonical ordering and source-derived consumers still hold on the merged catalogs, and CAP-L4's new test_tool_schema_compaction.py sits in unit-regression (675 of 825 modules) and is listed in the consumers of the two all-tests lifecycle artifacts.",
+    "task": "261112-BUG-L37",
+    "uncommitted": false
   },
   "document": "docs/design/python-evidence-system.md",
   "id": "DPD-ZMQ523",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 16,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "1d95700adc0206a02373ad7aca430393f0339cd8",
+      "blob": "41e4f40f552f5e6b287bcd178bbc5cf6bc1c5dd7",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "e6315a90fc9e1bf5db6d433cb7642b26d3364097",
+      "blob": "1d6be1d0f663db6e1c020b551df3eec199056488",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },
@@ -105,5 +105,16 @@
       "kind": "file",
       "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T15:29:55+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L37",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "4e0ea222-083c-4c22-aef2-1fc120d81ee2",
+    "task": "261112-BUG"
+  }
 }

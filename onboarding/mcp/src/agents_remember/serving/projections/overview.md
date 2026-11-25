@@ -145,6 +145,8 @@ The body cache records link/target and consumed task/graph/order/grant input ide
 
 **L184.** The host-activity input records the reconciliation it applied, so an older answer can no longer certify a boot.
 
+`usage_read_batch` reads one tick's new stamped ends beside the report ids due for a five-minute recheck. A due report names only the mapped agents still in the role record and not ended in the same publication, and the batch shares the tick's parsed publication rather than opening it again.
+
 Host reconciliation qualifies a boot after receipt-backed registry recovery and a complete snapshot for the expected daemon and boot. An incomplete attempt waits for an independent publication or startup.
 
 ## Evidence

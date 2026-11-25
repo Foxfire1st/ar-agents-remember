@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "505ca868c7f3c031f538ca7709e1c2888ecc1ded",
-        "content": "sha256:eb78793301c5336abef1f2df9f36402cd5755d7a4a1fb5983bc1b1a99093dbc4",
+        "blob": "0e47c67d12a7ddb47908f7ea4f24d86bca76c892",
+        "content": "sha256:896219c4d8e90529af6322d9fb741c96c9c8b8b99cf0ad73ae322c7e7f138e42",
         "locator": {
           "kind": "file"
         }
@@ -19,6 +19,22 @@
       "role": "enforcement"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The reader model admits the claimed-attempt time and an early-clear marker beside the report facts.\n\nAnchor: `ProviderLimits`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e47c67d12a7ddb47908f7ea4f24d86bca76c892",
+            "content": "sha256:896219c4d8e90529af6322d9fb741c96c9c8b8b99cf0ad73ae322c7e7f138e42",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

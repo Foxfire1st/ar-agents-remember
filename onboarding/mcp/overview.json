@@ -3219,12 +3219,12 @@
         },
         {
           "anchor": {
-            "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
+            "blob": "07ae82d885e3cd87654354b19a373a5a9267b9db",
             "content": "sha256:44a4a3c46c23bb58709ed5a5622cc1fd4d8a18c4400f8d5214151d68a146c18d",
             "locator": {
-              "end": 253,
+              "end": 251,
               "kind": "line_range",
-              "start": 249
+              "start": 247
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -3232,12 +3232,12 @@
         },
         {
           "anchor": {
-            "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
+            "blob": "07ae82d885e3cd87654354b19a373a5a9267b9db",
             "content": "sha256:07107728aaac2fd5b429aacacfaae0cce32c6156b7a8da8a80e5c859560b5c09",
             "locator": {
-              "end": 802,
+              "end": 725,
               "kind": "line_range",
-              "start": 783
+              "start": 706
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -3536,12 +3536,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcc6cc5f606fe5fc2b2b837b3608580d0592151b",
+            "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
             "content": "sha256:5bef45112ca03784bbcc9691c3b24e409e750270289ef2a2c2d92bcac5a2c62a",
             "locator": {
-              "end": 316,
+              "end": 357,
               "kind": "line_range",
-              "start": 245
+              "start": 286
             },
             "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
           },
@@ -4222,12 +4222,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
+            "blob": "07ae82d885e3cd87654354b19a373a5a9267b9db",
             "content": "sha256:c968c1884cff2af1a86b7b33d364870c7af2cc16de93126ea32c6bee30f4b8f2",
             "locator": {
-              "end": 1224,
+              "end": 1147,
               "kind": "line_range",
-              "start": 1163
+              "start": 1086
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -4235,12 +4235,12 @@
         },
         {
           "anchor": {
-            "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
+            "blob": "07ae82d885e3cd87654354b19a373a5a9267b9db",
             "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
             "locator": {
-              "end": 1253,
+              "end": 1176,
               "kind": "line_range",
-              "start": 1192
+              "start": 1115
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },

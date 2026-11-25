@@ -1,0 +1,24 @@
+{
+  "path": "docs/reference/runtime-layout.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "90b927af24a44ebd73c846b887360ce7d3923270",
+        "content": "sha256:6332d11b071cc5e825c773e6dd90e91d6ae1aff3b7932c51633c1dff827721ce",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-AHFJXT",
+      "invariant": "INV-6ZZXV3",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 7",
+        "leaf": "261112-BUG-L37"
+      },
+      "rationale": "The layout reference describes the retry and clear metadata in the existing file.",
+      "role": "presentation"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

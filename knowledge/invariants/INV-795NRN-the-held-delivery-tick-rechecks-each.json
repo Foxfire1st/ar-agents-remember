@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The due claim spans the writer, the serving projection and the extracted bridge reader, and prevents the costly error of leaving a held seat until a deadline the host has already passed, or reading the same due report twice in one tick."
+  },
+  "applicability": "Every held-delivery tick while the limit file holds a live report whose next check is due.",
+  "conditions": [
+    "A report is due when the later of its observedAt and its lastReadAttemptAt is at least five minutes old.",
+    "The tick claims the attempt under the same file lock that writes the replacement, before the host call.",
+    "A due report is read through one eligible mapped seat that is still in the role record.",
+    "A stamped-end read keeps its own observedAt and does not postpone a due periodic read."
+  ],
+  "exclusions": [
+    "A report whose reset has passed and that no role mapping names.",
+    "A tick with no stamped end and no due report: that tick performs no usage read."
+  ],
+  "id": "INV-795NRN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "261112-BUG-L37-W2-receipts.tar.gz, green/pytest.log"
+      ],
+      "path": "L37-curation-part1"
+    },
+    "handoffEntry": "BUG-R37@v1 rule 1",
+    "leaf": "261112-BUG-L37",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The held-delivery tick rechecks each active limit after five minutes through one mapped seat, with a persisted attempt time and a forced refresh for any role.",
+  "status": "proposed",
+  "supersedes": []
+}

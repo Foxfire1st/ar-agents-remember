@@ -12,6 +12,10 @@ The size assertion checks the source constants, not settings reload. The contrib
 
 Close cancels the seat's own deferred work. A close during an active turn-end read preserves the parent notification, and a declaration cannot arm a check after the seat's work has stopped.
 
+The early-clear controls publish a `clearedSeats` marker before, during and after send-back and parent-flush registration, and assert one shared snapshot, one ordered parent pass, the post-publication application of a clear sampled before the last limited read, and the drop of a seat that left the role record.
+
+- The suite holds each early-clear registration point and the single ordered parent pass. [2]
+
 ## Evidence
 
 

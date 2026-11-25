@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
-    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
+    "codeTree": "40e2c033f5400b856352fc47dd738796945d289d",
+    "commit": "65c40d296ac2f951e9359eae653c7df43fed2436",
     "role": "curator",
-    "statement": "On synced tree a5bb9a1f, docs/reference/mcp-tools.md accurately matches all 44 public tools and the role-scoped server contract: KNO-L4 already updated lines 669-672 to state that a host-run role agent receives its role's tools once from agents-remember-task, Option B restored 'curator-coherence authority' matching line 383, and CAP-L4's lossless schema compaction and description optimization preserve every tool table row, argument, and refusal.",
-    "task": "261124-CAP-L4",
-    "uncommitted": true
+    "statement": "On merged code the MCP reference is accurate for both leaves and all 44 public tools: read_ar_files compact rows carry the brief pointer and saved freshness; knowledge_read names the writers view; knowledge_write refuses typed states and stamps each revision from the caller's launch; a Reviewer or Curator start reports productMessage; the role-agent sentence (lines 669-672) says a host-run role agent receives its role tools once from agents-remember-task; the provider-limit passage states the five-minute recheck and the early drain of held messages; and CAP-L4's lossless schema compaction and description optimization preserve every tool table row, argument and refusal, with 'curator-coherence authority' at line 383.",
+    "task": "261112-BUG-L37",
+    "uncommitted": false
   },
   "document": "docs/reference/mcp-tools.md",
   "id": "DPD-X6G7K3",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 19,
+  "revision": 20,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -153,7 +153,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
     {
-      "blob": "c6a78dfab5d2356fb35d1060ce0e418e9848dd22",
+      "blob": "0ac167a6ba854288a9debd3dad160090ee3cdc7f",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },
@@ -421,5 +421,16 @@
       },
       "kind": "anchor"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T15:29:55+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L37",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "4e0ea222-083c-4c22-aef2-1fc120d81ee2",
+    "task": "261112-BUG"
+  }
 }

@@ -3,7 +3,24 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "62a081810a427c2de6e3ea193686f973d238ea49",
+        "blob": "ac6f348d86bc935cc81808f5d926c899261e44d3",
+        "content": "sha256:60d30a76c7f92cb0210e2d9aa43ba64e5f7b2a3daaa6b31b88b85fbf36ac2ff4",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7YMNE5",
+      "invariant": "INV-6ZZXV3",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 7",
+        "leaf": "261112-BUG-L37"
+      },
+      "rationale": "The message reference tells senders when a provider-limit hold can clear early.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "ac6f348d86bc935cc81808f5d926c899261e44d3",
         "content": "sha256:5d38041c61e04900f04a05f44d7075f36d2b8e6523fc5998170ad1e52355a4eb",
         "locator": {
           "end": 193,
@@ -22,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "62a081810a427c2de6e3ea193686f973d238ea49",
+        "blob": "ac6f348d86bc935cc81808f5d926c899261e44d3",
         "content": "sha256:c7540979d3a62a3a624f13deb0b007ef6ba180b93b928c00f2fd5e0070564323",
         "locator": {
           "end": 349,
@@ -41,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "62a081810a427c2de6e3ea193686f973d238ea49",
+        "blob": "ac6f348d86bc935cc81808f5d926c899261e44d3",
         "content": "sha256:0e7e68f341dd314364c32fd2ef4c5d6ba80ffdae6155d99d40f9774fba6f454f",
         "locator": {
           "end": 298,
@@ -65,7 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62a081810a427c2de6e3ea193686f973d238ea49",
+            "blob": "ac6f348d86bc935cc81808f5d926c899261e44d3",
             "content": "sha256:0e7e68f341dd314364c32fd2ef4c5d6ba80ffdae6155d99d40f9774fba6f454f",
             "locator": {
               "end": 298,
@@ -82,7 +99,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62a081810a427c2de6e3ea193686f973d238ea49",
+            "blob": "ac6f348d86bc935cc81808f5d926c899261e44d3",
             "content": "sha256:c7540979d3a62a3a624f13deb0b007ef6ba180b93b928c00f2fd5e0070564323",
             "locator": {
               "end": 349,
@@ -99,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62a081810a427c2de6e3ea193686f973d238ea49",
+            "blob": "ac6f348d86bc935cc81808f5d926c899261e44d3",
             "content": "sha256:160b175698e090ecf9d4d4ad876435efdba2304db6d6e355814d7360742bf932",
             "locator": {
               "end": 5,

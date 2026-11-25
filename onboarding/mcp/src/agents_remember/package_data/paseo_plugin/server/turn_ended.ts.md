@@ -30,6 +30,11 @@ A closed session stops its self-wake, declared wait and checks, subagent continu
 
 Every decision row the current generation emits is offered to the plugin's own files through `turn_log.ts`: one JSON row per line in `turn-ends.jsonl` for each message sent, marked line, cancelled wait, skipped send and left-alone end, and one row per declared wait — `subagent-wait-*` or `background-wait-*` — for each declaration, check sent, check skipped and end, each built by `turnEndRow` with an `isoWithOffset` time from `turn_log.ts`, with the file turned over at 2 MiB to one retained archive, and a failed write named once in `turn-ends.error.json`. An obsolete intake outcome and a send that spans a generation boundary emit no row, an unmarked ordinary parent line is not a rule row, a sink without `PASEO_HOME` writes nothing, and a failed write is best-effort. The separate declared-wait signal can update `host-activity.json`, removing the check due time when the timer is spent and clearing the declaration when the wait ends. The activity state and event time remain owned by host activity events.
 
+An early clear does not wait for the recorded deadline. While at least one resume or parent flush is pending, `provider_limit_check.ts` reads one snapshot every fifteen seconds; a seat whose `clearedSeats` entry is current and whose limit is gone fires its resume with that marker's `clearedAt`, and the cleared parents are flushed in one ordered pass. A clear sampled before the last limited read is applied after publication, and a seat that left the role record is dropped rather than resumed. The natural deadline timer stays and a later `until` re-arms it.
+
+- A pending resume fires from a current early-clear marker instead of the old deadline. [5]
+- Cleared parents are claimed and flushed in one ordered pass from the shared snapshot. [6]
+
 ## Boundaries
 
 The implementation caps a line at `TURN_ENDED_LINE_LIMIT`, the carried last line at `TURN_ENDED_LAST_TEXT_LIMIT`, the self-wake run at `TURN_ENDED_SENT_BACK_LIMIT`, the wait at `TURN_ENDED_WAIT_MS`, the helper check at `SUBAGENT_WAIT_CHECK_MS` and a background check at its declared minutes (1 to 30, three by default) and the log at `TURN_END_LOG_LIMIT_BYTES`; the decision does not read roleMessageLimit dynamically. The historical stores keep bounded recent windows and hold no owed line, and an evicted or absent provider reads as unknown, so a lost entry can delay a wake but cannot send into a running turn. The log records the plugin's own decisions and writes; it is not a census of messages the host delivered. The plugin's own test files are source definitions run host-free: a case named there is not a measured runtime witness of a live host delivery. These are in-memory event decisions and host-free composition, not durable message filing, cross-process deduplication, live SDK delivery proof, or a promise about repeated host events. Host wiring is `turn_events.ts`.
@@ -41,7 +46,9 @@ The implementation caps a line at `TURN_ENDED_LINE_LIMIT`, the carried last line
 
 
 
+
 - Descendant restart removes held lines and invalidates claimed ancestor lines. [2]
+
 
 
 

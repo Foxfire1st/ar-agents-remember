@@ -1412,7 +1412,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fbbd516333a03712b6ce51c6d5b989d2993f7e1b",
+            "blob": "90b927af24a44ebd73c846b887360ce7d3923270",
             "content": "sha256:8d170109baf11f863002b8eba5f8bdc00a07cef62ef0145fbe0726b67f0e7619",
             "locator": {
               "end": 46,
@@ -1720,7 +1720,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62a081810a427c2de6e3ea193686f973d238ea49",
+            "blob": "ac6f348d86bc935cc81808f5d926c899261e44d3",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 90,
@@ -2019,7 +2019,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62a081810a427c2de6e3ea193686f973d238ea49",
+            "blob": "ac6f348d86bc935cc81808f5d926c899261e44d3",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 90,
@@ -3009,12 +3009,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcc6cc5f606fe5fc2b2b837b3608580d0592151b",
+            "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
             "content": "sha256:5bef45112ca03784bbcc9691c3b24e409e750270289ef2a2c2d92bcac5a2c62a",
             "locator": {
-              "end": 316,
+              "end": 357,
               "kind": "line_range",
-              "start": 245
+              "start": 286
             },
             "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
           },
@@ -4745,12 +4745,12 @@
         },
         {
           "anchor": {
-            "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
+            "blob": "07ae82d885e3cd87654354b19a373a5a9267b9db",
             "content": "sha256:f724c5c7e64d64f12e34cdc46514fe5e413dd7757ee04cc88edb68f8b8e2ef25",
             "locator": {
-              "end": 966,
+              "end": 889,
               "kind": "line_range",
-              "start": 933
+              "start": 856
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -4862,7 +4862,7 @@
         },
         {
           "anchor": {
-            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
             "content": "sha256:d09d80fab9df4286196f8c503b745c91879aa18d01bed564462e5bd9fa6a7dba",
             "locator": {
               "end": 201,
@@ -4875,12 +4875,12 @@
         },
         {
           "anchor": {
-            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
-            "content": "sha256:514188c14f0107a5d51fd9b95bc8c310110afeba99b48e800466112dcf9e11b1",
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
+            "content": "sha256:8137ac6e5706945a898fd5127f53c12fdc48e9554f2de7a44079c006f514a839",
             "locator": {
-              "end": 247,
+              "end": 245,
               "kind": "line_range",
-              "start": 235
+              "start": 233
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },
@@ -4888,12 +4888,12 @@
         },
         {
           "anchor": {
-            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
             "content": "sha256:bdd78b3cec6221ea81b8c468b19ec3bd1362b1c56e821d601d2330bf41d36721",
             "locator": {
-              "end": 543,
+              "end": 541,
               "kind": "line_range",
-              "start": 539
+              "start": 537
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },
@@ -5375,7 +5375,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62a081810a427c2de6e3ea193686f973d238ea49",
+            "blob": "ac6f348d86bc935cc81808f5d926c899261e44d3",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 90,

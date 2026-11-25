@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "94105449e12aac1ddbfabe5b87f268d93f6e8a84",
-        "content": "sha256:3645bf19dc5f0cddc021991baceda2366a2e80fb0a7590e407cb3ce0b8256d4c",
+        "blob": "bf9285b3a78cf8e4a5fa858b1b69b14faefeb129",
+        "content": "sha256:2563b0cafcb88426cc6c84fc5ba8b29588448462ddbad54ffbb9e36a9fd631da",
         "locator": {
           "kind": "file"
         }
@@ -19,6 +19,22 @@
       "role": "enforcement"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The plugin reader admits the early-clear marker and leaves every timer to the check that shares its snapshot.\n\nAnchor: `readProviderLimits`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf9285b3a78cf8e4a5fa858b1b69b14faefeb129",
+            "content": "sha256:2563b0cafcb88426cc6c84fc5ba8b29588448462ddbad54ffbb9e36a9fd631da",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

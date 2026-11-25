@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:c3a046543a6f6f7a7103cb121c262c9e5b92bb775be24d5cb7f614bae8f2938d",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:7f9357d76cece40b447f597a588c43a0e8e597ebda9792b4c892223347f5bccd",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:c32eac5534c057e557a0f4edf0dc39d4c6d2f92fba3b46ad677e0e8dc34f5358",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:0d8d143294ebaa7bd28c5a584bb1fb62dfde1700278687512accb40f33b1737f",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,24 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
+        "content": "sha256:c7c6b2631bbb43c7cdf1f2ddd7732bfa865af610d8750171d79770ef8c575f62",
+        "locator": {
+          "kind": "symbol",
+          "name": "simultaneous early parent releases share one ordered host-state pass"
+        }
+      },
+      "facet": "Simultaneous cleared parents share one ordered host-state pass.",
+      "id": "PRF-3SY76X",
+      "invariant": "INV-2KVT5S",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 4",
+        "leaf": "261112-BUG-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:6688fbf3f169400d75b08975ef2042edb9d22ae5c6bc134510691f8f35809db4",
         "locator": {
           "kind": "symbol",
@@ -88,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:71ec7fd1279ea5dfe4fdbc9d548ef1ed5e3643dafd7d259d51589dbba61674c9",
         "locator": {
           "kind": "symbol",
@@ -105,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:cdde4e3b554f9983ce065886e826e027ad684bd35e97ba88cd82b7e5ec0d1c73",
         "locator": {
           "kind": "symbol",
@@ -122,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:e30a950ed9f66cd4d454d62a4f74eb2a7c433589a0d3d9665a4043be1570e700",
         "locator": {
           "kind": "symbol",
@@ -139,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:aa94192f3c8ed38177ec0a8176c14b76dcc63d34031261058f12274aa8daaf29",
         "locator": {
           "kind": "symbol",
@@ -156,7 +173,24 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
+        "content": "sha256:97215d79d7d7981bcf184d8391408cb2bf68755acfdbece73907ebf7a0ef3f80",
+        "locator": {
+          "kind": "symbol",
+          "name": "a provider clear during parent-flush registration releases the line"
+        }
+      },
+      "facet": "A clear published during parent-flush registration still releases the line.",
+      "id": "PRF-91EK5G",
+      "invariant": "INV-2KVT5S",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 4",
+        "leaf": "261112-BUG-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:36124d2aa25ea8afd89e09cb6a48e4e71c5f84bcbaeed95c1dc3a09bc2ca19c8",
         "locator": {
           "kind": "symbol",
@@ -173,7 +207,24 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
+        "content": "sha256:27bf4c5b8d49026086b32521cbf080c6c0d0351a3663c90a7c488301849f016a",
+        "locator": {
+          "kind": "symbol",
+          "name": "a provider clear during send-back registration resumes the seat"
+        }
+      },
+      "facet": "A clear published during send-back registration still resumes the seat.",
+      "id": "PRF-AVY6XF",
+      "invariant": "INV-2KVT5S",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 4",
+        "leaf": "261112-BUG-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:7ed48b55cdeb12dba6e278cdac1fe094a6e9eaa933507e7d5e54a9c98b6dba5b",
         "locator": {
           "kind": "symbol",
@@ -190,7 +241,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:1dea8a869df4fbaa45106b9481b2537fb2e95e22f37da77fe37b4d0befebd48b",
         "locator": {
           "kind": "symbol",
@@ -207,7 +258,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:4b39e636211ec348b87125f552cf1efb2efd60522fe8b90e1d5f03a8153ac046",
         "locator": {
           "kind": "symbol",
@@ -224,7 +275,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:49d372d200894d99cad37a40559ced49e062a4a8057f4294d13dc06370c1a1c1",
         "locator": {
           "kind": "symbol",
@@ -241,7 +292,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:7662dfb40ec88220c875919e61b3093378778df26db513c6747319bb9c128170",
         "locator": {
           "kind": "symbol",
@@ -258,7 +309,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:91c9a4f28f6bc3cf705e73553fa930bd44e66e3197dd087c1cb17722fe929817",
         "locator": {
           "kind": "symbol",
@@ -275,7 +326,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:73e6d62ab3483c120504b294ccbc55d93452f69d1498d717a34377086b22e64c",
         "locator": {
           "kind": "symbol",
@@ -292,7 +343,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:8faf10fa03bf85ab1f797fbdd96c3ab887a97c971fa701af60a47dbdfb70ab21",
         "locator": {
           "kind": "symbol",
@@ -309,7 +360,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:9a28b609546eb6a4f1fbb19204749e5b2ed5ff91c92df864b8604f14faa742be",
         "locator": {
           "kind": "symbol",
@@ -326,7 +377,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:b4d955c0f0149c2e4e1a89ea2c444947724665795bb13c065c58bd9d29a0aae8",
         "locator": {
           "kind": "symbol",
@@ -343,7 +394,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:34e2c008f921658b4dafa829be4331b3b4cceba17d4e1c6b842be2106788eaee",
         "locator": {
           "kind": "symbol",
@@ -360,7 +411,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:f576654d8678badd8189f5f4e05e6dfebfbcb2feebb373cd7caf4eeec51538b2",
         "locator": {
           "kind": "symbol",
@@ -377,7 +428,24 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
+        "content": "sha256:b7f9b86b7d4855fad10ede669d4288396d6637b59e5e89185acea3c4f28e1d4a",
+        "locator": {
+          "kind": "symbol",
+          "name": "an early provider clear resumes a skipped send-back and flushes a held line"
+        }
+      },
+      "facet": "A written early clear resumes a skipped send-back and flushes a held line.",
+      "id": "PRF-NDBT1M",
+      "invariant": "INV-2KVT5S",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 4",
+        "leaf": "261112-BUG-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:4832000904c12aad8c177fc0b46e815eebb9d7e609f970480480b6abb1f4241d",
         "locator": {
           "kind": "symbol",
@@ -394,7 +462,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:349bf3a5f00712194e05b8e09370aa5ced9da29fed823576c9eeebd31d8bfac1",
         "locator": {
           "kind": "symbol",
@@ -411,7 +479,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:76ce9a73110b214716ddd00ec9a633570a932b405a50dfbaf87a2f1a2f2092e6",
         "locator": {
           "kind": "symbol",
@@ -428,7 +496,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:41bf125751f1bc5879bfc14ea82acdcea49d5ea72d717220f64d452a40e0592a",
         "locator": {
           "kind": "symbol",
@@ -445,7 +513,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:70ed98f0d16d6cf24ee9ab276eec993b652746390c441cdb986766469252905d",
         "locator": {
           "kind": "symbol",
@@ -462,7 +530,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:7a9500b08383a8d4fc6a85ffbcadf52be4c6d9179b393370381ddb62d3a91cf7",
         "locator": {
           "kind": "symbol",
@@ -479,7 +547,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:765b81961c2b8d6a1fe3889d6d961c80871438f799c883ea040994809c4faaba",
         "locator": {
           "kind": "symbol",
@@ -496,7 +564,41 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
+        "content": "sha256:a089dcb8a98742267f82d8a222d5784fdddbcfece317121fc7d71599eedcb528",
+        "locator": {
+          "kind": "symbol",
+          "name": "a clear sampled before the last limited reads releases the seat and parent after publication"
+        }
+      },
+      "facet": "A clear sampled before the last limited reads is applied after publication.",
+      "id": "PRF-XX95CM",
+      "invariant": "INV-2KVT5S",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 4",
+        "leaf": "261112-BUG-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
+        "content": "sha256:dfe099dd5809249c76db9192dc173454e5f229abb45bea947c80b801a2e1799c",
+        "locator": {
+          "kind": "symbol",
+          "name": "archiving a child stops the provider check when no line is owed"
+        }
+      },
+      "facet": "The shared check stops once no parent line is owed.",
+      "id": "PRF-Y3RYWE",
+      "invariant": "INV-2KVT5S",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 4",
+        "leaf": "261112-BUG-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:bf63407c151714dd5e5e018e0889ed7f45b346f4ca3c094fc982ecc23a883c25",
         "locator": {
           "kind": "symbol",
@@ -513,7 +615,7 @@
     },
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
         "content": "sha256:db0b636696bd5b3d1e9635092ffb6ca5628d987fd3d59dc05bae30b33e43842a",
         "locator": {
           "kind": "symbol",
@@ -532,8 +634,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
-        "content": "sha256:08571a69b76192b77f97c0e7dc71810f9fee02ba406c5975c01c5f1ef7b73382",
+        "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
+        "content": "sha256:049289c5ff4c64a83c89bd9f6b86ec449cbf8f975022160d476cece37d01ce71",
         "locator": {
           "kind": "file"
         }
@@ -554,60 +656,75 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
             "content": "sha256:a36ebd7978b8127ebfa7645378baea341de82abb6bdc0ce450608c04963d4b22",
             "locator": {
-              "end": 263,
+              "end": 270,
               "kind": "line_range",
-              "start": 254
+              "start": 261
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
             "content": "sha256:e99939d98ee1358c19464e20bebf9c9980d8262e63001a4487c45131b3de0ceb",
             "locator": {
-              "end": 326,
+              "end": 333,
               "kind": "line_range",
-              "start": 309
+              "start": 316
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
             "content": "sha256:67027393c1a78e77d2859fb776ae25bc01ce6f5ac6588f7b8a064f63c583a97c",
             "locator": {
-              "end": 459,
+              "end": 466,
               "kind": "line_range",
-              "start": 448
+              "start": 455
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
             "content": "sha256:58969c57d9ba2f10473efebabf1cdf74d8a6026c429f859d95bb22afd9fbc806",
             "locator": {
-              "end": 537,
+              "end": 544,
               "kind": "line_range",
-              "start": 504
+              "start": 511
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "ac8fa37ae8ac8481d9e738a0b6cc1ce2b459521b",
+            "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
             "content": "sha256:44ba254fdc161ec0c5a9cba2b65e7069776b8f4afa18282137519107285f1253",
             "locator": {
-              "end": 580,
+              "end": 587,
               "kind": "line_range",
-              "start": 540
+              "start": 547
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The suite holds each early-clear registration point and the single ordered parent pass.\n\nAnchor: `a provider clear during send-back registration resumes the seat`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19e63d1c4db73d94a6fdaea40978f4d240f70f90",
+            "content": "sha256:049289c5ff4c64a83c89bd9f6b86ec449cbf8f975022160d476cece37d01ce71",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

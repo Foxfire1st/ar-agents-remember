@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "51a44523acb6c29c3a029c7dde4a35acb96595f3",
-    "commit": "3bbaf460317e8572583d884bc0791a219ad1bcfa",
+    "codeTree": "764f146c5670470b3c8c10f5a5a7be9b66df5fac",
+    "commit": "e51f75630087a00bdcacaab646541e9cb04356d6",
     "role": "curator",
-    "statement": "The host guide's role-agent account, the second agents-remember copy on non-Claude harnesses and the Claude Code exclusion still hold on b29f2e2; the Paseo 0.16.2 routes now documented in agent_binding.py agree with it. On code 51a44523 (gen-8 sync onto CAP-L1 and BUG-L26) the landing answer rosters only add the key briefsProblem; the guide describes no landing roster, and its restart, resume and refusal descriptions still hold.",
-    "task": "261112-KNO-L4",
-    "uncommitted": true
+    "statement": "On merged code e51f75630 the Host guide keeps its role-agent account, the second agents-remember copy on non-Claude harnesses and the Claude Code exclusion; it describes resume after a host stop and exact-agent Antigravity Retry, and its Paseo 0.16.2 routes agree with the current agent binding.",
+    "task": "261112-BUG-L37",
+    "uncommitted": false
   },
   "document": "docs/host.md",
   "id": "DPD-K2QMWQ",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -141,7 +141,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
     },
     {
-      "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
+      "blob": "07ae82d885e3cd87654354b19a373a5a9267b9db",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
     },
@@ -195,8 +195,8 @@
     },
     {
       "anchor": {
-        "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
-        "content": "sha256:88890c4ffbc0c6525cec6141638a35f4faa3e4e9cf958e1b6c6e522cccea024a",
+        "blob": "07ae82d885e3cd87654354b19a373a5a9267b9db",
+        "content": "sha256:6d3f96fe2a31cbb02bbde42b88d1b6e720a8985d9a29f6a74f755fcafeb193ea",
         "locator": {
           "end": 736,
           "kind": "line_range",

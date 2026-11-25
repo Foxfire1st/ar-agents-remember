@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
-    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
+    "codeTree": "40e2c033f5400b856352fc47dd738796945d289d",
+    "commit": "65c40d296ac2f951e9359eae653c7df43fed2436",
     "role": "curator",
-    "statement": "On tree a5bb9a1f, the pytest bootstrap guide's lane-selection and bounded-memory stdio coverage rules still hold: CAP-L4 added test_tool_schema_compaction.py to unit-regression (674 unit-regression / 824 total), leaving integration (123) and stress-durability (1, test_mcp_memory_bounded_stdio.py) unchanged.",
-    "task": "261124-CAP-L4",
-    "uncommitted": true
+    "statement": "On merged code the pytest bootstrap guide still holds: integration and stress-durability make up the integration tests (123 integration modules, including L27's two), CAP-L1's unit-regression module changes no selection rule, CAP-L4's test_tool_schema_compaction.py sits in unit-regression (675 of 825 total), and the bounded-memory stdio case's coverage boundary is unchanged (stress-durability, 1 test_mcp_memory_bounded_stdio.py).",
+    "task": "261112-BUG-L37",
+    "uncommitted": false
   },
   "document": "docs/design/python-pytest-bootstrap.md",
   "id": "DPD-ZT8YY7",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 16,
+  "revision": 17,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "1d95700adc0206a02373ad7aca430393f0339cd8",
+      "blob": "41e4f40f552f5e6b287bcd178bbc5cf6bc1c5dd7",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -106,26 +106,12 @@
     },
     {
       "anchor": {
-        "blob": "1d95700adc0206a02373ad7aca430393f0339cd8",
-        "content": "sha256:a076d66d6984c935f86d91f8629fa8277f746eb790a4abd0ad31b4d5bdf868dd",
+        "blob": "41e4f40f552f5e6b287bcd178bbc5cf6bc1c5dd7",
+        "content": "sha256:cd1aadd0727e9055f7406e87eef73a6c7dd5a3457bbfc784c93a7ed4fc7eccc7",
         "locator": {
-          "end": 823,
+          "end": 846,
           "kind": "line_range",
-          "start": 820
-        },
-        "path": "mcp/tests/test-evidence-lanes.toml"
-      },
-      "heading": "Stress-durability case selection",
-      "kind": "anchor"
-    },
-    {
-      "anchor": {
-        "blob": "1d95700adc0206a02373ad7aca430393f0339cd8",
-        "content": "sha256:2ea8ed247988e4c9d0b795ccb3272f77575c6afeead9565c2475e5c710dee1c8",
-        "locator": {
-          "end": 826,
-          "kind": "line_range",
-          "start": 823
+          "start": 844
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
@@ -146,5 +132,16 @@
       "heading": "Default Coverage subprocess configuration",
       "kind": "anchor"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T15:29:55+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L37",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "4e0ea222-083c-4c22-aef2-1fc120d81ee2",
+    "task": "261112-BUG"
+  }
 }
