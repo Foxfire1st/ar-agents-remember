@@ -12,7 +12,7 @@
 
 The file uses only what GitHub keeps in a README: Markdown, `align` and `width` attributes, tables, folded blocks and pictures. Its one top heading holds the banner with the alternative text `Agents Remember`; the claim, the row of badges and the still picture are centered. Each badge links to what it shows, and so does each named link. Every picture has an alternative text.
 
-The five install steps stand under the heading `Install steps` and keep the number, order, titles and command lines of `docs/getting-started.md`. The section `Status` states the version of the package in this repository, `3.0.6`, which the release checklist names as the place of the version; the full stability promise is one folded block. Terms link to `docs/concepts.md` at their first use. Pictures and the video live under `docs/assets/`; no path under the removed top-level `assets/` folder remains.
+The five install steps stand under the heading `Install steps` and keep the number, order, titles and command lines of `docs/getting-started.md`. The section `Status` states the version of the package in this repository, `3.0.7`, which the release checklist names as the place of the version; the full stability promise is one folded block. Terms link to `docs/concepts.md` at their first use. Pictures and the video live under `docs/assets/`; no path under the removed top-level `assets/` folder remains.
 
 ## Boundaries
 
@@ -27,7 +27,7 @@ The five install steps stand under the heading `Install steps` and keep the numb
 
 
 
-- The status section states release 3.0.6 and the Python requirement, and directs readers to the release notes before installing. [4]
+- The status section states release 3.0.7 and the Python requirement, and directs readers to the release notes before installing. [4]
 
 
 

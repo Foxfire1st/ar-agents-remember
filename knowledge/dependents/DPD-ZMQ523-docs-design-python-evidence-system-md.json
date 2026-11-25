@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "55049f6c73b5660adaa6e3b0637185a3167751c3",
-    "commit": "54d242820ff7f9941cadebf9f543c857314b368f",
-    "role": "manager",
-    "statement": "The evidence-system guide accurately describes lane and lifecycle authority, including canonical ordering and source-derived consumers, on the merged catalogs.",
-    "task": "261123-SUB",
-    "uncommitted": false
+    "codeTree": "8218f7f1a8e331130c15bf463ddcc88a51a34fbd",
+    "commit": "180b6c153d21d01cbb14059d0219472ccdeba683",
+    "role": "curator",
+    "statement": "The evidence-system guide accurately describes lane and lifecycle authority, including canonical ordering and source-derived consumers, on the merged catalogs. The evidence-system guide's lane and lifecycle-catalog rules still hold: the two new test files each sit in one lane and appear as consumers in the catalog.",
+    "task": "261112-BUG-L27",
+    "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
   "id": "DPD-ZMQ523",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "30fe276ea103c0bc2f37afe7affc8436d89f64bd",
+      "blob": "2ecce6228d45fcc9dee1eb05aad3aab8da869859",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "f40ae40bdb8b2ebc0829ec0c3684f413e66edfee",
+      "blob": "bf1ff630aa584ae1f28c8de20e28e954f7961c55",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },

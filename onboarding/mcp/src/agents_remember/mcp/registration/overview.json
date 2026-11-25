@@ -227,51 +227,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
-            "content": "sha256:3dfaee2e3ffded7b5e8f92fed3374836e045a980851cdb3704fd2807f7340f5e",
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+            "content": "sha256:e73c3919f9745cc0652821e92130026445e86e4ed89ca4ba1b3b9d76a256ec01",
             "locator": {
-              "end": 209,
-              "kind": "line_range",
-              "start": 85
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
-            "content": "sha256:27c6a622cef556ff20e66346da3a4be3a4f30002c4c29ec99da2404b41f2023e",
-            "locator": {
-              "end": 120,
-              "kind": "line_range",
-              "start": 88
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
-            "content": "sha256:90f3235143ac58bb30df1eb1cee9c766c196d19a637f198604097637ee91c224",
-            "locator": {
-              "end": 160,
-              "kind": "line_range",
-              "start": 122
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
-            "content": "sha256:d5fccfa00edaf41799345ca2547bb87aaf2a0a09355e4a3997599019a505cd27",
-            "locator": {
-              "end": 209,
-              "kind": "line_range",
-              "start": 180
+              "kind": "symbol",
+              "name": "register_role_agent_tools"
             },
             "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
           },
@@ -532,8 +492,8 @@
         },
         {
           "anchor": {
-            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
-            "content": "sha256:5799bdee2243f040ff359fe66b08402b0228dc5b300306480febb2bf14c6d980",
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+            "content": "sha256:8822ec08395ec2ea6b32818287af14f4bc59d1078bf22128eb5469047c8cc999",
             "locator": {
               "kind": "file"
             },
@@ -577,12 +537,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
-            "content": "sha256:3dfaee2e3ffded7b5e8f92fed3374836e045a980851cdb3704fd2807f7340f5e",
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+            "content": "sha256:e73c3919f9745cc0652821e92130026445e86e4ed89ca4ba1b3b9d76a256ec01",
             "locator": {
-              "end": 209,
-              "kind": "line_range",
-              "start": 85
+              "kind": "symbol",
+              "name": "register_role_agent_tools"
             },
             "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
           },
@@ -595,12 +554,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+            "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
             "content": "sha256:37ac1a3d42b41a1bfab8b5e89e34290a66825c96cd886a12e9f14ae72b132ba9",
             "locator": {
-              "end": 315,
+              "end": 406,
               "kind": "line_range",
-              "start": 304
+              "start": 395
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },

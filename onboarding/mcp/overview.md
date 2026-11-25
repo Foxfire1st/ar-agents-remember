@@ -275,7 +275,7 @@ These superseded descriptions retain their historical wording; the current accou
 
 ## Concurrent transport calls
 
-The MCP transport retains launch-bound seat checks and registered schema authority. It runs synchronous handler bodies off the event loop with per-call context, while potentially mutating synchronous calls hold a server-local lock until their worker exits, including cancellation. Classified reads and explicit preview/poll modes bypass that lock. Async handlers retain their original path. The existing citation tool adds background preview start/poll; this extends its signature without adding another roster member.
+The MCP transport retains launch-bound seat checks and registered schema authority. It runs synchronous handler bodies off the event loop with per-call context, while potentially mutating synchronous calls hold a server-local lock until their worker exits, including cancellation. A cancelled request still leaves one tool-log row: a worker error that arrives after the cancellation is logged as `raised` with `requestCancelled`, and a request cancelled while it still waited is logged as `cancelled` with `waitingFor` naming the wait. Classified reads and explicit preview/poll modes bypass that lock. Async handlers retain their original path. The existing citation tool adds background preview start/poll; this extends its signature without adding another roster member.
 
 
 
@@ -654,6 +654,7 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 
 - **Retained historical source account — superseded by the current route account:** Baseline adoption commits memory content and returns a cache observation. Source caption: `adopt_initial_baseline` `memory_content_commit` [158]
 - The current task registration surface mounts task_reopen through _register_task_reopen_tools and delegates the call to its payload owner. [285]
+
 
 
 - Synchronous dispatch preserves the framework validation path and waits for the worker before releasing its write lock. [389]
@@ -1093,6 +1094,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - Installation copies the old convention settings file only into an absent destination and leaves the source alone. [396]
 - Ordinary checkout calls carry no currentness reading; installed builds compare loaded code with their package files. [397]
 - A stale installed build refuses declared publication writers, not reads or dry runs. [398]
+
 - The stale-writer refusal runs before dispatch. [399]
 - Each running server registers a live-process record that installation and status read back. [400]
 
@@ -1117,6 +1119,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command. Anchor: build_parser and _register_knowledge_commands. [103]
 - The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command. [379]
 - The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md. [402]
+
 
 - General families plus four additions; checks only those four [405]
 

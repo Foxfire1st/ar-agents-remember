@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "ce714f8fbee46339c39d7eec8c956e3763464c26",
+    "commit": "d1c92dc9d4606a0b48b8e6b13f9c41c9b9aa6cce",
     "role": "curator",
-    "statement": "The roadmap's worklist link still reaches the section that explains how changes bring knowledge back for judgment.",
-    "task": "261112-BUG-L21",
+    "statement": "The roadmap's links into the concepts guide all still resolve, and the worklist passage it cites still says that a change brings a named decision back for the Curator's answer.",
+    "task": "261112-BUG-L27",
     "uncommitted": true
   },
   "document": "ROADMAP.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
     },
     {
-      "blob": "fa480a4feebfc50cdfdca38a2db587deffc52415",
+      "blob": "e534e5488c39544030abb9ef2b6f4bef14945eee",
       "kind": "file",
       "path": "docs/concepts.md"
     },

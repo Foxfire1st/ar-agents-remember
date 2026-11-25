@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "55049f6c73b5660adaa6e3b0637185a3167751c3",
-    "commit": "54d242820ff7f9941cadebf9f543c857314b368f",
-    "role": "manager",
-    "statement": "The features guide correctly distinguishes citation currentness and drift checks, describes code-first paired closeout, and explains cache identity and eviction.",
-    "task": "261123-SUB",
-    "uncommitted": false
+    "codeTree": "8218f7f1a8e331130c15bf463ddcc88a51a34fbd",
+    "commit": "180b6c153d21d01cbb14059d0219472ccdeba683",
+    "role": "curator",
+    "statement": "The features guide correctly distinguishes citation currentness and drift checks, describes code-first paired closeout, and explains cache identity and eviction. The features page's account of the tool server's answer bounds and of where the tool log lies still holds, now that a cancelled call also leaves its row in that log.",
+    "task": "261112-BUG-L27",
+    "uncommitted": true
   },
   "document": "docs/features.md",
   "id": "DPD-EG5TYT",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 20,
+  "revision": 21,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -63,7 +63,7 @@
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
     {
-      "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+      "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },

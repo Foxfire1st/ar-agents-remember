@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "ce714f8fbee46339c39d7eec8c956e3763464c26",
+    "commit": "d1c92dc9d4606a0b48b8e6b13f9c41c9b9aa6cce",
     "role": "curator",
-    "statement": "The security policy’s local listener, browser request and host provisioning descriptions still match the dashboard and host settings.",
-    "task": "261112-BUG-L20",
+    "statement": "The security policy's account of the tool server as a local stdio process that starts the dashboard only under autoStart still holds, and the cancellation rows add no listener and no new kind of logged value.",
+    "task": "261112-BUG-L27",
     "uncommitted": true
   },
   "document": "SECURITY.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_frame.py"
     },
     {
-      "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
+      "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -76,7 +76,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/fresh_host.py"
     },
     {
-      "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
+      "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },

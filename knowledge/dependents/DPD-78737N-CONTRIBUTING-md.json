@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "55049f6c73b5660adaa6e3b0637185a3167751c3",
-    "commit": "54d242820ff7f9941cadebf9f543c857314b368f",
-    "role": "manager",
-    "statement": "The contributor guide accurately describes the seven lanes, lane assignment for new tests and the canonical lifecycle catalog procedure on the merged source.",
-    "task": "261123-SUB",
-    "uncommitted": false
+    "codeTree": "8218f7f1a8e331130c15bf463ddcc88a51a34fbd",
+    "commit": "180b6c153d21d01cbb14059d0219472ccdeba683",
+    "role": "curator",
+    "statement": "The contributor guide accurately describes the seven lanes, lane assignment for new tests and the canonical lifecycle catalog procedure on the merged source. The contributor guide's hook and lane sections still hold: both hooks need the dashboard's dependencies and stop with the install command when they are missing, and the two new test files sit in the integration lane.",
+    "task": "261112-BUG-L27",
+    "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
   "id": "DPD-78737N",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "setup-hooks.sh"
     },
     {
-      "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
+      "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
       "kind": "file",
       "path": ".githooks/_gate.sh"
     },
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "30fe276ea103c0bc2f37afe7affc8436d89f64bd",
+      "blob": "2ecce6228d45fcc9dee1eb05aad3aab8da869859",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },

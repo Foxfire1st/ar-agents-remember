@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "711779a641b574d228218fbfe9ba70e6a05c81e0",
-    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
+    "codeTree": "ce714f8fbee46339c39d7eec8c956e3763464c26",
+    "commit": "d1c92dc9d4606a0b48b8e6b13f9c41c9b9aa6cce",
     "role": "curator",
-    "statement": "The tool details correctly distinguish the source digest loaded at startup from the current source under the package root.",
-    "task": "261112-BUG-L23",
+    "statement": "The tool details' account of serialized writes is still true: one queue in arrival order, a cancelled running write held in place until its thread ends, asynchronous tools outside the queue, and a stale build refusing publishing calls.",
+    "task": "261112-BUG-L27",
     "uncommitted": true
   },
   "document": "docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -92,8 +92,8 @@
     },
     {
       "anchor": {
-        "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
-        "content": "sha256:fdfd078bb233e7616bdacc47766168eea5c696b7cf50c0a719787b863b635663",
+        "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+        "content": "sha256:67fe0b7ee62d92936408e6bdce030fb715592e603ee194856fe2a7ae9ffb01ac",
         "locator": {
           "kind": "symbol",
           "name": "AgentsRememberMCP._dispatch_tool"

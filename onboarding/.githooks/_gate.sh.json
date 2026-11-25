@@ -3,8 +3,46 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "68b5a1177638b7944aedb84ad9c8c1830af4fe00",
-        "content": "sha256:1a620a415506dc0a512414cb185c764f35f1ce04b0f946c17f2d7cc40ea645dd",
+        "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+        "content": "sha256:6a2208eb6f554a28bbecd72e107945c3e69b9c00858fba00121a9490ced5900b",
+        "locator": {
+          "end": 197,
+          "kind": "line_range",
+          "start": 196
+        }
+      },
+      "id": "RLZ-NHA4YW",
+      "invariant": "INV-H49FH8",
+      "origin": {
+        "handoffEntry": "BUG-R27@v1 Rule 1",
+        "leaf": "261112-BUG-L27"
+      },
+      "rationale": "Lets the tier report its ordinary failure after a prerequisite refusal.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+        "content": "sha256:87f28dc9b669f1f6b9ed43725fb1f447f52c69129f615393163367c630e25b4c",
+        "locator": {
+          "end": 165,
+          "kind": "line_range",
+          "start": 155
+        }
+      },
+      "id": "RLZ-RC1F6S",
+      "invariant": "INV-H49FH8",
+      "origin": {
+        "handoffEntry": "BUG-R27@v1 Rule 1",
+        "leaf": "261112-BUG-L27"
+      },
+      "rationale": "Checks the package manifest, dependency directory and npm before the expensive checks begin.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+        "content": "sha256:665a2353891a4675e64485f289f4a1aa463be468cf0c5f80d8db38a8ca5f91dc",
         "locator": {
           "kind": "file"
         }
@@ -19,6 +57,92 @@
       "role": "enforcement"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The dashboard prerequisite look skips a tree without the dashboard package and stops on a missing dependency folder or npm.\n\nAnchor: `dashboard_prerequisites`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+            "content": "sha256:3c510f439ca02f94c1e2065caa30de2d1e43780f9709d1395102e302bca21803",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 153
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fast tier runs the prerequisite look first and the dashboard checks last.\n\nAnchor: `run_fast_checks`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+            "content": "sha256:7562f9d7d594338030b4643310f27cc838367abc2008f73f95e5c8289e1a750d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 195
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The targeted tier repeats the fast checks, and the full tier refuses host execution.\n\nAnchor: `run_targeted_checks`; `run_full_checks`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+            "content": "sha256:7c0d5c094f2bf6c5b309521029214fe0efb7db01e37d8564a88bf3691af14ade",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 242
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Every tier ends on its own pass or fail line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+            "content": "sha256:73a594d90b8333d2f72ef24fe2c0d0d114de60c9800e9e78aa993f7db9d09ed5",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 337
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The script selects a complete MCP development environment or stops with the bootstrap command.\n\nAnchor: `dev_python_ready`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+            "content": "sha256:27fe655abb2ea763185226fb34c82b37761e0c179352982a2b5e39ba588e95de",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }
