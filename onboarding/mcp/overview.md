@@ -1101,9 +1101,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 - General families plus four explainer additions, narrowed to the allowlist of a bound role; the seat check covers only those four while the process still serves them [405]
 
-- The cutover refusal applies to an all-unconverted input set. A repository probe selects the conversion guidance. [421]
+- The cutover refusal applies to an all-unconverted input set. A repository probe selects the conversion guidance. [423]
 
-- The memory leg closes history with the review fact before refreshing derived memory files. [420]
+- The memory leg closes history with the review fact before refreshing derived memory files. [422]
 
 - Four mounted knowledge operations are registered here: the read, the diff, the integrity check and the write. [133]
 

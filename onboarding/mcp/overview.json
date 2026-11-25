@@ -5760,7 +5760,7 @@
         }
       ]
     },
-    "420": {
+    "422": {
       "note": "The memory leg closes history with the review fact before refreshing derived memory files.",
       "targets": [
         {
@@ -5777,7 +5777,7 @@
         }
       ]
     },
-    "421": {
+    "423": {
       "note": "The cutover refusal applies to an all-unconverted input set. A repository probe selects the conversion guidance.",
       "targets": [
         {
@@ -6334,12 +6334,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "627d885a5aa3149ea67978f4aebea7e2a7833e6e",
+            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
             "content": "sha256:e8d4a28e6c3fbf9995a4547295f0e43b349db309ab92d30fc59dac8307765819",
             "locator": {
-              "end": 227,
+              "end": 231,
               "kind": "line_range",
-              "start": 209
+              "start": 213
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
           },

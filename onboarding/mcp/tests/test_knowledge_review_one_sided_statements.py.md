@@ -171,18 +171,13 @@ Current source: The current lifecycle catalog declares test_knowledge_review_one
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-3367 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-
-
 - The exact lifecycle field row carries proposed and reviewed on the same authored revision. [9]
 - The renderer exercises synthetic before and after statement values in its own component fixture. [18]
 - The pair is built from independent fixtures. The after fixture names the leaf whose closed history proves the shared revision. [15]
-
 - The `unit-regression` lane selects `mcp/tests/test_knowledge_review_one_sided_statements.py`. The lifecycle catalog lists this module as an exact consumer of `mcp/tests/knowledge_rows_test_support.py` and `mcp/tests/read_scope_test_support.py`. [16]
 - The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_rows_test_support.py` and `mcp/tests/read_scope_test_support.py`. [17]
-
 - An invariant text record stores one numeric revision and one statement, distinct from the former retained-revision model. [20]
 - Two independently built snapshots exercise one addition, one removal and the same retained revision whose lifecycle becomes reviewed. [6]
-
 - **The module's own scope statement: six cases over the real adapter and two real datasets, and the load-bearing properties each one owns.** [1]
 - The shared and one-sided statement constants supply the backend fixture values. [3]
 - OneSidedPair remains the local frozen dataclass. Extra seeds are constructed by _extra; the former AuthoredInvariant target does not survive. [4]

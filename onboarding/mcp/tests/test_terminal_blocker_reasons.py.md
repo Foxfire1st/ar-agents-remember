@@ -191,16 +191,6 @@ No external source is required for this repository-owned blocker contract.
 
 - The landing fixture and the public configuration the whole-tool cases build on. [24]
 
-
-
-
-
-- Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection. [28]
-
-
-
-
-
 ### Cross-Repo References
 
 The two finalize cases and the tool-level cleanup preview build disposable code and external memory Git repositories under `tmp_path`. The helper-level cases exercise typed results or provider-runtime fixtures directly.
@@ -223,3 +213,5 @@ The module has **489 physical lines** and **ten source test definitions**. Its p
 - The integration lane selects mcp/tests/test_terminal_blocker_reasons.py. Execution evidence is recorded separately. [23]
 
 - The lane manifest declares test_terminal_blocker_reasons.py in integration. Membership selects evidence and establishes no invocation. [25]
+
+- Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection. [28]

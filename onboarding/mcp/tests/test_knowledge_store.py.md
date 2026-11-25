@@ -107,8 +107,8 @@ No meaningful cross-repo references found.
 - The shared branching fixture used by the revision cases. Anchor: `build_branching_knowledge_fixture` [18]
 
 
-- The schema pin observes the new generation and verifies table drift refusal. [31]
-- The declared derived table set includes ix_revision. [32]
+- The schema pin observes the new generation and verifies table drift refusal. [33]
+- The declared derived table set includes ix_revision. [34]
 
 - The unit-regression lane selects mcp/tests/test_knowledge_store.py. [19]
 

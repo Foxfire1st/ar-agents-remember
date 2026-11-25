@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "The template gives the writer request needed to resolve a conflicted dependent without submitting the crossing as an ordinary leaf write."
+  },
+  "applicability": "The Curator handoff ingestion template for a dependent changed on both sides of a master merge.",
+  "conditions": [
+    "The master has an open crossing and the Curator can identify the existing dependent and its resolved links."
+  ],
+  "exclusions": [
+    "Leaf ingestion has its own persisted worklist."
+  ],
+  "id": "INV-30KTSG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "W2 code-to-reference comparison and instruction renewal."
+      ],
+      "path": "L26 W3 invariant and onboarding judgments"
+    },
+    "handoffEntry": "BUG-R26@v1 rule 3",
+    "leaf": "261112-BUG-L26",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Curator template names the crossing owner, the writer request for a conflicted dependent and every accepted record kind.",
+  "status": "proposed",
+  "supersedes": []
+}

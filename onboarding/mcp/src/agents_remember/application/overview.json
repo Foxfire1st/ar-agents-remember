@@ -1978,7 +1978,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
             "content": "sha256:1ec537f6f0422a1b506ca91c06b7b979e369716ad77db2e41cb8d0e1df516525",
             "locator": {
               "kind": "symbol",
@@ -1990,8 +1990,8 @@
         },
         {
           "anchor": {
-            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
-            "content": "sha256:b51d50df3113ad1306d8c689cc735c315fd8d6aea7c3e7f1f6e07941e5b74760",
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
+            "content": "sha256:142760cf0e9f20b172e582a407b22b1f8f08dc458a1bf6eddd77162138ba1abb",
             "locator": {
               "kind": "file"
             },
@@ -8705,6 +8705,24 @@
         }
       ]
     },
+    "527": {
+      "note": "Crossing confirmation identifies the resolved commit that supplied the code tree.\n\nAnchor: `CodeSnapshot.at_commit`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71af220596f317a833cf129c3bf80e2da22c1ed5",
+            "content": "sha256:78f1c2b2137e5addcb4ffb955689ad5ba7706b64a735d9aa6285101366043c04",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "53": {
       "note": "**The acquisition owner: exact-path lookup, only `exact_recorded_blob` resolving, unread sides licensing nothing, R05's damage and empty-generation readers consumed.**\n\nAnchor: `review_attribution`; `_RESOLVED_MAPPINGS`; `_inspection_state`",
       "targets": [
@@ -8757,7 +8775,7 @@
         }
       ]
     },
-    "536": {
+    "539": {
       "note": "The write route resolves the caller outside the handoff and supplies the owner-specific stamp.",
       "targets": [
         {
@@ -8788,40 +8806,6 @@
         }
       ]
     },
-    "537": {
-      "note": "The answer carries record standing independently of code currentness.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f0f2bb8ac268b4084a576647745a5e6165b31a6b",
-            "content": "sha256:f11051c5eb035fd072aca680cbdb929398e6ea6abd72cab6d861bf5e82c89e4e",
-            "locator": {
-              "kind": "symbol",
-              "name": "stamp_summaries"
-            },
-            "path": "mcp/src/agents_remember/application/record_standing_answers.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "538": {
-      "note": "The bounded writers view retains the report path and selection's counts.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7582390ac1d3008bcf49f5a9d82b0f9373aad7a9",
-            "content": "sha256:9668e7aee0a2ea4dc01c15eff907b83cc425ee0e127380d356899e04e4a99eb9",
-            "locator": {
-              "kind": "symbol",
-              "name": "writers_view"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_writers_view.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "54": {
       "note": "**The task-context pair measurement and the receipt asked twice, so a record that breaks mid-read is stated, never raised.**",
       "targets": [
@@ -8846,6 +8830,40 @@
               "name": "_pair_without_namespace"
             },
             "path": "mcp/src/agents_remember/application/review_task_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "540": {
+      "note": "The answer carries record standing independently of code currentness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0f2bb8ac268b4084a576647745a5e6165b31a6b",
+            "content": "sha256:f11051c5eb035fd072aca680cbdb929398e6ea6abd72cab6d861bf5e82c89e4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "stamp_summaries"
+            },
+            "path": "mcp/src/agents_remember/application/record_standing_answers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "541": {
+      "note": "The bounded writers view retains the report path and selection's counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7582390ac1d3008bcf49f5a9d82b0f9373aad7a9",
+            "content": "sha256:9668e7aee0a2ea4dc01c15eff907b83cc425ee0e127380d356899e04e4a99eb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "writers_view"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writers_view.py"
           },
           "kind": "code"
         }

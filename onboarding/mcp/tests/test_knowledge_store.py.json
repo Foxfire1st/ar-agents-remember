@@ -283,7 +283,7 @@
         }
       ]
     },
-    "31": {
+    "33": {
       "note": "The schema pin observes the new generation and verifies table drift refusal.\n\nAnchor: `CURRENT_GENERATION.schema_name`",
       "targets": [
         {
@@ -300,7 +300,7 @@
         }
       ]
     },
-    "32": {
+    "34": {
       "note": "The declared derived table set includes ix_revision.",
       "targets": [
         {

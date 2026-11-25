@@ -1,0 +1,42 @@
+{
+  "path": "mcp/tests/test_crossing_dependent_writer.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "fbd015737dedc31686b1689c30d10bf220716829",
+        "content": "sha256:b772f70caf536ce4a4257ab01fdd0ddbf75a660c3634385d94eeda3168c892f7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_crossing_plans_the_resolution_of_a_conflicted_dependent"
+        }
+      },
+      "facet": "A crossing dry plan records the resolved commit and its tree and leaves existing memory and index bytes intact.",
+      "id": "PRF-KHF940",
+      "invariant": "INV-4EE7HQ",
+      "origin": {
+        "handoffEntry": "BUG-R26@v1 rule 2",
+        "leaf": "261112-BUG-L26"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The crossing dry plan updates the existing record and confirms the resolved committed code state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbd015737dedc31686b1689c30d10bf220716829",
+            "content": "sha256:b772f70caf536ce4a4257ab01fdd0ddbf75a660c3634385d94eeda3168c892f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_crossing_plans_the_resolution_of_a_conflicted_dependent"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

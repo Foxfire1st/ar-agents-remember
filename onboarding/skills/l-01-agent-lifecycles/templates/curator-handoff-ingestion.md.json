@@ -3,10 +3,29 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "627d885a5aa3149ea67978f4aebea7e2a7833e6e",
-        "content": "sha256:01e775dcc2a9d6b7caced10f3ecc847b5e0d550782f94c388502f1542f3c5ad8",
+        "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+        "content": "sha256:9b4a62e4552e36e976903cef0a317b7a34a9c3c5bd335857a5ffcfde8e9c5718",
         "locator": {
-          "end": 171,
+          "end": 267,
+          "kind": "line_range",
+          "start": 266
+        }
+      },
+      "id": "RLZ-2DWV4W",
+      "invariant": "INV-30KTSG",
+      "origin": {
+        "handoffEntry": "BUG-R26@v1 rule 3",
+        "leaf": "261112-BUG-L26"
+      },
+      "rationale": "Lists the record kinds the writer handles.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+        "content": "sha256:f617e86553bf90fa8dc82096be3bd4746ee5d7e099082164e08a8610b5032b10",
+        "locator": {
+          "end": 178,
           "kind": "line_range",
           "start": 141
         }
@@ -22,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "627d885a5aa3149ea67978f4aebea7e2a7833e6e",
+        "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
         "content": "sha256:10aa134c96a1dbb1c3bc23c1c53d197119d0b559fcdaef610b7fac71514c9a84",
         "locator": {
-          "end": 352,
+          "end": 356,
           "kind": "line_range",
-          "start": 325
+          "start": 329
         }
       },
       "id": "RLZ-BPN91E",
@@ -41,12 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "627d885a5aa3149ea67978f4aebea7e2a7833e6e",
+        "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
         "content": "sha256:298a7fb73b9e0e1244a11467bba76b9dfcfebc21713b85aaf0edc3ab238f8a09",
         "locator": {
-          "end": 271,
+          "end": 275,
           "kind": "line_range",
-          "start": 271
+          "start": 275
         }
       },
       "id": "RLZ-EQ34E8",
@@ -60,12 +79,12 @@
     },
     {
       "anchor": {
-        "blob": "627d885a5aa3149ea67978f4aebea7e2a7833e6e",
+        "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
         "content": "sha256:0c0cca37d0f7935b77675de9c1d13abe0b0a63facf744a39a48f90550e35d04f",
         "locator": {
-          "end": 540,
+          "end": 537,
           "kind": "line_range",
-          "start": 540
+          "start": 537
         }
       },
       "id": "RLZ-X62XGY",
@@ -79,7 +98,26 @@
     },
     {
       "anchor": {
-        "blob": "627d885a5aa3149ea67978f4aebea7e2a7833e6e",
+        "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+        "content": "sha256:08eb8804119cb7b0eb76a794cab39733a5f12ae3b095cded8f0d6e53a1c82c6f",
+        "locator": {
+          "end": 153,
+          "kind": "line_range",
+          "start": 148
+        }
+      },
+      "id": "RLZ-Y9GFMZ",
+      "invariant": "INV-30KTSG",
+      "origin": {
+        "handoffEntry": "BUG-R26@v1 rule 3",
+        "leaf": "261112-BUG-L26"
+      },
+      "rationale": "Matches the crossing request and its planning and apply modes.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
         "content": "sha256:9e671c63acc84a0cca3f697ef47c62b5b1e52f85b34c3dcd9660088354f7386e",
         "locator": {
           "end": 60,
@@ -98,10 +136,10 @@
     },
     {
       "anchor": {
-        "blob": "627d885a5aa3149ea67978f4aebea7e2a7833e6e",
-        "content": "sha256:dd23a25922a2c283ffe07c5c02d0248ff9e43c68bec2c70bd61e2638d44ae19a",
+        "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+        "content": "sha256:ee43cb9d8a1c996c2415a3dca0c24404866f4cc85155c5464b30c67fdfdc8f89",
         "locator": {
-          "end": 152,
+          "end": 159,
           "kind": "line_range",
           "start": 141
         }
@@ -122,7 +160,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "627d885a5aa3149ea67978f4aebea7e2a7833e6e",
+            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
             "content": "sha256:6143896bb8378c50ab3fa7d1164b851a06c6003cd586ddc177ab82192c22925a",
             "locator": {
               "end": 3,
@@ -134,12 +172,29 @@
         }
       ]
     },
+    "10": {
+      "note": "The record-kind list includes dependent and weakness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "content": "sha256:9b4a62e4552e36e976903cef0a317b7a34a9c3c5bd335857a5ffcfde8e9c5718",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 266
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Curator-authored `scope` is required before an entry becomes an invariant, and missing scope is reported per entry.\n\nAnchor: `unfilled_curation_scope`",
       "targets": [
         {
           "anchor": {
-            "blob": "627d885a5aa3149ea67978f4aebea7e2a7833e6e",
+            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
             "content": "sha256:7abaf57ac54a53553ab2ab8c1e678b79261b2974971d1a29fb2b777391685e76",
             "locator": {
               "end": 28,
@@ -156,7 +211,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "627d885a5aa3149ea67978f4aebea7e2a7833e6e",
+            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
             "content": "sha256:ad15fe99f9ce787f53f82305632bff48fa449d33e361d917a9745b512e30cd90",
             "locator": {
               "end": 40,
@@ -173,10 +228,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "627d885a5aa3149ea67978f4aebea7e2a7833e6e",
-            "content": "sha256:d87eef5a548da4fa02df8d47bfee659bd09348dc46849b0eaa510a37196e0bd7",
+            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "content": "sha256:45b82ec840fc25646291aa07d248b96ee01795c66e024a15b5da2a8971d4df79",
             "locator": {
-              "end": 71,
+              "end": 70,
               "kind": "line_range",
               "start": 62
             }
@@ -190,8 +245,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "627d885a5aa3149ea67978f4aebea7e2a7833e6e",
-            "content": "sha256:03403625f2e22984464c757d51296bf0a10c95c6982b49fe5c17bfcb976edcb2",
+            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "content": "sha256:89e9707340785924a2cd4454c3a68d855357bf14caf42e83c78c59923870abd4",
             "locator": {
               "kind": "file"
             }
@@ -205,12 +260,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "627d885a5aa3149ea67978f4aebea7e2a7833e6e",
+            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
             "content": "sha256:997d2350bdaa666441f75df8c74c57558ce6b6e44ba55655c198178c98bfd205",
             "locator": {
-              "end": 550,
+              "end": 547,
               "kind": "line_range",
-              "start": 540
+              "start": 537
             }
           },
           "kind": "code"
@@ -222,12 +277,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "627d885a5aa3149ea67978f4aebea7e2a7833e6e",
+            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
             "content": "sha256:57ff6dcb7f906672cb0d3357bfd033f1676cf6d404efdc015133d6c8e01ae284",
             "locator": {
-              "end": 615,
+              "end": 612,
               "kind": "line_range",
-              "start": 605
+              "start": 602
             }
           },
           "kind": "code"
@@ -247,6 +302,23 @@
               "start": 41
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The Curator plans and applies the conflicting dependent through the crossing writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca127313a91c77421ca415864617b60f3c603f6a",
+            "content": "sha256:08eb8804119cb7b0eb76a794cab39733a5f12ae3b095cded8f0d6e53a1c82c6f",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 148
+            }
           },
           "kind": "code"
         }

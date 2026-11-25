@@ -497,6 +497,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - For every card the quality check cuts, the Curator names the source evidence that makes the removed text untrue; text is not removed merely to clear a quality finding. Task-scoped readers derive roots only from a canonical admitted leaf; repository and enclosure bindings must agree. Anchor: Reader scope admission [315]
 
 
+
 - Canonical independent non-author statement/diff/omission duty. [329]
 
 - Named validator route policies. [330]
@@ -654,7 +655,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - The source roster contains 44 tools, including knowledge_write and user_settings_init. Converted memory-quality status includes bounded first rows and cut and added counts. Complete lists stay in the whole result and its detail log when recording succeeds. [358]
 
 
-- Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's writer input section. Anchor: `## The writer's input sections` [21]
+
 - Retained reference account (no fresh execution or acceptance inferred): The source checkout separates installed-runtime work from work on this repository and keeps implementation approval separate from commit approval. Anchor: `It is not the live` [33]
 - **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): A candidate tree is captured through a private index. Anchor: `worktree_candidate_tree` [126]
 - Retained reference account (no fresh execution or acceptance inferred): The ingestion template's planned-row paragraph, mirrored into the package copy. Anchor: `#### Planned effects` [263]
@@ -676,13 +677,11 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Carryover names file-sidecar, route-overview, memory-only-doc and entity-catalog candidates; its request supplies the code/source/target roots. Plan and apply require both memory roots to be converted and share the same conversion version; unconverted or mismatched memory is refused. [143]
 
-- Converted carryover prepares equal-format paired content and missing records in a recovery worktree without importing history or committing; ordinary leaf judgments and gated closeout own publication. [354]
-
+- Converted carryover prepares equal-format paired content and missing records in a recovery worktree without importing history or committing. The public apply proof covers eligible dot-directory pairs. Ordinary leaf judgments and gated closeout own publication. [354]
 - build_parser requires a subcommand, registers dashboard, and delegates memory, knowledge and runtime/settings command registration to three helpers. main parses the public command arguments and calls the selected handler; its internal leaf-enclosure entry is handled before that public parser. [139]
-
 - Fresh converted-leaf closeout validates and gates the exact memory tree after closing owner history. It then writes one memory-content output or reuses the unchanged tip. Recovery judges the recorded output again. [288]
 - Fresh converted-leaf closeout closes owner history and gates the exact memory output before committing it or reusing the unchanged tip. Recovery gates the already recorded output. [51]
 - Retained reference account (no fresh execution or acceptance inferred): The closeout preview asks the mandatory gate and answers with the refusal when the gate refuses. [75]
 - The registrar mounts the knowledge read, diff, integrity and write operations; change and project are removed. [30]
-
+- Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's writer input section. Anchor: `## The writer's input sections` [21]
 - Canonical source-bound onboarding and separate row domains. [331]

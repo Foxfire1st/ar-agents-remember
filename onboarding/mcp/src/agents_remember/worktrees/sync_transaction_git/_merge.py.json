@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
-        "content": "sha256:b51d50df3113ad1306d8c689cc735c315fd8d6aea7c3e7f1f6e07941e5b74760",
+        "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
+        "content": "sha256:142760cf0e9f20b172e582a407b22b1f8f08dc458a1bf6eddd77162138ba1abb",
         "locator": {
           "kind": "file"
         }
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+        "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
         "content": "sha256:3d76a4038e121b79f73db2cd20e5910d5cf7a7d4848f465fdae9d44d8432c833",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+        "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
         "content": "sha256:6d9acb80e9fa246b2a26664452a8b1ca81fce26d91578019b2d9da128b76bab8",
         "locator": {
           "kind": "symbol",
@@ -54,18 +54,70 @@
       },
       "rationale": "The emission predicate is the gate that keeps evidence-only and skip-only diagnostics.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
+        "content": "sha256:51adacb2027131fa579aafdcce7d397f57ddd50f264b97247df97d0bb7e3e4f0",
+        "locator": {
+          "kind": "symbol",
+          "name": "validate_staged_resolution"
+        }
+      },
+      "id": "RLZ-BW95D0",
+      "invariant": "INV-VG5BFX",
+      "origin": {
+        "handoffEntry": "BUG-R26@v1 rule 1",
+        "leaf": "261112-BUG-L26"
+      },
+      "rationale": "Checks the staged snapshot after verifying the active merge.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
+        "content": "sha256:af6a482129ed902e37ddb6de27c933d70c5b5c3e60a3049d8963227c37f64d87",
+        "locator": {
+          "kind": "symbol",
+          "name": "commit_check_staged_files"
+        }
+      },
+      "id": "RLZ-RFKB1C",
+      "invariant": "INV-VG5BFX",
+      "origin": {
+        "handoffEntry": "BUG-R26@v1 rule 1",
+        "leaf": "261112-BUG-L26"
+      },
+      "rationale": "Uses the same staged findings to distinguish a commit-hook refusal from an incomplete resolution.",
+      "role": "unclassified"
     }
   ],
   "references": {
     "1": {
-      "note": "validate_memory_fast_forward: qualified source contract.\n\nAnchor: `validate_memory_fast_forward`",
+      "note": "validate_memory_fast_forward: qualified source contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
-            "content": "sha256:b51d50df3113ad1306d8c689cc735c315fd8d6aea7c3e7f1f6e07941e5b74760",
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
+            "content": "sha256:142760cf0e9f20b172e582a407b22b1f8f08dc458a1bf6eddd77162138ba1abb",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Retained code and memory continuation validate the staged snapshot before committing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
+            "content": "sha256:51adacb2027131fa579aafdcce7d397f57ddd50f264b97247df97d0bb7e3e4f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_staged_resolution"
             }
           },
           "kind": "code"
@@ -77,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
             "content": "sha256:eb1fed75ae6bdd3627ae2f50b590865656ddb09e3c7080e05ebe45dd8aec1ea5",
             "locator": {
               "kind": "symbol",
@@ -93,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
             "content": "sha256:3d76a4038e121b79f73db2cd20e5910d5cf7a7d4848f465fdae9d44d8432c833",
             "locator": {
               "kind": "symbol",
@@ -109,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
             "content": "sha256:b000c8c807367b5ce60a531d3e66fd1e4d3b25fabe847c924814c6052b623bf6",
             "locator": {
               "kind": "symbol",
@@ -125,7 +177,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
             "content": "sha256:0e6cf6d56529608b97be6084200c05095b9ad60ba8841fe6c95913845c7e7725",
             "locator": {
               "kind": "symbol",
@@ -141,11 +193,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
             "content": "sha256:0b2d375f394beb24f307d5e12fbbdf23e88a25e56323f5ca82969204cb979de7",
             "locator": {
               "kind": "symbol",
               "name": "rollback_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The shared merge comparison preserves diagnostics that match both sides and ambiguous framing evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
+            "content": "sha256:640d54f5d8461b73c58943a8b7bde273e0f2d43ee1fdcda4a37e3755d47ba2c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_staged_merge_findings"
             }
           },
           "kind": "code"

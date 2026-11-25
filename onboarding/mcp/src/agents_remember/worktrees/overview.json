@@ -279,7 +279,41 @@
         }
       ]
     },
-    "114": {
+    "110": {
+      "note": "Retained continuation validates the staged merge against both recorded parents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
+            "content": "sha256:51adacb2027131fa579aafdcce7d397f57ddd50f264b97247df97d0bb7e3e4f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_staged_resolution"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "111": {
+      "note": "Only a retained merge commit failure enters hook diagnosis.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
+            "content": "sha256:7e3f066e1ca073ba932f3f6560bcdc6559c931662b2876a46c7f7108f0d06ac1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finish_retained_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "116": {
       "note": "History closing writes the eligible review fact in the same update and preserves already-closed bytes.",
       "targets": [
         {
@@ -296,7 +330,7 @@
         }
       ]
     },
-    "115": {
+    "117": {
       "note": "Direct landing reads the selected owner's review against the checkout before the cache-ignore or history writes.",
       "targets": [
         {
@@ -497,7 +531,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "745ae007ae4dd8bfe651b7510d6fe81c2269763b",
+            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
             "content": "sha256:ce81740d2e4cb263c942716af0d464e2cbb0d81cb98bf15d04ba52d79ae18843",
             "locator": {
               "kind": "symbol",
@@ -509,7 +543,7 @@
         },
         {
           "anchor": {
-            "blob": "745ae007ae4dd8bfe651b7510d6fe81c2269763b",
+            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
             "content": "sha256:3fce0f446e84a30cefa7d3cb960ba443023ed4a0f53dd572c5c21a9be7b3715c",
             "locator": {
               "kind": "symbol",
@@ -521,8 +555,8 @@
         },
         {
           "anchor": {
-            "blob": "745ae007ae4dd8bfe651b7510d6fe81c2269763b",
-            "content": "sha256:27263045c63dce8ebca834cad04afc20cbff97d45266c1e9c9724c18d3d87c14",
+            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
+            "content": "sha256:7e3f066e1ca073ba932f3f6560bcdc6559c931662b2876a46c7f7108f0d06ac1",
             "locator": {
               "kind": "symbol",
               "name": "_finish_retained_merge"
@@ -533,7 +567,7 @@
         },
         {
           "anchor": {
-            "blob": "745ae007ae4dd8bfe651b7510d6fe81c2269763b",
+            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
             "content": "sha256:420bba6070f930e9f28cc012c50608dc342c1eceec049eb67436eb236f2ead87",
             "locator": {
               "kind": "symbol",
@@ -545,12 +579,12 @@
         },
         {
           "anchor": {
-            "blob": "745ae007ae4dd8bfe651b7510d6fe81c2269763b",
+            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
             "content": "sha256:92637d10b86307a10fd54e9bc790c61e5f8b55b20307915e6582c85f4299d52f",
             "locator": {
-              "end": 521,
+              "end": 522,
               "kind": "line_range",
-              "start": 500
+              "start": 501
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
           },
@@ -558,8 +592,8 @@
         },
         {
           "anchor": {
-            "blob": "745ae007ae4dd8bfe651b7510d6fe81c2269763b",
-            "content": "sha256:2b87fd89e7d1963fd6341c2f75ffdbcba50be4de5606d8811f2a3e7b7ee9a221",
+            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
+            "content": "sha256:63ef862e297cf1291173ffce4d53420fdfecca34be4d9769fee06367916b89e4",
             "locator": {
               "kind": "file"
             },
@@ -605,7 +639,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
             "content": "sha256:b000c8c807367b5ce60a531d3e66fd1e4d3b25fabe847c924814c6052b623bf6",
             "locator": {
               "kind": "symbol",
@@ -617,7 +651,7 @@
         },
         {
           "anchor": {
-            "blob": "745ae007ae4dd8bfe651b7510d6fe81c2269763b",
+            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
             "content": "sha256:36e8e6e3886d04112e9ee640f0ce775ab12ab51e902fa8086f496bd5abdeacf6",
             "locator": {
               "kind": "symbol",
@@ -739,7 +773,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
             "content": "sha256:eb1fed75ae6bdd3627ae2f50b590865656ddb09e3c7080e05ebe45dd8aec1ea5",
             "locator": {
               "kind": "symbol",
@@ -751,7 +785,7 @@
         },
         {
           "anchor": {
-            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
             "content": "sha256:3d76a4038e121b79f73db2cd20e5910d5cf7a7d4848f465fdae9d44d8432c833",
             "locator": {
               "kind": "symbol",
@@ -957,12 +991,12 @@
       ]
     },
     "40": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Continue/cancel inputs and specific old-journal read tolerance.\n\nAnchor: `sync_input_refusal` `SyncSideRecord`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Continue/cancel inputs and specific old-journal read tolerance.",
       "targets": [
         {
           "anchor": {
-            "blob": "745ae007ae4dd8bfe651b7510d6fe81c2269763b",
-            "content": "sha256:2b87fd89e7d1963fd6341c2f75ffdbcba50be4de5606d8811f2a3e7b7ee9a221",
+            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
+            "content": "sha256:63ef862e297cf1291173ffce4d53420fdfecca34be4d9769fee06367916b89e4",
             "locator": {
               "kind": "file"
             },
@@ -988,8 +1022,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
-            "content": "sha256:3c56dce62cd83f9b76c0e3d468c134fff6c8cdd4f5e3d9e162ccb57c0e6ea200",
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
+            "content": "sha256:cf14347b14413160ca0c0e092333c2cefd49b9103de95d8957d54a7c5e800655",
             "locator": {
               "kind": "symbol",
               "name": "continue_side_merge"
@@ -1090,7 +1124,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
             "content": "sha256:b000c8c807367b5ce60a531d3e66fd1e4d3b25fabe847c924814c6052b623bf6",
             "locator": {
               "kind": "symbol",
@@ -1103,12 +1137,12 @@
       ]
     },
     "45": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The driver maps the refusal to its own state with a recovery line.\n\nAnchor: `_knowledge_validation_refused`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The driver maps the refusal to its own state with a recovery line.",
       "targets": [
         {
           "anchor": {
-            "blob": "745ae007ae4dd8bfe651b7510d6fe81c2269763b",
-            "content": "sha256:2b87fd89e7d1963fd6341c2f75ffdbcba50be4de5606d8811f2a3e7b7ee9a221",
+            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
+            "content": "sha256:63ef862e297cf1291173ffce4d53420fdfecca34be4d9769fee06367916b89e4",
             "locator": {
               "kind": "file"
             },
@@ -1156,7 +1190,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
             "content": "sha256:eb1fed75ae6bdd3627ae2f50b590865656ddb09e3c7080e05ebe45dd8aec1ea5",
             "locator": {
               "kind": "symbol",
@@ -1168,7 +1202,7 @@
         },
         {
           "anchor": {
-            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
             "content": "sha256:3d76a4038e121b79f73db2cd20e5910d5cf7a7d4848f465fdae9d44d8432c833",
             "locator": {
               "kind": "symbol",
@@ -1660,12 +1694,12 @@
       ]
     },
     "67": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The managed sync asks the lock at admission.\n\nAnchor: `_cutover_locked`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The managed sync asks the lock at admission.",
       "targets": [
         {
           "anchor": {
-            "blob": "745ae007ae4dd8bfe651b7510d6fe81c2269763b",
-            "content": "sha256:2b87fd89e7d1963fd6341c2f75ffdbcba50be4de5606d8811f2a3e7b7ee9a221",
+            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
+            "content": "sha256:63ef862e297cf1291173ffce4d53420fdfecca34be4d9769fee06367916b89e4",
             "locator": {
               "kind": "file"
             },
@@ -1697,7 +1731,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
             "content": "sha256:0b2d375f394beb24f307d5e12fbbdf23e88a25e56323f5ca82969204cb979de7",
             "locator": {
               "kind": "symbol",
@@ -2028,12 +2062,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "745ae007ae4dd8bfe651b7510d6fe81c2269763b",
+            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
             "content": "sha256:eb212c867f6cfd09d4439893f9934f7753a0e26d6a2b6742c2421c6b2d7a4e20",
             "locator": {
-              "end": 343,
+              "end": 344,
               "kind": "line_range",
-              "start": 263
+              "start": 264
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
           },
@@ -2046,7 +2080,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
             "content": "sha256:6d9acb80e9fa246b2a26664452a8b1ca81fce26d91578019b2d9da128b76bab8",
             "locator": {
               "kind": "symbol",
@@ -2063,7 +2097,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59413efac4a1d15d8510875e3f6c043f74fcc37b",
+            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
             "content": "sha256:b000c8c807367b5ce60a531d3e66fd1e4d3b25fabe847c924814c6052b623bf6",
             "locator": {
               "kind": "symbol",
