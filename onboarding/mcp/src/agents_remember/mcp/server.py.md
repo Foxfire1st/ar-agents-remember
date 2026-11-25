@@ -52,9 +52,10 @@ AgentsRememberMCP.list_tools first awaits the FastMCP answer, then schedules sta
 
 ### Stale installed builds refuse publication writes at dispatch
 
-Inside the tool-call context, a server with config reads its build currentness off the event loop (`build_currentness`) and carries that reading through the call with `tool_build_currentness`, so the answer boundary can annotate answers from a stale installed build. A checkout build yields no reading unless inspection is asked for, and a bare no-config server reads nothing. When the reading is an installed build in state `stale`, the call's arguments are validated against the registered tool's argument model, and a call that `is_stale_build_write` names a publication write is answered by `stale_build_refusal` (code `server-build-stale`, naming the loaded and installed digests and the restart remedy) without running the handler. Reads, previews, unnamed tools and current or unknown readings go on to `_dispatch_tool`.
+Inside the tool-call context, a server with config reads its build currentness off the event loop (`build_currentness`) and carries that reading through the call with `tool_build_currentness`, so the answer boundary can annotate answers from a stale installed build. A checkout build yields no reading unless inspection is asked for, and a bare no-config server reads nothing. When the reading is an installed build in state `stale`, the call's arguments are validated against the registered tool's argument model, and a call that `is_stale_build_write` names a publication write is answered by `stale_build_refusal` (code `server-build-stale`, naming the loaded and installed digests and the restart remedy) without running the handler. The refusal is built in a detached worker thread, so cancelling the request does not wait for it. Reads, previews, unnamed tools and current or unknown readings go on to `_dispatch_tool`.
 
 - A stale installed build's publication writes are refused before dispatch; other calls dispatch under the carried currentness reading. [13]
+
 - `run_server` registers the process as an `"mcp"` server and runs the cleanup when serving ends. [14]
 
 ### Tool-call logging at the transport boundary (MIK-R108 rule 3)
@@ -64,6 +65,13 @@ this server's config (`_agents_remember_config`, set once by `create_server`) to
 which logs the completed call; a call that raises is logged here by `_log_raised_tool_call` and
 re-raised, with the log write itself never raising. Refusals raised by registered tools happen inside the
 context and are logged like other raised calls.
+
+A cancelled request also leaves one row. The call opens `track_worker_cancellation` with two writers bound to its name, arguments and config. When the request is cancelled while it reads the build currentness, while it waits for the write lock, or while a detached worker is still queued, `_log_cancelled_wait` writes a row with code `cancelled`, a `waitingFor` field naming the wait (`build-currentness`, `write-lock` or `worker-thread`), and an error saying the tool never ran. When a worker raises after the request was cancelled, `_log_raised_tool_call` writes the ordinary `raised` row with `requestCancelled: true`: from `_log_interrupted_dispatch` for a drained worker, and from the worker thread itself for a detached one. Both kinds go through `_log_failed_tool_call`, which writes a detail file for every such row. A worker that returns a result after the cancellation is logged once at the answer boundary, as usual.
+
+- The request's cancelled-wait and late-error writers are bound before dispatch, and a cancellation hands the interrupted state to the dispatch logger. [16]
+- An interrupted dispatch logs either the wait it was cancelled in or the drained worker's error with the cancellation marker. [17]
+- A cancelled wait is logged with code `cancelled`, the `waitingFor` field and a never-ran error. [18]
+- A late error keeps the raised row and adds `requestCancelled`. [19]
 
 `main(argv)` parses a required `--config` (an absolute path to trusted MCP settings JSON), calls
 `declare_mcp_process()` **before** `load_config`, turns a `ConfigError` into an argparse error, then
@@ -161,7 +169,7 @@ Every tool call owns one definition scope around its complete dispatch. Synchron
 
 After the applicable explainer-tool seat checks, `_dispatch_tool` wraps a synchronous registered function on a per-call Tool copy and runs it through the shared request-thread helper. FastMCP validates the original arguments, injects context and converts the result. The worker receives the call's context. Each async handler owns any worker it starts.
 
-Potentially mutating synchronous calls hold one per-server lock until their worker stops. Cancellation does not release it while the thread is alive, including repeated cancellation. Centrally declared read-only calls and explicitly nonwriting modes bypass the lock; the bypass is a dispatch policy, not host-wide purity or permission. A string-coercible false value does not satisfy the strict boolean checks.
+Potentially mutating synchronous calls hold one per-server lock until their worker stops. Cancellation does not release it while the thread is alive, including repeated cancellation. A request cancelled while it still waits for the lock leaves a `cancelled` tool-log row that names the write lock. Centrally declared read-only calls and explicitly nonwriting modes bypass the lock; the bypass is a dispatch policy, not host-wide purity or permission. A string-coercible false value does not satisfy the strict boolean checks.
 
 
 - Threaded synchronous dispatch retains the registered validation and conversion path. [10]
@@ -171,7 +179,7 @@ Potentially mutating synchronous calls hold one per-server lock until their work
 
 
 
-- Cancellation drains the shielded worker before releasing its caller. [12]
+- Cancellation drains the worker before releasing its caller. [12]
 
 
 

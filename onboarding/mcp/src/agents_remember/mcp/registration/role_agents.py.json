@@ -4,8 +4,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
-        "content": "sha256:3dfaee2e3ffded7b5e8f92fed3374836e045a980851cdb3704fd2807f7340f5e",
+        "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+        "content": "sha256:0a1babe8ae764cba2ed73b4a55e974c1d538c4defadc1da46cbe784447bb8561",
+        "locator": {
+          "end": 176,
+          "kind": "line_range",
+          "start": 171
+        }
+      },
+      "id": "RLZ-3KJEK9",
+      "invariant": "INV-F3DQ4G",
+      "origin": {
+        "handoffEntry": "BUG-R27@v1 Rule 2 raised error",
+        "leaf": "261112-BUG-L27"
+      },
+      "rationale": "Uses the non-draining helper to preserve the current role settings call's cancellation behavior.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+        "content": "sha256:e73c3919f9745cc0652821e92130026445e86e4ed89ca4ba1b3b9d76a256ec01",
         "locator": {
           "kind": "symbol",
           "name": "register_role_agent_tools"
@@ -22,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
-        "content": "sha256:d5fccfa00edaf41799345ca2547bb87aaf2a0a09355e4a3997599019a505cd27",
+        "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+        "content": "sha256:6001adf4a6a060910a2a797ffbacc1dd80b35f37d5c78273ca46835e9702f77a",
         "locator": {
           "kind": "symbol",
           "name": "role_message"
@@ -40,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
-        "content": "sha256:5799bdee2243f040ff359fe66b08402b0228dc5b300306480febb2bf14c6d980",
+        "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+        "content": "sha256:8822ec08395ec2ea6b32818287af14f4bc59d1078bf22128eb5469047c8cc999",
         "locator": {
           "kind": "file"
         }
@@ -57,8 +76,27 @@
     },
     {
       "anchor": {
-        "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
-        "content": "sha256:3dfaee2e3ffded7b5e8f92fed3374836e045a980851cdb3704fd2807f7340f5e",
+        "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+        "content": "sha256:2dc753c8784eec6be3e34abfd0a202d2bb9b740dc87506cd81df6b56ac84cb6f",
+        "locator": {
+          "end": 208,
+          "kind": "line_range",
+          "start": 208
+        }
+      },
+      "id": "RLZ-FQP3ST",
+      "invariant": "INV-F3DQ4G",
+      "origin": {
+        "handoffEntry": "BUG-R27@v1 Rule 2 raised error",
+        "leaf": "261112-BUG-L27"
+      },
+      "rationale": "Uses the same helper for role messages, preserving cancellation while a host wait is outstanding.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+        "content": "sha256:e73c3919f9745cc0652821e92130026445e86e4ed89ca4ba1b3b9d76a256ec01",
         "locator": {
           "kind": "symbol",
           "name": "register_role_agent_tools"
@@ -80,12 +118,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
-            "content": "sha256:3dfaee2e3ffded7b5e8f92fed3374836e045a980851cdb3704fd2807f7340f5e",
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+            "content": "sha256:e73c3919f9745cc0652821e92130026445e86e4ed89ca4ba1b3b9d76a256ec01",
             "locator": {
-              "end": 209,
-              "kind": "line_range",
-              "start": 85
+              "kind": "symbol",
+              "name": "register_role_agent_tools"
             }
           },
           "kind": "code"
@@ -97,12 +134,41 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
             "content": "sha256:3813693bdba56cad51f7ec9420d5c56cd59cccf4f0dc5990c6968fe5f36a82be",
             "locator": {
-              "end": 204,
+              "end": 203,
               "kind": "line_range",
-              "start": 181
+              "start": 180
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The settings initializer and role messages run through the detached request-thread helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+            "content": "sha256:1eb082d708953641bf620537529119dab61f2d296b4239dba03d8158cbda7334",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 170
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+            "content": "sha256:2dc753c8784eec6be3e34abfd0a202d2bb9b740dc87506cd81df6b56ac84cb6f",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 208
             }
           },
           "kind": "code"
@@ -114,12 +180,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
-            "content": "sha256:3dfaee2e3ffded7b5e8f92fed3374836e045a980851cdb3704fd2807f7340f5e",
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+            "content": "sha256:e73c3919f9745cc0652821e92130026445e86e4ed89ca4ba1b3b9d76a256ec01",
             "locator": {
-              "end": 209,
-              "kind": "line_range",
-              "start": 85
+              "kind": "symbol",
+              "name": "register_role_agent_tools"
             }
           },
           "kind": "code"
@@ -167,24 +232,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
             "content": "sha256:657f593e3e436906b417024f5f642d403e08fe9d49a20fb85617cad97694e5d8",
             "locator": {
-              "end": 82,
+              "end": 81,
               "kind": "line_range",
-              "start": 65
+              "start": 64
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
             "content": "sha256:8439e2c586ae37a52345a195a76133ed74b3a3f25c52fa565b22d7d4bd93999e",
             "locator": {
-              "end": 120,
+              "end": 119,
               "kind": "line_range",
-              "start": 85
+              "start": 84
             }
           },
           "kind": "code"
@@ -196,7 +261,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
             "content": "sha256:657f593e3e436906b417024f5f642d403e08fe9d49a20fb85617cad97694e5d8",
             "locator": {
               "kind": "symbol",
@@ -212,12 +277,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
-            "content": "sha256:3dfaee2e3ffded7b5e8f92fed3374836e045a980851cdb3704fd2807f7340f5e",
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+            "content": "sha256:e73c3919f9745cc0652821e92130026445e86e4ed89ca4ba1b3b9d76a256ec01",
             "locator": {
-              "end": 209,
-              "kind": "line_range",
-              "start": 85
+              "kind": "symbol",
+              "name": "register_role_agent_tools"
             }
           },
           "kind": "code"
@@ -229,24 +293,22 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7d09cd0f048f9fcf60689608d04050221fe88d6",
-            "content": "sha256:3dfaee2e3ffded7b5e8f92fed3374836e045a980851cdb3704fd2807f7340f5e",
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+            "content": "sha256:e73c3919f9745cc0652821e92130026445e86e4ed89ca4ba1b3b9d76a256ec01",
             "locator": {
-              "end": 209,
-              "kind": "line_range",
-              "start": 85
+              "kind": "symbol",
+              "name": "register_role_agent_tools"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "16c9244c6c6d7b49e26f835cf992ae04304056f5",
-            "content": "sha256:8270eb64bb55bec46ee910fba95941cf2303221cd04753f4019076d6e81336e9",
+            "blob": "2ee450da7ed591e6d87e27ecd9b4835dffd5f825",
+            "content": "sha256:b5db5630112f4a40dee5ef605a87c3210881efa621c460a89e72c461b567c3f3",
             "locator": {
-              "end": 30,
-              "kind": "line_range",
-              "start": 11
+              "kind": "symbol",
+              "name": "run_in_request_thread"
             },
             "path": "mcp/src/agents_remember/mcp/thread_workers.py"
           },

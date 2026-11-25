@@ -1,7 +1,7 @@
 {
   "anchor": {
-    "blob": "c66cd707675994aa3deedfdfd9221959b7a7af12",
-    "content": "sha256:468678d5cf5d8c368a246e09f779312a727aaba8324c37fbe95de3fa77f4af44",
+    "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+    "content": "sha256:c1078abe60dafde5832233cac8dbfc94f3857af3c1929c9da0a1802bb699834b",
     "locator": {
       "kind": "symbol",
       "name": "AgentsRememberMCP"
@@ -18,7 +18,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
