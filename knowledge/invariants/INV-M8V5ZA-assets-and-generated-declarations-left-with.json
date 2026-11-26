@@ -31,5 +31,24 @@
   "schema": "ar-invariant/v1",
   "statement": "Assets and generated declarations left with their last legitimate caller: provider runtime assets and mirrors are gone, while the compose templates and layout helpers the surviving stop paths render are kept and exercised.",
   "status": "retired",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L192",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

@@ -30,6 +30,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Published intent is selected from the one resolved converted memory root: the official external memory root outside an enclosure and the leaf's memory worktree inside it. Its text records are canonical; reads select the derived index of that exact tree. An unconverted root is refused as legacy-format, and no canonical knowledge database publication destination is selected.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L26",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

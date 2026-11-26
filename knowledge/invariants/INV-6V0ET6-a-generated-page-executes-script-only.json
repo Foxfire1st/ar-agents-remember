@@ -31,5 +31,23 @@
   "schema": "ar-invariant/v1",
   "statement": "A generated page executes script only under a served isolation policy the shipped proof record covers: the policy digest, the enforcement source bindings and every required browser check with its observed value must hold, and a policy any of them does not cover is served with no script at all.",
   "status": "retired",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

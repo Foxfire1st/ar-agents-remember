@@ -24,6 +24,24 @@
   "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "For an entry that would write new realizations, a non-null non-string rationale or role at either level is reported as realization_value_not_text, an unknown nonblank role (absent included) as realization_role_unknown, and an effective rationale longer than PROSE_MAX_LENGTH as realization_rationale_too_long. Null/missing values are unstated and resolve through target/entry defaults; absent effective rationale separately refuses. Diagnostics name the entry and offending targets before identity minting. A converted violation refuses the whole handoff with no writes; sibling commits are earlier-path provenance only.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L53",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

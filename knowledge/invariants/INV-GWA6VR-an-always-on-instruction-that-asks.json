@@ -27,6 +27,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "An always-on instruction that asks for an action done with an AR tool, or points to a detail section that does, names the tool in the pointing sentence; every always-on role text and operation text composed into capsules was examined pointer by pointer.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L60",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

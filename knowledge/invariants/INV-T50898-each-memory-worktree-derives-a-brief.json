@@ -34,6 +34,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "The product derives Git-ignored source-file briefs from the memory as a whole after an admitted whole-folder write, and refreshes the affected briefs after a leaf knowledge write.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-KNO-L4",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-KNO",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

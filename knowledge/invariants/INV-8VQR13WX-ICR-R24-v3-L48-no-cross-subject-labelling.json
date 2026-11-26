@@ -23,6 +23,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "The surface is handed a read only for the question on screen, so between a selection and its answer nothing of the previous subject's reading, records, comparison identity, currentness or family context is shown under the new subject's heading, and the tree marks only the reader's explicit choice.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260921-ICR-L48",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260921-ICR",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

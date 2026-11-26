@@ -31,6 +31,24 @@
   "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "Under an admitted parent, Operations orders rows by each entry’s own need band and, inside the started band, by the host’s own event time newest first where the host recorded one, keeping stable supplied tree order for the rows it did not time and for every other band. Terminal rows sit behind an in-place fold that is not the chosen task. Selection automatically reveals ancestors and a containing fold until an explicit disclosure click or an existing plain parent arrow that changes state releases that hold; release ends with the current selection episode, including while the list is hidden. Cycle/seen guards still list an entry once.",
-  "status": "accepted",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L102",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

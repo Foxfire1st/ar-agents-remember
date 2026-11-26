@@ -26,5 +26,24 @@
     "task": "260928-MIK-L97"
   },
   "state": "open",
-  "statement": "The refusal for a missing coordination root, here and in application/knowledge_bootstrap_admission.py, sends the reader to runtime_install with docs/getting-started.md, while that page tells the setup through role_start(role=\"bootstrap\")."
+  "statement": "The refusal for a missing coordination root, here and in application/knowledge_bootstrap_admission.py, sends the reader to runtime_install with docs/getting-started.md, while that page tells the setup through role_start(role=\"bootstrap\").",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-KNO-L4",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-KNO",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

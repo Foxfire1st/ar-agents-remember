@@ -31,5 +31,24 @@
   "schema": "ar-invariant/v1",
   "statement": "Live periodic safety is intact and now effective: the dashboard samples, records, evaluates, compacts and, on the transition into critical under failSafeEnabled, stops a provider the authority settings enable, because the stop reads those settings instead of an empty generated document.",
   "status": "retired",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L192",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

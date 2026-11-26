@@ -32,6 +32,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "An answer over its bound leaves as a measured short form targeting 400 tokens; the guard measures the final delivered mapping including every log and logError change and re-guards a cut answer against the short-form target rather than its original larger bound. The exact recorded-result location and final cut hint remain even when the recorded path and its hint cannot fit that target after other droppable content is removed.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L3",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

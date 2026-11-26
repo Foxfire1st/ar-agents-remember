@@ -31,6 +31,24 @@
   "revision": 7,
   "schema": "ar-invariant/v1",
   "statement": "Every authored knowledge write uses the single converted file writer at the resolved repository or leaf memory root, through the admitted leaf knowledge-ingest or taskless knowledge-bootstrap command or the mounted knowledge_write, which runs the same functions (INV-AG8G8C). An unconverted root refuses as legacy-format with conversion guidance: crossing sync from a converted source, otherwise first conversion. No mounted tool publishes a canonical dataset.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L186",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

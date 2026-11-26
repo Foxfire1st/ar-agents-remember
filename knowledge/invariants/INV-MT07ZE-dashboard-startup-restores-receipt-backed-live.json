@@ -34,6 +34,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "Dashboard startup and qualifying host activity restore receipt-backed live role records before activity reconciliation. An incomplete attempt waits for independent input. An unchanged row can be reclaimed on a qualifying archive or confirmed exact absence. Starting and replayable receipts preserve a row on exact absence.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L20",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

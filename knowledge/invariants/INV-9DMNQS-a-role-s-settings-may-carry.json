@@ -35,6 +35,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "A role's settings may carry extra harness arguments, laid over the harness entry key by key, with a role entry set to false removing the harness entry, and a confined capability receiving none; role entries are taken only where the start's harness is the role's own settings harness and that harness takes extra arguments in this build, and a start that does not match says so instead of taking them.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L184",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

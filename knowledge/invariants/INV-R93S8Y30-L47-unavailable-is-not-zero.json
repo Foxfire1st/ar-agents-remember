@@ -21,6 +21,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Unreadable comparison knowledge is typed unavailable with its owner refusal and no counts. A changed identity without a single head contributes an unresolved partial count, not a measured zero; identical ambiguous head sets are not counted as a changed identity.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L168",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

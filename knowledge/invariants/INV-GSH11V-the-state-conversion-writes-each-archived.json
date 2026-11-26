@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents converted review facts from citing transient worktree role-reports paths deleted at cleanup, and is proved by three test functions in mcp/tests/test_knowledge_state_conversion_verdict_ref.py."
+  },
+  "applicability": "Every archived passed memory review fact written by the one-time state conversion into knowledge/history/converted-reviews.json.",
+  "conditions": [
+    "The archived task document names a non-empty verdict reference for its last passed memory review round.",
+    "Relative and absolute role-reports/<rel> or notes/reports/<rel> paths with non-empty, traversal-free relative tails normalize to notes/reports/<rel> by pure segment parsing without filesystem reads."
+  ],
+  "exclusions": [
+    "Empty-tail paths, paths containing .. traversal segments, URLs, and non-report paths, which remain unchanged without inventing a path.",
+    "Ordinary closeout review facts written by worktrees/review_fact_source.py and shared usable_verdict_ref handling in tasks/route_review.py."
+  ],
+  "id": "INV-GSH11V",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_knowledge_state_conversion_verdict_ref.py::test_review_fact_normalizes_report_verdict_refs, test_review_fact_leaves_invalid_or_non_report_refs_unchanged, test_plan_state_conversion_writes_durable_verdict_refs_in_converted_reviews (8 failed before -> 17 passed after, independently reproduced); Code Rounds 1-3 PASSED; synced code candidate tree 73fc8a8e0c82f15e600a68e696494c112faebdd9 over base 65911c75fbe4207e06e325dd50a6940f57330920 (D1036 cleared); authoritative conversion on base memory a53148f8 produces 62/62 durable notes/reports verdictRef entries with 0 role-reports, 0 worktrees, 0 absolute, and 0 missing on disk after 1-line L57 existing-path fix."
+      ],
+      "path": "part-bc-v4-curation-handoff.json"
+    },
+    "handoffEntry": "KNO-R06@v2 / row-738",
+    "leaf": "261112-KNO-L6",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The state conversion writes each archived review fact's verdict reference as the durable collected notes/reports/<rel> path and never as a worktree or absolute path, leaving invalid, empty-tail, traversal and non-report references unchanged.",
+  "supersedes": [],
+  "title": "State conversion stores durable notes/reports verdict references",
+  "writer": {
+    "at": "2026-11-26T12:12:35+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-KNO-L6",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "b7c84d12-6e3f-4a91-9b22-5d4f7c8e9a01",
+    "task": "261112-KNO"
+  }
+}

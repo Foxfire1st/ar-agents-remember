@@ -29,6 +29,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "Every registered public tool receives its readOnlyHint from the central read-only classification; an unclassified registration refuses. The hint describes declared capability, not a semantic verdict or proof of host-wide purity: knowledge_diff report/capture and context_packet freshness capability are marked false, while the two naming readers read_ar_files and knowledge_read are marked true.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L109",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

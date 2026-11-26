@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "d5ffb4e005251208e31751ec2df07baf2653c788",
-    "commit": "a801c47d088d1b173ad2dfe4dc635b199433458d",
+    "codeTree": "73fc8a8e0c82f15e600a68e696494c112faebdd9",
+    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
     "role": "curator",
-    "statement": "Audited CONTRIBUTING.md on 261112-BUG-L49 against synced post-L51 candidate d5ffb4e00525 (base a801c47d088d): seven test lanes, test-evidence-lanes.toml, evidence-lifecycle.toml, pyproject.toml, and .githooks/_gate.sh Pyright checks match live code with zero contradictions, and CONTRIBUTING.md makes no claim about [tool.pyright] exclude or bare pyright --project . runs.",
-    "task": "261112-BUG-L49",
+    "statement": "Verified on synced code 73fc8a8e (base 65911c75, post-BUG-L52/BUG-L51): CONTRIBUTING.md accurately describes the seven evidence lanes, canonical catalog form, runtime asset folders, and evidence_lifecycle --write command; L6 only added test_knowledge_state_conversion_verdict_ref.py to unit-regression in mcp/tests/test-evidence-lanes.toml (830 total / 680 unit-regression) without changing lane policy or budgets pinned in CONTRIBUTING.md.",
+    "task": "261112-KNO-L6",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 18,
+  "revision": 19,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "ed04fba32f76f0abfc29cba36d54f498ec48655f",
+      "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -207,14 +207,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T11:13:54+01:00",
+    "at": "2026-11-26T12:12:35+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L49",
+    "leaf": "261112-KNO-L6",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "27d19192-331c-5dd7-9444-7bc54c5bc458",
-    "task": "261112-BUG"
+    "seat": "b7c84d12-6e3f-4a91-9b22-5d4f7c8e9a01",
+    "task": "261112-KNO"
   }
 }

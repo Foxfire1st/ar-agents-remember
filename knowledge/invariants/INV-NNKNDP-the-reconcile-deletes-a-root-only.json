@@ -37,6 +37,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The reconcile removes an ordinary published root only when its marker agrees with the retained record and that generation is proven ended; it separately removes interrupted .partial- staging directories with readable outside-scratch markers after the shared removal guard. It reports entries refused by its removal or proof checks, walks names lexically in bounded cursor-resumable pages, and is invoked by non-preview cleanup, abandon and finalize and by tool-server start.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L192",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

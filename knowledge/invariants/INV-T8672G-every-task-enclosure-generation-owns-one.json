@@ -41,6 +41,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "Every task enclosure generation owns one private scratch root under the product's own /var/tmp/agents-remember parent: its identity is derived from the repository, the exact enclosure contract path and the predecessor generation, the record of that path, generation and marker digest is carried into the contract and the immutable manifest before the enclosure is exposed, and a role receives it as workspace.outsideScratchRoot, so a task's outside work travels with the task and no published generation names a place it did not create.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L198",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

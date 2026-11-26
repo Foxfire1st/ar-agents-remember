@@ -28,5 +28,23 @@
     "task": "260928-MIK-L118"
   },
   "state": "closed",
-  "statement": "Intermittent exact-edge guard failure: Worker reproduced 2/20 on landed c861abfe and 0/20 on A014 in the measured batches (earlier candidate batch 1/3). Worker attributes the narrow token margin to random temporary-folder and time-stamped log names. Baseline reproduction established for this case only. Outside the five-item D305–D309 reopen; recorded and left, no repair or new task."
+  "statement": "Intermittent exact-edge guard failure: Worker reproduced 2/20 on landed c861abfe and 0/20 on A014 in the measured batches (earlier candidate batch 1/3). Worker attributes the narrow token margin to random temporary-folder and time-stamped log names. Baseline reproduction established for this case only. Outside the five-item D305–D309 reopen; recorded and left, no repair or new task.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

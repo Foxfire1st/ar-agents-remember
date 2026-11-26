@@ -32,5 +32,24 @@
     "task": "260928_maintained-invariant-knowledge"
   },
   "state": "open",
-  "statement": "The test suite creates its shared temporary directory at the literal path /tmp, so a run's TMPDIR cannot redirect that directory; on the host measured here /tmp is tmpfs, and one ordinary lane there died with ENOSPC on tmpfs inode exhaustion while its own TMPDIR and XDG_CONFIG_HOME were correctly set."
+  "statement": "The test suite creates its shared temporary directory at the literal path /tmp, so a run's TMPDIR cannot redirect that directory; on the host measured here /tmp is tmpfs, and one ordinary lane there died with ENOSPC on tmpfs inode exhaustion while its own TMPDIR and XDG_CONFIG_HOME were correctly set.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L197",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

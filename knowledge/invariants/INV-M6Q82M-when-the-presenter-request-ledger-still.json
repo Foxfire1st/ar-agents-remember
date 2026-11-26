@@ -30,6 +30,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "When the presenter's request ledger still names a reclaimed attempt, retrying that request refuses attempt-record-reclaimed and starts no second session. An explainer Send whose request ledger already records delivery returns the same seat and message identity without a second send or seat; a failed or pending delivery retries against that identity. An Update of a retired environment refuses explainer-retired.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L183",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

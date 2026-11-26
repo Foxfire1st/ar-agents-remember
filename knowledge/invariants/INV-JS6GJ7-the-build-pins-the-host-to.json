@@ -30,6 +30,24 @@
   "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "The bundled Paseo host contract, host manifest and complete npm lock pin @getpaseo/cli to 0.16.2. The plugin development SDK pins the same release and the plugin manifest requires Paseo >=0.15.0.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L10",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

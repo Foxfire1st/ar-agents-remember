@@ -30,6 +30,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "A planned review visibly distinguishes intended effects from code facts under the product-owned planned · no changes line, renders statements, labels or explicit absence with inert packets and code-tip-only scope links, shares deterministic effect order between tree and reading rows and starts no model, fetch or frame.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L183",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

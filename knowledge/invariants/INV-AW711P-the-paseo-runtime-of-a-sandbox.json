@@ -30,6 +30,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "The Paseo runtime of a sandbox is the daemon of the sandbox's own Paseo home: the process that `<home>/paseo.pid` names is trusted only when its first argument is `Paseo Supervisor` and its own environment names this home in `PASEO_HOME`; a record that names a process that is gone, another program, another home's supervisor or no process at all is deleted by `start` and `stop`, with a message, before any runtime command runs, and the process it named is not signalled; a record that names a live supervisor whose environment cannot be read is left, and nothing is deleted, signalled or started.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L90",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

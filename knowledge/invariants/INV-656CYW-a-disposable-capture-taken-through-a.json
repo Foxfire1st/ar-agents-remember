@@ -29,6 +29,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A disposable capture taken through a copy of a repository's Git index copies the index together with its file's modification time, bytes and time read from one open file, so Git still compares by content a file that was rewritten in the second the index was written. The knowledge index's directory key and the closeout's staging snapshot therefore never answer such a rewrite from its old blob.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L40",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

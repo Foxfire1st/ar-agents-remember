@@ -29,6 +29,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "An interrupted or resolved sync does not lose parked work: a resolution that omits lines or files the parked candidate held stops with sync-resolution-incomplete and an omission report, keeps the parked stash, and settles only when each omission is restored or reconciled with evidence the sync re-measures (a bare reconciled label is no evidence); preview reports omissions without writing.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L60",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

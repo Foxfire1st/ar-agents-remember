@@ -28,6 +28,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "Navigation carries the agent alone and the application resolves its workspace from its own session (pinned resolveNavigateToAgent); the R1 workspace-hop and mismatch-refusal are withdrawn as unsupported by the native contract, and the R1 fake-workspace-scoped failure is withdrawn as the developer's cause.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L121",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

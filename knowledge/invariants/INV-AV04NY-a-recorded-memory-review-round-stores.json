@@ -29,6 +29,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "A recorded memory review round stores the memory tree the Reviewer names, its verdict, the stamp of the agent recording it, and the stamp of the agent that handed the memory change over: the one Curator or Consolidator registered as active on the leaf when the round is recorded (the one seat whose current launch receipt names the leaf by repository and path, read as a task document reference, neither stopped nor rejected; receipts of one seat count once), at the recording's time; with none or several registered, or a receipt value no stamp can hold, unknown with the reason, and the round is recorded all the same. No message decides it, and a record-only correction of the same round (its verdict or verdict reference) renews the recorder and keeps that stamp; a changed memory needs a new round, stamped anew. Closeout writes the fact of the last recorded memory round only when that round passed (a recorded block never does), names a usable verdict reference (trimmed, printable, within the reference length) and its tree equals the memory checkout's tree at closeout; it is written in the same write that closes the latest attempt's history file, before the derived files are renewed.  A fresh successful closeout that closes open history without an eligible fact emits the no-pass sentence when the history bytes change. Already-closed history emits no fresh sentence. A recovery answer can derive the sentence from the published memory commit when the latest owner history is readable, closed and has no review fact.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-KNO-L3",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-KNO",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

@@ -29,6 +29,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "The binding precedence is fixed: unbound keeps all 44 tools, a valid explainer alone keeps the 44 plus the explainer's four in registration order, a valid role keeps its allowlist plus those four, and a malformed role binding alone or mixed serves only server_info while starting without launched instructions.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261124-CAP-L1",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261124-CAP",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

@@ -31,5 +31,24 @@
   "schema": "ar-invariant/v1",
   "statement": "Code was removed by caller and not by module: every provider symbol, asset and key carries a recorded caller disposition, and the two closures finished only after their surviving production roots were shown to reach no start or status path (the watcher status/start branches, then the 15-function cgc start chain).",
   "status": "retired",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L192",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

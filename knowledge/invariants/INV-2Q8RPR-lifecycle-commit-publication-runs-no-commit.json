@@ -32,6 +32,24 @@
   "revision": 5,
   "schema": "ar-invariant/v1",
   "statement": "Product landing publication requires the repository pre-commit check on the exact judged tree before a new commit is published or its ref moves. Ordinary/direct commit-tree routes run the explicit check without bypass. For each code or external-memory master ref that advances, integration requires a matching tree-bound Commit-Check-Pass fact or reruns the repository check on that candidate tree; a side already at its candidate does not rerun this admission.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L3",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

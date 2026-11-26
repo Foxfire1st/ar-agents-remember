@@ -24,6 +24,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Rapid selected-subject reads A→B→C settle on C: superseded selected-subject answers neither display nor enter the cache, so returning to B asks again; an admitted superseded whole-task answer may be kept unshown for its compatible comparison generation without moving the displayed generation or writing the panes.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L40",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

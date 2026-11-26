@@ -23,6 +23,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "Each family member realization source carries, per side and per realization claim, the anchor's structured recorded locator, the line ranges the anchor resolver placed it on in that side's exact recorded blob, an explicit locator state, the claim id, and the claim's stored role and rationale unchanged; no range is read from diagnostic prose or placed on bytes other than the recorded blob.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260921-ICR-L44",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260921-ICR",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

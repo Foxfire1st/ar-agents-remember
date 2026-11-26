@@ -32,6 +32,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "A failed final check is repaired, reviewed once more and checked by targeted tests, and the product records a finding added after the list is sealed with its route and its own identifier, reopening that point only and spending no review round. A fresh route BLOCK cites the addition's own verdict file. Finding descriptions live in the sealed list.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L12",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

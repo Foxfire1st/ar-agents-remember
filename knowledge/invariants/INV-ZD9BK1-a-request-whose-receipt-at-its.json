@@ -31,6 +31,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "A request whose receipt at its address carries its request id is answered from that receipt and is not compiled again: a `starting` or `unknown` receipt runs its stored call under the minted agent id and with the first message as saved, any other status returns the saved execution; a task document, the capsule or the first message that changed since the launch cannot turn the repeat into a conflict. A receipt that carries its leaf's closing mark is the exception: an unentered creation is refused without replay, and an entered creation stays archive-pending until its returned agent is archived and the start refused, without erasing the retirement record. A rejected stepped-up receipt retaining replayRequest may retry its exact stored call; frozen detail integrity and refreshed predecessor liveness are checked before any destructive replacement.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L88",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

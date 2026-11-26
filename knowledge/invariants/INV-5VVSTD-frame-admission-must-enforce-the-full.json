@@ -28,6 +28,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Before a capacity-gated frame-store write changes durable state, the store checks the whole task’s metered bytes under the task lock. A write that would exceed the cap is refused by name with the removal control offered. No current page is evicted. There is no lineage byte or revision-count ceiling. A retained revision leaves the store only through the developer’s removal control.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261124-EXP-L1",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261124-EXP",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

@@ -33,6 +33,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The explicit upgrade command transfers the complete user JSON file once to an exclusively created destination, copies metadata before removing the old file, refuses an existing destination and adds no role-key-only fallback; R137 then normalizes file/folder write permissions and reports a closure failure without undoing the completed move.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L113",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

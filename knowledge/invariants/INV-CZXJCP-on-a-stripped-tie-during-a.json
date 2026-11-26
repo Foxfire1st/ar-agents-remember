@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake",
+      "family_guarantee"
+    ],
+    "justification": "Guarded by seven built-tree and real-sync tests across test_crossing_merge_writer_stamp.py and test_worktree_sync_crossing_writer.py; prevents a managed sync from silently reverting state conversion on every record a line did not change or dropping peer review credit on a stamp-only tie; required for FAM-7NBVYB's guarantee that the selected tree preserves who wrote the retained revision and compatible review credit."
+  },
+  "applicability": "A managed memory crossing merging knowledge records where a cleanly merged record equals both own's and incoming's stripped records (without writer stamps or legacy typed status words).",
+  "conditions": [
+    "Base, own, and incoming trees pass through layout conversion before merging, leaving layout-marked trees with their stored bytes intact.",
+    "A record absent at the base counts as differing from the base on both sides.",
+    "State form requires no legacy typed status word and a stored writer field on the record; a writer resolved only from history does not count."
+  ],
+  "exclusions": [
+    "Records matching only one side's stripped record keep that side unchanged.",
+    "Records combining non-conflicting meaning edits from both sides receive the product stamp.",
+    "Meaning conflicts, deletions on one side, sharedRevisions, non-record files, and owner history rows remain unchanged."
+  ],
+  "id": "INV-CZXJCP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/e4d9a7b2-3c51-4e8f-9a14-6b2c8d5e1f09/261126-SYN-L1-route-review-verdict.md and 261126-SYN-L1-fix-verification-verdict.md (Requirement Adjudication); focused suite 196 passed (A1); A2 test_crossing_merge_writer_stamp.py 8 passed; BUG 1993/1993 and DEP 1990/1990 line-unchanged records equal main in replay-results-reviewer.json"
+      ],
+      "path": "261126-SYN-L1-curator-handoff.json"
+    },
+    "handoffEntry": "SYN-R01@v1",
+    "leaf": "261126-SYN-L1",
+    "task": "261126-SYN"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "On a stripped tie during a managed memory sync, the side that changed the record relative to the base is stored when exactly one side differs (absence at the base counting as differing on both sides), otherwise the sole side in the product's state form is stored, otherwise own's bytes are stored; the chosen side is the crossing-selection source and tied is the stripped equality, so a stamp-only tie joins admissible reviews and writes no crossingSelections row when both lines share their selection history.",
+  "supersedes": [],
+  "title": "Stripped tie keeps changed or state-form side and joins reviews",
+  "writer": {
+    "at": "2026-11-26T17:17:51+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261126-SYN-L1",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c91b4f3a-8d2e-4a76-b5c3-2e7f1a90d4c8",
+    "task": "261126-SYN"
+  }
+}
