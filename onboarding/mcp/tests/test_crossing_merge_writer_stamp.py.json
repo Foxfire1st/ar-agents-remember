@@ -1,5 +1,109 @@
 {
   "path": "mcp/tests/test_crossing_merge_writer_stamp.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4d9699942b6d18c35c3cfd9cc2c59f4f469fc9c9",
+        "content": "sha256:9f090d88d2858eace8ed9bdb57f8d8447789dd740b6599ea78be8805a1a4b073",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_own_state_conversion_kept_against_unconverted_incoming"
+        }
+      },
+      "facet": "Demonstrates that own state-converted records keep own's bytes when incoming stayed unconverted.",
+      "id": "PRF-6YHAB1",
+      "invariant": "INV-CZXJCP",
+      "origin": {
+        "handoffEntry": "SYN-R01@v1",
+        "leaf": "261126-SYN-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4d9699942b6d18c35c3cfd9cc2c59f4f469fc9c9",
+        "content": "sha256:e678f2cef8000e651e7cd96327092192b8fe6cc8208b4cf00a24d40706a6a705",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_both_converted_with_different_stamps_and_prior_exclusion_joins_reviews"
+        }
+      },
+      "facet": "Demonstrates that a stamp-only tie supersedes a prior crossing selection and clears its excludedReviews so the peer consolidator review restores consolidated standing.",
+      "id": "PRF-7J3GBE",
+      "invariant": "INV-CZXJCP",
+      "origin": {
+        "handoffEntry": "SYN-R01@v1",
+        "leaf": "261126-SYN-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4d9699942b6d18c35c3cfd9cc2c59f4f469fc9c9",
+        "content": "sha256:39c2a60ef1cc45ecee82518ebb63c2341fcf9ba230bc817cbfcbe127160aebc5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_both_converted_with_different_stamps_join_reviews_as_tied"
+        }
+      },
+      "facet": "Demonstrates that stamp-only ties pick the sole changed side or fall back to own, pass tied=True to omit crossingSelections on shared history, and retain consolidated standing from a peer review.",
+      "id": "PRF-A7HP4S",
+      "invariant": "INV-CZXJCP",
+      "origin": {
+        "handoffEntry": "SYN-R01@v1",
+        "leaf": "261126-SYN-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4d9699942b6d18c35c3cfd9cc2c59f4f469fc9c9",
+        "content": "sha256:5ca71f4b2456e16c49b7dc1024c8338fe4cf8cbe6b5ea5684bbb4b60f416b4b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_incoming_state_conversion_kept_for_both_conversion_shapes"
+        }
+      },
+      "facet": "Demonstrates that incoming state-converted records keep incoming's bytes for both unstamped and already-stamped legacy bases while writing no crossing history file.",
+      "id": "PRF-EAW0GF",
+      "invariant": "INV-CZXJCP",
+      "origin": {
+        "handoffEntry": "SYN-R01@v1",
+        "leaf": "261126-SYN-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4d9699942b6d18c35c3cfd9cc2c59f4f469fc9c9",
+        "content": "sha256:4719e8b8a5743fa645e6d4ea90dd84608e0efa5d98bf1cd70f6da25161950547",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_record_new_on_both_sides_with_equal_content_uses_state_form_then_own"
+        }
+      },
+      "facet": "Demonstrates that a record absent at base counts as changed on both sides, selecting the sole stored state-form side over legacy or history-only records before falling back to own.",
+      "id": "PRF-HHNQPT",
+      "invariant": "INV-CZXJCP",
+      "origin": {
+        "handoffEntry": "SYN-R01@v1",
+        "leaf": "261126-SYN-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4d9699942b6d18c35c3cfd9cc2c59f4f469fc9c9",
+        "content": "sha256:5f784344870c679d71e05a6ab72804e8e4712774b74e4da76ae539998b425821",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_meaning_change_on_incoming_keeps_incoming_and_conflict_stays_conflicted"
+        }
+      },
+      "facet": "Demonstrates that a non-tie incoming meaning change keeps incoming's bytes while competing edits to one meaning field remain conflicted without a writer stamp.",
+      "id": "PRF-XSBN1Z",
+      "invariant": "INV-CZXJCP",
+      "origin": {
+        "handoffEntry": "SYN-R01@v1",
+        "leaf": "261126-SYN-L1"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82e1ca1bcc5f94cca6deae3b47366983eea319e6",
+            "blob": "4d9699942b6d18c35c3cfd9cc2c59f4f469fc9c9",
             "content": "sha256:02ae6b51ac962063766c4e506bd499fe628544b908c98e487c9eb8be01aad866",
             "locator": {
               "kind": "symbol",
@@ -23,11 +127,87 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82e1ca1bcc5f94cca6deae3b47366983eea319e6",
+            "blob": "4d9699942b6d18c35c3cfd9cc2c59f4f469fc9c9",
             "content": "sha256:de7709d809aeba82eed6c4841df5d89c097ea12461991aeb7153967b0540a155",
             "locator": {
               "kind": "symbol",
               "name": "test_a_record_only_one_line_raised_is_that_lines_write_with_its_stamp"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Incoming or own state-converted records that the other side never changed keep the changed side's bytes, and records absent at base prefer the sole state-form side over legacy or unstamped records before falling back to own.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d9699942b6d18c35c3cfd9cc2c59f4f469fc9c9",
+            "content": "sha256:5ca71f4b2456e16c49b7dc1024c8338fe4cf8cbe6b5ea5684bbb4b60f416b4b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_incoming_state_conversion_kept_for_both_conversion_shapes"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4d9699942b6d18c35c3cfd9cc2c59f4f469fc9c9",
+            "content": "sha256:9f090d88d2858eace8ed9bdb57f8d8447789dd740b6599ea78be8805a1a4b073",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_own_state_conversion_kept_against_unconverted_incoming"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4d9699942b6d18c35c3cfd9cc2c59f4f469fc9c9",
+            "content": "sha256:4719e8b8a5743fa645e6d4ea90dd84608e0efa5d98bf1cd70f6da25161950547",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_new_on_both_sides_with_equal_content_uses_state_form_then_own"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Stamp-only ties pass stripped equality as `tied` so both sides' reviews join without a `crossingSelections` row on shared selection history or clear a prior peer exclusion, while differing edits to one meaning field stay conflicted without a writer stamp.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d9699942b6d18c35c3cfd9cc2c59f4f469fc9c9",
+            "content": "sha256:39c2a60ef1cc45ecee82518ebb63c2341fcf9ba230bc817cbfcbe127160aebc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_both_converted_with_different_stamps_join_reviews_as_tied"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4d9699942b6d18c35c3cfd9cc2c59f4f469fc9c9",
+            "content": "sha256:e678f2cef8000e651e7cd96327092192b8fe6cc8208b4cf00a24d40706a6a705",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_both_converted_with_different_stamps_and_prior_exclusion_joins_reviews"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4d9699942b6d18c35c3cfd9cc2c59f4f469fc9c9",
+            "content": "sha256:5f784344870c679d71e05a6ab72804e8e4712774b74e4da76ae539998b425821",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_meaning_change_on_incoming_keeps_incoming_and_conflict_stays_conflicted"
             }
           },
           "kind": "test"

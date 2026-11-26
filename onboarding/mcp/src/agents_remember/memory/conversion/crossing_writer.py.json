@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "96c35994086c74900f3cdb9b4cf6ff990c8a4143",
+        "blob": "deddcb367549b3f8537f11ff61e028d630ff8107",
         "content": "sha256:f54bae30862ab00ad8d1c401808dc3fddda85df3888306298b7b785f4948e725",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,44 @@
     },
     {
       "anchor": {
-        "blob": "96c35994086c74900f3cdb9b4cf6ff990c8a4143",
-        "content": "sha256:5a09b579a139bfaf6ff63ff8c318951fc7236de395a708b00c5b0471afcf6d0e",
+        "blob": "deddcb367549b3f8537f11ff61e028d630ff8107",
+        "content": "sha256:2f4c213f31756191ebfd14c447ccf0be248f272d7fd7c1b38bbce532f6aae3ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "stamp_merged_records"
+        }
+      },
+      "id": "RLZ-24EGWY",
+      "invariant": "INV-CZXJCP",
+      "origin": {
+        "handoffEntry": "SYN-R01@v1",
+        "leaf": "261126-SYN-L1"
+      },
+      "rationale": "Detects the stripped tie, stores the chosen side's bytes and gives that side and its peer to the crossing selection with tied taken from stripped equality.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "deddcb367549b3f8537f11ff61e028d630ff8107",
+        "content": "sha256:d84f45a35826a64f9391ed330bee71204af41341e1e3df93714de4ae6d2b16d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "merge_with_writers"
+        }
+      },
+      "id": "RLZ-4DXA5T",
+      "invariant": "INV-CZXJCP",
+      "origin": {
+        "handoffEntry": "SYN-R01@v1",
+        "leaf": "261126-SYN-L1"
+      },
+      "rationale": "Passes the base tree with its stamps alongside own and incoming, so the tie rule can compare each side with the base's stored bytes.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "deddcb367549b3f8537f11ff61e028d630ff8107",
+        "content": "sha256:d84f45a35826a64f9391ed330bee71204af41341e1e3df93714de4ae6d2b16d0",
         "locator": {
           "kind": "symbol",
           "name": "merge_with_writers"
@@ -34,12 +70,30 @@
         "handoffEntry": "L3-W1-10",
         "leaf": "261112-KNO-L3"
       },
-      "rationale": "Merges without writers, then stamps each stored record from the line it equals, or with the product's stamp.",
+      "rationale": "Merges without writers, passes the base tree alongside own and incoming, then stamps each stored record from the chosen line or with the product's stamp.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "96c35994086c74900f3cdb9b4cf6ff990c8a4143",
+        "blob": "deddcb367549b3f8537f11ff61e028d630ff8107",
+        "content": "sha256:ea3bab2472b11830a3eed3a0456320031449b76aec6c18bea4997e9ddc0d5866",
+        "locator": {
+          "kind": "symbol",
+          "name": "_pick_tied_side"
+        }
+      },
+      "id": "RLZ-G87K65",
+      "invariant": "INV-CZXJCP",
+      "origin": {
+        "handoffEntry": "SYN-R01@v1",
+        "leaf": "261126-SYN-L1"
+      },
+      "rationale": "Implements the three-step stripped-tie choice: the one side that differs from the base, else the sole state-form side, else own.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "deddcb367549b3f8537f11ff61e028d630ff8107",
         "content": "sha256:37b5e10b99b96a51f441d75907a4007b5763836732c0990013ec30730e82b4dd",
         "locator": {
           "kind": "symbol",
@@ -57,7 +111,25 @@
     },
     {
       "anchor": {
-        "blob": "96c35994086c74900f3cdb9b4cf6ff990c8a4143",
+        "blob": "deddcb367549b3f8537f11ff61e028d630ff8107",
+        "content": "sha256:379eacb7cd1857e347c1cf1ff2424bdde13c0996d0291d7f8a53076cc1cfb32d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_choose_side"
+        }
+      },
+      "id": "RLZ-N66F73",
+      "invariant": "INV-CZXJCP",
+      "origin": {
+        "handoffEntry": "SYN-R01@v1",
+        "leaf": "261126-SYN-L1"
+      },
+      "rationale": "Dispatches a stripped tie through the tie rule while keeping a record stored equal to one side on that side.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "deddcb367549b3f8537f11ff61e028d630ff8107",
         "content": "sha256:2a5c48c81486a05e9adea3ddc4ad5e90c3a6b7e8e69cb0870968ad06f4fefaad",
         "locator": {
           "kind": "symbol",
@@ -80,8 +152,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96c35994086c74900f3cdb9b4cf6ff990c8a4143",
-            "content": "sha256:5a09b579a139bfaf6ff63ff8c318951fc7236de395a708b00c5b0471afcf6d0e",
+            "blob": "deddcb367549b3f8537f11ff61e028d630ff8107",
+            "content": "sha256:d84f45a35826a64f9391ed330bee71204af41341e1e3df93714de4ae6d2b16d0",
             "locator": {
               "kind": "symbol",
               "name": "merge_with_writers"
@@ -96,11 +168,65 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96c35994086c74900f3cdb9b4cf6ff990c8a4143",
+            "blob": "deddcb367549b3f8537f11ff61e028d630ff8107",
             "content": "sha256:2a5c48c81486a05e9adea3ddc4ad5e90c3a6b7e8e69cb0870968ad06f4fefaad",
             "locator": {
               "kind": "symbol",
               "name": "_crossing_selection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "On a stripped tie, stored bytes keep the sole side changed from base, else the sole state-form side (no legacy typed status word and a stored writer), else own.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "deddcb367549b3f8537f11ff61e028d630ff8107",
+            "content": "sha256:02fb8736349dab60a3018f22c54603f0794c1ac60fe7fc62858aaee5e959121d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_state_form"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "deddcb367549b3f8537f11ff61e028d630ff8107",
+            "content": "sha256:ea3bab2472b11830a3eed3a0456320031449b76aec6c18bea4997e9ddc0d5866",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pick_tied_side"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "deddcb367549b3f8537f11ff61e028d630ff8107",
+            "content": "sha256:379eacb7cd1857e347c1cf1ff2424bdde13c0996d0291d7f8a53076cc1cfb32d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_choose_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Crossing selection uses the chosen side and passes stripped equality as `tied`, joining admissible reviews on a stamp-only tie and omitting `crossingSelections` on shared selection history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "deddcb367549b3f8537f11ff61e028d630ff8107",
+            "content": "sha256:2f4c213f31756191ebfd14c447ccf0be248f272d7fd7c1b38bbce532f6aae3ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "stamp_merged_records"
             }
           },
           "kind": "code"

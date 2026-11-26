@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "7e4982b439f020124bb6364365011024655c9935",
+        "blob": "b0bdb71bd218da2e67c737dbdba93e8c09c9cca1",
         "content": "sha256:cc1cc96b3ac933b8985193d260f3d095014179c44d9069d9b3be0f343a66fe0b",
         "locator": {
           "kind": "symbol",
@@ -17,6 +17,23 @@
         "handoffEntry": "L3-W1-10",
         "leaf": "261112-KNO-L3"
       }
+    },
+    {
+      "anchor": {
+        "blob": "b0bdb71bd218da2e67c737dbdba93e8c09c9cca1",
+        "content": "sha256:1fea8fb308280117316f86b2f7f6d18918801979661e54bbfa56f9db340d0023",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unconverted_line_syncing_against_state_converted_main_keeps_conversion"
+        }
+      },
+      "facet": "Demonstrates through the real worktree_sync merge path that an unconverted leaf keeps plan_state_conversion bytes on unchanged records while retaining its own edited record and writer.",
+      "id": "PRF-HAGX8H",
+      "invariant": "INV-CZXJCP",
+      "origin": {
+        "handoffEntry": "SYN-R01@v1",
+        "leaf": "261126-SYN-L1"
+      }
     }
   ],
   "realizes": [],
@@ -26,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e4982b439f020124bb6364365011024655c9935",
+            "blob": "b0bdb71bd218da2e67c737dbdba93e8c09c9cca1",
             "content": "sha256:d0c8983ca4f64e2f7988a75e0995b522115297939aa4504d0c6fae502723bb59",
             "locator": {
               "kind": "symbol",
@@ -42,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e4982b439f020124bb6364365011024655c9935",
+            "blob": "b0bdb71bd218da2e67c737dbdba93e8c09c9cca1",
             "content": "sha256:7f32e2398006c7d694a40576598f1cce4a3df09eb9da65cce51ef5c42a4b3a2e",
             "locator": {
               "kind": "symbol",
@@ -58,11 +75,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e4982b439f020124bb6364365011024655c9935",
+            "blob": "b0bdb71bd218da2e67c737dbdba93e8c09c9cca1",
             "content": "sha256:cc1cc96b3ac933b8985193d260f3d095014179c44d9069d9b3be0f343a66fe0b",
             "locator": {
               "kind": "symbol",
               "name": "test_crossing_preserves_the_standing_of_its_selected_bytes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "An unconverted leaf syncing against state-converted main keeps main's converted bytes on unchanged records while retaining the leaf's own edited record and writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0bdb71bd218da2e67c737dbdba93e8c09c9cca1",
+            "content": "sha256:1fea8fb308280117316f86b2f7f6d18918801979661e54bbfa56f9db340d0023",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unconverted_line_syncing_against_state_converted_main_keeps_conversion"
             }
           },
           "kind": "test"
