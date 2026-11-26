@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "8ea42050052b7759840852ac3aae11fd0aad2818",
-    "commit": "475ef19af89cdf0981530dd2b8bf40475975e0e3",
+    "codeTree": "c0ef0baede5637e09497d416a8d04fb1a4c9daca",
+    "commit": "69ba7b1994bd7eedeb3e9ec014fd439d215acbb1",
     "role": "curator",
-    "statement": "Verified across the clean merge of BUG-L44 (3ee3b10c9) and DEP-L7 (b30330984): docs/reference/mcp-tools.md preserves BUG-L44 scoped retire_child contracts (lines 580, 619-623, 651-660) alongside DEP-L7 unchanged EnclosurePublicationArtifacts and standing MCP tool contracts.",
+    "statement": "Verified across the clean merge of BUG-L53 (8ccdd6fab) and DEP master (8722a0b18): docs/reference/mcp-tools.md accurately reflects BUG-L53's knowledge_read/mcp-tools update and preserves BUG-L44 retire_child and DEP-L7 EnclosurePublicationArtifacts unchanged.",
     "task": "261125-DEP",
     "uncommitted": false
   },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 24,
+  "revision": 25,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -78,7 +78,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
     },
     {
-      "blob": "20ebef72dc27ca53cfb6a0f75efe8a015159ecef",
+      "blob": "d158a6c01caaead8a8e6600e388eba74806dc7ec",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
     },
@@ -423,9 +423,9 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T04:05:27+01:00",
+    "at": "2026-11-26T06:24:57+01:00",
     "by": "agent",
-    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-1",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
     "model": "gemini-4-neon-high",
