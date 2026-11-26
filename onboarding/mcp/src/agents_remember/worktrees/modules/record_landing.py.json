@@ -226,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
+            "blob": "66c73c1d6d257860d33465fcb4d60be236ce19af",
             "content": "sha256:573f3e4c7bc29659eb6f4310ed8543bb75d26ab23cdd75834e2dc5e42411657b",
             "locator": {
               "kind": "symbol",
@@ -238,12 +238,12 @@
         },
         {
           "anchor": {
-            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
+            "blob": "66c73c1d6d257860d33465fcb4d60be236ce19af",
             "content": "sha256:4c86521612be2517f89c2085c7b3a5bed24d086752973b41125c1a4071905a2f",
             "locator": {
-              "end": 605,
+              "end": 587,
               "kind": "line_range",
-              "start": 605
+              "start": 587
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },
@@ -273,7 +273,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
+            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
             "content": "sha256:009a4b46dd944bf1649016055e513d7df7b930ab08daf8c3b9bcf2048faeb18f",
             "locator": {
               "end": 166,
@@ -286,7 +286,7 @@
         },
         {
           "anchor": {
-            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
+            "blob": "0420a74ed71cfd18aecbf3c99573c1a9d63a4874",
             "content": "sha256:4b08a1f122026f5d3ce5012d93a4796f8b12aa73ec9c93b654ceace8e0b7b5e8",
             "locator": {
               "end": 187,
@@ -304,7 +304,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:a80c928b9b90ede0a248d30f8fc52e8d63feaf13b076be23e1e59b361ec36a5a",
             "locator": {
               "kind": "symbol",

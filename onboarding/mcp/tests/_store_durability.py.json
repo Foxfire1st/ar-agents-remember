@@ -8,26 +8,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "511fb98f1bd9953467ee6ed8f10d9e729740156e",
+            "blob": "15d33c19d2286f16b89c3e5d92f9266bd8f467f9",
             "content": "sha256:04253362ae56d4951bd47365265ccfe3a320d3da957e96470811924d297c9d1e",
             "locator": {
               "kind": "symbol",
               "name": "StoreAdapter"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "Provider stores share the same instrument\n\nAnchor: `ProviderStoreAdapter`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "511fb98f1bd9953467ee6ed8f10d9e729740156e",
-            "content": "sha256:34bef176eecf1cfb69ab1e739dcb24648c4bf0c18427f4be138a448cad6c0646",
-            "locator": {
-              "kind": "file"
             }
           },
           "kind": "test"
@@ -39,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "511fb98f1bd9953467ee6ed8f10d9e729740156e",
+            "blob": "15d33c19d2286f16b89c3e5d92f9266bd8f467f9",
             "content": "sha256:d6ab85159789f8902d00dcef5cfec0420febc9ee1ceed4a964f2d78a08a05eaa",
             "locator": {
               "kind": "symbol",
@@ -51,14 +36,15 @@
       ]
     },
     "4": {
-      "note": "Controlled actual rewrite rendezvous\n\nAnchor: `parked_rewrite`",
+      "note": "Controlled actual rewrite rendezvous",
       "targets": [
         {
           "anchor": {
-            "blob": "511fb98f1bd9953467ee6ed8f10d9e729740156e",
-            "content": "sha256:34bef176eecf1cfb69ab1e739dcb24648c4bf0c18427f4be138a448cad6c0646",
+            "blob": "15d33c19d2286f16b89c3e5d92f9266bd8f467f9",
+            "content": "sha256:88ed6f15a40eb3aa9bab4099d0d17206289654428fd47244a615f4517bd1f66a",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "parked_rewrite"
             }
           },
           "kind": "test"
@@ -70,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "511fb98f1bd9953467ee6ed8f10d9e729740156e",
+            "blob": "15d33c19d2286f16b89c3e5d92f9266bd8f467f9",
             "content": "sha256:30483abc80c455fd11df5722abe606f61ca5018bb45da3644762f17a8697e6d0",
             "locator": {
               "kind": "symbol",
@@ -82,14 +68,15 @@
       ]
     },
     "6": {
-      "note": "Forked append/reclaim orchestration and bounded joins\n\nAnchor: `run_forced_lost_update`",
+      "note": "Forked append/reclaim orchestration and bounded joins",
       "targets": [
         {
           "anchor": {
-            "blob": "511fb98f1bd9953467ee6ed8f10d9e729740156e",
-            "content": "sha256:34bef176eecf1cfb69ab1e739dcb24648c4bf0c18427f4be138a448cad6c0646",
+            "blob": "15d33c19d2286f16b89c3e5d92f9266bd8f467f9",
+            "content": "sha256:7d321bb22b1d96293cff9e574bacda2c81af3d01e7f87080287e9abef572eecf",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "run_forced_lost_update"
             }
           },
           "kind": "test"
@@ -101,7 +88,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "511fb98f1bd9953467ee6ed8f10d9e729740156e",
+            "blob": "15d33c19d2286f16b89c3e5d92f9266bd8f467f9",
             "content": "sha256:a6189e690f55500a298bd9d4634e49fc0d908d3285a377df7b6db6b2a2682445",
             "locator": {
               "kind": "symbol",
@@ -112,12 +99,12 @@
         },
         {
           "anchor": {
-            "blob": "511fb98f1bd9953467ee6ed8f10d9e729740156e",
+            "blob": "15d33c19d2286f16b89c3e5d92f9266bd8f467f9",
             "content": "sha256:6582b0fe72095c06c1d6c94eafec320ae56c0952b899f4de164a155f604ddaf7",
             "locator": {
-              "end": 440,
+              "end": 316,
               "kind": "line_range",
-              "start": 392
+              "start": 268
             }
           },
           "kind": "test"

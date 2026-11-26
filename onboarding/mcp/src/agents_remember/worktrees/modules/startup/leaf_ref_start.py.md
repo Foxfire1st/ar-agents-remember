@@ -54,29 +54,22 @@ is quarantined, while a *caller asking for* one is refused before it can be writ
   and `invalid-request`. Task-derived parent/source assertions also return
   `start-parent-task-mismatch` or `start-source-branch-mismatch`. The caller parent is not
   authority to author an edge: the immediate master or its canonical commanding parent
-  may disambiguate it; an unrelated parent is refused. The retry preserves dry_run,
-  skip_provider_setup and the other supplied operation arguments while replacing the
+  may disambiguate it; an unrelated parent is refused. The retry preserves dry_run
+  and the other supplied operation arguments while replacing the
   offending field with the expected task-derived value. These checks precede startup publication.
 
 ## Evidence
 
 ### Repo-Internal References
 
-
 - LeafRefResolutionError and resolve_leaf_ref are the live shared failure and resolution owners; removed terminal-seat modules supply no current type or route. [1]
 
 > Retained earlier citation wording: - Start contract builder that calls these helpers. [2]
 
-
 > Retained earlier citation wording: - `ContractError`, `_task_vocabulary` and the six-cell vocabulary the second refusal reports on. [3]
-
-
 
 - Caller parent is an assertion against canonical task topology; a mismatch returns corrected operation inputs before publication. [4]
 
 - Start contract builder that calls these helpers.  Anchor: `build_start_contract` [2]
-
-
-
 
 - `ContractError`, `_task_vocabulary` and the six-cell vocabulary the second refusal reports on.  Anchor: `ContractError` `_task_vocabulary` `ContractCells` [3]

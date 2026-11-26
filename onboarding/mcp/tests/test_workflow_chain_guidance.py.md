@@ -55,15 +55,13 @@ The shared disposable world drives registered operations and contract-addressed 
   `test_every_recommended_step_is_callable_with_the_args_its_guidance_supplies`, `mcp/tests/test_workflow_chain_guidance.py:208-227`). Guidance-selected hops start from the selected recommendation and fill its declared required arguments. The phase-guidance path also supplies fixture code/memory commit messages for closeout apply, integration and finalization; a missing or empty recommendation falls back to the workflow's declared arguments. The separate operational-triple probes call the published arguments verbatim and record the first outcome. The walk retries an unanswered call with values for reported missing fields available in its facts or fixtures. The classifier extracts the model name from validation detail and compares it with the expected **model identity**: the generated `<tool>Arguments` model refusing the call is an unusable
   recommendation, any other raise lost the envelope. The pin is asserted **equal in both directions**,
   so a recurrence and a widening both fail.
-- **The operational-triple probe** (`WorkflowChainObservation._probe_operational_triples`, `mcp/tests/workflow_chain_guidance_test_support.py:906-922`; `WorkflowChainObservation._call_recommendation`,
-  `mcp/tests/workflow_chain_guidance_test_support.py:892-904`; `RecommendedCall`, `mcp/tests/workflow_chain_guidance_test_support.py:293-306`;
-  `test_every_response_that_published_an_operational_triple_was_called_with_it`, `mcp/tests/test_workflow_chain_guidance.py:229-279`). Every hop
-  that publishes a `nextTool`/`nextArgs` triple is called **verbatim**, and the second producer of the
-  same recommendation — `worktree_start(retry_provider_setup=True)` answering `blocked` — is **driven**
-  in the same world rather than cited (`WorkflowChainObservation._retry_provider_setup_arrangement`, `mcp/tests/workflow_chain_guidance_test_support.py:924-995`). The
+- **The operational-triple probe** (`WorkflowChainObservation._probe_operational_triples`, `mcp/tests/workflow_chain_guidance_test_support.py:900-916`; `WorkflowChainObservation._call_recommendation`,
+  `mcp/tests/workflow_chain_guidance_test_support.py:886-898`; `RecommendedCall`, `mcp/tests/workflow_chain_guidance_test_support.py:293-305`;
+  `test_every_response_that_published_an_operational_triple_was_called_with_it`, `mcp/tests/test_workflow_chain_guidance.py:227-265`). Every hop
+  that publishes a `nextTool`/`nextArgs` triple is called **verbatim**. The
   population is asserted so it cannot silently shrink, and the negative fact is stated rather than left
   implicit: the only operations publishing no triple are the two terminal `lifecycle_finalize_task`
-  calls (`mcp/tests/test_workflow_chain_guidance.py:276-279`).
+  calls (`mcp/tests/test_workflow_chain_guidance.py:262-265`).
 - **The classifier's own control** (`test_the_callability_arm_can_actually_fail`, `mcp/tests/test_workflow_chain_guidance.py:281-311`).
   `worktree_closeout_apply` called with nothing must be refused by **its own** model with
   `{contract_path, intent_note}`, the one-field-short shape must classify alike (the singular and
@@ -120,8 +118,7 @@ The survey uses registry placement as source evidence of selection.
   never widen it.
 - **"Every recommended step is callable" is not what this module proves, and the honest statement is
   narrower.** What it pins is the callability of the recommendations **the walk reaches**, over the
-  union of each hop's as-given call and every hop's own operational triple plus the one driven retry
-  producer. Three residuals lie outside that producer set and are registered, not repaired:
+  union of each hop's as-given call and every hop's own operational triple. Three residuals lie outside that producer set and are registered, not repaired:
   **`T127`** — the lifecycle-operation `recommendedAction` channel
   (`mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:359-362`,
   where `:359` constructs the action and `:361` supplies the tool) recommends `worktree_status` with
@@ -135,7 +132,7 @@ The survey uses registry placement as source evidence of selection.
   (`:351-358`, argument at line356) and `_pre_integration_phase`'s status recommendation
   (`:409-419`, argument at line418). The current arguments are present at both
   sites; this module does not assert the checkpoint site.
-- The coverage case derives expected labels from the hops with a top-level next tool and observed labels from the resulting operational probes. It compares the sets and separately requires the retry-provider-setup probe (`mcp/tests/test_workflow_chain_guidance.py:239-255`).
+- The coverage case derives expected labels from the hops with a top-level next tool and observed labels from the resulting operational probes. It compares the sets (`mcp/tests/test_workflow_chain_guidance.py:236-243`); the retired retry-provider-setup probe is removed.
 - **The historical `A5c` account needs a current boundary.** The test docstring describes four
   requirement sites, but current `guidance.py` declares three: carryover, cleanup and closeout.
   Published-authority integration now changes summary text without `required_args`. The case
@@ -367,7 +364,6 @@ The creating L8 account and the later L46 source-inspection boundary are distinc
 
 - Both previews retain stop guidance and no executable nextArgs. [52]
 
-
 ### Docs References
 
 No external Domain Documentation source is configured in this memory root. These are
@@ -379,7 +375,6 @@ No configured domain evidence applies to the file-local claims above.
 
 The anchors below identify current behaviour of this module; they are not execution evidence and they
 make no acceptance claim.
-
 
 ### Cross-Repo References
 
@@ -400,25 +395,22 @@ No repository or external-system boundary is proved by this module.
 - The real reclamation the preservation claim is measured against. [42]
 - SourceLineageRefusal carries status and payload internally; the workflow case asserts stale-lineage and remedy strings in rendered tool-error detail. [43]
 
+
 - The pre-integration worktree_status recommendation carries repo_id; this is the phase arm the workflow reaches. [44]
+
 
 - The checkpoint worktree_status recommendation also carries repo_id; this arm is not reached by the workflow module. [45]
 
-
 - The closeout intent_note declaration is asserted on a fixture contract whose closeout status was changed to not-started after apply. [46]
-
 
 - The declaration `A5c` shows is not asserted (`carryover-pending`).  Anchor: `required_args` [47]
 
 - The `recommendedAction` residual (T127) is outside the tested `nextTool` and `nextArgs` channel. At `lifecycle_operation_projection.py:343–364`, the retained branch constructs `LifecycleRecommendedAction` at line 359, sets `worktree_status` at line 361 and supplies contract-only arguments at line 362. [48]
 
-
 - The no-control fallback returns worktree_status with contract_path only. Task-unstarted evidence can publish that tuple as a next move, but the registered status call also requires repo_id. [49]
 
 - The tuple shape `T130` rests on: the value is a tuple element, not a tool-shaped key. [50]
 - Where the tuple becomes the operational triple a seat reads. [51]
-
-
 
 - The nine-operation declaration repeats integration and finalization for preview and apply, and the ordered test compares it with the walk. [1]
 
@@ -430,36 +422,20 @@ No repository or external-system boundary is proved by this module.
 - The disposable world constructs two Git repositories and a registered server. Each call opens an in-memory client session. [12]
 
 
-
-
 - The call wrapper invokes a registered tool through an in-memory MCP session and distinguishes a structured result, a server ToolError with rendered detail, and a client-side exception. [13]
 
 
-
-
-- The observation performs one ordered walk, three follow-on arrangements and separate operational-triple probes. [14]
+- The observation performs one ordered walk, two follow-on arrangements (sibling and stale-base) and separate operational-triple probes. [14]
 
 
 - The fixture starts a sibling and verifies its enclosure exists. It opens a separate in-memory MCP connection for a dry-run finalization addressed to the target contract and computes raw guidance for that target. The sibling case requires a raw hint for the target, excludes the sibling from present address values and checks public-tool membership when a top-level next tool exists. [19]
 
-
-
-
 - Each declared operation-state pair is required to occur. The terminal contract cleanup cell must be completed. [2]
-
-
 
 - The stale base driven through the tools, with `worktree_sync` required to answer `would-sync`. [20]
 
 
-
 - Every observed hop with a top-level next tool has a matching probe of the published tool and arguments. The assertion forbids an unclassified raise and names finalization as the observed no-triple tool. [21]
-
-
-
-
-- The sibling retry-provider-setup fixture reaches blocked. Its published triple is also driven and its outcome must be an answer or an argument-model refusal. [22]
-
 
 
 - The union of the walk's own as-given calls and every probe, asserted equal to the pin. [23]
@@ -470,11 +446,12 @@ No repository or external-system boundary is proved by this module.
 
 - Sibling fixtures must exist and the raw hint must be non-null before present address values are checked not to name the sibling; PUBLIC_TOOLS membership is conditional on top_next_tool. [27]
 - The derived population, asserted equal to the pin over both channels. [28]
+
+
 - The population of the case above, so it cannot silently shrink — with its own boundary stated. [29]
 
 
 - The test uses literal expected phases and asserts membership and endpoints over phases the fixture obtained from the contract. [3]
-
 
 - The classifier's control: an unusable recommendation must be seen as one. [30]
 - The withhold test compares exact tool counts and requires at least one withheld hop with a top-level next tool. [31]
@@ -483,58 +460,31 @@ No repository or external-system boundary is proved by this module.
 
 - The case asserts the cleanup and closeout declarations and the absence of closeout-pending hops. Current phase guidance has three required-argument sites, including carryover. [34]
 
-
-
 - The support declaration has one live callability pin and directs repair and removal of that entry together. The test asserts exact equality with the observed missing-field map. [4]
-
-
-
 
 - The support declaration pins exact withheld counts. The case compares those counts and requires an observed withheld hop with a top-level next tool. [5]
 
-
-
-
 - The stale-base non-answer pin names closeout preview. The case compares the exact non-answer set for the driven closeout preview and sync calls and checks rendered stale-lineage and remedy text. [6]
-
-
-
 
 - The support values fill declared or reported missing arguments in the fixture. The test derives argument names from the call results. [7]
 
-
-
-
 - The classifier extracts the model name from tool error detail and checks it against the expected tool argument model. [8]
 
-
-
-
 - The helper extracts missing-field names from non-returned call detail. The classifier control asserts the two-field and one-field closeout argument cases. [9]
-
-
 
 ## Current source evidence
 
 - Own/sibling checks apply to present truthy path channels, with conditional public-tool membership and observed-hop bounds. [55]
 
-
 - The walk initially calls with prepared arguments. A non-answer leads to one retry with available values for fields reported missing. [56]
-
-
 
 - The walk prepares arguments, calls and conditionally retries, then records the call metadata, final reply, phase and guidance in a Hop. [57]
 
 
-
-- These support methods own the ordered walk, sibling arrangement, retry setup producer, stale-base arrangement and operational probes. [58]
-
-
-
+- These support methods own the ordered walk, sibling arrangement, stale-base arrangement and operational probes. [58]
 
 
 - The operational triple's declared home, and the reason it is a channel of the response's own contract.  Anchor: `nextArgs` [36]
-
 
 - A recorded hop includes its selected channel, prepared arguments, first-call arm and missing arguments, plus the returned call result. [10]
 

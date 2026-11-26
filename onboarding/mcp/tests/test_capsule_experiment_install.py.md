@@ -16,7 +16,7 @@ selection is per run and never persisted. A selected run with no usable capsule 
 ### Logic
 
 `create_install_source()` builds one install source tree from this repository's canonical assets,
-`dispatcherless_deps()` keeps the provider stack out, and `run_install()` runs the real installer through the
+and `run_install()` runs the real installer through the
 entry point the run selects. `plant_retired_startup_files()` writes the three retired startup files carrying
 `LEGACY_FINGERPRINT` as an earlier installation would have left them, and `assert_no_retired_startup_files()`
 requires all three absent, symlinks included. `CORPUS_FINGERPRINT`/`CORPUS_FINGERPRINT_SOURCE` and
@@ -67,15 +67,12 @@ returned summary alone.
 
 ## Evidence
 
-
 - The no-persistence guard digests every regular file under the coordination root before and after the selected run. [1]
-
 
 - The selected install fixture leaves no coordination-root skills directory and none of the withheld startup targets. [2]
 
 
 - The registered tool takes the selection as this run's own input and the record names the input that won. [3]
-
 
 
 
@@ -86,20 +83,28 @@ returned summary alone.
 
 
 - An unselected run removes planted startup files. [11]
+
+
 - Its preview reports the planted startup files without removing any. [12]
 - The module docstring must say that an unselected (`legacy`) run keeps the old startup chain's install path while the cutover still retires the `AGENTS.md` copies. [13]
 
+
 - The benchmark asset sync retires the same startup files. [14]
+
+
 
 - The module drives the real installer end to end and reads its results back from the files it wrote: removal of the retired startup files in both modes, the capsule cutover and the per-run selection record, with the install source tree left byte-identical. [4]
 
+
 - An actual selected install reports an empty startup rollback and leaves no retired startup file. [5]
-
-
 
 ### Repo-Internal References (renewed)
 
 - Private machine settings pre-exist both installations and retain their bytes. Anchor: `user_settings_path_for_write` [8]
 - The unavailable-capsule-path regression requires the refusal message to contain the shared renewal command while preserving the selected mode and writing no coordination root or startup file. [15]
 
-- The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. [6] [7]
+
+
+
+
+- The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. [6]

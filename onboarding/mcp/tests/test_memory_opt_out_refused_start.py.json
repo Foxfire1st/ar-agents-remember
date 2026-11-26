@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+        "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
         "content": "sha256:c6492dcb373da7df6d3fa06f07059389586005ab71b631b048010936d482c136",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+        "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
         "content": "sha256:2ede0cec46d42741682301e0ba4211d4dd1bebd7cfb44f6315c732d04f466c04",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+        "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
         "content": "sha256:2cb1848710412d65dcc21211ba4ff91f01f43fdf352d6cd15b05205933c0e3c3",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+        "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
         "content": "sha256:0925fa745908681536cf56f639ffca5e9aa5348eaeb2442b1afaeb5ace1c7adc",
         "locator": {
           "kind": "symbol",
@@ -73,7 +73,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+        "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
         "content": "sha256:c6492dcb373da7df6d3fa06f07059389586005ab71b631b048010936d482c136",
         "locator": {
           "kind": "symbol",
@@ -91,7 +91,7 @@
     },
     {
       "anchor": {
-        "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
+        "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
         "content": "sha256:2ede0cec46d42741682301e0ba4211d4dd1bebd7cfb44f6315c732d04f466c04",
         "locator": {
           "kind": "symbol",
@@ -114,10 +114,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
-            "content": "sha256:45bec460277b96bd22526793136df5651d9d41e116d85f7f573879b9132cdbf0",
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:33e8e9ea1b50aebe5ff2bca860b097c4b86208f2a2b0c5957f40fea6813a25a6",
             "locator": {
-              "kind": "file"
+              "end": 10,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"
@@ -125,14 +127,40 @@
       ]
     },
     "2": {
-      "note": "Knowledge, no-knowledge, and probe-failure refusals, dry and real",
+      "note": "Knowledge, no-knowledge, and probe-failure refusals, dry and real\n\nAnchor: `` `test_start_refuses_disabled_where_knowledge_exists` `test_start_refuses_disabled_where_no_knowledge_exists` `test_start_refuses_disabled_where_the_probe_cannot_answer` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
-            "content": "sha256:45bec460277b96bd22526793136df5651d9d41e116d85f7f573879b9132cdbf0",
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:2cb1848710412d65dcc21211ba4ff91f01f43fdf352d6cd15b05205933c0e3c3",
             "locator": {
-              "kind": "file"
+              "end": 99,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:43052895105cf7134deb8bcdf011c6f475f9f37323745e40676f459a22d7203f",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 102
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:0925fa745908681536cf56f639ffca5e9aa5348eaeb2442b1afaeb5ace1c7adc",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 114
             }
           },
           "kind": "test"
@@ -140,14 +168,52 @@
       ]
     },
     "3": {
-      "note": "Choice answer, both CLI options, unknown tokens stay invalid",
+      "note": "Choice answer, both CLI options, unknown tokens stay invalid\n\nAnchor: `` `test_start_refuses_the_memory_choice_answer` `test_start_refuses_both_module_command_line_options` `test_start_refuses_an_unknown_memory_choice_as_an_invalid_request` `test_start_with_an_unknown_token_stays_an_invalid_request` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
-            "content": "sha256:45bec460277b96bd22526793136df5651d9d41e116d85f7f573879b9132cdbf0",
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:13c4b3a574bf7f60bd0fb4a76e79fe4ff557837e250668d1cf4087e86770dc83",
             "locator": {
-              "kind": "file"
+              "end": 140,
+              "kind": "line_range",
+              "start": 132
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:20ed7ffb06a2f13ad311920219cb6ab56f28ff91b193649045eeded135505870",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 143
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:56dbdb239964126c23bf3beb022cd457614548e1ceac2cd60b22bd2b50cfe62e",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 165
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:a90dc0f0f545ea47ba6840d2ea1c54d755ecddc09eef814224dabdd8044d2894",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 225
             }
           },
           "kind": "test"
@@ -155,14 +221,28 @@
       ]
     },
     "4": {
-      "note": "Missing root keeps its error; setup-first names its action",
+      "note": "Missing root keeps its error; setup-first names its action\n\nAnchor: `` `test_start_with_no_memory_root_keeps_the_missing_memory_error` `test_absent_memory_root_names_the_setup_first_action` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
-            "content": "sha256:45bec460277b96bd22526793136df5651d9d41e116d85f7f573879b9132cdbf0",
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:8f4706c7704548c8c2bd4ab2b24e8726a4d825d0a16c697188b980dfdfce96da",
             "locator": {
-              "kind": "file"
+              "end": 196,
+              "kind": "line_range",
+              "start": 191
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:dc930a9950bc58980175db4cc1dee9c7e7379203a215247f9992da7faa708f75",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 199
             }
           },
           "kind": "test"
@@ -170,14 +250,16 @@
       ]
     },
     "5": {
-      "note": "First leaf refused before the series contract exists",
+      "note": "First leaf refused before the series contract exists\n\nAnchor: `` `test_first_leaf_of_a_master_is_refused_and_creates_no_series_contract` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
-            "content": "sha256:45bec460277b96bd22526793136df5651d9d41e116d85f7f573879b9132cdbf0",
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:afde0890fedbac990bdd43321665dbbf96cf75481f27d54fe790707b579f4754",
             "locator": {
-              "kind": "file"
+              "end": 272,
+              "kind": "line_range",
+              "start": 234
             }
           },
           "kind": "test"
@@ -185,14 +267,52 @@
       ]
     },
     "6": {
-      "note": "Restarts land external; live-leaf attach; terminal cleanup refused",
+      "note": "Restarts land external; live-leaf attach; terminal cleanup refused\n\nAnchor: `` `test_no_mode_start_after_an_abandoned_disabled_contract_is_external` `test_no_mode_start_after_a_reopened_disabled_contract_is_external` `test_no_mode_start_attaches_to_a_live_disabled_leaf` `test_cleanup_of_a_terminal_archived_disabled_contract_is_refused` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
-            "content": "sha256:45bec460277b96bd22526793136df5651d9d41e116d85f7f573879b9132cdbf0",
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:b55196d26866931ee6e8ecae811b7aec4030e8bbec067486d947fe89a0580edb",
             "locator": {
-              "kind": "file"
+              "end": 298,
+              "kind": "line_range",
+              "start": 280
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:095588f3efeda074b1ea2818cceababe504f56815df2429adfa19580da772669",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 301
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:2ede0cec46d42741682301e0ba4211d4dd1bebd7cfb44f6315c732d04f466c04",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 322
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:c6492dcb373da7df6d3fa06f07059389586005ab71b631b048010936d482c136",
+            "locator": {
+              "end": 373,
+              "kind": "line_range",
+              "start": 349
             }
           },
           "kind": "test"
@@ -200,14 +320,64 @@
       ]
     },
     "7": {
-      "note": "Tombstone builder, reopen args, missing-repo choices, error status",
+      "note": "Tombstone builder, reopen args, missing-repo choices, error status\n\nAnchor: `` `_started_abandoned_world` `test_reopen_restart_arguments_never_carry_the_removed_mode` `test_missing_memory_repository_offers_no_disabled_choice` `test_missing_memory_repository_refuses_the_choice_answer` `test_opt_out_error_carries_its_own_status` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "6cb58ec1f5c1b629874d4ceb251f1ef2180572f3",
-            "content": "sha256:45bec460277b96bd22526793136df5651d9d41e116d85f7f573879b9132cdbf0",
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:5a23af3481a4c88b2b2cb0181f91fb690c36f9e57125771924dba8ae99eb973d",
             "locator": {
-              "kind": "file"
+              "end": 516,
+              "kind": "line_range",
+              "start": 376
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:9a9d55f8bcab94d210252fb420d4150d5a79d022e0c44d60c8c1e20f2b01948e",
+            "locator": {
+              "end": 566,
+              "kind": "line_range",
+              "start": 519
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:42627c98ac69a0aaa98a6e4387a1cb791b195fc4a0eda1a2ae46b53d349d380c",
+            "locator": {
+              "end": 601,
+              "kind": "line_range",
+              "start": 569
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:4bbbb62637372955f299278170e7a96f3d6691c57ad5c5efaadc6cab5589670d",
+            "locator": {
+              "end": 638,
+              "kind": "line_range",
+              "start": 604
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "639bcc637a8ec6d367d3b87fd6bc109a130ba3ca",
+            "content": "sha256:aff8f0cdef712802741808a89f009d5e5d2dba3d3ea3d780212ae04bacc716ca",
+            "locator": {
+              "end": 649,
+              "kind": "line_range",
+              "start": 641
             }
           },
           "kind": "test"

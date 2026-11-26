@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+        "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
         "content": "sha256:cf58cc0256d90a4890876d33d0545cbeb4029c462716d4ae6b2fa17c35424e5a",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+        "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
         "content": "sha256:cf58cc0256d90a4890876d33d0545cbeb4029c462716d4ae6b2fa17c35424e5a",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+        "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
         "content": "sha256:438b89c6e0cc2297422d8e105e2d76877828e4f5288bf43a2f07e995c7b3c960",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+        "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
         "content": "sha256:dbb1647026df85a91309b56ca3e076a14929ef298647d97757fc004d9b0ffae8",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+        "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
         "content": "sha256:438b89c6e0cc2297422d8e105e2d76877828e4f5288bf43a2f07e995c7b3c960",
         "locator": {
           "kind": "symbol",
@@ -99,24 +99,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:525d25bb7e3f749df869f227721045b0a47e64b5567aff7d8994c61a85f5271a",
             "locator": {
-              "end": 454,
+              "end": 395,
               "kind": "line_range",
-              "start": 387
+              "start": 328
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:a47d43870ee9c0030ac6f8a92e3afe708c090b03de8e94d4aa328d7ef7e2ae30",
             "locator": {
-              "end": 941,
+              "end": 878,
               "kind": "line_range",
-              "start": 862
+              "start": 799
             }
           },
           "kind": "code"
@@ -141,48 +141,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:b419d7e08f9f0add5be0ae490f9339aacb7053f6473099b8228503cf0534983a",
             "locator": {
-              "end": 913,
+              "end": 850,
               "kind": "line_range",
-              "start": 913
+              "start": 850
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:f93c813b1a66458b9632dad282744dc7f0741c545c1917c7de93be1a542f2088",
             "locator": {
-              "end": 916,
+              "end": 853,
               "kind": "line_range",
-              "start": 916
+              "start": 853
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:645963c4485cea41bd7caed2105f8bcc10c15cb649e8b03297ef4fe90038eb52",
             "locator": {
-              "end": 448,
+              "end": 389,
               "kind": "line_range",
-              "start": 448
+              "start": 389
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:e35595c929d11d6a728aa94457216f7e1b53f8d6aee0567c502d06119f575955",
             "locator": {
-              "end": 512,
+              "end": 453,
               "kind": "line_range",
-              "start": 512
+              "start": 453
             }
           },
           "kind": "code"
@@ -194,7 +194,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7bc03a9ceb2a78f7bfe09c9a66097cdff2e7cf97",
+            "blob": "8dd7ccaf4a7ea6a1d80c3784cf32ff8a53b8b805",
             "content": "sha256:2a4d96a6908a181b96ff731c4bae392acd085d293bdb97d3ad83642b6af34caf",
             "locator": {
               "end": 35,
@@ -229,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
             "content": "sha256:52b5c0761eb8d202bf1a85e9e7aee1041bb145fcefaa0de93e0be6ea0a9c9664",
             "locator": {
               "end": 133,
@@ -242,62 +242,12 @@
         }
       ]
     },
-    "14": {
-      "note": "The on-disk provider authority reload consumed before provider setup (containment R1).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
-            "content": "sha256:3fd7dc985e59bef427b4594a86c60921dccc4b6fa3874cb48c220075593be308",
-            "locator": {
-              "kind": "symbol",
-              "name": "worktree_start_tool"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
-            "content": "sha256:3b540a0d83735a37840bf0b3f94a7a430c21e9d782753b587483243203c358f6",
-            "locator": {
-              "kind": "symbol",
-              "name": "reload_provider_authority"
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
-            "content": "sha256:d45aa1785cf5eb85f9b0e36a3f3205802d150161a09b9c2c6aa487f0d7d8a716",
-            "locator": {
-              "kind": "symbol",
-              "name": "provider_setup_config"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
-            "content": "sha256:e2d83560666924530b06c82fcd178952932211795b5d29970b35d162ce3a4e47",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "Public status observes the stable journal through the canonical locator and preserves it in the result.",
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
             "locator": {
               "kind": "symbol",
@@ -313,7 +263,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
             "locator": {
               "kind": "symbol",
@@ -329,7 +279,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
             "content": "sha256:7972b4c3a85720af04c1adbcc0d7821ffdc3785b6c25d8fc7f510e6bd3f92317",
             "locator": {
               "end": 214,
@@ -343,26 +293,16 @@
       ]
     },
     "22": {
-      "note": "Worktree service behavior is owned by the worktree modules, which this manager module re-exports.\n\nAnchor: `__all__`",
+      "note": "Worktree service behavior is owned by the worktree modules, which this manager module re-exports.\n\nAnchor: `` `__all__` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "7bc03a9ceb2a78f7bfe09c9a66097cdff2e7cf97",
-            "content": "sha256:9d6f4b44f86c4f75f224c349c7020e2091f9bdeedbcf7b7dde40d0a2a778c47e",
+            "blob": "8dd7ccaf4a7ea6a1d80c3784cf32ff8a53b8b805",
+            "content": "sha256:4c1a708defeb8d3009f9220bdc8ca396955699d15bc4ac576ebf9fb9644d3858",
             "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7bc03a9ceb2a78f7bfe09c9a66097cdff2e7cf97",
-            "content": "sha256:3c294d3a17340e4e6b985100c020ae9fffb142f3cdcc949ab058f591828caf6d",
-            "locator": {
-              "kind": "symbol",
-              "name": "__all__"
+              "end": 155,
+              "kind": "line_range",
+              "start": 89
             },
             "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py"
           },
@@ -375,7 +315,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:dbb1647026df85a91309b56ca3e076a14929ef298647d97757fc004d9b0ffae8",
             "locator": {
               "kind": "symbol",
@@ -422,15 +362,16 @@
       ]
     },
     "24": {
-      "note": "The facade's start entry point consumes the extracted task-start request types at this boundary.",
+      "note": "The facade's start entry point consumes the extracted task-start request types at this boundary.\n\nAnchor: `` `worktree_start_tool` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
-            "content": "sha256:3fd7dc985e59bef427b4594a86c60921dccc4b6fa3874cb48c220075593be308",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+            "content": "sha256:99b60ccfb9dc974c453576282bd0f5915fcafd5decd2148e81681e49c0b552cf",
             "locator": {
-              "kind": "symbol",
-              "name": "worktree_start_tool"
+              "end": 225,
+              "kind": "line_range",
+              "start": 193
             }
           },
           "kind": "code"
@@ -438,16 +379,16 @@
       ]
     },
     "25": {
-      "note": "The start entry point: it refuses a direct leaf start, reloads the on-disk provider authority before setup, and answers the worktree manager's start result with the provider veto and the start eligibility.",
+      "note": "The start entry point: it refuses a direct leaf start and answers the worktree manager's start result with the start eligibility.\n\nAnchor: `` `worktree_start_tool` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
-            "content": "sha256:3fd7dc985e59bef427b4594a86c60921dccc4b6fa3874cb48c220075593be308",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+            "content": "sha256:99b60ccfb9dc974c453576282bd0f5915fcafd5decd2148e81681e49c0b552cf",
             "locator": {
-              "end": 276,
+              "end": 225,
               "kind": "line_range",
-              "start": 196
+              "start": 193
             }
           },
           "kind": "code"
@@ -459,7 +400,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:dbb1647026df85a91309b56ca3e076a14929ef298647d97757fc004d9b0ffae8",
             "locator": {
               "kind": "symbol",
@@ -470,7 +411,7 @@
         },
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:7844e3efd353d419c1b45ad41233b53a7a4fba7737ef17ca6320981f05f41787",
             "locator": {
               "kind": "symbol",
@@ -486,7 +427,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:0d4e525b9f0d0ea995c2107c65791ebdbdef60caea4202924a769f7353ff6465",
             "locator": {
               "kind": "symbol",
@@ -502,7 +443,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:46b51cbb5c6f0c8b9573f5ee38ce6baf5899bdb8e95618951660aa3acdf46cef",
             "locator": {
               "kind": "symbol",
@@ -582,26 +523,16 @@
       ]
     },
     "7": {
-      "note": "Worktree service behavior is owned by the worktree manager and its worktree modules, which this manager module re-exports.\n\nAnchor: `__all__`",
+      "note": "Worktree service behavior is owned by the worktree manager and its worktree modules, which this manager module re-exports.\n\nAnchor: `` `__all__` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "7bc03a9ceb2a78f7bfe09c9a66097cdff2e7cf97",
-            "content": "sha256:9d6f4b44f86c4f75f224c349c7020e2091f9bdeedbcf7b7dde40d0a2a778c47e",
+            "blob": "8dd7ccaf4a7ea6a1d80c3784cf32ff8a53b8b805",
+            "content": "sha256:4c1a708defeb8d3009f9220bdc8ca396955699d15bc4ac576ebf9fb9644d3858",
             "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7bc03a9ceb2a78f7bfe09c9a66097cdff2e7cf97",
-            "content": "sha256:3c294d3a17340e4e6b985100c020ae9fffb142f3cdcc949ab058f591828caf6d",
-            "locator": {
-              "kind": "symbol",
-              "name": "__all__"
+              "end": 155,
+              "kind": "line_range",
+              "start": 89
             },
             "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py"
           },
@@ -614,7 +545,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:30279b1752e0553b54475d9df98e562424f5f4fbde36428d0533666e1482106d",
             "locator": {
               "kind": "symbol",
@@ -626,7 +557,7 @@
         },
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:ac995290d08b6e24b896b253eb8b59dc5e8e4144f16e68c3a5e72284da4467d0",
             "locator": {
               "kind": "symbol",
@@ -638,7 +569,7 @@
         },
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:c0aad6aae43ea09f1d18794980092208e2434a7217f6ba5e63490f9566a7d895",
             "locator": {
               "kind": "symbol",
@@ -651,15 +582,16 @@
       ]
     },
     "9": {
-      "note": "Route-review refusals are projected once with exact contract guidance at start/admission and closeout.",
+      "note": "Route-review refusals are projected once with exact contract guidance through the shared route-review and certification-refusal owners.\n\nAnchor: `` `_worktree_closeout` `route_review_refusal_projection` `_require_current_dependencies` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:79952cf8f4c7175d8e82c7233e9af45298f3883b14df027d71471f873d5c9469",
             "locator": {
-              "kind": "symbol",
-              "name": "_worktree_closeout"
+              "end": 854,
+              "kind": "line_range",
+              "start": 799
             }
           },
           "kind": "code"
@@ -669,8 +601,9 @@
             "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
             "content": "sha256:7b1238dd5c9dcd47627fdee7e844489f083bbdcd991f0981c753d26b7a806888",
             "locator": {
-              "kind": "symbol",
-              "name": "route_review_refusal_projection"
+              "end": 257,
+              "kind": "line_range",
+              "start": 185
             },
             "path": "mcp/src/agents_remember/worktrees/route_review.py"
           },
@@ -681,46 +614,24 @@
             "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
             "content": "sha256:1028f4d426807d513b9afabcfb1bb176bb6873d278d279c2a0237aee915e7cce",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_current_dependencies"
-            },
-            "path": "mcp/src/agents_remember/worktrees/route_review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
-            "content": "sha256:7c363f6f2056fc146abc3b38319070a28fda83d171b946853099294f72a788f1",
-            "locator": {
-              "end": 273,
+              "end": 601,
               "kind": "line_range",
-              "start": 257
-            }
+              "start": 559
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
-            "content": "sha256:4341e46efbdfae6a0ca5076bf8c944921cd5c547f25c3a131015ad56962a41fa",
+            "blob": "784e1bc60483d8754a1f8bbfbe4607e4559dbeaf",
+            "content": "sha256:3fc0941cac2393f45c864f549f66430b51f91d22cbf187fac88e522872c1535e",
             "locator": {
-              "end": 659,
+              "end": 47,
               "kind": "line_range",
-              "start": 659
+              "start": 8
             },
-            "path": "mcp/src/agents_remember/worktrees/route_review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
-            "content": "sha256:c6747a3db34199e3c4d3a4ad8a1ebed83ff454b5c8c99e630359e0f8ec7a4143",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/route_review.py"
+            "path": "mcp/src/agents_remember/application/lifecycle/certification_refusal.py"
           },
           "kind": "code"
         }

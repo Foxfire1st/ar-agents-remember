@@ -58,13 +58,11 @@ No configured external domain-documentation evidence.
 
 The current evidence below describes static source declarations and test assertions. The dated L9 observation records its own inspection epoch.
 
-
 - The fixture builds a typed door generation and injects the three named retired digest fields into its serialized publication. [1]
 
 - The model read drops only the named retired fields and still rejects unknown fields. [2]
 
 - The store reads the injected legacy publication as proven. The terminal-archive result succeeds and names the stored operation record among its canonical entries. [3]
-
 
 ### Cross-Repo References
 

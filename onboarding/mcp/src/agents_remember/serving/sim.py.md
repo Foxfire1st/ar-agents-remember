@@ -39,6 +39,7 @@ feeder so the root remains alive for the setup's lifetime.
 ### Repo-Internal References
 
 - Fixture loading and temporary-root setup. [1]
+
 - Replay clock and speed parsing. [2]
 - Progressive event feeding and remaining-tail state. [3]
 - Setup lifetime retains the temporary root. [4]

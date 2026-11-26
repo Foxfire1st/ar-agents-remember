@@ -1,12 +1,16 @@
 {
   "anchor": {
-    "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
-    "content": "sha256:a8d7c447297ccb3d3f2925371266db4a811a78558b569e19ea40529984a5bba5",
+    "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
+    "content": "sha256:67bf9732bea0f39561c8b1c6a1f1bcb64a980b96efbf052b8b27b27cb0e286ce",
     "locator": {
       "kind": "symbol",
       "name": "install_runtime_from_config"
     },
     "path": "mcp/src/agents_remember/install/runtime.py"
+  },
+  "closed": {
+    "reason": "261125-DEP-L2 removed the providers package, install/provider_watchers.py, the provider watcher stop inside install_runtime_from_config, and the dashboard provider safety loop, eliminating the mismatched provider-stop reader.",
+    "task": "261125-DEP-L2"
   },
   "id": "WKN-57WMZH",
   "kind": "fault",
@@ -18,23 +22,23 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928-MIK-L97"
   },
-  "state": "open",
+  "state": "closed",
   "statement": "The provider stop inside runtime_install reads a generated settings document that declares no provider, so it selects nothing whatever the settings file enables, while the dashboard's safety loop reads the file that --config names and a comment in providers/watcher_service.py says both use the same reader.",
   "writer": {
-    "at": "2026-11-25T19:57:06+01:00",
+    "at": "2026-11-26T03:27:42+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
-    "task": "261112-BUG"
+    "seat": "2424643a-91e9-4c95-ab58-87443229a30b",
+    "task": "261125-DEP"
   }
 }

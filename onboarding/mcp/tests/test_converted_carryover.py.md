@@ -20,10 +20,6 @@ The added source cases compare each delivered decisions/carriedPaths/reportPath 
 
 - The public plan adapter returns its typed legacy refusal for either unconverted side, preserving memory bytes. [15]
 
-
-
-
-
 - Public plan rejects a null layout on either side before instrumented head/cleanliness/change-path/record-context calls despite an invalid official code ref. [3]
 - Native planning rejects an unconverted side before code/candidate reads and preserves both observed byte trees. [4]
 - Mismatched conversion, unreadable/malformed markers and missing memory retain named format refusal; missing memory is not mislabeled legacy. [5]
@@ -33,17 +29,11 @@ The added source cases compare each delivered decisions/carriedPaths/reportPath 
 - Partial document retry validates unrelated \ onboarding, refuses with validator diagnostics after refresh, names the existing member and restores bytes, HEAD and raw index without writes. [10]
 - The open recovery item blocks closeout; the leaf writer supplies its own row without a commit, then ordinary closeout creates exactly one Code-Commit-attributed memory commit with closed history. [11]
 - Opt-in real plan compares source/target/code refs, statuses and staged inventories; it makes no apply/closeout success claim. [12]
+
 - Opt-in real public apply requires R27.2-new-record refusal for INV-EX6T0F, empty writes and restored bytes/HEAD/real custody; it does not assert successful real-data carryover. [13]
-
-
-
-
 
 - Conversion/publication remain in the full report, not as raw compact fields; recovery guidance is separately exposed by the current compactor. [1]
 
-
-
 - Public plan logs full candidate/conversion/publication review facts and delivers curator/own-row/closeout guidance plus log, without candidates, raw publication or reportPath; observed memory bytes stay equal. Anchor: `test_public_plan_logs_complete_review_facts_and_delivers_recovery_guidance` `memory_carryover_plan_payload` [2]
-
 
 - For either Markdown/JSON member cut, equal bytes resume the missing companion without rewriting the existing bytes/mtime; differing cuts stay review-required and do not write; HEAD stays unchanged. [9]

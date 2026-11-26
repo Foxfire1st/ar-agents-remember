@@ -124,30 +124,17 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-
-
 - The module's statement of every target's identity source, the trust line, the confinement and the accepted window. [1]
-
-
 
 - The report file, the reason, and the two tables that make a file a knowledge dataset. [2]
 
-
-
-
 - The report, and holding a generation's pin and snapshots with the reason. [3]
-
 
 - The composition-bound port implementation. [4]
 
-
 - The whole hook: review refs by directory name, own retained-code refs, generations, copies, the report. [5]
 
-
-
-
 - Receipt writes refuse paths outside the task. [6]
-
 
 - Physical confinement: no symlink on the way, and the resolved path inside the resolved root. [7]
 - The legacy identity by the trust line, and `task.json` read only when it is the task's own. [8]
@@ -158,7 +145,10 @@ No configured live documentation source was available for this pass.
 - The content scan: confined root, confined candidates, knowledge schema, untracked. [12]
 
 - The finalizer carries the report after the archive move, and never raises. [13]
+
+
 - The main archive case and the colliding-task case. [14]
+
 
 ### Cross-Repo References
 
@@ -167,23 +157,11 @@ repository is only compared against them.
 
 No cross-repo boundary is crossed by this file.
 
-
-
 - The ledger reports earlier deletions, interrupted planned deletions now absent, and previously failed artifacts now absent. [15]
-
-
-
-
 
 - The first no-op records a receipt; an unchanged repeat with no new work or outcome writes none. [16]
 
-
-
-
-
 - The previous receipt is preserved under its own attempt number, reusing that path after interruption. [17]
-
-
 
 - Code-pin history is persisted before releasing the retained pin. [18]
 - Verified snapshot unlink precedes snapshot history, leaving a static failure window. [19]

@@ -27,7 +27,6 @@ independently builds the after text-backed dataset from the six reused claims pl
 opens one side with `open_family_side`, reads the fixture family with `read_family_roster`, closes the side
 and indexes every carried source by claim id.
 
-
 | Case | What it pins |
 | --- | --- |
 | `test_two_members_in_one_file_carry_their_own_locators_ranges_and_rationale` | two members in one file are two sources with distinct locators, ranges (1-2 and 5-6), roles and stored rationales; a `line_range` resolves to its recorded range; a `file` locator is `whole_file` with no range; the JSON-mode model dump carries the structured values |
@@ -76,12 +75,7 @@ No Domain Documentation source is configured for this slice.
 - `test_a_symbol_defined_twice_carries_every_defining_range` supplies the current fixture or assertion described above. [18]
 - `test_the_existing_source_fields_keep_their_published_values` supplies the current fixture or assertion described above. [19]
 
-
 - The module builds both sides through read_scope_test_support, whose row construction uses the test-only knowledge row store. [20]
-
-
-
-
 
 The rows name the fixture, the reader and each case, plus the owners they drive.
 
@@ -93,7 +87,6 @@ No domain documentation source is configured for this repository (`system/source
 No configured domain documentation could be checked.
 
 ### Repo-Internal References (continued)
-
 
 - The fixture defines both shared-file texts, their attributed line ranges, the past-end range and both definitions in the duplicate-symbol file. [22]
 
@@ -119,10 +112,7 @@ No cross-repository behavior is exercised; the Git repository and datasets are t
 
 No meaningful cross-repo references found.
 
-
-
 ### Repo-Internal References (continued)
-
 
 - The `unit-regression` lane selects `mcp/tests/test_review_family_member_sources.py`. [34]
 
@@ -131,5 +121,7 @@ No meaningful cross-repo references found.
 
 
 - RowStore writes text-tree fixture rows without the retired production admission plane. [21]
+
+
 
 - The lifecycle catalog lists the module as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. [35]

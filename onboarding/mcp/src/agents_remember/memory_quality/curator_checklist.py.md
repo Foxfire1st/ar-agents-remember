@@ -117,12 +117,7 @@ No configured domain documentation could be checked.
 The application layer decides when the report exists, and worktree cleanup owns its lifecycle.
 
 
-
-
-
 > Retained earlier citation wording: - Cleanup removes the reserved reports directory before it attempts to remove the enclosure.
-
-
 
 - R03 attestation dependency declaration source. [10]
 

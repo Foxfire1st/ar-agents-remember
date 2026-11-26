@@ -6,45 +6,4 @@
 
 ## Purpose
 
-Managed CGC runtime layout and provider-source hygiene tests.
-
-## Code Commentary
-
-### Logic
-
-Ambient FALKORDB host/port variables do not replace default authority. The layout writes pinned requirements and managed defaults without persisting process-only backend keys. Source-artifact detection reports forbidden files and an unexpected patch source refuses.
-
-### Conventions
-
-This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
-
-### Invariants And Boundaries
-
-Temporary layout checks do not start providers or demonstrate live indexing. Removed cleanup, GrepAI and Windows matrices are not current assertions in this file.
-
-### Todos
-
-No file-local implementation change is requested by this reconciliation.
-
-## Evidence
-
-### Docs References
-
-No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
-
-No configured domain evidence applies to the file-local claims above.
-
-### Repo-Internal References
-
-The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
-
-- Cgc layout ignores host falkordb environment defaults. [1]
-- Ensure cgc runtime layout writes pinned defaults. [2]
-- Detects forbidden source provider artifacts. [3]
-- Patch rejects unexpected source. [4]
-
-### Cross-Repo References
-
-No cross-repository implementation evidence is required for these local test and fixture claims.
-
-Fixture repositories and protocol doubles do not establish a live external integration.
+This card records the retirement of `mcp/tests/test_context_providers.py`. The `261125-DEP-L2` candidate (`DEP-R02@v1`, `DEC-ZGGT0G`) deleted this source file as part of removing the CodeGraphContext and GrepAI search providers and dead code. This file is retained only as a retirement record and grants no current contract, symbol, or route.

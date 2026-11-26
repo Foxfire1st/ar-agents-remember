@@ -23,11 +23,16 @@ The log lives in the enclosure beside the worktrees, never inside them, which is
 ### Repo-Internal References
 
 
+
 - The logs directory is made with the enclosure beside the worktrees and dirties neither worktree. [1]
 
 
 
+
+
 - The closeout changed paths list no log, and cleanup removes the logs directory with the enclosure. [2]
+
+
 
 
 

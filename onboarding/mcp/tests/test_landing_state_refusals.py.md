@@ -18,7 +18,6 @@ Exercise registered-tool fixture refusals, dry/real blocker agreement and answer
 
 The common ordinary-refusal assertion rejects error; reason assertions read summary. Actual raised exceptions keep their own separate channel. Exact refusal codes, unchanged-state guards and next operations remain, so this is not blanket exception suppression or a new execution grade.
 
-
 The fixture cases construct real test repositories and call the entry-point world, while selected terminal-error cases also check the producer-to-refusal converter directly. A public call that stops at an earlier legitimate check is not evidence that its later branch was publicly reached. The cleanup disagreement case leaves unmerged work after integration and requires both dry and real answers to be blocked.
 
 Location-separated content targets, distinct path counts and the full delivered bound are separate metrics. Whole-result identity uses an independent validated-whole capture and compares the complete parsed detail; deletion of dropped source_lineage and a changed retained summary are discriminating negative controls. Largest-case methods cover named finite fixtures, not every legal input/root or an actual host landing transcript.
@@ -33,16 +32,8 @@ The deepest-root start case owns a short temporary parent and measures its resol
 - Deletion of a dropped field must fail the independent whole-result identity check. [2]
 - Changing a retained value must also fail that identity check. [3]
 
-
-
 - All three waits use the contract's completed closeout status. One also calls `worktree_status` before reading the contract. [4]
 
-
-
-
-
-
 - The refusal cases retain exact codes, summaries, and state. Blocked closeout preview carries its coded blocker without commit approval. [5]
-
 
 - The deepest-root start case owns a short temporary parent and measures its resolved path in filesystem bytes when padding the actual root. Its delivered-answer and exact saved-detail assertions use the real paths. [6]

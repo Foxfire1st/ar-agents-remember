@@ -33,4 +33,5 @@ No external Domain Documentation source is configured for this memory repo.
 - `server_info_payload()` reports `SERVER_VERSION`. [1]
 
 
+
 - Tool tests assert the public version through `server_info_payload`: the safe-config-summary case compares the served build's version to `SERVER_VERSION`. [2]

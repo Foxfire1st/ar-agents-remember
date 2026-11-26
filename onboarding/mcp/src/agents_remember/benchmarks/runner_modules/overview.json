@@ -6,12 +6,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+            "blob": "de11957930055a6254a420c3b62154d41c6c931a",
             "content": "sha256:e6a0a4a13f9cd61476b684ccf622d3fe6f8cd086a9fd2ac786877e4666bd660d",
             "locator": {
-              "end": 28,
+              "end": 27,
               "kind": "line_range",
-              "start": 28
+              "start": 27
             },
             "path": "mcp/src/agents_remember/benchmarks/runner.py"
           },
@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+            "blob": "de11957930055a6254a420c3b62154d41c6c931a",
             "content": "sha256:66e2a4f2b556f2fc13fffb860e1efade622bd584b93c57686f2689daa5080232",
             "locator": {
               "end": 24,
@@ -32,12 +32,12 @@
         },
         {
           "anchor": {
-            "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+            "blob": "de11957930055a6254a420c3b62154d41c6c931a",
             "content": "sha256:3d62e46f544b23376c4b332d4e33e3ae50b5c66fbdcef0c9ba675d46f6fe1773",
             "locator": {
-              "end": 33,
+              "end": 32,
               "kind": "line_range",
-              "start": 28
+              "start": 27
             },
             "path": "mcp/src/agents_remember/benchmarks/runner.py"
           },
@@ -45,56 +45,15 @@
         }
       ]
     },
-    "3": {
-      "note": "Retained seed options and resolver predicates preserve the benchmark-scoped no-seeding boundary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
-            "content": "sha256:6e83aecc3be7e3696d7956b643007efb5a01a74b19fa3916886440a8dfc32188",
-            "locator": {
-              "kind": "symbol",
-              "name": "GrepaiSeedOptions"
-            },
-            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
-            "content": "sha256:b1a6eaa353ece8693475eaf95822598206512168634957c495ce0f6b3ab98cea",
-            "locator": {
-              "kind": "symbol",
-              "name": "_clone_inputs"
-            },
-            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4b5990d104c1997d9e7a787055251def913e3e45",
-            "content": "sha256:638d0cc97555ac694d3d234585a4976420133739f21aeecfefc4644e5011c269",
-            "locator": {
-              "kind": "symbol",
-              "name": "_seed_precondition_skip"
-            },
-            "path": "mcp/src/agents_remember/providers/cgc/seed.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "4": {
-      "note": "Case models, manifest validation, selection, shared preparation and workspace construction.",
+      "note": "Case models, manifest validation, selection, shared preparation and workspace construction.\n\nAnchor: `` `sync_runtime_assets` `BenchmarkPreparation` `load_cases` `prepare_case` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "c0972a2d2c0e2d6103130df63a7de142c225bdf7",
-            "content": "sha256:462f61ccf09d6693f1908402287e7a566a946c5c9b425ba9e0e89325bf8aa5ed",
+            "blob": "3719496c69a4705fb80af81b90e468bc37961037",
+            "content": "sha256:d292972ecc2f857c84ae91c6cbee512bc0eda3e7dabd050e5b02408ff4bda8af",
             "locator": {
-              "end": 176,
+              "end": 149,
               "kind": "line_range",
               "start": 1
             },
@@ -104,10 +63,10 @@
         },
         {
           "anchor": {
-            "blob": "68fa770e00e655744392f47267813de7377753af",
-            "content": "sha256:9000011a19f052249d5ba5eb1d1a059f587f8589f274c52099f0fdbaa49f02b3",
+            "blob": "798fc462d80ad7ca87ff75fffb2942daf28cb3d7",
+            "content": "sha256:c08c1ba3855138f244073a2bc37fdeb01d947ed70c02c7ee580d883b25f68eaa",
             "locator": {
-              "end": 156,
+              "end": 136,
               "kind": "line_range",
               "start": 1
             },
@@ -117,10 +76,10 @@
         },
         {
           "anchor": {
-            "blob": "2319954c2e7ead87a2723ad8b2bcb8e11e122df2",
-            "content": "sha256:e311b4f2d61fbcaf8d68fcf805f7f6134a11c68137afcbd515341218e29aee59",
+            "blob": "114773faf71b249414129d014f8d98e8a831eaca",
+            "content": "sha256:4dc65d00da6cebaf9edd2725290f617fafd989385e81c0fb0dcf24f5e8a7a19d",
             "locator": {
-              "end": 223,
+              "end": 141,
               "kind": "line_range",
               "start": 1
             },
@@ -130,10 +89,10 @@
         },
         {
           "anchor": {
-            "blob": "22ab4aa0627357a04c04fe027fc19236295a6fbd",
-            "content": "sha256:514fc3f33cedefe8ef0d7f6d51a4fa117947e2fb16a7e73293d377b56dc805bb",
+            "blob": "c21816fc9900af93c5914a9744230e9902cb2ace",
+            "content": "sha256:802ab72f5a5ba8e2fd4c763633869c560a77fd1116a86f5f438c6fdbc6ca9110",
             "locator": {
-              "end": 293,
+              "end": 240,
               "kind": "line_range",
               "start": 1
             },
@@ -144,57 +103,18 @@
       ]
     },
     "5": {
-      "note": "Benchmark registration, registration sweep and disabled lifecycle-settings construction.",
+      "note": "Benchmark-local MCP settings, Codex configuration, and runtime-config construction.\n\nAnchor: `` `write_benchmark_mcp_registration` `benchmark_mcp_config` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "c8c27827281330947162cad1977cf99d8bc9bca6",
-            "content": "sha256:1bad678499d9a26a8aff8d482cdefff41bd0ec4490a91a9d2509c8872eee8282",
+            "blob": "c850334b91dd3b57babb5c9d5dd68b2b1fc014e3",
+            "content": "sha256:76458f47d2b441e258c6b3390d68089b88bd66b3b9de1b6f0e91c6a286cee931",
             "locator": {
-              "end": 300,
+              "end": 146,
               "kind": "line_range",
               "start": 1
             },
             "path": "mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
-            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
-            "locator": {
-              "end": 26,
-              "kind": "line_range",
-              "start": 11
-            },
-            "path": "mcp/src/agents_remember/providers/settings.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
-            "content": "sha256:719e17538e15a1da27718713d4b7d7cb90f7294f6d8a2c79dad73495c3ae6895",
-            "locator": {
-              "end": 121,
-              "kind": "line_range",
-              "start": 56
-            },
-            "path": "mcp/src/agents_remember/providers/provider_setup.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
-            "content": "sha256:97ddf8e0a7c59c75c51eb3779065165b04962b4db278d220312f8ce4ef763da1",
-            "locator": {
-              "end": 102,
-              "kind": "line_range",
-              "start": 66
-            },
-            "path": "mcp/src/agents_remember/providers/setup_common.py"
           },
           "kind": "code"
         }
@@ -257,12 +177,12 @@
         },
         {
           "anchor": {
-            "blob": "22ab4aa0627357a04c04fe027fc19236295a6fbd",
+            "blob": "c21816fc9900af93c5914a9744230e9902cb2ace",
             "content": "sha256:b8358bf9bc8da311e37ff10edaef3b14729645b88f3c246ec9844af0899df787",
             "locator": {
-              "end": 75,
+              "end": 73,
               "kind": "line_range",
-              "start": 38
+              "start": 36
             },
             "path": "mcp/src/agents_remember/benchmarks/runner_modules/workspace.py"
           },
@@ -271,14 +191,14 @@
       ]
     },
     "7": {
-      "note": "Codex execution, analysis, service payloads and direct CLI callers.",
+      "note": "Codex execution, analysis, service payloads and direct CLI callers.\n\nAnchor: `` `prepare_benchmarks` `run_codex_benchmark` `build_parser` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "2319cd59f5fe4cb132f6cf2dc90b3c4a2a718e60",
-            "content": "sha256:fe214f765869b8a3469032147d32cd8fd9d90bb5296a3c020b7838afa4bdd4e5",
+            "blob": "232a354e175ed7dce1a51a4a04685b34967bc96f",
+            "content": "sha256:4b5fc66c6ccdd80bf558109a45e8df7f0c59cb9131cfabb2c37c3087384e7761",
             "locator": {
-              "end": 420,
+              "end": 411,
               "kind": "line_range",
               "start": 1
             },
@@ -301,10 +221,10 @@
         },
         {
           "anchor": {
-            "blob": "058b38584bb8c501173d9793dbaeba6a983041e5",
-            "content": "sha256:0b1d16bd033d97dca1890b1d54715d9ed1ccf7c9cd090e0fa521c01d61f1fdd9",
+            "blob": "b2ceba0218303430dd9ea7e088aa1042d8cf6881",
+            "content": "sha256:074626ef256620c852e26ad86f20a7af3081190ccef258e2991ac6e2b7bf2713",
             "locator": {
-              "end": 117,
+              "end": 110,
               "kind": "line_range",
               "start": 1
             },
@@ -314,10 +234,10 @@
         },
         {
           "anchor": {
-            "blob": "ac70f6a036cf924f45dc6928b64e4b359768008e",
-            "content": "sha256:949bd45b95f744a5706a1a6f43402629e963f1189a9aa60bf9307b6ad562e686",
+            "blob": "0705657fbdcdf581c3c67cb0a5c85fdf4e124322",
+            "content": "sha256:0d5086a9cbf2866e8a56481902c085a53c1160a9131336612a876fcad46b4067",
             "locator": {
-              "end": 185,
+              "end": 171,
               "kind": "line_range",
               "start": 1
             },
@@ -341,15 +261,16 @@
       ]
     },
     "8": {
-      "note": "The runtime-asset sync that writes no skill tree.",
+      "note": "The runtime-asset sync that writes no skill tree.\n\nAnchor: `` `sync_runtime_assets` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "c0972a2d2c0e2d6103130df63a7de142c225bdf7",
-            "content": "sha256:5ece4ee308c57cc5e3c0077bbc0629492c3395f44281c9f4b42727fa2a4693b7",
+            "blob": "3719496c69a4705fb80af81b90e468bc37961037",
+            "content": "sha256:eb8a6fe50aea32140e74490263e9cc7dea6f7e18d47b5a7c10cd604a7f1193ba",
             "locator": {
-              "kind": "symbol",
-              "name": "sync_runtime_assets"
+              "end": 139,
+              "kind": "line_range",
+              "start": 107
             },
             "path": "mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py"
           },

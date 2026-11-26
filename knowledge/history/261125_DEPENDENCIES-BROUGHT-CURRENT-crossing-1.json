@@ -1,0 +1,98 @@
+{
+  "closed": true,
+  "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-1",
+  "rows": [
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-103A0D",
+      "items": [],
+      "reason": "Reconfirmed docs/features.md across the clean merge of BUG-L44 (3ee3b10c9) and DEP-L7 (b30330984); both parents audited disjoint stands_on files unchanged.",
+      "revision": 27,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-DT4RRS",
+      "items": [],
+      "reason": "Reconfirmed docs/reference/mcp-tools.md across the clean merge of BUG-L44 (3ee3b10c9, lines 580/619-623/651-660 retire_child) and DEP-L7 (b30330984, EnclosurePublicationArtifacts unchanged).",
+      "revision": 24,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-K9Q3X6",
+      "items": [],
+      "reason": "Reconfirmed docs/concepts.md across the clean merge of BUG-L44 (3ee3b10c9) and DEP-L7 (b30330984); both parents audited disjoint stands_on files unchanged.",
+      "revision": 25,
+      "subject": "DPD-71WYH4"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "sharedRevisions": [
+    {
+      "record": "DPD-71WYH4",
+      "revision": 24
+    },
+    {
+      "record": "DPD-EG5TYT",
+      "revision": 26
+    },
+    {
+      "record": "DPD-X6G7K3",
+      "revision": 23
+    }
+  ],
+  "written": [
+    {
+      "contentDigest": "sha256:3359fa61d449513c91ab346e91752af846d18f0efde86127739a5d0e29458fab",
+      "record": "DPD-71WYH4",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-26T04:05:27+01:00",
+        "by": "agent",
+        "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-1",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:80eb49a36434cb42e14bfad5ca62515e8435722b4e91f7178bd72b601279d11e",
+      "record": "DPD-EG5TYT",
+      "revision": 27,
+      "writer": {
+        "at": "2026-11-26T04:05:27+01:00",
+        "by": "agent",
+        "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-1",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:f778d14198c7109e157113d6789779a6883a8e2dfc735a520dde7915a0f33363",
+      "record": "DPD-X6G7K3",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-26T04:05:27+01:00",
+        "by": "agent",
+        "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-1",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+        "task": "261125-DEP"
+      }
+    }
+  ]
+}

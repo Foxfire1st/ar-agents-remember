@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b1231febf1d6b5fd0fbfd9f0207fd50d14eaac97",
+        "blob": "73de600ee8a091007157f8a1f411e6bb1ec4bcdd",
         "content": "sha256:8f97b8736e3077d6cd3d58273f0394e32b8ed81d887a90feccddeb3ea517680f",
         "locator": {
           "kind": "symbol",
@@ -22,14 +22,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The row's bound and fields come from the production lookup and projection, and both stored cases are operation-produced.",
+      "note": "The row's bound and fields come from the production lookup and projection, and both stored cases are operation-produced.\n\nAnchor: `` `L112FinalRowProductionTests` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "b1231febf1d6b5fd0fbfd9f0207fd50d14eaac97",
-            "content": "sha256:bac198d8e64a01f148de9a3029f50320c02a66dc5cade17ec412111fc93fef3b",
+            "blob": "73de600ee8a091007157f8a1f411e6bb1ec4bcdd",
+            "content": "sha256:f0323904eed7c43489efd5ddb39ee982137dbcec65af111f3723166c65306aac",
             "locator": {
-              "kind": "file"
+              "end": 118,
+              "kind": "line_range",
+              "start": 71
             }
           },
           "kind": "test"
@@ -37,14 +39,16 @@
       ]
     },
     "2": {
-      "note": "An over-bound install answer overflows through the unchanged guard and leaves one guard-cut log line.",
+      "note": "An over-bound install answer overflows through the unchanged guard and leaves one guard-cut log line.\n\nAnchor: `` `test_row_bound_governs_install_overflow` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "b1231febf1d6b5fd0fbfd9f0207fd50d14eaac97",
-            "content": "sha256:bac198d8e64a01f148de9a3029f50320c02a66dc5cade17ec412111fc93fef3b",
+            "blob": "73de600ee8a091007157f8a1f411e6bb1ec4bcdd",
+            "content": "sha256:4414dc6efa6035b75f53e78ce322772bec40b1fed5e7e8d9151c2e5fe746cae7",
             "locator": {
-              "kind": "file"
+              "end": 144,
+              "kind": "line_range",
+              "start": 120
             }
           },
           "kind": "test"

@@ -2,14 +2,14 @@
   "path": "mcp/src/agents_remember/certification",
   "references": {
     "1": {
-      "note": "`certification` is a present rank-3 package between `models` and `controlplane`; its charter excludes concrete profiles, executors, lifecycle terminalization, and memory gates.\n\nAnchor: \"order = [\"; \"[package.certification]\"",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): `certification` is a present rank-3 package between `models` and `controlplane`; its charter excludes concrete profiles, executors, lifecycle terminalization, and memory gates.\n\nAnchor: `\"order = [\"; \"[package.certification]\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
-            "content": "sha256:7fbfe65d4b92b95c168281da361e235a8930ebaecf12fdba62b16ec555b83037",
+            "blob": "84e6d16dce258302a255f01dcf9ee9347dbdb793",
+            "content": "sha256:44b00d9d97550360453307de54e2e08eb7f3e4a2a633eb5f90c3d64bd38ba722",
             "locator": {
-              "end": 59,
+              "end": 58,
               "kind": "line_range",
               "start": 32
             },
@@ -19,12 +19,12 @@
         },
         {
           "anchor": {
-            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "blob": "84e6d16dce258302a255f01dcf9ee9347dbdb793",
             "content": "sha256:1d7d7942545bec7048e03ae455cfc1ed1c60f100ba241e475e70d6929ac4840b",
             "locator": {
-              "end": 114,
+              "end": 113,
               "kind": "line_range",
-              "start": 105
+              "start": 104
             },
             "path": "layers.toml"
           },
@@ -107,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "blob": "84e6d16dce258302a255f01dcf9ee9347dbdb793",
             "content": "sha256:ea4c583ca1572b666e228c4fbd43237996b4b2b7ecaf78b63574336fafa1c993",
             "locator": {
               "end": 27,
@@ -120,12 +120,12 @@
         },
         {
           "anchor": {
-            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "blob": "84e6d16dce258302a255f01dcf9ee9347dbdb793",
             "content": "sha256:b35aac839e0f72e0abbda765a747cd634564302d12129ddacc80cc4062bccf9e",
             "locator": {
-              "end": 125,
+              "end": 124,
               "kind": "line_range",
-              "start": 105
+              "start": 104
             },
             "path": "layers.toml"
           },
@@ -199,7 +199,7 @@
       ]
     },
     "15": {
-      "note": "Memory rails remain a required catalog-derived port; default composition retains knowledge services without prepared-memory or continuation bindings.",
+      "note": "Memory rails remain a required catalog-derived port; default composition retains knowledge services without prepared-memory or continuation bindings.\n\nAnchor: `` `prepare_certification_records` `_bound_memory_rails` `CertificationMemoryRailsAdapter` `build_default_worktree_services` `gate_five_memory_rails` ``",
       "targets": [
         {
           "anchor": {
@@ -229,12 +229,12 @@
         },
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
             "content": "sha256:edd0f3f43a88fe9d9559a8861bff3eadfb36c57f02840246dc9487001a8ad7d7",
             "locator": {
-              "end": 154,
+              "end": 44,
               "kind": "line_range",
-              "start": 150
+              "start": 40
             },
             "path": "mcp/src/agents_remember/application/worktree_services.py"
           },
@@ -242,12 +242,12 @@
         },
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:c1fcc7b7275328d864f41adaf46a4f6bc1768452e16d885108de9082c1c62b4d",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+            "content": "sha256:d8332a7c6885d84165fac3abe29c0f6f3d81ca117afd19c912d8454858f1bef6",
             "locator": {
-              "end": 240,
+              "end": 129,
               "kind": "line_range",
-              "start": 225
+              "start": 115
             },
             "path": "mcp/src/agents_remember/application/worktree_services.py"
           },
@@ -397,12 +397,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "blob": "84e6d16dce258302a255f01dcf9ee9347dbdb793",
             "content": "sha256:48a6fe4315a114455364609ee650ff807fb63d712f92dba50d27faacf4dbc6e2",
             "locator": {
-              "end": 126,
+              "end": 125,
               "kind": "line_range",
-              "start": 116
+              "start": 115
             },
             "path": "layers.toml"
           },

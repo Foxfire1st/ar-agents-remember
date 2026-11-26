@@ -18,9 +18,9 @@ Instruction map tests load the joined view through this support. The authored ma
 
 ## Evidence
 
-
 - Evidence, retirement and audience checks remain separately expressed. [2]
 
 ### Repo-Internal References (renewed)
+
 
 - Assertions cover source bindings and digest places; clause coverage calls the repository renewal helper clause_coverage_error. [1]

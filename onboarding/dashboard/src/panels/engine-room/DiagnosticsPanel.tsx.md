@@ -4,7 +4,6 @@
 
 [engine-room overview](overview.md)
 
-
 ## Current enclosure-only composition
 
 The panel renders phase and health, code source/worktree refs, optional source lineage, diagnostic actions, missing facts and source files. Summary, next action and memory source/worktree refs remain optional. Setup/currentPhase/heartbeat rows, completed/failed phase lists, the Seed row and the powering-down presentation are removed; there is no gate responder.
@@ -26,8 +25,6 @@ restore removed provider visuals or tool exposure.
 The prior onboarding below is retained for provenance and unrelated design history.
 It is not current provider-render, fallback, prototype-parity or execution guidance.
 Current behavior and its limits are the operative contract above.
-
-
 
 Renders the diagnostics column for one enclosure pod in slice 5e's Engine Room process map. It presents the server-composed `EngineProcessNode` as read-only facts — phase/health, the four code/memory commit refs with their fact-state honesty, provider-setup progress, completed/failed phases — plus a "Missing observability" notice, action availability, and the contributing source files. Task 11 makes it the Engine Room's secondary gate-response surface: worktree-bound projected gates render compact `GateResponder`; non-gate actions remain display-only affordances. The panel re-derives nothing except one presentation-only `poweringDown` flag (slice 5k F3): during the power-down phases (`cleanup-pending`/`abandoned`) the providers are being torn down, so the diagnostics show "powering down" instead of an "ok" provider line and de-emphasize the now-stale completed-phase lines. That flag is derived from `node.phase` on the frontend because the live runtime is pre-05m and sends no power-down signal of its own.
 
@@ -59,8 +56,10 @@ Two exports, both presentational (no state, no effects, no mutation).
 - `poweringDown` flag (`cleanup-pending`/`abandoned`) drives the "powering down" setup line and the muted `◦` completed-phase glyph (5k F3) [3]
 - `EngineProcessNode` / `CommitRefNode` / `ProcessFactState` source shapes [4]
 - `Affordance` display-only action button (aria-disabled, no POST) [5]
-- `fmtWait` formats `heartbeatAgeSeconds` into s/m/h/d [7]
-- `factChip`, `diagPanel`, `diagRow`, `diagKey`, `diagValue`, `missingNotice`, `missingTitle`, `phaseLineList`, `actionRow`, `sectionLabel` recipes [8]
+
+
+- factChip, diagPanel, diagRow, diagKey, diagValue, missingNotice, missingTitle, actionRow, sectionLabel recipes [8]
+
 
 ## L23 Source-Lineage Diagnostic
 

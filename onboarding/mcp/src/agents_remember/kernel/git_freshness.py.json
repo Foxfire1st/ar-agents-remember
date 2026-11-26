@@ -141,12 +141,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
+            "blob": "76fdf343384fe0128a7b1258442f62c16bafdaa6",
             "content": "sha256:e4f713a5fc9357e461730c880816fc9867ecc2d1b90bb0dc501adc6098f8db5f",
             "locator": {
-              "end": 98,
+              "end": 97,
               "kind": "line_range",
-              "start": 98
+              "start": 97
             },
             "path": "mcp/src/agents_remember/models/context_packet.py"
           },
@@ -159,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "blob": "0d7c12cb064a7d164e1ecca251248732d34041d2",
             "content": "sha256:fbd4498c88eedc397bb24db68c2120b0d809d1c230470f630ff906e46f2ad27a",
             "locator": {
               "kind": "symbol",

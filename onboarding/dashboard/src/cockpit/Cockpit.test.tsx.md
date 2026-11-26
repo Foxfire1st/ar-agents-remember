@@ -103,118 +103,45 @@ No relevant domain documentation was found for this file.
 
 ### Repo-Internal References
 
-
-
-
-
 - The suite mounts the shell and switches views through the mode bar. [13]
-
-
-
-
-
 
 
 - The layout matrix sources the retained pages only through their injected views. [14]
 
 
-
-
-
-
 - The view list the bar renders. [15]
-
-
-
 
 - Direct/master/child/worktree-bound body hydration stays revision-owned through task deltas and late A-to-B responses. [31]
 
-
-
-
-
-
-
-
 - `CockpitShell` under test, and the `fullBleed` derivation the rails-hide cases exercise. [28]
-
-
-
-
-
 
 - `GALLERY` fixtures + the `applySnapshot` hydration pattern. [29]
 
-
-
-
 - The shared jsdom stubs the render relies on. [30]
-
-
-
 
 - The current Chats case proves existence of a `role-chats-pane` node, no Sessions route or old-chat selector, and same-node hide/reveal persistence. [32]
 
-
-
-
-
 - The Chats view mounts one `<RoleChatsPane>` inside its persistent chats layer; the document rail (`DocumentChat.tsx`) mounts the same pane for its bound selection. [33]
-
-
-
 
 - Header totals use published taskCounts, retaining the zero paused bucket but showing unknown only while populated. [34]
 
-
-
-
 - `railProjection` / `WARN_ROW` and the three rail cases: differing dot markup, `getByRole("img", { name: "Severity: warn" })` + `getByRole("option", …)`, and the scoped `axe.run`. [35]
-
-
-
-
 
 - The `role="img"` + `aria-label` wrapper (`severityMark`, `data-testid="attn-severity"`) the accessibility-tree assertion targets. [36]
 
-
-
-
 - The task-state mark labels itself Task progress: <statusLabel(taskStatusKey(entry))> with no phase suffix. Presentation takes the served activity when present, otherwise the served stage. The Cockpit accessibility case asserts a React Aria option named Task progress: paused before opening the attention layer, preserving the row-name absorption behavior rather than a lifecycle-phase label. [37]
-
 
 - Typed entry/summary/projection builders keep the composition fixtures checked against the served contract; the former taskDoc/metricsFor anchors are retired.
 
 - Sidebar selection reveals each native task, focuses and marks its option aria-selected=true, and invokes scrollIntoView three times for first/second/first selections. [43]
 
-
-
-
-
-
 - The toggle cases assert the same document-chat node across the River/Chat switch. [40]
-
-
-
-
-
-
 
 - Both rail asides stay mounted under full-bleed views. [41]
 
-
-
-
-
-
-
 - The mounted shell and actual stylesheet omit the scanline layer while retaining pulse and the effects-off freeze. [42]
 
-
-
-
 - The initial-nonzero case asserts one notice and no works/paused wording; the separate transition case asserts initial figures, notice/no works at one, and only notice removal on return to zero. No restored figures or native host availability are asserted. [44]
-
 
 ### Cross-Repo References
 

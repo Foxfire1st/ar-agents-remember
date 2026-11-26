@@ -4,14 +4,27 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Timeline selectors and choreography.\n\nAnchor: `useEngineTimeline` `buildFx`",
+      "note": "Timeline selectors and choreography.\n\nAnchor: `buildFx`, `useEngineTimeline`, `Source`: `dashboard/src/panels/engine-room/useEngineTimeline.ts:78-231`",
       "targets": [
         {
           "anchor": {
-            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
-            "content": "sha256:82c690fd7471b9257e5261727d2d052ab81ac1eb4725670708637e6bedfc22f6",
+            "blob": "57d37b97823e0b7bec930015b4ff52793eaf0da2",
+            "content": "sha256:f6890e477327cf02ee57c7eee626f5806ae0c3317c34ace266c05236ed99fd93",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "buildFx"
+            },
+            "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d37b97823e0b7bec930015b4ff52793eaf0da2",
+            "content": "sha256:42a580b2d43b802623baf299778905d1334edb1f54d8b1592e27ab5d14b54b64",
+            "locator": {
+              "kind": "symbol",
+              "name": "useEngineTimeline"
             },
             "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
           },
@@ -20,16 +33,16 @@
       ]
     },
     "2": {
-      "note": "Visual isolation regressions.",
+      "note": "Visual isolation regressions.\n\nAnchor: `isolates repeating transforms from the text-heavy structural SVG`, `Source`: `dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx:67-80`",
       "targets": [
         {
           "anchor": {
-            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
-            "content": "sha256:35808bb5b8bf713bc5c4fb94b68b0781f50226043fe85b83001b092fd8d007b9",
+            "blob": "a1ac7b1527759b668aee52472c6db27a07a191b6",
+            "content": "sha256:ceda5b9f338cf6be411972434d99f541da9db3a525ce5b810270ae1233887b17",
             "locator": {
-              "end": 89,
+              "end": 80,
               "kind": "line_range",
-              "start": 73
+              "start": 67
             },
             "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
           },

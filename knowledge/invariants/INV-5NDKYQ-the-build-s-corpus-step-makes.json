@@ -25,9 +25,19 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The build's corpus step makes no call through a tool server that does not report exactly the sandbox's coordination root and Projects folder, exactly the one repository `sandbox-app`, and no provider.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "The build's corpus step makes no call through a tool server that does not report exactly the sandbox's coordination root and Projects folder, and exactly the one repository `sandbox-app`.",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-25T22:16:56+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "2424643a-91e9-4c95-ab58-87443229a30b",
+    "task": "261125-DEP"
+  }
 }

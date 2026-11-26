@@ -4,14 +4,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The walk calls each step exactly as its guidance gave it, then again with only the arguments it omitted.",
+      "note": "The walk calls each step exactly as its guidance gave it, then again with only the arguments it omitted.\n\nAnchor: `` `_as_given_call` `_record` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
-            "content": "sha256:9092354fb66b9838eb70a15c295bd38aebeff2dcce7914daa611db4e40bd5a43",
+            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "content": "sha256:a9a16530b4dbb4f54e02bde390beadb00ce5b1c7259f1b399146f7eae35f0821",
             "locator": {
-              "kind": "file"
+              "end": 718,
+              "kind": "line_range",
+              "start": 657
             }
           },
           "kind": "test"
@@ -19,14 +21,16 @@
       ]
     },
     "2": {
-      "note": "The callability population is the union of each hop's guidance and each response's own operational triple.",
+      "note": "The callability population is the union of each hop's guidance and each response's own operational triple.\n\nAnchor: `` `callability_population` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
-            "content": "sha256:9092354fb66b9838eb70a15c295bd38aebeff2dcce7914daa611db4e40bd5a43",
+            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "content": "sha256:12f7b894c72792bed3d39a30618573b10ef04a57e8c34f02379785736ee9c831",
             "locator": {
-              "kind": "file"
+              "end": 935,
+              "kind": "line_range",
+              "start": 920
             }
           },
           "kind": "test"
@@ -34,14 +38,16 @@
       ]
     },
     "3": {
-      "note": "A call's failure arm is decided by model identity: the tool's own argument model is the caller's error, any other raise lost the envelope.",
+      "note": "A call's failure arm is decided by model identity: the tool's own argument model is the caller's error, any other raise lost the envelope.\n\nAnchor: `` `classify_call` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
-            "content": "sha256:9092354fb66b9838eb70a15c295bd38aebeff2dcce7914daa611db4e40bd5a43",
+            "blob": "0cb670e8f8ee4bf597b7ee967e96f27fe2fdf4c4",
+            "content": "sha256:0ee2d21f21da02bc6ba63b35a0771b77bf34798644f7bbf67276c62918967124",
             "locator": {
-              "kind": "file"
+              "end": 204,
+              "kind": "line_range",
+              "start": 190
             }
           },
           "kind": "test"

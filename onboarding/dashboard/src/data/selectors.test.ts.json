@@ -4,12 +4,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "`selectQueue` coverage includes empty analytics and optimistic suppression.",
+      "note": "`selectQueue` coverage includes empty analytics and optimistic suppression.\n\nAnchor: `describe('selectQueue'`, `Source`: `dashboard/src/data/selectors.test.ts:27-66`",
       "targets": [
         {
           "anchor": {
-            "blob": "70a2eefdee55f063cf7c35d901015a94a41ade85",
-            "content": "sha256:686105c37f75ec2bf71e3b241c6ff7aae87f15eb834248afadf134fe89e95a09",
+            "blob": "72927fe58c9ea61e161bbef5baa922a3ae030a81",
+            "content": "sha256:c99f7b475078c64d303a74704ae1860a4c81cc208327725679e0af7621eefd94",
             "locator": {
               "end": 66,
               "kind": "line_range",
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "70a2eefdee55f063cf7c35d901015a94a41ade85",
+            "blob": "72927fe58c9ea61e161bbef5baa922a3ae030a81",
             "content": "sha256:125b2d5e62d6f77a1881f1a5a3266e19d6faf890d2e6d25ae70a049d4651dae7",
             "locator": {
               "end": 15,
@@ -37,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "70a2eefdee55f063cf7c35d901015a94a41ade85",
+            "blob": "72927fe58c9ea61e161bbef5baa922a3ae030a81",
             "content": "sha256:e3ddf58f7626e130cf541d6d4abb0685664560640ad1b8275e5157c1446a909f",
             "locator": {
               "end": 25,
@@ -50,14 +50,15 @@
       ]
     },
     "3": {
-      "note": "The selector under test caches and filters attention rows.\n\nAnchor: `selectQueue`",
+      "note": "The selector under test caches and filters attention rows.\n\nAnchor: `selectQueue`, `Source`: `dashboard/src/data/selectors.ts:30-43`",
       "targets": [
         {
           "anchor": {
-            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
-            "content": "sha256:f9a468be21f745ce68abb4692d7cff78eddbba96844874c4ee80194c83731e5e",
+            "blob": "9617eba1ee8643ee7f2d8cc5d7899aaf75a28202",
+            "content": "sha256:1ccfefd5d269c5980751cf575af0d97705f22069829d2f62172dd517005fb00b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "selectQueue"
             },
             "path": "dashboard/src/data/selectors.ts"
           },
@@ -66,14 +67,15 @@
       ]
     },
     "4": {
-      "note": "Converted drift segments order current, stale and violation with exact shares.\n\nAnchor: `driftSnapshot`",
+      "note": "Converted drift segments order current, stale and violation with exact shares.\n\nAnchor: `driftSnapshot` / `describe('driftSegments on converted snapshots'`, `Source`: `dashboard/src/data/selectors.test.ts:68-86`",
       "targets": [
         {
           "anchor": {
-            "blob": "70a2eefdee55f063cf7c35d901015a94a41ade85",
-            "content": "sha256:64b99fc3efcb621a2f7cb4e76998bb2af31c128c15dd3c58bd7512b287ee3aa9",
+            "blob": "72927fe58c9ea61e161bbef5baa922a3ae030a81",
+            "content": "sha256:b1e9030b82d9088162630279757efab9006955e8ebcf576b537a7317d7083ad6",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "driftSnapshot"
             }
           },
           "kind": "test"

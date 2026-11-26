@@ -25,12 +25,9 @@ The refusal driver supplies the canonical absent-task grant failure input withou
 
 - The driver checks failure_invocations against PUBLIC_TOOLS for missing and extra names before calling each roster tool, then records kind, delivered payload and logged whole result; it arranges no session lifecycle.
 
-
-
 ## Synced current-source qualification
 
 The new-base direct_execution_grant entry is an absent-task action=give stimulus, not successful grant creation or permissions evidence.
-
 
 ## Historical original card — preserved, not the current operative account
 
@@ -122,8 +119,8 @@ The anchors below identify current behaviour of this module; they are not execut
 they make no acceptance claim.
 
 
-
 - One production failure invocation per advertised tool, keyed by tool name and asserted equal to the roster in both directions. [1]
+
 
 
 - The driver: roster equality first, then one drive per tool, with the lifecycle arranged so `lifecycle_start`'s own failure path is measured. (Historical caption; obsolete.)
@@ -131,18 +128,15 @@ they make no acceptance claim.
 - A contract-shaped path outside the coordination root, for the confinement refusals. [4]
 
 
-- The fixture document addresses a tool must resolve to reach a later refusal. [5]
 
+- The fixture document addresses a tool must resolve to reach a later refusal. [5]
 
 
 - The advertised roster the table is asserted equal to before anything is driven. [6]
 
-
 - The hermetic world every invocation addresses, shared with the benign sweep. [7]
 
-
 - The conformance check that drives the refusal table and asserts every failure path answers in one of the four named shapes: typed refusal, stateful refusal, always-answer or raiser. [8]
-
 
 ### Cross-Repo References
 
@@ -154,13 +148,10 @@ No repository or external-system boundary is proved by this module.
 </details>
 
 
-
 - The direct-landing failure input includes its explicit absent canonical leaf. [9]
 
 
-
 ## Current source evidence
-
 
 
 - The failure table includes user_settings_init with target host-authority as a refusal input, not successful host or settings execution. [10]

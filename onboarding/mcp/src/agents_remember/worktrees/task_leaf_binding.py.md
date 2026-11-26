@@ -62,9 +62,7 @@ No configured domain-documentation source applies to this repository-internal ro
 
 > Retained earlier citation wording: - The start/attach publisher that is the named recovery, and therefore the operation that actually binds the field. [7]
 
-
 - The shared _leaf fixture carries both derived fields, seriesContractPath and the enclosure row, as task_doc stamps them against a leaf contract, so it does not model the damage state that start repairs. [8]
-
 
 ### Cross-Repo References
 
@@ -75,12 +73,9 @@ No meaningful cross-repository boundary is owned by this file.
 > **Retained historical source account — superseded by the current contract:**
 > Leaf binding now resolves the canonical parent row to one exact JSON task document, plans enclosure registration, and returns typed repair facts before closeout. Missing or mismatched bindings fail closed without sibling scans or compatibility fallbacks.
 
-
 - Mutating recovery is offered only for an established safe leaf target: task_doc.replace carries repo_id, contract_path, the exact leaf slug and required fields. A parent task.json or unavailable safe slug yields file-repair prose/path without a guessed nextTool. The separate master-link-missing start/attach remedy retains its own authority. Observation reads canonical files, never the removed task_doc.get. [9]
 
-
 ## Current source evidence
-
 
 - Registration planning preserves or normalizes a typed binding failure before publication. [10]
 

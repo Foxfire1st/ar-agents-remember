@@ -1,0 +1,101 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "D1000/D1001 chose full removal of CGC/GrepAI and routing leftovers through removed_stores and unusedSettingsKeys over keeping the L166/L192 half-retired safety loop, constraining future work not to restore provider safety loops or provider-specific cleanup/settings routes."
+  },
+  "alternatives": [
+    {
+      "option": "Remove CodeGraphContext and GrepAI completely (package, dashboard _metrics_loop safety loop, providers-remove CLI, tool parameters, and active settings schemas), reporting pre-existing provider folders through removed_stores and tolerating legacy keys via unusedSettingsKeys.",
+      "reason": "Eliminates dead maintenance surface and unused runtime loops while preserving non-destructive upgrade visibility for older installations and backwards compatibility for stored settings and pre-removal cleanup archives.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the half-retired providers package, periodic _metrics_loop safety loop, and providers-remove command from L166/L192.",
+      "reason": "Retains unused code, background safety polling, and provider-specific CLI/tool/settings plumbing for two providers that have zero product use.",
+      "reconsider_when": "The developer directs introducing a new managed code-search provider with an active runtime owner.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Supersedes DEC-ZS4FH6; the dashboard no longer runs a periodic provider safety metrics loop.",
+    "Pre-existing installation provider directories are surfaced via removed_stores without automatic deletion, and legacy settings keys load unread into unusedSettingsKeys.",
+    "Future work must not restore CGC/GrepAI provider loops, provider-specific cleanup commands, or removed provider tool parameters without a new developer decision."
+  ],
+  "context": "CodeGraphContext (CGC) and GrepAI were already half-retired with zero use, yet their 57-module package, dashboard _metrics_loop safety loop, install watcher stop, providers-remove CLI, tool parameters, and settings schemas remained in the product.",
+  "decider": "Developer rulings D1000, D1001, and D1005 (2026-11-25), released as DEP-R02@v1.",
+  "id": "DEC-ZGGT0G",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "id": "DEP-R02",
+        "packet": "requirements/DEP-R02-v1-cgc-and-grepai-leave-the-product-with-the-dead-code.md",
+        "task": {
+          "path": "261125_dependencies-brought-current",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "49abd7dedfb211e2a1da7ba9ee529b133fc1cf74",
+        "content": "sha256:f37a3ef714f628548e6d3cbf9c1499fc3852a29c8d5bd11995f0789112e7cd35",
+        "locator": {
+          "kind": "symbol",
+          "name": "removed_part_stores"
+        },
+        "path": "mcp/src/agents_remember/install/removed_stores.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
+        "content": "sha256:c56ab3ab1a0bdf7e8b4a0d44faf2f541803bdf544715bae75a1658a79287bf48",
+        "locator": {
+          "kind": "symbol",
+          "name": "parse_timeout_caps"
+        },
+        "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-FBATD2"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-TDHAD1"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-records-pass1.json"
+    },
+    "handoffEntry": "dec-dep-r02-provider-removal",
+    "leaf": "261125-DEP-L2",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [
+    "DEC-ZS4FH6"
+  ],
+  "writer": {
+    "at": "2026-11-25T22:16:56+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "2424643a-91e9-4c95-ab58-87443229a30b",
+    "task": "261125-DEP"
+  }
+}

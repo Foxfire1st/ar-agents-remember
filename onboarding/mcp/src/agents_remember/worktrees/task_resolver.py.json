@@ -118,7 +118,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "blob": "84e6d16dce258302a255f01dcf9ee9347dbdb793",
             "content": "sha256:ded9434595ee95aa22bb7a4663f23ce66d79f845bb753c206d9512e29970ee22",
             "locator": {
               "end": 25,
@@ -412,16 +412,27 @@
       ]
     },
     "8": {
-      "note": "`start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root.  Anchor: \"def load_contract_from_args\"",
+      "note": "`start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root.  Anchor: \"def load_contract_from_args\"\n\nAnchor: `load_contract_from_args`, `contract_path_from_args`",
       "targets": [
         {
           "anchor": {
-            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
-            "content": "sha256:9ab16fc26f934c5e47684cfeba501df083e453eb77d02c681871ad3716de9d5b",
+            "blob": "d82486d1c983c96522546f0cbd679f0eee4dbc60",
+            "content": "sha256:c1c83640701904e09ab79d92ca6e296b5f51d9bef532c8f7062c1a061b82ff8b",
             "locator": {
-              "end": 165,
-              "kind": "line_range",
-              "start": 136
+              "kind": "symbol",
+              "name": "load_contract_from_args"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d82486d1c983c96522546f0cbd679f0eee4dbc60",
+            "content": "sha256:3f19162064cca36ceb142ed7eacb4a2f674c69d01e1ac9de37b61b58469adbc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "contract_path_from_args"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },

@@ -176,7 +176,6 @@ External language references retained for reading only: [TypeScript Wiki — Usi
 
 ### Repo-Internal References
 
-
 - The header: seven one-token opt-outs, why three of them carry no assertion at all, what makes the sweep fail-closed, and the rule scopes. [1]
 
 - `WHAT THIS DOES NOT COVER`, items 1-5. [2]
@@ -194,6 +193,7 @@ External language references retained for reading only: [TypeScript Wiki — Usi
 - `excessPropertyVerdict` — undeclared properties, and the union blend no single member declares. [12]
 - `reconcileWithRegistry` — unregistered / spent / miscounted / unreasoned. [13]
 
+
 - The registry, planted bypasses and vacuity checks this module deliberately does not own. [14]
 
 
@@ -202,10 +202,7 @@ External language references retained for reading only: [TypeScript Wiki — Usi
 - Gap 3, live: the first line is a "Same-origin client for …" header, not a `mirror of` marker, so nothing this module declares enters the vocabulary. [16]
 - Same, for the read-only files API client. [17]
 
-
-
 - The coordination-notes client declares FolderEntry, NotesFolder and NoteContent under its Same-origin client header; NoteContent now also carries media metadata and a media URL. [18]
-
 
 - Gap 5's answer: the call-site constraint the builders carry instead of the project-wide flag. [21]
 
@@ -214,6 +211,5 @@ External language references retained for reading only: [TypeScript Wiki — Usi
 No cross-repository boundary. The sweep runs entirely over `dashboard/` sources in this repository; the
 "wire" it polices is a Python↔TypeScript seam inside `agents-remember`, and the TypeScript compiler is a
 devDependency rather than a system boundary.
-
 
 - The scanned roots are all inside `dashboard/`; nothing outside this repository is read. [22]

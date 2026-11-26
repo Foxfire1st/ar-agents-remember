@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2ce4c1ebd56b1a68e30cc4ee26cc64ec6bd73207",
+        "blob": "9f7b29c46e811dd7ef86ffbd58f885b1cd8178ce",
         "content": "sha256:ac03a20a143b20e320df1e812ada390104c3497242c07c92ab67bd174fb37821",
         "locator": {
           "kind": "symbol",
@@ -22,28 +22,26 @@
   ],
   "references": {
     "1": {
-      "note": "Real starts distinguish terminal start from background provider setup while preserving task-addressed guidance.",
+      "note": "Real starts return a terminal started state with task-addressed worktree_status guidance, distinct from non-mutating previews.\n\nAnchor: `StartedWorktreeState`, `started_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "2ce4c1ebd56b1a68e30cc4ee26cc64ec6bd73207",
-            "content": "sha256:276e3be751deaaa7d12f03511c4776e5bb1fee9a543bacbb168b8a8df57e7f6e",
+            "blob": "9f7b29c46e811dd7ef86ffbd58f885b1cd8178ce",
+            "content": "sha256:da6cb97d86ad433dd9c5736bbef44415081dac7f8a34709dd981f0a934b63c78",
             "locator": {
-              "end": 73,
-              "kind": "line_range",
-              "start": 30
+              "kind": "symbol",
+              "name": "StartedWorktreeState"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2ce4c1ebd56b1a68e30cc4ee26cc64ec6bd73207",
-            "content": "sha256:3a7a7fe0fa4ea5879369888317d2d673ec0dec7a829a1e0bc00075d232927b9d",
+            "blob": "9f7b29c46e811dd7ef86ffbd58f885b1cd8178ce",
+            "content": "sha256:a3f2ab56f2f3c69c2e73f054990a844b46197f73cdea9cbb99add56765beca20",
             "locator": {
-              "end": 55,
-              "kind": "line_range",
-              "start": 20
+              "kind": "symbol",
+              "name": "started_result"
             }
           },
           "kind": "code"
@@ -51,12 +49,12 @@
       ]
     },
     "2": {
-      "note": "Preview builds the explicit apply packet and common task identity without mutation.",
+      "note": "Preview builds the explicit apply packet and common task identity without mutation.\n\nAnchor: `_start_preview_result`, `_start_result_facts`",
       "targets": [
         {
           "anchor": {
-            "blob": "2ce4c1ebd56b1a68e30cc4ee26cc64ec6bd73207",
-            "content": "sha256:69c936038c913fc60962e81e12bf8d893df6758bacd3a22f2493ccabf85fcd24",
+            "blob": "9f7b29c46e811dd7ef86ffbd58f885b1cd8178ce",
+            "content": "sha256:59ab7552cdebd9d03758e29773d8ab9a4c553ff9284957a08a58348f6824601c",
             "locator": {
               "kind": "symbol",
               "name": "_start_preview_result"
@@ -66,8 +64,8 @@
         },
         {
           "anchor": {
-            "blob": "2ce4c1ebd56b1a68e30cc4ee26cc64ec6bd73207",
-            "content": "sha256:c13ad15a30eb4f48ec0dcad6a26221d22686865d5d77690222afc6d9510d8515",
+            "blob": "9f7b29c46e811dd7ef86ffbd58f885b1cd8178ce",
+            "content": "sha256:3c2537dccb58d51be9d1fda7c37b5d09b3373935f17adabbb427c8ac02a3bf04",
             "locator": {
               "kind": "symbol",
               "name": "_start_result_facts"

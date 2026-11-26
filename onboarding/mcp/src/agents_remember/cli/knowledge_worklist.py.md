@@ -56,7 +56,6 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-
 - Contract mode uses both recorded bases and persists beside the leaf contract. Explicit mode compares the four named sides and writes only a named output. Both print JSON; exit statuses distinguish complete, incomplete and nonapplicable comparisons. [1]
 
 - The arguments. [2]

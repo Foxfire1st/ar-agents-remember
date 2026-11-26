@@ -18,9 +18,8 @@ not a second response shape in this file.
 
 `RuntimeInstallResponse` remains flexible because install reports include
 summary and message blocks from installer services; it also
-declares an optional `reportPath` — the full install detail (watcher rebind
-runs, compose renders, transcripts) is filed under `temp/tool-reports/` while
-the inline payload keeps counts and a compact rebind digest.
+declares an optional `reportPath` — the full install detail (host provisioning, dashboard state, removed-store inventory) is filed under `temp/tool-reports/` while
+the inline payload keeps counts and a compact summary.
 It declares a `runningServers` list of `core.RunningServerPayload` rows, empty by default, and an
 optional flexible `dashboard` part reporting the action install took (or would take, on a dry run)
 for a running dashboard with its detail and, when known, its pid and source digest.
@@ -37,14 +36,9 @@ This module declares no memory-mode field. Runtime install may retain flexible p
 
 ### Repo-Internal References
 
-
-
 - Runtime install application entry point produces the installer response payload. [1]
 
-
-
 - The retired coordination tool's former computation, kept for its one remaining script caller and not registered as an MCP tool. [2]
-
 
 ## The host part of the install response
 

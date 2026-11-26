@@ -10,7 +10,7 @@ Shared lifecycle types also own CommitPublicationRefusal, parent of exact-tree a
 
 ## Code Commentary
 
-`WorktreeCommandResult` supplies the MCP/CLI result envelope. `WorktreeProviderSetupConfig` carries application-derived setup roots and owns the optional delayed temporary-settings unlink flag. Legacy `SidecarBodyClassification` and `RouteOverviewBodyClassification` DTOs and their operational consumers were removed.
+`WorktreeCommandResult` supplies the MCP/CLI result envelope. Legacy `SidecarBodyClassification` and `RouteOverviewBodyClassification` DTOs and their operational consumers were removed.
 
 `OnboardingRefreshPlan` carries the two-tier closeout split (issue #83):
 `missing`/`unsupported` block and are scoped to working-tree paths, while
@@ -24,10 +24,6 @@ the plans keep full lists internally.
 
 `VerifiedChange` is the frozen commit/date/changed-path/optional-working-path bundle built once by closeout and passed to `external_closeout_commits`. Current external refresh uses `changed_paths` for entity fingerprints and refreshes generated route indexes. The metadata-stamping consumers were removed; the retained DTO docstring alone does not imply an operational stamp.
 
-`WorktreeProviderSetupConfig.unlink_settings_after_setup` (default False)
-marks the settings path as an application-owned temp file whose lifetime must
-extend into the background setup thread, which then owns the unlink
-(GitHub #53).
 
 ## Evidence
 
@@ -37,6 +33,6 @@ No external Domain Documentation source is configured for this memory repo.
 
 ### Repo-Internal References
 
-- MCP skill tools type result envelopes and provider setup config through this facade-exported model. \
+- MCP skill tools type result envelopes through this facade-exported model. \
 
 - Retained frozen DTOs and plan list shapes do not imply the removed legacy classifiers or verification stamping. [2]

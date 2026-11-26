@@ -24,7 +24,6 @@ it does not call these remote/PR probes inline. So the arc still follows a **rea
 
 Within one landing sweep, identical repository/ref ls-remote observations share their answers, including expected probe failures. Unexpected computation exceptions escape to the observation boundary, and a waiter has its own bounded timeout. The next sweep probes afresh because a remote is mutable. This bounds duplicate work without making the remote an immutable object or changing exact participant/PR/ref semantics.
 
-
 `landing_refs(contract)` returns `None` until the worktree reaches the **landing window**
 (`landing_active` — closeout-completed, or integration started, or cleanup begun; its callers
 `landing_refs` and `unobserved_landing_refs` share this gate) — there is nothing
@@ -114,12 +113,9 @@ No external Domain Documentation source is configured for this memory repo.
 
 - `status_payload` calls `landing_refs` and emits its result as the `landing` block. [1]
 
+
 - The `LandingRefNode` schema the emitted dicts map onto + the `EngineProcessNode.landing` field. [2]
 - The reducer composer that reads `status["landing"]` into the node. [3]
-
-
-
-
 
 
 - The bounded off-tick caller: `LandingStateRefresher(observe=landing_refs)`, and the `unobserved_landing_refs` shape the recurring projection renders instead.  Anchor: "observe: LandingObserver = landing_refs" [5]

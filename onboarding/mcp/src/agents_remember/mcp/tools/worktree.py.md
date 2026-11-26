@@ -42,18 +42,13 @@ paused, not what the release writes, and above all not whether anything is publi
 publication in this same module is `worktree_checkpoint_landing_payload`; the two are separate
 builders for separate tools and neither routes to the other.
 
-`worktree_start_payload` now wraps its application entry point result with
-`summarize_command_logs` (imported from `providers.lifecycle.log_capture`)
-before returning, trimming large stdout/stderr from provider setup output that
-would otherwise make the response too large to render.
+`worktree_start_payload` delegates to `summarized_worktree_start_tool` from `application.worktree_tools`.
 
-`worktree_cleanup_payload` now accepts and forwards `teardown_providers`
-(default `True`).
 
 `worktree_abandon_payload` is newly added; it forwards `contract_path`,
 `dry_run`, and `force` to `worktree_abandon_tool`.
 
-`worktree_start_payload` preserves `StartExecution`, including `retry_provider_setup`; the application forwards that flag into the worktree arguments. Legacy running/retry bookkeeping remains. With readable settings both retired provider IDs stay disabled, so retry planning does not reach an enabled plan or launch CGC/GrepAI. It also forwards `stale_base_choice` — the stale-base preflight recovery selector (GitHub #54). **`worktree_sync_payload` now forwards one paired `resolution: SyncResolutionInput | None`** where it used to forward a bare `resolution_action`: the action and the authored decision it may carry travel as one value through this layer — including the registration's `resolution_action` + `knowledge_resolution` arguments, which it pairs before forwarding — because `application.worktree_tools.worktree_sync_tool` is at the `PLR0913` ceiling and because the two are refused as a pair. Beyond the pairing this adapter owns no journal or selector behavior. `worktree_attach_payload` forwards a new `on_unsaved` argument to `worktree_attach_tool` (slice 2c — the save-gate decision when attaching over an unsaved fleeting lifecycle); plumbing only.
+`worktree_start_payload` preserves `StartExecution` (`dry_run`) and also forwards `stale_base_choice` — the stale-base preflight recovery selector (GitHub #54). **`worktree_sync_payload` now forwards one paired `resolution: SyncResolutionInput | None`** where it used to forward a bare `resolution_action`: the action and the authored decision it may carry travel as one value through this layer — including the registration's `resolution_action` + `knowledge_resolution` arguments, which it pairs before forwarding — because `application.worktree_tools.worktree_sync_tool` is at the `PLR0913` ceiling and because the two are refused as a pair. Beyond the pairing this adapter owns no journal or selector behavior. `worktree_attach_payload` forwards a new `on_unsaved` argument to `worktree_attach_tool` (slice 2c — the save-gate decision when attaching over an unsaved fleeting lifecycle); plumbing only.
 
 ### Parameter Objects (260731-EFA-L2)
 
@@ -102,8 +97,6 @@ No additional file-local TODO is established by this candidate review.
 
 ## Evidence
 
-- Retry input transport and legacy bookkeeping survive; the enablement and launch gates prevent that transport from relaunching either retired provider. [7]
-
 ### Docs References
 
 No Domain Documentation source is configured for this memory root.
@@ -120,7 +113,6 @@ The source itself and its governing route are sufficient for this thin payload a
 - The pause payload builder forwards one contract path to the stop tool and owns no decision; it is the transport edge of the route that publishes nothing. [4]
 
 > Retained earlier citation wording: - **The paired resolution value this builder forwards, and the application entry point that unpacks it into the driver's two arguments.** [5]
-
 
 ### Cross-Repo References
 

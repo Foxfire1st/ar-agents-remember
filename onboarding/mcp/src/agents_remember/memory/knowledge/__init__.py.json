@@ -85,12 +85,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "blob": "84e6d16dce258302a255f01dcf9ee9347dbdb793",
             "content": "sha256:00d440558bd114fff2b419abbdeeb9bb03fa80ef5048aa4a8cb0484ea4784960",
             "locator": {
-              "end": 222,
+              "end": 221,
               "kind": "line_range",
-              "start": 206
+              "start": 205
             },
             "path": "layers.toml"
           },

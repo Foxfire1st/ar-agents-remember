@@ -189,7 +189,6 @@ written. The field is optional, so a document without it loads.
   shows it as a `**Knowledge maintenance scope:** \`true\`` header line.
 - The worklist reads it through `application/knowledge_worklist/leaf.leaf_maintenance_scope`, which uses the strict lookup (`strict_leaf_doc`): a document that exists but cannot be read makes the run `incomplete`, never the default scope.
 
-
 - The worklist reads it, since MIK-R09 through the strict lookup inside the run's fail-closed read (an unreadable document is `incomplete`, never the default scope). [2]
 
 ## The `expectedKnowledgeEffects` Declaration
@@ -218,15 +217,12 @@ the architect's approval) through `task_doc`. Absent means no declaration, and e
 
 - The refusals: a master document, an empty list, a requirementRef naming no packet, and a repeated subject and effect. [4]
 
-
-
 - The shared patterns. [7]
 - The field's tests: optional, normative, settable, rendered and refused when malformed. [8]
 
 ## Current Contract
 
 TaskDocument adds optional independent memoryReviewState typed with the memory-only round validator. In ordinary reads all fields still validate strictly. Only within the context-local launch tolerance, validation errors wholly located under reviewState/memoryReviewState may be retried with those broken lanes temporarily None; all other task identity, plan and topology still validate. Exact raw broken lane values and diagnostics are stored privately, review_read_error exposes the diagnostic, and wrapped serialization restores raw evidence unless include/exclude omits that lane. Begin/record reject that recovered document rather than overwriting damaged review evidence. Recovery restores context binding on exit, not task mutations.
-
 
 The governing workflow opens an independent memory review after CODE PASS on the same task using begin_review/record_review with reviewKind=memory. It has its own immutable baseline and shrinking IDs, under the same settings limit and extra-round approval rule, and never resets code reviewState. This describes the candidate contract, not a claim that the serving build already supports it.
 
@@ -236,16 +232,16 @@ The document API re-exports the review-addition request and amended-round types 
 
 ## Evidence
 
-
 - Reason admission, threshold and differing-harness/model inheritance boundary. [24]
 - Launch scope opts in to review-only tolerance and forwards the same request reason. [25]
+
 - Child start enters the review-tolerance scope after root validation. Context variables do not cross exec. [26]
+
 - Record-only memory identity comes from memory authority, never the sibling code root. [27]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [28]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [29]
 
 - Expected effect requirement references must name a listed stableId/version when typed packet references are present; no packet is resolved by this schema check. [22]
-
 
 ### Docs References
 
@@ -260,10 +256,7 @@ No relevant external documentation was available after checking the configured s
 - The persisted graph delegates admission and waves to one indexed analysis while preserving the schema validation surface. [11]
 - Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans. [12]
 
-
-
 - EvidenceDependencies and its required-kind/currentness and canonical-hash helpers own the R03 declaration vocabulary; preserve the unchanged helper targets while relocating the stale model definition extent. [14]
-
 
 - Derived placement treats a terminal master (`Completed` or `abandoned`) as resolved, so abandonment stops gating its successor segment. [15]
 
@@ -303,16 +296,11 @@ exact evidence bytes.
 - Series progress excludes abandoned rows from the total and reports them separately. [18]
 - Sprint identity includes retired-only masters; seats and integrationBranch use that predicate. [19]
 
-
 ## Investigator in the role vocabulary
 
 The structural role vocabulary uses canonical Investigator. That value keeps task-document ownership, index and seat classification; it does not make a task document or display label into runtime start authority. The launch-selection resolver separately admits Investigator’s non-leaf reference patterns.
 
-
 - Canonical role constants include Investigator at sprint altitude and Reviewer at sprint/master/leaf altitudes; this is role vocabulary, not launch authority. [20]
-
-
-
 
 ## Refreshed current evidence
 
@@ -320,7 +308,6 @@ The structural role vocabulary uses canonical Investigator. That value keeps tas
 - The optional field and its comment. [5]
 
 - The check runs in the document validator. [6]
-
 
 ## Product-Record Decision Marking
 
@@ -331,7 +318,6 @@ and skip-step prefixes). The page matches no text and the stored shape is unchan
 projection carries the marking for the newest-five rule.
 
 Current finalization does not append that exact decision; it stamps own `completedAt` on first completion and retains existing decisions. The exact constant is still a legacy-display classifier, not a current writer contract.
-
 
 - Exact legacy Finalize text and removed/skip-step prefixes still classify product records by text; collisions remain possible. Current finalization stamps own completedAt and leaves logs intact, so this constant is not a claim of current Finalize decision writing. [21]
 

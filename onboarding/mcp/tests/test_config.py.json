@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "bc6db38680e6f27f2053901e91f1193df790f2bd",
+        "blob": "ed984fde64b75b02c05a63e8fa5be0de67c5fbe8",
         "content": "sha256:640e9bc3c1938e741e08d465862f4ffb32bc77c656852bc8d5728c909ee6d4bd",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "bc6db38680e6f27f2053901e91f1193df790f2bd",
+        "blob": "ed984fde64b75b02c05a63e8fa5be0de67c5fbe8",
         "content": "sha256:640e9bc3c1938e741e08d465862f4ffb32bc77c656852bc8d5728c909ee6d4bd",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "bc6db38680e6f27f2053901e91f1193df790f2bd",
+        "blob": "ed984fde64b75b02c05a63e8fa5be0de67c5fbe8",
         "content": "sha256:640e9bc3c1938e741e08d465862f4ffb32bc77c656852bc8d5728c909ee6d4bd",
         "locator": {
           "kind": "symbol",
@@ -51,6 +51,23 @@
         "handoffEntry": "PNT-R01@v1 §1",
         "leaf": "260928-MIK-L90"
       }
+    },
+    {
+      "anchor": {
+        "blob": "ed984fde64b75b02c05a63e8fa5be0de67c5fbe8",
+        "content": "sha256:e2b0f68810d9bbb459d4e88d2db357e1af7968290486185d14e2375a39511eae",
+        "locator": {
+          "kind": "symbol",
+          "name": "McpConfigTests.test_legacy_provider_settings_load_cleanly_and_report_unused_keys"
+        }
+      },
+      "facet": "Legacy settings containing providers, providerDegradation, and timeoutCaps.providerSetupSeconds load cleanly and list those keys in unusedSettingsKeys.",
+      "id": "PRF-WT3WSG",
+      "invariant": "INV-7SARPM",
+      "origin": {
+        "handoffEntry": "DEP-R02@v1 §4",
+        "leaf": "261125-DEP-L2"
+      }
     }
   ],
   "realizes": [],
@@ -60,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc6db38680e6f27f2053901e91f1193df790f2bd",
+            "blob": "ed984fde64b75b02c05a63e8fa5be0de67c5fbe8",
             "content": "sha256:daa371a7bb7719d9e8e9fdaf42f19b54a57adde5e593b325f79bd3663bd108c0",
             "locator": {
               "kind": "symbol",
@@ -76,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc6db38680e6f27f2053901e91f1193df790f2bd",
+            "blob": "ed984fde64b75b02c05a63e8fa5be0de67c5fbe8",
             "content": "sha256:bffca9508dbf7e6a58292a9ac05dacd1785465f5d5f38b6058a3d57277ac6623",
             "locator": {
               "kind": "symbol",
@@ -92,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc6db38680e6f27f2053901e91f1193df790f2bd",
+            "blob": "ed984fde64b75b02c05a63e8fa5be0de67c5fbe8",
             "content": "sha256:40cff312ca5859c0ceaa581152bc307b17c0c875d6334f7bd1732cd8796afa04",
             "locator": {
               "kind": "symbol",
@@ -104,14 +121,15 @@
       ]
     },
     "4": {
-      "note": "The authority settings load.\n\nAnchor: `test_loads_authority_settings`",
+      "note": "The authority settings load.",
       "targets": [
         {
           "anchor": {
-            "blob": "bc6db38680e6f27f2053901e91f1193df790f2bd",
-            "content": "sha256:caadc970655e2d8b874bdf4dca4da0997ee689991e88d98475d0e1a6ecd6e6a4",
+            "blob": "ed984fde64b75b02c05a63e8fa5be0de67c5fbe8",
+            "content": "sha256:ccdb253b7d581efe7c1e30eb5c3830154c3133d2b6922ef77cab8157450badff",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_loads_authority_settings"
             }
           },
           "kind": "test"
@@ -123,7 +141,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc6db38680e6f27f2053901e91f1193df790f2bd",
+            "blob": "ed984fde64b75b02c05a63e8fa5be0de67c5fbe8",
             "content": "sha256:0a41093f08212b5c6c91d970699c3379fae4d5046b369392be47cbf47f2f20e2",
             "locator": {
               "kind": "symbol",
@@ -139,7 +157,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc6db38680e6f27f2053901e91f1193df790f2bd",
+            "blob": "ed984fde64b75b02c05a63e8fa5be0de67c5fbe8",
             "content": "sha256:e3b3b996c6a78c7a3531ae71b08a4c09a4a1910ba614ebe4b4520d29c89245cc",
             "locator": {
               "kind": "symbol",
@@ -155,7 +173,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc6db38680e6f27f2053901e91f1193df790f2bd",
+            "blob": "ed984fde64b75b02c05a63e8fa5be0de67c5fbe8",
             "content": "sha256:76a3c74f06a6b797c2b588747460f0b68af225482a6a70dd7b411e16d0d2a5b1",
             "locator": {
               "kind": "symbol",
@@ -167,14 +185,15 @@
       ]
     },
     "8": {
-      "note": "The optional `paseoRuntime` block's exactness and fail-loud behaviour, including the tolerated retired skill root.\n\nAnchor: `McpConfigTests`",
+      "note": "The optional `paseoRuntime` block's exactness and fail-loud behaviour, including the tolerated retired skill root.",
       "targets": [
         {
           "anchor": {
-            "blob": "bc6db38680e6f27f2053901e91f1193df790f2bd",
-            "content": "sha256:caadc970655e2d8b874bdf4dca4da0997ee689991e88d98475d0e1a6ecd6e6a4",
+            "blob": "ed984fde64b75b02c05a63e8fa5be0de67c5fbe8",
+            "content": "sha256:6db2873087420f53c25ca146c5fac34168a73e79bd251370590be8a99e072848",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "McpConfigTests"
             }
           },
           "kind": "test"

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "edc7edc63f5d05b34445dfe30d8e141ec5300efc",
-    "commit": "a2f0fced8896b92d31fd3f78351d01f5302be97e",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "The workspace instructions name the complete instruction-renewal command and canonical sources while the planner retains the existing declared skill-copy owner.",
-    "task": "261112-BUG-L8",
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), AGENTS.md accurately matches the codebase: search-provider sections and references are removed, while the instruction-renewal command, canonical sources, and declared skill-copy owner remain accurate.",
+    "task": "261125-DEP-L2",
     "uncommitted": true
   },
   "document": "AGENTS.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -47,5 +47,16 @@
       "kind": "file",
       "path": "scripts/instruction_renewal/plan.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T07:08:02+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
+  }
 }

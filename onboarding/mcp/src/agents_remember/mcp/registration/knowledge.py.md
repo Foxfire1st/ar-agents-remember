@@ -73,9 +73,6 @@ families come one compact `chain_family` row per family routed at the path's dir
 (ruling Q1, 2026-09-30 03:32:18). No argument changed: the family seed reuses the existing `familyRevisionId`
 argument, and the registrar still forwards it without interpreting it.
 
-
-
-
 ## 260928-MIK-L01 The Read Docstring Names The Family-Complete Leaf Read
 
 `knowledge_read`'s published docstring now states that, on a converted tree, `source_context` with
@@ -86,19 +83,11 @@ the `invariant` view names the invariant's families in `families` (rule 7). No a
 takes `sourcePath` and `continuation`, and a non-default `orderingInput` on a fresh leaf read is refused by
 the tree read (ruling Q7, 2026-09-29 23:21:57).
 
-
-
-
 ## 260928-MIK-L08 The Integrity Check Takes A Leaf's Contract
-
 
 - The integrity handler names a leaf contract or an explicit memory/code tree with comparison bases, forwards one IntegrityCheckRequest, and returns the validator report and persisted leaf worklist; no database pair or recorded-run selector survives.
 
-
-
 - The builder that decides the accepted combinations.
-
-
 
 ## 260928-MIK-L03 The Read Docstring Names `currentness`
 
@@ -109,13 +98,7 @@ one named by `codeTreeId`, or the continuation's on a resumed page. The input sc
 the caller's `repositoryRoot` untouched and the workspace root separately, which is what lets
 `requested_code_tree` treat a `repositoryRoot` alone as no request (architect ruling 2, 2026-09-29T18:42:37).
 
-
-
-
-
 - Only a named tree ID (or the continuation's) is the walk's code tree; `HEAD` is never used.
-
-
 
 ## 260928-MIK-L02 The Read Docstring Names The Page, The Threshold And The Continuation
 
@@ -133,11 +116,7 @@ the walk's code tree: the one named by `codeTreeId`, or the continuation's on a 
 - The registrar still passes `workspace_root` separately, and the converted-tree read uses it as the object
   store when the caller names no `repositoryRoot` (ruling F4, 20:40:40).
 
-
-
-
 - The ordering argument that is `None` unless the caller names one.
-
 
 ## Evidence
 
@@ -152,55 +131,22 @@ No configured domain documentation could be checked.
 
 
 
-
-
-
-
 - The statement of what the runtime configuration supplies to this family — the workspace root a read falls back to as a **default repository**, never half of a resolution pair, and the coordination root under which a converted memory tree's derived index is cached — and the configuration type whose `workspace_root` is the first value. [10]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 - The integrity registrar and handler report validator counts and violations and add a leaf's latest worklist when contractPath is named; runId, inputDigest and compatible are not fields of the current registered contract. [15]
 
-
-
-
-
 - The request value objects and payload builders this module delegates to, imported rather than re-declared here. [16]
 
 
-
-
-- The registry the family is appended to, where the import and the tail tuple entry are the family's whole integration, and the live-registration test that compares the resulting order against the advertised roster. [17]
-
+- The registry registering the knowledge family in TOOL_REGISTRARS (before register_explainer_tools) and the live-registration test that compares the resulting order against the advertised roster. [17]
 
 
 - The three advertised names this registrar publishes, appended at the roster tail in the same order the handlers are registered in. [18]
 
-
 - The three response-model rows that validate these operations' payloads, added at the registry's own tail. [19]
-
-
-
-
-
 
 ### Cross-Repo References
 
@@ -209,8 +155,6 @@ No cross-repository behavior is implemented in this file. It declares one tool f
 No meaningful cross-repo references found.
 
 - The read response carries its projected view. The diff response names the report for changed files. The integrity response carries validation and the persisted worklist when the caller names a leaf. [20]
-
-
 
 - The four registered handlers: the read registrar that forwards the caller's own root and the configured workspace root as two separate arguments plus the configured coordination root, the write and diff registrars that take the configuration beside the server, and the integrity registrar that takes the server alone. [11]
 - The registered reader names the record views and their filters. Its writers view returns bounded aggregates and a full report path. [12]

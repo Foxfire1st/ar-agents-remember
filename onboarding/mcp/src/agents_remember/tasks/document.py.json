@@ -662,12 +662,12 @@
         },
         {
           "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "blob": "a5fdc792c529205fd36769bc5c1793e6f7b6d9d9",
             "content": "sha256:172bb77e79b3df6f8c918b1367be4731184955c5b5c48373fddfba4340ab0162",
             "locator": {
-              "end": 379,
+              "end": 378,
               "kind": "line_range",
-              "start": 356
+              "start": 355
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
@@ -751,12 +751,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f0fffaaf83d9536e496a576e33ce9e6053c8f9b",
-            "content": "sha256:2a61f4d4086fb6d31da1fb4bd4defb2ce5f029010c277dc0984df8b005b5d848",
+            "blob": "5f2c36304a97c2d5a4a686e3eb10b4474b2198a7",
+            "content": "sha256:c59e28c118af435dedfc5346e0195eb50eedcc200e348a859041289a1d531ffb",
             "locator": {
-              "end": 218,
-              "kind": "line_range",
-              "start": 205
+              "kind": "symbol",
+              "name": "run"
             },
             "path": "mcp/src/agents_remember/cli/leaf_enclosure_start.py"
           },

@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
-            "content": "sha256:c1d0ad0575d6dd7eb1b23158502d843b17d2d7919b57f6695585533a74fb8e29",
+            "blob": "76fdf343384fe0128a7b1258442f62c16bafdaa6",
+            "content": "sha256:ef279ff2efd8fb6b8514f0926536a597225298a09611bf82b26ef1dc933101d8",
             "locator": {
               "kind": "symbol",
               "name": "ContextPacketV2"
@@ -23,53 +23,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "blob": "0d7c12cb064a7d164e1ecca251248732d34041d2",
             "content": "sha256:a391e07837b89474fd8ac6fe5fd6665c65a9cbc9eff8ec5fc9e3db2912a85cdc",
             "locator": {
-              "end": 111,
+              "end": 109,
               "kind": "line_range",
-              "start": 89
+              "start": 87
             },
             "path": "mcp/src/agents_remember/application/context_packet.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The retained ContextPacketV2 schema has a ProviderSummary field, whose current producer emits configured/enabled with state skipped and no readiness items. The mounted SlimContextPacket v3 carries roots/actions and no provider block.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
-            "content": "sha256:c1d0ad0575d6dd7eb1b23158502d843b17d2d7919b57f6695585533a74fb8e29",
-            "locator": {
-              "kind": "symbol",
-              "name": "ContextPacketV2"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
-            "content": "sha256:65b3f5e9685099b00ec6af159b0bc0fc36593181bcc2ee5d31822b346237a6e2",
-            "locator": {
-              "kind": "symbol",
-              "name": "SlimContextPacket"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "70fe9d0307f25c7b326ed501f72e43a98d56bbe6",
-            "content": "sha256:117e1d6115145488ab9411f807a96af034b39fe2894a8bde95fe448ea48324d3",
-            "locator": {
-              "kind": "symbol",
-              "name": "provider_summary"
-            },
-            "path": "mcp/src/agents_remember/providers/status.py"
           },
           "kind": "code"
         }
@@ -178,7 +139,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
+            "blob": "81b0e3d2947f32ed2a6e3a9fc97433196e6659a5",
             "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
             "locator": {
               "kind": "symbol",
@@ -191,12 +152,12 @@
       ]
     },
     "17": {
-      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.\n\nAnchor: `ContextPacketV2`, `SlimContextPacket`",
       "targets": [
         {
           "anchor": {
-            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
-            "content": "sha256:ec6a43c10031afafbadf524019e10c4e54aed4192c4b75c206c49a4d6d629f9e",
+            "blob": "76fdf343384fe0128a7b1258442f62c16bafdaa6",
+            "content": "sha256:8bae41d23bcb170727736913b54ca771d029f3e008c955f2b9be5b46471d8cf2",
             "locator": {
               "kind": "file"
             }
@@ -206,12 +167,12 @@
       ]
     },
     "7": {
-      "note": "ContextPacketV2 carries the nested packet objects; RepoSummary, BranchFreshness and MemorySummary use vocabularies imported from the owning producers.\n\nAnchor: `producer imports`",
+      "note": "ContextPacketV2 carries the nested packet objects; RepoSummary, BranchFreshness and MemorySummary use vocabularies imported from the owning producers.\n\nAnchor: `ContextPacketV2`, `RepoSummary`, `BranchFreshness`, `MemorySummary`, producer imports",
       "targets": [
         {
           "anchor": {
-            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
-            "content": "sha256:c1d0ad0575d6dd7eb1b23158502d843b17d2d7919b57f6695585533a74fb8e29",
+            "blob": "76fdf343384fe0128a7b1258442f62c16bafdaa6",
+            "content": "sha256:ef279ff2efd8fb6b8514f0926536a597225298a09611bf82b26ef1dc933101d8",
             "locator": {
               "kind": "symbol",
               "name": "ContextPacketV2"
@@ -221,7 +182,7 @@
         },
         {
           "anchor": {
-            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
+            "blob": "76fdf343384fe0128a7b1258442f62c16bafdaa6",
             "content": "sha256:3d79e5f31cc572da5d19abb96d5a8cf7bb78492003837d490b0bdda44fc4c151",
             "locator": {
               "kind": "symbol",
@@ -232,7 +193,7 @@
         },
         {
           "anchor": {
-            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
+            "blob": "76fdf343384fe0128a7b1258442f62c16bafdaa6",
             "content": "sha256:f07212f0f308abb6b7f46a881046044368ff20ea3e415c1fca0f09565d360532",
             "locator": {
               "kind": "symbol",
@@ -243,7 +204,7 @@
         },
         {
           "anchor": {
-            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
+            "blob": "76fdf343384fe0128a7b1258442f62c16bafdaa6",
             "content": "sha256:d5f2b1e90a27e0837f372df75428fc9ecd1eaa950ff7c04a03ff3fde4674393a",
             "locator": {
               "kind": "symbol",
@@ -254,10 +215,10 @@
         },
         {
           "anchor": {
-            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
-            "content": "sha256:a85d19634e8a41d007ebd2bd4d333d60499e82006893bb379faaad8b6198469f",
+            "blob": "76fdf343384fe0128a7b1258442f62c16bafdaa6",
+            "content": "sha256:e2e9f05861ce82d080327e98a9f1e23d30df6b7c44251964f23d1ed404ed04ce",
             "locator": {
-              "end": 15,
+              "end": 14,
               "kind": "line_range",
               "start": 9
             }
@@ -271,7 +232,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
+            "blob": "76fdf343384fe0128a7b1258442f62c16bafdaa6",
             "content": "sha256:d5f2b1e90a27e0837f372df75428fc9ecd1eaa950ff7c04a03ff3fde4674393a",
             "locator": {
               "kind": "symbol",
@@ -287,12 +248,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
+            "blob": "76fdf343384fe0128a7b1258442f62c16bafdaa6",
             "content": "sha256:bcffe2fb5a7819e59dedc8dffec0ecfe3b3dce183b4fd3f0990ff1f210f609da",
             "locator": {
-              "end": 84,
+              "end": 83,
               "kind": "line_range",
-              "start": 84
+              "start": 83
             }
           },
           "kind": "code"

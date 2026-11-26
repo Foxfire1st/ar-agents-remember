@@ -4,7 +4,6 @@
 
 [engine-room overview](overview.md)
 
-
 ## Current enclosure-only composition
 
 The pure builder now accepts only the published process array. Its view retains exactly node/enclosureKey and the original process identity, without a second session/lifecycle join. Empty input yields no provider fallback; stable worktreeGroup identity and active-before-cleanup sibling ordering remain.
@@ -24,8 +23,6 @@ restore removed provider visuals or tool exposure.
 The prior onboarding below is retained for provenance and unrelated design history.
 It is not current provider-render, fallback, prototype-parity or execution guidance.
 Current behavior and its limits are the operative contract above.
-
-
 
 Vitest suite pinning the pure `buildEngineRoomModel` builder for the enclosure-centered Engine Room process map. It locks the behaviors that keep the client seam inference-free: joining each server-composed process node to its live lifecycle by `lifecycleId`, exposing the lifecycle gate, lifting workspace-scoped providers into `workspaceEngines`, falling back to legacy per-worktree stacks only when worktree providers exist but no process nodes do, sorting active leaf enclosures ahead of cleanup/retired siblings, and (slice 5f S0) exposing `enclosureKey = worktreeGroup` stably across a fleeting→real id swap. Local `node`/`lifecycle`/`worktreeEngine` factories build minimal fixtures so each case isolates one rule.
 
@@ -56,6 +53,7 @@ No exports; one `describe("buildEngineRoomModel")` block with five `it` cases pl
 ### Repo-Internal References
 
 - `buildEngineRoomModel` under test [1]
+
 - `node`/`lifecycle`/`worktreeEngine` fixture factories [2]
 - Lifecycle join + workspace lift + fallback cases [3]
 - `enclosureKey` = worktreeGroup stable-across-id-swap case [4]

@@ -93,9 +93,7 @@ No relevant external documentation is needed for the local task resolver.
 
 Same-repository source and tests define the supported task-folder and series-contract behavior.
 
-
 - The explicit import/re-export surface publishes the task-layout vocabulary without defining it. [1]
-
 
 - The existing slug, path-builder and enclosure/archive rules remain single-defined; the iterator now excludes notes as well. [2]
 

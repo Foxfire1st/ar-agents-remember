@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The three canonical-to-package-data runtime targets: benchmarks, providers and system.",
+      "note": "The two canonical-to-package-data runtime targets: benchmarks and system.",
       "targets": [
         {
           "anchor": {
-            "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
-            "content": "sha256:5878d501febc1c0680371d9eb5e808cefcae684dc59f28d5d5049be367ad0738",
+            "blob": "461b50e1fc53c13cf9831e59d5da0d9610bdebc8",
+            "content": "sha256:4ae7c1c080314488c3f2c1429a57e22db9ae8e83ac32b1dafb6cf8d174184c7d",
             "locator": {
               "kind": "symbol",
               "name": "TARGETS"
@@ -23,12 +23,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
+            "blob": "461b50e1fc53c13cf9831e59d5da0d9610bdebc8",
             "content": "sha256:07d1389ba7afc7ff2736eab37a8ac36293e98952c9efe07e8ec60ad6a271854a",
             "locator": {
-              "end": 205,
+              "end": 204,
               "kind": "line_range",
-              "start": 115
+              "start": 114
             }
           },
           "kind": "code"
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
+            "blob": "461b50e1fc53c13cf9831e59d5da0d9610bdebc8",
             "content": "sha256:57627fe8c46dbb7f9833a18972cf210c70421890f6af07344303322694766733",
             "locator": {
               "kind": "symbol",
@@ -56,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
+            "blob": "461b50e1fc53c13cf9831e59d5da0d9610bdebc8",
             "content": "sha256:948870a343a2dd92fde2799d324c66e9782b3412adc81cf61d5e18905e87c7cb",
             "locator": {
               "kind": "symbol",

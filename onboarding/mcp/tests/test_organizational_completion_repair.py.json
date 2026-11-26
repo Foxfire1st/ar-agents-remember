@@ -1,0 +1,141 @@
+{
+  "path": "mcp/tests/test_organizational_completion_repair.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b1f8fc7b8e8cee9327cfe3442af8a1c3bfd9babc",
+        "content": "sha256:099a7c0f387a050c9bde2d8362edc2cff00aae48c59cae0b0f51eba83c95f5f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_organizational_completion_repair_evidence_builds_reset_digest_without_mutating_disk"
+        }
+      },
+      "facet": "Evidence preparation builds the reset contract digest without passing the removed closeout_door field or mutating disk.",
+      "id": "PRF-0K4NFB",
+      "invariant": "INV-VYH6XV",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 item 1",
+        "leaf": "261125-DEP-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1f8fc7b8e8cee9327cfe3442af8a1c3bfd9babc",
+        "content": "sha256:4ec3d072323a254e7d368b1cc8187df45b4e65f3edbd480b97437a75e7d0bb32",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_prepare_organizational_completion_repair_resets_contract_and_publishes_waiting_door"
+        }
+      },
+      "facet": "End-to-end repair resets the contract and durably publishes the validated successor waiting door in reports/closeout-door.json.",
+      "id": "PRF-9K1KYY",
+      "invariant": "INV-VYH6XV",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 item 1",
+        "leaf": "261125-DEP-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1f8fc7b8e8cee9327cfe3442af8a1c3bfd9babc",
+        "content": "sha256:d4877510b0d0978daebb558812af7d21b86dea338980fde45cf44488058f245d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_organizational_completion_repair_refuses_unclaimed_live_door"
+        }
+      },
+      "facet": "Repair refuses an unclaimed live closeout door before writing either the contract or the door journal.",
+      "id": "PRF-D5Z423",
+      "invariant": "INV-VYH6XV",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 item 1",
+        "leaf": "261125-DEP-L7"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1f8fc7b8e8cee9327cfe3442af8a1c3bfd9babc",
+        "content": "sha256:e083d8908df814dfe2f9434f5d6277e489226aa5bc7af12dde2175df198dd036",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_prepare_organizational_completion_repair_recovers_after_interrupted_door_publication"
+        }
+      },
+      "facet": "An interrupted door publication classifies as reset-door-pending, surfaces a retryable error, and converges on the waiting successor door on retry.",
+      "id": "PRF-T0RQ4W",
+      "invariant": "INV-VYH6XV",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 item 1",
+        "leaf": "261125-DEP-L7"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`organizational_completion_repair_evidence` computes the exact `acceptedContractSha256` and `resetContractSha256` without mutating the contract file or live `claimed` door.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1f8fc7b8e8cee9327cfe3442af8a1c3bfd9babc",
+            "content": "sha256:099a7c0f387a050c9bde2d8362edc2cff00aae48c59cae0b0f51eba83c95f5f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_organizational_completion_repair_evidence_builds_reset_digest_without_mutating_disk"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "`prepare_organizational_completion_repair` reopens the contract to match `resetContractSha256`, publishes a chained `waiting` successor door declared by `organizational-quality-repair`, and converges idempotently on repeat calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1f8fc7b8e8cee9327cfe3442af8a1c3bfd9babc",
+            "content": "sha256:4ec3d072323a254e7d368b1cc8187df45b4e65f3edbd480b97437a75e7d0bb32",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_prepare_organizational_completion_repair_resets_contract_and_publishes_waiting_door"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Repair evidence calculation refuses with `CloseoutQueueError(status=\"organizational-completion-door-mismatch\")` when the live closeout door is not `claimed`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1f8fc7b8e8cee9327cfe3442af8a1c3bfd9babc",
+            "content": "sha256:d4877510b0d0978daebb558812af7d21b86dea338980fde45cf44488058f245d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_organizational_completion_repair_refuses_unclaimed_live_door"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "An `OSError` during door publication raises `OrganizationalRepairPublicationError(status=\"organizational-completion-door-publication-interrupted\", next_action=\"cancel\")`, classifies as `reset-door-pending`, completes door publication on retry (`reset`), and turns subsequent retries into a pure no-op.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1f8fc7b8e8cee9327cfe3442af8a1c3bfd9babc",
+            "content": "sha256:e083d8908df814dfe2f9434f5d6277e489226aa5bc7af12dde2175df198dd036",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_prepare_organizational_completion_repair_recovers_after_interrupted_door_publication"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

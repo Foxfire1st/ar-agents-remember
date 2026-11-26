@@ -6,9 +6,9 @@
     ],
     "justification": "The same help sentence stands in four subcommand parsers beside the discovery function, and two tests fail when any --config help names directory discovery or drops the user settings file; a wrong help sends a user to look for settings in the wrong folder."
   },
-  "applicability": "The --config help of those four subcommands for the first clause; every --config help of the umbrella parser for the second.",
+  "applicability": "The --config help of those three subcommands for the first clause; every --config help of the umbrella parser for the second.",
   "conditions": [
-    "An omitted --config in those four subcommands reads the user settings file that discover_config() reads, whatever the current directory."
+    "An omitted --config in those three subcommands reads the user settings file that discover_config() reads, whatever the current directory."
   ],
   "exclusions": [
     "The behaviour of discovery itself, which the discovery invariant states.",
@@ -26,9 +26,19 @@
     "leaf": "260928-MIK-L84",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The --config help of the memory-citations, providers-remove, removed-stores and knowledge-bootstrap subcommands states that an omitted --config reads the user settings file (agents-remember-settings.json under XDG_CONFIG_HOME or ~/.config), whatever the current directory, as discover_config() does; no --config help of the umbrella parser claims working- or current-directory discovery.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "The --config help of the memory-citations, removed-stores and knowledge-bootstrap subcommands states that an omitted --config reads the user settings file (agents-remember-settings.json under XDG_CONFIG_HOME or ~/.config), whatever the current directory, as discover_config() does; no --config help of the umbrella parser claims working- or current-directory discovery.",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-25T22:16:56+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "2424643a-91e9-4c95-ab58-87443229a30b",
+    "task": "261125-DEP"
+  }
 }

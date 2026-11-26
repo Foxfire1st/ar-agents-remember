@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-        "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+        "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
+        "content": "sha256:4a2955c03025ce5e578c4efc043dc85bd51a1cd02057c6fc59b517564874378d",
         "locator": {
           "kind": "file"
         }
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-        "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+        "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
+        "content": "sha256:4a2955c03025ce5e578c4efc043dc85bd51a1cd02057c6fc59b517564874378d",
         "locator": {
           "kind": "file"
         }
@@ -101,32 +101,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
             "content": "sha256:bc52d590affca24af1af1614179744bbdab687ac29aa0b313a625b0964b9ae39",
-            "locator": {
-              "end": 122,
-              "kind": "line_range",
-              "start": 101
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:4e406a2a4e88d1984affa80abe04eb1d3611b57920176b5e58e272c064171cc9",
-            "locator": {
-              "end": 121,
-              "kind": "line_range",
-              "start": 100
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:1b17ac742337dc7af3061eb1da0a0b5c6fc7c68a95b048dea6cdfa00f0b3666a",
             "locator": {
               "end": 120,
               "kind": "line_range",
@@ -134,25 +110,39 @@
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "Frozen implementation of TOOL_RESPONSE_MODELS supporting the stated file behavior.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
+            "content": "sha256:4e406a2a4e88d1984affa80abe04eb1d3611b57920176b5e58e272c064171cc9",
             "locator": {
-              "kind": "file"
+              "end": 119,
+              "kind": "line_range",
+              "start": 98
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
+            "content": "sha256:1b17ac742337dc7af3061eb1da0a0b5c6fc7c68a95b048dea6cdfa00f0b3666a",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Frozen implementation of TOOL_RESPONSE_MODELS supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
             "content": "sha256:e32d72e73c43c68526666e351964e31154f7ccc5f262554de0776dac177d9e07",
             "locator": {
               "kind": "symbol",
@@ -164,21 +154,11 @@
       ]
     },
     "15": {
-      "note": "The by-name response-model registry, which carries the settings initializer.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
+      "note": "The by-name response-model registry, which carries the settings initializer.",
       "targets": [
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
             "content": "sha256:e32d72e73c43c68526666e351964e31154f7ccc5f262554de0776dac177d9e07",
             "locator": {
               "kind": "symbol",
@@ -190,14 +170,15 @@
       ]
     },
     "16": {
-      "note": "The public response registry maps explainer_control to its strict response model; it does not weaken existing responses.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
+      "note": "The public response registry maps explainer_control to its strict response model; it does not weaken existing responses.",
       "targets": [
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
+            "content": "sha256:e32d72e73c43c68526666e351964e31154f7ccc5f262554de0776dac177d9e07",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "TOOL_RESPONSE_MODELS"
             }
           },
           "kind": "code"

@@ -37,21 +37,16 @@ No relevant external documentation applies to these pure selector tests.
 
 ### Repo-Internal References
 
-
 - `selectQueue` coverage includes empty analytics and optimistic suppression. [1]
 
 - Pure selector assertions make hasLiveWorktree depend only on stat-derived flags: either existing code/memory worktree admits and neither hides, never a cleanup-state proxy. fmtWait asserts seconds/minutes/hours/days formatting and an em dash for unknown input; this file has no lifecycle buildTree grouping case. [2]
 
 - The selector under test caches and filters attention rows. [3]
 
-
-
-
 ### Cross-Repo References
 
 No meaningful cross-repo references found.
 
 No meaningful cross-repo references found.
-
 
 - Converted drift segments order current, stale and violation with exact shares. [4]

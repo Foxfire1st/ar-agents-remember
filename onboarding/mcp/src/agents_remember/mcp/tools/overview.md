@@ -106,22 +106,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 The memory payload owner routes synchronous citation repair and background preview start/poll. A background start refuses writes, and polling admits no document selectors. The shared controller validates run scope; completed previews retain the existing citation result projection while adding status/run identity. Synchronous configured-authority error handling remains distinct from retained background worker failure.
 
-
 - **Historical removed-tool evidence, not a current capability:** the declarations that called these builders, which passed no corpus override to the wire surface, are removed at C, so this records a retired shape and no current capability.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 The `knowledge_read` adapter routes `writers` through the same selected memory view and delegates aggregation to the application. Its answer includes the writer rows and complete report path. The record view keeps derived revision state and compact writer attribution beside the existing result state.
 
@@ -139,7 +124,6 @@ The `knowledge_read` adapter routes `writers` through the same selected memory v
 
 - The leaf response the paged tree read routes to, for a path or (since MIK-R05) a family seed, a path's refusal carrying its route chain. [3]
 
-
 - Converted-tree refusals state the threshold. [5]
 
 - The read's currentness, at the walk's code tree, prepared once per page with the proofs. [6]
@@ -152,14 +136,9 @@ The `knowledge_read` adapter routes `writers` through the same selected memory v
 
 - Three delegates serve read, Git diff and tree validation. [10]
 
-
-
 - The MCP adapter delegates completed-response ownership to the application. [11]
 
-
-
 - The application attaches bounded guidance and records the completed result after finalization. [12]
-
 
 - Wire validation and token finalization consume the enriched model in one serialization pass. [13]
 
@@ -175,7 +154,11 @@ The `knowledge_read` adapter routes `writers` through the same selected memory v
 
 - The linear-half hint delegates to the worktree guidance state machine. [20]
 
+
+
 - The `ResponseEnvelope` union of the strict and flexible envelope bases, both of which declare the choke-point fields `nextStep`, `next`, `log`, `logError` and `buildCurrentness`; no banner field is declared. [22]
+
+
 
 - The application request owner has only code and memory messages. [24]
 
@@ -189,34 +172,28 @@ The `knowledge_read` adapter routes `writers` through the same selected memory v
 
 - This server's own index resource, kept deliberately distinct from that method. [32]
 
-
-
 - Role-agent MCP payload builders delegate start and message calls to the Paseo role tools while retaining the addressed role in the tool-event context. [37]
 > Retained earlier citation wording: - Current imported source owns this scoped route boundary. [37] - - The shared selection and its refusal mapping, which since MIK-R01 also refuses a named root with no code tree by name.
 
 - - A partial index is never presented as complete. [42]
 
+
 - One registry, TOOL_RESPONSE_MODELS, maps each public tool name to the response model its payload validates against; no separate public subset or internal-compat exclusion remains. [46]
+
 
 - **Retained historical source account — superseded by the current route account:** Facade exports include adoption and internal adapters; the structural module also adapts native retirement, without adding that builder to the facade. [44]
 
 - **Retained historical source account — superseded by the current route account:** One model-owned 41-name successor roster (42 on the rejected freeze; resolve_context removed), including adoption, native-role, native retirement and knowledge names. [45]
 
-
-
-
 - Whole-result validation precedes supplied or default answer selection, logging and final guards. [47]
-
-
-
-
 
 - Guidance uses the exact response address, and enrichment precedes serialization. [48]
 
+
 - Server info reports the agent binding and serving build rather than a roster, and the context-packet reader is task-scoped. [49]
 
-- **Retained historical source account — superseded by the current route account:** Adoption is explicit, confined and preview-identity approved [50]
 
+- **Retained historical source account — superseded by the current route account:** Adoption is explicit, confined and preview-identity approved [50]
 
 - **Retained historical source account — superseded by the current route account:** Fresh and resumed walks retain explicit tree binding and incomplete-index facts [54]
 
@@ -239,21 +216,14 @@ The `knowledge_read` adapter routes `writers` through the same selected memory v
 - The server-info answer without a harness skill root. [62]
 
 
-
-
 - - A converted tree's citation-fix result is bounded for transport. [43]
 
-
-
-
 - **Retained historical source account — superseded by the current route account:** Citation repair projects selected actionable lists; the retained 50-entry helper is not called by the builder. Anchor: `citation_fix_payload`, `_citation_fix_answer`, `_bounded_lists`, `_bounded_citation_fix` [56]
-
 
 Anchor: `role_start_set_payload`, `role_start_payload`, `role_message_payload`, `_caller` [52]
 
 - Read carries tree/index state and partial-index completeness. [34]
 - Legacy paths and unheld current seeds refuse truthfully. [35]
-
 
 - Current ordinary model roster has 44 names, including citation_note_revision, ten ordered registrars include explainer control, and the facade exports its DTO/builder; a valid explainer binding adds four tools to the ordinary registration. [63]
 

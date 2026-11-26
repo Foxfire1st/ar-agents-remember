@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd30b6ba63b32511e5507dbde487b9e6104b5071",
+            "blob": "5261524ecbf02649b02234195b2f62477b93262c",
             "content": "sha256:da779c827da3795c878647e500000544381770373d5fd6645487b11952e94740",
             "locator": {
               "end": 561,
@@ -116,27 +116,16 @@
       ]
     },
     "20": {
-      "note": "The fixture bases draw their enclosure sample from the same oracle.",
+      "note": "The fixture bases draw their enclosure sample from the same oracle.\n\nAnchor: `\"enclosures\":`, `Source`: `dashboard/src/fixtures/snapshot.json:609-1782`",
       "targets": [
         {
           "anchor": {
-            "blob": "ba596e01ee104d75cc3bc485daf7ff67336d7566",
-            "content": "sha256:fd844a94f0df0cb3b6403e4eae5f6c768c9cfd184e219d2211b327c409814cd0",
+            "blob": "1541aea74b7669a700a5eb337062ba13d34ffdc3",
+            "content": "sha256:574180cfb4b5377330fa0d94be912d376ec5790a2f60a58e23506f53d8a4f81c",
             "locator": {
-              "end": 65,
+              "end": 1782,
               "kind": "line_range",
-              "start": 65
-            },
-            "path": "dashboard/src/fixtures/snapshot.json"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ba596e01ee104d75cc3bc485daf7ff67336d7566",
-            "content": "sha256:1276446760efb327c94f5aa1003ba50e18d92bd894e438710af0e715d64a056e",
-            "locator": {
-              "kind": "file"
+              "start": 609
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },
@@ -145,14 +134,16 @@
       ]
     },
     "21": {
-      "note": "The wire oracle carries the hand-maintained sampled analytics payload.",
+      "note": "The wire oracle carries the hand-maintained sampled analytics payload.\n\nAnchor: `\"analytics\":`, `Source`: `dashboard/src/fixtures/snapshot.json:13-555`",
       "targets": [
         {
           "anchor": {
-            "blob": "ba596e01ee104d75cc3bc485daf7ff67336d7566",
-            "content": "sha256:1276446760efb327c94f5aa1003ba50e18d92bd894e438710af0e715d64a056e",
+            "blob": "1541aea74b7669a700a5eb337062ba13d34ffdc3",
+            "content": "sha256:c69b40547caaf530f43e92fb6e18cb8f37f6b1ebd5234ca6a43ed722423e0ee5",
             "locator": {
-              "kind": "file"
+              "end": 555,
+              "kind": "line_range",
+              "start": 13
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },
@@ -178,29 +169,16 @@
       ]
     },
     "25": {
-      "note": "The engine-process builder takes its sample from analytics.",
+      "note": "The engine-process builder takes its sample from analytics.\n\nAnchor: `\"engineProcesses\":`, `Source`: `dashboard/src/fixtures/snapshot.json:91-519`",
       "targets": [
         {
           "anchor": {
-            "blob": "ba596e01ee104d75cc3bc485daf7ff67336d7566",
-            "content": "sha256:76f4bba25921a170cf4794a40f63ddb0b477af01c3e612fa787f7555a95100e1",
+            "blob": "1541aea74b7669a700a5eb337062ba13d34ffdc3",
+            "content": "sha256:59c9bf3eeea91ad8ee3927e1ffac464c153967feba61ac51036560b55647da17",
             "locator": {
-              "end": 541,
+              "end": 519,
               "kind": "line_range",
-              "start": 63
-            },
-            "path": "dashboard/src/fixtures/snapshot.json"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ba596e01ee104d75cc3bc485daf7ff67336d7566",
-            "content": "sha256:fd844a94f0df0cb3b6403e4eae5f6c768c9cfd184e219d2211b327c409814cd0",
-            "locator": {
-              "end": 65,
-              "kind": "line_range",
-              "start": 65
+              "start": 91
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },
@@ -246,12 +224,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "blob": "4bd2e520db6c10ea7f07bb462e719d7067dad9b9",
             "content": "sha256:3569702045788c7a64cae206b544c6f6de7f778aa13270134929ab0988d7c7b8",
             "locator": {
-              "end": 445,
+              "end": 439,
               "kind": "line_range",
-              "start": 423
+              "start": 417
             },
             "path": "dashboard/src/test/wireFixtureGuard.test.ts"
           },
@@ -308,7 +286,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "blob": "001c87448f054e5e0fc5d448ca9aca53a3a3e17a",
             "content": "sha256:9d00407991a5ac2ae6112d754bf7c6f06f544820a425de0cb7b78edc726abb74",
             "locator": {
               "kind": "symbol",
@@ -432,7 +410,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd30b6ba63b32511e5507dbde487b9e6104b5071",
+            "blob": "5261524ecbf02649b02234195b2f62477b93262c",
             "content": "sha256:b84bb5fef68c7da2997f26eacdf572410d2f35298b0e8d5959899a076ad27eea",
             "locator": {
               "end": 520,
@@ -450,7 +428,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd30b6ba63b32511e5507dbde487b9e6104b5071",
+            "blob": "5261524ecbf02649b02234195b2f62477b93262c",
             "content": "sha256:250a4cc506ffd6cdba6ae28d95148729085d0e8eece9c0f2b3d52da1667698ce",
             "locator": {
               "end": 532,
@@ -463,7 +441,7 @@
         },
         {
           "anchor": {
-            "blob": "bd30b6ba63b32511e5507dbde487b9e6104b5071",
+            "blob": "5261524ecbf02649b02234195b2f62477b93262c",
             "content": "sha256:562db58d8bb2e4814b99dc78dc03d57ef14958bc34bd8b5409f00b644b5638c4",
             "locator": {
               "end": 185,

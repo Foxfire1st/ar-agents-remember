@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ca2af5ed82097576e6aa95edf2c7a81ab500993b",
+        "blob": "ed981d64c1224673f1d3b9123ca25a237200d2c0",
         "content": "sha256:8ab93b8a3c4a0c5fd2d4775543485822b9a43ecbc154f1356aa432528983b6ce",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "ca2af5ed82097576e6aa95edf2c7a81ab500993b",
+        "blob": "ed981d64c1224673f1d3b9123ca25a237200d2c0",
         "content": "sha256:abe2ae1af4af7a8f5118dbee6d47b52a8c599288398cb9238a48395c21e38654",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "ca2af5ed82097576e6aa95edf2c7a81ab500993b",
-        "content": "sha256:ff7186f86f8df4515c7f5d550adc5c5fd9762f61c531a71a9340cd7a4b27a80b",
+        "blob": "ed981d64c1224673f1d3b9123ca25a237200d2c0",
+        "content": "sha256:c16edeaa0cb0a332d3ffde88645aa2cdee35281bf70b4b61e8d22dcd0214378d",
         "locator": {
           "kind": "symbol",
           "name": "test_benchmark_preparation_discovers_package_skills_without_installing_copies"
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "ca2af5ed82097576e6aa95edf2c7a81ab500993b",
+        "blob": "ed981d64c1224673f1d3b9123ca25a237200d2c0",
         "content": "sha256:43ec07108d9d744134b8552e5793c4d52a1e836e4a0eb1f5993d2d8f15bef366",
         "locator": {
           "kind": "symbol",

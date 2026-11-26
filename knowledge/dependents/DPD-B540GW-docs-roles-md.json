@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "5c005c7831f0d9de8daf17d4a98ef807fc0b9869",
-    "commit": "3ee3b10c90fecdf81b54c96c784e481f33423522",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "Verified docs/roles.md on synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db): updated passages accurately state Investigator scope including a standalone master (line 28), the Manager's Architect-reserved upward matters alongside developer-decision questions with Orchestrator unchanged forwarding and the direct route for qualifying skeletons (lines 142-147), the Manager wait carve-out recording a working-child or already-sent developer-question wait in its end line and status file with no role_message (lines 273-276), and Manager developer-question routing to an assigned Orchestrator reporting recipient while its launch parent stays fixed (lines 353-356), alongside L44 retirement scope.",
-    "task": "261112-BUG-L41",
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/roles.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
+    "task": "261125-DEP-L2",
     "uncommitted": true
   },
   "document": "docs/roles.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -121,7 +121,7 @@
       "path": "skills/l-01-agent-lifecycles/roles/curator.md"
     },
     {
-      "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
+      "blob": "27304d9440781768d35f81acb95b018e57259de3",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
     },
@@ -177,14 +177,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T04:22:40+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L41",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
-    "task": "261112-BUG"
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
   }
 }

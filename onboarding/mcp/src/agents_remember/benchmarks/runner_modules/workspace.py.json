@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "22ab4aa0627357a04c04fe027fc19236295a6fbd",
-        "content": "sha256:e52b095af0a94ac681dcbf943d67d06ec688fc740075e9b59d05104112003d8c",
+        "blob": "c21816fc9900af93c5914a9744230e9902cb2ace",
+        "content": "sha256:b387480de1c4e4c3d959c605b948596d666b76ebdf59466ba27dfe5d141fbe5c",
         "locator": {
           "kind": "symbol",
           "name": "prepare_case"
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+            "blob": "de11957930055a6254a420c3b62154d41c6c931a",
             "content": "sha256:3d62e46f544b23376c4b332d4e33e3ae50b5c66fbdcef0c9ba675d46f6fe1773",
             "locator": {
               "kind": "symbol",
@@ -39,15 +39,16 @@
       ]
     },
     "3": {
-      "note": "The case preparation that lays down assets and no skill exposure.",
+      "note": "The case preparation that lays down assets and no skill exposure.\n\nAnchor: `` `prepare_case` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "22ab4aa0627357a04c04fe027fc19236295a6fbd",
-            "content": "sha256:e52b095af0a94ac681dcbf943d67d06ec688fc740075e9b59d05104112003d8c",
+            "blob": "c21816fc9900af93c5914a9744230e9902cb2ace",
+            "content": "sha256:b387480de1c4e4c3d959c605b948596d666b76ebdf59466ba27dfe5d141fbe5c",
             "locator": {
-              "kind": "symbol",
-              "name": "prepare_case"
+              "end": 240,
+              "kind": "line_range",
+              "start": 199
             }
           },
           "kind": "code"
@@ -55,67 +56,15 @@
       ]
     },
     "4": {
-      "note": "Current source account and its stated boundaries.\n\nAnchor: current source",
+      "note": "Current source account and its stated boundaries.\n\nAnchor: `\"Current source\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "22ab4aa0627357a04c04fe027fc19236295a6fbd",
-            "content": "sha256:514fc3f33cedefe8ef0d7f6d51a4fa117947e2fb16a7e73293d377b56dc805bb",
+            "blob": "c21816fc9900af93c5914a9744230e9902cb2ace",
+            "content": "sha256:802ab72f5a5ba8e2fd4c763633869c560a77fd1116a86f5f438c6fdbc6ca9110",
             "locator": {
               "kind": "file"
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The shared BenchmarkWorkspace is passed to registration and retained setup after authority filtering. Setup receives lifecycle_settings_from_config through benchmark_lifecycle_settings; that generator returns disabled empty provider settings, so the call establishes neither a provider launch nor a from-scratch benchmark index-build promise. No live-workspace seed source is wired.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "22ab4aa0627357a04c04fe027fc19236295a6fbd",
-            "content": "sha256:e52b095af0a94ac681dcbf943d67d06ec688fc740075e9b59d05104112003d8c",
-            "locator": {
-              "kind": "symbol",
-              "name": "prepare_case"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c8c27827281330947162cad1977cf99d8bc9bca6",
-            "content": "sha256:b45b85aefebfe8b5169efc937560e0944d41e5bf24d9ff0ba4d7bccedad00131",
-            "locator": {
-              "kind": "symbol",
-              "name": "benchmark_lifecycle_settings"
-            },
-            "path": "mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c8c27827281330947162cad1977cf99d8bc9bca6",
-            "content": "sha256:6a599b8fe967ff3a804cb65ccafc8a47e3b008be08d702ca22bcd612c7bcf39c",
-            "locator": {
-              "kind": "symbol",
-              "name": "prepare_configured_providers"
-            },
-            "path": "mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
-            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
-            "locator": {
-              "kind": "symbol",
-              "name": "lifecycle_settings_from_config"
-            },
-            "path": "mcp/src/agents_remember/providers/settings.py"
           },
           "kind": "code"
         }

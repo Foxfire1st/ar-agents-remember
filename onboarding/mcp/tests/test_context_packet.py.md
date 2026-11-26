@@ -4,14 +4,13 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- The allowed-repo case now expects providers.state=skipped and items=[].
-- It asserts diagnosticsTool is absent, not published.
+- The allowed-repo case asserts that the `providers` key is absent from the packet (`self.assertNotIn("providers", packet)`).
 - Unknown-repo refusal and behind-branch/ledger mapping cases remain.
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/tests/test_context_packet.py:27-62`.
-- Source comparison: `mcp/tests/test_context_packet.py:64-106`.
+- Source comparison: `mcp/tests/test_context_packet.py:27-58`.
+- Source comparison: `mcp/tests/test_context_packet.py:60-103`.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
@@ -57,7 +56,6 @@ No configured domain evidence applies to the file-local claims above.
 ### Repo-Internal References
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
-
 
 - Builds packet from allowed repo. [1]
 

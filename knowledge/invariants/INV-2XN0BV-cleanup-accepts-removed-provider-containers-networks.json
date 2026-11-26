@@ -29,6 +29,7 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "Cleanup accepts removed provider containers, networks and runtime directories and keeps the producer's reason when removal is refused.",
+  "status": "retired",
   "supersedes": [],
   "title": "Cleanup accepts removed provider resources and keeps refusal reasons",
   "writer": {

@@ -10,13 +10,13 @@
 
 ## Purpose
 
-`context_packet.py` defines the mounted `SlimContextPacket` v3 naming/orientation answer and retains `ContextPacketV2` as the whole-result contract. The slim answer holds roots, optional task/master, needed action lines, serving build and pair commits; it does not carry V2 provider/settings/freshness blocks.
+`context_packet.py` defines the mounted `SlimContextPacket` v3 naming/orientation answer and retains `ContextPacketV2` as the whole-result contract. The slim answer holds roots, optional task/master, needed action lines, serving build and pair commits; it does not carry V2 settings/freshness/worktree/drift blocks.
 
 ## Code Commentary
 
 The V2 nested-object account below describes the retained whole result, not what leaves the mounted tool. `SlimRoots` names code/memory/enclosure/rendered task document; `SlimTask` names ID/master; `SlimPair` names code/memory commits. `SlimContextPacket.contextPacketVersion` is 3. Optional absent facts stay omitted; its declaration does not itself measure the ordinary under-600-token requirement.
 
-The retained model separates repository Git facts, resolved paths, memory/storage facts, worktree summary, provider summary and drift summary into explicit nested objects. `ContextPacketV2` fixes `contextPacketVersion` to `2`. Its `ContextDiagnosticsHint.providerDiagnosticsTool` still declares the legacy string `provider_diagnostics`; this DTO field does not make that retired tool available. The current provider producer reports configured-or-not with `state: skipped`, no items, indexing targets or recovery actions, and reads no watcher/current-state details.
+The retained model separates repository Git facts, resolved paths, memory/storage facts, worktree summary and drift summary into explicit nested objects. `ContextPacketV2` fixes `contextPacketVersion` to `2`.
 
 **Vocabularies this packet does not produce are imported, never retyped** — the same rule the gate/lifecycle/inbox/orchestration models follow. `RepoSummary.state` is `RepoState` from `kernel.git_facts`, `BranchFreshness.state` is `FreshnessState` from `kernel.git_freshness`, and `MemorySummary.mode` is `ReadableMemoryMode` from `kernel.memory_mode`: `external` for every started task, still reading the legacy `disabled` a contract on disk may carry, exactly as `WorktreeSummary.memoryMode` in the same response does. A local copy is only ever measured against the producer when a real payload carries the new member — as a `ValidationError`, inside a tool handler with no `except` for one.
 
@@ -34,19 +34,13 @@ The V2 references below witness the retained rich model/producer, not the curren
 
 - Memory mode is the shared readable alias [8]
 
-
 - Mode field reads legacy `disabled` as-is [9]
-
 
 - Startup/bootstrap response contract [10]
 
-
 The following source-backed definitions and producer seams retain the broader response and vocabulary account alongside the readable-mode correction; they are declarations, not evidence of an executor run.
 
-- The application constructs ContextPacketV2 from Git, resolved paths, memory, worktree, provider, drift and freshness facts. [11]
-
-
-
+- The application constructs ContextPacketV2 from Git, resolved paths, memory, worktree, drift and freshness facts. [11]
 
 - RepoState and VALID_REPO_STATES define the producer vocabulary; git_facts_to_packet supplies the dict RepoSummary validates. [13]
 - FreshnessState and VALID_FRESHNESS_STATES define the producer vocabulary; freshness_to_packet supplies the freshness dict. [14]
@@ -60,7 +54,5 @@ These former current claims are retained as history, not as instructions or pres
 > The model separates repository Git facts, resolved paths, memory/storage facts, worktree summary, provider summary, and drift summary into explicit nested objects. `ContextPacketV2` fixes `contextPacketVersion` to `2` and carries a diagnostics hint pointing agents at `provider_diagnostics` for raw provider details.
 >
 > Provider readiness in the packet uses compact provider summary models.
-
-- The retained ContextPacketV2 schema has a ProviderSummary field, whose current producer emits configured/enabled with state skipped and no readiness items. The mounted SlimContextPacket v3 carries roots/actions and no provider block. [12]
 
 - ReadableMemoryMode is external/disabled for persisted reads; the startable MemoryMode is external only. Packet memory.mode and worktree.memoryMode use the readable alias.  Anchor: `ReadableMemoryMode` `MemorySummary` `WorktreeSummary` [15]

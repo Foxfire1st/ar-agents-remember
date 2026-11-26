@@ -20,14 +20,28 @@
       ]
     },
     "2": {
-      "note": "The registry binds the tool name to this response model.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
+      "note": "The registry binds the tool name to this response model.",
       "targets": [
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
+            "content": "sha256:e32d72e73c43c68526666e351964e31154f7ccc5f262554de0776dac177d9e07",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "TOOL_RESPONSE_MODELS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
+            "content": "sha256:ede387c2cc78dfe4636092321871f5b03899493e24620248ef606da8aabfc2ab",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 60
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },

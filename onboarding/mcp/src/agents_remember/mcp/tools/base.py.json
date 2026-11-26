@@ -66,11 +66,11 @@
       ]
     },
     "3": {
-      "note": "The live registration is compared to this tuple, in order, by the inventory suite.",
+      "note": "The live registration is compared to this tuple, in order, by the inventory suite.\n\nAnchor: `PublicSurfaceInventoryTests`, `test_live_registration_matches_the_public_inventory_in_order`",
       "targets": [
         {
           "anchor": {
-            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "blob": "37ed680bc9abe365a561f85211c6a8cda8afedf5",
             "content": "sha256:99af9a6a427cf236127e24d5be61389107383dbbf702a8547b09e09dc08713ed",
             "locator": {
               "kind": "symbol",
@@ -82,23 +82,11 @@
         },
         {
           "anchor": {
-            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
-            "content": "sha256:72d33dbfd1b9de2466890068890de129b04207ba8007116032039dec04d251a6",
+            "blob": "37ed680bc9abe365a561f85211c6a8cda8afedf5",
+            "content": "sha256:9b5dae6c11fe566eb7b371edc887037e07c8a9706b502cc29849e48a4b701248",
             "locator": {
-              "end": 214,
-              "kind": "line_range",
-              "start": 153
-            },
-            "path": "mcp/tests/test_tools.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
-            "content": "sha256:a1e4d314feb531d1035a87ca865b4aec6d628128b791f4f2639ff61a7399da89",
-            "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_live_registration_matches_the_public_inventory_in_order"
             },
             "path": "mcp/tests/test_tools.py"
           },

@@ -78,8 +78,6 @@ No relevant domain documentation was found.
 
 - Composition: the app registers this surface. [5]
 
-
-
 ### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.

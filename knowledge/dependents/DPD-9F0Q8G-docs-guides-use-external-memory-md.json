@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "2e79f14e621878f776217e876e3953c8a4903aec",
-    "commit": "50292a3bfed059fe4f0aa9f087a6156bf1b754f9",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "Verified line-by-line on synced code (base 50292a3b + L29): docs/guides/use-external-memory.md (lines 129-157, plus memory_init, context_packet roots, and closeout steps) remains accurate after L29; closeout and direct_landing still run the repository pre-commit hook on the exact candidate tree under orchestration.landing.commitCheckTimeoutSeconds (default 900s, user -> checkout -> main checkout system/settings.json precedence via commit_check_process.py) and write Commit-Check-Pass: tree=<tree> hook=<hook> with hook=none when no hook exists.",
-    "task": "261112-BUG-L29",
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/guides/use-external-memory.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
+    "task": "261125-DEP-L2",
     "uncommitted": true
   },
   "document": "docs/guides/use-external-memory.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,12 +26,12 @@
       "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
     },
     {
-      "blob": "f6c05e150769e32c8c67cd6f806b4d4ec29d7140",
+      "blob": "87d2a6e6ab2d0174f030bcad540cf4202ab1c654",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },
     {
-      "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+      "blob": "0d7c12cb064a7d164e1ecca251248732d34041d2",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/context_packet.py"
     },
@@ -61,20 +61,20 @@
       "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
     },
     {
-      "blob": "a944280846a4175d9217a58a16a3374d336e652b",
+      "blob": "84bed740e5c5cfe8163b23d315a2232de88eb545",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
     }
   ],
   "writer": {
-    "at": "2026-11-26T00:49:11+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L29",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
-    "task": "261112-BUG"
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
   }
 }

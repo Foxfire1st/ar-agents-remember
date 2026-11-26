@@ -124,13 +124,10 @@ Read the focused model card, then its producer and consumer references. Use the 
 ## Evidence
 
 
-
-
 - Native task stage/activity/eventAt is declared separately; the removed session response/state vocabulary is not an operative model in this route. [1]
 
 
 > Retained earlier citation wording: - Finalization declares terminal facts, cleanup/archive and activation facts; it declares neither edge proof nor completion-seat result sets. [2]
-
 
 - The strict journal reader decodes retained kinds and drops retired worker fields. The public envelope binds result, approval, recommendation and available direct controls. [3]
 
@@ -143,19 +140,11 @@ Read the focused model card, then its producer and consumer references. Use the 
 
 - The cancellation evidence shape retains a historical worker-exit boolean. [10]
 
-
 - The durable record owns both revisions; its meaningful subset includes both selected certification cells. [11]
-
 
 - The public envelope carries the wait cursor beside versioned identity and component bindings. [12]
 
-
 - Strict operation decoding explicitly represents missing legacy task intent. [13]
-
-
-
-
-
 
 - Private preparations retain exact selected references and the ordered leg prefix. A preceding leg needs an output. The stored operation key, generation and original certification bind ownership. [16]
 
@@ -164,7 +153,6 @@ Read the focused model card, then its producer and consumer references. Use the 
 - Finalization forwards supplied agent archive reports. [19]
 
 - The memory mutation snapshot preserves actual Git head and headTree while computing cache-excluded contentHeadTree, indexTree, candidateTree and status; removed prepared-memory reuse/output consumers are not current callers. [21]
-
 
 - Currentness partitions entries while unresolvedCount independently equals their unresolved dispositions; status follows the actual recorded population. [18]
 

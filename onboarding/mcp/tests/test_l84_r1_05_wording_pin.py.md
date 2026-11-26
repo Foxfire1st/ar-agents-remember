@@ -21,7 +21,6 @@ Pins individual lifecycle wording that must stay exact: the correct-write hand-w
 - The carriers are the canonical and packaged core files, the launch preparation and the settings reference. [2]
 - The sentence is pinned once in every carrier and fails when cut. [3]
 
-
 - The source homes carry the Architect wording. [6]
 - The sandbox rules hold once in each home and not in the sandbox detail. [7]
 - The Reviewer's repair-and-continue rule is pinned. [8]
@@ -34,4 +33,5 @@ Pins individual lifecycle wording that must stay exact: the correct-write hand-w
 ### Repo-Internal References (renewed)
 
 - Manifest composition rejects a missing derived step and an authored no-step mark that conflicts with retained derived steps. [10]
+
 - Unmapped source lines, overlapping places and uncovered digest prose require an authored map decision rather than the renewal command. [11]

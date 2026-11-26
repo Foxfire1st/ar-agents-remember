@@ -35,8 +35,6 @@ Read-only analytics; the segmented bar reads left→right good→actionable (hea
 - The panel reads only driftSnapshots and ledgers from Analytics; the retired stalest-sidecar list is not rendered. [2]
 
 
-
-
 - Converted stale and violation segments read like their legacy counterparts. [3]
 
 - The Memory mirror renders the retained `driftSnapshots` classification-count bars and the ledger-currency list only. Its two-collection empty check shows “No memory analytics yet.” only when both are empty. Segment ordering and forward-compatible color lookup survive, including converted `stale`/`violation`; displayed drift ages stay server/arrival-anchored and advance locally. No panel call recreates the retired stamp-age leaderboard or confers mutation authority. [4]

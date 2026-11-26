@@ -20,11 +20,11 @@
       ]
     },
     "2": {
-      "note": "The `Scenario`/`ScenarioFrame` model it walks.\n\nAnchor: `ScenarioFrame` `Scenario`",
+      "note": "The `Scenario`/`ScenarioFrame` model it walks.\n\nAnchor: `ScenarioFrame`, `Scenario`, `Source`: `dashboard/src/dev/scenarios.ts:15-26` (note `ScenarioFrame` is L15-20, `Scenario` is L22-26).",
       "targets": [
         {
           "anchor": {
-            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
+            "blob": "71a34fc01b95ac40bcf29b25748235ffe8cc9be3",
             "content": "sha256:9d5aa6f13b3a22ba56c5590d4d7b8a5e0aafd208e86b2448b59480799de56803",
             "locator": {
               "kind": "symbol",
@@ -36,48 +36,11 @@
         },
         {
           "anchor": {
-            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
+            "blob": "71a34fc01b95ac40bcf29b25748235ffe8cc9be3",
             "content": "sha256:c64e9b751e592ad0eef1f4e09bc577f3c6c0c9b6a478e25c886670d0466497cf",
             "locator": {
               "kind": "symbol",
               "name": "Scenario"
-            },
-            "path": "dashboard/src/dev/scenarios.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
-            "content": "sha256:1e34b86535b99692c1955e99ce5c8e51407251c660443732fb984cc5f21de303",
-            "locator": {
-              "end": 22,
-              "kind": "line_range",
-              "start": 17
-            },
-            "path": "dashboard/src/dev/scenarios.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
-            "content": "sha256:a9aaa1d207ca963a1047a7d1efc6ae9bdc1c6a45cb7778519b876e78523ccb07",
-            "locator": {
-              "end": 35,
-              "kind": "line_range",
-              "start": 30
-            },
-            "path": "dashboard/src/dev/scenarios.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
-            "content": "sha256:0b399324a5b92b6875378f983347d8c30a4dd89938753534c6152123b46f4a9d",
-            "locator": {
-              "kind": "file"
             },
             "path": "dashboard/src/dev/scenarios.ts"
           },

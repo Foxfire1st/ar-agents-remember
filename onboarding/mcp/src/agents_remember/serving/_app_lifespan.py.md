@@ -12,10 +12,9 @@ Own the serving lifetime, its retained background loops and drained shutdown. Te
 
 Held-delivery collaborators keep usage-read-before-delivery ordering, then trigger moved comparison after ended-seat delivery. The dedicated watcher task joins the owned shutdown task list.
 
-The lifespan first records this dashboard process in the coordination root's running-server records (`register_server(..., "dashboard")`, `runtime/servers/<pid>.json`) and removes that record first in its finally, so `runtime_install` and `server_info` can list it with its build state. Startup compacts the workspace river before projector prime, then starts projection, provider metrics, leaf-archive recovery, held-message delivery and river-compaction tasks. Heap tracing and malloc trimming are separately opt-in. The archive loop awaits one tick through the drained thread boundary, sleeps after each completed attempt and closes its archive owner in finally; it introduces no second recovery timer. Shutdown first closes projector readiness, cancels and awaits the master-preparation task and closes master preparation, then runs the review-tree child shutdown hook as owned startup work, then cancels and awaits every background task. A cancelled shielded worker is awaited before cancellation is re-raised, so serving cannot return while that worker still writes. Provider sampling/recording/degradation/compaction use the same drained boundary. Source inspection does not supply new teardown execution.
+The lifespan first records this dashboard process in the coordination root's running-server records (`register_server(..., "dashboard")`, `runtime/servers/<pid>.json`) and removes that record first in its finally, so `runtime_install` and `server_info` can list it with its build state. Startup compacts the workspace river before projector prime, then starts projection, leaf-archive recovery, held-message delivery and river-compaction tasks. Heap tracing and malloc trimming are separately opt-in. The archive loop awaits one tick through the drained thread boundary, sleeps after each completed attempt and closes its archive owner in finally; it introduces no second recovery timer. Shutdown first closes projector readiness, cancels and awaits the master-preparation task and closes master preparation, then runs the review-tree child shutdown hook as owned startup work, then cancels and awaits every background task. A cancelled shielded worker is awaited before cancellation is re-raised, so serving cannot return while that worker still writes. Source inspection does not supply new teardown execution.
 
-The serving lifetime retains the shared background ledger and server-side host-start loading watch. Archive recovery, provider metrics, held-message work and each native resume are attributed to their executing worker units. The loading driver uses shared OS lease/progress, records completion or cancellation, and drains before its claim closes. Removed terminal observation and notifier sweeps are not reintroduced by that loading watch. The measured warmup resume receives `run.role_receipts[agent_id]`, so receipt identity is republished before native resume. This reuses the existing loading driver and offload/drain accounting; it is not the host-activity intake and adds no host polling timer.
-
+The serving lifetime retains the shared background ledger and server-side host-start loading watch. Archive recovery, held-message work and each native resume are attributed to their executing worker units. The loading driver uses shared OS lease/progress, records completion or cancellation, and drains before its claim closes. Removed terminal observation and notifier sweeps are not reintroduced by that loading watch. The measured warmup resume receives `run.role_receipts[agent_id]`, so receipt identity is republished before native resume. This reuses the existing loading driver and offload/drain accounting; it is not the host-activity intake and adds no host polling timer.
 
 The lifespan owns the refresher's lifetime, so no reaper of its own is needed. The lifespan consumes the collaborator it was given instead of reaching into cli.
 
@@ -25,9 +24,6 @@ The lifespan owns the refresher's lifetime, so no reaper of its own is needed. T
 
 Before its delivery pass a tick runs one usage batch when a stamped end is new or a stored report is due for its five-minute recheck. `usage_read_batch` claims each due attempt and combines the report ids with the tick's eligible stamped agents, and the composition root's `usage_read` port performs the one bridge read. A tick with neither trigger starts no usage read, and a clear the batch records reaches this same tick's held messages.
 
-## Periodic Provider Safety Boundary
-
-The provider loop remains periodic: sample labelled containers, record, evaluate degradation with the existing stop callback, compact, then sleep at the configured sample interval. Every stage uses the accounted cancellation-drained offload. A launch-authority map is not a fleet-retirement witness: empty, revoked or malformed authority and a dashboard restart do not prove leftover labelled stacks are gone. Neither page interest nor authority decoding gates this safety sequence. Launch refusal, sampler label discovery, degradation policy and Docker handling keep their own owners. This is the retained landed loop, not an accepted fleet-absence optimization; controlled real-loop regression tests are not a claim that a real fleet was launched.
 
 ## Evidence boundary
 
@@ -35,53 +31,20 @@ This is current-source interpretation of the A9 candidate, not a new test result
 
 ## Source-bound reference inputs
 
-
-
-
 - Anchor: Actual startup task set and shutdown order.
-
-
-
-
 
 - Anchor: Shielded thread worker is drained before cancellation escapes. [16]
 
-
-
-
-
 - Anchor: The shared cancelled-worker drain boundary. [20]
-
-
-
-
 
 - Anchor: One completion-relative archive-recovery cadence, not terminal observation. [22]
 
-
-
-
-
-- Anchor: Retained metrics operations use the drained boundary. [24]
-
-
-
-
-
 - Anchor: Archive recovery sleeps using its imported tick constant after each attempt. [25]
-
-
-
-
 
 - Anchor: Initial river compaction, projector prime, background tasks, child shutdown and drain.
 
 
-
-- Periodic safety samples, records, evaluates with its existing stop callback and compacts through accounted drained offload, with no page/authority gate. [27]
-- Controlled real-loop tests cover revoked, between-tick, restarted and malformed authority while keeping launch refusal separate. [28]
-
-
 - Held-delivery collaborators keep usage-read-before-delivery ordering, then trigger moved comparison after ended-seat delivery. The dedicated watcher task joins the owned shutdown task list. [29]
+
 
 - The serving lifespan registers the dashboard's running-server record at start and removes it first on exit. [30]

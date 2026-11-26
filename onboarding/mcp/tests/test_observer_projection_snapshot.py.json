@@ -4,14 +4,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Project and write end to end.\n\nAnchor: `test_project_and_write_end_to_end`",
+      "note": "Project and write end to end.\n\nAnchor: `` `test_project_and_write_end_to_end` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "c888bf171bd8a7a46bd3ae40a97178ad4779147f",
-            "content": "sha256:07366bc040e0d73c3a2bb5fc6295df29834d1d766b1bbea7b506eea85b401f6e",
+            "blob": "c6814978919820f939dbd19dbf106d0eb3d5fcce",
+            "content": "sha256:e62cdbfcc6239388f72b8747d024c089e648d19dbdd3ae11acb3809e029af480",
             "locator": {
-              "kind": "file"
+              "end": 94,
+              "kind": "line_range",
+              "start": 90
             }
           },
           "kind": "test"
@@ -23,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c888bf171bd8a7a46bd3ae40a97178ad4779147f",
+            "blob": "c6814978919820f939dbd19dbf106d0eb3d5fcce",
             "content": "sha256:dcd59cdac739e1000cdf5c848da6bb325a11950933a7304a10f9223ec73acf7c",
             "locator": {
               "kind": "symbol",
@@ -39,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c888bf171bd8a7a46bd3ae40a97178ad4779147f",
+            "blob": "c6814978919820f939dbd19dbf106d0eb3d5fcce",
             "content": "sha256:0aaa2ba91054955a3132970c78c6c03e3966936beedc8996d5da3088129d9bcd",
             "locator": {
-              "end": 136,
+              "end": 126,
               "kind": "line_range",
-              "start": 115
+              "start": 105
             }
           },
           "kind": "test"

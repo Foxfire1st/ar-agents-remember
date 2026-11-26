@@ -6,24 +6,4 @@
 
 ## Purpose
 
-`state_files.py` owns JSON state file reads and writes for provider lifecycle
-modules.
-
-## Code Commentary
-
-### Logic
-
-The module returns an empty dict for absent JSON state files and writes
-deterministic, sorted, indented JSON with a trailing newline.
-
-### Invariants And Boundaries
-
-- State file helpers do not interpret provider state.
-- Callers own schema decisions and error handling around loaded data.
-
-## Evidence
-
-### Repo-Internal References
-
-- CGC and GrepAI lifecycle modules use these helpers for provider state and image locks. [1]
-- Provider settings reads reuse the JSON loader. [2]
+This card records the retirement of `mcp/src/agents_remember/providers/lifecycle/state_files.py`. The `261125-DEP-L2` candidate (`DEP-R02@v1`, `DEC-ZGGT0G`) deleted this source file as part of removing the CodeGraphContext and GrepAI search providers and dead code. This file is retained only as a retirement record and grants no current contract, symbol, or route.

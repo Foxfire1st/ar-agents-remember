@@ -14,15 +14,11 @@ No lifecycleStatus totality/inferred/unclassified or lifecycle-vocabulary buildT
 
 ### Logic
 
-The test builds minimal `EnclosureNode` and native task-entry fixtures and calls `buildTopology` directly. It inspects returned nodes instead of rendering a canvas. The current cases assert only `ws`, `repo` and `wt` node kinds, no `poff` key, one checkout per repository with an active enclosure, and each enclosure parented to its own checkout. The separate limit case uses the hosted model-provider limit supplied on a task entry; that field does not restore search-provider nodes.
+The test builds minimal `EnclosureNode` and native task-entry fixtures and calls `buildTopology` directly. It inspects returned nodes instead of rendering a canvas. The current cases assert only `ws`, `repo` and `wt` node kinds, one checkout per repository with an active enclosure, and each enclosure parented to its own checkout. The separate limit case uses the hosted model-provider limit supplied on a task entry; that field does not restore search-provider nodes.
 
 **Bound native task and active groups.**
 
 Active groups come from the server. The bound paused entry pins its qualified key/title, worktree · paused, warn and no task ring; no lifecycle grammar is inferred.
-
-
-
-
 
 ### Conventions
 
@@ -32,15 +28,12 @@ Minimal typed enclosure/native-entry fixtures inspect returned node parents/iden
 
 - Tests must not depend on canvas rendering, layout timing, or browser animation state.
 
-
-
-- Search-provider satellites remain absent: the fixture result has only workspace, checkout and enclosure kinds, and no `poff` key.
+- Search-provider satellites remain absent: the fixture result has only workspace, checkout and enclosure kinds.
 - Every active enclosure is parented to a checkout node for its repository; repositories with no active enclosure add no checkout ring node.
 
 ### Todos
 
 No open file-local todos.
-
 
 **INV-XZYGEB.** The topology model is where the label's text is chosen, so its test holds the no-clock form.
 
@@ -56,15 +49,6 @@ No relevant external documentation found.
 ### Repo-Internal References
 
 Pure native worktree/task identity, hosted-limit label, checkout-ring membership and enclosure-parenting contract; no search-provider satellites or lifecycle grammar.
-
-
-
-
-
-
-
-
-
 
 ### Cross-Repo References
 

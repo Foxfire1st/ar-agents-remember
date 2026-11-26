@@ -3,58 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
-        "content": "sha256:ffc5fb2a3b1e191db2e3ec5eaec8342281a899722a2ea80d5d940dd831ed44ab",
+        "blob": "4154ad1215e039072285c5074d7423316d222927",
+        "content": "sha256:7b3f7b73a3a9cbb04e497500166c5ba3e691a1c113daec8d9caf4ec310f240e5",
         "locator": {
           "kind": "symbol",
-          "name": "test_fresh_provider_skip_leaves_no_archive_and_allows_true_retry"
+          "name": "test_cleanup_removes_leftover_provider_runtime_directory_directly"
         }
       },
-      "facet": "Exercises test_fresh_provider_skip_leaves_no_archive_and_allows_true_retry to verify cleanup checks providers before archiving and keeps accepted retry arguments.",
-      "id": "PRF-4655T1",
-      "invariant": "INV-PB6BZ0",
+      "facet": "Cleanup previews and directly removes a leftover provider-runtime directory so the enclosure empties and finalizes.",
+      "id": "PRF-BR8ND1",
+      "invariant": "INV-FBATD2",
       "origin": {
-        "handoffEntry": "BUG-R38@v1 rule 4 provider skip",
-        "leaf": "261112-BUG-L38"
+        "handoffEntry": "DEP-R02@v1 §1",
+        "leaf": "261125-DEP-L2"
       }
     },
     {
       "anchor": {
-        "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
-        "content": "sha256:ffc5fb2a3b1e191db2e3ec5eaec8342281a899722a2ea80d5d940dd831ed44ab",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_fresh_provider_skip_leaves_no_archive_and_allows_true_retry"
-        }
-      },
-      "facet": "Exercises test_fresh_provider_skip_leaves_no_archive_and_allows_true_retry to verify cleanup accepts removed provider resources and keeps refusal reasons.",
-      "id": "PRF-B6AHQG",
-      "invariant": "INV-2XN0BV",
-      "origin": {
-        "handoffEntry": "BUG-R38@v1 rule 4 provider results",
-        "leaf": "261112-BUG-L38"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
-        "content": "sha256:10f2957effc7ed6e593822c1ca862e21caf8dcb1af774f631fbab840ff0bb5f9",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_accepted_provider_skip_preserves_archive_and_retries_with_saved_arguments"
-        }
-      },
-      "facet": "Exercises test_accepted_provider_skip_preserves_archive_and_retries_with_saved_arguments to verify cleanup checks providers before archiving and keeps accepted retry arguments.",
-      "id": "PRF-M80HD8",
-      "invariant": "INV-PB6BZ0",
-      "origin": {
-        "handoffEntry": "BUG-R38@v1 rule 4 provider skip",
-        "leaf": "261112-BUG-L38"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
+        "blob": "4154ad1215e039072285c5074d7423316d222927",
         "content": "sha256:f56d8c620d46e7e42eb0820c543b73c88da38bd47c8654bd8db0c256f2605f87",
         "locator": {
           "kind": "symbol",
@@ -71,67 +37,51 @@
     },
     {
       "anchor": {
-        "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
-        "content": "sha256:ff168bc6377c38a1dae49a8ca4ce7b93d74e2d927b5eb87932501b982399f0a4",
+        "blob": "4154ad1215e039072285c5074d7423316d222927",
+        "content": "sha256:a02bda0261c873b7335ce3b29461b51b11e4a829c5d107546909544d99ee96c8",
         "locator": {
           "kind": "symbol",
-          "name": "test_terminal_provider_results_keep_removals_and_refusals_distinct"
+          "name": "test_abandon_removes_leftover_provider_runtime_directory_directly"
         }
       },
-      "facet": "Exercises test_terminal_provider_results_keep_removals_and_refusals_distinct to verify cleanup accepts removed provider resources and keeps refusal reasons.",
-      "id": "PRF-Z3745C",
-      "invariant": "INV-2XN0BV",
+      "facet": "Abandon previews and directly removes a leftover provider-runtime directory so the enclosure empties.",
+      "id": "PRF-RZYTDP",
+      "invariant": "INV-FBATD2",
       "origin": {
-        "handoffEntry": "BUG-R38@v1 rule 4 provider results",
-        "leaf": "261112-BUG-L38"
+        "handoffEntry": "DEP-R02@v1 §1",
+        "leaf": "261125-DEP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4154ad1215e039072285c5074d7423316d222927",
+        "content": "sha256:8d1868b44d1fd190a3aba5ad3879fb2e7839f98557aa3c14a0ad61055b54c031",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unremovable_provider_runtime_directory_blocks_cleanup_with_its_reason"
+        }
+      },
+      "facet": "An unremovable provider-runtime directory blocks cleanup with its explicit permission-denied reason.",
+      "id": "PRF-Y3B3X1",
+      "invariant": "INV-FBATD2",
+      "origin": {
+        "handoffEntry": "DEP-R02@v1 §1",
+        "leaf": "261125-DEP-L2"
       }
     }
   ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Public abandon preview returns would-abandon with no blockers and leaves the fixture’s code worktree in place.",
+      "note": "Public abandon preview returns would-abandon with directories.provider_runtime.would_remove true and leaves the leftover provider-runtime directory in place; real abandon removes it directly.",
       "targets": [
         {
           "anchor": {
-            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
-            "content": "sha256:ee2047a9342ca94fd6ced51b91d20b36379b10d8e5c424d146344bf7e8e02647",
-            "locator": {
-              "end": 205,
-              "kind": "line_range",
-              "start": 148
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "10": {
-      "note": "An unnameable blocker reason raises at the call site that detected it.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
-            "content": "sha256:15e31756ce997512a9f95951f44bc3b36d17e3c916896483f3e0b88d07ad2ea3",
+            "blob": "4154ad1215e039072285c5074d7423316d222927",
+            "content": "sha256:a02bda0261c873b7335ce3b29461b51b11e4a829c5d107546909544d99ee96c8",
             "locator": {
               "kind": "symbol",
-              "name": "test_an_unnameable_blocker_reason_is_refused_at_its_own_source"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "A blank producer reason cannot reach an operator as `reason: \"\"`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
-            "content": "sha256:75ee39bd9dd102c67c6bfe1ba3198c50f96169d33cfaa95f8e7bbd3232ad0d4f",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_empty_provider_reason_is_replaced_by_a_named_statement"
+              "name": "test_abandon_removes_leftover_provider_runtime_directory_directly"
             }
           },
           "kind": "test"
@@ -139,31 +89,16 @@
       ]
     },
     "12": {
-      "note": "The direct removal test checks the absent-path reason and the removed result for an existing path.",
+      "note": "The direct removal test exercises worktrees/modules/filesystem.py::remove_tree for absent-path reason, dry-run preview, real removal, and permission-denied failure.\n\nAnchor: `` `test_remove_tree_answers_with_a_reason_whenever_it_reclaimed_nothing` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
-            "content": "sha256:7a0f04ef049f20ca4ad3b0521fb3759e492f6eb1a71061d927835a47c101e421",
+            "blob": "4154ad1215e039072285c5074d7423316d222927",
+            "content": "sha256:7aed4356628224bb48ee1f5887c9d7c993ae8949175c512f66aca0e62092babc",
             "locator": {
-              "kind": "symbol",
-              "name": "test_remove_tree_answers_with_a_reason_whenever_it_reclaimed_nothing"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "The post-reclaim branch that could answer silently now names its own cause.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
-            "content": "sha256:cf0fca4dddba6037a11a2aace70fc52c6799556318aa5d803988f4061d6b7cd9",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_reclaimed_but_surviving_provider_runtime_reports_why_it_survived"
+              "end": 283,
+              "kind": "line_range",
+              "start": 248
             }
           },
           "kind": "test"
@@ -175,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
+            "blob": "4154ad1215e039072285c5074d7423316d222927",
             "content": "sha256:cec06ef5195e135c49156b0fbfd28187e9ed521eae2c5daeba113afe90597f04",
             "locator": {
               "kind": "symbol",
@@ -186,7 +121,7 @@
         },
         {
           "anchor": {
-            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
+            "blob": "4154ad1215e039072285c5074d7423316d222927",
             "content": "sha256:fb48a76e166387c83128805390f4c481147ddd7e2db41f5c251fe79cd586bb7e",
             "locator": {
               "kind": "symbol",
@@ -197,7 +132,7 @@
         },
         {
           "anchor": {
-            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
+            "blob": "4154ad1215e039072285c5074d7423316d222927",
             "content": "sha256:0c3adb92d5029d3e4efd16eb83d6d65f62199b2181b18d11ff4147ed835a958c",
             "locator": {
               "kind": "symbol",
@@ -208,7 +143,7 @@
         },
         {
           "anchor": {
-            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
+            "blob": "4154ad1215e039072285c5074d7423316d222927",
             "content": "sha256:60b9272666f23543440529305b45126190228f0ec8313d2d11b78a2c63383279",
             "locator": {
               "kind": "symbol",
@@ -224,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
+            "blob": "4154ad1215e039072285c5074d7423316d222927",
             "content": "sha256:067156edcd1985325594228bc9a81d9123ac54efc9027b795637d097e84c49af",
             "locator": {
               "kind": "symbol",
@@ -235,7 +170,7 @@
         },
         {
           "anchor": {
-            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
+            "blob": "4154ad1215e039072285c5074d7423316d222927",
             "content": "sha256:1e2ca2291c3e156561001938afa139bbd2c34a8b278152778f54ed4c0ddd226d",
             "locator": {
               "kind": "symbol",
@@ -251,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "99886f1b1bae224fcc65de23608c833a0262d37e",
+            "blob": "4f5583dd08a581786d6b82c0db4d7e2076ac3706",
             "content": "sha256:2bf5ef9510cee9d12cb70d348c38e61d94c553e31d1a993be4560d6a311be771",
             "locator": {
               "kind": "symbol",
@@ -268,7 +203,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "99886f1b1bae224fcc65de23608c833a0262d37e",
+            "blob": "4f5583dd08a581786d6b82c0db4d7e2076ac3706",
             "content": "sha256:2c1889fa043a9231ac5191ee55fe3d1dff0bd0623a7913206e5c119138283c88",
             "locator": {
               "kind": "symbol",
@@ -281,15 +216,16 @@
       ]
     },
     "18": {
-      "note": "The bundle and the builder the invariant-owner cases drive directly.",
+      "note": "The bundle and the builder the invariant-owner cases drive directly.\n\nAnchor: `` `TerminalResult` `terminal_result_blockers` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "99886f1b1bae224fcc65de23608c833a0262d37e",
-            "content": "sha256:7e524ab2da1ff9f98bcf389858f79a16569bb012367c7f625500eec228c237cd",
+            "blob": "4f5583dd08a581786d6b82c0db4d7e2076ac3706",
+            "content": "sha256:0b9b6d4b1fd29ec03c9a55e9c758a9f12f17c5731aa05d3055213cc91a0f5b07",
             "locator": {
-              "kind": "symbol",
-              "name": "TerminalResult"
+              "end": 256,
+              "kind": "line_range",
+              "start": 243
             },
             "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
           },
@@ -297,11 +233,12 @@
         },
         {
           "anchor": {
-            "blob": "99886f1b1bae224fcc65de23608c833a0262d37e",
-            "content": "sha256:6fecff16f222bd802f30b28b67b5cbf6cd44c932e3b29945d84bfd9496aafb78",
+            "blob": "4f5583dd08a581786d6b82c0db4d7e2076ac3706",
+            "content": "sha256:e71594b08c84fdacb5f617c0112f975371dad2b5fdba6c2107e493dfa45033c8",
             "locator": {
-              "kind": "symbol",
-              "name": "terminal_result_blockers"
+              "end": 310,
+              "kind": "line_range",
+              "start": 259
             },
             "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
           },
@@ -310,33 +247,33 @@
       ]
     },
     "19": {
-      "note": "The producer whose reason the refusal carries, including the post-reclaim branch this module forces.",
+      "note": "The direct directory removal helper that answers with an explicit reason whenever it reclaims nothing.\n\nAnchor: `` `remove_tree` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "7da9d6abdce7275958e06ed2baf8cbf04674a2e2",
-            "content": "sha256:8f1226779d8cabe09fc5bf84b4a3e3964ec2727373b556a444a5a660b698e605",
+            "blob": "19c0c329960ba73029a9e4af53a30cef419f39c6",
+            "content": "sha256:ae407288bc32e655fe7cdd1024bd3dd37dbea8e5d52ed1470acbb4abf2407948",
             "locator": {
-              "kind": "symbol",
-              "name": "remove_tree"
+              "end": 29,
+              "kind": "line_range",
+              "start": 9
             },
-            "path": "mcp/src/agents_remember/application/provider_runtime.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/filesystem.py"
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "The injected already-absent teardown response allows one finalize call to complete. The case checks four empty notRemoved lists, absence of the code worktree and enclosure root, and completion of the contract and task document.",
+      "note": "Cleanup preview marks a leftover provider-runtime directory for removal and one finalize call completes cleanup directly, removing the directory and worktree group and marking the contract and leaf document completed.",
       "targets": [
         {
           "anchor": {
-            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
-            "content": "sha256:ee2047a9342ca94fd6ced51b91d20b36379b10d8e5c424d146344bf7e8e02647",
+            "blob": "4154ad1215e039072285c5074d7423316d222927",
+            "content": "sha256:7b3f7b73a3a9cbb04e497500166c5ba3e691a1c113daec8d9caf4ec310f240e5",
             "locator": {
-              "end": 205,
-              "kind": "line_range",
-              "start": 148
+              "kind": "symbol",
+              "name": "test_cleanup_removes_leftover_provider_runtime_directory_directly"
             }
           },
           "kind": "test"
@@ -344,16 +281,16 @@
       ]
     },
     "20": {
-      "note": "The port the L6 teardown answer is substituted on, and the services builder the fixture rebinds. Anchor: `ProviderLifecyclePort` `build_default_worktree_services`",
+      "note": "The worktree services container and default services builder the fixture rebinds.\n\nAnchor: `` `WorktreeServices` `build_default_worktree_services` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
-            "content": "sha256:3d6f92d4fd05bcf8bd9fa3cf903fb62b86a74954e4a3189df33cecea220b7d9c",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
+            "content": "sha256:1f775cd7d27d6b71943203bee865b1a0c0ae96164412b093ae0fe1604703fbfa",
             "locator": {
-              "end": 108,
+              "end": 344,
               "kind": "line_range",
-              "start": 66
+              "start": 333
             },
             "path": "mcp/src/agents_remember/worktrees/services.py"
           },
@@ -361,12 +298,12 @@
         },
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:c1fcc7b7275328d864f41adaf46a4f6bc1768452e16d885108de9082c1c62b4d",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+            "content": "sha256:d8332a7c6885d84165fac3abe29c0f6f3d81ca117afd19c912d8454858f1bef6",
             "locator": {
-              "end": 240,
+              "end": 129,
               "kind": "line_range",
-              "start": 225
+              "start": 115
             },
             "path": "mcp/src/agents_remember/application/worktree_services.py"
           },
@@ -375,15 +312,16 @@
       ]
     },
     "21": {
-      "note": "The public terminal route the whole-tool cases call.",
+      "note": "The public terminal route the whole-tool cases call.\n\nAnchor: `` `lifecycle_finalize_task_tool` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
-            "content": "sha256:4e8196e941fb43e63fb6854a5666176542e8a6ae1c28085ce979fa1f060ee59d",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+            "content": "sha256:2168526df675af4e03f114b9201b7219844679cab9a794f483c8a74e89c80131",
             "locator": {
-              "kind": "symbol",
-              "name": "lifecycle_finalize_task_tool"
+              "end": 771,
+              "kind": "line_range",
+              "start": 751
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -437,12 +375,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
+            "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
             "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
-              "end": 804,
+              "end": 795,
               "kind": "line_range",
-              "start": 804
+              "start": 795
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -496,12 +434,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
+            "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
             "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
-              "end": 804,
+              "end": 795,
               "kind": "line_range",
-              "start": 804
+              "start": 795
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -539,16 +477,16 @@
       ]
     },
     "28": {
-      "note": "Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection.",
+      "note": "Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection.\n\nAnchor: source",
       "targets": [
         {
           "anchor": {
-            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
-            "content": "sha256:0e731958b83fac41f0f763efd42be7ae979cbc685606300b198461b8fc42a12b",
+            "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
+            "content": "sha256:83d4754bdd27c3db9adeb00fe0bd52039df020676021b2ab568d544c71d623de",
             "locator": {
-              "end": 176,
+              "end": 142,
               "kind": "line_range",
-              "start": 55
+              "start": 53
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
@@ -556,189 +494,25 @@
         },
         {
           "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
-            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
+            "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
+            "content": "sha256:9d09ab9899aa01dae2331e6de03728a08c81eb1ec8b7ff5b67f7e6d188480c27",
             "locator": {
-              "end": 834,
+              "end": 555,
               "kind": "line_range",
-              "start": 834
+              "start": 545
             },
-            "path": "mcp/tests/evidence-lifecycle.toml"
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
-          "kind": "test"
+          "kind": "code"
         },
         {
           "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
-            "content": "sha256:7bc165fa8e9087c8f6b6dcb2c4ab2be734cb3134bdeed8a8ddf203ed9e89a177",
+            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
+            "content": "sha256:4b5c629a7065dbaf1864a5f4f671ea7b6e409dc0b5d4542ecd839b1c3e7a308f",
             "locator": {
-              "end": 1010,
-              "kind": "line_range",
-              "start": 1004
+              "kind": "file"
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
-            "content": "sha256:d70132e2850a4ba9afbef037362d13b1c07309547ec96d0daecaf0a28cff9791",
-            "locator": {
-              "end": 1163,
-              "kind": "line_range",
-              "start": 1153
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
-            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
-            "locator": {
-              "end": 1367,
-              "kind": "line_range",
-              "start": 1367
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
-            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
-            "locator": {
-              "end": 3325,
-              "kind": "line_range",
-              "start": 3325
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
-            "content": "sha256:796cb8322eb2bd6991b881d6597e3978304dfd114c3483909f1af3c57d2c0ef4",
-            "locator": {
-              "end": 3445,
-              "kind": "line_range",
-              "start": 3431
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
-            "content": "sha256:2ec9c65631ec2f628d398ae2cb998051ad989261589316515110907824c0db36",
-            "locator": {
-              "end": 3599,
-              "kind": "line_range",
-              "start": 3588
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
-            "content": "sha256:7bc165fa8e9087c8f6b6dcb2c4ab2be734cb3134bdeed8a8ddf203ed9e89a177",
-            "locator": {
-              "end": 3771,
-              "kind": "line_range",
-              "start": 3765
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
-            "content": "sha256:7bc165fa8e9087c8f6b6dcb2c4ab2be734cb3134bdeed8a8ddf203ed9e89a177",
-            "locator": {
-              "end": 3970,
-              "kind": "line_range",
-              "start": 3964
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
-            "content": "sha256:796cb8322eb2bd6991b881d6597e3978304dfd114c3483909f1af3c57d2c0ef4",
-            "locator": {
-              "end": 4627,
-              "kind": "line_range",
-              "start": 4613
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
-            "content": "sha256:d70132e2850a4ba9afbef037362d13b1c07309547ec96d0daecaf0a28cff9791",
-            "locator": {
-              "end": 5076,
-              "kind": "line_range",
-              "start": 5066
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
-            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
-            "locator": {
-              "end": 5191,
-              "kind": "line_range",
-              "start": 5191
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "The permission-failure fixture preserves the task document state, pending cleanup, code worktree and provider-runtime path. Its retry repeats the blocked state and exact blocker list.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
-            "content": "sha256:0a35eedfdf93940b1382b8b784fd34c2318a07d0f4376c1b581dda2701b79418",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "The exact L6 input — `{\"removed\": False}` with no reason — is answered in operator language instead of becoming a null reason.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
-            "content": "sha256:a07b6d6b107867555601d4c5b9d9daa97bdc2e9ab048273ccea0878e7aff1989",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason"
-            }
           },
           "kind": "test"
         }
@@ -749,77 +523,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
-            "content": "sha256:15e31756ce997512a9f95951f44bc3b36d17e3c916896483f3e0b88d07ad2ea3",
+            "blob": "4154ad1215e039072285c5074d7423316d222927",
+            "content": "sha256:1e224d4a008a6a4f2a37832cbfb4e73ff60e3ce1339faeb4be9ddf7a1b67705d",
             "locator": {
               "kind": "symbol",
               "name": "test_an_unnameable_blocker_reason_is_refused_at_its_own_source"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "Public abandon preview returns would-abandon with no blockers and leaves the fixture’s code worktree in place.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
-            "content": "sha256:ee2047a9342ca94fd6ced51b91d20b36379b10d8e5c424d146344bf7e8e02647",
-            "locator": {
-              "end": 205,
-              "kind": "line_range",
-              "start": 148
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "The injected already-absent teardown response allows one finalize call to complete. The case checks four empty notRemoved lists, absence of the code worktree and enclosure root, and completion of the contract and task document.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
-            "content": "sha256:ee2047a9342ca94fd6ced51b91d20b36379b10d8e5c424d146344bf7e8e02647",
-            "locator": {
-              "end": 205,
-              "kind": "line_range",
-              "start": 148
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "The permission-failure fixture preserves the task document state, pending cleanup, code worktree and provider-runtime path. Its retry repeats the blocked state and exact blocker list.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
-            "content": "sha256:0a35eedfdf93940b1382b8b784fd34c2318a07d0f4376c1b581dda2701b79418",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "The exact L6 input — `{\"removed\": False}` with no reason — is answered in operator language instead of becoming a null reason.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
-            "content": "sha256:a07b6d6b107867555601d4c5b9d9daa97bdc2e9ab048273ccea0878e7aff1989",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason"
             }
           },
           "kind": "test"

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
-    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "On tree a5bb9a1f, the existing-repository onboarding guide's account of memory_init's arguments and defaults and of memory_baseline_status and memory_baseline_adopt still holds because CAP-L4 only tightened tool descriptions in memory.py (keeping memory_init's pointer to this guide) without changing parameters or runtime behavior.",
-    "task": "261124-CAP-L4",
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/guides/onboard-existing-repo.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
+    "task": "261125-DEP-L2",
     "uncommitted": true
   },
   "document": "docs/guides/onboard-existing-repo.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_first_run.py"
     },
     {
-      "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+      "blob": "0d7c12cb064a7d164e1ecca251248732d34041d2",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/context_packet.py"
     },
@@ -65,5 +65,16 @@
       "kind": "file",
       "path": "mcp/src/agents_remember/application/file_briefs/render_brief.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T07:08:02+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
+  }
 }

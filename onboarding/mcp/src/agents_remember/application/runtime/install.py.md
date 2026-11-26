@@ -16,10 +16,7 @@ servers with their build currentness.
 ### Logic
 
 `RuntimeInstallRequest` carries the model-facing install flags
-`dry_run`, `include_benchmarks`, `install_provider_deps` (default `True`),
-`no_cache` (default `False`), and `reconcile_shared_held_stores` (default `False`), plus the run's own `experiment` selection. Its `provider_deps_timeout`
-and `source_root` fields stay unset for MCP callers, so the tool accepts no host paths or provider
-path overrides.
+`dry_run` (default `False`), `include_benchmarks` (default `False`), and `reconcile_shared_held_stores` (default `False`), plus the run's own `experiment` selection. Its `source_root` field stays unset for MCP callers, so the tool accepts no host path overrides.
 
 The dataclass is **defined in `agents_remember.install.runtime`** and this
 module re-exports it (`__all__ = ["RuntimeInstallRequest", "open_user_settings_notice", "run_runtime_install"]`) for its
@@ -45,11 +42,7 @@ currentness: a dry run calls read-only `preview_server_inventory` (leaving dead 
 - Keep this application entry point thin: the earlier install mechanics and the request type itself
   belong in `agents_remember.install.runtime`. This module is a re-export plus the host, dashboard
   and running-server composition, and those parts and their `ok` conjunction are owned here.
-- Do not add path fields to `RuntimeInstallRequest`; keep it to typed install
-  booleans. The retained `install_provider_deps` and `no_cache` fields are still
-  accepted and forwarded, but no provider dependency installation runs;
-  `no_cache` does not request a provider-image rebuild. Runtime installation still
-  attempts the required leftover-watcher stop and reports unused provider keys.
+- Do not add path fields to `RuntimeInstallRequest`; keep it to typed install flags (`dry_run`, `include_benchmarks`, `experiment`). Removed-store detection reports leftover stores (`removedPartStores`) without deleting them.
 - Default `dry_run` is false — the tool applies by default (act-by-default
   contract). Pass `dry_run=true` to inspect the planned reconcile before
   mutation.
@@ -59,12 +52,8 @@ currentness: a dry run calls read-only `preview_server_inventory` (leaving dead 
 ### Repo-Internal References
 
 
-- Runtime installation attempts the required leftover-watcher stop independently of the accepted `install_provider_deps` and `no_cache` knobs and reports enabled provider keys once as unused; those knobs drive no provider dependency installation or provider-image rebuild. [5]
 
-
-
-- The tool maps its booleans into `RuntimeInstallRequest` and hands that request unchanged to `runtime_install_payload`. Anchor: `RuntimeInstallRequest` [1]
-
+- The tool maps its flags (`dry_run`, `include_benchmarks`, `experiment`) into `RuntimeInstallRequest` and hands that request unchanged to `runtime_install_payload`. [1]
 
 
 
@@ -73,9 +62,8 @@ currentness: a dry run calls read-only `preview_server_inventory` (leaving dead 
 
 
 
-
-
 - The service layer defines `RuntimeInstallRequest` and performs the actual runtime install. [3]
+
 
 
 

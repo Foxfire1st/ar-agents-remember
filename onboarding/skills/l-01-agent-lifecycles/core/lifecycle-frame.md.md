@@ -6,7 +6,7 @@
 
 ## Purpose
 
-This authoring reference helps maintainers locate assignment, scope and provider-degradation duties; it distinguishes task worktree location records and the landing chain's contract lifecycle from structural seat binding. The canonical file owns this instruction account; the packaged copy is a propagation target, not a replacement source owner. Source presence does not prove injection into every native capsule.
+This authoring reference helps maintainers locate assignment and scope duties; it distinguishes task worktree location records and the landing chain's contract lifecycle from structural seat binding. The canonical file owns this instruction account; the packaged copy is a propagation target, not a replacement source owner. Source presence does not prove injection into every native capsule.
 
 ## Contract and ownership
 
@@ -18,8 +18,6 @@ The frame points to the public references for `worktree_start` (worktree creatio
 
 The assignment check uses the role, canonical assignment and workspace bindings in the handover, never an invented trust packet: read the supplied task and requirement files with native tools, change task documents only through `task_doc`, confirm that role, task, requirement version, roots, contract and report path agree, and name the owning source and field of a missing binding. Before repository planning the Architect reads the relevant knowledge and resolves the memory layer; onboarding changes belong to the Curator.
 
-Provider-start/degradation instructions are retained source residue, not authority to restore retired setup/start/index/watch operations or removed arguments. Preserve their report/order/no-kill boundary: a degradation event holds provider starts, not every seat, and leaf-altitude seats receive no provider teardown authority. This instruction evidence is not current runtime execution or acceptance.
-
 ## Evidence
 
 ### External evidence
@@ -28,4 +26,4 @@ No entries are configured in the resolved source registry. This card records rep
 
 - Worktree location references, the terminal lifecycle and structural seat bindings; Architect and Bootstrap start without a document. [1]
 
-- Supplied-assignment check and provider-degradation report/order/no-kill boundaries, not restored runtime authority. [2]
+- Supplied-assignment check using handover bindings rather than an invented trust packet, confirming agreement across role, task, requirement version, roots, contract and report path and keeping onboarding changes with the Curator. [2]

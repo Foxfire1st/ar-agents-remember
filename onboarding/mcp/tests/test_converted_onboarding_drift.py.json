@@ -90,24 +90,26 @@
       ]
     },
     "10": {
-      "note": "A successful would-adopt dry-run preview and a separate blocked-invalid live refusal preserve HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprints.\n\nAnchor: `test_dry_run_and_refusal_change_nothing` `_fingerprint`",
+      "note": "A successful would-adopt dry-run preview and a separate blocked-invalid live refusal preserve HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprints.\n\nAnchor: `test_dry_run_and_refusal_change_nothing`, `_fingerprint`",
       "targets": [
         {
           "anchor": {
             "blob": "4f10003e3ea83769774013eca0bd6d31e078bcd0",
-            "content": "sha256:5b3ffcd50cfa8450d6e7f73e1f5f5c25158a1484a1758f8044f1d399281b1a91",
+            "content": "sha256:fb21bb9406682c579909273f36276ce13fa40d9b584ee6d7c74760100324de7f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_dry_run_and_refusal_change_nothing"
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "255daddda6969fc7e295b91d7ce2d94800694b07",
-            "content": "sha256:093af6977a118ad22070eaecea956ad652f995ce5ab35aacce179445ff1daee9",
+            "blob": "0b7832d3341425304014817a7b073f35c5e02321",
+            "content": "sha256:29df62445da1cb39c37d2747b849dd43c1741bfe9a6f11ec49d0cd9cde65a5fa",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_fingerprint"
             },
             "path": "mcp/tests/converted_onboarding_drift_support.py"
           },
@@ -195,12 +197,12 @@
         },
         {
           "anchor": {
-            "blob": "255daddda6969fc7e295b91d7ce2d94800694b07",
+            "blob": "0b7832d3341425304014817a7b073f35c5e02321",
             "content": "sha256:29df62445da1cb39c37d2747b849dd43c1741bfe9a6f11ec49d0cd9cde65a5fa",
             "locator": {
-              "end": 244,
+              "end": 242,
               "kind": "line_range",
-              "start": 217
+              "start": 215
             },
             "path": "mcp/tests/converted_onboarding_drift_support.py"
           },
@@ -321,12 +323,12 @@
         },
         {
           "anchor": {
-            "blob": "255daddda6969fc7e295b91d7ce2d94800694b07",
+            "blob": "0b7832d3341425304014817a7b073f35c5e02321",
             "content": "sha256:7b990676f0c575f8af2a1f0263a7a127d3df934fd9e1100297a0790aae97cd6b",
             "locator": {
-              "end": 95,
+              "end": 94,
               "kind": "line_range",
-              "start": 91
+              "start": 90
             },
             "path": "mcp/tests/converted_onboarding_drift_support.py"
           },

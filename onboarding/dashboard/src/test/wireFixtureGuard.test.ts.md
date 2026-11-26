@@ -30,7 +30,6 @@ lies.
 SANCTIONED_WIRE_SITES retains exact reasoned file/site occurrence exemptions, not file-wide permission.
 
 - Decode sites: store TaskEntry/TaskCounts/enclosure/metrics/analytics/events and taskDocuments TaskSummary.
-- Retirement probe exemption: the exact legacyProviderSnapshot site deliberately supplies the retired provider/setup shape to prove no provider surface survives.
 - Fixture exemption: servedProjection narrowing only.
 - contract.test.ts retains one @ts-expect-error allowance.
 - Removed count-grammar/topology widenings are not exemptions; counts/reasons reconcile bidirectionally.
@@ -119,39 +118,28 @@ No external documentation is used for this bounded card.
 
 - The framing and three responsibilities the mechanism cannot supply itself. [1]
 
-
-- The sanctioned-site registry separates retained decode sites, fixture narrowing, the legacy-provider retirement probe and compiler suppression. [2]
-
+- The sanctioned-site registry separates retained decode sites, fixture narrowing, and compiler suppression. [2]
 
 - The real-tree sweep derives its discovered vocabulary with `wireTypeNames(program, ROOT)`. [3]
 
 - The vacuity suite's fixture-surface checks. [4]
 
-
 - The reconciliation over the real tree. [5]
-
 
 - The virtual planted modules and honest forms. [6]
 
-
 - Each rule shown biting, including cross-module and unresolved-name cases. [7]
 
-
 - Zero findings on the honest forms. [8]
-
 
 - The registry reconciliation unit cases. [9]
 
 - The five-rule mechanism and discovered vocabulary. [10]
 - The guard's documented uncovered-evasions section names `ElementAccessExpression`. [11]
 
-
-
 - The sanctioned narrowing the registry names. [15]
 
-
 - The contract test suppresses the carried `refusedPolarity` property. [21]
-
 
 ### Cross-Repo References
 

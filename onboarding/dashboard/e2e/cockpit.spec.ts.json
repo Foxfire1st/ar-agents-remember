@@ -4,14 +4,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The primary cockpit e2e source; the earlier 202-expectations fix-round caption is historical, not a current reached-assertion count.",
+      "note": "The primary cockpit e2e source; the earlier 202-expectations fix-round caption is historical, not a current reached-assertion count.\n\nAnchor: file / `test(\"attention queue ranks alarms first\"...)`, `Source`: `dashboard/e2e/cockpit.spec.ts:1-138`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd0ab74c16b7f0bca74d183b9b006cd48b77924e",
-            "content": "sha256:33146b3fd83ec5cabc780889a981dc336142c833accf29cd7f81fdb21bad10e4",
+            "blob": "cd31482e4391b2f76cf36d7ceb4a12853a75f93c",
+            "content": "sha256:6dccc98055424816e4b7c0260f13a09bc36c142fadd9584c38713e44043f9dc4",
             "locator": {
-              "kind": "file"
+              "end": 138,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"
@@ -19,14 +21,15 @@
       ]
     },
     "2": {
-      "note": "The dev fixture gallery and scenarios the suite drives.",
+      "note": "The dev fixture gallery and scenarios the suite drives.\n\nAnchor: `SCENARIOS` / `GALLERY`, `Source`: `dashboard/src/dev/scenarios.ts:144-160`",
       "targets": [
         {
           "anchor": {
-            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
-            "content": "sha256:0b399324a5b92b6875378f983347d8c30a4dd89938753534c6152123b46f4a9d",
+            "blob": "71a34fc01b95ac40bcf29b25748235ffe8cc9be3",
+            "content": "sha256:ddf632780f5613ca695a6040e19556ddc8d46c6be43f47f1697fe125a6c3bb5f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "SCENARIOS"
             },
             "path": "dashboard/src/dev/scenarios.ts"
           },
@@ -35,14 +38,16 @@
       ]
     },
     "3": {
-      "note": "The retained Playwright source checks attention queue ranking/empty views, task-rail grouping and cross-origin Role chats clipboard policy. The old PTY/stage/inspector/set/composer contract and removed chats-E2E sibling supplies no current proof. Fixture gallery and mocked route assertions are not a fresh run or native-host acceptance.\n\nAnchor: `dashboard/e2e/cockpit.spec.ts`",
+      "note": "The retained Playwright source checks attention queue ranking/empty views, task-rail grouping and cross-origin Role chats clipboard policy. The old PTY/stage/inspector/set/composer contract and removed chats-E2E sibling supplies no current proof. Fixture gallery and mocked route assertions are not a fresh run or native-host acceptance.\n\nAnchor: `test(\"attention queue ranks alarms first\"`, `test('Role chats receives clipboard Permissions Policy...')`, `Source`: `dashboard/e2e/cockpit.spec.ts:12-138`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd0ab74c16b7f0bca74d183b9b006cd48b77924e",
-            "content": "sha256:33146b3fd83ec5cabc780889a981dc336142c833accf29cd7f81fdb21bad10e4",
+            "blob": "cd31482e4391b2f76cf36d7ceb4a12853a75f93c",
+            "content": "sha256:2a9a6dd8e53dbd11bffab34cf9c739bc786559e8dbc605f651829c6176a66c9c",
             "locator": {
-              "kind": "file"
+              "end": 138,
+              "kind": "line_range",
+              "start": 12
             }
           },
           "kind": "test"

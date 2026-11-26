@@ -279,12 +279,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3913163be3b91297066e21703964f8104d4e507",
+            "blob": "c83ccfb416cc0fac4eeea3355022aa20f9dc61c6",
             "content": "sha256:3f0713854f31cdc421c0f9550cf8d3446a991eab438a1c4bf21839bbead0d457",
             "locator": {
-              "end": 103,
+              "end": 95,
               "kind": "line_range",
-              "start": 98
+              "start": 90
             },
             "path": "AGENTS.md"
           },
@@ -292,12 +292,12 @@
         },
         {
           "anchor": {
-            "blob": "e3913163be3b91297066e21703964f8104d4e507",
+            "blob": "c83ccfb416cc0fac4eeea3355022aa20f9dc61c6",
             "content": "sha256:9f5369d8614add9b34ea19cece84e51352e77df97169e4f0ef466fb03f74fa8e",
             "locator": {
-              "end": 126,
+              "end": 117,
               "kind": "line_range",
-              "start": 123
+              "start": 114
             },
             "path": "AGENTS.md"
           },

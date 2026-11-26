@@ -61,14 +61,16 @@
       ]
     },
     "10": {
-      "note": "Watcher exclusion derives the shared lock suffix and filters every directory.\n\nAnchor: `is_projection_input_event`",
+      "note": "Watcher exclusion derives the shared lock suffix and filters every directory.\n\nAnchor: `` `is_projection_input_event` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "3555e19b09110e97833a14cba59e64a655c10041",
-            "content": "sha256:9121b4c60b4e54071e290de2fd00fdea92513f2f76af904494e77636590dab0f",
+            "blob": "8137851d089d6e8de0785d0a545a42cbecc8d32e",
+            "content": "sha256:4f18fcd3127a8080ff85a59c6b36a5ef0cc3d9b23a1fa5be257fa2290db07030",
             "locator": {
-              "kind": "file"
+              "end": 197,
+              "kind": "line_range",
+              "start": 197
             },
             "path": "mcp/src/agents_remember/serving/change_watcher.py"
           },
@@ -76,11 +78,12 @@
         },
         {
           "anchor": {
-            "blob": "3555e19b09110e97833a14cba59e64a655c10041",
+            "blob": "8137851d089d6e8de0785d0a545a42cbecc8d32e",
             "content": "sha256:d9ef3969e16b8aae5bc6fb18d935ab09f26ece5dab35aeeb5bb1301fffc39bbb",
             "locator": {
-              "kind": "symbol",
-              "name": "is_projection_input_event"
+              "end": 409,
+              "kind": "line_range",
+              "start": 380
             },
             "path": "mcp/src/agents_remember/serving/change_watcher.py"
           },

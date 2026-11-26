@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Builds the default service bundle that lets lower-level worktree operations use provider lifecycle, memory checking, citation guards, Gate-5 rail definitions, the mandatory knowledge validator (with its converted-base converter) and the knowledge crossing without importing those higher-level packages.
+Builds the default service bundle that lets lower-level worktree operations use memory checking, citation guards, Gate-5 rail definitions, the mandatory knowledge validator (with its converted-base converter) and the knowledge crossing without importing those higher-level packages.
 
 ## Code Commentary
 
@@ -16,12 +16,11 @@ Builds the default service bundle that lets lower-level worktree operations use 
 
 - The memory-quality adapter carries the admitted landing base through the existing drift context.
 
-
 ### Logic
 
-ProviderLifecycleAdapter translates the worktree-owned setup specification into provider-owned requests and delegates setup/status/teardown. MemoryQualityAdapter delegates check-group discovery, drift context and memory checks. CitationGuardAdapter obtains the memory-quality citation cache guard.
+MemoryQualityAdapter delegates check-group discovery, drift context and memory checks. CitationGuardAdapter obtains the memory-quality citation cache guard.
 
-CertificationMemoryRailsAdapter delegates the admitted selection id to gate_five_memory_rails. build_default_worktree_services installs this adapter beside the existing three services; the re-exported bind_worktree_services installs the resulting bundle when the MCP/CLI composition calls it.
+CertificationMemoryRailsAdapter delegates the admitted selection id to gate_five_memory_rails. build_default_worktree_services installs this adapter beside the memory-quality and citation-guard adapters; the re-exported bind_worktree_services installs the resulting bundle when the MCP/CLI composition calls it.
 
 Since MIK-R22 the default bundle also binds `knowledge_validation=GitKnowledgeValidation()`, imported from `memory_quality.knowledge_validator.commit_route`. It implements `worktrees.services.KnowledgeValidationPort`, so the worktree layer's memory commit routes (today the managed sync's memory merge) can run the validator without importing `memory_quality`.
 
@@ -42,14 +41,14 @@ The default bundle binds `file_briefs` to `_file_briefs_problem`. The callback t
 
 ### Conventions
 
-Keep imports of providers and memory_quality at this composition boundary. Worktree modules consume protocols from worktrees.services; they do not locate those packages dynamically or construct fallback implementations.
+Keep imports of memory_quality at this composition boundary. Worktree modules consume protocols from worktrees.services; they do not locate those packages dynamically or construct fallback implementations.
 
 ### Invariants And Boundaries
 
 - The bundle wires dependencies; it does not execute a certification gate by being built.
 - Supplying Gate-5 rail definitions does not invoke full memory certification or publish coherence.
 - Default composition must bind the rail adapter before the Agents Remember certification-record seam requests it.
-- Preserve provider teardown and citation-guard ownership while extending the bundle.
+- Preserve citation-guard ownership while extending the bundle.
 - The knowledge validator and the knowledge crossing are bound here and nowhere else. A process without a bound crossing refuses a crossing sync (`crossing sync step 'convert' failed`); it never merges one as plain Git.
 - The review-artifact archive hook is bound here and nowhere else (MIK-R25); finalize reads it through the port.
 - The knowledge validator is bound here and nowhere else. A process that builds its bundle without it gets a refusal, not a skipped validation, for any converted memory commit.
@@ -60,11 +59,9 @@ The rail-definition adapter is implemented; the complete R07/R08 production exec
 
 ### CCR private preparation boundary
 
-The default bundle no longer installs prepared closeout continuation or prepared-memory certification adapters. It still composes provider lifecycle, memory quality, citation guarding, certification rail definitions, knowledge validation with `GitBaseConverter`, structural crossing, worklist recomputation, the knowledge gate, review-artifact cleanup and the optional leaf-agent archive port. Composition is not a certification result.
-
+The default bundle no longer installs prepared closeout continuation or prepared-memory certification adapters. It still composes memory quality, citation guarding, certification rail definitions, knowledge validation with `GitBaseConverter`, structural crossing, worklist recomputation, the knowledge gate, review-artifact cleanup and the optional leaf-agent archive port. Composition is not a certification result.
 
 - The current `build_default_worktree_services` boundary implements the preparation contract above.
-
 
 ## Leaf agent archive binding (MIK-R76)
 
@@ -78,11 +75,7 @@ supply `LeafAgentArchive(config)`; a bundle built without it reports `not-bound`
 
 Inherited numbered findings retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
 
-
-
 - Default worktree services retain converted validation, crossing and gate ports without prepared continuation/certification adapters. [14]
-
-
 
 ### Docs References
 
@@ -94,39 +87,23 @@ External domain documentation is not configured.
 
 The cited source establishes the current contracts and boundaries described above. Source verification is documentation evidence, not acceptance of the implementation.
 
-- Provider translation/delegation [2]
-
 
 - Memory-rail and memory-quality adapters [3]
 
 
 - The citation guard delegates terminal namespace protection. [4]
 
-
 - The default bundle composes the declared worktree services, including the knowledge validator with its base converter and the knowledge crossing. [5]
-
 
 - The default bundle composes the declared worktree services, including the knowledge validator with its base converter and the knowledge crossing. [11]
 
-
-
-
 - The default bundle's MIK-R09 binding: the mandatory gate's port adapter. [6]
-
-
 
 - The default bundle's MIK-R08 binding: the worklist recompute port adapter. [7]
 
-
-
-
 - The default bundle's MIK-R08 binding: the worklist recompute port adapter. [12]
 
-
-
-
 - The default bundle's MIK-R25 binding: the review-artifact archive hook. [8]
-
 
 - The canonical binding owner installs the explicit service bundle. [9]
 

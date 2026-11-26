@@ -30,6 +30,6 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "Live periodic safety is intact and now effective: the dashboard samples, records, evaluates, compacts and, on the transition into critical under failSafeEnabled, stops a provider the authority settings enable, because the stop reads those settings instead of an empty generated document.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

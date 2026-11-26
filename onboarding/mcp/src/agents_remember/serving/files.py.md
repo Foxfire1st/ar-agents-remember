@@ -42,8 +42,6 @@ discriminates further. Declaring only the forward shape would have been a lie ab
 route's traffic. `DirectoryListing.code` carries the discriminated `CodeNode` union for the same
 reason — only a `kind: "file"` row may carry `language`/`hasSidecar`, and only it must.
 
-
-
 ### Logic
 
 The shared scope layer (`FileScope`, `resolve_scope`, `run_scoped`, `language_for`, `_iter_repo_contracts`/`_find_enclosure_contract`, `_resolve_within`, `_LANG_BY_EXT`) lives in sibling `serving/scope.py`, so `serving/changeset.py` reuses it. `files.py` imports `FileScope`, `_resolve_within`, `language_for` and `run_scoped` from `.scope`,
@@ -130,7 +128,9 @@ rejected, never silently re-rooted).
 ### Repo-Internal References
 
 - The shared scope layer in `serving/scope.py` owns `FileScope`, `resolve_scope`, `run_scoped`, `language_for` and `_resolve_within`. [1]
+
 - The app factory registers file routes before the SPA static mount; other route registrations intervene. [2]
+
 - The shared, side-effect-free sidecar pairing + path-confinement helpers this module reuses. [3]
 - The scope resolver + `CoordinationContext`/`MissingMemoryError` bridged here. [4]
 - The repo allow-list authority guard (`require_repo` → `RepositoryScope`). [5]
@@ -140,15 +140,12 @@ rejected, never silently re-rooted).
 
 > Retained earlier citation wording: - The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`.
 
-
 | The JSON routes declare `RepoCatalog`, `DirectoryListing`, `FileContents`, `FileResolution` and `OnboardingResolution`; the bytes route returns media responses under the shared scoped-read declarations. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:362-412 |
 | Current production declaration; the removed broad suite supplies no current execution proof. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:362-412 |
 
 ## Repository catalog reuse
 
 `list_repos` now walks the task surface once, buckets entries by repository, and applies a short TTL memo. The repository-files API no longer repeats the same whole-task-tree traversal for each repository in one request.
-
-
 
 - The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`.
 

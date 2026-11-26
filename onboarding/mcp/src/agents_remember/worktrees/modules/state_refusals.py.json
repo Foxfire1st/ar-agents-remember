@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a7a08b14c6340768201af155b6a9d5003c0f28b5",
+        "blob": "32f9063f2f5f2ad956abbf23675ccb16e4e89590",
         "content": "sha256:fe24acdcbc3d7b6f961e61e838b9d326e7f823d43c049d5cb28395e8397a9e38",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7a08b14c6340768201af155b6a9d5003c0f28b5",
+            "blob": "32f9063f2f5f2ad956abbf23675ccb16e4e89590",
             "content": "sha256:fe24acdcbc3d7b6f961e61e838b9d326e7f823d43c049d5cb28395e8397a9e38",
             "locator": {
               "kind": "symbol",
@@ -38,12 +38,12 @@
       ]
     },
     "2": {
-      "note": "Terminal conversion is a recognized-message mapping with an unrecognized fallback.\n\nAnchor: `terminal_state_refusal`",
+      "note": "Terminal conversion is a recognized-message mapping with an unrecognized fallback.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "a7a08b14c6340768201af155b6a9d5003c0f28b5",
-            "content": "sha256:d07cb3bdcaa085204e1820a1176287d2ad0fff7d3bf0ededbeac809782eacee0",
+            "blob": "32f9063f2f5f2ad956abbf23675ccb16e4e89590",
+            "content": "sha256:a49a4237cdeb6eff57c31f82e24039262877db702383a8a2142ddd20c1b02cf3",
             "locator": {
               "kind": "file"
             }
@@ -53,12 +53,12 @@
       ]
     },
     "3": {
-      "note": "Shared blocker sentences preserve producer fields and add the dirty/unmerged force wording without changing a caller.\n\nAnchor: `_shaped_terminal_blocker`",
+      "note": "Shared blocker sentences preserve producer fields and add the dirty/unmerged force wording without changing a caller.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "a7a08b14c6340768201af155b6a9d5003c0f28b5",
-            "content": "sha256:d07cb3bdcaa085204e1820a1176287d2ad0fff7d3bf0ededbeac809782eacee0",
+            "blob": "32f9063f2f5f2ad956abbf23675ccb16e4e89590",
+            "content": "sha256:a49a4237cdeb6eff57c31f82e24039262877db702383a8a2142ddd20c1b02cf3",
             "locator": {
               "kind": "file"
             }
@@ -72,11 +72,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
-            "content": "sha256:cf75c6c9fccb9f5fbc2a6bf0d98bbd15c8ea2c77d9db344908c5496152382fc9",
+            "blob": "66c73c1d6d257860d33465fcb4d60be236ce19af",
+            "content": "sha256:99cc2ebafbd67d3e27e89b7567c5097480293cc589be23de8dfc29e674950b21",
             "locator": {
               "kind": "symbol",
               "name": "_cleanup_settled"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66c73c1d6d257860d33465fcb4d60be236ce19af",
+            "content": "sha256:50c8e613133777ed5100a85c9243045425ef1df0b722ead892c6f99936a761c0",
+            "locator": {
+              "end": 859,
+              "kind": "line_range",
+              "start": 844
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },
@@ -89,7 +102,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7a08b14c6340768201af155b6a9d5003c0f28b5",
+            "blob": "32f9063f2f5f2ad956abbf23675ccb16e4e89590",
             "content": "sha256:ed3f2cfef354c09e5aee7cb887f1761d3c183a1cfb1a65edf1c18e8da7aa7e85",
             "locator": {
               "kind": "symbol",
@@ -105,12 +118,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7a08b14c6340768201af155b6a9d5003c0f28b5",
+            "blob": "32f9063f2f5f2ad956abbf23675ccb16e4e89590",
             "content": "sha256:eb1aa9739995533c5dce23d7d617fdafa517dfff63a7c97339d1b35d7391394c",
             "locator": {
-              "end": 348,
+              "end": 319,
               "kind": "line_range",
-              "start": 340
+              "start": 311
             }
           },
           "kind": "code"

@@ -24,4 +24,3 @@ The refresh writes no commit object and no ref: every case compares HEAD, the re
 
 
 - Malformed, forged, reordered and wrongly headed caches are repaired with no Git commit object or ref written. [2]
-

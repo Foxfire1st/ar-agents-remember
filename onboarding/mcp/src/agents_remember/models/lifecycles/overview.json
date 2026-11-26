@@ -2,12 +2,12 @@
   "path": "mcp/src/agents_remember/models/lifecycles",
   "references": {
     "1": {
-      "note": "Native task stage/activity/eventAt is declared separately; the removed session response/state vocabulary is not an operative model in this route.\n\nAnchor: `TaskState`",
+      "note": "Native task stage/activity/eventAt is declared separately; the removed session response/state vocabulary is not an operative model in this route.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
-            "content": "sha256:d32d3fa3f9ee309299df68d8e41fcd2129443d1c976d81632c8281b7311b99b4",
+            "blob": "001c87448f054e5e0fc5d448ca9aca53a3a3e17a",
+            "content": "sha256:90684c120424f4ac343a07c28ae97ddb2bf6176b851add259b28f469c9d3cfbb",
             "locator": {
               "kind": "file"
             },
@@ -317,7 +317,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
             "content": "sha256:adb6a73a5c29cea2c41da8b8e765ac71fe71e154b6e37b41eb3a5ff6d2720935",
             "locator": {
               "end": 200,
@@ -330,12 +330,12 @@
         },
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
             "content": "sha256:d48fab6a38c37bf3502307e25fdbf6024b76617b0ce6536b417570e97a6184d6",
             "locator": {
-              "end": 372,
+              "end": 371,
               "kind": "line_range",
-              "start": 348
+              "start": 347
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
           },
@@ -768,7 +768,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
+            "blob": "51871436855781243536127657a2fea10f02324f",
             "content": "sha256:1fc637971a9de203329bf654366427e8357cbd5224cc92f3c3da0c8821538068",
             "locator": {
               "kind": "symbol",
@@ -780,7 +780,7 @@
         },
         {
           "anchor": {
-            "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
+            "blob": "51871436855781243536127657a2fea10f02324f",
             "content": "sha256:37d4d0cbae40ce59c05610e80ad653f7c2d479361382ef59d060c1e69a23c490",
             "locator": {
               "kind": "symbol",

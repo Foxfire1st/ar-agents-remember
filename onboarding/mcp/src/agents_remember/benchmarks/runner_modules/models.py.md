@@ -12,12 +12,9 @@ Typed benchmark case and service request dataclasses.
 
 ### 260731-EFA-L2 Shared Benchmark Value Objects
 
-This dated migration introduced five frozen dataclasses. The signature and six-field projection account below describe that migration; the current `BenchmarkPreparation` has five facts (`benchmarks_root`, `dry_run`, `force_clone`, `provider_timeout`, `allowed_provider_ids`) and no `skill_exposure_mode`:
+This dated migration introduced five frozen dataclasses. The signature and six-field projection account below describe that migration; the current `BenchmarkPreparation` has three facts (`benchmarks_root`, `dry_run`, `force_clone`) and no `skill_exposure_mode`, `provider_timeout`, or `allowed_provider_ids`:
 
-- **`BenchmarkWorkspace(case, workspace_root, coordination_root, source_repo_root, memory_repo,
-  provider_ids=())`** — one case's materialized with-memory workspace: the case plus the roots laid
-  down for it and the providers it arms. Prepared once by `workspace.prepare_case` and handed whole
-  to everything that writes the workspace registration or launches providers.
+- **`BenchmarkWorkspace(case, workspace_root, coordination_root, source_repo_root, memory_repo)`** — one case's materialized with-memory workspace: the case plus the roots laid down for it. Prepared once by `workspace.prepare_case` and handed whole to `write_benchmark_mcp_registration`.
 - **`BenchmarkTask(prompt, variant, repetition)`** — one prompt/variant/repetition scheduled inside
   a run. It replaces the bare `(prompt, variant, repetition)` tuples the batch builder used to emit.
 - **`BenchmarkRun(benchmarks_root, case, output_root, dry_run, codex_sandbox=CODEX_BENCHMARK_SANDBOX)`**
@@ -31,32 +28,16 @@ This dated migration introduced five frozen dataclasses. The signature and six-f
 - **`BenchmarkRunOutcome(cases, output_roots, messages, codex_executable)`** — what one
   `codex_benchmark_run` produced, before it is rendered as a payload.
 
-`allowed_provider_ids` rides on `BenchmarkPreparation` as well as on both requests, so the
-containment R1 authority set reaches `filter_benchmark_provider_ids` through the preparation
-object; its FAIL-CLOSED `None` handling is unchanged.
 
 ### Logic
 
 `models.py` defines `BenchmarkCase`, `BenchmarkPrepareRequest`, and `BenchmarkRunRequest`, including property accessors that normalize manifest dictionaries for downstream modules.
 
-Both service requests carry `allowed_provider_ids: tuple[str, ...] | None`
-(containment R1, 260707-HFX-L1): the live MCP authority's provider ids, which
-the MCP application entry points always pass so manifest-requested providers outside the
-set are skipped downstream rather than armed or launched. `None` means direct
-script use with no authority context; the consuming filter
-(`workspace.filter_benchmark_provider_ids`) treats `None` FAIL-CLOSED since
-review B4 — an unfiltered direct-script run needs the explicit
-`AR_BENCHMARK_ALLOW_UNFILTERED_PROVIDERS=1` escape. (The field's inline
-comment still describes the pre-B4 "unfiltered" semantics; the behavior lives
-in the filter.)
 
 ### Invariants And Boundaries
 
 - Keep request defaults here aligned with the CLI and MCP tool defaults.
 - Do not add workflow behavior to the dataclasses.
-- `allowed_provider_ids=None` stays reserved for direct script use — and is
-  fail-closed at the consuming filter (review B4); the MCP application entry points must
-  always pass the live authority set (containment R1).
 
 ## Evidence
 
@@ -75,7 +56,7 @@ No configured sibling repository is required for this module.
 
 ## Preparation carries no skill-exposure mode
 
-`BenchmarkPreparation`, `BenchmarkPrepareRequest` and `BenchmarkRunRequest` no longer carry `skill_exposure_mode`, and the preparation projections no longer forward it: there is no copy-or-none choice left to name. The other preparation facts — root, dry run, force clone, provider timeout and the authority's provider ids — are unchanged.
+`BenchmarkPreparation`, `BenchmarkPrepareRequest` and `BenchmarkRunRequest` no longer carry `skill_exposure_mode`, and the preparation projections no longer forward it: there is no copy-or-none choice left to name. The remaining preparation facts are root, dry run and force clone (`provider_timeout` and `allowed_provider_ids` were removed).
 
 - The shared preparation object, without a skill-exposure mode. [3]
 

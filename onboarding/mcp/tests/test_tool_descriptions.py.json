@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "55b01fd0e8f423a5919eb93aafc93485fb67844a",
+        "blob": "c68535693a4575a64dc67753ae5a79c183437879",
         "content": "sha256:23cc901f8222c4af78f669e494215fcbf5ef30096667c1a90fd0fb364ebdb42b",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "55b01fd0e8f423a5919eb93aafc93485fb67844a",
+        "blob": "c68535693a4575a64dc67753ae5a79c183437879",
         "content": "sha256:23cc901f8222c4af78f669e494215fcbf5ef30096667c1a90fd0fb364ebdb42b",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "55b01fd0e8f423a5919eb93aafc93485fb67844a",
+        "blob": "c68535693a4575a64dc67753ae5a79c183437879",
         "content": "sha256:4d9e31c0efc4df117116615d822bd651db0a2eafbb615bd8099b0a2afbd87479",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "55b01fd0e8f423a5919eb93aafc93485fb67844a",
+        "blob": "c68535693a4575a64dc67753ae5a79c183437879",
         "content": "sha256:23cc901f8222c4af78f669e494215fcbf5ef30096667c1a90fd0fb364ebdb42b",
         "locator": {
           "kind": "symbol",
@@ -73,7 +73,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "55b01fd0e8f423a5919eb93aafc93485fb67844a",
+        "blob": "c68535693a4575a64dc67753ae5a79c183437879",
         "content": "sha256:23cc901f8222c4af78f669e494215fcbf5ef30096667c1a90fd0fb364ebdb42b",
         "locator": {
           "kind": "symbol",
@@ -91,8 +91,8 @@
     },
     {
       "anchor": {
-        "blob": "55b01fd0e8f423a5919eb93aafc93485fb67844a",
-        "content": "sha256:9b8e295c64b069705e9d514c394b29733721a6850882768a34a2230c3b7bbcd3",
+        "blob": "c68535693a4575a64dc67753ae5a79c183437879",
+        "content": "sha256:f3e951fced691ac8df50feb12afd6efa7d23d6312508634db7865db04acee880",
         "locator": {
           "kind": "file"
         }
@@ -113,12 +113,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55b01fd0e8f423a5919eb93aafc93485fb67844a",
+            "blob": "c68535693a4575a64dc67753ae5a79c183437879",
             "content": "sha256:23cc901f8222c4af78f669e494215fcbf5ef30096667c1a90fd0fb364ebdb42b",
             "locator": {
-              "end": 220,
+              "end": 218,
               "kind": "line_range",
-              "start": 186
+              "start": 184
             }
           },
           "kind": "test"
@@ -130,12 +130,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55b01fd0e8f423a5919eb93aafc93485fb67844a",
+            "blob": "c68535693a4575a64dc67753ae5a79c183437879",
             "content": "sha256:0140a757b49a50d2a7ac9d162e6f1ae07e94c52a4e303d830452e86840c7472f",
             "locator": {
-              "end": 163,
+              "end": 161,
               "kind": "line_range",
-              "start": 107
+              "start": 105
             }
           },
           "kind": "test"
@@ -147,12 +147,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55b01fd0e8f423a5919eb93aafc93485fb67844a",
+            "blob": "c68535693a4575a64dc67753ae5a79c183437879",
             "content": "sha256:5bccb0b1177b2567dde4198f4d99af0b07b54955838020456e93103bf905c8e6",
             "locator": {
-              "end": 255,
+              "end": 253,
               "kind": "line_range",
-              "start": 222
+              "start": 220
             }
           },
           "kind": "test"
@@ -164,12 +164,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55b01fd0e8f423a5919eb93aafc93485fb67844a",
+            "blob": "c68535693a4575a64dc67753ae5a79c183437879",
             "content": "sha256:cf40aaf5ab05442b11d417c481a33b2dd9934d17d3d5e2f2923ecfd12aa35aa5",
             "locator": {
-              "end": 173,
+              "end": 171,
               "kind": "line_range",
-              "start": 166
+              "start": 164
             }
           },
           "kind": "test"
@@ -177,16 +177,26 @@
       ]
     },
     "5": {
-      "note": "Moved material, packaged byte equality and disposable installed-reference read-back protect the longer explanation; the install probe patches watcher operations.",
+      "note": "Moved material (including unusedSettingsKeys), packaged byte equality and disposable installed-reference read-back protect the longer explanation.\n\nAnchor: `test_owned_descriptions_cover_every_moved_detail` `ShippedToolDetailsTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "55b01fd0e8f423a5919eb93aafc93485fb67844a",
-            "content": "sha256:6dd43cf6958e544f2b066457532e8061362c52b33831145520caeba2effbddd9",
+            "blob": "c68535693a4575a64dc67753ae5a79c183437879",
+            "content": "sha256:ad2e3701b35c10111e3170dab824362e965b3ac4c87dd88be3d96f4dffc86d8b",
             "locator": {
-              "end": 343,
-              "kind": "line_range",
-              "start": 257
+              "kind": "symbol",
+              "name": "test_owned_descriptions_cover_every_moved_detail"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c68535693a4575a64dc67753ae5a79c183437879",
+            "content": "sha256:9311bb74052412087eb1ed58e30e0a66327c5d7280faf8008aa6a457cf624c7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ShippedToolDetailsTests"
             }
           },
           "kind": "test"
@@ -198,12 +208,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55b01fd0e8f423a5919eb93aafc93485fb67844a",
+            "blob": "c68535693a4575a64dc67753ae5a79c183437879",
             "content": "sha256:8ede4a4503b4b221bac61b13406dee446d39cd88b367f719dd80621770b4c2a0",
             "locator": {
-              "end": 184,
+              "end": 182,
               "kind": "line_range",
-              "start": 181
+              "start": 179
             }
           },
           "kind": "test"

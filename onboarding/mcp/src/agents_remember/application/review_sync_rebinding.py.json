@@ -375,12 +375,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:dbb1647026df85a91309b56ca3e076a14929ef298647d97757fc004d9b0ffae8",
             "locator": {
-              "end": 370,
+              "end": 311,
               "kind": "line_range",
-              "start": 348
+              "start": 289
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },

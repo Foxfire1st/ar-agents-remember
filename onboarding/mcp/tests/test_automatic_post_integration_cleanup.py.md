@@ -122,21 +122,7 @@ No external domain claim is required.
 - The terminal operation the first case calls. [6]
 
 
-
-
-
-
-
-
 > Retained earlier citation wording: - The dependency-classification entry that names this module as a consumer of the certification profile. Source caption: `AMBIENT_ROLE_RUNNER_PATH`
-
-
-
-
-
-
-
-
 
 ### Cross-Repo References
 
@@ -146,16 +132,9 @@ directory; no sibling repository or external system participates.
 No meaningful cross-repo references found.
 
 
-
-
-
 - The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`. A completed cleanup cell still archives its recorded terminal agents. [2]
 
 
-
 - The report shaper whose exact sentence and inventory the first case asserts.  Anchor: "ALREADY_CLEAN = \"already-clean\"" [3]
-
-
-
 
 - The dependency classifier lists this module among the consumers of the certification profile. [10]

@@ -22,12 +22,10 @@ The manual's tool-server section tells an agent how to drive a sandbox: tool cal
 
 The sandbox README now documents the public build/check/start/stop commands taking the two ports with defaults 6820/9797, the sandbox start using the public install route instead of the retired direct provision, and the product Node and cache roots the safety check requires inside the sandbox.
 
-
-
-
 - The tool-server section names the request fields, environment separation, host refusal, the no-host build phase and the start prerequisite. [3]
 
 - Current sandbox setup writes the host block to MCP authority, separately from the protected user-settings path. [4]
 
 - The scoped current source carries the module/document behavior described above. [1]
+
 - The manual documents the selected ports and the public install, host-authority and retained-session boundaries. [2]

@@ -2,11 +2,11 @@
 
 ## What This Area Is
 
-This directory owns the shared runtime configuration, checkout coordination isolation, gate policy and vocabulary, provider identity, optional memory-cap planning, drift snapshot and observer paths, command capture, tool reports, provider-degradation settings, version identity, the user-config locations of the role settings file and the MCP settings file, and host authority primitives. Higher layers consume these definitions without making the primitive owners depend on MCP, controlplane, providers, or worktrees.
+This directory owns the shared runtime configuration, checkout coordination isolation, gate policy and vocabulary, optional memory-cap planning, drift snapshot and observer paths, command capture, tool reports, version identity, the user-config locations of the role settings file and the MCP settings file, and host authority primitives. Higher layers consume these definitions without making the primitive owners depend on MCP, controlplane, or worktrees.
 
 ## Hot Path Summary
 
-Legacy gateDelegation migration warnings are deduplicated per authority-file-path/shadowed-state pair in the process, rather than on every re-resolution. The downstream direct-leaf authority, ignored directExecutionEnabled input, configured policy precedence and host/readiness boundaries are unchanged. The provider-degradation parser's actual source owner is provider_degradation_settings.py; retained primitives do not restore removed provider tools.
+Legacy gateDelegation migration warnings are deduplicated per authority-file-path/shadowed-state pair in the process, rather than on every re-resolution. The downstream direct-leaf authority, ignored directExecutionEnabled input, configured policy precedence and host/readiness boundaries are unchanged. Retired `providers` and `providerDegradation` settings sections are no longer parsed; they load as unread `UNUSED_SETTINGS_SECTIONS` keys in `runtime_config.py`.
 
 `runtime_config.py` supplies the trusted runtime configuration record and parser. Its Paseo authority property reads the shared host settings on each use; a folder does not establish runtime readiness or model availability. `checkout_coordination.py` selects the loaded checkout's write boundary before runtime configuration reads. Gate policy defaults to human decisions, and memory-cap planning remains an explicit opt-in.
 
@@ -14,7 +14,7 @@ Repository configuration carries an optional certification-profile reference. Th
 
 ## Construction
 
-directExecutionEnabled is ignored for every value and warned when trusted settings contain it; it creates no runtime field. Current direct-leaf grant authority belongs to the external addressed store and product mutation owners, not primitives settings or harness restarts. Other configured authority/provider/host semantics are unchanged.
+directExecutionEnabled is ignored for every value and warned when trusted settings contain it; it creates no runtime field. Current direct-leaf grant authority belongs to the external addressed store and product mutation owners, not primitives settings or harness restarts. Other configured authority and host semantics are unchanged.
 
 > **Retained historical source account — superseded by the current route account:**
 > The runtime record and parser live in kernel so consumers can share configuration without importing the MCP package. The record separates repository and provider scopes, gate policy, dashboard settings, degradation settings, retirement settings and tool-log settings. The Paseo runtime is read through the shared authority reader rather than stored as a boot snapshot.
@@ -27,7 +27,7 @@ Model, effort and service tier are separate role settings. The agentic settings 
 
 Checkout classification derives from the loaded package path, independently of the working directory. An undeclared linked-checkout process gets a synthetic runtime configuration and disposable coordination root; the central durable-write guard permits that root and the enclosure's exact `reports/` root. Declared MCP, dashboard, lifecycle-operation and test modes bypass checkout CLI isolation. The lifecycle-operation declaration does not yield a daemon writer role.
 
-Other modules provide command-module output capture, drift snapshot path/removal helpers, observer store paths, provider instance naming, degradation-settings parsing, and tool-report retention/redaction. Version identity resolves installed distribution metadata through a function seam, falling back to the committed source-checkout release identity when distribution metadata is unavailable.
+Other modules provide command-module output capture, drift snapshot path/removal helpers, observer store paths, and tool-report retention/redaction. Version identity resolves installed distribution metadata through a function seam, falling back to the committed source-checkout release identity when distribution metadata is unavailable.
 
 ## The fresh host block
 
@@ -43,11 +43,9 @@ Other modules provide command-module output capture, drift snapshot path/removal
 | `drift_snapshot.py` | Drift-snapshot path/removal primitives. |
 | `gate_policy.py` | Gate delegation policy. |
 | `gate_vocab.py` | Gate-kind vocabulary. |
-| `identity.py` | Provider instance identity/naming. |
 | `inbox_backoff.py` (historical, removed) | Former inbox redelivery/backoff helper; no current module or scheduler. |
 | `memory_cap.py` | Optional explicit full-gate hard-cap planning; default host memory/swap remains untouched. |
 | `observer_paths.py` | Observer store-root path conventions. |
-| `provider_degradation_settings.py` | Provider degradation settings parsing. |
 | `tool_reports.py` | Bulk tool-report retention/redaction. |
 | `version.py` | Installed package identity with an explicit metadata-or-source fallback resolver. |
 | `fresh_host.py` | The five-key `paseoRuntime` host block a cold settings file receives. |
@@ -94,7 +92,6 @@ The layering contract declares a strict total order between top-level packages. 
 | --- | --- |
 | Policy/record stores or lifecycle machinery | `controlplane/`, `worktrees/`, `application/` |
 | Wire/response models | `models/` |
-| Provider runtime/teardown | `application/provider_runtime.py` |
 
 ## How To Use This Area
 
@@ -126,10 +123,8 @@ The following route and onboarding tables are retained metadata. Their `covered`
 | `drift_snapshot.py` | [`drift_snapshot.py.md`](drift_snapshot.py.md) | covered | Snapshot primitives. |
 | `gate_policy.py` | [`gate_policy.py.md`](gate_policy.py.md) | covered | Gate policy. |
 | `gate_vocab.py` | [`gate_vocab.py.md`](gate_vocab.py.md) | covered | Gate vocabulary. |
-| `identity.py` | [`identity.py.md`](identity.py.md) | covered | Provider identity. |
 | `memory_cap.py` | [`memory_cap.py.md`](memory_cap.py.md) | covered | Memory cap. |
 | `observer_paths.py` | [`observer_paths.py.md`](observer_paths.py.md) | covered | Observer paths. |
-| `provider_degradation_settings.py` | [`provider_degradation_settings.py.md`](provider_degradation_settings.py.md) | covered | Degradation settings. |
 | `tool_reports.py` | [`tool_reports.py.md`](tool_reports.py.md) | covered | Tool reports. |
 | `version.py` | [`version.py.md`](version.py.md) | covered | Version identity. |
 | `mcp_settings_location.py` | [`mcp_settings_location.py.md`](mcp_settings_location.py.md) | covered | MCP settings file location. |
@@ -145,30 +140,6 @@ None.
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_launch.py:375-452 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 2404948ab43cb20d60b4df63ec99148fa493ec7a; mcp/src/agents_remember/cli/paseo_launch.py:380-457 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 2404948ab43cb20d60b4df63ec99148fa493ec7a; mcp/src/agents_remember/cli/paseo_launch.py:371-448 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 2404948ab43cb20d60b4df63ec99148fa493ec7a. Retired means the anchor no longer stands, not that the cited subject was deleted.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - Checkout policy derives from the loaded package path, separates coordination rows from enclosure reports, and centrally refuses targets outside both exact leaf-local roots.
 
@@ -206,7 +177,7 @@ None.
 
 - The kernel validates the optional certification-profile path; requested certification loads that profile, freezes exact admission and executes the selected quality plan through its own owner, independently of ordinary closeout.
 
-- Legacy gateDelegation migration warnings are deduplicated per authority-file-path/shadowed-state pair in the process, rather than on every re-resolution. The downstream direct-leaf authority, ignored directExecutionEnabled input, configured policy precedence and host/readiness boundaries are unchanged. The provider-degradation parser's actual source owner is provider_degradation_settings.py; retained primitives do not restore removed provider tools.
+- Legacy gateDelegation migration warnings are deduplicated per authority-file-path/shadowed-state pair in the process, rather than on every re-resolution. The downstream direct-leaf authority, ignored directExecutionEnabled input, configured policy precedence and host/readiness boundaries are unchanged. Retired `providers` and `providerDegradation` settings sections are no longer parsed; they load as unread `UNUSED_SETTINGS_SECTIONS` keys in `runtime_config.py`.
 
 ## The host authority file
 
@@ -215,7 +186,6 @@ None.
 - The once-only establishment of the host block.
 
 - The default listen address a fresh block carries.
-
 
 - Native launch construction and replay belong to the CLI launch owner. Catalog selection refuses unsupported model, effort and feature values when the corresponding fresh or saved offering is known. An unanswered catalog part leaves the corresponding configured choice unchecked. The host decides which permission mode it applies.
 
@@ -272,13 +242,13 @@ None.
 
 [13] mcp/src/agents_remember/kernel/primitives/command_capture.py — lines 1-49; mcp/src/agents_remember/kernel/primitives/drift_snapshot.py — lines 1-55; mcp/src/agents_remember/kernel/primitives/observer_paths.py — lines 1-50; mcp/src/agents_remember/kernel/primitives/identity.py — lines 1-135
 
-- Command capture, snapshot removal, observer paths and provider naming are shared primitive operations. [13]
+
+- Command capture, snapshot removal and observer paths are shared primitive operations. [13]
+
 
 [14] mcp/src/agents_remember/kernel/primitives/memory_cap.py — code file; mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py — code file; mcp/src/agents_remember/kernel/primitives/tool_reports.py — code file; mcp/src/agents_remember/kernel/primitives/version.py — code file
 
 - Remaining opt-in memory-cap planning, provider-degradation settings parsing, report retention/redaction and package/source version resolution keep their primitive owners; removed inbox backoff supplies no current scheduler. [14]
-
-
 
 [15] mcp/src/agents_remember/kernel/primitives/paseo_host_contract.py — lines 1-12; mcp/src/agents_remember/kernel/primitives/paseo_node_paths.py — lines 1-71; mcp/src/agents_remember/kernel/primitives/user_settings_location.py — lines 1-46
 
@@ -288,13 +258,7 @@ None.
 
 - Configured-contract authority checks repository identities, memory mode and canonical task/enclosure paths at its mutation boundary. [16]
 
-
-
-
 - Native launch construction and replay belong to the CLI launch owner. Catalog selection refuses unsupported model, effort and feature values when the corresponding fresh or saved offering is known. An unanswered catalog part leaves the corresponding configured choice unchecked. The host decides which permission mode it applies. [17]
-
-
-
 
 [18] mcp/src/agents_remember/kernel/primitives/runtime_config.py — lines 417-441; mcp/src/agents_remember/worktrees/modules/quality/certification_records.py — lines 192-235; mcp/src/agents_remember/worktrees/modules/quality/gate.py — lines 248-364
 
@@ -302,7 +266,9 @@ None.
 
 [19] mcp/src/agents_remember/kernel/primitives/runtime_config.py — code file; mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py — code file
 
-- Legacy gateDelegation migration warnings are deduplicated per authority-file-path/shadowed-state pair in the process, rather than on every re-resolution. The downstream direct-leaf authority, ignored directExecutionEnabled input, configured policy precedence and host/readiness boundaries are unchanged. The provider-degradation parser's actual source owner is provider_degradation_settings.py; retained primitives do not restore removed provider tools. [19]
+
+- Legacy gateDelegation migration warnings are deduplicated per authority-file-path/shadowed-state pair in the process, rather than on every re-resolution. The downstream direct-leaf authority, ignored directExecutionEnabled input, configured policy precedence and host/readiness boundaries are unchanged. Retired providers and providerDegradation top-level sections load only as unread UNUSED_SETTINGS_SECTIONS keys. [19]
+
 
 [20] mcp/src/agents_remember/kernel/primitives/paseo_authority.py — symbol establish_authority_paseo_runtime
 
@@ -313,7 +279,6 @@ None.
 - The default listen address a fresh block carries. [21]
 
 [22] mcp/src/agents_remember/kernel/primitives/fresh_host.py — symbol fresh_host_block
-
 
 - Control vocabulary is a zero-internal-import owner of receipt/store/log names and bridge outcome bytes shared by execution, application, explainer and serving seams. [23]
 

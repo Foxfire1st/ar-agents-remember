@@ -4,26 +4,21 @@
 
 [engine-room overview](overview.md)
 
-
 ## Current enclosure-only composition
 
-Authored cases assert zero provider gauges/wires, absent provider seed/clone conduits and fault/reindex markers, and retained couplers. The current provider-retirement describe block checks every fixture node for removed provider/setup fields and limits its edge kinds to the five retained enclosure lanes. With effects on, it renders the first process from every fixture and rejects provider gauges, provider blocks, dropout halos, fault/reindex markers, seed/clone lanes and provider text. The former provider-specific T7B successor body is removed. Integration conflict flashes/STOP, source scans, memory movement, ledgers and visibility/backdrop cases remain; the integration refused-conduit flash is still positively asserted.
+Authored cases assert zero engine gauges and official engine wires and retained couplers; the former provider-retirement census describe block and seed/clone/reindex assertions were removed in DEP-R02@v1. Integration conflict flashes/STOP, source scans, memory movement, ledgers and visibility/backdrop cases remain; the integration refused-conduit flash is still positively asserted.
 
 ### Maintenance boundaries
 
-Provider cases retain absence assertions, not WORKSPACE_ENGINES/runtime/petal/clone arc guarantees. CUR-C02's earlier Owner-bound successor and the historical F06/L50 adaptations remain provenance; this leaf replaces that provider-specific successor with the all-fixture census. Retained producer streams reporting whole-file59 passed and filtered3 passed/56 skipped concern the earlier candidate and case, not execution of the current census. No Curator rerun, live dashboard census, host-actual obligation or whole-code/memory acceptance is claimed. Replay title still overclaims bent geometry: its body tests data-strategy only.
+Provider cases retain absence assertions, not WORKSPACE_ENGINES/runtime/petal/clone arc guarantees. CUR-C02's earlier Owner-bound successor and the historical F06/L50 adaptations remain provenance; the provider-retirement all-fixture census describe block was removed in DEP-R02@v1. Retained producer streams reporting whole-file59 passed and filtered3 passed/56 skipped concern the earlier candidate and case, not execution of the current census. No Curator rerun, live dashboard census, host-actual obligation or whole-code/memory acceptance is claimed. Replay title still overclaims bent geometry: its body tests data-strategy only.
 
 Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
 Historical provider-shaped input data and retained compatibility definitions do not
 restore removed provider visuals or tool exposure.
 
-- The replacement fixture census rejects eight retired provider/setup fields on every process node and admits only worktree-add, ledger-map, sync and the two integration edge kinds. [13]
+- The effects-isolation case keeps repeating surge and breath transforms out of the structural SVG and asserts surge bands render in the effects overlay. [8]
 
-- The effects-isolation case keeps repeating surge transforms out of the structural SVG and asserts no reindex marker in either the structural canvas or effects overlay. [8]
-
-- The static-scene cases assert no provider gauges or official engine wires, retain external-memory couplers and branch nodes, and the wiring cases reject seed/clone conduits while retaining enclosure lanes. [9]
-
-- The provider-retirement render census enables effects, renders the first process of every Engine Room fixture, and rejects provider gauges, blocks, dropout, fault/reindex markers, seed/clone lanes and provider text. [10]
+- The static-scene cases assert no engine gauges or official engine wires and retain external-memory couplers and branch nodes; the wiring cases pin running arrowheads, chevron refX and collinear sync/worktree-add lanes. [9]
 
 - Integration-conflict cases retain terminal STOP with no recovery chips and a positive red refused-conduit flash on integration/integration-mem before the STOP. [11]
 
@@ -34,8 +29,6 @@ restore removed provider visuals or tool exposure.
 The prior onboarding below is retained for provenance and unrelated design history.
 It is not current provider-render, fallback, prototype-parity or execution guidance.
 Current behavior and its limits are the operative contract above.
-
-
 
 Vitest + `@testing-library/react` render test for the Engine Room pod stage: it pins the **fleeting**
 (pre-contract blocked-start) promote-in-place rendering plus the **bird's-eye scene** (5g G1) — the flow
@@ -52,7 +45,7 @@ deterministic.
 The focused canvas case renders a stale landing ref with its stale tone, literal state, and age, then asserts no landing-flow packet is active. This pins the contract that unavailable remote truth stays visible without being animated as current.
 
 `nodeFrom(name)` pulls the first `EngineProcessNode` from a named `ENGINE_ROOM_SCENARIOS` fixture;
-no `WORKSPACE_ENGINES` or `ProviderNode` remains: the provider-traces describe (MIK-R112 rule 2)
+no `WORKSPACE_ENGINES` or `ProviderNode` remains: the former provider-traces describe (MIK-R112 rule 2, later removed in DEP-R02@v1)
 asserts that no fixture node carries provider state and that no provider block or provider text renders. A `beforeEach` sets `data-effects=off` (freeze GSAP/Motion to the After state); `afterEach` clears
 it + RTL `cleanup`.
 
@@ -191,7 +184,9 @@ negative — it is the assertion that would fail if a polarity field were reintr
 ### Repo-Internal References
 
 - `EnclosureProcessMap` + `EnclosureCanvas` under test (fleeting + scene + decals). [1]
-- The scenario fixtures it renders; `engine-cgc-seed-refused` now seeds `edges({ cgc: "stale", … })`. [2]
+
+- The scenario fixtures it renders (ENGINE_ROOM_SCENARIOS). [2]
+
 - The T9B/T9C refused-conduit describe block, including the `data-state=stale` / `data-refused-polarity` null pair. [3]
 - `refusedPolarityOf` — the derivation the test's amber expectation depends on. [4]
 

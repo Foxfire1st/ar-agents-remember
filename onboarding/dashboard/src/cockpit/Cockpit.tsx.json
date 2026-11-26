@@ -1092,14 +1092,16 @@
       ]
     },
     "91": {
-      "note": "Stored cockpit regression source covering retained product views; it is source evidence, not a fresh test, browser or performance result.",
+      "note": "Stored cockpit regression source covering retained product views; it is source evidence, not a fresh test, browser or performance result.\n\nAnchor: `CockpitShell`, `Source`: `dashboard/src/cockpit/Cockpit.test.tsx:492-539` (or whole file `1-897`)",
       "targets": [
         {
           "anchor": {
-            "blob": "bd9f0e0af2d5b86c76f00ee5b83c40786dfd38cd",
-            "content": "sha256:dc721020062a7ed10745200efa4d6d0343bcf86ac2ce11ee6acb64df7fad43ad",
+            "blob": "fa1b3845f2f71c5db589e7fe758b8888a451e21a",
+            "content": "sha256:6eb006f548f9f7fd152476f97f1548c0f06a897c00b4184ff632515973c06c66",
             "locator": {
-              "kind": "file"
+              "end": 539,
+              "kind": "line_range",
+              "start": 492
             },
             "path": "dashboard/src/cockpit/Cockpit.test.tsx"
           },

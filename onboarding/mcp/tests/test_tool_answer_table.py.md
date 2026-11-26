@@ -54,10 +54,15 @@ table is caught.
 - Cases are checked against missing uses, extra fields and bounds. [2]
 
 - An explicitly over-long log path becomes its exact length and digest. Anchor: `ToolAnswerLogTests.test_overlong_path_shortens_to_length_and_digest` [3]
+
+
 - Produced install answers read the sandbox MCP authority, without an XDG user-settings precondition. [4]
+
 
 - The delivery observer patches record_tool_completed and compares delivered tokens with returned and logged counts. [6]
 
-- Ordinary and largest install fixtures pin copiedFiles=15 and createdDirs=42/41 as projection-equality fixtures under the existing answer bounds. [7]
+
+- Ordinary and largest install fixtures pin copiedFiles=2 and createdDirs=10/9 as projection-equality fixtures under the existing answer bounds. [7]
+
 
 - The mounted file-reader artifact check retains twenty rows, the response bound and exact pinned bytes. [12]

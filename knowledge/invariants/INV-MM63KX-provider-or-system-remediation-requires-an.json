@@ -5,11 +5,10 @@
     ],
     "justification": "Provider remediation before the report or without an explicit order could restart a forbidden stack and erase the incident evidence."
   },
-  "applicability": "Provider or system remediation considered by an Investigator.",
+  "applicability": "System remediation considered by an Investigator.",
   "conditions": [
     "The report exists first.",
-    "An explicit authorized developer or actual-parent order permits remediation.",
-    "An active alert forbidding starts still forbids provider start or restart."
+    "An explicit authorized developer or actual-parent order permits remediation."
   ],
   "exclusions": [
     "Code, memory, task, closeout or integration changes remain forbidden."
@@ -26,9 +25,19 @@
     "leaf": "260928-MIK-L98",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Provider or system remediation requires an explicit developer or actual-parent order after the report.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "System remediation requires an explicit developer or actual-parent order after the report.",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-25T22:16:56+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "2424643a-91e9-4c95-ab58-87443229a30b",
+    "task": "261125-DEP"
+  }
 }

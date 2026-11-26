@@ -94,19 +94,11 @@ No external source is required for this repository-owned classification proof.
 - The single declaration that owns the capacity codes and their classification. [6]
 - The raiser that publishes the code the first case reads back. [7]
 
-
 - The fixture constants this module composes. The fixture this module composes instead of rebuilding the world. [8]
-
-
-
-
 
 > Retained earlier citation wording: - The current lifecycle catalog declares this module as an exact consumer on four artifact rows: _user_settings_guard.py, curator_coherence_test_support.py, the Node package-lock fixture and writer_worklist_test_support.py. These are dependency declarations, not runtime fixture-consumption or execution evidence.
 
 > Retained earlier citation wording: - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_closeout_projection_source_classification.py"
-
-
-
 
 ### Cross-Repo References
 
@@ -115,26 +107,21 @@ declares one, an external memory repository — as real temporary Git repositori
 the graph admission and projection path run at all. No production cross-repository authority is claimed
 by this focused module.
 
-
 ### Repo-Internal References (continued)
-
 
 - The fixture's repositories are real temporary Git repositories created per case, not mocks. [11]
 
-
-
-
 - The fixture's repositories are real temporary Git repositories created per case, not mocks. [12]
 
-
 Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1041-1041 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1053-1053 - the bytes it recorded now occur 78 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1840-1840 - the bytes it recorded now occur 23 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1919-1919 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3891-3891 - the bytes it recorded now occur 311 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3903-3903 - the bytes it recorded now occur 93 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:150-777 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a416985be1ec9cf8ec92f64882f50ca012518ac4; mcp/tests/evidence-lifecycle.toml:1040-1184 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7; mcp/tests/evidence-lifecycle.toml:1827-2454 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ca4abf009f8afe94468f68137ddbae38930c0649. Retired means the anchor no longer stands, not that the cited subject was deleted [Past-epoch source caption, detached from live reference 9. Recorded citation custody: mcp/tests/evidence-lifecycle.toml blob 0b04e782b9627695554aeeebd05967506794d78d (available); mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); recorded commits code d59c3493ec682c2ab58fd9d1ed127d08038e90c4, code a416985be1ec9cf8ec92f64882f50ca012518ac4, code de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7, code ca4abf009f8afe94468f68137ddbae38930c0649. No historical event or intent inferred.]
-
-
 
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1041-1041 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1053-1053 - the bytes it recorded now occur 78 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1840-1840 - the bytes it recorded now occur 23 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1919-1919 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3891-3891 - the bytes it recorded now occur 311 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3903-3903 - the bytes it recorded now occur 93 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:150-777 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a416985be1ec9cf8ec92f64882f50ca012518ac4; mcp/tests/evidence-lifecycle.toml:1040-1184 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7; mcp/tests/evidence-lifecycle.toml:1827-2454 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ca4abf009f8afe94468f68137ddbae38930c0649. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 - The `integration` lane selects `mcp/tests/test_closeout_projection_source_classification.py` (`mcp/tests/test-evidence-lanes.toml:706`). [10]
+
+
+
 
 - The lifecycle catalog lists `mcp/tests/test_closeout_projection_source_classification.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. These source declarations establish no execution or passing result. [9]

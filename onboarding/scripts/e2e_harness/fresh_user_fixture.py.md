@@ -74,6 +74,7 @@ None.
 ### Repo-Internal References
 
 - The one construction point for a disposable fixture repository, memory root and authority settings. [1]
+
 - The frozen fixture value and the two branches the harness needs. [2]
 - The sprint branch is neither `main` nor the spear, because the authority refuses both. [3]
 
@@ -82,10 +83,10 @@ None.
 - The truncating writer that materialises it without copying bytes. [5]
 - A fixture Git failure is surfaced with its real stderr rather than swallowed. [6]
 - The exclusion review's rules are persisted under the key every register reader honours. [7]
+
 - The `c-03` bootstrap content whose absence is `invariant-1`. [8]
 
 - The retained fixture cases assert exact local large-file size, vendored-tree and branch topology, plain-fixture shape and run-root custody, not current shipped cap comparisons. [10]
-
 
 ### Cross-Repo References
 

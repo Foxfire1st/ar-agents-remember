@@ -160,13 +160,11 @@ A copied-corpus fixture changes only the source corpus seen by the real launch c
 
 ## Evidence
 
-
 Superseded card wording retained for custody (not certified as true of any source epoch or measured candidate):
 
 > - Source comparison: `mcp/tests/test_capsule_launch_wiring.py:1017-1050`.
 
 > - Source comparison: `git diff HEAD -- mcp/tests/test_capsule_launch_wiring.py (D13 successor)`.
-
 
 ### Docs References
 
@@ -176,60 +174,45 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-
 - The task-attached case compares compile_launch_capsule with compile_task_capsule for the same admitted leaf, asserting identical trusted instruction text and semantic digest. It does not exercise a spawned session. [1]
-
 
 - The free-agent admission case names its absent task plane with free-agent:bootstrap, checks is_taskless, requires a task-document parser refusal of that identity, and checks a sha256 capsule digest. [2]
 
-
 - The mode-gate case checks that unaddressable roles yield a named refusal with no delivery; it also checks an admitted bootstrap capsule. It is not a host-effect measurement. [3]
-
 
 - The one decision point, for every seat class. [4]
 
-
 - The D13 case asserts that role_capsule_compile is absent from registered tools, then compiles through the application entry point using the enclosure contract and requires compiled instructions. [11]
-
 
 - The free agent's named absence, and the identity that moves with the seat. [12]
 
-
-
 - The live launch request value and internal compiler carry capsule identity; removed terminal launch points and the removed resolver are not current production routes. [18]
 
-
-
 > Retained earlier citation wording: - The three governed-artifact rows registering this module as a consumer.
-
-
 
 ### Cross-Repo References
 
 The vendor boundary this module records is the installed Codex app-server's thread-open request shape;
 the fixture it is pinned against lives in this repository.
 
-
 ### Repo-Internal References (continued)
 
 - The admitted binding a delivery belongs to: repository, task document path, role and operation, each refused when empty or carrying outer whitespace, and reported under those four names. [20]
 
-
 </details>
-
 
 - Adds a copied shipped corpus fixture while keeping real admission/selection/compilation. Three launch-boundary cases refuse unmarked section text with the exact line (including frontmatter), an operation that does not apply to the requested role, and a missing required operation file; each requires no delivery and a named status. Existing compiler-identity/free-agent/tool-removal cases remain. [22]
 
 - The current task-attached launch asserts equality with the compiler's trusted instructions and semantic digest for the same admitted seat. Workspace-sensitive capsule identity is asserted by a separate free-agent test; it is not a spawn-launch workspace-agreement assertion.  Historical former note: "The spawn side's agreement with its own capsule about the workspace." The former spawn-workspace assertion is historical; the current module has no such test case. [23]
 
-
-
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1064-1064 - the bytes it recorded now occur 91 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1885-1885 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:402-402 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:760-760 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-
 - The `unit-regression` lane selects `mcp/tests/test_capsule_launch_wiring.py`. [15]
+
+
+
 
 
 - The lifecycle catalog lists `mcp/tests/test_capsule_launch_wiring.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result. [21]

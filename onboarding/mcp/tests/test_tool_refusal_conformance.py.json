@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "blob": "9fbb4f74ae913f011c251533a7de706a5eb2e870",
             "content": "sha256:0235cc2a3f435dc6f95d5ad9ebf7f065f4a49503a944cbb4daa08a5d0f6e3625",
             "locator": {
               "kind": "symbol",
@@ -20,15 +20,16 @@
       ]
     },
     "10": {
-      "note": "The fixture check asserts settings path prefixes for code and memory, its coordination-root identity and an empty provider configuration.",
+      "note": "The fixture check asserts settings path prefixes for code and memory, its coordination-root identity, and that no removed \"providers\" section appears in census settings.\n\nAnchor: `` `test_the_module_runs_in_seconds_and_touches_no_real_state` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
-            "content": "sha256:89e912b951809361ce333976f5bfb4f63c79932b6f51aff8d1b2e72cf1b98475",
+            "blob": "9fbb4f74ae913f011c251533a7de706a5eb2e870",
+            "content": "sha256:7ef769951435a8cf4ebc226d9ada09d06dc6d00bff4005a5708eb88de3f26fc1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_module_runs_in_seconds_and_touches_no_real_state"
+              "end": 795,
+              "kind": "line_range",
+              "start": 769
             }
           },
           "kind": "test"
@@ -36,12 +37,12 @@
       ]
     },
     "11": {
-      "note": "The measured population and the production invocation per tool, kept in a support module so a probe can drive the same census.\n\nAnchor: `failure_invocations`",
+      "note": "The measured population and the production invocation per tool, kept in a support module so a probe can drive the same census.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "ba34b5c4115d5fcbdaf0244d930beee6cd800859",
-            "content": "sha256:d1cc3ba6dacabddaf617d29a7e82d893cb52051b775dce4a94f40018aaceb55e",
+            "blob": "b33fdfe318b97c1f9e330b0d398e7b3919edf3e8",
+            "content": "sha256:09c04e0450b675838fdf6b4d913ea8726832741b97d6c44362428c2ee5422f3c",
             "locator": {
               "kind": "file"
             },
@@ -52,12 +53,12 @@
       ]
     },
     "12": {
-      "note": "The driver that refuses a table which is not the roster before it drives anything.\n\nAnchor: `drive_census`",
+      "note": "The driver that refuses a table which is not the roster before it drives anything.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "ba34b5c4115d5fcbdaf0244d930beee6cd800859",
-            "content": "sha256:d1cc3ba6dacabddaf617d29a7e82d893cb52051b775dce4a94f40018aaceb55e",
+            "blob": "b33fdfe318b97c1f9e330b0d398e7b3919edf3e8",
+            "content": "sha256:09c04e0450b675838fdf6b4d913ea8726832741b97d6c44362428c2ee5422f3c",
             "locator": {
               "kind": "file"
             },
@@ -72,7 +73,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
+            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
             "content": "sha256:17ad49c49bee633b673e5481327505991854f0f36441ebc2266603b65e789608",
             "locator": {
               "end": 75,
@@ -85,7 +86,7 @@
         },
         {
           "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "blob": "9fbb4f74ae913f011c251533a7de706a5eb2e870",
             "content": "sha256:c857c40d90be1b2386d31ed5480e7b9ed477d2651713be13f3953fa145726cd7",
             "locator": {
               "end": 622,
@@ -98,16 +99,16 @@
       ]
     },
     "14": {
-      "note": "The refusal census uses the ordinary sibling EntryPointWorld. The main entry-point sweep imports the extracted support world and separately checks exception evidence in both classes.",
+      "note": "The refusal census uses the ordinary sibling EntryPointWorld. The main entry-point sweep imports the extracted support world and separately checks exception evidence in both classes.\n\nAnchor: source",
       "targets": [
         {
           "anchor": {
-            "blob": "387507cf826bf8255675d217a08ca53916808aed",
-            "content": "sha256:ef9f76506c19762d77e7f12fde69997ae3d1083763f727e48aa182a6e4e53801",
+            "blob": "2c6c45f83a868bc2f87d4b31a5920b84ba3a8fde",
+            "content": "sha256:f392c4dfc0e911caa05c838c1db201b4a1958ab7d19e3d22654609eb5b7cdacf",
             "locator": {
-              "end": 484,
+              "end": 482,
               "kind": "line_range",
-              "start": 384
+              "start": 383
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -115,7 +116,7 @@
         },
         {
           "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "blob": "9fbb4f74ae913f011c251533a7de706a5eb2e870",
             "content": "sha256:420149d616f3a122f8f1047e8e9c79b6341a9c8ea0a4650e03f2bc2c9202c326",
             "locator": {
               "end": 63,
@@ -127,7 +128,7 @@
         },
         {
           "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "blob": "9fbb4f74ae913f011c251533a7de706a5eb2e870",
             "content": "sha256:6fe8840750695632e4ecb2e656db27b8dcd522281fc6fc74a5489af9d51bc0fe",
             "locator": {
               "end": 408,
@@ -185,12 +186,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
+            "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
             "content": "sha256:b78fff81f43c6d30e5e8b25d49358e2b1ed7d8595b49fe2de0249401357402bf",
             "locator": {
-              "end": 655,
+              "end": 647,
               "kind": "line_range",
-              "start": 655
+              "start": 647
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -203,7 +204,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "blob": "9fbb4f74ae913f011c251533a7de706a5eb2e870",
             "content": "sha256:d536441d2a9216fdf965970f585f0558729fee25f2f0d4fcba53bdaec8546e66",
             "locator": {
               "end": 229,
@@ -215,7 +216,7 @@
         },
         {
           "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "blob": "9fbb4f74ae913f011c251533a7de706a5eb2e870",
             "content": "sha256:b984fec30800fe8e9939dddcfc551d5e1b9e1d9554d8d5098876dfedb50a12fb",
             "locator": {
               "end": 460,
@@ -232,7 +233,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "blob": "9fbb4f74ae913f011c251533a7de706a5eb2e870",
             "content": "sha256:b1fb539c7af3b367765054b4f3504e76764f6812b931b2f5bf4f8b1c775819c1",
             "locator": {
               "kind": "symbol",
@@ -244,12 +245,12 @@
       ]
     },
     "2": {
-      "note": "The four invocations that legitimately answer `ok: true`, each with its reason.\n\nAnchor: `ALWAYS_ANSWERS`",
+      "note": "The four invocations that legitimately answer `ok: true`, each with its reason.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
-            "content": "sha256:5ff6ebb1fb30702b3b3ebf3ff6c1b1e52a6cbb90a4a8cc323f24b6b80d5925bd",
+            "blob": "9fbb4f74ae913f011c251533a7de706a5eb2e870",
+            "content": "sha256:4ad7580248e42ebce5d4e0270ebb15f2eded5a2f5fa2c92b474eddd88cfd753a",
             "locator": {
               "kind": "file"
             }
@@ -259,12 +260,12 @@
       ]
     },
     "20": {
-      "note": "The control constructs a literal refusal-shaped dictionary and strips identity, reason and navigation separately; refusal_axes must report each stripped dictionary as incomplete.",
+      "note": "The control constructs a literal refusal-shaped dictionary and strips identity, reason and navigation separately; refusal_axes must report each stripped dictionary as incomplete.\n\nAnchor: `` `test_stripping_each_axis_of_a_real_refusal_makes_the_predicate_fail` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
-            "content": "sha256:9bc159d38fb1cd1fea807112aba341977c100be768cdb19d2dce02b489cfa87a",
+            "blob": "9fbb4f74ae913f011c251533a7de706a5eb2e870",
+            "content": "sha256:9cd8e0887fff9a67fd890cad66011de92f287d4f810f612b385002ea6cb00d50",
             "locator": {
               "end": 692,
               "kind": "line_range",
@@ -276,12 +277,12 @@
       ]
     },
     "3": {
-      "note": "The ten tools that still lose the envelope, grouped in the source by the mechanism that raises.\n\nAnchor: `BARE_RAISERS`",
+      "note": "The ten tools that still lose the envelope, grouped in the source by the mechanism that raises.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
-            "content": "sha256:5ff6ebb1fb30702b3b3ebf3ff6c1b1e52a6cbb90a4a8cc323f24b6b80d5925bd",
+            "blob": "9fbb4f74ae913f011c251533a7de706a5eb2e870",
+            "content": "sha256:4ad7580248e42ebce5d4e0270ebb15f2eded5a2f5fa2c92b474eddd88cfd753a",
             "locator": {
               "kind": "file"
             }
@@ -291,12 +292,12 @@
       ]
     },
     "4": {
-      "note": "The census: one world, one run, and the assertions that bind all three pins in both directions.\n\nAnchor: `FailurePathCensusTests`",
+      "note": "The census: one world, one run, and the assertions that bind all three pins in both directions.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
-            "content": "sha256:5ff6ebb1fb30702b3b3ebf3ff6c1b1e52a6cbb90a4a8cc323f24b6b80d5925bd",
+            "blob": "9fbb4f74ae913f011c251533a7de706a5eb2e870",
+            "content": "sha256:4ad7580248e42ebce5d4e0270ebb15f2eded5a2f5fa2c92b474eddd88cfd753a",
             "locator": {
               "kind": "file"
             }
@@ -310,7 +311,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "blob": "9fbb4f74ae913f011c251533a7de706a5eb2e870",
             "content": "sha256:87fc319ca947b359f418d49e1ac324e5b8dcf4dbcd8cc7f2c8bfcd3e90c21bf3",
             "locator": {
               "kind": "symbol",
@@ -326,7 +327,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "blob": "9fbb4f74ae913f011c251533a7de706a5eb2e870",
             "content": "sha256:b984fec30800fe8e9939dddcfc551d5e1b9e1d9554d8d5098876dfedb50a12fb",
             "locator": {
               "end": 460,
@@ -339,25 +340,16 @@
       ]
     },
     "7": {
-      "note": "Each refusal axis asserted by name, so a regression says which one it broke.\n\nAnchor: `test_every_refusal_names_what_refused_why_and_the_next_action`",
+      "note": "Each refusal axis asserted by name, so a regression says which one it broke.\n\nAnchor: `` `test_every_refusal_names_what_refused_why_and_the_next_action` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
-            "content": "sha256:5ff6ebb1fb30702b3b3ebf3ff6c1b1e52a6cbb90a4a8cc323f24b6b80d5925bd",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "blob": "9fbb4f74ae913f011c251533a7de706a5eb2e870",
             "content": "sha256:504a5ccd3322de272edea68a988af2a9809fb4238cfa9871ecd582f04026988a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_refusal_names_what_refused_why_and_the_next_action"
+              "end": 493,
+              "kind": "line_range",
+              "start": 462
             }
           },
           "kind": "test"
@@ -369,7 +361,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "blob": "9fbb4f74ae913f011c251533a7de706a5eb2e870",
             "content": "sha256:c857c40d90be1b2386d31ed5480e7b9ed477d2651713be13f3953fa145726cd7",
             "locator": {
               "end": 622,
@@ -381,7 +373,7 @@
         },
         {
           "anchor": {
-            "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
+            "blob": "c5b02eaec1450221dbde9f1e0a7788a89bcd271d",
             "content": "sha256:17ad49c49bee633b673e5481327505991854f0f36441ebc2266603b65e789608",
             "locator": {
               "end": 75,
@@ -395,12 +387,12 @@
       ]
     },
     "9": {
-      "note": "The control constructs a literal refusal-shaped dictionary and strips identity, reason and navigation separately; refusal_axes must report each stripped dictionary as incomplete.",
+      "note": "The control constructs a literal refusal-shaped dictionary and strips identity, reason and navigation separately; refusal_axes must report each stripped dictionary as incomplete.\n\nAnchor: `` `test_stripping_each_axis_of_a_real_refusal_makes_the_predicate_fail` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
-            "content": "sha256:9bc159d38fb1cd1fea807112aba341977c100be768cdb19d2dce02b489cfa87a",
+            "blob": "9fbb4f74ae913f011c251533a7de706a5eb2e870",
+            "content": "sha256:9cd8e0887fff9a67fd890cad66011de92f287d4f810f612b385002ea6cb00d50",
             "locator": {
               "end": 692,
               "kind": "line_range",

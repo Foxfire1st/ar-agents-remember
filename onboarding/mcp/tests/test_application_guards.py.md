@@ -62,4 +62,5 @@ substring of each guard's message rather than the full string.
 
 - All such domain errors inherit ValueError through AgentsRememberError. [3]
 
+
 - `McpRuntimeConfig`, `RepositoryScope`, and `path_is_relative_to` define the config and confinement primitives the guards rely on. [4]

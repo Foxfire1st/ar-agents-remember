@@ -77,11 +77,11 @@
   ],
   "references": {
     "1": {
-      "note": "`status_payload` calls `landing_refs` and emits its result as the `landing` block.\n\nAnchor: `status_payload` `_status_payload_with_landing`",
+      "note": "`status_payload` calls `landing_refs` and emits its result as the `landing` block.\n\nAnchor: `status_payload`, `_status_payload_with_landing`",
       "targets": [
         {
           "anchor": {
-            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "blob": "ba4fb6e617261f7916c779588d183a65a04c202d",
             "content": "sha256:45b26a8b0a279bdd72416d85b11c3e768d1ee61c66a78bbbbde9b7b784427f6c",
             "locator": {
               "kind": "symbol",
@@ -93,8 +93,8 @@
         },
         {
           "anchor": {
-            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
-            "content": "sha256:ff12b80ddb03add068e5173a44c5f21a5a600780e4a45d57fe014df1943fc06e",
+            "blob": "ba4fb6e617261f7916c779588d183a65a04c202d",
+            "content": "sha256:528f7d17ba5edcb1bc411dc22ad0bd38d7ea732c55c5a636132346a110e11ffa",
             "locator": {
               "kind": "symbol",
               "name": "_status_payload_with_landing"
@@ -105,21 +105,8 @@
         },
         {
           "anchor": {
-            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
-            "content": "sha256:9c490b890097d893a4f8f2bf5817e0fc69921498c255a4842a304cff7af49111",
-            "locator": {
-              "end": 476,
-              "kind": "line_range",
-              "start": 468
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
-            "content": "sha256:c5a2fd084e668cadc10135510d3635ab841914e4f4cfafe640271cfe0bf18e67",
+            "blob": "ba4fb6e617261f7916c779588d183a65a04c202d",
+            "content": "sha256:07dbf9fe3025cfe3de299720916cfff605bb040afe8011bb1d9063668d226157",
             "locator": {
               "kind": "file"
             },
@@ -134,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "blob": "001c87448f054e5e0fc5d448ca9aca53a3a3e17a",
             "content": "sha256:be2b0955bbe767a5616d8badba2144b66a3a28fffa78a35c2c03fbf32fadfb2f",
             "locator": {
               "kind": "symbol",
@@ -151,7 +138,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "blob": "b0260f958e6606a260ea3b52a8d9557bfbc06d38",
             "content": "sha256:2af21bdce5cc2df634ce0cc9cda58f7f18d0b6649e678c2ff289aaef83ad9835",
             "locator": {
               "end": 304,

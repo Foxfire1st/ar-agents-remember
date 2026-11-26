@@ -17,9 +17,10 @@ Start publishes `inProgress` on the leaf and exact parent row without marking th
 ## Evidence
 
 - Abandoned leaf restart promotes both stages and restores the code worktree. [21]
-- Invalid parent refuses preview and apply without terminal authority or deletion. [22]
-- Parent write failure restores captured leaf/master files; retry promotes both stages. [23]
 
+- Invalid parent refuses preview and apply without terminal authority or deletion. [22]
+
+- Parent write failure restores captured leaf/master files; retry promotes both stages. [23]
 
 - Start runs with external memory [16]
 

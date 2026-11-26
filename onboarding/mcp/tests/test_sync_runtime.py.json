@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e63f7853bd67a21e836f43b1293ee925e6378d3f",
+            "blob": "161b1c4da7e91e447e58d50aebcf3e8a53cd71c5",
             "content": "sha256:56825013d765ced8088331d51c04e05a914acba8400344a04fa62fd21644e727",
             "locator": {
               "kind": "symbol",
@@ -19,15 +19,16 @@
       ]
     },
     "2": {
-      "note": "Default targets only write to mcp package data",
+      "note": "Default targets only write to mcp package data\n\nAnchor: `` `test_default_targets_only_write_to_mcp_package_data` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "e63f7853bd67a21e836f43b1293ee925e6378d3f",
-            "content": "sha256:c0058171ed208314ef6b175c449ed4788e40fc2b2e26ac78d81e8ac983508941",
+            "blob": "161b1c4da7e91e447e58d50aebcf3e8a53cd71c5",
+            "content": "sha256:477f4aedb1ffe0c4402c29b162bfc8d38f69809d8044ed82821357a845257e36",
             "locator": {
-              "kind": "symbol",
-              "name": "test_default_targets_only_write_to_mcp_package_data"
+              "end": 61,
+              "kind": "line_range",
+              "start": 49
             }
           },
           "kind": "test"
@@ -39,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e63f7853bd67a21e836f43b1293ee925e6378d3f",
+            "blob": "161b1c4da7e91e447e58d50aebcf3e8a53cd71c5",
             "content": "sha256:efa1f746c8d0712427120d4fff8f66ec2f0ec775cdc4bb5b380a1b66a713b93c",
             "locator": {
               "kind": "symbol",

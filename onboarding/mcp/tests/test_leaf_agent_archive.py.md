@@ -25,7 +25,7 @@ receipt settlement bounded at two scales; the automatic scan bounded and not sta
 preview or rejected admission archiving nobody; a repeated finalize reporting outcomes without
 changing the task again; and admitted cleanup and abandon archiving before destructive outputs.
 
-Recovery runtime fixtures carry a real BackgroundLedger. The lifespan case parks warmup-watch explicitly and asserts it beside the five earlier started owners, retaining the recovery interval and settlement/failure/cancellation assertions. These are fixture obligations, not a new archival policy or real-host witness.
+Recovery runtime fixtures carry a real BackgroundLedger. The lifespan case parks warmup-watch explicitly and asserts it beside the four other started owners (`archive-recovery`, `held-delivery`, `projection`, `river-compaction`), retaining the recovery interval and settlement/failure/cancellation assertions. These are fixture obligations, not a new archival policy or real-host witness.
 
 ### Invariants And Boundaries
 
@@ -41,7 +41,9 @@ Recovery runtime fixtures carry a real BackgroundLedger. The lifespan case parks
 - Stale publication keeps the archive and only the exact leaf mark refuses. [4]
 
 
+
 - Current, history and retry selection preserve every artifact. [5]
+
 
 - Predecessor debt survives host failure and automatic recovery advances it. [6]
 
@@ -58,4 +60,5 @@ Recovery runtime fixtures carry a real BackgroundLedger. The lifespan case parks
 
 - A rejected terminal archive never calls the host or removes worktrees. [15]
 
-- Recovery runtime fixtures carry a real BackgroundLedger. The lifespan case parks warmup-watch explicitly and asserts it beside the five earlier started owners, retaining the recovery interval and settlement/failure/cancellation assertions. These are fixture obligations, not a new archival policy or real-host witness. [16]
+
+- Recovery runtime fixtures carry a real BackgroundLedger. The lifespan case parks warmup-watch explicitly and asserts it beside the four other started owners (`archive-recovery`, `held-delivery`, `projection`, `river-compaction`), retaining the recovery interval and settlement/failure/cancellation assertions. These are fixture obligations, not a new archival policy or real-host witness.

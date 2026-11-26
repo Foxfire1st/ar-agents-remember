@@ -12,7 +12,7 @@ Checkout-local coordination isolation at configuration and store boundaries.
 
 ### Logic
 
-Loaded source identifies the linked checkout regardless of cwd. Its effective configuration uses the dummy coordination root, disables live providers and services, and writes an incident-shaped inbox only there. Escape writes refuse before parent or lock creation; the admitted report path remains writable.
+Loaded source identifies the linked checkout regardless of cwd. Its effective configuration uses the dummy coordination root, disables dashboard auto-start and benchmarks, and writes an incident-shaped inbox only there. Escape writes refuse before parent or lock creation; the admitted report path remains writable.
 
 `InstalledCoordinationRootTests` pin the installed-root shape: a root holding `system`, `memory-repos` and `tasks` directories is an installed coordination root with no `skills/` directory, each of the three must be a directory, implicit discovery from the module's own location returns that root while an explicit hint still wins, and a package-source shape with `runtime/skills` and an `AGENTS.md` is not recognised, so discovery falls back to the ancestor default.
 
@@ -52,15 +52,11 @@ The retained source anchors below support the fixture roles and assertion bounda
 
 - Checkout config ignores live authority and uses only dummy root. [2]
 
-
 - Incident shaped store write lands only in leaf dummy root. [3]
-
 
 - Store guard refuses escape before creating lock or parent. [4]
 
-
 - Enclosure report write is allowed without opening coordination escape. [5]
-
 
 - Rewrite guard refuses a manually constructed live target. [6]
 
@@ -69,10 +65,7 @@ The retained source anchors below support the fixture roles and assertion bounda
 
 - Any mode declaration lifts the primary refusal and the write confinement, with the refusal itself as the positive control. [9]
 
-
 - Installed discovery accepts the system, memory-repos and tasks directory shape without skills. The retired package-shaped case uses its own ancestor scope. [11]
-
-
 
 - The reserved lifecycle-operation mode is declarable by any caller, and reports as a writer of every store `mcp` owns. [10]
 

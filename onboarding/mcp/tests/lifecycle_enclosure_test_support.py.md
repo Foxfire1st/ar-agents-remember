@@ -35,22 +35,17 @@ None recorded.
 
 The configured Domain Documentation registry is empty. No external documentation claim is made.
 
-
 > Retained earlier citation wording: - No external domain source is required for this repository-owned test contract. [1]
-
 
 ### Repo-Internal References
 
 The test file is direct evidence for the production boundary named above.
 
-
 > Retained earlier citation wording: - The selected scenarios and assertions implement this test unit's forcing proof. [2]
-
 
 ### Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings.
-
 
 > Retained earlier citation wording: - No meaningful cross-repository reference applies. [3]
 
@@ -60,8 +55,6 @@ No cross-repository source is allowed by the resolved settings.
 
 - No external domain source is required for this repository-owned test contract.  Anchor: `enclosure_contract` [1]
 
-
 - The selected scenarios and assertions implement this test unit's forcing proof.  Anchor: `enclosure_contract` [2]
-
 
 - No meaningful cross-repository reference applies.  Anchor: `enclosure_contract` [3]

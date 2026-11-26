@@ -82,16 +82,11 @@ The following coverage statuses are retained metadata, outside the operative pro
 
 - No-output cancellation preserves successor candidate differences and refuses moved protected output identities. [10]
 
-
 - Direct-closing receipts precede journal admission, preserve later edits, and preserve closings already landed in HEAD. [11]
-
 
 - Completed disposition checks the shared direct-owner predicate and idle integration claim. [13]
 
-
-
 - Default production services bind the ordinary memory-quality, citation, certification-memory, knowledge validation/crossing/gate and archive adapters; they do not install the removed prepared-closeout continuation or selected certificate producer. [15]
-
 
 - The exact-generation observer returns bounded change/timeout outcomes. [4]
 
@@ -99,19 +94,14 @@ The following coverage statuses are retained metadata, outside the operative pro
 
 - Completed direct retirement is offered using the shared record-based owner predicate. [6]
 
-
 - Store transition validation requires recordRevision to advance once and meaningfulRevision to advance only when semantic state changes. [3]
 
-
 - The public projection binds component identity, checks coherent typed intent and derives applicable direct-landing offers from the generation's evidence. [7]
-
 
 - Direct recovery uses accepted generation evidence and settles a completed receipt in the same call. [8]
 - The control observer checks exact generation identity and refuses a retired record before reconciliation. [9]
 - Store transition validation preserves journal identity during mutation. [12]
 
-
 - The direct recovery handler operates its accepted generation and settles the receipt. The locator and manifest address all saved journal kinds. [5]
-
 
 - Converted memory is judged through the onboarding-trace gate, which reports missing traces and incomplete sides while unnecessary rows report only. External-memory helpers separately plan entity fingerprints and refresh route indexes; they do not restore the removed sidecar/route-body gate. [14]

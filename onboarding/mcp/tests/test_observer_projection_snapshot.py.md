@@ -32,7 +32,6 @@ The additional predicates are source assertions over real contract files and con
 
 - Pending but not reopened enclosures admit runtime worktree groups. [2]
 
-
 ### Docs References
 
 No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
@@ -43,9 +42,7 @@ No configured domain evidence applies to the file-local claims above.
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-
 - Project and write end to end. [1]
-
 
 ### Cross-Repo References
 

@@ -57,11 +57,6 @@ repo is disallowed or a path escapes the coordination root.
 - Coordination context resolver owns the actual context construction. [2]
 - `require_repo` and `require_within_coordination` (repo resolution and path confinement) now live in the shared `kernel/authority.py` module. [3]
 
-
-
-
-
-
 ## Series-Contract Notes
 
 The context application entry point still resolves nested active task roots and a specific leaf enclosure —

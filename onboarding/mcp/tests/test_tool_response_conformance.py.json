@@ -83,26 +83,16 @@
       ]
     },
     "18": {
-      "note": "The registry whose models the structural layer sweeps.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
+      "note": "The registry whose models the structural layer sweeps.\n\nAnchor: `` `TOOL_RESPONSE_MODELS` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
             "content": "sha256:e32d72e73c43c68526666e351964e31154f7ccc5f262554de0776dac177d9e07",
             "locator": {
-              "kind": "symbol",
-              "name": "TOOL_RESPONSE_MODELS"
+              "end": 128,
+              "kind": "line_range",
+              "start": 83
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -143,12 +133,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
+            "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
             "content": "sha256:9bedbc4065fdfc05429289b99eac1e9736fd504528bdcf8432e49d781e4c3f98",
             "locator": {
-              "end": 843,
+              "end": 834,
               "kind": "line_range",
-              "start": 843
+              "start": 834
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

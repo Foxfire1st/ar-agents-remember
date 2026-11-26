@@ -274,12 +274,12 @@
         },
         {
           "anchor": {
-            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "blob": "d82486d1c983c96522546f0cbd679f0eee4dbc60",
             "content": "sha256:8f25449d997df461b0c1138e2adf5e075306c3cefa95ef17d36a48265d8bcaa8",
             "locator": {
-              "end": 238,
+              "end": 218,
               "kind": "line_range",
-              "start": 217
+              "start": 197
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },

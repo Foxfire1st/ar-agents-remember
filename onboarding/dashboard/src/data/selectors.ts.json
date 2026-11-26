@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
-        "content": "sha256:f9a468be21f745ce68abb4692d7cff78eddbba96844874c4ee80194c83731e5e",
+        "blob": "9617eba1ee8643ee7f2d8cc5d7899aaf75a28202",
+        "content": "sha256:24bd87856d574a6cc1e4365de68e3feaf683ea5c81420312453b16b5bb1dfe60",
         "locator": {
           "kind": "file"
         }
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+        "blob": "9617eba1ee8643ee7f2d8cc5d7899aaf75a28202",
         "content": "sha256:73c94ec98ff59774ca714fc57c18f3a2b416803757d40931678111e3b102ccf7",
         "locator": {
           "kind": "symbol",
@@ -40,14 +40,15 @@
   ],
   "references": {
     "1": {
-      "note": "selectQueue caches the visible queue by the queue array's identity and the suppression map's identity, and hides every row whose id is in that map, whatever the entry's kind.\n\nAnchor: `selectQueue`",
+      "note": "selectQueue caches the visible queue by the queue array's identity and the suppression map's identity, and hides every row whose id is in that map, whatever the entry's kind.\n\nAnchor: `selectQueue`, `Source`: `dashboard/src/data/selectors.ts:30-43`",
       "targets": [
         {
           "anchor": {
-            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
-            "content": "sha256:f9a468be21f745ce68abb4692d7cff78eddbba96844874c4ee80194c83731e5e",
+            "blob": "9617eba1ee8643ee7f2d8cc5d7899aaf75a28202",
+            "content": "sha256:1ccfefd5d269c5980751cf575af0d97705f22069829d2f62172dd517005fb00b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "selectQueue"
             }
           },
           "kind": "code"
@@ -55,14 +56,15 @@
       ]
     },
     "3": {
-      "note": "The converted drift names order with the legacy classifications, healthy first.\n\nAnchor: `DRIFT_ORDER`",
+      "note": "The converted drift names order with the legacy classifications, healthy first.\n\nAnchor: `DRIFT_ORDER`, `Source`: `dashboard/src/data/selectors.ts:71-80`",
       "targets": [
         {
           "anchor": {
-            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
-            "content": "sha256:f9a468be21f745ce68abb4692d7cff78eddbba96844874c4ee80194c83731e5e",
+            "blob": "9617eba1ee8643ee7f2d8cc5d7899aaf75a28202",
+            "content": "sha256:0b48f35bc24b90fc9cf968c985cf3750c22e020435a3edb05ac163f173ed5d5c",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "DRIFT_ORDER"
             }
           },
           "kind": "code"
@@ -74,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "blob": "9617eba1ee8643ee7f2d8cc5d7899aaf75a28202",
             "content": "sha256:73c94ec98ff59774ca714fc57c18f3a2b416803757d40931678111e3b102ccf7",
             "locator": {
               "kind": "symbol",
@@ -85,7 +87,7 @@
         },
         {
           "anchor": {
-            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "blob": "9617eba1ee8643ee7f2d8cc5d7899aaf75a28202",
             "content": "sha256:73c94ec98ff59774ca714fc57c18f3a2b416803757d40931678111e3b102ccf7",
             "locator": {
               "kind": "symbol",

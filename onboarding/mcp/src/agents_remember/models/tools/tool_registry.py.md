@@ -27,9 +27,7 @@ The strict registry additionally maps direct_execution_grant to DirectExecutionG
 
 ## Current source contract evidence
 
-
 - Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.
-
 
 ## Synced current-source qualification
 
@@ -108,10 +106,7 @@ No configured domain documentation was available.
 
 > Historical registry-owner scope only: the public structural/gate/capsule/five-knowledge and dated acceptance claims below describe earlier registry states. They grant no current tool or executor result. The current registry maps context_packet to SlimContextPacket, omits resolve_context, and retains explicitly excluded private compatibility rows.
 
-
-
 - The choke point validates against this registry before emitting the envelope. [8]
-
 
 - The three strict response contracts those rows map to, in the module that declares them. [10]
 - The three strict contracts the capsule rows map to, including the shared success/refusal capsule envelope. [11]
@@ -120,9 +115,7 @@ No configured domain documentation was available.
 
 > Historical registry-owner scope only: the public structural/gate/capsule/five-knowledge and dated acceptance claims below describe earlier registry states. They grant no current tool or executor result. The current registry maps context_packet to SlimContextPacket, omits resolve_context, and retains explicitly excluded private compatibility rows.
 
-
 - Frozen implementation of TOOL_RESPONSE_MODELS supporting the stated file behavior. [13]
-
 
 ## L23 Lifecycle Model Package Review
 
@@ -291,5 +284,7 @@ explicit `unresolved` list rather than manufacturing a verdict from a passing te
 
 
 - The by-name response-model registry, which carries the settings initializer. [15]
+
+
 
 - The public response registry maps explainer_control to its strict response model; it does not weaken existing responses. [16]

@@ -192,16 +192,39 @@
       ]
     },
     "7": {
-      "note": "The start/attach publisher that is the named recovery, and therefore the operation that actually binds the field.  Historical anchor: `_publish_leaf_task_enclosure_binding`. Current start/attach publication calls delegate to `publish_start_task_facts` in `worktrees/start_task_publication.py`.",
+      "note": "The start/attach publisher that is the named recovery, and therefore the operation that actually binds the field.  Historical anchor: `_publish_leaf_task_enclosure_binding`. Current start/attach publication calls delegate to `publish_start_task_facts` in `worktrees/start_task_publication.py`.\n\nAnchor: `_attach_admitted`, `_active_existing_contract_result`, `_create_start_enclosure`",
       "targets": [
         {
           "anchor": {
-            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
-            "content": "sha256:a4fb1ff1dcd89084856ab84df820601580497b0be814131bba61ecd9df91cb9c",
+            "blob": "d82486d1c983c96522546f0cbd679f0eee4dbc60",
+            "content": "sha256:d8fed164b79a7b2d8ea954d2b8c945746678a3e7a0d7e05b79316482fc3a9b37",
             "locator": {
-              "end": 741,
-              "kind": "line_range",
-              "start": 217
+              "kind": "symbol",
+              "name": "_attach_admitted"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d82486d1c983c96522546f0cbd679f0eee4dbc60",
+            "content": "sha256:282e0b87baa31825b0043edb28e6571630aa2c37155e1ad3c090e681fae46482",
+            "locator": {
+              "kind": "symbol",
+              "name": "_active_existing_contract_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d82486d1c983c96522546f0cbd679f0eee4dbc60",
+            "content": "sha256:ded16f1f9c6ed1544cb278b842fa80fbebe2fcab09de6a79775571499eb277c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_start_enclosure"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },

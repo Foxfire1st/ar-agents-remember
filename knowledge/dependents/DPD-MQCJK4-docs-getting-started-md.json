@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "af9e749296405ef22b6b165097e02cfef8e50570",
-    "commit": "91bb8c5f96005ee45998e3d5a3618fc28d250bdc",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "On settled crossing-5 tree af9e7492 (commit 91bb8c5f, combining EXP-L1/crossing-4 and BUG-L44), docs/getting-started.md remains accurate for Python 3.14, package 3.0.8 (with mcp>=1.30.0,<2), Node >=22.13 / >=24, the five install steps, Bootstrap call, short overflow answers with log, dashboard --status behavior, Retry guidance for an unavailable embedded chat control, and runtime onboarding setup; no BUG-L44 contradiction.",
-    "task": "261124-EXP",
-    "uncommitted": false
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/getting-started.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
+    "task": "261125-DEP-L2",
+    "uncommitted": true
   },
   "document": "docs/getting-started.md",
   "id": "DPD-MQCJK4",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 16,
+  "revision": 17,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
+      "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -51,7 +51,7 @@
       "path": "scripts/sync-dashboard.py"
     },
     {
-      "blob": "2116aec8d8fe95cd1f5e5dd3b63cb7d392febb48",
+      "blob": "703d4a247784c78f117744a0a9bc41e7e1cd015b",
       "kind": "file",
       "path": "dashboard/package.json"
     },
@@ -76,7 +76,7 @@
       "path": "dashboard/src/cockpit/paseoFrameControl.ts"
     },
     {
-      "blob": "64084f98803199c3d7bae4ce76810611b0578a13",
+      "blob": "f598db5495c4b1e8dfae89ffd08fe320e3d3810f",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -106,7 +106,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+      "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/runtime.py"
     },
@@ -121,7 +121,7 @@
       "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
     },
     {
-      "blob": "df83adb17e8b5185f6574aacb3e6b04e0e928bde",
+      "blob": "54716765bc1750c66e59dede91399bff650d0655",
       "kind": "file",
       "path": "dashboard/package-lock.json"
     },
@@ -132,14 +132,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T04:22:46+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
-    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-5",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
-    "task": "261124-EXP"
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
   }
 }

@@ -2,8 +2,6 @@
 
 ## Current operative account — MIK-R112
 
-
-
 The literal declarations include the grant adapter and its handler, `role_start_set` and native `retire_child`. Numeric roster/module/handler guards are source declarations, not a fresh execution or live tool-list result.
 
 ### Source and authority bounds
@@ -11,8 +9,6 @@ The literal declarations include the grant adapter and its handler, `role_start_
 - The module declares `ROSTER_SIZE=44`, `TOOL_MODULE_COUNT=14` and `TOOL_HANDLER_COUNT=46`, including `explainer_control`. Assertions compare populations rather than granting acceptance from numbers.
 - `test_every_registered_model_is_strict_or_declared_flexible` derives strict/flexible model sets; imports do not enlarge the public roster.
 - No current dispatch contract is established by this module.
-
-
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Internal services and historical fixtures do not re-advertise deleted MCP tools.
 
@@ -187,12 +183,11 @@ they make no acceptance claim.
 
 - The test scans literal `next_tool` values and calls `_retired_generation_refusal` for closeout and integrate to collect `worktree_closeout_apply` and `worktree_integrate`. A response-boundary probe submits each of the four collected successors in a constructed `closeout-candidate-state-moved` refusal through the public response adapter and checks that the typed model retains `nextTool`.
 
-
-
 - The choke point whose guarantee this module moves into the suite. Anchor: `_tool_payload` [17]
 
 
 - The registry whose models the structural layer sweeps. [18]
+
 
 - The advertised public roster the surface layer checks against. [19]
 
@@ -208,8 +203,6 @@ No repository or external-system boundary is proved by this module.
 
 ## Current source evidence
 
-
-
 Current source: The literal PUBLIC_TOOLS source tuple contains 44 names. The conformance test source pins ROSTER_SIZE = 44, TOOL_MODULE_COUNT = 14 and TOOL_HANDLER_COUNT = 46 and derives strict/flexible model sets from base classes and extra configuration. These are literal declarations and test assertions, not a fresh module/handler collection or execution result.
 
 - The fixtures' models are the registry's own objects. Anchor: `test_the_models_these_fixtures_validate_are_the_registered_ones` [3]
@@ -220,11 +213,7 @@ Current source: The literal PUBLIC_TOOLS source tuple contains 44 names. The con
 
 - The test scans literal `next_tool` values and calls `_retired_generation_refusal` for closeout and integrate to collect `worktree_closeout_apply` and `worktree_integrate`. A response-boundary probe submits each of the four collected successors in a constructed `closeout-candidate-state-moved` refusal through the public response adapter and checks that the typed model retains `nextTool`. [11]
 
-
-
 - The roster tuple contains 44 names. The conformance declarations set ROSTER_SIZE to 44, TOOL_MODULE_COUNT to 14 and TOOL_HANDLER_COUNT to 46. Structural assertions check the exact populations and derive strict and flexible sets from both base classes and extra configuration. [22]
-
-
 
 - Registered TaskDocResponse validation distinguishes available rows carrying requirements (including an empty list) from unavailable rows without them. Empty sibling populations are valid; unknown or missing states, incompatible requirements and extra fields fail. The description oracle requires the literal Kind: subTask or master. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [23]
 

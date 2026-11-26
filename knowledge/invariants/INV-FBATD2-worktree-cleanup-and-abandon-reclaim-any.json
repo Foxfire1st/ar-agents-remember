@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Spans the shared filesystem helper and both terminal worktree modules (cleanup and abandon); dropping this reclamation target would leave pre-removal worktree groups non-empty and stuck during finalization or abandon."
+  },
+  "applicability": "Worktree cleanup and abandon directory reclamation on leaf and series enclosures that may carry a pre-removal provider-runtime folder.",
+  "conditions": [
+    "Absence of <worktree_group>/provider-runtime is a no-op and omitted from series directory maps.",
+    "A genuine permission or OS removal error returns removed=False with its reason and blocks cleanup rather than succeeding silently."
+  ],
+  "exclusions": [
+    "Docker-based ownership reclaim, which was removed with the providers package.",
+    "Relocation of summarize_command_logs to application/log_capture.py, which stays in onboarding prose."
+  ],
+  "id": "INV-FBATD2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "pytest mcp/tests/test_terminal_blocker_reasons.py (passed); Reviewer route 1 pass at tree 8ae93710c4e6b5f660dd4d763f537ebaa437b42f",
+        "role-reports/worker/b0026371-a666-40c6-b99c-bb3bcb4f1daa/producer-list.json (w3 post-BUG-L38 adaptation on b30330984)"
+      ],
+      "path": "handoff-records-pass1.json"
+    },
+    "handoffEntry": "DEP-R02@v1 §1",
+    "leaf": "261125-DEP-L2",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Worktree cleanup and abandon reclaim any leftover <worktree_group>/provider-runtime directory directly via plain tree removal without a provider step, and block with the explicit filesystem reason if removal fails.",
+  "supersedes": [],
+  "title": "Worktree cleanup and abandon reclaim leftover provider-runtime directly",
+  "writer": {
+    "at": "2026-11-26T03:43:45+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "2424643a-91e9-4c95-ab58-87443229a30b",
+    "task": "261125-DEP"
+  }
+}

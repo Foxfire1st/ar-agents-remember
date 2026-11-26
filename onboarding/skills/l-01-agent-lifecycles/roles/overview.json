@@ -481,12 +481,12 @@
       ]
     },
     "25": {
-      "note": "Taskless real concern and report-first remediation.",
+      "note": "Taskless real concern and report-first remediation.\n\nAnchor: `## Take the supplied assignment` / `## Read and investigate`, `Source`: `skills/l-01-agent-lifecycles/roles/investigator.md:10-22`.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
-            "content": "sha256:6855607be8f85fb0edf03b7a682d0e8fe99319a2eba1a7b3ea6270bc715da107",
+            "blob": "27304d9440781768d35f81acb95b018e57259de3",
+            "content": "sha256:5bd701a9f9e4080ea4839dad7bb77105fd3c673df0f9679af709f515636f9f38",
             "locator": {
               "end": 22,
               "kind": "line_range",
@@ -498,25 +498,12 @@
         },
         {
           "anchor": {
-            "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
-            "content": "sha256:a92957a4a4b5ca7437e36fefe279ced0cec8208a42028880c967a5573de82bb6",
+            "blob": "27304d9440781768d35f81acb95b018e57259de3",
+            "content": "sha256:674f3e8e4f40fb8dd53a79b966f89b08e0182a29f2ed665d2d513a6f3a442673",
             "locator": {
-              "end": 56,
+              "end": 82,
               "kind": "line_range",
-              "start": 44
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
-            "content": "sha256:d2d5e4eb1ee97aadcddfe3614ac1bb5d98510925f7b2e34d97a68da9c2800ceb",
-            "locator": {
-              "end": 84,
-              "kind": "line_range",
-              "start": 78
+              "start": 76
             },
             "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
           },
@@ -556,12 +543,12 @@
       ]
     },
     "27": {
-      "note": "The canonical role owns this concern and mutation boundary.",
+      "note": "The canonical role owns this concern and mutation boundary.\n\nAnchor: `Investigate one concern of any kind`, `Source`: `skills/l-01-agent-lifecycles/roles/investigator.md:22-22`.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
-            "content": "sha256:5fb4ed48b19a4ea3c3875fe7de1be0d91f15639ab46cb27b408cd04ba0922d6f",
+            "blob": "27304d9440781768d35f81acb95b018e57259de3",
+            "content": "sha256:b649351435c8260021e326fefd7f2c11706f4df133297b6a06598e2061a02f0e",
             "locator": {
               "end": 22,
               "kind": "line_range",
@@ -573,12 +560,12 @@
         },
         {
           "anchor": {
-            "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
-            "content": "sha256:4bbd248bb97184ebb98f9c0849c6eea6981a72a9311742e477922727c87f8d90",
+            "blob": "27304d9440781768d35f81acb95b018e57259de3",
+            "content": "sha256:7a709bf686046abfe99decca89037dc647a45dad17c5025d8c86d55842dca51e",
             "locator": {
-              "end": 84,
+              "end": 82,
               "kind": "line_range",
-              "start": 80
+              "start": 78
             },
             "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
           },
@@ -803,12 +790,12 @@
         },
         {
           "anchor": {
-            "blob": "28100704d5444ebd1dc7009eb9018e2fba4f1420",
+            "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
             "content": "sha256:8d29e140ddd3d61e07c4e50481a745a5c699cc8c6d22b54b9bead5dc726e22c6",
             "locator": {
-              "end": 65,
+              "end": 63,
               "kind": "line_range",
-              "start": 65
+              "start": 63
             },
             "path": "skills/l-01-agent-lifecycles/core/every-role.md"
           },
@@ -1189,12 +1176,12 @@
         },
         {
           "anchor": {
-            "blob": "28100704d5444ebd1dc7009eb9018e2fba4f1420",
+            "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
             "content": "sha256:8d29e140ddd3d61e07c4e50481a745a5c699cc8c6d22b54b9bead5dc726e22c6",
             "locator": {
-              "end": 65,
+              "end": 63,
               "kind": "line_range",
-              "start": 65
+              "start": 63
             },
             "path": "skills/l-01-agent-lifecycles/core/every-role.md"
           },
@@ -1349,7 +1336,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
+            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
             "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
             "locator": {
               "end": 131,
@@ -1558,7 +1545,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
+            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
             "content": "sha256:6972732a323a1716d214c70492f757c0525de69e4b0452aa56e968ae4625ea42",
             "locator": {
               "end": 162,

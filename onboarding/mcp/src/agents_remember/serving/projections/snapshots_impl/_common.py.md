@@ -23,9 +23,9 @@ discarding most of the results.
   `<task>/<file>.json` tails under every repository folder. Only the named task folders are listed,
   and the result is exactly the enumeration's subset for those tails, in the same order. Its only
   caller is `_task_documents._graph_master_docs`)
-- `_task_directories` (since 260921-ICR-L42: every `tasks/<repository>/<task>/` folder)
+- `task_directories` (since 260921-ICR-L42: every `tasks/<repository>/<task>/` folder)
 - `_outside_archive_and_enclosures` (since 260921-ICR-L42: the `0_archive` / `enclosures` path filter)
-- `_walked_directories` (since 260921-ICR-L42: one `os.scandir` level. It keeps real directories only,
+- `walked_directories` (since 260921-ICR-L42: one `os.scandir` level. It keeps real directories only,
   skips symlinked ones with `is_dir(follow_symlinks=False)`, and treats an unreadable folder as empty)
 - `_json_entries` (since 260921-ICR-L42: every entry named `*.json` in one folder, of any type. The
   reader accepts or refuses each one)
@@ -37,7 +37,7 @@ discarding most of the results.
 - `_file_age_seconds`
 - `_current_phase_text`
 - `surface_paths` (fixed pattern levels, sorted results; listing errors mark source proof incomplete)
-- `_walked_directories`, `_json_entries` and `_read_json` record dependency identities through `body_input` during body-generation capture
+- `walked_directories`, `_json_entries` and `_read_json` record dependency identities through `body_input` during body-generation capture
 
 ## Invariants And Boundaries
 

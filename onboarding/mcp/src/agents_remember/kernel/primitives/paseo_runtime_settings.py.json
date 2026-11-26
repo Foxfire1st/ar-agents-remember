@@ -163,12 +163,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc6db38680e6f27f2053901e91f1193df790f2bd",
+            "blob": "ed984fde64b75b02c05a63e8fa5be0de67c5fbe8",
             "content": "sha256:92b9ae0ef246849dab6e00dcb909b9c38aec6fccd89ac4bf4a6d170a1ebe1eeb",
             "locator": {
-              "end": 193,
+              "end": 187,
               "kind": "line_range",
-              "start": 52
+              "start": 46
             },
             "path": "mcp/tests/test_config.py"
           },

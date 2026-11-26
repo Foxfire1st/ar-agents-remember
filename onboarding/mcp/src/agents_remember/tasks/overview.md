@@ -99,7 +99,6 @@ The inherited L4 policy forbids topology edits from promoting live leaf branches
 
 These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
 
-
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
 | sourceRoute            | `mcp/src/agents_remember/tasks/`                 |
@@ -112,19 +111,9 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 
 ## Evidence
 
-
-
-
-
-
-
 - Retained reference account (no fresh execution or acceptance inferred): The `task_doc` application entry point authors documents through this package.
 
-
-
-
 - Task intent-review models, rendering, order and normative allowlists share the canonical answer; open review is visible but absent from ready_ids, and the strict agreed revision rides go.
-
 
 - The master Order table labels a task whose intent review is open in its state cell. [58]
 
@@ -138,7 +127,9 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 - Retained reference account (no fresh execution or acceptance inferred): The task-document renderer regenerates markdown from the validated TaskDocument. [7]
 
 - Retained reference account (no fresh execution or acceptance inferred): The persisted worktree contract is the analogous model-to-text precedent. [8]
+
 - Retained reference account (no fresh execution or acceptance inferred): The persisted-contract peer this schema mirrors. [9]
+
 - Retained reference account (no fresh execution or acceptance inferred): Task source snapshots and publication. [10]
 - Retained reference account (no fresh execution or acceptance inferred): Application publication transaction. [11]
 - Retained reference account (no fresh execution or acceptance inferred): Structural execution-node equality/hash and explicit reference ownership. [12]

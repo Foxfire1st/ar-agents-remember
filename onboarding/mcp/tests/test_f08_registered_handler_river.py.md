@@ -38,9 +38,7 @@ process, so a shortcut in the test cannot substitute for the startup path.
 
 ## Evidence
 
-
 - A bound first call through the registered handler carries the caller and its facts. [1]
-
 
 - A fresh process writes its first call through startup. [2]
 

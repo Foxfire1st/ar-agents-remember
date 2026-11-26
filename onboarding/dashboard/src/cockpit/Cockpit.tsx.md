@@ -36,9 +36,6 @@ No configured domain documentation; source owners support this current account.
 
 - The product bar and its order are one list. [32]
 
-
-
-
 - The layer wrapper that hides without unmounting. [37]
 - The mode-bar primitive that renders the product entries. [38]
 
@@ -54,49 +51,33 @@ No configured domain documentation; source owners support this current account.
 
 - The reader's hash parser. [75]
 
-
-
 - The reviewed UI contract owner `ViewLayer`. [90]
 
 - Stored cockpit regression source covering retained product views; it is source evidence, not a fresh test, browser or performance result. [91]
 
-
-
 - The header's count line uses shared labels for served taskCounts, adds a waiting count only while a task waits, omits works, waiting and paused words when host observation is unknown, and reports host activity unavailable once rather than drawing an unknown-count bucket. [94]
-
-
-
 
 ### Cross-Repo References
 
 No separate cross-repository implementation claim.
 
-
 - The shell defaults to Chats; a valid review hash selects Operations and a valid knowledge-reader hash selects Knowledge. Persistent product layers remain mounted independently of takeover selection.
-
 
 - Knowledge is a full-bleed, hidden-not-unmounted layer. [34]
 
-
 - Full-bleed is derived for the product and retained machine-map views.
-
 
 - A page outside the bar mounts only through an injected view. [36]
 
-
 - The Knowledge reader the retained layer mounts. [39]
-
 
 - The revalidation provider is shown only for ordinary Operations outside takeover and review.
 
 - RailedBody applies saved Operations sidebar widths or the review's reading/chat tracks; its narrow path uses one column. [65]
 
-
 - Files, Engine Room, Topology, Knowledge, and Chats request the full-bleed layout. Anchor: "const FULL_BLEED_VIEWS: ReadonlySet<CockpitView> = new Set<CockpitView>(['files', 'knowledge', 'engine', 'topology', 'chats']);" [66]
 
-
 - Rail fade properties are selected by the animation permission.
-
 
 - The `chatsLayer` keep-alive class used by the Chats layer. [68]
 
@@ -113,22 +94,11 @@ No separate cross-repository implementation claim.
 
 - Native task selection and memoization are separate from the Engine Room stable-empty fallback.
 
-
 - The shell starts the screen wake lock once on mount; the wake-lock helper follows document visibility and releases its held sentinel on stop. [96]
-
-
-
 
 - Base review navigation names repo/master/leaf and recorded history. Separate reviewer hash helpers push new selection/comparison choices and replace restored state without changing the task target. [97]
 
-
-
-
-
 - At at-most40rem the shell admits vertical overflow and single-column railed content. The ordinary change-set takeover uses the fixed takeover body; review is rendered in the railed body. [98]
-
-
-
 
 - Review is explicitly excluded from takeover. Anchor: `shellFlags` [99]
 
@@ -142,7 +112,6 @@ No separate cross-repository implementation claim.
 - The top bar renders the serving-build stamp from its own module. [106]
 
 - The shared RightRail forwards the review leaf's explainer target into the same DocumentChat wrapper. Operations still uses its ordinary document chat; its active leaf document also mounts ViewedLeafExplainerControl, which can read and retire an existing explainer without visiting Review. The Operations active predicate is shared with DetailPanel, and switching pages adds neither a frame wrapper nor a frame key. [105]
-
 
 - Operations keeps its task, ordinary diff, intent review and notes document mounted while another bottom tab shows. [107]
 - Returning to Operations retains the remembered view unless its task is absent after hydration; pressing already-open Operations clears the reader. [108]

@@ -43,44 +43,21 @@ No Domain Documentation source is configured for this slice.
 
 ### Repo-Internal References
 
-
 - `test_every_page_of_a_large_comparison_is_reachable_without_duplicate_or_loss` supplies the current fixture or assertion described above. [21]
-
-
-
 
 - `test_a_cursor_from_a_moved_generation_is_refused_with_a_new_generation_action` supplies the current fixture or assertion described above. [23]
 
-
-
 - `test_the_entry_read_populates_the_button_without_fetching_record_pages` supplies the current fixture or assertion described above. [24]
 
-
-
-
-
 - The fixture imports diff and read-scope test helpers. It rebuilds the candidate text population with the successor claim and added realization paths. [25]
-
-
-
-
-
-
-
 
 - compose_page calls the production review composition and asserts that it answered with a review payload. [27]
 
 - build_pagination_fixture builds the shared diff fixture, adds extra realization paths and returns its candidate fixture. [28]
 
-
-
 - The HTTP walk builds queries for the registered route, whose port invokes production composition. The direct walk invokes composition through compose_page. [30]
 
-
-
-
 - The cursor walk checks each published cumulative count against a separate call to the comparison owner for the same request. It also reads the page item IDs from that owner. [31]
-
 
 - **A complete comparison is one page: no remainder and no cursor, so a whole selection is never presentable as a truncated one.** [32]
 - The large comparison walk reads every page through HTTP and checks the union, counts, scope and terminal cursor without duplicate or loss. [33]
@@ -88,13 +65,10 @@ No Domain Documentation source is configured for this slice.
 - A stale cursor returns a reset with the new-generation action and differing identities. The reset has no continued-from cursor and hands back a cursor that continues the moved comparison. [36]
 - **The page-size boundary admitted by the route itself: 64 served, 65 and −1 refused by name with no uncaught request-model error.** [37]
 
-
 - At both fixture sizes the unpaged subject read has no page. The larger entry catalogue then returns its subject count without calling the patched comparison or view functions. [39]
-
 
 - ReviewCollectionPage validates total arithmetic, continuation availability, reset reason and continued-from identity. [40]
 - The transport case checks named input refusals and the page-size bound, including 64 admitted and 65 or negative sizes refused. [41]
-
 
 - The first, unsized, continued and crossed requests for the removed records collection return the named refusal. The crossed request’s model dump omits evidence. [22]
 
@@ -102,9 +76,8 @@ No Domain Documentation source is configured for this slice.
 
 
 
-
-
-
 - Test-only RowStore mutates a text tree and rebuilds the derived index; it is not a shipped validating write-admission plane. [26]
+
+
 
 - The `unit-regression` lane selects `mcp/tests/test_review_bounded_pagination.py`. The lifecycle catalog lists the module as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. [42]

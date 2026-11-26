@@ -170,15 +170,11 @@ transport cases, `260921-ICR-L17`'s previous-identity case and the loader case. 
 module's `REPOSITORY_LEAF`, `review_config`, `resolution_for`, `review_request` and `render`, so those
 helpers are shared surface, not private to this file.
 
-
-
 **The lane declaration is a precondition, not metadata.** `pytestmark = pytest.mark.evidence_unit`
 registers the whole module in the unit population, and the leaf also appended the module to the
 `unit-regression` lane in `mcp/tests/test-evidence-lanes.toml:109` and to two `consumers` lists in
 `mcp/tests/evidence-lifecycle.toml` and `:1447`. An unregistered `test_*.py` module makes the lane
 manifest refuse the repository, so the registration is what lets the module be collected at all.
-
-
 
 **`published_assessment` builds one assessment through the shipped binding seam rather than by
 constructing a stored row.** It builds a `ReviewAssessmentRevision` whose `subject` names the fixture's
@@ -188,8 +184,6 @@ returns `bind_assessment(authorized=revision, inputs=AssessmentInputs(...))`. `o
 `signal(fixture)` do the same for the other two collections, so the evidence pane's three inputs are
 all produced by the modules that own them.
 
-
-
 **The whole-schema conclusion check walks the payload rather than listing the models.**
 `walk_property_names` recurses a JSON schema and collects every property name, and
 `test_the_whole_payload_schema_has_no_field_a_generated_conclusion_could_occupy` compares that set
@@ -198,15 +192,11 @@ against `FORBIDDEN_FIELD_NAMES`. Its sibling case,
 module declares nothing of its own. Together they are why "the surface cannot grow a conclusion by
 filling a blank" is measured rather than asserted in prose.
 
-
-
 **The stores-nothing case measures the two datasets' row counts across a full render.**
 `test_the_surface_stores_nothing_so_deleting_every_rendering_loses_no_canonical_information` reads the
 row counts before and after a complete render through the shipped `read_row_counts` and compares them,
 so "deleting every rendering loses no canonical information" is a measured property of the datasets
 rather than a claim about the code.
-
-
 
 **The refusal and state cases are one property each.** An unassessed subject is displayed unassessed
 and never defaulted to compatible; no evidence records reads `none_recorded` while source inspection
@@ -219,17 +209,12 @@ own state and never an empty string; two disagreeing assessments are both displa
 and no resolution. The last three read `ValidationError` from the models layer where the prohibition is
 a constructor check rather than a rendering choice.
 
-
-
 **The worked-review case walks the journey rather than sampling it.**
 `test_the_worked_review_journey_renders_every_step_it_walks` drives the sequence the design's §8
 describes in one case, and `test_a_stale_assessment_is_never_reused_as_a_review_of_the_new_candidate`
 closes it: changing only the source makes the assessment stale without making it unreadable or
 reusable. The measured-binding case and the two-disagreeing-assessments case sit beside it so the
 currentness axis is asserted from both directions.
-
-
-
 
 The module imports the shipped support rather than building its own: `DiffFixture` and
 `build_diff_fixture` come from `diff_scope_test_support`, `bind_assessment`/`AssessmentInputs` from
@@ -241,8 +226,6 @@ through `fastapi.testclient.TestClient`) are imported by the resolution-and-rout
 every constructor-enforced prohibition. Fixtures are function-scoped and take `tmp_path`, so no case
 shares a dataset with another.
 
-
-
 - The three input builders that produce records through the seams that own them rather than by constructing stored rows.
 
 - The state cases: unassessed is unassessed; no evidence records reads `none_recorded` with source inspection still available; a passing observation is never invariant-satisfied; a signal carries no severity.
@@ -251,9 +234,7 @@ shares a dataset with another.
 
 - **The worked review of the design's §8 journey, and the case that closes it: a stale assessment is never reused.**
 
-
 | The lane row this module occupies. | "mcp/tests/test_knowledge_review_surface.py" | mcp/tests/test-evidence-lanes.toml:111-113 |
-
 
 | The two consumer registrations this module's fixtures are recorded under. | "mcp/tests/test_knowledge_review_surface.py" | mcp/tests/evidence-lifecycle.toml; mcp/tests/evidence-lifecycle.toml |
 
@@ -281,7 +262,6 @@ evidence; source inspection supplies no new execution or acceptance grade.
 
 - The one request shape, the narrowing helper the optional selector obliged, and the one failing-loudly render helper every pane case goes through. [6]
 
-
 - The shipped two-snapshot support the whole module is built on, with the independent byte-safe Git observation this leaf's inventory cases compare against. [8]
 
 - **The missing-role display case: reported roles are None or a permitted value.** [10]
@@ -291,8 +271,6 @@ evidence; source inspection supplies no new execution or acceptance grade.
 
 - The surviving state case renders with its removed-field assertion, and the missing-side case mixes constructor refusals with rendering. [16]
 
-
-
 - The module has fifteen current test declarations. Its old header still names removed coverage and is not a current case census; the bounded forbidden-name vocabulary remains declared. [1]
 - The knowledge case asserts the compared revision pair, statement presence, side-specific condition tuples and comparison-owned field changes, not literal statement-text equality. The source cases retain sibling/before-side and unmapped/outside-selection counts. [9]
 
@@ -300,11 +278,7 @@ evidence; source inspection supplies no new execution or acceptance grade.
 - Distinct knowledge/source/judgment pane types, no authored_effects/signals, typed labelled catalogue entries, retry identity present on both sides, a direct retry comparison with a page and one absent identity excluded are asserted. The body does not compare every catalogue identity or open an unanswerable subject to assert its reason. [19]
 - A knowledge-only change retains a compared selected pair while its inventory is measured empty; malformed inventory combinations are rejected and unrepresentable names require a partial measured inventory. [20]
 
-
-
 > Retained earlier citation wording: - The module is selected once in the unit-regression lane and named by seven exact-scope lifecycle artifact records; registration is not execution.
-
-
 
 ### Cross-Repo References
 
@@ -338,5 +312,7 @@ stays here, and that module imports it.
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:395-395 - the bytes it recorded now occur 6 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:830-830 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1215-1215 - the bytes it recorded now occur 9 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2072-2072 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2753-2753 - the bytes it recorded now occur 93 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2813-2813 - the bytes it recorded now occur 61 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3316-3316 - the bytes it recorded now occur 87 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:125-661 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit eb0b0e98596d07e4e206e7936c20f86d8123e401; mcp/tests/evidence-lifecycle.toml:663-747 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b17c1ce5a93fd41d985352915ce1c30feb0fecb2; mcp/tests/evidence-lifecycle.toml:1552-2083 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 8b0254263c6998b1d4814b2e97c1bd231d39350f; mcp/tests/evidence-lifecycle.toml:2793-2830 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; mcp/tests/evidence-lifecycle.toml:2393-2477 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a416985be1ec9cf8ec92f64882f50ca012518ac4; mcp/tests/evidence-lifecycle.toml:2847-2899 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b52adc8bc0564f6328d3543e48998e9235f1e417; mcp/tests/evidence-lifecycle.toml:2422-2459 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+
 
 - The unit-regression lane selects `mcp/tests/test_knowledge_review_surface.py`. The lifecycle catalog lists `mcp/tests/test_knowledge_review_surface.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. These source declarations establish no execution or passing result. [21]

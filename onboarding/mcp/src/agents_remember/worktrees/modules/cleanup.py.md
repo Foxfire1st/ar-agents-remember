@@ -9,11 +9,11 @@ worktree-owned observer drift snapshots, the task folder (`worktree_group`), and
 
 ### Current Contract
 
-Cleanup preserves its check order and no-remains handling. Dry and real calls both return blocked/coded answers for live provider setup or terminal blockers. Incomplete integration returns integration-incomplete with worktree_record_landing guidance for a series and worktree_integrate guidance for a leaf; a recognized missing carryover returns carryover-required. Cleanup gains no force override from shared blocker wording. The archive-ready kept_line=None/no-rejudgment/no-invented-landedTips policy is now owned by _cleanup_terminal_branch and returned to cleanup_result; its earlier failure narrative is historical. Unrecognized exceptions remain named failures.
+Cleanup preserves its check order and no-remains handling. Dry and real calls both return blocked/coded answers for terminal blockers. Incomplete integration returns integration-incomplete with worktree_record_landing guidance for a series and worktree_integrate guidance for a leaf; a recognized missing carryover returns carryover-required. Cleanup gains no force override from shared blocker wording. The archive-ready kept_line=None/no-rejudgment/no-invented-landedTips policy is now owned by _cleanup_terminal_branch and returned to cleanup_result; its earlier failure narrative is historical. Unrecognized exceptions remain named failures.
 
 The contract-derived terminal mutation authority identifies the external-memory checkout separately. `remove_registered_worktree` discards changes to its root ledger cache through the shared cache owner before ordinary Git removal. No force flag is added for cache handling. Code files named `memory.md`, other memory paths and branch-ancestry safeguards retain their normal protection.
 
-`_cleanup_result` takes the typed `WorktreeArgs` dataclass (imported from `agents_remember.worktrees.modules.args`), replacing the former `argparse.Namespace`; it reads `args.approved`, `args.dry_run`, `args.teardown_providers` and `args.contract_path`, asserting the latter is non-`None` before loading the contract, while `cleanup_result` is the wrapper that adds the outside-scratch reconcile around it. Cleanup requires completed integration
+`_cleanup_result` takes the typed `WorktreeArgs` dataclass (imported from `agents_remember.worktrees.modules.args`), replacing the former `argparse.Namespace`; it reads `args.approved`, `args.dry_run` and `args.contract_path`, asserting the latter is non-`None` before loading the contract, while `cleanup_result` is the wrapper that adds the outside-scratch reconcile around it. Cleanup requires completed integration
 and explicit approval for real mutation.
 
 Successful series cleanup, including an exact already-completed retry reconstructed from the
@@ -24,14 +24,7 @@ selector evidence is reported rather than replaced by queue/task inference. A du
 the result into a retryable nonzero response so the canonical terminal contract/receipt remains the
 address for another exact attempt. Leaves and dry-runs do not mutate activation.
 
-When `args.teardown_providers` is true (the default), cleanup calls
-`teardown_terminal_providers` first to reclaim the isolated provider
-stack (skipping symlinked provider state outside the task folder) before
-removing worktrees and the task folder, reporting the outcome under `providers`.
-When `teardown_providers` is false, a
-`{"state": "skipped", "reason": "teardown_providers disabled"}` entry is returned,
-and any `provider-runtime/` directory that still holds provider state blocks
-cleanup before deletion.
+Any leftover `<worktree_group>/provider-runtime` directory is reclaimed directly via `remove_tree` inside `_removed_directories` (reported under `directories.provider_runtime` on leaves, and on series only when not already absent); there is no provider-stack teardown step or `providers` response section.
 
 `remove_registered_worktree` now accepts an optional `force` keyword (default
 `False`); when true it passes `--force` to `git worktree remove`. This is used
@@ -220,33 +213,25 @@ No external Domain Documentation source is configured for this memory repo.
 
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** Terminal mutation capability binds every removable worktree and local/remote branch to the validated contract before cleanup delegates to the lowest writers. [7]
 
-- **Retained historical source account — superseded by the current contract:** Provider teardown is delegated to this module. [8]
-
-
 > Retained earlier citation wording: - `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. [9]
-
 
 - Shared drift snapshot removal helper used by cleanup. [10]
 
 - `_remote_git` runs both remote-talking calls with `run_git` plus `GIT_REMOTE_TIMEOUT_SECONDS`, passed as `GitRunnerOptions(timeout=...)`. [11]
 
-
-
-
 - `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. [12]
 
-
-
-
-
 > Retained earlier citation wording: - `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. [17]
-
 
 
 - The bundle the cleanup outputs are validated through, and the builder that refuses a blockage with no reason. [13]
 
 
-- The forced L6-shape case: an already torn-down provider runtime finalizes on the first call, and a provider runtime that cannot be removed blocks with its own reason. [14]
+
+
+- Leftover <group>/provider-runtime directories are removed directly during cleanup, and an unremovable provider-runtime directory blocks cleanup with its own permission-denied reason. [14]
+
+
 
 - Worktree tests cover cleanup preconditions and completed cleanup state. [15]
 
@@ -257,11 +242,13 @@ This file owns no ambient cross-repository authority. Any external-memory reposi
 
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** A cleanup repeated after its terminal archive was written carries no rejudged record: the archive-ready branch binds `kept_line = None` and invents no `landedTips`.
 
+
 - **Retained historical source account — superseded by the current contract:** The dry-run repeat of an archive-ready cleanup finishes with no invented `landedTips`. [23]
+
+
 - **Retained historical source account — superseded by the current contract:** The real-run and branch-gone repeats complete the contract and the terminal authority re-reads `cleanup-completed`. [24]
 
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** Successful cleanup and exact terminal replay pass through the terminal activation-release bridge.
-
 
 ## 260815-DAG-L4 Authority History, Reconciled By CLIVE
 
@@ -282,19 +269,16 @@ The current source seams include `remove_registered_worktree`. Branch deletion (
 
 ### Reconciled Source Evidence
 
-
 - The current module exposes `remove_registered_worktree` at this ownership boundary; branch deletion is exposed by `terminal_branch_retirement.py`. [16]
 
-
 - The current module exposes `remove_registered_worktree` at this ownership boundary; branch deletion is exposed by `terminal_branch_retirement.py`. [18]
-
 
 ## 260821-CLIVE Archive-Before-Cleanup
 
 Cleanup requires completed integration and any required landed-memory carryover before deleting the
 parked branch. It proves terminal/no-ambiguous-operation state, publishes and reads back the exact
 external archive/receipt, then performs the destructive tail under terminal authority. The archive
-binds `teardown_providers`; only identical retries converge after root deletion. Atomic series use
+binds `cleanupArguments` (default empty `TerminalWorktreeCleanupArguments`; pre-removal archives carrying `teardown_providers` remain valid and resumable under `INV-TDHAD1`); only matching retries converge after root deletion. Atomic series use
 the ephemeral terminal permit/release seam. Already-completed status returns the retained archive
 proof and never reconstructs deleted live state.
 
@@ -304,46 +288,26 @@ Rule 5 terminal cases: branch retirement primitives moved whole into `terminal_b
 
 [governing overview](overview.md)
 
-> Retained earlier citation wording: - Cleanup preserves its check order and no-remains handling. Dry and real calls both return blocked/coded answers for live provider setup or terminal blockers. Incomplete integration returns integration-incomplete with worktree_record_landing guidance for a series and worktree_integrate guidance for a leaf; a recognized missing carryover returns carryover-required. Cleanup gains no force override from shared blocker wording. The archive-ready kept_line=None/no-rejudgment/no-invented-landedTips policy is now owned by _cleanup_terminal_branch and returned to cleanup_result; its earlier failure narrative is historical. Unrecognized exceptions remain named failures. [25]
+> Retained earlier citation wording: - Cleanup preserves its check order and no-remains handling. Dry and real calls both return blocked/coded answers for terminal blockers. Incomplete integration returns integration-incomplete with worktree_record_landing guidance for a series and worktree_integrate guidance for a leaf; a recognized missing carryover returns carryover-required. Cleanup gains no force override from shared blocker wording. The archive-ready kept_line=None/no-rejudgment/no-invented-landedTips policy is now owned by _cleanup_terminal_branch and returned to cleanup_result; its earlier failure narrative is historical. Unrecognized exceptions remain named failures. [25]
 
 ## 260928-MIK-L198 — Cleanup removes the root and sweeps the ended ones
 
 `cleanup_result` is now a thin wrapper that returns `with_outside_scratch_reconcile(_cleanup_result(args), dry_run=args.dry_run)`, so every run also sweeps the product parent and carries `outsideScratchReconcile` on the payload when the sweep removed or reported a root. `terminal_group.py` includes `outside_scratch.removal_entry_for(contract, dry_run=dry_run)` under the `outside_scratch` key on both leaf and series paths, removing the recorded root and reporting `would_remove` on preview. `_already_completed_cleanup` takes `dry_run` and delegates residue reclamation to `retry_terminal_group`; any remaining blocker (task folder, live seat, checkout, or outside scratch root) returns return code 2 with state `blocked`, summary "Cleanup is already recorded but its task resources could not be removed.", `directories`, `blockers`, and optional `agentArchive` or `outsideScratch`. After the completed contract is published and read back, `_publish_cleanup` calls `write_completion_record(contract, updated, operation="worktree_cleanup")`, the completion evidence a successor's sweep reads in place of the contract the group takes away.
 
-
-
 - `CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes. [17]
 
 
 
+- **Retained historical source account — superseded by the current contract:** Successful cleanup and exact terminal replay pass through the terminal activation-release bridge. [2]
 
 
 
-
-- **Retained historical source account — superseded by the current contract:** Successful cleanup and exact terminal replay pass through the terminal activation-release bridge. Anchor: `cleanup_result` [2]
-
+- **Retained historical source account — superseded by the current contract:** A cleanup repeated after its terminal archive was written carries no rejudged record: the archive-ready branch binds `kept_line = None` and invents no `landedTips`. [22]
 
 
-
-
-
-
-
-- **Retained historical source account — superseded by the current contract:** A cleanup repeated after its terminal archive was written carries no rejudged record: the archive-ready branch binds `kept_line = None` and invents no `landedTips`. Anchor: `cleanup_result` [22]
-
-
-
-
-
-
-
-- Cleanup preserves its check order and no-remains handling. Dry and real calls both return blocked/coded answers for live provider setup or terminal blockers. Incomplete integration returns integration-incomplete with worktree_record_landing guidance for a series and worktree_integrate guidance for a leaf; a recognized missing carryover returns carryover-required. Cleanup gains no force override from shared blocker wording. The archive-ready kept_line=None/no-rejudgment/no-invented-landedTips policy is now owned by _cleanup_terminal_branch and returned to cleanup_result; its earlier failure narrative is historical. Unrecognized exceptions remain named failures. [25]
-
-
-
+- Cleanup preserves its check order and no-remains handling. Dry and real calls both return blocked/coded answers for terminal blockers. Incomplete integration returns integration-incomplete with worktree_record_landing guidance for a series and worktree_integrate guidance for a leaf; a recognized missing carryover returns carryover-required. Cleanup gains no force override from shared blocker wording. The archive-ready kept_line=None/no-rejudgment/no-invented-landedTips policy is now owned by _cleanup_terminal_branch and returned to cleanup_result; its earlier failure narrative is historical. Unrecognized exceptions remain named failures. [25]
 
 - **Retained historical source account — superseded by the current contract:** Terminal mutation capability binds every removable worktree and local/remote branch to the validated contract before cleanup delegates to the lowest writers.  Anchor: `_terminal_mutation_authority` [7]
-
 
 - `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. [9]
 

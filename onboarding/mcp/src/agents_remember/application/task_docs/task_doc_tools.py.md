@@ -55,7 +55,6 @@ For `record_review` on memory, edit preparation derives the recorder and handove
 > **Retained historical source account — superseded by the current contract:**
 > `_prepare_task_doc_edit` loads the settings number for each begin and each record. Both generic and route results receive the authority-resolved identity of the candidate root, distinct from a checked-tree claim. `_get_task_doc_result` does no write: absent state receives the readable settings number, and a legacy state with `limit == 0` receives that number plus approved extras in the answer only. A positive stored limit stays the last begun limit. If settings cannot be read, get remains readable from stored state, while begin/record refuse. Preparation still precedes validation and transactional publication.
 
-
 ### Logic
 
 > **Retained historical source account — superseded by the current contract:**
@@ -213,7 +212,6 @@ For `record_review` on memory, edit preparation derives the recorder and handove
 
 The repository task-root lock still covers authoritative preparation, validation and publication. Generic and route records now ask candidate_identity_for_review for the selected lane's binding; lane result shaping keeps independent memoryReviewState/reviewKind visible. After run_task_doc_call returns, with_review_step_up adds advice for a successful blocking review. That settings read is advisory and outside the lock: a caught settings error cannot turn an already-published review into a refusal or justify replaying it. Canonical-file guidance for removed reads, by-file input rules, source-CAS, parent synchronization and all existing candidate checks remain unchanged.
 
-
 The governing workflow opens an independent memory review after CODE PASS on the same task using begin_review/record_review with reviewKind=memory. It has its own immutable baseline and shrinking IDs, under the same settings limit and extra-round approval rule, and never resets code reviewState. The signed rollout applies only to memory reviews begun after L88 lands; already-underway reviews (L168, L56, L57, L59) finish with their sealed-report workflow, with no migration/backfill. This describes the candidate contract, not a claim that the serving build already supports it.
 
 This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
@@ -232,15 +230,9 @@ The generic review operation delegates through the route-aware recorder with the
 - File-option dispatch preserves mutual exclusion and uses the returned raw-byte digest. [46]
 - The extracted reader accepts the same confined class of file inputs and computes the same SHA-256 digest. [47]
 
-
-
-
 - The facade serializes source preparation through run_task_doc_call and dispatches flat decision/question edits through their extracted owner. [33]
 
-
 ### Repo-Internal References
-
-
 
 - The operation table now registers the step plane split by intent (`set_step` update-only, `add_step` create-only, `remove_step` delete-only) alongside the moved `skip_step`. [2]
 
@@ -262,22 +254,13 @@ Anchor:
 Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:503-588
 - The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. [9]
 
-
 - The strict TaskDocument schema this author validates, including the new optional slots and its integration-branch normalizer. [10]
-
-
 
 - The renderer this author drives accepts supplied graph titles, direct-grant evidence and master Order; it does not derive Order or read files. [11]
 - The JSON/markdown store this application entry point drives. [12]
 - The payload builder that wraps this application entry point. [13]
 
-
-
 - WorktreeContract supplies task-root, contract and lifecycle coordinates used by resolution; this is not a caller-supplied execution grant. [14]
-
-
-
-
 
 Retained authoring-row wording:
 
@@ -294,6 +277,7 @@ Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py:503-588;
 - The fail-closed guard refuses a subTask whose folder master document is absent or does not carry its row, refusing publication with its remedy. [18]
 
 - The `replace` arm of candidate preparation, which builds its candidate through the shared create/replace builder. [19]
+
 - The two end-to-end cases that pin the refusal's message and the still-working planning flow. [20]
 
 - Generic task-document edits preserve complete retired rows. [27]
@@ -309,9 +293,7 @@ Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py:503-588;
 > leaf; the model's own validation still runs on the whole document. The field is classified `LIFECYCLE`,
 > not `NORMATIVE` (architect ruling 4), so setting it does not change the task's intent digest.
 
-
 - The shared settable allowlist belongs to task_doc_phrases, including `knowledgeMaintenanceScope`; the extracted applier consumes it. [22]
-
 
 - **Retained historical source account — superseded by the current contract:** The field's `LIFECYCLE` classification. [23]
 
@@ -328,9 +310,7 @@ Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py:503-588;
 > declaration against the packet (ruling Q3). No real task document may carry it before the L37 install
 > (ruling Q2, 2026-09-29T21:56:18+02:00).
 
-
 - The shared settable allowlist belongs to task_doc_phrases, including `expectedKnowledgeEffects`; model validation remains the declaration-shape backstop. [24]
-
 
 - **Retained historical source account — superseded by the current contract:** `set_field` sets it, the digest changes, and clearing restores it. [25]
 
@@ -347,7 +327,6 @@ Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py:503-588;
 
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
-
 ## 260815-DAG-L12 Title Threading
 
 The task-doc publication/preview sites thread joined graph titles into the renderer (L12-R1). The earlier account below stated the locking intent; callback placement alone is not lock evidence.
@@ -359,7 +338,6 @@ on-disk title read remains inside the publisher callback; the standing task-publ
 lock policy must be checked in the full caller path, not inferred from this callback. Documents without an `executionGraph` render without a title context.
 
 That historical graph-title statement remains scoped to the supplied sprint title context. Ordinary-master dependency Order is a separate renderer input: the store derives it from explicit listed children and the prepared batch overrides, rather than manufacturing a sprint executionGraph.
-
 
 ## 260815-DAG Master Full-Gate Repair
 
@@ -374,7 +352,6 @@ transactional publisher. The queue is a disposable projection of waiting closeou
 an authoring lock and not an owner of claimed-operation lifecycle evidence.
 
 ### Reconciled Source Evidence
-
 
 Retained authoring-row wording:
 
@@ -408,7 +385,6 @@ Nothing else about authoring changed: the `kind="light"` refusal, the context-aw
 path-move refusal on `replace`, and the whole step plane are untouched, and no schema field was added
 or removed.
 
-
 ## 260918-TSIP-L4 — The `kind` Refusal Names Its Vocabulary (`T43`)
 
 `_build_doc`'s refusal for `kind='light'` now appends the accepted vocabulary and the
@@ -422,7 +398,6 @@ itself stale. Net `+1` from the old `:595`, so every line at or below the old `:
 vocabulary it does accept. Pinned against the **registered** FastMCP surface, not a source
 constant, by `mcp/tests/test_tool_response_conformance.py::test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`.
 
-
 - Retained history: get formerly showed readable directGrant without an authored grant field. Current get/read_steps are removed; rendered/projected grant display is a separate input and never canonical task JSON. [30]
 
 Retained authoring-row wording:
@@ -435,9 +410,7 @@ Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py:463-500;
 
 ## Current source evidence
 
-
 - Ordinary and remove operations prepare per-root document pairs for the same source-CAS transaction. [34]
-
 
 - Reason admission, threshold and differing-harness/model inheritance boundary. [36]
 

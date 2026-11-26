@@ -405,7 +405,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "blob": "7a3dabb24c98cd9bec8de248f48097a4fe334570",
             "content": "sha256:ad3bf78d4645f124ffffb64871cd3a6578a8abd6d974757dec64dfda336272e0",
             "locator": {
               "end": 87,
@@ -419,12 +419,12 @@
       ]
     },
     "114": {
-      "note": "`TOOL_RESPONSE_MODELS` is the registry of public response models.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
+      "note": "`TOOL_RESPONSE_MODELS` is the registry of public response models.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+            "blob": "558fb72e57e35c5d7f28ec980e8e6887ece21755",
+            "content": "sha256:4a2955c03025ce5e578c4efc043dc85bd51a1cd02057c6fc59b517564874378d",
             "locator": {
               "kind": "file"
             },
@@ -567,7 +567,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
+            "blob": "81b0e3d2947f32ed2a6e3a9fc97433196e6659a5",
             "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
             "locator": {
               "kind": "symbol",
@@ -654,7 +654,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a944280846a4175d9217a58a16a3374d336e652b",
+            "blob": "84bed740e5c5cfe8163b23d315a2232de88eb545",
             "content": "sha256:9c12386695597fb00526ef24658b95d03a43536e8c8d600fe8af71c7c2e8cd67",
             "locator": {
               "kind": "symbol",
@@ -666,7 +666,7 @@
         },
         {
           "anchor": {
-            "blob": "a944280846a4175d9217a58a16a3374d336e652b",
+            "blob": "84bed740e5c5cfe8163b23d315a2232de88eb545",
             "content": "sha256:2ff570b74a57e1248fcd4bf7bb70d476a352e69cb94258ae8837293332f7d57d",
             "locator": {
               "kind": "symbol",
@@ -683,7 +683,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a944280846a4175d9217a58a16a3374d336e652b",
+            "blob": "84bed740e5c5cfe8163b23d315a2232de88eb545",
             "content": "sha256:b19f8f92b6be598b8dd8359757fb51b16c64203280b6a0b3c7ecf71bc5afdaa0",
             "locator": {
               "kind": "symbol",
@@ -807,12 +807,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "blob": "84e6d16dce258302a255f01dcf9ee9347dbdb793",
             "content": "sha256:00d440558bd114fff2b419abbdeeb9bb03fa80ef5048aa4a8cb0484ea4784960",
             "locator": {
-              "end": 222,
+              "end": 221,
               "kind": "line_range",
-              "start": 206
+              "start": 205
             },
             "path": "layers.toml"
           },
@@ -2340,7 +2340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97afe91d1390144e81c0b29fb0b706c771e3af63",
+            "blob": "7f44d48bd52cbc68e78dc12946fd38e33f5f2f57",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 90,
@@ -2884,12 +2884,12 @@
       ]
     },
     "260": {
-      "note": "The default bundle binds the knowledge validator.",
+      "note": "The default bundle binds the knowledge validator.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:f6c1ac6689c29dcb927bbfbc7aa0dda504a3ee03a14fe674e9b8224b4beda519",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+            "content": "sha256:8e99f763276da274ccc5034eb7da3599943638f8eec2b0fdb4336ced36d0405c",
             "locator": {
               "kind": "file"
             },
@@ -2915,7 +2915,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:6b948cc0a0a6cfabb5116fc3fabbb632de3c30b476b462856555207593d221e0",
             "locator": {
               "kind": "symbol",
@@ -3230,12 +3230,12 @@
       ]
     },
     "272": {
-      "note": "The composition binds the base converter and the crossing.",
+      "note": "The composition binds the base converter and the crossing.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:f6c1ac6689c29dcb927bbfbc7aa0dda504a3ee03a14fe674e9b8224b4beda519",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+            "content": "sha256:8e99f763276da274ccc5034eb7da3599943638f8eec2b0fdb4336ced36d0405c",
             "locator": {
               "kind": "file"
             },
@@ -3935,7 +3935,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bc61b218672e67bf8c40ecc57e37154c69e4ff5",
+            "blob": "16c98b76c1608e3e38922bd9e890e406e1e0f57f",
             "content": "sha256:df2c86f198b52614deafd07d5ab10b109e08b0392e0772b3bb12d3c0d35bf283",
             "locator": {
               "end": 818,
@@ -3948,7 +3948,7 @@
         },
         {
           "anchor": {
-            "blob": "4bc61b218672e67bf8c40ecc57e37154c69e4ff5",
+            "blob": "16c98b76c1608e3e38922bd9e890e406e1e0f57f",
             "content": "sha256:a05f8d7f6d38953b5e13cc71a39e77cf574de283b34cb79d5c49e7ceb09c5476",
             "locator": {
               "end": 946,
@@ -4063,7 +4063,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bc61b218672e67bf8c40ecc57e37154c69e4ff5",
+            "blob": "16c98b76c1608e3e38922bd9e890e406e1e0f57f",
             "content": "sha256:d6cab41207c7fc41eb84e8b7f8c90e0106671e8356721d1e26a4344355815042",
             "locator": {
               "end": 1149,
@@ -4621,7 +4621,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bc61b218672e67bf8c40ecc57e37154c69e4ff5",
+            "blob": "16c98b76c1608e3e38922bd9e890e406e1e0f57f",
             "content": "sha256:36bdfe3528f2282543fb80c8af7e0ed3c9698aae3f47fcae9189255256d92389",
             "locator": {
               "end": 770,
@@ -4738,7 +4738,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97afe91d1390144e81c0b29fb0b706c771e3af63",
+            "blob": "7f44d48bd52cbc68e78dc12946fd38e33f5f2f57",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 90,
@@ -5130,7 +5130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bc61b218672e67bf8c40ecc57e37154c69e4ff5",
+            "blob": "16c98b76c1608e3e38922bd9e890e406e1e0f57f",
             "content": "sha256:2146d0df7d72e13534ad04e97a28f85968496b943894460d3a7e5a27462d8ca5",
             "locator": {
               "end": 921,
@@ -5143,7 +5143,7 @@
         },
         {
           "anchor": {
-            "blob": "4bc61b218672e67bf8c40ecc57e37154c69e4ff5",
+            "blob": "16c98b76c1608e3e38922bd9e890e406e1e0f57f",
             "content": "sha256:cfbd99738a83539a42d51b79fb1003088cdf7976ddae31256d3848c17d768d85",
             "locator": {
               "end": 926,
@@ -5534,12 +5534,12 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:850a2319a8785535fd245d221d37bfcc366ae3bb91862f477a7b9df038743ed1",
             "locator": {
-              "end": 307,
+              "end": 262,
               "kind": "line_range",
-              "start": 301
+              "start": 256
             },
             "path": "mcp/src/agents_remember/worktrees/services.py"
           },
@@ -5880,7 +5880,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bc61b218672e67bf8c40ecc57e37154c69e4ff5",
+            "blob": "16c98b76c1608e3e38922bd9e890e406e1e0f57f",
             "content": "sha256:b8918e5ce7851a8aa9bc0f7cd3f53cb7650e65670f604e034ab481ef65b753d3",
             "locator": {
               "end": 215,
@@ -5898,7 +5898,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bc61b218672e67bf8c40ecc57e37154c69e4ff5",
+            "blob": "16c98b76c1608e3e38922bd9e890e406e1e0f57f",
             "content": "sha256:c4e05b3b4fcd182f8d9084b4d43b53e2f9cdf62cf03da11e4817dc6ccf9fad1d",
             "locator": {
               "end": 1163,
@@ -6721,22 +6721,6 @@
         }
       ]
     },
-    "427": {
-      "note": "`TOOL_RESPONSE_MODELS` is the registry of public response models.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "428": {
       "note": "The capsule surface this package consumes and does not re-implement.\n\nAnchor: `compile_task_capsule`",
       "targets": [
@@ -6849,12 +6833,12 @@
       ]
     },
     "434": {
-      "note": "The default bundle binds the knowledge validator.",
+      "note": "The default bundle binds the knowledge validator.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:f6c1ac6689c29dcb927bbfbc7aa0dda504a3ee03a14fe674e9b8224b4beda519",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+            "content": "sha256:8e99f763276da274ccc5034eb7da3599943638f8eec2b0fdb4336ced36d0405c",
             "locator": {
               "kind": "file"
             },
@@ -6876,12 +6860,12 @@
       ]
     },
     "435": {
-      "note": "The composition binds the base converter and the crossing.",
+      "note": "The composition binds the base converter and the crossing.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:f6c1ac6689c29dcb927bbfbc7aa0dda504a3ee03a14fe674e9b8224b4beda519",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+            "content": "sha256:8e99f763276da274ccc5034eb7da3599943638f8eec2b0fdb4336ced36d0405c",
             "locator": {
               "kind": "file"
             },
@@ -7647,36 +7631,18 @@
       ]
     },
     "474": {
-      "note": "**Retained historical source account — superseded by the current route account:** Default worktree services bind validator, crossing, worklist, gate and cleanup.",
+      "note": "**Retained historical source account — superseded by the current route account:** Default worktree services bind validator, crossing, worklist, gate and cleanup.\n\nAnchor: `` `build_default_worktree_services` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:c1fcc7b7275328d864f41adaf46a4f6bc1768452e16d885108de9082c1c62b4d",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+            "content": "sha256:d8332a7c6885d84165fac3abe29c0f6f3d81ca117afd19c912d8454858f1bef6",
             "locator": {
-              "end": 240,
+              "end": 129,
               "kind": "line_range",
-              "start": 225
+              "start": 115
             },
             "path": "mcp/src/agents_remember/application/worktree_services.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "475": {
-      "note": "**Retained historical source account — superseded by the current route account:** Runtime installation attempts leftover watcher stop and reports unused enabled keys.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
-            "content": "sha256:fd8c70363abf5876c71198dd3923d239bccba5fad29d3338070de4b32a2eb3f8",
-            "locator": {
-              "end": 830,
-              "kind": "line_range",
-              "start": 810
-            },
-            "path": "mcp/src/agents_remember/install/runtime.py"
           },
           "kind": "code"
         }
@@ -7984,7 +7950,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bc61b218672e67bf8c40ecc57e37154c69e4ff5",
+            "blob": "16c98b76c1608e3e38922bd9e890e406e1e0f57f",
             "content": "sha256:ff2aad8c0c2384fb3d2b8e2a2191a6cc5d5b62521cb305153dd155c2854741d5",
             "locator": {
               "end": 1018,

@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "170d8f15f8dd1c5f8693177b857fb2793acf93bd",
-        "content": "sha256:ddaece0bdc27adaca4406987fae3dd6d5d245f25dc104b7d53eceb2bb469fd74",
+        "blob": "f04bc6f7be0e10c7a2104e41208a41f07430580d",
+        "content": "sha256:e93513bfce3f04459068f2d02f0a6232e5aabec880291816c806107b785f5be2",
         "locator": {
           "kind": "symbol",
           "name": "ArchivedLeafReopenTests.test_completed_cleanup_retry_preserves_a_reopened_successor"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "170d8f15f8dd1c5f8693177b857fb2793acf93bd",
-        "content": "sha256:ad0dd5f5674503e630af08f74f6776832daaf98af8ab1d01e9dc9b8802621faf",
+        "blob": "f04bc6f7be0e10c7a2104e41208a41f07430580d",
+        "content": "sha256:6453af66e65a2f0ac70c661b64aefccc39c73fa6701e1a65d3807000816259f9",
         "locator": {
           "kind": "symbol",
           "name": "ArchivedLeafReopenTests.test_accepted_cleanup_retry_leaves_the_reopen_reset_in_place"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "170d8f15f8dd1c5f8693177b857fb2793acf93bd",
+        "blob": "f04bc6f7be0e10c7a2104e41208a41f07430580d",
         "content": "sha256:48c352f731b05c44b83c6883d2b5e3163bf46168c519b5b9724bdcf7cd103a2f",
         "locator": {
           "kind": "symbol",
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "170d8f15f8dd1c5f8693177b857fb2793acf93bd",
-        "content": "sha256:c2a75e1d4bad7dc43f170ee71ec6bacff2bc874b14cb41a10685bf0a2a717fe8",
+        "blob": "f04bc6f7be0e10c7a2104e41208a41f07430580d",
+        "content": "sha256:7dc479b9fa2f7769c51c4f34a78977d406248d4701e12be019f11a2580ab21bc",
         "locator": {
           "kind": "symbol",
           "name": "test_a_leaf_of_a_master_that_names_itself_as_parent_starts"
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "170d8f15f8dd1c5f8693177b857fb2793acf93bd",
+        "blob": "f04bc6f7be0e10c7a2104e41208a41f07430580d",
         "content": "sha256:99d2987068ba31bff4eb7716a6fcd5da45f821c0abfa9d77f4110ccb38f6ead1",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "170d8f15f8dd1c5f8693177b857fb2793acf93bd",
+        "blob": "f04bc6f7be0e10c7a2104e41208a41f07430580d",
         "content": "sha256:d7f7aec6b36525ee4a36c27f740693a686613fc309b7178d8db13cbe5a778f57",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "170d8f15f8dd1c5f8693177b857fb2793acf93bd",
+        "blob": "f04bc6f7be0e10c7a2104e41208a41f07430580d",
         "content": "sha256:2c9d2d3817afa67dadab3b311c995a4226aed160184ab9aa575f79e229150ff5",
         "locator": {
           "kind": "symbol",
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "170d8f15f8dd1c5f8693177b857fb2793acf93bd",
+        "blob": "f04bc6f7be0e10c7a2104e41208a41f07430580d",
         "content": "sha256:d7ac167a94695722731c7ca921d7b705b274c7670d8945d2734183e00a9c81be",
         "locator": {
           "kind": "symbol",
@@ -139,8 +139,8 @@
     },
     {
       "anchor": {
-        "blob": "170d8f15f8dd1c5f8693177b857fb2793acf93bd",
-        "content": "sha256:9995190c3c93cd881e1cd11b98d4d59ab6437c01d0b5bc5f1962d5f181121fdc",
+        "blob": "f04bc6f7be0e10c7a2104e41208a41f07430580d",
+        "content": "sha256:f986e745326ac7868aa6fe7e37ba87ef2bfa8e40074fce15ebab8bbf1d7a4e01",
         "locator": {
           "kind": "symbol",
           "name": "test_a_completed_master_reopens_from_the_sprint_line_and_its_leaf_follows"
@@ -156,8 +156,8 @@
     },
     {
       "anchor": {
-        "blob": "170d8f15f8dd1c5f8693177b857fb2793acf93bd",
-        "content": "sha256:6ff2f11352fa3dc26d9cd892046e8e849469c0fa7275db0fe582046a984540eb",
+        "blob": "f04bc6f7be0e10c7a2104e41208a41f07430580d",
+        "content": "sha256:27a3e983c026c49fa31c61d5b684f44c26c7cece1f9c40071f21b55699d31164",
         "locator": {
           "kind": "symbol",
           "name": "ArchivedLeafReopenTests.test_completed_abandon_retry_preserves_a_restarted_successor"
@@ -173,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "170d8f15f8dd1c5f8693177b857fb2793acf93bd",
+        "blob": "f04bc6f7be0e10c7a2104e41208a41f07430580d",
         "content": "sha256:417f6e2fabbdaa5cf37060425a3c4528b2a1bc9c6af1578421daf956319a235d",
         "locator": {
           "kind": "symbol",
@@ -192,26 +192,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The archived-leaf class drives reopen, the named start arguments, a repeated reopen and three cycles. Anchor: `ArchivedLeafReopenTests`",
+      "note": "The archived-leaf class drives reopen, the named start arguments, a repeated reopen and three cycles.\n\nAnchor: `` `ArchivedLeafReopenTests` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "170d8f15f8dd1c5f8693177b857fb2793acf93bd",
-            "content": "sha256:2485f8203af41f57e31f8f4cb8df5ac971bf3374e5ca306d72c18ac9b316b0fa",
+            "blob": "f04bc6f7be0e10c7a2104e41208a41f07430580d",
+            "content": "sha256:8aa6162f4f38d0767b06ce66ddce0c6c9ca1097bdad2f9c9d3ba3dfe1cac5861",
             "locator": {
-              "end": 512,
+              "end": 356,
               "kind": "line_range",
-              "start": 250
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "170d8f15f8dd1c5f8693177b857fb2793acf93bd",
-            "content": "sha256:e648afadff2b3b14d2f2c13b85f79bf7c8a55f3a44d888da4d4400503d5e5cf6",
-            "locator": {
-              "kind": "file"
+              "start": 229
             }
           },
           "kind": "test"
@@ -219,26 +209,16 @@
       ]
     },
     "2": {
-      "note": "The master class drives the self-named parent, the master reopen from its sprint line, and the refusal that names the missing file. Anchor: `MasterReopenTests`",
+      "note": "The master class drives the self-named parent, the master reopen from its sprint line, and the refusal that names the missing file.\n\nAnchor: `` `MasterReopenTests` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "170d8f15f8dd1c5f8693177b857fb2793acf93bd",
-            "content": "sha256:990c0a7f3d1c51fb748fd702671ec8eb2690073a57182cfc6412104c13ca7977",
+            "blob": "f04bc6f7be0e10c7a2104e41208a41f07430580d",
+            "content": "sha256:f9f5e9464dde6fdb1ee37a37bd4fc5b7f4d9e81e220a893717bc0273238930d7",
             "locator": {
-              "end": 741,
+              "end": 585,
               "kind": "line_range",
-              "start": 515
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "170d8f15f8dd1c5f8693177b857fb2793acf93bd",
-            "content": "sha256:e648afadff2b3b14d2f2c13b85f79bf7c8a55f3a44d888da4d4400503d5e5cf6",
-            "locator": {
-              "kind": "file"
+              "start": 359
             }
           },
           "kind": "test"

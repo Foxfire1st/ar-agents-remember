@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "dc497e2837c489670650776c799b50df249c049f",
+        "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
         "content": "sha256:28016fa8168937d0ed9e7e7ea1b4a0a07f34705a1c9ccc097b5c5ba671ce6259",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "dc497e2837c489670650776c799b50df249c049f",
+        "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
         "content": "sha256:87cfd4316914b0e09c0c33e0ec811fa0c3e8be4c7a32ba8ba9f11d853f7d0633",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "dc497e2837c489670650776c799b50df249c049f",
+        "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
         "content": "sha256:87cfd4316914b0e09c0c33e0ec811fa0c3e8be4c7a32ba8ba9f11d853f7d0633",
         "locator": {
           "kind": "symbol",
@@ -56,7 +56,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dc497e2837c489670650776c799b50df249c049f",
+        "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
         "content": "sha256:c5a298dd5048ed578d9afe484666cdcb47adb3e399dee25ec018212d9f97b46f",
         "locator": {
           "kind": "symbol",
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "dc497e2837c489670650776c799b50df249c049f",
+        "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
         "content": "sha256:0f12e34c0afbba96924c11edc11e02c82224dda336af787e44848d7f9c7d5412",
         "locator": {
           "kind": "symbol",
@@ -92,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "dc497e2837c489670650776c799b50df249c049f",
+        "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
         "content": "sha256:cd8a1d3e50c71bd978dd497ec628d77505c49b1e81521d3cee43aabda8b7b303",
         "locator": {
           "kind": "symbol",
@@ -110,8 +110,8 @@
     },
     {
       "anchor": {
-        "blob": "dc497e2837c489670650776c799b50df249c049f",
-        "content": "sha256:b859d5e06df0486918ec772f13566456e23d0712b3228329f6026430225fd222",
+        "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
+        "content": "sha256:5e36922cc9e59959f18b38c7c8daace74db32b435cdd2a66c80c1b56a0c0d536",
         "locator": {
           "kind": "symbol",
           "name": "RegisteredTaskReaderContextProtocolTests.setUp"
@@ -133,8 +133,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc497e2837c489670650776c799b50df249c049f",
-            "content": "sha256:3d9f3de88b6f6e1fd6dcf3a8b699c0bbe77859c13612343566455ddc53eb2788",
+            "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
+            "content": "sha256:98ef3fef775ced99c68c648f8e684236d5a21b03813e3e367f907a13a428f772",
             "locator": {
               "kind": "file"
             }
@@ -161,14 +161,28 @@
       ]
     },
     "3": {
-      "note": "The bounded driver and the 60-second Git observation limit.\n\nAnchor: `_await_protocol`",
+      "note": "The bounded driver and the 60-second Git observation limit.\n\nAnchor: `` `_await_protocol` `_git_status` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "dc497e2837c489670650776c799b50df249c049f",
-            "content": "sha256:3d9f3de88b6f6e1fd6dcf3a8b699c0bbe77859c13612343566455ddc53eb2788",
+            "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
+            "content": "sha256:cd8a1d3e50c71bd978dd497ec628d77505c49b1e81521d3cee43aabda8b7b303",
             "locator": {
-              "kind": "file"
+              "end": 344,
+              "kind": "line_range",
+              "start": 332
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
+            "content": "sha256:c5a298dd5048ed578d9afe484666cdcb47adb3e399dee25ec018212d9f97b46f",
+            "locator": {
+              "end": 391,
+              "kind": "line_range",
+              "start": 376
             }
           },
           "kind": "test"
@@ -176,14 +190,16 @@
       ]
     },
     "4": {
-      "note": "The late-response case that holds its handler and starts its deadline after session initialization.\n\nAnchor: `test_late_tool_list_response_times_out_and_closes_the_handler`",
+      "note": "The late-response case that holds its handler and starts its deadline after session initialization.\n\nAnchor: `` `test_late_tool_list_response_times_out_and_closes_the_handler` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "dc497e2837c489670650776c799b50df249c049f",
-            "content": "sha256:3d9f3de88b6f6e1fd6dcf3a8b699c0bbe77859c13612343566455ddc53eb2788",
+            "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
+            "content": "sha256:28016fa8168937d0ed9e7e7ea1b4a0a07f34705a1c9ccc097b5c5ba671ce6259",
             "locator": {
-              "kind": "file"
+              "end": 325,
+              "kind": "line_range",
+              "start": 295
             }
           },
           "kind": "test"
@@ -195,12 +211,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc497e2837c489670650776c799b50df249c049f",
+            "blob": "392c2837a11645f2b6a51960e3824849e42caf87",
             "content": "sha256:e82cb62ec38ce20b0f5e1b1551de6ac58b094c8287bd5b8344f5305a2e1fbb21",
             "locator": {
-              "end": 121,
+              "end": 120,
               "kind": "line_range",
-              "start": 120
+              "start": 119
             }
           },
           "kind": "test"

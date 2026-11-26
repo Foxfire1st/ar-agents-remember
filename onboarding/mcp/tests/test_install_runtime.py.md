@@ -4,10 +4,9 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- Current cases assert a single old-watcher stop and zero dependency installs.
-- Failed stop continues and reports process/recovery evidence.
+- `test_runtime_install_creates_logs_without_provider_folders_and_removes_scripts` asserts that runtime install creates `logs/`, `logs/mcp/`, and `docs/tool-details.md`, removes `scripts/`, and creates no `AGENTS.md`, `providers/`, `logs/providers/`, or `logs/observer/providers/`.
+- `test_runtime_install_leaves_legacy_provider_trees_intact_and_reports_them` asserts that pre-existing `providers/`, `logs/providers/`, and `logs/observer/providers/` directories remain intact on disk and are reported in `summary.removed_part_stores`.
 
-- Both cases also assert that the completed install leaves no coordination-root `AGENTS.md` and does leave `providers/requirements/grepai.txt`; the runtime source fixture no longer writes `AGENTS.md` targets.
 
 ### Superseded inventory
 
@@ -15,8 +14,8 @@ The current source facts below replace the former operative inventory. The separ
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/tests/test_install_runtime.py:171-205`.
-- Source comparison: `mcp/tests/test_install_runtime.py:207-252`.
+- Source comparison: `mcp/tests/test_install_runtime.py:81-139` (`InstallRuntimeTests`).
+- Source comparison: `mcp/tests/test_install_runtime.py:145-262` (`AgenticSettingsSeedTests`).
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
@@ -63,15 +62,9 @@ No configured domain evidence applies to the file-local claims above.
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-
-- Runtime install preserves docker provider state. [1]
-
-
 - Existing settings file is never clobbered. [3]
 
-
 - Dry run installs and counts the assets without writing settings. [4]
-
 
 ### Cross-Repo References
 

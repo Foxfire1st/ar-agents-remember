@@ -1,76 +1,11 @@
 # mcp/src/agents_remember/mcp/tools/providers.py
 
-## Current operative account — MIK-R112
-
-The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
-
-- HEAD diff deletes the entire named source file.
-
-### Superseded inventory
-
-- Pre-repair card claim: Card describes live provider/query payload builders and wire compaction. This is superseded archival wording, not a current prescription.
-
-### Source and authority bounds
-
-- Source comparison: `mcp/src/agents_remember/mcp/tools/providers.py (absent; git diff HEAD -- this path: deleted file mode 100644)`.
-
-Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
-
-## Historical original card — preserved, not the current operative account
-
-<details>
-<summary>Retained original source accounts and producer history</summary>
-
 ## Governing Overview
 
 [overview.md](overview.md)
 
 ## Purpose
 
-Provider status/diagnostics and CGC/GrepAI query payload builders.
+This card records the retirement of `mcp/src/agents_remember/mcp/tools/providers.py`. The `261125-DEP-L2` candidate (`DEP-R02@v1`, `DEC-ZGGT0G`) deleted this source file as part of removing the CodeGraphContext and GrepAI search providers and dead code. This file is retained only as a retirement record and grants no current contract, symbol, or route.
 
-## Code Commentary
-
-### Logic
-
-Holds `provider_status_payload`, `provider_diagnostics_payload`,
-`provider_watchers_payload`, `grepai_search_payload`, `grepai_trace_payload`,
-and the CGC query builders (`cgc_symbol_search`, `cgc_callers`, `cgc_callees`,
-`cgc_dependencies`, `cgc_complexity`, `cgc_visualize`). Each forwards typed
-arguments to the matching `application.provider_tools` function and returns
-through `base._tool_payload`.
-
-`provider_diagnostics_payload` is response-budgeted without filing a per-call report (rule 6):
-the answer is the compact diagnosis with no `reportPath` key. `provider_watchers_payload` writes
-its full application entry point payload to a
-temp report via `write_tool_report` (`mcp/tool_reports.py`, keep-5/7-day
-retention, secrets redacted) and returns a compact builder result with
-`reportPath` inline. `compact_diagnostics_payload` drops `rawStatus`, the
-`currentState` body, and `items[].rawStatus`.
-`compact_watchers_payload` keeps per-step/per-provider outcome dicts
-(`provider`, `action`, `ok`, ...) and drops the raw provider payloads; the
-watchers report is written **before** `summarize_command_logs` mutates the
-payload, so the report keeps full logs while the inline response stays lean.
-
-All CGC and GrepAI query builders route their execution knobs through one
-`ProviderQueryScope(worktree, dry_run, timeout)` (260731-EFA-L2; `WORKSPACE_QUERY_SCOPE` is the
-shared default). `worktree` still targets a worktree's isolated stack by name. The GrepAI pair
-additionally take `GrepaiSearchQuery` / `GrepaiTraceQuery` (the query, limit/depth, output format)
-and `repos: GrepaiRepoScope(repo_ids, all_repos)` (`ALL_INDEXED_REPOS` by default), while the CGC
-builders keep `repo_id` plus their one domain argument positional. Query result payloads are not
-compacted — the search/analysis results are the point of the call.
-
-The published MCP signatures stay flat; `mcp/registration/code_search.py` builds these objects.
-
-### Invariants And Boundaries
-
-- Transport-thin: provider lifecycle and query behavior lives in
-  `application.provider_tools` and the provider packages.
-- Compaction lives in this MCP tool layer only: internal consumers
-  (current-state writer, application entry points) keep the full data; only the wire
-  payload slims down.
-- `provider_watchers_payload` and the `cgc_*`/`grepai_*` query builders default
-  `dry_run=False` (act-by-default): a plain query returns results, and
-  `dry_run=true` returns the planned provider command without executing it.
-
-</details>
+This source file was already absent before `261125-DEP-L2`; under `DEP-R02@v1` (`DEC-ZGGT0G`) all CodeGraphContext and GrepAI provider surfaces and references are retired.

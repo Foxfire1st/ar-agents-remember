@@ -172,44 +172,112 @@
         }
       ]
     },
-    "7": {
-      "note": "`fmtWait` formats `heartbeatAgeSeconds` into s/m/h/d\n\nAnchor: `fmtWait`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
-            "content": "sha256:f9a468be21f745ce68abb4692d7cff78eddbba96844874c4ee80194c83731e5e",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/data/selectors.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "8": {
-      "note": "`factChip`, `diagPanel`, `diagRow`, `diagKey`, `diagValue`, `missingNotice`, `missingTitle`, `phaseLineList`, `actionRow`, `sectionLabel` recipes\n\nAnchor: `factChip` `diagPanel` `diagRow` `diagKey` `diagValue` `missingNotice` `missingTitle` `phaseLineList` `actionRow` `sectionLabel`",
+      "note": "factChip, diagPanel, diagRow, diagKey, diagValue, missingNotice, missingTitle, actionRow, sectionLabel recipes\n\nAnchor: `sectionLabel`, `factChip`, `diagPanel`, `diagRow`, `diagKey`, `diagValue`, `missingNotice`, `missingTitle`, `actionRow`",
       "targets": [
         {
           "anchor": {
-            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
-            "content": "sha256:7bd4f9b0cae113785c3c0917c220a69c9e28557e99a893bc5854e72b037aac2d",
+            "blob": "7e25993923f47c15d0233ebb17612f264ac04bd8",
+            "content": "sha256:70553ded75cdcf4ef92a62554dbb46c39d0c41b084df527315a00dab2800aaeb",
             "locator": {
-              "end": 39,
-              "kind": "line_range",
-              "start": 39
+              "kind": "symbol",
+              "name": "sectionLabel"
             },
-            "path": "dashboard/src/panels/EngineRoom.tsx"
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
-            "content": "sha256:19816d3b21ff89039bd343d7ef17ac19cf008f3b1cb007fd09f3443d77ea9f35",
+            "blob": "7e25993923f47c15d0233ebb17612f264ac04bd8",
+            "content": "sha256:b5eb89541759bd74a4d581988aea1c1a12f77995838dac730b894e8e868882c4",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "factChip"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7e25993923f47c15d0233ebb17612f264ac04bd8",
+            "content": "sha256:cbc8e14c07cc0d6763d65950e76d29f4b3a03b0aa9f70d7185d74c8ff5d1b801",
+            "locator": {
+              "kind": "symbol",
+              "name": "diagPanel"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7e25993923f47c15d0233ebb17612f264ac04bd8",
+            "content": "sha256:12ea845a3eafbd4552f76a3946eedc5c574194560d194f070f806ac921ed09aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "diagRow"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7e25993923f47c15d0233ebb17612f264ac04bd8",
+            "content": "sha256:8dd0b63cab8f1ca80bc1fa90a933e157f42ee5b9a8b0ffbcd32676025ba9546a",
+            "locator": {
+              "kind": "symbol",
+              "name": "diagKey"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7e25993923f47c15d0233ebb17612f264ac04bd8",
+            "content": "sha256:cb925b92ff4a11ed52767227a8350dae028a6e9d38078efda2fb74dd89d0148a",
+            "locator": {
+              "kind": "symbol",
+              "name": "diagValue"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7e25993923f47c15d0233ebb17612f264ac04bd8",
+            "content": "sha256:7627dadac0274d24151527feed082a2361e315b3f7485f44241d1dcf27f12753",
+            "locator": {
+              "kind": "symbol",
+              "name": "missingNotice"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7e25993923f47c15d0233ebb17612f264ac04bd8",
+            "content": "sha256:c69d2b1d832160fbfcf06fd813482d964f7ed7e6ca66c17bd158ad469d0510e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "missingTitle"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7e25993923f47c15d0233ebb17612f264ac04bd8",
+            "content": "sha256:2d8fb424210aa0ec1a34bdf52262477d1cbf95a525292d407d0f5afa55703158",
+            "locator": {
+              "kind": "symbol",
+              "name": "actionRow"
             },
             "path": "dashboard/src/panels/engine-room/layout.styles.ts"
           },

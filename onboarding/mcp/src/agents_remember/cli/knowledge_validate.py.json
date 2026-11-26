@@ -105,14 +105,16 @@
       ]
     },
     "4": {
-      "note": "Registration in the umbrella.",
+      "note": "Registration in the umbrella.\n\nAnchor: `\"knowledge-validate\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
-            "content": "sha256:613c37c3db22be57c080b3cf49798d4227eb19d20bd1c44b3846ccc90e6b14e0",
+            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
+            "content": "sha256:16984fc6691ba432707c6646a0470cca82bc2c04c5992b38b65342ffef99ce07",
             "locator": {
-              "kind": "file"
+              "end": 142,
+              "kind": "line_range",
+              "start": 137
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },

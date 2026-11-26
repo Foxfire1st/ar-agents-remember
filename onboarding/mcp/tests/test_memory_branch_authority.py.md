@@ -49,7 +49,6 @@ worktree services (`GitKnowledgeValidation` with `GitBaseConverter`) for exactly
 
 *Group 4 — the manifest (1 definition).* The retained manifest check asserts no task altitude for the free agent. The former supplied-document/taskless launch-argument check is removed; it supplies no current admission guarantee. These are inspected source assertions, not executed test acceptance.
 
-
 ## Evidence
 
 ### Docs References
@@ -70,6 +69,7 @@ No relevant documentation found after checking live sources.
 - The recorded-name validation the first group holds, and its malformed-name refusal. [10]
 - The exclusion policy the third group pins. [12]
 
+
 - Converted first baselines run under a bound validator via the bound_validation fixture. [16]
 
 
@@ -79,10 +79,11 @@ No sibling-repository contract defines this check.
 
 No meaningful cross-repo references found.
 
-
 ### Repo-Internal References (continued)
 
+
 - Group 1 — adoption follows the recorded branch, and the default-branch accessor validates it. [4]
+
 
 - Group 3 — the exclusion, pinned on the commit tree. [6]
 - The staging helper the third group's failure mode lives in. [13]

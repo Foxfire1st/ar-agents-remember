@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fba56276158a0598e01ea849d08083987da3f1fe",
+        "blob": "049ba22ee42762f40b121e45e21f8d67eccc21c7",
         "content": "sha256:61f23ecf8b6df3709541f9f1b81ebd1a9f93b58f804f56a55ba8742d225d8159",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "fba56276158a0598e01ea849d08083987da3f1fe",
+        "blob": "049ba22ee42762f40b121e45e21f8d67eccc21c7",
         "content": "sha256:61f23ecf8b6df3709541f9f1b81ebd1a9f93b58f804f56a55ba8742d225d8159",
         "locator": {
           "kind": "symbol",
@@ -40,12 +40,12 @@
   ],
   "references": {
     "1": {
-      "note": "Branch retirement primitives with kept-line proof and read-only guards; refusals precede any deletion.",
+      "note": "Branch retirement primitives with kept-line proof and read-only guards; refusals precede any deletion.\n\nAnchor: `delete_branch_if_merged`, `delete_branch_if_merged_into`",
       "targets": [
         {
           "anchor": {
-            "blob": "fba56276158a0598e01ea849d08083987da3f1fe",
-            "content": "sha256:82606397167f4acf99b91d13f9bd315af6ba4bd023bea98e97b9d283bdd2e99f",
+            "blob": "049ba22ee42762f40b121e45e21f8d67eccc21c7",
+            "content": "sha256:4562f40bb02107137beac295128b191c2187f3e2a86d6dd37dc1c8a85343894b",
             "locator": {
               "kind": "file"
             }

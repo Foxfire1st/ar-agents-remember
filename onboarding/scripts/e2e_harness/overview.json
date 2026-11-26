@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "blob": "e6703ec33ecf1bdd76695b9aec7bcd17ea22b930",
             "content": "sha256:907a7c54268547768443caf4a951558264f1103a2f07645e48b2325959dab15c",
             "locator": {
               "end": 256,
@@ -53,15 +53,14 @@
       ]
     },
     "5": {
-      "note": "Fresh-user fixture construction owns disposable repository paths.",
+      "note": "Fresh-user fixture construction owns disposable repository paths.\n\nAnchor: `create_fresh_user_fixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "32ff03db3253579891e606d2a180d606bd5cf547",
-            "content": "sha256:94bb5e83d16840c06ad5123ae62303323ecaf03f5628da78a7da1f7b3f5164cb",
+            "blob": "c65b90704873d76722ce518dd6053633cbea7e9e",
+            "content": "sha256:cc76817bf307daebd62cec466e18ee8cdba7fc846f258d66e77502ab5fb50dd4",
             "locator": {
-              "kind": "symbol",
-              "name": "create_fresh_user_fixture"
+              "kind": "file"
             },
             "path": "scripts/e2e_harness/fresh_user_fixture.py"
           },
@@ -70,12 +69,12 @@
       ]
     },
     "6": {
-      "note": "The fresh-user flow distinguishes product calls, emulated bootstrap, persisted review outcome and partial closeout checks. Both fresh-user fixtures and their invariant report are assembled here. Retained fresh-user flow co-targets. Product-call record status and candidate authority checks.",
+      "note": "The fresh-user flow distinguishes product calls, emulated bootstrap, persisted review outcome and partial closeout checks.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
-            "content": "sha256:6fa184b11c49fad4d4d20a5ff4245413935839f726560f5e8908c0e6a76a6631",
+            "blob": "e6703ec33ecf1bdd76695b9aec7bcd17ea22b930",
+            "content": "sha256:f2e6d45399e62640a1e2416923575d226e858fd15435bfcec6e5762396a1f9d9",
             "locator": {
               "kind": "file"
             },
@@ -119,12 +118,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
+            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
             "content": "sha256:63f39e4cc10a91d0bd80100ec36751fc07420b6c5e350f2ac4a120e6707385e1",
             "locator": {
-              "end": 5231,
+              "end": 5212,
               "kind": "line_range",
-              "start": 5213
+              "start": 5194
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -132,10 +131,23 @@
         },
         {
           "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
+            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
             "content": "sha256:c15dc6029c05d6a630d18c3adc7b191b80c6d9847283a8eb6e8643928d901173",
             "locator": {
-              "end": 5250,
+              "end": 5231,
+              "kind": "line_range",
+              "start": 5214
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
+            "content": "sha256:1c0d0af27056ed17cfea8ba77cb5c5a72e0e0dcb4167c41e9404b77b0ce92923",
+            "locator": {
+              "end": 5251,
               "kind": "line_range",
               "start": 5233
             },
@@ -145,25 +157,12 @@
         },
         {
           "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
-            "content": "sha256:1c0d0af27056ed17cfea8ba77cb5c5a72e0e0dcb4167c41e9404b77b0ce92923",
-            "locator": {
-              "end": 5270,
-              "kind": "line_range",
-              "start": 5252
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
+            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
             "content": "sha256:ffe09ef236cc70e1a86c3cb5cd9d8c935b3ec5a38f9cb98c0da7727fea7c4ce1",
             "locator": {
-              "end": 5288,
+              "end": 5269,
               "kind": "line_range",
-              "start": 5272
+              "start": 5253
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

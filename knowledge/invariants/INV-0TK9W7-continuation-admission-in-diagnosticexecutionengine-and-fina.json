@@ -1,0 +1,44 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across both DiagnosticExecutionEngine._admit_authority and FinalCodexExecutionEngine._admit_authority and guarded by two continuation regression tests that verify schemaVersion and declaration_digest."
+  },
+  "applicability": "Continuation authority admission in DiagnosticExecutionEngine._admit_authority and FinalCodexExecutionEngine._admit_authority.",
+  "conditions": [
+    "A prior Dagger runtime authority snapshot is reused for a continuation run."
+  ],
+  "exclusions": [
+    "Fresh non-continuation authority admissions that mint a new host declaration directly."
+  ],
+  "id": "INV-0TK9W7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_quality_continuation_declaration.py::test_diagnostic_continuation_preserves_host_declaration_schema_and_digest; mcp/tests/test_quality_continuation_declaration.py::test_final_codex_continuation_preserves_host_declaration_schema_and_digest"
+      ],
+      "path": "261125-DEP-L7-curator-handoff.json"
+    },
+    "handoffEntry": "DEP-R07@v1 items 2-3",
+    "leaf": "261125-DEP-L7",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Continuation admission in DiagnosticExecutionEngine and FinalCodexExecutionEngine builds DaggerHostDeclaration with AUTHORITY_SCHEMA_VERSION so schema_version, manifest schemaVersion, and declaration_digest remain valid without a type-ignore suppression.",
+  "supersedes": [],
+  "title": "Quality continuation admission declares AUTHORITY_SCHEMA_VERSION",
+  "writer": {
+    "at": "2026-11-26T00:47:13+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "task": "261125-DEP"
+  }
+}

@@ -41,13 +41,14 @@ No external Domain Documentation source is configured for this memory repo.
 - Public response registry maps `lifecycle_finalize_task` to this model. Anchor: `lifecycle_finalize_task` [2]
 The deleted representative-payload cases are historical and provide no current pass.
 - The strict finalizer wire declaration retains archive/projection and both optional atomic-series fields, and no auto-close/auto-land seat lists. [3]
-- `lifecycle_finalize_task_tool` confines the contract and any named task or master document path, finalizes with the call's dry-run and provider-teardown flags, and answers that result. [4]
+
+- `lifecycle_finalize_task_tool` confines the contract and any named task or master document path, finalizes with the call's dry-run flag, and answers that result. [4]
+
 - Historical retirement witness: the retirement setting that gated this field's population and the finalize auto-land path is absent from the merged code, whose finalize model declares no completion-seat list and no retirement gate.
 
 ## Series-Contract Notes
 
 `LifecycleFinalizeTaskResponse` carries both the leaf `enclosurePath` and the root-level `taskArchive` result so finalization can report contract cleanup and root archival separately.
-
 
 ## PDLS Reconciliation
 
@@ -88,7 +89,6 @@ Both are optional here for that reason. Pinned by
 `mcp/tests/test_tool_response_conformance.py`, whose
 `test_the_two_atomic_series_keys_are_declared_together` asserts the declaring set is exactly
 `{"lifecycle_finalize_task"}`.
-
 
 ## 260928-MIK-L198 — the finalize response names the root and the sweep
 

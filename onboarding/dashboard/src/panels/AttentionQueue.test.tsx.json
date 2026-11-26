@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "d5bd55087c2355aada95f1fe61fa9337768143e6",
+        "blob": "1483b5bbe3a26c15be2c876ccaabb1efb1309a13",
         "content": "sha256:345a4b76067c5836a3329f9b4cdbe27edbbce45e7ed0984d8f2d424b2a8c6da7",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "d5bd55087c2355aada95f1fe61fa9337768143e6",
+        "blob": "1483b5bbe3a26c15be2c876ccaabb1efb1309a13",
         "content": "sha256:504ff487e30190cf257f67727370660a2c8e0217a37057178171e412c70e7549",
         "locator": {
           "kind": "symbol",
@@ -86,14 +86,15 @@
       ]
     },
     "3": {
-      "note": "The store `applySnapshot` path used by this fixture's projection seed.",
+      "note": "The store `applySnapshot` path used by this fixture's projection seed.\n\nAnchor: `seed`, `Source`: `dashboard/src/panels/AttentionQueue.test.tsx:77-81`",
       "targets": [
         {
           "anchor": {
-            "blob": "d5bd55087c2355aada95f1fe61fa9337768143e6",
-            "content": "sha256:15842fe7ae8704f8ad3ae4378498af0f9b75dd8511ecca4c9352746c180b3df5",
+            "blob": "1483b5bbe3a26c15be2c876ccaabb1efb1309a13",
+            "content": "sha256:bce8c061879a1e4c4cf90a186dfb51069f5fd7084016841dbf7d5d53f05bdb24",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "seed"
             }
           },
           "kind": "test"
@@ -101,76 +102,84 @@
       ]
     },
     "4": {
-      "note": "The seeded queue includes operational rows, a taskless permission action, a stalled-task action and a landed notice. Mocked component cases exercise exact dismissal payloads, optimistic hide, a failed write that restores the row and a retry that clears it, mixed and all-action clearing, the x on a row served with the old non-dismissible flag, and the exact task or taskless-agent opening controls; these are source-level component assertions, not backend or live acceptance.",
+      "note": "The seeded queue includes operational rows, a taskless permission action, a stalled-task action and a landed notice. Mocked component cases exercise exact dismissal payloads, optimistic hide, a failed write that restores the row and a retry that clears it, mixed and all-action clearing, the x on a row served with the old non-dismissible flag, and the exact task or taskless-agent opening controls; these are source-level component assertions, not backend or live acceptance.\n\nAnchor: `items`, `permissionWait`, `taskStalled`, `taskLanded`, dismissal/clear/opening suites",
       "targets": [
         {
           "anchor": {
-            "blob": "d5bd55087c2355aada95f1fe61fa9337768143e6",
-            "content": "sha256:3d203a06838d95dd22b812dd1e05ceab8570d9dc7543e38657ae4dfd9b0e2223",
+            "blob": "1483b5bbe3a26c15be2c876ccaabb1efb1309a13",
+            "content": "sha256:05c37ee5dbe158196a18fb28770f5f90944f08e8911b52274a77f028367551d0",
             "locator": {
-              "end": 92,
-              "kind": "line_range",
-              "start": 13
+              "kind": "symbol",
+              "name": "items"
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d5bd55087c2355aada95f1fe61fa9337768143e6",
-            "content": "sha256:7d515ff1ae761da446a7c05119bbef871ee9c10f47386d786c4a5cc821bab113",
+            "blob": "1483b5bbe3a26c15be2c876ccaabb1efb1309a13",
+            "content": "sha256:540c48b3277c1b49a25b11e6ad6bfd0745e429f63a7b7af381596a8e011cb39a",
             "locator": {
-              "end": 166,
-              "kind": "line_range",
-              "start": 125
+              "kind": "symbol",
+              "name": "permissionWait"
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d5bd55087c2355aada95f1fe61fa9337768143e6",
-            "content": "sha256:864cdca900ac59248f76480b97bd0554b180a92637dfe6b91adf0770b165c107",
+            "blob": "1483b5bbe3a26c15be2c876ccaabb1efb1309a13",
+            "content": "sha256:4dded4e5352ab002135fa42a3041d80ce2e34fdfbe8bd580a1470a0a21c955d7",
             "locator": {
-              "end": 312,
-              "kind": "line_range",
-              "start": 265
+              "kind": "symbol",
+              "name": "taskStalled"
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d5bd55087c2355aada95f1fe61fa9337768143e6",
-            "content": "sha256:dc53b82380678d1f44a42c652a183c88b2442d88b00a8c84bc0d212c32d08a37",
+            "blob": "1483b5bbe3a26c15be2c876ccaabb1efb1309a13",
+            "content": "sha256:494cb1bbf8d78f2c0479bbaf9681347bf889cc7a7702de877333a7eafd33b442",
             "locator": {
-              "end": 435,
-              "kind": "line_range",
-              "start": 397
+              "kind": "symbol",
+              "name": "taskLanded"
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d5bd55087c2355aada95f1fe61fa9337768143e6",
-            "content": "sha256:7d515ff1ae761da446a7c05119bbef871ee9c10f47386d786c4a5cc821bab113",
+            "blob": "1483b5bbe3a26c15be2c876ccaabb1efb1309a13",
+            "content": "sha256:cb057f4d3c505a0571a438a0e1acedee5578cd63a58c361826a6e9d74f113d0e",
             "locator": {
-              "end": 166,
+              "end": 161,
               "kind": "line_range",
-              "start": 125
+              "start": 95
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d5bd55087c2355aada95f1fe61fa9337768143e6",
-            "content": "sha256:dc53b82380678d1f44a42c652a183c88b2442d88b00a8c84bc0d212c32d08a37",
+            "blob": "1483b5bbe3a26c15be2c876ccaabb1efb1309a13",
+            "content": "sha256:aae1a5c4d086a36c3d3392295378268409f8492e19775b902c776c7d8614b4cd",
             "locator": {
-              "end": 435,
+              "end": 351,
               "kind": "line_range",
-              "start": 397
+              "start": 221
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1483b5bbe3a26c15be2c876ccaabb1efb1309a13",
+            "content": "sha256:358eba9f62a3b09888ec543fc9deebdd2ea26fefab5537d8e75359e45a2f5688",
+            "locator": {
+              "end": 404,
+              "kind": "line_range",
+              "start": 353
             }
           },
           "kind": "test"
@@ -178,76 +187,39 @@
       ]
     },
     "5": {
-      "note": "Clear all optimistically removes both listed live items and sends exactly two itemId/kind requests. The mixed-result case restores only the failed `blocked-start` row and reports that dismissal did not hold.\n\nAnchor: none: the assertions name no symbol",
+      "note": "Clear all optimistically removes both listed live items and sends exactly two itemId/kind requests. The mixed-result case restores only the failed `blocked-start` row and reports that dismissal did not hold.\n\nAnchor: `items`, `Clear all sends every listed item`, `Clear all restores only failed writes and reports the failure`",
       "targets": [
         {
           "anchor": {
-            "blob": "d5bd55087c2355aada95f1fe61fa9337768143e6",
-            "content": "sha256:83faa688a27a4a63def42fb0674f53292a1b990a8140adbfc2fc9bcdd4459a36",
+            "blob": "1483b5bbe3a26c15be2c876ccaabb1efb1309a13",
+            "content": "sha256:05c37ee5dbe158196a18fb28770f5f90944f08e8911b52274a77f028367551d0",
             "locator": {
-              "end": 45,
-              "kind": "line_range",
-              "start": 13
+              "kind": "symbol",
+              "name": "items"
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d5bd55087c2355aada95f1fe61fa9337768143e6",
-            "content": "sha256:bc2a25f121a33dab8cfd4ac63cdf898c562a584d5bd7b2bb444d4ac833b53230",
+            "blob": "1483b5bbe3a26c15be2c876ccaabb1efb1309a13",
+            "content": "sha256:345a4b76067c5836a3329f9b4cdbe27edbbce45e7ed0984d8f2d424b2a8c6da7",
             "locator": {
-              "end": 153,
+              "end": 135,
               "kind": "line_range",
-              "start": 144
+              "start": 126
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d5bd55087c2355aada95f1fe61fa9337768143e6",
-            "content": "sha256:fcc3ac88540706016dd853db1bccacc2ac621ac77184b6569cd996875b85efb7",
+            "blob": "1483b5bbe3a26c15be2c876ccaabb1efb1309a13",
+            "content": "sha256:113d061039afb6d1e1e952e74e0f92ec775a513245b8ae6ece3cb5bb4d41937d",
             "locator": {
-              "end": 178,
+              "end": 160,
               "kind": "line_range",
-              "start": 168
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d5bd55087c2355aada95f1fe61fa9337768143e6",
-            "content": "sha256:83faa688a27a4a63def42fb0674f53292a1b990a8140adbfc2fc9bcdd4459a36",
-            "locator": {
-              "end": 45,
-              "kind": "line_range",
-              "start": 13
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d5bd55087c2355aada95f1fe61fa9337768143e6",
-            "content": "sha256:bc2a25f121a33dab8cfd4ac63cdf898c562a584d5bd7b2bb444d4ac833b53230",
-            "locator": {
-              "end": 153,
-              "kind": "line_range",
-              "start": 144
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d5bd55087c2355aada95f1fe61fa9337768143e6",
-            "content": "sha256:fcc3ac88540706016dd853db1bccacc2ac621ac77184b6569cd996875b85efb7",
-            "locator": {
-              "end": 178,
-              "kind": "line_range",
-              "start": 168
+              "start": 150
             }
           },
           "kind": "test"

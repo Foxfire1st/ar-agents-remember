@@ -4,12 +4,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Native watch tests drive real async stream, ten edits/publication latency bound, baseline registration race, cancellation during admission, shared real projector reconnection/no idle walks, unwired/native failure with ordinary stream still usable, real HTTP disconnect before shutdown and canonical live-memory admission. This source contains native behavior assertions; this helper did not execute them.",
+      "note": "Native watch tests drive real async stream, ten edits/publication latency bound (the assertion is a three-second maximum over ten edits, with the asyncio waits bounded by the shared hang guard rather than a fixed per-call timeout), baseline registration race, cancellation during admission, shared real projector reconnection/no idle walks, unwired/native failure with ordinary stream still usable, real HTTP disconnect before shutdown and canonical live-memory admission. This source contains native behavior assertions; this helper did not execute them.",
       "targets": [
         {
           "anchor": {
-            "blob": "9b2989fbdc3060b3f34d8360d8ef291e51533e06",
-            "content": "sha256:42f70f7ac0ac55785da2e2cdfbb320357d6899dd6c0c5c811a844bc0f9f9c045",
+            "blob": "7affd86e47174aeb76d681ea7caf92ee25b61e02",
+            "content": "sha256:1129013437fecf202674aa5569134ba8798c05f2601600f7b1c2d7d5ab6a67e7",
             "locator": {
               "kind": "file"
             }

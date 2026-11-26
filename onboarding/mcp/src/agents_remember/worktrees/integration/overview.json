@@ -185,7 +185,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f0fffaaf83d9536e496a576e33ce9e6053c8f9b",
+            "blob": "5f2c36304a97c2d5a4a686e3eb10b4474b2198a7",
             "content": "sha256:24ae1c6fa0f6b734896cf8b477ece005b9e8f7356b78cc55dae74c7ef452a8a6",
             "locator": {
               "end": 17,
@@ -198,7 +198,7 @@
         },
         {
           "anchor": {
-            "blob": "0f0fffaaf83d9536e496a576e33ce9e6053c8f9b",
+            "blob": "5f2c36304a97c2d5a4a686e3eb10b4474b2198a7",
             "content": "sha256:f38ec2d7de66d3b2f2555ac4eb1ff38f8da270d0d98d24495943170e2fce4b47",
             "locator": {
               "end": 79,
@@ -211,7 +211,7 @@
         },
         {
           "anchor": {
-            "blob": "0f0fffaaf83d9536e496a576e33ce9e6053c8f9b",
+            "blob": "5f2c36304a97c2d5a4a686e3eb10b4474b2198a7",
             "content": "sha256:062847243a150355a884f9f88fd81c410ee2feacef2de59b03be358fbe418538",
             "locator": {
               "end": 112,
@@ -525,12 +525,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:3d0849c889d58c090cf88c69dbc773bfb7dc65d726aa07f911e4a98f74201fe2",
             "locator": {
-              "end": 425,
+              "end": 366,
               "kind": "line_range",
-              "start": 387
+              "start": 328
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -552,16 +552,15 @@
       ]
     },
     "22": {
-      "note": "Default services bind the current memory/gate ports without a prepared producer or continuation; separately, explicit core finalization authority requires exact green Gates 1–5 and current Gate-5 memory inputs. These contracts do not make certification an ordinary closeout prerequisite.",
+      "note": "Default services bind the current memory/gate ports without a prepared producer or continuation; separately, explicit core finalization authority requires exact green Gates 1–5 and current Gate-5 memory inputs. These contracts do not make certification an ordinary closeout prerequisite.\n\nAnchor: `build_default_worktree_services`, `WorktreeServices`",
       "targets": [
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:c1fcc7b7275328d864f41adaf46a4f6bc1768452e16d885108de9082c1c62b4d",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+            "content": "sha256:d8332a7c6885d84165fac3abe29c0f6f3d81ca117afd19c912d8454858f1bef6",
             "locator": {
-              "end": 240,
-              "kind": "line_range",
-              "start": 225
+              "kind": "symbol",
+              "name": "build_default_worktree_services"
             },
             "path": "mcp/src/agents_remember/application/worktree_services.py"
           },
@@ -569,12 +568,11 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
-            "content": "sha256:187635a4582c29e331a53d925400b25721e42134d40b53d1ff9a6bf932484c27",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
+            "content": "sha256:1f775cd7d27d6b71943203bee865b1a0c0ae96164412b093ae0fe1604703fbfa",
             "locator": {
-              "end": 451,
-              "kind": "line_range",
-              "start": 368
+              "kind": "symbol",
+              "name": "WorktreeServices"
             },
             "path": "mcp/src/agents_remember/worktrees/services.py"
           },
@@ -590,19 +588,6 @@
               "start": 129
             },
             "path": "mcp/src/agents_remember/certification/certificate_authority.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
-            "content": "sha256:bac83b7ac05ef280bb56acb378c628e4381b005e931a49b382c9089c913f00fd",
-            "locator": {
-              "end": 432,
-              "kind": "line_range",
-              "start": 349
-            },
-            "path": "mcp/src/agents_remember/worktrees/services.py"
           },
           "kind": "code"
         }
@@ -705,12 +690,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:ab53844328620871d7158937a5bdfc2830bccb901f7f81fe1a3fbca62d45d276",
             "locator": {
-              "end": 544,
+              "end": 485,
               "kind": "line_range",
-              "start": 507
+              "start": 448
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -731,7 +716,7 @@
         },
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
             "content": "sha256:7972b4c3a85720af04c1adbcc0d7821ffdc3785b6c25d8fc7f510e6bd3f92317",
             "locator": {
               "end": 214,
@@ -810,7 +795,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+            "blob": "5afff0ef3465cfcf57f12fc904698545d653f00b",
             "content": "sha256:abc5c389ad0d9255383d2c2dee1fb6a8e391b5af0ee6c36ba544e3ed81fe4f9b",
             "locator": {
               "end": 126,
@@ -823,7 +808,7 @@
         },
         {
           "anchor": {
-            "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+            "blob": "5afff0ef3465cfcf57f12fc904698545d653f00b",
             "content": "sha256:3946e9b6c55b8703e1aeb01a7b3cc6705cf6a0086b2b1becb330c9ba05f64137",
             "locator": {
               "end": 287,
@@ -836,7 +821,7 @@
         },
         {
           "anchor": {
-            "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+            "blob": "5afff0ef3465cfcf57f12fc904698545d653f00b",
             "content": "sha256:abc5c389ad0d9255383d2c2dee1fb6a8e391b5af0ee6c36ba544e3ed81fe4f9b",
             "locator": {
               "kind": "symbol",
@@ -848,7 +833,7 @@
         },
         {
           "anchor": {
-            "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+            "blob": "5afff0ef3465cfcf57f12fc904698545d653f00b",
             "content": "sha256:3946e9b6c55b8703e1aeb01a7b3cc6705cf6a0086b2b1becb330c9ba05f64137",
             "locator": {
               "kind": "symbol",

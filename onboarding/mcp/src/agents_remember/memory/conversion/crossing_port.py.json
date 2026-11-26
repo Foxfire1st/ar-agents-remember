@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:8f96680898f7f47505195bd2aa85e34b5d6ac2fa29060e19da8ebdc618203b6f",
             "locator": {
               "kind": "symbol",
@@ -74,7 +74,7 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:10d81f79abdf38659f44010a5b9c65c7a311ee40ed2b6ad9be2937df7577de6a",
             "locator": {
               "kind": "symbol",
@@ -86,7 +86,7 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:bbcaa73b855c3188b4a8b6d415c7e2d516caaa06c5048e7ef7b2782b8996ae9d",
             "locator": {
               "kind": "symbol",
@@ -99,27 +99,15 @@
       ]
     },
     "3": {
-      "note": "The default composition binds it. Anchor: `build_default_worktree_services`",
+      "note": "The default composition binds it.",
       "targets": [
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:c1fcc7b7275328d864f41adaf46a4f6bc1768452e16d885108de9082c1c62b4d",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+            "content": "sha256:d8332a7c6885d84165fac3abe29c0f6f3d81ca117afd19c912d8454858f1bef6",
             "locator": {
-              "end": 240,
-              "kind": "line_range",
-              "start": 225
-            },
-            "path": "mcp/src/agents_remember/application/worktree_services.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:f6c1ac6689c29dcb927bbfbc7aa0dda504a3ee03a14fe674e9b8224b4beda519",
-            "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "build_default_worktree_services"
             },
             "path": "mcp/src/agents_remember/application/worktree_services.py"
           },

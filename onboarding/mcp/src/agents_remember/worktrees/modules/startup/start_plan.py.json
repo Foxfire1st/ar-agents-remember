@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
+        "blob": "bcd5412c313e548325411edc3e9bd4356fd9dd7c",
         "content": "sha256:7690f84401be5f748fb2872f5235ca90148077d66730e94f93e3f71932f2768e",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
+        "blob": "bcd5412c313e548325411edc3e9bd4356fd9dd7c",
         "content": "sha256:38d915f9a4e84cfaa882248790aa127f496bafd0b83a7ba59e6bc6984b479e35",
         "locator": {
           "kind": "symbol",
@@ -44,12 +44,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
             "content": "sha256:f9b0ff1c796c84cacf9b2008984d93638cac24ca8d520264c2ebd1b1190f35a8",
             "locator": {
-              "end": 300,
+              "end": 297,
               "kind": "line_range",
-              "start": 271
+              "start": 268
             },
             "path": "mcp/tests/test_worktree_start_preview.py"
           },
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
+            "blob": "bcd5412c313e548325411edc3e9bd4356fd9dd7c",
             "content": "sha256:38d915f9a4e84cfaa882248790aa127f496bafd0b83a7ba59e6bc6984b479e35",
             "locator": {
               "kind": "symbol",
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
+            "blob": "bcd5412c313e548325411edc3e9bd4356fd9dd7c",
             "content": "sha256:7690f84401be5f748fb2872f5235ca90148077d66730e94f93e3f71932f2768e",
             "locator": {
               "kind": "symbol",
@@ -94,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
+            "blob": "bcd5412c313e548325411edc3e9bd4356fd9dd7c",
             "content": "sha256:be7bd8e9de162c0787bf485fbe05d7a8a59a729917670d5e21a4361c5775bd6a",
             "locator": {
               "kind": "symbol",
@@ -110,8 +110,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
-            "content": "sha256:e8b9b903e8fb118a5d1d1f1e08c1f9c498f9d3e2a947e601eaa26455a1640816",
+            "blob": "bcd5412c313e548325411edc3e9bd4356fd9dd7c",
+            "content": "sha256:4c5e4f70c45082fee3d9d1fd8ecba59af9d6d85c63650d923ab49eb18a6e17a3",
             "locator": {
               "kind": "symbol",
               "name": "_preview_start_enclosure"

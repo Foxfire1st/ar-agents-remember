@@ -24,5 +24,3 @@ These source assertions are not a fresh run result. The background mode is only 
 
 
 - Shared capacity, identity, ownership and failure boundaries are exercised. [2]
-
-
