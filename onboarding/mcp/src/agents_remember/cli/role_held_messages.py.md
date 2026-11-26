@@ -12,11 +12,11 @@ A drain claims one immutable FIFO batch under a durable message ID. Later admiss
 
 Attempt the whole remainder before using any learned byte budget. A successful size is only a lower bound; after a whole refusal, find the largest admitted FIFO prefix. This yields the fewest deliveries under a stable monotone size limit without a word-count splitter. A single unadmitted message stays held. Part IDs survive recovery. Exactly-once recovery across a host-accepted/disk-not-committed boundary additionally depends on host deduplication by the supplied message ID; these tests establish it with a deduping fake host, not a real-host witness.
 
-Delivered batches stage compact terminal metadata before removing waiting text and flush it into the launch receipt (keeping only that metadata for a later sweep on receipt-write failure). When a recipient is closed, archived, gone, or seat-lost, `_end_batch` settles the store through `settle_held_store`, recording every still-waiting message with its text in `heldStoreClosures` on the launch receipt before unlinking the store file; sender withdrawal remains a terminal end, and elapsed time is not. Clearing an ended queue also removes an empty delivery claim.
+Delivered batches stage compact terminal metadata before removing waiting text and flush it into the launch receipt (keeping only that metadata for a later sweep on receipt-write failure). In `apply_drain_to_receipt`, receipt reads and locked `open_held_store` checks catch `(ValueError, HTTPException)` with one warning naming the path and return `False` while preserving `HeldSeatClosed` as a silent `False` return, and `_apply_drain_result` catches `(OSError, HTTPException)` on receipt writes with one path-naming warning so staged terminal metadata stays recoverable. When a recipient is closed, archived, gone, or seat-lost, `_end_batch` settles the store through `settle_held_store`, recording every still-waiting message with its text in `heldStoreClosures` on the launch receipt before unlinking the store file; sender withdrawal remains a terminal end, and elapsed time is not. Clearing an ended queue also removes an empty delivery claim.
 
 ## Bounded actor
 
-The serving loop calls `sweep_held_messages`. Its queued slice and receipt walks share a limit of thirty-two receipt reads and thirty-two drains per tick. Delivery synchronously enumerates all receipt roots with `receipt_roots`, then retains one resumable `ReceiptWalk` per root; this root enumeration and walk population have no sixty-four-folder cap. Each directory is read through a live `os.scandir` iterator in filesystem order, without materializing or sorting its names or all receipt paths. Each delivery walk uses the default 256-entry traversal allowance, while the attention reader supplies its remaining entry allowance explicitly; the sixty-four open/cached folder limit belongs to attention's `HeldFolderDiscovery`. History and message-binding subtrees are not descended into. `_receipt_needs_drain` checks the store even when a receipt counter is absent or zero. Product shutdown may pause delivery; durable text resumes with serving, without a sender/model turn.
+The serving loop calls `sweep_held_messages`. Its queued slice and receipt walks share a limit of thirty-two receipt reads and thirty-two drains per tick. Delivery synchronously enumerates all receipt roots with `receipt_roots`, then retains one resumable `ReceiptWalk` per root; this root enumeration and walk population have no sixty-four-folder cap. Each directory is read through a live `os.scandir` iterator in filesystem order, without materializing or sorting its names or all receipt paths. Each delivery walk uses the default 256-entry traversal allowance, while the attention reader supplies its remaining entry allowance explicitly; the sixty-four open/cached folder limit belongs to attention's `HeldFolderDiscovery`. History, message-binding, and messages subtrees are not descended into. Across `_sweep_receipt`, `_readable_queued_receipt`, and `_refresh_waiting_count(ref: HeldSeatRef)` (delegating to `_refresh_store_waiting_count`), malformed or non-receipt JSON read or write failures raising `ValueError`, `OSError`, or `HTTPException` log one warning naming the path and return cleanly without aborting the tick. `_receipt_needs_drain` checks the store even when a receipt counter is absent or zero. Product shutdown may pause delivery; durable text resumes with serving, without a sender/model turn.
 
 ## Turn-end delivery and the held-receipt queue
 
@@ -34,32 +34,9 @@ A ValueError releases the claim and returns cannot-open with the specific recove
 
 ## Evidence
 
-
-
-
-
-
-- Admission appends under the store lock and refuses overflow without dropping text. Anchor: `hold_message` [1]
-
-
-
-
-
-
-
-
-
-- A drain delegates claim/readiness checks and whole-first FIFO delivery. Anchor: `drain_held` `_deliver_waiting` [2]
-
-
-
-
-
-
-
-
-
-- Terminal lines are published separately from ended text and retain failure state. Anchor: `apply_drain_to_receipt` [3]
+- Admission appends under the store lock and refuses overflow without dropping text. [1]
+- A drain delegates claim/readiness checks and whole-first FIFO delivery. [2]
+- Terminal lines are published separately from ended text and retain failure state. [3]
 
 
 

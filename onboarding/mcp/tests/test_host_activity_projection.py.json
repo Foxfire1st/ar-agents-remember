@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "c79e4d87943bb77c433a42a2ceccca6602a78e9c",
+        "blob": "6a051ab4fec976c826c085972c11fa0daa6a5dc6",
         "content": "sha256:2095eadc8d81129028081ff92b4ea384efa13f7e58c2a0b7bc420e05fdd8b50f",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "c79e4d87943bb77c433a42a2ceccca6602a78e9c",
+        "blob": "6a051ab4fec976c826c085972c11fa0daa6a5dc6",
+        "content": "sha256:f4771fc6647d7d671672b78d231ad6cc1f463613a3164d813ebbb0117e676a56",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unstamped_turn_ends_trigger_delivery_once_per_plugin_boot"
+        }
+      },
+      "facet": "Unstamped closed, ended, and idle agents are emitted by turn_ended_agents once per plugin boot, skipped on subsequent ticks, re-emitted on a real eventAt or a new bootId, leave host-activity.json unchanged, and emit nothing from new_stamped_ends.",
+      "id": "PRF-1VKM5A",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "BUG-R35@v1 §3",
+        "leaf": "261112-BUG-L35"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a051ab4fec976c826c085972c11fa0daa6a5dc6",
         "content": "sha256:119ef6476994b169a5ca6d240ee16c65bf20b2f4fd5900c344599af48207d8f0",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "c79e4d87943bb77c433a42a2ceccca6602a78e9c",
+        "blob": "6a051ab4fec976c826c085972c11fa0daa6a5dc6",
         "content": "sha256:98abdf1dced38ae3bf7966eccbd1a9bd5b454e6c44b7680f6903f167e74cc6f4",
         "locator": {
           "kind": "symbol",
@@ -56,8 +73,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c79e4d87943bb77c433a42a2ceccca6602a78e9c",
-        "content": "sha256:4019781e54a885042524f070c0a233d3e5b4b0e03d8b3969828b2ddd99297d41",
+        "blob": "6a051ab4fec976c826c085972c11fa0daa6a5dc6",
+        "content": "sha256:213806c146d83a275e739adda61ed058240cb2889ad227042769d06218ce8e75",
         "locator": {
           "kind": "file"
         }
@@ -78,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c79e4d87943bb77c433a42a2ceccca6602a78e9c",
+            "blob": "6a051ab4fec976c826c085972c11fa0daa6a5dc6",
             "content": "sha256:efc79184a1ebbb8128b054c3ad68eeb96cd359704ec4e62941f13a11f22a05a8",
             "locator": {
               "kind": "symbol",
@@ -94,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c79e4d87943bb77c433a42a2ceccca6602a78e9c",
+            "blob": "6a051ab4fec976c826c085972c11fa0daa6a5dc6",
             "content": "sha256:7ff141b5fed99a121036bff1080cfb219a8f5c354f1fe483a385bb0c2d986689",
             "locator": {
               "end": 73,
@@ -106,12 +123,12 @@
         },
         {
           "anchor": {
-            "blob": "c79e4d87943bb77c433a42a2ceccca6602a78e9c",
+            "blob": "6a051ab4fec976c826c085972c11fa0daa6a5dc6",
             "content": "sha256:bc9cae0d57cd1067ed5a64500214648f3ccae9cce5297e835bd19f6ed3da177d",
             "locator": {
-              "end": 151,
+              "end": 189,
               "kind": "line_range",
-              "start": 134
+              "start": 172
             }
           },
           "kind": "test"
@@ -123,7 +140,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c79e4d87943bb77c433a42a2ceccca6602a78e9c",
+            "blob": "6a051ab4fec976c826c085972c11fa0daa6a5dc6",
             "content": "sha256:66a159f0b22452db3272eab6993425254fb89c812be4edb110942e6168cb701d",
             "locator": {
               "kind": "symbol",
@@ -139,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c79e4d87943bb77c433a42a2ceccca6602a78e9c",
+            "blob": "6a051ab4fec976c826c085972c11fa0daa6a5dc6",
             "content": "sha256:119ef6476994b169a5ca6d240ee16c65bf20b2f4fd5900c344599af48207d8f0",
             "locator": {
               "kind": "symbol",
@@ -151,14 +168,15 @@
       ]
     },
     "5": {
-      "note": "Idle heartbeat passes neither read publications nor relaunch the bridge snapshot.\n\nAnchor: `test_idle_heartbeats_do_not_read_activity_or_launch_another_snapshot`",
+      "note": "Idle heartbeat passes neither read publications nor relaunch the bridge snapshot.",
       "targets": [
         {
           "anchor": {
-            "blob": "c79e4d87943bb77c433a42a2ceccca6602a78e9c",
-            "content": "sha256:4019781e54a885042524f070c0a233d3e5b4b0e03d8b3969828b2ddd99297d41",
+            "blob": "6a051ab4fec976c826c085972c11fa0daa6a5dc6",
+            "content": "sha256:98abdf1dced38ae3bf7966eccbd1a9bd5b454e6c44b7680f6903f167e74cc6f4",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_idle_heartbeats_do_not_read_activity_or_launch_another_snapshot"
             }
           },
           "kind": "test"
@@ -166,14 +184,15 @@
       ]
     },
     "6": {
-      "note": "Periodic healing/degraded wakes do not poll host activity or role records.\n\nAnchor: `test_periodic_full_and_degraded_wakes_retain_host_without_reads`",
+      "note": "Periodic healing/degraded wakes do not poll host activity or role records.",
       "targets": [
         {
           "anchor": {
-            "blob": "c79e4d87943bb77c433a42a2ceccca6602a78e9c",
-            "content": "sha256:4019781e54a885042524f070c0a233d3e5b4b0e03d8b3969828b2ddd99297d41",
+            "blob": "6a051ab4fec976c826c085972c11fa0daa6a5dc6",
+            "content": "sha256:2095eadc8d81129028081ff92b4ea384efa13f7e58c2a0b7bc420e05fdd8b50f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_periodic_full_and_degraded_wakes_retain_host_without_reads"
             }
           },
           "kind": "test"
@@ -185,7 +204,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c79e4d87943bb77c433a42a2ceccca6602a78e9c",
+            "blob": "6a051ab4fec976c826c085972c11fa0daa6a5dc6",
             "content": "sha256:02339937f3a910a1d1668760c6da7f57bff5df5c9266393bcf9d9be1cf4ccbfe",
             "locator": {
               "kind": "symbol",

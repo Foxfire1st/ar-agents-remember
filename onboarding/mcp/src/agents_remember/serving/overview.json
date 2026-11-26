@@ -155,12 +155,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8137851d089d6e8de0785d0a545a42cbecc8d32e",
+            "blob": "fae50c110f9d016eaed38b6987bfd6d75f07626a",
             "content": "sha256:9ed27255dae0eddc20ff5a12a3d7a767c7aeb20e3362d4e395e25123eed44f55",
             "locator": {
-              "end": 625,
+              "end": 624,
               "kind": "line_range",
-              "start": 622
+              "start": 621
             },
             "path": "mcp/src/agents_remember/serving/change_watcher.py"
           },
@@ -168,12 +168,12 @@
         },
         {
           "anchor": {
-            "blob": "8137851d089d6e8de0785d0a545a42cbecc8d32e",
+            "blob": "fae50c110f9d016eaed38b6987bfd6d75f07626a",
             "content": "sha256:46e9f923bbeb787a2366e0b5cf93b1fc8c38949f4a839e9dd3651ebb0f8903c2",
             "locator": {
-              "end": 758,
+              "end": 757,
               "kind": "line_range",
-              "start": 725
+              "start": 724
             },
             "path": "mcp/src/agents_remember/serving/change_watcher.py"
           },
@@ -181,12 +181,12 @@
         },
         {
           "anchor": {
-            "blob": "8137851d089d6e8de0785d0a545a42cbecc8d32e",
+            "blob": "fae50c110f9d016eaed38b6987bfd6d75f07626a",
             "content": "sha256:1232aa9847c9f42ef686219de6596cb935976fe67a4c2c406561cf0c5e867e11",
             "locator": {
-              "end": 781,
+              "end": 780,
               "kind": "line_range",
-              "start": 748
+              "start": 747
             },
             "path": "mcp/src/agents_remember/serving/change_watcher.py"
           },
@@ -194,12 +194,12 @@
         },
         {
           "anchor": {
-            "blob": "8137851d089d6e8de0785d0a545a42cbecc8d32e",
+            "blob": "fae50c110f9d016eaed38b6987bfd6d75f07626a",
             "content": "sha256:29f75bb6aebaec7ee408a09220f75750904f63b842461e49037af6bbe4aaba89",
             "locator": {
-              "end": 504,
+              "end": 503,
               "kind": "line_range",
-              "start": 501
+              "start": 500
             },
             "path": "mcp/src/agents_remember/serving/change_watcher.py"
           },
@@ -207,12 +207,12 @@
         },
         {
           "anchor": {
-            "blob": "8137851d089d6e8de0785d0a545a42cbecc8d32e",
+            "blob": "fae50c110f9d016eaed38b6987bfd6d75f07626a",
             "content": "sha256:968a0e785bc6f609f39d02db48cdef457c7fc832e5a4b3ea73818e57cbf8ba52",
             "locator": {
-              "end": 639,
+              "end": 638,
               "kind": "line_range",
-              "start": 606
+              "start": 605
             },
             "path": "mcp/src/agents_remember/serving/change_watcher.py"
           },
@@ -225,12 +225,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8137851d089d6e8de0785d0a545a42cbecc8d32e",
+            "blob": "fae50c110f9d016eaed38b6987bfd6d75f07626a",
             "content": "sha256:89d4177771c50b6502d62a8407551c1684195f428abbebc37d30d6bccd2c5e8f",
             "locator": {
-              "end": 854,
+              "end": 853,
               "kind": "line_range",
-              "start": 760
+              "start": 759
             },
             "path": "mcp/src/agents_remember/serving/change_watcher.py"
           },
@@ -341,12 +341,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
+            "blob": "1a1c3df8af8b35eca696e9bd3674a7de21cbc757",
             "content": "sha256:5bef45112ca03784bbcc9691c3b24e409e750270289ef2a2c2d92bcac5a2c62a",
             "locator": {
-              "end": 357,
+              "end": 364,
               "kind": "line_range",
-              "start": 286
+              "start": 293
             },
             "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
           },
@@ -786,14 +786,15 @@
       ]
     },
     "22": {
-      "note": "Every-directory filtering retains lock suffix exclusion.\n\nAnchor: `is_projection_input_event`",
+      "note": "Every-directory filtering retains lock suffix exclusion.",
       "targets": [
         {
           "anchor": {
-            "blob": "8137851d089d6e8de0785d0a545a42cbecc8d32e",
-            "content": "sha256:6f2acac1b2296df7a8e5be4fdd28fbe15cee03ce4eaf2c9e2b4ec26d38d36a6f",
+            "blob": "fae50c110f9d016eaed38b6987bfd6d75f07626a",
+            "content": "sha256:d9ef3969e16b8aae5bc6fb18d935ab09f26ece5dab35aeeb5bb1301fffc39bbb",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "is_projection_input_event"
             },
             "path": "mcp/src/agents_remember/serving/change_watcher.py"
           },

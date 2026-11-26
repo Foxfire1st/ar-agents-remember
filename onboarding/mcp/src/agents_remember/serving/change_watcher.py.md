@@ -29,14 +29,14 @@ Accepted native paths reach the projection refresh, with explicit incompleteness
 
 ### Logic
 
-Existing roots cover `tasks`, the configured host-publication workspace, workspace dismissals, drift, `temp/worktree-start`, `temp/tool-reports` and, when configured, the activity directory, plus since MIK-R200 the `controlplane` activation records and terminal notice store and the temporary held-message queue. Central provider `logs/providers/{status,setup}` are **not** roots: no surviving projection reader reads them and they carry no `projection_domains_for_paths` entry, so an event there would fail open to every domain and rebuild from state nothing displays. Lifecycle logs are not roots. Root refresh admits newly appearing paths.
+Existing roots cover `TaskInputPlan` shallow task directories, workspace dismissals, drift, `temp/worktree-start`, `temp/tool-reports`, the recursive taskless `held_receipt_root` (`notes/reports/paseo-native-executions`) with shallow `receipt_holder_chain` discovery parents, the shallow `controlplane` activation/notice root and `temp` held-message queue root, and, when configured, the host activity directory (`activity_directory`). Central provider `logs/providers/{status,setup}` are **not** roots: no surviving projection reader reads them and they carry no `projection_domains_for_paths` entry, so an event there would fail open to every domain and rebuild from state nothing displays. Lifecycle logs are not roots. Root refresh admits newly appearing paths.
 
 **Nothing under `worktrees/` is a native watch root.** The source records the reasons: about
 50k checkout directories would recreate the scan cost, and the worktree state it holds can be unreadable to the daemon and churn on WAL writes.
 Recursive watching previously crashed on permission-denied and would also wake projection for
 those unrelated writes. Central provider status/setup is **not** watched under `logs/providers`, for the
 reason the source gives in place: no surviving reader, no domain entry.
-`ProjectionInputWatcher._watch_once` additionally passes `ignore_permission_denied=True`, so an
+`ProjectionInputWatcher._watch_lane` (launched by `_watch_once`) additionally passes `ignore_permission_denied=True`, so an
 unreadable subdirectory of an admitted root is skipped rather than killing the whole watch.
 The original card recorded a dedicated no-worktree-root regression in `test_change_watcher.py`;
 that module is absent from the current source tree, so this exclusion is currently supported
@@ -51,29 +51,31 @@ activity remains startup/explicit-invalidation intake, not a periodic census.
 `is_projection_input_event(path)` filters one raw watch event: drops `*.tmp` atomic-write temps,
 dot-prefixed sidecar temps, **every control-plane lockfile, by suffix, in any watched directory**
 (see below), the projection's own outputs (`latest-state.json`/
-`latest-metrics.json`, defensive — they also live *outside* every watched subdirectory), and the
+`latest-metrics.json`, defensive — they also live *outside* every watched subdirectory), directory events, and the
 `workspace/` non-input churn by name **only when the parent dir is `workspace`** (the raw event
 river `events.jsonl` + its cursor/lock files with no supervisor heartbeat input). Host publication paths map to HOST_ACTIVITY; workspace River records are not task-status inputs.
 
-### 260731-EFA-L5 The Lockfile Exclusion Is Derived, Not Spelled Out
+Before `is_projection_input_event`, `_watch_filter` and `_judge_planned_changes` gate files through `ProjectionWatchPlan.admits_file(path)`: files under the taskless receipt holder (`self.receipt_chain[-1]`) are admitted only when `is_held_receipt(path.relative_to(self.receipt_chain[0]))` is true, files directly under `self.task_directories` are gated by `self.task_inputs.accepts_file(path)`, and files directly in discovery-only parents `self.receipt_chain[:-1]` are dropped. `is_held_receipt(path)` requires a `.json` suffix beneath `("notes", "reports", HELD_RECEIPT_DIRECTORY)` and enforces `SKIPPED_RECEIPT_DIRS.isdisjoint(parts[end:-1])`, excluding `history`, `message-bindings`, and `messages`. In `projection_domains_for_paths`, paths matched under `ProjectionDomain.TASKS` pass `path.relative_to(root)` to `is_held_receipt` before adding `ProjectionDomain.ATTENTION_HELD`, so ancestor segments above `tasks/` cannot affect receipt classification.
 
-`_DURABLE_LOG_LOCK_SUFFIX = lock_path_for(Path("log.jsonl")).name.removeprefix("log")` — the suffix
-that `kernel.file_lock.lock_path_for` gives a `.jsonl` control-plane log, **derived from
+### The Lockfile Exclusion Is Derived, Not Spelled Out
+
+`_LOCK_SUFFIX = lock_path_for(Path("resource")).name.removeprefix("resource")` — the suffix
+that `kernel.file_lock.lock_path_for` appends to a guarded resource's whole name (`.lock`), **derived from
 that function** rather than written down. `is_projection_input_event` suffix-matches it and returns
 `False` before any of the name checks.
 
-**Spelling it out is what broke.** This filter carried the literal `"operator-inbox.lock"` in
-`_EXCLUDED_WORKSPACE_NAMES` while `lock_path_for` had moved to `operator-inbox.jsonl.lock`, so the
+**Spelling it out is what broke.** This filter previously carried the literal `"operator-inbox.lock"` in
+`_EXCLUDED_WORKSPACE_NAMES` while `lock_path_for` moved to `operator-inbox.jsonl.lock`, so the
 exclusion silently stopped matching anything — a filter that looks correct and filters nothing. The
 name is now out of that set entirely; the set keeps only `events.jsonl`, the workspace cursor and
 lock, with no supervisor heartbeat name.
 
-The derived whole-log lock suffix applies in every watched directory. Legacy gate-log placement does not reinstate lifecycle-log watching or a per-session projection domain; sibling lock creation is not an input.
+The derived lock suffix applies in every watched directory, covering both `.jsonl.lock` and `.json.lock` siblings (such as `attention-notices.json.lock` and `held-message-queue.json.lock`). Legacy gate-log placement does not reinstate lifecycle-log watching or a per-session projection domain; sibling lock creation is not an input.
 
-**Why it matters for pacing:** every append and every rewrite of a retained durable log opens its
+**Why it matters for pacing:** every append and every rewrite of a retained durable store opens its
 lockfile `a+b` (including each projection tick's attention-dismissal reconciliation), which makes these the
 highest-frequency writes in the watched tree, and none of them is a projection input. The rule is
-safe because no projection input is named `*.jsonl.lock` — the inputs are the `.jsonl` logs
+safe because no projection input is named `*.lock` — the inputs are the `.jsonl` logs
 themselves and `.json` sidecars.
 
 `ChangePacer` is the monotonic wake scheduler, one instance per projector run loop.
@@ -107,11 +109,7 @@ that process. Otherwise the retry loop: derive roots **inside** the retry guard 
 a transient stat/glob failure follows the same loud degrade-and-retry path as a watch failure
 instead of escaping `run()` and killing the task for good); zero roots is not an error (a
 fresh/empty tree requests interval-driven full refreshes with completion rest and re-checks every `WATCH_REFRESH_SECONDS` = 30);
-`_watch_once` marks the pacer healthy, emits one reconciling `notify_change()` on every
-re-establish after the first (inotify has no replay — whatever happened while the watch was down
-gets one debounced projection), then feeds `watchfiles.awatch(*roots, recursive=True)` batches
-(library batching tightened to `debounce=200ms`/`step=50ms` to shorten native batching; this configuration alone does not establish a one-second total detection bound) into the pacer until `_stop_when_roots_change` — a 30s re-derivation task —
-stops the generation to restart with a fresh root set. Any exception logs
+`_watch_once` runs up to two `_watch_lane` tasks (`recursive=True` for recursive roots and `recursive=False` for `plan.shallow`), and `_WatchRegistration.establish` marks the pacer healthy and emits one reconciling `notify_change(ALL_PROJECTION_DOMAINS)` on re-establishment (inotify has no replay — whatever happened while the watch was down gets one debounced projection); `watchfiles.awatch` batches (library batching tightened to `debounce=200ms`/`step=50ms` to shorten native batching; this configuration alone does not establish a one-second total detection bound) feed into the pacer until `_stop_when_roots_change` — woken on topology-change events or the 30s timeout — stops the generation to restart with a fresh root set. Any exception logs
 `projection input watcher FAILED` (ERROR + traceback), sets the pacer unhealthy, sleeps 30s, and
 retries.
 
@@ -183,9 +181,9 @@ the CLI/daemon own the `--heartbeat` knob's plumbing.
 
 - Projector wiring and fail-open watcher completion retain actual ownership. [7]
 
-| Derived suffix uses the same whole-log naming owner. | `_DURABLE_LOG_LOCK_SUFFIX` | mcp/src/agents_remember/serving/change_watcher.py:158-158 |
-| Frontend advances volatile ages between heartbeat snapshots. | `VOLATILE_AGE_FIELDS` | dashboard/src/data/servedAges.ts:16-22 |
-| Runtime dependency is explicitly version bounded. | "watchfiles>=1.1,<2" | mcp/pyproject.toml:28-28; mcp/pyproject.toml:34-34 |
+- Derived suffix uses the same shared lock naming owner. [27]
+- Frontend advances volatile ages between heartbeat snapshots. [28]
+- Runtime dependency is explicitly version bounded. [29]
 
 ### Cross-Repo References
 

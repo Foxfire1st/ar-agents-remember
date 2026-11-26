@@ -166,12 +166,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+            "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
             "content": "sha256:69995cd5aef2492a7a05361db1e49227218e3a4e9a722e9664bfd8124d4229ff",
             "locator": {
-              "end": 550,
+              "end": 552,
               "kind": "line_range",
-              "start": 460
+              "start": 462
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },

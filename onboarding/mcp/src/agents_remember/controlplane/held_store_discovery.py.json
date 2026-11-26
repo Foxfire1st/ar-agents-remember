@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a2373b697bbeca8395cc639ff1f5be34d1bd95ea",
-        "content": "sha256:fc5c4aa0bbb3634633a6e5d466fa8cba34ceb928f977a9cfff278f67d78de622",
+        "blob": "802c7cd00c27da17b33047c83f9429adc1d88958",
+        "content": "sha256:b17e2528de863efe31fa0e397fc1fc47c0859e54e2cc79734106e158972a2109",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,25 @@
     },
     {
       "anchor": {
-        "blob": "a2373b697bbeca8395cc639ff1f5be34d1bd95ea",
+        "blob": "802c7cd00c27da17b33047c83f9429adc1d88958",
+        "content": "sha256:dfd39818f486a85e9a1992a73930e77b757646a01d8b6c938b12cbf49e2d592c",
+        "locator": {
+          "kind": "symbol",
+          "name": "SKIPPED_RECEIPT_DIRS"
+        }
+      },
+      "id": "RLZ-G4TQKD",
+      "invariant": "INV-TTYYP8",
+      "origin": {
+        "handoffEntry": "BUG-R35@v1 §1",
+        "leaf": "261112-BUG-L35"
+      },
+      "rationale": "The shared directory set drives both receipt enumeration paths and excludes history, message-bindings, and messages.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "802c7cd00c27da17b33047c83f9429adc1d88958",
         "content": "sha256:d10f8d609ff66668285da439880b9b2b15b13a3308e2f34506cd4451b8295b24",
         "locator": {
           "kind": "symbol",
@@ -38,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "a2373b697bbeca8395cc639ff1f5be34d1bd95ea",
+        "blob": "802c7cd00c27da17b33047c83f9429adc1d88958",
         "content": "sha256:415034a8c55f43eb013e6342602e6dc3461372e3d65b3a51c85645723375637b",
         "locator": {
           "kind": "symbol",
@@ -61,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a2373b697bbeca8395cc639ff1f5be34d1bd95ea",
+            "blob": "802c7cd00c27da17b33047c83f9429adc1d88958",
             "content": "sha256:c1abb1b34c880c32bca9301b2cb1933441c50adb6d4a37a86aaf5b9a5220e1c5",
             "locator": {
               "kind": "symbol",

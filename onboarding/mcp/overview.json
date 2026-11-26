@@ -3495,12 +3495,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
+            "blob": "1a1c3df8af8b35eca696e9bd3674a7de21cbc757",
             "content": "sha256:5bef45112ca03784bbcc9691c3b24e409e750270289ef2a2c2d92bcac5a2c62a",
             "locator": {
-              "end": 357,
+              "end": 364,
               "kind": "line_range",
-              "start": 286
+              "start": 293
             },
             "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
           },

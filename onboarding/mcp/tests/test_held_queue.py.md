@@ -36,8 +36,11 @@ without launching anything so a fleet can be sized.
   writes one line with the recipient and reason.
 - **Bounds.** `HeldSweepBoundsTests` keeps per-tick work bounded at any fleet size: a queued receipt past the
   first slice is reached within bounded ticks, an idle fleet's reads stay bounded at two sizes, zero input does
-  no drain work, a small fleet drains in one tick, a large backlog rotates under the cap with dead and history
-  recipients counted, and removing a working folder reclaims the store and terminates cleanly.
+  no drain work, a small fleet drains in one tick, malformed or non-receipt JSON files log one warning without
+  aborting a sweep tick or receipt read/write helper (`test_bad_receipts_do_not_abort_a_tick_with_valid_work`,
+  `test_receipt_helpers_warn_once_when_a_read_fails`, `test_receipt_writers_warn_once_when_the_locked_read_fails`),
+  a large backlog rotates under the cap with dead and history recipients counted, and removing a working folder
+  reclaims the store and terminates cleanly.
 - **Turn end.** `TurnEndDeliveryTests` parses an unchanged publication once across ticks, delivers on the host's
   own turn-end record, holds while a permission still waits, writes one line on a failed drain, and keeps a
   receipt count equal to the messages its store holds.
