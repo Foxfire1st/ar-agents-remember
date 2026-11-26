@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "8ea42050052b7759840852ac3aae11fd0aad2818",
-    "commit": "475ef19af89cdf0981530dd2b8bf40475975e0e3",
+    "codeTree": "a2064ab5015b9c5ea51691fadb9330cf63151e9c",
+    "commit": "8722a0b18a72fabfa148e0ae00fc4d212e480c27",
     "role": "curator",
-    "statement": "Verified across the clean merge of BUG-L44 (3ee3b10c9) and DEP-L7 (b30330984): docs/concepts.md accurately defines memory, task-topology, role-lifecycle, and landing contracts with no contradiction from either disjoint parent.",
+    "statement": "Verified across the clean merge of BUG-L41 (a772c9018) and DEP master (475ef19af): docs/concepts.md accurately defines memory, task-topology, worktree, role-lifecycle, and landing contracts with no contradiction from either disjoint parent.",
     "task": "261125-DEP",
     "uncommitted": false
   },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 25,
+  "revision": 26,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -321,32 +321,32 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },
     {
-      "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
+      "blob": "28100704d5444ebd1dc7009eb9018e2fba4f1420",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/every-role.md"
     },
     {
-      "blob": "f3af24af7475972287d1f7b3f906b9f2772d4f15",
+      "blob": "b90508e32ca01aad41af4242409e6ab533ad2175",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/authority.md"
     },
     {
-      "blob": "c2426230380980e4bc23b6a77896fbfdf59c6821",
+      "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
     },
     {
-      "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+      "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/review.md"
     },
     {
-      "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+      "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/architect.md"
     },
     {
-      "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+      "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/manager.md"
     },
@@ -471,9 +471,9 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T04:05:27+01:00",
+    "at": "2026-11-26T05:35:06+01:00",
     "by": "agent",
-    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-1",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-2",
     "effort": "high",
     "harness": "antigravity-acp",
     "model": "gemini-4-neon-high",

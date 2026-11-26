@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "83eacca898d910be73255f63f549a2b0ef290fc8",
-    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
+    "codeTree": "a2064ab5015b9c5ea51691fadb9330cf63151e9c",
+    "commit": "8722a0b18a72fabfa148e0ae00fc4d212e480c27",
     "role": "curator",
-    "statement": "docs/workflows.md remains accurate on the synced DEP-L7 candidate because fixing _JudgedHistoryClosing.restore in direct_landing.py preserves the documented direct-landing and workflow-gate controls.",
-    "task": "261125-DEP-L7",
-    "uncommitted": true
+    "statement": "Verified across the clean merge of BUG-L41 (a772c9018) and DEP master (475ef19af): docs/workflows.md accurately documents BUG-L41 standing leaf closeout authority (lines 161-166) and preserves the direct-landing and workflow-gate contracts untouched by DEP-L7.",
+    "task": "261125-DEP",
+    "uncommitted": false
   },
   "document": "docs/workflows.md",
   "id": "DPD-XAARS1",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -101,7 +101,7 @@
       "path": "mcp/src/agents_remember/application/worktree_tools.py"
     },
     {
-      "blob": "c2426230380980e4bc23b6a77896fbfdf59c6821",
+      "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
     },
@@ -111,7 +111,7 @@
       "path": "skills/l-01-agent-lifecycles/operations/planning.md"
     },
     {
-      "blob": "8df1753c138980d015641171fd9ced522dfc5664",
+      "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
     },
@@ -157,14 +157,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T02:27:57+01:00",
+    "at": "2026-11-26T05:35:06+01:00",
     "by": "agent",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-2",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L7",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "role": "manager",
+    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
     "task": "261125-DEP"
   }
 }

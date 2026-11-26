@@ -10,7 +10,7 @@ The current size record keeps authored capsule, detail and digest ceilings separ
 
 ## Code Commentary
 
-The generated curation entries record 4,536 words for the Curator and 3,299 for the Manager. The coherence-judgments detail measures 353 words. These measurements sit below the authored ceilings.
+The generated curation entries record 4,536 words for the Curator and 3,397 for the Manager. The coherence-judgments detail measures 353 words. These measurements sit below the authored ceilings.
 
 The generated measurement for the Curator handoff ingestion template is 6,630 words and carries the current source digest. The measurement leaves the authored ceilings unchanged.
 
@@ -34,7 +34,8 @@ not the active renewal or a new source measurement.
 
 
 
-- Generated approved source sizes record the Manager brief at 1,465 words and its exact source SHA-256; current generated measurements include ordinary linked templates. [3]
+- Generated approved source sizes record the Manager brief at 1,470 words and its exact source SHA-256; current generated measurements include ordinary linked templates. [3]
+
 
 
 
@@ -47,6 +48,7 @@ not the active renewal or a new source measurement.
 - Budget checks read current measurements and authored ceilings. [7]
 
 - The generated size record holds the current curation capsule and judgment detail measurements. [8]
+
 
 - The generated template measurement records 6,630 words and the current source digest. [11]
 - The decision block retains authority and frozen historical registry and predecessor identities. [1]

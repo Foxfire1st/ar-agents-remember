@@ -3,16 +3,17 @@
     "criteria": [
       "joint_guarantee"
     ],
-    "justification": "Each member protects one way the single-coordinator handover can fail: the role texts alone could disagree with the router and the operation, the manifest could still describe the old default, the host handover could tell a parented Manager to relay, the developer's answer-first duty is what keeps the developer in charge, and the closeout exception is the one execution step the retained Architect keeps; only together do they make one coherent default."
+    "justification": "The delegation default, Manager three-way authority boundary, standing routine paired closeout with Curator zero-stale proof, parented handover routing, and nonsemantic wake boundary jointly guarantee single-coordinator authority under the Architect across instructions and launcher code."
   },
-  "guarantee": "Across role/operation/router/manifest and host handover sources, a delegating Architect hands coordination to one Manager for one master or one Orchestrator across concurrent masters, with one Manager per master. That coordinator decides non-developer work and sends authored cognitive reports only on the five developer-needed categories and final report occasion, with the separately required skeleton handovers, permission notices and closeout-result notices retained under their named recipients and conditions; native plugin turn-end metadata is a nonsemantic wake signal, not a ruling, verdict or acceptance. Developer-chosen direct coordination and a single-master Orchestrator remain the only named exceptions, and Architect keeps the developer conversation, answer-first duty and narrow paired-closeout exception.",
+  "guarantee": "Across role, operation, template, manifest and launch-handover sources, a delegating Architect hands coordination to one Manager for one master or one Orchestrator across concurrent masters (with one Manager per master). The Manager operates under one explicit three-way boundary separating its own execution, construction, precedent-covered, planned-gap skeleton and standing routine paired-closeout decisions (across all masters including standalone masters, backed by passing reviews, listed final checks, clean preview, unwaived evidence map and Curator's exact-pair zero-stale dependent-document read) from named Architect matters and the five developer-decision categories. An Orchestrator forwards its Manager's Architect matters unchanged except direct qualifying skeletons (whose first-message direct Architect ID appears only on corroborated receipt lineage); Architect case rulings name only the Architect outcome without reclaiming Manager authority; coordinators send no status-only messages and Managers record working-child or already-sent developer-question waits locally as named waits; permission notices, closeout-result notices, final report-path returns and nonsemantic host wake metadata keep their boundaries, and developer-chosen direct coordination or a single-master Orchestrator remain the only named exceptions.",
   "id": "FAM-PNH1QS",
   "members": [
     "INV-A6GAKX",
     "INV-NFV5VJ",
     "INV-8AMSGV",
     "INV-P2WRNQ",
-    "INV-PEVJ6G"
+    "INV-PEVJ6G",
+    "INV-CAJ09X"
   ],
   "origin": {
     "handoff": {
@@ -22,12 +23,22 @@
     "leaf": "260928-MIK-L72",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "routes": [
     "skills/l-01-agent-lifecycles",
     "mcp/src/agents_remember/cli"
   ],
   "schema": "ar-family/v1",
-  "status": "proposed",
-  "title": "One coordinating agent under the architect"
+  "title": "One coordinating agent under the architect",
+  "writer": {
+    "at": "2026-11-26T02:58:55+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L41",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+    "task": "261112-BUG"
+  }
 }

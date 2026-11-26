@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_checkpoint_landing_end_to_end.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "93c6dc8ab0380576d3c6defa998979f4e2d7fad1",
+        "content": "sha256:8c735e580f642138e3cc48e224bb532c2626930d47ce916b1173413b88e1ef19",
+        "locator": {
+          "kind": "symbol",
+          "name": "CheckpointPausesAnUnfinishedMasterTests.test_a_leaf_closeout_preview_is_untouched_by_the_series_completion_gate"
+        }
+      },
+      "facet": "Exercises a real clean leaf closeout preview returning phase='commit-approval-pending', nextOperation='request_commit_approval', nextTool='worktree_closeout_apply' and intent_note in nextRequiredArgs.",
+      "id": "PRF-ZHDGES",
+      "invariant": "INV-CAJ09X",
+      "origin": {
+        "handoffEntry": "BUG-R41.v1.rule-4",
+        "leaf": "261112-BUG-L41"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
+            "blob": "93c6dc8ab0380576d3c6defa998979f4e2d7fad1",
             "content": "sha256:7aafc8dcfc0dc4452b2aa156fbfad690b7abf3ffb7c43cd594eb9702963e1ff3",
             "locator": {
               "end": 124,
@@ -19,7 +38,7 @@
         },
         {
           "anchor": {
-            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
+            "blob": "93c6dc8ab0380576d3c6defa998979f4e2d7fad1",
             "content": "sha256:03912e2c41f22e8029fb3a7e81533cb423e1500580605a299db666daa602785f",
             "locator": {
               "end": 174,
@@ -31,7 +50,7 @@
         },
         {
           "anchor": {
-            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
+            "blob": "93c6dc8ab0380576d3c6defa998979f4e2d7fad1",
             "content": "sha256:3217e64e900a0008dfa52f66514e37ec7a7ee5f557a3db196cb6a145e18d3022",
             "locator": {
               "end": 190,
@@ -48,10 +67,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
-            "content": "sha256:fcdbcfb2e81118aa0930ac6597fca5f033d03383d91fafe4f15aa3ded942df46",
+            "blob": "93c6dc8ab0380576d3c6defa998979f4e2d7fad1",
+            "content": "sha256:3c35318083a2bc3692a5192b91fa2bf8ae8a666f6c7e85e121fe91fabd70d1cf",
             "locator": {
-              "end": 310,
+              "end": 314,
               "kind": "line_range",
               "start": 192
             }
@@ -60,12 +79,12 @@
         },
         {
           "anchor": {
-            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
+            "blob": "93c6dc8ab0380576d3c6defa998979f4e2d7fad1",
             "content": "sha256:b7761c9272ccacc87d413834f70ad07328026e8fa3268cf43879edc247190ef8",
             "locator": {
-              "end": 440,
+              "end": 444,
               "kind": "line_range",
-              "start": 365
+              "start": 369
             }
           },
           "kind": "test"
@@ -77,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
+            "blob": "93c6dc8ab0380576d3c6defa998979f4e2d7fad1",
             "content": "sha256:8177a85e3f132ed885e2b1210968559f3cb5edb612146b21d17b2d32256a4f68",
             "locator": {
               "kind": "symbol",
@@ -88,7 +107,7 @@
         },
         {
           "anchor": {
-            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
+            "blob": "93c6dc8ab0380576d3c6defa998979f4e2d7fad1",
             "content": "sha256:42d04bfca4a6f4d2a903c192224b1533e3f3e12094a20d74300f463e7813e1eb",
             "locator": {
               "kind": "symbol",
@@ -104,24 +123,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
+            "blob": "93c6dc8ab0380576d3c6defa998979f4e2d7fad1",
             "content": "sha256:c38850dc83348de5ab3ccb38a6f58a222247da50e3276fc9b40f6940901d2da8",
             "locator": {
-              "end": 457,
+              "end": 461,
               "kind": "line_range",
-              "start": 442
+              "start": 446
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
+            "blob": "93c6dc8ab0380576d3c6defa998979f4e2d7fad1",
             "content": "sha256:730aa181b87e85ad1ca9b0b5a2d948757c364db3e77a399f0d7cd8823df70c8a",
             "locator": {
-              "end": 553,
+              "end": 557,
               "kind": "line_range",
-              "start": 486
+              "start": 490
             }
           },
           "kind": "test"
@@ -133,12 +152,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
+            "blob": "93c6dc8ab0380576d3c6defa998979f4e2d7fad1",
             "content": "sha256:e8deed6f7bc066eb66549d736775fee04632c74c4e6f4d27f88a320ea8a44519",
             "locator": {
-              "end": 363,
+              "end": 367,
               "kind": "line_range",
-              "start": 338
+              "start": 342
             }
           },
           "kind": "test"
@@ -146,14 +165,14 @@
       ]
     },
     "6": {
-      "note": "The module defines 18 scenario methods. Its retained Git/ref/cache/approval checks now also assert answered closeout-incomplete, atomic-series-closeout-master-incomplete and checkpoint-master-complete outcomes, children-not-retired cleanup, and abandoned-master preview/apply refusal with worktree_abandon guidance. The repeated-checkpoint assertion remains in a genuinely still-unclosed frame. These are source assertions, not a newly run landing or a sync-behavior finding.",
+      "note": "The module defines 18 scenario methods. Its retained Git/ref/cache/approval checks also assert answered closeout-incomplete, atomic-series-closeout-master-incomplete and checkpoint-master-complete outcomes, leaf closeout preview approval-pending fields (`phase=\"commit-approval-pending\"`, `nextOperation=\"request_commit_approval\"`, `nextTool=\"worktree_closeout_apply\"`, `intent_note` in `nextRequiredArgs`), children-not-retired cleanup, and abandoned-master preview/apply refusal with worktree_abandon guidance. The repeated-checkpoint assertion remains in a genuinely still-unclosed frame. These are source assertions, not a newly run landing or a sync-behavior finding.",
       "targets": [
         {
           "anchor": {
-            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
-            "content": "sha256:ca9d9841744438ab1efdcc3033d8ea5593ad8c472650cbe134c231fcf0ad7109",
+            "blob": "93c6dc8ab0380576d3c6defa998979f4e2d7fad1",
+            "content": "sha256:8f354dc07b42e4d1d61622a99cc9f2f80256dbd9708d7f2910330fdf585c2e8c",
             "locator": {
-              "end": 591,
+              "end": 595,
               "kind": "line_range",
               "start": 43
             }

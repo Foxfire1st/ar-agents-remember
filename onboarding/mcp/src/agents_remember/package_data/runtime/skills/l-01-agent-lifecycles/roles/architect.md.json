@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
-        "content": "sha256:52019c6d8f693081fa51c2184d646b290d1d6b129626b2e4bc6ce41f1410eb2f",
+        "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+        "content": "sha256:f3837873607961fc207d6b1456c2b085b1401dbf72863e9751da6d89ae042b87",
         "locator": {
           "kind": "file"
         }
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+        "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
         "content": "sha256:a0f25cd9907e94e0a691e762cc7c49aeca193218d79948e1dc5193df32ae1c3c",
         "locator": {
           "end": 66,
@@ -41,12 +41,12 @@
   ],
   "references": {
     "1": {
-      "note": "The Architect starts an Investigator with role_start without a task reference, on a sprint, or on a sprint and master, sends the scoped concern as its first role_message to the returned agent ID, and retires a finished Investigator with retire_child.",
+      "note": "The Architect starts an Investigator with `role_start` without a task reference, on a sprint, on a standalone master, or on both, sends the scoped concern as its first `role_message` to the returned agent ID, and retires a finished Investigator with `retire_child`.",
       "targets": [
         {
           "anchor": {
-            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
-            "content": "sha256:52019c6d8f693081fa51c2184d646b290d1d6b129626b2e4bc6ce41f1410eb2f",
+            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+            "content": "sha256:f3837873607961fc207d6b1456c2b085b1401dbf72863e9751da6d89ae042b87",
             "locator": {
               "kind": "file"
             }
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
             "content": "sha256:4104d9271e630345b80d1841ec49ace38f4207770d99c58816ad7b113cdf933c",
             "locator": {
               "end": 3,
@@ -77,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
             "content": "sha256:4642e8ea8de713715fb38326664bdaf76cf0a44f38d3a41013c8c03980288394",
             "locator": {
               "end": 6,
@@ -95,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
             "content": "sha256:ad7ed19fc78c3586c669dfed0807bbfdd542021337451a44e705451c9cebe936",
             "locator": {
               "end": 210,
@@ -108,12 +108,12 @@
       ]
     },
     "5": {
-      "note": "The Architect may grant a beyond-settings round when the sealed list has shrunk and the open repair is concrete; a repeated unchanged repair or a requirement-meaning dispute gets a ruling and no round. After the handover it releases execution coordination to the Orchestrator or Manager.",
+      "note": "The Architect may grant a beyond-settings round when the sealed list has shrunk and the open repair is concrete; a repeated unchanged repair or a requirement-meaning dispute gets a ruling and no round. It reads the coordinating agent's rulings, requirement-change list and status file itself (coordinators send no status-only notices), names only the outcome needing the Architect in a case ruling while leaving Manager decisions with the Manager, and releases execution coordination after handover.",
       "targets": [
         {
           "anchor": {
-            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
-            "content": "sha256:5f14784fbed919ec54832c7287bbd07a2e7466343e6c44eeb26ffb74bfbc29bf",
+            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
+            "content": "sha256:da626ca00e2814b8bc047517972157d6465252b7e0c39e2d32fcf228682287f3",
             "locator": {
               "end": 148,
               "kind": "line_range",
@@ -129,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
             "content": "sha256:b4030c0d6c7648511cbec3ec172e0e38775c0690cb0e77da76432d58cfcd77ac",
             "locator": {
               "end": 48,
@@ -146,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+            "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
             "content": "sha256:0f16ae738e30bc0020b9f0e05f3737b8435aaa300719837aa33eb4eaa4c265ac",
             "locator": {
               "end": 64,

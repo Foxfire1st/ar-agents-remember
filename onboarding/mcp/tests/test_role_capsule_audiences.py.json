@@ -284,12 +284,12 @@
       ]
     },
     "23": {
-      "note": "The current Reviewer-addressed review paragraph says a clean sync opens no new freeze or round, sends shared-path/test-failure repairs for one look, and returns a freeze whose finding entries are missing without counting a round.",
+      "note": "The current Reviewer-addressed review paragraph says a clean sync opens no new freeze or round, the Worker reruns focused tests, the Manager gets the Curator's read for a changed pair before routine closeout, overlapping paths or failing tests trigger review of exactly the repair, and a freeze lacking finding entries is returned without counting a round.",
       "targets": [
         {
           "anchor": {
-            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
-            "content": "sha256:be3120cbf1622a5e2fabadf7b4078187b12cbb4dcfc2be775e3386464ccfeb12",
+            "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
+            "content": "sha256:9420aeadd22432a0871ce235fa7690886197f61d54181f87bcd844c63f52e052",
             "locator": {
               "end": 81,
               "kind": "line_range",
@@ -319,7 +319,7 @@
         },
         {
           "anchor": {
-            "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
+            "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
             "content": "sha256:8051c8648bc277b1c1a20950d8ddf0e001ee6d4259e31c7f37df692e1092f27a",
             "locator": {
               "end": 77,

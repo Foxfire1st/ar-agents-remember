@@ -18,7 +18,7 @@ The Curator seat opens only on a leaf task document. Repository foundation is re
 
 The inline Writer/worklist correction section requires a persisted leaf worklist and names the read step. `reference/curator/worklist.md` links the writer's row and evidence procedures in `templates/curator-handoff-ingestion.md` (input sections, reconsidering a rejected alternative, invariant entries) and `templates/curator-handoff-list.md` (realization rationale and role), and explains the returned `knowledgeWorklist` and `knowledgeGate` fields. Continuing rejected simplifications/workarounds become decisions with the real rejected option and reason, not unfinished implementation. These source instructions do not claim that pending decisions or proofs have already been authored; typed claims and task/Git powers remain unchanged.
 
-Batch changed-card citation previews and repairs with one documents list per wave. The stage writes, checks and publishes task knowledge with the installed build and a clean quality check; own-input/coherence faults are corrected through the same admitted tool, never relabeled or bypassed. Valid product/permission/authority/out-of-ground blockers stop dependent work. MEMORY beyond-settings authority comes from architect/developer through the recorded Manager act; independent review and publication are not acceptance.
+Batch changed-card citation previews and repairs with one documents list per wave. The stage writes, checks and publishes task knowledge with the installed build and a clean quality check; own-input/coherence faults are corrected through the same admitted tool, never relabeled or bypassed. Valid product/permission/authority/out-of-ground blockers stop dependent work. MEMORY beyond-settings authority comes from architect/developer through the recorded Manager act; independent review and publication are not acceptance. For Manager leaf closeout, the curation checks also require calling `knowledge_read` on `agents-remember-task` with paired leaf worktree `memoryRoot` and `repositoryRoot`, `codeTreeId="working-tree"`, `view="dependent"` and `staleOnly=true`, matching the code and memory candidates before and after the read, finishing every page to confirm or correct each row, and recording the exact pair, input, response `memoryTree.treeKey`, final `counts.total` and receipt in the curation report.
 
 This canonical role/operation requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and the packaged copy the tool server serves share this contract; transport does not change their write/start powers, peer destinations or independent acceptance authority.
 
@@ -157,11 +157,13 @@ The Curator's closing paragraph admits `workspace.outsideScratchRoot` for what m
 
 - Current Curator intake requires candidate-bound producer data and a passing handoff-check result for the same freeze, reads the intent-reconciliation detail before reconciling and the knowledge-ingest preparation before ingest, and keeps full checks, the non-author fact-check and truthful output identities. The seat keeps one writer, marks only its completed own step, escalates after three repeated own repairs and uses scoped recovery only for covered correct writes. It collects helpers and continues through normal work; encountered-memory repairs are bounded and named, with code/requirement/other-leaf work routed to its owner. [25]
 
+
 - Current curation continues from a report to the next authorized step without a new Manager go. It verifies card sentences against source, repairs wrong or missing memory encountered along its way beyond quality-check findings, names each repair and makes no broad sweep. Code changes, requirement decisions and another leaf’s work return to their owner. A correction qualifies every affected false body claim; full checks and the independent fact-check run before handover. [27]
 
 - The Curator reads the required task, change-set, producer handoff and affected memory inputs. [1]
 
-- Three-way reconciliation, baseline preservation, admitted-record readback and full quality-check duties. [2]
+- Three-way reconciliation, baseline preservation, admitted-record readback and full quality-check duties, including the Manager-leaf-closeout stale dependent-document read. [2]
+
 
 - The curator’s prohibited writes and source-stamp boundary. [3]
 
@@ -182,6 +184,7 @@ The Curator's closing paragraph admits `workspace.outsideScratchRoot` for what m
 - Evidence and working files stay outside the memory worktree. Overview authoring is purpose-first, changes belong in their applicable body section, and all citation lines terminate the overview. [11]
 
 - Every reported cut has task-change causality; finding-clearing deletion is forbidden. [12]
+
 
 - Repository foundation is authored by the Curator inside the real task the user-started Architect opens, a registered leaf under a master, with its actual enclosure. No taskless session or invented task, worktree or enclosure substitutes for task admission. [13]
 - Repository foundation is authored by the Curator inside the real task the user-started Architect opens, a registered leaf under a master, with its actual enclosure. No taskless session or invented task, worktree or enclosure substitutes for task admission. [15]

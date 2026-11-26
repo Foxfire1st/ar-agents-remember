@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
             "content": "sha256:2704060377d2a0e4bf65ca6aa5f180ddec76ffce165a1e725cdab1b78b38be31",
             "locator": {
-              "end": 114,
+              "end": 115,
               "kind": "line_range",
-              "start": 114
+              "start": 115
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },

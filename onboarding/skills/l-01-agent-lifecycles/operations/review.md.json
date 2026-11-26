@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
         "content": "sha256:cada9e7d8f2ddc20bc85318bcfc1026e8c04e2221f9b24bf9447d4230d4e4614",
         "locator": {
           "end": 56,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
         "content": "sha256:f8e91b1d9a28194f42e8b1acedf204973fc0d7c152c7c86bd80d7007df3ec827",
         "locator": {
           "end": 118,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
         "content": "sha256:034f69214d19c325840b8cf1193f76a7d8f44a6ccbd39ac5092c2f4d7c4def6b",
         "locator": {
           "end": 141,
@@ -60,7 +60,7 @@
     },
     {
       "anchor": {
-        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
         "content": "sha256:a2a8d5ba879cde012dffca3ce756c235c2b57658db6afbdfc81ed82f561ddf57",
         "locator": {
           "end": 123,
@@ -79,7 +79,26 @@
     },
     {
       "anchor": {
-        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
+        "content": "sha256:91f2a7a09ab1ba97b7830d091203621215f250350dcf1d06dd8b6ea9ff33fb6f",
+        "locator": {
+          "end": 79,
+          "kind": "line_range",
+          "start": 79
+        }
+      },
+      "id": "RLZ-AMVJK6",
+      "invariant": "INV-CAJ09X",
+      "origin": {
+        "handoffEntry": "BUG-R41.v1.rule-4",
+        "leaf": "261112-BUG-L41"
+      },
+      "rationale": "Retains the existing review on a clean sync while expecting the Manager to obtain the Curator's refreshed read for a changed pair before routine closeout.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
         "content": "sha256:45d120a106e80247dd87b12e2244a5e0e636cae5369f2b68ab2ef91b3d30075e",
         "locator": {
           "end": 8,
@@ -98,7 +117,7 @@
     },
     {
       "anchor": {
-        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
         "content": "sha256:6cdc52f8a3d877c0c44e23f94eb53d1b173ad177c8c9a3a424ba6e374f2c216e",
         "locator": {
           "end": 38,
@@ -117,7 +136,7 @@
     },
     {
       "anchor": {
-        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
         "content": "sha256:6913ea0e53f0eb04fe025c9cfe4c2376b7fa77a5ad52ccdfbe64ef3a5603ca38",
         "locator": {
           "end": 73,
@@ -136,7 +155,7 @@
     },
     {
       "anchor": {
-        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
         "content": "sha256:06fbd4fb6bc50d09868215fcc21930d88110eb2d2635e815a9b2f22982b47c2c",
         "locator": {
           "end": 61,
@@ -155,7 +174,7 @@
     },
     {
       "anchor": {
-        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
         "content": "sha256:5c35496fae6f3888d303621708017385f7ea56cb5cd1936944d7abad24ed0c43",
         "locator": {
           "end": 122,
@@ -174,7 +193,7 @@
     },
     {
       "anchor": {
-        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
         "content": "sha256:06fbd4fb6bc50d09868215fcc21930d88110eb2d2635e815a9b2f22982b47c2c",
         "locator": {
           "end": 61,
@@ -193,7 +212,7 @@
     },
     {
       "anchor": {
-        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
         "content": "sha256:18ff460ac0025989fa8d4c4aa7dd7c0cfceb7157f0651bf65d1b943be87baa0c",
         "locator": {
           "end": 139,
@@ -212,7 +231,7 @@
     },
     {
       "anchor": {
-        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
         "content": "sha256:beed60d3fa667dc0be2373acdfa033172a4c3d37f20e5d689734fa511662c833",
         "locator": {
           "end": 120,
@@ -231,7 +250,7 @@
     },
     {
       "anchor": {
-        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
         "content": "sha256:d8ff27971edda2d4599a0dc3dc0ec61f5afc63c9c21cae9c6a2d8ad152aed318",
         "locator": {
           "end": 129,
@@ -250,7 +269,7 @@
     },
     {
       "anchor": {
-        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
         "content": "sha256:a6a7b96934b06a3cb2dcf34004152409f9a6842a11f572d1d94c36d4b3efb82e",
         "locator": {
           "end": 141,
@@ -269,7 +288,7 @@
     },
     {
       "anchor": {
-        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
         "content": "sha256:9857bf4edd2a1ff789b52bdb73f11d5a1f300accd9b2af8a0416075a71b03f81",
         "locator": {
           "end": 57,
@@ -288,7 +307,7 @@
     },
     {
       "anchor": {
-        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
         "content": "sha256:3944c29057c5baeb2f1e04381e74c07ebc4798ba9f5d9bc6bcd1b0219b52a02b",
         "locator": {
           "end": 90,
@@ -307,7 +326,7 @@
     },
     {
       "anchor": {
-        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
         "content": "sha256:0af4b6a2a90a4908da58ff5014766dd5cfaec4eb66f2c6f34fbae1456c3fa2c9",
         "locator": {
           "end": 104,
@@ -326,8 +345,8 @@
     },
     {
       "anchor": {
-        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
-        "content": "sha256:58790c13a47da2c22495dad31a3335d1ac4d44e648fb17e2735e539efa411c65",
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
+        "content": "sha256:bb4fca9d8a065d931aca5a2600c38ec0523e3e757193bbd4d1ecd20e768339a3",
         "locator": {
           "end": 83,
           "kind": "line_range",
@@ -345,7 +364,7 @@
     },
     {
       "anchor": {
-        "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+        "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
         "content": "sha256:b757be98da81c9493eb27b6b22404bf2eda8f02da7d71cbdd9d74fcb364a70c8",
         "locator": {
           "end": 104,
@@ -369,7 +388,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
             "content": "sha256:6913ea0e53f0eb04fe025c9cfe4c2376b7fa77a5ad52ccdfbe64ef3a5603ca38",
             "locator": {
               "end": 73,
@@ -386,7 +405,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
             "content": "sha256:20e89a40d302bcf0f55b93eec944dfac9d80bd0185d2ab3673254acffc5365ee",
             "locator": {
               "end": 54,
@@ -398,7 +417,7 @@
         },
         {
           "anchor": {
-            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
             "content": "sha256:48b8445332fed459a4e21ba40ee8348dc0597f51af95642ce0308eff17ce44d8",
             "locator": {
               "end": 104,
@@ -428,7 +447,7 @@
         },
         {
           "anchor": {
-            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
             "content": "sha256:3cff65b86d44b6d4ded161b897410a3c1cc29874e0035b79e14aa8bade04ba99",
             "locator": {
               "end": 88,
@@ -440,7 +459,7 @@
         },
         {
           "anchor": {
-            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
             "content": "sha256:a8cf97939d549365f28f41a2e5bd76aad85ca7fd9c57591a52560fb7e2da374c",
             "locator": {
               "end": 120,
@@ -466,12 +485,12 @@
       ]
     },
     "4": {
-      "note": "A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A repair that changes the candidate uses the ordinary next round; a clean sync with passing focused tests sends no new freeze and begins no round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval. Separate MEMORY reports/counts do not reset CODE.",
+      "note": "A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A repair that changes the candidate uses the ordinary next round; a clean sync with passing focused tests sends no new freeze and begins no round (with the Manager obtaining the Curator's read for a changed pair before routine closeout). Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval. Separate MEMORY reports/counts do not reset CODE.",
       "targets": [
         {
           "anchor": {
-            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
-            "content": "sha256:2e03d96cb6f8fc4a4758fee279dd6bdac4ba9e71fb2687d03bffb5067685aebc",
+            "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
+            "content": "sha256:79edffcb0191f5abdf2430acd653a9021ce3e58a2265ca1fccf29167c894a5f3",
             "locator": {
               "end": 120,
               "kind": "line_range",
@@ -487,8 +506,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
-            "content": "sha256:429141d967eed89e581d5d428f6f0276b5202bccc5cb46fe9e34c29f37732112",
+            "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
+            "content": "sha256:82946b4b91b1e51b1fb11cdae2d065215cf4bc63549b101ac3e913aa214dc6f5",
             "locator": {
               "kind": "file"
             }
@@ -502,8 +521,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
-            "content": "sha256:429141d967eed89e581d5d428f6f0276b5202bccc5cb46fe9e34c29f37732112",
+            "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
+            "content": "sha256:82946b4b91b1e51b1fb11cdae2d065215cf4bc63549b101ac3e913aa214dc6f5",
             "locator": {
               "kind": "file"
             }
@@ -513,12 +532,12 @@
       ]
     },
     "8": {
-      "note": "Reviewer returns a repair freeze missing its per-finding entries without counting a round, and receives no new freeze or round for a clean sync.",
+      "note": "Reviewer returns a repair freeze missing its per-finding entries without counting a round, and receives no new freeze or round for a clean sync (where the Manager obtains the Curator's read for a changed pair before routine closeout).",
       "targets": [
         {
           "anchor": {
-            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
-            "content": "sha256:be3120cbf1622a5e2fabadf7b4078187b12cbb4dcfc2be775e3386464ccfeb12",
+            "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
+            "content": "sha256:9420aeadd22432a0871ce235fa7690886197f61d54181f87bcd844c63f52e052",
             "locator": {
               "end": 81,
               "kind": "line_range",
@@ -534,7 +553,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
             "content": "sha256:06fbd4fb6bc50d09868215fcc21930d88110eb2d2635e815a9b2f22982b47c2c",
             "locator": {
               "end": 61,

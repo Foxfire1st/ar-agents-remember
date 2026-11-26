@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "8ea42050052b7759840852ac3aae11fd0aad2818",
-    "commit": "475ef19af89cdf0981530dd2b8bf40475975e0e3",
+    "codeTree": "a2064ab5015b9c5ea51691fadb9330cf63151e9c",
+    "commit": "8722a0b18a72fabfa148e0ae00fc4d212e480c27",
     "role": "curator",
-    "statement": "Verified across the clean merge of BUG-L44 (3ee3b10c9) and DEP-L7 (b30330984): docs/features.md feature summaries, skill-tree packaging, and closeout/role/landing contracts remain accurate with no contradiction from either disjoint parent.",
+    "statement": "Verified across the clean merge of BUG-L41 (a772c9018) and DEP master (475ef19af): docs/features.md accurately summarizes role coordination, skill-tree packaging, worktrees, memory quality, and landing contracts with no contradiction from either disjoint parent.",
     "task": "261125-DEP",
     "uncommitted": false
   },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 27,
+  "revision": 28,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -93,7 +93,7 @@
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
     {
-      "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
+      "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
@@ -223,7 +223,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
     {
-      "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+      "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
     },
@@ -295,9 +295,9 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T04:05:27+01:00",
+    "at": "2026-11-26T05:35:06+01:00",
     "by": "agent",
-    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-1",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-2",
     "effort": "high",
     "harness": "antigravity-acp",
     "model": "gemini-4-neon-high",

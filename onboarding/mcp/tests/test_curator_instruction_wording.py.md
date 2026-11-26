@@ -34,8 +34,7 @@ text a seat receives, with `STARTERS` naming the starter roles the manifest desc
   Curator's foundation inputs and outputs through the same helper module.
 - **Manifest descriptions.** `test_manifest_descriptions_follow_the_coordination_default` keeps each
   description on the coordination default rather than a local variant.
-- **Writer admission.** `test_the_curator_writer_is_admitted_for_the_selected_runtime` pins the admission in
-  the role, detail and operation texts and requires the parser to refuse the removed options with exit 2.
+- **Writer admission.** `test_the_curator_writer_is_admitted_for_the_selected_runtime` pins the admission in the role, detail, publication-report and operation texts (including leaf `memory_quality_check` parameters `codeTreeId="working-tree"`, `view="dependent"`, `staleOnly=true`, candidate matching before/after the read, and recording `memoryTree.treeKey`, `counts.total` and receipt) and requires the parser to refuse the removed options with exit 2.
 - **Grants.** `test_the_manifest_grants_the_role_tools_to_the_roles_that_may_use_them` checks the manifest
   grants `role_message` to every launcher role except `bootstrap`, grants `role_start` to exactly the
   starter roles and names no tool outside `models.tools.public_roster`; the launcher roles come through
@@ -54,10 +53,8 @@ seat actually reads.
 The foundation and correction cases require a real task/enclosure, producer handoff-check evidence and correction of every contradicted body claim. Manager publication is distinguished from organizational completion, and sentence/card scope controls remove each actual clause to prove the guard fails. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
 
 ## Evidence
-- The Curator wording guard names mounted knowledge_write or the admitted serving-build CLI, explicit file-write commit, and the scoped correct-write recovery exception; it does not assert unconditional route exclusivity.
 
-- The writer admission is pinned in the role, serving-build detail, publication report and operation texts, and the parser refuses the removed options with exit 2 [2]
-
+- The writer admission is pinned in the role, serving-build detail, publication report and operation texts (including the leaf `memory_quality_check` parameters, candidate matching and response receipt fields), and the parser refuses the removed options with exit 2. [2]
 - The Curator wording guard names mounted knowledge_write or the admitted serving-build CLI, explicit file-write commit, and the scoped correct-write recovery exception; it does not assert unconditional route exclusivity. [1]
 
 

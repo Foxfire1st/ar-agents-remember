@@ -112,15 +112,15 @@ Place changes in their actual file/route/entity home. Overviews begin with title
 
 Contract-scoped MCP calls must select the leaf memory root and verify returned `onboardingRoot`; unscoped diagnostics can describe the official tree; unscoped index apply is admitted only through the explicit pre-baseline exception, otherwise use dry-run or the leaf writer scope. Missing scope or refused capability is a blocker, not authority to use another server, writer, transport or workspace. Denied or unanswered harness permission cannot be bypassed through another command, tool, helper or later turn.
 
-The normal quality loop runs the complete operation at intake and after every repair until `curatorActionableCount=0` and raw `qualityChecklistStatus=ready-for-closeout`. A named check or subset cannot substitute. Actionable findings are repaired or reported blocked with their exact code; dirty-source drift and future commit-derived work are not excuses to leave repairable claim, citation, shape, history, entity or index defects. Missing or stale coherence changes combined `checklistStatus` to `coherence-required`. Prepare the structured record, publish one judgment per prepared candidate after successful preparation (an empty list when there are none), then validate before closeout. With already-current coherence, the combined field retains `ready-for-closeout` and `closeoutReady` becomes true. The raw and combined statuses answer different questions.
+The normal quality loop runs the complete operation at intake and after every repair until `curatorActionableCount=0` and raw `qualityChecklistStatus=ready-for-closeout`. For Manager leaf closeout, the Curator also calls `knowledge_read` on `agents-remember-task` with paired leaf worktree `memoryRoot` and `repositoryRoot`, `codeTreeId="working-tree"`, `view="dependent"` and `staleOnly=true`, matching candidates before and after, finishing every page to confirm or correct each row, and recording the exact pair, input, response `memoryTree.treeKey`, final `counts.total` and receipt in the curation report. A named check or subset cannot substitute. Actionable findings are repaired or reported blocked with their exact code; dirty-source drift and future commit-derived work are not excuses to leave repairable claim, citation, shape, history, entity or index defects. Missing or stale coherence changes combined `checklistStatus` to `coherence-required`. Prepare the structured record, publish one judgment per prepared candidate after successful preparation (an empty list when there are none), then validate before closeout. With already-current coherence, the combined field retains `ready-for-closeout` and `closeoutReady` becomes true. The raw and combined statuses answer different questions.
 
 Coherence names the frozen candidate and has a generated human-readable projection. A finished turn is not its certificate. Closeout history/fingerprint writes do not make the frozen authority certify a later live tree; do not validate that later tree as an invented integration prerequisite. The doctrine calls completed curation handoff evidence while also retaining required curation/coherence prerequisites; this distinction does not authorize removal of existing transaction validation or creation of a new semantic acceptance gate.
 
 Code concerns go directly to Worker and Reviewer even after code PASS. Reviewer reopens the evidenced point or explains why it does not hold; unresolved disagreement or authority goes to Manager. Memory review has its own sealed findings and pass count, does not open/reset code rounds, and uses the same ordinary limit. Requested reviews preserve a sealed baseline and bounded fix-verification scope. Within the settings limit, verification of repaired existing findings is an ordinary round. Beyond it, Manager obtains and records architect/developer approval; prior D107 wording grants no automatic extra round. Memory uses its separate lane and the same approval boundary.
 
-A seat may organize its assignment with harness helpers, but helpers hold no AR seat, start no role, share the same permissions and folder, and cannot provide independent review of their author's work. Boundary messages and product state changes remain the seat's acts. On any harness, a turn that waits for helpers ends with `WAITING FOR SUBAGENTS:` and one that waits for a process the seat started ends with `WAITING FOR BACKGROUND:`; `check in <N> minutes` (1 to 30, default 3) sets the host's check, a wake continues the seat's own work, and a declared wait is not a silent end. Curator remains responsible for placement, meaning, admission, verification and exactly one writer. Its full-intake worklist counts distinct outstanding actions once and credits delegated parts and how they were checked.
+A seat may organize its assignment with harness helpers, but helpers hold no AR seat, start no role, share the same permissions and folder, and cannot provide independent review of their author's work. Boundary messages and product state changes remain the seat's acts. On any harness, a turn that waits for helpers ends with `WAITING FOR SUBAGENTS:` and one that waits for a process the seat started ends with `WAITING FOR BACKGROUND:`; `check in <N> minutes` (1 to 30, default 3) sets the host's check, a wake continues the seat's own work, and a declared wait is not a silent end. A Manager's end line naming the working child and awaited stage likewise declares a named wait for report-sender continuation checks. Curator remains responsible for placement, meaning, admission, verification and exactly one writer. Its full-intake worklist counts distinct outstanding actions once and credits delegated parts and how they were checked.
 
-Developer questions follow the supplied parent or documented reporting recipient; continue independent work, preserve pending questions, and relay the developer's quoted answer with its receiving agent identity. A busy refusal or permission-pending parent does not authorize own-chat escalation. Refused busy messages remain pending and are retried; messages accepted as held are delivered by the product and must not be resent. Permission-held delivery still requires the upward named-chat notice. A parentless seat, or a genuinely unreachable parent under the named refusal conditions, uses its own chat. Only the developer answers a child's harness permission prompt in that child's chat. Seats add no background polling or second scheduler. The product owns persisted held-message delivery through its serving-lifetime loop; source presence establishes no successful delivery. Cross-leaf contact needs a requirement/Manager-named dependency; otherwise it goes through Manager.
+Developer questions follow the supplied parent or documented reporting recipient; continue independent work, preserve pending questions, and relay the developer's quoted answer with its receiving agent identity. When no independent work remains, the Manager records the wait in its end line and status file while other roles send what they await to that recipient; an Orchestrator forwards a Manager's Architect matters unchanged. A busy refusal or permission-pending parent does not authorize own-chat escalation. Refused busy messages remain pending and are retried; messages accepted as held are delivered by the product and must not be resent. Permission-held delivery still requires the upward named-chat notice. A parentless seat, or a genuinely unreachable parent under the named refusal conditions, uses its own chat. Only the developer answers a child's harness permission prompt in that child's chat. Seats add no background polling or second scheduler. The product owns persisted held-message delivery through its serving-lifetime loop; source presence establishes no successful delivery. Cross-leaf contact needs a requirement/Manager-named dependency; otherwise it goes through Manager.
 
 Quality commands, executor, retry/resources and evidence contracts resolve from active repository memory. Focused diagnostics remain distinct from explicit full verification and certification; Radon reports are not enforcing passes. Retained R39/CCR-R12 doctrine fixes leaf-closeout/master-integration certification cadence, no leaf-integration rerun, no inferred fallback, suppressed automatic quality/test hooks inside the governed Git transaction, and a ledger refresh without a ledger commit. Those cadence and hook claims are inherited contracts here, not a new execution verdict. Closeout remains owner-run, binds real candidates and evidence, and records actual code/memory commits; Curator never invents future hashes, advances fingerprints onto uncommitted code or silences findings with attestation prose.
 
@@ -148,13 +148,13 @@ Reviewer records memory begin/result with `reviewKind=memory`: separate sealed r
 
 ## Clean sync and direct repair ownership
 
-When the master line moves, Worker runs its supported leaf sync. If no path changed on both sides, Worker reruns focused tests once and tells Manager; Manager uses its closeout preview. No new freeze goes to Reviewer and no round begins. An overlapping path or a failing focused test instead needs the exact repair and one look by the same Reviewer. Native memory conflicts still go to Curator for content and Manager for capture, verification and staging before Worker continues the supported transaction.
+When the master line moves, Worker runs its supported leaf sync. If no path changed on both sides, Worker reruns focused tests and reports the code and memory pair to the Manager; mechanical checks derive again, and for a changed pair the Manager obtains the existing Curator's refreshed dependent-document read before routine closeout while keeping the existing review. No new freeze goes to Reviewer and no round begins. An overlapping path or a failing focused test instead needs the exact repair and one look by the same Reviewer. Native memory conflicts still go to Curator for content and Manager for capture, verification and staging before Worker continues the supported transaction.
 
 Worker repairs a sealed finding directly in its own task files. No plan, account, census, approval or Manager go-ahead precedes that repair. The supported whole commit check and the freeze remain required. The freeze gives each repaired finding its own ID, cause, files and line ranges, discriminating failing-before/passing-after test and result; unrelated changes are listed separately. After code PASS, the direct Curator handoff carries those same entries and changed paths.
 
 Reviewer receives no freeze and opens no round for a clean sync with passing focused tests. For a repair freeze, Reviewer checks every finding against its own report entry and returns missing entries to Worker without counting a round. This intake return does not turn an executed fix-verification into a record-only repair or waive the settings limit. Code and memory lanes remain separate; Manager retains the gate and publication.
 
-Before escalating, Manager reads its own rulings and the Architect rulings for this master. Manager settles a same-kind occasion under the earlier ruling and names that ruling in its record. Only an uncovered question goes up through the existing route. Beyond-limit rounds, out-of-requirement scope and developer decisions keep their existing escalation owners; this is not a new scope or approval grant.
+Manager operates under an explicit three-way authority split: it decides leaf order, starts/replacements, operational problems, ordinary readings within the promise, pre/post-landing checks, delegated integration, construction/evidence/scratch setup and crew/helper script fixes, one infrastructure-failure rerun and untouched-file check carryover, behavior-preserving test/fixture/catalog repairs and post-approval bookkeeping, precedent-covered matters (a case reservation covers only what it names, and role decisions stay with the Manager), skeletons filling planned gaps, and routine paired closeout under standing series authority covering all masters including standalone masters (requiring passing code and memory reviews, passing listed final checks, a clean preview, an unwaived evidence map and zero stale dependent-document rows from the Curator). It sends to the Architect first reports and qualifying skeletons, requirement changes, beyond-settings rounds, unconfigured step-ups, second same-kind infrastructure failures, outside-worktree/scratch/task effects, non-routine closeouts (waived/environmental/substituted evidence, open scope, or Architect hold), and sprint-line pushes, pull requests, main landings and releases. The five developer-decision categories stay with the developer.
 
 `capsule-budgets-current.json` keeps authored per-role capsule ceilings, the step-detail ceiling and the digest ceiling separate from its generated `derived` measurements. `mcp/.venv/bin/python scripts/renew-instructions.py` renews those measurements, passage bindings, pointer wording, manifest audiences and steps, and declared package copies. Renewal checks capsule, detail and digest sizes against their ceilings; source and template sizes are measurements, not individual-item ceilings. Canonical sources remain the owners; the packaged copy adds no permission.
 
@@ -204,11 +204,13 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 - The Manager decides its leaf gates and retains closeout, integration, status, acceptance writes and landing order. [46]
 
+
 - The Worker implements one selected leaf's approved primary requirement under its handover. [47]
 
 - Bound Paseo intake and capabilities, including the writer-ownership boundary. [54]
 
-- Normal full curation checks run until the raw status is ready for closeout, with coherence completed before closeout. [55]
+- Normal full curation checks include the Manager-leaf-closeout stale dependent-document `knowledge_read` and run until the raw status is ready for closeout, with coherence completed before closeout. [55]
+
 
 - A missing tool or unadmitted capability is reported with what remains unwritten; a correct-input refusal of a covered write follows its recovery ladder. [56]
 
@@ -238,11 +240,13 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 - The review operation keeps memory reports, finding identifiers and pass count separate from code state, under the same pass limit and with Manager-recorded approval beyond it. [89]
 
-- The implementation operation owns clean sync and the direct repair/evidence path. [92]
+- The implementation operation owns clean sync (including pair reporting for Curator refresh) and the direct repair/evidence path. [92]
+
 
 - The review operation owns missing-entry return without a round. [93]
 
-- The Manager role owns precedent settlement and unchanged escalation boundaries. [94]
+- The Manager role owns its three-way authority split, standing routine paired closeout, precedent settlement (with non-reclaiming case reservations) and Architect/developer escalation boundaries. [94]
+
 
 - Before any new-leaf start, the Architect asks once "go, or review first?" and records review-first or go with agreedRevision; planned review creates no task workspace, first Explain creates its own workspace, and the state stays intent-review-open until go. [95]
 
@@ -286,9 +290,11 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 - The foundation facts the Curator reports instead of a leaf's, inside its handover section. [23]
 
+
 - The Manager owns the Git transaction, and the same task and Manager ownership applies to foundation work. [25]
 
 - The Curator report carries foundation facts, examined/unexamined scope, per-record outcomes, written/no-write state and remaining/partial work. [28]
+
 
 - The bootstrap role's prohibition: the seat authors no knowledge records, runs no knowledge writer and does not organise their production. [30]
 
@@ -317,6 +323,7 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 - Canonical skills and the single package-serving target come from generated-copies.json through the shared parser; skill_targets projects that declaration rather than a separate TARGETS tuple. This is source authority, not a sync verdict. [62]
 
 - Report-only admission does not perform or complete the normal authoring pass. [64]
+
 
 - CLI exposes contract/list/authorization, file-write commit, JSON and crossing arguments, with no settings option. [66]
 
