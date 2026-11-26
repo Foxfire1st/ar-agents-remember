@@ -526,7 +526,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+            "blob": "48881a85c6a221bc13f7b46c93aea78a126f0c3d",
             "content": "sha256:f04f3bcfef33ce2989869f2f74b26f2e8bc758cf031268feb46ee9ed8435f9ef",
             "locator": {
               "end": 60,
@@ -784,7 +784,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+            "blob": "48881a85c6a221bc13f7b46c93aea78a126f0c3d",
             "content": "sha256:4e5e01a0b5e9a05fb4518eb97afca08fbbfb8507d3dada288641e396427a3ee8",
             "locator": {
               "kind": "symbol",
@@ -796,7 +796,7 @@
         },
         {
           "anchor": {
-            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+            "blob": "48881a85c6a221bc13f7b46c93aea78a126f0c3d",
             "content": "sha256:3269bf4844a96cc66faaba066289476830b4ff4dda0d47fe28d0f831d985c687",
             "locator": {
               "kind": "symbol",
@@ -808,7 +808,7 @@
         },
         {
           "anchor": {
-            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+            "blob": "48881a85c6a221bc13f7b46c93aea78a126f0c3d",
             "content": "sha256:bbcdfbc6744fe3c117b70454a1ccdbdb061d976429d770e556855d98b88a5cb7",
             "locator": {
               "kind": "symbol",
@@ -1120,8 +1120,8 @@
         },
         {
           "anchor": {
-            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
-            "content": "sha256:0610f236b6dad84e694809f783d6ea749db5f1b7846827f58fe0bc640279e028",
+            "blob": "48881a85c6a221bc13f7b46c93aea78a126f0c3d",
+            "content": "sha256:76794966d4940eb5870bd8dd6f9fbf36771de5c9cd4f6e4660bba2d13929356a",
             "locator": {
               "kind": "file"
             },
@@ -1136,22 +1136,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
-            "content": "sha256:0610f236b6dad84e694809f783d6ea749db5f1b7846827f58fe0bc640279e028",
+            "blob": "48881a85c6a221bc13f7b46c93aea78a126f0c3d",
+            "content": "sha256:76794966d4940eb5870bd8dd6f9fbf36771de5c9cd4f6e4660bba2d13929356a",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/role_agents.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
-            "content": "sha256:8c4d848acba2ae83de73d85662dde488f228b8d30d1f766c55bd83e1978e1ddf",
-            "locator": {
-              "kind": "symbol",
-              "name": "user_settings_init_payload"
             },
             "path": "mcp/src/agents_remember/mcp/tools/role_agents.py"
           },

@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "029ed9f701f14aca180f3615775e8d0e94541339",
-    "commit": "a1a08ec0f484592a5350a25f6fb7a6296c94d4fb",
+    "codeTree": "af9e749296405ef22b6b165097e02cfef8e50570",
+    "commit": "91bb8c5f96005ee45998e3d5a3618fc28d250bdc",
     "role": "curator",
-    "statement": "On settled crossing-4 tree 029ed9f7 (commit a1a08ec0, combining EXP-L1 and BUG-L29), docs/reference/settings-json.md accurately documents agents-remember-mcp --config absolute settings path requirement, tool-log rotation/redaction (ar-tools-<YYYY-MM-DD>.jsonl, keepDays=14, maxBytes=256 MiB, enclosureMaxBytes=64 MiB, <omitted>/<env>/>200-char shortening), orchestration.landing.commitCheckTimeoutSeconds for landing and continued code-sync commit checks, mode precedence and per-harness first-call grants (Codex role roster, Claude server_info, plus explainer tools on both), and leaves all four settings files, timeoutCaps.providerSetupSeconds, user-settings permission reporting (444/555 and openUserSettings), paseoRuntime authority rules, and role-executions folder creation unchanged after L38's reconcile_shared_held_stores=false.",
+    "statement": "On settled crossing-5 tree af9e7492 (commit 91bb8c5f, combining EXP-L1/crossing-4 and BUG-L44), docs/reference/settings-json.md remains accurate across all four settings files, agents-remember-mcp --config absolute path requirement, tool-log rotation/redaction, orchestration.landing.commitCheckTimeoutSeconds, mode precedence and per-harness first-call grants, timeoutCaps.providerSetupSeconds, user-settings permission reporting (444/555 and openUserSettings), paseoRuntime authority rules, and role-executions folder creation; unchanged by BUG-L44's paseo_launch.py retirement/interruption updates.",
     "task": "261124-EXP",
     "uncommitted": false
   },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 18,
+  "revision": 19,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -164,7 +164,7 @@
       "path": "mcp/src/agents_remember/worktrees/role_handover_locator.py"
     },
     {
-      "blob": "0fc638828611b97d33b29b06297cc62431902dc2",
+      "blob": "ca833123cd3e62b5a60b14eaeb78fbb6b296c2f0",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
@@ -243,9 +243,9 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T03:46:23+01:00",
+    "at": "2026-11-26T04:22:46+01:00",
     "by": "agent",
-    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-4",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-5",
     "effort": "high",
     "harness": "antigravity-acp",
     "model": "gemini-4-neon-high",

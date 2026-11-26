@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across role_launch_liveness.py (_apply_reading), role_retirement_receipt.py (settle_retirement), and role_launch_archive.py (ArchiveAttempt._record_retired_target) and guarded by three behavioral tests."
+  },
+  "applicability": "Host liveness refreshes, leaf-close archival settlement, and receipt retirement settlement for recorded native role seats.",
+  "conditions": [
+    "Re-read the exact receipt under its lock before applying host-derived archived or gone state.",
+    "Preserve an already-recorded retirement's attribution and reason rather than overwriting with host discovery.",
+    "Defer to a pending product-owned retireIntent so the owning retirement or archival writer settles its own attribution."
+  ],
+  "exclusions": [
+    "Unreachable host readings or transport uncertainty, which never mark a seat retired."
+  ],
+  "id": "INV-QDYC5F",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "W2 expanded evidence E5, including external archives, confirmed refusal versus transport uncertainty, discovery timestamps, and the LeafAgentArchive fixture."
+      ],
+      "path": "l44-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R44@v1 rule 4",
+    "leaf": "261112-BUG-L44",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The existing host refresh closes an archived or gone seat once, preserves the reason of an already recorded retirement, and leaves a pending product-owned retirement to its writer.",
+  "supersedes": [],
+  "title": "Host refresh closes archived or gone seats once while deferring to pending owner",
+  "writer": {
+    "at": "2026-11-26T02:42:00+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L44",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+    "task": "261112-BUG"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "closed": true,
+  "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-5",
+  "rows": [],
+  "schema": "ar-history/v1",
+  "sharedRevisions": [
+    {
+      "record": "DPD-71WYH4",
+      "revision": 24
+    },
+    {
+      "record": "DPD-EG5TYT",
+      "revision": 26
+    },
+    {
+      "record": "DPD-EJ2Y7Z",
+      "revision": 7
+    },
+    {
+      "record": "DPD-MQCJK4",
+      "revision": 15
+    },
+    {
+      "record": "DPD-PYMM5P",
+      "revision": 6
+    },
+    {
+      "record": "DPD-X6G7K3",
+      "revision": 23
+    }
+  ],
+  "written": [
+    {
+      "contentDigest": "sha256:63e4fc9742c8c832bd164681c960824fe95d68cf3a9259884e3db7caafa8d445",
+      "record": "DPD-71WYH4",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-26T04:22:46+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-5",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:0a6a24aa8e5c8c84d5f997a940850aae779e619c7c3d50f89ff084b08a09048e",
+      "record": "DPD-EG5TYT",
+      "revision": 27,
+      "writer": {
+        "at": "2026-11-26T04:22:46+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-5",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:411ee29d1b038e86c9e055921d62674e5f65d828c1a5eb3647c476b803cdf59b",
+      "record": "DPD-MQCJK4",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-26T04:22:46+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-5",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:55da9e3b8c9b5409e07db1684797845542cb193d51896b903a7bfb7c57e371b0",
+      "record": "DPD-W0T9V9",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-26T04:22:46+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-5",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:a1ea8e28e6711c70cd52866803e5af0efad02d360f2aacff3a96e5adbe949cba",
+      "record": "DPD-X6G7K3",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-26T04:22:46+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-5",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:088148e721ee6f04ea18aea59795d711e5de704a9058d5aba21ed239de98ccdb",
+      "record": "DPD-ZMQ523",
+      "revision": 20,
+      "writer": {
+        "at": "2026-11-26T04:22:46+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-5",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    }
+  ]
+}

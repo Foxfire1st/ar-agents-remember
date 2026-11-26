@@ -1084,7 +1084,9 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 - The read_scope_test_support artifact registers test_comparison_changeset as an exact consumer of knowledge-read-scope-cases. Anchor: file [304]
 
 
+
 - The three Paseo support rows — launch, role tools and runtime — register the developer-message consumer test_developer_messages.py and declare in-process fidelity. The `paseo_role_tools_test_support.py` artifact row declares `test_developer_messages.py` as an exact consumer. The `paseo_runtime_test_support.py` artifact row declares `test_developer_messages.py` as an exact consumer. Anchor: file [309]
+
 
 
 - The unit-regression lane names the re-point and recovery modules where its order puts them. Anchor: file [314]
@@ -1427,20 +1429,36 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 - The settings-guard artifact declares test_developer_messages.py as an exact consumer. Anchor: file [307]
 
+
 - The two new modules appear on the settings-guard, coherence-support, L110-rows and Node-lockfile consumer lists. [327]
 - The portable Node lockfile lists the crossing dependent writer test as a consumer. [340]
+
 - The catalog declares nine fixture artifacts under mcp/tests/fixtures/knowledge_files/, each introduced by 260928-MIK-L21 and each naming node:mcp/tests/test_knowledge_census_files.py::test_every_census_file_parses_by_schema_and_is_canonical as its replacement contract. This is the complete named nine-artifact class; catalog declarations do not establish execution. Anchor: file [14]
+
+
 - The member-source cases are registered on the read-scope artifact's exact consumer list in canonical ascending order. Anchor: `mcp/tests/test_review_family_member_sources.py` Anchor: file [218]
+
+
 - The read-scope artifact declares test_knowledge_review_attributed_source_content.py as an exact consumer. Anchor: file [223]
+
+
 - All nine retained Doc14 fixture artifact rows declare test_mik_r53_judgment_rows.py and test_mik_r53_report_only_rules.py as exact consumers; these catalog declarations do not establish invocation or acceptance. Anchor: file [224]
+
+
 - The lifecycle catalog declares test_knowledge_conversion_toolchain.py on the curator_coherence_test_support.py and read_scope_test_support.py consumer lists. These are declarations, not invocation or acceptance. The read_scope_test_support.py row lists test_knowledge_conversion_toolchain.py. generation_test_support.py declares test_knowledge_read_boundaries.py and test_knowledge_read_paths.py among its consumers. Anchor: file [225]
+
+
 - The current lifecycle catalog declares test_knowledge_proofs.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py, mcp/tests/knowledge_writer_test_support.py, mcp/tests/writer_worklist_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `anchor_fixture_models.py` artifact row declares `test_knowledge_proofs.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_proofs.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_proofs.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_proofs.py` as an exact consumer. The `knowledge_writer_test_support.py` artifact row declares `test_knowledge_proofs.py` as an exact consumer. The `writer_worklist_test_support.py` artifact row declares `test_knowledge_proofs.py` as an exact consumer. Anchor: file [226]
+
 - The current lifecycle catalog declares test_knowledge_worklist_leaf.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_worklist_leaf.py` as an exact consumer. Anchor: file [228]
 - The current lifecycle catalog declares test_knowledge_currentness.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_currentness.py` as an exact consumer. Anchor: file [230]
+
 - The current lifecycle catalog declares test_knowledge_paging.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py, mcp/tests/tool_entry_point_world.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `anchor_fixture_models.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. The `tool_entry_point_world.py` artifact row declares `test_knowledge_paging.py` as an exact consumer. Anchor: file [232]
 - The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `anchor_fixture_models.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_index_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. The `knowledge_rows_test_support.py` artifact row declares `test_knowledge_leaf_read.py` as an exact consumer. Anchor: file [236]
 - The current lifecycle catalog declares test_unexplained_change_disposition.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/reconsideration_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_unexplained_change_disposition.py` as an exact consumer. The `reconsideration_test_support.py` artifact row declares `test_unexplained_change_disposition.py` as an exact consumer. Anchor: file [239]
+
 - The current lifecycle catalog declares test_knowledge_route_chain.py on ten exact artifact consumer lists. [241]
+
 - The current lifecycle catalog declares test_reconsideration_surfacing.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/reconsideration_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_reconsideration_surfacing.py` as an exact consumer. The `reconsideration_test_support.py` artifact row declares `test_reconsideration_surfacing.py` as an exact consumer. Anchor: file [242]
 - The current lifecycle catalog declares test_worktree_own_environment.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These are source declarations, not invocation, code delivery or acceptance evidence. The `curator_coherence_test_support.py` artifact row declares `test_worktree_own_environment.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_worktree_own_environment.py` as an exact consumer. Anchor: file [261]
 - The permanent shared settings guard declares its owner, replacement node and exact consumers. Anchor: file [262]
@@ -1452,31 +1470,48 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 - The catalog declares test_tool_answer_rows_l111.py among the exact consumers of mcp/tests/curator_coherence_test_support.py. These are current membership declarations, not a new addition, invocation or acceptance account. Anchor: file [276]
 - The held consumers of `mcp/tests/knowledge_rows_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. Anchor: file [286]
 - The catalog declares test_landing_state_refusals.py, test_tool_answer_rows_l111.py among the exact consumers of mcp/tests/knowledge_writer_test_support.py. These are current membership declarations, not a new addition, invocation or acceptance account. Anchor: file [287]
+
 - The read_boundary_oracle_test_support.py artifact declares test_abandoned_series_closeout.py, test_closeout_refusal_aftermath.py, test_direct_landing_leaf_identity.py, test_enclosure_without_remains.py, test_knowledge_gate_routes.py and test_master_chain_public_routes.py among its exact consumers, alongside its retained metadata and other consumers. Declaration is not execution. Anchor: file [288]
+
+
 - The held consumers of `mcp/tests/read_scope_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. Anchor: file [289]
+
 - The existing Node package-lock artifact declares test_task_document_order.py as an exact consumer; membership is not execution. Anchor: file [290]
 - The canonical _user_settings_guard.py artifact declares test_task_document_order.py as an exact consumer; membership is not execution. Anchor: file [291]
+
 - The native-worklist support artifact mcp/tests/writer_worklist_test_support.py declares mcp/tests/test_closeout_live_gate.py and mcp/tests/test_workspace_wake_zero_census.py as exact consumers. The current declaration establishes dependency reachability, not execution. Anchor: file [292]
+
+
 - The reopened-workspace module test_paseo_reopened_workspace.py is declared as a consumer on the existing settings guard, Node lockfile and Paseo-runtime support artifacts; membership does not prove execution. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_paseo_reopened_workspace.py` as an exact consumer. The `paseo_runtime_test_support.py` artifact row declares `test_paseo_reopened_workspace.py` as an exact consumer. Anchor: file [293]
+
 - The settings-guard and Node-lockfile artifact lists both declare test_sync_cancel_deletions.py as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_sync_cancel_deletions.py` as an exact consumer. Anchor: file [294]
 - The current lifecycle catalog declares test_conversion_cost_scans.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_conversion_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_conversion_cost_scans.py` as an exact consumer. The `knowledge_conversion_test_support.py` artifact row declares `test_conversion_cost_scans.py` as an exact consumer. Anchor: file [295]
+
 - The exact consumer populations are eight for test_comparison_changeset.py, twelve for test_knowledge_overview_order.py and thirteen for test_cleanup_repeated_archive_ready.py. conversation_open_test_support.py and eve_adapter_event_test_support.py have no artifact record. reviewer_worklist_process_test_support.py is a declared artifact. These source declarations establish no execution or passing result. [296]
+
 - The settings-guard artifact declares test_route_review_clean_sync_door.py as an exact consumer. This declaration establishes no invocation. Anchor: file [298]
 - The Node package-lock artifact declares test_route_review_clean_sync_door.py as an exact consumer. This is source reachability, not an Owner closure plan or execution evidence. Anchor: file [299]
 - The Node lockfile artifact declares test_worktree_own_environment.py as a consumer; this is dependency accounting, not evidence execution. Anchor: file [302]
+
 - The five test_review_evidence_ modules — bounded_collections, eof, intended, packet and residuals — are declared as exact consumers of _user_settings_guard.py and the portable Node package-lock fixture, and of no other artifact. Catalog membership is not execution. The portable Node package-lock fixture row lists the same five modules. No other artifact row in the catalog lists any of the five modules. Anchor: file [305]
+
 - The portable Node package-lock artifact declares test_developer_messages.py as an exact consumer and has independent-boundary fidelity. Anchor: file [308]
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 122 artifacts. These source declarations establish no execution or passing result. [311]
 - The current lifecycle catalog declares test_curator_instruction_wording.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_conversion_test_support.py, mcp/tests/lifecycle_enclosure_test_support.py, mcp/tests/paseo_launch_test_support.py, mcp/tests/paseo_role_tools_test_support.py, mcp/tests/paseo_runtime_test_support.py, mcp/tests/role_first_message_support.py, mcp/tests/role_instruction_wording_support.py and mcp/tests/writer_worklist_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. Anchor: file [313]
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 122 artifacts. These source declarations establish no execution or passing result. [315]
 - The current settings-guard and Node-lockfile artifact rows both declare test_task_document_order.py as a consumer. Contract/artifact identity and non-consumer metadata are distinct from membership; these declarations establish neither execution nor acceptance. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_task_document_order.py` as an exact consumer. Anchor: file [316]
+
 - The catalog declares test_terminal_notice_commit_recovery.py among the exact consumers of mcp/tests/curator_coherence_test_support.py, mcp/tests/read_boundary_oracle_test_support.py. These are current membership declarations, not a new addition, invocation or acceptance account. The `read_boundary_oracle_test_support.py` artifact row declares `test_terminal_notice_commit_recovery.py` as an exact consumer. Anchor: file [317]
+
 - The settings guard and Node lockfile each declare the after-discovery, publication-merge-admission and landing-workflow-setting tests as consumers. The after-discovery regression asserts that scheduling follows the discovery answer and that the first call starts the same work when discovery was skipped. [318]
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 122 artifacts. Both settings-guard and Node-lockfile artifact rows declare all nine unit-regression L192 retired-provider tests. The Paseo runtime support also declares the projection-watch-roots case. The two shared rows also declare the after-discovery, publication merge admission and landing workflow setting cases. The retired provider-current-state module has no exact consumer declaration. These source declarations establish no execution or passing result. [319]
 - The catalog declares 26 recording artifacts with their consumer ownership. Issue 414 owns the general derivation limitation. [320]
+
 - The catalog declares the browser suite as a consumer of the settings-guard and portable Node-lockfile artifacts. Anchor: file [325]
 - The existing user-settings guard and portable Node-lockfile artifact rows each declare the digest, manifest and pointer instruction-renewal test modules as exact consumers. Membership establishes dependency reachability, not execution or acceptance. [326]
 - The existing artifact rows name the two Lean modules as consumers. [328]
 - The Node package-lock artifact declares test_reviewer_worklist_process.py, test_reviewer_worklist_reads.py and test_reviewer_worklist_warm.py as exact consumers. Anchor: file [95]
+
 - The current lifecycle catalog declares test_converted_onboarding_drift.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/converted_onboarding_drift_support.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These are source declarations, not invocation, code delivery or acceptance evidence. The `converted_onboarding_drift_support.py` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. The `curator_coherence_test_support.py` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_converted_onboarding_drift.py` as an exact consumer. It is not declared on knowledge_conversion_test_support.py. Anchor: file [99]
+
 - The lifecycle catalog declares `mcp/tests/test_githooks_l29_repairs.py` and `mcp/tests/test_sync_commit_check.py` as exact consumers on the user-settings guard and portable Node-lockfile artifacts. [343]

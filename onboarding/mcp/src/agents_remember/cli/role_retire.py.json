@@ -4,8 +4,44 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "023e93b07cfc3def08a05238107dfa8eb68e292c",
-        "content": "sha256:050fcd86580f9175c21ef4687b22fc6d3ca94e3f795a822b882234a1aaf8b04e",
+        "blob": "ece01dd4c4ea63eb902bf90bee6cb28136fa28cd",
+        "content": "sha256:a79d0c33f0b89f86759db5d4000bc6abf6700c28598d08035add04798fc39054",
+        "locator": {
+          "kind": "symbol",
+          "name": "_retire_seat"
+        }
+      },
+      "id": "RLZ-950ZHS",
+      "invariant": "INV-ECNV2S",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rules 1–2",
+        "leaf": "261112-BUG-L44"
+      },
+      "rationale": "Resolves the receipt and applies scope before any retirement effect or repeat.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ece01dd4c4ea63eb902bf90bee6cb28136fa28cd",
+        "content": "sha256:a3b58e491a84597ee9380c7ee49b47335f5b8d7421df8e0ae77b9d2f4adcfc1b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_interruptible"
+        }
+      },
+      "id": "RLZ-BPDA7T",
+      "invariant": "INV-ECNV2S",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rule 5",
+        "leaf": "261112-BUG-L44"
+      },
+      "rationale": "Applies the same interrupt permission to every target role.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ece01dd4c4ea63eb902bf90bee6cb28136fa28cd",
+        "content": "sha256:61dfd5fc14e21eac0ecc7f4b8043931d62a523d6b9c1b0c85355840bf1e1a8a9",
         "locator": {
           "kind": "file"
         }
@@ -21,12 +57,11 @@
     },
     {
       "anchor": {
-        "blob": "023e93b07cfc3def08a05238107dfa8eb68e292c",
-        "content": "sha256:c4a09ad1ec544cd29b1694a272d7ed9a69e5c6ca29d912bc3aa15e8f7c5c960b",
+        "blob": "ece01dd4c4ea63eb902bf90bee6cb28136fa28cd",
+        "content": "sha256:1a7e89431c0e75a80d3ded10338a12aa844516ec681f322f80278d8abc878c4c",
         "locator": {
-          "end": 409,
-          "kind": "line_range",
-          "start": 371
+          "kind": "symbol",
+          "name": "_locate_seat"
         }
       },
       "id": "RLZ-HPM77Q",
@@ -35,32 +70,39 @@
         "handoffEntry": "L100-R100-8-unique-target",
         "leaf": "260928-MIK-L100"
       },
-      "rationale": "The total of matching current and archived records over one refuses the retirement before any host call or disk write, enumerating both sides.",
+      "rationale": "Enumerates all matching current and archived receipts across all roles and refuses duplicate matches before any host call or disk write.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ece01dd4c4ea63eb902bf90bee6cb28136fa28cd",
+        "content": "sha256:7e703be77b6b80e75c7904107f750447671b54327fe6fcd52c499b4d64ee5eb8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_no_open_children"
+        }
+      },
+      "id": "RLZ-QM3PVX",
+      "invariant": "INV-KRCG05",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rule 6",
+        "leaf": "261112-BUG-L44"
+      },
+      "rationale": "Uses launch parent identity, recorded retirement and the child's current host state to establish the open set.",
       "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "The native entry checks original-starter authority before idempotent success or archive. Anchor: `_retire_seat`",
+      "note": "`_retire_seat` locates a unique receipt, checks caller scope via `retirement_scope_refusal`, refuses unresolved launches, and handles authorized `already-retired` repeats before host archival.",
       "targets": [
         {
           "anchor": {
-            "blob": "023e93b07cfc3def08a05238107dfa8eb68e292c",
-            "content": "sha256:a7b6bfb73860c7ea27f10c3a723bfdce86e0a902b85184b0c4eabcbe4911917e",
+            "blob": "ece01dd4c4ea63eb902bf90bee6cb28136fa28cd",
+            "content": "sha256:a79d0c33f0b89f86759db5d4000bc6abf6700c28598d08035add04798fc39054",
             "locator": {
-              "end": 165,
-              "kind": "line_range",
-              "start": 88
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "023e93b07cfc3def08a05238107dfa8eb68e292c",
-            "content": "sha256:050fcd86580f9175c21ef4687b22fc6d3ca94e3f795a822b882234a1aaf8b04e",
-            "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_retire_seat"
             }
           },
           "kind": "code"
@@ -68,12 +110,12 @@
       ]
     },
     "2": {
-      "note": "Unknown and ambiguous native targets refuse before retirement.",
+      "note": "`_locate_seat` enumerates current and archived receipts via `read_enumerated_receipt` and refuses unknown or duplicated agent IDs before any host or disk effect.",
       "targets": [
         {
           "anchor": {
-            "blob": "023e93b07cfc3def08a05238107dfa8eb68e292c",
-            "content": "sha256:c4a09ad1ec544cd29b1694a272d7ed9a69e5c6ca29d912bc3aa15e8f7c5c960b",
+            "blob": "ece01dd4c4ea63eb902bf90bee6cb28136fa28cd",
+            "content": "sha256:1a7e89431c0e75a80d3ded10338a12aa844516ec681f322f80278d8abc878c4c",
             "locator": {
               "kind": "symbol",
               "name": "_locate_seat"
@@ -84,38 +126,37 @@
       ]
     },
     "3": {
-      "note": "Host archive precedes receipt recording; failure is reported rather than rounded up. Anchor: `_archive_retiree` `_record_retirement`",
+      "note": "`_archive_retiree` checks open children and interruption, records `retireIntent` via `hold_retirement` before `_archive_on_host`, clears definitive refusals, and settles via `_finish_retirement` with retryable `retire-record-failed` custody.",
       "targets": [
         {
           "anchor": {
-            "blob": "023e93b07cfc3def08a05238107dfa8eb68e292c",
-            "content": "sha256:5968541e1b21643e0182777650d6e50960eeaa0551e487ae8cc3481d77cfa4b5",
+            "blob": "ece01dd4c4ea63eb902bf90bee6cb28136fa28cd",
+            "content": "sha256:85f135637feb29fe2f5f8b8d4844f54b02117088f9e7f1344e28c17b78218f4b",
             "locator": {
-              "end": 307,
-              "kind": "line_range",
-              "start": 168
+              "kind": "symbol",
+              "name": "_archive_retiree"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "023e93b07cfc3def08a05238107dfa8eb68e292c",
-            "content": "sha256:2103d4aa8fe09d3170d07f051bdefa4b21c9d1b21d0fdd7e8b5f107a739338b0",
+            "blob": "ece01dd4c4ea63eb902bf90bee6cb28136fa28cd",
+            "content": "sha256:5d1aa0df3a92eeb53e4a2fac95b36a9c1c908780a66944991e58d85a2e8eec72",
             "locator": {
-              "end": 444,
-              "kind": "line_range",
-              "start": 412
+              "kind": "symbol",
+              "name": "_finish_retirement"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "023e93b07cfc3def08a05238107dfa8eb68e292c",
-            "content": "sha256:050fcd86580f9175c21ef4687b22fc6d3ca94e3f795a822b882234a1aaf8b04e",
+            "blob": "ece01dd4c4ea63eb902bf90bee6cb28136fa28cd",
+            "content": "sha256:7e703be77b6b80e75c7904107f750447671b54327fe6fcd52c499b4d64ee5eb8",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_require_no_open_children"
             }
           },
           "kind": "code"

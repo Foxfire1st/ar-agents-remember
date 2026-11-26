@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "049d3961dfb898bbd69253d9e0b878188fd1006b",
-    "commit": "ed29e40bb6a27dbba33b106b556da182e02a7429",
+    "codeTree": "af9e749296405ef22b6b165097e02cfef8e50570",
+    "commit": "91bb8c5f96005ee45998e3d5a3618fc28d250bdc",
     "role": "curator",
-    "statement": "On settled tree 049d3961 (commit ed29e40b), docs/features.md accurately describes both the private evidence-bearing essay, figure design, page assembly, reader-driven central mechanism, and complete still form of explainers and the read-only versus mutating MCP tool trust boundaries, typed tool boundaries, answer token bounds, and tool-log locations (unchanged by CAP-L4's lossless inputSchema compaction or L38 adding sharedHeldStores to RUNTIME_INSTALL_ANSWER_FIELDS).",
+    "statement": "On settled crossing-5 tree af9e7492 (commit 91bb8c5f, combining EXP-L1/crossing-4 and BUG-L44), docs/features.md accurately describes feature summaries, skill-tree packaging, closeout/role capabilities, private evidence-bearing explainer essay/figure/page assembly, and read-only versus mutating MCP tool trust boundaries, typed tool boundaries, answer token bounds, and tool-log locations; no BUG-L44 contradiction.",
     "task": "261124-EXP",
     "uncommitted": false
   },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 26,
+  "revision": 27,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -218,7 +218,7 @@
       "path": "mcp/src/agents_remember/memory/carryover_evidence.py"
     },
     {
-      "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
+      "blob": "864dd917963036bf4084b81f219ee468696d72b1",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
@@ -296,14 +296,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T00:51:29+01:00",
+    "at": "2026-11-26T04:22:46+01:00",
     "by": "agent",
-    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-5",
     "effort": "high",
     "harness": "antigravity-acp",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
     "task": "261124-EXP"
   }
 }

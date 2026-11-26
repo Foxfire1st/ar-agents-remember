@@ -224,13 +224,17 @@ The `knowledge_read` adapter routes `writers` through the same selected memory v
 
 - **Retained historical source account — superseded by the current route account:** Skill registrar serves resources/extension methods without tools [59]
 
+
 - The L111 predecessor model-owned public roster had41 after resolve_context removal; the current ordinary source has 44 (including mounted user_settings_init, citation_note_revision and explainer_control; the earlier 42-name epoch is historical). The payload facade still delegates typed requests and whole-result completion rather than becoming policy authority. role_start_payload and role_message_payload keep the addressed target-role context through _tool_payload completion and reset it in finally, with held projections supplied explicitly. This fixes message observer context without changing id resolution, target-role arguments, sender receipt custody or registration ownership. [60]
+
 
 - Current facade exports the retained pure payload builders, including role-agent start/message, memory, task and worktree operations; removed structural, terminal, gate and inbox adapters are not facade members. [44]
 
 - Current single literal PUBLIC_TOOLS contains 44 ordinary public names, including mounted `user_settings_init`, `citation_note_revision` and `explainer_control`, and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The retained base export is the same roster object. [45]
 
+
 - The settings payload that answers a refusal instead of raising it. [61]
+
 
 - The server-info answer without a harness skill root. [62]
 

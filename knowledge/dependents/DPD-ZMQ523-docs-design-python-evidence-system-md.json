@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "029ed9f701f14aca180f3615775e8d0e94541339",
-    "commit": "a1a08ec0f484592a5350a25f6fb7a6296c94d4fb",
+    "codeTree": "af9e749296405ef22b6b165097e02cfef8e50570",
+    "commit": "91bb8c5f96005ee45998e3d5a3618fc28d250bdc",
     "role": "curator",
-    "statement": "On settled crossing-4 tree 029ed9f7 (commit a1a08ec0, combining EXP-L1 and BUG-L29), docs/design/python-evidence-system.md pins no test counts and accurately describes the seven accepting lanes, canonical catalog ordering, and source-derived lifecycle rules across all 832 cataloged modules (680 unit-regression including CAP-L4, EXP-L1's three canvas suites, and BUG-L29's test_githooks_l29_repairs.py and test_sync_commit_check.py; 125 integration; 3 public-contract; 23 architecture-fitness; 1 stress-durability) and 18 contracts / 122 artifacts in evidence-lifecycle.toml.",
+    "statement": "On settled crossing-5 tree af9e7492 (commit 91bb8c5f, combining EXP-L1/crossing-4 and BUG-L44), docs/design/python-evidence-system.md pins no test counts and accurately describes the seven accepting lanes, canonical catalog ordering, and source-derived lifecycle rules across all 832 cataloged modules (680 unit-regression, 125 integration, 3 public-contract, 23 architecture-fitness, 1 stress-durability) and 18 contracts / 122 artifacts in evidence-lifecycle.toml.",
     "task": "261124-EXP",
     "uncommitted": false
   },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 19,
+  "revision": 20,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -71,7 +71,7 @@
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "9864978fd05a491bc26e21095be2b7173659faed",
+      "blob": "756d0da34bbd1dfd799508b6b9d9c398e89f0d6c",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },
@@ -107,9 +107,9 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T03:46:23+01:00",
+    "at": "2026-11-26T04:22:46+01:00",
     "by": "agent",
-    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-4",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-5",
     "effort": "high",
     "harness": "antigravity-acp",
     "model": "gemini-4-neon-high",

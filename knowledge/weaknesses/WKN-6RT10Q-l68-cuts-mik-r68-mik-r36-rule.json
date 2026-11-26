@@ -1,7 +1,7 @@
 {
   "anchor": {
-    "blob": "9124be375703846117abf9f0f4fee05c1044befd",
-    "content": "sha256:1764da55dc7d25c854bf9869ec0c028d5235b79e51a4c80ef9f7c1ea8c4b79a7",
+    "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+    "content": "sha256:ec64f336cb0127273bd6db45bc49ae5198669d9abb6f56be99e0c2b0055182a1",
     "locator": {
       "kind": "file"
     },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L118",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
@@ -26,14 +26,14 @@
   "state": "open",
   "statement": "L68 cuts them (MIK-R68, MIK-R36 rule 9); a task that meets this rule lands with the size named and adds its file here; a task adding over 300 lines to such a file says why in its report. L117 lands with paseo_role_tools.py named (1,835 in its candidate). Not fixed here.",
   "writer": {
-    "at": "2026-11-25T19:57:06+01:00",
+    "at": "2026-11-26T02:42:00+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
+    "leaf": "261112-BUG-L44",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
     "task": "261112-BUG"
   }
 }

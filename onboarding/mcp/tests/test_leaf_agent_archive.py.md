@@ -40,7 +40,9 @@ Recovery runtime fixtures carry a real BackgroundLedger. The lifespan case parks
 
 - Stale publication keeps the archive and only the exact leaf mark refuses. [4]
 
+
 - Current, history and retry selection preserve every artifact. [5]
+
 - Predecessor debt survives host failure and automatic recovery advances it. [6]
 
 - Debt-write failure recovers from terminal truth after restart. [7]

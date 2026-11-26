@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "29ac4d5e75a9e54475ec617732ab37e9e4fa8983",
-        "content": "sha256:4840210cc9347c841af2b4c440ce6decbf387a0bdb002881328e896e4c959c48",
+        "blob": "39f6d89796e397654995820c7fd5f3e8fd12c4b6",
+        "content": "sha256:bb4d5fdb0e6276216af40da68575df3df3d80e36dc12d6ac6eb1a8a2506e31e9",
         "locator": {
           "kind": "file"
         }
@@ -16,13 +16,13 @@
         "handoffEntry": "CAP-R04@v1 §3 description optimization",
         "leaf": "261124-CAP-L4"
       },
-      "rationale": "Optimizes retire_child docstring from 207 to 142 chars while preserving starter-only, interrupt_turn, inert-repeat, and doc pointer facts.",
+      "rationale": "Keeps retire_child raw description compact (<= 500 chars) while advertising scope-based any-role retirement, interrupt_turn, and docs pointer.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "29ac4d5e75a9e54475ec617732ab37e9e4fa8983",
-        "content": "sha256:475620457edee297f7dbb79428b6537cc2f7e773fffd18b8f44b18602fa8db81",
+        "blob": "39f6d89796e397654995820c7fd5f3e8fd12c4b6",
+        "content": "sha256:74a02fb1073233327d9fe3394068a1f52b638eb057822c49590646fd4d6d92e6",
         "locator": {
           "kind": "symbol",
           "name": "register_seat_retirement_tools"
@@ -40,14 +40,15 @@
   ],
   "references": {
     "1": {
-      "note": "Native child retirement registration: implementation/assertion boundary described above.",
+      "note": "`register_seat_retirement_tools` registers scope-based `retire_child` with required `agent_id` and `role`, optional task references, `reason`, and `interrupt_turn`.",
       "targets": [
         {
           "anchor": {
-            "blob": "29ac4d5e75a9e54475ec617732ab37e9e4fa8983",
-            "content": "sha256:4840210cc9347c841af2b4c440ce6decbf387a0bdb002881328e896e4c959c48",
+            "blob": "39f6d89796e397654995820c7fd5f3e8fd12c4b6",
+            "content": "sha256:74a02fb1073233327d9fe3394068a1f52b638eb057822c49590646fd4d6d92e6",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "register_seat_retirement_tools"
             }
           },
           "kind": "code"
@@ -55,14 +56,15 @@
       ]
     },
     "2": {
-      "note": "The `retire_child` signature stays strict while the payload loads only when retirement is invoked.",
+      "note": "The `retire_child` signature stays strict while `tools.retire_child_payload` loads only when retirement is invoked.",
       "targets": [
         {
           "anchor": {
-            "blob": "29ac4d5e75a9e54475ec617732ab37e9e4fa8983",
-            "content": "sha256:4840210cc9347c841af2b4c440ce6decbf387a0bdb002881328e896e4c959c48",
+            "blob": "39f6d89796e397654995820c7fd5f3e8fd12c4b6",
+            "content": "sha256:74a02fb1073233327d9fe3394068a1f52b638eb057822c49590646fd4d6d92e6",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "register_seat_retirement_tools"
             }
           },
           "kind": "code"

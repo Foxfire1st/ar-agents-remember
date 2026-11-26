@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "029ed9f701f14aca180f3615775e8d0e94541339",
-    "commit": "a1a08ec0f484592a5350a25f6fb7a6296c94d4fb",
+    "codeTree": "af9e749296405ef22b6b165097e02cfef8e50570",
+    "commit": "91bb8c5f96005ee45998e3d5a3618fc28d250bdc",
     "role": "curator",
-    "statement": "On settled crossing-4 tree 029ed9f7 (commit a1a08ec0, combining EXP-L1 and BUG-L29), docs/reference/mcp-tools.md remains accurate across both sides: continued code-side merge commit rules (git commit -m with Commit-Check-Pass when a runnable pre-commit hook exists and git commit --no-edit when none does, never --no-verify, under orchestration.landing.commitCheckTimeoutSeconds with retained log, sync-commit-check-failed details, and preserved merge state/index rollback), host-run role-agent single-server grants on agents-remember-task, all 44 public tools and the four dedicated explainer tools after EXP-L1's inventory/kitAssets/inventoryOmitted packing in explainer_tools.py, and L38/L37 runtime_install, worktree_cleanup/abandon, and role_message refusal/held-drain semantics.",
+    "statement": "On settled crossing-5 tree af9e7492 (commit 91bb8c5f, combining EXP-L1/crossing-4 and BUG-L44), docs/reference/mcp-tools.md remains accurate across both sides: BUG-L44 scope-based any-role retire_child authority, open-child refusal, explicit interrupt_turn permission, and current-scope replacement rules (lines 580, 619-623, 651-660), BUG-L29 continued code-side merge commit rules under orchestration.landing.commitCheckTimeoutSeconds and host-run single-server grants on agents-remember-task, all 44 public tools and the four dedicated explainer tools after EXP-L1's inventory/kitAssets/inventoryOmitted packing in explainer_tools.py, and L38/L37 runtime_install, worktree_cleanup/abandon, and role_message refusal/held-drain semantics.",
     "task": "261124-EXP",
     "uncommitted": false
   },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 23,
+  "revision": 24,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -98,7 +98,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
     },
     {
-      "blob": "29ac4d5e75a9e54475ec617732ab37e9e4fa8983",
+      "blob": "39f6d89796e397654995820c7fd5f3e8fd12c4b6",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
     },
@@ -128,7 +128,7 @@
       "path": "mcp/src/agents_remember/mcp/read_only.py"
     },
     {
-      "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
+      "blob": "864dd917963036bf4084b81f219ee468696d72b1",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
@@ -143,12 +143,12 @@
       "path": "mcp/src/agents_remember/cli/role_start_answer.py"
     },
     {
-      "blob": "d32955efa5176e04643993e613a83bece41b81d2",
+      "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
     },
     {
-      "blob": "9124be375703846117abf9f0f4fee05c1044befd",
+      "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
@@ -423,9 +423,9 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T03:46:23+01:00",
+    "at": "2026-11-26T04:22:46+01:00",
     "by": "agent",
-    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-4",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-5",
     "effort": "high",
     "harness": "antigravity-acp",
     "model": "gemini-4-neon-high",

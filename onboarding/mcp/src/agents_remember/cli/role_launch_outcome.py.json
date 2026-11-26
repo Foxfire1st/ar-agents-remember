@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7a5856e55ebfa867ec97add374ebe1a33174adb2",
+        "blob": "e0ef3910426a932d881fa0310209f25ca25a358f",
         "content": "sha256:deec7c55a3c740540045f59d404a5587b6d96b8d1fcf752debfc43928d64541e",
         "locator": {
-          "end": 62,
+          "end": 71,
           "kind": "line_range",
-          "start": 62
+          "start": 71
         }
       },
       "id": "RLZ-36FEFX",
@@ -24,15 +24,14 @@
   ],
   "references": {
     "1": {
-      "note": "Created/held/unknown results preserve prior lifecycle semantics.",
+      "note": "Created/held/unknown results preserve prior lifecycle semantics.\n\nAnchor: `publish_launch_outcome`",
       "targets": [
         {
           "anchor": {
-            "blob": "7a5856e55ebfa867ec97add374ebe1a33174adb2",
-            "content": "sha256:960687ba725703cfd98e745a0db18fa6d1bc861426c6548a6a9ed75897ae7f90",
+            "blob": "e0ef3910426a932d881fa0310209f25ca25a358f",
+            "content": "sha256:6ef8e50b42bacc6c624c3559c082efb69c320c460c36a739153705d87fecce8c",
             "locator": {
-              "kind": "symbol",
-              "name": "publish_launch_outcome"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -44,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a5856e55ebfa867ec97add374ebe1a33174adb2",
-            "content": "sha256:ac85131a33d5b8f712e1bf8f964a87d1fcfaf1e89ca47eb198b5e834bae16004",
+            "blob": "e0ef3910426a932d881fa0310209f25ca25a358f",
+            "content": "sha256:b69209b0f2b51bdb330077f3072bbb731d4fa1675a05023ed214116575c763c2",
             "locator": {
-              "end": 92,
+              "end": 101,
               "kind": "line_range",
-              "start": 55
+              "start": 68
             }
           },
           "kind": "code"
@@ -61,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7b45112bae598c1364e045d6c0a11d384b90c95",
-            "content": "sha256:99885153127f0b4e879eb72fb95a02175c52b601421e7c3c4fcf35e79a11d996",
+            "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+            "content": "sha256:8613ced8228899a6849b989ca0556c09178660f421016e3721bd2575df4f3985",
             "locator": {
-              "end": 179,
+              "end": 205,
               "kind": "line_range",
-              "start": 106
+              "start": 127
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },

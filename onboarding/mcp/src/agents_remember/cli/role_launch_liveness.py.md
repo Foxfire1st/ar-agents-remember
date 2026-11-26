@@ -10,7 +10,7 @@ Refreshes receipt facts from one native agent read and reconciles new starts wit
 
 ## Code Commentary
 
-The receipt liveness read skips unresolved or rejected launches. The options coordinator can read the agent outside the dispatch lock, then pass the observation to the liveness projection only when the saved receipt still matches. _apply_reading writes only changed lifecycle fields and never on unreachable reads; response-only unreachable detail preserves last known status. Revive republishes the saved receipt’s role identity through `resume_role_agent` before resuming only the same closed agent, persists answered refusal, and drops that refusal only after seeing the session open. New Start applies open-execution policy to current native facts. For a leaf seat, a finished turn or closed session does not free its unarchived holder. An ordinary new request must explicitly name that holder for replacement; only the recorded starter or the dashboard launcher may authorize it, and interrupting an ordinary active replacement requires the explicit flag. A catalog-validated step-up can infer the current base holder, but still applies that caller authority and always requires idle/no pending permission; its replacement never interrupts an active turn. An unreadable holder fails closed rather than appearing free. The replacement records retirement before archiving the prior receipt and preserves predecessor report custody.
+The receipt liveness read skips unresolved or rejected launches. The options coordinator can read the agent outside the dispatch lock, then pass the observation to the liveness projection only when the saved receipt still matches. `_apply_reading` locks the receipt, preserves any existing `retiredBy`, routes host-confirmed `archived`/`gone` observations through `_observe_host_archive` (which defers when `retireIntent` or `_leaf_is_closing` is present and otherwise calls `settle_retirement(..., caller="host", reason="host archive", host_state=...)` to record host-archive attribution and settle the held store), and otherwise applies changed lifecycle fields via `_apply_status_row` without writing on unreachable reads (response-only unreachable detail preserves last known status). Revive republishes the saved receipt’s role identity through `resume_role_agent` before resuming only the same closed agent, persists answered refusal, and drops that refusal only after seeing the session open. New Start applies open-execution policy to current native facts. For non-leaf replacements (`_reconcile_non_leaf`), an open execution still refuses HTTP 409; for a closed non-rejected execution without `retiredBy`, it reserves `retireIntent` via `hold_retirement` before archiving the receipt so `finish_replacing_predecessor` records retirement after acknowledged archival. For a leaf seat, a finished turn or closed session does not free its unarchived holder. An ordinary new request must explicitly name that holder for replacement; non-step-up replacement authorizes by caller scope via `retirement_scope_refusal` (or the dashboard launcher), and interrupting an active turn or running subagents requires `replaces_interrupt_turn=true`. A step-up replacement (`replacement.step_up`) enforces starter-only authority (`parentAgentId`) and `_require_step_up_idle` always refuses active turns, pending permissions, or running subagents even with interruption requested. An unreadable holder fails closed rather than appearing free. Replacement reserves `retireIntent` via `_reserve_leaf_predecessor` before archiving the prior receipt and preserves predecessor report custody.
 
 A held receipt keeps the product status `held` through an ordinary host idle reading. Only an archived or vanished holder frees that seat; an unreachable host leaves its saved held state intact. Ordinary revive and closing-mark behavior stays separate.
 
@@ -19,9 +19,9 @@ A held receipt keeps the product status `held` through an ordinary host idle rea
 
 ## Current Contract — Scoped Launch And Settings Changes
 
-Same-request reconciliation checks request digest first, reconciles its task step-up decision, then re-executes starting/unknown or a rejected stepped-up receipt that still has replayRequest. Other resolved receipts continue through refresh. A missing recorded native Antigravity agent settles the refusal and drops the replay call, which closes this Retry path.
+Same-request reconciliation checks request digest first, reconciles its task step-up decision, then re-executes `starting`/`unknown`, or restarts via `_restart_closed_execution` when `status == "stopped"` (including host-observed archives, since `receipt_is_explicitly_retired` is False for `caller == "host"`) or `status == "rejected" and stepUp` with a saved `replayRequest`, neither explicitly retired nor `_leaf_is_closing`. Other resolved receipts continue through refresh. A missing recorded native Antigravity agent settles the refusal and drops the replay call, which closes this Retry path.
 
-Ordinary leaf replacement still requires a named holder and starter/launcher authority, with explicit permission to interrupt a normal active replacement. For a validated step-up, runtime wiring can infer that holder but _require_step_up_idle always refuses pending permission or active/running turns even when interruption was requested.
+Ordinary leaf replacement requires a named holder and `retirement_scope_refusal` caller scope (or the dashboard launcher), with `replaces_interrupt_turn=true` for an active turn or running subagents. For a step-up replacement, only the original starter (`parentAgentId`) or launcher may authorize it, and `_require_step_up_idle` always refuses pending permission, active turns, or running subagents even when interruption was requested.
 
 The saved-call executor renews predecessor liveness for a step-up receipt whose saved launch names an `archiveAgentId`, including Retry and recovery through that executor. An unreachable host refuses the call. A found, unarchived predecessor must be idle and prompt-free.
 
@@ -35,7 +35,7 @@ No finished turn accepts AR work or frees a live leaf holder. Held-state persist
 
 
 
-- The current reading updates changed lifecycle fields. An unreachable reading preserves the receipt and labels the response as last known. [2]
+- The current reading updates changed lifecycle fields or settles host-observed archives without overwriting `retiredBy` or pending `retireIntent`. An unreachable reading preserves the receipt and labels the response as last known. [2]
 
 
 
@@ -68,14 +68,9 @@ Selected-task Investigator starts reconcile their exact request instead of adopt
 
 
 
-- The current source implements this file’s stated Investigator boundary. [13]
-
-
-
+- The current source implements this file’s stated Investigator and reconciliation boundaries. [13]
 
 ## Refreshed current evidence
-
-
 
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [4]
 
@@ -97,18 +92,8 @@ Custody: the preceding sentence is detached from live reference 12; original tar
 
 
 
-- Digest-bound same-request replay reconciles decisions and empty successors. Anchor: Current source; preserved L88 property 14 [14]
-
-
-
-
-- Replacement authority remains while step-up adds unconditional idle/prompt checks. [15]
-
-
-
-
-
-
+- Digest-bound same-request replay reconciles decisions, restarts eligible non-explicitly-retired closed receipts, and reconciles empty successors. [14]
+- Ordinary leaf replacement uses caller scope (`retirement_scope_refusal`) while step-up keeps starter-only authority and unconditional idle/prompt/subagent checks. [15]
 - The saved-call executor rechecks the named step-up predecessor before archiving it. A found, unarchived predecessor must be idle and prompt-free. [16]
 
 

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "2e79f14e621878f776217e876e3953c8a4903aec",
-    "commit": "50292a3bfed059fe4f0aa9f087a6156bf1b754f9",
+    "codeTree": "ede5d128e75765d40987bf3981b1d97ed4326bae",
+    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
     "role": "curator",
-    "statement": "Verified line-by-line on synced code (base 50292a3b + L29): mcp/README.md (lines 1-132) remains accurate after L29 worktree_sync commit-check documentation update in docs/reference/mcp-tools.md and the mcp/pyproject.toml 3.0.8 version bump; all 44 public tools in 8 matching groups, 4 explainer tools, --config CLI commands, and install/dashboard/host instructions match live code and docs/reference/mcp-tools.md.",
-    "task": "261112-BUG-L29",
+    "statement": "Audited mcp/README.md line by line against synced L44 code tree ede5d128 (base 150b9778): MCP package overview and runtime entry points remain accurate; no L44 contradiction.",
+    "task": "261112-BUG-L44",
     "uncommitted": true
   },
   "document": "mcp/README.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 21,
+  "revision": 22,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
     },
     {
-      "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
+      "blob": "864dd917963036bf4084b81f219ee468696d72b1",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
@@ -56,20 +56,20 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "335d4461282e2836f4af863df677d07e72ff461a",
+      "blob": "75b87463d56735c381998eb394124669f4a58e3c",
       "kind": "file",
       "path": "docs/reference/mcp-tools.md"
     }
   ],
   "writer": {
-    "at": "2026-11-26T00:49:11+01:00",
+    "at": "2026-11-26T02:42:00+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L29",
+    "leaf": "261112-BUG-L44",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
     "task": "261112-BUG"
   }
 }

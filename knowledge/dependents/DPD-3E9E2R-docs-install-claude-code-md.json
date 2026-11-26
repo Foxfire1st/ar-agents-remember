@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "51a44523acb6c29c3a029c7dde4a35acb96595f3",
-    "commit": "3bbaf460317e8572583d884bc0791a219ad1bcfa",
+    "codeTree": "ede5d128e75765d40987bf3981b1d97ed4326bae",
+    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
     "role": "curator",
-    "statement": "The Claude Code guide's permission-mode account and the server_info-only pre-approval still hold on b29f2e2; the role-scoped Codex grant does not touch the Claude branch. On code 51a44523 (gen-8 sync onto CAP-L1 and BUG-L26) the landing answer rosters only add the key briefsProblem; the guide's Claude selection, implicit Bootstrap and server_info-only pre-approval are untouched.",
-    "task": "261112-KNO-L4",
+    "statement": "Audited docs/install/claude-code.md line by line against synced L44 code tree ede5d128 (base 150b9778): Claude Code installation and MCP configuration remain accurate; no L44 contradiction.",
+    "task": "261112-BUG-L44",
     "uncommitted": true
   },
   "document": "docs/install/claude-code.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "0fc638828611b97d33b29b06297cc62431902dc2",
+      "blob": "ca833123cd3e62b5a60b14eaeb78fbb6b296c2f0",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
@@ -80,5 +80,16 @@
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/protocol/dist/provider-manifest.js"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T02:42:00+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L44",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+    "task": "261112-BUG"
+  }
 }
