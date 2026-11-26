@@ -1,7 +1,7 @@
 {
   "anchor": {
-    "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
-    "content": "sha256:1fc5408d58c547cb879e98d095c355a5389b58d59ac3e498c1444f3cbee96b15",
+    "blob": "5a31b237d96f6657bdcc61f1534897bee2c94306",
+    "content": "sha256:9b55c80787399a0fc8ae6b88d7fb5b0ac17716a711ee31e2c3f226765be2473f",
     "locator": {
       "kind": "symbol",
       "name": "_resolve_direct_workspace"
@@ -18,7 +18,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
@@ -27,14 +27,14 @@
   "state": "open",
   "statement": "Texts of the product use a second word for a thing that the documentation names once, for example series contract for the worktree contract here, tool-call log beside toolLog, invariant gate beside knowledge-gate-refused, and leaf beside task in labels.",
   "writer": {
-    "at": "2026-11-25T19:57:06+01:00",
+    "at": "2026-11-26T14:04:00+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
+    "leaf": "261112-BUG-L54",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
     "task": "261112-BUG"
   }
 }

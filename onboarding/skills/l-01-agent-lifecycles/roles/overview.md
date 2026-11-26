@@ -30,7 +30,7 @@ A code concern from Curator reaches both Worker and Reviewer even after code PAS
 
 Ready leaves land successively; the coordination operation describes a train in which each synchronises once to the previous landing. Worker performs the supported leaf sync when its line moves. Native memory-file conflicts go to Curator for content repair; Manager captures, verifies and stages the resolution, and Worker continues the supported sync with the exact contract. None of these peer acts transfers transaction ownership.
 
-In `roles/reviewer.md`, memory-lane review also inspects `memory_quality_check` report-only findings for pre-base-stale dependent confirmations and `deferral_lifted` rows under `OM-6`, alongside the existing `cutCards`/`addedFiles` landing-evidence duties.
+In `roles/reviewer.md`, memory-lane review also inspects `memory_quality_check` report-only findings for pre-base-stale dependent confirmations and `deferral_lifted` rows under `OM-6`, alongside the existing `cutCards`/`addedFiles` landing-evidence duties; Reviewers write verdicts in the handover's local report folder (`role-reports/` on a leaf, `notes/reports/` on other seams) and record memory `verdictRef` as an existing absolute path, `role-reports/<rel>`, or `notes/reports/<rel>`.
 
 ## Construction And Ownership
 
@@ -271,7 +271,9 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 
 - Families are authored as records items and external documents as card references; the file writer does not read the entry keys family and external_sources. [38]
 
+
 - Native enclosure preparation reads contract-scoped status and refuses unsuccessful preparation; this alone does not prove the historical whole-path lineage claim. [43]
+
 
 - Graph absence declares no dependencies and resolves the atomic shape without serializing masters.  Anchor: `resolve_scheduling_mode`, `effective_execution_nature` [44]
 

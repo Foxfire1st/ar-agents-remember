@@ -473,12 +473,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "blob": "e022e0150f64e278850c4b2845e4278e1727b474",
             "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
             "locator": {
-              "end": 521,
+              "end": 529,
               "kind": "line_range",
-              "start": 493
+              "start": 501
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -486,12 +486,12 @@
         },
         {
           "anchor": {
-            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "blob": "e022e0150f64e278850c4b2845e4278e1727b474",
             "content": "sha256:3e22d398f99072599657b0eb648c6ae1cbd7dd15c54a6e8ed712d7c3de83c441",
             "locator": {
-              "end": 625,
+              "end": 633,
               "kind": "line_range",
-              "start": 524
+              "start": 532
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -499,12 +499,12 @@
         },
         {
           "anchor": {
-            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "blob": "e022e0150f64e278850c4b2845e4278e1727b474",
             "content": "sha256:10ce5b547e465ec1531e4b6cd70f0cd3cfa872e71008466f7b03f79cd2bde23d",
             "locator": {
-              "end": 689,
+              "end": 697,
               "kind": "line_range",
-              "start": 668
+              "start": 676
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -512,8 +512,8 @@
         },
         {
           "anchor": {
-            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
-            "content": "sha256:5c3f0c44bb9c1ca2c8046747bd32786050de5a3f3eda7013c7c59e8a6a60c548",
+            "blob": "e022e0150f64e278850c4b2845e4278e1727b474",
+            "content": "sha256:bf35277c68855ae6f49e15abbf8d2088a8a3cfe7a428298cc9e1b0c97a903e81",
             "locator": {
               "kind": "file"
             },

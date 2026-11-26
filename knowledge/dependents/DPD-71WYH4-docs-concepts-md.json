@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "671ece4cbd090a47cbb540dd59f157804c676424",
-    "commit": "db236f3c6b164f19a905fb2174e5dc3543d21f9d",
+    "codeTree": "814fd2ebf624596c42f60f2e7c93b3a3a3ac6fc3",
+    "commit": "4bf4b66edfb43ed63e4010071296c9cf0991b55b",
     "role": "curator",
-    "statement": "Audited docs/concepts.md on L52-synced L51 code tree 671ece4c (base db236f3c/9f01ab59): concepts, seat-identity lifecycle, dependent deferral contract, and IDENTITY MISMATCH: carve-out remain accurate; no contradiction.",
-    "task": "261112-BUG-L51",
+    "statement": "Audited docs/concepts.md on 261112-BUG-L54 candidate 814fd2eb: report-folder, enclosure, closeout, and review concepts remain accurate after adding COLLECTED_REPORT_DIRECTORY, collected_report_ref, and is_collected_report_ref in worktrees/role_reports.py, with zero contradictions.",
+    "task": "261112-BUG-L54",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 31,
+  "revision": 32,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -196,7 +196,7 @@
       "path": "mcp/src/agents_remember/application/tool_answer_log.py"
     },
     {
-      "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+      "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/role_reports.py"
     },
@@ -468,14 +468,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T10:27:33+01:00",
+    "at": "2026-11-26T14:04:00+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L51",
+    "leaf": "261112-BUG-L54",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
+    "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
     "task": "261112-BUG"
   }
 }

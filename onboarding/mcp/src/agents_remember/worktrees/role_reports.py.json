@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
         "content": "sha256:f7d48c4cb8241446dc090c468fc636344e0aa2bf86443ff9809d19cd3f52ada9",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
         "content": "sha256:f7d48c4cb8241446dc090c468fc636344e0aa2bf86443ff9809d19cd3f52ada9",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
         "content": "sha256:a56ee299072a448e43a205563b6d7f618219e59bfc96778e93f89e11cc811d2e",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,25 @@
     },
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
+        "content": "sha256:90cb4ed7e0b90a12d67bb63934365b78411346b57632bdabd74a93c4d26c3d55",
+        "locator": {
+          "kind": "symbol",
+          "name": "collected_report_ref"
+        }
+      },
+      "id": "RLZ-90MMYX",
+      "invariant": "INV-K03WFZ",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §3",
+        "leaf": "261112-BUG-L54"
+      },
+      "rationale": "Single shared definition of the <rel> -> notes/reports/<rel> step next to ROLE_REPORT_DIRECTORY using COLLECTED_REPORT_DIRECTORY and derived COLLECTED_REPORT_PARTS.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
         "content": "sha256:3f10ae98a4c8761409810abb12b5452035f0958e86103f6e6475a726e402539c",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
         "content": "sha256:1f9511937df21297f649ae38c73213d31257c221dfa45b811585a73871cc405b",
         "locator": {
           "kind": "symbol",
@@ -93,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
         "content": "sha256:a56ee299072a448e43a205563b6d7f618219e59bfc96778e93f89e11cc811d2e",
         "locator": {
           "kind": "symbol",
@@ -111,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
-        "content": "sha256:7a3d4f425fe9a17dc9d36942249cf188fce3b7ba0d62f7333213771360e4a03e",
+        "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
+        "content": "sha256:939d81d9f444edf146997bf1cc75af15b72fc2b1c1fc0eb53de6a4eaf9041b32",
         "locator": {
           "kind": "symbol",
           "name": "collect_group_reports"
@@ -129,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
         "content": "sha256:cef6aa881c187a14c3b5b9f06ce38dbd12940ec9f31ed1b22cbdfaf96e69b2b2",
         "locator": {
           "kind": "symbol",
@@ -147,7 +165,25 @@
     },
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
+        "content": "sha256:939d81d9f444edf146997bf1cc75af15b72fc2b1c1fc0eb53de6a4eaf9041b32",
+        "locator": {
+          "kind": "symbol",
+          "name": "collect_group_reports"
+        }
+      },
+      "id": "RLZ-HWSM8E",
+      "invariant": "INV-K03WFZ",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §3",
+        "leaf": "261112-BUG-L54"
+      },
+      "rationale": "Collects group role-reports into contract.task_root / COLLECTED_REPORT_DIRECTORY so the collector destination shares the single collected-form definition.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
         "content": "sha256:b383884d5fd979d25ec4170406b2bccb264cb72d69e34af2653c01c7319a09f1",
         "locator": {
           "kind": "symbol",
@@ -165,12 +201,12 @@
     },
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
         "content": "sha256:750163d382064732d0055cae8addbfdc8eb0e46b149f82892d466bbe3ed6e7ce",
         "locator": {
-          "end": 300,
+          "end": 327,
           "kind": "line_range",
-          "start": 229
+          "start": 256
         }
       },
       "id": "RLZ-KK0WAS",
@@ -184,7 +220,7 @@
     },
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
         "content": "sha256:f7d48c4cb8241446dc090c468fc636344e0aa2bf86443ff9809d19cd3f52ada9",
         "locator": {
           "kind": "symbol",
@@ -199,6 +235,24 @@
       },
       "rationale": "Only safe regular report files are copied with size and link checks; collection errors are named and canonical readback establishes each copied identity.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
+        "content": "sha256:e930f553f2bb7a55bfe2b1ce8d6b2f585f3069e024fc3acd1f96c17922d0e88b",
+        "locator": {
+          "kind": "symbol",
+          "name": "is_collected_report_ref"
+        }
+      },
+      "id": "RLZ-PPZQVZ",
+      "invariant": "INV-K03WFZ",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §3",
+        "leaf": "261112-BUG-L54"
+      },
+      "rationale": "Single predicate identifying whether a verdict reference is already in task-relative notes/reports/<rel> form using derived COLLECTED_REPORT_PARTS.",
+      "role": "support"
     }
   ],
   "references": {
@@ -207,7 +261,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+            "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
             "content": "sha256:f7d48c4cb8241446dc090c468fc636344e0aa2bf86443ff9809d19cd3f52ada9",
             "locator": {
               "kind": "symbol",
@@ -223,7 +277,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+            "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
             "content": "sha256:b383884d5fd979d25ec4170406b2bccb264cb72d69e34af2653c01c7319a09f1",
             "locator": {
               "kind": "symbol",
@@ -235,12 +289,12 @@
       ]
     },
     "3": {
-      "note": "Group collection serves terminal cleanup and abandon paths.",
+      "note": "Group collection serves terminal cleanup and abandon paths and targets `contract.task_root / COLLECTED_REPORT_DIRECTORY`.",
       "targets": [
         {
           "anchor": {
-            "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
-            "content": "sha256:7a3d4f425fe9a17dc9d36942249cf188fce3b7ba0d62f7333213771360e4a03e",
+            "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
+            "content": "sha256:939d81d9f444edf146997bf1cc75af15b72fc2b1c1fc0eb53de6a4eaf9041b32",
             "locator": {
               "kind": "symbol",
               "name": "collect_group_reports"
@@ -255,12 +309,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+            "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
             "content": "sha256:d9228a04cc154a8c5389655698902bb6dd1bba574c3f821ae43aacde4586a1ed",
             "locator": {
-              "end": 416,
+              "end": 443,
               "kind": "line_range",
-              "start": 357
+              "start": 384
             }
           },
           "kind": "code"
@@ -272,11 +326,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+            "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
             "content": "sha256:3f10ae98a4c8761409810abb12b5452035f0958e86103f6e6475a726e402539c",
             "locator": {
               "kind": "symbol",
               "name": "canonical_execution_reports"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`collected_report_ref` and `is_collected_report_ref` define and validate the canonical `notes/reports/<rel>` collected form beside `ROLE_REPORT_DIRECTORY`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
+            "content": "sha256:90cb4ed7e0b90a12d67bb63934365b78411346b57632bdabd74a93c4d26c3d55",
+            "locator": {
+              "kind": "symbol",
+              "name": "collected_report_ref"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
+            "content": "sha256:e930f553f2bb7a55bfe2b1ce8d6b2f585f3069e024fc3acd1f96c17922d0e88b",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_collected_report_ref"
             }
           },
           "kind": "code"

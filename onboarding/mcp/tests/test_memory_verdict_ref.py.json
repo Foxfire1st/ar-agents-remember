@@ -1,0 +1,365 @@
+{
+  "path": "mcp/tests/test_memory_verdict_ref.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+        "content": "sha256:1eb5628eb3c55d22a3f6cb91861a8e1add439b0c57207df4a92fa0a6de3086d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_collected_report_ref_defines_the_collected_path"
+        }
+      },
+      "facet": "Verifies collected_report_ref formats relative paths under COLLECTED_REPORT_DIRECTORY, refuses empty and traversal inputs, and is_collected_report_ref accepts only non-escaping task-relative notes/reports/<rel>.",
+      "id": "PRF-00GMT6",
+      "invariant": "INV-K03WFZ",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §3",
+        "leaf": "261112-BUG-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+        "content": "sha256:f927b48aafcdcf70b515a75cbb77c00c81228bba3a71f9456756449e273e5ea6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_end_to_end_closeout_and_cleanup_keeps_verdict_ref_readable"
+        }
+      },
+      "facet": "Runs full closeout, integration, and worktree cleanup from an absolute worktree verdictRef and proves the committed history record names notes/reports/<rel> which opens after cleanup.",
+      "id": "PRF-15X6K2",
+      "invariant": "INV-793X8F",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §2",
+        "leaf": "261112-BUG-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+        "content": "sha256:ca8a2b125d2fc913bd387d4356b4f8b6fadac0b5a4c7759e113436299770823b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_record_review_uses_bound_leaf_contract_not_series_contract"
+        }
+      },
+      "facet": "Refuses role-reports/<rel> that exists only in a series worktree group when no leaf enclosure contract is bound, with review-verdict-ref-invalid listing all three accepted forms.",
+      "id": "PRF-5GDVK9",
+      "invariant": "INV-JAFF6J",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §1",
+        "leaf": "261112-BUG-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+        "content": "sha256:84239f3ea0f8ae6a28ced63ef8b27511fd85ffe60086f9fee613fbc39bb588cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unmapped_preexisting_verdict_ref_is_written_as_today_and_named_in_direct_landing"
+        }
+      },
+      "facet": "Preserves a pre-existing bare verdictRef in direct-landing history and emits unmapped_verdict_ref_note in both the landing summary and committed_review_note.",
+      "id": "PRF-7E3QAH",
+      "invariant": "INV-793X8F",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §2",
+        "leaf": "261112-BUG-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+        "content": "sha256:46554d33f6a6c00b33251d57de19c8c32c06300254627a36f5e601ff6cb97cb8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_role_launch_task_report_root_producers_follow_collected_report_directory"
+        }
+      },
+      "facet": "Statically scans every taskReportRoot producer in mcp/src/agents_remember/ for duplicate notes/reports literals and dynamically monkeypatches COLLECTED_REPORT_DIRECTORY across enclosed-leaf, direct-leaf, and non-leaf role starts.",
+      "id": "PRF-9TPPFY",
+      "invariant": "INV-K03WFZ",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §3",
+        "leaf": "261112-BUG-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+        "content": "sha256:3c54c4ea6d5846be857530994e23888a20d47b31095ec3e292f47ca2789adb5f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_collect_group_reports_and_collected_report_ref_share_one_definition"
+        }
+      },
+      "facet": "Verifies COLLECTED_REPORT_PARTS derives from COLLECTED_REPORT_DIRECTORY and collect_group_reports writes the exact file named by task_root / collected_report_ref(rel).",
+      "id": "PRF-AAC83T",
+      "invariant": "INV-K03WFZ",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §3",
+        "leaf": "261112-BUG-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+        "content": "sha256:638e58ad86ccda979fc93e945c2d82019bc906a029b35a292d85ae216784eb93",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_record_review_accepts_notes_reports_before_copy_exists_and_ignores_series_group"
+        }
+      },
+      "facet": "Accepts notes/reports/<rel> when only the local role-reports/<rel> file exists before collection, while keeping omitted verdictRef and code-round rules unchanged.",
+      "id": "PRF-J86N50",
+      "invariant": "INV-JAFF6J",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §1",
+        "leaf": "261112-BUG-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+        "content": "sha256:7fb6e09b8baf4e44a9e8bcb559951c1bb23d476606543926ad3afd4b70d140b5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unmapped_preexisting_verdict_ref_is_written_as_today_and_named_in_closeout"
+        }
+      },
+      "facet": "Preserves a pre-existing bare verdictRef in closeout history and emits unmapped_verdict_ref_note in both the closeout summary and committed_review_note.",
+      "id": "PRF-R74DCC",
+      "invariant": "INV-793X8F",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §2",
+        "leaf": "261112-BUG-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+        "content": "sha256:f924322f7aba9ae4ab265a5e7ec448a1e234dffd2758806e074f5f3e22f2b74f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_state_conversion_uses_shared_collected_report_ref_without_duplicate_literals"
+        }
+      },
+      "facet": "AST-verifies memory/conversion/state_owners.py imports COLLECTED_REPORT_PARTS, ROLE_REPORT_DIRECTORY, and collected_report_ref with zero duplicate literals outside docstrings and runtime-verifies _durable_verdict_ref follows COLLECTED_REPORT_DIRECTORY.",
+      "id": "PRF-RR6DHN",
+      "invariant": "INV-K03WFZ",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §3",
+        "leaf": "261112-BUG-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+        "content": "sha256:b0945ecd61d09db4a819d8364c465149a200a94524b51db71fbf45da7ef786e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_direct_landing_maps_verdict_ref_forms_to_collected_path"
+        }
+      },
+      "facet": "Maps absolute, relative, notes/reports, and legacy-alias verdictRef forms to notes/reports/<rel> through direct landing and confirms committed_review_note returns empty string.",
+      "id": "PRF-V2PDKY",
+      "invariant": "INV-793X8F",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §2",
+        "leaf": "261112-BUG-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+        "content": "sha256:5f86f3e0790634892e1d166094c15f27de2f547b8791a1449af8956115d04da7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_record_review_refuses_bare_and_missing_verdict_refs_on_ordinary_and_record_only_paths"
+        }
+      },
+      "facet": "Refuses seven bare, missing, escaping, and blank verdictRef values on both ordinary and record-only memory paths while leaving the task document bytes unchanged.",
+      "id": "PRF-XHJSDW",
+      "invariant": "INV-JAFF6J",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §1",
+        "leaf": "261112-BUG-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+        "content": "sha256:968e0b24016b8e2c1de75e0af55393b0c812a36d804212c02d2a617a1b468c40",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_closeout_maps_every_valid_verdict_ref_form_to_collected_path"
+        }
+      },
+      "facet": "Maps absolute role-reports, relative role-reports, relative/absolute notes/reports, and legacy task-reports alias forms to notes/reports/<rel> in closed history with no unmapped note.",
+      "id": "PRF-XP06Y1",
+      "invariant": "INV-793X8F",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §2",
+        "leaf": "261112-BUG-L54"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Tests `collected_report_ref`, `is_collected_report_ref`, `collect_group_reports`, and static/runtime `COLLECTED_REPORT_DIRECTORY` sharing across every `taskReportRoot` producer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+            "content": "sha256:1eb5628eb3c55d22a3f6cb91861a8e1add439b0c57207df4a92fa0a6de3086d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_collected_report_ref_defines_the_collected_path"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+            "content": "sha256:3c54c4ea6d5846be857530994e23888a20d47b31095ec3e292f47ca2789adb5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_collect_group_reports_and_collected_report_ref_share_one_definition"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+            "content": "sha256:46554d33f6a6c00b33251d57de19c8c32c06300254627a36f5e601ff6cb97cb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_role_launch_task_report_root_producers_follow_collected_report_directory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Tests memory `record_review` acceptance of pre-copy `notes/reports/<rel>`, bound-leaf-only resolution, and refusal of bare/missing/escaping references on ordinary and record-only paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+            "content": "sha256:638e58ad86ccda979fc93e945c2d82019bc906a029b35a292d85ae216784eb93",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_review_accepts_notes_reports_before_copy_exists_and_ignores_series_group"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+            "content": "sha256:ca8a2b125d2fc913bd387d4356b4f8b6fadac0b5a4c7759e113436299770823b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_review_uses_bound_leaf_contract_not_series_contract"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+            "content": "sha256:5f86f3e0790634892e1d166094c15f27de2f547b8791a1449af8956115d04da7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_review_refuses_bare_and_missing_verdict_refs_on_ordinary_and_record_only_paths"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Tests closeout and direct-landing mapping of valid and legacy-alias `verdictRef` forms to `notes/reports/<rel>` and rejection of foreign worktree groups.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+            "content": "sha256:968e0b24016b8e2c1de75e0af55393b0c812a36d804212c02d2a617a1b468c40",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closeout_maps_every_valid_verdict_ref_form_to_collected_path"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+            "content": "sha256:150233b040fc092269c495552fcb8ac2592816ecd6afaa81c86f9b7389d062e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_collected_verdict_ref_never_matches_another_worktree_group"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+            "content": "sha256:b0945ecd61d09db4a819d8364c465149a200a94524b51db71fbf45da7ef786e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_direct_landing_maps_verdict_ref_forms_to_collected_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Tests unmapped pre-existing reference preservation and closeout/direct-landing notes plus end-to-end closeout, integrate, and cleanup readability.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+            "content": "sha256:7fb6e09b8baf4e44a9e8bcb559951c1bb23d476606543926ad3afd4b70d140b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unmapped_preexisting_verdict_ref_is_written_as_today_and_named_in_closeout"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+            "content": "sha256:84239f3ea0f8ae6a28ced63ef8b27511fd85ffe60086f9fee613fbc39bb588cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unmapped_preexisting_verdict_ref_is_written_as_today_and_named_in_direct_landing"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+            "content": "sha256:f927b48aafcdcf70b515a75cbb77c00c81228bba3a71f9456756449e273e5ea6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_end_to_end_closeout_and_cleanup_keeps_verdict_ref_readable"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

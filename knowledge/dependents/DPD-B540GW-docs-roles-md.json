@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "671ece4cbd090a47cbb540dd59f157804c676424",
-    "commit": "db236f3c6b164f19a905fb2174e5dc3543d21f9d",
+    "codeTree": "814fd2ebf624596c42f60f2e7c93b3a3a3ac6fc3",
+    "commit": "4bf4b66edfb43ed63e4010071296c9cf0991b55b",
     "role": "curator",
-    "statement": "Audited docs/roles.md on L52-synced L51 code tree 671ece4c (base db236f3c/9f01ab59): role responsibilities and IDENTITY MISMATCH: zero-wake parent recovery carve-out remain accurate; no contradiction.",
-    "task": "261112-BUG-L51",
+    "statement": "Audited docs/roles.md on 261112-BUG-L54 candidate 814fd2eb: role duties, leaf role-reports/ placement, and collection to notes/reports/ remain accurate and consistent with L54's updates to role_launch_workspace.py and skills/l-01-agent-lifecycles/roles/reviewer.md, with zero contradictions.",
+    "task": "261112-BUG-L54",
     "uncommitted": true
   },
   "document": "docs/roles.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 16,
+  "revision": 17,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -56,7 +56,7 @@
       "path": "mcp/src/agents_remember/cli/role_retire.py"
     },
     {
-      "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+      "blob": "5a31b237d96f6657bdcc61f1534897bee2c94306",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },
@@ -136,7 +136,7 @@
       "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
     },
     {
-      "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+      "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
     },
@@ -177,14 +177,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T10:27:33+01:00",
+    "at": "2026-11-26T14:04:00+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L51",
+    "leaf": "261112-BUG-L54",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
+    "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
     "task": "261112-BUG"
   }
 }

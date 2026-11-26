@@ -1,0 +1,137 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/memory_verdict_ref.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f7bf0bf63c9001c9ee486eed4dd003d1eed02170",
+        "content": "sha256:2a6837c889ad3127e00f72cc1e430ff19783783a1e8abf9a6d65ba2f657507dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_bound_memory_verdict_ref"
+        }
+      },
+      "id": "RLZ-1RDTNX",
+      "invariant": "INV-JAFF6J",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §1",
+        "leaf": "261112-BUG-L54"
+      },
+      "rationale": "Resolves the leaf enclosure contract (never substituting a series contract) and delegates to require_memory_verdict_ref.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f7bf0bf63c9001c9ee486eed4dd003d1eed02170",
+        "content": "sha256:ddbb9486a4e2288f626791a34174f91c065f22ee9e1fd10e26def1c723d7f151",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_memory_verdict_ref"
+        }
+      },
+      "id": "RLZ-9Q0TTJ",
+      "invariant": "INV-JAFF6J",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §1",
+        "leaf": "261112-BUG-L54"
+      },
+      "rationale": "Enforces the three accepted memory verdictRef forms, accepts notes/reports/<rel> when either canonical or local role-reports copy exists, and emits the named review-verdict-ref-invalid refusal listing accepted forms.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f7bf0bf63c9001c9ee486eed4dd003d1eed02170",
+        "content": "sha256:e6a9882facb33c26cb4f7e910f3435290432d50a642bc137ec910e2ecdb6dea6",
+        "locator": {
+          "kind": "symbol",
+          "name": "collected_verdict_ref"
+        }
+      },
+      "id": "RLZ-RAANFP",
+      "invariant": "INV-793X8F",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §2",
+        "leaf": "261112-BUG-L54"
+      },
+      "rationale": "Computes exact relative paths under role-reports/, legacy task-reports, or task notes/reports/ without folder-name substring search, preserving already-collected or unmappable references.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`memory_verdict_contract` resolves only a bound leaf worktree contract and never returns a series contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7bf0bf63c9001c9ee486eed4dd003d1eed02170",
+            "content": "sha256:010bcad891fed3a516ef480a7aba88085862bafaf50d1c5091831ab08ad697bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_verdict_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`require_bound_memory_verdict_ref` and `require_memory_verdict_ref` enforce the three accepted file-existing forms for supplied memory `verdictRef` values and raise `review-verdict-ref-invalid` listing accepted forms.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7bf0bf63c9001c9ee486eed4dd003d1eed02170",
+            "content": "sha256:2a6837c889ad3127e00f72cc1e430ff19783783a1e8abf9a6d65ba2f657507dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_bound_memory_verdict_ref"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7bf0bf63c9001c9ee486eed4dd003d1eed02170",
+            "content": "sha256:ddbb9486a4e2288f626791a34174f91c065f22ee9e1fd10e26def1c723d7f151",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_memory_verdict_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`collected_verdict_ref` maps exact relative paths under the bound contract's `role-reports/`, legacy `task-reports`, or task `notes/reports/` to `notes/reports/<rel>` via `collected_report_ref` and returns unmappable references unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7bf0bf63c9001c9ee486eed4dd003d1eed02170",
+            "content": "sha256:e6a9882facb33c26cb4f7e910f3435290432d50a642bc137ec910e2ecdb6dea6",
+            "locator": {
+              "kind": "symbol",
+              "name": "collected_verdict_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`unmapped_verdict_ref_note` produces the closeout and landing sentence naming a recorded `verdictRef` that could not map to `notes/reports/<rel>`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7bf0bf63c9001c9ee486eed4dd003d1eed02170",
+            "content": "sha256:22259b79c81f266fcae5edef89ed71c807b1d114b4c07af7828cf7c73d064c34",
+            "locator": {
+              "kind": "symbol",
+              "name": "unmapped_verdict_ref_note"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

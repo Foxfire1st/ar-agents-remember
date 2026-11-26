@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "11336746503723e0772e73c309956b9748bbec4c",
+        "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
         "content": "sha256:2e5d409bd81ebdf2d00635ef576a0fb9a9676373e2e425bec1e875c8d7205260",
         "locator": {
           "end": 245,
@@ -23,8 +23,8 @@
     },
     {
       "anchor": {
-        "blob": "11336746503723e0772e73c309956b9748bbec4c",
-        "content": "sha256:2811afc3e2bf80b3b9b1b681d6dfffd41f8c69ce48152f532870271e6fe476b4",
+        "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+        "content": "sha256:5ce515b3bf81888b46e25613d088a9fb776908820c7fbe6736a36fe40da95e52",
         "locator": {
           "kind": "file"
         }
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "11336746503723e0772e73c309956b9748bbec4c",
+        "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
         "content": "sha256:e723ce82b895b1372a026ff77a394eab399373700e675bc530c48b8c3742d07b",
         "locator": {
           "end": 114,
@@ -59,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "11336746503723e0772e73c309956b9748bbec4c",
+        "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
         "content": "sha256:dfff712ff9e62d449c9b6cb28ad7a4b36e61f0b70120c88ffdf444b7ea5b4a1a",
         "locator": {
           "end": 123,
@@ -78,7 +78,45 @@
     },
     {
       "anchor": {
-        "blob": "11336746503723e0772e73c309956b9748bbec4c",
+        "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+        "content": "sha256:7d67b1d4cf3274f66830bdde45b0491b9fedb8ac70e291a2ef89d42bfb9e5634",
+        "locator": {
+          "end": 366,
+          "kind": "line_range",
+          "start": 361
+        }
+      },
+      "id": "RLZ-B8NPHG",
+      "invariant": "INV-JAFF6J",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §1",
+        "leaf": "261112-BUG-L54"
+      },
+      "rationale": "Aligns the leaf loop-review adaptation artifact path with the local role-reports/ folder (collected to notes/reports/) while keeping plan reviews under notes/reports/.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+        "content": "sha256:6b32543e610036813878d45e843d92fd817ba7ead48cb17d9d8c2a8cb95a1c41",
+        "locator": {
+          "end": 13,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-FW5CCP",
+      "invariant": "INV-JAFF6J",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §1",
+        "leaf": "261112-BUG-L54"
+      },
+      "rationale": "Aligns the verdict template artifact-location instruction with roles/reviewer.md:93 (local role-reports/ on a leaf, notes/reports/ on other seams).",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
         "content": "sha256:01e8726f339d3eb31140aa200e6a8a582ad503c8f4319e8aa9c26681557c92c7",
         "locator": {
           "end": 104,
@@ -102,7 +140,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11336746503723e0772e73c309956b9748bbec4c",
+            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
             "content": "sha256:b2e61626bb31a8f18e598c6ec372e324fc9577239c45a1f759cb3cc1f1bb981e",
             "locator": {
               "end": 85,
@@ -132,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11336746503723e0772e73c309956b9748bbec4c",
+            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
             "content": "sha256:59504bf3f05646d070e33657503923adf813c96fb731ede95f6c0c2567d3ea82",
             "locator": {
               "end": 9,
@@ -144,7 +182,7 @@
         },
         {
           "anchor": {
-            "blob": "11336746503723e0772e73c309956b9748bbec4c",
+            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
             "content": "sha256:bd293692969e36e2cf439c616ebdada63a4067637511d7a89029648553b52a45",
             "locator": {
               "end": 211,
@@ -161,7 +199,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11336746503723e0772e73c309956b9748bbec4c",
+            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
             "content": "sha256:60537296c416b9236127764638e080d79056249ce69d710944c79b91a798a6cf",
             "locator": {
               "end": 367,
@@ -191,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11336746503723e0772e73c309956b9748bbec4c",
+            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
             "content": "sha256:1b3a2d2aa792e2d810b3c86716837f5954b077854cfbac5dceedb57325f99353",
             "locator": {
               "end": 19,
@@ -203,7 +241,7 @@
         },
         {
           "anchor": {
-            "blob": "11336746503723e0772e73c309956b9748bbec4c",
+            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
             "content": "sha256:714e9a22fd362d57951d79a9c84bd6c1e61e55c906e545914057f6953c225c85",
             "locator": {
               "end": 148,
@@ -215,7 +253,7 @@
         },
         {
           "anchor": {
-            "blob": "11336746503723e0772e73c309956b9748bbec4c",
+            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
             "content": "sha256:8c342f4bf69d6ec06504119fcaeac6de72e78789cb1d69e7dadda45437ae900e",
             "locator": {
               "end": 369,
@@ -232,7 +270,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11336746503723e0772e73c309956b9748bbec4c",
+            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
             "content": "sha256:714e9a22fd362d57951d79a9c84bd6c1e61e55c906e545914057f6953c225c85",
             "locator": {
               "end": 148,
@@ -244,7 +282,7 @@
         },
         {
           "anchor": {
-            "blob": "11336746503723e0772e73c309956b9748bbec4c",
+            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
             "content": "sha256:8c342f4bf69d6ec06504119fcaeac6de72e78789cb1d69e7dadda45437ae900e",
             "locator": {
               "end": 369,
@@ -300,7 +338,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11336746503723e0772e73c309956b9748bbec4c",
+            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
             "content": "sha256:3cb36e449f4e38c07a1c109f4ca789471ec3679c429b0f47180ac428621f0c62",
             "locator": {
               "end": 44,
@@ -312,7 +350,7 @@
         },
         {
           "anchor": {
-            "blob": "11336746503723e0772e73c309956b9748bbec4c",
+            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
             "content": "sha256:714e9a22fd362d57951d79a9c84bd6c1e61e55c906e545914057f6953c225c85",
             "locator": {
               "end": 148,
@@ -324,7 +362,7 @@
         },
         {
           "anchor": {
-            "blob": "11336746503723e0772e73c309956b9748bbec4c",
+            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
             "content": "sha256:60537296c416b9236127764638e080d79056249ce69d710944c79b91a798a6cf",
             "locator": {
               "end": 367,
@@ -354,7 +392,7 @@
         },
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
             "content": "sha256:b93a577df1d0cb295abb86c759ba75f1a052db0bf9fc44262b36ee9f48d3f01e",
             "locator": {
               "end": 72,
@@ -362,6 +400,35 @@
               "start": 71
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Verdict artifacts and loop-review leaf verdicts are written in the handover's local `role-reports/` folder on a leaf (collected to `notes/reports/`) and under `notes/reports/` on other seams and plan reviews.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+            "content": "sha256:e56d9ec4628bdc4abc3a6f81abf8933d33e3deccb76814441c5f5f5e639816b0",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+            "content": "sha256:18ea8dd0fc1083235c648ee257505e4ca365e6c03eb457140187414ca658ac82",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 363
+            }
           },
           "kind": "code"
         }

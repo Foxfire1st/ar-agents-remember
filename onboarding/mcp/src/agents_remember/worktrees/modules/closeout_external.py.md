@@ -80,7 +80,7 @@ Series closeout delegates immediately to `series_memory_closeout`, which reads t
 
 The memory writer ignores root `memory.md` when testing content dirtiness. If no actual content changed, it returns existing HEAD and reports that verified-existing output without mutation evidence. For a real content change it prepares the ignored cache location, publishes memory mutation intent, stages content with `memory.md` excluded, commits the attributed message, and proves that exact object. The final writer boundary strips a force-staged cache too. There is no lookup of cached pairings and no second ledger commit.
 
-`refresh_memory_cache` runs only after the memory output is fixed. `MemoryCloseoutOutcome.ledger_repair` contains its informational result. When this call closes a history file without a qualifying fact, its `review_note` says the leaf's revisions stay proposed. The recovery path reads that note from the proven memory commit.
+`refresh_memory_cache` runs only after the memory output is fixed. `MemoryCloseoutOutcome.ledger_repair` contains its informational result. When this call closes a history file without a qualifying fact, `_review_note` returns `NO_PASS_SENTENCE`; when it closes a history file with a qualifying `ReviewFact` whose `verdict_ref` is not in collected form (`not is_collected_report_ref`), `_review_note` returns `unmapped_verdict_ref_note(review.verdict_ref)` naming that reference. The recovery path reads both sentences from the proven memory commit through `committed_review_note`.
 ### Conventions
 
 Accepted messages and the `VerifiedChange` travel explicitly into their consumers. New commits publish intent and exact proof; verified-existing commits publish recovery cells without fabricated mutation evidence.
@@ -133,7 +133,8 @@ enforcement cannot disagree.
 
 - The last recorded memory round supplies a fact only with a passing result, usable verdict reference and exact reviewed memory tree. [56]
 - The closing writes its optional review fact with the flag and preserves closed histories. [57]
-- A newly closed history without a fact produces a note about proposed revisions. [58]
+
+- A newly closed history without a fact returns `NO_PASS_SENTENCE`, and one whose `verdictRef` could not map to `notes/reports/<rel>` returns `unmapped_verdict_ref_note` naming it. [58]
 
 - Every catalog row is evidence-checked against the candidate tree, planned or not; absent evidence is the unconditional check, while an unsupported algorithm and a missing value are diagnosed from the plan's rows. [50]
 

@@ -68,7 +68,7 @@ None recorded.
 
 ## Current Contract
 
-For a memory review, `_record_task_review_bound` passes the product-derived recorder and handover stamps to the candidate-bound review transition. This path records the generic round without writing the independent code route-review artifact.
+For a memory review, `_record_task_review_bound` passes the product-derived recorder and handover stamps to the candidate-bound review transition, and calls `require_bound_memory_verdict_ref` on both ordinary and record-only paths whenever `verdictRef` is supplied (resolving the bound leaf contract, never a series contract, and translating `ReviewHistoryError(review-verdict-ref-invalid)` to `TaskDocError` before returning the updated document; omitted `verdictRef`, code rounds, and route reviews keep their existing rules). This path records the generic round without writing the independent code route-review artifact.
 
 Explicit reviewKind=memory selects the independent memory candidate: contract.memory_worktree when present, otherwise the configured memory root. Default/code still selects an existing leaf code worktree or repository root. `candidate_identity_for_review` validates the lane before resolving its actual byte identity. `with_review_lane_result` retains present memory state and labels review mutations, with memory-specific updated phrases. Route evidence stays code-only: memory results use record_review and are refused by record_route_review before route stamping. Generic create cannot seed memoryReviewState, and replace cannot change or erase it. Existing branch grants, exact task binding and route/intent authority remain separate.
 
@@ -79,7 +79,7 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 ## Evidence
 
-- Generic review recording forwards captured stamps to the bound review state transition. [18]
+- Generic review recording forwards captured stamps to the bound review state transition and validates any supplied memory `verdictRef` through `require_bound_memory_verdict_ref` on ordinary and record-only paths. [18]
 
 
 
@@ -135,5 +135,7 @@ semantics. Part of the landed L25 candidate `99dc249b`.
 - The binding form that records a review over the resolved candidate document and re-validates. [2]
 - The route-review authority rule (create/replace cannot author or change evidence). [5]
 
+
 - Call-level knobs and the branch-addressed policy gate. [1]
+
 - Branch review is canonical-leaf opt-in under the live grant, not a runtime setting. [9]

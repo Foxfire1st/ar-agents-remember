@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "56ba4a434418f6ed69deca0f0d9e1f852852cdf8",
-    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
+    "codeTree": "814fd2ebf624596c42f60f2e7c93b3a3a3ac6fc3",
+    "commit": "4bf4b66edfb43ed63e4010071296c9cf0991b55b",
     "role": "curator",
-    "statement": "Audited docs/reference/runtime-layout.md (lines 1-231, including runtime/server-bindings/<pid>.json table row at line 47 and Server binding records section at lines 55-81) on DEP-synced L51 code tree 56ba4a43 (base 599cfaf8/767635ae): runtime layout, server-binding contract, and cleanup semantics remain accurate; no contradiction.",
-    "task": "261112-BUG-L51",
+    "statement": "Audited docs/reference/runtime-layout.md on 261112-BUG-L54 candidate 814fd2eb: coordination-root layout, server-binding records, and role report/scratch folder paths remain accurate after role_launch_workspace.py switched to the shared COLLECTED_REPORT_DIRECTORY and ROLE_REPORT_DIRECTORY constants, with zero contradictions.",
+    "task": "261112-BUG-L54",
     "uncommitted": true
   },
   "document": "docs/reference/runtime-layout.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
     {
-      "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+      "blob": "5a31b237d96f6657bdcc61f1534897bee2c94306",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },
@@ -143,14 +143,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T08:43:44+01:00",
+    "at": "2026-11-26T14:04:00+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L51",
+    "leaf": "261112-BUG-L54",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
+    "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
     "task": "261112-BUG"
   }
 }

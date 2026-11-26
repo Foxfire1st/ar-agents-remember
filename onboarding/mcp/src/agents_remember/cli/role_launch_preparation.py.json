@@ -675,12 +675,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
-            "content": "sha256:0b4ef7f47abf4db6f6e072a501fe1c5bcf96cde4e122d3fbc9ff90013f132e2e",
+            "blob": "5a31b237d96f6657bdcc61f1534897bee2c94306",
+            "content": "sha256:ec617efe7a8e5acdf050561160ce1917675163cf75a2c63e8586d528bfed74c4",
             "locator": {
-              "end": 270,
+              "end": 274,
               "kind": "line_range",
-              "start": 205
+              "start": 209
             },
             "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
           },

@@ -1,6 +1,6 @@
 {
   "anchor": {
-    "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+    "blob": "e022e0150f64e278850c4b2845e4278e1727b474",
     "content": "sha256:6c839cffdf3fc3afcbfb759887708c643b039372681af57d2d2a8082b24f7d53",
     "locator": {
       "kind": "symbol",
@@ -18,7 +18,7 @@
     "leaf": "261125-DEP-L7",
     "task": "261125-DEP"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
@@ -27,14 +27,14 @@
   "state": "open",
   "statement": "When _refresh_external_memory raises after a code commit, external_closeout_commits discards closing.restore() instead of routing through _restore_preparations to name concurrently edited files left untouched.",
   "writer": {
-    "at": "2026-11-26T00:47:13+01:00",
+    "at": "2026-11-26T14:04:00+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L7",
+    "leaf": "261112-BUG-L54",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
-    "task": "261125-DEP"
+    "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+    "task": "261112-BUG"
   }
 }

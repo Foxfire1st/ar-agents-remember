@@ -16,6 +16,8 @@ Reclamation removes launch locators (and only those aliases): `close_execution_r
 
 `collect_report_folder` copies safe regular files with size and link checks, skips unchanged files by recorded source/canonical stamps, stages through fsynced temp files with source/readback validation and atomic replacement, and refuses removal on any failure. Collection is bounded (10,000 entries, 2 GiB); oversize evidence must be archived first. `collect_execution_reports` and `collect_group_reports` serve receipts and terminal cleanup/abandon; legacy `task-reports` aliases are collected but only unlinked, never followed for deletion. `remove_group_role_folders` collects first and only then deletes local report, scratch, alias and task-document folders; `close_execution_role_folders` reclaims only confirmed archived or replaced non-leaf executions.
 
+`COLLECTED_REPORT_DIRECTORY` (`"notes/reports"`) and derived `COLLECTED_REPORT_PARTS` sit beside `ROLE_REPORT_DIRECTORY` and `LEGACY_ROLE_REPORT_ALIAS` as the single definition of the collected report root consumed by `collect_group_reports` and every role-launch `taskReportRoot` producer (`cli/role_launch_enclosure.py`, `cli/role_launch_workspace.py`). `collected_report_ref(relative)` maps a relative path under `role-reports/` to `notes/reports/<rel>` (refusing empty or `..` traversal with `ValueError`); `is_collected_report_ref(reference)` returns `True` only for non-absolute task-relative `notes/reports/<rel>` paths without `..` traversal.
+
 The explainer's report inventory uses the canonical collection named by each selected execution receipt. It lists regular text reports and admits a JSON measurement when an explicitly cited local path resolves to that collection. It excludes launch handovers and their detail carriers.
 
 ## Evidence
@@ -24,7 +26,9 @@ The explainer's report inventory uses the canonical collection named by each sel
 - Report folders copy safe regular files with stamp checks, fsynced staging and atomic replacement. [1]
 
 - Execution receipts collect through the same collector. [2]
-- Group collection serves terminal cleanup and abandon paths. [3]
+
+- Group collection serves terminal cleanup and abandon paths and targets `contract.task_root / COLLECTED_REPORT_DIRECTORY`. [3]
+- `collected_report_ref` and `is_collected_report_ref` define and validate the canonical `notes/reports/<rel>` collected form beside `ROLE_REPORT_DIRECTORY`. [6]
 
 
 - Canonical report discovery intersects cited JSON paths with eligible files in the execution collection. [5]

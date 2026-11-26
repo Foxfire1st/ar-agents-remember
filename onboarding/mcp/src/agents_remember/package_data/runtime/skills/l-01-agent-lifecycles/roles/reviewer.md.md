@@ -83,7 +83,7 @@ The Reviewer adjudicates the Worker attempt records against the exact candidate 
 
 The role file defines one Reviewer across leaf code-change and full-loop review, atomic-master integration review, master exit, plan review and super exit. The seam fixes the review's scope and verdict recipient. The posture is refute-or-confirm over the seam's candidate, task documents and bound catalogs, and the result is a verdict artifact, not a decision.
 
-The three lenses are completion against task documents, scoped implementation evidence, and onboarding against code. Criteria come from the catalogs the review type binds, plus the exploratory mandate. The exit-seam rubrics cover the accumulated change set, its evidence and decomposable fix leaves. The verdict is written under the seam's `notes/reports/` path, with an impact-analysis and an onboarding-coherency report for each material route.
+The three lenses are completion against task documents, scoped implementation evidence, and onboarding against code. Criteria come from the catalogs the review type binds, plus the exploratory mandate. The exit-seam rubrics cover the accumulated change set, its evidence and decomposable fix leaves. The verdict is written in the handover's local report folder (`role-reports/` on a leaf, `notes/reports/` on other seams) with memory `verdictRef` recorded as an existing absolute path, `role-reports/<rel>`, or `notes/reports/<rel>`, alongside an impact-analysis and an onboarding-coherency report for each material route.
 
 ### Conventions
 
@@ -156,7 +156,9 @@ Agent-authored temporary files, experiments and working copies live only in the 
 - At super-exit a baseline BLOCK goes to the Orchestrator as decomposable fix leaves. [18]
 
 
-- The Reviewer writes the verdict under the seam's notes/reports path using the verdict template and writes fix-leaf descriptors for non-leaf baseline blocks. [19]
+
+- The Reviewer writes the verdict in the handover's local report folder (`role-reports/` on a leaf, `notes/reports/` on other seams) using the verdict template, records memory `verdictRef` as an existing absolute path, `role-reports/<rel>`, or `notes/reports/<rel>`, and writes fix-leaf descriptors for non-leaf baseline blocks. [19]
+
 
 
 

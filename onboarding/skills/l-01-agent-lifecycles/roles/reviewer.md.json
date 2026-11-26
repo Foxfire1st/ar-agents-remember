@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
         "content": "sha256:0679235a50a273ae5ae6ab645fcb21362366d579b09939f6147d9290269e88ea",
         "locator": {
           "end": 73,
@@ -23,7 +23,7 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
         "content": "sha256:411f521fe0a2ff6b5d7a0b2922cb1328de40ffbf1b4599ac7f6050ebab2f7b23",
         "locator": {
           "end": 145,
@@ -42,8 +42,8 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:369d3c5cdfd03d981d99b8098a3432dc481c6baea97886a5f1dc6dfacc4437ae",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
+        "content": "sha256:ef7cda717ecdfe82fb296960de3b680038cde27566a253dd64fef38166b9f590",
         "locator": {
           "kind": "file"
         }
@@ -59,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
         "content": "sha256:19d1cfb74a66834ddd189186991997133f3aef1fddd88d2a5bb49974a5df1afa",
         "locator": {
           "end": 41,
@@ -78,7 +78,26 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
+        "content": "sha256:e987f930518596576af11d6e544b5cb637447b4909038d0a1498dc287585114b",
+        "locator": {
+          "end": 97,
+          "kind": "line_range",
+          "start": 86
+        }
+      },
+      "id": "RLZ-5Y931E",
+      "invariant": "INV-JAFF6J",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §1",
+        "leaf": "261112-BUG-L54"
+      },
+      "rationale": "Directs Reviewers to write verdicts in the handover's local report folder and record memory verdictRef in one of the three accepted forms within the reviewer capsule ceiling.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
         "content": "sha256:041a961530e6277dbeea44334ad6ed9c990749f8cf5aaa689b4851b49e6cf906",
         "locator": {
           "end": 39,
@@ -97,7 +116,7 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
         "content": "sha256:041a961530e6277dbeea44334ad6ed9c990749f8cf5aaa689b4851b49e6cf906",
         "locator": {
           "end": 39,
@@ -116,7 +135,7 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
         "content": "sha256:d5658ed4652da3bfa455043e9cf1f887e9078ec6e75677387e870eaad18704bc",
         "locator": {
           "end": 70,
@@ -135,7 +154,7 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
         "content": "sha256:483a6eb926f22fcad055dde734169488b78b0272c07511876e5288bfc5261a1e",
         "locator": {
           "end": 153,
@@ -154,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
         "content": "sha256:d3857964a7b0bf5879ff9e0ca9e986a8e1cd24da00de793f0971c99bfb143fdd",
         "locator": {
           "end": 24,
@@ -173,7 +192,7 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
         "content": "sha256:75bdfd1e3392bb1485d7b16d3e2f9f098e4198177a4104b1dac2c20f566f78d5",
         "locator": {
           "end": 16,
@@ -192,7 +211,7 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
         "content": "sha256:9544349501bc3cff52ef43805c69579013a0fd8da9dde75efafba56280f841c6",
         "locator": {
           "end": 84,
@@ -211,8 +230,8 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:c9da318e2c934c62ac280274054ae7e63e034536dd532dd242dfc258b1d52be3",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
+        "content": "sha256:936e71ea62f86436a3827f23143b67300a6dca712b65b1dfd133d410d63c315c",
         "locator": {
           "end": 103,
           "kind": "line_range",
@@ -230,7 +249,7 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
         "content": "sha256:75bdfd1e3392bb1485d7b16d3e2f9f098e4198177a4104b1dac2c20f566f78d5",
         "locator": {
           "end": 16,
@@ -249,8 +268,8 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:369d3c5cdfd03d981d99b8098a3432dc481c6baea97886a5f1dc6dfacc4437ae",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
+        "content": "sha256:ef7cda717ecdfe82fb296960de3b680038cde27566a253dd64fef38166b9f590",
         "locator": {
           "kind": "file"
         }
@@ -266,7 +285,7 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
         "content": "sha256:e36369443b6bf53a121505d0a146c332e316627f9d27e644b08fe1f7d4df9078",
         "locator": {
           "end": 103,
@@ -285,7 +304,7 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
         "content": "sha256:8a99b34d6915bd56c76579e50d87820d41943481067246e24591a2bb097e7221",
         "locator": {
           "end": 137,
@@ -304,7 +323,7 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
         "content": "sha256:6648cd0e9c274dd0e7e2ec5000cc78be3719edbaa6e83d6dc1e12c363a838a66",
         "locator": {
           "end": 34,
@@ -323,8 +342,8 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:369d3c5cdfd03d981d99b8098a3432dc481c6baea97886a5f1dc6dfacc4437ae",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
+        "content": "sha256:ef7cda717ecdfe82fb296960de3b680038cde27566a253dd64fef38166b9f590",
         "locator": {
           "kind": "file"
         }
@@ -340,8 +359,8 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:369d3c5cdfd03d981d99b8098a3432dc481c6baea97886a5f1dc6dfacc4437ae",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
+        "content": "sha256:ef7cda717ecdfe82fb296960de3b680038cde27566a253dd64fef38166b9f590",
         "locator": {
           "kind": "file"
         }
@@ -362,7 +381,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
             "content": "sha256:971e2183364b1cb5c7c052d1fd5c677da23566fed14fcd507b4c6136e801568f",
             "locator": {
               "end": 75,
@@ -379,7 +398,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
             "content": "sha256:332e7c01e55327f3f472bb1dc1812c6d38391401c493fd1f17e33989998128de",
             "locator": {
               "end": 18,
@@ -396,7 +415,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
             "content": "sha256:5b5bd3dab96598396f3b6fc76c4406cf2d6f3392796aa25b12015c4d02dbdb00",
             "locator": {
               "end": 39,
@@ -413,7 +432,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
             "content": "sha256:a716ed12cdb40c8729f4af5d59c1d6d54362fe0deba4581bdf3b210fe272e132",
             "locator": {
               "end": 72,
@@ -430,7 +449,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
             "content": "sha256:016f9df7b675cd1906e2a98ee5761e9a27abf4d32bfd92f6d8f324dd2ad983c5",
             "locator": {
               "end": 73,
@@ -447,7 +466,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
             "content": "sha256:971e2183364b1cb5c7c052d1fd5c677da23566fed14fcd507b4c6136e801568f",
             "locator": {
               "end": 75,
@@ -460,12 +479,12 @@
       ]
     },
     "15": {
-      "note": "A baseline report includes every bound standing criterion. Fix verification reports the criteria used by the sealed findings. Review artifacts include the sealed findings, complete route coverage, the seam-shaped verdict with its Catalog Binding section, a producer-data handoff list and durable reports for material routes.",
+      "note": "A baseline report includes every bound standing criterion. Fix verification reports the criteria used by the sealed findings. Review artifacts include the sealed findings, complete route coverage, the seam-shaped verdict written in the handover's local report folder (`role-reports/` on a leaf, `notes/reports/` on other seams) with Catalog Binding filled and memory `verdictRef` recorded as an existing absolute path, `role-reports/<rel>`, or `notes/reports/<rel>`, a producer-data handoff list, and durable reports for material routes.",
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:8fdf0654396608ea62aae821b741e53e60197886184c86308b8261c80c19cf26",
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
+            "content": "sha256:e5409f6479ca92b503224df3edd27ff78d327ef060b4eb217dc1b9c36ff2f95e",
             "locator": {
               "end": 95,
               "kind": "line_range",
@@ -530,7 +549,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
             "content": "sha256:a02a01654650fb8f94faf20807e8075204784b3f6dd54d327997c1add4105c0f",
             "locator": {
               "end": 131,
@@ -547,7 +566,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
             "content": "sha256:4f2f17ddbd2db73eac599a91725f176a4d0295861b0742c576b9ba16eecbaf28",
             "locator": {
               "end": 141,
@@ -564,7 +583,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11336746503723e0772e73c309956b9748bbec4c",
+            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
             "content": "sha256:7626ba80bd5da998b74d17dd724a798b3b59af5f9c42c97f8b4d56b9c918b552",
             "locator": {
               "end": 46,
@@ -582,7 +601,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
             "content": "sha256:7f4e35050009885633fa89c4aa74e734636b400374d397a4111010cd2418bcdb",
             "locator": {
               "end": 143,
@@ -612,7 +631,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
             "content": "sha256:094a7cc27b6e537ba07a1bbb771ebf3fc43db78ef588e18bf53ed734c66fc6fc",
             "locator": {
               "end": 94,
@@ -629,7 +648,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
             "content": "sha256:a8b37c5577da29eb6667c8851b75226ade5feaa77060d1719b784fce45ae9ebc",
             "locator": {
               "end": 55,
@@ -672,7 +691,7 @@
         },
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
             "content": "sha256:f74aef61c9ab9702980b7cf1c39bead164c8055b722f9e86c19ea8b2af543020",
             "locator": {
               "end": 133,
@@ -689,7 +708,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
             "content": "sha256:4f2f17ddbd2db73eac599a91725f176a4d0295861b0742c576b9ba16eecbaf28",
             "locator": {
               "end": 141,
@@ -714,7 +733,7 @@
         },
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
             "content": "sha256:9544349501bc3cff52ef43805c69579013a0fd8da9dde75efafba56280f841c6",
             "locator": {
               "end": 84,
@@ -731,7 +750,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
             "content": "sha256:affa535e1ec46c4be1fb90d5bae5a14274e36be1eb320509d7a89e2abd917c40",
             "locator": {
               "end": 49,
