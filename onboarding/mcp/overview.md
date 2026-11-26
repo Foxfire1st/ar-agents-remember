@@ -589,7 +589,8 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - **Retained historical source account — superseded by the current route account:** Skills registrar installs resources and mandatory methods; no tools or capability grant [289]
 - **Retained historical source account — superseded by the current route account:** Ingest plans by default, writes files only, and refuses unconverted memory [294]
 - **Retained historical source account — superseded by the current route account:** Worklist scope is one-pass and insertion/deletion linkage is side-specific [295]
-- **Retained historical source account — superseded by the current route account:** Integration/checkpoint preview and apply encounter knowledge boundary; leaf and series predicates differ [298]
+
+- Integration and checkpoint preview and apply share the knowledge-gate boundary in `integration_gate_block`, while leaf and series predicates differ. [298]
 
 - **Retained historical source account — superseded by the current route account:** Investigator refuses leaf selection and validates canonical topology [301]
 

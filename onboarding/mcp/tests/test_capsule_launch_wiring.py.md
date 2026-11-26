@@ -58,8 +58,11 @@ out of the `thread/start` request the session sent to the vendor boundary. The e
 **compiler's own result** for the same seat, never a hand-built literal.
 
 | Case | Launch point | Seat |
+
 | --- | --- | --- |
+
 | `test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt` | the internal spawn primitive `dispatch_agent` calls | a leaf document + role `worker` |
+
 | `test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt` | `POST /api/terminal/{session}`, the dashboard opener | role `bootstrap`, **no** task document |
 
 **The production-chain pair (added in fix round 1, replacing a hand-supplied case).**

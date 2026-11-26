@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "678adb9706701070f5f6b01f59848bebcc17593c",
-    "commit": "437d4d8935373432fb112a4a15d31e5d5f1bbcc2",
+    "codeTree": "7195713289a089ccffa4b031d4ddcbf941781a99",
+    "commit": "da65eb23a46a9b67683b002fd418996e3f7486c5",
     "role": "curator",
-    "statement": "Merged KNO-L6, 261126-SYN, and 261125-DEP-L6 on synced code tree 678adb970670 (commit 437d4d893537): CONTRIBUTING.md accurately describes the seven evidence lanes, canonical catalog form, runtime asset folders, BUG-L29 tool registration, BUG-L49 pyproject.toml, and DEP-L6 oxlint + incremental tsc -b updates; mcp/tests/test-evidence-lanes.toml declares 831 distinct modules (681 unit-regression including test_code_quality_dashboard_lint_scope.py, test_crossing_merge_writer_stamp.py, and test_knowledge_state_conversion_verdict_ref.py) without changing lane policy or budgets pinned in CONTRIBUTING.md.",
-    "task": "261125-DEP-L6",
-    "uncommitted": false
+    "statement": "Audited CONTRIBUTING.md in full against DEP-L6 synced L56 tree 71957132 (base da65eb23): adding test_master_end_document_staleness.py to test-evidence-lanes.toml changes no lane names, commands, or contributor guidance, and all stands_on links remain accurate.",
+    "task": "261112-BUG-L56",
+    "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
   "id": "DPD-78737N",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 20,
+  "revision": 21,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "b8e4aa8e44ccff1ebe6fe7845462c154cc17f6fa",
+      "blob": "07998f644724fafc06b2ad16936a627f111714dc",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -207,14 +207,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T18:24:49+01:00",
+    "at": "2026-11-26T19:03:01+01:00",
     "by": "agent",
-    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-5",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L56",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
-    "task": "261125-DEP"
+    "role": "curator",
+    "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
+    "task": "261112-BUG"
   }
 }

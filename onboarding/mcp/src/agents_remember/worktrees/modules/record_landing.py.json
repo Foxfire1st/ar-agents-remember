@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
         "content": "sha256:a860b6c17292ff917c3fba3bedb37f615f6ef52184d8e29ef2e3e90d13f56a73",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
         "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
         "content": "sha256:455130952fa8445077398d7bf51ae2a5d132a0ba5d56b830e0569c1888f109d3",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
         "content": "sha256:34faeaedf44113beebc1a00bb92135a45d33b4d28f199753f19827c528670b23",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
         "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,25 @@
     },
     {
       "anchor": {
-        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
+        "content": "sha256:ac0b39ce3721759dd94efed02968b3c39744d3de1aca760a22df4ef0f6aaeb73",
+        "locator": {
+          "kind": "symbol",
+          "name": "_landing_request"
+        }
+      },
+      "id": "RLZ-B8VFD1",
+      "invariant": "INV-PVTE0M",
+      "origin": {
+        "handoffEntry": "BUG-R56@v1",
+        "leaf": "261112-BUG-L56"
+      },
+      "rationale": "Uses the judged landed pair for a series contract so a sync made after the landing cannot move the standing base the master's end is judged against.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
         "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
         "locator": {
           "kind": "symbol",
@@ -112,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
         "content": "sha256:455130952fa8445077398d7bf51ae2a5d132a0ba5d56b830e0569c1888f109d3",
         "locator": {
           "kind": "symbol",
@@ -130,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
         "content": "sha256:14a1d6808ecfef93dc9cb354f21cc6ab32139ed298e07446b4f376c6eac08b12",
         "locator": {
           "kind": "symbol",
@@ -148,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
         "content": "sha256:f613a6a61432a27bece004bb66cd25454ac696b02f272e41fe210b34cd52ca7f",
         "locator": {
           "kind": "symbol",
@@ -166,7 +184,7 @@
     },
     {
       "anchor": {
-        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
         "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
         "locator": {
           "kind": "symbol",
@@ -184,7 +202,7 @@
     },
     {
       "anchor": {
-        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
         "content": "sha256:fbd40047a32f8b9c92ad60db2919eb1a9e4b3f8376d0b2ef3e57be044f3ef986",
         "locator": {
           "kind": "symbol",
@@ -202,7 +220,7 @@
     },
     {
       "anchor": {
-        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
         "content": "sha256:673ea2bc1b9ccd163ab2403332c8f4695e70f987ef2e85072d63fec96e70df75",
         "locator": {
           "end": 404,
@@ -321,7 +339,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
             "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
             "locator": {
               "kind": "symbol",
@@ -337,7 +355,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
             "content": "sha256:f613a6a61432a27bece004bb66cd25454ac696b02f272e41fe210b34cd52ca7f",
             "locator": {
               "kind": "symbol",
@@ -348,26 +366,32 @@
         }
       ]
     },
-    "5": {
-      "note": "The handler consults the landing preconditions before dry/apply publication and retains the actual code and memory facts. Anchor: `record_landing_result`",
+    "19": {
+      "note": "`_landing_request` sets `master_end=True` and `document_base=master_document_base(contract, code_commit=code, memory_commit=memory_commit)` for series contracts (and `None` for leaves).",
       "targets": [
         {
           "anchor": {
-            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
+            "content": "sha256:ac0b39ce3721759dd94efed02968b3c39744d3de1aca760a22df4ef0f6aaeb73",
+            "locator": {
+              "kind": "symbol",
+              "name": "_landing_request"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The handler consults the landing preconditions before dry/apply publication and retains the actual code and memory facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
             "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
             "locator": {
               "kind": "symbol",
               "name": "record_landing_result"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
-            "content": "sha256:589b9bd8cc472854433a521868f556b5920a5fb47ab9c853ed60cd55fe7d8028",
-            "locator": {
-              "kind": "file"
             }
           },
           "kind": "code"
@@ -431,25 +455,15 @@
       ]
     },
     "8": {
-      "note": "The `already-recorded` guard covers both landing states, so a checkpointed series is never upgraded into a reclaimable integration. (`contract.integration_status in {\"completed\", \"checkpointed\"}`) Anchor: `record_landing_result`",
+      "note": "The `already-recorded` guard covers both `completed` and `checkpointed` states so a checkpointed series is never upgraded into a reclaimable integration.",
       "targets": [
         {
           "anchor": {
-            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
             "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
             "locator": {
               "kind": "symbol",
               "name": "record_landing_result"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
-            "content": "sha256:589b9bd8cc472854433a521868f556b5920a5fb47ab9c853ed60cd55fe7d8028",
-            "locator": {
-              "kind": "file"
             }
           },
           "kind": "code"
@@ -457,25 +471,15 @@
       ]
     },
     "9": {
-      "note": "The checkpointed summary preserves its still-open state and names worktree_integrate as its completion route. Anchor: `record_landing_result`",
+      "note": "The checkpointed summary preserves its still-open state and names `worktree_integrate` as its completion route.",
       "targets": [
         {
           "anchor": {
-            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
             "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
             "locator": {
               "kind": "symbol",
               "name": "record_landing_result"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
-            "content": "sha256:589b9bd8cc472854433a521868f556b5920a5fb47ab9c853ed60cd55fe7d8028",
-            "locator": {
-              "kind": "file"
             }
           },
           "kind": "code"

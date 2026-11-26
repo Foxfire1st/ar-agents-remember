@@ -86,7 +86,7 @@ Task-fact projection receives exact canonical JSON-path/document pairs, includin
 
 `code_object_retention.py` reads/releases historical retained-code pins; it creates no new pin or frozen canonical generation. Custody counts only explicitly named durable tips and recorded commits, not a history walk or an arbitrary feature branch. A deeper historical copy therefore remains conservatively retained. Object absence is a distinct observation. Explicit release measures custody, refuses a moved ref, deletes only the recorded expected commit, and converges when the ref is already absent. The caller owns release policy and durable unavailable-history publication.
 
-The integration_gate module owns pre-publication invariant admission for preview and apply: exact leaf-pair rejudgment or master validator/staleness/history plus chain proof. Refused admission persists neither contract nor worklist. Recorded landing judges supplied landed endpoints rather than mutable tips. For a non-leaf already reachable on its source line, only a complete stale-entry-only finding set may be retained as explicit debt after the independent chain proof passes. The answer transports its finding sentences and record keys; the shared writer persists the keys. Mixed findings, strict leaf judgment and chain failures remain refusals. Series cleanup names the recording route for an already-landed master; leaf cleanup retains integration guidance. Git object/ancestry unreadability is a named refusal, never absence.
+The integration_gate module owns pre-publication invariant admission for preview and apply: exact leaf-pair rejudgment or master validator/staleness/history plus chain proof. Refused admission persists neither contract nor worklist. Recorded landing judges supplied landed endpoints rather than mutable tips. For a non-leaf already reachable on its source line, only a complete stale-entry-only finding set may be retained as explicit debt after the independent chain proof passes. The answer transports its finding sentences and record keys; the shared writer persists the keys. Mixed findings, strict leaf judgment and chain failures remain refusals. Series cleanup names the recording route for an already-landed master; leaf cleanup retains integration guidance. Git object/ancestry unreadability is a named refusal, never absence. On final series landings (`integration_gate.py` outside `worktree_checkpoint_landing`) and recorded series landings (`record_landing.py`), the `LandingGateRequest` carries `master_end=True` and `document_base=master_document_base(...)` (checkpoints pass `master_end=False` and `document_base=None`) so only a master's end refuses dependent-document debt its own work created.
 
 ## Invariants And Boundaries
 
@@ -254,7 +254,9 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Retained reference account (no fresh execution or acceptance inferred): The prepared sandbox reobserves actual comparison source selection before manifest publication. [47]
 
-- Historical cutover-only leaf-integration account. Current _leaf_landing_lock rejudges a converted landed/landing-line memory pair; only the neither-side-converted branch falls back to leaf_cutover_refusal. [52]
+- `_leaf_landing_lock` rejudges a converted landed or landing-line memory pair and falls back to `leaf_cutover_refusal` only when neither side is converted. [52]
+- Record landing probes conversion first and freezes parents only for recorded closed-out output. [72]
+- `integration_gate_block` and `record_landing._landing_request` supply `master_document_base(...)` as `document_base` on master-end series requests and `None` on checkpoints or leaves. [104]
 
 - Historical unconverted-memory lock account. Current record landing probes the source line and recorded base, but admits a converted supplied memory output to its own leaf/master judgment even when those prior inputs are unconverted; otherwise the central legacy-format refusal applies. [53]
 
@@ -279,8 +281,6 @@ These superseded descriptions retain their historical wording; the current accou
 - Series landing uses the landing gate; leaf landing uses the precise conversion/cutover predicate. [70]
 
 - Protected publication rereads contract/source identity and delegates exact pair ref movement. [71]
-
-- Record landing probes conversion first and freezes parents only for recorded closed-out output. Anchor: `_knowledge_gate_refusal` `_landing_request` [72]
 
 - Carryover proves both named code and memory ancestries; missing carryover routes to a recovery-leaf plan. [73]
 
@@ -315,8 +315,6 @@ These superseded descriptions retain their historical wording; the current accou
 - **Retained historical source account — superseded by the current route account:** Series landing uses the landing gate; leaf landing uses the precise conversion/cutover predicate. [70]
 
 - **Retained historical source account — superseded by the current route account:** Protected publication rereads contract/source identity and delegates exact pair ref movement. [71]
-
-- **Retained historical source account — superseded by the current route account:** Record landing probes conversion first and freezes parents only for recorded closed-out output. [72]
 
 - **Retained historical source account — superseded by the current route account:** Carryover proves both named code and memory ancestries; missing carryover routes to a recovery-leaf plan. [73]
 

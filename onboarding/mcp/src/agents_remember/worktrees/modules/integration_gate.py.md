@@ -10,13 +10,12 @@ Reconcile leaf and master integration admission before any ref moves. Leaf route
 
 ## Code Commentary
 
-The final series route requires the full canonical non-abandoned leaf population; a checkpoint proves only landed leaves. Its landing request carries `master_end` — false only for `worktree_checkpoint_landing` — and the contract's original base pair as `document_base`, so only the landing that finishes the master refuses documents its own tasks left stale (MIK-R124 rule 8), while a checkpoint lands, leaves the master open and only reports them. Converted memory is gated, unconverted memory keeps the cutover lock, and removed modes refuse explicitly. A refusal projects knowledge-gate-refused without persisting the contract or recomputed worklist. This module owns admission, not publication, review acceptance or Git recovery.
+The final series route requires the full canonical non-abandoned leaf population; a checkpoint proves only landed leaves. Its landing request carries `master_end` — false only for `worktree_checkpoint_landing` — and, when `master_end` is true, `master_document_base(contract, code_commit=commits.code, memory_commit=commits.memory_content)` as `document_base` (or `None` for a checkpoint), so only the landing that finishes the master refuses documents its own work made stale (MIK-R124 rule 8), while a checkpoint lands, leaves the master open, and only reports them. Converted memory is gated, unconverted memory keeps the cutover lock, and removed modes refuse explicitly. A refusal projects knowledge-gate-refused without persisting the contract or recomputed worklist. This module owns admission, not publication, review acceptance or Git recovery.
 
 ## Evidence
 
 No external Domain Documentation source is configured for this repository. The following source witnesses establish the contract, not a new execution receipt.
 
-
-- Integration admission preserves the no-write refusal boundary. [1]
+- `integration_gate_block` preserves the no-write refusal boundary and supplies `master_end` plus `master_document_base(...)` as `document_base` on final series landings (and `None` on checkpoints). [1]
 
 - The exact closeout pair is rejudged against the current parent memory tip. [2]

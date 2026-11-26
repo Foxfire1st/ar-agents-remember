@@ -285,12 +285,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
             "content": "sha256:eef13987a34229cd649ed3696f96e29fac806a2224f5b4e826951aa8a4314f2b",
             "locator": {
-              "end": 242,
+              "end": 244,
               "kind": "line_range",
-              "start": 192
+              "start": 194
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },

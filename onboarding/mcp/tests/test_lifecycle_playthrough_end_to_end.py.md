@@ -38,25 +38,40 @@ publication is a visible difference rather than a payload claim.
 The module's drivers: registered public tools for the status/integration/checkpoint/pause/attach steps, plus a local contract reload:
 
 | Driver | Public entry point |
+
 | --- | --- |
+
 | `_status` | `worktree_status_tool` |
+
 | `_integrate` | `worktree_integrate_tool` (`strategy="ff-only"`) |
+
 | `_checkpoint` | `worktree_checkpoint_landing_tool` (`strategy="ff-only"`) |
+
 | `_pause` | `worktree_pause_tool` |
+
 | `_attach` | `worktree_attach_tool` |
+
 | `_reload` | `load_contract` |
 
 `test_the_lifecycle_plays_through_from_an_unstarted_master_to_a_resumed_one` (code lines 117-173) is
 the run, in eight ordered beats:
 
 | Beat | Assertion |
+
 | --- | --- |
+
 | 1. open master | `worktree_status` reports `integration_status == "not-started"` and `atomicSeriesActivation.state == "vacant"` — nothing landed, nothing selected. |
+
 | 2-3. leaf commanded, then started | `author_unstarted_leaf("master-b", "LEAF-C")` then `start_leaf("LEAF-C", master="master-b")`; the result is a `leaf` whose code worktree really exists. |
+
 | 4. leaf closed out and landed | `close_out_leaf(leaf)` reaches `closeout_status == "completed"`, the public `worktree_integrate` returns `ok`, and the master's `integration_status` is asserted to still be `not-started` afterwards. |
+
 | 5. unfinished master checkpoints | the public preview reports `would-checkpoint`, the apply returns `ok` / `checkpointed`, and the reloaded master reads `integration_status == "checkpointed"` with `closeout_status` still `not-started` — it published and stayed open. |
+
 | 6. master paused | ref maps of **both** repositories are captured first; the public pause returns `ok`, `paused is True`, `atomicSeriesActivation.state == "vacant"` and **no** `nextTool`, and both ref maps are byte-identical afterwards. |
+
 | 7. master resumed | the ordinary `worktree_attach` returns `ok`, and the code refs are still the captured ones. |
+
 | 8. **a leaf after the landing still starts** | `author_unstarted_leaf("master-b", "LEAF-D")` then `start_leaf`; `leaf_id == "LEAF-D"`, the code worktree exists, and `code_base_commit` differs from the first leaf's — it really starts on the line the master now has. |
 
 ### Conventions
