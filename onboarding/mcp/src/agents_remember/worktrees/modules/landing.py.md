@@ -119,8 +119,9 @@ No external Domain Documentation source is configured for this memory repo.
 
 
 
-- The remote-branch probe passes its timeout to the shared Git runner. The pull-request probe passes the same timeout and scrubbed environment to its own gh process. [4]
 
 
 
 - The bounded off-tick caller: `LandingStateRefresher(observe=landing_refs)`, and the `unobserved_landing_refs` shape the recurring projection renders instead.  Anchor: "observe: LandingObserver = landing_refs" [5]
+
+- The remote-branch probe passes its timeout to the shared Git runner. The pull-request probe passes the same timeout and scrubbed environment to its own gh process. [4]

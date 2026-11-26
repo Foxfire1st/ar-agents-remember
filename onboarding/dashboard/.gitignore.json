@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "43efc604596aeac2aa788d1336e754f407f587a1",
+        "blob": "f4ff7c54edc12706058af2aad22d48302a1b6109",
         "content": "sha256:4d56952b0fb13bf8f9b6c13a6d4c34a075bac3af447636a1df4335d7576e2f97",
         "locator": {
           "end": 1,
@@ -19,6 +19,23 @@
       },
       "rationale": "This ignore rule is what keeps dashboard/node_modules out of the same inventories.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f4ff7c54edc12706058af2aad22d48302a1b6109",
+        "content": "sha256:5856dc53baf7ed73c3ae7901767e2dddd1a9bb655741085f72ba22427bd21773",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-A82J3D",
+      "invariant": "INV-AFVK1G",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §3 (R1-R6)",
+        "leaf": "261112-BUG-L29"
+      },
+      "rationale": "Ignores dashboard/.eslintcache alongside existing *.tsbuildinfo so warm dashboard caches remain untracked and ignored.",
+      "role": "support"
     }
   ],
   "references": {
@@ -27,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "43efc604596aeac2aa788d1336e754f407f587a1",
+            "blob": "f4ff7c54edc12706058af2aad22d48302a1b6109",
             "content": "sha256:4d56952b0fb13bf8f9b6c13a6d4c34a075bac3af447636a1df4335d7576e2f97",
             "locator": {
               "end": 1,
@@ -54,6 +71,23 @@
             "path": "mcp/tests/test_worktree_own_environment.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The dashboard ignore rules exclude its content-addressed ESLint cache beside the build caches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4ff7c54edc12706058af2aad22d48302a1b6109",
+            "content": "sha256:f0d380f1abdaa8274eb2bd76503fa00d6cbbf8c506a094006b2d55199860414a",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
         }
       ]
     }

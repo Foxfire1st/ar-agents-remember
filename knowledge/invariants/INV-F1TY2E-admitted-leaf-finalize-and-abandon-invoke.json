@@ -5,14 +5,14 @@
     ],
     "justification": "The rule spans the admitted cleanup and abandon transactions and the archive service, which together archive before removal."
   },
-  "applicability": "Every admitted finalize and abandon of a leaf that has recorded role agents.",
+  "applicability": "Admitted leaf and modern series (worktrees/) finalize, cleanup, abandon, and completed-generation retries.",
   "conditions": [
-    "The leaf's recorded agents are found from its own launch receipts.",
-    "The archive attempt runs after terminal admission and before the worktrees are removed."
+    "Leaf contracts select recorded leaf role agents matching their canonical task reference and lifecycle generation; modern series contracts select recorded seats whose workspace lies inside worktree_group.",
+    "Dry run passes dry_run=True to inspect seats and owed targets without mutating host or receipt state."
   ],
   "exclusions": [
-    "Master and sprint finalization do not archive agents.",
-    "A dry run archives nobody."
+    "Legacy series whose worktree_group equals enclosures/ and sprint archival do not invoke seat archival.",
+    "Seats whose workspace lies outside the task folder (such as a master's Manager) do not block series folder removal."
   ],
   "id": "INV-F1TY2E",
   "origin": {
@@ -27,9 +27,20 @@
     "leaf": "260928-MIK-L76",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Admitted leaf finalize and abandon invoke host archival for the exact recorded leaf role agents before removing the leaf worktrees.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "Admitted leaf and modern series finalize, cleanup, and abandon invoke host archival for the exact recorded in-group role agents before removing worktrees and the task folder, while dry run inspects seats without archiving.",
+  "supersedes": [],
+  "title": "Admitted leaf and modern series retirements archive seats before removal",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

@@ -16,4 +16,5 @@ A confirmed archive or absence resolves held messages as undelivered. An unreach
 
 Both decisions are policy, so they live here rather than in the held-message store's own module: that module owns the store and the drain, this one decides when they wait.
 
+
 - The drain uses one confirmation read per new ended stamp and resolves held messages on confirmed archive or absence. [1]

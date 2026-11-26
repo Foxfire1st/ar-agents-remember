@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+        "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
         "content": "sha256:c3a66e4689cfebaf00db5d8992bc622e70c428b23569f9a095b1895b8ade3a9c",
         "locator": {
-          "end": 250,
+          "end": 228,
           "kind": "line_range",
-          "start": 240
+          "start": 218
         }
       },
       "id": "RLZ-0GEZAR",
@@ -23,7 +23,7 @@
     },
     {
       "anchor": {
-        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+        "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
         "content": "sha256:c66af9c85cd326f4a585ffaf27da472e2b8490f9b8ccc51ed0f0e125ca59bfbd",
         "locator": {
           "kind": "symbol",
@@ -41,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
-        "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
+        "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
+        "content": "sha256:18ab34d71474cc78cf90e8f289f15c2e7ccb4ca736bf2c8b24c9bb8b8d8fe9fa",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -59,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
-        "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
+        "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
+        "content": "sha256:18ab34d71474cc78cf90e8f289f15c2e7ccb4ca736bf2c8b24c9bb8b8d8fe9fa",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -77,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+        "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
         "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
         "locator": {
           "kind": "symbol",
@@ -95,8 +95,8 @@
     },
     {
       "anchor": {
-        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
-        "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
+        "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
+        "content": "sha256:18ab34d71474cc78cf90e8f289f15c2e7ccb4ca736bf2c8b24c9bb8b8d8fe9fa",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -113,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+        "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
         "content": "sha256:fc2a1a7ef4a0889005c2cab69753b8915b5b64a9d172c1e25bc308028591a225",
         "locator": {
           "kind": "symbol",
@@ -131,8 +131,8 @@
     },
     {
       "anchor": {
-        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
-        "content": "sha256:fc155db31aff43ff2d6b402f2550a29e8fc0b1f027585d10f21ebd122f40b3a3",
+        "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
+        "content": "sha256:c4ff0e8be8697f638534acf12fe4f19eea38c4526a572571bde6e9dd544423c7",
         "locator": {
           "kind": "file"
         }
@@ -148,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+        "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
         "content": "sha256:add318f5f52459454ace603b7301aeecf2076960e72cbde7ce198c17d4c4fc7a",
         "locator": {
           "kind": "symbol",
@@ -166,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+        "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
         "content": "sha256:4c24f13a69cee68fbd2c1dde8d15129b0122f9473303ec967c7745d772f6758b",
         "locator": {
           "kind": "symbol",
@@ -184,8 +184,8 @@
     },
     {
       "anchor": {
-        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
-        "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
+        "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
+        "content": "sha256:18ab34d71474cc78cf90e8f289f15c2e7ccb4ca736bf2c8b24c9bb8b8d8fe9fa",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -202,7 +202,7 @@
     },
     {
       "anchor": {
-        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+        "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
         "content": "sha256:8c83d02a661f8baef0a21913522f22a75806dcdec82e8958500fa64d354f04a3",
         "locator": {
           "kind": "symbol",
@@ -220,8 +220,8 @@
     },
     {
       "anchor": {
-        "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
-        "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
+        "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
+        "content": "sha256:18ab34d71474cc78cf90e8f289f15c2e7ccb4ca736bf2c8b24c9bb8b8d8fe9fa",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -319,15 +319,16 @@
       ]
     },
     "15": {
-      "note": "The starting receipt carries task-copy metadata and warns of missing requirement copies ahead of step-up advice; later canonical task publication refreshes copies; the start answer projects identity and handover addresses while whole `role_start` can carry `productMessage`.",
+      "note": "The starting receipt carries task-copy metadata and warns of missing requirement copies, putting the missing filenames ahead of step-up advice. Later canonical task publication refreshes the copies when the files exist. The start answers with the projected identity and handover addresses; for a directly started Reviewer or Curator the whole `role_start` result can also carry the product start-message result (`productMessage`), which the compact answer projection does not keep.",
       "targets": [
         {
           "anchor": {
-            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
-            "content": "sha256:f253769a0cff38c5d3aefadfb7682a8ad5428c6269940d4d4a0fb2144d65a90f",
+            "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
+            "content": "sha256:e4ba963441aeb04ea41a164c58a588c87d7b486d7ca0fd422c5aa8d8f02b3e86",
             "locator": {
-              "kind": "symbol",
-              "name": "_launch_prepared_role_session"
+              "end": 589,
+              "kind": "line_range",
+              "start": 564
             }
           },
           "kind": "code"
@@ -404,7 +405,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+            "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
             "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
             "locator": {
               "kind": "symbol",
@@ -420,7 +421,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+            "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
             "content": "sha256:de581ef4da625e4f6867fa2525c309ad0371fccedcf1af7e5e44c6a4af768d65",
             "locator": {
               "kind": "symbol",
@@ -485,7 +486,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+            "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
             "content": "sha256:add318f5f52459454ace603b7301aeecf2076960e72cbde7ce198c17d4c4fc7a",
             "locator": {
               "kind": "symbol",
@@ -705,7 +706,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "447390ccf7520a73d0ff3faac96c04622aae6f91",
+            "blob": "95481b01b9ebe75b1fbc9d7f37e1fbd74047f5c7",
             "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
             "locator": {
               "kind": "symbol",
@@ -735,12 +736,12 @@
       ]
     },
     "8": {
-      "note": "Races publication and checks one persisted winner; competing request cannot issue another launch.\n\nAnchor: `RepeatAndConflictTests.test_a_task_bound_receipt_is_created_exclusively`",
+      "note": "Races publication and checks one persisted winner; competing request cannot issue another launch. Anchor: `RepeatAndConflictTests.test_a_task_bound_receipt_is_created_exclusively`",
       "targets": [
         {
           "anchor": {
-            "blob": "447390ccf7520a73d0ff3faac96c04622aae6f91",
-            "content": "sha256:efb058c8ca5c6a9df9153a195baff04ee4188e2855945750b226565550720f3b",
+            "blob": "95481b01b9ebe75b1fbc9d7f37e1fbd74047f5c7",
+            "content": "sha256:fad350e8510ef3d5275abfc15b970aba77dd3c03af6992e7609b01205cb07d4a",
             "locator": {
               "kind": "symbol",
               "name": "test_a_task_bound_receipt_is_created_exclusively"

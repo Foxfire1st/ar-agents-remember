@@ -219,7 +219,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ae4f0c7a72eef5d4f15704c71322f633ef63e16c",
+            "blob": "db44e27af544603a4ca10ea2baf8cd8e7d41087f",
             "content": "sha256:974ddafaa5bca02dcb531fc26ef2a93ed3850ce2b5493de1d6e58b601e58a470",
             "locator": {
               "kind": "symbol",
@@ -263,7 +263,7 @@
         }
       ]
     },
-    "8": {
+    "9": {
       "note": "`nested_detail_root`, `_validated_detail_source_parts`, `nested_detail_path`, and `_corpus_root_context` define the confined nested detail layout and durable corpus root selection.",
       "targets": [
         {

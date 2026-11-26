@@ -32,7 +32,13 @@ and `PassingHookTests`/`FailingHookTests`/`UnrunnableHookTests` drive the check 
   put the pass fact on the commit and let the last one win.
 - **Route coverage.** `RouteCoverageTests` keeps every route on the check: the provisional path runs the hook
   before the move, integration trusts a commit carrying the fact and checks one without it, and a failing
-  candidate without a fact never moves the master line.
+  candidate without a fact never moves the master line. Using `_init_dashboard_repo`,
+  `test_r8_temp_checkout_borrows_matching_node_modules_and_refuses_when_missing` and
+  `test_r8_temp_checkout_refuses_pre_spawn_on_lockfile_mismatch_or_absence` further assert that a detached or
+  linked checkout carrying `dashboard/package.json` symlinks primary `dashboard/node_modules` when
+  `dashboard/package-lock.json` matches byte-for-byte and unlinks it afterward, and refuses pre-spawn as
+  `unrunnable` with no leftover link when primary `dashboard/node_modules` is absent or `dashboard/package-lock.json`
+  differs or is missing.
 - **Answer and texts.** `AnswerAndTextTests` keeps the answer to result, failing step and log path. Its text case
   reads the `publish_tree_commit` docstring and the head of `.githooks/pre-commit`, neither of which may state the
   old hook-skipping behavior. The generator check invokes `scripts/renew-instructions.py --check` with the current Python interpreter.
@@ -50,6 +56,7 @@ decide the outcome rather than a mocked runner.
 
 - The tree the hook judged is the tree that is committed.
 - A hook that cannot run refuses; it never counts as a pass.
+- Borrowing primary `dashboard/node_modules` into a linked or temporary checkout requires a byte-identical `dashboard/package-lock.json` and removes the symlink after the run; missing modules or lockfile mismatch or absence refuses pre-spawn.
 
 ## Evidence
 
@@ -65,5 +72,6 @@ decide the outcome rather than a mocked runner.
 - Remaining-route fixtures protect exact-tree ordinary/direct publication refusal and pass facts — `RemainingRouteProductionTests` in mcp/tests/test_landing_commit_check.py. [7]
 
 - AnswerAndTextTests owns the instruction-renewal check subprocess (`scripts/renew-instructions.py --check`) run with the current interpreter; this is source attribution, not execution. [8]
-
 - The landing text case reads the publication docstring and the pre-commit hook head, and its generator check runs the instruction-renewal check with the current interpreter; this is source attribution, not a fresh run. [9]
+- Verifies that an unstamped candidate refuses pre-spawn as `unrunnable` when primary `dashboard/node_modules` is missing, borrows primary `dashboard/node_modules` in a detached or linked checkout when `dashboard/package-lock.json` matches, and unlinks the temporary symlink after the run; this is source attribution, not execution. [10]
+- Verifies that a linked or temporary checkout with a differing or removed `dashboard/package-lock.json` refuses pre-spawn as `unrunnable` naming `package-lock.json` without spawning the hook or leaving a `dashboard/node_modules` symlink behind; this is source attribution, not execution. [11]

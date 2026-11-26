@@ -33,6 +33,13 @@ Scope lines explain actual inputs and units for full/targeted Python, hooks and 
 `diff_scope_line` labels diagnostic changed coverage without a floor. The reporting owner never
 changes selection or grants acceptance.
 
+`fixed_step_scope_line` computes the recursive `python_files_under` counts only for the steps that
+report them: the Radon pair and a non-targeted pytest line. The hook's fixed steps therefore do not
+walk every test and product root for a line they do not read. `_pytest_scope_line` holds the
+targeted and full pytest descriptions. The `hook-batch` subcommand derives one scope and renders
+every tier payload through `collect_hook_scope_batch`; `_hook_batch_report` writes each payload to
+the caller's temporary directory.
+
 `tsconfig_project_inputs` (function, lines 430-458)
 - `tsconfig_inputs` (function, lines 459-482)
 - `config_input_files` (function, lines 483-505)
@@ -65,6 +72,9 @@ None.
 ## Evidence
 
 ### Repo-Internal References
+
+- The fixed-step lines defer their recursive count walks to the steps that read them. [6]
+- The hook-batch subcommand renders every tier payload from one derived scope. [7]
 
 The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
 

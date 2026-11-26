@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "b60f09508b968b94502bfe295188d0da57858fb1",
-    "commit": "70a18acd683e44e6b99bbee07fe3fb6e07c505ed",
+    "codeTree": "d2d3845baf9541100f06371fde62c4c0bb678b04",
+    "commit": "3ee8f6ad584e509ef6df637c1bb42484993b35d0",
     "role": "curator",
-    "statement": "Confirmed against CAP-L2 candidate b60f0950: docs/install/openclaw.md remains accurate because CAP-L2's launch-route opening offload changes preserve OpenClaw installation and launch configuration.",
-    "task": "261124-CAP-L2",
+    "statement": "Verified against synced L38 candidate on 3ee8f6ad/b83cff67: docs/install/openclaw.md (lines 1-99) accurately describes the unmatched Bootstrap refusal, explicit agent retry, and paseo status fields, preserved across L38 publish_prepared_launch.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/install/openclaw.md",
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/application/caller_harness.py"
     },
     {
-      "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+      "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
@@ -55,16 +55,5 @@
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json"
     }
-  ],
-  "writer": {
-    "at": "2026-11-25T20:08:37+01:00",
-    "by": "agent",
-    "effort": "high",
-    "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L2",
-    "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
-    "task": "261124-CAP"
-  }
+  ]
 }

@@ -3,7 +3,7 @@
 ## Purpose
 
 Owns post-integration cleanup of registered worktrees, merged task branches,
-worktree-owned observer drift snapshots, empty worktree folders, and the enclosure generation's outside scratch root. The terminal route removes `<enclosure>/logs/` with the enclosure. On a leaf it first copies the leaf's own tool-call lines to the master's notes and omits the detail links. A keep failure records `tool-calls-not-kept` and leaves the log folder for retry. The cleanup call's own line goes to the coordination root.
+worktree-owned observer drift snapshots, the task folder (`worktree_group`), and the enclosure generation's outside scratch root. Before deleting a modern task folder in full through `terminal_group.py`, cleanup moves out role reports, any real `messages` directory, and a leaf's own tool-call lines (copied to the master's notes without `detail` links); a keep failure records `tool-calls-not-kept` and blocks before deletion. The cleanup call's own line goes to the coordination root.
 
 ## Code Commentary
 
@@ -24,12 +24,14 @@ selector evidence is reported rather than replaced by queue/task inference. A du
 the result into a retryable nonzero response so the canonical terminal contract/receipt remains the
 address for another exact attempt. Leaves and dry-runs do not mutate activation.
 
-When `args.teardown_providers` is true (the default), `cleanup_result` calls
-`teardown_worktree_providers` first to reclaim the worktree's isolated provider
-stack (Docker containers, networks, and the `provider-runtime/` tree) before
-removing worktrees and directories. The teardown result is included in the
-response under `providers`. When `teardown_providers` is false, a
-`{"state": "skipped"}` placeholder is returned.
+When `args.teardown_providers` is true (the default), cleanup calls
+`teardown_terminal_providers` first to reclaim the isolated provider
+stack (skipping symlinked provider state outside the task folder) before
+removing worktrees and the task folder, reporting the outcome under `providers`.
+When `teardown_providers` is false, a
+`{"state": "skipped", "reason": "teardown_providers disabled"}` entry is returned,
+and any `provider-runtime/` directory that still holds provider state blocks
+cleanup before deletion.
 
 `remove_registered_worktree` now accepts an optional `force` keyword (default
 `False`); when true it passes `--force` to `git worktree remove`. This is used
@@ -170,25 +172,11 @@ remain for their own cleanup or projection-time orphan pruning. The deletion bou
 exact to the contract's code worktree name and work branch; cleanup must not broadly prune
 other snapshots from this path.
 
-**Enclosure report cleanup.** Before testing whether the worktree group is empty,
-`_removed_directories` removes the exact reserved `<worktree_group>/reports` tree. Since
-260815-DAG-L10 a series contract's group is the master worktree group
-(`worktrees/<repo>/<master>-ar`), so the series sweep reclaims the operation record/log, the
-citation source-index cache, and the Dagger test sandbox that land under it; the tree is
-preserved only when `legacy_series_reports_is_child_enclosure` proves a legacy series contract
-(group still recorded as the task enclosure root) shares that path with a child leaf enclosure
-named `reports`. Dry-run adds
-that prospective removal to the same planned-path model used for worktrees/provider runtime, so a
-group containing only scheduled paths and the curator checklist correctly reports
-`would_remove`. No other task or coordination report directory is pruned. `_cleanup_terminal_outputs` collects group reports before teardown with the same failure semantics, and `_removed_directories` removes the group's role folders into the same planned-path model.
+**Task-folder move-out and whole-folder removal.** Directory preview and removal are owned by `terminal_group.py` (`prepare_terminal_group`, `preview_group_removal`, `remove_terminal_group`); `_removed_directories` and the empty-directory check are gone. Before destructive work begins, `prepare_terminal_group` previews directory and move-out blockers (including symlink/writability checks and `provider-runtime/` when `teardown_providers=False`), closes recorded task seats, and moves out role reports, any real `messages` directory, and leaf tool-call lines. After worktrees, branches, and drift snapshots clear, `remove_terminal_group` re-runs report and tool-call collection, removes outside scratch and request locators, and removes the entire `worktree_group` folder in full for both leaf and modern series contracts (preserving the `reports`/`logs` summary rows). Only a legacy series whose `worktree_group` equals `<task_root>/enclosures` keeps subfolder removal via `legacy_series_directories` and preserves a colliding child `reports` enclosure through `legacy_series_reports_is_child_enclosure`.
 
 ## Admitted cleanup with agent archive (MIK-R76)
 
-`_cleanup_reserved` delegates to `terminal_cleanup._cleanup_with_guard`, which archives the leaf's
-recorded agents through `archive_terminal_agents` after terminal admission and before the
-destructive outputs. The already-completed terminal path also archives before returning, and a
-non-empty `agentArchive` report is merged into the result payload. The module keeps its own result,
-blocker and contract-stamp behavior.
+`_cleanup_reserved` delegates to `terminal_cleanup._cleanup_with_guard`, which calls `prepare_terminal_group` after terminal admission and before destructive outputs to preview folder removal, close recorded leaf or series seats through `archive_terminal_agents`, block if any seat or move-out/directory blocker remains, and complete move-out before deletion. `_already_completed_cleanup` delegates to `retry_terminal_group` (`terminal_retry.py`), which re-checks generation, remaining checkouts, seats, and move-out/directory blockers before retrying removal; any non-empty `agentArchive` report is merged into the result payload.
 
 ## 260928-MIK-L129 — a repeated cleanup carries no rejudged record on the archived contract
 
@@ -267,12 +255,12 @@ No external Domain Documentation source is configured for this memory repo.
 This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.
 
 
-> Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** A cleanup repeated after its terminal archive was written carries no rejudged record: the archive-ready branch binds `kept_line = None` and invents no `landedTips`. [22]
+> Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** A cleanup repeated after its terminal archive was written carries no rejudged record: the archive-ready branch binds `kept_line = None` and invents no `landedTips`.
 
 - **Retained historical source account — superseded by the current contract:** The dry-run repeat of an archive-ready cleanup finishes with no invented `landedTips`. [23]
 - **Retained historical source account — superseded by the current contract:** The real-run and branch-gone repeats complete the contract and the terminal authority re-reads `cleanup-completed`. [24]
 
-> Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** Successful cleanup and exact terminal replay pass through the terminal activation-release bridge. [2]
+> Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** Successful cleanup and exact terminal replay pass through the terminal activation-release bridge.
 
 
 ## 260815-DAG-L4 Authority History, Reconciled By CLIVE
@@ -310,7 +298,7 @@ binds `teardown_providers`; only identical retries converge after root deletion.
 the ephemeral terminal permit/release seam. Already-completed status returns the retained archive
 proof and never reconstructs deleted live state.
 
-Rule 5 terminal cases: branch retirement primitives moved whole into `terminal_branch_retirement.py`, including the kept-line proof that deletes a work branch whose tip sits on the landing or default line; the no-remains probe moved into `terminal_inventory.py`, shared by cleanup and abandon; a leaf whose contract says completed while its folder or branches still exist is finished by the repeated cleanup, which the citation-cache guard does not refuse for a missing state. `cleanup.py` keeps the terminal authority and the `_removed_directories` contract-derived logs sibling handled by the existing remove-tree port.
+Rule 5 terminal cases: branch retirement primitives moved whole into `terminal_branch_retirement.py`, including the kept-line proof that deletes a work branch whose tip sits on the landing or default line; the no-remains probe moved into `terminal_inventory.py`, shared by cleanup and abandon; a leaf whose contract says completed while its folder or branches still exist is finished by the repeated cleanup, which the citation-cache guard does not refuse for a missing state. `cleanup.py` keeps the terminal authority and delegates task-folder preview and whole-folder removal to `terminal_group.py`.
 
 ## Governing Overview
 
@@ -320,7 +308,7 @@ Rule 5 terminal cases: branch retirement primitives moved whole into `terminal_b
 
 ## 260928-MIK-L198 — Cleanup removes the root and sweeps the ended ones
 
-`cleanup_result` is now a thin wrapper that returns `with_outside_scratch_reconcile(_cleanup_result(args), dry_run=args.dry_run)`, so every run also sweeps the product parent and carries `outsideScratchReconcile` on the payload when the sweep removed or reported a root. `_removed_directories` adds `outside_scratch.removal_entry_for(contract, dry_run=dry_run)` to the directory inventory under the `outside_scratch` key on both the series path and the leaf path, which removes the recorded root and reports `would_remove` on a preview. `_already_completed_cleanup` now takes `dry_run` and asks `outside_scratch.terminal_blocker`; a root it could not remove returns return code 2 with state `blocked`, the summary "Cleanup is already recorded as completed but its outside scratch root could not be removed." and the failure under `blockers`, while a removed or already-absent root is carried as `outsideScratch`. After the completed contract is published and read back, `_publish_cleanup` calls `write_completion_record(contract, updated, operation="worktree_cleanup")`, the completion evidence a successor's sweep reads in place of the contract the group takes away.
+`cleanup_result` is now a thin wrapper that returns `with_outside_scratch_reconcile(_cleanup_result(args), dry_run=args.dry_run)`, so every run also sweeps the product parent and carries `outsideScratchReconcile` on the payload when the sweep removed or reported a root. `terminal_group.py` includes `outside_scratch.removal_entry_for(contract, dry_run=dry_run)` under the `outside_scratch` key on both leaf and series paths, removing the recorded root and reporting `would_remove` on preview. `_already_completed_cleanup` takes `dry_run` and delegates residue reclamation to `retry_terminal_group`; any remaining blocker (task folder, live seat, checkout, or outside scratch root) returns return code 2 with state `blocked`, summary "Cleanup is already recorded but its task resources could not be removed.", `directories`, `blockers`, and optional `agentArchive` or `outsideScratch`. After the completed contract is published and read back, `_publish_cleanup` calls `write_completion_record(contract, updated, operation="worktree_cleanup")`, the completion evidence a successor's sweep reads in place of the contract the group takes away.
 
 
 
@@ -331,14 +319,18 @@ Rule 5 terminal cases: branch retirement primitives moved whole into `terminal_b
 
 
 
-- **Retained historical source account — superseded by the current contract:** Successful cleanup and exact terminal replay pass through the terminal activation-release bridge.  Anchor: `cleanup_result` [2]
+
+- **Retained historical source account — superseded by the current contract:** Successful cleanup and exact terminal replay pass through the terminal activation-release bridge. Anchor: `cleanup_result` [2]
 
 
 
 
 
 
-- **Retained historical source account — superseded by the current contract:** A cleanup repeated after its terminal archive was written carries no rejudged record: the archive-ready branch binds `kept_line = None` and invents no `landedTips`.  Anchor: `cleanup_result` [22]
+
+
+- **Retained historical source account — superseded by the current contract:** A cleanup repeated after its terminal archive was written carries no rejudged record: the archive-ready branch binds `kept_line = None` and invents no `landedTips`. Anchor: `cleanup_result` [22]
+
 
 
 
@@ -355,4 +347,5 @@ Rule 5 terminal cases: branch retirement primitives moved whole into `terminal_b
 
 - `delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon. [9]
 
-- Cleanup keeps leaf call lines before deleting its log folder and carries the keep outcome. [27]
+
+- Cleanup keeps leaf call lines through `terminal_group.py` before removing the task folder and carries the keep outcome on `directories.logs`. [27]

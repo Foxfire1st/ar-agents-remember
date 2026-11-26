@@ -1,0 +1,1545 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L29",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-26T01:12:09+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L29",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-26T01:12:09+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L29",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "90cd5f5b-9d3c-4471-b495-57786fe6a818",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 2,
+    "tree": "8b8950bb520e608819f2637adae77bafac9f2b86",
+    "verdictRef": "notes/reports/reviewer/90cd5f5b-9d3c-4471-b495-57786fe6a818/261112-BUG-L29-memory-review-r2-verdict.md"
+  },
+  "rows": [
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-0JY3RQ",
+      "items": [],
+      "reason": "Confirmed DPD-ZT8YY7 (docs/design/python-pytest-bootstrap.md) after line-by-line audit on synced base 50292a3b + L29 and re-anchored stress-durability in test-evidence-lanes.toml to lines 846-848.",
+      "revision": 19,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c883e9093950ad17c032342760a1509dfd09b128",
+            "content": "sha256:baae241f5d74b2b2aa4cc3436d1770b83a1d681a17f4c5875d002f3898668fa2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "950bfd7c3c2db68a87d13d58bc6ce7e2d52ff634",
+            "content": "sha256:313240d5411cb3a74a512ed23ce568e396c4f4fbe3d182ba9f9d22c357a41ac4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "5ec887831fa860b5f4478321f94a6966ae51159c",
+            "content": "sha256:fa2e21ee4f5a648365c96f99bf7b45fec9e8e3eb6dc086daaab1c0b4a6375dfe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "f2c4c96f66a6b968683a0d56f273c64d6114ac22",
+            "content": "sha256:aa0c7acaae3db9abd178aa5ab9aff7d66dbc886dd6d2a96240a5737d1b58ddbb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-0KFV7R",
+      "items": [
+        "sha256:a4f1140067189caf62c1061d99871d7535a31e1f83efdf2f70999b270fe5bab3"
+      ],
+      "reason": "Both catalog realizations RLZ-BJ41EY and RLZ-H44S0N were re-anchored on synced codeTree 654d5eac (base babbd9127/75bc2afda); the outside-scratch-root rule is unchanged.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0SBJ1F",
+      "items": [
+        "sha256:3fcb6c8aa4a3617ac147bb784c75af8cb31e54e6f1edecba5cbf5b7a38ef0859"
+      ],
+      "reason": "Renewed for R8 Condition 2: documents sync_merge_commit_args conditional Commit-Check-Pass stamping via git commit -m when a runnable hook exists vs unstamped git commit --no-edit when none does, plus bounded execution and pinned-state rollback.",
+      "sources": [
+        {
+          "blob": "96473133db2ebee0b485a09f5bd00ac85de76448",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_code_merge_commit.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/sync_transaction_git/_code_merge_commit.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
+            "content": "sha256:691854ebf532f96932243d0f7f49dc7f27aa159869516f5188d0519ded49a651",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "before": {
+            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "content": "sha256:48d3aab73dab34e7b7fcf9af88d842eb1270daa2fcacd88a358f2327a4954789",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "id": "RLZ-1HZCA0"
+        },
+        {
+          "after": {
+            "blob": "9a7e852ea7920c8d6be14e0266a362655f91e3d2",
+            "content": "sha256:37ec7e995c08fb7271cd798b39892ec15f21b64877890688e341b6b58b068fb1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "before": {
+            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
+            "content": "sha256:63ef862e297cf1291173ffce4d53420fdfecca34be4d9769fee06367916b89e4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "id": "RLZ-YA5QN6"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-196G9K",
+      "items": [
+        "sha256:583bce09f618c581dbf329e0e8fbfa1975021041c169b35a75c6361dd73ac573"
+      ],
+      "reason": "The whole-file realizations on _merge.py and sync_transaction.py were re-anchored on synced R8 code b365a6e4; converted-memory anchor validation is unchanged.",
+      "revision": 1,
+      "subject": "INV-033XSD"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-19KKN4",
+      "items": [],
+      "reason": "Confirmed DPD-9K25G8 (docs/reference/worktrees-c09.md) after line-by-line audit on synced base 50292a3b + L29 (publication-owner hook check, unrunnable refusal, closeout/direct_landing hook=none, and worktree_integrate trailer verification).",
+      "revision": 9,
+      "subject": "DPD-9K25G8"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5ec887831fa860b5f4478321f94a6966ae51159c",
+            "content": "sha256:fa2e21ee4f5a648365c96f99bf7b45fec9e8e3eb6dc086daaab1c0b4a6375dfe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "f2c4c96f66a6b968683a0d56f273c64d6114ac22",
+            "content": "sha256:aa0c7acaae3db9abd178aa5ab9aff7d66dbc886dd6d2a96240a5737d1b58ddbb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "c883e9093950ad17c032342760a1509dfd09b128",
+            "content": "sha256:baae241f5d74b2b2aa4cc3436d1770b83a1d681a17f4c5875d002f3898668fa2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "950bfd7c3c2db68a87d13d58bc6ce7e2d52ff634",
+            "content": "sha256:313240d5411cb3a74a512ed23ce568e396c4f4fbe3d182ba9f9d22c357a41ac4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-209WV5",
+      "items": [
+        "sha256:da5fe50d9f5ad1a0a565fb8fb61eeecb488e01e3a5a8367a648ecbd1f73064a7"
+      ],
+      "reason": "Both catalog realizations RLZ-8RHQED and RLZ-MC12B0 were re-anchored on synced codeTree 654d5eac (base babbd9127/75bc2afda); the exact-consumer and lane-registration invariant is unchanged.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-24WB08",
+      "items": [
+        "sha256:3b27b514c5bb797111d5ae1c12c8920e56f6798e012d5d80c766daed5ec7e855"
+      ],
+      "reason": "Renewed for R8 Condition 1: area overview documents linked/temp checkout dashboard/node_modules borrowing and pre-spawn refusal in landing_commit_check.py.",
+      "sources": [
+        {
+          "blob": "742ebb6461129748b31551fca8b3d83930c7ae20",
+          "path": "mcp/src/agents_remember/worktrees/modules/commit_check_process.py"
+        },
+        {
+          "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
+          "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-27N78A",
+      "items": [
+        "sha256:a025ff56c7704b6fdff19d83b087b2ffaa156455363039fbae6d6c2accaf47f2"
+      ],
+      "reason": "A new card states the incremental dashboard project and its gitignored build-info file.",
+      "sources": [
+        {
+          "blob": "1ff60438e45a8fe67d8d880efcaada8633031c8b",
+          "path": "dashboard/tsconfig.driver.json"
+        }
+      ],
+      "subject": "onboarding:dashboard/tsconfig.driver.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2WHKVH",
+      "items": [
+        "sha256:b901e6d906f315944b14dbb6abc73d9a432841a633f72f5ff023aaf3d0fbfc2d"
+      ],
+      "reason": "A new card states the incremental dashboard project and its gitignored build-info file.",
+      "sources": [
+        {
+          "blob": "3ad518b9cbebdb0e2b16acb0ac8341b2b529a2c9",
+          "path": "dashboard/tsconfig.node.json"
+        }
+      ],
+      "subject": "onboarding:dashboard/tsconfig.node.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2ZJHWJ",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Restored L29 unit-regression lane entries (test_githooks_l29_repairs.py, test_sync_commit_check.py) and re-anchored lane-catalog citations on synced codeTree 654d5eac.",
+      "sources": [
+        {
+          "blob": "c883e9093950ad17c032342760a1509dfd09b128",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4TRS6Y",
+      "items": [
+        "sha256:c0275875729e8c0f029e034a3d7e01662abda2221e85999ec85429d9bc2de73f"
+      ],
+      "reason": "The hunk deletes a helper that moved to commit_check_process.py; the behavior is realized at run_bounded_command and the landing module's delegation, so this deletion carries no new invariant.",
+      "subject": "hunk:sha256:c0275875729e8c0f029e034a3d7e01662abda2221e85999ec85429d9bc2de73f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5YR6C8",
+      "items": [
+        "sha256:4e1ee797690beec6dbabdb7285ff810102290a645a6648b6533c998058741d3b"
+      ],
+      "reason": "Renewed for R8 Condition 2: area overview documents sync_merge_commit_args conditional stamping, _commit_staged_merge memory-hook stamping and rewind, and unstamped start_side_merge.",
+      "sources": [
+        {
+          "blob": "96473133db2ebee0b485a09f5bd00ac85de76448",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_code_merge_commit.py"
+        },
+        {
+          "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/sync_transaction_git/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-61V8YH",
+      "items": [
+        "sha256:1d2a8a0b86061a7510ab54a701169e984d7b10931d37f1921a3e5abe699c9cd9"
+      ],
+      "reason": "Renewed for R8 Condition 1: documents lockfile-matched dashboard/node_modules symlink borrowing and pre-spawn refusal in _borrow_dashboard_node_modules and _lockfile_borrow_refusal, and removes dead _run_hook_to_log and _stop_escaped_pipe_holders references.",
+      "sources": [
+        {
+          "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
+          "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-6NNTY0",
+      "items": [
+        "sha256:0fbae4d383a6b97f974952b4ffb8c0cbecc39ae1d0fa6993a1c04fd460b9d7aa"
+      ],
+      "reason": "No family's guarantee names the hook text's measured times or the bounded sync commit contract; the routes are documentation and the hook header, not a family route.",
+      "revision": 1,
+      "subject": "membership:INV-RXGZM9"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-794CJQ",
+      "items": [
+        "sha256:3de239e1f06a505d6c83ae39c8848fe2d42ea3705b547e43dd7a403e31d50d9f",
+        "sha256:96c00cb9041d279e6cb848c218470573e70b242dfcad41d5ca430c66d486cf0e"
+      ],
+      "reason": "Re-confirmed DPD-W0T9V9 (docs/reference/settings-json.md) on synced codeTree 654d5eac including Worker's --config required fix at lines 40-41 (matching mcp/server.py:483-487), CAP-L4 tool-log settings (lines 86-129), and L29 commitCheckTimeoutSeconds/mode-order/first-call grants.",
+      "revision": 17,
+      "subject": "DPD-W0T9V9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7CBG2C",
+      "items": [
+        "sha256:17f0d6c55652eae2a9d82e3f509f6f3e3404e70652d82f48ad313b9b9f5527f7"
+      ],
+      "reason": "The card now documents git_command_spec and the shared commit-check runner.",
+      "sources": [
+        {
+          "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
+          "path": "mcp/src/agents_remember/kernel/git_command.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/git_command.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7FYNMX",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Restored L29 exact-consumer entries (test_githooks_l29_repairs.py, test_sync_commit_check.py) and re-anchored catalog citations on synced codeTree 654d5eac.",
+      "sources": [
+        {
+          "blob": "5ec887831fa860b5f4478321f94a6966ae51159c",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-7X9RV3",
+      "items": [
+        "sha256:164e3f74b2ab0ede92468a1d24957ee92a7e0fb3c1796bd9f249e427d1c819f2",
+        "sha256:57a0f9eecf7c41799ab3f1258e19af2b9f0517730e18ef1b9ab0a0907d476d9b"
+      ],
+      "reason": "Re-confirmed DPD-78737N (CONTRIBUTING.md) on synced codeTree 654d5eac covering tool-server allowlists/fallbacks (lines 40-50) and L29 hook/bounded-sync passages (lines 330-337, 370-387).",
+      "revision": 14,
+      "subject": "DPD-78737N"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "content": "sha256:5473922e477f1d23077e1c52e3a29574b450c69f40a51227ff820b75eee52abe",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 196
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "before": {
+            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+            "content": "sha256:6a2208eb6f554a28bbecd72e107945c3e69b9c00858fba00121a9490ced5900b",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 196
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "id": "RLZ-NHA4YW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8H6ZW1",
+      "items": [
+        "sha256:3540ba1536881bbc1790fbf7b39376662294d85b5451e206243111bb07aeadfe"
+      ],
+      "reason": "The fast-tier prerequisite realization was re-anchored at e0bf9151; its dashboard-dependency refusal is unchanged.",
+      "revision": 1,
+      "subject": "INV-H49FH8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8R9MWG",
+      "items": [
+        "sha256:fbfc53a16ebcad3d1e3d68df3d53db0add035873478daf62862eacac5cbc9bc6"
+      ],
+      "reason": "The hunk is import, alias or delegation wiring for the shared commit-check owner; the obligation is realized at _run_checked and run_bounded_command, not at the wiring lines.",
+      "subject": "hunk:sha256:fbfc53a16ebcad3d1e3d68df3d53db0add035873478daf62862eacac5cbc9bc6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8YFYAT",
+      "items": [
+        "sha256:3138588d4aabcf6736142a00cdae9ab6e517eaf307d78f85de59a18c13368592"
+      ],
+      "reason": "The hunk is import, alias or delegation wiring for the shared commit-check owner; the obligation is realized at _run_checked and run_bounded_command, not at the wiring lines.",
+      "subject": "hunk:sha256:3138588d4aabcf6736142a00cdae9ab6e517eaf307d78f85de59a18c13368592"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AC1CFA",
+      "items": [
+        "sha256:a3376a589ddcd94f62311dd38880c941d4f505c411759211cd091d207de625b6"
+      ],
+      "reason": "The hunk is import, alias or delegation wiring for the shared commit-check owner; the obligation is realized at _run_checked and run_bounded_command, not at the wiring lines.",
+      "subject": "hunk:sha256:a3376a589ddcd94f62311dd38880c941d4f505c411759211cd091d207de625b6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B2YEK1",
+      "items": [
+        "sha256:1052b62cdda24eec7ded562251ea5ceb028cc0d8edf659f3ffe0e7c051e3948d"
+      ],
+      "reason": "The hunk deletes a helper that moved to commit_check_process.py; the behavior is realized at run_bounded_command and the landing module's delegation, so this deletion carries no new invariant.",
+      "subject": "hunk:sha256:1052b62cdda24eec7ded562251ea5ceb028cc0d8edf659f3ffe0e7c051e3948d"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-B3HY50",
+      "items": [
+        "sha256:1005ae5e4b504a2f5ad67b7154a81ed72230c487fca1e414863f5aa5c3295c0a"
+      ],
+      "reason": "The kernel account now credits git_command_spec and the shared commit-check runner instead of direct landing hook calls.",
+      "sources": [
+        {
+          "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
+          "path": "mcp/src/agents_remember/kernel/git_command.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BZJYGB",
+      "items": [
+        "sha256:064893018dafbd31ae8bb4fd800c85eb52f2aac646cd2d06823134bbdae9965a"
+      ],
+      "reason": "The hunk deletes a helper that moved to commit_check_process.py; the behavior is realized at run_bounded_command and the landing module's delegation, so this deletion carries no new invariant.",
+      "subject": "hunk:sha256:064893018dafbd31ae8bb4fd800c85eb52f2aac646cd2d06823134bbdae9965a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C52MK4",
+      "items": [
+        "sha256:5974b8bfd3b00d65f0cd33687599e338c82e176bea5f181c192ab57f579bd092"
+      ],
+      "reason": "The hunk deletes a helper that moved to commit_check_process.py; the behavior is realized at run_bounded_command and the landing module's delegation, so this deletion carries no new invariant.",
+      "subject": "hunk:sha256:5974b8bfd3b00d65f0cd33687599e338c82e176bea5f181c192ab57f579bd092"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CQ2KQT",
+      "items": [
+        "sha256:1f95ab2830d969a0aa5db28ef6f6a0fc8c8a75ca6b7660fabf1d05870f3365ee",
+        "sha256:295995aba7a22c7aa32ba1b95e3ab68acc89611b79d3c22d4e9d58d7a90b8d10",
+        "sha256:3ef11ad610ac7968ed9aaa101413d0f2265b4568228d66e6d56f8f5f3a8114c5",
+        "sha256:62c15ace4f34974d95df7e6c78f40a3a4abb27b01d5cf37faccb657b1bbe2d32",
+        "sha256:99bf103055a95971b67b8370ae5c356ecf6b9094c4189ef678c37e9073545e22",
+        "sha256:b68876b16ef2dc2e3e822b38c49d528db4e6fad94ee95e378820dad1adb601f5",
+        "sha256:c534245fe12cf76e14b96648c2d8c733b3287e9db3bde3b69bca043615a0f5b4",
+        "sha256:cb579f7f2167aaa19e357f7b9a10c703ad63c098469b6dcb98ceee9c9f0e9d36",
+        "sha256:fe3e842d7b23c0ebe69a2d1316f2dd7bb48375ceea7b9c95ebd95ca408f4f725"
+      ],
+      "reason": "The card now states the lazy count walk and the hook-batch subcommand.",
+      "sources": [
+        {
+          "blob": "f8aa99814c14c39ac32e90229e98df92a01b2da2",
+          "path": "mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DV27WF",
+      "items": [
+        "sha256:d9a3ff00fb661509b790150688f4eba3f28dbf6ec578377e7f22b910621845b7"
+      ],
+      "reason": "The hunk adds the helper _common_checkout_root (and surrounding blank/helper lines) to resolve the primary checkout root via git rev-parse --git-common-dir; the R8 Condition 1 obligation itself is realized at _lockfile_borrow_refusal and _borrow_dashboard_node_modules under INV-0YBX5E, so this lookup helper carries no separate invariant.",
+      "subject": "hunk:sha256:d9a3ff00fb661509b790150688f4eba3f28dbf6ec578377e7f22b910621845b7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DYJF88",
+      "items": [
+        "sha256:bddfc00dcb6441e250278818ee216eaff0c124969bf9644c677c6363188adb7c"
+      ],
+      "reason": "The hunk deletes a helper that moved to commit_check_process.py; the behavior is realized at run_bounded_command and the landing module's delegation, so this deletion carries no new invariant.",
+      "subject": "hunk:sha256:bddfc00dcb6441e250278818ee216eaff0c124969bf9644c677c6363188adb7c"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EMMW3M",
+      "items": [
+        "sha256:f1008ee38cf461222815978c7f107ffa9f0c740d7637faed447ca2ca13ac1716"
+      ],
+      "reason": "Renewed for R8 Condition 2: documents conditional Commit-Check-Pass stamping in continue_side_merge and _commit_staged_merge with rewind on hook mutation, and unstamped non-conflicting code merges in start_side_merge.",
+      "sources": [
+        {
+          "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-F94ADE",
+      "items": [
+        "sha256:5e23bb42ff4eb3e38ed42ec80a18830cd5a2b2b0240f59da75fba604a18dfa96"
+      ],
+      "reason": "Renewed for R8 tests (i), (ii), and (v): documents tree-bound Commit-Check-Pass stamping at sync, mismatched-tree re-check at integration, and absence of stamp without a runnable hook.",
+      "sources": [
+        {
+          "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+          "path": "mcp/tests/test_sync_commit_check.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_sync_commit_check.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FE70Y8",
+      "items": [
+        "sha256:119f00251304b31d12481a395f9f6105a5e2d1876b4d8d387d59827481cf3344"
+      ],
+      "reason": "The hunk deletes a helper that moved to commit_check_process.py; the behavior is realized at run_bounded_command and the landing module's delegation, so this deletion carries no new invariant.",
+      "subject": "hunk:sha256:119f00251304b31d12481a395f9f6105a5e2d1876b4d8d387d59827481cf3344"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9a7e852ea7920c8d6be14e0266a362655f91e3d2",
+            "content": "sha256:7a96bb46a3d3643fdf890df1a79cc3e6f1655af03cbd8d46df01d80843e57b25",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finish_retained_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "before": {
+            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
+            "content": "sha256:7e3f066e1ca073ba932f3f6560bcdc6559c931662b2876a46c7f7108f0d06ac1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finish_retained_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "id": "RLZ-R6TK1T"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-FTFM92",
+      "items": [
+        "sha256:9519563436fc428b783e2a545dafd2c5343035a00669d24f13f37a760868445c"
+      ],
+      "reason": "The retained-merge realization was re-anchored at e0bf9151; the staged whitespace and conflict reporting invariant is unchanged.",
+      "revision": 1,
+      "subject": "INV-VG5BFX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G2BYR0",
+      "items": [
+        "sha256:aedd5d9b9ae31976edc7cdc616295b6bb75937e156a86ca29bfaf203b10c67b6"
+      ],
+      "reason": "The hunk deletes a helper that moved to commit_check_process.py; the behavior is realized at run_bounded_command and the landing module's delegation, so this deletion carries no new invariant.",
+      "subject": "hunk:sha256:aedd5d9b9ae31976edc7cdc616295b6bb75937e156a86ca29bfaf203b10c67b6"
+    },
+    {
+      "considered": [
+        "FAM-26BYAY",
+        "FAM-1SEJYW",
+        "FAM-61DY2V"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-GDMG69",
+      "items": [
+        "sha256:b991b2060b429a5da5da9d5437124376b6eef3332d8c9c2320982a94a8077556"
+      ],
+      "reason": "The examined families do not promise the continued sync commit's conditional Commit-Check-Pass stamp, process bound, log, or staged-merge preservation; FAM-26BYAY governs addressed recovery, FAM-1SEJYW governs parked-work restoration and cancellation, and FAM-61DY2V governs closeout publication.",
+      "revision": 1,
+      "subject": "membership:INV-RMEPCX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GNPMA9",
+      "items": [
+        "sha256:1e93628cc133842a2ec2e076069739d583aa6121fa7663dfef5bdb24d6ed7fbb"
+      ],
+      "reason": "The hunk adds the GitCommandSpec value shape and its construction support; the obligation itself is realized at git_command_spec and covered by INV-RMEPCX, so the shape lines carry no separate invariant.",
+      "subject": "hunk:sha256:1e93628cc133842a2ec2e076069739d583aa6121fa7663dfef5bdb24d6ed7fbb"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c883e9093950ad17c032342760a1509dfd09b128",
+            "content": "sha256:baae241f5d74b2b2aa4cc3436d1770b83a1d681a17f4c5875d002f3898668fa2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "950bfd7c3c2db68a87d13d58bc6ce7e2d52ff634",
+            "content": "sha256:313240d5411cb3a74a512ed23ce568e396c4f4fbe3d182ba9f9d22c357a41ac4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "5ec887831fa860b5f4478321f94a6966ae51159c",
+            "content": "sha256:fa2e21ee4f5a648365c96f99bf7b45fec9e8e3eb6dc086daaab1c0b4a6375dfe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "f2c4c96f66a6b968683a0d56f273c64d6114ac22",
+            "content": "sha256:aa0c7acaae3db9abd178aa5ab9aff7d66dbc886dd6d2a96240a5737d1b58ddbb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GZMTNH",
+      "items": [
+        "sha256:58c583b87441a388a822d5e6541097d8cb051bf9163319a8963f2c4f83f51704"
+      ],
+      "reason": "Both catalog realizations RLZ-BNMQ79 and RLZ-GEMVNE were re-anchored on synced codeTree 654d5eac (base babbd9127/75bc2afda); the silent-role-agent turn-end invariant is unchanged.",
+      "revision": 7,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HDZFGP",
+      "items": [
+        "sha256:687b2db0042b5a60abc961c242226b94a0f5977ea670185570c10f1e9d7d3a8f"
+      ],
+      "reason": "A new card states the fast-tier entry, its measured times and the landing routes that run it.",
+      "sources": [
+        {
+          "blob": "35c02f5b5d840efa69de6f84133a9477f7fe7b19",
+          "path": ".githooks/pre-commit"
+        }
+      ],
+      "subject": "onboarding:.githooks/pre-commit"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JPRM6Y",
+      "items": [
+        "sha256:01817197a15db789905a945ecf0bb3967fdff51c09389f47b20373996fca5f2d"
+      ],
+      "reason": "Renewed for R8 tests (iii) and (iv): documents lockfile-matched dashboard/node_modules borrowing, cleanup, and pre-spawn refusal on missing/mismatched lockfile or missing primary node_modules.",
+      "sources": [
+        {
+          "blob": "ed95bd4e84b0374d2e902ef5538a971118ddb69d",
+          "path": "mcp/tests/test_landing_commit_check.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_landing_commit_check.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KQ690Z",
+      "items": [
+        "sha256:929950a34e0130ff2e2d8d6797f5a98eff7b844b27f78ae825037ff4c7dc2ba0"
+      ],
+      "reason": "The card states the one-invocation hook scope batch on synced code b365a6e4.",
+      "sources": [
+        {
+          "blob": "b0716fcda6c7c0a22dcdb02ec9e19287bff4c67c",
+          "path": "mcp/test_support/agents_remember_test_support/code_quality/hook_scope_batch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/code_quality/hook_scope_batch.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KY0T90",
+      "items": [
+        "sha256:09c11565a47c2b8b1bc6c735277a577ea3271b7856262891fb367e4d63b4c711"
+      ],
+      "reason": "The hunk is import, alias or delegation wiring for the shared commit-check owner; the obligation is realized at _run_checked and run_bounded_command, not at the wiring lines.",
+      "subject": "hunk:sha256:09c11565a47c2b8b1bc6c735277a577ea3271b7856262891fb367e4d63b4c711"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MY4SGS",
+      "items": [
+        "sha256:037c0ce549668d49f8cc8bb7db88a9a5d456dbc182be2d26c272675e2de922e6"
+      ],
+      "reason": "The sync account now states the bounded continued code-side commit and its staged-merge preservation.",
+      "sources": [
+        {
+          "blob": "9a7e852ea7920c8d6be14e0266a362655f91e3d2",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c883e9093950ad17c032342760a1509dfd09b128",
+            "content": "sha256:baae241f5d74b2b2aa4cc3436d1770b83a1d681a17f4c5875d002f3898668fa2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "950bfd7c3c2db68a87d13d58bc6ce7e2d52ff634",
+            "content": "sha256:313240d5411cb3a74a512ed23ce568e396c4f4fbe3d182ba9f9d22c357a41ac4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-N6TNK4",
+      "items": [
+        "sha256:6c793430102a88df0338c2011095da76d0c944c28ced5740793a8dd6b4b8ef58"
+      ],
+      "reason": "The lane-catalog realization RLZ-XQXYDT was re-anchored on synced codeTree 654d5eac (base babbd9127/75bc2afda); the survivor-to-operation matching invariant is unchanged.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NZWX70",
+      "items": [
+        "sha256:d64ff4e56a13abaa09f77344f055e3e893a927b3857b8f0226920a163cec8019"
+      ],
+      "reason": "The hunk adds the GitCommandSpec value shape and its construction support; the obligation itself is realized at git_command_spec and covered by INV-RMEPCX, so the shape lines carry no separate invariant.",
+      "subject": "hunk:sha256:d64ff4e56a13abaa09f77344f055e3e893a927b3857b8f0226920a163cec8019"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P5A9JV",
+      "items": [
+        "sha256:925aedd0fb4a076af3452725d384c6f1955a62dc78e2088fe4a4283975752179"
+      ],
+      "reason": "The hunk is import, alias or delegation wiring for the shared commit-check owner; the obligation is realized at _run_checked and run_bounded_command, not at the wiring lines.",
+      "subject": "hunk:sha256:925aedd0fb4a076af3452725d384c6f1955a62dc78e2088fe4a4283975752179"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-P6K87T",
+      "items": [
+        "sha256:b8a1400adc33399cc7a4d4393838ed6683d97c6b967d941f33ba0cf743989457"
+      ],
+      "reason": "No family's guarantee names the hook's dispatch, scope, concurrency, or cache behavior; the closest families govern test catalogs and test observations, not the hook's cost.",
+      "revision": 1,
+      "subject": "membership:INV-AFVK1G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PNQHNJ",
+      "items": [
+        "sha256:f5387b53d1058b4ceb163b697d7b343c4ca8e26d14576331eec22fc1f4d7c725"
+      ],
+      "reason": "The hunk is import, alias or delegation wiring for the shared commit-check owner; the obligation is realized at _run_checked and run_bounded_command, not at the wiring lines.",
+      "subject": "hunk:sha256:f5387b53d1058b4ceb163b697d7b343c4ca8e26d14576331eec22fc1f4d7c725"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ed95bd4e84b0374d2e902ef5538a971118ddb69d",
+            "content": "sha256:2b510c39a4d530f478d18b6d9150a6bcc751270e71b1e847bedab5d8d8346907",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_landing_commit_check.py"
+          },
+          "before": {
+            "blob": "1ca9290e16bcc03145eaa87dc8d04d113d4a415a",
+            "content": "sha256:0c521f56688208ff03101c2c00e51cd8ee6ff16e838f6941591351bc11e5c8a1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_landing_commit_check.py"
+          },
+          "id": "RLZ-SET0QM"
+        },
+        {
+          "after": {
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "content": "sha256:5a4fb80c820446dad4bf119c03adab2a75b598039272038073a3a5719c36a9f8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "before": {
+            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+            "content": "sha256:665a2353891a4675e64485f289f4a1aa463be468cf0c5f80d8db38a8ca5f91dc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "id": "RLZ-TKDWW5"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Q43TWQ",
+      "items": [
+        "sha256:9b630702b490ce38c24bcaed05f9c92e3a5aa2827c8c5cca08eb7787302478fc"
+      ],
+      "reason": "Both whole-file realizations RLZ-SET0QM (mcp/tests/test_landing_commit_check.py) and RLZ-TKDWW5 (.githooks/_gate.sh) were re-anchored on the synced 3336406e/4821d4ee tree; the stale instruction-derived value rule is unchanged.",
+      "revision": 1,
+      "subject": "INV-DHKR4G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q5NWT6",
+      "items": [
+        "sha256:5a3efc7c6625a6a8bb61cdc2451b9eb6733b125414eda672a8d3ee0926f4d906"
+      ],
+      "reason": "The hunk deletes a helper that moved to commit_check_process.py; the behavior is realized at run_bounded_command and the landing module's delegation, so this deletion carries no new invariant.",
+      "subject": "hunk:sha256:5a3efc7c6625a6a8bb61cdc2451b9eb6733b125414eda672a8d3ee0926f4d906"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RFY3SS",
+      "items": [
+        "sha256:c4d59e6e45ef08ee36715773ee38bb5cc2e55695170a2c93878f31a068614924"
+      ],
+      "reason": "The hunk is import, alias or delegation wiring for the shared commit-check owner; the obligation is realized at _run_checked and run_bounded_command, not at the wiring lines.",
+      "subject": "hunk:sha256:c4d59e6e45ef08ee36715773ee38bb5cc2e55695170a2c93878f31a068614924"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RW42AV",
+      "items": [
+        "sha256:f7e6960c80ff2511daac2046b954e7fcbcbfe3d1e30363e8dfbd90b60acf4104"
+      ],
+      "reason": "The hunk is import, alias or delegation wiring for the shared commit-check owner; the obligation is realized at _run_checked and run_bounded_command, not at the wiring lines.",
+      "subject": "hunk:sha256:f7e6960c80ff2511daac2046b954e7fcbcbfe3d1e30363e8dfbd90b60acf4104"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-RW58AK",
+      "items": [],
+      "reason": "Confirmed DPD-86HJGF (docs/architecture.md) after line-by-line audit on synced base 50292a3b + L29 (git_command.py additions and mcp/pyproject.toml 3.0.8 bump).",
+      "revision": 18,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SB4YCZ",
+      "items": [
+        "sha256:6482275be7d563a068a02365c9869d4ccfdcaa441f5bffc521d6f2a8b72f5c30"
+      ],
+      "reason": "The hunk is import, alias or delegation wiring for the shared commit-check owner; the obligation is realized at _run_checked and run_bounded_command, not at the wiring lines.",
+      "subject": "hunk:sha256:6482275be7d563a068a02365c9869d4ccfdcaa441f5bffc521d6f2a8b72f5c30"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SSKYN9",
+      "items": [
+        "sha256:e0e36ecdb4dc88f9e3f6e59f3b35fcd4b562413c62ff43a1be488339b47c8982"
+      ],
+      "reason": "A new card states the incremental dashboard project and its gitignored build-info file.",
+      "sources": [
+        {
+          "blob": "d9793c71824bc26c5fd6f59c6265b339b604a681",
+          "path": "dashboard/tsconfig.app.json"
+        }
+      ],
+      "subject": "onboarding:dashboard/tsconfig.app.json"
+    },
+    {
+      "considered": [
+        "FAM-26BYAY",
+        "FAM-1SEJYW",
+        "FAM-61DY2V",
+        "FAM-NQQP2T"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-STD2FN",
+      "items": [
+        "sha256:b9d7bd88703c8a4c6cc339e03d9292951b354baa0903925dd99d3092f1b583db"
+      ],
+      "reason": "None of the examined worktree families promise sync-merge Commit-Check-Pass stamping or temporary-checkout dashboard/node_modules lockfile-matched borrowing; FAM-26BYAY governs addressed recovery, FAM-1SEJYW governs parked-work restoration/cancellation, FAM-61DY2V governs gated closeout publication, and FAM-NQQP2T governs landing pair admission.",
+      "revision": 1,
+      "subject": "membership:INV-0YBX5E"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SW6X4H",
+      "items": [
+        "sha256:31e7716874f199b3be43be57eb5b2d7c219181f6047c62b5159c122613eecc1c"
+      ],
+      "reason": "Restored L29 fast-tier hook and bounded continued-sync commit evidence entries and re-anchored overview citations on synced codeTree 654d5eac.",
+      "sources": [
+        {
+          "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+          "path": ".githooks/_gate.sh"
+        },
+        {
+          "blob": "35c02f5b5d840efa69de6f84133a9477f7fe7b19",
+          "path": ".githooks/pre-commit"
+        },
+        {
+          "blob": "e85f0cf6144ccf924223f8660dda786411a4fda0",
+          "path": ".gitignore"
+        },
+        {
+          "blob": "f4ff7c54edc12706058af2aad22d48302a1b6109",
+          "path": "dashboard/.gitignore"
+        },
+        {
+          "blob": "d9793c71824bc26c5fd6f59c6265b339b604a681",
+          "path": "dashboard/tsconfig.app.json"
+        },
+        {
+          "blob": "1ff60438e45a8fe67d8d880efcaada8633031c8b",
+          "path": "dashboard/tsconfig.driver.json"
+        },
+        {
+          "blob": "3ad518b9cbebdb0e2b16acb0ac8341b2b529a2c9",
+          "path": "dashboard/tsconfig.node.json"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SZPHHM",
+      "items": [
+        "sha256:40f6e54b3cbabfe2fc506b8dff9a36a421a30e8d38f0d6c46bd34f90c9587f2b"
+      ],
+      "reason": "The card now states the typed bounded commit stop and its refusal fields.",
+      "sources": [
+        {
+          "blob": "9a7e852ea7920c8d6be14e0266a362655f91e3d2",
+          "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/sync_transaction.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-T3WAW1",
+      "items": [
+        "sha256:7be7e79e1c4d3b868791c59abf65635aa6b4c05e48589e1e2ecc613574b8ac03"
+      ],
+      "reason": "The card states the shared bounded commit-check process owner and its log and stop contract on synced code b365a6e4.",
+      "sources": [
+        {
+          "blob": "742ebb6461129748b31551fca8b3d83930c7ae20",
+          "path": "mcp/src/agents_remember/worktrees/modules/commit_check_process.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/commit_check_process.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TK82W0",
+      "items": [
+        "sha256:f0f38f8d182f87f3fc5596ed9b61efb5ad6f5c21d8e6db2079937469602ccb58"
+      ],
+      "reason": "The hunk deletes a helper that moved to commit_check_process.py; the behavior is realized at run_bounded_command and the landing module's delegation, so this deletion carries no new invariant.",
+      "subject": "hunk:sha256:f0f38f8d182f87f3fc5596ed9b61efb5ad6f5c21d8e6db2079937469602ccb58"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-V48ZQG",
+      "items": [
+        "sha256:4810b828d3e6d389b591813cf576aec80c77e0d59ad526d5cbcf0b8e8c1dba7f",
+        "sha256:82b4e9a1ed3551dde373bd00a211f5ada09fda796abe6d66eab3bbad7a464971"
+      ],
+      "reason": "Re-confirmed DPD-X6G7K3 (docs/reference/mcp-tools.md) on synced base 50292a3b with updated role-agent tool-delivery line range (684-687) alongside L29/R8/D167 bounded sync commit (284-292) and L38/L37 passages (737-743).",
+      "revision": 22,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2KVT5S",
+          "revision": 1
+        },
+        {
+          "id": "INV-6ZZXV3",
+          "revision": 1
+        },
+        {
+          "id": "INV-795NRN",
+          "revision": 1
+        },
+        {
+          "id": "INV-JDZG62",
+          "revision": 1
+        },
+        {
+          "id": "INV-KM9V3K",
+          "revision": 1
+        },
+        {
+          "id": "INV-XN49FH",
+          "revision": 1
+        },
+        {
+          "id": "INV-YEQENJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-VH81K7",
+      "items": [
+        "sha256:9e31ad4cd104a0f92f169835b4f5d24d392888ff2c148b4c46f277e823b6a1ae"
+      ],
+      "reason": "Reached only through INV-6ZZXV3's whole-file realization RLZ-7YMNE5 on docs/reference/mcp-tools.md; L29 edits only the continued-sync commit passage and leaves the five-minute provider-limit recheck, early clear release, held-message drain, and all seven family members unchanged.",
+      "revision": 1,
+      "subject": "FAM-FD58VB"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-VK5YY9",
+      "items": [],
+      "reason": "Confirmed DPD-6ZHCCN (docs/design/python-test-evidence.md) after line-by-line audit on synced base 50292a3b + L29 (landing_commit_check.py refactor preserves no-test pre-commit-only closeout/landing contract).",
+      "revision": 2,
+      "subject": "DPD-6ZHCCN"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VT6Z0D",
+      "items": [
+        "sha256:06208dcf710239788cd4e2d18629daeca137123f6e0ba820919954b067389b3c"
+      ],
+      "reason": "The area account now names hook_scope_batch and the hook-batch scope path.",
+      "sources": [
+        {
+          "blob": "b0716fcda6c7c0a22dcdb02ec9e19287bff4c67c",
+          "path": "mcp/test_support/agents_remember_test_support/code_quality/hook_scope_batch.py"
+        },
+        {
+          "blob": "f8aa99814c14c39ac32e90229e98df92a01b2da2",
+          "path": "mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/code_quality/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-W012H8",
+      "items": [
+        "sha256:797f551c45ddb11fbeee91ebee0a6f402cdcec825ef13f8e4afbc6082ad43f4b"
+      ],
+      "reason": "Restored L29 test module entries (test_githooks_l29_repairs.py, test_sync_commit_check.py) and re-anchored test-overview catalog citations on synced codeTree 654d5eac.",
+      "sources": [
+        {
+          "blob": "5ec887831fa860b5f4478321f94a6966ae51159c",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "c883e9093950ad17c032342760a1509dfd09b128",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "ab2774112604e0b1eb489be54f38cfa4480fa031",
+          "path": "mcp/tests/test_githooks_l29_repairs.py"
+        },
+        {
+          "blob": "ed95bd4e84b0374d2e902ef5538a971118ddb69d",
+          "path": "mcp/tests/test_landing_commit_check.py"
+        },
+        {
+          "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+          "path": "mcp/tests/test_sync_commit_check.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W20SVK",
+      "items": [
+        "sha256:f43358a31361ffddec8a6c0b26b849b4206552a9077a7489f44be23d873ffe8e"
+      ],
+      "reason": "The hunk is import, alias or delegation wiring for the shared commit-check owner; the obligation is realized at _run_checked and run_bounded_command, not at the wiring lines.",
+      "subject": "hunk:sha256:f43358a31361ffddec8a6c0b26b849b4206552a9077a7489f44be23d873ffe8e"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-W86RPP",
+      "items": [],
+      "reason": "Confirmed DPD-0K35N0 (docs/release-checklist.md) after line-by-line audit on synced base 50292a3b + L29 (.githooks/_gate.sh repairs and 3.0.8 version alignment).",
+      "revision": 8,
+      "subject": "DPD-0K35N0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "335d4461282e2836f4af863df677d07e72ff461a",
+            "content": "sha256:351dc0d7c23dafa674a88c17438f4453873ee005d860406eb501db373f0d7ed3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "before": {
+            "blob": "4f84319f540b34af2161212763a118f5e52b00e1",
+            "content": "sha256:bf4873fb9c5c94152c6d18a96b06110586f28d38c2ffe4e48cec653b515b7cac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-7YMNE5"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-XV5X48",
+      "items": [
+        "sha256:042630db4bd02606fae122541290a59bcd00471b61e1f503d07a6e6b60dd28ee"
+      ],
+      "reason": "The whole-file realization RLZ-7YMNE5 on docs/reference/mcp-tools.md was re-anchored on synced codeTree 654d5eac (base babbd9127/75bc2afda); the five-minute provider-limit recheck and early drain documentation is unchanged.",
+      "revision": 1,
+      "subject": "INV-6ZZXV3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Y1Q65P",
+      "items": [
+        "sha256:f459568dc5b23668189394f6b19d33db410a13f8ebeae48de4ac701d8b13032f"
+      ],
+      "reason": "The card states the R1-R6 hook-repair cases and their verdict-preserving checks on synced code b365a6e4.",
+      "sources": [
+        {
+          "blob": "ab2774112604e0b1eb489be54f38cfa4480fa031",
+          "path": "mcp/tests/test_githooks_l29_repairs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_githooks_l29_repairs.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ZNK37X",
+      "items": [],
+      "reason": "Confirmed DPD-9F0Q8G (docs/guides/use-external-memory.md) after line-by-line audit on synced base 50292a3b + L29 (closeout and direct_landing hook check, timeout precedence, and Commit-Check-Pass hook=none).",
+      "revision": 5,
+      "subject": "DPD-9F0Q8G"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ZPY4E7",
+      "items": [],
+      "reason": "Confirmed DPD-Q4APMS (mcp/README.md) after line-by-line audit on synced base 50292a3b + L29 (mcp-tools.md update and 3.0.8 bump; 44 tools in 8 groups + 4 explainer tools verified).",
+      "revision": 21,
+      "subject": "DPD-Q4APMS"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:68eb640aad6b10672f305ee2fe37e2b083a0bcc0b1709cfce4c79c68198bb1a1",
+      "record": "DEC-R6JZJG",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-25T14:52:18+01:00",
+        "by": "agent",
+        "effort": "unknown",
+        "harness": "hermes",
+        "leaf": "261112-BUG-L29",
+        "model": "opencode-go:deepseek-v4.1-flash",
+        "role": "curator",
+        "seat": "81dd1137-f494-569a-91e0-85d146824594",
+        "task": "261112-BUG",
+        "unknown": {
+          "effort": "the launch receipt does not hold the effort"
+        }
+      }
+    },
+    {
+      "contentDigest": "sha256:30026647c8e426df4be3ea762820a24e2901f5a2dd6be7aa985d079b176b5b9b",
+      "record": "DPD-0K35N0",
+      "revision": 8,
+      "writer": {
+        "at": "2026-11-26T00:49:11+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L29",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:5d9f27b37004712064627cc076c74006ced5baf714b5f956a3c1e1c6196b87ae",
+      "record": "DPD-6ZHCCN",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-26T00:49:11+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L29",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:61850b30bab2e1165261d915d0230d06c6ad5e4aa0f6ef1e7df833f05349edcc",
+      "record": "DPD-78737N",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-25T23:13:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L29",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:9846b3142f39e9bfef9d1b2fb77131827bb98a2487496a8c955278cccd234ef2",
+      "record": "DPD-86HJGF",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-26T00:49:11+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L29",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:5c5ea51723dfb3c2c0b712ccad82ee0cfafbc59bfcf6d9e61958e7c7cf449f3c",
+      "record": "DPD-9F0Q8G",
+      "revision": 5,
+      "writer": {
+        "at": "2026-11-26T00:49:11+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L29",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:aac2ff234c4615a3d946f6929265171324e562eab6c7523fdeb5e325ce6e118a",
+      "record": "DPD-9K25G8",
+      "revision": 9,
+      "writer": {
+        "at": "2026-11-26T00:49:11+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L29",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:9e29d6dbf970cc2deda85918546696729e1424fce20220d721d7179e73927fef",
+      "record": "DPD-Q4APMS",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-26T00:49:11+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L29",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:19a62021cdc4552341b52f75e8c1a15cddaf8c2cac2fb79dc73c6ca7706fcee8",
+      "record": "DPD-W0T9V9",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-25T14:52:18+01:00",
+        "by": "agent",
+        "effort": "unknown",
+        "harness": "hermes",
+        "leaf": "261112-BUG-L29",
+        "model": "opencode-go:deepseek-v4.1-flash",
+        "role": "curator",
+        "seat": "81dd1137-f494-569a-91e0-85d146824594",
+        "task": "261112-BUG",
+        "unknown": {
+          "effort": "the launch receipt does not hold the effort"
+        }
+      }
+    },
+    {
+      "contentDigest": "sha256:8b4a5dbaa30754fb0a37dcbefc23ec427a93c13cf982414c803e02be44c89ae6",
+      "record": "DPD-W0T9V9",
+      "revision": 17,
+      "writer": {
+        "at": "2026-11-25T23:13:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L29",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:bcf073ab501f30aec6c59966586b17895fa5278ce2b309efc739ec52679e9740",
+      "record": "DPD-X6G7K3",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-25T14:52:18+01:00",
+        "by": "agent",
+        "effort": "unknown",
+        "harness": "hermes",
+        "leaf": "261112-BUG-L29",
+        "model": "opencode-go:deepseek-v4.1-flash",
+        "role": "curator",
+        "seat": "81dd1137-f494-569a-91e0-85d146824594",
+        "task": "261112-BUG",
+        "unknown": {
+          "effort": "the launch receipt does not hold the effort"
+        }
+      }
+    },
+    {
+      "contentDigest": "sha256:bcea4b232e967c2f2bb05e7d60d3193650233172f927ffc259c58b4adc661c86",
+      "record": "DPD-X6G7K3",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-25T18:37:28+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L29",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:f1d59d8aa0cfc75997fcf0e9865dba42d925c561cd6281d0d5ef01c3b63897a2",
+      "record": "DPD-X6G7K3",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-26T00:49:11+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L29",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:5f01d40a9d4459582930a756925f8b523015b08c376ea96686f58696b68331d9",
+      "record": "DPD-ZT8YY7",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-26T00:49:11+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L29",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:40c320f7d8d81a160b5bc7854faa8f1615ce8de5dad583c2a506e23e075671a6",
+      "record": "INV-0YBX5E",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-25T18:10:27+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L29",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:acc329c8c9ed6e7813096a96918be94ca5e15c49628f849c4b943a8ebd73c10d",
+      "record": "INV-AFVK1G",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-25T14:52:18+01:00",
+        "by": "agent",
+        "effort": "unknown",
+        "harness": "hermes",
+        "leaf": "261112-BUG-L29",
+        "model": "opencode-go:deepseek-v4.1-flash",
+        "role": "curator",
+        "seat": "81dd1137-f494-569a-91e0-85d146824594",
+        "task": "261112-BUG",
+        "unknown": {
+          "effort": "the launch receipt does not hold the effort"
+        }
+      }
+    },
+    {
+      "contentDigest": "sha256:e78f831f5593a9958aca9e17caef42701b65c8fe952acd6fb03f213a7da694be",
+      "record": "INV-RMEPCX",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-25T18:10:27+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L29",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:c945a81ab9b282d9873fe5bed08129325266a8342846531930e471612891527d",
+      "record": "INV-RXGZM9",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-25T23:13:05+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L29",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:dc11982ccbb03325d95b5c54de10f8a47c5a1945dda0f0f36224daac3729c550",
+      "record": "WKN-6Q7A5G",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-25T18:10:27+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L29",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/terminal_retry.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "557ef1903ac517458241153a5b2ed5a36a985ac7",
+        "content": "sha256:38be33023a867a09e32071613c4dff0d1ed50504bbe57194e48a2e31526fd42c",
+        "locator": {
+          "kind": "symbol",
+          "name": "retry_terminal_group"
+        }
+      },
+      "id": "RLZ-XKV1TE",
+      "invariant": "INV-4CJ7H0",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 1 generation ownership",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "Rechecks terminal ownership and ordinary Git guards under the existing locator reservation before deletion.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`_require_generation` reloads the contract and raises `AuthorityError` if the contract or its terminal archive authority has diverged from `expected`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "557ef1903ac517458241153a5b2ed5a36a985ac7",
+            "content": "sha256:ad31f8c359e43f03d937a82f8828c5c7f9a477410e3084ca9623355b5d360e9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_worktree_blockers` runs `_worktree_preflight` and blocks any surviving Git checkout marked `would_remove` so retries never recursively delete checkouts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "557ef1903ac517458241153a5b2ed5a36a985ac7",
+            "content": "sha256:550c6dae4af52d515fc950194b8b915d247e5d344125d35b7901fe6a9f8007b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worktree_blockers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`retry_terminal_group` gates live retries with `lifecycle_location_reservation`, handles legacy series outside-scratch removal or modern retry, and maps generation/location/lock errors to a `terminal` blocker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "557ef1903ac517458241153a5b2ed5a36a985ac7",
+            "content": "sha256:38be33023a867a09e32071613c4dff0d1ed50504bbe57194e48a2e31526fd42c",
+            "locator": {
+              "kind": "symbol",
+              "name": "retry_terminal_group"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_apply_retry` re-previews blockers, performs move-out via `prepare_group_removal`, tears down providers when requested, and removes the group via `remove_terminal_group`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "557ef1903ac517458241153a5b2ed5a36a985ac7",
+            "content": "sha256:cb910dd2b3e32328ab5f50a10bffa8e326dc1a2abdac147ccea464c873e7985a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_retry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

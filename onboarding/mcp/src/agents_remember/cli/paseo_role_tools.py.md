@@ -70,7 +70,9 @@ The role-message facade, native held ordering, recipient identity, parent contai
 
 - The start path validates the dispatch request, checks the caller’s authority and sends it through the shared endpoint. [2]
 
+
 - Frozen implementation of _resolve_recipient supporting the stated file behavior. [3]
+
 
 
 - Checks foreign IDs and self-addresses are refused. [6]
@@ -138,7 +140,9 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 
 
 
+
 - Prepared launch and receipt-aware resume publish role facts before their host call. The answer builder projects the saved receipt. Best-effort publication establishes no plug-in consumption. [18]
+
 
 
 

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
-    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
+    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "On tree a5bb9a1f, the features page's account of the tool server, typed tool boundaries, answer bounds, and tool-log locations still holds; CAP-L4's post-registration inputSchema compaction in server.py is lossless for parameter types and constraints and changes no runtime behavior.",
-    "task": "261124-CAP-L4",
+    "statement": "docs/features.md (lines 349-379) accurately describes read-only versus mutating MCP tool trust boundaries, answer token bounds, and tool-log routing, unaffected by L38 adding sharedHeldStores to RUNTIME_INSTALL_ANSWER_FIELDS.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 24,
+  "revision": 25,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -58,7 +58,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
     },
     {
-      "blob": "0545be4ce99a465c6e590e0c19385c91e54191db",
+      "blob": "64084f98803199c3d7bae4ce76810611b0578a13",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -286,7 +286,6 @@
         },
         "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
       },
-      "heading": "Loaded build identity",
       "kind": "anchor"
     },
     {
@@ -294,5 +293,16 @@
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

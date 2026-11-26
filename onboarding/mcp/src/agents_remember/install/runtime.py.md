@@ -182,7 +182,9 @@ fields the entry point reads cannot drift apart.
 
 ### Repo-Internal References
 
+
 - The MCP application entry point forwards one typed request to the installer. [1]
+
 
 - `RuntimeInstallScope` carries an optional experiment selection, and both public entry points funnel through one private installer. [2]
 
@@ -204,7 +206,9 @@ fields the entry point reads cannot drift apart.
 
 - The application entry that composes the host step onto the lower service result. [11]
 
-- The application entry adds the dashboard ensure and the running-server inventory to the install result. [21]
+
+- The application entry adds the dashboard ensure and the running-server inventory to the install result. Anchor: `server_inventory(config)` [21]
+
 
 </details>
 

@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "764f146c5670470b3c8c10f5a5a7be9b66df5fac",
-    "commit": "e51f75630087a00bdcacaab646541e9cb04356d6",
+    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "On merged code e51f75630 the Roles guide distinguishes dashboard role selection, per-start execution overrides and permission-mode precedence, preserves the review and curation order, routes an archived parent's turn-end line to the current Manager, reserves Revive for closed sessions, and still distinguishes the archived-parent alternate and dashboard Revive from retirement.",
-    "task": "261112-BUG-L37",
-    "uncommitted": false
+    "statement": "docs/roles.md (lines 236-262, 305-329, 417-426) accurately describes enclosure folder layout, held messages, retire_child, refusal of messages to archived agents, and host archival on finalize/cleanup/abandon.",
+    "task": "261112-BUG-L38",
+    "uncommitted": true
   },
   "document": "docs/roles.md",
   "id": "DPD-B540GW",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -46,22 +46,22 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_caller.py"
     },
     {
-      "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+      "blob": "9124be375703846117abf9f0f4fee05c1044befd",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
     {
-      "blob": "c5586be802e8e401bd72b2e4e6a0f362426687d4",
+      "blob": "023e93b07cfc3def08a05238107dfa8eb68e292c",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_retire.py"
     },
     {
-      "blob": "33dee0163a72fe170cda979c46696ba75db60df7",
+      "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },
     {
-      "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
+      "blob": "a1f069e419ffe08785169f62071677130931c7b0",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
@@ -81,7 +81,7 @@
       "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
     },
     {
-      "blob": "ab10f3cdc3aba28b9e189c902501164cc29da34b",
+      "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
       "kind": "file",
       "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
     },
@@ -171,9 +171,20 @@
       "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
     },
     {
-      "blob": "564667885eea6143b5ac2dd0361c427fc02f785a",
+      "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

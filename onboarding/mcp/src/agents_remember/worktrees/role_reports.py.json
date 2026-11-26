@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
-        "content": "sha256:b0fd75db266249dc184d51fdc14f5e8e679669b8ee3b8fa79b337df06cb8107e",
+        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "content": "sha256:f7d48c4cb8241446dc090c468fc636344e0aa2bf86443ff9809d19cd3f52ada9",
         "locator": {
           "kind": "symbol",
           "name": "collect_report_folder"
@@ -21,8 +21,26 @@
     },
     {
       "anchor": {
-        "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
-        "content": "sha256:b1e7d9ecc88a6a7945c6db1705d79ffc520b5d0a6c080177d759daa775e8865f",
+        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "content": "sha256:f7d48c4cb8241446dc090c468fc636344e0aa2bf86443ff9809d19cd3f52ada9",
+        "locator": {
+          "kind": "symbol",
+          "name": "collect_report_folder"
+        }
+      },
+      "id": "RLZ-0NCMT0",
+      "invariant": "INV-2RFVNH",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 4",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "Checks source evidence and canonical target shape in preview as well as apply.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "content": "sha256:a56ee299072a448e43a205563b6d7f618219e59bfc96778e93f89e11cc811d2e",
         "locator": {
           "kind": "symbol",
           "name": "remove_group_role_folders"
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
+        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
         "content": "sha256:3f10ae98a4c8761409810abb12b5452035f0958e86103f6e6475a726e402539c",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
+        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
         "content": "sha256:1f9511937df21297f649ae38c73213d31257c221dfa45b811585a73871cc405b",
         "locator": {
           "kind": "symbol",
@@ -75,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
-        "content": "sha256:b1e7d9ecc88a6a7945c6db1705d79ffc520b5d0a6c080177d759daa775e8865f",
+        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "content": "sha256:a56ee299072a448e43a205563b6d7f618219e59bfc96778e93f89e11cc811d2e",
         "locator": {
           "kind": "symbol",
           "name": "remove_group_role_folders"
@@ -93,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
+        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
         "content": "sha256:7a3d4f425fe9a17dc9d36942249cf188fce3b7ba0d62f7333213771360e4a03e",
         "locator": {
           "kind": "symbol",
@@ -111,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
+        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
         "content": "sha256:cef6aa881c187a14c3b5b9f06ce38dbd12940ec9f31ed1b22cbdfaf96e69b2b2",
         "locator": {
           "kind": "symbol",
@@ -129,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
+        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
         "content": "sha256:b383884d5fd979d25ec4170406b2bccb264cb72d69e34af2653c01c7319a09f1",
         "locator": {
           "kind": "symbol",
@@ -147,12 +165,12 @@
     },
     {
       "anchor": {
-        "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
-        "content": "sha256:b7648e0f834e8414dcbd1b97a0002253f9f5a0d162f8ff49cac5e6678c8d9143",
+        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "content": "sha256:750163d382064732d0055cae8addbfdc8eb0e46b149f82892d466bbe3ed6e7ce",
         "locator": {
-          "end": 288,
+          "end": 300,
           "kind": "line_range",
-          "start": 213
+          "start": 229
         }
       },
       "id": "RLZ-KK0WAS",
@@ -166,8 +184,8 @@
     },
     {
       "anchor": {
-        "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
-        "content": "sha256:b0fd75db266249dc184d51fdc14f5e8e679669b8ee3b8fa79b337df06cb8107e",
+        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "content": "sha256:f7d48c4cb8241446dc090c468fc636344e0aa2bf86443ff9809d19cd3f52ada9",
         "locator": {
           "kind": "symbol",
           "name": "collect_report_folder"
@@ -207,8 +225,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
-            "content": "sha256:b0fd75db266249dc184d51fdc14f5e8e679669b8ee3b8fa79b337df06cb8107e",
+            "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+            "content": "sha256:f7d48c4cb8241446dc090c468fc636344e0aa2bf86443ff9809d19cd3f52ada9",
             "locator": {
               "kind": "symbol",
               "name": "collect_report_folder"
@@ -223,7 +241,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
+            "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
             "content": "sha256:b383884d5fd979d25ec4170406b2bccb264cb72d69e34af2653c01c7319a09f1",
             "locator": {
               "kind": "symbol",
@@ -239,7 +257,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
+            "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
             "content": "sha256:7a3d4f425fe9a17dc9d36942249cf188fce3b7ba0d62f7333213771360e4a03e",
             "locator": {
               "kind": "symbol",
@@ -271,7 +289,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6889dea337f325f501d4391bd66298fd10b07dc6",
+            "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
             "content": "sha256:3f10ae98a4c8761409810abb12b5452035f0958e86103f6e6475a726e402539c",
             "locator": {
               "kind": "symbol",
@@ -282,7 +300,7 @@
         }
       ]
     },
-    "6": {
+    "7": {
       "note": "`_launch_carrier` excludes `.handover.txt`, `.handover.json`, legacy `.detail-*`, nested `.details/**`, `.opening-message.md`, and `.held-batch-*.md` launch carriers from `canonical_execution_reports`.",
       "targets": [
         {

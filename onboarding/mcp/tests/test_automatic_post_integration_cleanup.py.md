@@ -110,7 +110,7 @@ No external domain claim is required.
 
 - The module docstring that records the ownership story and the historical name. [1]
 
-> Retained earlier citation wording: - The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`. A completed cleanup cell still archives its recorded terminal agents. [2]
+> Retained earlier citation wording: - The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`. A completed cleanup cell still archives its recorded terminal agents.
 
 > Retained earlier citation wording: - The report shaper whose exact sentence and inventory the first case asserts. [3]
 
@@ -148,7 +148,9 @@ No meaningful cross-repo references found.
 
 
 
+
 - The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`. A completed cleanup cell still archives its recorded terminal agents. [2]
+
 
 
 - The report shaper whose exact sentence and inventory the first case asserts.  Anchor: "ALREADY_CLEAN = \"already-clean\"" [3]

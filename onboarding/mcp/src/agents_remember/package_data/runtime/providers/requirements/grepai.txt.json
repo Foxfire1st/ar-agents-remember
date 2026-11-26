@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
             "content": "sha256:455cea885ea3e302d893507526fb886cfff81e336312a3d9e2cf94649c5d6f3d",
             "locator": {
               "kind": "symbol",

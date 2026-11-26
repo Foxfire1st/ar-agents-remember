@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "acb4d68812eacaf19d6c68f76453ddce3e07c1bd",
+        "blob": "5390ab1a4a0f56c63cd9f1056b96a273e9febf0e",
         "content": "sha256:4e4553f6ac3518c8fc39aa402aeda7de9e1f48ca09fa51d9c30307134c05e2c4",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "acb4d68812eacaf19d6c68f76453ddce3e07c1bd",
+        "blob": "5390ab1a4a0f56c63cd9f1056b96a273e9febf0e",
         "content": "sha256:28a7d6e1bea131baf727f056e96a8d5c973504040bc7f4838a53ecc879b84825",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "acb4d68812eacaf19d6c68f76453ddce3e07c1bd",
+        "blob": "5390ab1a4a0f56c63cd9f1056b96a273e9febf0e",
         "content": "sha256:927b26e73d1403f7cf56b511412203c885c2cced526c7a73a23d32c93aacef01",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,24 @@
     },
     {
       "anchor": {
-        "blob": "acb4d68812eacaf19d6c68f76453ddce3e07c1bd",
+        "blob": "5390ab1a4a0f56c63cd9f1056b96a273e9febf0e",
+        "content": "sha256:823e5462e6e3bbb2ddb5dbd27afe58feb0e4241e23c586fa2e2879e72f1792a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_nonforced_abandon_removes_unlisted_task_folder_contents"
+        }
+      },
+      "facet": "Exercises test_nonforced_abandon_removes_unlisted_task_folder_contents to verify terminal cleanup and abandon remove the task folder in full.",
+      "id": "PRF-R7W38G",
+      "invariant": "INV-JCDV4P",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 1",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5390ab1a4a0f56c63cd9f1056b96a273e9febf0e",
         "content": "sha256:4788cee4aef1abfe1273eedd1cea8566c458af9469290058e623940516274503",
         "locator": {
           "kind": "symbol",
@@ -68,6 +85,40 @@
         "handoffEntry": "L41-continuation-orphan-operation",
         "leaf": "260928-MIK-L41"
       }
+    },
+    {
+      "anchor": {
+        "blob": "5390ab1a4a0f56c63cd9f1056b96a273e9febf0e",
+        "content": "sha256:8ed459fade8e3d3e25521591e6e55bdb22dadb4fb875b1c1151a8f5141924ae5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_series_cleanup_removes_unlisted_task_folder_contents"
+        }
+      },
+      "facet": "Exercises test_series_cleanup_removes_unlisted_task_folder_contents to verify terminal cleanup and abandon remove the task folder in full.",
+      "id": "PRF-V42E6G",
+      "invariant": "INV-JCDV4P",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 1",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5390ab1a4a0f56c63cd9f1056b96a273e9febf0e",
+        "content": "sha256:5daa5608629e795b31048d30d7daf6184432cdce2f88a5a0fba061eac113f17e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_series_abandon_removes_unlisted_task_folder_contents"
+        }
+      },
+      "facet": "Exercises test_series_abandon_removes_unlisted_task_folder_contents to verify terminal cleanup and abandon remove the task folder in full.",
+      "id": "PRF-VY53QE",
+      "invariant": "INV-JCDV4P",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 1",
+        "leaf": "261112-BUG-L38"
+      }
     }
   ],
   "realizes": [],
@@ -77,36 +128,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "acb4d68812eacaf19d6c68f76453ddce3e07c1bd",
+            "blob": "5390ab1a4a0f56c63cd9f1056b96a273e9febf0e",
             "content": "sha256:927b26e73d1403f7cf56b511412203c885c2cced526c7a73a23d32c93aacef01",
             "locator": {
-              "end": 632,
+              "end": 641,
               "kind": "line_range",
-              "start": 619
+              "start": 628
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "acb4d68812eacaf19d6c68f76453ddce3e07c1bd",
+            "blob": "5390ab1a4a0f56c63cd9f1056b96a273e9febf0e",
             "content": "sha256:c0a025eca2ac6237f55d337886f0e086eefc08993b5bc5a2cfca490db840340d",
             "locator": {
-              "end": 679,
+              "end": 688,
               "kind": "line_range",
-              "start": 635
+              "start": 644
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "acb4d68812eacaf19d6c68f76453ddce3e07c1bd",
+            "blob": "5390ab1a4a0f56c63cd9f1056b96a273e9febf0e",
             "content": "sha256:2e526d3ec4f3623fcaf7715dba58f492cfc8ad4bc4d549b58011a9117522d7d2",
             "locator": {
-              "end": 489,
+              "end": 498,
               "kind": "line_range",
-              "start": 470
+              "start": 479
             }
           },
           "kind": "test"
@@ -118,12 +169,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "acb4d68812eacaf19d6c68f76453ddce3e07c1bd",
+            "blob": "5390ab1a4a0f56c63cd9f1056b96a273e9febf0e",
             "content": "sha256:5ad25d6199187623e1a84ccbe2773b7722e052f9c8b357d77a3456f1ba9f1a2e",
             "locator": {
-              "end": 192,
+              "end": 201,
               "kind": "line_range",
-              "start": 126
+              "start": 135
             }
           },
           "kind": "test"
@@ -135,24 +186,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "acb4d68812eacaf19d6c68f76453ddce3e07c1bd",
+            "blob": "5390ab1a4a0f56c63cd9f1056b96a273e9febf0e",
             "content": "sha256:fda635d786bfe752025367173f12df5c328bfed8845ef0c0c8a0794f6a470184",
             "locator": {
-              "end": 222,
+              "end": 231,
               "kind": "line_range",
-              "start": 193
+              "start": 202
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "acb4d68812eacaf19d6c68f76453ddce3e07c1bd",
+            "blob": "5390ab1a4a0f56c63cd9f1056b96a273e9febf0e",
             "content": "sha256:8d412786ef055b386a03febe0ca983f5aab38bec360a63be8ec24c2a883b9fc9",
             "locator": {
-              "end": 322,
+              "end": 331,
               "kind": "line_range",
-              "start": 296
+              "start": 305
             }
           },
           "kind": "test"
@@ -164,7 +215,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "acb4d68812eacaf19d6c68f76453ddce3e07c1bd",
+            "blob": "5390ab1a4a0f56c63cd9f1056b96a273e9febf0e",
             "content": "sha256:94b3da847aaec6aafd579ed2158c6035438fd32be9a7e891526b9c0f5aa19595",
             "locator": {
               "kind": "symbol",
@@ -180,7 +231,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "acb4d68812eacaf19d6c68f76453ddce3e07c1bd",
+            "blob": "5390ab1a4a0f56c63cd9f1056b96a273e9febf0e",
             "content": "sha256:846acc4178e847785a8cd1816c293367b1c35978c4c703c6369a41131f1cd7cf",
             "locator": {
               "kind": "symbol",
@@ -196,12 +247,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "acb4d68812eacaf19d6c68f76453ddce3e07c1bd",
+            "blob": "5390ab1a4a0f56c63cd9f1056b96a273e9febf0e",
             "content": "sha256:b36134d4da25cd4f7ada43128fbdaa6b5f58c178c4a0ce19b5b252b5141a9aca",
             "locator": {
-              "end": 700,
+              "end": 709,
               "kind": "line_range",
-              "start": 620
+              "start": 629
             }
           },
           "kind": "test"

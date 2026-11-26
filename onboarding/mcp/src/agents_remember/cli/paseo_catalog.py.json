@@ -378,12 +378,12 @@
         },
         {
           "anchor": {
-            "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+            "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
             "content": "sha256:5fe191cf7114f08dbe30c2f5ed30949cf9bfa98a663431f88b23d042f350baba",
             "locator": {
-              "end": 250,
+              "end": 228,
               "kind": "line_range",
-              "start": 235
+              "start": 213
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -468,12 +468,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8af465a831b807b61b0df2d8374da5be208b1161",
+            "blob": "d7b45112bae598c1364e045d6c0a11d384b90c95",
             "content": "sha256:6e1e9914f4cc0d0fbe3a0f34fc74430708e260aa16b1b528ff2fca05686bbe4f",
             "locator": {
-              "end": 613,
+              "end": 653,
               "kind": "line_range",
-              "start": 591
+              "start": 631
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },

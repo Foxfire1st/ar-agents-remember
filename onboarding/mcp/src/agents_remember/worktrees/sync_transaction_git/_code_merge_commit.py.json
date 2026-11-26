@@ -1,0 +1,135 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_code_merge_commit.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "96473133db2ebee0b485a09f5bd00ac85de76448",
+        "content": "sha256:8a16afcaa8f94522e925cf449c1df2879294f2f5afa800bb82ec74248dcd1b35",
+        "locator": {
+          "kind": "symbol",
+          "name": "sync_merge_commit_args"
+        }
+      },
+      "id": "RLZ-4896NB",
+      "invariant": "INV-0YBX5E",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §3 (R8)",
+        "leaf": "261112-BUG-L29"
+      },
+      "rationale": "Resolves the pre-commit hook and appends Commit-Check-Pass: tree=<tree> hook=<hook> onto the comment-stripped MERGE_MSG only when a runnable hook will run, returning unstamped git commit --no-edit when absent or disabled (R8 Condition 2).",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "96473133db2ebee0b485a09f5bd00ac85de76448",
+        "content": "sha256:5d0b7fe598166a8d516a495891fcb8a52c8f98801fa5d78fd45604a292602a2a",
+        "locator": {
+          "kind": "symbol",
+          "name": "commit_bounded_code_merge"
+        }
+      },
+      "id": "RLZ-V1MSBV",
+      "invariant": "INV-RMEPCX",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §1",
+        "leaf": "261112-BUG-L29"
+      },
+      "rationale": "Runs continued code-side sync's commit through run_bounded_command using sync_merge_commit_args (git commit -m with Commit-Check-Pass when a runnable pre-commit hook exists, git commit --no-edit with no stamp when none does, never --no-verify), captures staged provenance admitting empty diffs, clears stale index.lock after kill, proves published HEAD on escaped-holder timeout, and restores pinned index/sequencer state on tracked-file mutations across exit-0, nonzero, and timeout paths.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The continued code-side commit runs under the shared bound with conditional `Commit-Check-Pass` stamping and never `--no-verify`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96473133db2ebee0b485a09f5bd00ac85de76448",
+            "content": "sha256:5d0b7fe598166a8d516a495891fcb8a52c8f98801fa5d78fd45604a292602a2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_bounded_code_merge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A hook mutation is restored to the pinned index and merge sequencer before the refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96473133db2ebee0b485a09f5bd00ac85de76448",
+            "content": "sha256:e5f2d1d799a2462ff74e6846984329772decbeabb1513517c0b3526097562ced",
+            "locator": {
+              "kind": "symbol",
+              "name": "_restore_merge_after_mutation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A timeout clears a stale lock, proves a landed commit, or raises the typed stop.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96473133db2ebee0b485a09f5bd00ac85de76448",
+            "content": "sha256:e9517d8fde941712c672975a18fdfecea903418479e33aff534849a2a5eabfa8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_timed_out_code_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A published merge is accepted only when the pinned parents hold and tracked files were not mutated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96473133db2ebee0b485a09f5bd00ac85de76448",
+            "content": "sha256:cd242ac9695a2c7b9cbcc4ff39739754395eb0b045c9dcebebf13650d044f120",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_published_code_merge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`sync_merge_commit_args` stamps `Commit-Check-Pass` onto the comment-stripped `MERGE_MSG` only when a runnable pre-commit hook will run, and otherwise writes no stamp and runs `git commit --no-edit`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96473133db2ebee0b485a09f5bd00ac85de76448",
+            "content": "sha256:8a16afcaa8f94522e925cf449c1df2879294f2f5afa800bb82ec74248dcd1b35",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_merge_commit_args"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96473133db2ebee0b485a09f5bd00ac85de76448",
+            "content": "sha256:e7bd6a83dfed2a06744375e2ebe07da519fefc36b18bdc2565e123c9072d7785",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clean_merge_message"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

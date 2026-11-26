@@ -17,6 +17,52 @@
         }
       ]
     },
+    "10": {
+      "note": "The continuation delegates the code-side commit to that owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
+            "content": "sha256:40fd6d48db5c42b6820b6f48019fea5fc76b152aebdfbae402fc7135175d721d",
+            "locator": {
+              "kind": "symbol",
+              "name": "continue_side_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Staged sync merge commits stamp `Commit-Check-Pass` only when a runnable pre-commit hook will run, write no stamp when none is runnable, and rewind if a hook mutates the staged tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96473133db2ebee0b485a09f5bd00ac85de76448",
+            "content": "sha256:8a16afcaa8f94522e925cf449c1df2879294f2f5afa800bb82ec74248dcd1b35",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_merge_commit_args"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_code_merge_commit.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
+            "content": "sha256:bb60decc8ca2383b68cf9e8ee9830d3402106c382e91a8868ae1463af0e7e7dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_staged_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Complete stash inventory is distinct from its display sample.",
       "targets": [
@@ -73,10 +119,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
-            "content": "sha256:48d3aab73dab34e7b7fcf9af88d842eb1270daa2fcacd88a358f2327a4954789",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
+            "content": "sha256:11535ae931a2c86ecf68cc4089c1760b6a1f17a12864ae4b057964394bdf3eb7",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "validate_memory_fast_forward"
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
@@ -118,13 +165,30 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:640d54f5d8461b73c58943a8b7bde273e0f2d43ee1fdcda4a37e3755d47ba2c2",
             "locator": {
               "kind": "symbol",
               "name": "_staged_merge_findings"
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The continued code-side commit is bounded, stamps `Commit-Check-Pass` only for a runnable hook, and restores the pinned state on a hook mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96473133db2ebee0b485a09f5bd00ac85de76448",
+            "content": "sha256:5d0b7fe598166a8d516a495891fcb8a52c8f98801fa5d78fd45604a292602a2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_bounded_code_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_code_merge_commit.py"
           },
           "kind": "code"
         }

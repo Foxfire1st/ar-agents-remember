@@ -100,7 +100,6 @@ The shared git runner and the context-packet consumer are the direct evidence.
 
 
 
-- Git invocations are delegated to the shared `run_git` runner rather than a private wrapper. [1]
 
 
 - The local default bound is 300 seconds. [2]
@@ -108,7 +107,6 @@ The shared git runner and the context-packet consumer are the direct evidence.
 - The metadata bound is 30 seconds. [4]
 
 
-- The shared Git runner applies caller-selected bounds and isolated repository environment. [5]
 
 
 - The other kernel caller of `branch --show-current` and `rev-parse HEAD` names the same metadata bound, so one command means one bound. [6]
@@ -127,3 +125,6 @@ No meaningful cross-repo references found.
 - Metadata facts use short bounds and feed context assembly rather than a removed resolver tool. [7]
 
 - The shared runner defines the timeout bands and default. Git fact probes choose and pass their own timeout values. \[8] [8]
+
+- Git invocations are delegated to the shared `run_git` runner rather than a private wrapper. [1]
+- The shared Git runner applies caller-selected bounds and isolated repository environment. [5]

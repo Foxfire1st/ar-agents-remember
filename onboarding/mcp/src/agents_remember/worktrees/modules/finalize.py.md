@@ -122,7 +122,7 @@ No external Domain Documentation source is configured for this memory repo.
 > Retained earlier citation wording: - Cleanup behavior and branch/worktree removal are delegated here. [4]
 
 
-> Retained earlier citation wording: - The cleanup seam that runs reclamation, short-circuits an already-completed cell, and shapes a real successful reclamation through the report shaper — deliberately not on a dry run or a nonzero return code. A completed cleanup cell still archives its recorded terminal agents. [5]
+> Retained earlier citation wording: - The cleanup seam that runs reclamation, short-circuits an already-completed cell, and shapes a real successful reclamation through the report shaper — deliberately not on a dry run or a nonzero return code. A completed cleanup cell still archives its recorded terminal agents.
 
 > Retained earlier citation wording: - The operator-facing report shape this module restores for a completed reclamation, and its `already-clean` rule. [6]
 - Carryover completion is proven against the official memory ledger here. [7]
@@ -242,7 +242,9 @@ tree.
 - Finalization resolves the document targets before cleanup, blocks on unresolved work units, and reconciles the documents after cleanup.  Anchor: `finalize_result` [17]
 
 
+
 - The cleanup seam that runs reclamation, short-circuits an already-completed cell, and shapes a real successful reclamation through the report shaper — deliberately not on a dry run or a nonzero return code. A completed cleanup cell still archives its recorded terminal agents. [5]
+
 
 
 - The operator-facing report shape this module restores for a completed reclamation, and its `already-clean` rule.  Anchor: "ALREADY_CLEAN = \"already-clean\"" [6]

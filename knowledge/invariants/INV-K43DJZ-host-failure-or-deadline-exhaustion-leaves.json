@@ -5,14 +5,14 @@
     ],
     "justification": "The retirement boundary, the receipt debt writer, the recovery cursor and the existing observation loop realize the rule across four files."
   },
-  "applicability": "A leaf closing while the host is unreachable or a call fails, and every later observation.",
+  "applicability": "A leaf or modern series closing while the host is unreachable or a call fails, and every later observation or cleanup retry.",
   "conditions": [
-    "The closing completes and names the owed agents.",
-    "The debt head stays in the launch receipt and the serving lifetime’s archive recovery loop settles it when the host answers."
+    "The debt head stays in the launch receipt and the serving lifetime's archive recovery loop settles it when the host answers.",
+    "While a task folder remains to be removed, unresolved owed debt stops deletion and names the owed seat rather than deleting the folder over a live seat."
   ],
   "exclusions": [
     "No second queue, timer, scheduler or fallback is created.",
-    "A person is not required to settle the debt."
+    "A person is not required to settle the debt once the host is reachable."
   ],
   "id": "INV-K43DJZ",
   "origin": {
@@ -26,9 +26,20 @@
     "leaf": "260928-MIK-L76",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Host failure or deadline exhaustion leaves truthful receipt-owned predecessor and own-target debt without refusing admitted retirement, and the serving lifetime’s archive recovery loop recovers that debt automatically from terminal truth.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "Host failure or deadline exhaustion leaves truthful receipt-owned predecessor and own-target debt, the serving lifetime's archive recovery loop recovers that debt automatically from terminal truth, and terminal cleanup or abandon blocks folder deletion while any owed seat remains.",
+  "supersedes": [],
+  "title": "Archive debt stays in receipts, retries itself, and blocks folder deletion",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

@@ -37,17 +37,23 @@ Recovery runtime fixtures carry a real BackgroundLedger. The lifespan case parks
 - The closing mark refuses an unentered prepared start and settles a returned creation. [1]
 - Same-request replay of a marked receipt refuses without creation and keeps debt. [2]
 - The mark covers other prepared roles before host calls. [3]
+
 - Stale publication keeps the archive and only the exact leaf mark refuses. [4]
+
 - Current, history and retry selection preserve every artifact. [5]
 - Predecessor debt survives host failure and automatic recovery advances it. [6]
+
 - Debt-write failure recovers from terminal truth after restart. [7]
+
 - The existing observer archives terminal debt without a person calling recovery.
 - Empty, unreadable and conflicting records are named without host calls. [9]
 - Host budget and receipt settlement stay bounded at two scales. [10]
 - The automatic scan is bounded and does not starve the tail. [11]
 - A preview or rejected admission archives nobody. [12]
 - A repeated finalize reports outcomes without changing the task again. [13]
+
 - Admitted cleanup and abandon archive before destructive outputs. [14]
+
 - A rejected terminal archive never calls the host or removes worktrees. [15]
 
 - Recovery runtime fixtures carry a real BackgroundLedger. The lifespan case parks warmup-watch explicitly and asserts it beside the five earlier started owners, retaining the recovery interval and settlement/failure/cancellation assertions. These are fixture obligations, not a new archival policy or real-host witness. [16]

@@ -3,7 +3,61 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d35463d6c2b0bc1953df6b6e2cd1fcca533a515d",
+        "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
+        "content": "sha256:e1f0d69e8a2163f9b256e8987ea6e682c0d1229627242de39882cd21d6c8f7e1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run_checked"
+        }
+      },
+      "id": "RLZ-4SG2MF",
+      "invariant": "INV-RMEPCX",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §1",
+        "leaf": "261112-BUG-L29"
+      },
+      "rationale": "Delegates landing hook execution, timeout enforcement, and escaped-holder handling to commit_check_process while preserving closeout's existing launch arguments and verdicts.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
+        "content": "sha256:13f79186bf9fdce46b69cadc0391d76e4b3aa6f3acc8d3ecf01139454e86aef1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_borrow_dashboard_node_modules"
+        }
+      },
+      "id": "RLZ-8DC0Q2",
+      "invariant": "INV-0YBX5E",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §3 (R8)",
+        "leaf": "261112-BUG-L29"
+      },
+      "rationale": "Creates the temporary gitignored symlink to primary dashboard/node_modules pre-spawn in linked or temporary checkouts when eligible, returning the path so _run_checked unlinks it in finally (R8 Condition 1).",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
+        "content": "sha256:38154042c74d7412b48d4a1b5d93334c715e7c426490479f758bb1aba2e4b567",
+        "locator": {
+          "kind": "symbol",
+          "name": "_lockfile_borrow_refusal"
+        }
+      },
+      "id": "RLZ-GBS4XW",
+      "invariant": "INV-0YBX5E",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §3 (R8)",
+        "leaf": "261112-BUG-L29"
+      },
+      "rationale": "Requires byte-identical candidate and primary dashboard/package-lock.json files and a gitignored dashboard/node_modules/ path, refusing pre-spawn as unrunnable without npm install when violated (R8 Condition 1).",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
         "content": "sha256:384628672694f66ba4179c87d7896a820fbdc3b50276ad7220a5da0a891dde49",
         "locator": {
           "kind": "symbol",
@@ -26,11 +80,82 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d35463d6c2b0bc1953df6b6e2cd1fcca533a515d",
+            "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
             "content": "sha256:dc57df3e14c29af468bfd58a4235c6229de499de4bc8827a1ad552a7c40a426a",
             "locator": {
               "kind": "symbol",
               "name": "resolve_commit_check_hook"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "`_run_checked` prepares and cleans up lockfile-matched `dashboard/node_modules` borrowing pre-spawn, delegates the hook run to `commit_check_process`, and keeps landing pass and refusal verdicts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
+            "content": "sha256:e1f0d69e8a2163f9b256e8987ea6e682c0d1229627242de39882cd21d6c8f7e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_checked"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The shared owner runs the process in its own session, stops it after the bound and keeps the log.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "742ebb6461129748b31551fca8b3d83930c7ae20",
+            "content": "sha256:eaf2d1bc2cd4e8697c54bb70300732b8190f0a8965f6f086b961c114b679a8db",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_process_to_log"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/commit_check_process.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "`_common_checkout_root`, `_lockfile_borrow_refusal`, and `_borrow_dashboard_node_modules` gate linked-checkout `dashboard/node_modules` symlinking on primary directory presence, byte-identical `dashboard/package-lock.json`, and gitignore status, refusing pre-spawn otherwise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
+            "content": "sha256:62ca0035241cb952d7d940c861e2eb8d7608b1690e995b10a7e73b06be032479",
+            "locator": {
+              "kind": "symbol",
+              "name": "_common_checkout_root"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
+            "content": "sha256:38154042c74d7412b48d4a1b5d93334c715e7c426490479f758bb1aba2e4b567",
+            "locator": {
+              "kind": "symbol",
+              "name": "_lockfile_borrow_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
+            "content": "sha256:13f79186bf9fdce46b69cadc0391d76e4b3aa6f3acc8d3ecf01139454e86aef1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_borrow_dashboard_node_modules"
             }
           },
           "kind": "code"
@@ -42,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d35463d6c2b0bc1953df6b6e2cd1fcca533a515d",
+            "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
             "content": "sha256:384628672694f66ba4179c87d7896a820fbdc3b50276ad7220a5da0a891dde49",
             "locator": {
               "kind": "symbol",
@@ -58,7 +183,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d35463d6c2b0bc1953df6b6e2cd1fcca533a515d",
+            "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
             "content": "sha256:3af2a137c97ad5ce65d93a21a8edde41008a966ac393a1832011157b1b29bedd",
             "locator": {
               "kind": "symbol",
@@ -74,8 +199,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d35463d6c2b0bc1953df6b6e2cd1fcca533a515d",
-            "content": "sha256:b86ffc10e9d41a7e52a84a3d8a1d05ed38bf1d24fc660b182602d26f52b78fba",
+            "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
+            "content": "sha256:0f948b9ce92862a85c546d752e2b7d444a640270ea608eeca46cc760517b14dd",
             "locator": {
               "kind": "symbol",
               "name": "commit_check_timeout_seconds"
@@ -90,7 +215,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d35463d6c2b0bc1953df6b6e2cd1fcca533a515d",
+            "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
             "content": "sha256:01dc94ae7f33429ff9ef665247bccff4a5aceb4c1b6b1f8c7a0f369e67fd1353",
             "locator": {
               "kind": "symbol",
@@ -106,7 +231,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d35463d6c2b0bc1953df6b6e2cd1fcca533a515d",
+            "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
             "content": "sha256:000a88edd6aa461f90731be7829077f0579f96981adedde65e2863d2f87e2e49",
             "locator": {
               "kind": "symbol",
@@ -122,43 +247,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d35463d6c2b0bc1953df6b6e2cd1fcca533a515d",
+            "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
             "content": "sha256:6295c7f5990827901ddc6be63a715497af6d4802702d941af2134ab0d65d2937",
             "locator": {
               "kind": "symbol",
               "name": "check_published_tree"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "_run_hook_to_log: qualified source contract.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d35463d6c2b0bc1953df6b6e2cd1fcca533a515d",
-            "content": "sha256:b0a56c440e0b1b196d7d40f5793bc4e418f1b9688c4e470a5790b357192d1481",
-            "locator": {
-              "kind": "symbol",
-              "name": "_run_hook_to_log"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "_stop_escaped_pipe_holders: qualified source contract.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d35463d6c2b0bc1953df6b6e2cd1fcca533a515d",
-            "content": "sha256:27253d94a39706360d06a89a92bb47382048e8319300f55ca2e2247f72206646",
-            "locator": {
-              "kind": "symbol",
-              "name": "_stop_escaped_pipe_holders"
             }
           },
           "kind": "code"

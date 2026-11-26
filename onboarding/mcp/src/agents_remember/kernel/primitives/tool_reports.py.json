@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
-            "content": "sha256:8251c903331d979e635fe1786a6e06d88de049db1e1a775efd46edf08db785db",
+            "blob": "9518d2870b1d1d5dcd2c6707be568f200f0f5899",
+            "content": "sha256:cff6a94a34f6d770a5e0c07e7af73e145dbb319bae1ac0ab34cd0860c2524cc6",
             "locator": {
-              "end": 162,
+              "end": 169,
               "kind": "line_range",
-              "start": 102
+              "start": 103
             },
             "path": "mcp/src/agents_remember/mcp/tools/core.py"
           },

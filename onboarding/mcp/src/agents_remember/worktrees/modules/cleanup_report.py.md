@@ -93,7 +93,7 @@ No external domain claim is required.
 > Retained earlier citation wording: - The counted operator sentence naming what was removed and what was left in place. [3]
 - Removed entries come from the cleanup payload's own observation of each target. [4]
 
-> Retained earlier citation wording: - **The caller.** It runs `cleanup_result`, short-circuits an already-completed cell, and shapes a real successful reclamation through this module — deliberately not when `dry_run` or the return code is nonzero, so a preview or refusal is reported in cleanup's own words. A completed cleanup cell still archives its recorded terminal agents. [5]
+> Retained earlier citation wording: - **The caller.** It runs `cleanup_result`, short-circuits an already-completed cell, and shapes a real successful reclamation through this module — deliberately not when `dry_run` or the return code is nonzero, so a preview or refusal is reported in cleanup's own words. A completed cleanup cell still archives its recorded terminal agents.
 
 
 > Retained earlier citation wording: - The destructive procedure and its refusal authority, which this module deliberately does not duplicate. [6]
@@ -120,7 +120,9 @@ No meaningful cross-repo references found.
 - The counted operator sentence naming what was removed and what was left in place. [3]
 
 
+
 - **The caller.** It runs `cleanup_result`, short-circuits an already-completed cell, and shapes a real successful reclamation through this module — deliberately not when `dry_run` or the return code is nonzero, so a preview or refusal is reported in cleanup's own words. A completed cleanup cell still archives its recorded terminal agents. [5]
+
 
 
 

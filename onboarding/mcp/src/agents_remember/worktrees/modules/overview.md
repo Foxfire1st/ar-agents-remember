@@ -55,6 +55,8 @@ checkout_holding_branch selects the actual non-bare, non-detached owner of the n
 
 `git.py` owns Git helpers, candidate capture, staging and tree publication, importing the shared kernel runner rather than defining another runner. New tree publication runs the repository pre-commit check on the exact staged tree before commit-tree and records its Commit-Check-Pass fact; failing or mutating hooks refuse before refs move. Raw Git names/results preserve the runner's byte-decoding contract; raised diagnostics are made transport-safe. Name-only worklists deliberately filter to existing files. Committed worklist paths are the base-to-HEAD tree diff intersected with the last-verified-to-HEAD diff when applicable.
 
+`landing_commit_check.py` resolves and judges the repository hook on the exact tree a landing will publish. Before spawning a runnable hook in a linked or temporary checkout carrying `dashboard/package.json` without `dashboard/node_modules`, `landing_commit_check.py` symlinks the primary checkout's `dashboard/node_modules` only on an exact byte-for-byte `dashboard/package-lock.json` match when gitignored, unlinking it in `finally`, and refuses pre-spawn as `unrunnable` otherwise. `commit_check_process.py` owns the shared session-isolated spawn, the commit-check bound with its TERM-then-KILL grace, the common-directory log and the escaped-holder cleanup for both a landing and a continued code-side sync commit; the landing module delegates its hook run to it.
+
 `git_changes.py` is the relocated counted-change owner. Its NUL-delimited status/numstat parsing preserves tabs, newlines, backslashes, destination names, deletions and unknown binary counts, with explicit malformed rename/copy refusal. Its Git read disables automatic index refresh, preserving the real index generation even for identical-byte replacements. The optional changed-path observer runs after status discovery and before numstat, so generation ownership can include the paths' attributes before their counts are read.
 
 Candidate capture uses a unique temporary private index. It copies the actual index with its recorded time, restores HEAD starting entries, clears assume-unchanged/skip-worktree flags on the copy, and stages real working files with explicit derived exclusions. An unusable copy invokes the existing full private capture. The real index and user files stay unchanged, but tree objects may be written into Git. The conversion-rule limit is deliberate: an unchanged file whose cached timestamps still match is not rehashed solely because attributes, filters or autocrlf rules changed; touching the file makes both captures reread it. Private staging is also explicitly supported by `stage_worktree_content`; ordinary staging still uses the real index when no private path is supplied.
@@ -76,9 +78,9 @@ The read-local baseline memo now carries an optional capture observer, restored 
 
 Task-fact projection receives exact canonical JSON-path/document pairs, including finalize's selected leaf/parent, rather than guessing document paths from the contract folder. Abandon validates its task/parent stage before destructive output and rechecks after the terminal reread. Its existing guard publishes contract abandonment with task/parent stage and provides task-source/contract restoration on that publication's failure; this does not promise rollback of worktrees already reclaimed. Projection failures retain the shared task-fact publisher's separate reported-effect semantics.
 
-`cleanup.py` and `abandon.py` expose terminal operations, with admitted transactions extracted to `terminal_cleanup.py` and `terminal_abandon.py`. Terminal archive authority is obtained and reread before destructive output. Their capability/identity helpers constrain exact owned worktree, branch and remote deletion targets; branch ancestry and real edits remain protected. Cleanup retires the current child edge, preserving parent/source branches. Group removal occurs only when actually empty; preview models scheduled removals. Contract-owned drift snapshots, reports, logs and provider resources have explicit terminal inventories and reasons. The recorded outside scratch root joins them. Leaf cleanup and abandon keep the leaf's own tool-call lines in the master notes before they remove the log. The kept lines omit detail links and replace removed paths with the leaf ID. A keep error preserves the log and the terminal result reports the block. `terminal_validation.py` carries preview interpretation into drift-snapshot expectations. `cleanup_report.py` shapes successful real reclamation and owns no operation.
+`cleanup.py` and `abandon.py` expose terminal operations, with admitted transactions extracted to `terminal_cleanup.py` and `terminal_abandon.py`. Terminal archive authority is obtained and reread before destructive output. Their capability/identity helpers constrain exact owned worktree, branch and remote deletion targets; branch ancestry and real edits remain protected. Cleanup retires the current child edge, preserving parent/source branches. `terminal_group.py` owns move-out, preview, and whole-folder removal, and `terminal_retry.py` owns completed-generation residue retry. For leaf (forced or not) and modern series contracts, cleanup and abandon remove the entire `worktree_group` folder in full after move-out rather than checking emptiness; only a legacy series (`worktree_group == task_root / "enclosures"`) retains subfolder removal. Preview inspects directory writability, move-out blockers, `provider-runtime/` when `teardown_providers=False`, and seat readiness before anything is deleted. Move-out preserves role reports, any real `messages` directory, and a leaf's own tool-call lines (in master notes, omitting `detail` and replacing removed paths with the leaf ID); any move-out or keep failure blocks before deletion and leaves the folder intact. `terminal_validation.py` carries preview interpretation into drift-snapshot expectations. `cleanup_report.py` shapes successful real reclamation and owns no operation.
 
-`terminal_agents.py` attempts host archival of recorded leaf agents after admission and before destructive output. It does nothing for preview or series. An unbound service or host/receipt failure is reported and does not refuse an already-admitted retirement; completed cleanup can retry archival. The review-artifact archive hook likewise runs only for an actual/would-be archive, uses the task-root name for the review namespace, and reports unbound/failure rather than raising after a task has moved. Current series finalization receives the archive owner's skip, so hook existence is not evidence that a master was archived.
+`terminal_agents.py` inspects (on preview) and archives (on apply) recorded seats for both leaf and modern series contracts before destructive output, and `terminal_agent_blockers` turns `not-bound` (when launch receipts exist), `failed`, `owed`, or `leftAlone` outcomes into terminal blockers that prevent folder removal; completed cleanup and abandon retries re-check and finish remaining seats and residue through `terminal_retry.py`. The review-artifact archive hook likewise runs only for an actual/would-be archive, uses the task-root name for the review namespace, and reports unbound/failure rather than raising after a task has moved. Current series finalization receives the archive owner's skip, so hook existence is not evidence that a master was archived.
 
 `pause.py` releases only the addressed series activation and returns control without a next call. It calls the existing release authority, runs no Git locally and owns no landing or closeout. Already-vacant succeeds only after a fresh vacant observation; unreadable or foreign ownership remains refusal. Checkpoint publication is a separate verb. Activation is contract-keyed, not a protected-source-pair lane: inherited IAS policy allows independent graph-less masters concurrently, retains explicit authored predecessor dependencies, reconciles pinned sources before active selection, and never reconstructs missing/malformed authority from a queue or legacy reader. Terminal release may clear only the exact addressed terminal selection.
 
@@ -100,7 +102,7 @@ Converted onboarding traces replace Update History/lastVerified metadata. Affect
 
 Unconverted onboarding retains the body/history rules: changed source cards and nearest governing route bodies need meaningful review plus history, or explicit no-content/no-route-impact attestation. Ancestor overview stamping is report-only. Directly edited overviews since the memory baseline are included even when source drift predates the leaf. Only sanctioned final reference-cell coordinate changes receive the narrow generated citation exception; prose, claim, anchor, path and table-shape changes do not. Candidate-bound no-impact acceptance moves matching unchanged stale classifications to attested while preserving untraced authored content. Missing-card blocking is limited to working paths; transported committed paths remain a nonblocking unonboarded report. Route indexes use resolved storage authority.
 
-Integration and checkpoint must publish the same admitted pair preview proved, with source-tip and contract rechecks at the protected boundary. Checkpoint never grants completion or reclamation. Cleanup requires exact carryover before retiring resources that recovery needs. Abandon without force protects dirty work and unlanded commits; explicit force is its discard exception. The root cache alone is disposable. Terminal agent archival is best effort, whereas terminal archive proof and destructive target capabilities are authority.
+Integration and checkpoint must publish the same admitted pair preview proved, with source-tip and contract rechecks at the protected boundary. Checkpoint never grants completion or reclamation. Cleanup requires exact carryover before retiring resources that recovery needs. Abandon without force protects dirty work and unlanded commits; explicit force is its discard exception. The root cache alone is disposable. Terminal seat closure and archival are enforced before task-folder removal (unresolved seats, failures, or missing bindings with receipts block deletion), alongside terminal archive proof and destructive target capabilities.
 
 Unconverted ordinary memory inputs refuse even in a repository that has never converted. A series preview judges format before publication authority; a converted landed candidate on an unconverted line reaches its own validator instead of being classified from the prior tip. Named unreadable probes remain errors, never format facts. The source line either crosses from a converted source or follows first conversion; ordinary and certified prepared closeout keep their separate gate/preflight and transaction owners. Legacy refusal persists no blocked contract.
 
@@ -202,7 +204,9 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Historical MIK-R38 reference account, not the current R55.9 permission: the earlier tests included standalone success. Current missing-master/row cases assert refusal before any write; no test execution is inferred here. [22]
 
-- Retained reference account (no fresh execution or acceptance inferred): Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code. A completed cleanup cell still archives its recorded terminal agents. [23]
+
+- Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code. A completed cleanup cell still archives its recorded terminal agents. [23]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. [24]
 
@@ -304,7 +308,9 @@ These superseded descriptions retain their historical wording; the current accou
 
 - Master folders are retained through the archive owner's series skip. [78]
 
-- Admitted terminal transactions reread archive authority and attempt leaf-agent archival before outputs. [79]
+
+- Admitted terminal transactions reread archive authority and run `prepare_terminal_group` (folder preview, seat archival/blocking, and move-out) before destructive outputs. [79]
+
 
 - Abandon authority includes carried memory resources even under the removed mode. [80]
 
@@ -342,7 +348,6 @@ These superseded descriptions retain their historical wording; the current accou
 
 - **Retained historical source account — superseded by the current route account:** Master folders are retained through the archive owner's series skip. [78]
 
-- **Retained historical source account — superseded by the current route account:** Admitted terminal transactions reread archive authority and attempt leaf-agent archival before outputs. [79]
 
 - **Retained historical source account — superseded by the current route account:** Abandon authority includes carried memory resources even under the removed mode. [80]
 
@@ -402,6 +407,13 @@ These superseded descriptions retain their historical wording; the current accou
 - The validator and mandatory gate judge the exact converted memory output, including recovered output. [67]
 - Memory publication rechecks the admitted tip and judged tree. A failure before publication returns restores its owned preparations where their bytes still match. Proof of the published commit runs afterwards. [68]
 
+
 - The terminal keep owner copies exact leaf call lines to the master report ahead of log removal. [99]
 
+
 - Before capturing the exact memory tree, the memory leg prepares the cache and brief ignore lines. A newly committed closeout reports an advisory if the derived brief refresh returns a problem. [100]
+
+- `commit_check_process` owns the shared bounded hook run, log and escaped-holder cleanup for landings and continued sync commits. [101]
+
+- The landing check prepares and cleans up lockfile-matched `dashboard/node_modules` borrowing pre-spawn and delegates its hook run to `commit_check_process`. [102]
+- Pre-spawn `dashboard/node_modules` borrowing requires primary directory presence, byte-identical `dashboard/package-lock.json`, and gitignored candidate target, refusing as `unrunnable` otherwise. [103]

@@ -907,6 +907,10 @@
       "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
       "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json"
     ],
+    "file:mcp/src/agents_remember/cli/shared_held_store_reconciliation.py": [
+      "knowledge/dependents/DPD-10YCT2-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-NGC2F6-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+    ],
     "file:mcp/src/agents_remember/cli/tool_log_stats.py": [
       "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
     ],

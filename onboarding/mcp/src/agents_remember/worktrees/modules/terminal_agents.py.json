@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "aeecc2f8dab2b0b79f811ea855055ad72fb5e6d3",
-        "content": "sha256:de76bee4e74da0194ae142dbc65b2be6bb861bad77ccd3ca2550c4538ed0a36f",
+        "blob": "a87be69e9aaafcb8afa368494b4dcb61778aa5ee",
+        "content": "sha256:c8a19e3bd32373cb999c031b5396ad175a0f6debc7f4ccac2d80f50d62d1bee0",
         "locator": {
           "kind": "symbol",
           "name": "archive_terminal_agents"
@@ -16,21 +16,32 @@
         "handoffEntry": "MIK-R76@v1 required behavior 4",
         "leaf": "260928-MIK-L76"
       },
-      "rationale": "This boundary contains host/discovery exceptions so archive failure does not refuse admitted retirement.",
+      "rationale": "Captures expected host and binding failures as structured archive reports and converts owed, leftAlone, failed, and unbound-with-receipts outcomes into terminal blockers before folder deletion.",
       "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "The boundary contains host and discovery failures and never refuses retirement.",
+      "note": "The boundary captures expected port and binding failures into structured reports and converts `not-bound`, `failed`, `owed`, and `leftAlone` outcomes into terminal blockers.",
       "targets": [
         {
           "anchor": {
-            "blob": "aeecc2f8dab2b0b79f811ea855055ad72fb5e6d3",
-            "content": "sha256:de76bee4e74da0194ae142dbc65b2be6bb861bad77ccd3ca2550c4538ed0a36f",
+            "blob": "a87be69e9aaafcb8afa368494b4dcb61778aa5ee",
+            "content": "sha256:c8a19e3bd32373cb999c031b5396ad175a0f6debc7f4ccac2d80f50d62d1bee0",
             "locator": {
               "kind": "symbol",
               "name": "archive_terminal_agents"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a87be69e9aaafcb8afa368494b4dcb61778aa5ee",
+            "content": "sha256:babdbae7f6e3f89f7c90bc4d6d0ea7c609524f9c35b53fc4aa301015579baf1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_agent_blockers"
             }
           },
           "kind": "code"

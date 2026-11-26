@@ -48,7 +48,8 @@ without undoing the shared pytest stack.
 - A rebound report folder is refused despite matching bytes, and an absent valid legacy link is restored. [3]
 - Shape controls refuse mismatched detail names, given paths and malformed or non-sibling saved handover references. [4]
 - A saved-start replay refuses missing details before the host call. [5]
-- A held opening refuses changed details and preserves waiting messages. [6]
+
+- Source assertion: test_held_opening_refuses_changed_details_and_preserves_waiting_messages. The declaration is not an execution receipt. [6]
 
 - Real local preparation and receipt restoration preserve frozen detail bytes for three role cases without launching a host. [7]
 

@@ -43,7 +43,9 @@ A process-local reentrant lock now encloses shared budget accounting across fold
 - The shared in-process budget state is serialized by one reentrant lock. [6]
 
 
+
 - Concurrent detail writes cannot both spend the same remaining folder budget. Anchor: `test_concurrent_details_cannot_both_spend_the_same_log_budget` [7]
+
 
 
 

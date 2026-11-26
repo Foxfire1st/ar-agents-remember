@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
-    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
+    "codeTree": "654d5eacb7b3070e1a3e17aa50a5cc9a44be6c09",
+    "commit": "babbd912757d905a69e7b9409b0b89bd528f4db3",
     "role": "curator",
-    "statement": "On synced tree a5bb9a1f, docs/reference/settings-json.md accurately describes the four settings files, tool-log rotation/redaction (ar-tools-YYYY-MM-DD.jsonl, keepDays=14, maxBytes=256 MiB, enclosureMaxBytes=64 MiB, <omitted>/<env>/200-char shortening, tool-log-stats in tool_answer_log.py), and role-settings/paseoRuntime rules.",
-    "task": "261124-CAP-L4",
+    "statement": "On synced code 654d5eac (base babbd9127) the settings reference passages touched across CAP-L4 and L29 are accurate: lines 40-41 accurately state that agents-remember-mcp requires --config naming an absolute path to the trusted settings file with no default when omitted, matching mcp/src/agents_remember/mcp/server.py:483-487; lines 86-129 match tool_answer_log.py for ar-tools-<YYYY-MM-DD>.jsonl naming, 14-day keepDays, 256 MiB maxBytes, 64 MiB enclosureMaxBytes, and <omitted>/<env>/>200-char redaction; lines 481 and 925-932 accurately apply commitCheckTimeoutSeconds to landing and continued code-sync commit checks; and lines 612-615 and 1126-1133 match cli/paseo_catalog.py and cli/paseo_seat_policy.py on mode precedence (start call, host role, settings, host default) and per-harness first-call grants (Codex role roster, Claude server_info, none elsewhere, plus explainer tools on both); the document's other sections were not reread for this confirmation.",
+    "task": "261112-BUG-L29",
     "uncommitted": true
   },
   "document": "docs/reference/settings-json.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 16,
+  "revision": 17,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -109,7 +109,7 @@
       "path": "mcp/src/agents_remember/application/tool_answer_log.py"
     },
     {
-      "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+      "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/runtime.py"
     },
@@ -241,5 +241,16 @@
       "heading": "paseoRuntime",
       "kind": "anchor"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T23:13:05+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L29",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+    "task": "261112-BUG"
+  }
 }

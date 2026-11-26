@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "33a879fe63de8ef94f792a0510424676d819e8ee",
-    "commit": "79d3d3a18fb39302c203314bd1e96110df66f973",
+    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "The capsule reference still names the saved launch handover and held-message route, while generated guidance inside that handover tells readers to open an available brief and treats compact fields as applicable.",
-    "task": "261112-KNO-L4",
+    "statement": "docs/reference/role-capsules.md (lines 14-81) accurately describes launch handover/detail files, held starts versus held messages, and message filing, preserved by L38's publication_scope and closed-seat store fence.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/reference/role-capsules.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "mcp/src/agents_remember/cli/role_start_answer.py"
     },
     {
-      "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+      "blob": "9124be375703846117abf9f0f4fee05c1044befd",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
     },
     {
-      "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
+      "blob": "a1f069e419ffe08785169f62071677130931c7b0",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
@@ -80,5 +80,16 @@
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

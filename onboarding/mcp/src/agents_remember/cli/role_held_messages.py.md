@@ -4,7 +4,7 @@
 
 ## Contract
 
-Hold only still-waiting native role messages in `.ar-product/held-messages/<recipient>.json` under the recipient's own workspace, with the store's schema strings, file names and bounds taken from the read-side layout owner `controlplane/held_store_layout.py` so the delivery machinery and the attention reader cannot disagree about them. Admission is locked, uses atomic replacement and fsync, admits at most twenty messages and never drops an existing message to make room. Hold-time admission stores texts accepted at the message input boundary without summarizing; at held-seat open time, `_open_held_seat` enforces `settings.role_message_limit` across the rendered FIFO batch via `role_opening_offload.prepare_held_opening_batch`, offloading over-limit batches to content-addressed `.held-batch-<sha256>.md`. The store is independent of hosted-seat/control-plane messaging.
+Hold only still-waiting native role messages in `.ar-product/held-messages/<recipient>.json` under the recipient's own workspace, with the store's schema strings, file names and bounds taken from the read-side layout owner `controlplane/held_store_layout.py` so the delivery machinery and the attention reader cannot disagree about them. Store admission, claims, and settlement run under the recipient's launch-receipt lock (`cli/role_held_store.py::open_held_store`, using atomic replacement and fsync), refuse closed seats or missing workspaces without creating a store or folder, admit at most twenty messages and never drop an existing message to make room. Hold-time admission stores texts accepted at the message input boundary without summarizing; at held-seat open time, `_open_held_seat` enforces `settings.role_message_limit` across the rendered FIFO batch via `role_opening_offload.prepare_held_opening_batch`, offloading over-limit batches to content-addressed `.held-batch-<sha256>.md`. The store is independent of hosted-seat/control-plane messaging.
 
 ## Delivery and recovery
 
@@ -12,7 +12,7 @@ A drain claims one immutable FIFO batch under a durable message ID. Later admiss
 
 Attempt the whole remainder before using any learned byte budget. A successful size is only a lower bound; after a whole refusal, find the largest admitted FIFO prefix. This yields the fewest deliveries under a stable monotone size limit without a word-count splitter. A single unadmitted message stays held. Part IDs survive recovery. Exactly-once recovery across a host-accepted/disk-not-committed boundary additionally depends on host deduplication by the supplied message ID; these tests establish it with a deduping fake host, not a real-host witness.
 
-Stage compact terminal metadata before removing waiting text, then flush it into the launch receipt. Terminal receipt failure keeps that metadata for a later sweep, never the ended text. Archive/gone and sender withdrawal are terminal ends; elapsed time is not. Clearing an ended queue also removes an empty delivery claim.
+Delivered batches stage compact terminal metadata before removing waiting text and flush it into the launch receipt (keeping only that metadata for a later sweep on receipt-write failure). When a recipient is closed, archived, gone, or seat-lost, `_end_batch` settles the store through `settle_held_store`, recording every still-waiting message with its text in `heldStoreClosures` on the launch receipt before unlinking the store file; sender withdrawal remains a terminal end, and elapsed time is not. Clearing an ended queue also removes an empty delivery claim.
 
 ## Bounded actor
 
@@ -38,6 +38,8 @@ A `ValueError` from `_restore_launch_handover` releases the claim and returns `c
 - Admission appends under the store lock and refuses overflow without dropping text. [1]
 - A drain delegates claim/readiness checks and whole-first FIFO delivery. [2]
 - Terminal lines are published separately from ended text and retain failure state. [3]
+
+
 
 - Test source checks cannot-open, zero second host calls and retained/reclaimable work. [7]
 

@@ -1,0 +1,308 @@
+{
+  "path": "mcp/tests/test_sync_commit_check.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+        "content": "sha256:e88dd983c832155168d42a3f0f90e908f9af2266d845f4ec39521a1e7347570d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_hook_mutating_tracked_file_and_exiting_zero_is_refused"
+        }
+      },
+      "facet": "A hook that changes a tracked file and exits 0 is refused and its mutation is restored.",
+      "id": "PRF-2PNXW0",
+      "invariant": "INV-RMEPCX",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §1",
+        "leaf": "261112-BUG-L29"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+        "content": "sha256:9e7bf91e0e487d917a3dd39bfa06af1476e09cfb8f6bdb0f30eb3516be6bd5d7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_escaped_holder_pids_named_in_sync_commit_check_failed"
+        }
+      },
+      "facet": "Escaped output holders that survive are named by PID in the refusal.",
+      "id": "PRF-6FAFNE",
+      "invariant": "INV-RMEPCX",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §1",
+        "leaf": "261112-BUG-L29"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+        "content": "sha256:73c624612c409254269dc1959b47e2c067e70db99d04426465705b1a545cec01",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_hook_staging_tracked_mutation_then_exiting_nonzero_restores_pinned_index"
+        }
+      },
+      "facet": "A staged tracked-file mutation is rolled back to the pinned index on a nonzero exit.",
+      "id": "PRF-9ATGMN",
+      "invariant": "INV-RMEPCX",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §1",
+        "leaf": "261112-BUG-L29"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+        "content": "sha256:b93d2a5af8463a760fce97f13d54af79e47d67730f8cad8b3ffd602d67107922",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_r8_stamped_tree_mismatch_is_still_checked_at_integration"
+        }
+      },
+      "facet": "A stamped commit whose Commit-Check-Pass tree differs from the published tree is still re-checked at integration.",
+      "id": "PRF-CG74GY",
+      "invariant": "INV-0YBX5E",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §3 (R8)",
+        "leaf": "261112-BUG-L29"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+        "content": "sha256:3de5c4f717d185cb4ff163ae23e552bdc4ffffddd8861d32616c319fc6178cd4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_published_head_proven_when_commit_landed_before_escaped_holder_timeout"
+        }
+      },
+      "facet": "A commit that landed before an escaped-holder timeout is proven published instead of refused.",
+      "id": "PRF-E90GHS",
+      "invariant": "INV-RMEPCX",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §1",
+        "leaf": "261112-BUG-L29"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+        "content": "sha256:b7b6043ec0a0c071a9c549b1b2054fbbf30b84844c301e1cab5fc59051514e74",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_stale_index_lock_cleared_after_timeout_kill"
+        }
+      },
+      "facet": "A stale index.lock is cleared after the timed-out kill so the sync can continue.",
+      "id": "PRF-G0E455",
+      "invariant": "INV-RMEPCX",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §1",
+        "leaf": "261112-BUG-L29"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+        "content": "sha256:166ba1f2734d4aae26e903044a0e37fc143745d9ab8d5a9227c9bbc5743717e8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_r8_sync_commit_without_runnable_hook_carries_no_stamp"
+        }
+      },
+      "facet": "A sync commit with no runnable pre-commit hook or a disabled hook carries no Commit-Check-Pass stamp.",
+      "id": "PRF-PQSDCW",
+      "invariant": "INV-0YBX5E",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §3 (R8)",
+        "leaf": "261112-BUG-L29"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+        "content": "sha256:e35f9c6cdbba36ca7f53eddeac22af3090eccc04c083c794530cf8ae3876e3b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_hook_staging_tracked_mutation_then_timing_out_restores_pinned_index"
+        }
+      },
+      "facet": "A staged tracked-file mutation is rolled back to the pinned index on timeout.",
+      "id": "PRF-SHD5MZ",
+      "invariant": "INV-RMEPCX",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §1",
+        "leaf": "261112-BUG-L29"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+        "content": "sha256:86c54f249873d6f0b263530fc28e3e2f25ba6b582e32335beaf5561e7b28d9f5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_r8_synced_leaf_integrates_without_second_hook_run"
+        }
+      },
+      "facet": "A synced leaf whose runnable pre-commit hook passed carries Commit-Check-Pass and integrates without re-running the hook.",
+      "id": "PRF-SN0ZBT",
+      "invariant": "INV-0YBX5E",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §3 (R8)",
+        "leaf": "261112-BUG-L29"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+        "content": "sha256:67418e50b63a68d61196cff04da5b58ddeacc3b8cb54340d95f7f82e37dab067",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_hook_mutating_nonstaged_tracked_file_is_named_in_refusal_summary"
+        }
+      },
+      "facet": "A changed tracked file outside the staged set is named in the refusal summary.",
+      "id": "PRF-Y4K8Q2",
+      "invariant": "INV-RMEPCX",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §1",
+        "leaf": "261112-BUG-L29"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+        "content": "sha256:55bb77a65854c3b9df33bcc066939edefd140c8f99092e86e1d8b0e08f6c3fc2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_rule4_silent_hanging_hook_times_out_kills_group_and_resumes_cleanly"
+        }
+      },
+      "facet": "A silent hanging hook is stopped at the bound with its group, and the sync continues and commits once.",
+      "id": "PRF-ZXK791",
+      "invariant": "INV-RMEPCX",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §1",
+        "leaf": "261112-BUG-L29"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A silent hanging hook is stopped with its group at the bound, and the sync continues and commits once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+            "content": "sha256:55bb77a65854c3b9df33bcc066939edefd140c8f99092e86e1d8b0e08f6c3fc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_rule4_silent_hanging_hook_times_out_kills_group_and_resumes_cleanly"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A staged tracked-file mutation on timeout is rolled back to the pinned index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+            "content": "sha256:e35f9c6cdbba36ca7f53eddeac22af3090eccc04c083c794530cf8ae3876e3b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_hook_staging_tracked_mutation_then_timing_out_restores_pinned_index"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Surviving escaped output holders are named by PID in the refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+            "content": "sha256:9e7bf91e0e487d917a3dd39bfa06af1476e09cfb8f6bdb0f30eb3516be6bd5d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_escaped_holder_pids_named_in_sync_commit_check_failed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A changed tracked file outside the staged set is named in the refusal summary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+            "content": "sha256:67418e50b63a68d61196cff04da5b58ddeacc3b8cb54340d95f7f82e37dab067",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_hook_mutating_nonstaged_tracked_file_is_named_in_refusal_summary"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Stamped continued code sync and hooked memory sync commits pass integration's commit-check gate without running either pre-commit hook a second time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+            "content": "sha256:86c54f249873d6f0b263530fc28e3e2f25ba6b582e32335beaf5561e7b28d9f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r8_synced_leaf_integrates_without_second_hook_run"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A commit carrying a `Commit-Check-Pass` trailer for a different tree is still checked at integration and refused when the hook fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+            "content": "sha256:b93d2a5af8463a760fce97f13d54af79e47d67730f8cad8b3ffd602d67107922",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r8_stamped_tree_mismatch_is_still_checked_at_integration"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Sync commits carry no `Commit-Check-Pass` trailer when the repository's pre-commit hook is absent or disabled (`0o644`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+            "content": "sha256:166ba1f2734d4aae26e903044a0e37fc143745d9ab8d5a9227c9bbc5743717e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r8_sync_commit_without_runnable_hook_carries_no_stamp"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

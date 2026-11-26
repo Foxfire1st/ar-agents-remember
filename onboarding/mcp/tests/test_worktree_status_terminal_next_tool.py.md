@@ -24,6 +24,8 @@ This account is current source interpretation only. It creates no executed test/
 
 - [6]
 
-- [7]
+
+- Anchor: Current enclosure archive-required result producer. [7]
+
 
 - [8]

@@ -785,12 +785,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36a8306c8794455ec37793eb498b3c49a62a0232",
+            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
             "content": "sha256:3dc75e6a086bac5c74ae79fc1e3d77487cde15f62c2a22b47cb9d83f863bb191",
             "locator": {
-              "end": 1177,
+              "end": 1115,
               "kind": "line_range",
-              "start": 1112
+              "start": 1050
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },
@@ -803,12 +803,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30231d7913eb526be260f641f1310d2349da4856",
+            "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
             "content": "sha256:603402e4b3b74ccb8366b134343edd9d49fb2bc215330335ee24450b0308e7db",
             "locator": {
-              "end": 574,
+              "end": 577,
               "kind": "line_range",
-              "start": 515
+              "start": 518
             },
             "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
           },

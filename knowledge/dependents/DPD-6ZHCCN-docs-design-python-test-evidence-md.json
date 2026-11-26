@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole.",
-    "task": "260928-MIK-L97",
+    "codeTree": "2e79f14e621878f776217e876e3953c8a4903aec",
+    "commit": "50292a3bfed059fe4f0aa9f087a6156bf1b754f9",
+    "role": "curator",
+    "statement": "Verified line-by-line on synced code (base 50292a3b + L29): docs/design/python-test-evidence.md (lines 13-17, 34-76) remains accurate after L29 refactored landing_commit_check.py onto commit_check_process.py and added lockfile-matched dashboard/node_modules borrowing; closeouts and landings still run only the knowledge gate and the repository pre-commit hook with no test or Dagger certification, and all listed evidence consumers and uncalled quality gates match live code.",
+    "task": "261112-BUG-L29",
     "uncommitted": true
   },
   "document": "docs/design/python-test-evidence.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -46,7 +46,7 @@
       "path": "mcp/src/agents_remember/worktrees/route_review_scope.py"
     },
     {
-      "blob": "d35463d6c2b0bc1953df6b6e2cd1fcca533a515d",
+      "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
     },
@@ -75,5 +75,16 @@
       "kind": "file",
       "path": "mcp/test_support/agents_remember_test_support/testing/consumer_inventory.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T00:49:11+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L29",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+    "task": "261112-BUG"
+  }
 }

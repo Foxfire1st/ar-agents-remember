@@ -52,4 +52,4 @@ Leaf revival (`_verify_leaf_revival_scope`, `_revival_contract_path`, `_recorded
 - `_compose_compact_instructions` resolves the durable corpus root, calls `compose_launch_instructions(..., compact_links=True)`, emits JSON-quoted `Link roots:`, and includes the instruction digest in the immutable message binding. [13]
 - Compact nested detail composition and user-note precedence delegate to `compose_launch_instructions` and `_write_nested_detail_artifacts`. [14]
 - `_task_document_read_metadata` names `task_doc` first and conditionally deduplicates the `refused-write.md` ladder only when `shared_block` already carries it. [17]
-- `_assembled_brief` compacts `shared_block` `skill://` URIs via `compact_skill_uri_links` and passes `link_roots` and condensed `_AR_TOOL_SERVER_USAGE*` into `BriefParts`. [18]
+- `_assembled_brief` compacts `shared_block` `skill://` URIs via `compact_skill_uri_links` and passes `link_roots` and condensed `_AR_TOOL_SERVER_USAGE*` into `BriefParts`. [19]

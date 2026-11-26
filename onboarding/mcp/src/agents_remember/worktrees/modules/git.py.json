@@ -719,12 +719,12 @@
         },
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:1ce13ae86c3b7f29490adfe9da0eab9d81ab15abd2f98117395ea1fc9f14d683",
             "locator": {
-              "end": 166,
+              "end": 175,
               "kind": "line_range",
-              "start": 154
+              "start": 163
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -745,12 +745,12 @@
         },
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:ede69db9a6a83701b6ff1391da1e3ff7578f3387510f13def4187f7a7af9d53b",
             "locator": {
-              "end": 157,
+              "end": 166,
               "kind": "line_range",
-              "start": 145
+              "start": 154
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },

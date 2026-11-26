@@ -1,13 +1,33 @@
 {
   "path": "CONTRIBUTING.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5b7cc10ea678be4d50d94a02f248dc6c5cdd33d9",
+        "content": "sha256:c8a1165d5d603afb9ed77543a0ce093307b5a4f99bda18407eb38bd15727dc25",
+        "locator": {
+          "end": 383,
+          "kind": "line_range",
+          "start": 330
+        }
+      },
+      "id": "RLZ-3NCW5Y",
+      "invariant": "INV-RXGZM9",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §5",
+        "leaf": "261112-BUG-L29"
+      },
+      "rationale": "Documents the 256 KiB GNU xargs dispatch, single-invocation scope banners, concurrent Python/Dashboard rails, warm ESLint/tsc caches, and continued-sync commitCheckTimeoutSeconds ownership.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "This guide describes the repository layout, development setup, checks and pull request procedure.",
       "targets": [
         {
           "anchor": {
-            "blob": "e27262761cee5ab5e0177ca4774cc2a60bf3fcb5",
+            "blob": "5b7cc10ea678be4d50d94a02f248dc6c5cdd33d9",
             "content": "sha256:49c587175eb3af01b25586010f9a6e86e0d2096249787600788e9adc42d2bf2d",
             "locator": {
               "end": 5,

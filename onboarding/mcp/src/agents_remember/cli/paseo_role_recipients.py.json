@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
+        "blob": "ccabb0812fc41ffa3ff5fbb06c73bf6f019c8d46",
         "content": "sha256:b0bf53728de4411d8749e98977b4e10f4c738ce7008aaa357f16a50f9d6b6b5d",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
+        "blob": "ccabb0812fc41ffa3ff5fbb06c73bf6f019c8d46",
         "content": "sha256:30415cc3de8770663243189a3306756bc53585d7818bdad9f3c9701f4a705a19",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
-        "content": "sha256:ed392ca66a3f81b9c2848c4fc72d14c710b551e31285ae29f819dbef76bb0eda",
+        "blob": "ccabb0812fc41ffa3ff5fbb06c73bf6f019c8d46",
+        "content": "sha256:0739fce31f3f031e0a8bd09fb22aace57cb61faf9d22f6949fc0dcf92464ff97",
         "locator": {
           "kind": "file"
         }
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
+        "blob": "ccabb0812fc41ffa3ff5fbb06c73bf6f019c8d46",
         "content": "sha256:8537b3a00f61a8e35243a931c88f5adeafb1bec33dbf3b886dff697a3de13e7b",
         "locator": {
           "kind": "symbol",
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
+        "blob": "ccabb0812fc41ffa3ff5fbb06c73bf6f019c8d46",
         "content": "sha256:be6da47b0d113d53282861f60b1f4ffc4f6cb342652c347a3744ff10933c8461",
         "locator": {
           "kind": "symbol",
@@ -92,8 +92,8 @@
     },
     {
       "anchor": {
-        "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
-        "content": "sha256:263fc31278fc9bea43e7e85be88f6e272b56f0b509dcbebb5ed747fc7c1df019",
+        "blob": "ccabb0812fc41ffa3ff5fbb06c73bf6f019c8d46",
+        "content": "sha256:26441e862ece572f667deb48174ae19e888bf3b89657956797cd358eee27f0a4",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_recipient"
@@ -107,6 +107,24 @@
       },
       "rationale": "The facade resolver requires exactly one receipt-bound address form and refuses self-addressing. For an unfinished start it raises recipient-busy with a holdReason that send_role_message converts to workspace holding when the store is known, rather than proving unconditional terminal refusal.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ccabb0812fc41ffa3ff5fbb06c73bf6f019c8d46",
+        "content": "sha256:df479746f40db59067c80caa3325d98a172d6ae6a6c353fe6896e76f337259d3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_store_selection"
+        }
+      },
+      "id": "RLZ-XTV202",
+      "invariant": "INV-M7BT2R",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3 closure evidence and send generation",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "Checks the selected request, agent, workspace and generation before holding or filing a message.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -115,12 +133,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98592f0da002d82f3314702ccc456b22745e54ba",
+            "blob": "ccabb0812fc41ffa3ff5fbb06c73bf6f019c8d46",
             "content": "sha256:02feb35c1294317d50604efd642515477bc0a270513f09507d7ad8034b71224b",
             "locator": {
-              "end": 144,
+              "end": 148,
               "kind": "line_range",
-              "start": 98
+              "start": 102
             }
           },
           "kind": "code"

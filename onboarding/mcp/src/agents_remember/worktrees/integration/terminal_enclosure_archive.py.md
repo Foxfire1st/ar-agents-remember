@@ -67,7 +67,9 @@ The configured Domain Documentation registry is empty. No external documentation
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
+
 - The public terminal archive entry publishes or re-observes the archive before deletion; the evidence owner admits and bounds canonical lifecycle files. [3]
+
 
 - Missing-intent generation archives are owned canonical artifacts. [4]
 

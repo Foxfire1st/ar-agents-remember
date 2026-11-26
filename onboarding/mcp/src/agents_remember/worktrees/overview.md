@@ -35,6 +35,8 @@ Closeout and landing use exact code/memory Git history. The current consumer led
 
 A managed memory merge with any converted side obtains its structural knowledge/onboarding plan before Git starts. All-converted inputs merge structurally as they stand; crossing inputs convert legacy sides first. The plan overlays only modeled knowledge and onboarding paths. Git retains the mode, object and stage entries for unmodeled paths. A durable report is selected for conflicts, conversion, renumbered references, kept evidence lines or skipped cards; an otherwise clean plan does not gain a report merely because cards aligned. Before a memory merge commit, the route closes applicable crossing history, validates the exact staged tree against both parents and its settled code partner, and proves the resulting commit has the pinned parents. A master that pauses on a structural content conflict opens history for crossing writes. A validation refusal retains the merge for repair and reopens only checkpoint-owned closing history. Fast-forward plans do not enter the staged-merge validator, but incoming converted-memory trees now validate separately before refs move; their refusal names source repair and a fresh sync. Skip and already-current plans do not invent a memory movement.
 
+A continued code-side sync commit runs the repository's commit check under the shared bound and session ownership. A timeout, an escaped output holder or a hook that changes a tracked file is a typed stop: the pinned `HEAD`, `MERGE_HEAD` and staged index remain, and `sync-commit-check-failed` names the limit, log, judged paths and recovery calls.
+
 After persistent sync durably settles a changed converted memory side, it refreshes briefs for the exact settled code/memory pair. A preview, skipped memory, temporary side, equal heads or a ledger-only delta leaves briefs alone. A staged persistent converted merge with content changes prepares the tracked briefs ignore line before validating the tree and restores its preparation on refusal. The completed answer carries a refresh advisory when present.
 
 Live converted-memory sync and its scratch proof share the generated ignore-rule settlement. They remove the canonical briefs stanza, terminate nonempty authored stages with a newline if needed, and restore the stanza after a clean three-way merge. Authored conflicts and owner edits to the conflict file remain for resolution.
@@ -87,7 +89,7 @@ Generated route indexes remain mechanically produced from explicit roots, not au
 
 Historical code-object retention measures custody and explicitly releases earlier pins; it creates no new pin. Only caller-named durable history counts, not arbitrary disposable branches, and custody examines named tips rather than searching their deeper history. A conservative retained observation does not itself release anything. Release requires the ref still point at its recorded commit and returns a record explaining unavailable history; comparison policy and lifetime stay with the caller.
 
-Review-artifact cleanup runs only after archived/would-archive results. Series archive skips invoke none. An absent hook reports not-bound; exceptions report failure without failing an already completed archive. The inherited application policy confines deletion to the task's review refs, exact legacy retained-code refs and content-matched legacy dataset copies, including unconverted tasks and curator scratch copies. Its accepted filesystem TOCTOU limit is retained below. Terminal leaf-agent archival likewise has an explicit port: dry run/non-leaf does nothing, absent capability reports not-bound, and host/receipt failure reports failed without refusing an admitted retirement. No fallback service is constructed.
+Review-artifact cleanup runs only after archived/would-archive results. Series archive skips invoke none. An absent hook reports not-bound; exceptions report failure without failing an already completed archive. The inherited application policy confines deletion to the task's review refs, exact legacy retained-code refs and content-matched legacy dataset copies, including unconverted tasks and curator scratch copies. Its accepted filesystem TOCTOU limit is retained below. Terminal seat archival likewise has an explicit port (with no fallback service): both leaf and modern series contracts inspect seats on dry run and close/archive them on apply (only legacy series skip it), and `not-bound` (when launch receipts exist), `failed`, `owed`, or `leftAlone` outcomes become terminal blockers that stop folder removal before deletion.
 
 The landing chain includes ordinary and merge commits. Final uses every canonical non-abandoned leaf; checkpoint and recorded landing use the landed population up to their actual endpoints. A line with no landed leaf contains only recorded bases and reconciled parent positions. Sync logs record produced code/memory heads for merge admission; legacy logs retain their explicit no-head compatibility. A repository-default sync's entry also records the default tips it reconciled with (`codeSourceCommit`, `memorySourceCommit`), which count as official positions, and a pull-request merge that publishes one recorded landing (two parents, the second a landed leaf commit, the merge's tree equal to it) is admitted by that shape.
 
@@ -145,7 +147,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 ## Message and evidence transport
 
-A leaf workspace may expose the shared task-owned messages folder through a link. Role-report cleanup unlinks that workspace view rather than deleting canonical message files. Canonical report collection/fsync/readback and transaction/removal authority remain with their existing owners; message filing is not a new report-read side effect.
+A leaf workspace may expose the shared task-owned messages folder through a link. Whole-folder terminal cleanup and abandon move out regular files from a real workspace `messages` directory into the canonical task-record folder before deleting the task folder, while removing a `messages` symlink without following it so canonical message files are never deleted (`remove_group_role_folders` keeps symlink-only unlinking for directory-only sprint-archive retirement). Canonical report collection/fsync/readback and transaction/removal authority remain with their existing owners; message filing is not a new report-read side effect.
 
 
 | Field | Value |
@@ -269,7 +271,6 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 
 - The sync validates the staged memory merge before its commit, against a converted base when a parent is unconverted (MIK-R24 rule 7). [44]
-- Retained reference account (no fresh execution or acceptance inferred): The driver maps the refusal to its own state with a recovery line. [45]
 - Retained reference account (no fresh execution or acceptance inferred): The route never commits converted memory unvalidated, and an unreadable tree is refused. [46]
 - Retained reference account (no fresh execution or acceptance inferred): The plan before Git, and its application to the started merge. [47]
 
@@ -296,7 +297,6 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 - The unconditional legacy-input refusal and its recovery wording. [65]
 - Task recovery guidance never invokes removed get: an established safe leaf can offer task_doc.replace with the exact slug, contract and fields, while an unknown leaf or parent path offers file repair without a guessed mutation. Launch copies contain the own leaf plus declared local requirements, name missing sources without failing launch solely for absence, and refresh/reclaim on canonical publication under the existing rollback and copy budgets. Status copy drift is informational; missing notice is not universal byte equality. Packet-owned refusal presentation preserves the central conversion sentence and single probe-made case, with exact sync args or quoted separate first-conversion argv and no step for unknown. These accounts change neither canonical-file authority, checkpoint/pause distinction, cleanup/reclamation eligibility, paired source lineage nor sync behavior. [99]
-- Retained reference account (no fresh execution or acceptance inferred): The managed sync asks the lock at admission. [67]
 - Retained reference account (no fresh execution or acceptance inferred): The closeout closes a reopened leaf's latest attempt. [68]
 
 - The rollback restores the cache before the merge abort. [69]
@@ -332,7 +332,9 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 - **Retained historical source account — superseded by the current route account:** Retirement refuses unfinished/unreadable current authority and selects remedies by locator availability [94]
 
-- **Retained historical source account — superseded by the current route account:** Terminal archival is explicit, skipped on preview/non-leaf and best effort after admission [95]
+
+- **Retained historical source account — superseded by the current route account:** Terminal archival is explicit, skipped on preview/non-leaf and best effort after admission Anchor: archive_terminal_agents [95]
+
 
 
 
@@ -364,14 +366,10 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - The neutral process holder supports an explicitly named lazy supplier: first lookup retains its bundle and reset clears bundle and supplier. Start/creation checks every leaf stage, planning attach checks before re-entry, and task-stage publication refuses planning/abandoned-to-inProgress while intent review is open; existing later-stage attach remains separate. [106]
 
 - Retained continuation validates the staged merge against both recorded parents. [110]
-- Only a retained merge commit failure enters hook diagnosis. [111]
 - The closeout validator and landing routes use their respective knowledge gate entry points. [61]
 - Direct landing keeps and settles its history closing per generation. [62]
 - The worktree helper names the leaf's line when it reports a cutover refusal. [66]
 
-- Retained reference account (no fresh execution or acceptance inferred): The sync driver retains content conflicts for continuation, permits only continue or cancel as resolution actions, and validates a staged retained merge before completing it; knowledge content is resolved in the memory worktree, not through an authored-reconcile action. [16]
-- Retained reference account (no fresh execution or acceptance inferred): Continue/cancel inputs and specific old-journal read tolerance. [40]
-- Supported staged continuation and cancellation guidance. [41]
 - Retained reference account (no fresh execution or acceptance inferred): Reopen's placement guard on the leaf and the master. [59]
 - The worktree layer probes whether the converted leaf gate applies, refuses an unbound gate, and defines closeout's separate owner-history write. [60]
 - Direct apply selects the history source, closes it, then judges the retained closed tree with restore on refusal; exact retry reuses the retained generation. [64]
@@ -379,3 +377,13 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - Persistent sync uses its settled committed content before asking for a full brief refresh. The reply keeps a brief advisory if the refresh has a problem. [119]
 
 - Live converted-memory sync and its scratch proof share the generated ignore-rule settlement. They remove the canonical briefs stanza, terminate nonempty authored stages with a newline if needed, and restore the stanza after a clean three-way merge. Authored conflicts and owner edits to the conflict file remain for resolution. [120]
+
+- The continued code-side commit is bounded and its stop keeps the staged merge. [121]
+
+- Retained reference account (no fresh execution or acceptance inferred): The driver maps the refusal to its own state with a recovery line. [45]
+- Retained reference account (no fresh execution or acceptance inferred): The managed sync asks the lock at admission. [67]
+- Only a retained merge commit failure enters hook diagnosis. [111]
+- Retained reference account (no fresh execution or acceptance inferred): The sync driver retains content conflicts for continuation, permits only continue or cancel as resolution actions, and validates a staged retained merge before completing it; knowledge content is resolved in the memory worktree, not through an authored-reconcile action. [16]
+- Retained reference account (no fresh execution or acceptance inferred): Continue/cancel inputs and specific old-journal read tolerance. [40]
+- Supported staged continuation and cancellation guidance. [41]
+- The commit itself runs through the shared bounded owner. [122]

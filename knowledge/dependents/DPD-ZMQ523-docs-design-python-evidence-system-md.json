@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "dbad7514a44165de3d365b22e5de15dbf19a9cbb",
+    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
     "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "Confirmed on post-sync CAP-L2 candidate dbad7514 (rebased onto main 3336406ea / BUG-L37): docs/design/python-evidence-system.md remains accurate with test_role_wire_token_budgets.py registered in unit-regression (676 of 826 modules) and declared on all six supported lifecycle artifact consumer lists.",
-    "task": "261124-CAP-L2",
+    "statement": "docs/design/python-evidence-system.md (lines 62-144) pins no test counts and accurately describes the seven accepting lanes, canonical catalog form, and source-derived consumers updated by L38.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "4bb2b5c79060fc9dbf38f851fb9b15b0e7abcd9e",
+      "blob": "950bfd7c3c2db68a87d13d58bc6ce7e2d52ff634",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "60ff7d074cf59627c9240029892da48254ae0f1e",
+      "blob": "f2c4c96f66a6b968683a0d56f273c64d6114ac22",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },
@@ -105,16 +105,5 @@
       "kind": "file",
       "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
     }
-  ],
-  "writer": {
-    "at": "2026-11-25T21:08:40+01:00",
-    "by": "agent",
-    "effort": "high",
-    "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L2",
-    "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
-    "task": "261124-CAP"
-  }
+  ]
 }

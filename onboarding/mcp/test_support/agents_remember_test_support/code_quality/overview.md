@@ -27,6 +27,8 @@ Its named vocabularies now concern attention severity, lane and item class, plus
 
 `quality_plan.py` owns typed configuration and command planning; `check.py` executes and interprets the rails. `profile_selection.py` derives the selected population, and `profile_rails.py` rederives and validates exact scope before execution. `dependency_ownership.py` and `scope.py` establish supported consumers and explicit product/verification ownership. `catalog_selection.py` reads both catalog versions through the shared reader `parse_catalog`; invalid catalog input remains an explicit selection refusal. `retry_proof.py`, `retry_coverage.py` and the child-environment helper preserve admitted retry inputs and remove outer retry/progress controls from candidate-test environments.
 
+`hook_scope_batch.py` renders every hook-tier scope line from one derived `GateScope`, in the hook's fixed order; `scope_reporting.py` exposes the `hook-batch` subcommand and computes the recursive on-disk Python counts only for the steps that read them. The hook calls the batch once per run, and a split or late failure still fails the tier. These are verification-support declarations, not execution evidence.
+
 ## Construction And Ownership
 
 The plan separates command construction from execution. Its steps distinguish enforcing subprocesses from report-only steps. Profile rails compare the published selector payload with a fresh repository-owned derivation and compare executable scope fields with canonical POSIX-string populations. A differently ordered `Path` list is not a new authority.
@@ -179,3 +181,6 @@ No lifecycle/status metadata in this overview grants execution or acceptance aut
 
 
 - Certifying publication and accepting consumers. [2]
+
+- The one-invocation hook batch renders its scope lines from one derived scope in fixed order. [32]
+- The reporting module exposes the hook-batch subcommand and the lazy count walk. [33]

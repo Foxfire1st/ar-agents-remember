@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "b60f09508b968b94502bfe295188d0da57858fb1",
-    "commit": "70a18acd683e44e6b99bbee07fe3fb6e07c505ed",
+    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "Confirmed against CAP-L2 candidate b60f0950: docs/guides/review-page-and-explainer.md remains accurate because CAP-L2 did not alter the review page or explainer guide behavior.",
-    "task": "261124-CAP-L2",
+    "statement": "docs/guides/review-page-and-explainer.md (lines 760-809) accurately describes explainer_control, explainer retirement, and that task cleanup/abandon/finalize leaves the explainer workspace intact.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -251,7 +251,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer.py"
     },
     {
-      "blob": "6b5a7f83c87998114f4e6d82f5b5fad460c7da37",
+      "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
@@ -290,7 +290,6 @@
         },
         "path": "mcp/src/agents_remember/serving/explainer_routes.py"
       },
-      "heading": "The intent review before work starts",
       "kind": "anchor"
     },
     {
@@ -303,19 +302,7 @@
         },
         "path": "mcp/src/agents_remember/canvas/explainer_service.py"
       },
-      "heading": "The intent review before work starts",
       "kind": "anchor"
     }
-  ],
-  "writer": {
-    "at": "2026-11-25T20:08:37+01:00",
-    "by": "agent",
-    "effort": "high",
-    "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L2",
-    "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
-    "task": "261124-CAP"
-  }
+  ]
 }

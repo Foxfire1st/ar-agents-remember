@@ -94,7 +94,7 @@ The transport roster is a cycle-free model literal; registration order is separa
 
 `application/` owns context packets, runtime composition, task operations, role-context resolution, review composition, file authoring, worklists, and the invariant gate. `models/` owns response contracts, role/capsule values, knowledge-file schemas, history vocabulary, and strict terminal results. `tasks/` owns JSON-primary planning documents, canonical task path vocabulary, execution topology, cross-document membership, derived waves, rendering, and supported mutation semantics. Application writers own finite migration and rollback-safe publication. Contract reads parse identity rather than silently healing it; explicit startup/migration routes own repair. Native task stage is published through the existing task-fact transaction: `worktrees/task_stage.py` prepares the addressed document and mirrored master/sprint row, validates their captured sources and uses the rollback-safe batch writer. Start promotes admitted planning/abandoned input to `inProgress`; attach binds without promoting stage, and abandon publishes `abandoned`. Completed documents retain their existing reopen/finalize gates. This document stage is separate from the landing chain's contract lifecycle and host-owned agent session. Leaf-role preparation refuses an open `intentReview` before ensuring an enclosure or creating a seat; the Architect records the developer's `go`, and refused starts are not retried autonomously. When an admitted planning leaf's live enclosure is found, role preparation uses the same native start-fact publication before the first seat's document copies, rather than becoming a second stage writer.
 
-The kernel owns canonical JSON, shared Git commands and capabilities, file observations, route census/indexing, memory attribution, ledger formatting, and cache materialization. Canonical JSON sorts keys, uses compact Unicode encoding, refuses nonfinite values and duplicate keys. `kernel/git_command.py` supplies shared Git runners, not exclusive ownership of every Git/hook subprocess; its environment removes eight repository selectors, explicit stdin prevents ambient input, and identity injection cannot reintroduce selectors. Present timeout classes are metadata 30 s, local 300 s, tool-bound remote 120 s, and interruptible bulk remote 1,800 s. Parsed diffs carry explicit color, external-driver, and a/b-prefix options. Private object preparation and expected-old ref publication are separate capabilities using those runners; `landing_commit_check.py` also owns direct Git and hook subprocess calls.
+The kernel owns canonical JSON, shared Git commands and capabilities, file observations, route census/indexing, memory attribution, ledger formatting, and cache materialization. Canonical JSON sorts keys, uses compact Unicode encoding, refuses nonfinite values and duplicate keys. `kernel/git_command.py` supplies shared Git runners, not exclusive ownership of every Git/hook subprocess; its environment removes eight repository selectors, explicit stdin prevents ambient input, and identity injection cannot reintroduce selectors. Present timeout classes are metadata 30 s, local 300 s, tool-bound remote 120 s, and interruptible bulk remote 1,800 s. Parsed diffs carry explicit color, external-driver, and a/b-prefix options. Private object preparation and expected-old ref publication are separate capabilities using those runners. `git_command_spec` returns the same sanctioned argv, work directory and scrubbed environment without spawning, which the commit-check runner uses; `landing_commit_check.py` delegates its hook run to that shared runner in `worktrees/modules/commit_check_process.py`.
 
 Route census freezes one Git/path-rule source population with NUL-safe tracked/untracked enumeration, ignored/generated exclusion, and symlink classification without following targets. Callers pass repository/storage authority rather than rediscovering it inside generation. Full memory quality uses a per-check Git source reader, with bounded reads and named unavailable-source reasons; readable ignored and binary citations remain verifiable. The retired citation-index exclusion register, aggregate budget, v10 manifest and source-cell publication protocol are not current producers. Retained source-index cache code owns terminal fencing and cleanup of existing artifacts. Citation fixing admits a finite nonempty `documents` list, mutually exclusive with `document` and bounded by the curator source-candidate limit; singleton behavior and the leaf writer guard remain. Converted list repair isolates missing/refused cards and retains separate authoring and mechanical repair stages. Under converted memory’s knowledge and onboarding roots, dot directories participate in the same traversal as other directories. The shared exclusion predicate filters generated route-index cache files.
 
@@ -993,7 +993,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 - The contract loader reads through the recorder. [375]
 - The removed repository memory root is resolved through the recorder. [250]
 
+
 - The host step of the install. [251]
+
 
 - The packaged host contract. [252]
 - The shared application route owns the converted-layout marker check that the CLI routes import. [376]
@@ -1033,7 +1035,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 
 - Complete current-boot host reconciliation and the supervisor subscription precede binding activity to tasks. [325]
 
+
 - Replayed role launch publishes receipt identity before invoking its host launch call. [326]
+
 - TaskSummary bodies use a separate bounded generation-qualified cache, with content-derived revision. [327]
 - Obsolete terminal lock cleanup requires a complete canonical-contract census and preserves any subject not proved terminal. [328]
 - The current declared pair is 10000 unit and 2000 integration selected cases. Earlier unit-only raises kept their integration ceiling unchanged at that time. [329]
@@ -1042,13 +1046,17 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 
 - Worker code and Curator memory failures count independently; incomplete history stays unknown. [331]
 
+
 - The saved-call executor rechecks the named step-up predecessor before archiving it. A found, unarchived predecessor must be idle and prompt-free. [332]
+
 
 - Step-up launch metadata is reconciled through the canonical task writer. [333]
 - Frozen detail identities and bytes are checked rather than recomputed. [334]
 
 
+
 - An eligible settled empty step-up retains its ordinary retryable call. If the recorded native Antigravity agent is absent, Retry settles the refusal and drops the call. [335]
+
 
 
 - The response requires judgment and retains knowledge/source identity without the removed supporting-record fields. [337]
@@ -1133,7 +1141,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - Supported code media is returned before text-size refusal and the reader renders its media state. [403]
 - Knowledge media URLs use the selected memory commit; byte delivery applies its actual16MiB bound. [404]
 
-- The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md. [402]
+
+- The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. [402]
+
 
 - General families plus four explainer additions, narrowed to the allowlist of a bound role; the seat check covers only those four while the process still serves them [405]
 
@@ -1177,3 +1187,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - Known offerings govern rejection of unsupported non-mode selections. Start-call feature authority is checked independently, and an unlisted mode passes to the host. [409]
 
 - The explainer uses the settings-selected launch and a bound task server. Creating the seat and sending its request are separate operations. [383]
+
+- `git_command_spec` supplies the sanctioned Git argv without spawning, and the shared commit-check runner owns the hook session and log. [424]
+- The continued sync commit and the landing share one bounded runner. [425]
