@@ -80,4 +80,5 @@ No sibling-repository contract defines source admission.
 
 No meaningful cross-repo references found.
 
-- The application entry point that admits and then compiles, returning a refusal as a value. Anchor: `compile_admitted_capsule` `CapsuleCompilationOutcome` [3]
+
+- The application entry point that admits and then compiles, returning a refusal as a value. [3]

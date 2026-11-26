@@ -89,7 +89,8 @@ No meaningful cross-repo references found.
 
 - Task collaboration, task format, repository memory commands, role duties, operation procedures and reference details have separate owners. A started role receives its own role, operation and every-role digest; it loads no other core file. [7]
 
-- Selected Orientation starts from supplied assignment and forbids loading other role/core files. [8]
+- Orientation uses the launcher's exact role and canonical assignment and reads only selected packets and rendered task files via file tools (no `.json`, no unrelated corpus). [8]
+
 
 - The Architect owns the developer conversation for delegated work; a parentless seat uses its own chat and backend seats keep their parent relay. [9]
 

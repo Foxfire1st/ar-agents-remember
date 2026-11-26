@@ -15,5 +15,7 @@ The detail tells the reader to resolve the repository context and the memory's `
 ## Evidence
 
 - The source inventory is shown and corrected before research begins. [1]
+
 - Research scouts shallowly, assigns areas, and records resumable progress and open questions. [2]
+
 - A registry entry or search hit is a pointer, not proof; research writes no memory. [3]

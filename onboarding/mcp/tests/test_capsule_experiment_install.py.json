@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
+            "blob": "78651bc2d50b9841df2038fb897149ae1ff7e0a5",
             "content": "sha256:c7505afd3991b0081249b9a481d21207f1781f9c61d391e876a05c795038eabe",
             "locator": {
               "kind": "symbol",
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
+            "blob": "78651bc2d50b9841df2038fb897149ae1ff7e0a5",
             "content": "sha256:689fb5402a092a089cc8a8a4048a83e555718dca07a1d146acaff5bb2b40a135",
             "locator": {
               "end": 99,
@@ -36,7 +36,7 @@
         },
         {
           "anchor": {
-            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
+            "blob": "78651bc2d50b9841df2038fb897149ae1ff7e0a5",
             "content": "sha256:2b6068c44b9fdd2166d64da6d833f394c782e1f521292e4f8d24bca4fd6706aa",
             "locator": {
               "end": 444,
@@ -53,7 +53,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
+            "blob": "78651bc2d50b9841df2038fb897149ae1ff7e0a5",
             "content": "sha256:bbaf5799ffec782b24dea0b6d81f38ba1714f677b04c7eaddcca7f57b31901ba",
             "locator": {
               "kind": "symbol",
@@ -69,7 +69,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
+            "blob": "78651bc2d50b9841df2038fb897149ae1ff7e0a5",
             "content": "sha256:f05a60ef6230eaebd8674281faf2cb9a1d4cdd5def95671a3558c73d508c028d",
             "locator": {
               "kind": "symbol",
@@ -85,7 +85,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
+            "blob": "78651bc2d50b9841df2038fb897149ae1ff7e0a5",
             "content": "sha256:766594bf2331c151977cceb388835470f8dec5ee005c6e45ecc6260bf0de96c5",
             "locator": {
               "kind": "symbol",
@@ -101,7 +101,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
+            "blob": "78651bc2d50b9841df2038fb897149ae1ff7e0a5",
             "content": "sha256:dbcac2e722060e8517940810a3bfb9c3089f54ac20764ba7236bb2d5657f2e36",
             "locator": {
               "kind": "symbol",
@@ -117,7 +117,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
+            "blob": "78651bc2d50b9841df2038fb897149ae1ff7e0a5",
             "content": "sha256:bbff97fa61c0c1ab4af6bc14e2b8bdcc4dbc05a7b044f633a995501aedad25b3",
             "locator": {
               "end": 398,
@@ -147,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
+            "blob": "78651bc2d50b9841df2038fb897149ae1ff7e0a5",
             "content": "sha256:0e3f3bf103063d34a9ae0c7e32f941c0d73818f32b9ff94ed1be062f297fbe10",
             "locator": {
               "end": 604,
@@ -164,7 +164,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
+            "blob": "78651bc2d50b9841df2038fb897149ae1ff7e0a5",
             "content": "sha256:c8fb108849e7b07e634d5af0b147d18d7e48336fe80c4a40f2a8cfed86a7b780",
             "locator": {
               "kind": "symbol",
@@ -176,12 +176,12 @@
       ]
     },
     "4": {
-      "note": "The module drives the real installer end to end and reads its results back from the files it wrote: removal of the retired startup files in both modes, the capsule cutover and the per-run selection record, with the install source tree left byte-identical.\n\nAnchor: file",
+      "note": "The module drives the real installer end to end and reads its results back from the files it wrote: removal of the retired startup files in both modes, the capsule cutover and the per-run selection record, with the install source tree left byte-identical.",
       "targets": [
         {
           "anchor": {
-            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
-            "content": "sha256:bc7cc0909773bdfaacbecc5e576124411444110528851449ff27535c02a457cd",
+            "blob": "78651bc2d50b9841df2038fb897149ae1ff7e0a5",
+            "content": "sha256:bce25a9f3f0d3d3ce7d1e62cbc49b91f0d5f5342b930f95b19b405d7339e6a81",
             "locator": {
               "kind": "file"
             }
@@ -195,7 +195,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
+            "blob": "78651bc2d50b9841df2038fb897149ae1ff7e0a5",
             "content": "sha256:db83a658a4a89834ac51046b654a2c9f6a8be80650931768d4d104bc109119a3",
             "locator": {
               "end": 687,
@@ -212,8 +212,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ccdae27f166202bf07aa7a43bd27e807ee660cd7",
-            "content": "sha256:7716147bd1c4bdb47e1760f3036815e580322f4fe682f3e6bd9a4f73eeb3a31c",
+            "blob": "884bfca77d3918141360d799434cf4234f069731",
+            "content": "sha256:62bc4db710a08a45a38afbf5f22c6fa4e70fc95949046da92c5c4312906fbada",
             "locator": {
               "kind": "file"
             },
@@ -228,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
+            "blob": "78651bc2d50b9841df2038fb897149ae1ff7e0a5",
             "content": "sha256:c7505afd3991b0081249b9a481d21207f1781f9c61d391e876a05c795038eabe",
             "locator": {
               "end": 580,
@@ -245,7 +245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37fbd39355c7b50afa0d9437f4769b025fc3d096",
+            "blob": "78651bc2d50b9841df2038fb897149ae1ff7e0a5",
             "content": "sha256:c8fb108849e7b07e634d5af0b147d18d7e48336fe80c4a40f2a8cfed86a7b780",
             "locator": {
               "kind": "symbol",

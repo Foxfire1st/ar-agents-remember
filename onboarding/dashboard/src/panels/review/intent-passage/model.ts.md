@@ -22,4 +22,3 @@ This is the inspected source contract, not an execution certificate. Parent and 
 - One prepared wording model for layout and drawing: `passageHasWords` owns the described branch. [2]
 - One prepared wording model for layout and drawing: `COARSE_NOTE` owns the described branch. [3]
 - One prepared wording model for layout and drawing: `UNPAIRED_NOTE` owns the described branch. [4]
-

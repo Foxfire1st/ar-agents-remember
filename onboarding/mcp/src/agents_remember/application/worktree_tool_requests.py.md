@@ -69,6 +69,7 @@ No configured external domain-documentation source applies.
 
 - Operation control consumes its extracted request type. [6]
 
+
 - The start tool consumes the request types this module extracts. [7]
 
 - Closeout apply consumes its extracted request type. [8]

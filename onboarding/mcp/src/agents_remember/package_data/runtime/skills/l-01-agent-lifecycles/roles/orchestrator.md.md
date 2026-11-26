@@ -7,7 +7,7 @@ When a send answers `held`, the Orchestrator follows the held-delivery rule: the
 
 ## Message/file transport and return addressing
 
-Messages are short wake-ups naming work and files; report/verdict/evidence content travels in file-only `body` or existing-file `attach`, not pasted text. Within a shared task the files stay in its record and a leaf workspace exposes the folder link. Wake text uses the settings limit without a pinned number. The Orchestrator forwards the Manager's matters for the Architect unchanged, and sends developer questions, child permission notices and the finished-or-unfinishable report-path message with `role_message` on `agents-remember-task` to the parent agent ID in the handover, sending no status-only messages or other landing notices.
+Message-file payload details are routed via the Reference index (`reference/message-handover.md`). The Orchestrator forwards the Manager's matters for the Architect unchanged, and sends developer questions, child permission notices and the finished-or-unfinishable report-path message via `role_message` (server binding in `core/every-role.md`) to the parent agent ID in the handover, sending no status-only messages or other landing notices.
 
 
 ## Governing Overview
@@ -92,5 +92,6 @@ This packaged copy derives from the canonical roles/orchestrator.md. The Orchest
 - This source owns the stated current Investigator scope or canonical vocabulary.
 
 - The Orchestrator reuses each existing Manager named in the Architect's handover and starts one Manager for each other master with role_start under its own sprint; those Managers coordinate their Workers, Reviewers and Curators. [1]
+
 
 - The Orchestrator keeps ordinary requirement readings and operational rulings itself, forwards the Manager's matters for the Architect unchanged and sends developer questions, child permission notices and the final report path with `role_message` to the parent agent ID (sending no status-only messages or other landing notices), and follows the held-delivery rule when a send answers held. [3]

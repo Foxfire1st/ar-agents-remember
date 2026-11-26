@@ -77,6 +77,7 @@ is archived and refused when the response returns. Ordinary launches without a m
 
 - Checks emitted binding and explicitly empty absent references and seat identities before round-trip. [8]
 
+
 ## MIK-R95 Preparation Outcome And Phase
 
 The launch outcome carries `workspace_preparation` (`created`, `found` or `opened`) taken from the public open result, and `role_launch_progress.starting()` moves the one working notice to the starting phase once the workspace call returns. Task placement therefore reports a real created/found outcome, while a Projects open reports `opened` and no invented creation outcome.

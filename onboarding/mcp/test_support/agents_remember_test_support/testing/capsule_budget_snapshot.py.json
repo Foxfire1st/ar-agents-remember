@@ -55,12 +55,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
             "content": "sha256:51e8b5d794dbae04cdedce18ec3675594750800ec8b68a6f3b13e4dbeb9aecb7",
             "locator": {
-              "end": 159,
+              "end": 143,
               "kind": "line_range",
-              "start": 145
+              "start": 129
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },

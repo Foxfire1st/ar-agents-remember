@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:772c3eacd6ba82c381db64f235097b104abd9c406df7b8c5d2f7c515d356a67f",
+        "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+        "content": "sha256:59b69c1389f51f2bb6f1bad1f8c70f029752b2002c181a2ebd066772da4cb4f4",
         "locator": {
           "kind": "file"
         }
@@ -20,12 +20,12 @@
     },
     {
       "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:eb4e198080760eef7c684698ae343c4e2b0cbb66042e8d6ef3ff20e23a57596a",
+        "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+        "content": "sha256:de1372d7b5482f0ab0340e49130f58713c468baf6f7101a151adf96dc55aa208",
         "locator": {
-          "end": 106,
+          "end": 28,
           "kind": "line_range",
-          "start": 106
+          "start": 28
         }
       },
       "id": "RLZ-Y2N80G",
@@ -58,16 +58,16 @@
       ]
     },
     "10": {
-      "note": "Authority gates and failure handling keep source and transaction ownership, tool scope and coherence with their owners; the memory candidate goes directly to the Reviewer and harness permission decisions are not bypassed.",
+      "note": "Curation boundaries keep code, Git and transaction ownership with their owners, require `curator_coherence` when `checklistStatus=coherence-required`, keep partial/refused handovers partial, and send the memory candidate directly to the Reviewer via `role_message`.\n\nAnchor: `curator_coherence`",
       "targets": [
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:c635b5be074d3969eaac93c07c843732ffe7e3ffcfecf262bdd44f0abf8d990a",
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:44fe6e8ba5d1a39fabd70ca4eab4dbcafeb37df2771b189f158c5d423187b5c8",
             "locator": {
-              "end": 138,
+              "end": 34,
               "kind": "line_range",
-              "start": 92
+              "start": 25
             }
           },
           "kind": "code"
@@ -97,12 +97,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:9e9944d63194f324901c323ea44e17de128c1ec91130b5f6db17f985d0bdda27",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:28011563333b27c409ff845e1f83f47d52bb01c7d61aac655649c3fea32cc513",
             "locator": {
-              "end": 120,
+              "end": 34,
               "kind": "line_range",
-              "start": 118
+              "start": 34
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -111,17 +111,30 @@
       ]
     },
     "4": {
-      "note": "Curation requires the complete memory-quality operation, the Manager leaf closeout dependent-document read (`view=\"dependent\"`, `staleOnly=true`) recorded in the curation report, repair or blocked escalation of every Curator-actionable finding, and the independent fact-check before handover.",
+      "note": "Curation requires the complete memory-quality operation, the Manager leaf closeout dependent-document read (`view=\"dependent\"`, `staleOnly=true`) recorded in the curation report, repair or blocked escalation of every Curator-actionable finding, and the independent fact-check before handover.\n\nAnchor: `memory_quality_check`",
       "targets": [
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:39ce2c62b35abf09b62bb86f1c192bc6a3bd45b7fbd3cebd30672957adeadccb",
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:0151dbe4e99b26af416eb3ad36dc70fb596ca7dbc734d503e6eb1e3f6651d295",
             "locator": {
-              "end": 82,
+              "end": 22,
               "kind": "line_range",
-              "start": 66
+              "start": 22
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+            "content": "sha256:8fa49f431a2cd762c6ca87f501d419751656212691278ffe30207e98548f3de0",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/curator/exceptions-and-recovery.md"
           },
           "kind": "code"
         }
@@ -146,16 +159,16 @@
       ]
     },
     "6": {
-      "note": "The curation contract keeps the Curator's memory reconciliation distinct from Worker, Reviewer and Manager ownership; the Manager owns the Git transaction.\n\nAnchor: `## Keep ownership distinct`",
+      "note": "The curation operation keeps Curator memory reconciliation distinct from Worker, Reviewer and Manager ownership: Curator runs no Git writes, edits no code/gate/closeout state, repairs no code, and routes authority, disputes and reserved sync steps to the Manager.",
       "targets": [
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:3029b7de9d851727fdb01a288c2986818568e774026d1de8c2630c376165bf35",
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:44fe6e8ba5d1a39fabd70ca4eab4dbcafeb37df2771b189f158c5d423187b5c8",
             "locator": {
-              "end": 18,
+              "end": 34,
               "kind": "line_range",
-              "start": 14
+              "start": 25
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -164,16 +177,16 @@
       ]
     },
     "7": {
-      "note": "Bound curation intake gives `knowledge_read` the workspace memory root and gives `context_packet` and `read_ar_files` the exact supplied leaf `task_context`.",
+      "note": "Bound curation intake gives `knowledge_read` the workspace memory root and gives `context_packet` and `read_ar_files` the exact supplied leaf `task_context`.\n\nAnchor: `knowledge_read`",
       "targets": [
         {
           "anchor": {
-            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
-            "content": "sha256:edc232d51e2788d3654820f24d3f8643cc7b81beddfac83a7ee85c662384c447",
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:e7ea4a79503feb2a10e0636b3356bf2a5ad48577dc6f3351120b2a493bccf9bf",
             "locator": {
-              "end": 18,
+              "end": 10,
               "kind": "line_range",
-              "start": 18
+              "start": 10
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -182,33 +195,46 @@
       ]
     },
     "8": {
-      "note": "Bound Paseo intake reads the rendered task and canonical JSON with the agent's own file tools, the knowledge writer keeps its ownership inside the selected memory root, and curation binds to the starting serving build.\n\nAnchor: `## Bound Paseo intake and capabilities`",
+      "note": "The curation workflow verifies writer outputs resolve in `workspace.memoryRoot` and reads scoped `knowledge_read` plus full `knowledge_diff` before semantic changes; orientation binds curation decisions and writes to the starting server or serving-build CLI.\n\nAnchor: `workspace.memoryRoot`",
       "targets": [
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:57609ea7e4e2cd15478ea2d6a06753c91909f3cf40087357408bc3bef38e2ca4",
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:aae3b2e23b0d19e3e9f2ad76ea5b8fe0c658c147220fc66f0612a821d111354f",
             "locator": {
-              "end": 48,
+              "end": 12,
               "kind": "line_range",
-              "start": 37
+              "start": 12
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+            "content": "sha256:01a9e34ef16506512dc5c5f7fe6e3d47af16e5c4d88575e4251eb9faafb9f34c",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/orientation.md"
           },
           "kind": "code"
         }
       ]
     },
     "9": {
-      "note": "Normal workflow reconciles meaning, states invariant scope and grouping guarantees, and runs full quality checks (including the Manager leaf closeout dependent-document read) and independent fact-check before bounded repair.",
+      "note": "Normal workflow reconciles intent and code, ingests invariants in scope and updates families only with justification and a re-examined guarantee, and runs full quality checks (including the closeout stale `dependent` check) and the independent OM-2 fact-check.\n\nAnchor: `## Workflow`",
       "targets": [
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:cc810c0daa50a8d74828cf58ea98249fb39426bdeddd4183ec0daca4b00e5abe",
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:c5afb216c98a6251372e2f13694f82fdd2bb1b5376bbc75f827e0c487a9eb1c2",
             "locator": {
-              "end": 89,
+              "end": 22,
               "kind": "line_range",
-              "start": 51
+              "start": 10
             }
           },
           "kind": "code"

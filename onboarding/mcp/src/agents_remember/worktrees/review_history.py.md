@@ -78,6 +78,7 @@ At the historical L41 preparation, the source bytes were SHA-256
 verification metadata remains blank until a genuine commit-owned refresh.
 
 - Review admission uses a typed error boundary, the settings-owned round cap and an explicit pending round. [1]
+
 - The review owner validates reported fields, parses the governing approval and records the sealed baseline. [2]
 - Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [4]
 - The review owner binds the recorded round to the admitted result. A record-only correction preserves first handover attribution. [8]

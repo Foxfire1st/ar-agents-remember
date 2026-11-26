@@ -7,6 +7,19 @@
     "task": "261125-DEP-L2",
     "uncommitted": true
   },
+  "deferrals": [
+    {
+      "condition": {
+        "task": "261124-CAP-L5"
+      },
+      "createdAt": "2026-11-26T12:09:27.146860Z",
+      "createdByLeaf": "261124-CAP-L3",
+      "id": "DFR-JB7N46",
+      "owner": "261124-CAP",
+      "passage": "docs/reference/skills.md ## Shipped skills (line 29) and ## Reading Served Skills (lines 48-61)",
+      "reason": "Omits core/ and reference/ folders, 3-tier progressive disclosure, durable skill-corpus cache materialization, and Poka-Yoke skill:// refusal pointers; doc updates owned by 261124-CAP-L5."
+    }
+  ],
   "document": "docs/reference/skills.md",
   "id": "DPD-ZQB4YZ",
   "origin": {
@@ -17,7 +30,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -72,14 +85,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T07:08:02+01:00",
+    "at": "2026-11-26T13:09:23+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L2",
+    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
-    "task": "261125-DEP"
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

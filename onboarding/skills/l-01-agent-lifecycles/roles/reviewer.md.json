@@ -4,31 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:0679235a50a273ae5ae6ab645fcb21362366d579b09939f6147d9290269e88ea",
+        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "content": "sha256:84d0e88860ed7df4ce699749fee31e2f7f2524b418a500da8a38888b0608f1c9",
         "locator": {
-          "end": 73,
+          "end": 36,
           "kind": "line_range",
-          "start": 73
-        }
-      },
-      "id": "RLZ-1205ME",
-      "invariant": "INV-KJACVA",
-      "origin": {
-        "handoffEntry": "BUG-R12@v1 §6",
-        "leaf": "261112-BUG-L12"
-      },
-      "rationale": "The proportional-review item is where the adversarial-review reservation belongs.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:411f521fe0a2ff6b5d7a0b2922cb1328de40ffbf1b4599ac7f6050ebab2f7b23",
-        "locator": {
-          "end": 145,
-          "kind": "line_range",
-          "start": 141
+          "start": 23
         }
       },
       "id": "RLZ-165F81",
@@ -37,13 +18,13 @@
         "handoffEntry": "L116-W3-wording-oracle",
         "leaf": "260928-MIK-L116"
       },
-      "rationale": "The Reviewer's stage facets sit in 'Organise and continue the assigned work': the stage ends with a recorded verdict covering the whole requirement, own-slip repair and the stops, and the last-line rule. The pointer to the record-only recheck in the review operation is not here; it sits in 'Report problems without expanding review' (reviewer.md:132), where the wording guard looks for it.",
+      "rationale": "The Reviewer role holds own-slip repair, verdict repair naming, and product-guard/commit-gate stops in Boundaries (lines 23-27) plus the Reference index pointer (line 33) to reference/review/rounds-and-late-findings.md for record-only rechecks, round limits, stops, and unfinished parent notices (operations/review.md:14 holds the verdict-over-whole-requirement end state).",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:369d3c5cdfd03d981d99b8098a3432dc481c6baea97886a5f1dc6dfacc4437ae",
+        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "content": "sha256:2ebc6cb756bc4375b282337dcf8472558e110d12dbe052cc362695a92b5138d2",
         "locator": {
           "kind": "file"
         }
@@ -59,12 +40,12 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:19d1cfb74a66834ddd189186991997133f3aef1fddd88d2a5bb49974a5df1afa",
+        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "content": "sha256:0885b9b4f6b31329402f18aaa0e9c6d8f5ba2330639e791778d8394249ae5a94",
         "locator": {
-          "end": 41,
+          "end": 15,
           "kind": "line_range",
-          "start": 41
+          "start": 15
         }
       },
       "id": "RLZ-2RDRRX",
@@ -73,17 +54,17 @@
         "handoffEntry": "MIK-R60@v10.1-4",
         "leaf": "260928-MIK-L60"
       },
-      "rationale": "The two Reviewer sentences.",
+      "rationale": "Reviewer intake binds system/tools.md, system/design-guidelines.md, and guidelines alongside the code-seam (CS-7) and doctrine (D-6) catalogs bound at roles/reviewer.md:19.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:041a961530e6277dbeea44334ad6ed9c990749f8cf5aaa689b4851b49e6cf906",
+        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "content": "sha256:63dbd3d94730219ff908ee0515e512e7ccdf129f4eaf76aedf1f1a1ca566d12b",
         "locator": {
-          "end": 39,
+          "end": 19,
           "kind": "line_range",
-          "start": 39
+          "start": 19
         }
       },
       "id": "RLZ-6258J4",
@@ -92,17 +73,17 @@
         "handoffEntry": "MIK-R60@v11.5",
         "leaf": "260928-MIK-L60"
       },
-      "rationale": "The Reviewer binds catalogs from its table and nothing else.",
+      "rationale": "Binds leaf criteria catalogs directly and forbids brief overrides; the full review-type catalog binding table lives in reference/review/non-leaf-seams-and-catalogs.md:17-26 (linked at roles/reviewer.md:33).",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:041a961530e6277dbeea44334ad6ed9c990749f8cf5aaa689b4851b49e6cf906",
+        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "content": "sha256:63dbd3d94730219ff908ee0515e512e7ccdf129f4eaf76aedf1f1a1ca566d12b",
         "locator": {
-          "end": 39,
+          "end": 19,
           "kind": "line_range",
-          "start": 39
+          "start": 19
         }
       },
       "id": "RLZ-63V8FT",
@@ -111,17 +92,17 @@
         "handoffEntry": "MIK-R60@v12.6",
         "leaf": "260928-MIK-L60"
       },
-      "rationale": "The Reviewer's outputs name the filled section.",
+      "rationale": "Reviewer's Bind the seam and catalogs section binds the catalogs (including doctrine for docs/skills) and requires recording them in Catalog Binding.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:d5658ed4652da3bfa455043e9cf1f887e9078ec6e75677387e870eaad18704bc",
+        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
         "locator": {
-          "end": 70,
+          "end": 21,
           "kind": "line_range",
-          "start": 70
+          "start": 21
         }
       },
       "id": "RLZ-9FYETT",
@@ -130,17 +111,17 @@
         "handoffEntry": "KNO-R04@v1 rules 6–8",
         "leaf": "261112-KNO-L4"
       },
-      "rationale": "Guides the Reviewer to the saved brief when available and to whole records when fuller text does not fit.",
+      "rationale": "Directs the Reviewer to open briefs via read_ar_files and call knowledge_read on changed files; compact brief freshness and whole-record detail live in reference/knowledge/use.md.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:483a6eb926f22fcad055dde734169488b78b0272c07511876e5288bfc5261a1e",
+        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "content": "sha256:0e9545099b8cf89c8f504cd3ccfe210f3987346df3d8d6cce8c84919b290bbec",
         "locator": {
-          "end": 153,
+          "end": 36,
           "kind": "line_range",
-          "start": 153
+          "start": 36
         }
       },
       "id": "RLZ-AHY1E5",
@@ -154,12 +135,12 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
         "content": "sha256:d3857964a7b0bf5879ff9e0ca9e986a8e1cd24da00de793f0971c99bfb143fdd",
         "locator": {
-          "end": 24,
+          "end": 10,
           "kind": "line_range",
-          "start": 24
+          "start": 10
         }
       },
       "id": "RLZ-C066F0",
@@ -173,12 +154,12 @@
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:75bdfd1e3392bb1485d7b16d3e2f9f098e4198177a4104b1dac2c20f566f78d5",
+        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "content": "sha256:5881cc7ceafb6e967c542a3c2a21c2fd7aeafd340d8b79ce9e92a28f839f1c1b",
         "locator": {
-          "end": 16,
+          "end": 15,
           "kind": "line_range",
-          "start": 14
+          "start": 8
         }
       },
       "id": "RLZ-CG94JY",
@@ -187,36 +168,17 @@
         "handoffEntry": "L71-CURRENT242-W-19",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "Lines 14-16 of the canonical roles/reviewer.md carry the Reviewer's first read of the rendered task document and canonical JSON and its tool binding on agents-remember-task; this canonical file is the source the generator propagates to the packaged runtime tree.",
+      "rationale": "Lines 8-15 of canonical roles/reviewer.md carry the Reviewer's leaf review assignment, task_doc editing and pre-inspection intake rules propagated to the packaged runtime tree.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:9544349501bc3cff52ef43805c69579013a0fd8da9dde75efafba56280f841c6",
+        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "content": "sha256:8b6ab72f97d979079dce4e12a581d709150dda9b7a417ce5d5c5dd00a99660dc",
         "locator": {
-          "end": 84,
+          "end": 13,
           "kind": "line_range",
-          "start": 84
-        }
-      },
-      "id": "RLZ-EPWAGD",
-      "invariant": "INV-KJACVA",
-      "origin": {
-        "handoffEntry": "BUG-R12@v1 §6",
-        "leaf": "261112-BUG-L12"
-      },
-      "rationale": "The Reviewer's definition of a finding is where the reaching step and the honest-agent assumption belong.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:c9da318e2c934c62ac280274054ae7e63e034536dd532dd242dfc258b1d52be3",
-        "locator": {
-          "end": 103,
-          "kind": "line_range",
-          "start": 76
+          "start": 10
         }
       },
       "id": "RLZ-JH0BAQ",
@@ -225,17 +187,17 @@
         "handoffEntry": "R99-1-direct-loop",
         "leaf": "260928-MIK-L99"
       },
-      "rationale": "The Reviewer writes and records its verdict and follows the review operation's leaf verdict handover: the verdict straight to the Worker, the passed freeze and code-PASS verdict straight to the Curator once it exists, memory findings returned to the Curator, and the ready-for-closeout notice to the Manager after both pass.",
+      "rationale": "Reviewer role declares direct freeze-handoff intake from Worker alongside Manager/Architect review intake, keeping leaf handover direct while review operation steps own verdict routing.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:75bdfd1e3392bb1485d7b16d3e2f9f098e4198177a4104b1dac2c20f566f78d5",
+        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "content": "sha256:d52cdd82ad54ea280d29c15b098ffe7347d78378e85e79f18b284f4b52b829a0",
         "locator": {
-          "end": 16,
+          "end": 21,
           "kind": "line_range",
-          "start": 14
+          "start": 15
         }
       },
       "id": "RLZ-PC6PG7",
@@ -244,34 +206,17 @@
         "handoffEntry": "PNT-R04@v1 §4 / F10",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "Reviewer intake preserves exact task-document and reader arguments.",
+      "rationale": "Reviewer intake binds exact task/requirement inputs and opens briefs via read_ar_files.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:369d3c5cdfd03d981d99b8098a3432dc481c6baea97886a5f1dc6dfacc4437ae",
+        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "content": "sha256:0e9545099b8cf89c8f504cd3ccfe210f3987346df3d8d6cce8c84919b290bbec",
         "locator": {
-          "kind": "file"
-        }
-      },
-      "id": "RLZ-PDE8EW",
-      "invariant": "INV-QZW2X2",
-      "origin": {
-        "handoffEntry": "L172-INV-C",
-        "leaf": "260928-MIK-L172"
-      },
-      "rationale": "The Reviewer's unfinished final turn sends what it awaits to its parent with role_message.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:e36369443b6bf53a121505d0a146c332e316627f9d27e644b08fe1f7d4df9078",
-        "locator": {
-          "end": 103,
+          "end": 36,
           "kind": "line_range",
-          "start": 103
+          "start": 36
         }
       },
       "id": "RLZ-QBXQTV",
@@ -280,36 +225,17 @@
         "handoffEntry": "MIK-R70@v1 rule 4",
         "leaf": "260928-MIK-L70"
       },
-      "rationale": "The Reviewer's 'Handover and other seats' section closes by stating that a terminal or finalizer result attests only that the turn ended; gate acceptance stays with the Manager.",
+      "rationale": "The Reviewer Reference index links ../core/acceptance.md (the single completion-truth owner stating terminal/finalizer outcomes prove turn end only and Manager retains gate acceptance), paired with roles/reviewer.md:25.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:8a99b34d6915bd56c76579e50d87820d41943481067246e24591a2bb097e7221",
+        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
         "locator": {
-          "end": 137,
+          "end": 21,
           "kind": "line_range",
-          "start": 135
-        }
-      },
-      "id": "RLZ-R22534",
-      "invariant": "INV-7VZRZW",
-      "origin": {
-        "handoffEntry": "R99-14-harness-work",
-        "leaf": "260928-MIK-L99"
-      },
-      "rationale": "reviewer receives the same assignment autonomy and responsibility bounds in its own composed role text.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:6648cd0e9c274dd0e7e2ec5000cc78be3719edbaa6e83d6dc1e12c363a838a66",
-        "locator": {
-          "end": 34,
-          "kind": "line_range",
-          "start": 34
+          "start": 21
         }
       },
       "id": "RLZ-SQ8RXD",
@@ -318,56 +244,22 @@
         "handoffEntry": "BUG-R12@v1 §2",
         "leaf": "261112-BUG-L12"
       },
-      "rationale": "The Reviewer's intake list is where the missing evidence would be demanded, so it says the final checks are not among the frozen inputs.",
+      "rationale": "Limits routine Reviewer test checks to targeted tests (reserving full suites and drift for explicit request or ## Final checks), paired with operations/review.md:14 excluding ## Final checks from review rounds.",
       "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:369d3c5cdfd03d981d99b8098a3432dc481c6baea97886a5f1dc6dfacc4437ae",
-        "locator": {
-          "kind": "file"
-        }
-      },
-      "id": "RLZ-TVXT3T",
-      "invariant": "INV-82NDFH",
-      "origin": {
-        "handoffEntry": "BUG-R52@v2 §7",
-        "leaf": "261112-BUG-L52"
-      },
-      "rationale": "Directs the Reviewer during memory review to inspect report-only pre-base-stale confirmations and deferral_lifted rows per OM-6 within capsule ceilings.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-        "content": "sha256:369d3c5cdfd03d981d99b8098a3432dc481c6baea97886a5f1dc6dfacc4437ae",
-        "locator": {
-          "kind": "file"
-        }
-      },
-      "id": "RLZ-WFV931",
-      "invariant": "INV-T8672G",
-      "origin": {
-        "handoffEntry": "L198-INV-A",
-        "leaf": "260928-MIK-L198"
-      },
-      "rationale": "The sentence as it stands in the Reviewer text.",
-      "role": "propagation-persistence"
     }
   ],
   "references": {
     "1": {
-      "note": "Every exact requirement attempt and candidate receives a separate independent accepted/rejected record.",
+      "note": "Every exact requirement attempt and candidate receives a separate independent accepted/rejected record.\n\nAnchor: \"Adjudicate revisions\"",
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:971e2183364b1cb5c7c052d1fd5c677da23566fed14fcd507b4c6136e801568f",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
             "locator": {
-              "end": 75,
+              "end": 21,
               "kind": "line_range",
-              "start": 74
+              "start": 21
             }
           },
           "kind": "code"
@@ -375,50 +267,88 @@
       ]
     },
     "10": {
-      "note": "Reviewer intake uses exact rendered/JSON paths and actual scoped read schemas, reads only the assigned seam and writes only contained task-local report artifacts.",
+      "note": "Reviewer reads only the assigned seam's selected packets and rendered task files via file tools (no .json or unrelated corpus), edits canonical task docs via task_doc, and writes verdicts under notes/reports/.",
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:332e7c01e55327f3f472bb1dc1812c6d38391401c493fd1f17e33989998128de",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:9e78ccc65502b44c9c1bdcfbe9efbc1262589e00995d5951172c1ecb9b0fe197",
             "locator": {
-              "end": 18,
+              "end": 8,
               "kind": "line_range",
-              "start": 14
+              "start": 8
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42a0d01d26d76af264e684575860b81a1bee7e4f",
+            "content": "sha256:9edfb6ab5326a906cfbdabedb6d47de0236659bf320c6c09d90d0a099429ebc8",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
           },
           "kind": "code"
         }
       ]
     },
     "11": {
-      "note": "Reviewer requires the dispatched exact stable IDs and versions, the durable approval record, exact candidate and Worker attempts and the repository's tools; the catalogs come from the review type's row in the binding table, never from the brief or a choice during the review, and the verdict's Catalog Binding section names them.",
+      "note": "Reviewer requires the dispatched exact stable IDs and versions, the durable approval record, exact candidate and Worker attempts and the repository's tools; the catalogs come from the review type's row in the binding table, never from the brief or a choice during the review, and the verdict's Catalog Binding section names them.\n\nAnchor: `## Bind the seam and catalogs`",
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:5b5bd3dab96598396f3b6fc76c4406cf2d6f3392796aa25b12015c4d02dbdb00",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:b38be0da5b5edaa43ce4a72007945aa5a40f4c389cb16eb5797611951137dc59",
             "locator": {
-              "end": 39,
+              "end": 19,
               "kind": "line_range",
-              "start": 33
+              "start": 15
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c4c112e12bd15afade93565931c7d587ae796a58",
+            "content": "sha256:5e29d16d2855ed32037e9d4b8af4bf92c4e00b10bbd1e4f1544cd6ca735766a7",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/review/non-leaf-seams-and-catalogs.md"
           },
           "kind": "code"
         }
       ]
     },
     "12": {
-      "note": "Reviewer inspects every changed file of the complete candidate diff and reads the baseline detail at step 4; a subset never replaces the Curator's complete authoring memory-quality operation.",
+      "note": "Reviewer inspects every changed and unattributed file of the candidate diff, reads the linked review-baseline detail, and requires a full memory_quality_check on curation (blocking on Curator-actionable findings).\n\nAnchor: `## Bind the seam and catalogs`",
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:a716ed12cdb40c8729f4af5d59c1d6d54362fe0deba4581bdf3b210fe272e132",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:773828dc64e1be52a8ee6847a16742202a9d73c54c958e52c514352b85c1b8fe",
             "locator": {
-              "end": 72,
+              "end": 21,
               "kind": "line_range",
-              "start": 69
+              "start": 17
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:3e8818385f268753c9b20f68d4df069d91eef0021d6c4d15706f15b07f693dd4",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
             }
           },
           "kind": "code"
@@ -426,33 +356,71 @@
       ]
     },
     "13": {
-      "note": "Baseline is sealed under the step-4 baseline detail; fix verification reuses that sealed evidence and only listed IDs without a new-lens or whole-seam rediscovery mandate.",
+      "note": "Baseline is sealed under reference/review-baseline.md (linked from the Reference index); fix-verification checks sealed IDs only with no whole-review mandate.",
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:016f9df7b675cd1906e2a98ee5761e9a27abf4d32bfd92f6d8f324dd2ad983c5",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:0885b9b4f6b31329402f18aaa0e9c6d8f5ba2330639e791778d8394249ae5a94",
             "locator": {
-              "end": 73,
+              "end": 15,
               "kind": "line_range",
-              "start": 71
+              "start": 15
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:3e8818385f268753c9b20f68d4df069d91eef0021d6c4d15706f15b07f693dd4",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:855ae6401e9e885c23025bdad8c747bf4158f3c15d26ff729d2e1be65d4aaca1",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "be47faf621df002b92e29c9a1de0f3c75de115b8",
+            "content": "sha256:834416c4eb198398b757ab3169805e63e7a9dc4e40f30ae2ca8156cbeee03252",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/review-baseline.md"
           },
           "kind": "code"
         }
       ]
     },
     "14": {
-      "note": "Each exact requirement revision is adjudicated accepted or rejected against its Worker attempt/candidate in a separate immutable reviewer record in the same leaf journal; Worker and earlier records stay unchanged.",
+      "note": "Each exact requirement revision is adjudicated accepted or rejected against its Worker attempt/candidate in a separate immutable reviewer record in the same leaf journal; Worker and earlier records stay unchanged.\n\nAnchor: \"append immutable Reviewer journal record\"",
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:971e2183364b1cb5c7c052d1fd5c677da23566fed14fcd507b4c6136e801568f",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
             "locator": {
-              "end": 75,
+              "end": 21,
               "kind": "line_range",
-              "start": 74
+              "start": 21
             }
           },
           "kind": "code"
@@ -464,12 +432,37 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:8fdf0654396608ea62aae821b741e53e60197886184c86308b8261c80c19cf26",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:855ae6401e9e885c23025bdad8c747bf4158f3c15d26ff729d2e1be65d4aaca1",
             "locator": {
-              "end": 95,
+              "end": 14,
               "kind": "line_range",
-              "start": 90
+              "start": 14
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:4d16a7569b3abe181922320b217e780100da99104f1323faf263521315cea0da",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:3dbf395d87e12a9b9c3809a8f906e57a2309f72d2b155ef839453316d606f9f1",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
             }
           },
           "kind": "code"
@@ -481,7 +474,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac68be08ca465ac374e4f75b153e1bdc1dd9ab01",
+            "blob": "be47faf621df002b92e29c9a1de0f3c75de115b8",
             "content": "sha256:08de0ac08202fc4ad82748e59c6e4c843c0b465114dbed60fd2928e1d8259db7",
             "locator": {
               "end": 26,
@@ -495,29 +488,16 @@
       ]
     },
     "17": {
-      "note": "The Reviewer records ordinary leaf CODE begin/result and separate MEMORY rounds with unchanged code state; Manager records beyond-settings authorization and retains gate acceptance.",
+      "note": "The Reviewer records ordinary leaf CODE begin/result and separate MEMORY rounds with unchanged code state; Manager records beyond-settings authorization and retains gate acceptance.\n\nAnchor: `## Rounds`",
       "targets": [
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:7c0dd38e30c539ade85749ce78f0b16d2e33d8459d20d8bd4680c15a501f4dce",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:93959e5bf29033e28ec85d658fe80baf971d79d3ba5092161501d41e256c7f15",
             "locator": {
-              "end": 88,
+              "end": 34,
               "kind": "line_range",
-              "start": 88
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/review.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:9e9944d63194f324901c323ea44e17de128c1ec91130b5f6db17f985d0bdda27",
-            "locator": {
-              "end": 120,
-              "kind": "line_range",
-              "start": 118
+              "start": 32
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -526,16 +506,29 @@
       ]
     },
     "18": {
-      "note": "A moved review candidate is stale and requires a successor exact Worker attempt and reviewer record; changed scope or identity does not manufacture a new first review.",
+      "note": "A moved review candidate is stale and requires a successor exact Worker attempt and reviewer record; changed scope or identity does not manufacture a new first review.\n\nAnchor: \"Reject a candidate that moves during review as stale\"",
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:a02a01654650fb8f94faf20807e8075204784b3f6dd54d327997c1add4105c0f",
+            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+            "content": "sha256:9a3679ff1f4256818b52bbfdffe4b2f75b450cc34b0de2a1178d0d26e7c2fd2b",
             "locator": {
-              "end": 131,
+              "end": 49,
               "kind": "line_range",
-              "start": 131
+              "start": 49
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/review/rounds-and-late-findings.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:0f217ae27d9b8ccfdfc73a4ba3dacd58114db2d76abb0efbe1d95edceaa2ee91",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
             }
           },
           "kind": "code"
@@ -543,17 +536,43 @@
       ]
     },
     "19": {
-      "note": "Reviewer marks only its own named review step done after the last round is recorded passed, and its stage ends at a recorded verdict covering the whole requirement, findings and coverage.",
+      "note": "Reviewer marks only its own named review step done after the last round is recorded passed, and its stage ends at a recorded verdict covering the whole requirement, findings and coverage.\n\nAnchor: `task_doc(set_step)`",
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:4f2f17ddbd2db73eac599a91725f176a4d0295861b0742c576b9ba16eecbaf28",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:ea0fe48290b138f15f34b2663888b5395e0436081f248382377e82120c685db6",
             "locator": {
-              "end": 141,
+              "end": 27,
               "kind": "line_range",
-              "start": 141
+              "start": 27
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+            "content": "sha256:310f054711f122d54f300133c6c26c6f446ce0bed5c641d5f3d5b5640ca954eb",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/review/rounds-and-late-findings.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:855ae6401e9e885c23025bdad8c747bf4158f3c15d26ff729d2e1be65d4aaca1",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
           "kind": "code"
         }
@@ -564,7 +583,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11336746503723e0772e73c309956b9748bbec4c",
+            "blob": "de5bfce377d07e88f4fb82afd192c70c792d0cb6",
             "content": "sha256:7626ba80bd5da998b74d17dd724a798b3b59af5f9c42c97f8b4d56b9c918b552",
             "locator": {
               "end": 46,
@@ -582,26 +601,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:7f4e35050009885633fa89c4aa74e734636b400374d397a4111010cd2418bcdb",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:ea0fe48290b138f15f34b2663888b5395e0436081f248382377e82120c685db6",
             "locator": {
-              "end": 143,
+              "end": 27,
               "kind": "line_range",
-              "start": 143
+              "start": 27
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:41f9de9a713c3271a0ae2eb70ba8597c21c2113bd07cedd961f480ab970b0da2",
+            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+            "content": "sha256:34c8280b28a6ac4528110c65a902e8b7165c0868cad71985df97dd77b0c8dd7c",
             "locator": {
-              "end": 97,
+              "end": 17,
               "kind": "line_range",
-              "start": 95
+              "start": 15
             },
-            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+            "path": "skills/l-01-agent-lifecycles/reference/review/rounds-and-late-findings.md"
           },
           "kind": "code"
         }
@@ -612,30 +631,80 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:094a7cc27b6e537ba07a1bbb771ebf3fc43db78ef588e18bf53ed734c66fc6fc",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
             "locator": {
-              "end": 94,
+              "end": 21,
               "kind": "line_range",
-              "start": 94
+              "start": 21
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:3dbf395d87e12a9b9c3809a8f906e57a2309f72d2b155ef839453316d606f9f1",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:f365fa2b998a370dbe27c259ddbc109672edee5c5e7b9bd0630c56989ecd15e0",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
           "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "The Reviewer seam table names organizational leaf, atomic-master integration, master-exit, portfolio plan and super-exit scope, start selection and verdict recipient; candidate identity comes from the intake rather than the hosting enclosure.",
+      "note": "Leaf binding never uses the hosting enclosure; the full five-seam table (organizational leaf, atomic-master integration, master-exit, portfolio plan and super-exit) and intake candidate identity rule live in reference/review/non-leaf-seams-and-catalogs.md.\n\nAnchor: `## Review seams and criteria catalogs`",
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:a8b37c5577da29eb6667c8851b75226ade5feaa77060d1719b784fce45ae9ebc",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:63dbd3d94730219ff908ee0515e512e7ccdf129f4eaf76aedf1f1a1ca566d12b",
             "locator": {
-              "end": 55,
+              "end": 19,
               "kind": "line_range",
-              "start": 47
+              "start": 19
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:0f217ae27d9b8ccfdfc73a4ba3dacd58114db2d76abb0efbe1d95edceaa2ee91",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c4c112e12bd15afade93565931c7d587ae796a58",
+            "content": "sha256:9afa7d1a722b6c11ef6cdb8ad6ee94841a542ff1fb3292642616ed357cd6f81a",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/review/non-leaf-seams-and-catalogs.md"
           },
           "kind": "code"
         }
@@ -646,12 +715,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:7c0dd38e30c539ade85749ce78f0b16d2e33d8459d20d8bd4680c15a501f4dce",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:28011563333b27c409ff845e1f83f47d52bb01c7d61aac655649c3fea32cc513",
             "locator": {
-              "end": 88,
+              "end": 34,
               "kind": "line_range",
-              "start": 88
+              "start": 34
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -659,26 +728,14 @@
         },
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:9e9944d63194f324901c323ea44e17de128c1ec91130b5f6db17f985d0bdda27",
+            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+            "content": "sha256:23e6dc0abe23a8ae4a02c70ec7aa0bce08e7f1ecb1135ad7227182bc4ed4fab2",
             "locator": {
-              "end": 120,
+              "end": 9,
               "kind": "line_range",
-              "start": 118
+              "start": 7
             },
-            "path": "skills/l-01-agent-lifecycles/operations/review.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:f74aef61c9ab9702980b7cf1c39bead164c8055b722f9e86c19ea8b2af543020",
-            "locator": {
-              "end": 133,
-              "kind": "line_range",
-              "start": 133
-            }
+            "path": "skills/l-01-agent-lifecycles/reference/review/rounds-and-late-findings.md"
           },
           "kind": "code"
         }
@@ -689,24 +746,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:4f2f17ddbd2db73eac599a91725f176a4d0295861b0742c576b9ba16eecbaf28",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
             "locator": {
-              "end": 141,
+              "end": 21,
               "kind": "line_range",
-              "start": 141
+              "start": 21
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:41f9de9a713c3271a0ae2eb70ba8597c21c2113bd07cedd961f480ab970b0da2",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:ea0fe48290b138f15f34b2663888b5395e0436081f248382377e82120c685db6",
             "locator": {
-              "end": 97,
+              "end": 27,
               "kind": "line_range",
-              "start": 95
+              "start": 27
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:855ae6401e9e885c23025bdad8c747bf4158f3c15d26ff729d2e1be65d4aaca1",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 14
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -714,13 +783,27 @@
         },
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:9544349501bc3cff52ef43805c69579013a0fd8da9dde75efafba56280f841c6",
+            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+            "content": "sha256:34c8280b28a6ac4528110c65a902e8b7165c0868cad71985df97dd77b0c8dd7c",
             "locator": {
-              "end": 84,
+              "end": 17,
               "kind": "line_range",
-              "start": 84
-            }
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/review/rounds-and-late-findings.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+            "content": "sha256:b8760e26308d14276296b7bc73f8b543d8f38ad3d340196155bc555242f5e8fa",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/review/rounds-and-late-findings.md"
           },
           "kind": "code"
         }
@@ -731,24 +814,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "blob": "c4c112e12bd15afade93565931c7d587ae796a58",
             "content": "sha256:affa535e1ec46c4be1fb90d5bae5a14274e36be1eb320509d7a89e2abd917c40",
             "locator": {
-              "end": 49,
+              "end": 11,
               "kind": "line_range",
-              "start": 49
-            }
+              "start": 11
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/review/non-leaf-seams-and-catalogs.md"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:5096aee15573cde31b4c8216091887fae42bcf581cb8508a366538b8f7a6529a",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:0c52fca2d6d2fb9df85aae4b314eda370236c1e3934f3c8410c856462aa06ea1",
             "locator": {
-              "end": 73,
+              "end": 27,
               "kind": "line_range",
-              "start": 70
+              "start": 24
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -756,14 +840,27 @@
         },
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:5c35496fae6f3888d303621708017385f7ea56cb5cd1936944d7abad24ed0c43",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:ae5364c0e4462ef592f09267f85ee3063553b9e75da24a385a8313b5b14c7948",
             "locator": {
-              "end": 122,
+              "end": 38,
               "kind": "line_range",
-              "start": 122
+              "start": 38
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "345008053e007cf0ca4e57917a2f17501f1f7eee",
+            "content": "sha256:925856fa0165a198be5389c3da41d081a1fa8f55254d18667e88e2dfbd5016bc",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/worker/sync-and-repairs.md"
           },
           "kind": "code"
         }

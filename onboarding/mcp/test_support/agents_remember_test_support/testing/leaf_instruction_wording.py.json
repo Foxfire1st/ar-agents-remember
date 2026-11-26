@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
-        "content": "sha256:c722f08cf59e50e0655908206cf6a2b8f8a210e83ba0f64f68e1a93722b0646a",
+        "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
+        "content": "sha256:965198ddf2c803ed02553288d73fbef5a552e7aa1d0e65fae5d6f8cf369f72cb",
         "locator": {
           "kind": "symbol",
           "name": "CURATION_CLAUSES"
@@ -21,12 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
-        "content": "sha256:a960c86fd51b81204173e684cec313e48766858cb9f9f0fa103bfe414571f392",
+        "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
+        "content": "sha256:8f41db444bf12657116b5eecccb8eac38e5976de2b72dee115347290c8be23c5",
         "locator": {
-          "end": 454,
+          "end": 288,
           "kind": "line_range",
-          "start": 431
+          "start": 284
         }
       },
       "id": "RLZ-5GMY8X",
@@ -40,12 +40,12 @@
     },
     {
       "anchor": {
-        "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
-        "content": "sha256:354d67b6a2b502cce0c55cfabd0bbd325e792526fa670d84bfa1f478155256b9",
+        "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
+        "content": "sha256:499f489482051086347ff1d979bd01750d3272f5452900e299ad4fd8dd42b725",
         "locator": {
-          "end": 667,
+          "end": 406,
           "kind": "line_range",
-          "start": 658
+          "start": 397
         }
       },
       "id": "RLZ-645J3W",
@@ -59,12 +59,12 @@
     },
     {
       "anchor": {
-        "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
-        "content": "sha256:60f5a4ceefe2ad45b7b23c203953142bbad746926ad5f401a786292944798198",
+        "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
+        "content": "sha256:7cbbd6e548c6f27815e778de2bc32372e9f42b22ad0ec81588138ec373faea02",
         "locator": {
-          "end": 444,
+          "end": 292,
           "kind": "line_range",
-          "start": 432
+          "start": 284
         }
       },
       "id": "RLZ-8BC5NS",
@@ -78,8 +78,8 @@
     },
     {
       "anchor": {
-        "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
-        "content": "sha256:0e0357b1d6c8f805231a7a420280eb2044724044b686a26ac7a4a8f86271e22e",
+        "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
+        "content": "sha256:ad4abfc5d545514c7cb91a9b53c529b1a383a6ae1d5e1567bd519d9741166edb",
         "locator": {
           "kind": "symbol",
           "name": "AUTONOMY_CLAUSES"
@@ -91,12 +91,12 @@
         "handoffEntry": "K3-7VZRZW-autonomy-clauses",
         "leaf": "260928-MIK-L84"
       },
-      "rationale": "The per-role oracle of the helper-autonomy obligation: for every role it holds the whole clauses the role text must state (own split, check and credit helper work, boundary acts are the seat's, helpers hold no seat or extra permissions, no self-review through a helper, one Curator writer), and the wording tests fail when a role loses one.",
+      "rationale": "Per-role helper-autonomy oracle composing shared autonomy/seat-boundary clauses (_SHARED_AUTONOMY_CLAUSES from SKILL.md, core/authority.md, core/invariants.md) with role-specific clauses for worker, curator, and bootstrap.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
+        "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
         "content": "sha256:8a350410863b2d8f8567d580b1818c3d7224bbb01e1304121bbfcd4d62450cbd",
         "locator": {
           "end": 76,
@@ -115,8 +115,8 @@
     },
     {
       "anchor": {
-        "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
-        "content": "sha256:b8fe9a3f393150d8b7aaa1b96710928e5be6e3581cd83abc68721ec05c2702df",
+        "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
+        "content": "sha256:2a72e5aa7b5914134c50a44db1ff5b9d08b0323d4c13be8f3feda5daa91e2c45",
         "locator": {
           "kind": "symbol",
           "name": "LEAF_CLAUSES"
@@ -133,12 +133,12 @@
     },
     {
       "anchor": {
-        "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
-        "content": "sha256:8964eb52bf21b60e0d465c6b6d079b6205ac1c5c02967c0ff999cccf29dd9184",
+        "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
+        "content": "sha256:1487e37e54e6c08891d8d7ac6aa14a2e954672c77fa164bc4a37b4ca3fbe26a9",
         "locator": {
-          "end": 492,
+          "end": 319,
           "kind": "line_range",
-          "start": 483
+          "start": 313
         }
       },
       "id": "RLZ-N0ZABH",
@@ -152,12 +152,12 @@
     },
     {
       "anchor": {
-        "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
-        "content": "sha256:d5ba0d2c7e0e86a8179c0f08dc72a158d9d5f0ea37cca4eee162e3c48147473f",
+        "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
+        "content": "sha256:127c3583e385fa00dc64c67dd37ae6edd9f2318c646cd1706aded43097914ea4",
         "locator": {
-          "end": 151,
+          "end": 152,
           "kind": "line_range",
-          "start": 135
+          "start": 134
         }
       },
       "id": "RLZ-Q0APWC",
@@ -171,27 +171,8 @@
     },
     {
       "anchor": {
-        "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
-        "content": "sha256:a960c86fd51b81204173e684cec313e48766858cb9f9f0fa103bfe414571f392",
-        "locator": {
-          "end": 454,
-          "kind": "line_range",
-          "start": 431
-        }
-      },
-      "id": "RLZ-QSH41B",
-      "invariant": "INV-ZNJ14G",
-      "origin": {
-        "handoffEntry": "L62-CUR-6db-attach-INV-ZNJ14G",
-        "leaf": "260928-MIK-L62"
-      },
-      "rationale": "Each repeated Worker oracle states Manager start notice first and direct frozen-content handover after Reviewer exists.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
-        "content": "sha256:cf8589b96203737384ab3c12fb6b706210801ea7245f50c2768f48d02de77ad1",
+        "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
+        "content": "sha256:ce7cabf56c6e41b10109786ab8cc61603c5aa21b185e7f10a20660eec3f65e25",
         "locator": {
           "kind": "symbol",
           "name": "IMPLEMENTATION_CLAUSES"
@@ -208,31 +189,12 @@
     },
     {
       "anchor": {
-        "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
-        "content": "sha256:8964eb52bf21b60e0d465c6b6d079b6205ac1c5c02967c0ff999cccf29dd9184",
+        "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
+        "content": "sha256:22751e8f11fc3f000d25b598a2bc62e01e9e982ae2ffedfa73ae2566cea1a4ce",
         "locator": {
-          "end": 492,
+          "end": 403,
           "kind": "line_range",
-          "start": 483
-        }
-      },
-      "id": "RLZ-S9QV0H",
-      "invariant": "INV-ZNJ14G",
-      "origin": {
-        "handoffEntry": "L62-CUR-6db-attach-INV-ZNJ14G",
-        "leaf": "260928-MIK-L62"
-      },
-      "rationale": "Once Curator exists, the Reviewer sends the passed freeze and code-PASS verdict directly to it.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
-        "content": "sha256:2b495cc8b11d576eb04dfacde45440f243c61bbe5ceba18ff5ec841ca9a4ed4f",
-        "locator": {
-          "end": 671,
-          "kind": "line_range",
-          "start": 658
+          "start": 399
         }
       },
       "id": "RLZ-SAP4W5",
@@ -246,26 +208,7 @@
     },
     {
       "anchor": {
-        "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
-        "content": "sha256:978e099c292399cdb0bd6f7515bda6fa79c759114902749917b8c9611c00a1f8",
-        "locator": {
-          "end": 438,
-          "kind": "line_range",
-          "start": 432
-        }
-      },
-      "id": "RLZ-SQ3FKJ",
-      "invariant": "INV-ZNJ14G",
-      "origin": {
-        "handoffEntry": "L62-CUR-6db-attach-INV-ZNJ14G",
-        "leaf": "260928-MIK-L62"
-      },
-      "rationale": "Each repeated Worker oracle states Manager start notice first and direct frozen-content handover after Reviewer exists.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
+        "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
         "content": "sha256:8a7f50beff3290a3819d059900b148fb486cfe3b2d5a4ebec75d131b80a811fc",
         "locator": {
           "kind": "symbol",
@@ -283,8 +226,8 @@
     },
     {
       "anchor": {
-        "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
-        "content": "sha256:a98e3e0b60f6fd137af6a86b88111273119a8fd1f7e9987a9f5aef3cc0c7d3f1",
+        "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
+        "content": "sha256:b6559f1ecde1cd86a7adf9f2a9af3d882b87eea93cfa91183c91a3caeb682dd6",
         "locator": {
           "kind": "file"
         }
@@ -300,12 +243,12 @@
     },
     {
       "anchor": {
-        "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
-        "content": "sha256:dde21eb0737f33b6d5c76c52b7a1a43b148da168e518d966f1c139861ac4ac59",
+        "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
+        "content": "sha256:2f559dbe48a5d346b7532b88dbe2dba05d5945b195912a38db0669d12729b0e9",
         "locator": {
-          "end": 453,
+          "end": 298,
           "kind": "line_range",
-          "start": 448
+          "start": 296
         }
       },
       "id": "RLZ-YF3JX9",
@@ -319,7 +262,7 @@
     },
     {
       "anchor": {
-        "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
+        "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
         "content": "sha256:0b4a6124cff051e9d20d10feef56bd37910fa0fef953fb13b34a6b5143f7d65c",
         "locator": {
           "end": 104,
@@ -343,7 +286,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
+            "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
             "content": "sha256:52823e3b40e1ebd597bb44bc5eaeaddd3d8c10e17705e83e17c18f87118c044e",
             "locator": {
               "kind": "symbol",
@@ -359,7 +302,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
+            "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
             "content": "sha256:8a7f50beff3290a3819d059900b148fb486cfe3b2d5a4ebec75d131b80a811fc",
             "locator": {
               "end": 130,
@@ -371,12 +314,12 @@
         },
         {
           "anchor": {
-            "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
-            "content": "sha256:cf8589b96203737384ab3c12fb6b706210801ea7245f50c2768f48d02de77ad1",
+            "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
+            "content": "sha256:2a72e5aa7b5914134c50a44db1ff5b9d08b0323d4c13be8f3feda5daa91e2c45",
             "locator": {
-              "end": 470,
+              "end": 460,
               "kind": "line_range",
-              "start": 431
+              "start": 396
             }
           },
           "kind": "code"
@@ -388,8 +331,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
-            "content": "sha256:ff16bd36038b3217dced71cb9135f5a0a36db62658a865fcdbd059e049b1f244",
+            "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
+            "content": "sha256:bbb06f6c66b73c9b42bc27f63f050fe4f363f25af926e75a4dacc27edb951e42",
             "locator": {
               "kind": "symbol",
               "name": "MESSAGE_HANDOVER_ACTIONS"
@@ -404,7 +347,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
+            "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
             "content": "sha256:c3a0f3895dc44073a86508ec37bf22e1207ab712c6c6d6b1bf11d055bc458161",
             "locator": {
               "end": 54,
@@ -416,7 +359,7 @@
         },
         {
           "anchor": {
-            "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
+            "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
             "content": "sha256:f4de1dffb68831ff2b49580e2c935042f02ac30931a19785b6de82cd6c36b187",
             "locator": {
               "end": 131,
@@ -433,8 +376,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
-            "content": "sha256:89fed9fed0c21b722dbadea482f267b0cde5251f278c7f8acc42c5b5e38986f2",
+            "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
+            "content": "sha256:4e98cf848d9f75e768bec20b8ffcade0ee256885308fd9b05c80774305783bf9",
             "locator": {
               "kind": "symbol",
               "name": "REFUSED_WRITE_ACTIONS"

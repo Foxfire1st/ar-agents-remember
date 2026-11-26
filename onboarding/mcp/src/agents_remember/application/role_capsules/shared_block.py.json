@@ -1,0 +1,114 @@
+{
+  "path": "mcp/src/agents_remember/application/role_capsules/shared_block.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "386b91bcc0de26be4fa223fdfcebd84df7091ce6",
+        "content": "sha256:ac23c18c452336757989b9964e7c9a1138617657a45322bde5bb27054bb4a0c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "filter_shared_block"
+        }
+      },
+      "id": "RLZ-Y5VB81",
+      "invariant": "INV-40JW44",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-40jw44",
+        "leaf": "261124-CAP-L2"
+      },
+      "rationale": "Implements deterministic line-by-line role-scoped filtering of core/every-role.md with canonical role normalization, fenced-block preservation, independent consecutive role-prefix parsing, and empty-heading pruning.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`filter_shared_block` passes through `role is None` or empty text, normalizes `role` via `canonical_role`, and preserves trailing-newline state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "386b91bcc0de26be4fa223fdfcebd84df7091ce6",
+            "content": "sha256:ac23c18c452336757989b9964e7c9a1138617657a45322bde5bb27054bb4a0c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "filter_shared_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_RECOGNIZED_ROLE_LABELS` and `_parse_role_prefix` recognize the eight canonical roles plus `system-specialist` and leave non-role prefixes universal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "386b91bcc0de26be4fa223fdfcebd84df7091ce6",
+            "content": "sha256:e248e2f2f01d911d06f7632a024380f830d0af897c7d436cdc57bb2f9c50adf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_role_prefix"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "386b91bcc0de26be4fa223fdfcebd84df7091ce6",
+            "content": "sha256:57f7c301163afc70feb01375c63af69b93a0b5c1e5968f4581ef01918447974d",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_consume_line` preserves fenced code blocks verbatim inside their owning entry and splits consecutive role-prefixed lines into independent entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "386b91bcc0de26be4fa223fdfcebd84df7091ce6",
+            "content": "sha256:f7d4ed36de9c4cf4caf5ff4c1c6d829d136fae3580d3f81ebae989911cd1f9b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_consume_line"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "386b91bcc0de26be4fa223fdfcebd84df7091ce6",
+            "content": "sha256:3201ac463c76ae8f6facd99a5cbcbac0dd523271fe18da0539831f41e9f3fafa",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_filter_section` prunes empty headings and `_render_entries` preserves tight single-newline separation within shared groups.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "386b91bcc0de26be4fa223fdfcebd84df7091ce6",
+            "content": "sha256:613745cb65ed808ea8d470a1e806167b54878098e92eebcd387936f0f014465b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_filter_section"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

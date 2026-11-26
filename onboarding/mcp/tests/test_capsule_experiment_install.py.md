@@ -96,6 +96,7 @@ returned summary alone.
 - The module drives the real installer end to end and reads its results back from the files it wrote: removal of the retired startup files in both modes, the capsule cutover and the per-run selection record, with the install source tree left byte-identical. [4]
 
 
+
 - An actual selected install reports an empty startup rollback and leaves no retired startup file. [5]
 
 ### Repo-Internal References (renewed)

@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "648b27458fcdf390c3905ab596aa5afbba2f9a20",
-        "content": "sha256:686f2e98a9233790ff099507551f4a1cc2982b6ea0be2526e70c263d70981e90",
+        "blob": "d15f31045cf03ebd7d74fec214a40840a299bc2e",
+        "content": "sha256:97114e5d36926f5e2f8c552d1fdc522ad4b6219f77b3eaf87cda12d7309b71d0",
         "locator": {
           "kind": "symbol",
           "name": "FirstMessageMatrixTests.test_a_held_seat_opens_through_the_delivery_path"
@@ -20,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "648b27458fcdf390c3905ab596aa5afbba2f9a20",
+        "blob": "d15f31045cf03ebd7d74fec214a40840a299bc2e",
+        "content": "sha256:5087c01a53c9cb42ec59b790f8a3783a6f6404fba90e7b0b242c7c3c39aa1a0e",
+        "locator": {
+          "kind": "symbol",
+          "name": "FirstMessageMatrixTests.test_projection_deduplication_and_opt_in_handover_file_edge_cases"
+        }
+      },
+      "facet": "Proves inline handover projection omits redundant fields and defaults while preserving task_name, slug, readerArguments.shared, and explicit opt-in handoverFile edge cases.",
+      "id": "PRF-H1FE1D",
+      "invariant": "INV-4BYFWJ",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 1",
+        "leaf": "261124-CAP-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d15f31045cf03ebd7d74fec214a40840a299bc2e",
         "content": "sha256:17356a9c2c3c9d914e0d55281e7bffe3b560983ea30fe2991b196a5889a26910",
         "locator": {
           "kind": "symbol",
@@ -43,8 +60,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "648b27458fcdf390c3905ab596aa5afbba2f9a20",
-            "content": "sha256:07fc9d0e221a3511ddc3e74efc1af5548acbd2faf50fbe30ff002e7fe0975336",
+            "blob": "d15f31045cf03ebd7d74fec214a40840a299bc2e",
+            "content": "sha256:f8040eed9a44c8b0882a0fd8c993adf3a90087fb80fca98132e7bd1eaa219d86",
             "locator": {
               "kind": "file"
             }
@@ -58,8 +75,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "648b27458fcdf390c3905ab596aa5afbba2f9a20",
-            "content": "sha256:07fc9d0e221a3511ddc3e74efc1af5548acbd2faf50fbe30ff002e7fe0975336",
+            "blob": "d15f31045cf03ebd7d74fec214a40840a299bc2e",
+            "content": "sha256:f8040eed9a44c8b0882a0fd8c993adf3a90087fb80fca98132e7bd1eaa219d86",
             "locator": {
               "kind": "file"
             }
@@ -73,8 +90,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "648b27458fcdf390c3905ab596aa5afbba2f9a20",
-            "content": "sha256:07fc9d0e221a3511ddc3e74efc1af5548acbd2faf50fbe30ff002e7fe0975336",
+            "blob": "d15f31045cf03ebd7d74fec214a40840a299bc2e",
+            "content": "sha256:f8040eed9a44c8b0882a0fd8c993adf3a90087fb80fca98132e7bd1eaa219d86",
             "locator": {
               "kind": "file"
             }

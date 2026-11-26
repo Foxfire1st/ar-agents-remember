@@ -10,7 +10,7 @@ The Curator's detail for card, overview and entity-catalog layouts, card history
 
 ## Code Commentary
 
-The Curator role links each section at its own action: history dispositions before writing card history, citation input before checking or repairing citations, and the entity catalog before maintaining it; the file-card, repository-overview and route-overview templates link the scope section, and the onboarding-coherency template links the current-content section.
+The Curator role links this detail file from its Reference index under Cards/style; the file-card, repository-overview and route-overview templates link the scope section, and the onboarding-coherency template links the current-content section.
 
 History: the subject's earlier rows are read before ingest. For invariants, `changed` changes the record's meaning and increments its revision, `moved` re-anchors without changing meaning, `deleted` removes entries or retires the invariant, `extended` adds an entry without changing meaning, and `no_impact` preserves meaning and the entry set, including admission, origin or slug-only changes. Family and onboarding rows keep their own schemas; a family row's `examined` list binds member revisions, and a member revision change after the row makes the row stale.
 
@@ -33,4 +33,4 @@ Entity catalog: one selective `entities.md` with exact inventory and fingerprint
 - One named `citation_fix` batch per wave, with partial results and refusals kept visible. [5]
 - Refreshing, revising, withdrawing and renaming references. [6]
 - Entity catalog scope, headings and fingerprint algorithm. [7]
-- The Curator role links the history and citation sections at their actions. [8]
+- The Curator role links this detail file from its Reference index. [8]

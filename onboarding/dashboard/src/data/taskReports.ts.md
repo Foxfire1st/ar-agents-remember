@@ -17,5 +17,3 @@ Same-origin browser client for a task's recorded role starts (`GET /api/role-lau
 - The per-task reports URL is built from repo, master and doc. [1]
 - The dashboard doc prefix is stripped to the recorded task reference. [2]
 - Report rows come from recorded starts, newest first, at most twenty. [3]
-
-

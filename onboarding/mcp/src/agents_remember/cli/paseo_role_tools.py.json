@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
         "content": "sha256:352aeecbb61b1546e1c531078d752b12ab659017adad5b11888bfa7f3a6ffadb",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
         "content": "sha256:e8e7f45bb79d62397080e1431a2720d28274496a14c69a2664c809695cfea3c0",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
         "content": "sha256:f2648a011286e749c3cf2700a091edb7fa8db7f082cecc57b003e9097d62b41d",
         "locator": {
           "kind": "symbol",
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
-        "content": "sha256:ec64f336cb0127273bd6db45bc49ae5198669d9abb6f56be99e0c2b0055182a1",
+        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+        "content": "sha256:cf9432d1746a1f173f6afa5fb7d752e7df3662f538c9eeef1c94a8c01949014c",
         "locator": {
           "kind": "file"
         }
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
         "content": "sha256:2472cefe0f77a03045a4b389e5f8e1102c885b522d539b95d6a9ff74107686da",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
         "content": "sha256:35d445b9fbcf93f458571be8f1390bc1608b893aa8f8d362f1414820e2be1fb6",
         "locator": {
           "kind": "symbol",
@@ -111,12 +111,12 @@
     },
     {
       "anchor": {
-        "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
         "content": "sha256:d9c486831df4838ded9e6993733bcfb0961a4c32142f7e6bdfd15c0491c35cfe",
         "locator": {
-          "end": 1046,
+          "end": 1059,
           "kind": "line_range",
-          "start": 1008
+          "start": 1021
         }
       },
       "id": "RLZ-BVTKAZ",
@@ -130,7 +130,25 @@
     },
     {
       "anchor": {
-        "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+        "content": "sha256:3f1461afcbff4c641264899f280e711396af8b35840b8cff5944e60a34dc6f20",
+        "locator": {
+          "kind": "symbol",
+          "name": "_hold_for_seat"
+        }
+      },
+      "id": "RLZ-GHFC8D",
+      "invariant": "INV-7CZVBD",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 4",
+        "leaf": "261124-CAP-L3"
+      },
+      "rationale": "Appends the full-store refusal pointer only on HeldStoreFull recipient-busy refusals while leaving ordinary holdReason holds untouched.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
         "content": "sha256:7091f164e8a80474cd1ff08c45fd12d0c6c95e2907037dfed4406e193a891d75",
         "locator": {
           "kind": "symbol",
@@ -148,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
         "content": "sha256:4da243e498ffe93f8bf0e4cd2466b5da0d94d6a5d1f9f6bd243f977e812ac7ed",
         "locator": {
           "kind": "symbol",
@@ -166,7 +184,7 @@
     },
     {
       "anchor": {
-        "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
         "content": "sha256:f4f621f795cc4b6ea9f70cc589aead630fd4562fbe42b1961b5594f8b3f757cc",
         "locator": {
           "kind": "symbol",
@@ -184,7 +202,7 @@
     },
     {
       "anchor": {
-        "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
         "content": "sha256:f4f621f795cc4b6ea9f70cc589aead630fd4562fbe42b1961b5594f8b3f757cc",
         "locator": {
           "kind": "symbol",
@@ -202,7 +220,7 @@
     },
     {
       "anchor": {
-        "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
         "content": "sha256:6c1f3b2d543a5d0110c11582e9e7b7e46c1154b7e4a536e453517d7cbf80c0a9",
         "locator": {
           "kind": "symbol",
@@ -220,7 +238,7 @@
     },
     {
       "anchor": {
-        "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
         "content": "sha256:35d445b9fbcf93f458571be8f1390bc1608b893aa8f8d362f1414820e2be1fb6",
         "locator": {
           "kind": "symbol",
@@ -238,7 +256,7 @@
     },
     {
       "anchor": {
-        "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
         "content": "sha256:f2648a011286e749c3cf2700a091edb7fa8db7f082cecc57b003e9097d62b41d",
         "locator": {
           "kind": "symbol",
@@ -256,7 +274,7 @@
     },
     {
       "anchor": {
-        "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+        "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
         "content": "sha256:6c1f3b2d543a5d0110c11582e9e7b7e46c1154b7e4a536e453517d7cbf80c0a9",
         "locator": {
           "kind": "symbol",
@@ -296,12 +314,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+            "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
             "content": "sha256:694e9bf81ae3b2dcdcb9e69f5f6790f6ba06cbed892d1baa993d5b54efcf83f5",
             "locator": {
-              "end": 923,
+              "end": 936,
               "kind": "line_range",
-              "start": 906
+              "start": 919
             }
           },
           "kind": "code"
@@ -313,7 +331,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+            "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
             "content": "sha256:35d445b9fbcf93f458571be8f1390bc1608b893aa8f8d362f1414820e2be1fb6",
             "locator": {
               "kind": "symbol",
@@ -325,14 +343,15 @@
       ]
     },
     "14": {
-      "note": "Upstream held-message ordering is decided before native send; permission holding never answers a prompt.\n\nAnchor: `_deliver_or_hold`",
+      "note": "Upstream held-message ordering is decided before native send; permission holding never answers a prompt.",
       "targets": [
         {
           "anchor": {
-            "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
-            "content": "sha256:ec64f336cb0127273bd6db45bc49ae5198669d9abb6f56be99e0c2b0055182a1",
+            "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
+            "content": "sha256:f4f621f795cc4b6ea9f70cc589aead630fd4562fbe42b1961b5594f8b3f757cc",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_deliver_or_hold"
             }
           },
           "kind": "code"

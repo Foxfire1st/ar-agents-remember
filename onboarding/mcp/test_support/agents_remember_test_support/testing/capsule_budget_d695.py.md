@@ -18,7 +18,8 @@ Source findings classify details and ordinary templates from the composed manife
 
 - The ordinary-template population matches the composed manifest classification. [1]
 
-- Detail and template populations are checked separately, and ordinary templates have measurements without a detail ceiling. [2]
+- Detail and template populations are checked separately, and `_current_area_findings` compares recorded measurements against actual sizes without enforcing word ceilings. [2]
+
 
 - Detail and template classification is read from the composed manifest. [3]
 
@@ -26,4 +27,4 @@ Source findings classify details and ordinary templates from the composed manife
 
 ### Repo-Internal References (renewed)
 
-- Current measurements and inventories live under record["derived"]. Renewable population, measurement and source findings name the shared renewal command; exceeding an authored ceiling instead names the developer's decision to raise it. [5]
+- Current measurements and inventories live under `record["derived"]`. Renewable population, measurement, and source findings name the shared renewal command; authored word-ceiling checks are no longer enforced by this helper. [5]

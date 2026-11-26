@@ -120,7 +120,9 @@ This card uses repository-owned code and test references and invokes no sibling-
 
 
 
-- The operation tuple carries `COMPLETE_CURATION_RULE` and the six other curation clauses, including publication with one judgment per candidate or an empty list; the Curator tuple carries two pointer sentences into the operation's sections. [8]
+
+- The operation tuple carries `COMPLETE_CURATION_RULE` and four other curation clauses (including coherence `prepare`->`publish` with `1/candidate or empty`->`validate`); the Curator tuple carries two detail links (`coherence`, `exceptions`) and the single-writer-lane clause; `exceptions-and-recovery.md` carries two recovery-obligation clauses. [8]
+
 
 - A compact source passes only when every declared clause is present. [9]
 

@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
-        "content": "sha256:6b2927ce68942515ee2024d7e0db01fc5e545ea347bf4f173ec213bd67ff3722",
+        "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
+        "content": "sha256:1374d2a7e517e8fa1c56d75c5cabddbffd839965862492ab9cb587e22527b0e5",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_a_clean_sync_keeps_the_review_and_a_repair_stays_visible"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
-        "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
+        "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
+        "content": "sha256:c792ff28b81158f3878424e732f6c491acbf0fc83289b9016d3980610750f628",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+        "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
         "content": "sha256:4b198cf4afbc62422b01831badf05d3c18e915c9bfc1ce1755d3a36e58759c8c",
         "locator": {
           "kind": "symbol",
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
-        "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
+        "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
+        "content": "sha256:c792ff28b81158f3878424e732f6c491acbf0fc83289b9016d3980610750f628",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
-        "content": "sha256:274ce8ef931c7d14a8253190b0a287b975ede8ccb31d977a87154f10aa7f2266",
+        "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
+        "content": "sha256:b42eff454a09c2920ef96d9b798238bbc469d1bb3d2364388c2717fff853f033",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_every_role_organises_its_harness_work_with_seat_boundaries"
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+        "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
         "content": "sha256:723a5dc6ca79feb36850e6576218d7da572544a06b7652b47f9e9cae1b7272d2",
         "locator": {
           "kind": "symbol",
@@ -105,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
-        "content": "sha256:c8cdb62001fc7bd5ee4994649538fcca62b6163c42438fed3ef44c5c333f7f7f",
+        "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
+        "content": "sha256:03b1ef8d99d9ff356ea0cb7f1c9c4de9cf5f938dc5d6fe114658f05e803152d5",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_the_capsules_send_a_return_and_never_point_at_the_agent_chat"
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+        "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
         "content": "sha256:7d62713e2925b032145b1422f140b529ba59fef6ed9510341bd8e2e8119bcd26",
         "locator": {
           "kind": "symbol",
@@ -139,8 +139,8 @@
     },
     {
       "anchor": {
-        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
-        "content": "sha256:b238350f2b71eaec2a3832d93c4c7c538aeb25684baf178884dee5f56f7a1890",
+        "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
+        "content": "sha256:6e7cea0b46a6d036a76cfd7aa7592e1ca9a648f89bc610299c96c15ecd3b50bf",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_direct_closeout_keeps_the_architect_and_its_existing_gates"
@@ -156,8 +156,8 @@
     },
     {
       "anchor": {
-        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
-        "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
+        "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
+        "content": "sha256:c792ff28b81158f3878424e732f6c491acbf0fc83289b9016d3980610750f628",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
@@ -173,8 +173,8 @@
     },
     {
       "anchor": {
-        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
-        "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
+        "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
+        "content": "sha256:c792ff28b81158f3878424e732f6c491acbf0fc83289b9016d3980610750f628",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
@@ -190,7 +190,7 @@
     },
     {
       "anchor": {
-        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+        "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
         "content": "sha256:7d62713e2925b032145b1422f140b529ba59fef6ed9510341bd8e2e8119bcd26",
         "locator": {
           "kind": "symbol",
@@ -207,7 +207,7 @@
     },
     {
       "anchor": {
-        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+        "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
         "content": "sha256:7d62713e2925b032145b1422f140b529ba59fef6ed9510341bd8e2e8119bcd26",
         "locator": {
           "kind": "symbol",
@@ -224,8 +224,8 @@
     },
     {
       "anchor": {
-        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
-        "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
+        "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
+        "content": "sha256:c792ff28b81158f3878424e732f6c491acbf0fc83289b9016d3980610750f628",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
@@ -241,8 +241,8 @@
     },
     {
       "anchor": {
-        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
-        "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
+        "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
+        "content": "sha256:c792ff28b81158f3878424e732f6c491acbf0fc83289b9016d3980610750f628",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_investigator_scope_report_and_authority_are_explicit"
@@ -258,8 +258,8 @@
     },
     {
       "anchor": {
-        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
-        "content": "sha256:b238350f2b71eaec2a3832d93c4c7c538aeb25684baf178884dee5f56f7a1890",
+        "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
+        "content": "sha256:6e7cea0b46a6d036a76cfd7aa7592e1ca9a648f89bc610299c96c15ecd3b50bf",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_direct_closeout_keeps_the_architect_and_its_existing_gates"
@@ -277,8 +277,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
-        "content": "sha256:cd4364036693d6365b6a03b0bcb469eca254e3829d5af74cd29c2cac0bea30b2",
+        "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
+        "content": "sha256:3377e7d3149b94955654940cd2fed992351305b089ba209126d76d11fa6dc906",
         "locator": {
           "kind": "file"
         }
@@ -295,12 +295,12 @@
   ],
   "references": {
     "1": {
-      "note": "Instruction cases assert Investigator scope/report/mutation boundaries, current coordination, positive leaf-seat obligations, the task-tool-server vocabulary and compiled return/await channels. Their assertions distinguish a stored file from an explicit handover and establish no fresh test run.\n\nAnchor: `test_investigator_scope_report_and_authority_are_explicit`",
+      "note": "Instruction cases assert Investigator scope/report/mutation boundaries, current coordination, positive leaf-seat obligations, the task-tool-server vocabulary and compiled return/await channels. Their assertions distinguish a stored file from an explicit handover and establish no fresh test run.",
       "targets": [
         {
           "anchor": {
-            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
-            "content": "sha256:cd4364036693d6365b6a03b0bcb469eca254e3829d5af74cd29c2cac0bea30b2",
+            "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
+            "content": "sha256:3377e7d3149b94955654940cd2fed992351305b089ba209126d76d11fa6dc906",
             "locator": {
               "kind": "file"
             }
@@ -314,8 +314,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
-            "content": "sha256:b238350f2b71eaec2a3832d93c4c7c538aeb25684baf178884dee5f56f7a1890",
+            "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
+            "content": "sha256:6e7cea0b46a6d036a76cfd7aa7592e1ca9a648f89bc610299c96c15ecd3b50bf",
             "locator": {
               "kind": "symbol",
               "name": "test_direct_closeout_keeps_the_architect_and_its_existing_gates"
@@ -330,12 +330,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+            "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
             "content": "sha256:55093994ed36b5cdba470e68ec76b9905f2fd0e34ffc06daecdd2486bd38b4c5",
             "locator": {
-              "end": 667,
+              "end": 621,
               "kind": "line_range",
-              "start": 643
+              "start": 597
             }
           },
           "kind": "test"
@@ -347,12 +347,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88d299d3b9c302c162bf1c0ea404b32c9cc7f44e",
-            "content": "sha256:72da68e7f9ab8ce621744a91634b6de07a415d20c3103c15042f6129fdc4e13e",
+            "blob": "e7fc9bbbb33d24f829bd2f501e011d3252fa2553",
+            "content": "sha256:3934d14ff8abebc881ea4227ab2a9189795d6d84b34a81171e3939aac1cf99ce",
             "locator": {
-              "end": 268,
+              "end": 90,
               "kind": "line_range",
-              "start": 263
+              "start": 89
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/coordination_wording.py"
           },
@@ -365,8 +365,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
-            "content": "sha256:cd4364036693d6365b6a03b0bcb469eca254e3829d5af74cd29c2cac0bea30b2",
+            "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
+            "content": "sha256:3377e7d3149b94955654940cd2fed992351305b089ba209126d76d11fa6dc906",
             "locator": {
               "kind": "file"
             }
@@ -380,8 +380,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
-            "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
+            "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
+            "content": "sha256:c792ff28b81158f3878424e732f6c491acbf0fc83289b9016d3980610750f628",
             "locator": {
               "kind": "symbol",
               "name": "test_investigator_scope_report_and_authority_are_explicit"
@@ -396,12 +396,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
-            "content": "sha256:9e4676d614d94bd04f3c7cccdeecdb8bbcf7654d75f45f912c65e40be5bd45d8",
+            "blob": "190e7d6ecb8c18f6335374d4631549f35af139e2",
+            "content": "sha256:4c731570bf7d23e941603d53198fcec22eb7b78a24fb00eea163aee8db7fcfd8",
             "locator": {
-              "end": 310,
+              "end": 365,
               "kind": "line_range",
-              "start": 249
+              "start": 264
             },
             "path": "mcp/tests/test_role_instruction_wording_handover.py"
           },
@@ -409,12 +409,12 @@
         },
         {
           "anchor": {
-            "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
-            "content": "sha256:f0ffb96fb8201ad950574785e2722476b170f90814864f506583edc8d7c3dc12",
+            "blob": "190e7d6ecb8c18f6335374d4631549f35af139e2",
+            "content": "sha256:3298fc9ddf7be496ebe0af7ed8261abed6352f9922b2dd610df236fb37e61bc4",
             "locator": {
-              "end": 367,
+              "end": 433,
               "kind": "line_range",
-              "start": 312
+              "start": 367
             },
             "path": "mcp/tests/test_role_instruction_wording_handover.py"
           },
@@ -427,12 +427,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88d299d3b9c302c162bf1c0ea404b32c9cc7f44e",
-            "content": "sha256:54447e41fee0ce4ee13b795280e8542917d58b90d1e5d6cf8abc94253d45e793",
+            "blob": "e7fc9bbbb33d24f829bd2f501e011d3252fa2553",
+            "content": "sha256:aadb5c52f0a2b5525bbe1f40822aac42ad0e26933ea7133a59e53d7f02c5038f",
             "locator": {
-              "end": 327,
+              "end": 130,
               "kind": "line_range",
-              "start": 320
+              "start": 126
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/coordination_wording.py"
           },
@@ -440,12 +440,12 @@
         },
         {
           "anchor": {
-            "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
-            "content": "sha256:0b160505c583f56c9b76d0c4b49f7ec0b2bf93226a49affe613ae8708a3e1cb1",
+            "blob": "190e7d6ecb8c18f6335374d4631549f35af139e2",
+            "content": "sha256:ffa6968aea247b3d88f959a741bd35bb863e53f83fdc21b61414f5ad8c6b3481",
             "locator": {
-              "end": 367,
+              "end": 433,
               "kind": "line_range",
-              "start": 249
+              "start": 264
             },
             "path": "mcp/tests/test_role_instruction_wording_handover.py"
           },
@@ -453,12 +453,12 @@
         },
         {
           "anchor": {
-            "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
-            "content": "sha256:99d9a15544fa7a90438783ee67bc3d615605f7261eba294f99750b4d940a1d4e",
+            "blob": "190e7d6ecb8c18f6335374d4631549f35af139e2",
+            "content": "sha256:6675b03c49527d7ef70519f05e7df11010c7681f5384fc21c8cc1350015ccff7",
             "locator": {
-              "end": 570,
+              "end": 620,
               "kind": "line_range",
-              "start": 459
+              "start": 535
             },
             "path": "mcp/tests/test_role_instruction_wording_handover.py"
           },
@@ -466,12 +466,12 @@
         },
         {
           "anchor": {
-            "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
+            "blob": "190e7d6ecb8c18f6335374d4631549f35af139e2",
             "content": "sha256:94c5f37416ddc8bef7ae9621e505d7848443b7ee3842afcc7c89f34036542b52",
             "locator": {
-              "end": 710,
+              "end": 778,
               "kind": "line_range",
-              "start": 609
+              "start": 677
             },
             "path": "mcp/tests/test_role_instruction_wording_handover.py"
           },
@@ -484,7 +484,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+            "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
             "content": "sha256:7d62713e2925b032145b1422f140b529ba59fef6ed9510341bd8e2e8119bcd26",
             "locator": {
               "kind": "symbol",
@@ -500,7 +500,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+            "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
             "content": "sha256:55093994ed36b5cdba470e68ec76b9905f2fd0e34ffc06daecdd2486bd38b4c5",
             "locator": {
               "kind": "symbol",
@@ -516,7 +516,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff8dc9229416c4132566abb6f7a2d203a1ae0022",
+            "blob": "9a7c0efb9cf4d6c6348532c51a1f6f28650ce033",
             "content": "sha256:c0abbcc1547f1e9e6c1acce70d8a655a0c67f8603b33772685b32ebddd55e131",
             "locator": {
               "kind": "symbol",
@@ -533,8 +533,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
-            "content": "sha256:6b2927ce68942515ee2024d7e0db01fc5e545ea347bf4f173ec213bd67ff3722",
+            "blob": "6acde247763f9a01e0ce656ff9ee6c01f22b536c",
+            "content": "sha256:1374d2a7e517e8fa1c56d75c5cabddbffd839965862492ab9cb587e22527b0e5",
             "locator": {
               "kind": "symbol",
               "name": "test_a_clean_sync_keeps_the_review_and_a_repair_stays_visible"

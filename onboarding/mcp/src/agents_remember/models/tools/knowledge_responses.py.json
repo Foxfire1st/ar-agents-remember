@@ -179,8 +179,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7698616abcd31cb08bba4a158474703b7916d978",
-            "content": "sha256:f869436153df02f28bb874f092fb52f9f4aaf7238e085ac6b57865589b534653",
+            "blob": "9a9e605ddca24ff31acafb03222552288800a88b",
+            "content": "sha256:ba508ee4f809745c2c9894e88f2c237cbe56cc2700300f41f94ca226d5c608cc",
             "locator": {
               "kind": "file"
             },
@@ -210,12 +210,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7698616abcd31cb08bba4a158474703b7916d978",
+            "blob": "9a9e605ddca24ff31acafb03222552288800a88b",
             "content": "sha256:8e7c9a32a5512b0e950e88d0ac614b3d937d29bf3f3cc3b73101b5107a856cba",
             "locator": {
-              "end": 1180,
+              "end": 1181,
               "kind": "line_range",
-              "start": 1125
+              "start": 1126
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
@@ -223,12 +223,12 @@
         },
         {
           "anchor": {
-            "blob": "7698616abcd31cb08bba4a158474703b7916d978",
+            "blob": "9a9e605ddca24ff31acafb03222552288800a88b",
             "content": "sha256:5cda69a9b9460268ec55dd98cec9a656d57179d1d5dd9788afebf5475bcabe89",
             "locator": {
-              "end": 1609,
+              "end": 1610,
               "kind": "line_range",
-              "start": 1553
+              "start": 1554
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
@@ -690,12 +690,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7698616abcd31cb08bba4a158474703b7916d978",
+            "blob": "9a9e605ddca24ff31acafb03222552288800a88b",
             "content": "sha256:5cda69a9b9460268ec55dd98cec9a656d57179d1d5dd9788afebf5475bcabe89",
             "locator": {
-              "end": 1609,
+              "end": 1610,
               "kind": "line_range",
-              "start": 1553
+              "start": 1554
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },

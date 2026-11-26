@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "56ba4a434418f6ed69deca0f0d9e1f852852cdf8",
-    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
+    "codeTree": "d1e7bbbcff7450564c350d2a268ec406f0f97cfe",
+    "commit": "130545f8071e7c9fd369e170b0851da63abee6f6",
     "role": "curator",
-    "statement": "Audited mcp/README.md on DEP-synced L51 code tree 56ba4a43 (base 599cfaf8/767635ae): installable MCP command, package setup, and tool overview remain accurate on 3.0.8; no contradiction.",
-    "task": "261112-BUG-L51",
+    "statement": "Audited mcp/README.md in full (lines 1-132) against synced Attempt-5 tree d1e7bbbc: CLI commands, prerequisites, five install steps, 8-group MCP tool table, and served skills remain accurate after CAP-L3 slimming of operations/bootstrap.md.",
+    "task": "261124-CAP-L3",
     "uncommitted": true
   },
   "document": "mcp/README.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 25,
+  "revision": 26,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
     {
-      "blob": "8d1b5e00d1cf12fac5ed5c9fbf2ad95dfd878573",
+      "blob": "7680a8ce4879b626d3f045071f4e515dcec16a8b",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
     },
@@ -62,14 +62,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T08:43:44+01:00",
+    "at": "2026-11-26T13:09:23+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L51",
+    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
-    "task": "261112-BUG"
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

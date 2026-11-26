@@ -30,6 +30,7 @@ The rows cite canonical source text and narrowly relevant neighbor definitions. 
 
 - The reviewer binding table includes report-verification in every listed review type. [4]
 
+
 - RV-1 requires artifacts behind claims and checks both content and mode in the same filesystem view. [5]
 
 - RV-1 adds path-safe untracked enumeration, no-follow inspection, bounded content and explicit race/intent handling. [6]

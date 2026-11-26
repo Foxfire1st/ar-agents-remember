@@ -7,6 +7,19 @@
     "task": "261112-BUG-L51",
     "uncommitted": true
   },
+  "deferrals": [
+    {
+      "condition": {
+        "task": "261124-CAP-L5"
+      },
+      "createdAt": "2026-11-26T12:09:27.000211Z",
+      "createdByLeaf": "261124-CAP-L3",
+      "id": "DFR-YBSKMH",
+      "owner": "261124-CAP",
+      "passage": "docs/concepts.md ### Role capsule (lines 622-627) and ### Handover (lines 629-634)",
+      "reason": "Omits CAP-L1/L3 3-tier progressive disclosure, role-filtered core/every-role.md, compact Link roots, trailing AR handover artifacts locator, slimmed inline projection, and Poka-Yoke skill:// refusal pointers; doc updates owned by 261124-CAP-L5."
+    }
+  ],
   "document": "docs/concepts.md",
   "id": "DPD-71WYH4",
   "origin": {
@@ -17,7 +30,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 31,
+  "revision": 32,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -468,14 +481,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T10:27:33+01:00",
+    "at": "2026-11-26T13:09:23+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L51",
+    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
-    "task": "261112-BUG"
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

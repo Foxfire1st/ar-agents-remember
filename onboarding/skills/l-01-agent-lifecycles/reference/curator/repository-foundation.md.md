@@ -17,4 +17,5 @@ Setup reports the declared foundation state and names the next step through the 
 - Foundation uses the real Architect-opened task and actual enclosure, needs no incidental code delta and authors no onboarding. [1]
 - Commit instructions and partial coverage are handled explicitly. [3]
 - A missing task is reported rather than fabricated. [2]
+
 - The curation operation points here before a first or resumed foundation. [4]

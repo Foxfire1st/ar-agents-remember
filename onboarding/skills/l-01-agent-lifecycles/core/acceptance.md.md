@@ -78,6 +78,7 @@ No meaningful cross-repo references found.
 
 - Selected Worker transport includes direct freeze handoff and producer-preserving post-PASS Curator list. [7]
 
+
 - Each seat has its own artifact and distinct validator. [9]
 
 - Requirement revisions and formal delivery attempts have separate immutable lineage. [11]

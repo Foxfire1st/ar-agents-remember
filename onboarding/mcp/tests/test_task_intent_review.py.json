@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "989e1ecf31eff253340336ec8452b99d5276ae0b",
+            "blob": "4458d30fca36b36355f03fcf97e76221f5a9d014",
             "content": "sha256:50060bc03773729e326dbadb68b86733d32dcda82a07ccc9e499d9a8e6d43219",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "989e1ecf31eff253340336ec8452b99d5276ae0b",
+            "blob": "4458d30fca36b36355f03fcf97e76221f5a9d014",
             "content": "sha256:647d5e7d304b54adb973eeef68777d84428f4b79152070f0b6bbdc1843fbcd42",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "989e1ecf31eff253340336ec8452b99d5276ae0b",
+            "blob": "4458d30fca36b36355f03fcf97e76221f5a9d014",
             "content": "sha256:c5a699f78990f483cc807288a594dd293561ec41ed2c0ba2c20846c3e59b5fe5",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "989e1ecf31eff253340336ec8452b99d5276ae0b",
+            "blob": "4458d30fca36b36355f03fcf97e76221f5a9d014",
             "content": "sha256:44d2287468072ef96ad666cea7f346ad736a44e2f6fb9ec3724be55c7e11e86d",
             "locator": {
               "kind": "symbol",
@@ -71,12 +71,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "989e1ecf31eff253340336ec8452b99d5276ae0b",
+            "blob": "b1f4cdfbf414f4455116e3b8cb46cf0d881f9d2c",
             "content": "sha256:6f3e9ba938dbe20c03124a0b1197a135602c6fee3ef7bd3d5dd4723bb67fbcc8",
             "locator": {
               "kind": "symbol",
               "name": "test_a_found_live_enclosure_moves_the_leaf_and_its_master_row"
-            }
+            },
+            "path": "mcp/tests/test_task_intent_review_capsules.py"
           },
           "kind": "test"
         }
@@ -87,12 +88,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "989e1ecf31eff253340336ec8452b99d5276ae0b",
+            "blob": "b1f4cdfbf414f4455116e3b8cb46cf0d881f9d2c",
             "content": "sha256:d18bc3e267ae6e72d644d4eb2b259793e36cfebf1f836f597e38e161bdb51f0e",
             "locator": {
               "kind": "symbol",
               "name": "test_the_native_go_resolves_to_the_exact_retained_revision_manifest_and_digest"
-            }
+            },
+            "path": "mcp/tests/test_task_intent_review_capsules.py"
           },
           "kind": "test"
         }

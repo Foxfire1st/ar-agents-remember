@@ -7,6 +7,19 @@
     "task": "261112-BUG-L25",
     "uncommitted": true
   },
+  "deferrals": [
+    {
+      "condition": {
+        "task": "261124-CAP-L5"
+      },
+      "createdAt": "2026-11-26T12:09:27.058366Z",
+      "createdByLeaf": "261124-CAP-L3",
+      "id": "DFR-SFNAZX",
+      "owner": "261124-CAP",
+      "passage": "docs/install/hermes.md ## What this harness needs (lines 160-167, 179-188, 207-217)",
+      "reason": "Pre-base stale on 7 standing files plus CAP-L3 changes to core/every-role.md (universal WAITING FOR SUBAGENTS/BACKGROUND rule), paseo_role_tools.py, roles/worker.md, and role_launch_preparation.py; explicitly assigned to 261124-CAP-L5."
+    }
+  ],
   "document": "docs/install/hermes.md",
   "id": "DPD-GHEXS9",
   "origin": {
@@ -17,7 +30,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -112,22 +125,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-BUG-L25",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-BUG",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T13:09:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

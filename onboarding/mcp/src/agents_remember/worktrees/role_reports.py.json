@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "1b4238bd68213cf6667253e466bf6e6248af9207",
         "content": "sha256:f7d48c4cb8241446dc090c468fc636344e0aa2bf86443ff9809d19cd3f52ada9",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "1b4238bd68213cf6667253e466bf6e6248af9207",
         "content": "sha256:f7d48c4cb8241446dc090c468fc636344e0aa2bf86443ff9809d19cd3f52ada9",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "1b4238bd68213cf6667253e466bf6e6248af9207",
         "content": "sha256:a56ee299072a448e43a205563b6d7f618219e59bfc96778e93f89e11cc811d2e",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "1b4238bd68213cf6667253e466bf6e6248af9207",
         "content": "sha256:3f10ae98a4c8761409810abb12b5452035f0958e86103f6e6475a726e402539c",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "1b4238bd68213cf6667253e466bf6e6248af9207",
         "content": "sha256:1f9511937df21297f649ae38c73213d31257c221dfa45b811585a73871cc405b",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "1b4238bd68213cf6667253e466bf6e6248af9207",
         "content": "sha256:a56ee299072a448e43a205563b6d7f618219e59bfc96778e93f89e11cc811d2e",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "1b4238bd68213cf6667253e466bf6e6248af9207",
         "content": "sha256:7a3d4f425fe9a17dc9d36942249cf188fce3b7ba0d62f7333213771360e4a03e",
         "locator": {
           "kind": "symbol",
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "1b4238bd68213cf6667253e466bf6e6248af9207",
         "content": "sha256:cef6aa881c187a14c3b5b9f06ce38dbd12940ec9f31ed1b22cbdfaf96e69b2b2",
         "locator": {
           "kind": "symbol",
@@ -147,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "1b4238bd68213cf6667253e466bf6e6248af9207",
         "content": "sha256:b383884d5fd979d25ec4170406b2bccb264cb72d69e34af2653c01c7319a09f1",
         "locator": {
           "kind": "symbol",
@@ -184,7 +184,7 @@
     },
     {
       "anchor": {
-        "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+        "blob": "1b4238bd68213cf6667253e466bf6e6248af9207",
         "content": "sha256:f7d48c4cb8241446dc090c468fc636344e0aa2bf86443ff9809d19cd3f52ada9",
         "locator": {
           "kind": "symbol",
@@ -199,6 +199,24 @@
       },
       "rationale": "Only safe regular report files are copied with size and link checks; collection errors are named and canonical readback establishes each copied identity.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1b4238bd68213cf6667253e466bf6e6248af9207",
+        "content": "sha256:b5a2436703661c7acbc3ccf3e9cd9fdd30e7dd64bc69359644ae1b66a2522728",
+        "locator": {
+          "kind": "symbol",
+          "name": "_launch_carrier"
+        }
+      },
+      "id": "RLZ-WPBGF2",
+      "invariant": "INV-7KDG7C",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-7kdg7c",
+        "leaf": "261124-CAP-L2"
+      },
+      "rationale": "Excludes nested .details/**, .opening-message.md, and .held-batch-*.md launch carriers from canonical_execution_reports while keeping ordinary report collection intact.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -207,7 +225,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+            "blob": "1b4238bd68213cf6667253e466bf6e6248af9207",
             "content": "sha256:f7d48c4cb8241446dc090c468fc636344e0aa2bf86443ff9809d19cd3f52ada9",
             "locator": {
               "kind": "symbol",
@@ -223,7 +241,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+            "blob": "1b4238bd68213cf6667253e466bf6e6248af9207",
             "content": "sha256:b383884d5fd979d25ec4170406b2bccb264cb72d69e34af2653c01c7319a09f1",
             "locator": {
               "kind": "symbol",
@@ -239,7 +257,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+            "blob": "1b4238bd68213cf6667253e466bf6e6248af9207",
             "content": "sha256:7a3d4f425fe9a17dc9d36942249cf188fce3b7ba0d62f7333213771360e4a03e",
             "locator": {
               "kind": "symbol",
@@ -255,12 +273,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
-            "content": "sha256:d9228a04cc154a8c5389655698902bb6dd1bba574c3f821ae43aacde4586a1ed",
+            "blob": "1b4238bd68213cf6667253e466bf6e6248af9207",
+            "content": "sha256:a56ee299072a448e43a205563b6d7f618219e59bfc96778e93f89e11cc811d2e",
             "locator": {
-              "end": 416,
-              "kind": "line_range",
-              "start": 357
+              "kind": "symbol",
+              "name": "remove_group_role_folders"
             }
           },
           "kind": "code"
@@ -272,11 +289,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+            "blob": "1b4238bd68213cf6667253e466bf6e6248af9207",
             "content": "sha256:3f10ae98a4c8761409810abb12b5452035f0958e86103f6e6475a726e402539c",
             "locator": {
               "kind": "symbol",
               "name": "canonical_execution_reports"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`_launch_carrier` excludes `.handover.txt`, `.handover.json`, legacy `.detail-*`, nested `.details/**`, `.opening-message.md`, and `.held-batch-*.md` launch carriers from `canonical_execution_reports`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b4238bd68213cf6667253e466bf6e6248af9207",
+            "content": "sha256:b5a2436703661c7acbc3ccf3e9cd9fdd30e7dd64bc69359644ae1b66a2522728",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_carrier"
             }
           },
           "kind": "code"

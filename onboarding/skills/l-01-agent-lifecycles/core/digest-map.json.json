@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e1ec98d56b16559c27a2d0594d2c5747996a6030",
-        "content": "sha256:80daf0843259cbaef290dad1ddbc29b79db640c9802bc7e11a690c2d24b97d57",
+        "blob": "7db5a998fcc5fe83c34e19e1aeca03904399a007",
+        "content": "sha256:2b18276ae5cba78fcc1683e41082d992fd7cadb6eec3bdcb8b787aabe38b4f60",
         "locator": {
           "kind": "file"
         }
@@ -15,13 +15,13 @@
         "handoffEntry": "BUG-R08@v1 rule 4",
         "leaf": "261112-BUG-L8"
       },
-      "rationale": "Authored semantic units, memberships and the 38 reference audiences retain their authority; derived owns current ranges, hashes and 92 digest-unit audiences.",
+      "rationale": "Authored semantic units, memberships and place/evidence definitions retain their authority in digest-map.json; derived owns current ranges, hashes and derived unit/evidence/place metadata.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "e1ec98d56b16559c27a2d0594d2c5747996a6030",
-        "content": "sha256:80daf0843259cbaef290dad1ddbc29b79db640c9802bc7e11a690c2d24b97d57",
+        "blob": "7db5a998fcc5fe83c34e19e1aeca03904399a007",
+        "content": "sha256:2b18276ae5cba78fcc1683e41082d992fd7cadb6eec3bdcb8b787aabe38b4f60",
         "locator": {
           "kind": "file"
         }
@@ -34,6 +34,23 @@
       },
       "rationale": "This map retains source dispositions and evidence identities for audit instead of becoming an instruction block.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "7db5a998fcc5fe83c34e19e1aeca03904399a007",
+        "content": "sha256:fe564418e4dc1e8221a413d25cf7bdab3ff91e31f88c4cecd2258c47385fc966",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-V9RRXD",
+      "invariant": "INV-X0VQ3D",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 2",
+        "leaf": "261124-CAP-L3"
+      },
+      "rationale": "Tracks all 170 core units with relocated units flipped from digest to reference and renewed derived hashes.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -42,8 +59,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1ec98d56b16559c27a2d0594d2c5747996a6030",
-            "content": "sha256:db906b4a6477f8ae43b120c2fcd1c203b2eab0b709723d58c085f67fb24ac5e4",
+            "blob": "7db5a998fcc5fe83c34e19e1aeca03904399a007",
+            "content": "sha256:dd793256971b540b4cbd475303478ce0f3cb76d2d5188f40eec7f792b0d9102b",
             "locator": {
               "end": 12,
               "kind": "line_range",
@@ -55,12 +72,12 @@
       ]
     },
     "2": {
-      "note": "The unit definition explains ID preservation and the role vocabulary. Anchor: `unitDefinition`",
+      "note": "The unit definition explains ID preservation and line-join boundaries.\n\nAnchor: `unitDefinition`",
       "targets": [
         {
           "anchor": {
-            "blob": "e1ec98d56b16559c27a2d0594d2c5747996a6030",
-            "content": "sha256:735e7170423f80ebfc9ac8cec68897590a3a0d502dbdf63a9395b4d7fca95f1f",
+            "blob": "7db5a998fcc5fe83c34e19e1aeca03904399a007",
+            "content": "sha256:d773aa5c23a47bac2632452f51c838bd4e9232e67bf46c22bf473d4375092944",
             "locator": {
               "end": 1608,
               "kind": "line_range",
@@ -76,8 +93,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1ec98d56b16559c27a2d0594d2c5747996a6030",
-            "content": "sha256:80daf0843259cbaef290dad1ddbc29b79db640c9802bc7e11a690c2d24b97d57",
+            "blob": "7db5a998fcc5fe83c34e19e1aeca03904399a007",
+            "content": "sha256:2b18276ae5cba78fcc1683e41082d992fd7cadb6eec3bdcb8b787aabe38b4f60",
             "locator": {
               "kind": "file"
             }
@@ -87,40 +104,28 @@
       ]
     },
     "4": {
-      "note": "The authored digest block records its path, semantic places and retained ceiling-authority decisions; generated current digest hash and size are stored in derived.digest.",
+      "note": "The authored digest block records its path, semantic places and retained ceiling-authority decisions; generated current digest hash and size are stored in derived.digest.\n\nAnchor: `digest`; `sizeWords`",
       "targets": [
         {
           "anchor": {
-            "blob": "e1ec98d56b16559c27a2d0594d2c5747996a6030",
-            "content": "sha256:2434a4afce1b60b55d7ba666461a09eccb630a4342b7ad137043beb9b83ba988",
+            "blob": "7db5a998fcc5fe83c34e19e1aeca03904399a007",
+            "content": "sha256:3c74692ed24ec8749e08dce091e70a26f0d441b2a23e297d87d14483390b33fe",
             "locator": {
-              "end": 7841,
+              "end": 4776,
               "kind": "line_range",
-              "start": 3964
+              "start": 4764
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e1ec98d56b16559c27a2d0594d2c5747996a6030",
-            "content": "sha256:90d5b394342b2ce4d54e57bbe1944cc29d0cba0658518295f9f40d0533ec3d9a",
+            "blob": "7db5a998fcc5fe83c34e19e1aeca03904399a007",
+            "content": "sha256:b8cae296afb4686f0aec2a3f511b4873770dcd51d5e30122b898d6a39586f8e2",
             "locator": {
-              "end": 4825,
+              "end": 6623,
               "kind": "line_range",
-              "start": 4810
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e1ec98d56b16559c27a2d0594d2c5747996a6030",
-            "content": "sha256:489c7be1ae1ca0dea02b99e37f4612660d527e34070af8ed15e0b5cc7e17d036",
-            "locator": {
-              "end": 7841,
-              "kind": "line_range",
-              "start": 7838
+              "start": 6620
             }
           },
           "kind": "code"

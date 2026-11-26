@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
-        "content": "sha256:5ebb8600ce3d336316c6f604cc8694a680e27ef55a662f2347f4d63d8f71edd0",
+        "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
+        "content": "sha256:cfc01bf450803399743e193702d871f0ceffc597def2fe9b0a3b83c5a2f37120",
         "locator": {
-          "end": 22,
+          "end": 11,
           "kind": "line_range",
-          "start": 20
+          "start": 11
         }
       },
       "id": "RLZ-7J2CP7",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
-        "content": "sha256:1ccda6fb00ce922fb03c815867a7e781e9525104d4a2aa59ba013c3d8f084cd2",
+        "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
+        "content": "sha256:6d8f09d9e611039b575a6d6ffceca76febf365f213ae7a67d9481f017adbf397",
         "locator": {
           "kind": "file"
         }
@@ -39,12 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
-        "content": "sha256:608f59fac9c8c5caa15572ad67a8487bb3940fcac553f7f901ebeff55fbd193f",
+        "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
+        "content": "sha256:fe53a80f96392d8650bb4004c1f445621cfdb9159c5b2e370a8ab6a5e2d166b4",
         "locator": {
-          "end": 8,
+          "end": 7,
           "kind": "line_range",
-          "start": 8
+          "start": 7
         }
       },
       "id": "RLZ-DHZW33",
@@ -53,17 +53,17 @@
         "handoffEntry": "L72/MIK-R72@v2-direct-closeout-exception",
         "leaf": "260928-MIK-L72"
       },
-      "rationale": "The closeout operation names the owning Architect as the actor of a flat run's paired closeout, with neither Manager nor Orchestrator, only with the developer's explicit commit approval for that closeout or with series authority the developer delegated and recorded in the task document.",
+      "rationale": "The closeout operation routes flat-mode Architect direct closeout to reference/coordination/shared/closeout-recovery.md#flat-mode-direct-paired-closeout alongside Manager standing and Orchestrator supplied authority.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
-        "content": "sha256:5ebb8600ce3d336316c6f604cc8694a680e27ef55a662f2347f4d63d8f71edd0",
+        "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
+        "content": "sha256:cfc01bf450803399743e193702d871f0ceffc597def2fe9b0a3b83c5a2f37120",
         "locator": {
-          "end": 22,
+          "end": 11,
           "kind": "line_range",
-          "start": 20
+          "start": 11
         }
       },
       "id": "RLZ-DJ7814",
@@ -77,10 +77,10 @@
     },
     {
       "anchor": {
-        "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
-        "content": "sha256:c11f6a7898a259c7961c7f8ee9d2ae2dc25cf5c2ac6b453892b1c302c3f87ce9",
+        "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
+        "content": "sha256:f326b83ea7a98ad959068364262389dfdfb06c6f060a6cd70b5c6979e7ed49b4",
         "locator": {
-          "end": 18,
+          "end": 11,
           "kind": "line_range",
           "start": 5
         }
@@ -96,12 +96,12 @@
     },
     {
       "anchor": {
-        "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
-        "content": "sha256:73b7f36fd43f9e106eb89e649e52a254cbbcc612580ea64653c3d2628f14479d",
+        "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
+        "content": "sha256:bfd95c5e64d2a89f92d8a38f211b3aa7510ed82b8e0b8f30f0f9f95b9da1fc68",
         "locator": {
-          "end": 47,
+          "end": 23,
           "kind": "line_range",
-          "start": 47
+          "start": 21
         }
       },
       "id": "RLZ-ZHVQ2K",
@@ -120,8 +120,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
-            "content": "sha256:1ccda6fb00ce922fb03c815867a7e781e9525104d4a2aa59ba013c3d8f084cd2",
+            "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
+            "content": "sha256:6d8f09d9e611039b575a6d6ffceca76febf365f213ae7a67d9481f017adbf397",
             "locator": {
               "kind": "file"
             }

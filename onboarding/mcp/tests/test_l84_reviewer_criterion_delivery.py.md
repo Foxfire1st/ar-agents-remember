@@ -23,5 +23,7 @@ The module builds on `FirstMessageMatrixBase` (`role_first_message_support`) and
 - The module states its fixture doubles and its delivery-only limit. [1]
 - The filed intake is reached by pointer, digest-checked and carries copied attachments. [2]
 - The Manager is started publicly and its binding matches its receipt. [3]
+
 - The public set starter runs the Worker and holds the Reviewer and Curator seats. [4]
+
 - The criterion-bound intake opens the held Reviewer seat before first inspection and mutants fail. [5]

@@ -1,0 +1,135 @@
+{
+  "path": "mcp/tests/test_refusal_references.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "2f8d86455f43ac00f2cf61ada9fdc3821cf380e6",
+        "content": "sha256:9aee7dc96a821a12fb5c225488952d576d085e8bbe86755246e1bad8e167ce08",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_registered_refusal_pointer_resolves_to_file_and_anchor"
+        }
+      },
+      "facet": "Proves all 21 registered refusal URIs resolve to live files and GFM heading anchors in l-01-agent-lifecycles.",
+      "id": "PRF-FSWF64",
+      "invariant": "INV-7CZVBD",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 4",
+        "leaf": "261124-CAP-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2f8d86455f43ac00f2cf61ada9fdc3821cf380e6",
+        "content": "sha256:b1864ac49c0df7590ea0cd87ace65a3b3ecff3f1fe829d3366292cfea41bae88",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_production_refusal_emitter_key_is_registered"
+        }
+      },
+      "facet": "Proves every production refusal emitter key across all six lifecycle refusal families is registered in REFUSAL_REFERENCES.",
+      "id": "PRF-WF71CF",
+      "invariant": "INV-7CZVBD",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 4",
+        "leaf": "261124-CAP-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2f8d86455f43ac00f2cf61ada9fdc3821cf380e6",
+        "content": "sha256:e63460b4fff2d53e778f81f4f9ab41b479bf86028c00ae58e7fc0c8cee8af243",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_production_lookup_is_fail_safe_and_idempotent"
+        }
+      },
+      "facet": "Proves with_refusal_reference is fail-safe on unknown keys and idempotent when called repeatedly.",
+      "id": "PRF-YYFDM9",
+      "invariant": "INV-7CZVBD",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 4",
+        "leaf": "261124-CAP-L3"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fail-safe lookup, punctuation normalization, empty-text formatting, and idempotency are asserted directly on the helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f8d86455f43ac00f2cf61ada9fdc3821cf380e6",
+            "content": "sha256:e63460b4fff2d53e778f81f4f9ab41b479bf86028c00ae58e7fc0c8cee8af243",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_production_lookup_is_fail_safe_and_idempotent"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every registered `REFUSAL_REFERENCES` URI is verified against `skills/l-01-agent-lifecycles/` file containment and GFM heading anchors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f8d86455f43ac00f2cf61ada9fdc3821cf380e6",
+            "content": "sha256:9aee7dc96a821a12fb5c225488952d576d085e8bbe86755246e1bad8e167ce08",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_registered_refusal_pointer_resolves_to_file_and_anchor"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "AST scanning enforces literal-string keys and bidirectional parity between production emitters and `REFUSAL_REFERENCES`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f8d86455f43ac00f2cf61ada9fdc3821cf380e6",
+            "content": "sha256:b1864ac49c0df7590ea0cd87ace65a3b3ecff3f1fe829d3366292cfea41bae88",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_production_refusal_emitter_key_is_registered"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Behavioral tests cover Families 1–6 refusal emission while keeping ordinary holds, planned writes, and non-archived retirement refusals clean.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f8d86455f43ac00f2cf61ada9fdc3821cf380e6",
+            "content": "sha256:9905f0a1659016cdcd3e68aca887b86acb25e68909499854d8b9be6b5f40a709",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageRefusalPointerTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2f8d86455f43ac00f2cf61ada9fdc3821cf380e6",
+            "content": "sha256:0db813a6937059ae3d8267750f1329ef1326d507470d00b969b529ffe6a5d585",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetireChildRefusalPointerTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

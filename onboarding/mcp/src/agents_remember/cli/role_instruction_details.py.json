@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
-        "content": "sha256:95473e1da9c3027a19991c55617d9011c5c561e7d847352b7f7a018f5f21ea66",
+        "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+        "content": "sha256:d9c3eee4a7c2b6fcb19706828dbc8d20f80a70dd8b9cbf91cb60eefe233bdc33",
         "locator": {
           "kind": "symbol",
           "name": "compose_launch_instructions"
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
-        "content": "sha256:afa85dd99b0baaa9a1eea7771536e23bb5dbf22967538f0831c5708086aeed70",
+        "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+        "content": "sha256:8e1ec8f2393b060b4f892fe792d15be749bb0c304ff55ed65b9dce1f32070e13",
         "locator": {
           "kind": "symbol",
           "name": "_bound_details"
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
-        "content": "sha256:95473e1da9c3027a19991c55617d9011c5c561e7d847352b7f7a018f5f21ea66",
+        "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+        "content": "sha256:d9c3eee4a7c2b6fcb19706828dbc8d20f80a70dd8b9cbf91cb60eefe233bdc33",
         "locator": {
           "kind": "symbol",
           "name": "compose_launch_instructions"
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
-        "content": "sha256:bcaf61b6df284746b209e3fc41f0178674b74047e1bb309fb11abc84ae696623",
+        "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+        "content": "sha256:af713057f7d2efdcf7ea25b91fdbefa41fa1eba12fbb28f6fb23b6d89eb10070",
         "locator": {
           "kind": "symbol",
           "name": "_bound_baseline"
@@ -76,8 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
-        "content": "sha256:0b1e541356504b07899550c887ded86c43f93b01b01a0812db842171ebd7d0e9",
+        "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+        "content": "sha256:6b3461d8b91ae83566cc1114a8130a1305e1e3e90db623ccd79200d1c3ceee72",
         "locator": {
           "kind": "symbol",
           "name": "_require_detail_target"
@@ -94,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+        "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
         "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
         "locator": {
           "kind": "symbol",
@@ -113,16 +113,43 @@
   ],
   "references": {
     "1": {
-      "note": "Freeze and substitute pointers before existing user-note composition.\n\nAnchor: `write_detail_artifacts`",
+      "note": "`compose_launch_instructions` freezes details (nested symlink-confined `<stem>.details/<source>` when `compact_links=True` or flat `.detail-<sha256>.md` when `compact_links=False`) and substitutes pointers before user-note composition.",
       "targets": [
         {
           "anchor": {
-            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
-            "content": "sha256:139b0e0c2bf07ff0a4e05c7c4f3a62dc34b68b68f00fa332dc3540979dcb6830",
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+            "content": "sha256:d9c3eee4a7c2b6fcb19706828dbc8d20f80a70dd8b9cbf91cb60eefe233bdc33",
             "locator": {
-              "end": 33,
+              "kind": "symbol",
+              "name": "compose_launch_instructions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+            "content": "sha256:a41cd564766759024a55d300cd9d109902a7d1c5325ad6f27655eac08d4f71d5",
+            "locator": {
+              "end": 274,
               "kind": "line_range",
-              "start": 28
+              "start": 204
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "`nested_detail_root`, `_validated_detail_source_parts`, `nested_detail_path`, and `_corpus_root_context` define the confined nested detail layout and durable corpus root selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+            "content": "sha256:44fb27697bae464c1d6ee20f845f11227ed118a55f92f3c8c669b3b2f1910921",
+            "locator": {
+              "kind": "symbol",
+              "name": "nested_detail_path"
             }
           },
           "kind": "code"
@@ -134,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
             "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
             "locator": {
               "kind": "symbol",
@@ -146,12 +173,12 @@
       ]
     },
     "3": {
-      "note": "The detail keeps its deterministic report sibling name and resolves beside the saved handover's canonical path, not the report's collection destination.",
+      "note": "`_require_detail_target` and `_require_nested_detail_target` accept either legacy flat `.detail-<sha256>.md` or interior-non-symlink-confined `<stem>.details/<source_path>` targets beside the saved handover's canonical directory.",
       "targets": [
         {
           "anchor": {
-            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
-            "content": "sha256:0b1e541356504b07899550c887ded86c43f93b01b01a0812db842171ebd7d0e9",
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+            "content": "sha256:6b3461d8b91ae83566cc1114a8130a1305e1e3e90db623ccd79200d1c3ceee72",
             "locator": {
               "kind": "symbol",
               "name": "_require_detail_target"
@@ -162,16 +189,27 @@
       ]
     },
     "4": {
-      "note": "Held-seat opening calls restoration before sending the opening message. With neither recorded artifact reference, the helper validates the saved instruction details directly.",
+      "note": "Held-seat opening and receipt restoration invoke `validate_instruction_detail_artifacts` before sending the opening message.",
       "targets": [
         {
           "anchor": {
-            "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
-            "content": "sha256:69995cd5aef2492a7a05361db1e49227218e3a4e9a722e9664bfd8124d4229ff",
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+            "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
             "locator": {
-              "end": 552,
+              "kind": "symbol",
+              "name": "validate_instruction_detail_artifacts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b6d9611c679ce1bd610fc8ebcf0abeba9114cc6b",
+            "content": "sha256:627fdb0d40b945bf42ec9c281382fdf879187d3fe38a2e12996c5b3d4054bfa4",
+            "locator": {
+              "end": 560,
               "kind": "line_range",
-              "start": 462
+              "start": 464
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
@@ -189,18 +227,6 @@
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
-            "content": "sha256:598f867f3d08595fc6430cd4e2d34d6dff272682455807db81d33e589fc5b57e",
-            "locator": {
-              "end": 129,
-              "kind": "line_range",
-              "start": 102
-            }
-          },
-          "kind": "code"
         }
       ]
     },
@@ -209,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db44e27af544603a4ca10ea2baf8cd8e7d41087f",
+            "blob": "ebabdaf3673ea99aab08cab8589a592476701298",
             "content": "sha256:974ddafaa5bca02dcb531fc26ef2a93ed3850ce2b5493de1d6e58b601e58a470",
             "locator": {
               "kind": "symbol",
@@ -222,12 +248,12 @@
       ]
     },
     "6": {
-      "note": "Detail content is link-bound against the shipped corpus and re-digested before it is frozen.",
+      "note": "`_bound_details` binds frozen detail internal links to absolute durable corpus and sibling frozen paths (`compact_links=False`) and re-digests the bound bytes before freezing.",
       "targets": [
         {
           "anchor": {
-            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
-            "content": "sha256:afa85dd99b0baaa9a1eea7771536e23bb5dbf22967538f0831c5708086aeed70",
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+            "content": "sha256:8e1ec8f2393b060b4f892fe792d15be749bb0c304ff55ed65b9dce1f32070e13",
             "locator": {
               "kind": "symbol",
               "name": "_bound_details"
@@ -238,12 +264,12 @@
       ]
     },
     "7": {
-      "note": "The baseline is bound along its instruction origins, and incomplete origins or unbound relative links refuse.",
+      "note": "`_bound_baseline` binds baseline links along `instruction_origins` (compact `detail/` and `skill/` under `compact_links=True`, plus `compact_skill_uri_links` without origins) and refuses incomplete origins or unbound relative links.",
       "targets": [
         {
           "anchor": {
-            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
-            "content": "sha256:bcaf61b6df284746b209e3fc41f0178674b74047e1bb309fb11abc84ae696623",
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+            "content": "sha256:af713057f7d2efdcf7ea25b91fdbefa41fa1eba12fbb28f6fb23b6d89eb10070",
             "locator": {
               "kind": "symbol",
               "name": "_bound_baseline"

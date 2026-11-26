@@ -122,8 +122,6 @@ An Investigator receipt address requires its exact request UUID.
 
 
 
-
-
 - Through leaf/taskless routes checks restoration/refusal, exact advice and unchanged receipt/foreign link target. [9]
 
 
@@ -160,6 +158,7 @@ A receipt moved by Start between inspection and reading is treated as absent.
 
 
 
+
 - Request identity includes a supplied step-up value and normalizes an override with an empty feature map. [18]
 
 
@@ -180,6 +179,7 @@ A receipt moved by Start between inspection and reading is treated as absent.
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/role_launch_receipts.py::message_binding_projection_path - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 - The Worker handover test requires a first freeze notice to the Manager to start the Reviewer, followed by direct complete freeze handover to that Reviewer; the Manager does not relay it or receive routine report notices. It also checks parentless Worker and turn-end-versus-acceptance wording, with mutation cases for every required route clause. [12]
+
 
 - The test joins the shipped Architect/review, Manager/coordination and Orchestrator/coordination source texts, checks their candidate-evidence and owner-acceptance clauses, and detects removal of Manager inspection. This checks that source composition’s wording; it runs no capsule admission/compilation and proves no runtime no-mutation property. [13]
 

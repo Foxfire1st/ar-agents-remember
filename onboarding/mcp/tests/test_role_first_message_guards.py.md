@@ -22,6 +22,8 @@ A control fails the check when the check is blind, so a passing control is evide
 
 - Only the admitted bootstrap pair may hold one value twice, and the control fails every other pair. [1]
 
+
 - The path check reads a whitespace-bearing path whole and runs on the message the host was handed. [2]
+
 
 - A held seat opens through the real delivery path, and the delivered turn begins with its saved opening. [3]

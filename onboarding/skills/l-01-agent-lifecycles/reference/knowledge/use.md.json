@@ -127,16 +127,16 @@
       ]
     },
     "6": {
-      "note": "The Reviewer role links the Reviewer section when inspecting changes.",
+      "note": "The Reviewer role reference index links this file under Baseline/knowledge.\n\nAnchor: `reference/knowledge/use.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
-            "content": "sha256:d5658ed4652da3bfa455043e9cf1f887e9078ec6e75677387e870eaad18704bc",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:3e8818385f268753c9b20f68d4df069d91eef0021d6c4d15706f15b07f693dd4",
             "locator": {
-              "end": 70,
+              "end": 34,
               "kind": "line_range",
-              "start": 70
+              "start": 34
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -213,12 +213,12 @@
         },
         {
           "anchor": {
-            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
-            "content": "sha256:9691fd1d3c554b52dd4d2a9a812ad2c8309faa55906ad5fdc130cc34eaf6dd17",
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:c1aa4fa3e07f49e6efa4e0aa4a3d8453b243e3f4e191ae676a863fb635aae2a6",
             "locator": {
-              "end": 31,
+              "end": 10,
               "kind": "line_range",
-              "start": 31
+              "start": 10
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },

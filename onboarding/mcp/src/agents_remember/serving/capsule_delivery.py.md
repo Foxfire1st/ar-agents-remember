@@ -21,7 +21,9 @@ This account is bound to the candidate source, not a claim of a running serving 
 ## Evidence boundary
 
 
+
 - Launch copies detail files, substitutes paths, and records frozen revisions. [6]
+
 
 - Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources. [7]
 

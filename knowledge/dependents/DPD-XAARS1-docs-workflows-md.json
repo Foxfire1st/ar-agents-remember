@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "7195713289a089ccffa4b031d4ddcbf941781a99",
-    "commit": "da65eb23a46a9b67683b002fd418996e3f7486c5",
+    "codeTree": "d1e7bbbcff7450564c350d2a268ec406f0f97cfe",
+    "commit": "6eb67e8ec4ef00afa54348123b6e6afd1cef1dc8",
     "role": "curator",
-    "statement": "Audited docs/workflows.md in full against post-sync L56 tree 71957132 (base da65eb23): series master closeout, landing, and workflow steps remain accurate after record_landing.py switched master-end staleness to master_document_base.",
-    "task": "261112-BUG-L56",
+    "statement": "Audited docs/workflows.md (lines 1-280) against synced Attempt-5 tree d1e7bbbc and operations/implementation.md: Worker checks, direct own-file finding repairs with per-finding report entries, and freeze/handoff-check flow to Reviewer and Curator remain accurate with no contradiction.",
+    "task": "261124-CAP-L3",
     "uncommitted": true
   },
   "document": "docs/workflows.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -96,22 +96,22 @@
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },
     {
-      "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+      "blob": "04140c248f496d59ae76fdda5f7c8a7d5bec193b",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/worktree_tools.py"
     },
     {
-      "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
+      "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
     },
     {
-      "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
+      "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/planning.md"
     },
     {
-      "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
+      "blob": "ba302ee5ee35f8341db142ae02dcb244ca25fb98",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
     },
@@ -157,14 +157,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T19:03:01+01:00",
+    "at": "2026-11-26T20:16:07+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L56",
+    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
-    "task": "261112-BUG"
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

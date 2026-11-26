@@ -28,6 +28,7 @@ The rows cite canonical source text and narrowly relevant neighbor definitions. 
 
 - The reviewer binding table selects doctrine where the review type and change surfaces require it. [2]
 
+
 - D-1 requires mechanism-backed enforcement claims; D-2 sweeps contradictory sibling doctrine; D-3 walks stuck states. [4]
 
 - D-4 distinguishes organizational/atomic topology and protects integration branches from feature/fix work. [5]

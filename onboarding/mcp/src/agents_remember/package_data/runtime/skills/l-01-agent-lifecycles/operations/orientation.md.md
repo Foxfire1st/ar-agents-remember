@@ -14,7 +14,7 @@ The role launcher supports these eight role IDs: `architect`, `investigator`, `o
 
 Task-bound reads use the rendered task-document files named in the handover and the harness’s own file tools before acting. For canonical task-document edits admitted to the role, use `task_doc` first; only a covered correct-input write refusal follows the declared same-tool/input-class recovery. Rendered copies are never parsed back and are refreshed by the owner’s next task_doc publication. Read only the selected packet/task scope and verify role, requirement revision, altitude, paired roots, contract and report agree. Missing admission/capability and read, validation, sync, guard, gate and permission stops remain unchanged.
 
-Use the launching build’s `agents-remember-task` server through its actual harness tool surface and schemas. The tool-server binding supplies identity; the handover supplies a parent when one exists. Every question requiring the developer's decision goes to the reporting recipient the role instructs; if the role names none, to the parent named in host.parent, through bound role_message; when neither exists, the agent asks the developer in its own chat. Independent work continues; when none remains, the agent records the pending answer and its recipient in its report—the Manager records the wait in its end line and status file, while other roles send what they await and from whom to that recipient with `role_message` on `agents-remember-task`. A full-store refusal follows the message-handover detail: the handover stays pending, is retried once, and a second refusal is reported. Only when that recipient cannot be reached at all (archived, not found, not resumable, no runtime configured, or host unreachable) does the agent ask in its own chat, naming the refusal. Peer communication retains its bound role-message route.
+Use the launching build’s `agents-remember-task` server through its actual harness tool surface and schemas. The tool-server binding supplies identity; the handover supplies a parent when one exists. Every question requiring the developer's decision goes to the reporting recipient the role instructs; if the role names none, to the parent named in host.parent, through bound role_message; when neither exists, the agent asks the developer in its own chat. Independent work continues; when none remains, the agent records the pending answer and its recipient in its report—the Manager records the wait in its end line and status file, while other roles send what they await and from whom to that recipient with `role_message` (server binding lives in `core/every-role.md`). A full-store refusal follows the message-handover detail: the handover stays pending, is retried once, and a second refusal is reported. Only when that recipient cannot be reached at all (archived, not found, not resumable, no runtime configured, or host unreachable) does the agent ask in its own chat, naming the refusal. Peer communication retains its bound role-message route.
 
 ## Conventions
 
@@ -39,6 +39,7 @@ Earlier card custody: the base card grouped taskless/approved-scope intake, sele
 ### Repo-Internal References
 
 - Taskless scope, exact task-bound reads, role-admitted task_doc-first edits, paired surfaces, the bound tool server and saved-assignment recovery. [6]
+
 
 ### Docs References
 
@@ -80,6 +81,7 @@ Parentless Projects Investigator intake asks only for the missing concern/report
 
 - Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions go to the instructed reporting recipient, else the parent, with the stated no-recipient and unreachable exceptions.
 
-- Orientation takes an Investigator's concern from its parent's first message or, without a parent, from the developer's request, and invents no task or trust packet; existing work restores its saved assignment first. [1]
+- Orientation uses the launcher's exact role and canonical assignment (Projects is a workspace, not a repo), restores saved authority, reads only selected packets and rendered task files via file tools (no `.json`), verifies refs/roots/contract/report agree, and notes that dashboard roles need no parent. [1]
+
 
 - Developer decisions go to the instructed reporting recipient or the parent; when no independent work remains, the Manager records the wait in its end line and status file while other roles message what they await, and only an agent with neither recipient nor reachable parent asks in its own chat. [2]

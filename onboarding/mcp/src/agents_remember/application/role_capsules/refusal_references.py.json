@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/application/role_capsules/refusal_references.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a3345f0206b91c67ead581490ddc11ca0683a643",
+        "content": "sha256:b2bc1b9081dda48a51ea64d5272445337d59e773543e26ab603813d8e8b1b53b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-TG8V62",
+      "invariant": "INV-7CZVBD",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 4",
+        "leaf": "261124-CAP-L3"
+      },
+      "rationale": "Re-exports SKILL_URI_PREFIX, REFUSAL_REFERENCES, refusal_reference, and with_refusal_reference at the application facade path required by CAP-R03.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The facade re-exports `REFUSAL_REFERENCES`, `SKILL_URI_PREFIX`, `refusal_reference`, and `with_refusal_reference` from `models.role_capsules.refusal_references` without adding logic.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3345f0206b91c67ead581490ddc11ca0683a643",
+            "content": "sha256:ffd1a56bafd3d27cbf551811bba56fbb668f6adb5442e022fd2ff0a3254729ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

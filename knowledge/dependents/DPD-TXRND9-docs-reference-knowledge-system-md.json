@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "7195713289a089ccffa4b031d4ddcbf941781a99",
-    "commit": "da65eb23a46a9b67683b002fd418996e3f7486c5",
+    "codeTree": "b3131ef29cf948ee4830a48540585bc841530c3a",
+    "commit": "6eb67e8ec4ef00afa54348123b6e6afd1cef1dc8",
     "role": "curator",
-    "statement": "Audited docs/reference/knowledge-system.md in full against post-sync L56 tree 71957132 (base da65eb23): knowledge gate, dependent staleness, and refusal descriptions remain accurate after extracting document_staleness.py from landing.py; added document_staleness.py to stands_on.",
-    "task": "261112-BUG-L56",
+    "statement": "Audited docs/reference/knowledge-system.md in full (lines 1-512) against Round-4 CODE PASS tree b3131ef2: twelve record kinds, history rows, derived states, worklist/reportOnlyFindings, DFR-* merges, and ingestion rules remain accurate after CAP-L3 edits to curator-handoff-ingestion.md.",
+    "task": "261124-CAP-L3",
     "uncommitted": true
   },
   "document": "docs/reference/knowledge-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 10,
+  "revision": 11,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -128,7 +128,7 @@
     },
     {
       "anchor": {
-        "blob": "7698616abcd31cb08bba4a158474703b7916d978",
+        "blob": "9a9e605ddca24ff31acafb03222552288800a88b",
         "content": "sha256:cd6baad3af0eca70673d6da336f2d0a97e064578948a9ecef96d7be5dda01776",
         "locator": {
           "kind": "symbol",
@@ -237,7 +237,7 @@
       "path": "dashboard/src/panels/review/MeaningEffects.tsx"
     },
     {
-      "blob": "f8d6d3dc2fd89d41e26b9042e241d3eccd8d2681",
+      "blob": "d3ea3d44f09ba0802cfe5e4292c87fd8d1dd9010",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
     },
@@ -397,14 +397,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T19:03:01+01:00",
+    "at": "2026-11-26T13:09:23+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L56",
+    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
-    "task": "261112-BUG"
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

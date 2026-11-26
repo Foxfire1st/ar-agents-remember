@@ -241,7 +241,8 @@ No configured domain documentation could be checked.
 - - The one refusal envelope the read operation returns for an unknown view and for a view the seam refused. [77]
 - - The one refusal envelope the read operation returns for an unknown view and for a view the seam refused. [78]
 
-- The mounted reader dispatches the writers aggregate and distinguishes it from record and mark results. Anchor: `_one_view` [79]
+- The mounted reader dispatches the writers aggregate and distinguishes it from record and mark results. [79]
+
 
 - - The source-resolution pair completed rather than half-supplied: the caller's own root with its current tree (refused by name when it has none, since MIK-R01), the mount's workspace default used only when a tree can be resolved from it, and neither half when Git cannot answer for it. [80]
 - - **Every way resolving and opening a selection can fail, refused the same way on every handler: a named root with no code tree is `selected_input_unavailable` naming the root (MIK-R01), a tree, Git or cache failure is `snapshot_unavailable` naming the tree, anything else the dataset refusal it was before.** [81]
@@ -258,9 +259,13 @@ No cross-repository contract is established by this file.
 - The flat read request's optional source-path seed, beside the unnamed-by-default ordering MIK-R02 introduced. [76]
 
 - A converted tree's read is handed to the paged tree read right after the selection. [68]
+
 - A refused read states the threshold block beside its refusal code and detail; a page states the same block in its own answer. [70]
+
 - Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [82]
+
 - Cutover refusal helpers, worktree candidate capture and contract loading are imported at the operation branches that need them; existing legacy-format and root-selector refusals remain. [83]
+
 
 - The whole selected comparison is filed before the answer names both trees, counts and bounded decision records with their total; no carried comparison body. [2]
 

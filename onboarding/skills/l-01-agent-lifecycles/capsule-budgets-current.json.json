@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ef0ffe9a8985daf19aca225623c22d5238fcb9f2",
-        "content": "sha256:ff2ed722b08957b6f065c8f86e81c632bfd6f8ab894e79d9e5cdf4366dcc47ac",
+        "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
+        "content": "sha256:b1e498e8b2e816d120f2b53edbca1ac4af6250bb2c0855ecddce4fca073ce582",
         "locator": {
           "kind": "file"
         }
@@ -15,12 +15,12 @@
         "handoffEntry": "MIK-R101@v1 rule 6",
         "leaf": "260928-MIK-L101"
       },
-      "rationale": "The current record holds measured capsule, declared-detail, ordinary-template and digest sizes under derived.current_measurements and separately authored ceilings. It retains historical registries and their identities; it carries no current per-item word budgets or fixed digest-map hash.",
+      "rationale": "The current record holds measured capsule, declared-detail, ordinary-template and digest sizes under derived.current_measurements and retains historical registries and their identities; active ceiling enforcement uses COMPILED_CAPSULE_TOKEN_CEILINGS in wire_budget.py without per-item word budgets.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "ef0ffe9a8985daf19aca225623c22d5238fcb9f2",
+        "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
         "content": "sha256:a0abc4ead569d8a67d67a8e01a8d07edd5dc33813d24be486be77735cda4a99a",
         "locator": {
           "end": 6163,
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "ef0ffe9a8985daf19aca225623c22d5238fcb9f2",
+        "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
         "content": "sha256:86ffd298030ed1ed89b21939e6217dcec9fce742e95fc56ab8222d99068d4014",
         "locator": {
           "end": 5103,
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "ef0ffe9a8985daf19aca225623c22d5238fcb9f2",
-        "content": "sha256:ff2ed722b08957b6f065c8f86e81c632bfd6f8ab894e79d9e5cdf4366dcc47ac",
+        "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
+        "content": "sha256:b1e498e8b2e816d120f2b53edbca1ac4af6250bb2c0855ecddce4fca073ce582",
         "locator": {
           "kind": "file"
         }
@@ -70,17 +70,17 @@
         "handoffEntry": "RSM-R01-A9",
         "leaf": "261112-RSM-L1"
       },
-      "rationale": "The current record keeps authored role, detail and digest ceilings separate from derived current measurements, populations and source identities; its BUG-R08 authority records the admitted D821 and D822 decisions.",
+      "rationale": "The current budget record keeps authored ceiling/decision fields (including D821 and D822) separate from derived current measurements, populations, and source identities.",
       "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "The decision block retains authority and frozen historical registry and predecessor identities.",
+      "note": "The decision block retains authority and frozen historical registry and predecessor identities.\n\nAnchor: `decision`",
       "targets": [
         {
           "anchor": {
-            "blob": "ef0ffe9a8985daf19aca225623c22d5238fcb9f2",
+            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
             "content": "sha256:1556b38430b0b91643d0aca13936052e01cf50233bcb7f447833531577dd9011",
             "locator": {
               "end": 15,
@@ -92,7 +92,7 @@
         },
         {
           "anchor": {
-            "blob": "ef0ffe9a8985daf19aca225623c22d5238fcb9f2",
+            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
             "content": "sha256:e0384fd7a2fb1b964c2b6d2a3453d3456017a6a0751411176817ae3633b28718",
             "locator": {
               "end": 6163,
@@ -101,33 +101,20 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
-            "content": "sha256:29003e58e34f21d06bf126021342d7f538729b4a3f2c94eaacb35a9cdbb6fac2",
-            "locator": {
-              "end": 77,
-              "kind": "line_range",
-              "start": 47
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
-          },
-          "kind": "code"
         }
       ]
     },
     "11": {
-      "note": "The generated template measurement records 6,630 words and the current source digest.",
+      "note": "The generated template measurement records 6,625 words and the current source digest.\n\nAnchor: `curator-handoff-ingestion.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "ef0ffe9a8985daf19aca225623c22d5238fcb9f2",
-            "content": "sha256:38eebf79b769526a9b800339890549a3d844221e8c082e88e5dd43645b879372",
+            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
+            "content": "sha256:a168ac4593332874fd3f8bccf68985cba86370cc161d30f660e0a5398c703f55",
             "locator": {
-              "end": 6633,
+              "end": 6667,
               "kind": "line_range",
-              "start": 6626
+              "start": 6664
             }
           },
           "kind": "code"
@@ -135,34 +122,33 @@
       ]
     },
     "2": {
-      "note": "Generated measurements cover current capsules, declared details and the shared digest without individual item limits.",
+      "note": "Generated measurements cover current capsules, declared details and the shared digest without individual item limits.\n\nAnchor: `current_measurements`",
       "targets": [
         {
           "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
-            "content": "sha256:c97e67c20756fe73ca0813113cc5dda8ed9c3e3d569decda3d7c26d49ad276fe",
+            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
+            "content": "sha256:b6da19e1d77e3890d0d50f50cf61275518da741c0c17421e32859e95449d1b77",
             "locator": {
-              "end": 77,
+              "end": 6282,
               "kind": "line_range",
-              "start": 22
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+              "start": 6186
+            }
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "Generated approved source sizes record the Manager brief at 1,463 words and its exact source SHA-256; current generated measurements include ordinary linked templates.\n\nAnchor: source",
+      "note": "Generated approved source sizes record the Manager brief at 1,463 words and its exact source SHA-256; current generated measurements include ordinary linked templates.\n\nAnchor: `manager-brief.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "ef0ffe9a8985daf19aca225623c22d5238fcb9f2",
-            "content": "sha256:dc06d1096137e6490cb10deadda3339ff3b17016aaeeaf8ae3f4286865f3c230",
+            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
+            "content": "sha256:d5665e2c65318e40ccc91514b74628dbfded3687336c223c4480798ddcc8464c",
             "locator": {
-              "end": 6651,
+              "end": 6687,
               "kind": "line_range",
-              "start": 6648
+              "start": 6684
             }
           },
           "kind": "code"
@@ -174,7 +160,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef0ffe9a8985daf19aca225623c22d5238fcb9f2",
+            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
             "content": "sha256:f8f8b8c92cf7bbc546918ecbd81a64ce055160bc40252f448e919df93cc9d4ed",
             "locator": {
               "end": 6177,
@@ -191,12 +177,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
             "content": "sha256:645cb437ad6dbf1ba6428e27c1b5310f9e8f280e6a9dafaffbaf4cf6f6adea40",
             "locator": {
-              "end": 141,
+              "end": 125,
               "kind": "line_range",
-              "start": 111
+              "start": 95
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },
@@ -209,12 +195,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
             "content": "sha256:75af2672431670155e3a4078c58f19ccd71fcff86f96995a806e2f67f6e2f7e1",
             "locator": {
-              "end": 159,
+              "end": 143,
               "kind": "line_range",
-              "start": 144
+              "start": 128
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },
@@ -227,12 +213,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
             "content": "sha256:8cd4193ea8d7a96e50b0e83efc204bdfa1ad03b084e670af07f4072d08f9c00a",
             "locator": {
-              "end": 170,
+              "end": 154,
               "kind": "line_range",
-              "start": 162
+              "start": 146
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },
@@ -241,14 +227,14 @@
       ]
     },
     "8": {
-      "note": "The generated size record holds the current curation capsule and judgment detail measurements.",
+      "note": "The generated size record holds the current curation capsule (406 Curator, 727 Manager) and judgment detail (353) measurements.\n\nAnchor: `manager/curation`; `curator/curation`",
       "targets": [
         {
           "anchor": {
-            "blob": "ef0ffe9a8985daf19aca225623c22d5238fcb9f2",
-            "content": "sha256:1a5bb0922d5b216178d1614acd6d4054a28f42ebf121c95db92306232c91af61",
+            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
+            "content": "sha256:4ff42423834e5ec5729f23b50b6144edac77935f6657d8c76bbee8975316fc36",
             "locator": {
-              "end": 6239,
+              "end": 6240,
               "kind": "line_range",
               "start": 6202
             }

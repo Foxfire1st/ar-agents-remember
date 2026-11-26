@@ -16,4 +16,5 @@ Three bodies of evidence are compared: current intent (source, tests, onboarding
 
 - The three bodies of evidence and the success condition of the reconciliation. [1]
 - Passing tests do not establish coherence, and historical oddities need a causal and reconsideration check. [2]
-- The curation operation points here before promoting a historical oddity. [3]
+
+- The Curator role reference index links this file under Intake/worklist. [3]

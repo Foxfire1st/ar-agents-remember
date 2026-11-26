@@ -264,9 +264,8 @@
             "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
             "content": "sha256:fc2a1a7ef4a0889005c2cab69753b8915b5b64a9d172c1e25bc308028591a225",
             "locator": {
-              "end": 168,
-              "kind": "line_range",
-              "start": 150
+              "kind": "symbol",
+              "name": "register_role_launch_routes"
             }
           },
           "kind": "code"
@@ -274,16 +273,15 @@
       ]
     },
     "10": {
-      "note": "Checks size limit and refuses links without changing their target.\n\nAnchor: `HandoverArtifactTests.test_the_artifact_is_a_regular_file_of_bounded_size`",
+      "note": "Checks size limit and refuses links without changing their target.",
       "targets": [
         {
           "anchor": {
-            "blob": "08aa871ab4b90ffc881d2140669906f7af07e217",
-            "content": "sha256:d03732758a233130c3a47ba56d498526a801430de6944fd6336095b90f602b9d",
+            "blob": "725c3ee3e512ebf727784c26042c7a648825ad2b",
+            "content": "sha256:3be784b682d17a0d01ae3b40071d847264f7777c4d62ec48665cca2020d9af22",
             "locator": {
-              "end": 759,
-              "kind": "line_range",
-              "start": 730
+              "kind": "symbol",
+              "name": "test_the_artifact_is_a_regular_file_of_bounded_size"
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
@@ -317,9 +315,8 @@
             "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
             "content": "sha256:fc2a1a7ef4a0889005c2cab69753b8915b5b64a9d172c1e25bc308028591a225",
             "locator": {
-              "end": 168,
-              "kind": "line_range",
-              "start": 150
+              "kind": "symbol",
+              "name": "register_role_launch_routes"
             }
           },
           "kind": "code"
@@ -459,11 +456,10 @@
         {
           "anchor": {
             "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
-            "content": "sha256:35359ab1c646a1c60991bc7c0f52d1f92d7c4f76526be4cf65b70fb8ca643cd3",
+            "content": "sha256:18ab34d71474cc78cf90e8f289f15c2e7ccb4ca736bf2c8b24c9bb8b8d8fe9fa",
             "locator": {
-              "end": 616,
-              "kind": "line_range",
-              "start": 566
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
             }
           },
           "kind": "code"
@@ -488,7 +484,7 @@
       ]
     },
     "2": {
-      "note": "Frozen implementation of _start_execution supporting the stated file behavior.",
+      "note": "`_start_execution` wraps `role_start_execution.start_execution` while retaining route seams.",
       "targets": [
         {
           "anchor": {
@@ -549,16 +545,15 @@
       ]
     },
     "22": {
-      "note": "The Manager records an Architect address when available. An Orchestrator starter’s parent receipt determines whether the address can be recorded. The launch proceeds when the lookup or write fails.",
+      "note": "The Manager records an Architect address when available; an Orchestrator starter's parent receipt determines whether the address can be recorded; launch proceeds on lookup/write failure.",
       "targets": [
         {
           "anchor": {
             "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
-            "content": "sha256:11ac93940ae09c3e6dab5aed316edecff9d35b24ff25430011a774596438a24b",
+            "content": "sha256:c66af9c85cd326f4a585ffaf27da472e2b8490f9b8ccc51ed0f0e125ca59bfbd",
             "locator": {
-              "end": 509,
-              "kind": "line_range",
-              "start": 465
+              "kind": "symbol",
+              "name": "remember_master_architect"
             }
           },
           "kind": "code"
@@ -585,9 +580,8 @@
             "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
             "content": "sha256:f076572f04f0e9c03fa24b3fafdef6e5316cb3bc46928c311f8c1005b8bee60c",
             "locator": {
-              "end": 203,
-              "kind": "line_range",
-              "start": 190
+              "kind": "symbol",
+              "name": "_bind_dispatch_endpoint"
             }
           },
           "kind": "code"
@@ -613,11 +607,10 @@
         {
           "anchor": {
             "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
-            "content": "sha256:e4ba963441aeb04ea41a164c58a588c87d7b486d7ca0fd422c5aa8d8f02b3e86",
+            "content": "sha256:18ab34d71474cc78cf90e8f289f15c2e7ccb4ca736bf2c8b24c9bb8b8d8fe9fa",
             "locator": {
-              "end": 591,
-              "kind": "line_range",
-              "start": 566
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
             }
           },
           "kind": "code"
@@ -651,16 +644,15 @@
       ]
     },
     "3": {
-      "note": "Frozen implementation of _launch_prepared_role_session supporting the stated file behavior.",
+      "note": "`_launch_prepared_role_session` bounds direct `opening_message` via `role_opening_offload`, preflights/writes `.opening-message.md` and both handover files, records `openingMessageArtifact` and `stepUpArtifact` in the starting receipt, and builds the saved host call.",
       "targets": [
         {
           "anchor": {
             "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
-            "content": "sha256:35359ab1c646a1c60991bc7c0f52d1f92d7c4f76526be4cf65b70fb8ca643cd3",
+            "content": "sha256:18ab34d71474cc78cf90e8f289f15c2e7ccb4ca736bf2c8b24c9bb8b8d8fe9fa",
             "locator": {
-              "end": 616,
-              "kind": "line_range",
-              "start": 566
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
             }
           },
           "kind": "code"
@@ -668,7 +660,7 @@
       ]
     },
     "4": {
-      "note": "Frozen implementation of _revive_execution supporting the stated file behavior.",
+      "note": "`_revive_execution` verifies grant-aware leaf scope before native bridge revival.",
       "targets": [
         {
           "anchor": {
@@ -714,7 +706,7 @@
         },
         {
           "anchor": {
-            "blob": "ac30fa1dc90ff0495ba39cd08606df46744a77a3",
+            "blob": "cfd0a8c02786e987d15352b4c52a791e2814e1e9",
             "content": "sha256:24f5dbcc08c40cc834391fb6fee5739797a94a0c75a18be29a055878d7fdf199",
             "locator": {
               "end": 360,
@@ -748,10 +740,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "722fb4f8dc0b92a6f76e15006137b41da1fcdb47",
-            "content": "sha256:30225a4eaaad093cae24e00ca352399e24ca3f1f28f6b40774fcd9e794653574",
+            "blob": "b4e32462371441086404d04a15f95b6176532696",
+            "content": "sha256:5486afe9409e6ea24118b7e2bdf02bc790ed4300c2bf4f18ad76e523f7f37169",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_repeat_is_answered_from_its_receipt_whatever_changed_since_the_launch"
             },
             "path": "mcp/tests/test_paseo_launch_repeat.py"
           },
@@ -777,16 +770,15 @@
       ]
     },
     "9": {
-      "note": "Checks path, bytes, digest, read-only mode, exact reuse and conflicting-content refusal.\n\nAnchor: `HandoverArtifactTests.test_the_artifact_is_written_once_beside_the_report_and_named_by_one_line`",
+      "note": "Checks path, bytes, digest, read-only mode, exact reuse and conflicting-content refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "08aa871ab4b90ffc881d2140669906f7af07e217",
-            "content": "sha256:496454fa627fd47b499198b97f45a3fce80d6c89834ef07eb493b741803a9c63",
+            "blob": "725c3ee3e512ebf727784c26042c7a648825ad2b",
+            "content": "sha256:89a6195b6e820ef1cda784428f63965d46c1ed836adac69c780d2fbf4fc1bec9",
             "locator": {
-              "end": 678,
-              "kind": "line_range",
-              "start": 585
+              "kind": "symbol",
+              "name": "test_the_artifact_is_written_once_beside_the_report_and_named_by_one_line"
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },

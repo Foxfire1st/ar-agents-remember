@@ -3,31 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-        "content": "sha256:2b6d0f155eb307d2cbf0f8e7c84cc82b7ed1e825f8e8d21e4c6148ad9648fe77",
+        "blob": "ba302ee5ee35f8341db142ae02dcb244ca25fb98",
+        "content": "sha256:c3742b9d452f176764ac37b1717082ec532f8928d73bcc40eeb896589d7c5c94",
         "locator": {
-          "end": 52,
+          "end": 4,
           "kind": "line_range",
           "start": 4
-        }
-      },
-      "id": "RLZ-1AP8C0",
-      "invariant": "INV-NNQR91",
-      "origin": {
-        "handoffEntry": "L54-hidden-implementation-custody",
-        "leaf": "260928-MIK-L54"
-      },
-      "rationale": "This canonical implementation operation supplies the instructions that the shipped implementation copies propagate; those copies set no role, task or permission authority of their own. Under the architect amendment, this new L54 realization carries the propagation knowledge of these unchanged hidden realizations, not their IDs or physical anchors: RLZ-E1C26B sidecar SHA-256 5e70efce5aff15952b3b96082c98a056930b14d4f5780cd83495c2ff87ee706f (.agents); RLZ-JH0W86 sidecar SHA-256 27fa4d33fcb0c0a433f1fdebec3223e4040eaf9f8328b233fda2f6cdfa67fc70 (.claude); RLZ-HZ0DVG sidecar SHA-256 94d7ce67ca908fd5336f60df4b71e74cfc1d509b87129af3741024f900d27cd3 (.codex); RLZ-EAH82E sidecar SHA-256 1c343bd3dbdf52026a7acebbe0137323d5b5ffd681c70759bd991ebbdf4f77cd (.cursor); RLZ-TS8W18 sidecar SHA-256 5696eb7772773c1e03f3e342499295146abd5e631b1aede40d4b36213ff97d9c (.github-vscode); RLZ-N3YQKG sidecar SHA-256 4138bb1af976339ae7e0e9314d3a81d0116031a0a03e3b2d4a0492e4d4301197 (.hermes); RLZ-SK1Q22 sidecar SHA-256 2a0f46630a753a3416c62abf154b40819b4da510e2a06230d1af40d35c41521a (.openclaw); RLZ-QHEMWS sidecar SHA-256 4374c09ef2a8894d89d8a26f80ba6dacd9521338ca06eab046ec3f4d6571ca7d (.pi). The eight original entries remain byte-identical; this entry is not a relocation or recreation of any of them.",
-      "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-        "content": "sha256:5bca58348a9cedbcb2afa0005c0f48deeef34ae14c2e6eca830a36c509d470a5",
-        "locator": {
-          "end": 20,
-          "kind": "line_range",
-          "start": 20
         }
       },
       "id": "RLZ-27TK2D",
@@ -36,36 +17,36 @@
         "handoffEntry": "MIK-R218.1@v1",
         "leaf": "260928-MIK-L205"
       },
-      "rationale": "The implementation operation's final-candidate step is the always-loaded build stage where the Worker selects, records and runs the frozen focused tests.",
+      "rationale": "The always-loaded Implementation operation directs the Worker to run focused tests by searching tracked tests for touched names, rules, and IDs and proving collection on removals/renames (detailed search rules live in reference/worker/sync-and-repairs.md:15).",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-        "content": "sha256:ef0740a4db519cda54ec889c969b9aaf2a95cc344e342d13a7f24d9c4a2d7caa",
+        "blob": "ba302ee5ee35f8341db142ae02dcb244ca25fb98",
+        "content": "sha256:4b5dc996ac56405a4c3b6aa097a7ad980365b71fc300648aaf22aa289cc895f6",
         "locator": {
-          "end": 95,
+          "end": 11,
           "kind": "line_range",
-          "start": 88
+          "start": 6
         }
       },
-      "id": "RLZ-3QTBC5",
-      "invariant": "INV-7E3JNX",
+      "id": "RLZ-6CNJRF",
+      "invariant": "INV-3F80Q2",
       "origin": {
-        "handoffEntry": "R99-8-own-sync",
-        "leaf": "260928-MIK-L99"
+        "handoffEntry": "MIK-R84@v5 part1 / L62 producer handoff ownership",
+        "leaf": "260928-MIK-L84"
       },
-      "rationale": "Names Worker sync and supported continue arguments after Manager staging.",
-      "role": "primary-authority"
+      "rationale": "Requires regenerating the Worker's per-freeze Curator hand-off list with handoff-check (server_info) and sending list plus handoff-check directly to Curator after code PASS; roles/worker.md:13,22 retain the producer-list marker and template pointer.",
+      "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-        "content": "sha256:5120ba3868a8a19481ec6a7015246af0f409f915154041909761e3b6e9f1f2e1",
+        "blob": "ba302ee5ee35f8341db142ae02dcb244ca25fb98",
+        "content": "sha256:dbe7012c69c812e5e3aeec7d1ffaf73067579850be65a2eac35e151a81776b07",
         "locator": {
-          "end": 54,
+          "end": 11,
           "kind": "line_range",
-          "start": 45
+          "start": 8
         }
       },
       "id": "RLZ-6P4D1B",
@@ -79,8 +60,8 @@
     },
     {
       "anchor": {
-        "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-        "content": "sha256:a86f84355538e232396a6e2e27218bc2e2ac6fb7eec249e22edfc6d1305e2830",
+        "blob": "ba302ee5ee35f8341db142ae02dcb244ca25fb98",
+        "content": "sha256:e7bb29395b15f82a02ba00329159ac22b85193c5ccd8127ac8475a6b02eb8d52",
         "locator": {
           "kind": "file"
         }
@@ -91,36 +72,17 @@
         "handoffEntry": "L185-attach-inv-zvd184",
         "leaf": "260928-MIK-L185"
       },
-      "rationale": "The operation no longer repeats the Messages passage: it keeps one home in roles/worker.md, which is what the clause's 'nothing said twice' requires of the corpus.",
+      "rationale": "The operation no longer repeats the Messages passage: message handover keeps one Tier-2 home in reference/message-handover.md linked from roles/worker.md.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-        "content": "sha256:340b75c0f75cd25023fcd41e73c89607ce9b14d0f2d8aad9c385e2d1bc4a7c2d",
+        "blob": "ba302ee5ee35f8341db142ae02dcb244ca25fb98",
+        "content": "sha256:9be89025d6eb49a2caa94b73e7be421683693c59fa4a4382ef74958f1d01680d",
         "locator": {
-          "end": 95,
+          "end": 12,
           "kind": "line_range",
-          "start": 93
-        }
-      },
-      "id": "RLZ-7KXE63",
-      "invariant": "INV-7E3JNX",
-      "origin": {
-        "handoffEntry": "R99-8-own-sync",
-        "leaf": "260928-MIK-L99"
-      },
-      "rationale": "Separates Curator content repair, Manager staging and Worker supported continuation.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-        "content": "sha256:178af7952f6f9174746928c30629516568c3d05c195fdb1e32cc4c7a85cd97cb",
-        "locator": {
-          "end": 64,
-          "kind": "line_range",
-          "start": 56
+          "start": 12
         }
       },
       "id": "RLZ-BC00NJ",
@@ -129,34 +91,15 @@
         "handoffEntry": "BUG-R12@v1 §3",
         "leaf": "261112-BUG-L12"
       },
-      "rationale": "The Worker's operation says who runs the listed checks, on which tree, what is reported, and what a repair after them owes.",
+      "rationale": "Directs the Worker to run ## Final checks once on the passed tree after code PASS and send command, result, and hash to Manager and Reviewer (post-PASS failure repair details live in reference/worker/sync-and-repairs.md:30-35).",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-        "content": "sha256:5bca58348a9cedbcb2afa0005c0f48deeef34ae14c2e6eca830a36c509d470a5",
+        "blob": "ba302ee5ee35f8341db142ae02dcb244ca25fb98",
+        "content": "sha256:437e6f806dde78f7c9456423b3cbc6836650c18e17f4d9a1ffbdff032f4f8f4a",
         "locator": {
-          "end": 20,
-          "kind": "line_range",
-          "start": 20
-        }
-      },
-      "id": "RLZ-CCM727",
-      "invariant": "INV-YGXGEC",
-      "origin": {
-        "handoffEntry": "MIK-R218.3@v1",
-        "leaf": "260928-MIK-L205"
-      },
-      "rationale": "The implementation operation states that a repair follows the same search rule, binding the Worker's repair round to the freeze rule.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-        "content": "sha256:2b6d0f155eb307d2cbf0f8e7c84cc82b7ed1e825f8e8d21e4c6148ad9648fe77",
-        "locator": {
-          "end": 52,
+          "end": 14,
           "kind": "line_range",
           "start": 4
         }
@@ -167,17 +110,17 @@
         "handoffEntry": "L71-CURRENT242-W-19",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "Canonical Implementation owns task-bound own-file reads through the Worker's assignment, task_doc-first edits through orientation's primary-tool rule, memory as read-only context, truthful report and check evidence, and direct freeze delivery to the Reviewer. It carries no correct-write recovery pointer of its own.",
+      "rationale": "Canonical Implementation owns clean-freeze handover checks, focused tests, truthful report/evidence, direct freeze/repair/list handovers to Reviewer and Curator, and post-PASS Final checks.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-        "content": "sha256:178af7952f6f9174746928c30629516568c3d05c195fdb1e32cc4c7a85cd97cb",
+        "blob": "ba302ee5ee35f8341db142ae02dcb244ca25fb98",
+        "content": "sha256:9be89025d6eb49a2caa94b73e7be421683693c59fa4a4382ef74958f1d01680d",
         "locator": {
-          "end": 64,
+          "end": 12,
           "kind": "line_range",
-          "start": 56
+          "start": 12
         }
       },
       "id": "RLZ-MFCXXW",
@@ -191,12 +134,12 @@
     },
     {
       "anchor": {
-        "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-        "content": "sha256:bd689bcd619111f3a270e0dba863ce4af876a6f55f9b48ca269e31b5876d9ea5",
+        "blob": "ba302ee5ee35f8341db142ae02dcb244ca25fb98",
+        "content": "sha256:c3742b9d452f176764ac37b1717082ec532f8928d73bcc40eeb896589d7c5c94",
         "locator": {
-          "end": 22,
+          "end": 4,
           "kind": "line_range",
-          "start": 16
+          "start": 4
         }
       },
       "id": "RLZ-N31113",
@@ -215,24 +158,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-            "content": "sha256:a214d72d4436bafca4d0b439d16882af5e8466e5a38d4c4674dbd4c8f1060d2e",
+            "blob": "ba302ee5ee35f8341db142ae02dcb244ca25fb98",
+            "content": "sha256:dbe7012c69c812e5e3aeec7d1ffaf73067579850be65a2eac35e151a81776b07",
             "locator": {
-              "end": 50,
+              "end": 11,
               "kind": "line_range",
-              "start": 47
+              "start": 8
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
-            "content": "sha256:f640afccb884091254869352840d254da88070e10f70804288c7d417a84cd40f",
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:142bbcb890718878a721797553454ba3a3e926329b033e04245fbb8efed718db",
             "locator": {
-              "end": 77,
+              "end": 13,
               "kind": "line_range",
-              "start": 77
+              "start": 12
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
@@ -241,16 +184,16 @@
       ]
     },
     "2": {
-      "note": "The candidate stays uncommitted and the seat starts no role and stages nothing.",
+      "note": "The candidate stays uncommitted and the seat starts no role and stages nothing.\n\nAnchor: \"Keep candidates uncommitted\"; \"stages no files\"",
       "targets": [
         {
           "anchor": {
-            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
-            "content": "sha256:61e5581f71a234466784c2854f3180ca251705dc41e6369cf1b2fab8b662df2d",
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:ec38a00c20cdc62a0ba21ae56fdd8ebfa90e9e38423b8a092333436ae85505d5",
             "locator": {
-              "end": 125,
+              "end": 15,
               "kind": "line_range",
-              "start": 125
+              "start": 15
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
@@ -258,13 +201,14 @@
         },
         {
           "anchor": {
-            "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-            "content": "sha256:89a01d31fa37bc62f88cc1d3268a51f2c417ab0e3ac7b0caeee74fd6cfaaa09e",
+            "blob": "345008053e007cf0ca4e57917a2f17501f1f7eee",
+            "content": "sha256:9b88a40bef18bfef08be6502466713a48a6452c5906517e92ccffde8e8e577d8",
             "locator": {
-              "end": 95,
+              "end": 11,
               "kind": "line_range",
-              "start": 95
-            }
+              "start": 11
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/worker/sync-and-repairs.md"
           },
           "kind": "code"
         }
@@ -275,19 +219,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-            "content": "sha256:9a55e35d84457acf3218843c28532fefed39979cfc1cd497185d7de91aa612c2",
-            "locator": {
-              "end": 84,
-              "kind": "line_range",
-              "start": 80
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b90508e32ca01aad41af4242409e6ab533ad2175",
+            "blob": "f6902925631dc9f3ccc6fcc52d20c7b019f8831e",
             "content": "sha256:008a9d834646564a39bfc0b0f957c855878328eca3c3e4fb664c80e66df6e370",
             "locator": {
               "end": 108,
@@ -300,7 +232,7 @@
         },
         {
           "anchor": {
-            "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+            "blob": "27c6e17a2608b695340d65eea706b629a04b0359",
             "content": "sha256:2af566a11122e448ce75709750cbdf82b8c541d5a2d66f431d11e64e64b8eb1e",
             "locator": {
               "end": 17,
@@ -318,8 +250,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-            "content": "sha256:a86f84355538e232396a6e2e27218bc2e2ac6fb7eec249e22edfc6d1305e2830",
+            "blob": "ba302ee5ee35f8341db142ae02dcb244ca25fb98",
+            "content": "sha256:e7bb29395b15f82a02ba00329159ac22b85193c5ccd8127ac8475a6b02eb8d52",
             "locator": {
               "kind": "file"
             }
@@ -329,11 +261,11 @@
       ]
     },
     "5": {
-      "note": "The Worker-only operation carries conditional sync (including pair reporting for Curator refresh), direct repair and per-finding freeze evidence; its all-role audience marker adds no other seat.",
+      "note": "The Worker-only operation carries direct repair, per-finding freeze evidence, and Manager-reserved sync boundaries (with full conditional sync and pair reporting for Curator refresh delegated to reference/worker/sync-and-repairs.md); its all-role audience marker adds no other seat.",
       "targets": [
         {
           "anchor": {
-            "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
+            "blob": "ba302ee5ee35f8341db142ae02dcb244ca25fb98",
             "content": "sha256:85f4f5278f612f3e6560e5e636d92ad2d81efd7c631ef89bcb2e3243152b3d93",
             "locator": {
               "end": 1,
@@ -345,19 +277,19 @@
         },
         {
           "anchor": {
-            "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-            "content": "sha256:a2c87bfbe0fe56b5d7c11db879048c5e1593d6e930eee153b40598ed56a46896",
+            "blob": "ba302ee5ee35f8341db142ae02dcb244ca25fb98",
+            "content": "sha256:4feb1fda7078a2531260846dbde81da7dac7e2c2097fe8d97aec7cf87c8c46b4",
             "locator": {
-              "end": 95,
+              "end": 14,
               "kind": "line_range",
-              "start": 76
+              "start": 6
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:40d78f4501ce5a5ec6fe2a7214201741a166fda03410c5fe70b3ae38c7a1f2b4",
             "locator": {
               "end": 68,
@@ -367,49 +299,63 @@
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Worker distinguishes a clean sync (rerunning focused tests and reporting the pair so Manager obtains Curator's refreshed read for a changed pair) from an overlapping path or failing focused test, and repairs owned findings without prior approval.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-            "content": "sha256:7f1de68742d4a53946fe1a1ff15b1f09f90a7402aaba1885c511c10bff55bdcf",
+            "blob": "345008053e007cf0ca4e57917a2f17501f1f7eee",
+            "content": "sha256:d609389f2bc2f3b5aee197dbb9cd4b87ac33b4f9eebc6b38bc1666f922ac79f2",
             "locator": {
-              "end": 91,
+              "end": 11,
               "kind": "line_range",
-              "start": 76
-            }
+              "start": 5
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/worker/sync-and-repairs.md"
           },
           "kind": "code"
         }
       ]
     },
-    "7": {
-      "note": "Each repaired finding has its own freeze entry; code PASS carries the same entries and changed paths directly to Curator.",
+    "6": {
+      "note": "Worker repairs sealed own-file findings directly without prior approval, and (via reference/worker/sync-and-repairs.md) distinguishes a clean sync (focused tests rerun plus pair report for Manager/Curator refresh) from overlapping paths or failing focused tests.",
       "targets": [
         {
           "anchor": {
-            "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-            "content": "sha256:8dde060e2db755c2555199a3c33fa773d79ab1374d30820c374c60d9e4b6356c",
+            "blob": "ba302ee5ee35f8341db142ae02dcb244ca25fb98",
+            "content": "sha256:00d2e9aea218073db44a754268be6cec84465a94a44a85b29dc0ef4932a805a3",
             "locator": {
-              "end": 50,
+              "end": 10,
               "kind": "line_range",
-              "start": 41
+              "start": 10
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-            "content": "sha256:2a67283b79019c7469fb5a39a5e4dc0e156b2a87199c7b96b29c6ab664a5ec26",
+            "blob": "345008053e007cf0ca4e57917a2f17501f1f7eee",
+            "content": "sha256:02f0848af31004d2fa0a4ec1dc80999c1a4084e07cad9ce4a22773404f559a1d",
             "locator": {
-              "end": 78,
+              "end": 10,
               "kind": "line_range",
-              "start": 78
+              "start": 7
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/worker/sync-and-repairs.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Each repaired finding has its own freeze-report entry; after code PASS and Curator start, the regenerated exact-freeze Curator list and handoff-check go directly to Curator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba302ee5ee35f8341db142ae02dcb244ca25fb98",
+            "content": "sha256:4b5dc996ac56405a4c3b6aa097a7ad980365b71fc300648aaf22aa289cc895f6",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 6
             }
           },
           "kind": "code"
@@ -417,17 +363,30 @@
       ]
     },
     "8": {
-      "note": "A freeze's focused tests are chosen by a recorded search of the tracked test files for every touched path, name and identifier, and a repair repeats it.\n\nAnchor: \"Choose a freeze's focused tests by searching\"",
+      "note": "A freeze's focused tests are chosen by a recorded search of the tracked test files for every touched path, name and identifier, and a repair repeats it.\n\nAnchor: \"search tracked tests\"; \"apply the same search on repairs\"",
       "targets": [
         {
           "anchor": {
-            "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
-            "content": "sha256:5bca58348a9cedbcb2afa0005c0f48deeef34ae14c2e6eca830a36c509d470a5",
+            "blob": "ba302ee5ee35f8341db142ae02dcb244ca25fb98",
+            "content": "sha256:c3742b9d452f176764ac37b1717082ec532f8928d73bcc40eeb896589d7c5c94",
             "locator": {
-              "end": 20,
+              "end": 4,
               "kind": "line_range",
-              "start": 20
+              "start": 4
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "345008053e007cf0ca4e57917a2f17501f1f7eee",
+            "content": "sha256:241eb91a8fe002be55e1ec233e26cf554bcabac37c993cc5934ae57b76cd0a3e",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/worker/sync-and-repairs.md"
           },
           "kind": "code"
         }

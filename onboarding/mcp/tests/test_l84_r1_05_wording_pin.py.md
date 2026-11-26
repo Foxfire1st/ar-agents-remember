@@ -22,7 +22,9 @@ Pins individual lifecycle wording that must stay exact: the correct-write hand-w
 - The sentence is pinned once in every carrier and fails when cut. [3]
 
 - The source homes carry the Architect wording. [6]
+
 - The sandbox rules hold once in each home and not in the sandbox detail. [7]
+
 - The Reviewer's repair-and-continue rule is pinned. [8]
 - Every carrier names the same tool and input class. [9]
 

@@ -1,0 +1,142 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_opening_offload.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "986035016a79f5bbea388aee0cdff3f2a2c1c0c5",
+        "content": "sha256:4d4f0a93cfbbb9bafef8d1d877385e30c42b900b404155ede2b55e8fe7a08060",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_held_opening_batch"
+        }
+      },
+      "id": "RLZ-40THES",
+      "invariant": "INV-ZVD184",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-zvd184",
+        "leaf": "261124-CAP-L2"
+      },
+      "rationale": "Evaluates settings.role_message_limit at held-seat open time and writes read-only content-addressed .held-batch-<sha256>.md sidecars via preflight and write_once.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "986035016a79f5bbea388aee0cdff3f2a2c1c0c5",
+        "content": "sha256:e55b84b8c5e8039e958c1c567dd4c1480ce35040a53b84aec880e41145b52589",
+        "locator": {
+          "kind": "symbol",
+          "name": "format_bounded_appendix"
+        }
+      },
+      "id": "RLZ-H7W98A",
+      "invariant": "INV-ZVD184",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-zvd184",
+        "leaf": "261124-CAP-L2"
+      },
+      "rationale": "Bounds Unicode inline preview text strictly to <= limit characters (down to limit=1) excluding the single trailing pointer line.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "986035016a79f5bbea388aee0cdff3f2a2c1c0c5",
+        "content": "sha256:1c3314f80b7b19d35f8627ec0e3b56286611568886c2dc438896c5c3bf3a704f",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_direct_opening_message"
+        }
+      },
+      "id": "RLZ-R7BCA1",
+      "invariant": "INV-ZVD184",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-zvd184",
+        "leaf": "261124-CAP-L2"
+      },
+      "rationale": "Prepares bounded direct opening text and receipt-tracked .opening-message.md sidecar metadata under settings.role_message_limit.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`resolve_role_message_limit` and `selection_repo_id` resolve `role_message_limit` from repository or coordination settings in task/master/sprint reference order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "986035016a79f5bbea388aee0cdff3f2a2c1c0c5",
+            "content": "sha256:8c3f9f530232d42496e6aba72bd21168f874420c412dcaccf6f05bdeb6028942",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_role_message_limit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`format_bounded_appendix` bounds Unicode inline previews strictly to `limit >= 1` (empty preview for `limit < 4`) with one exempt pointer line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "986035016a79f5bbea388aee0cdff3f2a2c1c0c5",
+            "content": "sha256:e55b84b8c5e8039e958c1c567dd4c1480ce35040a53b84aec880e41145b52589",
+            "locator": {
+              "kind": "symbol",
+              "name": "format_bounded_appendix"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`prepare_direct_opening_message`, `preflight_opening_message_artifact`, and `write_opening_message_artifact` plan and publish read-only `.opening-message.md` sidecars via `immutable_artifact`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "986035016a79f5bbea388aee0cdff3f2a2c1c0c5",
+            "content": "sha256:1c3314f80b7b19d35f8627ec0e3b56286611568886c2dc438896c5c3bf3a704f",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_direct_opening_message"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`checked_opening_message_target` and `restore_opening_message_artifact` validate receipt `openingMessageArtifact` evidence and restore missing sidecars from verified receipt bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "986035016a79f5bbea388aee0cdff3f2a2c1c0c5",
+            "content": "sha256:f862511dfc934d433eb56395398728743b19f58925003ae83709ffb8fb0957d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "checked_opening_message_target"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`prepare_held_opening_batch` enforces open-time `role_message_limit` and writes content-addressed `.held-batch-<sha256>.md` sidecars via `preflight` and `write_once`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "986035016a79f5bbea388aee0cdff3f2a2c1c0c5",
+            "content": "sha256:4d4f0a93cfbbb9bafef8d1d877385e30c42b900b404155ede2b55e8fe7a08060",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_held_opening_batch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

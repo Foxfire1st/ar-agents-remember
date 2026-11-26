@@ -16,7 +16,8 @@ First-message texts are a role's role file, the role-addressed passages of its o
 
 ## Evidence
 
-- A pointer's action is its sentence's opening Before/When/For clause, or none. [1]
+- A pointer's action is its table-row trigger (`row: <cell>`), its sentence's opening Before/When/For clause, or none. [1]
+
 
 - Actions and roles are derived for references with a step_detail classification and a Markdown source. [2]
 

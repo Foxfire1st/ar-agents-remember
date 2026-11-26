@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
+        "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
         "content": "sha256:c7a3a5d1cdb7556efb1507e4ceaaad362561cc3df7e2725ce4111ba549031d19",
         "locator": {
-          "end": 57,
+          "end": 27,
           "kind": "line_range",
-          "start": 57
+          "start": 27
         }
       },
       "id": "RLZ-FF4WCC",
@@ -24,28 +24,28 @@
   ],
   "references": {
     "1": {
-      "note": "One master takes one Manager, two or more take one Orchestrator; direct coordination is the developer-chosen exception.",
+      "note": "One master takes one Manager, two or more take one Orchestrator; direct coordination is the developer-chosen exception.\n\nAnchor: `## Choose the coordination owner`",
       "targets": [
         {
           "anchor": {
-            "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
-            "content": "sha256:ae35cfb6ea74638ad05e1c03c8d37abb1426a57a76c9bfc3be365c230ba112be",
+            "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
+            "content": "sha256:3aa8a70aa741d80cba2a04af006ee5b3507a4f2064c80b3b00151749b0d4d80f",
             "locator": {
-              "end": 33,
+              "end": 18,
               "kind": "line_range",
-              "start": 33
+              "start": 18
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-            "content": "sha256:76e00e7ce3e49a4e30717d84e1d6dabc3f9a2342ab3b8b983f30065fe9216131",
+            "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+            "content": "sha256:f0017a86dac93a07d89bea109ab55a3ad0b23feceb3d1e53d52954f2cf144d4c",
             "locator": {
-              "end": 12,
+              "end": 8,
               "kind": "line_range",
-              "start": 10
+              "start": 6
             },
             "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
           },
@@ -54,16 +54,16 @@
       ]
     },
     "2": {
-      "note": "Each independently falsifiable obligation gets a stable ID, version and canonical packet before topology.",
+      "note": "Each independently falsifiable obligation gets a stable ID, version and canonical packet before topology.\n\nAnchor: `## Prepare requirements and recover approval`",
       "targets": [
         {
           "anchor": {
-            "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
-            "content": "sha256:7b0dca449eaf84798877714054e05a0e9eb5771b396bc655f4876023cca50d9f",
+            "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
+            "content": "sha256:40b5da7ab38b2a479e8ab4bdef3878e15309233f063557ad3fc63793b137a336",
             "locator": {
-              "end": 10,
+              "end": 8,
               "kind": "line_range",
-              "start": 8
+              "start": 6
             }
           },
           "kind": "code"
@@ -75,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
-            "content": "sha256:a6a4c2898ff549afbd9bfb1d70e57fdc253d9cf5e908cf2125dcc77084c713ef",
+            "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
+            "content": "sha256:8e16f573dbea8a12eac3013f0797651d899ef4899c03eb25b258195904f71dbb",
             "locator": {
-              "end": 43,
+              "end": 23,
               "kind": "line_range",
-              "start": 43
+              "start": 23
             }
           },
           "kind": "code"
@@ -92,12 +92,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
-            "content": "sha256:44ad84e9bca975aef237b6215e8a53f8cb279aee861e73f76cbe5d1b864d330b",
+            "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
+            "content": "sha256:0f96d0137ba2f62568e07acce9750ed6f8dcb654b723c10567e19af0f5b767eb",
             "locator": {
-              "end": 79,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -109,24 +107,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
-            "content": "sha256:ec1a6f2e1c54a419f51cbef9684dd484aed7a8a8ec281d245b1f0a400ff1a0be",
+            "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
+            "content": "sha256:8966adcfebbe542021d9c53f8da8361f47d6fac64822470f996c782d4f5f57b8",
             "locator": {
-              "end": 49,
+              "end": 33,
               "kind": "line_range",
-              "start": 14
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
-            "content": "sha256:f5f51420d0e8e84d593ce7dc84afccc84c084a1aac8255e3288c7d5c06cac6cf",
-            "locator": {
-              "end": 71,
-              "kind": "line_range",
-              "start": 65
+              "start": 6
             }
           },
           "kind": "code"
@@ -134,16 +120,16 @@
       ]
     },
     "6": {
-      "note": "Before a new leaf starts, the Architect asks once for go or review first, discloses the planned comparison and first-Explain workspace, and records the choice; intent-review-open holds until go.",
+      "note": "Before a new leaf starts, the Architect asks once for go or review first, discloses the planned comparison and first-Explain workspace, and records the choice; intent-review-open holds until go.\n\nAnchor: `intent-review-open`",
       "targets": [
         {
           "anchor": {
-            "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
-            "content": "sha256:10550187e9fe19bfe335b30824eefb735f35a8f835520452d23a5deeaad738af",
+            "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
+            "content": "sha256:8e16f573dbea8a12eac3013f0797651d899ef4899c03eb25b258195904f71dbb",
             "locator": {
-              "end": 47,
+              "end": 23,
               "kind": "line_range",
-              "start": 45
+              "start": 23
             }
           },
           "kind": "code"
@@ -155,26 +141,39 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
-            "content": "sha256:d59a10e3bb41dae735e7c94c470eb439f15ecc9f727468615f5f0f90e035edbc",
+            "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
+            "content": "sha256:dcb80da92973aece1ee628f69b85fe332ff9743f3a16595e4677917e62c3d0a6",
             "locator": {
-              "end": 79,
+              "end": 33,
               "kind": "line_range",
-              "start": 17
+              "start": 11
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
-            "content": "sha256:77bcb1fd1a01f8b2eb55c578c107afd966902163264b8a90e2606b1aeda26023",
+            "blob": "00459247fca0dfd5d42a9eab5e29ae5532c95f3d",
+            "content": "sha256:34fe51021aab06a84952e20889855c83c7f22ea8463966ee60bc49b361fb8007",
             "locator": {
-              "end": 107,
+              "end": 11,
               "kind": "line_range",
-              "start": 107
+              "start": 11
             },
-            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+            "path": "skills/l-01-agent-lifecycles/core/invariants.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27c6e17a2608b695340d65eea706b629a04b0359",
+            "content": "sha256:cd33369bc0955170ea184e9e7afcb73f4d28b6b344ce7840b6898a97c03bb240",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/message-handover.md"
           },
           "kind": "code"
         }

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
-        "content": "sha256:7d47ecf18036fdba20740dcb8d5811898abc1dd0cf142f3275b4eea1a9fc92ee",
+        "blob": "5364ae1c992d0df984d94bbff729f892a4ac5e82",
+        "content": "sha256:389672f3e7b64339d0ecc3f1c0cff0d79d3c8173a769cf9e4fa5434cd9bd0e26",
         "locator": {
           "kind": "file"
         }
@@ -15,12 +15,12 @@
         "handoffEntry": "MIK-R93@v1 rules6,11,13",
         "leaf": "260928-MIK-L93"
       },
-      "rationale": "The loop doctrine names the settings-derived review limit, the task_doc review-state limit and sealed monotonic fix-verification; approval beyond that limit follows operations/review.md without changing parent routing for developer questions.",
+      "rationale": "The loop doctrine names the settings-derived review limit, the task_doc review-state limit and sealed monotonic fix-verification; approval beyond that limit follows reference/review/rounds-and-late-findings.md without changing parent routing for developer questions.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
+        "blob": "5364ae1c992d0df984d94bbff729f892a4ac5e82",
         "content": "sha256:17abd02a916bedd3303aa971ffac1cc6c92b83dfa22ae53e6e19b74ad35227cd",
         "locator": {
           "end": 42,
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
+        "blob": "5364ae1c992d0df984d94bbff729f892a4ac5e82",
         "content": "sha256:093791a5977dafe0bfd9a723389fff016d79cac2c7efa0d142092c0e8ae85fdf",
         "locator": {
           "end": 75,
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
+        "blob": "5364ae1c992d0df984d94bbff729f892a4ac5e82",
         "content": "sha256:17abd02a916bedd3303aa971ffac1cc6c92b83dfa22ae53e6e19b74ad35227cd",
         "locator": {
           "end": 42,
@@ -82,7 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
+            "blob": "5364ae1c992d0df984d94bbff729f892a4ac5e82",
             "content": "sha256:6a1171e595132de6eb6acd0e83d0d10d7e01fd4b617774966ac61eb0db238ec6",
             "locator": {
               "end": 10,
@@ -95,14 +95,14 @@
       ]
     },
     "2": {
-      "note": "Review is opt-in on an agreed seam and explicit baseline/fix-verification mode. Baseline covers the complete agreed diff; fix verification retains sealed findings, with rounds governed by the settings limit and recorded extra-round authority.",
+      "note": "Review is opt-in on an agreed seam and explicit baseline/fix-verification mode. Baseline covers the complete agreed diff; fix verification retains sealed findings, with rounds governed by the settings limit and recorded extra-round authority.\n\nAnchor: `## Request independent review explicitly`",
       "targets": [
         {
           "anchor": {
-            "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
-            "content": "sha256:ce71a11ce19d3b57696af34d56d1cd2009b1b20dad7312d2d2a35e1f9e8c9405",
+            "blob": "5364ae1c992d0df984d94bbff729f892a4ac5e82",
+            "content": "sha256:d7f24cef7c390ff87d14f222d7be441e34d68a1a4c3c001286517e43e9432c60",
             "locator": {
-              "end": 64,
+              "end": 63,
               "kind": "line_range",
               "start": 12
             }
@@ -116,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
+            "blob": "5364ae1c992d0df984d94bbff729f892a4ac5e82",
             "content": "sha256:122088f8fa46ecb6165bdb247233fc8320e1ea4b82d4a62bce757d65ef7a5cc2",
             "locator": {
               "end": 112,
@@ -133,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
+            "blob": "5364ae1c992d0df984d94bbff729f892a4ac5e82",
             "content": "sha256:efa28025d3b0f6e2b0f25d9d531a9ceaee52afebcafe19de5bee5b84c9094f06",
             "locator": {
               "end": 36,
@@ -150,12 +150,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
-            "content": "sha256:ed7031472e1197786ece20bb4299942146af74924677d6ecdfeb30866ac9e04c",
+            "blob": "5364ae1c992d0df984d94bbff729f892a4ac5e82",
+            "content": "sha256:e3cdeb9c56b97f14fef2a13cf0bee051d939b4fe9e2dfe1c031d157d00a49705",
             "locator": {
-              "end": 56,
+              "end": 26,
               "kind": "line_range",
-              "start": 18
+              "start": 26
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5364ae1c992d0df984d94bbff729f892a4ac5e82",
+            "content": "sha256:36b747b9e693f7dfafdd8a0021db3c3a9139e1fa2a200ef585cd0c8329b9e652",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 56
             }
           },
           "kind": "code"
@@ -167,8 +179,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05a244ac9c5c3a911c07f365d2840ed533f5bfd9",
-            "content": "sha256:7d47ecf18036fdba20740dcb8d5811898abc1dd0cf142f3275b4eea1a9fc92ee",
+            "blob": "5364ae1c992d0df984d94bbff729f892a4ac5e82",
+            "content": "sha256:389672f3e7b64339d0ecc3f1c0cff0d79d3c8173a769cf9e4fa5434cd9bd0e26",
             "locator": {
               "end": 112,
               "kind": "line_range",

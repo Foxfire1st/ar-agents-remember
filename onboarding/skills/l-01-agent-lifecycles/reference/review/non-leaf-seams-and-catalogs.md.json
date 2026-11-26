@@ -1,0 +1,59 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/review/non-leaf-seams-and-catalogs.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c4c112e12bd15afade93565931c7d587ae796a58",
+        "content": "sha256:19a7b66410885c7c0950fe93e3a21de762484be35c5cc85f7075ddf02df5bb98",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-JNDA7R",
+      "invariant": "INV-TKJENS",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 3",
+        "leaf": "261124-CAP-L3"
+      },
+      "rationale": "Holds non-leaf exit and plan review seams and multi-seam criteria bindings offloaded from roles/reviewer.md.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The seam and review-type tables bind each seam's target/start-leaf/recipient and fix exact required vs conditional criteria catalogs without brief or Reviewer overrides.\n\nAnchor: `## Review seams and criteria catalogs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4c112e12bd15afade93565931c7d587ae796a58",
+            "content": "sha256:3a896a36d726d4ab0dbb9fa83ac65cec471a3401278475ec9d8fd104f6928bcd",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Master-exit, atomic-master integration, portfolio plan, super-exit, and non-leaf `BLOCK` rules require full item accounting (`addressed`/`delta justified`/`MISSING`) and decomposable baseline fix leaves.\n\nAnchor: `## Master, atomic-master, plan, and portfolio exit reviews`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4c112e12bd15afade93565931c7d587ae796a58",
+            "content": "sha256:fb164e2a0f5850ddd5c2538e4ff0b765da6f10b5fbb1246ab683e862d0dfe53c",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -128,7 +128,7 @@ The existing memory-quality answer now carries cut-card and added-file counts wi
 
 ### Native selection and source-owner qualifications
 
-Role-message transport runs from `mcp/registration/role_agents.py` through `mcp/tools/role_agents.py` to `cli/paseo_role_tools.send_role_message`. The native facade owns recipient resolution, receipt/capacity checks and deliver-or-hold decisions; `cli/role_message_delivery.py` supplies shared message preparation, filing, long-reply and successor helpers, while `cli/role_message_files.py` owns task-scoped file storage. `role_message_limit` rereads settings on each call. Full `body` and attachment records are carried by message files rather than wake text; a long wait reply is filed whole when possible and cut in the answer, with an explicit warning if filing fails. Moving shared helpers does not transfer receipt, capacity or archive authority or admit a runtime source relocation. The private plugin's `index.server.ts` and `server/turn_ended.ts` add bounded mechanical parent wakes, not a semantic acceptance or task-state writer.
+Role-message transport runs from `mcp/registration/role_agents.py` through `mcp/tools/role_agents.py` to `cli/paseo_role_tools.send_role_message`. The native facade owns recipient resolution, receipt/capacity checks and deliver-or-hold decisions; `cli/role_message_delivery.py` supplies shared message preparation, filing, long-reply and successor helpers, while `cli/role_message_files.py` owns task-scoped file storage. `role_message_limit` rereads settings on each call; `cli/role_opening_offload.py` also enforces `role_message_limit` on direct Turn-1 `opening_message` (`.opening-message.md`, evaluated at launch preparation) and held-seat opening batches (`.held-batch-<sha256>.md`, evaluated at open time). Full `body` and attachment records are carried by message files rather than wake text; a long wait reply is filed whole when possible and cut in the answer, with an explicit warning if filing fails. Moving shared helpers does not transfer receipt, capacity or archive authority or admit a runtime source relocation. The private plugin's `index.server.ts` and `server/turn_ended.ts` add bounded mechanical parent wakes, not a semantic acceptance or task-state writer.
 
 Fresh converted leaf closeout validates its exact output in `worktrees/modules/closeout_external.py`. Its `require_gated_recovery`, leaf integration in `worktrees/modules/integration_gate.py`, and leaf recording in `worktrees/modules/record_landing.py` call `leaf_pair_refusal` again. Recovery uses the parent memory tip; integration uses the current source memory tip; recording requires the contract's recorded memory base and retains the closed-history check. Recording judges the recorded closeout code when the landed code contains it, otherwise the landed code itself. Master/checkpoint integration and master recording use the landing-gate port, with net staleness and newly closed history ownership in `application/knowledge_gate/landing.py`, plus the chain proof in `worktrees/series_closeout.py`. Final integration requires all non-abandoned canonical leaves landed; checkpoint and recorded landing prove the leaves already landed, up to the pair they publish or record.
 
@@ -239,7 +239,7 @@ A configured alternative is not a product-supplied model. Selecting a step-up su
 
 Canonical task decisions retain selected step-up provenance across later starts and receipt loss. This is a task-writer publication of launch metadata, not execution-receipt authority over review findings, rounds, limits or acceptance. Host-observed destination stays distinct from requested choices; unconfirmed receipt-loss predecessors are unknown, not today’s base defaults.
 
-Frozen D301/R125 details are immutable request siblings named by source-path hash and composed into instruction pointers before user notes. Ordinary replay and held opening check their deterministic given names, saved handover canonical directory and frozen revisions. A real local role-report folder need not be the report's future task collection directory; a valid legacy report-access link still resolves to the saved handover's folder. Missing details require original bytes. Primary/takeover restoration uses saved bytes; it never regenerates from the current corpus or overwrites changed/nonregular targets.
+Turn-1 compact launches (`compact_links=True`) freeze admitted details into symlink-confined `<stem>.details/<source_path>` directories and emit compact `detail/<source>` and `skill/<rel>` links with JSON-quoted `Link roots:` in `## Launch Context`, while standalone (`compact_links=False`) callers keep flat `.detail-<sha256>.md` siblings; user append/`<overwrite>` notes still compose after detail binding. Ordinary replay and held opening validate either confined nested `.details/<source>` or legacy flat `.detail-<sha256>.md` targets against the saved handover canonical directory and frozen revisions. A real local role-report folder need not be the report's future task collection directory; a valid legacy report-access link still resolves to the saved handover's folder. Missing details require original bytes. `role_handover_restore.py` verifies and restores primary `.handover.txt`, complete `.handover.json`, `.step-up.json` takeover material, and offloaded direct `.opening-message.md` (`openingMessageArtifact`) from saved receipt bytes — resolving either current suffix or legacy prefix `artifact_line` envelopes via `resolve_handover_envelope` — and never regenerates from the current corpus or overwrites changed/nonregular targets. Direct Turn-1 `opening_message` and held-seat opening batches enforce `settings.role_message_limit` via `cli/role_opening_offload.py`, offloading over-limit text to `.opening-message.md` and content-addressed `.held-batch-<sha256>.md` sidecars that `worktrees/role_reports.py::_launch_carrier` excludes from canonical reports alongside `.details/**`.
 
 Takeover material retains previous model/provenance, verdict, remaining findings, earlier report paths and advisory bounded dirty inventories in the unchanged worktree. A failed creation after settled retirement can leave an empty step-up seat; repeat the same request/selection/reason/overrides against its saved call. This changes no Reviewer or review budget and is not a review verdict.
 
@@ -390,7 +390,9 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - Citation preview adds modes to the existing declaration. [390]
 
 - Raw Git output prevents newline normalization from collapsing pathname identities. [340]
+
 - A changed candidate tree needs the bounded clean-sync proof at the door. [341]
+
 - Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [336]
 - Explicit task preparation follows deterministic bounded archive successors and returns only a validated live workspace; folder opening stays separate. [323]
 - **Retained historical source account — superseded by the current route account:** The facts and where they come from. [1]
@@ -697,9 +699,11 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 
 - The packaged Worker role text delegates candidate setup to repository tool notes and records the interpreter each run used. [286]
 
+
 - Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [380]
 
 - `PUBLIC_TOOLS` is one literal tuple of 44 public names, including the native role, retirement and knowledge operations and excluding `dispatch_agent`. The landing-answer helper keeps cut and added counts and bounds inline rows; the Curator's curation operation requires an independent statement-by-statement fact-check before closeout. [288]
+
 
 
 
@@ -868,8 +872,11 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - **Retained historical source account — superseded by the current route account:** Closeout invokes mandatory candidate gate before publication [296]
 
 
+
 - **Retained historical source account — superseded by the current route account:** The index format bump for the seal fix. [36]
+
 - The family-complete internal leaf selection accepts path and family seeds. The mounted reader's public leaf reply projects naming rows from the selection. [45]
+
 - The worktree layer checks whether the converted leaf gate applies and refuses an unbound gate. It passes the exact candidate trees and any judged memory commit to the gate. Closeout separately marks the owner's history closed. [5]
 - **Retained historical source account — superseded by the current route account:** The history-row rule over every file's subjects and the leaf's own file. [6]
 

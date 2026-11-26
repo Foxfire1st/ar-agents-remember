@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "678adb9706701070f5f6b01f59848bebcc17593c",
-    "commit": "437d4d8935373432fb112a4a15d31e5d5f1bbcc2",
+    "codeTree": "15c10f70f6e931e93fc46ba86770662f8db079e8",
+    "commit": "6eb67e8ec4ef00afa54348123b6e6afd1cef1dc8",
     "role": "curator",
-    "statement": "Merged KNO-L6, 261126-SYN, and 261125-DEP-L6 on synced code tree 678adb970670 (commit 437d4d893537): docs/design/python-evidence-system.md pins no test or artifact counts and accurately describes the seven accepting lanes, canonical catalog layout, and source-derived consumer lists across all 831 cataloged modules (681 unit-regression) and 18 contracts / 123 artifacts in mcp/tests/evidence-lifecycle.toml.",
-    "task": "261125-DEP-L6",
-    "uncommitted": false
+    "statement": "Audited docs/design/python-evidence-system.md in full (lines 1-295) against final synced code tree 15c10f70 (base 6eb67e8e): pins no counts; all seven accepting lanes, diagnostic lane, canonical catalog rules (841 modules, 18 contracts / 123 artifacts), fixtures, quality obligations, DependencyOwnershipGraph, retry-v3, and commands match live code with zero contradictions.",
+    "task": "261124-CAP-L3",
+    "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
   "id": "DPD-ZMQ523",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 26,
+  "revision": 27,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "b8e4aa8e44ccff1ebe6fe7845462c154cc17f6fa",
+      "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "a8b75f7b17de17cc980f83fd2077f17befd72e7a",
+      "blob": "884bfca77d3918141360d799434cf4234f069731",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },
@@ -107,14 +107,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T18:24:49+01:00",
+    "at": "2026-11-26T21:11:14+01:00",
     "by": "agent",
-    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-5",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
-    "task": "261125-DEP"
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

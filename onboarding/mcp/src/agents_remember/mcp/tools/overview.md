@@ -228,6 +228,7 @@ Anchor: `role_start_set_payload`, `role_start_payload`, `role_message_payload`, 
 - Current ordinary model roster has 44 names, including citation_note_revision, ten ordered registrars include explainer control, and the facade exports its DTO/builder; a valid explainer binding adds four tools to the ordinary registration. [63]
 
 - The seam that pages a converted tree's read, and the per-page extras. [4]
+
 - **Retained historical source account — superseded by the current route account:** Knowledge selection and paging replace database-facing requests. [53]
 
 - The writer answer carries bounded notes and a full report location. The writers branch returns a writer aggregate. [69]

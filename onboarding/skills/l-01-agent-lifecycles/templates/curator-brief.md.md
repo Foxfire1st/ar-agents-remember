@@ -10,6 +10,7 @@ The brief retains exact paired roots, producer fields and source-lineage require
 
 - The brief retains exact paired roots, producer fields and source-lineage requirements. It defers code and memory lanes to the review operation, where MEMORY review is separately sealed/counted and a pass beyond the settings limit needs architect/developer approval recorded by Manager, not a fresh CODE baseline. File-only message material, passed-candidate evidence and independent acceptance are distinct. [6]
 
+
 ## Message/file transport
 
 This canonical template requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and the packaged copy share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.
@@ -46,7 +47,7 @@ That projection is evidence, not a caller-selected commit authority. The Manager
 and requires `sourceLineage.state=current`. A stale or unavailable result synchronizes/reconciles before curation;
 the curator never documents stale source and never repairs code.
 
-Routing and handover rules sit in detail files: `reference/curator/change-routing.md` for routing change-set and notes items, `reference/curator/memory-handover.md` for the memory handover to the Reviewer, and `reference/message-handover.md` for message payloads and full-store refusals; the Manager's compilation checks point to `operations/curation.md#authority-gates`, `operations/coordination.md#start-leaf-stages-and-deliver-the-first-intake` and `operations/review.md`.
+Routing and handover rules sit in detail files: `reference/curator/change-routing.md` for routing change-set and notes items, `reference/curator/memory-handover.md` for the memory handover to the Reviewer, and `reference/message-handover.md` for message payloads and full-store refusals; the Manager's compilation checks point to `operations/curation.md#checks-and-gates`, `operations/coordination.md#start-leaf-stages-and-deliver-the-first-intake` and `operations/review.md#rounds`.
 
 ## Invariants And Boundaries
 
@@ -85,5 +86,6 @@ No cross-repository implementation dependency governs this template.
 The authored file is the canonical contract; its measured byte-equal package copy is a distribution carrier, not an independent role, task or permission authority.
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [8]
+
 
 - The Manager starts the Curator stage through the coordination operation after code PASS; the Worker and Reviewer hand their inputs directly. [9]

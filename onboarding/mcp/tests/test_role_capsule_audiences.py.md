@@ -79,39 +79,55 @@ Detail checks cover all declared role/operation pairs and require every declared
 
 - The Curator receives ruled step details separately and keeps the writer boundaries. [5]
 
+
 - Manager curation receives neither the Curator's card nor the writer's steps. [6]
+
 
 - The real D301 capsules deliver named step files as frozen launch artifacts. [7]
 
+
 - The Curator's capsule keeps the whole handover and its step limits. [8]
+
 
 - Curator execution support is an unconditional inline output. [10]
 
+
 - External backing output stays inline. [11]
 
+
 - Bootstrap requires reproducibility rather than reader execution. [12]
+
 
 - Delivered authoring resolves the actual capsule routing. [13]
 
 
 
+
 - Leaf role texts mark only their own completed steps. [17]
+
 
 - Every Curator stage keeps the serving build's producer boundary. [18]
 
+
 - Memory-review instructions select the independent recorded lane. [19]
 
+
 - The test checks the Worker and Curator instruction text for a stop when the same check or finding still fails after three of their own repairs, and for telling the Manager. [22]
+
 
 - For every declared role/operation pair the delivered detail records equal the role's and operation's pointer actions; each read action binds to exactly one link to the detail's emitted file, each emitted detail round-trips its revision, size and read-only mode, and intake-wording, missing-target, duplicated-paragraph and empty-step mutations must fail; the census covers every declared pair and every declared detail. [9]
 
 
-- The Curator's delivered curation workflow is numbered one to five with the checks, fact-check and repair headings; its delivered details equal its role and curation pointer actions, each bound to its read action, and its role section carries no numbered workflow. [15]
+
+- The Curator's delivered curation workflow is numbered one to four before the `### Checks and gates` heading; its delivered details equal its role and curation pointer actions, each bound to its read action, and its role section carries no numbered workflow. [15]
+
 
 
 - Nested Curator details are read through their launch artifacts: the prose-and-history detail binds card history to the card-formats detail, the knowledge-ingest detail binds a deciding or writing command-line run to the serving-build detail, and the serving-build detail binds such a run to `server_info.servingBuild` and names Orientation as the authority owner. [16]
 
+
 - The hand-off file is read for the first review and reused for repairs. [14]
+
 
 - Declared step detail bytes travel as separate references. [2]
 
@@ -119,9 +135,11 @@ Detail checks cover all declared role/operation pairs and require every declared
 
 - The operation-source test keeps authorized closeout at audience=all and operations/closeout.md; every other operation uses sections and begins with the common audience marker. [21]
 
-- The current Reviewer-addressed review paragraph says a clean sync opens no new freeze or round, the Worker reruns focused tests, the Manager gets the Curator's read for a changed pair before routine closeout, overlapping paths or failing tests trigger review of exactly the repair, and a freeze lacking finding entries is returned without counting a round. [23]
+- The current Reviewer-addressed review paragraph says to name the leaf, candidate, path and next stretch, never read Worker chat, return reports missing per-finding entries without counting a round, open no round on clean syncs, and review overlap or test-failure repairs only. [23]
+
 
 - The current planning text asks the developer once "go, or review first?", discloses planned comparison without a task workspace and explainer-workspace creation on first Explain, and records the intentReview answer. Current coordination says intent-review-open waits for Architect go and is not retried. [25]
+
 
 
 - The detail census covers every declared role and operation pair. Each declared read action is asserted to bind once to the exact emitted detail link. [27]

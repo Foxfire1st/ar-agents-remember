@@ -21,4 +21,5 @@ The tests import the repository renewal module and digest-map test-support consu
 ### Repo-Internal References (renewed)
 
 - Relocation, changed passages, independent associations and held-hash-proven HEAD text exercise no-write and explicit-binding controls. [1]
+
 - Independent new units, evidence, places and clauses, repository-map controls and reader coverage require their own authored decisions. [2]

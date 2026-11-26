@@ -122,10 +122,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
-            "content": "sha256:e96e387e41dfe6b96e639b38e9747bf0c36efe6b2e4a497b7677ceb34b3fa1c1",
+            "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
+            "content": "sha256:fcb1e79c9b098fb82eeb59ad28856c5c4af174104bd60897ea8acda804d9ce8e",
             "locator": {
-              "end": 192,
+              "end": 198,
               "kind": "line_range",
               "start": 115
             },
@@ -166,12 +166,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+            "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
             "content": "sha256:d6b7d2e092b9d8daa53b591f28ba8c13dce72499d72a345ef3e2070608570e09",
             "locator": {
-              "end": 281,
+              "end": 287,
               "kind": "line_range",
-              "start": 236
+              "start": 242
             },
             "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
@@ -184,12 +184,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+            "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
             "content": "sha256:116f20c356ac4d340fa3f2c4cc126016f9fa8fd202979134bdfc71d523be9c94",
             "locator": {
-              "end": 498,
+              "end": 504,
               "kind": "line_range",
-              "start": 461
+              "start": 467
             },
             "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
@@ -215,10 +215,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
-            "content": "sha256:e96e387e41dfe6b96e639b38e9747bf0c36efe6b2e4a497b7677ceb34b3fa1c1",
+            "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
+            "content": "sha256:fcb1e79c9b098fb82eeb59ad28856c5c4af174104bd60897ea8acda804d9ce8e",
             "locator": {
-              "end": 192,
+              "end": 198,
               "kind": "line_range",
               "start": 115
             },
@@ -233,12 +233,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+            "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
             "content": "sha256:8cee6267b28a79d32bb14a3c5aa44ec227bdfd536bd55bfec09ef19c8314f0de",
             "locator": {
-              "end": 333,
+              "end": 339,
               "kind": "line_range",
-              "start": 284
+              "start": 290
             },
             "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
@@ -336,12 +336,12 @@
         },
         {
           "anchor": {
-            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+            "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
             "content": "sha256:8cee6267b28a79d32bb14a3c5aa44ec227bdfd536bd55bfec09ef19c8314f0de",
             "locator": {
-              "end": 333,
+              "end": 339,
               "kind": "line_range",
-              "start": 284
+              "start": 290
             },
             "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
@@ -349,12 +349,12 @@
         },
         {
           "anchor": {
-            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+            "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
             "content": "sha256:d1020bcb1bf04503d4cecf3f0ae6f8d1398a1184165f192fa8164e97d9af7119",
             "locator": {
-              "end": 330,
+              "end": 336,
               "kind": "line_range",
-              "start": 330
+              "start": 336
             },
             "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
@@ -362,10 +362,10 @@
         },
         {
           "anchor": {
-            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
-            "content": "sha256:e96e387e41dfe6b96e639b38e9747bf0c36efe6b2e4a497b7677ceb34b3fa1c1",
+            "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
+            "content": "sha256:fcb1e79c9b098fb82eeb59ad28856c5c4af174104bd60897ea8acda804d9ce8e",
             "locator": {
-              "end": 192,
+              "end": 198,
               "kind": "line_range",
               "start": 115
             },
@@ -392,12 +392,12 @@
         },
         {
           "anchor": {
-            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+            "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
             "content": "sha256:8cee6267b28a79d32bb14a3c5aa44ec227bdfd536bd55bfec09ef19c8314f0de",
             "locator": {
-              "end": 333,
+              "end": 339,
               "kind": "line_range",
-              "start": 284
+              "start": 290
             },
             "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
@@ -405,12 +405,12 @@
         },
         {
           "anchor": {
-            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
+            "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
             "content": "sha256:d1020bcb1bf04503d4cecf3f0ae6f8d1398a1184165f192fa8164e97d9af7119",
             "locator": {
-              "end": 330,
+              "end": 336,
               "kind": "line_range",
-              "start": 330
+              "start": 336
             },
             "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
@@ -430,10 +430,10 @@
         },
         {
           "anchor": {
-            "blob": "fdca1eccddb9d7967e01eaafe009030ff907258f",
-            "content": "sha256:e96e387e41dfe6b96e639b38e9747bf0c36efe6b2e4a497b7677ceb34b3fa1c1",
+            "blob": "8a00864e16ad65452dd2ead718760a9f98ba85a9",
+            "content": "sha256:fcb1e79c9b098fb82eeb59ad28856c5c4af174104bd60897ea8acda804d9ce8e",
             "locator": {
-              "end": 192,
+              "end": 198,
               "kind": "line_range",
               "start": 115
             },

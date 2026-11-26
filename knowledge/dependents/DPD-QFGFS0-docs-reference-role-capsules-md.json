@@ -7,6 +7,19 @@
     "task": "261125-DEP-L2",
     "uncommitted": true
   },
+  "deferrals": [
+    {
+      "condition": {
+        "task": "261124-CAP-L5"
+      },
+      "createdAt": "2026-11-26T12:09:27.104933Z",
+      "createdByLeaf": "261124-CAP-L3",
+      "id": "DFR-BKQ5CP",
+      "owner": "261124-CAP",
+      "passage": "docs/reference/role-capsules.md intro (lines 3-9), ## The files of a launch (lines 14-29), and ## Held starts and held messages (lines 39-51)",
+      "reason": "Directly contradicted by CAP-L1/L3: claims flat .detail-<sha256>.md files instead of nested <stem>.details/ with Link roots, and claims AR handover artifacts opens the first message instead of trailing it; omits 3-tier disclosure, token ceilings, and Poka-Yoke refusal pointers; owned by 261124-CAP-L5."
+    }
+  ],
   "document": "docs/reference/role-capsules.md",
   "id": "DPD-QFGFS0",
   "origin": {
@@ -17,7 +30,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -82,14 +95,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T07:08:02+01:00",
+    "at": "2026-11-26T13:09:23+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L2",
+    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
-    "task": "261125-DEP"
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

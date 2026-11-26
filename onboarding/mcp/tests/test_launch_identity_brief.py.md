@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Unittest suite verifying that `brief_prompt` and `_compile_handover` place the `server_info` identity self-check paragraph in every role's opening brief preamble (between the AR-tools line and the first-read/handover sections) and that all three parent role authoring sources (`architect.md`, `orchestrator.md`, `manager.md`) carry the `IDENTITY MISMATCH:` recovery rule.
+Unittest suite verifying that `brief_prompt` and `_compile_handover` place the `server_info` identity self-check paragraph in every role's opening brief preamble (between the AR-tools line and the instructions/first-read/handover sections) and that all three parent role authoring sources (`architect.md`, `orchestrator.md`, `manager.md`) carry the `IDENTITY MISMATCH:` recovery rule.
 
 ## Code Commentary
 
@@ -22,6 +22,6 @@ Unittest suite verifying that `brief_prompt` and `_compile_handover` place the `
 
 ## Evidence
 
-- Verifies all `server_info` identity self-check clauses and exact preamble ordering in `brief_prompt` between the AR-tools paragraph and first-read/instructions/handover sections. [1]
+- Verifies all `server_info` identity self-check clauses and exact preamble ordering in `brief_prompt` between the AR-tools paragraph and instructions/first-read/handover sections. [1]
 - Compiles canonical capsules via `_compile_handover` for all six roles (`architect`, `orchestrator`, `manager`, `worker`, `reviewer`, `curator`), checking preamble placement, projection fields, and parent recovery rule. [2]
 - Verifies `architect.md`, `orchestrator.md`, and `manager.md` each carry `EXPECTED_PARENT_RULE` with exactly one `IDENTITY MISMATCH:` occurrence. [3]

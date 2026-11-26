@@ -26,10 +26,12 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 
 - Review is opt-in on an agreed seam and explicit baseline/fix-verification mode. Baseline covers the complete agreed diff; fix verification retains sealed findings, with rounds governed by the settings limit and recorded extra-round authority. [2]
 
+
 - Requirement compilation into stable ID and version packets precedes task topology. [3]
 
 - Settings-governed rounds, recorded extra-round approval and preserved stage/ownership boundaries. [4]
 
 - Organizational leaf review and atomic integration review keep distinct scopes; a changed label or coordinating level creates no new baseline, and no listed change resets the sealed findings. [5]
+
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [6]

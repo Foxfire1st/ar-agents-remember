@@ -1,0 +1,95 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/review/advisory-reviews.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "751c7b6ce2eec596dbf9e74ace15b16dcca10704",
+        "content": "sha256:eb0ddf88fe0fc0979615e6222468bc15e601f6940d386589d3d4c8fc7763eac6",
+        "locator": {
+          "end": 32,
+          "kind": "line_range",
+          "start": 23
+        }
+      },
+      "id": "RLZ-B6YVXW",
+      "invariant": "INV-EM1Y66",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-architect-advice",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The optional advisory lane leaves the Reviewer verdict as the grade; advisory findings go to that Reviewer for explicit rulings, with disagreement owned by Architect/developer.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "751c7b6ce2eec596dbf9e74ace15b16dcca10704",
+        "content": "sha256:173da043202dbeae83fda281018a0df002c826c1adfd2fea9399052e3f57427a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-XMD89B",
+      "invariant": "INV-TKJENS",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 3",
+        "leaf": "261124-CAP-L3"
+      },
+      "rationale": "Holds Architect-only advisory independent review rules offloaded from operations/review.md.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Advisory reviews are commissioned only by the Architect via taskless `role_start`, keeping the leaf's single Reviewer seat and Manager non-relay rule.\n\nAnchor: `### Commission a separate view`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "751c7b6ce2eec596dbf9e74ace15b16dcca10704",
+            "content": "sha256:1d9fe66fa4ae8ebc74523046035e9df9523afce890c8a912eb6edccef4c704f2",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Isolation rules supply identical freeze inputs with separate folders/clean copies/ports and forbid reading Reviewer, Curator, Manager, or peer advisory artifacts.\n\nAnchor: `### Give each Investigator the same material`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "751c7b6ce2eec596dbf9e74ace15b16dcca10704",
+            "content": "sha256:cf46916dbb16a55b3adc2bad93f6f6992667caf2508f3e4314d8a6b7093a575f",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Advisory reports alter no verdict alone: the Architect sends one questions file to the Reviewer, tells the Manager once, grants any extra round, and checks every ruling before landing; permissions follow `#formal-permissions`.\n\nAnchor: `### Compare and route the findings`; `### Account for costs and permissions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "751c7b6ce2eec596dbf9e74ace15b16dcca10704",
+            "content": "sha256:14fd7762c57ac8e791290217309b98851acf3778f385a4d7ad09edb17d335d11",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

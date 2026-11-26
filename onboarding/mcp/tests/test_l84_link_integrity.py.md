@@ -25,8 +25,12 @@ Proves that every link, anchor and `skill://` URI in the delivered `l-01-agent-l
 - Every delivered link and anchor resolves in the source and the package. [3]
 - The GitHub anchor keeps one hyphen per space. [4]
 - The planted link mutants are enumerated by kind. [5]
+
 - Every mutant fails, the GitHub-form anchor passes, and package skill URIs resolve in the package. [6]
+
 - The acceptance file does not point at its own approval definition. [7]
 - Every fragment link in one skill is checked for its file and section. [8]
+
 - Every skill's section links resolve in the source and the package. [9]
+
 - Re-pointing a relative section link at a missing section fails as a missing anchor. [10]

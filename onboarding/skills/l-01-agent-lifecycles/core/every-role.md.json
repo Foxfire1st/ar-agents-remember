@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
-        "content": "sha256:bd5f642568a16b212d99a96f46cbd4296dad6f896fba09e43331b96679fd902a",
+        "blob": "f5b3f64633a651c44081098ef5bb89203e068538",
+        "content": "sha256:e3bd9cbd6d06b7c24baa2e253992c4153180725109a5b5ef4af0225f9985a03b",
         "locator": {
-          "end": 61,
+          "end": 15,
           "kind": "line_range",
-          "start": 59
+          "start": 15
         }
       },
       "id": "RLZ-2N35WC",
@@ -17,17 +17,17 @@
         "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-continuation",
         "leaf": "260928-MIK-L62"
       },
-      "rationale": "For its Curator audience these two shared lines deliver helper collection and the declared wait/continuation facet on any harness (`WAITING FOR SUBAGENTS:` for helpers, `WAITING FOR BACKGROUND:` for a process the seat started, `check in <N> minutes`); they are not a claim about all other digest duties.",
+      "rationale": "Shared always-on line delivering declared helper (WAITING FOR SUBAGENTS:) and background (WAITING FOR BACKGROUND:) wait markers and no-parent-progress rule on any harness.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
-        "content": "sha256:9f9759235f4c0a8f57c6fca59487062009e24e90cb92c3cb5b25a9b3180a696d",
+        "blob": "f5b3f64633a651c44081098ef5bb89203e068538",
+        "content": "sha256:c4d01fa00689d68b1bae27eba0d13320f23fa95f449b3f55ccf460bb2efa84c9",
         "locator": {
-          "end": 33,
+          "end": 11,
           "kind": "line_range",
-          "start": 33
+          "start": 11
         }
       },
       "id": "RLZ-7HMV9A",
@@ -41,31 +41,29 @@
     },
     {
       "anchor": {
-        "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
-        "content": "sha256:c44bed67caf14c02aea98bb49ab5ae4c6bc00ad654b31774edbfd65e35938f86",
+        "blob": "f5b3f64633a651c44081098ef5bb89203e068538",
+        "content": "sha256:fda58cd22dac9080d0ff8dcb93b49a20985c84c54c780be64d5a1045790dfabd",
         "locator": {
-          "end": 61,
-          "kind": "line_range",
-          "start": 55
+          "kind": "file"
         }
       },
-      "id": "RLZ-8YK88K",
-      "invariant": "INV-JAACMT",
+      "id": "RLZ-D4DDFG",
+      "invariant": "INV-X0VQ3D",
       "origin": {
-        "handoffEntry": "L62-CUR-6414-continuation",
-        "leaf": "260928-MIK-L62"
+        "handoffEntry": "CAP-R03@v1 Rule 2",
+        "leaf": "261124-CAP-L3"
       },
-      "rationale": "Shared digest explicitly preserves native within-turn collection and the declared helper and background wait behavior on any harness.",
+      "rationale": "Provides the condensed Tier-0 hard-invariant kernel filtered per role at compile time.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
-        "content": "sha256:c3f3e2b4092731aaf56133904887433a289f0b29c993cc0e5425dfeee1eec41c",
+        "blob": "f5b3f64633a651c44081098ef5bb89203e068538",
+        "content": "sha256:4ea50aeedb53d5a9f4031ddc7756ffffc8502cbc1a200b496d3e05d2653b432b",
         "locator": {
-          "end": 131,
+          "end": 33,
           "kind": "line_range",
-          "start": 131
+          "start": 33
         }
       },
       "id": "RLZ-DAQF88",
@@ -79,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
-        "content": "sha256:9eb4bebc4833c06bbdc6d1ea71621a417743e89b603c80e800dc6b53256ca201",
+        "blob": "f5b3f64633a651c44081098ef5bb89203e068538",
+        "content": "sha256:e3bd9cbd6d06b7c24baa2e253992c4153180725109a5b5ef4af0225f9985a03b",
         "locator": {
-          "end": 61,
+          "end": 15,
           "kind": "line_range",
-          "start": 61
+          "start": 15
         }
       },
       "id": "RLZ-ECXHS8",
@@ -98,12 +96,12 @@
     },
     {
       "anchor": {
-        "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
-        "content": "sha256:0423c63d873969296820c17d7e9628363f5f7928d402a36fb0e86317d7995afa",
+        "blob": "f5b3f64633a651c44081098ef5bb89203e068538",
+        "content": "sha256:5613c1b38b81f6009d10643368305f35a5c91d0eafa4f62a7ce8d33c916ee6ba",
         "locator": {
-          "end": 75,
+          "end": 27,
           "kind": "line_range",
-          "start": 75
+          "start": 27
         }
       },
       "id": "RLZ-H7VFZZ",
@@ -117,8 +115,8 @@
     },
     {
       "anchor": {
-        "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
-        "content": "sha256:68e960fd780493a3aa6cef46f6a8f5edf5643bd863f03b0933295911a9fda68b",
+        "blob": "f5b3f64633a651c44081098ef5bb89203e068538",
+        "content": "sha256:fda58cd22dac9080d0ff8dcb93b49a20985c84c54c780be64d5a1045790dfabd",
         "locator": {
           "kind": "file"
         }
@@ -129,32 +127,32 @@
         "handoffEntry": "MIK-R84@v5 part1 / L62 shared digest",
         "leaf": "260928-MIK-L84"
       },
-      "rationale": "This file is the shared digest body delivered in first messages.",
+      "rationale": "Canonical shared every-role digest source that compile_admitted_capsule seals in full and filters per canonical role via filter_shared_block for admitted native role openings.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
-        "content": "sha256:94911875e5e2a8f43621fff80235373d45d9755de8ae61b4c1bace6fa903828b",
+        "blob": "f5b3f64633a651c44081098ef5bb89203e068538",
+        "content": "sha256:4ea50aeedb53d5a9f4031ddc7756ffffc8502cbc1a200b496d3e05d2653b432b",
         "locator": {
-          "end": 127,
+          "end": 33,
           "kind": "line_range",
-          "start": 127
+          "start": 33
         }
       },
-      "id": "RLZ-MVDAQ8",
-      "invariant": "INV-5KBX7C",
+      "id": "RLZ-P0ZH30",
+      "invariant": "INV-4E130M",
       "origin": {
-        "handoffEntry": "L62-CUR-6db-attach-INV-5KBX7C",
-        "leaf": "260928-MIK-L62"
+        "handoffEntry": "Preservation (flags and acceptance)",
+        "leaf": "260928-MIK-L90"
       },
-      "rationale": "Closeout tree identity comes from the latest named passing verdict files, preserving Manager gate/evidence ownership.",
-      "role": "primary-authority"
+      "rationale": "The shared Evidence and handovers line establishes Completion != acceptance across all roles (and roles/orchestrator.md:8 explicitly states Paseo state does not record AR acceptance).",
+      "role": "support"
     },
     {
       "anchor": {
-        "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
-        "content": "sha256:68e960fd780493a3aa6cef46f6a8f5edf5643bd863f03b0933295911a9fda68b",
+        "blob": "f5b3f64633a651c44081098ef5bb89203e068538",
+        "content": "sha256:fda58cd22dac9080d0ff8dcb93b49a20985c84c54c780be64d5a1045790dfabd",
         "locator": {
           "kind": "file"
         }
@@ -165,20 +163,20 @@
         "handoffEntry": "MIK-R60@v7.1-2",
         "leaf": "260928-MIK-L60"
       },
-      "rationale": "Shared always-on digest; line 81 (option C) names task_doc on agents-remember-task for Architect, Orchestrator, Manager and Worker.",
+      "rationale": "Shared always-on digest; line 29 names task_doc for Architect, Orchestrator, Manager, Worker and Bootstrap, and tool-involving pointers name their AR tools.",
       "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "The digest states shared and role-qualified duties, including scope-based `retire_child` authority and that a Manager's end line naming the working child and awaited stage declares a named wait for report-sender continuation checks; its source-unit mapping lives in the digest map.\n\nAnchor: source",
+      "note": "The digest states shared and role-qualified duties, including scope-based `retire_child` authority and that a Manager's end line naming the working child and awaited stage declares a named wait for report-sender continuation checks; its source-unit mapping lives in the digest map.\n\nAnchor: `retire_child`; `named wait`",
       "targets": [
         {
           "anchor": {
-            "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
-            "content": "sha256:68e960fd780493a3aa6cef46f6a8f5edf5643bd863f03b0933295911a9fda68b",
+            "blob": "f5b3f64633a651c44081098ef5bb89203e068538",
+            "content": "sha256:fda58cd22dac9080d0ff8dcb93b49a20985c84c54c780be64d5a1045790dfabd",
             "locator": {
-              "end": 149,
+              "end": 33,
               "kind": "line_range",
               "start": 1
             }
@@ -192,7 +190,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:d6444e20cae443139bda5e4729917a083fc9c643d5e0db2eb3a0375c0d1bbb85",
             "locator": {
               "end": 160,
@@ -206,16 +204,16 @@
       ]
     },
     "3": {
-      "note": "Shared rules for scratch paths and live-host operation.",
+      "note": "Shared rules for Git roots, scratch paths, and live-host operation.\n\nAnchor: `scratch roots`; `live-host`",
       "targets": [
         {
           "anchor": {
-            "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
-            "content": "sha256:6ce7f2282bb2c70bbbb00af7bdf717ed6b5543e28e987a826f373de710e9c19f",
+            "blob": "f5b3f64633a651c44081098ef5bb89203e068538",
+            "content": "sha256:3ad5f849255c2d15a5483f1aa6910c23f92aacdb9c5c4c734217599bcc91bd49",
             "locator": {
-              "end": 17,
+              "end": 9,
               "kind": "line_range",
-              "start": 13
+              "start": 9
             }
           },
           "kind": "code"
@@ -223,16 +221,40 @@
       ]
     },
     "4": {
-      "note": "Shared rules for counting from the producing call, comparing builds before reporting a mismatch, and naming sandbox versions and graphics setup.",
+      "note": "Shared rules for calling AR tools only on `agents-remember-task`, binding Architect/Reviewer ceilings to `WIRE_TOKEN_CEILINGS` and `COMPILED_CAPSULE_TOKEN_CEILINGS`, and checking the full population.",
       "targets": [
         {
           "anchor": {
-            "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
-            "content": "sha256:4b281af793b9616ec462df0f72820300391979ce0f7d8eeed045c7fd5dec6c62",
+            "blob": "f5b3f64633a651c44081098ef5bb89203e068538",
+            "content": "sha256:9417a65ed5728a000ea6f08a443fad2bb4a7183e5da6965ac87be6ab41323aaa",
             "locator": {
-              "end": 115,
+              "end": 7,
               "kind": "line_range",
-              "start": 105
+              "start": 7
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5b3f64633a651c44081098ef5bb89203e068538",
+            "content": "sha256:8de75ce173c1e31d43dd49f62fb9d97217e0b2c4dc6cc12ce409ec2ce19a40a4",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5b3f64633a651c44081098ef5bb89203e068538",
+            "content": "sha256:4ea50aeedb53d5a9f4031ddc7756ffffc8502cbc1a200b496d3e05d2653b432b",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
             }
           },
           "kind": "code"
@@ -240,16 +262,16 @@
       ]
     },
     "5": {
-      "note": "`role_start` names no mode, the overridden-start instruction concerns the seat's features, and `retire_child` applies by role scope.\n\nAnchor: source",
+      "note": "`retire_child` applies by role scope (Architect all scopes, Manager master and leaves, Orchestrator sprint, masters and leaves), and pushes, PRs, releases, and `--no-verify` require developer delegation.\n\nAnchor: `retire_child`",
       "targets": [
         {
           "anchor": {
-            "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
-            "content": "sha256:2742a7e7feb8b3231b0d0cace55f5bbd649c4453125a54d9e5089e0531f00fe0",
+            "blob": "f5b3f64633a651c44081098ef5bb89203e068538",
+            "content": "sha256:c4d01fa00689d68b1bae27eba0d13320f23fa95f449b3f55ccf460bb2efa84c9",
             "locator": {
-              "end": 33,
+              "end": 11,
               "kind": "line_range",
-              "start": 25
+              "start": 11
             }
           },
           "kind": "code"

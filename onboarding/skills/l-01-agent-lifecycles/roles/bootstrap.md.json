@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1932e1048e02929da857033da376474be2f5bb19",
-        "content": "sha256:dfeb754dd69851760d35bc2eb5df1bcb46d26ce4ed11aee2c72342a72e04e795",
+        "blob": "682428dee782b38ba4bf88f8dbb30183662f2079",
+        "content": "sha256:292b937834bdb9186cc4f70c74a2530c61145ba90ec03909a86395ca3c3a762c",
         "locator": {
           "kind": "file"
         }
@@ -15,13 +15,13 @@
         "handoffEntry": "R99-14-harness-work",
         "leaf": "260928-MIK-L99"
       },
-      "rationale": "bootstrap receives the same assignment autonomy and responsibility bounds in its own composed role text.",
+      "rationale": "Retains Bootstrap's role-specific helper bound ('Helpers assist read-only queries only.' at line 18) while shared helper-autonomy and seat-boundary doctrine lives in SKILL.md:39, core/authority.md:35, and core/invariants.md:79.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "1932e1048e02929da857033da376474be2f5bb19",
-        "content": "sha256:dfeb754dd69851760d35bc2eb5df1bcb46d26ce4ed11aee2c72342a72e04e795",
+        "blob": "682428dee782b38ba4bf88f8dbb30183662f2079",
+        "content": "sha256:292b937834bdb9186cc4f70c74a2530c61145ba90ec03909a86395ca3c3a762c",
         "locator": {
           "kind": "file"
         }
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "1932e1048e02929da857033da376474be2f5bb19",
-        "content": "sha256:dfeb754dd69851760d35bc2eb5df1bcb46d26ce4ed11aee2c72342a72e04e795",
+        "blob": "682428dee782b38ba4bf88f8dbb30183662f2079",
+        "content": "sha256:292b937834bdb9186cc4f70c74a2530c61145ba90ec03909a86395ca3c3a762c",
         "locator": {
           "kind": "file"
         }
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "1932e1048e02929da857033da376474be2f5bb19",
-        "content": "sha256:dfeb754dd69851760d35bc2eb5df1bcb46d26ce4ed11aee2c72342a72e04e795",
+        "blob": "682428dee782b38ba4bf88f8dbb30183662f2079",
+        "content": "sha256:292b937834bdb9186cc4f70c74a2530c61145ba90ec03909a86395ca3c3a762c",
         "locator": {
           "kind": "file"
         }
@@ -76,65 +76,54 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1932e1048e02929da857033da376474be2f5bb19",
-            "content": "sha256:7b8d340a98eb0b9052c3424ad3724e50c6a2ffb13b4c652870ab7352a5a30fd2",
+            "blob": "682428dee782b38ba4bf88f8dbb30183662f2079",
+            "content": "sha256:84ad4a75b87a879c7926dc6470a87317839f267fd2067610400d926bf9aff668",
             "locator": {
-              "end": 54,
+              "end": 18,
               "kind": "line_range",
-              "start": 54
+              "start": 14
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "1932e1048e02929da857033da376474be2f5bb19",
-            "content": "sha256:6ecfc010da88268e8f8db34b32a17fd822a5ce6a658660a9e60655d9c4d275b5",
+            "blob": "7680a8ce4879b626d3f045071f4e515dcec16a8b",
+            "content": "sha256:2316ac516b3afe66e15f40eee120da64f2bc756971e492d5264217911eb9df2f",
             "locator": {
-              "end": 30,
+              "end": 20,
               "kind": "line_range",
-              "start": 30
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1932e1048e02929da857033da376474be2f5bb19",
-            "content": "sha256:dd2ab5407d960755a08062f3d9701c82f06386bbc098fee4fd1b596ea1a42244",
-            "locator": {
-              "end": 24,
-              "kind": "line_range",
-              "start": 24
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1932e1048e02929da857033da376474be2f5bb19",
-            "content": "sha256:269e6e485ca98e685afebb7785a4d1c8e6d3e39361f5bac9e8ba1c9d2976f358",
-            "locator": {
-              "end": 56,
-              "kind": "line_range",
-              "start": 56
-            }
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "Bootstrap reads through `context_packet`, `server_info` and `read_ar_files`, and is forbidden `retire_child` and the other lifecycle tools beyond its setup surfaces.",
+      "note": "Bootstrap reads through `context_packet`, `server_info` and `read_ar_files`, and is forbidden `retire_child` and the other lifecycle tools beyond its setup surfaces.\n\nAnchor: `read_ar_files`",
       "targets": [
         {
           "anchor": {
-            "blob": "1932e1048e02929da857033da376474be2f5bb19",
-            "content": "sha256:b23c5e84c88a4e504600df9976ba501e0e9486da5b3124b3952d004e79a32466",
+            "blob": "682428dee782b38ba4bf88f8dbb30183662f2079",
+            "content": "sha256:0681f78fc2baf38250fd9dd7d98c070de2a692416821d536d490436bbbe36ed0",
             "locator": {
-              "end": 52,
+              "end": 10,
               "kind": "line_range",
-              "start": 36
+              "start": 10
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682428dee782b38ba4bf88f8dbb30183662f2079",
+            "content": "sha256:853917691efca25e5ea861c5a94e013608fb6ac0831a2c22a972d353c631b2fb",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
             }
           },
           "kind": "code"

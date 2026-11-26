@@ -22,33 +22,29 @@
     "leaf": "260928-MIK-L88",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "routes": [
-    "mcp/src/agents_remember/models/role_capsules",
+    "mcp/src/agents_remember/application/role_capsules",
+    "mcp/src/agents_remember/application/skill_resources",
     "mcp/src/agents_remember/cli",
-    "skills/l-01-agent-lifecycles",
+    "mcp/src/agents_remember/models/role_capsules",
     "mcp/src/agents_remember/serving",
-    "mcp/test_support/agents_remember_test_support/testing"
+    "mcp/src/agents_remember/worktrees",
+    "mcp/test_support/agents_remember_test_support/testing",
+    "scripts/agent_evals",
+    "skills/l-01-agent-lifecycles"
   ],
   "schema": "ar-family/v1",
   "title": "Selected stage and immutable detail delivery",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L84",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-25T20:08:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+    "task": "261124-CAP"
   }
 }

@@ -34,11 +34,14 @@ When `assert_action_pointer` finds a missing or repeated action pointer, its ass
 
 - MESSAGE_HANDOVER_SOURCE pins reference/message-handover.md and MESSAGE_HANDOVER_ACTIONS names each role's pointer action. The busy-retry alternatives require a pending record, independent work, one resend before turn end and a still-pending state after another full-store refusal. The consuming clause_surface path checks this detail through the actual admitted role and operation; the literal oracle does not establish that a live sender followed it. [3]
 
+
 - The Manager's refused-write pointer stands at its task retirement and movement action. [5]
 
 
 
+
 - delivered_step uses real admission, compilation and launch composition to require one selected detail with exact source and bytes and a nonempty step that the launch record repeats, one pointer at the named action, resolved Markdown links and no unresolved detail token. Source inspection is not an executed check. Role-scoped alternatives preserve the instructed facets; Worker clauses name individual stage starts and direct peer handovers. [2]
+
 
 ### Repo-Internal References (renewed)
 

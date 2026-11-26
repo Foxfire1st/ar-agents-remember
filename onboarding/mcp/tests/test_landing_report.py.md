@@ -61,12 +61,14 @@ function alone.
 - Added paths carry individual sizes and a total while the knowledge roots are excluded. [3]
 - Two hundred cut rows keep whole counts and bounded slim first rows within the answer token limit. [4]
 
-- Curator sources and the canonical compiled capsules retain the three protected clauses, the first inside the Produce the handover section; each discovered Reviewer root states both protected landing sentences inline in the compiled Reviewer role's Inspect and verify the candidate section and in the emitted launch instructions, with no separate memory-change detail. [5]
+- Each discovered Reviewer root keeps `reference/review-memory-changes.md` absent and delivers both protected landing sentences (along with `cutCards` and `addedFiles`) through the bound Tier-2 detail `reference/review/rounds-and-late-findings.md` under `## Omission repairs, whole-set findings, and memory changes`, referenced from `roles/reviewer.md` and emitted in `detailReferences` and launch instructions. [5]
+
 
 - The admitted memory base retains cuts and additions across a mid-leaf commit. [6]
 - Repeated-line hash work is compared at two sizes. [9]
 
-- The role-text cases accept the scoped Curator equivalent and exercise deletion controls, plus handover-heading removal and relocation of the first sentence, on both source roots and on compiled canonical Curator/curation. Both Reviewer landing sentences are checked in the compiled role section and the emitted instructions with per-sentence deletion controls. [10]
+- The role-text case checks Curator's three landing sentences (with deletion, handover-heading removal, and relocation controls) in `reference/curator/exceptions-and-recovery.md` across both surviving roots (canonical and packaged) and in the compiled canonical Curator/curation capsule's delivered detail. [10]
+
 
 - Real knowledge-gate evaluation is complete and non-refusing with the populations aboard in the disposable fixture. [7]
 

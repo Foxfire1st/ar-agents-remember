@@ -16,4 +16,5 @@ Before explaining an assigned contract, the Curator inspects the relevant docume
 
 - Governing documentation comes from the resolved sources registry and is opened, not taken from the registry entry. [1]
 - Decisions that still constrain code become decision records; task-only decisions stay in the task. [2]
-- The Curator role links the decision section before authoring a decision record. [3]
+
+- The Curator role reference index links this file under Cards/style. [3]

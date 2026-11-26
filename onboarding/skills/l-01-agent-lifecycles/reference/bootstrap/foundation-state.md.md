@@ -18,5 +18,7 @@ The single next step is to start the Architect: the foundation is the Architect'
 
 - The foundation is authored records under `knowledge/`, distinct from cards and baseline, and Bootstrap reports one of four states. [1]
 - The next step is to start the Architect; the Curator authors the foundation inside the Architect's task, and Bootstrap claims no foundation work. [2]
+
 - The role file points to the state section before reading and reporting. [3]
+
 - The Bootstrap operation points to the next-step section before naming it. [4]

@@ -125,16 +125,27 @@
       ]
     },
     "12": {
-      "note": "The current check reads renewed measurements and ceilings from capsule-budgets-current.json, and handover rows from this registry; separate tests preserve historical D656 and D681 decisions.",
+      "note": "The current check reads renewed measurements from `capsule-budgets-current.json` and handover rows from `capsule-budgets.json`; separate tests preserve historical D656 and D681 decisions.",
       "targets": [
         {
           "anchor": {
-            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
-            "content": "sha256:ad7b79c23a40739c579cf8119c869e813f06944aad458f1ec7a3c741e1e8c001",
+            "blob": "9afa21f9a90536745291dd65898186efc8ee14b6",
+            "content": "sha256:e1a70d115a8f6cdeca925b31ba5c8bd13d43f7817cacaf51f7a2e1894b8f589a",
             "locator": {
-              "end": 474,
-              "kind": "line_range",
-              "start": 373
+              "kind": "symbol",
+              "name": "test_ceiling_raises_keep_the_measured_duty_words"
+            },
+            "path": "mcp/tests/test_role_capsule_budgets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9afa21f9a90536745291dd65898186efc8ee14b6",
+            "content": "sha256:2abf9d4546b7a4abcf852a0e364d0b92f53f6813b9a74eb39782482cba9e2292",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_capsule_exceeds_its_recorded_budget"
             },
             "path": "mcp/tests/test_role_capsule_budgets.py"
           },
@@ -143,16 +154,15 @@
       ]
     },
     "2": {
-      "note": "The test checks fresh compiled sizes and renewed measurements against current ceilings.",
+      "note": "The test checks fresh compiled sizes against renewed measurements in `capsule-budgets-current.json` via `current_budget_findings`.",
       "targets": [
         {
           "anchor": {
-            "blob": "5880fa9616f342dfc50c1ca8e5fa6a2e45e0487a",
-            "content": "sha256:2853efdc91be3b79e781e0e42d7c2967b425e1cceb513f1573df3511220693cf",
+            "blob": "9afa21f9a90536745291dd65898186efc8ee14b6",
+            "content": "sha256:2abf9d4546b7a4abcf852a0e364d0b92f53f6813b9a74eb39782482cba9e2292",
             "locator": {
-              "end": 474,
-              "kind": "line_range",
-              "start": 469
+              "kind": "symbol",
+              "name": "test_no_capsule_exceeds_its_recorded_budget"
             },
             "path": "mcp/tests/test_role_capsule_budgets.py"
           },
@@ -160,12 +170,24 @@
         },
         {
           "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
-            "content": "sha256:566cd4138538906715ef81f2473c8f0bfa1d6d88356c04189426646e182b1c5b",
+            "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
+            "content": "sha256:8cd4193ea8d7a96e50b0e83efc204bdfa1ad03b084e670af07f4072d08f9c00a",
             "locator": {
-              "end": 77,
+              "kind": "symbol",
+              "name": "current_budget_findings"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
+            "content": "sha256:2d2dbc40b42e85784a1eca78117a32670bbc33b49aa4aba3f3ee8e3004322025",
+            "locator": {
+              "end": 61,
               "kind": "line_range",
-              "start": 48
+              "start": 45
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },

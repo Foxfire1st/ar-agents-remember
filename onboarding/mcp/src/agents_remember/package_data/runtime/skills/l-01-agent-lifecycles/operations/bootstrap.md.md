@@ -24,9 +24,9 @@ of re-entry.
 of a task document is the shape of the operation, not a repairable error, and `bootstrap` is its only carrier.
 
 **Required inputs.** Workspace facts rather than task facts: the code repository the developer means and its
-absolute root; the resolved `coordinationRoot` and `workspaceRoot` from `server_info` on the `agents-remember-task`
-server; whether a memory root already resolves and in what state; and the developer's two decisions — which branch
-is the foundation (the spear), and whether they are scaffolding a new memory repo or pointing at an existing one.
+absolute root; the resolved `coordinationRoot` and `workspaceRoot` from `server_info`; whether a memory root
+already resolves and in what state; and the developer's two decisions — which branch is the foundation (the spear),
+and whether they are scaffolding a new memory repo or pointing at an existing one.
 
 **The workflow, each step on its owning surface.** Say what Agents Remember is and what setup will change; establish
 the resolved context or name the missing fact; take the spear-branch decision and record it as the memory repo's
@@ -37,8 +37,8 @@ baseline will carry and author none of it; adopt the first attributed baseline t
 knowledge foundation's state and hand its making to the Architect.
 
 **One harness per role, chosen once.** Ask which harness each role should use, offering only the harnesses the host
-runs, and let one harness serve every role if that is the answer — at least one is required. Model, effort and the
-rest stay unset on purpose, so a role whose settings name only a harness starts on that harness's own defaults. An
+runs, and let one harness serve every role if that is the answer — at least one is required. Model, effort and mode
+stay unset on purpose, so a role whose settings name only a harness starts on that harness's own defaults. An
 existing settings file that holds its own choices is read and reported, never overwritten, merged or completed: a
 harness-only file is a valid start, so an existing file is not a gap. A refused write is reported with its path and
 reason, and this seat changes no mode.
@@ -47,14 +47,14 @@ reason, and this seat changes no mode.
 settings path and what initialization did, the baseline's existence and commit, whether onboarding exists (read,
 never authored here), the knowledge foundation's recorded identity or the named state that says it is not, and
 every skipped step's reason. The one next step it names is the Architect, whose first regular work is the
-foundation through `c-14`'s registered-leaf task route (`reference/bootstrap/foundation-state.md`).
+foundation (`reference/bootstrap/foundation-state.md`).
 
 ## Conventions
 
-Each step names its owning surface and its `c-*` procedure — `c-00-initialize-memory-repo` for the memory root,
-`c-10-adopt-memory-baseline` for the baseline, `c-14-knowledge-bootstrap` for the foundation — and points at it
-rather than restating its procedure. The tools named are called on the `agents-remember-task` tool server. The two
-detail references, the foundation handover and the failure states, are read when their step is reached, not before.
+Each step names its owning surface and guide (`docs/guides/onboard-existing-repo.md` for the memory root,
+`docs/guides/adopt-existing-memory.md` for the baseline, `reference/bootstrap/foundation-state.md` for the foundation)
+rather than restating its procedure (the shared every-role digest binds all AR tool calls to `agents-remember-task`).
+The two detail references, the foundation handover and the failure states, are read when their step is reached, not before.
 
 ## Invariants And Boundaries
 

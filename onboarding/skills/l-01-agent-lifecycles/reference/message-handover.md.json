@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+        "blob": "27c6e17a2608b695340d65eea706b629a04b0359",
+        "content": "sha256:505e3760e145355dadfc1cacbc15ee1ebe53dc89a669f46b9b92d53a0d9a9f9c",
+        "locator": {
+          "end": 38,
+          "kind": "line_range",
+          "start": 36
+        }
+      },
+      "id": "RLZ-1K4M96",
+      "invariant": "INV-JAACMT",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-continuation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Single Tier-2 home for continuing admitted repairs, checks and handover steps in one turn without a new Manager go, collecting helpers' results, and ending only at handover, a named wait or nearly full context.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "27c6e17a2608b695340d65eea706b629a04b0359",
         "content": "sha256:d2361c041520e47dc53252935b86b81d71b14a866988db84103429f55fab6f4a",
         "locator": {
           "end": 9,
@@ -22,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+        "blob": "27c6e17a2608b695340d65eea706b629a04b0359",
         "content": "sha256:420507f18927dea45ce8f6498e093f5d5cf0489686259fab9537f94a97ac098c",
         "locator": {
           "end": 17,
@@ -41,7 +60,7 @@
     },
     {
       "anchor": {
-        "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+        "blob": "27c6e17a2608b695340d65eea706b629a04b0359",
         "content": "sha256:d2361c041520e47dc53252935b86b81d71b14a866988db84103429f55fab6f4a",
         "locator": {
           "end": 9,
@@ -60,7 +79,7 @@
     },
     {
       "anchor": {
-        "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+        "blob": "27c6e17a2608b695340d65eea706b629a04b0359",
         "content": "sha256:481e7283663a7a146f604f5b327c809c40f7843f814cf1ac17571f621fb975a1",
         "locator": {
           "end": 34,
@@ -84,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+            "blob": "27c6e17a2608b695340d65eea706b629a04b0359",
             "content": "sha256:ba9cc768a7b09584acd8a8106e1ed7d91c51a9930bd0302912a73df4fbaaf2f4",
             "locator": {
               "end": 9,
@@ -101,7 +120,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+            "blob": "27c6e17a2608b695340d65eea706b629a04b0359",
             "content": "sha256:cd33369bc0955170ea184e9e7afcb73f4d28b6b344ce7840b6898a97c03bb240",
             "locator": {
               "end": 19,
@@ -118,7 +137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+            "blob": "27c6e17a2608b695340d65eea706b629a04b0359",
             "content": "sha256:1c4de79b9c0e6ee76c38abb7901ba1649cfabac4772201e7540125836435e754",
             "locator": {
               "end": 34,
@@ -135,7 +154,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b90508e32ca01aad41af4242409e6ab533ad2175",
+            "blob": "f6902925631dc9f3ccc6fcc52d20c7b019f8831e",
             "content": "sha256:008a9d834646564a39bfc0b0f957c855878328eca3c3e4fb664c80e66df6e370",
             "locator": {
               "end": 108,
@@ -143,6 +162,23 @@
               "start": 108
             },
             "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Seats continue step to step and wave to wave in one turn without waiting for a new Manager go, ending only at verdict/handover, a named wait, or nearly full context.\n\nAnchor: `Continue through steps and waves in one turn`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27c6e17a2608b695340d65eea706b629a04b0359",
+            "content": "sha256:505e3760e145355dadfc1cacbc15ee1ebe53dc89a669f46b9b92d53a0d9a9f9c",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 36
+            }
           },
           "kind": "code"
         }

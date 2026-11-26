@@ -85,4 +85,5 @@ No meaningful cross-repo references found.
 
 - The content half whose digest must stay independent of these shapes. Anchor: `CapsuleCapsule` `CapsuleCompilationResult` [1]
 - The digest document that must not reference any field of this module. Anchor: `semantic_digest` [3]
-- The application outcome that pairs a capsule or a refusal with this manifest. Anchor: `CapsuleCompilationOutcome` `render_explanation` [4]
+
+- The application outcome that pairs a capsule or a refusal with this manifest. [4]

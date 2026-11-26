@@ -46,6 +46,7 @@ The closeout door first allows the recorded candidate tree itself. For a differe
 - The door admits only exact-tree or bounded clean-sync review provenance, with task evidence still independently validated. [3]
 
 
+
 ### Docs References
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "7195713289a089ccffa4b031d4ddcbf941781a99",
-    "commit": "da65eb23a46a9b67683b002fd418996e3f7486c5",
+    "codeTree": "b3131ef29cf948ee4830a48540585bc841530c3a",
+    "commit": "6eb67e8ec4ef00afa54348123b6e6afd1cef1dc8",
     "role": "curator",
-    "statement": "Audited README.md in full against post-sync L56 tree 71957132 (base da65eb23): high-level product overview, landing/closeout summary, and install/packaging guidance remain accurate after record_landing.py adopted master_document_base.",
-    "task": "261112-BUG-L56",
+    "statement": "Audited README.md in full (lines 1-221) against Round-4 CODE PASS tree b3131ef2: version 3.0.8, Python >=3.14,<3.15, memory/gate summary, five install steps, and stability promise remain accurate after CAP-L3 slimming of operations/bootstrap.md.",
+    "task": "261124-CAP-L3",
     "uncommitted": true
   },
   "document": "README.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 16,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
     {
-      "blob": "8d1b5e00d1cf12fac5ed5c9fbf2ad95dfd878573",
+      "blob": "7680a8ce4879b626d3f045071f4e515dcec16a8b",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
     },
@@ -92,14 +92,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T19:03:01+01:00",
+    "at": "2026-11-26T13:09:23+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L56",
+    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
-    "task": "261112-BUG"
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

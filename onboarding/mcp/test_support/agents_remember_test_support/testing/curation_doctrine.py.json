@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "266bb77d9f283e6605193658145b39fd45228f6f",
+        "blob": "916169c6fcae655d619aae08b0c2cdf6fb28d1d3",
         "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "266bb77d9f283e6605193658145b39fd45228f6f",
+        "blob": "916169c6fcae655d619aae08b0c2cdf6fb28d1d3",
         "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "266bb77d9f283e6605193658145b39fd45228f6f",
+        "blob": "916169c6fcae655d619aae08b0c2cdf6fb28d1d3",
         "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "266bb77d9f283e6605193658145b39fd45228f6f",
-        "content": "sha256:7353c3d687fe5dd1b45f8382108f44fbb105f007224fcffe13bf4ac02d0b6a98",
+        "blob": "916169c6fcae655d619aae08b0c2cdf6fb28d1d3",
+        "content": "sha256:79e17a62b7a42f938edfb4034d746d5788f57e963814189531346f512e6ca732",
         "locator": {
           "kind": "symbol",
           "name": "CURATION_POLICY_STATEMENTS"
@@ -70,12 +70,12 @@
         "handoffEntry": "MIK-R60@v7.1-2",
         "leaf": "260928-MIK-L60"
       },
-      "rationale": "Requires each Curator pointer sentence to name the AR tool it asks for, so a role text that drops the tool name fails the corpus guard.",
+      "rationale": "Pins required tool names (memory_quality_check, curator_coherence) and detail pointers in compact curation surfaces so dropping them fails the corpus guard.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "266bb77d9f283e6605193658145b39fd45228f6f",
+        "blob": "916169c6fcae655d619aae08b0c2cdf6fb28d1d3",
         "content": "sha256:8f981c11f1290686733d9086a5107bdf08e1dfc3328aa7937b4143a226db6598",
         "locator": {
           "end": 571,
@@ -99,7 +99,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "266bb77d9f283e6605193658145b39fd45228f6f",
+            "blob": "916169c6fcae655d619aae08b0c2cdf6fb28d1d3",
             "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
             "locator": {
               "kind": "symbol",
@@ -115,8 +115,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "266bb77d9f283e6605193658145b39fd45228f6f",
-            "content": "sha256:7353c3d687fe5dd1b45f8382108f44fbb105f007224fcffe13bf4ac02d0b6a98",
+            "blob": "916169c6fcae655d619aae08b0c2cdf6fb28d1d3",
+            "content": "sha256:79e17a62b7a42f938edfb4034d746d5788f57e963814189531346f512e6ca732",
             "locator": {
               "kind": "symbol",
               "name": "CURATION_POLICY_STATEMENTS"
@@ -131,7 +131,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "266bb77d9f283e6605193658145b39fd45228f6f",
+            "blob": "916169c6fcae655d619aae08b0c2cdf6fb28d1d3",
             "content": "sha256:80e23f169ad36abba8bc3cc96a01cb023726735e99839b386125c1821c2b0461",
             "locator": {
               "kind": "symbol",
@@ -147,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "266bb77d9f283e6605193658145b39fd45228f6f",
+            "blob": "916169c6fcae655d619aae08b0c2cdf6fb28d1d3",
             "content": "sha256:debeac8cac97a796bf8a8abb553c6449ce20d0ebe002c6f53f4f7a95202fdee2",
             "locator": {
               "kind": "symbol",
@@ -163,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
+            "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
             "content": "sha256:a299d712543a1c91d213a2773ed8b56ea87dd0a171a76de1a75d2bd980aa02e2",
             "locator": {
               "kind": "symbol",
@@ -196,7 +196,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "266bb77d9f283e6605193658145b39fd45228f6f",
+            "blob": "916169c6fcae655d619aae08b0c2cdf6fb28d1d3",
             "content": "sha256:47e847ec3a92737fe465f022a2037299013b89d5f11fe48345571a8a93b54840",
             "locator": {
               "kind": "symbol",
@@ -208,12 +208,12 @@
       ]
     },
     "8": {
-      "note": "The operation tuple carries `COMPLETE_CURATION_RULE` and the six other curation clauses, including publication with one judgment per candidate or an empty list; the Curator tuple carries two pointer sentences into the operation's sections.",
+      "note": "The operation tuple carries `COMPLETE_CURATION_RULE` and four other curation clauses (including coherence `prepare`->`publish` with `1/candidate or empty`->`validate`); the Curator tuple carries two detail links (`coherence`, `exceptions`) and the single-writer-lane clause; `exceptions-and-recovery.md` carries two recovery-obligation clauses.",
       "targets": [
         {
           "anchor": {
-            "blob": "266bb77d9f283e6605193658145b39fd45228f6f",
-            "content": "sha256:7353c3d687fe5dd1b45f8382108f44fbb105f007224fcffe13bf4ac02d0b6a98",
+            "blob": "916169c6fcae655d619aae08b0c2cdf6fb28d1d3",
+            "content": "sha256:79e17a62b7a42f938edfb4034d746d5788f57e963814189531346f512e6ca732",
             "locator": {
               "kind": "symbol",
               "name": "CURATION_POLICY_STATEMENTS"
@@ -228,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "266bb77d9f283e6605193658145b39fd45228f6f",
+            "blob": "916169c6fcae655d619aae08b0c2cdf6fb28d1d3",
             "content": "sha256:debeac8cac97a796bf8a8abb553c6449ce20d0ebe002c6f53f4f7a95202fdee2",
             "locator": {
               "kind": "symbol",

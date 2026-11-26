@@ -312,21 +312,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08aa871ab4b90ffc881d2140669906f7af07e217",
+            "blob": "725c3ee3e512ebf727784c26042c7a648825ad2b",
             "content": "sha256:22bc349351bd8af2100aeac13fc4c7778bbc399dba5194344c66299f8b6c8f59",
-            "locator": {
-              "end": 201,
-              "kind": "line_range",
-              "start": 127
-            },
-            "path": "mcp/tests/test_paseo_agent_tools.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "08aa871ab4b90ffc881d2140669906f7af07e217",
-            "content": "sha256:2c1fa5fc562c7174dcaa4c45db2c0e143648ee7d6dbe903ec304e5a00fbd5ec0",
             "locator": {
               "end": 202,
               "kind": "line_range",
@@ -338,12 +325,25 @@
         },
         {
           "anchor": {
-            "blob": "08aa871ab4b90ffc881d2140669906f7af07e217",
+            "blob": "725c3ee3e512ebf727784c26042c7a648825ad2b",
+            "content": "sha256:2c1fa5fc562c7174dcaa4c45db2c0e143648ee7d6dbe903ec304e5a00fbd5ec0",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "725c3ee3e512ebf727784c26042c7a648825ad2b",
             "content": "sha256:2d438796aceb5e76ff5fad176adea4f38eac4e80cd423f215e2fc9fa0092eb2f",
             "locator": {
-              "end": 193,
+              "end": 194,
               "kind": "line_range",
-              "start": 119
+              "start": 120
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
@@ -374,8 +374,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08aa871ab4b90ffc881d2140669906f7af07e217",
-            "content": "sha256:d555adca7c53c7b1261c0e18eb6f8a6433f443d25c2109de813b250ab2956e40",
+            "blob": "725c3ee3e512ebf727784c26042c7a648825ad2b",
+            "content": "sha256:9bdb230edbe726c57a52a7c79a18b857db6125a5ae69bbb60045efbad7cbdafb",
             "locator": {
               "kind": "file"
             },

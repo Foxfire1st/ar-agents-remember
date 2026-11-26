@@ -5,12 +5,11 @@
     ],
     "justification": "Realized across operations/curation.md, roles/curator.md and roles/reviewer.md with the owner-validation half at the accepted common home core/acceptance.md; partial attestation marks the evidence as needing owner validation before state advances."
   },
-  "applicability": "Terminal/finalizer-attested meanings in operations/curation.md, roles/curator.md and roles/reviewer.md.",
+  "applicability": "Terminal/finalizer-attested meanings across core/acceptance.md, core/every-role.md, operations/curation.md, roles/curator.md, and roles/reviewer.md.",
   "conditions": [
-    "The curation operation directly states terminal-only-ended truth.",
+    "core/acceptance.md is the single canonical completion-truth vocabulary speaker; the corpus census rejects undeclared speakers or silent removals.",
     "The gate owner validates semantic acceptance at core/acceptance before advancing state.",
-    "Curator composes the operation handoff home; Reviewer retains local turn-only truth.",
-    "The scoped local surfaces state terminal truth while the accepted common home owns both terminal truth and owner validation."
+    "Curator and Reviewer manuals link core/acceptance.md without duplicating terminal/finalizer wording."
   ],
   "exclusions": [
     "Sweep-wide wording changes in settled role documents outside the retained corpus.",
@@ -28,27 +27,20 @@
     "leaf": "260928-MIK-L70",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "Terminal/finalizer evidence states only that a turn ended. The curation handoff home and composed Curator/Reviewer referrals retain that local truth; semantic owner validation remains at the accepted common acceptance home, not a duplicated both-halves local requirement.",
+  "statement": "Terminal/finalizer evidence states only that a turn ended, single-homed in core/acceptance.md (with Completion != acceptance in core/every-role.md) while operations/curation.md and roles/curator.md, roles/reviewer.md retain curation-is-evidence and direct handover boundaries and point to core/acceptance.md for semantic owner validation.",
   "supersedes": [],
+  "title": "Terminal/finalizer evidence states turn end only at single canonical home",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L117",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T13:09:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

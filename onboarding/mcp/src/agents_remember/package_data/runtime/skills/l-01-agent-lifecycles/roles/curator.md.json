@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
-        "content": "sha256:95de8680982ad844fc99a05d1bb085fa3bf1c1837f38280529c5212db9ad779d",
+        "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+        "content": "sha256:a87590170e4a5857f4411ae66534cf53435a1e9037a6eac345a9faa4666b38b8",
         "locator": {
           "kind": "file"
         }
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d8941a221f92f1337b0b18c9af7bb2318eedac1",
+            "blob": "13fc5b315325836469ef724de5257688d11a2627",
             "content": "sha256:d1cb107832fa807b37b374922855df001cd309c13a97866d10628925183eadbb",
             "locator": {
               "end": 41,
@@ -57,16 +57,16 @@
       ]
     },
     "12": {
-      "note": "Curation keeps reconciliation and memory writing with the Curator and the Git transaction with the Manager; the Curator runs no Git write, closeout preview or landing decision.",
+      "note": "Curation is evidence, not a gate; the Curator runs no Git writes and edits no code, gate, lifecycle, contract or closeout state.",
       "targets": [
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:8f50640da2d94e09cf1dc538da784d7394195b516df1cb2f2856c6e459ef0c6d",
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:9a4ec3ce9f005aec1dae599bc93ce72b9ae5a3dd3c7c0229f14028adba1d0b36",
             "locator": {
-              "end": 18,
+              "end": 28,
               "kind": "line_range",
-              "start": 16
+              "start": 25
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -75,50 +75,16 @@
       ]
     },
     "13": {
-      "note": "The leaf pass starts only on a leaf task document, never taskless; registered tasks belong to a master, and no standalone leaf, fake task, worktree or enclosure is fabricated for the leaf or foundation route.",
+      "note": "The Curator starts on a leaf task document only (`Leaf task doc only`).",
       "targets": [
         {
           "anchor": {
-            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
-            "content": "sha256:7d29c8551fceea6befa2bb3368b9e56702729dafe74d57b7b0f84a8c5bd9f7f6",
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:e7ea4a79503feb2a10e0636b3356bf2a5ad48577dc6f3351120b2a493bccf9bf",
             "locator": {
-              "end": 49,
+              "end": 10,
               "kind": "line_range",
-              "start": 47
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "For every card cut by the quality check the Curator names the source evidence that makes the removed text untrue; text is never removed merely to clear a quality finding.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
-            "content": "sha256:37c54ce0b5a5a9fef8c43de9bd9c0b39bfa0bf19e275f58e28da1d3f0efc8fd7",
-            "locator": {
-              "end": 118,
-              "kind": "line_range",
-              "start": 118
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "The Curator also repairs wrong or missing memory it encounters while curating, whoever left it and beyond the quality check's findings, through the writer; it names each repair, makes no broad sweep and routes repairs needing code, a requirement decision or another leaf's work.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
-            "content": "sha256:f898ec3148ecaeb74251252927c4c5e8ce0edfffdb5573f0e13004aec0353bc2",
-            "locator": {
-              "end": 172,
-              "kind": "line_range",
-              "start": 172
+              "start": 10
             }
           },
           "kind": "code"
@@ -182,12 +148,12 @@
         },
         {
           "anchor": {
-            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
-            "content": "sha256:eb40ba533104177bb0209bbc9be90e6ea79d63e654c5164be02061b7adf1b66d",
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:e7ea4a79503feb2a10e0636b3356bf2a5ad48577dc6f3351120b2a493bccf9bf",
             "locator": {
-              "end": 14,
+              "end": 10,
               "kind": "line_range",
-              "start": 14
+              "start": 10
             }
           },
           "kind": "code"
@@ -213,16 +179,16 @@
       ]
     },
     "3": {
-      "note": "The Curator runs no Git write and edits no code, gate, lifecycle state, worktree contract or closeout state; it edits a task document only as its writer under its assignment with the scoped correct-write recovery, and advances no fingerprint to an uncommitted tree.",
+      "note": "The Curator runs no Git writes and edits no code, gate, lifecycle, contract or closeout state; it creates no fake hashes, uncommitted fingerprints or silencing attestations, starts no roles, and marks curation `done` via `task_doc(set_step)`.\n\nAnchor: `## Boundaries`",
       "targets": [
         {
           "anchor": {
-            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
-            "content": "sha256:637b17373ac98070d32d4516a78c49d38c8233bce7ee4b07ac8d3cb86e6853e7",
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:cd844584ff89591caa6a11f857bdec6c7004d0372a03f94c8657c8420865d6f5",
             "locator": {
-              "end": 162,
+              "end": 21,
               "kind": "line_range",
-              "start": 158
+              "start": 19
             }
           },
           "kind": "code"
@@ -248,16 +214,16 @@
       ]
     },
     "7": {
-      "note": "The Curator writes knowledge with knowledge_write or the admitted serving-build command-line writer with the task contract, handoff list and commit; the commit option authorizes file writes, not Git or acceptance.\n\nAnchor: `knowledge_write`",
+      "note": "The Curator writes `onboarding/` and `knowledge/` via `knowledge_write` or the serving-build CLI with `--commit`/`commit: true` (writing files, not Git), and never edits derived indexes.\n\nAnchor: `knowledge_write`",
       "targets": [
         {
           "anchor": {
-            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
-            "content": "sha256:f953dbf193ecbbd1527e89392eaa4537e6ce4fd6f806fec28da1e4bf3612cbb1",
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:78c872aff6f4ed0e59b6c2598bdc48d1baac4e60cc9ae4b369a359b9c47152ef",
             "locator": {
-              "end": 144,
+              "end": 15,
               "kind": "line_range",
-              "start": 142
+              "start": 10
             }
           },
           "kind": "code"
@@ -265,16 +231,16 @@
       ]
     },
     "8": {
-      "note": "When its part is complete the Curator marks only its own task-document step done through task_doc set_step with a one-line note; an incomplete, blocked or progress report never marks unfinished work done.\n\nAnchor: `task_doc`",
+      "note": "The Curator marks its curation step `done` via `task_doc(set_step)`.\n\nAnchor: `task_doc(set_step)`",
       "targets": [
         {
           "anchor": {
-            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
-            "content": "sha256:9fc1029ada509e1f4ceb7fbf037f09f8d905cba800f712197f1a8dad7bf6151f",
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:afec075119d9fe0643d56aa97c20a7d069e081b9eba90414325b0e281a2760e8",
             "locator": {
-              "end": 180,
+              "end": 21,
               "kind": "line_range",
-              "start": 180
+              "start": 21
             }
           },
           "kind": "code"
@@ -282,16 +248,16 @@
       ]
     },
     "9": {
-      "note": "The stage ends when task knowledge is written and checked and quality is clean, distinguishing installed-writer publication from scoped manual provenance; own faulty-input refusals and coherence findings are repaired through the same writer, and open permission prompts, other correct-input refusals, unowned state and requirement-meaning questions stop the work.",
+      "note": "The Curator fixes faulty inputs on the same writer, repairs its own, tool and coherence faults, and stops to tell the Manager after 3 failed repairs on one item.",
       "targets": [
         {
           "anchor": {
-            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
-            "content": "sha256:fbbb91d1e376a5e9ec3a62fa0d7d79a423bb0647697d35d74ef38507471effb9",
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:afec075119d9fe0643d56aa97c20a7d069e081b9eba90414325b0e281a2760e8",
             "locator": {
-              "end": 176,
+              "end": 21,
               "kind": "line_range",
-              "start": 168
+              "start": 21
             }
           },
           "kind": "code"

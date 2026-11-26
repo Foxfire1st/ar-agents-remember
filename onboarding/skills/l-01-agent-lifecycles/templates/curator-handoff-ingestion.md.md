@@ -26,12 +26,16 @@ When both sides of a master merge changed a dependent, the Curator plans the res
 
 - Every new invariant, family and decision record states an admission criterion and justification. [6]
 - A decision record keeps a governing choice with ordered alternatives, exactly one chosen. [7]
+
 - The Curator role points to this file before ingesting a producer list. [8]
+
 
 - The Curator plans and applies the conflicting dependent through the crossing writer. [9]
 - The record-kind list includes dependent and weakness. [10]
 
 - Knowledge records are one JSON file per record under the kind directory. [4]
+
 - The knowledge-ingest command and `knowledge_write` share the curator file writer and require the knowledge layout marker. [5]
+
 
 - The Curator authors a title for a new rule. A legacy revision may remain untitled, and title-only edits preserve revision identity. [11]

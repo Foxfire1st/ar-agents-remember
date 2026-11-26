@@ -10,13 +10,13 @@ The current size record keeps authored capsule, detail and digest ceilings separ
 
 ## Code Commentary
 
-The generated curation entries record 4,536 words for the Curator and 3,402 for the Manager. The coherence-judgments detail measures 353 words. These measurements sit below the authored ceilings.
+The generated curation entries record 406 words for the Curator and 727 for the Manager. The coherence-judgments detail measures 353 words. These measurements sit below the authored ceilings.
 
-The generated measurement for the Curator handoff ingestion template is 6,630 words and carries the current source digest. The measurement leaves the authored ceilings unchanged.
+The generated measurement for the Curator handoff ingestion template is 6,625 words and carries the current source digest. The measurement leaves the authored ceilings unchanged.
 
-The record has schema `ar-role-capsule-budget-current/v1`. Its `derived.current_measurements` records 34 capsule sizes, 38 declared step-detail sizes, the every-role digest and eight ordinary linked templates. Authored capsule ceilings are Architect 5,500 words, Manager 4,600, Curator 4,537, Reviewer 4,200, Bootstrap 4,000, Orchestrator 3,800 and every other role 3,742; the detail ceiling is 2,500 and the digest ceiling 2,327. Current measurements are facts, not individual item limits.
+The record has schema `ar-role-capsule-budget-current/v1`. Its `derived.current_measurements` records 34 capsule sizes, 44 declared step-detail sizes, the every-role digest (342 words) and eight ordinary linked templates. Authored capsule word ceilings remain recorded in the file (Architect 5,500 words, Manager 4,600, Curator 4,537, Reviewer 4,200, Bootstrap 4,000, Orchestrator 3,800 and every other role 3,742; detail 2,500 and digest 2,327), while active enforcement moved to `COMPILED_CAPSULE_TOKEN_CEILINGS` and `WIRE_TOKEN_CEILINGS` in `wire_budget.py`. Current measurements are facts, not individual item limits.
 
-`derived.current_detail_population` matches the composed manifest's step-detail sources, and the linked-template population matches its ordinary template references. `derived.approved_source_sizes` records measured sizes and source hashes despite its historical key name; `derived.compiler_input_revisions` records current compiler inputs. These generated facts detect same-size source changes without granting approval. The `decision` block retains historical authorities and frozen predecessor hashes. Its active `measuredCurrentRenewalBug08` contains authority only; renewal computes current facts with `mcp/.venv/bin/python scripts/renew-instructions.py`. Growth within an authored ceiling needs no per-item limit increase.
+`derived.current_detail_population` matches the composed manifest's step-detail sources, and the linked-template population matches its ordinary template references. `derived.approved_source_sizes` records measured sizes and source hashes despite its historical key name; `derived.compiler_input_revisions` records current compiler inputs. These generated facts detect same-size source changes without granting approval. The `decision` block retains historical authorities and frozen predecessor hashes. Its active `measuredCurrentRenewalBug08` contains authority only; renewal computes current facts with `mcp/.venv/bin/python scripts/renew-instructions.py`.
 
 The retained `measuredCurrentRenewalWaitsAndCodingGuidelines` sub-record carries
 `measuredCurrentRenewalAlwaysOnToolNames` as `supersededUncommittedRecord`. Its recorded
@@ -27,15 +27,7 @@ not the active renewal or a new source measurement.
 ## Evidence
 
 - Generated measurements cover current capsules, declared details and the shared digest without individual item limits. [2]
-
-
-
-
 - Generated approved source sizes record the Manager brief at 1,463 words and its exact source SHA-256; current generated measurements include ordinary linked templates. [3]
-
-
-
-
 
 - Authored role, detail and digest ceilings are separate from generated measurements. [4]
 
@@ -45,14 +37,6 @@ not the active renewal or a new source measurement.
 
 - Budget checks read current measurements and authored ceilings. [7]
 
-
-
-
-
-
-
-- The generated template measurement records 6,630 words and the current source digest. [11]
+- The generated template measurement records 6,625 words and the current source digest. [11]
 - The decision block retains authority and frozen historical registry and predecessor identities. [1]
-
-
-- The generated size record holds the current curation capsule and judgment detail measurements. [8]
+- The generated size record holds the current curation capsule (406 Curator, 727 Manager) and judgment detail (353) measurements. [8]

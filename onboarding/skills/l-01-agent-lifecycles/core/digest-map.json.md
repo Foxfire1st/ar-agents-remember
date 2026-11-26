@@ -15,12 +15,7 @@ Stable source-unit IDs retain their baseline provenance and authored semantic me
 ## Evidence
 
 - The mapping preserves its baseline inventory and stable unit IDs. [1]
-
-### Repo-Internal References (renewed)
-
-- The unit definition explains ID preservation and the role vocabulary. Anchor: `unitDefinition` [2]
-
-
+- The unit definition explains ID preservation and line-join boundaries. [2]
 - Current units distinguish reference evidence from selected digest lines; retired units keep their record. [3]
 
 

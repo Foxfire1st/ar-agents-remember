@@ -30,7 +30,8 @@ The Architect uses attribution with code reads to diagnose before proposing a re
 
 
 
-- The Reviewer role links the Reviewer section when inspecting changes. [6]
+- The Reviewer role reference index links this file under Baseline/knowledge. [6]
+
 
 
 

@@ -2,19 +2,19 @@
 
 ## Purpose
 
-This area owns the canonical instruction sources and routing metadata for Agents Remember role capsules: role responsibilities, selected operations, preparation and intake templates, reports, review criteria and detail files. `templates/` holds the task, requirement-packet, report, verdict, brief, handoff and onboarding layout templates; `reference/` holds the detail files that role pointers name, grouped into `coordination/architect`, `coordination/shared`, `curator`, `knowledge`, `tasks`, `writing` and `bootstrap` beside a few flat files; `capsule-budgets-current.json` holds the current capsule limits, with `capsule-budgets.json` as the historical registry and `capsule-budgets-d694.json` as the frozen predecessor. `SKILL.md` selects supplied bindings; `roles/` owns seat duties; `operations/` owns procedures; `composition-manifest.json` owns routing metadata. Canonical task facts and paired workspace bindings arrive separately in the handover.
+This area owns the canonical instruction sources and routing metadata for Agents Remember role capsules: role responsibilities, selected operations, preparation and intake templates, reports, review criteria and detail files. `templates/` holds the task, requirement-packet, report, verdict, brief, handoff and onboarding layout templates; `reference/` holds the detail files that role pointers name, grouped into `coordination/architect`, `coordination/shared`, `curator`, `knowledge`, `review`, `tasks`, `worker`, `writing` and `bootstrap` beside a few flat files; `capsule-budgets-current.json` holds authored word ceilings and renewal measurements (while live Turn-1 wire-token and compiled-capsule token ceilings live in `wire_budget.py`), with `capsule-budgets.json` as the historical registry and `capsule-budgets-d694.json` as the frozen predecessor. `SKILL.md` selects supplied bindings; `roles/` owns seat duties; `operations/` owns procedures; `composition-manifest.json` owns routing metadata. Canonical task facts and paired workspace bindings arrive separately in the handover.
 
 The native launcher exposes Architect, Investigator, Orchestrator, Manager, Worker, Reviewer, Curator and Bootstrap. `system-specialist` is an earlier Investigator spelling, not another responsibility. The composition manifest holds exactly these eight roles. The historical capsule registry `capsule-budgets.json` still keys retired `designer/` and `strategist/` capsules, and both it and the current budget record `capsule-budgets-current.json` also key `launcher/` capsules beside the eight roles. Native role capsules compose the selected role followed by one applicable operation, without shared core blocks. `core/` doctrine and `reference/` detail files are reached through the role and operation pointers; its existence does not mean it is injected into every role capsule.
 
 The first message also delivers the shared every-role digest beside the rendered capsule. The manifest declares it separately, and compilation returns its text apart from render_instructions(); the admitted digest revision contributes to semantic identity. This separate delivery does not prepend the larger retained core doctrine to the role/operation instruction stream.
 
-Paseo hosts agents and supplies host delivery. AR persists held role messages and its serving-lifetime loop attempts later delivery without a sender/model turn; while the loop is unavailable, messages remain held. The bound `agents-remember-task` server owns canonical AR task, requirement, knowledge, curation and paired-Git operations. Role and operation text names the tool and this server where it points at an Agents Remember tool action, for example `task_doc`, `role_message` and `knowledge_read` on `agents-remember-task`. Projects is an execution workspace, not a registered repository. Manual taskless Architect and Investigator launches use the supplied outcome/repository or scoped concern without manufacturing a sprint, master or leaf. Investigator is report-first for a concern of any kind, may be selected at sprint, standalone-master or sprint/master scope, and is never selected on a leaf.
+Paseo hosts agents and supplies host delivery. AR persists held role messages and its serving-lifetime loop attempts later delivery without a sender/model turn; while the loop is unavailable, messages remain held. The bound `agents-remember-task` server owns canonical AR task, requirement, knowledge, curation and paired-Git operations. The shared every-role digest binds all AR tool calls to `agents-remember-task` (never `agents-remember`), so role and operation text names bare AR tools such as `task_doc`, `role_message` and `knowledge_read` without repeating the server suffix. Projects is an execution workspace, not a registered repository. Manual taskless Architect and Investigator launches use the supplied outcome/repository or scoped concern without manufacturing a sprint, master or leaf. Investigator is report-first for a concern of any kind, may be selected at sprint, standalone-master or sprint/master scope, and is never selected on a leaf.
 
 ## Hot Path Summary
 
 Ordinary closeout apply and integration return the state reached in their own calls. Read saved ordinary operation records as history. For direct landing, read the current generation and use only the controls it advertises.
 
-A file brief can supply bounded rule text. Use `knowledge_read` on `agents-remember-task` for the complete attributed record. Changing only an invariant’s title preserves its meaning and revision.
+A file brief can supply bounded rule text. Use `knowledge_read` (on `agents-remember-task`, per `core/every-role.md`) for the complete attributed record. Changing only an invariant’s title preserves its meaning and revision.
 
 The canonical frame, roles, review criteria and handoff/impact templates ask AR where governing knowledge lies and open those files with harness-native tools. `context_packet` supplies compact orientation, `read_ar_files` card/overview locations and `knowledge_read` record locations; no provider argument or old resolver call is prescribed. The existing peer loop, exact scoped readers, writer-owned fields, effect/revision obligations and role powers remain.
 
@@ -174,17 +174,21 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 - The bootstrap operation writes user settings in step 4, initializes the memory root in step 5, reads what the baseline will carry in step 6, adopts the baseline in step 7, and reports the knowledge foundation's state in step 8. [31]
 
+
 - The procedure these carriers delegate to, and its own statement that there is no taskless entry to it: a curator's authoring seat is opened on a task document, and reading the knowledge state before such a task exists stays with the bootstrap seat. [34]
 
 - Authored migration prose uses the shared writing profile, and proposed rewrites receive independent meaning review before the normal writer publishes. [91]
 
 - Normal knowledge authoring uses the mounted knowledge_write or the admitted serving-build command-line writer; only the tool and input class of a covered correct write admit open manual recovery, and the derived index is never edited. [24]
 
+
 - The mounted knowledge_write and the admitted serving-build command-line writer with the task contract are the permitted writer routes. [27]
+
 
 - The step-local ingest detail supplies the writer outputs, the serving-build binding and ingest-report pointers, and the plan-then-write invocation. [35]
 
-- The curation operation keeps the writer boundary and points to the serving-build binding for deciding and writing memory. [36]
+- The Curator role and orientation operation keep the writer boundary and serving-build binding for deciding and writing memory, while the curation operation keeps the writer-output and no-Git boundaries. [36]
+
 
 - The Curator reads the actual written, planned or refused report state and keeps a partial or refused handover partial. [37]
 
@@ -192,22 +196,29 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 - The Curator report carries writer-report state, written record and entry identifiers and paths, history rows, refusal reasons and explicit family coverage. [39]
 
+
 - Shared role-capsule routing doctrine is canonical here, with `composition-manifest.json` as the routing metadata authority. [42]
 
 - Current supplied role/operation, Projects scope, bound tools and execution/semantic separation. [52]
 
 - This source owns the route’s Investigator selection or execution boundary. [57]
 
+
 - The Curator reconciles one leaf's intent and implementation, writes and checks its affected memory, and hands over the structured coherence record. [45]
+
 
 - The Manager decides its leaf gates and retains closeout, integration, status, acceptance writes and landing order. [46]
 
 
+
 - The Worker implements one selected leaf's approved primary requirement under its handover. [47]
 
-- Bound Paseo intake and capabilities, including the writer-ownership boundary. [54]
+
+- Bound curation intake and capabilities, including the writer-output and writer-ownership boundaries. [54]
+
 
 - Normal full curation checks include the Manager-leaf-closeout stale dependent-document `knowledge_read` and run until the raw status is ready for closeout, with coherence completed before closeout. [55]
+
 
 
 - A missing tool or unadmitted capability is reported with what remains unwritten; a correct-input refusal of a covered write follows its recovery ladder. [56]
@@ -216,37 +227,52 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 - Normal leaf starts use one role_start per stage: Worker at build, Reviewer at the freeze and Curator after code PASS. The Worker's freeze notice and the Reviewer's code-PASS notice go to the Manager first; the seats then exchange handovers directly. [63]
 
+
 - Curation writes files: without `--commit` ingest plans and writes nothing, and `--commit` authorizes file writes, never a Git commit or acceptance. [65]
 
 - Verification of repaired findings stays on the items raised before; settings govern ordinary rounds and Manager-recorded Architect or developer approval is required beyond them. [73]
 
+
 - Native start, finalize and abandon publish task stage and its parent mirror; Manager avoids a redundant status write while retaining explicit corrections and organizational-master completion. [78]
+
 
 - The Curator reads the shared writing profile before drafting statements, guarantees or history reasons and compares meanings independently before publication. [81]
 
+
 - Operation sections carry role-audience markers, so a capsule keeps the stage's common text and the sections for its own role. [82]
+
 
 - The Worker marks only its own completed build and evidence step, never review, curation, task status or acceptance. [83]
 
+
 - The Curator marks only its completed task-document step; incomplete, blocked, progress or escalation reports mark nothing done. [84]
+
 
 - The Curator decides and writes through the starting server or its serving-build CLI; leaf source never produces leaf memory, and nothing is installed or unguarded. [85]
 
+
 - The Reviewer marks its review step done only after its last round is recorded as passed. [86]
+
 
 - The Manager sets no step for another agent; a Worker repairs a sealed finding without the Manager's plan or go-ahead. [87]
 
+
 - The review operation keeps memory reports, finding identifiers and pass count separate from code state, under the same pass limit and with Manager-recorded approval beyond it. [89]
 
-- The implementation operation owns clean sync (including pair reporting for Curator refresh) and the direct repair/evidence path. [92]
+
+- Leaf sync and repair rules own clean sync (including pair reporting for Curator refresh), and the implementation operation owns the direct repair/evidence path. [92]
+
 
 
 - The review operation owns missing-entry return without a round. [93]
 
+
 - The Manager role owns its three-way authority split, standing routine paired closeout, precedent settlement (with non-reclaiming case reservations) and Architect/developer escalation boundaries. [94]
 
 
+
 - Before any new-leaf start, the Architect asks once "go, or review first?" and records review-first or go with agreedRevision; planned review creates no task workspace, first Explain creates its own workspace, and the state stays intent-review-open until go. [95]
+
 
 - The reconsideration-row subsection of the writer's input sections. [1]
 
@@ -262,7 +288,8 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 - The planned-row history form in the writer's input sections. [8]
 
-- The reviewer's declaration check in step 7. [9]
+- The Reviewer's declaration check inspects `expectedKnowledgeEffects`. [9]
+
 
 - The onboarding-row history form in the writer's input sections. [10]
 
@@ -286,19 +313,24 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 - The step-local Curator ingest detail requires an authored rationale for every target. [20]
 
-- The foundation facts the Curator reports instead of a leaf's, inside its handover section. [23]
+- The foundation facts the Curator reports in its foundation-reports section. [23]
+
 
 
 - The Manager owns the Git transaction, and the same task and Manager ownership applies to foundation work. [25]
 
+
 - The Curator report carries foundation facts, examined/unexamined scope, per-record outcomes, written/no-write state and remaining/partial work. [28]
+
 
 
 - The bootstrap role's prohibition: the seat authors no knowledge records, runs no knowledge writer and does not organise their production. [30]
 
+
 - The Bootstrap failure-state detail keeps not-recorded, recorded identity, unusable and refused admission distinct; these are reported rather than authored around. [32]
 
 - The bootstrap operation's completion facts carry the knowledge foundation's recorded identity, or the named state showing it is not recorded. [33]
+
 
 - The knowledge read route binds the assigned memory tree, its paired code checkout and the exact code tree, and names record files that the reader opens with its own tools. [40]
 
@@ -323,6 +355,7 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 - Report-only admission does not perform or complete the normal authoring pass. [64]
 
 
+
 - CLI exposes contract/list/authorization, file-write commit, JSON and crossing arguments, with no settings option. [66]
 
 - File writer parses the handoff for every operation and target parsing invokes rationale refusal. Anchor: `write_knowledge`, `_targets` [67]
@@ -333,7 +366,8 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 - The retained repository-context admission helper refuses `enclosure_in_scope` for a resolved enclosure; current foundation authoring is separately admitted inside the actual Architect task/enclosure through the task-contract knowledge-ingest/knowledge_write route. [72]
 
-- Normal curation remains full scoped quality, with coherence validated before closeout and no later-tree recertification implied. [74]
+- Normal curation runs full `memory_quality_check` (scoped checks never substitute), with coherence validated before closeout and no later-tree recertification implied. [74]
+
 
 - Normal source-bound onboarding, membership and record judgments. [75]
 
@@ -344,6 +378,7 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 - The composition manifest declares section audiences for marked operations and `all` for authorized closeout. [79]
 
 - The Curator's memory handover follows the separate memory review lane and receives memory findings or a passing verdict directly from the Reviewer. [88]
+
 
 - The shared writing profile requires an independent non-author meaning comparison with conforming, violating and boundary cases before a rewrite is classified or published. [90]
 
@@ -359,7 +394,8 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 
 
 
-- Launch-time resolution chooses permission mode. Shared instructions assign the post-start feature check to the starter. [97]
+- Launch-time resolution chooses permission mode. Core authority assigns the post-start feature check to the starter. [97]
+
 
 
 

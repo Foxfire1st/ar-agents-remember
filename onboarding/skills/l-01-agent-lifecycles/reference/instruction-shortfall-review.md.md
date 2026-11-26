@@ -20,4 +20,5 @@ Each theme records its name, case count with citations, the instruction involved
 - Shortfall kinds and the three-cases-across-two-leaves-or-roles threshold. [2]
 - Each theme records whether its fix reached compiled first messages, and themes are ranked by visible cost. [3]
 - The report and sidecar evidence, and the read-only boundary. [4]
+
 - The Investigator role points here before reviewing a named instruction shortfall. [5]

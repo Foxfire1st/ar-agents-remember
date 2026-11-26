@@ -6,11 +6,11 @@
 
 ## Purpose
 
-Owns the message payload rule, full-store refusal handling and the location of filed messages and receipts for the seven roles that send handovers.
+Owns the message payload rule, full-store refusal handling, the location of filed messages and receipts, and single-turn step/wave continuation for the seven roles that send handovers.
 
 ## Code Commentary
 
-Messages carry the request and artifact locations; files carry evidence and verdicts. A full-store refusal is recorded as pending, independent work continues, the message is resent once before the turn ends, and a second refusal is reported through the role's own route and left pending; held receipts and withdrawal of superseded held messages are governed by `core/authority.md`. Filing uses the narrowest shared task, and receipt searches preserve enclosure and transcript-root scope; delivery and turn end establish no semantic acceptance.
+Messages carry the request and artifact locations; files carry evidence and verdicts. A full-store refusal is recorded as pending, independent work continues, the message is resent once before the turn ends, and a second refusal is reported through the role's own route and left pending; held receipts and withdrawal of superseded held messages are governed by `core/authority.md`. Filing uses the narrowest shared task, and receipt searches preserve enclosure and transcript-root scope; delivery and turn end establish no semantic acceptance. Under `## Continue through steps and waves in one turn`, seats work step to step and wave to wave in one turn, collecting helpers' results, ending only at the verdict/handover, a named wait, or a nearly full context, and continuing admitted repairs, checks, and handover steps without waiting for a new Manager go (with an Investigator ending at its report, when no independent work remains, or at nearly full context).
 
 ## Evidence
 
@@ -21,3 +21,5 @@ Messages carry the request and artifact locations; files carry evidence and verd
 - Filing and receipt searches use their actual shared-task and transcript scopes. [3]
 
 - Held receipts and withdrawal of a superseded held message are governed by the shared authority file. [4]
+
+- Seats continue step to step and wave to wave in one turn without waiting for a new Manager go, ending only at verdict/handover, a named wait, or nearly full context. [5]

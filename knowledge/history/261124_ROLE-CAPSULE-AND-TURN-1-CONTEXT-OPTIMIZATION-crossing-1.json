@@ -1,0 +1,32 @@
+{
+  "closed": true,
+  "crossing": "261124_ROLE-CAPSULE-AND-TURN-1-CONTEXT-OPTIMIZATION-crossing-1",
+  "rows": [],
+  "schema": "ar-history/v1",
+  "sharedRevisions": [
+    {
+      "record": "DPD-21GMJ5",
+      "revision": 10
+    },
+    {
+      "record": "DPD-327MNX",
+      "revision": 7
+    },
+    {
+      "record": "DPD-6528VF",
+      "revision": 10
+    },
+    {
+      "record": "DPD-71WYH4",
+      "revision": 23
+    },
+    {
+      "record": "DPD-PMZ21Z",
+      "revision": 12
+    },
+    {
+      "record": "DPD-ZMQ523",
+      "revision": 17
+    }
+  ]
+}

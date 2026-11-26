@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+        "blob": "acb912c76b9ea4f8788cfbf200c2f3ce6fe77b72",
         "content": "sha256:d2a75a6fa3495076ab017d2f40163740068fbcf51b223849aafe55ce23e9b798",
         "locator": {
           "kind": "symbol",
@@ -20,11 +20,28 @@
     },
     {
       "anchor": {
-        "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
-        "content": "sha256:d757898423c03a3b600f285fa3eaace18cb036ce932fdec07c8222062c12c9d1",
+        "blob": "acb912c76b9ea4f8788cfbf200c2f3ce6fe77b72",
+        "content": "sha256:bd1a6618437e75cee2e8ad9949e4b29a64f23bc94f6c2c7257c94428343e56ad",
         "locator": {
           "kind": "symbol",
-          "name": "test_current_ceiling_failures_name_size_ceiling_and_developer"
+          "name": "test_current_measurements_retire_word_ceilings_while_keeping_freshness"
+        }
+      },
+      "facet": "Proves word-ceiling enforcement and current_limits are retired while source-revision freshness checks remain enforced.",
+      "id": "PRF-5KNBBD",
+      "invariant": "INV-7RHM8E",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 5",
+        "leaf": "261124-CAP-L3"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "acb912c76b9ea4f8788cfbf200c2f3ce6fe77b72",
+        "content": "sha256:b65e4c0cb4c9610bfa3518a6433b6a54846ace2dab4619e8c9d09d37e8f52ac8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_compiled_capsule_token_ceilings_enforce_all_matrix_keys"
         }
       },
       "facet": "Each capsule role passes at its ceiling and fails above it; detail and digest overages name the actual size, applicable ceiling and developer decision.",
@@ -37,11 +54,11 @@
     },
     {
       "anchor": {
-        "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
-        "content": "sha256:bb2fdb40a2ff1be0871c601ad921c74583904b1889bf8623905d999cd5e5c350",
+        "blob": "acb912c76b9ea4f8788cfbf200c2f3ce6fe77b72",
+        "content": "sha256:bd1a6618437e75cee2e8ad9949e4b29a64f23bc94f6c2c7257c94428343e56ad",
         "locator": {
           "kind": "symbol",
-          "name": "test_current_growth_within_a_ceiling_has_no_individual_budget"
+          "name": "test_current_measurements_retire_word_ceilings_while_keeping_freshness"
         }
       },
       "facet": "With current measurements refreshed, worker capsule growth up to the applicable role ceiling produces no current-area finding and the loaded record has no current_limits.",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+        "blob": "acb912c76b9ea4f8788cfbf200c2f3ce6fe77b72",
         "content": "sha256:0102e935b463c5271701b1428c44d1352372e29db5a3b40a126b135222720b77",
         "locator": {
           "kind": "symbol",
@@ -73,11 +90,11 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
-        "content": "sha256:bb2fdb40a2ff1be0871c601ad921c74583904b1889bf8623905d999cd5e5c350",
+        "blob": "acb912c76b9ea4f8788cfbf200c2f3ce6fe77b72",
+        "content": "sha256:bd1a6618437e75cee2e8ad9949e4b29a64f23bc94f6c2c7257c94428343e56ad",
         "locator": {
           "kind": "symbol",
-          "name": "test_current_growth_within_a_ceiling_has_no_individual_budget"
+          "name": "test_current_measurements_retire_word_ceilings_while_keeping_freshness"
         }
       },
       "id": "RLZ-YWRGK4",
@@ -86,7 +103,7 @@
         "handoffEntry": "L8-M2-F03-retain-ceiling-evidence-on-Y6GVZ7",
         "leaf": "261112-BUG-L8"
       },
-      "rationale": "This case refreshes measured worker sizes and asserts growth through the authored role ceiling has no current-area finding and no current_limits field, providing a direct growth-within-ceiling regression control.",
+      "rationale": "Asserts current_limits is absent and word ceilings are retired while keeping freshness/staleness checks across capsules, step_details, and digest.",
       "role": "support"
     }
   ],
@@ -96,7 +113,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+            "blob": "acb912c76b9ea4f8788cfbf200c2f3ce6fe77b72",
             "content": "sha256:71d5595ca0891f99cb6e0083d9c4e699f1a05e4791dcae2b40ea98c40795ee78",
             "locator": {
               "kind": "symbol",
@@ -112,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+            "blob": "acb912c76b9ea4f8788cfbf200c2f3ce6fe77b72",
             "content": "sha256:06fb34070cd0eb4340d2d75a3d4fc8ba1076c21e8da7037f35bb6621c6488370",
             "locator": {
               "kind": "symbol",
@@ -128,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+            "blob": "acb912c76b9ea4f8788cfbf200c2f3ce6fe77b72",
             "content": "sha256:f7286b3a320573753b67f45147ca5aa09b89b80228582f34c2d8c4f606f55e94",
             "locator": {
               "kind": "symbol",
@@ -144,12 +161,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
             "content": "sha256:8cd4193ea8d7a96e50b0e83efc204bdfa1ad03b084e670af07f4072d08f9c00a",
             "locator": {
-              "end": 170,
+              "end": 154,
               "kind": "line_range",
-              "start": 162
+              "start": 146
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },
@@ -162,12 +179,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+            "blob": "acb912c76b9ea4f8788cfbf200c2f3ce6fe77b72",
             "content": "sha256:0102e935b463c5271701b1428c44d1352372e29db5a3b40a126b135222720b77",
             "locator": {
-              "end": 195,
+              "end": 201,
               "kind": "line_range",
-              "start": 175
+              "start": 181
             }
           },
           "kind": "test"
@@ -175,28 +192,28 @@
       ]
     },
     "4": {
-      "note": "The current classification checks bind declared-detail and ordinary-template populations to the manifest. Capsule, step-detail and digest ceiling failures name the measured size, ceiling and developer decision.",
+      "note": "The current classification checks bind declared-detail and ordinary-template populations to the manifest. Word ceilings for capsules, step details and the digest are retired while freshness checks remain, and `COMPILED_CAPSULE_TOKEN_CEILINGS` (34 matrix keys) enforce compiled-capsule token ceilings whose failures name the measured size, ceiling and developer's decision.",
       "targets": [
         {
           "anchor": {
-            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+            "blob": "acb912c76b9ea4f8788cfbf200c2f3ce6fe77b72",
             "content": "sha256:63c4ced757eedf0d4a4a745e533bbe8744ca66b7e9b57dbc49a9fdb208b48e6c",
             "locator": {
-              "end": 323,
+              "end": 335,
               "kind": "line_range",
-              "start": 289
+              "start": 301
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
-            "content": "sha256:d757898423c03a3b600f285fa3eaace18cb036ce932fdec07c8222062c12c9d1",
+            "blob": "acb912c76b9ea4f8788cfbf200c2f3ce6fe77b72",
+            "content": "sha256:c34750566e61bf5838cb1de975eb1966bba6610d7ed740db514620b63f753dd9",
             "locator": {
-              "end": 239,
+              "end": 252,
               "kind": "line_range",
-              "start": 209
+              "start": 204
             }
           },
           "kind": "test"
@@ -208,29 +225,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+            "blob": "acb912c76b9ea4f8788cfbf200c2f3ce6fe77b72",
             "content": "sha256:d2a75a6fa3495076ab017d2f40163740068fbcf51b223849aafe55ce23e9b798",
             "locator": {
-              "end": 365,
+              "end": 377,
               "kind": "line_range",
-              "start": 352
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "A declared-detail size above its 2500-word ceiling fails and names the size, ceiling and developer decision.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
-            "content": "sha256:d757898423c03a3b600f285fa3eaace18cb036ce932fdec07c8222062c12c9d1",
-            "locator": {
-              "end": 239,
-              "kind": "line_range",
-              "start": 209
+              "start": 364
             }
           },
           "kind": "test"
@@ -242,24 +242,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+            "blob": "acb912c76b9ea4f8788cfbf200c2f3ce6fe77b72",
             "content": "sha256:5783404bbaf67678c940bb46d8b3bb6653dbd3664cae4b8857e103b193ac9ff7",
             "locator": {
-              "end": 336,
+              "end": 348,
               "kind": "line_range",
-              "start": 326
+              "start": 338
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "384569885e1ea9495fca2c11870b6eeea867e2a0",
+            "blob": "acb912c76b9ea4f8788cfbf200c2f3ce6fe77b72",
             "content": "sha256:8698006849b695d404051bb45a17ac631fc6762548a7ea190eefa0dd7741f0eb",
             "locator": {
-              "end": 349,
+              "end": 361,
               "kind": "line_range",
-              "start": 339
+              "start": 351
             }
           },
           "kind": "test"

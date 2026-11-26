@@ -12,16 +12,17 @@ Bootstrap starts no role and messages none; developer questions go in its own ch
 ## Current operative account — MIK-R112
 
 
-- The role's setup surfaces are five tools on `agents-remember-task`: `runtime_install`, `memory_init`, `memory_baseline_status`, `memory_baseline_adopt` and `user_settings_init`.
+- The role's five permitted setup surfaces are `runtime_install`, `memory_init`, `memory_baseline_status`, `memory_baseline_adopt` and `user_settings_init` (server binding lives in `core/every-role.md`).
 - The role forbids task, code and knowledge authoring and leaves its ordered steps to the Bootstrap operation.
 
 
 ## Synced current-source qualification
 
-The read surface names `context_packet`, `server_info` and `read_ar_files` on `agents-remember-task`. Ask `read_ar_files` which cards govern a path and which rules are recorded there, then open the named files natively. The prohibition names `retire_child` alongside task, role-start, closeout and other mutations outside the setup surface.
+The read surface names `context_packet`, `server_info` and `read_ar_files` (with native reads and `git status`/`log`/`ls`). The prohibition names `retire_child` alongside task, role-start, `role_message`, closeout and other mutations outside the five permitted setup surfaces.
 
 
-- The packaged Bootstrap copy forbids retire_child alongside the other task, role-start and closeout calls outside its setup surfaces. [17]
+- The packaged Bootstrap copy forbids retire alongside task, worktree, `role_start`, `role_message`, closeout, landing, coherence, carryover and citation calls outside its five permitted setup surfaces. [17]
+
 
 
 ## Governing Overview
@@ -106,16 +107,19 @@ No relevant documentation found after checking live sources.
 
 - Canonical source this package-data copy is sync-propagated from. [1]
 
-- Bootstrap is a free agent: a setup role started from the dashboard with no task document, brief or parent; the user starts it with one call from their own chat. [2]
+- Bootstrap is a dashboard-started free agent for a new user's first-hour repository setup, with no task document, brief or parent. [2]
+
 
 
 - The role's start is a call rather than a dispatch: nothing dispatches this agent, and the launch handover names its report path.
 
 
-- Bootstrap starts with no task document, brief or parent, never waits for a task document and does not treat its absence as a defect to repair. [4]
+- Bootstrap starts with no task document, brief or parent, and never waits for or invents one. [4]
 
 
-- The role's instructions are this file plus the Bootstrap operation; nothing dispatches it. [5]
+
+- Bootstrap is a dashboard-started free agent that follows the Bootstrap operation, with role prohibitions winning on conflict. [5]
+
 
 
 - The permitted-write surface, the stop-and-report cases, and the report's shape, which the Bootstrap report template owns.
@@ -141,16 +145,21 @@ No meaningful cross-repo references found.
 
 
 
+
 - The permitted surfaces are the five setup tools plus read-only context_packet, server_info and read_ar_files and native state reads; the report's sections and state fields come from the Bootstrap report template. [6]
+
 
 
 - Bootstrap starts no role and messages no one; it asks the developer in its own chat and routes no setup finding through a task transaction. [15]
 
+
 - Bootstrap is a setup/report role: it mutates only through the permitted setup surfaces, starts and messages no role, and authors neither onboarding nor knowledge. [16]
+
 
 - The role-source check requires parseable, concise, self-contained role sources. [13]
 
 - The generator checks this declared package copy against canonical skills. [14]
 
 - The manifest declares free-agent altitude, eight requested tool IDs and three operations. Its tool requests omit role_message, matching the Bootstrap role, which messages no role agent. [8]
-- Bootstrap uses read_ar_files to name governing cards and recorded rules. It opens the files with its own tools under the existing read-only authority. [19]
+
+- Bootstrap's read-only surface includes `context_packet`, `server_info`, `read_ar_files`, native reads and `git status`/`log`/`ls`. [19]

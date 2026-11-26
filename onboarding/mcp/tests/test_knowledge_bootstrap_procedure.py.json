@@ -112,7 +112,7 @@
       ]
     },
     "15": {
-      "note": "`delivered_foundation` checks the declared source, Curator role, delivery step, action pointer, delivered bytes and heading against the effective manifest and current capsule-budget view. Relative links must preserve their shipped target file and anchor. `foundation_delivery_controls` mutates the budget, heading, required sentence and declared pointer, then separately relocates the pointer. The sibling `test_curator_deduplication_keeps_distinct_authority_and_outcome_clauses` invokes both helpers with `FOUNDATION_AUTHORITY_CLAUSES`; this module does not define a delivered-procedure test. These are source assertions, not a fresh run or admission verdict.",
+      "note": "`delivered_foundation` and `foundation_delivery_controls` remain defined in this module (`136-259`), checking the declared source, Curator role, delivery step, action pointer, delivered bytes, heading, relative links, and mutation controls against the effective manifest and current capsule-budget view. The sibling `test_knowledge_correction_guidance.py` imports `FOUNDATION_AUTHORITY_CLAUSES`, `FOUNDATION_HEADING`, `FOUNDATION_SOURCE`, and `free_agent_capsule` from this module and invokes its own local `_delivered_foundation` and `_foundation_delivery_controls` helpers inside `test_curator_deduplication_keeps_distinct_authority_and_outcome_clauses`; this module does not define a delivered-procedure test. These are source assertions, not a fresh run or admission verdict.",
       "targets": [
         {
           "anchor": {
@@ -128,12 +128,38 @@
         },
         {
           "anchor": {
-            "blob": "7d188f24b77caa6a17c0a0b4f9d8e9b3a2166252",
-            "content": "sha256:12dbebb5784f815d7b2b875c255c597350526aa530b77a427c54ebae70efb5e2",
+            "blob": "97d6429426f6175e00af74e1e3a485ccf9e43a6a",
+            "content": "sha256:ec063ca46dd79ed586136180fb68e057da22c27b88ee56cbecc42fa2aac1cb3c",
             "locator": {
-              "end": 50,
+              "end": 34,
               "kind": "line_range",
               "start": 29
+            },
+            "path": "mcp/tests/test_knowledge_correction_guidance.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97d6429426f6175e00af74e1e3a485ccf9e43a6a",
+            "content": "sha256:478bce321047a01417619154eaf849626e28a29271d1f8e3e49984aeda4a741b",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 106
+            },
+            "path": "mcp/tests/test_knowledge_correction_guidance.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97d6429426f6175e00af74e1e3a485ccf9e43a6a",
+            "content": "sha256:024137dab0cb0d0bcddc4e44778f7e246d0beeaa7dcda6638b6587ba4916fe4a",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 264
             },
             "path": "mcp/tests/test_knowledge_correction_guidance.py"
           },

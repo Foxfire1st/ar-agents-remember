@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ba5f03d507c690e8c79e3fd0dcfe5626efd115a6",
+        "blob": "26586616bbfd7a257cc32b3bec63ab55f58dfaaa",
         "content": "sha256:85f4f5278f612f3e6560e5e636d92ad2d81efd7c631ef89bcb2e3243152b3d93",
         "locator": {
-          "end": 29,
+          "end": 16,
           "kind": "line_range",
-          "start": 29
+          "start": 16
         }
       },
       "id": "RLZ-1247SR",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "ba5f03d507c690e8c79e3fd0dcfe5626efd115a6",
+        "blob": "26586616bbfd7a257cc32b3bec63ab55f58dfaaa",
         "content": "sha256:862666d0cc0fdc6c1e6d70ae16a0bad215ad3d59a5daf7a91c71a5f517fecf5d",
         "locator": {
-          "end": 26,
+          "end": 14,
           "kind": "line_range",
-          "start": 26
+          "start": 14
         }
       },
       "id": "RLZ-3EW4SE",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "ba5f03d507c690e8c79e3fd0dcfe5626efd115a6",
-        "content": "sha256:32b05c917124bf29aad9ed807a1bae89dd1c9bc65df3394a6363f42b7674b33b",
+        "blob": "26586616bbfd7a257cc32b3bec63ab55f58dfaaa",
+        "content": "sha256:415bb1dddc81ad42cf8ffed189d8cbeccdecfc6530a994603be523484986da80",
         "locator": {
-          "end": 38,
+          "end": 22,
           "kind": "line_range",
-          "start": 36
+          "start": 20
         }
       },
       "id": "RLZ-H90KRE",
@@ -55,17 +55,17 @@
         "handoffEntry": "K3-BCEZZM-recovery-reviewed-result-stands",
         "leaf": "260928-MIK-L84"
       },
-      "rationale": "The recovery operation delivers the reviewed-result-stands ruling after a clean synchronization and points to its governing home in implementation.md.",
+      "rationale": "The recovery operation delivers the reviewed-result-stands ruling after a clean synchronization and points to its governing home in reference/worker/sync-and-repairs.md#synchronize-the-leaf.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "ba5f03d507c690e8c79e3fd0dcfe5626efd115a6",
-        "content": "sha256:7a01366a9472c5ae23e58d2c229c067bdd376d1c8a827ae63a32709ca103013d",
+        "blob": "26586616bbfd7a257cc32b3bec63ab55f58dfaaa",
+        "content": "sha256:96d7fa49b8c388bed398e3b4885585d9987597876475121d4104e2f31a0bec99",
         "locator": {
-          "end": 43,
+          "end": 25,
           "kind": "line_range",
-          "start": 41
+          "start": 24
         }
       },
       "id": "RLZ-Q06Z1M",
@@ -79,12 +79,12 @@
     },
     {
       "anchor": {
-        "blob": "ba5f03d507c690e8c79e3fd0dcfe5626efd115a6",
-        "content": "sha256:0668cc8a29823df5171ea0ca4e10a7b3b94afe117f78cf52d042a383c3ccd2da",
+        "blob": "26586616bbfd7a257cc32b3bec63ab55f58dfaaa",
+        "content": "sha256:7c7992272e3f9ed2c8892c205189b8a9f0ed5d965f2f6e2db1c8a0704b815a9a",
         "locator": {
-          "end": 34,
+          "end": 4,
           "kind": "line_range",
-          "start": 30
+          "start": 4
         }
       },
       "id": "RLZ-YTZ3Y1",
@@ -103,12 +103,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba5f03d507c690e8c79e3fd0dcfe5626efd115a6",
-            "content": "sha256:5740777d773a2c8733d5696ac52af01718a1d40813d85b6e0a0c46d904d74429",
+            "blob": "26586616bbfd7a257cc32b3bec63ab55f58dfaaa",
+            "content": "sha256:d38ab00698c857681b3f1cf9e96160841a8dc63fc35f076c7d1c70a9fd98f176",
             "locator": {
-              "end": 49,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -120,12 +118,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba5f03d507c690e8c79e3fd0dcfe5626efd115a6",
-            "content": "sha256:ed67d8b867201c00e373796058951688c28a2f92b4921874e25e51aa448a9df0",
+            "blob": "26586616bbfd7a257cc32b3bec63ab55f58dfaaa",
+            "content": "sha256:98c7c23170d8bcea0464bf20735736d037861cdf025bcc12e271925ba1b3c36c",
             "locator": {
-              "end": 41,
+              "end": 25,
               "kind": "line_range",
-              "start": 4
+              "start": 8
             }
           },
           "kind": "code"

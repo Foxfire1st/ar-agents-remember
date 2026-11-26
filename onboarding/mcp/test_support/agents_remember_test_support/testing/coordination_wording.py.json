@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The single registry maps each lifecycle-skill file to the clauses it must carry.\n\nAnchor: `CURRENT_COORDINATION_CLAUSES`",
+      "note": "The single registry maps each lifecycle-skill file to the clauses it must carry.",
       "targets": [
         {
           "anchor": {
-            "blob": "88d299d3b9c302c162bf1c0ea404b32c9cc7f44e",
-            "content": "sha256:f10f6d0e3ceec5fd91b9ce53f986b8f9bc89ca93b69e9766a5db99727a7ef8bd",
+            "blob": "e7fc9bbbb33d24f829bd2f501e011d3252fa2553",
+            "content": "sha256:6689f99d2892f9ffa4806bdfc71632c5139d83cae5f0f1480cc84e07cf8d6092",
             "locator": {
               "kind": "file"
             }
@@ -22,8 +22,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88d299d3b9c302c162bf1c0ea404b32c9cc7f44e",
-            "content": "sha256:f10f6d0e3ceec5fd91b9ce53f986b8f9bc89ca93b69e9766a5db99727a7ef8bd",
+            "blob": "e7fc9bbbb33d24f829bd2f501e011d3252fa2553",
+            "content": "sha256:6689f99d2892f9ffa4806bdfc71632c5139d83cae5f0f1480cc84e07cf8d6092",
             "locator": {
               "kind": "file"
             }
