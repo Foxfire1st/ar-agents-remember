@@ -66,10 +66,10 @@ not an omission, and the inline comment in the file records it.
 
 The language line agrees with `requires-python` here. The repository-root `[tool.ruff]
 target-version` stays `py313` as an explicitly reasoned **non-runtime syntax-rewrite policy**
-(one comment line states the reason), while Pyright and the workflows select 3.14. The managed
+(one comment line states the reason), while Pyright targets 3.14 and the managed
 development runtime, Dagger graph, GitHub packaging workflow, and GitHub deterministic quality
-workflow all select exact 3.14.8. Acceptance remains lifecycle-owned; Dagger executes the acceptance profiles, while the
-GitHub jobs prove deterministic lint/package behavior under the same runtime and are not
+workflow all use uv-managed Python 3.14 (per `scripts/python-runtime-contract.env`, with no exact patch pin). Acceptance remains lifecycle-owned; Dagger executes the acceptance profiles, while the
+GitHub jobs prove deterministic lint/package behavior under the same runtime line and are not
 a per-minor interpreter matrix.
 
 ### The Dashboard Bundle Is Packaged But Not Committed
@@ -179,7 +179,9 @@ later reader does not have to reconstruct it from a report.
 
 - MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. [9]
 
+
 - The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers: the What you need, Install steps, Start and stop the dashboard and the host, Tools, and More sections. [10]
+
 
 - `runtime_install` reconciles packaged runtime docs and runtime assets into a coordinator; skills remain served from the package. [11]
 - The release job builds the frontend, places the bundle, packages with the locked project venv, and then verifies both distributions carry the bundle and its fingerprint sidecar. [12]
@@ -189,7 +191,9 @@ later reader does not have to reconstruct it from a report.
 
 - Ruff keeps its syntax target at Python 3.13; this is explicitly independent from runtime requirements and Pyright language configuration. [16]
 
+
 - Package metadata directly bounds the interpreter line and declares its Python classifier. [17]
+
 
 - Root pytest configuration selects four workers by default. [2]
 

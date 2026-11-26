@@ -1,23 +1,25 @@
 {
   "confirmed": {
-    "codeTree": "671ece4cbd090a47cbb540dd59f157804c676424",
-    "commit": "db236f3c6b164f19a905fb2174e5dc3543d21f9d",
+    "codeTree": "f175245ee5d1e2d52acf74124b79662489747026",
+    "commit": "8fe83ceb2352726ee5a0509b85e059ba4a63f4b7",
     "role": "curator",
-    "statement": "Audited docs/concepts.md on L52-synced L51 code tree 671ece4c (base db236f3c/9f01ab59): concepts, seat-identity lifecycle, dependent deferral contract, and IDENTITY MISMATCH: carve-out remain accurate; no contradiction.",
-    "task": "261112-BUG-L51",
+    "statement": "docs/concepts.md remains accurate on synced post-L54 base 8fe83ceb2352 because mcp/pyproject.toml's comment update (version 3.0.8) and tool_answer.py's added checkoutEnvironments field do not alter the documented package commands or tool-answer overflow concepts.",
+    "task": "261112-BUG-L33",
     "uncommitted": true
   },
   "deferrals": [
     {
       "condition": {
+        "file": "docs/concepts.md",
         "task": "261124-CAP-L5"
       },
-      "createdAt": "2026-11-26T12:09:27.000211Z",
-      "createdByLeaf": "261124-CAP-L3",
-      "id": "DFR-YBSKMH",
+      "createdAt": "2026-11-26T22:03:54.860508Z",
+      "createdByLeaf": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+      "fileBlob": "f1cb10510be406895d2bb5d795a0ea2bb20909a7",
+      "id": "DFR-Y5Q4JY",
       "owner": "261124-CAP",
       "passage": "docs/concepts.md ### Role capsule (lines 622-627) and ### Handover (lines 629-634)",
-      "reason": "Omits CAP-L1/L3 3-tier progressive disclosure, role-filtered core/every-role.md, compact Link roots, trailing AR handover artifacts locator, slimmed inline projection, and Poka-Yoke skill:// refusal pointers; doc updates owned by 261124-CAP-L5."
+      "reason": "Crossing merge resolution at 4559dabe8: preserves open CAP-L5 deferral DFR-YBSKMH (omits CAP-L1/L3 3-tier progressive disclosure, role-filtered core/every-role.md, compact Link roots, trailing AR handover artifacts locator, slimmed inline projection, and Poka-Yoke skill:// refusal pointers; doc updates owned by 261124-CAP-L5)."
     }
   ],
   "document": "docs/concepts.md",
@@ -30,11 +32,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 32,
+  "revision": 34,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
+      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -209,7 +211,7 @@
       "path": "mcp/src/agents_remember/application/tool_answer_log.py"
     },
     {
-      "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+      "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/role_reports.py"
     },
@@ -384,7 +386,7 @@
       "path": "mcp/src/agents_remember/controlplane/closeout_queue_store.py"
     },
     {
-      "blob": "f598db5495c4b1e8dfae89ffd08fe320e3d3810f",
+      "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -481,14 +483,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T13:09:23+01:00",
+    "at": "2026-11-26T23:03:52+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
-    "task": "261124-CAP"
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "task": "261112-BUG"
   }
 }

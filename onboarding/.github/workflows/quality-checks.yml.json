@@ -1,0 +1,24 @@
+{
+  "path": ".github/workflows/quality-checks.yml",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4ca27cb70382e40f54fc6f1f7f1c37d509d03071",
+        "content": "sha256:0cf56c728595d47e93ebb962fe8d0908570df17a6a34b6c636d64898541776c8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3A3VV4",
+      "invariant": "INV-XG226D",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 2",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "Pull request job resolves newest 0.13 patch via setup-uv version 0.13.x, records resolved uv-version and uv --version, and runs the shared bootstrap.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "de5bfce377d07e88f4fb82afd192c70c792d0cb6",
+        "blob": "d02e61066ff32afa05c31c3ea21eb0c30c44f937",
         "content": "sha256:2e5d409bd81ebdf2d00635ef576a0fb9a9676373e2e425bec1e875c8d7205260",
         "locator": {
           "end": 245,
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "de5bfce377d07e88f4fb82afd192c70c792d0cb6",
+        "blob": "d02e61066ff32afa05c31c3ea21eb0c30c44f937",
         "content": "sha256:e723ce82b895b1372a026ff77a394eab399373700e675bc530c48b8c3742d07b",
         "locator": {
           "end": 114,
@@ -59,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "de5bfce377d07e88f4fb82afd192c70c792d0cb6",
+        "blob": "d02e61066ff32afa05c31c3ea21eb0c30c44f937",
         "content": "sha256:dfff712ff9e62d449c9b6cb28ad7a4b36e61f0b70120c88ffdf444b7ea5b4a1a",
         "locator": {
           "end": 123,
@@ -78,7 +78,45 @@
     },
     {
       "anchor": {
-        "blob": "de5bfce377d07e88f4fb82afd192c70c792d0cb6",
+        "blob": "d02e61066ff32afa05c31c3ea21eb0c30c44f937",
+        "content": "sha256:7d67b1d4cf3274f66830bdde45b0491b9fedb8ac70e291a2ef89d42bfb9e5634",
+        "locator": {
+          "end": 366,
+          "kind": "line_range",
+          "start": 361
+        }
+      },
+      "id": "RLZ-B8NPHG",
+      "invariant": "INV-JAFF6J",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §1",
+        "leaf": "261112-BUG-L54"
+      },
+      "rationale": "Aligns the leaf loop-review adaptation artifact path with the local role-reports/ folder (collected to notes/reports/) while keeping plan reviews under notes/reports/.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+        "content": "sha256:6b32543e610036813878d45e843d92fd817ba7ead48cb17d9d8c2a8cb95a1c41",
+        "locator": {
+          "end": 13,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-FW5CCP",
+      "invariant": "INV-JAFF6J",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §1",
+        "leaf": "261112-BUG-L54"
+      },
+      "rationale": "Aligns the verdict template artifact-location instruction with roles/reviewer.md:93 (local role-reports/ on a leaf, notes/reports/ on other seams).",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d02e61066ff32afa05c31c3ea21eb0c30c44f937",
         "content": "sha256:01e8726f339d3eb31140aa200e6a8a582ad503c8f4319e8aa9c26681557c92c7",
         "locator": {
           "end": 104,
@@ -362,6 +400,35 @@
               "start": 21
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Verdict artifacts and loop-review leaf verdicts are written in the handover's local `role-reports/` folder on a leaf (collected to `notes/reports/`) and under `notes/reports/` on other seams and plan reviews.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+            "content": "sha256:e56d9ec4628bdc4abc3a6f81abf8933d33e3deccb76814441c5f5f5e639816b0",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+            "content": "sha256:18ea8dd0fc1083235c648ee257505e4ca365e6c03eb457140187414ca658ac82",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 363
+            }
           },
           "kind": "code"
         }

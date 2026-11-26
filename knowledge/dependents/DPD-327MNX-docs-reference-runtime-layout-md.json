@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "56ba4a434418f6ed69deca0f0d9e1f852852cdf8",
-    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
+    "codeTree": "814fd2ebf624596c42f60f2e7c93b3a3a3ac6fc3",
+    "commit": "4bf4b66edfb43ed63e4010071296c9cf0991b55b",
     "role": "curator",
-    "statement": "Audited docs/reference/runtime-layout.md (lines 1-231, including runtime/server-bindings/<pid>.json table row at line 47 and Server binding records section at lines 55-81) on DEP-synced L51 code tree 56ba4a43 (base 599cfaf8/767635ae): runtime layout, server-binding contract, and cleanup semantics remain accurate; no contradiction.",
-    "task": "261112-BUG-L51",
+    "statement": "Audited docs/reference/runtime-layout.md on 261112-BUG-L54 candidate 814fd2eb: coordination-root layout, server-binding records, and role report/scratch folder paths remain accurate after role_launch_workspace.py switched to the shared COLLECTED_REPORT_DIRECTORY and ROLE_REPORT_DIRECTORY constants, with zero contradictions.",
+    "task": "261112-BUG-L54",
     "uncommitted": true
   },
   "deferrals": [
@@ -54,7 +54,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
     {
-      "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+      "blob": "5a31b237d96f6657bdcc61f1534897bee2c94306",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },
@@ -156,14 +156,15 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T13:09:23+01:00",
-    "by": "agent",
-    "effort": "high",
-    "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
-    "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
-    "task": "261124-CAP"
+    "at": "2026-11-26T22:34:46+01:00",
+    "by": "product",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+    "effort": "none",
+    "harness": "product",
+    "model": "none",
+    "operation": "crossing-merge",
+    "role": "product",
+    "seat": "product",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
   }
 }

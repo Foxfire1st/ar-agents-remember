@@ -6,7 +6,7 @@
 
 ## Purpose and current source account
 
-The sandbox manual describes the fixed disposable layout and five command flows, canonicalized directory and lock, owned process records and root-resolution admission. It explicitly retains already-running check bypass, external harness homes/caches, user-level AR servers, linked Eve dependencies/key file and citation cache. Preserve these boundaries when summarizing the tool; the prose is not a guarantee of OS containment.
+The sandbox manual describes the fixed disposable layout and five command flows, canonicalized directory and lock, owned process records and root-resolution admission. It documents that `build` prepares `mcp/.venv` via `scripts/bootstrap-mcp-venv.sh --ensure` for checkouts matching the current uv-managed Python runtime contract (older checkouts with a different runtime contract are outside this pairing). It explicitly retains already-running check bypass, external harness homes/caches, user-level AR servers, linked Eve dependencies/key file and citation cache. Preserve these boundaries when summarizing the tool; the prose is not a guarantee of OS containment.
 
 ## User settings isolation
 
@@ -25,6 +25,7 @@ The sandbox README now documents the public build/check/start/stop commands taki
 - The tool-server section names the request fields, environment separation, host refusal, the no-host build phase and the start prerequisite. [3]
 
 - Current sandbox setup writes the host block to MCP authority, separately from the protected user-settings path. [4]
+
 
 - The scoped current source carries the module/document behavior described above. [1]
 

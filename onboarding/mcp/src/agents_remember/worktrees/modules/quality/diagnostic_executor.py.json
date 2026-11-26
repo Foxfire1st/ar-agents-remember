@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
-        "content": "sha256:f85730f23d0f43c033b52ee177e0dbf4d93bde791f14cd3e5a5f06a1179d5af0",
+        "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
+        "content": "sha256:4ea599019ec2284b39bc8c8c20d54df60933a80e938f5efbc3384d60251c1715",
         "locator": {
           "kind": "symbol",
           "name": "DiagnosticExecutionEngine._admit_authority"
@@ -18,6 +18,24 @@
       },
       "rationale": "Passes AUTHORITY_SCHEMA_VERSION instead of continuation_snapshot.schema_version into DaggerHostDeclaration on continuation without # type: ignore[arg-type].",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
+        "content": "sha256:4ea599019ec2284b39bc8c8c20d54df60933a80e938f5efbc3384d60251c1715",
+        "locator": {
+          "kind": "symbol",
+          "name": "DiagnosticExecutionEngine._admit_authority"
+        }
+      },
+      "id": "RLZ-QA19SR",
+      "invariant": "INV-NC2ZCP",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 7",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "Diagnostic continuation applies the shared runner projection before registering its live owner.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -26,8 +44,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
-            "content": "sha256:f85730f23d0f43c033b52ee177e0dbf4d93bde791f14cd3e5a5f06a1179d5af0",
+            "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
+            "content": "sha256:4ea599019ec2284b39bc8c8c20d54df60933a80e938f5efbc3384d60251c1715",
             "locator": {
               "kind": "symbol",
               "name": "_admit_authority"
@@ -37,8 +55,8 @@
         },
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
-            "content": "sha256:5f3a3344b5c5d5ab2c212bebef152b1d6cd0b8b35cb6941f7709d7060ce67080",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
+            "content": "sha256:bad48f940b4b1456a445eae1d86a69ea9661a884fb0a84812d08af4e2743e992",
             "locator": {
               "kind": "symbol",
               "name": "admit_dagger_authority"
@@ -50,16 +68,15 @@
       ]
     },
     "2": {
-      "note": "The R12 authority admits a checked host snapshot, records live consumers in its locked registry, and releases only the exact owner.\n\nAnchor: \"def admit_dagger_authority(\"; \"class AuthorityRegistry\"; \"def release_dagger_authority(\"",
+      "note": "The R12 authority admits a checked host snapshot, records live consumers in its locked registry, and releases only the exact owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
-            "content": "sha256:507451629885641898aae9e07e06447962f0c075b52d399f27054432e0202b66",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
+            "content": "sha256:bad48f940b4b1456a445eae1d86a69ea9661a884fb0a84812d08af4e2743e992",
             "locator": {
-              "end": 995,
-              "kind": "line_range",
-              "start": 948
+              "kind": "symbol",
+              "name": "admit_dagger_authority"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
           },
@@ -67,12 +84,12 @@
         },
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
             "content": "sha256:50c80e0220bb1e599bd46ba63abcf1b7cc455ec48f695c2c4570f40a55e5b18f",
             "locator": {
-              "end": 600,
+              "end": 537,
               "kind": "line_range",
-              "start": 588
+              "start": 525
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
           },
@@ -80,12 +97,12 @@
         },
         {
           "anchor": {
-            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "blob": "0988ee6b13058fa73ce31467ccdca20cdecbf369",
             "content": "sha256:08dcf082a26658e74b27cbaf700bac843cfe1abf76552d69d36322ef0b32fee2",
             "locator": {
-              "end": 1128,
+              "end": 1059,
               "kind": "line_range",
-              "start": 1118
+              "start": 1049
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
           },
@@ -177,24 +194,24 @@
         },
         {
           "anchor": {
-            "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
+            "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
             "content": "sha256:28a125c4d7fe8cf761c96c43f68513b45023fe2ec0ad69cf8d0d2836677da9a5",
             "locator": {
-              "end": 546,
+              "end": 545,
               "kind": "line_range",
-              "start": 536
+              "start": 535
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
+            "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
             "content": "sha256:9c2f072cab9ebcbb04c5977590ef653a405351658b40bcb0ed0e2e9572fa831b",
             "locator": {
-              "end": 564,
+              "end": 563,
               "kind": "line_range",
-              "start": 548
+              "start": 547
             }
           },
           "kind": "code"
@@ -219,12 +236,12 @@
         },
         {
           "anchor": {
-            "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
+            "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
             "content": "sha256:43b97fce4896279ede72f42c4f8e369050c933363cd1140eaf9c56f69d4023c0",
             "locator": {
-              "end": 194,
+              "end": 195,
               "kind": "line_range",
-              "start": 177
+              "start": 178
             }
           },
           "kind": "code"
@@ -236,24 +253,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
+            "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
             "content": "sha256:ae8142f729a9f97f7a553e4412f400dcdd22bfce8a2810ada5ffc866234d924f",
             "locator": {
-              "end": 330,
+              "end": 329,
               "kind": "line_range",
-              "start": 322
+              "start": 321
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
+            "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
             "content": "sha256:9913aee99313f1a7f7ac7b311c32c06db98de9926d14b86dcf7d5e6bc76bf7d8",
             "locator": {
-              "end": 431,
+              "end": 430,
               "kind": "line_range",
-              "start": 423
+              "start": 422
             }
           },
           "kind": "code"

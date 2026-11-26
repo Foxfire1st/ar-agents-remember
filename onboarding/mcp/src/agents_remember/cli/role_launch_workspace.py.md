@@ -26,9 +26,10 @@ In the enclosed-leaf branch, the real leaf-workspace owner creates the group's `
 
 ## Real role-reports directories
 
-`_resolve_workspace` now points report access at the group's real `role-reports` directory, creating it and refusing a symlink there. The old `task-reports` alias is only restored for existing recorded bindings; no new start uses it.
+`_resolve_workspace` points report access at the group's real `role-reports` directory (`_ensure_role_reports_folder` derives it from `worktrees.role_reports.ROLE_REPORT_DIRECTORY`, creating it and refusing a symlink there). Both `_resolve_direct_workspace` and `_prepare_enclosed_workspace` derive `taskReportRoot` from `worktrees.role_reports.COLLECTED_REPORT_DIRECTORY` instead of duplicating `notes/reports` literals. The old `task-reports` alias is only restored for existing recorded bindings; no new start uses it.
 
 ## Evidence
+
 
 
 
@@ -38,11 +39,15 @@ In the enclosed-leaf branch, the real leaf-workspace owner creates the group's `
 
 
 
+
 - A refusal keeps the native status and reason and names an owner-derived next action. [2]
 - The canonical enclosure path is derived from the leaf document and conflicting bindings are refused. [3]
 
 
+
 - The common resolver creates or finds the enclosure and returns its validated roots and preparation outcome. Anchor: actual current supporting source [4]
+
+
 
 
 
@@ -52,12 +57,15 @@ In the enclosed-leaf branch, the real leaf-workspace owner creates the group's `
 
 
 
+
 - Both role-start entry points use the existing checked preparation child for this operation, retaining its root, writer-admission and cut-off checks; public worktree_start retains its caller semantics. [6]
 
 
 
 
+
 - Call-time granted leaves reuse master series checkouts and keep role artifacts in the separate group. Anchor: actual current supporting source [7]
+
 
 
 ## Leaf outside-scratch workspace identity
@@ -68,3 +76,5 @@ Both workspace branches now carry `outsideScratchRoot` beside `scratchRoot`, and
 
 
 - Every leaf role checks the canonical review before direct-grant or enclosure resolution; refusal makes no enclosure or seat and instructs the caller to await the Architect go rather than retry. The found live enclosure path invokes publish_start_task_facts(started=True) only for planning, after all workspace checks; TaskLeafBindingError becomes RolePreparationError with original status/detail and no seat. Found/created workspace preparation records referenceRoot and named copy warning without substituting another reference or blocking a start solely because copying failed. [8]
+
+- `_resolve_direct_workspace`, `_prepare_enclosed_workspace`, and `_ensure_role_reports_folder` derive collected and local report roots from `COLLECTED_REPORT_DIRECTORY` and `ROLE_REPORT_DIRECTORY`. [9]

@@ -26,7 +26,11 @@ The fast tier passes every tracked Python file to one GNU `xargs` invocation wit
 
 - The dashboard prerequisite look skips a tree without the dashboard package and stops on a missing dependency folder or npm. [1]
 - The targeted tier repeats the fast checks, and the full tier refuses host execution. [3]
+
+
 - The script selects a complete MCP development environment or stops with the bootstrap command. [5]
+
+
 
 - One 256 KiB xargs batch passes the tracked Python population to Ruff and Pyright. [6]
 - Every tier scope line is rendered by one scope-batch invocation. [7]

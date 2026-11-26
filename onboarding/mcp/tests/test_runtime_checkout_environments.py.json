@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_runtime_checkout_environments.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "81c1fcc359fea1fcec0bd4e510dfaa2fad19f627",
+        "content": "sha256:54ff8c42d9c3670aa58ffd9f4bec6d386fed0847e5cf4240caaddcdff18ae9f2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_runtime_install_overflow_retains_every_stale_checkout"
+        }
+      },
+      "facet": "Verifies overflowing runtime_install answers retain every stale checkout row in the recorded whole-result log.",
+      "id": "PRF-27TKKN",
+      "invariant": "INV-XWNDYE",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 4",
+        "leaf": "261112-BUG-L33"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "81c1fcc359fea1fcec0bd4e510dfaa2fad19f627",
+        "content": "sha256:8cf0d021086d0ecf1373d2edef56303d9101b0b5e19125d8d34d7972bbe4b9cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_runtime_install_lists_registered_stale_checkouts_without_rebuilding"
+        }
+      },
+      "facet": "Verifies runtime_install reports every stale registered checkout with its shell-quoted bootstrap command and leaves all pyvenv.cfg files unmodified.",
+      "id": "PRF-Y4C5HH",
+      "invariant": "INV-XWNDYE",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 4",
+        "leaf": "261112-BUG-L33"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`test_runtime_install_lists_registered_stale_checkouts_without_rebuilding` verifies read-only stale-checkout inventory, NUL-safe path handling, and compact payload retention.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81c1fcc359fea1fcec0bd4e510dfaa2fad19f627",
+            "content": "sha256:8cf0d021086d0ecf1373d2edef56303d9101b0b5e19125d8d34d7972bbe4b9cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_runtime_install_lists_registered_stale_checkouts_without_rebuilding"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "`test_runtime_install_overflow_retains_every_stale_checkout` verifies that overflowing `runtime_install` answers preserve every stale checkout in the recorded log.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81c1fcc359fea1fcec0bd4e510dfaa2fad19f627",
+            "content": "sha256:54ff8c42d9c3670aa58ffd9f4bec6d386fed0847e5cf4240caaddcdff18ae9f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_runtime_install_overflow_retains_every_stale_checkout"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

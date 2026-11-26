@@ -97,7 +97,7 @@ Reviewer requires explicit independent assignment, exact seam/mode, approved rev
 
 Its `## Reference index` routes detailed procedures to `reference/review/non-leaf-seams-and-catalogs.md`, `reference/review/rounds-and-late-findings.md`, `reference/review-baseline.md`, `reference/knowledge/use.md`, `reference/knowledge/commands.md`, `templates/verdict.md`, `templates/curator-handoff-list.md`, `reference/message-handover.md`, `reference/sandbox-actors.md`, `operations/orientation.md#ask-for-a-developer-decision`, and `core/acceptance.md`.
 
-The same Reviewer records code rounds and the separate memory lane; neither recording is Manager gate acceptance. Memory IDs/reports/count stay separate, with the same ordinary limit and recorded approval for extras. Only after the last round passes does the Reviewer mark its own review step `done` via `task_doc(set_step)`.
+The same Reviewer records code rounds and the separate memory lane; neither recording is Manager gate acceptance. Memory IDs/reports/count stay separate, with the same ordinary limit and recorded approval for extras. Verdicts are written in the handover's local report folder (`role-reports/` on a leaf, `notes/reports/` on other seams), and a memory `verdictRef` must name an existing file as an absolute path, `role-reports/<rel>`, or `notes/reports/<rel>` (per `templates/verdict.md`). Only after the last round passes does the Reviewer mark its own review step `done` via `task_doc(set_step)`.
 
 When the candidate changes code or instruction texts, the Reviewer requires repository guidelines (`system/tools.md`, `system/design-guidelines.md`, and coding/skill-writing guidelines) and binds `code-seam` (CS-7) and `doctrine` (D-6 -> CS-7). Whole-set scanning, forged-state rules, and stops live in `reference/review/rounds-and-late-findings.md`.
 
@@ -180,7 +180,7 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 - Each exact requirement revision is adjudicated accepted or rejected against its Worker attempt/candidate in a separate immutable reviewer record in the same leaf journal; Worker and earlier records stay unchanged. [14]
 
 
-- A baseline report includes every bound standing criterion. Fix verification reports the criteria used by the sealed findings. Review artifacts include the sealed findings, complete route coverage, the seam-shaped verdict with its Catalog Binding section, a producer-data handoff list and durable reports for material routes. [15]
+- A baseline report includes every bound standing criterion. Fix verification reports the criteria used by the sealed findings. Review artifacts include the sealed findings, complete route coverage, the seam-shaped verdict written in the handover's local report folder (`role-reports/` on a leaf, `notes/reports/` on other seams) with its Catalog Binding section and memory `verdictRef` recorded as an existing absolute path, `role-reports/<rel>`, or `notes/reports/<rel>`, a producer-data handoff list and durable reports for material routes. [15]
 
 
 

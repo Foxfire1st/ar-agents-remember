@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across task_doc_route_review.py, worktrees/memory_verdict_ref.py, roles/reviewer.md, and templates/verdict.md, and proved by three dedicated pytest functions in mcp/tests/test_memory_verdict_ref.py."
+  },
+  "applicability": "Every memory-lane task_doc record_review call (ordinary and record-only) that supplies a non-null verdictRef.",
+  "conditions": [
+    "Accepted forms are an absolute path to an existing regular file, role-reports/<rel> confined under the bound leaf worktree group, or notes/reports/<rel> existing under the task folder or the bound leaf's role-reports/ directory.",
+    "The leaf binding comes from the memory candidate's bound leaf contract (or leaf_enclosure_path for a subTask), never from a series contract.",
+    "Invalid, missing, or escaping references refuse with review-verdict-ref-invalid listing the accepted forms and leave the task document unchanged."
+  ],
+  "exclusions": [
+    "Memory rounds that omit verdictRef (handled as before and supplying no closeout review fact).",
+    "Code review rounds and route reviews, which retain their existing rules."
+  ],
+  "id": "INV-JAFF6J",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_memory_verdict_ref.py (tree 0fec81b218c6563f1bfcec58b72b53c8516aee1a; focused pytest -n 0: 50 passed, 14 deselected, 22 subtests passed)"
+      ],
+      "path": "261112-BUG-L54-curator-handoff.json"
+    },
+    "handoffEntry": "BUG-R54@v1 §1",
+    "leaf": "261112-BUG-L54",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "For a memory review round (ordinary or record-only), task_doc record_review refuses any supplied verdictRef that does not name an existing file under one of the three accepted forms (absolute path, role-reports/<rel> under the bound leaf worktree group, or notes/reports/<rel> under the task folder or the leaf's role-reports/), while rounds without verdictRef, code rounds, and route reviews keep their existing rules.",
+  "supersedes": [],
+  "title": "Memory record_review validates verdictRef against an existing file",
+  "writer": {
+    "at": "2026-11-26T14:04:00+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L54",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+    "task": "261112-BUG"
+  }
+}

@@ -26,19 +26,6 @@
   "id": "DEC-4ZE5PJ",
   "links": [
     {
-      "relation": "explains",
-      "target": {
-        "blob": "026f2e61db2337596e9318ad03571dc2e78aab47",
-        "content": "sha256:3a739db97f744fad75b7fddad8447cbffd8727771dc896d8b385204463530810",
-        "locator": {
-          "end": 13,
-          "kind": "line_range",
-          "start": 13
-        },
-        "path": "scripts/python-runtime-contract.env"
-      }
-    },
-    {
       "relation": "motivated_change_to",
       "target": {
         "id": "MIK-R91",
@@ -48,6 +35,17 @@
           "repository": "agents-remember"
         },
         "version": "v1"
+      }
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "bb4b93181fb580f55d46574b8619b6f1f5d15903",
+        "content": "sha256:f8b9c1f9e8f99136c1f3cbf177ba4bd47ec0f73b12fb85b529c4d8e13820dbdd",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "scripts/python-runtime-contract.env"
       }
     }
   ],
@@ -64,27 +62,19 @@
     "leaf": "260928-MIK-L91",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": [],
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L91",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T21:50:20+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L33",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+    "task": "261112-BUG"
   }
 }

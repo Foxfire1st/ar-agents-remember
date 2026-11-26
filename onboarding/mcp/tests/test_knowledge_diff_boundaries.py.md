@@ -194,4 +194,6 @@ No configured cross-repository evidence is claimed.
 - The test-only RowStore changes its text tree, rebuilds the index and reopens the read connection; candidate construction is independent, not a closed-database copy. [32]
 - Expansion asserts requested trees/roots and delimiter-safe command without HEAD; authored changed paths are an attributed subset, disjoint from the singleton unattributed gap, not an exact attributed-set census. [35]
 
+
 - The integration lane selects `mcp/tests/test_knowledge_diff_boundaries.py`. The lifecycle catalog lists `mcp/tests/test_knowledge_diff_boundaries.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. These source declarations establish no execution or passing result. [50]
+

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7cc125a6d4a5093a51132f2af0c4d291306e884a",
+        "blob": "cbbe5800c24d33d586ba47f1a87e50c7bfd8f232",
         "content": "sha256:c50e6ad9d6abafbca82e122a75cd53f3b0208eaa22e9750a946846e2e2c9eef5",
         "locator": {
           "kind": "symbol",
@@ -26,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7cc125a6d4a5093a51132f2af0c4d291306e884a",
-            "content": "sha256:f6344511c87fef0874115ad7f007edb5055b6d10fe178359083ab33b3e6887aa",
+            "blob": "cbbe5800c24d33d586ba47f1a87e50c7bfd8f232",
+            "content": "sha256:8bc091725803cc6e382df8d1dba9e9d4c70022e57b1b3ce4fafd6c5d0884d842",
             "locator": {
               "kind": "file"
             }
@@ -41,12 +41,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7cc125a6d4a5093a51132f2af0c4d291306e884a",
-            "content": "sha256:e65b6f731da025f18afc094136033157d3eaa151472dc80f0428106e4f4e1b85",
+            "blob": "cbbe5800c24d33d586ba47f1a87e50c7bfd8f232",
+            "content": "sha256:98aa0ddd302a3fc39fe856f24c2d91a41f4b309f3ebbf31e15f4b1ce13967e45",
             "locator": {
-              "end": 500,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "SandboxCase"
             }
           },
           "kind": "test"

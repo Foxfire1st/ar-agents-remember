@@ -1,0 +1,108 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_runner.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4a498c8753b13e940792aec4e4e8b496ac969cc0",
+        "content": "sha256:17db9526785d3a2669b94336e2a4dbbb9211a4bdd59e94502eda3982f66a8032",
+        "locator": {
+          "kind": "symbol",
+          "name": "native_dagger_environment"
+        }
+      },
+      "id": "RLZ-0D7MB3",
+      "invariant": "INV-NC2ZCP",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 7",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "The clean-room route captures native Docker search and config paths before inspection and before the child working directory changes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a498c8753b13e940792aec4e4e8b496ac969cc0",
+        "content": "sha256:fde692a285636a0bdc544a6e6f6cdece8af6e347412c0f54aff2b902dc9ce07f",
+        "locator": {
+          "kind": "symbol",
+          "name": "authority_environment"
+        }
+      },
+      "id": "RLZ-X3114X",
+      "invariant": "INV-NC2ZCP",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 7",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "The launch projection supplies the pinned CLI's actual selector, rejects conflicting host keys, and omits ambient session and cloud selectors.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`native_dagger_environment` absolutizes `PATH`, `HOME`, and `DOCKER_CONFIG` before inspection and child launch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a498c8753b13e940792aec4e4e8b496ac969cc0",
+            "content": "sha256:17db9526785d3a2669b94336e2a4dbbb9211a4bdd59e94502eda3982f66a8032",
+            "locator": {
+              "kind": "symbol",
+              "name": "native_dagger_environment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`dropped_dagger_selectors` reports present overriding Dagger session/cloud selector key names without exposing values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a498c8753b13e940792aec4e4e8b496ac969cc0",
+            "content": "sha256:b87bb1a39fdcf6a0d36e38e5aa31105cc9142e402e9b1c44763304e26c44a789",
+            "locator": {
+              "kind": "symbol",
+              "name": "dropped_dagger_selectors"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`authority_environment` refuses conflicting ambient host keys, removes `DAGGER_HOST` and overriding selectors, and binds `_EXPERIMENTAL_DAGGER_RUNNER_HOST` and the authority digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a498c8753b13e940792aec4e4e8b496ac969cc0",
+            "content": "sha256:fde692a285636a0bdc544a6e6f6cdece8af6e347412c0f54aff2b902dc9ce07f",
+            "locator": {
+              "kind": "symbol",
+              "name": "authority_environment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_refuse_host_conflict` raises `DaggerRuntimeAuthorityError` with code `runtime-authority-ambient-conflict`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a498c8753b13e940792aec4e4e8b496ac969cc0",
+            "content": "sha256:520f3fc1ea4f2de62f19bbdd7f211fd060d441a24d9333796b22dc51f5105856",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_host_conflict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

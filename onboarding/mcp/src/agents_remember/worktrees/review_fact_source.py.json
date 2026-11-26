@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fc31aafc47ebd1a0d8d17360af43ca54966abe82",
+        "blob": "77bf4e5ed28b749f5d9520666384118750fa7463",
         "content": "sha256:44b4f94a2799693e4a1946ca7a8118463e54f17e8fdabf8885c978b1446d6f62",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,24 @@
       },
       "rationale": "Takes the last memory round, builds the fact only when that round passed, with the reviewer's and the hand-over agent's stamps.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "77bf4e5ed28b749f5d9520666384118750fa7463",
+        "content": "sha256:e81b9f57f79fff45eaa27a7bba9737834deacfd9803d5a370da1c9f74323881a",
+        "locator": {
+          "kind": "symbol",
+          "name": "owner_review_fact"
+        }
+      },
+      "id": "RLZ-SV4520",
+      "invariant": "INV-793X8F",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §2",
+        "leaf": "261112-BUG-L54"
+      },
+      "rationale": "Supplies the bound contract's worktree_group and task_root when building the ReviewFact consumed by both closeout and direct landing.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -26,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc31aafc47ebd1a0d8d17360af43ca54966abe82",
+            "blob": "77bf4e5ed28b749f5d9520666384118750fa7463",
             "content": "sha256:d22ffdf50b1d404388965867ce2f010b210b430bd30626f960f240f3cd3a06b3",
             "locator": {
               "kind": "symbol",
@@ -38,15 +56,31 @@
       ]
     },
     "2": {
-      "note": "The fact preserves the recorded attribution, with reasoned unknown values where the older review did not capture them.",
+      "note": "`_review_fact` maps the usable `verdictRef` through `collected_verdict_ref` (preserving unmappable pre-existing references) and preserves recorded attribution with reasoned unknown values where an older review did not capture them.",
       "targets": [
         {
           "anchor": {
-            "blob": "fc31aafc47ebd1a0d8d17360af43ca54966abe82",
-            "content": "sha256:f443a80d9f96b11892e32c37f441bd55bf6c13b1646b8a00b35abe4654d49def",
+            "blob": "77bf4e5ed28b749f5d9520666384118750fa7463",
+            "content": "sha256:44762ef6e77cdb1c7bd460a7370a3ed0ba9eeb92f60727ea22a36e6471bf1891",
             "locator": {
               "kind": "symbol",
               "name": "_review_fact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`owner_review_fact` forwards the bound contract's `worktree_group` and `task_root` into `_review_fact` for both closeout and direct landing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77bf4e5ed28b749f5d9520666384118750fa7463",
+            "content": "sha256:e81b9f57f79fff45eaa27a7bba9737834deacfd9803d5a370da1c9f74323881a",
+            "locator": {
+              "kind": "symbol",
+              "name": "owner_review_fact"
             }
           },
           "kind": "code"

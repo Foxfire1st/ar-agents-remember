@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across worktrees/role_reports.py, cli/role_launch_enclosure.py, cli/role_launch_workspace.py, and memory/conversion/state_owners.py, and proved statically via AST producer/literal scans and dynamically via monkeypatch and state-conversion tests in mcp/tests/test_memory_verdict_ref.py and mcp/tests/test_knowledge_state_conversion_verdict_ref.py."
+  },
+  "applicability": "Report collection (collect_group_reports), collected reference formatting/predicates (collected_report_ref, is_collected_report_ref), every taskReportRoot producer in mcp/src/agents_remember/, and archived-task state conversion (memory/conversion/state_owners.py::_durable_verdict_ref).",
+  "conditions": [
+    "COLLECTED_REPORT_DIRECTORY ('notes/reports') and derived COLLECTED_REPORT_PARTS live beside ROLE_REPORT_DIRECTORY in worktrees/role_reports.py.",
+    "collect_group_reports, role_launch_enclosure.prepare_role_folders, role_launch_workspace._resolve_direct_workspace/_prepare_enclosed_workspace/_ensure_role_reports_folder, and memory/conversion/state_owners.py (_REPORT_MARKERS and _durable_verdict_ref) import COLLECTED_REPORT_DIRECTORY / COLLECTED_REPORT_PARTS / ROLE_REPORT_DIRECTORY / collected_report_ref rather than duplicating notes/reports or role-reports literals."
+  ],
+  "exclusions": [
+    "Contract-less segment search in memory/conversion/state_owners.py::_report_tail, which retains its own search for <rel> without a worktree contract while delegating collected path formatting to collected_report_ref."
+  ],
+  "id": "INV-K03WFZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_memory_verdict_ref.py (26 cases including AST check over all taskReportRoot producers and runtime override checks; tree 0fec81b218c6563f1bfcec58b72b53c8516aee1a)",
+        "mcp/tests/test_memory_verdict_ref.py + mcp/tests/test_knowledge_state_conversion_verdict_ref.py (tree 2718751f903bcf3ac651da228bb24bb9b356bbec; 196 passed, 20 deselected, 22 subtests passed; 0 new layers.toml violations)"
+      ],
+      "path": "261112-BUG-L54-curator-handoff.json"
+    },
+    "handoffEntry": "BUG-R54@v1 §3",
+    "leaf": "261112-BUG-L54",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The mapping from a report path relative to role-reports/ to notes/reports/<rel> has one shared definition (COLLECTED_REPORT_DIRECTORY, derived COLLECTED_REPORT_PARTS, collected_report_ref, and is_collected_report_ref) next to ROLE_REPORT_DIRECTORY in worktrees/role_reports.py, shared by collect_group_reports, every taskReportRoot producer (role_launch_enclosure and role_launch_workspace), and archived-task state conversion (memory/conversion/state_owners.py::_durable_verdict_ref).",
+  "supersedes": [],
+  "title": "One shared COLLECTED_REPORT_DIRECTORY definition governs report roots",
+  "writer": {
+    "at": "2026-11-26T19:00:52+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L54",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+    "task": "261112-BUG"
+  }
+}

@@ -5,7 +5,7 @@
     ],
     "justification": "Writer binding, exact closeout fact recording, revision selection and reader projection together keep the credited review tied to the content that remains readable after conversion or a crossing."
   },
-  "guarantee": "The selected memory tree preserves who wrote the retained revision and awards review credit only when that tree contains compatible review evidence for its retained meaning.",
+  "guarantee": "The selected memory tree preserves who wrote the retained revision and awards review credit only when that tree contains compatible review evidence for its retained meaning, with recorded memory verdictRef paths validated against existing files and persisted in history as the durable collected notes/reports/<rel> copy (or explicitly named when a pre-existing reference cannot map).",
   "id": "FAM-7NBVYB",
   "members": [
     "INV-G8AX2H",
@@ -21,7 +21,9 @@
     "INV-0R04WY",
     "INV-Z0FRT0",
     "INV-1QE8YM",
-    "INV-CZXJCP"
+    "INV-CZXJCP",
+    "INV-JAFF6J",
+    "INV-793X8F"
   ],
   "origin": {
     "handoff": {
@@ -31,7 +33,7 @@
     "leaf": "261112-KNO-L3",
     "task": "261112-KNO"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "dashboard/src/data",
     "dashboard/src/grammar",
@@ -48,19 +50,21 @@
     "mcp/src/agents_remember/models/knowledge_files",
     "mcp/src/agents_remember/tasks",
     "mcp/src/agents_remember/worktrees",
-    "mcp/tests"
+    "mcp/tests",
+    "skills/l-01-agent-lifecycles/roles",
+    "skills/l-01-agent-lifecycles/templates"
   ],
   "schema": "ar-family/v1",
   "title": "Review credit follows the retained revision",
   "writer": {
-    "at": "2026-11-26T17:17:51+01:00",
+    "at": "2026-11-26T19:00:52+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261126-SYN-L1",
+    "leaf": "261112-BUG-L54",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c91b4f3a-8d2e-4a76-b5c3-2e7f1a90d4c8",
-    "task": "261126-SYN"
+    "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+    "task": "261112-BUG"
   }
 }

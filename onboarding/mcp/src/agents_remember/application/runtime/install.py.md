@@ -35,7 +35,7 @@ stops and restarts a mismatched one. When a dashboard is observed, its `action`,
 known, `pid` and `sourceDigest` are carried under `result["dashboard"]`, and a `failed` or
 `lock-held` action makes `ok` false. Last, `result["runningServers"]` lists each live MCP and
 dashboard server record under the coordination root's `runtime/servers/` with its observed build
-currentness: a dry run calls read-only `preview_server_inventory` (leaving dead record files on disk), whereas an applied install calls `server_inventory` (removing dead process records). When `request.reconcile_shared_held_stores` is true and a `shared_held_stores` reconciler is supplied, `run_runtime_install` previews or reconciles legacy shared held-message stores, records the result under `result["sharedHeldStores"]`, and sets `ok` to false if reconciliation reports `state == "blocked"`.
+currentness: a dry run calls read-only `preview_server_inventory` (leaving dead record files on disk), whereas an applied install calls `server_inventory` (removing dead process records). When `request.reconcile_shared_held_stores` is true and a `shared_held_stores` reconciler is supplied, `run_runtime_install` previews or reconciles legacy shared held-message stores, records the result under `result["sharedHeldStores"]`, and sets `ok` to false if reconciliation reports `state == "blocked"`. When the `agents-remember` repository is configured in `config.repositories`, `run_runtime_install` also attaches `result["checkoutEnvironments"] = inspect_checkout_environments(repository.path)` (read-only diagnosis of the primary checkout and active worktrees' `mcp/.venv` runtimes against the uv-managed Python 3.14 contract, without mutating any checkout).
 
 ### Invariants And Boundaries
 
@@ -67,11 +67,15 @@ currentness: a dry run calls read-only `preview_server_inventory` (leaving dead 
 
 
 
+
 - The application entry that composes the host step onto the lower service result, including the `ok` conjunction. [4]
 
 
 
+
+
 - A dry run plans and an applied install refreshes a running dashboard; an observed dashboard's action is reported under `dashboard`, a `failed` or `lock-held` action fails `ok`, and the running servers are reported with their currentness. [6]
+
 
 - An applied install leaves an absent dashboard stopped and otherwise ensures it serves the installed build. [7]
 - The dry-run dashboard plan only observes and names the transition. [8]

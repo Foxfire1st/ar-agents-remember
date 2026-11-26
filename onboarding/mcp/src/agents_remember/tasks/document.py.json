@@ -768,12 +768,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
+            "blob": "16f6f1afe86228ebbe7fcaaeed587ffe92604a65",
             "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
             "locator": {
-              "end": 312,
+              "end": 313,
               "kind": "line_range",
-              "start": 267
+              "start": 268
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
           },

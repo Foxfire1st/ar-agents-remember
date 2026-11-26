@@ -8,7 +8,7 @@
   },
   "applicability": "The args of examples/mcp/server.example.json, the one common MCP registration example.",
   "conditions": [
-    "uvx takes --refresh-package with the package name agents-remember-mcp, then the package command agents-remember-mcp@latest, which receives --config and the settings path."
+    "uvx takes --managed-python, --python 3.14, and --refresh-package agents-remember-mcp before the package command agents-remember-mcp@latest, which receives --config and the absolute user settings path."
   ],
   "exclusions": [
     "Harness-specific configuration envelopes, which each install guide names.",
@@ -26,27 +26,20 @@
     "leaf": "260928-MIK-L84",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The common MCP registration example runs uvx with its refresh option given the package name, then the server's package spec, then --config for the server: uvx --refresh-package agents-remember-mcp agents-remember-mcp@latest --config <absolute user settings file>.",
+  "statement": "The common MCP registration example runs uvx with --managed-python, --python 3.14, and --refresh-package agents-remember-mcp, then the server's package spec agents-remember-mcp@latest, then --config for the server.",
   "supersedes": [],
+  "title": "Common MCP example passes --managed-python --python 3.14 before package spec",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L84",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T21:50:20+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L33",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+    "task": "261112-BUG"
   }
 }

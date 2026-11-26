@@ -50,5 +50,7 @@ The configured Domain Documentation registry has no entries. The adjacent qualit
 - Original result membership and frozen declarations jointly bound retained files. [2]
 - Snapshotting reopens the original publication before exclusive copies. [3]
 - Selected admission preserves frozen semantic profile authority. [4]
+
 - Manifest composition reobserves actual source selection. [5]
+
 - The surrounding gate receives explicit owner selection/start/retention callbacks. [6]

@@ -244,12 +244,12 @@
       ]
     },
     "6": {
-      "note": "The R12-run-controlled executor consumes these contracts through the trusted authority launcher.\n\nAnchor: `DiagnosticExecutionEngine`; `admit`",
+      "note": "The R12-run-controlled executor consumes these contracts through the trusted authority launcher.",
       "targets": [
         {
           "anchor": {
-            "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
-            "content": "sha256:a37b2ae74fe7488cae6312add2835189a63d91e39ef5e8cf5d89d81dcc5f13c0",
+            "blob": "cc73cfbf014a93201cd8e744aaebccfbd2efa9a5",
+            "content": "sha256:dc3ba0a4d0fc0366971047729fa530b1e087ffcfa6700f310d06c86702a76c94",
             "locator": {
               "kind": "file"
             },

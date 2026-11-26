@@ -84,16 +84,16 @@
       ]
     },
     "3": {
-      "note": "The release job builds the frontend, runs this script, packages, then asserts both distributions carry the bundle and the sidecar.\n\nAnchor: \"Build dashboard bundle\"; \"Place dashboard bundle into MCP package data\"; \"Verify the distributions ship the dashboard bundle\"",
+      "note": "The release job builds the frontend, runs this script, packages, then asserts both distributions carry the bundle and the sidecar.",
       "targets": [
         {
           "anchor": {
-            "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
-            "content": "sha256:0f9731b1271db6297835ba0c3c4849a69a39dfcd255c2c368c074511a6087a1c",
+            "blob": "4b1a3301286cb9514f0070cbef4894712ff74b91",
+            "content": "sha256:9663e84ca47346898d2a340731924a0fb10050cc672fc6737f22ecd85b7d03e4",
             "locator": {
-              "end": 120,
+              "end": 133,
               "kind": "line_range",
-              "start": 57
+              "start": 72
             },
             "path": ".github/workflows/publish-mcp-to-pypi.yml"
           },

@@ -16,7 +16,7 @@ Composes fresh or explicitly selected repository-profile admission and retained 
 
 The selected path validates the supplied execution and matches frozen candidate tree, mode and repository identity. It resolves the configured profile file in the candidate and reads bounded raw bytes for source provenance. Semantic profile, selection, repository plan, executor, decoder and applicable publication declarations come from the selected frozen run; this path does not reload or reselect semantic authority from current settings.
 
-`_write_sandbox_manifest` reobserves actual source selection and requires equality with the frozen plan. Its admission manifest binds the source/bundle/staged-overlay identities, resolved comparison base, raw profile provenance, canonical profile/plan, selected adapters, admitted runtime snapshot and declared publications. Selected suffixes also copy the verified retained report inventory and serialize the exact code-execution payload before atomic manifest publication.
+`_write_sandbox_manifest` reobserves actual source selection and requires equality with the frozen plan. Its admission manifest binds the source/bundle/staged-overlay identities, resolved comparison base, raw profile provenance, canonical profile/plan, selected adapters, admitted runtime snapshot, `droppedDaggerSelectors` (names only of stripped ambient selectors), and declared publications. Selected suffixes also copy the verified retained report inventory and serialize the exact code-execution payload before atomic manifest publication.
 
 ### Conventions
 
@@ -43,7 +43,9 @@ The resolved registry supplies no applicable external Domain Documentation sourc
 
 - Fresh preparation loads configured authority and observes actual source selection. [1]
 - Selected preparation retains frozen semantic authority and bounded raw-file provenance. [2]
+
 - Manifest publication rechecks source selection and binds actual retained transport. [3]
+
 
 ### Cross-Repo References
 

@@ -3,16 +3,16 @@
     "criteria": [
       "prevents_costly_mistake"
     ],
-    "justification": "The package manifest admits every 3.14 release while the managed runtime contract pins the exact 3.14.8 release; read as two separate statements, they prevent an install or a development run on the wrong interpreter."
+    "justification": "The package manifest admits every 3.14 release while the managed runtime contract selects uv-managed Python 3.14 without an exact patch pin; read as two separate statements, they prevent an install or a development run on the wrong interpreter."
   },
-  "applicability": "The installable agents-remember-mcp package and the documentation that states its supported range.",
+  "applicability": "The installable agents-remember-mcp package metadata and the documentation that states its supported Python range.",
   "conditions": [
-    "The package metadata declares requires-python and the Python classifier.",
-    "The managed runtime contract pins the exact release for development and CI."
+    "mcp/pyproject.toml declares requires-python = '>=3.14,<3.15' and the Programming Language :: Python :: 3.14 classifier.",
+    "scripts/python-runtime-contract.env declares AR_PYTHON_MINOR=3.14 and AR_UV_VERSION=0.13 for uv-managed development, CI, and Dagger environments."
   ],
   "exclusions": [
-    "The managed runtime's exact 3.14.8 pin is not a package requirement.",
-    "A Python older than 3.14 remains unsupported."
+    "The uv-managed runtime contract is not a package requirement on downstream installers.",
+    "Python versions older than 3.14 remain unsupported."
   ],
   "id": "INV-7VGMWY",
   "origin": {
@@ -26,27 +26,20 @@
     "leaf": "260928-MIK-L91",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The built package admits every Python 3.14 release while the managed development and CI runtime is pinned to the exact release 3.14.8 by the canonical runtime contract; the two statements are separate, and neither is allowed to become the other.",
+  "statement": "The built package admits every Python 3.14 release (>=3.14,<3.15) while development, CI, and Dagger select uv-managed Python 3.14 from the canonical runtime contract without pinning an exact patch; the package metadata and runtime contract stay separate.",
   "supersedes": [],
+  "title": "Package metadata admits Python 3.14 while development uses uv-managed 3.14",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L91",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T21:50:20+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L33",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+    "task": "261112-BUG"
   }
 }

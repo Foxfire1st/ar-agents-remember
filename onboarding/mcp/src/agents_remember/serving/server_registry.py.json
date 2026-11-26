@@ -160,12 +160,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
-            "content": "sha256:d61183b8a9d47c628b68e5e4dbad73c1cbfee921a648836250f8e49de756f8b2",
+            "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+            "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
             "locator": {
-              "end": 77,
-              "kind": "line_range",
-              "start": 54
+              "kind": "symbol",
+              "name": "run_runtime_install"
             },
             "path": "mcp/src/agents_remember/application/runtime/install.py"
           },

@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "b3131ef29cf948ee4830a48540585bc841530c3a",
-    "commit": "6eb67e8ec4ef00afa54348123b6e6afd1cef1dc8",
-    "role": "curator",
-    "statement": "Audited README.md in full (lines 1-221) against Round-4 CODE PASS tree b3131ef2: version 3.0.8, Python >=3.14,<3.15, memory/gate summary, five install steps, and stability promise remain accurate after CAP-L3 slimming of operations/bootstrap.md.",
-    "task": "261124-CAP-L3",
-    "uncommitted": true
+    "codeTree": "99893607f698478a1186507fd937b71cae1f20dd",
+    "commit": "4559dabe83cb85443c79614f19d610b7ecc62aa9",
+    "role": "manager",
+    "statement": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: README.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+    "task": "261112-BUG",
+    "uncommitted": false
   },
   "document": "README.md",
   "id": "DPD-CZBR1Q",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 16,
+  "revision": 17,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
+      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -46,7 +46,7 @@
       "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
     },
     {
-      "blob": "181c81f78275cfbda8aad2b96e8db82ddfacf341",
+      "blob": "bb4b93181fb580f55d46574b8619b6f1f5d15903",
       "kind": "file",
       "path": "scripts/python-runtime-contract.env"
     },
@@ -92,14 +92,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T13:09:23+01:00",
+    "at": "2026-11-26T23:03:52+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
-    "task": "261124-CAP"
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "task": "261112-BUG"
   }
 }

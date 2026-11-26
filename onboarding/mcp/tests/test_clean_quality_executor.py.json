@@ -1,14 +1,50 @@
 {
   "path": "mcp/tests/test_clean_quality_executor.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e77e3a4b7b10c4b16b602e85753502751ad5c8e1",
+        "content": "sha256:fa7aa9a414ce59d0cd2c6b3eafd0f149e5a7a34a8701aef1feae7e36e4faa0e8",
+        "locator": {
+          "kind": "symbol",
+          "name": "CleanQualityExecutorTests.test_dagger_launch_receipt_and_result_name_dropped_selectors"
+        }
+      },
+      "facet": "Verifies the Dagger child receives _EXPERIMENTAL_DAGGER_RUNNER_HOST without DAGGER_HOST or overriding selectors and that receipt and result name dropped keys without values.",
+      "id": "PRF-H822WK",
+      "invariant": "INV-NC2ZCP",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 7",
+        "leaf": "261112-BUG-L33"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e77e3a4b7b10c4b16b602e85753502751ad5c8e1",
+        "content": "sha256:466530483ba2cf0b8b35a588563bdca4b3115bcb9712262527656fdece3f46ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_clean_quality_inspects_and_launches_through_the_same_docker_client"
+        }
+      },
+      "facet": "Verifies clean-room inspection and Dagger child launch share the same absolutized Docker client and config environment.",
+      "id": "PRF-QGR14M",
+      "invariant": "INV-NC2ZCP",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 7",
+        "leaf": "261112-BUG-L33"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Exact staged candidate is passed to one pinned dagger pipeline.\n\nAnchor: `test_exact_staged_candidate_is_passed_to_one_pinned_dagger_pipeline`",
+      "note": "Exact staged candidate is passed to one pinned dagger pipeline.",
       "targets": [
         {
           "anchor": {
-            "blob": "1230f7734c660a0e67354c43dbd83a89c74d814f",
-            "content": "sha256:c0581c84e88d99544ef2aa6883b14394c581f4b7322658392253dbbf10f3d9a7",
+            "blob": "e77e3a4b7b10c4b16b602e85753502751ad5c8e1",
+            "content": "sha256:d4f244e0efb203c257c6cd1184ba317f418b245d5fd910ca1caff6a284f28a30",
             "locator": {
               "kind": "file"
             }
@@ -22,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1230f7734c660a0e67354c43dbd83a89c74d814f",
+            "blob": "e77e3a4b7b10c4b16b602e85753502751ad5c8e1",
             "content": "sha256:7f8d8248510e7c4c0e280e91aeaa2b8be0bbf81f96da3244a7eb23a230f17404",
             "locator": {
               "kind": "symbol",
@@ -34,12 +70,12 @@
       ]
     },
     "3": {
-      "note": "Invalid or unowned exports never replace durable evidence.\n\nAnchor: `test_invalid_or_unowned_exports_never_replace_durable_evidence`",
+      "note": "Invalid or unowned exports never replace durable evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "1230f7734c660a0e67354c43dbd83a89c74d814f",
-            "content": "sha256:c0581c84e88d99544ef2aa6883b14394c581f4b7322658392253dbbf10f3d9a7",
+            "blob": "e77e3a4b7b10c4b16b602e85753502751ad5c8e1",
+            "content": "sha256:d4f244e0efb203c257c6cd1184ba317f418b245d5fd910ca1caff6a284f28a30",
             "locator": {
               "kind": "file"
             }
@@ -53,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1230f7734c660a0e67354c43dbd83a89c74d814f",
+            "blob": "e77e3a4b7b10c4b16b602e85753502751ad5c8e1",
             "content": "sha256:e495c916f9f473d2c524a07f34a266d64ae12efddccf1685c2567598320e829e",
             "locator": {
               "kind": "symbol",

@@ -30,7 +30,7 @@ The retirement illustration enables `autoLandOnIntegration`, `autoLandOnFinalize
 
 ### Server registration
 
-`server.example.json` is the single command/arguments declaration that each harness adapts inside its own configuration envelope, as the install guides describe: `uvx --refresh-package agents-remember-mcp agents-remember-mcp@latest` (the refresh option takes the package name, then the `@latest` command follows) with `--config` passed to that command, naming the authority settings file at `<ABSOLUTE_USER_CONFIG_FOLDER>/agents-remember/agents-remember-settings.json`. The placeholder must become an absolute path, because a JSON argument array does not expand `~`. The example carries no harness-specific keys and installs nothing.
+`server.example.json` is the single command/arguments declaration that each harness adapts inside its own configuration envelope, as the install guides describe: `uvx --managed-python --python 3.14 --refresh-package agents-remember-mcp agents-remember-mcp@latest` (selecting uv-managed Python 3.14, then the refresh option with the package name, then the `@latest` command) with `--config` passed to that command, naming the authority settings file at `<ABSOLUTE_USER_CONFIG_FOLDER>/agents-remember/agents-remember-settings.json`. The placeholder must become an absolute path, because a JSON argument array does not expand `~`. The example carries no harness-specific keys and installs nothing.
 
 ### Coding guidelines
 
@@ -52,4 +52,6 @@ The retirement illustration enables `autoLandOnIntegration`, `autoLandOnFinalize
 - parse_timeout_caps admits only toolSeconds, silently skips retired providerSetupSeconds (reported by unused_settings_keys), and rejects any other key as an unsupported timeout cap. [7]
 
 
+
 - The common registration example runs `uvx` with the published package and an absolute user-config settings path. [9]
+

@@ -11,8 +11,8 @@
     "AR_UV_VERSION remains the sole version assignment."
   ],
   "exclusions": [
-    "The certified container installs exactly the contract version.",
-    "This policy does not relax the exact Python runtime checks or guarantee every future uv can successfully sync."
+    "CI workflows and the certified Dagger container install the newest patch in the AR_UV_VERSION minor line (0.13) and record the exact uv obtained.",
+    "This policy does not relax the Python 3.14 minor-version and uv minor-link checks or guarantee every future uv can successfully sync."
   ],
   "id": "INV-NQZ17H",
   "origin": {
@@ -26,27 +26,20 @@
     "leaf": "260928-MIK-L139",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "AR_UV_VERSION names the lowest uv the environment script builds with; that version or any newer one on the PATH is used as it is, compared numerically part by part.",
   "supersedes": [],
+  "title": "AR_UV_VERSION is the host numeric floor while CI and Dagger take the minor line",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L139",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T21:50:20+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L33",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+    "task": "261112-BUG"
   }
 }

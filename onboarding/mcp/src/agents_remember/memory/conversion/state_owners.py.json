@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3bb4147cebb3bd8af48d26d9ea4b650733ba9d77",
+        "blob": "64ecde1c2004b81e55ef76bfe4e0ac64f37415d6",
         "content": "sha256:b1bfeb4e49342b7d8877d77293c85fcc809408711552037d211afbb3d035cab5",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "3bb4147cebb3bd8af48d26d9ea4b650733ba9d77",
+        "blob": "64ecde1c2004b81e55ef76bfe4e0ac64f37415d6",
         "content": "sha256:22bc369023cb1ac3b4b658e634a22569bba11450684b3feaa1de9fb0e6e6cd9a",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "3bb4147cebb3bd8af48d26d9ea4b650733ba9d77",
-        "content": "sha256:2be73e8447b5fbc3499e814fe705b911691965f28bf13b285b5f450c4e564694",
+        "blob": "64ecde1c2004b81e55ef76bfe4e0ac64f37415d6",
+        "content": "sha256:7ec21dbe4c4dd526618dab2f6787583342220685a0b0886931424f498263d625",
         "locator": {
           "kind": "symbol",
           "name": "_durable_verdict_ref"
@@ -54,6 +54,24 @@
       },
       "rationale": "Performs the pure segment normalization that maps worktree and absolute report references to notes/reports/<rel> without reading the filesystem.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "64ecde1c2004b81e55ef76bfe4e0ac64f37415d6",
+        "content": "sha256:7ec21dbe4c4dd526618dab2f6787583342220685a0b0886931424f498263d625",
+        "locator": {
+          "kind": "symbol",
+          "name": "_durable_verdict_ref"
+        }
+      },
+      "id": "RLZ-TQ0EDQ",
+      "invariant": "INV-K03WFZ",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §3",
+        "leaf": "261112-BUG-L54"
+      },
+      "rationale": "Joins archived-task state conversion onto collected_report_ref, COLLECTED_REPORT_PARTS, and ROLE_REPORT_DIRECTORY from worktrees/role_reports.py (strictly downward memory rank 12 -> worktrees rank 10 in layers.toml) while keeping contract-less segment search unchanged.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -62,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3bb4147cebb3bd8af48d26d9ea4b650733ba9d77",
+            "blob": "64ecde1c2004b81e55ef76bfe4e0ac64f37415d6",
             "content": "sha256:22bc369023cb1ac3b4b658e634a22569bba11450684b3feaa1de9fb0e6e6cd9a",
             "locator": {
               "kind": "symbol",
@@ -78,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3bb4147cebb3bd8af48d26d9ea4b650733ba9d77",
+            "blob": "64ecde1c2004b81e55ef76bfe4e0ac64f37415d6",
             "content": "sha256:543f8b00e4152a3ad92ddac19e76a0964e5d869c7cd4e82996492cc46c69ccce",
             "locator": {
               "kind": "symbol",
@@ -90,12 +108,12 @@
       ]
     },
     "3": {
-      "note": "`review_fact` applies `_durable_verdict_ref` and `_report_tail` to normalize worktree `role-reports` and absolute report paths into durable `notes/reports/<rel>` references without filesystem access, leaving empty tails, `..` traversal segments, URLs, and non-report paths unchanged. [3]\n\nAnchor: `review_fact`; `_durable_verdict_ref`; `_report_tail`",
+      "note": "`review_fact` applies `_durable_verdict_ref` (via `role_reports.collected_report_ref`, `COLLECTED_REPORT_PARTS`, and `ROLE_REPORT_DIRECTORY`) and `_report_tail` to normalize worktree `role-reports` and absolute report paths into durable `notes/reports/<rel>` references without filesystem access, leaving empty tails, `..` traversal segments, URLs, and non-report paths unchanged.",
       "targets": [
         {
           "anchor": {
-            "blob": "3bb4147cebb3bd8af48d26d9ea4b650733ba9d77",
-            "content": "sha256:4c17fa52bc08630da767ab5f5502467d91fb4a6972da99fc69cea0e18bd110a7",
+            "blob": "64ecde1c2004b81e55ef76bfe4e0ac64f37415d6",
+            "content": "sha256:28b89c2b4f723dc5b398b99d6428cd7f5cd96fc0b314ee5b7b580dcda1ea17ed",
             "locator": {
               "kind": "file"
             }

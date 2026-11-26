@@ -6,7 +6,7 @@
 
 ## Purpose and current source account
 
-All process run/spawn/provision actions pass through the scrubbed environment and exact selected-build interpreter. Ignored Python and dashboard build products can be prepared in the checkout. Root/corpus helpers run in the selected build, provision inherits the command lock, dashboard owns a detached session and tmux stop names only its sandbox socket. No broader child containment is claimed.
+All process run/spawn/provision actions pass through the scrubbed environment (which preserves `UV_PYTHON_INSTALL_DIR` when set) and exact selected-build interpreter. Ignored Python and dashboard build products can be prepared in the checkout: `prepare_python` runs `bash scripts/bootstrap-mcp-venv.sh --ensure` after `_matches_runtime_contract` checks that the selected checkout declares the current uv-managed Python contract (`AR_PYTHON_MINOR` and `AR_UV_VERSION`, without the removed `AR_PYTHON_VERSION`). Root/corpus helpers run in the selected build, provision inherits the command lock, dashboard owns a detached session and tmux stop names only its sandbox socket. No broader child containment is claimed.
 
 The runtime-install request now carries the same `sandbox` and `hostPort` fields as the corpus request, taken from the operations' own layout, so the helper admits the sandbox's host for the install as it does for the corpus. The install path, its lock and its receipt retirement are unchanged.
 
@@ -24,6 +24,9 @@ The runtime-install answer may omit its host block. In that case the helper read
 
 - A compact install response reads its confined whole report without overwriting the response outcome. [3]
 
+
 - The scoped current source carries the module/document behavior described above. [1]
+
+
 
 - The runtime-install request names the sandbox and its Paseo port beside its settings file and roots. [4]

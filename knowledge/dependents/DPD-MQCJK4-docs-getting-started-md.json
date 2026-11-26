@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "b3131ef29cf948ee4830a48540585bc841530c3a",
-    "commit": "6eb67e8ec4ef00afa54348123b6e6afd1cef1dc8",
-    "role": "curator",
-    "statement": "Audited docs/getting-started.md in full (lines 1-263) against Round-4 CODE PASS tree b3131ef2: prerequisites, five install steps, Bootstrap three questions/boundaries, and first Architect start match slimmed operations/bootstrap.md.",
-    "task": "261124-CAP-L3",
-    "uncommitted": true
+    "codeTree": "99893607f698478a1186507fd937b71cae1f20dd",
+    "commit": "4559dabe83cb85443c79614f19d610b7ecc62aa9",
+    "role": "manager",
+    "statement": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: docs/getting-started.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+    "task": "261112-BUG",
+    "uncommitted": false
   },
   "document": "docs/getting-started.md",
   "id": "DPD-MQCJK4",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 19,
+  "revision": 20,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
+      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -76,7 +76,7 @@
       "path": "dashboard/src/cockpit/paseoFrameControl.ts"
     },
     {
-      "blob": "f598db5495c4b1e8dfae89ffd08fe320e3d3810f",
+      "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -126,20 +126,20 @@
       "path": "dashboard/package-lock.json"
     },
     {
-      "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
+      "blob": "4b1a3301286cb9514f0070cbef4894712ff74b91",
       "kind": "file",
       "path": ".github/workflows/publish-mcp-to-pypi.yml"
     }
   ],
   "writer": {
-    "at": "2026-11-26T13:09:23+01:00",
+    "at": "2026-11-26T23:03:52+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
-    "task": "261124-CAP"
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "task": "261112-BUG"
   }
 }

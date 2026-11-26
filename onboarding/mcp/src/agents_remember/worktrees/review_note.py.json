@@ -1,17 +1,59 @@
 {
   "path": "mcp/src/agents_remember/worktrees/review_note.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5b84bf55e399c8c0616439edec4c6e7df5bf8d67",
+        "content": "sha256:04acc78ac1a5e3e7b89d2a0505368f968ca6feb5a0a94973dbf7fde97ced2a14",
+        "locator": {
+          "kind": "symbol",
+          "name": "committed_review_note"
+        }
+      },
+      "id": "RLZ-1QPG5Z",
+      "invariant": "INV-793X8F",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §2",
+        "leaf": "261112-BUG-L54"
+      },
+      "rationale": "Emits the same unmapped verdictRef sentence when resumed closeout or direct landing reads a committed closed history file whose review.verdictRef is not in collected form.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Only a readable closed history without a review fact supports the no-pass sentence.",
+      "note": "A readable closed history without `review` returns `NO_PASS_SENTENCE`, one whose `review.verdictRef` fails `is_collected_report_ref` returns `unmapped_verdict_ref_note(verdict_ref)`, and missing, open, unreadable, or collected-ref histories return empty string.",
       "targets": [
         {
           "anchor": {
-            "blob": "3fef49ae4f3c1bf291de3554c41049c496946862",
-            "content": "sha256:aa8c936b5ee5d85a5378dc1d610ad3b4cc65aeff23be682c8cb1e73c0a8f0431",
+            "blob": "5b84bf55e399c8c0616439edec4c6e7df5bf8d67",
+            "content": "sha256:04acc78ac1a5e3e7b89d2a0505368f968ca6feb5a0a94973dbf7fde97ced2a14",
             "locator": {
               "kind": "symbol",
               "name": "committed_review_note"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b84bf55e399c8c0616439edec4c6e7df5bf8d67",
+            "content": "sha256:647e1595fa5076ea14229849ce888d504e89570ea7574590605982519144f6aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_history_review_note"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b84bf55e399c8c0616439edec4c6e7df5bf8d67",
+            "content": "sha256:329912a40bc6286d0c1cee601a28564bb74eaff979a909d4e4e29678411a29e3",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 56
             }
           },
           "kind": "code"

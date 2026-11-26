@@ -22,7 +22,10 @@ The five install steps stand under the heading `Install steps` and keep the numb
 
 - The head is centered and holds the banner as the one top heading, the claim, three badge links, five named links and the still picture that opens the video. [1]
 - The body states six capabilities and shows the product in three pictures, each followed by one sentence about what is seen. [2]
+
+
 - The five install steps keep the number, order, titles and command lines of the getting-started page. [3]
+
 
 - The Status section gives package version 3.0.8 and Python 3.14, then directs readers to the release notes before installation. [4]
 

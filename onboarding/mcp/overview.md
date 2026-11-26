@@ -86,9 +86,9 @@ record the interpreter actually used. This does not replace the landed tool serv
 
 with the candidate, alter the shared runtime pin, or make a focused test a certification result.
 
-Host bootstrap accepts the contract uv minimum or newer from PATH without installing uv;
+Host bootstrap accepts the contract uv minimum minor line or newer from PATH without installing uv;
 
-the certified container retains its exact contract version.
+CI and the certified Dagger container install the newest patch in that uv minor line and use uv-managed Python 3.14.
 
 The transport roster is a cycle-free model literal; registration order is separately owned by `TOOL_REGISTRARS`. `server.py` wires the server and delegates startup/application decisions. No public surface validator exists in the pinned product source; the registration, adapter and roster agreement is checkable through the conformance tests, without treating one declaration as proof of the others. The CLI umbrella exposes maintenance, conversion, indexing, validation, census, file authoring, Paseo, settings-upgrade, removed-stores, and reporting commands; older subcommand counts and the retired `review-record-comparison` producer are historical. Discovery declares handlers and vocabulary without constructing operation payload services. `kernel/worktree_service_binding.py` stores one pending supplier; the first operation that needs worktree services builds and retains them. `mcp/server.py` schedules one joint post-discovery start after the first tool-list answer, or uses the first tool call for a client that never lists: its shared latch starts the outside-scratch sweep through the child-backed reconciliation seam and dashboard supervision only when configured. The serving process does not import the worktrees sweep owner; boot-time tool-event identity remains initialized at startup. This is source structure, not a startup timing result.
 
@@ -678,7 +678,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 - The removed repository memory root is resolved through the recorder. [250]
 
 
+
 - The host step of the install. [251]
+
 
 
 - The packaged host contract. [252]
@@ -827,6 +829,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 
 
+
 - General families plus four explainer additions, narrowed to the allowlist of a bound role; the seat check covers only those four while the process still serves them [405]
 
 - The cutover refusal applies to an all-unconverted input set. A repository probe selects the conversion guidance. [423]
@@ -899,7 +902,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - **Retained historical source account — superseded by the current route account:** Exact contract scope, full check and curator worklist publication. [152]
 - Source bindings, membership and record models. [313]
 - The shared writer uses the contract's recorded memory base for card comparison and passes it with the contract-bound code worktree and persisted worklist. It supplies no card base if the recorded commit cannot be established. [315]
+
 - The runtime synchronizer declares two targets (benchmarks, system) without docs; retained packaged tool details do not add a third generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md. [402]
+
 
 
 - `register_server_binding` writes per-PID binding/ancestry records under `runtime/server-bindings/`, `live_server_bindings` reclaims dead/recycled records, and `harness_root_pids` locates root harness PIDs via `/proc`. [426]

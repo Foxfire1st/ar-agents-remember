@@ -1,0 +1,40 @@
+{
+  "anchor": {
+    "blob": "8634c5737fc80f98a695df3620a2c6910fb459f0",
+    "content": "sha256:c37dce9355696d9c74ad9afd52473c72f9a515292014df76732862d29ffadb61",
+    "locator": {
+      "kind": "symbol",
+      "name": "_stream_dagger"
+    },
+    "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
+  },
+  "id": "WKN-452VE7",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "261112-BUG-L33-phase-a-records-and-invariants"
+    },
+    "handoffEntry": "BUG-R33-streaming-pipe-ownership",
+    "leaf": "261112-BUG-L33",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "agents-remember:261112_bug-fixes-and-issue-tracking/33_the-product-runs-on-the-python-uv-manages.json"
+  },
+  "state": "open",
+  "statement": "The Dagger streaming path leaves the child's stdout pipe open, producing a ResourceWarning at teardown when the F02 stub child exits.",
+  "writer": {
+    "at": "2026-11-25T19:35:39+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L33",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+    "task": "261112-BUG"
+  }
+}

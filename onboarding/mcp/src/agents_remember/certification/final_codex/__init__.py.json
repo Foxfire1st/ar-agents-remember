@@ -273,12 +273,12 @@
       ]
     },
     "7": {
-      "note": "The R14-run-controlled executor consumes these contracts through the trusted authority launcher.\n\nAnchor: `FinalCodexExecutionEngine`",
+      "note": "The R14-run-controlled executor consumes these contracts through the trusted authority launcher.",
       "targets": [
         {
           "anchor": {
-            "blob": "0732386686b1d8882ce3fbf5a73b0c7a1a8d6b57",
-            "content": "sha256:1d997abc26d8168733e4e4fe347f6e55ea7b0f5a2cdedf3518e70f278a429daf",
+            "blob": "349f258ebe0ae441e02fbb050f21ff26e5f30298",
+            "content": "sha256:afb63ee7b8925075c6e5fcbbd94014257f1f3d3907e137d5bcc01fc5c3b7ed94",
             "locator": {
               "kind": "file"
             },

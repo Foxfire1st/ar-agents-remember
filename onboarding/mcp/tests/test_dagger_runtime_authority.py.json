@@ -1,5 +1,58 @@
 {
   "path": "mcp/tests/test_dagger_runtime_authority.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b27084a9a29fba2ab32d119180e9241d8073ab0e",
+        "content": "sha256:f76feae7ea0e12fbe7c1a67700cbc7ab96867b23baf42d10a1df166c977f3028",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_docker_inspector_admits_the_exact_container_reference"
+        }
+      },
+      "facet": "Verifies DockerEngineInspector admits both dotted container names and container IDs while keeping the written reference verbatim.",
+      "id": "PRF-1XV6QD",
+      "invariant": "INV-NC2ZCP",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 7",
+        "leaf": "261112-BUG-L33"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b27084a9a29fba2ab32d119180e9241d8073ab0e",
+        "content": "sha256:93d038f9d54d2cebff4a794673e26007535a0d001701b52ace2e56a22d2268d8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_docker_inspector_refuses_malformed_endpoints_before_probe"
+        }
+      },
+      "facet": "Verifies malformed container endpoints are refused by the endpoint grammar before invoking docker inspect.",
+      "id": "PRF-HJ4343",
+      "invariant": "INV-NC2ZCP",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 7",
+        "leaf": "261112-BUG-L33"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b27084a9a29fba2ab32d119180e9241d8073ab0e",
+        "content": "sha256:92928fc479576b41e62af836d53e6706a00136870d887cc5991dcb2343edd22f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_conflicting_ambient_runner_is_refused_by_key"
+        }
+      },
+      "facet": "Verifies conflicting ambient _EXPERIMENTAL_DAGGER_RUNNER_HOST and DAGGER_HOST values are refused by key.",
+      "id": "PRF-SXVEBV",
+      "invariant": "INV-NC2ZCP",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 7",
+        "leaf": "261112-BUG-L33"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +60,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8474ba74c0b76f75a960e0448767474a91fb7ab5",
-            "content": "sha256:2f5efb3bde30857fae56a2e2a767a3e36b7c9875a5822e907c058b8840ccdf31",
+            "blob": "b27084a9a29fba2ab32d119180e9241d8073ab0e",
+            "content": "sha256:d9c31f2d5acf41977a13d0fd3824cf60ee3bf47c9f936eb50608ae59affa9204",
             "locator": {
               "kind": "symbol",
               "name": "test_admits_one_shared_authority_and_binds_a_deterministic_snapshot"
@@ -23,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8474ba74c0b76f75a960e0448767474a91fb7ab5",
+            "blob": "b27084a9a29fba2ab32d119180e9241d8073ab0e",
             "content": "sha256:c84c6d46015bfb196ee8671168ff481150cd2cce3bccfb1fb56accae876bf638",
             "locator": {
               "kind": "symbol",

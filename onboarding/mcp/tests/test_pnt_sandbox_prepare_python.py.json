@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_pnt_sandbox_prepare_python.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a58a4992cb76bd409ad6a404828967ceec38c956",
+        "content": "sha256:de144439b19652f9b060765fee0767bd93d22cc369a02292e63a799f009b2f29",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_start_refuses_mismatched_runtime_before_environment_work"
+        }
+      },
+      "facet": "Verifies PNT start refuses pre-migration checkouts lacking --ensure or declaring AR_PYTHON_SOURCE_URL before environment work.",
+      "id": "PRF-B5JEC7",
+      "invariant": "INV-XG226D",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 2",
+        "leaf": "261112-BUG-L33"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a58a4992cb76bd409ad6a404828967ceec38c956",
+        "content": "sha256:c315bc2619309182a9d995bec1015ccd771b96a8e18e84c50f9fb31f30783ea9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_prepare_python_preserves_uv_install_dir_for_checkout_bootstrap"
+        }
+      },
+      "facet": "Verifies PNT Operations.prepare_python invokes bootstrap-mcp-venv.sh --ensure while preserving UV_PYTHON_INSTALL_DIR across sandbox XDG_DATA_HOME redirection.",
+      "id": "PRF-T0TB0D",
+      "invariant": "INV-XG226D",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 2",
+        "leaf": "261112-BUG-L33"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`test_start_refuses_mismatched_runtime_before_environment_work` verifies pre-migration checkouts are refused before `_start` or `prepare_python`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a58a4992cb76bd409ad6a404828967ceec38c956",
+            "content": "sha256:de144439b19652f9b060765fee0767bd93d22cc369a02292e63a799f009b2f29",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_start_refuses_mismatched_runtime_before_environment_work"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "`test_prepare_python_preserves_uv_install_dir_for_checkout_bootstrap` verifies `prepare_python` runs `bootstrap-mcp-venv.sh --ensure` with preserved `UV_PYTHON_INSTALL_DIR` across sandbox `XDG_DATA_HOME` redirection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a58a4992cb76bd409ad6a404828967ceec38c956",
+            "content": "sha256:c315bc2619309182a9d995bec1015ccd771b96a8e18e84c50f9fb31f30783ea9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_prepare_python_preserves_uv_install_dir_for_checkout_bootstrap"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

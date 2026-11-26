@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
+        "blob": "977b1335c62aa482b51debfe3e74706c69d9ac23",
         "content": "sha256:b5dcbe353b74fecbe99d922961ca12bc08068532affba89c85e27c810c573ded",
         "locator": {
-          "end": 623,
+          "end": 625,
           "kind": "line_range",
-          "start": 623
+          "start": 625
         }
       },
       "id": "RLZ-9QPBZK",
@@ -74,12 +74,12 @@
     },
     {
       "anchor": {
-        "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
+        "blob": "977b1335c62aa482b51debfe3e74706c69d9ac23",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
-          "end": 758,
+          "end": 760,
           "kind": "line_range",
-          "start": 758
+          "start": 760
         }
       },
       "id": "RLZ-NJFH31",
@@ -110,12 +110,12 @@
     },
     {
       "anchor": {
-        "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
+        "blob": "977b1335c62aa482b51debfe3e74706c69d9ac23",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
-          "end": 573,
+          "end": 575,
           "kind": "line_range",
-          "start": 573
+          "start": 575
         }
       },
       "id": "RLZ-ZTDYFT",
@@ -507,12 +507,12 @@
       ]
     },
     "864": {
-      "note": "The lane catalog declares 841 distinct modules across seven lanes: 690 unit-regression, 3 public-contract, 123 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result.",
+      "note": "The lane catalog declares 844 distinct modules across seven lanes: 692 unit-regression, 3 public-contract, 124 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
-            "content": "sha256:191f19263651949e412e7f20e24b516e11a8e0aa9694eb3dfe1287a4e8eaecde",
+            "blob": "977b1335c62aa482b51debfe3e74706c69d9ac23",
+            "content": "sha256:73ea6df9ad7dc4217875c4937b627046aaf53ebed89b81153abd78490b307125",
             "locator": {
               "kind": "file"
             }
@@ -539,12 +539,12 @@
       ]
     },
     "867": {
-      "note": "The lane catalog declares 841 distinct modules across seven lanes: 690 unit-regression, 3 public-contract, 123 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result.",
+      "note": "The lane catalog declares 844 distinct modules across seven lanes: 692 unit-regression, 3 public-contract, 124 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
-            "content": "sha256:191f19263651949e412e7f20e24b516e11a8e0aa9694eb3dfe1287a4e8eaecde",
+            "blob": "977b1335c62aa482b51debfe3e74706c69d9ac23",
+            "content": "sha256:73ea6df9ad7dc4217875c4937b627046aaf53ebed89b81153abd78490b307125",
             "locator": {
               "kind": "file"
             }
@@ -620,12 +620,12 @@
       ]
     },
     "869": {
-      "note": "The lane catalog declares 841 distinct modules across seven lanes: 690 unit-regression, 3 public-contract, 123 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. The catalog retains the after-discovery, explainer, publication and landing-workflow cases and the four surviving L192 regression modules (the five removed provider-specific L192 suites are absent). The retired provider-current-state suite has no lane registration.",
+      "note": "The lane catalog declares 844 distinct modules across seven lanes: 692 unit-regression, 3 public-contract, 124 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. The catalog retains the after-discovery, explainer, publication and landing-workflow cases and the four surviving L192 regression modules (the five removed provider-specific L192 suites are absent). The retired provider-current-state suite has no lane registration.",
       "targets": [
         {
           "anchor": {
-            "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
-            "content": "sha256:191f19263651949e412e7f20e24b516e11a8e0aa9694eb3dfe1287a4e8eaecde",
+            "blob": "977b1335c62aa482b51debfe3e74706c69d9ac23",
+            "content": "sha256:73ea6df9ad7dc4217875c4937b627046aaf53ebed89b81153abd78490b307125",
             "locator": {
               "kind": "file"
             }
@@ -635,12 +635,12 @@
       ]
     },
     "870": {
-      "note": "The lane catalog declares 841 distinct modules across seven lanes: 690 unit-regression, 3 public-contract, 123 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result.",
+      "note": "The lane catalog declares 844 distinct modules across seven lanes: 692 unit-regression, 3 public-contract, 124 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
-            "content": "sha256:191f19263651949e412e7f20e24b516e11a8e0aa9694eb3dfe1287a4e8eaecde",
+            "blob": "977b1335c62aa482b51debfe3e74706c69d9ac23",
+            "content": "sha256:73ea6df9ad7dc4217875c4937b627046aaf53ebed89b81153abd78490b307125",
             "locator": {
               "kind": "file"
             }
@@ -981,16 +981,16 @@
       ]
     },
     "913": {
-      "note": "`mcp/tests/test_state_conversion_worklist.py` is registered once in `unit-regression` at line 588 (683 unit-regression, 833 total).",
+      "note": "`mcp/tests/test_state_conversion_worklist.py` is registered once in `unit-regression` at line 590 (685 unit-regression, 836 total).",
       "targets": [
         {
           "anchor": {
-            "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
+            "blob": "0217cb383959a2f2d36d95c89a033fd579b3d3c3",
             "content": "sha256:ef0e1b8a9b42b1c4759d7483bba4049aeae29f8376e8886c0935226bae2f9558",
             "locator": {
-              "end": 594,
+              "end": 590,
               "kind": "line_range",
-              "start": 594
+              "start": 590
             }
           },
           "kind": "test"

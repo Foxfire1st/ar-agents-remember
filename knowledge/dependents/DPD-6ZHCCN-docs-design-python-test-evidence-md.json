@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "83eacca898d910be73255f63f549a2b0ef290fc8",
-    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
+    "codeTree": "56daf6642402898075d164df4e26178499116006",
+    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
     "role": "curator",
-    "statement": "docs/design/python-test-evidence.md remains accurate on the synced DEP-L7 candidate because aliasing the targeted import in quality_plan.py preserves CheckConfig's public fields and every test-evidence planning boundary.",
-    "task": "261125-DEP-L7",
+    "statement": "docs/design/python-test-evidence.md remains accurate on synced base 65911c75 / candidate 56daf664 because L33's Dagger runner-environment and dropped-selector changes in clean_executor.py and gate.py leave the CertifyingTestEvidence authority boundary and enforcing function owners unchanged.",
+    "task": "261112-BUG-L33",
     "uncommitted": true
   },
   "document": "docs/design/python-test-evidence.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,12 +26,12 @@
       "path": "mcp/src/agents_remember/models/test_evidence.py"
     },
     {
-      "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+      "blob": "8634c5737fc80f98a695df3620a2c6910fb459f0",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
     },
     {
-      "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+      "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
     },
@@ -77,14 +77,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T02:27:57+01:00",
+    "at": "2026-11-26T12:39:05+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L7",
+    "leaf": "261112-BUG-L33",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
-    "task": "261125-DEP"
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+    "task": "261112-BUG"
   }
 }

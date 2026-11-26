@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
-        "content": "sha256:1a306faf4cbd71ae81d4ff8e036017c8c21e258180a6bbeeb651de7471614f32",
+        "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
+        "content": "sha256:175d08c35c2eb075a61fc55a9fb45a6dd38c03c62814efa473a28315832b1d99",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-8ZDDHS",
+      "invariant": "INV-Y2SXDZ",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 3",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "The profile requires the runtime and candidate venv proofs by artifact name and carries refreshed adapter and profile digests.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
+        "content": "sha256:175d08c35c2eb075a61fc55a9fb45a6dd38c03c62814efa473a28315832b1d99",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
+            "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
             "content": "sha256:f389111330d3fa39846d47f51320c1e391f55e5500dd96820287a9e1068ca267",
             "locator": {
               "end": 34,
@@ -42,8 +59,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
-            "content": "sha256:2e266c65d9aeca93ca4feb785a367111684ee867e75a347b5a7390ee591b48ff",
+            "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
+            "content": "sha256:0266388258b99258c637377d61608f9037534fb37bc3451ab94e91c19c6afe5c",
             "locator": {
               "end": 57,
               "kind": "line_range",
@@ -55,12 +72,12 @@
       ]
     },
     "3": {
-      "note": "The declaration carries its own canonical profile digest.\n\nAnchor: `` `profileDigest` ``",
+      "note": "The declaration carries its own canonical profile digest.",
       "targets": [
         {
           "anchor": {
-            "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
-            "content": "sha256:94fc631b7ba720c5262d0eeb6bceac9e80d10ac58e92ab0eff9a19925b4a3e59",
+            "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
+            "content": "sha256:b10e73c0556279b707d95c519e7449602c254e891c0f37b976d466f1b0704ed3",
             "locator": {
               "end": 112,
               "kind": "line_range",
@@ -76,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
+            "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
             "content": "sha256:db184c36e3c8755a38fbe31e8e2112568c357833bfb47bc8041492df3f52b4f8",
             "locator": {
               "end": 528,
@@ -93,12 +110,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
+            "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
             "content": "sha256:4218a7eb4a43e1687045cc2f07b4e748286c12fa8be5c5c76e4311fbd2cb8379",
             "locator": {
-              "end": 3236,
+              "end": 3232,
               "kind": "line_range",
-              "start": 2634
+              "start": 2630
             }
           },
           "kind": "code"
@@ -110,12 +127,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
+            "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
             "content": "sha256:5b61e07e69a2162de6bd707be5042305c9d54dba74d88ccc813669ef8997d25b",
             "locator": {
-              "end": 3237,
+              "end": 3233,
               "kind": "line_range",
-              "start": 3237
+              "start": 3233
             }
           },
           "kind": "code"
@@ -127,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
+            "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
             "content": "sha256:cedc8b41b5a7c649564198b11581c36de8c8b488bfdda0e173395a34244cae35",
             "locator": {
               "end": 111,
@@ -144,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
+            "blob": "804552eefc82273eebb3e6e74cf8ac071709892a",
             "content": "sha256:8ad62a1372fedc962f0c7131c3852cb8b8e8047c7c273c03730df3c4480a9c52",
             "locator": {
               "end": 1473,

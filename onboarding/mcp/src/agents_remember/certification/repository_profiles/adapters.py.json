@@ -102,12 +102,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:aa1ed0f787481cd4da73944855ad2d03f67a71ba73bd8e69f8656c69b497a38b",
             "locator": {
-              "end": 569,
+              "end": 572,
               "kind": "line_range",
-              "start": 569
+              "start": 572
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
           },
@@ -120,7 +120,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:c2754c011300a1a90ede34aac0f525d3c6abd7585c0df9492a9bb0c2b038c090",
             "locator": {
               "end": 446,
@@ -134,16 +134,15 @@
       ]
     },
     "6": {
-      "note": "The clean executor runs the admitted adapter against the exact candidate.\n\nAnchor: \"def run_clean_quality(\"; \"def _executor_command(\"",
+      "note": "The clean executor runs the admitted adapter against the exact candidate.",
       "targets": [
         {
           "anchor": {
-            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
-            "content": "sha256:6f6b0420335f5a0d445ca28a99ae9f322494c89009835cc0c46619569fa0df00",
+            "blob": "8634c5737fc80f98a695df3620a2c6910fb459f0",
+            "content": "sha256:efbd5ee7988303bb4656623f70949144bef2de11bb4d4249a0a7f831e3cb8bc3",
             "locator": {
-              "end": 233,
-              "kind": "line_range",
-              "start": 146
+              "kind": "symbol",
+              "name": "run_clean_quality"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
           },
@@ -151,12 +150,11 @@
         },
         {
           "anchor": {
-            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
-            "content": "sha256:a8f1f67611df6565ab9d5f42717f45e3eb1bdc4620d37f0dc0b46bef2bc41c1e",
+            "blob": "8634c5737fc80f98a695df3620a2c6910fb459f0",
+            "content": "sha256:6b6356c129d7162ba9d96104f1b079a1eec06042046cd0d4983fc705a87206e6",
             "locator": {
-              "end": 284,
-              "kind": "line_range",
-              "start": 253
+              "kind": "symbol",
+              "name": "_executor_command"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
           },
@@ -169,12 +167,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+            "blob": "8634c5737fc80f98a695df3620a2c6910fb459f0",
             "content": "sha256:d15f164c80cb2a71d0b4ad0616606951eeb738573e05efc417f56bfa13c01f66",
             "locator": {
-              "end": 339,
+              "end": 345,
               "kind": "line_range",
-              "start": 289
+              "start": 295
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
           },
@@ -187,12 +185,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+            "blob": "8634c5737fc80f98a695df3620a2c6910fb459f0",
             "content": "sha256:742c99c668ea3a708e1599e98313109b2ab7fb9763980923daad884cd0174ed1",
             "locator": {
-              "end": 410,
+              "end": 416,
               "kind": "line_range",
-              "start": 397
+              "start": 403
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
           },
@@ -205,7 +203,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "blob": "c7788f3c50d98bfc9e5ac6a07770d99be68d5218",
             "content": "sha256:fc7019a6ffe44757b66782b7380868dd2e8a2a3f3159084b672650392c0d1365",
             "locator": {
               "end": 393,

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "21ec67eb44139f33fbdaa0a356026b1d93ebe3df",
-        "content": "sha256:0639c69b2a17d6ea9bb8d871aab56ecc8e2d795bda21ca156622f32c91cad8be",
+        "blob": "42835540234aa58d7f4f614722a8b6b4ab3ad1dc",
+        "content": "sha256:e6d629673d016fd4f1e523460c3fa2cb56415d7066f08bd6ddef38311f134d64",
         "locator": {
           "kind": "symbol",
           "name": "prepare_role_folders"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "21ec67eb44139f33fbdaa0a356026b1d93ebe3df",
+        "blob": "42835540234aa58d7f4f614722a8b6b4ab3ad1dc",
         "content": "sha256:61a2d8b65d0e424a88d4760893e05da5ed66a9d35e99eb336e9937d44dc97115",
         "locator": {
           "kind": "symbol",
@@ -36,6 +36,24 @@
       },
       "rationale": "Reserves the exact live enclosure generation for filesystem writes during preparation and publication.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "42835540234aa58d7f4f614722a8b6b4ab3ad1dc",
+        "content": "sha256:e6d629673d016fd4f1e523460c3fa2cb56415d7066f08bd6ddef38311f134d64",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_role_folders"
+        }
+      },
+      "id": "RLZ-F82Q84",
+      "invariant": "INV-K03WFZ",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §3",
+        "leaf": "261112-BUG-L54"
+      },
+      "rationale": "Builds canonical and local report directories from COLLECTED_REPORT_DIRECTORY and ROLE_REPORT_DIRECTORY.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -44,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21ec67eb44139f33fbdaa0a356026b1d93ebe3df",
+            "blob": "42835540234aa58d7f4f614722a8b6b4ab3ad1dc",
             "content": "sha256:3063732cd40b20701f1e75c112fa66513a75cc9d471f7a48202d90eb6f5108ba",
             "locator": {
               "kind": "symbol",
@@ -60,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21ec67eb44139f33fbdaa0a356026b1d93ebe3df",
+            "blob": "42835540234aa58d7f4f614722a8b6b4ab3ad1dc",
             "content": "sha256:61a2d8b65d0e424a88d4760893e05da5ed66a9d35e99eb336e9937d44dc97115",
             "locator": {
               "kind": "symbol",
@@ -72,15 +90,27 @@
       ]
     },
     "3": {
-      "note": "`prepare_role_folders` assigns leaf and non-leaf report/scratch paths, rejects symlinks or escapes outside the workspace root, and creates the local directories.",
+      "note": "`prepare_role_folders` assigns leaf and non-leaf report/scratch paths using shared `ROLE_REPORT_DIRECTORY` and `COLLECTED_REPORT_DIRECTORY` constants, rejects symlinks or escapes outside the workspace root, and creates the local directories.",
       "targets": [
         {
           "anchor": {
-            "blob": "21ec67eb44139f33fbdaa0a356026b1d93ebe3df",
-            "content": "sha256:0639c69b2a17d6ea9bb8d871aab56ecc8e2d795bda21ca156622f32c91cad8be",
+            "blob": "42835540234aa58d7f4f614722a8b6b4ab3ad1dc",
+            "content": "sha256:e6d629673d016fd4f1e523460c3fa2cb56415d7066f08bd6ddef38311f134d64",
             "locator": {
               "kind": "symbol",
               "name": "prepare_role_folders"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42835540234aa58d7f4f614722a8b6b4ab3ad1dc",
+            "content": "sha256:bf5630faa44b17a4a5825e8cfc73eb6c72cd4731373cc011090bfc5ee8823d3a",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 61
             }
           },
           "kind": "code"

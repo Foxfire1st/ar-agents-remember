@@ -6,67 +6,56 @@
 
 ## Purpose
 
-Runs the Python builder installer against controlled command fixtures to prove a full clone is validated before atomic no-clobber publication, a valid existing builder is reused, and a foreign builder is refused without deleting its marker. It also carries the negative runtime-admission witness: the checker must end in the named version refusal before it can import a standard-library module the interpreter lacks. This file no longer asserts every package/CI Python-version surface or the old publisher-race matrix.
+Unit tests verifying `scripts/check-python-runtime.py`, GitHub workflow uv minor-line configuration, and Dagger uv minor-line image/digest helpers under the uv-managed Python 3.14 contract.
 
 ## Code Commentary
 
 ### Logic
 
-The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
-history describe prior populations and must not be used to recreate removed tests or claim they
-still run. The retained behavior and its fixture limits, described above, govern this card.
+Eight test functions cover the runtime checker, CI workflows, and Dagger helper contracts using controlled subprocess shims and repository file inspection:
 
-The negative admission witness (`test_unsupported_version_is_named_before_importing_new_stdlib_modules`)
-runs the checker under a simulated 3.13.15 interpreter whose `compression` import fails, and asserts
-exit 1, empty stdout and the exact named refusal naming the expected and observed versions and the
-executable. This module invokes the current `sys.executable` and simulates the older version;
-the earlier card's additional account of a real 3.11, 3.12 and 3.13 matrix is historical and
-is not a retained test population in this module.
-
-> Retained earlier card wording; superseded by the current account above:
-> executable. The real older-interpreter matrix supplements it with actual 3.11, 3.12 and 3.13
-> interpreters.
-
+- `test_unsupported_minor_is_named_before_importing_new_stdlib_modules` runs the checker under a simulated 3.13.15 interpreter whose `compression` import fails, asserting exit 1, empty stdout, and the named refusal stating expected minor, observed version, and executable.
+- `test_builtin_readline_is_reported` removes `readline.__file__` and asserts the checker reports `"built-in"` without crashing.
+- `test_different_patch_of_the_managed_minor_is_accepted` verifies another patch release of the contract minor under uv's minor symlink is accepted.
+- `test_patch_directory_is_refused_even_when_it_is_the_link_target` verifies an environment bound directly to a patch directory instead of uv's minor symlink is refused.
+- `test_minor_link_outside_uv_directory_is_refused` verifies a minor symlink outside `UV_PYTHON_INSTALL_DIR` / `uv_python_directory()` is refused.
+- `test_uv_version_and_image_digest_are_recorded_in_provenance` verifies `--uv-version` and `--uv-image-digest` are emitted in `provenance` and folded into `buildFingerprint`.
+- `test_workflows_install_uv_minor_line_and_record_resolved_version` checks `.github/workflows/quality-checks.yml` and `.github/workflows/publish-mcp-to-pypi.yml` install `astral-sh/setup-uv` at `${AR_UV_VERSION}.x` and record resolved uv version.
+- `test_dagger_uv_minor_and_image_digest_helpers` checks `.dagger/src/agents_remember_quality/main.py` constructs `ghcr.io/astral-sh/uv:<AR_UV_VERSION>` and extracts its resolved `sha256` digest.
 
 ### Conventions
 
-The table lists retained test definitions, not collected parametrized or subtest counts.
-Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
+Tests run in isolation with simulated interpreter attributes and temporary uv directories; they do not execute `uv`, Docker, or Dagger.
+
+- Helper fixtures construct synthetic `UV_PYTHON_INSTALL_DIR` layouts with `cpython-3.14-linux-x86_64-gnu` minor symlinks pointing at patch-directory targets, so minor-link validation is exercised without host network downloads or real `uv` invocations.
+- Subprocess harnesses inject temporary `sitecustomize` / shim modules to simulate unsupported minor versions (`3.13.15` with failing `compression` imports) and built-in `readline` modules lacking `__file__`.
+- Workflow and Dagger tests parse tracked `.github/workflows/quality-checks.yml`, `.github/workflows/publish-mcp-to-pypi.yml`, and `.dagger/src/agents_remember_quality/main.py` directly against `scripts/python-runtime-contract.env` (`AR_PYTHON_MINOR=3.14`, `AR_UV_VERSION=0.13`).
 
 ### Invariants And Boundaries
 
-Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
-cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
-an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
-work. This source inspection does not claim a newly executed test or acceptance result.
+Preserve exact refusal, minor-link, provenance, workflow, and Dagger helper assertions:
+
+- Wrong-minor refusal must report expected minor, observed version, and executable path before importing any Python 3.14-only standard-library module.
+- `pyvenv.cfg` home validation must reject both direct patch directories and minor symlinks outside `uv_python_directory()` without spawning `uv`.
+- Provenance output must record observed `uvVersion`, `pythonBuild`, and optional `uvImageDigest` and fold them into `buildFingerprint`.
+- This source inspection does not claim a newly executed test or acceptance result.
 
 ### Todos
 
-No additional implementation scope is opened by this memory reconciliation.
+None recorded.
 
 ## Evidence
 
 ### Docs References
 
-The repository has no configured Domain Documentation source. These claims concern its own test
-fixtures and assertions, so the exact retained source is the direct evidence.
-
-No external domain claim is required.
+The repository has no configured Domain Documentation source. These claims concern its own test fixtures and assertions, so the exact source is the direct evidence.
 
 ### Repo-Internal References
 
-Each current definition below can be inspected in the exact source file. Historical references
-to removed methods are superseded by this current inventory.
-
-- Runtime builder is fully cloned atomically published and reused [1]
-- Existing foreign builder is refused and preserved [2]
-
-
-- The negative admission witness proves the named refusal precedes any newer standard-library import. [3]
-
+- The negative admission witness proves the named minor refusal precedes any newer standard-library import. [3]
+- Built-in `readline`, alternate patches, patch-directory refusal, outside-uv-directory refusal, and provenance recording are verified against `scripts/check-python-runtime.py`. [4]
+- Workflow minor-line uv setup and Dagger minor-line image/digest helpers are verified against the tracked workflow and Dagger files. [5]
 
 ### Cross-Repo References
 
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
-
-No external evidence is needed for these assertions.

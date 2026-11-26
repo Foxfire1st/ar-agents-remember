@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized across dagger_authority.py, dagger_runner.py, sandbox.py, clean_executor.py, diagnostic_executor.py, final_codex_executor.py, gate.py, and clean_room.py, guarded by authority and executor tests, and prevents the pinned Dagger v0.21.8 CLI from silently ignoring DAGGER_HOST and connecting to an unadmitted engine."
+  },
+  "applicability": "Every shared Dagger runtime admission, Docker engine inspection, and child Dagger launch across clean-room, diagnostic, and final-Codex quality execution.",
+  "conditions": [
+    "The declared endpoint must match container://<name-or-id> with [a-zA-Z0-9][a-zA-Z0-9_.-]+ before any Docker probe; the written endpoint and engineId stay verbatim in the authority snapshot digest.",
+    "authority_environment binds _EXPERIMENTAL_DAGGER_RUNNER_HOST to snapshot.endpoint, omits DAGGER_HOST and overriding session/cloud selectors (DAGGER_CLOUD_ENGINE, DAGGER_SESSION_PORT, DAGGER_SESSION_TOKEN), and refuses conflicting ambient DAGGER_HOST or _EXPERIMENTAL_DAGGER_RUNNER_HOST values.",
+    "Sandbox manifests, clean-quality outcomes, strict quality reports, and clean_room CLI stderr name every present selector dropped from the child environment without exposing its value.",
+    "Inspection and child execution share native_dagger_environment so PATH, HOME, and DOCKER_CONFIG remain absolute across directory changes."
+  ],
+  "exclusions": [
+    "Provisioning or starting a Dagger engine container, which remains refused.",
+    "Hand-written external environment files outside the declared authority."
+  ],
+  "id": "INV-NC2ZCP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Carried E12 re-exercised inside Light E9 on managed Python 3.14.10 plus live Heavy E5 Dagger proof PASS (selectorMatched: true on container://dagger-engine-v0.21.8, sameEngineBeforeAfter: true, engineCreateStartRecords: 0, containerCreateStartRecords: 0)."
+      ],
+      "path": "261112-BUG-L33-phase-a-records-and-invariants"
+    },
+    "handoffEntry": "BUG-R33@v3 rule 7",
+    "leaf": "261112-BUG-L33",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The pinned Dagger CLI receives the exact admitted container name or ID and the run names dropped ambient selectors without reporting their values.",
+  "supersedes": [],
+  "title": "Dagger CLI receives exact admitted container ref and names dropped selectors",
+  "writer": {
+    "at": "2026-11-25T19:35:39+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L33",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+    "task": "261112-BUG"
+  }
+}

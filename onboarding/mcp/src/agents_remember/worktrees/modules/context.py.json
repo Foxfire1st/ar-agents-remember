@@ -61,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "blob": "e022e0150f64e278850c4b2845e4278e1727b474",
             "content": "sha256:628d7750e9e9c9fc28ff780210a5c4071ef85a9b86a6c05ebf811fe70ba8be29",
             "locator": {
-              "end": 668,
+              "end": 676,
               "kind": "line_range",
-              "start": 668
+              "start": 676
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },

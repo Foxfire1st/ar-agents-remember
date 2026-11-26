@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Realized across scripts/bootstrap-mcp-venv.sh, checkout_environments.py, application/runtime/install.py, and tool_answer.py, guarded by checkout-inventory and sync-rollback tests, and required for FAM-Z69A94's single-runtime transition boundary."
+  },
+  "applicability": "Registered Git worktrees of the agents-remember repository whose mcp/.venv exists, together with scripts/bootstrap-mcp-venv.sh and runtime_install.",
+  "conditions": [
+    "A checkout environment is stale when its unresolved pyvenv.cfg home does not point at uv's contract minor symlink.",
+    "scripts/bootstrap-mcp-venv.sh moves a stale mcp/.venv aside under a checkout-directory flock with rollback restoration and recreates it without requiring --replace, while an already-current mcp/.venv still requires --replace (or returns 0 under --ensure).",
+    "runtime_install enumerates registered worktrees with NUL-delimited Git porcelain output and lists stale checkouts and their shell-quoted bootstrap commands without rebuilding or starting another checkout's Python."
+  ],
+  "exclusions": [
+    "Registered checkouts that have no mcp/.venv directory.",
+    "Deleting the legacy ~/.local/share/agents-remember/python prefix or editing developer harness configurations."
+  ],
+  "id": "INV-XWNDYE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Carried E6 re-exercised inside Light E9 on managed Python 3.14.10."
+      ],
+      "path": "261112-BUG-L33-phase-a-records-and-invariants"
+    },
+    "handoffEntry": "BUG-R33@v3 rule 4",
+    "leaf": "261112-BUG-L33",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The bootstrap rebuilds a stale checkout environment from its own lock and runtime_install lists all stale registered environments with their checkout commands.",
+  "supersedes": [],
+  "title": "Stale checkout environments migrate on bootstrap and appear in runtime_install",
+  "writer": {
+    "at": "2026-11-25T19:35:39+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L33",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+    "task": "261112-BUG"
+  }
+}

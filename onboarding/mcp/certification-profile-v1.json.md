@@ -59,9 +59,13 @@ The exact source declarations below establish the current behavior; this invento
 
 - Bounded dependency reconstruction environments [1]
 
+
 - Pinned Dagger execution adapter and actual runtime digest. [2]
 
+
+
 - The declaration carries its own canonical profile digest. [3]
+
 
 - 45 report paths include 29 rail-evidence captures; ambient and teardown publications are removed. [4]
 

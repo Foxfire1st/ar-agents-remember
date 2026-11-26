@@ -1,0 +1,88 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Weighed retaining the source-built exact 3.14.8 prefix against uv-managed minor-line pinning, and binds all future checkout, CI, Dagger, and harness runtime contracts."
+  },
+  "alternatives": [
+    {
+      "option": "Use uv-managed CPython pinned to minor 3.14 via uv's minor symlink in uv's standard location and pin uv to minor line 0.13 (host floor, newest 0.13 patch in CI and Dagger), removing the source build.",
+      "reason": "Developer rulings D938, D945, D950, and D993 established one standard uv route visible to harnesses such as Antigravity while picking up 3.14 and uv 0.13 security patches without rebuilding venvs.",
+      "status": "chosen"
+    },
+    {
+      "option": "Retain the custom python-build source build of exact CPython 3.14.8 under ~/.local/share/agents-remember/python and exact patch pins for Python and uv.",
+      "reason": "Fails inside Antigravity's sandbox, duplicates uv's managed runtime, and prevents receiving patch security fixes.",
+      "reconsider_when": "uv-managed CPython 3.14 builds lose required Linux pidfd or stdlib capabilities on supported platforms.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "scripts/install-python-runtime.sh and source-build contract fields are removed; scripts/python-runtime-contract.env pins only AR_PYTHON_MINOR=3.14, AR_PYTHON_REQUIRES='>=3.14,<3.15', and AR_UV_VERSION=0.13.",
+    "Virtual environments must point at uv's minor symlink so uv python upgrade advances patches without rebuilding mcp/.venv; runtime_install lists stale checkouts for operator migration."
+  ],
+  "context": "Source-built exact CPython 3.14.8 under ~/.local/share/agents-remember/python could not run inside the Antigravity sandbox (which mounts ~/.local/share/uv read-only but not the legacy prefix), duplicated runtime builds, and exact patch pins blocked automatic security patches for Python 3.14 and uv 0.13.",
+  "decider": "developer (D938, D945, D950, D993) and Architect BUG-R33@v3 rulings",
+  "id": "DEC-EG81BC",
+  "links": [
+    {
+      "relation": "explains",
+      "target": "FAM-Z69A94"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-XG226D"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-Y2SXDZ"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-XWNDYE"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:scripts"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "BUG-R33",
+        "packet": "requirements/BUG-R33-v3-the-product-runs-on-the-python-uv-manages.md",
+        "task": {
+          "path": "261112_bug-fixes-and-issue-tracking",
+          "repository": "agents-remember"
+        },
+        "version": "v3"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "261112-BUG-L33-phase-a-records-and-invariants"
+    },
+    "handoffEntry": "dec:uv-managed-minor-lines",
+    "leaf": "261112-BUG-L33",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [
+    "DEC-4ZE5PJ"
+  ],
+  "writer": {
+    "at": "2026-11-25T19:35:39+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L33",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+    "task": "261112-BUG"
+  }
+}

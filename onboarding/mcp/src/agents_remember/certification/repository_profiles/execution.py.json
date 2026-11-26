@@ -52,7 +52,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
+            "blob": "c7b614cc8eb16b74f70f6cc9062795cd030d52df",
             "content": "sha256:2909c7c1992a9a2014a465dac364f98e3596222c250335a3dd64c791443401c9",
             "locator": {
               "end": 66,
@@ -66,16 +66,15 @@
       ]
     },
     "4": {
-      "note": "The sandbox manifest records profile execution and frozen runtime authority.\n\nAnchor: \"def _write_sandbox_manifest\"",
+      "note": "The sandbox manifest records profile execution and frozen runtime authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
-            "content": "sha256:97f912523050da24c93a235f60224743586f1a519bce530b458fbe1bafc4d5f4",
+            "blob": "c7b614cc8eb16b74f70f6cc9062795cd030d52df",
+            "content": "sha256:3776cfa692467bcba4e81d6ef1dba9466685cd468b37cf88b079a39a9c1832a7",
             "locator": {
-              "end": 169,
-              "kind": "line_range",
-              "start": 121
+              "kind": "symbol",
+              "name": "_write_sandbox_manifest"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py"
           },

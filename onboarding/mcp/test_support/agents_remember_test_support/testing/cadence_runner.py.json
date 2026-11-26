@@ -24,34 +24,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
-            "content": "sha256:df60f6fdac7a723a31e8e75b2077d0ae992f5b21585dfa1ec99aff2fb0882b85",
-            "locator": {
-              "end": 539,
-              "kind": "line_range",
-              "start": 471
-            },
-            "path": ".dagger/src/agents_remember_quality/main.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
-            "content": "sha256:b4a72efc959acef8e5f546c3abbea341a5b82739473f8c0264acc32af8e57a20",
-            "locator": {
-              "end": 539,
-              "kind": "line_range",
-              "start": 470
-            },
-            "path": ".dagger/src/agents_remember_quality/main.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
-            "content": "sha256:b4a72efc959acef8e5f546c3abbea341a5b82739473f8c0264acc32af8e57a20",
+            "blob": "1ea5db529148538897332031f3e9adf698dd8b32",
+            "content": "sha256:54de7fd86faeab737fb9a4f4a84046654acf68598a7d0da1574143e5fbb34276",
             "locator": {
               "kind": "symbol",
               "name": "cadence_evidence"

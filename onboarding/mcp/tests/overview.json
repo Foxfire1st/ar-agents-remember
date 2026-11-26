@@ -8767,7 +8767,7 @@
       ]
     },
     "1808": {
-      "note": "The after-discovery test source uses two fresh autoStart=true processes to assert one joint outside-scratch sweep and dashboard-supervision start across the event-loop scheduling and no-list first-call paths. The launchers and reconciliation seam are recorders. The source catalogs declare 18 lifecycle contracts, 123 artifacts and 841 distinct selected test modules. These declarations establish no new invocation or passing result.",
+      "note": "The after-discovery test source uses two fresh autoStart=true processes to assert one joint outside-scratch sweep and dashboard-supervision start across the event-loop scheduling and no-list first-call paths. The launchers and reconciliation seam are recorders. The source catalogs declare 18 lifecycle contracts, 123 artifacts and 844 distinct selected test modules. These declarations establish no new invocation or passing result.",
       "targets": [
         {
           "anchor": {
@@ -8823,8 +8823,8 @@
         },
         {
           "anchor": {
-            "blob": "884bfca77d3918141360d799434cf4234f069731",
-            "content": "sha256:62bc4db710a08a45a38afbf5f22c6fa4e70fc95949046da92c5c4312906fbada",
+            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
+            "content": "sha256:c311f62a44e9edb9c74cca4120158908e4b35da5b4c5a2a941f5be24b8031d28",
             "locator": {
               "kind": "file"
             },
@@ -8834,8 +8834,8 @@
         },
         {
           "anchor": {
-            "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
-            "content": "sha256:191f19263651949e412e7f20e24b516e11a8e0aa9694eb3dfe1287a4e8eaecde",
+            "blob": "977b1335c62aa482b51debfe3e74706c69d9ac23",
+            "content": "sha256:73ea6df9ad7dc4217875c4937b627046aaf53ebed89b81153abd78490b307125",
             "locator": {
               "kind": "file"
             },
@@ -10559,12 +10559,12 @@
       ]
     },
     "1883": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 841 distinct modules across seven lane identities. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 844 distinct modules across seven lane identities. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "884bfca77d3918141360d799434cf4234f069731",
-            "content": "sha256:62bc4db710a08a45a38afbf5f22c6fa4e70fc95949046da92c5c4312906fbada",
+            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
+            "content": "sha256:c311f62a44e9edb9c74cca4120158908e4b35da5b4c5a2a941f5be24b8031d28",
             "locator": {
               "kind": "file"
             },
@@ -10574,8 +10574,8 @@
         },
         {
           "anchor": {
-            "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
-            "content": "sha256:191f19263651949e412e7f20e24b516e11a8e0aa9694eb3dfe1287a4e8eaecde",
+            "blob": "977b1335c62aa482b51debfe3e74706c69d9ac23",
+            "content": "sha256:73ea6df9ad7dc4217875c4937b627046aaf53ebed89b81153abd78490b307125",
             "locator": {
               "kind": "file"
             },
@@ -10586,12 +10586,12 @@
       ]
     },
     "1884": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 841 distinct modules across seven lane identities. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 844 distinct modules across seven lane identities. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "884bfca77d3918141360d799434cf4234f069731",
-            "content": "sha256:62bc4db710a08a45a38afbf5f22c6fa4e70fc95949046da92c5c4312906fbada",
+            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
+            "content": "sha256:c311f62a44e9edb9c74cca4120158908e4b35da5b4c5a2a941f5be24b8031d28",
             "locator": {
               "kind": "file"
             },
@@ -10601,8 +10601,8 @@
         },
         {
           "anchor": {
-            "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
-            "content": "sha256:191f19263651949e412e7f20e24b516e11a8e0aa9694eb3dfe1287a4e8eaecde",
+            "blob": "977b1335c62aa482b51debfe3e74706c69d9ac23",
+            "content": "sha256:73ea6df9ad7dc4217875c4937b627046aaf53ebed89b81153abd78490b307125",
             "locator": {
               "kind": "file"
             },
@@ -10613,12 +10613,12 @@
       ]
     },
     "1885": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 841 distinct modules across seven lane identities. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 844 distinct modules across seven lane identities. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "884bfca77d3918141360d799434cf4234f069731",
-            "content": "sha256:62bc4db710a08a45a38afbf5f22c6fa4e70fc95949046da92c5c4312906fbada",
+            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
+            "content": "sha256:c311f62a44e9edb9c74cca4120158908e4b35da5b4c5a2a941f5be24b8031d28",
             "locator": {
               "kind": "file"
             },
@@ -10628,8 +10628,8 @@
         },
         {
           "anchor": {
-            "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
-            "content": "sha256:191f19263651949e412e7f20e24b516e11a8e0aa9694eb3dfe1287a4e8eaecde",
+            "blob": "977b1335c62aa482b51debfe3e74706c69d9ac23",
+            "content": "sha256:73ea6df9ad7dc4217875c4937b627046aaf53ebed89b81153abd78490b307125",
             "locator": {
               "kind": "file"
             },
@@ -10640,12 +10640,12 @@
       ]
     },
     "1886": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 841 distinct modules across seven lane identities. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 844 distinct modules across seven lane identities. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "884bfca77d3918141360d799434cf4234f069731",
-            "content": "sha256:62bc4db710a08a45a38afbf5f22c6fa4e70fc95949046da92c5c4312906fbada",
+            "blob": "bd4b63565b6febdfae40dab3e7eb93707b10f48b",
+            "content": "sha256:c311f62a44e9edb9c74cca4120158908e4b35da5b4c5a2a941f5be24b8031d28",
             "locator": {
               "kind": "file"
             },
@@ -10655,8 +10655,8 @@
         },
         {
           "anchor": {
-            "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
-            "content": "sha256:191f19263651949e412e7f20e24b516e11a8e0aa9694eb3dfe1287a4e8eaecde",
+            "blob": "977b1335c62aa482b51debfe3e74706c69d9ac23",
+            "content": "sha256:73ea6df9ad7dc4217875c4937b627046aaf53ebed89b81153abd78490b307125",
             "locator": {
               "kind": "file"
             },

@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "d1e7bbbcff7450564c350d2a268ec406f0f97cfe",
-    "commit": "130545f8071e7c9fd369e170b0851da63abee6f6",
-    "role": "curator",
-    "statement": "Audited docs/features.md (lines 1-518) against synced Attempt-5 tree d1e7bbbc and roles/{worker,reviewer}.md: role separation, Manager launch sequence, and all system/ guidelines duties for Worker and Reviewer remain accurate with no contradiction.",
-    "task": "261124-CAP-L3",
-    "uncommitted": true
+    "codeTree": "99893607f698478a1186507fd937b71cae1f20dd",
+    "commit": "4559dabe83cb85443c79614f19d610b7ecc62aa9",
+    "role": "manager",
+    "statement": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: docs/features.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+    "task": "261112-BUG",
+    "uncommitted": false
   },
   "document": "docs/features.md",
   "id": "DPD-EG5TYT",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 33,
+  "revision": 35,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -53,12 +53,12 @@
       "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
     },
     {
-      "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+      "blob": "e022e0150f64e278850c4b2845e4278e1727b474",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
     },
     {
-      "blob": "f598db5495c4b1e8dfae89ffd08fe320e3d3810f",
+      "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -98,7 +98,7 @@
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
     {
-      "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+      "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
     },
@@ -295,14 +295,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T20:16:07+01:00",
+    "at": "2026-11-26T23:03:52+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
-    "task": "261124-CAP"
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "task": "261112-BUG"
   }
 }

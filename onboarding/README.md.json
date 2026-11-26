@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "888c97f459639da664eed21b762a6b549e8a2f94",
+        "blob": "f89ea5f2da95108957cf5b618ef5189348a0fc3d",
         "content": "sha256:64a11d94602cc5607fa2c9698baaf4a1c70746bbe30a9d99524954187516ca29",
         "locator": {
           "end": 194,
@@ -27,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "888c97f459639da664eed21b762a6b549e8a2f94",
+            "blob": "f89ea5f2da95108957cf5b618ef5189348a0fc3d",
             "content": "sha256:b12b7a0d62b351726c4377249d0b5bf0b95cd984581059e373f6e52de355d867",
             "locator": {
               "end": 36,
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "888c97f459639da664eed21b762a6b549e8a2f94",
+            "blob": "f89ea5f2da95108957cf5b618ef5189348a0fc3d",
             "content": "sha256:a7dd2f1db2a5663f0d50ab1d69dc32bbd97bf4ba40e533fe36bf190216a02752",
             "locator": {
               "end": 112,
@@ -57,12 +57,12 @@
       ]
     },
     "3": {
-      "note": "The five install steps keep the number, order, titles and command lines of the getting-started page.\n\nAnchor: \"Install steps\"",
+      "note": "The five install steps keep the number, order, titles and command lines of the getting-started page.",
       "targets": [
         {
           "anchor": {
-            "blob": "888c97f459639da664eed21b762a6b549e8a2f94",
-            "content": "sha256:337ab3ee7cffe9746a8e6c1f774530261ddd8dc8fe247d247efd2b22125f3e3c",
+            "blob": "f89ea5f2da95108957cf5b618ef5189348a0fc3d",
+            "content": "sha256:30d55484d027763bad5a0442eeae31346fff77202433d08ccd83e5afd16028fc",
             "locator": {
               "end": 172,
               "kind": "line_range",
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "888c97f459639da664eed21b762a6b549e8a2f94",
+            "blob": "f89ea5f2da95108957cf5b618ef5189348a0fc3d",
             "content": "sha256:a1ac091d017866e45822ec6a2399a1b658a6a6426fb6d48dab683fa5285ded7b",
             "locator": {
               "end": 200,

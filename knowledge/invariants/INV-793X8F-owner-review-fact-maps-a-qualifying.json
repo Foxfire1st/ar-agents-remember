@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across review_fact_source.py, memory_verdict_ref.py, modules/closeout_external.py, and review_note.py for both closeout and direct landing, and proved by five pytest functions in mcp/tests/test_memory_verdict_ref.py."
+  },
+  "applicability": "Qualifying passed memory rounds written into knowledge/history/<leaf>.json by leaf closeout or direct landing, and committed closed history read by review_note.",
+  "conditions": [
+    "owner_review_fact passes the bound contract's worktree_group and task_root into collected_verdict_ref, which computes exact relative paths under role-reports/, legacy task-reports, or task notes/reports/ without folder-name substring search.",
+    "References already in notes/reports/<rel> form are preserved as collected paths.",
+    "Pre-existing unmappable references (such as bare filenames) are written as recorded and named via unmapped_verdict_ref_note in both fresh closeout and committed_review_note recovery."
+  ],
+  "exclusions": [
+    "Already-closed history records on main (no product route rewrites frozen history).",
+    "Task documents' recordedRounds text and step-up lastVerdict displays, which stay as originally recorded."
+  ],
+  "id": "INV-793X8F",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_memory_verdict_ref.py (tree 0fec81b218c6563f1bfcec58b72b53c8516aee1a; focused pytest -n 0: 50 passed, 14 deselected, 22 subtests passed)"
+      ],
+      "path": "261112-BUG-L54-curator-handoff.json"
+    },
+    "handoffEntry": "BUG-R54@v1 §2",
+    "leaf": "261112-BUG-L54",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "owner_review_fact maps a qualifying memory round's verdictRef to the collected notes/reports/<rel> form using exact relative paths under the contract's role-reports/, legacy task-reports alias, or task notes/reports/, serving both closeout and direct landing, while writing unmappable pre-existing references as recorded and naming them in the closeout/landing answer.",
+  "supersedes": [],
+  "title": "History review facts record collected notes/reports/<rel> verdictRef",
+  "writer": {
+    "at": "2026-11-26T14:04:00+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L54",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+    "task": "261112-BUG"
+  }
+}

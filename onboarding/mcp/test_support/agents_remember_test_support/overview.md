@@ -99,7 +99,11 @@ Retained earlier citation wording, outside its current number: - Root configurat
 - Evidence design separates development and diagnostic artifacts from immutable certifying publication. Target: docs/design/python-test-evidence.md. [22]
 
 - Case budgets are root declarations rather than overview-owned constants. [17]
+
+
 - Dagger owns the retained build and retry cache bindings. [18]
+
+
 - Certifying pytest startup requires admission before preparing candidate state and loading the certifying plugin. [5]
 - The dated raise states the headroom, measured scenario costs and preserved refusal directions. [19]
 

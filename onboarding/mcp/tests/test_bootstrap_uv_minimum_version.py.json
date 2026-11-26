@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
-        "content": "sha256:14d56426a0e123bd49eb278a274f35823b16d06b3074cbc2f908242ec61d2474",
+        "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
+        "content": "sha256:4719b7556c8c076028b54628e1a2a316daed8ba975077613054b9af95c64a2ca",
         "locator": {
           "kind": "symbol",
           "name": "test_older_uv_is_refused_before_anything_is_touched"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
-        "content": "sha256:98e0608f07a2967960a96a6a1e1dabd32ab9c2849286f00186f367379fdb74b0",
+        "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
+        "content": "sha256:f51420e3af28cc485bf896a5b23e402f054624f923a5eac5c070192ed857e819",
         "locator": {
           "kind": "symbol",
           "name": "test_unreadable_version_is_refused_with_its_text"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
-        "content": "sha256:69763c88255f11bf68402d4f1d839165bfd458b1c4deacbe2fa082a628558848",
+        "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
+        "content": "sha256:ceaa8b4379fa0292baf3688ae742b65f3bc077857c19068a4ac8022a00836058",
         "locator": {
           "kind": "symbol",
           "name": "test_gate_uses_a_newer_uv_as_it_is"
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
+        "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
         "content": "sha256:4bafef54b5ad35dceb0de00855fd622ea9328ed5f41a55c958c228df96da4b9a",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
+        "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
         "content": "sha256:dd1907b55523402f3600f2e84a8d636cb1526d81e8f25f7159c7d1800c0a76a3",
         "locator": {
           "kind": "symbol",
@@ -88,8 +88,25 @@
     },
     {
       "anchor": {
-        "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
-        "content": "sha256:428753c848f23bca61213c85f076ba7ae43b918409899d3d783387c967129763",
+        "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
+        "content": "sha256:351457f22c094a8dc9eef97d11890314df0bf617fcaaf80e78f6dcdff38a9706",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_sync_failure_names_both_uv_versions"
+        }
+      },
+      "facet": "Verifies failed recreation under both directory and symlink predecessors restores the predecessor from its reserved backup path and names both uv versions.",
+      "id": "PRF-S2TM3C",
+      "invariant": "INV-XWNDYE",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 4",
+        "leaf": "261112-BUG-L33"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
+        "content": "sha256:34e2609eb5d3d64390e5f895c2f3b94f2786894c73182c5760dfd1ae61fcba87",
         "locator": {
           "kind": "symbol",
           "name": "test_missing_uv_is_refused"
@@ -105,8 +122,8 @@
     },
     {
       "anchor": {
-        "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
-        "content": "sha256:a1356092a1a60b54bc25f2190223356276caba8d8fb3b4cdd83980e39717ea24",
+        "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
+        "content": "sha256:41b40fd276ffa34c62e253107103b1e17aeabe89bae6eb53f9e72387de8dbbf2",
         "locator": {
           "kind": "symbol",
           "name": "test_version_comparison_is_numeric"
@@ -122,8 +139,8 @@
     },
     {
       "anchor": {
-        "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
-        "content": "sha256:919b4c229d33f0528235da33afcbb7f5cf52b0f9ea03a03e85d8bb727a9632b2",
+        "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
+        "content": "sha256:4e6d7ef818d5bd4eb72e6f8d79f9a1d401617d49d2b3c9df7937f666a1a25f59",
         "locator": {
           "kind": "symbol",
           "name": "test_refusal_leaves_an_existing_environment_alone"
@@ -139,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
+        "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
         "content": "sha256:cbfedb20d14becc7095131e0f304bb7ed21b62a1cf9895ec4b9dab444220008d",
         "locator": {
           "kind": "symbol",
@@ -158,12 +175,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Decimal-part ordering rejects lexical-order mistakes and treats missing parts as zero.",
+      "note": "Decimal-part ordering rejects lexical-order mistakes, covers the 0.13 minor line, and treats missing parts as zero.",
       "targets": [
         {
           "anchor": {
-            "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
-            "content": "sha256:a1356092a1a60b54bc25f2190223356276caba8d8fb3b4cdd83980e39717ea24",
+            "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
+            "content": "sha256:41b40fd276ffa34c62e253107103b1e17aeabe89bae6eb53f9e72387de8dbbf2",
             "locator": {
               "kind": "symbol",
               "name": "test_version_comparison_is_numeric"
@@ -178,8 +195,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
-            "content": "sha256:69763c88255f11bf68402d4f1d839165bfd458b1c4deacbe2fa082a628558848",
+            "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
+            "content": "sha256:ceaa8b4379fa0292baf3688ae742b65f3bc077857c19068a4ac8022a00836058",
             "locator": {
               "kind": "symbol",
               "name": "test_gate_uses_a_newer_uv_as_it_is"
@@ -194,7 +211,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
+            "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
             "content": "sha256:cbfedb20d14becc7095131e0f304bb7ed21b62a1cf9895ec4b9dab444220008d",
             "locator": {
               "kind": "symbol",
@@ -206,14 +223,15 @@
       ]
     },
     "4": {
-      "note": "A failed sync names both versions and restores an existing environment when the checker-valid runtime prerequisite is met.\n\nAnchor: `test_sync_failure_names_both_uv_versions`",
+      "note": "A failed sync names both observed and minimum uv versions and restores both directory and symlink predecessors from reserved backup paths.",
       "targets": [
         {
           "anchor": {
-            "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
-            "content": "sha256:b730503cb7df034657838d5dd51fbef13421afd67d5619ee2fb190a07641e20f",
+            "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
+            "content": "sha256:351457f22c094a8dc9eef97d11890314df0bf617fcaaf80e78f6dcdff38a9706",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_sync_failure_names_both_uv_versions"
             }
           },
           "kind": "test"
@@ -221,16 +239,15 @@
       ]
     },
     "5": {
-      "note": "The sync-failure case copies bootstrap/runtime scripts into a temporary repository, creates its own predecessor marker, and asserts diagnostics/restoration without using the live venv fixture.",
+      "note": "The sync-failure case runs via `run_driver` with fake uv/runtime shims, restores directory or symlink predecessors, and retains the failed candidate under venv-backups.",
       "targets": [
         {
           "anchor": {
-            "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
-            "content": "sha256:24b4193e739fb62249987be43a63dce825939d99521d527070cef31cc7afe6aa",
+            "blob": "c9bc646f38c6d3e78755e709a41cfdeb149f0d84",
+            "content": "sha256:351457f22c094a8dc9eef97d11890314df0bf617fcaaf80e78f6dcdff38a9706",
             "locator": {
-              "end": 390,
-              "kind": "line_range",
-              "start": 356
+              "kind": "symbol",
+              "name": "test_sync_failure_names_both_uv_versions"
             }
           },
           "kind": "test"

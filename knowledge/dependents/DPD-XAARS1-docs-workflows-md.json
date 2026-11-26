@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "d1e7bbbcff7450564c350d2a268ec406f0f97cfe",
-    "commit": "6eb67e8ec4ef00afa54348123b6e6afd1cef1dc8",
-    "role": "curator",
-    "statement": "Audited docs/workflows.md (lines 1-280) against synced Attempt-5 tree d1e7bbbc and operations/implementation.md: Worker checks, direct own-file finding repairs with per-finding report entries, and freeze/handoff-check flow to Reviewer and Curator remain accurate with no contradiction.",
-    "task": "261124-CAP-L3",
-    "uncommitted": true
+    "codeTree": "99893607f698478a1186507fd937b71cae1f20dd",
+    "commit": "4559dabe83cb85443c79614f19d610b7ecc62aa9",
+    "role": "manager",
+    "statement": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: docs/workflows.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+    "task": "261112-BUG",
+    "uncommitted": false
   },
   "document": "docs/workflows.md",
   "id": "DPD-XAARS1",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "mcp/src/agents_remember/models/task_document.py"
     },
     {
-      "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+      "blob": "5a31b237d96f6657bdcc61f1534897bee2c94306",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },
@@ -157,14 +157,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T20:16:07+01:00",
+    "at": "2026-11-26T23:03:52+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
-    "task": "261124-CAP"
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "task": "261112-BUG"
   }
 }

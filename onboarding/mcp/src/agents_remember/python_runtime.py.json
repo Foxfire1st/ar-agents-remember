@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/python_runtime.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b4f4d93e9ce1eea831d3b663fb6c9c8a4aeb181d",
+        "content": "sha256:2be758e33356a8052f023d5bef9c377a12d197ea1223fbb905ebf33cd84857ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "is_uv_minor_base"
+        }
+      },
+      "id": "RLZ-TAZCYR",
+      "invariant": "INV-Y2SXDZ",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 3",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "The shared base policy checks the lexical minor-link path and its patch target while retaining the path used for comparison.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`read_venv_home` parses `pyvenv.cfg` `home` without resolving symlinks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4f4d93e9ce1eea831d3b663fb6c9c8a4aeb181d",
+            "content": "sha256:0f0f6e722c7548d3ff58cf4858979ad3feed90e6efeaa2d11eb97dd834bbba03",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_venv_home"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`uv_python_directory` follows `UV_PYTHON_INSTALL_DIR`, `XDG_DATA_HOME`, and `$HOME/.local/share/uv/python` precedence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4f4d93e9ce1eea831d3b663fb6c9c8a4aeb181d",
+            "content": "sha256:81b0d285549b8e5eb231f2903f2cfb208d295bb94406fe069c70e01e53fe27a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "uv_python_directory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`is_uv_minor_base` requires a lexical uv minor symlink pointing to a sibling patch directory inside `uv_python_directory()`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4f4d93e9ce1eea831d3b663fb6c9c8a4aeb181d",
+            "content": "sha256:2be758e33356a8052f023d5bef9c377a12d197ea1223fbb905ebf33cd84857ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_uv_minor_base"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

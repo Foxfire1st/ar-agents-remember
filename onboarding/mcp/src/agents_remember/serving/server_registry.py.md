@@ -28,4 +28,6 @@ Keeps one small record per running MCP server and dashboard process under the co
 
 - The MCP server registers itself for the life of `run_server`. [6]
 
+
 - `server_info` and `runtime_install` list the running servers. Anchor: `server_inventory(config)` [7]
+

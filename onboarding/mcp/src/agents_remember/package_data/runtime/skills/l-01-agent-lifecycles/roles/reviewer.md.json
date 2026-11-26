@@ -73,12 +73,12 @@
       ]
     },
     "19": {
-      "note": "The Reviewer writes verdicts under `notes/reports/` using the linked verdict template.\n\nAnchor: `notes/reports/`",
+      "note": "The Reviewer writes the verdict in the handover's local report folder (`role-reports/` on a leaf, `notes/reports/` on other seams) using the linked verdict template and records memory `verdictRef` as an existing absolute path, `role-reports/<rel>`, or `notes/reports/<rel>`.",
       "targets": [
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
-            "content": "sha256:9e78ccc65502b44c9c1bdcfbe9efbc1262589e00995d5951172c1ecb9b0fe197",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "content": "sha256:e54cda6062a6d8c97dda127874fc1d21bcfc5cbad9305900e2b2e0fb37d9c598",
             "locator": {
               "end": 8,
               "kind": "line_range",
@@ -89,7 +89,7 @@
         },
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:3dbf395d87e12a9b9c3809a8f906e57a2309f72d2b155ef839453316d606f9f1",
             "locator": {
               "end": 35,

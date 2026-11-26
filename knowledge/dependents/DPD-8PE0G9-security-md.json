@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "56ba4a434418f6ed69deca0f0d9e1f852852cdf8",
-    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
+    "codeTree": "56daf6642402898075d164df4e26178499116006",
+    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
     "role": "curator",
-    "statement": "Audited SECURITY.md on DEP-synced L51 code tree 56ba4a43 (base 599cfaf8/767635ae): security reporting and version policy remain accurate on 3.0.8; no contradiction.",
-    "task": "261112-BUG-L51",
+    "statement": "SECURITY.md remains accurate on synced base 65911c75 / candidate 56daf664 because mcp/pyproject.toml's comment update (version 3.0.8) does not change the package identity, local service bindings, or security policy scope.",
+    "task": "261112-BUG-L33",
     "uncommitted": true
   },
   "document": "SECURITY.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 16,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -76,7 +76,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/fresh_host.py"
     },
     {
-      "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
+      "blob": "68023c34b7d22c6b4131caed18c611104caae038",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -117,14 +117,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T08:43:44+01:00",
+    "at": "2026-11-26T12:39:05+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L51",
+    "leaf": "261112-BUG-L33",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
+    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
     "task": "261112-BUG"
   }
 }

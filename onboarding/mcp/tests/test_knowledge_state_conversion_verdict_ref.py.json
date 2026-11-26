@@ -38,6 +38,40 @@
     {
       "anchor": {
         "blob": "375d8a8782cbfc1eae85209170b30a81d55e8f65",
+        "content": "sha256:09f30f452540381d42c5ccbcfd479e5860369bf109d80080e4f4025a14e1f448",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_review_fact_normalizes_report_verdict_refs"
+        }
+      },
+      "facet": "Proves state conversion verdictRef normalization results remain unchanged after joining onto worktrees/role_reports.py.",
+      "id": "PRF-HHSHN8",
+      "invariant": "INV-K03WFZ",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §3",
+        "leaf": "261112-BUG-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "375d8a8782cbfc1eae85209170b30a81d55e8f65",
+        "content": "sha256:7984f4a32504dbbc9e749e2d80f499c9d5dae6a6653895b7d8e604a187f20f45",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_plan_state_conversion_writes_durable_verdict_refs_in_converted_reviews"
+        }
+      },
+      "facet": "Proves end-to-end state conversion plans write identical durable notes/reports/<rel> verdictRef values after joining onto collected_report_ref.",
+      "id": "PRF-J7R7MF",
+      "invariant": "INV-K03WFZ",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §3",
+        "leaf": "261112-BUG-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "375d8a8782cbfc1eae85209170b30a81d55e8f65",
         "content": "sha256:f53724e037e0b6e2b2ccc3eabea07e06e1e05009ee7e5905a1034acf6adda3d5",
         "locator": {
           "kind": "symbol",

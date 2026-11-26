@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
+        "blob": "68023c34b7d22c6b4131caed18c611104caae038",
         "content": "sha256:36e087b7a4ae055232428fce005604bf1214b68429cffe60d4b57a2848dcbe7b",
         "locator": {
           "end": 7,
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
-        "content": "sha256:80c99862448ab92d6ee65fde88d7667d360c1d35eedfa1e7fe46ebea3024294a",
+        "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+        "content": "sha256:a4cb690be93d8f7848bdb7afe25cea36ad241287dbe85e75ccc451a806657fa4",
         "locator": {
           "end": 17,
           "kind": "line_range",
@@ -36,12 +36,12 @@
         "handoffEntry": "MIK-R91@v1-package-admits-every-3-14",
         "leaf": "260928-MIK-L91"
       },
-      "rationale": "requires-python and the Python classifier are what a consumer's installer reads; they admit every 3.14 release, and the exact managed pin lives in the runtime contract, not in the package metadata.",
+      "rationale": "requires-python and the Python 3.14 classifier admit every 3.14 release while the inline comment states that GitHub workflows and Dagger use uv-managed Python 3.14.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
+        "blob": "68023c34b7d22c6b4131caed18c611104caae038",
         "content": "sha256:cd4997f04f9c45b5cd8bebc4ee0ed70af10a02a9a3bf1390b20f48fbec0d469f",
         "locator": {
           "end": 29,
@@ -82,8 +82,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b56225df1e1b9484032b43ded65f6d976b27340",
-            "content": "sha256:f10136623746d89ad6e4ebe1131c778fed127a3ff967446f17ebd07fefe334ba",
+            "blob": "e04afe8ed921e7da09ad9f9e16a24bdcf4c274e0",
+            "content": "sha256:123e772cff12e6f48a7f2fa7c3d401916a9d05f93b037b32e4c314ca6fc1a823",
             "locator": {
               "kind": "file"
             },
@@ -116,12 +116,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
+            "blob": "4b1a3301286cb9514f0070cbef4894712ff74b91",
             "content": "sha256:4920eeefec172c781f641bf698c96ecbc4cc083c06c0ba90470dbaefc0156848",
             "locator": {
-              "end": 82,
+              "end": 77,
               "kind": "line_range",
-              "start": 82
+              "start": 77
             },
             "path": ".github/workflows/publish-mcp-to-pypi.yml"
           },
@@ -129,12 +129,12 @@
         },
         {
           "anchor": {
-            "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
+            "blob": "4b1a3301286cb9514f0070cbef4894712ff74b91",
             "content": "sha256:02b17d86eea5557151a03f46a2a1223273faf7e7b24055879fd73944b7195268",
             "locator": {
-              "end": 91,
+              "end": 86,
               "kind": "line_range",
-              "start": 91
+              "start": 86
             },
             "path": ".github/workflows/publish-mcp-to-pypi.yml"
           },
@@ -142,12 +142,12 @@
         },
         {
           "anchor": {
-            "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
+            "blob": "4b1a3301286cb9514f0070cbef4894712ff74b91",
             "content": "sha256:4aa22987a42c834e37f7e85f16c3b8ec516a8b160f0ae81daeb7548c64d90b61",
             "locator": {
-              "end": 95,
+              "end": 90,
               "kind": "line_range",
-              "start": 95
+              "start": 90
             },
             "path": ".github/workflows/publish-mcp-to-pypi.yml"
           },
@@ -155,12 +155,12 @@
         },
         {
           "anchor": {
-            "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
+            "blob": "4b1a3301286cb9514f0070cbef4894712ff74b91",
             "content": "sha256:f866829aeefe6f2997fc71f638530478cf6a06d36c811a457afdfff78f8a1f0d",
             "locator": {
-              "end": 111,
+              "end": 106,
               "kind": "line_range",
-              "start": 111
+              "start": 106
             },
             "path": ".github/workflows/publish-mcp-to-pypi.yml"
           },
@@ -306,12 +306,12 @@
       ]
     },
     "17": {
-      "note": "Package metadata directly bounds the interpreter line and declares its Python classifier.\n\nAnchor: \"requires-python = \\\">=3.14,<3.15\\\"\"; \"Programming Language :: Python :: 3.14\"",
+      "note": "Package metadata directly bounds the interpreter line and declares its Python classifier.",
       "targets": [
         {
           "anchor": {
-            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
-            "content": "sha256:67390565a8665a2378ea8acf015a4c3ac444ae57f5394d6f15e32a44bf786726",
+            "blob": "68023c34b7d22c6b4131caed18c611104caae038",
+            "content": "sha256:2bf54c904d15b087cac566a605a9e29a3765bc298c0ae8b24f3e162665832e2e",
             "locator": {
               "end": 20,
               "kind": "line_range",
@@ -327,7 +327,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
+            "blob": "68023c34b7d22c6b4131caed18c611104caae038",
             "content": "sha256:56d5658353a8b7c8d238f402dd65aa85f57d171c9bbc54740712e71650b8f7ab",
             "locator": {
               "end": 107,
@@ -432,7 +432,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
+            "blob": "68023c34b7d22c6b4131caed18c611104caae038",
             "content": "sha256:36e087b7a4ae055232428fce005604bf1214b68429cffe60d4b57a2848dcbe7b",
             "locator": {
               "end": 7,
@@ -467,7 +467,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
+            "blob": "68023c34b7d22c6b4131caed18c611104caae038",
             "content": "sha256:cd4997f04f9c45b5cd8bebc4ee0ed70af10a02a9a3bf1390b20f48fbec0d469f",
             "locator": {
               "end": 29,
@@ -484,7 +484,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
+            "blob": "68023c34b7d22c6b4131caed18c611104caae038",
             "content": "sha256:9c5ba653b34073b7260267abaceaece0ed46baa9e23deed1dff116c6916189c2",
             "locator": {
               "end": 31,
@@ -501,7 +501,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
+            "blob": "68023c34b7d22c6b4131caed18c611104caae038",
             "content": "sha256:a54495272c498240b0b62b979361f67333f5a98614710880ec29424282256341",
             "locator": {
               "end": 28,

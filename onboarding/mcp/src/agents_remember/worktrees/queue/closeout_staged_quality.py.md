@@ -53,7 +53,9 @@ CCR-R22@v1 requires the exact staged candidate to run through the profile-declar
 any commit, with missing/invalid profile authority refusing as certification-profile-invalid.
 
 
+
 - Invalid profile resolution produces typed admission failure before any Gate-1 command starts. [1]
+
 
 
 ### Repo-Internal References

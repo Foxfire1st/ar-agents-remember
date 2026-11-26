@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "b3131ef29cf948ee4830a48540585bc841530c3a",
-    "commit": "d7b08155a88066fe08ba556c8230961f0042e90d",
-    "role": "curator",
-    "statement": "Audited docs/tool-details.md in full (lines 1-475) against Round-4 CODE PASS tree b3131ef2: retire_child scope/refusals/defaults and all tool sections (including reportOnlyFindings) remain accurate; role_retire.py only appended additive Poka-Yoke refusal pointers.",
-    "task": "261124-CAP-L3",
-    "uncommitted": true
+    "codeTree": "99893607f698478a1186507fd937b71cae1f20dd",
+    "commit": "4559dabe83cb85443c79614f19d610b7ecc62aa9",
+    "role": "manager",
+    "statement": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: docs/tool-details.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+    "task": "261112-BUG",
+    "uncommitted": false
   },
   "document": "docs/tool-details.md",
   "id": "DPD-10YCT2",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 20,
+  "revision": 21,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -92,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
+        "blob": "19a4bebf11af7804a81ac12e8d331572638b7617",
         "content": "sha256:67fe0b7ee62d92936408e6bdce030fb715592e603ee194856fe2a7ae9ffb01ac",
         "locator": {
           "kind": "symbol",
@@ -118,7 +118,7 @@
       "path": "mcp/src/agents_remember/install/experiment.py"
     },
     {
-      "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
+      "blob": "291cc67f698b65a8dd99df019974eecda278698e",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/runtime/install.py"
     },
@@ -233,8 +233,8 @@
     },
     {
       "anchor": {
-        "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
-        "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
+        "blob": "291cc67f698b65a8dd99df019974eecda278698e",
+        "content": "sha256:b92d32f736443edb010c3b483527ad94c5f4c7573a1272d76c4cff1df470e7f2",
         "locator": {
           "kind": "symbol",
           "name": "run_runtime_install"
@@ -259,17 +259,27 @@
       "blob": "49abd7dedfb211e2a1da7ba9ee529b133fc1cf74",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/removed_stores.py"
+    },
+    {
+      "blob": "cd043a69f28c6a19632733829996d6e9de3c2270",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/install/checkout_environments.py"
+    },
+    {
+      "blob": "ec05debce03a1fabaf027f268527391d4cf5958c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     }
   ],
   "writer": {
-    "at": "2026-11-26T13:09:23+01:00",
+    "at": "2026-11-26T23:03:52+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
-    "task": "261124-CAP"
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+    "task": "261112-BUG"
   }
 }

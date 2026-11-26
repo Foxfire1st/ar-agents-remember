@@ -231,15 +231,14 @@
       ]
     },
     "7": {
-      "note": "A closed owner history without a review fact yields the no-pass sentence.",
+      "note": "A closed owner history without a review fact yields the no-pass sentence.\n\nAnchor: `committed_review_note`",
       "targets": [
         {
           "anchor": {
-            "blob": "3fef49ae4f3c1bf291de3554c41049c496946862",
-            "content": "sha256:aa8c936b5ee5d85a5378dc1d610ad3b4cc65aeff23be682c8cb1e73c0a8f0431",
+            "blob": "5b84bf55e399c8c0616439edec4c6e7df5bf8d67",
+            "content": "sha256:3b452b5cc09e5ae3c81a61f71cc96ff67466f81d73cb85bfbc77db28f307039b",
             "locator": {
-              "kind": "symbol",
-              "name": "committed_review_note"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/review_note.py"
           },

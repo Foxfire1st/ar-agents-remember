@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
         "content": "sha256:84d0e88860ed7df4ce699749fee31e2f7f2524b418a500da8a38888b0608f1c9",
         "locator": {
           "end": 36,
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
         "content": "sha256:0885b9b4f6b31329402f18aaa0e9c6d8f5ba2330639e791778d8394249ae5a94",
         "locator": {
           "end": 15,
@@ -59,7 +59,26 @@
     },
     {
       "anchor": {
-        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
+        "content": "sha256:e987f930518596576af11d6e544b5cb637447b4909038d0a1498dc287585114b",
+        "locator": {
+          "end": 97,
+          "kind": "line_range",
+          "start": 86
+        }
+      },
+      "id": "RLZ-5Y931E",
+      "invariant": "INV-JAFF6J",
+      "origin": {
+        "handoffEntry": "BUG-R54@v1 §1",
+        "leaf": "261112-BUG-L54"
+      },
+      "rationale": "Directs Reviewers to write verdicts in the handover's local report folder and record memory verdictRef in one of the three accepted forms within the reviewer capsule ceiling.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
         "content": "sha256:63dbd3d94730219ff908ee0515e512e7ccdf129f4eaf76aedf1f1a1ca566d12b",
         "locator": {
           "end": 19,
@@ -78,7 +97,7 @@
     },
     {
       "anchor": {
-        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
         "content": "sha256:63dbd3d94730219ff908ee0515e512e7ccdf129f4eaf76aedf1f1a1ca566d12b",
         "locator": {
           "end": 19,
@@ -97,7 +116,7 @@
     },
     {
       "anchor": {
-        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
         "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
         "locator": {
           "end": 21,
@@ -116,7 +135,7 @@
     },
     {
       "anchor": {
-        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
         "content": "sha256:0e9545099b8cf89c8f504cd3ccfe210f3987346df3d8d6cce8c84919b290bbec",
         "locator": {
           "end": 36,
@@ -135,7 +154,7 @@
     },
     {
       "anchor": {
-        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
         "content": "sha256:d3857964a7b0bf5879ff9e0ca9e986a8e1cd24da00de793f0971c99bfb143fdd",
         "locator": {
           "end": 10,
@@ -173,7 +192,7 @@
     },
     {
       "anchor": {
-        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
         "content": "sha256:8b6ab72f97d979079dce4e12a581d709150dda9b7a417ce5d5c5dd00a99660dc",
         "locator": {
           "end": 13,
@@ -192,7 +211,7 @@
     },
     {
       "anchor": {
-        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
         "content": "sha256:d52cdd82ad54ea280d29c15b098ffe7347d78378e85e79f18b284f4b52b829a0",
         "locator": {
           "end": 21,
@@ -211,7 +230,7 @@
     },
     {
       "anchor": {
-        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
         "content": "sha256:0e9545099b8cf89c8f504cd3ccfe210f3987346df3d8d6cce8c84919b290bbec",
         "locator": {
           "end": 36,
@@ -230,7 +249,7 @@
     },
     {
       "anchor": {
-        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
         "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
         "locator": {
           "end": 21,
@@ -428,7 +447,7 @@
       ]
     },
     "15": {
-      "note": "A baseline report includes every bound standing criterion. Fix verification reports the criteria used by the sealed findings. Review artifacts include the sealed findings, complete route coverage, the seam-shaped verdict with its Catalog Binding section, a producer-data handoff list and durable reports for material routes.",
+      "note": "A baseline report includes every bound standing criterion. Fix verification reports the criteria used by the sealed findings. Review artifacts include the sealed findings, complete route coverage, the seam-shaped verdict written in the handover's local report folder (`role-reports/` on a leaf, `notes/reports/` on other seams) with its Catalog Binding section and memory `verdictRef` recorded as an existing absolute path, `role-reports/<rel>`, or `notes/reports/<rel>`, a producer-data handoff list and durable reports for material routes.",
       "targets": [
         {
           "anchor": {
@@ -445,7 +464,7 @@
         },
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:4d16a7569b3abe181922320b217e780100da99104f1323faf263521315cea0da",
             "locator": {
               "end": 21,
@@ -457,7 +476,7 @@
         },
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:3dbf395d87e12a9b9c3809a8f906e57a2309f72d2b155ef839453316d606f9f1",
             "locator": {
               "end": 35,

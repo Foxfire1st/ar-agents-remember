@@ -1,0 +1,2513 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L54",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-26T21:20:51+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L54",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-26T21:20:51+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L54",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "502a2a85-b2d4-5c63-a029-02ff461a8832",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 3,
+    "tree": "886a230576f99d6864630d0fa315c58182764eff",
+    "verdictRef": "notes/reports/reviewer/502a2a85-b2d4-5c63-a029-02ff461a8832/role-launch/261112-BUG-L54-MR3-memory-verdict.md"
+  },
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 4
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-09Q97P",
+      "items": [
+        "sha256:b4dfa7ecf96d730f9a2f2aa0cb139e4e33f371034d0dc889e118b27ffb8f54e9"
+      ],
+      "reason": "Examined both members including touched INV-NNQR91; canonical skills edits propagated byte-identically to package_data/runtime/skills/ with zero drift.",
+      "revision": 8,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0N583B",
+      "items": [
+        "sha256:8ffe75d67211505a24a143ad15533e7594574183ea32366729748843b3e4f1c2"
+      ],
+      "reason": "Private helper _review_fact delegates usable verdictRef normalization to collected_verdict_ref (realized under BUG-R54@v1 §2 via owner_review_fact and collected_verdict_ref).",
+      "subject": "hunk:sha256:8ffe75d67211505a24a143ad15533e7594574183ea32366729748843b3e4f1c2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0RSC6Z",
+      "items": [
+        "sha256:523b868d0ff6c47a4da63aa6113962a0e995aab387979de061128c67a1d8fb3e"
+      ],
+      "reason": "Import of is_collected_report_ref supporting BUG-R54@v1 §2 realized in committed_review_note.",
+      "subject": "hunk:sha256:523b868d0ff6c47a4da63aa6113962a0e995aab387979de061128c67a1d8fb3e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0Z8MTD",
+      "items": [
+        "sha256:06c3755241a095ed23a2237fd5b582249f364c29b9e9188c9fe2b8c18c062dd0",
+        "sha256:0ce915235c318d8de45a4e474db4a7d11c529ec6b169f82e119534fc6b951098",
+        "sha256:101abddbf5617142f1e3d54dc9d7d29ecb6867a4663d6bbbfd2514e2c578910a",
+        "sha256:2a6ea59c0884ff67e487fdf29c3c2ed8d19f4507691b594ca8c847960510a7b9",
+        "sha256:31ffbf1ebb1904411a7b9aa82a1e8787260dd9fbbffd13279858fe3b81de8b65",
+        "sha256:48a0abe4709ff64abe1ef8d1fe64f2ad747f50bbfae85401e7c566964e596c6b",
+        "sha256:69bd0dea92c64afbbf489f19d6aa1acacd29e1c6bed91b301803c9b784b98a59",
+        "sha256:6eacb9970cde608f4b3816c96cd5a07665a8c42153166264da6ab656ebc142b5",
+        "sha256:912a879a6b333cd625feada3d2b9c9783e31f32beb747817a4194867ce32c09f",
+        "sha256:c320ee625f96506f71f9a15215275da1cc14c6d45c7b62c00c708bcab4705a8d",
+        "sha256:d09183fba2cae7ea0d4d1fdecba83b06426bd3ddda5bf9c00d9c94cc79c9b25d",
+        "sha256:dd3f0b9dc3f0ff5ec1567bdd4c0790b7fab59d4c787969bc8ca9672a351dece0",
+        "sha256:e6d9f8824b99151d3e376e29880fe2c4a697e90b5f6205899d9c47e4ab1ecb86",
+        "sha256:f5235f6dc8d3623c46bf37011c391259d2c4075bf0b9644d60596a85a94a4be1"
+      ],
+      "reason": "L54 only updated test fixture verdictRef paths to notes/reports/... and added worktree_group on _World so existing tests comply with BUG-R54@v1; all existing card claims remain accurate.",
+      "sources": [
+        {
+          "blob": "a4ce35a0c90effabaac3c869612bf90ba7e09a2e",
+          "path": "mcp/tests/test_closeout_review_fact.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_closeout_review_fact.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-177MC4",
+      "items": [
+        "sha256:2430e7e7eef8dd17b95e5bd22b928d21d2930ed290378b2addf6a67b00484453"
+      ],
+      "reason": "Updated Hot Path Summary to document collected verdictRef mapping through leaf_review_fact and unmapped_verdict_ref_note in closeout_external._review_note.",
+      "sources": [
+        {
+          "blob": "e022e0150f64e278850c4b2845e4278e1727b474",
+          "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1N7EMT",
+      "items": [
+        "sha256:675803a128367e40f354c15dcd86ae4ba7ff9e4e17df1aef9f8459ff12c9de0f"
+      ],
+      "reason": "Updated Role-stage selection and step-local authoring to record leaf role-reports/ verdict placement and the three accepted memory verdictRef forms.",
+      "sources": [
+        {
+          "blob": "30ae36e7830f53cd596fe318d9ce7fa0ee0b1ccb",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "2652b674e5adeeca1929b1b84cedf1ba945bb5f6",
+          "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+        },
+        {
+          "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+          "path": "skills/l-01-agent-lifecycles/templates/verdict.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "64ecde1c2004b81e55ef76bfe4e0ac64f37415d6",
+            "content": "sha256:22bc369023cb1ac3b4b658e634a22569bba11450684b3feaa1de9fb0e6e6cd9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "revision_owner"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/state_owners.py"
+          },
+          "before": {
+            "blob": "3bb4147cebb3bd8af48d26d9ea4b650733ba9d77",
+            "content": "sha256:22bc369023cb1ac3b4b658e634a22569bba11450684b3feaa1de9fb0e6e6cd9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "revision_owner"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/state_owners.py"
+          },
+          "id": "RLZ-K9JDBR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-23HJ4S",
+      "items": [],
+      "reason": "L54 only joined _REPORT_MARKERS and _durable_verdict_ref in memory/conversion/state_owners.py onto worktrees/role_reports.py; revision_owner logic is unchanged.",
+      "revision": 1,
+      "subject": "INV-69M737"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2BFSTR",
+      "items": [
+        "sha256:b12bed6e1587b4f6a172f612ae43093b481127fb50c7431e0b32c5d7365bbb89"
+      ],
+      "reason": "Updated Real role-reports directories section and added evidence for _resolve_direct_workspace, _prepare_enclosed_workspace, and _ensure_role_reports_folder using COLLECTED_REPORT_DIRECTORY and ROLE_REPORT_DIRECTORY.",
+      "sources": [
+        {
+          "blob": "5a31b237d96f6657bdcc61f1534897bee2c94306",
+          "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_workspace.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2NYJF1",
+      "items": [
+        "sha256:d1ab09e50376f5d6da3f68c9ca72f7bb2431cf192787e314523a601e2657b902"
+      ],
+      "reason": "Verified mcp/overview.md against L54 changes in cli/role_launch_enclosure.py, cli/role_launch_workspace.py, and generated runtime skill copies; constant reuse preserves all package-level contracts unchanged.",
+      "sources": [
+        {
+          "blob": "42835540234aa58d7f4f614722a8b6b4ab3ad1dc",
+          "path": "mcp/src/agents_remember/cli/role_launch_enclosure.py"
+        },
+        {
+          "blob": "5a31b237d96f6657bdcc61f1534897bee2c94306",
+          "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+        },
+        {
+          "blob": "30ae36e7830f53cd596fe318d9ce7fa0ee0b1ccb",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "2652b674e5adeeca1929b1b84cedf1ba945bb5f6",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+        },
+        {
+          "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "42835540234aa58d7f4f614722a8b6b4ab3ad1dc",
+            "content": "sha256:e6d629673d016fd4f1e523460c3fa2cb56415d7066f08bd6ddef38311f134d64",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_folders"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_enclosure.py"
+          },
+          "before": {
+            "blob": "21ec67eb44139f33fbdaa0a356026b1d93ebe3df",
+            "content": "sha256:0639c69b2a17d6ea9bb8d871aab56ecc8e2d795bda21ca156622f32c91cad8be",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_folders"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_enclosure.py"
+          },
+          "id": "RLZ-5H4QN7"
+        },
+        {
+          "after": {
+            "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
+            "content": "sha256:939d81d9f444edf146997bf1cc75af15b72fc2b1c1fc0eb53de6a4eaf9041b32",
+            "locator": {
+              "kind": "symbol",
+              "name": "collect_group_reports"
+            },
+            "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+          },
+          "before": {
+            "blob": "f0ae7f54fd6bc09f02b5530391e3b1567d159ea9",
+            "content": "sha256:7a3d4f425fe9a17dc9d36942249cf188fce3b7ba0d62f7333213771360e4a03e",
+            "locator": {
+              "kind": "symbol",
+              "name": "collect_group_reports"
+            },
+            "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+          },
+          "id": "RLZ-FKS7D8"
+        },
+        {
+          "after": {
+            "blob": "5a31b237d96f6657bdcc61f1534897bee2c94306",
+            "content": "sha256:26cbb4abc68e5d67daed1998e00b4db205be18fc3eefa6d190344b501db21ec8",
+            "locator": {
+              "kind": "symbol",
+              "name": "workspace_folder"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+            "content": "sha256:26cbb4abc68e5d67daed1998e00b4db205be18fc3eefa6d190344b501db21ec8",
+            "locator": {
+              "kind": "symbol",
+              "name": "workspace_folder"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-ZV55NQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-395CR6",
+      "items": [
+        "sha256:9e7a6c05eef87f8582eae0caa8bd219072e10341f9f9da7fdc436b677f240da7"
+      ],
+      "reason": "L54 replaced hardcoded role-reports and notes/reports literals with ROLE_REPORT_DIRECTORY and COLLECTED_REPORT_DIRECTORY in role_launch_enclosure.py, role_launch_workspace.py, and role_reports.py without changing isolated folder layout or legacy task-reports alias behavior.",
+      "revision": 1,
+      "subject": "INV-8XCZY1"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-3KG3C8",
+      "items": [
+        "sha256:89ac50df34833242d68e3f7bab9782adb2bca650933f8f87f474deae62e19fb4"
+      ],
+      "reason": "Confirmed DPD-71WYH4 (docs/concepts.md, rev 31 -> 32) against 261112-BUG-L54 candidate 814fd2eb: report-folder, enclosure, closeout, and review concepts remain accurate after adding COLLECTED_REPORT_DIRECTORY, collected_report_ref, and is_collected_report_ref in worktrees/role_reports.py.",
+      "revision": 32,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "64ecde1c2004b81e55ef76bfe4e0ac64f37415d6",
+            "content": "sha256:b1bfeb4e49342b7d8877d77293c85fcc809408711552037d211afbb3d035cab5",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_fact"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/state_owners.py"
+          },
+          "before": {
+            "blob": "3bb4147cebb3bd8af48d26d9ea4b650733ba9d77",
+            "content": "sha256:b1bfeb4e49342b7d8877d77293c85fcc809408711552037d211afbb3d035cab5",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_fact"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/state_owners.py"
+          },
+          "id": "RLZ-J4NB64"
+        },
+        {
+          "after": {
+            "blob": "64ecde1c2004b81e55ef76bfe4e0ac64f37415d6",
+            "content": "sha256:7ec21dbe4c4dd526618dab2f6787583342220685a0b0886931424f498263d625",
+            "locator": {
+              "kind": "symbol",
+              "name": "_durable_verdict_ref"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/state_owners.py"
+          },
+          "before": {
+            "blob": "3bb4147cebb3bd8af48d26d9ea4b650733ba9d77",
+            "content": "sha256:2be73e8447b5fbc3499e814fe705b911691965f28bf13b285b5f450c4e564694",
+            "locator": {
+              "kind": "symbol",
+              "name": "_durable_verdict_ref"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/state_owners.py"
+          },
+          "id": "RLZ-MC07BR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-4CTQ2E",
+      "items": [],
+      "reason": "BUG-R54@v1 Rule 3 joined state_owners.py::_durable_verdict_ref and _REPORT_MARKERS onto worktrees/role_reports.py (COLLECTED_REPORT_PARTS, ROLE_REPORT_DIRECTORY, collected_report_ref) while keeping _report_tail search and all converted verdictRef outputs unchanged (all 17 cases in test_knowledge_state_conversion_verdict_ref.py pass).",
+      "revision": 1,
+      "subject": "INV-GSH11V"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5K1CV6",
+      "items": [
+        "sha256:c472f09f39bbf6d13924a7c7cb379e1f97fb1f642466699d3c53f2cbc6756a54"
+      ],
+      "reason": "Updated Invariants And Boundaries to document memory_verdict_ref.py validation/mapping, role_reports.py single COLLECTED_REPORT_DIRECTORY definition, owner_review_fact mapping, and review_note unmapped reporting.",
+      "sources": [
+        {
+          "blob": "f7bf0bf63c9001c9ee486eed4dd003d1eed02170",
+          "path": "mcp/src/agents_remember/worktrees/memory_verdict_ref.py"
+        },
+        {
+          "blob": "77bf4e5ed28b749f5d9520666384118750fa7463",
+          "path": "mcp/src/agents_remember/worktrees/review_fact_source.py"
+        },
+        {
+          "blob": "5b84bf55e399c8c0616439edec4c6e7df5bf8d67",
+          "path": "mcp/src/agents_remember/worktrees/review_note.py"
+        },
+        {
+          "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
+          "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
+            "content": "sha256:936e71ea62f86436a3827f23143b67300a6dca712b65b1dfd133d410d63c315c",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "content": "sha256:c9da318e2c934c62ac280274054ae7e63e034536dd532dd242dfc258b1d52be3",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-JH0BAQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-69VXMQ",
+      "items": [
+        "sha256:d417cafad8b3c72bbfc3dfb2434501dba0b60c87cb01fba5d8aa8cf7c9d27619"
+      ],
+      "reason": "L54 only clarified verdict folder placement and accepted memory verdictRef forms on line 93 of roles/reviewer.md; direct leaf seat handovers and Manager authority boundaries are unchanged.",
+      "revision": 1,
+      "subject": "INV-ZNJ14G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+            "content": "sha256:5ce515b3bf81888b46e25613d088a9fb776908820c7fbe6736a36fe40da95e52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/verdict.md"
+          },
+          "before": {
+            "blob": "11336746503723e0772e73c309956b9748bbec4c",
+            "content": "sha256:2811afc3e2bf80b3b9b1b681d6dfffd41f8c69ce48152f532870271e6fe476b4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/verdict.md"
+          },
+          "id": "RLZ-5VSSX0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-792AEM",
+      "items": [
+        "sha256:86158abd584cfc29d37faea4c5bca025604debc1c28902cfefc2c20453189d0e"
+      ],
+      "reason": "L54 only updated lines 7 and 363 of templates/verdict.md for leaf role-reports/ vs notes/reports/ artifact location; round-limit, extra-round approval, and retired-wording rules are unchanged.",
+      "revision": 5,
+      "subject": "INV-HGSFJ8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7DQG2V",
+      "items": [
+        "sha256:c27d4d34c20ac8818827f95b72c5d6277563dba44f14188546550685f1f42e81"
+      ],
+      "reason": "Import of collected_verdict_ref supporting BUG-R54@v1 §2 realized in owner_review_fact.",
+      "subject": "hunk:sha256:c27d4d34c20ac8818827f95b72c5d6277563dba44f14188546550685f1f42e81"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-81W00V",
+      "items": [
+        "sha256:df59e59d741405c2f57a403e59c5f53e2adde92e8b57f6b0df9829318ba3c37c"
+      ],
+      "reason": "Import of COLLECTED_REPORT_PARTS, ROLE_REPORT_DIRECTORY, and collected_report_ref from worktrees/role_reports.py supporting BUG-R54@v1 Rule 3 (INV-K03WFZ) realized in _durable_verdict_ref.",
+      "subject": "hunk:sha256:df59e59d741405c2f57a403e59c5f53e2adde92e8b57f6b0df9829318ba3c37c"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a4ce35a0c90effabaac3c869612bf90ba7e09a2e",
+            "content": "sha256:4fd3784ce04e4e5ae8406b0ef60888b032582da1c1896b2cf5a8d97051be5532",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_curator_registered_when_the_pass_is_recorded_is_stamped_at_that_time"
+            },
+            "path": "mcp/tests/test_closeout_review_fact.py"
+          },
+          "before": {
+            "blob": "d849a09d6d8c85e79e9ad1105b9ace2b04380b44",
+            "content": "sha256:4fd3784ce04e4e5ae8406b0ef60888b032582da1c1896b2cf5a8d97051be5532",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_curator_registered_when_the_pass_is_recorded_is_stamped_at_that_time"
+            },
+            "path": "mcp/tests/test_closeout_review_fact.py"
+          },
+          "id": "PRF-CMYAH0"
+        },
+        {
+          "after": {
+            "blob": "77bf4e5ed28b749f5d9520666384118750fa7463",
+            "content": "sha256:44b4f94a2799693e4a1946ca7a8118463e54f17e8fdabf8885c978b1446d6f62",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_review_fact"
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_fact_source.py"
+          },
+          "before": {
+            "blob": "fc31aafc47ebd1a0d8d17360af43ca54966abe82",
+            "content": "sha256:44b4f94a2799693e4a1946ca7a8118463e54f17e8fdabf8885c978b1446d6f62",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_review_fact"
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_fact_source.py"
+          },
+          "id": "RLZ-BGD7V3"
+        },
+        {
+          "after": {
+            "blob": "16f6f1afe86228ebbe7fcaaeed587ffe92604a65",
+            "content": "sha256:ab587d85d98088025459138cabfd2aa29c883d17271379a6dcbed8aaf660d8bd",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 316
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "before": {
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
+            "content": "sha256:c5b640ca552afb7158a7a3a9269eb46b7cffdbf3d048e616b801c340effe6daf",
+            "locator": {
+              "end": 337,
+              "kind": "line_range",
+              "start": 315
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "id": "RLZ-RC2V5V"
+        },
+        {
+          "after": {
+            "blob": "e022e0150f64e278850c4b2845e4278e1727b474",
+            "content": "sha256:bf35277c68855ae6f49e15abbf8d2088a8a3cfe7a428298cc9e1b0c97a903e81",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "before": {
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "content": "sha256:5c3f0c44bb9c1ca2c8046747bd32786050de5a3f3eda7013c7c59e8a6a60c548",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "id": "RLZ-ZGQHQC"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-87RN36",
+      "items": [
+        "sha256:694020b6ab5dd49f86f85ab9a28a3e6bd83881d233632bd38c06ef115664bf79"
+      ],
+      "reason": "L54 preserved the stamp, tree-match, usable-ref eligibility, and no-pass rules of INV-AV04NY while adding memory verdictRef validation and collected-path mapping as dedicated BUG-R54@v1 invariants in FAM-7NBVYB; re-anchored RLZ-RC2V5V to lines 316-346 and refreshed moved/carried anchors.",
+      "revision": 1,
+      "subject": "INV-AV04NY"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8FQ1FC",
+      "items": [
+        "sha256:523b868d0ff6c47a4da63aa6113962a0e995aab387979de061128c67a1d8fb3e",
+        "sha256:922fd2a996082060d25185d7353a9f46f6b311350296dc3c459e22030b71ca72",
+        "sha256:a4558088d5858c8016f4109f926b5182690368b76dacacce237b4431f8478dfc",
+        "sha256:dadbf27bb3d829958bc4a2e04e4d9e5750de0c32d24d5c41bbb3bb565b9a0d71"
+      ],
+      "reason": "Updated Purpose and evidence [1] to document _history_review_note returning unmapped_verdict_ref_note alongside NO_PASS_SENTENCE for committed closed histories.",
+      "sources": [
+        {
+          "blob": "5b84bf55e399c8c0616439edec4c6e7df5bf8d67",
+          "path": "mcp/src/agents_remember/worktrees/review_note.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/review_note.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-91FSGT",
+      "items": [
+        "sha256:da0308f5331992298f3786e38eaaa54a73e9751f351026224c0608f775c4e2c9"
+      ],
+      "reason": "Re-applied BUG-R54@v1 Rule 3 shared collected-report definition wording in Conversion, structural crossing and census section after post-L55 sync.",
+      "sources": [
+        {
+          "blob": "64ecde1c2004b81e55ef76bfe4e0ac64f37415d6",
+          "path": "mcp/src/agents_remember/memory/conversion/state_owners.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9SXGEJ",
+      "items": [
+        "sha256:26883c484cbbdc4efd39d19fce0c12c4df2b7900589fbd94690e458761084df4"
+      ],
+      "reason": "Updated Logic section and evidence [58] so _review_note documents both NO_PASS_SENTENCE and unmapped_verdict_ref_note for non-collected pre-existing verdictRef values.",
+      "sources": [
+        {
+          "blob": "e022e0150f64e278850c4b2845e4278e1727b474",
+          "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5a31b237d96f6657bdcc61f1534897bee2c94306",
+            "content": "sha256:ec4b80ce7bcb474c798c09e757a0654f93f8379c7b643fe202a09974d16b101f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ensure_leaf_root"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+            "content": "sha256:ec4b80ce7bcb474c798c09e757a0654f93f8379c7b643fe202a09974d16b101f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ensure_leaf_root"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-3S0BZD"
+        },
+        {
+          "after": {
+            "blob": "998145f6dfda5199a39b24df52892ec0411cec1e",
+            "content": "sha256:a2c77713ce053b3623f640963c5a51a1e6095219cba868f9fcfeb15b57974c02",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "f717c183e60d68b48f43b14c15b6f29df125d1c8",
+            "content": "sha256:c1d6dfc7216e84cc16ec28dc2fffd5ef2da21d8d645c5bd296e4942d0e2ff926",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "14483d75d46701e3b1f85c5862ac521005c9d42c",
+            "content": "sha256:eb1166df14c684e9dabf52b2fe9385d49b5cdeb56cd68cafeb137eb7d8132718",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "ccdae27f166202bf07aa7a43bd27e807ee660cd7",
+            "content": "sha256:7716147bd1c4bdb47e1760f3036815e580322f4fe682f3e6bd9a4f73eeb3a31c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        },
+        {
+          "after": {
+            "blob": "5a31b237d96f6657bdcc61f1534897bee2c94306",
+            "content": "sha256:2205596cd695caf8781995aee4edf3314c683110c7e5a5be15a9dd6c0df8b3d5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+            "content": "sha256:561e09d0b51c1d5d6d4191465381a705cc2cb39e2d59eedc355dc18caca5ce07",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-Q81VYV"
+        },
+        {
+          "after": {
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
+            "content": "sha256:ef7cda717ecdfe82fb296960de3b680038cde27566a253dd64fef38166b9f590",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "content": "sha256:369d3c5cdfd03d981d99b8098a3432dc481c6baea97886a5f1dc6dfacc4437ae",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-WFV931"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-A8T24V",
+      "items": [
+        "sha256:e38f5e0dd926107cb4e14d0fdfc5737f5a854d63a094361a4ab9e1fd424a4c69"
+      ],
+      "reason": "L54 touched only report-root constants in role_launch_workspace.py, line 93 in roles/reviewer.md, and test catalog entries; outsideScratchRoot derivation, manifest persistence, and _ensure_leaf_root are unchanged (re-anchored post-L55 sync).",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AMJKXW",
+      "items": [
+        "sha256:eaa84475644f8464896e95438ebbb086dc909d79ac5613d76ae4928804efc301"
+      ],
+      "reason": "L54 only regenerated derived measurements for reviewer/*, roles/reviewer.md, and templates/verdict.md via renew-instructions.py; every ceiling and number stated in the card remains accurate.",
+      "sources": [
+        {
+          "blob": "30ae36e7830f53cd596fe318d9ce7fa0ee0b1ccb",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
+            "content": "sha256:ef7cda717ecdfe82fb296960de3b680038cde27566a253dd64fef38166b9f590",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "content": "sha256:369d3c5cdfd03d981d99b8098a3432dc481c6baea97886a5f1dc6dfacc4437ae",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-1MJ3JN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ATQ6M5",
+      "items": [
+        "sha256:428b55c7f9ac86d82f993d7809e6f1773b01684aa7e1a170122b4e61ecf72327"
+      ],
+      "reason": "L54's line 93 edit in roles/reviewer.md only specifies verdict folder placement and accepted memory verdictRef forms; all always-on AR tool-pointer sentences remain intact.",
+      "revision": 1,
+      "subject": "INV-GWA6VR"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BFJSF6",
+      "items": [
+        "sha256:58b8cd067204ebdb7d6d9bc2590d2663d8457e31b7c40318097650e8f2f17832"
+      ],
+      "reason": "Updated authoring contract and evidence [15] to document leaf role-reports/ verdict placement and the three accepted memory verdictRef forms.",
+      "sources": [
+        {
+          "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
+          "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BM798G",
+      "items": [
+        "sha256:c60a5d19e0a49a31101f7c72688c557262de87a9f8e39d810676a524fcbf517e"
+      ],
+      "reason": "Re-applied BUG-R54@v1 test_memory_verdict_ref.py summary (including state_owners.py Rule 3 check) and exact post-L55 catalog counts (18 contracts / 123 artifacts, 834 distinct modules) across card and sidecar after sync onto 687340de/5b29c7a7.",
+      "sources": [
+        {
+          "blob": "14483d75d46701e3b1f85c5862ac521005c9d42c",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "998145f6dfda5199a39b24df52892ec0411cec1e",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "a4ce35a0c90effabaac3c869612bf90ba7e09a2e",
+          "path": "mcp/tests/test_closeout_review_fact.py"
+        },
+        {
+          "blob": "17a8b414aeaea1687c20757d9566da34c434d96a",
+          "path": "mcp/tests/test_direct_landing_review_fact.py"
+        },
+        {
+          "blob": "144016bf64915539e857d767bba765bc3d543787",
+          "path": "mcp/tests/test_memory_review_lane.py"
+        },
+        {
+          "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+          "path": "mcp/tests/test_memory_verdict_ref.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "16f6f1afe86228ebbe7fcaaeed587ffe92604a65",
+            "content": "sha256:af358db9ecedfb71478020b72b40386707ad8829336bd9ce4b9bae14c45cfa73",
+            "locator": {
+              "end": 458,
+              "kind": "line_range",
+              "start": 458
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "before": {
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
+            "content": "sha256:af358db9ecedfb71478020b72b40386707ad8829336bd9ce4b9bae14c45cfa73",
+            "locator": {
+              "end": 449,
+              "kind": "line_range",
+              "start": 449
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "id": "RLZ-4GBF8D"
+        },
+        {
+          "after": {
+            "blob": "16f6f1afe86228ebbe7fcaaeed587ffe92604a65",
+            "content": "sha256:402323846ac2def37c00ac34c94243ba1dd34df90dc3f1e4f911ab4f6f312686",
+            "locator": {
+              "end": 502,
+              "kind": "line_range",
+              "start": 498
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "before": {
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
+            "content": "sha256:402323846ac2def37c00ac34c94243ba1dd34df90dc3f1e4f911ab4f6f312686",
+            "locator": {
+              "end": 493,
+              "kind": "line_range",
+              "start": 489
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "id": "RLZ-4J29G2"
+        },
+        {
+          "after": {
+            "blob": "16f6f1afe86228ebbe7fcaaeed587ffe92604a65",
+            "content": "sha256:48269af74aa5de4014be897b48dc7cc2e0f229ae5864f784d9b5470d8a7ebaa2",
+            "locator": {
+              "end": 391,
+              "kind": "line_range",
+              "start": 346
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "before": {
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
+            "content": "sha256:48269af74aa5de4014be897b48dc7cc2e0f229ae5864f784d9b5470d8a7ebaa2",
+            "locator": {
+              "end": 382,
+              "kind": "line_range",
+              "start": 337
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "id": "RLZ-9JM4DY"
+        },
+        {
+          "after": {
+            "blob": "16f6f1afe86228ebbe7fcaaeed587ffe92604a65",
+            "content": "sha256:727a920d86623acd77232bba20dded771443ce2defee389e665c52932a30c9ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_reopened_route_verdict"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "before": {
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
+            "content": "sha256:727a920d86623acd77232bba20dded771443ce2defee389e665c52932a30c9ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_reopened_route_verdict"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "id": "RLZ-ASNQNA"
+        },
+        {
+          "after": {
+            "blob": "16f6f1afe86228ebbe7fcaaeed587ffe92604a65",
+            "content": "sha256:3028e7aa4280f636859aaac53c537c9474766f4d80f4c9556a7b9208206b8749",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 169
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "before": {
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
+            "content": "sha256:3028e7aa4280f636859aaac53c537c9474766f4d80f4c9556a7b9208206b8749",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "id": "RLZ-KHQFJD"
+        },
+        {
+          "after": {
+            "blob": "16f6f1afe86228ebbe7fcaaeed587ffe92604a65",
+            "content": "sha256:53681c3952521c95f18c99f897d1775df8622116ee11c1416f11a3ed71c3cd9c",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 204
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "before": {
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
+            "content": "sha256:53681c3952521c95f18c99f897d1775df8622116ee11c1416f11a3ed71c3cd9c",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 203
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "id": "RLZ-MQDT4W"
+        },
+        {
+          "after": {
+            "blob": "16f6f1afe86228ebbe7fcaaeed587ffe92604a65",
+            "content": "sha256:f3a40986ea257482e8124b20796a2163c0dd316e1f24dec060834fb5bd1db4a0",
+            "locator": {
+              "end": 480,
+              "kind": "line_range",
+              "start": 462
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "before": {
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
+            "content": "sha256:f3a40986ea257482e8124b20796a2163c0dd316e1f24dec060834fb5bd1db4a0",
+            "locator": {
+              "end": 471,
+              "kind": "line_range",
+              "start": 453
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "id": "RLZ-N7DB82"
+        },
+        {
+          "after": {
+            "blob": "16f6f1afe86228ebbe7fcaaeed587ffe92604a65",
+            "content": "sha256:f8e7b01197b6ee829a8d2090a772707f0d9af50b705fd2c64549be549a291483",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_task_review_bound"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "before": {
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
+            "content": "sha256:b20c04ec1b9587546203f3b557619d409ae1f11ef51a285e54104065456181a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_task_review_bound"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "id": "RLZ-PAYF71"
+        },
+        {
+          "after": {
+            "blob": "16f6f1afe86228ebbe7fcaaeed587ffe92604a65",
+            "content": "sha256:1b8610144ea70b607558c8009e6a68f9cb43c388bfda10a687377904a3984328",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 174
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "before": {
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
+            "content": "sha256:1b8610144ea70b607558c8009e6a68f9cb43c388bfda10a687377904a3984328",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 173
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "id": "RLZ-S67Y7F"
+        },
+        {
+          "after": {
+            "blob": "16f6f1afe86228ebbe7fcaaeed587ffe92604a65",
+            "content": "sha256:323e719d110aa071de09e3206eb25dab1112f86273de629521817c9926883b89",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_routed_addition"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "before": {
+            "blob": "47166b17f11639abf82cb29c2d8f8f4ecc6b1313",
+            "content": "sha256:323e719d110aa071de09e3206eb25dab1112f86273de629521817c9926883b89",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_routed_addition"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "id": "RLZ-W8X079"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-BWDXJK",
+      "items": [
+        "sha256:8a2b2e4faa7ca4740695f6096f83ce65d31456c1c1a5f65b4d3bda88258cf0a9"
+      ],
+      "reason": "L54 added memory verdictRef validation inside _record_task_review_bound without altering code rounds, sanctioned finding additions, or route BLOCK publication; shifted 7 line_range anchors in task_doc_route_review.py.",
+      "revision": 1,
+      "subject": "INV-WEF33P"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7E3JNX",
+          "revision": 1
+        },
+        {
+          "id": "INV-RKGNF8",
+          "revision": 1
+        },
+        {
+          "id": "INV-V7M37D",
+          "revision": 5
+        },
+        {
+          "id": "INV-W24J6Q",
+          "revision": 2
+        },
+        {
+          "id": "INV-W58B84",
+          "revision": 3
+        },
+        {
+          "id": "INV-ZNJ14G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-CV7DWX",
+      "items": [
+        "sha256:41665460e4eac367806f6cb960f60b8d64200d998bb57ca9ba7706f04df5fc1b"
+      ],
+      "reason": "Examined all 6 members including touched INV-ZNJ14G; L54 only clarified Reviewer verdict folder and memory verdictRef forms on line 93 of roles/reviewer.md, leaving direct leaf seat handovers unchanged.",
+      "revision": 2,
+      "subject": "FAM-83BTBD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CW6NDW",
+      "items": [
+        "sha256:b65152b1f754d9c0be6f0b7267c0c57396cfdfeed2697178dbc51adce4c6ef63"
+      ],
+      "reason": "Private helper _review_fact stores the collected_verdict_ref result in ReviewFact.verdictRef (realized under BUG-R54@v1 §2).",
+      "subject": "hunk:sha256:b65152b1f754d9c0be6f0b7267c0c57396cfdfeed2697178dbc51adce4c6ef63"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-D0BDFG",
+      "items": [],
+      "reason": "Re-confirmed DPD-XAARS1 (docs/workflows.md, rev 12 -> 13) against post-L55 synced candidate d52a38f5 after role_launch_workspace.py adopted COLLECTED_REPORT_DIRECTORY and ROLE_REPORT_DIRECTORY.",
+      "revision": 13,
+      "subject": "DPD-XAARS1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D27MPQ",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Re-applied BUG-R54@v1 consumer-list updates (9 exact artifacts naming mcp/tests/test_memory_verdict_ref.py) and exact post-L55 catalog counts (18 contracts / 123 artifacts) after sync onto 687340de/5b29c7a7.",
+      "sources": [
+        {
+          "blob": "14483d75d46701e3b1f85c5862ac521005c9d42c",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-E1461T",
+      "items": [],
+      "reason": "Updated card and refreshed ref [3] via citation_fix to document _REPORT_MARKERS and _durable_verdict_ref sharing ROLE_REPORT_DIRECTORY, COLLECTED_REPORT_PARTS, and collected_report_ref from worktrees/role_reports.py under BUG-R54@v1 Rule 3.",
+      "sources": [
+        {
+          "blob": "64ecde1c2004b81e55ef76bfe4e0ac64f37415d6",
+          "path": "mcp/src/agents_remember/memory/conversion/state_owners.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/conversion/state_owners.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E7NB0Q",
+      "items": [],
+      "reason": "Left DPD-ZMQ523 (docs/design/python-evidence-system.md) untouched at HEAD e2b88740 (rev 26) under D167/D617/BUG-R52@v2 without confirming: lines 102-104 retain a pre-existing factual contradiction unrelated to L54 claiming one fixture model in the test tree uses exact-source, whereas all 4 exact-source rows in evidence-lifecycle.toml are under scripts/e2e_harness/ and anchor_fixture_models.py uses exact.",
+      "revision": 26,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EDNQV9",
+      "items": [
+        "sha256:77445278cd0fccc5ff6473999f84492416be6c636369cf2002926a98e58742e5"
+      ],
+      "reason": "Updated Hot Path Summary to record roles/reviewer.md leaf role-reports/ verdict placement and accepted memory verdictRef forms.",
+      "sources": [
+        {
+          "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
+          "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
+            "content": "sha256:ef7cda717ecdfe82fb296960de3b680038cde27566a253dd64fef38166b9f590",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "content": "sha256:369d3c5cdfd03d981d99b8098a3432dc481c6baea97886a5f1dc6dfacc4437ae",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-PDE8EW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-EP3P42",
+      "items": [
+        "sha256:f53564c0b7afb8cda0d28f5e489783076c3c87e4bbc0a7078106b1d98de0db70"
+      ],
+      "reason": "L54 only updated line 93 of roles/reviewer.md for verdict placement and memory verdictRef forms; role_message handover transport and Manager local named-wait rules are unchanged.",
+      "revision": 3,
+      "subject": "INV-QZW2X2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "998145f6dfda5199a39b24df52892ec0411cec1e",
+            "content": "sha256:a2c77713ce053b3623f640963c5a51a1e6095219cba868f9fcfeb15b57974c02",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "f717c183e60d68b48f43b14c15b6f29df125d1c8",
+            "content": "sha256:c1d6dfc7216e84cc16ec28dc2fffd5ef2da21d8d645c5bd296e4942d0e2ff926",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-EYJNE9",
+      "items": [
+        "sha256:4f0aba601a122082d4bd6bcd462473f4e472db95cd3442aad0b5df2908a29e9e"
+      ],
+      "reason": "L54 registered test_memory_verdict_ref.py in test-evidence-lanes.toml (834 total / 684 unit-regression); lane membership uniqueness and manifest validation rules are unchanged (re-anchored post-L55 sync).",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FJPQ0Z",
+      "items": [
+        "sha256:7262e6d675602fef94b9eca1052bbb0737e0bdc9dc88f76e2d590ef19bac4ffc"
+      ],
+      "reason": "Module-level _REPORT_MARKERS binding ((ROLE_REPORT_DIRECTORY,), COLLECTED_REPORT_PARTS) replacing duplicate string literals in memory/conversion/state_owners.py; consumed directly by _durable_verdict_ref under BUG-R54@v1 Rule 3 (INV-K03WFZ).",
+      "subject": "hunk:sha256:7262e6d675602fef94b9eca1052bbb0737e0bdc9dc88f76e2d590ef19bac4ffc"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FM8P7X",
+      "items": [
+        "sha256:b33a61929d0d0dff6d4a4eb642185af3165698aaeba59a67bed7dce800e55d42"
+      ],
+      "reason": "Updated Code Commentary, evidence [3], and added evidence for COLLECTED_REPORT_DIRECTORY, COLLECTED_REPORT_PARTS, collected_report_ref, and is_collected_report_ref.",
+      "sources": [
+        {
+          "blob": "3968d3d6dfa48c1259c9c847602c00f6055f4616",
+          "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/role_reports.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FQ18ES",
+      "items": [
+        "sha256:6956d162c9fa5bf14fe4680f76a4005f7cb9fff561940381ef5bef7fa02643e6"
+      ],
+      "reason": "Updated Current Canonical Contract and added evidence for leaf role-reports/ vs notes/reports/ verdict placement on lines 7 and 363.",
+      "sources": [
+        {
+          "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+          "path": "skills/l-01-agent-lifecycles/templates/verdict.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/templates/verdict.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "30ae36e7830f53cd596fe318d9ce7fa0ee0b1ccb",
+            "content": "sha256:9fdb89215a63fb5b0a93a64b3624f95306a9156e46ac6f102ccd5ff7f0a0bf1f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "ef0ffe9a8985daf19aca225623c22d5238fcb9f2",
+            "content": "sha256:ff2ed722b08957b6f065c8f86e81c632bfd6f8ab894e79d9e5cdf4366dcc47ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-G8KAE3",
+      "items": [
+        "sha256:3a892791463b2fc922c5f93977a15cfdd5ef2d93920beb73271a00c6cb7ee0b3"
+      ],
+      "reason": "L54 regenerated current capsule-budgets-current.json measurements within existing authored ceilings (reviewer/review 4192 <= 4200) without altering historical registries or ceilings.",
+      "revision": 6,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
+            "content": "sha256:ef7cda717ecdfe82fb296960de3b680038cde27566a253dd64fef38166b9f590",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "content": "sha256:369d3c5cdfd03d981d99b8098a3432dc481c6baea97886a5f1dc6dfacc4437ae",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-TVXT3T"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GD13D4",
+      "items": [
+        "sha256:79d4d090bf72323fc3c4135978839b32eaf5f234eca0f99dde420963ce914c8c"
+      ],
+      "reason": "L54 only updated line 93 of roles/reviewer.md for verdict folder placement and accepted memory verdictRef forms; OM-6 pre-base-stale and deferral-lift instructions are unchanged.",
+      "revision": 1,
+      "subject": "INV-82NDFH"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "14483d75d46701e3b1f85c5862ac521005c9d42c",
+            "content": "sha256:eb1166df14c684e9dabf52b2fe9385d49b5cdeb56cd68cafeb137eb7d8132718",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "ccdae27f166202bf07aa7a43bd27e807ee660cd7",
+            "content": "sha256:7716147bd1c4bdb47e1760f3036815e580322f4fe682f3e6bd9a4f73eeb3a31c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "998145f6dfda5199a39b24df52892ec0411cec1e",
+            "content": "sha256:a2c77713ce053b3623f640963c5a51a1e6095219cba868f9fcfeb15b57974c02",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "f717c183e60d68b48f43b14c15b6f29df125d1c8",
+            "content": "sha256:c1d6dfc7216e84cc16ec28dc2fffd5ef2da21d8d645c5bd296e4942d0e2ff926",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-H2CEKR",
+      "items": [
+        "sha256:5e5449408f77b809eca3f083ffc994be36935a96c4c5f2f46686cfd0d8c7c542"
+      ],
+      "reason": "L54 added test_memory_verdict_ref.py once in test-evidence-lanes.toml and in 9 exact artifact consumer lists in evidence-lifecycle.toml; catalog canonicalization and governance rules are unchanged (re-anchored post-L55 sync).",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-H838VA",
+      "items": [
+        "sha256:ffc35aa9bedacf6bf8de950910092cf71f6e90e68f7bcff670a92c6467619a7b"
+      ],
+      "reason": "L54 only regenerated derived hashes for roles/reviewer.md via renew-instructions.py; all baseline, unit, and digest claims in the card remain accurate.",
+      "sources": [
+        {
+          "blob": "2652b674e5adeeca1929b1b84cedf1ba945bb5f6",
+          "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/core/digest-map.json"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "examined": [
+        {
+          "id": "INV-0R04WY",
+          "revision": 1
+        },
+        {
+          "id": "INV-1QE8YM",
+          "revision": 1
+        },
+        {
+          "id": "INV-5GEDEX",
+          "revision": 1
+        },
+        {
+          "id": "INV-69M737",
+          "revision": 1
+        },
+        {
+          "id": "INV-793X8F",
+          "revision": 1
+        },
+        {
+          "id": "INV-AV04NY",
+          "revision": 1
+        },
+        {
+          "id": "INV-B79B38",
+          "revision": 1
+        },
+        {
+          "id": "INV-BNDKC8",
+          "revision": 1
+        },
+        {
+          "id": "INV-CZXJCP",
+          "revision": 1
+        },
+        {
+          "id": "INV-G8AX2H",
+          "revision": 1
+        },
+        {
+          "id": "INV-JAFF6J",
+          "revision": 1
+        },
+        {
+          "id": "INV-KPK1WT",
+          "revision": 2
+        },
+        {
+          "id": "INV-PD5ZD5",
+          "revision": 1
+        },
+        {
+          "id": "INV-TRMMZA",
+          "revision": 1
+        },
+        {
+          "id": "INV-X8FRT8",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0FRT0",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-H874P5",
+      "items": [
+        "sha256:3113892480a2fe7ada1a9c2a4b3c7c8067ba26938a1d8d927a547cf0308e9a90"
+      ],
+      "reason": "Re-applied BUG-R54@v1 §1 (INV-JAFF6J) and §2 (INV-793X8F) onto post-KNO-L6 FAM-7NBVYB (preserving INV-CZXJCP; 16 members total), added skills/l-01-agent-lifecycles/roles and templates routes, and strengthened the guarantee to cover validated durable verdictRef persistence.",
+      "revision": 3,
+      "subject": "FAM-7NBVYB"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-HS8Z9V",
+      "items": [],
+      "reason": "Re-confirmed DPD-ZT8YY7 (docs/design/python-pytest-bootstrap.md, rev 30 -> 31) against post-L55 synced candidate d52a38f5 and refreshed stands_on[12] stress-durability anchor to test-evidence-lanes.toml:853-855.",
+      "revision": 31,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J1G5JW",
+      "items": [
+        "sha256:400347b4535a9fe2d940bb6658b5a98c4794a1fcc11a45786427fa529fd09f16"
+      ],
+      "reason": "Updated card to cover the 13th test function (test_state_conversion_uses_shared_collected_report_ref_without_duplicate_literals) proving state_owners.py shares role_reports constants with zero duplicate literals.",
+      "sources": [
+        {
+          "blob": "0547098cc593e56c92a3e5ff40fd7081d0a8ac12",
+          "path": "mcp/tests/test_memory_verdict_ref.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_memory_verdict_ref.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JXCANH",
+      "items": [
+        "sha256:a4558088d5858c8016f4109f926b5182690368b76dacacce237b4431f8478dfc"
+      ],
+      "reason": "Private helper _history_review_note extracted directly from committed_review_note (realized under BUG-R54@v1 §2) to emit NO_PASS_SENTENCE or unmapped_verdict_ref_note.",
+      "subject": "hunk:sha256:a4558088d5858c8016f4109f926b5182690368b76dacacce237b4431f8478dfc"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K5BY0S",
+      "items": [
+        "sha256:7be8a1bda0e1e4f82268ad86ed84a316f20b01be0982c6aabccf1391083415d9"
+      ],
+      "reason": "Updated card contract and evidence [18] to document memory-lane verdictRef validation via require_bound_memory_verdict_ref on ordinary and record-only paths.",
+      "sources": [
+        {
+          "blob": "16f6f1afe86228ebbe7fcaaeed587ffe92604a65",
+          "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2652b674e5adeeca1929b1b84cedf1ba945bb5f6",
+            "content": "sha256:96483b6b93dbcd1bbed5b93a7868365966b2007562c9fe14796da30e842c08c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "e1ec98d56b16559c27a2d0594d2c5747996a6030",
+            "content": "sha256:80daf0843259cbaef290dad1ddbc29b79db640c9802bc7e11a690c2d24b97d57",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-0E8J78"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-KB0F6X",
+      "items": [
+        "sha256:a6469cdeb8b0d66eff3c8bf5c4ff002f5fcae3477e97d04836c666dd6e860fc4"
+      ],
+      "reason": "L54 regenerated derived hash windows in digest-map.json via renew-instructions.py; passage relocation and explicit named-binding rules are unchanged.",
+      "revision": 1,
+      "subject": "INV-HN54VG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KFQBJP",
+      "items": [
+        "sha256:f8d7735ab8d784a4aa6ef5cbdd83dc6631d8e1ede1ae979e2976747c9907cc81"
+      ],
+      "reason": "Private helper _review_fact signature parameters worktree_group and task_root forwarded directly from owner_review_fact (realized under BUG-R54@v1 §2).",
+      "subject": "hunk:sha256:f8d7735ab8d784a4aa6ef5cbdd83dc6631d8e1ede1ae979e2976747c9907cc81"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-KGGG3V",
+      "items": [
+        "sha256:289fd693ca838c1721cb689d765449618f2766ab8b383b8c66b24bb8c1d7d57d"
+      ],
+      "reason": "Confirmed DPD-B540GW (docs/roles.md, rev 16 -> 17) against 261112-BUG-L54 candidate 814fd2eb: role duties, leaf role-reports/ placement, and collection to notes/reports/ remain accurate and consistent with L54's updates to role_launch_workspace.py and skills/l-01-agent-lifecycles/roles/reviewer.md.",
+      "revision": 17,
+      "subject": "DPD-B540GW"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7FMDAS",
+          "revision": 2
+        },
+        {
+          "id": "INV-82ZTHK",
+          "revision": 3
+        },
+        {
+          "id": "INV-8AMSGV",
+          "revision": 5
+        },
+        {
+          "id": "INV-9S49CW",
+          "revision": 3
+        },
+        {
+          "id": "INV-HGSFJ8",
+          "revision": 5
+        }
+      ],
+      "id": "ROW-KR4GHS",
+      "items": [
+        "sha256:3910b3169391963038a6219b15516fb7c951226d8ba51e48ea3d3b6515019625"
+      ],
+      "reason": "Examined all 5 members including touched INV-HGSFJ8; L54 only updated verdict artifact-path wording on lines 7 and 363 of templates/verdict.md, leaving developer-question routing and family guarantee unchanged.",
+      "revision": 3,
+      "subject": "FAM-7AEA19"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-82NDFH",
+          "revision": 1
+        },
+        {
+          "id": "INV-8CNH3X",
+          "revision": 1
+        },
+        {
+          "id": "INV-MH7M10",
+          "revision": 1
+        },
+        {
+          "id": "INV-N6WPHK",
+          "revision": 1
+        },
+        {
+          "id": "INV-NW74GN",
+          "revision": 1
+        },
+        {
+          "id": "INV-Q2KM31",
+          "revision": 1
+        },
+        {
+          "id": "INV-XT13GK",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-KZ4V54",
+      "items": [
+        "sha256:c450dea783b60212c523a29a5d4d36a74c23b30d0b0df8b821f561b54db47c6f"
+      ],
+      "reason": "Examined all 7 members including touched INV-82NDFH; L54 did not touch OM-6 pre-base-stale confirmation or deferral-lift rules in roles/reviewer.md.",
+      "revision": 1,
+      "subject": "FAM-FQ8TF2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "30ae36e7830f53cd596fe318d9ce7fa0ee0b1ccb",
+            "content": "sha256:9fdb89215a63fb5b0a93a64b3624f95306a9156e46ac6f102ccd5ff7f0a0bf1f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "ef0ffe9a8985daf19aca225623c22d5238fcb9f2",
+            "content": "sha256:ff2ed722b08957b6f065c8f86e81c632bfd6f8ab894e79d9e5cdf4366dcc47ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9J6CEC"
+        },
+        {
+          "after": {
+            "blob": "2652b674e5adeeca1929b1b84cedf1ba945bb5f6",
+            "content": "sha256:96483b6b93dbcd1bbed5b93a7868365966b2007562c9fe14796da30e842c08c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "e1ec98d56b16559c27a2d0594d2c5747996a6030",
+            "content": "sha256:80daf0843259cbaef290dad1ddbc29b79db640c9802bc7e11a690c2d24b97d57",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-WZZ5BF"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-M0PDBD",
+      "items": [
+        "sha256:79637d89d3596bd1311480641e80315bd5697be76f340c5cd6635662bd62beb0"
+      ],
+      "reason": "L54 renewed package_data runtime copies of capsule-budgets-current.json and digest-map.json through renew-instructions.py and sync-runtime.py; the single renewal entry point obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-EHJV8E"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2652b674e5adeeca1929b1b84cedf1ba945bb5f6",
+            "content": "sha256:96483b6b93dbcd1bbed5b93a7868365966b2007562c9fe14796da30e842c08c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "e1ec98d56b16559c27a2d0594d2c5747996a6030",
+            "content": "sha256:80daf0843259cbaef290dad1ddbc29b79db640c9802bc7e11a690c2d24b97d57",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-BZ71PH"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-M9QKFG",
+      "items": [
+        "sha256:07db159628168252e6970cefeb5be5be58ff146fb9eca0f774b87ec6680511b3"
+      ],
+      "reason": "L54 only regenerated digest-map.json via renew-instructions.py after the roles/reviewer.md edit; every-role digest delivery and audit map boundary are unchanged.",
+      "revision": 1,
+      "subject": "INV-40JW44"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
+            "content": "sha256:ef7cda717ecdfe82fb296960de3b680038cde27566a253dd64fef38166b9f590",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "content": "sha256:369d3c5cdfd03d981d99b8098a3432dc481c6baea97886a5f1dc6dfacc4437ae",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-BKYWR9"
+        },
+        {
+          "after": {
+            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
+            "content": "sha256:75bdfd1e3392bb1485d7b16d3e2f9f098e4198177a4104b1dac2c20f566f78d5",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "54ae287a053aab800da3cedc264a546bd5e33e27",
+            "content": "sha256:75bdfd1e3392bb1485d7b16d3e2f9f098e4198177a4104b1dac2c20f566f78d5",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-CG94JY"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-MFHKBV",
+      "items": [
+        "sha256:a6911d22ef451eb84a1939a3d5cff9b4af84954eceb218dc7903fe247f84844f"
+      ],
+      "reason": "L54 edited canonical skills/l-01-agent-lifecycles/roles/reviewer.md and propagated it identically to package_data/runtime/skills/ via sync-runtime.py.",
+      "revision": 3,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MVRQ40",
+      "items": [
+        "sha256:25e4c81d5eedd1090eab69ad90b4517c3cb7e7b9e8fd976804def910bdc8bf2d",
+        "sha256:47e91681f447edc31b28107c39cc77187ba66222d466a03cfffea2dab5139134",
+        "sha256:96dabfa37a175a04deaed405fafd879af32ff9c574f645ec1e864ffe5a82ce55",
+        "sha256:971145d72267c1e63721ae35e2852bee31a17403931e9ff50a038d5485d624e0",
+        "sha256:9c69bc747c0bb3e2b3c17c005d04a206c1b5bab7265970faf754428f536b9de9",
+        "sha256:a8b014d6f565f3ebb9d64e3ab9944e93ac37c813e5b183ce06907aeb78ed9d34",
+        "sha256:a9e4747e07d84dbf3e35a02486470cc144c414452d3a2081415cb5bce69d1faa",
+        "sha256:bfdccf4735e8f9fe5ed4465f58c8fd7b70b6144f49e4e53d8e0f6001693c0f27",
+        "sha256:c6e72bdb4b65ec9fefb2fe136e36e0c0c4fdd26e97e9b559b1a2ef8cf251adca",
+        "sha256:e4e6fed048f4262b86fce9df082c7609134aa23cb3ff64137ffa02b3ec2dbeb2",
+        "sha256:e5cdf372ee5411f46680d4ca0eef74b30df9dbe8f40fb768741a5dc52414cbb5",
+        "sha256:f43c2096c71586238843e1555c8d005f581cd1116feff5d91838b2c2d8e132e3"
+      ],
+      "reason": "L54 only updated test fixtures in three existing tests to materialize real notes/reports/... verdict files; all existing card claims remain accurate.",
+      "sources": [
+        {
+          "blob": "144016bf64915539e857d767bba765bc3d543787",
+          "path": "mcp/tests/test_memory_review_lane.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_memory_review_lane.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N0VPWC",
+      "items": [
+        "sha256:73a4f27a4219f5d1e733bccc34eb573e4c70b01ced3b4cc623fbe153aca834c4"
+      ],
+      "reason": "Import of require_bound_memory_verdict_ref supporting BUG-R54@v1 §1 realized in _record_task_review_bound.",
+      "subject": "hunk:sha256:73a4f27a4219f5d1e733bccc34eb573e4c70b01ced3b4cc623fbe153aca834c4"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-40JW44",
+          "revision": 1
+        },
+        {
+          "id": "INV-7KDG7C",
+          "revision": 1
+        },
+        {
+          "id": "INV-MQ3K06",
+          "revision": 1
+        },
+        {
+          "id": "INV-WR3J18",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZA67WW",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-PBY7RP",
+      "items": [
+        "sha256:927d279d8906327c1d2092ebcbee13eb42fb9b6e0f1c5df1e46cec3b4aec5133"
+      ],
+      "reason": "Examined all 5 members including touched INV-40JW44; digest-map.json was only regenerated for the roles/reviewer.md edit, leaving every-role digest and detail delivery unchanged.",
+      "revision": 3,
+      "subject": "FAM-N36SWD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PSW03W",
+      "items": [
+        "sha256:a269a8e1f0ea39f0fece7d380a2e32756d9f3eb344748b93c37f5394a54eecca"
+      ],
+      "reason": "Updated Dispatch And Candidate Validation and evidence [26] to document memory-lane verdictRef validation via require_bound_memory_verdict_ref in _record_task_review_bound.",
+      "sources": [
+        {
+          "blob": "16f6f1afe86228ebbe7fcaaeed587ffe92604a65",
+          "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/task_docs/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QSEZSD",
+      "items": [
+        "sha256:b88c9c9a094ef6492c7da2bd84cfc1898f773184bbe520f0293d0aa99c14cc5e"
+      ],
+      "reason": "Authored new file card and symbol-anchored evidence for memory_verdict_ref.py covering bound leaf contract resolution, memory verdictRef validation, collected_verdict_ref mapping, and unmapped_verdict_ref_note.",
+      "sources": [
+        {
+          "blob": "f7bf0bf63c9001c9ee486eed4dd003d1eed02170",
+          "path": "mcp/src/agents_remember/worktrees/memory_verdict_ref.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/memory_verdict_ref.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R3C2TR",
+      "items": [
+        "sha256:3c4103c3f2d265a204968e1d4df85514809c769dbb0d2d2b305ee6410e3a6462"
+      ],
+      "reason": "Import of PurePosixPath in memory/conversion/state_owners.py supporting BUG-R54@v1 Rule 3 (INV-K03WFZ) realized in _durable_verdict_ref.",
+      "subject": "hunk:sha256:3c4103c3f2d265a204968e1d4df85514809c769dbb0d2d2b305ee6410e3a6462"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-5BPF6M",
+          "revision": 1
+        },
+        {
+          "id": "INV-8SBKWP",
+          "revision": 1
+        },
+        {
+          "id": "INV-KVQ91Z",
+          "revision": 1
+        },
+        {
+          "id": "INV-WEF33P",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-R6AHAG",
+      "items": [
+        "sha256:c13b54ee7c700fdaaac1eb72af7532d8b1171043ff610428b71b854aa98ca456"
+      ],
+      "reason": "Examined all 4 members including touched INV-WEF33P; L54 added memory-lane verdictRef validation without affecting code rounds, final-check repairs, or routed BLOCK publication.",
+      "revision": 1,
+      "subject": "FAM-CZZ8N4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SRH8VA",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Re-applied BUG-R54@v1 test_memory_verdict_ref.py registration and exact post-L55 lane counts (684 unit-regression / 834 total) and shifted prose line numbers across card and sidecar after sync onto 687340de/5b29c7a7.",
+      "sources": [
+        {
+          "blob": "998145f6dfda5199a39b24df52892ec0411cec1e",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "examined": [
+        {
+          "id": "INV-8XCZY1",
+          "revision": 1
+        },
+        {
+          "id": "INV-K03WFZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-N70HF0",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0DCW1",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z1HWDF",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-TNP6RV",
+      "items": [
+        "sha256:cac40c80dac54365843110e7c22e62cfbfc98a92267e0f19d0e0332f67450863"
+      ],
+      "reason": "Re-applied BUG-R54@v1 §3 (INV-K03WFZ, now joined onto memory/conversion/state_owners.py) to FAM-2BRZW7 (5 members total, covered by existing route mcp) and strengthened the guarantee.",
+      "revision": 2,
+      "subject": "FAM-2BRZW7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-TY8RSM",
+      "items": [
+        "sha256:59a9ce1a0ba26d3be8f70ae3a467e8a3f4cce3d5dc7c6090079b573782b6f6ab"
+      ],
+      "reason": "Confirmed DPD-9F0Q8G (docs/guides/use-external-memory.md, rev 7 -> 8) against 261112-BUG-L54 candidate 814fd2eb: external-memory layout, attribution, and closeout step-4 history closing remain accurate after L54's unmapped verdictRef closeout note in closeout_external.py.",
+      "revision": 8,
+      "subject": "DPD-9F0Q8G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-V0NEVY",
+      "items": [
+        "sha256:4dcf7befbbe716163a0429eae4ebd3e733d6d1638a939df2bee4d8df8c8fc469"
+      ],
+      "reason": "Updated card commentary, relationships, and evidence [3] to document prepare_role_folders using shared ROLE_REPORT_DIRECTORY and COLLECTED_REPORT_DIRECTORY constants.",
+      "sources": [
+        {
+          "blob": "42835540234aa58d7f4f614722a8b6b4ab3ad1dc",
+          "path": "mcp/src/agents_remember/cli/role_launch_enclosure.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_enclosure.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V0R8V0",
+      "items": [
+        "sha256:dadbf27bb3d829958bc4a2e04e4d9e5750de0c32d24d5c41bbb3bb565b9a0d71"
+      ],
+      "reason": "Import of unmapped_verdict_ref_note supporting BUG-R54@v1 §2 realized in committed_review_note.",
+      "subject": "hunk:sha256:dadbf27bb3d829958bc4a2e04e4d9e5750de0c32d24d5c41bbb3bb565b9a0d71"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-V7K5JH",
+      "items": [],
+      "reason": "Re-confirmed DPD-78737N (CONTRIBUTING.md, rev 22 -> 23) against post-L55 synced candidate d52a38f5 (834 total / 684 unit-regression, 18 contracts / 123 artifacts).",
+      "revision": 23,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VFWVH3",
+      "items": [
+        "sha256:bce8a4f2916f6a00f0e3d1224b5dc4890f1d39d9b892a82356955819604ccccd"
+      ],
+      "reason": "Updated Purpose, evidence [2], and added owner_review_fact evidence to document collected_verdict_ref mapping to notes/reports/<rel> for both closeout and direct landing.",
+      "sources": [
+        {
+          "blob": "77bf4e5ed28b749f5d9520666384118750fa7463",
+          "path": "mcp/src/agents_remember/worktrees/review_fact_source.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/review_fact_source.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VX9JK4",
+      "items": [
+        "sha256:b0a44e79218236ef389ef0c677a2a7a7bf73443e22e5f4f213d8f851a43016e1"
+      ],
+      "reason": "Imports PurePath and PurePosixPath supporting BUG-R54@v1 §3 in collected_report_ref and is_collected_report_ref.",
+      "subject": "hunk:sha256:b0a44e79218236ef389ef0c677a2a7a7bf73443e22e5f4f213d8f851a43016e1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WNT9NK",
+      "items": [
+        "sha256:5e92492336cf970372f791bcdd3ced661debb717a8181e213b98960b33646990"
+      ],
+      "reason": "Module-level COLLECTED_REPORT_DIRECTORY and derived COLLECTED_REPORT_PARTS constants consumed directly by collected_report_ref, is_collected_report_ref, and collect_group_reports (realized under BUG-R54@v1 §3).",
+      "subject": "hunk:sha256:5e92492336cf970372f791bcdd3ced661debb717a8181e213b98960b33646990"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y6NGDV",
+      "items": [
+        "sha256:303d96db7ce45a3bd66bdedaec099c944cb55da527b5cb246af92bada347f26c"
+      ],
+      "reason": "Imports COLLECTED_REPORT_DIRECTORY and ROLE_REPORT_DIRECTORY supporting BUG-R54@v1 §3 realized in prepare_role_folders.",
+      "subject": "hunk:sha256:303d96db7ce45a3bd66bdedaec099c944cb55da527b5cb246af92bada347f26c"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Y70Z32",
+      "items": [
+        "sha256:a3009d0a3ba84f0c1b6ce7ee27f20d02bac6e2395709943f4c146eaec6933f9c"
+      ],
+      "reason": "Confirmed DPD-EG5TYT (docs/features.md, rev 32 -> 33) against 261112-BUG-L54 candidate 814fd2eb: closeout commit ordering, role responsibilities, and memory feature overview remain accurate after L54's unmapped verdictRef note in closeout_external.py and Reviewer verdict-path guidance in roles/reviewer.md.",
+      "revision": 33,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "30ae36e7830f53cd596fe318d9ce7fa0ee0b1ccb",
+            "content": "sha256:9fdb89215a63fb5b0a93a64b3624f95306a9156e46ac6f102ccd5ff7f0a0bf1f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "ef0ffe9a8985daf19aca225623c22d5238fcb9f2",
+            "content": "sha256:ff2ed722b08957b6f065c8f86e81c632bfd6f8ab894e79d9e5cdf4366dcc47ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-RHRQZQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YSSF3J",
+      "items": [
+        "sha256:bda1e7dfd817ec4a0f164086dfba612e6b3edae1d92b3544f1db75596bcb13fd"
+      ],
+      "reason": "L54 only regenerated derived current measurements in capsule-budgets-current.json via renew-instructions.py with zero authored ceiling changes.",
+      "revision": 2,
+      "subject": "INV-4HZG3V"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-YTYTB1",
+      "items": [
+        "sha256:25a9ddd42920a5942754dc016de45f5d4b7130e28b2aa4515c6b01a18dd33427"
+      ],
+      "reason": "Confirmed DPD-327MNX (docs/reference/runtime-layout.md, rev 10 -> 11) against 261112-BUG-L54 candidate 814fd2eb: coordination-root layout, server-binding records, and role report/scratch folder paths remain accurate after role_launch_workspace.py switched to COLLECTED_REPORT_DIRECTORY and ROLE_REPORT_DIRECTORY.",
+      "revision": 11,
+      "subject": "DPD-327MNX"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z04FSE",
+      "items": [
+        "sha256:0fd585670dd7c914d771025e30865ad0b9c463bd80432169c086c41fbeb69686",
+        "sha256:d66b742a84a59d81533c807c1f2d652ae3f9e10ba532a872f9693bbda5a41349"
+      ],
+      "reason": "L54 only updated the VERDICT_REF fixture constant to notes/reports/memory.md; all existing card claims remain accurate.",
+      "sources": [
+        {
+          "blob": "17a8b414aeaea1687c20757d9566da34c434d96a",
+          "path": "mcp/tests/test_direct_landing_review_fact.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_direct_landing_review_fact.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "998145f6dfda5199a39b24df52892ec0411cec1e",
+            "content": "sha256:a2c77713ce053b3623f640963c5a51a1e6095219cba868f9fcfeb15b57974c02",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "f717c183e60d68b48f43b14c15b6f29df125d1c8",
+            "content": "sha256:c1d6dfc7216e84cc16ec28dc2fffd5ef2da21d8d645c5bd296e4942d0e2ff926",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "14483d75d46701e3b1f85c5862ac521005c9d42c",
+            "content": "sha256:eb1166df14c684e9dabf52b2fe9385d49b5cdeb56cd68cafeb137eb7d8132718",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "ccdae27f166202bf07aa7a43bd27e807ee660cd7",
+            "content": "sha256:7716147bd1c4bdb47e1760f3036815e580322f4fe682f3e6bd9a4f73eeb3a31c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Z5AP5F",
+      "items": [
+        "sha256:5db18842916b31b4c9b98c17c3c26b5049d5416582d017853b5496cf2644b97d"
+      ],
+      "reason": "L54 only added test_memory_verdict_ref.py to evidence-lifecycle.toml and test-evidence-lanes.toml; turn-end notification and wake policy and its test registrations are unchanged (re-anchored post-L55 sync).",
+      "revision": 8,
+      "subject": "INV-1ZKP4R"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:41d1771dd073589ef28120780b3657f7e7d11040844151e3b0ac56681b8f6602",
+      "record": "DPD-327MNX",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-26T14:04:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:36c38b6702b4c8a31f1fffb23ddbe50678f3f3b4156914f3fb1656666f093d70",
+      "record": "DPD-71WYH4",
+      "revision": 32,
+      "writer": {
+        "at": "2026-11-26T14:04:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:881c6f9f70a447f6bfe098197f71d556634b1e8fa8c9754f535ece7616c1f4eb",
+      "record": "DPD-78737N",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-26T14:04:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:08fe9ff4e150a9b3df785a9512a5bd3f22113f1b3d85247bc60e50f2a7ffcf20",
+      "record": "DPD-78737N",
+      "revision": 20,
+      "writer": {
+        "at": "2026-11-26T19:00:52+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:17f1554405e035f124dd2bd3268bcec66b3666c151be61d81f1b52fdb2354ad1",
+      "record": "DPD-78737N",
+      "revision": 23,
+      "writer": {
+        "at": "2026-11-26T20:41:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:e8db7e94f3261475e4f92f17f93740d7418af187dfaf0a3c760e78fc2557fb65",
+      "record": "DPD-9F0Q8G",
+      "revision": 8,
+      "writer": {
+        "at": "2026-11-26T14:04:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:b0935510d2cf061d2a0c72fdb213b6967891ebe441cf6f42b0ce424fe9480536",
+      "record": "DPD-B540GW",
+      "revision": 17,
+      "writer": {
+        "at": "2026-11-26T14:04:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:35870be56cc6a9f7ade69b5674c08a0b3b44ecfd120b8dae2e0c2694f79a0646",
+      "record": "DPD-EG5TYT",
+      "revision": 33,
+      "writer": {
+        "at": "2026-11-26T14:04:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:2342ae3af7c5e0461864161908b63b51f8c1f208e610035bd3b1dd2d999d0829",
+      "record": "DPD-XAARS1",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-26T14:04:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:fc55448788190fc3dce99a7c98dde2e612bb79b3316e863870675519c69eb866",
+      "record": "DPD-XAARS1",
+      "revision": 13,
+      "writer": {
+        "at": "2026-11-26T20:41:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:3fc353972ff9a08c458133abbe5b7c2d618ac9e59cab9e6fbd41f733fcda2cfe",
+      "record": "DPD-ZMQ523",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-26T14:04:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:bd53b5fbd9935fb56fffc52a07a464b68b519ce5f4f109a66d7e6d37bca1d31d",
+      "record": "DPD-ZT8YY7",
+      "revision": 27,
+      "writer": {
+        "at": "2026-11-26T14:04:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:73f6df22e5cf05c90125ceb15c8c1048d9597b35c5c913d6b2ad9c90197eb79f",
+      "record": "DPD-ZT8YY7",
+      "revision": 28,
+      "writer": {
+        "at": "2026-11-26T19:00:52+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:d3d01695aeabd19f62568698842cae934dc60f1a37fcb3540528b64d18797e52",
+      "record": "DPD-ZT8YY7",
+      "revision": 31,
+      "writer": {
+        "at": "2026-11-26T20:41:46+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:47a49bb04c83ff97d6b3a4dd6922656fea5f08fc804e7dbbfa93b7fdf18123a6",
+      "record": "FAM-2BRZW7",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-26T19:00:52+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:06090508cb6b4f5c72b875fb41797d40f02586ba7a770e1569a24fbb046e8035",
+      "record": "FAM-7NBVYB",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-26T14:04:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:ccff257799d49f5bd9e26e282da7cd9a2190e21ccf35da1c2accb60602dd3854",
+      "record": "FAM-7NBVYB",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-26T19:00:52+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:077eea8b7e828bd1c4568b0493388f520afac499c2169c0ae86cb2bf91665e54",
+      "record": "INV-793X8F",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T14:04:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:ca3c30991ac6c22bc445687ccebdad8590663f20eefd1435ec4f2c179a438f0e",
+      "record": "INV-JAFF6J",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T14:04:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:41abc045dcb6f64e572e70df8c84fc8463e70de7659aa675b7deb6c1a12ba3e0",
+      "record": "INV-K03WFZ",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T19:00:52+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:9d286bc3e80a644dad3e177ffd65d86730d94fd0cde04839a45820e2322e073b",
+      "record": "WKN-14H000",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-26T14:04:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:9d8ae329e9006816e8bc6f34656d1117931902cd61a9b12ee029da6e9bc0d38a",
+      "record": "WKN-8071KE",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-26T14:04:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L54",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

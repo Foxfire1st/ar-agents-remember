@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f99f6ece079ae4e7ca00fe9a7d0c5236c7e9e125",
+        "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
         "content": "sha256:ebfc822a554c149abe5852fee01d68f04212a0e011c245452f17ae0688d1c75c",
         "locator": {
           "kind": "symbol",
@@ -21,12 +21,48 @@
     },
     {
       "anchor": {
-        "blob": "f99f6ece079ae4e7ca00fe9a7d0c5236c7e9e125",
+        "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
+        "content": "sha256:f049c1c821853d20ce834ae2b8c6b9bcebc9213ed1cdc9ef0e84271d836b0aaa",
+        "locator": {
+          "kind": "symbol",
+          "name": "Operations.prepare_python"
+        }
+      },
+      "id": "RLZ-13KZE2",
+      "invariant": "INV-XG226D",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 2",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "PNT uses the checkout's bootstrap and keeps the uv Python directory across sandbox XDG changes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
+        "content": "sha256:09c5504d66cbb619dbe894c9dbb16fe27a9766af6f19e4ced45d588c7b16b134",
+        "locator": {
+          "kind": "symbol",
+          "name": "checkout_refusal"
+        }
+      },
+      "id": "RLZ-666FHF",
+      "invariant": "INV-XG226D",
+      "origin": {
+        "handoffEntry": "BUG-R33@v3 rule 2",
+        "leaf": "261112-BUG-L33"
+      },
+      "rationale": "The checkout admission names the remedy for a pre-migration product target before it prepares the managed environment.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
         "content": "sha256:9455f23c617c68aea5bf0de4459004f48e5bc9ac72b0f9f4d6d2e9fe15654dc3",
         "locator": {
-          "end": 321,
+          "end": 351,
           "kind": "line_range",
-          "start": 305
+          "start": 335
         }
       },
       "id": "RLZ-99CM4D",
@@ -40,12 +76,12 @@
     },
     {
       "anchor": {
-        "blob": "f99f6ece079ae4e7ca00fe9a7d0c5236c7e9e125",
-        "content": "sha256:c395a4ad65c8772db9682edbaf1d4656a729a74d0246f7b4a88715efbb3cc7ae",
+        "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
+        "content": "sha256:c9323b9d98eb66cb8cdab215960e086be4aa49aa4f1e25e6d502fa7760b846fc",
         "locator": {
-          "end": 441,
+          "end": 473,
           "kind": "line_range",
-          "start": 72
+          "start": 99
         }
       },
       "id": "RLZ-9F0JC0",
@@ -59,12 +95,12 @@
     },
     {
       "anchor": {
-        "blob": "f99f6ece079ae4e7ca00fe9a7d0c5236c7e9e125",
+        "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
         "content": "sha256:fbd0a808073ef9f33c640e281a248cc5f9b5ee42b8ab21fc0f730b9661a5aac9",
         "locator": {
-          "end": 263,
+          "end": 293,
           "kind": "line_range",
-          "start": 202
+          "start": 232
         }
       },
       "id": "RLZ-AWECY6",
@@ -78,7 +114,7 @@
     },
     {
       "anchor": {
-        "blob": "f99f6ece079ae4e7ca00fe9a7d0c5236c7e9e125",
+        "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
         "content": "sha256:fbd0a808073ef9f33c640e281a248cc5f9b5ee42b8ab21fc0f730b9661a5aac9",
         "locator": {
           "kind": "symbol",
@@ -96,12 +132,12 @@
     },
     {
       "anchor": {
-        "blob": "f99f6ece079ae4e7ca00fe9a7d0c5236c7e9e125",
+        "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
         "content": "sha256:b146b6a0195a5a81dc7df59ea1124ce6acd998d21dbf799b852331262bc58789",
         "locator": {
-          "end": 295,
+          "end": 325,
           "kind": "line_range",
-          "start": 281
+          "start": 311
         }
       },
       "id": "RLZ-W99KFF",
@@ -115,7 +151,7 @@
     },
     {
       "anchor": {
-        "blob": "f99f6ece079ae4e7ca00fe9a7d0c5236c7e9e125",
+        "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
         "content": "sha256:ebfc822a554c149abe5852fee01d68f04212a0e011c245452f17ae0688d1c75c",
         "locator": {
           "kind": "symbol",
@@ -134,12 +170,12 @@
   ],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.\n\nAnchor: `Operations`",
+      "note": "The scoped current source carries the module/document behavior described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "f99f6ece079ae4e7ca00fe9a7d0c5236c7e9e125",
-            "content": "sha256:0f2f66733684d62853cee5565b06fbbe4ba52bfcd3c9601133e736f78ec4f193",
+            "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
+            "content": "sha256:bc8ca691355c3999546a563a6b8db39e02cc5292fe9904ce5964468151fbce1c",
             "locator": {
               "kind": "file"
             }
@@ -153,12 +189,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f99f6ece079ae4e7ca00fe9a7d0c5236c7e9e125",
+            "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
             "content": "sha256:fbd0a808073ef9f33c640e281a248cc5f9b5ee42b8ab21fc0f730b9661a5aac9",
             "locator": {
-              "end": 263,
+              "end": 293,
               "kind": "line_range",
-              "start": 202
+              "start": 232
             }
           },
           "kind": "code"
@@ -170,12 +206,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f99f6ece079ae4e7ca00fe9a7d0c5236c7e9e125",
+            "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
             "content": "sha256:e5133e1427a059326756bbd86a2f52bf244bc2204f39c7ce750407e6ac524dce",
             "locator": {
-              "end": 279,
+              "end": 309,
               "kind": "line_range",
-              "start": 265
+              "start": 295
             }
           },
           "kind": "code"
@@ -187,12 +223,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f99f6ece079ae4e7ca00fe9a7d0c5236c7e9e125",
+            "blob": "6e5d1f2c329f46c690e6efa4951c4ba9340c8d02",
             "content": "sha256:fbd0a808073ef9f33c640e281a248cc5f9b5ee42b8ab21fc0f730b9661a5aac9",
             "locator": {
-              "end": 263,
+              "end": 293,
               "kind": "line_range",
-              "start": 202
+              "start": 232
             }
           },
           "kind": "code"
