@@ -20,7 +20,7 @@ only and refuses input it cannot reformat without changing content. `FORMATTER_C
   which is exactly the case of a repeated key. The refusal then names every repeated key in sorted order:
   `object repeats key(s): [...]`. An object without a repeated key costs one dictionary construction.
 - `canonical_value` sorts an array by `id` only when it sits under one of `IDENTIFIED_ENTRY_KEYS`
-  (`realizes`, `proves`, `rows`, `covers`, `examined`) and every element is an object with a string `id`.
+  (`realizes`, `proves`, `rows`, `covers`, `examined`, `deferrals`) and every element is an object with a string `id`.
   Every other array keeps its authored order, including a reference's `targets` and a decision's
   `alternatives`.
 - `canonical_text` dumps with `indent=2`, `sort_keys=True`, `ensure_ascii=False` and `allow_nan=False` and
@@ -32,8 +32,7 @@ only and refuses input it cannot reformat without changing content. `FORMATTER_C
 - `parse_json` is strict: a byte-order mark, `NaN`/`Infinity`, invalid JSON and an object that
   repeats a key (which `json.loads` would silently collapse) raise `CanonicalFormatError`.
 - `canonical_value` sorts an array only when it sits under a key in `IDENTIFIED_ENTRY_KEYS`
-  (`realizes`, `proves`, and a history file's `rows` with each row's `covers` and `examined`, the
-  last two added by MIK-R07 with the architect's leave) **and** every element is an object with a
+  (`realizes`, `proves`, `deferrals`, and a history file's `rows` with each row's `covers` and `examined`) **and** every element is an object with a
   string `id`. Every other
   array keeps authored order — a reference's `targets` (whose ID targets also carry `id`) and a
   decision's `alternatives` (addressed by index) included. This restriction came from review R1.
@@ -58,6 +57,7 @@ None recorded. The MIK-R21 todo about `rows` is closed: MIK-R07's `ar-history/v1
 ## Evidence
 
 - The positions whose arrays are sorted. [6]
+
 - The duplicate-key hook builds the dictionary first and counts only on a collapse. [7]
 - The strict parse. [8]
 - The sort rule. [9]
@@ -82,6 +82,7 @@ No configured live documentation source was available for this pass.
 The formatter command and the tests are the consumers.
 
 - Only the declared positions are sorted, history `covers` and `examined` included. [15]
+
 - Strict parsing refuses content-changing input. [16]
 - The sort rule. [17]
 - The serialization. [18]

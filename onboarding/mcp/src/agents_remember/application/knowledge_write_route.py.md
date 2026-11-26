@@ -60,9 +60,13 @@ No additional work is asserted by this card.
 ## Evidence
 
 - Both entry points share leaf-write admission and pass the request's owner, question port and caller stamp to the writer. [3]
+
 - The caller stamp comes from the runtime binding and receipt, with a reason when the coordination root is missing. [10]
+
 - The crossing writer carries its owner and caller stamp with the settled code commit the open sync recorded. [11]
+
 - The wave writer carries the wave owner and a caller stamp. [12]
+
 
 ### Docs References
 

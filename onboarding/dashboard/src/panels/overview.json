@@ -366,12 +366,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
+            "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
             "content": "sha256:8f0364a1d9e46c87d82a0783b085ea47734e60ed52d76929dc4a3e0c4860c292",
             "locator": {
-              "end": 495,
+              "end": 587,
               "kind": "line_range",
-              "start": 464
+              "start": 556
             },
             "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
           },
@@ -384,7 +384,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
+            "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
             "content": "sha256:c26126084494697f388bf8f331bad688049ed66e0c86ea9423ed7aa3dfcb1933",
             "locator": {
               "kind": "symbol",
@@ -3172,7 +3172,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
+            "blob": "3d9d16ace8ae82e51ffaeb5fa4a2ae7ed6643ce9",
             "content": "sha256:da6bb29a84213cac54a04e62bc66e070ca3e1c8808100e3aadca24363d4c06c5",
             "locator": {
               "kind": "symbol",
@@ -3189,8 +3189,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
-            "content": "sha256:f673690b626565279523bd132f23983fcbf90fc2fad3c1a1ca308afcc6dccb0e",
+            "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
+            "content": "sha256:8fe53bf028885856902fcff81f085e761d08e7e685bcb8faa3d18621c79e5f28",
             "locator": {
               "kind": "symbol",
               "name": "TruthHeader"
@@ -3239,7 +3239,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
+            "blob": "3d9d16ace8ae82e51ffaeb5fa4a2ae7ed6643ce9",
             "content": "sha256:698bf432d174828a4f738aa1ba96d4d31d3d8f1beaeaf47c91ad0ad930494d61",
             "locator": {
               "kind": "symbol",
@@ -3335,7 +3335,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
+            "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
             "content": "sha256:25009c369954228fecdd0671caaa94413eb0d750467a796e1fd33461034a3209",
             "locator": {
               "kind": "symbol",

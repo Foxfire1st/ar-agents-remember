@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Spans memory_quality/dependent_flags.py, converted_check.py, check.py, and the three OM-6 review-instruction files, and is guarded by lift, Lever-1 flag, and DPD-GHEXS9 replay tests."
+  },
+  "applicability": "Task-scoped memory_quality_check runs and independent memory reviews on converted memory.",
+  "conditions": [
+    "All four dependent_flags findings (pre_base_stale_confirmation, deferral_lifted, deferral_orphaned, deferral_due_warning) emit strictly through reportOnlyFindings without affecting ok or findingCount.",
+    "pre_base_stale_confirmation lists the links that moved before the leaf base whenever an already-stale dependent is confirmed without editing its document.",
+    "Memory review under OM-6 requires a signed whole-document verdict plus base and candidate staleOnly=true receipts for every flagged confirmation and lifted deferral."
+  ],
+  "exclusions": [
+    "The staleness computation itself (dependent_movement), which is unchanged.",
+    "Non-task unscoped quality runs without dependent_scope."
+  ],
+  "id": "INV-82NDFH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_dependent_deferrals_gate_and_replay.py::test_13, test_15, test_replay_dpd_ghexs9_hermes_pre_and_post_deferral"
+      ],
+      "path": "261112-BUG-L52-worker-producer-list.json"
+    },
+    "handoffEntry": "BUG-R52@v2 §7",
+    "leaf": "261112-BUG-L52",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "memory_quality_check flags every confirmation of a document already stale at the leaf base and untouched by the leaf (with its pre-base moved links), every lifted deferral, and every orphaned or pre-base-changed deferral through reportOnlyFindings without affecting ok, and memory review instructions require a signed whole-document verdict with base and candidate staleOnly receipts.",
+  "supersedes": [],
+  "title": "MQC flags pre-base stale confirmations and lifts for signed OM-6 review",
+  "writer": {
+    "at": "2026-11-26T07:36:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L52",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "task": "261112-BUG"
+  }
+}

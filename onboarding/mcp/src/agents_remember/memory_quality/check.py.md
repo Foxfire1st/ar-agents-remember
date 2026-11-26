@@ -9,6 +9,8 @@
 `check.py` runs memory-layer quality checks and returns a single structured
 payload for MCP closeout workflows.
 
+`DriftCheckContext` carries optional `dependent_scope: DependentFlagScope | None = None`, forwarded by `_converted_check` to `converted_knowledge_check`.
+
 ## Code Commentary
 
 ### Landing-report scope
@@ -19,6 +21,7 @@ payload for MCP closeout workflows.
 
 
 - The converted dispatch forwards independent validator and landing base ports.  Anchor: `_converted_check` [18]
+
 
 
 ### Logic
@@ -70,7 +73,9 @@ The converted checker supplies refusing validator findings, a stale reference an
 
 
 
+
 - Converted dispatch replaces the drift slot with the validator/reference report and runs the surviving document-shape checks; legacy compatibility checks are absent. [7]
+
 
 
 
@@ -80,7 +85,9 @@ The converted checker supplies refusing validator findings, a stale reference an
 
 
 
+
 - The converted checker reports named base-build failure rather than inventing an empty comparison. [9]
+
 
 
 
@@ -90,7 +97,9 @@ The converted checker supplies refusing validator findings, a stale reference an
 
 
 
+
 - run_check dispatches only the surviving STYLE_CHECKS and refuses an unknown name. [11]
+
 
 
 
@@ -100,16 +109,20 @@ The converted checker supplies refusing validator findings, a stale reference an
 
 
 
+
 - The drift context carries the converted tree's comparison base.  Anchor: `DriftCheckContext` [16]
+
 
 
 
 
 - The converted check receives the base port.  Anchor: `_converted_check` [17]
 
+
 Converted full-quality dispatch constructs `QualitySourceFiles` from the paired code repository root. The validator base and landing base remain separate inputs.
 
 - Converted dispatch supplies the per-check source reader and both comparison ports. [19]
+
 
 - The registered `memory_quality_check` dispatches typed sync/start/poll requests to their payload builders; its description names candidate leaf-contract scope and required coherence validation.
 

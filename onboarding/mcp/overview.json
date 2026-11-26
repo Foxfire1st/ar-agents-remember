@@ -575,12 +575,12 @@
       ]
     },
     "152": {
-      "note": "**Retained historical source account — superseded by the current route account:** Exact contract scope, full check and curator worklist publication.  Anchor: `_resolve_execution` `_execute_memory_quality` `_attach_curator_checklist`",
+      "note": "**Retained historical source account — superseded by the current route account:** Exact contract scope, full check and curator worklist publication.",
       "targets": [
         {
           "anchor": {
-            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
-            "content": "sha256:86b9f991a82d2cf8b7a6604799d421f5a3c8a07dec010204994f79f6296011e1",
+            "blob": "d592744457672d63c98c24155c44b0b334a464fc",
+            "content": "sha256:9455fd4ce30abb77f0c92286086089293d32a82920b4ba876a127b310e7a76b6",
             "locator": {
               "kind": "file"
             },
@@ -595,7 +595,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "blob": "d592744457672d63c98c24155c44b0b334a464fc",
             "content": "sha256:d81b89961aa9f6111073416b7d9db6242c5d1caddb566ef889f16800de227eb4",
             "locator": {
               "kind": "symbol",
@@ -2241,7 +2241,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
+            "blob": "f655ea6d341c11ff86687575b61d784c4dc6f362",
             "content": "sha256:a112b2c3820ab58c029bff65415f3dd36e0fdcb72fc9d69ca74a838382440604",
             "locator": {
               "kind": "symbol",
@@ -2258,7 +2258,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d526b667f96765bf304f2867766fdf4e0873cab0",
+            "blob": "4d840d1eda3dd80a80e751277433c524d127ea07",
             "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
             "locator": {
               "kind": "symbol",
@@ -2940,7 +2940,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "blob": "d592744457672d63c98c24155c44b0b334a464fc",
             "content": "sha256:0c161eccbe0bd6e26018eb3d037bf32dc5e85f85f1361db82da57796944e207e",
             "locator": {
               "kind": "symbol",
@@ -2957,7 +2957,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "48fc771e981db7bb27c5f9c5a8d66dea7fac11dd",
+            "blob": "4fe5043c0194f5b54235220b52efc192f85617a7",
             "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
             "locator": {
               "kind": "symbol",
@@ -3271,12 +3271,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d0a518fede1ad24a4a085fd8a401d9ea6695ac1",
+            "blob": "c15d67cf62de4e1f8ca82bffda704b957ae632fe",
             "content": "sha256:98140684ab120315f502842c9bd3eda8bcf9ae928ce9ee5278aea19b9990c15f",
             "locator": {
-              "end": 359,
+              "end": 369,
               "kind": "line_range",
-              "start": 308
+              "start": 318
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
           },
@@ -3284,12 +3284,12 @@
         },
         {
           "anchor": {
-            "blob": "3d0a518fede1ad24a4a085fd8a401d9ea6695ac1",
-            "content": "sha256:03545e4ff043eb75145fa3b00225025a8da60ba4c128f25074f8b5908357a748",
+            "blob": "c15d67cf62de4e1f8ca82bffda704b957ae632fe",
+            "content": "sha256:420d64a1c4d95836582ea0d2b4c008c227a361917b3e2879fe89b28a56a32414",
             "locator": {
-              "end": 567,
+              "end": 590,
               "kind": "line_range",
-              "start": 496
+              "start": 506
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
           },
@@ -3302,7 +3302,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "blob": "afbbb0650d938ecaaa73441b303646f03dfcf88e",
             "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
             "locator": {
               "end": 25,
@@ -3320,7 +3320,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
+            "blob": "f655ea6d341c11ff86687575b61d784c4dc6f362",
             "content": "sha256:ee024c46e11dd69a99ae879a6178508692907da75e6bea6bc285903adf52d5b2",
             "locator": {
               "end": 289,
@@ -3333,12 +3333,12 @@
         },
         {
           "anchor": {
-            "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
-            "content": "sha256:bedb2af9a11bbabae30bd314cc95d43d8850d3a4d6a0792a3af507e0d0d16eff",
+            "blob": "f655ea6d341c11ff86687575b61d784c4dc6f362",
+            "content": "sha256:5dc069776be3d234a5ba07458fcda83e9ddbb5da52db74734d52ca0fc89bbdb3",
             "locator": {
-              "end": 366,
+              "end": 368,
               "kind": "line_range",
-              "start": 317
+              "start": 318
             },
             "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
           },
@@ -4715,7 +4715,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
+            "blob": "f655ea6d341c11ff86687575b61d784c4dc6f362",
             "content": "sha256:a112b2c3820ab58c029bff65415f3dd36e0fdcb72fc9d69ca74a838382440604",
             "locator": {
               "kind": "symbol",
@@ -5240,12 +5240,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9583cdcb4e627f7edb2b978ba060b06fc7a3c63c",
+            "blob": "c64191565640f1ef448d600dc251a463aa07bc40",
             "content": "sha256:e649894afd7b9e62df54a712b563d037ff37d821a56d18025254434e4d13f71b",
             "locator": {
-              "end": 331,
+              "end": 332,
               "kind": "line_range",
-              "start": 323
+              "start": 324
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
           },
@@ -5317,12 +5317,12 @@
       ]
     },
     "402": {
-      "note": "The runtime synchronizer declares two targets (benchmarks, system) without docs; retained packaged tool details do not add a third generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md.\n\nAnchor: file",
+      "note": "The runtime synchronizer declares two targets (benchmarks, system) without docs; retained packaged tool details do not add a third generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md.",
       "targets": [
         {
           "anchor": {
-            "blob": "f48989e6eec787374e9231801e5d4a212e873e72",
-            "content": "sha256:78d8575e5249f8c4d3ad75e047cd37c09b2d119d491f692a0c173f97c1d98633",
+            "blob": "c342ab3846bfb67446708744fc550fd0050a7d05",
+            "content": "sha256:8dc024c847cbe481cdce4b60712886a093d58bcc684c10efc5505c465f1cc83e",
             "locator": {
               "kind": "file"
             },
@@ -5337,12 +5337,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
+            "blob": "c9f4b0f67e41908f16c46035351a8a58d55571ad",
             "content": "sha256:f6f4c7822e06f0eb404336132bfe1c65ebb76f7b70b09a5f1d9204afdf07186e",
             "locator": {
-              "end": 378,
+              "end": 387,
               "kind": "line_range",
-              "start": 345
+              "start": 354
             },
             "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
           },
@@ -6040,7 +6040,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d0a518fede1ad24a4a085fd8a401d9ea6695ac1",
+            "blob": "c15d67cf62de4e1f8ca82bffda704b957ae632fe",
             "content": "sha256:621bc2e6a508d74aa5f647066d6609eb5b704b98b1ae0c35578a234bf946e695",
             "locator": {
               "kind": "symbol",
@@ -6154,12 +6154,12 @@
       ]
     },
     "60": {
-      "note": "**Retained historical source account — superseded by the current route account:** The memory-quality dispatch between the two gates.  Anchor: `_onboarding_refresh_gate`",
+      "note": "**Retained historical source account — superseded by the current route account:** The memory-quality dispatch between the two gates.",
       "targets": [
         {
           "anchor": {
-            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
-            "content": "sha256:86b9f991a82d2cf8b7a6604799d421f5a3c8a07dec010204994f79f6296011e1",
+            "blob": "d592744457672d63c98c24155c44b0b334a464fc",
+            "content": "sha256:9455fd4ce30abb77f0c92286086089293d32a82920b4ba876a127b310e7a76b6",
             "locator": {
               "kind": "file"
             },
@@ -6518,7 +6518,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d526b667f96765bf304f2867766fdf4e0873cab0",
+            "blob": "4d840d1eda3dd80a80e751277433c524d127ea07",
             "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
             "locator": {
               "kind": "symbol",

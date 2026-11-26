@@ -1,0 +1,76 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_reader/deferrals.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1db32145634b8c44291cbddad7ce2192fc7484f3",
+        "content": "sha256:9b7dc330164090bbcaef14b449b1144aad6622d446c368f316d20813cbc0b23d",
+        "locator": {
+          "kind": "symbol",
+          "name": "derive_deferrals"
+        }
+      },
+      "id": "RLZ-MCD6RH",
+      "invariant": "INV-MH7M10",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §8",
+        "leaf": "261112-BUG-L52"
+      },
+      "rationale": "Derives per-deferral age and open/due/orphaned state from code blobs, task facts and the reading leaf (excluding the creating leaf from both task and file due states).",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1db32145634b8c44291cbddad7ce2192fc7484f3",
+        "content": "sha256:53b159d7f61473aea7db53c94347f8dbbb774d9bc7290bd00c5646720ee95c8b",
+        "locator": {
+          "kind": "symbol",
+          "name": "infer_reading_leaf"
+        }
+      },
+      "id": "RLZ-W5V55V",
+      "invariant": "INV-MH7M10",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §8",
+        "leaf": "261112-BUG-L52"
+      },
+      "rationale": "Identifies the reading leaf from ReaderSelection.leaf_id or the selected memory tree's single open history file.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`derive_deferrals` derives deferral age and `open`/`due`/`orphaned` state with creating-leaf exclusion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1db32145634b8c44291cbddad7ce2192fc7484f3",
+            "content": "sha256:9b7dc330164090bbcaef14b449b1144aad6622d446c368f316d20813cbc0b23d",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_deferrals"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`infer_reading_leaf` resolves the active reading leaf from `ReaderSelection.leaf_id` or a unique open leaf history file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1db32145634b8c44291cbddad7ce2192fc7484f3",
+            "content": "sha256:53b159d7f61473aea7db53c94347f8dbbb774d9bc7290bd00c5646720ee95c8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "infer_reading_leaf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

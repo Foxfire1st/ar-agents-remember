@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
-    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
+    "codeTree": "48c171029dbbe43e6ba940b9dd8f029422ab5663",
+    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
     "role": "curator",
-    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/reference/mcp-tools.md accurately matches all 44 public tools: retains 261124-EXP explainer tool contracts, BUG-L53 updates (_merge.py GitHub blob URL at line 276, knowledge_read 7 views at line 193, message-file-failed at line 754), and BUG-L44 retire_child scope rules, while DEP-R02@v1 removes install_provider_deps and no_cache from runtime_install (keeping reconcile_shared_held_stores and removed-stores reporting), skip_provider_setup and retry_provider_setup from worktree_start, and teardown_providers from worktree_cleanup and lifecycle_finalize_task (cleanupArguments narrowed to {} or {force}).",
-    "task": "261125-DEP-L2",
+    "statement": "Audited docs/reference/mcp-tools.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): memory_quality_check report-only summary, knowledge_read seven views and arguments, knowledge_write routes/status rules, and closeout gate descriptions remain accurate with zero L52 contradictions.",
+    "task": "261112-BUG-L52",
     "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 27,
+  "revision": 28,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -243,7 +243,7 @@
       "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py"
     },
     {
-      "blob": "ee82bf5083f1bf6563d90bd4297892783a5cb8f6",
+      "blob": "f655ea6d341c11ff86687575b61d784c4dc6f362",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
     },
@@ -288,7 +288,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
     },
     {
-      "blob": "ba0a4d4cc4a64d12dfe74f442b18765bc198f5e0",
+      "blob": "37824e3330d77bd7f62eeec1dc92e8f4f63c0b78",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
     },
@@ -303,12 +303,12 @@
       "path": "mcp/src/agents_remember/application/knowledge_reader/weakness_closure.py"
     },
     {
-      "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+      "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
     },
     {
-      "blob": "eab41cd0496fe981bfbecd57e702e863979a06ad",
+      "blob": "c9f4b0f67e41908f16c46035351a8a58d55571ad",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py"
     },
@@ -423,14 +423,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T07:08:02+01:00",
+    "at": "2026-11-26T08:25:07+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L2",
+    "leaf": "261112-BUG-L52",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
-    "task": "261125-DEP"
+    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "task": "261112-BUG"
   }
 }

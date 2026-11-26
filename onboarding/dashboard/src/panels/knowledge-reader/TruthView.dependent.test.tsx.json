@@ -1,0 +1,76 @@
+{
+  "path": "dashboard/src/panels/knowledge-reader/TruthView.dependent.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "1988d17aee3463fc9493cdb199601e185e4198b1",
+        "content": "sha256:f93ebaf7671cfbe47da4d432e40db7baed7d3c93e3a1f38017c7848dbd05c28e",
+        "locator": {
+          "kind": "symbol",
+          "name": "renders a deferred dependent truth view with deferred badge, deferrals, and moved links"
+        }
+      },
+      "facet": "Verifies TruthView renders the derived deferred badge, deferral cards, and moved links without duplicating deferrals in generic fields.",
+      "id": "PRF-72V8GR",
+      "invariant": "INV-MH7M10",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §8",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1988d17aee3463fc9493cdb199601e185e4198b1",
+        "content": "sha256:da89ab5bb142038bcca76cb1d7c83aa1fc79fbb9944557aa6b3eef7f5d648868",
+        "locator": {
+          "kind": "symbol",
+          "name": "renders a non-deferred stale dependent without a deferrals section"
+        }
+      },
+      "facet": "Verifies a non-deferred stale dependent renders the stale badge and moved links without a deferrals section.",
+      "id": "PRF-77HSYJ",
+      "invariant": "INV-MH7M10",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §8",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1988d17aee3463fc9493cdb199601e185e4198b1",
+        "content": "sha256:bc8bd5afa1bfb2eae38d0166ed03eb7781f09509c7b1a549018ef56f71e0bf85",
+        "locator": {
+          "kind": "symbol",
+          "name": "lists Dependents under Records in KnowledgeTree and opens the dependent truth view"
+        }
+      },
+      "facet": "Verifies KnowledgeTree groups DPD records under Records > Dependents and opens the dependent TruthView.",
+      "id": "PRF-E29NQ0",
+      "invariant": "INV-MH7M10",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §8",
+        "leaf": "261112-BUG-L52"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The suite builds stubbed dependent record answers and checks deferred, stale, and tree-navigation rendering in `TruthView` and `KnowledgeTree`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1988d17aee3463fc9493cdb199601e185e4198b1",
+            "content": "sha256:aabdda2615d658225b4db4a7ec4e22350f94581f026c25e38aeff70cf1d5e5a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "dependentRecordAnswer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

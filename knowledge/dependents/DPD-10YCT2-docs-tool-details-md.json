@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
-    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
+    "codeTree": "48c171029dbbe43e6ba940b9dd8f029422ab5663",
+    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
     "role": "curator",
-    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/tool-details.md accurately matches the codebase: server_info and runtime_install omit unusedProviderKeys, install_provider_deps, no_cache, leftover_provider_folders and watcher-stop claims, retain BUG-L38's reconcile_shared_held_stores and BUG-L44's retire_child scope guidance, report legacy provider folders as removed stores for agents-remember removed-stores, and retain provider-runtime/dev-ar-coordination for disposable worktree checkouts.",
-    "task": "261125-DEP-L2",
+    "statement": "Verified docs/tool-details.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): lines 389-396 accurately document task memory_quality_check non-blocking reportOnlyFindings covering landing-cut-card, landing-added-file, and the four dependent_flags findings (pre_base_stale_confirmation, deferral_lifted, deferral_orphaned, deferral_due_warning) wired through converted_check.py and controller.py.",
+    "task": "261112-BUG-L52",
     "uncommitted": true
   },
   "document": "docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 18,
+  "revision": 19,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -68,8 +68,8 @@
     },
     {
       "anchor": {
-        "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
-        "content": "sha256:ab9651de3bd19b14955f1600f2b9ca222545b1d19caa5c21eaad78f1941c3188",
+        "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
+        "content": "sha256:d4b9634f7c5361600a7c8365370dba8f20e0c699c492f81d4939bb2c5a60e87b",
         "locator": {
           "kind": "symbol",
           "name": "converted_knowledge_check"
@@ -153,7 +153,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
     },
     {
-      "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+      "blob": "d592744457672d63c98c24155c44b0b334a464fc",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
     },
@@ -262,14 +262,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T07:08:02+01:00",
+    "at": "2026-11-26T09:02:22+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L2",
+    "leaf": "261112-BUG-L52",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
-    "task": "261125-DEP"
+    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "task": "261112-BUG"
   }
 }

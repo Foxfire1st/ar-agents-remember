@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Spans knowledge_writer/deferrals.py, tasks/task_facts.py, and knowledge_writer/authoring.py, and is guarded by seven targeted writer tests."
+  },
+  "applicability": "Every dependent record write through knowledge_write or knowledge-ingest on converted memory.",
+  "conditions": [
+    "Condition task IDs are checked against live and archived canonical task documents via load_task_facts, refusing unknown, master, or terminal tasks.",
+    "Re-deferral requires a changed task or file condition or a moved candidate fileBlob on the same file, refusing note-only re-deferrals.",
+    "Any write that lifts a deferral must record a deferral_lifted history row and cannot combine lift with confirmation.",
+    "Confirming a dependent (new or existing) with open deferrals is refused unless the leaf edited the document, naming every open deferral's ID, owner, passage, and reason."
+  ],
+  "exclusions": [
+    "Direct authoring of the raw deferrals list outside a crossing sync resolution.",
+    "Post-sync unedited confirmations introduced by a merge, which are caught by the closeout gate."
+  ],
+  "id": "INV-8CNH3X",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_dependent_deferrals.py::test_01, test_04, test_05, test_10, test_11, test_lift_requires_deferral_lifted_row_and_surfaces_in_multi_op_write, test_new_dependent_with_confirmation_and_deferral_without_edit_is_refused"
+      ],
+      "path": "261112-BUG-L52-worker-producer-list.json"
+    },
+    "handoffEntry": "BUG-R52@v2 §3-4",
+    "leaf": "261112-BUG-L52",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "knowledge_write executes defer, redefer (allowing same-file re-defer with the new blob when due by changed fileBlob and refusing note-only re-deferrals), lift (requiring a deferral_lifted history row so MQC surfaces every lift), and partial resolveDeferrals on edited confirmations, refuses invalid task/file/passage/reason inputs against coordination task documents, and refuses confirming any dependent document (new or existing) with an open deferral without an edit while naming all open deferrals.",
+  "supersedes": [],
+  "title": "knowledge_write validates deferrals, lift rows, and unedited confirmations",
+  "writer": {
+    "at": "2026-11-26T07:36:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L52",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "task": "261112-BUG"
+  }
+}

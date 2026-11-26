@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Spans deferral_gate_findings in knowledge_gate/deferrals.py and judge in knowledge_gate/gate.py, and is guarded by four gate tests."
+  },
+  "applicability": "Leaf closeout judgment over converted memory candidates and their B..C code diffs.",
+  "conditions": [
+    "Blocking findings fire only when condition.task equals the leaf, condition.file's blob moved and lies in the leaf's own B..C diff, or the leaf confirmed a deferred dependent without editing its document.",
+    "Deferrals created by the current leaf (createdByLeaf == owner) never fire as due in that leaf.",
+    "Orphaned deferrals (terminal condition.task) and pre-base file changes outside the leaf's own B..C diff emit non-blocking warnings only.",
+    "Deferral checks stay in knowledge_gate rather than knowledge_validator so worktree_sync is never blocked."
+  ],
+  "exclusions": [
+    "Master-end landing staleness checks, which remain governed by landing.py.",
+    "Staleness calculation of stands_on links, which is unchanged."
+  ],
+  "id": "INV-XT13GK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_dependent_deferrals_gate_and_replay.py::test_06, test_08, test_09, test_12"
+      ],
+      "path": "261112-BUG-L52-worker-producer-list.json"
+    },
+    "handoffEntry": "BUG-R52@v2 §5",
+    "leaf": "261112-BUG-L52",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The closeout gate blocks a leaf only for deferrals naming that leaf, deferrals whose watched file that leaf's own B..C diff changes, or an unedited confirmation of a deferred document, never in the creating leaf, never on worktree_sync, and treats orphaned deferrals and pre-base file changes on unrelated leaves as non-blocking warnings.",
+  "supersedes": [],
+  "title": "Closeout gate blocks only due or invalid deferrals and never worktree_sync",
+  "writer": {
+    "at": "2026-11-26T07:36:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L52",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "task": "261112-BUG"
+  }
+}

@@ -11,6 +11,8 @@ spellings: a bare **list** (the producer's hand-off list exactly as today, read 
 an **object** with up to three sections, `entries`, `records` and `history`. Reading resolves nothing: it
 checks the document's own shape and collects every problem, so one refusal names them all.
 
+`RowRequest` accepts optional non-empty `deferralIds` (`DFR-` IDs) on history row requests for dependent deferral dispositions.
+
 ## Code Commentary
 
 ### Logic
@@ -282,7 +284,9 @@ Finding: The entry reader validates replace_evidence as a boolean before constru
 Anchor:
 
 Source: mcp/src/agents_remember/application/knowledge_writer/handoff.py:642-674
+
 - History item parsing uses read_row_items and attaches its refusals to the specific row and subject. [28]
+
 
 ### Cross-Repo References
 
@@ -313,8 +317,11 @@ Source: mcp/src/agents_remember/application/knowledge_writer/handoff.py
 - The two test forms and the bare test module, read in order and once each. [11]
 - Full writer intake requires scope, admission, a verbatim statement and a title for a new invariant. [17]
 - Record intake checks the kind and fields, refuses writer-owned fields and validates the invariant title. [18]
+
 - History input refuses caller-owned id/revision/sources and malformed considered examinations; the empty list remains intentional. [19]
+
 - The row keys and the request field a planned row's `ref` travels in. [20]
+
 - A `repoint` row item names one fired link's position, the path and the locator, and is refused if it renames a link. [30]
 
 - The entry reader validates replace_evidence as a boolean before constructing the request, and only literal true sets its flag. [27]

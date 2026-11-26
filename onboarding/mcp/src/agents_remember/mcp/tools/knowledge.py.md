@@ -263,6 +263,8 @@ No cross-repository contract is established by this file.
 - Cutover refusal helpers, worktree candidate capture and contract loading are imported at the operation branches that need them; existing legacy-format and root-selector refusals remain. [83]
 
 - The whole selected comparison is filed before the answer names both trees, counts and bounded decision records with their total; no carried comparison body. [2]
+
 - The strict integrity model carries validator totals, bounded violations and the optional persisted leaf worklist, not a CODE/currentness verdict. [51]
+
 
 - The writer route publishes a bounded answer of problems, violations and notes beside its full report. [86]

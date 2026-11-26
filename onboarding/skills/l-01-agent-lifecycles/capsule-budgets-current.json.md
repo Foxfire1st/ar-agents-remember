@@ -47,9 +47,10 @@ not the active renewal or a new source measurement.
 
 
 
-- The generated size record holds the current curation capsule and judgment detail measurements. [8]
 
 
 
 - The generated template measurement records 6,630 words and the current source digest. [11]
 - The decision block retains authority and frozen historical registry and predecessor identities. [1]
+
+- The generated size record holds the current curation capsule and judgment detail measurements. [8]

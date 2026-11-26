@@ -375,12 +375,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
+            "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
             "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
-              "end": 795,
+              "end": 797,
               "kind": "line_range",
-              "start": 795
+              "start": 797
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -434,12 +434,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
+            "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
             "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
-              "end": 795,
+              "end": 797,
               "kind": "line_range",
-              "start": 795
+              "start": 797
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -477,7 +477,7 @@
       ]
     },
     "28": {
-      "note": "Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection.\n\nAnchor: source",
+      "note": "Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection.",
       "targets": [
         {
           "anchor": {
@@ -507,8 +507,8 @@
         },
         {
           "anchor": {
-            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
-            "content": "sha256:4b5c629a7065dbaf1864a5f4f671ea7b6e409dc0b5d4542ecd839b1c3e7a308f",
+            "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
+            "content": "sha256:9fdd40e506ee313555421868cce1c5c1986922fed910c147e4db89349933644f",
             "locator": {
               "kind": "file"
             },

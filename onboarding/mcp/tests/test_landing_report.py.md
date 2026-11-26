@@ -35,7 +35,7 @@ for the Reviewer, emitted through the launch composer.
   `test_converted_check_carries_landing_counts` put the counts on the checklist and the converted check;
   `test_answer_carries_two_counts_first_rows_within_bound` keeps whole counts with slim first rows in a
   200-row answer.
-- **Wording.** `test_role_texts_hold_landing_sentences_everywhere` keeps the Curator sentences in both role
+- **Wording.** `test_role_texts_hold_landing_sentences_everywhere` keeps the Curator sentences (and every accepted equivalent returned by `curator_sentence_variants`, including the merged cut-card sentence) in both role
   sources and the compiled capsules, the first one inside the `## Produce the handover` section, and
   `test_reviewer_landing_sentences_are_delivered_before_memory_review` keeps both Reviewer sentences inline in
   the compiled Reviewer role's `## Inspect and verify the candidate` section and in the emitted instructions.

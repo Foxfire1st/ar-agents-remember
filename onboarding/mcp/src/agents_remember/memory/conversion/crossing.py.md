@@ -34,8 +34,7 @@ cause a conflict.
 - **Evidence lines both sides added.** A conflict region with an empty base part whose differing lines are
   all real trailing-marker evidence lines is not a conflict: incoming's lines are kept first, then own's,
   judged per side in that side's full-document grammar with shared context kept once.
-- **Keys (`_merge_json`, `_merge_collection`).** `references` merge by aligned number, `realizes` and `proves` by
-  entry `id`, and every other field by name.
+- **Keys (`_merge_json`, `_merge_collection`).** `references` merge by aligned number; `_KEYED_LISTS` (`realizes`, `proves`, and `_OMIT_WHEN_EMPTY_LISTS = ("deferrals",)`) merge by entry `id`, with `deferrals` omitted when the merged list is empty so un-deferred dependent records stay byte-identical; every other field merges by name.
 - **Items (`merge_item`).** A reference, an entry or a record field is one item. Its mechanical fields are
   an anchor's `blob`, `content` and line numbers (`authored` strips them), and everything else is authored.
   - An item only one side changed is taken from that side, whole.

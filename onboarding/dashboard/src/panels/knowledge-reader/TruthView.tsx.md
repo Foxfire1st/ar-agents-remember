@@ -12,7 +12,7 @@ status when available. A supplied writer appears as role and model.
 
 ## Code Commentary
 
-`LEAD`, `ORDER` and `FRAME` distinguish the lead, ordered meaning fields and framing fields. `Value` renders lists and labelled object pairs. The page preserves realizations/proofs, family members/locations, decisions and both link directions; an unreadable outgoing list is named, and history-row incoming links lead to their subject record.
+`LEAD`, `ORDER` and `FRAME` distinguish the lead, ordered meaning fields and framing fields (with `dependent` leading on `document`, ordering `confirmed` and `stands_on`, and excluding `deferrals` from generic `RecordFields` so `DependentPart` renders them once). `TruthHeader` reads `answer.dependent?.state` for the derived dependent state badge (`deferred`, `stale`, `current`, `unverifiable`), and `DependentPart` / `DeferralConditionRow` render open deferral cards (with `DEFERRAL_TONE` for `open`, `due`, `orphaned`) and moved links. `Value` renders lists and labelled object pairs. The page preserves realizations/proofs, family members/locations, decisions and both link directions; an unreadable outgoing list is named, and history-row incoming links lead to their subject record.
 
 The timeline now owns local paging state from its initial record answer. Show older sends the owner continuation; Load first page omits it and replaces rather than appends events. The loader uses the current reader navigation repository/commit and the initial record id, with one request in flight. It rejects a non-view answer, absent timeline, explicit refused timeline or changed selection treeKey/memoryRevision. Admitted continuation events append in the owner’s order, not a client recomputed sort. Failed or mismatched reads leave existing events and show the failure/restart/reload controls. Inactive completions are ignored, not aborted.
 
@@ -105,7 +105,9 @@ No cross-repo boundary is crossed by this file.
 No Domain Documentation entries are configured; current repository bodies and caller boundaries supply the evidence below. The prior source-only accounts are preserved above, not promoted to a fresh execution result.
 
 - The record page keeps lead/fields/relationships/timeline/origin order while wiring timeline paging by the initial answer. [14]
+
 - Per-kind lead/order and framing exclusion govern labelled meaning values. [16]
+
 - An incoming history-row link names and navigates its subject record. [17]
 - The bounded timeline renders owner-ordered events and source problems, with attempt/path facts and paging controls. [18]
 - File path, admission and origin close the page as labelled values. [19]

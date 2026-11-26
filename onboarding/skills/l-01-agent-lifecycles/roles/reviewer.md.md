@@ -20,6 +20,8 @@ This canonical role/operation requires messages to be short wake-ups naming requ
 This is the canonical independent-review lifecycle. It inspects the exact candidate and adjudicates
 each stable requirement ID from the same applicable set dispatched to the worker.
 
+Memory review directs the Reviewer to inspect `memory_quality_check` report-only findings for pre-base-stale dependent confirmations and every `deferral_lifted` row per `OM-6` in `criteria/onboarding-memory.md`, while preserving existing capsule word ceilings.
+
 ## Code Commentary
 
 The Reviewer opens current saved briefs when present for the changed files and uses the touched-rule file when the start notice names one for the exact freeze. Fuller read replies can carry rule text. Compact rows can keep a brief pointer with saved freshness. `knowledge_read` locates whole records and their proof evidence for independent review.
@@ -121,6 +123,7 @@ Worker envelope, reviewer verdict template, manager exact-set dispatch, and gove
 
 - The reviewer emits its own curator hand-off list in the shared producer shape. [3]
 
+
 ### Cross-Repo References
 
 No meaningful cross-repo references.
@@ -161,6 +164,7 @@ The Reviewer's closing paragraph sends temporary files, experiments and working 
 
 
 
+
 - Reviewer inspects every changed file of the complete candidate diff and reads the baseline detail at step 4; a subset never replaces the Curator's complete authoring memory-quality operation. [12]
 
 
@@ -171,9 +175,11 @@ The Reviewer's closing paragraph sends temporary files, experiments and working 
 
 - A baseline report includes every bound standing criterion. Fix verification reports the criteria used by the sealed findings. Review artifacts include the sealed findings, complete route coverage, the seam-shaped verdict with its Catalog Binding section, a producer-data handoff list and durable reports for material routes. [15]
 
+
 - The Reviewer records ordinary leaf CODE begin/result and separate MEMORY rounds with unchanged code state; Manager records beyond-settings authorization and retains gate acceptance. [17]
 
 - A moved review candidate is stale and requires a successor exact Worker attempt and reviewer record; changed scope or identity does not manufacture a new first review. [18]
+
 
 - Reviewer marks only its own named review step done after the last round is recorded passed, and its stage ends at a recorded verdict covering the whole requirement, findings and coverage. [19]
 

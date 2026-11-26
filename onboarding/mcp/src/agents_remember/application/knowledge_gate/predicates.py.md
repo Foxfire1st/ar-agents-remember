@@ -16,7 +16,7 @@ Ordinary onboarding admission now consumes a typed `OnboardingTraceRow`, the win
 
 Unexplained covered changes keep the existing `no_invariant` requirement. An uncovered change instead consumes its own onboarding-trace facts and applies the same typed onboarding/currentness rule; mere presence in a subject-to-ID map is insufficient. [2]
 
-The new `unassigned_invariant` predicate requires a typed membership row and compares its recorded revision with the subject invariant in K_C. `touched_record` requires a typed record row at the item's revision, with disposition derived from record facts: newly retired wins, otherwise an increased revision needs `changed`, otherwise `no_impact`. These are distinct row classes, not substitutions for invariant/family changes or an authorization to write through an unsupported producer. [3]
+The new `unassigned_invariant` predicate requires a typed membership row and compares its recorded revision with the subject invariant in K_C. `touched_record` requires a typed record row at the item's revision, with disposition derived from record facts: newly retired wins, otherwise a deferral-only dependent change (`facts.get("deferralOnly") is True`) requires one of `DEFERRAL_RECORD_DISPOSITIONS` (`deferred`, `re_deferred`, `deferral_lifted`), otherwise an increased revision needs `changed`, otherwise `no_impact`. `changed_document_open` stays strict (`changed` only). These are distinct row classes, not substitutions for invariant/family changes or an authorization to write through an unsupported producer. [3]
 
 The following retained registration summary is historical: its reconsideration wording must be read
 with the current candidate/code-aware dispatch and link-target predicate described below, not as an

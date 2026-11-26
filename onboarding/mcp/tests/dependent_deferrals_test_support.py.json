@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/dependent_deferrals_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`build_deferral_world` and `seed_deferred_world` assemble real Git code/memory repositories and task-document hierarchies for deferral writer, gate, MQC, and reader tests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67852a19f5baeb12856284567420e1b8689f0f19",
+            "content": "sha256:6e4bc203c9e57499f5c691da8d1ec555943e48409c1aae76034061e12ec10c5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_deferral_world"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

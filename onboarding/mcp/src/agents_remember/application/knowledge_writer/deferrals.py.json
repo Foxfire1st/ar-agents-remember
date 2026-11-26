@@ -1,0 +1,94 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/deferrals.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "764e17869ccada11316af07ee8dd86b5445e8e94",
+        "content": "sha256:6632203aa10602e0b9dfd432fd9c6e4bce2c992a2b254b0d13592f5110841375",
+        "locator": {
+          "kind": "symbol",
+          "name": "apply_record_row_deferrals"
+        }
+      },
+      "id": "RLZ-2FM0BB",
+      "invariant": "INV-8CNH3X",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §3-4",
+        "leaf": "261112-BUG-L52"
+      },
+      "rationale": "Enforces operation/row agreement (requiring deferral_lifted whenever a lift ran or was already recorded in the leaf) and populates deferralIds on authored RecordRows.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "764e17869ccada11316af07ee8dd86b5445e8e94",
+        "content": "sha256:18022f0b7e316750e73d52245c13154904e031511bbab687172c7a7895661c72",
+        "locator": {
+          "kind": "symbol",
+          "name": "author_dependent"
+        }
+      },
+      "id": "RLZ-4DJ8NY",
+      "invariant": "INV-8CNH3X",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §3-4",
+        "leaf": "261112-BUG-L52"
+      },
+      "rationale": "Owns deferral operations, task/file validation, re-deferral rules, partial resolution on edited docs, and refusal of unedited confirmations (new or existing) naming open deferrals.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "764e17869ccada11316af07ee8dd86b5445e8e94",
+        "content": "sha256:e832f9e197ae24801efc632612961e102f1a69adba666e14bf709c228ad58b91",
+        "locator": {
+          "kind": "symbol",
+          "name": "verify_lifted_deferral_rows"
+        }
+      },
+      "id": "RLZ-BB8P3G",
+      "invariant": "INV-8CNH3X",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §3-4",
+        "leaf": "261112-BUG-L52"
+      },
+      "rationale": "Refuses any write that lifts a deferral without a deferral_lifted history row in the same write.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`author_dependent` enforces deferral-only confirmation preservation, condition validation, partial resolution, and unedited-confirmation refusal for new and existing dependents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "764e17869ccada11316af07ee8dd86b5445e8e94",
+            "content": "sha256:18022f0b7e316750e73d52245c13154904e031511bbab687172c7a7895661c72",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_dependent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`apply_record_row_deferrals` and `verify_lifted_deferral_rows` enforce operation/row agreement and require `deferral_lifted` rows whenever a deferral is lifted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "764e17869ccada11316af07ee8dd86b5445e8e94",
+            "content": "sha256:e832f9e197ae24801efc632612961e102f1a69adba666e14bf709c228ad58b91",
+            "locator": {
+              "kind": "symbol",
+              "name": "verify_lifted_deferral_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

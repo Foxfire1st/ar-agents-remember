@@ -161,12 +161,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
-            "content": "sha256:1ab97fb581e81ce813b1fff6a03113ed8c125da6d6968db17d5f175888a036a8",
+            "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
+            "content": "sha256:ca21a8e0f3b8eb348fd228b5ed0f7c24a7ccb623908ecae98c69414d0f2009b8",
             "locator": {
-              "end": 161,
+              "end": 184,
               "kind": "line_range",
-              "start": 78
+              "start": 83
             },
             "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
           },

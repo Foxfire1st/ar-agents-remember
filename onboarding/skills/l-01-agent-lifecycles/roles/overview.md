@@ -30,6 +30,8 @@ A code concern from Curator reaches both Worker and Reviewer even after code PAS
 
 Ready leaves land successively; the coordination operation describes a train in which each synchronises once to the previous landing. Worker performs the supported leaf sync when its line moves. Native memory-file conflicts go to Curator for content repair; Manager captures, verifies and stages the resolution, and Worker continues the supported sync with the exact contract. None of these peer acts transfers transaction ownership.
 
+In `roles/reviewer.md`, memory-lane review also inspects `memory_quality_check` report-only findings for pre-base-stale dependent confirmations and `deferral_lifted` rows under `OM-6`, alongside the existing `cutCards`/`addedFiles` landing-evidence duties.
+
 ## Construction And Ownership
 
 `roles/*.md` are canonical sources. The manifest owns routing metadata, role/operation applicability and capability declarations; it is not another doctrine source. The capsule vocabulary and selection code enforce the closed vocabulary and applicability. `mcp/.venv/bin/python scripts/renew-instructions.py` renews current instruction facts and package copies from the canonical tree. Its copy plan uses `scripts/sync-skills.py` and the `generated-copies.json` declaration to target the package-data tree from root `skills/`; that packaged copy is served as MCP resources, with no harness starter tree. A target declaration does not establish that the copy is currently identical. Canonical source is edited first and the generated copy remains a synchronization output.
@@ -216,6 +218,7 @@ The Curator authors knowledge and supporting judgments while the product owns wr
 - Role registry and native supported-role vocabulary are distinct; the prior Investigator spelling is canonicalized on input. [29]
 
 - Independent MEMORY review reads both landing reports and raises missing cut-change reasons or extra-knowledge additions without a requirement place. [31]
+
 
 - Architect delegates one master to Manager and concurrent masters to Orchestrator; direct coordination requires the developer. [32]
 

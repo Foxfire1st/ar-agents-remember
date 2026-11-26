@@ -511,12 +511,12 @@
         },
         {
           "anchor": {
-            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "blob": "d592744457672d63c98c24155c44b0b334a464fc",
             "content": "sha256:bd89a9e178c1778b73741a5cf6e26333f4eec24343652d03001c7576c40a55f7",
             "locator": {
-              "end": 885,
+              "end": 892,
               "kind": "line_range",
-              "start": 834
+              "start": 841
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },

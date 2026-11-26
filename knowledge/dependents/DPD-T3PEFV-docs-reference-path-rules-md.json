@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "587c29fa45c0e8ec0753487b806e6f5666b475bb",
-    "commit": "575e852918b109d7c5f52c36b6da536b7b43b4e6",
+    "codeTree": "6ed3e42315fdc9b59cfcc1e89ab5a1a7cad93223",
+    "commit": "8ccdd6fab4805894de5375e51c16ec3ff96628d2",
     "role": "curator",
-    "statement": "The storage and card coverage rules stay in force, and the file brief is added after the same scoped naming decision.",
-    "task": "261112-KNO-L4",
+    "statement": "Audited docs/reference/path-rules.md in full against L52 candidate 6ed3e423 (base 8ccdd6fa): path-rule keys, matching semantics, and memory_quality/controller.py consumers remain unchanged and accurate.",
+    "task": "261112-BUG-L52",
     "uncommitted": true
   },
   "document": "docs/reference/path-rules.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,9 +61,20 @@
       "path": "mcp/src/agents_remember/kernel/route_index_census.py"
     },
     {
-      "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+      "blob": "d592744457672d63c98c24155c44b0b334a464fc",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T07:36:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L52",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "task": "261112-BUG"
+  }
 }

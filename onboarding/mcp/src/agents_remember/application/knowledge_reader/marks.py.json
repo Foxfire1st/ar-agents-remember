@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+        "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
         "content": "sha256:11dfb5b83ffca0d6a81454454e2b5fb17581d75518ba70bf0b1d5dc83ba92e41",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+        "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
+        "content": "sha256:4fab0b18db21d6bf2626c07259db8fc0cac131f586a6ac582272e5d78905e413",
+        "locator": {
+          "kind": "symbol",
+          "name": "dependent_state_at"
+        }
+      },
+      "id": "RLZ-1VGYHQ",
+      "invariant": "INV-MH7M10",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §8 (curator marks detail/state)",
+        "leaf": "261112-BUG-L52"
+      },
+      "rationale": "Returns state='deferred' whenever a dependent record holds open deferrals before checking link staleness.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
         "content": "sha256:11dfb5b83ffca0d6a81454454e2b5fb17581d75518ba70bf0b1d5dc83ba92e41",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+        "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
         "content": "sha256:d41c05d82a3804981d9934e356afa6fde2ce13dae7cad4e754e1cdec73da5925",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+        "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
         "content": "sha256:ca746a700f22cd8bad6e297dd0ccfb752674c1c384a2bc413004dbafccb535b0",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,25 @@
     },
     {
       "anchor": {
-        "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+        "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
+        "content": "sha256:ca41b63af3d0c23ddbdfdd3fbcfa99312685a733ee8f88e4262eaa739c588d6b",
+        "locator": {
+          "kind": "symbol",
+          "name": "dependent_detail"
+        }
+      },
+      "id": "RLZ-HZA4JQ",
+      "invariant": "INV-MH7M10",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §8 (curator marks detail/state)",
+        "leaf": "261112-BUG-L52"
+      },
+      "rationale": "Builds the derived dependent state, deferrals list, and moved links payload attached to record_view for DPD- records.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
         "content": "sha256:8c35011c331e44cf16be47814f8a7dc825c5d83c293982a69b1ac713ed4f860c",
         "locator": {
           "kind": "symbol",
@@ -93,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+        "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
         "content": "sha256:a616c17d3031ad81e3d91768798f72d42ca2e004b82c9a88729bc0b35f153751",
         "locator": {
           "kind": "symbol",
@@ -111,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+        "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
         "content": "sha256:792fa5695d27e868136d63a7ae3c3720df74f4bd02b3f24aa4e4ae245cda5946",
         "locator": {
           "kind": "symbol",
@@ -129,7 +165,25 @@
     },
     {
       "anchor": {
-        "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+        "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
+        "content": "sha256:ca86e1b7c0170d284a83beaf7ec095c449fe76fdc1e8b2cf7b98265a70b6633c",
+        "locator": {
+          "kind": "symbol",
+          "name": "dependent_list"
+        }
+      },
+      "id": "RLZ-TRFE8R",
+      "invariant": "INV-MH7M10",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §8",
+        "leaf": "261112-BUG-L52"
+      },
+      "rationale": "Passes the inferred reading leaf into derive_deferrals and marks deferred dependent records as state=deferred (including under staleOnly=true) while leaving dependent_movement unchanged.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
         "content": "sha256:8a3046abb0ed41c597f8b76cc05a621af919dc4318c17b81ed3410e55c8996eb",
         "locator": {
           "kind": "symbol",
@@ -147,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+        "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
         "content": "sha256:228a870087b3f0101fb8219154b6a52d7184e75d91279bcfe2416fefaf4b8ab1",
         "locator": {
           "kind": "symbol",
@@ -170,7 +224,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+            "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
             "content": "sha256:11dfb5b83ffca0d6a81454454e2b5fb17581d75518ba70bf0b1d5dc83ba92e41",
             "locator": {
               "kind": "symbol",
@@ -181,7 +235,7 @@
         },
         {
           "anchor": {
-            "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+            "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
             "content": "sha256:d41c05d82a3804981d9934e356afa6fde2ce13dae7cad4e754e1cdec73da5925",
             "locator": {
               "kind": "symbol",
@@ -197,7 +251,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+            "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
             "content": "sha256:792fa5695d27e868136d63a7ae3c3720df74f4bd02b3f24aa4e4ae245cda5946",
             "locator": {
               "kind": "symbol",
@@ -213,7 +267,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+            "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
             "content": "sha256:65cb399b4c5506165a2e1a2f602b8e9726f2d012edd26f3b528257caf54221fe",
             "locator": {
               "kind": "symbol",
@@ -224,7 +278,7 @@
         },
         {
           "anchor": {
-            "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+            "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
             "content": "sha256:9fe17f474eba0e9a79ef599ec789451c7a17a0c1507252f40fa0ac4306cb74ff",
             "locator": {
               "kind": "symbol",
@@ -240,12 +294,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+            "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
             "content": "sha256:1b5c266cf6853cde14548d67ce414884f1f3bc99e03fdcefcfa005520a0b50ef",
             "locator": {
-              "end": 420,
+              "end": 430,
               "kind": "line_range",
-              "start": 372
+              "start": 382
             }
           },
           "kind": "code"
@@ -253,16 +307,16 @@
       ]
     },
     "5": {
-      "note": "Dependent filters, per-path counts and single-record failure labels remain derived.\n\nAnchor: \"def dependent_list(\"",
+      "note": "Dependent filters, per-path counts and single-record failure labels remain derived.",
       "targets": [
         {
           "anchor": {
-            "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
-            "content": "sha256:b214e9a08e855f909d6202b26a8c0716f543c9a82be006a31f06ebd52b60cc58",
+            "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
+            "content": "sha256:a17519abd3acbaf11ede979a32bd96aedf2b2a9ac7bf268bd8f8f70ca6af3ad8",
             "locator": {
-              "end": 684,
+              "end": 745,
               "kind": "line_range",
-              "start": 602
+              "start": 612
             }
           },
           "kind": "code"
@@ -274,7 +328,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c30c7151e86fc836c27a0c1ea6a149be9fe7395b",
+            "blob": "7576010549eaa52e9eac5fe363c0f5910342cdda",
             "content": "sha256:11dfb5b83ffca0d6a81454454e2b5fb17581d75518ba70bf0b1d5dc83ba92e41",
             "locator": {
               "kind": "symbol",

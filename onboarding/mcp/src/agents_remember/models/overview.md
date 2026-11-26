@@ -52,6 +52,8 @@ Memory-tree reads carry their selected tree/index, completeness and bounded cont
 
 `tools/explainer_control.py` owns the strict update/retire/claim response, its master-to-Architect ownership record and claim-transfer counts. Non-refused results require an admitted action; a refused result can retain the unknown action it rejected. The model validates shape and bounded lists, not the caller's actual authority or delivery success.
 
+`models/knowledge_files/` defines `DeferralCondition`, `DependentDeferral`, `DependentRecord.deferrals` (omitted when empty), `DEFERRAL_PREFIXES` (`DFR-`), `deferrals` canonical sorting in `IDENTIFIED_ENTRY_KEYS`, and DPD-only `RecordRow` deferral dispositions (`deferred`, `re_deferred`, `deferral_lifted`) plus `deferralIds`.
+
 ## Construction And Ownership
 
 DirectExecutionGrant is external task-local authority; observer directGrant is display-only. Direct response adds candidateTree/candidatePaths/codeCommitMessage facts, and lifecycle direct input carries exact canonical leaf plus prospective codeBefore. No task-document flag or anticipated commit hash is introduced.
@@ -559,9 +561,12 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 
 - History registry includes the full set of row forms. [41]
 
+
 - History registry retains unexplained and its neighboring row kinds. [53]
 
+
 - Registry includes membership and record. [266]
+
 
 - SourceBlob and bound onboarding row validation. [312]
 
@@ -676,7 +681,9 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 - `source_content_unresolved` is a member of the shared review refusal vocabulary. The earlier card called it the seventh code added by its leaf for a listing whose bound code objects no longer resolve; the ordinal and contribution are historical accounts. Anchor: `ReviewRefusalCode` [239]
 - The current registry maps `read_ar_files` to `ReadArFilesResponse`; registration does not carry a published-intent text body. Anchor: `TOOL_RESPONSE_MODELS` [245]
 - Capsule operation selection now carries an explicit all/sections audience contract. Sections-mode validation examines the complete source before projecting common and addressed text. Declared step-detail references carry source, revision, bytes and named step separately from inline blocks; the selected-content seal does not change their original source revisions or tool grants. Anchor: Current source; preserved L88 property 316 [319]
+
 - RecordRow requires revision; effect and because keep their separate disposition-dependent and optional rules. [340]
+
 
 - **Retained historical source account — superseded by the current route account:** Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. [75]
 
@@ -684,8 +691,11 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 - Why a row cannot govern an invariant whose revision the leaf changed. [274]
 
 - Both successful landing states share the short-form bound. The next step, stale-entry count and capped keys each stay only if they fit with the exact locator reserved. A fitted count stays when the keys or their omission notice are dropped. Where the count does not fit, the cut omits staleEntries and the named detail retains the whole debt. [342]
+
 - The three current responses declare tree read, Git-tree diff and text validation. [270]
+
 - The optional field (beside the later `currentness`, `families` and, since MIK-R05, `routeChain`) and the docstring boundary. [31]
+
 - The two payload versions and the family payload's sealed field set. [111]
 - The sealed payload, with the predecessor set inside the digest and the digest field excluded. [97]
 - The retained facade re-exports exact family membership and authored role vocabulary from the historical graph contribution. [113]
@@ -694,8 +704,11 @@ Curator coherence keeps semantic revision, attempt, immutable record, stable aut
 - The retained knowledge-model facade has an explicit re-export list, including the historical graph contribution; this vocabulary declaration is not a live write API. [94]
 - The family record's routes use it. [24]
 - An invariant record carries no second-owner fields. [263]
+
 - The read response's page state and fields, re-read when MIK-R05 added `routeChain`. [33]
+
 - The optional `families` field on the read response, followed since MIK-R05 by `routeChain`. [45]
+
 - The invariant identity and revision aggregate, including the display-label-versus-identity separation. [96]
 - The family identity, the immutable revision aggregate and its self-consistency rules. [108]
 - The history schema in the dispatch table. [268]

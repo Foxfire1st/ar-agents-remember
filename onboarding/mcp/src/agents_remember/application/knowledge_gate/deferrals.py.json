@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_gate/deferrals.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3204aeb7c6078c9866d1b57ed5128d4e778cbdb2",
+        "content": "sha256:3c1cfcd671162ece9ddc848b67b4dd27d55cdc8046c5a3a87c4e7937f5570841",
+        "locator": {
+          "kind": "symbol",
+          "name": "deferral_gate_findings"
+        }
+      },
+      "id": "RLZ-32NQP1",
+      "invariant": "INV-XT13GK",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §5",
+        "leaf": "261112-BUG-L52"
+      },
+      "rationale": "Evaluates blocking due-by-task, due-by-leaf-file-diff, and post-sync unedited confirmation findings plus non-blocking orphaned and pre-base file-change warnings.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`deferral_gate_findings` evaluates post-sync unedited confirmations, due-by-task and due-by-leaf-diff blocks, creating-leaf exclusions, and non-blocking orphan/pre-base warnings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3204aeb7c6078c9866d1b57ed5128d4e778cbdb2",
+            "content": "sha256:3c1cfcd671162ece9ddc848b67b4dd27d55cdc8046c5a3a87c4e7937f5570841",
+            "locator": {
+              "kind": "symbol",
+              "name": "deferral_gate_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

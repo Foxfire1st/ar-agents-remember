@@ -198,23 +198,42 @@ No meaningful cross-repo references found.
 - The integrity handler reports text-tree validation. [9]
 
 - The read builder returns the reader-owned payload and read extras. [28]
+
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [1]
+
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [10]
+
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [11]
+
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [13]
+
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [14]
+
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [17]
+
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [2]
+
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [3]
+
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [34]
+
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [4]
+
 - The optional `proofs` field on the read response, beside L03's `currentness`, since MIK-R02 the `page` and `threshold` fields, since MIK-R01 the optional `families`, and since MIK-R05 the optional `routeChain`. [44]
+
 - The optional `currentness` field on the read response, after `proofs`, re-read at MIK-R02 when the model gained `page` and `threshold`, at MIK-R01 when it gained `families`, and at MIK-R05 when it gained `routeChain`. [45]
+
 - The `page` state (which since MIK-R01 also answers a leaf read, and since MIK-R05 a family seed) and the optional `page` and `threshold` fields on the read model. [46]
+
 - The read model declares view, snapshot, memory tree and index completeness fields. The mounted projection names record locations. [47]
+
 - The read model declares completeness and continuation beside its memory-tree and index fields. [48]
+
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [5]
+
 - Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [54]
+
 - The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [6]
+
 
 - The write response declares notes and a separate truncation flag alongside the full report location. [55]
