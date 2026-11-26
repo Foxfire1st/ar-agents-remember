@@ -23,7 +23,7 @@ follow-up.
 The default table names Ruff, Pytest, Coverage, Radon, and CRAP-Calculator
 because that is useful for this source checkout, but the text explicitly tells
 agents to replace those rows for other stacks such as TypeScript projects using
-ESLint, TypeScript, Vitest, Playwright, or bundle checks.
+oxlint, TypeScript, Vitest, Playwright, or bundle checks.
 
 ### A Row May Only Offer Results Its Tool Can Produce (260731-EFA-L2)
 
@@ -73,6 +73,7 @@ No relevant external documentation found.
 
 - The template says it is a memory-repo example to copy or adapt, then asks agents to report actual tool findings rather than only execution. [1]
 - The tool-results table is explicit but adaptable; the prose gives a TypeScript stack as a replacement example. [2]
+
 - The findings sections separate touched-file findings from existing or out-of-scope pressure. [3]
 
 ### Cross-Repo References

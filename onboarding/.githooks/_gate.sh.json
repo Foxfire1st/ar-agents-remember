@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+        "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
         "content": "sha256:5473922e477f1d23077e1c52e3a29574b450c69f40a51227ff820b75eee52abe",
         "locator": {
           "end": 197,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+        "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
         "content": "sha256:87f28dc9b669f1f6b9ed43725fb1f447f52c69129f615393163367c630e25b4c",
         "locator": {
           "end": 253,
@@ -41,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
-        "content": "sha256:5a4fb80c820446dad4bf119c03adab2a75b598039272038073a3a5719c36a9f8",
+        "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
+        "content": "sha256:22974cbb04a70d77890ea1e9481702ec747a41d225c3bd2174540f3a6a33634d",
         "locator": {
           "kind": "file"
         }
@@ -53,13 +53,13 @@
         "handoffEntry": "BUG-R29@v1 §3 (R1-R6)",
         "leaf": "261112-BUG-L29"
       },
-      "rationale": "Implements R1 (256 KiB GNU xargs on Linux), R2 (single hook-batch scope call), R3 (concurrent Python and Dashboard rails with fixed-order buffered replay), R4 (content-hashed .eslintcache flags), and R6 (PYRIGHT_PYTHON_IGNORE_WARNINGS=1 scoped to Pyright).",
+      "rationale": "Implements R1 (256 KiB xargs batch), R2 (hook-batch call), R3 (concurrent rails with ordered output), R4 (cache-free oxlint via npm run lint without ESLint cache flags), and R6 (PYRIGHT_PYTHON_IGNORE_WARNINGS=1).",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
-        "content": "sha256:5a4fb80c820446dad4bf119c03adab2a75b598039272038073a3a5719c36a9f8",
+        "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
+        "content": "sha256:22974cbb04a70d77890ea1e9481702ec747a41d225c3bd2174540f3a6a33634d",
         "locator": {
           "kind": "file"
         }
@@ -80,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
             "content": "sha256:3c510f439ca02f94c1e2065caa30de2d1e43780f9709d1395102e302bca21803",
             "locator": {
               "end": 253,
@@ -97,12 +97,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
             "content": "sha256:9296aca73a06b743e8f21c6266eeb2ae9ab93d480020bd1db75eb990412a1967",
             "locator": {
-              "end": 370,
+              "end": 369,
               "kind": "line_range",
-              "start": 360
+              "start": 359
             }
           },
           "kind": "code"
@@ -114,12 +114,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
             "content": "sha256:7c0d5c094f2bf6c5b309521029214fe0efb7db01e37d8564a88bf3691af14ade",
             "locator": {
-              "end": 383,
+              "end": 382,
               "kind": "line_range",
-              "start": 373
+              "start": 372
             }
           },
           "kind": "code"
@@ -131,12 +131,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
             "content": "sha256:95d6efa9b1da890738319cddbc353707aa26254d87e7579c6a38efe7a24714ff",
             "locator": {
-              "end": 521,
+              "end": 520,
               "kind": "line_range",
-              "start": 475
+              "start": 474
             }
           },
           "kind": "code"
@@ -148,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
             "content": "sha256:27fe655abb2ea763185226fb34c82b37761e0c179352982a2b5e39ba588e95de",
             "locator": {
               "end": 80,
@@ -165,7 +165,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
             "content": "sha256:7231015a8b4e3dfd37705c308a94755b07fa0b80c68578487937e6fba1a0b81b",
             "locator": {
               "end": 190,
@@ -182,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
             "content": "sha256:c8fd6fe9f78b53735c8c4cd1593918d4661f9644e4d4fdc6955c8f3cf97625a5",
             "locator": {
               "end": 205,
@@ -199,12 +199,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
             "content": "sha256:71ae774b41650b4d39665fd31a77e13cc7edbc2fef5461cb9d05ff62c92cd1ac",
             "locator": {
-              "end": 357,
+              "end": 356,
               "kind": "line_range",
-              "start": 327
+              "start": 326
             }
           },
           "kind": "code"
@@ -212,16 +212,28 @@
       ]
     },
     "9": {
-      "note": "The warm caches are content-addressed and the Pyright wrapper notice is silenced.\n\nAnchor: `python_rail_checks`",
+      "note": "Dashboard linting runs cache-free oxlint without ESLint cache flags while the Pyright wrapper notice is silenced.",
       "targets": [
         {
           "anchor": {
-            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
-            "content": "sha256:4941e757e58d2c12b00c4054aed30866f4a5f68ce72848ee1fb6cdce0b9c8069",
+            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
+            "content": "sha256:d2d02288cf3ffe01201069312ca2000d815bbfc3d3061de7d82f7ddf246de474",
             "locator": {
-              "end": 325,
+              "end": 285,
               "kind": "line_range",
-              "start": 289
+              "start": 272
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
+            "content": "sha256:70bb7ed099a87f29f62a2047fbbda82f698939759db9aa5d54ff9f9b88f034e9",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 288
             }
           },
           "kind": "code"

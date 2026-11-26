@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "48c171029dbbe43e6ba940b9dd8f029422ab5663",
-    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
+    "codeTree": "9af497f7bb994eac3c3bb8c69069d5e8d702cb58",
+    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
     "role": "curator",
-    "statement": "Audited docs/design/python-evidence-system.md in full (lines 1-295) against DEP-synced L52 candidate 48c17102 (base 599cfaf8, where 261125-DEP-L2 confirmed rev 23): pins no artifact or test counts and accurately describes the seven accepting lanes, canonical catalog form, lifecycle rules, and source-derived consumers after L52 added dependent_deferrals_test_support.py and its two unit-regression suites.",
-    "task": "261112-BUG-L52",
+    "statement": "docs/design/python-evidence-system.md remains accurate on 9af497f7bb99 after adding mcp/tests/test_code_quality_dashboard_lint_scope.py to unit-regression (680 of 830 modules) and to the _user_settings_guard.py and Node-profile package-lock.json consumer lists (18 contracts, 123 artifacts) because lane authority, canonical ordering, and source-derived consumer rules are unchanged and the guide pins no counts.",
+    "task": "261125-DEP-L6",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 24,
+  "revision": 25,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
+      "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
+      "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },
@@ -107,14 +107,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T08:25:07+01:00",
+    "at": "2026-11-26T12:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L52",
+    "leaf": "261125-DEP-L6",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
-    "task": "261112-BUG"
+    "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+    "task": "261125-DEP"
   }
 }

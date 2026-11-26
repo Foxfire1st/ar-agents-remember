@@ -56,14 +56,14 @@
       ]
     },
     "2": {
-      "note": "The wave grid declares three columns and a single column at widths of 720px or less. Box titles and leaf lines use ellipsis. The dependency style recipe declares ready, waiting and cycle states. The dashboard manifest declares no @xyflow/react dependency.\n\nAnchor: source",
+      "note": "The wave grid declares three columns and a single column at widths of 720px or less. Box titles and leaf lines use ellipsis. The dependency style recipe declares ready, waiting and cycle states. The dashboard manifest declares no @xyflow/react dependency.",
       "targets": [
         {
           "anchor": {
-            "blob": "703d4a247784c78f117744a0a9bc41e7e1cd015b",
-            "content": "sha256:0323f578b5a5bfb6ebd66dedf11adcd25ac374ce80ba8969a6fb839bd2b15807",
+            "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
+            "content": "sha256:c2bd5edd3400a9f5e66ade98fc6e725a7007309fa36219ea512f3f50128f5fae",
             "locator": {
-              "end": 76,
+              "end": 70,
               "kind": "line_range",
               "start": 23
             },

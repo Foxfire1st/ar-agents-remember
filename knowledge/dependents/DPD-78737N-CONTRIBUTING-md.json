@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "d5ffb4e005251208e31751ec2df07baf2653c788",
-    "commit": "a801c47d088d1b173ad2dfe4dc635b199433458d",
+    "codeTree": "9af497f7bb994eac3c3bb8c69069d5e8d702cb58",
+    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
     "role": "curator",
-    "statement": "Audited CONTRIBUTING.md on 261112-BUG-L49 against synced post-L51 candidate d5ffb4e00525 (base a801c47d088d): seven test lanes, test-evidence-lanes.toml, evidence-lifecycle.toml, pyproject.toml, and .githooks/_gate.sh Pyright checks match live code with zero contradictions, and CONTRIBUTING.md makes no claim about [tool.pyright] exclude or bare pyright --project . runs.",
-    "task": "261112-BUG-L49",
+    "statement": "CONTRIBUTING.md accurately reflects BUG-L29's tool-registration description (lines 40-50), BUG-L49's pyproject.toml update, and 261125-DEP-L6's updates switching dashboard lint to oxlint (lines 194-197) and the concurrent hook rail to cache-free oxlint with incremental tsc -b *.tsbuildinfo (lines 333-338), with test-evidence-lanes.toml declaring 830 modules (680 unit-regression).",
+    "task": "261125-DEP-L6",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 18,
+  "revision": 19,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "setup-hooks.sh"
     },
     {
-      "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+      "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
       "kind": "file",
       "path": ".githooks/_gate.sh"
     },
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "ed04fba32f76f0abfc29cba36d54f498ec48655f",
+      "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -121,7 +121,7 @@
       "path": "scripts/test-under-load.sh"
     },
     {
-      "blob": "703d4a247784c78f117744a0a9bc41e7e1cd015b",
+      "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
       "kind": "file",
       "path": "dashboard/package.json"
     },
@@ -207,14 +207,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T11:13:54+01:00",
+    "at": "2026-11-26T12:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L49",
+    "leaf": "261125-DEP-L6",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "27d19192-331c-5dd7-9444-7bc54c5bc458",
-    "task": "261112-BUG"
+    "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+    "task": "261125-DEP"
   }
 }

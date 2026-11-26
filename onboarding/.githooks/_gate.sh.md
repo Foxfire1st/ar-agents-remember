@@ -16,7 +16,7 @@ Before any check, the script needs a complete MCP development environment: it ta
 
 `run_targeted_checks` repeats `run_fast_checks`. In the fast tier the script parks unstaged and untracked content with `git stash push --keep-index` and restores it on every exit, except during a merge, rebase or cherry-pick, where it checks the working tree as it is.
 
-The fast tier passes every tracked Python file to one GNU `xargs` invocation with a 256 KiB buffer, so Ruff and Pyright run once instead of twice. It derives every tier scope line in one `scope_reporting hook-batch` call and replays each line in its original position. The Python and dashboard rails run concurrently, but their buffered output is printed Python first and dashboard second; a failure in either rail fails the tier. Dashboard ESLint uses a content-addressed `.eslintcache`, and the dashboard's TypeScript projects use incremental build-info files; both are gitignored. `PYRIGHT_PYTHON_IGNORE_WARNINGS=1` is set only for Pyright, and a real type error still fails.
+The fast tier passes every tracked Python file to one GNU `xargs` invocation with a 256 KiB buffer, so Ruff and Pyright run once instead of twice. It derives every tier scope line in one `scope_reporting hook-batch` call and replays each line in its original position. The Python and dashboard rails run concurrently, but their buffered output is printed Python first and dashboard second; a failure in either rail fails the tier. Dashboard linting runs cache-free `oxlint` (no `--cache` flag), while the dashboard's TypeScript projects use incremental `tsc -b` build-info files (`*.tsbuildinfo`), which are gitignored. `PYRIGHT_PYTHON_IGNORE_WARNINGS=1` is set only for Pyright, and a real type error still fails.
 
 ## Relationships
 
@@ -31,7 +31,7 @@ The fast tier passes every tracked Python file to one GNU `xargs` invocation wit
 - One 256 KiB xargs batch passes the tracked Python population to Ruff and Pyright. [6]
 - Every tier scope line is rendered by one scope-batch invocation. [7]
 - The Python and dashboard rails overlap while their output keeps fixed order. [8]
-- The warm caches are content-addressed and the Pyright wrapper notice is silenced. [9]
+- Dashboard linting runs cache-free oxlint without ESLint cache flags while the Pyright wrapper notice is silenced. [9]
 
 - The fast tier runs the prerequisite look first and the dashboard checks last. [2]
 - Every tier ends on its own pass or fail line. [4]

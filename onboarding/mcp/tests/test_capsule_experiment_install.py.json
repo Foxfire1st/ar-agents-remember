@@ -142,6 +142,22 @@
         }
       ]
     },
+    "17": {
+      "note": "The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The selected install fixture leaves no coordination-root skills directory and none of the withheld startup targets.",
       "targets": [
@@ -202,22 +218,6 @@
               "kind": "line_range",
               "start": 680
             }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9b4bc7525b00d8df391a71b6d9c44dccbb4b247c",
-            "content": "sha256:aa66b9911a2ce76293146b342f8978eb19cac8468c1b75026b2737a043cdfa48",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
         }

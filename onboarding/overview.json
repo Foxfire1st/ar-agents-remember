@@ -220,7 +220,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
             "content": "sha256:5da6bcb1e5bc4e198aed174974ca82030cb1458a4810fd23bf6dd5511de2d96b",
             "locator": {
               "end": 19,
@@ -238,12 +238,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
             "content": "sha256:76148e490a86380f0f3265f57b779685b4b3d0ee224f857adfc6503284d5b5ef",
             "locator": {
-              "end": 459,
+              "end": 458,
               "kind": "line_range",
-              "start": 387
+              "start": 386
             },
             "path": ".githooks/_gate.sh"
           },
@@ -256,12 +256,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
             "content": "sha256:7ad2d78b551e9f693cfad68f91b344bf7d7f5b221843c07d1111a1ece32f601e",
             "locator": {
-              "end": 370,
+              "end": 369,
               "kind": "line_range",
-              "start": 331
+              "start": 330
             },
             "path": ".githooks/_gate.sh"
           },
@@ -1220,12 +1220,12 @@
         },
         {
           "anchor": {
-            "blob": "340226826a5e249c8745629830d7bf8b7ac11cc6",
+            "blob": "074f7ffea4d85e07442938cb072c0e3106214b8d",
             "content": "sha256:7966d22bb88ffde688184c10411a22c4e29f4b914fce61537c99db17fcc3c28f",
             "locator": {
-              "end": 402,
+              "end": 401,
               "kind": "line_range",
-              "start": 389
+              "start": 388
             },
             "path": "CONTRIBUTING.md"
           },
@@ -1251,12 +1251,12 @@
       ]
     },
     "281": {
-      "note": "Contributor guidance separates host feedback from Dagger-owned certifying evidence.\n\nAnchor: file",
+      "note": "Contributor guidance separates host feedback from Dagger-owned certifying evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "340226826a5e249c8745629830d7bf8b7ac11cc6",
-            "content": "sha256:3a309e6ba63dad2697bd5f41d7069a3b7ea3fc3e651075398389480f61c135a6",
+            "blob": "074f7ffea4d85e07442938cb072c0e3106214b8d",
+            "content": "sha256:3766281f95124c1ed320aa9927927bf38a1b5b1c100c5b24d5310795583efd99",
             "locator": {
               "kind": "file"
             },
@@ -1423,12 +1423,12 @@
         },
         {
           "anchor": {
-            "blob": "340226826a5e249c8745629830d7bf8b7ac11cc6",
+            "blob": "074f7ffea4d85e07442938cb072c0e3106214b8d",
             "content": "sha256:a987f35360e6c923130e35e738e51fe98cdeea1499aa0eab7ea4e391d72ba5ec",
             "locator": {
-              "end": 396,
+              "end": 395,
               "kind": "line_range",
-              "start": 389
+              "start": 388
             },
             "path": "CONTRIBUTING.md"
           },
@@ -4843,7 +4843,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "340226826a5e249c8745629830d7bf8b7ac11cc6",
+            "blob": "074f7ffea4d85e07442938cb072c0e3106214b8d",
             "content": "sha256:31231b8377b3de5c6777fef78eea8a724b20e871b97c9f7a2a944eb09fed6d05",
             "locator": {
               "end": 158,
@@ -4923,7 +4923,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
             "content": "sha256:60b5091e248fda7b888c6cb0d058d473a81ede06e5fd966f6001df08f5e8d3c2",
             "locator": {
               "end": 205,
@@ -4936,12 +4936,12 @@
         },
         {
           "anchor": {
-            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
             "content": "sha256:7ad2d78b551e9f693cfad68f91b344bf7d7f5b221843c07d1111a1ece32f601e",
             "locator": {
-              "end": 370,
+              "end": 369,
               "kind": "line_range",
-              "start": 331
+              "start": 330
             },
             "path": ".githooks/_gate.sh"
           },
@@ -4984,12 +4984,12 @@
       ]
     },
     "40": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Contributor guidance separates host feedback from Dagger-owned certifying evidence.\n\nAnchor: file",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Contributor guidance separates host feedback from Dagger-owned certifying evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "340226826a5e249c8745629830d7bf8b7ac11cc6",
-            "content": "sha256:3a309e6ba63dad2697bd5f41d7069a3b7ea3fc3e651075398389480f61c135a6",
+            "blob": "074f7ffea4d85e07442938cb072c0e3106214b8d",
+            "content": "sha256:3766281f95124c1ed320aa9927927bf38a1b5b1c100c5b24d5310795583efd99",
             "locator": {
               "kind": "file"
             },

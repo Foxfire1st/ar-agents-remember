@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "d5ffb4e005251208e31751ec2df07baf2653c788",
-    "commit": "a801c47d088d1b173ad2dfe4dc635b199433458d",
+    "codeTree": "9af497f7bb994eac3c3bb8c69069d5e8d702cb58",
+    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
     "role": "curator",
-    "statement": "Audited docs/design/python-pytest-bootstrap.md on 261112-BUG-L49 against synced post-L51 candidate d5ffb4e00525 (base a801c47d088d): case budgets (10000/2000), lane structure, stress-durability anchor (test-evidence-lanes.toml:848-850), conftest isolation, coverage/CRAP descriptions, and shifted pyproject.toml [tool.coverage.run] (73-78) match live code with zero contradictions; the design note makes no claim about [tool.pyright] exclude or bare pyright --project . runs.",
-    "task": "261112-BUG-L49",
+    "statement": "docs/design/python-pytest-bootstrap.md remains accurate on 9af497f7bb99 (incorporating BUG-L49 pyproject.toml) after adding mcp/tests/test_code_quality_dashboard_lint_scope.py to unit-regression (680 of 830 modules) because integration and stress-durability selection rules and the single stress-durability module (lines 849-851) are unchanged.",
+    "task": "261125-DEP-L6",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 26,
+  "revision": 27,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "ed04fba32f76f0abfc29cba36d54f498ec48655f",
+      "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -103,12 +103,12 @@
     },
     {
       "anchor": {
-        "blob": "ed04fba32f76f0abfc29cba36d54f498ec48655f",
+        "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
         "content": "sha256:cd1aadd0727e9055f7406e87eef73a6c7dd5a3457bbfc784c93a7ed4fc7eccc7",
         "locator": {
-          "end": 850,
+          "end": 851,
           "kind": "line_range",
-          "start": 848
+          "start": 849
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
@@ -129,14 +129,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T11:13:54+01:00",
+    "at": "2026-11-26T12:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L49",
+    "leaf": "261125-DEP-L6",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "27d19192-331c-5dd7-9444-7bc54c5bc458",
-    "task": "261112-BUG"
+    "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+    "task": "261125-DEP"
   }
 }
