@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
+        "blob": "b8e4aa8e44ccff1ebe6fe7845462c154cc17f6fa",
         "content": "sha256:b5dcbe353b74fecbe99d922961ca12bc08068532affba89c85e27c810c573ded",
         "locator": {
-          "end": 614,
+          "end": 615,
           "kind": "line_range",
-          "start": 614
+          "start": 615
         }
       },
       "id": "RLZ-9QPBZK",
@@ -74,12 +74,12 @@
     },
     {
       "anchor": {
-        "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
+        "blob": "b8e4aa8e44ccff1ebe6fe7845462c154cc17f6fa",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
-          "end": 748,
+          "end": 749,
           "kind": "line_range",
-          "start": 748
+          "start": 749
         }
       },
       "id": "RLZ-NJFH31",
@@ -110,12 +110,12 @@
     },
     {
       "anchor": {
-        "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
+        "blob": "b8e4aa8e44ccff1ebe6fe7845462c154cc17f6fa",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
-          "end": 566,
+          "end": 567,
           "kind": "line_range",
-          "start": 566
+          "start": 567
         }
       },
       "id": "RLZ-ZTDYFT",
@@ -189,36 +189,6 @@
               "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_reader_tree_coverage.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "839": {
-      "note": "The current lane catalog declares test populations; no invocation or pass is implied.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
-            "content": "sha256:9e12455a29006e8962e631ef256c3e0786a47e915d0c3a668abae195175784f6",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "840": {
-      "note": "The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
-            "content": "sha256:9e12455a29006e8962e631ef256c3e0786a47e915d0c3a668abae195175784f6",
-            "locator": {
-              "kind": "file"
-            }
           },
           "kind": "test"
         }
@@ -463,36 +433,6 @@
         }
       ]
     },
-    "858": {
-      "note": "The current lane catalog declares test populations; no invocation or pass is implied.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
-            "content": "sha256:9e12455a29006e8962e631ef256c3e0786a47e915d0c3a668abae195175784f6",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "859": {
-      "note": "The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
-            "content": "sha256:9e12455a29006e8962e631ef256c3e0786a47e915d0c3a668abae195175784f6",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "860": {
       "note": "The lane manifest registers the three review-evidence modules test_review_evidence_eof.py, test_review_evidence_packet.py and test_review_evidence_residuals.py, and test_review_frame_store.py, once each in unit-regression. Membership does not establish execution. Anchor: file",
       "targets": [
@@ -567,12 +507,12 @@
       ]
     },
     "864": {
-      "note": "The lane catalog declares 830 distinct modules across seven lanes: 680 unit-regression, 3 public-contract, 123 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result.",
+      "note": "The lane catalog declares 831 distinct modules across seven lanes: 681 unit-regression, 3 public-contract, 123 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
-            "content": "sha256:9e12455a29006e8962e631ef256c3e0786a47e915d0c3a668abae195175784f6",
+            "blob": "b8e4aa8e44ccff1ebe6fe7845462c154cc17f6fa",
+            "content": "sha256:35982696a832859a55396dd1af9208fb25b986ca9b0d2dfd44e60ac48d729802",
             "locator": {
               "kind": "file"
             }
@@ -599,12 +539,12 @@
       ]
     },
     "867": {
-      "note": "The lane catalog declares 830 distinct modules across seven lanes: 680 unit-regression, 3 public-contract, 123 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result.",
+      "note": "The lane catalog declares 831 distinct modules across seven lanes: 681 unit-regression, 3 public-contract, 123 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
-            "content": "sha256:9e12455a29006e8962e631ef256c3e0786a47e915d0c3a668abae195175784f6",
+            "blob": "b8e4aa8e44ccff1ebe6fe7845462c154cc17f6fa",
+            "content": "sha256:35982696a832859a55396dd1af9208fb25b986ca9b0d2dfd44e60ac48d729802",
             "locator": {
               "kind": "file"
             }
@@ -680,12 +620,12 @@
       ]
     },
     "869": {
-      "note": "The lane catalog declares 830 distinct modules across seven lanes: 680 unit-regression, 3 public-contract, 123 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. The catalog retains the after-discovery, explainer, publication and landing-workflow cases and the four surviving L192 regression modules (the five removed provider-specific L192 suites are absent). The retired provider-current-state suite has no lane registration.",
+      "note": "The lane catalog declares 831 distinct modules across seven lanes: 681 unit-regression, 3 public-contract, 123 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. The catalog retains the after-discovery, explainer, publication and landing-workflow cases and the four surviving L192 regression modules (the five removed provider-specific L192 suites are absent). The retired provider-current-state suite has no lane registration.",
       "targets": [
         {
           "anchor": {
-            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
-            "content": "sha256:9e12455a29006e8962e631ef256c3e0786a47e915d0c3a668abae195175784f6",
+            "blob": "b8e4aa8e44ccff1ebe6fe7845462c154cc17f6fa",
+            "content": "sha256:35982696a832859a55396dd1af9208fb25b986ca9b0d2dfd44e60ac48d729802",
             "locator": {
               "kind": "file"
             }
@@ -695,12 +635,12 @@
       ]
     },
     "870": {
-      "note": "The lane catalog declares 830 distinct modules across seven lanes: 680 unit-regression, 3 public-contract, 123 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result.",
+      "note": "The lane catalog declares 831 distinct modules across seven lanes: 681 unit-regression, 3 public-contract, 123 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
-            "content": "sha256:9e12455a29006e8962e631ef256c3e0786a47e915d0c3a668abae195175784f6",
+            "blob": "b8e4aa8e44ccff1ebe6fe7845462c154cc17f6fa",
+            "content": "sha256:35982696a832859a55396dd1af9208fb25b986ca9b0d2dfd44e60ac48d729802",
             "locator": {
               "kind": "file"
             }
@@ -938,6 +878,83 @@
           "anchor": {
             "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
             "content": "sha256:9e12455a29006e8962e631ef256c3e0786a47e915d0c3a668abae195175784f6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "907": {
+      "note": "The unit-regression lane selects `mcp/tests/test_code_quality_dashboard_lint_scope.py` once between `test_code_quality_check_scope.py` and `test_code_quality_targeted.py`; membership selects evidence and certifies no invocation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
+            "content": "sha256:8465fdb7d2e52d0ea4fbb661b69a1dd1e7936eedc95cfb5ccaf46f87e1953c4a",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 120
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "908": {
+      "note": "The current lane catalog declares test populations; no invocation or pass is implied.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
+            "content": "sha256:6f72608693b61ab3410fbe00859e05d76338f733f8a87069f712cb07b1f8d90d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "909": {
+      "note": "The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
+            "content": "sha256:6f72608693b61ab3410fbe00859e05d76338f733f8a87069f712cb07b1f8d90d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "910": {
+      "note": "The current lane catalog declares test populations; no invocation or pass is implied.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
+            "content": "sha256:6f72608693b61ab3410fbe00859e05d76338f733f8a87069f712cb07b1f8d90d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "911": {
+      "note": "The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
+            "content": "sha256:6f72608693b61ab3410fbe00859e05d76338f733f8a87069f712cb07b1f8d90d",
             "locator": {
               "kind": "file"
             }

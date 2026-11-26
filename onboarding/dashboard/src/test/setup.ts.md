@@ -29,9 +29,7 @@ missing globals. Grown in slice 5f S1 from an empty placeholder to carry those s
 - Defines a no-op `ResizeObserver` class when absent — React Aria components reference it.
 - Defines an inert `Element.prototype.scrollIntoView` when absent — the readers and the reviewer call it
   on the element they bring into view; tests assert selection state, never scroll geometry.
-- Defines a guarded `globalThis.CSS.escape` stub when `CSS` or `CSS.escape` is absent, escaping
-  non-identifier characters for attribute selectors — jsdom 25 omits `CSS.escape`, and React Aria calls
-  it for meta-tag and collection lookups.
+- Defines a guarded `globalThis.CSS.escape` stand-in (`escapeCssIdent`) when `CSS` or `CSS.escape` is absent, following CSSOM identifier serialization rules (replacing NULL with `\uFFFD`, hex-plus-space escaping ASCII controls, leading digits, and hyphen-followed-by-digit, escaping a standalone hyphen as `\-`, preserving non-ASCII/hyphen/underscore/ASCII-alphanumeric characters, and backslash-escaping other punctuation) — jsdom 25 omits `CSS.escape`, and React Aria calls it for meta-tag and collection lookups. `dashboard/src/test/cssEscape.test.ts` pins these serialization cases and `querySelector` attribute selectors.
 - Assigns inert SVG geometry stubs (`getBBox`/`getTotalLength`/`getPointAtLength`) across the SVG prototype
   chain (`SVGElement`/`SVGGraphicsElement`/`SVGGeometryElement`) — GSAP's DrawSVG/MotionPath (the engine-room
   timeline, 05n) call these when the effects-on GSAP-gate test builds the context, and **jsdom omits them**
@@ -58,7 +56,7 @@ missing globals. Grown in slice 5f S1 from an empty placeholder to carry those s
   ships a real `getBBox`/`getTotalLength`/`getPointAtLength` (or starts defining `SVGGeometryElement`), this
   same unconditional assignment will **silently overwrite the real implementation** with the inert stub —
   tests would keep passing against fabricated geometry with no signal that anything changed. The guarded
-  `typeof … === "undefined"` pattern used ~20 lines earlier for `matchMedia`/`ResizeObserver` would be immune
+  `typeof … === "undefined"` pattern used earlier in this file for `matchMedia`/`ResizeObserver` would be immune
   to that. Switching `setup.ts` to the guarded pattern is test-infrastructure work outside 260731-EFA-L4's
   scope; it is recorded here so the next jsdom bump weighs it.
 
@@ -82,7 +80,8 @@ calls without relying on browser playback that jsdom does not implement.
 
 - The render test that depends on these stubs. [3]
 
-- Guarded `globalThis.CSS.escape` stub supplies selector-safe escaping omitted by jsdom 25 for React Aria lookups. [4]
+- Guarded `globalThis.CSS.escape` stand-in (`escapeCssIdent`) implements CSSOM identifier serialization omitted by jsdom 25 for React Aria lookups. [4]
+- Unit tests cover the `CSS.escape` stand-in's CSSOM rules and `querySelector` attribute-selector usage. [5]
 
 
 

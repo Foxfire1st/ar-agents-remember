@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "73fc8a8e0c82f15e600a68e696494c112faebdd9",
-    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
+    "codeTree": "678adb9706701070f5f6b01f59848bebcc17593c",
+    "commit": "437d4d8935373432fb112a4a15d31e5d5f1bbcc2",
     "role": "curator",
-    "statement": "Verified on synced code 73fc8a8e (base 65911c75, post-BUG-L52/BUG-L51): CONTRIBUTING.md accurately describes the seven evidence lanes, canonical catalog form, runtime asset folders, and evidence_lifecycle --write command; L6 only added test_knowledge_state_conversion_verdict_ref.py to unit-regression in mcp/tests/test-evidence-lanes.toml (830 total / 680 unit-regression) without changing lane policy or budgets pinned in CONTRIBUTING.md.",
-    "task": "261112-KNO-L6",
-    "uncommitted": true
+    "statement": "Merged KNO-L6, 261126-SYN, and 261125-DEP-L6 on synced code tree 678adb970670 (commit 437d4d893537): CONTRIBUTING.md accurately describes the seven evidence lanes, canonical catalog form, runtime asset folders, BUG-L29 tool registration, BUG-L49 pyproject.toml, and DEP-L6 oxlint + incremental tsc -b updates; mcp/tests/test-evidence-lanes.toml declares 831 distinct modules (681 unit-regression including test_code_quality_dashboard_lint_scope.py, test_crossing_merge_writer_stamp.py, and test_knowledge_state_conversion_verdict_ref.py) without changing lane policy or budgets pinned in CONTRIBUTING.md.",
+    "task": "261125-DEP-L6",
+    "uncommitted": false
   },
   "document": "CONTRIBUTING.md",
   "id": "DPD-78737N",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 19,
+  "revision": 20,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "setup-hooks.sh"
     },
     {
-      "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+      "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
       "kind": "file",
       "path": ".githooks/_gate.sh"
     },
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
+      "blob": "b8e4aa8e44ccff1ebe6fe7845462c154cc17f6fa",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -121,7 +121,7 @@
       "path": "scripts/test-under-load.sh"
     },
     {
-      "blob": "703d4a247784c78f117744a0a9bc41e7e1cd015b",
+      "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
       "kind": "file",
       "path": "dashboard/package.json"
     },
@@ -207,14 +207,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T12:12:35+01:00",
+    "at": "2026-11-26T18:24:49+01:00",
     "by": "agent",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-5",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-KNO-L6",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "b7c84d12-6e3f-4a91-9b22-5d4f7c8e9a01",
-    "task": "261112-KNO"
+    "role": "manager",
+    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+    "task": "261125-DEP"
   }
 }

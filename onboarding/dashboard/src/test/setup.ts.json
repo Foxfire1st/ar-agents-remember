@@ -3,10 +3,31 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3b70d1b4108d83973e16bab179f303f94482fd2e",
-        "content": "sha256:7d1678b979a436493df1c27c7498d2592f21033d1715fd06c954f47fe3f0a4bd",
+        "blob": "b97ed5dd5e1b25ed82fa8116e41bffee923e3e8f",
+        "content": "sha256:e2aa8e45ba42a768fa88f4bfc95b960b4ce549553c3927bfb69fc1547c096beb",
         "locator": {
-          "kind": "file"
+          "end": 144,
+          "kind": "line_range",
+          "start": 100
+        }
+      },
+      "id": "RLZ-EW242Z",
+      "invariant": "INV-K5MG2M",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §5 (CSS.escape stand-in)",
+        "leaf": "261125-DEP-L6"
+      },
+      "rationale": "Implements W3C CSSOM identifier serialization rules for globalThis.CSS.escape in jsdom test setup.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b97ed5dd5e1b25ed82fa8116e41bffee923e3e8f",
+        "content": "sha256:0b07744e37d697a262143bd871cea0c9ed00d1fa996a4398d06e344f613d193c",
+        "locator": {
+          "end": 8,
+          "kind": "line_range",
+          "start": 8
         }
       },
       "id": "RLZ-SVAZ21",
@@ -75,17 +96,34 @@
       ]
     },
     "4": {
-      "note": "Guarded `globalThis.CSS.escape` stub supplies selector-safe escaping omitted by jsdom 25 for React Aria lookups.",
+      "note": "Guarded `globalThis.CSS.escape` stand-in (`escapeCssIdent`) implements CSSOM identifier serialization omitted by jsdom 25 for React Aria lookups.",
       "targets": [
         {
           "anchor": {
-            "blob": "3b70d1b4108d83973e16bab179f303f94482fd2e",
-            "content": "sha256:1f8037baaeb01a574a768c721b6006b37627b8b74feefa5291ef2cd746bafef4",
+            "blob": "b97ed5dd5e1b25ed82fa8116e41bffee923e3e8f",
+            "content": "sha256:9c2d05a20f0a3ffb38281bfc064adff0becfc2815e106990cf37bb4b1bf689c4",
             "locator": {
-              "end": 109,
-              "kind": "line_range",
-              "start": 100
+              "kind": "symbol",
+              "name": "escapeCssIdent"
             }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Unit tests cover the `CSS.escape` stand-in's CSSOM rules and `querySelector` attribute-selector usage.\n\nAnchor: `CSS.escape test setup stand-in (CSSOM identifier serialization)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f1f723a8041a749a82242a766eb14dda62c4329",
+            "content": "sha256:9be759a70a37774a7f318af94474f70e8b26fceb232b85ccf53965af911bc08f",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "dashboard/src/test/cssEscape.test.ts"
           },
           "kind": "test"
         }

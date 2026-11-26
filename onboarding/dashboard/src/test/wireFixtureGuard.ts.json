@@ -1,14 +1,34 @@
 {
   "path": "dashboard/src/test/wireFixtureGuard.ts",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
+        "content": "sha256:20fd88405b65a81b2f441677a2c9f1f1fec8ded2e2d412ced86c6bd9c7a799f5",
+        "locator": {
+          "end": 76,
+          "kind": "line_range",
+          "start": 75
+        }
+      },
+      "id": "RLZ-XRC3C6",
+      "invariant": "INV-C9JJFK",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §3 (TypeScript 7.0.2 + Option B compiler-API alias)",
+        "leaf": "261125-DEP-L6"
+      },
+      "rationale": "Imports the TypeScript 6.0.3 JS compiler API through the allowlisted typescript-compiler-api alias until TypeScript 7's programmatic API leaves unstable/.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The header: seven one-token opt-outs, why three of them carry no assertion at all, what makes the sweep fail-closed, and the rule scopes.\n\nAnchor: \"as unknown as TaskEntry\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:03b8725b27766b3eae262bd6a4689ffc0d729cd27acab3227429afc701906257",
             "locator": {
               "end": 10,
@@ -25,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:5210bf1bdd33d1f76b8a152b5bd3872e28e4c5bce9bb003e32ae412a9d8c16a1",
             "locator": {
               "kind": "symbol",
@@ -41,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:d7e3b7204d6484b019cc3d4a09b7b33de0c06a3f8fde61ebf9a35ad2eb8780d8",
             "locator": {
               "kind": "symbol",
@@ -52,7 +72,7 @@
         },
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:09904e2ab0d73b87558887f82fa551c6bf2bf1983c00400470a0c2f9e3c6f0af",
             "locator": {
               "kind": "symbol",
@@ -68,7 +88,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:57da3a1738c634d53cf373179ecbfff8539d70624a6078fddd5484f77b373172",
             "locator": {
               "kind": "symbol",
@@ -84,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:114909792405f49dde0a20cc2b4415fccc5827255d838fba729a6757cc78efd7",
             "locator": {
               "kind": "symbol",
@@ -155,7 +175,7 @@
         },
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:d8528ab7118305d925e7480c2b19902f8e8f39947002c7a357640fb406b14cff",
             "locator": {
               "end": 369,
@@ -224,7 +244,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:af994e03936b14b21ced4609ea8f1d7b5177460e2a2b5c2d7632bd27104efcae",
             "locator": {
               "end": 39,
@@ -258,7 +278,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:3d749a3bd1af25ed418d7774a2209c8c2c6cf0a8136d2bf4d524fc62aad15ac4",
             "locator": {
               "kind": "symbol",
@@ -269,12 +289,94 @@
         }
       ]
     },
+    "23": {
+      "note": "`wireFixtureGuard.ts`, `fixtureOverrides.test.ts`, and `loadIndependence.test.ts` import the TypeScript 6 compiler API via the `typescript-compiler-api` (`npm:typescript@^6.0.3`) alias, restricted to those three paths by `eslint/no-restricted-imports` in `dashboard/.oxlintrc.json` while `typescript` runs on `^7.0.2`.\n\nAnchor: `typescript-compiler-api`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
+            "content": "sha256:5982266bf6f29eb63c6bca5e1139e77e2a4c4186753165e1e675eb268dfcaf4a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "41ddb1d3c3074d19528a578314aad448414e6399",
+            "content": "sha256:25e84b1cd0a01f0e71536c08c4dbf0c2b2a67c18314023767aac1401e1d6c430",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/test/fixtureOverrides.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ea6923d301abe7065f0cd1533c6a573153c2bf56",
+            "content": "sha256:2ffe3c0847060462d68c3c21adbfe97676fc4349a7167293a1739dfd54ee516c",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "dashboard/src/test/loadIndependence.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
+            "content": "sha256:c654aece1c3a6b0c6c07b3ceecb97edfb3673aac1dfe377c3463e836f178cb06",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "dashboard/package.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8cfbfe42cda23045025c901a5c99af2d5318b9f9",
+            "content": "sha256:4a79e6d2ee8318b0d4be0a51bdb5e83830ce4182035e4040a950048b28cc8b9e",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "dashboard/.oxlintrc.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8cfbfe42cda23045025c901a5c99af2d5318b9f9",
+            "content": "sha256:b5730f1b942c95e37b2b9de8d59b5285b2e8c0736051ef839ad1b8426e81aec4",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 472
+            },
+            "path": "dashboard/.oxlintrc.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "`MIRROR_MARKER`, `declaresItselfAMirror`, `isWireModule` — the discovered vocabulary.",
       "targets": [
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:49bbbd80a469a0bf47f5f425475e27526e64730af5ccb37716d6c2017becbee3",
             "locator": {
               "kind": "symbol",
@@ -285,7 +387,7 @@
         },
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:9cbd02f35fb2a2c735934928b210e031c756503bddb582931a0e73e3093e472d",
             "locator": {
               "kind": "symbol",
@@ -296,7 +398,7 @@
         },
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:c21aa521feee485646d51650a9982f1c6b7faf97f295b6a5c62994958d640868",
             "locator": {
               "kind": "symbol",
@@ -312,7 +414,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:bfd215215fadf859c32fbce793a6edf12e0b518a69b7c139241025a43677cff3",
             "locator": {
               "kind": "symbol",
@@ -328,7 +430,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:0c1963e5cd5a238d452bac7b1ed7c6deadd83bafbf1164e771793307a2c6165b",
             "locator": {
               "kind": "symbol",
@@ -344,7 +446,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:8ecca33cdfb7e0b823d4923484faf52c8b455c7c8c5b93334df94dc82f59e9c0",
             "locator": {
               "kind": "symbol",
@@ -360,7 +462,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:aec706fd6941ffaefb8a1e7b84ca98e2e7ddfd9e77cc966d31a94bd59bceea53",
             "locator": {
               "kind": "symbol",
@@ -371,7 +473,7 @@
         },
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:17e06b69bf1a2f85fa0f7f3daa6edb67d6d805b795012a31b445ff6d29982d30",
             "locator": {
               "kind": "symbol",
@@ -382,7 +484,7 @@
         },
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:e02877d7b4b156ca1cb5d048ee126e86bc1eb1a67fc2d56d322a67c650a7d248",
             "locator": {
               "kind": "symbol",
@@ -398,7 +500,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:e78676eabc731a146b0ae29909de21362e8527f6e0785fbf6c72ab758eba2b1f",
             "locator": {
               "end": 394,
@@ -415,7 +517,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:18bc516d082e4191214ef67a5850700280733efa468b9781879757ed5dfe0270",
             "locator": {
               "kind": "symbol",

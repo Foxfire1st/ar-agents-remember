@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
-    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
+    "codeTree": "9af497f7bb994eac3c3bb8c69069d5e8d702cb58",
+    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
     "role": "curator",
-    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/design/canvas-host.md architectural boundaries remain accurate for the 261124-EXP explainer host and carry no retired search-provider, CodeGraphContext, or GrepAI claims.",
-    "task": "261125-DEP-L2",
+    "statement": "docs/design/canvas-host.md preserves all 261124-EXP canvas host and explainer boundaries on 9af497f7bb99 and accurately updates its dashboard lint verification command at line 382 to npx oxlint alongside npx tsc -b and npx vitest.",
+    "task": "261125-DEP-L6",
     "uncommitted": true
   },
   "document": "docs/design/canvas-host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -161,14 +161,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T07:08:02+01:00",
+    "at": "2026-11-26T12:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L2",
+    "leaf": "261125-DEP-L6",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
     "task": "261125-DEP"
   }
 }

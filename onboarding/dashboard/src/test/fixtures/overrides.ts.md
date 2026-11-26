@@ -98,7 +98,6 @@ No repository-relative Domain Documentation source applies; the two external Typ
 
 - The proof that all four rejections fire, that excess-property checking survives, and that the widened-variable case is a known pass. [5]
 
-
 - Consumer: every projection builder takes `Overrides<O, Node>`. [6]
 
 

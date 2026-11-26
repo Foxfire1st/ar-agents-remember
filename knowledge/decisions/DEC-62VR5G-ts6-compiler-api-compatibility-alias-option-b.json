@@ -1,0 +1,87 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Weighed porting the 688-line guard to TypeScript 7's unstable API against isolating a TypeScript 6 compiler-API alias, binding future imports via oxlint no-restricted-imports and deferring the port until TS 7's programmatic API stabilizes."
+  },
+  "alternatives": [
+    {
+      "option": "Keep TypeScript 7.0.2 owning typescript, tsc -b, typecheck, and build while isolating the newest release line shipping lib/typescript.js (npm:typescript@^6.0.3) under a 'typescript-compiler-api' alias restricted to the three test files by oxlint no-restricted-imports (Option B).",
+      "reason": "Keeps TypeScript 7 owning all product compilation and avoids porting the 688-line wire fixture guard onto an unstable API while containing legacy compiler-API imports to three test files.",
+      "status": "chosen"
+    },
+    {
+      "option": "Port wireFixtureGuard.ts, fixtureOverrides.test.ts, and loadIndependence.test.ts directly onto TypeScript 7's programmatic API under typescript/unstable/*.",
+      "reason": "A 688-line static fixture guard should not be ported onto an API explicitly marked unstable.",
+      "reconsider_when": "TypeScript 7's programmatic compiler API leaves unstable/, at which point the three test files should be ported and the typescript-compiler-api alias and no-restricted-imports override dropped.",
+      "status": "deferred"
+    }
+  ],
+  "consequences": [
+    "Dashboard builds and type checks run on TypeScript 7.0.2; dashboard/package.json carries a temporary typescript-compiler-api alias (npm:typescript@^6.0.3) restricted by dashboard/.oxlintrc.json to three test files, tracked as open debt in wireFixtureGuard.ts's card and weakness record."
+  ],
+  "context": "TypeScript 7.0.2 removed the JavaScript compiler API from the top-level 'typescript' package entry point and exposes programmatic compiler APIs only under 'typescript/unstable/*'; three dashboard test files (wireFixtureGuard.ts, fixtureOverrides.test.ts, loadIndependence.test.ts) rely on the JS compiler API.",
+  "decider": "Architect 97e0320d (leaf 261125-DEP-L6 Decision Log, 2026-11-25T21:04:48Z)",
+  "id": "DEC-62VR5G",
+  "links": [
+    {
+      "relation": "explains",
+      "target": "INV-C9JJFK"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
+        "content": "sha256:5982266bf6f29eb63c6bca5e1139e77e2a4c4186753165e1e675eb268dfcaf4a",
+        "locator": {
+          "end": 75,
+          "kind": "line_range",
+          "start": 75
+        },
+        "path": "dashboard/src/test/wireFixtureGuard.ts"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
+        "content": "sha256:c654aece1c3a6b0c6c07b3ceecb97edfb3673aac1dfe377c3463e836f178cb06",
+        "locator": {
+          "end": 67,
+          "kind": "line_range",
+          "start": 66
+        },
+        "path": "dashboard/package.json"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Planted TS2344 break in dashboard/src/test/contract.test.ts:519 caught by tsc 7.0.2 -b; planted restricted import blocked by oxlint (exit 1); clean-copy npm run typecheck, npm run build, and vitest (99/99) pass"
+      ],
+      "path": "l6-handoff.json"
+    },
+    "handoffEntry": "DEP-R06@v1 §3 (TypeScript 7.0.2 + Option B compiler-API alias)",
+    "leaf": "261125-DEP-L6",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T09:00:39+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L6",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+    "task": "261125-DEP"
+  }
+}

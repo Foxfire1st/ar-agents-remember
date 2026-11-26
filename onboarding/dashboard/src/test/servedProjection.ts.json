@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d9793c71824bc26c5fd6f59c6265b339b604a681",
+            "blob": "072a9c0e68a8e623018deb432383afea63fc90d2",
             "content": "sha256:7f9575d9a833b64f35d290ccba511ea4acde9b39bfa1bf52778bdfa52305e435",
             "locator": {
-              "end": 11,
+              "end": 12,
               "kind": "line_range",
-              "start": 11
+              "start": 12
             },
             "path": "dashboard/tsconfig.app.json"
           },

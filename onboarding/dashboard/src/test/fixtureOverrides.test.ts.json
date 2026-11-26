@@ -1,14 +1,34 @@
 {
   "path": "dashboard/src/test/fixtureOverrides.test.ts",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "41ddb1d3c3074d19528a578314aad448414e6399",
+        "content": "sha256:e1003fa327c667d043d95be709b58cbb710e7fd8629e5edf72aee46eb337b5d5",
+        "locator": {
+          "end": 2,
+          "kind": "line_range",
+          "start": 1
+        }
+      },
+      "id": "RLZ-Y1ES3B",
+      "invariant": "INV-C9JJFK",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §3 (TypeScript 7.0.2 + Option B compiler-API alias)",
+        "leaf": "261125-DEP-L6"
+      },
+      "rationale": "Imports flattenDiagnosticMessageText through the allowlisted typescript-compiler-api alias.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "`ts.Program#getSemanticDiagnostics` and `ts.flattenDiagnosticMessageText` are the documented compiler-API surface these assertions read.",
       "targets": [
         {
           "anchor": {
-            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "blob": "41ddb1d3c3074d19528a578314aad448414e6399",
             "content": "sha256:5e286e66701bd587b708f01893739a9cfcc99fe62e91f353a4796d0dc99b4655",
             "locator": {
               "end": 83,
@@ -41,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "blob": "41ddb1d3c3074d19528a578314aad448414e6399",
             "content": "sha256:6b6515259ef6e880529387771cc66a706ad4fc286a537b39736106dc95220047",
             "locator": {
               "end": 46,
@@ -53,7 +73,7 @@
         },
         {
           "anchor": {
-            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "blob": "41ddb1d3c3074d19528a578314aad448414e6399",
             "content": "sha256:9c0877c53e64ae6620ccd99197756efe3aa6fd71f8f0ac43864b968ef35ee32c",
             "locator": {
               "end": 107,
@@ -70,7 +90,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "blob": "41ddb1d3c3074d19528a578314aad448414e6399",
             "content": "sha256:ee7b220dcc5bfddb42e482b629b320330b0cdff30354d5a2cc1693cd802f3c3d",
             "locator": {
               "kind": "symbol",
@@ -81,12 +101,42 @@
         }
       ]
     },
+    "15": {
+      "note": "Imports `typescript-compiler-api` (`npm:typescript@^6.0.3`) under the three-file `eslint/no-restricted-imports` allowlist.\n\nAnchor: `typescript-compiler-api`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41ddb1d3c3074d19528a578314aad448414e6399",
+            "content": "sha256:25e84b1cd0a01f0e71536c08c4dbf0c2b2a67c18314023767aac1401e1d6c430",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8cfbfe42cda23045025c901a5c99af2d5318b9f9",
+            "content": "sha256:b5730f1b942c95e37b2b9de8d59b5285b2e8c0736051ef839ad1b8426e81aec4",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 472
+            },
+            "path": "dashboard/.oxlintrc.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "With `exactOptionalPropertyTypes` off, an optional property implicitly admits `undefined` — the rule that makes a bare `Partial<T>` override able to state that a required field is absent.\n\nAnchor: `exactOptionalPropertyTypes`",
       "targets": [
         {
           "anchor": {
-            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "blob": "41ddb1d3c3074d19528a578314aad448414e6399",
             "content": "sha256:53664f361037866ac39bc5d2343d194230bd87a7e5f2ca2200aa31dff112ffd3",
             "locator": {
               "end": 15,
@@ -99,40 +149,55 @@
       ]
     },
     "3": {
-      "note": "The header: what no guard rule can see, and why running over the guard's flag-free program is the point.\n\nAnchor: `PROBE_FILES` `GUARD_COMPILER_OPTIONS`",
+      "note": "The header: what no guard rule can see, and why running over the guard's flag-free program is the point.",
       "targets": [
         {
           "anchor": {
-            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
-            "content": "sha256:1c8e89d576fa911d1745c142a49830526eeda7a4e1042f3a3bdf5c358624f25b",
+            "blob": "41ddb1d3c3074d19528a578314aad448414e6399",
+            "content": "sha256:ee7b220dcc5bfddb42e482b629b320330b0cdff30354d5a2cc1693cd802f3c3d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "PROBE_FILES"
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
-            "content": "sha256:e4fe33b5ab72d1e360b6cfbbd87f7bd59677a983c32e6ab2acded3d1af7a2105",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
+            "content": "sha256:0c1963e5cd5a238d452bac7b1ed7c6deadd83bafbf1164e771793307a2c6165b",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "GUARD_COMPILER_OPTIONS"
             },
             "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "41ddb1d3c3074d19528a578314aad448414e6399",
+            "content": "sha256:7f11ad71e955e6b804bee6f38ba11b5af8eabde845cce9a0e279110d9b37986e",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 7
+            }
           },
           "kind": "test"
         }
       ]
     },
     "4": {
-      "note": "The four impossible calls, the two excess-property calls, and the nine honest shapes.\n\nAnchor: `PROBE_FILES`",
+      "note": "The four impossible calls, the two excess-property calls, and the nine honest shapes.",
       "targets": [
         {
           "anchor": {
-            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
-            "content": "sha256:1c8e89d576fa911d1745c142a49830526eeda7a4e1042f3a3bdf5c358624f25b",
+            "blob": "41ddb1d3c3074d19528a578314aad448414e6399",
+            "content": "sha256:ee7b220dcc5bfddb42e482b629b320330b0cdff30354d5a2cc1693cd802f3c3d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "PROBE_FILES"
             }
           },
           "kind": "test"
@@ -144,7 +209,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "blob": "41ddb1d3c3074d19528a578314aad448414e6399",
             "content": "sha256:5f75b8a2e310fc4f4df6c5b5a38f49bac5942524b071a8b8795d9e26e4312c84",
             "locator": {
               "end": 112,
@@ -161,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "blob": "41ddb1d3c3074d19528a578314aad448414e6399",
             "content": "sha256:f7078c3fd8e02dea99d841ddc4806842fd5c4476b59e0a64e42518a714fb0bdc",
             "locator": {
               "end": 69,
@@ -195,7 +260,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:8ecca33cdfb7e0b823d4923484faf52c8b455c7c8c5b93334df94dc82f59e9c0",
             "locator": {
               "kind": "symbol",
@@ -207,7 +272,7 @@
         },
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
             "content": "sha256:0c1963e5cd5a238d452bac7b1ed7c6deadd83bafbf1164e771793307a2c6165b",
             "locator": {
               "kind": "symbol",
@@ -220,16 +285,16 @@
       ]
     },
     "9": {
-      "note": "The guard's own statement of the same hole — item 5, \"A VALUE\" — which names this file as the answer.",
+      "note": "The guard's own statement of the same hole — item 5, \"A VALUE\" — which names this file as the answer.\n\nAnchor: \"A VALUE, NOT A NAME\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
-            "content": "sha256:9db2fdcb1887f4bd52cdb376fab7a79a7be3748ebb8ef70a334678f487c9c115",
+            "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
+            "content": "sha256:4206c0342262e733e8536fb9178c1abbb78ef960c83d5ae9baf2e52d93604503",
             "locator": {
-              "end": 75,
+              "end": 73,
               "kind": "line_range",
-              "start": 70
+              "start": 68
             },
             "path": "dashboard/src/test/wireFixtureGuard.ts"
           },

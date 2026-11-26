@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guarded by dashboard/src/test/cssEscape.test.ts, preventing broken React Aria attribute selectors in jsdom tests when keys start with a digit, hyphen-digit, standalone hyphen, NULL, or ASCII control character."
+  },
+  "applicability": "The globalThis.CSS.escape stand-in defined in dashboard/src/test/setup.ts for Vitest jsdom runs.",
+  "conditions": [
+    "Installed only when globalThis.CSS or globalThis.CSS.escape is absent.",
+    "Escapes leading ASCII digits, hyphen followed by a digit, standalone hyphen, NULL to U+FFFD, ASCII control characters, and punctuation per CSSOM identifier serialization."
+  ],
+  "exclusions": [
+    "Native browser CSS.escape implementations when already defined on globalThis.CSS.",
+    "jsdom 25 nwsapi hex-escaped #id shorthand selectors; tests verify attribute selectors matching React Aria."
+  ],
+  "id": "INV-K5MG2M",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "clean-copy npx vitest run src/test/cssEscape.test.ts (5/5 pass)"
+      ],
+      "path": "l6-handoff.json"
+    },
+    "handoffEntry": "DEP-R06@v1 §5 (CSS.escape stand-in)",
+    "leaf": "261125-DEP-L6",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The jsdom CSS.escape stand-in in dashboard/src/test/setup.ts implements CSSOM identifier serialization including leading digits, hyphen followed by a digit, standalone hyphen, NULL, and ASCII control characters, covered by dashboard/src/test/cssEscape.test.ts.",
+  "supersedes": [],
+  "title": "Jsdom CSS.escape stand-in follows CSSOM identifier serialization",
+  "writer": {
+    "at": "2026-11-26T00:38:22+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L6",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+    "task": "261125-DEP"
+  }
+}

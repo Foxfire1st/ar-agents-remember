@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The template says it is a memory-repo example to copy or adapt, then asks agents to report actual tool findings rather than only execution.\n\nAnchor: `# Code Quality Report Template`",
+      "note": "The template says it is a memory-repo example to copy or adapt, then asks agents to report actual tool findings rather than only execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "3cb4179e6bd0f6006943b140fc0a57b3355fb59f",
-            "content": "sha256:9688d001826adccf1e6191db3b789316f4b66736b36d3905aaef37a8303155c2",
+            "blob": "87831da93497486a4c701b9e6eb6850f5fe5579c",
+            "content": "sha256:8b8a6223a45ea6e411ade10d9b06093178da38ca3f0c1101d779911e29584201",
             "locator": {
               "end": 69,
               "kind": "line_range",
@@ -20,12 +20,12 @@
       ]
     },
     "2": {
-      "note": "The tool-results table is explicit but adaptable; the prose gives a TypeScript stack as a replacement example.\n\nAnchor: `## Tool Results`",
+      "note": "The tool-results table is explicit but adaptable; the prose gives a TypeScript stack as a replacement example.",
       "targets": [
         {
           "anchor": {
-            "blob": "3cb4179e6bd0f6006943b140fc0a57b3355fb59f",
-            "content": "sha256:c6e434e045225620b1adebbbc44211c0456aa4f7f2422970fe2852679fdc0dbd",
+            "blob": "87831da93497486a4c701b9e6eb6850f5fe5579c",
+            "content": "sha256:f396503abd67c2937bd9557be8d14ac286168ebd0fff45b5039947be12e71cd8",
             "locator": {
               "end": 39,
               "kind": "line_range",
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3cb4179e6bd0f6006943b140fc0a57b3355fb59f",
+            "blob": "87831da93497486a4c701b9e6eb6850f5fe5579c",
             "content": "sha256:d3610bee511bdbd1e547396aea0f88827a1ac07086d78d9f5b5d05f09e83f896",
             "locator": {
               "end": 59,
