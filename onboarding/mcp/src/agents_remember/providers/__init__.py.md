@@ -6,38 +6,4 @@
 
 ## Purpose
 
-Marks the Python package described as “Provider lifecycle, health, and query services”.
-
-## Code Commentary
-
-### Logic
-
-The file contains one module docstring.
-
-### Conventions
-
-No imports, explicit exports or callable definitions appear here.
-
-### Invariants And Boundaries
-
-This marker contains no service startup or check execution.
-
-### Todos
-
-None recorded.
-
-## Evidence
-
-### Docs References
-
-No domain documentation is configured. This card describes repository source only.
-
-### Repo-Internal References
-
-The sole source statement identifies this package.
-
-- Package description [1]
-
-### Cross-Repo References
-
-No cross-repository behavior is implemented in this file.
+This card records the retirement of `mcp/src/agents_remember/providers/__init__.py`. The `261125-DEP-L2` candidate (`DEP-R02@v1`, `DEC-ZGGT0G`) deleted this source file as part of removing the CodeGraphContext and GrepAI search providers and dead code. This file is retained only as a retirement record and grants no current contract, symbol, or route.

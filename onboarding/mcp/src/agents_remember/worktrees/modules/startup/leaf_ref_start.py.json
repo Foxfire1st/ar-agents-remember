@@ -147,12 +147,12 @@
       ]
     },
     "4": {
-      "note": "Caller parent is an assertion against canonical task topology; a mismatch returns corrected operation inputs before publication.",
+      "note": "Caller parent is an assertion against canonical task topology; a mismatch returns corrected operation inputs before publication.\n\nAnchor: `start_parent_input_refusal`, `start_input_edge_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "56033cbab370647c1152aefbc52572442f49be9d",
-            "content": "sha256:22f75cfc02317350cbd45a3133408cf775b56a57d6c8f134c48d8b6c1dc9fd70",
+            "blob": "8cb96d00f7f7d056a3860cc61442f5e58f0ec6d3",
+            "content": "sha256:c9e41e08ff9bc046818aae647bc1bfd7a8dfe46477fdc0ab9ecb88849a6d7229",
             "locator": {
               "kind": "file"
             }

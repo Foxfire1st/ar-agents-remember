@@ -39,7 +39,6 @@ No relevant external documentation is needed.
 
 - The application context packet builds the packet with `context_to_dict()`. [2]
 
-
 ### Cross-Repo References
 
 No cross-repository evidence is needed for this formatter.

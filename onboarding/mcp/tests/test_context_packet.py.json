@@ -3,14 +3,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Builds packet from allowed repo.\n\nAnchor: `test_builds_packet_from_allowed_repo`",
+      "note": "Builds packet from allowed repo.",
       "targets": [
         {
           "anchor": {
-            "blob": "a363ba265e5b479e8a8bf64b04e6165f1fe893f5",
-            "content": "sha256:c303e04dcd013978bb32f685cc5b79a1c5e9fcb0ce9254558b83e029f803ccf5",
+            "blob": "a67f8c0a96d6638e1fd2edfea3b9e933b0727e24",
+            "content": "sha256:d70169b60384e04c7984d015205cf3e916ab6301ba5114c0a319c605b179d80e",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_builds_packet_from_allowed_repo"
             }
           },
           "kind": "test"
@@ -22,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a363ba265e5b479e8a8bf64b04e6165f1fe893f5",
+            "blob": "a67f8c0a96d6638e1fd2edfea3b9e933b0727e24",
             "content": "sha256:51dd20f4a690ef8ee712adb9c62754b67c5ff465d4d740a54146aa84d822e9aa",
             "locator": {
               "kind": "symbol",
@@ -38,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a363ba265e5b479e8a8bf64b04e6165f1fe893f5",
+            "blob": "a67f8c0a96d6638e1fd2edfea3b9e933b0727e24",
             "content": "sha256:9bc8f28c0837b8ed1649900fa4ab8f8f602c23344fcce733ba674b2392db50bd",
             "locator": {
               "kind": "symbol",

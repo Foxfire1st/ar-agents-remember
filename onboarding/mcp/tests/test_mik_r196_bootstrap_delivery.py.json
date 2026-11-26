@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "7e159b5edd1a237f0d4ad5b8153b6542d6affa4e",
+        "blob": "a2ce2d72e023fdddc5fdd44228bb16a1ba77adb0",
         "content": "sha256:f74296314bb403b371679681d3bca7c7ec9aa06fdb271bd688a6b753fab04114",
         "locator": {
           "kind": "symbol",
@@ -22,12 +22,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "A start answers with the seat it made and the address at which the user continues it, and a repeat reconciles that seat.",
+      "note": "A start answers with the seat it made and the address at which the user continues it, and a repeat reconciles that seat.\n\nAnchor: `FreeSeatDeliveryTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "7e159b5edd1a237f0d4ad5b8153b6542d6affa4e",
-            "content": "sha256:c082651fcd4b900b63beb34870af4c8d5e23dd79285eee8668fc74d95a94dcd7",
+            "blob": "a2ce2d72e023fdddc5fdd44228bb16a1ba77adb0",
+            "content": "sha256:1d1a8200e637330fc912f50d4b0359943c06deb98bd077eb6d2e5e746a9824b6",
             "locator": {
               "kind": "file"
             }
@@ -37,12 +37,12 @@
       ]
     },
     "2": {
-      "note": "A model-only choice binds the caller's own harness, and an unoffered model is refused before a seat exists.",
+      "note": "A model-only choice binds the caller's own harness, and an unoffered model is refused before a seat exists.\n\nAnchor: `FreeSeatOverrideTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "7e159b5edd1a237f0d4ad5b8153b6542d6affa4e",
-            "content": "sha256:c082651fcd4b900b63beb34870af4c8d5e23dd79285eee8668fc74d95a94dcd7",
+            "blob": "a2ce2d72e023fdddc5fdd44228bb16a1ba77adb0",
+            "content": "sha256:1d1a8200e637330fc912f50d4b0359943c06deb98bd077eb6d2e5e746a9824b6",
             "locator": {
               "kind": "file"
             }
@@ -52,12 +52,12 @@
       ]
     },
     "3": {
-      "note": "A preparation refusal reports the files already written and each returned effect's identity.",
+      "note": "A preparation refusal reports the files already written and each returned effect's identity.\n\nAnchor: `test_an_occupied_worktrees_file_returns_a_refusal_with_partial_effects`",
       "targets": [
         {
           "anchor": {
-            "blob": "7e159b5edd1a237f0d4ad5b8153b6542d6affa4e",
-            "content": "sha256:c082651fcd4b900b63beb34870af4c8d5e23dd79285eee8668fc74d95a94dcd7",
+            "blob": "a2ce2d72e023fdddc5fdd44228bb16a1ba77adb0",
+            "content": "sha256:1d1a8200e637330fc912f50d4b0359943c06deb98bd077eb6d2e5e746a9824b6",
             "locator": {
               "kind": "file"
             }

@@ -95,7 +95,6 @@ No external domain claim is required.
 
 > Retained earlier citation wording: - **The caller.** It runs `cleanup_result`, short-circuits an already-completed cell, and shapes a real successful reclamation through this module — deliberately not when `dry_run` or the return code is nonzero, so a preview or refusal is reported in cleanup's own words. A completed cleanup cell still archives its recorded terminal agents.
 
-
 > Retained earlier citation wording: - The destructive procedure and its refusal authority, which this module deliberately does not duplicate. [6]
 
 - The kept-inventory fallback reads the contract it is handed, so its report is derived from the contract's own worktree and branch facts. [7]
@@ -113,18 +112,12 @@ No meaningful cross-repo references found.
 
 - The public entry point and the `already-clean` short-circuit that reports a proven prior reclamation.  Anchor: "ALREADY_CLEAN = \"already-clean\"" [1]
 
-
 - The four enclosure target kinds and optional outside scratch entry are inventoried into `removed` / `notRemoved`; kept worktree and branch targets fall back to the contract's own worktrees and branches. [2]
-
 
 - The counted operator sentence naming what was removed and what was left in place. [3]
 
 
-
 - **The caller.** It runs `cleanup_result`, short-circuits an already-completed cell, and shapes a real successful reclamation through this module — deliberately not when `dry_run` or the return code is nonzero, so a preview or refusal is reported in cleanup's own words. A completed cleanup cell still archives its recorded terminal agents. [5]
-
-
-
 
 
 - The destructive procedure and its refusal authority, which this module deliberately does not duplicate.  Anchor: `cleanup_result` [6]

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+        "blob": "7180cd694b55c6efb777c8f66ba9a0b1481afea1",
         "content": "sha256:c6b237de108b6ea7d4c34958fb206df82f5a72a176c8ec5ef95073f71101534a",
         "locator": {
           "end": 107,
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+        "blob": "7180cd694b55c6efb777c8f66ba9a0b1481afea1",
         "content": "sha256:09837c3f4a9d15771ad50e51cfdeae570643f2fe920589fadc4f8e85328c417e",
         "locator": {
           "kind": "symbol",
@@ -38,12 +38,12 @@
     },
     {
       "anchor": {
-        "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+        "blob": "7180cd694b55c6efb777c8f66ba9a0b1481afea1",
         "content": "sha256:128d80f70959b34f4d52fa7cc2e4442fa137a4564b1182cbbb591376c0aaf526",
         "locator": {
-          "end": 227,
+          "end": 217,
           "kind": "line_range",
-          "start": 203
+          "start": 193
         }
       },
       "id": "RLZ-EMQ775",
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+            "blob": "7180cd694b55c6efb777c8f66ba9a0b1481afea1",
             "content": "sha256:c6b237de108b6ea7d4c34958fb206df82f5a72a176c8ec5ef95073f71101534a",
             "locator": {
               "kind": "symbol",
@@ -74,12 +74,12 @@
       ]
     },
     "4": {
-      "note": "One listing level: real directories only; an unreadable folder contributes nothing.\n\nAnchor: `_walked_directories`",
+      "note": "One listing level: real directories only; an unreadable folder contributes nothing.\n\nAnchor: `walked_directories`",
       "targets": [
         {
           "anchor": {
-            "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
-            "content": "sha256:8c6724ba5e24d992a7803dce55fa86db60d0d6cb0d74ab85e21e5fa22ba3a647",
+            "blob": "7180cd694b55c6efb777c8f66ba9a0b1481afea1",
+            "content": "sha256:5d2be1fed8f0d27a2ae24927d581308f44bc4e7ddb8434fe5c00e1e339803120",
             "locator": {
               "kind": "file"
             }
@@ -93,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+            "blob": "7180cd694b55c6efb777c8f66ba9a0b1481afea1",
             "content": "sha256:35d2c236b7be1a224a5fd1487bf4e8bfbe84f319d762016f3b6343e8cf035a49",
             "locator": {
               "end": 65,

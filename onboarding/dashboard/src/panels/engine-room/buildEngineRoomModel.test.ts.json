@@ -4,22 +4,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "`buildEngineRoomModel` under test\n\nAnchor: `buildEngineRoomModel`",
+      "note": "`buildEngineRoomModel` under test\n\nAnchor: `buildEngineRoomModel`, `Source`: `dashboard/src/panels/engine-room/buildEngineRoomModel.ts:25-42`",
       "targets": [
         {
           "anchor": {
-            "blob": "ab7f380552d2c5c141cd55b980ed509244b01f6e",
-            "content": "sha256:b884491ea99fde955e270362b4da38e29eb25aa8cc0eec3e93bfdd65c6d19e5c",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ab7f380552d2c5c141cd55b980ed509244b01f6e",
+            "blob": "ef3bcd668e395c2e6fac6a52f0b34ddad856e4f9",
             "content": "sha256:bcda3aa2cce27047c0cb5733f48b675cf7fe6f3c7d6f70c8d4a4fce04ced66a4",
             "locator": {
               "kind": "symbol",
@@ -52,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab7f380552d2c5c141cd55b980ed509244b01f6e",
+            "blob": "ef3bcd668e395c2e6fac6a52f0b34ddad856e4f9",
             "content": "sha256:bcda3aa2cce27047c0cb5733f48b675cf7fe6f3c7d6f70c8d4a4fce04ced66a4",
             "locator": {
               "kind": "symbol",
@@ -101,12 +90,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab7f380552d2c5c141cd55b980ed509244b01f6e",
+            "blob": "ef3bcd668e395c2e6fac6a52f0b34ddad856e4f9",
             "content": "sha256:4790a1fc8280785656b495a24bbd1981e77e612a7ea4a0016c05f37047defa44",
             "locator": {
-              "end": 26,
+              "end": 25,
               "kind": "line_range",
-              "start": 26
+              "start": 25
             },
             "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
           },

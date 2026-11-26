@@ -19,10 +19,7 @@ The path witnesses distinguish domains: ordinary nonsecret paths within 200 char
 A coordinated two-thread test gives both writers the same nearly exhausted folder budget. Both writers complete, but the shared process lock admits only the affordable detail, preventing concurrent overspend. This supplements the existing whole-record cross-process and redaction tests.
 
 
-
-- Two detail writers cannot both spend one remaining budget. Anchor: `test_concurrent_details_cannot_both_spend_the_same_log_budget` [5]
-
-
+- Two detail writers cannot both spend one remaining budget. [5]
 
 
 ## Evidence
@@ -30,45 +27,15 @@ A coordinated two-thread test gives both writers the same nearly exhausted folde
 No Domain Documentation sources are configured; the evidence below is repository implementation or test assertions, not a new execution attestation.
 
 
+- Log fields, redaction and write-failure behavior are checked. [1]
 
 
 
+- Raised and refused calls keep real entry logging. [2]
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- Log fields, redaction and write-failure behavior are checked. Anchor: `ToolAnswerLogTests` [1]
-
-
-
-
-
-
-- Raised and refused calls keep real entry logging. Anchor: `ToolRaisedCallLoggingTests` [2]
-
-
-
-
-
-
-- Hermetic enclosure log placement and cleanup are asserted. Anchor: `ToolAnswerEnclosureTests` [3]
-
-
-
+- Hermetic enclosure log placement and cleanup are asserted. [3]
 
 
 - Real temporary-root paths obey the exact preservation or length-and-digest rule.  Anchor: `ToolAnswerLogTests.test_home_folder_path_follows_the_length_rule` [4]

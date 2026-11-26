@@ -164,8 +164,6 @@ that turns these bytes into typed values, the packaging provider that yields the
 manifest together, the source admission that gives the manifest its reserved metadata identity, the
 install-time corpus anchor, and the corpus test that pins the registry wiring.
 
-
-
 - The consumer that parses these bytes: the schema constant it checks against, and the pure parser that builds the typed manifest and refuses a vocabulary disagreement. [10]
 
 - The packaging consumer: the manifest is admitted beside its corpus root, and the provider yields root and manifest as one value "because they are one admission". [11]
@@ -204,9 +202,10 @@ No meaningful cross-repo references found.
 - The launcher entry: a routing condition with its own core block and its operations; it compiles no template. Anchor: `is_role` [21]
 
 - All nine operation entries declare audience selection. The references registry contains 50 entries, 38 marked step_detail; the shared digest is declared separately in core metadata. These are parsed registry declarations, not a compiled capsule or execution result. Anchor: `references` Anchor: `references` [29]
-- The manifest declares audience selection for all nine operations and records 50 reference entries, 38 marked step_detail. The role/operation order and the separately delivered shared digest are explicit routing declarations. Anchor: `composition_order` Anchor: `composition_order` [30]
-- The registry contains 38 non-injected step-detail entries, including `refused-write` and `writing/visual-explainers`. Authored entries keep topology, rolesReason explanations and legal no-step decisions; derived references hold current reader roles and action wording, and derived.core holds the shared digest audience. These values do not prove that a particular role read a file. [33]
 
+- The manifest declares audience selection for all nine operations and records 50 reference entries, 38 marked step_detail. The role/operation order and the separately delivered shared digest are explicit routing declarations. Anchor: `composition_order` Anchor: `composition_order` [30]
+
+- The registry contains 38 non-injected step-detail entries, including `refused-write` and `writing/visual-explainers`. Authored entries keep topology, rolesReason explanations and legal no-step decisions; derived references hold current reader roles and action wording, and derived.core holds the shared digest audience. These values do not prove that a particular role read a file. [33]
 
 ## Current Investigator contract impact
 
@@ -216,11 +215,7 @@ The manifest exposes canonical Investigator among the eight native roles, reques
 
 - The document's identity and authority: the schema name, the authority statement naming the thin router, and the authoritative tree the packaged copies are generated from. [1]
 
-
-
 - The nine operation blocks, each with its source, purpose and the roles that may run it. [3]
-
-
 
 ## Canonical Source Ownership
 
@@ -230,27 +225,15 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 
 The curator role's `tools` list requests `knowledge_write` beside `knowledge_read`. The list requests tools: it is checked against the published tool roster and enters the seal digest, so it grants nothing by itself; the Curator's served and granted surface is its `ROLE_TOOL_ALLOWLISTS` entry, which the list mirrors. The mounted `knowledge_write` runs the same leaf writer with the same arguments as `knowledge-ingest`, which is why the curator's role text may name it as an authoring route.
 
-
-
 - The core-source map's lifecycle-frame entry names task worktree records and the landing chain's lifecycle, not session adoption; the lifecycle-frame source points to the public worktree_start, worktree_attach and terminal-lifecycle references. [4]
-
 
 - The manifest retains canonical Investigator with ten declared tool IDs, matching its allowlist entry, and separately names Bootstrap; the current public LauncherRole roster has eight canonical roles plus the system-specialist alias, not a second Investigator role. [14]
 
-
-
-
 - The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [19]
-
-
 
 - The manifest records reference material and declared named-step details with injected:false, composes role then operation, and keeps shared core blocks out of that stream. The shared digest travels beside the capsule in its first message. [22]
 
-
-
-
 - The authored source owns this contract; the distribution copy is not a separate authority. [27]
-
 
 - The curator role requests `knowledge_write` beside the other knowledge operations, so the mounted writer is among the tools its capsule may name. [31]
 
@@ -259,9 +242,5 @@ The curator role's `tools` list requests `knowledge_write` beside `knowledge_rea
 - The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [6]
 
 - The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four). [7]
-
-
-
-
 
 - The manifest records reference material and declared named-step details with injected:false, composes role then operation, and keeps shared core blocks out of that stream. The shared digest travels beside the capsule in its first message. [9]

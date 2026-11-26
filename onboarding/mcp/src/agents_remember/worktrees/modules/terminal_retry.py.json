@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "557ef1903ac517458241153a5b2ed5a36a985ac7",
+        "blob": "ec521dcb1162c2d64279b1234201c76a171e7850",
+        "content": "sha256:38be33023a867a09e32071613c4dff0d1ed50504bbe57194e48a2e31526fd42c",
+        "locator": {
+          "kind": "symbol",
+          "name": "retry_terminal_group"
+        }
+      },
+      "id": "RLZ-VRT8EM",
+      "invariant": "INV-FBATD2",
+      "origin": {
+        "handoffEntry": "DEP-R02@v1 §1-w3",
+        "leaf": "261125-DEP-L2"
+      },
+      "rationale": "Retries generation-fenced whole-folder removal for an already-completed terminal archive without provider teardown.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ec521dcb1162c2d64279b1234201c76a171e7850",
         "content": "sha256:38be33023a867a09e32071613c4dff0d1ed50504bbe57194e48a2e31526fd42c",
         "locator": {
           "kind": "symbol",
@@ -22,15 +40,14 @@
   ],
   "references": {
     "1": {
-      "note": "`_require_generation` reloads the contract and raises `AuthorityError` if the contract or its terminal archive authority has diverged from `expected`.",
+      "note": "`_require_generation` reloads the contract and raises `AuthorityError` if the contract or its terminal archive authority has diverged from `expected`.\n\nAnchor: `_require_generation`",
       "targets": [
         {
           "anchor": {
-            "blob": "557ef1903ac517458241153a5b2ed5a36a985ac7",
-            "content": "sha256:ad31f8c359e43f03d937a82f8828c5c7f9a477410e3084ca9623355b5d360e9d",
+            "blob": "ec521dcb1162c2d64279b1234201c76a171e7850",
+            "content": "sha256:859f84aecb8e58e66a410b611188cd8fa81812faf9cfca898ce405acc6e215c7",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_generation"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -38,15 +55,14 @@
       ]
     },
     "2": {
-      "note": "`_worktree_blockers` runs `_worktree_preflight` and blocks any surviving Git checkout marked `would_remove` so retries never recursively delete checkouts.",
+      "note": "`_worktree_blockers` runs `_worktree_preflight` and blocks any surviving Git checkout marked `would_remove` so retries never recursively delete checkouts.\n\nAnchor: `_worktree_blockers`",
       "targets": [
         {
           "anchor": {
-            "blob": "557ef1903ac517458241153a5b2ed5a36a985ac7",
-            "content": "sha256:550c6dae4af52d515fc950194b8b915d247e5d344125d35b7901fe6a9f8007b5",
+            "blob": "ec521dcb1162c2d64279b1234201c76a171e7850",
+            "content": "sha256:859f84aecb8e58e66a410b611188cd8fa81812faf9cfca898ce405acc6e215c7",
             "locator": {
-              "kind": "symbol",
-              "name": "_worktree_blockers"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -54,15 +70,14 @@
       ]
     },
     "3": {
-      "note": "`retry_terminal_group` gates live retries with `lifecycle_location_reservation`, handles legacy series outside-scratch removal or modern retry, and maps generation/location/lock errors to a `terminal` blocker.",
+      "note": "`retry_terminal_group` gates live retries with `lifecycle_location_reservation`, handles legacy series outside-scratch removal or modern retry, and maps generation/location/lock errors to a `terminal` blocker.\n\nAnchor: `retry_terminal_group`",
       "targets": [
         {
           "anchor": {
-            "blob": "557ef1903ac517458241153a5b2ed5a36a985ac7",
-            "content": "sha256:38be33023a867a09e32071613c4dff0d1ed50504bbe57194e48a2e31526fd42c",
+            "blob": "ec521dcb1162c2d64279b1234201c76a171e7850",
+            "content": "sha256:859f84aecb8e58e66a410b611188cd8fa81812faf9cfca898ce405acc6e215c7",
             "locator": {
-              "kind": "symbol",
-              "name": "retry_terminal_group"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -70,15 +85,14 @@
       ]
     },
     "4": {
-      "note": "`_apply_retry` re-previews blockers, performs move-out via `prepare_group_removal`, tears down providers when requested, and removes the group via `remove_terminal_group`.",
+      "note": "`_apply_retry` re-previews blockers, performs move-out via `prepare_group_removal`, and removes the group via `remove_terminal_group` without provider teardown.\n\nAnchor: `_apply_retry`",
       "targets": [
         {
           "anchor": {
-            "blob": "557ef1903ac517458241153a5b2ed5a36a985ac7",
-            "content": "sha256:cb910dd2b3e32328ab5f50a10bffa8e326dc1a2abdac147ccea464c873e7985a",
+            "blob": "ec521dcb1162c2d64279b1234201c76a171e7850",
+            "content": "sha256:859f84aecb8e58e66a410b611188cd8fa81812faf9cfca898ce405acc6e215c7",
             "locator": {
-              "kind": "symbol",
-              "name": "_apply_retry"
+              "kind": "file"
             }
           },
           "kind": "code"

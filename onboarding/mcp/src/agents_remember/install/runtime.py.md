@@ -4,14 +4,17 @@
 
 The current source facts below are the operative account. Original paragraphs, evidence and citation identities remain in the explicitly historical section, corrected where the code does not support them; they grant no current call, restored route or fresh execution acceptance.
 
-- Current install attempts only old-watcher stop and continues on failed stop.
-- Current assets include docs and leftover/unused-provider reporting. Removed-store discovery and report formatting are imported from the shared `install/removed_stores.py` owner; this installer defines no second store/gate/lock inventory and performs no automatic deletion.
+- Provider watcher stopping (`install/provider_watchers.py`), provider asset syncing, and unused-provider-key reporting have been removed.
+- Current assets include shipped `docs/`, user-owned directories, and leftover removed-store reporting (`removedPartStores`, which includes `providers`, `logs/providers`, and `logs/observer/providers`). Removed-store discovery and report formatting are imported from the shared `install/removed_stores.py` owner; this installer defines no second store/gate/lock inventory and performs no automatic deletion.
 - Every accepted install removes the retired coordinator startup files `AGENTS.md`, `system/AGENTS.md` and `tasks/AGENTS.md`, selected experiment or not, and writes none of them.
 - The `runtime_install` result carries `mcpSettings`: the one-time copy of the workspace's `.claude/mcp/agents-remember-settings.json` to the user's MCP settings file (`install/mcp_settings.py`), reported as `copied`, `would-copy`, `already-present`, `no-source`, `permission` or `refused`.
 - The explicit upgrade copies the complete settings bytes and metadata to an exclusively created user file before removing the old file. R137 then closes file permissions to0444 and its folder to0555; permission bits are deliberately normalized, not preserved unchanged. Closure OSError leaves the completed move and a permissionsNote/protection report. Dry-run performs no transfer or closure. This read does not run an upgrade or edit the user file.
 
 - Every accepted install removes the three retired coordinator startup files. [19]
+
+
 - The install result carries the MCP settings copy outcome. [20]
+
 
 - Whole-file exclusive transfer precedes old-file removal; permission closure and its OSError report follow it. [12]
 
@@ -19,9 +22,9 @@ The current source facts below are the operative account. Original paragraphs, e
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/src/agents_remember/install/runtime.py:243-254`.
-- Source comparison: `mcp/src/agents_remember/install/runtime.py:495-512`.
-- Source comparison: `mcp/src/agents_remember/install/runtime.py:736-811`.
+- Source comparison: `mcp/src/agents_remember/install/runtime.py:242-286` (`upgrade_user_settings`).
+- Source comparison: `mcp/src/agents_remember/install/runtime.py:589-666` (`_install_assets` / `_install_runtime`).
+- Source comparison: `mcp/src/agents_remember/install/runtime.py:669-736` (`install_runtime_from_config`).
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
@@ -186,19 +189,15 @@ fields the entry point reads cannot drift apart.
 - The MCP application entry point forwards one typed request to the installer. [1]
 
 
+
 - `RuntimeInstallScope` carries an optional experiment selection, and both public entry points funnel through one private installer. [2]
+
 
 - Every accepted install removes the retired coordinator startup files and writes none of them. [3]
 
 - No skill tree is installed beside the runtime; the canonical corpus is reached from the packaged copy. [4]
 
 - The selection is resolved and probed before any write; with no selection passed, the run's environment is read. [6]
-
-- Provider settings generation derives lifecycle settings from MCP authority. [8]
-
-- The install stores a provider watcher rebind report, attempts the old-watcher stop before the provider refresh and continues on a failed stop. [9]
-
-- Provider watcher lifecycle orchestration and recovery-action construction live in the extracted install helper. [10]
 
 ## The host part
 
@@ -214,7 +213,9 @@ fields the entry point reads cannot drift apart.
 
 - Install consumes the one shared removed-store inventory without defining or deleting it. [14]
 
+
 - The shared no-follow store/gate/lock inventory and reporting retain explicit user-owned removal. [15]
+
 
 ## Observed effects and no installed skill tree
 
@@ -222,5 +223,6 @@ fields the entry point reads cannot drift apart.
 
 - The directory creation whose changed entries are observed. [16]
 - The file copy whose changed entries are observed. [17]
+
 
 - The install pass that writes the scaffold and no skill tree. [18]

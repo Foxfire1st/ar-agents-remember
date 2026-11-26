@@ -206,12 +206,25 @@
         },
         {
           "anchor": {
-            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "blob": "d82486d1c983c96522546f0cbd679f0eee4dbc60",
             "content": "sha256:9ba4e862fe0f5132658fdeb769f1c9e98939478fd2e2143fd854a320668552de",
+            "locator": {
+              "end": 568,
+              "kind": "line_range",
+              "start": 545
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d82486d1c983c96522546f0cbd679f0eee4dbc60",
+            "content": "sha256:57380391a2464786fd255bb6f564c24f4af215513cb146389724293577264c50",
             "locator": {
               "end": 588,
               "kind": "line_range",
-              "start": 565
+              "start": 571
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },
@@ -219,20 +232,7 @@
         },
         {
           "anchor": {
-            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
-            "content": "sha256:57380391a2464786fd255bb6f564c24f4af215513cb146389724293577264c50",
-            "locator": {
-              "end": 608,
-              "kind": "line_range",
-              "start": 591
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:624ffdbd4e52571befa2c524625adc8a838315b3a6486214d997874477c7ae07",
             "locator": {
               "end": 23,
@@ -938,7 +938,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfe0753185e5a094aa76840372354516987503d5",
+            "blob": "8a178a8072436cc1e1b99d241e37feb01994187f",
             "content": "sha256:d424aed091836a5806346e94edcebe40e4716778073398e69ca2ae6bb72acd2e",
             "locator": {
               "kind": "symbol",
@@ -955,7 +955,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfe0753185e5a094aa76840372354516987503d5",
+            "blob": "8a178a8072436cc1e1b99d241e37feb01994187f",
             "content": "sha256:d424aed091836a5806346e94edcebe40e4716778073398e69ca2ae6bb72acd2e",
             "locator": {
               "kind": "symbol",
@@ -972,7 +972,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfe0753185e5a094aa76840372354516987503d5",
+            "blob": "8a178a8072436cc1e1b99d241e37feb01994187f",
             "content": "sha256:d424aed091836a5806346e94edcebe40e4716778073398e69ca2ae6bb72acd2e",
             "locator": {
               "kind": "symbol",
@@ -989,7 +989,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfe0753185e5a094aa76840372354516987503d5",
+            "blob": "8a178a8072436cc1e1b99d241e37feb01994187f",
             "content": "sha256:91a5967451e5aa12fb72c05b33da5e83e2851ab39c1029b6daf33bb2a7f246a6",
             "locator": {
               "end": 553,
@@ -1007,7 +1007,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfe0753185e5a094aa76840372354516987503d5",
+            "blob": "8a178a8072436cc1e1b99d241e37feb01994187f",
             "content": "sha256:d424aed091836a5806346e94edcebe40e4716778073398e69ca2ae6bb72acd2e",
             "locator": {
               "kind": "symbol",
@@ -1212,42 +1212,15 @@
       ]
     },
     "43": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The port the helper calls (since MIK-R09 with a `leaf_refusal` twin) and the bundle field that carries it (beside `knowledge_crossing`, since MIK-R24, `knowledge_worklist`, since MIK-R08, `review_artifact_cleanup`, since MIK-R25, and `knowledge_gate`, since MIK-R09). Anchor: `KnowledgeValidationPort` `WorktreeServices`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The port the helper calls (since MIK-R09 with a `leaf_refusal` twin) and the bundle field that carries it (beside `knowledge_crossing`, since MIK-R24, `knowledge_worklist`, since MIK-R08, `review_artifact_cleanup`, since MIK-R25, and `knowledge_gate`, since MIK-R09).",
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
-            "content": "sha256:bfd1c5cb4522435afef4f6a5848cce983ec4713d6dedfbc3ca460f72da131141",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
+            "content": "sha256:1f775cd7d27d6b71943203bee865b1a0c0ae96164412b093ae0fe1604703fbfa",
             "locator": {
-              "end": 194,
-              "kind": "line_range",
-              "start": 159
-            },
-            "path": "mcp/src/agents_remember/worktrees/services.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
-            "content": "sha256:e224855983d9b6a8f1e69deb4707616d981354967641813826433eb42ec020d3",
-            "locator": {
-              "end": 345,
-              "kind": "line_range",
-              "start": 310
-            },
-            "path": "mcp/src/agents_remember/worktrees/services.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
-            "content": "sha256:a51f747a5567a7ef256b02c928604d81dd2a21853df7897de65279898bef5343",
-            "locator": {
-              "end": 389,
-              "kind": "line_range",
-              "start": 379
+              "kind": "symbol",
+              "name": "WorktreeServices"
             },
             "path": "mcp/src/agents_remember/worktrees/services.py"
           },
@@ -1356,7 +1329,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:8f96680898f7f47505195bd2aa85e34b5d6ac2fa29060e19da8ebdc618203b6f",
             "locator": {
               "kind": "symbol",
@@ -1368,7 +1341,7 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:10d81f79abdf38659f44010a5b9c65c7a311ee40ed2b6ad9be2937df7577de6a",
             "locator": {
               "kind": "symbol",
@@ -1380,7 +1353,7 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:bbcaa73b855c3188b4a8b6d415c7e2d516caaa06c5048e7ef7b2782b8996ae9d",
             "locator": {
               "kind": "symbol",
@@ -1438,29 +1411,15 @@
       ]
     },
     "52": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The port and the bundle field (which since MIK-R09 also carries `knowledge_gate`). Anchor: `KnowledgeWorklistPort` `WorktreeServices`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The port and the bundle field (which since MIK-R09 also carries `knowledge_gate`).",
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
-            "content": "sha256:4047bf5b3c872d01d55842e1b5b8db58bf82a0a58d2ce62be14a8708905c3df5",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
+            "content": "sha256:1f775cd7d27d6b71943203bee865b1a0c0ae96164412b093ae0fe1604703fbfa",
             "locator": {
-              "end": 236,
-              "kind": "line_range",
-              "start": 230
-            },
-            "path": "mcp/src/agents_remember/worktrees/services.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
-            "content": "sha256:a51f747a5567a7ef256b02c928604d81dd2a21853df7897de65279898bef5343",
-            "locator": {
-              "end": 389,
-              "kind": "line_range",
-              "start": 379
+              "kind": "symbol",
+              "name": "WorktreeServices"
             },
             "path": "mcp/src/agents_remember/worktrees/services.py"
           },
@@ -1508,7 +1467,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:78c2fc03754e60799b7b340e453b7d27c2a418c9e2c5107fd7eabba637286785",
             "locator": {
               "kind": "symbol",
@@ -1520,7 +1479,7 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:c589198488aae3fba7f0728df8cb78c599fbc4fa68ae434456c7908c9274782d",
             "locator": {
               "kind": "symbol",
@@ -1537,7 +1496,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
             "content": "sha256:a49a9c54c5362e6d72020b6b913bbb89e032b6b1b422a3b457811dfe1887d4dc",
             "locator": {
               "kind": "symbol",
@@ -1550,12 +1509,12 @@
       ]
     },
     "57": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Finalize resolves a leaf naming none through the shared helper.\n\nAnchor: `_folder_parent`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Finalize resolves a leaf naming none through the shared helper.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
-            "content": "sha256:dae78692c3f880a9249afa60c0944470b31b3405c308e45b8f77235c248a2a2a",
+            "blob": "a5fdc792c529205fd36769bc5c1793e6f7b6d9d9",
+            "content": "sha256:b375deed746d8ee86bb9895da44c9155f52da37b843cd9b21acc69f05aa5787e",
             "locator": {
               "kind": "file"
             },
@@ -1739,12 +1698,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:2527a4d11ca52461bb1a4f6b05b8286bdc4245b510af0e60973d189fc3cc3ac6",
             "locator": {
-              "end": 263,
+              "end": 218,
               "kind": "line_range",
-              "start": 242
+              "start": 197
             },
             "path": "mcp/src/agents_remember/worktrees/services.py"
           },
@@ -1752,12 +1711,12 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:65c64a27e1d8a7facd0ba297b0872f1ba80b9d5b356e45c103628f04e832321c",
             "locator": {
-              "end": 345,
+              "end": 300,
               "kind": "line_range",
-              "start": 292
+              "start": 247
             },
             "path": "mcp/src/agents_remember/worktrees/services.py"
           },
@@ -1902,7 +1861,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:7f7658aef8f8814a4f38488dc3f46c8ca272521cc949289aed2959d643702830",
             "locator": {
               "kind": "symbol",
@@ -2076,16 +2035,15 @@
       ]
     },
     "8": {
-      "note": "The worktree service bundle exposes typed ports for memory-quality task observation, knowledge validation, crossings, worklist recomputation, review-artifact cleanup and the invariant gate. The optional brief service receives the memory root and exact code pair.",
+      "note": "The worktree service bundle exposes typed ports for memory-quality task observation, knowledge validation, crossings, worklist recomputation, review-artifact cleanup and the invariant gate. The optional brief service receives the memory root and exact code pair.\n\nAnchor: `WorktreeServices`, `refresh_written_memory_briefs`",
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
-            "content": "sha256:c8bcf674b4d25495bd6d33c1cc0e85b9ee5ffa621f008bec05228a88b451c051",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
+            "content": "sha256:1f775cd7d27d6b71943203bee865b1a0c0ae96164412b093ae0fe1604703fbfa",
             "locator": {
-              "end": 144,
-              "kind": "line_range",
-              "start": 111
+              "kind": "symbol",
+              "name": "WorktreeServices"
             },
             "path": "mcp/src/agents_remember/worktrees/services.py"
           },
@@ -2093,38 +2051,11 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
-            "content": "sha256:05411cec6a85740973d9eb5c496e28f3d80f01c4f5146b91a44dfe30ce859a53",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
+            "content": "sha256:506257b234cbbabfe64905d418fd35ac3ab358a20b4556072508343d390d258c",
             "locator": {
-              "end": 233,
-              "kind": "line_range",
-              "start": 159
-            },
-            "path": "mcp/src/agents_remember/worktrees/services.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
-            "content": "sha256:e224855983d9b6a8f1e69deb4707616d981354967641813826433eb42ec020d3",
-            "locator": {
-              "end": 345,
-              "kind": "line_range",
-              "start": 310
-            },
-            "path": "mcp/src/agents_remember/worktrees/services.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
-            "content": "sha256:5f408bc1035e85d2b806882c6a52e82e8fec1c0d511bbfd9efeca26a66ab37fa",
-            "locator": {
-              "end": 402,
-              "kind": "line_range",
-              "start": 368
+              "kind": "symbol",
+              "name": "refresh_written_memory_briefs"
             },
             "path": "mcp/src/agents_remember/worktrees/services.py"
           },
@@ -2420,7 +2351,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfe0753185e5a094aa76840372354516987503d5",
+            "blob": "8a178a8072436cc1e1b99d241e37feb01994187f",
             "content": "sha256:30addfa9e7315b04c8eea4889493c643b27f6dba93e3bb0ea6bdb33b71352eee",
             "locator": {
               "end": 412,
@@ -2433,7 +2364,7 @@
         },
         {
           "anchor": {
-            "blob": "dfe0753185e5a094aa76840372354516987503d5",
+            "blob": "8a178a8072436cc1e1b99d241e37feb01994187f",
             "content": "sha256:ed87aa1001f8f50db3e1e01f775557a7358c9377813a609c920c75dec8290262",
             "locator": {
               "end": 553,

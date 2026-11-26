@@ -20,8 +20,6 @@ The contributor guide prescribes renewal for instruction facts and the generated
 
 ## Evidence
 
-
-
 - Checking reports differences without applying replacements; renewal applies the computed plan. [1]
 - Diagnostics distinguish changed JSON leaves from file presence and raw byte changes. [2]
 
@@ -29,7 +27,10 @@ The contributor guide prescribes renewal for instruction facts and the generated
 
 - The command and its manifest/pointer planners load repository test support. [3]
 
+
 - The contributor guide gives the command for instruction facts and the generated skills and tool-details copies, with a read-only check mode. [4]
+
+
 - The skills reference names the exact renewal command for the generated skills copy and points to the contributor rules. [5]
 - The release checklist requires a clean renewal check and current instruction facts and package copies, including tool-details. [6]
 - The hook checks projection, skills and runtime copies. Skills use the instruction renewal command. [7]

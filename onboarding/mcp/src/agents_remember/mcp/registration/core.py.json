@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
-        "content": "sha256:9e5854fbe11be37d34a5cb560424dbd3a5123ad4c718a82a1e7e3825f91508c6",
+        "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+        "content": "sha256:e985eda391e72f8d9a41556ac080c7874c1a1e9bcf750ef7abc77a73bf640d56",
         "locator": {
           "kind": "file"
         }
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+        "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
         "content": "sha256:486aea7cf1085901ed791ec718f389a35467c092ccc52019fc09b3ab6df8c946",
         "locator": {
           "end": 111,
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
-        "content": "sha256:9e5854fbe11be37d34a5cb560424dbd3a5123ad4c718a82a1e7e3825f91508c6",
+        "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+        "content": "sha256:e985eda391e72f8d9a41556ac080c7874c1a1e9bcf750ef7abc77a73bf640d56",
         "locator": {
           "kind": "file"
         }
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+        "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
         "content": "sha256:61b7cd1cea341dfd3850e0179a1d9b4e12f14ebee091f841eb9e4b81ca6a9042",
         "locator": {
           "kind": "symbol",
@@ -80,8 +80,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
-            "content": "sha256:7b5d0d19c9a4ee28d5b5e603600bf89600f18c3a2ae46ed03694bfc5352c67b6",
+            "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+            "content": "sha256:dfb1a9bbac3c5543a924ac4ab155eb4a24e23dc2376c844b494e317a2f6584a3",
             "locator": {
               "kind": "symbol",
               "name": "_register_installation_tools"
@@ -92,16 +92,37 @@
       ]
     },
     "11": {
-      "note": "Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; `task_context` remains typed on both readers and explicitly supplied `refresh` remains refused.",
+      "note": "Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; `task_context` remains typed on both readers and explicitly supplied `refresh` remains refused.\n\nAnchor: `_register_identity_tools`, `_register_orientation_tools`, `_register_installation_tools`",
       "targets": [
         {
           "anchor": {
-            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
-            "content": "sha256:018de6adc8a896b7f29f7203fcc713cf35caf296c9c90cbf3907d1dae853b40f",
+            "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+            "content": "sha256:3c228c4c16d351ff935eb413d30fb7532f8791a234fa85b696a616ee34434fd6",
             "locator": {
-              "end": 136,
-              "kind": "line_range",
-              "start": 54
+              "kind": "symbol",
+              "name": "_register_identity_tools"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+            "content": "sha256:61b7cd1cea341dfd3850e0179a1d9b4e12f14ebee091f841eb9e4b81ca6a9042",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_orientation_tools"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+            "content": "sha256:dfb1a9bbac3c5543a924ac4ab155eb4a24e23dc2376c844b494e317a2f6584a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_installation_tools"
             }
           },
           "kind": "code"
@@ -153,16 +174,15 @@
       ]
     },
     "4": {
-      "note": "The registration takes the keyword-only `experiment` parameter and builds the run's request itself. Anchor: `RuntimeInstallRequest`",
+      "note": "The registration takes the optional experiment parameter and builds the run's RuntimeInstallRequest itself.\n\nAnchor: `runtime_install`, `RuntimeInstallRequest`",
       "targets": [
         {
           "anchor": {
-            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
-            "content": "sha256:5a375498f1450f47d9e8bb8811f2d54608f9a9385651499b94c9b79efc52b580",
+            "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+            "content": "sha256:48834fafcae3d9b9a0c8bd7ba2366e8a3f8e4621a5578d96ed223cefe32dc7ee",
             "locator": {
-              "end": 136,
-              "kind": "line_range",
-              "start": 119
+              "kind": "symbol",
+              "name": "runtime_install"
             }
           },
           "kind": "code"
@@ -174,8 +194,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
-            "content": "sha256:a107f3dcff54020fa3b4f67b4816f2db0c52c3a645fd9ff0f729e6d07f32fc43",
+            "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+            "content": "sha256:3c228c4c16d351ff935eb413d30fb7532f8791a234fa85b696a616ee34434fd6",
             "locator": {
               "kind": "symbol",
               "name": "_register_identity_tools"
@@ -190,7 +210,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+            "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
             "content": "sha256:61b7cd1cea341dfd3850e0179a1d9b4e12f14ebee091f841eb9e4b81ca6a9042",
             "locator": {
               "end": 109,
@@ -207,8 +227,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
-            "content": "sha256:7b5d0d19c9a4ee28d5b5e603600bf89600f18c3a2ae46ed03694bfc5352c67b6",
+            "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+            "content": "sha256:dfb1a9bbac3c5543a924ac4ab155eb4a24e23dc2376c844b494e317a2f6584a3",
             "locator": {
               "kind": "symbol",
               "name": "_register_installation_tools"
@@ -223,7 +243,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+            "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
             "content": "sha256:8aeef5ae7a9c584e2568ed4a23121e7a0d91e474cd520c3ad45c5849eddf7aeb",
             "locator": {
               "kind": "symbol",
@@ -239,8 +259,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
-            "content": "sha256:db38acbcbee09ad039f216fa7e5ec6b2aa0096d1d5648d20b0ccc1a605e13eb6",
+            "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+            "content": "sha256:b77b686e326bf7ecce14fac5f793b4901fc57976dd1f09370142572dea076d49",
             "locator": {
               "kind": "symbol",
               "name": "server_info"

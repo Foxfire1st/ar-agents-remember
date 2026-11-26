@@ -6,26 +6,4 @@
 
 ## Purpose
 
-`__init__.py` is the Docker-owned GrepAI lifecycle export facade. It groups the
-split GrepAI implementation modules behind one import surface for
-`providers.lifecycle`.
-
-## Code Commentary
-
-### Logic
-
-The lazy GrepAI lifecycle facade searches core, compose, backend, embedder, runner,
-and actions in that order and keeps the provider Docker-owned.
-
-### Invariants And Boundaries
-
-- Keep this module import-only.
-- GrepAI remains Docker-or-bust; implementation modules must not add host binary
-  or host Ollama fallbacks.
-
-## Evidence
-
-### Repo-Internal References
-
-- The parent lifecycle facade lists the GrepAI lifecycle package among its lazy exports. [1]
-- The lazy GrepAI facade searches core, compose, backend, embedder, runner, and actions in order, imports a matching module, caches the symbol, and raises if none exists. [2]
+This card records the retirement of `mcp/src/agents_remember/providers/grepai/lifecycle/__init__.py`. The `261125-DEP-L2` candidate (`DEP-R02@v1`, `DEC-ZGGT0G`) deleted this source file as part of removing the CodeGraphContext and GrepAI search providers and dead code. This file is retained only as a retirement record and grants no current contract, symbol, or route.

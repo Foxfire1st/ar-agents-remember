@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c736b4a31260e1409574816589285dbd2b2f8978",
-        "content": "sha256:eb1a421a565a4b7f523a98d6139052d3df63ffb3ff5043fefa00b57c4d6fdb78",
+        "blob": "a953644074e0343b0b4c2496e2b18ef696162573",
+        "content": "sha256:102b93a2b4c47beb63e3f02830eb8eba3f2fa7814499d67502865f3baac6a7dd",
         "locator": {
           "kind": "symbol",
           "name": "bootstrap_assignment"
@@ -22,15 +22,16 @@
   ],
   "references": {
     "1": {
-      "note": "The bootstrap sentence that invents no identity and creates no task, worktree or role.",
+      "note": "The bootstrap sentence that invents no identity and creates no task, worktree or role.\n\nAnchor: `` `bootstrap_assignment` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "c736b4a31260e1409574816589285dbd2b2f8978",
-            "content": "sha256:eb1a421a565a4b7f523a98d6139052d3df63ffb3ff5043fefa00b57c4d6fdb78",
+            "blob": "a953644074e0343b0b4c2496e2b18ef696162573",
+            "content": "sha256:102b93a2b4c47beb63e3f02830eb8eba3f2fa7814499d67502865f3baac6a7dd",
             "locator": {
-              "kind": "symbol",
-              "name": "bootstrap_assignment"
+              "end": 67,
+              "kind": "line_range",
+              "start": 45
             }
           },
           "kind": "code"
@@ -38,15 +39,16 @@
       ]
     },
     "2": {
-      "note": "The investigator sentence, whose concern comes from the parent that started the seat.",
+      "note": "The investigator sentence, whose concern comes from the parent that started the seat.\n\nAnchor: `` `investigator_assignment` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "c736b4a31260e1409574816589285dbd2b2f8978",
-            "content": "sha256:75ba190437616aa7d2eecb3d6aba358373c329d21a8f53cd7b262e48ee11dd1b",
+            "blob": "a953644074e0343b0b4c2496e2b18ef696162573",
+            "content": "sha256:b7b1e5957f8f5c8c628855827a4e129e2c3a237cf60541c944699cf7612072d2",
             "locator": {
-              "kind": "symbol",
-              "name": "investigator_assignment"
+              "end": 42,
+              "kind": "line_range",
+              "start": 28
             }
           },
           "kind": "code"
@@ -58,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c736b4a31260e1409574816589285dbd2b2f8978",
+            "blob": "a953644074e0343b0b4c2496e2b18ef696162573",
             "content": "sha256:7cb21d1589e7633bca1c43eabeda0794a63b6d007887e5e09bd016ca1bee6944",
             "locator": {
               "kind": "symbol",

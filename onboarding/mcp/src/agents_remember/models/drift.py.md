@@ -45,8 +45,8 @@ the shared error status and diagnostic field.
 
 ### Repo-Internal References
 
-- Context packet construction validates `_drift_packet` output with `DriftSummary.model_validate`; `_drift_packet` is typed as `DriftSummaryPacket`. [2]
 
+- Context packet construction validates `_drift_packet` output with `DriftSummary.model_validate`; `_drift_packet` is typed as `DriftSummaryPacket`. [2]
 
 
 - The onboarding drift model imports canonical `DriftStatus` and defines the `DriftSummaryPacket` wire shape. [3]

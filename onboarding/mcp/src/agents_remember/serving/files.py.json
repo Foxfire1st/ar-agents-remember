@@ -76,16 +76,15 @@
       ]
     },
     "2": {
-      "note": "The app factory registers file routes before the SPA static mount; other route registrations intervene.",
+      "note": "The app factory registers file routes before the SPA static mount; other route registrations intervene.\n\nAnchor: `create_app`, `register_files_routes`, `mount_static`",
       "targets": [
         {
           "anchor": {
-            "blob": "6fb2f573ec66936e88d9f008d82a4de1052fce25",
-            "content": "sha256:e66bdc1f418e7acffe1941c49a170c75387ffbf695c6d7044ea077e404111888",
+            "blob": "9c866f0410037ba86f479d0f43e3c00c6b059429",
+            "content": "sha256:0112f53ac6a8c48dfee7be224f560ebba39aec58e64bc79e69a1c16a1037e8e5",
             "locator": {
-              "end": 289,
-              "kind": "line_range",
-              "start": 223
+              "kind": "symbol",
+              "name": "create_app"
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -189,7 +188,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
             "content": "sha256:2f7fc71b853fa9cb9f443605702fc3088c095ad4756f35649dc1aecd6a53b90c",
             "locator": {
               "kind": "symbol",

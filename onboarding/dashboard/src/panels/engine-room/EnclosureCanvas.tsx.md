@@ -13,7 +13,6 @@ canvas keeps the composition and motion wiring (`useEngineTimeline`, Motion,
 AnimatePresence); the scene packet now comes from `scene.resolveScene`. Behavior is
 unchanged.
 
-
 ## Current enclosure-only composition
 
 Canvas accepts node, gateNode, officialLedger and resolves resolveScene(node). It still composes branches, shell, worktree/official ledger couplers, surviving conduits, landing, closeout and non-provider overlays. Provider prop/runtime derivations, gauges/wires/dropout, seed/clone paths and fault/reindex visuals are retired.
@@ -33,8 +32,6 @@ restore removed provider visuals or tool exposure.
 The prior onboarding below is retained for provenance and unrelated design history.
 It is not current provider-render, fallback, prototype-parity or execution guidance.
 Current behavior and its limits are the operative contract above.
-
-
 
 The Engine Room pod-stage **bird's-eye** (5g G1): one `EngineProcessNode` rendered as the two-world canvas
 from the design prototype (`dashboard/public/_proto/podstage.html`) — official line ↔ worktree enclosure,
@@ -403,14 +400,15 @@ Landing refs with `factState: stale` remain visible, carry an explicit state wor
 - `refusedPolarityOf` derives the flash polarity from `edge.state` alone (`failed`→red, `stale`→amber); the full rationale comment records the two current edge builders, their documented-kind distinction, fixture/test coverage, and why the integration arms remain despite no served payload driving them. [12]
 - `refusedEdges` — the `(edge, polarity)` list that drives the topmost flash; `RefusedConduit` renders it and stamps `data-polarity`/`data-refused-polarity` from the DERIVED polarity (the conduit itself carries neither). [13]
 - `Conduit` carries `data-kind`/`data-state`/`data-strategy`/`data-ghosted` and no polarity attribute. [14]
+
 - `EngineProcessEdge`'s documented `kind` and `state` vocabularies — `integration` is in one, `refused` in neither, and there is no `refusedPolarity` field. [15]
+
 - `_process_edges` emits only worktree-add, cgc-seed, ledger-map, grepai-clone and sync, so no served payload reaches the integration arms. [16]
 - `_start_process_node` — the other edge builder, checked for the same reason and emitting the same four kinds. [17]
 - Current `data-fx` marker ownership is split by renderer: `EngineGauge` renders `fault` and the structural reindex charge; `EngineFxOverlay` renders repeating `surge`/`reindex`/`breath`; `Conduit` and `LandingFlow` render `packet` dots; `TerminalStop` renders `stop`. [18]
 - `AnimatePresence` enter/exit (05k) on the feat-tier source nodes + the landing dock + the closeout train. [19]
 - `shouldAnimate` returns false for the effects-off or reduced-motion conditions, and `useShouldAnimate` resynchronizes that gate; `useEngineTimeline` is the GSAP consumer while `EngineGauge`/`Conduit`/`LandingFlow` are Motion consumers that use the boolean to render the end state. [20]
 - Left official-line engines + `officialWire` conduits + official coupler (from `workspaceEngines`). [21]
-- The `engineState` selector that derives each workspace engine's runtime. [22]
 - The bird's-eye recipes it renders with (incl. `engineSpine`/`enginePetal`/`officialWire`/`canopyStroke`/`laneFlag`). [23]
 - Projection types `EngineProcessEdge`/`EngineProcessNode`. [24]
 

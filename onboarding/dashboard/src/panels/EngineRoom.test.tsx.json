@@ -114,14 +114,14 @@
       ]
     },
     "6": {
-      "note": "The current EngineRoom case asserts no official provider strip or fallback, while the enclosure canvas remains present; its title records the MIK-R112 provider-engine surface removal.",
+      "note": "The current EngineRoom case asserts that engine-room-fallback is absent while enclosure-canvas renders.\n\nAnchor: `renders the live enclosure canvas without fallback chrome`",
       "targets": [
         {
           "anchor": {
-            "blob": "be0ac451d8bedb89e099b27a7d7548602601d947",
-            "content": "sha256:a7c9a318073762c1d8424db848b67e3031b2cf02b3e0326e37991462bd3c2810",
+            "blob": "f1ccd8e2dd784a63a71a249b3fd6c3697420acbc",
+            "content": "sha256:06e37e4ccc380480848d616a7f3815ab9a9b9e31b1af1af9d589fd768e75012d",
             "locator": {
-              "end": 151,
+              "end": 150,
               "kind": "line_range",
               "start": 144
             }
@@ -131,16 +131,15 @@
       ]
     },
     "7": {
-      "note": "The current Engine Room composes enclosure stack, process map, boot timeline and diagnostics; its test requires the official provider strip and fallback absent while the enclosure canvas remains. This is source ownership, not fresh executed visual proof.",
+      "note": "The current Engine Room composes enclosure stack, process map, boot timeline and diagnostics; its test requires fallback chrome absent while the enclosure canvas remains. This is source ownership, not fresh executed visual proof.\n\nAnchor: `EngineRoomImpl` (`EngineRoom.tsx:107-178`), `renders the live enclosure canvas without fallback chrome` (`EngineRoom.test.tsx:144-150`)",
       "targets": [
         {
           "anchor": {
             "blob": "c89382b7530853796de958e287f52a05bf0222f3",
             "content": "sha256:2aede7278b5afa2f34d995f55e47a09251c5042e5d230c595155d47469266519",
             "locator": {
-              "end": 178,
-              "kind": "line_range",
-              "start": 107
+              "kind": "symbol",
+              "name": "EngineRoomImpl"
             },
             "path": "dashboard/src/panels/EngineRoom.tsx"
           },
@@ -148,10 +147,10 @@
         },
         {
           "anchor": {
-            "blob": "be0ac451d8bedb89e099b27a7d7548602601d947",
-            "content": "sha256:a7c9a318073762c1d8424db848b67e3031b2cf02b3e0326e37991462bd3c2810",
+            "blob": "f1ccd8e2dd784a63a71a249b3fd6c3697420acbc",
+            "content": "sha256:06e37e4ccc380480848d616a7f3815ab9a9b9e31b1af1af9d589fd768e75012d",
             "locator": {
-              "end": 151,
+              "end": 150,
               "kind": "line_range",
               "start": 144
             }

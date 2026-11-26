@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0625ffff60b212b9f4e6620621454af7047bf025",
-        "content": "sha256:48c4dded800331d806325571ec67b82b7f285b0da5e32d7b166ee999e852aaf3",
+        "blob": "6e5882e87290ff2eda75e71e9fa1a226ec37d47a",
+        "content": "sha256:7ad06254b8b11a29ef49fa411dc4208e2b782041704eb8b32cffe77554eac21a",
         "locator": {
           "kind": "symbol",
           "name": "UNDOCUMENTED_COMMANDS"
@@ -21,12 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "0625ffff60b212b9f4e6620621454af7047bf025",
+        "blob": "6e5882e87290ff2eda75e71e9fa1a226ec37d47a",
         "content": "sha256:1daf22836cae45bb9b0b55af64cdfcceb54bcca51955a76c8dffa6e4aff8944d",
         "locator": {
-          "end": 344,
+          "end": 343,
           "kind": "line_range",
-          "start": 316
+          "start": 315
         }
       },
       "id": "RLZ-ESCY24",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "0625ffff60b212b9f4e6620621454af7047bf025",
+        "blob": "6e5882e87290ff2eda75e71e9fa1a226ec37d47a",
         "content": "sha256:5c0f8ecbb0cdbde47fcbbe6ed8dc1c9cec0d36502d9d70c94982fdb70c41f9a5",
         "locator": {
           "kind": "symbol",
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "0625ffff60b212b9f4e6620621454af7047bf025",
-        "content": "sha256:48c4dded800331d806325571ec67b82b7f285b0da5e32d7b166ee999e852aaf3",
+        "blob": "6e5882e87290ff2eda75e71e9fa1a226ec37d47a",
+        "content": "sha256:7ad06254b8b11a29ef49fa411dc4208e2b782041704eb8b32cffe77554eac21a",
         "locator": {
           "kind": "symbol",
           "name": "UNDOCUMENTED_COMMANDS"
@@ -81,7 +81,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0625ffff60b212b9f4e6620621454af7047bf025",
+            "blob": "6e5882e87290ff2eda75e71e9fa1a226ec37d47a",
             "content": "sha256:34f6e1354229d128f9898b5c3707710e9462523c4c6204eb13ef34fa9622cdc0",
             "locator": {
               "kind": "symbol",
@@ -97,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0625ffff60b212b9f4e6620621454af7047bf025",
+            "blob": "6e5882e87290ff2eda75e71e9fa1a226ec37d47a",
             "content": "sha256:6e1830355fc54f0df130590f5a1304e608a6512837b2965d379422a0a7cd01fa",
             "locator": {
               "kind": "symbol",
@@ -113,7 +113,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0625ffff60b212b9f4e6620621454af7047bf025",
+            "blob": "6e5882e87290ff2eda75e71e9fa1a226ec37d47a",
             "content": "sha256:4d8f3a325d2d05b071eef123c2cd6149996ca1d6eb05325b2667e9a5a2dc9342",
             "locator": {
               "kind": "symbol",
@@ -125,14 +125,26 @@
       ]
     },
     "4": {
-      "note": "The full check applies command-table coverage and reserves entries in UNDOCUMENTED_COMMANDS outside the table.",
+      "note": "The full check applies command-table coverage and reserves entries in UNDOCUMENTED_COMMANDS outside the table.\n\nAnchor: `UNDOCUMENTED_COMMANDS` / `assert_public_command_reference`",
       "targets": [
         {
           "anchor": {
-            "blob": "0625ffff60b212b9f4e6620621454af7047bf025",
-            "content": "sha256:15cf98b17a41c52fd99d09bbcd0d87eea1f7a3f56a059dab70c49ce607a242b5",
+            "blob": "6e5882e87290ff2eda75e71e9fa1a226ec37d47a",
+            "content": "sha256:7ad06254b8b11a29ef49fa411dc4208e2b782041704eb8b32cffe77554eac21a",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "UNDOCUMENTED_COMMANDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6e5882e87290ff2eda75e71e9fa1a226ec37d47a",
+            "content": "sha256:5c0f8ecbb0cdbde47fcbbe6ed8dc1c9cec0d36502d9d70c94982fdb70c41f9a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_public_command_reference"
             }
           },
           "kind": "code"

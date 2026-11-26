@@ -3,11 +3,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The public benchmark facade re-exports this module's public constants.",
+      "note": "The public benchmark facade re-exports this module's public constants.\n\nAnchor: `\"from agents_remember.benchmarks.runner_modules.constants import *\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+            "blob": "de11957930055a6254a420c3b62154d41c6c931a",
             "content": "sha256:1840757582478d6cb21937e0712072db6e09e3c8d195f35585ca4419e54521af",
             "locator": {
               "end": 16,
@@ -20,10 +20,10 @@
         },
         {
           "anchor": {
-            "blob": "ac76ec64057a6893daa0f473b52ee8c8482e6475",
-            "content": "sha256:43f10f6c62f0f15da80bd8ed2e35d2a407b8871a1c3314dda6673e0334f532d2",
+            "blob": "8b42895d7bbdb10687ee6e46ed8c8d989546c01e",
+            "content": "sha256:c0fb2178f9680446b22ddbe28d2214fc42a4facd48a09b15e322814e6ae726a2",
             "locator": {
-              "end": 35,
+              "end": 32,
               "kind": "line_range",
               "start": 1
             }
@@ -37,7 +37,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac76ec64057a6893daa0f473b52ee8c8482e6475",
+            "blob": "8b42895d7bbdb10687ee6e46ed8c8d989546c01e",
             "content": "sha256:f880ff165f14f8cfc5793c97f247080fdd3697235b851c0c1b81c08ec746e41e",
             "locator": {
               "kind": "symbol",

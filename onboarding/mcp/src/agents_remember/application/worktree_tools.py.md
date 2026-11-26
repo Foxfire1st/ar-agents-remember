@@ -4,7 +4,7 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- Current start calls parameterless write_lifecycle_settings().
+- Current start performs no provider setup and writes no provider lifecycle settings; `StartExecution` carries only `dry_run` and `lifecycle_finalize_task_tool` accepts no `teardown_providers` flag.
 - Worktree start/attach no longer adopt or switch an ambient lifecycle, and an already-bound session supplies no start refusal. lifecycleId remains stable contract/event-scope identity; native task-stage publication has its own owner.
 
 Ordinary closeout apply and integration enter their worktree owners synchronously and return the reached result. Worktree status reads retained operation rows. Only a direct-landing generation supports executable journal controls.
@@ -15,8 +15,8 @@ Ordinary closeout apply and integration enter their worktree owners synchronousl
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/src/agents_remember/application/worktree_tools.py:197-277`.
-- Source comparison: `mcp/src/agents_remember/application/worktree_tools.py:301-304`.
+- Source comparison: `mcp/src/agents_remember/application/worktree_tools.py:193-225` (`worktree_start_tool`).
+- Source comparison: `mcp/src/agents_remember/application/worktree_tools.py:241-244` (`worktree_attach_tool`).
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
@@ -24,12 +24,9 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 Before worktree_start prepares an enclosure, the application owner resolves the exact canonical leaf id/path and reads its current grant. A granted or unreadable-grant leaf refuses with direct-leaf-no-enclosure; the readable case names role_start on the same leaf and master series checkouts as the remedy. Series and genuinely ungranted/unresolved leaf cases keep ordinary start admission. The predicate creates no enclosure and does not authorize from a harness setting.
 
-
 ## Current source evidence
 
-
 - Start/attach retain exact task authority without an ambient-session adoption or already-bound-session veto.
-
 
 ## Historical original card — preserved, not the current operative account
 
@@ -343,28 +340,18 @@ Certification refusals use the same projector when a `routeReview` finding is pr
 all original findings and gate-start facts. The catches remain narrow (`RouteReviewError` and
 `CertificationContractError`); no broad fallback or task-document mutation occurs in this adapter.
 
-
-
 - Closeout apply and integration call their synchronous transaction owners. The separate direct-landing recovery route retains the accepted generation. [1]
-
 
 - Public status observes the stable journal through the canonical locator and preserves it in the result. [2]
 
-
 - Public sync forwards typed memory choice, continue/cancel control and the repository-default source after configured-contract admission. [3]
-
-
-
 
 - The checkpoint landing entry point admits the contract and delegates the whole decision to the worktree layer. [4]
 
-
-
-
 - The pause entry point admits the contract, builds the typed args with the configured gate policy, and delegates to the stop route; it performs no publication work of its own. [5]
 
-
 - Stable sync projection is read from the enclosure-root journal. [6]
+
 
 - Worktree service behavior is owned by the worktree manager and its worktree modules, which this manager module re-exports. [7]
 
@@ -373,7 +360,8 @@ all original findings and gate-start facts. The catches remain narrow (`RouteRev
 
 
 
-- Route-review refusals are projected once with exact contract guidance at start/admission and closeout. [9]
+- Route-review refusals are projected once with exact contract guidance through the shared route-review and certification-refusal owners. [9]
+
 
 
 - **The closeout preview and closeout apply return paths now carry this leaf's final-output projection (ICR-R21@v1): the preview is decorated with the selected comparison generation and `prepared_is_reviewed_candidate`, the apply with the recorded receipt, and integration with the refs it landed — all attached after the Git transaction, so none of them can gate it.** [10]
@@ -381,11 +369,6 @@ all original findings and gate-start facts. The catches remain narrow (`RouteRev
 - Shared repo/path authority guards (`require_repo`, `require_within_coordination`). [12]
 
 > Retained earlier citation wording: - Lifecycle finalization behavior is delegated to the worktree finalizer module. [13]
-
-
-
-- The on-disk provider authority reload consumed before provider setup (containment R1). [14]
-
 
 - None [20]
 
@@ -395,10 +378,7 @@ all original findings and gate-start facts. The catches remain narrow (`RouteRev
 - Worktree service behavior is owned by the worktree modules, which this manager module re-exports. [22]
 
 
-
 - **The sync measures its own rebinding after the Git transaction and its contract write, so no review obligation can gate or refuse a completed sync; what it measured is a carrying sync's own resolved pair, published additively on the result.** [23]
-
-
 
 ## Series-Contract Notes
 
@@ -441,14 +421,11 @@ The current source seams include `TaskIdentity`, `TaskBases`, `StartExecution`. 
 ### Reconciled Source Evidence
 
 
-
 - The facade's start entry point consumes the extracted task-start request types at this boundary. [24]
 
 
 
-
-- The start entry point: it refuses a direct leaf start, reloads the on-disk provider authority before setup, and answers the worktree manager's start result with the provider veto and the start eligibility. [25]
-
+- The start entry point: it refuses a direct leaf start and answers the worktree manager's start result with the start eligibility. [25]
 
 
 ## 260821-CLIVE Final Public Worktree Boundary
@@ -522,7 +499,6 @@ memory match, the successor action, the statement, and the durable evidence refe
 and read-back — while a sync with nothing to bind states that instead. The
 field is additive: a caller that does not read it sees the sync result it always saw.
 
-
 ## Governing Overview
 
 [governing overview](overview.md)
@@ -531,10 +507,6 @@ field is additive: a caller that does not read it sees the sync result it always
 
 - Lifecycle finalization behavior is delegated to the worktree finalizer module.  Anchor: `finalize_result` [13]
 
-
 - The finalizer behind `lifecycle_finalize_task`: it refuses a disabled contract, answers the contract's readiness blockers, verifies cleanup, then reconciles the task documents and returns the finalized result.  Anchor: `finalize_result` [21]
-
-
-
 
 - Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope.  Anchor: `WorktreeSummary` `WorktreeCheckpointLandingResponse` [8]

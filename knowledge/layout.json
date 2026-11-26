@@ -459,9 +459,6 @@
       "knowledge/dependents/DPD-TCXJRQ-docs-guides-refresh-stale-onboarding-md.json",
       "knowledge/dependents/DPD-ZN7CD9-docs-guides-adopt-existing-memory-md.json"
     ],
-    "file:mcp/src/agents_remember/application/provider_runtime.py": [
-      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
-    ],
     "file:mcp/src/agents_remember/application/read_files.py": [
       "knowledge/dependents/DPD-T3PEFV-docs-reference-path-rules-md.json",
       "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
@@ -943,10 +940,11 @@
     "file:mcp/src/agents_remember/install/mcp_settings.py": [
       "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json"
     ],
-    "file:mcp/src/agents_remember/install/provider_watchers.py": [
+    "file:mcp/src/agents_remember/install/removed_stores.py": [
       "knowledge/dependents/DPD-10YCT2-docs-tool-details-md.json",
       "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json",
-      "knowledge/dependents/DPD-NGC2F6-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+      "knowledge/dependents/DPD-NGC2F6-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
     "file:mcp/src/agents_remember/install/runtime.py": [
       "knowledge/dependents/DPD-10YCT2-docs-tool-details-md.json",
@@ -1126,9 +1124,6 @@
       "knowledge/dependents/DPD-8PE0G9-security-md.json",
       "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
       "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json",
-      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
-    ],
-    "file:mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py": [
       "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
     ],
     "file:mcp/src/agents_remember/kernel/primitives/runtime_config.py": [
@@ -1624,22 +1619,6 @@
     "file:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_log.ts": [
       "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
     ],
-    "file:mcp/src/agents_remember/providers/degradation.py": [
-      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
-    ],
-    "file:mcp/src/agents_remember/providers/metrics.py": [
-      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json"
-    ],
-    "file:mcp/src/agents_remember/providers/settings.py": [
-      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json"
-    ],
-    "file:mcp/src/agents_remember/providers/setup_common.py": [
-      "knowledge/dependents/DPD-10YCT2-docs-tool-details-md.json",
-      "knowledge/dependents/DPD-NGC2F6-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
-    ],
-    "file:mcp/src/agents_remember/providers/watcher_service.py": [
-      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json"
-    ],
     "file:mcp/src/agents_remember/serving/_app_lifespan.py": [
       "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json"
     ],
@@ -2082,9 +2061,6 @@
     ],
     "file:mcp/tests/test_canvas_kit.py": [
       "knowledge/dependents/DPD-QH1N0S-docs-design-canvas-kit-md.json"
-    ],
-    "file:mcp/tests/test_l192_provider_safety_prose.py": [
-      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json"
     ],
     "file:mcp/tests/test_transaction_only_worktree_delivery.py": [
       "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"

@@ -30,6 +30,6 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "Code was removed by caller and not by module: every provider symbol, asset and key carries a recorded caller disposition, and the two closures finished only after their surviving production roots were shown to reach no start or status path (the watcher status/start branches, then the 15-function cgc start chain).",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

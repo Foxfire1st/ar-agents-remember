@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ad428e04cd4dcd80447499ffa6ea638b07e20e5d",
-    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "Verified docs/reference/runtime-layout.md (lines 1-243) on synced L41 candidate ad428e04 (main 150b9778/d05a7e86): runtime directory layout, packaged skill copies and server/receipt paths remain accurate with no contradiction under BUG-R41@v1.",
-    "task": "261112-BUG-L41",
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/reference/runtime-layout.md accurately matches the codebase: the coordination-root tree and runtime_install sections omit all search-provider folders and watcher/safety prose, note that pre-existing providers/, logs/providers/ and logs/observer/providers/ are reported as removed stores without deletion, and preserve host and model-provider limit layout.",
+    "task": "261125-DEP-L2",
     "uncommitted": true
   },
   "document": "docs/reference/runtime-layout.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+      "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/runtime.py"
     },
@@ -31,27 +31,7 @@
       "path": "mcp/src/agents_remember/install/mcp_settings.py"
     },
     {
-      "blob": "aa1a36d2b0380291d77aa3ff81c12026b03c214e",
-      "kind": "file",
-      "path": "mcp/src/agents_remember/install/provider_watchers.py"
-    },
-    {
-      "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
-      "kind": "file",
-      "path": "mcp/src/agents_remember/providers/settings.py"
-    },
-    {
-      "blob": "42e87d16f6942eb793617b78e693781c881667d5",
-      "kind": "file",
-      "path": "mcp/src/agents_remember/providers/watcher_service.py"
-    },
-    {
-      "blob": "bb587de04548f61668aee9d1d12cd35ff6ed4493",
-      "kind": "file",
-      "path": "mcp/src/agents_remember/providers/metrics.py"
-    },
-    {
-      "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
+      "blob": "207dc9c44d17a2ca5dcd0d69258a51318deb226a",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
     },
@@ -91,7 +71,7 @@
       "path": "mcp/src/agents_remember/serving/daemon.py"
     },
     {
-      "blob": "96d40632f177b320536d7d5714aa414da5585df1",
+      "blob": "105d286bf88246dd55eccd3fa2bda8973de66383",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/primitives/tool_reports.py"
     },
@@ -101,14 +81,9 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py"
     },
     {
-      "blob": "22ab4aa0627357a04c04fe027fc19236295a6fbd",
+      "blob": "c21816fc9900af93c5914a9744230e9902cb2ace",
       "kind": "file",
       "path": "mcp/src/agents_remember/benchmarks/runner_modules/workspace.py"
-    },
-    {
-      "blob": "25a6786f3f9bdba0f0a60e84842b9f309b259762",
-      "kind": "file",
-      "path": "mcp/tests/test_l192_provider_safety_prose.py"
     },
     {
       "blob": "1163730323bb54006aede86eb251a53e97a8ecc5",
@@ -121,7 +96,7 @@
       "path": "mcp/src/agents_remember/observer/provider_limits.py"
     },
     {
-      "blob": "2319cd59f5fe4cb132f6cf2dc90b3c4a2a718e60",
+      "blob": "232a354e175ed7dce1a51a4a04685b34967bc96f",
       "kind": "file",
       "path": "mcp/src/agents_remember/benchmarks/runner_modules/execution.py"
     },
@@ -135,7 +110,6 @@
         },
         "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py"
       },
-      "heading": "What the install does for the host",
       "kind": "anchor"
     },
     {
@@ -148,7 +122,6 @@
         },
         "path": "mcp/src/agents_remember/cli/role_registry_recovery.py"
       },
-      "heading": "What the install does for the host",
       "kind": "anchor"
     },
     {
@@ -161,19 +134,23 @@
         },
         "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
       },
-      "heading": "What the install does for the host",
       "kind": "anchor"
+    },
+    {
+      "blob": "49abd7dedfb211e2a1da7ba9ee529b133fc1cf74",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/install/removed_stores.py"
     }
   ],
   "writer": {
-    "at": "2026-11-26T02:58:55+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L41",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
-    "task": "261112-BUG"
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
   }
 }

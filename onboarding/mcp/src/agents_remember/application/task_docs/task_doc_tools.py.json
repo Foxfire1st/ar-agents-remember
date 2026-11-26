@@ -498,38 +498,16 @@
       ]
     },
     "20": {
-      "note": "The two end-to-end cases that pin the refusal's message and the still-working planning flow.\n\nAnchor: `test_authoring_a_leaf_with_no_master_document_is_refused_with_its_remedy` `test_authoring_a_master_and_its_leaves_before_any_start_still_succeeds`",
+      "note": "The two end-to-end cases that pin the refusal's message and the still-working planning flow.\n\nAnchor: `` `test_authoring_a_leaf_with_no_master_document_is_refused_with_its_remedy` `test_authoring_a_master_and_its_leaves_before_any_start_still_succeeds` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "d3d93b10ae91b4749bacacc39767a559fe5c4e61",
-            "content": "sha256:449529a6d1801d547e9a77b8f2e3d686473c652364bf7baccf70f3d6bb11c14d",
+            "blob": "14645a7867b05f58efb4b8e9f8495de6c3e73347",
+            "content": "sha256:ecf7cc61dda2e93ba16030aa2cd74e212f902748f1ee030f1aae865b433486ae",
             "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test_leaf_doc_master_link_binding.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d3d93b10ae91b4749bacacc39767a559fe5c4e61",
-            "content": "sha256:f0b94f939f3f2767e8bbf2d2426bd3638ef5102aad097cad71ea8d861a8d1ffb",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_authoring_a_leaf_with_no_master_document_is_refused_with_its_remedy"
-            },
-            "path": "mcp/tests/test_leaf_doc_master_link_binding.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d3d93b10ae91b4749bacacc39767a559fe5c4e61",
-            "content": "sha256:3b63c0044428e340e875126d98ac86cbdd1b6800ba45726b3c3ba25522a35f48",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_authoring_a_master_and_its_leaves_before_any_start_still_succeeds"
+              "end": 364,
+              "kind": "line_range",
+              "start": 331
             },
             "path": "mcp/tests/test_leaf_doc_master_link_binding.py"
           },

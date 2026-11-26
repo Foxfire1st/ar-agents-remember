@@ -10,7 +10,7 @@
 that dispatches subcommands. Its subcommands include `dashboard`, `memory-citations`,
 `memory-backfill`, `handoff-check`, `knowledge-ingest`, `knowledge-bootstrap`, `knowledge-format`,
 `knowledge-convert`, `knowledge-convert-states`, `knowledge-validate`, `knowledge-index`, `knowledge-worklist`, `knowledge-routes`,
-`knowledge-census`, `knowledge-copies`, `explainer-browser`, `tool-log-stats` (MIK-R108 rule 8), `paseo`, `upgrade-user-settings`, `providers-remove` and `removed-stores` — and
+`knowledge-census`, `knowledge-copies`, `explainer-browser`, `tool-log-stats` (MIK-R108 rule 8), `paseo`, `upgrade-user-settings` and `removed-stores` — and
 further CLI adapters slot in as subparsers. Backed by the
 `agents-remember = agents_remember.cli.__main__:main` console script.
 
@@ -122,15 +122,11 @@ The knowledge-command registry also exposes handoff-check, delegating its argume
 - The command parser registers text conversion and standing/state conversion separately. [24]
 - The derived-state adapter selects a plan by default and exposes an explicit apply operation. [25]
 
-
 ### Repo-Internal References
-
 
 - The `dashboard` subcommand adapter this dispatches to. [1]
 
-
 - The peer CLI adapter pattern. [2]
-
 
 - The memory-citations adapter, registered the same declarative way. [3]
 
@@ -138,9 +134,7 @@ The knowledge-command registry also exposes handoff-check, delegating its argume
 - The separate MCP server console entry that stays standalone. [5]
 - The `knowledge-ingest` subparser this umbrella registers for a leaf's curator hand-off list. [6]
 
-
 - The `knowledge-copies` subparser adds: retired knowledge-database leftover copies listed with their deciding rule (`--apply` deletes MIK-R26 rule 6 names), registered the same declarative way. [15]
-
 
 - The `upgrade-user-settings` subparser performs the explicit whole-file move from the old coordination settings file to the user configuration directory, with `--coordination-root` and `--dry-run`.
 
@@ -154,9 +148,7 @@ Anchor:
 
 Source: mcp/src/agents_remember/cli/__main__.py
 
-
 ### Runtime Source References
-
 
 Retained authoring-row wording:
 
@@ -165,13 +157,6 @@ Finding: Frozen implementation of build_parser supporting the stated file behavi
 Anchor:
 
 Source: mcp/src/agents_remember/cli/__main__.py
-
-
-- The current umbrella additionally registers providers-remove as an explicit operator command; it does not restore any provider setup or MCP provider tool. [19]
-
-
-
-
 
 - The umbrella registers the explainer's browser command beside the knowledge commands. [21]
 

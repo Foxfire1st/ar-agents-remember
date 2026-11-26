@@ -476,12 +476,12 @@
         },
         {
           "anchor": {
-            "blob": "28100704d5444ebd1dc7009eb9018e2fba4f1420",
+            "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
             "content": "sha256:0423c63d873969296820c17d7e9628363f5f7928d402a36fb0e86317d7995afa",
             "locator": {
-              "end": 77,
+              "end": 75,
               "kind": "line_range",
-              "start": 77
+              "start": 75
             },
             "path": "skills/l-01-agent-lifecycles/core/every-role.md"
           },
@@ -1658,7 +1658,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97afe91d1390144e81c0b29fb0b706c771e3af63",
+            "blob": "7f44d48bd52cbc68e78dc12946fd38e33f5f2f57",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 90,

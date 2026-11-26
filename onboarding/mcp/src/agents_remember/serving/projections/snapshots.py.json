@@ -25,23 +25,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d2b1b035f7c9e9c2f1a7ae7b6badaf2fabe6470b",
-            "content": "sha256:e5582b8aa0a4940f3f663cf3cf1a6d8ae089f89e57ad80ae1ead5d92f2044862",
+            "blob": "dd204bd1e510d4a759ca28adb0e2ea9958544531",
+            "content": "sha256:1300e3ac2ac33dc3284c0caa5ba63fca61047603869f238fa5ef041a55bc15bf",
             "locator": {
               "kind": "symbol",
               "name": "__all__"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d2b1b035f7c9e9c2f1a7ae7b6badaf2fabe6470b",
-            "content": "sha256:1b6f4b17e1219ce0e0099e9467a0d85af53a01397cf31166cf364f17ab380d48",
-            "locator": {
-              "end": 80,
-              "kind": "line_range",
-              "start": 41
             }
           },
           "kind": "code"
@@ -49,16 +37,14 @@
       ]
     },
     "11": {
-      "note": "Anchor: Current engine fact reader excludes gate/pickup/expectation records.",
       "targets": [
         {
           "anchor": {
-            "blob": "1d18eca6aa7f7a47d12546c8e5b12a68370fb69c",
-            "content": "sha256:361d3ec4648c8899f471f606230c5881f48bb96d420fce0774fdddeb9d9886fb",
+            "blob": "9f136f90658cc141133789dbc1642d8728fcba85",
+            "content": "sha256:74e4abe2f61076a74a6a9bd21cb4bf9eeaef02b14330224df00767bc3ff1e45a",
             "locator": {
-              "end": 149,
-              "kind": "line_range",
-              "start": 90
+              "kind": "symbol",
+              "name": "read_engine_process_facts"
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
           },
@@ -67,29 +53,14 @@
       ]
     },
     "12": {
-      "note": "Anchor: Both enclosure and engine readers reuse the supplied ContractSnapshot.",
       "targets": [
         {
           "anchor": {
-            "blob": "1d18eca6aa7f7a47d12546c8e5b12a68370fb69c",
-            "content": "sha256:2f6940ab288c04c55a6691b11a7e8de53c87916c70766ee9b6a9b3b8dd87dc0e",
+            "blob": "9f136f90658cc141133789dbc1642d8728fcba85",
+            "content": "sha256:74e4abe2f61076a74a6a9bd21cb4bf9eeaef02b14330224df00767bc3ff1e45a",
             "locator": {
-              "end": 61,
-              "kind": "line_range",
-              "start": 44
-            },
-            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1d18eca6aa7f7a47d12546c8e5b12a68370fb69c",
-            "content": "sha256:361d3ec4648c8899f471f606230c5881f48bb96d420fce0774fdddeb9d9886fb",
-            "locator": {
-              "end": 149,
-              "kind": "line_range",
-              "start": 90
+              "kind": "symbol",
+              "name": "read_engine_process_facts"
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
           },
@@ -120,8 +91,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d2b1b035f7c9e9c2f1a7ae7b6badaf2fabe6470b",
-            "content": "sha256:e5582b8aa0a4940f3f663cf3cf1a6d8ae089f89e57ad80ae1ead5d92f2044862",
+            "blob": "dd204bd1e510d4a759ca28adb0e2ea9958544531",
+            "content": "sha256:1300e3ac2ac33dc3284c0caa5ba63fca61047603869f238fa5ef041a55bc15bf",
             "locator": {
               "kind": "symbol",
               "name": "__all__"
@@ -134,22 +105,11 @@
             "blob": "8be3f293c9a38e01524f4b0f2f2252f9b0d2aecc",
             "content": "sha256:791b179d5d01592bbefe8f4b08a1766add2d6f503f1d5338956d5c21553bb4d2",
             "locator": {
-              "kind": "symbol",
-              "name": "read_start_progress_entries"
+              "end": 77,
+              "kind": "line_range",
+              "start": 46
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d2b1b035f7c9e9c2f1a7ae7b6badaf2fabe6470b",
-            "content": "sha256:0922ececb5dbe5610b6c5290e7dbb1e1eb32ad5de54e2c68e1b2d8cb751b64c2",
-            "locator": {
-              "end": 29,
-              "kind": "line_range",
-              "start": 19
-            }
           },
           "kind": "code"
         }
@@ -176,23 +136,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d2b1b035f7c9e9c2f1a7ae7b6badaf2fabe6470b",
-            "content": "sha256:e5582b8aa0a4940f3f663cf3cf1a6d8ae089f89e57ad80ae1ead5d92f2044862",
+            "blob": "dd204bd1e510d4a759ca28adb0e2ea9958544531",
+            "content": "sha256:1300e3ac2ac33dc3284c0caa5ba63fca61047603869f238fa5ef041a55bc15bf",
             "locator": {
               "kind": "symbol",
               "name": "__all__"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d2b1b035f7c9e9c2f1a7ae7b6badaf2fabe6470b",
-            "content": "sha256:1b6f4b17e1219ce0e0099e9467a0d85af53a01397cf31166cf364f17ab380d48",
-            "locator": {
-              "end": 80,
-              "kind": "line_range",
-              "start": 41
             }
           },
           "kind": "code"

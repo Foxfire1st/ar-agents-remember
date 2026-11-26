@@ -102,12 +102,12 @@
         },
         {
           "anchor": {
-            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "blob": "206e18e2b0a8669ba96506d5fd19ecacdd34667f",
             "content": "sha256:945a05d5c0bb65ceab9bf33163c9adf96e9eedf39030a60cc5bb0d613d70311b",
             "locator": {
-              "end": 22,
+              "end": 20,
               "kind": "line_range",
-              "start": 21
+              "start": 19
             },
             "path": "dashboard/src/panels/engine-room/fixtures.ts"
           },
@@ -126,7 +126,7 @@
         },
         {
           "anchor": {
-            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "blob": "206e18e2b0a8669ba96506d5fd19ecacdd34667f",
             "content": "sha256:ec497b05891a156bbfa7c61edd877f6923f205f98619c6e8fccf549ad495f6c8",
             "locator": {
               "kind": "symbol",

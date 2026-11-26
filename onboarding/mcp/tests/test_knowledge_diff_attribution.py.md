@@ -31,7 +31,6 @@ The properties, one case each:
 
 ## Code Commentary
 
-
 The comparison partitions the measured changed-path population into disjoint attributed, confirmed-unregistered and unknown-attribution buckets. Unchanged mapped paths contribute no changed count, repeated claims contribute one path, and selected-subject links are distinguished from completely established outside-selection links. Family scope comes from exact membership revisions.
 
 Unresolved or stale locators do not establish attribution. An unread snapshot prevents a negative conclusion and qualifies outside-selection membership; a known-empty inspected side can support absence. An unavailable observation carries null totals, while a partial denominator names omitted uncarriable paths.
@@ -77,7 +76,6 @@ None.
 
 ## Evidence
 
-
 ### Docs References
 
 No Domain Documentation source is configured for this slice.
@@ -89,11 +87,7 @@ No Domain Documentation source is configured for this slice.
 - `test_one_uninspected_snapshot_turns_every_unmapped_change_into_undetermined_attribution` supplies the current fixture or assertion described above. [16]
 - `test_an_unavailable_partition_states_no_total_and_never_a_measured_zero` supplies the current fixture or assertion described above. [17]
 
-
 - The stale-mapping case builds its candidate with test-only realization seeds and the text-tree fixture builder. [18]
-
-
-
 
 ### Docs References
 
@@ -101,7 +95,6 @@ No Domain Documentation entries are configured in this memory root. The statemen
 repository source only.
 
 No configured domain documentation could be checked.
-
 
 ### Repo-Internal References (continued)
 
@@ -112,30 +105,19 @@ No configured domain documentation could be checked.
 
 - The boundary case: a change mapped only to another invariant is outside selection, never unregistered. [23]
 
-
 - **The family-subject case: a family's members' own links count as selected attribution.** [24]
-
-
 
 - The precedence cases: a registered mapping that did not resolve — stale or unresolvable — does not establish attribution. [25]
 
-
-
 - The stale-mapping case builds test-only fixture claims and reads their resolutions through `_candidate_claim_resolutions`; no current `_author_candidate_claim` helper is defined in this module. [26]
-
-
 
 - An uninspected snapshot leaves the unmapped path undetermined. The paired known-empty and inspected sides instead give complete attribution coverage and confirm the unmapped path is unregistered. [27]
 
-
 - The honesty cases: an unavailable partition states no total and never a measured zero; a partial observation states its denominator's scope. [28]
-
 
 - The arithmetic cases' two input builders. [29]
 
 > Retained earlier citation wording: - The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution.
-
-
 
 ### Cross-Repo References
 
@@ -143,17 +125,16 @@ No cross-repository behaviour is exercised here. The fixture's Git trees are tem
 
 No configured cross-repository evidence is claimed.
 
-
-
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:352-352 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:800-800 - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1202-1202 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2029-2029 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2740-2740 - the bytes it recorded now occur 50 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:2783-2783 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3299-3299 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
-
 
 - The `unit-regression` lane selects `mcp/tests/test_knowledge_diff_attribution.py`. [30]
 
 
 
 - RowStore writes text-tree fixture rows without the retired production admission plane. [19]
+
+
 
 - The unit-regression lane selects `mcp/tests/test_knowledge_diff_attribution.py`. The lifecycle catalog lists `mcp/tests/test_knowledge_diff_attribution.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. These source declarations establish no execution or passing result. [31]

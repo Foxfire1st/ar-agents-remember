@@ -19,7 +19,7 @@ The explainer’s state, stale and revision reads project saved inventory or its
 
 The explainer’s Build route forwards the validated history along with the composed message to the seat builder. The builder sends the requirement-and-planned-effects request for blank planned content.
 
-_app_lifespan compacts the workspace river, primes the projector and starts projection, provider-metrics, leaf-archive recovery, held native-role message delivery and river-compaction tasks, plus the moved watcher only when its application port is supplied. Optional heap/allocator tasks remain opt-in. It does not prime or poll a terminal catalogue or run a hosted-seat notifier. The archive worker drains cancellation before close; held-message sweep failures are contained. Shutdown invokes the injected review-tree owner, cancels and awaits owned background tasks; there is no removed terminal-host shutdown.
+_app_lifespan compacts the workspace river, primes the projector and starts projection, leaf-archive recovery, held native-role message delivery and river-compaction tasks, plus the moved watcher only when its application port is supplied. Optional heap/allocator tasks remain opt-in. It does not prime or poll a terminal catalogue or run a hosted-seat notifier. The archive worker drains cancellation before close; held-message sweep failures are contained. Shutdown invokes the injected review-tree owner, cancels and awaits owned background tasks; there is no removed terminal-host shutdown.
 
 The projector retains change-driven invalidation, stable/current publication, subscription delivery and task-input retry ownership. Canonical task status maps to planned/started/aborted/completed; only started tasks receive bound host-agent works, waiting, paused or unknown activity with the contributing eventAt. A provider limit annotates a paused task when no seat works or waits. Declared lists, documented-subTask master precedence and unambiguous commanded-master relations determine membership independently of worktree bindings. Only an absent subTask master uses list fallback; its present contrary or unresolvable master remains explicit and unbound. Other listed document kinds retain list placement under identity/cycle guards without own-master validation by that path. The same producer reports distinct list/record disagreements once per master rather than dropping contrary facts. Host reads occur at startup and host invalidation, with boot reconciliation and a proved supervisor-exit subscription; ordinary heartbeat/full healing is not host polling. File readers retain their own absence and last-good-data policies. Review/read shims do not turn an unwired adapter into an empty catalogue, body or comparison.
 
@@ -60,95 +60,6 @@ Old terminal/session launch-site, provider-specific carrier and first-prompt acc
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:644-655 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 4a0442d62eb842661a3dd04686c376d0f0dbc61f. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_common.py:215-216 - the bytes it recorded now occur 42 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## Retained Route And Coverage Metadata
 
@@ -216,7 +127,6 @@ Source account retained from the parked claim (anchor currency not renewed here)
 
 Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:644-655`.
 
-
 Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:627-709`.
 
 - The shared status mapping accepts three typed transport result classes and treats refusal is None as success.
@@ -262,13 +172,11 @@ A missing comparison number is not a dataset-mode discriminator: enabled live le
 can start without one, while focused card-entry reads require one. The transport retains some legacy
 refusal spellings for status mapping; that does not reinstate removed candidate producers.
 
-
 ## Current Behavior
 
 the change-set routes now run on a dedicated `_BoundedReads` scheduler: eight workers plus eight pending jobs, an explicit 503 over the cap, a queued job withdrawn on disconnect and a running job releasing its slot only at its physical end; the route returns 499 and the runner's one `_wait_process` kills the Git child and its group. Freshness is Git's own: id-keyed commit pairs are served with no observation, working views run `git status --porcelain=v2 -z` and have no cache where a plain read costs no more, and the object store is a `count-objects -v` census; the object/worktree walks are removed. The cache's result/repository/per-read maps are capacity-bounded, an abandoned read admits nothing, and the id-keyed accepted gap is named in the cache module. The intent-summary route keeps its 200/503/304 idiom and shares the same cache.
 
 The serving tick reads usage reports at a new stamped end or when a stored report is due for its five-minute recheck, writes the one limit file whole under an exclusive lock, checks the provider limit before the ordinary recipient read and can confirm archive or absence once per ended stamp during the limit, and reaches the bridge through the port the composition root binds. The usage batch runs before the tick's held-message delivery, so a clear recorded there reaches that same delivery pass.
-
 
 - The collaborator port and the registration before the static mount.
 
@@ -374,10 +282,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - **The new owner: which exact Git objects a committed range binds, the three absence kinds, and the one absence that may degrade to empty.** [55]
 
-
-
 - **The caller that owns the degradation policy and (260921-ICR-L25) carries the code half's named absence instead of raising it: the two sides resolve independently, and only an unrecorded memory half empties.** [56]
-
 
 - **The doc-reader entry point that publishes the unrecorded state in the body.** [57]
 
@@ -385,10 +290,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - **The new owner: which exact commits a master net binds, the deterministic digest, same-call currentness, and the named refusal for a missing endpoint.** [59]
 
-
-
 - **The thin delegating entry and the pinned file view, with the shared master 400/404 mapping.** [60]
-
 
 - **The served vocabulary: the generation identity, the net's `generation` + `currentness` + `scope`, and the `committed`/`working` leaf-row state.** [61]
 
@@ -400,9 +302,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - **The composition the task-context answer reaches, which is where the complete inventory is measured.** [66]
 
-
 - **The case that admits exactly the two reviewable selector kinds and refuses every other spelling, and the case that drives the same route with no selector parameters at all.** [67]
-
 
 - **The third route constant, GET-only, with the comment recording why it is a third path rather than a payload field: the inventory is the whole task's change set and a payload carrying every file's text would be a document dump.** [68]
 
@@ -462,7 +362,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - App registers three intent handlers plus separate summary, tree and reader ports before static delivery.  Anchor: create_app [110]
 
-- Startup ordering, native held-message sweep registration, worklist-first shutdown, and awaited background teardown are explicit. [111]
+- Startup ordering, native held-message sweep registration, review-tree/master-preparation shutdown, and awaited background teardown are explicit. [111]
 
 - Leaf-archive recovery is the one loop under the terminal-observation owner: it sleeps after each attempt returns, and no terminal-observation prime or poll remains. [112]
 
@@ -478,11 +378,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - Landing interest gates actual discovery and probe admission, while due policy retains exact identities. [130]
 
-- Provider safety remains an independent periodic sequence. [131]
-
-
 - Complete reconciled host input joins role-agent task identities only while its supervisor observation is armed. [132]
-
 
 - Native cache values reuse only complete matching input generations; additional consumed inputs must have pre-read observations. [133]
 
@@ -491,7 +387,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 - Task-body 304 requires a still-current captured generation and matching content revision. [136]
 
 - Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [137]
-
 
 
 - The injected canonical memory-root port is carried from collaborators into the shared serving runtime, not resolved from arbitrary client roots. [138]
@@ -507,8 +402,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - Summary ports and cache keys include exact optional comparison identity. [143]
 
-
 - Serving composition refuses retired canvas authoring before registration, composes explicit explainer ports and comparison-bound routes, and owns moved-notice stream/watch lifetime. The ordinary roster has 44 names, and a valid explainer binding adds four tools to that roster. [146]
-
 
 - The HTTP Build handler forwards the history that selects planned composition for a blank request. [147]

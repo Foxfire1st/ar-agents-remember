@@ -20,12 +20,9 @@ Master reopen plans from the master's own refs against the sprint that commands 
 
 ## Evidence
 
-
 > Retained earlier citation wording: - The file realizes its current contract at the corrected candidate. [1]
 
-
 ## Current source evidence
-
 
 - Series reopen passes source-path/document pairs to the existing scope owner. [2]
 

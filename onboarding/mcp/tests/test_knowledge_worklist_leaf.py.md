@@ -76,21 +76,21 @@ The changed writer calls explicitly supply the current `leaf_worklist(load_contr
 
 ## Evidence
 
-
-
-
 - The controller source exercises a fresh shared clone, real index building, informational proof counts and distinct report modes; cache store tolerates listing/stat disappearance. [41]
 
 - The module docstring: the fixture's repositories and task root. [17]
 
 - The fixture writes the fork, advanced-pair and code-only contract states and calls the worklist directly. The worklist reads the recorded bases and persists beside the contract. [18]
 
-
 - A missing recorded memory base yields an incomplete worklist naming K_B. [19]
 
 - An unconverted base is compared as its conversion. [20]
 - Converted bases are cached. [21]
+
+
 - The recompute never raises. [22]
+
+
 - One batch for the changed blobs, answers from the cache, and no failure from the read-ahead. [23]
 - The read-ahead under test. [24]
 
@@ -110,15 +110,7 @@ No configured live documentation source was available for this pass.
 - The tool case counts two onboarding items. [25]
 - The cache case patches the conversion where it now lives. [26]
 
-
-
-
-
 - The leaf fixture creates real code and memory repositories, a task root and an enclosure contract. [27]
-
-
-
-
 
 - The leaf's contract and task document. [28]
 
@@ -126,44 +118,27 @@ No configured live documentation source was available for this pass.
 
 - The task document's maintenance scope. [30]
 
-
-
 - The writer's carry. Anchor: `test_the_writer_carries_moved_blobs_and_the_rows_that_cover_them` [31]
-
-
 
 - The tool and the checklist section. [32]
 - Other owners' rows and closed files are untouched. [33]
 
-
-
-
 - A writer-authored proof raises its invariant. Anchor: `test_a_proof_authored_through_the_writer_raises_its_invariant_when_its_test_changes` [34]
-
-
 
 
 - The bound sync port. [35]
 
 
-
-
 - The controller-level run reports four open worklist items and one separate stale-entry finding: curatorActionableCount 5, openItemCount 4 and findingCount 5. [36]
 
 
-
-
 - Never raises; never fails a completed sync. [37]
+
+
 - The `continue` replay. [38]
 - The converted-base cache. [39]
 
-
-
-
 > Retained earlier citation wording: - The census-derived consumer row.
-
-
-
 
 ### Cross-Repo References
 
@@ -184,7 +159,8 @@ and in `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:2080-2080 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-
 - The census-derived consumer row. In merged A3 this reference cites all 2 artifact blocks whose exact consumers list names this module. The earlier occurrence count and first-occurrence wording described unrelated narrow text, already unrelated in the parked source, and did not establish this module's consumer membership. Those targets are replaced by this complete membership set. Former member identity is not recovered or claimed. [Past-epoch source caption, detached from live reference 40. Recorded citation custody: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); historical event commit not identified. No historical event or intent inferred.]
+
+
 
 - The lifecycle catalog lists `mcp/tests/test_knowledge_worklist_leaf.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result. [40]

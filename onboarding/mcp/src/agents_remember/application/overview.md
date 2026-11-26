@@ -9,7 +9,7 @@ Reference maintenance is composed here by `memory_tools`: `census_inputs` captur
 
 `mcp/src/agents_remember/application/` composes operations from admitted runtime configuration, canonical task authority and typed requests. It connects source/onboarding reads, converted knowledge, memory quality, task authoring, role launch, structural coordination and worktree services without making transport adapters a second implementation of domain policy. A typed handle records an admission already established by an owner; constructing the handle does not confer authority.
 
-The current account is the converted-text and native role route after MIK-R74 and MIK-R112. The earlier KS/ICR database, publication, generation-freeze and supporting-record accounts explain inherited intent and historical defects; they do not establish that retired capabilities remain public or that their earlier deliveries were freshly accepted. Internal provider services and retained lifecycle modules likewise do not establish public registration.
+The current account is the converted-text and native role route after MIK-R74 and MIK-R112. The earlier KS/ICR database, publication, generation-freeze and supporting-record accounts explain inherited intent and historical defects; they do not establish that retired capabilities remain public or that their earlier deliveries were freshly accepted.
 
 Revision publication uses the shared task lock, physical usage meter and an optional inventory staging decision. The application ports include the comparison-bound inventory reader alongside the frame and evidence readers.
 
@@ -20,7 +20,6 @@ Worktree closeout apply and integration execute synchronously through their work
 A live leaf memory worktree may precede its onboarding cards. Scope still requires the memory directory and Git marker and resolves its own onboarding child without an existence-based substitution. Quality delegates an absent collection to the route-index owner; missing caches, stale caches and actual build failures remain distinct.
 
 Requested certification is explicitly selected repository-profile work through Dagger and commits nothing. The profile and loader are still authority for that requested Gates 1–4 work; a selection named `closeout` is not an automatic closeout invocation. Ordinary closeout runs no gate but the invariant gate, retains exact candidate/approval/lineage checks and code-then-memory Git publication, and does not run certification, code-quality checks, test suites or independent review. A missing profile or certification result does not block that transaction. This does not remove canonical Curator/Reviewer duties or confer independent semantic acceptance on diagnostics.
-
 
 MIK-R109: `read_files.py` names governing cards and overviews without carrying their bodies; `read_file_cards.py` computes record counts and the actionable card headings. `knowledge_names.py` projects rows/proofs/family endpoints to text ID, kind, state and declaring file/line or card heading, with selection-bound commit/dirtiness and explicit title fallback. Paging sizes the emitted names and keeps continuation/whole-row semantics. `knowledge_reports.py` admits and publishes the whole comparison report; an unwritable report refuses. The mounted orientation answer is slim version 3; the full context builder and kernel resolver still hold the full internal facts. `coordination_tools.py` retains topology narrowing, not a public resolver tool.
 
@@ -34,7 +33,6 @@ A role launch resolves canonical sprint/master/leaf selections through task topo
 
 `read_files.py` composes the registered `read_ar_files` naming route: source existence, governing card location or no card, record-state counts and actionable IDs/kinds/states/card headings. A fuller answer can list governing overviews once and add bounded rule text and a brief pointer for eligible paths. If the minimum full rows exceed the answer budget, compact rows keep every path and its available brief pointer and freshness. The reader reports a missing, older or unrecognized saved brief without writing memory files. The next write covering the file or its folder renews a missing or older saved brief when the writer can refresh it. The source, card and overview bodies remain in their files. The reader uses no `published_intent`, session-delivery state or continuation. An unconverted tree is named as `memoryState="unconverted"` and supplies no card; source existence is independent of whether a governing card can be named.
 Source existence is checked before card lookup, so a source-absent row has no card, card-state counts or brief. The separate weakness and dependent-document counts can be returned before the existence check. `read_files_format` remains an internal format owner, not the retired body-serving response contract.
-
 
 The separate `knowledge_read` route selects text trees through derived indexes. Its source-context path selections use family-complete selection and continuation machinery: entries at the path, their invariants, one expanded family hop, other families advertised without recursive expansion, and the governing route chain. A family seed expands that family directly. Currentness observes the code tree the read names; it does not replace that tree with working-tree bytes. A read with an explicit code tree observes that tree. A checkout read without one uses its commit when clean and holds a working-tree capture when dirty. The working-tree selector requests a capture directly.
 
@@ -75,7 +73,7 @@ MCP registrations and payload builders own protocol signatures and response vali
 
 Parameter objects remain domain concepts beside their entry points. `CloseoutApproval` stays separate from commit messages so preview cannot masquerade as approved apply. Carryover approval intent stays separate from the selected content. Memory quality's strict sync/start/poll request is deliberately a public discriminated contract; mixed-mode fields are not silently accepted. Route-index composition forwards resolver-owned repository/storage/path-rule authority to the deterministic builder rather than inferring permission from a directory.
 
-`worktree_services` binds memory quality, citation guarding, certification rail definitions, knowledge validation with `GitBaseConverter`, crossing, worklist recomputation, the knowledge gate, review artifact cleanup, the optional leaf-agent archive port and the file-brief refresh port. Whole-memory writers call the brief port with the settled folder and paired code and carry any problem as an advisory. Binding composes these owners; it does not give this module their authority. Internal provider lifecycle composition remains present, while runtime installation now attempts to stop leftover watchers and reports enabled legacy provider keys as unused. A failed stop is reported while installation continues without watcher recovery. Runtime installation also refreshes a running dashboard to the installed build (a dry run only plans that refresh) and reports the running servers with their build currentness.
+`worktree_services` binds memory quality, citation guarding, certification rail definitions, knowledge validation with `GitBaseConverter`, crossing, worklist recomputation, the knowledge gate, review artifact cleanup, the optional leaf-agent archive port and the file-brief refresh port. Whole-memory writers call the brief port with the settled folder and paired code and carry any problem as an advisory. Binding composes these owners; it does not give this module their authority. Provider lifecycle composition, leftover watcher stopping, and unused provider key reporting have been removed; runtime installation instead reports leftover removed stores (`removedPartStores`) without deleting them. Runtime installation also refreshes a running dashboard to the installed build (a dry run only plans that refresh) and reports the running servers with their build currentness.
 
 `tool_answer_log.py` obtains actor/role/task from the native agent binding and resolves a canonical single leaf-enclosure binding for report/log placement only while the contract and group survive. Terminating tools retain coordination-root logging; caller records carry no lifecycleId. `knowledge_reports.py` uses this resolved destination rather than an ambient lifecycle. Logs and the workspace River remain diagnostic records, not task stage or host activity authority.
 
@@ -231,127 +229,7 @@ The explainer composition binds serving to the existing comparison, evidence and
 
 The `memory_quality` application package shares its bounded run registry between full checks and citation previews. `citation_runs.py` admits and executes preview-only work against configured or contract-bound scope. `run_answers.py` supplies shared poll response shapes; the controller retains scope validation, quality execution and publication. Run identity includes operation and immutable selectors, and retained/polled results are detached copies. `tool_answer_log.py` serializes in-process budget accounting with a reentrant lock while retaining cross-process file exclusion.
 
-
-
 - No prior text removed. The current implementation adds exact explainer evidence preparation, planned authority, explicit frame removal and named outside-task environment cleanup to the application route.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 The frame store accepts WebM and MP4 through the usual asset admission and publication path. It records their media types in the verified manifest.
 
@@ -395,287 +273,7 @@ The frame store accepts WebM and MP4 through the usual asset admission and publi
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_tree_knowledge.py:258-326 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 9547923129aa0b49d6b4f93a758f4fce70233745. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - The capsule compilation outcome shape: `CapsuleCompilationOutcome` carries exactly one of a compiled capsule or the typed refusal explaining it, with the manifest present in both shapes (`role_capsules/compilation.py:46-90`). The operation itself is `_compile_task_capsule` → `_compile_routed` (`skill_resources/capsule.py:223,257`).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - Task application authoring is distinct from observation: removed get/read_steps return operation-removed and canonical-file guidance, while surviving linkage_report writes its facts report and delivers counts/location. Ordinary writes and review mutations have phrase/reviewState delivery separate from their whole identity, preview and synchronization records. The by-file input branch reads one absolute regular UTF-8 input once before checking its measured byte budget. Role launch preparation supplies the own leaf and declared requirements with explicit missingCopies; later publication refreshes that set transactionally. None of these adapters moves canonical task, approval, projection, observer or coherence authority.
 
@@ -683,7 +281,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 
 - The capsule compilation outcome shape: `CapsuleCompilationOutcome` carries exactly one of a compiled capsule or the typed refusal explaining it, with the manifest present in both shapes (`role_capsules/compilation.py:46-90`). The operation itself is `_compile_task_capsule` → `_compile_routed` (`skill_resources/capsule.py:223,257`). [99]
 - The capsule compilation outcome shape: `CapsuleCompilationOutcome` carries exactly one of a compiled capsule or the typed refusal explaining it, with the manifest present in both shapes (`role_capsules/compilation.py:46-90`). The operation itself is `_compile_task_capsule` → `_compile_routed` (`skill_resources/capsule.py:223,257`). [423]
-
 
 - Preview admission reuses the registry and scope controller. [519]
 - Run identity includes operation and selection. [520]
@@ -730,12 +327,10 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The one-sided statement cases: the complete present-side statement beside the named absent side, with the comparison's own side-absence code. [74]
 - The renderer that owns how the two sides are drawn, and the four branches it decides from declared state. [75]
 
-
 - Historical canonical-publication declaration account; references and targets remain for custody. Current resolve_published_intent selects the converted memory tree through its derived index; published_dataset_path and PUBLISHED_DATASET_NAME are retired. [78]
 
 - The context owner that decides *which* memory root the declared location is. [79]
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: The current CLI is the converted file handoff route, not this retired destination/allocation/publication adapter. Historical account: **The CLI side of the seam: the destination selection it now owns, its three refusals, and the route line it completes from the report.** [80]
-
 
 - The consequence repair this landing forced, stated on the card where the claims live. [82]
 
@@ -761,24 +356,19 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 
 - `ResponseModel` is the public response-model base. [113]
 
-- `TOOL_RESPONSE_MODELS` is the registry of public response models. [114] [427]
+
+- `TOOL_RESPONSE_MODELS` is the registry of public response models. [114]
+
+
 - Canonical memory scope freezes official/leaf authority, both trees, and optional unstamped comparison provenance. [115]
 - `route_index_refresh_tool` resolves context and supplies repository/storage authority. [117]
 - `build_route_indexes` is the deterministic route-index builder. [118]
 - `worktree_status_packet` returns the `WorktreeSummary` the context packet embeds directly, so the state machine's output is checked at the producer. [119]
 - `DriftSummaryPacket`, the typed drift seam `_drift_packet` returns. [120]
 
-
-
-
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current models/read_files declares NamedFile and ReadArFilesResponse, not FileReadStatus. Historical account: `FileReadStatus` is defined in the models type. [121]
 
-
-
-
-
 - The naming route checks source existence and names readable converted cards, including a JSON-only card. [122]
-
 
 - Application message transport contains only code and memory. [123]
 - Landing input carries the actual two outputs. [124]
@@ -824,12 +414,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - Converted-memory sync attempts to settle the generated briefs ignore stanza before reporting remaining conflicts. An authored conflict or an edit to the working conflict stays open for resolution. [228]
 - The layer rule that forces the split, enforced by a test rather than documented. [229]
 
-
-
 - Historical canonical-publication dataset-path account; references and targets retained for custody. Current boundary: published_dataset_path is absent. select_knowledge_dataset accepts only converted memory roots and selects their derived index. published_intent_block still resolves the converted tree, seeds the requested paths and calls the retained bounded read_published_intent route; it is not attached to the registered `read_ar_files` response. Historical account: **The new module's public surface: resolve the repository's publication, seed it with the requested paths, and read one bounded page per path.** [239]
-
-
-
 
 - Historical canonical-publication authority/absence account; references and targets retained for custody. Current boundary: published_intent_block still resolves converted-memory tree/index selection and returns named unavailable states. The old _absence_state and _authority_mismatch helpers are absent; an unconverted root is refused as legacy-format rather than selecting a canonical publication database. Historical account: **The named states the route answers with, and the guard that makes "never silently select another repository" a verified fact.** [431]
 
@@ -838,8 +423,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The `read_ar_files` application entry point can name cards and overviews and add rule text in a fuller reply. A compact reply can keep only the bounded row fields and brief pointer. The response model has no `published_intent` field. [242]
 
 - A memory tree other than converted names no governing card. [243]
-
-
 
 - **The route's new owner of the source half: the inventory's own statement of why it is measured from the pair, why the Git interface is delimiter-safe, and why a failed measurement is a state rather than an empty list.** [244]
 - The one observation both the review's inventory and the comparison's expansion read, with the two Git questions it asks. [245] [432]
@@ -854,13 +437,18 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The shared preflight in its fixed order. [258]
 
 
+
 - The default bundle binds the knowledge validator. [434]
+
+
+
 
 
 - The default bundle binds the knowledge validator. [260]
 
-- The converted-tree selection for the ordinary read, tried first. [262]
 
+
+- The converted-tree selection for the ordinary read, tried first. [262]
 
 - The one dataset resolution every knowledge read applies. [263]
 
@@ -875,7 +463,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The composition binds the base converter and the crossing. [435]
 
 
+
 - The composition binds the base converter and the crossing. [272]
+
 
 - The two readings of proofs. [273]
 - The evidence parser's two forms and the bare test module. [274]
@@ -884,7 +474,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The writer's carry. [279]
 - The package map. [281]
 - The check order and the cache contract. [282]
-
 
 - The retained internal published-intent tree/block construction; it is not a published_intent field on the current registered read_ar_files naming response. [285]
 
@@ -981,14 +570,11 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - Identical requests share one child and others wait for one of two slots. [402]
 - Identical requests share one child and others wait for one of two slots. [441]
 
-
 - The waiting bound counts computations, not the requests sharing them. [403]
 - The waiting bound counts computations, not the requests sharing them. [442]
 
-
 - A killed dashboard takes the child and its Git process with it. Anchor: `test_a_killed_dashboard_takes_the_child_blocked_in_git_and_its_git_process_with_it` [404]
 - A killed dashboard takes the child and its Git process with it. Anchor: `test_a_killed_dashboard_takes_the_child_blocked_in_git_and_its_git_process_with_it` [443]
-
 
 - The parent side: one request to the process owner, the reply's rows replayed, an error raised. [411]
 
@@ -997,52 +583,30 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - This source owns the route’s Investigator selection or execution boundary. [414]
 - **Retained historical source account — superseded by the current route account:** Investigator refuses a leaf and validates the canonical hierarchy. [456]
 
-
 - The route association, with the existence question asked before the route question. [416]
 - Historical account — the Eve carrier this line described was removed before this leaf's base; the current application tree holds no Eve owner, and native role launch composes generic capsules. [429]
 - **The comparison's expansion seam is a delegation, so this route has one implementation of "what did these two trees change".** [433]
 - The task reopening tool beside the task_doc entry point. [445]
 
-
-
-
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current models/read_files uses NamedFile and named/refused response state, not the retired file-read status vocabulary. Historical account: The file-read status vocabulary. [446]
-
-
-
-
 
 - The naming route checks source existence and names readable converted cards, including a JSON-only card. [447]
 
-
-
-
-
-
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current models/read_files has no FileReadStatus literal. Historical account: The file-read status literal and its value set. [448]
 
-
-
-
-
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current _name_one checks source existence and names readable converted cards; _resolve_onboarding/file-read status delivery is retired. Historical account: The onboarding resolver deciding the file-read status. [449]
-
 
 - Both-side supersession suppresses base items and reports the successor IDs. Anchor: `_Evaluation.run` [452]
 - Skipped links carry successors with a null trigger. [453]
 - **Retained historical source account — superseded by the current route account:** The port it satisfies. [261]
 
-
 - **Retained historical source account — superseded by the current route account:** The findings over one recomputed worklist. [364]
-
 
 - **Retained historical source account — superseded by the current route account:** Exclusion records do not establish bridge-host suppression. [457]
 - **Retained historical source account — superseded by the current route account:** Write admission now records repository-bootstrap only; the database enclosure adapter retired. [458]
 - **Retained historical source account — superseded by the current route account:** Legacy onboarding returns a named legacy knowledge block; converted references use sidecars. [488]
 - **Retained historical source account — superseded by the current route account:** Legacy onboarding returns a named legacy knowledge block; converted references use sidecars. [488]
 - **Retained historical source account — superseded by the current route account:** Projection scope includes explicit role and launcher rows. [461]
-
-
 
 - **Retained historical source account — superseded by the current route account:** Each gate kind has its own predicate and changed records require governing rows. [463]
 - **Retained historical source account — superseded by the current route account:** Every retained revision is a head; multiple heads remain ambiguous. [464]
@@ -1057,22 +621,11 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 
 - **Retained historical source account — superseded by the current route account:** Default worktree services bind validator, crossing, worklist, gate and cleanup. [474]
 
-- **Retained historical source account — superseded by the current route account:** Runtime installation attempts leftover watcher stop and reports unused enabled keys. [475]
+
 - **Retained historical source account — superseded by the current route account:** Child computation limits are two active, eight outstanding, 60-second request and 65-second child. [476]
 - **Retained historical source account — superseded by the current route account:** Knowledge threshold remains 8,000 tokens; count belongs to the log under MIK-R108. [477]
 
-
-
-
-
 - Complete response validation and logging remain separate from caller-sized status projection. [478]
-
-
-
-
-
-
-
 
 - **Retained historical source account — superseded by the current route account:** Native sibling preparation, held delivery and starter-owned retirement stay distinct from task acceptance. [480]
 
@@ -1133,7 +686,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 
 - **Historical source-bound reference account, not an operative override:** Recording a new comparison takes turns inside one process. [396]
 
-
 - **Historical source-bound reference account, not an operative override:** One pin: the same tree is success, another tree is refused, a held lock is retried. [397]
 
 - **Historical source-bound reference account, not an operative override:** The options every parsed diff passes. [398]
@@ -1158,15 +710,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - **Historical source-bound reference account, not an operative override:** The leaf-wide parts: memo, one recorded computation, one more when an input moved, then the inputs_changing refusal; a process failure is refused and not kept. [409] [440]
 - **Historical source-bound reference account, not an operative override:** The adapter's re-export of the sibling surface, which is what keeps the dashboard CLI's import resolving. [450] [451]
 
-
 - Historical canonical-publication authority/absence account; references and targets retained for custody. Current boundary: published_intent_block still resolves converted-memory tree/index selection and returns named unavailable states. The old _absence_state and _authority_mismatch helpers are absent; an unconverted root is refused as legacy-format rather than selecting a canonical publication database. Historical account: **The named states the route answers with, and the guard that makes "never silently select another repository" a verified fact.** [240]
 
-
-
-
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current mounted read_ar_files reports memoryState=unconverted and card=None; the legacy block belongs to the retired body-serving route. Historical account: Legacy onboarding returns a named legacy knowledge block; converted references use sidecars. [459]
-
-
 
 - Explicit recovery and exact-call approval stops remain ahead of derived contract guidance. [489]
 
@@ -1181,9 +727,7 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - Selected revision writers come from each side history at the exact recorded revision or its first origin. [502]
 - Selected display versions are copied from each actual selected side. [503]
 
-
 - The shared open-weakness counter accepts the already-open index. [505]
-
 
 - Entry side symbol names come only from symbol locators. [506]
 - Focused card responses carry entries and their memory-state answer without changing lane or leaf-wide values. [507]
@@ -1196,7 +740,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The one role-harness write, made only when the destination is absent. [514]
 
 - Existing trace authority precedes uncovered grouped source selection; the collector supplies member paths. [515]
-
 
 - The initializer reports knowledge state and the two admitted response branches name state-first Architect/regular-task/Curator continuation; partial-index, legacy-format and context-admission actions remain distinct. [516]
 
@@ -1237,7 +780,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The writer reads and authors the handoff, checks history, renders changes, and validates the resulting candidate before it writes or refuses. [265]
 - The writer validates before finishing and appends raised questions before it writes the knowledge files. [462]
 - Task application authoring is distinct from observation: removed get/read_steps return operation-removed and canonical-file guidance, while surviving linkage_report writes its facts report and delivers counts/location. Ordinary writes and review mutations have phrase/reviewState delivery separate from their whole identity, preview and synchronization records. The by-file input branch reads one absolute regular UTF-8 input once before checking its measured byte budget. Role launch preparation supplies the own leaf and declared requirements with explicit missingCopies; later publication refreshes that set transactionally. None of these adapters moves canonical task, approval, projection, observer or coherence authority. [487]
-
 
 - Retained historical reference account — the mechanism described below is retired/superseded; references and targets are preserved for custody. Current boundary: Current knowledge store retains reads/index operations; canonical create_revision is retired. Historical account: The storage operation this seam delegates to. [133]
 - **Historical source-bound reference account, not an operative override:** The summary: preflight, both sides read, classification. [257]

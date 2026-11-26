@@ -50,12 +50,12 @@
         },
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:3402442a80b2b51e2a295d23bf0c2d10ffbd917d6b9148bb77e38aac11f311a1",
             "locator": {
-              "end": 904,
+              "end": 841,
               "kind": "line_range",
-              "start": 862
+              "start": 799
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },

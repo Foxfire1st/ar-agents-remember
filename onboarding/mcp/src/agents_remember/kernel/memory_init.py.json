@@ -208,14 +208,16 @@
       ]
     },
     "4": {
-      "note": "MCP config defines repository memory roots.\n\nAnchor: `McpRuntimeConfig`",
+      "note": "MCP config defines repository memory roots.\n\nAnchor: `` `McpRuntimeConfig` `RepositoryScope` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
-            "content": "sha256:e2d83560666924530b06c82fcd178952932211795b5d29970b35d162ce3a4e47",
+            "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
+            "content": "sha256:623455a6b5c1361ad50c867ba6d6866e3c38bfb5543c2b8f6f663c143f95d57a",
             "locator": {
-              "kind": "file"
+              "end": 85,
+              "kind": "line_range",
+              "start": 80
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -223,11 +225,12 @@
         },
         {
           "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
-            "content": "sha256:e7791119b1e18159ebfbbbd83a14da6aa29442e78892e2f9d570688969689704",
+            "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
+            "content": "sha256:04846f79a6878d384539cd7bc920db8658f7dc3186b83e2a15536baad00e7238",
             "locator": {
-              "kind": "symbol",
-              "name": "McpRuntimeConfig"
+              "end": 194,
+              "kind": "line_range",
+              "start": 169
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -370,7 +373,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
+            "blob": "7b13c2a1e5cfb5d347bcabf91d466173a3ead8cf",
             "content": "sha256:569c8c796139db83968044af79c457c7b11cd0fb98e66809e583ac64f29e5202",
             "locator": {
               "kind": "symbol",
@@ -382,7 +385,7 @@
         },
         {
           "anchor": {
-            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
+            "blob": "7b13c2a1e5cfb5d347bcabf91d466173a3ead8cf",
             "content": "sha256:710429e84c4c9b8449fad791d73409895b0bd9a1d30c783df2948521949c3a15",
             "locator": {
               "kind": "symbol",
@@ -394,7 +397,7 @@
         },
         {
           "anchor": {
-            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
+            "blob": "7b13c2a1e5cfb5d347bcabf91d466173a3ead8cf",
             "content": "sha256:8cebc77b35ac07fb21cac8683fe0d21848a398ef05f58267f56c67bac5ae6e75",
             "locator": {
               "kind": "symbol",
@@ -406,7 +409,7 @@
         },
         {
           "anchor": {
-            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
+            "blob": "7b13c2a1e5cfb5d347bcabf91d466173a3ead8cf",
             "content": "sha256:5aedad94fe481bb42b9680bd688727f9934dc95f8cc24e02e5737055b76d235b",
             "locator": {
               "kind": "symbol",

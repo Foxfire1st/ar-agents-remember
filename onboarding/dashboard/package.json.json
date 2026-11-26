@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2116aec8d8fe95cd1f5e5dd3b63cb7d392febb48",
+            "blob": "703d4a247784c78f117744a0a9bc41e7e1cd015b",
             "content": "sha256:426846889c456fb14af26e9eb94a4e0f80041364d2eaafb721065074469a1934",
             "locator": {
-              "end": 58,
+              "end": 55,
               "kind": "line_range",
-              "start": 58
+              "start": 55
             }
           },
           "kind": "code"
@@ -20,14 +20,14 @@
       ]
     },
     "2": {
-      "note": "The manifest separates dashboard dependencies, development dependencies and executable scripts.",
+      "note": "The manifest separates dashboard dependencies, development dependencies and executable scripts.\n\nAnchor: `scripts`, `dependencies`, `devDependencies`, `Source`: `dashboard/package.json:6-79`",
       "targets": [
         {
           "anchor": {
-            "blob": "2116aec8d8fe95cd1f5e5dd3b63cb7d392febb48",
-            "content": "sha256:b0ba61ebda051d1142e4bcb633dd3158fce97a7b86dd296c349495c737158ebd",
+            "blob": "703d4a247784c78f117744a0a9bc41e7e1cd015b",
+            "content": "sha256:e48b0f1d8f675ceabef4027a2d691be0712734a75f00ea9023049e0c0cba0b5b",
             "locator": {
-              "end": 80,
+              "end": 79,
               "kind": "line_range",
               "start": 6
             }

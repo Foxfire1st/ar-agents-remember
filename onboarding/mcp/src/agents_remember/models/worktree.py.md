@@ -30,23 +30,15 @@ WorktreeSummary is the strict context summary, distinct from flexible command en
 
 ## Evidence
 
-
 - Readable mode imported from the kernel [113]
-
-
 
 > Retained earlier citation wording: - Strict context-packet shape incl. readable `memoryMode` [114]
 
-
-
 - State alias stays local on purpose [115]
-
 
 - Checkpoint response names the two real outputs [116]
 
-
 - Pause envelope claims only the stop [117]
-
 
 The following source-backed definitions and producer seams retain the broader response and vocabulary account alongside the readable-mode correction; they are declarations, not evidence of an executor run.
 
@@ -54,13 +46,17 @@ The following source-backed definitions and producer seams retain the broader re
 
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** SyncOperationProjection carries journal state, phase, conflicts, summary and next/cancel arguments. [119]
 
-
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** SyncResolutionProjection describes agent-owned side/worktree/files and wipRestore without deciding conflict content. [120]
 
 - SyncResolutionInput admits only its declared optional action and source. [121]
 
 - **Retained historical source account — superseded by the current contract:** WorkflowKind is the shared chat-task/light-task wire vocabulary. [122]
+
+
+
 - **Retained historical source account — superseded by the current contract:** The guidance module imports NextOperation, NextTool and WorktreePhase from the model and obtains guidance by calling lifecycle_guidance(contract). Recovery aliases remain separate. [123]
+
+
 
 - **Retained historical source account — superseded by the current contract:** TaskDocResponse is a ToolResponse rather than a WorktreeCommandResponse and declares nextTool as str or None; the worktree roster validator does not govern this class.
 
@@ -74,16 +70,12 @@ The following source-backed definitions and producer seams retain the broader re
 
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** WorktreeSummary uses the declared wire vocabulary fields, including ReadableMemoryMode for persisted memory-mode reads. [129]
 
-
-
-
 - **Retained historical source account — superseded by the current contract:** The terminal-status projector distinguishes terminal-cleanup-completed from terminal-archive-ready and emits the archive cleanup operation as the next tool only when cleanup remains. Anchor: `_project_terminal_contract_status` [130]
-
-
 
 - **Retained historical source account — superseded by the current contract:** TerminalCleanupOperation is the two-member terminal-cleanup vocabulary (worktree_cleanup, worktree_abandon). [131]
 
 - finalize_tool_response validates one declared response, applies optional caller enrichment, and counts tokens. [132]
+
 
 - **Retained historical source account — superseded by the current contract:** TOOL_RESPONSE_MODELS maps each tool name to its declared response model. [133]
 
@@ -94,11 +86,13 @@ The following source-backed definitions and producer seams retain the broader re
 
 
 
+
 - **Retained historical source account — superseded by the current contract:** FlexibleResponseModel is the extra-allowing base class for provider-native diagnostic payloads. [135]
+
+
 - **Retained historical source account — superseded by the current contract:** The membership validator refuses a next move outside the advertised roster. [136]
 
 - **Retained historical source account — superseded by the current contract:** PUBLIC_TOOLS lives in models as a zero-import leaf tuple the validator reads. [137]
-
 
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** WorktreeSummary.nextAction is the optional single-value developer-decision literal. [138]
 
@@ -106,15 +100,14 @@ The following source-backed definitions and producer seams retain the broader re
 
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** Abandon completes the terminal guard with updated-contract publication and old-contract rollback; failed publication returns abandon-blocked evidence. [140]
 
-
-
-
 - **Retained historical source account — superseded by the current contract:** The terminal-status projector distinguishes terminal-cleanup-completed from terminal-archive-ready and emits the archive cleanup operation as the next tool only when cleanup remains. Anchor: `_project_terminal_contract_status` [141]
 
-
-
 - **Retained historical source account — superseded by the current contract:** The wire-vocabulary module retains its R10 doctrine docstring; this range is doctrine text, not proof that any executor ran. [142]
+
+
 - **Retained historical source account — superseded by the current contract:** RecoveryOperation is a separate guidance recovery vocabulary, not the context-facing NextOperation alias. [143]
+
+
 - **Retained historical source account — superseded by the current contract:** RecoveryTool is a separate guidance recovery vocabulary, not the context-facing NextTool alias. [144]
 - **Retained historical source account — superseded by the current contract:** WorktreeSummary.nextRequiredArgs is an optional list of strings, defaulting to None. [145]
 - **Retained historical source account — superseded by the current contract:** unknownContractCells (`list[str] \\| None`, default None) is present only when the contract file carried a cell outside its declared vocabulary, as notice that values were substituted. [146]
@@ -127,11 +120,7 @@ The following source-backed definitions and producer seams retain the broader re
 
 - **Retained historical source account — superseded by the current contract:** `IntegrationStatus` gained a fourth member, `checkpointed` . [150]
 
-
-
 - **Retained historical source account — superseded by the current contract:** record_landed_integration publishes that a contract’s code landed and returns the updated contract. Anchor: `record_landed_integration` [151]
-
-
 
 - **Retained historical source account — superseded by the current contract:** The post-integration phase routes the outcome after integration was attempted (blocked, or landed with carryover/cleanup). [152]
 
@@ -151,8 +140,6 @@ The following source-backed definitions and producer seams retain the broader re
 
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** WorktreeCommandResponse declares the next-move triple, while WorktreeSyncResponse and WorktreeOperationControlResponse narrow nextTool. [163]
 
-
-
 > Retained earlier citation wording: - WorktreeSummary is the strict context summary, distinct from flexible command envelopes. Its optional taskDocumentCopies string carries a notice only when the copy checker emits one. Absence means no notice, not exhaustive byte equality or acceptance of every copy. Existing state and source-lineage fields retain their own domain meanings. [164]
 
 ## 260928-MIK-L198 — the response envelope names the outside scratch root
@@ -161,38 +148,30 @@ The following source-backed definitions and producer seams retain the broader re
 
 - Strict context-packet shape incl. readable `memoryMode`  Anchor: `WorktreeSummary` [114]
 
-
 - **Retained historical source account — superseded by the current contract:** SyncOperationProjection carries journal state, phase, conflicts, summary and next/cancel arguments.  Anchor: `SyncOperationProjection` [119]
-
 
 - **Retained historical source account — superseded by the current contract:** SyncResolutionProjection describes agent-owned side/worktree/files and wipRestore without deciding conflict content.  Anchor: `SyncResolutionProjection` [120]
 
-
 - **Retained historical source account — superseded by the current contract:** WorktreeSummary is the strict context-packet shape with typed lifecycle and worktree vocabulary fields.  Anchor: `WorktreeSummary` [127]
 
-
 - **Retained historical source account — superseded by the current contract:** WorktreeSummary uses the declared wire vocabulary fields, including ReadableMemoryMode for persisted memory-mode reads.  Anchor: `WorktreeSummary` [129]
-
 
 - **Retained historical source account — superseded by the current contract:** WorktreeSummary.nextAction is the optional single-value developer-decision literal.  Anchor: `WorktreeSummary` [138]
 
 
-- Cleanup completes the terminal guard with updated-contract publication and old-contract rollback; failed publication returns blocked evidence.  Anchor: `guarded cleanup publication and rollback` [139]
+- Cleanup completes the terminal guard with updated-contract publication and old-contract rollback; failed publication returns blocked evidence. [139]
 
 
-- **Retained historical source account — superseded by the current contract:** Abandon completes the terminal guard with updated-contract publication and old-contract rollback; failed publication returns abandon-blocked evidence.  Anchor: `_publish_abandon` [140]
+
+- **Retained historical source account — superseded by the current contract:** Abandon completes the terminal guard with updated-contract publication and old-contract rollback; failed publication returns abandon-blocked evidence. [140]
 
 
-- **Retained historical source account — superseded by the current contract:** WorktreeCommandResponse declares the next-move triple: nextAction, nextTool and nextArgs.  Anchor: `WorktreeCommandResponse` [147]
 
+- **Retained historical source account — superseded by the current contract:** WorktreeCommandResponse declares the next-move triple: nextAction, nextTool and nextArgs. [147]
 
 
 - WorktreeCommandResponse declares the next-move triple, while WorktreeSyncResponse and WorktreeOperationControlResponse narrow nextTool. [163]
 
-
-
 - WorktreeSummary is the strict context summary, distinct from flexible command envelopes. Its optional taskDocumentCopies string carries a notice only when the copy checker emits one. Absence means no notice, not exhaustive byte equality or acceptance of every copy. Existing state and source-lineage fields retain their own domain meanings. [164]
-
-
 
 - **Retained historical source account — superseded by the current contract:** TaskDocResponse is a ToolResponse rather than a WorktreeCommandResponse and declares nextTool as str or None; the worktree roster validator does not govern this class. Anchor: `TaskDocResponse` [124]

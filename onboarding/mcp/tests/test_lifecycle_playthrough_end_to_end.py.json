@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
+            "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 753,
+              "end": 746,
               "kind": "line_range",
-              "start": 753
+              "start": 746
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -38,16 +38,16 @@
       ]
     },
     "11": {
-      "note": "The lifecycle catalog lists `mcp/tests/test_lifecycle_playthrough_end_to_end.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/checkpoint_landing_test_support.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. These source declarations establish no execution or passing result.\n\nAnchor: lines",
+      "note": "The lifecycle catalog lists `mcp/tests/test_lifecycle_playthrough_end_to_end.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/checkpoint_landing_test_support.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. These source declarations establish no execution or passing result.\n\nAnchor: source",
       "targets": [
         {
           "anchor": {
-            "blob": "a3845f60a1550756085e05c474b659dfb0eadfc6",
-            "content": "sha256:362f244c93d2a00daeca03c47446fabfcf011244f7876f06748f12da25d696ee",
+            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 475,
+              "end": 471,
               "kind": "line_range",
-              "start": 65
+              "start": 471
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -55,12 +55,12 @@
         },
         {
           "anchor": {
-            "blob": "a3845f60a1550756085e05c474b659dfb0eadfc6",
-            "content": "sha256:7396e75e725df3a259d4ccf761f84f5bdcc09169afb826ffe4395541e5971e0c",
+            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 1103,
+              "end": 1120,
               "kind": "line_range",
-              "start": 1083
+              "start": 1120
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -68,12 +68,12 @@
         },
         {
           "anchor": {
-            "blob": "a3845f60a1550756085e05c474b659dfb0eadfc6",
-            "content": "sha256:5ebf994c5f317d76a56f846a67bde4409598cb8a16f8a943d3aabe7dfde3015e",
+            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 1284,
+              "end": 1301,
               "kind": "line_range",
-              "start": 1194
+              "start": 1301
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -81,12 +81,12 @@
         },
         {
           "anchor": {
-            "blob": "a3845f60a1550756085e05c474b659dfb0eadfc6",
-            "content": "sha256:bf408d20c32cd979996e8ad52a16c523978accfe6630d6018f1c4289d918d494",
+            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 2936,
+              "end": 2952,
               "kind": "line_range",
-              "start": 2526
+              "start": 2952
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -94,12 +94,12 @@
         },
         {
           "anchor": {
-            "blob": "a3845f60a1550756085e05c474b659dfb0eadfc6",
-            "content": "sha256:47b6a5fa55d37ea03c77bd20b9ea2cc9e1b42ccf187812726a747f166f401139",
+            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 5141,
+              "end": 5153,
               "kind": "line_range",
-              "start": 5087
+              "start": 5153
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -130,12 +130,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
+            "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 753,
+              "end": 746,
               "kind": "line_range",
-              "start": 753
+              "start": 746
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -162,52 +162,30 @@
       ]
     },
     "16": {
-      "note": "The fixture split and public-start coverage limit remain; current application identity and provider-skip behavior refute the inherited provider-scaffolding necessity rationale.",
+      "note": "The fixture split and public-start coverage limit remain; worktree_start_tool mints its own stable lifecycle_id and carries no provider setup or provider settings, refuting the docstring's inherited provider-scaffolding rationale.\n\nAnchor: `` `test_the_lifecycle_plays_through_from_an_unstarted_master_to_a_resumed_one` `worktree_start_tool` ``",
       "targets": [
         {
           "anchor": {
             "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
             "content": "sha256:011aab9af5e506b8f63849410c47022d140b55f37accaead1db3490572a2fdf6",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_lifecycle_plays_through_from_an_unstarted_master_to_a_resumed_one"
+              "end": 173,
+              "kind": "line_range",
+              "start": 117
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
-            "content": "sha256:3fd7dc985e59bef427b4594a86c60921dccc4b6fa3874cb48c220075593be308",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+            "content": "sha256:99b60ccfb9dc974c453576282bd0f5915fcafd5decd2148e81681e49c0b552cf",
             "locator": {
-              "kind": "symbol",
-              "name": "worktree_start_tool"
+              "end": 225,
+              "kind": "line_range",
+              "start": 193
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
-            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
-            "locator": {
-              "kind": "symbol",
-              "name": "lifecycle_settings_from_config"
-            },
-            "path": "mcp/src/agents_remember/providers/settings.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
-            "content": "sha256:44435c7691ac61a8330bd6183744c49519d1b4d716fe52e6600eb03d0aa6cc79",
-            "locator": {
-              "kind": "symbol",
-              "name": "provider_enabled"
-            },
-            "path": "mcp/src/agents_remember/providers/setup_common.py"
           },
           "kind": "code"
         },
@@ -396,12 +374,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:980429e4753b3c8bd7ecfdfe4ffadb167777df946b14c5ecfd9baab41af036ab",
             "locator": {
-              "end": 300,
+              "end": 241,
               "kind": "line_range",
-              "start": 290
+              "start": 231
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -409,12 +387,12 @@
         },
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:58f4385dd8a54f1066b3f4c7c57e4760a04bccd63b0e08f67e823fca5a6697cc",
             "locator": {
-              "end": 425,
+              "end": 366,
               "kind": "line_range",
-              "start": 371
+              "start": 312
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -422,25 +400,25 @@
         },
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:f524fb0a4af91d49a9f2a190ba0fbc7cbcf3c6240692cc4ebcf270a8453e274e",
-            "locator": {
-              "end": 516,
-              "kind": "line_range",
-              "start": 487
-            },
-            "path": "mcp/src/agents_remember/application/worktree_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
-            "content": "sha256:5caa2fd4b80b799d259e220611950e40350c6c539473cca268e8ff9aa6bebc89",
             "locator": {
               "end": 457,
               "kind": "line_range",
-              "start": 457
+              "start": 428
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+            "content": "sha256:5caa2fd4b80b799d259e220611950e40350c6c539473cca268e8ff9aa6bebc89",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 398
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },

@@ -4,14 +4,48 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "`phaseStage` / `fxSignature` / `buildFx` + the `useEngineTimeline` context (retract + draw-on + fx, gated).\n\nAnchor: `phaseStage` `fxSignature` `buildFx` `useEngineTimeline`",
+      "note": "`phaseStage` / `fxSignature` / `buildFx` + the `useEngineTimeline` context (retract + draw-on + fx, gated).\n\nAnchor: `phaseStage` (`32-48`), `fxSignature` (`53-71`), `buildFx` (`78-144`), `useEngineTimeline` (`152-231`), `Source`: `dashboard/src/panels/engine-room/useEngineTimeline.ts:32-231`",
       "targets": [
         {
           "anchor": {
-            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
-            "content": "sha256:82c690fd7471b9257e5261727d2d052ab81ac1eb4725670708637e6bedfc22f6",
+            "blob": "57d37b97823e0b7bec930015b4ff52793eaf0da2",
+            "content": "sha256:f3475c11020a93105dfe81de5e3597ca1454e8cbb0554b9890a03f5d6d78f8e3",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "phaseStage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d37b97823e0b7bec930015b4ff52793eaf0da2",
+            "content": "sha256:a5870f9ddae34aa69a7a01ebab6a45327fc482f8590568cc453f91bbd68b7ba4",
+            "locator": {
+              "kind": "symbol",
+              "name": "fxSignature"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d37b97823e0b7bec930015b4ff52793eaf0da2",
+            "content": "sha256:f6890e477327cf02ee57c7eee626f5806ae0c3317c34ace266c05236ed99fd93",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildFx"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d37b97823e0b7bec930015b4ff52793eaf0da2",
+            "content": "sha256:42a580b2d43b802623baf299778905d1334edb1f54d8b1592e27ab5d14b54b64",
+            "locator": {
+              "kind": "symbol",
+              "name": "useEngineTimeline"
             }
           },
           "kind": "code"
@@ -19,16 +53,16 @@
       ]
     },
     "10": {
-      "note": "The GSAP-gate determinism tests that pin the no-ticker-under-effects-off contract.",
+      "note": "The GSAP-gate determinism tests that pin the no-ticker-under-effects-off contract.\n\nAnchor: `EnclosureCanvas — GSAP gate (05f §8.4 — no ticker under effects=off)`, `Source`: `dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx:49-65`",
       "targets": [
         {
           "anchor": {
-            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
-            "content": "sha256:97c9c5b09303e37df279b18df372be7e9b54833608b7ef59e6724d7ea2908bbc",
+            "blob": "a1ac7b1527759b668aee52472c6db27a07a191b6",
+            "content": "sha256:3da9dc565c9eaa15266709c28d24198e26d1789b203060e0a5e561656ae40402",
             "locator": {
-              "end": 90,
+              "end": 65,
               "kind": "line_range",
-              "start": 55
+              "start": 49
             },
             "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
           },
@@ -41,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "blob": "57d37b97823e0b7bec930015b4ff52793eaf0da2",
             "content": "sha256:6768f05bbb4d1c870d56b55b932e64ce7df3837770597212bc88985fec5c8df5",
             "locator": {
-              "end": 145,
+              "end": 144,
               "kind": "line_range",
-              "start": 54
+              "start": 53
             }
           },
           "kind": "code"
@@ -58,12 +92,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "blob": "57d37b97823e0b7bec930015b4ff52793eaf0da2",
             "content": "sha256:42a580b2d43b802623baf299778905d1334edb1f54d8b1592e27ab5d14b54b64",
             "locator": {
-              "end": 232,
+              "end": 231,
               "kind": "line_range",
-              "start": 153
+              "start": 152
             }
           },
           "kind": "code"
@@ -89,14 +123,15 @@
       ]
     },
     "2": {
-      "note": "`fxSignature`'s refused fold-in now filters `failed`/`stale` only.\n\nAnchor: `fxSignature`",
+      "note": "`fxSignature`'s refused fold-in now filters `failed`/`stale` only.\n\nAnchor: `fxSignature`, `Source`: `dashboard/src/panels/engine-room/useEngineTimeline.ts:53-71`",
       "targets": [
         {
           "anchor": {
-            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
-            "content": "sha256:82c690fd7471b9257e5261727d2d052ab81ac1eb4725670708637e6bedfc22f6",
+            "blob": "57d37b97823e0b7bec930015b4ff52793eaf0da2",
+            "content": "sha256:a5870f9ddae34aa69a7a01ebab6a45327fc482f8590568cc453f91bbd68b7ba4",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "fxSignature"
             }
           },
           "kind": "code"
@@ -104,12 +139,12 @@
       ]
     },
     "4": {
-      "note": "`EngineProcessEdge`'s documented `state` vocabulary, which never listed `refused`.",
+      "note": "`EngineProcessEdge`'s documented `state` vocabulary, which never listed `refused`.\n\nAnchor: `EngineProcessEdge`, `Source`: `mcp/src/agents_remember/observer/projection.py:295-315`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
-            "content": "sha256:4b31b460cf2bfd78dc4589df8a552c328a633762e9e07d658f5db4e360b63935",
+            "blob": "001c87448f054e5e0fc5d448ca9aca53a3a3e17a",
+            "content": "sha256:d936091ae23a461972e677f948e783aaceb44425c5a6e4530b0b7487b4c0b8d8",
             "locator": {
               "kind": "symbol",
               "name": "EngineProcessEdge"
@@ -125,12 +160,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "blob": "57d37b97823e0b7bec930015b4ff52793eaf0da2",
             "content": "sha256:ec6c8a92fe60e866c893835bc50f3db70dcf9a7af921e051de4129d2035e170a",
             "locator": {
-              "end": 197,
+              "end": 196,
               "kind": "line_range",
-              "start": 179
+              "start": 178
             }
           },
           "kind": "code"
@@ -138,14 +173,26 @@
       ]
     },
     "6": {
-      "note": "`buildFx` installs the canvas effect tweens the markup declares: the pre-block verify scan ring, the warp-core surge bands, the attention `breath`, the terminal stop flash, the one-shot refused-conduit flash coloured by the lane's `data-polarity`, and the flow packet riding `data-path`.\n\nAnchor: `buildFx` `useEngineTimeline`",
+      "note": "`buildFx` installs the canvas effect tweens the markup declares: the pre-block verify scan ring, the warp-core surge bands, the attention `breath`, the terminal stop flash, the one-shot refused-conduit flash coloured by the lane's `data-polarity`, and the flow packet riding `data-path`.\n\nAnchor: `buildFx`, `useEngineTimeline`, `Source`: `dashboard/src/panels/engine-room/useEngineTimeline.ts:78-231`",
       "targets": [
         {
           "anchor": {
-            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
-            "content": "sha256:82c690fd7471b9257e5261727d2d052ab81ac1eb4725670708637e6bedfc22f6",
+            "blob": "57d37b97823e0b7bec930015b4ff52793eaf0da2",
+            "content": "sha256:f6890e477327cf02ee57c7eee626f5806ae0c3317c34ace266c05236ed99fd93",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "buildFx"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d37b97823e0b7bec930015b4ff52793eaf0da2",
+            "content": "sha256:42a580b2d43b802623baf299778905d1334edb1f54d8b1592e27ab5d14b54b64",
+            "locator": {
+              "kind": "symbol",
+              "name": "useEngineTimeline"
             }
           },
           "kind": "code"

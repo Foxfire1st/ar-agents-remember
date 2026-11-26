@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
-        "content": "sha256:1adbf980d8cdc2c10834c762274971b216536225227b2c9669b4ba65043fce05",
+        "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
+        "content": "sha256:36e087b7a4ae055232428fce005604bf1214b68429cffe60d4b57a2848dcbe7b",
         "locator": {
           "end": 7,
           "kind": "line_range",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
+        "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
         "content": "sha256:80c99862448ab92d6ee65fde88d7667d360c1d35eedfa1e7fe46ebea3024294a",
         "locator": {
           "end": 17,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
+        "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
         "content": "sha256:cd4997f04f9c45b5cd8bebc4ee0ed70af10a02a9a3bf1390b20f48fbec0d469f",
         "locator": {
           "end": 29,
@@ -98,12 +98,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
             "content": "sha256:517c8a6bf9dd9c30609d30101aa553af6e8a792f28a9d1c0a22c4f46ad748b69",
             "locator": {
-              "end": 893,
+              "end": 711,
               "kind": "line_range",
-              "start": 893
+              "start": 711
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -310,7 +310,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
+            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
             "content": "sha256:67390565a8665a2378ea8acf015a4c3ac444ae57f5394d6f15e32a44bf786726",
             "locator": {
               "end": 20,
@@ -327,12 +327,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
+            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
             "content": "sha256:56d5658353a8b7c8d238f402dd65aa85f57d171c9bbc54740712e71650b8f7ab",
             "locator": {
-              "end": 108,
+              "end": 107,
               "kind": "line_range",
-              "start": 99
+              "start": 98
             }
           },
           "kind": "code"
@@ -370,7 +370,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9111f219d7dcf97021d6681ad2dd742c85a47091",
+            "blob": "3b154c0b893c01fbb79b0fc04a033b08de1fbe28",
             "content": "sha256:8b6ba71f06b6112de52063672605a1ab86aebe6d97ed2d261c4565a87486416f",
             "locator": {
               "end": 8,
@@ -432,7 +432,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
+            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
             "content": "sha256:36e087b7a4ae055232428fce005604bf1214b68429cffe60d4b57a2848dcbe7b",
             "locator": {
               "end": 7,
@@ -467,7 +467,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
+            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
             "content": "sha256:cd4997f04f9c45b5cd8bebc4ee0ed70af10a02a9a3bf1390b20f48fbec0d469f",
             "locator": {
               "end": 29,
@@ -484,7 +484,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
+            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
             "content": "sha256:9c5ba653b34073b7260267abaceaece0ed46baa9e23deed1dff116c6916189c2",
             "locator": {
               "end": 31,
@@ -501,7 +501,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
+            "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
             "content": "sha256:a54495272c498240b0b62b979361f67333f5a98614710880ec29424282256341",
             "locator": {
               "end": 28,
@@ -513,35 +513,17 @@
         }
       ]
     },
-    "5": {
-      "note": "The same exact pin in the checkout requirements manifest, which must agree with this file.\n\nAnchor: \"apsw==3.53.4.0\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e755e6453e0f09911bbe4a91cdcc31f9b2b61b58",
-            "content": "sha256:46a04c2b98321faec862575eb95fefbd5596b21464b7114c968a8701099d74aa",
-            "locator": {
-              "end": 2,
-              "kind": "line_range",
-              "start": 2
-            },
-            "path": "mcp/requirements.txt"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "6": {
       "note": "The locked resolution carries the pin as a direct requirement plus the platform wheel set the exact pin selects.\n\nAnchor: \"{ name = \\\"apsw\\\", specifier = \\\"==3.53.4.0\\\" }\"; `apsw`",
       "targets": [
         {
           "anchor": {
-            "blob": "9111f219d7dcf97021d6681ad2dd742c85a47091",
+            "blob": "3b154c0b893c01fbb79b0fc04a033b08de1fbe28",
             "content": "sha256:6dc0cecbeac8ccc41e1a05a96799d5652d7940b5d02dc7f4ca1f476d278107e1",
             "locator": {
-              "end": 43,
+              "end": 42,
               "kind": "line_range",
-              "start": 43
+              "start": 42
             },
             "path": "mcp/uv.lock"
           },
@@ -549,12 +531,12 @@
         },
         {
           "anchor": {
-            "blob": "9111f219d7dcf97021d6681ad2dd742c85a47091",
+            "blob": "3b154c0b893c01fbb79b0fc04a033b08de1fbe28",
             "content": "sha256:580b200c0d480ad867ae427f11fe588174b8408f3b0487eb5068933f04f651b0",
             "locator": {
-              "end": 112,
+              "end": 110,
               "kind": "line_range",
-              "start": 103
+              "start": 101
             },
             "path": "mcp/uv.lock"
           },

@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "550045e865c871fe9ee1356984795629372f872d",
+        "blob": "49e933f18363bc23853b3ace976068c290addf82",
         "content": "sha256:ef59455423f3787f3039cd2fee6027b487b0ace7b1397e2f98cf5dfbf2dff38c",
         "locator": {
           "kind": "symbol",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "550045e865c871fe9ee1356984795629372f872d",
-        "content": "sha256:389a917ed5a9019972defd3ce9593f8202f69c144c1aa715c7349c1cb08ac424",
+        "blob": "49e933f18363bc23853b3ace976068c290addf82",
+        "content": "sha256:a309db4edd7ccb9ef9d05c1eab67efab9845377e8783db647989207c022403d9",
         "locator": {
           "kind": "file"
         }
@@ -44,12 +44,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "550045e865c871fe9ee1356984795629372f872d",
-            "content": "sha256:389a917ed5a9019972defd3ce9593f8202f69c144c1aa715c7349c1cb08ac424",
+            "blob": "49e933f18363bc23853b3ace976068c290addf82",
+            "content": "sha256:b15f3ab7f0048653b181be93b0991a4b0f83c5608c718a03943df3f484f202ea",
             "locator": {
-              "end": 191,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "enclosure_contract"
             }
           },
           "kind": "test"
@@ -61,12 +60,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "550045e865c871fe9ee1356984795629372f872d",
-            "content": "sha256:389a917ed5a9019972defd3ce9593f8202f69c144c1aa715c7349c1cb08ac424",
+            "blob": "49e933f18363bc23853b3ace976068c290addf82",
+            "content": "sha256:b15f3ab7f0048653b181be93b0991a4b0f83c5608c718a03943df3f484f202ea",
             "locator": {
-              "end": 191,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "enclosure_contract"
             }
           },
           "kind": "test"
@@ -78,12 +76,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "550045e865c871fe9ee1356984795629372f872d",
-            "content": "sha256:389a917ed5a9019972defd3ce9593f8202f69c144c1aa715c7349c1cb08ac424",
+            "blob": "49e933f18363bc23853b3ace976068c290addf82",
+            "content": "sha256:b15f3ab7f0048653b181be93b0991a4b0f83c5608c718a03943df3f484f202ea",
             "locator": {
-              "end": 191,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "enclosure_contract"
             }
           },
           "kind": "test"

@@ -109,7 +109,6 @@ when this run would have created the marker (nothing was written), and the case'
 
 ### Repo-Internal References
 
-
 - A new memory repository is created with the layout marker; an existing or legacy root is never marked. [2]
 
 - The marker case: only a new root is created in the text format. Anchor: `test_memory_init_creates_new_memory_in_the_text_format_only` [3]
@@ -117,17 +116,14 @@ when this run would have created the marker (nothing was written), and the case'
 
 - MCP config defines repository memory roots. [4]
 
+
 - The branch resolution this file performs: explicit argument, code-repository branch, or a refusal. [5]
 - The bounded unborn-repository repair path and its refusal. [6]
 - The recorded authority's consumers: first-baseline adoption and branch mutation. [7]
 - The branches case set that holds this behavior end to end. [8]
 
 
-
-
-
 - The failed-Git early return reports the marker as not created. [10]
-
 
 - `memory_init` is wired through the Phase 04 application entry point. [1]
 

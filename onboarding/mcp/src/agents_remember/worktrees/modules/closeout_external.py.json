@@ -910,7 +910,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "094b505e035fdb9ccfa830d17ddf2bc49162e872",
+            "blob": "f59fbbe4476cea3c4b5ba7a3bfdb2589a1f567ef",
             "content": "sha256:8031e67c7934ff8119bdbf79371644a07e0bc3347e70be2523b4ccf952bbc24b",
             "locator": {
               "kind": "symbol",
@@ -927,12 +927,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "094b505e035fdb9ccfa830d17ddf2bc49162e872",
+            "blob": "f59fbbe4476cea3c4b5ba7a3bfdb2589a1f567ef",
             "content": "sha256:5515aa30a8bc518efc81337e336ce2f471ec5182ded7adc5cfed9c206cc3af11",
             "locator": {
-              "end": 784,
+              "end": 781,
               "kind": "line_range",
-              "start": 712
+              "start": 709
             },
             "path": "mcp/tests/test_knowledge_reopen.py"
           },

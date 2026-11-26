@@ -264,12 +264,12 @@
         },
         {
           "anchor": {
-            "blob": "58ee640a8f53ac7e3e3b4aa884d750d6ad8eead7",
+            "blob": "73616a4370460b955a55ce809538d92e5e0ba76a",
             "content": "sha256:a7c7dce2e7f1889ec03211fca275ead24d98e28898bf7631070920d51b9ea0ca",
             "locator": {
-              "end": 715,
+              "end": 713,
               "kind": "line_range",
-              "start": 676
+              "start": 674
             },
             "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
           },
@@ -277,12 +277,12 @@
         },
         {
           "anchor": {
-            "blob": "58ee640a8f53ac7e3e3b4aa884d750d6ad8eead7",
+            "blob": "73616a4370460b955a55ce809538d92e5e0ba76a",
             "content": "sha256:3838533d65cb4855c05eba6a16d5d9e19afdc7f1ac73231021306d47816b97fd",
             "locator": {
-              "end": 673,
+              "end": 671,
               "kind": "line_range",
-              "start": 657
+              "start": 655
             },
             "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
           },

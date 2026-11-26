@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "bf9403ffee9c9d82d25625b471088c28f03d4e4d",
+        "blob": "685d041ff38b8538cc1a1936eb8560fbef2ac9ff",
         "content": "sha256:c35939cf0ca072018d6ba360e7177293f866cd7a75a78710ca301255fcba6f26",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "bf9403ffee9c9d82d25625b471088c28f03d4e4d",
+        "blob": "685d041ff38b8538cc1a1936eb8560fbef2ac9ff",
         "content": "sha256:21c33d0ee1b05af684bd6c3a3d22994088b3266f2bd0a33d355d00819f50e288",
         "locator": {
           "kind": "symbol",
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf9403ffee9c9d82d25625b471088c28f03d4e4d",
+            "blob": "685d041ff38b8538cc1a1936eb8560fbef2ac9ff",
             "content": "sha256:21c33d0ee1b05af684bd6c3a3d22994088b3266f2bd0a33d355d00819f50e288",
             "locator": {
               "kind": "symbol",
@@ -55,14 +55,15 @@
       ]
     },
     "2": {
-      "note": "Recorded landing refusal also preserves its footprint.\n\nAnchor: `test_refused_record_landing_writes_nothing`",
+      "note": "Recorded landing refusal also preserves its footprint.",
       "targets": [
         {
           "anchor": {
-            "blob": "bf9403ffee9c9d82d25625b471088c28f03d4e4d",
-            "content": "sha256:1e2341844959435baeec4f1c8b69be6d552951cd47c7698df053962d4ede8698",
+            "blob": "685d041ff38b8538cc1a1936eb8560fbef2ac9ff",
+            "content": "sha256:fd939fdf83873484f1c03f9e4554bb913a0fc8799d1914f7e29ceb31a1716886",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_refused_record_landing_writes_nothing"
             }
           },
           "kind": "test"
@@ -74,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf9403ffee9c9d82d25625b471088c28f03d4e4d",
+            "blob": "685d041ff38b8538cc1a1936eb8560fbef2ac9ff",
             "content": "sha256:c35939cf0ca072018d6ba360e7177293f866cd7a75a78710ca301255fcba6f26",
             "locator": {
               "kind": "symbol",
@@ -86,14 +87,15 @@
       ]
     },
     "4": {
-      "note": "The staying record_landing adapter call is judged by its exact returned refusal and retained detail, with the existing complete no-write oracle. Fixture publication precedes the snapshot; the control is not attributed to an earlier pre-publication frame.\n\nAnchor: Current STOP-delta source carrier",
+      "note": "The staying record_landing adapter call is judged by its exact returned refusal and retained detail, with the existing complete no-write oracle. Fixture publication precedes the snapshot; the control is not attributed to an earlier pre-publication frame.",
       "targets": [
         {
           "anchor": {
-            "blob": "bf9403ffee9c9d82d25625b471088c28f03d4e4d",
-            "content": "sha256:1e2341844959435baeec4f1c8b69be6d552951cd47c7698df053962d4ede8698",
+            "blob": "685d041ff38b8538cc1a1936eb8560fbef2ac9ff",
+            "content": "sha256:fd939fdf83873484f1c03f9e4554bb913a0fc8799d1914f7e29ceb31a1716886",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_refused_record_landing_writes_nothing"
             }
           },
           "kind": "test"

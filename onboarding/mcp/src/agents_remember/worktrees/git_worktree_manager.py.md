@@ -47,26 +47,13 @@ The former direct-closeout re-exports (`direct_closeout_result`,
 
 Worktree lifecycle payloads expose typed MCP next hints through
 `nextOperation`, `nextTool`, `nextArgs`, and optional `nextRequiredArgs` instead
-of CLI-shaped `next_command` strings. Provider setup for worktree start is fed
-through an internal `WorktreeProviderSetupConfig` created by the MCP application entry point,
-so callers no longer pass provider coordination roots, settings paths, or
-runtime roots into the worktree start surface. This is a retained configuration carrier,
-not a current retired-provider preparation promise: the shared generator returns
-`contextProviders.enabled=false` with an empty provider map, and the common
-enablement predicate returns false for both retired identities. Neither this
-facade nor its exported setup value establishes a current CGC/GrepAI seed,
-install, start or index-build operation.
+of CLI-shaped `next_command` strings.
 
 Closeout context reparsing, changed-path discovery, source-onboarding plans, entity fingerprint and generated route-index refresh, integration replay, cleanup, and lifecycle finalization now live in the extracted modules
 documented by the `modules/overview.md` route overview.
 
 ### Invariants And Boundaries
 
-- Worktree provider setup must not invoke `<coordinationRoot>/scripts`.
-- Provider enablement and roots come from MCP-derived provider settings, not
-  coordinator `system/settings.json`.
-- Worktree provider setup should pass typed provider setup options directly and
-  should not round-trip through provider setup CLI parsing.
 - Worktree status and closeout payloads should describe the next MCP tool/state,
   not shell commands.
 - MCP worktree tools should call result-returning functions directly; CLI
@@ -94,11 +81,7 @@ documented by the `modules/overview.md` route overview.
 
 ### Repo-Internal References
 
-
-- The retained worktree setup configuration reaches the existing provider helpers, but generated lifecycle settings are disabled/empty and both retired identities are never enabled; no ordinary CGC/GrepAI seed or runtime preparation is established. [2]
-
 - Worktree status packets project lifecycle payloads into context packets. [3]
-
 
 - Long-path-safe filesystem wrappers live in the kernel filesystem helper. [8]
 
@@ -106,19 +89,16 @@ documented by the `modules/overview.md` route overview.
 
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
-
-- MCP worktree start writes temporary lifecycle settings and passes them to this module. [1]
-
-
 > Retained earlier citation wording: - Worktree contract serialization lives in the package worktree contract module. [4]
 
 - The pause's result function is imported from its own module and listed in the facade's public export surface, so the stop route is reachable through the stable facade path. [6]
 
+
 - The facade declares its public worktree lifecycle result exports, including the pull-request landing recorder, the checkpoint landing route and the stop-only pause. [5]
+
 
 > Retained earlier citation wording: - Terminal lifecycle finalization is implemented in the extracted module. [7]
 
 - Worktree contract serialization lives in the package worktree contract module. [4]
-
 
 - Terminal lifecycle finalization is implemented in the extracted module. [7]

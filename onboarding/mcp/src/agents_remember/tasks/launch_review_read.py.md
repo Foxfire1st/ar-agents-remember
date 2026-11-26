@@ -16,15 +16,15 @@ The default-false ContextVar confines tolerance to explicit launch call scopes. 
 
 This is candidate-source onboarding, not execution, CODE/MEMORY acceptance, serving-build currentness or permission to publish. The owning caller retains transaction, host and role authority.
 
-
 The governing workflow opens an independent memory review after CODE PASS on the same task using begin_review/record_review with reviewKind=memory. It has its own immutable baseline and shrinking IDs, under the same settings limit and extra-round approval rule, and never resets code reviewState. The signed rollout applies only to memory reviews begun after L88 lands; already-underway reviews (L168, L56, L57, L59) finish with their sealed-report workflow, with no migration/backfill. This describes the candidate contract, not a claim that the serving build already supports it.
 
 ## Evidence
 
-
 - Reason admission, threshold and differing-harness/model inheritance boundary. [2]
 - Launch scope opts in to review-only tolerance and forwards the same request reason. [3]
+
 - Child start enters the review-tolerance scope after root validation. Context variables do not cross exec. [4]
+
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [5]
 
 - Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [1]

@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2af08192a64805b537a585a25682c679c7b2c4d3",
-        "content": "sha256:eca716be9819925d70a1c828635b0269c71d46df5c3e54bb7bf1ab3acfeabe00",
+        "blob": "59b413fbad44a9ba295725852b4742e20c0dbf45",
+        "content": "sha256:5ae31df91151511c403bc1199ce7c93f5f4883f9f2c413520f01d98461ef33b0",
         "locator": {
           "kind": "symbol",
           "name": "build_parser"
@@ -27,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2af08192a64805b537a585a25682c679c7b2c4d3",
+            "blob": "59b413fbad44a9ba295725852b4742e20c0dbf45",
             "content": "sha256:9930eda2d08569d3cd033d64b28e05822d39de63b0b90937e139186652fdf327",
             "locator": {
               "kind": "symbol",
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2af08192a64805b537a585a25682c679c7b2c4d3",
+            "blob": "59b413fbad44a9ba295725852b4742e20c0dbf45",
             "content": "sha256:e9753e112f7dd107b0668c06b839356b1be2f56aa997f652adf9c7547e1f42b5",
             "locator": {
               "kind": "symbol",
@@ -54,7 +54,7 @@
         },
         {
           "anchor": {
-            "blob": "2af08192a64805b537a585a25682c679c7b2c4d3",
+            "blob": "59b413fbad44a9ba295725852b4742e20c0dbf45",
             "content": "sha256:ab09238df46863ba5f29adf43f2eef8a5a5645c17e5b75dc6e8bd3abaa7b714e",
             "locator": {
               "kind": "symbol",
@@ -66,25 +66,25 @@
       ]
     },
     "2": {
-      "note": "`build_parser` exposes closeout/integration options without ledger-message flags.\n\nAnchor: `build_parser`",
+      "note": "`build_parser` exposes closeout/integration options without ledger-message flags.",
       "targets": [
         {
           "anchor": {
-            "blob": "2af08192a64805b537a585a25682c679c7b2c4d3",
-            "content": "sha256:732a87f2837e120295c0abd9e2a432657a50fbddda8f1ec98194d8e5be2fe2a6",
+            "blob": "59b413fbad44a9ba295725852b4742e20c0dbf45",
+            "content": "sha256:5ae31df91151511c403bc1199ce7c93f5f4883f9f2c413520f01d98461ef33b0",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "build_parser"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2af08192a64805b537a585a25682c679c7b2c4d3",
-            "content": "sha256:eca716be9819925d70a1c828635b0269c71d46df5c3e54bb7bf1ab3acfeabe00",
+            "blob": "59b413fbad44a9ba295725852b4742e20c0dbf45",
+            "content": "sha256:73fdcceb80f64771d016481e986faa9021f7cf9bbe7cda677815cd0b6e0568ae",
             "locator": {
-              "kind": "symbol",
-              "name": "build_parser"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -96,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2af08192a64805b537a585a25682c679c7b2c4d3",
+            "blob": "59b413fbad44a9ba295725852b4742e20c0dbf45",
             "content": "sha256:5ad00978007b4f2360e6ef717bcc75eed8d30a8fc4c64459e484e4bd5d88424a",
             "locator": {
               "kind": "symbol",
@@ -112,24 +112,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
-            "content": "sha256:3fd7dc985e59bef427b4594a86c60921dccc4b6fa3874cb48c220075593be308",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+            "content": "sha256:99b60ccfb9dc974c453576282bd0f5915fcafd5decd2148e81681e49c0b552cf",
             "locator": {
               "kind": "symbol",
               "name": "worktree_start_tool"
-            },
-            "path": "mcp/src/agents_remember/application/worktree_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
-            "content": "sha256:4e1af328ea64fc48a852739eb85e52f5badeb5d28f20129f16fb76950d8e5960",
-            "locator": {
-              "end": 197,
-              "kind": "line_range",
-              "start": 100
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -142,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:945b3f36f81498a17271812f1acc73d17ec0b4924c9852afe0f64647a2f19ab9",
             "locator": {
               "kind": "symbol",
@@ -154,12 +141,12 @@
         },
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:2d73db1c8f727a86815892b078c5ef034e4e36497e1ff1e8a5f78bde81e350a2",
             "locator": {
-              "end": 297,
+              "end": 238,
               "kind": "line_range",
-              "start": 290
+              "start": 231
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -172,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
             "locator": {
               "kind": "symbol",
@@ -184,12 +171,12 @@
         },
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:4c3fcc980bdb08db087bdea4a821292bdf5a16861c42fa70a89dbcc287eeb106",
             "locator": {
-              "end": 325,
+              "end": 266,
               "kind": "line_range",
-              "start": 302
+              "start": 243
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -202,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2af08192a64805b537a585a25682c679c7b2c4d3",
+            "blob": "59b413fbad44a9ba295725852b4742e20c0dbf45",
             "content": "sha256:5aca7b38dac808f5484dc0d35142f937387ce920b97028ce565ad22b10306134",
             "locator": {
               "kind": "symbol",
@@ -218,24 +205,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
-            "content": "sha256:72996717f35aed446cc93f846cd0dc4391f43e3f9c5a39a3bc9deeffc6c3690e",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+            "content": "sha256:0f5e5f76f9740340e9850fecf8d8481ab2ce7bef96881cc92bb1650fcdae2b0b",
             "locator": {
               "kind": "symbol",
               "name": "worktree_cleanup_tool"
-            },
-            "path": "mcp/src/agents_remember/application/worktree_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
-            "content": "sha256:8890543d34dcde146c1507eebe59dc05124ddc899e7f47ea66ff075ed18e1d6c",
-            "locator": {
-              "end": 790,
-              "kind": "line_range",
-              "start": 769
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },

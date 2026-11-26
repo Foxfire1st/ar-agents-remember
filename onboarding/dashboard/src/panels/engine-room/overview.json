@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "blob": "b0260f958e6606a260ea3b52a8d9557bfbc06d38",
             "content": "sha256:23dc6cc4bffbb9f8686a5bd39c41d5511db1a4b6243f8637d0e1bf0448b137e6",
             "locator": {
               "end": 98,
@@ -32,7 +32,7 @@
         },
         {
           "anchor": {
-            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "blob": "b0260f958e6606a260ea3b52a8d9557bfbc06d38",
             "content": "sha256:a4f266f5dd15d6d2cf7e9bd92bb9f928fe1a0b05e166728552c4523c59af83da",
             "locator": {
               "end": 374,
@@ -58,7 +58,7 @@
         },
         {
           "anchor": {
-            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "blob": "b0260f958e6606a260ea3b52a8d9557bfbc06d38",
             "content": "sha256:23dc6cc4bffbb9f8686a5bd39c41d5511db1a4b6243f8637d0e1bf0448b137e6",
             "locator": {
               "end": 98,
@@ -71,7 +71,7 @@
         },
         {
           "anchor": {
-            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "blob": "b0260f958e6606a260ea3b52a8d9557bfbc06d38",
             "content": "sha256:a4f266f5dd15d6d2cf7e9bd92bb9f928fe1a0b05e166728552c4523c59af83da",
             "locator": {
               "end": 374,
@@ -107,12 +107,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "blob": "57d37b97823e0b7bec930015b4ff52793eaf0da2",
             "content": "sha256:6768f05bbb4d1c870d56b55b932e64ce7df3837770597212bc88985fec5c8df5",
             "locator": {
-              "end": 145,
+              "end": 144,
               "kind": "line_range",
-              "start": 54
+              "start": 53
             },
             "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
           },
@@ -125,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "blob": "a1ac7b1527759b668aee52472c6db27a07a191b6",
             "content": "sha256:11435a3178df88ef447007e28d0ecf2fdffdacaec000133a9e549d1c1876c1f2",
             "locator": {
               "end": 9,
@@ -138,12 +138,12 @@
         },
         {
           "anchor": {
-            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "blob": "a1ac7b1527759b668aee52472c6db27a07a191b6",
             "content": "sha256:9effedaf0257b7453234f1d383042c3fb4f5721404a4e664c28adfb723b53763",
             "locator": {
-              "end": 99,
+              "end": 95,
               "kind": "line_range",
-              "start": 93
+              "start": 89
             },
             "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
           },
@@ -151,12 +151,12 @@
         },
         {
           "anchor": {
-            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "blob": "a1ac7b1527759b668aee52472c6db27a07a191b6",
             "content": "sha256:f85ab62386f37aca0671da9ecd1cc060de954391dee2bbbe59d0ce76532d8c7e",
             "locator": {
-              "end": 228,
+              "end": 224,
               "kind": "line_range",
-              "start": 166
+              "start": 162
             },
             "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
           },
@@ -164,12 +164,12 @@
         },
         {
           "anchor": {
-            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "blob": "a1ac7b1527759b668aee52472c6db27a07a191b6",
             "content": "sha256:3b7214d844933f22f434c49e6dbd562bcea97fc71c79743d46edc8d9f6a4e1fb",
             "locator": {
-              "end": 269,
+              "end": 254,
               "kind": "line_range",
-              "start": 263
+              "start": 248
             },
             "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
           },
@@ -177,12 +177,12 @@
         },
         {
           "anchor": {
-            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "blob": "a1ac7b1527759b668aee52472c6db27a07a191b6",
             "content": "sha256:648417a8b0d3aa15b3a4eb71c10c429a44b967c80a6fb1adc16d4ac69f9ccef4",
             "locator": {
-              "end": 550,
+              "end": 489,
               "kind": "line_range",
-              "start": 533
+              "start": 472
             },
             "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
           },
@@ -195,7 +195,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab7f380552d2c5c141cd55b980ed509244b01f6e",
+            "blob": "ef3bcd668e395c2e6fac6a52f0b34ddad856e4f9",
             "content": "sha256:bcda3aa2cce27047c0cb5733f48b675cf7fe6f3c7d6f70c8d4a4fce04ced66a4",
             "locator": {
               "kind": "symbol",
@@ -416,14 +416,27 @@
       ]
     },
     "2": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The served `EngineProcessNode` / `Analytics.engineProcesses` contract.\n\nAnchor: `EngineProcessNode`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The served `EngineProcessNode` / `Analytics.engineProcesses` contract.\n\nAnchor: `EngineProcessNode` (`342-377+`), `Analytics` (`528-550`), `Source`: `mcp/src/agents_remember/observer/projection.py:342-377` and `mcp/src/agents_remember/observer/projection.py:528-550`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
-            "content": "sha256:d32d3fa3f9ee309299df68d8e41fcd2129443d1c976d81632c8281b7311b99b4",
+            "blob": "001c87448f054e5e0fc5d448ca9aca53a3a3e17a",
+            "content": "sha256:4da11b8fd512dee9e5d196d87cd25d3a1e6fa372a63b2295541724cc7944c237",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "EngineProcessNode"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "001c87448f054e5e0fc5d448ca9aca53a3a3e17a",
+            "content": "sha256:6108dedf6ad068ddebfd93906c2907cb0d1c8f3e28681864edc9ac9c338b67fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "Analytics"
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -467,7 +480,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "blob": "b0260f958e6606a260ea3b52a8d9557bfbc06d38",
             "content": "sha256:86af058e0c5abc7a69a835324dcdc9697f80441984b3e2dceaa2cedd54eafdbb",
             "locator": {
               "kind": "symbol",
@@ -479,7 +492,7 @@
         },
         {
           "anchor": {
-            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "blob": "b0260f958e6606a260ea3b52a8d9557bfbc06d38",
             "content": "sha256:868f56411c0f65bcaedd6ca1614d510845b8d4ccf8b225829b1726b3b6455ecb",
             "locator": {
               "kind": "symbol",
@@ -496,7 +509,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "blob": "001c87448f054e5e0fc5d448ca9aca53a3a3e17a",
             "content": "sha256:0a35ca704e6f95e4f1e3ead2ac775ceb1457d96888de21bf0fbaf449e015f2f8",
             "locator": {
               "end": 456,
@@ -574,12 +587,12 @@
         },
         {
           "anchor": {
-            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "blob": "57d37b97823e0b7bec930015b4ff52793eaf0da2",
             "content": "sha256:3548b0005b46d8a557674654ac9a3a4a312b9e9d3cff075b85f6109321e233ba",
             "locator": {
-              "end": 231,
+              "end": 230,
               "kind": "line_range",
-              "start": 153
+              "start": 152
             },
             "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
           },
@@ -637,29 +650,16 @@
       ]
     },
     "29": {
-      "note": "The current pre-contract fleeting assertion checks `nextAction`, and the replacement census rejects retired provider/setup fields and rendered traces; the former T7B retry/abandon and no-disabled-memory assertion remains historical.\n\nAnchor: `renders the big red fleeting-enclosure box (BLOCKED title + reason + recovery) for a pre-contract block`; `EnclosureCanvas — provider traces are gone (MIK-R112 rule 2)`",
+      "note": "The current pre-contract fleeting assertion checks nextAction; the former T7B retry/abandon, no-disabled-memory, and MIK-R112 provider-traces census assertions are not in the current test file.\n\nAnchor: `renders the big red fleeting-enclosure box (BLOCKED title + reason + recovery) for a pre-contract block`",
       "targets": [
         {
           "anchor": {
-            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "blob": "a1ac7b1527759b668aee52472c6db27a07a191b6",
             "content": "sha256:cba204820a8a7da8b68ef2fca5f4b5efff375bfa06d2920bda6aa89ab5e4c272",
             "locator": {
               "end": 39,
               "kind": "line_range",
               "start": 31
-            },
-            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
-            "content": "sha256:8f7caa2c52679d2c1791e4e364844d08e1f548b64394bc0a5c8fadd58a527fb0",
-            "locator": {
-              "end": 520,
-              "kind": "line_range",
-              "start": 477
             },
             "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
           },
@@ -763,7 +763,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "blob": "b0260f958e6606a260ea3b52a8d9557bfbc06d38",
             "content": "sha256:86af058e0c5abc7a69a835324dcdc9697f80441984b3e2dceaa2cedd54eafdbb",
             "locator": {
               "end": 415,
@@ -781,7 +781,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "blob": "b0260f958e6606a260ea3b52a8d9557bfbc06d38",
             "content": "sha256:e4320fe12f6cca6ca4ae474b86803e4b13e938c15ceddf48b76c0dbd8bcef000",
             "locator": {
               "end": 160,
@@ -849,12 +849,12 @@
       ]
     },
     "5": {
-      "note": "`EngineProcessEdge` (`extra=\"forbid\"`) with the documented `kind` and `state` vocabularies the flash derives from.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): `EngineProcessEdge` (`extra=\"forbid\"`) with the documented `kind` and `state` vocabularies the flash derives from.\n\nAnchor: `EngineProcessEdge`, `Source`: `mcp/src/agents_remember/observer/projection.py:295-315`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
-            "content": "sha256:4b31b460cf2bfd78dc4589df8a552c328a633762e9e07d658f5db4e360b63935",
+            "blob": "001c87448f054e5e0fc5d448ca9aca53a3a3e17a",
+            "content": "sha256:d936091ae23a461972e677f948e783aaceb44425c5a6e4530b0b7487b4c0b8d8",
             "locator": {
               "kind": "symbol",
               "name": "EngineProcessEdge"
@@ -870,7 +870,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "blob": "b0260f958e6606a260ea3b52a8d9557bfbc06d38",
             "content": "sha256:86af058e0c5abc7a69a835324dcdc9697f80441984b3e2dceaa2cedd54eafdbb",
             "locator": {
               "kind": "symbol",
@@ -882,7 +882,7 @@
         },
         {
           "anchor": {
-            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "blob": "b0260f958e6606a260ea3b52a8d9557bfbc06d38",
             "content": "sha256:868f56411c0f65bcaedd6ca1614d510845b8d4ccf8b225829b1726b3b6455ecb",
             "locator": {
               "kind": "symbol",
@@ -941,12 +941,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab7f380552d2c5c141cd55b980ed509244b01f6e",
+            "blob": "ef3bcd668e395c2e6fac6a52f0b34ddad856e4f9",
             "content": "sha256:8676a7512c767fa359421941f48b6bdd0679d0b362e99c3cb18366695812eefd",
             "locator": {
-              "end": 43,
+              "end": 42,
               "kind": "line_range",
-              "start": 18
+              "start": 17
             },
             "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
           },

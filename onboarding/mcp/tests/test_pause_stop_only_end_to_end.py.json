@@ -103,12 +103,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
+            "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
             "content": "sha256:732f1903a69af76a07aa2cbdff538529f00d9eecb4145aa164f538dc6a461b59",
             "locator": {
-              "end": 767,
+              "end": 760,
               "kind": "line_range",
-              "start": 767
+              "start": 760
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -178,12 +178,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
+            "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
             "content": "sha256:732f1903a69af76a07aa2cbdff538529f00d9eecb4145aa164f538dc6a461b59",
             "locator": {
-              "end": 767,
+              "end": 760,
               "kind": "line_range",
-              "start": 767
+              "start": 760
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -196,7 +196,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
+            "blob": "c5afa627f7a9abd33ed8e6c39c72d5372920d681",
             "content": "sha256:dd4591e3746df8c3a9f5b823b6fdb213526ad5e41b980a90ffff5a815c5498a8",
             "locator": {
               "end": 147,
@@ -425,12 +425,12 @@
         },
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
             "content": "sha256:a8768b1add6b6636c56184ec2fc8ee90c3210ab32314cb7477c3ff41aad2379c",
             "locator": {
-              "end": 515,
+              "end": 456,
               "kind": "line_range",
-              "start": 466
+              "start": 407
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },

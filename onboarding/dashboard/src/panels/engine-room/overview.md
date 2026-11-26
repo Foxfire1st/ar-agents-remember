@@ -72,7 +72,7 @@ The inherited design history spans the state-backed slice 5e, lifecycle motion 5
 
 The former eight-mode library comprised T3B memory/ledger block, T1B stale-base block, T7B provider-plan block, T9B seed fault, T9C reindex reroute, T12B live-memory sync, T14C integration conflict, and T18 abandon. T3B/T1B/T12B enclosure predicates, T14C integration specimens, and T18 teardown remain represented. T7B now reads as fleeting when its missing facts say the contract is unwritten. Provider dropout, seed flash/fault, reindex, gauges, clone arcs, structural petals/bezel palette, and official provider-engine wiring are historical visuals. Historical gold-bezel/petal and provider-slot-honesty policies should not be presented as current rendered obligations.
 
-The inherited CUR-C02/T7B title-body closure remains historical. The current pre-contract assertion checks fleeting recovery against `nextAction`, and the all-fixture census rejects retired provider fields and visuals. The former T7B retry/abandon and no-disabled-memory assertion is not present in that current body. Its producer receipt was not inspected. This is not a new mounted capture, e2e run, or full-suite PASS. The integration test title still mentions a bent replay path, while its body checks data-strategy and current renderer source deliberately draws straight paths.
+The inherited CUR-C02/T7B title-body closure remains historical. The current pre-contract assertion checks fleeting recovery against `nextAction`. The former T7B retry/abandon and no-disabled-memory assertion is not present in that current body. Its producer receipt was not inspected. This is not a new mounted capture, e2e run, or full-suite PASS. The integration test title still mentions a bent replay path, while its body checks data-strategy and current renderer source deliberately draws straight paths.
 
 The 260712-TRH-L7 stale-landing intent survives in explicit stale chip/PR text, hover age, and observed-only directional-flow predicates. The 260727-CHATS-IM-L2 sibling-SVG ownership survives with surge/attention rather than reindex. The historical L5I keep-alive rationale has changed: current Cockpit conditionally mounts EngineRoom only for the engine view, and comments describe retained pages without a dashboard entry. Visibility gates and memoized slice subscriptions remain, but this source does not support describing Engine Room as a currently hidden keep-alive cockpit layer or claiming near-zero measured hidden-view CPU.
 
@@ -100,10 +100,16 @@ These superseded reference captions remain history; the current evidence region 
 
 ## Evidence
 - Retained reference account (no fresh execution or acceptance inferred): The server composer of the process nodes the client renders. [1]
+
+
 - Retained reference account (no fresh execution or acceptance inferred): The served `EngineProcessNode` / `Analytics.engineProcesses` contract. [2]
+
+
 - Retained reference account (no fresh execution or acceptance inferred): The honest-motion gate the GSAP/Motion read. [3]
 - Retained reference account (no fresh execution or acceptance inferred): The cockpit shell that hides the rails for the Engine Room view (§4.1). [4]
+
 - Retained reference account (no fresh execution or acceptance inferred): `EngineProcessEdge` (`extra="forbid"`) with the documented `kind` and `state` vocabularies the flash derives from. [5]
+
 - Retained reference account (no fresh execution or acceptance inferred): The client mirror of the edge, which no longer declares a polarity field. [7]
 > > - Retained reference account (no fresh execution or acceptance inferred): Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof. [8] [9] [10] [11] [12]
 
@@ -128,8 +134,7 @@ These superseded reference captions remain history; the current evidence region 
 
 - EngineRoom conditionally mounted, contrary to inherited keep-alive account [28]
 
-- The current pre-contract fleeting assertion checks `nextAction`, and the replacement census rejects retired provider/setup fields and rendered traces; the former T7B retry/abandon and no-disabled-memory assertion remains historical. [29]
-
+- The current pre-contract fleeting assertion checks nextAction; the former T7B retry/abandon, no-disabled-memory, and MIK-R112 provider-traces census assertions are not in the current test file. [29]
 
 - BranchTier mounts integration/source and worktree tiers plus a conditional middle landing tier, with branch labels from projected refs. [30]
 

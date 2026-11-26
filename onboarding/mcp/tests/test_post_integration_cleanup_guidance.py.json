@@ -120,15 +120,16 @@
       ]
     },
     "4": {
-      "note": "Production completion and post-integration guidance owner.\n\nAnchor: `carryover_done` `_post_integration_phase`",
+      "note": "Production completion and post-integration guidance owner.\n\nAnchor: `` `carryover_done` `_post_integration_phase` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "blob": "ba4fb6e617261f7916c779588d183a65a04c202d",
             "content": "sha256:ecf13dc8ed059a3e33a54b93596d18e2ef1b67905eac792832e52a61c0cb41d9",
             "locator": {
-              "kind": "symbol",
-              "name": "carryover_done"
+              "end": 217,
+              "kind": "line_range",
+              "start": 194
             },
             "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
           },
@@ -136,35 +137,12 @@
         },
         {
           "anchor": {
-            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "blob": "ba4fb6e617261f7916c779588d183a65a04c202d",
             "content": "sha256:ee4961644f5f75ee7af81745e3554bbfbc0eeb8e1029eadaf6de37787a13299f",
             "locator": {
-              "kind": "symbol",
-              "name": "_post_integration_phase"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
-            "content": "sha256:7fff4b3465baa07e6dae5115eee16c20b09b2bc149171d7d1689bbcdb507e476",
-            "locator": {
-              "end": 328,
+              "end": 356,
               "kind": "line_range",
-              "start": 245
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
-            "content": "sha256:c5a2fd084e668cadc10135510d3635ab841914e4f4cfafe640271cfe0bf18e67",
-            "locator": {
-              "kind": "file"
+              "start": 271
             },
             "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
           },

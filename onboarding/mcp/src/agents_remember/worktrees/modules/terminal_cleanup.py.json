@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8ba587425b51719d046b9e5c82028fec4adc0ceb",
-        "content": "sha256:643a27fd99c52c571196fd663a6137444aa8a3a703a28271fd9507d801ee9a83",
+        "blob": "b049ccb28a1fe8372cdbf3a8dc9a9410ed9d2b11",
+        "content": "sha256:d37a11fb597667fd5b22b0ff97fa68bf83f139d01b5501c0af6d30b1886c8d07",
         "locator": {
           "kind": "symbol",
           "name": "_cleanup_with_guard"
@@ -22,15 +22,14 @@
   ],
   "references": {
     "1": {
-      "note": "Archival runs inside the admitted publish step before destructive outputs.",
+      "note": "Archival runs inside the admitted publish step before destructive outputs.\n\nAnchor: `_cleanup_with_guard`",
       "targets": [
         {
           "anchor": {
-            "blob": "8ba587425b51719d046b9e5c82028fec4adc0ceb",
-            "content": "sha256:643a27fd99c52c571196fd663a6137444aa8a3a703a28271fd9507d801ee9a83",
+            "blob": "b049ccb28a1fe8372cdbf3a8dc9a9410ed9d2b11",
+            "content": "sha256:be0bd08d507291f7564f131a343d4122cfb0c447d3941694ad6184024b1ee991",
             "locator": {
-              "kind": "symbol",
-              "name": "_cleanup_with_guard"
+              "kind": "file"
             }
           },
           "kind": "code"

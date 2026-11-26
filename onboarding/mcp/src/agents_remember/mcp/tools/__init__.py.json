@@ -26,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cbc2a027fa8329302b9ba1a1af26589d7940d865",
-            "content": "sha256:1401ce89181b17dff2611b4f0e8f325b4a79dc9190966ebb4fd77cab54c32db4",
+            "blob": "20043640df430d69a0e2c17f3620f3aa74158c47",
+            "content": "sha256:37485982100b0345093f40fbb556287166175c905ee79cbc3752226f8bea182e",
             "locator": {
               "kind": "symbol",
               "name": "lifecycle_finalize_task_payload"

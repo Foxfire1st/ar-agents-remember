@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "04c76787a21c478413c9d75543435f677602d33c",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
     "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "Verified across the clean merge of 261124-EXP (ebd954778) and DEP master (69ba7b199): docs/design/python-evidence-system.md pins no test counts and accurately describes the seven accepting lanes and source-derived lifecycle contracts across both EXP-L2 and DEP-L7 modules.",
-    "task": "261125-DEP",
-    "uncommitted": false
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/design/python-evidence-system.md pins no test counts and accurately describes the seven accepting lanes and source-derived lifecycle contracts across 261124-EXP, DEP-L7, and DEP-L2 provider removals.",
+    "task": "261125-DEP-L2",
+    "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
   "id": "DPD-ZMQ523",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 22,
+  "revision": 23,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/test_support/agents_remember_test_support/testing/cadence_runner.py"
     },
     {
-      "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+      "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
       "kind": "file",
       "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
     },
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "17ca768ff83751a5d011aef59007a0ad278c68b6",
+      "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "79fbd783d810ccc505611ebb50a1d623d998dfea",
+      "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },
@@ -107,14 +107,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T06:50:36+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
-    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-4",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+    "role": "curator",
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
     "task": "261125-DEP"
   }
 }

@@ -4,7 +4,6 @@
 
 [engine-room overview](overview.md)
 
-
 ## Current enclosure-only composition
 
 fxSignature now joins phase, running edge kinds, landing ref states, failed/stale edge descriptors and memoryMode; effect separately depends on worktreeGroup. buildFx has no fault/reindex loops; it keeps source scan, coupler surge, breath, stop, geometry-backed refuse and packet plus DrawSVG/retract/off-screen pause.
@@ -26,8 +25,6 @@ restore removed provider visuals or tool exposure.
 The prior onboarding below is retained for provenance and unrelated design history.
 It is not current provider-render, fallback, prototype-parity or execution guidance.
 Current behavior and its limits are the operative contract above.
-
-
 
 The Engine Room canvas **GSAP motion substrate** (slice 05k, the `05f` §8 correction target). One
 `gsap.context` per enclosure, scoped to the `EnclosureCanvas` `<svg>` root, owns ONLY the GSAP-native parts:
@@ -132,13 +129,12 @@ This is a same-repository motion hook; the proving evidence is the source plus t
 produces the `data-draw`/`data-fx` elements. The `system/sources.md` registry lists no Domain Documentation
 entries, so the GSAP/Motion library docs are not cited here — the split is proven by the in-repo code.
 
-
 - `phaseStage` / `fxSignature` / `buildFx` + the `useEngineTimeline` context (retract + draw-on + fx, gated). [1]
-
 
 - `fxSignature`'s refused fold-in now filters `failed`/`stale` only. [2]
 
 - `EngineProcessEdge`'s documented `state` vocabulary, which never listed `refused`. [4]
+
 - RETRACT phase (5o) — departing lanes erased tail-to-tip, stroke locked cyan via `gsap.set` before the tween, `clearProps` stroke/filter on complete. [5]
 
 - `buildFx` installs the canvas effect tweens the markup declares: the pre-block verify scan ring, the warp-core surge bands, the attention `breath`, the terminal stop flash, the one-shot refused-conduit flash coloured by the lane's `data-polarity`, and the flow packet riding `data-path`. [6]
@@ -150,7 +146,6 @@ entries, so the GSAP/Motion library docs are not cited here — the split is pro
 - `EngineProcessNode` / `EngineProcessEdge` (the `phase` / `edges` / `landing` / `providers` / `seedFallback` / `memoryMode` it reads; `EngineProcessEdge` no longer declares `refusedPolarity`). [9]
 
 - The GSAP-gate determinism tests that pin the no-ticker-under-effects-off contract. [10]
-
 
 ## Current L5I Maintenance
 

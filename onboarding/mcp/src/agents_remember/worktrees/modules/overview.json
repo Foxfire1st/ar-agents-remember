@@ -377,12 +377,12 @@
       ]
     },
     "20": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The package is imported through the public worktree manager facade.\n\nAnchor: `__all__`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The package is imported through the public worktree manager facade.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "7bc03a9ceb2a78f7bfe09c9a66097cdff2e7cf97",
-            "content": "sha256:9d6f4b44f86c4f75f224c349c7020e2091f9bdeedbcf7b7dde40d0a2a778c47e",
+            "blob": "8dd7ccaf4a7ea6a1d80c3784cf32ff8a53b8b805",
+            "content": "sha256:9fe9c2181f2cb48eeeacbe511e5172e31684c6abfc7296b337dad59aab54361e",
             "locator": {
               "kind": "file"
             },
@@ -445,12 +445,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
-            "content": "sha256:033a560188ccb2030f55658d9c9c6188196cf5dbba375b84f3599a150fde0d75",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "content": "sha256:5da92fb48d671caaa4fe5c767a4069b245373302dc1ba7710c5ce6e55df46734",
             "locator": {
-              "end": 373,
-              "kind": "line_range",
-              "start": 310
+              "kind": "symbol",
+              "name": "_run_or_verify_cleanup"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
           },
@@ -524,7 +523,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:04d86805fe7f02d3596ffcbcad248910dc1ddcfb56a5a965023c98a8413cc9e2",
             "locator": {
               "end": 332,
@@ -537,7 +536,7 @@
         },
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:6ec06a7803b29cd2a5ce32ccef80a6b0cfefd4478eb4d47b67604f7075e795a4",
             "locator": {
               "end": 47,
@@ -661,7 +660,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "blob": "ba4fb6e617261f7916c779588d183a65a04c202d",
             "content": "sha256:ecf13dc8ed059a3e33a54b93596d18e2ef1b67905eac792832e52a61c0cb41d9",
             "locator": {
               "kind": "symbol",
@@ -936,12 +935,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "blob": "a5fdc792c529205fd36769bc5c1793e6f7b6d9d9",
             "content": "sha256:4357c9332bc368600523e68b45bd67bec7d54f4a8ecb52de5c90b49808bc6bc0",
             "locator": {
-              "end": 189,
+              "end": 188,
               "kind": "line_range",
-              "start": 113
+              "start": 112
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
@@ -1003,7 +1002,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
+            "blob": "66c73c1d6d257860d33465fcb4d60be236ce19af",
             "content": "sha256:ff54030cc900be402922f368567c3a8c559d371293fe19f30e703709e05c7a7d",
             "locator": {
               "kind": "symbol",
@@ -1039,24 +1038,6 @@
               "name": "prove_external_memory_recovery"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integration_recovery.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "44": {
-      "note": "Start helpers now live below the dedicated startup package marker.\n\nAnchor: \"Worktree-start contract, provider, leaf-ref, and result collaborators.\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b22139456b1be5e0ec19c1e5e86e1d44b69dcba9",
-            "content": "sha256:f9c9c125d331c6e875b0c8be486d208e5cb0bc53db0089c49badeddde5c2815b",
-            "locator": {
-              "end": 1,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/startup/__init__.py"
           },
           "kind": "code"
         }
@@ -1160,12 +1141,12 @@
       ]
     },
     "5": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The folder master through the master sync's helper, with the named-master checks.\n\nAnchor: `_folder_parent`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The folder master through the master sync's helper, with the named-master checks.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
-            "content": "sha256:dae78692c3f880a9249afa60c0944470b31b3405c308e45b8f77235c248a2a2a",
+            "blob": "a5fdc792c529205fd36769bc5c1793e6f7b6d9d9",
+            "content": "sha256:b375deed746d8ee86bb9895da44c9155f52da37b843cd9b21acc69f05aa5787e",
             "locator": {
               "kind": "file"
             },
@@ -1322,12 +1303,12 @@
       ]
     },
     "58": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted.\n\nAnchor: `resolve_series_targets`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
-            "content": "sha256:dae78692c3f880a9249afa60c0944470b31b3405c308e45b8f77235c248a2a2a",
+            "blob": "a5fdc792c529205fd36769bc5c1793e6f7b6d9d9",
+            "content": "sha256:b375deed746d8ee86bb9895da44c9155f52da37b843cd9b21acc69f05aa5787e",
             "locator": {
               "kind": "file"
             },
@@ -1342,7 +1323,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "blob": "a5fdc792c529205fd36769bc5c1793e6f7b6d9d9",
             "content": "sha256:7d4c6ee97430b57346fc185cd3dea13cabe9347e22dbac95ac14c9b07bbc5aab",
             "locator": {
               "kind": "symbol",
@@ -1359,7 +1340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "blob": "a5fdc792c529205fd36769bc5c1793e6f7b6d9d9",
             "content": "sha256:a9612950fd7b574d7294aca3085b559985ab520d4b3a1021b85b9f77dcb18833",
             "locator": {
               "kind": "symbol",
@@ -1371,7 +1352,7 @@
         },
         {
           "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "blob": "a5fdc792c529205fd36769bc5c1793e6f7b6d9d9",
             "content": "sha256:7b08e7624c9f3038b0ce0b3f3a269f33d9744b1da922f2ba16c6ffac63b0ef98",
             "locator": {
               "kind": "symbol",
@@ -1388,7 +1369,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
             "content": "sha256:c7fa554ad00bd52e24cd21defb7531dc7805736f0f38e054b0fa9eb2f36e1da0",
             "locator": {
               "kind": "symbol",
@@ -1438,12 +1419,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "blob": "8660c5ec380fe38494e8da10ad2fcfe2cee5d335",
             "content": "sha256:f9b0ff1c796c84cacf9b2008984d93638cac24ca8d520264c2ebd1b1190f35a8",
             "locator": {
-              "end": 300,
+              "end": 297,
               "kind": "line_range",
-              "start": 271
+              "start": 268
             },
             "path": "mcp/tests/test_worktree_start_preview.py"
           },
@@ -1666,7 +1647,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "blob": "ba4fb6e617261f7916c779588d183a65a04c202d",
             "content": "sha256:ecf13dc8ed059a3e33a54b93596d18e2ef1b67905eac792832e52a61c0cb41d9",
             "locator": {
               "kind": "symbol",
@@ -1678,7 +1659,7 @@
         },
         {
           "anchor": {
-            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "blob": "ba4fb6e617261f7916c779588d183a65a04c202d",
             "content": "sha256:ee4961644f5f75ee7af81745e3554bbfbc0eeb8e1029eadaf6de37787a13299f",
             "locator": {
               "kind": "symbol",
@@ -1738,7 +1719,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
             "content": "sha256:52b5c0761eb8d202bf1a85e9e7aee1041bb145fcefaa0de93e0be6ea0a9c9664",
             "locator": {
               "end": 133,
@@ -1769,15 +1750,14 @@
       ]
     },
     "79": {
-      "note": "Admitted terminal transactions reread archive authority and run `prepare_terminal_group` (folder preview, seat archival/blocking, and move-out) before destructive outputs.",
+      "note": "Admitted terminal transactions reread archive authority and run `prepare_terminal_group` (folder preview, seat archival/blocking, and move-out) before destructive outputs.\n\nAnchor: `_cleanup_with_guard` (`24-102`)",
       "targets": [
         {
           "anchor": {
-            "blob": "8ba587425b51719d046b9e5c82028fec4adc0ceb",
-            "content": "sha256:643a27fd99c52c571196fd663a6137444aa8a3a703a28271fd9507d801ee9a83",
+            "blob": "b049ccb28a1fe8372cdbf3a8dc9a9410ed9d2b11",
+            "content": "sha256:be0bd08d507291f7564f131a343d4122cfb0c447d3941694ad6184024b1ee991",
             "locator": {
-              "kind": "symbol",
-              "name": "_cleanup_with_guard"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/terminal_cleanup.py"
           },
@@ -1785,26 +1765,12 @@
         },
         {
           "anchor": {
-            "blob": "5ea094639068a51f0c9c71cef30a5b3f8d48e641",
-            "content": "sha256:5d263838e1c5ea4b71fb149ec48d60ed4f676a18c641f9dc6a8cd5ca2a22f1b6",
+            "blob": "365a0087830845363161865a1d3acd7f4c996a9c",
+            "content": "sha256:5d65e99edb644822a787d71c749c4d987ac2661f3c712ba4d474598447c1dcbc",
             "locator": {
-              "kind": "symbol",
-              "name": "_abandon_with_guard"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/terminal_abandon.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8ba587425b51719d046b9e5c82028fec4adc0ceb",
-            "content": "sha256:2d76682b3da101336fa1b79ecf9203a4d71be9e5c1dac7922395f3e84bd70407",
-            "locator": {
-              "end": 128,
-              "kind": "line_range",
-              "start": 55
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/terminal_cleanup.py"
           },
           "kind": "code"
         }
@@ -1815,7 +1781,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
             "content": "sha256:a49a9c54c5362e6d72020b6b913bbb89e032b6b1b422a3b457811dfe1887d4dc",
             "locator": {
               "kind": "symbol",
@@ -1832,7 +1798,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
+            "blob": "66c73c1d6d257860d33465fcb4d60be236ce19af",
             "content": "sha256:2368f70df2faf1324dd191deef40f750922150fbcd6151482a5e7525c4c22114",
             "locator": {
               "kind": "symbol",
@@ -2078,7 +2044,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "blob": "d82486d1c983c96522546f0cbd679f0eee4dbc60",
             "content": "sha256:295af77a79ed7e289b35fc237245cb18d60a6292d73281a552b45bf7434d458c",
             "locator": {
               "kind": "symbol",
@@ -2090,7 +2056,7 @@
         },
         {
           "anchor": {
-            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "blob": "d82486d1c983c96522546f0cbd679f0eee4dbc60",
             "content": "sha256:8a6c7608e9e87c98b5ac0e93c4e5be5596fc6d3dd5c132964926ce89e02c0ae2",
             "locator": {
               "kind": "symbol",
@@ -2102,7 +2068,7 @@
         },
         {
           "anchor": {
-            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "blob": "d82486d1c983c96522546f0cbd679f0eee4dbc60",
             "content": "sha256:9ba4e862fe0f5132658fdeb769f1c9e98939478fd2e2143fd854a320668552de",
             "locator": {
               "kind": "symbol",
@@ -2114,83 +2080,13 @@
         },
         {
           "anchor": {
-            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "blob": "d82486d1c983c96522546f0cbd679f0eee4dbc60",
             "content": "sha256:57380391a2464786fd255bb6f564c24f4af215513cb146389724293577264c50",
             "locator": {
               "kind": "symbol",
               "name": "_contract_intent_review_block"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "93": {
-      "note": "Start and retry share the retired-provider gate and return before the retained background setup branch.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
-            "content": "sha256:22b289c11b3f7dd36d5ab92dcdc82292ea02619249a80cca9e9c89c2a0e2c993",
-            "locator": {
-              "end": 1087,
-              "kind": "line_range",
-              "start": 1068
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
-            "content": "sha256:26d119dadfd7cf660efe2d092075d933047bcd63b1d1d3d6b4141d1830ced3ec",
-            "locator": {
-              "end": 1127,
-              "kind": "line_range",
-              "start": 1090
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
-            "content": "sha256:707f8430d994b394092dfbc59090e97fd43a07f459d652099c251568f3c6aa22",
-            "locator": {
-              "end": 1166,
-              "kind": "line_range",
-              "start": 1130
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
-            "content": "sha256:44435c7691ac61a8330bd6183744c49519d1b4d716fe52e6600eb03d0aa6cc79",
-            "locator": {
-              "end": 94,
-              "kind": "line_range",
-              "start": 81
-            },
-            "path": "mcp/src/agents_remember/providers/setup_common.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "45b63ee2b11932f9042ed5039888627c21aa9c0e",
-            "content": "sha256:017685d2d4daf117523abe9fe19ab8dbf21226a4e963a3bc25cf793580ee0100",
-            "locator": {
-              "end": 51,
-              "kind": "line_range",
-              "start": 11
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_provider_preflight.py"
           },
           "kind": "code"
         }

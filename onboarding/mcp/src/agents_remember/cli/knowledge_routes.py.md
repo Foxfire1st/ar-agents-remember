@@ -35,10 +35,7 @@ None recorded.
 
 ## Evidence
 
-
 - The read-only output names differs using route-set equality and prints it explicitly without authoring routes. [7]
-
-
 
 ### Docs References
 
@@ -58,15 +55,11 @@ The adapter reuses the route logic; it adds only argument handling and printing.
 
 - The working tree's tracked and untracked, not ignored, files. [2]
 
-
 - Each family's routes, state and suggestion. [3]
-
 
 - Reading, rendering, unknown families and the exit status. [4]
 
-
 - The command offers the suggestion and writes nothing. [6]
-
 
 ### Cross-Repo References
 

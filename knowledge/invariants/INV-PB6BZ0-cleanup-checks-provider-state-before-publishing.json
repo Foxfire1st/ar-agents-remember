@@ -5,15 +5,15 @@
       "guarded_by_test",
       "family_guarantee"
     ],
-    "justification": "Archive publication checks in worktrees/integration/terminal_enclosure_archive.py and provider-skip preview in worktrees/modules/terminal_group.py prevent stranding or silently overriding accepted cleanup arguments."
+    "justification": "Archive publication and retry validation in worktrees/integration/terminal_enclosure_archive.py and models/lifecycles/enclosure.py prevent silently overriding accepted cleanup arguments across retries."
   },
-  "applicability": "Fresh cleanup requests with teardown_providers=False and retries of already-accepted terminal archives.",
+  "applicability": "Retries of already-accepted terminal archives in worktree cleanup and finalize.",
   "conditions": [
-    "A fresh request with live provider-runtime state and teardown_providers=False refuses before publishing a terminal archive.",
-    "Once a terminal archive is published, retries preserve its saved operation and cleanupArguments."
+    "Once a terminal archive is published, retries validate against its saved operation and cleanupArguments via cleanup_arguments_match.",
+    "Pre-removal archives carrying a legacy teardown_providers field still validate and retry cleanly under narrowed public cleanupArguments ({} or {force})."
   ],
   "exclusions": [
-    "Cleanups with teardown_providers=True proceed through normal provider teardown."
+    "Pre-archive provider-skip checks for teardown_providers=False, which were removed with search providers under 261125-DEP-L2."
   ],
   "id": "INV-PB6BZ0",
   "origin": {
@@ -27,20 +27,20 @@
     "leaf": "261112-BUG-L38",
     "task": "261112-BUG"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Cleanup checks provider state before publishing a fresh archive and keeps the saved operation and arguments after acceptance.",
+  "statement": "Once a terminal archive is published, retries preserve its saved operation and cleanupArguments, accepting legacy teardown_providers fields when comparing public arguments.",
   "supersedes": [],
-  "title": "Cleanup checks providers before archiving and keeps accepted retry arguments",
+  "title": "Terminal cleanup archives preserve saved operation and retry arguments",
   "writer": {
-    "at": "2026-11-25T19:57:06+01:00",
+    "at": "2026-11-26T03:45:16+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
-    "task": "261112-BUG"
+    "seat": "2424643a-91e9-4c95-ab58-87443229a30b",
+    "task": "261125-DEP"
   }
 }

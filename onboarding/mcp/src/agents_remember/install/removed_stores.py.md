@@ -15,6 +15,8 @@ The shared inventory names removed-part files/folders, lifecycle event/heartbeat
 ## Evidence
 
 - Retired path inventory and no-install-deletion notice. [1]
+
 - Discovery does not follow stores through symbolic links. [2]
 - Terminal-lock eligibility fails closed on incomplete contracts. [3]
+
 - Inventory and reporting keep gate logs distinct. [4]

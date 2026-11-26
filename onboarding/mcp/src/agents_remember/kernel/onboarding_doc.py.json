@@ -61,16 +61,16 @@
       ]
     },
     "5": {
-      "note": "The public worktree facade still imports and exports source-onboarding plans and entity/index refresh helpers; metadata-row rewriting was removed.",
+      "note": "The public worktree facade still imports and exports source-onboarding plans and entity/index refresh helpers; metadata-row rewriting was removed.\n\nAnchor: `` `__all__` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "7bc03a9ceb2a78f7bfe09c9a66097cdff2e7cf97",
-            "content": "sha256:09882988e3f13fce980ba4f47bce626b72921e047865fcbf3e448ee377fb391f",
+            "blob": "8dd7ccaf4a7ea6a1d80c3784cf32ff8a53b8b805",
+            "content": "sha256:0c84fbebaee99dc63385e2c427bbee77b3b0cb9e5b11c223b724d77dfea967e7",
             "locator": {
-              "end": 67,
+              "end": 76,
               "kind": "line_range",
-              "start": 67
+              "start": 64
             },
             "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py"
           },
@@ -78,12 +78,12 @@
         },
         {
           "anchor": {
-            "blob": "7bc03a9ceb2a78f7bfe09c9a66097cdff2e7cf97",
-            "content": "sha256:62ac5d6481568c1f145e095f4de47b87c94bd63f48961d4b311a03c007a1b8d3",
+            "blob": "8dd7ccaf4a7ea6a1d80c3784cf32ff8a53b8b805",
+            "content": "sha256:4c1a708defeb8d3009f9220bdc8ca396955699d15bc4ac576ebf9fb9644d3858",
             "locator": {
-              "end": 165,
+              "end": 155,
               "kind": "line_range",
-              "start": 67
+              "start": 89
             },
             "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py"
           },

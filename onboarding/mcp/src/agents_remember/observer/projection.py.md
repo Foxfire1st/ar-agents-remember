@@ -25,7 +25,6 @@ Top-level step outcome/note and finding-description previews have explicit trunc
 step notes are projected but have no corresponding truncation flag and are not drawn by the current
 task-page nested-row renderer. Projection is observation only, never review or lifecycle authority.
 
-
 `EnclosureNode` carries optional `lifecycleOperation` state; the browser receives task-addressed operation progress without internal operation identity.
 
 ### Logic
@@ -37,7 +36,6 @@ Reader DTOs retain canonical references, lump/segment graph nodes and legacy bar
 ### Conventions
 
 The Python schema is the source for generated TypeScript and JSON schema artifacts.
-
 
 **INV-VDWN33.** The observer's projection is what the dashboard receives, so the fact's presence is decided here.
 
@@ -75,20 +73,11 @@ No Domain Documentation source is configured.
 
 ### Repo-Internal References
 
-
-
 - Retained task-document projection models carry canonical task references; pickup and expectation analytics DTOs are removed. [1]
-
-
 
 - Lump/segment nodes and sampling endpoints retain strict served shapes and bare-ref lifting in the extracted DTO owner. [3]
 
-
-
-
 - Workspace projection is the schema authority consumed by generation. [4]
-
-
 
 ### Cross-Repo References
 
@@ -105,11 +94,9 @@ branches or synthesize recovery locally.
 Observer projection imports `LifecycleOperationProjection` from
 `models.lifecycles.operation`.
 
-
 ## Render-Ready Graph View
 
 The optional `executionGraphView` field is defined by `projection_task_documents.TaskDocNode`. A sprint may receive its persisted-graph view; an ordinary master may instead receive a derived dependency Order graph without a persisted `executionGraph`. The server prefers a nonempty Order graph over the sprint-view fallback. The DTO remains optional, and the browser renders served nodes rather than joining refs or deriving waves.
-
 
 ## 260821-CLIVE Disposable Queue And Discard History Projection
 
@@ -130,20 +117,10 @@ however many candidates the sprint has waiting. `sourceProblems` keeps `max_leng
 `CloseoutCandidateNode.reasons` keeps its own `max_length=256`; nothing else on this node is bounded
 by that number.
 
-
 - Extracted CloseoutQueueNode has unbounded members; sourceProblems and candidate reasons retain their 256-item ceilings. [5]
-
-
-
-
-
 
 - Task documents remain the projected hierarchy; the actual TaskDocNode/dependency definitions live in projection_task_documents, while projection re-exports them. [2]
 
-
-
-
 - TaskSummary and its TaskDocNode extension carry optional directGrant display evidence. TaskDocNode.subTasks holds TaskSubTaskRefNode drill-in references, which do not carry that grant. These are read models, not authorization. [6]
-
 
 - TaskState carries stage, activity and eventAt, without a served task-event age; the browser derives display age. [7]

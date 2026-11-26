@@ -164,12 +164,12 @@
         },
         {
           "anchor": {
-            "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
+            "blob": "ea658dc71d32bc3e38d448dc67af8b4c42c14d04",
             "content": "sha256:194d1b7b154648b320a7be0b7e0f5e63bfed7f43d41e01ee812d9781c1bb81fb",
             "locator": {
-              "end": 378,
+              "end": 377,
               "kind": "line_range",
-              "start": 357
+              "start": 356
             },
             "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
           },

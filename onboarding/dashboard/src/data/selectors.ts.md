@@ -14,7 +14,7 @@ queue filtering unit-testable without a live browser stream.
 
 ### Logic
 
-`selectQueue` reads the server-computed `analytics.attentionQueue`, drops the two attention kinds the server retired with the search providers (`provider-down`, `failed-setup`) so a legacy payload cannot raise them, and filters ids currently present in
+`selectQueue` reads the server-computed `analytics.attentionQueue` and filters ids currently present in
 `DashboardState.suppressedAttentionIds`. It returns a stable shared empty array when analytics is absent,
 and caches the filtered result by queue reference plus suppression-map reference so Zustand
 `useStore(selectQueue)` does not see a fresh array on every render. `hasLiveWorktree(enclosure)`
@@ -52,14 +52,9 @@ No relevant documentation found after checking live sources.
 
 - Host-observation availability is read from the served unknown count, not recomputed from agents or elapsed time. [4]
 
-
 - selectQueue caches the visible queue by the queue array's identity and the suppression map's identity, and hides every row whose id is in that map, whatever the entry's kind. [1]
 
-
-
 - The converted drift names order with the legacy classifications, healthy first. [3]
-
-
 
 ### Cross-Repo References
 

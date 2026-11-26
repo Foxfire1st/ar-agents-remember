@@ -127,47 +127,11 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 | `memory_candidate_pair.py` | [../worktrees/modules/memory_candidate_pair.py.md](../worktrees/modules/memory_candidate_pair.py.md) | **relocated out** by `806649b9`; card moved with it |
 | `memory_census_scope.py` | [memory_census_scope.py.md](memory_census_scope.py.md) | covered |
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - Format dispatch substitutes converted validation and retires three legacy-format checks; complete counts and samples remain separate.
-
-
-
-
-
-
-
-
 
 - report-only landing measurement with separate read-summary scope
 
-
-
-
-
 Full synchronous quality uses the per-check Git source reader: listed but unreadable files receive named reasons, and readable ignored or binary citations retain content verification with separate notes. Onboarding pathRules do not filter cited content. Source-count and size cases cannot abort the whole check; no retired persistent citation index is restored.
-
-
-
-
-
-
-
-
 
 Converted validation parses the product's `converted-reviews.json` catalog separately from an owner's history file. It checks the catalog's document shape without treating it as an owner file for the closed-file rules.
 
@@ -178,12 +142,14 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 
 - The registered memory_quality_check dispatches sync/start/poll requests and returns findings, worklist and checklist evidence rather than semantic certification; formatting remains writer-owned.
 
-
 - The registered memory_quality_check dispatches sync/start/poll requests and returns findings, worklist and checklist evidence rather than semantic certification; formatting remains writer-owned. [3]
 
-
 - Retained reference account (no fresh execution or acceptance inferred): The missing-onboarding checker catches newly added worktree files before code commit. [4]
+
+
 - Retained reference account (no fresh execution or acceptance inferred): The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam. [6]
+
+
 - Retained reference account (no fresh execution or acceptance inferred): Memory candidate identity excludes consumer cache availability. [8]
 - Retained reference account (no fresh execution or acceptance inferred): Complete catalog items become deterministic memory-domain rails and a population-bound configuration digest. [15]
 - Core certificate issuance consumes an exact admitted result manifest and earlier-gate prefix and refuses non-green or diagnostic promotion; the interactive complete-catalog projection remains finalization-ineligible. [17]
@@ -253,11 +219,7 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 - Named converted-base refusal depends on the supplied port; no-port HEAD reads can yield no bases; reported base failure withholds anchor-path refusals.  Anchor: `_comparison_bases` `converted_knowledge_check` [81]
 - Retained reference account (no fresh execution or acceptance inferred): The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner.  Anchor: `run_memory_quality_request` `_execute_memory_quality` [1]
 
-
-
 - The memory registrar exposes `memory_quality_check` to agents and routes it to the start, poll or whole-run payload. Anchor: `memory_quality_check_payload` [2]
-
-
 
 - Retained reference account (no fresh execution or acceptance inferred): The application surface projects readiness with no affected-closure plan. [16]
 - Interactive catalog projection supplies no affected-closure plan and does not claim certification eligibility. [89]
@@ -272,6 +234,7 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 - parsing_scope retains diagnostic parse trees only within the active call and clears them on exit. [100]
 
 - MCP dispatch enters one definition scope before tool validation and handler execution. [101]
+
 - Finite command handlers enter definition_scope; parser registration leaves the dashboard handler unwrapped. [102]
 
 - The background quality worker starts in a fresh context and opens its own request memo and definition scopes for the computation. [103]

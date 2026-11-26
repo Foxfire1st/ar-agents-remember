@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "d99acb21726d7a4c37108c33fd9918f7702936d6",
+        "blob": "c10981339d813224d2376e682a476c239b7295d4",
         "content": "sha256:905c4d16f1a83c4a9ea7f367cc42e3d1dd8802b62fa2402b46850da01daa998f",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d99acb21726d7a4c37108c33fd9918f7702936d6",
+            "blob": "c10981339d813224d2376e682a476c239b7295d4",
             "content": "sha256:905c4d16f1a83c4a9ea7f367cc42e3d1dd8802b62fa2402b46850da01daa998f",
             "locator": {
               "kind": "symbol",
@@ -38,14 +38,16 @@
       ]
     },
     "2": {
-      "note": "A sync-recorded merge remains admissible.\n\nAnchor: `test_an_admitted_sync_merge_passes`",
+      "note": "A sync-recorded merge remains admissible.\n\nAnchor: `` `test_an_admitted_sync_merge_passes` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "d99acb21726d7a4c37108c33fd9918f7702936d6",
-            "content": "sha256:f34f95465ffcbb288ac49865ef0bfea7c9d30850169d2659f745aeed0770f130",
+            "blob": "c10981339d813224d2376e682a476c239b7295d4",
+            "content": "sha256:b6fb4eacd59e80f4dfe3db5e2ec4d2570de0f7311fae2109a9f730820f697171",
             "locator": {
-              "kind": "file"
+              "end": 125,
+              "kind": "line_range",
+              "start": 113
             }
           },
           "kind": "test"

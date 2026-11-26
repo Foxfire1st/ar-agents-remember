@@ -34,7 +34,6 @@ Seeded render/store assertions consume existence flags, never stat or delete wor
 
 ### Repo-Internal References
 
-
 - The component under test (filters rows through `hasLiveWorktree`). [1]
 
 - The shared existence-truth visibility selector. [2]

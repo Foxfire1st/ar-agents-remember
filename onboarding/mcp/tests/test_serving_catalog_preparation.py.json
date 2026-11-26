@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Cold launcher discovery runs beside serving startup and drains with that lifetime",
+      "note": "Cold launcher discovery runs beside serving startup and drains with that lifetime\n\nAnchor: `` `CatalogPreparationLifetimeTests` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "f69af73cd762f6132612cd5caff7d17a327beb47",
-            "content": "sha256:cb8820c7b2f7b9082cc430c9cefb620f99ceae9a8d26449cd81200d11c7291f8",
+            "blob": "ff1236c6f3ed92effda90c844119ff4873cd14c3",
+            "content": "sha256:b1b89941875a2c7d7dc6ebfbc86e48b3a5399382155bd880ecc7230142facebb",
             "locator": {
-              "kind": "symbol",
-              "name": "CatalogPreparationLifetimeTests"
+              "end": 186,
+              "kind": "line_range",
+              "start": 25
             }
           },
           "kind": "test"

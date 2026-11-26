@@ -60,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
+            "blob": "7b13c2a1e5cfb5d347bcabf91d466173a3ead8cf",
             "content": "sha256:84e680674d90947358d415c9e5176bbe3dfef65020e5f5e3afc88e5ac5042f34",
             "locator": {
-              "end": 407,
+              "end": 405,
               "kind": "line_range",
-              "start": 372
+              "start": 370
             },
             "path": "mcp/tests/test_memory_branch_authority.py"
           },
@@ -73,12 +73,12 @@
         },
         {
           "anchor": {
-            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
+            "blob": "7b13c2a1e5cfb5d347bcabf91d466173a3ead8cf",
             "content": "sha256:c46a3133b8d2e30740d05d48c17c6400801f8382c6ee2a8c777c93a4b721e7ea",
             "locator": {
-              "end": 510,
+              "end": 508,
               "kind": "line_range",
-              "start": 484
+              "start": 482
             },
             "path": "mcp/tests/test_memory_branch_authority.py"
           },
@@ -298,7 +298,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
+            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
             "content": "sha256:87493687e619f40c59eb325499aee24e8ebc16840f218eca3f0e673b6ab01a83",
             "locator": {
               "end": 548,

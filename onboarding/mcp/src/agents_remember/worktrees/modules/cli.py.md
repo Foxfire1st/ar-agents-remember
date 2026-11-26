@@ -53,7 +53,6 @@ No configured external source applies.
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-
 - `command_closeout` normalizes the code and memory messages before it calls the synchronous closeout owner. [1]
 
 
@@ -62,35 +61,17 @@ The following current source boundaries establish the ledger-retirement behavior
 
 - The CLI module exposes the public main entry point for `python -m` execution. (`main`) [3]
 
-
 - MCP startup enters the result-returning application owner without CLI parsing. (`worktree_start_tool`) [4]
-
-
-
 
 - MCP attachment enters the result-returning application owner without CLI parsing. (`worktree_attach_tool`) [5]
 
-
-
-
 - MCP status enters the result-returning application owner without CLI parsing. (`worktree_status_tool`) [6]
-
-
-
-
 
 - `command_integrate` loads the contract and calls the synchronous domain integration owner. [7]
 
-
-
-
-
 - MCP cleanup enters the result-returning application owner without CLI parsing. (`worktree_cleanup_tool`) [8]
 
-
-
 > Retained earlier citation wording: - The heal implementation this seam invokes (walk once, cheap-skip canonical ids, rewrite + report) lives in the contract module. (`heal_contract_leaf_ids`) [9]
-
 
 ### Cross-Repo References
 

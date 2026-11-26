@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ede5d128e75765d40987bf3981b1d97ed4326bae",
-    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "Audited docs/architecture.md line by line against synced L44 code tree ede5d128 (base 150b9778): system layers, MCP server dispatch, and role-execution boundaries remain accurate; no L44 contradiction.",
-    "task": "261112-BUG-L44",
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/architecture.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
+    "task": "261125-DEP-L2",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 19,
+  "revision": 20,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
+      "blob": "df24d21970ccbff762e5da27bf9aa7e669a0e029",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -41,12 +41,12 @@
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
     {
-      "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+      "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/runtime.py"
     },
     {
-      "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+      "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
     },
@@ -130,7 +130,6 @@
         },
         "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
       },
-      "heading": "Loaded build identity",
       "kind": "anchor"
     },
     {
@@ -143,12 +142,11 @@
         },
         "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
       },
-      "heading": "Call lifetime",
       "kind": "anchor"
     },
     {
       "anchor": {
-        "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
+        "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
         "content": "sha256:fffab67491f1245146827f300b9e3bb69c5acfc098526d57b932c830de6b2bc9",
         "locator": {
           "kind": "symbol",
@@ -156,12 +154,11 @@
         },
         "path": "mcp/src/agents_remember/cli/__main__.py"
       },
-      "heading": "Finite command and dashboard dispatch",
       "kind": "anchor"
     },
     {
       "anchor": {
-        "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
+        "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
         "content": "sha256:84a887e1f19233f80852c6b5d9c76b54475d5156b7caa84e25b9eb108138c9a9",
         "locator": {
           "kind": "symbol",
@@ -169,7 +166,6 @@
         },
         "path": "mcp/src/agents_remember/cli/__main__.py"
       },
-      "heading": "Finite command lifetime",
       "kind": "anchor"
     },
     {
@@ -182,7 +178,6 @@
         },
         "path": "mcp/src/agents_remember/mcp/server.py"
       },
-      "heading": "MCP call lifetime",
       "kind": "anchor"
     },
     {
@@ -195,7 +190,6 @@
         },
         "path": "mcp/src/agents_remember/application/memory_quality/runs.py"
       },
-      "heading": "Background worker lifetime",
       "kind": "anchor"
     },
     {
@@ -208,7 +202,6 @@
         },
         "path": "mcp/src/agents_remember/kernel/git_command.py"
       },
-      "heading": "Private Git batch spool",
       "kind": "anchor"
     },
     {
@@ -221,7 +214,6 @@
         },
         "path": "mcp/src/agents_remember/application/review_evidence_read.py"
       },
-      "heading": "Private review evidence spool",
       "kind": "anchor"
     },
     {
@@ -234,7 +226,6 @@
         },
         "path": "mcp/src/agents_remember/canvas/explainer_target.py"
       },
-      "heading": "Private explainer blob spool",
       "kind": "anchor"
     },
     {
@@ -247,7 +238,6 @@
         },
         "path": "mcp/src/agents_remember/mcp/server.py"
       },
-      "heading": "Native invocation request lifetime",
       "kind": "anchor"
     },
     {
@@ -260,7 +250,6 @@
         },
         "path": "mcp/src/agents_remember/mcp/server.py"
       },
-      "heading": "Dispatch definition scope",
       "kind": "anchor"
     },
     {
@@ -301,14 +290,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T02:42:00+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L44",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
-    "task": "261112-BUG"
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
   }
 }

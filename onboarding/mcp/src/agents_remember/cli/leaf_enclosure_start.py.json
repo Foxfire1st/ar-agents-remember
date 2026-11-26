@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0f0fffaaf83d9536e496a576e33ce9e6053c8f9b",
+        "blob": "5f2c36304a97c2d5a4a686e3eb10b4474b2198a7",
         "content": "sha256:b7a2bb3d25a67014f43e97277e0ac8ed1f553b765ab992ea97324578d677003b",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "0f0fffaaf83d9536e496a576e33ce9e6053c8f9b",
-        "content": "sha256:f6a36a875f200c7141d4e7974314a498fc9178d32d7ac3ca79b56ef74a314c72",
+        "blob": "5f2c36304a97c2d5a4a686e3eb10b4474b2198a7",
+        "content": "sha256:c59e28c118af435dedfc5346e0195eb50eedcc200e348a859041289a1d531ffb",
         "locator": {
           "kind": "symbol",
           "name": "run"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "0f0fffaaf83d9536e496a576e33ce9e6053c8f9b",
+        "blob": "5f2c36304a97c2d5a4a686e3eb10b4474b2198a7",
         "content": "sha256:b7a2bb3d25a67014f43e97277e0ac8ed1f553b765ab992ea97324578d677003b",
         "locator": {
           "kind": "symbol",
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f0fffaaf83d9536e496a576e33ce9e6053c8f9b",
+            "blob": "5f2c36304a97c2d5a4a686e3eb10b4474b2198a7",
             "content": "sha256:b7a2bb3d25a67014f43e97277e0ac8ed1f553b765ab992ea97324578d677003b",
             "locator": {
               "end": 112,
@@ -79,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f0fffaaf83d9536e496a576e33ce9e6053c8f9b",
+            "blob": "5f2c36304a97c2d5a4a686e3eb10b4474b2198a7",
             "content": "sha256:de136231f6cd4a41691676c38d99bec17eb8bcab3038a381cea1c1f82eaaec08",
             "locator": {
               "kind": "symbol",
@@ -95,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f0fffaaf83d9536e496a576e33ce9e6053c8f9b",
+            "blob": "5f2c36304a97c2d5a4a686e3eb10b4474b2198a7",
             "content": "sha256:e7b7b830e788946b9e90105320733f1b02ef6d4c0fc2a25567a5151dc7f7c9c6",
             "locator": {
               "kind": "symbol",
@@ -107,15 +107,16 @@
       ]
     },
     "4": {
-      "note": "Root validation and refusal precede the child-local diagnostic scope.",
+      "note": "Root validation and refusal precede the child-local diagnostic scope.\n\nAnchor: `` `run` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "0f0fffaaf83d9536e496a576e33ce9e6053c8f9b",
-            "content": "sha256:f6a36a875f200c7141d4e7974314a498fc9178d32d7ac3ca79b56ef74a314c72",
+            "blob": "5f2c36304a97c2d5a4a686e3eb10b4474b2198a7",
+            "content": "sha256:c59e28c118af435dedfc5346e0195eb50eedcc200e348a859041289a1d531ffb",
             "locator": {
-              "kind": "symbol",
-              "name": "run"
+              "end": 230,
+              "kind": "line_range",
+              "start": 193
             }
           },
           "kind": "code"

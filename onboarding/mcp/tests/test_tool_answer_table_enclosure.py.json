@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
-        "content": "sha256:ad4e89cf61d4470828a12e64839ca5bbcb43d39576b095d42364c6267ab1a391",
+        "blob": "a2563aef5f20cc71534983c468802636fdd582ac",
+        "content": "sha256:c39d937263cd39b7cd3542e1d2efbfff491843c1241f5fe7192b3b9232325423",
         "locator": {
           "kind": "symbol",
           "name": "test_cleanup_keeps_only_this_leafs_lines_before_removing_logs"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+        "blob": "a2563aef5f20cc71534983c468802636fdd582ac",
         "content": "sha256:71c42c296ebf0ed9a0ab66c651ebb70b5d902470a93cbb4de4596e32bd9076f3",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
-        "content": "sha256:f1786a5ad432dbb6a14a3535aae1640c625a040bfa65064c25dc7b2f12ae4612",
+        "blob": "a2563aef5f20cc71534983c468802636fdd582ac",
+        "content": "sha256:3ceee4f8be4010d3e29325def5215e356773f428e5f1e25d150d1f057530b92a",
         "locator": {
           "kind": "symbol",
           "name": "KeptToolCallsTests.test_a_failed_keep_leaves_the_log_and_blocks_the_cleanup_until_a_retry"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
-        "content": "sha256:be89bc0477eb49a4c62e23630413435c3dcf2fac692f3b213e859ca5a75a794d",
+        "blob": "a2563aef5f20cc71534983c468802636fdd582ac",
+        "content": "sha256:c953230c75e25e4bf3314de99fce7845a134362e5a18ff182e37dc3bc8443fa1",
         "locator": {
           "kind": "symbol",
           "name": "KeptToolCallsTests.test_prepare_terminal_group_blocks_preview_and_apply_when_keep_fails"
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
-        "content": "sha256:f1786a5ad432dbb6a14a3535aae1640c625a040bfa65064c25dc7b2f12ae4612",
+        "blob": "a2563aef5f20cc71534983c468802636fdd582ac",
+        "content": "sha256:3ceee4f8be4010d3e29325def5215e356773f428e5f1e25d150d1f057530b92a",
         "locator": {
           "kind": "symbol",
           "name": "test_a_failed_keep_leaves_the_log_and_blocks_the_cleanup_until_a_retry"
@@ -88,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
-        "content": "sha256:82b95525d7ca863a7a295689f6f687bf21060447e845809c262f606aa01e5769",
+        "blob": "a2563aef5f20cc71534983c468802636fdd582ac",
+        "content": "sha256:52d6e5c1fcdbc6cd0c98969300b2690af6b2b94133e94920627a63cb2f35fde3",
         "locator": {
           "kind": "symbol",
           "name": "ToolAnswerEnclosureTests.test_cleanup_removes_logs_with_the_enclosure"
@@ -105,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
-        "content": "sha256:ad4e89cf61d4470828a12e64839ca5bbcb43d39576b095d42364c6267ab1a391",
+        "blob": "a2563aef5f20cc71534983c468802636fdd582ac",
+        "content": "sha256:c39d937263cd39b7cd3542e1d2efbfff491843c1241f5fe7192b3b9232325423",
         "locator": {
           "kind": "symbol",
           "name": "KeptToolCallsTests.test_cleanup_keeps_only_this_leafs_lines_before_removing_logs"
@@ -124,12 +124,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The logs directory is made with the enclosure beside the worktrees and dirties neither worktree.",
+      "note": "The logs directory is made with the enclosure beside the worktrees and dirties neither worktree.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
-            "content": "sha256:a63014083400058673166c1ca35354125ceb1485b964b2da0dbb240854a2fde1",
+            "blob": "a2563aef5f20cc71534983c468802636fdd582ac",
+            "content": "sha256:cf2397fade014e2bfa8c9682e62af240e5105c3a2a8d946bcfc28695031470af",
             "locator": {
               "kind": "file"
             }
@@ -139,12 +139,12 @@
       ]
     },
     "2": {
-      "note": "The closeout changed paths list no log, and cleanup removes the logs directory with the enclosure.",
+      "note": "The closeout changed paths list no log, and cleanup removes the logs directory with the enclosure.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
-            "content": "sha256:a63014083400058673166c1ca35354125ceb1485b964b2da0dbb240854a2fde1",
+            "blob": "a2563aef5f20cc71534983c468802636fdd582ac",
+            "content": "sha256:cf2397fade014e2bfa8c9682e62af240e5105c3a2a8d946bcfc28695031470af",
             "locator": {
               "kind": "file"
             }
@@ -154,16 +154,16 @@
       ]
     },
     "3": {
-      "note": "The terminal cases check the selected call lines, export-before-removal ordering, retry and path rewriting.",
+      "note": "The terminal cases check the selected call lines, export-before-removal ordering, retry and path rewriting.\n\nAnchor: `` `KeptToolCallsTests` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
-            "content": "sha256:3bc932dc8a0a6a6984bfb0b9e24c64bf7caf302e9deccfde2981b42d0e6242b4",
+            "blob": "a2563aef5f20cc71534983c468802636fdd582ac",
+            "content": "sha256:2606e6b782aed257843b9d6f6398652c4d0ef0dc013bfc51f1cbf53bad54efa8",
             "locator": {
-              "end": 432,
+              "end": 379,
               "kind": "line_range",
-              "start": 215
+              "start": 174
             }
           },
           "kind": "test"

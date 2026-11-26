@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "51a44523acb6c29c3a029c7dde4a35acb96595f3",
-    "commit": "3bbaf460317e8572583d884bc0791a219ad1bcfa",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "The skills reference's account of l-01-agent-lifecycles (eight role files, operations, templates, criteria, one role file and operation per role agent) still holds on b29f2e2; it states no per-role tool list, so the renewed manifest arrays leave it true. On code 51a44523 (gen-8 sync onto CAP-L1 and BUG-L26) the composition manifest's knowledge-use step list now reads 'for a record you need whole' in place of the source-inspection steps; the reference enumerates no step list, and its account of the canonical and packaged instruction trees still holds.",
-    "task": "261112-KNO-L4",
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/reference/skills.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
+    "task": "261125-DEP-L2",
     "uncommitted": true
   },
   "document": "docs/reference/skills.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "skills/l-01-agent-lifecycles/SKILL.md"
     },
     {
-      "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
+      "blob": "8a146dddeee47245c130f0596de59022608bb40f",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
     },
@@ -70,5 +70,16 @@
       "kind": "file",
       "path": "scripts/instruction_renewal/plan.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T07:08:02+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
+  }
 }

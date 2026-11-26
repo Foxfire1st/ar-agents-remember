@@ -167,12 +167,12 @@
         },
         {
           "anchor": {
-            "blob": "28100704d5444ebd1dc7009eb9018e2fba4f1420",
+            "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
             "content": "sha256:77bcb1fd1a01f8b2eb55c578c107afd966902163264b8a90e2606b1aeda26023",
             "locator": {
-              "end": 109,
+              "end": 107,
               "kind": "line_range",
-              "start": 109
+              "start": 107
             },
             "path": "skills/l-01-agent-lifecycles/core/every-role.md"
           },

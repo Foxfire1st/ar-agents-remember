@@ -119,7 +119,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "blob": "84e6d16dce258302a255f01dcf9ee9347dbdb793",
             "content": "sha256:ded9434595ee95aa22bb7a4663f23ce66d79f845bb753c206d9512e29970ee22",
             "locator": {
               "end": 25,
@@ -235,12 +235,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "blob": "a5fdc792c529205fd36769bc5c1793e6f7b6d9d9",
             "content": "sha256:ab5f2be78181f69e6956754f157288aed9564a3d5c755cd00ad80b5956753b7f",
             "locator": {
-              "end": 110,
+              "end": 109,
               "kind": "line_range",
-              "start": 110
+              "start": 109
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
@@ -248,12 +248,12 @@
         },
         {
           "anchor": {
-            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "blob": "a5fdc792c529205fd36769bc5c1793e6f7b6d9d9",
             "content": "sha256:c4375611d8a906ce2c5dca7fb66b6fcd3c3b502feee719e395cc93b7910620f1",
             "locator": {
-              "end": 226,
+              "end": 225,
               "kind": "line_range",
-              "start": 226
+              "start": 225
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
@@ -292,12 +292,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "blob": "d82486d1c983c96522546f0cbd679f0eee4dbc60",
             "content": "sha256:d4daffb6bad4b41d0826b198c5fafaefaf36f6bde9ce08666c592fab7ad09e0b",
             "locator": {
-              "end": 741,
+              "end": 718,
               "kind": "line_range",
-              "start": 705
+              "start": 682
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },

@@ -11,7 +11,6 @@ The file was trimmed to 1,197 physical lines in the fix round (FL1): the transie
 comment/blank lines were removed, closing the 1,202-line physical breach against the
 L7 detector's `wc -l` semantics. Scenario content is unchanged.
 
-
 ## Current enclosure-only composition
 
 EngineRoomScenario carries {name, processes} only. The workspace provider stack, ProviderNode/ProviderBootNode factories, provider setup/runtime fields and seed/clone lanes are removed; the remaining scenarios describe enclosure, code/memory worktree, ledger, sync, integration and landing facts.
@@ -35,8 +34,6 @@ restore removed provider visuals or tool exposure.
 The prior onboarding below is retained for provenance and unrelated design history.
 It is not current provider-render, fallback, prototype-parity or execution guidance.
 Current behavior and its limits are the operative contract above.
-
-
 
 Provides the scenario fixtures for the enclosure-centered Engine Room process map (slice 5e, 05e §11). Each `EngineRoomScenario` is a set of server-shaped `EngineProcessNode`s plus the official/workspace provider stack, so the dev gallery and component tests can render the map without a live projection. The set covers the discrete boot/lifecycle states (bootstrap, setup running, GrepAI failure, CGC fallback, memory blocked, sync needed, cleanup pending) and a step-through of one enclosure being assembled after `worktree_start`.
 
@@ -84,10 +81,14 @@ Fixtures are presentation data only: they encode the wire shape (camelCase, `exc
 ### Repo-Internal References
 
 - Node/edge types this file shapes — the import list here, resolving to the mirror there. [1]
+
 - `EngineProcessEdge` server model — `extra="forbid"`, no `refusedPolarity`, no `refused` in the state comment. [2]
+
 - No `_seed_edge_state` remains in the reducer; `_materialize_edge_state` returns only skipped, complete, unknown or planned. 
 
+
 - `EngineRoomScenario` interface + exported `ENGINE_ROOM_SCENARIOS` [4]
+
 
 - `engineProcess` core builder (override-last spread) [5]
 - `edges` / `EdgeStates` graph emitter (incl. the `integration` + memory-lane `integration-mem` edges); `EdgeStates` no longer carries a `cgcRefused` flag and the `cgc-seed` lane takes `states.cgc` straight through. [6]
@@ -95,7 +96,11 @@ Fixtures are presentation data only: they encode the wire shape (camelCase, `exc
 - `bootStages` six-frame build-up (B0 main-only → B5 nominal, 5i), spread into the export tail [8]
 - `engine-retired` (D6 stack-removed) + the D4/D5 split (`engine-landing-merged` integration-pending, `engine-cleanup-pending` de-materialise) [9]
 - `engine-landing-pushed` (05k, D3 "code lands": feat `pushed` · PR `merged` · origin/main `tip` · origin/mem-main still `planned`) — the D2·D3 split [10]
+
+
 - The two cleanup-pending scenarios carry the retired `retry_cleanup` next action — stale demo data the untyped `nextAction: string` cannot flag. [11]
+
+
 - The dashboard type that makes the stale literal unobservable: a plain `string`, not a closed union of server-producible actions. The anchor is the declaration immediately above `nextAction?` inside `EngineProcessNode`, because a bare `nextAction` is not unique in this file (it also declares the `TaskDocProjectionEffect` field). [12]
 
 ## Series-Contract Notes

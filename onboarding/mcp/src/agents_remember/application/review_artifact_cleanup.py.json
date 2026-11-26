@@ -293,7 +293,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
             "content": "sha256:a49a9c54c5362e6d72020b6b913bbb89e032b6b1b422a3b457811dfe1887d4dc",
             "locator": {
               "kind": "symbol",
@@ -306,27 +306,16 @@
       ]
     },
     "14": {
-      "note": "The main archive case and the colliding-task case.",
+      "note": "The main archive case and the colliding-task case.\n\nAnchor: `` `test_archiving_deletes_the_tasks_review_refs_legacy_pins_and_dataset_copies` `test_archiving_one_task_never_selects_a_colliding_tasks_pins` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "e146d872dff5949e44db2b2ba21ca54a2f8736c1",
-            "content": "sha256:3d1354f049755323c27c0138905c788eb69753b831a5e70f1f4a4a727b24d460",
+            "blob": "c9bbcea8f921a23962f77446c1e9c126f9ce89cc",
+            "content": "sha256:8347015c318b65c9104f26eb4c0761cc58625290022bdcd6f6762f73176d8b2b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_archiving_deletes_the_tasks_review_refs_legacy_pins_and_dataset_copies"
-            },
-            "path": "mcp/tests/test_review_artifact_cleanup.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e146d872dff5949e44db2b2ba21ca54a2f8736c1",
-            "content": "sha256:f3de9985dc8eefa2c59de0ddf3c5843fcf261f8db2458bc4a6d6e693e49332e4",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_archiving_one_task_never_selects_a_colliding_tasks_pins"
+              "end": 303,
+              "kind": "line_range",
+              "start": 233
             },
             "path": "mcp/tests/test_review_artifact_cleanup.py"
           },

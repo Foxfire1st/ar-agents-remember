@@ -29,19 +29,16 @@ are gone. `tear-down` has at least six frames, begins idle, ends removed/stack, 
 The `memory-block` arc retains verify/block/reconcile captions, a blocked-health beat, a ledger-map
 edge, and one `worktreeGroup` across its frames. The `stale-base` arc retains
 preflight/block/fast-forward captions, a blocked pre-contract process whose base is behind upstream,
-a worktree-add edge, and one worktree group. Both cases explicitly reject `cgc-seed` and
-`grepai-clone` edge kinds; recovery no longer reruns provider copy-arrow beats.
+a worktree-add edge, and one worktree group.
 
 The `live-sync` case pins a blocked ledger-map edge without a blocked worktree-add edge, an existing
-memory worktree behind its source, no seed/clone kinds, and a final unblocked process back in sync.
+memory worktree behind its source, and a final unblocked process back in sync.
 `integration-conflict` retains the failed integration return-lane flash, terminal
-`integration-blocked` last frame, absence of seed/clone kinds, and shared flash-to-STOP worktree
+`integration-blocked` last frame, and shared flash-to-STOP worktree
 identity. `abandon` retains exactly four frames, nominal then three abandoned phases, no landing refs
 on its abandoned frames, a 1300 ms dissolve hold, and one `boot-demo` identity.
 
-The former `seed-fault`, `reindex-reroute` and `provider-block` test cases are removed. A replacement
-case checks all three names are absent from `SCENARIOS` and every encountered edge kind belongs to
-`worktree-add`, `ledger-map`, `sync`, `integration` or `integration-mem`. It requires a nonempty set of
+The edge-kind guard (`pins every scenario edge kind to the served EngineProcessEdge vocabulary`) checks that every encountered edge kind belongs to `worktree-add`, `ledger-map`, `sync`, `integration` or `integration-mem`. It requires a nonempty set of
 encountered kinds so an empty traversal cannot pass. These are authored assertions, not a test run.
 
 **The vocabulary guard (260731-EFA-L4).** A final `it` — *never authors an engine edge state the
@@ -91,12 +88,12 @@ No configured Domain Documentation source exists for this file.
 
 ### Repo-Internal References
 
-- The replacement provider-retirement case asserts the three provider arc names are absent and all encountered edge kinds belong to the five retained enclosure lanes, with a nonempty traversal. [1]
+- The edge-kind guard asserts every encountered edge kind across SCENARIOS belongs to the five served EngineProcessEdge kinds (worktree-add, ledger-map, sync, integration, integration-mem) with a nonempty traversal. [1]
 
 - `SERVED_EDGE_STATES` and the guard that no authored edge state falls outside it. [2]
 - Asserts the `build-up`/`tear-down` timelines + frame validity. [3]
 
-- SCENARIOS registers build-up, tear-down, memory-block, stale-base, live-sync, integration-conflict and abandon before the resting frames; the three provider arcs are removed. [4]
+- SCENARIOS registers build-up, tear-down, memory-block, stale-base, live-sync, integration-conflict and abandon before the folded-in resting frames. [4]
 
 - `EngineProcessEdge.state` — the served vocabulary `SERVED_EDGE_STATES` mirrors, on an `extra="forbid"` model. [5]
 

@@ -61,12 +61,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f0fffaaf83d9536e496a576e33ce9e6053c8f9b",
-            "content": "sha256:2a61f4d4086fb6d31da1fb4bd4defb2ce5f029010c277dc0984df8b005b5d848",
+            "blob": "5f2c36304a97c2d5a4a686e3eb10b4474b2198a7",
+            "content": "sha256:c59e28c118af435dedfc5346e0195eb50eedcc200e348a859041289a1d531ffb",
             "locator": {
-              "end": 218,
-              "kind": "line_range",
-              "start": 205
+              "kind": "symbol",
+              "name": "run"
             },
             "path": "mcp/src/agents_remember/cli/leaf_enclosure_start.py"
           },

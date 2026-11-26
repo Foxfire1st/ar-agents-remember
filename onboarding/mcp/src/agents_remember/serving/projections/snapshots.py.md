@@ -26,12 +26,16 @@ Current source interpretation only; no fresh execution or grade.
 
 - Canonical task-source and document readers remain read-only. [1]
 - The extracted parser retains addressed unknown-field pruning without forgiving other malformed data. [5]
+
 - [11]
+
 - [12]
+
 - [13]
 
 - The current reader hub re-exports enclosure/engine, analytical and canonical task-document readers; it exports no workspace or worktree provider reader. [10]
 
 - No provider-node reader is exported from this facade. Retained engine and analytical readers do not supply provider display nodes. [8]
+
 
 - The hub retains drift, route coverage, tool-report, ledger and worktree-start progress readers; verification-age and provider-setup readers are absent. [14]

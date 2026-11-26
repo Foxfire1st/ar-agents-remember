@@ -62,7 +62,6 @@ No external domain documentation governs this repository-local scope contract.
 
 - Consumer semantics, explicit global invalidation and unresolved-input decisions live at the canonical owner without deciding product ownership. [4]
 
-
 ### Cross-Repo References
 
 No cross-repository graph participates in targeted selection.

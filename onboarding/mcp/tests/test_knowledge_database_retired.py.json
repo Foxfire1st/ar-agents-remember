@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "3083757dccc4b531acc9ad6e28b6e2674dd67180",
+        "blob": "7ba410dc5fcf00dff6c7ac82f7fa00a45a3b13fd",
         "content": "sha256:9884a40ddba7b699e20e3ab398a203c6bab5478efa1a8f1cbbb0618ba3d88373",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "3083757dccc4b531acc9ad6e28b6e2674dd67180",
+        "blob": "7ba410dc5fcf00dff6c7ac82f7fa00a45a3b13fd",
         "content": "sha256:e59031f1876b339a7c1ae72ed972a7a1ef295a3623d6b385fae12c6ceb5d0bc5",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "3083757dccc4b531acc9ad6e28b6e2674dd67180",
+        "blob": "7ba410dc5fcf00dff6c7ac82f7fa00a45a3b13fd",
         "content": "sha256:b07cf4328fb93453960332223f756945670be1d7b2d8bd098fd5ff08fbd476dd",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "3083757dccc4b531acc9ad6e28b6e2674dd67180",
+        "blob": "7ba410dc5fcf00dff6c7ac82f7fa00a45a3b13fd",
         "content": "sha256:9132040bb76e8b172ae849b612f0aee6fa9f6c0440b944cbb0fb24c3fedebce3",
         "locator": {
           "kind": "symbol",
@@ -73,7 +73,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3083757dccc4b531acc9ad6e28b6e2674dd67180",
+        "blob": "7ba410dc5fcf00dff6c7ac82f7fa00a45a3b13fd",
         "content": "sha256:9884a40ddba7b699e20e3ab398a203c6bab5478efa1a8f1cbbb0618ba3d88373",
         "locator": {
           "kind": "symbol",
@@ -92,14 +92,26 @@
   ],
   "references": {
     "1": {
-      "note": "The exact computed-import admission retains the static forbidden-import mutation witnesses.",
+      "note": "The exact computed-import admission retains the static forbidden-import mutation witnesses.\n\nAnchor: `test_a_module_name_computed_at_run_time_is_imported_only_by_the_named_modules`, `test_the_static_check_catches_the_forms_the_review_found_it_missed`",
       "targets": [
         {
           "anchor": {
-            "blob": "3083757dccc4b531acc9ad6e28b6e2674dd67180",
-            "content": "sha256:24f1c0c172e5689c82cdd133219e12e785056aba069cf7fde78411d799560bd5",
+            "blob": "7ba410dc5fcf00dff6c7ac82f7fa00a45a3b13fd",
+            "content": "sha256:74772d0e62e790cf06c0a31874b0386e2c7bf8032f2388d545d92607e976daf8",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_a_module_name_computed_at_run_time_is_imported_only_by_the_named_modules"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7ba410dc5fcf00dff6c7ac82f7fa00a45a3b13fd",
+            "content": "sha256:b07cf4328fb93453960332223f756945670be1d7b2d8bd098fd5ff08fbd476dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_static_check_catches_the_forms_the_review_found_it_missed"
             }
           },
           "kind": "test"

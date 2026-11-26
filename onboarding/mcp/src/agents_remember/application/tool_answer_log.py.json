@@ -246,12 +246,12 @@
       ]
     },
     "7": {
-      "note": "Concurrent detail writes cannot both spend the same remaining folder budget. Anchor: `test_concurrent_details_cannot_both_spend_the_same_log_budget`",
+      "note": "Concurrent detail writes cannot both spend the same remaining folder budget.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "c3d6283339f0acb8a721fee7ad1b314357817757",
-            "content": "sha256:cced0a3b79d28af3ad7a8922ee37bcc97036eab1da8a6c8fae03ceec1c5a286c",
+            "blob": "7fee21c3791904bf37a17bddc2a314a257d8fa3b",
+            "content": "sha256:e28409089b6de762d8cc7501570c0f69baa24deb367f811c31ed1c9374c3a068",
             "locator": {
               "kind": "file"
             },

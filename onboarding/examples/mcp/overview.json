@@ -2,14 +2,16 @@
   "path": "examples/mcp",
   "references": {
     "1": {
-      "note": "The public JSON example contains the repository/profile reference, empty per-provider objects and the named default illustrations.",
+      "note": "The public JSON example contains the coordination/workspace/transcript roots, repository/profile reference, timeoutCaps.toolSeconds, benchmarksEnabled, dashboard, retirement and toolLog illustrations, with no providers or providerDegradation blocks.\n\nAnchor: `settings.example.json`",
       "targets": [
         {
           "anchor": {
-            "blob": "02488160059666d9bd7383472baa03db8c36105b",
-            "content": "sha256:a1f35f5c78ff9ac45290256da4932d53d10a169096b9964d7184adc4210590c5",
+            "blob": "f05e96e646eab17b867721906092ae01463906b4",
+            "content": "sha256:d085b03e9ccb70efe79c80a1c30ef63fb1b7467a196d224094ca0b2aa76499bc",
             "locator": {
-              "kind": "file"
+              "end": 30,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "examples/mcp/settings.example.json"
           },
@@ -38,28 +40,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
             "content": "sha256:0e8d453a3698e5f68d42d6918fea42f7de97de86fbc146fcb3f5db192d57301b",
             "locator": {
               "kind": "symbol",
               "name": "default_memory_root"
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Supported provider entries derive runtime/log roots and reject unsupported per-provider fields.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
-            "content": "sha256:39b798ec82ae2bd9d0c954203c804502fb01e13f739eb7ab302a9a9d4d882ba0",
-            "locator": {
-              "kind": "symbol",
-              "name": "parse_providers"
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -72,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
             "content": "sha256:554b754d7d2ee15263ee44ffac071a628a785d7c1780d59fd7b8afad170df3e2",
             "locator": {
               "kind": "symbol",
@@ -85,12 +70,24 @@
       ]
     },
     "7": {
-      "note": "The old provider timeout spelling refuses and explains the separate uncapped indexing/seed boundary.",
+      "note": "parse_timeout_caps admits only toolSeconds, silently skips retired providerSetupSeconds (reported by unused_settings_keys), and rejects any other key as an unsupported timeout cap.\n\nAnchor: `KNOWN_TIMEOUT_CAPS`, `unused_settings_keys`, `parse_timeout_caps`",
       "targets": [
         {
           "anchor": {
-            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
-            "content": "sha256:ee1844899d24faed094c3a064dca97204f56ebea822848911950282a961a9e4c",
+            "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
+            "content": "sha256:7963f2a1e72366f86f3f8ab4d71655c8e202a032a0a395fd1484789b9705a16e",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWN_TIMEOUT_CAPS"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
+            "content": "sha256:c56ab3ab1a0bdf7e8b4a0d44faf2f541803bdf544715bae75a1658a79287bf48",
             "locator": {
               "kind": "symbol",
               "name": "parse_timeout_caps"
@@ -98,21 +95,17 @@
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Degradation settings retain explicit enable/failsafe switches and parsed threshold vocabulary.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "f0d06339f4b5b339d0e1d8721c1a92b05571c871",
-            "content": "sha256:ce43babfd03390d4ae2b411938d2a74bbe37e6dab4ba8f489a10266bf7574e93",
+            "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
+            "content": "sha256:45a7301add57769e2f7cda7664dce6fdcfe5f0b2dc2add24c8d48c87a2d79963",
             "locator": {
-              "kind": "symbol",
-              "name": "parse_provider_degradation_settings"
+              "end": 490,
+              "kind": "line_range",
+              "start": 476
             },
-            "path": "mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py"
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
           "kind": "code"
         }

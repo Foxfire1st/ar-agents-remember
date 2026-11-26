@@ -4,7 +4,6 @@
 
 [Engine Room overview](overview.md)
 
-
 ## Current enclosure-only composition
 
 EngineFxOverlayProps now contains attention and surgeXs only; sparse sibling SVG renders SurgeLines and AttentionGroup. ReindexGroup and dimensions/reindexAt were removed; fixed shared viewBox and aria-hidden remain.
@@ -26,8 +25,6 @@ restore removed provider visuals or tool exposure.
 The prior onboarding below is retained for provenance and unrelated design history.
 It is not current provider-render, fallback, prototype-parity or execution guidance.
 Current behavior and its limits are the operative contract above.
-
-
 
 Renders the Engine Room's repeating decorative SVG effects in a sparse sibling overlay while the
 structural enclosure canvas remains unchanged.
@@ -66,12 +63,9 @@ No Domain Documentation source is configured.
 
 ### Repo-Internal References
 
-
 - Timeline selectors and choreography. [1]
 
-
 - Visual isolation regressions. [2]
-
 
 ### Cross-Repo References
 

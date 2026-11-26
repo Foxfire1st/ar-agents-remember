@@ -16,9 +16,10 @@ Declare the answer of the one user-settings initializer: its state, its path, th
 
 - The response model and its declared fields. [1]
 
+
 - The registry binds the tool name to this response model. [2]
 
-- A preview writes nothing and reports the preview state. [3]
 
+- A preview writes nothing and reports the preview state. [3]
 
 - Current source account and its stated boundaries. [4]

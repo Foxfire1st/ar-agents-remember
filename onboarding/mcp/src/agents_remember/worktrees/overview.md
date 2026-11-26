@@ -81,7 +81,7 @@ Finalize and leaf reopen use the task domain's shared folder-master rule when a 
 
 `task_resolver.py` skips archival whenever the task holds a series contract, naming the commanding sprint or explicit `task_doc.retire_master` route. Finalizing a master therefore retains its folder. `task_retirement.py` provides read-only readiness: open leaf work and unfinished/unreadable current operation authority refuse; own resources, identity discrepancies, historical report observations and cleanup pending without open work remain reported facts. A live locator determines whether lifecycle remedies can act; otherwise guidance names a manual remedy.
 
-`services.py` is the downward composition boundary for provider lifecycle, canonical task observation, memory quality, citations, retained certification rails, knowledge validation/crossing/worklist/gate, review-artifact cleanup and leaf-agent archival. Higher memory/application implementations bind these capabilities rather than being imported upward. The application bundle no longer installs the retired prepared-memory producer or PreparedCloseoutContinuation. Core Gate-5/finalization evidence and surviving exact-pair publication remain separate authorities; a missing or former port never supplies approval.
+`services.py` is the downward composition boundary for canonical task observation, memory quality, citations, retained certification rails, knowledge validation/crossing/worklist/gate, review-artifact cleanup and leaf-agent archival. Higher memory/application implementations bind these capabilities rather than being imported upward. The application bundle no longer installs the retired prepared-memory producer or PreparedCloseoutContinuation. Core Gate-5/finalization evidence and surviving exact-pair publication remain separate authorities; a missing or former port never supplies approval.
 
 The child quality and integration routes retain selected immutable certificate generations, original certificate readback, journal-selected admission and suffix execution. Their host-registry versus checkout-store lock ownership, curator-coherence manifest and content-addressed generation, and certification publication boundaries remain distinct from ordinary sync authority. The inherited coherence contract binds isolated future code tree, paired memory tree, task topology and structured memory-quality attestation, with candidate judgment and selector-last publication. Candidate observation uses an invocation-private index in a caller's scratch namespace; Git tree identity, not scratch names, carries semantic identity. The current exact memory candidate resolver is `worktrees/modules/memory_candidate_pair.py`, after its historical closeout/memory-quality moves: it proves requested contract/repository, roots, repository membership, checked-out work branches, source/base equality and ancestry without queue/report fallback or branch switching. Those detailed child contracts are retained here as inherited intent, not newly exhaustive adjudications.
 
@@ -138,7 +138,6 @@ Retain the inherited review-artifact deletion policy's accepted TOCTOU window an
 
 ### Direct landing route
 
-
 | Route | Source | Current boundary |
 | --- | --- | --- |
 | Direct landing | [`direct_landing.py`](direct_landing.py.md) | Apply selects the exact history source, reads a qualifying review fact before memory writes, and closes the owner history with that fact when available. It judges and validates the retained closed tree and restores the owned closing on refusal. The proven bound leaf takes precedence over optional supplied leaf_id; only absence of both permits legacy sole-open inference. Exact in-flight retry reuses the retained record without preparation/admission or another gate/review claim. A newly admitted generation keeps its closing until decided. |
@@ -148,7 +147,6 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 ## Message and evidence transport
 
 A leaf workspace may expose the shared task-owned messages folder through a link. Whole-folder terminal cleanup and abandon move out regular files from a real workspace `messages` directory into the canonical task-record folder before deleting the task folder, while removing a `messages` symlink without following it so canonical message files are never deleted (`remove_group_role_folders` keeps symlink-only unlinking for directory-only sprint-archive retirement). Canonical report collection/fsync/readback and transaction/removal authority remain with their existing owners; message filing is not a new report-read side effect.
-
 
 | Field | Value |
 | --- | --- |
@@ -219,16 +217,16 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 - History closing writes the eligible review fact in the same update and preserves already-closed bytes. [116]
 
-
 - Direct landing reads the selected owner's review against the checkout before the cache-ignore or history writes. [117]
-
 
 - Ancestry, disjoint byte paths and equal reviewed after-images define the clean-sync exception. [104]
 - The door keeps the original record-digest provenance while checking its other inputs. [105]
 
 - Retained reference account (no fresh execution or acceptance inferred): Current custody/release of historical pins; no creation. [1] [6]
 
+
 - The worktree service bundle exposes typed ports for memory-quality task observation, knowledge validation, crossings, worklist recomputation, review-artifact cleanup and the invariant gate. The optional brief service receives the memory root and exact code pair. [8]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The activation record is a strict per-contract fingerprinted snapshot with explicit selection states. [9]
 - Retained reference account (no fresh execution or acceptance inferred): The route's stop: release this contract's selection, refuse a non-series contract, report a released master as `paused` or a master that held no selection as `atomic-series-already-vacant`, and propose no next call in either success. [10]
@@ -239,11 +237,7 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 
 - Sync recovery reads its canonical enclosure-root reports journal first, with the old lifecycle location only a legacy fallback; operation observations do not derive transaction state from task prose. [15]
 
-
-
 - Retained reference account (no fresh execution or acceptance inferred): Cancellation restores only operation-owned heads; malformed or missing journals recover only through explicit pinned-ref proof. Anchor: `cancel_sync` `recover_unreadable_journal` `recover_missing_journal` [17]
-
-
 
 - Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution (validated by the MIK-R22 knowledge validator before its commit when the memory is converted, after a crossing sync's history file is closed), and the completed branch — and none of them reads a ledger row list. [18]
 - Retained reference account (no fresh execution or acceptance inferred): A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state. [19]
@@ -261,26 +255,23 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - Retained reference account (no fresh execution or acceptance inferred): Both directions of the step rule are pinned by one collected case, because both lanes sit at exactly their budget, and the descending-position counter-case is untouched. [37]
 - Retained reference account (no fresh execution or acceptance inferred): The order the spine walk consumes: non-empty leaves are proved landed before ordering by the pair predicate, refusing unless exactly one minimum exists; empty landings are excluded from that ordering and separately proved at a joint chain position. Source caption: `_require_exact_atomic_landing_chain` `_ordered_atomic_landing_chain` [38]
 
-
-
 - Retained reference account (no fresh execution or acceptance inferred): The route helper: marker probe, fail-closed on unreadable trees, refusal without a paired code commit or a bound validator. [42]
 
-- Retained reference account (no fresh execution or acceptance inferred): The port the helper calls (since MIK-R09 with a `leaf_refusal` twin) and the bundle field that carries it (beside `knowledge_crossing`, since MIK-R24, `knowledge_worklist`, since MIK-R08, `review_artifact_cleanup`, since MIK-R25, and `knowledge_gate`, since MIK-R09). Anchor: `KnowledgeValidationPort` `WorktreeServices` [43]
 
-
+- Retained reference account (no fresh execution or acceptance inferred): The port the helper calls (since MIK-R09 with a `leaf_refusal` twin) and the bundle field that carries it (beside `knowledge_crossing`, since MIK-R24, `knowledge_worklist`, since MIK-R08, `review_artifact_cleanup`, since MIK-R25, and `knowledge_gate`, since MIK-R09). [43]
 
 
 - The sync validates the staged memory merge before its commit, against a converted base when a parent is unconverted (MIK-R24 rule 7). [44]
 - Retained reference account (no fresh execution or acceptance inferred): The route never commits converted memory unvalidated, and an unreadable tree is refused. [46]
 - Retained reference account (no fresh execution or acceptance inferred): The plan before Git, and its application to the started merge. [47]
 
-
 - The structural plan reports conflicts, conversion, renumbered references, kept evidence lines and skipped cards. A master's content-conflict park also reports its open history; aligned-card count alone does not select a report. [48]
 - Retained reference account (no fresh execution or acceptance inferred): The port and its request and view. [49]
 - The unconverted-line refusal (MIK-R46 rule 1): a tree whose official line is converted converts only through the crossing sync, and the cutover lock refuses any other attempt by name. [50]
 - Retained reference account (no fresh execution or acceptance inferred): The durable report and the master-line history file closed at commit. [51]
 
-- Retained reference account (no fresh execution or acceptance inferred): The port and the bundle field (which since MIK-R09 also carries `knowledge_gate`). Anchor: `KnowledgeWorklistPort` `WorktreeServices` [52]
+
+- Retained reference account (no fresh execution or acceptance inferred): The port and the bundle field (which since MIK-R09 also carries `knowledge_gate`). [52]
 
 
 - Retained reference account (no fresh execution or acceptance inferred): The completed result gains the summary; every failure leaves it unchanged. [53]
@@ -288,12 +279,14 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - Retained reference account (no fresh execution or acceptance inferred): The `continue` replay recomputes too. [54]
 - Retained reference account (no fresh execution or acceptance inferred): The archive hook's request and port. [55]
 - Retained reference account (no fresh execution or acceptance inferred): The conditional finalizer helper acts only on archived or would-archive results; a series archive skip invokes no cleanup. [56]
+
+
 - Retained reference account (no fresh execution or acceptance inferred): Finalize resolves a leaf naming none through the shared helper. [57]
+
+
 - Retained reference account (no fresh execution or acceptance inferred): Reopen resolves a leaf naming none through the same helper. [58]
 
-
 - Retained reference account (no fresh execution or acceptance inferred): The port, the landing request and the direct verdict. [63]
-
 
 - The unconditional legacy-input refusal and its recovery wording. [65]
 - Task recovery guidance never invokes removed get: an established safe leaf can offer task_doc.replace with the exact slug, contract and fields, while an unknown leaf or parent path offers file repair without a guessed mutation. Launch copies contain the own leaf plus declared local requirements, name missing sources without failing launch solely for absence, and refresh/reclaim on canonical publication under the existing rollback and copy budgets. Status copy drift is informational; missing notice is not universal byte equality. Packet-owned refusal presentation preserves the central conversion sentence and single probe-made case, with exact sync args or quoted separate first-conversion argv and no step for unknown. These accounts change neither canonical-file authority, checkpoint/pause distinction, cleanup/reclamation eligibility, paired source lineage nor sync behavior. [99]
@@ -311,7 +304,6 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - Retained reference account (no fresh execution or acceptance inferred): Retirement readiness refuses actual open leaf work and unfinished or unreadable current operation authority, and returns evidence and retained facts. [78]
 
 - **Retained historical source account — superseded by the current route account:** Attribution alone supplies source rows; invalid code objects are separately excluded [79]
-
 
 - The retained repository-lock account checks local marker blobs and working-tree marker files and distinguishes absent paths from non-repositories. [107]
 
@@ -336,26 +328,15 @@ The explainer reads canonical reports from the selected leaf's execution receipt
 - **Retained historical source account — superseded by the current route account:** Terminal archival is explicit, skipped on preview/non-leaf and best effort after admission Anchor: archive_terminal_agents [95]
 
 
-
-
 - Direct recovery continues the admitted generation and settles its receipt. Direct cancellation checks the receipt and proves current Git output before settling cancellation. [80]
 
-
-
 - Exact direct replay retains its generation. An unpublished self-cancelled refusal starts a fresh generation on replay, and a changed request can replace retired terminal evidence. [81]
-
-
-
-
 
 - Shared native reapply expectation uses the carried-head rule and effective worktree context, never an alternate or plain-file fallback. [96]
 
 - Binary staged bytes remain exact in cancellation ownership comparisons. [97]
 
 - Cancellation assesses both sides before publishing its cancelling state. Later work joins the save extent before discard. A successful cancellation reports saved files and any deduplicated merge-fault evidence associated with that saved state. [98]
-
-
-
 
 - The start-progress owner suppresses lineage-refused beats before any progress write. [100]
 

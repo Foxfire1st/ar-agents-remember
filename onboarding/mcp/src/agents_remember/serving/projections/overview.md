@@ -22,7 +22,6 @@ The named dependency adapter joins the owning ordinary master and its explicitly
 
 Incremental refresh carries complete accepted paths through task dependency consumers; incomplete/uncertain samples reconcile affected domains fully. Host activity is a distinct invalidation domain excluded from ordinary full/healing refreshes after initial intake. Closeout queue reuse separately authenticates each sprint document, code/memory and source-tip evidence; a workspace-only wake is not a whole-corpus census request. Semantically identical projection publication retains its files, and unsuccessful required refresh/publication keeps invalidations owed.
 
-
 The task-document reader computes whole header-note and review-finding counts before bounded summary selection (six header notes and twenty-five review findings). Summary mode emits no decision bodies and no decisionsCount field; full-body mode retains all decisions and complete reader strings/collections.
 Form derives from the model's sprint/master/task rule, not the count of visible sub-task rows. Header,
 status, step/sub-step note/outcome and review changes participate in body revision identity. These
@@ -177,7 +176,9 @@ Host reconciliation qualifies a boot after receipt-backed registry recovery and 
 
 - Task projection tolerates addressed unknown keys, projects graph and typed reader fields, and hashes full semantic values. [8]
 
+
 - Current enclosure readers project lifecycle operations with the durable operation reader's tolerant boundary. Earlier inbox/expectation-copying and inbox-compaction accounts are historical, absent from current runtime readers and input slots. [9]
+
 
 - Closeout projection has strict sprint admission and an invalid-empty effective-state boundary. [10]
 

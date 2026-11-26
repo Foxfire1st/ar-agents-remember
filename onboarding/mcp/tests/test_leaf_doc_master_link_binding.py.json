@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "d3d93b10ae91b4749bacacc39767a559fe5c4e61",
-        "content": "sha256:9a46e428c50a17b7d857de5ff05b0c2751fcf0b53f95dfbdf3cf7b88cfee80e2",
+        "blob": "14645a7867b05f58efb4b8e9f8495de6c3e73347",
+        "content": "sha256:667cddd9014b6e1b62fec2b5c4c8265add21cc9ada89d981144c296cff849d91",
         "locator": {
           "kind": "symbol",
           "name": "LeafDocMasterLinkBindingTests.test_abandoned_leaf_restart_promotes_document_and_parent_row"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "d3d93b10ae91b4749bacacc39767a559fe5c4e61",
+        "blob": "14645a7867b05f58efb4b8e9f8495de6c3e73347",
         "content": "sha256:2a07bf5d7993a0c5a83f28fd581566b044fefff0469661152ba5024b264313f9",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "d3d93b10ae91b4749bacacc39767a559fe5c4e61",
-        "content": "sha256:f01933133ab1e65e989ed1ac3dd87348c2de144c9e0ff76a3f22369559bc436e",
+        "blob": "14645a7867b05f58efb4b8e9f8495de6c3e73347",
+        "content": "sha256:b1106f8f931ae85f0f826921c1cd8db2049f50bde1eac327aae326ac5081851f",
         "locator": {
           "kind": "symbol",
           "name": "LeafDocMasterLinkBindingTests.test_invalid_parent_refuses_abandon_before_terminal_archive"
@@ -60,8 +60,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3d93b10ae91b4749bacacc39767a559fe5c4e61",
-            "content": "sha256:a3e17e34c7533414ff77a0a063b9d12c2486a1c8317c09a1ad07786663e89891",
+            "blob": "14645a7867b05f58efb4b8e9f8495de6c3e73347",
+            "content": "sha256:66c69e5392b176e8c679bd7c4d49a00b5d1fa6b4d6f94eecc400c303cf6cb0fb",
             "locator": {
               "kind": "symbol",
               "name": "_start_leaf"
@@ -72,14 +72,15 @@
       ]
     },
     "17": {
-      "note": "Pre-contract leaf gains its link at start\n\nAnchor: `test_leaf_authored_before_its_series_contract_gets_its_link_at_start`",
+      "note": "Pre-contract leaf gains its link at start",
       "targets": [
         {
           "anchor": {
-            "blob": "d3d93b10ae91b4749bacacc39767a559fe5c4e61",
-            "content": "sha256:449529a6d1801d547e9a77b8f2e3d686473c652364bf7baccf70f3d6bb11c14d",
+            "blob": "14645a7867b05f58efb4b8e9f8495de6c3e73347",
+            "content": "sha256:506cf5158fdd6a74dc2cdb7ff58c2d73eca7ad83c6b88b547ddebc3ca7d19e5d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_leaf_authored_before_its_series_contract_gets_its_link_at_start"
             }
           },
           "kind": "test"
@@ -91,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3d93b10ae91b4749bacacc39767a559fe5c4e61",
+            "blob": "14645a7867b05f58efb4b8e9f8495de6c3e73347",
             "content": "sha256:770c686c79c2d48e58b05719976b3e49c1d1e97998822bbef555f197c66b0f9d",
             "locator": {
               "kind": "symbol",
@@ -107,12 +108,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3d93b10ae91b4749bacacc39767a559fe5c4e61",
+            "blob": "14645a7867b05f58efb4b8e9f8495de6c3e73347",
             "content": "sha256:f0b94f939f3f2767e8bbf2d2426bd3638ef5102aad097cad71ea8d861a8d1ffb",
             "locator": {
-              "end": 350,
+              "end": 346,
               "kind": "line_range",
-              "start": 335
+              "start": 331
             }
           },
           "kind": "test"
@@ -124,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3d93b10ae91b4749bacacc39767a559fe5c4e61",
+            "blob": "14645a7867b05f58efb4b8e9f8495de6c3e73347",
             "content": "sha256:3b63c0044428e340e875126d98ac86cbdd1b6800ba45726b3c3ba25522a35f48",
             "locator": {
               "kind": "symbol",
@@ -140,8 +141,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3d93b10ae91b4749bacacc39767a559fe5c4e61",
-            "content": "sha256:9a46e428c50a17b7d857de5ff05b0c2751fcf0b53f95dfbdf3cf7b88cfee80e2",
+            "blob": "14645a7867b05f58efb4b8e9f8495de6c3e73347",
+            "content": "sha256:667cddd9014b6e1b62fec2b5c4c8265add21cc9ada89d981144c296cff849d91",
             "locator": {
               "kind": "symbol",
               "name": "test_abandoned_leaf_restart_promotes_document_and_parent_row"
@@ -156,8 +157,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3d93b10ae91b4749bacacc39767a559fe5c4e61",
-            "content": "sha256:f01933133ab1e65e989ed1ac3dd87348c2de144c9e0ff76a3f22369559bc436e",
+            "blob": "14645a7867b05f58efb4b8e9f8495de6c3e73347",
+            "content": "sha256:b1106f8f931ae85f0f826921c1cd8db2049f50bde1eac327aae326ac5081851f",
             "locator": {
               "kind": "symbol",
               "name": "test_invalid_parent_refuses_abandon_before_terminal_archive"
@@ -172,7 +173,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3d93b10ae91b4749bacacc39767a559fe5c4e61",
+            "blob": "14645a7867b05f58efb4b8e9f8495de6c3e73347",
             "content": "sha256:2a07bf5d7993a0c5a83f28fd581566b044fefff0469661152ba5024b264313f9",
             "locator": {
               "kind": "symbol",

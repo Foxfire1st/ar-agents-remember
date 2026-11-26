@@ -208,10 +208,8 @@ No external domain claim is required.
 
 ### Repo-Internal References
 
-
 Each row names one construct and cites the exact span that construct occupies in the reviewed
 candidate, so the row is falsifiable by the source alone.
-
 
 ### Cross-Repo References
 
@@ -222,103 +220,54 @@ No cross-repository claim is made.
 
 ### Current Source-Inspection References
 
-
-
-
-
-
-
-
-
-
-
-
-
 - The nine-step route — reopen, author the new row with its `file` cell, start, work, close out, integrate, finalize, close the master out, land it — runs in order and records completion on its last line. [1]
-
-
 
 - The documented fallback from the closeout cell to the integration cell carries the code landing. [10]
 
-
 - The same fallback carries the memory landing. [11]
-
 
 - A missing master document no longer blocks: the reopen proceeds and reports the missing path. [12]
 
-
 - The other side of that demotion is kept: a task root whose document is not a master is refused. [13]
-
 
 - With both landing cells empty on both sides there is nothing to reconstruct or re-cut from, and the reopen refuses. [14]
 
-
 - An existing ref at a tip that is neither the source tip nor the recorded landing is refused, not moved — the arm the reconstruction must not swallow. [15]
-
 
 - The reachable direction: a work branch on the source tip whose line still holds the landing is adopted, so "refuse harder" cannot pass. [16]
 
-
 - The current agreement method asserts screen equals declaration at or above the ruled tuple; below it asserts the fixed 1000/250 screen and inequality. Its original L7 landing-order account is historical, not generic later-raise compatibility.  Anchor: `SeriesExtensionRouteTests.test_the_budget_screen_and_the_declaration_agree_in_either_landing_order` [17]
-
-
-
 
 - The current ruling screen unconditionally requires exactly 10000 unit and 2000 integration selected cases; it no longer skips a below-ruling declaration. [18]
 
-
-
-
 - The screen's proved pair is read from the `parametrize` marks the screen runs with, so literals and named constants resolve alike. [19]
-
 
 - A retired branch whose landing left the source line is rebuilt **at the recorded landing**, reports `reconstructed`, and leaves the master reopenable. [2]
 
-
 - The case ceilings are read from the repository-root declaration rather than copied, so this check cannot rot into a third copy of the number. [20]
-
 
 - A skipped route cannot report success: the sentinel and its boundary, stated rather than implied. [21]
 
-
 - The population assertion no skip can satisfy, sorting last by construction. [22]
-
 
 - The guard cases' invariant that a refused reopen writes nothing to the contract or the master document. [23]
 
-
 - The disposable world every case is built on, and the two hand-repair shapes the reachability proof has to survive. [24]
-
 
 - The developer's symptom is pinned with its remedy: the operator-visible source lineage reads `unavailable` before the reopen and `current` after it. [3]
 
-
 - A contract that no longer records its landing refuses the re-cut, writes nothing, and creates no branch. [4]
-
 
 - A start over an archived terminal contract refuses with the typed status and `nextTool: task_reopen`, mints nothing, and the named route then really works. [5]
 
-
 - The archived-generation start asserts the typed refusal, no replacement contract or integration branch, and equality of the coordination-root file-name set. [6]
-
 
 - The refusal snapshot compares relative file-path sets under the coordination root, excluding Git internals; it does not compare existing file bytes. [7]
 
-
 - A live series is still refused, so the reopen never resets a series out from under a running seat. [8]
-
 
 - The reachability proof runs on the memory side too, and the two sides' actions are asserted independently so a one-sided mutation cannot satisfy it. [9]
 
-
-
-
-
-
-
 - The integration lane in `mcp/tests/test-evidence-lanes.toml` lists `mcp/tests/test_task_reopen_series_extension.py`, and its nine-step route case still runs the whole route in order. [26]
-
-
-
 
 - The ruled constants and current declaration are 10000 unit and 2000 integration; the independent agreement method retains its fixed 1000/250 lower-rail fixture branch. [25]

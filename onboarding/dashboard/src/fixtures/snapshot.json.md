@@ -100,9 +100,6 @@ The directGrant examples are nested summary data on native entries and carry fab
 
 The added fields extend wire coverage only. The fixture remains hand-maintained; no producer run, finalization or same-master dependency join is established by these samples.
 
-
-
-
 ## Evidence
 
 ### Docs References
@@ -119,54 +116,30 @@ The payload's shape is fixed by pydantic serialization behaviour on this reposit
 `model_dump(by_alias=True, exclude_none=True)` — which is what makes a null-valued optional field
 absent from the file rather than present as `null`.
 
-
-
-
-
 - The manual payload retains representative enclosure rows and the activeWorktreeGroups join value; the enclosure carries the same sim-group identity. [5]
-
 
 - Manual decision and task-reader values are sample data, not source-derived provenance. [6]
 
-
-
-
-
 - The writer of the persisted payload this file is shaped like: `write_projection` dumps with `by_alias=True, exclude_none=True` into `latest-state.json`. [8]
-
 
 
 - The core root plus extracted task DTOs declare strict wire shapes; TaskDependencyNode is display data, distinct from sample values and execution. [9]
 
 
-
-
 - The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. [10]
-
-
 
 - The derived `VOCABULARIES` registry and its non-vacuous sampled-value membership assertion. [11]
 
-
-
-
 - INDEX_SIGNATURE_SITES is a closed, exhaustive record naming every current absorbing node with its reason. [12]
-
-
-
-
 
 - KnownUnsampled names projection.servingBuild and a task's providerLimit; the manual sample carries the other served-tail fields. [13]
 - The served tail declares servingBuild, watcherHealth, checkoutBinding, buildCurrentness and servingProcessId. [21]
 - The sample carries a stale installed-mode build currentness and a serving process id. [22]
 
-
-
 - The snapshot is manual; the projection command generates and stale-checks the schema and TypeScript mirror. Anchor: `generated` [14]
 - The narrowing every reader comes through, and why a second `as unknown as` elsewhere would re-open the hole. Anchor: "as unknown as" [16]
 
 - The store suite consumes the manual fixture and explicitly exercises servingBuild, whose absence in the fixture is separately admitted by KnownUnsampled. [17]
-
 
 ### Cross-Repo References
 
@@ -182,11 +155,9 @@ Engine Process fixtures now sample aggregate `current`, `blocked`, and
 contract-addressed `worktree_sync` recovery. These are wire-contract examples,
 not frontend-derived Git facts.
 
-
 ## Fixture Graph View
 
 The sprint fixture (`sim-master` / `sim-master-b` scenario) carries the render-ready `executionGraphView`: a segmented master with a joined title and an early leaf, plus a dependent second master waiting on it with a recorded predecessor reason and judgment id. Those rows remain representative contract examples; complete enum ownership stays with schema generation.
-
 
 ## Source-Relation and Graph-View Samples
 
@@ -204,20 +175,13 @@ Two sampled decisions carry explicit `product_record: false`, so the hand-mainta
 exercises the product-record marking the projection serves: authored decisions stay unmarked
 while writer constants mark records.
 
-
-
 - Manual fixture includes native operation/source-lineage wire samples, not live operation evidence. [19]
-
 
 - Ledger analytics remain a consumer sample after the retired Git-operation phase is removed. Anchor: `observer`; "ledgers" [1]
 
-
 - The sample retains operation kind, state and revision fields alongside the served dashboard structure. [2]
 
-
-
 - `exclude_none=True` omits fields whose value is `None` from the serialized output — the rule that makes an omitted key here indistinguishable from a field the server does not have. Anchor: `None` [3]
-
 
 - The manual master sample carries three disagreement shapes and the unresolvable literal; this is sample coverage, not live membership evidence. [20]
 

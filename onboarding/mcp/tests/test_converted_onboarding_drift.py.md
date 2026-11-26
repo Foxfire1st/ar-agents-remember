@@ -55,27 +55,15 @@ The parity case compares count, actionable count and violation count across the 
 
 ## Evidence
 
-
 - Converted trees are measured on the converted basis, with the expected count, actionable count and states, and no legacy classification key in the actionable sample. [1]
-
 
 - The converted result names every measured field. [2]
 
 - Empty, missing and unbuildable-base trees report truthfully, never as checked-zero. [3]
 
-
-
-
 - The carried deleted-path case refuses carried-stale rather than new-anchor-path. The shared helper builds anchors. The split context and summary case asserts three matching violations, while the separate description case checks wording. [4]
 
-
-
-
-
-
 - The unscoped drift check, context packet and baseline status agree on count, actionable count and violation count. In a separate scoped case, the leaf check and summary agree on three `R22.6-carried-stale` violations. The carried-deletion test independently checks the leaf-base classification, and the static description case checks current guidance. [5]
-
-
 
 - Report and snapshot come from the same measured result. [6]
 - Converted baseline states block on violations first, then on unaccepted drift. [7]
@@ -85,41 +73,14 @@ The parity case compares count, actionable count and violation count across the 
 
 - Full findings, not the limited sample, own the fingerprint identity; incomplete input yields null. [16]
 
-
-
 - A successful would-adopt dry-run preview and a separate blocked-invalid live refusal preserve HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprints. [10]
-
-
-
-
-
 
 - The static description case checks measurement, currentness and duty. The workflow guide narrows accept-drift to the stale-anchor gate, and the baseline test checks the blocked-invalid rule. [11]
 
-
 - Static assertions inspect the surviving scope guidance and reject restoration of the retired drift registration. [14]
-
-
 
 - The context-packet leaf route binds the fixture leaf base rather than HEAD. [12]
 
-
-
-
-
-
 - Injected RuntimeError("boom") for both dry-run values preserves HEAD/unborn, write-tree-stdout, porcelain-status, non-.git path/byte fingerprints and ls-files --stage; intent-to-add, unstaged symlink target and staged file text remain asserted. Source caption: `test_interval_failure_leaves_everything_untouched` `_fingerprint` [13]
-
-
-
-
-
-
-
-
-
-
-
-
 
 - Carried-deletion refusal and matching context and summary measurements remain separate assertions. [15]

@@ -1,7 +1,7 @@
 {
   "anchor": {
-    "blob": "eead378ad6a06e34cf5b98e81f21d5bc98d8d185",
-    "content": "sha256:18d710492a923bbcaa5e3d0faf0c2b7b32f72db104b9ccc63170f525e512e311",
+    "blob": "207dc9c44d17a2ca5dcd0d69258a51318deb226a",
+    "content": "sha256:d103f78490028d5071df7d816b91d3cfe4c93b2e23629d060f9e60b345a6be34",
     "locator": {
       "kind": "symbol",
       "name": "_held_delivery_loop"
@@ -25,12 +25,23 @@
     "leaf": "260928-MIK-L197",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928_maintained-invariant-knowledge"
   },
   "state": "open",
-  "statement": "The held-delivery loop catches every Exception from a tick, including one raised while the tick's arguments are evaluated and before the accounted offloaded work is entered, and only logs it, so such a tick is skipped with no accounting unit recorded and no signal reaching any caller."
+  "statement": "The held-delivery loop catches every Exception from a tick, including one raised while the tick's arguments are evaluated and before the accounted offloaded work is entered, and only logs it, so such a tick is skipped with no accounting unit recorded and no signal reaching any caller.",
+  "writer": {
+    "at": "2026-11-25T22:16:56+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "2424643a-91e9-4c95-ab58-87443229a30b",
+    "task": "261125-DEP"
+  }
 }

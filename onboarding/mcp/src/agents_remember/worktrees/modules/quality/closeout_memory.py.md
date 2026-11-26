@@ -51,9 +51,12 @@ No relevant external documentation is configured.
 - One phase builds the service-owned drift context, runs the exact check group, and refuses on a non-clean result with bounded evidence. [1]
 - The combined result preserves both phase check maps, findings, counts, bounded report-only evidence, and declared phase membership. [2]
 
-
 - External closeout publishes or reuses a memory-content commit and refreshes the disposable ledger cache separately. [4]
+
+
 - The memory-quality port declares drift context, check groups and quality execution. [5]
+
+
 
 - The service bundle carries a memory-quality port and a separate optional port for certification rail definitions. [6]
 
@@ -63,7 +66,5 @@ No relevant external documentation is configured.
 No cross-repository interface is owned by this internal closeout helper.
 
 No applicable cross-repository source was found.
-
-
 
 - The retained runner executes a supplied check group when directly called. No production call of either helper was found by the production AST/reference census with CLI and declared entry-point inspection; the current closeout owner imports neither helper. [3]

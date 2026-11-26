@@ -21,34 +21,17 @@
         }
       ]
     },
-    "10": {
-      "note": "The provider-retirement render census enables effects, renders the first process of every Engine Room fixture, and rejects provider gauges, blocks, dropout, fault/reindex markers, seed/clone lanes and provider text.\n\nAnchor: `renders no gauge, provider block, dropout halo, fault/reindex marker, seed/clone lane or provider text`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
-            "content": "sha256:492682f0f74c47d510c046020b89b22f0a0c736afc9482914658aec6fe430ff0",
-            "locator": {
-              "end": 520,
-              "kind": "line_range",
-              "start": 506
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "11": {
       "note": "Integration-conflict cases retain terminal STOP with no recovery chips and a positive red refused-conduit flash on integration/integration-mem before the STOP.\n\nAnchor: `EnclosureCanvas — integration conflict`",
       "targets": [
         {
           "anchor": {
-            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "blob": "a1ac7b1527759b668aee52472c6db27a07a191b6",
             "content": "sha256:033b79f770aaf44ad11b1d79051f6aa0f3ad03d4402b14357561649ab321e73c",
             "locator": {
-              "end": 575,
+              "end": 514,
               "kind": "line_range",
-              "start": 550
+              "start": 489
             }
           },
           "kind": "test"
@@ -72,32 +55,16 @@
         }
       ]
     },
-    "13": {
-      "note": "The replacement fixture census rejects eight retired provider/setup fields on every process node and admits only worktree-add, ledger-map, sync and the two integration edge kinds.\n\nAnchor: `carries no provider state on any fixture node`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
-            "content": "sha256:c0c543844b2e465fe6c0a6d6fe363f582e637c049ed9ff96f2920b7742e70881",
-            "locator": {
-              "end": 504,
-              "kind": "line_range",
-              "start": 477
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "2": {
-      "note": "The scenario fixtures it renders; `engine-cgc-seed-refused` now seeds `edges({ cgc: \"stale\", … })`.\n\nAnchor: `ENGINE_ROOM_SCENARIOS`",
+      "note": "The scenario fixtures it renders (ENGINE_ROOM_SCENARIOS).",
       "targets": [
         {
           "anchor": {
-            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
-            "content": "sha256:32cf712b9c7b122379105031817441971f436256ea62140649c48161267282cd",
+            "blob": "206e18e2b0a8669ba96506d5fd19ecacdd34667f",
+            "content": "sha256:e18a3b7761e8fdb781e6a1eed5d50bfe15888c9c0b8aafb79966ed768931a372",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ENGINE_ROOM_SCENARIOS"
             },
             "path": "dashboard/src/panels/engine-room/fixtures.ts"
           },
@@ -110,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "blob": "a1ac7b1527759b668aee52472c6db27a07a191b6",
             "content": "sha256:775cc049096f9cac7be03c885a072d957cb6621a4d5ac0a538c670741bbd91b4",
             "locator": {
               "end": 39,
@@ -157,7 +124,7 @@
         },
         {
           "anchor": {
-            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "blob": "a1ac7b1527759b668aee52472c6db27a07a191b6",
             "content": "sha256:0500997e002c3994a5fad6d4b0a9336d993300f57a5ecaddab3325d0a3b5daeb",
             "locator": {
               "end": 16,
@@ -188,14 +155,14 @@
       ]
     },
     "8": {
-      "note": "The effects-isolation case keeps repeating surge transforms out of the structural SVG and asserts no reindex marker in either the structural canvas or effects overlay.\n\nAnchor: `isolates repeating transforms from the text-heavy structural SVG`",
+      "note": "The effects-isolation case keeps repeating surge and breath transforms out of the structural SVG and asserts surge bands render in the effects overlay.\n\nAnchor: `isolates repeating transforms from the text-heavy structural SVG`",
       "targets": [
         {
           "anchor": {
-            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
-            "content": "sha256:962f98c38d35a7fcd34b2b22b061b237b729a5c56742ea0dfd91178e85f3516f",
+            "blob": "a1ac7b1527759b668aee52472c6db27a07a191b6",
+            "content": "sha256:ceda5b9f338cf6be411972434d99f541da9db3a525ce5b810270ae1233887b17",
             "locator": {
-              "end": 84,
+              "end": 80,
               "kind": "line_range",
               "start": 67
             }
@@ -205,16 +172,16 @@
       ]
     },
     "9": {
-      "note": "The static-scene cases assert no provider gauges or official engine wires, retain external-memory couplers and branch nodes, and the wiring cases reject seed/clone conduits while retaining enclosure lanes.\n\nAnchor: static bird’s-eye and conduit-wiring cases",
+      "note": "The static-scene cases assert no engine gauges or official engine wires and retain external-memory couplers and branch nodes; the wiring cases pin running arrowheads, chevron refX and collinear sync/worktree-add lanes.\n\nAnchor: `EnclosureCanvas — static bird's-eye (5g G1)` and `EnclosureCanvas — conduit wiring polish (5h cleanup)`",
       "targets": [
         {
           "anchor": {
-            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
-            "content": "sha256:39e726d0dd58dc55330b671d1e7363cb789f9004e807bf5cdab55c20fa28f949",
+            "blob": "a1ac7b1527759b668aee52472c6db27a07a191b6",
+            "content": "sha256:a942802dc4090111e52ab8542fb1f9a6a5b21df3b772dbc5e49dba1a6165a725",
             "locator": {
-              "end": 269,
+              "end": 256,
               "kind": "line_range",
-              "start": 181
+              "start": 177
             }
           },
           "kind": "test"

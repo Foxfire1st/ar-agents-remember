@@ -1,6 +1,5 @@
 # Agents Remember Python Verification Infrastructure Overview
 
-
 | Field | Value |
 | --- | --- |
 | sourceRoute | `mcp/test_support/agents_remember_test_support` |
@@ -32,7 +31,6 @@ The Python suite adapter executes the pytest step constructed by the quality-pla
 > Retained earlier card wording; superseded by the current account above:
 > The Python suite adapter executes the pytest step constructed by the quality-plan owner. That step registers `testing.pytest_phase_reporter` when the explicit phase-report output path is supplied. For an applicable ambient scenario, the teardown adapter derives proof from the clean-room summary and both fresh replication reports with passing `L5-C10` checkpoints, bound to the frozen scenario selection. A declared not-applicable scenario instead requires the summary to be absent and publishes a zero-start proof. The focused code-quality overview owns the detailed adapter and selector contracts.
 
-
 `code_quality/catalog_selection.py` narrows consumer-list-only catalog edits to the union of old and new affected consumers. Changes to broader catalog semantics retain global invalidation; malformed catalog text refuses. `code_quality/dependency_ownership.py` supplies repository-input consumer declarations and retains unresolved ownership explicitly.
 
 The earlier `code_quality/completion_relay.py` account described a structural census for the relay `adapter evidence -> catalog -> notifier -> durable inbox -> owner`, with startup and recurring observation entry points. That module is absent from the frozen source tree, so this account is historical and supplies no current relay guard, HTTP exclusion check or runtime-indirection guarantee.
@@ -43,7 +41,6 @@ The earlier `code_quality/completion_relay.py` account described a structural ce
 
 > Retained earlier card wording; superseded by the current account above:
 > `code_quality/projection_types.py` carries the served observer-health schema into the generated dashboard contract. It renames `TerminalObserverHealthPayload` to `TerminalObserverHealth`, preserves its nullable properties as required `T | null` output fields, and documents numeric `maximum` as well as `minimum`. The serving serializer preserves payload nulls when observer health is present; the record schema bounds both serving-lifetime counters as unsigned 32-bit values.
-
 
 Repository-owned design descriptions live in `docs/design/python-evidence-system.md` and `docs/design/python-test-evidence.md`. Candidate-specific task reports do not replace this source-paired behavior description. Historical commit and task identifiers are provenance, not current lifecycle or acceptance authority.
 
@@ -67,22 +64,18 @@ File-level onboarding is intended to cover every current Python source below thi
 
 On 2026-10-26, the integration ceiling rises from 1000 to 2000; unit remains 10000. The source-file cases protect Git listing, bounded reads and readable excluded citations. The original 16-case shape measured 18.56 s and independently 20.15 s; grouping preserved its scenarios in four cases and 14 subtests at 19.70 s. The two link-class regressions produce four cases and 16 subtests: v2 measured 27.47 s and v3 38.20 s. No case was weakened or moved to the unit lane. Both over-budget refusal directions remain enforced. These are scenario-run measurements, not whole-suite runtime or a claimed speedup.
 
-
 Superseded card wording retained for custody (not the current source locator or capture account):
 
 > Case budgets belong to the root `pyproject.toml` rather than this overview or a test-local default. Its current declarations at `pyproject.toml:333-334` are `unit_case_budget = 10000` and `integration_case_budget = 2000`; the unit ceiling has been raised three times since D226's 4000 — to 5000, to 6000 by L54 and to 10000 by L193's D460 — and the unit ceiling remains 10000 and D579 raises integration to 2000; guard behavior is unchanged. Readers must re-read that owner when the limits change.
 
 Retained earlier citation wording, outside its current number: - Root configuration classifies product and verification packages; full static scope covers tracked Python while behavioral metrics use product roots.
 
-
 ## Evidence
 
 - The root declares 10000 unit and 2000 integration selected cases. The current integration raise preserves marker classification and both over-budget refusal directions. [3]
 - The adapter rederives the selector and compares each executable path population exactly. [1]
 
-
 - Development dependencies and checkout import paths are distinct from installed product-package discovery. [4]
-
 
 > Retained earlier citation wording: - Certifying pytest startup requires admission before preparing candidate state and loading the certifying plugin. [5]
 - The package initializer exports no facade; the certifying plugin composes shared services and worktree-service fixtures. [6]
@@ -90,13 +83,16 @@ Retained earlier citation wording, outside its current number: - Root configurat
 - Targeted ownership remains typed-incomplete and refuses executable quality configuration when unresolved. [8]
 - Exact-candidate cache reuse checks selection identity. [9]
 - The adapter constructs an explicit phase-report path; the quality-plan owner registers its reporting plugin. [10]
+
+
+
 - Consumer-only catalog changes preserve old and new consumers; repository inputs use explicit consumer declarations. [12]
+
+
 
 - Retired-wording checks read a normalized statement. Retired-statement matching is confined to the sources that shipped each sentence. The compact-policy helper reports a source unless every declared clause is present. The canonical test reports each missing declared clause of each compact curation source. [14]
 
 - The projection generator derives the serialized TypeScript and schema contracts from the Pydantic declarations and folds the served definitions into the same output. `ServedWorkspaceProjection` declares the served tail fields `servingBuild`, `watcherHealth`, `checkoutBinding`, `buildCurrentness` and `servingProcessId`. [15]
-
-
 
 - Evidence design separates development and diagnostic artifacts from immutable certifying publication. Target: docs/design/python-evidence-system.md. [20]
 - Evidence design separates development and diagnostic artifacts from immutable certifying publication. Target: docs/design/python-evidence-system.md. [21]

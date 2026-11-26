@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
         "content": "sha256:8e732b27e9b902da21c5825f1f3c0159d483cd34566f9102ce32e01aff01afe9",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
         "content": "sha256:96636db2be5105a40156aa3589d6f6f2c4a031b6015e88af6efe672978fa5840",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
         "content": "sha256:b0d8a68bbe24dc6a704631219d2c7e9fc47e6fb6a7e05413cd30d8437578c2b4",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
         "content": "sha256:035e2b66db6643045eea0d2a5bcd2d7dd43fe63a6f63e02be36b098ceb457c64",
         "locator": {
           "kind": "symbol",
@@ -71,12 +71,12 @@
     },
     {
       "anchor": {
-        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
         "content": "sha256:2700d6456c8018530039ec9b02d2694e0ab7dccc05bbddd8df0108f004962075",
         "locator": {
-          "end": 670,
+          "end": 667,
           "kind": "line_range",
-          "start": 598
+          "start": 595
         }
       },
       "facet": "exact selector/session names disappear, credentials remain, the seven sandbox-owned values are installed, and real children receive their own PWD",
@@ -89,7 +89,7 @@
     },
     {
       "anchor": {
-        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
         "content": "sha256:cad4adea94c879b94dbff0221013264d5138fba94e504d4e786d6d24ce20c042",
         "locator": {
           "kind": "symbol",
@@ -106,7 +106,7 @@
     },
     {
       "anchor": {
-        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
         "content": "sha256:2ed259ce82a381dc63016c09a2a53be3948c628bc2e730cb4dcc3a7c82640843",
         "locator": {
           "kind": "symbol",
@@ -123,12 +123,12 @@
     },
     {
       "anchor": {
-        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
         "content": "sha256:98704aaa566498774fd01e768a5074195ab087022195507b18d0dbd1abff499f",
         "locator": {
-          "end": 1085,
+          "end": 1063,
           "kind": "line_range",
-          "start": 1045
+          "start": 1023
         }
       },
       "facet": "each cut, timeout and malformed outcome replaces the old success with a fresh failure naming the underlying error and paths",
@@ -141,7 +141,7 @@
     },
     {
       "anchor": {
-        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
         "content": "sha256:c7c4d88bb9c146c52213803ff56e2e228ee88d77105612e1d20038d147a0b1c2",
         "locator": {
           "kind": "symbol",
@@ -158,24 +158,7 @@
     },
     {
       "anchor": {
-        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
-        "content": "sha256:b55ffcd1d2c454b16f0eead3ba3a41b1036ddd23dc114bfcfaa207cc870b4747",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_the_admission_refuses_a_server_with_configured_providers"
-        }
-      },
-      "facet": "A server_info answer carrying unusedProviderKeys refuses after the server_info read and before any other call.",
-      "id": "PRF-HPZBB0",
-      "invariant": "INV-1937B4",
-      "origin": {
-        "handoffEntry": "MIK-R181@v2 §3",
-        "leaf": "260928-MIK-L179"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
         "content": "sha256:4223a1d05066e5e66da422793edd4f06725783a1e61775e1dce292866fc25d0a",
         "locator": {
           "kind": "symbol",
@@ -192,7 +175,7 @@
     },
     {
       "anchor": {
-        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
         "content": "sha256:a5b6a3e37de2bcbb6df62241ead9f2edad128d25d9c0235193ee834a5e5cfa6d",
         "locator": {
           "kind": "symbol",
@@ -209,7 +192,7 @@
     },
     {
       "anchor": {
-        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
         "content": "sha256:f7d9d746aa776418e16539079d56ed695184d061d37f7710aab18ccd0a997d66",
         "locator": {
           "kind": "symbol",
@@ -226,7 +209,7 @@
     },
     {
       "anchor": {
-        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
         "content": "sha256:347f754740815636a9c2c441f97112b4bb9ac3b1f6ba561e5309150d9186adcd",
         "locator": {
           "kind": "symbol",
@@ -243,7 +226,7 @@
     },
     {
       "anchor": {
-        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
         "content": "sha256:4f9116d2538cac1cb3f07278ab963bc4e031ceeaf11c0dee00acd56d03e7594a",
         "locator": {
           "kind": "symbol",
@@ -260,7 +243,7 @@
     },
     {
       "anchor": {
-        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
         "content": "sha256:b323e4cab8872028e222fdad0106ba85a62b1ecc763024515e629b8c81608221",
         "locator": {
           "kind": "symbol",
@@ -277,8 +260,8 @@
     },
     {
       "anchor": {
-        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
-        "content": "sha256:7c560dfcab6c7e2d9d4c06bbb25e52b074fc45be94c7bbb83f41704a3b87e46d",
+        "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
+        "content": "sha256:d85abe571eedd6d7f7f757ea518f12479295a8429bc104e2cf71ba39936dbfad",
         "locator": {
           "kind": "symbol",
           "name": "test_a_root_the_build_fills_in_by_default_is_caught"
@@ -294,7 +277,7 @@
     },
     {
       "anchor": {
-        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
         "content": "sha256:735915a18141318ff9784dee9761cd3ecf5f0b3f63c1a520e5694be8771f6ce4",
         "locator": {
           "kind": "symbol",
@@ -311,7 +294,7 @@
     },
     {
       "anchor": {
-        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
         "content": "sha256:468ee39c8fc698464f45a0cdd950d626041e07632408e7c813ee0562393c0686",
         "locator": {
           "kind": "symbol",
@@ -334,26 +317,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
-            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
+            "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
+            "content": "sha256:0324fe03f5cd8a6797ae3421a4ffee4b2653e62540a9f9d25d4ede15486cbe0e",
             "locator": {
               "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "10": {
-      "note": "The admission refuses a server with configured providers after the `server_info` read.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
-            "content": "sha256:b55ffcd1d2c454b16f0eead3ba3a41b1036ddd23dc114bfcfaa207cc870b4747",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_admission_refuses_a_server_with_configured_providers"
             }
           },
           "kind": "test"
@@ -361,14 +328,16 @@
       ]
     },
     "11": {
-      "note": "A sandbox whose own settings select another home or the live port refuses.\n\nAnchor: `test_a_sandbox_whose_settings_select_another_host_is_refused`",
+      "note": "A sandbox whose own settings select another home or the live port refuses.\n\nAnchor: `` `test_a_sandbox_whose_settings_select_another_host_is_refused` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
-            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
+            "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
+            "content": "sha256:8e732b27e9b902da21c5825f1f3c0159d483cd34566f9102ce32e01aff01afe9",
             "locator": {
-              "kind": "file"
+              "end": 961,
+              "kind": "line_range",
+              "start": 939
             }
           },
           "kind": "test"
@@ -376,14 +345,16 @@
       ]
     },
     "12": {
-      "note": "The unconfigured state refuses a foreign resolved host.\n\nAnchor: `test_a_host_outside_the_sandbox_refuses_in_the_unconfigured_phase`",
+      "note": "The unconfigured state refuses a foreign resolved host.\n\nAnchor: `` `test_a_host_outside_the_sandbox_refuses_in_the_unconfigured_phase` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
-            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
+            "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
+            "content": "sha256:b323e4cab8872028e222fdad0106ba85a62b1ecc763024515e629b8c81608221",
             "locator": {
-              "kind": "file"
+              "end": 986,
+              "kind": "line_range",
+              "start": 964
             }
           },
           "kind": "test"
@@ -395,7 +366,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
             "content": "sha256:2ed259ce82a381dc63016c09a2a53be3948c628bc2e730cb4dcc3a7c82640843",
             "locator": {
               "kind": "symbol",
@@ -407,14 +378,16 @@
       ]
     },
     "14": {
-      "note": "The unconfigured state is admitted and named, and a settings host the build cannot resolve refuses.\n\nAnchor: `test_a_sandbox_that_records_no_host_yet_is_admitted_only_without_one`",
+      "note": "The unconfigured state is admitted and named, and a settings host the build cannot resolve refuses.\n\nAnchor: `` `test_a_sandbox_that_records_no_host_yet_is_admitted_only_without_one` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
-            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
+            "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
+            "content": "sha256:035e2b66db6643045eea0d2a5bcd2d7dd43fe63a6f63e02be36b098ceb457c64",
             "locator": {
-              "kind": "file"
+              "end": 1020,
+              "kind": "line_range",
+              "start": 1002
             }
           },
           "kind": "test"
@@ -422,14 +395,16 @@
       ]
     },
     "2": {
-      "note": "The safety case for the product Node and cache roots.\n\nAnchor: `SafetyCheckTests`",
+      "note": "The safety case for the product Node and cache roots.\n\nAnchor: `` `SafetyCheckTests` `test_product_node_and_cache_roots_are_required_and_cannot_escape` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
-            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
+            "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
+            "content": "sha256:47da252ee3d756f9df3ad8acec3b5bbbe8cda1cb0aeb9ef0347c495d385d3432",
             "locator": {
-              "kind": "file"
+              "end": 408,
+              "kind": "line_range",
+              "start": 104
             }
           },
           "kind": "test"
@@ -441,7 +416,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
             "content": "sha256:98704aaa566498774fd01e768a5074195ab087022195507b18d0dbd1abff499f",
             "locator": {
               "kind": "symbol",
@@ -457,7 +432,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
             "content": "sha256:4223a1d05066e5e66da422793edd4f06725783a1e61775e1dce292866fc25d0a",
             "locator": {
               "kind": "symbol",
@@ -469,14 +444,16 @@
       ]
     },
     "5": {
-      "note": "The real resolver command returns empty errors, every expected non-null root and five resolver keys.\n\nAnchor: `test_build_roots_command_resolves_every_expected_root_without_errors`",
+      "note": "The real resolver command returns empty errors, every expected non-null root and five resolver keys.\n\nAnchor: `` `test_build_roots_command_resolves_every_expected_root_without_errors` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
-            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
+            "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
+            "content": "sha256:20eabc6b248f3bfcaa0c3ec5a16334161ce2febd6138f9bee20947970a02d486",
             "locator": {
-              "kind": "file"
+              "end": 408,
+              "kind": "line_range",
+              "start": 340
             }
           },
           "kind": "test"
@@ -488,7 +465,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
             "content": "sha256:03f5a88dcf9e81fbd44f02000018eb08d33f5d033c6b5aaea8c85750a574fd8b",
             "locator": {
               "kind": "symbol",
@@ -504,7 +481,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
             "content": "sha256:f7d9d746aa776418e16539079d56ed695184d061d37f7710aab18ccd0a997d66",
             "locator": {
               "kind": "symbol",
@@ -516,14 +493,16 @@
       ]
     },
     "8": {
-      "note": "A resolved host outside the sandbox is refused before any call, naming both hosts.\n\nAnchor: `test_a_resolved_host_outside_the_sandbox_is_refused_before_any_call`",
+      "note": "A resolved host outside the sandbox is refused before any call, naming both hosts.\n\nAnchor: `` `test_a_resolved_host_outside_the_sandbox_is_refused_before_any_call` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
-            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
+            "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
+            "content": "sha256:b0d8a68bbe24dc6a704631219d2c7e9fc47e6fb6a7e05413cd30d8437578c2b4",
             "locator": {
-              "kind": "file"
+              "end": 923,
+              "kind": "line_range",
+              "start": 902
             }
           },
           "kind": "test"
@@ -535,7 +514,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "blob": "e740f856942abdb1594f5e590d6e138a9e94f5d0",
             "content": "sha256:4f9116d2538cac1cb3f07278ab963bc4e031ceeaf11c0dee00acd56d03e7594a",
             "locator": {
               "kind": "symbol",

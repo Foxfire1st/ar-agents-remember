@@ -56,12 +56,12 @@ No configured external domain source.
 
 The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
 
-
-
-
 - Observed and declared ownership, exact-empty distinction and refusals [6]
 
+
 - The layering declaration names all four consumers [7]
+
+
 - Transitive importer closure [2]
 - Digest binds declarations and classification authority [3]
 - An invalid lifecycle catalog is caught as the shared catalog reader's error, not as a bare TOML error, and becomes an unresolved selection reason. [5]

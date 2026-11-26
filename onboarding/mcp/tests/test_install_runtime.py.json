@@ -1,30 +1,50 @@
 {
   "path": "mcp/tests/test_install_runtime.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "daa0c0a31b8185bfde9482dcf32d6eea54df5451",
+        "content": "sha256:d21a34294b45ccd9d71a1fec1bc058a63c0a3ed7e24afc2b291c3f185287b944",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstallRuntimeTests.test_runtime_install_creates_logs_without_provider_folders_and_removes_scripts"
+        }
+      },
+      "facet": "runtime_install creates logs and logs/mcp without creating search-provider directories.",
+      "id": "PRF-G9J2R2",
+      "invariant": "INV-7XBR6C",
+      "origin": {
+        "handoffEntry": "DEP-R02@v1 §2",
+        "leaf": "261125-DEP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "daa0c0a31b8185bfde9482dcf32d6eea54df5451",
+        "content": "sha256:7983e8f9b6b92a5ea85f4f23ef33e864fff8d796d1fcdc3f8cddf79b18a3e2ab",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstallRuntimeTests.test_runtime_install_leaves_legacy_provider_trees_intact_and_reports_them"
+        }
+      },
+      "facet": "runtime_install leaves pre-existing provider directories untouched on disk and reports them as removed stores.",
+      "id": "PRF-Z8X8PK",
+      "invariant": "INV-7XBR6C",
+      "origin": {
+        "handoffEntry": "DEP-R02@v1 §2",
+        "leaf": "261125-DEP-L2"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Runtime install preserves docker provider state.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "faa6db59d588645689b09468c67b59d2060fc4ae",
-            "content": "sha256:9c7ae6547d483c51d405c757b129a97eaa24fd28bc7127866f3b2d68cfb3adff",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_runtime_install_preserves_docker_provider_state"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "3": {
       "note": "Existing settings file is never clobbered.",
       "targets": [
         {
           "anchor": {
-            "blob": "faa6db59d588645689b09468c67b59d2060fc4ae",
-            "content": "sha256:c9a92365d53b5545258ffbe95c7fd5afa30d061d179591cf81ba385606c8d6cb",
+            "blob": "daa0c0a31b8185bfde9482dcf32d6eea54df5451",
+            "content": "sha256:5c4e5a6d6302ef14fe1c36b7a1ea0dd5aebd4c365b2118b32f7024dfd4287aeb",
             "locator": {
               "kind": "symbol",
               "name": "test_existing_settings_file_is_never_clobbered"
@@ -39,8 +59,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "faa6db59d588645689b09468c67b59d2060fc4ae",
-            "content": "sha256:5058debc7c913c468c074ee7190f75efcb007acd0fbeb9b1da7979eaa9f2d473",
+            "blob": "daa0c0a31b8185bfde9482dcf32d6eea54df5451",
+            "content": "sha256:585884d27e7057eaf4961e60c871580cb0d30f634ee9f5f26c80862511888b0d",
             "locator": {
               "kind": "symbol",
               "name": "test_dry_run_installs_assets_without_writing_settings"

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "30b14a41da8234d507ae1e40a0c767e378950437",
+        "blob": "6af89b3bf24562b47b932206815eab73c142e712",
         "content": "sha256:4ddcdf7c5c478db7500cfacb2ad31a601c6ac17b511cb7210832e07812382b6d",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30b14a41da8234d507ae1e40a0c767e378950437",
+            "blob": "6af89b3bf24562b47b932206815eab73c142e712",
             "content": "sha256:37911b178f4a4e0945b7099983e5690327e71988500da2c81e208c94f52ff95e",
             "locator": {
               "kind": "symbol",
@@ -38,14 +38,15 @@
       ]
     },
     "2": {
-      "note": "Changed closed history is refused by file.\n\nAnchor: `test_edited_closed_file_refuses_naming_it`",
+      "note": "Changed closed history is refused by file.",
       "targets": [
         {
           "anchor": {
-            "blob": "30b14a41da8234d507ae1e40a0c767e378950437",
-            "content": "sha256:17427c03a475fd5643db18954ca1040424cd13a70fe9a0f846b2d97f5e47591a",
+            "blob": "6af89b3bf24562b47b932206815eab73c142e712",
+            "content": "sha256:4ddcdf7c5c478db7500cfacb2ad31a601c6ac17b511cb7210832e07812382b6d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_edited_closed_file_refuses_naming_it"
             }
           },
           "kind": "test"
@@ -57,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30b14a41da8234d507ae1e40a0c767e378950437",
+            "blob": "6af89b3bf24562b47b932206815eab73c142e712",
             "content": "sha256:1065a353af9cf4aa583543e77e26b7828905757fe37dec505228e24d433c2c11",
             "locator": {
               "kind": "symbol",

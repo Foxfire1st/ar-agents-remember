@@ -48,7 +48,6 @@ No Domain Documentation source is configured for this slice.
 
 ### Repo-Internal References
 
-
 - The fixture initializes separate temporary code and memory Git repositories, binds a leaf contract and supplies the comparison and commit-pair helpers. [19]
 
 - The case attaches closeout and integration receipts to supplied completion results and reads them back. Both receipt blocks bind to the reviewed pair. [20]
@@ -69,8 +68,8 @@ No configured domain documentation could be checked.
 
 No meaningful cross-repo references found.
 
-
-
 ### Repo-Internal References (continued)
+
+
 
 - The `unit-regression` lane selects `mcp/tests/test_review_final_output_receipt.py`. The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. [24]

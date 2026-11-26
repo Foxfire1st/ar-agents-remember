@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "04c76787a21c478413c9d75543435f677602d33c",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
     "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "Verified across the clean merge of 261124-EXP (ebd954778) and DEP master (69ba7b199): docs/features.md accurately summarizes role coordination, explainer pages, skill-tree packaging, worktrees, memory quality, and landing contracts.",
-    "task": "261125-DEP",
-    "uncommitted": false
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/features.md accurately summarizes role coordination, explainer pages (261124-EXP), skill-tree packaging, worktrees, memory quality, and landing contracts with no retired search-provider claims.",
+    "task": "261125-DEP-L2",
+    "uncommitted": true
   },
   "document": "docs/features.md",
   "id": "DPD-EG5TYT",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 29,
+  "revision": 30,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -58,7 +58,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
     },
     {
-      "blob": "64084f98803199c3d7bae4ce76810611b0578a13",
+      "blob": "f598db5495c4b1e8dfae89ffd08fe320e3d3810f",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -83,7 +83,7 @@
       "path": "mcp/src/agents_remember/memory/carryover.py"
     },
     {
-      "blob": "ac70f6a036cf924f45dc6928b64e4b359768008e",
+      "blob": "0705657fbdcdf581c3c67cb0a5c85fdf4e124322",
       "kind": "file",
       "path": "mcp/src/agents_remember/benchmarks/runner_modules/cli.py"
     },
@@ -193,7 +193,7 @@
       "path": "mcp/src/agents_remember/application/tool_answer_log.py"
     },
     {
-      "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+      "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
     },
@@ -228,13 +228,13 @@
       "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
     },
     {
-      "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+      "blob": "de11957930055a6254a420c3b62154d41c6c931a",
       "kind": "file",
       "path": "mcp/src/agents_remember/benchmarks/runner.py"
     },
     {
       "anchor": {
-        "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+        "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
         "content": "sha256:cf58cc0256d90a4890876d33d0545cbeb4029c462716d4ae6b2fa17c35424e5a",
         "locator": {
           "kind": "symbol",
@@ -246,7 +246,7 @@
     },
     {
       "anchor": {
-        "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
+        "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
         "content": "sha256:438b89c6e0cc2297422d8e105e2d76877828e4f5288bf43a2f07e995c7b3c960",
         "locator": {
           "kind": "symbol",
@@ -286,7 +286,6 @@
         },
         "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
       },
-      "heading": "Loaded build identity",
       "kind": "anchor"
     },
     {
@@ -296,14 +295,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T06:50:36+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
-    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-4",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
-    "role": "manager",
-    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
+    "role": "curator",
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
     "task": "261125-DEP"
   }
 }

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "299008b8cc40e627ae89e165f925796332f94efc",
-    "commit": "92391d7a916eb01388e24c65c410f647e7061ef9",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "Confirmed against synced EXP-L2 candidate 299008b8 (base 92391d7a, combining master crossing-6/BUG-L41 and EXP-L2): docs/guides/review-page-and-explainer.md remains accurate across recorded and planned explanations (private inputs, first-request selected history, staged essay/figures/isolation, reference-only kit carry, complete still form, and capped advisory inventory), explainer_control plus the explainer's four dedicated tools and host-profile settings, review surface and explainer claim/ownership and launch-route interactions (remember_master_architect in role_launch_routes.py), and explainer_server.py and explainer_workspace.py (including _copy_documents) for workspace preparation, staging, and publish-time media control checks; no BUG-L41 contradiction.",
-    "task": "261124-EXP-L2",
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/guides/review-page-and-explainer.md remains accurate across 261124-EXP recorded and planned explanations, explainer_control and the explainer's four dedicated tools, host-profile settings, review-surface launch routes, and explainer_server.py/explainer_workspace.py staging/media checks, with no retired search-provider claims.",
+    "task": "261125-DEP-L2",
     "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 16,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -261,7 +261,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
+      "blob": "ea658dc71d32bc3e38d448dc67af8b4c42c14d04",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
     },
@@ -290,7 +290,6 @@
         },
         "path": "mcp/src/agents_remember/serving/explainer_routes.py"
       },
-      "heading": "The intent review before work starts",
       "kind": "anchor"
     },
     {
@@ -303,7 +302,6 @@
         },
         "path": "mcp/src/agents_remember/canvas/explainer_service.py"
       },
-      "heading": "The intent review before work starts",
       "kind": "anchor"
     },
     {
@@ -332,14 +330,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T05:37:56+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-EXP-L2",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
-    "task": "261124-EXP"
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
   }
 }

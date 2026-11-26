@@ -55,7 +55,7 @@ Native `retire_child` accepts the receipt-tracked agent_id and interrupt_turn th
 
 The core readers accept a task-scoped reader context where applicable. Their descriptions require the task-document reference and contract path together for canonical leaf reads; configured Projects scope applies when it is omitted. Retained attach/status resolution uses the shared `TaskRef` locator vocabulary; it does not restore public `resolve_context`.
 
-`runtime_install` constructs `RuntimeInstallRequest`, including the optional `experiment` input, and forwards it unchanged. Its compact description summarizes preserving user data, replacing scaffolds, provisioning the pinned Paseo host/plugin (reconciling daemon settings and leaving host restart to the developer), reporting unused provider keys and server currentness, and refreshing a running dashboard, pointing to `docs/tool-details.md` for details. There is no host-selection parameter. Detailed experiment-selection and absent-block application semantics remain in the application owner and are not established by this registrar description.
+`runtime_install` constructs `RuntimeInstallRequest`, including the optional `experiment` input, and forwards it unchanged. Its compact description summarizes preserving user data, replacing scaffolds, provisioning the pinned Paseo host/plugin (reconciling daemon settings and leaving host restart to the developer), reporting leftover removed stores without deleting them and server currentness, and refreshing a running dashboard, pointing to `docs/tool-details.md` for details. There is no host-selection parameter. Detailed experiment-selection and absent-block application semantics remain in the application owner and are not established by this registrar description.
 
 ### Memory and knowledge contracts
 
@@ -132,8 +132,6 @@ The following inherited metadata is retained verbatim and is not lifecycle or ac
 
 The memory family extends the existing `citation_fix` declaration with flat `mode` and `run_id` fields. It preserves synchronous repair and admits background start only for preview. Mode validation and projection remain in the payload owner; registration does not create another registry.
 
-
-
 - **Retained historical source account — superseded by the current route account:** Finalization description includes folder-master derivation and refusal.
 - **Retained historical source account — superseded by the current route account:** Read description retains route-chain rows and family selection.
 - **Retained historical source account — superseded by the current route account:** Current family-complete read description; former range crossed into request construction.
@@ -180,19 +178,7 @@ The memory family extends the existing `citation_fix` declaration with flat `mod
 - The transport's own client name, or no name at all.
 - The registration that mounts the role tools and the settings initializer.
 
-
-
-
-
-
  pyproject.toml — lines 38-38
-
-
-
-
-
-
-
 
 The mounted `knowledge_read` registration describes the `writers` view as per-writer aggregates with revision counts and a complete report path. Record rows still carry IDs, kinds, states and locations.
 
@@ -202,47 +188,26 @@ The mounted `knowledge_read` registration describes the `writers` view as per-wr
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py::create_server - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-
-
-
 - The current composed ordinary source has 44 public names, including the mounted user_settings_init, explainer_control and citation_note_revision. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action and the `repository-default` sync source, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn.
  mcp/src/agents_remember/mcp/registration/role_agents.py — symbol register_role_agent_tools; mcp/src/agents_remember/mcp/registration/role_agents.py — symbol role_start; mcp/src/agents_remember/mcp/registration/role_agents.py — symbol role_start_set; mcp/src/agents_remember/mcp/registration/role_agents.py — symbol role_message
  mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_closeout_queue_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_curator_coherence_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_task_reopen_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_task_finalizer_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _TASK_DOC_TOOL_DESCRIPTION; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_task_document_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol register_task_tools
  mcp/src/agents_remember/models/tools/public_roster.py — code file; mcp/src/agents_remember/mcp/registration/tasks.py — code file; mcp/src/agents_remember/mcp/registration/worktrees.py — code file; mcp/src/agents_remember/mcp/registration/closeout.py — code file; mcp/src/agents_remember/mcp/registration/role_agents.py — code file
  mcp/src/agents_remember/mcp/registration/role_agents.py — symbol register_role_agent_tools
 
-
-
-
 - The role-agent registrar mounts `role_start`, `role_start_set`, `user_settings_init`, and `role_message`; the callables preserve their declared argument shapes and delegate to their application payload owners. [24]
 
-
-
-
 - The task registrar composes closeout queue, curator coherence, task reopen and finalizer tools with task_doc registration; the shared task_doc description names write operations and alignmentSweep. [33]
-
-
-
-
-
 
 
 - The current composed ordinary source has 44 public names, including the mounted user_settings_init, explainer_control and citation_note_revision. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action and the `repository-default` sync source, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn. [38]
 
 
-
-
-
-
-
-
 - register_role_agent_tools owns the mounted role-agent declarations and dispatches them to their existing application payload owners. [40]
 
-
-
-
 - One registered citation operation forwards the extended signature. [42]
+
 - Lifecycle finalization proves the landed edge, completes a task once all steps are done, and reconciles its parent row (ancestors are not completed; leaves require a master). [1]
+
 - Current single literal PUBLIC_TOOLS contains 44 ordinary public names, including mounted `user_settings_init`, `explainer_control` and `citation_note_revision`, and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The retained base export is the same roster object. [10]
 
 - Current composed PUBLIC_TOOLS declares 44 ordinary names; the 41-name predecessor membership is historical. This is source declaration only, not runtime advertisement or execution. [29]
@@ -251,12 +216,9 @@ The mounted `knowledge_read` registration describes the `writers` view as per-wr
 [4] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 85-98
 [5] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 89-91
 
-
 - The integrity registrar mounts `knowledge_integrity_check` for converted-tree validation and leaf worklist reporting. [6]
 
-
 [7] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol register_knowledge_tools
-
 
 - The shared MCP adapter declares _tool_payload and forwards the whole tool result, optional projection and optional fitter into response completion. [9]
 
@@ -273,8 +235,5 @@ The mounted `knowledge_read` registration describes the `writers` view as per-wr
 - `citation_fix` repairs moved citation anchors and authors sidecar references in a leaf memory worktree. [23]
 
 - The ordered ordinary registrar tuple includes explainer control, and the same server adds the bound explainer surface only for a launch that bound it as an explainer seat. [41]
-
-
-
 
 - The mounted knowledge tool registrar delegates read, diff, integrity and writing to their distinct registrations. [22]

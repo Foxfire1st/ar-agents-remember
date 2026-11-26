@@ -180,17 +180,18 @@
       ]
     },
     "8": {
-      "note": "Terminal cleanup moves out preserved reports, real messages, and leaf tool calls before removing the entire worktree group.",
+      "note": "Terminal cleanup moves out preserved reports, real messages, and leaf tool calls before removing the entire worktree group.\n\nAnchor: `_removed_directories`",
       "targets": [
         {
           "anchor": {
-            "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
-            "content": "sha256:5af32e9ea1f995605f5a9e53ac8cc584e908e9e67d93dfe6d2ee67e4187c13c5",
+            "blob": "66c73c1d6d257860d33465fcb4d60be236ce19af",
+            "content": "sha256:970f1d98de52e7042393efd2fe6dcd191cc287af5c619d65ab5492fd4a55e6a6",
             "locator": {
-              "kind": "symbol",
-              "name": "remove_terminal_group"
+              "end": 416,
+              "kind": "line_range",
+              "start": 349
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/terminal_group.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },
           "kind": "code"
         }

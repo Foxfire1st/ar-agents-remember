@@ -9,10 +9,9 @@
   },
   "applicability": "Registered first-leaf worktree_start dry-run for a canonical atomic master whose exact series contract is not yet published, and the durable/default admission boundaries that must reject that planning value.",
   "conditions": [
-    "The existing ensure_master_series_contract owner validates canonical task/topology, repository/source/branch/memory identity and retained journal state before the same-request value is carried.",
-    "Only explicit dry run at a genuinely absent non-symlink canonical parent path may admit that value; any existing artifact is loaded and validated through the normal owner.",
-    "Preview materializes no startup-owned contract, activation, source ref, worktree/provider/start operation or real-index/content mutation and creates no reservation.",
-    "Actual apply re-resolves current facts through the existing lock/journal/source/activation/CAS transaction and requires persisted identity before implementation exposure."
+    "This guarantee covers first-leaf worktree_start preview (dry_run=true).",
+    "Invalid, refused, dirty-source, or lineage-blocked starts remain refused before materialization.",
+    "Live worktree_start (dry_run=false) continues to materialize the enclosure and worktrees."
   ],
   "exclusions": [
     "Organizational direct-super and ordinary standalone routes, which keep their existing distinct authority shapes.",
@@ -31,9 +30,19 @@
     "leaf": "260928-MIK-L47",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "The first-leaf start preview carries the planned parent returned by that owner within the same request to the existing parent-series admission boundary.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-25T22:16:56+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "2424643a-91e9-4c95-ab58-87443229a30b",
+    "task": "261125-DEP"
+  }
 }

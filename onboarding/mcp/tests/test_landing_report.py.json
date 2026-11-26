@@ -172,7 +172,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0131028a0660bb2a0b94ee2e064845c5c38ce788",
+            "blob": "f6ae45ebb189c49121d9a8b00b258220ac45201b",
             "content": "sha256:f29e9eecbf12964d452b1a2afedc3cfbc1e69114d84a6f886cd2f5629f35e71c",
             "locator": {
               "kind": "symbol",
@@ -189,8 +189,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0131028a0660bb2a0b94ee2e064845c5c38ce788",
-            "content": "sha256:dc1e0053a244a0d1f0b5a66ffed134469d6019a48125668d90850ccf162ff9c1",
+            "blob": "f6ae45ebb189c49121d9a8b00b258220ac45201b",
+            "content": "sha256:0aee469f2af936eb98c2cba9d0ac090f56d47e8a31b0911a7ddc1aa1fb42aefa",
             "locator": {
               "kind": "symbol",
               "name": "test_real_closeout_phase_passes_with_landing_aboard"

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "1b4a7d9869c9f3a9e7793676b7dfdf463cd7f667",
+        "blob": "7b06da557743bfe682c6e8f37e75194660f0e957",
         "content": "sha256:bbf5b49ae71ddc0ecf90b185b442cde47c15141c8da3cb8cd37a528f876b281d",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "1b4a7d9869c9f3a9e7793676b7dfdf463cd7f667",
+        "blob": "7b06da557743bfe682c6e8f37e75194660f0e957",
         "content": "sha256:96b3761ce6d86a502a048db5a17f12d4acf6d9525608bca31a5718fc4a938069",
         "locator": {
           "kind": "symbol",
@@ -39,14 +39,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Recorded-master dispatch reaches the chain refusal for the actual foreign commit.\n\nAnchor: `test_a_foreign_commit_refuses_through_the_public_recorded_route`",
+      "note": "Recorded-master dispatch reaches the chain refusal for the actual foreign commit.\n\nAnchor: `` `test_a_foreign_commit_refuses_through_the_public_recorded_route` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "1b4a7d9869c9f3a9e7793676b7dfdf463cd7f667",
-            "content": "sha256:a83872ec2c56177d897795aa4936c27977488e0fb7192d1b8faa78bbe59a84ae",
+            "blob": "7b06da557743bfe682c6e8f37e75194660f0e957",
+            "content": "sha256:a4ec0bf50f90ddfc18aee71ad5bc13b2a92a10d76c1df597b37f2ff517b3740d",
             "locator": {
-              "kind": "file"
+              "end": 320,
+              "kind": "line_range",
+              "start": 294
             }
           },
           "kind": "test"
@@ -54,14 +56,16 @@
       ]
     },
     "2": {
-      "note": "The final route admits the recorded sync position and produced head.\n\nAnchor: `test_a_managed_sync_merge_passes_through_the_public_final_route`",
+      "note": "The final route admits the recorded sync position and produced head.\n\nAnchor: `` `test_a_managed_sync_merge_passes_through_the_public_final_route` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "1b4a7d9869c9f3a9e7793676b7dfdf463cd7f667",
-            "content": "sha256:a83872ec2c56177d897795aa4936c27977488e0fb7192d1b8faa78bbe59a84ae",
+            "blob": "7b06da557743bfe682c6e8f37e75194660f0e957",
+            "content": "sha256:67381ae22f66161c79ed036c96f6a6e665337a23cf9a8104a4ab900d36ffe371",
             "locator": {
-              "kind": "file"
+              "end": 539,
+              "kind": "line_range",
+              "start": 510
             }
           },
           "kind": "test"
@@ -73,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b4a7d9869c9f3a9e7793676b7dfdf463cd7f667",
+            "blob": "7b06da557743bfe682c6e8f37e75194660f0e957",
             "content": "sha256:96b3761ce6d86a502a048db5a17f12d4acf6d9525608bca31a5718fc4a938069",
             "locator": {
               "kind": "symbol",
@@ -85,12 +89,12 @@
       ]
     },
     "4": {
-      "note": "Original offending-commit identity pins remain on the staying public route calls. Complete world snapshots add refusal-footprint preservation; they are not a new executed rollback result.",
+      "note": "Original offending-commit identity pins remain on the staying public route calls. Complete world snapshots add refusal-footprint preservation; they are not a new executed rollback result.\n\nAnchor: `n/a` (whole-file witness; or `` `_snapshot` ``)",
       "targets": [
         {
           "anchor": {
-            "blob": "1b4a7d9869c9f3a9e7793676b7dfdf463cd7f667",
-            "content": "sha256:a83872ec2c56177d897795aa4936c27977488e0fb7192d1b8faa78bbe59a84ae",
+            "blob": "7b06da557743bfe682c6e8f37e75194660f0e957",
+            "content": "sha256:4c8d0c57570d602487f5ceec657cc6dd2a28a08c55e24a3b1f7cd550d891369b",
             "locator": {
               "kind": "file"
             }

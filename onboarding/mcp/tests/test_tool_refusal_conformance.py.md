@@ -4,8 +4,6 @@
 
 The retained census partitions delivered outcomes and checks refusal identity, reason and navigation separately. The removed session-switch refusal fixture is not current coverage. Old removed-tool guidance must still fail model validation, and stripping each axis from a literal refusal-shaped dictionary must still fail the completeness predicate. Prior source-population captions below remain historical, not a re-certified execution census.
 
-
-
 - Navigation oracle distinguishes available artifact, missing echo and no declared path.
 
 ### MIK-R109 stateful naming refusal
@@ -14,12 +12,9 @@ The stateful axis asserts returned state=refused with nonempty refusalCode/refus
 
 ### Source and authority bounds
 
-
-
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
 ## Current source contract evidence
-
 
 - The current `BARE_RAISERS` declaration has ten entries and `ALWAYS_ANSWERS` four, with four named shapes across sixteen test definitions. Current source pins and fixture assertions are not a fresh live advertisement or execution census.
 
@@ -77,7 +72,7 @@ The test classes and standalone cases use pytest. The module is registered in `u
 
 ### Invariants And Boundaries
 
-- **Hermeticity is asserted as a fixture property.** `test_the_module_runs_in_seconds_and_touches_no_real_state` requires fixture repository and memory roots inside the disposable root, the fixture coordination root and no providers.
+- **Hermeticity is asserted as a fixture property.** `test_the_module_runs_in_seconds_and_touches_no_real_state` requires fixture repository and memory roots inside the disposable root, the fixture coordination root and that no removed `"providers"` section appears in census settings.
 - **The pin update rule is explicit.** A repair removes its entry in the same change; constants are neither deleted nor widened to hide a new failure.
 - **Delivery shape is the boundary.** A refusal envelope does not prove that the tool made the correct product decision. The current bare-raiser population is the source’s ten-name declaration.
 
@@ -254,23 +249,33 @@ they make no acceptance claim.
 
 - The three axes of a typed refusal, read from the payload itself. [1]
 
+
 - The four invocations that legitimately answer `ok: true`, each with its reason. [2]
+
 
 
 - The ten tools that still lose the envelope, grouped in the source by the mechanism that raises. [3]
 
 
+
 - The census: one world, one run, and the assertions that bind all three pins in both directions. [4]
+
 
 - The population is derived from the live advertisement and the roster, never a literal count. [5]
 
 
 - Each refusal axis asserted by name, so a regression says which one it broke. [7]
 
-- The fixture check asserts settings path prefixes for code and memory, its coordination-root identity and an empty provider configuration. [10]
+
+
+- The fixture check asserts settings path prefixes for code and memory, its coordination-root identity, and that no removed "providers" section appears in census settings. [10]
+
+
+
 
 
 - The measured population and the production invocation per tool, kept in a support module so a probe can drive the same census. [11]
+
 
 
 
@@ -279,11 +284,10 @@ they make no acceptance claim.
 
 
 
+
 - The one `T34` tool the sweep still repairs — `memory_baseline_adopt` — re-exported by the sweep module beside the pin it left.
 
-
 - The ordinary entry-point world provides the registered session runner for this refusal census.
-
 
 - The advertised roster the population is derived from and asserted equal to. [15]
 
@@ -295,11 +299,10 @@ claimed by this census.
 
 No repository or external-system boundary is proved by this module.
 
-
-
 ### Repo-Internal References (continued)
 
 - Removed-tool guidance remains invalid even though the obsolete switch-refusal fixture is deleted. [19]
+
 
 
 - The refusal census uses the ordinary sibling EntryPointWorld. The main entry-point sweep imports the extracted support world and separately checks exception evidence in both classes. [14]
@@ -308,15 +311,18 @@ No repository or external-system boundary is proved by this module.
 
 - The surviving T34 selection, memory_baseline_adopt, is read from the sweep's shared pin and required to return a complete refusal envelope at the entry point. [8]
 
+
 - The control constructs a literal refusal-shaped dictionary and strips identity, reason and navigation separately; refusal_axes must report each stripped dictionary as incomplete. [9]
 
+
+
 - The control constructs a literal refusal-shaped dictionary and strips identity, reason and navigation separately; refusal_axes must report each stripped dictionary as incomplete. [20]
+
 
 - The four declared shapes partition the driven population: a typed refusal, a stateful refusal, an always-answer or a raiser. [6]
 
 - The selected repaired T34 population contains `memory_baseline_adopt`, re-exported by the sweep module and required to return a complete refusal envelope. Anchor: `T34_REPAIRED_TOOLS` [13]
 
 - The test source declares ten bare-raiser names and requires exact equality with the observed non-returned set. [18]
-
 
 - The unit-regression lane selects mcp/tests/test_tool_refusal_conformance.py. [16]

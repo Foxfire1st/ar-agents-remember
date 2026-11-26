@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
+        "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
         "content": "sha256:e5213bafd6bdcf58b62787e0b2892ae7707624af6b1d732df5fa8b9a490f29f0",
         "locator": {
           "kind": "symbol",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-        "content": "sha256:c1fcc7b7275328d864f41adaf46a4f6bc1768452e16d885108de9082c1c62b4d",
+        "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+        "content": "sha256:d8332a7c6885d84165fac3abe29c0f6f3d81ca117afd19c912d8454858f1bef6",
         "locator": {
           "kind": "symbol",
           "name": "build_default_worktree_services"
@@ -45,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
             "content": "sha256:0a7eee32f0f1a706911349da4f5180c79db8d44363cfca0663e98ef2594e3858",
             "locator": {
               "kind": "symbol",
@@ -102,12 +102,12 @@
         },
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
             "content": "sha256:e2929b7bdbaddc726dad4a500480406c9b7862ff2a5fd0e00d165a145401c8af",
             "locator": {
-              "end": 235,
+              "end": 124,
               "kind": "line_range",
-              "start": 235
+              "start": 124
             }
           },
           "kind": "code"
@@ -115,16 +115,16 @@
       ]
     },
     "14": {
-      "note": "Default worktree services retain converted validation, crossing and gate ports without prepared continuation/certification adapters.",
+      "note": "Default worktree services retain converted validation, crossing and gate ports without prepared continuation/certification adapters.\n\nAnchor: `` `build_default_worktree_services` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:c1fcc7b7275328d864f41adaf46a4f6bc1768452e16d885108de9082c1c62b4d",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+            "content": "sha256:d8332a7c6885d84165fac3abe29c0f6f3d81ca117afd19c912d8454858f1bef6",
             "locator": {
-              "end": 240,
+              "end": 129,
               "kind": "line_range",
-              "start": 225
+              "start": 115
             }
           },
           "kind": "code"
@@ -132,32 +132,16 @@
       ]
     },
     "16": {
-      "note": "The bound file-brief callback refreshes the selected writer's memory scope and returns any advisory from the refresh.",
+      "note": "The bound file-brief callback refreshes the selected writer's memory scope and returns any advisory from the refresh.\n\nAnchor: `` `_file_briefs_problem` `build_default_worktree_services` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:b2f3731df1d03104962155deb00f7912ce436e8c02c9ab10b09e0810791f7a96",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+            "content": "sha256:dccadd0b6ec9b70d8276aa9e9b309765ecfbb0e8c6d1d967f8dca39dba82da54",
             "locator": {
-              "end": 240,
+              "end": 129,
               "kind": "line_range",
-              "start": 218
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Provider translation/delegation",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:15d5ed5baa81d8c3dd4289cb6706e4cf30394ad8d8d8c7063c4f4c024c41bcc3",
-            "locator": {
-              "kind": "symbol",
-              "name": "ProviderLifecycleAdapter"
+              "start": 108
             }
           },
           "kind": "code"
@@ -165,28 +149,28 @@
       ]
     },
     "3": {
-      "note": "Memory-rail and memory-quality adapters",
+      "note": "Memory-rail and memory-quality adapters\n\nAnchor: `` `CertificationMemoryRailsAdapter` `MemoryQualityAdapter` `build_default_worktree_services` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:e09c594d097b44eb3ad2cb7a13dfea4086f867ef9bf1d9a71b5b25805b4ee4fe",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+            "content": "sha256:ad980bc88d0a1498944143016d86f0776d89c6f2caa3e94b1a6d64f859192f17",
             "locator": {
-              "end": 199,
+              "end": 88,
               "kind": "line_range",
-              "start": 150
+              "start": 40
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:c1fcc7b7275328d864f41adaf46a4f6bc1768452e16d885108de9082c1c62b4d",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+            "content": "sha256:d8332a7c6885d84165fac3abe29c0f6f3d81ca117afd19c912d8454858f1bef6",
             "locator": {
-              "end": 240,
+              "end": 129,
               "kind": "line_range",
-              "start": 225
+              "start": 115
             }
           },
           "kind": "code"
@@ -198,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
             "content": "sha256:e8631085ca39581f014971b5b39c6506cc83d58972b7c6f27c96b84c8e52e979",
             "locator": {
               "kind": "symbol",
@@ -238,16 +222,16 @@
       ]
     },
     "6": {
-      "note": "The default bundle's MIK-R09 binding: the mandatory gate's port adapter.",
+      "note": "The default bundle's MIK-R09 binding: the mandatory gate's port adapter.\n\nAnchor: `` `build_default_worktree_services` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:c1fcc7b7275328d864f41adaf46a4f6bc1768452e16d885108de9082c1c62b4d",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+            "content": "sha256:d8332a7c6885d84165fac3abe29c0f6f3d81ca117afd19c912d8454858f1bef6",
             "locator": {
-              "end": 240,
+              "end": 129,
               "kind": "line_range",
-              "start": 225
+              "start": 115
             }
           },
           "kind": "code"
@@ -272,12 +256,12 @@
         },
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
             "content": "sha256:e2929b7bdbaddc726dad4a500480406c9b7862ff2a5fd0e00d165a145401c8af",
             "locator": {
-              "end": 235,
+              "end": 124,
               "kind": "line_range",
-              "start": 235
+              "start": 124
             }
           },
           "kind": "code"
@@ -285,16 +269,16 @@
       ]
     },
     "8": {
-      "note": "The default bundle's MIK-R25 binding: the review-artifact archive hook.",
+      "note": "The default bundle's MIK-R25 binding: the review-artifact archive hook.\n\nAnchor: `` `build_default_worktree_services` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:c1fcc7b7275328d864f41adaf46a4f6bc1768452e16d885108de9082c1c62b4d",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+            "content": "sha256:d8332a7c6885d84165fac3abe29c0f6f3d81ca117afd19c912d8454858f1bef6",
             "locator": {
-              "end": 240,
+              "end": 129,
               "kind": "line_range",
-              "start": 225
+              "start": 115
             }
           },
           "kind": "code"

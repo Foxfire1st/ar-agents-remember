@@ -24,12 +24,16 @@ Earlier target custody: the base card recorded nine original slots naming `test_
 
 The retained caption is attributed earlier wording. Current catalog declarations name four fresh-user support artifacts, including the runner; they establish registration, not fresh test invocation or acceptance.
 
-
 - The lifecycle catalog registers fresh_user_fixture.py, fresh_user_scenario.py, reporting.py and run_fresh_user.py as permanent shared-support artifacts owned by fresh-user-acceptance. Their consumer scope is exact-source. These declarations establish registration, not test invocation or acceptance.
 
 
 - Fresh-user fixture construction owns disposable repository paths. [5]
-[6]
+
+
+
+- The fresh-user flow distinguishes product calls, emulated bootstrap, persisted review outcome and partial closeout checks. [6]
+
+
 - The fresh-user entry point writes a transcript and derives its exit code from invariants and checkpoints. The transcript directory constant. [8]
 - The scenario records each checkpoint's expected value, actual value and pass/fail status without aborting the run; CheckpointRecorder.report includes all checkpoint and diagnostic records. [15]
 - Quality result projection extends terminal run facts with attempted/completed/skipped steps, exit codes and optional gate, selection and failure evidence, plus Codex and causal-failure report pointers. [17]

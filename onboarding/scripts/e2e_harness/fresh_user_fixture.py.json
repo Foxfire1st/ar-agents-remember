@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The one construction point for a disposable fixture repository, memory root and authority settings.",
+      "note": "The one construction point for a disposable fixture repository, memory root and authority settings.\n\nAnchor: `create_fresh_user_fixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "32ff03db3253579891e606d2a180d606bd5cf547",
-            "content": "sha256:94bb5e83d16840c06ad5123ae62303323ecaf03f5628da78a7da1f7b3f5164cb",
+            "blob": "c65b90704873d76722ce518dd6053633cbea7e9e",
+            "content": "sha256:cc76817bf307daebd62cec466e18ee8cdba7fc846f258d66e77502ab5fb50dd4",
             "locator": {
-              "kind": "symbol",
-              "name": "create_fresh_user_fixture"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -64,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32ff03db3253579891e606d2a180d606bd5cf547",
+            "blob": "c65b90704873d76722ce518dd6053633cbea7e9e",
             "content": "sha256:092575932941327f8e7fb5058310622eb59e25051fd2454df3112ab4b2d0676e",
             "locator": {
               "kind": "symbol",
@@ -75,7 +74,7 @@
         },
         {
           "anchor": {
-            "blob": "32ff03db3253579891e606d2a180d606bd5cf547",
+            "blob": "c65b90704873d76722ce518dd6053633cbea7e9e",
             "content": "sha256:cfbb33c47dd1622564be871cacc5328584ef3a3139794ebf6c1c821f7bd836fc",
             "locator": {
               "kind": "symbol",
@@ -86,7 +85,7 @@
         },
         {
           "anchor": {
-            "blob": "32ff03db3253579891e606d2a180d606bd5cf547",
+            "blob": "c65b90704873d76722ce518dd6053633cbea7e9e",
             "content": "sha256:8748d1cc0ad7cb5cdb6a2119c02606e48342af47758ffbd4477585d82b44f118",
             "locator": {
               "kind": "symbol",
@@ -102,7 +101,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32ff03db3253579891e606d2a180d606bd5cf547",
+            "blob": "c65b90704873d76722ce518dd6053633cbea7e9e",
             "content": "sha256:6ad23e4b5070012d746fc4834108b496c24e3bde6b482d43a39ab8b129342438",
             "locator": {
               "kind": "symbol",
@@ -118,7 +117,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32ff03db3253579891e606d2a180d606bd5cf547",
+            "blob": "c65b90704873d76722ce518dd6053633cbea7e9e",
             "content": "sha256:d907c00caba93ff19d6a6831ccd09b8ecfc7432f8064efb98099b34b05d069ef",
             "locator": {
               "kind": "symbol",
@@ -134,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32ff03db3253579891e606d2a180d606bd5cf547",
+            "blob": "c65b90704873d76722ce518dd6053633cbea7e9e",
             "content": "sha256:adfdba603d9485148bd439284f8e959035d6bf21616e319960a95e3662606f4a",
             "locator": {
               "kind": "symbol",
@@ -150,7 +149,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32ff03db3253579891e606d2a180d606bd5cf547",
+            "blob": "c65b90704873d76722ce518dd6053633cbea7e9e",
             "content": "sha256:029bcb34e8dba1a72e1e38b5f017bb696291517eff0303235fb9263fb5f5f12a",
             "locator": {
               "kind": "symbol",
@@ -166,7 +165,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32ff03db3253579891e606d2a180d606bd5cf547",
+            "blob": "c65b90704873d76722ce518dd6053633cbea7e9e",
             "content": "sha256:bc8d8673b5000b63a5323437a58f74bc6abc45719c3b471983852720046e204a",
             "locator": {
               "kind": "symbol",
@@ -178,14 +177,15 @@
       ]
     },
     "8": {
-      "note": "The thin-bootstrap content whose absence is `invariant-1`.",
+      "note": "The `c-03` bootstrap content whose absence is `invariant-1`.",
       "targets": [
         {
           "anchor": {
-            "blob": "32ff03db3253579891e606d2a180d606bd5cf547",
-            "content": "sha256:b62b90f7148fe7cdb777bf704ce7b7c2d37716033afbf9c33a9c6b81cf3ba03a",
+            "blob": "c65b90704873d76722ce518dd6053633cbea7e9e",
+            "content": "sha256:9be01d9d821315b53f67d73f8d8a3ece5bd8bfd0d9eb2fddd3f138e44bd3e77f",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "write_thin_bootstrap"
             }
           },
           "kind": "code"

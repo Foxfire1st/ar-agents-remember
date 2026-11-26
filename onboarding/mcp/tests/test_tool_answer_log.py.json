@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "c3d6283339f0acb8a721fee7ad1b314357817757",
+        "blob": "7fee21c3791904bf37a17bddc2a314a257d8fa3b",
         "content": "sha256:3f5edeed93dc365ee636395c070a071ad2e794cb7885b8314e7f2dbdb06d38d8",
         "locator": {
           "kind": "symbol",
@@ -22,12 +22,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Log fields, redaction and write-failure behavior are checked. Anchor: `ToolAnswerLogTests`",
+      "note": "Log fields, redaction and write-failure behavior are checked.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "c3d6283339f0acb8a721fee7ad1b314357817757",
-            "content": "sha256:cced0a3b79d28af3ad7a8922ee37bcc97036eab1da8a6c8fae03ceec1c5a286c",
+            "blob": "7fee21c3791904bf37a17bddc2a314a257d8fa3b",
+            "content": "sha256:e28409089b6de762d8cc7501570c0f69baa24deb367f811c31ed1c9374c3a068",
             "locator": {
               "kind": "file"
             }
@@ -37,12 +37,12 @@
       ]
     },
     "2": {
-      "note": "Raised and refused calls keep real entry logging. Anchor: `ToolRaisedCallLoggingTests`",
+      "note": "Raised and refused calls keep real entry logging.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "c3d6283339f0acb8a721fee7ad1b314357817757",
-            "content": "sha256:cced0a3b79d28af3ad7a8922ee37bcc97036eab1da8a6c8fae03ceec1c5a286c",
+            "blob": "7fee21c3791904bf37a17bddc2a314a257d8fa3b",
+            "content": "sha256:e28409089b6de762d8cc7501570c0f69baa24deb367f811c31ed1c9374c3a068",
             "locator": {
               "kind": "file"
             }
@@ -52,12 +52,12 @@
       ]
     },
     "3": {
-      "note": "Hermetic enclosure log placement and cleanup are asserted. Anchor: `ToolAnswerEnclosureTests`",
+      "note": "Hermetic enclosure log placement and cleanup are asserted.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "c3d6283339f0acb8a721fee7ad1b314357817757",
-            "content": "sha256:cced0a3b79d28af3ad7a8922ee37bcc97036eab1da8a6c8fae03ceec1c5a286c",
+            "blob": "7fee21c3791904bf37a17bddc2a314a257d8fa3b",
+            "content": "sha256:e28409089b6de762d8cc7501570c0f69baa24deb367f811c31ed1c9374c3a068",
             "locator": {
               "kind": "file"
             }
@@ -71,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3d6283339f0acb8a721fee7ad1b314357817757",
+            "blob": "7fee21c3791904bf37a17bddc2a314a257d8fa3b",
             "content": "sha256:6ab4de03b441a04dcaeb3bc72e2070286d92677e9bfcbde64358e6010b711f3e",
             "locator": {
               "end": 346,
@@ -84,12 +84,12 @@
       ]
     },
     "5": {
-      "note": "Two detail writers cannot both spend one remaining budget. Anchor: `test_concurrent_details_cannot_both_spend_the_same_log_budget`",
+      "note": "Two detail writers cannot both spend one remaining budget.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "c3d6283339f0acb8a721fee7ad1b314357817757",
-            "content": "sha256:cced0a3b79d28af3ad7a8922ee37bcc97036eab1da8a6c8fae03ceec1c5a286c",
+            "blob": "7fee21c3791904bf37a17bddc2a314a257d8fa3b",
+            "content": "sha256:e28409089b6de762d8cc7501570c0f69baa24deb367f811c31ed1c9374c3a068",
             "locator": {
               "kind": "file"
             }

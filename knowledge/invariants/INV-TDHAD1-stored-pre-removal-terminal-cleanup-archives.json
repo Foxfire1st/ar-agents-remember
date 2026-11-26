@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Spans archive model serialization/hashing, archive observation resume arguments, and worktree_status resume arguments; deleting the optional legacy field breaks SHA-256 verification of stored pre-removal archives, while failing to strip it emits invalid nextArgs rejected by the public tool schema."
+  },
+  "applicability": "Terminal enclosure cleanup archive validation, request-id hashing, argument matching, and resume nextArgs generation.",
+  "conditions": [
+    "New terminal cleanup archives serialize cleanupArguments as {}.",
+    "Stored pre-removal archives carrying teardown_providers re-emit that field during cleanupRequestId verification and match post-removal cleanup retries."
+  ],
+  "exclusions": [
+    "Public MCP tool schemas and CLI flags, which no longer accept teardown_providers.",
+    "TerminalWorktreeAbandonArguments, which requires exact force equality."
+  ],
+  "id": "INV-TDHAD1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "pytest mcp/tests/test_cleanup_repeated_archive_ready.py (passed); Reviewer route 3 pass at tree 8ae93710c4e6b5f660dd4d763f537ebaa437b42f"
+      ],
+      "path": "handoff-records-pass1.json"
+    },
+    "handoffEntry": "DEP-R02@v1 §3",
+    "leaf": "261125-DEP-L2",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Stored pre-removal terminal cleanup archives carrying teardown_providers continue to validate and verify their cleanupRequestId hash while newly written archives omit teardown_providers and resume nextArgs strip it so post-removal cleanup calls never pass the removed parameter.",
+  "supersedes": [],
+  "title": "Pre-removal cleanup archives verify teardown_providers; resume strips it",
+  "writer": {
+    "at": "2026-11-25T22:16:56+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "2424643a-91e9-4c95-ab58-87443229a30b",
+    "task": "261125-DEP"
+  }
+}

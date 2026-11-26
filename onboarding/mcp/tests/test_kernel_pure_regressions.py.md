@@ -6,13 +6,13 @@
 
 ## Purpose
 
-Retains five small deterministic product regressions after Candidate A and its host runner were
-removed. The two exclusively retired route-normalization cases are absent; provider-ID and
-gate/decision-role assertions remain unchanged.
+Retains four small deterministic product regressions after Candidate A and its host runner were
+removed. The retired route-normalization and provider-ID cases are absent; gate-kind and
+decision-role assertions remain unchanged.
 
 ## Code Commentary
 
-The retained tests cover provider-ID normalization and known/unknown gate and decision-role
+The retained tests cover known/unknown gate-kind and decision-role
 coercion. They are ordinary pytest unit regressions in the explicit lane manifest; neither this
 source inventory nor the removed route-normalization cases establish a fresh measurement run.
 
@@ -22,7 +22,7 @@ source inventory nor the removed route-normalization cases establish a fresh mea
 - These are ordinary isolated pytest regressions; delivery certification uses the separate explicit Dagger route.
 - No host wrapper, sealed cohort manifest, static closure analyzer, or compatibility entrypoint is
   retained.
-- Retiring the two route-normalization cases does not retire provider-ID or gate/role guards;
+- Retiring the route-normalization and provider-ID cases does not retire the four gate-kind and decision-role guards;
   this card does not renew any separate measurement cohort or execution result.
 
 ## Recorded Earlier Reference Account
@@ -42,8 +42,7 @@ its distinction from ordinary isolated pytest.
 ### Repo-Internal References
 
 
-- Five retained provider-ID and gate/decision-role guards remain; the two retired route-normalization cases are not replaced by whole-file assertions. [1]
-
+- Four retained gate-kind and decision-role guards remain; the retired provider-ID and route-normalization cases are absent.
 
 
 ### Cross-Repo References

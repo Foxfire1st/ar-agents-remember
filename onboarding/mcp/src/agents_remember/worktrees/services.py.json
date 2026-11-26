@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+        "blob": "2ad2a23552148688996614f65656234af1887037",
         "content": "sha256:184497dd1a5dcd316c2adf6e9301e23dff3bd0ee0988e2d09ce9d096079a0ef7",
         "locator": {
           "end": 25,
@@ -23,12 +23,12 @@
     },
     {
       "anchor": {
-        "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+        "blob": "2ad2a23552148688996614f65656234af1887037",
         "content": "sha256:aa28708458da2eb89b583df885fdfccd6eb688218cf56d50bfe8df38774e0cd6",
         "locator": {
-          "end": 402,
+          "end": 356,
           "kind": "line_range",
-          "start": 390
+          "start": 344
         }
       },
       "id": "RLZ-2GEQDM",
@@ -42,7 +42,7 @@
     },
     {
       "anchor": {
-        "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+        "blob": "2ad2a23552148688996614f65656234af1887037",
         "content": "sha256:78c2fc03754e60799b7b340e453b7d27c2a418c9e2c5107fd7eabba637286785",
         "locator": {
           "kind": "symbol",
@@ -60,7 +60,7 @@
     },
     {
       "anchor": {
-        "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+        "blob": "2ad2a23552148688996614f65656234af1887037",
         "content": "sha256:a9b728af32b4fb0b021e4cf2ff82001c5e58e7e5ecdd5ab6047dab5213bc4819",
         "locator": {
           "kind": "symbol",
@@ -83,7 +83,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:a6c3917c2a7bab1ff8ea341e5efd03e011ebd87f80dc1d856da5ad5cc730dea9",
             "locator": {
               "kind": "symbol",
@@ -112,7 +112,7 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:184497dd1a5dcd316c2adf6e9301e23dff3bd0ee0988e2d09ce9d096079a0ef7",
             "locator": {
               "end": 25,
@@ -155,7 +155,7 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:184497dd1a5dcd316c2adf6e9301e23dff3bd0ee0988e2d09ce9d096079a0ef7",
             "locator": {
               "end": 25,
@@ -185,7 +185,7 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:184497dd1a5dcd316c2adf6e9301e23dff3bd0ee0988e2d09ce9d096079a0ef7",
             "locator": {
               "end": 25,
@@ -198,16 +198,15 @@
       ]
     },
     "13": {
-      "note": "The default bundle binds provider, memory and citation services, rail definitions, validator and base converter, crossing, worklist, gate, review cleanup, optional archive and file briefs.",
+      "note": "The default bundle binds memory and citation services, rail definitions, validator and base converter, crossing, worklist, gate, review cleanup, optional archive and file briefs.",
       "targets": [
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:b2f3731df1d03104962155deb00f7912ce436e8c02c9ab10b09e0810791f7a96",
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+            "content": "sha256:d8332a7c6885d84165fac3abe29c0f6f3d81ca117afd19c912d8454858f1bef6",
             "locator": {
-              "end": 240,
-              "kind": "line_range",
-              "start": 218
+              "kind": "symbol",
+              "name": "build_default_worktree_services"
             },
             "path": "mcp/src/agents_remember/application/worktree_services.py"
           },
@@ -237,7 +236,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:94b5762e662261abdc0a369bd05a51506fe04a310aa8179e24ccc891e10b34ba",
             "locator": {
               "end": 63,
@@ -254,7 +253,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:a6c3917c2a7bab1ff8ea341e5efd03e011ebd87f80dc1d856da5ad5cc730dea9",
             "locator": {
               "kind": "symbol",
@@ -300,7 +299,7 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:184497dd1a5dcd316c2adf6e9301e23dff3bd0ee0988e2d09ce9d096079a0ef7",
             "locator": {
               "end": 25,
@@ -317,7 +316,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:6b948cc0a0a6cfabb5116fc3fabbb632de3c30b476b462856555207593d221e0",
             "locator": {
               "kind": "symbol",
@@ -367,7 +366,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:7f7658aef8f8814a4f38488dc3f46c8ca272521cc949289aed2959d643702830",
             "locator": {
               "kind": "symbol",
@@ -383,24 +382,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:2527a4d11ca52461bb1a4f6b05b8286bdc4245b510af0e60973d189fc3cc3ac6",
             "locator": {
-              "end": 263,
+              "end": 218,
               "kind": "line_range",
-              "start": 242
+              "start": 197
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:65c64a27e1d8a7facd0ba297b0872f1ba80b9d5b356e45c103628f04e832321c",
             "locator": {
-              "end": 345,
+              "end": 300,
               "kind": "line_range",
-              "start": 292
+              "start": 247
             }
           },
           "kind": "code"
@@ -412,7 +411,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:184497dd1a5dcd316c2adf6e9301e23dff3bd0ee0988e2d09ce9d096079a0ef7",
             "locator": {
               "end": 25,
@@ -424,12 +423,12 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:78c2fc03754e60799b7b340e453b7d27c2a418c9e2c5107fd7eabba637286785",
             "locator": {
-              "end": 365,
+              "end": 320,
               "kind": "line_range",
-              "start": 348
+              "start": 303
             }
           },
           "kind": "code"
@@ -476,28 +475,49 @@
       ]
     },
     "27": {
-      "note": "The worktree refresh port supplies the selected memory root and exact code pair to the composed brief service.",
+      "note": "The worktree refresh port supplies the selected memory root and exact code pair to the composed brief service.\n\nAnchor: `WorktreeServices`, `refresh_written_memory_briefs`, `_file_briefs_problem`, `build_default_worktree_services`",
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
-            "content": "sha256:36b68014f50fd9c08c5e47dd0f1bf812ac4f3302209d030cd602c086352d7667",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
+            "content": "sha256:1f775cd7d27d6b71943203bee865b1a0c0ae96164412b093ae0fe1604703fbfa",
             "locator": {
-              "end": 402,
-              "kind": "line_range",
-              "start": 379
+              "kind": "symbol",
+              "name": "WorktreeServices"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
-            "content": "sha256:b2f3731df1d03104962155deb00f7912ce436e8c02c9ab10b09e0810791f7a96",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
+            "content": "sha256:506257b234cbbabfe64905d418fd35ac3ab358a20b4556072508343d390d258c",
             "locator": {
-              "end": 240,
-              "kind": "line_range",
-              "start": 218
+              "kind": "symbol",
+              "name": "refresh_written_memory_briefs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+            "content": "sha256:e5213bafd6bdcf58b62787e0b2892ae7707624af6b1d732df5fa8b9a490f29f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_file_briefs_problem"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_services.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28879ff953dcf9effeeb8b35bcc80832c2f1f031",
+            "content": "sha256:d8332a7c6885d84165fac3abe29c0f6f3d81ca117afd19c912d8454858f1bef6",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_default_worktree_services"
             },
             "path": "mcp/src/agents_remember/application/worktree_services.py"
           },
@@ -510,24 +530,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:2527a4d11ca52461bb1a4f6b05b8286bdc4245b510af0e60973d189fc3cc3ac6",
             "locator": {
-              "end": 263,
+              "end": 218,
               "kind": "line_range",
-              "start": 242
+              "start": 197
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:65c64a27e1d8a7facd0ba297b0872f1ba80b9d5b356e45c103628f04e832321c",
             "locator": {
-              "end": 345,
+              "end": 300,
               "kind": "line_range",
-              "start": 292
+              "start": 247
             }
           },
           "kind": "code"
@@ -539,7 +559,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:8f96680898f7f47505195bd2aa85e34b5d6ac2fa29060e19da8ebdc618203b6f",
             "locator": {
               "kind": "symbol",
@@ -550,7 +570,7 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:10d81f79abdf38659f44010a5b9c65c7a311ee40ed2b6ad9be2937df7577de6a",
             "locator": {
               "kind": "symbol",
@@ -561,7 +581,7 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:bbcaa73b855c3188b4a8b6d415c7e2d516caaa06c5048e7ef7b2782b8996ae9d",
             "locator": {
               "kind": "symbol",
@@ -572,7 +592,7 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:3c0a49966defd93bf2f76f0c9bbcf4957f62541bcf017a4eae790453fb02e023",
             "locator": {
               "kind": "symbol",
@@ -588,7 +608,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:dd9a78a4fbf03c811f8f8e5d96b0bafd292bce2f185852f5341647eb488726fb",
             "locator": {
               "kind": "symbol",
@@ -599,7 +619,7 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:eebf6be79926cafc14e80f1697222416ac5bb4feab957d496c66825fb29a4ed5",
             "locator": {
               "kind": "symbol",
@@ -615,7 +635,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:78c2fc03754e60799b7b340e453b7d27c2a418c9e2c5107fd7eabba637286785",
             "locator": {
               "kind": "symbol",
@@ -626,7 +646,7 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:c589198488aae3fba7f0728df8cb78c599fbc4fa68ae434456c7908c9274782d",
             "locator": {
               "kind": "symbol",
@@ -642,7 +662,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:a212c7111dbf9117ae0a0e11f6bc291daaae081db2bee63090634e0260d9e1e6",
             "locator": {
               "kind": "symbol",
@@ -653,7 +673,7 @@
         },
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
             "content": "sha256:7c22d91e6252549ff5ff5b8f63dbc7bd68f9eb0498b32b119f296e52cc962e5d",
             "locator": {
               "kind": "symbol",
@@ -665,28 +685,15 @@
       ]
     },
     "9": {
-      "note": "WorktreeServices carries optional validation, crossing, worklist, review cleanup, gate, archival and file-brief capabilities beside its required ports. The provider setup option objects stay opaque to worktrees.",
+      "note": "WorktreeServices carries optional validation, crossing, worklist, review cleanup, gate, archival and file-brief capabilities beside its required memory-quality and citation ports.",
       "targets": [
         {
           "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
-            "content": "sha256:8bd788b545abf9cf8fac90f2a6d4d317a674decd8560962592353b00a552af47",
+            "blob": "2ad2a23552148688996614f65656234af1887037",
+            "content": "sha256:1f775cd7d27d6b71943203bee865b1a0c0ae96164412b093ae0fe1604703fbfa",
             "locator": {
-              "end": 390,
-              "kind": "line_range",
-              "start": 378
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
-            "content": "sha256:ad20b5593871bfbac80778efc8f1b9bc7301ae9c2a35f2474a8dd69375ef7f53",
-            "locator": {
-              "end": 434,
-              "kind": "line_range",
-              "start": 417
+              "kind": "symbol",
+              "name": "WorktreeServices"
             }
           },
           "kind": "code"

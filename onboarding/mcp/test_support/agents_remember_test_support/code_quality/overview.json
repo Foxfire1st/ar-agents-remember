@@ -201,12 +201,12 @@
         },
         {
           "anchor": {
-            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
             "content": "sha256:9d09ab9899aa01dae2331e6de03728a08c81eb1ec8b7ff5b67f7e6d188480c27",
             "locator": {
-              "end": 556,
+              "end": 555,
               "kind": "line_range",
-              "start": 546
+              "start": 545
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
@@ -214,12 +214,12 @@
         },
         {
           "anchor": {
-            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
             "content": "sha256:e5c9620c73f693b131c938929b6eeacd1c6aaa1e2786d27d944afe1ff7ba3bcc",
             "locator": {
-              "end": 551,
+              "end": 550,
               "kind": "line_range",
-              "start": 541
+              "start": 540
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
@@ -323,12 +323,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
             "content": "sha256:d719d643c5363958e702bca7d9467773c0de1214568e25077ac36d9eef8c85ab",
             "locator": {
-              "end": 397,
+              "end": 396,
               "kind": "line_range",
-              "start": 351
+              "start": 350
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
@@ -336,12 +336,12 @@
         },
         {
           "anchor": {
-            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
             "content": "sha256:42bcba63b917a3d69eb12515418928dc9f2283bd4a80265e2a52d07e168ba939",
             "locator": {
-              "end": 499,
+              "end": 498,
               "kind": "line_range",
-              "start": 473
+              "start": 472
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
@@ -349,12 +349,12 @@
         },
         {
           "anchor": {
-            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
             "content": "sha256:f1e356b2057fff39f8274cdaf5e2e7a65264a98c3e79681f447fce1340906199",
             "locator": {
-              "end": 392,
+              "end": 391,
               "kind": "line_range",
-              "start": 346
+              "start": 345
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
@@ -362,12 +362,12 @@
         },
         {
           "anchor": {
-            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
             "content": "sha256:4e5e66a6c439182ba025f9382125b693b97fa420ac9b49f2a24263dc45bf9caf",
             "locator": {
-              "end": 494,
+              "end": 493,
               "kind": "line_range",
-              "start": 468
+              "start": 467
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },

@@ -801,7 +801,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
+            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
             "content": "sha256:4a69c98bb4b6507b3df0fec5d27decf7c3f5c4c3e8b2bd77b8ba9dcf0b63174a",
             "locator": {
               "end": 890,
@@ -869,12 +869,12 @@
       ]
     },
     "57": {
-      "note": "This source owns the route’s Investigator selection or execution boundary.",
+      "note": "This source owns the route’s Investigator selection or execution boundary.\n\nAnchor: `## Take the supplied assignment` / `## Read and investigate`",
       "targets": [
         {
           "anchor": {
-            "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
-            "content": "sha256:6855607be8f85fb0edf03b7a682d0e8fe99319a2eba1a7b3ea6270bc715da107",
+            "blob": "27304d9440781768d35f81acb95b018e57259de3",
+            "content": "sha256:5bd701a9f9e4080ea4839dad7bb77105fd3c673df0f9679af709f515636f9f38",
             "locator": {
               "end": 22,
               "kind": "line_range",
@@ -1324,7 +1324,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
+            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
             "content": "sha256:fc8662c1aa3d27c2638c948df760a542894843b33317c640ea7521d5f0afd2db",
             "locator": {
               "end": 132,
@@ -1360,7 +1360,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
+            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
             "content": "sha256:02f2decc2ec787749c56ef5e97b4362db3ac0a72388f2647cb03d64c2f8bc236",
             "locator": {
               "end": 855,
@@ -1677,7 +1677,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb6351deaa0f456c5e6a9d8a2f5c28e0109ee99e",
+            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
             "content": "sha256:6972732a323a1716d214c70492f757c0525de69e4b0452aa56e968ae4625ea42",
             "locator": {
               "end": 162,
@@ -1730,14 +1730,14 @@
       ]
     },
     "97": {
-      "note": "Launch-time resolution chooses permission mode. Shared instructions assign the post-start feature check to the starter.",
+      "note": "Launch-time resolution chooses permission mode. Shared instructions assign the post-start feature check to the starter.\n\nAnchor: source",
       "targets": [
         {
           "anchor": {
-            "blob": "28100704d5444ebd1dc7009eb9018e2fba4f1420",
-            "content": "sha256:6b6e44804eb021f9a409a1c331b61657999986445c8064e1fd4a0521221f26bc",
+            "blob": "1514f812e1def31dfcce5e53a534211c71b9ee0d",
+            "content": "sha256:2742a7e7feb8b3231b0d0cace55f5bbd649c4453125a54d9e5089e0531f00fe0",
             "locator": {
-              "end": 35,
+              "end": 33,
               "kind": "line_range",
               "start": 25
             },

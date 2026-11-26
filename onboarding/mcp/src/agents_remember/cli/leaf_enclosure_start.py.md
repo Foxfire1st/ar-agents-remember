@@ -21,13 +21,11 @@ This is not a public worktree-reader relaxation or permission to erase broken re
 ## Evidence
 
 - Root validation and refusal precede the child-local diagnostic scope. [4]
+
 - Only review-lane validation failures can be isolated. [5]
 - Incidental publication retains raw broken evidence. [6]
 
-
-
 - Frozen implementation of start_leaf_enclosure_in_child supporting the stated file behavior. [1]
-
 
 - The private child budgets the typed no-start message for every differing label. [2]
 

@@ -3,7 +3,7 @@
 ## Purpose
 
 `abandon.py` is the discard-without-integration lifecycle operation for
-worktree-backed tasks. Unlike `cleanup.py` (which requires a completed integration), abandon does not require completed integration, retains terminal-worktree admission, and reclaims the isolated provider stack, removes code and memory worktrees, deletes task branches, removes the worktree group directory, and removes the enclosure generation's outside scratch root.
+worktree-backed tasks. Unlike `cleanup.py` (which requires a completed integration), abandon does not require completed integration, retains terminal-worktree admission, and removes any leftover `provider-runtime` directory, removes code and memory worktrees, deletes task branches, removes the worktree group directory, and removes the enclosure generation's outside scratch root.
 
 Successful series abandonment and exact already-abandoned terminal replay pass through
 `with_terminal_atomic_series_release` after lifecycle locks are gone. Release is conditional on the
@@ -19,15 +19,15 @@ When abandoning a leaf, both force and ordinary paths keep its own tool-call lin
 
 ### Current Contract
 
-Abandon evaluates provider liveness and terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError.
+Abandon evaluates terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError.
 
-Abandon now publishes the admitted contract cleanup result, canonical task stage `abandoned` and mirrored master row through `publish_abandoned_task`. That shared helper plans/validates exact task candidates, publishes stage then contract under `guard.complete`, and restores both if its publication fails; returned projection effects are included in the result. The no-remains route checks `plan_task_stage` before provider teardown and reports the typed task-stage refusal rather than beginning destructive work with invalid task authority. This is an ownership/publication boundary, not permission to call abandon from documentation.
+Abandon now publishes the admitted contract cleanup result, canonical task stage `abandoned` and mirrored master row through `publish_abandoned_task`. That shared helper plans/validates exact task candidates, publishes stage then contract under `guard.complete`, and restores both if its publication fails; returned projection effects are included in the result. The no-remains route checks `plan_task_stage` before directory teardown and reports the typed task-stage refusal rather than beginning destructive work with invalid task authority. This is an ownership/publication boundary, not permission to call abandon from documentation.
 
 `_abandon_outputs_result` now passes `preview=args.dry_run` into terminal result validation, matching cleanup. A planned worktree or directory removal therefore stays a preview result. Shared preflight and removal owners treat only the external-memory root ledger as disposable; real uncommitted content and unmerged branch commits remain protected unless explicitly forced.
 
 ### Logic
 
-`_abandon_result(args: WorktreeArgs)` requires explicit approval (or dry-run), then runs admitted outputs through `terminal_abandon._abandon_with_guard` and `_abandon_terminal_outputs`: `prepare_terminal_group` previews folder and move-out blockers, closes recorded task seats, and runs move-out (role reports, any real `messages` directory, and leaf tool-call lines); `teardown_terminal_providers` reclaims the isolated provider stack; `_abandon_worktrees` calls `remove_registered_worktree` with `force`; `_abandon_branches` calls `_abandon_branch` for code and carried memory work branches; and `remove_terminal_group` removes the entire `worktree_group` folder and recorded outside scratch root on both leaf (forced or not) and modern series paths (keeping `legacy_series_directories` only for a legacy series whose `worktree_group` equals `<task_root>/enclosures`), while `abandon_result` wraps the answer with `with_outside_scratch_reconcile`. `_abandon_directories` is retained only for the directory-only sprint-archive hook (`task_sprint_archive.py`).
+`_abandon_result(args: WorktreeArgs)` requires explicit approval (or dry-run), then runs admitted outputs through `terminal_abandon._abandon_with_guard` and `_abandon_terminal_outputs`: `prepare_terminal_group` previews folder and move-out blockers, closes recorded task seats, and runs move-out (role reports, any real `messages` directory, and leaf tool-call lines); `_abandon_worktrees` calls `remove_registered_worktree` with `force`; `_abandon_branches` calls `_abandon_branch` for code and carried memory work branches; and `remove_terminal_group` removes the entire `worktree_group` folder (including any leftover `provider-runtime/` directory without a provider teardown step) and recorded outside scratch root on both leaf (forced or not) and modern series paths (keeping `legacy_series_directories` only for a legacy series whose `worktree_group` equals `<task_root>/enclosures`), while `abandon_result` wraps the answer with `with_outside_scratch_reconcile`. `_abandon_directories` is retained only for the directory-only sprint-archive hook (`task_sprint_archive.py`).
 
 `_abandon_branch` checks for unmerged commits via `git log --oneline
 <base>..<branch>`. Without `force` it refuses to delete a branch that has
@@ -92,9 +92,7 @@ is unchanged.
 No external Domain Documentation source is configured for this memory repo.
 
 
-
 > Retained earlier citation wording: - Successful abandon and exact terminal replay are wrapped with exact source-pair release.
-
 
 - The terminal bridge preserves missing, unreadable, or different selection and never clears a newer owner. [2]
 No relevant external documentation found.
@@ -105,23 +103,15 @@ No relevant external documentation found.
 
 - Abandon passes its dry-run flag into terminal result validation. [3]
 
-
-- Provider teardown is delegated to the provider-runtime teardown function. [4]
-
 - `remove_registered_worktree` (from cleanup), `delete_branch_if_merged`, `delete_branch_force` (from `terminal_branch_retirement`), and `remove_empty_dir` are reused through the terminal owners. [5]
 
-
 - `remove_registered_worktree` (from cleanup), `delete_branch_if_merged`, `delete_branch_force` (from `terminal_branch_retirement`), and `remove_empty_dir` are reused through the terminal owners. [13]
-
 
 
 > Retained earlier citation wording: - `remove_registered_worktree` (from cleanup), `delete_branch_if_merged`, `delete_branch_force` (from `terminal_branch_retirement`), and `remove_empty_dir` are reused through the terminal owners.
 
 
-
-
 - `WorktreeArgs` types the abandon input. [6]
-
 
 
 
@@ -131,16 +121,11 @@ No relevant external documentation found.
 - The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer. [7]
 - Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. [8]
 
-
 > Retained earlier citation wording: - The cleanup vocabulary includes abandoned and reopened as declared terminal/reopen states. [9]
-
 
 - The typed contract amendment record holds the six optional vocabulary cells. [10]
 
-
 > Retained earlier citation wording: - The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. [11]
-
-
 
 ### Cross-Repo References
 
@@ -163,11 +148,7 @@ The current source seams include `abandon_result`. The public module consumes cl
 
 ### Reconciled Source Evidence
 
-
-
 > Retained earlier citation wording: - The current module exposes `abandon_result` at this ownership boundary. [12]
-
-
 
 ## 260821-CLIVE Archive-Before-Abandon
 
@@ -184,12 +165,12 @@ Rule 5 no-remains exception: with no locator, no worktree folder, no work branch
 
 [governing overview](overview.md)
 
-
-> Retained earlier citation wording: - Abandon evaluates provider liveness and terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError. [16]
+> Retained earlier citation wording: - Abandon evaluates terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError. [16]
 
 
 
 - No-remains abandon validates task-stage authority before teardown. [17]
+
 
 > Retained earlier citation wording: - The normal publication returns shared task/contract projection effects. [18]
 
@@ -200,26 +181,11 @@ Rule 5 no-remains exception: with no locator, no worktree folder, no work branch
 `abandon_result` is now a wrapper that returns `with_outside_scratch_reconcile(_abandon_result(args), dry_run=args.dry_run)`, so an abandon run also sweeps the product parent and carries `outsideScratchReconcile` when the sweep removed or reported a root. `terminal_group.py` publishes `outside_scratch.removal_entry_for(contract, dry_run=dry_run)` under the `outside_scratch` key for both leaf and series abandon paths (`_abandon_directories` keeps it for the directory-only sprint-archive helper). `_already_abandoned` takes `dry_run` and delegates residue reclamation to `retry_terminal_group`; any remaining blocker returns return code 2 with state `abandon-blocked`, summary "Abandon is already recorded but its task resources could not be removed.", `directories`, `blockers`, and optional `agentArchive` or `outsideScratch`. After the abandoned contract and task row are published and read back, `_publish_abandon` calls `write_completion_record(contract, updated, operation="worktree_abandon")`.
 
 
-
-
 - Successful abandon and exact terminal replay retain terminal atomic-series release in their admitted paths. The outer wrapper reconciles outside scratch and attaches a successful ancestry-based landed-work observation. Anchor: `abandon_result` [1]
-
-
-
-
-
-
 
 - The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. [11]
 
-
-
-
-
-
 - The current module exposes `abandon_result` at this ownership boundary.  Anchor: `abandon_result` [12]
-
-
 
 
 
@@ -227,10 +193,7 @@ Rule 5 no-remains exception: with no locator, no worktree folder, no work branch
 
 
 
-
-
-- Abandon evaluates provider liveness and terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError. [16]
-
+- Abandon evaluates terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError. [16]
 
 
 
@@ -238,5 +201,7 @@ Rule 5 no-remains exception: with no locator, no worktree folder, no work branch
 
 
 - The cleanup vocabulary includes abandoned and reopened as declared terminal/reopen states. [9]
+
+
 
 - Both leaf abandon paths preserve the leaf call lines before deleting the folder that contains the log. [21]

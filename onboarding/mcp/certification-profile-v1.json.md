@@ -12,7 +12,7 @@ Declares Agents Remember's repository-owned certification selections, Gates 1–
 
 ### Logic
 
-The generated-skills input declares only the packaged runtime skills tree and includes generated-copies.json beside the sync script and canonical skills source. The generated-runtime input declares the packaged benchmarks, providers and system trees with their canonical sources and scripts/sync-runtime.py; no generated-harness input is declared, while the generated-harness rail remains declared and runs scripts/sync-skills.py --check. These declarations are not certification or sync execution; the remaining rail/publication-artifact boundaries stay separate.
+The generated-skills input declares only the packaged runtime skills tree and includes generated-copies.json beside the sync script and canonical skills source. The generated-runtime input declares the packaged benchmarks and system trees with their canonical sources and scripts/sync-runtime.py; no generated-harness input is declared, while the generated-harness rail remains declared and runs scripts/sync-skills.py --check. These declarations are not certification or sync execution; the remaining rail/publication-artifact boundaries stay separate.
 
 The profile declares no provider-runtime integration rail. `rails` declares each rail's `identity.railId` with its gate, class, artifacts, evidence contract and execution adapter, and that rail is absent from the declaration and from the gate selections. The mechanical binding table under the build-tooling directory follows this declaration and is follow-through, not a second account of it — it carries no card of its own.
 
@@ -44,9 +44,7 @@ The profile declaration does not itself prove runtime composition or final-memor
 
 ## Evidence
 
-
-
-- Generated inputs declare generated-projection-types, generated-runtime (packaged benchmarks, providers and system) and generated-skills (the packaged skills tree); no generated-harness input is declared. [7]
+- Generated inputs declare generated-projection-types, generated-runtime (packaged benchmarks and system) and generated-skills (the packaged skills tree); no generated-harness input is declared. [7]
 
 - The retained generated-harness rail checks skills through scripts/sync-skills.py --check. [8]
 ### Docs References
@@ -61,15 +59,11 @@ The exact source declarations below establish the current behavior; this invento
 
 - Bounded dependency reconstruction environments [1]
 
-
 - Pinned Dagger execution adapter and actual runtime digest. [2]
-
 
 - The declaration carries its own canonical profile digest. [3]
 
-
 - 45 report paths include 29 rail-evidence captures; ambient and teardown publications are removed. [4]
-
 
 - Full/targeted/local selections and explicit applicability. [5]
 

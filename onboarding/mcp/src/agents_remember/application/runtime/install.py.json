@@ -95,16 +95,16 @@
   ],
   "references": {
     "1": {
-      "note": "The tool maps its booleans into `RuntimeInstallRequest` and hands that request unchanged to `runtime_install_payload`. Anchor: `RuntimeInstallRequest`",
+      "note": "The tool maps its flags (`dry_run`, `include_benchmarks`, `experiment`) into `RuntimeInstallRequest` and hands that request unchanged to `runtime_install_payload`.\n\nAnchor: `` `runtime_install_payload` `runtime_install` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "9518d2870b1d1d5dcd2c6707be568f200f0f5899",
-            "content": "sha256:3feb5218b6fc57d62ffc5e5713c931483a16aee0e7f973a112a682f890449a62",
+            "blob": "f43eba6d08a7c394b3d671b40c7fd8ab7ab66752",
+            "content": "sha256:b4f05e27ee17e6477b5cc6d1eeaf52d303d7e30adb0c00c2892fabf2c816ddbe",
             "locator": {
-              "end": 169,
+              "end": 161,
               "kind": "line_range",
-              "start": 133
+              "start": 131
             },
             "path": "mcp/src/agents_remember/mcp/tools/core.py"
           },
@@ -112,12 +112,12 @@
         },
         {
           "anchor": {
-            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
-            "content": "sha256:5a375498f1450f47d9e8bb8811f2d54608f9a9385651499b94c9b79efc52b580",
+            "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+            "content": "sha256:cf64f642ff6e81c14f50c0af40a635ef68eba13f5a5435dbea9cee112233aa9e",
             "locator": {
-              "end": 136,
+              "end": 129,
               "kind": "line_range",
-              "start": 119
+              "start": 116
             },
             "path": "mcp/src/agents_remember/mcp/registration/core.py"
           },
@@ -126,12 +126,12 @@
       ]
     },
     "2": {
-      "note": "The tool declaration exposes `runtime_install` as a public tool.",
+      "note": "The tool declaration exposes `runtime_install` as a public tool.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
-            "content": "sha256:9e5854fbe11be37d34a5cb560424dbd3a5123ad4c718a82a1e7e3825f91508c6",
+            "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+            "content": "sha256:e985eda391e72f8d9a41556ac080c7874c1a1e9bcf750ef7abc77a73bf640d56",
             "locator": {
               "kind": "file"
             },
@@ -142,15 +142,16 @@
       ]
     },
     "3": {
-      "note": "The service layer defines `RuntimeInstallRequest` and performs the actual runtime install.",
+      "note": "The service layer defines `RuntimeInstallRequest` and performs the actual runtime install.\n\nAnchor: `` `RuntimeInstallRequest` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
-            "content": "sha256:e7ac79c0c62dd20438ab687cc880568e3e76b1ae53ed16257b061beb069a6e52",
+            "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
+            "content": "sha256:f2b7b92d5c7180b892f55df7729709b02ac154a1a580eb8d113ac18395eabeed",
             "locator": {
-              "kind": "symbol",
-              "name": "RuntimeInstallRequest"
+              "end": 92,
+              "kind": "line_range",
+              "start": 75
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -169,50 +170,6 @@
               "kind": "symbol",
               "name": "run_runtime_install"
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Runtime installation attempts the required leftover-watcher stop independently of the accepted `install_provider_deps` and `no_cache` knobs and reports enabled provider keys once as unused; those knobs drive no provider dependency installation or provider-image rebuild.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
-            "content": "sha256:bf77401166a6b6d6a74ed95ebef5fb010dd6d6e42f69b6b06b1c5c35628845ce",
-            "locator": {
-              "end": 589,
-              "kind": "line_range",
-              "start": 572
-            },
-            "path": "mcp/src/agents_remember/install/runtime.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
-            "content": "sha256:b595aedf74ab4b786c07d9e456ca6c2cb60aa83381f0d36cc6365eaa1c5fe6be",
-            "locator": {
-              "end": 141,
-              "kind": "line_range",
-              "start": 119
-            },
-            "path": "mcp/src/agents_remember/install/runtime.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
-            "content": "sha256:ba0b7f0e3d725b8ba0c42f4edad6df046c6b298cff8664b0118dd49bc96e4c6d",
-            "locator": {
-              "end": 831,
-              "kind": "line_range",
-              "start": 813
-            },
-            "path": "mcp/src/agents_remember/install/runtime.py"
           },
           "kind": "code"
         }

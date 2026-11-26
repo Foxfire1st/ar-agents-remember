@@ -11,8 +11,6 @@ entry that used to hold the first slot went with the retired search providers, s
 assertion names `3 actionable drift` and its severity label stays `alarm`. Read it as a fixture assertion
 over mocked routes, not as a fresh run.
 
-
-
 ## Governing Overview
 
 [agents-remember root overview](../../overview.md)
@@ -73,14 +71,9 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-
-
 - The primary cockpit e2e source; the earlier 202-expectations fix-round caption is historical, not a current reached-assertion count. [1]
 
-
-
 - The dev fixture gallery and scenarios the suite drives. [2]
-
 
 ### Cross-Repo References
 

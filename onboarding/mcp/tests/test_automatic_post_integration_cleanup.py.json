@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "173134e236126cc023f3cdc9c052f77d724a174b",
+        "blob": "bfc204dbd76fdae0dc42bf3f8e2ebc804d7427bf",
         "content": "sha256:697ce62f15baf2a8d852be75129db889e3ce85f8ece4f90ff953fd561dad9568",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "173134e236126cc023f3cdc9c052f77d724a174b",
+        "blob": "bfc204dbd76fdae0dc42bf3f8e2ebc804d7427bf",
         "content": "sha256:697ce62f15baf2a8d852be75129db889e3ce85f8ece4f90ff953fd561dad9568",
         "locator": {
           "kind": "symbol",
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "173134e236126cc023f3cdc9c052f77d724a174b",
+            "blob": "bfc204dbd76fdae0dc42bf3f8e2ebc804d7427bf",
             "content": "sha256:dd8c6de904bc709f1c4d75be216102cc95ad5b63ffbe0b646b86237b99c0bef8",
             "locator": {
               "end": 28,
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "blob": "f5ea4e136bb12030eceeb84d259e12378adc54a4",
             "content": "sha256:90621bc78fcd8a839e131d3db1f8e181cf2decb1bca587c9593cbcc97d614548",
             "locator": {
               "end": 76,
@@ -78,25 +78,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
-            "content": "sha256:033a560188ccb2030f55658d9c9c6188196cf5dbba375b84f3599a150fde0d75",
+            "blob": "234cc2eadcfe8bef2ee8e9c8a39c5bcc03d62dc9",
+            "content": "sha256:5da92fb48d671caaa4fe5c767a4069b245373302dc1ba7710c5ce6e55df46734",
             "locator": {
-              "end": 373,
-              "kind": "line_range",
-              "start": 310
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
-            "content": "sha256:e87a6de9f58d5c1f93635715c5e87e37bdc6fe1fbcdbbc5628b6b494ed021013",
-            "locator": {
-              "end": 373,
-              "kind": "line_range",
-              "start": 312
+              "kind": "symbol",
+              "name": "_run_or_verify_cleanup"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
           },
@@ -168,7 +154,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "blob": "ba4fb6e617261f7916c779588d183a65a04c202d",
             "content": "sha256:ee4961644f5f75ee7af81745e3554bbfbc0eeb8e1029eadaf6de37787a13299f",
             "locator": {
               "kind": "symbol",
@@ -185,8 +171,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c2404c29a32bc298edbb407bb1451efb5e6f16f",
-            "content": "sha256:4e8196e941fb43e63fb6854a5666176542e8a6ae1c28085ce979fa1f060ee59d",
+            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+            "content": "sha256:2168526df675af4e03f114b9201b7219844679cab9a794f483c8a74e89c80131",
             "locator": {
               "kind": "symbol",
               "name": "lifecycle_finalize_task_tool"

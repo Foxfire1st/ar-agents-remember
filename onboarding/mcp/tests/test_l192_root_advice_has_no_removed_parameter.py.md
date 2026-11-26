@@ -2,7 +2,7 @@
 
 ## Current operative account — MIK-R199
 
-- The docstring states the rule the file enforces and where the admitted set comes from: the shipped tool registration and the internal `ContextPacketRequest` admit `repo_id`, `include_drift`, `include_freshness` and the leaf's `task_context`; `include_providers` is gone and the packet's provider projection is fixed to `include_providers=False`. Advice that still tells a reader to pass the removed flag therefore names an invalid invocation of a shipped tool.
+- The docstring states the rule the file enforces and where the admitted set comes from: the shipped tool registration and the internal `ContextPacketRequest` admit `repo_id`, `include_drift`, `include_freshness` and the leaf's `task_context`; `include_providers` is gone along with search providers. Advice that still tells a reader to pass the removed flag therefore names an invalid invocation of a shipped tool.
 - The removed knob is spelled once, as `REMOVED_PARAMETER`, so every case compares against the same token instead of a repeated literal. `TOOL_NAME` is `context_packet`.
 - The carrier inventory is declared as globs, not as a file list: the root `AGENTS.md`, `README.md`, `mcp/README.md`, `docs/`, `skills/`, `system/`, the packaged runtime copies, plus one expansion per root in `GENERATED_SKILL_COPIES` — the docstring's reason is that a generated copy is added per committed projection root so a new harness cannot ship an unreported call. `REQUIRED_SURFACE_ROOTS` names one shipped surface per entry so a carrier glob that silently stops matching becomes a failure rather than a quiet pass.
 - `_advertised_parameters` derives the admitted names from the shipped server: it builds a `FastMCP` instance, runs every registrar in `TOOL_REGISTRARS` against it, lists the tools, requires `context_packet` among them, and returns the property names of that tool's `inputSchema`. The comparison set is therefore the advertised schema, not a hand-kept list in the test.
@@ -27,11 +27,11 @@ The carrier files this module scans are outside it; the card states what the sca
 - The admitted parameter set is read from the advertised schema of a server built from `TOOL_REGISTRARS`, not from a literal list. [1]
 - The removed knob is spelled once and compared against everywhere. [2]
 
-
 - The carrier inventory is glob-based, with a required-surface list that fails when a glob stops matching. [3]
 
 - Written calls are parsed with a quote-aware parenthesis scan and an `ast` parse after normalising prose literals; unparseable calls are reported rather than skipped. [4]
 - The schema case requires the removed name absent while `repo_id`, `task_context`, `include_drift` and `include_freshness` stay admitted. [5]
 - The internal request may not re-admit the removed name and must forward only names the schema advertises. [6]
 - Offending carriers are named by `path:line` for both the removed-parameter case and the admitted-parameters-only case. [7]
+
 - Every required surface root and every generated copy root must contribute a carrier, with floors on the generated-copy list and the written-call inventory. [8]

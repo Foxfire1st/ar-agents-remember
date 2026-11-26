@@ -3,10 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "919a71b491ed753daa97927f49bcf27947690f71",
-        "content": "sha256:a45ce0a6149eac41ceceecf0bfab60dfcc28238b19716d584db241c3cf0d566d",
+        "blob": "49abd7dedfb211e2a1da7ba9ee529b133fc1cf74",
+        "content": "sha256:0d55daf03c584e3377ec92ea74ad0c505f1168d03b0da2f6cafab791b3e259eb",
         "locator": {
-          "end": 29,
+          "end": 32,
           "kind": "line_range",
           "start": 16
         }
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "919a71b491ed753daa97927f49bcf27947690f71",
+        "blob": "49abd7dedfb211e2a1da7ba9ee529b133fc1cf74",
         "content": "sha256:f763fb8a76e54f81a097d2649a7a80121361cb0127d059300242b19d5f6c72ad",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "919a71b491ed753daa97927f49bcf27947690f71",
-        "content": "sha256:30df359dcfb250d017428959e8ac344766868db94af85d56522a271b5bba720a",
+        "blob": "49abd7dedfb211e2a1da7ba9ee529b133fc1cf74",
+        "content": "sha256:f37a3ef714f628548e6d3cbf9c1499fc3852a29c8d5bd11995f0789112e7cd35",
         "locator": {
           "kind": "symbol",
           "name": "removed_part_stores"
@@ -59,15 +59,16 @@
   ],
   "references": {
     "1": {
-      "note": "Retired path inventory and no-install-deletion notice.",
+      "note": "Retired path inventory and no-install-deletion notice.\n\nAnchor: `` `REMOVED_PART_STORE_PATHS` `REMOVED_STORES_NOTICE` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "919a71b491ed753daa97927f49bcf27947690f71",
-            "content": "sha256:a45ce0a6149eac41ceceecf0bfab60dfcc28238b19716d584db241c3cf0d566d",
+            "blob": "49abd7dedfb211e2a1da7ba9ee529b133fc1cf74",
+            "content": "sha256:8b3fdfa8a5285f19d47949c062e7c613dabd5411940b6a35cddeade86784636d",
             "locator": {
-              "kind": "symbol",
-              "name": "REMOVED_PART_STORE_PATHS"
+              "end": 48,
+              "kind": "line_range",
+              "start": 16
             }
           },
           "kind": "code"
@@ -79,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "919a71b491ed753daa97927f49bcf27947690f71",
+            "blob": "49abd7dedfb211e2a1da7ba9ee529b133fc1cf74",
             "content": "sha256:26533102bdf55329fc1755515563bb196524a374c5cf4574e3eeca2c7dbb54f1",
             "locator": {
               "kind": "symbol",
@@ -95,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "919a71b491ed753daa97927f49bcf27947690f71",
+            "blob": "49abd7dedfb211e2a1da7ba9ee529b133fc1cf74",
             "content": "sha256:c5d308a941ddba3ca571f06eb4fbecb5a95ae8ab7ff83965f6c85dc84b90dc8a",
             "locator": {
               "kind": "symbol",
@@ -107,15 +108,16 @@
       ]
     },
     "4": {
-      "note": "Inventory and reporting keep gate logs distinct.",
+      "note": "Inventory and reporting keep gate logs distinct.\n\nAnchor: `` `removed_part_stores` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "919a71b491ed753daa97927f49bcf27947690f71",
-            "content": "sha256:30df359dcfb250d017428959e8ac344766868db94af85d56522a271b5bba720a",
+            "blob": "49abd7dedfb211e2a1da7ba9ee529b133fc1cf74",
+            "content": "sha256:f37a3ef714f628548e6d3cbf9c1499fc3852a29c8d5bd11995f0789112e7cd35",
             "locator": {
-              "kind": "symbol",
-              "name": "removed_part_stores"
+              "end": 240,
+              "kind": "line_range",
+              "start": 207
             }
           },
           "kind": "code"

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "5c005c7831f0d9de8daf17d4a98ef807fc0b9869",
-    "commit": "3ee3b10c90fecdf81b54c96c784e481f33423522",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "Verified docs/host.md on synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db): host integration and Antigravity role-agent refusal remain accurate, with stands_on[29] re-anchored to role_launch_preparation.py:236-256 after L41's optional owning_architect_id parameter.",
-    "task": "261112-BUG-L41",
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/host.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
+    "task": "261125-DEP-L2",
     "uncommitted": true
   },
   "document": "docs/host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 18,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -131,7 +131,7 @@
       "path": "mcp/src/agents_remember/application/agent_binding.py"
     },
     {
-      "blob": "58ee640a8f53ac7e3e3b4aa884d750d6ad8eead7",
+      "blob": "73616a4370460b955a55ce809538d92e5e0ba76a",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     },
@@ -161,7 +161,7 @@
       "path": "mcp/src/agents_remember/serving/media.py"
     },
     {
-      "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
+      "blob": "81b0e3d2947f32ed2a6e3a9fc97433196e6659a5",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/worktree_status.py"
     },
@@ -176,7 +176,6 @@
         },
         "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
       },
-      "heading": "Antigravity role agents",
       "kind": "anchor"
     },
     {
@@ -190,7 +189,6 @@
         },
         "path": "mcp/src/agents_remember/cli/paseo_launch.py"
       },
-      "heading": "Antigravity role agents",
       "kind": "anchor"
     },
     {
@@ -204,7 +202,6 @@
         },
         "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
       },
-      "heading": "Antigravity role agents",
       "kind": "anchor"
     },
     {
@@ -218,7 +215,6 @@
         },
         "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/acp-agent.js"
       },
-      "heading": "Antigravity role agents",
       "kind": "anchor"
     },
     {
@@ -232,7 +228,6 @@
         },
         "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/acp-agent.js"
       },
-      "heading": "Antigravity role agents",
       "kind": "anchor"
     },
     {
@@ -246,19 +241,18 @@
         },
         "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-16/@getpaseo/server/dist/server/server/agent/providers/acp-agent.js"
       },
-      "heading": "Antigravity role agents",
       "kind": "anchor"
     }
   ],
   "writer": {
-    "at": "2026-11-26T04:22:40+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L41",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
-    "task": "261112-BUG"
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
   }
 }

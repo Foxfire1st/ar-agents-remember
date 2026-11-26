@@ -8,12 +8,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
-            "content": "sha256:3a3c84122eeb05f2fd5368efcd2d815fc4d4586c1408a26b6b2477fd20be9c6d",
+            "blob": "4dd235726b77709906f96a7bc0acb352398167b3",
+            "content": "sha256:19edd83cd339ae79dfda59760f928474d121cbe02b9ff9e75180dec801e67a6b",
             "locator": {
-              "end": 100,
-              "kind": "line_range",
-              "start": 34
+              "kind": "symbol",
+              "name": "WorktreeArgs"
             }
           },
           "kind": "code"
@@ -25,12 +24,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
-            "content": "sha256:3a3c84122eeb05f2fd5368efcd2d815fc4d4586c1408a26b6b2477fd20be9c6d",
+            "blob": "4dd235726b77709906f96a7bc0acb352398167b3",
+            "content": "sha256:19edd83cd339ae79dfda59760f928474d121cbe02b9ff9e75180dec801e67a6b",
             "locator": {
-              "end": 100,
-              "kind": "line_range",
-              "start": 34
+              "kind": "symbol",
+              "name": "WorktreeArgs"
             }
           },
           "kind": "code"
@@ -42,24 +40,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
+            "blob": "4dd235726b77709906f96a7bc0acb352398167b3",
             "content": "sha256:09e7e97cdc9a53ffd53f0941e62111c19473c3dc044d1e966ea5f10bd1d861fa",
             "locator": {
-              "end": 100,
+              "end": 92,
               "kind": "line_range",
-              "start": 89
+              "start": 81
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
+            "blob": "4dd235726b77709906f96a7bc0acb352398167b3",
             "content": "sha256:623afd4c13857008299292e94aa8fc75ba2b86af3305b21a524dfcfac439d463",
             "locator": {
-              "end": 121,
+              "end": 113,
               "kind": "line_range",
-              "start": 118
+              "start": 110
             }
           },
           "kind": "code"
@@ -71,24 +69,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
+            "blob": "4dd235726b77709906f96a7bc0acb352398167b3",
             "content": "sha256:09e7e97cdc9a53ffd53f0941e62111c19473c3dc044d1e966ea5f10bd1d861fa",
             "locator": {
-              "end": 100,
+              "end": 92,
               "kind": "line_range",
-              "start": 89
+              "start": 81
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
+            "blob": "4dd235726b77709906f96a7bc0acb352398167b3",
             "content": "sha256:623afd4c13857008299292e94aa8fc75ba2b86af3305b21a524dfcfac439d463",
             "locator": {
-              "end": 121,
+              "end": 113,
               "kind": "line_range",
-              "start": 118
+              "start": 110
             }
           },
           "kind": "code"
@@ -100,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:2b9aaf2cbc302df9659dd78655d80e3d18ea666700ab8dad26b007b8bc118b93",
             "locator": {
               "kind": "symbol",
@@ -112,7 +110,7 @@
         },
         {
           "anchor": {
-            "blob": "c3bcd9cc55f73d255e525520671d9b798457dcb9",
+            "blob": "a6b918f958924fab74a58bd5c2ba8f119c3d9ff4",
             "content": "sha256:5e9062f0836ba065be875d6c3d8cfcf6f6212150edf3daacd4322b2654482cd7",
             "locator": {
               "kind": "symbol",
@@ -124,41 +122,13 @@
         }
       ]
     },
-    "15": {
-      "note": "Provider setup config is typed through the companion worktree models module. (`WorktreeProviderSetupConfig`)",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2e811353d50e697906d6ec8a7c1caf3a200a6183",
-            "content": "sha256:241d8b80ee6f95d62acc223023ea8c2513c0277168ae4539f46ccfe864c51e17",
-            "locator": {
-              "kind": "symbol",
-              "name": "WorktreeProviderSetupConfig"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/models.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "16": {
       "note": "Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`.",
       "targets": [
         {
           "anchor": {
-            "blob": "791b017d8ec2d24d37bcfcdd3acd15b9d817b5de",
-            "content": "sha256:b8ee544a7c3d76078b145b34a925959caa10038cef5165fd834158251b2591d0",
-            "locator": {
-              "kind": "symbol",
-              "name": "from_namespace"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2af08192a64805b537a585a25682c679c7b2c4d3",
-            "content": "sha256:eca716be9819925d70a1c828635b0269c71d46df5c3e54bb7bf1ab3acfeabe00",
+            "blob": "59b413fbad44a9ba295725852b4742e20c0dbf45",
+            "content": "sha256:5ae31df91151511c403bc1199ce7c93f5f4883f9f2c413520f01d98461ef33b0",
             "locator": {
               "kind": "symbol",
               "name": "build_parser"
@@ -169,12 +139,22 @@
         },
         {
           "anchor": {
-            "blob": "2af08192a64805b537a585a25682c679c7b2c4d3",
-            "content": "sha256:732a87f2837e120295c0abd9e2a432657a50fbddda8f1ec98194d8e5be2fe2a6",
+            "blob": "59b413fbad44a9ba295725852b4742e20c0dbf45",
+            "content": "sha256:73fdcceb80f64771d016481e986faa9021f7cf9bbe7cda677815cd0b6e0568ae",
             "locator": {
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cli.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4dd235726b77709906f96a7bc0acb352398167b3",
+            "content": "sha256:9a49ef90d163717e099937a6ac380040e0174718b5baefddec12be6cb5a24dd5",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

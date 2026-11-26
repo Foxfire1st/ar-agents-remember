@@ -1,7 +1,7 @@
 {
   "anchor": {
-    "blob": "02488160059666d9bd7383472baa03db8c36105b",
-    "content": "sha256:a1f35f5c78ff9ac45290256da4932d53d10a169096b9964d7184adc4210590c5",
+    "blob": "f05e96e646eab17b867721906092ae01463906b4",
+    "content": "sha256:d085b03e9ccb70efe79c80a1c30ef63fb1b7467a196d224094ca0b2aa76499bc",
     "locator": {
       "kind": "file"
     },
@@ -17,12 +17,23 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928-MIK-L97"
   },
   "state": "open",
-  "statement": "The example settings file that the settings reference names holds three keys that the reference does not describe: version, benchmarksEnabled and retirement."
+  "statement": "The example settings file that the settings reference names holds three keys that the reference does not describe: version, benchmarksEnabled and retirement.",
+  "writer": {
+    "at": "2026-11-25T22:16:56+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "2424643a-91e9-4c95-ab58-87443229a30b",
+    "task": "261125-DEP"
+  }
 }

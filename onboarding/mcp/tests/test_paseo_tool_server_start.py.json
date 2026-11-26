@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "994c892314aaed072dbf28fd2c499a6806062ea3",
-        "content": "sha256:e35ce2689f34d16f39053aae28a4527933540cd074288e1195291b6f6c964aff",
+        "blob": "182806c9fa54b460da7ec042b1a749630ecc8024",
+        "content": "sha256:74ee16bd81c9748a88f3a0e22f66b8fbf2e43436f6a7aa07b4fb013e815ecc90",
         "locator": {
           "kind": "symbol",
           "name": "ToolServerStartTests.test_the_definition_starts_this_builds_tool_server_which_reports_source_and_binding"
@@ -22,14 +22,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "The scoped current source carries the module/document behavior described above.\n\nAnchor: `` `ToolServerStartTests` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "994c892314aaed072dbf28fd2c499a6806062ea3",
-            "content": "sha256:3baf9f2d6d50cec8500c7a914fe99b0b75e5e0f01ce45486d57d9b46624f64f8",
+            "blob": "182806c9fa54b460da7ec042b1a749630ecc8024",
+            "content": "sha256:c53f0f5ba3484131444da1b5a938cccd4ee7ccca968c28d0ea5c93fca889e8ae",
             "locator": {
-              "kind": "file"
+              "end": 128,
+              "kind": "line_range",
+              "start": 62
             }
           },
           "kind": "test"

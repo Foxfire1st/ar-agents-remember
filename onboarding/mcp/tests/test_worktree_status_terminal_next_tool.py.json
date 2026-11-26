@@ -8,12 +8,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c1cd105c2cb5cc58c6c288dbfe714e8b756483d",
+            "blob": "0460a7811d20b00c4a175fac16310134881f8482",
             "content": "sha256:81cb9feb51163093908d34d1c456013ec5804aa794f3b9c8fd5708fa43adf45f",
             "locator": {
-              "end": 225,
+              "end": 224,
               "kind": "line_range",
-              "start": 198
+              "start": 197
             }
           },
           "kind": "test"
@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c1cd105c2cb5cc58c6c288dbfe714e8b756483d",
+            "blob": "0460a7811d20b00c4a175fac16310134881f8482",
             "content": "sha256:3c4c8354b5df8c0a4517596ad4df67271c196f23eff5ab32ea1032d77b6c7de9",
             "locator": {
-              "end": 234,
+              "end": 233,
               "kind": "line_range",
-              "start": 228
+              "start": 227
             }
           },
           "kind": "test"
@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c1cd105c2cb5cc58c6c288dbfe714e8b756483d",
+            "blob": "0460a7811d20b00c4a175fac16310134881f8482",
             "content": "sha256:65ab14a3955048bc8c2485e1992cd01e4408f7af43094f0213bb0a355d15717b",
             "locator": {
-              "end": 250,
+              "end": 249,
               "kind": "line_range",
-              "start": 237
+              "start": 236
             }
           },
           "kind": "test"
@@ -76,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3aeef936b42a9eed87c2c1bf4687b6b9cb36d62",
+            "blob": "2fe7659a726a2c4ea5367c362a4558d880b5256c",
             "content": "sha256:7f8d00e896a1e4b11565212c96ec2fc81e764ba9b9be8742dccd1c8c4ceca4e8",
             "locator": {
-              "end": 132,
+              "end": 133,
               "kind": "line_range",
-              "start": 59
+              "start": 60
             },
             "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py"
           },
@@ -93,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10aa3467fcc406fed6281d63d6c411ba9adc097e",
+            "blob": "81b0e3d2947f32ed2a6e3a9fc97433196e6659a5",
             "content": "sha256:f9c6fe6cc18a0be6c7b1c1d6d07d9c34fb92caec9d7ecef8bdaadf7257355af3",
             "locator": {
               "end": 541,

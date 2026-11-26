@@ -1,12 +1,16 @@
 {
   "anchor": {
-    "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
-    "content": "sha256:7b5d0d19c9a4ee28d5b5e603600bf89600f18c3a2ae46ed03694bfc5352c67b6",
+    "blob": "1a850352456001bd5393a0c67bdccdda41d1ee44",
+    "content": "sha256:dfb1a9bbac3c5543a924ac4ab155eb4a24e23dc2376c844b494e317a2f6584a3",
     "locator": {
       "kind": "symbol",
       "name": "_register_installation_tools"
     },
     "path": "mcp/src/agents_remember/mcp/registration/core.py"
+  },
+  "closed": {
+    "reason": "261125-DEP-L2 updated runtime_install and server_info descriptions in mcp/registration/core.py so neither mentions provider assets, provider watchers, or unused provider keys.",
+    "task": "261125-DEP-L2"
   },
   "id": "WKN-BQ3A0A",
   "kind": "context",
@@ -18,23 +22,23 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928-MIK-L97"
   },
-  "state": "open",
+  "state": "closed",
   "statement": "The tool descriptions of runtime_install and server_info still mention provider assets, provider watchers or unused provider keys after the older search-provider workflow was withdrawn.",
   "writer": {
-    "at": "2026-11-25T19:57:06+01:00",
+    "at": "2026-11-26T03:27:42+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
-    "task": "261112-BUG"
+    "seat": "2424643a-91e9-4c95-ab58-87443229a30b",
+    "task": "261125-DEP"
   }
 }

@@ -4,7 +4,7 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- Current function takes no workspace and delegates to empty/disabled lifecycle settings.
+- Provider lifecycle settings (`benchmark_lifecycle_settings`), provider setup (`prepare_configured_providers`), and stale-registration sweeping (`disarm_stale_benchmark_registrations`) are removed; `mcp_registration.py` writes benchmark-local `.codex/mcp` settings (`benchmark_mcp_settings_payload`), `.codex/config.toml` (`benchmark_agents_config_text`), and builds `benchmark_mcp_config(workspace)` without any provider keys.
 
 ### Superseded inventory
 
@@ -12,8 +12,8 @@ The current source facts below replace the former operative inventory. The separ
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py:239 (def benchmark_lifecycle_settings)`.
-- Source comparison: `mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py:271 (settings_path = write_temp_provider_settings)`.
+- Source comparison: `mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py:53-64` (`benchmark_mcp_settings_payload`).
+- Source comparison: `mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py:90-146` (`write_benchmark_mcp_registration`, `benchmark_mcp_config`).
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
@@ -105,8 +105,6 @@ No external Domain Documentation source is configured for this memory repo.
 
 - The public benchmark facade re-exports this module's public functions and classes for compatibility. [1]
 - The route-local overview summarizes how this module fits into the benchmark runner split. 
-- The shared seed resolvers also refuse a benchmark-scoped target as defense-in-depth. [3]
-- The service entry points open every prepare/run pass with the registration sweep. [4]
 
 ### Cross-Repo References
 

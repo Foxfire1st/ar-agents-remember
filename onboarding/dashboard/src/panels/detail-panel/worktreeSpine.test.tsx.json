@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "69edaf9a74172327a7d0c2e390ff053479cdfa73",
-        "content": "sha256:9eb69e5e3bdbf981437e05707952ed184a63e0e445306a81b9959d3ec41e713d",
+        "blob": "21e477927ad0897b59f67b5daeb0c79ec1bdc1ea",
+        "content": "sha256:1d320fed5f10c640c595f626ff56ed28bdc2fdc84c50da96e8b38bd349cf7252",
         "locator": {
           "kind": "symbol",
           "name": "the worktree spine carries checkouts, not engines > names both checkout paths with their existence and cleanup facts"
@@ -22,16 +22,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Lane text is reached by test id, and the two lanes are named `code checkout` and `memory checkout` beside their presence and cleanup facts.\n\nAnchor: `spine-lane-${kind}`",
+      "note": "Lane text is reached by test id, and the two lanes are named `code checkout` and `memory checkout` beside their presence and cleanup facts.\n\nAnchor: `cleanupMeta` / `names both checkout paths with their existence and cleanup facts`, `Source`: `dashboard/src/panels/detail-panel/worktreeSpine.test.tsx:23-41`",
       "targets": [
         {
           "anchor": {
-            "blob": "69edaf9a74172327a7d0c2e390ff053479cdfa73",
-            "content": "sha256:6df2c8e0e7493c0d8aa39c7afe991ee81f8b2f06b736a4e4aa0dc53b9b07ca44",
+            "blob": "21e477927ad0897b59f67b5daeb0c79ec1bdc1ea",
+            "content": "sha256:46364bcc897a3fb74ccc742cf030a3c2a1a9fb8f73c899bd08f40b87ccefa291",
             "locator": {
-              "end": 55,
-              "kind": "line_range",
-              "start": 34
+              "kind": "symbol",
+              "name": "cleanupMeta"
             }
           },
           "kind": "test"
@@ -43,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69edaf9a74172327a7d0c2e390ff053479cdfa73",
+            "blob": "21e477927ad0897b59f67b5daeb0c79ec1bdc1ea",
             "content": "sha256:f0135d20ff64e119ecb8928f72938c285293b48963fa116f8d6418d11885630a",
             "locator": {
               "kind": "symbol",
@@ -54,12 +53,12 @@
         },
         {
           "anchor": {
-            "blob": "69edaf9a74172327a7d0c2e390ff053479cdfa73",
+            "blob": "21e477927ad0897b59f67b5daeb0c79ec1bdc1ea",
             "content": "sha256:b68104a8042075fa3fa354f83e9dc35bf85fb43b54b0cf95094ceae60cbd23d6",
             "locator": {
-              "end": 94,
+              "end": 80,
               "kind": "line_range",
-              "start": 61
+              "start": 47
             }
           },
           "kind": "test"
@@ -71,12 +70,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69edaf9a74172327a7d0c2e390ff053479cdfa73",
+            "blob": "21e477927ad0897b59f67b5daeb0c79ec1bdc1ea",
             "content": "sha256:38a395b141cbc8151d9bb3a13268a554deca93cb7bf1fd996850ad9cc01c034f",
             "locator": {
-              "end": 115,
+              "end": 101,
               "kind": "line_range",
-              "start": 96
+              "start": 82
             }
           },
           "kind": "test"
@@ -84,32 +83,16 @@
       ]
     },
     "4": {
-      "note": "The Tasks view keeps the enclosure and task facts and drops every retired lane word from the whole panel.\n\nAnchor: `DetailPanel`",
+      "note": "The Tasks view keeps the enclosure worktree group, repo name and task title on the rendered DetailPanel.\n\nAnchor: `keeps the task and enclosure facts on the Tasks view` / `DetailPanel`",
       "targets": [
         {
           "anchor": {
-            "blob": "69edaf9a74172327a7d0c2e390ff053479cdfa73",
-            "content": "sha256:74da238c020f5eaee033e68fe96a274b83147349477681d3742c470f8ab56b68",
+            "blob": "21e477927ad0897b59f67b5daeb0c79ec1bdc1ea",
+            "content": "sha256:226afb0c0ca8a10c581b50d188b2925dfdd892f16ad60f5542285170847a4e46",
             "locator": {
-              "end": 136,
+              "end": 119,
               "kind": "line_range",
-              "start": 117
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "The retired engine vocabulary is a named list asserted against rendered text.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "69edaf9a74172327a7d0c2e390ff053479cdfa73",
-            "content": "sha256:fd7e39c20c593fda9aef45432f2530ac11453956d8f03817ff1eb9bfb4d46927",
-            "locator": {
-              "kind": "symbol",
-              "name": "RETIRED_LANE_WORDS"
+              "start": 103
             }
           },
           "kind": "test"

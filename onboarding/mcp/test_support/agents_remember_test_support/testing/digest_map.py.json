@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0d5efb591aa757fa005f5465e6492741219af373",
-        "content": "sha256:fde0661cc55e47d717f94ec0916d450d076b82f628b3a0051d2d42870b38ea58",
+        "blob": "40672d293410a0aef2c493ee5a83736cf080711e",
+        "content": "sha256:28b456b8e1d56b169ef6516b9721a8a9acb4595b6960fa7764623545bea671e6",
         "locator": {
           "kind": "file"
         }
@@ -21,16 +21,26 @@
   ],
   "references": {
     "1": {
-      "note": "Assertions cover source bindings and digest places; clause coverage calls the repository renewal helper clause_coverage_error.",
+      "note": "Assertions cover source bindings and digest places; clause coverage calls the repository renewal helper clause_coverage_error.\n\nAnchor: `_assert_core_source_map` / `_assert_digest_places` / `clause_coverage_error`",
       "targets": [
         {
           "anchor": {
-            "blob": "0d5efb591aa757fa005f5465e6492741219af373",
-            "content": "sha256:d7cecfd8865e12203af9071dd2310e7e3dc7aa5ed731a15a8b9a9e34915d2f1b",
+            "blob": "40672d293410a0aef2c493ee5a83736cf080711e",
+            "content": "sha256:2101e1b0cc37cfe789b26c9fa5c644525c8e4f91a2f528474dc1a30c3b612f80",
             "locator": {
-              "end": 169,
-              "kind": "line_range",
-              "start": 50
+              "kind": "symbol",
+              "name": "_assert_core_source_map"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40672d293410a0aef2c493ee5a83736cf080711e",
+            "content": "sha256:84227da51fea414326f69b842b910efc3f439b41cedb4768ae0f437fd4f9d636",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_digest_places"
             }
           },
           "kind": "code"
@@ -40,9 +50,8 @@
             "blob": "ae5955d3d7033a3675bb38ceb8d2610a45ddfdfe",
             "content": "sha256:6189d6dd15cc1483d846695f238c2a6d09d0433443803b2161ecee545a50b17d",
             "locator": {
-              "end": 311,
-              "kind": "line_range",
-              "start": 290
+              "kind": "symbol",
+              "name": "clause_coverage_error"
             },
             "path": "scripts/instruction_renewal/digest.py"
           },
@@ -51,16 +60,37 @@
       ]
     },
     "2": {
-      "note": "Evidence, retirement and audience checks remain separately expressed.",
+      "note": "Evidence, retirement and audience checks remain separately expressed.\n\nAnchor: `_assert_core_dispositions` / `_assert_digest_audiences` (and `_assert_core_retirements` at `41-56`)",
       "targets": [
         {
           "anchor": {
-            "blob": "0d5efb591aa757fa005f5465e6492741219af373",
-            "content": "sha256:8bccf01ae6462f431573c11225fde9d2170e1a857dccf91069f32017c63dd1ab",
+            "blob": "40672d293410a0aef2c493ee5a83736cf080711e",
+            "content": "sha256:0e56019bcb9ec841531e9d530fdd439c25f0e863592f1df2bb837a9d4958032b",
             "locator": {
-              "end": 232,
-              "kind": "line_range",
-              "start": 172
+              "kind": "symbol",
+              "name": "_assert_core_dispositions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40672d293410a0aef2c493ee5a83736cf080711e",
+            "content": "sha256:b1f58234b5cd4f868b69214029a71150f28d3ec9233bcd1171b8dc99814e7e2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_digest_audiences"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40672d293410a0aef2c493ee5a83736cf080711e",
+            "content": "sha256:07e0b8133cc8a652ed9397f382f8254a8a66b6389f596a32196c8dc4fc1c74b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_core_retirements"
             }
           },
           "kind": "code"

@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
+        "blob": "51871436855781243536127657a2fea10f02324f",
+        "content": "sha256:8fb91b3cdca2261ba4919b467011b5a78c74d7986f7642392e6249f299b5bb2c",
+        "locator": {
+          "kind": "symbol",
+          "name": "cleanup_arguments_match"
+        }
+      },
+      "id": "RLZ-2642MH",
+      "invariant": "INV-TDHAD1",
+      "origin": {
+        "handoffEntry": "DEP-R02@v1 §3",
+        "leaf": "261125-DEP-L2"
+      },
+      "rationale": "Matches post-removal cleanup retries against stored pre-removal cleanup archives regardless of legacy teardown_providers.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "51871436855781243536127657a2fea10f02324f",
         "content": "sha256:4a471b0df3b528f982d910db3ac08083ec25de6a50dfc4b72ae9b207aa63266f",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
+        "blob": "51871436855781243536127657a2fea10f02324f",
+        "content": "sha256:5c7eea52d195fa6ef26d14f5cfee3de82d01a9e85d92dfc686b9ec3388a1b743",
+        "locator": {
+          "kind": "symbol",
+          "name": "TerminalWorktreeCleanupArguments"
+        }
+      },
+      "id": "RLZ-FB6HB4",
+      "invariant": "INV-TDHAD1",
+      "origin": {
+        "handoffEntry": "DEP-R02@v1 §3",
+        "leaf": "261125-DEP-L2"
+      },
+      "rationale": "Keeps teardown_providers optional and omitted when None so newly written archives carry {} while stored pre-removal archives carrying teardown_providers remain valid and hash-compatible.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "51871436855781243536127657a2fea10f02324f",
         "content": "sha256:003000e698c5f3a0354096b853252e23e722bbd315da02b8933035979b43a759",
         "locator": {
           "kind": "symbol",
@@ -39,8 +75,26 @@
     },
     {
       "anchor": {
-        "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
-        "content": "sha256:874eba00d7190b92a86c55048422fd76e53c2b84bbac9bcc5e6070ad3bc21fd1",
+        "blob": "51871436855781243536127657a2fea10f02324f",
+        "content": "sha256:698fbfbc3152804f49b577657b288672be5fdef4690041f391ca67959a6002a4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_cleanup_request_identity"
+        }
+      },
+      "id": "RLZ-R8XP3Z",
+      "invariant": "INV-TDHAD1",
+      "origin": {
+        "handoffEntry": "DEP-R02@v1 §3",
+        "leaf": "261125-DEP-L2"
+      },
+      "rationale": "Recomputes cleanupRequestId over the serializer output so both pre-removal and new cleanup archives verify their exact stored bytes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "51871436855781243536127657a2fea10f02324f",
+        "content": "sha256:506fd27b7163c0c5235e38f0b0adaeec5924e5f15ea4393fddc400c36b14eebf",
         "locator": {
           "kind": "file"
         }
@@ -53,6 +107,24 @@
       },
       "rationale": "The enclosure model carries the outside scratch record into the contract text and the immutable manifest, and reads it back.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "51871436855781243536127657a2fea10f02324f",
+        "content": "sha256:8fb91b3cdca2261ba4919b467011b5a78c74d7986f7642392e6249f299b5bb2c",
+        "locator": {
+          "kind": "symbol",
+          "name": "cleanup_arguments_match"
+        }
+      },
+      "id": "RLZ-Y1JRDB",
+      "invariant": "INV-PB6BZ0",
+      "origin": {
+        "handoffEntry": "DEP-R02@v1 §1-pb6bz0",
+        "leaf": "261125-DEP-L2"
+      },
+      "rationale": "Compares saved terminal archive cleanupArguments against retried public arguments while tolerating legacy teardown_providers fields.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -61,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
+            "blob": "51871436855781243536127657a2fea10f02324f",
             "content": "sha256:37d4d0cbae40ce59c05610e80ad653f7c2d479361382ef59d060c1e69a23c490",
             "locator": {
               "kind": "symbol",
@@ -77,7 +149,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
+            "blob": "51871436855781243536127657a2fea10f02324f",
             "content": "sha256:37d4d0cbae40ce59c05610e80ad653f7c2d479361382ef59d060c1e69a23c490",
             "locator": {
               "kind": "symbol",
@@ -93,7 +165,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
+            "blob": "51871436855781243536127657a2fea10f02324f",
             "content": "sha256:37d4d0cbae40ce59c05610e80ad653f7c2d479361382ef59d060c1e69a23c490",
             "locator": {
               "kind": "symbol",

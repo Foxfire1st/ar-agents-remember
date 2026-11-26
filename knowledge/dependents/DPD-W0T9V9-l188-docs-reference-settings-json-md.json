@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "af9e749296405ef22b6b165097e02cfef8e50570",
-    "commit": "91bb8c5f96005ee45998e3d5a3618fc28d250bdc",
+    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "On settled crossing-5 tree af9e7492 (commit 91bb8c5f, combining EXP-L1/crossing-4 and BUG-L44), docs/reference/settings-json.md remains accurate across all four settings files, agents-remember-mcp --config absolute path requirement, tool-log rotation/redaction, orchestration.landing.commitCheckTimeoutSeconds, mode precedence and per-harness first-call grants, timeoutCaps.providerSetupSeconds, user-settings permission reporting (444/555 and openUserSettings), paseoRuntime authority rules, and role-executions folder creation; unchanged by BUG-L44's paseo_launch.py retirement/interruption updates.",
-    "task": "261124-EXP",
-    "uncommitted": false
+    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/reference/settings-json.md accurately matches the codebase: providers, providerDegradation and timeoutCaps.providerSetupSeconds are omitted from active settings, tolerated unread with reporting in server_info.unusedSettingsKeys, and paseoRuntime.providers remains documented for host harnesses.",
+    "task": "261125-DEP-L2",
+    "uncommitted": true
   },
   "document": "docs/reference/settings-json.md",
   "id": "DPD-W0T9V9",
@@ -17,12 +17,12 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 19,
+  "revision": 20,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
       "anchor": {
-        "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+        "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
         "content": "sha256:dbc0d0de7748c2d157c740655c45d6c401a08cacc9bc2a48ec3aca7086f36716",
         "locator": {
           "kind": "symbol",
@@ -79,11 +79,6 @@
       "path": "mcp/src/agents_remember/kernel/primitives/paseo_authority.py"
     },
     {
-      "blob": "f0d06339f4b5b339d0e1d8721c1a92b05571c871",
-      "kind": "file",
-      "path": "mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py"
-    },
-    {
       "blob": "35226811a3b772b515e1d353fd6b76a7caeb93cf",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py"
@@ -109,7 +104,7 @@
       "path": "mcp/src/agents_remember/application/tool_answer_log.py"
     },
     {
-      "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+      "blob": "832422ed3bf6d60b4bda6f5af1df91efc0218205",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/runtime.py"
     },
@@ -127,11 +122,6 @@
       "blob": "17713c670d76851b21ce84043ed05e450c1a0d53",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
-    },
-    {
-      "blob": "2edff51be75051062a682ac9a09910ffdb4db13a",
-      "kind": "file",
-      "path": "mcp/src/agents_remember/providers/degradation.py"
     },
     {
       "blob": "b484c1cb2e306642c86d3ef0d07e54deb17d288c",
@@ -212,7 +202,6 @@
         },
         "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
       },
-      "heading": "paseoRuntime",
       "kind": "anchor"
     },
     {
@@ -225,7 +214,6 @@
         },
         "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
       },
-      "heading": "paseoRuntime",
       "kind": "anchor"
     },
     {
@@ -238,19 +226,23 @@
         },
         "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py"
       },
-      "heading": "paseoRuntime",
       "kind": "anchor"
+    },
+    {
+      "blob": "202716bcbed4aa3fbc0c68aaf788bc6aa97a5619",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
     }
   ],
   "writer": {
-    "at": "2026-11-26T04:22:46+01:00",
+    "at": "2026-11-26T07:08:02+01:00",
     "by": "agent",
-    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-5",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
-    "task": "261124-EXP"
+    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "task": "261125-DEP"
   }
 }

@@ -4,14 +4,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The result fixture isolates the drift snapshot and defines the preview, removed, already-absent and failed inputs.",
+      "note": "The result fixture isolates the drift snapshot and defines the preview, removed, already-absent and failed inputs.\n\nAnchor: `` `_result` `_preview_snapshot` `_removed_snapshot` `_absent_snapshot` `_failed_snapshot` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "6829cbfb7b2567a1a9e98001ae09ab186936f104",
-            "content": "sha256:df0e9207ff848fb2b9faeae9355d77a15296db4be4113eb47a13a79ab649d8cf",
+            "blob": "4f7f1cbd45fd13dbca164afff48eeea241bf146d",
+            "content": "sha256:792ad1ea2219f89479f3bb39a7a9037a7e8bac0896a845daaa1178052b84bb3f",
             "locator": {
-              "end": 80,
+              "end": 79,
               "kind": "line_range",
               "start": 27
             }
@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6829cbfb7b2567a1a9e98001ae09ab186936f104",
+            "blob": "4f7f1cbd45fd13dbca164afff48eeea241bf146d",
             "content": "sha256:d39dc35de3152d63c73d7374da5cc53cac8fbafd4ea86ffaf648e1b135920363",
             "locator": {
-              "end": 91,
+              "end": 90,
               "kind": "line_range",
-              "start": 83
+              "start": 82
             }
           },
           "kind": "test"
@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6829cbfb7b2567a1a9e98001ae09ab186936f104",
+            "blob": "4f7f1cbd45fd13dbca164afff48eeea241bf146d",
             "content": "sha256:ac20c34fd1e05b6151fa45c9f52f9661703a3fb8f80e9d1cc8d29950dec41b98",
             "locator": {
-              "end": 104,
+              "end": 103,
               "kind": "line_range",
-              "start": 94
+              "start": 93
             }
           },
           "kind": "test"
@@ -59,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6829cbfb7b2567a1a9e98001ae09ab186936f104",
+            "blob": "4f7f1cbd45fd13dbca164afff48eeea241bf146d",
             "content": "sha256:c4209129e8ada05048a0af6e695f36e703c92c414bb51fbecdb94b2a967adc12",
             "locator": {
-              "end": 116,
+              "end": 115,
               "kind": "line_range",
-              "start": 107
+              "start": 106
             }
           },
           "kind": "test"
@@ -76,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
+            "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
             "content": "sha256:11dc123b5aea780e250e25816f2595c33acabe2cfa9800b858604e73a3abe0c0",
             "locator": {
-              "end": 633,
+              "end": 625,
               "kind": "line_range",
-              "start": 633
+              "start": 625
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -90,16 +90,16 @@
       ]
     },
     "2": {
-      "note": "The drift-snapshot branch uses a preview-aware expectation; its adjacent comment records the earlier missing-keyword cause and merge provenance.",
+      "note": "The drift-snapshot branch uses a preview-aware expectation; its adjacent comment records the earlier missing-keyword cause and merge provenance.\n\nAnchor: `n/a` (branch range)",
       "targets": [
         {
           "anchor": {
-            "blob": "99886f1b1bae224fcc65de23608c833a0262d37e",
-            "content": "sha256:c8d0d2ed2d2f05b827a808b7e23c4adf256743d856c179d7b456bb83557bc645",
+            "blob": "4f5583dd08a581786d6b82c0db4d7e2076ac3706",
+            "content": "sha256:14a7a0e1cc6220100244fd30aea138bd522964c0f806c848ff0de89ab225474a",
             "locator": {
-              "end": 311,
+              "end": 309,
               "kind": "line_range",
-              "start": 294
+              "start": 292
             },
             "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
           },
@@ -112,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "99886f1b1bae224fcc65de23608c833a0262d37e",
+            "blob": "4f5583dd08a581786d6b82c0db4d7e2076ac3706",
             "content": "sha256:8424233502692b60fd86497878b882868fb53aa145e1d6c593f2afc4bbc08357",
             "locator": {
               "end": 240,
@@ -125,12 +125,12 @@
         },
         {
           "anchor": {
-            "blob": "99886f1b1bae224fcc65de23608c833a0262d37e",
+            "blob": "4f5583dd08a581786d6b82c0db4d7e2076ac3706",
             "content": "sha256:acf98397d55298efdb27b76b7e3f26b054f6e5c193da5698d55efddd151ded17",
             "locator": {
-              "end": 684,
+              "end": 657,
               "kind": "line_range",
-              "start": 668
+              "start": 641
             },
             "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
           },
@@ -139,15 +139,16 @@
       ]
     },
     "4": {
-      "note": "The result type that bundles the outputs with whether they are a preview.",
+      "note": "The result type that bundles the outputs with whether they are a preview.\n\nAnchor: `` `TerminalResult` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "99886f1b1bae224fcc65de23608c833a0262d37e",
-            "content": "sha256:7e524ab2da1ff9f98bcf389858f79a16569bb012367c7f625500eec228c237cd",
+            "blob": "4f5583dd08a581786d6b82c0db4d7e2076ac3706",
+            "content": "sha256:0b9b6d4b1fd29ec03c9a55e9c758a9f12f17c5731aa05d3055213cc91a0f5b07",
             "locator": {
-              "kind": "symbol",
-              "name": "TerminalResult"
+              "end": 256,
+              "kind": "line_range",
+              "start": 243
             },
             "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
           },
@@ -173,15 +174,16 @@
       ]
     },
     "6": {
-      "note": "One terminal result whose only non-empty collection is the drift snapshot.",
+      "note": "One terminal result whose only non-empty collection is the drift snapshot.\n\nAnchor: `` `_result` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "6829cbfb7b2567a1a9e98001ae09ab186936f104",
-            "content": "sha256:ccb3357d6fcf7931eaea97dcbc53c444a49f8283a0531165eb86e2bbfe523477",
+            "blob": "4f7f1cbd45fd13dbca164afff48eeea241bf146d",
+            "content": "sha256:9a986230eb04e38fb09a74be8a2cacf5c75843fa485ca04ffcb32999221e15b4",
             "locator": {
-              "kind": "symbol",
-              "name": "_result"
+              "end": 40,
+              "kind": "line_range",
+              "start": 27
             }
           },
           "kind": "test"
@@ -193,7 +195,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6829cbfb7b2567a1a9e98001ae09ab186936f104",
+            "blob": "4f7f1cbd45fd13dbca164afff48eeea241bf146d",
             "content": "sha256:50768a9de513c87259ba8629b24f5446c1ac4cbf3f51c30e60e5514af26cfdb4",
             "locator": {
               "kind": "symbol",
@@ -209,7 +211,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6829cbfb7b2567a1a9e98001ae09ab186936f104",
+            "blob": "4f7f1cbd45fd13dbca164afff48eeea241bf146d",
             "content": "sha256:a048511a27fed0bd707dcfdc2a2d285a8e1959af4f95417e69de37408642d37d",
             "locator": {
               "kind": "symbol",
@@ -220,7 +222,7 @@
         },
         {
           "anchor": {
-            "blob": "6829cbfb7b2567a1a9e98001ae09ab186936f104",
+            "blob": "4f7f1cbd45fd13dbca164afff48eeea241bf146d",
             "content": "sha256:345604c434a637ac6948ff1915de9a0fafdc0ac28361b96cef7c2c1a6c663dc2",
             "locator": {
               "kind": "symbol",
@@ -236,7 +238,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6829cbfb7b2567a1a9e98001ae09ab186936f104",
+            "blob": "4f7f1cbd45fd13dbca164afff48eeea241bf146d",
             "content": "sha256:9d553baba62f3dcd636b802dad368f8b1e281ff37fe286269c05095fa9a7432d",
             "locator": {
               "kind": "symbol",

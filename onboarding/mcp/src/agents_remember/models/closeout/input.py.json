@@ -211,7 +211,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "blob": "84e6d16dce258302a255f01dcf9ee9347dbdb793",
             "content": "sha256:ded9434595ee95aa22bb7a4663f23ce66d79f845bb753c206d9512e29970ee22",
             "locator": {
               "end": 25,
@@ -224,12 +224,12 @@
         },
         {
           "anchor": {
-            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "blob": "84e6d16dce258302a255f01dcf9ee9347dbdb793",
             "content": "sha256:8fe8d2dbc5ef9a40e9118c3f3035400382b7d92aa7c66a818470c579b2a36af7",
             "locator": {
-              "end": 84,
+              "end": 83,
               "kind": "line_range",
-              "start": 78
+              "start": 77
             },
             "path": "layers.toml"
           },

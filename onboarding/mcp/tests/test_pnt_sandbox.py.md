@@ -35,7 +35,6 @@ requires empty errors, every expected non-null root and the resolver's five keys
   `_helper_under_test()`/`_recording_stream()` observe whether a server was started at all.
 - **Admission.** `test_a_resolved_host_outside_the_sandbox_is_refused_before_any_call`,
   `test_a_request_that_names_no_sandbox_is_refused`,
-  `test_the_admission_refuses_a_server_with_configured_providers`,
   `test_a_sandbox_whose_settings_select_another_host_is_refused`,
   `test_a_host_outside_the_sandbox_refuses_in_the_unconfigured_phase` and
   `test_a_request_port_that_is_not_a_sandbox_port_is_refused` each refuse by name;
@@ -59,9 +58,7 @@ assumption.
 
 ## Evidence
 
-
 - The sandbox safety check, build inputs, tool-server environment and admission. [1]
-
 
 - The safety case for the product Node and cache roots. [2]
 
@@ -76,10 +73,8 @@ assumption.
 - A resolved host outside the sandbox is refused before any call, naming both hosts. [8]
 
 - A request that names no sandbox is refused before anything starts. [9]
-- The admission refuses a server with configured providers after the `server_info` read. [10]
 
 - A sandbox whose own settings select another home or the live port refuses. [11]
-
 
 - The unconfigured state refuses a foreign resolved host. [12]
 

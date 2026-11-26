@@ -57,15 +57,16 @@
       ]
     },
     "2": {
-      "note": "The native removed-store owner inventories the known retired parts, including separately admitted terminal lock residues.",
+      "note": "The native removed-store owner inventories the known retired parts, including separately admitted terminal lock residues.\n\nAnchor: `` `removed_part_stores` ``",
       "targets": [
         {
           "anchor": {
-            "blob": "919a71b491ed753daa97927f49bcf27947690f71",
-            "content": "sha256:30df359dcfb250d017428959e8ac344766868db94af85d56522a271b5bba720a",
+            "blob": "49abd7dedfb211e2a1da7ba9ee529b133fc1cf74",
+            "content": "sha256:f37a3ef714f628548e6d3cbf9c1499fc3852a29c8d5bd11995f0789112e7cd35",
             "locator": {
-              "kind": "symbol",
-              "name": "removed_part_stores"
+              "end": 240,
+              "kind": "line_range",
+              "start": 207
             },
             "path": "mcp/src/agents_remember/install/removed_stores.py"
           },

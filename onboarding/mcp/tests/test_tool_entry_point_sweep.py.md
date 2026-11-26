@@ -4,8 +4,6 @@
 
 The self-contained world now builds without an ambient lifecycle. Its prepared_state/state_after strings are fixed fixture labels, not observations. The ambient matrix, arrange helper and STATE_DEPENDENT_RAISERS/AMBIENT_STATES/population declarations are removed. Retained roster equality, exact envelope pins, three-axis refusal marks, choke/census controls and read-only annotation/file oracles remain separate guarantees. No test invocation or historical census is renewed. The current main module imports its world, classifier and population pins from `tool_entry_point_sweep_support.py`; negative controls live in `test_tool_entry_point_sweep_controls.py` and read-only oracles in `test_tool_entry_point_read_only.py`. The support declares an empty `ENVELOPE_LOSING_RAISERS`, `T34_REPAIRED_TOOLS={memory_baseline_adopt}` and empty `UNMARKED_NOT_OK`. Current equality assertions remain in the main probe. Older inline line positions and explicitly superseded captions below retain their source epoch; they are not current owner locations.
 
-
-
 The self-contained world seeds user settings through the protected-settings guard under pytest’s isolated XDG home; its code repository is a workspace sibling. The benign census includes `direct_execution_grant` and explicit canonical leaf identity for direct landing. The invalid-input control omits required `repo_id`. The census includes `role_start_set` and native `retire_child`; caller/no-target refusals do not prove a bound Manager set or successful retirement.
 
 ### MIK-R109 read-only annotation assertions
@@ -317,21 +315,15 @@ No configured domain evidence applies to the file-local claims above.
 The anchors below identify current behaviour of this module; they are not execution evidence and
 they make no acceptance claim.
 
-
 - `EntryPointProbeTests` owns the current boundary described above.
 
 Anchor: `ENVELOPE_LOSING_RAISERS`
 
 Current source: The current support source declares ENVELOPE_LOSING_RAISERS as an empty frozenset and T34_REPAIRED_TOOLS as the one-member memory_baseline_adopt set. The sweep source asserts equality with observed error-arm tools in both directions and a named refusal for that surviving T34 member. These are source declarations/assertions, not a fresh run or current four-tool backlog.
 
-
-
 - The sweep itself: one world, one run, and the equality assertions that bind every pin.
 
-
-
 - The support classifier derives refusal marks from nonempty strings in the delivered payload. [29]
-
 
 Anchor: `UNMARKED_NOT_OK`
 
@@ -341,41 +333,19 @@ Anchor: `EntryPointWorld`
 
 Current source: The ordinary EntryPointWorld source constructs one temporary coordination root, code and memory repositories and a real leaf enclosure through the public tools. Its close method cleans the temporary world; the retained opened-lifecycle/ended caption is historical and does not describe a current lifecycle API call.
 
-
-
 - The support classifier extracts the model name from validation detail and compares it with the registered response model. [32]
-
 
 - The ordinary sibling classifier also compares the validation error model name with the tool’s registered response model. [52]
 
-
-
-
 - The extracted invalid-argument control calls citation_fix without repo_id and requires the citation_fixArguments arm. [53]
-
-
-
-
-
-
 
 - The main probe requires exactly the two declared scaffold additions in the memory census and untracked status. [35]
 
-
-
-
-
-
 - The main coverage case compares this sweep’s invocation table and live server advertisement with the public roster. [37]
-
-
-
 
 - The extracted controls check one memory-file add, code-file rewrite and delete, and three changes outside the coordination write zones. [39]
 
-
 - The advertised roster the swept population is derived from and asserted equal to. [41]
-
 
 - The ordinary sibling coverage case checks its own invocation table and live advertisement against PUBLIC_TOOLS. [54]
 
@@ -383,24 +353,13 @@ Current source: The ordinary EntryPointWorld source constructs one temporary coo
 - The registry whose models classify a payload that does not validate. [42]
 
 
-
-
 - The extracted bypass control returns a raw dictionary past `_tool_payload` and checks that the support classifier sees an unvalidatable result. [43]
-
-
-
-
 
 - The extracted control calls the response validator with an undeclared key and checks the support classifier’s unvalidatable arm. [44]
 
-
-
 - The three 60-second phase limits and the named timeout that the classifier does not count as a product raiser.
 
-
-
 - The extracted control patches a server handler to withhold its answer and requires a named three-second timeout, handler closure and a successful next call. [46]
-
 
 Anchor: `test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope`
 
@@ -409,7 +368,6 @@ Current source: The current sweep asserts exact equality between observed error-
 Anchor: `ENVELOPE_LOSING_RAISERS`
 
 Current source: The current support source declares ENVELOPE_LOSING_RAISERS as an empty frozenset and T34_REPAIRED_TOOLS as the one-member memory_baseline_adopt set. The sweep source asserts equality with observed error-arm tools in both directions and a named refusal for that surviving T34 member. These are source declarations/assertions, not a fresh run or current four-tool backlog.
-
 
 ### Cross-Repo References
 
@@ -421,18 +379,11 @@ No repository or external-system boundary is proved by this module.
 
 - The self-contained world obtains its protected-settings write path and uses a workspace-sibling code repository. [55]
 
-
-
 - The benign support table names the canonical leaf reference for direct landing and the isolated grant input. [56]
-
-
-
 
 - ENVELOPE_LOSING_RAISERS is empty on the current source, and exact bidirectional equality still pins it; the four L111 raisers it once carried are historical, not today's backlog. No sweep execution, broader acceptance or relaxed pin is implied by this declaration.
 
-
 ## Current source evidence
-
 
 - Envelope loss is pinned empty; the positive T34 population retains only memory_baseline_adopt.
 
@@ -440,40 +391,55 @@ No repository or external-system boundary is proved by this module.
 
 
 
-
-
-
 - The current support source declares ENVELOPE_LOSING_RAISERS as an empty frozenset and T34_REPAIRED_TOOLS as the one-member memory_baseline_adopt set. The sweep source asserts equality with observed error-arm tools in both directions and a named refusal for that surviving T34 member. These are source declarations/assertions, not a fresh run or current four-tool backlog. [26]
+
 
 
 
 - The support world declares an empty unmarked-refusal map. The main test compares it with both the classified and directly counted populations. [30]
 
 
+
 - The ordinary EntryPointWorld source constructs one temporary coordination root, code and memory repositories and a real leaf enclosure through the public tools. Its close method cleans the temporary world; the retained opened-lifecycle/ended caption is historical and does not describe a current lifecycle API call. [31]
+
 
 
 - The support call uses 60-second limits for session initialization, tool response and session cleanup. A named timeout leaves call without entering the product outcome classifier. [45]
 
 - `EntryPointProbeTests` owns the current boundary described above. Anchor: `EntryPointProbeTests` [47]
 
+
+
 - The current sweep asserts exact equality between observed error-arm tools and ENVELOPE_LOSING_RAISERS in both directions, then asserts none of the current T34_REPAIRED_TOOLS population raises. That population now contains only memory_baseline_adopt; the original nine-tool caption is historical. No source assertion is an executed result. [49]
+
+
+
 
 
 - The current support source declares ENVELOPE_LOSING_RAISERS as an empty frozenset and T34_REPAIRED_TOOLS as the one-member memory_baseline_adopt set. The sweep source asserts equality with observed error-arm tools in both directions and a named refusal for that surviving T34 member. These are source declarations/assertions, not a fresh run or current four-tool backlog. [50]
 
 
+
+
+
 - ENVELOPE_LOSING_RAISERS is empty on the current source, and exact bidirectional equality still pins it; the four L111 raisers it once carried are historical, not today's backlog. No sweep execution, broader acceptance or relaxed pin is implied by this declaration. [57]
+
+
+
 
 
 - Envelope loss is pinned empty; the positive T34 population retains only memory_baseline_adopt. [58]
 
 
-- The main probe retains exact equality between observed raisers and the current pin. Anchor: `EntryPointProbeTests.test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope` [59]
+
+
+
+- The main probe retains exact equality between observed raisers and the current pin. [59]
+
+
 
 
 - Both ordinary and support worlds are exercised with RuntimeWarning messages that are nonempty or empty. The cases require the captured detail string, actual exception type and innermost traceback file:line. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [60]
-
 
 - The source-defined positive control over the choke point and both break shapes at the entry point. [38]
 

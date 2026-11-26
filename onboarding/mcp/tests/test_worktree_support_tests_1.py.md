@@ -59,7 +59,6 @@ No configured external domain-documentation evidence.
 The earlier working-candidate inspection used L9. The references below describe the retained assertions in W8.
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
-
 ### Cross-Repo References
 
 The code/memory or fixture-repository boundaries above are established by package-local source.
@@ -79,8 +78,6 @@ This file owns no ambient cross-repository authority. Any external-memory reposi
 
 - The fixture queue and early refusal helpers retain typed inputs and exact bindings. [1]
 
-
 - The scenario verifies the start and reattach binding, the abandoned leaf states, removal of the leaf code worktree and branch, and preservation of the parent series contract and branch. [2]
-
 
 - Shared closeout-input helpers are background support, not called by this retained scenario. [3]

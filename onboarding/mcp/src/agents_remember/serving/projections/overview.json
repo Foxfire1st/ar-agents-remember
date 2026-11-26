@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55b370f0c63cc924e024f719d082ae36c33558a4",
+            "blob": "4b28d9f5bd0979aa717acb261bab08ab978fd8e7",
             "content": "sha256:ae1a2ceefafb1d5985391b9d96db4a5c69760c13cea6f4d50a5553b6b5ac1d2a",
             "locator": {
               "kind": "symbol",
@@ -457,16 +457,39 @@
       ]
     },
     "5": {
-      "note": "Serving locally defines equivalent observer paths rather than importing the kernel definitions.",
+      "note": "Serving locally defines equivalent observer paths rather than importing the kernel definitions.\n\nAnchor: `observer_logs_root`, `observer_root`, `drift_snapshot_dir`",
       "targets": [
         {
           "anchor": {
-            "blob": "199d14e1e97d80f9655d7de2eaa66aa556c4f69f",
-            "content": "sha256:7b2a15da424bc5c829e72acabdb15cca6543d96bf08ebcd1f3887ed1b793146d",
+            "blob": "f05d72d30bca2953f357e18387f6a4f6cc7b2191",
+            "content": "sha256:ae1a2ceefafb1d5985391b9d96db4a5c69760c13cea6f4d50a5553b6b5ac1d2a",
             "locator": {
-              "end": 41,
-              "kind": "line_range",
-              "start": 14
+              "kind": "symbol",
+              "name": "observer_logs_root"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f05d72d30bca2953f357e18387f6a4f6cc7b2191",
+            "content": "sha256:e480f569304f8192087d573b7bb07fc208c8a458bbfd6cde0184b341edb758a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "observer_root"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f05d72d30bca2953f357e18387f6a4f6cc7b2191",
+            "content": "sha256:c24eec167e05dd5320876f151b8a90bef29d79798675f6ba7e99303572d6e2a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "drift_snapshot_dir"
             },
             "path": "mcp/src/agents_remember/serving/projections/paths.py"
           },
@@ -589,16 +612,27 @@
       ]
     },
     "9": {
-      "note": "Current enclosure readers project lifecycle operations with the durable operation reader's tolerant boundary. Earlier inbox/expectation-copying and inbox-compaction accounts are historical, absent from current runtime readers and input slots.",
+      "note": "Current enclosure readers project lifecycle operations with the durable operation reader's tolerant boundary. Earlier inbox/expectation-copying and inbox-compaction accounts are historical, absent from current runtime readers and input slots.\n\nAnchor: `read_enclosures`, `_enclosure_from_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "1d18eca6aa7f7a47d12546c8e5b12a68370fb69c",
-            "content": "sha256:dda08059c825960502a94c07c87deea5f3bc3e05fab59cd04c5934431d777248",
+            "blob": "9f136f90658cc141133789dbc1642d8728fcba85",
+            "content": "sha256:2f6940ab288c04c55a6691b11a7e8de53c87916c70766ee9b6a9b3b8dd87dc0e",
             "locator": {
-              "end": 149,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "read_enclosures"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9f136f90658cc141133789dbc1642d8728fcba85",
+            "content": "sha256:bd6a5a1827fb2530490118da9c7bd1c33fff29f18675ed2d26fa898e1d970f9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_enclosure_from_contract"
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
           },

@@ -162,12 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+            "blob": "7599a7500c820d44935f23957a1f11bde7d03941",
             "content": "sha256:17a81bccd3430a978370b90c55371ea8454ff195ab33a67e332de78e81cb11c7",
             "locator": {
-              "end": 111,
+              "end": 109,
               "kind": "line_range",
-              "start": 97
+              "start": 95
             },
             "path": "mcp/certification-profile-v1.json"
           },

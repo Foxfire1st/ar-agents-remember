@@ -94,11 +94,11 @@
       ]
     },
     "7": {
-      "note": "`stackItem`/`healthDot`/`phaseChip` `health`-variant recipes",
+      "note": "`stackItem`/`healthDot`/`phaseChip` `health`-variant recipes\n\nAnchor: `stackItem`, `healthDot`, `phaseChip`, `Source`: `dashboard/src/panels/engine-room/layout.styles.ts:127-155`, `194-215`, `230-256`",
       "targets": [
         {
           "anchor": {
-            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
+            "blob": "7e25993923f47c15d0233ebb17612f264ac04bd8",
             "content": "sha256:09c0d8d001339fc44a99ea4a59737a494b60e862b798cf58659ddfc831ecdd24",
             "locator": {
               "kind": "symbol",
@@ -110,7 +110,7 @@
         },
         {
           "anchor": {
-            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
+            "blob": "7e25993923f47c15d0233ebb17612f264ac04bd8",
             "content": "sha256:5de7520067a7984282375194629a00bcc4e15cc28258cd7b24594a4b143bda57",
             "locator": {
               "kind": "symbol",
@@ -122,8 +122,8 @@
         },
         {
           "anchor": {
-            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
-            "content": "sha256:e69262c9162561589714c55ab15aa15635aea8d5a8a756e0617d44c4e46b884f",
+            "blob": "7e25993923f47c15d0233ebb17612f264ac04bd8",
+            "content": "sha256:e1fbfc7ca25208d48c6d497db2a6b645746959ac2a40ba46e53488aef4e60c5b",
             "locator": {
               "kind": "symbol",
               "name": "phaseChip"
@@ -139,7 +139,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
+            "blob": "7e25993923f47c15d0233ebb17612f264ac04bd8",
             "content": "sha256:50937e62d1ea53a3b68a16332d004a9691e5ef6739acebc65501fc151e3fc476",
             "locator": {
               "kind": "symbol",

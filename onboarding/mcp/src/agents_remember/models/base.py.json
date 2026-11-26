@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "blob": "7a3dabb24c98cd9bec8de248f48097a4fe334570",
             "content": "sha256:03bbbb56ffd849e0dfcb39586f29fbb3b0c1988d0baa31728573fe42d49b309c",
             "locator": {
               "end": 111,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "blob": "7a3dabb24c98cd9bec8de248f48097a4fe334570",
             "content": "sha256:f3a913850738329909f19d4cf8b320178c85246011e9379462dc3ca5ffe77fa7",
             "locator": {
               "kind": "symbol",
@@ -36,16 +36,37 @@
       ]
     },
     "7": {
-      "note": "Strict/flexible bases and recursive reserved-key refusal.\n\nAnchor: source extent 13-44",
+      "note": "Strict/flexible bases and recursive reserved-key refusal.\n\nAnchor: `StrictResponseModel`, `FlexibleResponseModel`, `_require_no_reserved_decision_keys`",
       "targets": [
         {
           "anchor": {
-            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
-            "content": "sha256:4bb01111c3731e7a503fbc0c22b8b8c8b3005ff7f5eacacac6aa8b4d905fd3e6",
+            "blob": "7a3dabb24c98cd9bec8de248f48097a4fe334570",
+            "content": "sha256:82b1223f6a2dfe69490f7dacf49a68f6da3450399b2d6266267c975685458548",
             "locator": {
-              "end": 46,
-              "kind": "line_range",
-              "start": 15
+              "kind": "symbol",
+              "name": "StrictResponseModel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7a3dabb24c98cd9bec8de248f48097a4fe334570",
+            "content": "sha256:b0bb43931067ef2ce1a8deedd0b9877caf0e2cd231939061ee6b07371383bb26",
+            "locator": {
+              "kind": "symbol",
+              "name": "FlexibleResponseModel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7a3dabb24c98cd9bec8de248f48097a4fe334570",
+            "content": "sha256:f8bc426c5b0e32d86f4f3f9681e601489b1a0dbc68e3e969b55b64856f782900",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_no_reserved_decision_keys"
             }
           },
           "kind": "code"
@@ -53,16 +74,37 @@
       ]
     },
     "8": {
-      "note": "Typed optional guidance and both current response-envelope families.",
+      "note": "Typed optional guidance and both current response-envelope families.\n\nAnchor: `NextStep`, `ResponseModel`, `FlexibleResponseEnvelope`, `ResponseEnvelope`",
       "targets": [
         {
           "anchor": {
-            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
-            "content": "sha256:2c57a64f3a4a031abefc2a1577bad8f22e6d426126d82dee22a564cf35075ddd",
+            "blob": "7a3dabb24c98cd9bec8de248f48097a4fe334570",
+            "content": "sha256:15d3f4db93f5bf69ca7ceaa940870bbd0a807f085c84b660496a82c189c88b5f",
             "locator": {
-              "end": 131,
-              "kind": "line_range",
-              "start": 49
+              "kind": "symbol",
+              "name": "NextStep"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7a3dabb24c98cd9bec8de248f48097a4fe334570",
+            "content": "sha256:ad3bf78d4645f124ffffb64871cd3a6578a8abd6d974757dec64dfda336272e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResponseModel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7a3dabb24c98cd9bec8de248f48097a4fe334570",
+            "content": "sha256:a85aa5342c326f1e6683379c7639d657fb82ab1a40ad9476b09b82b81f828d84",
+            "locator": {
+              "kind": "symbol",
+              "name": "FlexibleResponseEnvelope"
             }
           },
           "kind": "code"
@@ -74,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "blob": "7a3dabb24c98cd9bec8de248f48097a4fe334570",
             "content": "sha256:03bbbb56ffd849e0dfcb39586f29fbb3b0c1988d0baa31728573fe42d49b309c",
             "locator": {
               "end": 84,

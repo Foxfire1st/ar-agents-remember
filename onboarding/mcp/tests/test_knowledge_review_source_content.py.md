@@ -64,7 +64,6 @@ only the packet's boundary forbids it.
 
 **The twenty cases, in the four groups the module's own section comments mark:**
 
-
 | Case | Property |
 | --- | --- |
 | `test_a_modified_file_opens_both_endpoints_own_bytes` | the modified path opens the base tree's bytes and the captured tree's, each read independently, and the two differ exactly as those objects do; the answer also names the objects it rests on |
@@ -147,10 +146,7 @@ served body together.
 - The lane marker and the content-class constants, one path per class the packet names. [2]
 - **The content classes materialized for real: a blob, a symlink, a gitlink, a mode change, a type change, an oversized document and a name that is not a line.** [4]
 
-
 - **The shared R01 production fixture these cases extend rather than duplicate.** Anchor: `content_fixture` `build_endpoint_fixture` `EndpointFixture` [5]
-
-
 
 - **The routes wired as the composition root wires them, over the real application owners.**
 
@@ -195,5 +191,7 @@ Anchor: `_served` `register_review_routes` `read_review_source_content` [6]
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-3372 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+
 
 - The unit-regression lane selects `mcp/tests/test_knowledge_review_source_content.py`. The lifecycle catalog lists `mcp/tests/test_knowledge_review_source_content.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. These source declarations establish no execution or passing result. [22]

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "08004e49e2337e24b235a748f21b56bea44d8192",
-        "content": "sha256:661f7438655f25d884b1596b31cfcc04ba609633dd8e5906acc6f0b839cca405",
+        "blob": "77ad587d2a9a0390eee4192ea92321aafb94da56",
+        "content": "sha256:3f73a468d32a0ca49fb6a95fa9fc71f3c22cce399224496c3016e19ab208eb5c",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08004e49e2337e24b235a748f21b56bea44d8192",
+            "blob": "77ad587d2a9a0390eee4192ea92321aafb94da56",
             "content": "sha256:67bea92fe03b199c9359aa424c249afe5a95a580d5d90af9386c76dfb996350a",
             "locator": {
               "end": 17,
@@ -38,14 +38,14 @@
       ]
     },
     "2": {
-      "note": "Supplied-assignment check and provider-degradation report/order/no-kill boundaries, not restored runtime authority.",
+      "note": "Supplied-assignment check using handover bindings rather than an invented trust packet, confirming agreement across role, task, requirement version, roots, contract and report path and keeping onboarding changes with the Curator.\n\nAnchor: `## Check the supplied assignment before acting`",
       "targets": [
         {
           "anchor": {
-            "blob": "08004e49e2337e24b235a748f21b56bea44d8192",
-            "content": "sha256:70e6316fb4ddda0a19fccb0bc0ba66dec4d777d3842f5e442dac43a63702ff79",
+            "blob": "77ad587d2a9a0390eee4192ea92321aafb94da56",
+            "content": "sha256:c7c418c9586c812e28cae2935acecc952b2e3d0803321ee79634a864f9958088",
             "locator": {
-              "end": 36,
+              "end": 25,
               "kind": "line_range",
               "start": 19
             }

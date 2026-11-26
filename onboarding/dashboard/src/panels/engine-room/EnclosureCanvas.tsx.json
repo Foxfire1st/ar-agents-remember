@@ -54,12 +54,12 @@
         },
         {
           "anchor": {
-            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "blob": "57d37b97823e0b7bec930015b4ff52793eaf0da2",
             "content": "sha256:6779453514cca1cceb7a5413a587e4de5c1d477eeb60ce79ded43b485bbcfe7a",
             "locator": {
-              "end": 79,
+              "end": 78,
               "kind": "line_range",
-              "start": 79
+              "start": 78
             },
             "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
           },
@@ -67,12 +67,12 @@
         },
         {
           "anchor": {
-            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "blob": "57d37b97823e0b7bec930015b4ff52793eaf0da2",
             "content": "sha256:008c8fe11be65228379f6d81493136f504b76d9437b5ee82249ec83a8094a5d2",
             "locator": {
-              "end": 153,
+              "end": 152,
               "kind": "line_range",
-              "start": 153
+              "start": 152
             },
             "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
           },
@@ -170,12 +170,12 @@
       ]
     },
     "15": {
-      "note": "`EngineProcessEdge`'s documented `kind` and `state` vocabularies — `integration` is in one, `refused` in neither, and there is no `refusedPolarity` field.",
+      "note": "`EngineProcessEdge`'s documented `kind` and `state` vocabularies — `integration` is in one, `refused` in neither, and there is no `refusedPolarity` field.\n\nAnchor: `EngineProcessEdge`, `Source`: `mcp/src/agents_remember/observer/projection.py:295-315`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
-            "content": "sha256:4b31b460cf2bfd78dc4589df8a552c328a633762e9e07d658f5db4e360b63935",
+            "blob": "001c87448f054e5e0fc5d448ca9aca53a3a3e17a",
+            "content": "sha256:d936091ae23a461972e677f948e783aaceb44425c5a6e4530b0b7487b4c0b8d8",
             "locator": {
               "kind": "symbol",
               "name": "EngineProcessEdge"
@@ -191,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "blob": "b0260f958e6606a260ea3b52a8d9557bfbc06d38",
             "content": "sha256:a4f266f5dd15d6d2cf7e9bd92bb9f928fe1a0b05e166728552c4523c59af83da",
             "locator": {
               "end": 374,
@@ -209,7 +209,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "blob": "b0260f958e6606a260ea3b52a8d9557bfbc06d38",
             "content": "sha256:50c623d5e8c97a3a2abaff722e6ad114a8dfddff6c0162050aa67b796be34a01",
             "locator": {
               "end": 124,
@@ -427,12 +427,12 @@
         },
         {
           "anchor": {
-            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "blob": "57d37b97823e0b7bec930015b4ff52793eaf0da2",
             "content": "sha256:008c8fe11be65228379f6d81493136f504b76d9437b5ee82249ec83a8094a5d2",
             "locator": {
-              "end": 153,
+              "end": 152,
               "kind": "line_range",
-              "start": 153
+              "start": 152
             },
             "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
           },
@@ -477,22 +477,6 @@
               "kind": "symbol",
               "name": "EnclosureCanvas"
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "22": {
-      "note": "The `engineState` selector that derives each workspace engine's runtime.\n\nAnchor: `engineState`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
-            "content": "sha256:f9a468be21f745ce68abb4692d7cff78eddbba96844874c4ee80194c83731e5e",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/data/selectors.ts"
           },
           "kind": "code"
         }

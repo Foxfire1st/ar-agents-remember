@@ -83,14 +83,16 @@
       ]
     },
     "4": {
-      "note": "Registration in the umbrella. Anchor: \"knowledge-format\"",
+      "note": "Registration in the umbrella. Anchor: \"knowledge-format\"\n\nAnchor: `\"knowledge-format\"`",
       "targets": [
         {
           "anchor": {
-            "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
-            "content": "sha256:613c37c3db22be57c080b3cf49798d4227eb19d20bd1c44b3846ccc90e6b14e0",
+            "blob": "4526df89af2de6d4287146ee506b3eb9820e187e",
+            "content": "sha256:d1f92d08e59b833c3f3dccbc58696f295cc8f61975e7f4b4350e81283ad5a1e1",
             "locator": {
-              "kind": "file"
+              "end": 108,
+              "kind": "line_range",
+              "start": 103
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
