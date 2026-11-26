@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
-        "content": "sha256:9d5475340d5e38478149c544311264cc8ab47503df9529a722ee06f5be357425",
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+        "content": "sha256:0f56026d2282c75995fe899363cb20f80788dd3465a7a674607e4a232dbe8602",
         "locator": {
           "kind": "symbol",
           "name": "_sweep_receipt"
@@ -16,12 +16,30 @@
         "handoffEntry": "MIK-R171@v1 rule 5",
         "leaf": "260928-MIK-L171"
       },
-      "rationale": "It performs one receipt's drain and turns a failed one into a returned state plus a log line with the recipient and the reason, instead of returning silently.",
+      "rationale": "Performs one receipt's drain, logs one warning and returns None on (ValueError, HTTPException) receipt read failures without aborting the sweep, and turns a failed drain into a returned state plus a log line with recipient and reason.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+        "content": "sha256:a5e592ddd5718311391209f72d34b54ed7c579ae91e2667ccf4796e59366d9e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "apply_drain_to_receipt"
+        }
+      },
+      "id": "RLZ-27ZNFR",
+      "invariant": "INV-SB6HQS",
+      "origin": {
+        "handoffEntry": "BUG-R35@v1 §2",
+        "leaf": "261112-BUG-L35"
+      },
+      "rationale": "Catches (ValueError, HTTPException) on _read_receipt(path) and locked open_held_store(ref) while preserving HeldSeatClosed as a silent False return, logging one warning naming the path and returning False without aborting the sweep.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
         "content": "sha256:b32993d54b51d3cdbe19363a305d9c116177bee4877055ddc0c37a6a4a187c62",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
         "content": "sha256:1840845c59103e95fef82567c8c05000db7538c46bf821194f21667cfebdc0b7",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
         "content": "sha256:b0c9186b5ac774f445e4639747697e77c4cc206369a28574b28b1fa0d2bb76ec",
         "locator": {
           "kind": "symbol",
@@ -93,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
         "content": "sha256:633c8c08df3553407d329b91fbcb568e13ac557d18a253948f535c308b51daca",
         "locator": {
           "kind": "symbol",
@@ -111,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
-        "content": "sha256:af49b313ef273b099041dd612f7b29988763667e21d0382af8b16e8b39c1d245",
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+        "content": "sha256:9ba4a9d2cd2a9a4d80b9c2e464adff6d0711f4a2d502b670fae7db49f77fae16",
         "locator": {
           "kind": "file"
         }
@@ -128,7 +146,7 @@
     },
     {
       "anchor": {
-        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
         "content": "sha256:fbe1cc81eef38665b89207617e8c19ad55fc8d233d4d4a9f9656a0c2c881a4ae",
         "locator": {
           "kind": "symbol",
@@ -146,7 +164,7 @@
     },
     {
       "anchor": {
-        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
         "content": "sha256:f7a6652318bdd89d79a3dbcf5399d17639d1bbdc7aae785d97992a96869ad9d4",
         "locator": {
           "kind": "symbol",
@@ -164,7 +182,7 @@
     },
     {
       "anchor": {
-        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
         "content": "sha256:077454d067fb511e7267e0600ded9210c8a8f6f3cabee4b5175d6a33328eef5f",
         "locator": {
           "kind": "symbol",
@@ -182,7 +200,7 @@
     },
     {
       "anchor": {
-        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
         "content": "sha256:8eec25d18387148541c8897194b740b6cbbd476cb64885562105774a07c4b91d",
         "locator": {
           "kind": "symbol",
@@ -200,7 +218,7 @@
     },
     {
       "anchor": {
-        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
         "content": "sha256:f9ee6451eead98f3bcde072fbeccd959f7dd6d1679021dae0b96a779499ffe83",
         "locator": {
           "kind": "symbol",
@@ -218,7 +236,25 @@
     },
     {
       "anchor": {
-        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+        "content": "sha256:14fe910ca3c8ef9a7f152d5f4b8271fb6f9e5bc69855a148917f3352da021dd4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_refresh_waiting_count"
+        }
+      },
+      "id": "RLZ-K9PMVJ",
+      "invariant": "INV-SB6HQS",
+      "origin": {
+        "handoffEntry": "BUG-R35@v1 §2",
+        "leaf": "261112-BUG-L35"
+      },
+      "rationale": "Delegates to _refresh_store_waiting_count(ref) and catches (ValueError, OSError, HTTPException), logging one warning naming ref.receipt_path instead of aborting the sweep while refreshing the waiting count.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
         "content": "sha256:9d7490d94cc40499bf7ebdc95704f0abf096c6be2fd2f44bf456c10707e7e9af",
         "locator": {
           "kind": "symbol",
@@ -236,7 +272,25 @@
     },
     {
       "anchor": {
-        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+        "content": "sha256:c539236032322492374f2b7e17952dc1df5c22015cf49a754016529e54edfae6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_apply_drain_result"
+        }
+      },
+      "id": "RLZ-QS13W5",
+      "invariant": "INV-SB6HQS",
+      "origin": {
+        "handoffEntry": "BUG-R35@v1 §2",
+        "leaf": "261112-BUG-L35"
+      },
+      "rationale": "Stages terminal ends, updates receipt fields, applies held-open confirmation, recounts waiting messages, and catches (OSError, HTTPException) on _write_receipt(path, current), logging one warning naming the path and returning False so staged terminal rows remain recoverable.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
         "content": "sha256:7d49633123665023102942c563ce6afe992a000fb89eeeb7c5b40c58a7656ba0",
         "locator": {
           "kind": "symbol",
@@ -254,7 +308,7 @@
     },
     {
       "anchor": {
-        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
         "content": "sha256:f9ee6451eead98f3bcde072fbeccd959f7dd6d1679021dae0b96a779499ffe83",
         "locator": {
           "kind": "symbol",
@@ -272,7 +326,7 @@
     },
     {
       "anchor": {
-        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
         "content": "sha256:38bc33280ed884a17b5127965c72fd643583fd316437859f9979da9e61f08ab5",
         "locator": {
           "kind": "symbol",
@@ -290,7 +344,7 @@
     },
     {
       "anchor": {
-        "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
         "content": "sha256:7d49633123665023102942c563ce6afe992a000fb89eeeb7c5b40c58a7656ba0",
         "locator": {
           "kind": "symbol",
@@ -305,6 +359,24 @@
       },
       "rationale": "The opening handover stages its ends before removal for the same deletion-to-staging window on the open path.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+        "content": "sha256:fcde7137e7db205cfbe255b6fb8f99ea44a285543dcafd878d283bfc97434ccd",
+        "locator": {
+          "kind": "symbol",
+          "name": "_readable_queued_receipt"
+        }
+      },
+      "id": "RLZ-Z9X42D",
+      "invariant": "INV-SB6HQS",
+      "origin": {
+        "handoffEntry": "BUG-R35@v1 §2",
+        "leaf": "261112-BUG-L35"
+      },
+      "rationale": "Catches (ValueError, HTTPException), logs one warning naming the path, and returns None so a rejected receipt stays out of queued turn-end draining without aborting the tick.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -313,23 +385,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
-            "content": "sha256:f24e9b96d44f4e09ca101d1be3515fb986c4ac59609e93764a502a9751d9a305",
+            "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
+            "content": "sha256:826c25994825fc05cae0e5ceadf840cbf2d53956fbd92ce947f1f5694772635a",
             "locator": {
-              "kind": "file"
-            }
+              "kind": "symbol",
+              "name": "hold_message"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "A drain delegates claim/readiness checks and whole-first FIFO delivery.",
+      "note": "A drain delegates claim/readiness checks and whole-first FIFO delivery.\n\nAnchor: `drain_held` `_deliver_waiting`",
       "targets": [
         {
           "anchor": {
-            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
-            "content": "sha256:f77a37756bb2272099237e72cd55ab96d3998ac3111cbad149b58c61bc1c38d9",
+            "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+            "content": "sha256:8e0593fc605532e44f4a792cee73ace6955e491edd77ab6c13a2c6155e059cb4",
             "locator": {
               "kind": "symbol",
               "name": "drain_held"
@@ -339,8 +413,8 @@
         },
         {
           "anchor": {
-            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
-            "content": "sha256:f0ab63ad221fad88615e7e1e89220f57324a014f7fb591f16e2254735f703c8b",
+            "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+            "content": "sha256:b0c9186b5ac774f445e4639747697e77c4cc206369a28574b28b1fa0d2bb76ec",
             "locator": {
               "kind": "symbol",
               "name": "_deliver_waiting"
@@ -351,15 +425,26 @@
       ]
     },
     "3": {
-      "note": "Terminal lines are published separately from ended text and retain failure state.",
+      "note": "Terminal lines are published separately from ended text and retain failure state.\n\nAnchor: `apply_drain_to_receipt` `_apply_drain_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "bb3d32ad4085a37b50818c544389fa5c12a057ab",
-            "content": "sha256:da5d00e4c3e5114a45f778ff637c3f68daf32565fb39bf463fd043b84fe6a380",
+            "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+            "content": "sha256:a5e592ddd5718311391209f72d34b54ed7c579ae91e2667ccf4796e59366d9e3",
             "locator": {
               "kind": "symbol",
               "name": "apply_drain_to_receipt"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+            "content": "sha256:c539236032322492374f2b7e17952dc1df5c22015cf49a754016529e54edfae6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_drain_result"
             }
           },
           "kind": "code"

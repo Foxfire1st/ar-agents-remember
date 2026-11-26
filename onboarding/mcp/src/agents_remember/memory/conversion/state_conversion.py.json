@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d119beb6ded123f180d095877829f76b649e76ee",
+        "blob": "a200098c5cc70fecf4f8c887017a3400130e2f5c",
+        "content": "sha256:be904a1b1976a6d0e385047b0b8643e89dd98686db68b20b6eddffe42d38c75d",
+        "locator": {
+          "kind": "symbol",
+          "name": "state_conversion_only"
+        }
+      },
+      "id": "RLZ-9ES91Z",
+      "invariant": "INV-R2Q8SW",
+      "origin": {
+        "handoffEntry": "BUG-R55@v1 §1-3",
+        "leaf": "261112-BUG-L55"
+      },
+      "rationale": "Defines the single shared predicate that applies the conversion's legacy status removal and validated writer-stamp addition to the canonical base document and compares canonical bytes against the candidate.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a200098c5cc70fecf4f8c887017a3400130e2f5c",
         "content": "sha256:99591e0040591b8d9b796a6de45b37b1c5a7771a47ddd218e93b473ef2b40e87",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "d119beb6ded123f180d095877829f76b649e76ee",
+        "blob": "a200098c5cc70fecf4f8c887017a3400130e2f5c",
         "content": "sha256:a091b492d15e14a25af7abba2c46c5ffd5b6b78233a1de10677846a446f8fc74",
         "locator": {
           "kind": "symbol",
@@ -44,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d119beb6ded123f180d095877829f76b649e76ee",
+            "blob": "a200098c5cc70fecf4f8c887017a3400130e2f5c",
             "content": "sha256:99591e0040591b8d9b796a6de45b37b1c5a7771a47ddd218e93b473ef2b40e87",
             "locator": {
               "kind": "symbol",
@@ -60,11 +78,54 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d119beb6ded123f180d095877829f76b649e76ee",
+            "blob": "a200098c5cc70fecf4f8c887017a3400130e2f5c",
             "content": "sha256:d2984506e8903ce2e5e308b3f1457d6ceaf08fe4755b5863792eee01a6bf980d",
             "locator": {
               "kind": "symbol",
               "name": "_plan_review_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`state_conversion_only` applies legacy status removal and validated writer-stamp addition to canonical base JSON and compares canonical bytes against candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a200098c5cc70fecf4f8c887017a3400130e2f5c",
+            "content": "sha256:be904a1b1976a6d0e385047b0b8643e89dd98686db68b20b6eddffe42d38c75d",
+            "locator": {
+              "kind": "symbol",
+              "name": "state_conversion_only"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_parse_json_object` and `_validated_stamp` enforce UTF-8 JSON object parsing and `WriterStamp` schema validation for the predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a200098c5cc70fecf4f8c887017a3400130e2f5c",
+            "content": "sha256:58eb929762b56eea4f9beaa7a7b7b6f36116f91b7041e5dfc88d6dfa7d53ac32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_json_object"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a200098c5cc70fecf4f8c887017a3400130e2f5c",
+            "content": "sha256:7305a83ac990a733f17a34e44b9aab2c1066a2a73dd96a08f35e934c29f10428",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validated_stamp"
             }
           },
           "kind": "code"

@@ -168,6 +168,35 @@
         }
       ]
     },
+    "104": {
+      "note": "`integration_gate_block` and `record_landing._landing_request` supply `master_document_base(...)` as `document_base` on master-end series requests and `None` on checkpoints or leaves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cccd81fa3fd4617162592eed504a9eafc91a3503",
+            "content": "sha256:42b9f1f622b674871030148b042028464ecf0ea485ff31b17c261ed469ef167d",
+            "locator": {
+              "kind": "symbol",
+              "name": "integration_gate_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
+            "content": "sha256:ac0b39ce3721759dd94efed02968b3c39744d3de1aca760a22df4ef0f6aaeb73",
+            "locator": {
+              "kind": "symbol",
+              "name": "_landing_request"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "11": {
       "note": "Retained reference account (no fresh execution or acceptance inferred): The shared missing or unsupported sidecar refusal, called by the curator trace entry.",
       "targets": [
@@ -364,7 +393,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
             "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
             "locator": {
               "kind": "symbol",
@@ -1191,8 +1220,20 @@
       ]
     },
     "52": {
-      "note": "Historical cutover-only leaf-integration account. Current _leaf_landing_lock rejudges a converted landed/landing-line memory pair; only the neither-side-converted branch falls back to leaf_cutover_refusal.",
+      "note": "`_leaf_landing_lock` rejudges a converted landed or landing-line memory pair and falls back to `leaf_cutover_refusal` only when neither side is converted.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "cccd81fa3fd4617162592eed504a9eafc91a3503",
+            "content": "sha256:24d7192cf2a23f2fb4db1d2286bcde370e7e67fe20194f37934b87ad17ddb87e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_landing_lock"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
@@ -1203,17 +1244,6 @@
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d2f3e6ac1adf4ec90ff5a8150cb65d2e46941403",
-            "content": "sha256:db02717153d515bdeec918a67b65300e96933de2ae80a8197b0525e3b7819cd1",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
-          },
-          "kind": "code"
         }
       ]
     },
@@ -1222,7 +1252,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
             "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
             "locator": {
               "kind": "symbol",
@@ -1625,16 +1655,27 @@
       ]
     },
     "72": {
-      "note": "Record landing probes conversion first and freezes parents only for recorded closed-out output. Anchor: `_knowledge_gate_refusal` `_landing_request`",
+      "note": "Record landing probes conversion first and freezes parents only for recorded closed-out output.",
       "targets": [
         {
           "anchor": {
-            "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
-            "content": "sha256:9ed1284312c2bd8aacbd7adfcf7bafd860e26e30a32e626ae1cef431ee2d8ff4",
+            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
+            "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
             "locator": {
-              "end": 426,
-              "kind": "line_range",
-              "start": 386
+              "kind": "symbol",
+              "name": "_knowledge_gate_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
+            "content": "sha256:ac0b39ce3721759dd94efed02968b3c39744d3de1aca760a22df4ef0f6aaeb73",
+            "locator": {
+              "kind": "symbol",
+              "name": "_landing_request"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
           },

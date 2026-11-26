@@ -65,26 +65,47 @@ only the packet's boundary forbids it.
 **The twenty cases, in the four groups the module's own section comments mark:**
 
 | Case | Property |
+
 | --- | --- |
+
 | `test_a_modified_file_opens_both_endpoints_own_bytes` | the modified path opens the base tree's bytes and the captured tree's, each read independently, and the two differ exactly as those objects do; the answer also names the objects it rests on |
+
 | `test_an_added_unmapped_file_opens_its_entire_candidate_text` | the packet's conforming example: an added file's whole candidate text, with a measured absence and its reason on the before side |
+
 | `test_a_deleted_file_opens_its_entire_base_text_beside_a_measured_absence` | the mirror image: the complete base text, an absent after side, and the proof that the file really is gone |
+
 | `test_a_tab_and_a_newline_in_a_name_is_the_address_its_content_opens_at` | the listed path is the address: a name with a tab and a newline opens its own object with no re-quoting and no substituted neighbour |
+
 | `test_a_binary_entry_states_its_kind_identity_and_size_with_no_text` | binary content is `binary`, carries its exact object and byte length, and never an empty document |
+
 | `test_a_symlink_entry_carries_the_link_target_and_never_a_document` | a symlink's content is its target, stated as such |
+
 | `test_a_submodule_entry_reports_the_recorded_pointer_and_no_file_bytes` | a gitlink is the commit it records, and no blob is invented for it |
+
 | `test_a_mode_only_change_shows_identical_bytes_and_names_the_mode` | the one change a content read must not present as an edit: identical bytes, one object id, the mode change stated |
+
 | `test_a_type_change_opens_each_side_by_its_own_kind` | a file that became a symlink reads as a document on one side and a target on the other |
+
 | `test_oversized_content_is_a_stated_bounded_expansion` | past the bound, a prefix that says it is one, with the exact size and the whole object still reachable by identity |
+
 | `test_the_expansion_stays_bound_when_the_branch_advances_after_the_listing` | the packet's "advance the branch between list and expansion" exercise: the *listed* bytes are served, the move is stated as `superseded`, and the control shows a re-listing carries the new generation |
+
 | `test_a_missing_object_is_unavailable_on_its_side_while_the_other_stays_inspectable` | one side's object is gone: that side is `unavailable`, the other stays readable, and the pair is admitted by a *measured* change set |
+
 | `test_a_pruned_base_blob_is_unavailable_on_its_side_while_the_candidate_side_is_served` | a real prune of one loose blob: both trees are whole, so the generation *is* measured, and the unreadable object is named rather than substituted |
+
 | `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set` | the verifier's finding: an unmeasured pair must not become an open file reader — both falsifying paths are refused by name |
+
 | `test_a_generation_that_names_a_commit_is_refused_rather_than_served` | only the object's own type separates a commit id from a tree id, and the control beside it shows the listed tree id still opens |
+
 | `test_a_path_outside_the_measured_change_set_is_refused_by_name` | an unchanged path no recorded realization links is refused by name; with no knowledge bound (`datasets=False`) only the inventory's entries are readable. The one other admitted population — unchanged context a recorded realization of the same comparison links — is measured in `test_knowledge_review_attributed_source_content.py` |
+
 | `test_a_baseline_that_is_not_the_recorded_base_is_refused` | the server reads this leaf's recorded base and substitutes no other generation |
+
 | `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport` | a missing tree id is a bad request naming the input it expected: the server never chooses the generation for a caller |
+
 | `test_an_unwired_process_refuses_the_route_by_name` | a process composed without the port answers 503 with "no review adapter is wired" rather than serving an empty file |
+
 | `test_the_listed_entry_and_its_expansion_describe_the_same_path` | the expansion echoes the listed generation, path, status and reference, so what was opened is what was listed |
 
 ### Conventions
@@ -191,6 +212,5 @@ Anchor: `_served` `register_review_routes` `read_review_source_content` [6]
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-3372 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted.
-
 
 - The unit-regression lane selects `mcp/tests/test_knowledge_review_source_content.py`. The lifecycle catalog lists `mcp/tests/test_knowledge_review_source_content.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. These source declarations establish no execution or passing result. [22]

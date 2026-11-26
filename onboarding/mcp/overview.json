@@ -482,7 +482,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61c506dfcd093f09a94571716d7c351b56906af2",
+            "blob": "39a062302204dca79815d9031898c3e0821e1045",
             "content": "sha256:9775c934ec37b706cb94c1b9b1631ce2f08317168a0a76232d878fdbcd90b11d",
             "locator": {
               "end": 39,
@@ -2907,8 +2907,20 @@
       ]
     },
     "298": {
-      "note": "**Retained historical source account — superseded by the current route account:** Integration/checkpoint preview and apply encounter knowledge boundary; leaf and series predicates differ\n\nAnchor: `integration_gate_block`",
+      "note": "Integration and checkpoint preview and apply share the knowledge-gate boundary in `integration_gate_block`, while leaf and series predicates differ.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "cccd81fa3fd4617162592eed504a9eafc91a3503",
+            "content": "sha256:42b9f1f622b674871030148b042028464ecf0ea485ff31b17c261ed469ef167d",
+            "locator": {
+              "kind": "symbol",
+              "name": "integration_gate_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
@@ -2919,17 +2931,6 @@
               "start": 856
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d2f3e6ac1adf4ec90ff5a8150cb65d2e46941403",
-            "content": "sha256:db02717153d515bdeec918a67b65300e96933de2ae80a8197b0525e3b7819cd1",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
           },
           "kind": "code"
         }
@@ -3495,12 +3496,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
+            "blob": "1a1c3df8af8b35eca696e9bd3674a7de21cbc757",
             "content": "sha256:5bef45112ca03784bbcc9691c3b24e409e750270289ef2a2c2d92bcac5a2c62a",
             "locator": {
-              "end": 357,
+              "end": 364,
               "kind": "line_range",
-              "start": 286
+              "start": 293
             },
             "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
           },
@@ -6022,12 +6023,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
             "content": "sha256:9fab263729d6a821fd2a2abc36eb155b36b1c3a1dd2be7b047d9f901b65f8ae6",
             "locator": {
-              "end": 111,
+              "end": 113,
               "kind": "line_range",
-              "start": 108
+              "start": 110
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -6035,12 +6036,12 @@
         },
         {
           "anchor": {
-            "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
             "content": "sha256:eef13987a34229cd649ed3696f96e29fac806a2224f5b4e826951aa8a4314f2b",
             "locator": {
-              "end": 242,
+              "end": 244,
               "kind": "line_range",
-              "start": 192
+              "start": 194
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -6048,12 +6049,12 @@
         },
         {
           "anchor": {
-            "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
             "content": "sha256:0e914c4a4201a736995ead4f69844f263ebd65ab903cd81574d71f63a6a2364b",
             "locator": {
-              "end": 498,
+              "end": 538,
               "kind": "line_range",
-              "start": 459
+              "start": 499
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },

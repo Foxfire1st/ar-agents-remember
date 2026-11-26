@@ -212,8 +212,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
-            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
+            "blob": "ccdae27f166202bf07aa7a43bd27e807ee660cd7",
+            "content": "sha256:7716147bd1c4bdb47e1760f3036815e580322f4fe682f3e6bd9a4f73eeb3a31c",
             "locator": {
               "kind": "file"
             },

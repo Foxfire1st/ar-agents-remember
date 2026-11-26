@@ -98,7 +98,7 @@ The review root clips overflow above 40rem; its tree has a local scroller and Re
 
 ### Development and verification support
 
-`dev/` contains fixtures consumed by separate driver TypeScript projects; the pinned source has no browser-probe module and no shared window contract for one. The solution config references app, node and driver projects; the inherited real typecheck command is `tsc -b`, not a vacuous root `tsc --noEmit` over `files: []`. Driver coverage includes the e2e program; the node project historically gained Panda configuration checking.
+`dev/` contains fixtures consumed by separate driver TypeScript projects; the pinned source has no browser-probe module and no shared window contract for one. The solution config references app, node and driver projects; the inherited real typecheck command is `tsc -b`, not a vacuous root `tsc --noEmit` over `files: []`. Driver coverage includes the e2e program; the node project historically gained Panda configuration checking. Typechecking runs on TypeScript 7 (`tsc -b`, with explicit `"types": ["node"]` in all three referenced project configs), and linting runs on `oxlint` via `dashboard/.oxlintrc.json`. Three compiler-API test files (`src/test/wireFixtureGuard.ts`, `src/test/fixtureOverrides.test.ts`, and `src/test/loadIndependence.test.ts`) temporarily import the TypeScript 6 compiler API via `"typescript-compiler-api"` (`npm:typescript@^6.0.3`), isolated by `eslint/no-restricted-imports` in `dashboard/.oxlintrc.json`, until TypeScript 7's programmatic API leaves `unstable/`. The shared jsdom bootstrap (`src/test/setup.ts`) implements CSSOM identifier serialization for `CSS.escape`, verified by `src/test/cssEscape.test.ts`.
 
 Fixture-honesty support discovers wire vocabulary from `src/types/` or the first-line TypeScript/Browser mirror marker. Rule 1 spans all scanned files; rules 2–5 are restricted to test/spec, fixture, src/test, src/dev and e2e surfaces. Sanctioned production decode assertions are site-specific and bidirectionally reconciled, not file-wide exemptions. The named holes below remain part of its contract.
 
@@ -398,7 +398,9 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - The header count itself: the h2 is a bare `Tasks · {count}` with no tooltip saying what the count counts. [4]
 
+
 - Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. The third anchor is the guard header's own question, quoted as it is written; this row previously carried a paraphrase that occurs in no file. [11]
+
 
 - Historical lifecycle topology grammar: the former unclassified-state fallback is not the current TaskEntry status algorithm; the constellation palette is a separate retained concern. [13]
 
@@ -456,7 +458,9 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - Historical lifecycle partition generator account: the retired state/metrics partition is not the present task model. Generated schema/TypeScript stale comparison remains a distinct source responsibility. [55]
 
+
 - Wire discovery and fixture scope retain named blind spots [56]
+
 
 - Required-field override protection applies to fresh override literals at the call site and only to top-level keys in the fixtures/wire.ts builders. Widened Partial values, nested values and other modules remain outside this mapped-type guard. [57]
 
@@ -596,3 +600,5 @@ Anchor: `useReviewCatalogue` `DocChangeSetBar`
 
 - The shared catalogue hook takes repository/task context and calls the existing subject catalogue client. [24]
 - The review client mirrors the source inventory and omits the subject selector when absent. [28]
+
+- Dashboard typechecking runs on TypeScript 7 (`tsc -b`, explicit `"types": ["node"]`), linting runs on `oxlint` (`dashboard/.oxlintrc.json`), three compiler-API test files use the allowlisted `typescript-compiler-api` (`npm:typescript@^6.0.3`) alias, and `setup.ts` implements CSSOM `CSS.escape` covered by `cssEscape.test.ts`. [103]

@@ -15,10 +15,7 @@ a population without a bound and never presents a partial walk as a whole one.
 
 `EXECUTIONS_DIRECTORY` is defined here once and imported by the CLI receipt owner; receipt discovery uses the same directory name without importing CLI.
 
-Each scan is one open `DirectoryWalk` over an `os.scandir` handle, advanced by an explicit budget and able to
-resume from its cursor rather than restart. Receipt roots are found by naming the holder, not by a fixed depth:
-`receipt_holder` answers `<root>/<EXECUTIONS_DIRECTORY>`, `receipt_holder_chain` the directories above it, and
-`task_receipt_steps` yields one step per task folder with its holder first, skipping `history` and `message-bindings`.
+Each held-folder scan is one open `DirectoryWalk` over an `os.scandir` handle, and receipt scans (`ReceiptWalk`, `ReceiptRootWalk`) advance suspended generators (`receipt_steps`, `task_receipt_steps`) over `os.scandir` handles through `_StepWalk`, each bounded by an explicit budget and able to resume from its cursor rather than restart. Receipt roots are found by naming the holder: `receipt_holder` answers `<root>/notes/reports/<EXECUTIONS_DIRECTORY>`, `receipt_holder_chain` returns the inclusive directory chain from `root` through that holder, `task_receipt_steps` yields one step per canonical task folder's holder under `tasks/`, and `ReceiptRootWalk` yields the coordination root's holder first followed by `task_receipt_steps`. Under each receipt root, `receipt_steps` walks nested subdirectories without descending into `SKIPPED_RECEIPT_DIRS` (`history`, `message-bindings`, and `messages`).
 
 The budgets are the contract: `ENUMERATION_BUDGET = 256` entries per pass, `MAX_HELD_FOLDER_WALKS = 64` open or
 cached folders — evicting one closes its scan — and `MAX_HELD_FOLDER_STORES = 64` stores per held folder. Beyond

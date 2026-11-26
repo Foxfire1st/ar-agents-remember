@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3ad518b9cbebdb0e2b16acb0ac8341b2b529a2c9",
-        "content": "sha256:dcda063192196426348b453bfd0032c314e6a42e3c708f3238b93556524a7a02",
+        "blob": "1579d550a07354a9428251c3af18f81ee60d9afa",
+        "content": "sha256:56a5d87060e606ec12b79d0329f7a1ce341d60e828488605b0ea55c00440cc56",
         "locator": {
           "kind": "file"
         }
@@ -17,18 +17,37 @@
       },
       "rationale": "Enables incremental TypeScript checking with an explicit gitignored tsBuildInfoFile for the node config project.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "1579d550a07354a9428251c3af18f81ee60d9afa",
+        "content": "sha256:56a5d87060e606ec12b79d0329f7a1ce341d60e828488605b0ea55c00440cc56",
+        "locator": {
+          "end": 22,
+          "kind": "line_range",
+          "start": 1
+        }
+      },
+      "id": "RLZ-CMYQ5H",
+      "invariant": "INV-C9JJFK",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §3 (TS 7 + Option B) post-sync reattach",
+        "leaf": "261125-DEP-L6"
+      },
+      "rationale": "Declares explicit types:['node'] for Node-side dashboard configuration files under TypeScript 7 while retaining incremental tsBuildInfoFile.",
+      "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "The node project enables incremental checking with an explicit gitignored build-info file.",
+      "note": "The node project declares `types: [\"node\"]` for TypeScript 7 and enables incremental checking with an explicit gitignored build-info file.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ad518b9cbebdb0e2b16acb0ac8341b2b529a2c9",
-            "content": "sha256:dcda063192196426348b453bfd0032c314e6a42e3c708f3238b93556524a7a02",
+            "blob": "1579d550a07354a9428251c3af18f81ee60d9afa",
+            "content": "sha256:56a5d87060e606ec12b79d0329f7a1ce341d60e828488605b0ea55c00440cc56",
             "locator": {
-              "end": 21,
+              "end": 22,
               "kind": "line_range",
               "start": 1
             }
@@ -42,10 +61,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4ff7c54edc12706058af2aad22d48302a1b6109",
-            "content": "sha256:f0d380f1abdaa8274eb2bd76503fa00d6cbbf8c506a094006b2d55199860414a",
+            "blob": "43efc604596aeac2aa788d1336e754f407f587a1",
+            "content": "sha256:24df37627833b2e89a8fe77a0ff0c633f4d9ebcc9c28795600ec4fab7bd8dc28",
             "locator": {
-              "end": 10,
+              "end": 15,
               "kind": "line_range",
               "start": 1
             },

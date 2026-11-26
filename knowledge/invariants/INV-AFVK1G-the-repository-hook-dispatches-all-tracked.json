@@ -4,7 +4,7 @@
       "spans_locations",
       "guarded_by_test"
     ],
-    "justification": "The repairs are realized in .githooks/_gate.sh, scope_reporting.py and hook_scope_batch.py, the dashboard tsconfigs and both ignore files, and the repair cases in test_githooks_l29_repairs.py guard each behavior while preserving every tier verdict."
+    "justification": "The repairs are realized in .githooks/_gate.sh, scope_reporting.py and hook_scope_batch.py, the dashboard tsconfigs and dashboard/.gitignore, and the repair cases in test_githooks_l29_repairs.py guard each behavior while preserving every tier verdict."
   },
   "applicability": "Every Git hook tier of this repository that runs the fast or targeted checks.",
   "conditions": [
@@ -26,23 +26,20 @@
     "leaf": "261112-BUG-L29",
     "task": "261112-BUG"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The repository hook dispatches all tracked Python files in one 256 KiB GNU xargs batch on Linux, emits hook-tier scope banners in one Python invocation with lazy python_files_under, runs Python and Dashboard rails concurrently with fixed Python-then-Dashboard output order, caches warm ESLint and incremental tsc -b outputs in gitignored files invisible to closeout, and silences pyright-python wrapper update notices without altering any tier verdict.",
+  "statement": "The repository hook dispatches all tracked Python files in one 256 KiB GNU xargs batch on Linux, emits hook-tier scope banners in one Python invocation with lazy python_files_under, runs Python and Dashboard rails concurrently with fixed Python-then-Dashboard output order, runs cache-free oxlint linting and caches incremental tsc -b outputs (*.tsbuildinfo) in gitignored files invisible to closeout, and silences pyright-python wrapper update notices without altering any tier verdict.",
   "supersedes": [],
   "title": "Hook tiers run their checks once, concurrently and from caches",
   "writer": {
-    "at": "2026-11-25T14:52:18+01:00",
+    "at": "2026-11-26T08:53:12+01:00",
     "by": "agent",
-    "effort": "unknown",
-    "harness": "hermes",
-    "leaf": "261112-BUG-L29",
-    "model": "opencode-go:deepseek-v4.1-flash",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L6",
+    "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "81dd1137-f494-569a-91e0-85d146824594",
-    "task": "261112-BUG",
-    "unknown": {
-      "effort": "the launch receipt does not hold the effort"
-    }
+    "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+    "task": "261125-DEP"
   }
 }

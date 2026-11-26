@@ -21,29 +21,23 @@
     "leaf": "260928-MIK-L100",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "mcp/src/agents_remember/cli",
-    "mcp/src/agents_remember/controlplane"
+    "mcp/src/agents_remember/controlplane",
+    "mcp/src/agents_remember/serving/projections"
   ],
   "schema": "ar-family/v1",
   "title": "Native held delivery preserves order through recovery and bounded rotation",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-25T17:49:01+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L35",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c57c6add-929a-55e6-aafd-7ff4a1800a9c",
+    "task": "261112-BUG"
   }
 }

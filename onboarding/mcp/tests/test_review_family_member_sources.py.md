@@ -28,12 +28,19 @@ opens one side with `open_family_side`, reads the fixture family with `read_fami
 and indexes every carried source by claim id.
 
 | Case | What it pins |
+
 | --- | --- |
+
 | `test_two_members_in_one_file_carry_their_own_locators_ranges_and_rationale` | two members in one file are two sources with distinct locators, ranges (1-2 and 5-6), roles and stored rationales; a `line_range` resolves to its recorded range; a `file` locator is `whole_file` with no range; the JSON-mode model dump carries the structured values |
+
 | `test_a_changed_file_keeps_its_unchanged_attributed_range_on_each_side` | a changed blob whose attributed lines did not move keeps range 1-2 on both sides, each with its own observed blob |
+
 | `test_an_unresolved_locator_is_stated_with_its_recorded_locator_and_no_range` | an undefined symbol is `unresolved`/`recorded_blob_mismatch` with its recorded locator and no range; the reused beta, range and file claims are unresolved on the after side and retain their recorded locators without ranges; a read naming no tree is `not_requested`/`unresolved` for every source |
+
 | `test_a_recorded_range_past_the_blob_end_is_unresolved_with_no_range` | lines 50-60 of a six-line exact blob keep `exact_recorded_blob`, carry no range, are `unresolved`, and the detail states the line count |
+
 | `test_a_symbol_defined_twice_carries_every_defining_range` | a doubly-defined symbol carries both ranges, in order |
+
 | `test_the_existing_source_fields_keep_their_published_values` | the JSON-mode model dump has exactly the nine legacy fields plus `locator`, `resolved_ranges`, `locator_state`, and the legacy values — including the `detail` sentence — are unchanged |
 
 ### Conventions
@@ -120,7 +127,7 @@ No meaningful cross-repo references found.
 
 
 
-- RowStore writes text-tree fixture rows without the retired production admission plane. [21]
 
+- RowStore writes text-tree fixture rows without the retired production admission plane. [21]
 
 - The lifecycle catalog lists the module as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. [35]

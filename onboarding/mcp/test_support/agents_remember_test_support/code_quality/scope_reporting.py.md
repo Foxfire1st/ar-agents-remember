@@ -40,20 +40,24 @@ targeted and full pytest descriptions. The `hook-batch` subcommand derives one s
 every tier payload through `collect_hook_scope_batch`; `_hook_batch_report` writes each payload to
 the caller's temporary directory.
 
-`tsconfig_project_inputs` (function, lines 430-458)
-- `tsconfig_inputs` (function, lines 459-482)
-- `config_input_files` (function, lines 483-505)
-- `dashboard_lint_scope_line` (function, lines 506-524)
-- `dashboard_test_scope_line` (function, lines 525-546)
-- `dashboard_typecheck_scope_line` (function, lines 547-555)
-- `dashboard_build_scope_line` (function, lines 556-583)
-- `dashboard_scope_line` (function, lines 584-626)
-- `build_parser` (function, lines 627-653)
-- `main` (function, lines 690-704)
+- `tsconfig_project_inputs` (function, lines 496-524)
+- `tsconfig_inputs` (function, lines 527-548)
+- `config_input_files` (function, lines 551-571)
+- `dashboard_lint_scope_line` (function, lines 574-590)
+- `dashboard_test_scope_line` (function, lines 593-612)
+- `dashboard_typecheck_scope_line` (function, lines 615-621)
+- `dashboard_build_scope_line` (function, lines 624-649)
+- `dashboard_scope_line` (function, lines 652-692)
+- `build_parser` (function, lines 695-722)
+- `main` (function, lines 788-798)
 
 `tsconfig_project_inputs` accepts both direct JSON references and directory references containing
 `tsconfig.json`. Each referenced project's `files` and `include` entries resolve from that config's
 own directory, so nested TypeScript projects cannot be silently measured against the dashboard root.
+
+`dashboard_lint_scope_line` requires `dashboard/.oxlintrc.json`, resolves finding files through
+`oxlint_result_files` (converting `ScopeError` into `ScopeReportingError`), and reports the oxlint
+config, `lint` script (`oxlint .`), and distinct count of files with findings.
 
 ### Conventions
 
@@ -83,6 +87,8 @@ The source owners below establish these file-local behaviors; this read does not
 - Diagnostic diff inputs without a floor [3]
 - Project-relative TypeScript file resolution [4]
 - Read-only provenance reporting dispatch [5]
+
+- Dashboard oxlint scope provenance and missing-config refusal. [8]
 
 ### Docs References
 

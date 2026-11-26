@@ -10,6 +10,7 @@
   "applicability": "Every native role message the product holds because its recipient could not take it, whether the hold is a recipient's ended turn or a provider limit.",
   "conditions": [
     "The serving loop runs the held-delivery tick; delivery follows the host's own activity record where it shows the recipient idle, closed or ended.",
+    "turn_ended_agents bookmarks each non-in-turn agent per reader seen map by its published eventAt or by unstamped:<boot_id> when eventAt is absent, emitting an unstamped entry at most once per plugin boot and re-emitting on a real eventAt transition or new bootId without fabricating eventAt or affecting new_stamped_ends.",
     "The sweep stays the fallback and visits receipts that hold messages before the other receipts.",
     "A closed session may be reopened by ordinary delivery. A running turn or an open permission still defers a send under the existing policy.",
     "The provider limit check reads the limit file before the ordinary recipient host read. The provider-limit hold carries the reset time.",
@@ -32,27 +33,20 @@
     "leaf": "260928-MIK-L171",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "A held message can be delivered after the activity publication reports the recipient idle, closed or ended and ordinary delivery gates allow it. The product’s own tick visits bounded units without a whole per-tick census. A provider-limit hold carries its reset time. An ended observation during that hold can be confirmed as archive or absence, resolving its waiting messages undelivered.",
+  "statement": "A held message can be delivered after the activity publication reports the recipient idle, closed or ended and ordinary delivery gates allow it, with unstamped turn-end entries deduplicated per reader once per plugin boot without fabricating event timestamps. The product’s own tick visits bounded units without a whole per-tick census. A provider-limit hold carries its reset time. An ended observation during that hold can be confirmed as archive or absence, resolving its waiting messages undelivered.",
   "supersedes": [],
+  "title": "Turn-end and provider-limit delivery with per-boot unstamped dedup",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-BUG-L20",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-BUG",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-25T17:49:01+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L35",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c57c6add-929a-55e6-aafd-7ff4a1800a9c",
+    "task": "261112-BUG"
   }
 }

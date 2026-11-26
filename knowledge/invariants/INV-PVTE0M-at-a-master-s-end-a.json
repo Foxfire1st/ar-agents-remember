@@ -1,0 +1,52 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Spans master_document_base, landing_document_answer, integration_gate_block, _landing_request, document_staleness, _classify_master_end, and _findings across five modules; guarded by 16 dedicated repository tests in test_master_end_document_staleness.py; prevents concurrent series masters from blocking each other's closeout over unrelated parent-line document staleness while still refusing every document the master or its own integrated leaves made stale."
+  },
+  "applicability": "Applies to every series master-end document-staleness read and refusal gate (landing_document_answer, integration_gate_block on final master landing, and record_landing_result via _landing_request) computing document_staleness(full=True) over a series contract's judged (code, memory) pair.",
+  "conditions": [
+    "The standing base pair is the newest contract.sync_log entry (reading (codeSourceCommit, memorySourceCommit or memoryBaseTo) for repository-default syncs and (codeBaseTo, memoryBaseTo) otherwise) whose two commits are both ancestors of the judged pair, falling back to original_base_pair(contract) when none qualifies.",
+    "A stale tip document refuses when it was not stale at that standing base (Rule 2.1), or when any of this master's integrated leaves (both landed commits ancestors of the judged pair) made it stale between the leaf's base pair and landed pair and the tip record's confirmed.commit does not non-strictly descend from that leaf's landed code commit (Rule 2.2).",
+    "A missing confirmed.commit clears no own-leaf debt; a confirmed.commit unreadable in Git, an integrated leaf with unreadable pairs, or an integrated leaf with only one side an ancestor of the judged pair makes the master's end uncomputable and refused.",
+    "Rule 2.3 (repaired on the parent line) applies only after landing, when both judged commits are already ancestors of the parent refs read from contract.code_source_branch and contract.memory_source_branch; an unresolvable parent ref fails closed and leaves Rule 2.3 off.",
+    "An unreadable-links document refuses only when unreadable at the judged tip and readable at the standing base; the answer and refusal message name since-base, own-leaf, repaired-on-parent, and named-only kinds apart."
+  ],
+  "exclusions": [
+    "Does not govern ordinary leaf landings or checkpoint landings (master_end=False, which report debt without refusing).",
+    "Does not replace original_base_pair in worktrees/series_closeout.py::_series_pre_sync_base for leaf-chain ancestry proofs.",
+    "Does not read open or abandoned leaves that have no landed pairs, does not read deferrals (deferral-only updates do not change confirmed.commit), and does not perform per-link attribution on already-stale documents.",
+    "Known limit: a leaf that reached the parent line only by a squash merge, was later confirmed on the parent line, and was subsequently made stale again on the parent line is not recognized as confirmed (product landings are merge commits)."
+  ],
+  "id": "INV-PVTE0M",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Reviewer Code R1 PASS: notes/reports/reviewer/957bc80f-39f3-5f3c-98c0-ff676d8f3782/role-launch/261112-BUG-L56-R1-code-verdict.md; 24 dedicated cases and 327 focused tests passed on tree c54c5facf; clean-export replays on EXP (count 0; install guides namedOnly; CONTRIBUTING.md repairedOnParent) and CAP (count 11; install guides refusedByOwnLeaf via 261124-CAP-L1)."
+      ],
+      "path": "l56-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R56@v1",
+    "leaf": "261112-BUG-L56",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "At a master's end a document stale at the judged tip refuses only when it was not stale at the newest synced base the judged pair contains, or when one of this master's own integrated leaves made it stale and the tip record's confirmation does not descend from that leaf's landed code commit, and not when it is already current on the parent line's present tip after landing; every other stale document is named only, and an uncomputable or tip-only-unverifiable read refuses.",
+  "supersedes": [],
+  "title": "Master-end document staleness refuses only this master's own debt",
+  "writer": {
+    "at": "2026-11-26T15:55:02+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L56",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
+    "task": "261112-BUG"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized across dashboard/package.json, dashboard/tsconfig.{app,node,driver}.json, and the three allowlisted test files, preventing accidental imports of the temporary TypeScript 6 compiler-API alias outside those three tests or missing explicit Node ambient types under TypeScript 7."
+  },
+  "applicability": "Dashboard TypeScript project configs, package.json compiler dependencies, oxlint import restriction, and the three compiler-API test files.",
+  "conditions": [
+    "typescript ^7.0.2 owns tsc -b, typecheck, and build; tsconfig.app.json, tsconfig.node.json, and tsconfig.driver.json explicitly declare types: ['node'].",
+    "Only dashboard/src/test/wireFixtureGuard.ts, fixtureOverrides.test.ts, and loadIndependence.test.ts may import typescript-compiler-api (npm:typescript@^6.0.3), enforced by eslint/no-restricted-imports in dashboard/.oxlintrc.json."
+  ],
+  "exclusions": [
+    "TypeScript 7 programmatic APIs under typescript/unstable/* until they leave unstable/.",
+    "Standalone TypeScript packages outside dashboard/, which carry their own package.json and tsconfig.json."
+  ],
+  "id": "INV-C9JJFK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Planted TS2344 break in dashboard/src/test/contract.test.ts:519 caught by tsc 7.0.2 -b; planted restricted import blocked by oxlint (exit 1); clean-copy npm run typecheck, npm run build, and vitest (99/99) pass",
+        "Planted TS2344 break in dashboard/src/test/contract.test.ts caught by tsc 7.0.2 -b; planted restricted import blocked by oxlint (exit 1); post-sync npm run typecheck, npm run build, and full npm test pass"
+      ],
+      "path": "l6-handoff.json"
+    },
+    "handoffEntry": "DEP-R06@v1 §3 (TypeScript 7.0.2 + Option B compiler-API alias)",
+    "leaf": "261125-DEP-L6",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Dashboard type checking and builds run on TypeScript 7.0.2 with explicit types:['node'] in tsconfig.app.json, tsconfig.node.json, and tsconfig.driver.json (preserving BUG-L29 incremental .tsbuildinfo caches), while only the three JS compiler-API test files import the TypeScript 6.0.3 compatibility alias typescript-compiler-api enforced by oxlint no-restricted-imports.",
+  "supersedes": [],
+  "title": "Dashboard compiles on TypeScript 7 while isolating TS 6 compiler API",
+  "writer": {
+    "at": "2026-11-26T08:53:12+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L6",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+    "task": "261125-DEP"
+  }
+}

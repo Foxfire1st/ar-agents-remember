@@ -341,6 +341,10 @@
     "file:mcp/src/agents_remember/application/knowledge_currentness/state.py": [
       "knowledge/dependents/DPD-EG5TYT-docs-features-md.json"
     ],
+    "file:mcp/src/agents_remember/application/knowledge_gate/document_staleness.py": [
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
     "file:mcp/src/agents_remember/application/knowledge_gate/gate.py": [
       "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
       "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",

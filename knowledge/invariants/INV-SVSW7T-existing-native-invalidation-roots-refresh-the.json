@@ -6,11 +6,12 @@
     ],
     "justification": "A domain classified but never watched looks wired and is not: the queue would refresh only when something else happened to wake it. The wiring cases check the roots themselves and that a store write wakes its own domain with no poll."
   },
-  "applicability": "The watcher roots and projection domains that carry the native attention inputs.",
+  "applicability": "The watcher roots, admission gates, and projection domains that carry the native attention inputs.",
   "conditions": [
     "Held stores under workspace/.ar-product are acquired through bounded readers, while the queue, receipt and control-plane roots supply the watched invalidations that wake their domains, and each watched root maps to one projection domain.",
     "A write to a notice or held-queue store wakes its domain without a host poll.",
-    "The archive and worktree trees are never watched by the recursive lane."
+    "The archive and worktree trees are never watched by the recursive lane.",
+    "is_held_receipt excludes any .json file beneath SKIPPED_RECEIPT_DIRS (history, message-bindings, messages) after notes/reports/paseo-native-executions, ProjectionWatchPlan.admits_file gates files under the taskless receipt holder relative to the configured coordination root, and projection_domains_for_paths evaluates task-bound paths relative to the tasks root so ancestor directory names cannot misclassify receipts."
   ],
   "exclusions": [
     "Any added host poll or bridge child.",
@@ -29,27 +30,20 @@
     "leaf": "260928-MIK-L190",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Existing native invalidation roots refresh the new held and control-plane inputs without adding host polls.",
+  "statement": "Existing native invalidation roots refresh the new held and control-plane inputs without adding host polls, while held-receipt admission and matching exclude non-receipt subdirectories (history, message-bindings, and messages) below the receipt holder.",
   "supersedes": [],
+  "title": "Native invalidation roots wake held inputs without non-receipt noise",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L190",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-25T17:49:01+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L35",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c57c6add-929a-55e6-aafd-7ff4a1800a9c",
+    "task": "261112-BUG"
   }
 }

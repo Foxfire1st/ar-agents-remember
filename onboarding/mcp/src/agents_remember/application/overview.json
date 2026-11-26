@@ -5022,7 +5022,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61c506dfcd093f09a94571716d7c351b56906af2",
+            "blob": "39a062302204dca79815d9031898c3e0821e1045",
             "content": "sha256:9775c934ec37b706cb94c1b9b1631ce2f08317168a0a76232d878fdbcd90b11d",
             "locator": {
               "end": 39,
@@ -5655,7 +5655,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a7959afbbb3e3b8b7136af8878ea3584aab48e8",
+            "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
             "content": "sha256:852afda0bb7d68f782a5b912eee61463df5b0d4bfe5eef55dd7af4e8ee64e2b3",
             "locator": {
               "kind": "symbol",
@@ -7145,7 +7145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61c506dfcd093f09a94571716d7c351b56906af2",
+            "blob": "39a062302204dca79815d9031898c3e0821e1045",
             "content": "sha256:1b8ce5d609119a844af057e9f91816632d8ebcd434ec25bd878bed27cc64a6b2",
             "locator": {
               "end": 211,
@@ -7163,7 +7163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61c506dfcd093f09a94571716d7c351b56906af2",
+            "blob": "39a062302204dca79815d9031898c3e0821e1045",
             "content": "sha256:4e808741140795e174e82721be1313a4d93232e538c13f779169e4c40b180cbb",
             "locator": {
               "kind": "symbol",
@@ -8994,6 +8994,96 @@
               "start": 519
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "543": {
+      "note": "`knowledge_gate/document_staleness.py` classifies incremental and master-end dependent-document staleness, attributing own-leaf debt, checking post-landing parent repairs, filtering tip-only unverifiable links, and rendering per-kind answers and refusal messages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+            "content": "sha256:eab9d8e679192a1d6b06e599be911e5d3cda7b8c2fefe7dcf5cbc2d4570b50a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "document_staleness"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/document_staleness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+            "content": "sha256:0d928acef9bdcdef079abfaea65bfbddc3220ac9061b1e6fadd33f34f2902ba8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_classify_master_end"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/document_staleness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+            "content": "sha256:954b9f303932bd1d866ed9c2c28ceafdb371666ca2da727c9d429f988d993751",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentStaleness"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/document_staleness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "544": {
+      "note": "`KnowledgeSide.record_file_changed` and the three worklist comparison sites (`knowledge_changes`, `_Evaluation._record_file_trigger`, `touched_record_items`) treat canonical state-conversion-only record JSON diffs as untouched while preserving move, sidecar, non-legacy status, writer, and formatting detection.\n\nAnchor: `record_file_changed`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "536c74dfbc955bca3aadf18584505c9b04d68114",
+            "content": "sha256:277878cb4f9d42713befe58b54ba2703f28f0470022c25b5c1000b360a2a0e39",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
+            "content": "sha256:19193e97b88017f8136256dab82bd6536b0e1ac95edfd6e233aca791723a6f6a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/classify.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39a062302204dca79815d9031898c3e0821e1045",
+            "content": "sha256:fe3d3948df2b3398515c3f2a5c9be38da5db5ca74dda9cbe2d6c7de945ca7303",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fee659a7873ec2265d2600db9c2f6ed2c2b6c86d",
+            "content": "sha256:55a00c6cf06a39b2eb3268e970725e2fb1ac20fa8f58be9b29b945c6ec986492",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/touched_records.py"
           },
           "kind": "code"
         }

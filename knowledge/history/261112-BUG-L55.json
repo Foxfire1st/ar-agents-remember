@@ -1,0 +1,591 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L55",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-26T20:17:31+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L55",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "edba1d95-0f5c-5568-9011-f70fbc44f97b",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-26T20:17:31+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L55",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "a2bd71fe-5f90-5d12-94b6-3731d2ff0ed7",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 2,
+    "tree": "cff5a441ad27e05c78fd720b6cb53deb07305465",
+    "verdictRef": "notes/reports/reviewer/a2bd71fe-5f90-5d12-94b6-3731d2ff0ed7/261112-BUG-L55-R2-memory-verdict.md"
+  },
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-147HFS",
+      "items": [
+        "sha256:6ab41d56093fb72e71e76d4ea65658b0c22a616ed88b80f1ec0cd1aa341d9f1b"
+      ],
+      "reason": "Module-level import of state_conversion_only in touched_records.py supporting the touched_record_items realization.",
+      "subject": "hunk:sha256:6ab41d56093fb72e71e76d4ea65658b0c22a616ed88b80f1ec0cd1aa341d9f1b"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1F1ZWB",
+      "items": [
+        "sha256:ae502574fcb946074d4ccd293a5651afcdaca4b3907eab8238329e90122e33f9"
+      ],
+      "reason": "Documented state_conversion_only exemption when Markdown sidecars match and refreshed citation [4] on touched_record_items.",
+      "sources": [
+        {
+          "blob": "fee659a7873ec2265d2600db9c2f6ed2c2b6c86d",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/touched_records.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_worklist/touched_records.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6T0MPR",
+      "items": [
+        "sha256:69b4573bb5e8ff11c494155d362fb77c028d318e78d44ecdb9a13c88587e11bf"
+      ],
+      "reason": "Documented state_conversion_only, _parse_json_object, and _validated_stamp with verified source citations.",
+      "sources": [
+        {
+          "blob": "a200098c5cc70fecf4f8c887017a3400130e2f5c",
+          "path": "mcp/src/agents_remember/memory/conversion/state_conversion.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/conversion/state_conversion.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7JVBBG",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Post-L56 sync refresh on 9e4253083b9c: re-applied test_state_conversion_worklist.py consumer lines (780, 3289), updated shifted line references (864, 3373), and refreshed all affected citations.",
+      "sources": [
+        {
+          "blob": "ccdae27f166202bf07aa7a43bd27e807ee660cd7",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8MGEKT",
+      "items": [
+        "sha256:abcca62df4a4de8138447eeef1d7349383514400fb9f95b4d95881d715ecc6a3",
+        "sha256:db06efe263df35e7581c5fd72e7d980a62d72dd4a8688323afff300bd7e3b56c",
+        "sha256:e62d0f23b0fbccc779a00adad6d13caaeb9c4dcba6faefd4ab899700722c7250"
+      ],
+      "reason": "Documented KnowledgeSide.record_file_changed and its state_conversion_only delegation with a verified source citation.",
+      "sources": [
+        {
+          "blob": "536c74dfbc955bca3aadf18584505c9b04d68114",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/knowledge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_worklist/knowledge.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8YGF5B",
+      "items": [
+        "sha256:ba3e84d66784e15cd6f9199448a6be358ec9ce300a12afcdf75190c2950e66f3"
+      ],
+      "reason": "Delete-only hunk removing the old raw equality short-circuit in _Evaluation._record_file_trigger after delegating to KnowledgeSide.record_file_changed in the preceding hunk.",
+      "subject": "hunk:sha256:ba3e84d66784e15cd6f9199448a6be358ec9ce300a12afcdf75190c2950e66f3"
+    },
+    {
+      "considered": [
+        "FAM-7NBVYB",
+        "FAM-FQ8TF2"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-ABP9W9",
+      "items": [],
+      "reason": "Examined FAM-7NBVYB (retained-revision review credit and writer provenance) and FAM-FQ8TF2 (dependent deferrals and pre-base staleness flags); neither joint guarantee governs worklist state-conversion-only diff exemption, so INV-R2Q8SW stands alone.",
+      "revision": 1,
+      "subject": "membership:INV-R2Q8SW"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f717c183e60d68b48f43b14c15b6f29df125d1c8",
+            "content": "sha256:c1d6dfc7216e84cc16ec28dc2fffd5ef2da21d8d645c5bd296e4942d0e2ff926",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "07998f644724fafc06b2ad16936a627f111714dc",
+            "content": "sha256:e67145744d633b4b684004a2c7c34807cc338c0257b6e98fe5aeb288c1c765b6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "ccdae27f166202bf07aa7a43bd27e807ee660cd7",
+            "content": "sha256:7716147bd1c4bdb47e1760f3036815e580322f4fe682f3e6bd9a4f73eeb3a31c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "77ec2f25594a6238fa3a7d0a352c9029160eed5d",
+            "content": "sha256:10bb235e8b20543d3fd173bab42f0f675fe55d1c3978741c4904b5e9996443b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ADD6QC",
+      "items": [
+        "sha256:ecebbd1c4392f3959c172473565ae117fae690f98d2a830433ca4deb4caa3953"
+      ],
+      "reason": "Re-anchored whole-file catalog realizations RLZ-GEMVNE and RLZ-BNMQ79 against synced L55 candidate 9e4253083b9c (base ebc3a1748de3) after L55 registered test_state_conversion_worklist.py in evidence-lifecycle.toml and test-evidence-lanes.toml; silent turn-end wake semantics and registered suites remain unchanged.",
+      "revision": 8,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AE6P8M",
+      "items": [
+        "sha256:66a4d8f1a6bae4d152a74c4ba57f7e4c6a780089c8d3ce3bf77daf7d4aa109ed"
+      ],
+      "reason": "Post-L56 sync refresh on 9e4253083b9c: re-applied test_state_conversion_worklist.py entry, updated live lane/artifact counts (833 modules, 18 contracts / 123 artifacts), and refreshed all affected citations.",
+      "sources": [
+        {
+          "blob": "ccdae27f166202bf07aa7a43bd27e807ee660cd7",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "f717c183e60d68b48f43b14c15b6f29df125d1c8",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "bdabae8b9cdabeb7bda959a3f330d1ac89a357b8",
+          "path": "mcp/tests/test_state_conversion_worklist.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ccdae27f166202bf07aa7a43bd27e807ee660cd7",
+            "content": "sha256:7716147bd1c4bdb47e1760f3036815e580322f4fe682f3e6bd9a4f73eeb3a31c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "77ec2f25594a6238fa3a7d0a352c9029160eed5d",
+            "content": "sha256:10bb235e8b20543d3fd173bab42f0f675fe55d1c3978741c4904b5e9996443b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "f717c183e60d68b48f43b14c15b6f29df125d1c8",
+            "content": "sha256:c1d6dfc7216e84cc16ec28dc2fffd5ef2da21d8d645c5bd296e4942d0e2ff926",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "07998f644724fafc06b2ad16936a627f111714dc",
+            "content": "sha256:e67145744d633b4b684004a2c7c34807cc338c0257b6e98fe5aeb288c1c765b6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CERE17",
+      "items": [
+        "sha256:86de637290d10be2353ffdd906903826293da6fd39426e6323113ad2431d1c1d"
+      ],
+      "reason": "Re-anchored whole-file catalog realizations RLZ-8RHQED and RLZ-MC12B0 against synced L55 candidate 9e4253083b9c (base ebc3a1748de3) after L55 added test_state_conversion_worklist.py once to unit-regression and its derived consumer lists without duplicate identity or deleted modules.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-DP7KNC",
+      "items": [],
+      "reason": "Re-confirmed CONTRIBUTING.md against synced L55 candidate 9e4253083b9c (base ebc3a1748de3) after adding test_state_conversion_worklist.py to mcp/tests/test-evidence-lanes.toml (833 total / 683 unit-regression); all lane and catalog passages match live code with zero contradictions.",
+      "revision": 22,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DT9990",
+      "items": [
+        "sha256:fa3748b3e6255d0627ded676bd0b3929c3892e6f99357c28ba85343b4a46052b"
+      ],
+      "reason": "Updated _Evaluation._record_file_trigger documentation and refreshed citations [4] and [9] to reflect delegation to KnowledgeSide.record_file_changed.",
+      "sources": [
+        {
+          "blob": "39a062302204dca79815d9031898c3e0821e1045",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EQJJYN",
+      "items": [
+        "sha256:13e22be26dcf927528c8e013682f5cb097271949e60b25d03743f32c539e28ba"
+      ],
+      "reason": "Post-L56 sync refresh on 9e4253083b9c: re-applied state-conversion-only worklist exemption prose and verified citation.",
+      "sources": [
+        {
+          "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/classify.py"
+        },
+        {
+          "blob": "536c74dfbc955bca3aadf18584505c9b04d68114",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/knowledge.py"
+        },
+        {
+          "blob": "39a062302204dca79815d9031898c3e0821e1045",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py"
+        },
+        {
+          "blob": "fee659a7873ec2265d2600db9c2f6ed2c2b6c86d",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/touched_records.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GNSJ3T",
+      "items": [
+        "sha256:dbb3e85092e04710bce3e6b30ff83405f7cd4d819fe27c6ce3912f4be49b176e"
+      ],
+      "reason": "Created onboarding card and verified citations for the new L55 unit-regression module covering all seven test functions.",
+      "sources": [
+        {
+          "blob": "bdabae8b9cdabeb7bda959a3f330d1ac89a357b8",
+          "path": "mcp/tests/test_state_conversion_worklist.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_state_conversion_worklist.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f717c183e60d68b48f43b14c15b6f29df125d1c8",
+            "content": "sha256:c1d6dfc7216e84cc16ec28dc2fffd5ef2da21d8d645c5bd296e4942d0e2ff926",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "07998f644724fafc06b2ad16936a627f111714dc",
+            "content": "sha256:e67145744d633b4b684004a2c7c34807cc338c0257b6e98fe5aeb288c1c765b6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "ccdae27f166202bf07aa7a43bd27e807ee660cd7",
+            "content": "sha256:7716147bd1c4bdb47e1760f3036815e580322f4fe682f3e6bd9a4f73eeb3a31c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "77ec2f25594a6238fa3a7d0a352c9029160eed5d",
+            "content": "sha256:10bb235e8b20543d3fd173bab42f0f675fe55d1c3978741c4904b5e9996443b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-H5YQYX",
+      "items": [
+        "sha256:1f6cee882387432e0a2e001746efb7ffa72a880f3b8e7744555d05dd75cac672"
+      ],
+      "reason": "Re-anchored whole-file catalog realizations RLZ-H44S0N and RLZ-BJ41EY against synced L55 candidate 9e4253083b9c (base ebc3a1748de3) after L55 added test_state_conversion_worklist.py to both catalogs; outside-scratch-root ownership and its registered suites remain unchanged.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-M97XW4",
+      "items": [],
+      "reason": "DPD-ZMQ523 (rev 26) is pre-existing base-stale at synced base ebc3a1748de3/5534c8864f42 due to a verified pre-existing contradiction on docs/design/python-evidence-system.md:102-104 (anchor_fixture_models.py uses exact/shared-support, not exact-source); kept strictly untouched at HEAD 5534c886 without confirming.",
+      "revision": 26,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MNCR3W",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Post-L56 sync refresh on 9e4253083b9c: re-applied test_state_conversion_worklist.py at line 588, updated unit-regression/total module counts (683/833) and shifted line references, and refreshed all affected citations.",
+      "sources": [
+        {
+          "blob": "f717c183e60d68b48f43b14c15b6f29df125d1c8",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NFMK81",
+      "items": [
+        "sha256:33e203afd1211b0d2fd24ead36b7bfc4277993de338c3f83cb2cc2e85b02d082"
+      ],
+      "reason": "Documented state_conversion_only in the revision-standing conversion section with a verified source citation.",
+      "sources": [
+        {
+          "blob": "a200098c5cc70fecf4f8c887017a3400130e2f5c",
+          "path": "mcp/src/agents_remember/memory/conversion/state_conversion.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/memory/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f717c183e60d68b48f43b14c15b6f29df125d1c8",
+            "content": "sha256:c1d6dfc7216e84cc16ec28dc2fffd5ef2da21d8d645c5bd296e4942d0e2ff926",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "07998f644724fafc06b2ad16936a627f111714dc",
+            "content": "sha256:e67145744d633b4b684004a2c7c34807cc338c0257b6e98fe5aeb288c1c765b6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-PV0AMR",
+      "items": [
+        "sha256:9eceb46c3d3e0afcaa123c5daf726c727d1888f4df0a707bd91082906dc88c5e"
+      ],
+      "reason": "Re-anchored whole-file lane-catalog realization RLZ-XQXYDT against synced L55 candidate 9e4253083b9c (base ebc3a1748de3) after L55 added existing module test_state_conversion_worklist.py to unit-regression; surviving-module catalog integrity remains unchanged.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-QPC3VJ",
+      "items": [],
+      "reason": "Re-confirmed docs/design/python-pytest-bootstrap.md against synced L55 candidate 9e4253083b9c (base ebc3a1748de3) after adding test_state_conversion_worklist.py to mcp/tests/test-evidence-lanes.toml, refreshing the stress-durability anchor from lines 851-853 to 852-854.",
+      "revision": 30,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-T0PTNG",
+      "items": [
+        "sha256:64d3d0b6e94c0bb344db96e14f9ac97a0d6900375fb217cbf3691b98d9db79bf"
+      ],
+      "reason": "Updated knowledge_changes documentation and refreshed citations [3] and [9] to reflect delegation to KnowledgeSide.record_file_changed.",
+      "sources": [
+        {
+          "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/classify.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_worklist/classify.py"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:59da3be877d7fdc615d510675c49244ff89c7ea561030675cf82e958087e6b5c",
+      "record": "DPD-78737N",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-26T13:25:52+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L55",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "edba1d95-0f5c-5568-9011-f70fbc44f97b",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:ef6df6d57d630f55439099bdb93efafed96b4a38b36868980f3d96f7f72270a7",
+      "record": "DPD-78737N",
+      "revision": 20,
+      "writer": {
+        "at": "2026-11-26T18:54:30+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L55",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "edba1d95-0f5c-5568-9011-f70fbc44f97b",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:5164e62d553bb5bcb239e6e8d5d280ed375a932cbf099d1a927a5d6229ada4f7",
+      "record": "DPD-78737N",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-26T19:49:06+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L55",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "edba1d95-0f5c-5568-9011-f70fbc44f97b",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:0255cc58c0eed7e8451968581677ec6892af77c2067158a9379630d9b2934c5c",
+      "record": "DPD-ZMQ523",
+      "revision": 26,
+      "writer": {
+        "at": "2026-11-26T18:54:30+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L55",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "edba1d95-0f5c-5568-9011-f70fbc44f97b",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:afe6c6e19d6be6bd76f2c2ee5f01f615a0ecf250d5f718306a866fb75dca35b0",
+      "record": "DPD-ZT8YY7",
+      "revision": 27,
+      "writer": {
+        "at": "2026-11-26T13:25:52+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L55",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "edba1d95-0f5c-5568-9011-f70fbc44f97b",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:d80d60fc22b1207f63f2e688ad96a6efdc15b99b3bee2f94f875a37cb05512f4",
+      "record": "DPD-ZT8YY7",
+      "revision": 28,
+      "writer": {
+        "at": "2026-11-26T18:54:30+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L55",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "edba1d95-0f5c-5568-9011-f70fbc44f97b",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:93fbc30d3ae3afed33a9f1c27c789bf5293ab135abeeb7379cd6581a61b0caf6",
+      "record": "DPD-ZT8YY7",
+      "revision": 30,
+      "writer": {
+        "at": "2026-11-26T19:49:06+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L55",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "edba1d95-0f5c-5568-9011-f70fbc44f97b",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:30673c94e930cf87d082f5ddb25f053ead2b42fe71a75e63afa038e6e90d1478",
+      "record": "INV-R2Q8SW",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T13:25:52+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L55",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "edba1d95-0f5c-5568-9011-f70fbc44f97b",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

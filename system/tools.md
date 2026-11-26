@@ -356,8 +356,8 @@ The host-side deterministic hook and PR check may run these from `dashboard/`:
 
 ```text
 npm run codegen      # panda codegen; create checkout-local generated styles before typecheck.
-npm run lint         # eslint .
-npm run typecheck    # tsc -b
+npm run lint         # oxlint .
+npm run typecheck    # tsc -b (TypeScript 7)
 ```
 
 Direct targeted Vitest unit/component invocations are allowed from a host seat as diagnostic-only

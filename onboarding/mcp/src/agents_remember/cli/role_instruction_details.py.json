@@ -140,7 +140,7 @@
         }
       ]
     },
-    "11": {
+    "12": {
       "note": "`nested_detail_root`, `_validated_detail_source_parts`, `nested_detail_path`, and `_corpus_root_context` define the confined nested detail layout and durable corpus root selection.",
       "targets": [
         {

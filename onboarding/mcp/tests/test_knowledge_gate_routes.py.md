@@ -177,9 +177,7 @@ No configured live documentation source was available for this pass.
 
 - Direct landing's route entries and its closing across calls. [24]
 
-
-
-- Master landing refuses anything not current; ghost subjects; the scoping. [25]
+- Master landing refuses timed-out blob reads and unverifiable entries when `integration_gate_block` runs against a series contract with an abandoned-leaf master document and chain proof held passing. [25]
 
 - The exact trees re-anchor-check the file they just closed; an unavailable object. [26]
 - The admission base, the memo key and record landing on unconverted memory. [27]

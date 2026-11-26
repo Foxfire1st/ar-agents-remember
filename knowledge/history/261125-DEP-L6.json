@@ -1,0 +1,1956 @@
+{
+  "closed": true,
+  "leaf": "261125-DEP-L6",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-26T12:17:59+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261125-DEP-L6",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+      "task": "261125-DEP"
+    },
+    "reviewer": {
+      "at": "2026-11-26T12:17:59+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261125-DEP-L6",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "90d69dc2-40b6-4b9c-8075-2112d5cc3a5d",
+      "task": "261125-DEP",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 3,
+    "tree": "10250c6c2c28cfb248374b59d3779ec566c8017e",
+    "verdictRef": "notes/reports/reviewer/90d69dc2-40b6-4b9c-8075-2112d5cc3a5d/261125-DEP-L6-memory-verdict.md"
+  },
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-0P9R8H",
+      "items": [],
+      "reason": "Updated R4/R5 prose to cache-free oxlint linting without ESLint cache flags and incremental tsc -b *.tsbuildinfo caches, and re-anchored reference [4] to test_r5_tsc_caches_are_gitignored_and_do_not_trip_landing_commit_check.",
+      "sources": [
+        {
+          "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+          "path": "mcp/tests/test_githooks_l29_repairs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_githooks_l29_repairs.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-10DBQC",
+      "items": [
+        "sha256:651cbeba33d7928fddac58f2f7f419da2756ac29d11c9fc003477890ce5d47c5"
+      ],
+      "reason": "Named oxlint linting (dashboard/.oxlintrc.json) and TypeScript 7 typecheck (tsc -b) in the hook summary, refreshed CONTRIBUTING.md references [40] and [281], and verified .githooks/_gate.sh, .gitignore, and dashboard/.gitignore updates on 48e9210aa3e7.",
+      "sources": [
+        {
+          "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
+          "path": ".githooks/_gate.sh"
+        },
+        {
+          "blob": "95431a313a1cfebcf2d81d41eba27781f3fdcf05",
+          "path": ".gitignore"
+        },
+        {
+          "blob": "43efc604596aeac2aa788d1336e754f407f587a1",
+          "path": "dashboard/.gitignore"
+        },
+        {
+          "blob": "8cfbfe42cda23045025c901a5c99af2d5318b9f9",
+          "path": "dashboard/.oxlintrc.json"
+        },
+        {
+          "blob": "absent",
+          "path": "dashboard/eslint.config.js"
+        },
+        {
+          "blob": "9198c4f4ce12d5d17e469b271028357fb1a1ecb5",
+          "path": "dashboard/package-lock.json"
+        },
+        {
+          "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
+          "path": "dashboard/package.json"
+        },
+        {
+          "blob": "072a9c0e68a8e623018deb432383afea63fc90d2",
+          "path": "dashboard/tsconfig.app.json"
+        },
+        {
+          "blob": "d7b440e5f58c6ef2238302c074035d33ef75b0e2",
+          "path": "dashboard/tsconfig.driver.json"
+        },
+        {
+          "blob": "1579d550a07354a9428251c3af18f81ee60d9afa",
+          "path": "dashboard/tsconfig.node.json"
+        },
+        {
+          "blob": "87831da93497486a4c701b9e6eb6850f5fe5579c",
+          "path": "system/defaults/examples/memory-repo/code-quality-report-template.md"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "considered": [
+        "FAM-98S8TF"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-1X2SXG",
+      "items": [
+        "sha256:fbdb70a85d40f1fb766bdca2a9bf1906abaf3fc7e9f6e6498f70c93c328c592a"
+      ],
+      "reason": "INV-9Z6JJ0 governs dashboard oxlint configuration and Python scope provenance readers, which is distinct from FAM-98S8TF's test-execution timeout and hook-guard guarantees; no existing family shares this joint guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-9Z6JJ0"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-375TEF",
+      "items": [
+        "sha256:ddaca447c7b287d0804f782d30b5a8b3565d44bb924769a760832c1370fbde03"
+      ],
+      "reason": "CONTRIBUTING.md accurately reflects BUG-L29's tool-registration description (lines 40-50), BUG-L49's pyproject.toml update, and 261125-DEP-L6's updates switching dashboard lint to oxlint (lines 194-197) and the concurrent hook rail to cache-free oxlint with incremental tsc -b *.tsbuildinfo (lines 333-338), with test-evidence-lanes.toml declaring 830 modules (680 unit-regression).",
+      "revision": 19,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3E5CTV",
+      "items": [
+        "sha256:1577ef84be5ccf3384ea6e3a410a7c6b25993eba0917ccadb82cb6b98d5f277e",
+        "sha256:2548c70b57f6a5f72b3e85cfeefc367a41e4b64a13fa688132589f63bf5b62bf"
+      ],
+      "reason": "Updated TypeScript stack example prose from ESLint to oxlint and refreshed references [1] and [2].",
+      "sources": [
+        {
+          "blob": "87831da93497486a4c701b9e6eb6850f5fe5579c",
+          "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md"
+        },
+        {
+          "blob": "87831da93497486a4c701b9e6eb6850f5fe5579c",
+          "path": "system/defaults/examples/memory-repo/code-quality-report-template.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-3V0WQD",
+      "items": [],
+      "reason": "docs/design/python-pytest-bootstrap.md remains accurate on 9af497f7bb99 (incorporating BUG-L49 pyproject.toml) after adding mcp/tests/test_code_quality_dashboard_lint_scope.py to unit-regression (680 of 830 modules) because integration and stress-durability selection rules and the single stress-durability module (lines 849-851) are unchanged.",
+      "revision": 27,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-41X64N",
+      "items": [],
+      "reason": "Removed retired dashboard/.eslintcache prose and updated reference [3] to cover incremental *.tsbuildinfo caches and remaining dashboard build outputs.",
+      "sources": [
+        {
+          "blob": "43efc604596aeac2aa788d1336e754f407f587a1",
+          "path": "dashboard/.gitignore"
+        }
+      ],
+      "subject": "onboarding:dashboard/.gitignore"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
+            "content": "sha256:6f72608693b61ab3410fbe00859e05d76338f733f8a87069f712cb07b1f8d90d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "ed04fba32f76f0abfc29cba36d54f498ec48655f",
+            "content": "sha256:1d53ab2a403e22a54d8a0e1ed541dbbeaa1958aa77e0f6576aebbb8f11933482",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "9b4bc7525b00d8df391a71b6d9c44dccbb4b247c",
+            "content": "sha256:aa66b9911a2ce76293146b342f8978eb19cac8468c1b75026b2737a043cdfa48",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-46RT6M",
+      "items": [
+        "sha256:aa0eb3d6890288461c9eb953d9168784dee1ee1154b478ade9632c540803645a"
+      ],
+      "reason": "Re-anchored RLZ-H44S0N and RLZ-BJ41EY on dc3c61314dfc after post-BUG-L51/L52 sync with mcp/tests/test_code_quality_dashboard_lint_scope.py registered in both catalogs.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4W5ASV",
+      "items": [],
+      "reason": "Documented explicit types: ['node'] required by TypeScript 7 alongside incremental tsBuildInfoFile and refreshed references [1] and [2].",
+      "sources": [
+        {
+          "blob": "1579d550a07354a9428251c3af18f81ee60d9afa",
+          "path": "dashboard/tsconfig.node.json"
+        }
+      ],
+      "subject": "onboarding:dashboard/tsconfig.node.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-54EANT",
+      "items": [
+        "sha256:8b1edcac038736b0f38c9c019ff569a91871f5335bac5092e4d1f0d5b3925283"
+      ],
+      "reason": "Created new onboarding card and sidecar references for dashboard/src/test/cssEscape.test.ts covering the five CSSOM and querySelector test cases.",
+      "sources": [
+        {
+          "blob": "7f1f723a8041a749a82242a766eb14dda62c4329",
+          "path": "dashboard/src/test/cssEscape.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/test/cssEscape.test.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5B4B5S",
+      "items": [],
+      "reason": "Updated prose and reference [9] from content-addressed ESLint .eslintcache to cache-free oxlint linting while preserving incremental tsc -b (*.tsbuildinfo) and Pyright warning suppression.",
+      "sources": [
+        {
+          "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
+          "path": ".githooks/_gate.sh"
+        }
+      ],
+      "subject": "onboarding:.githooks/_gate.sh"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-68AQ33",
+      "items": [
+        "sha256:1b8834393abe7f3fb4c01d71a4a198532b5e77479866b241cc32336959a592b8",
+        "sha256:5f18d1e1487a9a51a54acb2fea2dbac5adea56f9db8f4bc8531f3805759d5766"
+      ],
+      "reason": "Replacing an unsafe optional-chaining cast in sentRequestId with an explicit throw guard preserves all documented test behaviors on 48e9210aa3e7.",
+      "sources": [
+        {
+          "blob": "3d3204732da1df7366a785396d8f848118b661c0",
+          "path": "dashboard/src/cockpit/roleChatDispatch.repair.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/roleChatDispatch.repair.test.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7CVYRW",
+      "items": [
+        "sha256:2f91c033f03b2be6fe79b2972587cbe05a59a2ef6c6e1282c7f6240d4fee1a56"
+      ],
+      "reason": "Merged BUG-L51/L52 and L6 catalog totals to 18 contracts / 123 artifacts / 830 distinct modules and refreshed shifted references on dc3c61314dfc.",
+      "sources": [
+        {
+          "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "835962b30dbb44210c9ddaf2e0b22f2f08b95bea",
+          "path": "mcp/tests/test_code_quality_dashboard_lint_scope.py"
+        },
+        {
+          "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+          "path": "mcp/tests/test_githooks_l29_repairs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "considered": [
+        "FAM-98S8TF"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-7J4HFR",
+      "items": [
+        "sha256:fdfbfffde1ee337b8c245cdb16201b7bf7d679eebc710d282019495682d8a33a"
+      ],
+      "reason": "INV-C9JJFK governs TypeScript 7 compilation and temporary typescript-compiler-api alias isolation across dashboard configs and tests, which is distinct from FAM-98S8TF's runtime timeout and hook-guard scope; no existing family shares this joint guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-C9JJFK"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-7PPQWH",
+      "items": [
+        "sha256:f81837593925201c0b8f28d3555678fc878532cd7169f019c02564912d7d4571"
+      ],
+      "reason": "Re-anchored open weakness WKN-RJTFPF to the post-sync candidate blob of dashboard/src/test/loadIndependence.test.ts after line 12 switched its compiler import to typescript-compiler-api; the open ReviewSurface flag remains for another task.",
+      "revision": 2,
+      "subject": "WKN-RJTFPF"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-84GYY6",
+      "items": [
+        "sha256:e5c57d08c3f412763083740f352cbc672d9672f9f62e40ecb7389a1c94442160"
+      ],
+      "reason": "Replaced deleted eslint_result_files with parse_oxlint_result_files and oxlint_result_files, updated drifted symbol line ranges, and refreshed all evidence references.",
+      "sources": [
+        {
+          "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+          "path": "mcp/test_support/agents_remember_test_support/code_quality/scope.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/code_quality/scope.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-48C3DS",
+          "revision": 1
+        },
+        {
+          "id": "INV-5VQQ6S",
+          "revision": 1
+        },
+        {
+          "id": "INV-WZAMFR",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-8FHN89",
+      "items": [
+        "sha256:659c37badaa6b7ab0e36ed379318f822807e0e0f80d61f044910231a2c72c1b9"
+      ],
+      "reason": "Examined all three members on 48e9210aa3e7 after dashboard/src/test/setup.ts and loadIndependence.test.ts changed; INV-48C3DS only re-anchored RLZ-SVAZ21 and INV-5VQQ6S/INV-WZAMFR are unchanged, so the joint guarantee still holds verbatim.",
+      "revision": 2,
+      "subject": "FAM-98S8TF"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-91NTJ1",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Merged BUG-L51/L52 18 contracts / 123 artifacts with L6 test_code_quality_dashboard_lint_scope.py consumer registration (lines 217 and 2723) and refreshed all citations on dc3c61314dfc.",
+      "sources": [
+        {
+          "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9NVYP4",
+      "items": [
+        "sha256:72c936f10b0e29de8d9fc3efa12a5192a6e87e2712035bab920ea333fc036bf1",
+        "sha256:a0ad2af2274c77ce6dc74ced2ca9cb66fc392f70d88460bd78e89164c5cf221d"
+      ],
+      "reason": "Recorded explicit types: ['node'] ambient-type scoping added for TypeScript 7.",
+      "sources": [
+        {
+          "blob": "e61c714ea737af87f186eb7b7d01feb67acd008b",
+          "path": "mcp/native_helpers/conversation_library/tsconfig.json"
+        }
+      ],
+      "subject": "onboarding:mcp/native_helpers/conversation_library/tsconfig.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A7AQQJ",
+      "items": [
+        "sha256:11a37ab59c1aaf74e0b84fc14aaca554add63cfc15b0b214210fca5842af81b2",
+        "sha256:134282af19a355161aa36e5d028c2d58bda5b3303a869d0e3111c12063ec971e",
+        "sha256:29f4876edde18959832e3f4b04e2ad334d75abedd26221fca8943504b3885a2c",
+        "sha256:6db1cc3a48967d40fc9eef6f00c37e5946ed435b0d3112c5c3a726eb98b69d88",
+        "sha256:995624f4e0bf6ad845b412d6de65dcaac6e929e8e5fed1e17914be6b000d029c"
+      ],
+      "reason": "Merged HEAD runtime deps (without removed Three) with oxlint ^1.95.0, TypeScript 7 ^7.0.2, and temporary typescript-compiler-api alias, and refreshed references [1], [2], and [3].",
+      "sources": [
+        {
+          "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
+          "path": "dashboard/package.json"
+        }
+      ],
+      "subject": "onboarding:dashboard/package.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AD1EG9",
+      "items": [],
+      "reason": "Documented explicit types: ['node'] required by TypeScript 7 alongside incremental tsBuildInfoFile and refreshed references [1] and [2].",
+      "sources": [
+        {
+          "blob": "d7b440e5f58c6ef2238302c074035d33ef75b0e2",
+          "path": "dashboard/tsconfig.driver.json"
+        }
+      ],
+      "subject": "onboarding:dashboard/tsconfig.driver.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AHPHJH",
+      "items": [
+        "sha256:949a6b6fb5d08bcc57c74323b569a5f6d1bb82fb81302df7b5298cee4bc67195",
+        "sha256:f58390380fece02645aafaa40761ad78a69e07b5cea59ab5933aec991f562387"
+      ],
+      "reason": "Bumping devDependency typescript to 7.0.2 preserves all documented runtime pins, engine requirements, and scripts; sidecar anchor [1] blob was refreshed.",
+      "sources": [
+        {
+          "blob": "d53a4b03fcf18db308c19408fe114d891d8688d8",
+          "path": "mcp/native_helpers/conversation_library/package.json"
+        }
+      ],
+      "subject": "onboarding:mcp/native_helpers/conversation_library/package.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AYHGSS",
+      "items": [
+        "sha256:3f849878ad6b39978066bf197eb1b0bd95c7ee800b0bb67be6f921d856f8fd8b"
+      ],
+      "reason": "Updated parser description to note the allowlisted typescript-compiler-api (TypeScript 6) import and added line 5-12 evidence.",
+      "sources": [
+        {
+          "blob": "ea6923d301abe7065f0cd1533c6a573153c2bf56",
+          "path": "dashboard/src/test/loadIndependence.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/test/loadIndependence.test.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "074f7ffea4d85e07442938cb072c0e3106214b8d",
+            "content": "sha256:80fae8ad674d9f3eddec60ab7dc9c9571e63a5dae6c67a200209dd11576cae34",
+            "locator": {
+              "end": 383,
+              "kind": "line_range",
+              "start": 330
+            },
+            "path": "CONTRIBUTING.md"
+          },
+          "before": {
+            "blob": "340226826a5e249c8745629830d7bf8b7ac11cc6",
+            "content": "sha256:c8a1165d5d603afb9ed77543a0ce093307b5a4f99bda18407eb38bd15727dc25",
+            "locator": {
+              "end": 383,
+              "kind": "line_range",
+              "start": 330
+            },
+            "path": "CONTRIBUTING.md"
+          },
+          "id": "RLZ-3NCW5Y"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-B57YDV",
+      "items": [],
+      "reason": "Re-anchored RLZ-3NCW5Y on CONTRIBUTING.md:330-383 after updating lines 333-338 from ESLint/.eslintcache to cache-free oxlint with incremental tsc -b *.tsbuildinfo; INV-RXGZM9's statement about concurrent and cached hook execution still holds.",
+      "revision": 1,
+      "subject": "INV-RXGZM9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-C1ZTT2",
+      "items": [
+        "sha256:8b1dcd12dc38089397e5a05fea9dbb56aaf189d628a27758af32d35de7a47e78"
+      ],
+      "reason": "Bumping devDependency typescript to ^7.0.2 preserves the @getpaseo/plugin 0.16.2 pin and typecheck/test scripts; sidecar blobs were refreshed on 48e9210aa3e7.",
+      "sources": [
+        {
+          "blob": "0704eb9c287da1f9cbd98611dbfbfabf4b580117",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/package.json"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/package.json"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "9b4bc7525b00d8df391a71b6d9c44dccbb4b247c",
+            "content": "sha256:aa66b9911a2ce76293146b342f8978eb19cac8468c1b75026b2737a043cdfa48",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
+            "content": "sha256:6f72608693b61ab3410fbe00859e05d76338f733f8a87069f712cb07b1f8d90d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "ed04fba32f76f0abfc29cba36d54f498ec48655f",
+            "content": "sha256:1d53ab2a403e22a54d8a0e1ed541dbbeaa1958aa77e0f6576aebbb8f11933482",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-C8CT7P",
+      "items": [
+        "sha256:668f38c442199e3e65ac0305a114bf5897d0b1404719e7dea3cfc7f860dc7fbb"
+      ],
+      "reason": "Re-anchored RLZ-8RHQED and RLZ-MC12B0 on evidence-lifecycle.toml and test-evidence-lanes.toml (dc3c61314dfc) after post-BUG-L51/L52 sync.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CDBB7E",
+      "items": [
+        "sha256:a9f215518d06841f97fbc6aa07b4f18b04c8c97d79cf40ea42eaa1b17452d965"
+      ],
+      "reason": "Overview prose accurately describes strict no-emit TypeScript checks and runtime pins without naming TypeScript 5; reference [4] anchors were refreshed to current ranges.",
+      "sources": [
+        {
+          "blob": "f24a011930d964bb28302ed8cf80964eeb50f80b",
+          "path": "mcp/native_helpers/conversation_library/package-lock.json"
+        },
+        {
+          "blob": "d53a4b03fcf18db308c19408fe114d891d8688d8",
+          "path": "mcp/native_helpers/conversation_library/package.json"
+        },
+        {
+          "blob": "e61c714ea737af87f186eb7b7d01feb67acd008b",
+          "path": "mcp/native_helpers/conversation_library/tsconfig.json"
+        }
+      ],
+      "subject": "onboarding:mcp/native_helpers/conversation_library/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CGV4NB",
+      "items": [],
+      "reason": "Removed retired .eslintcache prose and pruned obsolete reference [3] after dropping .eslintcache from root .gitignore.",
+      "sources": [
+        {
+          "blob": "95431a313a1cfebcf2d81d41eba27781f3fdcf05",
+          "path": ".gitignore"
+        }
+      ],
+      "subject": "onboarding:.gitignore"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DV02BD",
+      "items": [
+        "sha256:000f30020b7b8e12e7372b82df9d506f8e8199c2f520d001c73dc66c22e34c93",
+        "sha256:00c0102d5029b06f81bacd62520b71a6cebe7e980a235f5af62a659652b0d339",
+        "sha256:01915886adf71166c6492011d77cfb2909dca20a1c1ded2d5526525acf6088ac",
+        "sha256:03824b0c5fc314b535b447ef7a141624c7a108b4a3e89286b5b54c474398e88a",
+        "sha256:07197e428b7f4365a0d6f9c04914b59ccd9c9140b719ce5e34309ab63ae62c6f",
+        "sha256:0bad39e50277e8c5c95815b5869175798004af7453ea96403abb0a09421af346",
+        "sha256:0e40053d335a013822684281845a2c14ef703a563523839a6712216573d67c17",
+        "sha256:11301d1650905e2aa23f6abf17e2455a0d0507396d87deb140934450f7d842d9",
+        "sha256:11fb2ee395c55e5583d44136d8b917a4a41a126196e7759918ec4f333597a3a7",
+        "sha256:14573339559e08ca763bbafd68dc7a0a66dc3f5bae376224972959c75575966e",
+        "sha256:157d7cc7ff439059135d7b9f9335dc7458c4fd553faebec130b9c9ce3f5e445b",
+        "sha256:158c25236014ab7aea49f6ebffc042ab18f462088a808c2c14a796e728bd330c",
+        "sha256:18490412066725324ffcf22c4aedd50af6e25e49595ced5d9e280a1c9916d7f6",
+        "sha256:194e4f5bca7049d15d947d199844d689e54706b5736373061cdb070707e3fb7c",
+        "sha256:1a7c1111e2669ae12dea1cc8cbbde83624c94ae5b4ab8d1056c70628812d522a",
+        "sha256:1aadfead4937495814b8dae052295679de37769f6071bf45f9f9d2283ed43a5f",
+        "sha256:1d62171936d68b5ca455893d8323d25abbeec8e0a1cd4a5f8149b46b4df10c52",
+        "sha256:1d66484233f7116a0e16ed37c51d35c377fe1cc881f03ca46d1abee40016e8d6",
+        "sha256:1db2abd486d2cc23a8f9a06691b95197d6ddd496e9ca30ac39224200bda8b167",
+        "sha256:1dcd133f60d0ab49b6f3026fa027b1a35c499c34eb53871b2a3aa161c7578f4d",
+        "sha256:2100268fd767708bbbec2c8cb941f2602f6e996a84c90cbf088d89eb8cc7d2a9",
+        "sha256:2311315ffeab760b7328b8c0ef4275773c0dac0737319bd0a9427a72d8879bfc",
+        "sha256:2324e35cc7aaf7e1585f05758b0f9157317e922a59a1bc0c5af79c76b7d044b9",
+        "sha256:255d04a5603f8792dc4a98eed90d738ba0dd7fdfd83e33e9643b6508a092c45c",
+        "sha256:26ce4b518df7893212e550a5477a7755e41ccf301ff0be78c86e0e69c2a98724",
+        "sha256:2c0f80fbfdedcd4d505a086481463eeb1bffae6e9b43b376eab8721b0641bef6",
+        "sha256:2d1531872813cc905a0b172a66f8d4f8fabc4e92a92ac4d86ad0a2a0d7a5c2a2",
+        "sha256:33bc2d55b96a543e5646b2b05907dd88a61502ff07cc24b09f3d4b47975b4e1f",
+        "sha256:398f3f92afbd856a3205311d1b046e14fe7b7bb406ea46de3da084663d79e977",
+        "sha256:3b581a129f3d5b9a3ed937ad090385b39561d8c3e0cadbc816b2d5a03f6adb5d",
+        "sha256:3e1d3d203c0f7170146ae10cb37309e8dde4bff60509b3dbcff269ac4923ab57",
+        "sha256:3e6a6a9b2a8bb4a12613cd3feb3df610c6500027a0158923a6679751544212a7",
+        "sha256:4117d2bb32f99e2d641533884a494702ff51a5591867d4651f7c998b4f7c71a7",
+        "sha256:42290c9c235d7916af6bb4817f4d726b459f17cadaecfc09c8a907555963d8f5",
+        "sha256:42d25c8c09a152baf4190a58560f2acc2a996ae555d97ee9bdcd4ac2548f6938",
+        "sha256:4501a8231a202bcc4ccc08d25cee32b6d3bb3500a047b9ba0098aac2dc75623c",
+        "sha256:456a8ebb8d5173de8a694662132066ac9b45d567348c1f80ebee17083d892939",
+        "sha256:457e2a8c6b7bf411c2f480001f9effe033a819512cc8fb2ea635b2ec8f6cfc4d",
+        "sha256:49561a6dcae27b0ac84a1dc41b1353ec35f70d6dae55f4f300ce86dce206d614",
+        "sha256:4aba9791c9e28cbddbd660c297400243cce157edc07634084bb6add8a81ad79d",
+        "sha256:4bbbf7a47f18d6a2eed48b3f57670375842299b0acd867e235ece4a9dccc2014",
+        "sha256:4ef565a243b0f9adb2ee9f64423756e671a47400cd57cc2721ebc90f43a238aa",
+        "sha256:4efb56ffc7b959fa35805944ef19ee0b87719d8e3783a3843271d74c14611350",
+        "sha256:501105d9acb3831c6f5aebddbf2474f4cc1bd0830748deae53d0a2764a68f375",
+        "sha256:5185d165dfc435ec47e3b55718ac4a59e3e23d85ace8b182bc51596a9b4f69ff",
+        "sha256:51caac373932da10ea32788b5769654dbd280d3432848f946f76b591d612c6be",
+        "sha256:51d3a441411da932c8144df694c981482ff8107dcf0068b2c6bbeea22d4e7597",
+        "sha256:51e20b4a24c9e6d94cfb7cfde825a88061f958f3cf3d8911249e0119a40f3325",
+        "sha256:549b750932fa730b75202c435d5d9cb93d7e6f59ca6207f246f32281b45cf895",
+        "sha256:57b7342c6308f0bb516c119ed99e1bf5cc4f9eb2bfaa356efbd1ace4d6e9e700",
+        "sha256:5856fca8b0e7d85e5d17a95a24a94fdf7b754ff888b490325fdcd897138ae8e9",
+        "sha256:58ff659b901095487aec1a91e8b80829fb766b6ce4052aaa608efa0340af90ea",
+        "sha256:59461e9a5932a3bcd4873eefc1900d2505ff3d35303ec9e732c61f96aef69671",
+        "sha256:5a924ed99e7cb1b063abf8155d6f20a7ae73765b2e3c437407965e39e934dc63",
+        "sha256:5ce007da9713daa35b637a658c6784dffa97fda900e4940e2ed5bab57ea3fcdf",
+        "sha256:5d0ff00b9dfc9d1c4bf478dff7b27e63e5ad4f04905d06b1d5ba7670a6af763d",
+        "sha256:5e14c46aaef8b0089992a2ab4e0b999fc0222081433ac5a2db198f4c546ff0a8",
+        "sha256:628c83da50f12409ca5c92d1d6d4a61754dbb96925ae0a4e5511d3e5c6acecd1",
+        "sha256:6379abecbb3d5bc5a1773a5ce8d9b4173c47aa47ff71667012f551c63d6eccb5",
+        "sha256:63b6ae6b594f5aac885ef8eee7f68f99551724e56752c72001338c6d3cfdeec7",
+        "sha256:668ee24e665a869335b26d84d971d60cc0cfa909f009f69db7ec991b3a1a0608",
+        "sha256:6852675f661a58a92196eda36703b690e0da7084c475a8c695d2265836aab134",
+        "sha256:694859de265c87ae815f335e6fe7c8847d88d32fde7c3e05d20defbc80bf6bda",
+        "sha256:6c627cd73fec9247e3949abd659c0e355b53dbc45cbec8f030bd13dc274bc368",
+        "sha256:6d1a37d821493620e6334931ab86089677188f27e0e0b21d121470c667f16d10",
+        "sha256:6d1c77f8836e12682d748b5028de0b6a68c49c648441f2442883b8873b3f4c64",
+        "sha256:6f0f0be1b6bb92e4521553502df3e580d575e9b0cb23ec6ad5974466448a86b1",
+        "sha256:72ff19e531d170e6cdb0969187f3b3bcdc13c744fa05e0d50154529b583bfb81",
+        "sha256:734d0797923f7ab61a08bb287435510f21381498dafd681861e3afaf6c66d5a7",
+        "sha256:7676a2d12c12387cc6151cb20a4a95a6d6071270aeb4e129693f169bd9a8fe63",
+        "sha256:76f4c14345c139622f4ce10cc50cf7d3c4379a9dc1f31b07656c86dc21c529b6",
+        "sha256:772ab66348a1f1c26b7207066229b22f5b723893641e0d9f13adfa7016d1bc19",
+        "sha256:7b93160bd2da1c68a47167aa0b42a632090b735b7287a567d39abb1f6d772d93",
+        "sha256:7c7205ef6f62b87d86b13be93cf65ab63e9e4a7f9be01bee0e74f811d5f48c25",
+        "sha256:818a407b41ee38b1c4aa6d247a6620b05cb6c2eed69e36a98a3655c178a69aaf",
+        "sha256:84667dfa46929c473def34a4a610dfd93432571a76eca5f0cfcc4c77c606acd4",
+        "sha256:8824d6dc1195c7621b81719a53090d700007b844f04152ba17980bbfc3423a05",
+        "sha256:88acdfd7289586fdc535cf719ee0861718c19ca88e7575c5cef42d5193db4b62",
+        "sha256:892238a0ccff82a58b41c59093cd663f62870bd338ed4b92103af5c944369d22",
+        "sha256:8992c0413d1ecfde9dd7050956e605d536b4443e7d4a8a304d26519032e1d0ed",
+        "sha256:8e2fc90124a1d0fdda6b7cc7da27f5b4a21ac2595f63fc91a50a9f7ba0f4f69e",
+        "sha256:8e50971a2ef105fca9194e9dfd9c21bc8a7b401f0c8c0f71055ef86ab18a9c2e",
+        "sha256:8f7f578f910a5b8061f009dc5c93d3637dc3de0512cb695a0ba8acedf56b5251",
+        "sha256:905dcae19a5be32f7d9dc8c16b7a8fd5fd8052e0cd8952a2c88517f8d0c11af6",
+        "sha256:91dee0eb31b90d089c0924a34a3996e298ed1fbf0217a2c5ddf6e5685a96d4a6",
+        "sha256:92a1f28f709de7beb1324666fec2e5fe467090e58ec4fee3ed5739faefd5c73a",
+        "sha256:9339e28b924450407d39c1f504cc81d6656e23a4e1f9c68c64be1027bf0a7897",
+        "sha256:95712c9cbe06082b21bfa1bc050fb1d27aafae86b88800183ff9faf34e247a74",
+        "sha256:958e3b49959ec3392b92e31f8594dd324e581dde646b3c537f61bb4ff50eb0b6",
+        "sha256:9632414f45483aeb5de915984ef1bcec2e56207dac64699d4bcc7e93899e56b0",
+        "sha256:9687f08efb2e51bbbb7372c2b81b6a77c6a0e54cd5041a01d17cb89fb037e1a8",
+        "sha256:96f9c138b200ecb41eee5101bc77ff53e4090be527752ba81efbf9adc07a5030",
+        "sha256:9b67ebea45c773d8dff32fbf2f6c687d6087a731ab19c74e60fc0c936942b462",
+        "sha256:9b8eba9395fb4ec5f4f0e4f0d18e2805150aecfad1c12be733ccb679d65d3dec",
+        "sha256:9c4beeff369fd4637982448b1fd63fed2a222db167a69ced503fbf59c1d62371",
+        "sha256:9d281459ccfacbaa8b7e8380e193d7f21c4b436aedc967b90ad846ea89b1852b",
+        "sha256:9e25aa544fbfafa28a0f5bc64eadc196f9db633af74bbe6e740e49d6e2e2f763",
+        "sha256:a13d0147d7b576d88889a6610263ab3b17308491764724307511e366dc18d2e4",
+        "sha256:a30769328a0d42328c845f251292395ba3db46fe97540051f9166c661fb82867",
+        "sha256:a41bfa2ec49967beadff9b4ccd9c67badc356517ed14c6c24c416c94fcb3e69f",
+        "sha256:a5479417941564dfe0ac2ec5d495a566f7e039c87fee21effe556f43a4b42baa",
+        "sha256:a6ab15a8b952ed39ac0c422cb673693f5e0b6acfe6a72365d36384f78df74936",
+        "sha256:a702c85f3436fa7a0c815841fc5d61f9b45cad5ebd9b8a82c36044c1a8dfe6e4",
+        "sha256:a7ff288cb58084b00ead235a5b2eab9262687cb66a53433455a2c5e91936970d",
+        "sha256:ae6cc58a3b480772c621984d7d28e2a09467095fe785dae46c9396b5e2d5e2c6",
+        "sha256:aef9952e805d31ffb838b7c3b0b7dd501f756eafef8fbbd99ec82977521e1844",
+        "sha256:af7ac4fbf70e1ec38a9378451816f2bfc641eab5518132dfd42ef4555d05161b",
+        "sha256:afc61cd54325a994470e94dab5aea68fb406c6d9f052cc3bee02ad027c61a40d",
+        "sha256:afc6e3b7e0c7264ecf16b2ea884fc73d9201442ad4b911e58fb045e6aaba239f",
+        "sha256:afcf6f3a186c32b754b6a870790d557c4b5d6aeadbbbd0664ae8794d487a4ada",
+        "sha256:b1db5b396bb34205d8734d5b71184ebaa5f5410aa1c778e15b145944c3878e39",
+        "sha256:b659abd57ea17167e6d3a12b52ca179f795d18323a948aebdf5a74ecccdc1971",
+        "sha256:b6b80dfd844a1b4fa38f68524d78df37865aef4f64691bd4f153de26ae4b9d2a",
+        "sha256:b701dd44bd19297cc86742b9425002d8c74bd60e8c806e11db01adedb92649b9",
+        "sha256:b9a09bd19e96d57061bfb7adb46f30c70b94e16552af1c2e2a4de221acdb537d",
+        "sha256:bd2a4f6e138b327e80a4913762c5c907d35f204729b82bcdcbced7edf189ad08",
+        "sha256:be21f960a1bea0317c09f0f679ea5f069efd49b82edc93e773c105cc28677db1",
+        "sha256:c2059b38a34e486d6f63296413271f43b63fdcbce26d32a08e8f21586c38699d",
+        "sha256:c23bad049c6a3e6362826299ddda2845111fc168c1714512bda1fd84ad2fa002",
+        "sha256:c38161626642b14241a894c719a924129aad8d7538041f701ed3f8238e20df2c",
+        "sha256:c416dd2d9b5aef6c0a2a95d104c312e4daaa4c1ba195374611a2005a47de7cfd",
+        "sha256:c6ec0237a3b6e22542b680e515b8b60bc2c24aac8ecc7800e5d500c0bf8f7a2b",
+        "sha256:c78db66e6ccdbf24d3d4cb423bc050191e321eb66511d870913122ad3bdea29c",
+        "sha256:c9e4e1afedf8a291eb650e454b6f9e20ee688019dc100465f2d60d3709c5feac",
+        "sha256:ca6ac90d56aee2afa6615b7c1f94949cbda6c01568c50da494d6b46b13adcd6a",
+        "sha256:caf60cc7005c0cf89fb3098d713c893e17351fb5ed24f45fa1fa5ba85bf1f4f9",
+        "sha256:cc13549c2dac7a96da937088f015ddc4e03dca8e83bb8cb9533ddabe14342ca7",
+        "sha256:ccf053ceb16df411d4db1d5025132f5ef34037e2f813c8bd2be3c97e22ea432f",
+        "sha256:cd6a7569b8da58929adfd6383cd4bce4a861b3baf11f92d8284b1996e6c2881f",
+        "sha256:cd9cbf8ae3e3e494e55060a1ab9b480f16cbf0929826ac3c162be5bdf5df0107",
+        "sha256:cf42ce85dde120783f35debf9fb842f81a758c4b3dac0eaf3359189e3eb0176b",
+        "sha256:d02b22c0f233fc08453ebd033b3fdf3b5bee132da7fbb567d7d19ff17814e53c",
+        "sha256:d14d976249487591b1214e2934ec88c0d196eff7b30ee37aef4beff23161398b",
+        "sha256:d2bfea28219cc05c3e438b3500c29a1914387124dfeda3251a84c075b6c8be81",
+        "sha256:d398090816eb16401b33df616c108b5e324ba32de98b36d5817d0b15e351f8bc",
+        "sha256:d401fd39a412e735e9200399c2ae61e5b1ca919b3e67c3d48ccbea267cafb9a5",
+        "sha256:d45d09ce2ff2dc606cfbdfe9dec21a4b2f45cbbf8d086f91759a05dbd7e35901",
+        "sha256:d4dc3c18c8ff7d655de527b06bb24ab091e90edbbe457bdf120ebd1fb0a654d3",
+        "sha256:d8265d819cd366fdc8fee64dbdb8090e2ee815db9dcb1e4e90963302228ec600",
+        "sha256:d8548bd307158824eb0e840bc43f4c77fd15f1f67ebe0e456f3b6ca3c639d7e2",
+        "sha256:d88b307df179a0a9a3a7f8d1c737a3227105ee0b592d3a88f2b8db7205ec800d",
+        "sha256:df49123f24ca58608d1a8656ed23766d358d8338ffc33e51860b87737798e9f8",
+        "sha256:df88db0cf2386c35d0b791e482a854e1f950cffc1e0391038df6c20081e74421",
+        "sha256:e4bf6aa057ed91e7ca9b2a4dcca5cfaf93db1f81d774622eceb2510c1bc8f35b",
+        "sha256:e53feeb8734eb5892a5dd28bd824a23590629dc821dfd95452dda7846babce6a",
+        "sha256:e562950b0761245f42773f5e74e9f6c3d222b40c6cb899386a5e8b5169b2f01b",
+        "sha256:e578c25d9868fec814d322d8cada89834eee9f63a56051a572144b351e6776ac",
+        "sha256:e77f43b1deb91bd2e2e906102c459097b975d42e6f2d561f5d3ba6b8822f9479",
+        "sha256:e825c6bebf89f9ed8d49d1d7c21ac58b367f1e53e153b823007e5c9b832cf6a9",
+        "sha256:e84918732e374f977eb7779faea9894ad4c7910bcd20b067ce6d83dc2c10354c",
+        "sha256:e91bf77ac679974965daa76a5c975e4e723ccb670c793d80ac9710e9424aebb0",
+        "sha256:ec18a348d3774afb2970dac18918744c183fbb6e19bd9381fb6152455a1c64c1",
+        "sha256:ef432b261a8e403fceb21869a871b2948e500f63b8ce3095f4b4b411e1851e87",
+        "sha256:f34b23a466fd4d981c86b3133f578a636a93ce1ac44172331a0fa007c8ed5401",
+        "sha256:f538c1cd7641a5d49a69e550d07a8287256e04c3deaf562dc31c8b395fd2ea95",
+        "sha256:f5ad11f78dd9f9bc6a7b1e1233ec281883190a9afae6a6eb3121dca1d987566d",
+        "sha256:facffbb76cc2d60d71feeddc3015674e81bde2866498c241886e220c6d3952db",
+        "sha256:fba581b329d2bcb9ffeb04f149b8f3bbb089e0bc1ccef0fe2d56db05513a6ed0",
+        "sha256:fbb2579af9e4cd02c1bc3633c531b25875c57a1a216778e96885907ae9d8db29",
+        "sha256:fbfc8574b341a0326c3f19f3a4c78d77f181232e02bf04b816009deef7b51510",
+        "sha256:fc09bb8db1226251ae7d9afdd619b608415973f046dfe7902b2041810224523d",
+        "sha256:fe01268f705528187f9fc7a6fd7b1f5cb192c48b047be9de76eb2b07fa3a496d",
+        "sha256:fe2f1548dfc31474e83206146e7be69c58d524e9d91cec23ac587ea64d89fe23",
+        "sha256:fecdbd86caa661c73af2affb802c4e85f2f1395c23d25240cdccb53dfdfe2158"
+      ],
+      "reason": "Lockfile regeneration swapped ESLint for oxlint and upgraded TypeScript to 7.0.2 without changing the documented Playwright 1.65.0 pin; shifted line anchors were refreshed on 48e9210aa3e7.",
+      "sources": [
+        {
+          "blob": "9198c4f4ce12d5d17e469b271028357fb1a1ecb5",
+          "path": "dashboard/package-lock.json"
+        }
+      ],
+      "subject": "onboarding:dashboard/package-lock.json"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-DW3K1E",
+      "items": [
+        "sha256:e5eae052b263f91755b2a27a5f4eb48ea1c0e83eb628dbca63798e5bf76f2de4"
+      ],
+      "reason": "docs/design/python-evidence-system.md remains accurate on 9af497f7bb99 after adding mcp/tests/test_code_quality_dashboard_lint_scope.py to unit-regression (680 of 830 modules) and to the _user_settings_guard.py and Node-profile package-lock.json consumer lists (18 contracts, 123 artifacts) because lane authority, canonical ordering, and source-derived consumer rules are unchanged and the guide pins no counts.",
+      "revision": 25,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EAR9AA",
+      "items": [
+        "sha256:fbdbbb9a233327c1f975b2b2122dc3feba77ee27434c7d5cdef6a8e9070a947a"
+      ],
+      "reason": "Documented TypeScript 7 tsc -b with explicit Node types, oxlint linting, the three-file typescript-compiler-api isolation, and setup.ts CSSOM CSS.escape coverage; refreshed anchors on 48e9210aa3e7.",
+      "sources": [
+        {
+          "blob": "3d3204732da1df7366a785396d8f848118b661c0",
+          "path": "dashboard/src/cockpit/roleChatDispatch.repair.test.ts"
+        },
+        {
+          "blob": "488b8ea5c09d7946121f0ef28150697ff52e2faa",
+          "path": "dashboard/src/explainer/ExplainerColumn.test.tsx"
+        },
+        {
+          "blob": "7f1f723a8041a749a82242a766eb14dda62c4329",
+          "path": "dashboard/src/test/cssEscape.test.ts"
+        },
+        {
+          "blob": "41ddb1d3c3074d19528a578314aad448414e6399",
+          "path": "dashboard/src/test/fixtureOverrides.test.ts"
+        },
+        {
+          "blob": "ea6923d301abe7065f0cd1533c6a573153c2bf56",
+          "path": "dashboard/src/test/loadIndependence.test.ts"
+        },
+        {
+          "blob": "b97ed5dd5e1b25ed82fa8116e41bffee923e3e8f",
+          "path": "dashboard/src/test/setup.ts"
+        },
+        {
+          "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
+          "path": "dashboard/src/test/wireFixtureGuard.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-JX54HH",
+      "items": [
+        "sha256:50ace222022e32b41512891b22ecea6b18104d77fcc3c039d3090539afd3765f",
+        "sha256:f0cd343abfc0dab63790e8d10684e94440d448bc9346b7343324865c5e1335de"
+      ],
+      "reason": "docs/design/canvas-host.md preserves all 261124-EXP canvas host and explainer boundaries on 9af497f7bb99 and accurately updates its dashboard lint verification command at line 382 to npx oxlint alongside npx tsc -b and npx vitest.",
+      "revision": 10,
+      "subject": "DPD-7YCJ2B"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K83E3K",
+      "items": [
+        "sha256:2dd383565031d5b033c9e98903fb7a07cec6d4147b46104b839fe7105e57ceaf",
+        "sha256:318bccc4c6121ecfeb1de723f7aff2ebfcc24f6cea180ba066219e4627314d46",
+        "sha256:3605ed3d14363382bbdadff24599b57378e5bf02782ae0a5e5d8e765963672f8",
+        "sha256:5dfb0ea9a527b66d01e046c8f28f96b93e00d4d0e7be6a8a0edb13ec2d189a2c",
+        "sha256:739469e1e80f1373f024f625934795711df4a993cb6ecca835275b4639d9510b",
+        "sha256:973f7f0b9f08f6b9da1622848816f3cecbbaa81817b607c447fccc8fbc52b8d1",
+        "sha256:9f51e23012762e06ad5b652de9d99b3821362519f3de2638f7f0eb5b1cc57c9c",
+        "sha256:dfc3fadb371a6e9d79ee2a73d969bee533c7d80efbd6abc36af7ae555dbc4f59",
+        "sha256:e30c5d1ea96ddd8595fcfefda20cb54f2d1d6bd9315d7b77f9990a252967841a"
+      ],
+      "reason": "Regenerated lockfile for typescript 7.0.2 preserves all documented runtime dependency resolution contracts; sidecar anchor [1] blob was refreshed.",
+      "sources": [
+        {
+          "blob": "f24a011930d964bb28302ed8cf80964eeb50f80b",
+          "path": "mcp/native_helpers/conversation_library/package-lock.json"
+        }
+      ],
+      "subject": "onboarding:mcp/native_helpers/conversation_library/package-lock.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KD0JAD",
+      "items": [
+        "sha256:e64771ad0c0f42dc298800a1c86fb5f3edfb1d0e56e8ea9e4afd75d77934b051"
+      ],
+      "reason": "MCP overview prose remains accurate across the oxlint scope reader, BUG-L29 hook adaptation, and paseo_plugin TypeScript 7 upgrade.",
+      "sources": [
+        {
+          "blob": "87831da93497486a4c701b9e6eb6850f5fe5579c",
+          "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KPQ09X",
+      "items": [
+        "sha256:921ea77491793c303b1aa7c9d16786f20ab136a01ecd3ee526dbf8728598fb6e"
+      ],
+      "reason": "Deleted root dashboard ESLint config file outside include.paths; had no onboarding card and zero surviving card references.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "dashboard/eslint.config.js"
+        }
+      ],
+      "subject": "onboarding:dashboard/eslint.config.js"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
+            "content": "sha256:6f72608693b61ab3410fbe00859e05d76338f733f8a87069f712cb07b1f8d90d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "ed04fba32f76f0abfc29cba36d54f498ec48655f",
+            "content": "sha256:1d53ab2a403e22a54d8a0e1ed541dbbeaa1958aa77e0f6576aebbb8f11933482",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-MEFM02",
+      "items": [
+        "sha256:19875df9424ab2f11c169a6cd0d090b66d11195a50c6cf9315432c52fe1345e8"
+      ],
+      "reason": "Re-anchored RLZ-XQXYDT on mcp/tests/test-evidence-lanes.toml (dc3c61314dfc); all 830 declared modules exist on this tree and certification rails are unchanged.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PSV84Q",
+      "items": [
+        "sha256:1c2a3a2c2ad08efafaf5ac312c84657d38d13c8b2733d0335564b66e536a2f81"
+      ],
+      "reason": "Line 24 bumps devDependency typescript from ^5.9.3 to ^7.0.2 in paseo_plugin/package.json while preserving the @getpaseo/plugin 0.16.2 pin and scripts; a routine local devDependency version bump needs no durable invariant.",
+      "subject": "hunk:sha256:1c2a3a2c2ad08efafaf5ac312c84657d38d13c8b2733d0335564b66e536a2f81"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Q91K68",
+      "items": [
+        "sha256:46a144f4b2ae7121432ed5ca9cab274f19ee1f251f7a196f1a2d2141f0673720"
+      ],
+      "reason": "docs/getting-started.md remains accurate on 9af497f7bb99 because npm run build and npm run dev scripts, dashboard entry points, and installation steps are unchanged after swapping ESLint for oxlint and upgrading TypeScript to 7.0.2.",
+      "revision": 18,
+      "subject": "DPD-MQCJK4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QEBAAG",
+      "items": [
+        "sha256:f9716256020e485314d6996cc72bbd16702aab957c60dca39dcf567721d8b918"
+      ],
+      "reason": "Updated CSS.escape stand-in prose to CSSOM identifier serialization, removed stale ~20-line offset wording, refreshed reference [4] to lines 100-144, and added cssEscape.test.ts evidence.",
+      "sources": [
+        {
+          "blob": "b97ed5dd5e1b25ed82fa8116e41bffee923e3e8f",
+          "path": "dashboard/src/test/setup.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/test/setup.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R50XMX",
+      "items": [],
+      "reason": "Documented explicit types: ['node'] required by TypeScript 7 alongside incremental tsBuildInfoFile and refreshed references [1] and [2].",
+      "sources": [
+        {
+          "blob": "072a9c0e68a8e623018deb432383afea63fc90d2",
+          "path": "dashboard/tsconfig.app.json"
+        }
+      ],
+      "subject": "onboarding:dashboard/tsconfig.app.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RQ8AZ9",
+      "items": [
+        "sha256:092d079933961e95b244fdb4dd1bb6c7870604bf30987ce0ad827d6188b81441",
+        "sha256:aa5b2e9b84cfb41dc45cae1c56a060694c82372ef9985ec298c30c256427d59f",
+        "sha256:aa9ca9d6cbc1c9e45f607d523bb1e9ad8fff2b86a575865a02c4f18f318d57ad",
+        "sha256:ce4d84ae668b9dad4edac740f71a938a5704ad9f4d012964349f41a63b0cf9ce",
+        "sha256:d776a7272e035a900d274ca04b2c8c38e94e15a43ddfa630ca9f41c79ef78821",
+        "sha256:fae4dd7b8325ac7199d64417e90fbd2f6d7639a3c9bfb8ab0e33f50a16b1d627"
+      ],
+      "reason": "Replacing two unsafe optional-chaining casts with explicit throw guards preserves all documented test behaviors; shifted sidecar anchors [1], [2], [4], and [5] were refreshed on 48e9210aa3e7.",
+      "sources": [
+        {
+          "blob": "488b8ea5c09d7946121f0ef28150697ff52e2faa",
+          "path": "dashboard/src/explainer/ExplainerColumn.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/explainer/ExplainerColumn.test.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TB00DH",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Merged BUG-L51/L52 and L6 totals to 830 modules (680 unit-regression including test_code_quality_dashboard_lint_scope.py at line 120) and refreshed all citations on dc3c61314dfc.",
+      "sources": [
+        {
+          "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-V2BV6M",
+      "items": [
+        "sha256:f2c332c42e4fd7da32f9e9c39ae298b2aa244f2b0e7981452ef7d4199655b164"
+      ],
+      "reason": "Overview prose describes package-level code-quality architecture without naming ESLint or specific lint readers and remains accurate on 48e9210aa3e7.",
+      "sources": [
+        {
+          "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
+          "path": "mcp/test_support/agents_remember_test_support/code_quality/scope.py"
+        },
+        {
+          "blob": "5b05b051bd8b7a427b5f060d83256065b997d426",
+          "path": "mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/code_quality/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+            "content": "sha256:0bb6213f9b823ada9fe009d5816babb9335d07da191681395f0c2795dfc0ecba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r4_r5_caches_are_gitignored_and_do_not_trip_landing_commit_check"
+            },
+            "path": "mcp/tests/test_githooks_l29_repairs.py"
+          },
+          "id": "PRF-1CAWSR"
+        },
+        {
+          "after": {
+            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+            "content": "sha256:a4cf3e823d1eab486105dcab070ddd4ec74cd99da650f6c63714e94c8bab44f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r6_gate_exports_pyright_ignore_warnings_and_real_type_error_fails"
+            },
+            "path": "mcp/tests/test_githooks_l29_repairs.py"
+          },
+          "before": {
+            "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+            "content": "sha256:a4cf3e823d1eab486105dcab070ddd4ec74cd99da650f6c63714e94c8bab44f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r6_gate_exports_pyright_ignore_warnings_and_real_type_error_fails"
+            },
+            "path": "mcp/tests/test_githooks_l29_repairs.py"
+          },
+          "id": "PRF-2GKXH4"
+        },
+        {
+          "after": {
+            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+            "content": "sha256:f0f7739658860948b00286f3111654bc5535374b189ee7ec354bc5c3e6b79b79",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r4_gate_runs_dashboard_lint_without_eslint_cache_flags"
+            },
+            "path": "mcp/tests/test_githooks_l29_repairs.py"
+          },
+          "before": "absent",
+          "id": "PRF-DFBGN1"
+        },
+        {
+          "after": {
+            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+            "content": "sha256:0d76f0606be5870e91657b531c85d31bc75c26c14ef2df98f65d68fcdf317717",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r5_tsc_caches_are_gitignored_and_do_not_trip_landing_commit_check"
+            },
+            "path": "mcp/tests/test_githooks_l29_repairs.py"
+          },
+          "before": "absent",
+          "id": "PRF-DMWPZ1"
+        },
+        {
+          "after": {
+            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+            "content": "sha256:bf37e6eb94c319476acc6f49beb17656a10b5d06695b9d549820461332734a68",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r3_concurrent_rails_overlap_and_print_python_then_dashboard"
+            },
+            "path": "mcp/tests/test_githooks_l29_repairs.py"
+          },
+          "before": {
+            "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+            "content": "sha256:bf37e6eb94c319476acc6f49beb17656a10b5d06695b9d549820461332734a68",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r3_concurrent_rails_overlap_and_print_python_then_dashboard"
+            },
+            "path": "mcp/tests/test_githooks_l29_repairs.py"
+          },
+          "id": "PRF-GAGWZ3"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+            "content": "sha256:faa3a34caf7ef3d4f02f77103fc6e0cdbd13639c7f23cb57b842c221231a24e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r4_eslint_content_cache_catches_introduced_lint_error"
+            },
+            "path": "mcp/tests/test_githooks_l29_repairs.py"
+          },
+          "id": "PRF-JA52M5"
+        },
+        {
+          "after": {
+            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+            "content": "sha256:41608a2c26ad51729595a417158c325aa91c7fb8ddaadc7507290409d9bf442d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r2_hook_batch_matches_separate_spawns_byte_for_byte"
+            },
+            "path": "mcp/tests/test_githooks_l29_repairs.py"
+          },
+          "before": {
+            "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+            "content": "sha256:41608a2c26ad51729595a417158c325aa91c7fb8ddaadc7507290409d9bf442d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r2_hook_batch_matches_separate_spawns_byte_for_byte"
+            },
+            "path": "mcp/tests/test_githooks_l29_repairs.py"
+          },
+          "id": "PRF-PGEYWZ"
+        },
+        {
+          "after": {
+            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+            "content": "sha256:33232bdf3d3c37e6d93c3d78772d335bbb7571aec577ec06e06b819cd32c2d50",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r1_xargs_batch_preserves_ordered_files_and_reduces_spawns"
+            },
+            "path": "mcp/tests/test_githooks_l29_repairs.py"
+          },
+          "before": {
+            "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+            "content": "sha256:33232bdf3d3c37e6d93c3d78772d335bbb7571aec577ec06e06b819cd32c2d50",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r1_xargs_batch_preserves_ordered_files_and_reduces_spawns"
+            },
+            "path": "mcp/tests/test_githooks_l29_repairs.py"
+          },
+          "id": "PRF-PJ1BBH"
+        },
+        {
+          "after": {
+            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+            "content": "sha256:f095f77ce2e22a834f40e2f6942c2bed345b04f968156c646ef5ec88945aa65b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r5_tsc_b_incremental_cache_catches_introduced_type_error"
+            },
+            "path": "mcp/tests/test_githooks_l29_repairs.py"
+          },
+          "before": {
+            "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+            "content": "sha256:f095f77ce2e22a834f40e2f6942c2bed345b04f968156c646ef5ec88945aa65b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r5_tsc_b_incremental_cache_catches_introduced_type_error"
+            },
+            "path": "mcp/tests/test_githooks_l29_repairs.py"
+          },
+          "id": "PRF-QNAZGJ"
+        },
+        {
+          "after": {
+            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+            "content": "sha256:6f62fb1358eb8e63408093c78f0ac933a41a88c7f616fc7d390fe4899fc890c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r4_oxlint_catches_introduced_lint_error"
+            },
+            "path": "mcp/tests/test_githooks_l29_repairs.py"
+          },
+          "before": "absent",
+          "id": "PRF-ZRJEJY"
+        },
+        {
+          "after": {
+            "blob": "1579d550a07354a9428251c3af18f81ee60d9afa",
+            "content": "sha256:56a5d87060e606ec12b79d0329f7a1ce341d60e828488605b0ea55c00440cc56",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/tsconfig.node.json"
+          },
+          "before": {
+            "blob": "3ad518b9cbebdb0e2b16acb0ac8341b2b529a2c9",
+            "content": "sha256:dcda063192196426348b453bfd0032c314e6a42e3c708f3238b93556524a7a02",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/tsconfig.node.json"
+          },
+          "id": "RLZ-08WT26"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "e85f0cf6144ccf924223f8660dda786411a4fda0",
+            "content": "sha256:5fa6af30957f9e5ef72598b0c4f9be1803f2ae85e2a5e4273c36d54ea93a00f1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": ".gitignore"
+          },
+          "id": "RLZ-3W9RKP"
+        },
+        {
+          "after": {
+            "blob": "43efc604596aeac2aa788d1336e754f407f587a1",
+            "content": "sha256:24df37627833b2e89a8fe77a0ff0c633f4d9ebcc9c28795600ec4fab7bd8dc28",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/.gitignore"
+          },
+          "before": {
+            "blob": "f4ff7c54edc12706058af2aad22d48302a1b6109",
+            "content": "sha256:5856dc53baf7ed73c3ae7901767e2dddd1a9bb655741085f72ba22427bd21773",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/.gitignore"
+          },
+          "id": "RLZ-A82J3D"
+        },
+        {
+          "after": {
+            "blob": "072a9c0e68a8e623018deb432383afea63fc90d2",
+            "content": "sha256:ac1cb3e9159fcd48ca7887d5cc8abc03763254c8c0c7f617d996580ff17b2477",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/tsconfig.app.json"
+          },
+          "before": {
+            "blob": "d9793c71824bc26c5fd6f59c6265b339b604a681",
+            "content": "sha256:9c1587835efbc68f90975a41fcfd93032d3f1a45cb377b9eb63fdefe5e6015ed",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/tsconfig.app.json"
+          },
+          "id": "RLZ-B4CT31"
+        },
+        {
+          "after": {
+            "blob": "d7b440e5f58c6ef2238302c074035d33ef75b0e2",
+            "content": "sha256:2804b4b9d5975fb635df2398a75b751bafdda9f430ee989b85bcd5595826068a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/tsconfig.driver.json"
+          },
+          "before": {
+            "blob": "1ff60438e45a8fe67d8d880efcaada8633031c8b",
+            "content": "sha256:0204e7830cc3e9b7af1df7e9bcf2090d1b68be813e7da5dc1750c9c96e721c85",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/tsconfig.driver.json"
+          },
+          "id": "RLZ-CHN0KS"
+        },
+        {
+          "after": {
+            "blob": "5b05b051bd8b7a427b5f060d83256065b997d426",
+            "content": "sha256:ba05c5be6a6d6337a9a9810c5c8dbc7118444f9d2adbb9b203e5b83426840e1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixed_step_scope_line"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py"
+          },
+          "before": {
+            "blob": "f8aa99814c14c39ac32e90229e98df92a01b2da2",
+            "content": "sha256:ba05c5be6a6d6337a9a9810c5c8dbc7118444f9d2adbb9b203e5b83426840e1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixed_step_scope_line"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py"
+          },
+          "id": "RLZ-NRXBZA"
+        },
+        {
+          "after": {
+            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
+            "content": "sha256:22974cbb04a70d77890ea1e9481702ec747a41d225c3bd2174540f3a6a33634d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "before": {
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "content": "sha256:5a4fb80c820446dad4bf119c03adab2a75b598039272038073a3a5719c36a9f8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "id": "RLZ-T3VYFT"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-VCPXF4",
+      "items": [
+        "sha256:8a513c28c56c3ef68f56e81da257868dd2a5d292f80406c8fb2229328dbb8ed5"
+      ],
+      "reason": "Updated INV-AFVK1G from warm ESLint .eslintcache to cache-free oxlint linting while preserving incremental tsc -b (*.tsbuildinfo) caches; retired RLZ-3W9RKP on root .gitignore, replaced renamed proofs PRF-1CAWSR/PRF-JA52M5 with the three oxlint/tsc-cache proofs, and re-anchored surviving realizations and proofs on 48e9210aa3e7. Evidence (DEP-R06@v1 §6 (BUG-L29 hook adaptation for oxlint)): pytest mcp/tests/test_githooks_l29_repairs.py (all pass, including r4 oxlint + r5 tsc -b cache)",
+      "revision": 2,
+      "subject": "INV-AFVK1G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "83cd98f5b15301b7304dd84c73aa5dd461f82c56",
+            "content": "sha256:22974cbb04a70d77890ea1e9481702ec747a41d225c3bd2174540f3a6a33634d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "before": {
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "content": "sha256:5a4fb80c820446dad4bf119c03adab2a75b598039272038073a3a5719c36a9f8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "id": "RLZ-TKDWW5"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-WWWG0N",
+      "items": [
+        "sha256:5b859632e7878f0d88a23fcd15a9c4b9a835bdd85a17e14a3a2766f2c99a8b3e"
+      ],
+      "reason": "Re-anchored RLZ-TKDWW5 on .githooks/_gate.sh (48e9210aa3e7) after switching dashboard lint from ESLint to cache-free oxlint; line 212's generated_check skills scripts/renew-instructions.py obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-DHKR4G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WZY14E",
+      "items": [
+        "sha256:6bf3a58708b9098676113c047ee3e6eb136bb0876708ce25769fc1e0b347f58f"
+      ],
+      "reason": "Line 28 of scope_reporting.py replaces the imported helper name eslint_result_files with oxlint_result_files in support of dashboard_lint_scope_line, which is already realized under INV-9Z6JJ0.",
+      "subject": "hunk:sha256:6bf3a58708b9098676113c047ee3e6eb136bb0876708ce25769fc1e0b347f58f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XXZRJM",
+      "items": [
+        "sha256:ac8f66b7a510203ae8da18a8d25f02e81c5c00ed2a4c7e4457e570d818105fa1"
+      ],
+      "reason": "Documented Architect 97e0320d Condition 4 open item and typescript-compiler-api (npm:typescript@^6.0.3) isolation enforced by dashboard/.oxlintrc.json while dashboard compiles on TypeScript 7.",
+      "sources": [
+        {
+          "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
+          "path": "dashboard/src/test/wireFixtureGuard.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/test/wireFixtureGuard.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Y0TG1W",
+      "items": [
+        "sha256:6d978d087f1e3e78d99a9700c8bbe8198767bcd31342e27886afdac079170a0d"
+      ],
+      "reason": "Root dashboard config file outside include.paths; governed by the new dashboard oxlint invariant, dashboard/package.json.md, and dashboard/src/overview.md.",
+      "sources": [
+        {
+          "blob": "8cfbfe42cda23045025c901a5c99af2d5318b9f9",
+          "path": "dashboard/.oxlintrc.json"
+        }
+      ],
+      "subject": "onboarding:dashboard/.oxlintrc.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Y6R6KG",
+      "items": [
+        "sha256:295995aba7a22c7aa32ba1b95e3ab68acc89611b79d3c22d4e9d58d7a90b8d10"
+      ],
+      "reason": "Preserved HEAD hook-batch/fixed_step_scope_line prose alongside dashboard_lint_scope_line oxlint provenance, updated all function line ranges to 48e9210aa3e7, and authored reference [8].",
+      "sources": [
+        {
+          "blob": "5b05b051bd8b7a427b5f060d83256065b997d426",
+          "path": "mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YJFDJA",
+      "items": [
+        "sha256:dcb137702d4537b36cfc91ced4be7897216524100b847e4e5f1629095d274c59"
+      ],
+      "reason": "Fixed stale inline line references, noted the temporary typescript-compiler-api import under the three-file allowlist, and refreshed sidecar references.",
+      "sources": [
+        {
+          "blob": "41ddb1d3c3074d19528a578314aad448414e6399",
+          "path": "dashboard/src/test/fixtureOverrides.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/test/fixtureOverrides.test.ts"
+    },
+    {
+      "considered": [
+        "FAM-98S8TF"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-YS2ZAP",
+      "items": [
+        "sha256:6430420b5eb8e42984da1bd19ad8ff90f24d022d8b58413d74aecb8cb7f8fc7e"
+      ],
+      "reason": "INV-K5MG2M governs CSSOM identifier serialization in the jsdom CSS.escape stand-in, which is orthogonal to FAM-98S8TF's Vitest async timeout and hook-guard guarantees; no existing family shares this joint guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-K5MG2M"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Z1BTE0",
+      "items": [
+        "sha256:52b86edf1c13bd6a2a3f8f365a3674a2987bf4b34c62eca0de4f192612e02449"
+      ],
+      "reason": "docs/release-checklist.md remains accurate on 9af497f7bb99 after switching .githooks/_gate.sh dashboard lint to cache-free oxlint and upgrading paseo_plugin/package.json devDependency typescript to ^7.0.2 because the deterministic check list, @getpaseo/plugin 0.16.2 pin matching contract.json, typecheck/test scripts, and release-check procedure are unchanged.",
+      "revision": 10,
+      "subject": "DPD-0K35N0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z949KB",
+      "items": [
+        "sha256:4ee6cafa6c72552cdcb493d5df1f70101500fdeb89c839c34b744ba078cea064"
+      ],
+      "reason": "Overview prose remains accurate after bumping the plugin's devDependency typescript to ^7.0.2 on 48e9210aa3e7.",
+      "sources": [
+        {
+          "blob": "0704eb9c287da1f9cbd98611dbfbfabf4b580117",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/package.json"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
+            "content": "sha256:6f72608693b61ab3410fbe00859e05d76338f733f8a87069f712cb07b1f8d90d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "ed04fba32f76f0abfc29cba36d54f498ec48655f",
+            "content": "sha256:1d53ab2a403e22a54d8a0e1ed541dbbeaa1958aa77e0f6576aebbb8f11933482",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "9b4bc7525b00d8df391a71b6d9c44dccbb4b247c",
+            "content": "sha256:aa66b9911a2ce76293146b342f8978eb19cac8468c1b75026b2737a043cdfa48",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZG2DZR",
+      "items": [
+        "sha256:8cc099a0487b47c93b76dde7fde207a84b96dd9656fbb3725c498845ed82df24"
+      ],
+      "reason": "Re-anchored RLZ-GEMVNE and RLZ-BNMQ79 on dc3c61314dfc after post-BUG-L51/L52 sync; test_provider_limit_hold.py and test_held_delivery_tick_cost.py retain their registrations unchanged.",
+      "revision": 8,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b97ed5dd5e1b25ed82fa8116e41bffee923e3e8f",
+            "content": "sha256:0b07744e37d697a262143bd871cea0c9ed00d1fa996a4398d06e344f613d193c",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "dashboard/src/test/setup.ts"
+          },
+          "before": {
+            "blob": "3b70d1b4108d83973e16bab179f303f94482fd2e",
+            "content": "sha256:7d1678b979a436493df1c27c7498d2592f21033d1715fd06c954f47fe3f0a4bd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/test/setup.ts"
+          },
+          "id": "RLZ-SVAZ21"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZJ60CK",
+      "items": [
+        "sha256:4dcefd983412006a77ffefbb715a51c967b47fbd63932f86ac935ab17cebfddd"
+      ],
+      "reason": "Re-anchored RLZ-SVAZ21 to line 8 of dashboard/src/test/setup.ts (configure({ asyncUtilTimeout: 20_000 })) after expanding the CSS.escape stand-in below line 100; the shared async timeout guard is unchanged.",
+      "revision": 1,
+      "subject": "INV-48C3DS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZQ7ETP",
+      "items": [
+        "sha256:49655c571f67f114671c6f38733ac2de8ada29ef8c38559f519c191e37497a69"
+      ],
+      "reason": "Created new onboarding card and sidecar references for mcp/tests/test_code_quality_dashboard_lint_scope.py.",
+      "sources": [
+        {
+          "blob": "835962b30dbb44210c9ddaf2e0b22f2f08b95bea",
+          "path": "mcp/tests/test_code_quality_dashboard_lint_scope.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_code_quality_dashboard_lint_scope.py"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:d95bd442f3bc6ffe292a2b09b7b444d4cc894cbbee6266411faa44fe01ec5c3a",
+      "record": "DEC-62VR5G",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T09:00:39+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:454de3027d9787927a652714d6015a0140a64adbdb83fdc2f3ad5feb70a4c4ef",
+      "record": "DPD-0K35N0",
+      "revision": 8,
+      "writer": {
+        "at": "2026-11-26T00:38:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:06fac3a2f22d6a05a39c830c803cd19ea108e6c86cea647eab9291db14d5a7f7",
+      "record": "DPD-0K35N0",
+      "revision": 10,
+      "writer": {
+        "at": "2026-11-26T12:08:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:4e83cf45591774b5ba8137cd49fa6d0b3f2d91df6f255dd7b9aa01b8cd520339",
+      "record": "DPD-78737N",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-26T01:06:16+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:aefa889513b8ecb16a363c7f6bb805886cab41aff52a764ff18d28df1d28dad1",
+      "record": "DPD-78737N",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-26T08:53:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:b16b4d62f71a41e1b7eae3481507453bde5103c576220ad09a2062043f94568c",
+      "record": "DPD-78737N",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-26T11:43:47+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:1fa58cc6be8b274f8d92dc5d8c1653f84f066553d35532142b8ab4d8b1976c25",
+      "record": "DPD-78737N",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-26T12:08:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:34a34eb08329d5726c43794f996f2a9386532eb8db245622bf242f8675256c15",
+      "record": "DPD-7YCJ2B",
+      "revision": 7,
+      "writer": {
+        "at": "2026-11-26T00:38:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:c43eb0439ede10e2beebcf0902466e4f18ba6de5b9286672e29817427bc47b04",
+      "record": "DPD-7YCJ2B",
+      "revision": 10,
+      "writer": {
+        "at": "2026-11-26T12:08:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:d12d1906c2ff4a2035e78cb66ca79123cf4761531d2eafe36c774704b0fac71e",
+      "record": "DPD-MQCJK4",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-26T00:38:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:1030ec76bbd394cf65562b4261f6a7e507aec20b30c7dad1d24c1d6c6681de80",
+      "record": "DPD-MQCJK4",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-26T12:08:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:f97a67b7d05fb01ae8d75cac2ed0ee178f7a81c9e69ae9e03a4b552ae838c862",
+      "record": "DPD-ZMQ523",
+      "revision": 17,
+      "writer": {
+        "at": "2026-11-26T00:38:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:c94552cc0cda6fce8646ab1e27cdfd4d71bf244a1ea613e2e7618e3759e7afb1",
+      "record": "DPD-ZMQ523",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-26T08:53:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:023c7ad2eff168783fc2c18d2ba52c3b60f4b042f6ce6d118710e6936a9c2bdd",
+      "record": "DPD-ZMQ523",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-26T12:08:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:17a46982d0da822a8600f888f7e5869eac4eb48e125ee8b325be2ed03d031acc",
+      "record": "DPD-ZT8YY7",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-26T00:38:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:5ef219bfa2d602593f39bf5c44a5896ad0151f8a3afb9cb877576568e3cdd48a",
+      "record": "DPD-ZT8YY7",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-26T08:53:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:ebfe417ab6fa973266d1dc63a4183bb780d1365b5c22f3c6a8c6cd35e68ae8e4",
+      "record": "DPD-ZT8YY7",
+      "revision": 26,
+      "writer": {
+        "at": "2026-11-26T11:43:47+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:417a6de2a31a9044864ed45a802a4930df8de233e1d33d3e909646f75ff7153e",
+      "record": "DPD-ZT8YY7",
+      "revision": 27,
+      "writer": {
+        "at": "2026-11-26T12:08:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:8d2db067a2b93c3cb8874ab8efbbdaf0f6285e713b06a65f4de0b3c42c75773d",
+      "record": "INV-9Z6JJ0",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T08:53:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:9fa8467009cb28b95378b29dabf0fb7c4486b1ba63ca5de4a95ae93f9b6ad65e",
+      "record": "INV-AFVK1G",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-26T08:53:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:697f5c06eb362c49fc83334b697bb40472b996c4b609c606cb0d1969b5d523f0",
+      "record": "INV-C9JJFK",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T08:53:12+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:7ab65a03211f550fea67482a55a0cf20223404b10b295e917d10fb28c66eb218",
+      "record": "INV-K5MG2M",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T00:38:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:1e532b22e270467de537f857933eab9269db92b24e4e8bd9e2de0dfff307cb7c",
+      "record": "WKN-FKPS7C",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T00:38:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:16b3a58ea74e1d084c7f51fff5d23b777af586b5b667ef23eab117ac08c13323",
+      "record": "WKN-RJTFPF",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-26T00:38:22+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L6",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+        "task": "261125-DEP"
+      }
+    }
+  ]
+}

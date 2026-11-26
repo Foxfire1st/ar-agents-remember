@@ -58,8 +58,11 @@ out of the `thread/start` request the session sent to the vendor boundary. The e
 **compiler's own result** for the same seat, never a hand-built literal.
 
 | Case | Launch point | Seat |
+
 | --- | --- | --- |
+
 | `test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt` | the internal spawn primitive `dispatch_agent` calls | a leaf document + role `worker` |
+
 | `test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt` | `POST /api/terminal/{session}`, the dashboard opener | role `bootstrap`, **no** task document |
 
 **The production-chain pair (added in fix round 1, replacing a hand-supplied case).**
@@ -210,6 +213,5 @@ the fixture it is pinned against lives in this repository.
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1064-1064 - the bytes it recorded now occur 91 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1885-1885 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:402-402 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:760-760 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 - The `unit-regression` lane selects `mcp/tests/test_capsule_launch_wiring.py`. [15]
-
 
 - The lifecycle catalog lists `mcp/tests/test_capsule_launch_wiring.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result. [21]

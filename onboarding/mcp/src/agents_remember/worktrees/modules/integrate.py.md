@@ -73,10 +73,7 @@ These current source spans identify the implementation owners and the specific a
 
 - **Retained historical source account — superseded by the current contract:** Addressed handover gates and publication preserve the operation's real identity. [4]
 
-
-- **Retained historical source account — superseded by the current contract:** Admission before ancestry and publication judges leaf or master pairs without writing refused state. [5]
-
-
+- Admission before ancestry and publication judges leaf or master pairs in `integration_gate_block` without writing refused state. [5]
 
 - **Retained historical source account — superseded by the current contract:** Final and checkpoint result publication differ without performing reclamation. [6]
 
@@ -91,10 +88,7 @@ These current source spans identify the implementation owners and the specific a
 
 - **Retained historical source account — superseded by the current contract:** The converted leaf rejudges its exact closeout pair; unconverted memory keeps the cutover lock. [8]
 
-
-
-
-- **Retained historical source account — superseded by the current contract:** One admission owner dispatches leaf pair judgment or master validator/staleness/history and chain judgment. [9]
+- `integration_gate_block` dispatches leaf pair judgment or master validator, net-staleness, document-staleness, history, and chain judgment. [9]
 
 
 

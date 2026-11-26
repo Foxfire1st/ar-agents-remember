@@ -47,12 +47,19 @@ and default production observation support the integration classification.
 **What each group of cases protects:**
 
 | Group | Nodes | The property |
+
 | --- | --- | --- |
+
 | the expansion and the visible gap | `:153`, `:215` | Both requested tree ids and both roots; the reproducing command carrying the two tree ids and no `HEAD`; the three authored changed paths are a subset of attributed paths, the attributed/unattributed lists are disjoint, and the unattributed list is exactly the singleton gap; this node does not assert attributed-set equality or exclude extra attributed paths; and the unattributed path listed, counted with its reason and surviving a display filter |
+
 | attributed source on the side that claims it | `:251` | A moved obligation's source is observed against **its own** side's tree — the candidate's new claim at `exact_recorded_blob`, the baseline's removed claim from the baseline |
+
 | paging and the display budget | `:287`, `:755` | A small budget pages the comparison without shrinking its totals, and a page of a selection is what the comparison **displays**, not what it **selected** — R07's byte-budget page is not reused as the comparison's scope |
+
 | refusal without substitution | `:333`, `:355`, `:455`, `:485` | A missing side refuses and substitutes no other snapshot; a real write to the candidate moves its logical digest and refuses the continuation with `continuation_binding_mismatch` and `detail` ending *"it binds another snapshot pair"*; a continuation presented against another selector refuses and returns **no page**; and a side naming another snapshot of its own file is refused by the per-side digest verification **before any page** |
+
 | the response's honesty | `:528`, `:557`, `:590` | Nine verdict words searched over the whole **serialized** response with a positive control; the two change statements as separate fields where neither implies the other; and the record comparison reporting exactly the payload field that changed |
+
 | the expansion's honesty | `:799`, `:821`, `:880` | No mounted UI and no approval the comparison cannot make; an unavailable observation reported as unavailable and **never** as a change set; and an injected available observation making its unattributed path visible |
 
 **The verdict-word case is the packet's *Forbidden Overreach* measured rather than asserted.** It searches
@@ -186,6 +193,5 @@ No configured cross-repository evidence is claimed.
 
 - The test-only RowStore changes its text tree, rebuilds the index and reopens the read connection; candidate construction is independent, not a closed-database copy. [32]
 - Expansion asserts requested trees/roots and delimiter-safe command without HEAD; authored changed paths are an attributed subset, disjoint from the singleton unattributed gap, not an exact attributed-set census. [35]
-
 
 - The integration lane selects `mcp/tests/test_knowledge_diff_boundaries.py`. The lifecycle catalog lists `mcp/tests/test_knowledge_diff_boundaries.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. These source declarations establish no execution or passing result. [50]

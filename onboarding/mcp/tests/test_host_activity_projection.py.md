@@ -10,12 +10,12 @@ Pin startup reconciliation and notification-only host activity intake, separate 
 
 ## Code Commentary
 
-A configured bridge snapshot must acknowledge the current publication boot before activity is known. Only registered role facts join to task identity; unrelated agents count as ignored. A new boot/dashboard requires reconciliation, failed acknowledgement stays unknown and retries only after changed publication. Idle heartbeat, periodic full-heal and degraded wakes retain known activity without rereading host publications or role records. Tests patch bridge/publication boundaries; they do not run a live hosted agent.
+A configured bridge snapshot must acknowledge the current publication boot before activity is known. Only registered role facts join to task identity; unrelated agents count as ignored. A new boot/dashboard requires reconciliation, failed acknowledgement stays unknown and retries only after changed publication. Idle heartbeat, periodic full-heal and degraded wakes retain known activity without rereading host publications or role records. Unstamped closed/ended/idle turn-end entries trigger `turn_ended_agents` once per plugin boot (`unstamped:<bootId>`), fire again on a real `eventAt` or a new `bootId`, leave `host-activity.json` bytes unchanged, and never trigger `new_stamped_ends` (`:85–120`). Tests patch bridge/publication boundaries; they do not run a live hosted agent.
 
 
 **L184 — INV-VDWN33.** This is the consumer's own test, the one that fails on the old comparison. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
 
-The dashboard composition fixture supplies empty registry history and checks that the registry read precedes the activity snapshot (:53–73). Receipt-backed restoration is exercised in test_role_revival_registration.py. The stale-reply case rejects the earlier reconciliation ID after accepting a newer reply for the same boot-a (:134–151). [2]
+The dashboard composition fixture supplies empty registry history and checks that the registry read precedes the activity snapshot (:53–73). Receipt-backed restoration is exercised in test_role_revival_registration.py. The stale-reply case rejects the earlier reconciliation ID after accepting a newer reply for the same boot-a (:172–189). [2]
 
 ## Evidence
 
@@ -29,10 +29,6 @@ The dashboard composition fixture supplies empty registry history and checks tha
 
 
 - Idle heartbeat passes neither read publications nor relaunch the bridge snapshot. [5]
-
-
-
-
 - Periodic healing/degraded wakes do not poll host activity or role records. [6]
 
 

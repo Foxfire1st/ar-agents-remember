@@ -235,14 +235,15 @@ The kernel's double-open probe checks actual exclusion on each lock path instead
 - Atomic publication owns hidden pid-and-UUID temp names (`.<log>.<pid>.<uuid>.tmp`), so calls use distinct temporary paths and the watcher skips them through its dot-prefix and `.tmp` filters.
 - The lockfiles are kept out of the projection watch by a **derived** rule, not a name list.
   `serving/change_watcher.py` computes
-  `_DURABLE_LOG_LOCK_SUFFIX = lock_path_for(Path("log.jsonl")).name.removeprefix("log")` and drops
+  `_LOCK_SUFFIX = lock_path_for(Path("resource")).name.removeprefix("resource")` and drops
   any watched basename ending in it, in every watched directory. Deriving the suffix from
   `lock_path_for` is what keeps the filter in step when a lockfile is renamed — the literal
   `"operator-inbox.lock"` this replaced had silently stopped matching anything once `lock_path_for`
   moved to `operator-inbox.jsonl.lock`. Matching by suffix rather than by basename is what a list
   structurally could not do: the retained gate store can address `gates.jsonl` under
-  `workspace/` or an existing lifecycle directory. Sibling locks must be filtered wherever
-  a retained watched input lives; that does not reinstate lifecycle-log watch roots. No projection input is named `*.jsonl.lock` — the inputs are the `.jsonl` logs themselves and
+  `workspace/` or an existing lifecycle directory, and watched native stores carry `.json.lock`
+  siblings. Sibling locks must be filtered wherever
+  a retained watched input lives; that does not reinstate lifecycle-log watch roots. No projection input is named `*.lock` — the inputs are the `.jsonl` logs themselves and
   their `.json` sidecars — so the suffix rule cannot over-match.
 - Schema interpretation remains one explicit major-version rule. The removed migration helper is not current calling guidance; retained writes validate through their actual record owners and lock boundary.
 

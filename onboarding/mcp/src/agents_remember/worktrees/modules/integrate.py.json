@@ -174,14 +174,15 @@
       ]
     },
     "5": {
-      "note": "**Retained historical source account — superseded by the current contract:** Admission before ancestry and publication judges leaf or master pairs without writing refused state.\n\nAnchor: `integration_gate_block` `_handover_or_apply_integration`",
+      "note": "Admission before ancestry and publication judges leaf or master pairs in `integration_gate_block` without writing refused state.\n\nAnchor: `_handover_or_apply_integration`",
       "targets": [
         {
           "anchor": {
-            "blob": "d2f3e6ac1adf4ec90ff5a8150cb65d2e46941403",
-            "content": "sha256:db02717153d515bdeec918a67b65300e96933de2ae80a8197b0525e3b7819cd1",
+            "blob": "cccd81fa3fd4617162592eed504a9eafc91a3503",
+            "content": "sha256:42b9f1f622b674871030148b042028464ecf0ea485ff31b17c261ed469ef167d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "integration_gate_block"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
           },
@@ -235,7 +236,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d2f3e6ac1adf4ec90ff5a8150cb65d2e46941403",
+            "blob": "cccd81fa3fd4617162592eed504a9eafc91a3503",
             "content": "sha256:24d7192cf2a23f2fb4db1d2286bcde370e7e67fe20194f37934b87ad17ddb87e",
             "locator": {
               "kind": "symbol",
@@ -248,14 +249,15 @@
       ]
     },
     "9": {
-      "note": "**Retained historical source account — superseded by the current contract:** One admission owner dispatches leaf pair judgment or master validator/staleness/history and chain judgment.\n\nAnchor: `integration_gate_block`",
+      "note": "`integration_gate_block` dispatches leaf pair judgment or master validator, net-staleness, document-staleness, history, and chain judgment.",
       "targets": [
         {
           "anchor": {
-            "blob": "d2f3e6ac1adf4ec90ff5a8150cb65d2e46941403",
-            "content": "sha256:db02717153d515bdeec918a67b65300e96933de2ae80a8197b0525e3b7819cd1",
+            "blob": "cccd81fa3fd4617162592eed504a9eafc91a3503",
+            "content": "sha256:42b9f1f622b674871030148b042028464ecf0ea485ff31b17c261ed469ef167d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "integration_gate_block"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
           },

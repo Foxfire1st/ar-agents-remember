@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_projection_watch_plan_native.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "1e38dad1c07233d5a501aaf7f0ce62038ab7dd84",
+        "content": "sha256:d9be33bea8acc1019715b3278354546442b7aba46e81bb73afad7a3859972610",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_held_watch_admits_receipts_and_ignores_taskless_message_artifacts"
+        }
+      },
+      "facet": "Across ordinary, earlier-notes, and receipt-like coordination-root ancestors, ProjectionWatchPlan.admits_file, is_held_receipt, and projection_domains_for_paths admit real taskless and task-bound receipts to ATTENTION_HELD while rejecting taskless messages, message-bindings, and history artifacts.",
+      "id": "PRF-SP6E50",
+      "invariant": "INV-SVSW7T",
+      "origin": {
+        "handoffEntry": "BUG-R35@v1 §4",
+        "leaf": "261112-BUG-L35"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c56a25cb3e47b91ceb876f6b2afa46a1931e57f2",
+            "blob": "1e38dad1c07233d5a501aaf7f0ce62038ab7dd84",
             "content": "sha256:a774858599333555a062eebeb8e767eb46489b045030f279a57446960c88af84",
             "locator": {
               "kind": "symbol",

@@ -1,18 +1,57 @@
 {
   "path": "dashboard/package.json",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
+        "content": "sha256:616ccb1ad5c0a7b638dff7f574a71374965060655f6c87ec5b1b42c5b1502106",
+        "locator": {
+          "end": 14,
+          "kind": "line_range",
+          "start": 10
+        }
+      },
+      "id": "RLZ-8XXMGS",
+      "invariant": "INV-9Z6JJ0",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §1 (oxlint) post-sync reattach",
+        "leaf": "261125-DEP-L6"
+      },
+      "rationale": "Switches the npm run lint script from eslint to oxlint . while keeping build and typecheck on tsc -b.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
+        "content": "sha256:020119975b137bc617e8ca84db3a6b8ca741e5c410c0f3ce5d3adc64ad6a91ea",
+        "locator": {
+          "end": 74,
+          "kind": "line_range",
+          "start": 52
+        }
+      },
+      "id": "RLZ-HDYGR9",
+      "invariant": "INV-C9JJFK",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §3 (TS 7 + Option B) post-sync reattach",
+        "leaf": "261125-DEP-L6"
+      },
+      "rationale": "Upgrades typescript to ^7.0.2 for tsc -b/typecheck/build and declares typescript-compiler-api aliased to npm:typescript@^6.0.3 (newest release line still shipping lib/typescript.js).",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The manifest declares `@playwright/test` at `^1.65.0`.",
       "targets": [
         {
           "anchor": {
-            "blob": "703d4a247784c78f117744a0a9bc41e7e1cd015b",
+            "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
             "content": "sha256:426846889c456fb14af26e9eb94a4e0f80041364d2eaafb721065074469a1934",
             "locator": {
-              "end": 55,
+              "end": 54,
               "kind": "line_range",
-              "start": 55
+              "start": 54
             }
           },
           "kind": "code"
@@ -20,17 +59,59 @@
       ]
     },
     "2": {
-      "note": "The manifest separates dashboard dependencies, development dependencies and executable scripts.\n\nAnchor: `scripts`, `dependencies`, `devDependencies`, `Source`: `dashboard/package.json:6-79`",
+      "note": "The manifest separates dashboard dependencies, development dependencies and executable scripts.",
       "targets": [
         {
           "anchor": {
-            "blob": "703d4a247784c78f117744a0a9bc41e7e1cd015b",
-            "content": "sha256:e48b0f1d8f675ceabef4027a2d691be0712734a75f00ea9023049e0c0cba0b5b",
+            "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
+            "content": "sha256:c47af21846ecb6e71e2221d3364f7646ea2b98e7d8b95a78e9fa3cb97134a70d",
             "locator": {
-              "end": 79,
+              "end": 73,
               "kind": "line_range",
               "start": 6
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Linting delegates to `oxlint .` (`^1.95.0`); typechecking and build run `tsc -b` on `typescript` (`^7.0.2`), while `typescript-compiler-api` aliases `npm:typescript@^6.0.3` under `.oxlintrc.json`'s three-file restriction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
+            "content": "sha256:b527a4483e9c3b817ce0e2099d4e49e37acd757bda5421683e2fa5a00fbd1eaf",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
+            "content": "sha256:6a51468dfad8cc5ac5135fae9008e967508d3959f3f8f0ee796c6a209169b8c5",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8cfbfe42cda23045025c901a5c99af2d5318b9f9",
+            "content": "sha256:4a79e6d2ee8318b0d4be0a51bdb5e83830ce4182035e4040a950048b28cc8b9e",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "dashboard/.oxlintrc.json"
           },
           "kind": "code"
         }

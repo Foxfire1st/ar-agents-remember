@@ -84,7 +84,7 @@ Historical hosted-control account, retained for explanation: capability discover
 
 The Paseo host implementation belongs under `serving/paseo/`, shared by install and serving. Installation provisions the build-pinned Node, host and plug-in using the shared host configuration, and preserves live sessions by deferring needed restarts. Per-harness infrastructure settings are distinct from shared host authority. Host authority is the paseoRuntime block in the MCP settings file named by configPath; only an absent block receives fresh defaults, while existing content is preserved and invalid content refuses. Developer role settings retain their separate guarded XDG location. The earlier renderer/user-file host-authority account is historical and does not select the current host authority. Dashboard start/stop ownership and successful native-host operation are not freshly established here.
 
-The dashboard bundle is placed from Vite output into ignored package data by `scripts/sync-dashboard.py`, with build-input freshness checks and a non-writing check mode. An absent bundle produces the named 503/build-command response. The repository’s canonical pre-commit and pre-push hooks check generated copies and run dashboard codegen, lint and typecheck; neither runs dashboard bundle placement. The packaged tokenizer vocabulary avoids a network download: its own hash check precedes tiktoken consumption, and missing/damaged data raises the named vocabulary error.
+The dashboard bundle is placed from Vite output into ignored package data by `scripts/sync-dashboard.py`, with build-input freshness checks and a non-writing check mode. An absent bundle produces the named 503/build-command response. The repository’s canonical pre-commit and pre-push hooks check generated copies and run dashboard codegen, oxlint linting (`dashboard/.oxlintrc.json`), and TypeScript 7 typecheck (`tsc -b`); neither runs dashboard bundle placement. The packaged tokenizer vocabulary avoids a network download: its own hash check precedes tiktoken consumption, and missing/damaged data raises the named vocabulary error.
 
 Startup qualification has its own measurement owner. `scripts/measure-ar-server-start.py` measures process spawn through completed `initialize` and `tools/list` for ordinary or explainer mode and records command, environment, source and load; its 5-second/one-minute-load-at-most-40 qualification is not an any-load guarantee. Reading this script supplies no new startup run, performance acceptance or installed-build verdict.
 
@@ -567,6 +567,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Retained reference account (no fresh execution or acceptance inferred): Skill synchronization treats root `skills/` as canonical and exposes a check form. [277]
 
 
+
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [339]
 
 - Retained reference account (no fresh execution or acceptance inferred): Repository instructions define certifying delivery, enforcing checks, and diagnostic-only coverage and production CRAP. [34]
@@ -598,6 +599,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 
 - Contributor guidance routes instruction renewal through one command and keeps authored ceilings separate from measured facts. [369]
+
 
 
 
@@ -682,6 +684,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Retained reference account (no fresh execution or acceptance inferred): The fast tier's checks, with the validator of the two test catalogs. [124]
 
 - Contributor guidance separates host feedback from Dagger-owned certifying evidence. [281]
+
 
 
 - Retained reference account (no fresh execution or acceptance inferred): Contributor guidance separates host feedback from Dagger-owned certifying evidence. [40]

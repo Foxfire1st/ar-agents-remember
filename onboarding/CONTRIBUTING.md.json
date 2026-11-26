@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "340226826a5e249c8745629830d7bf8b7ac11cc6",
-        "content": "sha256:c8a1165d5d603afb9ed77543a0ce093307b5a4f99bda18407eb38bd15727dc25",
+        "blob": "074f7ffea4d85e07442938cb072c0e3106214b8d",
+        "content": "sha256:80fae8ad674d9f3eddec60ab7dc9c9571e63a5dae6c67a200209dd11576cae34",
         "locator": {
           "end": 383,
           "kind": "line_range",
@@ -17,7 +17,7 @@
         "handoffEntry": "BUG-R29@v1 §5",
         "leaf": "261112-BUG-L29"
       },
-      "rationale": "Documents the 256 KiB GNU xargs dispatch, single-invocation scope banners, concurrent Python/Dashboard rails, warm ESLint/tsc caches, and continued-sync commitCheckTimeoutSeconds ownership.",
+      "rationale": "Records the concurrent Python/Dashboard hook rail, cache-free oxlint and incremental tsc -b (*.tsbuildinfo) caches, and bounded sync commit-check behavior in CONTRIBUTING.md.",
       "role": "presentation"
     }
   ],
@@ -27,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "340226826a5e249c8745629830d7bf8b7ac11cc6",
+            "blob": "074f7ffea4d85e07442938cb072c0e3106214b8d",
             "content": "sha256:49c587175eb3af01b25586010f9a6e86e0d2096249787600788e9adc42d2bf2d",
             "locator": {
               "end": 5,

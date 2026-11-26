@@ -524,7 +524,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61c506dfcd093f09a94571716d7c351b56906af2",
+            "blob": "39a062302204dca79815d9031898c3e0821e1045",
             "content": "sha256:75bbb68c6c6872c0d60514d701340ccb48bcf950a8ef4bbabead546eb3ef0dfe",
             "locator": {
               "kind": "symbol",
@@ -1769,7 +1769,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d119beb6ded123f180d095877829f76b649e76ee",
+            "blob": "a200098c5cc70fecf4f8c887017a3400130e2f5c",
             "content": "sha256:99591e0040591b8d9b796a6de45b37b1c5a7771a47ddd218e93b473ef2b40e87",
             "locator": {
               "kind": "symbol",
@@ -1793,6 +1793,23 @@
               "name": "merge_with_writers"
             },
             "path": "mcp/src/agents_remember/memory/conversion/crossing_writer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "193": {
+      "note": "`state_conversion_only` defines the single canonical predicate for recognizing state-conversion-only record JSON diffs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a200098c5cc70fecf4f8c887017a3400130e2f5c",
+            "content": "sha256:be904a1b1976a6d0e385047b0b8643e89dd98686db68b20b6eddffe42d38c75d",
+            "locator": {
+              "kind": "symbol",
+              "name": "state_conversion_only"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/state_conversion.py"
           },
           "kind": "code"
         }

@@ -1,0 +1,83 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "BUG-R56@v1 explicitly rejected per-link attribution of already-stale documents in favor of document-level standing-base and own-leaf classification, constraining future master-end staleness changes against reintroducing cross-master deadlocks."
+  },
+  "alternatives": [
+    {
+      "option": "Attribute master-end staleness at document level: refuse only documents made stale since the newest synced standing base contained by the judged pair, or made stale by this master's own integrated leaves and not confirmed at or after the leaf's landed code commit, unless already current on the parent line after landing.",
+      "reason": "Prevents cross-master deadlock when an already-stale document is owned and repaired elsewhere while still refusing every document this master or its own leaves made stale.",
+      "status": "chosen"
+    },
+    {
+      "option": "Perform per-link attribution on already-stale documents, refusing a master's end whenever it touches any stands_on link of a document that was already stale at its base.",
+      "reason": "Rejected explicitly in BUG-R56@v1: per-link attribution deadlocks when several masters touch links of a document that only its owner can repair (e.g., DPD-GHEXS9).",
+      "reconsider_when": "A developer ruling introduces shared multi-master partial-document repair or replaces single-owner dependent confirmation so touching one link of an already-stale document can be resolved independently without deadlocking concurrent masters.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Master-end document staleness stays document-scoped in _classify_master_end and never parses per-link blame for already-stale documents.",
+    "Documents already stale on the parent line stay with their owning tasks (e.g., CAP-R05 for install guides; BUG master end for DPD-W0T9V9 and DPD-ZMQ523) and are reported as named-only on unrelated masters."
+  ],
+  "context": "BUG-R56@v1 (D1038, issue row 744) addressed concurrent series masters blocking each other's closeout when an earlier master made a dependent document stale on main (for example CAP-L1 deferring three install guides to CAP-R05, which then blocked EXP's master end). The design had to decide whether master-end refusal attributes staleness at document level using synced standing base plus own integrated leaves, or at individual stands_on link level for documents that are already stale.",
+  "decider": "Developer D1038 and Neon Architect (BUG-R56@v1, 2026-11-26).",
+  "id": "DEC-DFN078",
+  "links": [
+    {
+      "relation": "explains",
+      "target": "INV-PVTE0M"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+        "content": "sha256:0d928acef9bdcdef079abfaea65bfbddc3220ac9061b1e6fadd33f34f2902ba8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_classify_master_end"
+        },
+        "path": "mcp/src/agents_remember/application/knowledge_gate/document_staleness.py"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+        "content": "sha256:0d928acef9bdcdef079abfaea65bfbddc3220ac9061b1e6fadd33f34f2902ba8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_classify_master_end"
+        },
+        "path": "mcp/src/agents_remember/application/knowledge_gate/document_staleness.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l56-curation-handoff.json"
+    },
+    "handoffEntry": "dec-doc-level-staleness",
+    "leaf": "261112-BUG-L56",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T15:55:02+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L56",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
+    "task": "261112-BUG"
+  }
+}
