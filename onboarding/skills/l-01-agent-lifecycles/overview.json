@@ -1253,12 +1253,12 @@
         },
         {
           "anchor": {
-            "blob": "4d840d1eda3dd80a80e751277433c524d127ea07",
+            "blob": "e96a62d1b4bf82f69de846091aa53d2edc8974bd",
             "content": "sha256:9b6d1a212554071ee118e57d287c7882ca8befc04490eaa4ff1595d943c8cf46",
             "locator": {
-              "end": 136,
+              "end": 137,
               "kind": "line_range",
-              "start": 133
+              "start": 134
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
           },
@@ -1676,7 +1676,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:ea0fe48290b138f15f34b2663888b5395e0436081f248382377e82120c685db6",
             "locator": {
               "end": 27,
@@ -1748,7 +1748,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
             "locator": {
               "end": 21,

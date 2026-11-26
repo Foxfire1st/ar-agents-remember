@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "b3131ef29cf948ee4830a48540585bc841530c3a",
-    "commit": "6eb67e8ec4ef00afa54348123b6e6afd1cef1dc8",
+    "codeTree": "13efa4c0afbefba5de92e2a722a8e96f9d250e1a",
+    "commit": "4559dabe83cb85443c79614f19d610b7ecc62aa9",
     "role": "curator",
-    "statement": "Audited docs/reference/knowledge-system.md in full (lines 1-512) against Round-4 CODE PASS tree b3131ef2: twelve record kinds, history rows, derived states, worklist/reportOnlyFindings, DFR-* merges, and ingestion rules remain accurate after CAP-L3 edits to curator-handoff-ingestion.md.",
-    "task": "261124-CAP-L3",
+    "statement": "Audited docs/reference/knowledge-system.md in full against post-CAP synced L57 candidate 13efa4c0afbe (base 4559dabe83cb): knowledge_write, worklist, family-row gate, dependent-staleness, and CAP-L3 ingestion rules remain accurate after wiring reached_family_facts through writer.py and extracting family_rows.py, with zero contradictions.",
+    "task": "261112-BUG-L57",
     "uncommitted": true
   },
   "document": "docs/reference/knowledge-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -227,7 +227,7 @@
       "path": "mcp/src/agents_remember/application/knowledge_write_command.py"
     },
     {
-      "blob": "4d840d1eda3dd80a80e751277433c524d127ea07",
+      "blob": "e96a62d1b4bf82f69de846091aa53d2edc8974bd",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
     },
@@ -397,14 +397,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T13:09:23+01:00",
+    "at": "2026-11-26T23:32:27+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261124-CAP-L3",
+    "leaf": "261112-BUG-L57",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
-    "task": "261124-CAP"
+    "seat": "1cf588d0-302b-5508-a4fc-37b605e5c4d1",
+    "task": "261112-BUG"
   }
 }

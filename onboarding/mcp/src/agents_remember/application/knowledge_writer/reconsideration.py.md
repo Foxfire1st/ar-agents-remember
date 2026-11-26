@@ -200,4 +200,5 @@ A link whose base target has no image at C is a new `UNMAPPABLE` state: its refu
 - A link whose base target has no image at C is refused with the re-point or raise that can clear it, not with a recompute that cannot. [31]
 - The re-authored refusal keeps its prefix and names restoring the base target or a raise. [32]
 
+
 - The separate restoration owner can undo an obsolete leaf refresh when the matching original base anchor is current again. [30]

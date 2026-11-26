@@ -155,4 +155,5 @@ The role's authoring routes name the mounted `knowledge_write` beside the servin
 
 
 
+
 - The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. Knowledge_read names whole records and their evidence. [30]

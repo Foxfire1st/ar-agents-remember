@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
             "locator": {
               "end": 21,
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
             "locator": {
               "end": 21,
@@ -106,8 +106,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
-            "content": "sha256:6919e97bff297720d458a09e458be4481229e2f3ccfea6b36cfc3879c47d99e5",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "content": "sha256:22fe20f859d6dd15aca4a6cc342bed8b019ff35503922378ee7814f515e3029b",
             "locator": {
               "end": 8,
               "kind": "line_range",
@@ -119,12 +119,12 @@
       ]
     },
     "22": {
-      "note": "The Reviewer writes verdicts under `notes/reports/`, edits via `task_doc`, reads briefs via `read_ar_files` and `knowledge_read`, checks `system/tools.md` targeted tests (and requested drift) plus full `memory_quality_check` curation evidence, and makes no gate decisions.\n\nAnchor: `read_ar_files`",
+      "note": "The Reviewer writes verdicts under `notes/reports/`, edits via `task_doc`, reads briefs via `read_ar_files` and `knowledge_read`, checks `system/tools.md` targeted tests (and requested drift) plus full `memory_quality_check` curation evidence, and makes no gate decisions.",
       "targets": [
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
-            "content": "sha256:9e78ccc65502b44c9c1bdcfbe9efbc1262589e00995d5951172c1ecb9b0fe197",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "content": "sha256:e54cda6062a6d8c97dda127874fc1d21bcfc5cbad9305900e2b2e0fb37d9c598",
             "locator": {
               "end": 8,
               "kind": "line_range",
@@ -135,7 +135,7 @@
         },
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:0885b9b4f6b31329402f18aaa0e9c6d8f5ba2330639e791778d8394249ae5a94",
             "locator": {
               "end": 15,
@@ -147,7 +147,7 @@
         },
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
             "locator": {
               "end": 21,
@@ -159,7 +159,7 @@
         },
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:fc72e534adf9e90c7dd26c389512e390c246cef2b36b5b042192db053871866c",
             "locator": {
               "end": 25,
@@ -176,7 +176,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:fc72e534adf9e90c7dd26c389512e390c246cef2b36b5b042192db053871866c",
             "locator": {
               "end": 25,
@@ -193,8 +193,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
-            "content": "sha256:5881cc7ceafb6e967c542a3c2a21c2fd7aeafd340d8b79ce9e92a28f839f1c1b",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "content": "sha256:1d0d686659308da832e5e9a8dafe7ec2cd876dfe00002df50b58fc44e1ab9d05",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -210,7 +210,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:79ba9b6179e2ba6d5a73e17090761b4db0c9f88b52ed251ae68d2a44f023dd85",
             "locator": {
               "end": 25,
@@ -227,8 +227,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
-            "content": "sha256:5881cc7ceafb6e967c542a3c2a21c2fd7aeafd340d8b79ce9e92a28f839f1c1b",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "content": "sha256:1d0d686659308da832e5e9a8dafe7ec2cd876dfe00002df50b58fc44e1ab9d05",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -244,7 +244,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:ea0fe48290b138f15f34b2663888b5395e0436081f248382377e82120c685db6",
             "locator": {
               "end": 27,
@@ -313,7 +313,7 @@
         },
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
             "locator": {
               "end": 21,
@@ -330,7 +330,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:07d3356c259adf2ecf75dd2bc2cf51e60b16ba242bedc572cc9b7396fbb98454",
             "locator": {
               "end": 25,
@@ -365,7 +365,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
             "content": "sha256:c504cb8a5c43e969019019c4ccc980365860621283e588f0d228b592edbee232",
             "locator": {
               "end": 19,

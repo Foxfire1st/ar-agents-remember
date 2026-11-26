@@ -1101,14 +1101,27 @@
         },
         {
           "anchor": {
-            "blob": "4961a62711d1892e8dc2b4416f1649971588002c",
-            "content": "sha256:d4ea1daf5811bc870a84120ffd57be90919bcd0d20f9382591cca3125ed32fff",
+            "blob": "096c4209824d4c3cd3ab1e8d63025dc9389a426d",
+            "content": "sha256:96d075953c0a2916155ee0f174469a093968d82b8e8a7fece8253cf93abac369",
             "locator": {
-              "end": 1085,
+              "end": 1071,
               "kind": "line_range",
-              "start": 1055
+              "start": 1060
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6cf8b02b3210f33a9228b974d0856316dc56e58b",
+            "content": "sha256:4ddc7df3a2eb33c823416635effeef6f6e217f85ab7f82de69db0ef9c4bb4fa7",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/family_rows.py"
           },
           "kind": "code"
         }

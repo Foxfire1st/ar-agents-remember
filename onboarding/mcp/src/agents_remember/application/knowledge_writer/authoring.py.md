@@ -8,7 +8,7 @@
 
 Authoring remains an in-memory editor rather than the disk publisher. It allocates same-document handles through assign_entries, restores recorded refreshes, and processes authoring entries before attachments through ordered_entries. Origin evidence handling is delegated to record_origin, including explicit replacement for an owned record while foreign origin remains intact. Decision alternative edits without explicit links invoke remap_links, which preserves addressed option identity or refuses ambiguity. coordination_root is carried as a separate task-plane input.
 
-This source-bound correction covers the described L54 seams and the current row-input binding. Authoring passes the recorded card-comparison base and worklist source and count facts to the history mixin. The mixin compares a readable recorded base in the candidate’s format, then uses the persisted subject count or operation base when unavailable. Unrelated inherited prose and references below are preserved, not recertified; no installed behavior, test execution, permission, landing or MEMORY acceptance is inferred.
+This source-bound correction covers the described L54 seams and the current row-input binding. Authoring passes the recorded card-comparison base, worklist onboarding source/count facts, and persisted reached-family member facts (`reached_family_members`) to the history mixin. The mixin compares a readable recorded base in the candidate’s format, then uses the persisted subject count or operation base when unavailable. Unrelated inherited prose and references below are preserved, not recertified; no installed behavior, test execution, permission, landing or MEMORY acceptance is inferred.
 
 ### Record revisions and writer provenance
 
@@ -418,6 +418,7 @@ The following complete predecessor retains useful explanations, old observations
 - A cover revises a realization entry's rationale in place. [51]
 
 - The history row records the resolved invariant or family’s own revision. [52]
+- `Authoring.reached_family_members` carries persisted `reached_family` member facts into family-row authoring. [70]
 
 
 - The authoring state carries worklist item, trace source and count inputs and the recorded memory base for fresh card comparison. The row author checks the counted change and dispatches requests by their typed subjects. [53]

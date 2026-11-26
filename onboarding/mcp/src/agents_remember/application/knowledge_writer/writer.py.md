@@ -81,7 +81,7 @@ A committing leaf forwards its admitted owner to file publication. When records 
   `crossing`, `_crossing_problems` refuses `entries`, rulings and any record without an `id`
   (`CROSSING_ROWS_ONLY`): the owner may update an existing record its sync left conflicted, which the writer
   resolves at one more than the higher side's revision, and write `history` rows.
-- **Persisted worklist facts.** Before candidate capture, a leaf requires a readable persisted worklist whose consumed shapes pass `worklist_shape_problem`; this preflight does not check complete state, `incomplete`, schema, owner or digest. An incomplete-state document with an empty items list is not refused by this shape check alone. Complete gate recomputation is a separate later route; non-leaf owners keep their separate admission. After authoring, worklist checks validate explicit item tokens and applicability before publication. Existing item/source/count projections still feed row authoring and paired-base onboarding comparison; overview source sets cannot be invented from a file subject.
+- **Persisted worklist facts.** Before candidate capture, a leaf requires a readable persisted worklist whose consumed shapes pass `worklist_shape_problem`; this preflight does not check complete state, `incomplete`, schema, owner or digest. An incomplete-state document with an empty items list is not refused by this shape check alone. Complete gate recomputation is a separate later route; non-leaf owners keep their separate admission. After authoring, worklist checks validate explicit item tokens and applicability before publication. Existing item/source/count projections and `reached_family_facts(request.worklist)` feed row authoring (including paired-base onboarding comparison and reached-family empty/departed-member admission); overview source sets cannot be invented from a file subject.
 
 ### Conventions
 
@@ -228,8 +228,11 @@ The current converted writer checks persisted leaf worklist shape and authored i
 - The committing writer supplies the admitted owner to file publication. A leaf mutation that changes a record or onboarding bytes participates in the tracked brief ignore preparation. [47]
 
 - The operation reads and authors, carries entries, checks history, renders, validates the entire candidate and finishes or refuses. [3]
+
 - A leaf requires the persisted worklist before capture; question publication has its separate task-owner port [4]
+
 - The writer gives recorded card-comparison inputs to authoring and validates the produced tree against the operation’s bases. The report registry governs writer findings. A file publication refusal preserves question receipts and distinguishes verified restoration from incomplete or unverifiable rollback. [36]
 - The request carries a resolved caller stamp in addition to the hand-off and contract inputs. [44]
 - The writer passes the resolved stamp to virtual authoring before validation and file publication. [45]
 - The authoring operation assigns an unknown stamp with a reason when no caller was resolved. [46]
+- `write_knowledge` projects persisted `reached_family` member facts via `reached_family_facts(request.worklist)` into `Authoring.reached_family_members`. [48]
