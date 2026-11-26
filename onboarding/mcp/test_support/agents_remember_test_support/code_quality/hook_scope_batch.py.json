@@ -1,0 +1,58 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/hook_scope_batch.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b0716fcda6c7c0a22dcdb02ec9e19287bff4c67c",
+        "content": "sha256:c73f7bb71d94ac1c391eea4be49a566cf1b251e927cc8adadf6321946a4496c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "collect_hook_scope_batch"
+        }
+      },
+      "id": "RLZ-M4HZSY",
+      "invariant": "INV-AFVK1G",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §3 (R1-R6)",
+        "leaf": "261112-BUG-L29"
+      },
+      "rationale": "Validates quality config and derives GateScope once per hook run, emitting byte-identical scope lines for every hook-tier step.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One invocation derives the scope and renders every hook-tier line in fixed order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0716fcda6c7c0a22dcdb02ec9e19287bff4c67c",
+            "content": "sha256:c73f7bb71d94ac1c391eea4be49a566cf1b251e927cc8adadf6321946a4496c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "collect_hook_scope_batch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The batch writer persists one payload per scope key under the given directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0716fcda6c7c0a22dcdb02ec9e19287bff4c67c",
+            "content": "sha256:fd3592579aa01fb6c6928b2c557041b5adfba5f643bc31a95abbc2d92ca17dd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_hook_scope_batch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

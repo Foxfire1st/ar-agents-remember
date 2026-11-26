@@ -214,9 +214,4 @@ The module has **489 physical lines** and **ten source test definitions**. Its p
 
 - The lane manifest declares test_terminal_blocker_reasons.py in integration. Membership selects evidence and establishes no invocation. [25]
 
-
-
-
-
-
 - Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection. [28]

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "d2d3845baf9541100f06371fde62c4c0bb678b04",
-    "commit": "3ee8f6ad584e509ef6df637c1bb42484993b35d0",
+    "codeTree": "2e79f14e621878f776217e876e3953c8a4903aec",
+    "commit": "50292a3bfed059fe4f0aa9f087a6156bf1b754f9",
     "role": "curator",
-    "statement": "Verified against synced L38 candidate on 3ee8f6ad/b83cff67: docs/architecture.md (lines 1-303) accurately describes runtime_install ownership, runtime/servers/ process records, settings files, and the read/dry-run boundary reinforced by preview_server_inventory and opt-in reconcile_shared_held_stores=false.",
-    "task": "261112-BUG-L38",
+    "statement": "Verified line-by-line on synced code (base 50292a3b + L29): docs/architecture.md (lines 1-303) remains accurate after L29 added GitCommandSpec and git_command_spec to mcp/src/agents_remember/kernel/git_command.py (_batch_blobs private spool at lines 769-781 unchanged) and after the mcp/pyproject.toml 3.0.8 version bump; package commands, --config boundary, settings files, runtime/servers/ ownership, definition scopes, and read/dry-run boundaries all match live code.",
+    "task": "261112-BUG-L29",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 18,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
+      "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -86,7 +86,7 @@
       "path": "mcp/src/agents_remember/kernel/memory_init.py"
     },
     {
-      "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+      "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/git_command.py"
     },
@@ -200,7 +200,7 @@
     },
     {
       "anchor": {
-        "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+        "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
         "content": "sha256:032539c90a6959c16332f1c0c884b82ec12b42f658148bfe1897d693a8903fd2",
         "locator": {
           "kind": "symbol",
@@ -301,14 +301,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T22:06:22+01:00",
+    "at": "2026-11-26T00:49:11+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
+    "leaf": "261112-BUG-L29",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
     "task": "261112-BUG"
   }
 }

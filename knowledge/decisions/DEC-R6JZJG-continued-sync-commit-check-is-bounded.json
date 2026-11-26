@@ -1,0 +1,92 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Reusing the landing runner, disabling the check for the continued commit and keeping the 300-second local timeout were each weighed against the shared bounded run; the choice binds the worktree commit path and the kernel Git argv builder."
+  },
+  "alternatives": [
+    {
+      "option": "Run git commit --no-edit under the shared spawn/stop logic with the closeout's commitCheckTimeoutSeconds, keeping HEAD, MERGE_HEAD and the staged merge on a stop.",
+      "reason": "The check judges the actual commit, and the staged merge survives a timeout or a hook mutation so the caller can repair and continue or cancel.",
+      "status": "chosen"
+    },
+    {
+      "option": "Reuse the landing commit-check runner as it stands for the continued sync commit.",
+      "reason": "Its caller commits after it, so the hook would run twice.",
+      "reconsider_when": "The landing runner gains a mode that judges an already-staged commit without running the hook a second time.",
+      "status": "rejected"
+    },
+    {
+      "option": "Commit the continued sync with --no-verify.",
+      "reason": "That switches off the product's commit check for a landing route.",
+      "reconsider_when": "A developer ruling removes the commit check from continued sync commits.",
+      "status": "rejected"
+    },
+    {
+      "option": "Keep the 300-second local Git timeout and let the raised TimeoutExpired end the command.",
+      "reason": "It leaves the hook's processes and the staged merge in an unproven state and gives the caller no typed answer.",
+      "reconsider_when": "The local Git runner stops the hook's whole process group and returns a typed stop.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A continued sync commit has the same default 900-second bound, session ownership, retained log and sync-commit-check-failed answer as a closeout landing.",
+    "A timed-out or tracked-file-mutating hook leaves HEAD, MERGE_HEAD and the pinned index intact, so continue and cancel keep their ordinary meanings."
+  ],
+  "context": "A code-side sync continued after a resolved conflict commits with git commit --no-edit under the 300-second local Git timeout, without a session of its own. The repository's pre-commit hook runs under that command, so a silent or hanging check outlives the Git process, the staged merge stays, and the caller gets a raised error instead of a typed stop.",
+  "decider": "Architect 97e0320d, ruling 27c406e4 (2026-11-25T10:25:06Z), recorded in the leaf decision log; task bounds D918 and D947.",
+  "id": "DEC-R6JZJG",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/worktrees"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/kernel"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "BUG-R29",
+        "packet": "requirements/BUG-R29-v1-a-syncs-commit-check-is-bounded-like-a-closeouts-and-the-checks-take-the-time-their-work-needs.md",
+        "task": {
+          "path": "261112_bug-fixes-and-issue-tracking",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "PYTHONPATH=mcp/test_support mcp/.venv/bin/python -m pytest -m \"\" -q (15 focused modules) -> 237 passed, 82 subtests passed in 234.93s (test_sync_commit_check.py: 14 passed)"
+      ],
+      "path": "L29-curator-handoff-pass1"
+    },
+    "handoffEntry": "BUG-R29@v1 §1",
+    "leaf": "261112-BUG-L29",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-25T14:52:18+01:00",
+    "by": "agent",
+    "effort": "unknown",
+    "harness": "hermes",
+    "leaf": "261112-BUG-L29",
+    "model": "opencode-go:deepseek-v4.1-flash",
+    "role": "curator",
+    "seat": "81dd1137-f494-569a-91e0-85d146824594",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "the launch receipt does not hold the effort"
+    }
+  }
+}

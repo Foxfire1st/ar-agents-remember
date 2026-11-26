@@ -727,6 +727,40 @@
           "kind": "code"
         }
       ]
+    },
+    "32": {
+      "note": "The one-invocation hook batch renders its scope lines from one derived scope in fixed order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0716fcda6c7c0a22dcdb02ec9e19287bff4c67c",
+            "content": "sha256:c73f7bb71d94ac1c391eea4be49a566cf1b251e927cc8adadf6321946a4496c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "collect_hook_scope_batch"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/hook_scope_batch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The reporting module exposes the hook-batch subcommand and the lazy count walk.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8aa99814c14c39ac32e90229e98df92a01b2da2",
+            "content": "sha256:b1ae42948e2d0b2853a80a1a7d0cb9ece12be4337f3c71b322972d148619a465",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hook_batch_report"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

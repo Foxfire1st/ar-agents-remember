@@ -178,7 +178,7 @@
       ]
     },
     "4": {
-      "note": "The version comparator uses installed package metadata with the source-checkout release fallback.\n\nAnchor: `_resolve_server_version`",
+      "note": "The version comparator is resolved from installed package metadata.",
       "targets": [
         {
           "anchor": {

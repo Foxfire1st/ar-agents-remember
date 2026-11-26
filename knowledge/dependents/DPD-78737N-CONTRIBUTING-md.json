@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "51bf0a91489d97231a1e1173b67d2087c170b08f",
-    "commit": "ff626cd445012fee408b4b6c292756bbe1438d2e",
+    "codeTree": "654d5eacb7b3070e1a3e17aa50a5cc9a44be6c09",
+    "commit": "babbd912757d905a69e7b9409b0b89bd528f4db3",
     "role": "curator",
-    "statement": "The contributor guide accurately describes the seven lanes, lane assignment for new tests and the canonical lifecycle catalog procedure on the merged source. The contributor guide's hook and lane sections still hold: both hooks need the dashboard's dependencies and stop with the install command when they are missing, and the two new test files sit in the integration lane. The contributor guide's seven-lane policy still applies, with the dependent-writer, crossing-history interruption and worktree crossing-history tests in integration and the crossing knowledge-writer and crossing Git-path tests in unit regression.",
-    "task": "261112-BUG-L26",
+    "statement": "On synced code 654d5eac (base babbd9127) the contributor guide passages touched in L29 are accurate: lines 40-50 name PUBLIC_TOOLS, ROLE_TOOL_ALLOWLISTS, tools_for_role, EXPLAINER_SURFACE, and the whole-list and server_info fallbacks matching mcp/server.py:399-408 and models/tools/role_tool_scope.py:25,186-203, and lines 330-337 and 370-387 match the R1-R6 hook repairs, continued-sync commitCheckTimeoutSeconds ownership, and Commit-Check-Pass trailer; the document's other sections were not reread for this confirmation.",
+    "task": "261112-BUG-L29",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -51,7 +51,7 @@
       "path": "setup-hooks.sh"
     },
     {
-      "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+      "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
       "kind": "file",
       "path": ".githooks/_gate.sh"
     },
@@ -61,12 +61,12 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "e6aa1452b7816dbfafa14d559b014d62af9a0df3",
+      "blob": "c883e9093950ad17c032342760a1509dfd09b128",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "d35463d6c2b0bc1953df6b6e2cd1fcca533a515d",
+      "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
     },
@@ -205,5 +205,16 @@
       "kind": "file",
       "path": "scripts/instruction_renewal/manifest.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T23:13:05+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L29",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+    "task": "261112-BUG"
+  }
 }

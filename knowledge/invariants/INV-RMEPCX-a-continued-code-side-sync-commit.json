@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The obligation is realized in kernel/git_command.py for the sanctioned Git argv, commit_check_process.py for the bounded session and log, _code_merge_commit.py for the conditional stamp, bounded commit, and mutation rollback, _merge.py for delegation, and sync_transaction.py for the typed refusal, and the continued-sync hook cases in test_sync_commit_check.py guard it."
+  },
+  "applicability": "A code-side sync continued after a resolved conflict, whose commit runs the repository's pre-commit check.",
+  "conditions": [
+    "The sync is continued through worktree_sync with resolution_action='continue'.",
+    "The commit reaches the repository's own commit check; the memory-side merge commit keeps its own hooks."
+  ],
+  "exclusions": [
+    "The memory-side merge commit, which runs in the memory repository under its own hooks.",
+    "A commit the product does not run through the repository's commit check."
+  ],
+  "id": "INV-RMEPCX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "PYTHONPATH=mcp/test_support mcp/.venv/bin/python -m pytest -m \"\" -q (15 focused modules) -> 237 passed, 82 subtests passed in 234.93s (test_sync_commit_check.py: 14 passed)",
+        "Reviewer R3 PASS WITH NOTES on 05acc9a7 (L29-W3-final-checks-05acc9a7.log: 243 passed, 84 subtests passed; test_sync_commit_check.py: 17 passed)"
+      ],
+      "path": "L29-curator-handoff-pass1"
+    },
+    "handoffEntry": "BUG-R29@v1 §1",
+    "leaf": "261112-BUG-L29",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A continued code-side sync commit runs git commit -m carrying Commit-Check-Pass: tree=<tree> hook=<hook> when a runnable pre-commit hook exists and git commit --no-edit without a stamp when none does (never --no-verify), in its own process session under orchestration.landing.commitCheckTimeoutSeconds (default 900s), terminates its process group after a 30s grace and cleans up or names escaped output holders, refuses tracked-file mutations, retains the hook log under the Git common directory, and returns sync-commit-check-failed while keeping HEAD, MERGE_HEAD, and the staged merge intact.",
+  "supersedes": [],
+  "title": "A continued sync commit is bounded and keeps its staged merge",
+  "writer": {
+    "at": "2026-11-25T18:10:27+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L29",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+    "task": "261112-BUG"
+  }
+}

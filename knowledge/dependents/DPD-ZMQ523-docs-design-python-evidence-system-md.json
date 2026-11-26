@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "049d3961dfb898bbd69253d9e0b878188fd1006b",
-    "commit": "ed29e40bb6a27dbba33b106b556da182e02a7429",
+    "codeTree": "029ed9f701f14aca180f3615775e8d0e94541339",
+    "commit": "a1a08ec0f484592a5350a25f6fb7a6296c94d4fb",
     "role": "curator",
-    "statement": "On settled tree 049d3961 (commit ed29e40b), docs/design/python-evidence-system.md pins no test counts and accurately describes the seven accepting lanes, canonical catalog ordering, and source-derived lifecycle rules across all 830 cataloged modules (678 in unit-regression including CAP-L4's test_tool_schema_compaction.py and EXP-L1's three canvas suites, 125 in integration including L38's two added modules, 3 public-contract, 23 architecture-fitness, 1 stress-durability; with the two canvas browser suites sharing canvas_browser_test_support.py and all source-derived consumers updated cleanly).",
+    "statement": "On settled crossing-4 tree 029ed9f7 (commit a1a08ec0, combining EXP-L1 and BUG-L29), docs/design/python-evidence-system.md pins no test counts and accurately describes the seven accepting lanes, canonical catalog ordering, and source-derived lifecycle rules across all 832 cataloged modules (680 unit-regression including CAP-L4, EXP-L1's three canvas suites, and BUG-L29's test_githooks_l29_repairs.py and test_sync_commit_check.py; 125 integration; 3 public-contract; 23 architecture-fitness; 1 stress-durability) and 18 contracts / 122 artifacts in evidence-lifecycle.toml.",
     "task": "261124-EXP",
     "uncommitted": false
   },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 18,
+  "revision": 19,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "9b2f8dfb74c9f9e7cc39c1097e6d5f7e0ff20215",
+      "blob": "99b864d6e0a4957dae565d02d5ce030c5d24e2c7",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "b9fa47a89c9ddd840e0a38800093c4488a641283",
+      "blob": "9864978fd05a491bc26e21095be2b7173659faed",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },
@@ -107,14 +107,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T00:51:29+01:00",
+    "at": "2026-11-26T03:46:23+01:00",
     "by": "agent",
-    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-4",
     "effort": "high",
     "harness": "antigravity-acp",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
     "task": "261124-EXP"
   }
 }

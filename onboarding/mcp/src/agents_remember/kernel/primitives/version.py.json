@@ -22,7 +22,7 @@
   ],
   "references": {
     "1": {
-      "note": "Package metadata and source-checkout fallback are selected through the explicit resolver.\n\nAnchor: `_resolve_server_version`",
+      "note": "Package metadata and source-checkout fallback are selected through the explicit resolver.",
       "targets": [
         {
           "anchor": {
@@ -38,7 +38,7 @@
       ]
     },
     "2": {
-      "note": "Installed metadata is authoritative; only missing package metadata selects the explicit source-checkout release identity.\n\nAnchor: `_resolve_server_version`",
+      "note": "Installed metadata is authoritative; only missing package metadata selects the explicit source-checkout release identity.",
       "targets": [
         {
           "anchor": {

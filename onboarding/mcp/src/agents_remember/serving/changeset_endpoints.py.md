@@ -147,7 +147,6 @@ errors if raised after admission begins. An unselected repository returns before
 - The leaf name a refusal carries, with the task id as the fallback for a contract that records no leaf. [9]
 
 
-- **The resolvability probe: the repository is asked, per commit, and the first object it does not hold is named.** [10]
 
 
 
@@ -176,3 +175,5 @@ No meaningful cross-repo references found.
 
 
 - The caller resolves code and memory independently. A missing selected repository returns an empty result before endpoint admission. Among entered endpoint-owner failures, NOT_RECORDED carries code detail or empties memory; other failures propagate. leaf_changeset publishes the code detail as state/stateDetail alongside counters. [12]
+
+- **The resolvability probe: the repository is asked, per commit, and the first object it does not hold is named.** [10]

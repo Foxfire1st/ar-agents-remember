@@ -304,7 +304,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
             "content": "sha256:5da6bcb1e5bc4e198aed174974ca82030cb1458a4810fd23bf6dd5511de2d96b",
             "locator": {
               "end": 19,
@@ -322,12 +322,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
-            "content": "sha256:7e9f1dc3267afa3d829234b9768060fabdd0a2e2bc3a16d07d5cec96307df0d8",
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "content": "sha256:76148e490a86380f0f3265f57b779685b4b3d0ee224f857adfc6503284d5b5ef",
             "locator": {
-              "end": 324,
+              "end": 459,
               "kind": "line_range",
-              "start": 254
+              "start": 387
             },
             "path": ".githooks/_gate.sh"
           },
@@ -340,12 +340,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
-            "content": "sha256:c3990657ce48bfc68ba7d342108feb8e693c0ae75c9a8f25654718abd5ba5dd2",
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "content": "sha256:7ad2d78b551e9f693cfad68f91b344bf7d7f5b221843c07d1111a1ece32f601e",
             "locator": {
-              "end": 239,
+              "end": 370,
               "kind": "line_range",
-              "start": 200
+              "start": 331
             },
             "path": ".githooks/_gate.sh"
           },
@@ -1361,12 +1361,12 @@
         },
         {
           "anchor": {
-            "blob": "e27262761cee5ab5e0177ca4774cc2a60bf3fcb5",
+            "blob": "5b7cc10ea678be4d50d94a02f248dc6c5cdd33d9",
             "content": "sha256:7966d22bb88ffde688184c10411a22c4e29f4b914fce61537c99db17fcc3c28f",
             "locator": {
-              "end": 387,
+              "end": 402,
               "kind": "line_range",
-              "start": 374
+              "start": 389
             },
             "path": "CONTRIBUTING.md"
           },
@@ -1396,8 +1396,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e27262761cee5ab5e0177ca4774cc2a60bf3fcb5",
-            "content": "sha256:5d693a03aab2136af7f21e4c62b1e1b691a62acc14ff129b6a466b0882b3df2e",
+            "blob": "5b7cc10ea678be4d50d94a02f248dc6c5cdd33d9",
+            "content": "sha256:cf440ccd6ecb0825d642502f886bd2baebe5c08e711873855ae73a9e133fef47",
             "locator": {
               "kind": "file"
             },
@@ -1564,12 +1564,12 @@
         },
         {
           "anchor": {
-            "blob": "e27262761cee5ab5e0177ca4774cc2a60bf3fcb5",
+            "blob": "5b7cc10ea678be4d50d94a02f248dc6c5cdd33d9",
             "content": "sha256:a987f35360e6c923130e35e738e51fe98cdeea1499aa0eab7ea4e391d72ba5ec",
             "locator": {
-              "end": 381,
+              "end": 396,
               "kind": "line_range",
-              "start": 374
+              "start": 389
             },
             "path": "CONTRIBUTING.md"
           },
@@ -1720,7 +1720,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f84319f540b34af2161212763a118f5e52b00e1",
+            "blob": "335d4461282e2836f4af863df677d07e72ff461a",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 90,
@@ -2019,7 +2019,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f84319f540b34af2161212763a118f5e52b00e1",
+            "blob": "335d4461282e2836f4af863df677d07e72ff461a",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 90,
@@ -2546,12 +2546,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:86485973cec1b30881a8538bc29f5f42f53066c3901c053eb5c3b164acaf512d",
             "locator": {
-              "end": 167,
+              "end": 176,
               "kind": "line_range",
-              "start": 154
+              "start": 163
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -2559,12 +2559,12 @@
         },
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:453fa60fd7e1d14c0171d456f4d8bcd58d5be2255a14c3ed6fcf169ae0f9e1ed",
             "locator": {
-              "end": 183,
+              "end": 192,
               "kind": "line_range",
-              "start": 170
+              "start": 179
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -2572,12 +2572,12 @@
         },
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:62a77742ee64fab78b698abd24ce333efdd8b6f9f5fb5aef63ec057c5d4806ab",
             "locator": {
-              "end": 301,
+              "end": 329,
               "kind": "line_range",
-              "start": 286
+              "start": 314
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -2585,12 +2585,12 @@
         },
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:19eb270696db7904b422537e31cb29711f22efe2107a395be2a2d4f496a9fe4b",
             "locator": {
-              "end": 450,
+              "end": 478,
               "kind": "line_range",
-              "start": 397
+              "start": 425
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -5043,12 +5043,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e27262761cee5ab5e0177ca4774cc2a60bf3fcb5",
+            "blob": "5b7cc10ea678be4d50d94a02f248dc6c5cdd33d9",
             "content": "sha256:4e087812340b146baf41c0f102850638633a4a07b4b0998bd38d40461aff8b54",
             "locator": {
-              "end": 158,
+              "end": 162,
               "kind": "line_range",
-              "start": 133
+              "start": 137
             },
             "path": "CONTRIBUTING.md"
           },
@@ -5118,6 +5118,54 @@
         }
       ]
     },
+    "371": {
+      "note": "The fast tier uses one 256 KiB xargs batch, one scope-batch invocation, concurrent rails and the warm caches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "content": "sha256:60b5091e248fda7b888c6cb0d058d473a81ede06e5fd966f6001df08f5e8d3c2",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 176
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "content": "sha256:7ad2d78b551e9f693cfad68f91b344bf7d7f5b221843c07d1111a1ece32f601e",
+            "locator": {
+              "end": 370,
+              "kind": "line_range",
+              "start": 331
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "372": {
+      "note": "A continued sync commit is bounded, logged, conditionally stamped when a runnable hook exists, and refused with the staged merge intact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96473133db2ebee0b485a09f5bd00ac85de76448",
+            "content": "sha256:5d0b7fe598166a8d516a495891fcb8a52c8f98801fa5d78fd45604a292602a2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_bounded_code_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_code_merge_commit.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "39": {
       "note": "Retained reference account (no fresh execution or acceptance inferred): The staged-quality owner prepares the staged candidate, runs the targeted quality gate and requires published evidence for exactly that tree.",
       "targets": [
@@ -5140,8 +5188,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e27262761cee5ab5e0177ca4774cc2a60bf3fcb5",
-            "content": "sha256:5d693a03aab2136af7f21e4c62b1e1b691a62acc14ff129b6a466b0882b3df2e",
+            "blob": "5b7cc10ea678be4d50d94a02f248dc6c5cdd33d9",
+            "content": "sha256:cf440ccd6ecb0825d642502f886bd2baebe5c08e711873855ae73a9e133fef47",
             "locator": {
               "kind": "file"
             },
@@ -5375,7 +5423,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f84319f540b34af2161212763a118f5e52b00e1",
+            "blob": "335d4461282e2836f4af863df677d07e72ff461a",
             "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
             "locator": {
               "end": 90,

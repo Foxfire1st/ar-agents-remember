@@ -1,0 +1,106 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/commit_check_process.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "742ebb6461129748b31551fca8b3d83930c7ae20",
+        "content": "sha256:f1e9d6873a24ccae0fd0f9a0b52c25965b1f21092deba6299ebb253e011a077b",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_bounded_command"
+        }
+      },
+      "id": "RLZ-CH4A8S",
+      "invariant": "INV-RMEPCX",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §1",
+        "leaf": "261112-BUG-L29"
+      },
+      "rationale": "Owns the shared session-isolated spawn, Git-common-directory log streaming, commitCheckTimeoutSeconds timeout, TERM-grace-KILL group teardown, and escaped pipe-holder cleanup used by both closeout and continued sync commits.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The timeout resolves from the layered settings files and defaults to 900 seconds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "742ebb6461129748b31551fca8b3d83930c7ae20",
+            "content": "sha256:2133dcd276758b98548350b35ed4ac50db1ff25a2bce7d32e5d06a7eee9bbab1",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_commit_check_timeout_seconds"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One bounded run owns the session-isolated spawn, the common-directory log, the timeout and the elapsed footer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "742ebb6461129748b31551fca8b3d83930c7ae20",
+            "content": "sha256:f1e9d6873a24ccae0fd0f9a0b52c25965b1f21092deba6299ebb253e011a077b",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_bounded_command"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The process group is stopped after the bound and output is drained within a fixed grace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "742ebb6461129748b31551fca8b3d83930c7ae20",
+            "content": "sha256:eaf2d1bc2cd4e8697c54bb70300732b8190f0a8965f6f086b961c114b679a8db",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_process_to_log"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Escaped pipe holders are stopped or named alive, never assumed stopped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "742ebb6461129748b31551fca8b3d83930c7ae20",
+            "content": "sha256:e7251fa639cad93b19220b59ab3a1b0673ad9243e55803c6f274392f97dcbc76",
+            "locator": {
+              "kind": "symbol",
+              "name": "stop_escaped_pipe_holders"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The public refusal names the limit, log, judged paths, changed files and recovery calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "742ebb6461129748b31551fca8b3d83930c7ae20",
+            "content": "sha256:9e56dcc4c9739bfa075c3ecbeaa96fc68bbc35ac43d6485024c5763739a65120",
+            "locator": {
+              "kind": "symbol",
+              "name": "format_sync_commit_check_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

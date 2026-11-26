@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The same measured contract is stated in the hook header, the contributor guide and the MCP and settings references, so a reader of any one route meets the same times and bounded-commit answer."
+  },
+  "applicability": "The hook header and the repository documents that state the hook's costs and the continued sync commit contract.",
+  "conditions": [
+    "The stated times are the measured post-repair times on the recorded tree and load."
+  ],
+  "exclusions": [
+    "A promise about another host, load or checkout warmth.",
+    "A tier population change: the changed-files-only and dashboard-skip proposals were not admitted."
+  ],
+  "id": "INV-RXGZM9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Updated texts bound to Heavy 2 paired receipts (archive 25ae5922) and verified with sh -n and git diff --check",
+        "Updated texts bound to Heavy 2 paired receipts (archive 25ae5922) and R3/D167 Option 1 doc-passage check on b365a6e4",
+        "Updated texts bound to Heavy 2 paired receipts (archive 25ae5922), R3/D167 Option 1 doc-passage check, and post-L38 synced codeTree 654d5eac"
+      ],
+      "path": "L29-curator-handoff-pass1"
+    },
+    "handoffEntry": "BUG-R29@v1 §5",
+    "leaf": "261112-BUG-L29",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The pre-commit header and repository documentation record the measured post-repair hook times and peak combined RSS, the concurrent and cached hook execution, and the continued code-side sync commit-check bound and sync-commit-check-failed contract.",
+  "supersedes": [],
+  "title": "Hook texts state measured times and the bounded sync commit",
+  "writer": {
+    "at": "2026-11-25T23:13:05+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L29",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+    "task": "261112-BUG"
+  }
+}

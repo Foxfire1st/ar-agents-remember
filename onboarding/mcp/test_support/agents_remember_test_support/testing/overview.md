@@ -127,7 +127,6 @@ The generated route index lists the source files of this route and their cards.
 
 - Cached facts are checked for shape and reused under their content key, without a fresh-parse equality check. [23]
 
-- The deterministic Git hook fast tier invokes the lifecycle-catalog command; the targeted tier calls that same fast tier. [25]
 
 
 - The closed process registry gives _LEGACY_GATE_DELEGATION_WARNED the default _clear reset between test modules when its owner is already loaded. [26]
@@ -159,3 +158,5 @@ The generated route index lists the source files of this route and their cards.
 - Crossing fixture controls compare attributed state and writer before and after selecting or converting bytes. [41]
 
 - The current pointer fixtures bind whole-record retrieval to its named knowledge-use detail. [42]
+
+- The deterministic Git hook fast tier invokes the lifecycle-catalog command; the targeted tier calls that same fast tier. [25]

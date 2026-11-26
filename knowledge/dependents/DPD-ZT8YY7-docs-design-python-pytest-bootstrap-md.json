@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "049d3961dfb898bbd69253d9e0b878188fd1006b",
-    "commit": "ed29e40bb6a27dbba33b106b556da182e02a7429",
+    "codeTree": "029ed9f701f14aca180f3615775e8d0e94541339",
+    "commit": "a1a08ec0f484592a5350a25f6fb7a6296c94d4fb",
     "role": "curator",
-    "statement": "On settled tree 049d3961 (commit ed29e40b), docs/design/python-pytest-bootstrap.md accurately describes lane-based -m 'not integration' selection with no pinned module counts across the lane families (125 integration modules including L38's two added modules, 678 unit-regression modules including CAP-L4's test_tool_schema_compaction.py and EXP-L1's three canvas suites, 830 total) and the stress-durability bounded-memory stdio test's uninstrumented child coverage boundary.",
+    "statement": "On settled crossing-4 tree 029ed9f7 (commit a1a08ec0, combining EXP-L1 and BUG-L29), docs/design/python-pytest-bootstrap.md accurately describes lane-based -m 'not integration' selection with no pinned module counts across the 832 total cataloged modules (680 unit-regression including CAP-L4, EXP-L1's three canvas suites, and BUG-L29's test_githooks_l29_repairs.py and test_sync_commit_check.py; 125 integration; 3 public-contract; 23 architecture-fitness; 1 stress-durability), case budgets (10000/2000), --certify/coverage isolation, diagnostic-only CRAP/diff-coverage, conftest isolation, and the stress-durability bounded-memory stdio test's uninstrumented child coverage boundary (re-anchored to test-evidence-lanes.toml lines 851-853).",
     "task": "261124-EXP",
     "uncommitted": false
   },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 19,
+  "revision": 20,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "9b2f8dfb74c9f9e7cc39c1097e6d5f7e0ff20215",
+      "blob": "99b864d6e0a4957dae565d02d5ce030c5d24e2c7",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -106,12 +106,12 @@
     },
     {
       "anchor": {
-        "blob": "9b2f8dfb74c9f9e7cc39c1097e6d5f7e0ff20215",
+        "blob": "99b864d6e0a4957dae565d02d5ce030c5d24e2c7",
         "content": "sha256:cd1aadd0727e9055f7406e87eef73a6c7dd5a3457bbfc784c93a7ed4fc7eccc7",
         "locator": {
-          "end": 851,
+          "end": 853,
           "kind": "line_range",
-          "start": 849
+          "start": 851
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
@@ -134,14 +134,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T00:51:29+01:00",
+    "at": "2026-11-26T03:46:23+01:00",
     "by": "agent",
-    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-4",
     "effort": "high",
     "harness": "antigravity-acp",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
     "task": "261124-EXP"
   }
 }

@@ -284,7 +284,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:51adacb2027131fa579aafdcce7d397f57ddd50f264b97247df97d0bb7e3e4f0",
             "locator": {
               "kind": "symbol",
@@ -301,8 +301,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
-            "content": "sha256:7e3f066e1ca073ba932f3f6560bcdc6559c931662b2876a46c7f7108f0d06ac1",
+            "blob": "9a7e852ea7920c8d6be14e0266a362655f91e3d2",
+            "content": "sha256:7a96bb46a3d3643fdf890df1a79cc3e6f1655af03cbd8d46df01d80843e57b25",
             "locator": {
               "kind": "symbol",
               "name": "_finish_retained_merge"
@@ -379,12 +379,12 @@
         },
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:1e7c57a77337e7a667171737fd793069e114c49dea325faff6fc85b435434240",
             "locator": {
-              "end": 584,
+              "end": 589,
               "kind": "line_range",
-              "start": 539
+              "start": 544
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
@@ -426,12 +426,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:7d21b4b91cc06b4564b507277a082a02550f797f8dd8c8671cfd9ab47c0b816a",
             "locator": {
-              "end": 330,
+              "end": 335,
               "kind": "line_range",
-              "start": 302
+              "start": 307
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
@@ -473,6 +473,40 @@
               "start": 89
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_ignore_merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "121": {
+      "note": "The continued code-side commit is bounded and its stop keeps the staged merge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a7e852ea7920c8d6be14e0266a362655f91e3d2",
+            "content": "sha256:89c63e8664870024116df52d3db364a8fbb851c4c7fe69e27c4a93358f2c8c5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_check_stopped"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "122": {
+      "note": "The commit itself runs through the shared bounded owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96473133db2ebee0b485a09f5bd00ac85de76448",
+            "content": "sha256:5d0b7fe598166a8d516a495891fcb8a52c8f98801fa5d78fd45604a292602a2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_bounded_code_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_code_merge_commit.py"
           },
           "kind": "code"
         }
@@ -633,7 +667,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
+            "blob": "9a7e852ea7920c8d6be14e0266a362655f91e3d2",
             "content": "sha256:ce81740d2e4cb263c942716af0d464e2cbb0d81cb98bf15d04ba52d79ae18843",
             "locator": {
               "kind": "symbol",
@@ -645,7 +679,7 @@
         },
         {
           "anchor": {
-            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
+            "blob": "9a7e852ea7920c8d6be14e0266a362655f91e3d2",
             "content": "sha256:3fce0f446e84a30cefa7d3cb960ba443023ed4a0f53dd572c5c21a9be7b3715c",
             "locator": {
               "kind": "symbol",
@@ -657,8 +691,8 @@
         },
         {
           "anchor": {
-            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
-            "content": "sha256:7e3f066e1ca073ba932f3f6560bcdc6559c931662b2876a46c7f7108f0d06ac1",
+            "blob": "9a7e852ea7920c8d6be14e0266a362655f91e3d2",
+            "content": "sha256:7a96bb46a3d3643fdf890df1a79cc3e6f1655af03cbd8d46df01d80843e57b25",
             "locator": {
               "kind": "symbol",
               "name": "_finish_retained_merge"
@@ -669,7 +703,7 @@
         },
         {
           "anchor": {
-            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
+            "blob": "9a7e852ea7920c8d6be14e0266a362655f91e3d2",
             "content": "sha256:420bba6070f930e9f28cc012c50608dc342c1eceec049eb67436eb236f2ead87",
             "locator": {
               "kind": "symbol",
@@ -681,12 +715,12 @@
         },
         {
           "anchor": {
-            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
+            "blob": "9a7e852ea7920c8d6be14e0266a362655f91e3d2",
             "content": "sha256:92637d10b86307a10fd54e9bc790c61e5f8b55b20307915e6582c85f4299d52f",
             "locator": {
-              "end": 522,
+              "end": 529,
               "kind": "line_range",
-              "start": 501
+              "start": 508
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
           },
@@ -694,8 +728,8 @@
         },
         {
           "anchor": {
-            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
-            "content": "sha256:63ef862e297cf1291173ffce4d53420fdfecca34be4d9769fee06367916b89e4",
+            "blob": "9a7e852ea7920c8d6be14e0266a362655f91e3d2",
+            "content": "sha256:37ec7e995c08fb7271cd798b39892ec15f21b64877890688e341b6b58b068fb1",
             "locator": {
               "kind": "file"
             },
@@ -741,7 +775,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:59e5621bcb2f50ca60d2eaef89cf80c645276f83ea5093578f4725f8ac04c453",
             "locator": {
               "kind": "symbol",
@@ -753,7 +787,7 @@
         },
         {
           "anchor": {
-            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
+            "blob": "9a7e852ea7920c8d6be14e0266a362655f91e3d2",
             "content": "sha256:36e8e6e3886d04112e9ee640f0ce775ab12ab51e902fa8086f496bd5abdeacf6",
             "locator": {
               "kind": "symbol",
@@ -875,7 +909,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:eb1fed75ae6bdd3627ae2f50b590865656ddb09e3c7080e05ebe45dd8aec1ea5",
             "locator": {
               "kind": "symbol",
@@ -887,7 +921,7 @@
         },
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:3d76a4038e121b79f73db2cd20e5910d5cf7a7d4848f465fdae9d44d8432c833",
             "locator": {
               "kind": "symbol",
@@ -1097,8 +1131,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
-            "content": "sha256:63ef862e297cf1291173ffce4d53420fdfecca34be4d9769fee06367916b89e4",
+            "blob": "9a7e852ea7920c8d6be14e0266a362655f91e3d2",
+            "content": "sha256:37ec7e995c08fb7271cd798b39892ec15f21b64877890688e341b6b58b068fb1",
             "locator": {
               "kind": "file"
             },
@@ -1124,8 +1158,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
-            "content": "sha256:cf14347b14413160ca0c0e092333c2cefd49b9103de95d8957d54a7c5e800655",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
+            "content": "sha256:40fd6d48db5c42b6820b6f48019fea5fc76b152aebdfbae402fc7135175d721d",
             "locator": {
               "kind": "symbol",
               "name": "continue_side_merge"
@@ -1226,12 +1260,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:e42eef8ded8098a4af04d04a5aa3a37b3b940d1a97b210ceb0a1373197aa36b6",
             "locator": {
-              "end": 584,
+              "end": 589,
               "kind": "line_range",
-              "start": 516
+              "start": 521
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },
@@ -1244,8 +1278,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
-            "content": "sha256:63ef862e297cf1291173ffce4d53420fdfecca34be4d9769fee06367916b89e4",
+            "blob": "9a7e852ea7920c8d6be14e0266a362655f91e3d2",
+            "content": "sha256:37ec7e995c08fb7271cd798b39892ec15f21b64877890688e341b6b58b068fb1",
             "locator": {
               "kind": "file"
             },
@@ -1293,7 +1327,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:eb1fed75ae6bdd3627ae2f50b590865656ddb09e3c7080e05ebe45dd8aec1ea5",
             "locator": {
               "kind": "symbol",
@@ -1305,7 +1339,7 @@
         },
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:3d76a4038e121b79f73db2cd20e5910d5cf7a7d4848f465fdae9d44d8432c833",
             "locator": {
               "kind": "symbol",
@@ -1801,8 +1835,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
-            "content": "sha256:63ef862e297cf1291173ffce4d53420fdfecca34be4d9769fee06367916b89e4",
+            "blob": "9a7e852ea7920c8d6be14e0266a362655f91e3d2",
+            "content": "sha256:37ec7e995c08fb7271cd798b39892ec15f21b64877890688e341b6b58b068fb1",
             "locator": {
               "kind": "file"
             },
@@ -1834,7 +1868,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:0b2d375f394beb24f307d5e12fbbdf23e88a25e56323f5ca82969204cb979de7",
             "locator": {
               "kind": "symbol",
@@ -2165,12 +2199,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28b1565fe6936fa7fb79cbc05b4d7cd05c743141",
+            "blob": "9a7e852ea7920c8d6be14e0266a362655f91e3d2",
             "content": "sha256:eb212c867f6cfd09d4439893f9934f7753a0e26d6a2b6742c2421c6b2d7a4e20",
             "locator": {
-              "end": 344,
+              "end": 351,
               "kind": "line_range",
-              "start": 264
+              "start": 271
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
           },
@@ -2183,7 +2217,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:6d9acb80e9fa246b2a26664452a8b1ca81fce26d91578019b2d9da128b76bab8",
             "locator": {
               "kind": "symbol",
@@ -2200,12 +2234,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:e42eef8ded8098a4af04d04a5aa3a37b3b940d1a97b210ceb0a1373197aa36b6",
             "locator": {
-              "end": 584,
+              "end": 589,
               "kind": "line_range",
-              "start": 516
+              "start": 521
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },

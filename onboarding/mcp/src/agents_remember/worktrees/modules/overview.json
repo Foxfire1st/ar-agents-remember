@@ -105,6 +105,69 @@
         }
       ]
     },
+    "101": {
+      "note": "`commit_check_process` owns the shared bounded hook run, log and escaped-holder cleanup for landings and continued sync commits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "742ebb6461129748b31551fca8b3d83930c7ae20",
+            "content": "sha256:f1e9d6873a24ccae0fd0f9a0b52c25965b1f21092deba6299ebb253e011a077b",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_bounded_command"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/commit_check_process.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "102": {
+      "note": "The landing check prepares and cleans up lockfile-matched `dashboard/node_modules` borrowing pre-spawn and delegates its hook run to `commit_check_process`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
+            "content": "sha256:e1f0d69e8a2163f9b256e8987ea6e682c0d1229627242de39882cd21d6c8f7e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_checked"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "103": {
+      "note": "Pre-spawn `dashboard/node_modules` borrowing requires primary directory presence, byte-identical `dashboard/package-lock.json`, and gitignored candidate target, refusing as `unrunnable` otherwise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
+            "content": "sha256:38154042c74d7412b48d4a1b5d93334c715e7c426490479f758bb1aba2e4b567",
+            "locator": {
+              "kind": "symbol",
+              "name": "_lockfile_borrow_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
+            "content": "sha256:13f79186bf9fdce46b69cadc0391d76e4b3aa6f3acc8d3ecf01139454e86aef1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_borrow_dashboard_node_modules"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "11": {
       "note": "Retained reference account (no fresh execution or acceptance inferred): The shared missing or unsupported sidecar refusal, called by the curator trace entry.",
       "targets": [

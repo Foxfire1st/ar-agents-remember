@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Shared Git runners and preparation owners; this is not the sole process-starting module, since landing_commit_check also starts Git/hook processes directly. The module also
+Shared Git runners and preparation owners; this is not the sole process-starting module: the commit-check runner in `worktrees/modules/commit_check_process.py` starts the hook under its own bound. The module also
 holds the exact-bytes readers of Git objects, the batched blob reader with its optional shared-read block, the
 option tuples for diffs whose output is parsed, the index copy for disposable captures, the three-way file
 merge, and sealed existing/private-output observations. The removed preparation-command dispatcher and closeout-ref publication dispatcher are not current execution owners.
@@ -34,6 +34,9 @@ The object memo exists only for one request and keys the repository, effective w
   runs when that differs from the repository, as for `git clone`), `input_text` (standard input), `timeout`
   and `identity`. `identity` adds environment names such as `GIT_AUTHOR_*` on top of the scrubbed
   environment; a selector name in it raises `ValueError`.
+- `git_command_spec(repo_root, args, options)` returns the same sanctioned argv, work directory and
+  scrubbed environment as a `GitCommandSpec` without spawning. A caller that must own the child's
+  process session and streamed log takes them from this module and starts the child itself.
 - Four timeout classes are declared: `GIT_LOCAL_TIMEOUT_SECONDS = 300` (the default),
   `GIT_REMOTE_TIMEOUT_SECONDS = 120`, `GIT_METADATA_TIMEOUT_SECONDS = 30` and
   `GIT_BULK_REMOTE_TIMEOUT_SECONDS = 1800`. Timeout raises TimeoutExpired; the explicitly owned process-group runner bounds descendants under its caller, while the landing-hook owner separately owns its hook process group. Readback errors retain actual output.
@@ -98,10 +101,11 @@ The extraction of _git_run shares the former run_git setup; it does not make the
 
 ## Evidence
 
+- `git_command_spec` builds the sanctioned argv, work directory and scrubbed environment without spawning. [58]
+
 - The byte runner bypasses text decoding and universal-newline conversion. [54]
 
 
-- The text, raw-byte and direct-output runners share the environment, identity and execution-option setup. [55]
 
 
 
@@ -158,3 +162,5 @@ The extraction of _git_run shares the former run_git setup; it does not make the
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/kernel/git_command.py::_wait_process - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 - The cancellation context binds the signal, the runner chooses the wait path, and the group owner handles timeout or cancellation for a new session. [57]
+
+- The text, raw-byte and direct-output runners share the environment, identity and execution-option setup. [55]

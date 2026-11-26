@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
-        "content": "sha256:48d3aab73dab34e7b7fcf9af88d842eb1270daa2fcacd88a358f2327a4954789",
+        "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
+        "content": "sha256:691854ebf532f96932243d0f7f49dc7f27aa159869516f5188d0519ded49a651",
         "locator": {
           "kind": "file"
         }
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+        "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
         "content": "sha256:3d76a4038e121b79f73db2cd20e5910d5cf7a7d4848f465fdae9d44d8432c833",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+        "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
         "content": "sha256:6d9acb80e9fa246b2a26664452a8b1ca81fce26d91578019b2d9da128b76bab8",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+        "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
         "content": "sha256:51adacb2027131fa579aafdcce7d397f57ddd50f264b97247df97d0bb7e3e4f0",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,25 @@
     },
     {
       "anchor": {
-        "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+        "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
+        "content": "sha256:40fd6d48db5c42b6820b6f48019fea5fc76b152aebdfbae402fc7135175d721d",
+        "locator": {
+          "kind": "symbol",
+          "name": "continue_side_merge"
+        }
+      },
+      "id": "RLZ-JKH04A",
+      "invariant": "INV-RMEPCX",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §1",
+        "leaf": "261112-BUG-L29"
+      },
+      "rationale": "Delegates validated continued code-side sync merges to commit_bounded_code_merge while keeping memory-side merge handling intact.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
         "content": "sha256:af6a482129ed902e37ddb6de27c933d70c5b5c3e60a3049d8963227c37f64d87",
         "locator": {
           "kind": "symbol",
@@ -90,6 +108,24 @@
       },
       "rationale": "Uses the same staged findings to distinguish a commit-hook refusal from an incomplete resolution.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
+        "content": "sha256:bb60decc8ca2383b68cf9e8ee9830d3402106c382e91a8868ae1463af0e7e7dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_staged_merge"
+        }
+      },
+      "id": "RLZ-RJZXNA",
+      "invariant": "INV-0YBX5E",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §3 (R8)",
+        "leaf": "261112-BUG-L29"
+      },
+      "rationale": "Applies sync_merge_commit_args to staged memory merges and rewinds HEAD, index, and sequencer files with SyncMergeCommitError if a memory hook mutates the staged tree (R8 Condition 2).",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -98,10 +134,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
-            "content": "sha256:48d3aab73dab34e7b7fcf9af88d842eb1270daa2fcacd88a358f2327a4954789",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
+            "content": "sha256:11535ae931a2c86ecf68cc4089c1760b6a1f17a12864ae4b057964394bdf3eb7",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "validate_memory_fast_forward"
             }
           },
           "kind": "code"
@@ -113,11 +150,76 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:51adacb2027131fa579aafdcce7d397f57ddd50f264b97247df97d0bb7e3e4f0",
             "locator": {
               "kind": "symbol",
               "name": "validate_staged_resolution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The continued code-side commit runs through the bounded owner with conditional `Commit-Check-Pass` stamping and never `--no-verify`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96473133db2ebee0b485a09f5bd00ac85de76448",
+            "content": "sha256:5d0b7fe598166a8d516a495891fcb8a52c8f98801fa5d78fd45604a292602a2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_bounded_code_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_code_merge_commit.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "`continue_side_merge` delegates a validated code-side merge to that bounded owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
+            "content": "sha256:40fd6d48db5c42b6820b6f48019fea5fc76b152aebdfbae402fc7135175d721d",
+            "locator": {
+              "kind": "symbol",
+              "name": "continue_side_merge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "`_commit_staged_merge` stamps `Commit-Check-Pass` only when the memory repository has a runnable pre-commit hook (writing no stamp when absent or disabled) and rewinds `HEAD`, index and sequencer files if the hook mutates the staged tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
+            "content": "sha256:bb60decc8ca2383b68cf9e8ee9830d3402106c382e91a8868ae1463af0e7e7dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_staged_merge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Non-conflicting code merges in `start_side_merge` run plain `git merge --no-edit` without a `Commit-Check-Pass` stamp, while memory merges stop `--no-commit` for staged validation and settlement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
+            "content": "sha256:b8e6e649d46fcc30946bc047b0462ae9397189f47658b61f76143e7224724564",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_side_merge"
             }
           },
           "kind": "code"
@@ -129,7 +231,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:eb1fed75ae6bdd3627ae2f50b590865656ddb09e3c7080e05ebe45dd8aec1ea5",
             "locator": {
               "kind": "symbol",
@@ -145,7 +247,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:3d76a4038e121b79f73db2cd20e5910d5cf7a7d4848f465fdae9d44d8432c833",
             "locator": {
               "kind": "symbol",
@@ -161,12 +263,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:59e5621bcb2f50ca60d2eaef89cf80c645276f83ea5093578f4725f8ac04c453",
             "locator": {
-              "end": 536,
-              "kind": "line_range",
-              "start": 516
+              "kind": "symbol",
+              "name": "_finish_staged_memory_merge"
             }
           },
           "kind": "code"
@@ -178,7 +279,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:0e6cf6d56529608b97be6084200c05095b9ad60ba8841fe6c95913845c7e7725",
             "locator": {
               "kind": "symbol",
@@ -194,7 +295,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:0b2d375f394beb24f307d5e12fbbdf23e88a25e56323f5ca82969204cb979de7",
             "locator": {
               "kind": "symbol",
@@ -210,7 +311,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "blob": "471a9f76e99d8340a77bafcb0863d7a9d9768548",
             "content": "sha256:640d54f5d8461b73c58943a8b7bde273e0f2d43ee1fdcda4a37e3755d47ba2c2",
             "locator": {
               "kind": "symbol",

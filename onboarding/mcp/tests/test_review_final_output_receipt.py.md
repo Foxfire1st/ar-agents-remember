@@ -73,6 +73,4 @@ No meaningful cross-repo references found.
 
 ### Repo-Internal References (continued)
 
-
-
 - The `unit-regression` lane selects `mcp/tests/test_review_final_output_receipt.py`. The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. [24]

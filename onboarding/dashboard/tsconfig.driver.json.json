@@ -1,0 +1,60 @@
+{
+  "path": "dashboard/tsconfig.driver.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1ff60438e45a8fe67d8d880efcaada8633031c8b",
+        "content": "sha256:0204e7830cc3e9b7af1df7e9bcf2090d1b68be813e7da5dc1750c9c96e721c85",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-CHN0KS",
+      "invariant": "INV-AFVK1G",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §3 (R1-R6)",
+        "leaf": "261112-BUG-L29"
+      },
+      "rationale": "Enables incremental TypeScript checking with an explicit gitignored tsBuildInfoFile for the e2e/driver project.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The driver project enables incremental checking with an explicit gitignored build-info file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ff60438e45a8fe67d8d880efcaada8633031c8b",
+            "content": "sha256:0204e7830cc3e9b7af1df7e9bcf2090d1b68be813e7da5dc1750c9c96e721c85",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The dashboard ignore rules exclude TypeScript build caches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4ff7c54edc12706058af2aad22d48302a1b6109",
+            "content": "sha256:f0d380f1abdaa8274eb2bd76503fa00d6cbbf8c506a094006b2d55199860414a",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/.gitignore"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,62 @@
+{
+  "path": ".githooks/pre-commit",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "35c02f5b5d840efa69de6f84133a9477f7fe7b19",
+        "content": "sha256:8781ac28d48703dbe18e73e9915cce1ebbdf2fd747f2dff0769d23c4cbb36a41",
+        "locator": {
+          "end": 8,
+          "kind": "line_range",
+          "start": 2
+        }
+      },
+      "id": "RLZ-87JBY9",
+      "invariant": "INV-RXGZM9",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §5",
+        "leaf": "261112-BUG-L29"
+      },
+      "rationale": "Replaces the stale under-half-a-minute warm checkout claim with the measured post-repair cold/warm times (~134s) and peak combined RSS (~3.75 GiB cold, ~3.60 GiB warm).",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The hook executes the fast tier over the staged content and its header states the measured cold and warm times and peak combined RSS.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35c02f5b5d840efa69de6f84133a9477f7fe7b19",
+            "content": "sha256:4b158fe89e45b2bf5cf5899341e12bf96e91383612eb863d3661de46a369718d",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fast tier is the shared hook body's `run_fast_checks`, which the landing and sync commit checks invoke.\n\nAnchor: `run_fast_checks`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "content": "sha256:a516755da52b662b8e6a94d5b479c2d5681e2c5d578408b294a0014e46e9a608",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 360
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

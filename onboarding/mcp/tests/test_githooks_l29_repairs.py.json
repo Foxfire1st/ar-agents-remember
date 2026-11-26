@@ -1,0 +1,220 @@
+{
+  "path": "mcp/tests/test_githooks_l29_repairs.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ab2774112604e0b1eb489be54f38cfa4480fa031",
+        "content": "sha256:0bb6213f9b823ada9fe009d5816babb9335d07da191681395f0c2795dfc0ecba",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_r4_r5_caches_are_gitignored_and_do_not_trip_landing_commit_check"
+        }
+      },
+      "facet": "The ESLint and tsc caches are gitignored and do not trip the landing check.",
+      "id": "PRF-1CAWSR",
+      "invariant": "INV-AFVK1G",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §3 (R1-R6)",
+        "leaf": "261112-BUG-L29"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ab2774112604e0b1eb489be54f38cfa4480fa031",
+        "content": "sha256:a4cf3e823d1eab486105dcab070ddd4ec74cd99da650f6c63714e94c8bab44f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_r6_gate_exports_pyright_ignore_warnings_and_real_type_error_fails"
+        }
+      },
+      "facet": "The hook silences only Pyright wrapper notices, and a real type error still fails.",
+      "id": "PRF-2GKXH4",
+      "invariant": "INV-AFVK1G",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §3 (R1-R6)",
+        "leaf": "261112-BUG-L29"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ab2774112604e0b1eb489be54f38cfa4480fa031",
+        "content": "sha256:bf37e6eb94c319476acc6f49beb17656a10b5d06695b9d549820461332734a68",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_r3_concurrent_rails_overlap_and_print_python_then_dashboard"
+        }
+      },
+      "facet": "The Python and dashboard rails overlap and replay in fixed Python-then-dashboard order.",
+      "id": "PRF-GAGWZ3",
+      "invariant": "INV-AFVK1G",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §3 (R1-R6)",
+        "leaf": "261112-BUG-L29"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ab2774112604e0b1eb489be54f38cfa4480fa031",
+        "content": "sha256:faa3a34caf7ef3d4f02f77103fc6e0cdbd13639c7f23cb57b842c221231a24e8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_r4_eslint_content_cache_catches_introduced_lint_error"
+        }
+      },
+      "facet": "The ESLint content cache still catches an introduced lint error.",
+      "id": "PRF-JA52M5",
+      "invariant": "INV-AFVK1G",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §3 (R1-R6)",
+        "leaf": "261112-BUG-L29"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ab2774112604e0b1eb489be54f38cfa4480fa031",
+        "content": "sha256:41608a2c26ad51729595a417158c325aa91c7fb8ddaadc7507290409d9bf442d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_r2_hook_batch_matches_separate_spawns_byte_for_byte"
+        }
+      },
+      "facet": "The one-invocation scope batch matches separate spawns byte for byte.",
+      "id": "PRF-PGEYWZ",
+      "invariant": "INV-AFVK1G",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §3 (R1-R6)",
+        "leaf": "261112-BUG-L29"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ab2774112604e0b1eb489be54f38cfa4480fa031",
+        "content": "sha256:33232bdf3d3c37e6d93c3d78772d335bbb7571aec577ec06e06b819cd32c2d50",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_r1_xargs_batch_preserves_ordered_files_and_reduces_spawns"
+        }
+      },
+      "facet": "One 256 KiB xargs batch preserves file order and reduces spawns.",
+      "id": "PRF-PJ1BBH",
+      "invariant": "INV-AFVK1G",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §3 (R1-R6)",
+        "leaf": "261112-BUG-L29"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ab2774112604e0b1eb489be54f38cfa4480fa031",
+        "content": "sha256:e4301186051222a10a7b9a420c647cb4c6277e269595eef3d96c7dd0d4285aa7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_r5_tsc_b_incremental_cache_catches_introduced_type_error"
+        }
+      },
+      "facet": "The incremental tsc cache still catches an introduced type error.",
+      "id": "PRF-QNAZGJ",
+      "invariant": "INV-AFVK1G",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §3 (R1-R6)",
+        "leaf": "261112-BUG-L29"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One 256 KiB xargs batch preserves file order and reduces spawns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab2774112604e0b1eb489be54f38cfa4480fa031",
+            "content": "sha256:33232bdf3d3c37e6d93c3d78772d335bbb7571aec577ec06e06b819cd32c2d50",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r1_xargs_batch_preserves_ordered_files_and_reduces_spawns"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one-invocation scope batch matches separate spawns byte for byte.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab2774112604e0b1eb489be54f38cfa4480fa031",
+            "content": "sha256:41608a2c26ad51729595a417158c325aa91c7fb8ddaadc7507290409d9bf442d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r2_hook_batch_matches_separate_spawns_byte_for_byte"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ab2774112604e0b1eb489be54f38cfa4480fa031",
+            "content": "sha256:432676426b9f5d241cbed116ad25b03e41cdbc3b6578acdb682e486eb5ced1d2",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 278
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two rails overlap while their output keeps Python-then-dashboard order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab2774112604e0b1eb489be54f38cfa4480fa031",
+            "content": "sha256:bf37e6eb94c319476acc6f49beb17656a10b5d06695b9d549820461332734a68",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r3_concurrent_rails_overlap_and_print_python_then_dashboard"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The ESLint and tsc caches stay gitignored and do not trip the landing check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab2774112604e0b1eb489be54f38cfa4480fa031",
+            "content": "sha256:0bb6213f9b823ada9fe009d5816babb9335d07da191681395f0c2795dfc0ecba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r4_r5_caches_are_gitignored_and_do_not_trip_landing_commit_check"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Pyright wrapper notices are silenced and a real type error still fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab2774112604e0b1eb489be54f38cfa4480fa031",
+            "content": "sha256:a4cf3e823d1eab486105dcab070ddd4ec74cd99da650f6c63714e94c8bab44f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r6_gate_exports_pyright_ignore_warnings_and_real_type_error_fails"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

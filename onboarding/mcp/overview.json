@@ -1735,7 +1735,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:a6f31e7ed323bd8751898287365ed85d5e186e252dd9bc4359d3da9e6717ed06",
             "locator": {
               "kind": "symbol",
@@ -1965,7 +1965,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:027365c573f2f3cba7df33db92946c3dbb8192948b786e09b2eb659de02648ac",
             "locator": {
               "end": 109,
@@ -1983,7 +1983,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:3a31c5b3a4bed1879a357ff6dcaef0c098db99e1e1f85d6e23fd0b745fa6ed1d",
             "locator": {
               "kind": "symbol",
@@ -3109,7 +3109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:33f1d32477b37638c86ec184e8c16b16d0a5476d58ae37993cd8a98b469d5a69",
             "locator": {
               "end": 109,
@@ -3874,7 +3874,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:1e06d97e083599f069fbf8c197960b4a72ec7557850d39b67dbe97b28275be67",
             "locator": {
               "kind": "symbol",
@@ -5800,6 +5800,40 @@
         }
       ]
     },
+    "424": {
+      "note": "`git_command_spec` supplies the sanctioned Git argv without spawning, and the shared commit-check runner owns the hook session and log.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
+            "content": "sha256:b7f259556f2f2ba66534208b375ff8221789a4d9c8ee4dc6182c05df8fde1c71",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_command_spec"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "425": {
+      "note": "The continued sync commit and the landing share one bounded runner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "742ebb6461129748b31551fca8b3d83930c7ae20",
+            "content": "sha256:f1e9d6873a24ccae0fd0f9a0b52c25965b1f21092deba6299ebb253e011a077b",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_bounded_command"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/commit_check_process.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "43": {
       "note": "**Retained historical source account — superseded by the current route account:** The leaf package statement.\n\nAnchor: \"The family-complete leaf read of a converted memory tree\"",
       "targets": [
@@ -6408,7 +6442,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce0ddfc25369e8454c78b21ff3be20e39855793e",
+            "blob": "f780d4e4259140c6d0de7287e44fb8b97456f873",
             "content": "sha256:c8e601b2afcab622ae91ef823d293c4bb88c0940043fea6600a5d8b5d197ffb5",
             "locator": {
               "kind": "symbol",
