@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
+        "blob": "e1f70b40e8089bc303ccf91511733ce53753e0bc",
+        "content": "sha256:c729deee2749886330bd24162195aabacf36e9be31f112d343e7ff63888c7370",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_paths_the_tool_cannot_name_are_answered_as_today"
+        }
+      },
+      "facet": "The brief projection preserves the naming reader's existing statuses for ineligible paths.",
+      "id": "PRF-021R33",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e1f70b40e8089bc303ccf91511733ce53753e0bc",
         "content": "sha256:ae2c6b15e78287277a5296a99c110896b8392147a5848b555bfb27129b062a53",
         "locator": {
           "kind": "symbol",
@@ -17,6 +34,40 @@
         "handoffEntry": "L3-W5-12",
         "leaf": "261112-BUG-L3"
       }
+    },
+    {
+      "anchor": {
+        "blob": "e1f70b40e8089bc303ccf91511733ce53753e0bc",
+        "content": "sha256:1b5a168eaaa10283615934f3286e9b99fb3a282a7457066e8ca980dbe597023d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_cold_read_carries_rule_text_without_writing_memory"
+        }
+      },
+      "facet": "Converted cold reads return a rule and report missing derived detail while preserving memory bytes.",
+      "id": "PRF-3432HQ",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e1f70b40e8089bc303ccf91511733ce53753e0bc",
+        "content": "sha256:259504064191e92cdd99be6ac7181afe22bdce0d90fee8133e7144e0a7e0ba37",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_read_reports_the_disk_header_and_keeps_its_bytes"
+        }
+      },
+      "facet": "The reader reports an older saved tree key and preserves the existing disk bytes.",
+      "id": "PRF-9PAKGJ",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      }
     }
   ],
   "realizes": [],
@@ -26,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
+            "blob": "e1f70b40e8089bc303ccf91511733ce53753e0bc",
             "content": "sha256:ee617b986dc5561eef4d7c9ed4c2369e41e6800118a3b787afa156371a2d7438",
             "locator": {
               "kind": "symbol",
@@ -42,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
+            "blob": "e1f70b40e8089bc303ccf91511733ce53753e0bc",
             "content": "sha256:f3ab3f5f550064a33b571010a4b2b533e8d00dce981cbfbf811be0d30c03ac82",
             "locator": {
               "kind": "symbol",
@@ -58,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
+            "blob": "e1f70b40e8089bc303ccf91511733ce53753e0bc",
             "content": "sha256:64e84fa1fa5adf49afbb1ece284423dae11fc10b35f1c5539f1145df60f8e529",
             "locator": {
               "kind": "symbol",
@@ -74,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
+            "blob": "e1f70b40e8089bc303ccf91511733ce53753e0bc",
             "content": "sha256:95725486bc003a4265e725112bf768067f1bd486d25492253cbbb907ee140c21",
             "locator": {
               "kind": "symbol",
@@ -90,7 +141,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
+            "blob": "e1f70b40e8089bc303ccf91511733ce53753e0bc",
             "content": "sha256:6d003e54143ce11da6a1fb0f44e8f1b6ba4395f1ee718707ad232408f1dd23bd",
             "locator": {
               "kind": "symbol",
@@ -106,7 +157,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
+            "blob": "e1f70b40e8089bc303ccf91511733ce53753e0bc",
             "content": "sha256:a95a02589bdf3f1330ba761e7f1e063265efde10eefcb625d410b806002f66ad",
             "locator": {
               "kind": "symbol",
@@ -122,7 +173,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
+            "blob": "e1f70b40e8089bc303ccf91511733ce53753e0bc",
             "content": "sha256:f3ab3f5f550064a33b571010a4b2b533e8d00dce981cbfbf811be0d30c03ac82",
             "locator": {
               "kind": "symbol",
@@ -138,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
+            "blob": "e1f70b40e8089bc303ccf91511733ce53753e0bc",
             "content": "sha256:4dbd963e6a88ad752e801d9b8fa9a5a808414a8fa620b5304bfcf2073be5de38",
             "locator": {
               "kind": "symbol",
@@ -154,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f956f04106d77849dfe748c487b776b16423ba7f",
+            "blob": "e1f70b40e8089bc303ccf91511733ce53753e0bc",
             "content": "sha256:290e73b505a55d1686dbd58624b48e55ea23da3d18a6a91c0bb09d86a6ec8d74",
             "locator": {
               "kind": "symbol",

@@ -7,10 +7,11 @@
   },
   "applicability": "A successor head revision of an invariant or family in the after snapshot of a leaf review comparison.",
   "conditions": [
-    "The successor's statement fields (statement, applicability, conditions, exclusions) or joint guarantee are equal to the superseded head's, while its record status or version differs."
+    "The two selected head revisions differ and the authored statement or guarantee and relationships are equal."
   ],
   "exclusions": [
-    "A successor with equal text and equal record status whose only change is realizations or members, which stays a typed relationship-only count."
+    "A successor that changes only realizations or members is counted as a relationship-only change.",
+    "A state or writer display difference alone does not create a new revision."
   ],
   "id": "INV-SVZY1FHR",
   "origin": {
@@ -18,9 +19,9 @@
     "legacyId": "222f50bc-8293-4de4-9900-20d0abe43f5c",
     "task": "260921-ICR"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "F3: the +/- counts are revision facts (master decision on count semantics); a record-only successor revision (identical text, changed status/version) counts once on each side like any revision, and a fixture pins it; wording presentation stays R35/L49's concern.",
+  "statement": "An invariant or family successor with unchanged statement or guarantee and unchanged relationships contributes one revision to each side of the changed-intent count.",
   "status": "proposed",
   "supersedes": []
 }

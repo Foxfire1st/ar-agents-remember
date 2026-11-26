@@ -190,7 +190,6 @@ No configured domain documentation could be checked.
 - The typed refusal constructors that bind a refusal to the comparison identity, and the one that cannot bind because a side never resolved. [15]
 - **The storage layer this seam delegates to: R07's one selection policy, applied per side.** [16]
 
-- **The union comparison and the display builder this seam calls.** [17]
 
 - **The display builder, which turns one comparison into a page's items, omissions, expansion and carried partition.** [18]
 - **The node that measures a real candidate write refusing its continuation, and the node that measures a side naming another snapshot of its own file refusing before any page.** [19]
@@ -211,3 +210,5 @@ Both are values the caller resolved; no ledger, coordination path or second repo
 the module never consults a remote.
 
 No additional configured cross-repository evidence.
+
+- **The union comparison and the display builder this seam calls.** [17]

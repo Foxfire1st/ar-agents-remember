@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The early clear spans the writer's marker and the plug-in's pending-only check, and prevents a written clear from waiting for the old deadline because no turn ends."
+  },
+  "applicability": "The plug-in's deferred provider-limit resumes and parent flushes while at least one is pending.",
+  "conditions": [
+    "One stat-keyed snapshot of the limit file is read every 15 seconds, and only while a resume or flush is pending.",
+    "A seat's clear marker with no live limit in the same snapshot releases its pending action with the marker's clearedAt.",
+    "The natural deadline timer stays and re-arms when a later until appears."
+  ],
+  "exclusions": [
+    "A read with no pending resume or flush.",
+    "A released parent that no longer owes a line.",
+    "A cleared seat that left the role record."
+  ],
+  "id": "INV-2KVT5S",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "261112-BUG-L37-W3-receipts.tar.gz, red/plugin.log and green/plugin.log"
+      ],
+      "path": "L37-curation-part1"
+    },
+    "handoffEntry": "BUG-R37@v1 rule 4",
+    "leaf": "261112-BUG-L37",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "One pending-only plug-in check observes written early clears and starts the existing resume and flush paths with the committed clear time.",
+  "status": "proposed",
+  "supersedes": []
+}

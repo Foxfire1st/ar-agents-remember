@@ -1,0 +1,108 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/group_messages.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "243b99a0c3d5a550d13f9cbcf878521020fb10ab",
+        "content": "sha256:d254488bd96321bc39cf285ff95e390031ac6c4812a09d669296807541a0d35a",
+        "locator": {
+          "kind": "symbol",
+          "name": "collect_group_messages"
+        }
+      },
+      "id": "RLZ-5WYQ7M",
+      "invariant": "INV-D22ZTW",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 MIK-R117 messages replacement",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "Moves regular files from a real workspace messages directory into canonical task-record notes with collision-safe names before whole-folder removal, replacing MIK-R117's leave-alone rule while preserving canonical message files.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "243b99a0c3d5a550d13f9cbcf878521020fb10ab",
+        "content": "sha256:d254488bd96321bc39cf285ff95e390031ac6c4812a09d669296807541a0d35a",
+        "locator": {
+          "kind": "symbol",
+          "name": "collect_group_messages"
+        }
+      },
+      "id": "RLZ-DN1PFS",
+      "invariant": "INV-R850AZ",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 2",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "Copies real workspace messages into their canonical folder and preserves differing bytes on name collisions.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`collect_group_messages` no-ops unless `<worktree_group>/messages` is a real directory, checks canonical ancestry, preserves regular files, and wraps failures in `GroupMessageCollectionError`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243b99a0c3d5a550d13f9cbcf878521020fb10ab",
+            "content": "sha256:d254488bd96321bc39cf285ff95e390031ac6c4812a09d669296807541a0d35a",
+            "locator": {
+              "kind": "symbol",
+              "name": "collect_group_messages"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_open_regular` validates parent directories, checks `S_ISREG` via `lstat`, and compares `os.path.samestat` against `fstat` to reject concurrent replacements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243b99a0c3d5a550d13f9cbcf878521020fb10ab",
+            "content": "sha256:09fec32ff265c1c317b873d2c9fa96824ecfef4937137e778cddbe51b2213fa3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_regular"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_message_destinations` yields the preferred relative path first and then deterministic `recovered-<pathhash16>-<digest>[-N]<ext>` fallback paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243b99a0c3d5a550d13f9cbcf878521020fb10ab",
+            "content": "sha256:196ec6efe69eb7067eb1e275f87968360a28a1e33044d32f5f042c4dbcb68fa7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_message_destinations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_place_message` copies into an fsynced temp file, re-verifies SHA-256, publishes via non-overwriting `os.link`, and fsyncs the target directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243b99a0c3d5a550d13f9cbcf878521020fb10ab",
+            "content": "sha256:e1decf8e32c82cb7171a4205fdcfbd292db8e1d79c0bfb431583c5de0a9a3cf6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_place_message"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

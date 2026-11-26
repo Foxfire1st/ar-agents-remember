@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**A memory tree as the index reads it: its key and the bytes of its knowledge files (MIK-R23 rules 1, 2).** A tree reaches the index as a Git tree read through objects (`ls-tree` plus one `cat-file --batch`, nothing checked out; the key is the tree id) or as a working-tree directory (the key is the tree id of its *captured state*). Both end as a `MemoryTreeSnapshot`: key, source kind, location and the files the index reads.
+**A memory tree as the index reads it: its key and the bytes of its knowledge files (MIK-R23 rules 1, 2).** A tree reaches the index as a Git tree read through objects (`ls-tree` plus one `cat-file --batch`, nothing checked out; the key is the tree id) or as a working-tree directory (the key is the tree id of its *captured state*). Both end as a `MemoryTreeSnapshot`: key, source kind, location, the files the index reads and the repository when captured from Git or a working directory.
 
 ## Code Commentary
 
@@ -25,7 +25,7 @@
 
 - **Computing a key changes nothing in the repository**: the temporary index and every object the capture writes live in a disposable directory, and the real index keeps its flags.
 - The capture honours `.gitignore` as a commit would, so identical content gets an identical key and ignored caches (`overview.index.json`) never reach it.
-- A snapshot's bytes are always the bytes its key names; mixed state is never served.
+- A snapshot's bytes belong to its captured tree key. The associated repository lets the index verify the exact reviewed bytes named by a retained review fact.
 - An index flag never hides an edit from the key.
 - **A file rewritten in the second the index was written is never answered from its old content (L37,
   INV-656CYW).** `_capture` copies the repository's index with `kernel.git_command.copy_git_index`, which keeps the
@@ -70,13 +70,16 @@ No meaningful cross-repo references found: the index reads one memory tree, addr
 
 No cross-repo boundary is crossed by this file.
 
-- The Git reader and the working-directory capture share a tree key. Isolated index and object storage protect the repository, and the captured blob check detects an intervening edit. [1]
-- The snapshot value and the read error. [2]
-- The indexed JSON filter uses the validator’s route-cache exclusion and includes JSON in dot directories under knowledge or onboarding. The census reader owns knowledge/census. [3]
-- The Git-object reader: one batch read, nothing checked out. [4]
+- The two sources, the captured-state key and what the capture never writes. [1]
+- The indexed JSON filter, sharing the validator's exclusion predicate. [3]
+
+
+
+
+- Snapshots captured from Git and from a working directory both carry the associated repository. [13]
+
 - The directory reader and its key, with the blob-id check and retry. [5]
-
-- The isolated capture copies the index and clears flags on that copy. Sparse-checkout omission keeps the committed bytes. [6]
-
-
+- The snapshot value and the read error. [2]
+- The Git-object reader: one batch read, nothing checked out. [4]
+- The isolated capture and the index-flag clearing on the scratch copy. [6]
 - The capture copies the index with its time. [9]

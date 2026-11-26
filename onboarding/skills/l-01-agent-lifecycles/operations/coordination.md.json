@@ -349,12 +349,12 @@
         },
         {
           "anchor": {
-            "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+            "blob": "9124be375703846117abf9f0f4fee05c1044befd",
             "content": "sha256:18047a903ab86ebc63bfb05b15a195b3e10a448a0bb6230c148faf6126b19d63",
             "locator": {
-              "end": 516,
+              "end": 433,
               "kind": "line_range",
-              "start": 482
+              "start": 399
             },
             "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
           },
@@ -362,12 +362,12 @@
         },
         {
           "anchor": {
-            "blob": "ab10f3cdc3aba28b9e189c902501164cc29da34b",
-            "content": "sha256:27ef107a06c8e8d5524c7a13f6ebe5d6d084b0cb271fc639b06cf1c4369793da",
+            "blob": "bdcc5bc86dc88ab933a4dcb1a73bed9ce788e995",
+            "content": "sha256:98d282eedefc5143e082684ae49869d119d77da5238043ff8a38b6f59983c5d9",
             "locator": {
               "end": 438,
               "kind": "line_range",
-              "start": 398
+              "start": 396
             },
             "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
           },
@@ -375,12 +375,12 @@
         },
         {
           "anchor": {
-            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
-            "content": "sha256:80aef136984e05536c634823ad28f449d12a06370b01b623979575f68b8ce9c7",
+            "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
+            "content": "sha256:a5ff0faa4d1e9ac831a5037b1778e436dddbb09d87afa78fb5783a0bd2e660bf",
             "locator": {
-              "end": 270,
+              "end": 230,
               "kind": "line_range",
-              "start": 232
+              "start": 166
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
@@ -388,12 +388,12 @@
         },
         {
           "anchor": {
-            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
-            "content": "sha256:3516329f6059493302ec76d225836a50edce02047537681817ca9bed27877f5b",
+            "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
+            "content": "sha256:a9378b53af069471428efa9e5cb01843c38bbd8fae0ef7263f659ee5fc4ae0b1",
             "locator": {
-              "end": 414,
+              "end": 388,
               "kind": "line_range",
-              "start": 367
+              "start": 283
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
@@ -401,12 +401,12 @@
         },
         {
           "anchor": {
-            "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
+            "blob": "07ae82d885e3cd87654354b19a373a5a9267b9db",
             "content": "sha256:f633e9b58ad2567a3f1a80672465bb4923934912e7457c0d55a59b5291eebc2b",
             "locator": {
-              "end": 1225,
+              "end": 1148,
               "kind": "line_range",
-              "start": 1198
+              "start": 1121
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -414,8 +414,8 @@
         },
         {
           "anchor": {
-            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
-            "content": "sha256:cb91f3750f43ab30ba438bf51309fbc88be8b2f4a226faf22715731159bc07f4",
+            "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
+            "content": "sha256:f9ee6451eead98f3bcde072fbeccd959f7dd6d1679021dae0b96a779499ffe83",
             "locator": {
               "end": 978,
               "kind": "line_range",
@@ -427,8 +427,8 @@
         },
         {
           "anchor": {
-            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
-            "content": "sha256:a6e03ae162ead1a55e19cd540059d13548454e11de187ad32117171984471bad",
+            "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
+            "content": "sha256:633c8c08df3553407d329b91fbcb568e13ac557d18a253948f535c308b51daca",
             "locator": {
               "end": 1021,
               "kind": "line_range",

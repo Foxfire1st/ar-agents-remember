@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_doc_file_inputs.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The helper admits readable UTF-8 from an absolute regular file, applies the size bound and returns its SHA-256 digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fddd89a935d03b6f11fa7418cd5bb929aa9b639e",
+            "content": "sha256:31b5f80ecce7b7a788a0ac31e8094033e1cf881e666ddba0ad62df7d32cf3c72",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_text_input"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

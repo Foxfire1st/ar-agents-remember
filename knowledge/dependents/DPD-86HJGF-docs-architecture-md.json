@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e0899a2899dd251331ac48aa874f17126a84a541",
-    "commit": "b28b99ce065e7db8ce1e79328e29861967e9bcb6",
+    "codeTree": "d2d3845baf9541100f06371fde62c4c0bb678b04",
+    "commit": "3ee8f6ad584e509ef6df637c1bb42484993b35d0",
     "role": "curator",
-    "statement": "On the merged code the architecture guide still holds for both changes: every call, including a cancelled request, gets a tool-log row inside one definition scope (L27), and the role narrowing in create_server and the narrowed explainer guard change no described duty or lifetime (CAP-L1).",
-    "task": "261124-CAP-L1",
+    "statement": "Verified against synced L38 candidate on 3ee8f6ad/b83cff67: docs/architecture.md (lines 1-303) accurately describes runtime_install ownership, runtime/servers/ process records, settings files, and the read/dry-run boundary reinforced by preview_server_inventory and opt-in reconcile_shared_held_stores=false.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/architecture.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 17,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "9326dfaf2cd0d2a38d6b07e618cae824b747b12f",
+      "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+      "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/server.py"
     },
@@ -36,12 +36,12 @@
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
     {
-      "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
     {
-      "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+      "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/runtime.py"
     },
@@ -76,12 +76,12 @@
       "path": "mcp/src/agents_remember/kernel/memory_mode.py"
     },
     {
-      "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+      "blob": "56e4309b65e11f619e3c2a4722f4afab53fd94c8",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/memory_cache.py"
     },
     {
-      "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
+      "blob": "0789f3ccacb2b41e5dd90b05efda788cbd713c23",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/memory_init.py"
     },
@@ -96,12 +96,12 @@
       "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
     },
     {
-      "blob": "ab649fa5dd2402a61b2ddd4c6fb9e3a2be7ee979",
+      "blob": "00e0026c74c9ae008642aa171b70ec87da5fb234",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/server_registry.py"
     },
     {
-      "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+      "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/tool_answer_log.py"
     },
@@ -148,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "74167e7f80f1b9391a5f2c9b1c8c6d2fa2f69402",
+        "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
         "content": "sha256:fffab67491f1245146827f300b9e3bb69c5acfc098526d57b932c830de6b2bc9",
         "locator": {
           "kind": "symbol",
@@ -161,7 +161,7 @@
     },
     {
       "anchor": {
-        "blob": "74167e7f80f1b9391a5f2c9b1c8c6d2fa2f69402",
+        "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
         "content": "sha256:84a887e1f19233f80852c6b5d9c76b54475d5156b7caa84e25b9eb108138c9a9",
         "locator": {
           "kind": "symbol",
@@ -174,7 +174,7 @@
     },
     {
       "anchor": {
-        "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+        "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
         "content": "sha256:af06a2422ac2a91eab5c15ecad95777c61ed5def424c7fa88a64d887933aa5c6",
         "locator": {
           "kind": "symbol",
@@ -239,7 +239,7 @@
     },
     {
       "anchor": {
-        "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+        "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
         "content": "sha256:af06a2422ac2a91eab5c15ecad95777c61ed5def424c7fa88a64d887933aa5c6",
         "locator": {
           "kind": "symbol",
@@ -252,7 +252,7 @@
     },
     {
       "anchor": {
-        "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+        "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
         "content": "sha256:925f22aaec219d7cc891620d30da65a2a438c565a3d5007c733106e8f2644582",
         "locator": {
           "kind": "symbol",
@@ -265,7 +265,7 @@
     },
     {
       "anchor": {
-        "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+        "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
         "content": "sha256:f17911c1f0a21f888ea3a15a8177d6138c86961b685bacb7cb49f126b4e5ed66",
         "locator": {
           "kind": "symbol",
@@ -299,5 +299,16 @@
       },
       "kind": "anchor"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T22:06:22+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

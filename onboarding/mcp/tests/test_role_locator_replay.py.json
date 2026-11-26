@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
+        "blob": "dd45ecce7fc327ee4c6faf30640f640fba42912f",
         "content": "sha256:b21bde3e5a89536a62cee51c71950fb731db6c32734da4bcdc90f5c66ae6c952",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
+        "blob": "dd45ecce7fc327ee4c6faf30640f640fba42912f",
         "content": "sha256:0b9ad793835fc73ea359add4213f9333197eea67b79a6becb240849277c5e60a",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
-        "content": "sha256:6408998ff87b13b0cf599cf103c3dd4f9f4993098ea9d561f5d8b2a1887f7c64",
+        "blob": "dd45ecce7fc327ee4c6faf30640f640fba42912f",
+        "content": "sha256:7f88707f8e8a86599b7cc02818df4b26814094696183a390c18fdf49fafc764b",
         "locator": {
           "kind": "symbol",
           "name": "test_real_detailed_preparation_refuses_a_collision_before_artifact_writes"
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
+            "blob": "dd45ecce7fc327ee4c6faf30640f640fba42912f",
             "content": "sha256:b21bde3e5a89536a62cee51c71950fb731db6c32734da4bcdc90f5c66ae6c952",
             "locator": {
               "kind": "symbol",
@@ -76,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
+            "blob": "dd45ecce7fc327ee4c6faf30640f640fba42912f",
             "content": "sha256:b21bde3e5a89536a62cee51c71950fb731db6c32734da4bcdc90f5c66ae6c952",
             "locator": {
               "kind": "symbol",
@@ -92,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
+            "blob": "dd45ecce7fc327ee4c6faf30640f640fba42912f",
             "content": "sha256:b21bde3e5a89536a62cee51c71950fb731db6c32734da4bcdc90f5c66ae6c952",
             "locator": {
               "kind": "symbol",
@@ -108,8 +108,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
-            "content": "sha256:6408998ff87b13b0cf599cf103c3dd4f9f4993098ea9d561f5d8b2a1887f7c64",
+            "blob": "dd45ecce7fc327ee4c6faf30640f640fba42912f",
+            "content": "sha256:7f88707f8e8a86599b7cc02818df4b26814094696183a390c18fdf49fafc764b",
             "locator": {
               "kind": "symbol",
               "name": "test_real_detailed_preparation_refuses_a_collision_before_artifact_writes"
@@ -124,7 +124,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
+            "blob": "dd45ecce7fc327ee4c6faf30640f640fba42912f",
             "content": "sha256:0b9ad793835fc73ea359add4213f9333197eea67b79a6becb240849277c5e60a",
             "locator": {
               "kind": "symbol",

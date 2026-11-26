@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d5df78e9435ff723c901681fc3e652599e975726",
+        "blob": "787f4dde1e74823fe0f87bd72950619f902dac9f",
         "content": "sha256:f02fc42dd92c8dbdba8280f3ebf5de536ac2fd493b5328c1fba1812b5a26b791",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5df78e9435ff723c901681fc3e652599e975726",
+            "blob": "787f4dde1e74823fe0f87bd72950619f902dac9f",
             "content": "sha256:f02fc42dd92c8dbdba8280f3ebf5de536ac2fd493b5328c1fba1812b5a26b791",
             "locator": {
               "kind": "symbol",
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5df78e9435ff723c901681fc3e652599e975726",
+            "blob": "787f4dde1e74823fe0f87bd72950619f902dac9f",
             "content": "sha256:d60c150696669ba044ac29f03b01ce23b8d4f9e887bad851f0a7d2f12fa8f08f",
             "locator": {
               "kind": "symbol",
@@ -58,11 +58,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5df78e9435ff723c901681fc3e652599e975726",
+            "blob": "787f4dde1e74823fe0f87bd72950619f902dac9f",
             "content": "sha256:9ea6fb3d0af44768476f2bc305c7f276b20335467abc33e5e0f9deee377395b8",
             "locator": {
               "kind": "symbol",
               "name": "_section_score"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The card selector receives its measured code tree and supplies naming rows separately from the compact brief.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "787f4dde1e74823fe0f87bd72950619f902dac9f",
+            "content": "sha256:fdee38a915ebe0ea8c93c090ef2b5fe7cfde127cb837be7c114f48ecd738b83e",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "787f4dde1e74823fe0f87bd72950619f902dac9f",
+            "content": "sha256:9b6f7dfb8f52fca2d6f5c923ace49f9ebcbbc3783f825899a4279110beaeea0b",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 43
             }
           },
           "kind": "code"

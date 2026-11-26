@@ -124,11 +124,11 @@ One comparison-bound leaf-wide read feeds subject worklist content and the separ
 
 ### Knowledge reader
 
-KnowledgeReader owns toolbar, independently scrolling tree/document/aside composition, address-bound read, citation and outline. ReaderToolbar owns repository/tree selection, record lookup, selection/pin notes and named side-read failures. A single selection acquisition is shared with the Records branch. KnowledgeTree adapts shared ExplorerTree, consuming optional hasKnowledge/hasOverview/coverage facts, entry counts, Show every path and count rows. The Records branch includes families, decisions and other records; invariants remain in path views.
+KnowledgeReader owns toolbar, independently scrolling tree/document/aside composition, address-bound read, citation and outline. ReaderToolbar owns repository/tree selection, record lookup, selection/pin notes and named side-read failures. A single selection acquisition is shared with the Records branch. KnowledgeTree adapts shared ExplorerTree, consuming optional hasKnowledge/hasOverview/coverage facts, entry counts, Show every path and count rows. The Records branch includes families, decisions and other records. A record opens by its title, with a wrapping second line for supplied revision state and writer. Invariants remain in path views.
 
 The Knowledge document column keeps its shared tree/outline toggles outside the panels they hide. Left/right `knowledge` state controls the corresponding mounted panel and resize handle; a citation opened in the local aside first shows that aside. The tree toggle is hidden where Browse owns the full-screen tree at 40rem and below, and the outline toggle is hidden where its aside is not shown beside the text at 70rem and below. The reader’s mounted citation case checks reopening an initially hidden aside without replacing the prose or changing its scroll/hash; this is stubbed-media DOM evidence, not a browser geometry measurement.
 
-PathViews orders prose, invariant states, local/routed families, linked records and references last; directories use bounded summaries and paged subtrees, with without-proof and census views. Empty sections are omitted. TruthView renders record fields, invariant/family details, complete decisions using derived status, both link directions with unreadable links named, and timeline source states. History rows show effect and because: record targets navigate and requirements are named. Incoming history links identify the record the row concerns rather than inventing a history-row page. Reader parts link numbered markers in text nodes only; shared Markdown and referenceMarkers own headings/markers, and ReaderCode reuses FilePane. The inherited backend ownership assigns tree coverage to a code pass plus memory enumeration, with paths delegating tree listing rather than files enumerating directories.
+PathViews orders prose, invariant states, local/routed families, linked records and references last; directories use bounded summaries and paged subtrees, with without-proof and census views. Empty sections are omitted. TruthView renders record fields, invariant/family details, complete decisions using derived status, both link directions with unreadable links named, and timeline source states. The heading presents the selected revision's state and writer separately from source currentness and record-kind status. Available family-member and path record links also display their supplied state and writer. History rows show effect and because: record targets navigate and requirements are named. Incoming history links identify the record the row concerns rather than inventing a history-row page. Reader parts link numbered markers in text nodes only; shared Markdown and referenceMarkers own headings/markers, and ReaderCode reuses FilePane. The inherited backend ownership assigns tree coverage to a code pass plus memory enumeration, with paths delegating tree listing rather than files enumerating directories.
 
 The native role-chat model selects canonical role occupants without buildRailModel or a hosted session rail. FlowTab is removed and supplies no current drawing/prose, live chat or store authority.
 
@@ -288,7 +288,6 @@ MIK-R174 and MIK-R175 changed two visible Operations contracts. The started band
 
 - The leaf-scoped facts and re-validation generation. [117]
 
-- A history row's line: its effect, and its because targets as links. [120]
 
 - An incoming link from a history row names the record the row is about. [121]
 
@@ -323,7 +322,6 @@ MIK-R174 and MIK-R175 changed two visible Operations contracts. The started band
 
 - `DocChangeSetBar` checks whether any entry worktree has `codeWorktreeExists` or `memoryWorktreeExists`; that liveness labels the entry context recorded rather than selecting it, and is not catalogue-subject admission. [61]
 
-- The catalogue client and subject shape serve reviewer subject navigation; task-entry summary and clickability are separate. [62]
 
 > Retained earlier citation wording: - Artifact reader includes task reports and whole decision logs [165]
 
@@ -404,7 +402,6 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 
 - Current tree owners for the review page account. [210]
 
-- Current family owners for the review page account. [211]
 
 - Current source owners for the review page account. [212]
 
@@ -419,10 +416,8 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 
 - Current focus owners for the review page account. [219]
 
-- Family/member semantic slots preserve guarantees, meanings, realization resolution, evidence and subject worklist; the reading page owns code blocks. [109]
 
 
-- Selected semantic details retain the subject worklist/knowledge notice owner; page-level Worklist is separate. [122]
 
 
 
@@ -517,3 +512,19 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 - Current lane owners for the review page account. [213]
 - Current details owners for the review page account. [214]
 - Current worklist owners for the review page account. [217]
+
+- The catalogue client and subject shape serve reviewer subject navigation; task-entry summary and clickability are separate. [62]
+- Family/member semantic slots preserve guarantees, meanings, realization resolution, evidence and subject worklist; the reading page owns code blocks. [109]
+- History rows show the recorded effect and because targets. Memory targets use links and requirement targets carry an external task-document label. [120]
+- Selected semantic details retain the subject worklist/knowledge notice owner; page-level Worklist is separate. [122]
+- Current family owners for the review page account. [211]
+
+- The Records branch gives each record row optional state and writer text through the shared formatter. [234]
+
+- The record heading displays supplied revision state and compact writer alongside record status and optional currentness. [235]
+- Record links can display the supplied revision state and writer beside their link. [236]
+
+- The sidebar formats supplied state and writer through the shared formatter. [237]
+- KnowledgeTree passes the optional standing text to ExplorerTree as row detail. [238]
+- ExplorerTree renders the detail as a wrapping second line. [239]
+- The family detail lists its members through RecordLink. [240]

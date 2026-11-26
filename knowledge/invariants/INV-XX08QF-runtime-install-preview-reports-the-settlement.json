@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Read-only inventory in serving/server_registry.py and dry-run dispatch in application/runtime/install.py guarantee that install previews never mutate server records or held stores."
+  },
+  "applicability": "runtime_install invoked with dry_run=True (with or without reconcile_shared_held_stores=True).",
+  "conditions": [
+    "Dry run uses preview_server_inventory so dead server registry files remain on disk and shared stores/locks are untouched."
+  ],
+  "exclusions": [
+    "Applied runtime_install (dry_run=False) continues to remove dead server registry records through server_inventory."
+  ],
+  "id": "INV-XX08QF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The Worker freeze report binds focused verification on this tree."
+      ],
+      "path": "l38-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R38@v1 rule 3 shared preview",
+    "leaf": "261112-BUG-L38",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Runtime-install preview reports the settlement counts while preserving server registry records and shared stores.",
+  "supersedes": [],
+  "title": "Runtime-install dry run counts shared settlements without mutating state",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The generated files, the source read and the start notification jointly keep the detailed record reachable when a response boundary limits text."
+  },
+  "guarantee": "A reader can recover governing file knowledge from its selected task memory. A current source brief contains the detail omitted from a bounded reply, and a reply marks missing or older disk detail until a covering write. An eligible converted role start gives the recipient a separate change report.",
+  "id": "FAM-0TR1G5",
+  "members": [
+    "INV-T50898",
+    "INV-47NR7E",
+    "INV-9Z6T69"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "kno-l4-w3-new-rules.json"
+    },
+    "handoffEntry": "file-brief-retrieval",
+    "leaf": "261112-KNO-L4",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "routes": [
+    "docs",
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/kernel",
+    "mcp/src/agents_remember/mcp/registration",
+    "mcp/src/agents_remember/mcp/tools",
+    "mcp/src/agents_remember/memory",
+    "mcp/src/agents_remember/worktrees",
+    "skills/l-01-agent-lifecycles/reference/knowledge",
+    "skills/l-01-agent-lifecycles/roles"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "File knowledge through briefs and start notices"
+}

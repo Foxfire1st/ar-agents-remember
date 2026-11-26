@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6f23e27414bf52d2233844e7dc82ea91074b46fd",
-        "content": "sha256:f1045963db9101754c12f6551e43abd834077539a0deab714334cb150dc4f9ac",
+        "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
+        "content": "sha256:900d32a2974249f9231c0db13332a5818a8705aabc2bb774cdd3ca97628b9e79",
         "locator": {
           "kind": "file"
         }
@@ -21,15 +21,14 @@
   ],
   "references": {
     "1": {
-      "note": "Role pointer actions are pairs of reference path and action prefix.",
+      "note": "Role pointer actions are pairs of reference path and action prefix.\n\nAnchor: `ROLE_POINTER_ACTIONS`",
       "targets": [
         {
           "anchor": {
-            "blob": "6f23e27414bf52d2233844e7dc82ea91074b46fd",
-            "content": "sha256:9bf5a63fb945c740e2f23e5e447be5cab836b62c71950b5ce99a76ce14fc424b",
+            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
+            "content": "sha256:900d32a2974249f9231c0db13332a5818a8705aabc2bb774cdd3ca97628b9e79",
             "locator": {
-              "kind": "symbol",
-              "name": "ROLE_POINTER_ACTIONS"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -41,12 +40,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f23e27414bf52d2233844e7dc82ea91074b46fd",
+            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
             "content": "sha256:72d7ec27a9a28fe3f7a30cb7b96a085e26a83e1e4de498fae932c749753b0481",
             "locator": {
-              "end": 388,
+              "end": 383,
               "kind": "line_range",
-              "start": 343
+              "start": 338
             }
           },
           "kind": "code"
@@ -58,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f23e27414bf52d2233844e7dc82ea91074b46fd",
+            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
             "content": "sha256:6213f6a1ca7c3cfc20bec23f4af05f3c3b5041f7e6502b85778cf54f767c90e7",
             "locator": {
               "kind": "symbol",
@@ -74,8 +73,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f23e27414bf52d2233844e7dc82ea91074b46fd",
-            "content": "sha256:f1045963db9101754c12f6551e43abd834077539a0deab714334cb150dc4f9ac",
+            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
+            "content": "sha256:900d32a2974249f9231c0db13332a5818a8705aabc2bb774cdd3ca97628b9e79",
             "locator": {
               "kind": "file"
             }
@@ -89,10 +88,51 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f23e27414bf52d2233844e7dc82ea91074b46fd",
-            "content": "sha256:f1045963db9101754c12f6551e43abd834077539a0deab714334cb150dc4f9ac",
+            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
+            "content": "sha256:900d32a2974249f9231c0db13332a5818a8705aabc2bb774cdd3ca97628b9e79",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The current pointer fixtures bind whole-record retrieval to its named knowledge-use detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
+            "content": "sha256:df18848be7c15a5a88359f8ab84a22b9cb123b63aa5b4744e97b95a4bcddc31a",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
+            "content": "sha256:a7d33684a6845eef90c133841154faff0149c780d50d3a950fefe377a35bc0d0",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 172
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
+            "content": "sha256:c2d62ad1c7932d8d58d1f1b1b9d5d795f71c5f1abcf5ac77dbc9a374cf82455d",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 252
             }
           },
           "kind": "code"

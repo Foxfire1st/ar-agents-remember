@@ -4,8 +4,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
-        "content": "sha256:108053a14cda04d0e17993e2857e179f64c5761a9c7dc2f5b2bacd8a5881831f",
+        "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
+        "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_runtime_install"
+        }
+      },
+      "id": "RLZ-1XKQEK",
+      "invariant": "INV-XX08QF",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3 shared preview",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "Uses read-only inventory in dry-run and keeps ordinary inventory for apply.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
+        "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
         "locator": {
           "kind": "symbol",
           "name": "run_runtime_install"
@@ -22,8 +40,26 @@
     },
     {
       "anchor": {
-        "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
-        "content": "sha256:108053a14cda04d0e17993e2857e179f64c5761a9c7dc2f5b2bacd8a5881831f",
+        "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
+        "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_runtime_install"
+        }
+      },
+      "id": "RLZ-MVRA3T",
+      "invariant": "INV-J8FGWF",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3 shared stores",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "Uses the explicit request option to control installation-time reconciliation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
+        "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
         "locator": {
           "kind": "symbol",
           "name": "run_runtime_install"
@@ -40,8 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
-        "content": "sha256:108053a14cda04d0e17993e2857e179f64c5761a9c7dc2f5b2bacd8a5881831f",
+        "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
+        "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
         "locator": {
           "kind": "symbol",
           "name": "run_runtime_install"
@@ -59,15 +95,16 @@
   ],
   "references": {
     "1": {
-      "note": "The tool maps its booleans into `RuntimeInstallRequest` and hands that request unchanged to `runtime_install_payload`.\n\nAnchor: `RuntimeInstallRequest`",
+      "note": "The tool maps its booleans into `RuntimeInstallRequest` and hands that request unchanged to `runtime_install_payload`. Anchor: `RuntimeInstallRequest`",
       "targets": [
         {
           "anchor": {
-            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
-            "content": "sha256:ca08d59627d3872b0c906da29b4087d58f5a28703ca80e82676a7db2b979e67d",
+            "blob": "9518d2870b1d1d5dcd2c6707be568f200f0f5899",
+            "content": "sha256:3feb5218b6fc57d62ffc5e5713c931483a16aee0e7f973a112a682f890449a62",
             "locator": {
-              "kind": "symbol",
-              "name": "runtime_install_payload"
+              "end": 169,
+              "kind": "line_range",
+              "start": 133
             },
             "path": "mcp/src/agents_remember/mcp/tools/core.py"
           },
@@ -75,12 +112,12 @@
         },
         {
           "anchor": {
-            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
-            "content": "sha256:45a5dc496a122831a94d0aefd56953b120040ca12f7e6900c54aa8f95835f021",
+            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+            "content": "sha256:5a375498f1450f47d9e8bb8811f2d54608f9a9385651499b94c9b79efc52b580",
             "locator": {
-              "end": 151,
+              "end": 136,
               "kind": "line_range",
-              "start": 142
+              "start": 119
             },
             "path": "mcp/src/agents_remember/mcp/registration/core.py"
           },
@@ -93,11 +130,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
-            "content": "sha256:b3c1f7488d0a81ab76c56eef7d95fae6747472dd94ef6ad3bc0b0a443a55b998",
+            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+            "content": "sha256:9e5854fbe11be37d34a5cb560424dbd3a5123ad4c718a82a1e7e3825f91508c6",
             "locator": {
-              "kind": "symbol",
-              "name": "runtime_install"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/registration/core.py"
           },
@@ -110,8 +146,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
-            "content": "sha256:a648e98f3a9e63b69d2d8b4c412cb573b29d59ec98cb93ebfd37bc1a14aa28a0",
+            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+            "content": "sha256:e7ac79c0c62dd20438ab687cc880568e3e76b1ae53ed16257b061beb069a6e52",
             "locator": {
               "kind": "symbol",
               "name": "RuntimeInstallRequest"
@@ -127,8 +163,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
-            "content": "sha256:108053a14cda04d0e17993e2857e179f64c5761a9c7dc2f5b2bacd8a5881831f",
+            "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
+            "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
             "locator": {
               "kind": "symbol",
               "name": "run_runtime_install"
@@ -143,11 +179,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
             "content": "sha256:bf77401166a6b6d6a74ed95ebef5fb010dd6d6e42f69b6b06b1c5c35628845ce",
             "locator": {
-              "kind": "symbol",
-              "name": "enabled_provider_names"
+              "end": 589,
+              "kind": "line_range",
+              "start": 572
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -155,11 +192,12 @@
         },
         {
           "anchor": {
-            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
-            "content": "sha256:a648e98f3a9e63b69d2d8b4c412cb573b29d59ec98cb93ebfd37bc1a14aa28a0",
+            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
+            "content": "sha256:b595aedf74ab4b786c07d9e456ca6c2cb60aa83381f0d36cc6365eaa1c5fe6be",
             "locator": {
-              "kind": "symbol",
-              "name": "RuntimeInstallRequest"
+              "end": 141,
+              "kind": "line_range",
+              "start": 119
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -167,12 +205,12 @@
         },
         {
           "anchor": {
-            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
             "content": "sha256:ba0b7f0e3d725b8ba0c42f4edad6df046c6b298cff8664b0118dd49bc96e4c6d",
             "locator": {
-              "end": 830,
+              "end": 831,
               "kind": "line_range",
-              "start": 812
+              "start": 813
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -185,8 +223,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
-            "content": "sha256:108053a14cda04d0e17993e2857e179f64c5761a9c7dc2f5b2bacd8a5881831f",
+            "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
+            "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
             "locator": {
               "kind": "symbol",
               "name": "run_runtime_install"

@@ -20,16 +20,16 @@
       ]
     },
     "10": {
-      "note": "The integration lane row the fail-closed manifest requires. Source caption: \"mcp/tests/test_lifecycle_playthrough_end_to_end.py\"",
+      "note": "The integration lane selects mcp/tests/test_lifecycle_playthrough_end_to_end.py.\n\nAnchor: `mcp/tests/test_lifecycle_playthrough_end_to_end.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "75006e874ab9c238187bcf9044d224511529c135",
+            "blob": "9b2f8dfb74c9f9e7cc39c1097e6d5f7e0ff20215",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 730,
+              "end": 750,
               "kind": "line_range",
-              "start": 730
+              "start": 750
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -38,16 +38,16 @@
       ]
     },
     "11": {
-      "note": "Five exact artifact-consumer entries name this suite, covering the user-settings guard, checkpoint landing, Curator coherence, the Node lockfile fixture and writer worklist support.",
+      "note": "The lifecycle catalog lists `mcp/tests/test_lifecycle_playthrough_end_to_end.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/checkpoint_landing_test_support.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "d914a0a27f7f3953d73e5caec7138997a432ef82",
-            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
+            "blob": "b9fa47a89c9ddd840e0a38800093c4488a641283",
+            "content": "sha256:e54a1a966cf97b68a9484343f21c2f0651bdc417d16e92c3ac375cccaadbbc84",
             "locator": {
-              "end": 461,
+              "end": 476,
               "kind": "line_range",
-              "start": 461
+              "start": 65
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -55,12 +55,12 @@
         },
         {
           "anchor": {
-            "blob": "d914a0a27f7f3953d73e5caec7138997a432ef82",
-            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
+            "blob": "b9fa47a89c9ddd840e0a38800093c4488a641283",
+            "content": "sha256:7396e75e725df3a259d4ccf761f84f5bdcc09169afb826ffe4395541e5971e0c",
             "locator": {
-              "end": 1092,
+              "end": 1124,
               "kind": "line_range",
-              "start": 1092
+              "start": 1104
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -68,12 +68,12 @@
         },
         {
           "anchor": {
-            "blob": "d914a0a27f7f3953d73e5caec7138997a432ef82",
-            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
+            "blob": "b9fa47a89c9ddd840e0a38800093c4488a641283",
+            "content": "sha256:5ebf994c5f317d76a56f846a67bde4409598cb8a16f8a943d3aabe7dfde3015e",
             "locator": {
-              "end": 1268,
+              "end": 1305,
               "kind": "line_range",
-              "start": 1268
+              "start": 1215
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -81,12 +81,12 @@
         },
         {
           "anchor": {
-            "blob": "d914a0a27f7f3953d73e5caec7138997a432ef82",
-            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
+            "blob": "b9fa47a89c9ddd840e0a38800093c4488a641283",
+            "content": "sha256:aefb8d6a4d6c9cb9d10ba73a8c1aa1e87ee96d417f92a5fac27a6d5f92d917b7",
             "locator": {
-              "end": 2897,
+              "end": 2960,
               "kind": "line_range",
-              "start": 2897
+              "start": 2549
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -94,12 +94,12 @@
         },
         {
           "anchor": {
-            "blob": "d914a0a27f7f3953d73e5caec7138997a432ef82",
-            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
+            "blob": "b9fa47a89c9ddd840e0a38800093c4488a641283",
+            "content": "sha256:47b6a5fa55d37ea03c77bd20b9ea2cc9e1b42ccf187812726a747f166f401139",
             "locator": {
-              "end": 4979,
+              "end": 5163,
               "kind": "line_range",
-              "start": 4979
+              "start": 5109
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -126,16 +126,16 @@
       ]
     },
     "13": {
-      "note": "The integration lane row the fail-closed manifest requires. Source caption: \"mcp/tests/test_lifecycle_playthrough_end_to_end.py\"",
+      "note": "The integration lane selects mcp/tests/test_lifecycle_playthrough_end_to_end.py.\n\nAnchor: `mcp/tests/test_lifecycle_playthrough_end_to_end.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "75006e874ab9c238187bcf9044d224511529c135",
+            "blob": "9b2f8dfb74c9f9e7cc39c1097e6d5f7e0ff20215",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 730,
+              "end": 750,
               "kind": "line_range",
-              "start": 730
+              "start": 750
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -534,14 +534,16 @@
       ]
     },
     "9": {
-      "note": "The leaf closeout recording it imports rather than duplicating.\n\nAnchor: `close_out_leaf`",
+      "note": "The leaf closeout recording it imports rather than duplicating. Anchor: `close_out_leaf`",
       "targets": [
         {
           "anchor": {
-            "blob": "48e41e14314f1af335ec6e7a3268339c14397a24",
-            "content": "sha256:7d08bce7560beb418ee19749e464da34d61af1d4e766b7d67ba9fa32a13c4578",
+            "blob": "bf3c5e64328d238ead1113180696ce64a8211220",
+            "content": "sha256:766e00568dd1f9d9a6a56a4e0fd5fe381d8359a9330495875392bd11bbadbbde",
             "locator": {
-              "kind": "file"
+              "end": 100,
+              "kind": "line_range",
+              "start": 72
             },
             "path": "mcp/tests/checkpoint_landing_test_support.py"
           },
@@ -549,11 +551,10 @@
         },
         {
           "anchor": {
-            "blob": "48e41e14314f1af335ec6e7a3268339c14397a24",
-            "content": "sha256:766e00568dd1f9d9a6a56a4e0fd5fe381d8359a9330495875392bd11bbadbbde",
+            "blob": "bf3c5e64328d238ead1113180696ce64a8211220",
+            "content": "sha256:5e764bccd63dd64eb45cff005123c0968aba4d16a7a6020ea093e61a9967ea89",
             "locator": {
-              "kind": "symbol",
-              "name": "close_out_leaf"
+              "kind": "file"
             },
             "path": "mcp/tests/checkpoint_landing_test_support.py"
           },

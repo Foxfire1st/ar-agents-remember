@@ -17,6 +17,8 @@ RoleStartCall extends canonical selection with required UUID and optional overri
 
 **L184 — the native message answer, not the task state.** `RoleMessageResponse.limitedUntil` carries the reset a held answer names to its sender. It is not the task-state activity carrier: `TaskState.providerLimit` is that one, and the task-state rule reads it there. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
 
+`ProductMessageReport` records the recipient, review or curation moment, delivery state and applicable file paths, hold ID or problem. `RoleStartResponse.productMessage` carries the report when direct start produces one.
+
 ## Held set and message wire states
 
 `RoleStartSetCall` carries one set request UUID and exact leaf references with separate Worker/Reviewer/Curator choices, optional Reviewer first work and replacement IDs. `SeatLaunchOverride` carries speed choices only. Both single starts and set replacement carry explicit interruption permission. `RoleStartStatus` and `RoleMessageStatus` admit `held`: a held seat exists without a turn, and a held message is product-stored rather than host-accepted. Message output names waiting IDs/counts, retained terminal lines and held-seat opening; withdrawal is a distinct input. `RoleStartSetResponse` reports each seat and partial completion without implying task acceptance.
@@ -31,13 +33,12 @@ This account is bound to the candidate source, not a claim of a running serving 
 ## Evidence
 
 
-- Worker/Curator typed review census, record-only exclusion and unknown history. [8]
 - Reason admission, threshold and differing-harness/model inheritance boundary. [9]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [10]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [11]
 
 - Frozen implementation of RoleStartCall supporting the stated file behavior. [1]
-- Current RoleMessageCall declares body/attachment inputs and waiting-message withdrawal; declarations do not prove every composed branch files payloads. [2]
+- Current RoleMessageCall declares body/attachment inputs and waiting-message withdrawal; declarations do not prove every composed branch files payloads. Anchor: RoleMessageCall [2]
 - Frozen implementation of RoleStartResponse supporting the stated file behavior. [3]
 
 - Current response DTO declares its listed message/held fields, admits the reported replacement value, and carries no `turnId` on either delivery path; source declarations are not universal completeness evidence. [4]
@@ -45,7 +46,7 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 ## MIK-R95 Preparation Answer Model
 
-`RoleEnvironmentPreparation` declares the shared start's observed outcome: `enclosure` is `created`, `found` or `not-applicable`, and `workspace` is optional `created`, `found` or `opened` — `opened` deliberately names no host-reported creation outcome. `RoleStartResponse` carries the `preparation` block and an optional `preparationStatus`.
+`RoleEnvironmentPreparation` declares the shared start's observed outcome: `enclosure` is `created`, `found` or `not-applicable`, and `workspace` is optional `created`, `found` or `opened` — `opened` deliberately names no host-reported creation outcome. `RoleStartResponse` carries the `preparation` block and an optional `preparationStatus`. The optional `briefsProblem` field carries the deferred file-brief advisory.
 
 ## Investigator scope and request identity
 
@@ -76,5 +77,9 @@ requested-versus-observed semantics remain unchanged.
 `RoleStartCall` carries `caller_harness`, the client name the transport reported, so a model-only free-agent choice can be bound to the provider that chat runs. `RoleEnvironmentPreparation` declares `firstRun`, the report a cold start established before the seat existed: the producer emitted it and the model did not declare it, so the report was lost at the validating boundary. `RoleStartResponse` declares `dashboardAddress`, `dashboardAddressDetail`, `chatAddress` and `chatAddressDetail`, which the start answer emits and a strict response model would otherwise drop.
 
 - The start call, which carries the caller's own harness name. [12]
-- The environment preparation block, which now declares the first-run report. [13]
+- The strict environment preparation block declares the optional `briefsProblem` advisory and `firstRun` report. [13]
 - The start answer, which declares the seat's continuation. [14]
+
+- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [8]
+
+- The role start response declares the product notice report and its delivery states. [17]

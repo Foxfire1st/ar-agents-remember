@@ -120,7 +120,6 @@ No configured domain documentation could be checked.
 - The generation owners that bind a superseded pair to its retained knowledge. [11]
 
 
-- The namespace record (the record beside the bytes, or, since MIK-R25, a derived knowledge index's own namespace) and the path-seed shape rule. [12]
 
 
 
@@ -134,3 +133,5 @@ No cross-repository behavior is implemented in this file. It reads only the know
 to one leaf's comparison in one repository namespace.
 
 No meaningful cross-repo references found.
+
+- The namespace record (the record beside the bytes, or, since MIK-R25, a derived knowledge index's own namespace) and the path-seed shape rule. [12]

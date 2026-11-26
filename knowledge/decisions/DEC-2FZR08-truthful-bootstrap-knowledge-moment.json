@@ -35,8 +35,8 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "197ac9c813cefe56583faa7429ebada46d168acd",
-        "content": "sha256:7b520fc9b22cbf25310bc93079df0b862908d53ceb2833165f870ee544025537",
+        "blob": "409085cbcfed7aef343bf430d7e28a8a37bb04ec",
+        "content": "sha256:8132b1c6358a97b859bddfd62b17cf183505babf5ffa4267665ededc76b1c7a9",
         "locator": {
           "kind": "symbol",
           "name": "memory_init_tool"
@@ -56,7 +56,7 @@
     "leaf": "260928-MIK-L45",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fb6082f143e28bb9f441482475286bbcec140d6b",
-        "content": "sha256:861415ff9d8813e18df0a85054354b330841e1070ffbcd41f30c2170a71d9783",
+        "blob": "8b530f894da4375dc8251e595790c5f390d51e14",
+        "content": "sha256:79dadaa912dda7aef88183cd15bf0194030639bdcc4627ffe104ac36ca6015b4",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-8J4ZR5",
+      "invariant": "INV-06MGX9",
+      "origin": {
+        "handoffEntry": "CAP-R04@v1 §3 description optimization",
+        "leaf": "261124-CAP-L4"
+      },
+      "rationale": "Optimizes explainer_control docstring from 597 to 373 chars while preserving update/retire/claim semantics and architect refusal essentials.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "8b530f894da4375dc8251e595790c5f390d51e14",
+        "content": "sha256:057dd7579931923008d4b01e0229e137aa6bb2c415bed2cde2467969723f166c",
         "locator": {
           "kind": "symbol",
           "name": "register_explainer_tools"
@@ -22,16 +39,15 @@
   ],
   "references": {
     "1": {
-      "note": "One tool declares exactly the selection arguments and no agent identity\n\nAnchor: `def register_explainer_tools(`",
+      "note": "One tool declares exactly the selection arguments and no agent identity",
       "targets": [
         {
           "anchor": {
-            "blob": "fb6082f143e28bb9f441482475286bbcec140d6b",
-            "content": "sha256:861415ff9d8813e18df0a85054354b330841e1070ffbcd41f30c2170a71d9783",
+            "blob": "8b530f894da4375dc8251e595790c5f390d51e14",
+            "content": "sha256:057dd7579931923008d4b01e0229e137aa6bb2c415bed2cde2467969723f166c",
             "locator": {
-              "end": 50,
-              "kind": "line_range",
-              "start": 21
+              "kind": "symbol",
+              "name": "register_explainer_tools"
             }
           },
           "kind": "code"
@@ -43,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb6082f143e28bb9f441482475286bbcec140d6b",
+            "blob": "8b530f894da4375dc8251e595790c5f390d51e14",
             "content": "sha256:c73667ea2c8ca2050eaafcf3dd4d1899595cecb9c9a1cb1351cbc3d1a0be444c",
             "locator": {
-              "end": 49,
+              "end": 42,
               "kind": "line_range",
-              "start": 41
+              "start": 34
             }
           },
           "kind": "code"
@@ -60,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb6082f143e28bb9f441482475286bbcec140d6b",
+            "blob": "8b530f894da4375dc8251e595790c5f390d51e14",
             "content": "sha256:f89a92641186e1617d16bfb1ac7db42e12c1be32e84bfa3aae4a7094675244f9",
             "locator": {
               "end": 30,

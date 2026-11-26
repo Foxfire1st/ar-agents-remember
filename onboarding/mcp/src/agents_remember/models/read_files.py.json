@@ -39,15 +39,43 @@
       ]
     },
     "6": {
-      "note": "The strict ReadArFilesResponse names governing files and overviews and observed state; it carries no published-intent body.",
+      "note": "The strict file-reader response declares named files, governing overviews, observed state and optional brief status. Anchor: `ReadArFilesResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "d06589a7eab5d08e42cab27bd828a7d5226df3a8",
-            "content": "sha256:3b5c7df8fc3fd18cbaf2b25613c6cc348de6fbb8fa153e6ccf3e3307af61f0b9",
+            "blob": "e394b2900e76d878df293cc337529013c0392f4f",
+            "content": "sha256:11fad5ec28cfb535f7365467fdf2b978eee29901bd1a204e0dd23c5eec7a4729",
             "locator": {
-              "kind": "symbol",
-              "name": "ReadArFilesResponse"
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The strict model declares rule text, compact brief variants and the failure and omission fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e394b2900e76d878df293cc337529013c0392f4f",
+            "content": "sha256:a03535a220dee49dc8bcaa3d37b50aed7f9a1deaa4a297ff1054b3b61cd1aa80",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e394b2900e76d878df293cc337529013c0392f4f",
+            "content": "sha256:c8210ed1b3532e3a0e7411aeafe2d1e922821e348ef46f0bb448945bdedd1139",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 127
             }
           },
           "kind": "code"

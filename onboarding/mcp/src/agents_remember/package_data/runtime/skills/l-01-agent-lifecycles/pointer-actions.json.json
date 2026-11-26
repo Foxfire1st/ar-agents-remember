@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/pointer-actions.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fdb34f6fa92fd408d955060d2f7109174d2c84dd",
+        "content": "sha256:3469d5b598957f407ab42a40355bcfc4b66280b572b1035a0062e0cb289b2b74",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-A55V4B",
+      "invariant": "INV-EHJV8E",
+      "origin": {
+        "handoffEntry": "BUG-R08@v1 rule 1",
+        "leaf": "261112-BUG-L8"
+      },
+      "rationale": "This carrier is byte-for-byte generated from its canonical skills source after the same renewal plan computes current facts.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "2": {
+      "note": "The packaged policy defines how pointer actions and their occurrences are assigned in the lifecycle instructions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fdb34f6fa92fd408d955060d2f7109174d2c84dd",
+            "content": "sha256:0fe2248fdc5a5975d38777c4bd2483701bdb17aea8ca367848f4fdd7756a582d",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 321
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

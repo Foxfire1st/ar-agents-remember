@@ -1,0 +1,55 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/knowledge_crossing_standing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture matrix records the intended branch-selection cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d5b9aebcc4efbe7dd91b0d056f89047678d5075",
+            "content": "sha256:57e10d0241e560a9e87a5d648d2079e234dccbe61099f3cadc3b19aa73900168",
+            "locator": {
+              "kind": "symbol",
+              "name": "matrix_records"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The assertions inspect standing on the original fixture lines before crossing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d5b9aebcc4efbe7dd91b0d056f89047678d5075",
+            "content": "sha256:ffea5681cb4be24321088face7bb2271fd8694366506ea906793f756f8618f08",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_source_controls"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The fixture helper applies conversion to saved test lines.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d5b9aebcc4efbe7dd91b0d056f89047678d5075",
+            "content": "sha256:2a4df626de28ca4ddf56eee1a2e92a88c4b8a674672d4a406b8ea8cc9febd2ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "convert"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

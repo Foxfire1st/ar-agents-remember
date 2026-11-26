@@ -180,18 +180,17 @@
       ]
     },
     "8": {
-      "note": "Cleanup removes the reserved reports directory before it attempts to remove the enclosure.  Anchor: `_removed_directories`",
+      "note": "Terminal cleanup moves out preserved reports, real messages, and leaf tool calls before removing the entire worktree group.",
       "targets": [
         {
           "anchor": {
-            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
-            "content": "sha256:25e998f3f16f213c9d25c733eca9fd492a0e7d89763ecd2663869b70fb163d43",
+            "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+            "content": "sha256:5af32e9ea1f995605f5a9e53ac8cc584e908e9e67d93dfe6d2ee67e4187c13c5",
             "locator": {
-              "end": 408,
-              "kind": "line_range",
-              "start": 352
+              "kind": "symbol",
+              "name": "remove_terminal_group"
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_group.py"
           },
           "kind": "code"
         }

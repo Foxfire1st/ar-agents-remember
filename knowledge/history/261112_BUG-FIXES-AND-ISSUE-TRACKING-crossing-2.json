@@ -1,0 +1,28 @@
+{
+  "closed": true,
+  "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-2",
+  "rows": [],
+  "schema": "ar-history/v1",
+  "sharedRevisions": [
+    {
+      "record": "DPD-71WYH4",
+      "revision": 20
+    },
+    {
+      "record": "DPD-Q4APMS",
+      "revision": 16
+    },
+    {
+      "record": "DPD-X6G7K3",
+      "revision": 19
+    },
+    {
+      "record": "DPD-ZMQ523",
+      "revision": 15
+    },
+    {
+      "record": "DPD-ZT8YY7",
+      "revision": 16
+    }
+  ]
+}

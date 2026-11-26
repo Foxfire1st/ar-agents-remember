@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
         "content": "sha256:c80dfdf8d84f1ec625798c15cf8ff02716fb4a6dcba5473eb4a59d2274b388c4",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
         "content": "sha256:ec4b80ce7bcb474c798c09e757a0654f93f8379c7b643fe202a09974d16b101f",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-        "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
+        "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+        "content": "sha256:5fa0cc0bbc28f0365f7c1e9034614d60b294d5b7e2b58de58efcb10cbd5d106f",
         "locator": {
           "kind": "symbol",
           "name": "_ensure_leaf_enclosure"
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
         "content": "sha256:f72fa6142476526701388ac9b1347e39da25751aeae2c4f450518dd750d177fa",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
         "content": "sha256:7d04281a96e03b141611709a8b855a47b2c90cbfd6fd649203388e94022c9ec7",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
         "content": "sha256:f72fa6142476526701388ac9b1347e39da25751aeae2c4f450518dd750d177fa",
         "locator": {
           "kind": "symbol",
@@ -112,8 +112,8 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-        "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
+        "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+        "content": "sha256:5fa0cc0bbc28f0365f7c1e9034614d60b294d5b7e2b58de58efcb10cbd5d106f",
         "locator": {
           "kind": "symbol",
           "name": "_ensure_leaf_enclosure"
@@ -130,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
         "content": "sha256:cb430d253a9c2b63fcc122062f3be8cd0ca6fade4f825ee4dc4c97f3af2b9795",
         "locator": {
           "kind": "symbol",
@@ -148,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
         "content": "sha256:b33be824ef668ce76c604903f9e01959a1f62d28f83b5409fecff7cfb8d903a1",
         "locator": {
           "kind": "symbol",
@@ -166,8 +166,8 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-        "content": "sha256:4fe15b2ee88843880e03ea04135e37d40fc91f3a56c707b9375fa00b9e4fdb5b",
+        "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+        "content": "sha256:e429f9af2e874a8e37fa770241c31fef3667c9f1923d6576457abe156232626f",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_workspace"
@@ -184,8 +184,8 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-        "content": "sha256:6fb9a6c4a040e1c4ce4fe114e890d8df382db93758791f65d13b28ca134b1a02",
+        "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+        "content": "sha256:561e09d0b51c1d5d6d4191465381a705cc2cb39e2d59eedc355dc18caca5ce07",
         "locator": {
           "kind": "file"
         }
@@ -201,8 +201,8 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-        "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
+        "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+        "content": "sha256:5fa0cc0bbc28f0365f7c1e9034614d60b294d5b7e2b58de58efcb10cbd5d106f",
         "locator": {
           "kind": "symbol",
           "name": "_ensure_leaf_enclosure"
@@ -219,8 +219,8 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-        "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
+        "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+        "content": "sha256:5fa0cc0bbc28f0365f7c1e9034614d60b294d5b7e2b58de58efcb10cbd5d106f",
         "locator": {
           "kind": "symbol",
           "name": "_ensure_leaf_enclosure"
@@ -237,7 +237,7 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
         "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
         "locator": {
           "kind": "symbol",
@@ -255,8 +255,8 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-        "content": "sha256:4fe15b2ee88843880e03ea04135e37d40fc91f3a56c707b9375fa00b9e4fdb5b",
+        "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+        "content": "sha256:e429f9af2e874a8e37fa770241c31fef3667c9f1923d6576457abe156232626f",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_workspace"
@@ -273,8 +273,8 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-        "content": "sha256:4fe15b2ee88843880e03ea04135e37d40fc91f3a56c707b9375fa00b9e4fdb5b",
+        "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+        "content": "sha256:e429f9af2e874a8e37fa770241c31fef3667c9f1923d6576457abe156232626f",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_workspace"
@@ -291,7 +291,7 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
         "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
         "locator": {
           "kind": "symbol",
@@ -309,7 +309,7 @@
     },
     {
       "anchor": {
-        "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+        "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
         "content": "sha256:26cbb4abc68e5d67daed1998e00b4db205be18fc3eefa6d190344b501db21ec8",
         "locator": {
           "kind": "symbol",
@@ -328,12 +328,12 @@
   ],
   "references": {
     "1": {
-      "note": "The recorded master contract supplies the parent hint unless it names the master itself, where the commanding sprint — or the master's own folder when no sprint commands it — supplies it; an absent contract falls back to the sprint, or to the master when it stands alone, to bootstrap.  Anchor: `_recorded_parent`\n\nAnchor: `_recorded_parent`",
+      "note": "The recorded master contract supplies the parent hint unless it names the master itself, where the commanding sprint — or the master's own folder when no sprint commands it — supplies it; an absent contract falls back to the sprint, or to the master when it stands alone, to bootstrap. Anchor: `_recorded_parent` Anchor: `_recorded_parent`",
       "targets": [
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-            "content": "sha256:6fb9a6c4a040e1c4ce4fe114e890d8df382db93758791f65d13b28ca134b1a02",
+            "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+            "content": "sha256:561e09d0b51c1d5d6d4191465381a705cc2cb39e2d59eedc355dc18caca5ce07",
             "locator": {
               "kind": "file"
             }
@@ -347,7 +347,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+            "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
             "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
             "locator": {
               "kind": "symbol",
@@ -363,7 +363,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+            "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
             "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
             "locator": {
               "kind": "symbol",
@@ -375,14 +375,14 @@
       ]
     },
     "4": {
-      "note": "The common resolver creates or finds the enclosure and returns its validated roots and preparation outcome.\n\nAnchor: actual current supporting source",
+      "note": "The common resolver creates or finds the enclosure and returns its validated roots and preparation outcome. Anchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-            "content": "sha256:c813bc0f9c0a255097094d1cf57b2b16a0762ea40490fbdd35f35cd3453af780",
+            "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+            "content": "sha256:c93571529583ee443295daff25e59ba14231ec9d245324a70469ce0b3ba4476c",
             "locator": {
-              "end": 256,
+              "end": 251,
               "kind": "line_range",
               "start": 205
             }
@@ -392,16 +392,16 @@
       ]
     },
     "5": {
-      "note": "Terminal generations refuse before any root use or materialization, and a missing or reopened enclosure is created through the child — a reopened one under the worktree name its contract already owns.  Anchor: `_ensure_leaf_enclosure`",
+      "note": "Terminal generations refuse before any root use or materialization, and a missing or reopened enclosure is created through the child — a reopened one under the worktree name its contract already owns. Anchor: `_ensure_leaf_enclosure`",
       "targets": [
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-            "content": "sha256:bd6e9e56e6b9708a3185142544b43168686ca030c6c2f7928afb2d0d95d15f81",
+            "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+            "content": "sha256:312f5f9bcec571bc00530674dd4cac996e1e1eb8081f874960b9b42a5d67c009",
             "locator": {
-              "end": 388,
+              "end": 401,
               "kind": "line_range",
-              "start": 310
+              "start": 305
             }
           },
           "kind": "code"
@@ -413,7 +413,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+            "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
             "content": "sha256:c80dfdf8d84f1ec625798c15cf8ff02716fb4a6dcba5473eb4a59d2274b388c4",
             "locator": {
               "kind": "symbol",
@@ -425,16 +425,16 @@
       ]
     },
     "7": {
-      "note": "Call-time granted leaves reuse master series checkouts and keep role artifacts in the separate group.\n\nAnchor: actual current supporting source",
+      "note": "Call-time granted leaves reuse master series checkouts and keep role artifacts in the separate group. Anchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-            "content": "sha256:89a718153e30da7fa3470ac7e81627bb7842889c24466829a48fd84bbc17f879",
+            "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+            "content": "sha256:e8a5029ec32a58d203b448a13ffb63cfccfe3f091baa29939a6543d7bd11aef0",
             "locator": {
-              "end": 256,
+              "end": 251,
               "kind": "line_range",
-              "start": 108
+              "start": 109
             }
           },
           "kind": "code"
@@ -446,36 +446,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+            "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
             "content": "sha256:b33be824ef668ce76c604903f9e01959a1f62d28f83b5409fecff7cfb8d903a1",
             "locator": {
-              "end": 247,
+              "end": 242,
               "kind": "line_range",
-              "start": 231
+              "start": 226
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+            "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
             "content": "sha256:7d04281a96e03b141611709a8b855a47b2c90cbfd6fd649203388e94022c9ec7",
             "locator": {
-              "end": 288,
+              "end": 283,
               "kind": "line_range",
-              "start": 250
+              "start": 245
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
-            "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
+            "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
+            "content": "sha256:5fa0cc0bbc28f0365f7c1e9034614d60b294d5b7e2b58de58efcb10cbd5d106f",
             "locator": {
-              "end": 456,
+              "end": 472,
               "kind": "line_range",
-              "start": 389
+              "start": 402
             }
           },
           "kind": "code"

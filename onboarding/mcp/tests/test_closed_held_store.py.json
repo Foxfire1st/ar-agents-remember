@@ -1,0 +1,281 @@
+{
+  "path": "mcp/tests/test_closed_held_store.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "92429a530a2555e7c4a1e3a4601feb0692d2f6c0",
+        "content": "sha256:fe2b7e42832eb1dd0fd993fc8f0cbf2637f35055708cc340e6f46c57a9aeb30c",
+        "locator": {
+          "kind": "symbol",
+          "name": "ClosedHeldStoreTests.test_cancelled_turn_preserves_waiting_text_and_accepts_the_next_send"
+        }
+      },
+      "facet": "Exercises test_cancelled_turn_preserves_waiting_text_and_accepts_the_next_send to verify seat closure needs durable or host proof and sends keep selected generation.",
+      "id": "PRF-3PPYF2",
+      "invariant": "INV-M7BT2R",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3 closure evidence and send generation",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92429a530a2555e7c4a1e3a4601feb0692d2f6c0",
+        "content": "sha256:9c648a1dd04b45d0b11f0b9e43eebc9e4dd5fdd3bda8f51b90a0d217d81a35a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "ClosedHeldStoreTests.test_turn_end_tick_refuses_closed_queued_seat_without_creating_workspace"
+        }
+      },
+      "facet": "Exercises test_turn_end_tick_refuses_closed_queued_seat_without_creating_workspace to verify closed or superseded seats refuse store writes; missing counts create none.",
+      "id": "PRF-3QNQ0A",
+      "invariant": "INV-HJ790A",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92429a530a2555e7c4a1e3a4601feb0692d2f6c0",
+        "content": "sha256:07b2f429bf376ecd0eed4d0d6185654bccf1ecd95354c0ec77b0e9466bd743a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "ClosedHeldStoreTests.test_missing_store_reads_and_counts_create_no_files"
+        }
+      },
+      "facet": "Exercises test_missing_store_reads_and_counts_create_no_files to verify closed or superseded seats refuse store writes; missing counts create none.",
+      "id": "PRF-A0R0GG",
+      "invariant": "INV-HJ790A",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92429a530a2555e7c4a1e3a4601feb0692d2f6c0",
+        "content": "sha256:8eff3a6cec5552fec9eca4eff97d8abc5be4f588e122bff968160f9256f58d45",
+        "locator": {
+          "kind": "symbol",
+          "name": "ClosedHeldStoreTests.test_role_message_by_id_refuses_closed_seat_before_store_creation"
+        }
+      },
+      "facet": "Exercises test_role_message_by_id_refuses_closed_seat_before_store_creation to verify closed or superseded seats refuse store writes; missing counts create none.",
+      "id": "PRF-D6YGS8",
+      "invariant": "INV-HJ790A",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92429a530a2555e7c4a1e3a4601feb0692d2f6c0",
+        "content": "sha256:fdd4e6afe399b590290253e5a814b651f78e806dc98c6988ab4680b8ba70778f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ClosedHeldStoreTests.test_late_retire_does_not_recreate_closed_seat_workspace"
+        }
+      },
+      "facet": "Exercises test_late_retire_does_not_recreate_closed_seat_workspace to verify closed or superseded seats refuse store writes; missing counts create none.",
+      "id": "PRF-E4FH4N",
+      "invariant": "INV-HJ790A",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92429a530a2555e7c4a1e3a4601feb0692d2f6c0",
+        "content": "sha256:88895b724947dda57ed1e8439bb06fb806e873097ee382454920f564dcbe7c83",
+        "locator": {
+          "kind": "symbol",
+          "name": "ClosedHeldStoreTests.test_first_send_waits_for_a_prepared_launch_to_register"
+        }
+      },
+      "facet": "Exercises test_first_send_waits_for_a_prepared_launch_to_register to verify seat closure needs durable or host proof and sends keep selected generation.",
+      "id": "PRF-ERMDR9",
+      "invariant": "INV-M7BT2R",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3 closure evidence and send generation",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92429a530a2555e7c4a1e3a4601feb0692d2f6c0",
+        "content": "sha256:9173c258862b3137c338da0fa50467fac1a9a15605f71fee3e25e3abdfbd454c",
+        "locator": {
+          "kind": "symbol",
+          "name": "ClosedHeldStoreTests.test_replacement_settles_the_predecessor_after_host_archive"
+        }
+      },
+      "facet": "Exercises test_replacement_settles_the_predecessor_after_host_archive to verify seat closure needs durable or host proof and sends keep selected generation.",
+      "id": "PRF-EWDM7D",
+      "invariant": "INV-M7BT2R",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3 closure evidence and send generation",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92429a530a2555e7c4a1e3a4601feb0692d2f6c0",
+        "content": "sha256:163df452bdd966df0347c88f1da0a1b4086a59d82b5e0de9010647f5f8f950b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "ClosedHeldStoreTests.test_developer_message_refuses_closed_seat_before_store_creation"
+        }
+      },
+      "facet": "Exercises test_developer_message_refuses_closed_seat_before_store_creation to verify closed or superseded seats refuse store writes; missing counts create none.",
+      "id": "PRF-P0DGBB",
+      "invariant": "INV-HJ790A",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92429a530a2555e7c4a1e3a4601feb0692d2f6c0",
+        "content": "sha256:4a95c1a4fd125e36b4747fc7815d1a2b36f605e9a6e96adfcc52d70458016cdb",
+        "locator": {
+          "kind": "symbol",
+          "name": "ClosedHeldStoreTests.test_same_request_restart_refuses_the_previous_generation"
+        }
+      },
+      "facet": "Exercises test_same_request_restart_refuses_the_previous_generation to verify closed or superseded seats refuse store writes; missing counts create none.",
+      "id": "PRF-SB2GAK",
+      "invariant": "INV-HJ790A",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92429a530a2555e7c4a1e3a4601feb0692d2f6c0",
+        "content": "sha256:87737eef5a109d35bd8abcd1dceebde76f1e70b76ed8fed616ed744521c1c35c",
+        "locator": {
+          "kind": "symbol",
+          "name": "ClosedHeldStoreTests.test_public_send_refuses_its_generation_after_same_id_restart"
+        }
+      },
+      "facet": "Exercises test_public_send_refuses_its_generation_after_same_id_restart to verify seat closure needs durable or host proof and sends keep selected generation.",
+      "id": "PRF-VW6R12",
+      "invariant": "INV-M7BT2R",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3 closure evidence and send generation",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92429a530a2555e7c4a1e3a4601feb0692d2f6c0",
+        "content": "sha256:b119c607fd5fe9ab2a5072f3b82947fa2abc333ee7811962459df22bdcac8d5f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ClosedHeldStoreTests.test_held_sweep_refuses_closed_queued_seat_without_creating_workspace"
+        }
+      },
+      "facet": "Exercises test_held_sweep_refuses_closed_queued_seat_without_creating_workspace to verify closed or superseded seats refuse store writes; missing counts create none.",
+      "id": "PRF-WHY242",
+      "invariant": "INV-HJ790A",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92429a530a2555e7c4a1e3a4601feb0692d2f6c0",
+        "content": "sha256:55afca2ae05b5f94838f54d35cf09646f9a6600ec4feaa1b5a3865119c5ce352",
+        "locator": {
+          "kind": "symbol",
+          "name": "ClosedHeldStoreTests.test_provider_limit_stamp_refuses_closed_inflight_batch"
+        }
+      },
+      "facet": "Exercises test_provider_limit_stamp_refuses_closed_inflight_batch to verify closed or superseded seats refuse store writes; missing counts create none.",
+      "id": "PRF-YXGJVZ",
+      "invariant": "INV-HJ790A",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 3",
+        "leaf": "261112-BUG-L38"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Verifies late `role_message` against a closing leaf receipt returns `recipient-archived` without recreating the removed workspace folder.\n\nAnchor: `ClosedHeldStoreTests.test_role_message_by_id_refuses_closed_seat_before_store_creation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92429a530a2555e7c4a1e3a4601feb0692d2f6c0",
+            "content": "sha256:8eff3a6cec5552fec9eca4eff97d8abc5be4f588e122bff968160f9256f58d45",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Proves replacement preserves the predecessor's held store until `_agent_archive` executes, then records waiting text in `heldStoreClosures[\"0\"]` in history and unlinks the store.\n\nAnchor: `ClosedHeldStoreTests.test_replacement_settles_the_predecessor_after_host_archive`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92429a530a2555e7c4a1e3a4601feb0692d2f6c0",
+            "content": "sha256:9173c258862b3137c338da0fa50467fac1a9a15605f71fee3e25e3abdfbd454c",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Uses threads around `open_held_store` and `refresh` to prove closure serializes behind an admitted writer, preserves its text in `heldStoreClosures[\"0\"]`, removes the store, and rejects subsequent opens with `HeldSeatClosed`.\n\nAnchor: `ClosedHeldStoreTests.test_close_serializes_with_an_admitted_writer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92429a530a2555e7c4a1e3a4601feb0692d2f6c0",
+            "content": "sha256:3327bf691e30d75bdcf060b7b16d5a12d293e8edcb7ecdf92b20cf8520b0fe5f",
+            "locator": {
+              "end": 317,
+              "kind": "line_range",
+              "start": 264
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Proves `begin_held_generation` keeps the same request ID while causing both `open_held_store` and `reconcile_held_store` to reject the prior generation with `reason == \"generation-changed\"`.\n\nAnchor: `ClosedHeldStoreTests.test_same_request_restart_refuses_the_previous_generation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92429a530a2555e7c4a1e3a4601feb0692d2f6c0",
+            "content": "sha256:4a95c1a4fd125e36b4747fc7815d1a2b36f605e9a6e96adfcc52d70458016cdb",
+            "locator": {
+              "end": 349,
+              "kind": "line_range",
+              "start": 319
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

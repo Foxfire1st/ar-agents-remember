@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "d2d3845baf9541100f06371fde62c4c0bb678b04",
+    "commit": "3ee8f6ad584e509ef6df637c1bb42484993b35d0",
     "role": "curator",
-    "statement": "The documentation summary still describes how Bootstrap opens the dashboard and where to find host, role and task guidance.",
-    "task": "261112-BUG-L20",
+    "statement": "Verified against synced L38 candidate on 3ee8f6ad/b83cff67: docs/llms.txt (lines 1-186) accurately summarizes the eight MCP tool groups, read_ar_files/knowledge_read lookup, Python 3.14, and five install steps.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/llms.txt",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -33,12 +33,12 @@
       "kind": "anchor"
     },
     {
-      "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
+      "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -48,7 +48,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
     },
     {
-      "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+      "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
@@ -56,6 +56,27 @@
       "blob": "8d1b5e00d1cf12fac5ed5c9fbf2ad95dfd878573",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
+    },
+    {
+      "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/core.py"
+    },
+    {
+      "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/read_files_briefs.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T22:06:22+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

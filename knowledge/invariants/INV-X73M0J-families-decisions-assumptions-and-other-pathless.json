@@ -7,7 +7,7 @@
   },
   "applicability": "The Records branch of the Knowledge tree.",
   "conditions": [
-    "Families, decisions, assumptions and the other record kinds are listed one line each.",
+    "Families, decisions, assumptions and other pathless records appear by title, with an optional wrapping line for the available revision state and writer.",
     "Invariants stay out of the tree; they are reached through their files and families."
   ],
   "exclusions": [
@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L79",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Families, decisions, assumptions and other pathless records appear by title under Records, while invariants remain outside that branch.",
   "status": "proposed",

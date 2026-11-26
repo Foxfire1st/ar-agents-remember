@@ -10,6 +10,8 @@ Share the answer-table row type, deterministic task/landing/role illustration ro
 
 ## Code Commentary
 
+The closeout fixture includes the optional briefsProblem field as response-shape evidence.
+
 `ToolAnswerRow` distinguishes interim/unshaped rows from field-and-use-bearing shaped rows; the defaulted `production_paths` field lets owners identify live proof paths separately from illustrations. `_apply_l111_shaped_rows` builds operation-specific task-document rows, ordinary and waited message rows, and the remaining owned tools from their declared field sets and product bounds, with no L111 interim owner. Fixed synthetic cases demonstrate shape/scale; their labels are not a universal largest-input proof. The authored `role_start` sizing case models a missing-requirement start captured at a deep root, including absolute locator, handover and log paths.
 
 The location splitter recursively removes absolute-path string values from mappings, including mappings inside lists; a bare list string remains content. The target helper separately asserts location-free content tokens, at most two distinct location values, and the entire delivered answer against its unchanged bound. Paths are measured, not normalized into shorter roots.

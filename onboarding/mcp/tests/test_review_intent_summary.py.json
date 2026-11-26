@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
             "content": "sha256:41a6e1237836e737f34e9b8cff80b808a9d450cf40ef5f46509eb3e492983f01",
             "locator": {
               "kind": "symbol",
@@ -20,12 +20,12 @@
       ]
     },
     "11": {
-      "note": "Record-only status/version changes count as revisions; a same-guarantee member change remains membership-only. The removed partial-summary helper is not assertion evidence for this property.",
+      "note": "The version-only successor counts as a revision. A same-guarantee member change stays membership-only.",
       "targets": [
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
-            "content": "sha256:bbd4996c7d1ffce0ef05423ac1a7b493dc7ed0268680b1fbcd25ff578ec8fb2a",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
+            "content": "sha256:a1970667e3b76babfc6ddce9c9fc4acd5a1f39c374d2826e1a5885192c8cd30e",
             "locator": {
               "kind": "symbol",
               "name": "test_a_record_only_successor_counts_once_on_each_side"
@@ -36,25 +36,26 @@
       ]
     },
     "12": {
-      "note": "`test_missing_knowledge_is_unavailable_with_its_refusal_never_zero` supplies the current fixture or assertion described above.\n\nAnchor: `test_missing_knowledge_is_unavailable_with_its_refusal_never_zero`",
+      "note": "`test_missing_knowledge_is_unavailable_with_its_refusal_never_zero` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
-            "content": "sha256:ba486051720c7c3aeb8e681c9d3a5ae94c26706f8e8ffd0175e125c738844682",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
+            "content": "sha256:af988f0e616ac95a968ea11e542f9b7d0b298fd706be71a0664a4818f1399d2c",
             "locator": {
-              "kind": "file"
+              "end": 684,
+              "kind": "line_range",
+              "start": 663
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
-            "content": "sha256:af988f0e616ac95a968ea11e542f9b7d0b298fd706be71a0664a4818f1399d2c",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
+            "content": "sha256:3d332d2efc003da22ec3c3a17b98aaa43866010e37aa8027796381fb8080d096",
             "locator": {
-              "kind": "symbol",
-              "name": "test_missing_knowledge_is_unavailable_with_its_refusal_never_zero"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -62,12 +63,12 @@
       ]
     },
     "13": {
-      "note": "The route test verifies counted and unavailable bodies with HTTP 200 and an unwired process with 503; the removed partial-state measurement is not exercised.\n\nAnchor: `test_the_route_answers_every_typed_state_in_the_body`",
+      "note": "The route test verifies counted and unavailable bodies with HTTP 200 and an unwired process with 503; the removed partial-state measurement is not exercised.",
       "targets": [
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
-            "content": "sha256:ba486051720c7c3aeb8e681c9d3a5ae94c26706f8e8ffd0175e125c738844682",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
+            "content": "sha256:3d332d2efc003da22ec3c3a17b98aaa43866010e37aa8027796381fb8080d096",
             "locator": {
               "kind": "file"
             }
@@ -81,12 +82,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
             "content": "sha256:1a37d7dc8d9c57d32b3de022e6b5ed7c861a0fd8f617701a5f3da3f62efe3d4d",
             "locator": {
-              "end": 92,
+              "end": 93,
               "kind": "line_range",
-              "start": 78
+              "start": 79
             }
           },
           "kind": "test"
@@ -94,12 +95,12 @@
       ]
     },
     "15": {
-      "note": "Test-only RowStore mutates text-tree fixture rows and rebuilds their derived index without a shipped production admission plane.\n\nAnchor: `RowStore`",
+      "note": "Test-only RowStore mutates text-tree fixture rows and rebuilds their derived index without a shipped production admission plane.",
       "targets": [
         {
           "anchor": {
-            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
-            "content": "sha256:43a32e8370a3aa07c1e8247bd8b4d445a42caab3b630d2ed5783e663bc3c824e",
+            "blob": "63570d7606856b5028b51268077f62b8b3d27781",
+            "content": "sha256:a9a84c441f17b2b5a04d286f7aa9739d56b5e38f1cee90c5bef9ed86359d81fe",
             "locator": {
               "kind": "file"
             },
@@ -110,14 +111,16 @@
       ]
     },
     "16": {
-      "note": "_shared_base carries the directory used to build independent before/after sides from shared specifications.\n\nAnchor: `_shared_base`",
+      "note": "_shared_base carries the directory used to build independent before/after sides from shared specifications.",
       "targets": [
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
-            "content": "sha256:ba486051720c7c3aeb8e681c9d3a5ae94c26706f8e8ffd0175e125c738844682",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
+            "content": "sha256:5aea5e6848ba4e32cac7d5a440e918b36400db1bced8e6be07a98414eb85216c",
             "locator": {
-              "kind": "file"
+              "end": 330,
+              "kind": "line_range",
+              "start": 327
             }
           },
           "kind": "test"
@@ -125,25 +128,26 @@
       ]
     },
     "17": {
-      "note": "Added/revised/removed as +/−, relationship-only as typed counts.\n\nAnchor: `test_counts_statement_and_guarantee_heads_and_keeps_other_changes_apart`",
+      "note": "Added/revised/removed as +/−, relationship-only as typed counts.",
       "targets": [
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
-            "content": "sha256:ba486051720c7c3aeb8e681c9d3a5ae94c26706f8e8ffd0175e125c738844682",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
+            "content": "sha256:66cd6c93aa29a0e9959252c4a808d040e80dff5a30b5b70f69a164b45f1ff08e",
             "locator": {
-              "kind": "file"
+              "end": 502,
+              "kind": "line_range",
+              "start": 424
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
-            "content": "sha256:66cd6c93aa29a0e9959252c4a808d040e80dff5a30b5b70f69a164b45f1ff08e",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
+            "content": "sha256:3d332d2efc003da22ec3c3a17b98aaa43866010e37aa8027796381fb8080d096",
             "locator": {
-              "kind": "symbol",
-              "name": "test_counts_statement_and_guarantee_heads_and_keeps_other_changes_apart"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -151,25 +155,26 @@
       ]
     },
     "18": {
-      "note": "A shared revised member counts once per side.\n\nAnchor: `test_a_revised_statement_two_families_share_counts_once_on_each_side`",
+      "note": "A shared revised member counts once per side.",
       "targets": [
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
-            "content": "sha256:ba486051720c7c3aeb8e681c9d3a5ae94c26706f8e8ffd0175e125c738844682",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
+            "content": "sha256:41a6e1237836e737f34e9b8cff80b808a9d450cf40ef5f46509eb3e492983f01",
             "locator": {
-              "kind": "file"
+              "end": 567,
+              "kind": "line_range",
+              "start": 533
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
-            "content": "sha256:41a6e1237836e737f34e9b8cff80b808a9d450cf40ef5f46509eb3e492983f01",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
+            "content": "sha256:3d332d2efc003da22ec3c3a17b98aaa43866010e37aa8027796381fb8080d096",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_revised_statement_two_families_share_counts_once_on_each_side"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -177,25 +182,26 @@
       ]
     },
     "19": {
-      "note": "Record-only successors count; a same-guarantee member change stays typed.\n\nAnchor: `test_a_record_only_successor_counts_once_on_each_side`",
+      "note": "Record-only successors count; a same-guarantee member change stays typed.",
       "targets": [
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
-            "content": "sha256:ba486051720c7c3aeb8e681c9d3a5ae94c26706f8e8ffd0175e125c738844682",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
+            "content": "sha256:a1970667e3b76babfc6ddce9c9fc4acd5a1f39c374d2826e1a5885192c8cd30e",
             "locator": {
-              "kind": "file"
+              "end": 620,
+              "kind": "line_range",
+              "start": 570
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
-            "content": "sha256:bbd4996c7d1ffce0ef05423ac1a7b493dc7ed0268680b1fbcd25ff578ec8fb2a",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
+            "content": "sha256:3d332d2efc003da22ec3c3a17b98aaa43866010e37aa8027796381fb8080d096",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_record_only_successor_counts_once_on_each_side"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -203,25 +209,26 @@
       ]
     },
     "21": {
-      "note": "Absent knowledge is `unavailable`, never zero.\n\nAnchor: `test_missing_knowledge_is_unavailable_with_its_refusal_never_zero`",
+      "note": "Absent knowledge is `unavailable`, never zero.",
       "targets": [
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
-            "content": "sha256:ba486051720c7c3aeb8e681c9d3a5ae94c26706f8e8ffd0175e125c738844682",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
+            "content": "sha256:af988f0e616ac95a968ea11e542f9b7d0b298fd706be71a0664a4818f1399d2c",
             "locator": {
-              "kind": "file"
+              "end": 684,
+              "kind": "line_range",
+              "start": 663
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
-            "content": "sha256:af988f0e616ac95a968ea11e542f9b7d0b298fd706be71a0664a4818f1399d2c",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
+            "content": "sha256:3d332d2efc003da22ec3c3a17b98aaa43866010e37aa8027796381fb8080d096",
             "locator": {
-              "kind": "symbol",
-              "name": "test_missing_knowledge_is_unavailable_with_its_refusal_never_zero"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -229,12 +236,12 @@
       ]
     },
     "22": {
-      "note": "The route test verifies counted and unavailable bodies with HTTP 200 and an unwired process with 503; the removed partial-state measurement is not exercised.\n\nAnchor: `test_the_route_answers_every_typed_state_in_the_body`",
+      "note": "The route test verifies counted and unavailable bodies with HTTP 200 and an unwired process with 503; the removed partial-state measurement is not exercised.",
       "targets": [
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
-            "content": "sha256:ba486051720c7c3aeb8e681c9d3a5ae94c26706f8e8ffd0175e125c738844682",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
+            "content": "sha256:3d332d2efc003da22ec3c3a17b98aaa43866010e37aa8027796381fb8080d096",
             "locator": {
               "kind": "file"
             }
@@ -244,16 +251,16 @@
       ]
     },
     "23": {
-      "note": "The lane registration. Source caption: `test_review_intent_summary`",
+      "note": "The unit-regression lane selects mcp/tests/test_review_intent_summary.py.\n\nAnchor: `mcp/tests/test_review_intent_summary.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "75006e874ab9c238187bcf9044d224511529c135",
+            "blob": "9b2f8dfb74c9f9e7cc39c1097e6d5f7e0ff20215",
             "content": "sha256:33e248a5dc8236adc94be461a7384eb753c94ce29a613946b5331c9f219fb00d",
             "locator": {
-              "end": 500,
+              "end": 515,
               "kind": "line_range",
-              "start": 500
+              "start": 515
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -266,48 +273,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
             "content": "sha256:164e3986fd4e28ca792df9040cdaefd77c4cfc677cdb20a7ee2cbf5630b496cd",
             "locator": {
-              "end": 817,
+              "end": 808,
               "kind": "line_range",
-              "start": 748
+              "start": 739
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
             "content": "sha256:bb687427daa9c360d3c6667df278b60a182488ad90a3901aa27464ca8bae4940",
             "locator": {
-              "end": 829,
+              "end": 820,
               "kind": "line_range",
-              "start": 820
+              "start": 811
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
             "content": "sha256:9e6c8616b65e73c512b18316a3e964ed0db196f130db93e4823a3734ee228ed4",
             "locator": {
-              "end": 913,
+              "end": 904,
               "kind": "line_range",
-              "start": 832
+              "start": 823
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
             "content": "sha256:e9d8c176ab7acf9677d39865b8c384add2c46543ca45f0b250fad571d9c45c58",
             "locator": {
-              "end": 964,
+              "end": 955,
               "kind": "line_range",
-              "start": 916
+              "start": 907
             }
           },
           "kind": "test"
@@ -319,12 +326,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
             "content": "sha256:7a68dd9f840b36ac38f8a498d2e6aeffb138a5e8dd3bfabc50a5494a49ffd610",
             "locator": {
-              "end": 745,
+              "end": 736,
               "kind": "line_range",
-              "start": 696
+              "start": 687
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "The exact fixture uses higher revision numbers for the unchanged statement and guarantee.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
+            "content": "sha256:a1970667e3b76babfc6ddce9c9fc4acd5a1f39c374d2826e1a5885192c8cd30e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_only_successor_counts_once_on_each_side"
             }
           },
           "kind": "test"
@@ -332,25 +355,26 @@
       ]
     },
     "9": {
-      "note": "`test_counts_statement_and_guarantee_heads_and_keeps_other_changes_apart` supplies the current fixture or assertion described above.\n\nAnchor: `test_counts_statement_and_guarantee_heads_and_keeps_other_changes_apart`",
+      "note": "`test_counts_statement_and_guarantee_heads_and_keeps_other_changes_apart` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
-            "content": "sha256:ba486051720c7c3aeb8e681c9d3a5ae94c26706f8e8ffd0175e125c738844682",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
+            "content": "sha256:66cd6c93aa29a0e9959252c4a808d040e80dff5a30b5b70f69a164b45f1ff08e",
             "locator": {
-              "kind": "file"
+              "end": 502,
+              "kind": "line_range",
+              "start": 424
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d630beefc7c91e91b4732d8bb35eba2baf8076e8",
-            "content": "sha256:66cd6c93aa29a0e9959252c4a808d040e80dff5a30b5b70f69a164b45f1ff08e",
+            "blob": "0a72e2638ee6764f1790d47bd2ae3a5f34f63e50",
+            "content": "sha256:3d332d2efc003da22ec3c3a17b98aaa43866010e37aa8027796381fb8080d096",
             "locator": {
-              "kind": "symbol",
-              "name": "test_counts_statement_and_guarantee_heads_and_keeps_other_changes_apart"
+              "kind": "file"
             }
           },
           "kind": "test"

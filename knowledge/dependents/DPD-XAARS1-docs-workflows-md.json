@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "The workflow correctly explains that a participating contract-source memory sync advances the recorded base to the incoming tip and a repository-default sync keeps the recorded pair.",
-    "task": "261112-BUG-L21",
+    "statement": "docs/workflows.md (lines 109-132, 207-219) accurately describes enclosure creation, lifecycle_finalize_task/worktree_cleanup/worktree_abandon removing worktrees and the enclosure folder, and agentArchive reporting {archived, alreadyArchived, gone, owed, leftAlone}.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/workflows.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
+      "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
@@ -51,7 +51,7 @@
       "path": "mcp/src/agents_remember/models/task_document.py"
     },
     {
-      "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+      "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },
@@ -61,7 +61,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
     },
     {
-      "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+      "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
     },
@@ -91,7 +91,7 @@
       "path": "mcp/src/agents_remember/application/direct_execution_grants.py"
     },
     {
-      "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
+      "blob": "f6c05e150769e32c8c67cd6f806b4d4ec29d7140",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },
@@ -155,5 +155,16 @@
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

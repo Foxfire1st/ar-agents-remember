@@ -25,7 +25,7 @@ The header documents `presenter-transcript` as a read of up to 200 timeline entr
 `agent-send` validates optional image and text-attachment lists through `sendExtras` before reading the recipient or attempting delivery. Nonempty extras accompany the same native send and preserve its existing message ID and steer behavior. Absent, null or empty lists add no options. A malformed entry refuses the whole payload before recipient lookup; the bridge does not send a partial list. The attachment helper owns individual image/text schemas, while recipient state checks and delivery outcomes remain here.
 
 
-`usage-reports` reads each named agent's usage reports for the limit only. The native client answers with `{requestId, reports}` and the bridge returns `{serverId, reports}`. A leaf seat's entry older than 60 seconds is refreshed once with `reportIds` alone because Paseo 0.16.2 refuses a call that names both selectors. The bridge refreshes a shared report at most once per batch. It keeps the cached entry on a failed refresh and skips forced refresh when the entry already reads `error`. One agent's failure is its own `error` and stops no other, and only an account's label leaves the host.
+`usage-reports` dispatches to `paseo_usage_reports.mjs`, which owns the read, the sixty-second leaf refresh and the shared forced refresh; the bridge returns that module's answer unchanged. The command surface remains in the bridge, while the request shape and the cached-entry rules belong to the extracted reader.
 
 ## Fresh catalog and creation choices
 
@@ -49,6 +49,7 @@ The header documents `presenter-transcript` as a read of up to 200 timeline entr
 
 
 
+
 - The command table delegates workspace-open to the imported workspace owner while retaining the bridge command surface. [4]
 
 
@@ -63,9 +64,13 @@ The header documents `presenter-transcript` as a read of up to 200 timeline entr
 
 
 
+
 - `agentCreation` uses the selected settings role and supplies its applied options. The bound tool server registers the general tools and four explainer tools, and checks the launched seat on calls to those four. [5]
 
+
 - The host-activity reconciliation opts into background agents and asks only open, unarchived AR role seats for subagents. [8]
+
 - An ordinary usage read names the agent. A forced refresh for a stale leaf report names its report ID alone. [9]
+
 
 - The bridge dispatches role-registry to its dedicated history and exact-read helper. [10]

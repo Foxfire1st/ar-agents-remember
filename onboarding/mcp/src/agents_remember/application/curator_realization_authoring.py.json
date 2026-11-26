@@ -325,7 +325,7 @@
         },
         {
           "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "blob": "f561ed4c783385d8f6b1be998e88ca8c2e1be87a",
             "content": "sha256:2a98361d8a179d85a9ffb5448c0bda56c6c851b999dbc4e20fc845fce696b036",
             "locator": {
               "kind": "symbol",
@@ -342,10 +342,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
-            "content": "sha256:9c45635d9680b053825219744ed2cb085e0ed39efc6205935a3c7256457167aa",
+            "blob": "4a81b6d9ab671887286c74a241af468320dd3f0d",
+            "content": "sha256:46bc829c346c7c688094994892fb090ef97f833dbc7a122fd0aa148746ffc215",
             "locator": {
-              "end": 909,
+              "end": 910,
               "kind": "line_range",
               "start": 1
             },
@@ -355,12 +355,12 @@
         },
         {
           "anchor": {
-            "blob": "a980cc93e1c8141ce2b8fb3a94224a554f69f9e4",
-            "content": "sha256:f446406acb7d15b3a151eeb8f3e6dcb72216c6ec96923d8ecb50b909d70c5696",
+            "blob": "d526b667f96765bf304f2867766fdf4e0873cab0",
+            "content": "sha256:60fd0b0d8ecb5ca04275e7216a64296d2d591777e7464f2b18559abc24764e97",
             "locator": {
-              "end": 186,
+              "end": 192,
               "kind": "line_range",
-              "start": 123
+              "start": 128
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
           },
@@ -368,12 +368,12 @@
         },
         {
           "anchor": {
-            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "blob": "4a81b6d9ab671887286c74a241af468320dd3f0d",
             "content": "sha256:5a5c4f47f8364e929f773c384fae0cc2ce8bc3c390fd6fabf3568e5b71a52a22",
             "locator": {
-              "end": 502,
+              "end": 510,
               "kind": "line_range",
-              "start": 469
+              "start": 477
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
           },

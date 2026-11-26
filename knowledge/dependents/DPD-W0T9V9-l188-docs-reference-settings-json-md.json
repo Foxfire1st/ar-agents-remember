@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "b29f2e225c04fbcebb653d59f81cf895c42f5097",
-    "commit": "180b6c153d21d01cbb14059d0219472ccdeba683",
+    "codeTree": "049d3961dfb898bbd69253d9e0b878188fd1006b",
+    "commit": "ed29e40bb6a27dbba33b106b556da182e02a7429",
     "role": "curator",
-    "statement": "The settings reference's launch bindings, role-mode keys and the Claude Code first-call server_info grant still hold on b29f2e2; build_launch_call only adds the role to the Codex preapproval.",
-    "task": "261124-CAP-L1",
-    "uncommitted": true
+    "statement": "On settled tree 049d3961 (commit ed29e40b), docs/reference/settings-json.md remains accurate: adding reconcile_shared_held_stores: bool = False to RuntimeInstallRequest in mcp/src/agents_remember/install/runtime.py leaves all four settings files, timeoutCaps.providerSetupSeconds watcher-stop bounding, user-settings permission reporting (444/555 and openUserSettings), paseoRuntime authority rules, and role-executions folder creation unchanged.",
+    "task": "261124-EXP",
+    "uncommitted": false
   },
   "document": "docs/reference/settings-json.md",
   "id": "DPD-W0T9V9",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 16,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -104,12 +104,12 @@
       "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
     },
     {
-      "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+      "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/tool_answer_log.py"
     },
     {
-      "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+      "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/runtime.py"
     },
@@ -241,5 +241,16 @@
       "heading": "paseoRuntime",
       "kind": "anchor"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T00:51:29+01:00",
+    "by": "agent",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+    "task": "261124-EXP"
+  }
 }

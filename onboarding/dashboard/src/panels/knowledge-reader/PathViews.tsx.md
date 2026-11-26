@@ -107,6 +107,7 @@ No Domain Documentation entries are configured; current repository bodies and ca
 - Without-proof rows show delivered shown/total counts, explicitly informational rather than a gate. [14]
 - Census report problems, measures, counts and route histories are rendered from the supplied report. [15]
 - The subtree’s separate in-flight gate accumulates returned pages and preserves a named next-page failure. [16]
-- The prose/reference rendering owner handles citation navigation and suppresses a repeated prose sentence in reference notes; it is not the prose network reader. [17]
 - Whole-text loading checks the original treeKey/memoryRevision and keeps old text on a failed or mismatched completion. [18]
 - Truncation, byte size, in-flight loading and named failure/reload controls are explicit. [19]
+
+- The prose and reference components handle citation navigation and suppress repeated prose in reference notes. [17]

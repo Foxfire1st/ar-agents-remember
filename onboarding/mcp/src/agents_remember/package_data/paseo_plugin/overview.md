@@ -44,6 +44,7 @@ Closure retains the role identity in the activity file and clears the closed ses
 - `server/role_agents.ts`: typed, stat-generation-cached per-agent fact reader.
 - `server/turn_events.ts`: contributed parent-wake handlers, the ended turn's timeline read, host-state reads, log sink and steering sends.
 - `server/turn_ended.ts`: stateful pure notification decision, including the leaf self-wake and the declared waits' timers and gates.
+- `server/provider_limit_check.ts`: the pending-only early-clear check that shares one limit-file snapshot across deferred resumes and parent flushes.
 - `server/background_wait.ts`: the background-wait declaration, its check time and check text, and the seat-message sentences for both declarations.
 - `server/declared_wait_state.ts`: the open declaration per seat, its rows, its check delay and the view the host-activity record publishes.
 - `server/acp_providers.ts`: the installed host's provider classes read once, the ACP verdict and its written file, and the helper-call drop-outs.
@@ -54,7 +55,7 @@ Closure retains the role identity in the activity file and clears the closed ses
 
 
 
-The plugin subscribes once per boot to provider subagent updates, publishes the running counts, reads the limit file at the send-back and the parent gate, and states its host requirement as Paseo >=0.15.0.
+The plugin subscribes once per boot to provider subagent updates, publishes the running counts, reads the limit file at the send-back and the parent gate, and states its host requirement as Paseo >=0.15.0. A pending resume or held parent line is also released early: while either exists, the plugin samples one limit-file snapshot every fifteen seconds and acts on a seat's current `clearedSeats` marker instead of waiting for the recorded deadline.
 
 - Keep embed RPC while wiring turn, permission and archive events to product-owned decisions; asynchronous handler failures are logged.
 ## Evidence
@@ -68,6 +69,7 @@ The plugin subscribes once per boot to provider subagent updates, publishes the 
 
 
 - Host activity is boot-qualified, record-bounded and event-driven. Reconciliation includes background agents, preserves concurrent events and invents no idle event time. [4]
+
 
 
 

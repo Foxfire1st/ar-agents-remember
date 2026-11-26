@@ -77,8 +77,7 @@ believed.
 
 ### Conventions
 
-- Lane `integration` in `mcp/tests/test-evidence-lanes.toml` (line 735), and every case is
-  `unittest`-style in one class with a temporary directory per case.
+- The cases use one `unittest`-style class and a temporary directory per case.
 - The module drives public entry points only. Like `test_checkpoint_landing_end_to_end.py`, it exists
   because a seam-level suite can be fully green while the composition a caller reaches is wrong.
 - Support is the existing `QueueFixture` plus this module's own measurement helpers — no new support
@@ -217,10 +216,7 @@ No meaningful cross-repository reference applies to this repository-owned bounda
 
 ### Repo-Internal References (continued)
 
+
 - The separate publication no case here reaches. Anchor: `worktree_checkpoint_landing` [15]
 
-
-- The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [11]
-
-
-- The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [13]
+- The `integration` lane selects `mcp/tests/test_pause_stop_only_end_to_end.py` (`mcp/tests/test-evidence-lanes.toml:743`). [11] [13]

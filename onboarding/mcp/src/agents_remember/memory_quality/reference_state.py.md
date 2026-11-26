@@ -91,7 +91,7 @@ The format test, the anchor states, the check and the fixer.
 
 
 
-- References are checked, and only mechanical moves are fixed. [6]
+- References are checked, and only mechanical moves are fixed. Anchor: `test_references_are_checked_and_only_mechanical_moves_are_fixed` [6]
 
 
 - The mechanical fixer scopes one sidecar, names unreadable sidecars, and skips the explicit authoring-refused exclusion set before refresh or write. [7]
@@ -100,7 +100,7 @@ The format test, the anchor states, the check and the fixer.
 
 - Only sidecars holding references are counted or observed; empty maps are skipped, malformed ones unreadable. [11]
 
-- One document's fix lists its own stale references. [10]
+- The named-document test checks that each fix lists only that card’s stale references. The compact reply delivers the first ten status rows with full counts and the detailed result retains the complete lists. [10]
 
 
 ### Cross-Repo References

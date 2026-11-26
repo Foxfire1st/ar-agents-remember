@@ -21,9 +21,7 @@ as busy rather than block indefinitely. The operation never retries against a re
 generation's DDL inside one immediate transaction and then writes `PRAGMA user_version`; on a populated one it
 delegates to `inspect_schema`. **Initialization declares a generation; it does not select one.** An empty database
 has no version to read, so "the dataset decides" cannot govern this path: creation asks
-`schema.generation_of_new_store()` for the single composed generation this build supports (`CURRENT_GENERATION`,
-`ar-knowledge-sqlite/v9`, user_version 9) and takes the DDL *and* the version marker from that one record, instead of reading the running
-build's `SCHEMA_USER_VERSION` and its module-level DDL. The generations-registry modules are deleted; the one schema module declares the generation. The version marker is still written **after** the DDL
+`schema.generation_of_new_store()` for the single composed generation this build supports (`CURRENT_GENERATION`, `ar-knowledge-sqlite/v10`, user_version 10). The connection takes the DDL and version marker from that composition. Only the declared generation passes inspection. The version marker is still written **after** the DDL
 commits, so a crash between the two leaves a complete but unversioned database that the next open refuses instead
 of guessing — the opposite order could leave a database claiming a generation it does not have.
 
@@ -32,7 +30,7 @@ statement, returning a plain tuple or `None`. Every reader in the package asks t
 owner of the shape — the graph modules' three reads call it rather than repeating the pattern at each call site.
 
 `inspect_schema` **selects the generation from the database itself**, then requires *that* generation's structure:
-it resolves `PRAGMA user_version` against the single composed generation (never against the running build), calls
+it checks `PRAGMA user_version` against the only generation the build declares and calls
 `_require_declared_tables(connection, declared)` (every table the selected generation declares is present and every
 table's declared column tuple is identical to that generation's manifest) and `_require_declared_triggers(connection,
 declared)` (no immutability trigger of that generation is missing). The returned `KnowledgeSchemaIdentity` carries
@@ -108,7 +106,6 @@ No configured domain documentation could be checked.
 
 - - The single immediate transaction whose exit rolls back without suppressing the failure. [21]
 
-- - The graph readers that reuse the one-row helper. [22]
 
 - - The close that no longer calls the peer unlink, and why. [23]
 
@@ -117,3 +114,7 @@ No configured domain documentation could be checked.
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+- Schema generation 10 declares the composed DDL and stored version used by the connection. \[24] [24]
+
+- The family-revision reader uses the shared one-row helper. [22]

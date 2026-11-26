@@ -104,16 +104,16 @@
       ]
     },
     "7": {
-      "note": "The archive-ready branch binds `kept_line = None` and invents no record.  Anchor: `cleanup_result`",
+      "note": "The archive-ready branch binds `kept_line = None` and invents no record. Anchor: `cleanup_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
-            "content": "sha256:e53fa354fbef957aa8a30ccad004dd332621b3421cc4ed9047f72f22bb6540cf",
+            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
+            "content": "sha256:b8c6346ce2a325136102784548291469d6356c351c087e6ca151407fad81506c",
             "locator": {
-              "end": 729,
+              "end": 667,
               "kind": "line_range",
-              "start": 685
+              "start": 610
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },
@@ -121,12 +121,12 @@
         },
         {
           "anchor": {
-            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
             "content": "sha256:ff54030cc900be402922f368567c3a8c559d371293fe19f30e703709e05c7a7d",
             "locator": {
-              "end": 871,
+              "end": 809,
               "kind": "line_range",
-              "start": 842
+              "start": 780
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ed769cabdb7274515cf681f7ad55b1bd1e724580",
-    "commit": "78e6431a1e5147de09bdc9cdc4332c85f3515d8f",
+    "codeTree": "a5bb9a1f39686862d0ffd950f196c889a39fbe55",
+    "commit": "7cf19e81cbb10be97df11a490a19cd77f62e0921",
     "role": "curator",
-    "statement": "The legacy-adoption guide still describes the actual blocker because its stated scope is all of onboarding and the scan now includes legacy markers in cards under dot directories.",
-    "task": "261112-BUG-L24",
+    "statement": "On tree a5bb9a1f, the legacy-adoption guide's account of memory_baseline_status, memory_baseline_adopt, citation_fix, and memory_init arguments, defaults, and R198.1-reference-anchor gating still holds; CAP-L4 only shortened the tool descriptions in registration/memory.py without changing any signature or behavior.",
+    "task": "261124-CAP-L4",
     "uncommitted": true
   },
   "document": "docs/guides/adopt-existing-memory.md",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "bfbe2e81d84a8bfc86b538760f6510133897cc83",
+      "blob": "74906e090cbaf56d8b60a978f4ada2a8b13bda8f",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory/baseline.py"
     },
     {
-      "blob": "39c7d88259a83da4f885192beecdb5f9656094d6",
+      "blob": "e19e9c32dd2b8baa9cd36a765da35da1951e217e",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/memory_tools.py"
     },
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/memory_quality/legacy_cards.py"
     },
     {
-      "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+      "blob": "bbc1541e4379d1cf2c834fbc40cb53f596f21dfd",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },

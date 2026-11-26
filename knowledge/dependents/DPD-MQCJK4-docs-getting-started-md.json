@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "8b54b8c117747b1a757a00d6441308aa1f569669",
-    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
+    "codeTree": "049d3961dfb898bbd69253d9e0b878188fd1006b",
+    "commit": "ed29e40bb6a27dbba33b106b556da182e02a7429",
     "role": "curator",
-    "statement": "The setup guide still directs the reader to Retry when the embedded chat control is unavailable, while a transient unavailable agent during a selected chat open has its own bounded retry path.",
-    "task": "261124-EXP-L1",
-    "uncommitted": true
+    "statement": "On settled tree 049d3961 (commit ed29e40b), docs/getting-started.md remains accurate for Python 3.14, package 3.0.8 (with mcp>=1.30.0,<2), Node >=22.13 / >=24, the five install steps, Bootstrap call, short overflow answers with log, dashboard --status behavior (with UTC ISO-8601 dashboard log timestamps), and Retry guidance for an unavailable embedded chat control alongside the bounded retry path for transient unavailable agents.",
+    "task": "261124-EXP",
+    "uncommitted": false
   },
   "document": "docs/getting-started.md",
   "id": "DPD-MQCJK4",
@@ -17,16 +17,16 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "c36de9804ded753644e75329d2a0e30d14fa0911",
+      "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
     },
     {
-      "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+      "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
@@ -61,7 +61,7 @@
       "path": "mcp/src/agents_remember/application/user_settings_init.py"
     },
     {
-      "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
+      "blob": "0789f3ccacb2b41e5dd90b05efda788cbd713c23",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/memory_init.py"
     },
@@ -76,7 +76,7 @@
       "path": "dashboard/src/cockpit/paseoFrameControl.ts"
     },
     {
-      "blob": "a76b6ee68a99ee40babe9d8a5db528a4ffbb82b6",
+      "blob": "64084f98803199c3d7bae4ce76810611b0578a13",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -106,7 +106,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+      "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/runtime.py"
     },
@@ -121,7 +121,7 @@
       "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
     },
     {
-      "blob": "1e03a8d7ea7403f3a534d341c9830deb0a2aa191",
+      "blob": "df83adb17e8b5185f6574aacb3e6b04e0e928bde",
       "kind": "file",
       "path": "dashboard/package-lock.json"
     },
@@ -130,5 +130,16 @@
       "kind": "file",
       "path": ".github/workflows/publish-mcp-to-pypi.yml"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T00:51:29+01:00",
+    "by": "agent",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+    "task": "261124-EXP"
+  }
 }

@@ -97,8 +97,9 @@ No Domain Documentation source is configured for this memory root.
 
 - The heal runs the ordinary public sync result for the owning contract. [7]
 
-- Closeout imports this module in place of the bare `require_current_source_lineage` guard at both entry points. [8]
 
 ### Cross-Repo References
 
 No cross-repository source is configured for this memory root.
+
+- Closeout imports this module in place of the bare `require_current_source_lineage` guard at both entry points. [8]

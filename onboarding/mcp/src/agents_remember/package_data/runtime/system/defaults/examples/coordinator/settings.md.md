@@ -60,7 +60,13 @@ No external documentation is needed.
 
 ### Repo-Internal References
 
-- The example still carries inherited provider install, start/status, watcher and indexing guidance, while the runtime_install tool stops leftover provider watchers, reports unused provider keys and starts none; the template text is not evidence of managed provider availability or executed behavior. [7]
+
+
+
+- The example still carries inherited provider install, start/status, watcher and indexing guidance, while the runtime_install tool stops leftover provider watchers, reports unused provider keys and starts none; the template text is not evidence of managed provider availability or executed behavior. Anchor: `runtime_install`, `lifecycle_settings_from_config`, `PUBLIC_TOOLS` [7]
+
+
+
 
 - The example states that coordinator settings are workspace-wide and do not replace per-repository memory settings. [1]
 

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "4ebb429de6b3034e7bff1922b3f8982b2ccafa07",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "The certification profile's schema refusals and selections still apply after the separate leaf memory-base error was added.",
-    "task": "261112-BUG-L21",
+    "statement": "docs/reference/repository-certification-profile.md remains accurate after the mcp>=1.30.0,<2 floor update in mcp/pyproject.toml because certification profiles, Dagger modes, and closeout boundaries are unchanged.",
+    "task": "261125-DEP-L1",
     "uncommitted": true
   },
   "document": "docs/reference/repository-certification-profile.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -81,7 +81,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
     },
     {
-      "blob": "e931d4c5f94a3e979b7183a63eb07870effcde78",
+      "blob": "b6179873041bc0bbb9c542b051c7b0ebb1a06dbb",
       "kind": "file",
       "path": "mcp/src/agents_remember/errors.py"
     },
@@ -128,9 +128,20 @@
       "path": ".dagger/src/agents_remember_quality/profile_execution.py"
     },
     {
-      "blob": "097a619e519aa72aa1a2c57a08540c8ddeedc888",
+      "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T20:08:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L1",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "b5f00ccb-ae71-451c-bfff-3ee2a7ac6155",
+    "task": "261125-DEP"
+  }
 }

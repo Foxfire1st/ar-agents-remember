@@ -11,7 +11,7 @@ docstring is the layout table (records, layout marker, history, census, file and
 the functions compute those memory-repository-relative paths and `parse_document` dispatches a
 parsed JSON document to its model by its `schema` field. Since MIK-R07 it also reads per-leaf
 history files (`ar-history/v1`), binding each file's name to its owner. Since MIK-R20 it also
-dispatches the four census schemas (`ar-census-*/v1`, from `census.py`).
+dispatches the four census schemas (`ar-census-*/v1`, from `census.py`) and the product's `ar-converted-reviews/v1` catalog, distinct from an owner's history file.
 
 ## Code Commentary
 
@@ -77,8 +77,9 @@ No configured live documentation source was available for this pass.
 The models dispatched to come from `records.py` and `sidecars.py`.
 
 - The layout table. [1]
-- The schema table, including the history schema and the four census schemas. [2]
-- The document union gains the census documents. [3]
+
+- The schema table includes owner history, converted review facts and the four census schemas. [2]
+
 - Schema dispatch, refusing unknown schemas. [4]
 - A history file is read only at its owner's path, with its attempt for a reopened leaf. 
 - Record paths and the filename split. [6]
@@ -96,3 +97,5 @@ repository layout it declares, and calls no sibling repository or external servi
 No cross-repo boundary is crossed by this file.
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/models/knowledge_files/documents.py::parse_history_document - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The document union gains the census documents. [3]

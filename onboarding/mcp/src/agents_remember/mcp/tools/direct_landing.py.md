@@ -42,7 +42,10 @@ No configured Domain Documentation source applies.
 
 - The payload builder `direct_landing_payload` wraps the application result with the standard envelope. [1]
 
-- The standard `_tool_payload` envelope converts one application result into its protocol-ready response. [2]
+
+
+- The standard `_tool_payload` envelope converts one application result into its protocol-ready response. Anchor: `_tool_payload` [2]
+
 
 
 - Registered as a public tool. [3]
@@ -54,6 +57,7 @@ No configured Domain Documentation source applies.
 ### Cross-Repo References
 
 No meaningful cross-repository reference applies.
+
 
 
 - The registration declaration. [4]

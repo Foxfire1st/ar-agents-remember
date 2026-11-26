@@ -79,7 +79,10 @@ No relevant documentation found after checking live sources.
 - The declared policy: the ledger cache, the bootstrap scaffolding, and their one tuple. [1]
 - The staging helpers turn names into exclusion pathspecs and remove derived entries from the index. [2]
 - Baseline adoption passes the shared exclusions on the private-index staging call. [3]
-- External closeout applies the shared exclusions to its dirty check and exact memory-tree capture. [5]
+
+
+- External closeout applies the shared exclusions to its dirty check and exact memory-tree capture. Anchor: `_exact_memory_tree`, `_commit_memory_content` [5]
+
 
 - Since MIK-R09 the mandatory gate's exact-tree captures use it too (the closeout's `_exact_memory_tree`, direct landing's `_memory_content_tree`), so the tree the gate judges leaves out what the memory commit leaves out. [6]
 

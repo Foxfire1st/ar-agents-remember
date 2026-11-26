@@ -32,7 +32,9 @@ The review page’s shown-set card reader sorts and deduplicates its invariant I
 
 reviewTrees.ts carries the four code/memory trees and pinning refs, knowledge and index degradation, reopened code-side state, currentness, worklist/history linkage, supplied implementation facts and realization/proof entries on both code sides. Its leaf-wide answer also carries the leaf's highest recorded comparison number, kept apart from the comparison the answer resolved, and the delivered notice: whether the shown comparison is the pair the leaf delivered, with that pair's trees. The leaf-wide result no longer carries an aggregate memory diff grouped by record/source; standalone knowledge-tree comparison is a separate owner. Its vocabulary is snake_case. Requests address live, recorded or numbered comparisons and optionally invariants, not arbitrary paths/tree IDs. Trees, not-converted and refused are distinct answers. The card-entry hook shares in-flight reads and suppresses callbacks after unmount without aborting the shared acquisition; the leaf-wide hook aborts superseded reads and uses sequence guards and retries only reviewer_busy/inputs_changing, up to seven retries after the initial read with delays 1500, 2000, 3000, 4000, 5000, 6000 and 8000 ms. Loading remains until the final outcome, and abort ends the wait. Claims that the server stops work on disconnect require server-path evidence beyond the client abort itself.
 
-Catalogue and summary readers accept an optional recorded comparison number. They transmit it to their own endpoints and include it in their local/retained question identity, preserving the separate leaf-scoped invalidation and generation guards. The summary can wait disabled until the number is known. review.ts no longer declares or exports the source-content expansion client. reviewFamily.ts additionally mirrors the selected revisions’ display versions and writer state/owners/detail.
+Catalogue and summary readers accept an optional recorded comparison number. They transmit it to their own endpoints and include it in their local/retained question identity, preserving the separate leaf-scoped invalidation and generation guards. The summary can wait disabled until the number is known. review.ts no longer declares or exports the source-content expansion client. reviewFamily.ts mirrors selected revisions’ display versions and their writer provenance. Its guarantee comparison retains both snapshot operands when the revision ID is the same, so the selected revision can keep its state on each side.
+
+Knowledge reader record answers carry optional derived revision state and writer fields for the selected memory snapshot. In Intent Review, family and invariant outline rows carry optional candidate-side revision state and writer role and model. Each mirror carries the supplied fields.
 
 The existing state stream also carries review.explainer.moved. Its listener ignores a stopped or replaced EventSource, marks a current event alive and publishes the supplied move or clear notice. The moved subscriber set is keyed by the exact repository, master and leaf; it opens no connection or model turn. ReviewSurface owns whether the notice offers Update or renews the deterministic live reads.
 
@@ -156,7 +158,6 @@ Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.ts:474-562 
 
 - **The reviewed subject as the server's catalogue lists it — presence beside the label, the count field deleted (`ICR-R09@v1`), still the entry's only legitimate selector source, with no path field on purpose.** [31]
 
-- **The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing, and whose answered form carries the labelled totals of the whole catalogue.** [32]
 
 - The closed selector union, the two kinds the server admits. [34]
 
@@ -170,17 +171,13 @@ Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.ts:474-562 
 
 - **The comparison identity that states whether knowledge was compared, and the staleness union that gained the task-context state.** [39]
 
-- The payload whose comparison may be absent, and the pane that says which question was answered. [40]
 
-- **The request that omits the selector when there is none — the task-context entry.** [41]
 
 - The leaf-wide tree answer carries optional currentness, worklist, implementation facts and focused entries, not an aggregate memory-diff field. [109]
 
 - **The generation pins, the published generation identity, and the pins threaded through both master reads.** [54]
 
-- **The new family mirror module, and the re-export that keeps `data/review.ts` the route's one public entry.** [55]
 
-- **The bounded-collection union that lists `family_members` because the server accepts it, and the mirror that never narrows it.** [56]
 
 - **The set a request may name with no cursor, and the reason `family_members` is not in it.** [57]
 
@@ -244,7 +241,6 @@ Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.ts:474-562 
 
 - Drift display consumes reporting counts; `selectors.ts` defines no provider groupings. [107]
 
-- The review wire mirror transports recorded meaning steps with their own attempts/revisions and distinguishes readable none from unavailable. [85]
 
 - The served TaskEntry mirror carries optional document reference, identity, state, parent/children and counts; no separate series-child consumer union is part of the native entry model. [26]
 
@@ -307,3 +303,13 @@ Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.ts:474-562 
 - The existing state stream also carries review.explainer.moved. Its listener ignores a stopped or replaced EventSource, marks a current event alive and publishes the supplied move or clear notice. The moved subscriber set is keyed by the exact repository, master and leaf; it opens no connection or model turn. ReviewSurface owns whether the notice offers Update or renews the deterministic live reads. Anchor: `publishReviewExplainerMoved` [117]
 
 - Changed-file navigation uses ChangeList in the existing comparison viewer; review openers bind its recorded comparison and retain a named unavailable-range answer. [42]
+
+- **The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing, and whose answered form carries the labelled totals of the whole catalogue.** [32]
+- The payload whose comparison may be absent, and the pane that says which question was answered. [40]
+- **The request that omits the selector when there is none — the task-context entry.** [41]
+- The family mirror owns the family wire shapes and the review client re-exports them. [55]
+- **The bounded-collection union that lists `family_members` because the server accepts it, and the mirror that never narrows it.** [56]
+- The review wire mirror transports recorded meaning steps with their own attempts/revisions and distinguishes readable none from unavailable. [85]
+- The Knowledge reader record and summaries carry optional revision state and writer fields. [124]
+- Intent Review outline rows carry the candidate revision state and compact writer shape. [125]
+- Same-revision family comparisons retain both snapshot operands. [126]

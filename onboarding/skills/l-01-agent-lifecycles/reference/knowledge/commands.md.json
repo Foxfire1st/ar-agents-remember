@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
+        "blob": "32f6bd5c19f15de6e7a867989ab03269ba4936c2",
+        "content": "sha256:76cff30584bfa738d4420a7990db3973b6b6396afec98358cd09c4ad38ed1510",
+        "locator": {
+          "end": 79,
+          "kind": "line_range",
+          "start": 79
+        }
+      },
+      "id": "RLZ-59FG0Y",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Lists the compact per-file fields, states which fuller fields may fit and explains how a covering writer renews a saved copy.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "32f6bd5c19f15de6e7a867989ab03269ba4936c2",
         "content": "sha256:2545f4afd1342b36e468538939400a02c0aeef5e5be04014fecd045af0c38c03",
         "locator": {
           "end": 17,
@@ -22,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
+        "blob": "32f6bd5c19f15de6e7a867989ab03269ba4936c2",
         "content": "sha256:3588289e4f62a9f22d76c4fb72ba738526f8e6616745d0fef25808c7c438075a",
         "locator": {
           "end": 81,
@@ -41,8 +60,8 @@
     },
     {
       "anchor": {
-        "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
-        "content": "sha256:0c07decd0dffc1f6b1ed47687bcb5d7671e037b245bc61ee8fe4d6f8dd6036cc",
+        "blob": "32f6bd5c19f15de6e7a867989ab03269ba4936c2",
+        "content": "sha256:76cff30584bfa738d4420a7990db3973b6b6396afec98358cd09c4ad38ed1510",
         "locator": {
           "end": 79,
           "kind": "line_range",
@@ -55,7 +74,7 @@
         "handoffEntry": "L7-CUR-PRESENTATION-02",
         "leaf": "261112-BUG-L7"
       },
-      "rationale": "The public reader reference explains that an absent Markdown half leaves the entry half readable, names that half and reports cardStatus=sidecar-only; this describes visibility without claiming its records are current.",
+      "rationale": "The public reader reference says a card with only its entry half has cardStatus of sidecar-only and identifies the entry file as a possible fuller-row field. That visibility leaves record currentness to the reader's separate check.",
       "role": "presentation"
     }
   ],
@@ -65,7 +84,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
+            "blob": "32f6bd5c19f15de6e7a867989ab03269ba4936c2",
             "content": "sha256:1de07f100ce7ba83f43706ff23cbf3e52678dd1130a515b3a03e3c85aef98d76",
             "locator": {
               "end": 17,
@@ -82,7 +101,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
+            "blob": "32f6bd5c19f15de6e7a867989ab03269ba4936c2",
             "content": "sha256:ee88e0e5db1e07fc813043ded75aeaef6583e93f395ff9d56ab4cca17380e7cf",
             "locator": {
               "end": 56,
@@ -99,8 +118,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
-            "content": "sha256:3c833cc91f69908ef7a24874656b86b2ee8bb62cba8cf9b5faff6b598260cd8d",
+            "blob": "32f6bd5c19f15de6e7a867989ab03269ba4936c2",
+            "content": "sha256:134f52cbbb8ffff1bad8fa616618aed077727480e79fd8c1560e2f41bd52759d",
             "locator": {
               "end": 93,
               "kind": "line_range",
@@ -116,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
+            "blob": "32f6bd5c19f15de6e7a867989ab03269ba4936c2",
             "content": "sha256:b32a08a410949625ea303e0ce48e6326a7b8604d9d279a749f2190cd8002983e",
             "locator": {
               "end": 99,
@@ -133,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
+            "blob": "32f6bd5c19f15de6e7a867989ab03269ba4936c2",
             "content": "sha256:bb266f36b658e27a3101d6972d80a5fc056074f7f35d7729e4bdf8f698552b30",
             "locator": {
               "end": 128,
@@ -150,12 +169,81 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd4f658fbc34ddc08c91fd12fbc173c8dd7a5267",
+            "blob": "32f6bd5c19f15de6e7a867989ab03269ba4936c2",
             "content": "sha256:08143afdb5bf476b3873c06330e2d478e771cfef58cfaf9cc7052f60cd073192",
             "locator": {
               "end": 136,
               "kind": "line_range",
               "start": 130
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The workflow table distinguishes compact replies with applicable card status and saved-brief pointers from fuller replies that can include rule text. A covering write renews a missing or older brief when the writer can refresh it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f84319f540b34af2161212763a118f5e52b00e1",
+            "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "content": "sha256:471da92ea95b622c6fcabcbf2c3ee284c21b03fa248586ea8e61e90211f6a18a",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/application/read_files_briefs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "content": "sha256:6e80ad899e73b4af5891915a7bb47a67abe595b035b57a607ffc06149ee9941a",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "mcp/src/agents_remember/application/read_files_briefs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b1c36e5ae6160b8579f2f1783a7ac45cdb961d74",
+            "content": "sha256:d12893bc8963ee3c8f1abcaf553337e94c78a293eb0cf399ee18707e7dd51be3",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "mcp/tests/tool_answer_l109_cases.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "32f6bd5c19f15de6e7a867989ab03269ba4936c2",
+            "content": "sha256:76cff30584bfa738d4420a7990db3973b6b6396afec98358cd09c4ad38ed1510",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
             }
           },
           "kind": "code"

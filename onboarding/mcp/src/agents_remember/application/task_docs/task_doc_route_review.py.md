@@ -68,6 +68,8 @@ None recorded.
 
 ## Current Contract
 
+For a memory review, `_record_task_review_bound` passes the product-derived recorder and handover stamps to the candidate-bound review transition. This path records the generic round without writing the independent code route-review artifact.
+
 Explicit reviewKind=memory selects the independent memory candidate: contract.memory_worktree when present, otherwise the configured memory root. Default/code still selects an existing leaf code worktree or repository root. `candidate_identity_for_review` validates the lane before resolving its actual byte identity. `with_review_lane_result` retains present memory state and labels review mutations, with memory-specific updated phrases. Route evidence stays code-only: memory results use record_review and are refused by record_route_review before route stamping. Generic create cannot seed memoryReviewState, and replace cannot change or erase it. Existing branch grants, exact task binding and route/intent authority remain separate.
 
 
@@ -77,8 +79,10 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 ## Evidence
 
+- Generic review recording forwards captured stamps to the bound review state transition. [18]
 
-- Worker/Curator typed review census, record-only exclusion and unknown history. [10]
+
+
 - Reason admission, threshold and differing-harness/model inheritance boundary. [11]
 - Record-only memory identity comes from memory authority, never the sibling code root. [12]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [13]
@@ -93,15 +97,12 @@ No configured Domain Documentation source applies.
 ### Repo-Internal References
 
 
-- Call-level knobs and the branch-addressed policy gate. [1]
 
 
-- The binding form that records a review over the resolved candidate document and re-validates. [2]
 
 - The legacy positional recorder passing the resolved leaf document. [3]
 - Exact-binding refusal with the L16-R9 recovery dialect. [4]
 
-- The route-review authority rule (create/replace cannot author or change evidence). [5]
 
 
 - The ordinary leaf builder stamps the intent of the exact resolved leaf document. [6]
@@ -124,6 +125,15 @@ missing/stale refuses. The application seam itself performs no review and owns n
 semantics. Part of the landed L25 candidate `99dc249b`.
 
 
-- Branch review is canonical-leaf opt-in under the live grant, not a runtime setting. [9]
+- Branch review is canonical-leaf opt-in under the live grant, not a runtime setting.
+
+
+- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [10]
 
 - The task_doc facade dispatches ordinary and routed review recording through its candidate-preparation function. [8]
+
+- The binding form that records a review over the resolved candidate document and re-validates. [2]
+- The route-review authority rule (create/replace cannot author or change evidence). [5]
+
+- Call-level knobs and the branch-addressed policy gate. [1]
+- Branch review is canonical-leaf opt-in under the live grant, not a runtime setting. [9]

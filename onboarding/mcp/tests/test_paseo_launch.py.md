@@ -64,4 +64,5 @@ The fixture now gives the process a short temporary home of its own, as a real a
 
 
 
+
 - The launch fixture reuses the shared fake runtime and connects it to catalogue, launch and status calls. [2]

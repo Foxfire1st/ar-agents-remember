@@ -17,7 +17,7 @@ storage owner is `memory/knowledge/families.py`.
 ## Code Commentary
 ### Logic
 
-The draft/stored value split keeps a caller-supplied payload digest out of revision authoring. The decoded revision carries its seal and checked sorted predecessor set. Construction refuses inconsistent acceptance, duplicate predecessors and self-predecessors.
+The draft/stored value split keeps a caller-supplied payload digest out of revision authoring. The decoded revision carries its seal and checked sorted predecessor set. Construction refuses duplicate predecessors and self-predecessors. The selected tree's derived state stays outside the authored payload seal.
 
 ### Invariants And Boundaries
 
@@ -33,16 +33,10 @@ None recorded.
   `Authorship` — with a non-blank label validator.
 - `FamilyIdentity` adds `repository_id` and the expected `row_digest`, so a stored identity can be
   compared against what a caller remembered.
-- `FamilyRevisionDraft` is the authored aggregate before sealing: `family_id`, `revision_id`,
-  `display_version`, `joint_guarantee`, `predecessors`, `state_at_origin`, `acceptance_ref` and
-  `provenance`. **The digest is absent by design**: the store recomputes and stores it, so a caller
-  cannot present a payload whose seal belongs to different content.
+- `FamilyRevisionDraft` carries the family and revision identities, display version, authored guarantee, predecessors and provenance. It includes the derived `state` and has no payload digest field.
 - `FamilyRevision` adds `repository_id` and the `payload_digest`; `StoredFamilyRevision` carries the
   decoded `predecessors_sorted` set alongside the revision.
-- Two authored-value rules are refused at construction rather than at the storage boundary:
-  `require_consistent_acceptance` (an accepted origin needs a non-blank acceptance reference, and a
-  proposed one must not carry one) and the self-predecessor rule (a revision must not declare itself
-  as its own predecessor). `predecessors` additionally refuses a repeated identity.
+- The predecessor validators refuse duplicates and an edge from a revision to itself.
 
 ### Conventions
 
@@ -79,21 +73,14 @@ No configured domain documentation could be checked.
 
 - The separation between the family guarantee and its members' obligations. [1]
 - The identity draft and its stored, digest-carrying form. [2]
-- The authored aggregate before sealing, with its digest deliberately absent. [3]
-
-- The sealed revision and its stored read shape. [4]
-
-- The shared accepted/proposed rule this aggregate applies at construction. [5]
-- The payload this revision's digest seals, including the sorted predecessor set. [6]
-
-- The retained family revision decoder verifies the sealed aggregate and sorted predecessors. [7]
 
 
 
-- The production reader retrieves family identities and exact sealed revisions from the derived index; it writes nothing. [8]
 
 
-- The declared `family` and `family_revision` tables these values map onto. [9]
+
+
+
 The requirement this vocabulary's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it.
 
 ### Cross-Repo References
@@ -101,3 +88,12 @@ The requirement this vocabulary's first delivered slice belongs to: requirement 
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+- The sealed revision and its stored read shape. [4]
+- The production reader retrieves family identities and exact sealed revisions from the derived index; it writes nothing. [8]
+
+- The payload this revision's digest seals, including the sorted predecessor set. [6]
+- The retained family revision decoder verifies the sealed aggregate and sorted predecessors. [7]
+
+- The declared `family` and `family_revision` tables these values map onto. [9]
+- The authored aggregate before sealing, with its digest deliberately absent. [3]

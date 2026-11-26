@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
-        "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+        "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
+        "content": "sha256:54134483bed0c0cb45fbe46de56fa2b3b643f940f8a38ac4f0a0b4a645c4e31c",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
-        "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+        "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
+        "content": "sha256:54134483bed0c0cb45fbe46de56fa2b3b643f940f8a38ac4f0a0b4a645c4e31c",
         "locator": {
           "kind": "file"
         }
@@ -37,10 +37,10 @@
     },
     {
       "anchor": {
-        "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
-        "content": "sha256:4ec70abb65d7002ace55dfb97c23cd1a028ba6c91d48d1ffa2c97ddd1a34fa07",
+        "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
+        "content": "sha256:fee0ac76357b6f3d114d5a35d17acb01f40701a17458d78c9ad7d2813695f1f5",
         "locator": {
-          "end": 54,
+          "end": 82,
           "kind": "line_range",
           "start": 8
         }
@@ -56,8 +56,8 @@
     },
     {
       "anchor": {
-        "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
-        "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+        "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
+        "content": "sha256:54134483bed0c0cb45fbe46de56fa2b3b643f940f8a38ac4f0a0b4a645c4e31c",
         "locator": {
           "kind": "file"
         }
@@ -73,8 +73,8 @@
     },
     {
       "anchor": {
-        "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
-        "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+        "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
+        "content": "sha256:54134483bed0c0cb45fbe46de56fa2b3b643f940f8a38ac4f0a0b4a645c4e31c",
         "locator": {
           "kind": "file"
         }
@@ -90,8 +90,8 @@
     },
     {
       "anchor": {
-        "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
-        "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+        "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
+        "content": "sha256:54134483bed0c0cb45fbe46de56fa2b3b643f940f8a38ac4f0a0b4a645c4e31c",
         "locator": {
           "kind": "file"
         }
@@ -107,8 +107,8 @@
     },
     {
       "anchor": {
-        "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
-        "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+        "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
+        "content": "sha256:54134483bed0c0cb45fbe46de56fa2b3b643f940f8a38ac4f0a0b4a645c4e31c",
         "locator": {
           "kind": "file"
         }
@@ -124,7 +124,26 @@
     },
     {
       "anchor": {
-        "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
+        "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
+        "content": "sha256:7ed2be0e3c7ebe89f48eb29c7b1896b096d32c896b31ca9d27bd68275256c5bb",
+        "locator": {
+          "end": 28,
+          "kind": "line_range",
+          "start": 28
+        }
+      },
+      "id": "RLZ-FRP7FT",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Names the file-tool route for available saved briefs and the whole-record route for investigation.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
         "content": "sha256:2c45bdb1ead3c0dfe6dcbd9682f6b7430f209d9ee5b1af5c582282570d656cb5",
         "locator": {
           "end": 18,
@@ -143,8 +162,8 @@
     },
     {
       "anchor": {
-        "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
-        "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+        "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
+        "content": "sha256:54134483bed0c0cb45fbe46de56fa2b3b643f940f8a38ac4f0a0b4a645c4e31c",
         "locator": {
           "kind": "file"
         }
@@ -160,8 +179,8 @@
     },
     {
       "anchor": {
-        "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
-        "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+        "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
+        "content": "sha256:54134483bed0c0cb45fbe46de56fa2b3b643f940f8a38ac4f0a0b4a645c4e31c",
         "locator": {
           "kind": "file"
         }
@@ -177,8 +196,8 @@
     },
     {
       "anchor": {
-        "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
-        "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+        "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
+        "content": "sha256:54134483bed0c0cb45fbe46de56fa2b3b643f940f8a38ac4f0a0b4a645c4e31c",
         "locator": {
           "kind": "file"
         }
@@ -199,8 +218,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
-            "content": "sha256:a9568fd887bbc7b34443e94f060623a43689a42abbde634c18c7157f8cabea9a",
+            "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
+            "content": "sha256:54134483bed0c0cb45fbe46de56fa2b3b643f940f8a38ac4f0a0b4a645c4e31c",
             "locator": {
               "kind": "file"
             }
@@ -214,12 +233,81 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a8c098e9bfe5ff05bc1568cabde93d167e9ad35c",
+            "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
             "content": "sha256:5050eddc7ae94d38b46a52289e4c291723543e9cce31cc1f0776945fc590a448",
             "locator": {
               "end": 56,
               "kind": "line_range",
               "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. Knowledge_read names whole records and their evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f84319f540b34af2161212763a118f5e52b00e1",
+            "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "content": "sha256:471da92ea95b622c6fcabcbf2c3ee284c21b03fa248586ea8e61e90211f6a18a",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/application/read_files_briefs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "content": "sha256:6e80ad899e73b4af5891915a7bb47a67abe595b035b57a607ffc06149ee9941a",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "mcp/src/agents_remember/application/read_files_briefs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b1c36e5ae6160b8579f2f1783a7ac45cdb961d74",
+            "content": "sha256:d12893bc8963ee3c8f1abcaf553337e94c78a293eb0cf399ee18707e7dd51be3",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "mcp/tests/tool_answer_l109_cases.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3d76d47e26bf058a453421714a08b17ad065c4c2",
+            "content": "sha256:7ed2be0e3c7ebe89f48eb29c7b1896b096d32c896b31ca9d27bd68275256c5bb",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
             }
           },
           "kind": "code"

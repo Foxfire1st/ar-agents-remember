@@ -1,7 +1,7 @@
 {
   "anchor": {
-    "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
-    "content": "sha256:7826c72a7a27a46f2dff03a535a1e576667459cad0ad1b66aac3c83ab7df91f0",
+    "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+    "content": "sha256:7b5d0d19c9a4ee28d5b5e603600bf89600f18c3a2ae46ed03694bfc5352c67b6",
     "locator": {
       "kind": "symbol",
       "name": "_register_installation_tools"
@@ -18,12 +18,23 @@
     "leaf": "260928-MIK-L118",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 4,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928-MIK-L118"
   },
   "state": "open",
-  "statement": "The served description of runtime_install in mcp/registration/core.py names provider assets and the stop of leftover watchers of search providers; nothing else in the product sets up a search provider. The earlier provider-install/index/watcher guidance and the context_packet(include_providers=true) claim are gone from the public pages at the candidate."
+  "statement": "The served description of runtime_install in mcp/registration/core.py names provider assets and the stop of leftover watchers of search providers; nothing else in the product sets up a search provider. The earlier provider-install/index/watcher guidance and the context_packet(include_providers=true) claim are gone from the public pages at the candidate.",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

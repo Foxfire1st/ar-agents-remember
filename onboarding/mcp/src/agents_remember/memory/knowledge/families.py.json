@@ -3,14 +3,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Families are authored joint guarantees; these functions only read the derived index.\n\nAnchor: `get_family` `get_family_revision`",
+      "note": "Families are authored joint guarantees; these functions only read the derived index.",
       "targets": [
         {
           "anchor": {
-            "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
-            "content": "sha256:57f72baf8adc3f53f857c90088fe3142582d1c875cdce06320c91253b8665a11",
+            "blob": "8f688da87601ae8fd110f9441bd99a6c32d40a49",
+            "content": "sha256:c51a165b94e9dd6de79384fdbe979368a7dc0a52f33cd560713ccc13b1c1a432",
             "locator": {
-              "kind": "file"
+              "end": 45,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f688da87601ae8fd110f9441bd99a6c32d40a49",
+            "content": "sha256:97d8602f50f114fa81b06d74094ff753191ee59b262ed8b72aa1e0b677110615",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 48
             }
           },
           "kind": "code"
@@ -22,11 +36,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
-            "content": "sha256:f987f04351f9a963408d04353decdced875c8d570d21bdeb16852ae8f8f75efc",
+            "blob": "3d052ff5b8e4e6e5d88882fdee32d3d5184272a8",
+            "content": "sha256:83698392de83e24c362f68227e415012725c444bec9a0ab58371e0f9437eaac4",
             "locator": {
-              "kind": "symbol",
-              "name": "canonical_family_revision_payload"
+              "end": 79,
+              "kind": "line_range",
+              "start": 62
             },
             "path": "mcp/src/agents_remember/models/knowledge/digest.py"
           },
@@ -34,11 +49,12 @@
         },
         {
           "anchor": {
-            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
+            "blob": "3d052ff5b8e4e6e5d88882fdee32d3d5184272a8",
             "content": "sha256:50dd05ab638940b7a334858cebee588c309c288d58b283907bc2aafeb7e760eb",
             "locator": {
-              "kind": "symbol",
-              "name": "family_revision_payload_digest"
+              "end": 85,
+              "kind": "line_range",
+              "start": 82
             },
             "path": "mcp/src/agents_remember/models/knowledge/digest.py"
           },
@@ -51,7 +67,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0475c07db7f98c04497445589d9a2a30aa0089b",
+            "blob": "66de1ee906597baab3d43f7bd00ad076296ee3ca",
             "content": "sha256:f7dc8a9853d9b7f7760131731ccb7a767af8a95db9c8ad498153b9d7c9fc90f1",
             "locator": {
               "kind": "symbol",
@@ -63,7 +79,7 @@
         },
         {
           "anchor": {
-            "blob": "e0475c07db7f98c04497445589d9a2a30aa0089b",
+            "blob": "66de1ee906597baab3d43f7bd00ad076296ee3ca",
             "content": "sha256:b2c614b201a1856dd15e5c62a3cd89d08c0d7ddd8e308ddba27b3666e923539f",
             "locator": {
               "kind": "symbol",
@@ -76,12 +92,12 @@
       ]
     },
     "14": {
-      "note": "- The two rules this module is shaped by, stated in its own docstring.\n\nAnchor: `get_family_revision`",
+      "note": "The two rules this module is shaped by, stated in its own docstring.",
       "targets": [
         {
           "anchor": {
-            "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
-            "content": "sha256:57f72baf8adc3f53f857c90088fe3142582d1c875cdce06320c91253b8665a11",
+            "blob": "8f688da87601ae8fd110f9441bd99a6c32d40a49",
+            "content": "sha256:405db09647040bd7debc304786b505962354cb9e3a4d5f519018268661a2ef82",
             "locator": {
               "kind": "file"
             }
@@ -91,14 +107,16 @@
       ]
     },
     "15": {
-      "note": "- The read surface, including the seal-verifying revision read.\n\nAnchor: `get_family_revision`",
+      "note": "The read surface, including the seal-verifying revision read.",
       "targets": [
         {
           "anchor": {
-            "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
-            "content": "sha256:57f72baf8adc3f53f857c90088fe3142582d1c875cdce06320c91253b8665a11",
+            "blob": "8f688da87601ae8fd110f9441bd99a6c32d40a49",
+            "content": "sha256:97d8602f50f114fa81b06d74094ff753191ee59b262ed8b72aa1e0b677110615",
             "locator": {
-              "kind": "file"
+              "end": 61,
+              "kind": "line_range",
+              "start": 48
             }
           },
           "kind": "code"
@@ -106,15 +124,16 @@
       ]
     },
     "16": {
-      "note": "- The payload a family revision's digest seals, including the sorted predecessor set.",
+      "note": "The payload a family revision's digest seals, including the sorted predecessor set.",
       "targets": [
         {
           "anchor": {
-            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
-            "content": "sha256:f987f04351f9a963408d04353decdced875c8d570d21bdeb16852ae8f8f75efc",
+            "blob": "3d052ff5b8e4e6e5d88882fdee32d3d5184272a8",
+            "content": "sha256:83698392de83e24c362f68227e415012725c444bec9a0ab58371e0f9437eaac4",
             "locator": {
-              "kind": "symbol",
-              "name": "canonical_family_revision_payload"
+              "end": 79,
+              "kind": "line_range",
+              "start": 62
             },
             "path": "mcp/src/agents_remember/models/knowledge/digest.py"
           },
@@ -123,12 +142,12 @@
       ]
     },
     "17": {
-      "note": "- The declared `family`, `family_revision` and `family_member` tables and their indexes.\n\nAnchor: `TABLE_DDL`",
+      "note": "The declared `family`, `family_revision` and `family_member` tables and their indexes.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
-            "content": "sha256:9e10ce1d79604d8957a14bb7d9e140464ea4f5b91ed4cd87a5b76d911c6490a5",
+            "blob": "6869b696c169705ffdb8dcf595685df0bc2fb6b5",
+            "content": "sha256:c0e6d3fd7dbb17579c1fba9abe330f520d20fe00ae392b9e42307a7f862725d7",
             "locator": {
               "kind": "file"
             },
@@ -139,14 +158,40 @@
       ]
     },
     "9": {
-      "note": "The retained family identity, exact revision and revision enumeration reads.\n\nAnchor: `get_family` `get_family_revision` `list_family_revision_ids`",
+      "note": "The retained family identity, exact revision and revision enumeration reads.",
       "targets": [
         {
           "anchor": {
-            "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
-            "content": "sha256:57f72baf8adc3f53f857c90088fe3142582d1c875cdce06320c91253b8665a11",
+            "blob": "8f688da87601ae8fd110f9441bd99a6c32d40a49",
+            "content": "sha256:c51a165b94e9dd6de79384fdbe979368a7dc0a52f33cd560713ccc13b1c1a432",
             "locator": {
-              "kind": "file"
+              "end": 45,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f688da87601ae8fd110f9441bd99a6c32d40a49",
+            "content": "sha256:97d8602f50f114fa81b06d74094ff753191ee59b262ed8b72aa1e0b677110615",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f688da87601ae8fd110f9441bd99a6c32d40a49",
+            "content": "sha256:8efde8a6ffa20dfab43f421de39f55bccfb3cd8f9f7b726e5a5c635dee4daf87",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 64
             }
           },
           "kind": "code"

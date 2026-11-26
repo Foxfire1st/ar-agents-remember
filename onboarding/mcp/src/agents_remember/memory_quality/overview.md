@@ -169,6 +169,8 @@ Full synchronous quality uses the per-check Git source reader: listed but unread
 
 
 
+Converted validation parses the product's `converted-reviews.json` catalog separately from an owner's history file. It checks the catalog's document shape without treating it as an owner file for the closed-file rules.
+
 ## Evidence
 Past-epoch account (retained wording): - Retained reference account (no fresh execution or acceptance inferred): The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option.
 
@@ -176,7 +178,9 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 
 - The registered memory_quality_check dispatches sync/start/poll requests and returns findings, worklist and checklist evidence rather than semantic certification; formatting remains writer-owned.
 
+
 - The registered memory_quality_check dispatches sync/start/poll requests and returns findings, worklist and checklist evidence rather than semantic certification; formatting remains writer-owned. [3]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The missing-onboarding checker catches newly added worktree files before code commit. [4]
 - Retained reference account (no fresh execution or acceptance inferred): The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam. [6]
@@ -214,7 +218,6 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 - Retained reference account (no fresh execution or acceptance inferred): The refusing guard, registered on import. [64]
 - Retained reference account (no fresh execution or acceptance inferred): A reconsideration item's facts. [65]
 - Retained reference account (no fresh execution or acceptance inferred): The files the re-anchor check reads. [66]
-- Retained reference account (no fresh execution or acceptance inferred): The refusing and the merge-reported rule. [67]
 - Retained reference account (no fresh execution or acceptance inferred): The registering import. [68]
 - Retained reference account (no fresh execution or acceptance inferred): The leaf-publication route of the adapter. [69]
 - Retained reference account (no fresh execution or acceptance inferred): The section's lead: the gate counts each open item. [70]
@@ -250,10 +253,13 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 - Named converted-base refusal depends on the supplied port; no-port HEAD reads can yield no bases; reported base failure withholds anchor-path refusals.  Anchor: `_comparison_bases` `converted_knowledge_check` [81]
 - Retained reference account (no fresh execution or acceptance inferred): The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner.  Anchor: `run_memory_quality_request` `_execute_memory_quality` [1]
 
-- The memory registrar exposes `memory_quality_check` to agents and routes it to the start, poll or whole-run payload. [2]
+
+
+- The memory registrar exposes `memory_quality_check` to agents and routes it to the start, poll or whole-run payload. Anchor: `memory_quality_check_payload` [2]
+
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The application surface projects readiness with no affected-closure plan. [16]
-- Retained reference account (no fresh execution or acceptance inferred): The caller-exclude surface on the registered tool and the CLI. [25]
 - Interactive catalog projection supplies no affected-closure plan and does not claim certification eligibility. [89]
 
 - The curator checklist renderer owns deterministic grouping, closeout-provenance separation and atomic publication. [7]
@@ -266,9 +272,10 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 - parsing_scope retains diagnostic parse trees only within the active call and clears them on exit. [100]
 
 - MCP dispatch enters one definition scope before tool validation and handler execution. [101]
-
 - Finite command handlers enter definition_scope; parser registration leaves the dashboard handler unwrapped. [102]
 
 - The background quality worker starts in a fresh context and opens its own request memo and definition scopes for the computation. [103]
 
-- TypeScript anchor parsing reuses exact inputs and unresolved answers within one native request. Unscoped callers use the separate process memo. \[104] [104]
+- Retained reference account (no fresh execution or acceptance inferred): The refusing and the merge-reported rule. [67]
+
+- TypeScript anchor parsing reuses exact inputs and unresolved answers within one native request. Unscoped callers use the separate process memo. [104]

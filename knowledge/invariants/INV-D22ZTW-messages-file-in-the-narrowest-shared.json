@@ -5,15 +5,17 @@
     ],
     "justification": "The public producer, file storage, lifecycle or native transport owners must preserve this same boundary across their distinct source locations."
   },
-  "applicability": "Task-record storage and leaf-workspace message-link creation or cleanup.",
+  "applicability": "Task-record message storage, leaf-workspace message links, and terminal cleanup or abandon of a workspace messages path.",
   "conditions": [
-    "Use the narrowest shared canonical task selection."
+    "Use the narrowest shared canonical task selection.",
+    "A real workspace messages directory is moved out with collision-safe preservation before whole-folder removal.",
+    "A messages symlink is removed without being followed so no canonical message file is deleted."
   ],
   "exclusions": [
-    "role_start assignment briefs",
-    "Developer chat text and native host chat display",
-    "Messages via removed earlier orchestration tools",
-    "Taskless messages use the sender class execution record; occupied non-links/divergent links are preserved with warnings."
+    "role_start assignment briefs.",
+    "Developer chat text and native host chat display.",
+    "Messages via removed earlier orchestration tools.",
+    "Taskless messages use the sender class execution record; during live launch, occupied non-links or divergent links are preserved with warnings, and the directory-only sprint-archive helper preserves a non-link."
   ],
   "id": "INV-D22ZTW",
   "origin": {
@@ -27,9 +29,20 @@
     "leaf": "260928-MIK-L117",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Messages file in the narrowest shared task folder (leaf, else master, else sprint); the leaf workspace links it as messages, and cleanup removes the link while keeping every file.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "Messages file in the narrowest shared task folder (leaf, else master, else sprint); the leaf workspace links it as messages, terminal cleanup and abandon remove a messages symlink without following it, move out regular files from a real workspace messages directory into canonical notes with collision-safe preservation before whole-folder removal, and never delete a canonical message file of the task or master.",
+  "supersedes": [],
+  "title": "Messages file canonically; cleanup unlinks links and moves out real dirs",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Terminal cleanup or abandon of a leaf enclosure with a task tool log. The cited tests exercise this rule where a regression could change a reader or lifecycle outcome."
+  },
+  "applicability": "Terminal cleanup or abandon of a leaf enclosure with a task tool log.",
+  "conditions": [
+    "Export includes only the task’s own calls and stores the durable normalized line file under the master reports.",
+    "Cleanup proceeds after a successful export. A failed export leaves the enclosure and log available for retry."
+  ],
+  "exclusions": [
+    "The export excludes centrally filed calls about the task and removed-workspace path references."
+  ],
+  "id": "INV-B1DZ6W",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "KNO-R04 evidence E09 and W2 F07/F08 checks. The complete cleanup witness follows code PASS.",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/04_the-brief-of-a-file-0df6c23e90-ar/role-reports/worker/db647361-59b7-4042-bb9f-6d7638bd5e03/role-launch/d884-round5/REPORT.md#evidence-map"
+      ],
+      "path": "kno-l4-w3-new-rules.json"
+    },
+    "handoffEntry": "KNO-R04@v1 rule 13",
+    "leaf": "261112-KNO-L4",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Terminal removal keeps the task’s tool calls in its durable report and preserves the enclosure if exporting fails.",
+  "status": "proposed",
+  "supersedes": []
+}

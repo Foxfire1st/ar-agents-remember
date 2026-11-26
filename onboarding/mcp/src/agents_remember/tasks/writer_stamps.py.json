@@ -1,0 +1,76 @@
+{
+  "path": "mcp/src/agents_remember/tasks/writer_stamps.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b87eb9969a76d514e31f41057ad48548c66ff6b0",
+        "content": "sha256:8001ca0a36c94f27157f91cb5a47e1b92a6af14b2bbc85f8f5e5526a0e23df42",
+        "locator": {
+          "kind": "symbol",
+          "name": "stamp"
+        }
+      },
+      "id": "RLZ-7MY6KF",
+      "invariant": "INV-G8AX2H",
+      "origin": {
+        "handoffEntry": "L3-W1-01",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Builds the stamp from the binding facts and the seat's receipt, the host's observed model and effort first, and names the reason for every value it cannot read.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b87eb9969a76d514e31f41057ad48548c66ff6b0",
+        "content": "sha256:7be7cfb034a14b7298af254f8d5b727835657816a0aa3763a010f8f20d5a7af7",
+        "locator": {
+          "kind": "symbol",
+          "name": "current_task_receipts"
+        }
+      },
+      "id": "RLZ-J3ZHR0",
+      "invariant": "INV-AV04NY",
+      "origin": {
+        "handoffEntry": "L3-W1-05",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The receipts of the seats a task folder registers now, superseded ones excluded.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The stamp uses values recorded by the launch, with reasons for unresolved fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87eb9969a76d514e31f41057ad48548c66ff6b0",
+            "content": "sha256:8001ca0a36c94f27157f91cb5a47e1b92a6af14b2bbc85f8f5e5526a0e23df42",
+            "locator": {
+              "kind": "symbol",
+              "name": "stamp"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Receipt lookup has a taskless path for a binding outside a task.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87eb9969a76d514e31f41057ad48548c66ff6b0",
+            "content": "sha256:2f98609de003d681d87e14a8992790df65d8e44ae8a09a15b89c721570d32538",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskless_receipt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

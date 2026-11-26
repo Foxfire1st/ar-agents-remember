@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cc48a16958cc6f53b7eb022faa7e4a91e960dda3",
+        "blob": "7a5856e55ebfa867ec97add374ebe1a33174adb2",
         "content": "sha256:deec7c55a3c740540045f59d404a5587b6d96b8d1fcf752debfc43928d64541e",
         "locator": {
-          "end": 61,
+          "end": 62,
           "kind": "line_range",
-          "start": 61
+          "start": 62
         }
       },
       "id": "RLZ-36FEFX",
@@ -28,7 +28,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc48a16958cc6f53b7eb022faa7e4a91e960dda3",
+            "blob": "7a5856e55ebfa867ec97add374ebe1a33174adb2",
             "content": "sha256:960687ba725703cfd98e745a0db18fa6d1bc861426c6548a6a9ed75897ae7f90",
             "locator": {
               "kind": "symbol",
@@ -44,12 +44,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc48a16958cc6f53b7eb022faa7e4a91e960dda3",
-            "content": "sha256:0f050f92294b30d17fd5a933a438be1a7ae4205b68457d79c19c73bb601bb17d",
+            "blob": "7a5856e55ebfa867ec97add374ebe1a33174adb2",
+            "content": "sha256:ac85131a33d5b8f712e1bf8f964a87d1fcfaf1e89ca47eb198b5e834bae16004",
             "locator": {
-              "end": 87,
+              "end": 92,
               "kind": "line_range",
-              "start": 54
+              "start": 55
             }
           },
           "kind": "code"
@@ -61,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "413fe7d9f7f1d9f719e39495e704dacf50ad5fc8",
-            "content": "sha256:748234a24f955908386c3996bd744d282f350805fbdef64170d53e39caa0ae6c",
+            "blob": "d7b45112bae598c1364e045d6c0a11d384b90c95",
+            "content": "sha256:99885153127f0b4e879eb72fb95a02175c52b601421e7c3c4fcf35e79a11d996",
             "locator": {
-              "end": 133,
+              "end": 179,
               "kind": "line_range",
-              "start": 81
+              "start": 106
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },

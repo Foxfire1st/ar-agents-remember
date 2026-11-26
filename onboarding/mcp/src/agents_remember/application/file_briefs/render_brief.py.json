@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/file_briefs/render_brief.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Markdown renderer puts the recorded tree and file purpose ahead of the local rule blocks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b56ccd34cb5675adf602c701eac1aec9ae27ce52",
+            "content": "sha256:9dc44a2ebae162210988b865549c5de2e0fd2500afec0ebc85569a531edb0e9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "brief_markdown"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

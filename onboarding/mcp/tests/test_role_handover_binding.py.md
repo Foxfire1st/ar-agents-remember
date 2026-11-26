@@ -49,7 +49,9 @@ Reusing an enclosure reports its resolved `referenceRoot`; failure to copy an ag
 
 
 
+
 - Scoped compilation, taskless planning, repeats, enclosure binding, report isolation and folder/grant preparation are asserted here. [1]
+
 
 
 

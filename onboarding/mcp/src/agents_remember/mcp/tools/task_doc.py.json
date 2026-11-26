@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc5c0196d34306f2bba7779d9981858e520a84ed",
+            "blob": "28334b7d7f4661e9186441234de85ca1d34ab491",
             "content": "sha256:da66207966111f9ba7d9196396a13f7c5325ea40eed2fe489f1170ec78500d91",
             "locator": {
               "kind": "symbol",
@@ -21,12 +21,12 @@
       ]
     },
     "2": {
-      "note": "The shared validation/emission choke point.\n\nAnchor: `_tool_payload`",
+      "note": "The shared validation/emission choke point. Anchor: `_tool_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
-            "content": "sha256:e65598ad08d511a5ffa26a3099d273596eea7844d5c2a00685c2ccb183271c43",
+            "blob": "c1de505d6e140874b674a3f0afbfccb01590e362",
+            "content": "sha256:11b1fc8e2810d5677e38dee186495dae46d165ae39a1e63e3058fab306d145d2",
             "locator": {
               "kind": "file"
             },

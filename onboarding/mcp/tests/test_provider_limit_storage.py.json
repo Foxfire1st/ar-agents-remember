@@ -1,0 +1,109 @@
+{
+  "path": "mcp/tests/test_provider_limit_storage.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d049615ffc7af3252c708e17a3ee39e38583ef77",
+        "content": "sha256:d69b7185011e08ba11ba3f9a92c3373360f39e1aee84e3897fa42d71f1feb1a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_clear_marker_survives_an_unrelated_write_and_expires"
+        }
+      },
+      "facet": "A clear marker survives an unrelated write and expires with the old deadline.",
+      "id": "PRF-BSWSC0",
+      "invariant": "INV-2KVT5S",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 4",
+        "leaf": "261112-BUG-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d049615ffc7af3252c708e17a3ee39e38583ef77",
+        "content": "sha256:5ee44df6c510e22e4f6e76d42f34ddb92d37c68742e76eeb90bb1507e295877c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_due_claim_survives_a_fresh_snapshot_and_keeps_the_fact"
+        }
+      },
+      "facet": "A claimed due attempt survives a fresh read and the report's fact and mapping remain.",
+      "id": "PRF-C769NP",
+      "invariant": "INV-795NRN",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 1",
+        "leaf": "261112-BUG-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d049615ffc7af3252c708e17a3ee39e38583ef77",
+        "content": "sha256:c670a152e056ac9a275770015e3028baaafc3c0fe90ac2685bba5ae818da5f69",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_concurrent_usage_reads_keep_both_reports_and_mappings"
+        }
+      },
+      "facet": "Two concurrent usage writes keep both reports and their mappings.",
+      "id": "PRF-GEANE4",
+      "invariant": "INV-YEQENJ",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 2",
+        "leaf": "261112-BUG-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d049615ffc7af3252c708e17a3ee39e38583ef77",
+        "content": "sha256:6a53eba153d00aace10e20532a351f7c844451934ab3e78b868ddfebe4d8e3db",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_quiet_replacement_prunes_departed_agent_mappings"
+        }
+      },
+      "facet": "Every quiet replacement prunes the mappings of departed agents.",
+      "id": "PRF-JWH1JN",
+      "invariant": "INV-795NRN",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 1",
+        "leaf": "261112-BUG-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d049615ffc7af3252c708e17a3ee39e38583ef77",
+        "content": "sha256:35f1928892068d5c86c6abd6fa51d96bd5f63de129f33b96e1602d9d4d226ce9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_periodic_preservation_does_not_restore_obsolete_or_foreign_mappings"
+        }
+      },
+      "facet": "Preservation restores no obsolete or foreign mapping.",
+      "id": "PRF-Q9YPB7",
+      "invariant": "INV-YEQENJ",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 2",
+        "leaf": "261112-BUG-L37"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The suite holds the claimed attempt, quiet replacement, early-clear lifetime, last-blocker release and concurrent-writer rules.\n\nAnchor: `test_due_claim_survives_a_fresh_snapshot_and_keeps_the_fact`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d049615ffc7af3252c708e17a3ee39e38583ef77",
+            "content": "sha256:a089f0dca42bbac3262f228d4adcf56a25ad47fdbba94b560af0e5bf61cb2d9b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

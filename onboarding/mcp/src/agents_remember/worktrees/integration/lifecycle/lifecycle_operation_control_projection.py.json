@@ -191,12 +191,12 @@
         },
         {
           "anchor": {
-            "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
+            "blob": "f6c05e150769e32c8c67cd6f806b4d4ec29d7140",
             "content": "sha256:915059596accd2500c8008aa4cb6bcec5e584f7a2ac408297c339c6607ef5324",
             "locator": {
-              "end": 1468,
+              "end": 1472,
               "kind": "line_range",
-              "start": 1439
+              "start": 1443
             },
             "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
           },

@@ -7,13 +7,14 @@
 ## Current source contract evidence
 
 
-- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [54]
 
 
 ## Purpose
 
 Strict ToolResponse contracts for the four mounted knowledge operations: knowledge_read, knowledge_diff, knowledge_integrity_check and knowledge_write. These shapes declare the wire envelope; they neither author knowledge nor reinterpret a view's payload.
 ## Code Commentary
+
+The write response includes bounded notes, such as an updated legacy rule still missing a title. `notesTruncated` signals a partial list, and `reportPath` names the whole writer report.
 
 ### Logic
 
@@ -128,6 +129,8 @@ invariant the answer carries at the code tree named by `codeTreeId`: `codeTree`,
   when the caller named a `contractPath`; the response is dumped with `exclude_none`, so a dataset-only
   call's wire shape is unchanged.
 
+The record result also exposes `recordState` and short writer attribution as top-level fields so its overflow answer can retain them. They describe the revision separately from the read's own result state and its currentness measurements.
+
 ## Evidence
 
 References to verbatim view payload, complete/leftOut diffs and pre-retirement database fields below are historical/internal witnesses only, not the current mounted shape. Present wire evidence is KnowledgeReadResponse provenance/naming fields, KnowledgeDiffResponse report fields and the naming projection. All test citations are fixture assertions, not execution in this review.
@@ -152,73 +155,61 @@ No configured domain documentation could be checked.
 
 
 
-- The integrity handler reports text-tree validation. [9]
 
 
 
 
 
-- The integrity model carries validator inputs, report and optional leaf worklist fields. [8]
 
 
 
 
 
-- The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [14]
 
 
 
 
 
-- The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [13]
 
 
 
 
 
-- The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [11]
 
 
 
 
 
-- The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [10]
 
 
 
 
 
-- The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [6]
 
 
 
 
 
-- The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [5]
 
 
 
 
 
-- The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [4]
 
 
 
 
 
-- The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [3]
 
 
 
 
 
-- The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [2]
 
 
 
 
 
-- The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [1]
 
 
 
@@ -236,7 +227,6 @@ in the working candidate.
 
 
 
-- The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [17]
 
 
 
@@ -244,7 +234,6 @@ in the working candidate.
 
 
 
-- The integrity response carries the text-tree validator report. [20]
 
 
 
@@ -254,19 +243,16 @@ in the working candidate.
 - The choke point that validates a handler's plain dict against the registered model, so an undeclared key is a validation error. [27]
 
 
-- The read builder returns the reader-owned payload and read extras. [28]
 
 
 
 
-- The tree-diff and validator-report builders produce factual outputs, neither a semantic verdict. [30]
 
 
 
 - The closed view refusal vocabulary the read handler's `unknown_view` code comes from, which these models carry as a plain string rather than re-declare. [33]
 
 
-- The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [34]
 
 
 
@@ -289,19 +275,14 @@ No meaningful cross-repo references found.
 - The docstring paragraph on a memory tree's bounded page. [42]
 - The module docstring's statement that a memory tree is named, never hidden, and that a partial index is never presented as complete. [43]
 
-- The optional `proofs` field on the read response, beside L03's `currentness`, since MIK-R02 the `page` and `threshold` fields, since MIK-R01 the optional `families`, and since MIK-R05 the optional `routeChain`. [44]
 
 
-- The optional `currentness` field on the read response, after `proofs`, re-read at MIK-R02 when the model gained `page` and `threshold`, at MIK-R01 when it gained `families`, and at MIK-R05 when it gained `routeChain`. [45]
 
 
-- The `page` state (which since MIK-R01 also answers a leaf read, and since MIK-R05 a family seed) and the optional `page` and `threshold` fields on the read model. [46]
 
 
-- The read response: which view and which snapshot it was read at, echoed beside the payload verbatim, plus the optional memory-tree binding and index completeness when the read went through a converted tree's index. [47]
 
 
-- The read handler that stores the view payload's own JSON and echoes the snapshot, the completeness statement (forced to `false` by a partial index) and the continuation token, beside `memoryTree` and `indexComplete`. [48]
 
 - The optional `routeChain` field on the read model, for a path's refusal. [49]
 - The optional `families` field on the read model. [50]
@@ -309,3 +290,30 @@ No meaningful cross-repo references found.
 - A family whose members have no proof shows `[]`. [51]
 
 - The builder that fills them. [52]
+
+- The integrity response carries the text-tree validator report. [20]
+- The tree-diff and validator-report builders produce factual outputs, neither a semantic verdict. [30]
+- The integrity model carries validator inputs, report and optional leaf worklist fields. [8]
+- The integrity handler reports text-tree validation. [9]
+
+- The read builder returns the reader-owned payload and read extras. [28]
+- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [1]
+- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [10]
+- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [11]
+- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [13]
+- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [14]
+- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [17]
+- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [2]
+- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [3]
+- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [34]
+- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [4]
+- The optional `proofs` field on the read response, beside L03's `currentness`, since MIK-R02 the `page` and `threshold` fields, since MIK-R01 the optional `families`, and since MIK-R05 the optional `routeChain`. [44]
+- The optional `currentness` field on the read response, after `proofs`, re-read at MIK-R02 when the model gained `page` and `threshold`, at MIK-R01 when it gained `families`, and at MIK-R05 when it gained `routeChain`. [45]
+- The `page` state (which since MIK-R01 also answers a leaf read, and since MIK-R05 a family seed) and the optional `page` and `threshold` fields on the read model. [46]
+- The read model declares view, snapshot, memory tree and index completeness fields. The mounted projection names record locations. [47]
+- The read model declares completeness and continuation beside its memory-tree and index fields. [48]
+- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [5]
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [54]
+- The read model declares view and page plus optional memory-tree, proof, currentness, family and route fields. [6]
+
+- The write response declares notes and a separate truncation flag alongside the full report location. [55]

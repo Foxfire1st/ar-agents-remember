@@ -20,9 +20,7 @@ separately owned review_family_source model, their recorded role/rationale and e
 facts; no source region is guessed from a note. Shared member-revision identities and the supplied
 other-family list expose sharing without inventing another revision.
 
-A guarantee value carries the supplied text, display version, origin state, optional acceptance ref,
-provenance and digest. These fields are not an authenticity measurement. In particular this class
-has no origin-state/acceptance-ref pairing validator; the older card's contrary promise is historical.
+A guarantee value carries authored text, display version, its selected side's derived state, provenance and the payload seal. The assembler binds each guarantee to its side; the model carries the resulting values.
 
 `ReviewFamilyRosterPage.complete` means end of enumeration, not that the final page contains the
 whole roster. The owner count's returned/total equality is the stated all-members observation.
@@ -98,11 +96,7 @@ assessments and applicability — and each keeps its own status dimension, its o
 refusal; nothing here copies any of them or concludes anything from them.
 
 **One family revision's guarantee travels whole.** `ReviewFamilyGuarantee` (`:114-131`) carries the
-family's own stored `joint_guarantee` with its `display_version`, its `state_at_origin`, its
-`acceptance_ref`, its `provenance` and its `payload_digest`. `state_at_origin` and `acceptance_ref`
-travel together because an accepted origin without the authority that accepted it would be an
-acceptance nobody recorded. There is no field for a derived summary and no field that could hold a
-verdict about whether the guarantee still holds.
+family's own stored `joint_guarantee` with its `display_version`, derived `state`, `provenance` and `payload_digest`.
 
 **A source reference carries its address and its observation, or neither — and it is declared next
 door.** `ReviewFamilyMemberSource`, its `ReviewSourceLocatorState` and the `source_locator_state` rule
@@ -268,7 +262,6 @@ guarantee**.
 - One family's own four states, including the unresolved one that chose no revision. (historical reference 6)
 - **The one key that joins a member context to the evidence and assessment owners' own collections, so a rendering cannot join on a label or a path.** (historical reference 7)
 - **The owners this context points into rather than copying: the relationship union, the source inventory, evidence links, observations, assessments and applicability.** (historical reference 8)
-- One family revision's authored joint guarantee with its display version, origin state, acceptance reference, provenance and payload seal. (historical reference 9)
 - **One recorded realization claim as an inspectable source reference, with its structured locator, resolved ranges and locator state, imported from its own module and re-exported here.** (historical reference 10)
 - **The validator refusing an address without its observation or its locator, so a reference never reads as a resolved realization.** (historical reference 11)
 - One recorded membership carrying its exact member revision and the other family revisions that revision is recorded in. (historical reference 12)
@@ -317,7 +310,9 @@ and the named stored value assertion were inspected; no test execution is assert
 - One family's own four states, including the unresolved one that chose no revision. [6]
 - Member contexts carry invariant_revision_id as their join key; this does not resurrect evidence/assessment owners removed from the current references value. [7]
 - The surviving referenced collections are source.relationships and source.inventory; removed evidence, observation, assessment and applicability owner constants are not current destinations. [8]
-- A supplied family guarantee carries authored text and origin/seal fields; this model does not itself authenticate them or enforce an acceptance-ref pair from the origin-state string. [9]
+
+- The guarantee carries the selected revision's derived state beside authored text and its seal. [9]
+
 - **One recorded realization claim as an inspectable source reference, with its structured locator, resolved ranges and locator state, imported from its own module and re-exported here.** [10]
 - **The validator refusing an address without its observation or its locator, so a reference never reads as a resolved realization.** [11]
 - One recorded membership carrying its exact member revision and the other family revisions that revision is recorded in. [12]

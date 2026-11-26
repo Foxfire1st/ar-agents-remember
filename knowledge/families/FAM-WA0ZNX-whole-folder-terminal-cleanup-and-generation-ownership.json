@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Whole-folder removal, move-out preservation, dry-run parity, seat closure, and generation fencing must all hold together across worktree and CLI modules so no needed evidence is lost and no retired folder is left behind or recreated."
+  },
+  "guarantee": "After verifying directory, provider-state, seat-closure, and move-out blockers in both dry-run and apply, terminal cleanup and abandon move out role reports, regular files from any real workspace messages directory, and leaf tool-call logs into canonical notes, close and archive every recorded in-group seat, remove outside scratch and handover aliases, and remove the entire task folder under worktrees/ as one tree for both leaf and modern series contracts (keeping legacy enclosures/ series unchanged and never following symlinks). Accepted terminal retries and prepared role launches are fenced to their own active enclosure generation so neither deletes nor recreates another generation.",
+  "id": "FAM-WA0ZNX",
+  "members": [
+    "INV-JCDV4P",
+    "INV-4CJ7H0",
+    "INV-R850AZ",
+    "INV-2RFVNH",
+    "INV-PB6BZ0",
+    "INV-2XN0BV",
+    "INV-HBMPXC",
+    "INV-KA3FAN",
+    "INV-Z69ZVF",
+    "INV-D22ZTW"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l38-curation-handoff.json"
+    },
+    "handoffEntry": "FAM-L38-terminal-cleanup",
+    "leaf": "261112-BUG-L38",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/worktrees",
+    "mcp/src/agents_remember/cli",
+    "skills/l-01-agent-lifecycles/reference"
+  ],
+  "schema": "ar-family/v1",
+  "title": "Whole-folder terminal cleanup, move-out, seat closure, and generation fencing",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
+}

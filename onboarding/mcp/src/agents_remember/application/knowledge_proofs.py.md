@@ -89,7 +89,6 @@ The two readings and their consumers.
 
 
 
-- The index lookups it reads. [10]
 
 
 - Migrated evidence is listed, then a curator pass writes the proof and the list empties. [11]
@@ -106,3 +105,5 @@ caller, and the coordination index cache.
 No cross-repo boundary is crossed by this file.
 
 - The checklist consumer.  Anchor: `_without_proof` [9]
+
+- The index lookups it reads. [10]

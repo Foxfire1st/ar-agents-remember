@@ -88,7 +88,10 @@ The following coverage statuses are retained metadata, outside the operative pro
 
 - Completed disposition checks the shared direct-owner predicate and idle integration claim. [13]
 
+
+
 - Default production services bind the ordinary memory-quality, citation, certification-memory, knowledge validation/crossing/gate and archive adapters; they do not install the removed prepared-closeout continuation or selected certificate producer. [15]
+
 
 - The exact-generation observer returns bounded change/timeout outcomes. [4]
 

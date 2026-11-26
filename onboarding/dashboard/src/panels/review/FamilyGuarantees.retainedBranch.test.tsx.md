@@ -14,6 +14,9 @@ Synthetic component controls distinguish same revision from identical wording an
 
 - A derived next revision with identical guarantee wording renders one after-side guarantee, a compact wording-unchanged label and closed raw-record details containing both revisions; the raw same-revision capture remains unchanged_revision.
 - The changed-guarantee case mounts an empty fit DiffPane as the class reference, then compares the actual changed guarantee pane class to it (draws a changed guarantee in a fit diff pane).
+- The same-revision cases supply different or equal states on the two snapshots. They assert one
+  guarantee statement with candidate-first state labels when the states differ, and one shared
+  before-and-after state label when the states agree.
 
 ### Invariants And Boundaries
 
@@ -21,9 +24,9 @@ These are declared component or pure-function checks over the fixtures named her
 
 ## Evidence
 
-- Declared check and its fixture assertions. [2]
-- Declared check and its fixture assertions. [3]
-- Declared check and its fixture assertions. [4]
+- Synthetic distinct revisions with identical wording keep one statement and show both revision labels. [2]
+- The captured same-revision branch and the fit DiffPane control retain their own assertions. [3]
+- The same revision retains each snapshot state. Different states display in candidate-first order and equal states share a label. [4]
 
 ## Historical predecessor account
 

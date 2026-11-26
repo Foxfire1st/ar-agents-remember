@@ -16,7 +16,7 @@ Optional explainer_root scopes task-owned environment retirement. None means lea
 
 ### Logic
 
-`WorktreeServices` carries provider, memory-quality and citation services plus optional `certification_memory_rails`, `knowledge_validation`, `knowledge_crossing`, `knowledge_worklist`, `review_artifact_cleanup`, `knowledge_gate` and `leaf_agent_archive`. The prepared-memory producer and continuation fields are removed. `CertificationMemoryRailsPort` returns rail definitions rather than executing a gate, and `ProviderSetupRequestSpec` keeps provider-specific higher-layer option objects opaque.
+`WorktreeServices` carries provider, memory-quality and citation services plus optional `certification_memory_rails`, `knowledge_validation`, `knowledge_crossing`, `knowledge_worklist`, `review_artifact_cleanup`, `knowledge_gate`, `leaf_agent_archive` and `file_briefs`. The prepared-memory producer and continuation fields are removed. `CertificationMemoryRailsPort` returns rail definitions rather than executing a gate, and `ProviderSetupRequestSpec` keeps provider-specific higher-layer option objects opaque.
 
 `MemoryQualityPort.observe_contract_task` returns the shared `CanonicalTaskObservation`; the port also declares checker groups, drift context and running the selected check population. Worktree consumers reach these owners through the bound bundle, not imports from the higher memory layer. No continuation protocol remains to observe/reuse/finalize Gate-5 memory certification.
 
@@ -35,6 +35,8 @@ The worktree layer reaches it through `worktrees/knowledge_gate.py`. `CandidateT
 `ReviewArtifactCleanupPort.cleanup(request)` (MIK-R25 rule 5, D17) deletes an archived task's review artifacts and returns the cleanup report the finalizer carries as `taskArchive.reviewArtifacts`. The `ReviewArtifactCleanupRequest` names the task root as it is now (the archive location once archived), `task_name` (the task directory name, which alone names the review-ref namespace, ruling 2026-09-30T02:32:42 (a)), the code and memory repositories the series contract names (`None` for one the task does not have), and `dry_run`. It never raises for one artifact it could not delete; that artifact is listed under `failures`. The adapter (`application/review_artifact_cleanup.ReviewArtifactCleanup`) lives above this layer; the worktree layer calls the port only from `modules/finalize._with_review_artifact_cleanup`.
 
 The facade re-exports the one process holder in kernel.worktree_service_binding. bind_worktree_services assigns the composed bundle; an explicitly supplied builder is resolved once at the first worktree_services lookup, then that same instance is kept. reset_worktree_services clears both the current bundle and pending supplier. With neither, lookup refuses rather than constructing an ambient default. Optional capability fields permit an incomplete bundle to be represented, while consumers refuse when the selected operation requires an absent capability. The default application bundle binds rail definitions, validator/base converter, crossing, worklist, gate, review cleanup and optional archive alongside provider/memory/citation services. It binds no prepared-memory producer or continuation.
+
+`refresh_written_memory_briefs` passes the written memory root, exact code pair and coordination root through the bound `file_briefs` callback. When the slot is unset, it returns no advisory. The callback does not admit the surrounding Git action.
 
 ### Conventions
 
@@ -101,13 +103,15 @@ The protocols establish the downward dependency boundary and the application sup
 The removed certification continuation is not a current service capability; surviving gate and validation ports retain their own owners and refusal boundaries.
 
 
-- The bundle exposes optional capabilities, including `knowledge_validation`, `knowledge_crossing`, `knowledge_worklist`, (since MIK-R25) `review_artifact_cleanup` and (since MIK-R09) `knowledge_gate`; provider setup inputs stay opaque. Anchor: `WorktreeServices` [9]
+
+- WorktreeServices carries optional validation, crossing, worklist, review cleanup, gate, archival and file-brief capabilities beside its required ports. The provider setup option objects stay opaque to worktrees. [9]
 
 
 
 
 
 - Bind the composition-provided services for this process. [10]
+
 
 
 
@@ -121,12 +125,16 @@ The removed certification continuation is not a current service capability; surv
 
 
 
-- The bound service lookup constructs services once when composition supplied a lazy builder. It refuses when neither a bundle nor a supplier is available. [12]
+
+- The bound service lookup returns the current bundle or builds and retains it from the supplied callback. Without either, it raises the unbound-services error. [12]
 
 
 
 
-- The default bundle binds provider/memory/citation services, rail definitions, validator/base converter, crossing, worklist, invariant gate, review cleanup and optional archive; it binds no prepared producer or continuation. [13]
+
+
+- The default bundle binds provider, memory and citation services, rail definitions, validator and base converter, crossing, worklist, gate, review cleanup, optional archive and file briefs. [13]
+
 
 
 - The route helper refuses a converted commit when the port is unbound. [14]
@@ -147,12 +155,14 @@ No cross-repository evidence is required for these file-local claims.
 The prepared-memory certification service and continuation were removed. Retained private preparation models are not bundle capabilities or proof of a current producer; exact-tree converted memory publication remains with its own gate and transaction owners.
 
 
-- `TerminalGuard` owns the corresponding behavior described above. Anchor: `TerminalGuard` [16]
+
+- TerminalGuard exposes citation-cache fence preview and completion, including publication and rollback callbacks and an optional native commit. [16]
 
 
 - `CitationGuardPort` owns the corresponding behavior described above. [17]
 
 - `WorktreeServicesUnboundError` owns the corresponding behavior described above. [18]
+
 
 
 
@@ -166,4 +176,9 @@ The prepared-memory certification service and continuation were removed. Retaine
 The default application composition installs no `PreparedCloseoutContinuation` or `PreparedMemoryCertificationAdapter`. Its remaining mandatory gate/validation ports keep their own missing-port refusals; binding is not execution or certification evidence.
 
 
-- The services facade imports the shared process-binding functions and exception directly. The cleanup request carries an optional explainer root for task-owned environment retirement. [24]
+
+
+- The services facade re-exports the shared binding functions and exception unchanged. Server startup registers a supplier. The first worktree operation imports service composition and builds the bundle. Cleanup uses the optional explainer root for task-owned retirement. An absent root leaves explainer files untouched. [24]
+
+
+- The worktree refresh port supplies the selected memory root and exact code pair to the composed brief service. [27]

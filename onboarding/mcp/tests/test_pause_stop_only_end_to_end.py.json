@@ -99,16 +99,16 @@
       ]
     },
     "11": {
-      "note": "The lane this module is registered in. Source caption: \"mcp/tests/test_pause_stop_only_end_to_end.py\"",
+      "note": "The integration lane selects mcp/tests/test_pause_stop_only_end_to_end.py.\n\nAnchor: `mcp/tests/test_pause_stop_only_end_to_end.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "75006e874ab9c238187bcf9044d224511529c135",
+            "blob": "9b2f8dfb74c9f9e7cc39c1097e6d5f7e0ff20215",
             "content": "sha256:732f1903a69af76a07aa2cbdff538529f00d9eecb4145aa164f538dc6a461b59",
             "locator": {
-              "end": 744,
+              "end": 764,
               "kind": "line_range",
-              "start": 744
+              "start": 764
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -174,16 +174,16 @@
       ]
     },
     "13": {
-      "note": "The lane this module is registered in. Source caption: \"mcp/tests/test_pause_stop_only_end_to_end.py\"",
+      "note": "The integration lane selects mcp/tests/test_pause_stop_only_end_to_end.py.\n\nAnchor: `mcp/tests/test_pause_stop_only_end_to_end.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "75006e874ab9c238187bcf9044d224511529c135",
+            "blob": "9b2f8dfb74c9f9e7cc39c1097e6d5f7e0ff20215",
             "content": "sha256:732f1903a69af76a07aa2cbdff538529f00d9eecb4145aa164f538dc6a461b59",
             "locator": {
-              "end": 744,
+              "end": 764,
               "kind": "line_range",
-              "start": 744
+              "start": 764
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -196,12 +196,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
-            "content": "sha256:f239aaed53e583a0aa6274b05c3059a122ae73f4d75c2cf63103598131127abf",
+            "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
+            "content": "sha256:dd4591e3746df8c3a9f5b823b6fdb213526ad5e41b980a90ffff5a815c5498a8",
             "locator": {
-              "end": 175,
+              "end": 147,
               "kind": "line_range",
-              "start": 163
+              "start": 134
             },
             "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
           },

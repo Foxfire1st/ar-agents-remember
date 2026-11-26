@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+        "blob": "c2e414add7552a590a135ea6fa8870759ec7a6be",
+        "content": "sha256:f805d15cb38bc62910581074ad1c0f9a47476d60e9f38b83c0a3cfa275eb5aa2",
+        "locator": {
+          "kind": "symbol",
+          "name": "MemoryState.write"
+        }
+      },
+      "id": "RLZ-2YA9EP",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Includes first-use ignore preparation in the existing atomic record publication of a real leaf write.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c2e414add7552a590a135ea6fa8870759ec7a6be",
         "content": "sha256:5a1fb5ce64d36ed8a536fb2a134ac7dd791974824b19c496b518883ab6718e14",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+        "blob": "c2e414add7552a590a135ea6fa8870759ec7a6be",
         "content": "sha256:6aa9b848d0957549450d3a92543d90bfe2db7931e34fa311ac6a16a0c76d461a",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+        "blob": "c2e414add7552a590a135ea6fa8870759ec7a6be",
         "content": "sha256:236642db2982595241c732e3f784105e83f865c26b7c32d6078107786a77f4d5",
         "locator": {
           "kind": "symbol",
@@ -57,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
-        "content": "sha256:2152bb780f3ece16518e62c3f2425da3c069022541d24f0186340ac27ddd67ac",
+        "blob": "c2e414add7552a590a135ea6fa8870759ec7a6be",
+        "content": "sha256:26bf3863fbcacd263f9276f3b3a929a109c5c758f30011b0ae56072d8c38985b",
         "locator": {
           "kind": "symbol",
           "name": "MemoryState"
@@ -80,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+            "blob": "c2e414add7552a590a135ea6fa8870759ec7a6be",
             "content": "sha256:4dfaad9e45c6ff3c960d14ed11483937b3c05b37f90e892b282d288b47de68b9",
             "locator": {
               "kind": "symbol",
@@ -96,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+            "blob": "c2e414add7552a590a135ea6fa8870759ec7a6be",
             "content": "sha256:236642db2982595241c732e3f784105e83f865c26b7c32d6078107786a77f4d5",
             "locator": {
               "kind": "symbol",
@@ -112,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+            "blob": "c2e414add7552a590a135ea6fa8870759ec7a6be",
             "content": "sha256:2188eb4a780fe71e67a6752b27128cbb721c36bf77b223e652c8907f8e3a9efe",
             "locator": {
               "kind": "symbol",
@@ -123,7 +141,7 @@
         },
         {
           "anchor": {
-            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+            "blob": "c2e414add7552a590a135ea6fa8870759ec7a6be",
             "content": "sha256:98908690330e3a35692f9c0bb713bdd9467044654aa4a3eeccbde1dd813475c2",
             "locator": {
               "kind": "symbol",
@@ -139,7 +157,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8337b4050677130c0b74516ccd45aa01994f542a",
+            "blob": "094b505e035fdb9ccfa830d17ddf2bc49162e872",
             "content": "sha256:8f6110c95b537fefb7947932717f78acfa26df04f6e18b493990747f38d99548",
             "locator": {
               "kind": "symbol",
@@ -185,12 +203,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+            "blob": "c2e414add7552a590a135ea6fa8870759ec7a6be",
             "content": "sha256:5a1fb5ce64d36ed8a536fb2a134ac7dd791974824b19c496b518883ab6718e14",
             "locator": {
-              "end": 228,
+              "end": 230,
               "kind": "line_range",
-              "start": 206
+              "start": 208
             }
           },
           "kind": "code"
@@ -202,7 +220,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+            "blob": "c2e414add7552a590a135ea6fa8870759ec7a6be",
             "content": "sha256:ce1e7420efa6a3c7891ef51c2457127074312dff5d3c3c4b0dd3ad2d5d797e71",
             "locator": {
               "kind": "symbol",
@@ -218,7 +236,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+            "blob": "c2e414add7552a590a135ea6fa8870759ec7a6be",
             "content": "sha256:28b3fc95cdbb893b59686a47f7bf48c0425cf1d6242140502f451e7ac0f7c27d",
             "locator": {
               "kind": "symbol",
@@ -234,7 +252,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+            "blob": "c2e414add7552a590a135ea6fa8870759ec7a6be",
             "content": "sha256:1f669d7feea5dbeb3cff2e275d1f04e2f5af342b826f6404dfe6235355c1f647",
             "locator": {
               "kind": "symbol",
@@ -250,7 +268,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+            "blob": "c2e414add7552a590a135ea6fa8870759ec7a6be",
             "content": "sha256:b1f16b93b6865cb61f7e3871b7df161583dc3e5fe0a0c2c54b7a1616e86a738d",
             "locator": {
               "kind": "symbol",
@@ -266,7 +284,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+            "blob": "c2e414add7552a590a135ea6fa8870759ec7a6be",
             "content": "sha256:45cc2b94b6500faf4a316a268483a4f4e8d320e33d6cfc827dafcf0149286758",
             "locator": {
               "kind": "symbol",
@@ -282,7 +300,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
+            "blob": "c2e414add7552a590a135ea6fa8870759ec7a6be",
             "content": "sha256:07e9259706dd6623930d89b396120f99cbd927582e66a30b3ae4f01f1762f6cc",
             "locator": {
               "kind": "symbol",
@@ -294,16 +312,16 @@
       ]
     },
     "9": {
-      "note": "Memory publication delegates to the rollback-aware file owner.\n\nAnchor: `MemoryState.write`",
+      "note": "The rollback-aware publisher includes tracked briefs ignore preparation when a real leaf record or onboarding write requires it. History-only writes skip this preparation.",
       "targets": [
         {
           "anchor": {
-            "blob": "c482bcb7818ba98f2fb855054134b4874130de53",
-            "content": "sha256:c10d0bf5da41c75ed112aa9769e3ecbfc7a133641b6d3770609c22f4fd002ae5",
+            "blob": "c2e414add7552a590a135ea6fa8870759ec7a6be",
+            "content": "sha256:958e9a376471bc84b663962faa74b3261bb4fa11e327ef62d93f0e8f0211701d",
             "locator": {
-              "end": 490,
+              "end": 516,
               "kind": "line_range",
-              "start": 487
+              "start": 489
             }
           },
           "kind": "code"

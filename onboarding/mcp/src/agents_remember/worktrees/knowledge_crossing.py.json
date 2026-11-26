@@ -316,14 +316,16 @@
       ]
     },
     "27": {
-      "note": "The refusal fires on legacy leaf memory independent of converted memory elsewhere.\n\nAnchor: `test_an_unconverted_leaf_is_refused_with_the_conversion_step_on_any_line`",
+      "note": "The refusal fires on legacy leaf memory independent of converted memory elsewhere. Anchor: `test_an_unconverted_leaf_is_refused_with_the_conversion_step_on_any_line`",
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
-            "content": "sha256:28fd122ff2c33d1107d06aa386bb795f4dba57257da61e80f4c61dd118335d22",
+            "blob": "ac83299d9d3037c91b21a3dc5cb939646aa6a01f",
+            "content": "sha256:fef5fc8b8d44972009908cf142f4d9428eb12eb7bc3603a764804faee30237dd",
             "locator": {
-              "kind": "file"
+              "end": 262,
+              "kind": "line_range",
+              "start": 222
             },
             "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
           },

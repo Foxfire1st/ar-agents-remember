@@ -79,8 +79,7 @@ roster and no count at all.
 
 **The guarantee comes from the owner that verifies its seal.** `family_guarantee` reads one
 family revision through the family owner and returns its stored `joint_guarantee` with the display
-version, origin state, acceptance reference, provenance and payload digest — or `None`, in which case the
-caller states an unreadable side rather than presenting a guarantee it did not get.
+version, the selected revision's derived state, provenance and payload digest. If the owner returns no sealed revision, the caller states an unreadable side.
 
 **Each page identifies the exact revisions it represents, even when their record kinds are split across pages.** `_members` unions the revision IDs from this page's content, claims and membership items, then resolves each pair through `memberships.find_membership_by_pair` for the selected family revision. It projects only recorded associations in that bounded set. `_RosterLookups` still contains only this page's selected content and source claims, so a later claim can carry `content_not_on_page` without losing its exact membership or fabricating a statement. The client can enrich an earlier member context with that sparse update.
 
@@ -138,6 +137,8 @@ No current projection gap is recorded here. Sparse pages still expose only their
 
 ## Evidence
 
+- The sealed family guarantee carries its revision's derived state, version, provenance and payload digest. [18]
+
 ### Docs References
 
 No configured domain documentation could be consulted for this module. The resolved memory layer's
@@ -161,11 +162,9 @@ synthesized guarantee**.
 - One roster read's page bound, movement union and cursor, travelling as one request. [5]
 - **Which revision one roster read is for, the family owner's recorded list, and the axis's own sentence for a one-sided selection.** [6]
 
-- One bound snapshot as this composition reads it, with the reason it could not be opened when it could not. [7]
 
 - One side's roster read of one family revision, with what the offered cursor did. [8]
 
-- **The opener that turns a storage, OS or value error into a stated unreadable side rather than an exception.** [9]
 
 - **The read that states each fact it established: the selected revision, its guarantee, its roster page and its members — or the side's own unreadable reason.** [11]
 - **The cursor offer, where a cursor another walk minted leaves the side read from its own first page.** [12]
@@ -174,7 +173,6 @@ synthesized guarantee**.
 - The sentence for a read that returned neither a page nor a usable refusal. [15]
 - **The sentence stating how much of the roster the page carried and how the remainder is reached.** [16]
 - The one side context that states which fact it is and carries no roster and no count. [17]
-- **The guarantee read from the owner that verifies the revision's seal, or nothing when no sealed aggregate exists.** [18]
 - **The membership rows the page carried, each member's content carried only when the same page selected that revision.** [19]
 - One page's own lookups travelling together, so another page's claims cannot be paired with this roster. [20]
 - One membership row composed as a member context with its exact revision, its sharing fact and its source references. [21]
@@ -188,7 +186,6 @@ synthesized guarantee**.
 - **The refusal a cursor that bound no composed walk earns, in `ICR-R10@v1`'s own vocabulary with this collection's own action sentence.** [29]
 - The composition that decides which families and revisions this read is called for. [30]
 
-- **The values this read states, whose validators refuse a truncated roster presented as a whole one.** [31]
 
 
 - The production review read that asks for this roster and publishes its page. [32]
@@ -197,7 +194,7 @@ synthesized guarantee**.
 - The cases that drive the roster read through the production review over a real enclosure. [33]
 
 
-| The page-local join emits members only for carried membership items. | `_members` | mcp/src/agents_remember/application/review_family_rosters.py:433-467 |
+| The page-local join resolves the revision IDs represented by content, claims or membership on the page against exact family membership. | `_members` | mcp/src/agents_remember/application/review_family_rosters.py:416-460 |
 
 ### Cross-Repo References
 
@@ -206,3 +203,7 @@ binds them to and the code roots it passes to the read context are all values th
 selected for one leaf's enclosure, and no remote,
 credential, network or external system is involved. No cross-repo reference row is recorded here because
 no cited range proves a repository or external-system boundary.
+
+- **The values this read states, whose validators refuse a truncated roster presented as a whole one.** [31]
+- One bound snapshot as this composition reads it, with the reason it could not be opened when it could not. [7]
+- **The opener that turns a storage, OS or value error into a stated unreadable side rather than an exception.** [9]

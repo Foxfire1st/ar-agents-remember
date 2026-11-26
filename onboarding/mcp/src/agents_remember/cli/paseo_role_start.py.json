@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+        "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
         "content": "sha256:3ac5d9853ec3a35ba0bfce2b34dd1067035a83f8254e5dc3ad97fdc96376d5bc",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,27 @@
     },
     {
       "anchor": {
-        "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
-        "content": "sha256:8c6798222595110e92bd943b3a6ad6c0ce24806e449f0547669f55c0965ee01a",
+        "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
+        "content": "sha256:97edf8baa55a0bc6ced1a095d16ddb6f54df877a79677ec3f72679cce84f5720",
+        "locator": {
+          "end": 339,
+          "kind": "line_range",
+          "start": 329
+        }
+      },
+      "id": "RLZ-2A04MT",
+      "invariant": "INV-9Z6T69",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 9–10",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Passes the direct launch outcome to the one-time start-message route and records its delivery result in the launch receipt when a notice is due.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
+        "content": "sha256:548cc48d416cc8b29f75672695bab02bc4373273102615b15023521708c3003a",
         "locator": {
           "kind": "symbol",
           "name": "start_leaf_set"
@@ -39,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+        "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
         "content": "sha256:abd8d2ff3ba2ae76819edcfe569cc5228b1732f97797006da1b82761dfc2ee1e",
         "locator": {
           "kind": "symbol",
@@ -57,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+        "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
         "content": "sha256:13d18faab6f1cfc943a5beb402c7b520278d3de7892245035abe9426ef87c470",
         "locator": {
           "kind": "symbol",
@@ -75,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+        "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
         "content": "sha256:13d18faab6f1cfc943a5beb402c7b520278d3de7892245035abe9426ef87c470",
         "locator": {
           "kind": "symbol",
@@ -93,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+        "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
         "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
         "locator": {
           "kind": "symbol",
@@ -111,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+        "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
         "content": "sha256:df975f80addf619cf119a02cba4faf1530fea468e99ab8f61bf23e117625bf51",
         "locator": {
           "kind": "symbol",
@@ -129,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+        "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
         "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
         "locator": {
           "kind": "symbol",
@@ -152,10 +171,39 @@
       "targets": [
         {
           "anchor": {
-            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
-            "content": "sha256:676908ed2d0b6416fed42342e5ba6880223a0ac17b7bd3327818388c18a99a92",
+            "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
+            "content": "sha256:3706817222b9f6834b55aa3cc619465ae9d282f71a30e94f48426b14f73525eb",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The direct start and leaf-set routes attach a product report for the applicable execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
+            "content": "sha256:7b333b378a876d7d31a639417ee9e0bd1307a7960ea6f796ae4faf8a59e088c2",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 134
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
+            "content": "sha256:97edf8baa55a0bc6ced1a095d16ddb6f54df877a79677ec3f72679cce84f5720",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 329
             }
           },
           "kind": "code"

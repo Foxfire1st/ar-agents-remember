@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fa7edd155c1b68898b05d219f757fec23ddf56b6",
+        "blob": "f1ec784fb712132b80aeefee987941d3ebcf5feb",
+        "content": "sha256:abc46ebc54f949331380ba3558112928d12e7f63ac57d7435d43ebaf17a2ef95",
+        "locator": {
+          "end": 34,
+          "kind": "line_range",
+          "start": 30
+        }
+      },
+      "id": "RLZ-2VRRRG",
+      "invariant": "INV-9Z6T69",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 9–10",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Defines the reserved product sender role and display name used to render the start message.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f1ec784fb712132b80aeefee987941d3ebcf5feb",
         "content": "sha256:68dd03c55d195ea34ce52b0977c306487e68c20d24155ca2a4d45d506c606f82",
         "locator": {
           "kind": "symbol",
@@ -21,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "fa7edd155c1b68898b05d219f757fec23ddf56b6",
-        "content": "sha256:6627664baf9bcafb99c19f32ca0d92e9aa154c40e07f544a49077bdeb2cfc2aa",
+        "blob": "f1ec784fb712132b80aeefee987941d3ebcf5feb",
+        "content": "sha256:bf1abd8d163d47dce1d79d5ceec67be4737fe3a91b67d7d50c88f7085ff4419a",
         "locator": {
           "kind": "symbol",
           "name": "sender_line"
@@ -39,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "fa7edd155c1b68898b05d219f757fec23ddf56b6",
+        "blob": "f1ec784fb712132b80aeefee987941d3ebcf5feb",
         "content": "sha256:53f31d090bda3f68a2e83d16b4b0dde4dbc06a5569b939eba6c5e967482dbcb9",
         "locator": {
           "kind": "symbol",
@@ -57,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "fa7edd155c1b68898b05d219f757fec23ddf56b6",
+        "blob": "f1ec784fb712132b80aeefee987941d3ebcf5feb",
         "content": "sha256:7d1e77434f1ece959cd8f20db179a9a3f78d0a06c010410e11bbf2635a3c8323",
         "locator": {
           "kind": "symbol",
@@ -80,10 +99,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa7edd155c1b68898b05d219f757fec23ddf56b6",
-            "content": "sha256:eef19baac89e3623d9032d49fcf424d181661fb108c606a4db7b4dca39d98d30",
+            "blob": "f1ec784fb712132b80aeefee987941d3ebcf5feb",
+            "content": "sha256:857f3e3c166605d156e5ad99869f08751797fbc832b601b7bff898083b546ece",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Product notices identify the product and leaf without an agent ID.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1ec784fb712132b80aeefee987941d3ebcf5feb",
+            "content": "sha256:bf1abd8d163d47dce1d79d5ceec67be4737fe3a91b67d7d50c88f7085ff4419a",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 211
             }
           },
           "kind": "code"

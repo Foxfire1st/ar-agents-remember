@@ -86,7 +86,10 @@ Ordinary singleton and Projects bound rows still adopt an open request and disab
 - The shared launcher retains the reasoned StepUp/base-preview composition, runs seeded document repair only, and adds catalog provenance without pruning configured overrides.
 
 
-- Worker/Curator typed review census, record-only exclusion and unknown history. [11]
 
+
+- Retired at the fifth freeze d59c3493: dashboard/src/cockpit/role-launcher/RoleLauncher.tsx:1142-1183 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 6a8b5b78bbc182bfdcef9e6120de94290e1710bb. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [11]
 
 - The backend checks the explicit reason and the configured failed-review threshold. A step-up reads mode from its own settings row. Other launch fields follow the same-harness and model inheritance rule. [12]

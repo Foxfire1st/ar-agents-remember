@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "fb5cbdcaaae87b4d86d3d6b9b73f95f87560a77c",
+        "blob": "fab232126f2d8440cd89633029d3b7355fd8ba7b",
         "content": "sha256:a07eada2d258de6cc2eb124d5f88cc1398717749b125be3c85e5442ac87c6fea",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "fb5cbdcaaae87b4d86d3d6b9b73f95f87560a77c",
+        "blob": "fab232126f2d8440cd89633029d3b7355fd8ba7b",
         "content": "sha256:ae3f1469afca4550277210d34ce8f350db43eb4ba84e1eb5b3cff994fe90ce38",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "fb5cbdcaaae87b4d86d3d6b9b73f95f87560a77c",
+        "blob": "fab232126f2d8440cd89633029d3b7355fd8ba7b",
         "content": "sha256:c7a49870176b53b87dec5206c0180d2c3b8a0767cf16786d75aed0a33f0e2a59",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,24 @@
     },
     {
       "anchor": {
-        "blob": "fb5cbdcaaae87b4d86d3d6b9b73f95f87560a77c",
+        "blob": "fab232126f2d8440cd89633029d3b7355fd8ba7b",
+        "content": "sha256:4d22176705f333c2dd92a3dcd67290722ed88f2b049434f08cb8d6f945bd2afd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_refusal_answers_log_as_refusals_with_their_digest"
+        }
+      },
+      "facet": "Multiple refusal shapes keep false status, a refusal code and the result digest in their lines.",
+      "id": "PRF-P7BACQ",
+      "invariant": "INV-B1DZ6W",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 13",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fab232126f2d8440cd89633029d3b7355fd8ba7b",
         "content": "sha256:661dadff1f5d0d3e2c8d5c3c945bb30ff9bc616f9fa0e13bdac528573d551730",
         "locator": {
           "kind": "symbol",
@@ -71,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "fb5cbdcaaae87b4d86d3d6b9b73f95f87560a77c",
+        "blob": "fab232126f2d8440cd89633029d3b7355fd8ba7b",
         "content": "sha256:81f7b274b42c68fd4f4891e990b0e838479c65bc6a272851c7fa7e295b1b3e81",
         "locator": {
           "kind": "symbol",
@@ -94,8 +111,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb5cbdcaaae87b4d86d3d6b9b73f95f87560a77c",
-            "content": "sha256:633a869a19074b5f2a185ff507f5b7551674c8fd63d98c694d5ac92825fbceb9",
+            "blob": "fab232126f2d8440cd89633029d3b7355fd8ba7b",
+            "content": "sha256:2860571e67c6a07fc6d63cf82a74cf5864d4dc5b36d05c92fd17ee8e9a917e48",
             "locator": {
               "kind": "file"
             }
@@ -105,12 +122,12 @@
       ]
     },
     "2": {
-      "note": "No credential or environment value reaches a line, while ordinary environment values and home paths are kept.",
+      "note": "The logger masks credential fields and credential-like environment values. Ordinary environment values are retained, and ordinary home paths follow the length rule.",
       "targets": [
         {
           "anchor": {
-            "blob": "fb5cbdcaaae87b4d86d3d6b9b73f95f87560a77c",
-            "content": "sha256:633a869a19074b5f2a185ff507f5b7551674c8fd63d98c694d5ac92825fbceb9",
+            "blob": "fab232126f2d8440cd89633029d3b7355fd8ba7b",
+            "content": "sha256:2860571e67c6a07fc6d63cf82a74cf5864d4dc5b36d05c92fd17ee8e9a917e48",
             "locator": {
               "kind": "file"
             }
@@ -124,10 +141,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb5cbdcaaae87b4d86d3d6b9b73f95f87560a77c",
-            "content": "sha256:633a869a19074b5f2a185ff507f5b7551674c8fd63d98c694d5ac92825fbceb9",
+            "blob": "fab232126f2d8440cd89633029d3b7355fd8ba7b",
+            "content": "sha256:2860571e67c6a07fc6d63cf82a74cf5864d4dc5b36d05c92fd17ee8e9a917e48",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The log classifies refusal and retains the result digest even when the answer has ok true.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab232126f2d8440cd89633029d3b7355fd8ba7b",
+            "content": "sha256:d86b93af0ae2bf75f7ca514a988da93f0f8964dfebe28585011cf263b9dabdb3",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 159
             }
           },
           "kind": "test"

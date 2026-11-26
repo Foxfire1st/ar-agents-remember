@@ -540,14 +540,16 @@
       ]
     },
     "64": {
-      "note": "**The read that supplies the subject now belongs to the reviewer, taking the comparison's task context and nothing else.**\n\nAnchor: `useReviewCatalogue` `intentReviewEntries`",
+      "note": "The review catalogue hook takes the comparison's task context for the subject read.\n\nAnchor: useReviewCatalogue, intentReviewEntries",
       "targets": [
         {
           "anchor": {
             "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
-            "content": "sha256:93636c1b2d30a2760d953db6f7ab43c584c69412119977a471cac57465de3e3b",
+            "content": "sha256:e7add9c951fdefe356d65db54a6b28af26a88b5018c14b9024b15f132747c20e",
             "locator": {
-              "kind": "file"
+              "end": 144,
+              "kind": "line_range",
+              "start": 93
             },
             "path": "dashboard/src/data/useReviewCatalogue.ts"
           },
@@ -555,34 +557,12 @@
         },
         {
           "anchor": {
-            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
-            "content": "sha256:3a72132f0e91797658680ee56804a30bd93c76a74d449d6f3d58b4e7c0b8e002",
+            "blob": "35cf6991372a9b8389d9991cf851018c84f456a5",
+            "content": "sha256:abdd1cbe8d6a47bada1d3fd40ae2164bf3c5db68c8165db955bda24317416d81",
             "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
-            "content": "sha256:780491a1b7a07a5c0592961ed3caf204693ee543c04870c0e337bbc9af03b168",
-            "locator": {
-              "kind": "symbol",
-              "name": "useReviewCatalogue"
-            },
-            "path": "dashboard/src/data/useReviewCatalogue.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
-            "content": "sha256:e470c7af378ec882122a77bf080a3c8d115848d26b0bbe570bf422af45d7c4bb",
-            "locator": {
-              "kind": "symbol",
-              "name": "intentReviewEntries"
+              "end": 681,
+              "kind": "line_range",
+              "start": 667
             },
             "path": "dashboard/src/data/review.ts"
           },

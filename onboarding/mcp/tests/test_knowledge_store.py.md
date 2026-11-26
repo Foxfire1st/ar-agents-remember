@@ -12,9 +12,9 @@ Read behavior and schema integrity of derived knowledge index files.
 
 ### Logic
 
-Test-only rows supply separately recorded single-revision identities sharing the derived display label `r1`. Production readers retain their exact statements and empty predecessor sets, reopen exact identities/digests and reject write attempts and refuse absent-file opens. [1] [2] [13]
+Test-only rows supply separately recorded single-revision identities sharing the derived display label `r1`. Production readers retain their exact statements and empty predecessor sets, reopen exact identities/digests and reject write attempts and refuse absent-file opens.
 
-Cases protect database immutability triggers, read-time payload seals, declared schema structure and its pin. Missing tables or triggers refuse open; unsupported versions also name conversion. [6] [7] [8]
+Cases protect database immutability triggers, read-time payload seals, declared schema structure and its pin. Missing tables or triggers refuse open; unsupported versions also name conversion.
 
 ### Invariants And Boundaries
 
@@ -41,6 +41,8 @@ code, offending record, row counts) rather than internal call order.
 
 None recorded.
 
+The schema pin is ar-knowledge-sqlite/v10 with user_version 10. The expected derived tables include ix_revision. The open guard refuses generations 1, 9 and 11 by name.
+
 ## Evidence
 
 ### Docs References
@@ -49,32 +51,26 @@ None recorded.
 ### Repo-Internal References
 
 
-- Three separately recorded single-revision records stay independently addressable with their exact statements. [1]
 
 
 
 
-- Identity/schema preserved on reopen. [2]
 
 
 
 
-- Stored revisions reject mutation. [6]
 
 
 
 
-- Decode verifies seal beyond statement. [7]
 
 
 
 
-- Schema drift and unsupported files refuse. [8]
 
 
 
 
-- Read-only production store and test-only builder. [13]
 
 
 ### Docs References
@@ -87,13 +83,10 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References (continued)
 
-- The current separate-record revision read: three single-revision records stay independently addressable, and the former divergent-successor population is not this fixture's executable coverage. [14]
 
 
-- The database-level immutability proof against the stored revision rows. [15]
 
 
-- The seal covering more than the statement. [16]
 
 - The layer-direction case. [17]
 
@@ -114,8 +107,20 @@ No meaningful cross-repo references found.
 - The shared branching fixture used by the revision cases. Anchor: `build_branching_knowledge_fixture` [18]
 
 
-- The current unit-regression lane registration makes this module part of the manifest. Anchor: `test_knowledge_store` [19]
+- The schema pin observes the new generation and verifies table drift refusal. [33]
+- The declared derived table set includes ix_revision. [34]
 
+- The unit-regression lane selects mcp/tests/test_knowledge_store.py. [19]
 
+- The identity-branching replacement contract declares mcp/tests/test_knowledge_store.py::test_three_separately_recorded_revisions_stay_independently_addressable as its evidence node. [20]
 
-- The fixture's registered stable contract and evidence node. Source caption: `knowledge-identity-branching-fixture` [20]
+- The seal covering more than the statement. [16]
+- The current separate-record revision read: three single-revision records stay independently addressable, and the former divergent-successor population is not this fixture's executable coverage. [14]
+- The database-level immutability proof against the stored revision rows. [15]
+
+- Read-only production store and test-only builder. [13]
+- Three separately recorded single-revision records stay independently addressable with their exact statements. [1]
+- Identity/schema preserved on reopen. [2]
+- Stored revisions reject mutation. [6]
+- Decode verifies seal beyond statement. [7]
+- Schema drift and unsupported files refuse. [8]

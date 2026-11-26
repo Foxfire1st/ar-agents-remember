@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "8b54b8c117747b1a757a00d6441308aa1f569669",
-    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
+    "codeTree": "049d3961dfb898bbd69253d9e0b878188fd1006b",
+    "commit": "ed29e40bb6a27dbba33b106b556da182e02a7429",
     "role": "curator",
-    "statement": "The dashboard guide’s manual Retry still reloads the unavailable embedded chat control, including after the addition of a bounded retry for the selected agent and workspace, and the Effects control still applies to the dashboard.",
-    "task": "261124-EXP-L1",
-    "uncommitted": true
+    "statement": "On settled tree 049d3961 (commit ed29e40b), the dashboard guide accurately describes the Operations table rules (requiring an open session for helper-only work or a declared wait with an armed check, and pausing when known host activity shows neither), the Effects control plus manual Retry reloading an unavailable embedded chat control alongside the bounded retry for a selected agent and workspace, and lines 560-561 stating that finalizing, cleaning up, or abandoning a task archives its role agents on the host and that an archived agent is not a document's chat (with L38 enforcing seat closure before whole-folder removal).",
+    "task": "261124-EXP",
+    "uncommitted": false
   },
   "document": "docs/dashboard.md",
   "id": "DPD-23C91T",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -152,8 +152,8 @@
     },
     {
       "anchor": {
-        "blob": "aeecc2f8dab2b0b79f811ea855055ad72fb5e6d3",
-        "content": "sha256:de76bee4e74da0194ae142dbc65b2be6bb861bad77ccd3ca2550c4538ed0a36f",
+        "blob": "a87be69e9aaafcb8afa368494b4dcb61778aa5ee",
+        "content": "sha256:c8a19e3bd32373cb999c031b5396ad175a0f6debc7f4ccac2d80f50d62d1bee0",
         "locator": {
           "kind": "symbol",
           "name": "archive_terminal_agents"
@@ -195,7 +195,7 @@
       "path": "mcp/src/agents_remember/serving/changeset_endpoints.py"
     },
     {
-      "blob": "505ca868c7f3c031f538ca7709e1c2888ecc1ded",
+      "blob": "0e47c67d12a7ddb47908f7ea4f24d86bca76c892",
       "kind": "file",
       "path": "mcp/src/agents_remember/observer/provider_limits.py"
     },
@@ -396,12 +396,12 @@
     },
     {
       "anchor": {
-        "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
-        "content": "sha256:5fe191cf7114f08dbe30c2f5ed30949cf9bfa98a663431f88b23d042f350baba",
+        "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
+        "content": "sha256:04d56886385a9cd5a5ce52d3223fe4b4255316b4ef9cf14632bb3d2995c98cf7",
         "locator": {
           "end": 234,
           "kind": "line_range",
-          "start": 219
+          "start": 213
         },
         "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
       },
@@ -444,5 +444,16 @@
       },
       "kind": "anchor"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T00:51:29+01:00",
+    "by": "agent",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+    "task": "261124-EXP"
+  }
 }

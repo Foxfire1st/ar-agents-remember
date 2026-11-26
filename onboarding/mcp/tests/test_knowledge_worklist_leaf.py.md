@@ -62,9 +62,8 @@ The changed writer calls explicitly supply the current `leaf_worklist(load_contr
 
 - The controller case stubs scope revalidation, census, style checks, onboarding probes, coherence authority and catalog steps, but no longer stubs `_without_proof` or `build_route_indexes`. `_knowledge_worklist`, proof-count computation, index building and `write_curator_checklist` run for real within the declared fixture. Since MIK-R09 the exact candidate trees are captured for real too (`_curator_candidate_inputs` is
   no longer stubbed with placeholder IDs), because the gate judges exact trees.
-- The module is registered in the `unit-regression` lane; the census derives it as a consumer of
-  `fixtures/repository_profiles/node/package-lock.json` because it drives the controller (the Thirty-fifth
-  catalog re-pin).
+- The Thirty-fifth catalog re-pin recorded this module as a package-lock fixture consumer because it drives the controller.
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_worklist_leaf.py`.
 
 ### Invariants And Boundaries
 
@@ -188,6 +187,6 @@ and in `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_
 
 - The census-derived consumer row. In merged A3 this reference cites all 2 artifact blocks whose exact consumers list names this module. The earlier occurrence count and first-occurrence wording described unrelated narrow text, already unrelated in the parked source, and did not establish this module's consumer membership. Those targets are replaced by this complete membership set. Former member identity is not recovered or claimed. [Past-epoch source caption, detached from live reference 40. Recorded citation custody: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); historical event commit not identified. No historical event or intent inferred.]
 
-Current source: The current lifecycle catalog declares test_knowledge_worklist_leaf.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. This is the complete declared two-artifact set; it establishes no invocation or earlier occurrence/identity-recovery event.
 
-- The current lifecycle catalog declares test_knowledge_worklist_leaf.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. This is the complete declared two-artifact set; it establishes no invocation or earlier occurrence/identity-recovery event. [40]
+
+- The lifecycle catalog lists `mcp/tests/test_knowledge_worklist_leaf.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result. [40]

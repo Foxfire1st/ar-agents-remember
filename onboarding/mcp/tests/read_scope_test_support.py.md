@@ -73,6 +73,8 @@ The sizes and catalog line addresses in the following original account are histo
 None recorded. **`mcp/tests/read_scope_test_support.py` is 762 lines** — no ceiling applies to a support
 module, but a successor adding scenarios should extend the builders rather than fork a second fixture.
 
+ExtraInvariantSeed can name the leaf that reviewed a fixture revision. The builder records an exact content digest in that leaf’s written row and adds its closed review fact before rebuilding the fixture index. Git capture uses the shared isolated fixture_git helper.
+
 ## Evidence
 
 
@@ -83,24 +85,18 @@ No Domain Documentation source is configured for this slice.
 ### Repo-Internal References
 
 
-- `build_read_scope_fixture` supplies the current fixture or assertion described above. [11]
-
-
-- `_create_invariant` supplies the current fixture or assertion described above. [12]
-
-
-- `_create_revision` supplies the current fixture or assertion described above. [13]
-
-
-- `_create_realization` supplies the current fixture or assertion described above. [14]
 
 
 
-- The read fixture opens the test row store, builds the graph there and returns its projected record identities. [15]
 
 
 
-- RowStore writes text-tree fixture rows without the retired production admission plane. [16]
+
+
+
+- The read fixture uses test-only row constructors to build its graph in the test row store and returns the projected record identities. [15]
+
+
 
 
 ### Docs References
@@ -113,7 +109,6 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References (continued)
 
-- **The fixture's declared topology and why this graph and not the shared branching one.** [17]
 
 
 
@@ -121,7 +116,6 @@ No configured domain documentation could be checked.
 - The recorded paths, including the two the read is measured against (absent and mismatched). [19]
 - The current seed allocator supplies identities; removed predecessor/successor ordering helpers are not current fixture owners. [20]
 
-- The public builder and the value types a case reads. [21]
 
 > Retained earlier citation wording: - **The governed-artifact and contract rows that make this module part of the catalog.** Source caption: `read_scope_test_support`
 
@@ -140,4 +134,16 @@ No meaningful cross-repo references found.
 
 ### Repo-Internal References (renewed)
 
+
+- The optional reviewer leaf creates an exact review fact for the fixture’s extra record. [35]
+- The fixture captures its Git tree through the isolated shared helper. [36]
+
+- Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [15]
+- `_create_revision` supplies the current fixture or assertion described above. [13]
+- The public builder and the value types a case reads. [21]
+- `build_read_scope_fixture` supplies the current fixture or assertion described above. [11]
+- `_create_invariant` supplies the current fixture or assertion described above. [12]
+- `_create_realization` supplies the current fixture or assertion described above. [14]
+- **The fixture's declared topology and why this graph and not the shared branching one.** [17]
 - The graph constants: the invariant labels and statements, the applicability, conditions and exclusions, and the three declared family guarantees. Anchor: `RETRY_LABEL`; `BATCH_LABEL`; `RESOLUTION_LABEL`; `FAMILY_LABEL`; `OVERLAPPING_FAMILY_LABEL`; `DIRECT_FAMILY_LABEL` [18]
+- RowStore writes text-tree fixture rows without the retired production admission plane. [16]

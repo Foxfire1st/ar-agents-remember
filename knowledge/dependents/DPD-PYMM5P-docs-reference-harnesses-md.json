@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "eb92d53bd6de812e9d52fc2ae1898fbb432b5b1b",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "049d3961dfb898bbd69253d9e0b878188fd1006b",
+    "commit": "ed29e40bb6a27dbba33b106b556da182e02a7429",
     "role": "curator",
-    "statement": "The harness reference correctly scopes the permission mode of a settings row to its harness and distinguishes the role launcher’s per-start override from the role_start request.",
-    "task": "261112-BUG-L22",
-    "uncommitted": true
+    "statement": "On settled tree 049d3961 (commit ed29e40b), docs/reference/harnesses.md remains accurate: server_info_payload in mcp/src/agents_remember/mcp/tools/core.py still reports openUserSettings and the agents-remember-task role binding unchanged, and the added runtime_install sharedHeldStores reconciliation/projection does not affect harness or role settings.",
+    "task": "261124-EXP",
+    "uncommitted": false
   },
   "document": "docs/reference/harnesses.md",
   "id": "DPD-PYMM5P",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,7 +66,7 @@
       "path": "mcp/src/agents_remember/cli/role_agent_override.py"
     },
     {
-      "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+      "blob": "411af9bcc0ee7e14580f70910fd96aec495deefc",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_start_answer.py"
     },
@@ -86,7 +86,7 @@
       "path": "mcp/src/agents_remember/cli/upgrade_user_settings.py"
     },
     {
-      "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+      "blob": "9518d2870b1d1d5dcd2c6707be568f200f0f5899",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/tools/core.py"
     },
@@ -100,5 +100,16 @@
       "kind": "file",
       "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T00:51:29+01:00",
+    "by": "agent",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+    "task": "261124-EXP"
+  }
 }

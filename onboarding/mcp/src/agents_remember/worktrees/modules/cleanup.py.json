@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+        "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
         "content": "sha256:25e44519d8c52fa20b1c7a9de674a0f6be77dcd794d22f6dcae868cc057786b5",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
-        "content": "sha256:475bbca5dcda63307c3fcbc1b6653e2ff65523e22b8123487a5ac760be470890",
+        "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
+        "content": "sha256:052c4656c966b949a56a418e080136f73f6306113cee79281bd96cb29357f089",
         "locator": {
           "kind": "symbol",
           "name": "_cleanup_outputs_result"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
-        "content": "sha256:ed5a7fe9d8ac86b932b39a57c71f48e4316c1ef16873e2d35c6fb8748daf4118",
+        "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
+        "content": "sha256:d397edc51a8310d576427558989f3aeb4995f7084df1c695cb568cd7d089d861",
         "locator": {
           "kind": "file"
         }
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+        "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
         "content": "sha256:2368f70df2faf1324dd191deef40f750922150fbcd6151482a5e7525c4c22114",
         "locator": {
           "kind": "symbol",
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+        "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
         "content": "sha256:573f3e4c7bc29659eb6f4310ed8543bb75d26ab23cdd75834e2dc5e42411657b",
         "locator": {
           "kind": "symbol",
@@ -92,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+        "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
         "content": "sha256:3dc75e6a086bac5c74ae79fc1e3d77487cde15f62c2a22b47cb9d83f863bb191",
         "locator": {
           "kind": "symbol",
@@ -110,26 +110,8 @@
     },
     {
       "anchor": {
-        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
-        "content": "sha256:25e998f3f16f213c9d25c733eca9fd492a0e7d89763ecd2663869b70fb163d43",
-        "locator": {
-          "kind": "symbol",
-          "name": "_removed_directories"
-        }
-      },
-      "id": "RLZ-BX7F68",
-      "invariant": "INV-BDYV4D",
-      "origin": {
-        "handoffEntry": "L198-INV-B",
-        "leaf": "260928-MIK-L198"
-      },
-      "rationale": "The directory inventory that gained the outside row.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
-        "content": "sha256:104810b533eb6302e6c24edb0ccac715dfc7b5e77e0332d612c3986dbc6aafde",
+        "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
+        "content": "sha256:1cf4d020e2b6b64592fa8dfed8f1556bdfda55c98164b0685a7c6fe29186a6d2",
         "locator": {
           "kind": "symbol",
           "name": "_already_completed_cleanup"
@@ -146,7 +128,7 @@
     },
     {
       "anchor": {
-        "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+        "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
         "content": "sha256:3dc75e6a086bac5c74ae79fc1e3d77487cde15f62c2a22b47cb9d83f863bb191",
         "locator": {
           "kind": "symbol",
@@ -169,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
             "content": "sha256:6655686073ecd35f41f016b1c12f205ebc555fd6d064525522c7f429177bb9da",
             "locator": {
               "kind": "symbol",
@@ -236,7 +218,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45bde9d2eae6681ae74e8f1a36fbf6efed8e8d23",
+            "blob": "99886f1b1bae224fcc65de23608c833a0262d37e",
             "content": "sha256:6fecff16f222bd802f30b28b67b5cbf6cd44c932e3b29945d84bfd9496aafb78",
             "locator": {
               "kind": "symbol",
@@ -253,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
+            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
             "content": "sha256:0a35eedfdf93940b1382b8b784fd34c2318a07d0f4376c1b581dda2701b79418",
             "locator": {
               "kind": "symbol",
@@ -265,12 +247,12 @@
         },
         {
           "anchor": {
-            "blob": "5b77d7f324f2459972899c1f9a2c64b9052ef9da",
+            "blob": "2f3a0a9870aa6bce84ab2b34ec79537ee13ebc7e",
             "content": "sha256:ee2047a9342ca94fd6ced51b91d20b36379b10d8e5c424d146344bf7e8e02647",
             "locator": {
-              "end": 197,
+              "end": 205,
               "kind": "line_range",
-              "start": 140
+              "start": 148
             },
             "path": "mcp/tests/test_terminal_blocker_reasons.py"
           },
@@ -347,12 +329,12 @@
       ]
     },
     "2": {
-      "note": "**Retained historical source account — superseded by the current contract:** Successful cleanup and exact terminal replay pass through the terminal activation-release bridge.  Anchor: `cleanup_result`",
+      "note": "**Retained historical source account — superseded by the current contract:** Successful cleanup and exact terminal replay pass through the terminal activation-release bridge. Anchor: `cleanup_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
-            "content": "sha256:e53fa354fbef957aa8a30ccad004dd332621b3421cc4ed9047f72f22bb6540cf",
+            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
+            "content": "sha256:b8c6346ce2a325136102784548291469d6356c351c087e6ca151407fad81506c",
             "locator": {
               "kind": "symbol",
               "name": "_cleanup_terminal_branch"
@@ -363,12 +345,12 @@
       ]
     },
     "22": {
-      "note": "**Retained historical source account — superseded by the current contract:** A cleanup repeated after its terminal archive was written carries no rejudged record: the archive-ready branch binds `kept_line = None` and invents no `landedTips`.  Anchor: `cleanup_result`",
+      "note": "**Retained historical source account — superseded by the current contract:** A cleanup repeated after its terminal archive was written carries no rejudged record: the archive-ready branch binds `kept_line = None` and invents no `landedTips`. Anchor: `cleanup_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
-            "content": "sha256:e53fa354fbef957aa8a30ccad004dd332621b3421cc4ed9047f72f22bb6540cf",
+            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
+            "content": "sha256:b8c6346ce2a325136102784548291469d6356c351c087e6ca151407fad81506c",
             "locator": {
               "kind": "symbol",
               "name": "_cleanup_terminal_branch"
@@ -417,12 +399,41 @@
       "targets": [
         {
           "anchor": {
-            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
             "content": "sha256:573f3e4c7bc29659eb6f4310ed8543bb75d26ab23cdd75834e2dc5e42411657b",
             "locator": {
               "kind": "symbol",
               "name": "_cleanup_integration_refusal"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Cleanup keeps leaf call lines through `terminal_group.py` before removing the task folder and carries the keep outcome on `directories.logs`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+            "content": "sha256:3777083fe6e327eb6a60e84791e88233774c55272932bbfe0568cf59e67b072e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_collect_before_removal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_group.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29c9dca453518e83926e0dc616a4efb5436a4ff7",
+            "content": "sha256:6d816437255809c6522918e77b2c3d0a6d3666d1127dcef39f528a73c78f80f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "keep_tool_calls_for_group"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/kept_tool_calls.py"
           },
           "kind": "code"
         }
@@ -486,7 +497,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45bde9d2eae6681ae74e8f1a36fbf6efed8e8d23",
+            "blob": "99886f1b1bae224fcc65de23608c833a0262d37e",
             "content": "sha256:1a7dfc6f818e444df8a75d0f217c2d499b02cb4898523113feb6257e90ca2750",
             "locator": {
               "kind": "symbol",
@@ -503,12 +514,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
             "content": "sha256:2368f70df2faf1324dd191deef40f750922150fbcd6151482a5e7525c4c22114",
             "locator": {
-              "end": 168,
+              "end": 163,
               "kind": "line_range",
-              "start": 108
+              "start": 103
             }
           },
           "kind": "code"
@@ -537,12 +548,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fe83d48a75d16c7f66764ad45c34bc03f6becff",
+            "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
             "content": "sha256:0cc7abbf055f6ec82fdb09ae3a167512e6cc5066d15c8fd6ab22645275e53dea",
             "locator": {
-              "end": 816,
+              "end": 811,
               "kind": "line_range",
-              "start": 644
+              "start": 639
             },
             "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
           },

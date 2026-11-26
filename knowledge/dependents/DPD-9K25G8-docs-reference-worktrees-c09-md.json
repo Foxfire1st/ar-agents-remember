@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "340fc61dace3e802a94c7acbbeda067df60fe23f",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "The C09 reference still describes a shared preview and apply verdict over the exact candidate trees.",
-    "task": "261112-BUG-L21",
+    "statement": "docs/reference/worktrees-c09.md (lines 104-113, 317-349) accurately describes exact-pair closeout/landing, terminal archive verification, and archived cleanupArguments retries without asserting a subfolder inclusion list or empty-only guard.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/reference/worktrees-c09.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+        "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
         "content": "sha256:8051cd1b0ce6c524c37ca9bbeb9f2e077b17f254335985310d4ad655df1ebaae",
         "locator": {
           "kind": "symbol",
@@ -51,7 +51,7 @@
     },
     {
       "anchor": {
-        "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
+        "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
         "content": "sha256:5294aa5786f684669c8cd1b735ec12b7a227be127bf85ee98de9ba85c2adfce2",
         "locator": {
           "kind": "symbol",
@@ -128,8 +128,8 @@
     },
     {
       "anchor": {
-        "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-        "content": "sha256:6c3c5b011ddb1e3b77966fd359572b3d93078304e8904febd1147ae140e36b18",
+        "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+        "content": "sha256:20e5807354ef02250712841ec0af798cdcaa447778a73d792a4db04fceb954cb",
         "locator": {
           "kind": "symbol",
           "name": "_direct_landing_result"
@@ -140,7 +140,7 @@
     },
     {
       "anchor": {
-        "blob": "ea9b2fde8846bec59dda104d822b4fe11aaedafb",
+        "blob": "f6c05e150769e32c8c67cd6f806b4d4ec29d7140",
         "content": "sha256:fae744aa125389b1b01ef81404c0176cd6adfb4bed5f2a46d386ad0384b192cd",
         "locator": {
           "kind": "symbol",
@@ -169,7 +169,7 @@
     },
     {
       "anchor": {
-        "blob": "417ebaf9a63383080fa4e65b4a78376050b55121",
+        "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
         "content": "sha256:eb3dbe24602b4c8d3323b3383bbc854a47a9aed380f600ac28cc4b4dea436941",
         "locator": {
           "kind": "symbol",
@@ -181,7 +181,7 @@
     },
     {
       "anchor": {
-        "blob": "bfbe2e81d84a8bfc86b538760f6510133897cc83",
+        "blob": "74906e090cbaf56d8b60a978f4ada2a8b13bda8f",
         "content": "sha256:24b0868a5c5dcba30614878aa4c409a601909434debde2a81150b7549da1aa88",
         "locator": {
           "kind": "symbol",
@@ -204,7 +204,7 @@
       "kind": "anchor"
     },
     {
-      "blob": "9bb2da8d844e6d6d69f808c483c98a5f0d11abc8",
+      "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/landing.py"
     },
@@ -274,7 +274,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/landing.py"
     },
     {
-      "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+      "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
     },
@@ -283,5 +283,16 @@
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

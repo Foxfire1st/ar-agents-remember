@@ -267,7 +267,7 @@ refusal spellings for status mapping; that does not reinstate removed candidate 
 
 the change-set routes now run on a dedicated `_BoundedReads` scheduler: eight workers plus eight pending jobs, an explicit 503 over the cap, a queued job withdrawn on disconnect and a running job releasing its slot only at its physical end; the route returns 499 and the runner's one `_wait_process` kills the Git child and its group. Freshness is Git's own: id-keyed commit pairs are served with no observation, working views run `git status --porcelain=v2 -z` and have no cache where a plain read costs no more, and the object store is a `count-objects -v` census; the object/worktree walks are removed. The cache's result/repository/per-read maps are capacity-bounded, an abandoned read admits nothing, and the id-keyed accepted gap is named in the cache module. The intent-summary route keeps its 200/503/304 idiom and shares the same cache.
 
-The serving tick reads usage reports at a new stamped end, writes the one limit file whole under an exclusive lock, checks the provider limit before the ordinary recipient read and can confirm archive or absence once per ended stamp during the limit, and reaches the bridge through the port the composition root binds.
+The serving tick reads usage reports at a new stamped end or when a stored report is due for its five-minute recheck, writes the one limit file whole under an exclusive lock, checks the provider limit before the ordinary recipient read and can confirm archive or absence once per ended stamp during the limit, and reaches the bridge through the port the composition root binds. The usage batch runs before the tick's held-message delivery, so a clear recorded there reaches that same delivery pass.
 
 
 - The collaborator port and the registration before the static mount.
@@ -507,6 +507,8 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:
 
 - Summary ports and cache keys include exact optional comparison identity. [143]
 
+
 - Serving composition refuses retired canvas authoring before registration, composes explicit explainer ports and comparison-bound routes, and owns moved-notice stream/watch lifetime. The ordinary roster has 44 names, and a valid explainer binding adds four tools to that roster. [146]
+
 
 - The HTTP Build handler forwards the history that selects planned composition for a blank request. [147]

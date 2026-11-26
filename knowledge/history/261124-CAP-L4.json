@@ -1,0 +1,2097 @@
+{
+  "closed": true,
+  "leaf": "261124-CAP-L4",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
+            "content": "sha256:824bd9bd445fd5b056b8cc06055475a33faaa2ef30c15b48bff4f1130239a0f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:eff1edcfd08e666800b6b18c844c0671f01e872a311839119c510b1fb3f30cd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-THMGJK"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-01A5Z5",
+      "items": [
+        "sha256:b0799bc8b87f40a392c025d4124a099583e9455afdb5983bf763be39d8ecb236"
+      ],
+      "reason": "Meaning is unchanged by post-registration schema compaction and tool description optimization; all behavioral boundaries, signatures, and lazy-resolution contracts remain intact and covered entries are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-F1TY2E"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-096E5E",
+      "items": [],
+      "reason": "Re-read docs/reference/settings-json.md lines 86-129 against tool_answer_log.py on synced tree a5bb9a1f: all tool-log naming, retention, byte-budget, and redaction rules still hold.",
+      "revision": 16,
+      "subject": "DPD-W0T9V9"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-0R14CY",
+      "items": [
+        "sha256:5de11ee27fbd5f4c30859952381ab08a05658884f68365526a7ec77aa3769670"
+      ],
+      "reason": "CAP-L4 only tightened tool docstrings in role_agents.py (re-anchoring INV-7DMXZ3 at RLZ-C3R4TK without changing its meaning); the launch contract still obtains harness defaults and delegates permission-mode acceptance to Paseo, so the reconsider_when condition is not met.",
+      "subject": "reconsider:DEC-6BZSX5#1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0T01PS",
+      "items": [
+        "sha256:f4b59579ffe2b3c481d8fa4181f491e647657976c73aa8063ae8d29a5136264a"
+      ],
+      "reason": "One-line test import of compact_tool_schema in test_role_tool_scope.py supporting PRF-HTCBHH; carries no standalone behavioral obligation.",
+      "subject": "hunk:sha256:f4b59579ffe2b3c481d8fa4181f491e647657976c73aa8063ae8d29a5136264a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0TAEYG",
+      "items": [
+        "sha256:ea7f804e8851c78b7c8e858b598e07abd4773129236e53079b46fc034da8fdc8"
+      ],
+      "reason": "Updated worktrees registrar card for shortened worktree_sync docstring length and refreshed worktree references.",
+      "sources": [
+        {
+          "blob": "728e1d545134c9f832582a1ef5e23a03ade92276",
+          "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/worktrees.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
+            "content": "sha256:af06a2422ac2a91eab5c15ecad95777c61ed5def424c7fa88a64d887933aa5c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP.call_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:af06a2422ac2a91eab5c15ecad95777c61ed5def424c7fa88a64d887933aa5c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberMCP.call_tool"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-60GHTP"
+        },
+        {
+          "after": {
+            "blob": "89ca2523d8da1930c4fa3acd2956e2690cff1749",
+            "content": "sha256:e2747356de104fcb081ccb7062157d66db7887e0f22e0dd6040d7b228af4a8f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_role_agent_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "before": {
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+            "content": "sha256:e73c3919f9745cc0652821e92130026445e86e4ed89ca4ba1b3b9d76a256ec01",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_role_agent_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "id": "RLZ-6ND0CV"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-153FHN",
+      "items": [
+        "sha256:1d659e8f061091f97bf5f5e39f9050b6c42622d384ee75b6676766e66201539f"
+      ],
+      "reason": "Meaning is unchanged by post-registration schema compaction and tool description optimization; all behavioral boundaries, signatures, and lazy-resolution contracts remain intact and covered entries are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-V4WR2R"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-1KRXCB",
+      "items": [],
+      "reason": "Re-read docs/design/python-pytest-bootstrap.md against tree a5bb9a1f: unit-regression gained test_tool_schema_compaction.py while integration (123) and stress-durability (1) remain unchanged under the file-level lane anchor.",
+      "revision": 16,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-470EHM",
+      "items": [],
+      "reason": "Re-read docs/guides/review-page-and-explainer.md against tree a5bb9a1f: explainer_control actions, arguments, refusal codes, and the four explainer tools remain unchanged.",
+      "revision": 11,
+      "subject": "DPD-PMZ21Z"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5F342Q",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Updated synced unit-regression (674) and total (824) counts, documented test_tool_schema_compaction.py at line 650, and refreshed lane references.",
+      "sources": [
+        {
+          "blob": "1d95700adc0206a02373ad7aca430393f0339cd8",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5TP73M",
+      "items": [
+        "sha256:065a4f8c87eff69cf4370f0d51d0f7835b5bae4dbd915d3e6f1353fb4aeef3ed"
+      ],
+      "reason": "Updated synced catalog totals (121 artifacts, 824 distinct modules), documented test_tool_schema_compaction.py and updated test_role_tool_scope.py coverage, and refreshed catalog references.",
+      "sources": [
+        {
+          "blob": "e6315a90fc9e1bf5db6d433cb7642b26d3364097",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "1d95700adc0206a02373ad7aca430393f0339cd8",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "82b90b7ec289037925f8392601e4debb5d700327",
+          "path": "mcp/tests/test_role_tool_scope.py"
+        },
+        {
+          "blob": "4bf12621aa5bd40b36b0b0ffa0a34e7ea67006bb",
+          "path": "mcp/tests/test_tool_schema_compaction.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5W0C5X",
+      "items": [
+        "sha256:556b42edce2d2bc41ac1cea2866944740d32d8dc8457150ebcc88a2cf5219a69"
+      ],
+      "reason": "Adding _compact_server_tool_schemas outside AgentsRememberMCP in server.py does not affect the class's recorded weakness; the symbol anchor remains valid and the weakness stays open.",
+      "revision": 4,
+      "subject": "WKN-P01MFZ"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-613JNQ",
+      "items": [],
+      "reason": "Re-read docs/install/openclaw.md against tree a5bb9a1f: caller_harness_name and role_start behavior in role_agents.py remain unchanged.",
+      "revision": 8,
+      "subject": "DPD-6528VF"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-6G7G1H",
+      "items": [],
+      "reason": "Re-read docs/architecture.md against tree a5bb9a1f: _compact_server_tool_schemas in create_server leaves call_tool, definition_scope, tool logging, and process lifetime unchanged.",
+      "revision": 14,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "20ebef72dc27ca53cfb6a0f75efe8a015159ecef",
+            "content": "sha256:0a3fb872d610cd5136cfe573d6064cf5b44f6ba185fe0b2f7a783f1af35c1ea5",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_write"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "before": {
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
+            "content": "sha256:f58d64f0f2b089ba2ea8fdeaad07ea16024320aba7ec5ef63f5c7db369457bbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_write"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "id": "RLZ-8M3H7V"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-868CQ3",
+      "items": [
+        "sha256:f8840eeeb33267692746c853f8b188faeb77f4e4e813ef9701aa7edec7854dde"
+      ],
+      "reason": "Meaning is unchanged by post-registration schema compaction and tool description optimization; all behavioral boundaries, signatures, and lazy-resolution contracts remain intact and covered entries are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-AG8G8C"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e6315a90fc9e1bf5db6d433cb7642b26d3364097",
+            "content": "sha256:de01e747162009a05fda9e9a6c022a52612161c2a1851bdda46618a5910753ff",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
+            "content": "sha256:a5588ad7d8f1bfea57b39e5a7be94110d0a0cd13030f12a82dd340b249681da8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "1d95700adc0206a02373ad7aca430393f0339cd8",
+            "content": "sha256:197120b3ee5bc6a1fdd34a3ae0e1f08d2509db32048dd4d4cc6c223f4a9bd14c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
+            "content": "sha256:75ed2e35f46d9a5e9f5347bfaef816ac8db8824354465b895366ce51d93fe399",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8AJMYP",
+      "items": [
+        "sha256:e9a0415a7e64ef73f9f52d2b4bdbce2b4e7caa814a91b1cefa9958ac6255c4fd"
+      ],
+      "reason": "Meaning is unchanged; the TOML evidence-catalog entries gained test_tool_schema_compaction.py without altering lane or lifecycle catalog guarantees, so the whole-file anchors are re-anchored at the candidate.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-8E22DR",
+      "items": [],
+      "reason": "Re-read docs/guides/onboard-existing-repo.md against tree a5bb9a1f: memory_init, memory_baseline_status, and memory_baseline_adopt arguments, defaults, and documentation pointer remain unchanged.",
+      "revision": 3,
+      "subject": "DPD-T00S78"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "89ca2523d8da1930c4fa3acd2956e2690cff1749",
+            "content": "sha256:19faa2c150f9abf4e2872ec5e319c8966caa9c41a8af6849413c790e2d980cc7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "before": {
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+            "content": "sha256:8822ec08395ec2ea6b32818287af14f4bc59d1078bf22128eb5469047c8cc999",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "id": "RLZ-C3R4TK"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8X43BG",
+      "items": [
+        "sha256:4e48a0ba426d6fe8bb8e3153dfaddfad6cc91198b203e5e004cb53372cda3bb8"
+      ],
+      "reason": "Meaning is unchanged by post-registration schema compaction and tool description optimization; all behavioral boundaries, signatures, and lazy-resolution contracts remain intact and covered entries are re-anchored at the candidate.",
+      "revision": 4,
+      "subject": "INV-7DMXZ3"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-9D30YY",
+      "items": [],
+      "reason": "Re-read docs/guides/carryover-from-branch.md against tree a5bb9a1f: memory_carryover_plan and memory_carryover_apply signatures, defaults, and recovery semantics are unchanged.",
+      "revision": 5,
+      "subject": "DPD-6WW03D"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-9JGACE",
+      "items": [],
+      "reason": "Re-read SECURITY.md against tree a5bb9a1f: CAP-L4's _compact_server_tool_schemas in server.py leaves local stdio transport, autoStart-only dashboard supervision, private values in files, and server_info behavior unchanged.",
+      "revision": 10,
+      "subject": "DPD-8PE0G9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AV8V6C",
+      "items": [
+        "sha256:e0bfa6d1d91da76bc409221a307df016b2b38b1416b79e626aab06b73e08ff80"
+      ],
+      "reason": "Authored new onboarding card and sidecar for added test module test_tool_schema_compaction.py covering lossless compaction unit tests and create_server contract parity.",
+      "sources": [
+        {
+          "blob": "4bf12621aa5bd40b36b0b0ffa0a34e7ea67006bb",
+          "path": "mcp/tests/test_tool_schema_compaction.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_schema_compaction.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AZDBDF",
+      "items": [
+        "sha256:545e9ff74105ca8c9b240a380c9f58b8e328c13660c82f1c92c0c96fd1fbc9eb"
+      ],
+      "reason": "Updated registration route overview for _compact_server_tool_schemas, <= 500-char descriptions, omitted module-table tools, and repaired pre-existing mismatched citation notes [1, 6, 22, 23].",
+      "sources": [
+        {
+          "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
+          "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+        },
+        {
+          "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
+          "path": "mcp/src/agents_remember/mcp/registration/core.py"
+        },
+        {
+          "blob": "8b530f894da4375dc8251e595790c5f390d51e14",
+          "path": "mcp/src/agents_remember/mcp/registration/explainer.py"
+        },
+        {
+          "blob": "20ebef72dc27ca53cfb6a0f75efe8a015159ecef",
+          "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+        },
+        {
+          "blob": "bbc1541e4379d1cf2c834fbc40cb53f596f21dfd",
+          "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+        },
+        {
+          "blob": "89ca2523d8da1930c4fa3acd2956e2690cff1749",
+          "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+        },
+        {
+          "blob": "29ac4d5e75a9e54475ec617732ab37e9e4fa8983",
+          "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
+        },
+        {
+          "blob": "2359df429c0d22338e319ed30232007a7559250f",
+          "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
+        },
+        {
+          "blob": "728e1d545134c9f832582a1ef5e23a03ade92276",
+          "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "bbc1541e4379d1cf2c834fbc40cb53f596f21dfd",
+            "content": "sha256:53b082297c1b38106c08b5809d1b4aa1ac1ebbaa79fa742fdcae32a0b565db68",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "before": {
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+            "content": "sha256:22a16fa5e06b93600248318969bdaa92fc3eadaa85884358ee5bbb049f754e00",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "id": "RLZ-PT7Q2S"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-BCENGW",
+      "items": [
+        "sha256:78a8891afc26871831f3c4b4ac7a43e6ca1d339917eb52f65fdc7f06dc7262c3"
+      ],
+      "reason": "Meaning is unchanged by post-registration schema compaction and tool description optimization; all behavioral boundaries, signatures, and lazy-resolution contracts remain intact and covered entries are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-Q7KYQH"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BSDSYW",
+      "items": [
+        "sha256:fcf03eceeec76dfe0f79c591a1856d8462daa8578fa42cdac970064005bf2f65"
+      ],
+      "reason": "Documented _compact_server_tool_schemas / tool_schema_compaction.py and the 500-character raw description ceiling, and refreshed stale registration/server references.",
+      "sources": [
+        {
+          "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
+          "path": "mcp/src/agents_remember/mcp/server.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BY6PCB",
+      "items": [
+        "sha256:7e1af227beb6663a1d1cb5a7635e91387d097b22f53d06c003a8ade72087a44a"
+      ],
+      "reason": "Shortening runtime_install's docstring in _register_installation_tools does not resolve the underlying weakness; the symbol anchor remains valid at the same function and the weakness stays open.",
+      "revision": 2,
+      "subject": "WKN-BQ3A0A"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
+            "content": "sha256:b81fa01ac7d524b80576efc62e9cc0ece53b751d838062a0fd5bae97495af362",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_closeout_command_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+          },
+          "before": {
+            "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
+            "content": "sha256:cb3bdcb61a8447af47df8946f7acf893aa6c75c59d0df442d93933e89afb4541",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_closeout_command_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+          },
+          "id": "RLZ-29E1QF"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-C8X4MZ",
+      "items": [
+        "sha256:fb8358d86b97b823a95108bec36d670eaf78a41bd8ba2711c8040e6e560f45e9"
+      ],
+      "reason": "Meaning is unchanged by post-registration schema compaction and tool description optimization; all behavioral boundaries, signatures, and lazy-resolution contracts remain intact and covered entries are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-760TKM"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-C9FSED",
+      "items": [],
+      "reason": "Re-read docs/concepts.md against synced tree a5bb9a1f: Option B restored 'invariant gate' (closeout.py:85,105) and 'projection' (tasks.py:21), resolving the pre-Option-B contradictions; all other concepts remain accurate.",
+      "revision": 20,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-CBY82A",
+      "items": [],
+      "reason": "Re-read docs/guides/refresh-stale-onboarding.md against tree a5bb9a1f: memory_quality_check and citation_fix parameters and repair workflow remain unchanged.",
+      "revision": 6,
+      "subject": "DPD-TCXJRQ"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0R04WY",
+          "revision": 1
+        },
+        {
+          "id": "INV-1QE8YM",
+          "revision": 1
+        },
+        {
+          "id": "INV-5GEDEX",
+          "revision": 1
+        },
+        {
+          "id": "INV-69M737",
+          "revision": 1
+        },
+        {
+          "id": "INV-AV04NY",
+          "revision": 1
+        },
+        {
+          "id": "INV-B79B38",
+          "revision": 1
+        },
+        {
+          "id": "INV-BNDKC8",
+          "revision": 1
+        },
+        {
+          "id": "INV-G8AX2H",
+          "revision": 1
+        },
+        {
+          "id": "INV-KPK1WT",
+          "revision": 1
+        },
+        {
+          "id": "INV-PD5ZD5",
+          "revision": 1
+        },
+        {
+          "id": "INV-TRMMZA",
+          "revision": 1
+        },
+        {
+          "id": "INV-X8FRT8",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0FRT0",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-CFS9C9",
+      "items": [
+        "sha256:8bb1cfc9b589fac65e00b073b53d4facf9eb198f86a18a2fe8fa516bd3bfb9ef"
+      ],
+      "reason": "Every member invariant was examined at its current revision; tightening knowledge_read's docstring while preserving the writers view leaves writer attribution, revision standing, and review credit unchanged.",
+      "revision": 1,
+      "subject": "FAM-7NBVYB"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-CR1PCE",
+      "items": [],
+      "reason": "Re-read docs/install/cursor.md against tree a5bb9a1f: caller_harness_name and role_start behavior in role_agents.py remain unchanged.",
+      "revision": 8,
+      "subject": "DPD-21GMJ5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "29ac4d5e75a9e54475ec617732ab37e9e4fa8983",
+            "content": "sha256:475620457edee297f7dbb79428b6537cc2f7e773fffd18b8f44b18602fa8db81",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_seat_retirement_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
+          },
+          "before": {
+            "blob": "78d1d879651aca07ed8ab09f7022678801d0b38d",
+            "content": "sha256:d3d60e12ae88a513facb91043e0694e2b9ca55339fa17c0e54fa56c70304e245",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_seat_retirement_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
+          },
+          "id": "RLZ-3DVWXE"
+        },
+        {
+          "after": {
+            "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
+            "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_closeout_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+          },
+          "before": {
+            "blob": "3a15ad077ce442cf31281de1d1ebc57c386f58b5",
+            "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_closeout_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+          },
+          "id": "RLZ-46ZY4R"
+        },
+        {
+          "after": {
+            "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
+            "content": "sha256:312d3f75f123cb354fd03fd95f8dd3fc94d3693499546a4be82abdd2bf7cf3a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worktree_services"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:312d3f75f123cb354fd03fd95f8dd3fc94d3693499546a4be82abdd2bf7cf3a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worktree_services"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-6Z7M7P"
+        },
+        {
+          "after": {
+            "blob": "20ebef72dc27ca53cfb6a0f75efe8a015159ecef",
+            "content": "sha256:89403f774359c930a72699d367612f487642b02c67d77b8a3398df9814965381",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_read"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "before": {
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
+            "content": "sha256:13d9eac88f8641f2ad4dc68014366afb230e62a5d29da417d6933514cb8f86ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_read"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "id": "RLZ-8907S7"
+        },
+        {
+          "after": {
+            "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
+            "content": "sha256:824bd9bd445fd5b056b8cc06055475a33faaa2ef30c15b48bff4f1130239a0f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:eff1edcfd08e666800b6b18c844c0671f01e872a311839119c510b1fb3f30cd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-8T6VV2"
+        },
+        {
+          "after": {
+            "blob": "20ebef72dc27ca53cfb6a0f75efe8a015159ecef",
+            "content": "sha256:b3a9ee71c0a665c2729a74ff431ebfdec2fd898fe84bd11b0e535c6d658fed57",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_integrity_check"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "before": {
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
+            "content": "sha256:996856950511320ea19a5c78de08ab93cba16a5c5e9b8c0ad5787ddfdd412f28",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_integrity_check"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "id": "RLZ-CXX0PE"
+        },
+        {
+          "after": {
+            "blob": "89ca2523d8da1930c4fa3acd2956e2690cff1749",
+            "content": "sha256:e2747356de104fcb081ccb7062157d66db7887e0f22e0dd6040d7b228af4a8f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_role_agent_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "before": {
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+            "content": "sha256:e73c3919f9745cc0652821e92130026445e86e4ed89ca4ba1b3b9d76a256ec01",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_role_agent_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "id": "RLZ-GA7X4W"
+        },
+        {
+          "after": {
+            "blob": "bbc1541e4379d1cf2c834fbc40cb53f596f21dfd",
+            "content": "sha256:fc4ab9fdbf47d2ad57d9e543eb11c0acd70d5be1bebc835093cb81a397f920f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_memory_health_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "before": {
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+            "content": "sha256:14d3e28109cc04c1a36750066b033359105473bf7276e620816572d5d1e909e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_memory_health_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "id": "RLZ-GZRJ1A"
+        },
+        {
+          "after": {
+            "blob": "20ebef72dc27ca53cfb6a0f75efe8a015159ecef",
+            "content": "sha256:2d916029f13afe690970cbaa144fae5d02729ffad4938976a671c0ecb231bac1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_write"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "before": {
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
+            "content": "sha256:af5bc3d53ac74fde60450bcb05450ed18d8201c7533d803475ec675d4e314053",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_write"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "id": "RLZ-KA308Z"
+        },
+        {
+          "after": {
+            "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
+            "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-KQGYHP"
+        },
+        {
+          "after": {
+            "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
+            "content": "sha256:61b7cd1cea341dfd3850e0179a1d9b4e12f14ebee091f841eb9e4b81ca6a9042",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_orientation_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "before": {
+            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
+            "content": "sha256:f382639fd4787b94b48a9c948e12fc0d831544d1a5495c7e67900fa959480820",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_orientation_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "id": "RLZ-MTTNJ1"
+        },
+        {
+          "after": {
+            "blob": "728e1d545134c9f832582a1ef5e23a03ade92276",
+            "content": "sha256:8f6996c17d11971112ef6181192b87e25f773050c0e11867cc3fff5ea8bc4ffe",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_worktree_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+          },
+          "before": {
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+            "content": "sha256:8f6996c17d11971112ef6181192b87e25f773050c0e11867cc3fff5ea8bc4ffe",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_worktree_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+          },
+          "id": "RLZ-NJRK6G"
+        },
+        {
+          "after": {
+            "blob": "2359df429c0d22338e319ed30232007a7559250f",
+            "content": "sha256:f75bfc78f7b6cafbe4847030de23115333c08e4d02e817cd10a2533719847c83",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_task_document_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
+          },
+          "before": {
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:f75bfc78f7b6cafbe4847030de23115333c08e4d02e817cd10a2533719847c83",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_task_document_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
+          },
+          "id": "RLZ-QYHQYS"
+        },
+        {
+          "after": {
+            "blob": "20ebef72dc27ca53cfb6a0f75efe8a015159ecef",
+            "content": "sha256:f3078a4e98981f5d6e048c7f7fb374f92a598b01f561b1203460b72c8507ccf7",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "before": {
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
+            "content": "sha256:f3078a4e98981f5d6e048c7f7fb374f92a598b01f561b1203460b72c8507ccf7",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "id": "RLZ-S3TJ3S"
+        },
+        {
+          "after": {
+            "blob": "20ebef72dc27ca53cfb6a0f75efe8a015159ecef",
+            "content": "sha256:81295e31012025a183ea01485f69bf782e5d38142885eec5760c1ac9f5253a19",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_diff"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "before": {
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
+            "content": "sha256:462eafa5b1361a6c9e781fea4ba3dfd5cb3f6a441b4d85111a77abbcfe0ee0e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_diff"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "id": "RLZ-Y1TRRQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CVTFQ8",
+      "items": [
+        "sha256:5acc752cf04d4d6c2a370ea9573e3403bdc4497a91765b466af30017fca86aa1"
+      ],
+      "reason": "Meaning is unchanged by post-registration schema compaction and tool description optimization; all behavioral boundaries, signatures, and lazy-resolution contracts remain intact and covered entries are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-990KQM"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D1D2ZF",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Documented test_tool_schema_compaction.py consumer rows (lines 857 and 3303 on synced 121-artifact catalog) and re-anchored all shifted catalog references.",
+      "sources": [
+        {
+          "blob": "e6315a90fc9e1bf5db6d433cb7642b26d3364097",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-D2VBF8",
+      "items": [],
+      "reason": "Re-read docs/FAQ.md against tree a5bb9a1f: read_ar_files, context_packet (include_drift/include_freshness), cache rebuilds, and task_doc behavior remain unchanged by core.py description shortening.",
+      "revision": 7,
+      "subject": "DPD-A3XZ3Q"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-DA2605",
+      "items": [],
+      "reason": "Re-read docs/guides/adopt-existing-memory.md against tree a5bb9a1f: memory_baseline_status, memory_baseline_adopt, citation_fix, and memory_init signatures, defaults, and R198.1-reference-anchor gating are unchanged.",
+      "revision": 4,
+      "subject": "DPD-ZN7CD9"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-DB2JMK",
+      "items": [],
+      "reason": "Re-read docs/design/python-evidence-system.md against tree a5bb9a1f: the guide pins no catalog count, and test_tool_schema_compaction.py follows the single-lane and all-tests consumer rules.",
+      "revision": 15,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1d95700adc0206a02373ad7aca430393f0339cd8",
+            "content": "sha256:197120b3ee5bc6a1fdd34a3ae0e1f08d2509db32048dd4d4cc6c223f4a9bd14c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
+            "content": "sha256:75ed2e35f46d9a5e9f5347bfaef816ac8db8824354465b895366ce51d93fe399",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "e6315a90fc9e1bf5db6d433cb7642b26d3364097",
+            "content": "sha256:de01e747162009a05fda9e9a6c022a52612161c2a1851bdda46618a5910753ff",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
+            "content": "sha256:a5588ad7d8f1bfea57b39e5a7be94110d0a0cd13030f12a82dd340b249681da8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-E3A6EW",
+      "items": [
+        "sha256:5316f9017ed1422c9734d6b70cc6a47528f8a247407fc99c7580b331fae36f3a"
+      ],
+      "reason": "Meaning is unchanged; the TOML evidence-catalog entries gained test_tool_schema_compaction.py without altering lane or lifecycle catalog guarantees, so the whole-file anchors are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
+            "content": "sha256:0e6725422a3eeea913b4bcd5b3deadefa0ea96e4ce447473d731c92ff3196b21",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launched_seat_refusal"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:0e6725422a3eeea913b4bcd5b3deadefa0ea96e4ce447473d731c92ff3196b21",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launched_seat_refusal"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-73C3Y5"
+        },
+        {
+          "after": {
+            "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
+            "content": "sha256:824bd9bd445fd5b056b8cc06055475a33faaa2ef30c15b48bff4f1130239a0f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:eff1edcfd08e666800b6b18c844c0671f01e872a311839119c510b1fb3f30cd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-HD5W8S"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-E5TWB0",
+      "items": [
+        "sha256:d819defdf6e9219e6faf89bbeb17d22119916798683f872a019381ab406c347d"
+      ],
+      "reason": "Meaning is unchanged by post-registration schema compaction and tool description optimization; all behavioral boundaries, signatures, and lazy-resolution contracts remain intact and covered entries are re-anchored at the candidate.",
+      "revision": 2,
+      "subject": "INV-48203N"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E976MP",
+      "items": [
+        "sha256:8447a048612e12f53b8bc2c5167fd927c5c818179afbe06a5178b311651a2529"
+      ],
+      "reason": "Test-only budget table (COMPACT_BYTE_BUDGETS), MAX_RAW_TOOL_DESCRIPTION_CHARS constant, and _clear_ar_env helper supporting test_the_architect_schema_budget_holds_on_the_bound_and_unbound_server (PRF-E2GN9G / PRF-REAA40); carries no standalone invariant beyond INV-NZ27V7 and INV-06MGX9.",
+      "subject": "hunk:sha256:8447a048612e12f53b8bc2c5167fd927c5c818179afbe06a5178b311651a2529"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EDT4RM",
+      "items": [
+        "sha256:fce9b1e6b5e1abca16fdba0a096c19ad8cfe583c1d78781e55cce5cded41b3c6"
+      ],
+      "reason": "One-line import of compact_tool_schema in server.py supporting _compact_server_tool_schemas; carries no standalone behavioral obligation beyond INV-NZ27V7.",
+      "subject": "hunk:sha256:fce9b1e6b5e1abca16fdba0a096c19ad8cfe583c1d78781e55cce5cded41b3c6"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EHX1R6",
+      "items": [
+        "sha256:ccdc67d37a65341b8d2f28bda86a872a6ecbbe404e15990075ad1608e8bb3804"
+      ],
+      "reason": "Added tool_schema_compaction.py to the models/tools/ overview and authored its citation reference.",
+      "sources": [
+        {
+          "blob": "927e371dc7ce9e90f82392a7040ba5f22faf3392",
+          "path": "mcp/src/agents_remember/models/tools/role_tool_scope.py"
+        },
+        {
+          "blob": "28199dc6c776b8074c3b8b15a21068f6259fb122",
+          "path": "mcp/src/agents_remember/models/tools/tool_schema_compaction.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1d95700adc0206a02373ad7aca430393f0339cd8",
+            "content": "sha256:197120b3ee5bc6a1fdd34a3ae0e1f08d2509db32048dd4d4cc6c223f4a9bd14c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
+            "content": "sha256:75ed2e35f46d9a5e9f5347bfaef816ac8db8824354465b895366ce51d93fe399",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-EJV10E",
+      "items": [
+        "sha256:b979d2ebb45bf61b2fd39b8354e54f450b95b2f8f3721209fd52d51471b4e93d"
+      ],
+      "reason": "Meaning is unchanged; the TOML evidence-catalog entries gained test_tool_schema_compaction.py without altering lane or lifecycle catalog guarantees, so the whole-file anchors are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EQQK41",
+      "items": [
+        "sha256:5b57bcada35f788008158acd146ca047b6d11f4dfc0f487279c5643c85ef7890"
+      ],
+      "reason": "Two-line module docstring wording cleanup replacing a specific harness name with host-neutral phrasing ('the seat's preapproval policy grants from it') with zero allowlist or runtime behavior change; documented in role_tool_scope.py.md.",
+      "subject": "hunk:sha256:5b57bcada35f788008158acd146ca047b6d11f4dfc0f487279c5643c85ef7890"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-EZYBWM",
+      "items": [],
+      "reason": "Re-read docs/guides/cost-aware-bootstrap.md against tree a5bb9a1f: user_settings_init, memory_init, memory_baseline_adopt, and role_start overrides remain unchanged.",
+      "revision": 7,
+      "subject": "DPD-1DXK6Q"
+    },
+    {
+      "considered": [
+        "FAM-0BVSZB",
+        "FAM-0TR1G5",
+        "FAM-25BD8H",
+        "FAM-7NBVYB",
+        "FAM-AHHW29",
+        "FAM-N17BB4",
+        "FAM-VNK792"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-FXQA9W",
+      "items": [
+        "sha256:a195022adf4b2ffa968ed1958bb00265daf8260fb9f31a414379600a91ed17ed"
+      ],
+      "reason": "Examined all seven reached families (including FAM-0BVSZB, FAM-0TR1G5, and FAM-7NBVYB); lossless JSON Schema compaction and across-the-board 44-tool description optimization apply uniformly to all servers and do not join any existing family's joint guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-NZ27V7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G025AS",
+      "items": [
+        "sha256:8619d80c557ccc3f7accd28db0d079409dc834b3d6edd344121c7084a9f40a86"
+      ],
+      "reason": "Prose account remains accurate after explainer_control's docstring was tightened; only the sidecar reference anchor was refreshed.",
+      "sources": [
+        {
+          "blob": "8b530f894da4375dc8251e595790c5f390d51e14",
+          "path": "mcp/src/agents_remember/mcp/registration/explainer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/explainer.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "bbc1541e4379d1cf2c834fbc40cb53f596f21dfd",
+            "content": "sha256:fc4ab9fdbf47d2ad57d9e543eb11c0acd70d5be1bebc835093cb81a397f920f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_memory_health_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "before": {
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+            "content": "sha256:14d3e28109cc04c1a36750066b033359105473bf7276e620816572d5d1e909e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_memory_health_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "id": "RLZ-44SETH"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-G5QN0A",
+      "items": [
+        "sha256:de07260ae3030a64668889922d380943399395721a07798b2054fef85720ecb0"
+      ],
+      "reason": "Meaning is unchanged by post-registration schema compaction and tool description optimization; all behavioral boundaries, signatures, and lazy-resolution contracts remain intact and covered entries are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-CR4CJ8"
+    },
+    {
+      "considered": [
+        "FAM-0BVSZB",
+        "FAM-0TR1G5",
+        "FAM-25BD8H",
+        "FAM-7NBVYB",
+        "FAM-AHHW29",
+        "FAM-N17BB4",
+        "FAM-VNK792"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-G895KX",
+      "items": [
+        "sha256:b10422402a8452b268d1d2e36e009b633a46c9503229ac235545213428003fff"
+      ],
+      "reason": "Examined all seven reached families (including FAM-0BVSZB, FAM-0TR1G5, and FAM-7NBVYB); lossless JSON Schema compaction and across-the-board 44-tool description optimization apply uniformly to all servers and do not join any existing family's joint guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-EG3M4J"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GB1MD4",
+      "items": [
+        "sha256:6fe8085ffdfe25f086082cd3f464c7368331ea2d414901f194a4026b4070baf1"
+      ],
+      "reason": "Updated role_agents card to include user_settings_init in Purpose, align role_start/role_message docstring descriptions, and refresh references.",
+      "sources": [
+        {
+          "blob": "89ca2523d8da1930c4fa3acd2956e2690cff1749",
+          "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/role_agents.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J4P4TM",
+      "items": [
+        "sha256:78caf13897210e8e350b80555b4bda9cf2c0b777e8c2d2ac70ba6503d99bcdd7"
+      ],
+      "reason": "Updated closeout registrar card for shortened docstrings and Option B 'invariant gate' wording, fixed Purpose omissions, and refreshed closeout/worktree references.",
+      "sources": [
+        {
+          "blob": "2e1c28ce2275c88e0dda25b3322948911f6a1ca5",
+          "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/closeout.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "20ebef72dc27ca53cfb6a0f75efe8a015159ecef",
+            "content": "sha256:c1d79d50a22ded350f6a9512383cee9c4525b767ebdb3502f691fb2d9769149e",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 106
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "before": {
+            "blob": "15d0552bac287633d62cf82579e745dd56050256",
+            "content": "sha256:59204def4b221563d2459f76e031cd2335c0e292367a9f4e5a34012bd747b677",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 106
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "id": "RLZ-ADCJCR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-K214CF",
+      "items": [
+        "sha256:6ba280f909bd2d75ec98288f18a28c9060736786ad747a94639ce87415a75e02"
+      ],
+      "reason": "Meaning is unchanged; knowledge_read's docstring in knowledge.py was tightened to 465 characters while preserving the writers view (per-writer revision counts and full report path), so RLZ-ADCJCR is re-anchored at line 106.",
+      "revision": 1,
+      "subject": "INV-5GEDEX"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-47NR7E",
+          "revision": 1
+        },
+        {
+          "id": "INV-9Z6T69",
+          "revision": 1
+        },
+        {
+          "id": "INV-T50898",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-K5VT1Z",
+      "items": [
+        "sha256:fd8021910e1e52c0cb569e21457d7eb7fe5f4c3ee85b1ce51a19dbc27348a409"
+      ],
+      "reason": "Every member invariant was examined at its current revision; tightening read_ar_files's docstring while preserving saved-brief/briefsProblem wording leaves file-brief generation, freshness headers, and role-start notices unchanged.",
+      "revision": 1,
+      "subject": "FAM-0TR1G5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "82b90b7ec289037925f8392601e4debb5d700327",
+            "content": "sha256:c0db0ab405ff37624bce2d629e4288a51eb1f8047fa9a5ae94dc4cb9c744ef7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_read_only_mark_still_validates_a_tool_the_role_excludes"
+            },
+            "path": "mcp/tests/test_role_tool_scope.py"
+          },
+          "before": {
+            "blob": "9a7d6e62da5a0b9b5af8d52720d0f804c52d36c2",
+            "content": "sha256:c0db0ab405ff37624bce2d629e4288a51eb1f8047fa9a5ae94dc4cb9c744ef7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_read_only_mark_still_validates_a_tool_the_role_excludes"
+            },
+            "path": "mcp/tests/test_role_tool_scope.py"
+          },
+          "id": "PRF-AMSV86"
+        },
+        {
+          "after": {
+            "blob": "82b90b7ec289037925f8392601e4debb5d700327",
+            "content": "sha256:1e79c839e9fb85e9e512ae755210df915a301e20de470bc08b159ea5e25ca7dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_bound_server_advertises_only_its_roles_tools_in_public_order"
+            },
+            "path": "mcp/tests/test_role_tool_scope.py"
+          },
+          "before": {
+            "blob": "9a7d6e62da5a0b9b5af8d52720d0f804c52d36c2",
+            "content": "sha256:1e79c839e9fb85e9e512ae755210df915a301e20de470bc08b159ea5e25ca7dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_bound_server_advertises_only_its_roles_tools_in_public_order"
+            },
+            "path": "mcp/tests/test_role_tool_scope.py"
+          },
+          "id": "PRF-E1DN29"
+        },
+        {
+          "after": {
+            "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
+            "content": "sha256:824bd9bd445fd5b056b8cc06055475a33faaa2ef30c15b48bff4f1130239a0f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:eff1edcfd08e666800b6b18c844c0671f01e872a311839119c510b1fb3f30cd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-C1DP32"
+        },
+        {
+          "after": {
+            "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
+            "content": "sha256:2c7ca4d5dad59f8b023dd667801f46709868ff8a2ded5237f78c461f3947f661",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scope_server_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:2c7ca4d5dad59f8b023dd667801f46709868ff8a2ded5237f78c461f3947f661",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scope_server_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-XY0EYV"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-K9WD7H",
+      "items": [
+        "sha256:a5802df59d4be86a78f6812aed4970fd1ead7a6f748be23019ae32814eaa0342"
+      ],
+      "reason": "Meaning is unchanged; create_server inserts lossless _compact_server_tool_schemas between apply_read_only_marks and _scope_server_tools without altering role allowlists, tool order, or read-only mark coverage. Covered entries are re-anchored and RLZ-C1DP32 rationale is refreshed in place.",
+      "revision": 1,
+      "subject": "INV-4ZA9SH"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-M6QCAY",
+      "items": [
+        "sha256:98f8a5f6922b1d3f41fe15b9ca54f03bfc633700583f8d8c9b3c96008ed683f4"
+      ],
+      "reason": "Updated role_tool_scope card wording to host-neutral seat preapproval policy phrasing matching lines 10-12.",
+      "sources": [
+        {
+          "blob": "927e371dc7ce9e90f82392a7040ba5f22faf3392",
+          "path": "mcp/src/agents_remember/models/tools/role_tool_scope.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/tools/role_tool_scope.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-M6QMCG",
+      "items": [
+        "sha256:81506890ff4c6e320d530aeab96a848f8c9648904fccb0e744768aee88baa916",
+        "sha256:8447a048612e12f53b8bc2c5167fd927c5c818179afbe06a5178b311651a2529",
+        "sha256:f4b59579ffe2b3c481d8fa4181f491e647657976c73aa8063ae8d29a5136264a"
+      ],
+      "reason": "Updated test_role_tool_scope card for COMPACT_BYTE_BUDGETS, the 500-character raw description bound, and the third stdio compacted Manager test, and authored its references.",
+      "sources": [
+        {
+          "blob": "82b90b7ec289037925f8392601e4debb5d700327",
+          "path": "mcp/tests/test_role_tool_scope.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_tool_scope.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
+            "content": "sha256:824bd9bd445fd5b056b8cc06055475a33faaa2ef30c15b48bff4f1130239a0f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "before": {
+            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "content": "sha256:eff1edcfd08e666800b6b18c844c0671f01e872a311839119c510b1fb3f30cd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "id": "RLZ-562GH4"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-N91VT8",
+      "items": [
+        "sha256:e46c0c9efe5a5b9aca041fe15acb20c5a70045371e63a292819da82aa35dd5a2"
+      ],
+      "reason": "Meaning is unchanged by post-registration schema compaction and tool description optimization; all behavioral boundaries, signatures, and lazy-resolution contracts remain intact and covered entries are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-QCMCJX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
+            "content": "sha256:c4f79dee36ddb04c31c4e4bb78347c5e98b81414b8a929567191c4da7d19293d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "before": {
+            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
+            "content": "sha256:a5102a8f2f33abb478f24321f60f0b90518f4453a5e10852023ddcc17a06f452",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "id": "RLZ-GEQTSN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-NSQ0YJ",
+      "items": [
+        "sha256:d9ce9d8dd4ded4f69463f67d46311c0ea743a294549780b55b41e073f428d39b"
+      ],
+      "reason": "Meaning is unchanged by post-registration schema compaction and tool description optimization; all behavioral boundaries, signatures, and lazy-resolution contracts remain intact and covered entries are re-anchored at the candidate.",
+      "revision": 4,
+      "subject": "INV-N9D91D"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-NY2XZA",
+      "items": [],
+      "reason": "Re-read mcp/README.md against tree a5bb9a1f: all 44 public tools, 8 tool groups, 4 explainer tools, and skill-resource serving remain unchanged by server.py schema compaction.",
+      "revision": 16,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P5NKA6",
+      "items": [
+        "sha256:0b92c8454555fb9fae143fd0bcde8a3b9e9883099722e03d5c0de87cb408a482"
+      ],
+      "reason": "Updated tasks registrar card for compacted task_doc, curator_coherence, lifecycle_finalize_task, and Option B 'waiting-only closeout projection' and 'curator-coherence authority' phrases, and refreshed task references.",
+      "sources": [
+        {
+          "blob": "2359df429c0d22338e319ed30232007a7559250f",
+          "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/tasks.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-PBC70R",
+      "items": [],
+      "reason": "Re-read docs/reference/mcp-tools.md against synced tree a5bb9a1f: KNO-L4 fixed lines 669-672 for role-scoped tools on agents-remember-task, Option B restored 'curator-coherence authority' matching line 383, and all 10 CAP-L4-touched registration/server files preserve documented behavior.",
+      "revision": 19,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PCDK00",
+      "items": [
+        "sha256:0fe8f90d5b2318aaab669b049803f66b8d38b28dee81449c530a5169e2f7f08b"
+      ],
+      "reason": "Updated core registrar card preserving KNO L4 read_ar_files brief/freshness/briefsProblem wording (446 chars) alongside CAP-L4 context_packet/runtime_install compaction and refreshed core references.",
+      "sources": [
+        {
+          "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
+          "path": "mcp/src/agents_remember/mcp/registration/core.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/core.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4ZA9SH",
+          "revision": 1
+        },
+        {
+          "id": "INV-B06F1V",
+          "revision": 1
+        },
+        {
+          "id": "INV-DWNKBC",
+          "revision": 1
+        },
+        {
+          "id": "INV-KYKYPR",
+          "revision": 1
+        },
+        {
+          "id": "INV-SJKVE0",
+          "revision": 1
+        },
+        {
+          "id": "INV-TPVGJK",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-PEZG34",
+      "items": [
+        "sha256:6acb6378e4c2a0f181a454ef3cb7a58eeaa285f2a0cd1a6b1628a8b9ff6c304a"
+      ],
+      "reason": "Every member invariant was examined at its current revision; lossless post-registration schema compaction and tool description optimization leave the family's joint guarantee, membership, and routes unchanged.",
+      "revision": 1,
+      "subject": "FAM-0BVSZB"
+    },
+    {
+      "considered": [
+        "FAM-0BVSZB",
+        "FAM-0TR1G5",
+        "FAM-25BD8H",
+        "FAM-7NBVYB",
+        "FAM-AHHW29",
+        "FAM-N17BB4",
+        "FAM-VNK792"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-QCZEJA",
+      "items": [
+        "sha256:1b1a0a70ab4702bff544ee35434a6ee36de9b537d8a9295a977b2ec66d064a82"
+      ],
+      "reason": "Examined all seven reached families (including FAM-0BVSZB, FAM-0TR1G5, and FAM-7NBVYB); lossless JSON Schema compaction and across-the-board 44-tool description optimization apply uniformly to all servers and do not join any existing family's joint guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-06MGX9"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-CR4CJ8",
+          "revision": 1
+        },
+        {
+          "id": "INV-QSA8WP",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-QMCY4D",
+      "items": [
+        "sha256:4d30384ca09388d6c8596c7f71913086599d9519cb08dea86eb164bcda430487"
+      ],
+      "reason": "Every member invariant was examined at its current revision; lossless post-registration schema compaction and tool description optimization leave the family's joint guarantee, membership, and routes unchanged.",
+      "revision": 1,
+      "subject": "FAM-25BD8H"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "89ca2523d8da1930c4fa3acd2956e2690cff1749",
+            "content": "sha256:a5365f8a7710bcdc7aa7b67f0f58fa3971b47e09918e9ec4995da9b47f501a98",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_message"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "before": {
+            "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+            "content": "sha256:6001adf4a6a060910a2a797ffbacc1dd80b35f37d5c78273ca46835e9702f77a",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_message"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "id": "RLZ-7RVFSN"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-R1SES9",
+      "items": [
+        "sha256:3b8ca18ac58d6dbe14bdb7b1c884f13bc9948de798820ef406c28d8e7416ab2d"
+      ],
+      "reason": "Meaning is unchanged by post-registration schema compaction and tool description optimization; all behavioral boundaries, signatures, and lazy-resolution contracts remain intact and covered entries are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-XZ766Y"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-R42XMA",
+      "items": [],
+      "reason": "Re-read packaged runtime docs/tool-details.md against synced tree a5bb9a1f: Option B restored 'curator-coherence authority' in tasks.py:28, and server.py/memory.py/seat_retirement.py behavior is unchanged.",
+      "revision": 16,
+      "subject": "DPD-NGC2F6"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-141H2J",
+          "revision": 1
+        },
+        {
+          "id": "INV-HPHVCN",
+          "revision": 1
+        },
+        {
+          "id": "INV-JB9D62",
+          "revision": 1
+        },
+        {
+          "id": "INV-V4WR2R",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-T7GNK2",
+      "items": [
+        "sha256:a80bc15496cf07f252d29e3d28c68af4d04de4bb028fd86a266c2357b6307e5b"
+      ],
+      "reason": "Every member invariant was examined at its current revision; lossless post-registration schema compaction and tool description optimization leave the family's joint guarantee, membership, and routes unchanged.",
+      "revision": 1,
+      "subject": "FAM-AHHW29"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-TM6M3J",
+      "items": [],
+      "reason": "Re-read docs/llms.txt (186 lines) against synced tree a5bb9a1f: CAP-L4's tightened core.py docstrings preserve all documented read_ar_files brief, compact-row, and tool-group facts.",
+      "revision": 11,
+      "subject": "DPD-633P3W"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 4
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 2
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 4
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-TRBAEW",
+      "items": [
+        "sha256:f5b1713baabdcdc5e886ca8084e7d3dfc292c91123bfa331b9d8a6b6189677be"
+      ],
+      "reason": "Every member invariant was examined at its current revision; lossless post-registration schema compaction and tool description optimization leave the family's joint guarantee, membership, and routes unchanged.",
+      "revision": 6,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1d95700adc0206a02373ad7aca430393f0339cd8",
+            "content": "sha256:197120b3ee5bc6a1fdd34a3ae0e1f08d2509db32048dd4d4cc6c223f4a9bd14c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "6169c2df58c3ecb025826e3157c1bf28d7b6e9fe",
+            "content": "sha256:75ed2e35f46d9a5e9f5347bfaef816ac8db8824354465b895366ce51d93fe399",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "e6315a90fc9e1bf5db6d433cb7642b26d3364097",
+            "content": "sha256:de01e747162009a05fda9e9a6c022a52612161c2a1851bdda46618a5910753ff",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "10c32d4f8304fe06546c102bf2b74274a8802fc0",
+            "content": "sha256:a5588ad7d8f1bfea57b39e5a7be94110d0a0cd13030f12a82dd340b249681da8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-TRXCAX",
+      "items": [
+        "sha256:2836a50add722dae2a49cca169ebf172b793be48f0276002eb195fe2c538f126"
+      ],
+      "reason": "Meaning is unchanged; the TOML evidence-catalog entries gained test_tool_schema_compaction.py without altering lane or lifecycle catalog guarantees, so the whole-file anchors are re-anchored at the candidate.",
+      "revision": 7,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-V1MT1A",
+      "items": [
+        "sha256:0deca881c7f73f2aa4394ef78e8f110bf6ff56b1ae3066664112208be35d75be"
+      ],
+      "reason": "Shortening worktree_start's docstring in _register_worktree_start_tools does not resolve the underlying weakness; the symbol anchor remains valid at the same function and the weakness stays open.",
+      "revision": 1,
+      "subject": "WKN-FRS2Q6"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6dd2a4a348ca5048f9d3c2628b5c01a84e3e699d",
+            "content": "sha256:486aea7cf1085901ed791ec718f389a35467c092ccc52019fc09b3ab6df8c946",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "before": {
+            "blob": "8f0fcd4c1dc4965cb7911273e6a7c379e7a8b34a",
+            "content": "sha256:f869e2889b096740d90a5f0ab8611334fbed1bf70e300f89137d188643eb311d",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "id": "RLZ-3Y3JWS"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-VE6578",
+      "items": [
+        "sha256:436d84077ddf0e874f56297958a8147ef6feb0649e9ca9dd262efbbecb8e7cc3"
+      ],
+      "reason": "Meaning is unchanged; read_ar_files's docstring in core.py was tightened to 446 characters while preserving every saved-brief, freshness, and briefsProblem fact, so RLZ-3Y3JWS is re-anchored at line 100.",
+      "revision": 1,
+      "subject": "INV-47NR7E"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VFZ2S0",
+      "items": [
+        "sha256:d804f5aea557dcaac25b75aeee2ff1e76f13bbf9bac168e369238850af6f9f83"
+      ],
+      "reason": "Authored new onboarding card and sidecar for added module tool_schema_compaction.py covering lossless compaction rules, immutability, and boundary guarantees.",
+      "sources": [
+        {
+          "blob": "28199dc6c776b8074c3b8b15a21068f6259fb122",
+          "path": "mcp/src/agents_remember/models/tools/tool_schema_compaction.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/tools/tool_schema_compaction.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VHWVVK",
+      "items": [
+        "sha256:1fad2fff6bbf47ed167a0db042ad5554be74d1044d186e319e4d0c6ecee0111c"
+      ],
+      "reason": "Updated knowledge registrar card preserving KNO L3 writers view alongside CAP-L4 500-char raw ceiling (465 chars on knowledge_read) and refreshed knowledge references.",
+      "sources": [
+        {
+          "blob": "20ebef72dc27ca53cfb6a0f75efe8a015159ecef",
+          "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/knowledge.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VRP368",
+      "items": [
+        "sha256:eb0fc89816b215eb1df1658407bf3092b7b41d3bbb11bc513cb1bdc05430de78"
+      ],
+      "reason": "Added _compact_server_tool_schemas to create_server's documented startup sequence between apply_read_only_marks and _scope_server_tools, and refreshed server references.",
+      "sources": [
+        {
+          "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
+          "path": "mcp/src/agents_remember/mcp/server.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/server.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8WCSQ7",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VQQ7W",
+          "revision": 1
+        },
+        {
+          "id": "INV-AJKQV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-F1TY2E",
+          "revision": 1
+        },
+        {
+          "id": "INV-FEB6Y6",
+          "revision": 1
+        },
+        {
+          "id": "INV-GM5MS3",
+          "revision": 1
+        },
+        {
+          "id": "INV-K43DJZ",
+          "revision": 2
+        },
+        {
+          "id": "INV-PRP52X",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPXD65",
+          "revision": 1
+        },
+        {
+          "id": "INV-W41C85",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-W36W8J",
+      "items": [
+        "sha256:99ed69d11c80bd194b92276ee4ce29f9b735d997f3fcfa79d80cd62ac2d2edfa"
+      ],
+      "reason": "Every member invariant was examined at its current revision; lossless post-registration schema compaction and tool description optimization leave the family's joint guarantee, membership, and routes unchanged.",
+      "revision": 2,
+      "subject": "FAM-VNK792"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WKN413",
+      "items": [
+        "sha256:47c5c4edf1d89e916e35782700d96b7ac41de8e67a486f6f459f691de123adc2"
+      ],
+      "reason": "Updated memory registrar card to match the compacted memory_quality_check docstring and refreshed memory/core references.",
+      "sources": [
+        {
+          "blob": "bbc1541e4379d1cf2c834fbc40cb53f596f21dfd",
+          "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/memory.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WNJ1AD",
+      "items": [
+        "sha256:1a059644d1cb523c1f46f5e07df0c7e6ef4ae9a4354cca43bdb2c3a546cae0b4"
+      ],
+      "reason": "Shortening runtime_install's docstring in _register_installation_tools does not resolve the underlying weakness; the symbol anchor remains valid at the same function and the weakness stays open.",
+      "revision": 3,
+      "subject": "WKN-BZ8WK1"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-XPY6J5",
+      "items": [],
+      "reason": "Re-read docs/features.md against tree a5bb9a1f: lossless schema compaction in server.py preserves all parameter types, annotations, answer bounds, and tool-log locations described by the features page.",
+      "revision": 24,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YS3SQJ",
+      "items": [
+        "sha256:ff8d569c96485fc8fbfbcd4c9911c0aaa2387f3c1e57bf6fac8031dc707aa352"
+      ],
+      "reason": "Prose account remains accurate after retire_child's docstring was tightened; only the sidecar reference anchors were refreshed.",
+      "sources": [
+        {
+          "blob": "29ac4d5e75a9e54475ec617732ab37e9e4fa8983",
+          "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/seat_retirement.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8b530f894da4375dc8251e595790c5f390d51e14",
+            "content": "sha256:057dd7579931923008d4b01e0229e137aa6bb2c415bed2cde2467969723f166c",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_explainer_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/explainer.py"
+          },
+          "before": {
+            "blob": "fb6082f143e28bb9f441482475286bbcec140d6b",
+            "content": "sha256:861415ff9d8813e18df0a85054354b330841e1070ffbcd41f30c2170a71d9783",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_explainer_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/explainer.py"
+          },
+          "id": "RLZ-FER4NZ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YXJ3SA",
+      "items": [
+        "sha256:99fd74e12f7d4acfe10567534eb9e045f8d88d68c4df7bbd098af6c96e92fc56"
+      ],
+      "reason": "Meaning is unchanged by post-registration schema compaction and tool description optimization; all behavioral boundaries, signatures, and lazy-resolution contracts remain intact and covered entries are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-E2XQHS"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-YYDVH7",
+      "items": [],
+      "reason": "Re-read docs/tool-details.md against synced tree a5bb9a1f: Option B restored 'curator-coherence authority' in tasks.py:28, resolving the pre-Option-B contradiction; memory.py and seat_retirement.py behavior is unchanged.",
+      "revision": 15,
+      "subject": "DPD-10YCT2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "728e1d545134c9f832582a1ef5e23a03ade92276",
+            "content": "sha256:f76f7dbd114948f2d1f386710dea7bd5bcb659978cdd3ebdbfd03da72a70644a",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_sync"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+          },
+          "before": {
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+            "content": "sha256:c107c84de41b7068acf7100742d571c8c6d96ba7c4aa61c4e51f1476c390acab",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_sync"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+          },
+          "id": "RLZ-EX1X7C"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZC9MCT",
+      "items": [
+        "sha256:f39a6031a0d2751172ebfa67fa4d89e0124da25b5947e6f0d0a4d944ca7a7144"
+      ],
+      "reason": "Meaning is unchanged by post-registration schema compaction and tool description optimization; all behavioral boundaries, signatures, and lazy-resolution contracts remain intact and covered entries are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-STH8F0"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

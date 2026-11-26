@@ -12,7 +12,7 @@ Owns caller identity, message limits and shared runtime refusals.
 
 ### Logic
 
-`_caller` requires a valid AR role binding and a configured runtime. `starting_agent` records the most specific bound task identity or Projects; unreadable task text retains its reference. `sender_line` renders that identity. `role_message_limit` reads effective settings each call. These functions move from paseo_role_tools without changing their bodies or their refusal meanings.
+`_caller` requires a valid AR role binding and a configured runtime. `starting_agent` records the most specific bound task identity or Projects; unreadable task text retains its reference. `sender_line` renders that identity. A product-authored notice uses its reserved `agents-remember` sender word and names the product and leaf without an agent ID. `role_message_limit` reads effective settings each call.
 
 ## Repo-Internal References
 
@@ -25,3 +25,5 @@ No domain-documentation source is configured for this repository.
 ## Cross-Repo References
 
 No external repository is cited by this file card.
+
+- Product notices identify the product and leaf without an agent ID. [2]

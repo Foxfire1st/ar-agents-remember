@@ -14,7 +14,9 @@ The explainer render registration keeps revision and run identity in the core an
 
 ## Hot Path Summary
 
-MIK-R109: core registration removes `resolve_context`; `context_packet` advertises roots/task/actions/build/pair, not the full resolver blocks. `read_ar_files` accepts up to twenty string paths and returns knowledge locations, not document text; `refresh` is absent from the advertised schema but any supplied value reaches `argument-removed`, as do object-form entries. Knowledge registration names paged records and whole comparison reports. `create_server` applies every tool’s annotation from `mcp/read_only.py` after the registrars, refusing unlisted names. `read_ar_files`/`knowledge_read` are marked true; the freshness-capable context and report/capture-capable diff are false.
+The read_ar_files registration describes a bounded short brief for eligible paths. The read-only tool can name source, card and overview locations and carry rule text in a fuller reply. Compact rows keep each path and can give applicable existence, card status and a brief pointer with saved freshness. The description explains covering-write renewal, the refresh condition and the writer's report when refresh cannot proceed. The knowledge_read tool keeps its record naming and separate writers view.
+
+MIK-R109: core registration removes `resolve_context`; `context_packet` advertises roots/task/actions/build/pair, not the full resolver blocks. `read_ar_files` accepts up to twenty string paths and can return knowledge locations and rule text as space permits. The document bodies stay in their files; `refresh` is absent from the advertised schema but any supplied value reaches `argument-removed`, as do object-form entries. Knowledge registration names paged records and whole comparison reports. `create_server` applies every tool’s annotation from `mcp/read_only.py` after the registrars, refusing unlisted names, and then runs `_compact_server_tool_schemas` (delegating to `models/tools/tool_schema_compaction.py::compact_tool_schema`) to losslessly compact every registered tool's advertised JSON input schema before optional role-allowlist scoping. `read_ar_files`/`knowledge_read` are marked true; the freshness-capable context and report/capture-capable diff are false. Every ordinary registered tool description stays within the 500-character raw ceiling pinned in `test_role_tool_scope.py`.
 
 The current ordinary source has 44 public names, including the mounted user_settings_init, explainer_control and citation_note_revision. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action and the `repository-default` sync source, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn.
 
@@ -35,11 +37,12 @@ The closeout/direct-landing registrar adds the launch-bound architect direct_exe
 | `seat_retirement.py` | Native receipt-tracked `retire_child`; sessions.py and dispatch_agent are removed. |
 | `memory.py` | `memory_quality_check`, `citation_fix`, `citation_note_revision`, `route_index_refresh`, `memory_init`, baseline status/adoption, and carryover planning/apply. |
 | `worktrees.py` | Start, enclosure adoption, attach, status, sync, and pause. |
-| `closeout.py` | Direct landing, closeout preview/apply, integration, checkpoint publication, landing recording, operation control, cleanup, and abandonment. |
+| `closeout.py` | Direct landing, `direct_execution_grant`, closeout preview/apply, integration, checkpoint publication, landing recording, operation control, cleanup, and abandonment. |
 | `tasks.py` | Reopen, lifecycle finalization, task-document authoring, curator coherence, and closeout projection inspection/rebuild. |
 | `capsule_serving.py` | Skill index/file resources, extension declaration, and protocol-method installation; no tools. |
-| `role_agents.py` | `role_start`, Manager-owned `role_start_set`, and `role_message`, in that order. |
-| `knowledge.py` | `knowledge_read`, `knowledge_diff`, and `knowledge_integrity_check`. |
+| `role_agents.py` | `role_start`, Manager-owned `role_start_set`, `user_settings_init`, and `role_message`, in that order. |
+| `knowledge.py` | `knowledge_read`, `knowledge_diff`, `knowledge_integrity_check`, and `knowledge_write`. |
+| `explainer.py` | Architect-only `explainer_control`. |
 | `skills_extension.py` | Skill request/result types, dispatcher support, and `skills/list` / `skills/get` handlers; no tool declarations. |
 
 The roster is defined in the zero-import models leaf `models/tools/public_roster.py` and re-exported by `mcp/tools/base.py`. `public_surface.py` compares observed names with that roster in exact order and checks inventory/response-model and dispatch-advertisement contracts. This describes source checks, not a newly executed verification result.
@@ -52,17 +55,17 @@ Native `retire_child` accepts the receipt-tracked agent_id and interrupt_turn th
 
 The core readers accept a task-scoped reader context where applicable. Their descriptions require the task-document reference and contract path together for canonical leaf reads; configured Projects scope applies when it is omitted. Retained attach/status resolution uses the shared `TaskRef` locator vocabulary; it does not restore public `resolve_context`.
 
-`runtime_install` constructs `RuntimeInstallRequest`, including the optional `experiment` input, and forwards it unchanged. Its current description covers preservation of user data, scaffold replacement, pruning legacy binaries, reporting unused provider keys, provisioning the build-pinned host/plugin from the active MCP authority's `paseoRuntime` block (daemon settings may be reconciled; user-settings protections and host-restart deferrals remain), reporting running-server currentness and every host action, and refreshing a running dashboard. There is no host-selection parameter. The older experiment-selection and absent-block result promises are not stated by this registrar's current description; their application semantics remain an explicit verification gap.
+`runtime_install` constructs `RuntimeInstallRequest`, including the optional `experiment` input, and forwards it unchanged. Its compact description summarizes preserving user data, replacing scaffolds, provisioning the pinned Paseo host/plugin (reconciling daemon settings and leaving host restart to the developer), reporting unused provider keys and server currentness, and refreshing a running dashboard, pointing to `docs/tool-details.md` for details. There is no host-selection parameter. Detailed experiment-selection and absent-block application semantics remain in the application owner and are not established by this registrar description.
 
 ### Memory and knowledge contracts
 
-`citation_fix` retains flat arguments — `document`/`documents`, an optional `contract_path` and `dry_run` — and no caller glob argument: the `exclude` list and the `CitationOperationScope` packing it fed were removed with the legacy citation router. What survives is internal: the fixer skips authoring-refused sidecars, which is not a caller interface. Mutually exclusive `document` and finite `documents` selectors address one card or several; empty and oversized lists are refused by the scope owner. Converted-memory authoring records citation rows into sidecar references and re-records moved anchors; selected cards need no `expected_snapshot` in that mode. The description distinguishes a count-bearing status answer from the whole result in the log detail file. The description also distinguishes leaf-contract admission from pre-baseline bootstrap admission. Validation of individual exclude patterns belongs to the scope/application owner and is not independently established here.
+`citation_fix` retains flat arguments — `document`/`documents`, an optional `contract_path`, `dry_run`, `mode` (`sync`/`start`/`poll`), and `run_id` — and no caller glob argument: the `exclude` list and the `CitationOperationScope` packing it fed were removed with the legacy citation router. What survives is internal: the fixer skips authoring-refused sidecars, which is not a caller interface. Mutually exclusive `document` and finite `documents` selectors address one card or several; empty and oversized lists are refused by the scope owner. Its compact description states that it repairs moved citation anchors and authors sidecar references in a leaf memory worktree (with `dry_run` preview or async `mode=start`+`dry_run=true` then `mode=poll`), leaves renames/deletions/ambiguous anchors to the curator, refuses legacy-format memory, and points to `docs/tool-details.md`.
 
-Memory quality receives one mode-discriminated request and dispatches sync/start/poll to their corresponding builders. Its registered description distinguishes official repository diagnostics from exact contract-scoped candidate runs, raw checklist status from coherence readiness, and structured report-digest-bound attestation from semantic certification. It describes deterministic same-input publication and contract-scoped census/report output; these are advertised owner contracts, not evidence of a run performed for this overview.
+Memory quality receives one mode-discriminated request and dispatches sync/start/poll to their corresponding builders. Its compact description states that it checks memory before closeout (findings, counts, checklist location, not semantic certification), accepts `mode` sync/start/poll with `contract_path` for candidate runs, includes `knowledgeWorklist` and `knowledgeGate` in full leaf logs, requires validated `curator_coherence` for ready memory, and points to `docs/tool-details.md`. Official vs candidate diagnostics, deterministic same-input publication, and attestation semantics remain owned by the controller and application owners rather than established by this overview.
 
-The knowledge family selects converted memory roots rather than exposing database-path or caller-namespace inputs. Read receives the workspace default repository and coordination-root cache location separately; the caller's `repositoryRoot` is forwarded as supplied. Diff and integrity have separate delegates and do not receive that configuration pair. The registered family contains no change or project tool. The family mounts four operations: read, diff, integrity and write. `knowledge_write` carries the command's leaf, crossing and wave target selection, takes server settings for a raise, plans by default and writes only with the explicit file-write flag, then returns the report or a refusal — the same plan, write, refusal and report behaviour as the command route, with its admission boundary and no Git commit.
+The knowledge family selects converted memory roots rather than exposing database-path or caller-namespace inputs. Read receives the workspace default repository and coordination-root cache location separately; the caller's `repositoryRoot` is forwarded as supplied. Diff receives `coordination_root` for writing the full comparison report; integrity takes the server alone. The registered family contains no change or project tool. The family mounts four operations: read, diff, integrity and write. `knowledge_write` carries the command's leaf, crossing and wave target selection, takes server settings for a raise, plans by default and writes only with the explicit file-write flag, then returns the report or a refusal — the same plan, write, refusal and report behaviour as the command route, with its admission boundary and no Git commit.
 
-The read description names three paged views, `source_context`, `invariant` and `family`, plus an unpaged `record` view selected by a `recordId` text identity that returns a bounded link-state, timeline, count and location projection instead of record prose; stable ordering is effective when `orderingInput` is omitted. Pages and continuations share the bounded knowledge-read contract, including supported tokens from retained internal published-intent computation. Mounted `read_ar_files` now names files without a published-intent body or continuation. The following full-selection account describes internal computation; the mounted knowledge reader projects record names and locations. `currentness` is described at the walk's code tree, including the continuation's tree on resumed pages; without one, invariants are unverifiable. A source-path read includes the path's invariants, containing-family headers and remaining members, advertised families, then compact route-chain family rows. A family ID without a source path selects the full family, and invariant views name their families.
+The read description names six views — `source_context`, `invariant`, `family`, `record`, `weakness`, and `dependent` — states that rows return ID, kind, state, and location (never text), notes `recordId` accepts text IDs (`INV-`/`WKN-`/`DPD-`) and `repositoryRoot`/`codeTreeId` select the measured code tree, names the CLI write commands (`agents-remember knowledge-ingest` and `agents-remember knowledge-bootstrap`), and points to `docs/reference/mcp-tools.md`. Stable ordering, paging, continuations, route-chain rows, and family-complete internal selection remain owned by the knowledge reader application layer.
 
 Integrity now accepts `memoryRoot`, `codeRoot`, `contractPath`, and `baseCommits`, constructing `IntegrityCheckRequest`. Its description names validator output and the leaf's latest change-to-knowledge worklist. The former `databasePath`/`repositoryId` and `runId`/`inputDigest` registration accounts no longer describe this wire signature.
 
@@ -91,7 +94,7 @@ The pause/checkpoint distinction remains explicit in the registered descriptions
 > **Retained historical source account — superseded by the current route account:**
 > Lifecycle finalization's current description derives the exact leaf row from an existing immediate parent or a folder `task.json` master listing it; a sub-task with neither is refused. Optional parent assertions must match the derived edge. It refuses unresolved declared steps, does not auto-check steps or complete recursive ancestors, and requires landed-state/carryover checks before cleanup.
 
-Curator coherence's compact description names all nine conditional publication identity/caller fields, inline or file-backed judgments and structured-manifest authority, and points to docs/tool-details.md for the longer explanation. The request/application owners retain action-specific validation, candidate-set file/rendering, exact evidence namespaces, duplicate-input refusal and publication/readiness semantics; shortening the docstring does not make those detailed clauses current registration promises or confer acceptance. Closeout queue now advertises inspection or idempotent rebuild of a disposable projection: exact-current valid-built or non-admitting invalid-empty, with current task/door truth as inputs. It explicitly does not declare, select, defer, withdraw, or mutate closeout intent; the inherited action-specific scheduling-mutation account is obsolete.
+Curator coherence's compact description names its four actions (`prepare`, `publish`, `inspect`, `validate`), all nine required publication identity/caller fields, inline or file-backed judgments (`judgments` or `judgments_file`), and points to `docs/tool-details.md` for the longer explanation. Structured-manifest authority, action-specific validation, candidate-set file/rendering, exact evidence namespaces, duplicate-input refusal and publication/readiness semantics belong to the request/application owners; shortening the docstring does not make those detailed clauses current registration promises or confer acceptance. Closeout queue's compact description names inspecting or rebuilding a sprint's waiting-only closeout queue and its states (`valid-built`, `invalid-empty`, `blocked`), pointing to `docs/reference/mcp-tools.md`; it does not declare, select, defer, withdraw, or mutate closeout intent.
 
 ### Skill transport
 
@@ -99,7 +102,7 @@ After proving the catalog servable, skill registration declares the extension an
 
 Resource construction delegates reads to the served-file owner; registration does not activate skills or confer local-file trust. Resource and skill counts depend on the actual catalog and are not fixed here at the inherited 85-resource/14-skill values. The formerly advertised capsule/catalog tools are absent from the current registrar and roster.
 
-Closeout and landing descriptions separate each route's exact invariant judgment from broad quality/certification/review. Direct landing exposes optional leaf_id; leaf integration rejudges its closeout pair; master final/checkpoint/recorded routes declare validator, net staleness, chain and history checks.
+Closeout and landing compact descriptions name each route's states and knowledge-gate / durable-generation boundaries (with `docs/reference/mcp-tools.md` carrying the longer account), rather than promising broad quality, certification, or review gates. Direct landing exposes optional `leaf_id` and recovers via `worktree_operation_control`; closeout preview/apply name the knowledge-gate check and `knowledge-gate-refused` findings; integration, checkpoint landing, and recorded landing keep their exact transaction checks in their application owners.
 
 > **Retained historical source account — superseded by the current route account:**
 > The existing role_message registration adds file-only body, attachments and filed-message/reply/hash/limit/successor response fields through its strict models. Registered tool identity remains the same while input/result shape extends; no message index/search/public dashboard tool is introduced. Whole payloads are not copied into wake text.
@@ -191,6 +194,8 @@ The memory family extends the existing `citation_fix` declaration with flat `mod
 
 
 
+The mounted `knowledge_read` registration describes the `writers` view as per-writer aggregates with revision counts and a complete report path. Record rows still carry IDs, kinds, states and locations.
+
 ## Evidence
 
 - \[7] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol register_knowledge_tools
@@ -208,9 +213,17 @@ The memory family extends the existing `citation_fix` declaration with flat `mod
 
 
 
-- The role-agent registrar mounts role_start, role_start_set and role_message; the callables preserve their declared argument shapes and delegate to their application payload owners. [24]
+
+- The role-agent registrar mounts `role_start`, `role_start_set`, `user_settings_init`, and `role_message`; the callables preserve their declared argument shapes and delegate to their application payload owners. [24]
+
+
+
 
 - The task registrar composes closeout queue, curator coherence, task reopen and finalizer tools with task_doc registration; the shared task_doc description names write operations and alignmentSweep. [33]
+
+
+
+
 
 
 
@@ -220,31 +233,48 @@ The memory family extends the existing `citation_fix` declaration with flat `mod
 
 
 
+
+
+
 - register_role_agent_tools owns the mounted role-agent declarations and dispatches them to their existing application payload owners. [40]
 
 
+
+
 - One registered citation operation forwards the extended signature. [42]
-[1] mcp/src/agents_remember/mcp/registration/tasks.py — symbol lifecycle_finalize_task
+- Lifecycle finalization proves the landed edge, completes a task once all steps are done, and reconciles its parent row (ancestors are not completed; leaves require a master). [1]
 - Current single literal PUBLIC_TOOLS contains 44 ordinary public names, including mounted `user_settings_init`, `explainer_control` and `citation_note_revision`, and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The retained base export is the same roster object. [10]
+
 - Current composed PUBLIC_TOOLS declares 44 ordinary names; the 41-name predecessor membership is historical. This is source declaration only, not runtime advertisement or execution. [29]
 [2] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 95-97
 [3] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 90-99
 [4] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 85-98
 [5] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 89-91
-[6] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check
+
+
+- The integrity registrar mounts `knowledge_integrity_check` for converted-tree validation and leaf worklist reporting. [6]
+
+
 [7] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol register_knowledge_tools
-[9] mcp/src/agents_remember/mcp/tools/base.py — symbol _tool_payload
+
+
+- The shared MCP adapter declares _tool_payload and forwards the whole tool result, optional projection and optional fitter into response completion. [9]
+
 [10] mcp/src/agents_remember/models/tools/public_roster.py — symbol PUBLIC_TOOLS; mcp/src/agents_remember/mcp/tools/base.py — symbol __all__
 [12] mcp/src/agents_remember/application/task_docs/task_ref.py — symbol TaskRef
 [13] mcp/src/agents_remember/models/closeout/input.py — symbol CloseoutMessageInput; mcp/src/agents_remember/models/closeout/input.py — symbol CloseoutInvalidField
 [14] mcp/src/agents_remember/mcp/registration/worktrees.py — lines 32-37
 [17] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol register_knowledge_tools
-[22] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_read; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_diff; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check
 [26] mcp/src/agents_remember/mcp/registration/__init__.py — symbol TOOL_REGISTRARS
 [29] mcp/src/agents_remember/models/tools/public_roster.py — code file
 [31] mcp/src/agents_remember/mcp/registration/capsule_serving.py — lines 69-116; mcp/src/agents_remember/mcp/registration/capsule_serving.py — lines 126-183
 [32] mcp/src/agents_remember/mcp/registration/skills_extension.py — lines 133-214; mcp/src/agents_remember/mcp/registration/skills_extension.py — lines 235-294
 - \[10] mcp/src/agents_remember/models/tools/public_roster.py — symbol PUBLIC_TOOLS; mcp/src/agents_remember/mcp/tools/base.py — symbol __all__ The root PLR0913 exception supports the flat MCP registration signatures; it is not itself the PUBLIC_TOOLS or __all__ declaration. [11]
-- \[22] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_read; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_diff; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check [23]
+- `citation_fix` repairs moved citation anchors and authors sidecar references in a leaf memory worktree. [23]
 
 - The ordered ordinary registrar tuple includes explainer control, and the same server adds the bound explainer surface only for a launch that bound it as an explainer seat. [41]
+
+
+
+
+- The mounted knowledge tool registrar delegates read, diff, integrity and writing to their distinct registrations. [22]

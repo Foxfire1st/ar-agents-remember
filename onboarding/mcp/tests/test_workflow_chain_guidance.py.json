@@ -601,16 +601,16 @@
       ]
     },
     "35": {
-      "note": "The lane manifest declares test_workflow_chain_guidance.py in unit-regression; membership selects evidence and establishes no invocation.",
+      "note": "The unit-regression lane selects mcp/tests/test_workflow_chain_guidance.py. Execution evidence is recorded separately.\n\nAnchor: `mcp/tests/test_workflow_chain_guidance.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "75006e874ab9c238187bcf9044d224511529c135",
+            "blob": "9b2f8dfb74c9f9e7cc39c1097e6d5f7e0ff20215",
             "content": "sha256:59e0e1653d5a589fe09a0646e0ece6d41f34bb59394ec582e7af93d79916c9f6",
             "locator": {
-              "end": 650,
+              "end": 666,
               "kind": "line_range",
-              "start": 650
+              "start": 666
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -672,7 +672,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "blob": "44965514704f09508b78c29839ced880346b1479",
             "content": "sha256:129afbc7db95453225dc24dc3d91b07668c255b319898fb911556658fe5c0777",
             "locator": {
               "kind": "symbol",
@@ -719,7 +719,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:27502a84ab1a28a5c8ace3d8b4facc50dedf942ad12f1cbdfef928ed528911a5",
             "locator": {
               "kind": "symbol",
@@ -936,12 +936,12 @@
         },
         {
           "anchor": {
-            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+            "blob": "728e1d545134c9f832582a1ef5e23a03ade92276",
             "content": "sha256:331b58139722f7fafdd3d8f2ba9b21a3de8a17159f4fd914b5a5ac2987e0fce5",
             "locator": {
-              "end": 155,
+              "end": 139,
               "kind": "line_range",
-              "start": 143
+              "start": 127
             },
             "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
           },

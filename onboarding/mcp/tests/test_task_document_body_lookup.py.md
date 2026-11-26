@@ -155,5 +155,4 @@ No meaningful cross-repo references found.
 
 - The bounded enumeration and the named-path probe under test. [9]
 
-
-- The lane registration. Source caption: "mcp/tests/test_task_document_body_lookup.py" [10]
+- The `unit-regression` lane selects `mcp/tests/test_task_document_body_lookup.py`. [10]

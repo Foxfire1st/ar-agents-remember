@@ -167,16 +167,16 @@
       ]
     },
     "26": {
-      "note": "The lane row that gives this module its classification and keeps it collectable under a named lane. Anchor: `test_knowledge_requirement_reference_contract` Anchor: `test_knowledge_requirement_reference_contract`",
+      "note": "The unit-regression lane selects mcp/tests/test_knowledge_requirement_reference_contract.py.\n\nAnchor: `mcp/tests/test_knowledge_requirement_reference_contract.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "75006e874ab9c238187bcf9044d224511529c135",
+            "blob": "9b2f8dfb74c9f9e7cc39c1097e6d5f7e0ff20215",
             "content": "sha256:5fc838a1a57ff06ca36f1af8828a79e2c501daac8ea86a7f4c3cddce2a7f34fe",
             "locator": {
-              "end": 266,
+              "end": 272,
               "kind": "line_range",
-              "start": 266
+              "start": 272
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

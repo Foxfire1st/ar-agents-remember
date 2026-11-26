@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+        "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+        "content": "sha256:c395c3d2296f24a2d442417398c09681c24db546f13efeeb27c88fd6accbbfd4",
+        "locator": {
+          "kind": "symbol",
+          "name": "execute_direct_landing"
+        }
+      },
+      "id": "RLZ-32RV9P",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Refreshes after forward direct landing produces its admitted memory commit.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
         "content": "sha256:b9305c3bc5b156027ba6da8574ac256628432061178f4065072357ef4ddf5e4f",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+        "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
         "content": "sha256:e197e7904a2347e0d103e2ebfe29bb601570a8c76ff9f3f0d7aeb20433236535",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+        "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
         "content": "sha256:8a5524012b9b572fde9e8ed4d61b5176cecb347c8610ac4826666de7da0ead42",
         "locator": {
           "kind": "symbol",
@@ -58,35 +76,24 @@
   ],
   "references": {
     "1": {
-      "note": "Execution publishes or reuses real memory output and refreshes the cache afterward.",
+      "note": "Execution publishes or reuses real memory output and refreshes the ledger cache. After journal completion, a newly made memory commit triggers brief refresh against its paired code commit and can add an advisory.",
       "targets": [
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:bd8451039a34cb7ca620810fe40f034694ff2e8ac3eef1cf374ad2ec292443fa",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:c395c3d2296f24a2d442417398c09681c24db546f13efeeb27c88fd6accbbfd4",
             "locator": {
-              "kind": "symbol",
-              "name": "execute_direct_landing"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:70bf0ee2bd1ec49f073707599b09390037f6bec1bd460d4fb3020c09beefda3e",
-            "locator": {
-              "end": 75,
+              "end": 94,
               "kind": "line_range",
-              "start": 42
+              "start": 53
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:41d08a6dbcb3eb262f4bd5a757022983784d0b77e9cc89108038789754647e50",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:2e74df889c7ce46e84c0378bc4b9d0c58650ddd24d012e314583bc7d2747fef8",
             "locator": {
               "kind": "file"
             }
@@ -96,46 +103,48 @@
       ]
     },
     "2": {
-      "note": "Prepared attempts preserve repository and exact pre-commit tree evidence.\n\nAnchor: `_require_accepted_memory_prestate` `_require_prepared_direct_attempt`",
+      "note": "Prepared attempts preserve repository and exact pre-commit tree evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
             "content": "sha256:cd45b2305222e7a01b8cf90918e4bfc0aa663889712936c7d5608c97b083a8f4",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_accepted_memory_prestate"
+              "end": 449,
+              "kind": "line_range",
+              "start": 433
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
             "content": "sha256:ca950dc7f3c5055a50c38ff9505d804052841476cb989ec5be27b9d2a8a755e5",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_prepared_direct_attempt"
+              "end": 481,
+              "kind": "line_range",
+              "start": 452
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
             "content": "sha256:7f06d053086fcdd8b0384f1aaf6b06bed18c8e89141b2b8750c7c2139386189e",
             "locator": {
-              "end": 255,
+              "end": 267,
               "kind": "line_range",
-              "start": 239
+              "start": 251
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:41d08a6dbcb3eb262f4bd5a757022983784d0b77e9cc89108038789754647e50",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:2e74df889c7ce46e84c0378bc4b9d0c58650ddd24d012e314583bc7d2747fef8",
             "locator": {
               "kind": "file"
             }
@@ -210,12 +219,42 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:ab336136d1a2dfe8751145a58984c8589d195939ce3998202c7bc6fe362a7c45",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:2e74df889c7ce46e84c0378bc4b9d0c58650ddd24d012e314583bc7d2747fef8",
             "locator": {
-              "end": 520,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The successful result adds the committed-history note to the summary when present.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:20e5807354ef02250712841ec0af798cdcaa447778a73d792a4db04fceb954cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_landing_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The result reader selects the leaf owner from the operation or its canonical document reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:9bd63e9799bcc04f581c85a279f4d150f703e8b18b82f940f85ded943d0724f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_note"
             }
           },
           "kind": "code"

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "16022b2bbe9b55a19f4ac57de9ef00bc8baf5aa0",
+        "blob": "5578da0ac7474a500363b772c35181faf3696a92",
         "content": "sha256:00c55123b2e969e80aad098a1c902d86843b84a96f9a25519da44895f92d05e5",
         "locator": {
           "kind": "symbol",
@@ -17,6 +17,23 @@
         "handoffEntry": "BUG-R22@v1 §4",
         "leaf": "261112-BUG-L22"
       }
+    },
+    {
+      "anchor": {
+        "blob": "5578da0ac7474a500363b772c35181faf3696a92",
+        "content": "sha256:55c468ba322e2a0094e88f07fecf0ebe1d879ce73f9ea5dc5e23248eb5a201e0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_read_ar_files_largest_is_operation_produced"
+        }
+      },
+      "facet": "The mounted cold read delivers twenty compact pointers with missing saved freshness and leaves the memory files, tree and Git status unchanged.",
+      "id": "PRF-QVCKTJ",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      }
     }
   ],
   "realizes": [],
@@ -26,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c579102edfbc563a70feda3cd6643092b8e4813b",
+            "blob": "467ff826a1ea2af53b2ab37ab3a385d33c551234",
             "content": "sha256:be26165859dfe0965812002585f16cc0f47d2314b4f5ad0a17c66813d33473f9",
             "locator": {
               "kind": "symbol",
@@ -38,12 +55,29 @@
         }
       ]
     },
+    "12": {
+      "note": "The mounted file-reader artifact check retains twenty rows, the response bound and exact pinned bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5578da0ac7474a500363b772c35181faf3696a92",
+            "content": "sha256:55c468ba322e2a0094e88f07fecf0ebe1d879ce73f9ea5dc5e23248eb5a201e0",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 236
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "Cases are checked against missing uses, extra fields and bounds.",
       "targets": [
         {
           "anchor": {
-            "blob": "c579102edfbc563a70feda3cd6643092b8e4813b",
+            "blob": "467ff826a1ea2af53b2ab37ab3a385d33c551234",
             "content": "sha256:42177258d3478085014935889d03303ecb36215c82f8d7cf1fff986ea1718da4",
             "locator": {
               "kind": "symbol",
@@ -56,12 +90,12 @@
       ]
     },
     "3": {
-      "note": "An explicitly over-long log path becomes its exact length and digest.\n\nAnchor: `ToolAnswerLogTests.test_overlong_path_shortens_to_length_and_digest`",
+      "note": "An explicitly over-long log path becomes its exact length and digest. Anchor: `ToolAnswerLogTests.test_overlong_path_shortens_to_length_and_digest`",
       "targets": [
         {
           "anchor": {
-            "blob": "fb5cbdcaaae87b4d86d3d6b9b73f95f87560a77c",
-            "content": "sha256:633a869a19074b5f2a185ff507f5b7551674c8fd63d98c694d5ac92825fbceb9",
+            "blob": "fab232126f2d8440cd89633029d3b7355fd8ba7b",
+            "content": "sha256:2860571e67c6a07fc6d63cf82a74cf5864d4dc5b36d05c92fd17ee8e9a917e48",
             "locator": {
               "kind": "file"
             },
@@ -109,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c579102edfbc563a70feda3cd6643092b8e4813b",
+            "blob": "467ff826a1ea2af53b2ab37ab3a385d33c551234",
             "content": "sha256:60587bbfa242367e2461e25750cd754b1150e45ea60011ac3654bd85fb5d2491",
             "locator": {
               "kind": "symbol",
@@ -122,12 +156,12 @@
       ]
     },
     "8": {
-      "note": "The table covers every registered tool with no extras and each task-document row covers every operation.\n\nAnchor: `ToolAnswerTableTests`",
+      "note": "The table covers every registered tool with no extras and each task-document row covers every operation. Anchor: `ToolAnswerTableTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "16022b2bbe9b55a19f4ac57de9ef00bc8baf5aa0",
-            "content": "sha256:bb7c2953503b8d6144fb4e4248f418c976865415b41d750b17203492a8dcfe2b",
+            "blob": "5578da0ac7474a500363b772c35181faf3696a92",
+            "content": "sha256:f4e79875f2c8d3a3c43064139b0588af0142bf7a7a01d145789cd8ec33c9a357",
             "locator": {
               "kind": "file"
             }
@@ -137,12 +171,12 @@
       ]
     },
     "9": {
-      "note": "The three largest answers are operation-produced and pinned.\n\nAnchor: `L109LargestProductionTests`",
+      "note": "The three largest answers are operation-produced and pinned. Anchor: `L109LargestProductionTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "16022b2bbe9b55a19f4ac57de9ef00bc8baf5aa0",
-            "content": "sha256:bb7c2953503b8d6144fb4e4248f418c976865415b41d750b17203492a8dcfe2b",
+            "blob": "5578da0ac7474a500363b772c35181faf3696a92",
+            "content": "sha256:f4e79875f2c8d3a3c43064139b0588af0142bf7a7a01d145789cd8ec33c9a357",
             "locator": {
               "kind": "file"
             }

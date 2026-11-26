@@ -191,16 +191,16 @@
       ]
     },
     "17": {
-      "note": "The prose/reference rendering owner handles citation navigation and suppresses a repeated prose sentence in reference notes; it is not the prose network reader.\n\nAnchor: current renderer and reference note",
+      "note": "The prose and reference components handle citation navigation and suppress repeated prose in reference notes.\n\nAnchor: ReferenceList, ProseWithReferences, ProseLink",
       "targets": [
         {
           "anchor": {
-            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
-            "content": "sha256:edb01d78da39d45a7edcbb8dc4ffd2b5fc098608055c11481599962fc3838eb7",
+            "blob": "e5203dff574d5e8031868eeb4bec33dc0fd64fa4",
+            "content": "sha256:a318ef770035517ed5d72ad11011373f1bd15be1a3f5e378ddad7abf32a815a1",
             "locator": {
-              "end": 522,
+              "end": 525,
               "kind": "line_range",
-              "start": 375
+              "start": 379
             },
             "path": "dashboard/src/panels/knowledge-reader/readerParts.tsx"
           },

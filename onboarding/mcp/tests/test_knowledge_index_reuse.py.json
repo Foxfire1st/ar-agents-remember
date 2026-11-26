@@ -122,16 +122,16 @@
       ]
     },
     "13": {
-      "note": "The lane row. Anchor: `test_knowledge_index_reuse` Anchor: `test_knowledge_index_reuse`",
+      "note": "The unit-regression lane selects mcp/tests/test_knowledge_index_reuse.py.\n\nAnchor: `mcp/tests/test_knowledge_index_reuse.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "75006e874ab9c238187bcf9044d224511529c135",
+            "blob": "9b2f8dfb74c9f9e7cc39c1097e6d5f7e0ff20215",
             "content": "sha256:7ed6d2ea1379d55b9a055c3301c21735631cf3baf1f8d8f8533ab8e8043731c2",
             "locator": {
-              "end": 249,
+              "end": 253,
               "kind": "line_range",
-              "start": 249
+              "start": 253
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

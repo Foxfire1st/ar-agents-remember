@@ -1,0 +1,126 @@
+{
+  "path": "mcp/src/agents_remember/models/tools/tool_schema_compaction.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "28199dc6c776b8074c3b8b15a21068f6259fb122",
+        "content": "sha256:705444322602d63bb38529a703d09c34f466528ef0e4a7149425238020c22de6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_compact_schema_node"
+        }
+      },
+      "id": "RLZ-CRSC03",
+      "invariant": "INV-EG3M4J",
+      "origin": {
+        "handoffEntry": "CAP-R04@v1 §1 lossless compaction",
+        "leaf": "261124-CAP-L4"
+      },
+      "rationale": "Applies the exact three lossless keyword drops on schema nodes only while recursing cleanly through schema-valued keywords.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "28199dc6c776b8074c3b8b15a21068f6259fb122",
+        "content": "sha256:c59e97086a400bb95ba68d2e88a057ab25e6aa7a41e7818da1d5a6f96da7b8b0",
+        "locator": {
+          "kind": "symbol",
+          "name": "compact_tool_schema"
+        }
+      },
+      "id": "RLZ-T373T6",
+      "invariant": "INV-EG3M4J",
+      "origin": {
+        "handoffEntry": "CAP-R04@v1 §1 lossless compaction",
+        "leaf": "261124-CAP-L4"
+      },
+      "rationale": "Public entry point that invokes schema-node compaction from root so every caller gets a freshly deep-copied lossless schema without mutating or aliasing its input.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "28199dc6c776b8074c3b8b15a21068f6259fb122",
+        "content": "sha256:94ea3f177af5629077cf9b6e9442a186b394cb3e8229bef23d3c704d71211128",
+        "locator": {
+          "kind": "symbol",
+          "name": "_compact_keyword_value"
+        }
+      },
+      "id": "RLZ-YC8CVP",
+      "invariant": "INV-EG3M4J",
+      "origin": {
+        "handoffEntry": "CAP-R04@v1 §1 lossless compaction",
+        "leaf": "261124-CAP-L4"
+      },
+      "rationale": "Distinguishes property/definition name maps ($defs, properties, patternProperties, dependentSchemas) from schema nodes and list-form items/combinators, deep-copying non-schema mutable leaves.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Public entry point starts root-level lossless schema compaction and returns an unaliased deep copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28199dc6c776b8074c3b8b15a21068f6259fb122",
+            "content": "sha256:c59e97086a400bb95ba68d2e88a057ab25e6aa7a41e7818da1d5a6f96da7b8b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "compact_tool_schema"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Drops only schema-level `title`, `default: null`, and flagged `description` metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28199dc6c776b8074c3b8b15a21068f6259fb122",
+            "content": "sha256:6612e04d8666fb70488721a392faeef577d4270f010ab7af5586ba64e05a0cbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_should_drop_keyword"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Separates root `$defs` and name-keyed schema maps from nested schema nodes and lists while deep-copying mutable leaves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28199dc6c776b8074c3b8b15a21068f6259fb122",
+            "content": "sha256:94ea3f177af5629077cf9b6e9442a186b394cb3e8229bef23d3c704d71211128",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compact_keyword_value"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Recurses over schema nodes while applying the exact lossless keyword drops.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28199dc6c776b8074c3b8b15a21068f6259fb122",
+            "content": "sha256:705444322602d63bb38529a703d09c34f466528ef0e4a7149425238020c22de6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compact_schema_node"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

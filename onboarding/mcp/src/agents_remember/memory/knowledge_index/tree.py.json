@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+        "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
         "content": "sha256:32bc74b80edd95d50932572792ffcff965811133b5ae9e8292c8b84eb3f7819d",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+        "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
         "content": "sha256:1be104f151ba2e36a25c7964d8f0f289639e01b01c3d840dd472ddd4467bdc4f",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,26 @@
     },
     {
       "anchor": {
-        "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+        "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
+        "content": "sha256:1b66919613846cde7bca234e3c827d5891196962b5bc89f8cb221bc28a1a10d1",
+        "locator": {
+          "end": 141,
+          "kind": "line_range",
+          "start": 121
+        }
+      },
+      "id": "RLZ-8WWHRV",
+      "invariant": "INV-X8FRT8",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-X8FRT8",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "A working-tree snapshot also carries the repository for exact review-content verification.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
         "content": "sha256:d71611ad0d963ab92c2b1745793d6b17d0538ab0cfd339a35a1dfe0a4413f3f9",
         "locator": {
           "kind": "symbol",
@@ -54,6 +73,44 @@
       },
       "rationale": "Admits JSON within the memory roots through the shared filter while reserving census JSON for its owner.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
+        "content": "sha256:2db334d822b9b98c190185357a333f842e67bae698aac0dd721156e1cf747655",
+        "locator": {
+          "end": 66,
+          "kind": "line_range",
+          "start": 58
+        }
+      },
+      "id": "RLZ-FTHSPZ",
+      "invariant": "INV-X8FRT8",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-X8FRT8",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The selected snapshot can carry its owning repository for exact archived review-content verification.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
+        "content": "sha256:60bd04265b93a94a52d273e18f61eac528b1ed67aba7643186e2bb71a43be528",
+        "locator": {
+          "end": 118,
+          "kind": "line_range",
+          "start": 104
+        }
+      },
+      "id": "RLZ-XVDBDE",
+      "invariant": "INV-X8FRT8",
+      "origin": {
+        "handoffEntry": "L3-CURATOR-attach-INV-X8FRT8",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "A Git tree snapshot carries the repository that owns the archived review objects.",
+      "role": "support"
     }
   ],
   "references": {
@@ -62,7 +119,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
             "content": "sha256:d5a89b3533581c426681ac544336379d2501a6a736edd8cb935cd77b41f24b58",
             "locator": {
               "end": 19,
@@ -96,11 +153,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
             "content": "sha256:c77b2e30ff8713de34339f4acfa6ffd2a3426edd3f10eb9b47e3a1a6f8ef211a",
             "locator": {
               "kind": "symbol",
               "name": "with_prose_companions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Snapshots captured from Git and from a working directory both carry the associated repository.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
+            "content": "sha256:1b487e037a8cc74bb4b6093b58c85cf38fc0d5544e5d2c8a2e50939345e91ddb",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 104
             }
           },
           "kind": "code"
@@ -112,22 +186,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
-            "content": "sha256:8831b5ebf0b198554d591226affe2fc269569c598d70b2772803282d07604f84",
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
+            "content": "sha256:24a999a4b0f8e50f84b153b5f2e1d5e2466f5ab4e4d1b3a6986079c64f508200",
             "locator": {
-              "kind": "symbol",
-              "name": "MemoryTreeSnapshot"
+              "end": 66,
+              "kind": "line_range",
+              "start": 59
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
             "content": "sha256:d4e33c81f422699f0b992028e2335ef954d00d97daabc504bea3f9cc1733bfe2",
             "locator": {
-              "kind": "symbol",
-              "name": "MemoryTreeError"
+              "end": 55,
+              "kind": "line_range",
+              "start": 54
             }
           },
           "kind": "code"
@@ -139,7 +215,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
             "content": "sha256:d71611ad0d963ab92c2b1745793d6b17d0538ab0cfd339a35a1dfe0a4413f3f9",
             "locator": {
               "kind": "symbol",
@@ -155,11 +231,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
-            "content": "sha256:e70fd64cf24693b7ce3eaff463bfec6e3a8b2485539c76d5f929e1c626524dcd",
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
+            "content": "sha256:60bd04265b93a94a52d273e18f61eac528b1ed67aba7643186e2bb71a43be528",
             "locator": {
-              "kind": "symbol",
-              "name": "git_tree_snapshot"
+              "end": 118,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
+            "content": "sha256:d1b8c0db0e18e582f9b1ae541d260aead57801ed55ee1914babe91c410ffbb9b",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 83
             }
           },
           "kind": "code"
@@ -167,49 +256,62 @@
       ]
     },
     "5": {
-      "note": "The directory reader and its key, with the blob-id check and retry.\n\nAnchor: `directory_snapshot` `directory_key` `_blob_id`",
+      "note": "The directory reader and its key, with the blob-id check and retry.",
       "targets": [
         {
           "anchor": {
-            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
-            "content": "sha256:b0aab9fa4ff35fa98d257c8cc68305cc45903451e4a5a348bf6dc04678e8fd2d",
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
+            "content": "sha256:1b66919613846cde7bca234e3c827d5891196962b5bc89f8cb221bc28a1a10d1",
             "locator": {
-              "kind": "symbol",
-              "name": "directory_snapshot"
+              "end": 141,
+              "kind": "line_range",
+              "start": 121
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
             "content": "sha256:7533862bf260a31d0b8e01d10c0bfab20c7bf053da5d5893177e372620c8da05",
             "locator": {
-              "kind": "symbol",
-              "name": "directory_key"
+              "end": 163,
+              "kind": "line_range",
+              "start": 157
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
             "content": "sha256:cb1e87d9dade93080b3a8f57130b378089e9f2bccf89e33d1b48433964294797",
             "locator": {
-              "kind": "symbol",
-              "name": "_blob_id"
+              "end": 278,
+              "kind": "line_range",
+              "start": 273
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
-            "content": "sha256:de640f5bb615ffac784f3707f20126e5484780338c9777e96add99747f248bfd",
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
+            "content": "sha256:d2963032f408ee35d1e6db3f9548a6248541f8572e94e336a89b1d389a6d1488",
             "locator": {
-              "end": 137,
+              "end": 257,
               "kind": "line_range",
-              "start": 131
+              "start": 252
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
+            "content": "sha256:d77db7fd28f3ea4769ac565f882429e31bf22c585464f75560b351cc301624c0",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -217,58 +319,60 @@
       ]
     },
     "6": {
-      "note": "The isolated capture copies the index and clears flags on that copy. Sparse-checkout omission keeps the committed bytes.\n\nAnchor: “_capture” “_clear_index_flags”",
+      "note": "The isolated capture and the index-flag clearing on the scratch copy.",
       "targets": [
         {
           "anchor": {
-            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
             "content": "sha256:1be104f151ba2e36a25c7964d8f0f289639e01b01c3d840dd472ddd4467bdc4f",
             "locator": {
-              "kind": "symbol",
-              "name": "_capture"
+              "end": 170,
+              "kind": "line_range",
+              "start": 166
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
             "content": "sha256:b495a008cd21af0c07cb2bb10571bf0922a36d31a29464149c08b2a50f05d576",
             "locator": {
-              "kind": "symbol",
-              "name": "_clear_index_flags"
+              "end": 246,
+              "kind": "line_range",
+              "start": 208
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
             "content": "sha256:71cd9f164d50483d6fe89fd2d2bcb077de7835b06afef57f10204d90550a8384",
             "locator": {
-              "end": 164,
+              "end": 169,
               "kind": "line_range",
-              "start": 140
+              "start": 145
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
             "content": "sha256:ed198f3652d3690f812e5c3f4b5c56f2afb954702b4246607bcc1f067389932f",
             "locator": {
-              "end": 205,
+              "end": 210,
               "kind": "line_range",
-              "start": 167
+              "start": 172
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
-            "content": "sha256:4846f4b24324e1d2e4bdfdddfc3b9610b3ae70a5b29022254c84741752fe42c0",
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
+            "content": "sha256:d77db7fd28f3ea4769ac565f882429e31bf22c585464f75560b351cc301624c0",
             "locator": {
               "kind": "file"
             }
@@ -376,31 +480,32 @@
       "targets": [
         {
           "anchor": {
-            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
             "content": "sha256:1be104f151ba2e36a25c7964d8f0f289639e01b01c3d840dd472ddd4467bdc4f",
             "locator": {
-              "kind": "symbol",
-              "name": "_capture"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
-            "content": "sha256:c0a0d9f1a80ad217cbc4848a7e455292988d8ca57e693c53747ed5bd5fa8f507",
-            "locator": {
-              "end": 191,
+              "end": 170,
               "kind": "line_range",
-              "start": 185
+              "start": 166
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "936ed599ce5a4efe5b6223c1588bebd7b3ac2b3d",
-            "content": "sha256:4846f4b24324e1d2e4bdfdddfc3b9610b3ae70a5b29022254c84741752fe42c0",
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
+            "content": "sha256:71cd9f164d50483d6fe89fd2d2bcb077de7835b06afef57f10204d90550a8384",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29a9a2217da6095bc74b7e5c46ef90516cb969a5",
+            "content": "sha256:d77db7fd28f3ea4769ac565f882429e31bf22c585464f75560b351cc301624c0",
             "locator": {
               "kind": "file"
             }

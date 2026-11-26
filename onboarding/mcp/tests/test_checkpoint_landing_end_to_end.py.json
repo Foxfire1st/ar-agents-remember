@@ -7,33 +7,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
+            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
             "content": "sha256:7aafc8dcfc0dc4452b2aa156fbfad690b7abf3ffb7c43cd594eb9702963e1ff3",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_unfinished_master_checkpoints_its_own_refs_end_to_end"
+              "end": 124,
+              "kind": "line_range",
+              "start": 69
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
-            "content": "sha256:2fa86bd1e7b83534ae9df91230a7ddf97840579858061c62334576864a1384ac",
+            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
+            "content": "sha256:03912e2c41f22e8029fb3a7e81533cb423e1500580605a299db666daa602785f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_master_line_that_merged_its_source_still_checkpoints"
+              "end": 174,
+              "kind": "line_range",
+              "start": 126
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
+            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
             "content": "sha256:3217e64e900a0008dfa52f66514e37ec7a7ee5f557a3db196cb6a145e18d3022",
             "locator": {
-              "kind": "symbol",
-              "name": "test_source_memory_divergence_still_blocks_preview_and_apply"
+              "end": 190,
+              "kind": "line_range",
+              "start": 176
             }
           },
           "kind": "test"
@@ -41,14 +44,28 @@
       ]
     },
     "2": {
-      "note": "**Retained historical source account — superseded by the current contract:** Retry, continued work, and final-route completion semantics.\n\nAnchor: `test_retry_is_idempotent_and_continued_work_checkpoints_again` `test_the_checkpoint_is_the_only_route_that_admits_an_unclosed_master` `test_the_closeout_preview_refuses_what_the_closeout_apply_refuses` `test_a_leaf_closeout_preview_is_untouched_by_the_series_completion_gate` `test_a_leaf_that_has_not_closed_out_is_still_refused_by_integrate` `test_the_open_master_refusal_names_the_route_that_can_land_it`",
+      "note": "**Retained historical source account — superseded by the current contract:** Retry, continued work, and final-route completion semantics. Anchor: `test_retry_is_idempotent_and_continued_work_checkpoints_again` `test_the_checkpoint_is_the_only_route_that_admits_an_unclosed_master` `test_the_closeout_preview_refuses_what_the_closeout_apply_refuses` `test_a_leaf_closeout_preview_is_untouched_by_the_series_completion_gate` `test_a_leaf_that_has_not_closed_out_is_still_refused_by_integrate` `test_the_open_master_refusal_names_the_route_that_can_land_it`",
       "targets": [
         {
           "anchor": {
-            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
-            "content": "sha256:62fc1958b02ed49fd1481b49e4e613b4f6782f656912ff96039a5af881427370",
+            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
+            "content": "sha256:fcdbcfb2e81118aa0930ac6597fca5f033d03383d91fafe4f15aa3ded942df46",
             "locator": {
-              "kind": "file"
+              "end": 310,
+              "kind": "line_range",
+              "start": 192
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
+            "content": "sha256:b7761c9272ccacc87d413834f70ad07328026e8fa3268cf43879edc247190ef8",
+            "locator": {
+              "end": 440,
+              "kind": "line_range",
+              "start": 365
             }
           },
           "kind": "test"
@@ -60,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
+            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
             "content": "sha256:8177a85e3f132ed885e2b1210968559f3cb5edb612146b21d17b2d32256a4f68",
             "locator": {
               "kind": "symbol",
@@ -71,7 +88,7 @@
         },
         {
           "anchor": {
-            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
+            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
             "content": "sha256:42d04bfca4a6f4d2a903c192224b1533e3f3e12094a20d74300f463e7813e1eb",
             "locator": {
               "kind": "symbol",
@@ -83,14 +100,28 @@
       ]
     },
     "4": {
-      "note": "**Retained historical source account — superseded by the current contract:** Source-cache damage does not block; real approval/master/race guards survive.\n\nAnchor: `test_missing_stale_or_malformed_source_cache_cannot_block_checkpoint` `test_a_completed_master_is_still_refused_by_the_checkpoint` `test_a_ref_race_names_the_checkpoint_as_the_tool_to_rerun` `test_checkpoint_landing_requires_explicit_developer_approval`",
+      "note": "**Retained historical source account — superseded by the current contract:** Source-cache damage does not block; real approval/master/race guards survive. Anchor: `test_missing_stale_or_malformed_source_cache_cannot_block_checkpoint` `test_a_completed_master_is_still_refused_by_the_checkpoint` `test_a_ref_race_names_the_checkpoint_as_the_tool_to_rerun` `test_checkpoint_landing_requires_explicit_developer_approval`",
       "targets": [
         {
           "anchor": {
-            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
-            "content": "sha256:62fc1958b02ed49fd1481b49e4e613b4f6782f656912ff96039a5af881427370",
+            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
+            "content": "sha256:c38850dc83348de5ab3ccb38a6f58a222247da50e3276fc9b40f6940901d2da8",
             "locator": {
-              "kind": "file"
+              "end": 457,
+              "kind": "line_range",
+              "start": 442
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
+            "content": "sha256:730aa181b87e85ad1ca9b0b5a2d948757c364db3e77a399f0d7cd8823df70c8a",
+            "locator": {
+              "end": 553,
+              "kind": "line_range",
+              "start": 486
             }
           },
           "kind": "test"
@@ -98,14 +129,16 @@
       ]
     },
     "5": {
-      "note": "**Retained historical source account — superseded by the current contract:** Checkpoint publication remains distinct from pause.\n\nAnchor: `test_the_landing_does_not_pose_as_a_pause` `CheckpointPausesAnUnfinishedMasterTests`",
+      "note": "**Retained historical source account — superseded by the current contract:** Checkpoint publication remains distinct from pause. Anchor: `test_the_landing_does_not_pose_as_a_pause` `CheckpointPausesAnUnfinishedMasterTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
-            "content": "sha256:62fc1958b02ed49fd1481b49e4e613b4f6782f656912ff96039a5af881427370",
+            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
+            "content": "sha256:e8deed6f7bc066eb66549d736775fee04632c74c4e6f4d27f88a320ea8a44519",
             "locator": {
-              "kind": "file"
+              "end": 363,
+              "kind": "line_range",
+              "start": 338
             }
           },
           "kind": "test"
@@ -117,10 +150,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
-            "content": "sha256:62fc1958b02ed49fd1481b49e4e613b4f6782f656912ff96039a5af881427370",
+            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
+            "content": "sha256:ca9d9841744438ab1efdcc3033d8ea5593ad8c472650cbe134c231fcf0ad7109",
             "locator": {
-              "kind": "file"
+              "end": 591,
+              "kind": "line_range",
+              "start": 43
             }
           },
           "kind": "test"

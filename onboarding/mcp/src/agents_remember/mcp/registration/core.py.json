@@ -4,8 +4,44 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
-        "content": "sha256:fe269adba5522b5fc3243b19d52c6a9a2796d487fc613bd4b0d2d33f88ff1fca",
+        "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+        "content": "sha256:9e5854fbe11be37d34a5cb560424dbd3a5123ad4c718a82a1e7e3825f91508c6",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1HMR42",
+      "invariant": "INV-06MGX9",
+      "origin": {
+        "handoffEntry": "CAP-R04@v1 §3 description optimization",
+        "leaf": "261124-CAP-L4"
+      },
+      "rationale": "Optimizes server_info, context_packet, read_ar_files (preserving KNO L4 saved-brief/briefsProblem wording in 446 chars), and runtime_install docstrings while preserving all 11 context_packet pins.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+        "content": "sha256:486aea7cf1085901ed791ec718f389a35467c092ccc52019fc09b3ab6df8c946",
+        "locator": {
+          "end": 111,
+          "kind": "line_range",
+          "start": 103
+        }
+      },
+      "id": "RLZ-3Y3JWS",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Advertises which fields apply to compact rows and reports writer deferral when a saved brief cannot be refreshed.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+        "content": "sha256:9e5854fbe11be37d34a5cb560424dbd3a5123ad4c718a82a1e7e3825f91508c6",
         "locator": {
           "kind": "file"
         }
@@ -21,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
-        "content": "sha256:77aaf76054d694febd932671143e3a4d603210f203a54a1c1c7999e4562dccdd",
+        "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+        "content": "sha256:61b7cd1cea341dfd3850e0179a1d9b4e12f14ebee091f841eb9e4b81ca6a9042",
         "locator": {
           "kind": "symbol",
           "name": "_register_orientation_tools"
@@ -44,8 +80,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
-            "content": "sha256:7826c72a7a27a46f2dff03a535a1e576667459cad0ad1b66aac3c83ab7df91f0",
+            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+            "content": "sha256:7b5d0d19c9a4ee28d5b5e603600bf89600f18c3a2ae46ed03694bfc5352c67b6",
             "locator": {
               "kind": "symbol",
               "name": "_register_installation_tools"
@@ -56,15 +92,16 @@
       ]
     },
     "11": {
-      "note": "Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; task_context remains typed on both readers and explicitly supplied refresh remains refused.",
+      "note": "Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; `task_context` remains typed on both readers and explicitly supplied `refresh` remains refused.",
       "targets": [
         {
           "anchor": {
-            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
-            "content": "sha256:77aaf76054d694febd932671143e3a4d603210f203a54a1c1c7999e4562dccdd",
+            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+            "content": "sha256:018de6adc8a896b7f29f7203fcc713cf35caf296c9c90cbf3907d1dae853b40f",
             "locator": {
-              "kind": "symbol",
-              "name": "_register_orientation_tools"
+              "end": 136,
+              "kind": "line_range",
+              "start": 54
             }
           },
           "kind": "code"
@@ -76,29 +113,56 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
-            "content": "sha256:c7655e0400019bf4eed28ab2247d04ba6fe6d4707d672bcb3e4d8e36138b8450",
+            "blob": "199e11defd0b76b05c36376eba08000fef48412e",
+            "content": "sha256:3b47ad62623da9756613b04e68bf45b2d7ed8b3a67dd34e6e4341d2c59438040",
             "locator": {
-              "kind": "symbol",
-              "name": "read_ar_files_payload"
+              "end": 62,
+              "kind": "line_range",
+              "start": 26
             },
             "path": "mcp/src/agents_remember/mcp/tools/read_files.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:02bd16b49b3267737a5fa3c7adc4a8c6a10c39e827867488105fe45600c770b4",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:18618657c54185fb816cb0b325c953a857d92cc319eec414d45858f2a4372952",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/__init__.py"
           },
           "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "The registration takes the keyword-only `experiment` parameter and builds the run's request itself.\n\nAnchor: `RuntimeInstallRequest`",
+      "note": "The registration takes the keyword-only `experiment` parameter and builds the run's request itself. Anchor: `RuntimeInstallRequest`",
       "targets": [
         {
           "anchor": {
-            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
-            "content": "sha256:659f44a97ee634fa227884e9e5816bf543fbfc009d3d0da30be6e482b4e63904",
+            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+            "content": "sha256:5a375498f1450f47d9e8bb8811f2d54608f9a9385651499b94c9b79efc52b580",
             "locator": {
-              "end": 150,
+              "end": 136,
               "kind": "line_range",
-              "start": 144
+              "start": 119
             }
           },
           "kind": "code"
@@ -106,12 +170,12 @@
       ]
     },
     "5": {
-      "note": "Frozen implementation of _register_identity_tools supporting the stated file behavior.",
+      "note": "Frozen implementation of `_register_identity_tools` supporting the stated file behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
-            "content": "sha256:dcb834f03fccd05554205c7589796d4f8d2da74c9ba8e718c9dfd370cb513481",
+            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+            "content": "sha256:a107f3dcff54020fa3b4f67b4816f2db0c52c3a645fd9ff0f729e6d07f32fc43",
             "locator": {
               "kind": "symbol",
               "name": "_register_identity_tools"
@@ -122,15 +186,16 @@
       ]
     },
     "6": {
-      "note": "`_register_orientation_tools` declares the read-only orientation tools `context_packet` and `read_ar_files` and scrubs the removed `refresh` argument from the advertised schema.",
+      "note": "`_register_orientation_tools` declares `context_packet` and `read_ar_files` and removes the obsolete `refresh` argument from the advertised schema.",
       "targets": [
         {
           "anchor": {
-            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
-            "content": "sha256:77aaf76054d694febd932671143e3a4d603210f203a54a1c1c7999e4562dccdd",
+            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+            "content": "sha256:61b7cd1cea341dfd3850e0179a1d9b4e12f14ebee091f841eb9e4b81ca6a9042",
             "locator": {
-              "kind": "symbol",
-              "name": "_register_orientation_tools"
+              "end": 109,
+              "kind": "line_range",
+              "start": 69
             }
           },
           "kind": "code"
@@ -138,12 +203,12 @@
       ]
     },
     "7": {
-      "note": "The installation tools and the runtime_install registration.",
+      "note": "The installation tools and the `runtime_install` registration.",
       "targets": [
         {
           "anchor": {
-            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
-            "content": "sha256:7826c72a7a27a46f2dff03a535a1e576667459cad0ad1b66aac3c83ab7df91f0",
+            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+            "content": "sha256:7b5d0d19c9a4ee28d5b5e603600bf89600f18c3a2ae46ed03694bfc5352c67b6",
             "locator": {
               "kind": "symbol",
               "name": "_register_installation_tools"
@@ -154,12 +219,12 @@
       ]
     },
     "8": {
-      "note": "The packet description states what include_drift measures and that omitting it measures nothing.",
+      "note": "The packet description states what `include_drift` measures and that omitting it measures nothing.",
       "targets": [
         {
           "anchor": {
-            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
-            "content": "sha256:4f8406d88a585b0f3f3c9f656cb6f58e31724246d0a9f20578e79d354bcc66c2",
+            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+            "content": "sha256:8aeef5ae7a9c584e2568ed4a23121e7a0d91e474cd520c3ad45c5849eddf7aeb",
             "locator": {
               "kind": "symbol",
               "name": "context_packet"
@@ -174,12 +239,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
-            "content": "sha256:08a3cac0c3fc80034bcf5e1347273b2005f1b3be7af895b9bb2eb027bdd53df0",
+            "blob": "d6000a30730425d666869a14d2e6a6fbb7b13965",
+            "content": "sha256:db38acbcbee09ad039f216fa7e5ec6b2aa0096d1d5648d20b0ccc1a605e13eb6",
             "locator": {
-              "end": 69,
-              "kind": "line_range",
-              "start": 59
+              "kind": "symbol",
+              "name": "server_info"
             }
           },
           "kind": "code"

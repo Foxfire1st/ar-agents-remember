@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
+        "blob": "cbb61aa1ce2723ac32b3d0c4e66545281c74d698",
         "content": "sha256:149c753ed9a1bb62c55045a3020887418e28d173e5c8dc7d97deac59d9a295fd",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
-        "content": "sha256:526e7d6be9e6313800b3eb37c702ff8e6c0a889245957042e1ec5f58707c264e",
+        "blob": "cbb61aa1ce2723ac32b3d0c4e66545281c74d698",
+        "content": "sha256:de4b0352c1a8d1b250061d964870e532a4985fb0c9f2fba99ca7b79713781d5e",
         "locator": {
           "kind": "symbol",
           "name": "test_record_first_authored_in_leaf_needs_no_itemless_row"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
+        "blob": "cbb61aa1ce2723ac32b3d0c4e66545281c74d698",
         "content": "sha256:274ac584a113af984a31d835bd7909bee54f55471d843b9aa9f9d8d8b8cece20",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
+        "blob": "cbb61aa1ce2723ac32b3d0c4e66545281c74d698",
         "content": "sha256:cb65d06c6c1f1493e68b7579b3c5f9de500c2d5681effd8a55d0e34d88911dce",
         "locator": {
           "kind": "symbol",
@@ -77,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
+            "blob": "cbb61aa1ce2723ac32b3d0c4e66545281c74d698",
             "content": "sha256:149c753ed9a1bb62c55045a3020887418e28d173e5c8dc7d97deac59d9a295fd",
             "locator": {
               "kind": "symbol",
@@ -93,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
+            "blob": "cbb61aa1ce2723ac32b3d0c4e66545281c74d698",
             "content": "sha256:cb65d06c6c1f1493e68b7579b3c5f9de500c2d5681effd8a55d0e34d88911dce",
             "locator": {
               "kind": "symbol",
@@ -109,11 +109,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
-            "content": "sha256:526e7d6be9e6313800b3eb37c702ff8e6c0a889245957042e1ec5f58707c264e",
+            "blob": "cbb61aa1ce2723ac32b3d0c4e66545281c74d698",
+            "content": "sha256:5224ddab0024b7f75ae8401df6ab319e4f01e79cb5866cacbcd91fe2b8d80e47",
+            "locator": {
+              "end": 430,
+              "kind": "line_range",
+              "start": 381
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The leaf’s own history records the written revision and empty judgment rows. The itemless refusal preserves bytes and the recomputed membership subject is admitted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbb61aa1ce2723ac32b3d0c4e66545281c74d698",
+            "content": "sha256:de4b0352c1a8d1b250061d964870e532a4985fb0c9f2fba99ca7b79713781d5e",
             "locator": {
               "kind": "symbol",
               "name": "test_record_first_authored_in_leaf_needs_no_itemless_row"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cbb61aa1ce2723ac32b3d0c4e66545281c74d698",
+            "content": "sha256:3ccf2262a161e05b41637c904b328cdb75413e5a9b11e1ee405b26803e3cb78e",
+            "locator": {
+              "end": 432,
+              "kind": "line_range",
+              "start": 381
             }
           },
           "kind": "test"

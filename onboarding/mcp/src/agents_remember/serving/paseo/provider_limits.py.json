@@ -3,8 +3,62 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "77a6a6dc37f2cd00dcbfaaf953c7b97720fdbf74",
-        "content": "sha256:a36e3845b4994024c57c92662e8b632b61dba33ac0e282387d40407480ac579f",
+        "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
+        "content": "sha256:412829dd705279d9da5331e52d68b75291803908a445621f1a7e8e2298443258",
+        "locator": {
+          "kind": "symbol",
+          "name": "_updated_clear_markers"
+        }
+      },
+      "id": "RLZ-AA2AZM",
+      "invariant": "INV-2KVT5S",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 4",
+        "leaf": "261112-BUG-L37"
+      },
+      "rationale": "The writer stamps when the last active blocker clears and reclaims the marker on a renewed limit, departure or expiry.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
+        "content": "sha256:4ac6759289c3f5daa0a0766fc5aac850e1fcc4ed47b4e022a874e854d3d80c77",
+        "locator": {
+          "kind": "symbol",
+          "name": "claim_due_reports"
+        }
+      },
+      "id": "RLZ-BNRPJE",
+      "invariant": "INV-795NRN",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 1",
+        "leaf": "261112-BUG-L37"
+      },
+      "rationale": "The claim records the attempt before dispatch and prunes departed mappings in each replacement.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
+        "content": "sha256:136b636f24c858467f5e986e50b0a6cc84105e2eacdb25bcecdf2527148f99ee",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_usage_reads"
+        }
+      },
+      "id": "RLZ-K85G1Q",
+      "invariant": "INV-YEQENJ",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 2",
+        "leaf": "261112-BUG-L37"
+      },
+      "rationale": "The writer holds the lock from reread through replacement and retains prior mappings for unresolved reports.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
+        "content": "sha256:d16984d86d7774ca319d5ea164894248586823e014cfcb2a0f588bd38f09310a",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "77a6a6dc37f2cd00dcbfaaf953c7b97720fdbf74",
+            "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
             "content": "sha256:5a9faaacc33d488290ef0908cb1184a7ffb9d43164e23fe0a268fc70946c04f6",
             "locator": {
               "end": 12,
@@ -37,12 +91,42 @@
         },
         {
           "anchor": {
-            "blob": "77a6a6dc37f2cd00dcbfaaf953c7b97720fdbf74",
+            "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
             "content": "sha256:f4f559cc42147d98994985773b22c3cda3c7b389b8c4d159743ba03367129847",
             "locator": {
-              "end": 204,
+              "end": 209,
               "kind": "line_range",
-              "start": 175
+              "start": 180
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One due attempt is claimed under the file lock before the read, and a fresh snapshot keeps the claim.\n\nAnchor: `claim_due_reports`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
+            "content": "sha256:d16984d86d7774ca319d5ea164894248586823e014cfcb2a0f588bd38f09310a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "An early clear names the seat and the old deadline, and is kept only while the seat remains eligible and no limit returns.\n\nAnchor: `_updated_clear_markers`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf79dd441b681d0d5beef8d2ae535e53db60840c",
+            "content": "sha256:d16984d86d7774ca319d5ea164894248586823e014cfcb2a0f588bd38f09310a",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

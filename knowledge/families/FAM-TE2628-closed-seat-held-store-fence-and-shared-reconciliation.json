@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Closure settlement, generation fencing across all held-store writers, lockless missing-store reads, and build-checked shared-store reconciliation jointly guarantee that closed seats lose no waiting text and never recreate removed stores or folders."
+  },
+  "guarantee": "Closing a seat (by recorded retirement, rejected start, closing archive mark, or host-confirmed archival or absence — never by stopped status alone) or superseding its launch generation records waiting messages with exact text in the launch receipt before unlinking its store. Every subsequent held-store write (role messages, product messages, developer delivery, tick, sweep, drain, or late close) refuses closed or superseded generations without creating a store or folder, sends preserve their selected generation, and counts of missing stores create nothing. Opt-in runtime_install previews settlement counts without mutating server registry files or stores, and on apply settles closed shared stores and removes obsolete locks only after older server builds have stopped.",
+  "id": "FAM-TE2628",
+  "members": [
+    "INV-R850AZ",
+    "INV-HJ790A",
+    "INV-M7BT2R",
+    "INV-J8FGWF",
+    "INV-XX08QF",
+    "INV-GV3NYM"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l38-curation-handoff.json"
+    },
+    "handoffEntry": "FAM-L38-closed-seat-held-stores",
+    "leaf": "261112-BUG-L38",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/controlplane",
+    "mcp/src/agents_remember/application/runtime",
+    "mcp/src/agents_remember/serving",
+    "mcp/src/agents_remember/worktrees"
+  ],
+  "schema": "ar-family/v1",
+  "title": "Closed-seat held-store fence and opt-in shared-store reconciliation",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
+}

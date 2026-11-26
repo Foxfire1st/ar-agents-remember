@@ -1,0 +1,78 @@
+{
+  "path": "docs/features.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ee2fa5a9f8e5fbca7083e9a8ca241aa3ea53c5b4",
+        "content": "sha256:0fde5d8cd47bb2f1a93883513895d6a7ab6904057288c608518251d63519c7c5",
+        "locator": {
+          "end": 203,
+          "kind": "line_range",
+          "start": 199
+        }
+      },
+      "id": "RLZ-SHWMZJ",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "The feature description keeps the source-file path available as the reader changes row shape.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Reference-anchor blob and content currentness versus realization/proof and four-state invariant currentness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee2fa5a9f8e5fbca7083e9a8ca241aa3ea53c5b4",
+            "content": "sha256:cd872f38724c302d6001056619c7e1a71c881e1ce125f7753acc26edfd22af57",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 123
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Knowledge retrieval routes with `read_ar_files` brief-to-compact row degradation and names-only `knowledge_read`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee2fa5a9f8e5fbca7083e9a8ca241aa3ea53c5b4",
+            "content": "sha256:576e4c6559d67c027ca68ddff59cc4d962b61489899e86e9593a93dfb3c67d1e",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 191
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "MCP tool server read-only versus mutating trust boundaries, answer token bounds, and tool-log locations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee2fa5a9f8e5fbca7083e9a8ca241aa3ea53c5b4",
+            "content": "sha256:497452210d1a9f4276ba330378d1c347034028f0b1820c709ee0bdc8f6b1df6d",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 350
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5353bfe1c1e7b4d9500dd87afcc028e50ae25650",
+            "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
             "content": "sha256:925f22aaec219d7cc891620d30da65a2a438c565a3d5007c733106e8f2644582",
             "locator": {
-              "end": 179,
+              "end": 180,
               "kind": "line_range",
-              "start": 110
+              "start": 111
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -59,8 +59,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74167e7f80f1b9391a5f2c9b1c8c6d2fa2f69402",
-            "content": "sha256:6aeecf20a2907123509200cddca4d89812690e6d3896f345dcd8bf1aa3e52aff",
+            "blob": "042e5578def910a2fe6ff52a19d7f926d4a21ec1",
+            "content": "sha256:613c37c3db22be57c080b3cf49798d4227eb19d20bd1c44b3846ccc90e6b14e0",
             "locator": {
               "kind": "file"
             },
@@ -224,14 +224,14 @@
       ]
     },
     "2": {
-      "note": "The memory registrar exposes `memory_quality_check` to agents and routes it to the start, poll or whole-run payload.\n\nAnchor: `memory_quality_check_payload`",
+      "note": "The memory registrar exposes `memory_quality_check` to agents and routes it to the start, poll or whole-run payload. Anchor: `memory_quality_check_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
-            "content": "sha256:275845a2f77f125f3714f8a467012e311f24a739fbdfb8a6b4eba32dfae00ffd",
+            "blob": "bbc1541e4379d1cf2c834fbc40cb53f596f21dfd",
+            "content": "sha256:1bd4a0f93c27fafd9f7e45bb74186387ef675f6fc9800d349c332715f37404cd",
             "locator": {
-              "end": 52,
+              "end": 44,
               "kind": "line_range",
               "start": 35
             },
@@ -241,30 +241,12 @@
         },
         {
           "anchor": {
-            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
-            "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
+            "blob": "24bff159b2050395f07c6fdb1507b922bea79ad0",
+            "content": "sha256:46e292d965f7d73261d3e5baab9b977c7a2f00a645edd58005fe2ec02620f133",
             "locator": {
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/tools/memory.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "25": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The caller-exclude surface on the registered tool and the CLI.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
-            "content": "sha256:e680829e47db58265b7a93e8d891f6a09ba122ed9a80bec82f3dcc04a8a1cfad",
-            "locator": {
-              "end": 93,
-              "kind": "line_range",
-              "start": 54
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
           },
           "kind": "code"
         }
@@ -275,10 +257,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
-            "content": "sha256:275845a2f77f125f3714f8a467012e311f24a739fbdfb8a6b4eba32dfae00ffd",
+            "blob": "bbc1541e4379d1cf2c834fbc40cb53f596f21dfd",
+            "content": "sha256:1bd4a0f93c27fafd9f7e45bb74186387ef675f6fc9800d349c332715f37404cd",
             "locator": {
-              "end": 52,
+              "end": 44,
               "kind": "line_range",
               "start": 35
             },
@@ -1045,7 +1027,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "blob": "43931ceb17cee50867a81a30f36563f8a50b3434",
             "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
             "locator": {
               "kind": "symbol",
@@ -1058,14 +1040,29 @@
       ]
     },
     "67": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The refusing and the merge-reported rule.\n\nAnchor: `check_history_rows` `check_merged_history_rows`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The refusing and the merge-reported rule.",
       "targets": [
         {
           "anchor": {
-            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
-            "content": "sha256:96a01230a80ddd527233066dd4251774b2aa624fa41913d0210d0f50e5b817e8",
+            "blob": "43931ceb17cee50867a81a30f36563f8a50b3434",
+            "content": "sha256:03d2aadbda30c0e741a8ad8b4aef566f1b184b0f7826c097285e1188ff4e99dd",
             "locator": {
-              "kind": "file"
+              "end": 329,
+              "kind": "line_range",
+              "start": 287
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43931ceb17cee50867a81a30f36563f8a50b3434",
+            "content": "sha256:5414f7d7a22f16d23dc49516ad8a710a6a631b932ca5c52845ceb22a0662e920",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 332
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
           },
@@ -1240,7 +1237,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "blob": "43931ceb17cee50867a81a30f36563f8a50b3434",
             "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
             "locator": {
               "kind": "symbol",
@@ -1257,7 +1254,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "blob": "43931ceb17cee50867a81a30f36563f8a50b3434",
             "content": "sha256:8958b1d5e7974ce9450138ae54b86b9c439181230800167a1796f056a74b96b7",
             "locator": {
               "kind": "symbol",
@@ -1659,7 +1656,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "blob": "43931ceb17cee50867a81a30f36563f8a50b3434",
             "content": "sha256:c2f8e85a76746c05fbabcc6b2888b462de8d083de39f167c1a37c5be4512be48",
             "locator": {
               "kind": "symbol",
@@ -1671,7 +1668,7 @@
         },
         {
           "anchor": {
-            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "blob": "43931ceb17cee50867a81a30f36563f8a50b3434",
             "content": "sha256:6715fd9722c727a0b6b3c85ace1fe181104fd09d7ab86d755eed4ffc86f4bf99",
             "locator": {
               "kind": "symbol",

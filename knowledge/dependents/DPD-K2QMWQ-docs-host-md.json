@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "b29f2e225c04fbcebb653d59f81cf895c42f5097",
-    "commit": "180b6c153d21d01cbb14059d0219472ccdeba683",
+    "codeTree": "4ebb429de6b3034e7bff1922b3f8982b2ccafa07",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "The host guide's role-agent account, the second agents-remember copy on non-Claude harnesses and the Claude Code exclusion still hold on b29f2e2; the Paseo 0.16.2 routes now documented in agent_binding.py agree with it.",
-    "task": "261124-CAP-L1",
+    "statement": "docs/host.md remains accurate after bumping contract.json Node to 26.13.1 and BUG-L36's UTC ISO-8601 dashboard log timestamps because the host guide uses generic build-pinned Node wording, retains the unchanged Paseo 0.16.2 contract, and keeps dashboard daemon/status/stop/port commands accurate.",
+    "task": "261125-DEP-L1",
     "uncommitted": true
   },
   "document": "docs/host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -76,7 +76,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_harness_homes.py"
     },
     {
-      "blob": "a6a401b6a3c3dcc96be3616338f4d2bfe1c7e4d1",
+      "blob": "d564766a2112b76c74a5277a83fdcec6409845b1",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json"
     },
@@ -101,7 +101,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_frame.py"
     },
     {
-      "blob": "67f5d0dec9e07fa43740a69490f9e28ca27a316d",
+      "blob": "f773661b8296054004b3ee3642cfe01836a8f11c",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/dashboard.py"
     },
@@ -131,7 +131,7 @@
       "path": "mcp/src/agents_remember/application/agent_binding.py"
     },
     {
-      "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
+      "blob": "58ee640a8f53ac7e3e3b4aa884d750d6ad8eead7",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
     },
@@ -141,7 +141,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
     },
     {
-      "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
+      "blob": "07ae82d885e3cd87654354b19a373a5a9267b9db",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
     },
@@ -167,8 +167,8 @@
     },
     {
       "anchor": {
-        "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
-        "content": "sha256:bfd43cdf46e5c32a4de2c2ed61c10d966ef1d8d86de4e336e599dd21ec8e0658",
+        "blob": "a272b54aaa1bf67730ba1ea521a5875b6bcebd06",
+        "content": "sha256:8b89d4ca063e0692378d8fb0b624e947ad562bc0de0b790c1837269b6f497258",
         "locator": {
           "end": 247,
           "kind": "line_range",
@@ -195,8 +195,8 @@
     },
     {
       "anchor": {
-        "blob": "c64ab7bfc87977872a1658b468313d87a977cdef",
-        "content": "sha256:88890c4ffbc0c6525cec6141638a35f4faa3e4e9cf958e1b6c6e522cccea024a",
+        "blob": "07ae82d885e3cd87654354b19a373a5a9267b9db",
+        "content": "sha256:6d3f96fe2a31cbb02bbde42b88d1b6e720a8985d9a29f6a74f755fcafeb193ea",
         "locator": {
           "end": 736,
           "kind": "line_range",
@@ -249,5 +249,16 @@
       "heading": "Antigravity role agents",
       "kind": "anchor"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T20:08:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L1",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "b5f00ccb-ae71-451c-bfff-3ee2a7ac6155",
+    "task": "261125-DEP"
+  }
 }

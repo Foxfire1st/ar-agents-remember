@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Receipt-locked fencing in cli/role_held_store.py and lockless counting in controlplane/held_store_layout.py prevent closed seats from recreating removed task folders and are proved by closed-store tests."
+  },
+  "applicability": "All held-store write paths (role messages, developer delivery, tick, sweep, drain, late close) and read/count helpers.",
+  "conditions": [
+    "Every store mutation opens through open_held_store under the launch receipt lock and verifies live identity and generation.",
+    "Missing-store counts read without acquiring a store lock or creating directories."
+  ],
+  "exclusions": [
+    "Deliberate same-request restarts advance heldStoreGeneration through begin_held_generation for the new generation."
+  ],
+  "id": "INV-HJ790A",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The Worker freeze report binds focused verification on this tree."
+      ],
+      "path": "l38-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R38@v1 rule 3",
+    "leaf": "261112-BUG-L38",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Held-store writes to a closed or superseded launch generation refuse before creating a store, and counts of missing stores create nothing.",
+  "supersedes": [],
+  "title": "Closed or superseded seats refuse store writes; missing counts create none",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
+}

@@ -162,12 +162,12 @@
         },
         {
           "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "blob": "f561ed4c783385d8f6b1be998e88ca8c2e1be87a",
             "content": "sha256:715e7df48deebd5b3adef0d28b2c124ccca66442005bd3f27ddc5cab9e0cf8c9",
             "locator": {
-              "end": 92,
+              "end": 68,
               "kind": "line_range",
-              "start": 59
+              "start": 35
             },
             "path": "mcp/src/agents_remember/models/knowledge/base.py"
           },
@@ -187,7 +187,7 @@
         },
         {
           "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "blob": "f561ed4c783385d8f6b1be998e88ca8c2e1be87a",
             "content": "sha256:715e7df48deebd5b3adef0d28b2c124ccca66442005bd3f27ddc5cab9e0cf8c9",
             "locator": {
               "kind": "symbol",
@@ -222,7 +222,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
+            "blob": "467b6e3bb025fa7895853353aab838036e694400",
             "content": "sha256:c9bae576442e9ed3c038b1f056f35e178a320f84b9c96b858f33f086e7154ed6",
             "locator": {
               "kind": "symbol",
@@ -235,16 +235,16 @@
       ]
     },
     "18": {
-      "note": "The lane row this module occupies. Source caption: `test_knowledge_read_paths`",
+      "note": "The integration lane selects mcp/tests/test_knowledge_read_paths.py.\n\nAnchor: `mcp/tests/test_knowledge_read_paths.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "75006e874ab9c238187bcf9044d224511529c135",
+            "blob": "9b2f8dfb74c9f9e7cc39c1097e6d5f7e0ff20215",
             "content": "sha256:6d72a03b51c229fc0032ede7d0676b5f68afcd6b9e47ae30601f6b28cfaed5e5",
             "locator": {
-              "end": 724,
+              "end": 744,
               "kind": "line_range",
-              "start": 724
+              "start": 744
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

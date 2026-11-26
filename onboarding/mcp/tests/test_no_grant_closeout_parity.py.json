@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "7393e041f872aaf83b86f568ac6a73b840c67708",
-        "content": "sha256:8bf4a27ad0032f062c7edc110ff2688569cf7347fef7946b377c1cfcbeb128a8",
+        "blob": "4bf126fc9677d1b331a1092e49ba3ecc766ee598",
+        "content": "sha256:9a491db9fd11bdb4a75ddba5e4dddb1a2402439c98abc0c277bd0d2ed8256dd9",
         "locator": {
           "kind": "symbol",
           "name": "NoGrantCloseoutParityTest.test_before_after_implementation_parity"
@@ -22,14 +22,27 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The three worlds retain raw pristine/grant equality; baseline comparison additionally uses conversion, baseline-only removed-seat-field adaptation and contract-derived landing-label adaptation. A12 takes no route-index counts out of current answers. Anchor: `mcp/tests/test_no_grant_closeout_parity.py`",
+      "note": "The current worlds compare before adaptations. The baseline comparison applies its named conversion, seat and landing-label transforms and verifies the no-pass sentence only for current leaf apply summaries. The current route-index counts stay in both comparisons.",
       "targets": [
         {
           "anchor": {
-            "blob": "7393e041f872aaf83b86f568ac6a73b840c67708",
-            "content": "sha256:75de46939be17838c0a5f664a6750cdceaf7ad639b70b0b799d9a505c829f0ce",
+            "blob": "4bf126fc9677d1b331a1092e49ba3ecc766ee598",
+            "content": "sha256:c41a8bdb3932c62880c12a9d0cecfc64bb814bb8eab1c10e2476085f65e25345",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_without_no_pass_sentence"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4bf126fc9677d1b331a1092e49ba3ecc766ee598",
+            "content": "sha256:78f52d48f3a3fa6661d32f010cd27f343e1f108562fb1581632a8cee7ade672a",
+            "locator": {
+              "end": 539,
+              "kind": "line_range",
+              "start": 513
             }
           },
           "kind": "test"
@@ -41,8 +54,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7393e041f872aaf83b86f568ac6a73b840c67708",
-            "content": "sha256:75de46939be17838c0a5f664a6750cdceaf7ad639b70b0b799d9a505c829f0ce",
+            "blob": "4bf126fc9677d1b331a1092e49ba3ecc766ee598",
+            "content": "sha256:bdd79d16d35e77135a07d4c82a620991d301ba5f8c3ac14b5a906b6575db8236",
             "locator": {
               "kind": "file"
             }
@@ -56,10 +69,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7393e041f872aaf83b86f568ac6a73b840c67708",
-            "content": "sha256:75de46939be17838c0a5f664a6750cdceaf7ad639b70b0b799d9a505c829f0ce",
+            "blob": "4bf126fc9677d1b331a1092e49ba3ecc766ee598",
+            "content": "sha256:bdd79d16d35e77135a07d4c82a620991d301ba5f8c3ac14b5a906b6575db8236",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The parity test first compares the raw current worlds, then enforces exactly one no-pass sentence in each leaf apply comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bf126fc9677d1b331a1092e49ba3ecc766ee598",
+            "content": "sha256:c41a8bdb3932c62880c12a9d0cecfc64bb814bb8eab1c10e2476085f65e25345",
+            "locator": {
+              "kind": "symbol",
+              "name": "_without_no_pass_sentence"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4bf126fc9677d1b331a1092e49ba3ecc766ee598",
+            "content": "sha256:78f52d48f3a3fa6661d32f010cd27f343e1f108562fb1581632a8cee7ade672a",
+            "locator": {
+              "end": 539,
+              "kind": "line_range",
+              "start": 513
             }
           },
           "kind": "test"

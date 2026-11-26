@@ -1,0 +1,57 @@
+{
+  "path": "dashboard/src/panels/knowledge-reader/RecordStanding.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "99703c1a403d4d5cfb4523913a9fadf1d8353520",
+        "content": "sha256:f1e51762ea116b3e15ce3a58d51a5583d908f60e158d986de8aa6c4ab4c756ab",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-PPW0DQ",
+      "invariant": "INV-TRMMZA",
+      "origin": {
+        "handoffEntry": "L3-W1-08",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The list note renders projected state and writer independently.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One formatter combines the supplied state and writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99703c1a403d4d5cfb4523913a9fadf1d8353520",
+            "content": "sha256:9ed0c076210f5294d1ae5760d8302fa149a23a812d2a36b7b1c8b3e3c85b5395",
+            "locator": {
+              "kind": "symbol",
+              "name": "recordStandingText"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The inline note is absent when no detail is available.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99703c1a403d4d5cfb4523913a9fadf1d8353520",
+            "content": "sha256:7e0735a0fc7feb9968e8e1290e03e6d6ba296aa2870c452f5af5134cff3f192e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordStandingNote"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

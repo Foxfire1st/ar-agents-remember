@@ -19,3 +19,5 @@ The guide describes the planned form’s empty request for the requirement and p
 - The guide follows bound task copies and in-place reports through the essay, figures and assembly. The central mechanism is reader-driven, the still explanation is complete and render carries the referenced kit. [1]
 
 - The guide describes the planned first-request wording and staged plan. The Build handler carries the dashboard’s history to the existing planned request composer. [2]
+
+- The review guide shows how to compare a task’s code and memory, read Curator judgments and request an explanation page. [3]

@@ -10,7 +10,7 @@ Define authored-intent plus/minus counts, partial/unavailable outcomes and the c
 
 ## Code Commentary
 
-Added and removed count after-only and before-only invariant/guarantee head revisions; any statement/status/acceptance/version-only successor contributes once on each side. Pure realization/membership changes stay in their own typed counts. ReviewIntentCounts validates that declared added/removed totals equal those two component sums.
+Added and removed count after-only and before-only invariant/guarantee head revisions; a successor with changed authored text or only a version change contributes once on each side. Pure realization or membership changes stay in their own typed counts. Derived record state does not affect these counts. ReviewIntentCounts validates that declared added/removed totals equal those two component sums.
 
 ReviewIntentSummaryResult carries task context and one declared outcome. Unavailable requires a refusal and no counts; counted/partial require counts and no refusal; partial is equivalent to unresolved>0. These constructor checks constrain the supplied shape and arithmetic, not whether a producer actually read/authenticated the comparison.
 

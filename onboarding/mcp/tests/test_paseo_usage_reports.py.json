@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
+        "blob": "2183eb643d529969a2fe786cd22a8f3710afc2a9",
         "content": "sha256:2f7a8d2793fce2612a0fc4a6a23db24fca077b04ac0d8df2e8574c8481fb15d1",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
+        "blob": "2183eb643d529969a2fe786cd22a8f3710afc2a9",
+        "content": "sha256:3daa3b40fede08d06a6233daad540e81e9883be4e569799fe7ff0e267b5bcc92",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_mixed_batch_shares_refreshes_and_keeps_stamped_only_managers_cached"
+        }
+      },
+      "facet": "A mixed batch shares refreshes and keeps stamped-only managers cached.",
+      "id": "PRF-AHAAQY",
+      "invariant": "INV-XN49FH",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 6",
+        "leaf": "261112-BUG-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2183eb643d529969a2fe786cd22a8f3710afc2a9",
         "content": "sha256:bc3ec2d9e31e6e614ea747f1b165a082f0f7cdcfb13dfe733833c6d34527a1f8",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,41 @@
     },
     {
       "anchor": {
-        "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
+        "blob": "2183eb643d529969a2fe786cd22a8f3710afc2a9",
+        "content": "sha256:778cc10f9e3c314112a5465e3c844a7fe3bacf88ee709014bcb8a1c534e58b1f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_periodic_read_skips_an_unknown_agent_and_forces_the_next_agent_entries"
+        }
+      },
+      "facet": "A periodic read skips an Unknown agent and forces the next mapped agent's entry.",
+      "id": "PRF-E3S5MX",
+      "invariant": "INV-795NRN",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 1",
+        "leaf": "261112-BUG-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2183eb643d529969a2fe786cd22a8f3710afc2a9",
+        "content": "sha256:43aa689cd3764a56c0f4c13e2a883f831552e117e2ce83597d202551f61cee59",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_missing_periodic_target_retains_its_mapping_when_a_sibling_clears"
+        }
+      },
+      "facet": "A missing periodic target keeps its mapping while a sibling clears.",
+      "id": "PRF-JE6T7K",
+      "invariant": "INV-YEQENJ",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 2",
+        "leaf": "261112-BUG-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2183eb643d529969a2fe786cd22a8f3710afc2a9",
         "content": "sha256:bc3ec2d9e31e6e614ea747f1b165a082f0f7cdcfb13dfe733833c6d34527a1f8",
         "locator": {
           "kind": "symbol",
@@ -56,7 +107,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
+        "blob": "2183eb643d529969a2fe786cd22a8f3710afc2a9",
         "content": "sha256:2f7a8d2793fce2612a0fc4a6a23db24fca077b04ac0d8df2e8574c8481fb15d1",
         "locator": {
           "kind": "symbol",
@@ -74,7 +125,7 @@
     },
     {
       "anchor": {
-        "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
+        "blob": "2183eb643d529969a2fe786cd22a8f3710afc2a9",
         "content": "sha256:ca86ad60e0debf2ba545a7265a0cea02a3d34343ef622ee6df62dbf20ef5e0ab",
         "locator": {
           "kind": "symbol",
@@ -92,8 +143,8 @@
     },
     {
       "anchor": {
-        "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
-        "content": "sha256:e85791b988676d4f8e810ad43520ee21bbe0c6024dd77ab1dd942c75f92e2b9f",
+        "blob": "2183eb643d529969a2fe786cd22a8f3710afc2a9",
+        "content": "sha256:b86df8314c059bed55e7159474fe54467b812b7285e25a81026abf661ebfeedf",
         "locator": {
           "kind": "file"
         }
@@ -114,7 +165,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
+            "blob": "2183eb643d529969a2fe786cd22a8f3710afc2a9",
             "content": "sha256:ca86ad60e0debf2ba545a7265a0cea02a3d34343ef622ee6df62dbf20ef5e0ab",
             "locator": {
               "kind": "symbol",
@@ -125,7 +176,7 @@
         },
         {
           "anchor": {
-            "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
+            "blob": "2183eb643d529969a2fe786cd22a8f3710afc2a9",
             "content": "sha256:68ab8c91a52a7cedbafe6d3a4ee6ed42414ce41543e2c591949bf1e45b0a468b",
             "locator": {
               "kind": "symbol",
@@ -136,7 +187,7 @@
         },
         {
           "anchor": {
-            "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
+            "blob": "2183eb643d529969a2fe786cd22a8f3710afc2a9",
             "content": "sha256:5747b4e2c673d92e55682f1e03f3a4043c2d459628b5886d5d6999efd2b9763a",
             "locator": {
               "kind": "symbol",
@@ -147,7 +198,7 @@
         },
         {
           "anchor": {
-            "blob": "f72b165e5d541af8c6873590daa01b07f0948e83",
+            "blob": "2183eb643d529969a2fe786cd22a8f3710afc2a9",
             "content": "sha256:8e515f4b79bb990da2fc8fd673e17fbf7fccf49b3aa4249a6530b9487b572d3e",
             "locator": {
               "kind": "symbol",

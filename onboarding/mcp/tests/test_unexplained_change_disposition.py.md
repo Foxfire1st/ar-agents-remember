@@ -62,7 +62,6 @@ The updated-card case changes a card and submits an updated row through the fixt
 
 ### Conventions
 
-- The module is in the `unit-regression` lane; the evidence catalog lists it as a consumer of `fixtures/repository_profiles/node/package-lock.json`.
 - The symlink/deleted-binary case commits source-bound history rows directly rather than through the writer; that case does not assert the writer’s symlink or `@absent` mismatch refusals.
 
 ### Invariants And Boundaries
@@ -173,6 +172,7 @@ No cross-repo boundary is crossed by this file.
 - Authored source-bound rows settle the uncovered items; counted card edits alone do not. Hunk stability applies to the unchanged covered hunk and explicit candidate blobs bind onboarding rows. [15]
 
 
-- The unit-lane row. Source caption: "mcp/tests/test_unexplained_change_disposition.py" [13]
+- The `unit-regression` lane selects `mcp/tests/test_unexplained_change_disposition.py`. [13]
 
-- The catalog consumer row: the reconsideration shared-support artifact lists this module among its consumers. [14]
+- The lifecycle catalog lists this module as an exact consumer of `mcp/tests/reconsideration_test_support.py`. [14]
+- The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`.

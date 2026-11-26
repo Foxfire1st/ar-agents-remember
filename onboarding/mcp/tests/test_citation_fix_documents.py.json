@@ -3,7 +3,58 @@
   "proves": [
     {
       "anchor": {
-        "blob": "81ade7920bab1da35029ac9f85f4f77cb5c01807",
+        "blob": "ae9a6c91206bd72460e5b09638bca2d21dcc9f46",
+        "content": "sha256:9165d278e17aee118b83455571a73da034e12e683e39cb49696d9c9b415da18c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_fix_writes_the_brief_of_its_card_again"
+        }
+      },
+      "facet": "A leaf citation correction renews app.py and the ordinary overview.py card brief with the resulting memory tree key.",
+      "id": "PRF-A2XG98",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ae9a6c91206bd72460e5b09638bca2d21dcc9f46",
+        "content": "sha256:367a646d0334aa74f74a018e436faa2e76288310fe373ab729f6762eaec248c0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_leaf_fix_without_the_ignore_line_defers_briefs"
+        }
+      },
+      "facet": "The correction writes its sidecar and reports that the absent ignore rule deferred source-brief publication.",
+      "id": "PRF-CEA5T1",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ae9a6c91206bd72460e5b09638bca2d21dcc9f46",
+        "content": "sha256:4102f6ed3046e1c6d249ac7018c48d2d6508deb07c3d33e8e80c9eb922b243ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_leaf_fix_refreshes_after_authoring_without_a_mechanical_rewrite"
+        }
+      },
+      "facet": "Authoring alone can identify the touched brief to refresh.",
+      "id": "PRF-JKJJRM",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ae9a6c91206bd72460e5b09638bca2d21dcc9f46",
         "content": "sha256:48004fee03cf503c30c0f8369eee4941342fe62e41c619dccb006b7c3018b6de",
         "locator": {
           "kind": "symbol",
@@ -20,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "81ade7920bab1da35029ac9f85f4f77cb5c01807",
+        "blob": "ae9a6c91206bd72460e5b09638bca2d21dcc9f46",
         "content": "sha256:77664dd8cd77d8379753146c3328cd529e54d75681de8b3749202662d42403a7",
         "locator": {
           "kind": "symbol",
@@ -43,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "81ade7920bab1da35029ac9f85f4f77cb5c01807",
+            "blob": "ae9a6c91206bd72460e5b09638bca2d21dcc9f46",
             "content": "sha256:c7d01c9f9e0603666df1821d27edad2960f06ff0cc7ad7fca6d2a92d4d1f4637",
             "locator": {
               "kind": "symbol",
@@ -55,15 +106,14 @@
       ]
     },
     "3": {
-      "note": "Converted list/single parity and missing-card refusal/count remain; returned refusals preserve malformed bytes and are excluded from refresh.",
+      "note": "Converted list/single parity and missing-card refusal/count remain; returned refusals preserve malformed bytes and are excluded from refresh. Anchor: `ConvertedListFixTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "81ade7920bab1da35029ac9f85f4f77cb5c01807",
-            "content": "sha256:6e909b43f0aa18d87223944cec3304ef046d838ccaa4a0ca40c47acfb2ff85d6",
+            "blob": "ae9a6c91206bd72460e5b09638bca2d21dcc9f46",
+            "content": "sha256:d3b89716f782fb8ec6ab815037ab55ec5572f70326ac77b42ad4578f10f35b30",
             "locator": {
-              "kind": "symbol",
-              "name": "ConvertedListFixTests"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -75,11 +125,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "81ade7920bab1da35029ac9f85f4f77cb5c01807",
+            "blob": "ae9a6c91206bd72460e5b09638bca2d21dcc9f46",
             "content": "sha256:19e55a4143b734bf069f07abad9447bbbe4bb8cadefac7f25c8ac0fdf96f4550",
             "locator": {
               "kind": "symbol",
               "name": "CitationFixCommandTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The converted citation fix replaces the stale tree marker, writes the source heading and returns no briefsProblem.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9a6c91206bd72460e5b09638bca2d21dcc9f46",
+            "content": "sha256:f818f8326bb8d11f3326aea3285004a32c743dd8c3605fd016d80b7a30a357e0",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ae9a6c91206bd72460e5b09638bca2d21dcc9f46",
+            "content": "sha256:9165d278e17aee118b83455571a73da034e12e683e39cb49696d9c9b415da18c",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 216
             }
           },
           "kind": "test"

@@ -26,9 +26,9 @@
     "leaf": "260928-MIK-L48",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "R48 hunks outside the primary symbol anchors — helpers, refusal strings, rule text and docstrings in predicates.py, handoff.py, history_check.py, rules_history.py and history.py — carry the same rule obligations as the anchored constructs and change with them.",
+  "statement": "R48 hunks outside the primary symbol anchors — helpers, refusal strings, rule text and docstrings in predicates.py, handoff.py, history_check.py, rules_history.py, history.py, family_effect.py and history_governing_rows.py — carry the same rule obligations as the anchored constructs and change with them.",
   "status": "retired",
   "supersedes": []
 }

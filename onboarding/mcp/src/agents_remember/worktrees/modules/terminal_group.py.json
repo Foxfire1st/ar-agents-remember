@@ -1,0 +1,270 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/terminal_group.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+        "content": "sha256:1aeb40f1783f7319faaa7c395f3a6a95c6d90502d745818dd1b556a14e8037ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "preview_group_removal"
+        }
+      },
+      "id": "RLZ-148M0G",
+      "invariant": "INV-2RFVNH",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 4",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "Checks the registered group and its move-out operands before the removal path proceeds.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+        "content": "sha256:24bead6eea788398a0900b7d2e1e42ee0a1d6b14c0ac0e110c2b07660dde9de7",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_terminal_group"
+        }
+      },
+      "id": "RLZ-9PJVB4",
+      "invariant": "INV-HBMPXC",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 5",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "Returns archive blockers before the calling operation starts deletion.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+        "content": "sha256:f671bd2ee9ccd845bc99f9397ba14caf008c6d567b38db1ff66d6b78041cc913",
+        "locator": {
+          "kind": "symbol",
+          "name": "preview_unpublished_provider_skip"
+        }
+      },
+      "id": "RLZ-A50BNC",
+      "invariant": "INV-PB6BZ0",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 4 provider skip",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "Names provider state before a fresh request can bind the teardown argument.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+        "content": "sha256:24bead6eea788398a0900b7d2e1e42ee0a1d6b14c0ac0e110c2b07660dde9de7",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_terminal_group"
+        }
+      },
+      "id": "RLZ-ASKMYH",
+      "invariant": "INV-JCDV4P",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 1",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "Prepares the directory and moves durable data before Git and provider teardown.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+        "content": "sha256:5af32e9ea1f995605f5a9e53ac8cc584e908e9e67d93dfe6d2ee67e4187c13c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "remove_terminal_group"
+        }
+      },
+      "id": "RLZ-BX7F68",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-INV-B",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "Removes the enclosure generation's recorded outside scratch root before whole-folder removal of worktree_group.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+        "content": "sha256:40c67791e171a555e72027c9ecaac0a1f3d1a3dbc2c47ae697db28a1cad6a243",
+        "locator": {
+          "kind": "symbol",
+          "name": "_move_out"
+        }
+      },
+      "id": "RLZ-G5EDV3",
+      "invariant": "INV-KA3FAN",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 1 · post-sync kept tool calls",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "The first move-out pass used by both the preview and the apply path; it keeps the leaf's tool-call lines and reports its destination blocker before the group is considered removable.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+        "content": "sha256:5af32e9ea1f995605f5a9e53ac8cc584e908e9e67d93dfe6d2ee67e4187c13c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "remove_terminal_group"
+        }
+      },
+      "id": "RLZ-KNRJ0D",
+      "invariant": "INV-JCDV4P",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 1",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "Recollects reports, then removes the registered task folder as one tree.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+        "content": "sha256:1aeb40f1783f7319faaa7c395f3a6a95c6d90502d745818dd1b556a14e8037ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "preview_group_removal"
+        }
+      },
+      "id": "RLZ-P5S8G4",
+      "invariant": "INV-PB6BZ0",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 4 provider skip",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "Names the provider owner prerequisite and saved false retry when a previously accepted cleanup is blocked.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+        "content": "sha256:1aeb40f1783f7319faaa7c395f3a6a95c6d90502d745818dd1b556a14e8037ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "preview_group_removal"
+        }
+      },
+      "id": "RLZ-QPEAFS",
+      "invariant": "INV-Z69ZVF",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 4 · post-sync keep blocker",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "The preview calls the move-out before it answers, so a keep-destination blocker is named before anything is deleted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+        "content": "sha256:3777083fe6e327eb6a60e84791e88233774c55272932bbfe0568cf59e67b072e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_collect_before_removal"
+        }
+      },
+      "id": "RLZ-RE331Y",
+      "invariant": "INV-KA3FAN",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 1 · post-sync kept tool calls",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "This is the second move-out pass that runs immediately before the whole-folder removal; it re-collects reports and keeps the leaf's tool-call lines before any deletion, so a failure here returns a blocker instead of removing the folder.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+        "content": "sha256:24bead6eea788398a0900b7d2e1e42ee0a1d6b14c0ac0e110c2b07660dde9de7",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_terminal_group"
+        }
+      },
+      "id": "RLZ-X6RMRZ",
+      "invariant": "INV-Z69ZVF",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 4 · post-sync keep blocker",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "The apply path turns the move-out result into `blockers` and returns before the group is removed when the keep failed.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`preview_group_removal` dispatches legacy series groups, checks provider-skip and recursive directory permission blockers, and combines outside-scratch and dry-run move-out checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+            "content": "sha256:1aeb40f1783f7319faaa7c395f3a6a95c6d90502d745818dd1b556a14e8037ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "preview_group_removal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`remove_terminal_group` collects reports and tool calls, removes outside scratch and report locators, and removes the whole `worktree_group` via `provider_lifecycle.remove_tree`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+            "content": "sha256:5af32e9ea1f995605f5a9e53ac8cc584e908e9e67d93dfe6d2ee67e4187c13c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_terminal_group"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_group_observation` guards against symlinked parents, non-directory paths, the repo's shared worktree root, and unwritable parents, reporting `already-absent` when missing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+            "content": "sha256:e639361c45bc0d973372295f2644b5711d0b3044c2f545486a18da179cd42c5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_group_observation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`prepare_terminal_group` sequences removal preview, terminal agent archiving/blocker checks, and live move-out into a `GroupPreparation` result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0575a9d7ceeb3cf07fdc796395db40e1afcd047f",
+            "content": "sha256:24bead6eea788398a0900b7d2e1e42ee0a1d6b14c0ac0e110c2b07660dde9de7",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_terminal_group"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

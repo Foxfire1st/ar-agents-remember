@@ -14,7 +14,7 @@ Report placement follows the tool-log owner: the enclosure reports directory whe
 
 The writer counts serialized bytes in chunks, charges the actual log/report budget family and reserves a fraction of that budget for concurrent log growth. A census with unreadable entries refuses rather than undercounting. Accepted payloads stream to a sibling partial file and are atomically renamed.
 
-A write failure attempts partial-file removal. If cleanup also fails, ReportWriteError carries the residual path and the refusal names it; callers must not claim universal zero residue. Reports are whole-or-refused, not shortened tool answers or tool-log replacements.
+A write failure attempts partial-file removal. If cleanup also fails, ReportWriteError carries the residual path and the refusal names it; callers must not claim universal zero residue. Reports preserve the complete payload requested by a naming read alongside its compact answer and tool log. Size or write failures return a refusal.
 
 ## Evidence
 

@@ -77,16 +77,16 @@
       ]
     },
     "12": {
-      "note": "The lane manifest registers mcp/tests/test_next_step_address_binding.py in unit-regression. Membership selects evidence and does not establish execution.",
+      "note": "The unit-regression lane selects mcp/tests/test_next_step_address_binding.py. Execution evidence is recorded separately.\n\nAnchor: `mcp/tests/test_next_step_address_binding.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "75006e874ab9c238187bcf9044d224511529c135",
+            "blob": "9b2f8dfb74c9f9e7cc39c1097e6d5f7e0ff20215",
             "content": "sha256:6897c1086d34692ed244fe2a89df0b31f713b774b295274504d481dfe90dbc65",
             "locator": {
-              "end": 367,
+              "end": 380,
               "kind": "line_range",
-              "start": 367
+              "start": 380
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -163,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "blob": "44965514704f09508b78c29839ced880346b1479",
             "content": "sha256:129afbc7db95453225dc24dc3d91b07668c255b319898fb911556658fe5c0777",
             "locator": {
               "kind": "symbol",
@@ -180,7 +180,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "blob": "44965514704f09508b78c29839ced880346b1479",
             "content": "sha256:bcb4397f067ede0b0d258767ef8479189851508c12189ec69b383ba0963a9991",
             "locator": {
               "kind": "symbol",
@@ -192,7 +192,7 @@
         },
         {
           "anchor": {
-            "blob": "a70e2d3c68d728210b190a29980b6d822a5906d9",
+            "blob": "44965514704f09508b78c29839ced880346b1479",
             "content": "sha256:28e88d2fdd54c0eb2f29cc2a4dba93fec3183e1fc4c6731ae273e75a9d3fedef",
             "locator": {
               "kind": "symbol",

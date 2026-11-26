@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/typed_state.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cdec400b4c00efeab3d698c44b13c09249ad5b4e",
+        "content": "sha256:bc677ba833aa622e19eda9544aa826c6acfec3e04a09e5714ca0c674a249fd88",
+        "locator": {
+          "kind": "symbol",
+          "name": "typed_state_refusal"
+        }
+      },
+      "id": "RLZ-NQ0J9Y",
+      "invariant": "INV-B79B38",
+      "origin": {
+        "handoffEntry": "L3-W1-03",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "The one list of the four state words and the refusal text the hand-off reader uses.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The refusal names the four reserved inputs and gives the admitted status uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdec400b4c00efeab3d698c44b13c09249ad5b4e",
+            "content": "sha256:bc677ba833aa622e19eda9544aa826c6acfec3e04a09e5714ca0c674a249fd88",
+            "locator": {
+              "kind": "symbol",
+              "name": "typed_state_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ce714f8fbee46339c39d7eec8c956e3763464c26",
-    "commit": "d1c92dc9d4606a0b48b8e6b13f9c41c9b9aa6cce",
+    "codeTree": "9a8f83c80b65c002f8b07f79bb2ee8377cdee42d",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "The tool details' account of serialized writes is still true: one queue in arrival order, a cancelled running write held in place until its thread ends, asynchronous tools outside the queue, and a stale build refusing publishing calls.",
-    "task": "261112-BUG-L27",
+    "statement": "Updated in L38 (9a8f83c8), docs/tool-details.md accurately documents all six runtime_install arguments (including reconcile_shared_held_stores=false), that the delivered MCP answer omits per-seat stores on both preview and apply while an executed install writes them to reportPath and dry runs write no report, that log holds the delivered answer, and all other tool details.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 16,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -92,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "001bb9aaff5d3176ae998ec0f5846200b14b3024",
+        "blob": "8a0944622c4c0077131d3287fab0f3d09d9c5540",
         "content": "sha256:67fe0b7ee62d92936408e6bdce030fb715592e603ee194856fe2a7ae9ffb01ac",
         "locator": {
           "kind": "symbol",
@@ -103,12 +103,12 @@
       "kind": "anchor"
     },
     {
-      "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+      "blob": "9518d2870b1d1d5dcd2c6707be568f200f0f5899",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/tools/core.py"
     },
     {
-      "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+      "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/runtime.py"
     },
@@ -118,7 +118,7 @@
       "path": "mcp/src/agents_remember/install/experiment.py"
     },
     {
-      "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
+      "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/runtime/install.py"
     },
@@ -128,7 +128,7 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_install.py"
     },
     {
-      "blob": "ab649fa5dd2402a61b2ddd4c6fb9e3a2be7ee979",
+      "blob": "00e0026c74c9ae008642aa171b70ec87da5fb234",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/server_registry.py"
     },
@@ -163,17 +163,17 @@
       "path": "mcp/src/agents_remember/memory_quality/landing_report.py"
     },
     {
-      "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+      "blob": "bbc1541e4379d1cf2c834fbc40cb53f596f21dfd",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },
     {
-      "blob": "c5586be802e8e401bd72b2e4e6a0f362426687d4",
+      "blob": "023e93b07cfc3def08a05238107dfa8eb68e292c",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_retire.py"
     },
     {
-      "blob": "78d1d879651aca07ed8ab09f7022678801d0b38d",
+      "blob": "29ac4d5e75a9e54475ec617732ab37e9e4fa8983",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
     },
@@ -213,7 +213,7 @@
       "path": "mcp/src/agents_remember/application/knowledge_worklist/route_context.py"
     },
     {
-      "blob": "bfbe2e81d84a8bfc86b538760f6510133897cc83",
+      "blob": "74906e090cbaf56d8b60a978f4ada2a8b13bda8f",
       "kind": "file",
       "path": "mcp/src/agents_remember/memory/baseline.py"
     },
@@ -227,7 +227,6 @@
         },
         "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
       },
-      "heading": "Loaded build identity",
       "kind": "anchor"
     },
     {
@@ -240,8 +239,42 @@
         },
         "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_binding.py"
       },
-      "heading": "Measured coherence",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "eeef2f4dd194887b3f467c5228117f96100ecfa6",
+        "content": "sha256:36dc9a008fb9c41f8933eab117f5b062a8223431c0a517a8f1aedf21690d9b6f",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_runtime_install"
+        },
+        "path": "mcp/src/agents_remember/application/runtime/install.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "0a4d22c5c160adc0fc4879bea3f4644a35df6b9f",
+        "content": "sha256:00294c702defca05fdd202e9abd2cf96671f06061401051b10084d0b527fc57e",
+        "locator": {
+          "kind": "symbol",
+          "name": "reconcile_shared_held_stores"
+        },
+        "path": "mcp/src/agents_remember/cli/shared_held_store_reconciliation.py"
+      },
       "kind": "anchor"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T21:30:38+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

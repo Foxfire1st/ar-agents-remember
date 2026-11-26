@@ -71,6 +71,5 @@ No cross-repo boundary is crossed by this file.
 - `test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database` owns the current boundary described above. [11]
 - Retired records are never live. [12]
 
-- The lane row. Anchor: `test_knowledge_index_surfaces` Anchor: `test_knowledge_index_surfaces` [13]
-
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_index_surfaces.py`. [13]
 - Unconditional roots and validator details come from the domain-unit result. The mounted answer supplies the fitting validation window and cut status. [14]

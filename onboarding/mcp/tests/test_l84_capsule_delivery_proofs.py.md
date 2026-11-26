@@ -14,7 +14,7 @@ Proves, on the shipped lifecycle corpus with no corpus or compiler patch, that t
 
 - **Digest.** A native first message for a task-bound Worker and a taskless Architect or Bootstrap carries the shipped `core/every-role.md` digest exactly once under the shared heading, immediately before the role's own text.
 - **Audiences.** Over every declared role/operation pair, the knowledge-use detail (`reference/knowledge/use.md`) is delivered with its action pointers to the Architect, Investigator, Worker, Reviewer and Curator and to no other role; the advice rule reaches only the Architect and the evidence-reporting rule only the Investigator; the measurement handover pointer reaches every Worker operation and no other role, and every Worker operation also receives the sandbox-actors detail with its two pinned clauses (the case checks no other role for that detail; every role file points to it).
-- **Knowledge read.** The views and request keywords the knowledge-use detail prescribes are the registered `knowledge_read` tool's own (schema properties and advertised views), and a misspelled keyword fails.
+- **Knowledge read.** The action-pointer cases match the current whole-record retrieval clauses for the Investigator, Worker, Reviewer and Curator. The views and request keywords the knowledge-use detail prescribes are the registered `knowledge_read` tool's own (schema properties and advertised views), and a misspelled keyword fails.
 - **Digest homes.** The manifest declares the digest and the digest map with all roles as audience; the map is neither injected nor a step detail and declares no step.
 - **Prerequisite curation.** The Manager's coordination and curation compiles carry the rule that a prerequisite sync reaching Curator-owned memory reconciliation starts the Curator while ordinary curation still follows code `PASS`; `PrerequisiteSyncCuratorTests` then starts that Curator through `start_role` on a conflicted fixture enclosure and leaves the conflicted lines unchanged. The host and the handover compiler are fixture doubles.
 
@@ -33,3 +33,5 @@ Proves, on the shipped lifecycle corpus with no corpus or compiler patch, that t
 - Native first messages carry the real digest once. [3]
 
 - Digest homes declare audiences without injecting the map. [8]
+
+- The current pointer fixtures bind whole-record retrieval to its named knowledge-use detail. [10]

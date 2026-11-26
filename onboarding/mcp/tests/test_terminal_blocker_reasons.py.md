@@ -12,7 +12,7 @@ blockage an operator cannot read â€” and cannot tell apart from a spurious one â
 
 
 
-The cases are integration-lane members (`mcp/tests/test-evidence-lanes.toml:771`).
+The cases are integration-lane members (`mcp/tests/test-evidence-lanes.toml:801`).
 The complete lifecycle catalog declares this module as an exact consumer on **12**
 artifact rows. That dependency ownership and the ambient-role runner declaration
 are selection metadata, not execution evidence.
@@ -210,9 +210,13 @@ The module has **489 physical lines** and **ten source test definitions**. Its p
 `test_a_drift_snapshot_preview_is_not_read_as_an_unreclaimed_result` (`:391-427`) drives the drift-snapshot expectation directly with `preview=True` and requires the entry to be pending rather than blocked; `test_a_real_reasonless_drift_snapshot_still_refuses_rather_than_passing_as_preview` (`:430-451`) preserves the real reasonless refusal; and `test_the_cleanup_preview_of_a_task_with_a_drift_snapshot_reports_no_blocker` (`:454-489`) drives the tool-level cleanup preview. These are static source-definition locations, not a fresh execution result.
 
 
-- The integration lane declares test_terminal_blocker_reasons.py; membership is not execution evidence. [23]
-
+- The integration lane selects mcp/tests/test_terminal_blocker_reasons.py. Execution evidence is recorded separately. [23]
 
 - The lane manifest declares test_terminal_blocker_reasons.py in integration. Membership selects evidence and establishes no invocation. [25]
+
+
+
+
+
 
 - Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection. [28]

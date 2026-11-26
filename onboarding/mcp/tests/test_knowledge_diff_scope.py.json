@@ -219,12 +219,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d914a0a27f7f3953d73e5caec7138997a432ef82",
+            "blob": "b9fa47a89c9ddd840e0a38800093c4488a641283",
             "content": "sha256:5187759dd6296819d4d34463de47bcd6c46909ea7c53d6a826bbb51edef3ba1a",
             "locator": {
-              "end": 1385,
+              "end": 1424,
               "kind": "line_range",
-              "start": 1349
+              "start": 1388
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -232,12 +232,12 @@
         },
         {
           "anchor": {
-            "blob": "d914a0a27f7f3953d73e5caec7138997a432ef82",
+            "blob": "b9fa47a89c9ddd840e0a38800093c4488a641283",
             "content": "sha256:2e75aecef7732387589ac0894f66fe040076563eefec8e87d1a4b653ba254593",
             "locator": {
-              "end": 5110,
+              "end": 5295,
               "kind": "line_range",
-              "start": 5107
+              "start": 5292
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -245,12 +245,12 @@
         },
         {
           "anchor": {
-            "blob": "75006e874ab9c238187bcf9044d224511529c135",
+            "blob": "9b2f8dfb74c9f9e7cc39c1097e6d5f7e0ff20215",
             "content": "sha256:c855e7d5734aee727fc185e5ae0d6e0feef339e7b35ad5d149e83c61d603fc54",
             "locator": {
-              "end": 239,
+              "end": 243,
               "kind": "line_range",
-              "start": 239
+              "start": 243
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -259,16 +259,16 @@
       ]
     },
     "16": {
-      "note": "The lifecycle catalog binds the diff-scope support artifact to the exact baseline-union proof node.",
+      "note": "The lifecycle catalog binds the diff-scope support artifact to the stable contract and names the comparison's removed-realization case as its evidence node.",
       "targets": [
         {
           "anchor": {
-            "blob": "d914a0a27f7f3953d73e5caec7138997a432ef82",
+            "blob": "b9fa47a89c9ddd840e0a38800093c4488a641283",
             "content": "sha256:5187759dd6296819d4d34463de47bcd6c46909ea7c53d6a826bbb51edef3ba1a",
             "locator": {
-              "end": 1385,
+              "end": 1424,
               "kind": "line_range",
-              "start": 1349
+              "start": 1388
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -276,12 +276,12 @@
         },
         {
           "anchor": {
-            "blob": "d914a0a27f7f3953d73e5caec7138997a432ef82",
+            "blob": "b9fa47a89c9ddd840e0a38800093c4488a641283",
             "content": "sha256:2e75aecef7732387589ac0894f66fe040076563eefec8e87d1a4b653ba254593",
             "locator": {
-              "end": 5110,
+              "end": 5295,
               "kind": "line_range",
-              "start": 5107
+              "start": 5292
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -625,12 +625,12 @@
         },
         {
           "anchor": {
-            "blob": "ad181bee71830f01ceecfa0e450848eb85ae7902",
+            "blob": "9c410ced60f42b394f3f65ef4cb4d08eb1909675",
             "content": "sha256:13f066b2844d43e0465db87615acd7dbe1272f01c4f00337382444ade1a797e2",
             "locator": {
-              "end": 385,
+              "end": 384,
               "kind": "line_range",
-              "start": 369
+              "start": 368
             },
             "path": "mcp/src/agents_remember/memory/knowledge/diff.py"
           },
@@ -638,12 +638,12 @@
         },
         {
           "anchor": {
-            "blob": "ad181bee71830f01ceecfa0e450848eb85ae7902",
+            "blob": "9c410ced60f42b394f3f65ef4cb4d08eb1909675",
             "content": "sha256:5d96e5fe232c0367c5cdf5fdb913aefbc87da29ed4d36cca46919dedb2155772",
             "locator": {
-              "end": 436,
+              "end": 435,
               "kind": "line_range",
-              "start": 388
+              "start": 387
             },
             "path": "mcp/src/agents_remember/memory/knowledge/diff.py"
           },

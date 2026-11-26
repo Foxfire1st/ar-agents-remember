@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
-        "content": "sha256:8d50d5ce179b00ae47ed4f2f4cb25fca21ad66e71705ebd12bd603469c0a1524",
+        "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
+        "content": "sha256:a9ed59843ca600650fc4a825f0c1ecfe6098a9dcb108736929a0ec69ac069a61",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+        "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
         "content": "sha256:274997cf278cde1e5c28fc2d05cd73b78a3219085dc7bb579eb8dcb4ac08c09c",
         "locator": {
           "kind": "symbol",
@@ -38,8 +38,8 @@
     },
     {
       "anchor": {
-        "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
-        "content": "sha256:91376c47bad7aca42a8214a34ed94e7595fc585d6ace8c4391fa469380a69398",
+        "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
+        "content": "sha256:d75f3632666e9152185c0e266769f3eced03ac67c72860872837ac9fe864a017",
         "locator": {
           "kind": "symbol",
           "name": "RoleEnvironmentPreparation"
@@ -56,8 +56,8 @@
     },
     {
       "anchor": {
-        "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
-        "content": "sha256:8d50d5ce179b00ae47ed4f2f4cb25fca21ad66e71705ebd12bd603469c0a1524",
+        "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
+        "content": "sha256:a9ed59843ca600650fc4a825f0c1ecfe6098a9dcb108736929a0ec69ac069a61",
         "locator": {
           "kind": "file"
         }
@@ -73,7 +73,7 @@
     },
     {
       "anchor": {
-        "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+        "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
         "content": "sha256:08e5377b63870a185a763c139b80ecb9c0110f827bc3047182ead38a33b4c25f",
         "locator": {
           "kind": "symbol",
@@ -91,7 +91,7 @@
     },
     {
       "anchor": {
-        "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+        "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
         "content": "sha256:08e5377b63870a185a763c139b80ecb9c0110f827bc3047182ead38a33b4c25f",
         "locator": {
           "kind": "symbol",
@@ -109,8 +109,8 @@
     },
     {
       "anchor": {
-        "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
-        "content": "sha256:8d50d5ce179b00ae47ed4f2f4cb25fca21ad66e71705ebd12bd603469c0a1524",
+        "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
+        "content": "sha256:a9ed59843ca600650fc4a825f0c1ecfe6098a9dcb108736929a0ec69ac069a61",
         "locator": {
           "kind": "file"
         }
@@ -126,7 +126,7 @@
     },
     {
       "anchor": {
-        "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+        "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
         "content": "sha256:93646618e32c968257ef1f5ffe4afbd82e81bbd477a1c10daaad783096376da8",
         "locator": {
           "kind": "symbol",
@@ -144,7 +144,7 @@
     },
     {
       "anchor": {
-        "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+        "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
         "content": "sha256:def73dcf8c4f4dcf99534555b6b99b677f11a91b6cf4cee4572fce50ee3ef819",
         "locator": {
           "end": 80,
@@ -168,7 +168,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
             "content": "sha256:d9a14ac5dd62d11e49476cf560c4a158e7ef62b379bb4021024628b393859282",
             "locator": {
               "kind": "symbol",
@@ -184,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
             "content": "sha256:7f3534010ee2c81dd0f7779673922aa241b7710e8ec593b7ffb064591bc3f6e4",
             "locator": {
               "end": 46,
@@ -201,12 +201,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
             "content": "sha256:718ee737a5e25dc32ead341d21ca4bb812abaa4c632985fc8e7eccea57972270",
             "locator": {
-              "end": 184,
+              "end": 204,
               "kind": "line_range",
-              "start": 158
+              "start": 178
             }
           },
           "kind": "code"
@@ -218,7 +218,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
             "content": "sha256:d9a14ac5dd62d11e49476cf560c4a158e7ef62b379bb4021024628b393859282",
             "locator": {
               "kind": "symbol",
@@ -230,12 +230,12 @@
       ]
     },
     "13": {
-      "note": "The environment preparation block, which now declares the first-run report.",
+      "note": "The strict environment preparation block declares the optional `briefsProblem` advisory and `firstRun` report.",
       "targets": [
         {
           "anchor": {
-            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
-            "content": "sha256:91376c47bad7aca42a8214a34ed94e7595fc585d6ace8c4391fa469380a69398",
+            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
+            "content": "sha256:d75f3632666e9152185c0e266769f3eced03ac67c72860872837ac9fe864a017",
             "locator": {
               "kind": "symbol",
               "name": "RoleEnvironmentPreparation"
@@ -246,15 +246,43 @@
       ]
     },
     "14": {
-      "note": "The start answer, which declares the seat's continuation.",
+      "note": "The start answer, which declares the seat's continuation.\n\nAnchor: `RoleStartResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
-            "content": "sha256:3718fbc9d0ae858dbcfc016d4b89a5e52155591b87a7d1edc016139f76335538",
+            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
+            "content": "sha256:a9ed59843ca600650fc4a825f0c1ecfe6098a9dcb108736929a0ec69ac069a61",
             "locator": {
-              "kind": "symbol",
-              "name": "RoleStartResponse"
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The role start response declares the product notice report and its delivery states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
+            "content": "sha256:2b865da3b67a81a25a5a35362e0879e240fc54ecc6aff7baa6c900e33d1a98d3",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 160
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
+            "content": "sha256:2267188b169bd63d2f596f44be17ff380e1768c3540c7633dcc05ab2c8fb6ad6",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 219
             }
           },
           "kind": "code"
@@ -262,12 +290,12 @@
       ]
     },
     "2": {
-      "note": "Current RoleMessageCall declares body/attachment inputs and waiting-message withdrawal; declarations do not prove every composed branch files payloads.\n\nAnchor: RoleMessageCall",
+      "note": "Current RoleMessageCall declares body/attachment inputs and waiting-message withdrawal; declarations do not prove every composed branch files payloads. Anchor: RoleMessageCall",
       "targets": [
         {
           "anchor": {
-            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
-            "content": "sha256:8d50d5ce179b00ae47ed4f2f4cb25fca21ad66e71705ebd12bd603469c0a1524",
+            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
+            "content": "sha256:a9ed59843ca600650fc4a825f0c1ecfe6098a9dcb108736929a0ec69ac069a61",
             "locator": {
               "kind": "file"
             }
@@ -277,15 +305,14 @@
       ]
     },
     "3": {
-      "note": "Frozen implementation of RoleStartResponse supporting the stated file behavior.",
+      "note": "Frozen implementation of RoleStartResponse supporting the stated file behavior.\n\nAnchor: `RoleStartResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
-            "content": "sha256:3718fbc9d0ae858dbcfc016d4b89a5e52155591b87a7d1edc016139f76335538",
+            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
+            "content": "sha256:a9ed59843ca600650fc4a825f0c1ecfe6098a9dcb108736929a0ec69ac069a61",
             "locator": {
-              "kind": "symbol",
-              "name": "RoleStartResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -297,7 +324,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
             "content": "sha256:08e5377b63870a185a763c139b80ecb9c0110f827bc3047182ead38a33b4c25f",
             "locator": {
               "kind": "symbol",
@@ -313,7 +340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
+            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
             "content": "sha256:c71521d379db5f4226c573fbfee6a78aae01223cc0328ba88fa90133066a8c82",
             "locator": {
               "end": 140,
@@ -330,12 +357,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "618a5b0e348354382c9a37d392847973ffdc14b1",
-            "content": "sha256:5db05446a75126fb0aaaf7f54b2a7b4aa81e6d9277405668cf1a100dfe5bafa0",
+            "blob": "2283c929b9661b6fe1407347265d779e99bfd77a",
+            "content": "sha256:d8cf25c4d5d943b133633b058cff0281c67b32bc03523fccb03c16d167000a21",
             "locator": {
-              "end": 123,
-              "kind": "line_range",
-              "start": 94
+              "kind": "symbol",
+              "name": "RoleStartResponse"
             }
           },
           "kind": "code"
@@ -361,16 +387,16 @@
       ]
     },
     "8": {
-      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "note": "Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round.",
       "targets": [
         {
           "anchor": {
-            "blob": "feb0861fd2096c6a955af98d73ccecccabcc33ad",
-            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "blob": "268fb78a4dd9640215b95691eb653e535db39358",
+            "content": "sha256:f682a022160f36e9b08ef27945830cddde96f1d87c31fa42f791aa898204e58c",
             "locator": {
-              "end": 251,
+              "end": 309,
               "kind": "line_range",
-              "start": 186
+              "start": 236
             },
             "path": "mcp/src/agents_remember/worktrees/review_history.py"
           },

@@ -204,10 +204,9 @@ No meaningful cross-repo references found.
 - The launcher entry: a routing condition with its own core block and its operations; it compiles no template. Anchor: `is_role` [21]
 
 - All nine operation entries declare audience selection. The references registry contains 50 entries, 38 marked step_detail; the shared digest is declared separately in core metadata. These are parsed registry declarations, not a compiled capsule or execution result. Anchor: `references` Anchor: `references` [29]
-
 - The manifest declares audience selection for all nine operations and records 50 reference entries, 38 marked step_detail. The role/operation order and the separately delivered shared digest are explicit routing declarations. Anchor: `composition_order` Anchor: `composition_order` [30]
-
 - The registry contains 38 non-injected step-detail entries, including `refused-write` and `writing/visual-explainers`. Authored entries keep topology, rolesReason explanations and legal no-step decisions; derived references hold current reader roles and action wording, and derived.core holds the shared digest audience. These values do not prove that a particular role read a file. [33]
+
 
 ## Current Investigator contract impact
 
@@ -243,9 +242,15 @@ The curator role's `tools` list requests `knowledge_write` beside `knowledge_rea
 
 - The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [19]
 
+
+
 - The manifest records reference material and declared named-step details with injected:false, composes role then operation, and keeps shared core blocks out of that stream. The shared digest travels beside the capsule in its first message. [22]
 
+
+
+
 - The authored source owns this contract; the distribution copy is not a separate authority. [27]
+
 
 - The curator role requests `knowledge_write` beside the other knowledge operations, so the mounted writer is among the tools its capsule may name. [31]
 
@@ -254,6 +259,8 @@ The curator role's `tools` list requests `knowledge_write` beside `knowledge_rea
 - The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [6]
 
 - The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four). [7]
+
+
 
 
 

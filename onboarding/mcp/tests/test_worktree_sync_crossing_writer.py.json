@@ -1,0 +1,74 @@
+{
+  "path": "mcp/tests/test_worktree_sync_crossing_writer.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "7e4982b439f020124bb6364365011024655c9935",
+        "content": "sha256:cc1cc96b3ac933b8985193d260f3d095014179c44d9069d9b3be0f343a66fe0b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_crossing_preserves_the_standing_of_its_selected_bytes"
+        }
+      },
+      "facet": "The crossing keeps the standing of the selected content under both input orders.",
+      "id": "PRF-3PT1AZ",
+      "invariant": "INV-KPK1WT",
+      "origin": {
+        "handoffEntry": "L3-W1-10",
+        "leaf": "261112-KNO-L3"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A record combining both sides carries product provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e4982b439f020124bb6364365011024655c9935",
+            "content": "sha256:d0c8983ca4f64e2f7988a75e0995b522115297939aa4504d0c6fae502723bb59",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_combining_both_lines_edits_carries_the_products_stamp"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The selected side receives credit for its own exact content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e4982b439f020124bb6364365011024655c9935",
+            "content": "sha256:7f32e2398006c7d694a40576598f1cce4a3df09eb9da65cce51ef5c42a4b3a2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_selected_side_only_gets_credit_for_its_exact_content"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Standing follows the selected bytes when the input order changes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e4982b439f020124bb6364365011024655c9935",
+            "content": "sha256:cc1cc96b3ac933b8985193d260f3d095014179c44d9069d9b3be0f343a66fe0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_crossing_preserves_the_standing_of_its_selected_bytes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

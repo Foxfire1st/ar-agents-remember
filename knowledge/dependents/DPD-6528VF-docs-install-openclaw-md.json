@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ce714f8fbee46339c39d7eec8c956e3763464c26",
-    "commit": "d1c92dc9d4606a0b48b8e6b13f9c41c9b9aa6cce",
+    "codeTree": "d2d3845baf9541100f06371fde62c4c0bb678b04",
+    "commit": "3ee8f6ad584e509ef6df637c1bb42484993b35d0",
     "role": "curator",
-    "statement": "The OpenClaw guide's first-run steps and its account of refusing a Bootstrap with no OpenClaw provider, then retrying with an offered agent, still hold.",
-    "task": "261112-BUG-L27",
+    "statement": "Verified against synced L38 candidate on 3ee8f6ad/b83cff67: docs/install/openclaw.md (lines 1-99) accurately describes the unmatched Bootstrap refusal, explicit agent retry, and paseo status fields, preserved across L38 publish_prepared_launch.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/install/openclaw.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/src/agents_remember/application/caller_harness.py"
     },
     {
-      "blob": "319efb89c39a48ebf09a7ab813e6e2f62956adb9",
+      "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
@@ -46,14 +46,25 @@
       "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon.py"
     },
     {
-      "blob": "33a226f6167e5507690914eecec03d960bd5a300",
+      "blob": "89ca2523d8da1930c4fa3acd2956e2690cff1749",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
     },
     {
-      "blob": "a6a401b6a3c3dcc96be3616338f4d2bfe1c7e4d1",
+      "blob": "d564766a2112b76c74a5277a83fdcec6409845b1",
       "kind": "file",
       "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T22:06:22+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

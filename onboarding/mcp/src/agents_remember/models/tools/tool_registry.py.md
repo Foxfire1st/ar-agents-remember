@@ -108,7 +108,10 @@ No configured domain documentation was available.
 
 > Historical registry-owner scope only: the public structural/gate/capsule/five-knowledge and dated acceptance claims below describe earlier registry states. They grant no current tool or executor result. The current registry maps context_packet to SlimContextPacket, omits resolve_context, and retains explicitly excluded private compatibility rows.
 
+
+
 - The choke point validates against this registry before emitting the envelope. [8]
+
 
 - The three strict response contracts those rows map to, in the module that declares them. [10]
 - The three strict contracts the capsule rows map to, including the shared success/refusal capsule envelope. [11]

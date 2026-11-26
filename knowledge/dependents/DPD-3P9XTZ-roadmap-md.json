@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "fbabf6615252fe7ec8c3f6f8280d20c61e282878",
-    "commit": "94de536b30102c8e4e9dcef0ac78354b99996f60",
+    "codeTree": "049d3961dfb898bbd69253d9e0b878188fd1006b",
+    "commit": "ed29e40bb6a27dbba33b106b556da182e02a7429",
     "role": "curator",
-    "statement": "The roadmap’s links into the concepts guide all still resolve, including the worklist passage, which still says that a change brings a named decision back for the Curator’s answer.",
-    "task": "261124-EXP-L1",
+    "statement": "On the merged code, all roadmap links into docs/concepts.md (records, drift, worklist judgments, intent review, and benchmark runner) and docs/benchmarks-methodology.md still resolve, and the cited worklist passage still states that a change brings a named decision back for the Curator's answer.",
+    "task": "261124-EXP",
     "uncommitted": false
   },
   "document": "ROADMAP.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
     },
     {
-      "blob": "75091217ed93f5ce347450d5d3c919495803536b",
+      "blob": "79e61e75ceab86d7d3e2e122bffc60df2f567f66",
       "kind": "file",
       "path": "docs/concepts.md"
     },
@@ -40,5 +40,16 @@
       "kind": "file",
       "path": "docs/benchmarks-methodology.md"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T00:51:29+01:00",
+    "by": "agent",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+    "task": "261124-EXP"
+  }
 }

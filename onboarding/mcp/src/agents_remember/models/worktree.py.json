@@ -649,15 +649,16 @@
       ]
     },
     "134": {
-      "note": "Worktree status saves all operation projections and their count. Its compact answer reports a live line only for a queued or running direct landing.",
+      "note": "WorktreeStatusResponse carries the status operation literal, the complete lifecycle operation list and its count, and the sync projection. The saved result retains the full list. The compact answer keeps the count and gives a live sentence for a queued or running direct landing.",
       "targets": [
         {
           "anchor": {
-            "blob": "73a6fa7d0c0783912195fd1aa72c0a83bf817d1f",
-            "content": "sha256:9b4b6f568bc2943fe5e91cef4df7ac33b4c060797e1c0ee1c62699e6f2989be5",
+            "blob": "58ee640a8f53ac7e3e3b4aa884d750d6ad8eead7",
+            "content": "sha256:8ce82e0dbc55bf62f0a4b9041b41ccc0e10dfd71b8910d6e08f7a40616217f83",
             "locator": {
-              "kind": "symbol",
-              "name": "LANDING_KEPT_KEYS"
+              "end": 352,
+              "kind": "line_range",
+              "start": 40
             },
             "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
           },
@@ -784,12 +785,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "207d249a3882473fc88e732b485007abcfacddbb",
+            "blob": "5eba2e3626ad18eaf4513ff46dd2fc1c61bc60e5",
             "content": "sha256:3dc75e6a086bac5c74ae79fc1e3d77487cde15f62c2a22b47cb9d83f863bb191",
             "locator": {
-              "end": 1173,
+              "end": 1115,
               "kind": "line_range",
-              "start": 1108
+              "start": 1050
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },
@@ -802,12 +803,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fe83d48a75d16c7f66764ad45c34bc03f6becff",
+            "blob": "ab4e8f047c7859c0d898604afee5eacccb4f0f59",
             "content": "sha256:603402e4b3b74ccb8366b134343edd9d49fb2bc215330335ee24450b0308e7db",
             "locator": {
-              "end": 573,
+              "end": 577,
               "kind": "line_range",
-              "start": 514
+              "start": 518
             },
             "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
           },

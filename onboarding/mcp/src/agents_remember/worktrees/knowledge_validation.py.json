@@ -67,7 +67,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
+            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
             "content": "sha256:6b948cc0a0a6cfabb5116fc3fabbb632de3c30b476b462856555207593d221e0",
             "locator": {
               "kind": "symbol",
@@ -84,11 +84,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "599d54a49bab0d42029b23dfad268f65f7d6cdff",
-            "content": "sha256:b000c8c807367b5ce60a531d3e66fd1e4d3b25fabe847c924814c6052b623bf6",
+            "blob": "6372cbe490649b0a1f96161bd76d07bfe9a4a3eb",
+            "content": "sha256:59e5621bcb2f50ca60d2eaef89cf80c645276f83ea5093578f4725f8ac04c453",
             "locator": {
-              "kind": "symbol",
-              "name": "_finish_staged_memory_merge"
+              "end": 536,
+              "kind": "line_range",
+              "start": 516
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },

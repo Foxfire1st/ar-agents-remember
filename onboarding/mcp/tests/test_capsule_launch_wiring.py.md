@@ -124,10 +124,7 @@ The 52 skips in the full suite are the named environment guards (including L16's
 - The two boundary doubles are module-local and deliberately thin: `RecordingTransport` records what the
   session sent to the vendor boundary; `_FakeHost` doubles the tmux process boundary so no real process
   is started.
-- The lane row is `unit-regression` in `mcp/tests/test-evidence-lanes.toml` (D9's invariant — the
-  fail-closed loader still names exactly the six historical D9 modules), and the module's three
-  governed-artifact **consumer rows** are the reason `evidence-lifecycle.toml`'s byte pin was re-derived
-  a third time at this leaf's tip (populations unchanged at 4 contracts / 51 artifacts).
+- At this leaf's original tip, the catalog byte pin was re-derived a third time with the recorded populations of four contracts and 51 artifacts.
 - The expected side of every acceptance assertion is the compiler's own result; a hand-built literal is
   the defect class this module exists to prevent.
 
@@ -225,15 +222,14 @@ the fixture it is pinned against lives in this repository.
 
 - The current task-attached launch asserts equality with the compiler's trusted instructions and semantic digest for the same admitted seat. Workspace-sensitive capsule identity is asserted by a separate free-agent test; it is not a spawn-launch workspace-agreement assertion.  Historical former note: "The spawn side's agreement with its own capsule about the workspace." The former spawn-workspace assertion is historical; the current module has no such test case. [23]
 
-- The three governed-artifact rows registering this module as a consumer.
 
-- The three governed-artifact rows registering this module as a consumer.
 
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1064-1064 - the bytes it recorded now occur 91 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1885-1885 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:402-402 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:760-760 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 
-- The lane row D9's fail-closed loader requires for every new test module. Anchor: "mcp/tests/test_capsule_launch_wiring.py" Anchor: "mcp/tests/test_capsule_launch_wiring.py" [15]
+- The `unit-regression` lane selects `mcp/tests/test_capsule_launch_wiring.py`. [15]
 
-- The three governed-artifact rows registering this module as a consumer, beginning with the _user_settings_guard.py row. The `curator_coherence_test_support.py` row registers `test_capsule_launch_wiring.py` as a consumer. The `fixtures/repository_profiles/node/package-lock.json` row registers `test_capsule_launch_wiring.py` as a consumer. [21]
+
+- The lifecycle catalog lists `mcp/tests/test_capsule_launch_wiring.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result. [21]

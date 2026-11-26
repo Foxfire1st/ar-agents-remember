@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "41db1b1f4715f45040492df9fc4a4edb665a33b5",
-    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "codeTree": "9a8f83c80b65c002f8b07f79bb2ee8377cdee42d",
+    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
     "role": "curator",
-    "statement": "The host file table attributes role records to Python registration and dashboard reconciliation and distinguishes resumable closure from archived activity.",
-    "task": "261112-BUG-L20",
+    "statement": "Updated in L38 (9a8f83c8), docs/reference/runtime-layout.md accurately documents all six runtime_install arguments (lines 66-68), that runtime_install leaves notes alone by default while reconcile_shared_held_stores=true writes waiting messages into closed seats launch receipts under notes/reports/paseo-native-executions/ (lines 61, 90-93), coordination-root and runtime/servers/ paths, host-home files, and per-role scratch/report folders.",
+    "task": "261112-BUG-L38",
     "uncommitted": true
   },
   "document": "docs/reference/runtime-layout.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+      "blob": "d5cf1ae4d51c0d35eb10caf5b9243d30d901c919",
       "kind": "file",
       "path": "mcp/src/agents_remember/install/runtime.py"
     },
@@ -51,17 +51,17 @@
       "path": "mcp/src/agents_remember/providers/metrics.py"
     },
     {
-      "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+      "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
     },
     {
-      "blob": "d994bec391bfca2f4bbeaa53d253b5f39beba336",
+      "blob": "a1f069e419ffe08785169f62071677130931c7b0",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
     {
-      "blob": "e11f4556178518b84e2d23aaa453917c17c99c3a",
+      "blob": "154dbe993f36da31d362ed808808629f1c011bcf",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },
@@ -81,7 +81,7 @@
       "path": "mcp/src/agents_remember/worktrees/role_handover_locator.py"
     },
     {
-      "blob": "ab649fa5dd2402a61b2ddd4c6fb9e3a2be7ee979",
+      "blob": "00e0026c74c9ae008642aa171b70ec87da5fb234",
       "kind": "file",
       "path": "mcp/src/agents_remember/serving/server_registry.py"
     },
@@ -116,7 +116,7 @@
       "path": "mcp/src/agents_remember/serving/build_currentness.py"
     },
     {
-      "blob": "505ca868c7f3c031f538ca7709e1c2888ecc1ded",
+      "blob": "0e47c67d12a7ddb47908f7ea4f24d86bca76c892",
       "kind": "file",
       "path": "mcp/src/agents_remember/observer/provider_limits.py"
     },
@@ -164,5 +164,16 @@
       "heading": "What the install does for the host",
       "kind": "anchor"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-25T21:30:38+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

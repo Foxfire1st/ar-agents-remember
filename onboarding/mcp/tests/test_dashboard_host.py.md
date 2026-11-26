@@ -8,7 +8,10 @@
 
 Covers the dashboard host command: which serving mode ensures the Paseo host, which serves without
 waiting for it, and what a supervised child does. It also holds the request-head budget: a dashboard read
-of a 500-invariant card must fit the server's head limit in every serving mode.
+of a 500-invariant card must fit the server's head limit in every serving mode. It also verifies dashboard
+logging configuration: both serve paths pass `dashboard_log_config()` and `access_log` to Uvicorn, and a
+child interpreter under a non-UTC timezone proves UTC ISO-8601 timestamps across package, `uvicorn.error`,
+and `uvicorn.access` output with pickleability and no global `logging.Formatter.converter` mutation.
 
 ## Code Commentary
 
@@ -34,6 +37,15 @@ cases use `paseo_start`, `paseo_settings` and the bounded waits in
   the host a second time.
 - **Discovery.** `test_discovered_config_path_is_named_in_normal_and_transition_outcomes` keeps the
   discovered configuration path explicit in both a normal and a transitional outcome.
+- **Logging.** `test_both_serve_paths_hand_uvicorn_the_package_log_config` (parametrized over
+  `no_access_log` `False` and `True`) verifies that foreground and reload serving both pass
+  `dashboard_log_config()` and `access_log=not no_access_log` to `uvicorn.run`.
+  `test_the_package_log_config_prints_the_packages_info_lines_once` runs a piped child Python interpreter
+  under `TZ=UTC+05`, round-trips `dashboard_log_config()` through `pickle`, applies it with
+  `logging.config.dictConfig`, fixes record creation time to epoch `0.123`, and asserts that
+  `logging.Formatter.converter` is unchanged while `stderr` emits the UTC-timestamped package `INFO` line
+  once and the `uvicorn.error` `INFO` line (omitting package `DEBUG` and foreign `INFO`) and `stdout` emits
+  the UTC-timestamped `uvicorn.access` line.
 
 ### Conventions
 
@@ -55,3 +67,5 @@ depends on ordering waits on the real helper rather than sleeping.
 
 
 - A supervised child avoids a duplicate start, and a discovered settings path stays explicit in guidance. [8]
+
+- Both serve paths pass `dashboard_log_config()` and `access_log` to Uvicorn, and a piped child interpreter under `TZ=UTC+05` verifies pickleability, UTC ISO-8601 output across package, `uvicorn.error`, and `uvicorn.access` loggers, and unchanged `logging.Formatter.converter`. [9]

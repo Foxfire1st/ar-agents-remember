@@ -37,12 +37,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
             "content": "sha256:055e5244e7a6b77d1d6ae84e34173f5f40f9f65e694d2b24e09ef2b424570b6c",
             "locator": {
-              "end": 459,
+              "end": 471,
               "kind": "line_range",
-              "start": 421
+              "start": 433
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -63,11 +63,12 @@
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:d55ef03d9421165196bd4bf02c64554ea14fa011dad895ac5600779f6986b837",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:b29d68c7562c0b88e81fe1b2e3657c7e2194ad0d9a2d5f7ed6b0280dd6b90768",
             "locator": {
-              "kind": "symbol",
-              "name": "_direct_memory_commit"
+              "end": 386,
+              "kind": "line_range",
+              "start": 320
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -75,12 +76,12 @@
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
             "content": "sha256:2e7f5bf21892efa0ebd4753ce1959dabfcd00e1450017d0af9e9bb0b705c7a08",
             "locator": {
-              "end": 236,
+              "end": 248,
               "kind": "line_range",
-              "start": 175
+              "start": 187
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -93,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
             "content": "sha256:055e5244e7a6b77d1d6ae84e34173f5f40f9f65e694d2b24e09ef2b424570b6c",
             "locator": {
-              "end": 459,
+              "end": 471,
               "kind": "line_range",
-              "start": 421
+              "start": 433
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -119,11 +120,12 @@
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:d55ef03d9421165196bd4bf02c64554ea14fa011dad895ac5600779f6986b837",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:b29d68c7562c0b88e81fe1b2e3657c7e2194ad0d9a2d5f7ed6b0280dd6b90768",
             "locator": {
-              "kind": "symbol",
-              "name": "_direct_memory_commit"
+              "end": 386,
+              "kind": "line_range",
+              "start": 320
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -131,12 +133,12 @@
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
             "content": "sha256:2e7f5bf21892efa0ebd4753ce1959dabfcd00e1450017d0af9e9bb0b705c7a08",
             "locator": {
-              "end": 236,
+              "end": 248,
               "kind": "line_range",
-              "start": 175
+              "start": 187
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -183,8 +185,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef07cbf9743d369be2ddfe76bd02738aecb7efb9",
-            "content": "sha256:c829e5b3d2fee5c0ff65c71bb9d28c03c60ce2eb2d25fde667b99860e36c1644",
+            "blob": "0f0fffaaf83d9536e496a576e33ce9e6053c8f9b",
+            "content": "sha256:24ae1c6fa0f6b734896cf8b477ece005b9e8f7356b78cc55dae74c7ef452a8a6",
             "locator": {
               "end": 17,
               "kind": "line_range",
@@ -196,12 +198,12 @@
         },
         {
           "anchor": {
-            "blob": "ef07cbf9743d369be2ddfe76bd02738aecb7efb9",
+            "blob": "0f0fffaaf83d9536e496a576e33ce9e6053c8f9b",
             "content": "sha256:f38ec2d7de66d3b2f2555ac4eb1ff38f8da270d0d98d24495943170e2fce4b47",
             "locator": {
-              "end": 78,
+              "end": 79,
               "kind": "line_range",
-              "start": 60
+              "start": 61
             },
             "path": "mcp/src/agents_remember/cli/leaf_enclosure_start.py"
           },
@@ -209,12 +211,12 @@
         },
         {
           "anchor": {
-            "blob": "ef07cbf9743d369be2ddfe76bd02738aecb7efb9",
-            "content": "sha256:77226cdbd4cf59d05780f7a0a8feea64cc67414d9977459a5b7982208d349f68",
+            "blob": "0f0fffaaf83d9536e496a576e33ce9e6053c8f9b",
+            "content": "sha256:062847243a150355a884f9f88fd81c410ee2feacef2de59b03be358fbe418538",
             "locator": {
-              "end": 111,
+              "end": 112,
               "kind": "line_range",
-              "start": 90
+              "start": 91
             },
             "path": "mcp/src/agents_remember/cli/leaf_enclosure_start.py"
           },
@@ -554,12 +556,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
-            "content": "sha256:f1ac9e4c9ca53c18f1cb7439db85510df5446e1e4a2a18e12523d8e4fb0cd1a8",
+            "blob": "d686c798497176b524fbfd61c2ce6d57951d82f9",
+            "content": "sha256:c1fcc7b7275328d864f41adaf46a4f6bc1768452e16d885108de9082c1c62b4d",
             "locator": {
-              "end": 230,
+              "end": 240,
               "kind": "line_range",
-              "start": 216
+              "start": 225
             },
             "path": "mcp/src/agents_remember/application/worktree_services.py"
           },
@@ -567,10 +569,10 @@
         },
         {
           "anchor": {
-            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
-            "content": "sha256:745e1cad6c6c081ce490b9dd222febe3f577d690ae742e06087f98873fbd046d",
+            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "content": "sha256:187635a4582c29e331a53d925400b25721e42134d40b53d1ff9a6bf932484c27",
             "locator": {
-              "end": 432,
+              "end": 451,
               "kind": "line_range",
               "start": 368
             },
@@ -593,10 +595,10 @@
         },
         {
           "anchor": {
-            "blob": "ebc92a972866053bf11203a751264c3e385dd6d2",
-            "content": "sha256:fb4283cdb145c420b9243e9e900025b06c542f5ad3c6754a4f7d5d3c411a9bc1",
+            "blob": "82526453287443a44247c1ce483ba8d5cd16a32e",
+            "content": "sha256:bac83b7ac05ef280bb56acb378c628e4381b005e931a49b382c9089c913f00fd",
             "locator": {
-              "end": 413,
+              "end": 432,
               "kind": "line_range",
               "start": 349
             },
@@ -612,10 +614,11 @@
         {
           "anchor": {
             "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
-            "content": "sha256:6a6bedb9b679f5b7f43d20e2e9b02c80d21dbd03f53131f1d9dbb062deef0e89",
+            "content": "sha256:09a38cf35a1961ac3af88a81202bf30b280d902eaf44581b63661ece2165d980",
             "locator": {
-              "kind": "symbol",
-              "name": "ephemeral_git_mutation_snapshot"
+              "end": 357,
+              "kind": "line_range",
+              "start": 302
             },
             "path": "mcp/src/agents_remember/worktrees/integration/mutation_evidence.py"
           },
@@ -623,11 +626,12 @@
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:8a5524012b9b572fde9e8ed4d61b5176cecb347c8610ac4826666de7da0ead42",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:8a9b1b350312a13c23ec082d436b51b647c04856aff319580b3297a939bfe5b6",
             "locator": {
-              "kind": "symbol",
-              "name": "_publish_judged_tree"
+              "end": 423,
+              "kind": "line_range",
+              "start": 405
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -635,12 +639,12 @@
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:f7c4e76501577a46388c5789fa1d7718ce4cab2bae5ea433c1e64620fa8d0493",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:f62cf6186e0e722583e71ecc197361b14eab025d770d72184ec4ffdd9f1f57a3",
             "locator": {
-              "end": 408,
+              "end": 423,
               "kind": "line_range",
-              "start": 308
+              "start": 320
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -727,7 +731,7 @@
         },
         {
           "anchor": {
-            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+            "blob": "eef9a80abc933b5444ba017999d96e07175428a4",
             "content": "sha256:7972b4c3a85720af04c1adbcc0d7821ffdc3785b6c25d8fc7f510e6bd3f92317",
             "locator": {
               "end": 214,
@@ -758,7 +762,7 @@
       ]
     },
     "28": {
-      "note": "Reopen projection uses changed-output ancestry; exact source-head admission also accepts recorded checkpoint landings.\n\nAnchor: reopen/source-head owners",
+      "note": "Reopen projection uses changed-output ancestry; exact source-head admission also accepts recorded checkpoint landings.",
       "targets": [
         {
           "anchor": {
@@ -775,12 +779,12 @@
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:a78ffd6d3d92c4fb25cbde809372d8d24a0e9affe0645d5d0d9aeb89104c7d50",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+            "content": "sha256:47e476e56bd4a3636cc315da3ffaa561ab439add9021ba2edd7daafcda8aaed2",
             "locator": {
-              "end": 175,
+              "end": 502,
               "kind": "line_range",
-              "start": 161
+              "start": 492
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -788,40 +792,14 @@
         },
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:8d8aeb3179e79211e4b33c0577c4ca2a7c9df4101a8b4f86fedd2c4705247991",
+            "blob": "ef6b3907a744393a084d80e10ed797a1b4624211",
+            "content": "sha256:ea8d85c0d22734275b4a84bc340065d5c08b7f1484eb429fe33a5b23369e4224",
             "locator": {
-              "end": 538,
+              "end": 63,
               "kind": "line_range",
-              "start": 512
+              "start": 13
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:b76b93f6961032fb93182dd3c1ec417b23019e93036c62e6655a11749dc37693",
-            "locator": {
-              "end": 195,
-              "kind": "line_range",
-              "start": 181
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
-            "content": "sha256:6b93e770aa6968109bf312e085cab1f1a946a5f067b11738360b20363ffca256",
-            "locator": {
-              "end": 554,
-              "kind": "line_range",
-              "start": 528
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_source_heads.py"
           },
           "kind": "code"
         }
@@ -877,6 +855,54 @@
               "name": "prepare_enclosure_publication"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The direct-landing success response carries an optional review note after publication proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:20e5807354ef02250712841ec0af798cdcaa447778a73d792a4db04fceb954cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_landing_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The direct route records its normal publication result and then refreshes file briefs only for a newly made memory commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:6637914218b2acd7d312988b46b83863f96a1411702eb9edfc782e4045df4ef8",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:b29d68c7562c0b88e81fe1b2e3657c7e2194ad0d9a2d5f7ed6b0280dd6b90768",
+            "locator": {
+              "end": 386,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
           "kind": "code"
         }
@@ -992,40 +1018,16 @@
       ]
     },
     "6": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Direct landing recovery.\n\nAnchor: `execute_direct_landing` `execute_or_require_direct_landing_recovery`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Direct landing recovery.",
       "targets": [
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:bd8451039a34cb7ca620810fe40f034694ff2e8ac3eef1cf374ad2ec292443fa",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:c395c3d2296f24a2d442417398c09681c24db546f13efeeb27c88fd6accbbfd4",
             "locator": {
-              "kind": "symbol",
-              "name": "execute_direct_landing"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:e197e7904a2347e0d103e2ebfe29bb601570a8c76ff9f3f0d7aeb20433236535",
-            "locator": {
-              "kind": "symbol",
-              "name": "execute_or_require_direct_landing_recovery"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:6f1d0146c6e81fbfe0204718e9978f20cca9e088f09859ab47411b2c7c262956",
-            "locator": {
-              "end": 115,
+              "end": 94,
               "kind": "line_range",
-              "start": 73
+              "start": 53
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -1033,12 +1035,12 @@
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:86d465cff87a2cd40b98e9ba99ff5175add6d32a307a542eee82fcc7a1beed1c",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:e197e7904a2347e0d103e2ebfe29bb601570a8c76ff9f3f0d7aeb20433236535",
             "locator": {
               "end": 175,
               "kind": "line_range",
-              "start": 118
+              "start": 97
             },
             "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
           },
@@ -1046,8 +1048,34 @@
         },
         {
           "anchor": {
-            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
-            "content": "sha256:41d08a6dbcb3eb262f4bd5a757022983784d0b77e9cc89108038789754647e50",
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:017dce8e56f3dcc2c8d9789afb6792ccace6c924680147292a99927cf7d62519",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:86d465cff87a2cd40b98e9ba99ff5175add6d32a307a542eee82fcc7a1beed1c",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4467734163246f8299d4de3dff834c3357b2b0b4",
+            "content": "sha256:2e74df889c7ce46e84c0378bc4b9d0c58650ddd24d012e314583bc7d2747fef8",
             "locator": {
               "kind": "file"
             },

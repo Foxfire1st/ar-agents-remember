@@ -66,16 +66,8 @@ the run, in eight ordered beats:
 
 - One real temporary world per case, `TemporaryDirectory` cleanup in `tearDown`, and the module is
   marked `pytestmark = pytest.mark.integration` (code line 48).
-- Registered in the **integration** lane of `mcp/tests/test-evidence-lanes.toml` (row 722). That
-  manifest is fail-closed — `load_lane_manifest` derives the repository's actual test modules and
-  refuses a manifest that omits one — so an unregistered module is a hard load failure.
-- The complete lifecycle catalog declares five exact artifact-consumer relationships:
-  `_user_settings_guard.py` (`:454`), `checkpoint_landing_test_support.py` (`:1082`),
-  `curator_coherence_test_support.py` (`:1258`), the Node `package-lock.json` fixture
-  (`:2879`) and `writer_worklist_test_support.py` (`:4948`). These declarations
-  establish dependency ownership, not runtime consumption or execution. The coherence
-  support is reached transitively through `QueueFixture`; the current
-  `closeout_input_test_support.py` exact-consumer list does not name this module.
+- `load_lane_manifest` derives the repository's actual test modules and refuses a manifest that omits one.
+- The catalog declarations establish dependency ownership. The coherence support is reached transitively through `QueueFixture`. The `closeout_input_test_support.py` exact-consumer list omits this module.
 - Support is composed, never re-implemented: `QueueFixture`/`REPO` come from `test_closeout_queue`,
   `close_out_leaf` is imported from `checkpoint_landing_test_support`, and `git` comes from
   `test_worktree_support`.
@@ -189,7 +181,7 @@ No external domain claim is required.
 
 
 
-- The leaf closeout recording it imports rather than duplicating. [9]
+- The playthrough calls the shared `close_out_leaf` test helper to record leaf closeout. [9]
 
 - The integration-case budget this module's membership is accounted against.  Anchor: `integration_case_budget` [12]
 
@@ -203,13 +195,11 @@ by the module's own fixture; no sibling repository or external system participat
 
 No meaningful cross-repo references found.
 
-- The lifecycle catalog lists this suite under checkpoint-landing and curator-coherence shared support.
 
 ### Repo-Internal References (continued)
 
 
-- The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" [10]
+- The `integration` lane selects `mcp/tests/test_lifecycle_playthrough_end_to_end.py` (`mcp/tests/test-evidence-lanes.toml:742`). [10] [13]
 
-- The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" [13]
 
-- Five exact artifact-consumer entries name this suite, covering the user-settings guard, checkpoint landing, Curator coherence, the Node lockfile fixture and writer worklist support. [11]
+- The lifecycle catalog lists `mcp/tests/test_lifecycle_playthrough_end_to_end.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/checkpoint_landing_test_support.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. These source declarations establish no execution or passing result. [11]

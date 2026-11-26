@@ -21,12 +21,12 @@
         },
         {
           "anchor": {
-            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+            "blob": "9518d2870b1d1d5dcd2c6707be568f200f0f5899",
             "content": "sha256:044759c5efc38b3fc03140fa337e5a130ab9efd17299c4705903faaf88b10bdf",
             "locator": {
-              "end": 10,
+              "end": 11,
               "kind": "line_range",
-              "start": 7
+              "start": 8
             },
             "path": "mcp/src/agents_remember/mcp/tools/core.py"
           },

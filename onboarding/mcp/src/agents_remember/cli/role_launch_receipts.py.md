@@ -46,7 +46,9 @@ Existing schema/read refusals, exclusive receipt creation, canonical taskless id
 ## Evidence
 
 
-- Frozen implementation of _create_receipt supporting the stated file behavior. [2]
+
+- Frozen implementation of `_create_receipt` (extracted to `role_receipt_files.py` and re-exported here) supporting exclusive initial receipt creation. [2]
+
 
 - The receipt reader distinguishes absence, unreadable bytes, invalid JSON and wrong or non-object receipt schemas. [3]
 
@@ -55,7 +57,9 @@ Existing schema/read refusals, exclusive receipt creation, canonical taskless id
 - Interrupts between receipt and call and checks retry retains one agent identity. [6]
 
 
-- Races publication and checks one persisted winner; competing request cannot issue another launch. [8]
+
+- Races publication and checks one persisted winner; competing request cannot issue another launch. Anchor: `RepeatAndConflictTests.test_a_task_bound_receipt_is_created_exclusively` [8]
+
 
 
 - Checks unresolved/rejected receipts returned unchanged without host read. [10]
@@ -75,19 +79,12 @@ Selected-task Investigator receipts are per request rather than singleton select
 
 
 
-
-- An Investigator receipt address requires its exact request UUID. The public projection normalizes the role name and retains the original request identity and retry selection. [14]
-
+An Investigator receipt address requires its exact request UUID.
 
 
 
 
 ## Refreshed current evidence
-
-
-
-
-- The receipt executor restores stored launch artifacts when present, runs the same saved launch call and publishes the observed outcome. [1]
 
 
 
@@ -104,7 +101,9 @@ Selected-task Investigator receipts are per request rather than singleton select
 
 
 
+
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [7]
+
 
 - Through leaf/taskless routes checks restoration/refusal, exact advice and unchanged receipt/foreign link target. [9]
 
@@ -124,13 +123,13 @@ Custody: the preceding sentence is detached from live reference 13; original tar
 
 
 
-
-- An absent or concurrently moved receipt is absent. Invalid paths, unreadable JSON and wrong schemas refuse with HTTP 409. The document reader also validates the shared chat shape. [15]
-
+A receipt moved by Start between inspection and reading is treated as absent.
 
 
 
-- Decision, artifacts, predecessor liveness and outcome reconciliation preserve saved identity. [16]
+
+- Decision, artifacts, predecessor liveness and outcome reconciliation preserve saved identity. Anchor: Current source; preserved L88 property 16 [16]
+
 
 
 - Ordinary Retry enters restoration for a recorded artifact reference. The restore path checks its targets and validates frozen detail references before writing. [17]
@@ -155,3 +154,11 @@ Custody: the preceding sentence is detached from live reference 13; original tar
 - The Worker handover test requires a first freeze notice to the Manager to start the Reviewer, followed by direct complete freeze handover to that Reviewer; the Manager does not relay it or receive routine report notices. It also checks parentless Worker and turn-end-versus-acceptance wording, with mutation cases for every required route clause. [12]
 
 - The test joins the shipped Architect/review, Manager/coordination and Orchestrator/coordination source texts, checks their candidate-evidence and owner-acceptance clauses, and detects removal of Manager inspection. This checks that source composition’s wording; it runs no capsule admission/compilation and proves no runtime no-mutation property. [13]
+
+
+- The receipt executor restores stored launch artifacts when present, runs the same saved launch call and publishes the observed outcome. [1]
+
+- `_read_receipt` distinguishes a missing receipt from an unreadable or malformed one: non-regular paths refuse, decoding/JSON/value-conversion/depth failures return HTTP 409 with reconcile advice, and non-object/wrong-schema records are malformed. The document reader adds shared chat-shape validation; none of these refusals rewrites a receipt or starts/replays a launch. [15]
+- Frozen implementation of _public_execution supporting the stated file behavior. Anchor: `_public_execution` [4]
+
+- The current source implements this file’s stated Investigator boundary. [14]

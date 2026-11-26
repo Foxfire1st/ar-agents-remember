@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_crossing_merge_writer_stamp.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Combined meaning receives the product's writer stamp.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82e1ca1bcc5f94cca6deae3b47366983eea319e6",
+            "content": "sha256:02ae6b51ac962063766c4e506bd499fe628544b908c98e487c9eb8be01aad866",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_stamped_lines_raising_one_record_combine_under_the_products_stamp"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A single side's meaning keeps that side's writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82e1ca1bcc5f94cca6deae3b47366983eea319e6",
+            "content": "sha256:de7709d809aeba82eed6c4841df5d89c097ea12461991aeb7153967b0540a155",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_only_one_line_raised_is_that_lines_write_with_its_stamp"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

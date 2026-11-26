@@ -216,8 +216,34 @@
       ]
     },
     "12": {
-      "note": "The namespace record (the record beside the bytes, or, since MIK-R25, a derived knowledge index's own namespace) and the path-seed shape rule.\n\nAnchor: `review_namespace` `PathSeed`",
+      "note": "The namespace record (the record beside the bytes, or, since MIK-R25, a derived knowledge index's own namespace) and the path-seed shape rule.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
+            "content": "sha256:c12f2d6be24cf899b572b83562f39ddbadfda75b97c536d420b20daa0a109c61",
+            "locator": {
+              "end": 389,
+              "kind": "line_range",
+              "start": 387
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "467b6e3bb025fa7895853353aab838036e694400",
+            "content": "sha256:c9bae576442e9ed3c038b1f056f35e178a320f84b9c96b858f33f086e7154ed6",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
@@ -231,34 +257,10 @@
         },
         {
           "anchor": {
-            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
-            "content": "sha256:fbd98175de6f3059b83374833481f33639bdf4840ffee08959b2e96e4c46239f",
+            "blob": "467b6e3bb025fa7895853353aab838036e694400",
+            "content": "sha256:5fe1094230908f7f29b45e149b88255410156736e3cb5b46be9445c40415db9c",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/read.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
-            "content": "sha256:c12f2d6be24cf899b572b83562f39ddbadfda75b97c536d420b20daa0a109c61",
-            "locator": {
-              "kind": "symbol",
-              "name": "review_namespace"
-            },
-            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
-            "content": "sha256:c9bae576442e9ed3c038b1f056f35e178a320f84b9c96b858f33f086e7154ed6",
-            "locator": {
-              "kind": "symbol",
-              "name": "PathSeed"
             },
             "path": "mcp/src/agents_remember/models/knowledge/read.py"
           },

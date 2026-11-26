@@ -4,7 +4,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+        "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
+        "content": "sha256:836ec813a206794d67df289bb17481bbdb3f482aeaf7d22b82e3871f1c7cc29f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_held_delivery_tick"
+        }
+      },
+      "id": "RLZ-199TFH",
+      "invariant": "INV-KM9V3K",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 5",
+        "leaf": "261112-BUG-L37"
+      },
+      "rationale": "The tick calls the usage port only when at least one trigger is present.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
         "content": "sha256:d103f78490028d5071df7d816b91d3cfe4c93b2e23629d060f9e60b345a6be34",
         "locator": {
           "kind": "symbol",
@@ -22,7 +40,25 @@
     },
     {
       "anchor": {
-        "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+        "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
+        "content": "sha256:836ec813a206794d67df289bb17481bbdb3f482aeaf7d22b82e3871f1c7cc29f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_held_delivery_tick"
+        }
+      },
+      "id": "RLZ-53JBP0",
+      "invariant": "INV-JDZG62",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 3",
+        "leaf": "261112-BUG-L37"
+      },
+      "rationale": "The tick reads usage before the existing sweep so delivery sees the cleared fact.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
         "content": "sha256:2078006d528ed120367cdbaff430b3c8a884c697282d74206e04d1568c35b858",
         "locator": {
           "kind": "symbol",
@@ -40,8 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
-        "content": "sha256:1a4bc34ceb1e312705da19ede3a5a6bbb8dfa5ca44f318fc6ad7612cb127d7f6",
+        "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
+        "content": "sha256:6abc1fd809bfa912fcca09aac3ce51496d89c6f096543317acb082bd20a69a9d",
         "locator": {
           "kind": "file"
         }
@@ -57,12 +93,12 @@
     },
     {
       "anchor": {
-        "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+        "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
         "content": "sha256:5fd69cb92db813c555b7a72d66ab63a32b59440624cd02bf26cef7eac6bc59b9",
         "locator": {
-          "end": 600,
+          "end": 598,
           "kind": "line_range",
-          "start": 582
+          "start": 580
         }
       },
       "id": "RLZ-9KM829",
@@ -76,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+        "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
         "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
         "locator": {
           "end": 144,
@@ -95,8 +131,8 @@
     },
     {
       "anchor": {
-        "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
-        "content": "sha256:5dcd3af06b4b19698cc77d3ad124c7a4165a49f254bb380b22fd8a78fe2a6813",
+        "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
+        "content": "sha256:836ec813a206794d67df289bb17481bbdb3f482aeaf7d22b82e3871f1c7cc29f",
         "locator": {
           "kind": "symbol",
           "name": "_held_delivery_tick"
@@ -113,8 +149,8 @@
     },
     {
       "anchor": {
-        "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
-        "content": "sha256:5dcd3af06b4b19698cc77d3ad124c7a4165a49f254bb380b22fd8a78fe2a6813",
+        "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
+        "content": "sha256:836ec813a206794d67df289bb17481bbdb3f482aeaf7d22b82e3871f1c7cc29f",
         "locator": {
           "kind": "symbol",
           "name": "_held_delivery_tick"
@@ -131,7 +167,7 @@
     },
     {
       "anchor": {
-        "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+        "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
         "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
         "locator": {
           "kind": "symbol",
@@ -149,8 +185,8 @@
     },
     {
       "anchor": {
-        "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
-        "content": "sha256:1a4bc34ceb1e312705da19ede3a5a6bbb8dfa5ca44f318fc6ad7612cb127d7f6",
+        "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
+        "content": "sha256:6abc1fd809bfa912fcca09aac3ce51496d89c6f096543317acb082bd20a69a9d",
         "locator": {
           "kind": "file"
         }
@@ -171,7 +207,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
             "content": "sha256:864e390c10f98eead1f7dc0962c0f5717b9f0258e66b99b4004b2e87425894bd",
             "locator": {
               "end": 86,
@@ -201,7 +237,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
             "content": "sha256:864e390c10f98eead1f7dc0962c0f5717b9f0258e66b99b4004b2e87425894bd",
             "locator": {
               "end": 86,
@@ -231,7 +267,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
             "content": "sha256:2078006d528ed120367cdbaff430b3c8a884c697282d74206e04d1568c35b858",
             "locator": {
               "end": 110,
@@ -248,7 +284,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
             "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
             "locator": {
               "end": 144,
@@ -260,7 +296,7 @@
         },
         {
           "anchor": {
-            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
             "content": "sha256:864e390c10f98eead1f7dc0962c0f5717b9f0258e66b99b4004b2e87425894bd",
             "locator": {
               "end": 86,
@@ -290,7 +326,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
             "content": "sha256:5cafd1dbd1e8b89d1c41bf624f33a333c1277f69d76f47c848926863fc3941dd",
             "locator": {
               "end": 29,
@@ -302,7 +338,7 @@
         },
         {
           "anchor": {
-            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
             "content": "sha256:2078006d528ed120367cdbaff430b3c8a884c697282d74206e04d1568c35b858",
             "locator": {
               "end": 110,
@@ -319,7 +355,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
             "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
             "locator": {
               "kind": "symbol",
@@ -330,7 +366,7 @@
         },
         {
           "anchor": {
-            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
             "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
             "locator": {
               "kind": "symbol",
@@ -359,15 +395,14 @@
       ]
     },
     "29": {
-      "note": "Held-delivery collaborators keep usage-read-before-delivery ordering, then trigger moved comparison after ended-seat delivery. The dedicated watcher task joins the owned shutdown task list.",
+      "note": "Held-delivery collaborators keep usage-read-before-delivery ordering, then trigger moved comparison after ended-seat delivery. The dedicated watcher task joins the owned shutdown task list.\n\nAnchor: `_held_delivery_tick`",
       "targets": [
         {
           "anchor": {
-            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
-            "content": "sha256:5dcd3af06b4b19698cc77d3ad124c7a4165a49f254bb380b22fd8a78fe2a6813",
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
+            "content": "sha256:6abc1fd809bfa912fcca09aac3ce51496d89c6f096543317acb082bd20a69a9d",
             "locator": {
-              "kind": "symbol",
-              "name": "_held_delivery_tick"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -379,12 +414,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "blob": "7b7aa8e09a014ec83c1e883ea71197a8af053b9c",
             "content": "sha256:6cc4d66f598e4b31771bb7990fdcba539784e7849268aa6bdd052f6c1bc6ab7e",
             "locator": {
-              "end": 460,
+              "end": 458,
               "kind": "line_range",
-              "start": 445
+              "start": 443
             }
           },
           "kind": "code"

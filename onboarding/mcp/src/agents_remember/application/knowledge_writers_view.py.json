@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writers_view.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7582390ac1d3008bcf49f5a9d82b0f9373aad7a9",
+        "content": "sha256:9668e7aee0a2ea4dc01c15eff907b83cc425ee0e127380d356899e04e4a99eb9",
+        "locator": {
+          "kind": "symbol",
+          "name": "writers_view"
+        }
+      },
+      "id": "RLZ-S6E121",
+      "invariant": "INV-5GEDEX",
+      "origin": {
+        "handoffEntry": "L3-W1-09",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Bounds the answer to its rows, writes the report file and names it.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The MCP answer names a bounded set of writer rows and a complete report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7582390ac1d3008bcf49f5a9d82b0f9373aad7a9",
+            "content": "sha256:9668e7aee0a2ea4dc01c15eff907b83cc425ee0e127380d356899e04e4a99eb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "writers_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The complete report preserves writer attribution and the revisions behind each count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7582390ac1d3008bcf49f5a9d82b0f9373aad7a9",
+            "content": "sha256:5b1d51bb9db4e6d2ee12c9c3c67a98e2469cf23931f5d0d688e41f3dcdbacad4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_table_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

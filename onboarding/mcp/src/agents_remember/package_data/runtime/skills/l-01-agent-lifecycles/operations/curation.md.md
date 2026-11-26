@@ -64,7 +64,6 @@ This generated copy carries the same family-coverage authoring fields as the
 canonical curation operation. The copy holds no contract of its own; the canonical
 surface with its card and the governing history rows carries it.
 
-- The mirror carries the same authoring fields as the canonical operation. [1]
 
 ## Code Commentary
 
@@ -138,3 +137,5 @@ No meaningful cross-repository implementation dependency.
 - Curation requires the complete memory-quality operation, repair or blocked escalation of every Curator-actionable finding, and the independent fact-check before handover. [4]
 
 - Bound curation intake gives `knowledge_read` the workspace memory root and gives `context_packet` and `read_ar_files` the exact supplied leaf `task_context`. [7]
+
+- The mirror carries the same authoring fields as the canonical operation. [1]

@@ -192,12 +192,12 @@
       ]
     },
     "16": {
-      "note": "The client that renders these pages without ever constructing a cursor.\n\nAnchor: `carriedPage` `pageBounds`",
+      "note": "The client that renders these pages without ever constructing a cursor.",
       "targets": [
         {
           "anchor": {
-            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
-            "content": "sha256:3a72132f0e91797658680ee56804a30bd93c76a74d449d6f3d58b4e7c0b8e002",
+            "blob": "35cf6991372a9b8389d9991cf851018c84f456a5",
+            "content": "sha256:6a6b385d7c4dae860e0ac863a83c83787557be17e32a5f198b2ad7a49074fd77",
             "locator": {
               "kind": "file"
             },

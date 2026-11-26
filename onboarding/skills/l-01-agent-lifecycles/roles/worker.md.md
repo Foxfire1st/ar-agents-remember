@@ -18,6 +18,8 @@ This canonical Worker implements one selected leaf’s approved primary requirem
 
 ## Logic
 
+Before editing, the Worker uses `read_ar_files` for the relevant paths. A fuller reply can include rule text. Open the current saved brief, when present, for conditions and exclusions. The next write covering the file or its folder renews a missing or older saved brief when the writer can refresh it. `knowledge_read` names whole records and proof evidence.
+
 Resolve apparent missing task facts through the named canonical task/packet with the exact supplied read arguments. Read selected assignment documents and target source before editing, confirm paired roots, and make the smallest complete change within approved scope. Do not infer another task or load the complete hierarchy by default. Run relevant brief/repository checks and report exact outcomes; source observations remain evidence for the separate Curator.
 
 The following producer/evidence/attempt constraints are preserved related task/review contracts; they do not expand the leaf’s single primary requirement or grant the Worker semantic acceptance.
@@ -139,7 +141,10 @@ The Worker's temporary-work section names the real `workspace.outsideScratchRoot
 
 - Worker reads the exact rendered/JSON locations in its handover, verifies paired roots, writes code only and reads memory as context; a missing binding is reported from its canonical source and field without guessing a different task or workspace. [2]
 
-- Worker reads the selected requirement/task with its own file tools, reads the repository's `system/coding-guidelines.md` in full before the first source edit and follows it for every line of source, tests and product messages (a helper told to do the same), takes knowledge detail through `knowledge_read` at editing or failure, and reads existing design guidelines before its first UI edit. [3]
+
+
+- Worker reads the selected requirement/task with its own file tools, reads the repository's `system/coding-guidelines.md` in full before the first source edit and follows it for every line of source, tests and product messages (a helper told to do the same), uses `read_ar_files` and opens a current saved source brief when present before editing and reads attributed proof evidence before diagnosing a test failure, and reads existing design guidelines before its first UI edit. [3]
+
 
 - Worker freezes and first asks Manager to start Reviewer, then sends that Reviewer its exact freeze and journal attempt IDs; after code PASS it sends the Curator the exact-freeze structured producer list after serving-build handoff-check. [4]
 
@@ -162,3 +167,7 @@ The Worker's temporary-work section names the real `workspace.outsideScratchRoot
 - Worker stage completion requires coding-guidelines checks on a clean copy of the frozen candidate. Listed final checks run once on the code-passed tree, with their report to the Reviewer and Manager. The Worker repairs its own failing checks and reports those it cannot pass or run. [15]
 
 - A sealed finding in the Worker's own task files is repaired directly without prior plan, census or Manager go-ahead, and the freeze reports per-finding failing-before/passing-after evidence; supported sync remains implementation-owned. [16]
+
+
+
+- The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. Knowledge_read names whole records and their evidence. [18]

@@ -3,8 +3,93 @@
   "proves": [
     {
       "anchor": {
-        "blob": "f4dae3bfd03107129533aae974c8934d80c0db32",
-        "content": "sha256:026483ba11f142c72dede8032d4b161a278a5353ab2d9ccbc33479b8fe5f5566",
+        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+        "content": "sha256:ad4e89cf61d4470828a12e64839ca5bbcb43d39576b095d42364c6267ab1a391",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cleanup_keeps_only_this_leafs_lines_before_removing_logs"
+        }
+      },
+      "facet": "Cleanup exports only the leaf’s own calls before removing its log directory.",
+      "id": "PRF-192KN5",
+      "invariant": "INV-B1DZ6W",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 13",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+        "content": "sha256:71c42c296ebf0ed9a0ab66c651ebb70b5d902470a93cbb4de4596e32bd9076f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_line_whose_text_holds_a_unicode_line_separator_is_kept_whole"
+        }
+      },
+      "facet": "Retention preserves one complete JSON line when a text value contains a Unicode line separator.",
+      "id": "PRF-1NAWGY",
+      "invariant": "INV-B1DZ6W",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 13",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+        "content": "sha256:f1786a5ad432dbb6a14a3535aae1640c625a040bfa65064c25dc7b2f12ae4612",
+        "locator": {
+          "kind": "symbol",
+          "name": "KeptToolCallsTests.test_a_failed_keep_leaves_the_log_and_blocks_the_cleanup_until_a_retry"
+        }
+      },
+      "facet": "Verifies KeptToolCallsTests.test_a_failed_keep_leaves_the_log_and_blocks_the_cleanup_until_a_retry for leaf tool-call lines are exported to master notes before whole-folder removal.",
+      "id": "PRF-475WH5",
+      "invariant": "INV-KA3FAN",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 1 · post-sync kept tool calls",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+        "content": "sha256:be89bc0477eb49a4c62e23630413435c3dcf2fac692f3b213e859ca5a75a794d",
+        "locator": {
+          "kind": "symbol",
+          "name": "KeptToolCallsTests.test_prepare_terminal_group_blocks_preview_and_apply_when_keep_fails"
+        }
+      },
+      "facet": "Verifies KeptToolCallsTests.test_prepare_terminal_group_blocks_preview_and_apply_when_keep_fails for terminal dry run and apply both block on a failed tool-call export.",
+      "id": "PRF-4X8EY2",
+      "invariant": "INV-Z69ZVF",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 4 · post-sync keep blocker",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+        "content": "sha256:f1786a5ad432dbb6a14a3535aae1640c625a040bfa65064c25dc7b2f12ae4612",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_failed_keep_leaves_the_log_and_blocks_the_cleanup_until_a_retry"
+        }
+      },
+      "facet": "An export failure preserves the source log and blocks cleanup until retry.",
+      "id": "PRF-G6PS6X",
+      "invariant": "INV-B1DZ6W",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 13",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+        "content": "sha256:82b95525d7ca863a7a295689f6f687bf21060447e845809c262f606aa01e5769",
         "locator": {
           "kind": "symbol",
           "name": "ToolAnswerEnclosureTests.test_cleanup_removes_logs_with_the_enclosure"
@@ -17,6 +102,23 @@
         "handoffEntry": "MIK-R108@v1 §3 enclosure-lifecycle",
         "leaf": "260928-MIK-L108"
       }
+    },
+    {
+      "anchor": {
+        "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+        "content": "sha256:ad4e89cf61d4470828a12e64839ca5bbcb43d39576b095d42364c6267ab1a391",
+        "locator": {
+          "kind": "symbol",
+          "name": "KeptToolCallsTests.test_cleanup_keeps_only_this_leafs_lines_before_removing_logs"
+        }
+      },
+      "facet": "Verifies KeptToolCallsTests.test_cleanup_keeps_only_this_leafs_lines_before_removing_logs for leaf tool-call lines are exported to master notes before whole-folder removal.",
+      "id": "PRF-Q5BFJN",
+      "invariant": "INV-KA3FAN",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 1 · post-sync kept tool calls",
+        "leaf": "261112-BUG-L38"
+      }
     }
   ],
   "realizes": [],
@@ -26,8 +128,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4dae3bfd03107129533aae974c8934d80c0db32",
-            "content": "sha256:bea79d7cd3bfe36d437b8a2e4889e2eca60150fbf86b3693fff262691086478d",
+            "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+            "content": "sha256:a63014083400058673166c1ca35354125ceb1485b964b2da0dbb240854a2fde1",
             "locator": {
               "kind": "file"
             }
@@ -41,10 +143,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4dae3bfd03107129533aae974c8934d80c0db32",
-            "content": "sha256:bea79d7cd3bfe36d437b8a2e4889e2eca60150fbf86b3693fff262691086478d",
+            "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+            "content": "sha256:a63014083400058673166c1ca35354125ceb1485b964b2da0dbb240854a2fde1",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The terminal cases check the selected call lines, export-before-removal ordering, retry and path rewriting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d00fc3ee325fd954f33b9065c6ac215f54e489dd",
+            "content": "sha256:3bc932dc8a0a6a6984bfb0b9e24c64bf7caf302e9deccfde2981b42d0e6242b4",
+            "locator": {
+              "end": 432,
+              "kind": "line_range",
+              "start": 215
             }
           },
           "kind": "test"

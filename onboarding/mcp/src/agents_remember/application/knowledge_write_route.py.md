@@ -9,8 +9,7 @@
 **The file writer's route: what a leaf, a crossing or a wave writes, returned as a report (MIK-R54, MIK-R73
 rule 1).** Both writer entry points run the functions here — `agents-remember knowledge-ingest` /
 `knowledge-bootstrap` through `cli/knowledge_write_route.py`, and the mounted `knowledge_write` tool — and
-both pass one `WriteSubmission`. The two routes therefore cannot disagree about the contract guard, the
-authorization reference, the worklist checks or the refusals: the tool can do nothing the command cannot.
+both pass one `WriteSubmission`. Both routes use the same contract, authorization and worklist checks. The caller supplies the runtime context for question publication and writer attribution.
 
 The leaf route establishes the contract's recorded memory base before passing it to the writer's card comparison. An unavailable base leaves that comparison to the persisted-count or operation-base path.
 
@@ -32,6 +31,8 @@ The leaf route establishes the contract's recorded memory base before passing it
   task-document authority; without usable settings it is refused.
 - `crossing_write_report` locates the open sync for the named crossing and appends rows to its open history file. It can resolve or reconfirm existing records. The writer refuses new records, handoff entries and rulings on this route. The settled code commit supplies both the snapshot and the writer's code base. A missing sync, a different crossing, an unfinished code side or a moved code branch refuses the write.
 - `wave_write_report(target, submission)` runs the taskless wave write.
+- Leaf, crossing and wave writes pass the resolved owner and one caller stamp to the writer. The stamp uses the runtime binding and launch receipt. Unresolved identity or a missing coordination root yields an unknown stamp with the reason.
+- The leaf route captures the prior occurrence index and passes the written and removed memory paths to brief regeneration after the report reaches `written`. The report notes the regeneration outcome. A brief-writing problem leaves the primary writer state intact.
 - The writer itself is `application.knowledge_writer.write_knowledge`; this module holds no argument parser and
   prints nothing. A caller receives the `WriteReport`, or a string naming why the invocation is refused.
 
@@ -45,8 +46,7 @@ The leaf route establishes the contract's recorded memory base before passing it
 
 ### Invariants And Boundaries
 
-- **The tool cannot exceed the command**: same contract guard, same authorization reference, same worklist
-  checks, same refusals.
+- The mounted tool and command use the same writer and apply the same contract, authorization and worklist checks.
 - **Converted memory only.** An unconverted tree is refused by name, because the canonical database writer is
   retired (MIK-R26) and there is no second writer.
 - **`--commit` authorizes file writes only** — no Git operation, and no acceptance.
@@ -59,6 +59,11 @@ No additional work is asserted by this card.
 
 ## Evidence
 
+- Both entry points share leaf-write admission and pass the request's owner, question port and caller stamp to the writer. [3]
+- The caller stamp comes from the runtime binding and receipt, with a reason when the coordination root is missing. [10]
+- The crossing writer carries its owner and caller stamp with the settled code commit the open sync recorded. [11]
+- The wave writer carries the wave owner and a caller stamp. [12]
+
 ### Docs References
 
 No domain documentation source is configured for this repository. The design authority is `MIK-R54`'s writer
@@ -67,8 +72,7 @@ packets live outside the code and memory repositories and are named here, not ci
 
 ### Repo-Internal References
 
-No numbered references are recorded for this new module. The checks it composes belong to the writer and the
-worklist and are evidenced where those own them.
+The checks this route composes are evidenced with their owning writer and worklist.
 
 ### Cross-Repo References
 
@@ -76,8 +80,9 @@ None: one memory worktree, named by the contract the caller supplies.
 
 ## Current account — the mounted settings or the command's own route
 
-`LeafQuestions` no longer carries an argparse namespace or a settings callback: it takes the mounted server's `config`, or a `CommandRoute` the command line builds. `_open` hands each to its own half — `_mounted` keeps the existing root comparison and text, `_command` asks the route's loader and, when it answers a clause instead of settings, refuses with the mounted `knowledge_write` call that can publish the same hand-off — and both build the task-document port in `_task_doc`. `leaf_write_report` passes `command` instead of `settings`; the contract guard, the worklist checks and the writer are unchanged, so both routes still refuse under the same conditions.
+`LeafQuestions` takes the mounted server's `config` or the command line's `CommandRoute`. `_mounted` checks the settings root. `_command` asks the route's loader and, when it returns a refusal clause, names the mounted `knowledge_write` call that can publish the same hand-off. Both build the task-document port in `_task_doc`. `leaf_write_report` passes the selected question route and resolves a caller stamp for the leaf's owner.
 
 - The raise question's port is built from the mounted settings or from the command's own route, and only the command half's refusal names another route. [1]
 - A command route whose loader answers a clause is refused with the mounted `knowledge_write` call, and a loaded settings root that differs keeps its own refusal. [2]
-- One leaf write runs the same guard, worklist checks and writer for the command and the mounted tool, differing only in the route that supplies the question port. [3]
+
+- After a written leaf report, the route refreshes briefs from changed and removed memory paths and records its outcome in notes. [13]

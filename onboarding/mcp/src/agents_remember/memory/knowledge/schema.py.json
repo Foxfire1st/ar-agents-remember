@@ -3,14 +3,15 @@
   "realizes": [],
   "references": {
     "10": {
-      "note": "The one schema is composed, pinned, and drift fails instead of re-pinning [10]\n\nAnchor: `_compose`; `CURRENT_GENERATION`; `require_pinned_schema_unchanged`; `SCHEMA_FINGERPRINT`",
+      "note": "The composed schema is checked against the pinned fingerprint.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
-            "content": "sha256:9e10ce1d79604d8957a14bb7d9e140464ea4f5b91ed4cd87a5b76d911c6490a5",
+            "blob": "6869b696c169705ffdb8dcf595685df0bc2fb6b5",
+            "content": "sha256:dd58c370a4145368bfdd0c3c15e5607fb74e82f364c3dc91634ac6db43f582b5",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "require_pinned_schema_unchanged"
             }
           },
           "kind": "code"
@@ -18,14 +19,31 @@
       ]
     },
     "11": {
-      "note": "Any other declared version is refused, never migrated [11]\n\nAnchor: `generation_of_database`",
+      "note": "A database with another declared generation is refused.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
-            "content": "sha256:9e10ce1d79604d8957a14bb7d9e140464ea4f5b91ed4cd87a5b76d911c6490a5",
+            "blob": "6869b696c169705ffdb8dcf595685df0bc2fb6b5",
+            "content": "sha256:71a55907b220b9b15545b2c009508e8849b44c6d288b76c097e6e70075a6d17d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "generation_of_database"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The one admitted schema checks its pinned definition and declared generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6869b696c169705ffdb8dcf595685df0bc2fb6b5",
+            "content": "sha256:71a55907b220b9b15545b2c009508e8849b44c6d288b76c097e6e70075a6d17d",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_of_database"
             }
           },
           "kind": "code"
@@ -33,14 +51,16 @@
       ]
     },
     "9": {
-      "note": "The index owns exactly eight logical tables in manifest order [9]\n\nAnchor: `CANONICAL_TABLES`; `CANONICAL_COLUMNS`",
+      "note": "The index declares eight logical tables and their manifest column order.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
-            "content": "sha256:9e10ce1d79604d8957a14bb7d9e140464ea4f5b91ed4cd87a5b76d911c6490a5",
+            "blob": "6869b696c169705ffdb8dcf595685df0bc2fb6b5",
+            "content": "sha256:37ab913dcc165c5c0e8c32956c002652f7d470491743e492ea02993e828028f6",
             "locator": {
-              "kind": "file"
+              "end": 116,
+              "kind": "line_range",
+              "start": 47
             }
           },
           "kind": "code"

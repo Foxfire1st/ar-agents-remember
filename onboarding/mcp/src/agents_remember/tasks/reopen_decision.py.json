@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/tasks/reopen_decision.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Both consumers use one spelling for the task's recorded reopen decision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "741f0693811bf78a23a7c58c6ec88c0793c70f09",
+            "content": "sha256:e653790709f520fc8a147cd35ceb28e7425652621c22a9f2f029db90b9adbcdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "reopened_leaf_decision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

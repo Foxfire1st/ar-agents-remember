@@ -10,6 +10,9 @@ Exact Git reading, carrying, parking, reapply proof and cancellation support for
 
 ## Hot Path Summary
 
+Both live converted-memory sync and scratch structural proof use the generated ignore resolver. It checks pinned stages and original Git conflict bytes, merges authored text, and restores the canonical briefs stanza only after a clean merge.
+
+
 `_read` supplies exact refs, complete stash inventory and exact revision blobs; `_proof` constructs the native expected reapply; `_stash` parks/reapplies work; `_cancel` assesses ownership and preserves unattributable bytes before discard; `_merge` owns converted-memory carry/validation; `_base` supplies shared result vocabulary.
 
 ## Operating Model
@@ -46,6 +49,5 @@ A structural content-conflict park on a master opens crossing history before rec
 
 
 - The shared staged comparison intersects path and diagnostic across the two pinned parents. [8]
-
 - Compatibility exports preserve qualified implementation boundaries. [1]
 - Incoming memory fast-forwards validate before moving refs. [5]

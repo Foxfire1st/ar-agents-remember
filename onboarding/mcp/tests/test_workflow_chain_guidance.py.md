@@ -108,9 +108,7 @@ Every call goes through the **production entry point** — a registered tool ove
 `call` returns a three-way arm (`RAISED ToolError` with rendered detail text, `RAISED <Exception>` with no payload, or
 `RETURNED` with `structuredContent`), so "did it raise" is itself the measurement.
 
-The current lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:645-645`, inside
-the array opening at `:5-5`). Registry placement is a source fact, not this survey’s collection
-or execution evidence.
+The survey uses registry placement as source evidence of selection.
 
 ### Invariants And Boundaries
 
@@ -542,5 +540,4 @@ No repository or external-system boundary is proved by this module.
 
 - Selected phase guidance is augmented with fixture commit messages for closeout apply, integration and finalization; declared required arguments and the workflow fallback are supplied before calling. [15]
 
-
-- The lane manifest declares test_workflow_chain_guidance.py in unit-regression; membership selects evidence and establishes no invocation. [35]
+- The `unit-regression` lane selects `mcp/tests/test_workflow_chain_guidance.py`. [35]

@@ -140,12 +140,12 @@
         },
         {
           "anchor": {
-            "blob": "156c6ba6a1374ce1679b8a088ef5d98d8dafc9a3",
+            "blob": "8892cf73b76f467f7a132516887cd3354ba8652d",
             "content": "sha256:063112214dbdd88f3fcf236503a696b28a6b41064b159b2452c88fdfc2d35f28",
             "locator": {
-              "end": 254,
+              "end": 257,
               "kind": "line_range",
-              "start": 246
+              "start": 249
             },
             "path": "dashboard/src/panels/EventRiver.test.tsx"
           },

@@ -67,9 +67,8 @@ observation**, so nothing about its source *moved*: all four booleans are false 
 the absent side, while the absent side's own observation is still carried so the earlier code stays
 inspectable.
 
-`_changed_fields` compares the nine declared field names and compares a field **only when both sides
-hold the record**: a record one snapshot holds is reported by its `coverage`, and reporting all nine of
-its fields as "changed" would state nine differences where there is one absence.
+`_changed_fields` compares the eight declared fields when both sides hold the record.
+A one-sided record has an empty changed-field roster. Its `coverage` records which side holds it.
 
 ### Conventions
 
@@ -102,7 +101,8 @@ its fields as "changed" would state nine differences where there is one absence.
   a **non-experiment**, and its reachability bound is carried rather than resolved.
 - **Two equivalent mutants are disclosed as equivalences rather than counted as kills.** `M9`
   (`_project`'s narrowing) is unobservable through the public API because `_changed_fields` iterates the
-  nine declared names and both sides' key sets are identical (17/17 same-id pairs, 0 differing); it is
+  nine names in that historical fixture and both sides' key sets are identical (17/17 same-id pairs,
+  0 differing). The current roster has eight fields. The mutation is
   kept so a `ReadItem` field rename has one place to be reflected, so **do not delete it as dead code
   without deciding what happens to `FIELD_PROJECTION`**. `M12` (`_anchor_signature`) is equivalent
   because the two anchors' signatures differ in `observed_source_identity` *and* `resolution`, so
@@ -120,6 +120,8 @@ here so a successor does not read the comparison as fully covered; they are evid
 closers, not behavioural defects. The leaf's contested evidence items were carried to `KS-R09`/`L9`
 (ledger entries **A9**/**A10**).
 
+The typed diff can show a change in `lifecycle` when the same authored revision acquires a review fact. Both sides keep the same authored payload digest in that case. The field projection carries no acceptance reference.
+
 ## Evidence
 
 ### Docs References
@@ -131,29 +133,22 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
-- **The declared field projection: which `ReadItem` field carries each compared record field.** [1]
 - **The five anchor fields an observation is compared on, with `detail` deliberately absent.** [2]
 - The declared union stream order and the read-kind mapping, and the advertised-pair identity. [3]
 
-- The per-side view — one snapshot's connection, selected scope and claims — and the pair of them as one value. [4]
 
 - **One union item: both payloads, its coverage, its transition, its changed fields, its reachability and its source comparison.** [5]
 - **The whole comparison value, including the four per-side selected sets a caller compares the union against.** [6]
 
-- **The one entry point: the two sides, the union, the order and the aggregate counts.** [7]
 
 - The union construction, its stable key, and the claims map the source half reads. [8]
 
-- **The per-item comparison: coverage, projection, the record half and the source half.** [9]
 
 
-- **The four record transitions — added, removed, changed and unchanged — read from the two payloads and nothing else: no authored predecessor edge names one revision as another's replacement.** [10]
 
 
-- **The coverage decision: the two rules and the measured reason they are not one.** [11]
 
 - **The existence question each kind asks of the other snapshot, by its own key.** [12]
-- The projection, the field comparison that runs only when both sides hold the record, and the claim's own two authored fields. [13]
 - The content comparison and the anchor signature the source half is built on. [14]
 - **The source comparison, the four booleans, and `missing_side` as the reason they are all false.** [15]
 - The reachability labels and the declared stream order's implementation. [16]
@@ -177,3 +172,13 @@ No cross-repository behavior is implemented in this file. The two repositories a
 index connections the caller opened.
 
 No meaningful cross-repo references found.
+
+- **The coverage decision: the two rules and the measured reason they are not one.** [11]
+- The per-side view — one snapshot's connection, selected scope and claims — and the pair of them as one value. [4]
+
+- **The declared field projection: which `ReadItem` field carries each compared record field.** [1]
+
+- **The one entry point: the two sides, the union, the order and the aggregate counts.** [7]
+- **The per-item comparison: coverage, projection, the record half and the source half.** [9]
+- **The four record transitions — added, removed, changed and unchanged — read from the two payloads and nothing else: no authored predecessor edge names one revision as another's replacement.** [10]
+- The projection, the field comparison that runs only when both sides hold the record, and the claim's own two authored fields. [13]

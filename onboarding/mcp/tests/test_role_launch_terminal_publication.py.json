@@ -1,0 +1,91 @@
+{
+  "path": "mcp/tests/test_role_launch_terminal_publication.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "fa39b35f184012fe4b813d0665096e3e13ad8bed",
+        "content": "sha256:c2cd44e145d377e97fc6ad71594fc89a78657b98e3d54df2095fc036656ae94a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cleanup_cannot_be_undone_by_a_prepared_role_start"
+        }
+      },
+      "facet": "Exercises test_cleanup_cannot_be_undone_by_a_prepared_role_start to verify terminal retries and role launches stay fenced to one generation.",
+      "id": "PRF-DGC6HQ",
+      "invariant": "INV-4CJ7H0",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 1 generation ownership",
+        "leaf": "261112-BUG-L38"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fa39b35f184012fe4b813d0665096e3e13ad8bed",
+        "content": "sha256:6cfe9792b5d5e48f70d5d851a595a617774396091d946f5c8f44471ed66f80a4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cleanup_cannot_be_undone_during_role_preparation"
+        }
+      },
+      "facet": "Exercises test_cleanup_cannot_be_undone_during_role_preparation to verify terminal retries and role launches stay fenced to one generation.",
+      "id": "PRF-RNY3PR",
+      "invariant": "INV-4CJ7H0",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 1 generation ownership",
+        "leaf": "261112-BUG-L38"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`_RoleStartFixture.cleanup_before_receipt` invokes `worktree_cleanup_tool` before any receipt exists and asserts the worktree group is removed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa39b35f184012fe4b813d0665096e3e13ad8bed",
+            "content": "sha256:8b2c63071daf4864c0f9b1a9e6fa04881249a10fe2812b3af9c5cabc2a2ea294",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RoleStartFixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Injecting terminal cleanup right after `prepare_role_handover` causes `_role_launch_dispatch_endpoint` to fail with HTTP 409 naming `\"enclosure\"` while keeping the retired group, receipt, and agents absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa39b35f184012fe4b813d0665096e3e13ad8bed",
+            "content": "sha256:c2cd44e145d377e97fc6ad71594fc89a78657b98e3d54df2095fc036656ae94a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cleanup_cannot_be_undone_by_a_prepared_role_start"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Injecting terminal cleanup right after `role_launch_preparation._resolve_workspace` causes dispatch to fail with HTTP 409 without recreating the retired group before receipt creation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa39b35f184012fe4b813d0665096e3e13ad8bed",
+            "content": "sha256:6cfe9792b5d5e48f70d5d851a595a617774396091d946f5c8f44471ed66f80a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cleanup_cannot_be_undone_during_role_preparation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

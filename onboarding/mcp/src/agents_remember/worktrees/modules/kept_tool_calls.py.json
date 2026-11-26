@@ -1,0 +1,96 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/kept_tool_calls.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "29c9dca453518e83926e0dc616a4efb5436a4ff7",
+        "content": "sha256:31c9998b334df68cc9b0f175c26f794b45c2dc2f009b9f8e074f1486275dc23c",
+        "locator": {
+          "kind": "symbol",
+          "name": "keep_tool_calls"
+        }
+      },
+      "id": "RLZ-EQKER1",
+      "invariant": "INV-B1DZ6W",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 13",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Persists a deduplicated retention artifact derived from the task’s own tool log.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "29c9dca453518e83926e0dc616a4efb5436a4ff7",
+        "content": "sha256:a720cc79882f954dd8afaa7676e64d44c995a5da4281d80d623685082b20a6ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "removal_after_keep"
+        }
+      },
+      "id": "RLZ-G95GYK",
+      "invariant": "INV-B1DZ6W",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 13",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Allows terminal removal after the export succeeds and exposes the blocker on failure.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "29c9dca453518e83926e0dc616a4efb5436a4ff7",
+        "content": "sha256:6d816437255809c6522918e77b2c3d0a6d3666d1127dcef39f528a73c78f80f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "keep_tool_calls_for_group"
+        }
+      },
+      "id": "RLZ-HQ1WQ7",
+      "invariant": "INV-KA3FAN",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 1 · post-sync kept tool calls",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "Owns the group-level keep: it returns the kept field for the logs row or a blocking logs row with the failure reason, and refuses a symlinked or unwritable destination before writing.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "29c9dca453518e83926e0dc616a4efb5436a4ff7",
+        "content": "sha256:6d816437255809c6522918e77b2c3d0a6d3666d1127dcef39f528a73c78f80f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "keep_tool_calls_for_group"
+        }
+      },
+      "id": "RLZ-SDCXAX",
+      "invariant": "INV-Z69ZVF",
+      "origin": {
+        "handoffEntry": "BUG-R38@v1 rule 4 · post-sync keep blocker",
+        "leaf": "261112-BUG-L38"
+      },
+      "rationale": "This helper converts a failed keep into the `logs` directory row the terminal result blockers read, in preview and apply alike.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Terminal removal depends on a successful export and retries merge kept and current lines.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29c9dca453518e83926e0dc616a4efb5436a4ff7",
+            "content": "sha256:31c9998b334df68cc9b0f175c26f794b45c2dc2f009b9f8e074f1486275dc23c",
+            "locator": {
+              "kind": "symbol",
+              "name": "keep_tool_calls"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

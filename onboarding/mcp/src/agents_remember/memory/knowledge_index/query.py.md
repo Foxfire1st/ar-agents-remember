@@ -17,6 +17,7 @@
 - Since MIK-R28 two more lookups: `proofs_of(invariant_ids)` (the `proof` entries of those invariants) and `invariants_without_proof()` (the live invariants no proof entry names). See the section below.
 - Since MIK-R25, `record_ids(kind)` answers every record ID of one kind in the tree, sorted: the reviewer's per-side currentness (`application/review_tree_knowledge.side_currentness`) asks it for every `invariant` and `family`.
 - Since MIK-R29, five lookups serve the path-based knowledge reader: `entries_under(directory)`, `entries_in_directory(directory)`, `live_entry_paths_under(directory)`, `links_to_path(path)` and `records_of_kind(kind)`. See the section below. `_incoming` now delegates to a shared `_links(where, parameters)` with the same SQL and the same `ORDER BY`, so the MIK-R05 and MIK-R25 callers are unaffected.
+- `standing` and `standings` read current revision state and writer from `ix_record`. The batch form makes one query for the selected page's distinct IDs. `writer_revisions` reads named revisions and each record's current revision and retirement flag for writer aggregation.
 - `text_id(projected_uuid)` reads `ix_uuid`, the reverse of the projection's identity map.
 - `database_path` is the file itself — the dataset the reused read code opens — and `repository_id` is the index's constant namespace.
 - `history_row(row_id)` (MIK-R74 rule 4) answers every row filed under that ID, each with the path of the file that holds it: two closed files may hold the same row ID, so the lookup names every match and the caller picks by path. The reader uses it to name the
@@ -51,7 +52,6 @@ None recorded.
   complete "without proof" list.
 
 
-- The proofs of a set of invariants. [1]
 
 - The live invariants no proof names; information, not a gate. [2]
 - A retired invariant is excluded from the list. [3]
@@ -80,13 +80,11 @@ The unused `outgoing_links` the first version added was removed (review F12). Th
 
 - Entries at or under a directory; a sibling sharing the prefix is never matched. [4]
 
-- Entries of the files directly in a directory (F2). [5]
 
 - Live entry paths under a directory, for the reader's counts. [6]
 - Links to a path's anchors or route; every record of one kind. [7]
 - `_incoming` delegating to the shared link query, same SQL and order. [8]
 
-- The directory condition and the prefix it is built from. [9]
 
 - The sibling-prefix, own-level, retired-count and route-link cases. [10]
 
@@ -123,13 +121,11 @@ The index handle, the answer types and the lookups.
 - The reused read code opens the index file under the index namespace. [15]
 - The rule-3 lookups. [16]
 
-- The reverse lookup from a projected UUID to the text ID it stands for (rule 6's reverse map). [17]
 
 - A family routed at the root governs a root-level file and a deep file. [18]
 - The answer cases: path lookups, invariant, family and route, incoming links, and history rows by subject and by leaf (the index query moved here from MIK-R07). [19]
 
 
-- One history row by its ID. [20]
 
 
 ### Cross-Repo References
@@ -139,3 +135,11 @@ No meaningful cross-repo references found: the index reads one memory tree, addr
 No cross-repo boundary is crossed by this file.
 
 - SELECT-only declaration and reverse maps support naming without Answer wrappers. [21]
+
+- Standing lookups batch supplied IDs and the writer view reads indexed named revisions. [23]
+
+- The proofs of a set of invariants. [1]
+- The reverse lookup from a projected UUID to the text ID it stands for (rule 6's reverse map). [17]
+- One history row by its ID. [20]
+- Entries of the files directly in a directory (F2). [5]
+- The directory condition and the prefix it is built from. [9]

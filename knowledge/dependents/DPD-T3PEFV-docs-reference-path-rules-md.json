@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bb15a08a6c7aeb0f820d3144499e71b5a489dc55",
-    "commit": "edfa0e40d08b9d2ca0f44ffd29d3be7c933ae6c6",
+    "codeTree": "587c29fa45c0e8ec0753487b806e6f5666b475bb",
+    "commit": "575e852918b109d7c5f52c36b6da536b7b43b4e6",
     "role": "curator",
-    "statement": "The page holds: the reading change answers a card from its entry half when the Markdown half is absent, and the page's rules for which source files are eligible for a card are unchanged by that; the page holds card-eligibility rules and no reading or writing rule, so none is claimed.",
-    "task": "261112-BUG-L7",
+    "statement": "The storage and card coverage rules stay in force, and the file brief is added after the same scoped naming decision.",
+    "task": "261112-KNO-L4",
     "uncommitted": true
   },
   "document": "docs/reference/path-rules.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "mcp/src/agents_remember/memory_quality/memory_census.py"
     },
     {
-      "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
+      "blob": "d510d9d58081286c07420229dbc887d205b07902",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/read_files.py"
     },

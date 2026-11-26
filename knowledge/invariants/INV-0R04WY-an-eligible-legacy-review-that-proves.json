@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Two exact old proofs of identical retained meaning produce reviewed standing once under unknown."
+  },
+  "applicability": "One retained legacy revision with competing genuine changed-only ownership claims.",
+  "conditions": [
+    "Multiple old writing claims may prove the same retained meaning against eligible reviewed content."
+  ],
+  "exclusions": [
+    "Ambiguous ownership remains unknown even when the review credit is proven.",
+    "Unrelated or incompatible evidence earns no exact credit."
+  ],
+  "id": "INV-0R04WY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/reviewer/e0769575-0bab-4e1f-86a6-44c8cb307f53/round-9/verification.md, archived dual-PASS replay and full M41 Rule 9 comparison."
+      ],
+      "path": "revision-standing-authoring.json"
+    },
+    "handoffEntry": "KNO-L3-F20",
+    "leaf": "261112-KNO-L3",
+    "task": "261112-KNO"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An eligible legacy review that proves the retained revision's exact meaning gives it one reviewed credit even when multiple exact writing claims leave the legacy owner unknown.",
+  "status": "proposed",
+  "supersedes": []
+}

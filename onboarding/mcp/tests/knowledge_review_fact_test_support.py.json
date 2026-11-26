@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/knowledge_review_fact_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The stamp fixture fills the attribution fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "935f47438987002305074bef01c7dd1ffede3d60",
+            "content": "sha256:c2236f65ee1b214227d92960e4d36bfba71e7b07a2863f389e80c976aa815d8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "stamp"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The history fixture carries its own written and review fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "935f47438987002305074bef01c7dd1ffede3d60",
+            "content": "sha256:20f573ac5fa03a48921e735a27cc49afdd2d4c0b243bae12af0fa68b0134bd9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "history_document"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

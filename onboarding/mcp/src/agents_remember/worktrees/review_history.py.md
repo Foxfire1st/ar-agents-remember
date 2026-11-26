@@ -33,7 +33,7 @@ None.
 
 ## Current Contract
 
-reviewKind defaults to code and explicitly selects memoryReviewState only for memory; other values refuse. Begin/record operate only on that lane, preserving sibling code state, sealed baseline, ordinary successor IDs, current settings limit, cumulative approved extras and unchanged-candidate guards. Successful pending results append one typed ReviewRound with the then-remaining Boolean. A record-only check appends no row and leaves its original findingsRemain/kind intact, though its verdictRef may be updated. Worker tries count failed code rows; Curator tries count failed memory rows. Missing state is zero; incomplete/nonsequential typed history or launch-recovered unreadable evidence is unavailable, not guessed from legacy rounds. Other roles count zero. require_pending_review remains code-only compatibility. No transition here steps a model up, authenticates a reviewer or creates a grant.
+reviewKind defaults to code and explicitly selects memoryReviewState only for memory; other values refuse. Begin and record operate on the selected lane and preserve sibling code state. Ordinary successors retain the sealed baseline and can shrink the outstanding finding IDs. The current settings limit, cumulative approved extras and unchanged-candidate guards continue to apply. Successful pending results append one typed `ReviewRound` with the then-remaining Boolean. A memory round also records the named `memoryTree`, verdict, and the recorder and handover stamps supplied by the task-document layer. The first recording takes the recorder's stamp from its launch binding and dates the sole eligible registered Curator or Consolidator's handover stamp with that recording time. An unresolved handover receives an unknown stamp with the reason. A same-candidate record-only correction keeps the typed row's `kind`, `findingsRemain`, `memoryTree` and original handover stamp, and can renew `verdictRef`, the memory verdict and the recorder's stamp. A sanctioned code finding reopens a recorded verdict, preserves its outstanding IDs, and stores the reopened round and the new finding routes. The amendment spends no review round or Worker try. The next admitted round counts the review of the repair. Worker tries count failed code rows; Curator tries count failed memory rows. Missing state is zero; incomplete/nonsequential typed history or launch-recovered unreadable evidence is unavailable, not guessed from legacy rounds. Other roles count zero. require_pending_review remains code-only compatibility. No transition here steps a model up, authenticates a reviewer or creates a grant.
 
 A try is a recorded code round with findings remaining for Worker, or an independent recorded memory round with findings remaining for Curator. Record-only checks are not tries. Other roles are on-request only. At the configured threshold the starter starts a successor from user-configured step-up choices; no new review round or allowance follows. Mode/permission features belong to the user-selected harness/model and are not borrowed across differing scopes; omitted cross-scope choices use host defaults. Counting and launch execution remain with their actual owners.
 
@@ -43,12 +43,15 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 ## Evidence
 
+- The review transition puts the memory tree and memory verdict beside the two product-captured stamps. [16]
+- Record-only corrections update permitted facts on the same row and preserve the original tree and handover. [17]
+- The task-document layer derives the recorder and registered handover stamps at the same recording time. [18]
+- The handover stamp uses current leaf receipts and explains unresolved or ambiguous attribution. [19]
 
-- Worker/Curator typed review census, record-only exclusion and unknown history. [4]
+
 - Reason admission, threshold and differing-harness/model inheritance boundary. [5]
 - Record-only memory identity comes from memory authority, never the sibling code root. [6]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [7]
-- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [8]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [9]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [10]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [11]
@@ -62,10 +65,8 @@ No configured external source applies.
 ### Repo-Internal References
 
 
-- Error/status boundary, cap-aware begin semantics, and pending admission. [1]
 
 
-- Publication field validation, architect/developer approval parsing, and sealed baseline creation. [2]
 
 - Successor monotonicity and duplicate/blank-ID refusals. [3]
 
@@ -75,3 +76,8 @@ At the historical L41 preparation, the source bytes were SHA-256
 `a9ef793019ed3e2a66c258d977a493d9f431194b91d2f6c4897acd5821a895b6`
 (`9166` bytes, `235` lines). The source is an uncommitted preparation candidate, so
 verification metadata remains blank until a genuine commit-owned refresh.
+
+- Review admission uses a typed error boundary, the settings-owned round cap and an explicit pending round. [1]
+- The review owner validates reported fields, parses the governing approval and records the sealed baseline. [2]
+- Completed typed rounds supply the worker and curator counts. Incomplete history is reported, and a record-only correction revises its existing round. [4]
+- The review owner binds the recorded round to the admitted result. A record-only correction preserves first handover attribution. [8]

@@ -7,10 +7,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "de8c4001fe7faf066e96a84e2ca5083769e9996c",
-            "content": "sha256:45be7cb49e8336e5547385e4ae4356681f69ed5fa78ea550a6ccf58b18b7ec20",
+            "blob": "30efe2cb19b1e0c0f20f0e12dac1d8fe558b1144",
+            "content": "sha256:c58183194d8b01a29b21405aee898122f7eb2bc7414f768b1163bb0bcaacb8c2",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fixture’s record standing is separate from its source currentness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30efe2cb19b1e0c0f20f0e12dac1d8fe558b1144",
+            "content": "sha256:8c629b9009111ac1334ddb57761fa7200489476f48b30584bd069011d170d65a",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 160
             }
           },
           "kind": "test"

@@ -4,25 +4,26 @@
   "realizes": [],
   "references": {
     "11": {
-      "note": "`build_read_scope_fixture` supplies the current fixture or assertion described above.\n\nAnchor: `build_read_scope_fixture`",
+      "note": "`build_read_scope_fixture` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:269b1bb5848bfa06ae7f0b5f2138690cc4cc9475afc3d513873e274139d3eeea",
             "locator": {
-              "kind": "file"
+              "end": 407,
+              "kind": "line_range",
+              "start": 309
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:269b1bb5848bfa06ae7f0b5f2138690cc4cc9475afc3d513873e274139d3eeea",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:a1bdfdfd0d9b6cc8cddc939c7e361a27f6c1091c22442fd93486d4fe3b56144f",
             "locator": {
-              "kind": "symbol",
-              "name": "build_read_scope_fixture"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -30,25 +31,26 @@
       ]
     },
     "12": {
-      "note": "`_create_invariant` supplies the current fixture or assertion described above.\n\nAnchor: `_create_invariant`",
+      "note": "`_create_invariant` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:0b4b9a24c819c309d232fd28b1da29b73393da00bb72eef164aaabe98091ed11",
             "locator": {
-              "kind": "file"
+              "end": 650,
+              "kind": "line_range",
+              "start": 634
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:0b4b9a24c819c309d232fd28b1da29b73393da00bb72eef164aaabe98091ed11",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:a1bdfdfd0d9b6cc8cddc939c7e361a27f6c1091c22442fd93486d4fe3b56144f",
             "locator": {
-              "kind": "symbol",
-              "name": "_create_invariant"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -56,25 +58,26 @@
       ]
     },
     "13": {
-      "note": "`_create_revision` supplies the current fixture or assertion described above.\n\nAnchor: `_create_revision`",
+      "note": "`_create_revision` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:97aae0fa3f8de9874fd61d047bc472d32792b89c6a70e759d57eeabd92f3a149",
             "locator": {
-              "kind": "file"
+              "end": 685,
+              "kind": "line_range",
+              "start": 667
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:6a0c27e80328207e8564e15764e72846cbf58f23dc640b5061230e7e3127e219",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:a1bdfdfd0d9b6cc8cddc939c7e361a27f6c1091c22442fd93486d4fe3b56144f",
             "locator": {
-              "kind": "symbol",
-              "name": "_create_revision"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -82,12 +85,39 @@
       ]
     },
     "14": {
-      "note": "`_create_realization` supplies the current fixture or assertion described above.\n\nAnchor: `_create_realization`",
+      "note": "`_create_realization` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:2fb1bf8fd32ac947b76e7fa7e90d425cca5b0d601e9edd567054de1011858116",
+            "locator": {
+              "end": 1017,
+              "kind": "line_range",
+              "start": 987
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:a1bdfdfd0d9b6cc8cddc939c7e361a27f6c1091c22442fd93486d4fe3b56144f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The read fixture opens the test row store, builds its graph with test-only row constructors and returns projected record identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:a1bdfdfd0d9b6cc8cddc939c7e361a27f6c1091c22442fd93486d4fe3b56144f",
             "locator": {
               "kind": "file"
             }
@@ -96,28 +126,12 @@
         },
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:2fb1bf8fd32ac947b76e7fa7e90d425cca5b0d601e9edd567054de1011858116",
-            "locator": {
-              "kind": "symbol",
-              "name": "_create_realization"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "15": {
-      "note": "The read fixture opens the test row store, builds the graph there and returns its projected record identities.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
             "content": "sha256:89d688b3cf8e2b7ba300f635ab78126a578845d055f3ad1fcb1b4ca227565082",
             "locator": {
-              "end": 382,
+              "end": 383,
               "kind": "line_range",
-              "start": 344
+              "start": 345
             }
           },
           "kind": "test"
@@ -125,12 +139,12 @@
       ]
     },
     "16": {
-      "note": "RowStore writes text-tree fixture rows without the retired production admission plane.\n\nAnchor: `RowStore`",
+      "note": "RowStore writes text-tree fixture rows without the retired production admission plane.",
       "targets": [
         {
           "anchor": {
-            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
-            "content": "sha256:43a32e8370a3aa07c1e8247bd8b4d445a42caab3b630d2ed5783e663bc3c824e",
+            "blob": "63570d7606856b5028b51268077f62b8b3d27781",
+            "content": "sha256:a9a84c441f17b2b5a04d286f7aa9739d56b5e38f1cee90c5bef9ed86359d81fe",
             "locator": {
               "kind": "file"
             },
@@ -141,25 +155,26 @@
       ]
     },
     "17": {
-      "note": "**The fixture's declared topology and why this graph and not the shared branching one.**\n\nAnchor: `build_read_scope_fixture`",
+      "note": "**The fixture's declared topology and why this graph and not the shared branching one.**",
       "targets": [
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:269b1bb5848bfa06ae7f0b5f2138690cc4cc9475afc3d513873e274139d3eeea",
             "locator": {
-              "kind": "file"
+              "end": 407,
+              "kind": "line_range",
+              "start": 309
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:269b1bb5848bfa06ae7f0b5f2138690cc4cc9475afc3d513873e274139d3eeea",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:a1bdfdfd0d9b6cc8cddc939c7e361a27f6c1091c22442fd93486d4fe3b56144f",
             "locator": {
-              "kind": "symbol",
-              "name": "build_read_scope_fixture"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -171,8 +186,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:a1bdfdfd0d9b6cc8cddc939c7e361a27f6c1091c22442fd93486d4fe3b56144f",
             "locator": {
               "kind": "file"
             }
@@ -186,7 +201,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
             "content": "sha256:33c93a5f2d5c04b33720a374772dbcb76749a98b08faa21fb593d3e9a52633ef",
             "locator": {
               "kind": "symbol",
@@ -197,7 +212,7 @@
         },
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
             "content": "sha256:bb31bddcdb417f5b7f273c9d787f3c7cb07c6bd620eb71056f23936bd86be795",
             "locator": {
               "kind": "symbol",
@@ -208,7 +223,7 @@
         },
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
             "content": "sha256:c0542bfa5669f90a05e0b39daf9b58df15d129ceec4518252f17e00c214e0276",
             "locator": {
               "kind": "symbol",
@@ -219,7 +234,7 @@
         },
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
             "content": "sha256:37933c004aabd5d44817aeea27c512aa73d337c6d11ac21bf6529765175cdafc",
             "locator": {
               "kind": "symbol",
@@ -230,7 +245,7 @@
         },
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
             "content": "sha256:7cc90345a1a65f79aa7a0772d4517ca23f9725f62f2cd6dfbb20fa6b2e3b464b",
             "locator": {
               "kind": "symbol",
@@ -246,7 +261,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
             "content": "sha256:eaf09c18a7b5408f1d713339bb0ddccae29dafa00975c611bc8015c0c9d3c092",
             "locator": {
               "kind": "symbol",
@@ -258,80 +273,86 @@
       ]
     },
     "21": {
-      "note": "The public builder and the value types a case reads.\n\nAnchor: `build_read_scope_fixture` `ReadScopeFixture` `RevisionSeed` `RealizationSeed` `ReadFixtureFamily` `ReadFixtureRealization`",
+      "note": "The public builder and the value types a case reads.",
       "targets": [
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
             "content": "sha256:269b1bb5848bfa06ae7f0b5f2138690cc4cc9475afc3d513873e274139d3eeea",
             "locator": {
-              "kind": "symbol",
-              "name": "build_read_scope_fixture"
+              "end": 407,
+              "kind": "line_range",
+              "start": 309
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:41cd5ec8cdecaaf838b95079b0239b3e1803add55b6b39c6095b56ba680b4b8f",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:c263be04555ec323e5befcd3a184e80c2add8dfa1c679cda5fcda7e39e72932f",
             "locator": {
-              "kind": "symbol",
-              "name": "ReadScopeFixture"
+              "end": 293,
+              "kind": "line_range",
+              "start": 228
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:9c3f5174d936051cbfb01a4d599b12bc0c3bee8c3da457e4120d5307552d26a8",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:b9d916b9cd829de68ee5ad75b61ea835413ada67f1be52c047ca3c9e8f72861c",
             "locator": {
-              "kind": "symbol",
-              "name": "RevisionSeed"
+              "end": 149,
+              "kind": "line_range",
+              "start": 139
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:0e65fe094cddd8b14e038587ba6a3c65c078b302ee298a86f656a243bc4f534b",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:e2a30f2c25ce5badf415834ec1109c9ff5a4e4149522922526ae7d93aa368410",
             "locator": {
-              "kind": "symbol",
-              "name": "RealizationSeed"
+              "end": 161,
+              "kind": "line_range",
+              "start": 153
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:35614aaf90ab2004e52a0520c3156a231dfc4d218358797c7be3659d7b14f825",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:b26507e6cd96cfb258c6adf90e8010d9fe30af9f0a3379c8f127c05a5e4ab0fc",
             "locator": {
-              "kind": "symbol",
-              "name": "ReadFixtureFamily"
+              "end": 224,
+              "kind": "line_range",
+              "start": 219
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:7bb106e1f2d6ed2f0bfe315fff53054ecfe4a7316244057e229fce63821848d7",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:249c858cc6eda9b0d4a77761b34ecab5720a5aac6f765d3fc1ab6cf5b932c09e",
             "locator": {
-              "kind": "symbol",
-              "name": "ReadFixtureRealization"
+              "end": 135,
+              "kind": "line_range",
+              "start": 130
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:a1bdfdfd0d9b6cc8cddc939c7e361a27f6c1091c22442fd93486d4fe3b56144f",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -343,12 +364,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d914a0a27f7f3953d73e5caec7138997a432ef82",
+            "blob": "b9fa47a89c9ddd840e0a38800093c4488a641283",
             "content": "sha256:68c092443ee3e1c4e14e0fc76500eb64e4800b9832a41f06c21f9a3a61cc88e1",
             "locator": {
-              "end": 4378,
+              "end": 4545,
               "kind": "line_range",
-              "start": 4330
+              "start": 4497
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -356,14 +377,46 @@
         },
         {
           "anchor": {
-            "blob": "d914a0a27f7f3953d73e5caec7138997a432ef82",
+            "blob": "b9fa47a89c9ddd840e0a38800093c4488a641283",
             "content": "sha256:cb641267e11b8aec644ea6ca3e0ee68f833e7a2d4d2c480e3ee02aba12f59d59",
             "locator": {
-              "end": 5125,
+              "end": 5310,
               "kind": "line_range",
-              "start": 5122
+              "start": 5307
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "35": {
+      "note": "The optional reviewer leaf creates an exact review fact for the fixture’s extra record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:d92b895f662cd6ff3cab8ddd9a3fec87be9e9c4c83c120d83de8b1cd3f6dc387",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_review"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "The fixture captures its Git tree through the isolated shared helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:0156cc0ac80186fd120a92784bb2079c8d7e2f8f549a4225a1d4aca6eac923b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_git_tree"
+            }
           },
           "kind": "test"
         }

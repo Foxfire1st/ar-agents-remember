@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/provider_limit_check.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0ca3af476487351cb190e7e8f38b5dc0681fda5f",
+        "content": "sha256:fe2de372b6cdce14e58a0bab1186d17c4a9ac526eeb6cac4136e6f81cb4c9650",
+        "locator": {
+          "kind": "symbol",
+          "name": "syncProviderLimitCheck"
+        }
+      },
+      "id": "RLZ-X5XQH0",
+      "invariant": "INV-2KVT5S",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 4",
+        "leaf": "261112-BUG-L37"
+      },
+      "rationale": "The shared check takes a seat's own clear marker from a snapshot without its live limit. The marker's stored time names the reset.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One shared fifteen-second snapshot serves the pending resumes and flushes, and stops with them.\n\nAnchor: `syncProviderLimitCheck`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ca3af476487351cb190e7e8f38b5dc0681fda5f",
+            "content": "sha256:929daa0264003c3cd6a22682e932a3fc1aeb368bfa9d54e1a1a2f57b9b10d572",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

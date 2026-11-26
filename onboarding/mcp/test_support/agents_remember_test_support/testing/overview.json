@@ -641,6 +641,85 @@
         }
       ]
     },
+    "40": {
+      "note": "Fixture Git uses a private HOME and captures command failure output.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac6fd33c3066f18fa02d845d5c36c951fe8e3122",
+            "content": "sha256:73c6fa25e7f8336ff5f38f30cf8bfe85f5b626db084cf0ea1923c63fb0ff4df0",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture_git"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/fixture_git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "Crossing fixture controls compare attributed state and writer before and after selecting or converting bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d5b9aebcc4efbe7dd91b0d056f89047678d5075",
+            "content": "sha256:5ef507864cd40ea48879786f0371ce0caff83faaf6a326455f0a542fb5c8ff3a",
+            "locator": {
+              "end": 388,
+              "kind": "line_range",
+              "start": 316
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/knowledge_crossing_standing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "The current pointer fixtures bind whole-record retrieval to its named knowledge-use detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
+            "content": "sha256:df18848be7c15a5a88359f8ab84a22b9cb123b63aa5b4744e97b95a4bcddc31a",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
+            "content": "sha256:a7d33684a6845eef90c133841154faff0149c780d50d3a950fefe377a35bc0d0",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
+            "content": "sha256:c2d62ad1c7932d8d58d1f1b1b9d5d795f71c5f1abcf5ac77dbc9a374cf82455d",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "6": {
       "note": "The rewrite computes both new catalogs before it writes either.",
       "targets": [

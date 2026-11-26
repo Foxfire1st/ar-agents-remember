@@ -103,4 +103,4 @@ No meaningful cross-repo references found.
 - The empty and blobless neighbors cannot receive another repository’s cached tree or content answers. The same blob under Python and TypeScript paths resolves the expected symbols in both query orders. [8]
 
 
-- The lane manifest registers this test module in unit-regression. [9]
+- The unit-regression lane selects mcp/tests/test_read_anchor_memo.py. [9]

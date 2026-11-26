@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_knowledge_writer_typed_state.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "47d0ee7c37a5f55c84d11d76cb8810ac708ea033",
+        "content": "sha256:5eca0edd4957ad9011e2ec5bb757a1f48f3b45935075e5cf30c7c744042f9eca",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_typed_state_is_refused_in_an_entry_and_in_a_records_fields"
+        }
+      },
+      "facet": "Typed standing is refused both at entry level and inside record fields.",
+      "id": "PRF-NV652K",
+      "invariant": "INV-B79B38",
+      "origin": {
+        "handoffEntry": "L3-W1-03",
+        "leaf": "261112-KNO-L3"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Typed standing is refused both at entry level and in record fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47d0ee7c37a5f55c84d11d76cb8810ac708ea033",
+            "content": "sha256:5eca0edd4957ad9011e2ec5bb757a1f48f3b45935075e5cf30c7c744042f9eca",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_typed_state_is_refused_in_an_entry_and_in_a_records_fields"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A permitted kind-specific lifecycle word remains writable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47d0ee7c37a5f55c84d11d76cb8810ac708ea033",
+            "content": "sha256:9eb8708902b08c68c74e9fee2aef6c9e62040c9b1c26048389aefcd990a603c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_kinds_own_lifecycle_word_is_no_state_and_is_admitted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

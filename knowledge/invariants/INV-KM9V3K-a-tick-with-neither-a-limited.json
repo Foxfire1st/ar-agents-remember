@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "This clause guards the zero-cost claim for a quiet tick; removing it would make every three-second tick start a host read."
+  },
+  "applicability": "Every held-delivery tick.",
+  "conditions": [
+    "No stamped end is new this tick and no stored report is due for a recheck: the tick starts no usage read."
+  ],
+  "exclusions": [
+    "A due report stays due until a read records its attempt."
+  ],
+  "id": "INV-KM9V3K",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "261112-BUG-L37-W2-receipts.tar.gz, green/pytest.log"
+      ],
+      "path": "L37-curation-part1"
+    },
+    "handoffEntry": "BUG-R37@v1 rule 5",
+    "leaf": "261112-BUG-L37",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A tick with neither a limited report due for recheck nor a new stamped end performs no usage read.",
+  "status": "proposed",
+  "supersedes": []
+}

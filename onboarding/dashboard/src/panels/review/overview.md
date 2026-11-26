@@ -26,6 +26,8 @@ One sort orders both consumers. Changed retains real changes and selected or wal
 
 The tree holds one-line family, subject, changed-location and counted group rows, then the pinned Worklist and Code without invariant navigation. The reading column holds full statements, recorded steps, changed cards, the two closed unchanged/not-comparable location groups and the inline code-without-invariant lane. Group rows reveal their reading-column group; they expand no code inside the tree. Raw identifiers, origins and comparison records belong in the closed Technical details fold after the content.
 
+A family or invariant tree row shows its supplied candidate revision state alongside the reason. The state tag's title and the row's accessible name include the supplied writer's role and model. The reading column shows state and writer in subject and family headings and beside invariant location counts. Equal family revision IDs can carry different states in the two snapshots, so a same-revision guarantee block keeps and labels both sides.
+
 Code cards use one remembered Changes only/Full context choice. Their layout follows the measured reading content width: split at 1080 pixels and unified below. Full context is the recorded range; whole files open through the comparison viewer. The wording-diff layout control has its own retained owner.
 
 blockIdentity supplies comparison-bound entry and hunk identities for selection, traversal, URL restoration and tray references. changeTraversal visits drawn changed blocks followed by lane hunks. Selection landing, tree-row reveal and settled reader-position retention have separate owners; their source mechanisms do not constitute new browser measurements.
@@ -71,3 +73,6 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/reading/Techni
 - The Review \| Explanation switch stays in the top line. Each shown or compared saved revision carries its own binding, time, isolated frame and trusted stale list, and a claim return selects its resolved Review block with the walked tree retained. Published categories and grades feed the one change-set model: a category’s declared scale orders drawn changed blocks with Priority ties and an Ungraded (n) group, while chips retain presenter-inference labels, reasons and stale marks. Before work exists, the planned page uses the product’s planned · no changes line, an intended notice and deterministic-only effect orders with inert packet bodies. A matching live no-work move renews deterministic reads; work-bearing moves present the watcher’s notice and explicit Update instead of waking an explainer. [11]
 
 - The header shows a pending browser notice or a last-render failure for a retained revision. The “No explanation yet” block shows a last-render failure when present. [12]
+- The tree’s single trailing cell may include a state tag with writer role and model in its title. [15]
+- Review member rows show supplied state and writer next to their location counts. [16]
+- Same-revision and equal-wording family guarantee blocks label both snapshot states. [17]

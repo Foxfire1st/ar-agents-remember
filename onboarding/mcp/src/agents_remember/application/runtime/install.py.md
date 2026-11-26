@@ -16,8 +16,8 @@ servers with their build currentness.
 ### Logic
 
 `RuntimeInstallRequest` carries the model-facing install flags
-`dry_run`, `include_benchmarks`, `install_provider_deps` (default `True`) and
-`no_cache` (default `False`), plus the run's own `experiment` selection. Its `provider_deps_timeout`
+`dry_run`, `include_benchmarks`, `install_provider_deps` (default `True`),
+`no_cache` (default `False`), and `reconcile_shared_held_stores` (default `False`), plus the run's own `experiment` selection. Its `provider_deps_timeout`
 and `source_root` fields stay unset for MCP callers, so the tool accepts no host paths or provider
 path overrides.
 
@@ -38,7 +38,7 @@ stops and restarts a mismatched one. When a dashboard is observed, its `action`,
 known, `pid` and `sourceDigest` are carried under `result["dashboard"]`, and a `failed` or
 `lock-held` action makes `ok` false. Last, `result["runningServers"]` lists each live MCP and
 dashboard server record under the coordination root's `runtime/servers/` with its observed build
-currentness (`server_inventory`); that read removes the record files of dead processes.
+currentness: a dry run calls read-only `preview_server_inventory` (leaving dead record files on disk), whereas an applied install calls `server_inventory` (removing dead process records). When `request.reconcile_shared_held_stores` is true and a `shared_held_stores` reconciler is supplied, `run_runtime_install` previews or reconciles legacy shared held-message stores, records the result under `result["sharedHeldStores"]`, and sets `ok` to false if reconciliation reports `state == "blocked"`.
 
 ### Invariants And Boundaries
 
@@ -58,16 +58,32 @@ currentness (`server_inventory`); that read removes the record files of dead pro
 
 ### Repo-Internal References
 
+
 - Runtime installation attempts the required leftover-watcher stop independently of the accepted `install_provider_deps` and `no_cache` knobs and reports enabled provider keys once as unused; those knobs drive no provider dependency installation or provider-image rebuild. [5]
 
-- The tool maps its booleans into `RuntimeInstallRequest` and hands that request unchanged to `runtime_install_payload`. [1]
+
+
+- The tool maps its booleans into `RuntimeInstallRequest` and hands that request unchanged to `runtime_install_payload`. Anchor: `RuntimeInstallRequest` [1]
+
+
+
+
 
 - The tool declaration exposes `runtime_install` as a public tool. [2]
 
+
+
+
+
 - The service layer defines `RuntimeInstallRequest` and performs the actual runtime install. [3]
+
+
 
 - The application entry that composes the host step onto the lower service result, including the `ok` conjunction. [4]
 
+
+
 - A dry run plans and an applied install refreshes a running dashboard; an observed dashboard's action is reported under `dashboard`, a `failed` or `lock-held` action fails `ok`, and the running servers are reported with their currentness. [6]
+
 - An applied install leaves an absent dashboard stopped and otherwise ensures it serves the installed build. [7]
 - The dry-run dashboard plan only observes and names the transition. [8]

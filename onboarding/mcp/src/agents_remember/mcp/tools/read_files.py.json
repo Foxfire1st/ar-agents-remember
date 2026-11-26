@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
-        "content": "sha256:c7655e0400019bf4eed28ab2247d04ba6fe6d4707d672bcb3e4d8e36138b8450",
+        "blob": "199e11defd0b76b05c36376eba08000fef48412e",
+        "content": "sha256:3b47ad62623da9756613b04e68bf45b2d7ed8b3a67dd34e6e4341d2c59438040",
         "locator": {
           "kind": "symbol",
           "name": "read_ar_files_payload"
@@ -22,8 +22,26 @@
     },
     {
       "anchor": {
-        "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
-        "content": "sha256:c7655e0400019bf4eed28ab2247d04ba6fe6d4707d672bcb3e4d8e36138b8450",
+        "blob": "199e11defd0b76b05c36376eba08000fef48412e",
+        "content": "sha256:3b47ad62623da9756613b04e68bf45b2d7ed8b3a67dd34e6e4341d2c59438040",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_ar_files_payload"
+        }
+      },
+      "id": "RLZ-W4YZJQ",
+      "invariant": "INV-47NR7E",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 6–8",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Delivers the ordinary or removed-argument reader through one shared, guarded adapter return.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "199e11defd0b76b05c36376eba08000fef48412e",
+        "content": "sha256:3b47ad62623da9756613b04e68bf45b2d7ed8b3a67dd34e6e4341d2c59438040",
         "locator": {
           "kind": "symbol",
           "name": "read_ar_files_payload"
@@ -41,40 +59,29 @@
   ],
   "references": {
     "1": {
-      "note": "The application entry point that does the actual resolution.",
+      "note": "The application reply owns the exact context, tree observation and naming rows.",
       "targets": [
         {
           "anchor": {
-            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
-            "content": "sha256:13aef717a76a0b04deda44628d0f376574a6688d50f5279af8119a75234a7eda",
+            "blob": "d510d9d58081286c07420229dbc887d205b07902",
+            "content": "sha256:f5bba74742323dc3a462f242b5f3ea33e05b9ebc772d47740a650a986afddd62",
             "locator": {
-              "kind": "symbol",
-              "name": "read_ar_files_tool"
-            },
-            "path": "mcp/src/agents_remember/application/read_files.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
-            "content": "sha256:770411dbdccb58c01683a0f96ea9172b357a13e489d2d7ddec5af5982235a463",
-            "locator": {
-              "kind": "symbol",
-              "name": "_name_one"
-            },
-            "path": "mcp/src/agents_remember/application/read_files.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8e191df10079f3bb02676156173f441c069f4ec3",
-            "content": "sha256:ccfb04dd79543eabb345c2fa4041a7b53cad7e2a7155d43c251637dddbc2df86",
-            "locator": {
-              "end": 133,
+              "end": 185,
               "kind": "line_range",
-              "start": 77
+              "start": 126
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d510d9d58081286c07420229dbc887d205b07902",
+            "content": "sha256:df74c515f697bbd2a00f435d8e14220b38e0e75642430bc9e6c9fe61f49352dd",
+            "locator": {
+              "end": 414,
+              "kind": "line_range",
+              "start": 387
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -83,31 +90,33 @@
       ]
     },
     "2": {
-      "note": "The shared choke point every tool's payload passes through: an adapter that hands the tool's whole result, and its compact answer when one is projected, to the application's response completion, where the response is validated and the answer's token count stamped.\n\nAnchor: `_tool_payload`",
+      "note": "The payload gives the reader's fitter to the shared response completion after scope resolution.",
       "targets": [
         {
           "anchor": {
-            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
-            "content": "sha256:e65598ad08d511a5ffa26a3099d273596eea7844d5c2a00685c2ccb183271c43",
+            "blob": "199e11defd0b76b05c36376eba08000fef48412e",
+            "content": "sha256:f13f7eadcbe28bce1f248b18e9d7f540a0611c5c9ef199cee438b063e5a1eb1a",
             "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+              "end": 62,
+              "kind": "line_range",
+              "start": 53
+            }
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "The strict ReadArFilesResponse names governing files and overviews and observed state; it carries no published-intent body.",
+      "note": "The strict response permits named file rows, an optional overview list, and brief problem and omission fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "d06589a7eab5d08e42cab27bd828a7d5226df3a8",
-            "content": "sha256:3b5c7df8fc3fd18cbaf2b25613c6cc348de6fbb8fa153e6ccf3e3307af61f0b9",
+            "blob": "e394b2900e76d878df293cc337529013c0392f4f",
+            "content": "sha256:20b03abd3888c37d75f469064705a86ede56e7a1f017a7df337a9e1b3bea3096",
             "locator": {
-              "kind": "symbol",
-              "name": "ReadArFilesResponse"
+              "end": 163,
+              "kind": "line_range",
+              "start": 146
             },
             "path": "mcp/src/agents_remember/models/read_files.py"
           },
@@ -116,14 +125,16 @@
       ]
     },
     "4": {
-      "note": "Frozen implementation of read_ar_files_payload supporting the stated file behavior.\n\nAnchor: `read_ar_files_payload`",
+      "note": "The payload applies the removed-argument refusal and shares the same completion boundary for admitted requests.",
       "targets": [
         {
           "anchor": {
-            "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
-            "content": "sha256:a4d551b212d541a2081c10c0ac75510824aec6cff5e1d0c5b7da1ebe7adc1641",
+            "blob": "199e11defd0b76b05c36376eba08000fef48412e",
+            "content": "sha256:3b47ad62623da9756613b04e68bf45b2d7ed8b3a67dd34e6e4341d2c59438040",
             "locator": {
-              "kind": "file"
+              "end": 62,
+              "kind": "line_range",
+              "start": 26
             }
           },
           "kind": "code"
@@ -147,14 +158,16 @@
       ]
     },
     "6": {
-      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "note": "The mounted adapter delegates row assembly and sends the fitter when completing the response.",
       "targets": [
         {
           "anchor": {
-            "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
-            "content": "sha256:a4d551b212d541a2081c10c0ac75510824aec6cff5e1d0c5b7da1ebe7adc1641",
+            "blob": "199e11defd0b76b05c36376eba08000fef48412e",
+            "content": "sha256:f13f7eadcbe28bce1f248b18e9d7f540a0611c5c9ef199cee438b063e5a1eb1a",
             "locator": {
-              "kind": "file"
+              "end": 62,
+              "kind": "line_range",
+              "start": 53
             }
           },
           "kind": "code"

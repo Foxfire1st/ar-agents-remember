@@ -60,7 +60,6 @@ No configured live documentation source was available for this pass.
 - The compact item row, with its `planning` mark where present. [2]
 - The three states, the compact item rows and `plannedEffects`. [3]
 
-- The tool's consumer of these fields. [4]
 
 
 
@@ -75,3 +74,5 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the module reads one file in the coordination task root.
 
 No cross-repo boundary is crossed by this file.
+
+- The tool's consumer of these fields. [4]

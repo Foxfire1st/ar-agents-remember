@@ -64,16 +64,16 @@
       ]
     },
     "3": {
-      "note": "Ordinary converted-leaf closeout checks its mandatory gate before approval or code publication and validates its exact memory output and recovered output before memory publication. Anchor: `closeout_result` `_refuse_ungated_memory` `require_gated_recovery`",
+      "note": "Ordinary converted-leaf closeout checks its mandatory gate before claiming approval or publishing code. It validates and gates its exact memory output, including a recovered output, before recording it.",
       "targets": [
         {
           "anchor": {
-            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
             "content": "sha256:5a5e764bf6c1933532ad573138a82862019600ec7c22168516e64d0aa0a3a14f",
             "locator": {
-              "end": 1007,
+              "end": 965,
               "kind": "line_range",
-              "start": 966
+              "start": 924
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -81,12 +81,12 @@
         },
         {
           "anchor": {
-            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
-            "content": "sha256:fea0d2afa03e0381a722732efed577f89691a06ffe9a6c760f0f9bf43f069e0e",
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
-              "end": 205,
+              "end": 238,
               "kind": "line_range",
-              "start": 164
+              "start": 200
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -94,12 +94,12 @@
         },
         {
           "anchor": {
-            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
-            "content": "sha256:2e6b71f194f95ae3a119d49987ce890f73f507d3bc12bc37744e49d9eef068f6",
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "content": "sha256:c8af168508a6ecb89a411868c5f8d889a238623b7c602271c4d3f8310ff060e5",
             "locator": {
-              "end": 352,
+              "end": 389,
               "kind": "line_range",
-              "start": 340
+              "start": 376
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -107,12 +107,12 @@
         },
         {
           "anchor": {
-            "blob": "07edb836741f53873b4975dc77054c5c4f1b26e7",
-            "content": "sha256:434b3fcc7768078a051b0fbabb8576598a25dac5b5070b70f16158d0f815d205",
+            "blob": "3be90dcba27f39e6286b0f8eb030ba9041d35f30",
+            "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
             "locator": {
-              "end": 484,
+              "end": 521,
               "kind": "line_range",
-              "start": 406
+              "start": 493
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },

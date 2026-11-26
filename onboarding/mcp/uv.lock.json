@@ -1,0 +1,61 @@
+{
+  "path": "mcp/uv.lock",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6620d5bfb2114f7794aa7f0f2b64cdf5b7a446a7",
+        "content": "sha256:d5a8e1e6271f728c24f98fcac92de295a4138c9ec737b76bd0abb2873c06027f",
+        "locator": {
+          "end": 7,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-7M3P2R",
+      "invariant": "INV-BQFZCR",
+      "origin": {
+        "handoffEntry": "MIK-L36@v10 e1",
+        "leaf": "260928-MIK-L36"
+      },
+      "rationale": "The lock records the resolved editable distribution with its version; an unlocked mismatch would resolve a different package than the source it locks.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "6620d5bfb2114f7794aa7f0f2b64cdf5b7a446a7",
+        "content": "sha256:78e23f4944acc887d7f764cc88538a528e0b4678901332e212a01f4ce2e527ac",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-XXV97Y",
+      "invariant": "INV-DY0898",
+      "origin": {
+        "handoffEntry": "DEP-R01@v2 §1",
+        "leaf": "261125-DEP-L1"
+      },
+      "rationale": "Records the >=1.30.0,<2 mcp specifier and resolves the locked 1.x dependency graph consumed by frozen sync.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "2": {
+      "note": "The lock records the editable Agents Remember distribution, its Python requirement and its resolved dependencies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9111f219d7dcf97021d6681ad2dd742c85a47091",
+            "content": "sha256:eea3d05fb5ef33afcbb90880e935f807d5804264ba63c97a8e5a1bddfeb6faa9",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -6,7 +6,9 @@
 
 ## Purpose
 
-The canonical evidence-lane catalog: which test modules belong to which lane, so a leaf's checks can name the population they ran. Membership declares the selected population, never that an invocation ran or passed. The current parsed catalog declares 661 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness and one stress-durability member (807 total); stress-durability selects the native stdio memory regression, and provider-conformance and migration are empty. No module sits in two lanes, no lane repeats a module, and every named module exists on this tree.
+The canonical evidence-lane catalog: which test modules belong to which lane, so a leaf's checks can name the population they ran. Membership declares the selected population, never that an invocation ran or passed. The current parsed catalog declares 678 unit-regression, 3 public-contract, 125 integration and 23 architecture-fitness and one stress-durability member (830 total); stress-durability selects the native stdio memory regression, and provider-conformance and migration are empty. No module sits in two lanes, no lane repeats a module, and every named module exists on this tree. The integration lane includes `test_closed_held_store.py` and `test_role_launch_terminal_publication.py`.
+
+The integration lane selects the crossing dependent writer test once. It checks that the mounted dry plan uses the settled code tree and that the branch name resolves to its commit.
 
 The four native-attention test modules — `test_attention_native_kinds.py`, `test_attention_native_inputs.py`, `test_attention_notice_store.py` and `test_attention_notice_publication.py` — are declared in `unit-regression`, alongside `test_reader_timeline_spill.py`, `test_review_memory_watch.py`, `test_review_record_presence.py`, `test_route_review_clean_sync_door.py` and `test_reviewer_text_shape.py`. The removed `test_review_verification_observation_model.py` is absent from every lane. Retained L81 accounting, warmup, projection, watcher and budget suites keep their declared lanes; no removed local hosted test is selected as current evidence, and the full release procedure requires the whole current test population.
 
@@ -30,7 +32,7 @@ test_sync_reapply_merge.py is declared once in unit-regression; lane membership 
 
 ## Code Commentary
 
-The unit-regression lane includes `test_lean_card_citations.py` and `test_lean_symbol_anchors.py`.
+The unit-regression lane selects `test_file_briefs.py`, `test_moment_composer.py`, `test_product_start_messages.py` and `test_writer_rule_titles.py`. The integration lane selects `test_checkpoint_memory_ignore.py` and `test_worktree_file_briefs.py`. The unit-regression lane selects `test_recorded_leaf_memory_base.py`. Its source registration names the selected module.
 
 The unit-regression lane selects test_knowledge_reader_media.py; the integration lane selects test_serving_media.py. These declarations select tests and do not establish an invocation result.
 
@@ -102,7 +104,7 @@ Source declarations, mirrors and fixture assertions are not executed acceptance.
 
 `mcp/tests/test_mik_r177_gate_groups_identical_copies.py` is registered once in `unit-regression`, in the list's canonical order. The membership certifies no invocation; selection is catalog membership only.
 
-- The unit-regression lane declares sixteen canvas case modules.
+- The unit-regression lane declares nineteen canvas case modules.
 
 ## The mark-suite module
 
@@ -162,7 +164,11 @@ The existing unit-regression lane declares `test_l192_projection_watch_roots.py`
 
 Membership selects evidence without proving invocation.
 
-`test_memory_quality_source_files.py` is declared in integration. The current catalog therefore has 807 modules, including 119 integration modules; membership selects evidence and claims no execution result.
+`test_memory_quality_source_files.py` is declared in integration. The current catalog has 830 modules, including 125 integration modules; membership selects evidence and claims no execution result.
+
+`test_role_tool_scope.py` is declared once, in unit-regression, between `test_role_step_up.py` and `test_route_index_memory_scope.py`; membership selects evidence and certifies no invocation.
+
+`test_tool_schema_compaction.py` is declared once, in unit-regression, at line 654; membership selects evidence and certifies no invocation.
 
 - The current lane catalog declares test populations; no invocation or pass is implied.
 
@@ -192,17 +198,14 @@ Membership selects evidence without proving invocation.
 
 - The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution.
 
-- The current unit-regression lane declares sixteen canvas case modules. The lifecycle catalog declares canvas_host_test_support.py with affected cadence and a shared-builder rationale: host, presenter and route cases use one task, packet, published-revision and comparison shape. Membership and support declarations establish no execution or acceptance.
+- The current unit-regression lane declares nineteen canvas case modules. The lifecycle catalog declares canvas_host_test_support.py with affected cadence and a shared-builder rationale: host, presenter and route cases use one task, packet, published-revision and comparison shape. Membership and support declarations establish no execution or acceptance.
 
 - The seven lane identities remain declared; this is membership, not execution.
 
-- The current lane catalog declares seven lanes and 807 distinct module paths: 661 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness; stress-durability selects the native stdio memory regression, and provider-conformance and migration are empty. These current registrations establish no invocation or passing result.
-
-- The current catalog declares 807 distinct modules: 661 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness; stress-durability selects the native stdio memory regression, and provider-conformance and migration are empty. These declarations establish no invocation or passing result.
-
+- The lane catalog declares seven lanes and 830 distinct module paths: 678 unit-regression, 3 public-contract, 125 integration, 23 architecture-fitness and one stress-durability module. Stress-durability selects the native stdio memory regression. Provider-conformance and migration are empty. These source declarations establish no execution or passing result.
 - The current catalog selects `test_landing_workflow_setting.py` and `test_publication_merge_admission.py`, the existing explainer suites, and `test_dashboard_autostart_after_discovery.py`. The after-discovery suite’s source asserts scheduling after the discovery answer and a no-list first-call fallback through one latch. Membership names the selected population and supplies no invocation or passing result.
 
-- The parsed source selects 807 distinct modules across the seven existing lane identities: 661 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness; stress-durability selects the native stdio memory regression, and provider-conformance and migration are empty. It retains the after-discovery, explainer and publication/landing-workflow modules together with the nine retired-provider regressions, and omits the retired provider-current-state module. The declarations select evidence; they establish no invocation or passing result.
+- The catalog retains the after-discovery, explainer, publication and landing-workflow cases and all nine L192 retired-provider regression modules. The retired provider-current-state suite has no lane registration.
 
 
 
@@ -215,6 +218,9 @@ Membership selects evidence without proving invocation.
 
 - The full release procedure covers the whole current test population; catalog loading rejects missing and stale module memberships. [872]
 
+- The three R53 modules remain declared in unit-regression. Membership proves no invocation or PASS. Anchor: file [848]
+
+- The unit-regression lane includes the four modules delivered by KNO-L4. [879]
 
 - Extracted capsule surface suite in unit-regression Anchor: `test_capsule_serving_surface.py` Anchor: file [835]
 
@@ -242,9 +248,6 @@ Membership selects evidence without proving invocation.
 
 
 - Native reapply remains declared in unit-regression; membership is selection only and the list remains canonically ordered. Anchor: file [847]
-
-- The three R53 modules remain declared in unit-regression. Membership proves no invocation or PASS. Anchor: file [848]
-
 - Existing unit-regression lane declares test_task_document_order.py once; membership is selection, not execution. Anchor: file [849]
 
 
@@ -276,21 +279,13 @@ Membership selects evidence without proving invocation.
 
 
 
-
-
-- The current lane catalog declares seven lanes and 807 distinct module paths: 661 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness, and one stress-durability module. Provider-conformance and migration are empty. These current registrations establish no invocation or passing result. [864]
-
-
+- The lane catalog declares 830 distinct modules across seven lanes: 678 unit-regression, 3 public-contract, 125 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [864]
 
 
 - The current source declares lane membership, including the three MIK-R53 modules in unit-regression. Membership does not establish invocation or PASS. Anchor: file [866]
 
 
-
-
-- The current catalog declares 807 distinct modules: 661 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness, and one stress-durability module. Provider-conformance and migration are empty. These declarations establish no invocation or passing result. [867]
-
-
+- The lane catalog declares 830 distinct modules across seven lanes: 678 unit-regression, 3 public-contract, 125 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [867]
 
 
 - The lane catalog selects landing-workflow, publication-merge, explainer and after-discovery regressions; the after-discovery source asserts scheduling after the discovery answer and a no-list first-call fallback through one latch. These are declarations and source assertions, not execution. [868]
@@ -300,18 +295,11 @@ Membership selects evidence without proving invocation.
 - The integration lane registers the crossing dependent writer test once. [878]
 
 
-- The parsed source selects 807 distinct modules across the seven existing lane identities: 661 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness, and one stress-durability module. Provider-conformance and migration are empty. It retains the after-discovery, explainer and publication/landing-workflow modules together with the nine retired-provider regressions, and omits the retired provider-current-state module. The declarations select evidence; they establish no invocation or passing result. [869]
+- The lane catalog declares 830 distinct modules across seven lanes: 678 unit-regression, 3 public-contract, 125 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. The catalog retains the after-discovery, explainer, publication and landing-workflow cases and all nine L192 retired-provider regression modules. The retired provider-current-state suite has no lane registration. [869]
 
 
 
 
-
-
-- The current catalog declares 807 distinct modules: 661 unit-regression, 3 public-contract, 119 integration and 23 architecture-fitness, and one stress-durability module. Provider-conformance and migration are empty. These declarations establish no invocation or passing result. [870]
-
-
-
-
-- The browser suite is selected in the unit-regression lane. Anchor: file [871]
+- The lane catalog declares 830 distinct modules across seven lanes: 678 unit-regression, 3 public-contract, 125 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [870]
 
 - The unit lane selects both Lean test modules. [875]

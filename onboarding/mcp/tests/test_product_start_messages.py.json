@@ -1,0 +1,110 @@
+{
+  "path": "mcp/tests/test_product_start_messages.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "7d238c1add86da4c6d2acf568f4e0aba74b20641",
+        "content": "sha256:0f63357b92c20e589025301742880db43c8949275fa70f5bb071fae58bc9a993",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_busy_recipient_gets_it_held_under_the_product_sender"
+        }
+      },
+      "facet": "A busy recipient's notice enters the same held-delivery path under the product sender.",
+      "id": "PRF-0QJMV5",
+      "invariant": "INV-9Z6T69",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 9–10",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7d238c1add86da4c6d2acf568f4e0aba74b20641",
+        "content": "sha256:fbc9f5b705d3f584f69f23b4aedf413fb20fbe7f8ae8a9317ba6a31cfc4fdce2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_direct_grant_starts_of_both_roles_send_a_real_moment"
+        }
+      },
+      "facet": "A bound direct grant sends the start moment to the exact Reviewer and Curator.",
+      "id": "PRF-E29B0R",
+      "invariant": "INV-9Z6T69",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 9–10",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7d238c1add86da4c6d2acf568f4e0aba74b20641",
+        "content": "sha256:936290d1e99d8e560d4806119802af83e458e0a153f80b33988727f4ae4f977a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_direct_grant_unconverted_start_sends_a_notice_without_a_file"
+        }
+      },
+      "facet": "A direct start over unconverted memory sends a notice with no file.",
+      "id": "PRF-F0CJ9B",
+      "invariant": "INV-9Z6T69",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 9–10",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7d238c1add86da4c6d2acf568f4e0aba74b20641",
+        "content": "sha256:f5a04303a1fa4b5593279e421ee67529934f122dbd57a3fd84b0868a56f4cfff",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_held_curator_without_ignore_line_gets_the_moment_in_its_scratch"
+        }
+      },
+      "facet": "The held converted Curator receives its moment in recorded scratch when no ignore rule is present.",
+      "id": "PRF-PVMECW",
+      "invariant": "INV-9Z6T69",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 9–10",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7d238c1add86da4c6d2acf568f4e0aba74b20641",
+        "content": "sha256:1d9ed32d9f8d78b3e62215694fcfd9a2ffb654cf5784fe43f0c497b31cf97731",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_launcher_starts_of_both_roles_send_a_real_moment"
+        }
+      },
+      "facet": "The mounted dashboard starts both roles with readable moment files, and a repeated request sends no duplicate.",
+      "id": "PRF-Q41X67",
+      "invariant": "INV-9Z6T69",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 9–10",
+        "leaf": "261112-KNO-L4"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The mounted dashboard start delivers one readable notice for each role request and another for a replacement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d238c1add86da4c6d2acf568f4e0aba74b20641",
+            "content": "sha256:1d9ed32d9f8d78b3e62215694fcfd9a2ffb654cf5784fe43f0c497b31cf97731",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_launcher_starts_of_both_roles_send_a_real_moment"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,6 +1,6 @@
 {
   "anchor": {
-    "blob": "0fd75b24ffec75526e8f2f1857ba0cb88aebe0f3",
+    "blob": "0ed4cad1ff296472a39d6ecd1f97f4dc990d7098",
     "content": "sha256:d00e0ff016527511ecd092adbadf515512867bdd3182bf3ca0482e1f0e544f3e",
     "locator": {
       "kind": "symbol",
@@ -18,12 +18,23 @@
     "leaf": "260928-MIK-L190",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 3,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928-MIK-L190"
   },
   "state": "open",
-  "statement": "The existing delivery sweep enumerates the task-root population before advancing its bounded receipt reads."
+  "statement": "The existing delivery sweep enumerates the task-root population before advancing its bounded receipt reads.",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
 }

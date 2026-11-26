@@ -120,7 +120,7 @@ The application layer decides when the report exists, and worktree cleanup owns 
 
 
 
-> Retained earlier citation wording: - Cleanup removes the reserved reports directory before it attempts to remove the enclosure. [8]
+> Retained earlier citation wording: - Cleanup removes the reserved reports directory before it attempts to remove the enclosure.
 
 
 
@@ -187,7 +187,9 @@ routing report calls this function, so the report cannot drift from the checklis
 The `knowledgeReview` section remains outside it, for the same reason as before.
 
 
-- Cleanup removes the reserved reports directory before it attempts to remove the enclosure.  Anchor: `_removed_directories` [8]
+
+- Terminal cleanup moves out preserved reports, real messages, and leaf tool calls before removing the entire worktree group. [8]
+
 
 - A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist, and since MIK-R28 it also hands the checklist the "without proof" list (`None` for an unconverted tree).  Anchor: `resolve_leaf_memory_scope` `_resolve_execution` `_execute_memory_quality` `_attach_curator_checklist` [7]
 

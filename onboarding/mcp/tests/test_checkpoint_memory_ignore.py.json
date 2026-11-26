@@ -1,0 +1,126 @@
+{
+  "path": "mcp/tests/test_checkpoint_memory_ignore.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "149a70813ab21a8e34325f754e7478f858383559",
+        "content": "sha256:507caa82c4b9f85197c71b9b3fdf3ada4966245653f253321bd478a9cc39879f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_owner_edit_preserves_auto_merge_conflict"
+        }
+      },
+      "facet": "The live merge leaves an owner's change to the conflict file in place.",
+      "id": "PRF-2BFWDT",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "149a70813ab21a8e34325f754e7478f858383559",
+        "content": "sha256:634401f04a219889de3d4cecba928cfee3cb834c9cfb7f8ed3a6a09fc9bfa16d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_authored_interior_newline_retains_git_conflict"
+        }
+      },
+      "facet": "An interior authored newline conflict remains unresolved with its original Git conflict bytes.",
+      "id": "PRF-FEPW13",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "149a70813ab21a8e34325f754e7478f858383559",
+        "content": "sha256:badaa6c0b121f9d19cc5e2271f22f705450953a7eca3d4c28b749e3c974e1b59",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unterminated_final_rule_replacement_merges"
+        }
+      },
+      "facet": "Converted sync retains the other parent's replacement rule after normalizing the generated stanza's terminal newline.",
+      "id": "PRF-H781K1",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "149a70813ab21a8e34325f754e7478f858383559",
+        "content": "sha256:d97da9666e89f75958d46c24c6028a0e1126ab4bb70404eba8a6999725358ea3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_generated_and_authored_appends_merge_together"
+        }
+      },
+      "facet": "A clean authored merge retains its independent rule and restores the generated briefs stanza.",
+      "id": "PRF-HE4BE5",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Both final-newline cases publish the exact merged ignore file with its two parents and effective Git ignore rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "149a70813ab21a8e34325f754e7478f858383559",
+            "content": "sha256:dec2b5d41a3f298023603b94f075e8f99a3f3b385a1d45cb5c7f9e328ae8c493",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A true authored conflict survives in the working file and index, including when it changes an internal newline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "149a70813ab21a8e34325f754e7478f858383559",
+            "content": "sha256:634401f04a219889de3d4cecba928cfee3cb834c9cfb7f8ed3a6a09fc9bfa16d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_authored_interior_newline_retains_git_conflict"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "An owner edit to Git's conflict bytes is still present when sync reports the unresolved merge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "149a70813ab21a8e34325f754e7478f858383559",
+            "content": "sha256:507caa82c4b9f85197c71b9b3fdf3ada4966245653f253321bd478a9cc39879f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_owner_edit_preserves_auto_merge_conflict"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

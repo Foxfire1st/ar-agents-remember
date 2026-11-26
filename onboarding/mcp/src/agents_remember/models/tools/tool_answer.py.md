@@ -19,7 +19,9 @@ The retained `role_message` exception describes the normative cut/file policy fo
 
 
 
+
 - The installation answer projection includes the running-server inventory and dashboard part. [12]
+
 
 
 - Framework keys admit buildCurrentness and warningCut on every answer row. [13]
@@ -30,7 +32,7 @@ The retained `role_message` exception describes the normative cut/file policy fo
 
 The note-only `citation_note_revision` answer has a final shaped bound of 1,200 tokens. Its response names the revised reference, before/after sidecar digests and refusal vocabulary; complete sidecar rows remain whole-result log data.
 
-The candidate assigns final explicit bounds: read_ar_files 2400, knowledge_read 4000, knowledge_diff 1500 and context_packet 360 tokens. These four names have no L109 interim row, and INTERIM_LEAVES does not contain L109. This is the candidate’s table/guard state, not a Git landing claim. Twenty-entry list caps remain. Overflow shaping targets 400 tokens while retaining the exact recorded-result location and the final cut hint, even when mandatory content cannot fit that target.
+The bounds are `read_ar_files` 2400, `knowledge_read` 4000, `knowledge_diff` 1500 and `context_packet` 360 tokens. The compact file briefs are fitted within the `read_ar_files` bound before the answer leaves. These four names have no L109 interim row, and INTERIM_LEAVES does not contain L109. This is the candidate’s table/guard state, not a Git landing claim. Twenty-entry list caps remain. Overflow shaping targets 400 tokens while retaining the exact recorded-result location and the final cut hint, even when mandatory content cannot fit that target.
 
 ### Retained answer keys
 
@@ -104,3 +106,5 @@ SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery bounds; direct_e
 - The shaped-bound table gives user_settings_init a 900-token ceiling. [9]
 
 - explainer_control is attributed to L183 in the retained interim answer vocabulary; its source comment says it stands interim until its leaf lands. Anchor: `INTERIM_TOOL_LEAF` [10]
+
+- The retained 2400 token bound covers the compact read_ar_files brief. [16]

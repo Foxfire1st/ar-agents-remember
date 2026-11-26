@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "15ae9eaacc0cf4a348b42f767bc4c766f36c5e41",
+            "blob": "5611dfabbfb044d0e59b1487b317ac3c21e8332d",
             "content": "sha256:d2fd2497ccf76e2867930bb35af0ba2f03f03adc482a4bad36d800179ea4a2fc",
             "locator": {
               "end": 5,
@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d914a0a27f7f3953d73e5caec7138997a432ef82",
+            "blob": "b9fa47a89c9ddd840e0a38800093c4488a641283",
             "content": "sha256:e0f5339047af053e5cde5eb28cacba43cad9bec73f23b3611e781d3c3b5086b0",
             "locator": {
-              "end": 3614,
+              "end": 3695,
               "kind": "line_range",
-              "start": 3597
+              "start": 3678
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -38,14 +38,30 @@
         },
         {
           "anchor": {
-            "blob": "d914a0a27f7f3953d73e5caec7138997a432ef82",
+            "blob": "b9fa47a89c9ddd840e0a38800093c4488a641283",
             "content": "sha256:dd29b9575318035917550d8cd687bff9d97bc8f7656afd6847e27186bf2bdcd1",
             "locator": {
-              "end": 5120,
+              "end": 5305,
               "kind": "line_range",
-              "start": 5117
+              "start": 5302
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The same revision keeps its seal when derived standing differs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5611dfabbfb044d0e59b1487b317ac3c21e8332d",
+            "content": "sha256:2953bcbd87fbbfd26c0a9a815d1baab81f7c8037c1a5dc0d41b8e24d70c14ecb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_revision_seal_covers_no_derived_state"
+            }
           },
           "kind": "test"
         }
@@ -56,12 +72,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "15ae9eaacc0cf4a348b42f767bc4c766f36c5e41",
-            "content": "sha256:70df648e200218ec63c68df203a8431e36a88aa48993c3762972465e6a7320c1",
+            "blob": "5611dfabbfb044d0e59b1487b317ac3c21e8332d",
+            "content": "sha256:335e5d7ef289abe634fe6153080a64eb53bf5a3e0721959d029b32f2160d2147",
             "locator": {
-              "end": 95,
+              "end": 118,
               "kind": "line_range",
-              "start": 63
+              "start": 65
             }
           },
           "kind": "test"
@@ -73,12 +89,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "15ae9eaacc0cf4a348b42f767bc4c766f36c5e41",
-            "content": "sha256:751c3a23516ea55d8e89f96036e9d894ba7aa1fb7ba9e3b745682d3f6d30e076",
+            "blob": "5611dfabbfb044d0e59b1487b317ac3c21e8332d",
+            "content": "sha256:c49918ad2aa60e244ad3f5a4571f9c81888158d72a50bca6cf13a709b7b64850",
             "locator": {
-              "end": 209,
+              "end": 216,
               "kind": "line_range",
-              "start": 184
+              "start": 192
             }
           },
           "kind": "test"
@@ -90,12 +106,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "15ae9eaacc0cf4a348b42f767bc4c766f36c5e41",
-            "content": "sha256:08f23a567e91b79e33c0065a58a891a4811bad3e18d7523f553b9f3d4bf17e26",
+            "blob": "5611dfabbfb044d0e59b1487b317ac3c21e8332d",
+            "content": "sha256:7da14ffd5c3bb84b10906b63c61ba9cc1eae504492b59e0b9797d019906cd7b5",
             "locator": {
-              "end": 181,
+              "end": 189,
               "kind": "line_range",
-              "start": 150
+              "start": 158
             }
           },
           "kind": "test"
@@ -107,11 +123,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
-            "content": "sha256:bf82a17c91fe9724b782c711419f091eeecdebe93cc2087b9d7194c9a48bdce3",
+            "blob": "3d052ff5b8e4e6e5d88882fdee32d3d5184272a8",
+            "content": "sha256:fc89467f0db059fa7d31629768361be800785dfc15c44f37eda02766ebdf6475",
             "locator": {
-              "kind": "symbol",
-              "name": "canonical_revision_payload"
+              "end": 53,
+              "kind": "line_range",
+              "start": 33
             },
             "path": "mcp/src/agents_remember/models/knowledge/digest.py"
           },
@@ -119,11 +136,12 @@
         },
         {
           "anchor": {
-            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
-            "content": "sha256:f987f04351f9a963408d04353decdced875c8d570d21bdeb16852ae8f8f75efc",
+            "blob": "3d052ff5b8e4e6e5d88882fdee32d3d5184272a8",
+            "content": "sha256:83698392de83e24c362f68227e415012725c444bec9a0ab58371e0f9437eaac4",
             "locator": {
-              "kind": "symbol",
-              "name": "canonical_family_revision_payload"
+              "end": 79,
+              "kind": "line_range",
+              "start": 62
             },
             "path": "mcp/src/agents_remember/models/knowledge/digest.py"
           },
@@ -132,12 +150,12 @@
       ]
     },
     "8": {
-      "note": "The read-path recomputation that turns a row whose stored cells were rewritten behind its seal into a storage defect.\n\nAnchor: `decode_revision_row` `decode_family_revision_row`",
+      "note": "The read-path recomputation that turns a row whose stored cells were rewritten behind its seal into a storage defect.",
       "targets": [
         {
           "anchor": {
-            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
-            "content": "sha256:92d4353cb71f442af226829358fd09ea8dd54591ffed608d4b7a3779190116b8",
+            "blob": "382764f1d33cd50a7b8c7ff1757afd64f2b3306d",
+            "content": "sha256:f39ec63fd764b1e65b361b991d8c7774adca867237d96bcccf6674330a924e4c",
             "locator": {
               "kind": "file"
             },
@@ -148,16 +166,16 @@
       ]
     },
     "9": {
-      "note": "The unit-regression lane row this module is registered by. Anchor: \"mcp/tests/test_knowledge_revision_seals.py\" Anchor: \"mcp/tests/test_knowledge_revision_seals.py\"",
+      "note": "The unit-regression lane selects mcp/tests/test_knowledge_revision_seals.py.\n\nAnchor: `mcp/tests/test_knowledge_revision_seals.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "75006e874ab9c238187bcf9044d224511529c135",
+            "blob": "9b2f8dfb74c9f9e7cc39c1097e6d5f7e0ff20215",
             "content": "sha256:b7b1484eb0fa1e1fb3744e4db9c6a29b9026c328733a26254ee84d07cde416e7",
             "locator": {
-              "end": 281,
+              "end": 287,
               "kind": "line_range",
-              "start": 281
+              "start": 287
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

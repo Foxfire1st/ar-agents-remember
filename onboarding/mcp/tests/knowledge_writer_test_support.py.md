@@ -18,7 +18,8 @@ and a leaf contract naming both worktrees, so the command line runs exactly as a
 ### Logic
 
 - `CODE` defines `land_pair`, `Helper` and `Other` (same-named methods, for the qualified-symbol rule).
-- `entry(...)` builds a producer entry with curator keys; `SCOPE`, `ADMISSION` and `target(...)` are the
+- `entry(...)` builds a producer entry with curator keys. A new rule with admission and no invariant ID defaults to `Rule <entry_id>`. The helper keeps supplied titles and omits the key for an explicit `None`.
+- `SCOPE`, `ADMISSION` and `target(...)` are the
   shared curator values.
 - **Since MIK-R27 (leaf 260928-MIK-L27) the base records are genuine exports.** They are
   `legacy-unassessed` and carry an `origin.legacyId` (`legacy-invariant-landing-pair`,
@@ -30,6 +31,7 @@ and a leaf contract naming both worktrees, so the command line runs exactly as a
   admitted; the admission tests claim the checkable criteria themselves. It used to claim
   `guarded_by_test` with no proof behind it.
 - `tree_bytes` and `read_json` read the memory tree for byte-identity and content assertions.
+- `build_crossing_world(world)` prepares the crossing route's open sync. It builds a series contract, adds a real memory worktree on its own work branch with an open `<task-id>-crossing-1` history file, and returns a `CrossingWorld` with the contract, that checkout, the crossing owner, a `SyncOperationRecord` in phase `memory-resolution-required` and its store. The record's code side is completed at the code `HEAD`, and its memory side owns the crossing history. Tests write the record to the store before calling the route.
 
 ### Conventions
 
@@ -63,7 +65,7 @@ The world.
 - The base records' legacy IDs and the IDs derived from them. [1]
 - The shared admission claims a criterion the validator does not check. [2]
 
-- The base memory: one exported invariant, one realization, one exported family. [3]
+- The base memory: one exported invariant, one realization, one exported family. Anchor: `base_memory` [3]
 
 - The leaf contract naming both worktrees. [4]
 - Both repositories and the task root. [5]
@@ -75,3 +77,5 @@ No cross-repo boundary is crossed: the writer reads the paired code worktree and
 worktree of one repository.
 
 No cross-repo boundary is crossed by this file.
+
+- The entry helper supplies the title required for new-rule fixtures and honors explicit omission. [8]

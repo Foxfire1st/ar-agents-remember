@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+        "blob": "55752b049b88124a221620b663ee036c825d85ae",
         "content": "sha256:c9aadb43d9b043357c541d9f9f9e6532e5ace1bc4cbc7142b4a9a1a5b56147a9",
         "locator": {
           "kind": "symbol",
@@ -26,11 +26,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
-            "content": "sha256:3800c4595e1f9a984649face53b7226fad3aae0895f842726784da91c9f124bb",
+            "blob": "55752b049b88124a221620b663ee036c825d85ae",
+            "content": "sha256:60c230844b37e998b6a8ab1f5d4fd61e60ffb2b6db6e250eba821df6c246992e",
             "locator": {
-              "kind": "symbol",
-              "name": "_plan_leaf_doc_reset"
+              "end": 528,
+              "kind": "line_range",
+              "start": 486
             }
           },
           "kind": "code"
@@ -38,14 +39,16 @@
       ]
     },
     "19": {
-      "note": "`_plan_master_index_reset` owns the current boundary described above.\n\nAnchor: `_plan_master_index_reset`",
+      "note": "`_plan_master_index_reset` owns the current boundary described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
-            "content": "sha256:f798f8b474c24ccf0049bcc21a17d966f51f6bb4cb2afe7b876f5b82d3285be8",
+            "blob": "55752b049b88124a221620b663ee036c825d85ae",
+            "content": "sha256:4dc3ad6e9c80312e89e8c8bda5dee751006e66c8a131a2c8452a0c6267503587",
             "locator": {
-              "kind": "file"
+              "end": 688,
+              "kind": "line_range",
+              "start": 648
             }
           },
           "kind": "code"
@@ -57,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "blob": "55752b049b88124a221620b663ee036c825d85ae",
             "content": "sha256:40eae1fe71f30f7e778650b60405a4d6860e6931bf22f7a49e544284f66fafbe",
             "locator": {
               "kind": "symbol",
@@ -73,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "blob": "55752b049b88124a221620b663ee036c825d85ae",
             "content": "sha256:990ae872da7fba050e1aa445414ef95fb7658e10bb92ab91a34e84dd93aeb350",
             "locator": {
               "kind": "symbol",
@@ -85,14 +88,16 @@
       ]
     },
     "22": {
-      "note": "Terminal preflight, accepted memory ancestry, and integrated source-position checks.\n\nAnchor: `_reopen_preflight_refusal`",
+      "note": "Terminal preflight, accepted memory ancestry, and integrated source-position checks.",
       "targets": [
         {
           "anchor": {
-            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
-            "content": "sha256:f798f8b474c24ccf0049bcc21a17d966f51f6bb4cb2afe7b876f5b82d3285be8",
+            "blob": "55752b049b88124a221620b663ee036c825d85ae",
+            "content": "sha256:ee03b311a71c2c9743ab09ce9b960e4f299de3400ac13735f6b0b28fee95302e",
             "locator": {
-              "kind": "file"
+              "end": 401,
+              "kind": "line_range",
+              "start": 313
             }
           },
           "kind": "code"
@@ -134,14 +139,16 @@
       ]
     },
     "25": {
-      "note": "`_reopen_master_path` resolves an unnamed leaf's master through the shared folder rule and a named reference through the shared `master_json_path_from_ref` resolver, refusing a reference that leaves the task folder.\n\nAnchor: `_reopen_master_path`",
+      "note": "`_reopen_master_path` resolves an unnamed leaf's master through the shared folder rule and a named reference through the shared `master_json_path_from_ref` resolver, refusing a reference that leaves the task folder.",
       "targets": [
         {
           "anchor": {
-            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
-            "content": "sha256:f798f8b474c24ccf0049bcc21a17d966f51f6bb4cb2afe7b876f5b82d3285be8",
+            "blob": "55752b049b88124a221620b663ee036c825d85ae",
+            "content": "sha256:d546a0f7bf88067270d5f5275480d80245749402682caf8f9cc10587271e7b00",
             "locator": {
-              "kind": "file"
+              "end": 699,
+              "kind": "line_range",
+              "start": 691
             }
           },
           "kind": "code"
@@ -153,7 +160,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "blob": "55752b049b88124a221620b663ee036c825d85ae",
             "content": "sha256:4dc3ad6e9c80312e89e8c8bda5dee751006e66c8a131a2c8452a0c6267503587",
             "locator": {
               "kind": "symbol",
@@ -169,11 +176,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
-            "content": "sha256:3800c4595e1f9a984649face53b7226fad3aae0895f842726784da91c9f124bb",
+            "blob": "55752b049b88124a221620b663ee036c825d85ae",
+            "content": "sha256:60c230844b37e998b6a8ab1f5d4fd61e60ffb2b6db6e250eba821df6c246992e",
             "locator": {
-              "kind": "symbol",
-              "name": "_plan_leaf_doc_reset"
+              "end": 528,
+              "kind": "line_range",
+              "start": 486
             }
           },
           "kind": "code"
@@ -235,24 +243,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "blob": "55752b049b88124a221620b663ee036c825d85ae",
             "content": "sha256:58e3a6aff422b971f46023b0a771ccfc83d95b9649a041601fb38827f203a646",
             "locator": {
-              "end": 568,
+              "end": 569,
               "kind": "line_range",
-              "start": 554
+              "start": 555
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "blob": "55752b049b88124a221620b663ee036c825d85ae",
             "content": "sha256:fbedadfc1830e01aa7839085ffe90de4af221cfc2660044caef15ba7ddbf1fa8",
             "locator": {
-              "end": 636,
+              "end": 637,
               "kind": "line_range",
-              "start": 572
+              "start": 573
             }
           },
           "kind": "code"

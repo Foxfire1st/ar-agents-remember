@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_location_reservation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Imports `exclusive_access` and the canonical locator path/ownership definitions (`_LOCATION_OWNERSHIP`, `lifecycle_operation_locator_path`) to guarantee a single lock address across subsystems.\n\nAnchor: `lifecycle_operation_locator_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28d3c4cd0bf18ef754dfad3ada5c165e4292d41a",
+            "content": "sha256:1a4e3fb4b2710e53ae84bdc85242bcdc8220dd62e345c2b0d96e25261df51a6a",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`lifecycle_location_reservation` returns an `exclusive_access` context manager bound to `lifecycle_operation_locator_path(coordination_root, contract_path)` with `_LOCATION_OWNERSHIP`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28d3c4cd0bf18ef754dfad3ada5c165e4292d41a",
+            "content": "sha256:6bbf9c18f4c7597b01471544084da013b8e55cf6c2267c4e1922fd700e846941",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_location_reservation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

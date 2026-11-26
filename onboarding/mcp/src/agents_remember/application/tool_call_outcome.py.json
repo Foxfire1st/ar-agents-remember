@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/tool_call_outcome.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The outcome helper adapts refusal fields for logging without rewriting the tool result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32cb87e16a27fd0554a86ffe2429967939521d95",
+            "content": "sha256:d14785bea6235af8fd2a87351985a92b49258471cade18db66f51315241d42ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "call_outcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

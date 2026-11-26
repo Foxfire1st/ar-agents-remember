@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dcc6cc5f606fe5fc2b2b837b3608580d0592151b",
+        "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
         "content": "sha256:a6b07b45c63823bf9788ef74b4aecc45883351cfa7eb3ddf4fb9d39e650f5d15",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "dcc6cc5f606fe5fc2b2b837b3608580d0592151b",
+        "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
+        "content": "sha256:821cd5dc92b5a85facbef521d552ebb1ac7a1bbdff82babb3dab423a3f8f06bb",
+        "locator": {
+          "kind": "symbol",
+          "name": "usage_read_batch"
+        }
+      },
+      "id": "RLZ-3SZADM",
+      "invariant": "INV-795NRN",
+      "origin": {
+        "handoffEntry": "BUG-R37@v1 rule 1",
+        "leaf": "261112-BUG-L37"
+      },
+      "rationale": "The publication and role record determine the ordered candidates for the claimed report.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
         "content": "sha256:b89e535d05d3270d1d44c2c5e169d84c685f30b6849c2808453bd7d6303eec60",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "dcc6cc5f606fe5fc2b2b837b3608580d0592151b",
+        "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
         "content": "sha256:5e4a32d2dc7df5a3a35bfcdd918b414675462cc2158dea4ba2c5276e65f6c595",
         "locator": {
           "kind": "symbol",
@@ -57,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "dcc6cc5f606fe5fc2b2b837b3608580d0592151b",
-        "content": "sha256:3f58f05948f03bafa6ae12c93570f7bd48488df0aedf038b557876d67c9af63d",
+        "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
+        "content": "sha256:d64f2d6a5a5bff85890f694507bc691b989fb85db3666dcc22892876a9143c4b",
         "locator": {
           "kind": "file"
         }
@@ -79,12 +97,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcc6cc5f606fe5fc2b2b837b3608580d0592151b",
+            "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
             "content": "sha256:b89e535d05d3270d1d44c2c5e169d84c685f30b6849c2808453bd7d6303eec60",
             "locator": {
-              "end": 316,
+              "end": 357,
               "kind": "line_range",
-              "start": 229
+              "start": 270
             }
           },
           "kind": "code"

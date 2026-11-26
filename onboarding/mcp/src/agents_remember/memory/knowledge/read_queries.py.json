@@ -34,11 +34,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "blob": "6869b696c169705ffdb8dcf595685df0bc2fb6b5",
             "content": "sha256:37710426cf694c85158fb041b0a5ece12a253bfbb37dbddd70f41690043d01be",
             "locator": {
-              "kind": "symbol",
-              "name": "CANONICAL_TABLES"
+              "end": 56,
+              "kind": "line_range",
+              "start": 47
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
           },
@@ -46,11 +47,12 @@
         },
         {
           "anchor": {
-            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
-            "content": "sha256:700189b42ddf94c856a2d568690141d4e38708a842baeb2937d92984ecfd2db9",
+            "blob": "6869b696c169705ffdb8dcf595685df0bc2fb6b5",
+            "content": "sha256:70af775405d8ff5ef9adbd9d81629c50cafb2d2a89988f96f762e216111c88c1",
             "locator": {
-              "kind": "symbol",
-              "name": "CANONICAL_COLUMNS"
+              "end": 112,
+              "kind": "line_range",
+              "start": 61
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
           },

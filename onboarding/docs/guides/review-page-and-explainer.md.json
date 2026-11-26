@@ -123,6 +123,23 @@
           "kind": "code"
         }
       ]
+    },
+    "3": {
+      "note": "The review guide shows how to compare a task’s code and memory, read Curator judgments and request an explanation page.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06a29017c896054f25135a9d780599c59e7b89b7",
+            "content": "sha256:defccfbfebd6f722843b7df4e981f5aff26de37428c241022ee7fef2068c9f4d",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

@@ -20,9 +20,9 @@ Closeout/coherence/finalize/reopen/task_doc declarations retain canonical light 
 
 ### Current Contract
 
-The task_doc description now includes `put_open_question`; the finalizer description explicitly requires a master rather than advertising standalone leaves. JSON remains canonical and Markdown generated. These are registration descriptions forwarded to existing application owners, not independent authorization, publication or execution proof.
+The `task_doc` description includes `put_open_question`; the finalizer description explicitly requires a master rather than advertising standalone leaves. JSON remains canonical and Markdown generated. These are registration descriptions forwarded to existing application owners, not independent authorization, publication or execution proof.
 
-The compact task_doc description names write/linkage operations and canonical generated-file reading. get/read_steps are removed and answered with operation-removed; they are not usable observations. Flat fields_file/section_body_file inputs are forwarded to the authoring owner. Delivered writes use ok/updated phrases; dry answers use wouldLose/diff and retained locations. Review, linkage, retirement and curator-coherence authorities remain at their established application/reference owners; short descriptions and a finished tool turn do not certify them.
+The compact `task_doc` description names its kind vocabulary (`subTask` or `master`), write/linkage operations, canonical `.md` file reading, and `alignmentSweep` on packet writes, pointing to `docs/reference/mcp-tools.md` for the longer account. Application owners continue to refuse removed `get`/`read_steps` with `operation-removed`, accept forwarded flat `fields_file`/`section_body_file` inputs, and own write/dry-run response shapes (`ok`/`updated`, `wouldLose`/`diff`), review, linkage, retirement, and curator-coherence authorities; short descriptions and a finished tool turn do not certify them.
 
 ### Review description contract
 
@@ -99,9 +99,11 @@ The compact task_doc description names write/linkage operations and canonical ge
 
 `lifecycle_finalize_task` packs its three document arguments into `FinalizeTaskDocs(task_doc_path,
 master_doc_path, subtask_number)` and keeps `dry_run` and `teardown_providers` separate. Its
-docstring states the terminal semantics: the task's landed commit must be reachable from the
-contract's local target/source branch — a PR-gated flow must complete the merge and pull first, so
-the proof is structurally identical to a non-PR edge — and no squash-merge equivalence is attempted.
+compact docstring summarizes proving the landed edge, completing a task once all steps are done,
+reconciling its parent row (ancestors are not completed; leaves require a master), and its states
+(`finalized`, `would-finalize`, `blocked`), pointing to `docs/reference/mcp-tools.md`. The
+application owner enforces the terminal branch-reachability proof (no squash-merge equivalence is
+attempted, so a PR-gated flow completes merge and pull first).
 The L38 legacy-light standalone-success exception is historical and retired. A leaf now requires its contract-bound task document and exact master row, from the named parent or folder master; a legacy non-master `task.json` receives no standalone fallback merely because its schema is readable. Missing authority refuses with the task-document-resolution error and the route to author the leaf under its master. This is distinct from a valid series-master contract without a commanding sprint: the series path may complete its own master document. Finalizing a master does not archive it.
 
 Reopen resets the same leaf id; cleaned behind-tip leaves pass only when their landing is ancestral to current tips. It refuses masters, in-flight leaves,
@@ -125,7 +127,9 @@ recreates everything.
 
 The task_doc compact description now names sibling advice in alignmentSweep on packet writes, while keeping canonical JSON and rendered Markdown reading distinct. The description does not implement the sweep, authorize release or change task-write admission.
 
+
 - Task-doc compact description names alignmentSweep advice. [9]
+
 
 ## Evidence
 
@@ -185,7 +189,7 @@ real lifecycle action rather than pretending completion.
 
 ## MCAR-L02 Curator-Coherence Registration
 
-The current compact curator_coherence description names its four actions, all nine required publication identity/caller fields, inline or file-backed judgments, and structured-manifest authority; it points to docs/tool-details.md for the longer explanation. Action-specific validation and detailed prepare/publish transport behavior belong to the request/application owners, not to promises repeated in this shortened docstring.
+The current compact `curator_coherence` description names its four actions (`prepare`, `publish`, `inspect`, `validate`) over one leaf's curator-coherence authority, all nine required publication identity/caller fields, inline or file-backed judgments (`judgments` or `judgments_file`), and points to `docs/tool-details.md` for the longer explanation; `closeout_queue` summarizes inspecting or rebuilding a sprint's waiting-only closeout projection (`valid-built`, `invalid-empty`, `blocked`). Structured-manifest authority, action-specific validation, and detailed prepare/publish transport behavior belong to the request/application owners, not to promises repeated in this shortened docstring.
 
 > **Retained historical description account — superseded by the current compact registration above:**
 > `register_task_tools` now advertises one nested-request `curator_coherence` tool with
@@ -243,7 +247,19 @@ Anchor:
 
 Source: mcp/src/agents_remember/mcp/registration/tasks.py
 
-- The `task_doc` description lists `retire_master` among the compact operation vocabulary and states only that writes answer `ok` while dry runs answer `wouldLose` and the diff. [5]
-- The compact task_doc description names write/linkage operations and canonical generated-file reading. get/read_steps are removed and answered with operation-removed; they are not usable observations. Flat fields_file/section_body_file inputs are forwarded to the authoring owner. Delivered writes use ok/updated phrases; dry answers use wouldLose/diff and retained locations. Review, linkage, retirement and curator-coherence authorities remain at their established application/reference owners; short descriptions and a finished tool turn do not certify them. [6]
+
+
+- The `task_doc` description lists `retire_master` among the compact operation vocabulary and points to `docs/reference/mcp-tools.md` for the longer account. [5]
+
+
+
+
+- The compact `task_doc` description names kind (`subTask` or `master`), write/linkage operations, canonical `.md` file reading, and `alignmentSweep` on packet writes; application owners enforce `operation-removed` for `get`/`read_steps`, forwarded `fields_file`/`section_body_file` inputs, and review/linkage/retirement/coherence authorities. [6]
+
+
+
 - Descriptions include keyed open-question writes and require master authority for finalization. [7]
+
+
+
 - Closeout/coherence/finalize/reopen/task_doc declarations retain canonical light models; task_doc operation/edit/target constructors load inside its call. [8]

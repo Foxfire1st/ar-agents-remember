@@ -73,8 +73,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
+            "blob": "e026f7578473c570b2a06b418a445a97ffc40176",
+            "content": "sha256:a1bdfdfd0d9b6cc8cddc939c7e361a27f6c1091c22442fd93486d4fe3b56144f",
             "locator": {
               "kind": "file"
             },
@@ -85,12 +85,12 @@
       ]
     },
     "24": {
-      "note": "RowStore writes text-tree fixture rows without the retired production admission plane.\n\nAnchor: `RowStore`",
+      "note": "RowStore writes text-tree fixture rows without the retired production admission plane.",
       "targets": [
         {
           "anchor": {
-            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
-            "content": "sha256:43a32e8370a3aa07c1e8247bd8b4d445a42caab3b630d2ed5783e663bc3c824e",
+            "blob": "63570d7606856b5028b51268077f62b8b3d27781",
+            "content": "sha256:a9a84c441f17b2b5a04d286f7aa9739d56b5e38f1cee90c5bef9ed86359d81fe",
             "locator": {
               "kind": "file"
             },
@@ -388,16 +388,16 @@
       ]
     },
     "34": {
-      "note": "The lane row this module occupies. Anchor: `test_knowledge_read_scope` Anchor: `test_knowledge_read_scope`",
+      "note": "The unit-regression lane selects mcp/tests/test_knowledge_read_scope.py.\n\nAnchor: `mcp/tests/test_knowledge_read_scope.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "75006e874ab9c238187bcf9044d224511529c135",
+            "blob": "9b2f8dfb74c9f9e7cc39c1097e6d5f7e0ff20215",
             "content": "sha256:e96a96cc68897cd2cf796e834f8ac55d5e09216383f9ae3be2059e57efbd1734",
             "locator": {
-              "end": 259,
+              "end": 264,
               "kind": "line_range",
-              "start": 259
+              "start": 264
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

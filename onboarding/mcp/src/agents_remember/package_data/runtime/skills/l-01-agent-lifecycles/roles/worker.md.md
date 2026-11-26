@@ -37,7 +37,7 @@ A Reviewer finding states the required property the candidate breaks; the showin
 
 Read the selected requirement and leaf task only: open the exact rendered_path and json_path supplied by taskDocReadArgs with own file tools; these are file locations, not a tool-server read call. task_doc writes and does not read. Name relevant records through knowledge_read using supplied memoryRoot; both context_packet and read_ar_files use task_context with the canonical task reference and enclosure contract. Resolve missing facts from that canonical task and requirement without inferring a different task. Confirm paired code/read-only-memory/report bindings; do not load the whole task hierarchy or infer a different task.
 
-Before editing a source file, read its attributed records with `knowledge_read` on `agents-remember-task` (`view="source_context"`); build the worktree's environment and run candidate commands as `system/tools.md` says. For code changes, read `system/coding-guidelines.md` under `workspace.memoryRoot` in full, where it exists, before the first source edit, follow it for every line of source code, tests and product messages, and tell a code helper to do the same. Repair failures in the Worker’s own work or instrument and continue; keep a failed or unrun check visible only when it cannot be made to pass on the Worker’s own ground, explicitly saying so. When invariant/family context applies, inspect affected claims and relevant unchanged siblings; report out-of-scope manifestations rather than editing them.
+Before editing, the Worker uses `read_ar_files` for the relevant paths. A fuller reply can include rule text. Open the current saved brief, when present, for conditions and exclusions. The next write covering the file or its folder renews a missing or older saved brief when the writer can refresh it. `knowledge_read` names whole records and proof evidence. Build the worktree's environment and run candidate commands as `system/tools.md` says. For code changes, read `system/coding-guidelines.md` under `workspace.memoryRoot` in full, where it exists, before the first source edit, follow it for every line of source code, tests and product messages, and tell a code helper to do the same. Repair failures in the Worker’s own work or instrument and continue; keep a failed or unrun check visible only when it cannot be made to pass on the Worker’s own ground, explicitly saying so. When invariant/family context applies, inspect affected claims and relevant unchanged siblings; report out-of-scope manifestations rather than editing them.
 
 Keep one truthful canonical report with changed files, exact requirement/candidate evidence, checks and limitations. The Worker freezes its candidate and hands it directly to the leaf's Reviewer; after code PASS it sends its hand-off list to the Curator. The Worker reports the listed post-PASS final checks to the Reviewer and Manager. A dashboard-started Worker has no parent and uses its own final chat reply. Applicable producer Curator handoff data stays verbatim.
 
@@ -95,7 +95,6 @@ When the master line moves, Worker runs its supported leaf sync. If no path chan
 | --- | --- | --- |
 | Exact leaf intake, read-only memory, targeted evidence, single report and uncommitted role boundary. | lines 8-26 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:8-26 |
 
-
 - The packaged Worker leaves the candidate uncommitted and does not review or accept its own implementation, write memory onboarding, update task lifecycle or status, close out, commit, merge, push or publish. [1]
 
 
@@ -128,8 +127,15 @@ acceptance, leaf integration does not rerun it, and full acceptance belongs to m
 
 - After three failed repairs of the same check or finding the Worker stops and tells the Manager; with every candidate finding closed, a remaining record-only finding is repaired on the record and checked by the same Reviewer without a new round; a finding still open after a repair needs the property written for every case and the construction shown or changed. [6]
 
-- This packaged Worker role is byte-identical to its canonical source and carries its actual stage and repair duties; that mirror identity establishes no executed check or acceptance. [7]
+
+
+- The packaged Worker role is byte-identical to the authored role in this source tree. Both copies carry the same stage and repair duties. [7]
+
 
 - Worker intake opens the exact rendered_path and json_path handover locations with its own file tools; they are file locations, not tool-server read calls, and both context_packet and read_ar_files take the task_context with the canonical task reference and enclosure contract. [8]
 
 - Before repairing a sealed finding in its own files, the generated Worker role follows the shared Repair a sealed own-file finding procedure in the implementation operation. [9]
+
+
+
+- The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. Knowledge_read names whole records and their evidence. [11]

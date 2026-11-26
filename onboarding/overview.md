@@ -26,7 +26,7 @@ Resolve the configured repository and its coordination, code, memory, task and t
 
 Retrieve the smallest useful route packet. Generated `overview.index.json` supplies source scope, child routes, covered files, routing terms and hot-path hints. A source absent from its route index is still probed for an eligible converted card and remains readable; the answer discloses the stale index and the refresh it needs rather than requiring a refresh before the read, and that fallback is distinct from the out-of-scope, missing, unreadable and source-absent boundaries. Read overview prose when the index is insufficient, then confirm named source anchors. Stop when the packet establishes the responsibility, immediate cause, user consequence and relevant contract; widen only for a named unresolved question.
 
-`read_ar_files` names source-path existence or confinement refusal and a call-local nearest-first overview list. Existing source paths name a readable converted governing card or card: null; when its Markdown half is absent, the row names the entry half and reports cardStatus: sidecar-only; record counts/state and action-needed headings are measured only when a selected index and observed code tree are available. It returns no source/card/overview text, published_intent block or continuation. Taskless scope keeps configured roots; task-scoped configuration derives code/memory roots from canonical admitted enclosure authority rather than a fallback. Unconverted memory is named as memoryState: unconverted; existing paths name card: null. Open named files with harness-native reads; use knowledge_read for named invariant/family/source-context pages.
+`read_ar_files` accepts up to twenty repository-relative path strings. A fuller reply can include the governing card, available state counts and action headings, and governing overviews once per call, nearest first. Eligible rows can add current rule text and related knowledge as space permits. Compact rows keep each path, its existence or refusal, card status where applicable, and any brief pointer with reported saved freshness. A pointer can name a missing or older brief, or one whose age is unknown. The next write covering the file or its folder renews a missing or older saved brief when the writer can refresh it. If refresh cannot proceed, the writer reports `briefsProblem` and leaves the saved brief as it was. Use native file tools for the source, card, overview and current saved brief. Use `knowledge_read` to locate whole records and proof evidence. A fuller row can name the entry half of a card with `cardStatus: sidecar-only`. State counts and action-needed headings depend on the selected index and observed code tree. It returns no source/card/overview text, published_intent block or continuation. Taskless scope keeps configured roots; task-scoped configuration derives code/memory roots from canonical admitted enclosure authority rather than a fallback. Unconverted memory is named as memoryState: unconverted; existing paths name card: null.
 
 knowledge_read with view source_context exposes the family-complete path walk: the index selects path invariants/entries and containing/chain families, while the mounted answer names text IDs, kinds, computed states and locations rather than record prose. Shared-member/header references and counts remain paging facts. read_ar_files also uses prepare_leaf internally to compute card states/counts, but exposes no paged record walk or continuation and keeps no per-session served state. Paired published-intent delivery, deferred seeds and served_earlier response descriptions are historical carriers, not its current naming response.
 
@@ -88,7 +88,7 @@ The dashboard bundle is placed from Vite output into ignored package data by `sc
 
 Startup qualification has its own measurement owner. `scripts/measure-ar-server-start.py` measures process spawn through completed `initialize` and `tools/list` for ordinary or explainer mode and records command, environment, source and load; its 5-second/one-minute-load-at-most-40 qualification is not an any-load guarantee. Reading this script supplies no new startup run, performance acceptance or installed-build verdict.
 
-MIK-R109: use AR reads to name governing knowledge and its computed state, then open source, cards, overviews and records with harness-native file tools. `read_ar_files` names up to twenty paths with call-local nearest-first overview locations and no session carry/continuation; `knowledge_read` keeps bounded continuation but emits record names, and `knowledge_diff` files the whole comparison and names its report. Mounted `context_packet` supplies slim roots/task/actions/build/pair; settings/mode/policy authority stays with the source-bound settings and retained internal resolver, not guessed from a compact answer.
+MIK-R109: use AR reads to name governing knowledge and its computed state, then open source, cards, overviews and records with harness-native file tools. `read_ar_files` keeps up to twenty paths, can include nearest-first governing overviews in a fuller reply and has no session carry or continuation; `knowledge_read` keeps bounded continuation but emits record names, and `knowledge_diff` files the whole comparison and names its report. Mounted `context_packet` supplies slim roots/task/actions/build/pair; settings/mode/policy authority stays with the source-bound settings and retained internal resolver, not guessed from a compact answer.
 
 Root `docs/` owns authored documentation but is not one of scripts/sync-runtime.py's three runtime targets. Instruction renewal separately copies canonical `docs/tool-details.md` to `mcp/src/agents_remember/package_data/runtime/docs/tool-details.md`; that named document is a renewal copy source without making the whole docs tree a sync-runtime target. Retired mirror cards had no realization/proof entries: their copy-identity accounts remain historical in Git and the renewal intake archive, while canonical docs and their existing governing memory remain authoritative.
 
@@ -287,9 +287,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - The Curator marks only its completed curation step done through task_doc; incomplete work is not marked done, and this act changes neither task status nor acceptance or landing. The stage ends when task knowledge is written and checked and quality is clean. [68]
 
-
-- The launcher and role-start tool share one locked dispatch path for preparation, launch, receipts and same-request reconciliation. The role-start facade accepts an AR-bound caller or a genuinely unbound chat caller; malformed bindings, bound policy violations and other caller refusals return their named refusal rather than switching to the unbound route. The unbound caller has no parent and cannot replace a seat holder.  Anchor: `Handle a developer-declared takeover` [86]
-
+- The launcher and role-start tool share one locked dispatch path for preparation, launch, receipts and same-request reconciliation. The role-start facade accepts an AR-bound caller or a genuinely unbound chat caller; malformed bindings, bound policy violations and other caller refusals return their named refusal rather than switching to the unbound route. The unbound caller has no parent and cannot replace a seat holder. Anchor: `Handle a developer-declared takeover` [86]
 
 - In task_doc construction, _build_doc refuses kind="light" with a TaskDocError directing the caller to a master or subTask; when kind is omitted, a leaf contract selects subTask and otherwise the default is master. [98]
 
@@ -297,7 +295,10 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): An external-memory start requires the memory repository and its source branch and creates the worktree. [93]
 
-- The Investigator examines one scoped concern and writes a report, distinguishes observed facts from hypotheses, and names the owning Worker or Curator for needed code or memory changes. It edits no code checkout, memory or task document and starts no role; a separate order grants no Worker or Curator authority. [146]
+
+
+- The Investigator examines one scoped concern and writes a report, distinguishes observed facts from hypotheses, and names the owning Worker or Curator for needed code or memory changes. It edits no code checkout, memory or task document and starts no role; a separate order grants no Worker or Curator authority. Anchor: `A separate order never grants this role Worker or Curator authority` [146]
+
 
 - New files outside onboarding/, knowledge/ and system/ are listed with individual sizeBytes and summed bytes. [312]
 
@@ -333,9 +334,12 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's family-routes subsection. [23]
 
-- Retained reference account (no fresh execution or acceptance inferred): A converted memory tree is selected as a tree, and the database file inside it is not read. [25]
 
-- The registrar mounts the knowledge read, diff, integrity and write operations; change and project are removed. [30]
+
+- Retained reference account (no fresh execution or acceptance inferred): A converted memory tree is selected as a tree, and the database file inside it is not read. Anchor: `converted_memory_tree` [25]
+
+
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The order declares `certification` between `models` and `controlplane`. [31]
 
@@ -352,12 +356,9 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Retained reference account (no fresh execution or acceptance inferred): Git attribution is the source of the consumer ledger. [50]
 
 
-- Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one memory-content output; on converted memory it first closes the leaf's history file and validates and gates the exact tree. Anchor: `external_closeout_commits` `_commit_memory_content` [51]
-
-
 - Retained reference account (no fresh execution or acceptance inferred): Integration proves exact memory source ancestry independently of cache rows. [52]
 
-- The read_ar_files naming entry point returns knowledge locations and measured states, with no source, card, overview or published-intent body. [61]
+- A fuller naming reply can carry governing locations, measured states and rule text. Compact rows can keep a pointer whose saved brief is missing. Source, card and overview bodies stay in their files. [61]
 
 - Git exempts generated dashboard chunks from trailing-whitespace checks and vendored Paseo server fixtures from whitespace checks. The tokenizer vocabulary is marked as non-text, and Git union-merges the two test catalogs. [69]
 
@@ -369,7 +370,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - The internal knowledge-page threshold is 8,000 tokens. The mounted knowledge_read naming pager uses a 4,000-token delivered bound and a 20-entry list cap. [73]
 
 
-- Retained reference account (no fresh execution or acceptance inferred): The closeout preview asks the mandatory gate and answers with the refusal when the gate refuses. [75]
 
 - Retained reference account (no fresh execution or acceptance inferred): The two declared case budgets. [76]
 
@@ -465,9 +465,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Retained reference account (no fresh execution or acceptance inferred): The memory-repo tools example provides the `Code Quality` section. Anchor: `Code Quality` [284]
 
 
-- Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one actual memory-content output (since MIK-R09, on converted memory, after closing the leaf's history file and validating and gating the exact tree). Anchor: `external_closeout_commits` [288]
-
-
 - Retained reference account (no fresh execution or acceptance inferred): Closed admission and one public projector. [289]
 
 
@@ -498,7 +495,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Source charters distinguish strict dependency order from future package construction and the named sequencing deviation. [327]
 
-- Retrieval guidance keeps the names-only read route: `read_ar_files` names the knowledge governing up to twenty paths and returns no file text. [311]
+- Retrieval uses `read_ar_files` for up to twenty paths. Fuller rows can carry rule text. Use native file tools for current saved briefs and named source files. [311]
 
 - Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named. [333]
 
@@ -621,7 +618,10 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [351]
 
+
+
 - AR's role launcher resolves hierarchy, canonical selection, workspace, capsule and report scope, chooses the agent identity and records launch/reconciliation. Paseo owns the actor, workspace identity and agent execution. Execution receipts do not update task, review, curation or Git truth. Manager-owned `role_start_set` prepares Worker, Reviewer and Curator as sibling leaf seats: Worker opens immediately, Reviewer and Curator are held for their first addressed work, with optional immediate Reviewer work. The leaf resolver refuses multiple live occupants. AR persists held messages and a serving-lifetime loop attempts later delivery without a sender/model turn; permission-held messages retain the named-chat notice and are not resent by the parent. The capsule router launches architect, investigator, orchestrator, manager, worker, reviewer, curator and bootstrap; other manifest entries are not automatically launchable. The instruction stream still contains the selected role and one operation. The admitted `core/every-role.md` digest is delivered separately in the first message; its revision contributes to capsule semantic identity, without injecting the larger core doctrine into rendered instructions. Missing or unsupported selection fields refuse rather than being inferred from nearby documents. [366]
+
 
 - Contributor guidance routes instruction renewal through one command and keeps authored ceilings separate from measured facts. [369]
 
@@ -645,7 +645,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): Launch-capable provider operations re-read the providers map from disk. [142]
 
-- The read_ar_files naming entry point returns knowledge locations and measured states, with no source, card, overview or published-intent body. [293]
+- A fuller naming reply can carry governing locations, measured states and rule text. Compact rows can keep a pointer whose saved brief is missing. Source, card and overview bodies stay in their files. [293]
 
 - **Historical source-bound reference account, not an operative override:** Git reads disable optional locks; supplied input is distinct from the default DEVNULL transport boundary. [323]
 
@@ -660,7 +660,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Context freshness is opt-in, and this packet disables provider discovery. [322]
 
 
-- The source roster contains 44 tools, including knowledge_write and user_settings_init. Converted memory-quality status includes bounded first rows and cut and added counts. Complete lists stay in the whole result and its detail log when recording succeeds. [358]
+- The source roster contains 44 public tools, including knowledge_write and user_settings_init. Converted memory quality replies show cut and added counts with bounded first rows. The whole result holds the complete lists, and the detail log exposes them when it was retained. [358]
 
 
 
@@ -683,10 +683,19 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Instruction renewal uses the declared skills copy owner, projects the certification profile and copies canonical tool details into packaged runtime docs. [370]
 
-- build_parser requires a subcommand, registers dashboard, and delegates memory, knowledge and runtime/settings command registration to three helpers. main parses the public command arguments and calls the selected handler; its internal leaf-enclosure entry is handled before that public parser. [139]
 - Carryover names file-sidecar, route-overview, memory-only-doc and entity-catalog candidates; its request supplies the code/source/target roots. Plan and apply require both memory roots to be converted and share the same conversion version; unconverted or mismatched memory is refused. [143]
 
 - Converted carryover prepares equal-format paired content and missing records in a recovery worktree without importing history or committing. The public apply proof covers eligible dot-directory pairs. Ordinary leaf judgments and gated closeout own publication. [354]
+- build_parser requires a subcommand, registers dashboard, and delegates memory, knowledge and runtime/settings command registration to three helpers. main parses the public command arguments and calls the selected handler; its internal leaf-enclosure entry is handled before that public parser. [139]
+- Fresh converted-leaf closeout validates and gates the exact memory tree after closing owner history. It then writes one memory-content output or reuses the unchanged tip. Recovery judges the recorded output again. [288]
+- Fresh converted-leaf closeout closes owner history and gates the exact memory output before committing it or reusing the unchanged tip. Recovery gates the already recorded output. [51]
+- Retained reference account (no fresh execution or acceptance inferred): The closeout preview asks the mandatory gate and answers with the refusal when the gate refuses. [75]
+
+
+
+
+- The registrar mounts the knowledge read, diff, integrity and write operations; change and project are removed. [30]
 
 - Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's writer input section. Anchor: `## The writer's input sections` [21]
+
 - Canonical source-bound onboarding and separate row domains. [331]

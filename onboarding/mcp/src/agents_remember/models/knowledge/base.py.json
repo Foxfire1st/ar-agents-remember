@@ -7,27 +7,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "blob": "f561ed4c783385d8f6b1be998e88ca8c2e1be87a",
             "content": "sha256:770c387ee275ee397402391f33ba68467fe3c4e8fd0f6411e59f57807632a7d0",
             "locator": {
               "kind": "symbol",
               "name": "KnowledgeModel"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The shared accepted/proposed rule both revision aggregates apply at construction.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
-            "content": "sha256:13cc663044dee904e0ef554d6776f2c58837847c4cc915a9688f715dd1172a37",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_consistent_acceptance"
             }
           },
           "kind": "code"
@@ -39,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "blob": "f561ed4c783385d8f6b1be998e88ca8c2e1be87a",
             "content": "sha256:715e7df48deebd5b3adef0d28b2c124ccca66442005bd3f27ddc5cab9e0cf8c9",
             "locator": {
               "kind": "symbol",
@@ -55,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
+            "blob": "467b6e3bb025fa7895853353aab838036e694400",
             "content": "sha256:c9bae576442e9ed3c038b1f056f35e178a320f84b9c96b858f33f086e7154ed6",
             "locator": {
               "kind": "symbol",
@@ -67,7 +51,7 @@
         },
         {
           "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "blob": "f561ed4c783385d8f6b1be998e88ca8c2e1be87a",
             "content": "sha256:715e7df48deebd5b3adef0d28b2c124ccca66442005bd3f27ddc5cab9e0cf8c9",
             "locator": {
               "kind": "symbol",
@@ -83,7 +67,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
+            "blob": "467b6e3bb025fa7895853353aab838036e694400",
             "content": "sha256:c9bae576442e9ed3c038b1f056f35e178a320f84b9c96b858f33f086e7154ed6",
             "locator": {
               "kind": "symbol",
@@ -100,7 +84,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "blob": "f561ed4c783385d8f6b1be998e88ca8c2e1be87a",
             "content": "sha256:78d1908c2a915a8fcde7860d362fa9c9fc530cb5e347b6ada4c5c82d1feac41e",
             "locator": {
               "kind": "symbol",
@@ -116,7 +100,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "blob": "f561ed4c783385d8f6b1be998e88ca8c2e1be87a",
             "content": "sha256:2a98361d8a179d85a9ffb5448c0bda56c6c851b999dbc4e20fc845fce696b036",
             "locator": {
               "kind": "symbol",
@@ -127,7 +111,7 @@
         },
         {
           "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "blob": "f561ed4c783385d8f6b1be998e88ca8c2e1be87a",
             "content": "sha256:3eb2f7176a3550df9b7a7a2ca0105cfb6a5c57f24a99169106b4587720a1715a",
             "locator": {
               "kind": "symbol",
@@ -138,7 +122,7 @@
         },
         {
           "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "blob": "f561ed4c783385d8f6b1be998e88ca8c2e1be87a",
             "content": "sha256:c58a0be02b9a17f9c110f202c72cb9015eacba9292e924fb7afa7fb7f6fdaff5",
             "locator": {
               "kind": "symbol",
@@ -149,7 +133,7 @@
         },
         {
           "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "blob": "f561ed4c783385d8f6b1be998e88ca8c2e1be87a",
             "content": "sha256:8d07fc9b5543d8774e7702f3755879f79229e50b72531f6d6e87e17dbe7e0094",
             "locator": {
               "kind": "symbol",
@@ -160,7 +144,7 @@
         },
         {
           "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "blob": "f561ed4c783385d8f6b1be998e88ca8c2e1be87a",
             "content": "sha256:998423b964ec7ac8b318e61b43c890a26b92e139e66818093d97e9343433d1e1",
             "locator": {
               "kind": "symbol",
@@ -171,57 +155,32 @@
         }
       ]
     },
-    "8": {
-      "note": "The two authored origin states are declared once here.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
-            "content": "sha256:fc5cb077eca03b4b8d8f9d2caca98ff8a93d2b743c68bc6a06dc7a090137dbb1",
-            "locator": {
-              "kind": "symbol",
-              "name": "PROPOSED_STATE"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
-            "content": "sha256:dd3de4a8bc4f25221ed633476d8c74a4299c3b5ab514de8a9901304024479f63",
-            "locator": {
-              "kind": "symbol",
-              "name": "ACCEPTED_STATE"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "9": {
-      "note": "The two revision aggregates that apply the shared rule.",
+      "note": "Both revision aggregates require distinct predecessor identities and reject a revision that lists itself as a predecessor.",
       "targets": [
         {
           "anchor": {
-            "blob": "8bb5ffe981f83aa58ff262974a165fd286c14bef",
-            "content": "sha256:a5149a9a6c73e01baad0c1c1141feaada9913738ad9530481dcd957649afe0fe",
+            "blob": "66de1ee906597baab3d43f7bd00ad076296ee3ca",
+            "content": "sha256:202ac3c0570ef9891df49c8a0b34a82bf24742d627ac97726f430bca2fb753e6",
             "locator": {
-              "kind": "symbol",
-              "name": "InvariantRevision"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/invariant.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e0475c07db7f98c04497445589d9a2a30aa0089b",
-            "content": "sha256:99f5823455a8859e6d9fbd3aa3336297d0c9ba5c4e054c11b8d432c5b9868acd",
-            "locator": {
-              "kind": "symbol",
-              "name": "FamilyRevisionDraft"
+              "end": 97,
+              "kind": "line_range",
+              "start": 80
             },
             "path": "mcp/src/agents_remember/models/knowledge/family.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61c0964a4a0ac9acb189c97ba8ecbc68ff66acb0",
+            "content": "sha256:403b8350304fa47d93ab0ce7b43ba9113ecd0d26ed9d68b402d66b800c25767e",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/invariant.py"
           },
           "kind": "code"
         }

@@ -1,0 +1,109 @@
+{
+  "path": "mcp/src/agents_remember/cli/product_start_message.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d98bd5ec252fcd266891c7a10433d1da42a96c36",
+        "content": "sha256:8c5c64eed13608b8de2d784190b85dca960b80b53e22277b0b9714707a314356",
+        "locator": {
+          "kind": "symbol",
+          "name": "dashboard_start_message"
+        }
+      },
+      "id": "RLZ-9CZ1T1",
+      "invariant": "INV-9Z6T69",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 9–10",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Adapts the dashboard dispatch receipt to the same start-message route.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "d98bd5ec252fcd266891c7a10433d1da42a96c36",
+        "content": "sha256:0978f2784c4991ee59c24737e257c25ed8e9abe63e1e0304b1f0d81fd82ed78b",
+        "locator": {
+          "kind": "symbol",
+          "name": "held_seat_opening"
+        }
+      },
+      "id": "RLZ-9R75NW",
+      "invariant": "INV-9Z6T69",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 9–10",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Carries the product notice to an opening held recipient before its waiting messages.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "d98bd5ec252fcd266891c7a10433d1da42a96c36",
+        "content": "sha256:652d0e7680202a956385318fc6883e5017d807eefed534acd73943402ba14be5",
+        "locator": {
+          "kind": "symbol",
+          "name": "direct_start_message"
+        }
+      },
+      "id": "RLZ-JGM155",
+      "invariant": "INV-9Z6T69",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 9–10",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Routes a successful direct start to a notice for its resolved recipient.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "d98bd5ec252fcd266891c7a10433d1da42a96c36",
+        "content": "sha256:505904eba913ef2c97de1256c714db92ed2773c0fc10d0763e1c19645aa8adac",
+        "locator": {
+          "kind": "symbol",
+          "name": "start_request"
+        }
+      },
+      "id": "RLZ-K1H3FG",
+      "invariant": "INV-9Z6T69",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 9–10",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Binds the moment to the paired worktrees and the destination agent's scratch path recorded in the launch receipt.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The direct route binds a new start to its receipt, and the held opening route composes from that receipt when the seat opens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d98bd5ec252fcd266891c7a10433d1da42a96c36",
+            "content": "sha256:bce850b375d28fb7111d37d4cf4ee7c7ab70408edea85e5ecd154b5b04689e69",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d98bd5ec252fcd266891c7a10433d1da42a96c36",
+            "content": "sha256:65802470616af09dd1904de26cba742888df056e0dfb511fef6e06ef0c1abf6a",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 128
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -361,12 +361,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1624f1c805d7b11098ab741352f0f4bd8f5ec09c",
+            "blob": "df08052ea2ac291d0c2d31037901f356f1c7f718",
             "content": "sha256:bfd543f8f89f301f5c3eab6e35f8bba6a78a2237bbedc36f5b3ecdf48a3d3901",
             "locator": {
-              "end": 286,
+              "end": 291,
               "kind": "line_range",
-              "start": 236
+              "start": 241
             },
             "path": "mcp/tests/test_role_instruction_wording_handover.py"
           },
@@ -374,12 +374,12 @@
         },
         {
           "anchor": {
-            "blob": "1624f1c805d7b11098ab741352f0f4bd8f5ec09c",
+            "blob": "df08052ea2ac291d0c2d31037901f356f1c7f718",
             "content": "sha256:3efde9b8c1fc990a5c0eb061c7c8c49e42667b72632334189d15e3803e8ee7c1",
             "locator": {
-              "end": 344,
+              "end": 349,
               "kind": "line_range",
-              "start": 288
+              "start": 293
             },
             "path": "mcp/tests/test_role_instruction_wording_handover.py"
           },
@@ -405,12 +405,12 @@
         },
         {
           "anchor": {
-            "blob": "1624f1c805d7b11098ab741352f0f4bd8f5ec09c",
+            "blob": "df08052ea2ac291d0c2d31037901f356f1c7f718",
             "content": "sha256:45ba33f96964dcb2bbf4814d441e2e358c3a8ee06ecfe9d9c1e541bf5f52c343",
             "locator": {
-              "end": 344,
+              "end": 349,
               "kind": "line_range",
-              "start": 236
+              "start": 241
             },
             "path": "mcp/tests/test_role_instruction_wording_handover.py"
           },
@@ -418,12 +418,12 @@
         },
         {
           "anchor": {
-            "blob": "1624f1c805d7b11098ab741352f0f4bd8f5ec09c",
-            "content": "sha256:270915da46fee44871d1df39eb7b6d2d9951007d3cf144fef6c9e63f1c3db892",
+            "blob": "df08052ea2ac291d0c2d31037901f356f1c7f718",
+            "content": "sha256:99d9a15544fa7a90438783ee67bc3d615605f7261eba294f99750b4d940a1d4e",
             "locator": {
-              "end": 508,
+              "end": 521,
               "kind": "line_range",
-              "start": 405
+              "start": 410
             },
             "path": "mcp/tests/test_role_instruction_wording_handover.py"
           },
@@ -431,12 +431,12 @@
         },
         {
           "anchor": {
-            "blob": "1624f1c805d7b11098ab741352f0f4bd8f5ec09c",
+            "blob": "df08052ea2ac291d0c2d31037901f356f1c7f718",
             "content": "sha256:94c5f37416ddc8bef7ae9621e505d7848443b7ee3842afcc7c89f34036542b52",
             "locator": {
-              "end": 648,
+              "end": 661,
               "kind": "line_range",
-              "start": 547
+              "start": 560
             },
             "path": "mcp/tests/test_role_instruction_wording_handover.py"
           },

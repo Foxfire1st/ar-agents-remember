@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Seat census and archive retry in cli/role_launch_archive.py and blocker gating in worktrees/modules/terminal_group.py ensure no live or owed seat outlives its task folder."
+  },
+  "applicability": "Leaf and modern series cleanup, abandon, and completed-generation retry while a task folder exists.",
+  "conditions": [
+    "Every recorded seat whose workspace lies in worktree_group is closed and archived (retrying owed targets once) before folder deletion.",
+    "Any owed, leftAlone, failed, or unbound-with-receipts outcome blocks folder removal and names the seat."
+  ],
+  "exclusions": [
+    "Seats whose workspace lies outside the task folder (such as a master's Manager during series cleanup) do not block folder removal.",
+    "Legacy series whose worktree_group equals enclosures/ skip seat archival."
+  ],
+  "id": "INV-HBMPXC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The Worker freeze report binds focused verification on this tree."
+      ],
+      "path": "l38-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R38@v1 rule 5",
+    "leaf": "261112-BUG-L38",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Terminal removal requires seat closure inside the task folder and reports unresolved host archive debt before folder removal.",
+  "supersedes": [],
+  "title": "Terminal removal closes in-group seats and blocks on unresolved archive debt",
+  "writer": {
+    "at": "2026-11-25T19:57:06+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L38",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "task": "261112-BUG"
+  }
+}

@@ -20,13 +20,17 @@ Unanswered outcomes remain unknown with HTTP 202 and the exact saved-call identi
 
 - Created/held/unknown results preserve prior lifecycle semantics. [1]
 
+
 - An eligible settled empty step-up can be retried. An absent native Antigravity agent instead closes the request with HTTP 409 and ACP guidance. [2]
 
 
 
 
 
+
+
 - The receipt owner records the task step-up decision before running the saved call and reconciles that decision after publishing the host outcome. [3]
+
 
 
 

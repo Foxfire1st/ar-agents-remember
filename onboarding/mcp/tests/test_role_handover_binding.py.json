@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "29649ff5dd27a56b78c5ef15eceac9c837955243",
+        "blob": "0ce6417a5eb7e3604f3fba1de05170920f98e975",
         "content": "sha256:842cb14dd4dee97ccd5a5a8bc05d99d9d734df461e6994754b46e1be3cf37a86",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "29649ff5dd27a56b78c5ef15eceac9c837955243",
-        "content": "sha256:36553ea2f6b5acc2ed882d02f71eb91baf557355edfe3f524305ca6669fc0d86",
+        "blob": "0ce6417a5eb7e3604f3fba1de05170920f98e975",
+        "content": "sha256:7d8a23be405c82eee3c6591866ef040826e3f6a6858e1fc69e0037f3d130b71d",
         "locator": {
           "kind": "symbol",
           "name": "LeafEnclosureSprintBindingTests.test_missing_leaf_enclosure_passes_selected_sprint_to_worktree_owner"
@@ -43,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29649ff5dd27a56b78c5ef15eceac9c837955243",
-            "content": "sha256:7db2c0149a04bb359e534118c37e365e470fd8ade0c45cb78ca3235bd4dc3757",
+            "blob": "0ce6417a5eb7e3604f3fba1de05170920f98e975",
+            "content": "sha256:ae1e0d48fad39baf42a2c16c49c1eb94c8fcf6fb2ab7c1128db4989567a25983",
             "locator": {
               "kind": "file"
             }
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29649ff5dd27a56b78c5ef15eceac9c837955243",
+            "blob": "0ce6417a5eb7e3604f3fba1de05170920f98e975",
             "content": "sha256:7e7417f305e99bebbb282e4c928b98eba9c576375a946033e4ec6a46673e4f5b",
             "locator": {
-              "end": 538,
+              "end": 540,
               "kind": "line_range",
-              "start": 400
+              "start": 402
             }
           },
           "kind": "test"
@@ -75,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29649ff5dd27a56b78c5ef15eceac9c837955243",
+            "blob": "0ce6417a5eb7e3604f3fba1de05170920f98e975",
             "content": "sha256:358372c986016199f6cc63c500dbec88edd5b40eb8b26955488786b7885facfe",
             "locator": {
-              "end": 930,
+              "end": 933,
               "kind": "line_range",
-              "start": 906
+              "start": 909
             }
           },
           "kind": "test"

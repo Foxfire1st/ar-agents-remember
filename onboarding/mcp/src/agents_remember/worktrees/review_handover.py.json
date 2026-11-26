@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/review_handover.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "95b691d1115b767c19cc50c0d69d9832eca27511",
+        "content": "sha256:c863b159b7e1164baa03f98ce2c47d5e85ea01379b5cf16eb0eada1c9cc8206f",
+        "locator": {
+          "kind": "symbol",
+          "name": "registered_handover_stamp"
+        }
+      },
+      "id": "RLZ-J2W9P8",
+      "invariant": "INV-AV04NY",
+      "origin": {
+        "handoffEntry": "L3-W1-05",
+        "leaf": "261112-KNO-L3"
+      },
+      "rationale": "Stamps the one Curator or Consolidator registered as active on the leaf when the passed round is recorded, at that time; unknown with the reason for none or several.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The stamp uses the eligible registered seat or identifies why the attribution is unknown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95b691d1115b767c19cc50c0d69d9832eca27511",
+            "content": "sha256:c863b159b7e1164baa03f98ce2c47d5e85ea01379b5cf16eb0eada1c9cc8206f",
+            "locator": {
+              "kind": "symbol",
+              "name": "registered_handover_stamp"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The lookup matches active seats to the exact leaf and eliminates duplicate receipts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95b691d1115b767c19cc50c0d69d9832eca27511",
+            "content": "sha256:c513635ae4405387b6f2a2ef19fd69f9697bff7ba1168eba446f54607fc25130",
+            "locator": {
+              "kind": "symbol",
+              "name": "_active_handover_seats"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

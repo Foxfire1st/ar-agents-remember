@@ -123,6 +123,59 @@
         }
       ]
     },
+    "15": {
+      "note": "The tree’s single trailing cell may include a state tag with writer role and model in its title.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1bdbdb696c6652e3a433b6b482cf500d58e47c0",
+            "content": "sha256:b76ac3db73d7eaa6d36868c9a36daaf393fafad35c17eae63fa92742600734ed",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/panels/review/tree/TreeRows.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Review member rows show supplied state and writer next to their location counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8deeaee292cf24c87c8f5bbab9fade899932b6f6",
+            "content": "sha256:d5e5c7bc758c35fd942b3678d96d0327391df7f561082a6db1709eb6ae9c17d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemberSummaries"
+            },
+            "path": "dashboard/src/panels/review/reading/SubjectSection.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Same-revision and equal-wording family guarantee blocks label both snapshot states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8cb2d947f4bb7b2a2452fec1b9da932372e55403",
+            "content": "sha256:cf7f0334428283ac33b63c8ad31d28c7bad7b6e3a85b0ac358592d32717504c8",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "dashboard/src/panels/review/FamilyGuarantees.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "One tree scroller with retained navigation and pinned lane\n\nAnchor: \"export function ReviewTree(props: ReviewTreeProps)\"",
       "targets": [

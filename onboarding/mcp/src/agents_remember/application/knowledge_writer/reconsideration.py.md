@@ -186,7 +186,6 @@ No configured live documentation source was available for this pass.
 - A nonempty raise list is submitted once as a batch; success reports all keys and a refusal reports none, while an empty list needs no owner. [28]
 
 - The task owner validates the entire question batch before replacing matching keyed text or appending new keys; intervening questions are retained. [29]
-- The separate restoration owner can undo an obsolete leaf refresh when the matching original base anchor is current again. [30]
 
 ### Cross-Repo References
 
@@ -200,3 +199,5 @@ A link whose base target has no image at C is a new `UNMAPPABLE` state: its refu
 
 - A link whose base target has no image at C is refused with the re-point or raise that can clear it, not with a recompute that cannot. [31]
 - The re-authored refusal keeps its prefix and names restoring the base target or a raise. [32]
+
+- The separate restoration owner can undo an obsolete leaf refresh when the matching original base anchor is current again. [30]

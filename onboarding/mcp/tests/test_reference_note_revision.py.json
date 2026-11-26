@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+        "blob": "813572e11496fe2f7c382bb4510bca76dbbafe95",
         "content": "sha256:eb4d58a4f68762abe14dfacdd8abc6e79c8f5adc5b7c6675998c5da890c61c0e",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+        "blob": "813572e11496fe2f7c382bb4510bca76dbbafe95",
         "content": "sha256:793d297c0cd5623270cd0cbbdb404213122603104eb9eb4d739c434922831f89",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
-        "content": "sha256:bc533feec7ed20cd49ae162c6f0cdba73d99c17af31605f092b1a739c6b11f7b",
+        "blob": "813572e11496fe2f7c382bb4510bca76dbbafe95",
+        "content": "sha256:f4406489922f850e2b06bdbfd0ab28ac440bf8cd04ec5261ad4ac9f6686db3bd",
         "locator": {
           "kind": "symbol",
           "name": "test_a_repoint_changes_the_anchor_and_not_the_note"
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+        "blob": "813572e11496fe2f7c382bb4510bca76dbbafe95",
         "content": "sha256:be5185425f244ed6e9f80fcd7bb8085b2b6007d6a84dd2f7372568dbaf8177d3",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+        "blob": "813572e11496fe2f7c382bb4510bca76dbbafe95",
         "content": "sha256:5b0141504af9d1169759c8db03639433cf012cb86b90d4d33a46dffbece2bb1c",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+        "blob": "813572e11496fe2f7c382bb4510bca76dbbafe95",
         "content": "sha256:0396cf92c74de368cf88c8d14c1812080ecaec8429f8d2a544570bffc08e6803",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+        "blob": "813572e11496fe2f7c382bb4510bca76dbbafe95",
         "content": "sha256:f3aacb53ffbe120d215989aeeae9456a71ba1c05a3e71d4d658acc2437ddf498",
         "locator": {
           "kind": "symbol",
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+        "blob": "813572e11496fe2f7c382bb4510bca76dbbafe95",
         "content": "sha256:2000282bdd0a19f9dd7c9f69bba45be4a7f8cc4caf3d0361eaa65e8f8c29bc9b",
         "locator": {
           "kind": "symbol",
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+        "blob": "813572e11496fe2f7c382bb4510bca76dbbafe95",
         "content": "sha256:88b6105c89d265f875a8d9e5f7b2d189f4432abfb9c9340f1662eaccb1b341c7",
         "locator": {
           "kind": "symbol",
@@ -156,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+        "blob": "813572e11496fe2f7c382bb4510bca76dbbafe95",
         "content": "sha256:05e73545c65751fe57377e58cef6278d380d0c1c37d16155cc3eb1de60b511bb",
         "locator": {
           "kind": "symbol",
@@ -179,7 +179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+            "blob": "813572e11496fe2f7c382bb4510bca76dbbafe95",
             "content": "sha256:eb4d58a4f68762abe14dfacdd8abc6e79c8f5adc5b7c6675998c5da890c61c0e",
             "locator": {
               "kind": "symbol",
@@ -195,7 +195,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+            "blob": "813572e11496fe2f7c382bb4510bca76dbbafe95",
             "content": "sha256:5b0141504af9d1169759c8db03639433cf012cb86b90d4d33a46dffbece2bb1c",
             "locator": {
               "kind": "symbol",
@@ -211,7 +211,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+            "blob": "813572e11496fe2f7c382bb4510bca76dbbafe95",
             "content": "sha256:f3aacb53ffbe120d215989aeeae9456a71ba1c05a3e71d4d658acc2437ddf498",
             "locator": {
               "kind": "symbol",
@@ -227,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+            "blob": "813572e11496fe2f7c382bb4510bca76dbbafe95",
             "content": "sha256:2000282bdd0a19f9dd7c9f69bba45be4a7f8cc4caf3d0361eaa65e8f8c29bc9b",
             "locator": {
               "kind": "symbol",
@@ -243,7 +243,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+            "blob": "813572e11496fe2f7c382bb4510bca76dbbafe95",
             "content": "sha256:793d297c0cd5623270cd0cbbdb404213122603104eb9eb4d739c434922831f89",
             "locator": {
               "kind": "symbol",
@@ -255,15 +255,33 @@
       ]
     },
     "6": {
-      "note": "A mechanical re-point changes the anchor and not the note",
+      "note": "A mechanical re-point changes the anchor and not the note Anchor: `test_a_repoint_changes_the_anchor_and_not_the_note`",
       "targets": [
         {
           "anchor": {
-            "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
-            "content": "sha256:bc533feec7ed20cd49ae162c6f0cdba73d99c17af31605f092b1a739c6b11f7b",
+            "blob": "813572e11496fe2f7c382bb4510bca76dbbafe95",
+            "content": "sha256:693ed0cdc13570d6a7a8eb0603c324bd8cc6071279fddeac2b8485a5a92efe89",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_repoint_changes_the_anchor_and_not_the_note"
+              "end": 476,
+              "kind": "line_range",
+              "start": 452
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Citation repair regenerates the ignored brief with its current directory tree identity. The successful result has no refresh advisory and its brief omits the moved marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "813572e11496fe2f7c382bb4510bca76dbbafe95",
+            "content": "sha256:14f8646ad165c67cf2d4d8b96a681bdfc869093efd1ba76438ce971731d9cd4c",
+            "locator": {
+              "end": 482,
+              "kind": "line_range",
+              "start": 473
             }
           },
           "kind": "test"

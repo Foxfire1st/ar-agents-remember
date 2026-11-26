@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/memory/conversion/state_conversion_run.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The runner reads the specified inputs and builds a plan before publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32e72a3b001e146baedbadb22c39bc41501b23e5",
+            "content": "sha256:be1a5aebf1742d4f96e225a27329ba84246e82a70f0505abc0adf08450134e2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_state_conversion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

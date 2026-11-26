@@ -22,6 +22,8 @@ MIK-R112 changes the retrieval account: harness-native onboarding and source sea
 
 ## Hot Path Summary
 
+File knowledge reaches a Worker through the task handover and eligible read_ar_files rows. Reviewer and Curator starts can also carry a product notice with a saved moment. For a converted task missing the tracked ignore entry, the moment belongs in task scratch. A forward memory publication prepares the ignore entry on its owned path and can report an advisory if the derived refresh fails.
+
 The served task-status owner is `observer/task_entries.py`: one qualified `TaskEntry` joins native task documents, declared children, bound worktrees and the host publication. Native `planning`, `inProgress`, `abandoned` and `Completed` map to `planned`, `started`, `aborted` and `completed`; progress, an enclosure's landing operation and raw Event River rows do not decide task stage. Only started tasks carry host activity: known bound agents in a turn (`in-turn` or `permission`) or open with a running provider subagent yield `works`; without one, an open seat with a declared wait and an armed check still within its grace period yields `waiting` and the task names its `waitingSeats`; an otherwise complete known host view yields `paused`, and unavailable/unreconciled host authority yields `unknown`. `eventAt` is the latest contributing working/permission event, for a waiting task the earliest start of its seats' declared waits, or otherwise the latest observed bound-agent event; it is not a tool-call heartbeat or a server-computed age. Parent/children links and direct-child counts are produced together in declared order, with documented-subTask master precedence and absent-master list fallback, deterministic single-parent/cycle protection, and visible entries even when a declared child has no document. A documented subTask's present unresolvable master stays unbound and is reported with its original literal; a present master that names another task stays unbound and is reported with its normalized record master instead. Other listed document kinds are placed from the list subject to identity/cycle guards, not a general kind-rejection or own-master-validation rule. List/record disagreements are served once per declaring master rather than discarded. Browser consumers use this served entry and the shared `TaskStatusWord`/status clock for wording and event age rather than rebuilding status or membership.
 
 Host intake belongs to the existing dashboard/plugin bridge and filesystem invalidation, not periodic activity polling or a process-global ambient lifecycle. `HostActivityInput` requires an armed native supervisor-exit subscription and a complete publication acknowledged for the current plugin boot before joining published agent IDs to their AR role/task records; absent, incomplete or unreconciled authority remains unknown. MCP startup installs the workspace tool-event writer, not an ambient lifecycle. Event River `scopeKey` is diagnostic task attribution; landing-chain lifecycle/operation fields remain contract-owned and are not a second task-status source.
@@ -30,7 +32,7 @@ Native read reuse remains an optimization of those owners. The app-local change-
 
 The packaged task templates (`leaf-task.md`, `master-task.md`, `requirement-packet.md`) are synchronized projections of the canonical l-01 skill's `templates/`; the renderer names the task templates as its authoring scaffolds and the packet projection takes its canonical packet shape from the requirement-packet template. Creation numbers are stable identities, the master list is an index, and exact same-master waitsFor fields authored through task_doc derive Order. Fixed prose belongs to its typed home rather than duplicated free-form sections or dependency notes; copied instructions are not separate authority or an executed workflow.
 
-MIK-R109 changes agent reads from document carriers to names. `read_ar_files` accepts up to twenty path strings and names governing cards, states/counts and overview locations once per call, nearest first; it returns no text and keeps no session delivery state. `knowledge_read` pages record IDs/kinds/states/locations, and `knowledge_diff` names trees/counts/decision records beside a whole comparison report. Agents open files natively. Mounted `context_packet` is the slim version-3 roots/task/actions/build/pair answer; the internal resolver and full context builder remain separate. Every registered tool receives `readOnlyHint` from `mcp/read_only.py`; context freshness and diff capture/report capability are marked false.
+MIK-R109 changes agent reads from document carriers to names. `read_ar_files` accepts up to twenty repository-relative path strings. A fuller reply can include the governing card, available state counts and action headings, and governing overviews once per call, nearest first. Eligible rows can add current rule text and related knowledge as space permits. Compact rows keep each path, its existence or refusal, card status where applicable, and any brief pointer with reported saved freshness. A pointer can name a missing or older brief, or one whose age is unknown. The next write covering the file or its folder renews a missing or older saved brief when the writer can refresh it. If refresh cannot proceed, the writer reports `briefsProblem` and leaves the saved brief as it was. Use native file tools for the source, card, overview and current saved brief. Use `knowledge_read` to locate whole records and proof evidence. The reader keeps no session delivery state. `knowledge_read` pages record IDs/kinds/states/locations, and `knowledge_diff` names trees/counts/decision records beside a whole comparison report. Agents open files natively. Mounted `context_packet` is the slim version-3 roots/task/actions/build/pair answer; the internal resolver and full context builder remain separate. Every registered tool receives `readOnlyHint` from `mcp/read_only.py`; context freshness and diff capture/report capability are marked false. After `apply_read_only_marks`, `create_server` runs `_compact_server_tool_schemas` (delegating to `models/tools/tool_schema_compaction.py::compact_tool_schema`) to losslessly compact every registered tool's advertised JSON input schema before optional role-allowlist scoping, and every ordinary registered description stays within the 500-character raw ceiling pinned by `test_role_tool_scope.py`.
 
 Historical L109 composition declared 41 names after removal of `resolve_context`; pre-sync R111 and other 42-name accounts are historical. The current ordinary successor declares 44 names, including mounted `knowledge_write`, `user_settings_init`, architect `explainer_control` and leaf-scoped `citation_note_revision`. Task authoring and public landing/role delivery now have their own final shaped rows, separate from whole-result logging and the location-free content measurements. task_doc.get/read_steps are removed: canonical JSON/rendered files are the observation route, writes deliver phrases, and linkage_report files its facts with counts/location. Reachable packet-owned landing refusals preserve the same sentence, code, check order and no-write boundary; conversion recovery uses the single central probe's case and either actual tool arguments or separately carried CLI values with a quoted display. Launch copies comprise the own leaf plus declared requirements and report missing sources without inventing authority. A successful role start puts missing requirement filenames before step-up advice so the names have priority in a short warning. These source facts supply no new code grade, installed acceptance, transaction permission or independent memory verdict.
 
@@ -52,7 +54,7 @@ For authoring, repository foundation is regular work in the real Architect task,
 For leaf maintenance, the worklist compares exact B/K_B/C/K_C, task declarations and maintenance scope. It classifies entries and record changes, reaches families once, reconciles planned effects, checks routes, classifies unexplained changes and surfaces one-hop reconsideration. New or newly unlisted live invariants raise membership work; changed surviving base decisions/facets compare both JSON and retained unparsed Markdown. Only the leaf's own open raise with an otherwise status-only reconsideration mark is exempt. The final sorted/digested list includes the membership and touched-record kinds and subject-based planning marks on the kinds passed through planning. Unreadable input is named incomplete scope. Persisted worklists are projections. The mandatory gate uses a compatible observed verdict or recomputes it from the exact inputs.
 
 > **Retained historical source account — superseded by the current route account:**
-> For publication, ordinary closeout captures and revalidates an exact candidate, checks approval, and calls the converted-memory knowledge gate before publishing either side. It subsequently refreshes memory metadata/entities/routes, closes the owner's history, and validates/gates the exact memory output before its commit. Recovered memory outputs are judged too. Integration/checkpoint preview and apply call the landing knowledge boundary; series landing validates against the parent memory tip and checks currentness over the net changed code paths. Leaf landing applies its cutover boundary rather than inventing a second leaf worklist verdict. These present calls qualify the inherited statement that normal transaction routes have no quality prerequisites: the mandatory converted-knowledge gate is distinct from automatically running the complete code-quality/certification sequence.
+> For publication, ordinary closeout captures and revalidates an exact candidate, checks approval, and calls the converted-memory knowledge gate before publishing either side. At the memory leg it validates and gates the exact output before its commit. Recovered memory outputs are judged too. Integration/checkpoint preview and apply call the landing knowledge boundary; series landing validates against the parent memory tip and checks currentness over the net changed code paths. Leaf landing applies its cutover boundary rather than inventing a second leaf worklist verdict. These present calls qualify the inherited statement that normal transaction routes have no quality prerequisites: the mandatory converted-knowledge gate is distinct from automatically running the complete code-quality/certification sequence.
 > **Retained historical source account — superseded by the current route account:**
 > For native role work, `application/role_launch_context.py` resolves canonical task topology; CLI role preparation compiles the assignment and binding; Paseo launch stores an exact replay call and receipt. AR chooses identity and assignment, while Paseo owns the native session. A repeated stored call converges on the same agent and distinguishes created, refused, and no-answer outcomes. Immediate starts carry their first message; held starts omit the host prompt and retain the opening handover. The owning Manager's `role_start_set` prepares Worker, Reviewer and Curator siblings with deterministic per-seat request IDs: Worker opens immediately, Reviewer opens with supplied first work or stays held, and Curator stays held. Partial sets preserve successful seats for reconciliation. Leaf holders persist across completed turns; explicit replacement is starter/launcher-authorized, and native `retire_child` requires the original starter and explicit active-turn interruption authority. Leaf handovers expose exact sibling role/task arguments, not sibling runtime ids. Worker checks use the candidate worktree's own environment according to repository tool notes, disclose a missing setup command, and record the interpreter actually used; this does not replace a serving runtime or certify a focused run.
 > **Retained historical source account — superseded by the current route account:**
@@ -172,7 +174,7 @@ New invariant/family/decision admission needs a supported criterion and justific
 
 Reconsideration is explicit, one-hop, and triggered only by linked grounds; unresolved endpoints/tasks without manifests do not invent a trigger. Superseded decisions are skipped visibly. The curator can reaffirm rejection or raise a developer question, never reverse the decision. A reaffirmation refreshes only fired, still-matching links to the judged mapped state; a new change needs a new explicit answer, and an identical retry is a no-op. A raise appends its task question before knowledge-file publication and refuses without the task-question owner. Reordering linked alternatives is guarded, subject to the historical rewording limit below.
 
-The mandatory converted-memory gate checks kind-specific satisfying rows and validator refusals against exact inputs. A compatible retained verdict serves unchanged observations. A miss computes those judgments, with incomplete reads and Git failures reported as named repair findings. There is no waiver/report-only gate mode. Memo reuse requires identical tree/contract/parent/task/build inputs and unchanged recorded reads; conflicts, unreadable observations, and incomplete/Git-failed runs are not reusable acceptance. Closeout asks before approval consumption/publication and again over its exact refreshed/closed memory output. It rejects physical tree or admitted branch movement, stages the judged tree, and restores its own preparations only while bytes still match. A partial publication/proof failure remains recoverable evidence, not an invented rollback success. Once converted memory exists in the repository, unconverted writes/publications use the cutover refusal and named crossing route.
+The mandatory converted-memory gate checks kind-specific satisfying rows and validator refusals against exact inputs. It reuses a compatible retained verdict when the tree, contract, parent, task and build inputs match and recorded reads are unchanged. A miss recomputes the judgments and reports incomplete reads and Git failures as named repair findings. There is no waiver or report-only gate mode. Conflicts, unreadable observations and incomplete or Git-failed runs are ineligible for reuse. Closeout asks before approval consumption and publication. Its memory leg closes the latest owner history with an eligible review fact when available, refreshes entity fingerprints and generated route indexes, then judges that exact memory output. It rejects physical tree or admitted branch movement, stages the judged tree, and restores its own preparations only while bytes still match. A partial publication or proof failure leaves recoverable evidence. Checks and publication operations whose memory inputs are all unconverted refuse even in a never-converted repository. The refusal names a crossing from converted memory when one is available and otherwise names first conversion.
 
 Paired acceptance binds configured repositories, physical worktree roots, branches, bases, onboarding root, and contract digest. Ledger location is informational. Candidate capture uses an isolated add-all index and stable observed HEAD without staging the user's index. Changed pair/candidate inputs invalidate stale acceptance; operation reconciliation cannot call a moved HEAD its output without exact identity or journaled mutation proof. Series/direct-existing routes retain committed-tree semantics. Closeout/integration preserve approval, source lineage, Git/ref/tree compare-and-swap, exact recovery, and publication ownership; queue projections do not grant these powers.
 
@@ -261,7 +263,7 @@ A fresh launcher metadata request lists the host’s choices. The pane reads fea
 
 change-set reads now run on the route family's own bounded admission: `changeset_scheduler.py` starts eight workers and admits eight more pending jobs; a request past the cap answers 503 with `Retry-After: 1`, a disconnect answers 499 after setting the read's cancellation event, a queued abandoned job is withdrawn before it runs, and a running job releases its slot only when its worker ends. The runner's single `_wait_process` kills the Git child and its process group on the timeout or the event. Freshness is Git's own: a commit pair is keyed by ids with no observation on a hit, a working view runs `git status --porcelain=v2 -z` (and has no cache where a plain read costs no more), and the object store is Git's `count-objects -v` census; the `.git/objects` and worktree directory walks are gone. The id-keyed no-observation choice names its accepted gap: object loss and attribute changes are not observed per hit until eviction or restart. The cache's per-read maps are capacity-bounded and an abandoned read admits nothing.
 
-**L184.** The product reads the host's usage report at a stamped turn end, keeps one limit file, and holds a limited recipient's message; the bridge carries the snapshot's second step and the usage read, and the CLI reaches the limit reader through an injected port.
+**L184.** The product reads the host's usage report at a stamped turn end or when a live report is due for its five-minute recheck, keeps one limit file, and holds a limited recipient's message; the bridge carries the snapshot's second step and the usage read, and the CLI reaches the limit reader through an injected port. The read itself is extracted to `cli/paseo_usage_reports.mjs`, which keeps the report-id-only refresh and each periodic verdict the tick passes in.
 
 - **Retained historical source account — superseded by the current route account:** The skill states the three master rules. \
 - The skill states the three master rules. \
@@ -396,6 +398,7 @@ Superseded card wording retained for custody (not the current source locator or 
 > Ordinary development supports isolated host pytest, including focused/serial investigation, without certifying authority. The root declaration is 10,000 unit and 2,000 integration cases (`pyproject.toml:333-334`). The earlier D226 4,000-to-5,000 epoch and L54's D299 5,000-to-6,000 raise are historical; D460 raised only the unit ceiling and left integration unchanged at that time; D579 subsequently raises integration from 1000 to 2000, retaining guard behavior. A configured ceiling is not a collected or executed population. Distinct user-operation/failure/regression protection justifies cases; unused support and duplicate matrices are not restored for coverage. Coverage is diagnostic, production CRAP 20 is a review trigger, and Radon reports do not enforce acceptance. Lint, formatting, typing, structural rules, and test failures remain enforcing; diagnostic execution errors remain visible. Certifying claims require genuine pinned Dagger admission and the existing lifecycle publication owners, exact candidate/process identity, disposable state, and credential isolation. A copied report, host pass, sync result, or use of Dagger alone is insufficient.
 
 ## Evidence
+
 
 - **Retained historical source account — superseded by the current route account:** The on-demand cards read at the route.
 
@@ -652,14 +655,24 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command. Anchor: build_parser and _register_knowledge_commands.
 
 
+
+
+- **Historical dispatch account:** In the retired `dispatch_agent` route, `AgentsRememberMCP.list_tools` closed the advertised schema at lines 64–65, and `AgentsRememberMCP.call_tool` rejected undeclared inputs before delegation at lines 79–85. The source is `mcp/src/agents_remember/mcp/server.py` at pre-removal commit `cd2eefebed80d19e29b785fdc36f8d1bf79f6a64`, blob `0e5fca4f5809ae7204baa1edf8daee0d1048fdee` (historical marker 411).
+
 - **Retained historical source account — superseded by the current route account:** Baseline adoption commits memory content and returns a cache observation. Source caption: `adopt_initial_baseline` `memory_content_commit` [158]
+
+
 - The current task registration surface mounts task_reopen through _register_task_reopen_tools and delegates the call to its payload owner. [285]
+
+
 
 
 
 - Synchronous dispatch preserves the framework validation path and waits for the worker before releasing its write lock. [389]
 
+
 - Citation preview adds modes to the existing declaration. [390]
+
 - Raw Git output prevents newline normalization from collapsing pathname identities. [340]
 - A changed candidate tree needs the bounded clean-sync proof at the door. [341]
 - Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [336]
@@ -672,10 +685,6 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 
 
 - **Retained historical source account — superseded by the current route account:** Each kind's own predicate, registered beside the kind. [4]
-
-- The worktree layer probes whether the converted leaf gate applies and refuses an unbound gate. It passes the exact candidate trees and any judged memory commit to the gate. Closeout separately marks the owner’s history closed. [5]
-
-- **Retained historical source account — superseded by the current route account:** The history-row rule over every file's subjects and the leaf's own file. [6]
 - **Retained historical source account — superseded by the current route account:** The one rule, named for its three writers. [8]
 - **Retained historical source account — superseded by the current route account:** The finalizer dispatches a leaf with a named master to _named_parent and a leaf without that name to _folder_parent. [9]
 - **Retained historical source account — superseded by the current route account:** The placement guard. [10]
@@ -700,7 +709,6 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - **Retained historical source account — superseded by the current route account:** The four-tree comparison, pinned and recorded. [269]
 - **Retained historical source account — superseded by the current route account:** The archive hook's identity sources and confinement. [34]
 - **Retained historical source account — superseded by the current route account:** The tree view route. [35]
-- **Retained historical source account — superseded by the current route account:** The index format bump for the seal fix. [36]
 - **Retained historical source account — superseded by the current route account:** The content rules and derived reads. [38]
 - **Retained historical source account — superseded by the current route account:** The five registered decision rules. [39]
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** The owner resolves each requirement endpoint; unresolved is reported. [40] [270]
@@ -726,7 +734,10 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - The gate chooser both enforcement points share (since MIK-R09 a probe Git cannot answer is an incomplete side). [61]
 - **Retained historical source account — superseded by the current route account:** The package statement. [62]
 - **Retained historical source account — superseded by the current route account:** The `knowledge_read` surface, reached through the per-page extras since MIK-R02. [63]
-- **Retained historical source account — superseded by the current route account:** The published-intent surface. [64]
+
+
+- **Retained historical source account — superseded by the current route account:** The published-intent surface. Anchor: `read_published_intent` `_TREE_SCOPE` [64]
+
 - The leaf imports the single recomputation owner from leaf_completion: it computes and persists the worklist, names Git failures as git and turns other failures into an incomplete result; leaf_worklist can receive the gate's exact candidate trees. [65]
 - **Retained historical source account — superseded by the current route account:** The CLI subcommand. [66]
 - **Retained historical source account — superseded by the current route account:** The two readings of proofs. [67]
@@ -744,7 +755,10 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - **Retained historical source account — superseded by the current route account:** The command reads the families and prints them; it writes nothing. [84]
 - The seven route rules in the registry. [85]
 - **Retained historical source account — superseded by the current route account:** The command's report and exit statuses. [87]
-- **Retained historical source account — superseded by the current route account:** The one dataset resolution every knowledge read applies. [88]
+
+
+- **Retained historical source account — superseded by the current route account:** The one dataset resolution every knowledge read applies. Anchor: `select_knowledge_dataset` [88]
+
 - **Retained historical source account — superseded by the current route account:** The command's inputs, scope answer and exit statuses. [91]
 - Named reporting and refusing routes. [312]
 - The current shared predicate excludes generated route-index caches. [92]
@@ -758,15 +772,16 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - **Retained historical source account — superseded by the current route account:** **The seal's omission set, which is why naming a predecessor changes the derived id — the fact behind the carried non-idempotence limitation.** [106]
 - **Retained historical source account — superseded by the current route account:** Custody and release remain; creation is retired [118]
 - **Retained historical source account — superseded by the current route account:** Exact retained comparison after cleanup/restart/later landing [121]
-- **Retained historical source account — superseded by the current route account:** The new module's whole surface, and the rule that a side's state is read rather than inferred from an empty string. [122]
 - **Retained historical source account — superseded by the current route account:** **The projection that keeps a present structured value out of the absence slot, and the contract that makes `None` mean absence.** [123]
 - The adapter's delegation, with the composition unchanged. [124]
 - Retained historical caption, superseded: the served-value change was described as measured through real composition. The current structured-value case explicitly retires its fixture-driven round-trip and retains only helper key-order equality. [322]
 - **Retained historical source account — superseded by the current route account:** The added and the removed statement, each keeping its complete available text beside the named absent side. [126]
 - **Retained historical source account — superseded by the current route account:** The renderer that decides the four branches from declared state. [127]
+
+
 - **Retained historical source account — superseded by the current route account:** Published intent selects converted memory and its derived index [128]
+
 - **Retained historical source account — superseded by the current route account:** File-only ingest arguments/dispatch [131]
-- Four mounted knowledge operations are registered here: the read, the diff, the integrity check and the write. [133]
 - **Retained historical source account — superseded by the current route account:** Read-side index preflight without canonical placement [142]
 - **Retained historical source account — superseded by the current route account:** A ledger view is derived from Git and cache write failure is only an availability result. [156]
 - **Retained historical source account — superseded by the current route account:** Existing preparation retains actual Git binding and allows a distinct memory content view. [157]
@@ -800,10 +815,16 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 
 - **Retained historical source account — superseded by the current route account:** Current contract-scoped file writing [199]
 
-- **Retained historical source account — superseded by the current route account:** **The new application module on this package's route, and the shipped read it delegates to rather than duplicating.** [208]
 
 
-- **Retained historical source account — superseded by the current route account:** **The response field the block travels on, carried by the strict response model rather than re-declared.** [318]
+- **Retained historical source account — superseded by the current route account:** **The new application module on this package's route, and the shipped read it delegates to rather than duplicating.** Anchor: `published_intent_block` `open_read_context` `read_knowledge_scope` [208]
+
+
+
+
+
+- Historical published-intent response carrier. The current strict response uses NamedFile rows with optional brief data and has no published_intent field. [318]
+
 
 
 
@@ -830,7 +851,10 @@ Custody: the preceding sentence is detached from live reference 103; its origina
 - **Retained historical source account — superseded by the current route account:** The crossing owner's route of knowledge-ingest. [222]
 
 - **Retained historical source account — superseded by the current route account:** A copied Git index keeps the index file's modification time. [226]
-- **Retained historical source account — superseded by the current route account:** The cache's ignore rule alone. [227]
+
+
+- **Retained historical source account — superseded by the current route account:** The cache's ignore rule alone. Anchor: `ignore_memory_cache` [227]
+
 > - **Retained historical source account — superseded by the current route account:** Current imported source owns this scoped route boundary. [228] [229] [230] [231]
 - **Retained historical source account — superseded by the current route account:** The ledger loader reads through the recorder. [232]
 - **Retained historical source account — superseded by the current route account:** The limits of the worklist processes. [234]
@@ -873,10 +897,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - **Retained historical source account — superseded by the current route account:** Old-watcher stop failure is reported and installation continues [292]
 - **Retained historical source account — superseded by the current route account:** Ingest plans by default, writes files only, and refuses unconverted memory [294]
 - **Retained historical source account — superseded by the current route account:** Worklist scope is one-pass and insertion/deletion linkage is side-specific [295]
-- **Retained historical source account — superseded by the current route account:** Closeout invokes mandatory candidate gate before publication [296]
-
-- Fresh and recovered closeout validate the exact memory output as a leaf publication against the parent memory tip. The separate worklist gate uses the contract’s recorded bases and the exact candidate trees. A committed pair supplies the judged memory commit for the ancestry check. [297]
-
 - **Retained historical source account — superseded by the current route account:** Integration/checkpoint preview and apply encounter knowledge boundary; leaf and series predicates differ [298]
 
 - **Retained historical source account — superseded by the current route account:** Investigator refuses leaf selection and validates canonical topology [301]
@@ -894,7 +914,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** Finalization delegates task-document resolution/publication and checks blockers before cleanup/publication [308]
 - **Retained historical source account — superseded by the current route account:** Current declared collected-case budgets supersede historical totals [309]
 - The bridge's internal daemon client and its first-message delivery, and the two chat routes over them: the tree's preloaded live-agent answer and the single-document read that corrects it. [310]
-- The retained internal family-complete leaf payload supports path/family seeds; current mounted knowledge_read cuts/projects that payload to naming rows, not full content. [45]
 - The structured-value case retains a direct helper key-order equality assertion; it does not exercise a changed served field through composition or round-trip both sides. [125]
 - The current capsule test source checks compiler-owned delivery for the same admitted seat and only capsule/refused modes; removed legacy reopen and production-launch enumeration cases are not current witnesses. [163]
 - Public closeout payload delegates the current task-bound request. [165]
@@ -923,7 +942,10 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - Current contract-scoped file writing [363]
 - The retained internal published-intent block delegates to the shared knowledge-read context and scope owners; it does not restore inline content to mounted naming answers. [364]
 
+
+
 - Historical published_intent response carrier; current strict ReadArFilesResponse names files and overview locations with state/refusal metadata and has no published_intent field. [209]
+
 
 - Historical published_intent carrier test reference; the current CarrierParityTests case checks naming answer keys and rejects retired carrier spellings, including published_intent. [211]
 
@@ -943,6 +965,8 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 
 - The lock every memory route asks. [368]
 - A copied Git index keeps the index file's modification time. [226]
+
+
 - The cache's ignore rule alone. [369]
 
 
@@ -969,7 +993,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 - The contract loader reads through the recorder. [375]
 - The removed repository memory root is resolved through the recorder. [250]
 
+
 - The host step of the install. [251]
+
 
 - The packaged host contract. [252]
 - The shared application route owns the converted-layout marker check that the CLI routes import. [376]
@@ -984,16 +1010,15 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 - **The entry route's unwired answer: a named refusal with the "not served rather than served empty" reason, never an empty list.** [266]
 - **The status mapping success reads as `refusal is None`, so one function serves all three typed results; the four candidate codes answer `404` and the expansion's `source_content_unresolved` falls through to `400`.** [267]
 - The batch blob reader. [272]
+
 - The task reopening tool on the registration surface. [378]
+
 
 - The packaged Worker role text delegates candidate setup to repository tool notes and records the interpreter each run used. [286]
 
 - Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [380]
 
 - `PUBLIC_TOOLS` is one literal tuple of 44 public names, including the native role, retirement and knowledge operations and excluding `dispatch_agent`. The landing-answer helper keeps cut and added counts and bounds inline rows; the Curator's curation operation requires an independent statement-by-statement fact-check before closeout. [288]
-
-
-- The shared writer route establishes the contract’s recorded memory base for card comparison and passes it with the contract-bound code worktree and persisted worklist. It passes no card base when it cannot establish the recorded commit. [315]
 
 - Source bindings, membership and record models. [313]
 
@@ -1010,7 +1035,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 
 - Complete current-boot host reconciliation and the supervisor subscription precede binding activity to tasks. [325]
 
+
 - Replayed role launch publishes receipt identity before invoking its host launch call. [326]
+
 - TaskSummary bodies use a separate bounded generation-qualified cache, with content-derived revision. [327]
 - Obsolete terminal lock cleanup requires a complete canonical-contract census and preserves any subject not proved terminal. [328]
 - The current declared pair is 10000 unit and 2000 integration selected cases. Earlier unit-only raises kept their integration ceiling unchanged at that time. [329]
@@ -1019,13 +1046,17 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:1
 
 - Worker code and Curator memory failures count independently; incomplete history stays unknown. [331]
 
+
 - The saved-call executor rechecks the named step-up predecessor before archiving it. A found, unarchived predecessor must be idle and prompt-free. [332]
+
 
 - Step-up launch metadata is reconciled through the canonical task writer. [333]
 - Frozen detail identities and bytes are checked rather than recomputed. [334]
 
 
+
 - An eligible settled empty step-up retains its ordinary retryable call. If the recorded native Antigravity agent is absent, Retry settles the refusal and drops the call. [335]
+
 
 
 - The response requires judgment and retains knowledge/source identity without the removed supporting-record fields. [337]
@@ -1110,24 +1141,46 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:2
 - Supported code media is returned before text-size refusal and the reader renders its media state. [403]
 - Knowledge media URLs use the selected memory commit; byte delivery applies its actual16MiB bound. [404]
 
+
+- The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. [402]
+
+
+- General families plus four explainer additions, narrowed to the allowlist of a bound role; the seat check covers only those four while the process still serves them [405]
+
+- The cutover refusal applies to an all-unconverted input set. A repository probe selects the conversion guidance. [423]
+
+
+
+- The memory leg writes the qualifying review fact while closing history, then refreshes route indexes and entity fingerprints. A failed prepublication refresh restores the closing bytes. [422]
+
+
+- Four mounted knowledge operations are registered here: the read, the diff, the integrity check and the write. [133]
+
+- Fresh and recovered closeout validate the exact memory output as a leaf publication against the parent memory tip. The worklist gate uses the contract's recorded bases and exact candidate trees. A committed pair supplies the judged memory commit for the ancestry check. [297]
+- The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command. Anchor: build_parser and _register_knowledge_commands. [103]
+- The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command. [379]
 - **Retained historical source account — superseded by the current route account:** The umbrella registers the conversion command. [69]
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [80]
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [83]
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [86]
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [90]
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [95]
-- The current umbrella parser registers converted knowledge authoring and the read-only handoff-check command, and it registers no review-record-comparison command. Anchor: build_parser and _register_knowledge_commands. [103]
-- The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command. [379]
-- The runtime synchronizer declares three targets (benchmarks, providers, system) without docs; retained packaged tool details do not add a fourth generator target. Target: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md. [402]
 
 
-- General families plus four explainer additions, narrowed to the allowlist of a bound role; the seat check covers only those four while the process still serves them [405]
+- **Retained historical source account — superseded by the current route account:** Closeout invokes mandatory candidate gate before publication [296]
+
+- The shared writer uses the contract's recorded memory base for card comparison and passes it with the contract-bound code worktree and persisted worklist. It supplies no card base if the recorded commit cannot be established. [315]
+- **Retained historical source account — superseded by the current route account:** The index format bump for the seal fix. [36]
+- The family-complete internal leaf selection accepts path and family seeds. The mounted reader's public leaf reply projects naming rows from the selection. [45]
+- The worktree layer checks whether the converted leaf gate applies and refuses an unbound gate. It passes the exact candidate trees and any judged memory commit to the gate. Closeout separately marks the owner's history closed. [5]
+- **Retained historical source account — superseded by the current route account:** The history-row rule over every file's subjects and the leaf's own file. [6]
+
+- **Retained historical source account — superseded by the current route account:** The new module's whole surface, and the rule that a side's state is read rather than inferred from an empty string. [122]
+
 
 - The bounded live-agent census requests background agents and reports completeness only when the host explicitly ends its listing. [406]
 
-
 - Fresh create checks the reported provider and requested model, effort and features. Create and adoption record the normalized host mode alongside the request. [407]
-
 
 - A step-up row contributes its mode on its effective harness. An explicit launcher mode wins, and if no named mode applies the host default requires known modes and an advertised value. Otherwise no mode is sent. [408]
 

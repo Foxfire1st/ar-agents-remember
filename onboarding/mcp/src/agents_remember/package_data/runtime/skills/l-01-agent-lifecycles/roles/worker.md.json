@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
-        "content": "sha256:a15284d3b41ba46ff3d797912d1a4db64372b1de83f90bfe8421650c02a9c40d",
+        "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
+        "content": "sha256:f0754ad06198a06cfc6469c2228d6bb2590a23c03eb9b98a81453a7191c74579",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:61e5581f71a234466784c2854f3180ca251705dc41e6369cf1b2fab8b662df2d",
             "locator": {
               "end": 125,
@@ -37,12 +37,81 @@
         }
       ]
     },
+    "11": {
+      "note": "The role directs opening available saved briefs before its source work. Compact rows can give applicable card status and a brief pointer with saved freshness. Fuller replies can include rule text. Knowledge_read names whole records and their evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f84319f540b34af2161212763a118f5e52b00e1",
+            "content": "sha256:0f4e00a1f99299f38bec9dc8bc2b9f58d765476cdef61c0d9e74481ff3a07093",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "content": "sha256:471da92ea95b622c6fcabcbf2c3ee284c21b03fa248586ea8e61e90211f6a18a",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/application/read_files_briefs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b2aea820b99efd9848a69ba88a9eacaf687910",
+            "content": "sha256:6e80ad899e73b4af5891915a7bb47a67abe595b035b57a607ffc06149ee9941a",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "mcp/src/agents_remember/application/read_files_briefs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b1c36e5ae6160b8579f2f1783a7ac45cdb961d74",
+            "content": "sha256:d12893bc8963ee3c8f1abcaf553337e94c78a293eb0cf399ee18707e7dd51be3",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "mcp/tests/tool_answer_l109_cases.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
+            "content": "sha256:9691fd1d3c554b52dd4d2a9a812ad2c8309faa55906ad5fdc130cc34eaf6dd17",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The Worker role file states the Worker's duties, and the supplied operation states the procedure.",
       "targets": [
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:26c5524067439977845bf33105a7ed49edf803137809ee57ead9185bb7d52e9d",
             "locator": {
               "end": 8,
@@ -59,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
             "locator": {
               "end": 4,
@@ -76,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
             "locator": {
               "end": 4,
@@ -93,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:7039b2f8a5d2ed2a741683a9f319e159a80cc25968d685feda07ed7bd8dedb79",
             "locator": {
               "end": 159,
@@ -110,7 +179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:5b4a09092e1a5906f5aa32e7aeffd074838cac0d3a3e4dce63d36ca8198354e7",
             "locator": {
               "end": 149,
@@ -123,16 +192,25 @@
       ]
     },
     "7": {
-      "note": "This packaged Worker role is byte-identical to its canonical source and carries its actual stage and repair duties; that mirror identity establishes no executed check or acceptance.",
+      "note": "The packaged Worker role is byte-identical to the authored role in this source tree. Both copies carry the same stage and repair duties.",
       "targets": [
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
-            "content": "sha256:a15284d3b41ba46ff3d797912d1a4db64372b1de83f90bfe8421650c02a9c40d",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
+            "content": "sha256:f0754ad06198a06cfc6469c2228d6bb2590a23c03eb9b98a81453a7191c74579",
             "locator": {
-              "end": 159,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
+            "content": "sha256:f0754ad06198a06cfc6469c2228d6bb2590a23c03eb9b98a81453a7191c74579",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -144,7 +222,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:340c5a14780d00bd7a013a752aafaf7e863776424abd7fd05e988eb6a511a867",
             "locator": {
               "end": 19,
@@ -161,7 +239,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e15b95a69fb912bb268f0ab934a07160a0498ccf",
+            "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
             "content": "sha256:6c0b9657fb87e4488c963aabfe161d042015d740c0e06fa60b781b243e8aec38",
             "locator": {
               "end": 137,

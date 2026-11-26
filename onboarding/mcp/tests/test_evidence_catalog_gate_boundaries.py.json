@@ -71,16 +71,16 @@
       ]
     },
     "25": {
-      "note": "The lane manifest declares mcp/tests/test_evidence_catalog_gate_boundaries.py in unit-regression. Membership is selection, not invocation.",
+      "note": "The unit-regression lane selects mcp/tests/test_evidence_catalog_gate_boundaries.py. Execution evidence is recorded separately.\n\nAnchor: `mcp/tests/test_evidence_catalog_gate_boundaries.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "75006e874ab9c238187bcf9044d224511529c135",
+            "blob": "9b2f8dfb74c9f9e7cc39c1097e6d5f7e0ff20215",
             "content": "sha256:1d0174394ac949359d686292321739390d691490cf94038d9e8f95e831d8624a",
             "locator": {
-              "end": 159,
+              "end": 161,
               "kind": "line_range",
-              "start": 159
+              "start": 161
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -89,11 +89,11 @@
       ]
     },
     "26": {
-      "note": "The lifecycle catalog declares test_evidence_catalog_gate_boundaries.py as an exact consumer of mcp/tests/_evidence_catalog_fixture.py, mcp/tests/_user_settings_guard.py and mcp/tests/fixtures/repository_profiles/node/package-lock.json. These artifact registrations establish no invocation or passing result.",
+      "note": "The lifecycle catalog lists `mcp/tests/test_evidence_catalog_gate_boundaries.py` as an exact consumer of `mcp/tests/_evidence_catalog_fixture.py`, `mcp/tests/_user_settings_guard.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "d914a0a27f7f3953d73e5caec7138997a432ef82",
+            "blob": "b9fa47a89c9ddd840e0a38800093c4488a641283",
             "content": "sha256:1d0174394ac949359d686292321739390d691490cf94038d9e8f95e831d8624a",
             "locator": {
               "end": 21,
@@ -106,12 +106,12 @@
         },
         {
           "anchor": {
-            "blob": "d914a0a27f7f3953d73e5caec7138997a432ef82",
-            "content": "sha256:1d0174394ac949359d686292321739390d691490cf94038d9e8f95e831d8624a",
+            "blob": "b9fa47a89c9ddd840e0a38800093c4488a641283",
+            "content": "sha256:29838db099edc5bf1a40b05b443ffae6d50abd721b490d1792ef0503f83d3af9",
             "locator": {
-              "end": 278,
+              "end": 283,
               "kind": "line_range",
-              "start": 278
+              "start": 65
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -119,12 +119,12 @@
         },
         {
           "anchor": {
-            "blob": "d914a0a27f7f3953d73e5caec7138997a432ef82",
-            "content": "sha256:1d0174394ac949359d686292321739390d691490cf94038d9e8f95e831d8624a",
+            "blob": "b9fa47a89c9ddd840e0a38800093c4488a641283",
+            "content": "sha256:fcc4d24075e3dc68d791b032f98c88d5ead512e0d6f1ea39ed30ee510a82642d",
             "locator": {
-              "end": 2714,
+              "end": 2767,
               "kind": "line_range",
-              "start": 2714
+              "start": 2549
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -133,16 +133,16 @@
       ]
     },
     "27": {
-      "note": "The lane row this module holds in the sorted `unit-regression` list. Anchor: \"mcp/tests/test_evidence_catalog_gate_boundaries.py\" Anchor: \"mcp/tests/test_evidence_catalog_gate_boundaries.py\"",
+      "note": "The unit-regression lane selects mcp/tests/test_evidence_catalog_gate_boundaries.py.\n\nAnchor: `mcp/tests/test_evidence_catalog_gate_boundaries.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "75006e874ab9c238187bcf9044d224511529c135",
+            "blob": "9b2f8dfb74c9f9e7cc39c1097e6d5f7e0ff20215",
             "content": "sha256:1d0174394ac949359d686292321739390d691490cf94038d9e8f95e831d8624a",
             "locator": {
-              "end": 159,
+              "end": 161,
               "kind": "line_range",
-              "start": 159
+              "start": 161
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

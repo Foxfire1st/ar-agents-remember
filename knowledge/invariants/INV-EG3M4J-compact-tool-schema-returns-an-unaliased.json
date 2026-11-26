@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Stripping literal property names ('title', 'default', 'description') or non-null defaults, or alias-mutating caller schemas, silently corrupts MCP tool wire contracts; guarded directly by test_compact_tool_schema_is_lossless_and_immutable."
+  },
+  "applicability": "Applies to every JSON Schema mapping passed to compact_tool_schema in mcp/src/agents_remember/models/tools/tool_schema_compaction.py.",
+  "conditions": [
+    "Input is a JSON Schema mapping produced for an MCP tool's inputSchema.",
+    "Schema-keyword stripping operates only on schema nodes, never on property-name or definition-name maps ($defs, properties, patternProperties, dependentSchemas)."
+  ],
+  "exclusions": [
+    "Does not rewrite anyOf nullability, inline or rename $defs entries, strip field-level property descriptions, or alter non-null defaults."
+  ],
+  "id": "INV-EG3M4J",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_tool_schema_compaction.py::test_compact_tool_schema_is_lossless_and_immutable on tree e4c3ab7c6aef30599016a9ff1311ee54ced7f976",
+        "mcp/tests/test_tool_schema_compaction.py::test_compact_tool_schema_is_lossless_and_immutable on tree a5bb9a1f39686862d0ffd950f196c889a39fbe55"
+      ],
+      "path": "cap-l4-curator-ingest.json"
+    },
+    "handoffEntry": "CAP-R04@v1 §1 lossless compaction",
+    "leaf": "261124-CAP-L4",
+    "task": "261124-CAP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "compact_tool_schema returns an unaliased deep copy of one MCP tool JSON Schema that strips only schema-level title, default: null, and immediate top-level $defs model-level description strings while preserving literal title, default, and description property names, combinators, dependentSchemas, list and dict items, additionalProperties, required, enum, const, $ref, and non-null defaults.",
+  "status": "proposed",
+  "supersedes": []
+}

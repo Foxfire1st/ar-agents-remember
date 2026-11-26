@@ -4,7 +4,7 @@
 
 ## Contract
 
-Hold only still-waiting native role messages in `.ar-product/held-messages/<recipient>.json` under the recipient’s own workspace, with the store's schema strings, file names and bounds taken from the read-side layout owner `controlplane/held_store_layout.py` so the delivery machinery and the attention reader cannot disagree about them. Admission is locked, uses atomic replacement and fsync, admits at most twenty messages and never drops an existing message to make room. Text is limited by the message input boundary, not summarized by this module. The store is independent of hosted-seat/control-plane messaging.
+Hold only still-waiting native role messages in `.ar-product/held-messages/<recipient>.json` under the recipient’s own workspace, with the store's schema strings, file names and bounds taken from the read-side layout owner `controlplane/held_store_layout.py` so the delivery machinery and the attention reader cannot disagree about them. Store admission, claims, and settlement run under the recipient's launch-receipt lock (`cli/role_held_store.py::open_held_store`, using atomic replacement and fsync), refuse closed seats or missing workspaces without creating a store or folder, admit at most twenty messages and never drop an existing message to make room. Text is limited by the message input boundary, not summarized by this module. The store is independent of hosted-seat/control-plane messaging.
 
 ## Delivery and recovery
 
@@ -12,7 +12,7 @@ A drain claims one immutable FIFO batch under a durable message ID. Later admiss
 
 Attempt the whole remainder before using any learned byte budget. A successful size is only a lower bound; after a whole refusal, find the largest admitted FIFO prefix. This yields the fewest deliveries under a stable monotone size limit without a word-count splitter. A single unadmitted message stays held. Part IDs survive recovery. Exactly-once recovery across a host-accepted/disk-not-committed boundary additionally depends on host deduplication by the supplied message ID; these tests establish it with a deduping fake host, not a real-host witness.
 
-Stage compact terminal metadata before removing waiting text, then flush it into the launch receipt. Terminal receipt failure keeps that metadata for a later sweep, never the ended text. Archive/gone and sender withdrawal are terminal ends; elapsed time is not. Clearing an ended queue also removes an empty delivery claim.
+Delivered batches stage compact terminal metadata before removing waiting text and flush it into the launch receipt (keeping only that metadata for a later sweep on receipt-write failure). When a recipient is closed, archived, gone, or seat-lost, `_end_batch` settles the store through `settle_held_store`, recording every still-waiting message with its text in `heldStoreClosures` on the launch receipt before unlinking the store file; sender withdrawal remains a terminal end, and elapsed time is not. Clearing an ended queue also removes an empty delivery claim.
 
 ## Bounded actor
 
@@ -28,7 +28,7 @@ Before a resend, a message attempted under a host id goes alone and under that i
 
 ## Current Contract — Scoped Launch And Settings Changes
 
-_open_held_seat now invokes the receipt owner’s _restore_launch_handover with the saved launch call before adding waiting messages to the frozen opening prompt. For an artifact-backed receipt, restoration validates frozen details and verifies the primary handover and takeover material. With neither artifact reference, the helper validates the frozen details directly.
+`_open_held_seat` invokes the receipt owner’s `_restore_launch_handover` with the saved launch call. The artifact-backed path validates frozen details and verifies the primary handover and any takeover material. With neither artifact reference, the helper validates the frozen details directly. A held leaf Reviewer or Curator receives its applicable product notice between the frozen handover and the claimed waiting messages.
 
 A ValueError releases the claim and returns cannot-open with the specific recovery detail; no host opening occurs and waiting messages remain. Existing successful opening stages terminal metadata before removal, and existing FIFO, batching, store limits, permission guards and bounded sweep contracts remain unchanged.
 
@@ -36,22 +36,31 @@ A ValueError releases the claim and returns cannot-open with the specific recove
 
 
 
-- Admission appends under the store lock and refuses overflow without dropping text. [1]
+
+- Admission appends under the store lock and refuses overflow without dropping text. Anchor: `hold_message` [1]
 
 
 
-- A drain delegates claim/readiness checks and whole-first FIFO delivery. [2]
+
+
+- A drain delegates claim/readiness checks and whole-first FIFO delivery. Anchor: `drain_held` `_deliver_waiting` [2]
 
 
 
-- Terminal lines are published separately from ended text and retain failure state. [3]
+
+
+- Terminal lines are published separately from ended text and retain failure state. Anchor: `apply_drain_to_receipt` [3]
+
 
 
 - Yielded receipt paths, reads and drains are capped; each directory stays open as a live filesystem-order scan. Delivery root discovery is synchronous and retains one walk per discovered root, without the attention reader's sixty-four-folder cap.
 
-Retired at the fifth freeze d59c3493: mcp/src/agents_remember/controlplane/held_store_discovery.py:70-95 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08; mcp/src/agents_remember/controlplane/held_store_discovery.py:158-191 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08. Retired means the anchor no longer stands, not that the cited subject was deleted [4]
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/controlplane/held_store_discovery.py:70-95 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08; mcp/src/agents_remember/controlplane/held_store_discovery.py:158-191 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08. Retired means the anchor no longer stands, not that the cited subject was deleted
 
-- Validation precedes prompt construction and host launch; failures retain waiting work. [5]
+
+- Handover validation precedes prompt construction and host launch. Invalid handover details release the claim while preserving the waiting batch. [5]
+
+
 
 
 
@@ -59,10 +68,19 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/controlplane/held_
 
 
 
+
+
 - Test source checks cannot-open, zero second host calls and retained/reclaimable work. [7]
+
 
 **L184 — INV-1ZKP4R.** The held store is where a waiting row's fields are written and read, so the reset survives here or not at all. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
 
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/controlplane/held_store_discovery.py:70-95 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08; mcp/src/agents_remember/controlplane/held_store_discovery.py:158-191 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+
+- The held opening inserts its product notice between the restored prompt and the FIFO batch. [9]
+
+
+- Yielded receipt paths, reads and drains are capped; each directory stays open as a live filesystem-order scan. Delivery root discovery is synchronous and retains one walk per discovered root, without the attention reader's sixty-four-folder cap. [4]

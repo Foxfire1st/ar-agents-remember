@@ -1,0 +1,60 @@
+{
+  "path": "mcp/src/agents_remember/application/file_briefs/facts.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a1245a23f3aef324140c4843eaeb5a6f6a9b999b",
+        "content": "sha256:7f3d5075aa00f5dc24483dd96ca04976ec26ec628805d01a35ef49b2ac58acc9",
+        "locator": {
+          "kind": "symbol",
+          "name": "BriefSource.assemble"
+        }
+      },
+      "id": "RLZ-79HX2C",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Chooses what to include from indexed records and associates it with the checked code tree.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "a1245a23f3aef324140c4843eaeb5a6f6a9b999b",
+        "content": "sha256:a698d0adaa13b00419cf99043272899df1ae474ab75286ced501756e63c5099d",
+        "locator": {
+          "kind": "symbol",
+          "name": "BriefSource.measure"
+        }
+      },
+      "id": "RLZ-9K64AF",
+      "invariant": "INV-T50898",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rules 1–5",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Reads standing once for each batch of live invariants using the L3 knowledge index.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Assembly combines the four qualifying record classes and skips a path with none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1245a23f3aef324140c4843eaeb5a6f6a9b999b",
+            "content": "sha256:7f3d5075aa00f5dc24483dd96ca04976ec26ec628805d01a35ef49b2ac58acc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "assemble"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**The derived index's one schema: exactly the eight logical tables the projection fills (MIK-R74 rule 1).** `schema_v2.py` through `schema_v9.py`, the generation registry and every other table, index and trigger definition are deleted. Readers of deleted tables were deleted or reduced with the change.
+**The derived index's one schema: exactly the eight logical tables the projection fills (MIK-R74 rule 1).** Revision tables store the selected tree's derived state. The schema admits generation 10.
 
 ## Code Commentary
 
@@ -14,6 +14,11 @@
 
 ## Evidence
 
-- The index owns exactly eight logical tables in manifest order [9]
-- The one schema is composed, pinned, and drift fails instead of re-pinning [10]
-- Any other declared version is refused, never migrated [11]
+
+
+
+- The one admitted schema checks its pinned definition and declared generation. [12]
+
+- The index declares eight logical tables and their manifest column order. [9]
+- The composed schema is checked against the pinned fingerprint. [10]
+- A database with another declared generation is refused. [11]

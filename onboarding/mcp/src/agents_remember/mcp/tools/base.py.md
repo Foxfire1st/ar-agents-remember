@@ -11,6 +11,9 @@ tuple from its single definition in `models`.
 
 ## Code Commentary
 
+The shared payload adapter forwards the complete result, any preselected answer and any reader-owned fitting hook to response completion.
+
+
 It declares `TRANSPORT`, an empty `RESERVED_TOOLS`, `__all__`, and `_tool_payload`.
 `PUBLIC_TOOLS` is imported and re-exported rather than redeclared. `_tool_payload` accepts an
 optional `answer` projection beside the whole application `payload` and delegates both to
@@ -67,7 +70,10 @@ None.
 
 ## Evidence
 
+
+
 - The adapter forwards the whole payload and optional answer to one finalizer. [10]
+
 
 ### Docs References
 
@@ -83,7 +89,10 @@ No Domain Documentation source is configured.
 - The live registration is compared to this tuple, in order, by the inventory suite. [3]
 
 
-- The shared adapter finalizes one application result. [4]
+
+
+- The shared adapter finalizes one application result. Anchor: `_tool_payload` [4]
+
 
 
 - Registrars are the only published declaration family. [5]

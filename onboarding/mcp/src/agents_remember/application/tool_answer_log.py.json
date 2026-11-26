@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+        "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
         "content": "sha256:03ec733da445aa6b4d8910bc6875e8f971ccfb913c6a482b1fac7f3b3eb0fc1f",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+        "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
         "content": "sha256:c22dd12cf6c8d6533461cc6a6e5bf97a22f98c2011311e1df231340a41fe53af",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+        "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
         "content": "sha256:8e938807fb5d6538c4803338b19c1800f906615572f3a1c0a91b231a151bf06b",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+        "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
         "content": "sha256:298df489896a0e1cf655522ee0eaa00cec9114cae3c2f46a1e1ec6eb7d589846",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+        "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
         "content": "sha256:fc6c572468e4c29846b3cc9752c6064780279bf2fd776e72531cf7b8878077a6",
         "locator": {
           "end": 353,
@@ -94,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+        "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
         "content": "sha256:fc6c572468e4c29846b3cc9752c6064780279bf2fd776e72531cf7b8878077a6",
         "locator": {
           "end": 353,
@@ -113,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+        "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
         "content": "sha256:53a373db7a06d0fbb1b0419108122ca31b58886c642b19298de7e385e5cb4599",
         "locator": {
           "kind": "symbol",
@@ -128,6 +128,24 @@
       },
       "rationale": "_evict_older_days runs the pressure-write reclamation loop against census-cached day sizes, so finished days are accounted once and successful removal walks nothing again.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
+        "content": "sha256:3566dc8e51f79108a9fd22170b4563f62b97a5b32b361c5afe161dc2dd5a218d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_call_line_dict"
+        }
+      },
+      "id": "RLZ-X7FMPC",
+      "invariant": "INV-B1DZ6W",
+      "origin": {
+        "handoffEntry": "KNO-R04@v1 rule 13",
+        "leaf": "261112-KNO-L4"
+      },
+      "rationale": "Carries the recorded result digest on the tool-call line independently of the detail-file entry so the retained line identifies the answer when a digest was recorded.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -136,7 +154,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+            "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
             "content": "sha256:c22dd12cf6c8d6533461cc6a6e5bf97a22f98c2011311e1df231340a41fe53af",
             "locator": {
               "kind": "symbol",
@@ -152,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+            "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
             "content": "sha256:fc6c572468e4c29846b3cc9752c6064780279bf2fd776e72531cf7b8878077a6",
             "locator": {
               "kind": "symbol",
@@ -168,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+            "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
             "content": "sha256:53a373db7a06d0fbb1b0419108122ca31b58886c642b19298de7e385e5cb4599",
             "locator": {
               "kind": "symbol",
@@ -184,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+            "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
             "content": "sha256:03ec733da445aa6b4d8910bc6875e8f971ccfb913c6a482b1fac7f3b3eb0fc1f",
             "locator": {
               "kind": "symbol",
@@ -200,7 +218,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+            "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
             "content": "sha256:636b1392813c0c5b75390e952df83aaa0eb06c3d123bb77f21f7649c374dd88b",
             "locator": {
               "kind": "symbol",
@@ -216,7 +234,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+            "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
             "content": "sha256:298df489896a0e1cf655522ee0eaa00cec9114cae3c2f46a1e1ec6eb7d589846",
             "locator": {
               "kind": "symbol",
@@ -228,18 +246,34 @@
       ]
     },
     "7": {
-      "note": "Concurrent detail writes cannot both spend the same remaining folder budget.\n\nAnchor: `test_concurrent_details_cannot_both_spend_the_same_log_budget`",
+      "note": "Concurrent detail writes cannot both spend the same remaining folder budget. Anchor: `test_concurrent_details_cannot_both_spend_the_same_log_budget`",
       "targets": [
         {
           "anchor": {
-            "blob": "02df2b567c68180c22058ef0d58bf27b6ea52756",
-            "content": "sha256:4e501d5e6da0d4fabec24d326e4f71ecc97abfad6fb7b6e5c130c636c22154f4",
+            "blob": "c3d6283339f0acb8a721fee7ad1b314357817757",
+            "content": "sha256:cced0a3b79d28af3ad7a8922ee37bcc97036eab1da8a6c8fae03ceec1c5a286c",
             "locator": {
               "kind": "file"
             },
             "path": "mcp/tests/test_tool_answer_log.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Each admitted log line carries the result digest independently of where the detail is filed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f06668f2c9a22f3921a749b5d11880fdbdf3118",
+            "content": "sha256:3566dc8e51f79108a9fd22170b4563f62b97a5b32b361c5afe161dc2dd5a218d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_call_line_dict"
+            }
+          },
+          "kind": "code"
         }
       ]
     }
