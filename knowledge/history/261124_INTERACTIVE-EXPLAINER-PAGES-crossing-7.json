@@ -1,0 +1,38 @@
+{
+  "closed": true,
+  "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-7",
+  "rows": [],
+  "schema": "ar-history/v1",
+  "sharedRevisions": [
+    {
+      "record": "DPD-EJ2Y7Z",
+      "revision": 7
+    },
+    {
+      "record": "DPD-PYMM5P",
+      "revision": 6
+    },
+    {
+      "record": "DPD-X6G7K3",
+      "revision": 24
+    }
+  ],
+  "written": [
+    {
+      "contentDigest": "sha256:93637b85f15982621d2a93a2edb79d41eb288997ca652e2220cea599583726f5",
+      "record": "DPD-X6G7K3",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-26T06:04:40+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-7",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    }
+  ]
+}

@@ -34,7 +34,9 @@ write-mode binary fail after a number of writes so a partial copy can be observe
 - **Retention.** A refused delivery keeps its first file when the sender sends again, and a wait reply
   longer than the limit comes back whole with its `textTruncated` flag set, its file and digest named.
 - **Transaction.** `TransactionTests` removes a partial target after a failed copy, removes completed
-  copies when a later store fails, and names a folder-creation failure.
+  copies when a later store fails, and names folder-creation failures as `message-file-failed` both
+  at pre-lock receipt setup (`open_held_store` under blanket `Path.mkdir`) and after lock acquisition
+  (`store_message_file`).
 - **Cost.** `CollisionCostTests` writes once per message across a same-second batch and keeps every
   payload when same-stem stores run concurrently.
 - **Refusals through the tool.** `RegisteredRefusalTests` drives the limit and the archived-successor
@@ -54,17 +56,8 @@ returned text alone.
 
 
 - Boundary settings and reload assertions separate the bounded wake text from the file payload. [1]
-
-
 - Message fixtures inspect stored payloads, pointers, reply files and workspace links. [2]
-
 - Faults and collisions exercise rollback and retained concurrent payloads. [3]
-
 - Successor guidance and strict refusal fields stay separate from automatic retargeting. [4]
-
-
 - The composed fixtures pin retained refusal files on a non-holdable unresumable session and archive the old holder before successor fixtures. [5]
-
-
-
 - The former fifty-character wait-reply truncation control is retired with that subject. Reply-file content and bound/refusal assertions remain; current source retains the full reply instead of claiming the old lower cut is still enforced — mcp/tests/test_role_message_files.py. [6]

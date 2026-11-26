@@ -1,0 +1,1013 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L53",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-26T05:41:01+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L53",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "b9f64d3c-3162-5567-b54e-88aa98a966d2",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-26T05:41:01+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L53",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "7153a9e4-3c7b-4f8d-9a12-6e4b8c3f5d53",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 2,
+    "tree": "260c6d5846e8965d65eb621f4882bf49e3e2b34d",
+    "verdictRef": "notes/reports/reviewer/7153a9e4-3c7b-4f8d-9a12-6e4b8c3f5d53/role-launch/261112-BUG-L53-memory-review-round-2-verdict.md"
+  },
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-02PRH1",
+      "items": [
+        "sha256:2d6408ce6b8b9c725aa457419f60670789a22279ffaa5fe3d9519761dab59aca",
+        "sha256:f459568dc5b23668189394f6b19d33db410a13f8ebeae48de4ac701d8b13032f"
+      ],
+      "reason": "Reviewed card against candidate test_githooks_l29_repairs.py: replacing time.sleep(0.02) with os.utime preserves all R1-R6 test contracts unchanged and citation_fix refreshed blob hashes.",
+      "sources": [
+        {
+          "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+          "path": "mcp/tests/test_githooks_l29_repairs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_githooks_l29_repairs.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2KVT5S",
+          "revision": 1
+        },
+        {
+          "id": "INV-6ZZXV3",
+          "revision": 1
+        },
+        {
+          "id": "INV-795NRN",
+          "revision": 1
+        },
+        {
+          "id": "INV-JDZG62",
+          "revision": 1
+        },
+        {
+          "id": "INV-KM9V3K",
+          "revision": 1
+        },
+        {
+          "id": "INV-XN49FH",
+          "revision": 1
+        },
+        {
+          "id": "INV-YEQENJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-0GC100",
+      "items": [
+        "sha256:9e31ad4cd104a0f92f169835b4f5d24d392888ff2c148b4c46f277e823b6a1ae"
+      ],
+      "reason": "Examined all 7 members of FAM-FD58VB after docs/reference/mcp-tools.md:276 URL repair and test_provider_limit_storage.py HANG_GUARD_SECONDS wait repair; family guarantee and routes are unaffected.",
+      "revision": 1,
+      "subject": "FAM-FD58VB"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-19Q2EA",
+      "items": [],
+      "reason": "Pre-existing stale dependent on untouched harnesses reference / core.py; L53 touches neither document nor its stands_on links; left untouched at HEAD under standing order.",
+      "revision": 6,
+      "subject": "DPD-PYMM5P"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1F67BV",
+      "items": [
+        "sha256:d73aa8c6a20e81625d653184644bccb7017aae2532ecbd6367c6190bbf3624e2"
+      ],
+      "reason": "Calls _filing_seat_lock(recipient_ref) in _file_message so recipient receipt-folder OSError returns the existing message-file-failed refusal instead of an uncaught exception; local error-handling wiring documented in the file card.",
+      "subject": "hunk:sha256:d73aa8c6a20e81625d653184644bccb7017aae2532ecbd6367c6190bbf3624e2"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1GHH25",
+      "items": [
+        "sha256:67df8d5d97d849db9c76e4a2c6dddf1e33cb311f032761dee861c2577b8df72b"
+      ],
+      "reason": "Reviewed card against candidate test_paseo_role_answers_l111.py: repointing the _ensure_recipient_link patch target preserves every described test contract unchanged; citation_fix refreshed anchor hashes without changing card prose or note meaning.",
+      "sources": [
+        {
+          "blob": "1baa49fa1922d02e6c947c35e4f3a2d1bd7e2c28",
+          "path": "mcp/tests/test_paseo_role_answers_l111.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_role_answers_l111.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+            "content": "sha256:f095f77ce2e22a834f40e2f6942c2bed345b04f968156c646ef5ec88945aa65b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r5_tsc_b_incremental_cache_catches_introduced_type_error"
+            },
+            "path": "mcp/tests/test_githooks_l29_repairs.py"
+          },
+          "before": {
+            "blob": "ab2774112604e0b1eb489be54f38cfa4480fa031",
+            "content": "sha256:e4301186051222a10a7b9a420c647cb4c6277e269595eef3d96c7dd0d4285aa7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r5_tsc_b_incremental_cache_catches_introduced_type_error"
+            },
+            "path": "mcp/tests/test_githooks_l29_repairs.py"
+          },
+          "id": "PRF-QNAZGJ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-2C4A4S",
+      "items": [
+        "sha256:8c88f0e60484fbfb5a2d89b0c431ec1f0d8385023f71fd9f213b33f5f992bdd1"
+      ],
+      "reason": "test_githooks_l29_repairs.py::test_r5_tsc_b_incremental_cache_catches_introduced_type_error replaced fixed time.sleep(0.02) with deterministic os.utime mtime advance; invariant meaning and proof assertions are unchanged.",
+      "revision": 1,
+      "subject": "INV-AFVK1G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2DYR3M",
+      "items": [
+        "sha256:303e8def883c7e720430e5eea93be497b0cd48f130874621fda42e27eab7dabb"
+      ],
+      "reason": "Documented _filing_seat_lock turning open_held_store OSError into message-file-failed before delivery while preserving HeldSeatClosed, and re-authored stale references [2], [4], and [6] against candidate bcf4a711.",
+      "sources": [
+        {
+          "blob": "03edb317725167985c07b7920b32bb0d4c83fa98",
+          "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_message_delivery.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-3Y5BEW",
+      "items": [
+        "sha256:23fa1b879132ff99351cbd7bbf7195445a1dfc4e0a2377a710f793586436f423"
+      ],
+      "reason": "Confirmed docs/reference/mcp-tools.md on L53 candidate bcf4a711 after line 276 replaced the relative link outside docs/ with the repository GitHub blob URL and knowledge.py:106 restored Read memory. Views:; all standing and L53-touched passages match live code.",
+      "revision": 24,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-53BF5E",
+      "items": [
+        "sha256:03feb80a60869deb4f20dc4c43db5a381f1fb96480cecb25c0f44426cb401e60",
+        "sha256:67aff9c25cf5990bf3363f9e5ec65aaa114c04ed38da372d5ee1865131e2e2ee",
+        "sha256:f7788b7b7181ceea95d793c78b30d5e0613ed900edfbf1c1b4ee467e10707921"
+      ],
+      "reason": "Updated TransactionTests prose to cover both pre-lock open_held_store and post-lock store_message_file folder-creation refusals and re-authored stale references [1]-[6].",
+      "sources": [
+        {
+          "blob": "646c200337a74b19672041d7dc3cac22c6433b3b",
+          "path": "mcp/tests/test_role_message_files.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_message_files.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1c29178809052e5d9ead71c41f0be90f57ede46e",
+            "content": "sha256:162898028341d5323117cafbd0e1908368bf39576801ea8b373556fda23f7b12",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_escaped_holder_pids_named_in_sync_commit_check_failed"
+            },
+            "path": "mcp/tests/test_sync_commit_check.py"
+          },
+          "before": {
+            "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+            "content": "sha256:9e7bf91e0e487d917a3dd39bfa06af1476e09cfb8f6bdb0f30eb3516be6bd5d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_escaped_holder_pids_named_in_sync_commit_check_failed"
+            },
+            "path": "mcp/tests/test_sync_commit_check.py"
+          },
+          "id": "PRF-6FAFNE"
+        },
+        {
+          "after": {
+            "blob": "1c29178809052e5d9ead71c41f0be90f57ede46e",
+            "content": "sha256:5f50ea42a288474664151e2fb15589f96765709e28e06b67a19751b26ccb371b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_published_head_proven_when_commit_landed_before_escaped_holder_timeout"
+            },
+            "path": "mcp/tests/test_sync_commit_check.py"
+          },
+          "before": {
+            "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+            "content": "sha256:3de5c4f717d185cb4ff163ae23e552bdc4ffffddd8861d32616c319fc6178cd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_published_head_proven_when_commit_landed_before_escaped_holder_timeout"
+            },
+            "path": "mcp/tests/test_sync_commit_check.py"
+          },
+          "id": "PRF-E90GHS"
+        },
+        {
+          "after": {
+            "blob": "1c29178809052e5d9ead71c41f0be90f57ede46e",
+            "content": "sha256:e8826a9945fff8f7dcc54d391510f9f8dc364c595c9d9ad85a5b00805c6d2f15",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_index_lock_cleared_after_timeout_kill"
+            },
+            "path": "mcp/tests/test_sync_commit_check.py"
+          },
+          "before": {
+            "blob": "76f915587f277ec813ceeb515c3909f40d907e45",
+            "content": "sha256:b7b6043ec0a0c071a9c549b1b2054fbbf30b84844c301e1cab5fc59051514e74",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_index_lock_cleared_after_timeout_kill"
+            },
+            "path": "mcp/tests/test_sync_commit_check.py"
+          },
+          "id": "PRF-G0E455"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-5NY1ER",
+      "items": [
+        "sha256:77ea844ada2e10c7bad98161e437f4b6077ff5618f5bf44e1850260ca9f00492"
+      ],
+      "reason": "test_sync_commit_check.py added load-independent comments on synthetic CommitCheckRunResult stub timeout_seconds fields without changing any hook or sync assertion; invariant meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-RMEPCX"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7BNKD4",
+      "items": [],
+      "reason": "Pre-existing stale dependent on untouched Codex install/launch paths; L53 touches neither document nor its stands_on links; left untouched at HEAD under standing order.",
+      "revision": 8,
+      "subject": "DPD-GNFCSM"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7DY7Z6",
+      "items": [
+        "sha256:b6e8e62f24d7faff0ecb695788af218c38a1a9d8ce471a2b666eb587f0d17bf5"
+      ],
+      "reason": "Adds local helper _filing_seat_lock in role_message_delivery.py restoring the existing pre-delivery message-file-failed refusal when open_held_store fails with OSError while letting HeldSeatClosed propagate; local error-handling repair documented in the file card.",
+      "subject": "hunk:sha256:b6e8e62f24d7faff0ecb695788af218c38a1a9d8ce471a2b666eb587f0d17bf5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1baa49fa1922d02e6c947c35e4f3a2d1bd7e2c28",
+            "content": "sha256:7fa1d50455af1a9bd1ab4ee26e07b718d9abddc3313f4efe4a2e210b33c8c487",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageWarningTests.test_short_message_answer_keeps_a_fitting_warning"
+            },
+            "path": "mcp/tests/test_paseo_role_answers_l111.py"
+          },
+          "before": {
+            "blob": "fb67cfa16bb74ac8a7974434e310488e8a50a320",
+            "content": "sha256:e25d00b3dac6756b2566560a7a52abdc428ff78997e355911af4f2dfade5262d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageWarningTests.test_short_message_answer_keeps_a_fitting_warning"
+            },
+            "path": "mcp/tests/test_paseo_role_answers_l111.py"
+          },
+          "id": "PRF-FZXYDD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7XNTHW",
+      "items": [
+        "sha256:be98e2c698d98ca3e0e98ac7ee3f304ab78cda3e632ec4fe000c95d8172f0187"
+      ],
+      "reason": "test_paseo_role_answers_l111.py repointed its _ensure_recipient_link patch target from paseo_role_tools to role_message_delivery; proof behavior and invariant meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-2N79MT"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8MGYVB",
+      "items": [
+        "sha256:6be4786eab2ea27c9022d9580f807984308d4df58790a94632b6e0dfff342464"
+      ],
+      "reason": "Reviewed card against candidate test_tool_descriptions.py: updating the pinned retire_child phrase at line 285 to match L44 docs/tool-details.md preserves every described contract and moved-detail check unchanged; citation_fix refreshed anchor hashes without changing card prose or note meaning.",
+      "sources": [
+        {
+          "blob": "55b01fd0e8f423a5919eb93aafc93485fb67844a",
+          "path": "mcp/tests/test_tool_descriptions.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_descriptions.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-99AJF2",
+      "items": [
+        "sha256:946a8be07bc6574380370872e7dbac65d6f0dcaaebf7256d694b6db5a31e3331"
+      ],
+      "reason": "Reviewed onboarding/mcp/tests/overview.md against all L53 test repairs on codeTree 248742dd (including test_tool_descriptions.py:285 and test_explainer_planned.py:439-440); route composition, lane selection, and wait-policy guidance remain accurate unchanged.",
+      "sources": [
+        {
+          "blob": "e87c1be9635bef369a9b5883c6637bc76fc8e784",
+          "path": "mcp/tests/test_explainer_planned.py"
+        },
+        {
+          "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+          "path": "mcp/tests/test_githooks_l29_repairs.py"
+        },
+        {
+          "blob": "fe68b211f2b2c344ebb1bbd9664c0ba30428df9e",
+          "path": "mcp/tests/test_held_delivery_tick_cost.py"
+        },
+        {
+          "blob": "1baa49fa1922d02e6c947c35e4f3a2d1bd7e2c28",
+          "path": "mcp/tests/test_paseo_role_answers_l111.py"
+        },
+        {
+          "blob": "304a88689b77a90abe33d8b765f9e54d959391e6",
+          "path": "mcp/tests/test_provider_limit_storage.py"
+        },
+        {
+          "blob": "646c200337a74b19672041d7dc3cac22c6433b3b",
+          "path": "mcp/tests/test_role_message_files.py"
+        },
+        {
+          "blob": "1c29178809052e5d9ead71c41f0be90f57ede46e",
+          "path": "mcp/tests/test_sync_commit_check.py"
+        },
+        {
+          "blob": "55b01fd0e8f423a5919eb93aafc93485fb67844a",
+          "path": "mcp/tests/test_tool_descriptions.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9XTMA4",
+      "items": [
+        "sha256:030964fe2d40459dc376b65d18d5ba972bc4f52bbf790eb4166c641b5dc3ca40",
+        "sha256:ba4ecb155a8783800116122a0bfe362583f0637b111c7cced7608dbddb365dbe"
+      ],
+      "reason": "Reviewed card against candidate test_explainer_planned.py: narrowing 'role_launch' to 'cli.role_launch' and 'application.role_launch' in test_the_module_imports_no_host_service_or_bridge preserves the pure-read protection unchanged; citation_fix refreshed anchor hashes without changing card prose or note meaning.",
+      "sources": [
+        {
+          "blob": "e87c1be9635bef369a9b5883c6637bc76fc8e784",
+          "path": "mcp/tests/test_explainer_planned.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_explainer_planned.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ANDSMS",
+      "items": [
+        "sha256:35b5f2ae4d6cb1a3a410d28aa76c8771ad62d042bfc3f7456a600addd50602a9"
+      ],
+      "reason": "Reviewed onboarding/mcp/overview.md against all L53 changes; package-level contracts are unchanged and citation_fix mechanically refreshed blob hashes.",
+      "sources": [
+        {
+          "blob": "03edb317725167985c07b7920b32bb0d4c83fa98",
+          "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CHM4H5",
+      "items": [],
+      "reason": "Pre-existing stale dependent on untouched paths (test-evidence-lanes.toml, evidence-lifecycle.toml); L53 touches neither document nor its stands_on links; left untouched at HEAD under standing order.",
+      "revision": 17,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d158a6c01caaead8a8e6600e388eba74806dc7ec",
+            "content": "sha256:294ddd733011a40f9649b933f26f94c4f07359c00c174946aab515ccfd651095",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 106
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "before": {
+            "blob": "20ebef72dc27ca53cfb6a0f75efe8a015159ecef",
+            "content": "sha256:c1d79d50a22ded350f6a9512383cee9c4525b767ebdb3502f691fb2d9769149e",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 106
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "id": "RLZ-ADCJCR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-DMRD2H",
+      "items": [
+        "sha256:6623230398d876c19417538a7266023aec7741b6ea374ec0b79386e5afcbad62"
+      ],
+      "reason": "knowledge.py:106 restored 'Read memory. Views:' while keeping the writers view description and report pointer intact; invariant meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-5GEDEX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E0G9P6",
+      "items": [
+        "sha256:fbc2f75a59328b088f4b3c75359fcfcb5f1723ea9bd8ef0dbb2aff0f942e6db3"
+      ],
+      "reason": "Imports role_message_delivery in test_paseo_role_answers_l111.py to patch _ensure_recipient_link where _file_message now calls it; test-only import repoint carrying no invariant.",
+      "subject": "hunk:sha256:fbc2f75a59328b088f4b3c75359fcfcb5f1723ea9bd8ef0dbb2aff0f942e6db3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "304a88689b77a90abe33d8b765f9e54d959391e6",
+            "content": "sha256:1d31bff5a17d0f8353dffcc32a7f1755573db0b152f3f815db01243c3254c84c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_concurrent_usage_reads_keep_both_reports_and_mappings"
+            },
+            "path": "mcp/tests/test_provider_limit_storage.py"
+          },
+          "before": {
+            "blob": "d049615ffc7af3252c708e17a3ee39e38583ef77",
+            "content": "sha256:c670a152e056ac9a275770015e3028baaafc3c0fe90ac2685bba5ae818da5f69",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_concurrent_usage_reads_keep_both_reports_and_mappings"
+            },
+            "path": "mcp/tests/test_provider_limit_storage.py"
+          },
+          "id": "PRF-GEANE4"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-K6NJC7",
+      "items": [
+        "sha256:7d42627fc0f260d2bf2dd664df7599daac1792651e90cfe93a9db02da778d3f8"
+      ],
+      "reason": "test_provider_limit_storage.py::test_concurrent_usage_reads_keep_both_reports_and_mappings replaced five 5-second waits with HANG_GUARD_SECONDS; concurrency assertions and invariant meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-YEQENJ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K7KZHX",
+      "items": [],
+      "reason": "Pre-existing stale dependent on untouched Pi install/launch paths; L53 touches neither document nor its stands_on links; left untouched at HEAD under standing order.",
+      "revision": 8,
+      "subject": "DPD-2B7PTY"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0R04WY",
+          "revision": 1
+        },
+        {
+          "id": "INV-1QE8YM",
+          "revision": 1
+        },
+        {
+          "id": "INV-5GEDEX",
+          "revision": 1
+        },
+        {
+          "id": "INV-69M737",
+          "revision": 1
+        },
+        {
+          "id": "INV-AV04NY",
+          "revision": 1
+        },
+        {
+          "id": "INV-B79B38",
+          "revision": 1
+        },
+        {
+          "id": "INV-BNDKC8",
+          "revision": 1
+        },
+        {
+          "id": "INV-G8AX2H",
+          "revision": 1
+        },
+        {
+          "id": "INV-KPK1WT",
+          "revision": 1
+        },
+        {
+          "id": "INV-PD5ZD5",
+          "revision": 1
+        },
+        {
+          "id": "INV-TRMMZA",
+          "revision": 1
+        },
+        {
+          "id": "INV-X8FRT8",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0FRT0",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-KGE8TR",
+      "items": [
+        "sha256:8bb1cfc9b589fac65e00b073b53d4facf9eb198f86a18a2fe8fa516bd3bfb9ef"
+      ],
+      "reason": "Examined all 13 members of FAM-7NBVYB after knowledge.py:106 restored 'Read memory. Views:' while keeping the writers view contract unchanged; family guarantee and routes are unaffected.",
+      "revision": 1,
+      "subject": "FAM-7NBVYB"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KMDA6J",
+      "items": [
+        "sha256:3614156e5568f7a5f4fcf954628c0e8af8e39c6888e95f2192f83c535a252158"
+      ],
+      "reason": "Reviewed card against candidate test_held_delivery_tick_cost.py: populating top-level agentId/requestId in _queue_held_work fixture preserves every described test contract unchanged.",
+      "sources": [
+        {
+          "blob": "fe68b211f2b2c344ebb1bbd9664c0ba30428df9e",
+          "path": "mcp/tests/test_held_delivery_tick_cost.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_held_delivery_tick_cost.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-M9BPVZ",
+      "items": [
+        "sha256:39b6dc9e36b21a58fdea7424401582658c288bb3dd06689b9d2efcc5cc438246",
+        "sha256:5e23bb42ff4eb3e38ed42ec80a18830cd5a2b2b0240f59da75fba604a18dfa96",
+        "sha256:70bbbebfa145335891f9aeaea5002821ac08ea56c5174e5dde70d7340ee9b295",
+        "sha256:f061475b710b2cd10f7334b8ba4a9d0386cd21c4b52196842414ed175fac6129"
+      ],
+      "reason": "Reviewed card against candidate test_sync_commit_check.py: HANG_GUARD_SECONDS default and load-independent stub annotations preserve every described test contract unchanged; citation_fix refreshed anchor hashes without changing card prose or note meaning.",
+      "sources": [
+        {
+          "blob": "1c29178809052e5d9ead71c41f0be90f57ede46e",
+          "path": "mcp/tests/test_sync_commit_check.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_sync_commit_check.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NPCWB1",
+      "items": [
+        "sha256:878aa4b804ca4f6ca0978c754584944d1eba4549982352d5f0720fd647c375a9"
+      ],
+      "reason": "Updated read-description summary from six to all seven views (including writers) under Read memory. Views: and re-authored stale reference [22].",
+      "sources": [
+        {
+          "blob": "d158a6c01caaead8a8e6600e388eba74806dc7ec",
+          "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fe68b211f2b2c344ebb1bbd9664c0ba30428df9e",
+            "content": "sha256:bc4a5ee0293180f3fa9d1e4939ba0435195ccc569d80f7b137c018121cfcaf6e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_held_delivery_tick_cost.py"
+          },
+          "before": {
+            "blob": "1d507fdc65ccae97964aff0845b248628c937775",
+            "content": "sha256:09aae2d468748ed65b33db63dc6058acf3de8389b84ade0e743e36ba0f4f22ba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_held_delivery_tick_cost.py"
+          },
+          "id": "RLZ-SQ7ZGB"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-PVAFEJ",
+      "items": [
+        "sha256:78d0822a9688f52c048fab440c7bbd6afbdbd1be2048168e80fb1f7752794e33"
+      ],
+      "reason": "test_held_delivery_tick_cost.py:_queue_held_work populated top-level agentId and requestId on its synthetic receipt fixture to match production launch receipts; invariant meaning is unchanged.",
+      "revision": 7,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0VAC47",
+          "revision": 2
+        },
+        {
+          "id": "INV-180VCA",
+          "revision": 2
+        },
+        {
+          "id": "INV-1N75CV",
+          "revision": 1
+        },
+        {
+          "id": "INV-2N79MT",
+          "revision": 1
+        },
+        {
+          "id": "INV-ANKVYJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-B7J1PZ",
+          "revision": 2
+        },
+        {
+          "id": "INV-CQSY2Z",
+          "revision": 3
+        },
+        {
+          "id": "INV-E8S0YF",
+          "revision": 1
+        },
+        {
+          "id": "INV-GWG9HD",
+          "revision": 1
+        },
+        {
+          "id": "INV-JRV850",
+          "revision": 1
+        },
+        {
+          "id": "INV-KJFNBQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-MDE1ZN",
+          "revision": 1
+        },
+        {
+          "id": "INV-QN78E9",
+          "revision": 2
+        },
+        {
+          "id": "INV-RF4W8Q",
+          "revision": 1
+        },
+        {
+          "id": "INV-SYBT3F",
+          "revision": 2
+        },
+        {
+          "id": "INV-WJ9ZD7",
+          "revision": 1
+        },
+        {
+          "id": "INV-XJ7GV5",
+          "revision": 2
+        },
+        {
+          "id": "INV-Y3TD13",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-RMRR0H",
+      "items": [
+        "sha256:4831f3a898b34c1d01ca3e3d0a0c7048659aaaec9013de8cdf86cce1e65417f5"
+      ],
+      "reason": "Examined all 18 members of FAM-8SX6BT after test_paseo_role_answers_l111.py repointed its _ensure_recipient_link patch target; family guarantee and routes are unaffected.",
+      "revision": 4,
+      "subject": "FAM-8SX6BT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RTRYSR",
+      "items": [
+        "sha256:a1695e3130896a4b949bb4c4c2a8d43505bdb2247a16282c9a03d10639402d79"
+      ],
+      "reason": "Imports Iterator from collections.abc to type the local _filing_seat_lock context manager in role_message_delivery.py; local typing support carrying no new invariant.",
+      "subject": "hunk:sha256:a1695e3130896a4b949bb4c4c2a8d43505bdb2247a16282c9a03d10639402d79"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d158a6c01caaead8a8e6600e388eba74806dc7ec",
+            "content": "sha256:d2e09968807dec56860cba68aa784efdf258555dbb83498d84dafa5af2cecc47",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "before": {
+            "blob": "20ebef72dc27ca53cfb6a0f75efe8a015159ecef",
+            "content": "sha256:24beb911102d9b5b838d1d3f892555689df3a2975c4d410ed4a700f366bbd560",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "id": "RLZ-GDNVPK"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-SA8EH2",
+      "items": [
+        "sha256:df0868bffb36445fcc1d1c4bd6637d381f619bb6d363ec069222dcabe188157e"
+      ],
+      "reason": "knowledge.py:106 restored 'Read memory. Views:' at 465 raw characters (<= 500 chars, 0-byte compact delta) while preserving all contract pins and AST docstring shape; invariant meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-06MGX9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TY4KT6",
+      "items": [
+        "sha256:95f06d3f835178862b7ac9094df1804e155726ad3ba1191e20be6b5a46a74fa3",
+        "sha256:e92703ee395ccaf4035a7ab0969cc2fccd0f3ac545f71fc1fb181811a1ced615"
+      ],
+      "reason": "Re-authored stale reference [1] against candidate test_provider_limit_storage.py after replacing five 5-second thread waits with HANG_GUARD_SECONDS.",
+      "sources": [
+        {
+          "blob": "304a88689b77a90abe33d8b765f9e54d959391e6",
+          "path": "mcp/tests/test_provider_limit_storage.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_provider_limit_storage.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V8J9MJ",
+      "items": [
+        "sha256:5604148f5ed6a295bca7de83fa24c326f839c67e8f2d73a31c6703b08ddadb6d"
+      ],
+      "reason": "Delete-only hunk removing unused paseo_role_tools import in test_paseo_role_answers_l111.py after repointing the _ensure_recipient_link mock to role_message_delivery.",
+      "subject": "hunk:sha256:5604148f5ed6a295bca7de83fa24c326f839c67e8f2d73a31c6703b08ddadb6d"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-X0D9RB",
+      "items": [
+        "sha256:1fad2fff6bbf47ed167a0db042ad5554be74d1044d186e319e4d0c6ecee0111c"
+      ],
+      "reason": "Updated operative account for restored Read memory. Views: listing all seven views at 465 characters with view: str, and re-authored stale references [11], [12], [13], [14], [22], and [23].",
+      "sources": [
+        {
+          "blob": "d158a6c01caaead8a8e6600e388eba74806dc7ec",
+          "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/knowledge.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-X0KV1T",
+      "items": [],
+      "reason": "Pre-existing stale dependent on untouched Hermes install/launch paths; L53 touches neither document nor its stands_on links; left untouched at HEAD under standing order.",
+      "revision": 11,
+      "subject": "DPD-GHEXS9"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-X8R7GN",
+      "items": [],
+      "reason": "Confirmed mcp/README.md on L53 candidate bcf4a711 after docs/reference/mcp-tools.md:276 changed its link format; all tool group names, 44 ordinary tools, 4 explainer tools, and links remain accurate.",
+      "revision": 23,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XVYKV9",
+      "items": [],
+      "reason": "Pre-existing stale dependent on untouched resolver reference / tool_answer.py; L53 touches neither document nor its stands_on links; left untouched at HEAD under standing order.",
+      "revision": 7,
+      "subject": "DPD-EJ2Y7Z"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "97afe91d1390144e81c0b29fb0b706c771e3af63",
+            "content": "sha256:c356956cab1d6c73f86bd1976aeba95738c040a33c59322bfa20ca387e1e857e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "before": {
+            "blob": "75b87463d56735c381998eb394124669f4a58e3c",
+            "content": "sha256:a311dade3beff7943b46de7c325c17cf7d55cb18c411a70dbdb8471ada2391ee",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-7YMNE5"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YD9RWN",
+      "items": [
+        "sha256:0ce4f10893c2b311eb3cd1084bcea4cb5980bbd0dea088a1f9c00069c28be6fe"
+      ],
+      "reason": "docs/reference/mcp-tools.md:276 replaced an outside-docs relative link with the repository GitHub blob URL; the five-minute recheck and early-clear passages at lines 746-750 are unchanged.",
+      "revision": 1,
+      "subject": "INV-6ZZXV3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d158a6c01caaead8a8e6600e388eba74806dc7ec",
+            "content": "sha256:05c4c21db68f935f381de50afc43b1d17f5c7b93b042340d5e66d182786e5a79",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_read"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "before": {
+            "blob": "20ebef72dc27ca53cfb6a0f75efe8a015159ecef",
+            "content": "sha256:89403f774359c930a72699d367612f487642b02c67d77b8a3398df9814965381",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_read"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "id": "RLZ-8907S7"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-YNG07N",
+      "items": [
+        "sha256:afba7eab454bb701fbdf369e72d25210858f4051517a8bbd478595991b2d14bb"
+      ],
+      "reason": "knowledge.py:_register_knowledge_read restored 'Views:' in its tool docstring without changing lazy tools adapter resolution or startup deferral; invariant meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-990KQM"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YPYW3W",
+      "items": [
+        "sha256:efbf0922eb0e3892a35ca3a5254fd00806c3e5a34801e9a78f901303d9dec5fd"
+      ],
+      "reason": "Calls _filing_seat_lock(sender_ref) in _file_message so sender receipt-folder OSError returns the existing message-file-failed refusal instead of an uncaught exception; local error-handling wiring documented in the file card.",
+      "subject": "hunk:sha256:efbf0922eb0e3892a35ca3a5254fd00806c3e5a34801e9a78f901303d9dec5fd"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YWJW25",
+      "items": [],
+      "reason": "Pre-existing stale dependent on untouched settings reference / paseo_launch.py; L53 touches neither document nor its stands_on links; left untouched at HEAD under standing order.",
+      "revision": 17,
+      "subject": "DPD-W0T9V9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "55b01fd0e8f423a5919eb93aafc93485fb67844a",
+            "content": "sha256:9b8e295c64b069705e9d514c394b29733721a6850882768a34a2230c3b7bbcd3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_tool_descriptions.py"
+          },
+          "before": {
+            "blob": "8bbd4abc9ebf1f52f81c2b1ec8c3a863fb5134a2",
+            "content": "sha256:4d2ae1536c7119baa9e136caceb1423f0a7da35dbc53a40c0bb5cdee4f3cde95",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_tool_descriptions.py"
+          },
+          "id": "RLZ-BWNMPG"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZJ6CNR",
+      "items": [
+        "sha256:1cee81b9dc69e8924e28bc024f2aa5ccc9f257849770ec0c47f9af66a6d8b404"
+      ],
+      "reason": "test_tool_descriptions.py:285 updated one pinned phrase to match L44's docs/tool-details.md retire_child rewrite without touching the R12/RENEW_COMMAND stale-instruction-value assertion at line 301; invariant meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-DHKR4G"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-ZPB3B5",
+      "items": [
+        "sha256:b34641f2e59119f5b6a8fd31e60a50546f052998f425b07bc8178a36e348458a"
+      ],
+      "reason": "WKN-K3PPJY remains open (L53 only added _filing_seat_lock in role_message_delivery.py and did not address the shared-stash debt); refreshed its file anchor to candidate bcf4a711.",
+      "revision": 4,
+      "subject": "WKN-K3PPJY"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:b5d74dc01b4de108cc4fd35d4824b8b7ed7ac182ff346814da6d9e592c47c464",
+      "record": "DPD-Q4APMS",
+      "revision": 23,
+      "writer": {
+        "at": "2026-11-26T04:12:31+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L53",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9f64d3c-3162-5567-b54e-88aa98a966d2",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:2b5ba1f635c7109a5c559744ccbfa114816c4a0f912b33a2f669dbae3332877a",
+      "record": "DPD-X6G7K3",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-26T04:12:31+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L53",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9f64d3c-3162-5567-b54e-88aa98a966d2",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:e342807b6ba60e78ea19446b3b9c41774b5350ba77b1f8fecd1da31c26fdb7d9",
+      "record": "WKN-K3PPJY",
+      "revision": 4,
+      "writer": {
+        "at": "2026-11-26T04:12:31+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L53",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "b9f64d3c-3162-5567-b54e-88aa98a966d2",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}
