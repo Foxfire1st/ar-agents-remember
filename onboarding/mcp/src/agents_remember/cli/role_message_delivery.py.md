@@ -31,22 +31,11 @@ The reply-filing helper retains the complete waited.text in both successful fili
 - **Retained historical source account — superseded by the current contract:** Count only text and refuse excess without silently moving or truncating it. [1]
 
 - **Retained historical source account — superseded by the current contract:** Archived id refusal names a same-selection live successor without changing recipient identity. [2]
-
-
-
-
-- **Retained historical source account — superseded by the current contract:** When invoked with a filed message, the long-reply helper files the whole reply or discloses failed filing while returning the prefix; held-drain waits do not invoke it. Anchor: `_file_long_reply` [4]
-
-
-
-
+- **Retained historical source account — superseded by the current contract:** When invoked with a filed message, the long-reply helper files the whole reply or discloses failed filing while returning the prefix; held-drain waits do not invoke it. [4]
 - The reply-filing helper retains the complete waited.text in both successful filing and filing-failure paths, together with file identity or loss/truncation facts. It does not itself cut to the delivered prefix; downstream answer completion owns that fit. Failure of the separate reply file is not proof that all text was lost: whole-detail retention is a distinct, fallible path. Existing held-queue draining and helper-bypass qualifications remain unchanged. [6]
 
-
-
-
-
-
 ## Current shared file publisher
+
+`_filing_seat_lock` wraps `open_held_store` across `_file_message` so lock-setup `OSError` failures refuse the send as `message-file-failed` before delivery while `HeldSeatClosed` continues to propagate.
 
 - The composed facade calls this shared publisher to render/store the whole message; storage failure discards message-owned attachment copies and refuses before native send, while success returns the filed identity and wake payload. [5]

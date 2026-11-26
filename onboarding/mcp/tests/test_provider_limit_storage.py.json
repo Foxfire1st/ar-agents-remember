@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "d049615ffc7af3252c708e17a3ee39e38583ef77",
+        "blob": "304a88689b77a90abe33d8b765f9e54d959391e6",
         "content": "sha256:d69b7185011e08ba11ba3f9a92c3373360f39e1aee84e3897fa42d71f1feb1a9",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "d049615ffc7af3252c708e17a3ee39e38583ef77",
+        "blob": "304a88689b77a90abe33d8b765f9e54d959391e6",
         "content": "sha256:5ee44df6c510e22e4f6e76d42f34ddb92d37c68742e76eeb90bb1507e295877c",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "d049615ffc7af3252c708e17a3ee39e38583ef77",
-        "content": "sha256:c670a152e056ac9a275770015e3028baaafc3c0fe90ac2685bba5ae818da5f69",
+        "blob": "304a88689b77a90abe33d8b765f9e54d959391e6",
+        "content": "sha256:1d31bff5a17d0f8353dffcc32a7f1755573db0b152f3f815db01243c3254c84c",
         "locator": {
           "kind": "symbol",
           "name": "test_concurrent_usage_reads_keep_both_reports_and_mappings"
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "d049615ffc7af3252c708e17a3ee39e38583ef77",
+        "blob": "304a88689b77a90abe33d8b765f9e54d959391e6",
         "content": "sha256:6a53eba153d00aace10e20532a351f7c844451934ab3e78b868ddfebe4d8e3db",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "d049615ffc7af3252c708e17a3ee39e38583ef77",
+        "blob": "304a88689b77a90abe33d8b765f9e54d959391e6",
         "content": "sha256:35f1928892068d5c86c6abd6fa51d96bd5f63de129f33b96e1602d9d4d226ce9",
         "locator": {
           "kind": "symbol",
@@ -90,12 +90,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The suite holds the claimed attempt, quiet replacement, early-clear lifetime, last-blocker release and concurrent-writer rules.\n\nAnchor: `test_due_claim_survives_a_fresh_snapshot_and_keeps_the_fact`",
+      "note": "The suite holds the claimed attempt, quiet replacement, early-clear lifetime, last-blocker release and concurrent-writer rules.",
       "targets": [
         {
           "anchor": {
-            "blob": "d049615ffc7af3252c708e17a3ee39e38583ef77",
-            "content": "sha256:a089f0dca42bbac3262f228d4adcf56a25ad47fdbba94b560af0e5bf61cb2d9b",
+            "blob": "304a88689b77a90abe33d8b765f9e54d959391e6",
+            "content": "sha256:163d351aba5954a81fe4b7dc0da7f5c4a827eee69f98bab3b5383d537da8aa99",
             "locator": {
               "kind": "file"
             }

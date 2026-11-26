@@ -6,7 +6,7 @@
 
 ## Current operative account — MIK-R109
 
-`register_knowledge_tools(server, config)` registers read, diff, integrity and write in that order: `_register_knowledge_write` mounts `knowledge_write`, the writer's own route — the same function the CLI write commands run — beside the reader. The mounted read's description names both public writer commands, `agents-remember knowledge-ingest` and `agents-remember knowledge-bootstrap`, inside the 500-character raw description ceiling (465 characters on the synced tree, within the 600-character bound). It tells callers to open the named record for its full text and points eligible file-brief readers to `read_ar_files`. The marks views return their own weakness or dependent facts. The `writers` view returns per-writer aggregates, revision counts and a complete report path. `recordId` addresses a record by text ID and the marks filters are forwarded to the read handler. Paging and the internal family-complete selection remain, while mounted `read_ar_files` no longer supplies a matching inline manifest or continuation. `_worktree_relative_locations` compares the requested root with configured memory checkouts: non-configured roots use memoryRoot-relative row files, configured/no-config roots use absolute files; the payload includes commit/dirtiness provenance. Both read and diff registrars now receive config: read uses workspace/cache/location mode; diff uses coordination_root for the full comparison report. `knowledge_diff` answers compared trees, change counts, bounded decision record names/count and report location, not patches. The rich comparison remains available to the dashboard reviewer. Integrity remains the converted-tree validator and persisted leaf-worklist read; change/project remain unregistered. Handler argument forwarding and record/anchor semantics remain with their domain owners; the registration's location-mode helper is real local policy, not a new dataset selector.
+`register_knowledge_tools(server, config)` registers read, diff, integrity and write in that order: `_register_knowledge_write` mounts `knowledge_write`, the writer's own route — the same function the CLI write commands run — beside the reader. The mounted read's description advertises `Read memory. Views:` listing all seven views (`source_context`, `invariant`, `family`, `record`, `weakness`, `dependent`, `writers`) while keeping `view: str` and naming both public writer commands, `agents-remember knowledge-ingest` and `agents-remember knowledge-bootstrap`, inside the 500-character raw description ceiling (465 characters on the synced tree, within the 600-character bound). It tells callers to open the named record for its full text and points eligible file-brief readers to `read_ar_files`. The marks views return their own weakness or dependent facts. The `writers` view returns per-writer aggregates, revision counts and a complete report path. `recordId` addresses a record by text ID and the marks filters are forwarded to the read handler. Paging and the internal family-complete selection remain, while mounted `read_ar_files` no longer supplies a matching inline manifest or continuation. `_worktree_relative_locations` compares the requested root with configured memory checkouts: non-configured roots use memoryRoot-relative row files, configured/no-config roots use absolute files; the payload includes commit/dirtiness provenance. Both read and diff registrars now receive config: read uses workspace/cache/location mode; diff uses coordination_root for the full comparison report. `knowledge_diff` answers compared trees, change counts, bounded decision record names/count and report location, not patches. The rich comparison remains available to the dashboard reviewer. Integrity remains the converted-tree validator and persisted leaf-worklist read; change/project remain unregistered. Handler argument forwarding and record/anchor semantics remain with their domain owners; the registration's location-mode helper is real local policy, not a new dataset selector.
 
 ## Current source contract evidence
 
@@ -213,33 +213,11 @@ No meaningful cross-repo references found.
 
 
 - The four registered handlers: the read registrar that forwards the caller's own root and the configured workspace root as two separate arguments plus the configured coordination root, the write and diff registrars that take the configuration beside the server, and the integrity registrar that takes the server alone. [11]
-
-
-
-
-
 - The registered reader names the record views and their filters. Its writers view returns bounded aggregates and a full report path. [12]
-
-
-
-
-
 - The family entry point as the package door's contract requires it: one `register_*_tools(server, config)` public function for this family, delegating to the payload builders. [13]
-
-
-
 - The comparison registrar forwards the selected trees and scope to the comparison handler. The mounted response names counts, bounded decision records and the full report. [14]
-
-
-
-
 - Knowledge read/write/diff/integrity handlers resolve the existing request classes and payload builders through the lazy tools adapter at call time. No second writer or schema is introduced. [22]
 
-
-
-
 - The shared registrar tuple lists this family before the explainer. Its entry point registers read, diff, integrity and write in that order. The initial three-operation description remains in the module docstring. [9]
-
-
 
 - The registration keeps record naming, the writer commands and the writers view with the short-answer pointer. [23]
