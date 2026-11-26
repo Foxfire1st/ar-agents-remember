@@ -1,7 +1,26 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/check.py",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a8e42c752831af3325485cf5c759f938f0c9dcf3",
+        "content": "sha256:9cd88a19568a8cb05aca20a616548ef9c0e5292b1090161391dfb006513c733d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_converted_check"
+        }
+      },
+      "id": "RLZ-1AYA6P",
+      "invariant": "INV-82NDFH",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §7",
+        "leaf": "261112-BUG-L52"
+      },
+      "rationale": "Forwards DriftCheckContext.dependent_scope to converted_knowledge_check.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "The registered `memory_quality_check` dispatches typed sync/start/poll requests to their payload builders; its description names candidate leaf-contract scope and required coherence validation.",
@@ -26,12 +45,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
-            "content": "sha256:25a8ec9242e63f3cb86847e908c199dc3b786e8706908e6c0bd70a084835e136",
+            "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
+            "content": "sha256:d36898f090c2c1019b4574595a30ba05ebc9bf7b9f8e499b8eb48239eb4a2744",
             "locator": {
-              "end": 122,
+              "end": 128,
               "kind": "line_range",
-              "start": 65
+              "start": 70
             },
             "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
           },
@@ -44,12 +63,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
-            "content": "sha256:0eb154726ac75a8f950f4b5a74c1ce161536f4f61572cc101c5306fa55757221",
+            "blob": "a8e42c752831af3325485cf5c759f938f0c9dcf3",
+            "content": "sha256:a1b9b20eafbd6126a74fddc4a4e5d44ba888f7b88cd40c1d4376e8855b5f0548",
             "locator": {
-              "end": 166,
+              "end": 170,
               "kind": "line_range",
-              "start": 47
+              "start": 48
             }
           },
           "kind": "code"
@@ -61,12 +80,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
-            "content": "sha256:0eb154726ac75a8f950f4b5a74c1ce161536f4f61572cc101c5306fa55757221",
+            "blob": "a8e42c752831af3325485cf5c759f938f0c9dcf3",
+            "content": "sha256:a1b9b20eafbd6126a74fddc4a4e5d44ba888f7b88cd40c1d4376e8855b5f0548",
             "locator": {
-              "end": 166,
+              "end": 170,
               "kind": "line_range",
-              "start": 47
+              "start": 48
             }
           },
           "kind": "code"
@@ -78,8 +97,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
-            "content": "sha256:6327d4841a9b8a8f1890647a7deec14ee015c3bd6b9addfa59a5b544d36661c5",
+            "blob": "a8e42c752831af3325485cf5c759f938f0c9dcf3",
+            "content": "sha256:49d726c9c9fe9fcb6525f4ed64500bbc35a3ba5315850fb077f5c147e3ac0954",
             "locator": {
               "kind": "file"
             }
@@ -93,8 +112,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
-            "content": "sha256:6327d4841a9b8a8f1890647a7deec14ee015c3bd6b9addfa59a5b544d36661c5",
+            "blob": "a8e42c752831af3325485cf5c759f938f0c9dcf3",
+            "content": "sha256:49d726c9c9fe9fcb6525f4ed64500bbc35a3ba5315850fb077f5c147e3ac0954",
             "locator": {
               "kind": "file"
             }
@@ -108,8 +127,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
-            "content": "sha256:6327d4841a9b8a8f1890647a7deec14ee015c3bd6b9addfa59a5b544d36661c5",
+            "blob": "a8e42c752831af3325485cf5c759f938f0c9dcf3",
+            "content": "sha256:49d726c9c9fe9fcb6525f4ed64500bbc35a3ba5315850fb077f5c147e3ac0954",
             "locator": {
               "kind": "file"
             }
@@ -123,8 +142,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
-            "content": "sha256:bde494dabb48066c818f77a8834be555e256a96928d19acd48e694d61a417c9a",
+            "blob": "a8e42c752831af3325485cf5c759f938f0c9dcf3",
+            "content": "sha256:9cd88a19568a8cb05aca20a616548ef9c0e5292b1090161391dfb006513c733d",
             "locator": {
               "kind": "symbol",
               "name": "_converted_check"
@@ -201,12 +220,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
-            "content": "sha256:45c932b58130519d78d343395944d9402d93182fc1674513a4fbcf44e555719b",
+            "blob": "a8e42c752831af3325485cf5c759f938f0c9dcf3",
+            "content": "sha256:6f980ff6a407dbb8b4ff155fd42eefc18845424bfcc01a3b3500a2a6f4e1a2e0",
             "locator": {
-              "end": 166,
+              "end": 170,
               "kind": "line_range",
-              "start": 32
+              "start": 33
             }
           },
           "kind": "code"
@@ -218,12 +237,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
-            "content": "sha256:0eb154726ac75a8f950f4b5a74c1ce161536f4f61572cc101c5306fa55757221",
+            "blob": "a8e42c752831af3325485cf5c759f938f0c9dcf3",
+            "content": "sha256:a1b9b20eafbd6126a74fddc4a4e5d44ba888f7b88cd40c1d4376e8855b5f0548",
             "locator": {
-              "end": 166,
+              "end": 170,
               "kind": "line_range",
-              "start": 47
+              "start": 48
             }
           },
           "kind": "code"
@@ -235,12 +254,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
-            "content": "sha256:0eb154726ac75a8f950f4b5a74c1ce161536f4f61572cc101c5306fa55757221",
+            "blob": "a8e42c752831af3325485cf5c759f938f0c9dcf3",
+            "content": "sha256:a1b9b20eafbd6126a74fddc4a4e5d44ba888f7b88cd40c1d4376e8855b5f0548",
             "locator": {
-              "end": 166,
+              "end": 170,
               "kind": "line_range",
-              "start": 47
+              "start": 48
             }
           },
           "kind": "code"
@@ -252,12 +271,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
-            "content": "sha256:25a8ec9242e63f3cb86847e908c199dc3b786e8706908e6c0bd70a084835e136",
+            "blob": "445e4a0267304605e94e9b6d9c73a03e14b0719f",
+            "content": "sha256:d36898f090c2c1019b4574595a30ba05ebc9bf7b9f8e499b8eb48239eb4a2744",
             "locator": {
-              "end": 122,
+              "end": 128,
               "kind": "line_range",
-              "start": 65
+              "start": 70
             },
             "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
           },

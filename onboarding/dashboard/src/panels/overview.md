@@ -27,6 +27,8 @@ The cockpit mounts ReviewSurface through ReviewMain inside Operations’ railed 
 
 Knowledge is a task-independent, read-only repository reader addressed by URL hash and memory-tree selection. A followed document opens at its top; Back restores the place left. Citations open beside the document on wide screens and navigate as a page at 70rem and below. Phone browsing exposes the tree through Browse while preserving the document place.
 
+In the Knowledge reader panel, `KnowledgeTree` lists `Dependents` (`DPD-*`) under `Records`, and `TruthView` renders derived dependent state (`deferred`, `stale`, `current`, `unverifiable`), open deferral cards, and moved links via `DependentPart` (tested by `TruthView.dependent.test.tsx`).
+
 ## Construction And Ownership
 
 The review page preserves its tree and reading-column structure across subject reads. Its opening reads task context, catalogue, comparison summary, leaf-wide trees, shown-invariant cards and the lane; card batches start after leaf-wide code facts and catalogue settlement. Selecting a subject reads its own semantic answer and uses the page’s existing card set. ReadGate separates opening work from gesture-gated in-view work. Family guarantee wording keeps its authored operands and separate owner. The document chat may show shared host-start and shown-agent waiting/loading/failure reasons without taking host navigation authority.
@@ -496,6 +498,7 @@ Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycl
 - The Records branch gives each record row optional state and writer text through the shared formatter. [234]
 
 - The record heading displays supplied revision state and compact writer alongside record status and optional currentness. [235]
+
 - Record links can display the supplied revision state and writer beside their link. [236]
 
 - The sidebar formats supplied state and writer through the shared formatter. [237]

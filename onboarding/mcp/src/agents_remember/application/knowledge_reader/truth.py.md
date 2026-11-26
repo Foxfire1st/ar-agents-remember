@@ -24,6 +24,8 @@ The **census view** is MIK-R20's report of each census under `knowledge/census/`
 record by kind with its indexed revision state and writer (the dashboard's lookup); the **code view** is one code file at the selection's code tree,
 opened at a locator.
 
+For `dependent` records, `record_view` attaches `document["dependent"] = dependent_detail(selection, parsed_dependent)` so truth views expose derived dependent state, open deferrals, and moved links.
+
 ## Code Commentary
 
 ### Logic
@@ -98,6 +100,7 @@ No additional work is asserted by this card.
 ## Evidence
 
 - The record frame carries indexed state and writer, links and kind detail beside a lazily paged timeline. [2]
+
 - The facet projection removes legacy stored state words and keeps kind-specific lifecycle values. [14]
 - Family member summaries receive indexed revision state and writer alongside code currentness. [15]
 - The record list returns summaries by kind with indexed state and writer. [6]
@@ -140,6 +143,8 @@ No configured live documentation source was available for this pass.
 No cross-repo boundary is crossed by this file.
 
 - The module's own statement of the truth views per kind and the census view. [1]
+
 - Closed weakness views share one derived closure display between the returned record document and facet, leaving storage untouched. [13]
+
 - The kind's own part, and the entries that feed its timeline. [3]
 - Invariant and family parts expose their own currentness, entries and locations; the invariant's dedicated membership array queries history independently of the timeline cache. [5]

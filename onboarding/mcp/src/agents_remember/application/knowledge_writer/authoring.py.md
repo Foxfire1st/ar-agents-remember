@@ -26,7 +26,7 @@ A weakness records the place its cause occurs. `_write_record` delegates its anc
 
 For a closed record, the helper checks a supplied commit against the code repository and requires its full commit identity. A newly authored closure without a commit names the running leaf, or the task of a non-leaf owner. An unchanged closure already stored on a closed record may remain when a later task edits other metadata. The `Closure` model separately requires a reason when the commit is absent.
 
-Every write of a dependent is a confirmation. The writer checks that `document` is a tracked file at C and that no other dependent record names it, and that `stands_on` holds at least one link. Each link's recorded value is read at the task's tip: an anchor's `blob` and `content` from C, a whole file's `blob` from C, and a record link's stored revision from the candidate. `confirmed` is completed with this task's `task`, `role` and one-sentence `statement`, plus the code state the values were read from: `commit`, `codeTree` and `uncommitted`. No attribution is taken from the record being updated, so a second task never refreshes a document under the previous task's name, and a confirmation without its judgment is refused.
+Dependent writes delegate to `author_dependent` in `deferrals.py`. A confirmation write checks that `document` is a tracked file at C and that no other dependent record names it, and that `stands_on` holds at least one link. Each link's recorded value is read at the task's tip: an anchor's `blob` and `content` from C, a whole file's `blob` from C, and a record link's stored revision from the candidate. `confirmed` is completed with this task's `task`, `role` and one-sentence `statement`, plus the code state the values were read from: `commit`, `codeTree` and `uncommitted`. No attribution is taken from the record being updated, so a second task never refreshes a document under the previous task's name, and a confirmation without its judgment is refused. Confirming a dependent (existing or newly created) with open deferrals is refused unless the leaf edited `document` (compared via `base_code_blobs`), naming every open deferral; edited confirmations may resolve selected deferrals via `resolveDeferrals`. A deferral-only write (`defer`, `redefer`, or `lift` on an existing dependent without `confirmed`, `stands_on`, or `document`) updates `deferrals` and advances `revision` while leaving `stands_on` and `confirmed` untouched, and `verify_lifted_deferral_rows` refuses any write that lifted a deferral without a `deferral_lifted` history row.
 
 The named commit is the snapshot's own commit when the snapshot was taken at a committed state. A worktree capture names the root's `HEAD` and reports `uncommitted` when C is not that commit's tree; it invents no hash for code that no commit names.
 
@@ -37,12 +37,13 @@ A record request with `remove: true` removes the stored record file and its Mark
 ## Current evidence
 
 - Placement delegates revision calculation and records the writer before storing the record. [33]
-- Record fields are merged and links are resolved before placement. The decision default is its lifecycle word active. [34]
+
+
 - An unmerged record resolves above the higher side. Other records compare meaning with the applicable base. [44]
 - A raised or new revision carries the resolved writer and its exact meaning digest in the open attempt. [67]
 - Base-number placements retain the base stamp and unchanged same-writer placements retain the prior stamp. [68]
 
-- Every dependent write is a confirmation of the task's tip, refused without this task's attribution and judgment.
+- Dependent confirmation writes confirm at the task's tip (refused without this task's attribution/judgment or on unedited deferred documents), while deferral-only writes update `deferrals` and `revision` without touching `stands_on` or `confirmed`.
 
 
 - Origin/evidence and decision alternatives delegate to their explicit owners. [55]
@@ -389,7 +390,7 @@ The following complete predecessor retains useful explanations, old observations
 - A `raise` refused without a task owner, on a check refusal and on an append refusal writes nothing. [28]
 
 
-- The writer assigns handles, restores refreshes, processes entries and records, and writes judgment rows. Foreign evidence requires the current owner’s row. [30]
+
 
 
 - An explicit ID addresses a stored record. Otherwise the writer reuses the owner’s origin match or mints an ID. [31]
@@ -398,7 +399,6 @@ The following complete predecessor retains useful explanations, old observations
 - An owning record can append or replace its evidence. Foreign origin is preserved and its evidence goes to the current owner’s history row. [32]
 
 
-- Fields and links are resolved before record placement. A decision without a lifecycle status defaults to active. [34]
 
 
 - Realization and proof entries upserted in the sidecar. [35]
@@ -428,10 +428,16 @@ The following complete predecessor retains useful explanations, old observations
 
 - A range proof's locator and pairing titles are resolved by this one helper, which refuses a range that is no such case. [58]
 
-- Handle assignment and refresh restoration precede ordered entry processing, records and rows. [60]
+
 - The authoring class inherits the re-point row authoring, so a `still_rejected` row's `repoint` is judged where the row is written. [59]
 
 - The refusal names the invariant and the alternatives. [18]
-- The writer delegates the anchored place and closure checks to the weakness helper. A current closure without a commit records its reason and owning task. [62]
+
+
 
 - Entry authoring stores a supplied title and the placement adds a note for an updated rule still without a title. [69]
+
+- The writer assigns handles and restores refreshes before processing entries. It writes other records before dependents and then writes history rows. Unstored foreign evidence is a refusal. [30]
+- The writer merges fields and resolves links before placement. A decision defaults to the active lifecycle word when status is absent. [34]
+- Handle assignment and refresh restoration precede ordered entry processing, records and rows. [60]
+- The writer delegates the anchored place and closure checks to the weakness helper. A current closure without a commit records its reason and owning task. [62]

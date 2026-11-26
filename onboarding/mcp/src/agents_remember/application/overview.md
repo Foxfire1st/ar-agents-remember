@@ -53,6 +53,8 @@ A current review binds code B/C and memory K_B/K_C as four trees. Source invento
 
 Ordinary operations guarded for converted knowledge refuse legacy memory using central conversion guidance. The current `read_ar_files` naming route instead reports `memoryState=unconverted` and names no card or knowledge body. Startup/context exposes format and first-conversion facts without fabricating them from unreadable probes.
 
+Dependent-record deferrals span `knowledge_writer/deferrals.py` (`defer`, `redefer`, `lift`, `resolveDeferrals`, unedited-confirmation refusal, and `deferral_lifted` row enforcement), `knowledge_worklist/touched_records.py` (`deferralOnly`), `knowledge_gate/deferrals.py` (blocking due/post-sync checks and non-blocking orphan/pre-base warnings), and `knowledge_reader/deferrals.py` (`derive_deferrals` and `infer_reading_leaf`).
+
 ## Construction And Ownership
 
 The leaf knowledge gate charges retained Python graphs in its shared verdict and candidate parse memos. An oversized value stays available to the current evaluation and stays outside shared retention. Exact candidate files, code-tree reads and gate witnesses still determine whether reuse is valid. Detached quality calculations open their own request memo before computing a result.
@@ -488,7 +490,8 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The kind, registered on import. [298]
 - The reconciliation and its matching. [299]
 - Step 5 of the run. [300]
-- Planned history rows and their reference resolution moved to the inherited history-row owner. [302]
+
+
 - The kind, registered on import. [303]
 - The stored predicate for the gate. [304]
 - Reached families on all four conditions, others only on a killed route. [305]
@@ -509,7 +512,8 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The two kinds, registered on import. [326]
 - Coverage by a realization entry in K_B or a migrated route. [327]
 - The answering set from covered items only. [328]
-- The inherited row owner authors explicit no-invariant dispositions. [332]
+
+
 - The chain module statement. [333]
 - The chain lookup and its order. [334]
 - The chain rows last in the declared order. [335]
@@ -600,7 +604,6 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - Skipped links carry successors with a null trigger. [453]
 - **Retained historical source account — superseded by the current route account:** The port it satisfies. [261]
 
-- **Retained historical source account — superseded by the current route account:** The findings over one recomputed worklist. [364]
 
 - **Retained historical source account — superseded by the current route account:** Exclusion records do not establish bridge-host suppression. [457]
 - **Retained historical source account — superseded by the current route account:** Write admission now records repository-bootstrap only; the database enclosure adapter retired. [458]
@@ -746,8 +749,9 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The current module constructs only the review read’s refusal and read-only submission states. `refused(repository_id, refusal_value)` returns a refused result carrying the supplied named refusal and no supplied payload. `submission(stale)` uses the caller’s boolean: `disabled_stale` asks for a new comparison; otherwise `unavailable` says the review is read-only and directs authoring through the existing writer with author/task/authority provenance. Both branches carry the existing proposed-disposition vocabulary. No record collections are composed here. Historical predecessor claim (superseded): **The record renderer, and the one reason it is a module: two compositions render the same records, so one copy is what keeps an unassessed collection reading identically in both.** [517]
 - A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range). Anchor: "def _linked("; "hunk.new_count > 0 and any(hits_new(hunk, span) for span in candidate_spans)" The Anchor caption above records the historical `_linked`/`candidate_spans` spelling. Current enforcement is `linkage._classify_hunk`: the before and after comprehensions require changed lines on their own side (`old_count > 0` with `hits_old`, and `new_count > 0` with `hits_new`). [518]
 - The typed quality controller owns sync/start/poll execution and checklist publication without changing verification metadata. [116]
-- The rule 9 refusal in the quality controller. [271]
-- The controller's informational input to the checklist.  Anchor: `_without_proof` [276]
+
+
+
 - The controller's recompute. [280]
 - The curator run's dispatch between the history-file gate and today's gate.  Anchor: `onboarding_trace_gate_for_context` [288]
 - The checklist keeps needed onboarding rows out of the unnecessary report. [331]
@@ -770,14 +774,15 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_tree_knowledge.py:191-212 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab. Retired means the anchor no longer stands, not that the cited subject was deleted [341]
 
 - evaluate_answer computes the named records' currentness and may raise CURRENTNESS_FAILURES; failure_document separately constructs the failure block with unverifiableReason. [284]
-- Complete whole-file dependent version tokens are compared using exact confirmation and selected-tree project versions; unchanged other bytes and prefix identity are preserved, without claiming semantic package ownership for identical dependency tokens. \[522] [522]
+
+
 - For a complete paired leaf worklist, the closeout gate checks changed paths with the master landing entry-currentness predicate. It compares the recorded code base directly with the candidate tree. [523]
 
-- The write route resolves the caller outside the handoff and supplies the owner-specific stamp. [539]
+
 - The answer carries record standing independently of code currentness. [540]
 - The bounded writers view retains the report path and selection's counts. [541]
 
-- The writer reads and authors the handoff, checks history, renders changes, and validates the resulting candidate before it writes or refuses. [265]
+
 - The writer validates before finishing and appends raised questions before it writes the knowledge files. [462]
 - Task application authoring is distinct from observation: removed get/read_steps return operation-removed and canonical-file guidance, while surviving linkage_report writes its facts report and delivers counts/location. Ordinary writes and review mutations have phrase/reviewState delivery separate from their whole identity, preview and synchronization records. The by-file input branch reads one absolute regular UTF-8 input once before checking its measured byte budget. Role launch preparation supplies the own leaf and declared requirements with explicit missingCopies; later publication refreshes that set transactionally. None of these adapters moves canonical task, approval, projection, observer or coherence authority. [487]
 
@@ -789,3 +794,12 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - Crossing confirmation identifies the resolved commit that supplied the code tree. [527]
 
 - The reply fits bounded rule rows against final delivery metadata and can refit after a late log error. [542]
+
+- The writer reads and authors the handoff, checks history, renders changes, and validates the resulting candidate before it writes or refuses. [265]
+- The rule 9 refusal in the quality controller. [271]
+- The controller's informational input to the checklist. [276]
+- Planned history rows and their reference resolution moved to the inherited history-row owner. [302]
+- The inherited row owner authors explicit no-invariant dispositions. [332]
+- **Retained historical source account — superseded by the current route account:** The findings over one recomputed worklist. [364]
+- Complete whole-file dependent version tokens are compared using exact confirmation and selected-tree project versions; unchanged other bytes and prefix identity are preserved, without claiming semantic package ownership for identical dependency tokens. \[522] [522]
+- The write route resolves the caller outside the handoff and supplies the owner-specific stamp. [539]

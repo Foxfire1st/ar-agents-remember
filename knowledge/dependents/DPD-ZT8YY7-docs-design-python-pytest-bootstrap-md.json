@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
-    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
+    "codeTree": "48c171029dbbe43e6ba940b9dd8f029422ab5663",
+    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
     "role": "curator",
-    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/design/python-pytest-bootstrap.md accurately describes lane-based pytest selection and quality_plan targeted-module aliases across 261124-EXP, DEP-L7, and DEP-L2 provider removals.",
-    "task": "261125-DEP-L2",
+    "statement": "Audited docs/design/python-pytest-bootstrap.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): case budgets (10000/2000), lane selection, conftest isolation, and coverage/CRAP descriptions match live code after DEP + L52; re-anchored stress-durability in test-evidence-lanes.toml to lines 845-847.",
+    "task": "261112-BUG-L52",
     "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 23,
+  "revision": 24,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
+      "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -103,12 +103,12 @@
     },
     {
       "anchor": {
-        "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
-        "content": "sha256:d511bcc3a5fd6d565b5fb5bced6c752f6858a46a6a61173b204b7e35471bb8ff",
+        "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
+        "content": "sha256:cd1aadd0727e9055f7406e87eef73a6c7dd5a3457bbfc784c93a7ed4fc7eccc7",
         "locator": {
-          "end": 841,
+          "end": 847,
           "kind": "line_range",
-          "start": 839
+          "start": 845
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
@@ -129,14 +129,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T07:08:02+01:00",
+    "at": "2026-11-26T08:25:07+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L2",
+    "leaf": "261112-BUG-L52",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
-    "task": "261125-DEP"
+    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "task": "261112-BUG"
   }
 }

@@ -233,12 +233,12 @@
         },
         {
           "anchor": {
-            "blob": "191d820960a7565ad77ed2deb9c7b589b2d6ae3f",
+            "blob": "3d9d16ace8ae82e51ffaeb5fa4a2ae7ed6643ce9",
             "content": "sha256:ed4798a17f2efac53fdc4f16a3a335d5cc301edfcff2aa940a0265c6afbf2b14",
             "locator": {
-              "end": 140,
+              "end": 142,
               "kind": "line_range",
-              "start": 123
+              "start": 125
             },
             "path": "dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx"
           },

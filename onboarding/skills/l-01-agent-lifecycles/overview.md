@@ -144,7 +144,7 @@ The shared STE-inspired profile is the single writing guide for new or revised i
 
 Worker marks only completed matching own build/evidence steps; Curator only its completed curation step; Reviewer only a matching review step after its last round is recorded passed. Missing matching steps are reported and not set. Incomplete, blocked, progress and escalation reports do not mark unfinished work done. Manager sets no step for another agent and retains status/acceptance/publication. Worker/Curator stop after three unsuccessful own repairs of the same check/finding and tell Manager; this local stop is distinct from product review-record try counting.
 
-Reviewer records memory begin/result with `reviewKind=memory`: separate sealed reports, findings and count, the same limit, no code-state reset, and Manager-recorded architect/developer approval beyond it.
+Reviewer records memory begin/result with `reviewKind=memory`: separate sealed reports, findings and count, the same limit, no code-state reset, and Manager-recorded architect/developer approval beyond it. Under `OM-6` in `criteria/onboarding-memory.md`, memory review also requires a signed whole-document verdict with base and candidate `knowledge_read(view="dependent", staleOnly=true)` receipts for every `memory_quality_check` report-only pre-base-stale dependent confirmation and every `deferral_lifted` row.
 
 ## Clean sync and direct repair ownership
 

@@ -12,6 +12,8 @@ Currentness comes from anchors instead, so the integrity slot runs the knowledge
 stale-reference report. `memory_quality/check.run_memory_quality_check` dispatches here when the tree
 holds `knowledge/layout.json`.
 
+`converted_knowledge_check` accepts optional `dependent_scope` and appends `collect_dependent_report_only_findings(...)` to `reportOnlyFindings` in task checks without altering `ok` or `findingCount`.
+
 ## Code Commentary
 
 ### Landing-report scope
@@ -83,6 +85,7 @@ The converted validator/reference result and its dispatch boundary.
 - The runner's dispatch to this module. [4]
 
 
+
 - Memory quality reads the converted format. [5]
 
 
@@ -110,10 +113,13 @@ No cross-repo boundary is crossed by this file.
 
 
 
+
 When full quality supplies `QualitySourceFiles`, both validation and the reference census read through it. The result adds source listing counts and skipped reasons in `sourceFiles`, and per-reference ignored/binary reasons in `referenceSourceNotes`. Readable excluded files retain verification without a remark; source notes do not turn readable citations into refusing findings.
 
 - Reader selection preserves direct Path callers and the supplied full-quality reader. [9]
 
+
 - The check takes the base port and reports an unbuildable base as a finding.  Anchor: `converted_knowledge_check` [7]
+
 
 - An unbuildable base withholds base-dependent refusals; measurable states keep reporting.  Anchor: `converted_knowledge_check` [8]

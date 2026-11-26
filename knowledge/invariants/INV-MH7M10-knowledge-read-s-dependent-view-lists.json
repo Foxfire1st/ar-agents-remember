@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Spans knowledge_reader/{deferrals,selection,marks,truth}.py and dashboard TruthView/KnowledgeTree, and is guarded by Python reader and dashboard Vitest suites."
+  },
+  "applicability": "knowledge_read dependent and record views and the dashboard Knowledge reader panel.",
+  "conditions": [
+    "Every dependent with an open deferral reports state=deferred and deferred=true regardless of confirmation, including when staleOnly=true.",
+    "Per-deferral state derives as orphaned (terminal task), open (in creating leaf or unmet condition), or due (matching inferred reading leaf or changed watched file outside creating leaf).",
+    "The dashboard KnowledgeTree lists Dependents under Records and TruthView renders derived dependent state, deferrals, and moved links."
+  ],
+  "exclusions": [
+    "Mutation of stored dependent records; all deferral states and ages are derived read-only.",
+    "Underlying stands_on staleness calculation (dependent_movement), which is unchanged."
+  ],
+  "id": "INV-MH7M10",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_dependent_deferrals_gate_and_replay.py::test_07, test_16, test_reader_derives_task_due_in_own_leaf_and_keeps_creating_leaf_file_open and dashboard/src/panels/knowledge-reader/TruthView.dependent.test.tsx",
+        "mcp/tests/test_dependent_deferrals_gate_and_replay.py::test_16_reader_view_lists_every_deferral_with_state_and_marks_stale_only"
+      ],
+      "path": "261112-BUG-L52-worker-producer-list.json"
+    },
+    "handoffEntry": "BUG-R52@v2 §8",
+    "leaf": "261112-BUG-L52",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "knowledge_read's dependent view lists every document with an open deferral as deferred regardless of confirmation with passage, reason, condition, owner, age and derived state (open, due in the owning leaf or on a changed watched file outside the creating leaf, or orphaned), marks deferred documents distinctly under staleOnly=true, and the dashboard shows dependent state and deferrals in the record reader.",
+  "supersedes": [],
+  "title": "Reader and dashboard surface deferred dependents with derived deferral state",
+  "writer": {
+    "at": "2026-11-26T07:36:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L52",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "task": "261112-BUG"
+  }
+}

@@ -449,12 +449,12 @@
         },
         {
           "anchor": {
-            "blob": "3d0a518fede1ad24a4a085fd8a401d9ea6695ac1",
+            "blob": "c15d67cf62de4e1f8ca82bffda704b957ae632fe",
             "content": "sha256:034b599f0d88e3e503993b0fc7e92cf95a5649c3c658511f567d4bbc459c2286",
             "locator": {
-              "end": 815,
+              "end": 838,
               "kind": "line_range",
-              "start": 813
+              "start": 836
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
           },
@@ -498,12 +498,12 @@
         },
         {
           "anchor": {
-            "blob": "3d0a518fede1ad24a4a085fd8a401d9ea6695ac1",
+            "blob": "c15d67cf62de4e1f8ca82bffda704b957ae632fe",
             "content": "sha256:f34d645788bbd9ce2f25603b43d5c2d0b1d6beaad31d18efea2d2aee994b55ac",
             "locator": {
-              "end": 795,
+              "end": 818,
               "kind": "line_range",
-              "start": 793
+              "start": 816
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
           },

@@ -1,0 +1,212 @@
+{
+  "path": "mcp/tests/test_dependent_deferrals_gate_and_replay.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "565184cbb7bc2eec485305ac2c1deb12aaeb86de",
+        "content": "sha256:4d3321e906997b3349fde1ebff7997fad9c9d01edbadddf2ac4986cc7641e81c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_16_reader_view_lists_every_deferral_with_state_and_marks_stale_only"
+        }
+      },
+      "facet": "Verifies dependent list, staleOnly=true, and record views surface passage, reason, condition, owner, age, and derived state.",
+      "id": "PRF-07RPBR",
+      "invariant": "INV-MH7M10",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §8",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "565184cbb7bc2eec485305ac2c1deb12aaeb86de",
+        "content": "sha256:92b729481223e02e9a2187e700f195f28d10874e2a6bbb2bd5e78d75c44e7e41",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_13_lift_appears_for_reviewer_in_mqc_report_only_findings"
+        }
+      },
+      "facet": "Verifies a deferral_lifted history row is surfaced in MQC reportOnlyFindings for Memory Reviewer inspection.",
+      "id": "PRF-3H50MP",
+      "invariant": "INV-82NDFH",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §7",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "565184cbb7bc2eec485305ac2c1deb12aaeb86de",
+        "content": "sha256:a9dcc5727844888877d32ddabeb131dea8593fe27459b5282ecd1afbd5eb4ca3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_09_orphaned_deferral_warns_and_blocks_nothing_including_cross_master_cap_l5"
+        }
+      },
+      "facet": "Verifies orphaned deferrals (including cross-master terminal tasks) emit non-blocking warnings and can be re-homed by any Curator.",
+      "id": "PRF-4X11XN",
+      "invariant": "INV-XT13GK",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §5",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "565184cbb7bc2eec485305ac2c1deb12aaeb86de",
+        "content": "sha256:4bc68d0ea840e67f3e37624c01f0b22965d4088a75fe9e09197afc1ae339a6d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_06_deferral_fires_on_task_or_file_blob_whichever_first_and_never_in_creating_leaf"
+        }
+      },
+      "facet": "Verifies a deferral blocks on task match or file blob change whichever comes first and never blocks its creating leaf.",
+      "id": "PRF-A0S24B",
+      "invariant": "INV-XT13GK",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §5",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "565184cbb7bc2eec485305ac2c1deb12aaeb86de",
+        "content": "sha256:1936756eeab487861db4ed981c2f82d86eb45988876afc3ddb93f1c59ab03c8c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_08_due_deferral_blocks_only_the_leaf_it_is_due_in_not_unrelated_leaf"
+        }
+      },
+      "facet": "Verifies a due deferral blocks only the owning or editing leaf and leaves unrelated leaves unblocked.",
+      "id": "PRF-A7KP61",
+      "invariant": "INV-XT13GK",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §5",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "565184cbb7bc2eec485305ac2c1deb12aaeb86de",
+        "content": "sha256:bb50e4f8f5b7c6e9bd172094dff49482ee9f1a17507b87925b3854844a2ed41e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_reader_derives_task_due_in_own_leaf_and_keeps_creating_leaf_file_open"
+        }
+      },
+      "facet": "Verifies infer_reading_leaf derives task-due inside the owning leaf and keeps file-condition deferrals open in their creating leaf.",
+      "id": "PRF-C5KMYE",
+      "invariant": "INV-MH7M10",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §8",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "565184cbb7bc2eec485305ac2c1deb12aaeb86de",
+        "content": "sha256:051889adbead6bdd3ad920de0d48d7dd2f003c1134911eac605ef6e3c4cda86a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_12_pre_base_file_change_warns_but_does_not_block_unrelated_leaf"
+        }
+      },
+      "facet": "Verifies a watched file changed before a leaf's base warns without blocking an unrelated leaf that does not touch the file.",
+      "id": "PRF-JHPDAG",
+      "invariant": "INV-XT13GK",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §5",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "565184cbb7bc2eec485305ac2c1deb12aaeb86de",
+        "content": "sha256:c9ea5131daacaf0ecbdaaa9acb9ba8c7ac7236b55fd0ff5b690a287b05301124",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_replay_dpd_ghexs9_hermes_pre_and_post_deferral"
+        }
+      },
+      "facet": "Replays DPD-GHEXS9/docs/install/hermes.md showing Lever-1 flagging before deferral and writer refusal after deferral.",
+      "id": "PRF-MH6GSW",
+      "invariant": "INV-82NDFH",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §7",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "565184cbb7bc2eec485305ac2c1deb12aaeb86de",
+        "content": "sha256:6ee3d920521884fb760b4e6e6daadafe79e4c8c700e6c36a9b16fc215fede290",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_07_file_changed_on_another_line_makes_deferral_due_after_merge"
+        }
+      },
+      "facet": "Verifies a watched file changed on another line derives state=due in the reader view after merge.",
+      "id": "PRF-Y0MSN7",
+      "invariant": "INV-MH7M10",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §8",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "565184cbb7bc2eec485305ac2c1deb12aaeb86de",
+        "content": "sha256:d0e3f344a47b2831d253f84ec48b1c61332b48064c1925f520a85cc0476fda90",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_15_flag_lists_pre_base_stale_confirmation_of_untouched_doc_with_moved_links"
+        }
+      },
+      "facet": "Verifies confirming a pre-base stale dependent without editing its document emits pre_base_stale_confirmation with preBaseMovedLinks without flipping ok.",
+      "id": "PRF-Z0EQG9",
+      "invariant": "INV-82NDFH",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §7",
+        "leaf": "261112-BUG-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "565184cbb7bc2eec485305ac2c1deb12aaeb86de",
+        "content": "sha256:c5195b5d6e4d2734dd054b1ec10251fab65b23551514fc234ed4cba9e8c9cf85",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_14_sync_merges_deferrals_by_id_both_directions_and_catches_invalid_confirmation_at_closeout"
+        }
+      },
+      "facet": "Verifies bidirectional ID-keyed merging of deferrals, one-sided resolution omitting the empty key, and closeout refusal of a post-sync invalid confirmation.",
+      "id": "PRF-ZKJDG3",
+      "invariant": "INV-Q2KM31",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §6",
+        "leaf": "261112-BUG-L52"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module tests closeout due/orphan/warning gates, bidirectional crossing merge, Lever-1 flagging, reader state derivation, and the `DPD-GHEXS9` replay.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "565184cbb7bc2eec485305ac2c1deb12aaeb86de",
+            "content": "sha256:c9ea5131daacaf0ecbdaaa9acb9ba8c7ac7236b55fd0ff5b690a287b05301124",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_replay_dpd_ghexs9_hermes_pre_and_post_deferral"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

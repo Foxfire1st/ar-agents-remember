@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/dependent_flags.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f1db9013d3b32f0c5f6c9d09a40bb25bd933c580",
+        "content": "sha256:88c4af56bbce4bd02997e8300cce3cc57e8af79a03e728012b9d4bfa4c6a7e27",
+        "locator": {
+          "kind": "symbol",
+          "name": "collect_dependent_report_only_findings"
+        }
+      },
+      "id": "RLZ-Y232ZT",
+      "invariant": "INV-82NDFH",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §7",
+        "leaf": "261112-BUG-L52"
+      },
+      "rationale": "Computes report-only findings for pre_base_stale_confirmation (with preBaseMovedLinks), deferral_lifted, deferral_orphaned, and deferral_due_warning without altering staleness computation.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`collect_dependent_report_only_findings` emits `pre_base_stale_confirmation`, `deferral_lifted`, `deferral_orphaned`, and `deferral_due_warning` as non-blocking report-only findings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1db9013d3b32f0c5f6c9d09a40bb25bd933c580",
+            "content": "sha256:88c4af56bbce4bd02997e8300cce3cc57e8af79a03e728012b9d4bfa4c6a7e27",
+            "locator": {
+              "kind": "symbol",
+              "name": "collect_dependent_report_only_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

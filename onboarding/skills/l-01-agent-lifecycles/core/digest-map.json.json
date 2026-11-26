@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bcd12baec0eccb855548754464fcc3345d2615b1",
-        "content": "sha256:92bf9ae2475aa9382eeca114141deb17a2ff3a2aa00d230fc6d2c7ecbb6c2ddd",
+        "blob": "395c8e71736fb63553049d83315e2a3f3f497969",
+        "content": "sha256:34f5742eae2de147f69aee6f5a2b00d45685c890a19fab03d03af04be41b288d",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "bcd12baec0eccb855548754464fcc3345d2615b1",
-        "content": "sha256:92bf9ae2475aa9382eeca114141deb17a2ff3a2aa00d230fc6d2c7ecbb6c2ddd",
+        "blob": "395c8e71736fb63553049d83315e2a3f3f497969",
+        "content": "sha256:34f5742eae2de147f69aee6f5a2b00d45685c890a19fab03d03af04be41b288d",
         "locator": {
           "kind": "file"
         }
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bcd12baec0eccb855548754464fcc3345d2615b1",
+            "blob": "395c8e71736fb63553049d83315e2a3f3f497969",
             "content": "sha256:db906b4a6477f8ae43b120c2fcd1c203b2eab0b709723d58c085f67fb24ac5e4",
             "locator": {
               "end": 12,
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bcd12baec0eccb855548754464fcc3345d2615b1",
+            "blob": "395c8e71736fb63553049d83315e2a3f3f497969",
             "content": "sha256:735e7170423f80ebfc9ac8cec68897590a3a0d502dbdf63a9395b4d7fca95f1f",
             "locator": {
               "end": 1608,
@@ -72,12 +72,12 @@
       ]
     },
     "3": {
-      "note": "Current units distinguish reference evidence from selected digest lines; retired units keep their record.\n\nAnchor: file",
+      "note": "Current units distinguish reference evidence from selected digest lines; retired units keep their record.",
       "targets": [
         {
           "anchor": {
-            "blob": "bcd12baec0eccb855548754464fcc3345d2615b1",
-            "content": "sha256:92bf9ae2475aa9382eeca114141deb17a2ff3a2aa00d230fc6d2c7ecbb6c2ddd",
+            "blob": "395c8e71736fb63553049d83315e2a3f3f497969",
+            "content": "sha256:34f5742eae2de147f69aee6f5a2b00d45685c890a19fab03d03af04be41b288d",
             "locator": {
               "kind": "file"
             }
@@ -87,12 +87,12 @@
       ]
     },
     "4": {
-      "note": "The authored digest block records its path, semantic places and retained ceiling-authority decisions; generated current digest hash and size are stored in derived.digest.\n\nAnchor: source",
+      "note": "The authored digest block records its path, semantic places and retained ceiling-authority decisions; generated current digest hash and size are stored in derived.digest.",
       "targets": [
         {
           "anchor": {
-            "blob": "bcd12baec0eccb855548754464fcc3345d2615b1",
-            "content": "sha256:96f22ebbee9d1adfa19a7a94010ab4ec9e69177a92dfcf85542474e9176fc69f",
+            "blob": "395c8e71736fb63553049d83315e2a3f3f497969",
+            "content": "sha256:622da8416a453cf94024a3a075c15d4df9dee8c5747a738d5ca6af79698942c0",
             "locator": {
               "end": 7841,
               "kind": "line_range",
@@ -103,7 +103,7 @@
         },
         {
           "anchor": {
-            "blob": "bcd12baec0eccb855548754464fcc3345d2615b1",
+            "blob": "395c8e71736fb63553049d83315e2a3f3f497969",
             "content": "sha256:90d5b394342b2ce4d54e57bbe1944cc29d0cba0658518295f9f40d0533ec3d9a",
             "locator": {
               "end": 4825,
@@ -115,7 +115,7 @@
         },
         {
           "anchor": {
-            "blob": "bcd12baec0eccb855548754464fcc3345d2615b1",
+            "blob": "395c8e71736fb63553049d83315e2a3f3f497969",
             "content": "sha256:489c7be1ae1ca0dea02b99e37f4612660d527e34070af8ed15e0b5cc7e17d036",
             "locator": {
               "end": 7841,

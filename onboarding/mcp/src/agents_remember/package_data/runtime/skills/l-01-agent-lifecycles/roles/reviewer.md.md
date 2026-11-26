@@ -22,6 +22,7 @@ The independent MEMORY review reads both landing populations in the quality resu
 - When reviewing the Curator's memory change the Reviewer inspects the quality result's cutCards and addedFiles reports: text removed without a named change and a file added outside the knowledge without a place in the task's requirement are findings. [33]
 
 
+
 ## Message/file transport
 
 This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template.
@@ -115,6 +116,7 @@ Agent-authored temporary files, experiments and working copies live only in the 
 - The Reviewer returns exit-seam fix leaves to the seat it reports to: the owning Manager at master-exit, the Orchestrator at super-exit. [30]
 
 
+
 - The Reviewer independently examines one assigned seam or review round, refutes or confirms the claims against the bound criteria catalogs, and writes and hands over the verdict. [2]
 
 
@@ -127,6 +129,7 @@ Agent-authored temporary files, experiments and working copies live only in the 
 - A baseline review runs the bound catalogs, required routes and exploratory mandate, covers all three lenses explicitly, and tries to refute each claim before confirming it. [6]
 
 - The Reviewer requires the catalogs bound by its review type and does not choose catalogs during the review. [7]
+
 
 - Each review type binds a fixed set of criteria catalogs, listed in the role's review-type table from master-exit and super-exit to leaf, integration, full-loop and plan review. [8]
 
@@ -144,13 +147,17 @@ Agent-authored temporary files, experiments and working copies live only in the 
 
 - Super-exit review inspects changed paths and sidecars and route overviews among the integrated portfolio evidence. [15]
 
+
 - Full suites and drift reporting require an explicit developer request or a listing under the requirement's final checks. Normal curation always runs the complete `memory_quality_check`, which a subset cannot replace. [16]
 
 - At master-exit a baseline BLOCK goes to the owning Manager as decomposable fix leaves. [17]
 
+
 - At super-exit a baseline BLOCK goes to the Orchestrator as decomposable fix leaves. [18]
 
+
 - The Reviewer writes the verdict under the seam's notes/reports path using the verdict template and writes fix-leaf descriptors for non-leaf baseline blocks. [19]
+
 
 
 - The permitted review surface is read-only retrieval and scoped checks, report/journal artifacts, bound leaf messages, and ordinary review-round begin/result recording.
@@ -160,6 +167,7 @@ Agent-authored temporary files, experiments and working copies live only in the 
 
 
 - The role keeps the master-exit and super-exit seam rubrics and their blocking rule. [24]
+
 
 
 ### Cross-Repo References
@@ -174,15 +182,19 @@ No meaningful cross-repo references found.
 - Reviewer leaf messages use role_message on agents-remember-task with the handover's sibling role and exact leaf task references; product-supplied agent identifiers stay whole and unchanged. [29]
 
 
+
 - The Reviewer reads the rendered task document and canonical JSON at the supplied taskDocReadArgs paths, reads only the seam's required documents, and uses the Agents Remember tools on agents-remember-task only. [34]
 
 - The Reviewer may write its review artifacts, retrieve read-only through read_ar_files, use scoped system/tools.md checks and report templates, inspect full memory_quality_check curation evidence, run requested drift reporting and send the direct leaf messages and Manager notices; ordinary leaf begin/result records are evidence, not gate acceptance. [22]
+
 
 - Review starts only on the owner's assignment, reads the rendered task document and canonical JSON at the handover's taskDocReadArgs paths, and requires every applicable intake input before candidate inspection. [26]
 
 - A baseline review reports every standing criterion, the sealed baseline findings with stable identifiers, evidence and fix-acceptance criteria, and a complete route-coverage table. [27]
 
+
 - The Reviewer's permitted read and check surface and its prohibitions on implementing, recording task acceptance, starting roles, publishing Git, deciding gates and absorbing another seat's work. [28]
+
 
 - The Reviewer reads the current review-state limit from the task_doc answer and never runs an unapproved round or splits the scope to avoid that limit. [31]
 

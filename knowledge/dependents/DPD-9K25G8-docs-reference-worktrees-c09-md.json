@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
-    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
+    "codeTree": "48c171029dbbe43e6ba940b9dd8f029422ab5663",
+    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
     "role": "curator",
-    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/reference/worktrees-c09.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
-    "task": "261125-DEP-L2",
+    "statement": "Audited docs/reference/worktrees-c09.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): closeout knowledge-gate refusal, route-review and clean-sync rules, staleDocuments landing boundary, and Manager approval boundary remain accurate.",
+    "task": "261112-BUG-L52",
     "uncommitted": true
   },
   "document": "docs/reference/worktrees-c09.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 11,
+  "revision": 12,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -254,7 +254,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
     },
     {
-      "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
+      "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/review.md"
     },
@@ -279,20 +279,20 @@
       "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
     },
     {
-      "blob": "48fc771e981db7bb27c5f9c5a8d66dea7fac11dd",
+      "blob": "4fe5043c0194f5b54235220b52efc192f85617a7",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
     }
   ],
   "writer": {
-    "at": "2026-11-26T07:08:02+01:00",
+    "at": "2026-11-26T08:25:07+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L2",
+    "leaf": "261112-BUG-L52",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
-    "task": "261125-DEP"
+    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "task": "261112-BUG"
   }
 }

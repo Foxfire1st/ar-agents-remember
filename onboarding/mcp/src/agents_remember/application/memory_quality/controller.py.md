@@ -532,7 +532,9 @@ measured at all.
 
 
 
+
 - The checklist receives the list (since MIK-R09 beside the mandatory gate's findings, which do count); `None` for an unconverted tree.  Anchor: `_attach_curator_checklist` [2]
+
 
 
 
@@ -544,7 +546,9 @@ measured at all.
 
 
 
+
 - The prepared inputs handed to the checklist.  Anchor: `_PreparedInputs` [4]
+
 
 
 
@@ -554,7 +558,9 @@ measured at all.
 
 
 
+
 - The checklist receives the current worklist and its path whether the gate computes or reuses the verdict. [6]
+
 
 
 
@@ -588,6 +594,7 @@ measured at all.
 
 
 
+
 - The gate over the exact curator candidate; `None` where it does not apply. [16]
 
 
@@ -604,11 +611,13 @@ measured at all.
 
 
 
+
 - Sync, start, and poll are separate typed request entry points with capacity and nondisclosing poll translations.  Anchor: `run_memory_quality_request`, `start_memory_quality_request`, `poll_memory_quality_request` [20]
 
 
 
 - Full leaf checks compose and atomically publish the curator checklist: the tail of `_execute_memory_quality` returns early for a run that publishes no checklist, and otherwise hands the payload to the checklist writer. [21]
+
 
 
 
@@ -624,11 +633,14 @@ measured at all.
 
 
 
+
 - Full execution supplies the contract-bound landing base separately from the validator base.  Anchor: `_execute_memory_quality` [25]
 
 
 
+
 - Unconverted quality refusal copies the projection's own keys into the whole result before scanning; converted repair, index and coherence readiness remains separately evaluated.  Anchor: `_execute_memory_quality` [26]
+
 
 
 
@@ -641,6 +653,7 @@ measured at all.
 
 
 - Full execution prepares route-index caches before checking, exposes the build summary and proof count, and hands prepared values to checklist composition. [30]
+
 
 
 

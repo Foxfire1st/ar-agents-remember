@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/tasks/task_facts.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3e30e3f5b6df3a0e6574e7a06be2f1fd8a257538",
+        "content": "sha256:8e5efe1cb2d56f4be82dcef796be38ea5d6a3d3bb15d5e9b7dcb0f2e4c45a107",
+        "locator": {
+          "kind": "symbol",
+          "name": "load_task_facts"
+        }
+      },
+      "id": "RLZ-NCPP5V",
+      "invariant": "INV-8CNH3X",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §3-4",
+        "leaf": "261112-BUG-L52"
+      },
+      "rationale": "Loads live and archived canonical task documents once per run so writer, gate and reader share one O(N) task-fact index.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`load_task_facts` indexes live and archived canonical task documents once per run with live-over-archive and standalone-over-summary precedence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e30e3f5b6df3a0e6574e7a06be2f1fd8a257538",
+            "content": "sha256:8e5efe1cb2d56f4be82dcef796be38ea5d6a3d3bb15d5e9b7dcb0f2e4c45a107",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_task_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

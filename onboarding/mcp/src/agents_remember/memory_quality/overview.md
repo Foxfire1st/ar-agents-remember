@@ -35,6 +35,8 @@ TypeScript anchor parsing memoizes each exact input, including an unresolved spe
 
 MCP tool dispatch and finite CLI handlers establish the operation boundary; the dashboard server handler remains outside it. A background quality worker enters its own fresh context and definition scope. Completed validation results remain independently computed.
 
+`memory_quality/dependent_flags.py` appends four non-blocking `dependent_flags` entries (`pre_base_stale_confirmation`, `deferral_lifted`, `deferral_orphaned`, `deferral_due_warning`) to `reportOnlyFindings` during converted task checks without changing `ok`, `findingCount`, or staleness computation.
+
 ## Construction And Ownership
 
 A detached quality computation starts its own request memo and definition scopes. The run registry keeps its existing result ownership and repeatable poll behavior. A retained result has a separate lifetime from the computation that produced it.
@@ -166,7 +168,9 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 
 - The converted run's one validator and reference-state check, `knowledge.converted`. [42]
 
+
 - Retained reference account (no fresh execution or acceptance inferred): The runner's dispatch by format.  Anchor: `_converted_check` [43]
+
 - Retained reference account (no fresh execution or acceptance inferred): The commit route's optional base converter. [44]
 - Retained reference account (no fresh execution or acceptance inferred): The escaping rule on the validator's grammar. [45]
 - Retained reference account (no fresh execution or acceptance inferred): The section and the summary. [48]
@@ -214,9 +218,13 @@ Custody: the preceding sentence(s) retain their original target blob(s) `6782d18
 - Migration completeness covers candidate onboarding and census routes. [95]
 - Membership, record and onboarding fact rendering. [96]
 - Converted snapshot identity uses all stale findings rather than the sampled packet and is withheld for unreadable sidecars; legacy snapshots hash their complete actionable rows, independently of snapshot time. [97]
+
 - report-only landing measurement with separate read-summary scope [80]
+
 - The per-check reader bounds file reads, preserves citation verification and reports skipped sources. [98]
+
 - Named converted-base refusal depends on the supplied port; no-port HEAD reads can yield no bases; reported base failure withholds anchor-path refusals.  Anchor: `_comparison_bases` `converted_knowledge_check` [81]
+
 - Retained reference account (no fresh execution or acceptance inferred): The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner.  Anchor: `run_memory_quality_request` `_execute_memory_quality` [1]
 
 - The memory registrar exposes `memory_quality_check` to agents and routes it to the start, poll or whole-run payload. Anchor: `memory_quality_check_payload` [2]

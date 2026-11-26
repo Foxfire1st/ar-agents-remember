@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_worklist/touched_records.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "69c1012455aa95dc37cfd6355ab2fb6d823f4919",
+        "content": "sha256:c44c15cc4e04c1631a40d31c8d9321f37f76e3f6a2e58b6dce3342565b55c0ce",
+        "locator": {
+          "kind": "symbol",
+          "name": "_deferral_only_dependent_change"
+        }
+      },
+      "id": "RLZ-05V860",
+      "invariant": "INV-NW74GN",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §2",
+        "leaf": "261112-BUG-L52"
+      },
+      "rationale": "Marks touched_record items whose DependentRecord changed only in deferrals with deferralOnly=True.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The registered satisfying-row contract prioritizes newly retired status before revision growth.",
       "targets": [
         {
           "anchor": {
-            "blob": "f4089ef4000f032319b75b9e827ce11f709f17c5",
+            "blob": "69c1012455aa95dc37cfd6355ab2fb6d823f4919",
             "content": "sha256:2d528873db708db3ddfb0d3ed6e221bcef037e5afcddfeba0598dbbecaac4735",
             "locator": {
               "kind": "symbol",
@@ -23,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4089ef4000f032319b75b9e827ce11f709f17c5",
+            "blob": "69c1012455aa95dc37cfd6355ab2fb6d823f4919",
             "content": "sha256:096d9cb7186a85d5370af72424bd5d596522c32c5b6afa396a6f0e4be254c967",
             "locator": {
               "kind": "symbol",
@@ -39,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4089ef4000f032319b75b9e827ce11f709f17c5",
+            "blob": "69c1012455aa95dc37cfd6355ab2fb6d823f4919",
             "content": "sha256:7782868644b47a9c062c105ea6db500ff2989711e4e39dfb79c762f0f61d55a9",
             "locator": {
               "kind": "symbol",
@@ -51,12 +70,12 @@
       ]
     },
     "4": {
-      "note": "Exact JSON/prose comparison of base records emits revision/status facts and leaves structural deletion elsewhere.\n\nAnchor: `touched_record_items`",
+      "note": "Exact JSON/prose comparison of base records emits revision/status facts and leaves structural deletion elsewhere.",
       "targets": [
         {
           "anchor": {
-            "blob": "f4089ef4000f032319b75b9e827ce11f709f17c5",
-            "content": "sha256:307151ae2b70c42156cb458a1195bb84d53c7ef04ed3e2406f61161559cdb1d1",
+            "blob": "69c1012455aa95dc37cfd6355ab2fb6d823f4919",
+            "content": "sha256:805b5e0808de32e51ba3e474c71498564a9674f090d36a4e72ded763d214c15a",
             "locator": {
               "kind": "file"
             }

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
-    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
+    "codeTree": "48c171029dbbe43e6ba940b9dd8f029422ab5663",
+    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
     "role": "curator",
-    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/design/python-evidence-system.md pins no test counts and accurately describes the seven accepting lanes and source-derived lifecycle contracts across 261124-EXP, DEP-L7, and DEP-L2 provider removals.",
-    "task": "261125-DEP-L2",
+    "statement": "Audited docs/design/python-evidence-system.md in full (lines 1-295) against DEP-synced L52 candidate 48c17102 (base 599cfaf8, where 261125-DEP-L2 confirmed rev 23): pins no artifact or test counts and accurately describes the seven accepting lanes, canonical catalog form, lifecycle rules, and source-derived consumers after L52 added dependent_deferrals_test_support.py and its two unit-regression suites.",
+    "task": "261112-BUG-L52",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 23,
+  "revision": 24,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
+      "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
+      "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },
@@ -107,14 +107,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T07:08:02+01:00",
+    "at": "2026-11-26T08:25:07+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L2",
+    "leaf": "261112-BUG-L52",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
-    "task": "261125-DEP"
+    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "task": "261112-BUG"
   }
 }

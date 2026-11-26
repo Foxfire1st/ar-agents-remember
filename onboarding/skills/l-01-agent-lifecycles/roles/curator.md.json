@@ -502,7 +502,7 @@
         },
         {
           "anchor": {
-            "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
+            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
             "content": "sha256:4e6bf8994a2889ebd2ead57252c36edc23ec9aaf19e314edbdf5f8746ae40f19",
             "locator": {
               "end": 120,
@@ -1859,7 +1859,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a81b6d9ab671887286c74a241af468320dd3f0d",
+            "blob": "908edf004c9517dd111d086a0b011b2f9d9c3635",
             "content": "sha256:8cbb07661ec63e635664f42360becac5faa30813573c1b0f15af0820496421a2",
             "locator": {
               "end": 28,
@@ -1872,12 +1872,12 @@
         },
         {
           "anchor": {
-            "blob": "16c98b76c1608e3e38922bd9e890e406e1e0f57f",
+            "blob": "4961a62711d1892e8dc2b4416f1649971588002c",
             "content": "sha256:d4ea1daf5811bc870a84120ffd57be90919bcd0d20f9382591cca3125ed32fff",
             "locator": {
-              "end": 1073,
+              "end": 1085,
               "kind": "line_range",
-              "start": 1043
+              "start": 1055
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },
@@ -1903,7 +1903,7 @@
         },
         {
           "anchor": {
-            "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
+            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
             "content": "sha256:4e6bf8994a2889ebd2ead57252c36edc23ec9aaf19e314edbdf5f8746ae40f19",
             "locator": {
               "end": 120,

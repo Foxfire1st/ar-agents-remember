@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0401272f3d93b6f584dbddbd8764b24704b3edb4",
+            "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
             "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
             "locator": {
-              "end": 708,
+              "end": 710,
               "kind": "line_range",
-              "start": 708
+              "start": 710
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -230,11 +230,11 @@
       ]
     },
     "9": {
-      "note": "The lifecycle catalog lists `mcp/tests/test_closeout_projection_source_classification.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. These source declarations establish no execution or passing result.\n\nAnchor: source",
+      "note": "The lifecycle catalog lists `mcp/tests/test_closeout_projection_source_classification.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/writer_worklist_test_support.py`. These source declarations establish no execution or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
+            "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
             "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
             "locator": {
               "end": 208,
@@ -247,12 +247,12 @@
         },
         {
           "anchor": {
-            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
+            "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
             "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
             "locator": {
-              "end": 1249,
+              "end": 1251,
               "kind": "line_range",
-              "start": 1249
+              "start": 1251
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -260,12 +260,12 @@
         },
         {
           "anchor": {
-            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
+            "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
             "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
             "locator": {
-              "end": 2689,
+              "end": 2710,
               "kind": "line_range",
-              "start": 2689
+              "start": 2710
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -273,12 +273,12 @@
         },
         {
           "anchor": {
-            "blob": "5c82cf8c02b184c767e15893d23dec4281334761",
+            "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
             "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
             "locator": {
-              "end": 5130,
+              "end": 5155,
               "kind": "line_range",
-              "start": 5130
+              "start": 5155
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

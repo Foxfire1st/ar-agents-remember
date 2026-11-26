@@ -3,7 +3,24 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
+        "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
+        "content": "sha256:207fd367d45ffb217f5e8d2b54529d8fe9eee7cc12f4890c945f6c9765fdc7f0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-75AM59",
+      "invariant": "INV-MH7M10",
+      "origin": {
+        "handoffEntry": "BUG-R52@v2 §8",
+        "leaf": "261112-BUG-L52"
+      },
+      "rationale": "Displays the derived dependent StateBadge and compact DependentPart with open deferrals and moved links.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
         "content": "sha256:742b961c2627856b947d888db1109b6f5de62b948f133f94fa4b964325399375",
         "locator": {
           "kind": "symbol",
@@ -21,8 +38,8 @@
     },
     {
       "anchor": {
-        "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
-        "content": "sha256:741db78a9b9b52cb1fe80a4f91660b1e692a06bc4dead9b32262ee300d0f0cc9",
+        "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
+        "content": "sha256:207fd367d45ffb217f5e8d2b54529d8fe9eee7cc12f4890c945f6c9765fdc7f0",
         "locator": {
           "kind": "file"
         }
@@ -38,8 +55,8 @@
     },
     {
       "anchor": {
-        "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
-        "content": "sha256:e5b046f59385698cb78db05a11ab22d3585d546bce0bc6742ad4a4eb86a2b271",
+        "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
+        "content": "sha256:f31ed7cb55ac9584c156b724bbc3041663c10f9925f8ca3a3dfc1c7d8f33c69e",
         "locator": {
           "kind": "symbol",
           "name": "TruthView"
@@ -56,7 +73,7 @@
     },
     {
       "anchor": {
-        "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
+        "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
         "content": "sha256:269a5e24e24f377b10526ef0f2b86ce216978270c52577652107cab68ea1946f",
         "locator": {
           "kind": "symbol",
@@ -74,7 +91,7 @@
     },
     {
       "anchor": {
-        "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
+        "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
         "content": "sha256:21b59260d833536eea5d0008e531f401473a8d9e2040fdb8d1b1ca390bb521f8",
         "locator": {
           "kind": "symbol",
@@ -92,7 +109,7 @@
     },
     {
       "anchor": {
-        "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
+        "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
         "content": "sha256:a3e174e0dc69e7e3d004205e36adbacd5cf1a1dfe006655b1816bccd625eea4f",
         "locator": {
           "kind": "symbol",
@@ -115,8 +132,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
-            "content": "sha256:e5b046f59385698cb78db05a11ab22d3585d546bce0bc6742ad4a4eb86a2b271",
+            "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
+            "content": "sha256:f31ed7cb55ac9584c156b724bbc3041663c10f9925f8ca3a3dfc1c7d8f33c69e",
             "locator": {
               "kind": "symbol",
               "name": "TruthView"
@@ -127,16 +144,16 @@
       ]
     },
     "15": {
-      "note": "The heading renders kind, identity and revision alongside available source currentness, record status, revision state and writer.\n\nAnchor: TruthHeader",
+      "note": "The heading renders kind, identity and revision alongside available source currentness, record status, revision state and writer.",
       "targets": [
         {
           "anchor": {
-            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
-            "content": "sha256:f673690b626565279523bd132f23983fcbf90fc2fad3c1a1ca308afcc6dccb0e",
+            "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
+            "content": "sha256:8fe53bf028885856902fcff81f085e761d08e7e685bcb8faa3d18621c79e5f28",
             "locator": {
-              "end": 189,
+              "end": 199,
               "kind": "line_range",
-              "start": 163
+              "start": 173
             }
           },
           "kind": "code"
@@ -144,16 +161,16 @@
       ]
     },
     "16": {
-      "note": "Per-kind lead/order and framing exclusion govern labelled meaning values.\n\nAnchor: current lead, order and fields",
+      "note": "Per-kind lead/order and framing exclusion govern labelled meaning values.",
       "targets": [
         {
           "anchor": {
-            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
-            "content": "sha256:6440eb45ffbb3f78274f7f3ae23ab88a0c81d0fb76e1a476293d51d125a96e14",
+            "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
+            "content": "sha256:fde657aa9b31c79f18b45153410345224d97338ab0ebfdd9ed1cd2243e469f78",
             "locator": {
-              "end": 133,
+              "end": 143,
               "kind": "line_range",
-              "start": 40
+              "start": 42
             }
           },
           "kind": "code"
@@ -165,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
+            "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
             "content": "sha256:c26126084494697f388bf8f331bad688049ed66e0c86ea9423ed7aa3dfcb1933",
             "locator": {
               "kind": "symbol",
@@ -181,7 +198,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
+            "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
             "content": "sha256:e2e2b2ac9c1e434185387f29ff4dd4d96a59df862b394eb753c5cd0df920544e",
             "locator": {
               "kind": "symbol",
@@ -197,7 +214,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
+            "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
             "content": "sha256:a3e174e0dc69e7e3d004205e36adbacd5cf1a1dfe006655b1816bccd625eea4f",
             "locator": {
               "kind": "symbol",
@@ -213,12 +230,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
+            "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
             "content": "sha256:e25f972421141b9d037c99c97ddf85fef1e96eec6847a026bd00bf63a2534f74",
             "locator": {
-              "end": 612,
+              "end": 704,
               "kind": "line_range",
-              "start": 543
+              "start": 635
             }
           },
           "kind": "code"
@@ -230,12 +247,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bbbcc729f180ffcd26b9dbf0ff5234034f76d07",
+            "blob": "9739510e6df87252a8397eed79b1ba0e354dae13",
             "content": "sha256:c7c930d8e5e879a81aec126a415bb727c84060ab6acfd0eed60519ca7e0a91a9",
             "locator": {
-              "end": 495,
+              "end": 587,
               "kind": "line_range",
-              "start": 438
+              "start": 530
             }
           },
           "kind": "code"

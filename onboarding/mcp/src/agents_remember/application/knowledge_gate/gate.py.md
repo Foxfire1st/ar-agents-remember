@@ -16,6 +16,8 @@ itself marks `report_only` (its merge-report and migration-debt policies, kept b
 with no written weakness at all can still report such items. No route refuses for any of them, and there is no waiver
 (rule 5).
 
+Under `BUG-R52` deferral gating, `GateTrees` carries optional `coordination_root` and `repo_name`, and `judge` shares one preloaded `GateContext` across `_item_findings` and `deferral_gate_findings` (`knowledge_gate/deferrals.py`), appending blocking due-by-task/due-by-leaf-diff/post-sync-unedited-confirmation findings and non-blocking orphan/pre-base warnings without blocking `worktree_sync`.
+
 ## Code Commentary
 
 The gate observes the candidate memory tree before looking for a reusable parsed side. The snapshot location and tree identify a candidate. Exact file bytes must still match, and a hit gives the caller an isolated copy. The separate candidate parse store charges retained keys and parsed data before retaining them.
@@ -168,6 +170,7 @@ No configured live documentation source was available for this pass.
 
 - The exact candidate the gate judges. [3]
 
+
 - The verdict: memoisable, brief and refusal. [4]
 - The recompute that never raises. [5]
 
@@ -188,6 +191,7 @@ No configured live documentation source was available for this pass.
 
 
 - Evaluation supplies the judged memory commit or leaf HEAD when recomputing the worklist before the gate judges that result. [7]
+
 
 
 
@@ -252,6 +256,7 @@ No cross-repo boundary is crossed by this file.
 
 
 - K_C and C read once; the invariant kinds first; a failed read is incomplete. Anchor: `_candidate` `_item_findings` `_decided` [8]
+
 
 
 

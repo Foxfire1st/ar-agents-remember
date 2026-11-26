@@ -5,9 +5,10 @@
     ],
     "justification": "The two kinds are realized in the schema module, the folder registry and the ID registry at once, and each is consumed by a reader, a writer and a validator that must agree on the same names."
   },
-  "applicability": "Every memory tree that holds a weakness or a dependent record, including a tree that holds neither, which reads and validates as before.",
+  "applicability": "Every memory tree that holds a weakness or a dependent record, including a tree that holds neither, which reads and validates as before; a dependent without deferrals stays byte-identical.",
   "conditions": [
-    "The record is written through the curator writer, which resolves its anchor and its link values at the task's tip."
+    "The record is written through the curator writer, which resolves weakness anchors, confirmation link values, and deferral condition.file blobs at the task's tip.",
+    "When present, deferrals is a non-empty list of uniquely identified entries, each requiring a passage, reason, owner, condition with at least one of task or file, and fileBlob exactly when condition.file is set."
   ],
   "exclusions": [
     "A limitation, which bounds what an invariant claims and stays a limitation.",
@@ -25,9 +26,20 @@
     "leaf": "260928-MIK-L118",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The memory holds two record kinds beside the ten kinds it already has: a weakness, which names the code place whose waste, fault or debt it records, and a dependent, which names one document and every place that document stands on.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "The memory holds two record kinds beside the ten kinds it already has: a weakness, which names the code place whose waste, fault or debt it records, and a dependent, which names one document, every place that document stands on, and any open explicit deferrals (omitted when empty).",
+  "supersedes": [],
+  "title": "Memory stores weaknesses and dependents with optional explicit deferrals",
+  "writer": {
+    "at": "2026-11-26T07:36:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L52",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "task": "261112-BUG"
+  }
 }

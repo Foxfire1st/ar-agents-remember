@@ -276,6 +276,7 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 
 - This controller function revalidates the scope, calls the scoped memory-quality check and composes its result. [16]
 
+
 - The controller attaches the curator checklist and enclosure-local worklist for the full scoped publication. [17]
 
 - Carryover options forward approval intent and explicit review selection without a commit subject. [37]
