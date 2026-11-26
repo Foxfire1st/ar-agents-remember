@@ -28,5 +28,24 @@
     "task": "260928-MIK-L118"
   },
   "state": "closed",
-  "statement": "The invariant promises a generic explicit least-offered working mode and refusal of unknown offerings. MIK-R71@v1 rule21 instead names Claude `default`, Codex `auto`, no mode for Pi, and no stated mode when the named mode is absent or the kind is unlisted; the retained resolver follows that narrower provider-specific policy."
+  "statement": "The invariant promises a generic explicit least-offered working mode and refusal of unknown offerings. MIK-R71@v1 rule21 instead names Claude `default`, Codex `auto`, no mode for Pi, and no stated mode when the named mode is absent or the kind is unlisted; the retained resolver follows that narrower provider-specific policy.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L11",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

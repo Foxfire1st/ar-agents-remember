@@ -25,5 +25,24 @@
     "task": "261112_bug-fixes-and-issue-tracking/03_faults-met-while-closing-the-last-master.json"
   },
   "state": "open",
-  "statement": "Text-only comparison cannot distinguish a dependency whose complete old and new version tokens equal the product's from an own-product version substitution."
+  "statement": "Text-only comparison cannot distinguish a dependency whose complete old and new version tokens equal the product's from an own-product version substitution.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L3",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

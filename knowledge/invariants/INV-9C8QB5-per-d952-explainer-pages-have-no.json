@@ -32,6 +32,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "Per D952, explainer pages have no reduced-motion or quiet-mode check: the static prefers-reduced-motion word gate, explainer reduced-motion and effects-off browser passes, motion detector, and explainer ar-canvas-binding/v1 effects flag and dataset.effects bridge are removed so CSS, Web Animations, canvas, rAF, and controlled video publish without motion refusal or remark while the dashboard application keeps its own reduced-motion and quiet behavior unchanged.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261124-EXP-L1",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261124-EXP",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

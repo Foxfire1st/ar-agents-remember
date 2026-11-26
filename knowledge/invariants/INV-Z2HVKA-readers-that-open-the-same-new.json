@@ -33,6 +33,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Readers that open the same new review comparison at the same moment record it once: recording takes turns inside one dashboard process, a pin ref that already names the comparison's tree is success, a ref that names another tree is refused and never moved, a held ref lock is retried, and a refused pin removes only the pins that the refused call created.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L21",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

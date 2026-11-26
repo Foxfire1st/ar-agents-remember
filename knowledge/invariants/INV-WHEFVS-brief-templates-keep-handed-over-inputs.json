@@ -28,6 +28,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Brief templates carry handed-over inputs and requested outputs; role/operation sources keep procedural authority. The specifically approved message/file/body/attach/settings/return guidance is a bounded shared transport exception, not permission to duplicate other role procedures.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L84",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

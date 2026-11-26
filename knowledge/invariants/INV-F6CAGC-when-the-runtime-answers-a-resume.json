@@ -28,6 +28,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "When the runtime answers a resume and the session is still closed, the receipt becomes `failed` with the runtime's reason as detail, `canRevive` false and a private `resumeRefused {reason, at}` record, answered with HTTP 200; while the session stays closed every later refresh keeps the status, that reason and `canRevive` false, a second Revive is refused after one read, the record is dropped once the session is seen open, and a new agent comes only from a new Start, which archives this one.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L100",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

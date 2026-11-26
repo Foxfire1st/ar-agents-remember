@@ -26,5 +26,23 @@
     "task": "260928-MIK-L97"
   },
   "state": "open",
-  "statement": "While an explainer is live, the reference that the button Explain adds carries four empty tree ids, the explainer refuses its send as an invalid request, and after a reload the pick and the text are gone although the page says that they stay."
+  "statement": "While an explainer is live, the reference that the button Explain adds carries four empty tree ids, the explainer refuses its send as an invalid request, and after a reload the pick and the text are gone although the page says that they stay.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

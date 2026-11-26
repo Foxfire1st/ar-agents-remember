@@ -24,6 +24,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Intent count semantics: + counts invariant/guarantee revisions present only after (added or revised), - counts those retired (removed or superseded); a revision counts once on each side; realization/membership-only changes are shown in the reviewer but not in +/-; missing knowledge is shown as unavailable, never +0 -0.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-KNO-L3",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-KNO",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

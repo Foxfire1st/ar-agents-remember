@@ -32,6 +32,24 @@
     "skills/l-01-agent-lifecycles/templates"
   ],
   "schema": "ar-family/v1",
-  "status": "proposed",
-  "title": "converted-first-baseline-with-truthful-handoff"
+  "title": "converted-first-baseline-with-truthful-handoff",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L8",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

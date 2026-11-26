@@ -24,5 +24,24 @@
     "task": "260928-MIK-L118"
   },
   "state": "open",
-  "statement": "Base 4b6a2660 (before L146): unit-case budget 4000 exceeded (4323 cases; collection exit 4), and src/test/loadIndependence.test.ts flags vi.setConfig timeout in three ReviewSurface tests from L86 (23cb164f). Found by L127 Worker; not repaired by L127/L120. L146 raises the budget; the L86 flag stays for another date."
+  "statement": "Base 4b6a2660 (before L146): unit-case budget 4000 exceeded (4323 cases; collection exit 4), and src/test/loadIndependence.test.ts flags vi.setConfig timeout in three ReviewSurface tests from L86 (23cb164f). Found by L127 Worker; not repaired by L127/L120. L146 raises the budget; the L86 flag stays for another date.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L118",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

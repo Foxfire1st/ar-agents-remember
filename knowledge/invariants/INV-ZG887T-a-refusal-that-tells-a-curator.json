@@ -31,6 +31,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "A refusal that tells a curator to repair the row must name a repair that can work, so an unmappable link is told to re-point to where the code lives, with the reason, or to raise, a link re-authored in the leaf is told to restore its base target or raise, and only a target whose earlier refresh no longer stands, or whose code changed after the worklist, is told to recompute the worklist.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L186",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

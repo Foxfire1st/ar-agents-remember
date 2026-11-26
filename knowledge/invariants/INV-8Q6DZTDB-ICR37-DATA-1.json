@@ -24,6 +24,24 @@
   "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "A closed leaf's review establishes its delivered sides — the recorded code and memory bases, the commit its successful landing produced and the closeout's memory content commit — from the enclosure's own delivery records, and refuses by name any side it cannot establish as that exact commit and tree; a missing or unestablishable operand is never replaced.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L187",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

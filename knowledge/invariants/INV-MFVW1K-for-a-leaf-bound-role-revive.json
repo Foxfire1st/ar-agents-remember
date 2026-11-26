@@ -26,6 +26,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Before reviving a leaf-bound role, compare the receipt canonical task/contract pair with the current product-resolved pair: a granted direct leaf uses its readable grant and master series contract, an enclosed leaf its canonical enclosure. Missing or changed identity refuses with both values before bridge revival; this comparison creates or starts nothing.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L94",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

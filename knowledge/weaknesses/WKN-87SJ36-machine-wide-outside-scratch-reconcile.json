@@ -25,5 +25,24 @@
     "task": "261112-BUG-L9"
   },
   "state": "open",
-  "statement": "MCP startup schedules machine-wide outside-scratch reconciliation even when the server uses a task-isolated coordination root."
+  "statement": "MCP startup schedules machine-wide outside-scratch reconciliation even when the server uses a task-isolated coordination root.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L9",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

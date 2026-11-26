@@ -34,6 +34,24 @@
     "mcp/src/agents_remember"
   ],
   "schema": "ar-family/v1",
-  "status": "proposed",
-  "title": "The launcher strip carries no execution prose and keeps the report one action away"
+  "title": "The launcher strip carries no execution prose and keeps the report one action away",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L19",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

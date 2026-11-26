@@ -22,6 +22,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A converted file-writer handoff target with neither its own nonblank rationale nor a nonblank entry default refuses the entry as realization_rationale_absent, naming the entry and offending targets before record or sidecar writes. The writer never invents the explanation.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L26",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

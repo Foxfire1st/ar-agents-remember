@@ -31,6 +31,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "The new report-test module is registered as a consumer in both governed test-evidence catalogs, and the catalogs' ownership is the R51 owner's computed source-derived ownership: no catalog digest is pinned as a current global value, and the superseded static repin with its 19 contracts and 83 artifacts census is historical evidence only.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L75",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

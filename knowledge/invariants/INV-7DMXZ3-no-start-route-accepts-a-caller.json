@@ -33,6 +33,24 @@
   "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "For a new role-agent start, an explicit dashboard permission mode precedes the applicable host profile and matching settings row. When none supplies a mode, the create request uses an advertised host default only for a known mode listing. Create omits modeId when no mode applies. Paseo decides which mode it can apply.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L11",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

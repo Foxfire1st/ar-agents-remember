@@ -25,5 +25,24 @@
     "task": "260928-MIK-L97"
   },
   "state": "open",
-  "statement": "The tool that declares a closeout door, closeout_door_tool, is registered with no server and only tests call it, so no served call creates a door, worktree_closeout_apply reads none, and the closeout queue lists no task."
+  "statement": "The tool that declares a closeout door, closeout_door_tool, is registered with no server and only tests call it, so no served call creates a door, worktree_closeout_apply reads none, and the closeout queue lists no task.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L97",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

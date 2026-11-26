@@ -32,6 +32,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "The fixed short part keeps ok/code/overflow/answerTokens and any buildCurrentness, and retains the running-operation sentence within its 200-character string limit. An exact recorded-result location is kept without the former 250-token fit test, and the final cut hint names that file; optional scalars and error text make room against the 400-token target, while the recorded path and its hint remain even above it after other droppable content is removed.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L3",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

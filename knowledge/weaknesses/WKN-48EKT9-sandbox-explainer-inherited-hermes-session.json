@@ -32,5 +32,24 @@
     "task": "261112-BUG-L13"
   },
   "state": "open",
-  "statement": "During the recorded L13 sandbox run, the explainer process inherited the Worker's Hermes session identifier."
+  "statement": "During the recorded L13 sandbox run, the explainer process inherited the Worker's Hermes session identifier.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L13",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

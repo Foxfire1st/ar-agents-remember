@@ -24,5 +24,24 @@
     "task": "260928-MIK-L118"
   },
   "state": "open",
-  "statement": "To know which enclosure is a task's own, the refresh has to load every contract in the shared `enclosures/` folder of the master; a contract that cannot be read does not say whose it is. A record of a task's enclosures made at creation would answer it without a read. Signs for coming back: a write of a task document fails or warns for an unreadable contract"
+  "statement": "To know which enclosure is a task's own, the refresh has to load every contract in the shared `enclosures/` folder of the master; a contract that cannot be read does not say whose it is. A record of a task's enclosures made at creation would answer it without a read. Signs for coming back: a write of a task document fails or warns for an unreadable contract",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L118",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

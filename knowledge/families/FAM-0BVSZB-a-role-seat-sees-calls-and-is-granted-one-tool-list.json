@@ -31,6 +31,24 @@
     "mcp/src/agents_remember/application"
   ],
   "schema": "ar-family/v1",
-  "status": "proposed",
-  "title": "A role seat sees, calls and is granted one ordered tool list"
+  "title": "A role seat sees, calls and is granted one ordered tool list",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261124-CAP-L1",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261124-CAP",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

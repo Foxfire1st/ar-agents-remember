@@ -26,6 +26,24 @@
   "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "A leaf task entry has one Intent review control with changed-intent +N −N counts and a recorded label for a closed leaf. Its separate attribution text says files without an invariant, unknown attribution, partial or unavailable as supplied; zero file counts add no attribution suffix. When the summary supplies an open-work count, the same control separately states N open or all answered. It has no subject picker or refresh control and opens the task-context target.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L57",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

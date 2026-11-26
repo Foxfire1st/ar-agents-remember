@@ -32,6 +32,24 @@
   "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "An Operations row formats its own served task stage and started-task activity through the common status word and mark; need bands order works, other started, planned and terminal tasks. Its hover presents title, unauthored-document notice, state/stage, repository, current step, progress, host event and abandoned/discarded counts when present, not removed lifecycle/worktree reports or an unrendered scope/reference path A limited task keeps that same row: its word becomes `rate limited: <time left>` in one compact unit with paused's tone, and its hover retains every BASE field while adding each limited seat's provider, exhausted window and exact reset.",
-  "status": "accepted",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L184",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

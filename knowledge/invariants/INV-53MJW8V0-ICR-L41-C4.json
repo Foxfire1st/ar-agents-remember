@@ -25,6 +25,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Retained assessment-availability metadata distinguishes counted recorded/none_recorded states from unavailable, not_measured and not_selected states that carry no count. A supplied availability count must agree with the manifest binding’s declared assessment count. Missing optional assessment_channel metadata is canonically omitted rather than filled or interpreted as a measured collection.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L57",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

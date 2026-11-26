@@ -25,5 +25,24 @@
   "schema": "ar-invariant/v1",
   "statement": "After the bounded unnamed-entry wait, an engaged reader keeps their selected subject, view and focus when the catalogue answers, while an unengaged reader follows initialSubject only for a catalogue that answers inside that wait; a catalogue answering later fills the navigation and selects no subject, and a named subject always wins.",
   "status": "retired",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L177",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

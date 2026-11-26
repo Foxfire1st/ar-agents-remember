@@ -30,6 +30,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "A process-shared moved watcher compares on review-page opening and relevant leaf turn ends and publishes an in-process notice without messaging a seat, writing a held store or making a host call. Planning bindings compare only on page open; repeated page-open reads reuse a short binding-keyed cooldown. Failure logs without breaking the review stream. The ordinary stream controls connection lifetime and disconnect closes its subscriptions; serving shutdown cancels and drains the watcher with other background owners.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L183",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

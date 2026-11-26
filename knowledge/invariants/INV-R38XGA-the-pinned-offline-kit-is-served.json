@@ -29,6 +29,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "The pinned kit is the presenter's offline toolbox, not a boundary: a page names a kit file by its contract path inside its own revision, the bytes are compared with the shipped manifest when `kit_assets` carries them into an attempt, and nothing refuses a kit path afterwards — a presenter may write its own bytes at `kit/` paths and they publish. Serving a published revision adds no check either, because the frame route serves the revision's own admitted assets. The page sandbox is the boundary.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L104",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

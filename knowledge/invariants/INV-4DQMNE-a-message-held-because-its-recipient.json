@@ -35,6 +35,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "A held message can be delivered after the activity publication reports the recipient idle, closed or ended and ordinary delivery gates allow it. The product’s own tick visits bounded units without a whole per-tick census. A provider-limit hold carries its reset time. An ended observation during that hold can be confirmed as archive or absence, resolving its waiting messages undelivered.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L20",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

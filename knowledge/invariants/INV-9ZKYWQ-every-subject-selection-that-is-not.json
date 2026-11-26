@@ -35,6 +35,24 @@
   "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "Explicit in-tree subject selections preserve the retained walk: an explicit selection inside the tree keeps the tree the reader walked, a selection made elsewhere resets it, and a page-evidence destination the generated page asks for also keeps it — the Architect's ruling (d2990c9d, MIK-R39/D36) makes that intended behaviour rather than a deviation, so returning to the page finds the review where it was.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L89",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }
