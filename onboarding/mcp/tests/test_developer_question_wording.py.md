@@ -21,6 +21,7 @@ occasions a question goes to the parent.
   parent's upward notice and its unchanged downward answer duty.
 - **Operations.** `test_question_operations_keep_conditional_routing_and_pending_recovery` checks
   orientation, and reviews and curation by joining each role's text to its operation text.
+- **Manager wait recording.** `test_manager_records_an_already_sent_developer_question_wait_locally` reads the Manager's delivered `reference/message-handover.md` (`## Ask for a developer decision`) and requires that when no independent work remains, the Manager records the wait in its end line and status file rather than sending a wait message, while other roles send what they await with `role_message`, rejecting the retired wording `"record your state in your report and send what you await"`.
 - **Owner relation.** `test_leaf_owner_relation_keeps_peer_results_and_named_parent_occasions` keeps the
   leaf's peer results and the named parent occasions, with the compiled `ownerRelation` carrying the current
   Manager's role and task return address separately from the descriptive starter identity.

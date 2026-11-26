@@ -58,4 +58,4 @@ The template holds no TODO and needs no sibling-repository evidence for this rep
 
 - Curation reconciles current intent, ruled intent and implemented reality and verifies every card sentence against code; each invariant is ingested within its Curator-authored semantic scope, while grouping and entity edits require their own justification. [6]
 
-- The curation owner runs changed sidecar/overview/entity checks, memory-worktree diff check and full memory quality; every actionable finding is repaired or escalated with its returned code, conditional coherence is completed before closeout, and independent fact-checking checks every changed statement and history row. [7]
+- The curation owner runs changed sidecar/overview/entity checks, memory-worktree diff check, full memory quality and the Manager-leaf-closeout stale dependent-document read; every actionable finding is repaired or escalated with its returned code, conditional coherence is completed before closeout, and independent fact-checking checks every changed statement and history row. [7]

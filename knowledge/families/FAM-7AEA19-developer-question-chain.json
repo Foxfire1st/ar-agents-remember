@@ -3,9 +3,9 @@
     "criteria": [
       "joint_guarantee"
     ],
-    "justification": "The handover values, the role duties, the parent relay and notice duties, the refusal remedies and the guarded instruction text together promise one end-to-end chain that no single member states; the top-chat presentation, the downward quoted answer and the permission notice each fail alone."
+    "justification": "Handover generation, role/orientation wording, local Manager wait recording, answer provenance and retired-wording guards jointly preserve the developer-question chain across launcher code and compiled instruction capsules."
   },
-  "guarantee": "A parented developer-question chain keeps actual-parent-ID routing, separate own-authority recommendations, named permission waits and unchanged quoted answers with receiving-agent ID down to the asker. Parentless or unreachable-parent own-chat recovery remains admitted. Ordinary report returns and generic transport remedies separately use approved live-successor role/task addressing or caller-authorized parent/start guidance without unarchiving; that remedy does not supersede the question channel. The retired wording guard detects its registered obsolete sentences, not every novel semantic contradiction.",
+  "guarantee": "A parented developer-question chain routes leaf and investigator questions directly to the launch parent's agent ID and routes parented Manager and Orchestrator questions to the recorded reporting recipient (else the launch parent's agent ID), keeps separate own-authority recommendations, named permission waits and unchanged quoted answers with receiving-agent ID down to the asker, and lets a Manager with no independent work left after sending a developer question record that wait locally in its end line and status file without sending a second wait message while other parented roles send what they await with role_message. Parentless or unreachable-recipient own-chat recovery remains admitted; ordinary report returns and generic transport remedies separately use approved live-successor role/task addressing without superseding the question channel; and the retired wording guard detects its registered obsolete sentences rather than every novel semantic contradiction.",
   "id": "FAM-7AEA19",
   "members": [
     "INV-8AMSGV",
@@ -22,13 +22,23 @@
     "leaf": "260928-MIK-L93",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "skills/l-01-agent-lifecycles",
     "mcp/src/agents_remember/cli",
     "mcp/test_support/agents_remember_test_support/testing"
   ],
   "schema": "ar-family/v1",
-  "status": "proposed",
-  "title": "The developer question chain"
+  "title": "The developer question chain",
+  "writer": {
+    "at": "2026-11-26T02:58:55+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L41",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+    "task": "261112-BUG"
+  }
 }

@@ -15,6 +15,8 @@ The module holds instruction-delivery assertions that `mcp/tests/test_curator_in
 ## Evidence
 
 - Each coordination scenario's answer is found in the compiled shared block or the delivered step detail. [1]
+
 - The Reviewer intake is judged on instructions delivered with the baseline-review detail. [2]
 - The refused-write ladder and permission rule reach the shared block, the served detail and the Manager. [3]
+
 - The Curator role and foundation reference carry the foundation admission and output clauses. [4]

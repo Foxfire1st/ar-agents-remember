@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c2426230380980e4bc23b6a77896fbfdf59c6821",
-        "content": "sha256:5aa94fa88fbd054746570c7000f262798eaaa0a38236057631dca4796cbeff29",
+        "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
+        "content": "sha256:5ebb8600ce3d336316c6f604cc8694a680e27ef55a662f2347f4d63d8f71edd0",
         "locator": {
-          "end": 17,
+          "end": 22,
           "kind": "line_range",
-          "start": 15
+          "start": 20
         }
       },
       "id": "RLZ-7J2CP7",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "c2426230380980e4bc23b6a77896fbfdf59c6821",
-        "content": "sha256:0d42dc6e8fefde7dc9d349da15fa0e5b0cabf48e5393d7b93daa2c6ec40ccf8e",
+        "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
+        "content": "sha256:1ccda6fb00ce922fb03c815867a7e781e9525104d4a2aa59ba013c3d8f084cd2",
         "locator": {
           "kind": "file"
         }
@@ -39,12 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "c2426230380980e4bc23b6a77896fbfdf59c6821",
+        "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
         "content": "sha256:608f59fac9c8c5caa15572ad67a8487bb3940fcac553f7f901ebeff55fbd193f",
         "locator": {
-          "end": 7,
+          "end": 8,
           "kind": "line_range",
-          "start": 7
+          "start": 8
         }
       },
       "id": "RLZ-DHZW33",
@@ -58,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "c2426230380980e4bc23b6a77896fbfdf59c6821",
-        "content": "sha256:5aa94fa88fbd054746570c7000f262798eaaa0a38236057631dca4796cbeff29",
+        "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
+        "content": "sha256:5ebb8600ce3d336316c6f604cc8694a680e27ef55a662f2347f4d63d8f71edd0",
         "locator": {
-          "end": 17,
+          "end": 22,
           "kind": "line_range",
-          "start": 15
+          "start": 20
         }
       },
       "id": "RLZ-DJ7814",
@@ -77,12 +77,31 @@
     },
     {
       "anchor": {
-        "blob": "c2426230380980e4bc23b6a77896fbfdf59c6821",
+        "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
+        "content": "sha256:c11f6a7898a259c7961c7f8ee9d2ae2dc25cf5c2ac6b453892b1c302c3f87ce9",
+        "locator": {
+          "end": 18,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-VKXWVN",
+      "invariant": "INV-CAJ09X",
+      "origin": {
+        "handoffEntry": "BUG-R41.v1.rule-4",
+        "leaf": "261112-BUG-L41"
+      },
+      "rationale": "Connects the clean preview's commit-approval-pending fields to standing leaf authority as intent_note and requires a refreshed Curator dependent read when clean sync changes the pair.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
         "content": "sha256:73b7f36fd43f9e106eb89e649e52a254cbbcc612580ea64653c3d2628f14479d",
         "locator": {
-          "end": 42,
+          "end": 47,
           "kind": "line_range",
-          "start": 42
+          "start": 47
         }
       },
       "id": "RLZ-ZHVQ2K",
@@ -101,8 +120,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2426230380980e4bc23b6a77896fbfdf59c6821",
-            "content": "sha256:0d42dc6e8fefde7dc9d349da15fa0e5b0cabf48e5393d7b93daa2c6ec40ccf8e",
+            "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
+            "content": "sha256:1ccda6fb00ce922fb03c815867a7e781e9525104d4a2aa59ba013c3d8f084cd2",
             "locator": {
               "kind": "file"
             }

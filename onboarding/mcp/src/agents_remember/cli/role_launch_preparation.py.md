@@ -10,9 +10,9 @@ Resolve launch defaults, workspace, scoped readers, instructions and handover be
 
 ## Current Contract — Scoped Launch And Settings Changes
 
-prepare_role_handover accepts optional step_up reason, selects defaults from current task/receipt/decision facts, and validates the resulting provider/model/mode/features against the host catalog before workspace/enclosure creation. Ordinary roles without an alternative continue using their own choices.
+prepare_role_handover accepts optional step_up reason and owning_architect_id (threaded through RoleHandoverRequest into _owner_relation), selects defaults from current task/receipt/decision facts, and validates the resulting provider/model/mode/features against the host catalog before workspace/enclosure creation. Ordinary roles without an alternative continue using their own choices.
 
-_role_defaults delegates settings projection to role_launch_defaults while retaining the host role read. _compile_handover delegates to compose_launch_instructions, freezing admitted D301/R125 detail bytes beside the report and binding concrete pointers before existing user append/<overwrite> semantics.
+_role_defaults delegates settings projection to role_launch_defaults while retaining the host role read. _compile_handover delegates to compose_launch_instructions, freezing admitted D301/R125 detail bytes beside the report and binding concrete pointers before existing user append/<overwrite> semantics. _compile_handover populates host.developerQuestions via _developer_questions(started_by, context.role) and host.ownerRelation via _owner_relation(..., owning_architect_id=request.owning_architect_id). Parentless launches retain own-chat wording. Parented orchestrator and manager roles get coordinator-specific developerQuestions directing role_message to the reporting recipient recorded in their report (otherwise the launch parent's agent ID) and recording pending decisions through their role's question procedure, while other parented roles keep starter-ID routing. For parented orchestrator and manager roles, _owner_relation routes Architect matters and developer questions through the role's assigned reporting route, directs permission notices and closeout results to the role text, sends the final report path to the return address, appends unchanged Architect-matter forwarding for orchestrator, and appends direct qualifying-skeleton addressing to owning_architect_id for manager when supplied.
 
 Canonical task JSON/rendered copy metadata, missingCopies disclosure, report/scratch custody, exact parent and leafSeats peer routing, taskless scope and grant-aware revival remain separate existing contracts. A leaf of a master that no sprint commands gets leafSeats peer arguments and a manager return address without a `sprint_document_ref`: the master and leaf are the whole selection then, and a `sprint_document_ref` appears only when the selection has a sprint. A source-bound handover is not code/memory acceptance or live-host proof.
 
@@ -24,9 +24,9 @@ Canonical task JSON/rendered copy metadata, missingCopies disclosure, report/scr
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/src/agents_remember/cli/role_launch_preparation.py:155 (def _ar_tool_server_usage)`.
-- Source comparison: `mcp/src/agents_remember/cli/role_launch_preparation.py:771 ("arMcpUsage": _ar_tool_server_usage)`.
-- Source comparison: `mcp/src/agents_remember/cli/role_launch_preparation.py:575-590 (_assembled_brief assembles BriefParts and delegates to role_brief_message.brief_prompt)`.
+- Source comparison: `mcp/src/agents_remember/cli/role_launch_preparation.py:172 (def _ar_tool_server_usage)`.
+- Source comparison: `mcp/src/agents_remember/cli/role_launch_preparation.py:752 ("arMcpUsage": _ar_tool_server_usage)`.
+- Source comparison: `mcp/src/agents_remember/cli/role_launch_preparation.py:546-582 (_assembled_brief assembles BriefParts and delegates to role_brief_message.brief_prompt)`.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
@@ -220,7 +220,7 @@ Source: mcp/src/agents_remember/cli/role_launch_preparation.py:1-963
 
 
 
-- The parented handover values: `ownerRelation` from `_owner_relation`, and a `developerQuestions` value that sends developer decisions to the actual parent agent id; a parentless launch keeps the own-chat sentence. [4]
+- The parented handover values: `ownerRelation` from `_owner_relation` and `developerQuestions` from `_developer_questions`; parentless launches keep the own-chat sentence, parented Orchestrator/Manager route developer questions to their recorded reporting recipient (else launch parent) and Architect matters through their assigned reporting route (with Orchestrator forwarding unchanged and Manager addressing qualifying direct skeletons to `owning_architect_id` when supplied), while other parented roles keep starter-ID developer-question routing. [4]
 
 
 

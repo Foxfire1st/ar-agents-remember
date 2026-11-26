@@ -33,4 +33,5 @@ Stable source-unit IDs retain their baseline provenance and authored semantic me
 
 
 
+
 - Current units distinguish reference evidence from selected digest lines; retired units keep their record. [3]

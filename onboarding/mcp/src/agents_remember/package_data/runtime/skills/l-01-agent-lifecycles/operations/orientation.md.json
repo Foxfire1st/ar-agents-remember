@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
-        "content": "sha256:3120f8aea8dbc2fafb10fd9722e54e4e58c03f87dbe630a343e44bdb87f5cd30",
+        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
+        "content": "sha256:dad6d63bfacdeb22edc166840acc31227e9cb1fbace53b7114032a49f409c1f9",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
             "content": "sha256:04763548b781de7a107d41d383bc3afc4b27cee15ac3db2c87751c793d8a31b9",
             "locator": {
               "end": 14,
@@ -38,12 +38,12 @@
       ]
     },
     "2": {
-      "note": "Developer decisions go to the instructed reporting recipient or the parent; only an agent with neither, or whose recipient cannot be reached, asks in its own chat.\n\nAnchor: `## Ask for a developer decision`",
+      "note": "Developer decisions go to the instructed reporting recipient or the parent; when no independent work remains, the Manager records the wait in its end line and status file while other roles message what they await, and only an agent with neither recipient nor reachable parent asks in its own chat.",
       "targets": [
         {
           "anchor": {
-            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
-            "content": "sha256:6b1ed0f547f82488c1f0e3f775d0efb6e629e46e6c1cf897119b68168da38906",
+            "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
+            "content": "sha256:4a10dd9292eaacf6035c0e462782b03470a5b808d96cbdc390a99122ca9846cc",
             "locator": {
               "end": 67,
               "kind": "line_range",
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
             "content": "sha256:2b7260aa7dec000b8500726aef3283b2e3aec4799f1e8d873b58ab31fd07c14c",
             "locator": {
               "end": 2,
@@ -114,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
             "content": "sha256:420d2922b101de194336479ab3e05126399d8d06851d0485d77f25f323facad2",
             "locator": {
               "end": 39,

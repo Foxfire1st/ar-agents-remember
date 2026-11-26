@@ -16,12 +16,14 @@ The role-start instructions apply to Architects, Orchestrators and Managers. An 
 
 ## Evidence
 
-- The digest states shared and role-qualified duties, including scope-based `retire_child` authority; its source-unit mapping lives in the digest map. [1]
+- The digest states shared and role-qualified duties, including scope-based `retire_child` authority and that a Manager's end line naming the working child and awaited stage declares a named wait for report-sender continuation checks; its source-unit mapping lives in the digest map. [1]
+
 
 - The manifest describes the shared digest as first-message delivery beside the capsule rather than composition into it. [2]
 
 - Shared rules for scratch paths and live-host operation. [3]
 
 - Shared rules for counting from the producing call, comparing builds before reporting a mismatch, and naming sandbox versions and graphics setup. [4]
+
 
 - `role_start` names no mode, the overridden-start instruction concerns the seat's features, and `retire_child` applies by role scope. [5]

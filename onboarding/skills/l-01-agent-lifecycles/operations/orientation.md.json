@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
         "content": "sha256:9359250171789554c452dd26998af32a77aaa53cbaba8d1a86056690a280f049",
         "locator": {
           "end": 22,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
         "content": "sha256:3378b5a3cef583f3fa374ebf228a6fc935d42ef1e9e8ec0e6a224892d231615c",
         "locator": {
           "end": 39,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
         "content": "sha256:1474575fe1142856b37b1106b95e578f8ad8ae8c1982fe29d9324ceee1abb31e",
         "locator": {
           "end": 50,
@@ -60,8 +60,8 @@
     },
     {
       "anchor": {
-        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
-        "content": "sha256:f48c0a63ffa84ad186b86c05326cc6fe2e0ec469a69b934dce1d0abb8d4c5e95",
+        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
+        "content": "sha256:2285fd282cb71b572436bd7e2e3a5139619905baaac54d3ec4d901df3f09990a",
         "locator": {
           "end": 94,
           "kind": "line_range",
@@ -74,13 +74,13 @@
         "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
         "leaf": "260928-MIK-L93"
       },
-      "rationale": "The canonical orientation home sends developer questions to the role's instructed reporting recipient, else the `host.parent`, else the developer in the agent's own chat, and states independent work while waiting, pending questions, the unreachable-recipient limit, quoted-answer provenance and permission authority. It links the message-handover detail for a message that names files and for a full-store refusal. No native delivery is measured.",
+      "rationale": "Canonical orientation home sending developer questions to the instructed reporting recipient else host.parent else own chat, recording an already-sent wait locally for Manager (and via role_message for other roles) when no independent work remains, and keeping pending/unreachable/quoted-answer/permission rules.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
-        "content": "sha256:15bde61e6d0dc72017923683a12fbacba469eacfcea7fb7a14fd619fe271d62a",
+        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
+        "content": "sha256:a7e2999b70762e5d0799f0e9397af6152703c5fbc8d047572a4b45a0677c407f",
         "locator": {
           "end": 79,
           "kind": "line_range",
@@ -98,8 +98,8 @@
     },
     {
       "anchor": {
-        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
-        "content": "sha256:3120f8aea8dbc2fafb10fd9722e54e4e58c03f87dbe630a343e44bdb87f5cd30",
+        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
+        "content": "sha256:dad6d63bfacdeb22edc166840acc31227e9cb1fbace53b7114032a49f409c1f9",
         "locator": {
           "kind": "file"
         }
@@ -110,12 +110,12 @@
         "handoffEntry": "L172-INV-C",
         "leaf": "260928-MIK-L172"
       },
-      "rationale": "The all-role orientation carries the same reply rule for every role, including the sending of what is awaited.",
+      "rationale": "All-role orientation reply rule keeping role_message transport for replies and non-Manager awaits while directing the Manager to record an already-sent developer-question wait locally in its end line and status file.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
         "content": "sha256:23a643f1f5ba4c6a5af3f8f54dd0cce88bd8b5b1d422f95f0e44b98d012cf667",
         "locator": {
           "end": 10,
@@ -134,7 +134,7 @@
     },
     {
       "anchor": {
-        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
         "content": "sha256:2e1112b7ef33da25daefb5371adeb4895bbb998dc151aa67272b3be24c6f8dc9",
         "locator": {
           "end": 28,
@@ -153,7 +153,7 @@
     },
     {
       "anchor": {
-        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+        "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
         "content": "sha256:67f370d932415d70f2bb9653e6a8898195b1d0e4afde9bbe4fac31ea4f588027",
         "locator": {
           "end": 99,
@@ -177,7 +177,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
             "content": "sha256:34ee80c59459674ec9d85e17b3cf364874b31cdc6789b019345c46450127b67c",
             "locator": {
               "end": 99,
@@ -194,7 +194,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "blob": "fc3f00d1dd4c1f65d30d241580cf8042342a6f61",
             "content": "sha256:a957fb8d8eafe8f6e4c5137fcb93eb19b17dfa08040ba8a3dbe8d43daaa735c1",
             "locator": {
               "end": 99,
