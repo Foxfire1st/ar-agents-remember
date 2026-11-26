@@ -33,7 +33,9 @@ not the active renewal or a new source measurement.
 - Generated measurements cover current capsules, declared details and the shared digest without individual item limits. [2]
 
 
-- Generated approved source sizes record the Manager brief at 1,465 words and its exact source SHA-256. [3]
+
+- Generated approved source sizes record the Manager brief at 1,465 words and its exact source SHA-256; current generated measurements include ordinary linked templates. [3]
+
 
 
 - Authored role, detail and digest ceilings are separate from generated measurements. [4]
@@ -48,10 +50,3 @@ not the active renewal or a new source measurement.
 
 - The generated template measurement records 6,630 words and the current source digest. [11]
 - The decision block retains authority and frozen historical registry and predecessor identities. [1]
-
-
-
-
-
-
-- Current generated measurements include ordinary linked templates. [3]

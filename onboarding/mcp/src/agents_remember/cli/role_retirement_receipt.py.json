@@ -1,0 +1,148 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_retirement_receipt.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c2c650ce0ca1c3aa0e2e4f8acc52a33e8edc9ec8",
+        "content": "sha256:852a3bb453ea0ab6ffe4546ff08422e621584f25159c96e3ccd305e4cdda3d67",
+        "locator": {
+          "kind": "symbol",
+          "name": "finish_replacing_predecessor"
+        }
+      },
+      "id": "RLZ-0KXGKD",
+      "invariant": "INV-Z0DCW1",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-11",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Settles predecessor reports and held-message endings once host archival of the replaced predecessor is confirmed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c2c650ce0ca1c3aa0e2e4f8acc52a33e8edc9ec8",
+        "content": "sha256:be8e62f8e9ed8106e10ac1a9ea586d0aeeafec80a54419548a6bbc956261c9a6",
+        "locator": {
+          "kind": "symbol",
+          "name": "settle_confirmed_replacement"
+        }
+      },
+      "id": "RLZ-6KDSBC",
+      "invariant": "INV-0X3E1T",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rule 3",
+        "leaf": "261112-BUG-L44"
+      },
+      "rationale": "Finalizes the exact predecessor against the saved successor only when its host archive was acknowledged.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "c2c650ce0ca1c3aa0e2e4f8acc52a33e8edc9ec8",
+        "content": "sha256:b5b460b8ee69b31d7267063a523767f3c38d0836c49ef781956b40cec2c72902",
+        "locator": {
+          "kind": "symbol",
+          "name": "settle_retirement"
+        }
+      },
+      "id": "RLZ-GWY34V",
+      "invariant": "INV-QDYC5F",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rule 4",
+        "leaf": "261112-BUG-L44"
+      },
+      "rationale": "Commits attribution and held-message endings on the exact receipt and makes the saved intent retryable.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`hold_retirement` and `clear_retirement` persist and withdraw matching `retireIntent` under the receipt lock via `role_receipt_files._replace_receipt_bytes`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2c650ce0ca1c3aa0e2e4f8acc52a33e8edc9ec8",
+            "content": "sha256:8b764417635d50aafa31d34ee1ec05d6c1e594f70c4bf44cf07cd3116a4aa1b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "hold_retirement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c2c650ce0ca1c3aa0e2e4f8acc52a33e8edc9ec8",
+            "content": "sha256:f3aa7fb8522f63f90840b55a90203c037b0b0affa6e0d9e8bb827cfc704a0094",
+            "locator": {
+              "kind": "symbol",
+              "name": "clear_retirement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`settle_retirement` delegates retirement attribution, held-store closure/unlinking, and `retireIntent` removal to `role_held_store.settle_held_store`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2c650ce0ca1c3aa0e2e4f8acc52a33e8edc9ec8",
+            "content": "sha256:b5b460b8ee69b31d7267063a523767f3c38d0836c49ef781956b40cec2c72902",
+            "locator": {
+              "kind": "symbol",
+              "name": "settle_retirement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`finish_replacing_predecessor` and `settle_confirmed_replacement` settle the exact history predecessor after acknowledged archival and close non-enclosure predecessor folders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2c650ce0ca1c3aa0e2e4f8acc52a33e8edc9ec8",
+            "content": "sha256:852a3bb453ea0ab6ffe4546ff08422e621584f25159c96e3ccd305e4cdda3d67",
+            "locator": {
+              "kind": "symbol",
+              "name": "finish_replacing_predecessor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c2c650ce0ca1c3aa0e2e4f8acc52a33e8edc9ec8",
+            "content": "sha256:be8e62f8e9ed8106e10ac1a9ea586d0aeeafec80a54419548a6bbc956261c9a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "settle_confirmed_replacement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`preserve_retirement` keeps committed `retiredBy`, `retireReason`, `canRevive`, `heldWaiting`, `terminalObservedAt`, `heldMessageLines`, and pending `retireIntent` across ordinary receipt writes while preserving refused prepared starts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2c650ce0ca1c3aa0e2e4f8acc52a33e8edc9ec8",
+            "content": "sha256:c74b3152f279ade95f1df2a51df8f01f07768d16094fcd03eed60554538dd4da",
+            "locator": {
+              "kind": "symbol",
+              "name": "preserve_retirement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

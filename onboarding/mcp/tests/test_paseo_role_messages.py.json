@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
         "content": "sha256:8e9a86ce5806f73681acbde57b6a5fdffb646e2058745f2c0fe0caa6fa0e363e",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
         "content": "sha256:e20303c69117682838d784af68b1defec3ca586da6a32bfef49161b00e210426",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
-        "content": "sha256:ccd3e84f8514500c45a85b2ffb004da1b76737072252d749a7548586721597ba",
+        "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
+        "content": "sha256:30f0a2e73c76e75d2bc1b2f4fe9f043f3c2fbeb5715173da412a1a61e859fd64",
         "locator": {
           "kind": "symbol",
           "name": "RoleMessageTests.test_a_leaf_seat_with_two_live_agents_refuses_by_role"
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
         "content": "sha256:3634cf322fe00cb0e9adefadc1a8e9e918545156f839165530a39ff44d90a6c3",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
         "content": "sha256:03df2e00732053eac4f196e3823d07fdc0674ab25719046a3289f34c4ae023f4",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
         "content": "sha256:cc436df495e1fb520007242b039758f2930cf4c00b1253b9f55899e983710df7",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
         "content": "sha256:e7ff83c5af5a3dcc8cd80df1f4b004a66f8ab71b2cee7554ba2a7453bc6fcaf0",
         "locator": {
           "kind": "symbol",
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
         "content": "sha256:4f66061320eecbe3aad712785453109c579a077284a8523050e17dc45168ddbe",
         "locator": {
           "kind": "symbol",
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
         "content": "sha256:5aad1879def5af4162bb5cbb976da3c2e12fe86e8f5a056821746390bcc3d3dd",
         "locator": {
           "kind": "symbol",
@@ -156,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
         "content": "sha256:80a3281585d1be4c73b123a58af65b844ed7c70176c54b2d15b4da26359046ef",
         "locator": {
           "kind": "symbol",
@@ -173,8 +173,8 @@
     },
     {
       "anchor": {
-        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
-        "content": "sha256:271bbbbe1a0fe86ab57dc371d0b9e18527a151c2c4d355c76f911e15419ea5cb",
+        "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
+        "content": "sha256:8bd0054d219a37165d511a1f83b923981c6fa52feace648a497f57cd97d81692",
         "locator": {
           "kind": "symbol",
           "name": "RoleMessageTests"
@@ -192,12 +192,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
         "content": "sha256:3634cf322fe00cb0e9adefadc1a8e9e918545156f839165530a39ff44d90a6c3",
         "locator": {
-          "end": 1045,
+          "end": 1042,
           "kind": "line_range",
-          "start": 1019
+          "start": 1016
         }
       },
       "id": "RLZ-EQQKFW",
@@ -211,8 +211,8 @@
     },
     {
       "anchor": {
-        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
-        "content": "sha256:271bbbbe1a0fe86ab57dc371d0b9e18527a151c2c4d355c76f911e15419ea5cb",
+        "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
+        "content": "sha256:8bd0054d219a37165d511a1f83b923981c6fa52feace648a497f57cd97d81692",
         "locator": {
           "kind": "symbol",
           "name": "RoleMessageTests"
@@ -234,8 +234,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
-            "content": "sha256:d748e8b79f8a79a11bf315549d6d5d9ab7d798cec63dbf692bdc1172d2f7c535",
+            "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
+            "content": "sha256:5358e109a6fc9a9ad01f2f5dd37f31f4c8bc9476f587f5a4a8a74441d41671bc",
             "locator": {
               "kind": "file"
             }
@@ -249,7 +249,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+            "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
             "content": "sha256:61f93f4c1eb85edff82e3e5eb98b49944915513b00816806a1e3e9dcb7d055d3",
             "locator": {
               "end": 242,

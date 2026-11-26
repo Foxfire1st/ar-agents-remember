@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "11068f1c19e01f2ca9eb9e0f7fad668a702a60e4",
+        "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
         "content": "sha256:cff092aa000362fb3fdcd3becf62c5f48a756c509d8007f4bc18f15d24e2c010",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "11068f1c19e01f2ca9eb9e0f7fad668a702a60e4",
+        "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
         "content": "sha256:053f8bc231535bc49f915e05529f3b86fc7eb8e4a30a8433900f333e27d546b1",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "11068f1c19e01f2ca9eb9e0f7fad668a702a60e4",
+        "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
         "content": "sha256:af727706768a3fcf37e2a6aa2b0f72e54f91abc38a3caa8ddb44a263763db3cb",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "11068f1c19e01f2ca9eb9e0f7fad668a702a60e4",
-        "content": "sha256:fbe221cb301070004df5bf0dc92f557f764a153f0227728576cf065f92e2ba39",
+        "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
+        "content": "sha256:693557f736f9dda1be1d000249c7c703fb21dbb579c37a9e0d152a5524e0380e",
         "locator": {
           "kind": "symbol",
           "name": "begin_held_generation"
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "11068f1c19e01f2ca9eb9e0f7fad668a702a60e4",
+        "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
         "content": "sha256:af727706768a3fcf37e2a6aa2b0f72e54f91abc38a3caa8ddb44a263763db3cb",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "11068f1c19e01f2ca9eb9e0f7fad668a702a60e4",
+        "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
         "content": "sha256:7f6605cb0e83cc8027d72a1ef893382d3915c3c0fde658535f1b5b0a2c03a9b2",
         "locator": {
           "kind": "symbol",
@@ -116,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11068f1c19e01f2ca9eb9e0f7fad668a702a60e4",
+            "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
             "content": "sha256:af727706768a3fcf37e2a6aa2b0f72e54f91abc38a3caa8ddb44a263763db3cb",
             "locator": {
               "kind": "symbol",
@@ -132,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11068f1c19e01f2ca9eb9e0f7fad668a702a60e4",
+            "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
             "content": "sha256:cff092aa000362fb3fdcd3becf62c5f48a756c509d8007f4bc18f15d24e2c010",
             "locator": {
               "kind": "symbol",
@@ -148,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11068f1c19e01f2ca9eb9e0f7fad668a702a60e4",
+            "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
             "content": "sha256:c1107178c055d83f9dda19f3f07b6026ecb78ece34f2495756df1aec903f285d",
             "locator": {
               "kind": "symbol",
@@ -160,12 +160,12 @@
       ]
     },
     "4": {
-      "note": "`begin_held_generation` restricts restarts to non-retired, non-closing `stopped`/`rejected` seats, settles the prior generation, increments `heldStoreGeneration`, and writes with `prior_generation` checking.",
+      "note": "`begin_held_generation` restricts restarts to non-explicitly-retired, non-closing `stopped`/`rejected` seats, settles the prior generation, increments `heldStoreGeneration`, clears host-archive `retiredBy`/`retireReason`, and writes with `prior_generation` checking.",
       "targets": [
         {
           "anchor": {
-            "blob": "11068f1c19e01f2ca9eb9e0f7fad668a702a60e4",
-            "content": "sha256:fbe221cb301070004df5bf0dc92f557f764a153f0227728576cf065f92e2ba39",
+            "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
+            "content": "sha256:693557f736f9dda1be1d000249c7c703fb21dbb579c37a9e0d152a5524e0380e",
             "locator": {
               "kind": "symbol",
               "name": "begin_held_generation"

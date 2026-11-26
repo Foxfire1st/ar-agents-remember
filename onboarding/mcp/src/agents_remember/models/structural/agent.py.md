@@ -6,29 +6,15 @@
 
 ## Purpose
 
-Declare the native receipt-tracked seat-retirement request/response and canonical role vocabulary.
-Dispatch, shared structural-delivery and parent/child messaging DTOs are absent.
+Declare the native receipt-tracked seat-retirement request/response DTOs and retry/open-child answer shapes. Dispatch, shared structural-delivery and parent/child messaging DTOs are absent.
 
 ## Code Commentary
 
-`StructuralRole` names the task-seat roles (architect, orchestrator, investigator, manager, worker,
-reviewer, curator) and the earlier system-specialist spelling.
-The frozen `RetireChildRequest` carries task_document_ref, role, reason, optional agent_id and
-interrupt_turn; the native owner, not this dataclass, enforces starter/receipt identity and
-refuses an empty target or an unadmitted interruption.
+`RetireChildRequest` (frozen dataclass) carries required `agent_id` and `role: LauncherRole` (all canonical roles including `bootstrap`, plus legacy `system-specialist` normalization), `reason`, `interrupt_turn=False`, and optional `sprint_document_ref`, `master_document_ref`, and `task_document_ref` (taskless seats need none). The native retirement owner (`cli/role_retire.py` and `application/seat_retirement_scope.py`), not this dataclass, enforces caller scope, receipt uniqueness, open-child refusal, and interruption permission.
 
-`RetireChildResponse` declares retire_child, status, optional taskDocumentRef, role and detail;
-its role validator calls canonical_role. It inherits the retained ToolResponse envelope and
-does not expose a runtime-occupant response field. Internal task gate/activation owners remain
-separate; this DTO is not a plane-hosting API.
-
-## Current model evidence
-
-The complete current source has only the role Literal, RetireChildRequest and
-RetireChildResponse.
+`RetirementIntent`, `RecordedSeatSelection` (serializing `RoleSelection` by camelCase alias), and `OpenChildSeat` model retry intent and open-child refusal payloads. `RetireChildResponse` inherits `ToolResponse` and declares `operation="retire_child"`, `status`, optional `sprintDocumentRef`, `masterDocumentRef`, `taskDocumentRef`, `role` (validated through `canonical_role`), `detail`, `retireIntent`, and `openChildren`. Internal task gate/activation owners remain separate; this DTO is not a plane-hosting API.
 
 ## Evidence
 
-- The retained role Literal and native retirement request/response have no dispatch/shared-delivery DTO. [1]
-
-- The task-seat role literal holds seven canonical roles plus the system-specialist spelling. [2]
+- `RetireChildRequest`, `RetirementIntent`, `RecordedSeatSelection`, `OpenChildSeat`, and `RetireChildResponse` define the native scope-based seat-retirement request/response wire shapes without dispatch/shared-delivery DTOs. [1]
+- `RetireChildRequest.role` uses `LauncherRole` (all canonical roles including `bootstrap`) and `RetireChildResponse._canonical_role` normalizes through `canonical_role`. [2]

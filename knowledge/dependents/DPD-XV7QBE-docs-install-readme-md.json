@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "4ebb429de6b3034e7bff1922b3f8982b2ccafa07",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "ede5d128e75765d40987bf3981b1d97ed4326bae",
+    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
     "role": "curator",
-    "statement": "docs/install/README.md remains accurate after the mcp>=1.30.0,<2 floor update in mcp/pyproject.toml and BUG-L36's UTC ISO-8601 dashboard logging timestamps because installation prerequisites, Python 3.14 support, and Bootstrap steps are unchanged.",
-    "task": "261125-DEP-L1",
+    "statement": "Audited docs/install/README.md line by line against synced L44 code tree ede5d128 (base 150b9778): installer index and harness install overview remain accurate; no L44 contradiction.",
+    "task": "261112-BUG-L44",
     "uncommitted": true
   },
   "document": "docs/install/README.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
+      "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -36,7 +36,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
     },
     {
-      "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
+      "blob": "864dd917963036bf4084b81f219ee468696d72b1",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
@@ -72,14 +72,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T20:08:06+01:00",
+    "at": "2026-11-26T02:42:00+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L1",
+    "leaf": "261112-BUG-L44",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b5f00ccb-ae71-451c-bfff-3ee2a7ac6155",
-    "task": "261125-DEP"
+    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+    "task": "261112-BUG"
   }
 }

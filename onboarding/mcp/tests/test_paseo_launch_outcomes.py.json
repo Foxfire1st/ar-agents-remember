@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "95481b01b9ebe75b1fbc9d7f37e1fbd74047f5c7",
+        "blob": "f334773dc898891b52dcadc7666638c67143f2af",
         "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,41 @@
     },
     {
       "anchor": {
-        "blob": "95481b01b9ebe75b1fbc9d7f37e1fbd74047f5c7",
+        "blob": "f334773dc898891b52dcadc7666638c67143f2af",
+        "content": "sha256:66c0ca468dd0edd851bdc9f789e64a1b55fec5f93357b3d9f4af618a58ba115b",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReplacementRetirementTests.test_replacement_attributes_an_archived_orchestrator"
+        }
+      },
+      "facet": "Proves replacing an Orchestrator records retirement attribution on the archived predecessor receipt.",
+      "id": "PRF-5DTH5E",
+      "invariant": "INV-0X3E1T",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rule 3",
+        "leaf": "261112-BUG-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f334773dc898891b52dcadc7666638c67143f2af",
+        "content": "sha256:af6b2a4d2d8f7d290c40162fa35a3bb21746f1669b85c06689dbd8c4a932c134",
+        "locator": {
+          "kind": "symbol",
+          "name": "HostRetirementTests.test_refresh_records_discovery_of_externally_archived_and_gone_seats"
+        }
+      },
+      "facet": "Proves host refresh closes externally archived and gone seats once with host discovery attribution and timestamps.",
+      "id": "PRF-91QKV1",
+      "invariant": "INV-QDYC5F",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rule 4",
+        "leaf": "261112-BUG-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f334773dc898891b52dcadc7666638c67143f2af",
         "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
         "locator": {
           "kind": "symbol",
@@ -37,7 +71,75 @@
     },
     {
       "anchor": {
-        "blob": "95481b01b9ebe75b1fbc9d7f37e1fbd74047f5c7",
+        "blob": "f334773dc898891b52dcadc7666638c67143f2af",
+        "content": "sha256:ab6275795205aca211da788e8ddb1ef6ca2efd3f3d677d1c79c91b721064d306",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReplacementRetirementTests.test_manager_replacement_preserves_its_worker_for_the_successor"
+        }
+      },
+      "facet": "Proves replacing a Manager retires the predecessor without prematurely archiving its surviving Worker so the successor Manager can manage or retire it.",
+      "id": "PRF-G6SJ6J",
+      "invariant": "INV-0X3E1T",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rule 3",
+        "leaf": "261112-BUG-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f334773dc898891b52dcadc7666638c67143f2af",
+        "content": "sha256:61293a5272ba4491806c9b25ae6e7ef2832321b97ef5eb12cd6c657e2a86c318",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReplacementRetirementTests.test_replacement_retries_archive_before_retiring_the_predecessor"
+        }
+      },
+      "facet": "Proves a replacing launch retries host archival when initially unsettled and records predecessor retirement only after host confirmation.",
+      "id": "PRF-JWPKDW",
+      "invariant": "INV-0X3E1T",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rule 3",
+        "leaf": "261112-BUG-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f334773dc898891b52dcadc7666638c67143f2af",
+        "content": "sha256:ab6275795205aca211da788e8ddb1ef6ca2efd3f3d677d1c79c91b721064d306",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReplacementRetirementTests.test_manager_replacement_preserves_its_worker_for_the_successor"
+        }
+      },
+      "facet": "Proves a successor Manager can retire a surviving Worker started by its replaced predecessor within the same master.",
+      "id": "PRF-K6XG9G",
+      "invariant": "INV-KRCG05",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rule 6",
+        "leaf": "261112-BUG-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f334773dc898891b52dcadc7666638c67143f2af",
+        "content": "sha256:ba812f3dcd8e49547cd4a47fd28d2267810b388332fcfd663085bb302cc80f13",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReplacementRetirementTests.test_replacement_preserves_a_retired_or_rejected_predecessor"
+        }
+      },
+      "facet": "Proves replacement preserves an earlier predecessor's already-recorded retirement or rejection status rather than overwriting it.",
+      "id": "PRF-RWDDAS",
+      "invariant": "INV-0X3E1T",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rule 3",
+        "leaf": "261112-BUG-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f334773dc898891b52dcadc7666638c67143f2af",
         "content": "sha256:fad350e8510ef3d5275abfc15b970aba77dd3c03af6992e7609b01205cb07d4a",
         "locator": {
           "kind": "symbol",
@@ -51,6 +153,23 @@
         "handoffEntry": "PNT-R03@v1 §12 / G6 / A9 / A18",
         "leaf": "260928-MIK-L90"
       }
+    },
+    {
+      "anchor": {
+        "blob": "f334773dc898891b52dcadc7666638c67143f2af",
+        "content": "sha256:dddcd3b940889a6b14e1cf16c0f99d5b74851609fed4ddc65ae6cc59cd869b54",
+        "locator": {
+          "kind": "symbol",
+          "name": "HostRetirementTests.test_refresh_defers_to_a_pending_retirement_then_preserves_its_detail"
+        }
+      },
+      "facet": "Proves host refresh defers to a pending product-owned retirement intent and preserves that owner's detail once settled.",
+      "id": "PRF-WED4Q3",
+      "invariant": "INV-QDYC5F",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rule 4",
+        "leaf": "261112-BUG-L44"
+      }
     }
   ],
   "realizes": [],
@@ -60,12 +179,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "95481b01b9ebe75b1fbc9d7f37e1fbd74047f5c7",
+            "blob": "f334773dc898891b52dcadc7666638c67143f2af",
             "content": "sha256:e203e6b94a73446f191642540ae2bbe035d5d60b6761519333b1b2b6429ac051",
             "locator": {
-              "end": 112,
+              "end": 130,
               "kind": "line_range",
-              "start": 27
+              "start": 45
             }
           },
           "kind": "test"
@@ -77,36 +196,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "95481b01b9ebe75b1fbc9d7f37e1fbd74047f5c7",
+            "blob": "f334773dc898891b52dcadc7666638c67143f2af",
             "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
             "locator": {
-              "end": 248,
+              "end": 266,
               "kind": "line_range",
-              "start": 208
+              "start": 226
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "95481b01b9ebe75b1fbc9d7f37e1fbd74047f5c7",
+            "blob": "f334773dc898891b52dcadc7666638c67143f2af",
             "content": "sha256:0ca41870503516849cc83516b7c86a8465ae6e716b46132551c8120fdb3b5f9f",
             "locator": {
-              "end": 294,
+              "end": 312,
               "kind": "line_range",
-              "start": 250
+              "start": 268
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "95481b01b9ebe75b1fbc9d7f37e1fbd74047f5c7",
+            "blob": "f334773dc898891b52dcadc7666638c67143f2af",
             "content": "sha256:3255f6078b262815b19b8364f1b1bd7b67503eafbe64183d3528b6032984a16f",
             "locator": {
-              "end": 353,
+              "end": 371,
               "kind": "line_range",
-              "start": 296
+              "start": 314
             }
           },
           "kind": "test"

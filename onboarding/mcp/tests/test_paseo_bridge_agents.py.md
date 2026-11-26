@@ -62,7 +62,9 @@ the production ones — the fake is only the daemon behind them.
 
 
 
+
 - Real-bridge fixtures cover workspace open, creation outcomes, first-message delivery, and exact agent get and archive. [1]
+
 
 
 

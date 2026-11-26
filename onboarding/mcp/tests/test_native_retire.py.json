@@ -3,24 +3,109 @@
   "proves": [
     {
       "anchor": {
-        "blob": "f7ebff0f4a76bce6b4a0aefb1dc748ab271b619e",
-        "content": "sha256:a8d366c6382e21cde7b73bbd83d6030df90eaba3755d93aff5e57315fc6c50a8",
+        "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+        "content": "sha256:e9586f259d7aca10a79dfd3129690a49909d2fc2c93210be5de6101e5c353a55",
+        "locator": {
+          "kind": "symbol",
+          "name": "NativeRetireTests.test_the_architect_retires_bootstrap"
+        }
+      },
+      "facet": "Proves the Architect can retire a Bootstrap seat under scope-based retirement authority.",
+      "id": "PRF-04DYEW",
+      "invariant": "INV-ECNV2S",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rules 1–2",
+        "leaf": "261112-BUG-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+        "content": "sha256:e10e0db5c337a2986822670908427b402ae485e0591c7a4914cb30547cc49bb2",
+        "locator": {
+          "kind": "symbol",
+          "name": "NativeRetireTests.test_a_reserved_agent_cannot_be_retired_before_an_uncertain_launch_replays"
+        }
+      },
+      "facet": "Proves a seat with an unresolved uncertain launch cannot be retired before launch replay settles its receipt.",
+      "id": "PRF-35S9HR",
+      "invariant": "INV-ECNV2S",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rules 1–2",
+        "leaf": "261112-BUG-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+        "content": "sha256:e8cdb342bbb6f9c191150dc42541e59689e97d1b55fb9cf22662b6720f4fa4d1",
+        "locator": {
+          "kind": "symbol",
+          "name": "NativeRetireTests.test_a_nonleaf_turn_and_subagents_need_interrupt_permission"
+        }
+      },
+      "facet": "Proves explicit interrupt_turn permission is required before retiring a non-leaf role agent that is in an active turn or running provider subagents.",
+      "id": "PRF-4RTBCA",
+      "invariant": "INV-ECNV2S",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rule 5",
+        "leaf": "261112-BUG-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+        "content": "sha256:103238b14759a35a7c6124800855d6ec878a4f37e27c9438ad5b095e4a4cb2c4",
+        "locator": {
+          "kind": "symbol",
+          "name": "NativeRetireTests.test_a_failed_record_reports_truthfully_and_retry_converges"
+        }
+      },
+      "facet": "Proves a failed receipt write reports truthfully and a subsequent retry converges on the saved retirement intent.",
+      "id": "PRF-7DJ0H4",
+      "invariant": "INV-QDYC5F",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rule 4",
+        "leaf": "261112-BUG-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+        "content": "sha256:82a596248eddca065a29c8538e99568cda4defb300dc45244ed4052233076968",
         "locator": {
           "kind": "symbol",
           "name": "NativeRetireTests.test_an_unauthorized_repeat_after_retirement_is_refused"
         }
       },
-      "facet": "Retirement does not skip original-starter authorization when the target is already retired.",
-      "id": "PRF-8P489J",
+      "facet": "Proves an out-of-scope caller is refused even on an already-retired target rather than receiving idempotent success.",
+      "id": "PRF-G1VR4F",
       "invariant": "INV-ECNV2S",
       "origin": {
-        "handoffEntry": "L100-R100-8-unique-target",
-        "leaf": "260928-MIK-L100"
+        "handoffEntry": "BUG-R44@v1 rules 1–2",
+        "leaf": "261112-BUG-L44"
       }
     },
     {
       "anchor": {
-        "blob": "f7ebff0f4a76bce6b4a0aefb1dc748ab271b619e",
+        "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+        "content": "sha256:0f0535f3dca42a9dc12bfe40abad44a8429152f56796d486f7495bc135de4c51",
+        "locator": {
+          "kind": "symbol",
+          "name": "NativeRetireTests.test_a_reserved_agent_cannot_be_retired_during_its_first_launch"
+        }
+      },
+      "facet": "Proves a seat reserved during its first launch cannot be retired before launch resolution completes.",
+      "id": "PRF-K5A73A",
+      "invariant": "INV-ECNV2S",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rules 1–2",
+        "leaf": "261112-BUG-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "07374da07c81eeac19c531213355db6afeb44b35",
         "content": "sha256:f3ae843777c88550400912d031159bf8bf47490c0a2d4dd9adea84a16ba001fa",
         "locator": {
           "kind": "symbol",
@@ -37,7 +122,58 @@
     },
     {
       "anchor": {
-        "blob": "f7ebff0f4a76bce6b4a0aefb1dc748ab271b619e",
+        "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+        "content": "sha256:a2f5d7aa269344033e78d4fee351db7e273a16a8e1a669912f22ef60f03433b1",
+        "locator": {
+          "kind": "symbol",
+          "name": "NativeRetireTests.test_an_orchestrator_retires_a_manager_after_its_master_is_attached"
+        }
+      },
+      "facet": "Proves an Orchestrator checks current sprint-master attachment and can retire a Manager whose master is attached to its sprint.",
+      "id": "PRF-MEGHRA",
+      "invariant": "INV-ECNV2S",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rules 1–2",
+        "leaf": "261112-BUG-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+        "content": "sha256:e0daab9d81aeb34177f8166999aa0fa08e5ce17cdda9a9abfaf6a1bced02fa04",
+        "locator": {
+          "kind": "symbol",
+          "name": "NativeRetireTests.test_retirement_names_every_open_child_then_succeeds_after_they_retire"
+        }
+      },
+      "facet": "Proves explicit retirement refuses naming every open child seat and succeeds once all open children are retired.",
+      "id": "PRF-N1XQ4X",
+      "invariant": "INV-KRCG05",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rule 6",
+        "leaf": "261112-BUG-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+        "content": "sha256:522e89dbc583b0180617044dd7235434f6f526c6a34296b9769ae1f6ca959d90",
+        "locator": {
+          "kind": "symbol",
+          "name": "NativeRetireTests.test_a_manager_retires_a_worker_another_manager_started"
+        }
+      },
+      "facet": "Proves a Manager can retire a Worker within its master even when another Manager originally started that Worker.",
+      "id": "PRF-NVBM4V",
+      "invariant": "INV-ECNV2S",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rules 1–2",
+        "leaf": "261112-BUG-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "07374da07c81eeac19c531213355db6afeb44b35",
         "content": "sha256:e6bce367bfef3fbdb3b91e2bda746d181fa7fc79ecfa4880d20a32fc8abb804f",
         "locator": {
           "kind": "symbol",
@@ -56,16 +192,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The original starter archives its agent without a child turn and records retirement provenance.",
+      "note": "Scope-authorized callers retire seats across all roles without a child turn and record retirement provenance.\n\nAnchor: `NativeRetireTests.test_a_manager_retires_its_worker_and_can_repeat`",
       "targets": [
         {
           "anchor": {
-            "blob": "f7ebff0f4a76bce6b4a0aefb1dc748ab271b619e",
-            "content": "sha256:fd323b43faeed4d44f28ee525dd0ebea9d3ccde343076a190cfc3eca6a388bd9",
+            "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+            "content": "sha256:085713299c4819a2a4d9aadbefa5a94ea9a459fecb9f085c3687534cd85dce61",
             "locator": {
-              "end": 102,
+              "end": 124,
               "kind": "line_range",
-              "start": 67
+              "start": 93
             }
           },
           "kind": "test"
@@ -77,12 +213,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f7ebff0f4a76bce6b4a0aefb1dc748ab271b619e",
+            "blob": "07374da07c81eeac19c531213355db6afeb44b35",
             "content": "sha256:e6bce367bfef3fbdb3b91e2bda746d181fa7fc79ecfa4880d20a32fc8abb804f",
             "locator": {
-              "end": 232,
+              "end": 350,
               "kind": "line_range",
-              "start": 210
+              "start": 328
             }
           },
           "kind": "test"
@@ -90,16 +226,16 @@
       ]
     },
     "3": {
-      "note": "A failed final receipt write reports the split and an identical retry converges.",
+      "note": "A failed final receipt write reports the split with `retireIntent` and an identical retry converges.\n\nAnchor: `NativeRetireTests.test_a_failed_record_reports_truthfully_and_retry_converges`",
       "targets": [
         {
           "anchor": {
-            "blob": "f7ebff0f4a76bce6b4a0aefb1dc748ab271b619e",
-            "content": "sha256:6c6dfa08d82c93402b4cda5b5c2eb7eb85c76088dea38f25ee97f121e90b0020",
+            "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+            "content": "sha256:c1c0e0b48ddc408ea9a6d93945c7b93d06adee47714a9626a39fd0429477d223",
             "locator": {
-              "end": 289,
+              "end": 535,
               "kind": "line_range",
-              "start": 259
+              "start": 485
             }
           },
           "kind": "test"

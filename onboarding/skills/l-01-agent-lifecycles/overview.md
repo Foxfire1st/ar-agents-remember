@@ -351,6 +351,8 @@ Knowledge curation authors the obligation and its scoped judgment. The product s
 - The writer section names knowledge-ingest or mounted knowledge_write under the task contract; when trusted CLI authority settings cannot publish a raise, the same hand-off goes through mounted knowledge_write with the declared arguments, preview and file-write word. [22]
 - The manifest composes the selected role followed by its operation and keeps shared core blocks out of that instruction stream; the shared digest accompanies the capsule in the first message. Anchor: `composition_order` [53]
 
+
 - Launch-time resolution chooses permission mode. Shared instructions assign the post-start feature check to the starter. [97]
+
 
 - The source template gives the conflicting-dependent crossing request. [99]

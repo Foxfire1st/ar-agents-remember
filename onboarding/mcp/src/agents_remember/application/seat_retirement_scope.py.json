@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/application/seat_retirement_scope.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "99a24f57b61e8a3d8b8bee85cb5dddf0cf58d8ee",
+        "content": "sha256:0713cda724d95bce278b145173d394cb5ba50076d2bbe17dfb9cfa3181d8bd37",
+        "locator": {
+          "kind": "symbol",
+          "name": "retirement_scope_refusal"
+        }
+      },
+      "id": "RLZ-D7R4H8",
+      "invariant": "INV-ECNV2S",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rules 1–2",
+        "leaf": "261112-BUG-L44"
+      },
+      "rationale": "Owns retirement and replacement scope, including self-refusal and current ancestry.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`retirement_scope_refusal` enforces self-refusal, Architect universal scope, Manager/Orchestrator topology scope, non-coordinator refusal, and scope-naming refusal text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a24f57b61e8a3d8b8bee85cb5dddf0cf58d8ee",
+            "content": "sha256:0713cda724d95bce278b145173d394cb5ba50076d2bbe17dfb9cfa3181d8bd37",
+            "locator": {
+              "kind": "symbol",
+              "name": "retirement_scope_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_within_document_scope` resolves live master and sprint membership from current canonical task documents via `TaskDocumentTopology`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a24f57b61e8a3d8b8bee85cb5dddf0cf58d8ee",
+            "content": "sha256:d5e5a14c022195f020b42e1cd7a57ce1b381a03a889ad9d85ba0d6e181b77172",
+            "locator": {
+              "kind": "symbol",
+              "name": "_within_document_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_scope_of` formats the caller's scope description for refusal details.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a24f57b61e8a3d8b8bee85cb5dddf0cf58d8ee",
+            "content": "sha256:d4109c078d1582a1136a2f478dfe7d67f09c9cc6d642d25e950c58bb8a2b85d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scope_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "ede5d128e75765d40987bf3981b1d97ed4326bae",
+    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
     "role": "curator",
-    "statement": "docs/features.md (lines 349-379) accurately describes read-only versus mutating MCP tool trust boundaries, answer token bounds, and tool-log routing, unaffected by L38 adding sharedHeldStores to RUNTIME_INSTALL_ANSWER_FIELDS.",
-    "task": "261112-BUG-L38",
+    "statement": "Audited docs/features.md line by line against synced L44 code tree ede5d128 (base 150b9778): feature summaries, skill-tree packaging, and closeout/role capabilities remain accurate; no L44 contradiction.",
+    "task": "261112-BUG-L44",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 25,
+  "revision": 26,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -218,7 +218,7 @@
       "path": "mcp/src/agents_remember/memory/carryover_evidence.py"
     },
     {
-      "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
+      "blob": "864dd917963036bf4084b81f219ee468696d72b1",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
@@ -295,14 +295,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T19:57:06+01:00",
+    "at": "2026-11-26T02:42:00+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
+    "leaf": "261112-BUG-L44",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
     "task": "261112-BUG"
   }
 }

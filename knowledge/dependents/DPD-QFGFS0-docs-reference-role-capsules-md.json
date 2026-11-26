@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "ede5d128e75765d40987bf3981b1d97ed4326bae",
+    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
     "role": "curator",
-    "statement": "docs/reference/role-capsules.md (lines 14-81) accurately describes launch handover/detail files, held starts versus held messages, and message filing, preserved by L38's publication_scope and closed-seat store fence.",
-    "task": "261112-BUG-L38",
+    "statement": "Audited docs/reference/role-capsules.md line by line against synced L44 code tree ede5d128 (base 150b9778): capsule structure, budgets, and compiler references remain accurate; no L44 contradiction.",
+    "task": "261112-BUG-L44",
     "uncommitted": true
   },
   "document": "docs/reference/role-capsules.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "mcp/src/agents_remember/cli/role_start_answer.py"
     },
     {
-      "blob": "9124be375703846117abf9f0f4fee05c1044befd",
+      "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
@@ -82,14 +82,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T19:57:06+01:00",
+    "at": "2026-11-26T02:42:00+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
+    "leaf": "261112-BUG-L44",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
     "task": "261112-BUG"
   }
 }
