@@ -36,6 +36,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "The command evidence_lifecycle --write rewrites both test catalogs to canonical form and makes no decision about their content. It orders contract rows by id and artifact rows by path. It writes every consumers list and every lane list in ascending order, one path per line, in double quotes, with a comma after each path, without duplicate lines. It sets the consumers list of an exact or exact-source row to the set derived from the source tree when that set is not empty. It removes each lane line whose file does not exist, and each consumer line whose file does not exist while another listed consumer exists. It adds and removes no row, never assigns a lane, never empties a consumers list, changes no field of a row other than its consumers, keeps every comment outside a list, and changes nothing on a second run. It refuses every catalog or source tree that it cannot read in this way, and a refusal writes nothing to either catalog. The report names each list or file it changed: a list whose order, duplicates, quotes or commas changed is printed by name with what was changed, and a change of spacing alone is reported once per file as whitespace normalised, unless another line about that file is printed (a change, or a note that names a row).",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L51",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

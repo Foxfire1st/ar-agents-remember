@@ -485,6 +485,102 @@
         }
       ]
     },
+    "22": {
+      "note": "The unit-regression lane selects `mcp/tests/test_knowledge_review_source_content.py`. The lifecycle catalog lists `mcp/tests/test_knowledge_review_source_content.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. These source declarations establish no execution or passing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
+            "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
+            "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
+            "locator": {
+              "end": 419,
+              "kind": "line_range",
+              "start": 419
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
+            "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
+            "locator": {
+              "end": 968,
+              "kind": "line_range",
+              "start": 968
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
+            "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
+            "locator": {
+              "end": 1436,
+              "kind": "line_range",
+              "start": 1436
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
+            "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
+            "locator": {
+              "end": 2925,
+              "kind": "line_range",
+              "start": 2925
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
+            "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
+            "locator": {
+              "end": 3829,
+              "kind": "line_range",
+              "start": 3829
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
+            "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
+            "locator": {
+              "end": 3877,
+              "kind": "line_range",
+              "start": 3877
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "23": {
       "note": "The entry callback forwards the optional comparison number to the comparison-aware owner.\n\nAnchor: \"def _served(fixture: EndpointFixture) -> FastAPI:\"",
       "targets": [
@@ -514,102 +610,6 @@
               "kind": "line_range",
               "start": 229
             }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "27": {
-      "note": "The unit-regression lane selects `mcp/tests/test_knowledge_review_source_content.py`. The lifecycle catalog lists `mcp/tests/test_knowledge_review_source_content.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/anchor_fixture_models.py`, `mcp/tests/diff_scope_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`, `mcp/tests/knowledge_review_fact_test_support.py`, `mcp/tests/knowledge_row_codec_test_support.py`, `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
-            "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
-            "locator": {
-              "end": 287,
-              "kind": "line_range",
-              "start": 287
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
-            "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
-            "locator": {
-              "end": 420,
-              "kind": "line_range",
-              "start": 420
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
-            "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
-            "locator": {
-              "end": 968,
-              "kind": "line_range",
-              "start": 968
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
-            "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
-            "locator": {
-              "end": 1436,
-              "kind": "line_range",
-              "start": 1436
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
-            "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
-            "locator": {
-              "end": 2926,
-              "kind": "line_range",
-              "start": 2926
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
-            "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
-            "locator": {
-              "end": 3829,
-              "kind": "line_range",
-              "start": 3829
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
-            "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
-            "locator": {
-              "end": 3877,
-              "kind": "line_range",
-              "start": 3877
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
         }

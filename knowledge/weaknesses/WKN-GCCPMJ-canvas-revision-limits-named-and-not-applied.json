@@ -29,5 +29,23 @@
     "task": "260928-MIK-L97"
   },
   "state": "closed",
-  "statement": "The limit table names 64 files and 16 MiB as limits of a revision, and the store applies neither: every caller passes the default FrameLimits."
+  "statement": "The limit table names 64 files and 16 MiB as limits of a revision, and the store applies neither: every caller passes the default FrameLimits.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

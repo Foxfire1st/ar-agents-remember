@@ -31,5 +31,24 @@
   "schema": "ar-invariant/v1",
   "statement": "R112's old-install protections survive intact: legacy keys still parse and report once as unused, the retired providers stay never-enabled, the old-watcher stop still runs and records a failure, leftover folders are reported by size and removed only on explicit consent, and the busy-process, stop-failure and containment refusals still refuse.",
   "status": "retired",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L192",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

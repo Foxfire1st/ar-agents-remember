@@ -20,7 +20,8 @@
     "INV-KPK1WT",
     "INV-0R04WY",
     "INV-Z0FRT0",
-    "INV-1QE8YM"
+    "INV-1QE8YM",
+    "INV-CZXJCP"
   ],
   "origin": {
     "handoff": {
@@ -30,7 +31,7 @@
     "leaf": "261112-KNO-L3",
     "task": "261112-KNO"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "dashboard/src/data",
     "dashboard/src/grammar",
@@ -50,6 +51,16 @@
     "mcp/tests"
   ],
   "schema": "ar-family/v1",
-  "status": "proposed",
-  "title": "Review credit follows the retained revision"
+  "title": "Review credit follows the retained revision",
+  "writer": {
+    "at": "2026-11-26T17:17:51+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261126-SYN-L1",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c91b4f3a-8d2e-4a76-b5c3-2e7f1a90d4c8",
+    "task": "261126-SYN"
+  }
 }

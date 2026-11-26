@@ -28,6 +28,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The retire operation refuses every request, fresh, dry run, resumed or repeated, while the document it is addressed to or any direct task document of the repository's task root outside 0_archive and enclosures cannot be opened, decoded or parsed, and the refusal names that file.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L200",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

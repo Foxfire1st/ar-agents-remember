@@ -31,6 +31,24 @@
   "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "An ordinary role launch supplies its own bound AR task-server definition when the provider accepts MCP definitions. The launch policy grants Codex the ordered tool allowlist of the seat's role on that server and grants Claude server_info for the session. A provider that explicitly refuses tool servers receives no definition or harness-configuration fallback. The assignment_read tool and its former grant stay retired under D124.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261124-CAP-L1",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261124-CAP",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

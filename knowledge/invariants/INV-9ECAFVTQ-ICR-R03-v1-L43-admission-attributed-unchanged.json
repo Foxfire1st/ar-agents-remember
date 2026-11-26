@@ -25,6 +25,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "The source-content read opens a path the requested pair's measured change set does not list only when a realization claim anchored at exactly that path -- or, in a tree comparison's derived index, a proof entry anchored at exactly that path -- is recorded in the before or after knowledge of the comparison that pair names, and states it as admission attributed_unchanged with status unchanged.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L37",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "9af497f7bb994eac3c3bb8c69069d5e8d702cb58",
-    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
+    "codeTree": "678adb9706701070f5f6b01f59848bebcc17593c",
+    "commit": "437d4d8935373432fb112a4a15d31e5d5f1bbcc2",
     "role": "curator",
-    "statement": "CONTRIBUTING.md accurately reflects BUG-L29's tool-registration description (lines 40-50), BUG-L49's pyproject.toml update, and 261125-DEP-L6's updates switching dashboard lint to oxlint (lines 194-197) and the concurrent hook rail to cache-free oxlint with incremental tsc -b *.tsbuildinfo (lines 333-338), with test-evidence-lanes.toml declaring 830 modules (680 unit-regression).",
+    "statement": "Merged KNO-L6, 261126-SYN, and 261125-DEP-L6 on synced code tree 678adb970670 (commit 437d4d893537): CONTRIBUTING.md accurately describes the seven evidence lanes, canonical catalog form, runtime asset folders, BUG-L29 tool registration, BUG-L49 pyproject.toml, and DEP-L6 oxlint + incremental tsc -b updates; mcp/tests/test-evidence-lanes.toml declares 831 distinct modules (681 unit-regression including test_code_quality_dashboard_lint_scope.py, test_crossing_merge_writer_stamp.py, and test_knowledge_state_conversion_verdict_ref.py) without changing lane policy or budgets pinned in CONTRIBUTING.md.",
     "task": "261125-DEP-L6",
-    "uncommitted": true
+    "uncommitted": false
   },
   "document": "CONTRIBUTING.md",
   "id": "DPD-78737N",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 19,
+  "revision": 20,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
+      "blob": "b8e4aa8e44ccff1ebe6fe7845462c154cc17f6fa",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -207,14 +207,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T12:08:02+01:00",
+    "at": "2026-11-26T18:24:49+01:00",
     "by": "agent",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-5",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L6",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+    "role": "manager",
+    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
     "task": "261125-DEP"
   }
 }

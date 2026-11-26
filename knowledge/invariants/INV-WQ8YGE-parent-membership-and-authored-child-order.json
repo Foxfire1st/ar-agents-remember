@@ -43,6 +43,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The native producer projects ordered membership once from declared lists: for documented subTasks a genuinely absent master may use the listing master, while a present contrary or unresolvable master is not adopted. Other listed document kinds use the list subject to existing identity/cycle guards, without own-master validation or kind rejection by this path. Each child has at most one acyclic parent. SubTask record/list disagreements are served once per declaring master and complete disagreement content for display on that master’s page, without repairing records or creating another task entry. Membership does not depend on worktrees.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L168",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

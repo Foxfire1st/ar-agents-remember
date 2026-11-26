@@ -24,5 +24,24 @@
     "task": "260928-MIK-L118"
   },
   "state": "open",
-  "statement": "Failed once on A014 under load average 6–7: missed the memory orphan window three times. Passed 3/3 isolated candidate repeats and the final whole ordinary lane. No landed-baseline run for this case; inherited origin is unproven. Outside the five-item D305–D309 reopen; recorded and left, no repair or new task. Evidence: L168 A014 Worker report56a183d8 and evidence SHA256SUMS961c8240."
+  "statement": "Failed once on A014 under load average 6–7: missed the memory orphan window three times. Passed 3/3 isolated candidate repeats and the final whole ordinary lane. No landed-baseline run for this case; inherited origin is unproven. Outside the five-item D305–D309 reopen; recorded and left, no repair or new task. Evidence: L168 A014 Worker report56a183d8 and evidence SHA256SUMS961c8240.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L118",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

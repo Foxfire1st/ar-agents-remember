@@ -106,17 +106,17 @@
         }
       ]
     },
-    "27": {
+    "24": {
       "note": "The `unit-regression` lane selects `mcp/tests/test_review_final_output_receipt.py`. The lifecycle catalog lists this module as an exact consumer of `mcp/tests/_user_settings_guard.py` and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`.",
       "targets": [
         {
           "anchor": {
-            "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
-            "content": "sha256:67f58c58dbc55122e84f30cab52617992ecf9b03d80f0738288afe38aac190bf",
+            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
+            "content": "sha256:314372f0f72529edc0852bbe828fe7184e05d33ea54d767b8813ca70fdaff923",
             "locator": {
-              "end": 509,
+              "end": 510,
               "kind": "line_range",
-              "start": 509
+              "start": 510
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -124,7 +124,7 @@
         },
         {
           "anchor": {
-            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
             "content": "sha256:67f58c58dbc55122e84f30cab52617992ecf9b03d80f0738288afe38aac190bf",
             "locator": {
               "end": 680,
@@ -137,7 +137,7 @@
         },
         {
           "anchor": {
-            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
             "content": "sha256:67f58c58dbc55122e84f30cab52617992ecf9b03d80f0738288afe38aac190bf",
             "locator": {
               "end": 3186,

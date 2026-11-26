@@ -33,6 +33,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "A seat waiting for its helpers declares WAITING FOR SUBAGENTS and reports progress. An eligible declaring end can arm one progress check after three minutes, or earlier if a simultaneous background check is due sooner. A successful check consumes its timer. Another successful check needs another declaring end. The plug-in adds no installed harness component.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L20",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

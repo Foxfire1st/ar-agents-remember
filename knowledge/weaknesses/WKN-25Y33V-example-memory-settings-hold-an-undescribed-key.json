@@ -24,5 +24,24 @@
     "task": "260928-MIK-L97"
   },
   "state": "open",
-  "statement": "The example settings of a memory repository hold \"version\": 2, a key that nothing reads: the settings reference says that the key is accepted and read by nothing and that any value loads."
+  "statement": "The example settings of a memory repository hold \"version\": 2, a key that nothing reads: the settings reference says that the key is accepted and read by nothing and that any value loads.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L97",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

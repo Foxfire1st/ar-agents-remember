@@ -31,6 +31,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "rule5's same-round exception is admitted only on the actual byte-identical candidate previously reviewed; absence of candidate evidence is not proof of equality. The candidate guard must apply to all repeat-publication paths and preserve the sealed shrinking-only semantics.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L116",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

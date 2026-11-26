@@ -26,5 +26,23 @@
     "task": "260928-MIK-L97"
   },
   "state": "open",
-  "statement": "The page reads the state of the explainer only when the chat sidebar is shown, so before the sidebar has been shown once the first pick opens the first-request form although an explainer is live."
+  "statement": "The page reads the state of the explainer only when the chat sidebar is shown, so before the sidebar has been shown once the first pick opens the first-request form although an explainer is live.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

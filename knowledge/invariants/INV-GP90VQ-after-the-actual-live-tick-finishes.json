@@ -34,6 +34,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "After a live tick finishes or its worker drains on cancellation, the ordinary added rest is max(interval, min(actual_tick_duration, 3 seconds)); one task-document or host-activity notification arriving during that rest may cause one early pass one interval after arrival per original rest window. Later notifications and other domains do not repeatedly shorten that window.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L168",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

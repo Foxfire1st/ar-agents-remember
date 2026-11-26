@@ -34,6 +34,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "Registration declares canonical light models and loads operation payloads on invocation, while worktree services and token measurement initialize only at their first dependent operation; the light tool-event writer stays at startup to capture boot-time caller identity. After producing a tools/list answer, the server schedules one shared post-discovery start with loop.call_soon; a first tool call uses that same latch as the fallback for clients that never list. Initialization starts neither the outside-scratch sweep nor dashboard supervision. The joint start attempts the sweep even without a config, and invokes dashboard autostart only with a config and its setting; the heavy worktree sweep runs in a one-shot child with no access to MCP stdin rather than importing its owner into the serving process.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L183",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

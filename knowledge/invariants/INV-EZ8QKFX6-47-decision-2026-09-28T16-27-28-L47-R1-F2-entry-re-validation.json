@@ -26,6 +26,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "The shared entry-generation context retains task-open/re-show/return and explicit-refresh revalidation, and accepts the matching mounted live review's memory-invalidation callback. Memory invalidation uses the existing scoped state stream; the context itself remains local React state, not a second event connection, projection authority or poller.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L57",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

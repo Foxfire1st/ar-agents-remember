@@ -28,5 +28,24 @@
     "task": "260928-MIK-L118"
   },
   "state": "closed",
-  "statement": "The collection failure and the ruff findings this record named are gone before this leaf: commit 8d2e75478 (L138) made the tests a removal left unloadable load and run, and no file imports application.provider_tools; ruff check --select PLR0915,F401 passes on both cli/__main__.py and mcp/registration/core.py."
+  "statement": "The collection failure and the ruff findings this record named are gone before this leaf: commit 8d2e75478 (L138) made the tests a removal left unloadable load and run, and no file imports application.provider_tools; ruff check --select PLR0915,F401 passes on both cli/__main__.py and mcp/registration/core.py.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L97",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

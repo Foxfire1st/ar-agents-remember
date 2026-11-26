@@ -29,6 +29,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "The Architect answers a developer message before any other work continues, with an answer rather than a status line. A message beginning with the role-agent line From <role> · <task> · agent <id> remains a role agent's message; that sender line supplies no developer answer or approval. Only the part of a From explainer message copied from the developer counts as the developer's words, and only when its SHA-256 matches the filed developer-messages message.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L7",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

@@ -33,6 +33,24 @@
   "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "Ordinary enclosed leaf/master preview, apply and integration answers are grant-inert: current pristine and unrelated-grant responses compare equal after the explicit volatility/root scrub before any adaptation; the pre-change baseline compares equal to both after the named conversion, baseline-only removed-seat-field and contract-derived landing-label adaptations and the exact current leaf_apply review-note adaptation, with its own leaf route-index facts mapped to the current count shape by the baseline producer. No route-index counts are suppressed in current answers.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-KNO-L3",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-KNO",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

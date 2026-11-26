@@ -375,7 +375,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
+            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
             "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
               "end": 801,
@@ -434,7 +434,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
+            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
             "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
               "end": 801,
@@ -476,7 +476,7 @@
         }
       ]
     },
-    "31": {
+    "28": {
       "note": "Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection.",
       "targets": [
         {
@@ -507,8 +507,8 @@
         },
         {
           "anchor": {
-            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
-            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
+            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
             "locator": {
               "kind": "file"
             },

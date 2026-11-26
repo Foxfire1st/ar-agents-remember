@@ -24,5 +24,24 @@
     "task": "260928-MIK-L118"
   },
   "state": "open",
-  "statement": "test_tool_entry_point_sweep.py (11 tools refused agentic-settings-location-upgrade-required: fixture writes coord/system/settings.json), test_tool_answer_table.py L112FinalRowProductionTests (2), test_tool_descriptions.py (10 subfailures, L110/L111-owned), test_knowledge_conversion_toolchain.py (2) + test_knowledge_index_surfaces.py (1), ruff PLR0911 tool_entry_point_world.py:308. Not L109's;"
+  "statement": "test_tool_entry_point_sweep.py (11 tools refused agentic-settings-location-upgrade-required: fixture writes coord/system/settings.json), test_tool_answer_table.py L112FinalRowProductionTests (2), test_tool_descriptions.py (10 subfailures, L110/L111-owned), test_knowledge_conversion_toolchain.py (2) + test_knowledge_index_surfaces.py (1), ruff PLR0911 tool_entry_point_world.py:308. Not L109's;",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L118",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

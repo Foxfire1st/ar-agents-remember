@@ -32,6 +32,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The instruction class states individual ordinary leaf starts and the refusing resolver coherently: the Manager starts Worker at build, Reviewer at freeze and Curator after code PASS; direct peer handovers follow the required Manager notice and the recipient start. The resolver reaches a seat’s single live agent and refuses ambiguous occupancy; the three obsolete sentences remain registered retired with source-confined guards on all copies.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L62",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

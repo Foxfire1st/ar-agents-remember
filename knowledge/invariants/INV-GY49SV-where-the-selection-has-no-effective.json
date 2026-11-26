@@ -35,6 +35,24 @@
   "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "For ordinary document chat, only a selection known to have no effective agent, or no admissible role, hides the loaded frame behind its launcher/problem text; unknown chat discovery keeps the existing frame visible, out of reach, under a named wait. A review whose task is still pending keeps that retained frame under its task-list wait; a known-missing task hides it behind the named problem. For a known bound leaf review, the default is its explainer or, while none exists, its Explainer placeholder rather than an ordinary task-chat launcher. A known selected effective target returns in that same frame, subject to qualified control recovery.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L183",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

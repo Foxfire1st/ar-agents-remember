@@ -23,6 +23,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "The curator hand-off list's target shape is {path, locator, governing_route, rationale, role}, where rationale is the required authored explanation of why that place carries the obligation and role is optional; curators author a missing rationale from the evidence before ingest.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260921-ICR-L45",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260921-ICR",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

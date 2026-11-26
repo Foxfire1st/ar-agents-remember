@@ -26,9 +26,20 @@
     "leaf": "261112-KNO-L3",
     "task": "261112-KNO"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A crossing retains the selected record bytes and their admissible review facts. Equal bytes take standing from the merged histories. A genuinely combined revision receives the product stamp and derives state from ordinary history rules. Conflicting meaning fields remain conflicts.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "A crossing retains the selected record bytes and their admissible review facts. Equal stripped records take standing from the merged histories. A genuinely combined revision receives the product stamp and derives state from ordinary history rules. Conflicting meaning fields remain conflicts.",
+  "supersedes": [],
+  "title": "Crossing retains selected bytes and review standing",
+  "writer": {
+    "at": "2026-11-26T17:17:51+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261126-SYN-L1",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c91b4f3a-8d2e-4a76-b5c3-2e7f1a90d4c8",
+    "task": "261126-SYN"
+  }
 }

@@ -211,4 +211,4 @@ the fixture it is pinned against lives in this repository.
 
 - The `unit-regression` lane selects `mcp/tests/test_capsule_launch_wiring.py`. [15]
 
-- The lifecycle catalog lists `mcp/tests/test_capsule_launch_wiring.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result. [26]
+- The lifecycle catalog lists `mcp/tests/test_capsule_launch_wiring.py` as an exact consumer of `mcp/tests/_user_settings_guard.py`, `mcp/tests/curator_coherence_test_support.py`, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. These source declarations establish no execution or passing result. [21]

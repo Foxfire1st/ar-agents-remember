@@ -1,0 +1,2847 @@
+{
+  "reviews": [
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L102",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L102",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "tree": "6019342b37bf15e26428589ed495cc5e56f3f0a1",
+        "verdictRef": "notes/reports/reviewer/88bc8256-ca89-4f1b-b457-14ba9c611054/M3-verdict.md"
+      },
+      "owner": "260928-MIK-L102"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L104",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L104",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 4,
+        "tree": "8d3801309da623a709450b02052fc3128513594a",
+        "verdictRef": "notes/reports/reviewer/8c1d5e42-3b7a-4f96-a204-6de93f5b17c2/role-launch/L104-MEM-R4-verdict.md"
+      },
+      "owner": "260928-MIK-L104"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L170",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L170",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "tree": "43603751342cbf1e18436cb5ce210756c408f3be",
+        "verdictRef": "notes/reports/reviewer/486ede30-7df9-53a7-9080-8f5553df52a2/M3-memory-verdict.md"
+      },
+      "owner": "260928-MIK-L170"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L171",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L171",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 4,
+        "tree": "d38999a35b8a9bea7bad69762231757692e51ea4",
+        "verdictRef": "notes/reports/reviewer/f182c23d-17a4-4fe5-821c-8ce28a69415f/role-launch/memory-r4/L171-MR4-verdict.md"
+      },
+      "owner": "260928-MIK-L171"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L172",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L172",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "tree": "a644097c9cee86e36a3fced9b401363ed7780ad7",
+        "verdictRef": "notes/reports/reviewer/8faa44b1-8e8c-49f7-8030-5d8ddb02539d/m2-memory-pass.md"
+      },
+      "owner": "260928-MIK-L172"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L173",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L173",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 1,
+        "verdictRef": "notes/reports/reviewer/c1c07845-6d2b-44b5-8827-d6dc1ab3ac31/memory-lane/verdict.md"
+      },
+      "owner": "260928-MIK-L173"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L175",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L175",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "tree": "61eaf16bcaf9d498611ef40310af88e298b2f902",
+        "verdictRef": "notes/reports/reviewer/5748dab5-704e-4f47-a233-50afd16532d7/memory-r2/memory-verdict.md"
+      },
+      "owner": "260928-MIK-L175"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L176",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L176",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "tree": "9af642e101a8c4808070e5cb12f7ac884ed35c48",
+        "verdictRef": "notes/reports/reviewer/b60e93c4-7f18-4a2d-8c51-1e94a73fb085/role-launch/L176-M3-verdict.md"
+      },
+      "owner": "260928-MIK-L176"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L178",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L178",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "verdictRef": "notes/reports/reviewer/b3e57f01-2c48-4a91-8f36-1d90ac6582b7/role-launch/verdict-memory-M2.md"
+      },
+      "owner": "260928-MIK-L178"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L179",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L179",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "tree": "7c5e7c504b2fe35683a1c0eb6f9320e384f7b5f1",
+        "verdictRef": "notes/reports/reviewer/b6a6d72d-16b4-522b-bab2-f76680753fc3/role-launch/M2/verdict.md"
+      },
+      "owner": "260928-MIK-L179"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L180",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L180",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "tree": "18f241cf761b82ecaa685e15823697601e78f199",
+        "verdictRef": "notes/reports/reviewer/617f5470-4fd5-59a7-b6d2-d8203d8b003d/L180-memory-R2-verdict.md"
+      },
+      "owner": "260928-MIK-L180"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L181",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L181",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "tree": "276aeec250c16b76d87d54b714036b8b837494bd",
+        "verdictRef": "notes/reports/reviewer/2c934f88-a131-585e-a70e-d605efaade96/role-launch/MEMORY-R2/verdict.md"
+      },
+      "owner": "260928-MIK-L181"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L182",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L182",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "verdictRef": "notes/reports/reviewer/f29426cb-d7b7-5f56-a2ad-71ad3bcad432/MEMORY-R2-verdict.md"
+      },
+      "owner": "260928-MIK-L182"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L183",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L183",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "tree": "b7a165c796dc8282fe79e9daa6b9c8c237d5f721",
+        "verdictRef": "notes/reports/reviewer/6eca53d9-bb29-4484-8537-b4399887d779/role-launch/L183-M2-memory-verdict.md"
+      },
+      "owner": "260928-MIK-L183"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L185",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L185",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 4,
+        "tree": "1a090b451dc451196b1e7e36223f4d8c620b083a",
+        "verdictRef": "notes/reports/reviewer/aac4a724-05d2-51de-bbfb-348a6e27892f/L185-memory-round4-verdict.md"
+      },
+      "owner": "260928-MIK-L185"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L186",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L186",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "tree": "ba4b50f6e062ad2d6be4e0bd603f1930fd079718",
+        "verdictRef": "notes/reports/reviewer/9b7c1e42-6d05-4a3f-b0c8-51e7f2a94d36/memory-r3-verdict.md"
+      },
+      "owner": "260928-MIK-L186"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L188",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L188",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "tree": "bc3b6ddd6efea15171795db0ce6fccd535ea9f34",
+        "verdictRef": "notes/reports/reviewer/03c778c6-2365-4998-892b-0e26bb157304/whole-memory-bc3b6ddd/verdict.md"
+      },
+      "owner": "260928-MIK-L188"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L189",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L189",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "tree": "b76169ace7c14371c6e1fa938c3b985d69e4fcda",
+        "verdictRef": "notes/reports/reviewer/be1f415b-a216-5b17-bbca-7a128ec6af5b/role-launch/L189-M3-verdict.md"
+      },
+      "owner": "260928-MIK-L189"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L191",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L191",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "tree": "7f243dea1bdab3014c1d65629ab4cf7569f67790",
+        "verdictRef": "notes/reports/reviewer/7b048148-89b3-4f88-a3a4-a8c9d92e2590/role-launch/verdict-memory-S4-e60-7f243dea.md"
+      },
+      "owner": "260928-MIK-L191"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L192",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L192",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 10,
+        "tree": "0e1673bea04b0978a4b34096ea8c156f09c97680",
+        "verdictRef": "notes/reports/reviewer/a1b2c3d4-5e6f-4a70-8b91-c2d3e4f5a602/role-launch/m11-verdict-pass.md"
+      },
+      "owner": "260928-MIK-L192"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L193",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L193",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "verdictRef": "notes/reports/reviewer/e7207019-cf2c-5dfa-9995-6943f2f97c13/role-launch/260928-MIK-L193-reviewer-memory-M3-verdict.md"
+      },
+      "owner": "260928-MIK-L193"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L195",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L195",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 4,
+        "tree": "9eae16676cf05c96993ffbf9ab0849d322cff726",
+        "verdictRef": "notes/reports/reviewer/bf9feb53-a0cb-510b-be1e-3bd699d6fe74/role-launch/memory-m4-verdict.md"
+      },
+      "owner": "260928-MIK-L195"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L198",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L198",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "verdictRef": "notes/reports/reviewer/a1b2c3d4-5e6f-4a70-8b91-c2d3e4f5a601/memory-r3/verdict.md"
+      },
+      "owner": "260928-MIK-L198"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L199",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L199",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 1,
+        "verdictRef": "notes/reports/reviewer/1aa35cce-eb6b-410d-8c6d-504c84a44d58/M1/verdict.md"
+      },
+      "owner": "260928-MIK-L199"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L203",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L203",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 1,
+        "verdictRef": "notes/reports/reviewer/87dbf3d5-8664-42ee-ab5a-bda53b30dbc9/verdict/260928-MIK-L203-memory-M1-verdict.md"
+      },
+      "owner": "260928-MIK-L203"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L56",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L56",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 5,
+        "tree": "94054a7d481fb5ef30f6d5f5d443bfa3a169e688",
+        "verdictRef": "notes/reports/reviewer/18f37957-3b4a-4022-b44b-5e7c7b6772f2/role-launch/L56-MEMORY-R7-verdict.md"
+      },
+      "owner": "260928-MIK-L56"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L57",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L57",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 5,
+        "tree": "b734f029fd9a4af65c3afb326402744200d4b0a2",
+        "verdictRef": "notes/reports/reviewer/44afeef5-60ed-4f05-82df-6c1b88663a01/role-launch/memory-review-05/verdict-M5.md"
+      },
+      "owner": "260928-MIK-L57"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L60",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L60",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "tree": "5e852b4f495629d56082aa0948d3cc00cba87eaa",
+        "verdictRef": "notes/reports/260928-MIK-L60-reviewer-memory-verdict-M2.md"
+      },
+      "owner": "260928-MIK-L60"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L62",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L62",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "verdictRef": "notes/reports/reviewer/faf73ee8-218f-4250-b541-909a6da2670f/role-launch/260928-MIK-L62-MEMORY-round-2-verdict-85ff7305.md"
+      },
+      "owner": "260928-MIK-L62"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L63",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L63",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "tree": "14a67d1fc9c69eee05ca16bc5f1786f9b637d19f",
+        "verdictRef": "notes/reports/reviewer/c47a8e10-6b25-4f39-b1d8-2e5a9c74f083/role-launch/memory-fix-verification/verdict.md"
+      },
+      "owner": "260928-MIK-L63"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L73",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "260928-MIK-L73",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "260928-MIK",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 4,
+        "tree": "708052e174c8a0f785d29169c8f95d95abb5bf43",
+        "verdictRef": "notes/reports/reviewer/595a71c3-e529-4f1b-a308-5f93ffb772fe/role-launch/L73-MEMORY-R4-708052-verdict.md"
+      },
+      "owner": "260928-MIK-L73"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L1",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L1",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "tree": "d8fbcb1fdf2a653bd386b0ba4d33edf67253c5b8",
+        "verdictRef": "notes/reports/reviewer/3f6d2a10-7c4b-4e1d-9a52-0b8e6f1c4d27/role-launch/memory-r3-verdict.md"
+      },
+      "owner": "261112-BUG-L1"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L11",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L11",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "tree": "5c83daf4cd4ad04e7e62a586aac72311a1e24c0b",
+        "verdictRef": "notes/reports/reviewer/2a93bd1f-7520-48ba-ac86-360ee1ca5ab4/role-launch/W7-memory-round3-verdict.md"
+      },
+      "owner": "261112-BUG-L11"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L12",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L12",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "tree": "fa9712353f37963453ddb5d1736d8e1fea5c0109",
+        "verdictRef": "notes/reports/reviewer/f1990aef-028a-4682-bdde-09d6897535c9/role-launch/W8-memory-R3-verdict.md"
+      },
+      "owner": "261112-BUG-L12"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L13",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L13",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "tree": "db27c6c426859860bb7dc40d2cb8379b5591fb8c",
+        "verdictRef": "notes/reports/reviewer/668f10d5-cc6c-465d-8ef4-0490e4f642b8/role-launch/261112-BUG-L13-memory-R3-verdict.md"
+      },
+      "owner": "261112-BUG-L13"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L15",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L15",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 4,
+        "tree": "8f507c1b58a1b0610731ae4297b46c3e14a62ebb",
+        "verdictRef": "notes/reports/reviewer/9d7f0961-a471-462f-8d10-ddd8229070ea/W9-memory-R4/verdict.md"
+      },
+      "owner": "261112-BUG-L15"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L17",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L17",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "tree": "f18f664afcded3f4fd99a78f7c22562973ab74de",
+        "verdictRef": "notes/reports/reviewer/51fb0663-51dd-406d-8d4e-6fd46bf57c48/role-launch/BUG-L17-W4-memory-R2-verdict.md"
+      },
+      "owner": "261112-BUG-L17"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L18",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L18",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 4,
+        "tree": "0a055decc5b123126328f676db3495c14db71b64",
+        "verdictRef": "notes/reports/reviewer/9c5aac58-ec0d-42f4-89c9-ced490d61698/role-launch/W6-memory-R4-F01-verdict.md"
+      },
+      "owner": "261112-BUG-L18"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L19",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L19",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 4,
+        "tree": "0a884d0a8c963c447c9341af446d7bd1f3af85f0",
+        "verdictRef": "notes/reports/reviewer/86fee195-6bf2-4c5d-a402-6bee5cbaf926/role-launch/BUG-L19-W7-MR4-verdict.md"
+      },
+      "owner": "261112-BUG-L19"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L2",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L2",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "verdictRef": "notes/reports/reviewer/b01c8cd3-36a8-5488-a2dc-81704f2a752d/role-launch/261112-BUG-L2-memory-verdict-r2.md"
+      },
+      "owner": "261112-BUG-L2"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L20",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L20",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "tree": "a5eba5e2b7883e233feed42fa644940db426fb66",
+        "verdictRef": "notes/reports/reviewer/142dbbea-e3be-476e-8af3-8156078e305a/role-launch/M3-memory-verdict.md"
+      },
+      "owner": "261112-BUG-L20"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L21",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L21",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "tree": "b5e45164eed8f3c457f4c03aea695fb694d5b5cd",
+        "verdictRef": "notes/reports/reviewer/90146418-474c-4f4c-8e91-6cb31ec296cb/role-launch/BUG-R21-W3-M2-memory-verdict.md"
+      },
+      "owner": "261112-BUG-L21"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L22",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L22",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "tree": "9abccc7d2946fba8761435766627e93f2a33dc73",
+        "verdictRef": "notes/reports/reviewer/e4322230-1bea-42c8-960f-34ce42cfe85b/role-launch/L22-memory-r2-pass.md"
+      },
+      "owner": "261112-BUG-L22"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L23",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L23",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "tree": "90424edbb74bfb84344dcb77d5c04756b5284db3",
+        "verdictRef": "notes/reports/reviewer/79289703-8695-4da9-a6ae-784e5001f14a/role-launch/M2-verdict.md"
+      },
+      "owner": "261112-BUG-L23"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L24",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L24",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "tree": "d85e9e4f65f23bf2ad3c9655bd511dea4b967bd4",
+        "verdictRef": "notes/reports/reviewer/fc87c56e-8eb8-46d9-aba6-6d9b41e5825a/role-launch/W3-M2-memory-verdict.md"
+      },
+      "owner": "261112-BUG-L24"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L25",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L25",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "tree": "ab0c6d090fedd9dffee5e0a3efa673fe5ba1a89c",
+        "verdictRef": "notes/reports/reviewer/d2a7129b-3f82-41d8-b949-57b8b99d3b59/role-launch/L25-M2-memory-verdict.md"
+      },
+      "owner": "261112-BUG-L25"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L27",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L27",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 1,
+        "tree": "428ab42b622bd2f5164cc08931de017a93901e85",
+        "verdictRef": "notes/reports/reviewer/144f4414-a8dc-4042-baf1-25cd88dad7cf/role-launch/L27-memory-R1-pass.md"
+      },
+      "owner": "261112-BUG-L27"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L3",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L3",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "tree": "0393d1ee06592a41617f15dc3c8a63c12d0d4233",
+        "verdictRef": "notes/reports/reviewer/2b10b13e-d81e-4d62-b902-87a497a46434/role-launch/261112-BUG-L3-W10-memory3-verdict.md"
+      },
+      "owner": "261112-BUG-L3"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L31",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L31",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "tree": "ffab9f749df33820734fe9b490b1817affe635fb",
+        "verdictRef": "notes/reports/reviewer/09226d65-683d-4475-ab0a-7f268ba3b6e1/role-launch/BUG-R31-M2-memory-verdict.md"
+      },
+      "owner": "261112-BUG-L31"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L36",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L36",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 1,
+        "tree": "f0d13cb7e4b684a697dc03bfa7025a38d905666b",
+        "verdictRef": "notes/reports/reviewer/b7530e99-6f95-5716-8a89-14d93c593965/role-launch/261112-BUG-L36-M1-memory-verdict.md"
+      },
+      "owner": "261112-BUG-L36"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L4",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L4",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 1,
+        "tree": "0eb8a9fde2f9aa45b19d23b28c116a1c8cf2e83f",
+        "verdictRef": "notes/reports/reviewer/1a16e96b-fd6b-56f2-801f-bb08a81ee053/role-launch/261112-BUG-L4-reviewer-memory-verdict.md"
+      },
+      "owner": "261112-BUG-L4"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L43",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L43",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "tree": "40a163303db8759f2158851ba3e0149a097f05c2",
+        "verdictRef": "notes/reports/reviewer/37479017-da66-4b2d-a08e-6e0bdb891d8b/role-launch/L43-W4-M3-memory-verdict.md"
+      },
+      "owner": "261112-BUG-L43"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L5",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L5",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "tree": "93d2bd1b9d2c14722f2195305748e56ec3de3fa0",
+        "verdictRef": "notes/reports/reviewer/6ea91d03-fa9e-4a58-a7ea-abba1bd5f121/memory-round-3/verdict.md"
+      },
+      "owner": "261112-BUG-L5"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L6",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L6",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 1,
+        "tree": "d2da6b0d9cdd31724c76442295d0fa6d489446d4",
+        "verdictRef": "notes/reports/reviewer/45b671b5-df7b-58d8-92dd-1a1e1dd248bd/role-launch/261112-BUG-L6-memory-review-verdict.md"
+      },
+      "owner": "261112-BUG-L6"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L7",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-BUG-L7",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-BUG",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "tree": "6963110c935311689140ea5e8971556f05a11891",
+        "verdictRef": "notes/reports/reviewer/d793149f-de5e-4f63-9ee0-1b3495c36c3a/261112-BUG-L7-memory-review-verdict.md"
+      },
+      "owner": "261112-BUG-L7"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-KNO-L3",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-KNO",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-KNO-L3",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-KNO",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "tree": "b7548088d384c950e757daab636616fe20a1013a",
+        "verdictRef": "notes/reports/reviewer/e0769575-0bab-4e1f-86a6-44c8cb307f53/memory-round-3/verdict.md"
+      },
+      "owner": "261112-KNO-L3"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-KNO-L4",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-KNO",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-KNO-L4",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-KNO",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 4,
+        "tree": "5f64518f02d3628c1ff6f41e3ba3559b37f1dc35",
+        "verdictRef": "notes/reports/reviewer/9fb0e423-7dfb-4dd7-9525-d306ca394f01/memory-round-4/VERDICT.md"
+      },
+      "owner": "261112-KNO-L4"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-RSM-L1",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-RSM",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261112-RSM-L1",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261112-RSM",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 4,
+        "tree": "bbc8450e7e631ebcc76fd70d6c7ea7be537be3ad",
+        "verdictRef": "notes/reports/reviewer/547fd9ef-49d2-4a24-96ed-c6495190b17b/role-launch/261112-RSM-L1-memory-review-verdict-r4.md"
+      },
+      "owner": "261112-RSM-L1"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261123-SUB-L1",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261123-SUB",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261123-SUB-L1",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261123-SUB",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 2,
+        "tree": "73b9ac07b7415c95815fd81fa664ee3bb3e859f8",
+        "verdictRef": "notes/reports/reviewer/03701992-be02-4d17-a978-f6590bea4583/role-launch/M2-memory-fix-verification.md"
+      },
+      "owner": "261123-SUB-L1"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261124-CAP-L4",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261124-CAP",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261124-CAP-L4",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261124-CAP",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 1,
+        "tree": "edcd4d894d102f452d6a92e5c8a09df6284f990a",
+        "verdictRef": "notes/reports/reviewer/1fea6725-708e-56a6-8d78-8b77eb6fa787/role-launch/261124-CAP-L4-memory-review-verdict.md"
+      },
+      "owner": "261124-CAP-L4"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261124-EXP-L1",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261124-EXP",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261124-EXP-L1",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261124-EXP",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "tree": "421753c72ba018f83ed57151be5f15b375233e49",
+        "verdictRef": "notes/reports/reviewer/bbf1e33a-243d-4fc3-9332-237e6af33262/role-launch/memory-review/round-3/verdict.md"
+      },
+      "owner": "261124-EXP-L1"
+    },
+    {
+      "fact": {
+        "handedOverBy": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261125-DEP-L1",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261125-DEP",
+          "unknown": {
+            "effort": "no record names the agent that handed the memory change to the review before stamps",
+            "harness": "no record names the agent that handed the memory change to the review before stamps",
+            "model": "no record names the agent that handed the memory change to the review before stamps",
+            "role": "no record names the agent that handed the memory change to the review before stamps",
+            "seat": "no record names the agent that handed the memory change to the review before stamps"
+          }
+        },
+        "reviewer": {
+          "at": "2026-11-26T12:07:40+01:00",
+          "by": "conversion",
+          "effort": "unknown",
+          "harness": "unknown",
+          "leaf": "261125-DEP-L1",
+          "model": "unknown",
+          "operation": "state-conversion",
+          "role": "unknown",
+          "seat": "unknown",
+          "task": "261125-DEP",
+          "unknown": {
+            "effort": "no record names the reviewer of a round recorded before stamps",
+            "harness": "no record names the reviewer of a round recorded before stamps",
+            "model": "no record names the reviewer of a round recorded before stamps",
+            "role": "no record names the reviewer of a round recorded before stamps",
+            "seat": "no record names the reviewer of a round recorded before stamps"
+          }
+        },
+        "round": 3,
+        "verdictRef": "notes/reports/reviewer/80a2b92a-be39-44da-a11b-74d5f12a0e07/role-launch/261125-DEP-L1-memory-verdict-r3.md"
+      },
+      "owner": "261125-DEP-L1"
+    }
+  ],
+  "schema": "ar-converted-reviews/v1"
+}
