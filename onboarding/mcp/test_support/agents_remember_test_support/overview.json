@@ -177,12 +177,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 335,
+              "end": 340,
               "kind": "line_range",
-              "start": 334
+              "start": 339
             },
             "path": "pyproject.toml"
           },
@@ -226,12 +226,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "end": 335,
+              "end": 340,
               "kind": "line_range",
-              "start": 321
+              "start": 326
             },
             "path": "pyproject.toml"
           },
@@ -310,12 +310,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 335,
+              "end": 340,
               "kind": "line_range",
-              "start": 334
+              "start": 339
             },
             "path": "pyproject.toml"
           },
@@ -472,12 +472,12 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:9376dfd235128dc9791a1ccd9417154075b19f80db3f61553041f7e2677349b0",
             "locator": {
-              "end": 89,
+              "end": 94,
               "kind": "line_range",
-              "start": 81
+              "start": 86
             },
             "path": "pyproject.toml"
           },

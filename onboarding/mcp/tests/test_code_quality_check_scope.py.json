@@ -1,13 +1,68 @@
 {
   "path": "mcp/tests/test_code_quality_check_scope.py",
-  "realizes": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "632f4359ec765d7032dd567add925975d8e648a0",
+        "content": "sha256:dbb4df9aead0ea397c9b0d365e8810ba1a908614408e6e5db23901918cedfaab",
+        "locator": {
+          "kind": "symbol",
+          "name": "PyrightScopeConfigurationTests.test_repo_pyright_config_excludes_nested_environments_and_keeps_tracked_python"
+        }
+      },
+      "facet": "Validates root pyproject.toml via validate_quality_config, verifies include is [\".\"] and all eleven **/ exclude entries without blanket dot-folder patterns, and confirms zero tracked Python files including .dagger/ match any exclude entry.",
+      "id": "PRF-519FMY",
+      "invariant": "INV-EQMWCB",
+      "origin": {
+        "handoffEntry": "BUG-R49@v1 §1",
+        "leaf": "261112-BUG-L49"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "632f4359ec765d7032dd567add925975d8e648a0",
+        "content": "sha256:9b9d6a6416b44d32ae909cf7c2904bb36e86fcd9823862aa8eddd72d3b1ce1e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "PyrightScopeConfigurationTests.test_pyright_cli_file_list_replaces_include_and_exclude_filters_listed_files"
+        }
+      },
+      "facet": "Runs real Pyright against temporary checkouts to prove a CLI file list replaces include, exclude filters explicitly listed files to zero analyzed, non-dot tracked paths stay checked under Pyright 1.1.414+, bare runs skip nested environments, and explicit file-list diagnostics match the legacy exclude list.",
+      "id": "PRF-9X97F5",
+      "invariant": "INV-45HR10",
+      "origin": {
+        "handoffEntry": "BUG-R49@v1 §2",
+        "leaf": "261112-BUG-L49"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "632f4359ec765d7032dd567add925975d8e648a0",
+        "content": "sha256:9b9d6a6416b44d32ae909cf7c2904bb36e86fcd9823862aa8eddd72d3b1ce1e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "PyrightScopeConfigurationTests.test_pyright_cli_file_list_replaces_include_and_exclude_filters_listed_files"
+        }
+      },
+      "id": "RLZ-GMXJ8J",
+      "invariant": "INV-45HR10",
+      "origin": {
+        "handoffEntry": "BUG-R49@v1 §2",
+        "leaf": "261112-BUG-L49"
+      },
+      "rationale": "Runs real Pyright (verified on 1.1.414) to prove CLI file lists replace include, exclude filters explicitly listed files (filesAnalyzed=0 on excluded paths), non-dot tracked paths stay checked under the repo's exclude list (accounting for Pyright 1.1.414+ auto-excluding **/.*), and file-list results match the legacy top-level exclude list.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "New importable package requires explicit product or verification owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "c52d652cb83448c180898bc934f58e4ca4e91699",
+            "blob": "632f4359ec765d7032dd567add925975d8e648a0",
             "content": "sha256:033725524241dd2d0b2d6fb912a7d1f3aebc6f902b253651037fbd5cb9a56d03",
             "locator": {
               "kind": "symbol",
@@ -23,11 +78,42 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c52d652cb83448c180898bc934f58e4ca4e91699",
+            "blob": "632f4359ec765d7032dd567add925975d8e648a0",
             "content": "sha256:1f61127e91d9b9f1e230472a403143cac2b6a2a62a9a54098b2f64374e3c5cae",
             "locator": {
               "kind": "symbol",
               "name": "test_package_authority_rejects_overlap_and_stale_declarations"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Root `[tool.pyright]` validates cleanly, excludes nested environments/caches without blanket dot-folder rules, and matches zero tracked Python files including `.dagger/`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "632f4359ec765d7032dd567add925975d8e648a0",
+            "content": "sha256:dbb4df9aead0ea397c9b0d365e8810ba1a908614408e6e5db23901918cedfaab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repo_pyright_config_excludes_nested_environments_and_keeps_tracked_python"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Real Pyright runs verify CLI file lists replace `include`, `exclude` still filters listed paths, non-dot tracked paths stay checked under Pyright `1.1.414+`, bare runs skip nested environments, and file-list results match legacy excludes.\n\nAnchor: `PyrightScopeConfigurationTests.test_pyright_cli_file_list_replaces_include_and_exclude_filters_listed_files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "632f4359ec765d7032dd567add925975d8e648a0",
+            "content": "sha256:d095a072e4507fd53e63ad27b9e2d6554d98e3370300d601916054ebb82b905d",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

@@ -627,7 +627,7 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Canonical declaration data drives copy recognition; only exact regular candidate source/copy equality suppresses a copy obligation, while present nonregular declarations remain named refusals. This is not synchronization or delivery evidence. [334]
 
-- Current budget guidance agrees with the root declaration. Target: pyproject.toml. [368]
+- Current budget guidance agrees with the root declaration. [368]
 
 - Retained reference account (no fresh execution or acceptance inferred): GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves reachability from main. [37]
 

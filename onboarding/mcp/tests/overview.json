@@ -8,12 +8,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:002c95e9664b637b3ae9616eda783b0f69e2004e6b7eb5c068d564f4a966e355",
             "locator": {
-              "end": 345,
+              "end": 350,
               "kind": "line_range",
-              "start": 342
+              "start": 347
             },
             "path": "pyproject.toml"
           },
@@ -6066,12 +6066,12 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 335,
+              "end": 340,
               "kind": "line_range",
-              "start": 334
+              "start": 339
             },
             "path": "pyproject.toml"
           },
@@ -6170,12 +6170,12 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "end": 335,
+              "end": 340,
               "kind": "line_range",
-              "start": 321
+              "start": 326
             },
             "path": "pyproject.toml"
           },
@@ -6209,12 +6209,12 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:726c2da9bfddd07a5a8133463a6c918ba867479c2e4c48a5d88d64de85eba3eb",
             "locator": {
-              "end": 356,
+              "end": 361,
               "kind": "line_range",
-              "start": 338
+              "start": 343
             },
             "path": "pyproject.toml"
           },
@@ -7417,12 +7417,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "end": 335,
+              "end": 340,
               "kind": "line_range",
-              "start": 321
+              "start": 326
             },
             "path": "pyproject.toml"
           },
@@ -9033,12 +9033,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 335,
+              "end": 340,
               "kind": "line_range",
-              "start": 334
+              "start": 339
             },
             "path": "pyproject.toml"
           },
@@ -9075,12 +9075,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 335,
+              "end": 340,
               "kind": "line_range",
-              "start": 334
+              "start": 339
             },
             "path": "pyproject.toml"
           },
@@ -9117,12 +9117,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 335,
+              "end": 340,
               "kind": "line_range",
-              "start": 334
+              "start": 339
             },
             "path": "pyproject.toml"
           },
@@ -9172,12 +9172,12 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 335,
+              "end": 340,
               "kind": "line_range",
-              "start": 334
+              "start": 339
             },
             "path": "pyproject.toml"
           },
@@ -9185,12 +9185,12 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:c94d379927cda9a0cfaf2b1a1c2f5d8e2020e4e0d2e51359dad9fcac5237d8a8",
             "locator": {
-              "end": 89,
+              "end": 94,
               "kind": "line_range",
-              "start": 84
+              "start": 89
             },
             "path": "pyproject.toml"
           },
@@ -9240,12 +9240,12 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 335,
+              "end": 340,
               "kind": "line_range",
-              "start": 334
+              "start": 339
             },
             "path": "pyproject.toml"
           },
@@ -9253,12 +9253,12 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:c94d379927cda9a0cfaf2b1a1c2f5d8e2020e4e0d2e51359dad9fcac5237d8a8",
             "locator": {
-              "end": 89,
+              "end": 94,
               "kind": "line_range",
-              "start": 84
+              "start": 89
             },
             "path": "pyproject.toml"
           },
@@ -9291,7 +9291,7 @@
       ]
     },
     "1819": {
-      "note": "Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: pyproject.toml.",
+      "note": "Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification.",
       "targets": [
         {
           "anchor": {
@@ -9334,10 +9334,25 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
-            "content": "sha256:030596cef7d9fea970513ce9975de6839a71c38510ba0531432b1dc3f75be9a8",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+            "content": "sha256:c94d379927cda9a0cfaf2b1a1c2f5d8e2020e4e0d2e51359dad9fcac5237d8a8",
             "locator": {
-              "kind": "file"
+              "end": 94,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+            "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 339
             },
             "path": "pyproject.toml"
           },
@@ -9346,7 +9361,7 @@
       ]
     },
     "1820": {
-      "note": "Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: pyproject.toml.",
+      "note": "Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification.",
       "targets": [
         {
           "anchor": {
@@ -9389,10 +9404,25 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
-            "content": "sha256:030596cef7d9fea970513ce9975de6839a71c38510ba0531432b1dc3f75be9a8",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+            "content": "sha256:c94d379927cda9a0cfaf2b1a1c2f5d8e2020e4e0d2e51359dad9fcac5237d8a8",
             "locator": {
-              "kind": "file"
+              "end": 94,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+            "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 339
             },
             "path": "pyproject.toml"
           },
@@ -9450,12 +9480,12 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 335,
+              "end": 340,
               "kind": "line_range",
-              "start": 334
+              "start": 339
             },
             "path": "pyproject.toml"
           },
@@ -9463,12 +9493,12 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:c94d379927cda9a0cfaf2b1a1c2f5d8e2020e4e0d2e51359dad9fcac5237d8a8",
             "locator": {
-              "end": 89,
+              "end": 94,
               "kind": "line_range",
-              "start": 84
+              "start": 89
             },
             "path": "pyproject.toml"
           },
@@ -9518,12 +9548,12 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 335,
+              "end": 340,
               "kind": "line_range",
-              "start": 334
+              "start": 339
             },
             "path": "pyproject.toml"
           },
@@ -9531,12 +9561,12 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:c94d379927cda9a0cfaf2b1a1c2f5d8e2020e4e0d2e51359dad9fcac5237d8a8",
             "locator": {
-              "end": 89,
+              "end": 94,
               "kind": "line_range",
-              "start": 84
+              "start": 89
             },
             "path": "pyproject.toml"
           },
@@ -9569,7 +9599,7 @@
       ]
     },
     "1826": {
-      "note": "Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: pyproject.toml.",
+      "note": "Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification.",
       "targets": [
         {
           "anchor": {
@@ -9612,10 +9642,25 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
-            "content": "sha256:030596cef7d9fea970513ce9975de6839a71c38510ba0531432b1dc3f75be9a8",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+            "content": "sha256:c94d379927cda9a0cfaf2b1a1c2f5d8e2020e4e0d2e51359dad9fcac5237d8a8",
             "locator": {
-              "kind": "file"
+              "end": 94,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+            "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 339
             },
             "path": "pyproject.toml"
           },
@@ -9624,7 +9669,7 @@
       ]
     },
     "1827": {
-      "note": "Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification. Target: pyproject.toml.",
+      "note": "Current targets retain the landing-report regression cases. These targets contain current source rather than an archive. The host-test policy is the design note's Python test policy. The root declaration is 10000 unit and 2000 integration cases. The root classifies scripts/agent_evals as verification.",
       "targets": [
         {
           "anchor": {
@@ -9667,10 +9712,25 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
-            "content": "sha256:030596cef7d9fea970513ce9975de6839a71c38510ba0531432b1dc3f75be9a8",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+            "content": "sha256:c94d379927cda9a0cfaf2b1a1c2f5d8e2020e4e0d2e51359dad9fcac5237d8a8",
             "locator": {
-              "kind": "file"
+              "end": 94,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+            "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 339
             },
             "path": "pyproject.toml"
           },
@@ -9696,12 +9756,12 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 335,
+              "end": 340,
               "kind": "line_range",
-              "start": 334
+              "start": 339
             },
             "path": "pyproject.toml"
           },
@@ -9775,12 +9835,12 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 335,
+              "end": 340,
               "kind": "line_range",
-              "start": 334
+              "start": 339
             },
             "path": "pyproject.toml"
           },
@@ -9856,12 +9916,12 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 335,
+              "end": 340,
               "kind": "line_range",
-              "start": 334
+              "start": 339
             },
             "path": "pyproject.toml"
           },
@@ -9881,32 +9941,8 @@
       ]
     },
     "1831": {
-      "note": "Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. These are source assertions and policy declarations, not execution evidence. The current test and support own the case/fixture logic. The design note declares 10,000 unit and 2,000 integration cases. The current configuration declares the same pair. Target: pyproject.toml.",
+      "note": "Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. These are source assertions and policy declarations, not execution evidence. The current test and support own the case/fixture logic. The design note declares 10,000 unit and 2,000 integration cases. The current configuration declares the same pair.\n\nAnchor: `_leaf_pair`; `_rename_pair`",
       "targets": [
-        {
-          "anchor": {
-            "blob": "c872b225a4a00b1386698a9d4919512eb48e92ed",
-            "content": "sha256:1391ea6bffd73da7af36c51d6f2fdec3500761e9c2602eee99492241a9df142f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_leaf_pair"
-            },
-            "path": "mcp/tests/landing_report_test_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c872b225a4a00b1386698a9d4919512eb48e92ed",
-            "content": "sha256:3af2f3679860a3cb8e2126295be245aaad34e85159a7daba51ba60dbb6862ca4",
-            "locator": {
-              "kind": "symbol",
-              "name": "_rename_pair"
-            },
-            "path": "mcp/tests/landing_report_test_support.py"
-          },
-          "kind": "test"
-        },
         {
           "anchor": {
             "blob": "bd82e5f84fe7738500ae45ade1bc024892af108c",
@@ -9948,14 +9984,27 @@
         },
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
-            "content": "sha256:030596cef7d9fea970513ce9975de6839a71c38510ba0531432b1dc3f75be9a8",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
+            "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "kind": "file"
+              "end": 340,
+              "kind": "line_range",
+              "start": 339
             },
             "path": "pyproject.toml"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c872b225a4a00b1386698a9d4919512eb48e92ed",
+            "content": "sha256:1e10f3bf8172817fe204371dafffb845edc42a2bb29b93a03f98f010e460b0eb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/landing_report_test_support.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -10611,12 +10660,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
             "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "end": 335,
+              "end": 340,
               "kind": "line_range",
-              "start": 321
+              "start": 326
             },
             "path": "pyproject.toml"
           },
