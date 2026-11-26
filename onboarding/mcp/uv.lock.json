@@ -40,7 +40,7 @@
   ],
   "references": {
     "2": {
-      "note": "The lock records the editable Agents Remember distribution, its Python requirement and its resolved dependencies.",
+      "note": "The lock records the editable Agents Remember distribution, its Python requirement and its resolved dependencies.\n\nAnchor: agents-remember-mcp",
       "targets": [
         {
           "anchor": {

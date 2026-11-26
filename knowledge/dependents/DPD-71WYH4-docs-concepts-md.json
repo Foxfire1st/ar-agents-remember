@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "d2d3845baf9541100f06371fde62c4c0bb678b04",
-    "commit": "3ee8f6ad584e509ef6df637c1bb42484993b35d0",
+    "codeTree": "83eacca898d910be73255f63f549a2b0ef290fc8",
+    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
     "role": "curator",
-    "statement": "Verified against synced L38 candidate on 3ee8f6ad/b83cff67: docs/concepts.md (lines 1-972) accurately defines tool answers, archived role agents (recipient-archived), message filing, held messages, and archive-before-enclosure-removal, consistent with L38.",
-    "task": "261112-BUG-L38",
+    "statement": "docs/concepts.md remains accurate on the synced DEP-L7 candidate because the 3.0.8 version bump in mcp/pyproject.toml and the _JudgedHistoryClosing.restore boolean fix in direct_landing.py leave every memory concept, brief, index, and gate contract unchanged.",
+    "task": "261125-DEP-L7",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 23,
+  "revision": 24,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
+      "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
@@ -361,7 +361,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
     },
     {
-      "blob": "f6c05e150769e32c8c67cd6f806b4d4ec29d7140",
+      "blob": "87d2a6e6ab2d0174f030bcad540cf4202ab1c654",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },
@@ -471,14 +471,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T22:06:22+01:00",
+    "at": "2026-11-26T02:27:57+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
+    "leaf": "261125-DEP-L7",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
-    "task": "261112-BUG"
+    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "task": "261125-DEP"
   }
 }

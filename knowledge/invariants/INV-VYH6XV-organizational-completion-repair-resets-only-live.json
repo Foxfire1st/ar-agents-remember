@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Four regression tests prove the repair omits the removed closeout_door dataclass field, pre-validates and publishes the successor waiting door, and recovers an interrupted door write instead of leaving a half-applied reset."
+  },
+  "applicability": "Organizational completion repair of a closed-out worktree contract whose live closeout door is claimed.",
+  "conditions": [
+    "The live closeout door is claimed by the active integrate generation being reset.",
+    "The reopened WorktreeContract omits retired fields and pre-validates the successor waiting door before writing the reset contract."
+  ],
+  "exclusions": [
+    "Non-integrate closeout doors or unclaimed live doors, which are refused before mutation."
+  ],
+  "id": "INV-VYH6XV",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_organizational_completion_repair.py::test_organizational_completion_repair_evidence_builds_reset_digest_without_mutating_disk; mcp/tests/test_organizational_completion_repair.py::test_prepare_organizational_completion_repair_resets_contract_and_publishes_waiting_door; mcp/tests/test_organizational_completion_repair.py::test_organizational_completion_repair_refuses_unclaimed_live_door; mcp/tests/test_organizational_completion_repair.py::test_prepare_organizational_completion_repair_recovers_after_interrupted_door_publication"
+      ],
+      "path": "261125-DEP-L7-curator-handoff.json"
+    },
+    "handoffEntry": "DEP-R07@v1 item 1",
+    "leaf": "261125-DEP-L7",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Organizational completion repair resets only live WorktreeContract fields in _quality_repair_contract and publishes the validated successor waiting door through the closeout door journal with door-aware completion classification and interruption recovery.",
+  "supersedes": [],
+  "title": "Organizational completion repair publishes waiting door with recovery",
+  "writer": {
+    "at": "2026-11-26T00:47:13+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "task": "261125-DEP"
+  }
+}

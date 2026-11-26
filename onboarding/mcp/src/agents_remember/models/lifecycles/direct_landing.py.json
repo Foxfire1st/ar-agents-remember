@@ -40,12 +40,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6c05e150769e32c8c67cd6f806b4d4ec29d7140",
+            "blob": "87d2a6e6ab2d0174f030bcad540cf4202ab1c654",
             "content": "sha256:ea567ad01d71cb0a8c9aff95d74eed72c80e57eb2dd28a64365e5889e09e4efd",
             "locator": {
-              "end": 1480,
+              "end": 1481,
               "kind": "line_range",
-              "start": 1443
+              "start": 1444
             },
             "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
           },

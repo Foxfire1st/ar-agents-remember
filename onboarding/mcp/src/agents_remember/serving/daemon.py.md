@@ -110,7 +110,7 @@ protocol.
 
 
 
-- The version comparator uses installed package metadata with the source-checkout release fallback.
+- The version comparator uses installed package metadata with the source-checkout release fallback. [4]
 
 
 
@@ -145,5 +145,3 @@ it — an **adopted** daemon keeps the cadences it was started with.
 - The daemon ensure the dashboard calls. [5]
 
 - The spawn path the host is not part of. [6]
-
-- The version comparator is resolved from installed package metadata. [4]

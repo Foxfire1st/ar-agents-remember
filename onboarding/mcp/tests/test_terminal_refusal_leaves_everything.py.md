@@ -10,7 +10,7 @@ A refused terminal branch retirement changes nothing.
 
 ## Code Commentary
 
-MIK-R82 Failure And Recovery Behavior: the cleanup once deleted a fully merged branch and then refused at a later check. Every check that can refuse now runs before the first deletion; a mid-deletion failure is answered as partial completion naming deleted and remaining work, never as a refusal.
+MIK-R82 Failure And Recovery Behavior: the cleanup once deleted a fully merged branch and then refused at a later check. Every check that can refuse now runs before the first deletion; a mid-deletion failure is answered as partial completion naming deleted and remaining work, never as a refusal. The test contract helper builds contracts with `memory_mode="external"` when a memory repository is supplied and `memory_mode="disabled"` otherwise, matching the closed `MemoryMode` boundary.
 
 ## Evidence
 

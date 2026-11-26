@@ -149,7 +149,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6c05e150769e32c8c67cd6f806b4d4ec29d7140",
+            "blob": "87d2a6e6ab2d0174f030bcad540cf4202ab1c654",
             "content": "sha256:a3283de749cb1a03b7546976ec5eecf7c08f1a4387bed56459a864ddc166bb27",
             "locator": {
               "kind": "symbol",
@@ -161,12 +161,12 @@
         },
         {
           "anchor": {
-            "blob": "f6c05e150769e32c8c67cd6f806b4d4ec29d7140",
+            "blob": "87d2a6e6ab2d0174f030bcad540cf4202ab1c654",
             "content": "sha256:5062876e01618e41a17bc08127b800452bd3411f605343afd40a6fddd9597cec",
             "locator": {
-              "end": 1258,
+              "end": 1259,
               "kind": "line_range",
-              "start": 1191
+              "start": 1192
             },
             "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
           },

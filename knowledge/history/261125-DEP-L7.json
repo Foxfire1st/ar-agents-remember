@@ -1,0 +1,1373 @@
+{
+  "closed": true,
+  "leaf": "261125-DEP-L7",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-26T02:38:48+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261125-DEP-L7",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+      "task": "261125-DEP"
+    },
+    "reviewer": {
+      "at": "2026-11-26T02:38:48+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261125-DEP-L7",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "bca5df3f-be62-4ab0-92d0-1ff29ec3d8d5",
+      "task": "261125-DEP",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 4,
+    "tree": "5faad2d3159b7f9d71292e173c5c71473f291dc4",
+    "verdictRef": "notes/reports/reviewer/bca5df3f-be62-4ab0-92d0-1ff29ec3d8d5/role-launch/261125-DEP-L7-memory-round4-verdict.md"
+  },
+  "rows": [
+    {
+      "considered": [
+        "FAM-DGPZ0R",
+        "FAM-7NBVYB"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-01JE7J",
+      "items": [
+        "sha256:432663d75280d89ff7029141bcdc27db58376375cf98a230fb72bc9a61cc9d2e"
+      ],
+      "reason": "Examined FAM-DGPZ0R and FAM-7NBVYB; narrowing RECORD_ROW_KINDS to canonical ids.RecordKind is a self-contained static-typing contract in authoring_rows.py.",
+      "revision": 1,
+      "subject": "membership:INV-0YAS0P"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-0T8G8K",
+      "items": [
+        "sha256:e43f5e5fc34895c61a33bd248af798236f6def37b85ad689b8892f93e3c743e6"
+      ],
+      "reason": "docs/workflows.md remains accurate on the synced DEP-L7 candidate because fixing _JudgedHistoryClosing.restore in direct_landing.py preserves the documented direct-landing and workflow-gate controls.",
+      "revision": 9,
+      "subject": "DPD-XAARS1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0Z3W7Z",
+      "items": [
+        "sha256:b01fd0e32c6f61a7896ef4243937163df09c58e2a3c3b2959750451d0390e818"
+      ],
+      "reason": "Updated direct_landing.py.md to record _JudgedHistoryClosing.restore's non-short-circuiting boolean contract and refreshed its citations.",
+      "sources": [
+        {
+          "blob": "87d2a6e6ab2d0174f030bcad540cf4202ab1c654",
+          "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/direct_landing.py"
+    },
+    {
+      "considered": [
+        "FAM-61DY2V",
+        "FAM-GJYFFP",
+        "FAM-NQQP2T"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-13XF4A",
+      "items": [
+        "sha256:39beed4948a25952e743923588cc2c4c8b098115b50e6c46a6c051f9da856b70"
+      ],
+      "reason": "Examined FAM-61DY2V, FAM-GJYFFP, and FAM-NQQP2T; organizational completion repair door-journal publication and reset-door-pending recovery is a standalone repair invariant rather than part of their joint guarantees.",
+      "revision": 1,
+      "subject": "membership:INV-VYH6XV"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-26GQ2A",
+      "items": [],
+      "reason": "docs/design/python-pytest-bootstrap.md remains accurate on the synced DEP-L7 candidate because the four new unit-regression modules (681 of 833 total), the quality_plan.py targeted-module alias, and the shifted stress-durability lane lines (852-854) preserve every pytest bootstrap and coverage-boundary rule.",
+      "revision": 20,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-29NEFS",
+      "items": [
+        "sha256:3a83ce0ec45c72df0b5b58e7710cad6603a255339688a7797dc149e7e12a1180"
+      ],
+      "reason": "Created onboarding card and sidecar for new unit-regression module test_type_hint_contracts.py.",
+      "sources": [
+        {
+          "blob": "68b8e480ad7323e50c3bd8c76af369db46109a43",
+          "path": "mcp/tests/test_type_hint_contracts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_type_hint_contracts.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-38W4ZX",
+      "items": [
+        "sha256:6a571cc521bccbc745138e93ebb37894c59fab9efb6e485fb9637352ef7a1d3f"
+      ],
+      "reason": "Reviewed worktrees/modules/overview.md against the continuation schema-version fixes in diagnostic_executor.py and final_codex_executor.py; module-area boundaries are unchanged.",
+      "sources": [
+        {
+          "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
+          "path": "mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py"
+        },
+        {
+          "blob": "0732386686b1d8882ce3fbf5a73b0c7a1a8d6b57",
+          "path": "mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-39536D",
+      "items": [
+        "sha256:575ff8fe043fec078d8d625f56944b21e95c55fc050110072c78e964f7a5d34b"
+      ],
+      "reason": "Reviewed mcp/overview.md against DEP-L7 changes; package-level boundaries and architecture are unchanged.",
+      "sources": [
+        {
+          "blob": "3f1ec695e5131272c4180270ee35efa6b5ff40fa",
+          "path": "mcp/src/agents_remember/cli/dashboard_address.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3GADR5",
+      "items": [
+        "sha256:847f5fdddc6ce4d3b25d1ecbe913d72cc03fef865d5f58543175d634428564b8"
+      ],
+      "reason": "Created onboarding card and sidecar for new unit-regression module test_quality_continuation_declaration.py.",
+      "sources": [
+        {
+          "blob": "5ff0aec76081217fda92cee2a982f4cf76a0fdd1",
+          "path": "mcp/tests/test_quality_continuation_declaration.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_quality_continuation_declaration.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3K0BZJ",
+      "items": [
+        "sha256:dec6ee1c00ad45565f1eab4dee9c3ff48465bc8c6ad9a4baf73893732a164000"
+      ],
+      "reason": "Reviewed worktrees/integration/overview.md against the organizational_completion_repair.py repair; integration-area boundaries are unchanged.",
+      "sources": [
+        {
+          "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
+          "path": "mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5VDETB",
+      "items": [
+        "sha256:3173f6f427197126595fa540c33cf8730915c10d1e58614c813db7f3c91ae9ea"
+      ],
+      "reason": "Reviewed lifecycle_operation_location.py.md against the _outside_scratch import alias; public field names and runtime behavior described by the card are unchanged (anchors refreshed via citation_fix).",
+      "sources": [
+        {
+          "blob": "5afff0ef3465cfcf57f12fc904698545d653f00b",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f929554ebe4c1f8b1ec1adac53e0e2f8b193a25f",
+            "content": "sha256:e20d5144c0551e7c4ef2bab77c9410e36211711e4314dd97246ab4d1a353f7f3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "c883e9093950ad17c032342760a1509dfd09b128",
+            "content": "sha256:baae241f5d74b2b2aa4cc3436d1770b83a1d681a17f4c5875d002f3898668fa2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "5afff0ef3465cfcf57f12fc904698545d653f00b",
+            "content": "sha256:c0025b0f0e7b5b865df6188caf39de0f7617e8d841b0ce42d82a4945336ff200",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosurePublicationArtifacts"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+          },
+          "before": {
+            "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+            "content": "sha256:a9fd12a668a0682f1477390ec342e8c9f4f85d1a29d18af5650398648c9a2a0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosurePublicationArtifacts"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+          },
+          "id": "RLZ-EPC1V3"
+        },
+        {
+          "after": {
+            "blob": "a3845f60a1550756085e05c474b659dfb0eadfc6",
+            "content": "sha256:8da4d4033c847f9c692966418ea7df2a968ac6808b9f1eb53a4d6b97d0f83112",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "5ec887831fa860b5f4478321f94a6966ae51159c",
+            "content": "sha256:fa2e21ee4f5a648365c96f99bf7b45fec9e8e3eb6dc086daaab1c0b4a6375dfe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        },
+        {
+          "after": {
+            "blob": "5afff0ef3465cfcf57f12fc904698545d653f00b",
+            "content": "sha256:3481e50de9e23384c9924b0678455e364f26e57ad4684a57be56e065e488cc3d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+          },
+          "before": {
+            "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+            "content": "sha256:e8192f2dec59f603aa8e7547984f5b610179236d25f127b791a09ae8fd906bf2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+          },
+          "id": "RLZ-HQQ510"
+        },
+        {
+          "after": {
+            "blob": "5afff0ef3465cfcf57f12fc904698545d653f00b",
+            "content": "sha256:a9738bff47f26abc8ea12ae1d56847040e31fd7469259707827811a2f367c0b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_materialise_outside_scratch"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+          },
+          "before": {
+            "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+            "content": "sha256:581a9ca3cc55d1ab6fed35decea83e19dca0971c1a695d51bd917f7060c2bf40",
+            "locator": {
+              "kind": "symbol",
+              "name": "_materialise_outside_scratch"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+          },
+          "id": "RLZ-K0GVZ5"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-60JR1X",
+      "items": [
+        "sha256:dcea4d81154652310c85ed1742cdaa4364f9cf319b69a235030d46c93b37fe0b"
+      ],
+      "reason": "Aliasing the outside_scratch import in lifecycle_operation_location.py and updating the two test catalogs leave the private enclosure scratch-root contract unchanged; all five realizations re-anchor at the synced candidate.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "considered": [
+        "FAM-NQQP2T",
+        "FAM-61DY2V",
+        "FAM-GJYFFP"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-7P5B6P",
+      "items": [
+        "sha256:e81e4569124197f682b697aa56aeea341ae5b5711924acbea602fbb948f14ea9"
+      ],
+      "reason": "Examined FAM-NQQP2T (which holds HistoryClosing.restore via INV-KSJZS0), FAM-61DY2V, and FAM-GJYFFP; _JudgedHistoryClosing.restore preserves the base boolean contract locally without altering FAM-NQQP2T's joint landing-pair guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-FRMFFG"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9FNJN9",
+      "items": [
+        "sha256:c5b81591a3ff333c6c838001da3d3ec3f4d24dfa909567f64a2c3ebd3757afdc"
+      ],
+      "reason": "The weakness stands: DEP-L7 only narrowed the RECORD_ROW_KINDS type annotation in authoring_rows.py and did not change _write_rows duplicate-run behavior, so the anchor remains open and accurate.",
+      "revision": 2,
+      "subject": "WKN-J9VT2X"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CT23D1",
+      "items": [
+        "sha256:935e7bfadc7e6ea7e6828454d85a176bd4aa60bb050653ebf71f7d591e8651ca",
+        "sha256:a5a56ee0b7d15d80140561972083036fad28b0a6aac7131248e20c74e5451475"
+      ],
+      "reason": "Updated final_codex_executor.py.md to document AUTHORITY_SCHEMA_VERSION continuation admission without type-ignore suppression and refreshed its citations.",
+      "sources": [
+        {
+          "blob": "0732386686b1d8882ce3fbf5a73b0c7a1a8d6b57",
+          "path": "mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DAF1N3",
+      "items": [
+        "sha256:63b3cc2a9bd9ae7e24b78dc15f88963034b06adea20af07d22206f44bbce1d15",
+        "sha256:9aadbab097359433586ef0c298342a667c25d8b2c720bec34c027d3f60cf6ba3",
+        "sha256:b6b4768c23640d9134c8bc2d39327cc513b141a57fe287f5ab37067caf8adc95"
+      ],
+      "reason": "Updated test_mik_r196_dashboard_address_truth.py.md to document the two new chat_address_for import-error and bridge-failure regression tests and refreshed its citations.",
+      "sources": [
+        {
+          "blob": "f5004e3f8aab0d49d896e53f228f8c7dbf041656",
+          "path": "mcp/tests/test_mik_r196_dashboard_address_truth.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_mik_r196_dashboard_address_truth.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-E6NSTB",
+      "items": [],
+      "reason": "docs/reference/mcp-tools.md remains accurate on the synced DEP-L7 candidate because aliasing outside_scratch in lifecycle_operation_location.py preserves EnclosurePublicationArtifacts and leaves every MCP tool contract unchanged.",
+      "revision": 23,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "considered": [
+        "FAM-Q5J2ZC"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-FDZ6NQ",
+      "items": [
+        "sha256:0de077db1de3aa74cec5605471edae60cec424332c3133166c8e0d68468db62f"
+      ],
+      "reason": "Examined FAM-Q5J2ZC; aliasing quality_targeted for runtime type-hint resolution on CheckConfig is a self-contained test-support typing contract.",
+      "revision": 1,
+      "subject": "membership:INV-2Q2JKR"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-G08PT7",
+      "items": [],
+      "reason": "docs/design/python-test-evidence.md remains accurate on the synced DEP-L7 candidate because aliasing the targeted import in quality_plan.py preserves CheckConfig's public fields and every test-evidence planning boundary.",
+      "revision": 3,
+      "subject": "DPD-6ZHCCN"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HC23AW",
+      "items": [
+        "sha256:34c2889991aa5a02722be10e9f9acdd7ad83c7ea4c93aace64782133cdc53fbc"
+      ],
+      "reason": "Reviewed code_quality/overview.md against the quality_plan.py alias fix and re-authored reference [14] against CheckConfig/Step/quality_steps.",
+      "sources": [
+        {
+          "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
+          "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/code_quality/overview"
+    },
+    {
+      "considered": [
+        "FAM-GJYFFP"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-HMV2T4",
+      "items": [
+        "sha256:8070436dca687a7c7d2545a3ab2ef6fc99dbaed436d4a774f05c70d2d3201254"
+      ],
+      "reason": "Examined FAM-GJYFFP; lazy Paseo bridge import ordering in chat_address_for is an isolated CLI error-surface contract outside the granted-leaf publication family.",
+      "revision": 1,
+      "subject": "membership:INV-TMKPZR"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HRRZVN",
+      "items": [
+        "sha256:83f2f0640203d2e03fce530cd29f16b7df24116451def855dafd764cd5089832"
+      ],
+      "reason": "Reviewed application/overview.md against the RECORD_ROW_KINDS type narrowing in authoring_rows.py; application-layer contracts are unchanged.",
+      "sources": [
+        {
+          "blob": "16c98b76c1608e3e38922bd9e890e406e1e0f57f",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HYYEEW",
+      "items": [
+        "sha256:1ec3db1f7fcfa9e6d1d52036d9dfc16d321b0e12b9c1de572b6ca01c0685e2c2",
+        "sha256:e5ff6b45a25029fd4c669e847472fc1b06fe5af9b559662dec198a052dbc8436"
+      ],
+      "reason": "Updated diagnostic_executor.py.md to document AUTHORITY_SCHEMA_VERSION continuation admission without type-ignore suppression and refreshed its citations.",
+      "sources": [
+        {
+          "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
+          "path": "mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-JAXBBM",
+      "items": [
+        "sha256:e152f01ab98c54c5d7dd4e1de32d48e75167773713015c00c619c01dcb70b733"
+      ],
+      "reason": "docs/concepts.md remains accurate on the synced DEP-L7 candidate because the 3.0.8 version bump in mcp/pyproject.toml and the _JudgedHistoryClosing.restore boolean fix in direct_landing.py leave every memory concept, brief, index, and gate contract unchanged.",
+      "revision": 24,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JY9PDT",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Updated test-evidence-lanes.toml.md with the 681 unit-regression / 125 integration / 833 total counts, shifted line coordinates, the four DEP-R07 module registrations, and refreshed references.",
+      "sources": [
+        {
+          "blob": "f929554ebe4c1f8b1ec1adac53e0e2f8b193a25f",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KHNZYM",
+      "items": [
+        "sha256:d8352365697bed6da4f70f3c8b8290c75742129a1f76dcf263dda6217e6f4572"
+      ],
+      "reason": "Created onboarding card and sidecar for new unit-regression module test_judged_history_closing_restore.py.",
+      "sources": [
+        {
+          "blob": "7403d127dca8f0e55ab06eeaf24c7d4c7677a694",
+          "path": "mcp/tests/test_judged_history_closing_restore.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_judged_history_closing_restore.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-M26E5T",
+      "items": [
+        "sha256:505fddab0e833642487e7dc8a9ff1974b1008654c21e78b5e62cc9e991448277"
+      ],
+      "reason": "Reviewed worktrees/overview.md against DEP-L7 defect repairs; worktree-layer responsibilities and routing are unchanged.",
+      "sources": [
+        {
+          "blob": "87d2a6e6ab2d0174f030bcad540cf4202ab1c654",
+          "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/overview"
+    },
+    {
+      "considered": [
+        "FAM-61DY2V",
+        "FAM-NQQP2T"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-M80CNR",
+      "items": [
+        "sha256:8e8288259ec2427aabd955eb3620dfbf0d05490cc4052eb2f8f579e1a8429c50"
+      ],
+      "reason": "Examined FAM-61DY2V and FAM-NQQP2T; DaggerHostDeclaration continuation schema-version admission spans the diagnostic and final-codex executors independently of leaf-landing families.",
+      "revision": 1,
+      "subject": "membership:INV-0TK9W7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-MB0GRQ",
+      "items": [
+        "sha256:8298cc04887c15b658f9b5728c89e73e964649596124a8c2236c2585bd5505aa"
+      ],
+      "reason": "docs/design/python-evidence-system.md remains accurate on the synced DEP-L7 candidate because adding the four unit-regression modules (681 of 833 total) and their source-derived lifecycle consumer rows preserves every lane, canonical-ordering, and ownership rule.",
+      "revision": 18,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N7K8HG",
+      "items": [
+        "sha256:2f42f8e2b8fc273166cd2c5c000ac4604a0ea658e3977ce9c4d99ee14bf07be4",
+        "sha256:635ada43edac4d056c799fb70caac433371efe4c8029395e13a7106fe0232add"
+      ],
+      "reason": "Reviewed test_post_integration_cleanup_guidance.py.md against the integration_status='not-started' literal fix; existing card prose stays accurate without wording changes (file-level reference refreshed via citation_fix).",
+      "sources": [
+        {
+          "blob": "4e516d80943f98b149d2541b81cd0bd9b9c9c07c",
+          "path": "mcp/tests/test_post_integration_cleanup_guidance.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_post_integration_cleanup_guidance.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NS1T57",
+      "items": [
+        "sha256:fa1568f0fe66859ceba8200e47a0a3a7eb1fd317b1bb55a397dfc865d5b1a848"
+      ],
+      "reason": "Created onboarding card and sidecar for new unit-regression module test_organizational_completion_repair.py.",
+      "sources": [
+        {
+          "blob": "b1f8fc7b8e8cee9327cfe3442af8a1c3bfd9babc",
+          "path": "mcp/tests/test_organizational_completion_repair.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_organizational_completion_repair.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f929554ebe4c1f8b1ec1adac53e0e2f8b193a25f",
+            "content": "sha256:e20d5144c0551e7c4ef2bab77c9410e36211711e4314dd97246ab4d1a353f7f3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "c883e9093950ad17c032342760a1509dfd09b128",
+            "content": "sha256:baae241f5d74b2b2aa4cc3436d1770b83a1d681a17f4c5875d002f3898668fa2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-PJFPTJ",
+      "items": [
+        "sha256:8ddfb25520edef2404ed9e08a1a828175db8c60b754cb906c231e2d8085b6d98"
+      ],
+      "reason": "Adding four existing unit-regression test modules to test-evidence-lanes.toml keeps every listed module present on this tree without changing the certification-rail contract; re-anchored at the synced candidate.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PZB96Y",
+      "items": [
+        "sha256:16f34cffac570044b0a6bd7af131ef65541b5dcebe2aaf0a49c36754b259f413",
+        "sha256:1c9668d59b54ebcc061354982203db7c8383e889c57e966c68c56e60f2ecc995",
+        "sha256:205486d3d5df1641f0f546533a1c10f93c01577595499949fcd46add43acc30e",
+        "sha256:20b50b6660344210c639097b8fdde95b0f1cd8a23ebe6cefe74e65d6c3176085",
+        "sha256:2d3d3a176c7abde997c4eaf22df1b2d89beb19be9c8e28083080b9dd504b62c9",
+        "sha256:50b5a1e0f9c92a59ebd210c045f93c50c91f5b42177e238e2d2fdde9764c2632"
+      ],
+      "reason": "Updated organizational_completion_repair.py.md to document removed closeout_door kwarg cleanup, pre-validated successor waiting door publication, reset-door-pending recovery, and refreshed citations.",
+      "sources": [
+        {
+          "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
+          "path": "mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QA432J",
+      "items": [
+        "sha256:2a92072eb088543b643bad1ace45476155db14160d4c384165bb00771ffa9d4d",
+        "sha256:d320b04164638367dba651e949097d3b3757db2b8dc15f99bbea72843df873f2"
+      ],
+      "reason": "Updated test_terminal_refusal_leaves_everything.py.md to note memory_mode='disabled' in _contract and re-authored its file-level reference.",
+      "sources": [
+        {
+          "blob": "3cddf1a23d0626d6703551ad0b7c0dd0c2f2897c",
+          "path": "mcp/tests/test_terminal_refusal_leaves_everything.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_terminal_refusal_leaves_everything.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-QZ8CJB",
+      "items": [
+        "sha256:7ad921659f56898d2781d76c4f82cd807048918419a6330ecbe87ba7fb2ccc06"
+      ],
+      "reason": "docs/features.md remains accurate on the synced DEP-L7 candidate because preserving HistoryClosing.restore's boolean contract in direct_landing.py changes no documented feature, tool boundary, or landing control.",
+      "revision": 26,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-T65ACJ",
+      "items": [],
+      "reason": "docs/guides/use-external-memory.md remains accurate on the synced DEP-L7 candidate because fixing _JudgedHistoryClosing.restore in direct_landing.py preserves the documented external-memory closeout and restoration behavior.",
+      "revision": 6,
+      "subject": "DPD-9F0Q8G"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-W0EK1Z",
+      "items": [
+        "sha256:f52d69455c5cb017082150ebafcaa9c4d0cffa712042a766ed3482ff9d40a349"
+      ],
+      "reason": "Reviewed authoring_rows.py.md against the one-line RECORD_ROW_KINDS type narrowing to Final[tuple[RecordKind, ...]]; existing prose stays accurate and needs no wording change (anchors refreshed via citation_fix).",
+      "sources": [
+        {
+          "blob": "16c98b76c1608e3e38922bd9e890e406e1e0f57f",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a3845f60a1550756085e05c474b659dfb0eadfc6",
+            "content": "sha256:8da4d4033c847f9c692966418ea7df2a968ac6808b9f1eb53a4d6b97d0f83112",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "5ec887831fa860b5f4478321f94a6966ae51159c",
+            "content": "sha256:fa2e21ee4f5a648365c96f99bf7b45fec9e8e3eb6dc086daaab1c0b4a6375dfe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "f929554ebe4c1f8b1ec1adac53e0e2f8b193a25f",
+            "content": "sha256:e20d5144c0551e7c4ef2bab77c9410e36211711e4314dd97246ab4d1a353f7f3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "c883e9093950ad17c032342760a1509dfd09b128",
+            "content": "sha256:baae241f5d74b2b2aa4cc3436d1770b83a1d681a17f4c5875d002f3898668fa2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-W86R7Z",
+      "items": [
+        "sha256:7685b1897aa331326f04ce3e71f5564dc1a7be4db38d37b17bcc4f0272f9e9bf"
+      ],
+      "reason": "Both evidence catalogs gained the four new DEP-R07 unit-regression modules and their source-derived consumers in canonical sorted order with no duplicates or deleted modules; both file-level realizations re-anchor at the synced candidate.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WJWXD3",
+      "items": [
+        "sha256:0a619812fdf6aaddbbd8cc0b1387ce329117a2de6d0c710e2d581391a58c0aff",
+        "sha256:e6892cfe3ecefac28250ac8a5185b5a9fcf9b995123eb97036b429cd800e2ed2",
+        "sha256:f3fd3ef9f329026653bd6943ddcac222e26d910f0ef72ee29a292c9d62c8150d"
+      ],
+      "reason": "Reviewed quality_plan.py.md against the quality_targeted import alias and re-authored its CheckConfig symbol reference against the updated source.",
+      "sources": [
+        {
+          "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
+          "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XVEJWD",
+      "items": [
+        "sha256:a1e1a8425f17a3434526e4eef180af1a0f53420c7a9021a949fb71bc87665182"
+      ],
+      "reason": "Reviewed worktrees/integration/lifecycle/overview.md against the _outside_scratch import alias in lifecycle_operation_location.py; lifecycle-area boundaries are unchanged.",
+      "sources": [
+        {
+          "blob": "5afff0ef3465cfcf57f12fc904698545d653f00b",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XZGFBZ",
+      "items": [
+        "sha256:f4a17439b6f8e88976509419f4f577a79c117842fdab0d60849641f55ab6653d"
+      ],
+      "reason": "Updated mcp/tests/overview.md with the 833-module catalog count, shifted Node-lockfile line coordinates, summary of the four new DEP-R07 regression suites, and refreshed catalog references.",
+      "sources": [
+        {
+          "blob": "a3845f60a1550756085e05c474b659dfb0eadfc6",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "f929554ebe4c1f8b1ec1adac53e0e2f8b193a25f",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "7403d127dca8f0e55ab06eeaf24c7d4c7677a694",
+          "path": "mcp/tests/test_judged_history_closing_restore.py"
+        },
+        {
+          "blob": "f5004e3f8aab0d49d896e53f228f8c7dbf041656",
+          "path": "mcp/tests/test_mik_r196_dashboard_address_truth.py"
+        },
+        {
+          "blob": "b1f8fc7b8e8cee9327cfe3442af8a1c3bfd9babc",
+          "path": "mcp/tests/test_organizational_completion_repair.py"
+        },
+        {
+          "blob": "4e516d80943f98b149d2541b81cd0bd9b9c9c07c",
+          "path": "mcp/tests/test_post_integration_cleanup_guidance.py"
+        },
+        {
+          "blob": "5ff0aec76081217fda92cee2a982f4cf76a0fdd1",
+          "path": "mcp/tests/test_quality_continuation_declaration.py"
+        },
+        {
+          "blob": "3cddf1a23d0626d6703551ad0b7c0dd0c2f2897c",
+          "path": "mcp/tests/test_terminal_refusal_leaves_everything.py"
+        },
+        {
+          "blob": "68b8e480ad7323e50c3bd8c76af369db46109a43",
+          "path": "mcp/tests/test_type_hint_contracts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "considered": [
+        "FAM-61DY2V",
+        "FAM-DGPZ0R"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-YTM2VW",
+      "items": [
+        "sha256:78917e46d9a4c0f4a5ffaaabb187bba46e2b21a16baf68e5b5c8bd8607163bb8"
+      ],
+      "reason": "Examined FAM-61DY2V and FAM-DGPZ0R; aliasing outside_scratch for runtime type-hint resolution on EnclosurePublicationArtifacts is a self-contained typing contract.",
+      "revision": 1,
+      "subject": "membership:INV-TYX0QS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z0VKCA",
+      "items": [
+        "sha256:3a9a0d3874588e1d1c52e8ae4fd6ac83d02a4dee46e509655928923657791340"
+      ],
+      "reason": "Updated dashboard_address.py.md to record that chat_address_for imports PaseoBridgeFailure and bridge_call before entering try/except so failed imports surface ImportError rather than UnboundLocalError, and refreshed its citations.",
+      "sources": [
+        {
+          "blob": "3f1ec695e5131272c4180270ee35efa6b5ff40fa",
+          "path": "mcp/src/agents_remember/cli/dashboard_address.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/dashboard_address.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z4E93E",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Updated evidence-lifecycle.toml.md with the four DEP-R07 regression modules' consumer registrations, shifted line coordinates, and refreshed catalog references.",
+      "sources": [
+        {
+          "blob": "a3845f60a1550756085e05c474b659dfb0eadfc6",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f929554ebe4c1f8b1ec1adac53e0e2f8b193a25f",
+            "content": "sha256:e20d5144c0551e7c4ef2bab77c9410e36211711e4314dd97246ab4d1a353f7f3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "c883e9093950ad17c032342760a1509dfd09b128",
+            "content": "sha256:baae241f5d74b2b2aa4cc3436d1770b83a1d681a17f4c5875d002f3898668fa2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "a3845f60a1550756085e05c474b659dfb0eadfc6",
+            "content": "sha256:8da4d4033c847f9c692966418ea7df2a968ac6808b9f1eb53a4d6b97d0f83112",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "5ec887831fa860b5f4478321f94a6966ae51159c",
+            "content": "sha256:fa2e21ee4f5a648365c96f99bf7b45fec9e8e3eb6dc086daaab1c0b4a6375dfe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Z98Q1C",
+      "items": [
+        "sha256:7a5dcefbeaee9fdeeeaffbeb93d630b24c9a828196d83ed1da54c8d9f308a0d8"
+      ],
+      "reason": "The four new DEP-R07 unit-regression modules extended test-evidence-lanes.toml and evidence-lifecycle.toml without altering the silent turn-end wake obligation; both file-level realizations re-anchor at the synced candidate.",
+      "revision": 7,
+      "subject": "INV-1ZKP4R"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:bc77205df47ce51870a61eddf44c6da9ecfb06b5819c55bdf17f0433842d60b2",
+      "record": "DPD-6ZHCCN",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-26T01:26:40+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:f7bc0727ad6be7c482335f4f9b3134e849c49f0abf9900e65c9a4c81fdf51f1b",
+      "record": "DPD-6ZHCCN",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-26T02:27:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:b179c14aec98a65f003f25a3d348291cb1f4e539f0d755256956fc6916972f82",
+      "record": "DPD-71WYH4",
+      "revision": 23,
+      "writer": {
+        "at": "2026-11-26T00:47:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:55927ceade0f31593d5ea82652d8d37ac298343b36277526c2e7cbb453449bf7",
+      "record": "DPD-71WYH4",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-26T02:27:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:703db1d330692e742c13ddc8e74870a97cf5a7783825a6e58425152d51531bbf",
+      "record": "DPD-9F0Q8G",
+      "revision": 5,
+      "writer": {
+        "at": "2026-11-26T01:26:40+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:a6a28b6edd894d4152bffe9f7e99d978954c76e8c78a3f28ad45ff0740a2ae73",
+      "record": "DPD-9F0Q8G",
+      "revision": 6,
+      "writer": {
+        "at": "2026-11-26T02:27:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:6cfc1d2d7eb28a24df388910d61ade679266d31f1b07ad1f8e9e0321481a1d43",
+      "record": "DPD-EG5TYT",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-26T00:47:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:b9adc3f27dce103eff25d5bfded4821a6064e6f946f9ccf7e9f0cd73b32f38fe",
+      "record": "DPD-EG5TYT",
+      "revision": 26,
+      "writer": {
+        "at": "2026-11-26T02:27:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:94c2518262662e38388e942903313f0e8723abfbfb0b984801e5cc75cf90cca7",
+      "record": "DPD-X6G7K3",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-26T00:47:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:0530c7c7a77057f01c9de6d0b3080853920fb522fd39f1ea624d10aaae66ced5",
+      "record": "DPD-X6G7K3",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-26T01:26:40+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:bb4aae9a34aa48630b445859870f5f4bb6cd72c15488ddc1bfb5d34e691280df",
+      "record": "DPD-X6G7K3",
+      "revision": 23,
+      "writer": {
+        "at": "2026-11-26T02:27:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:9de6989cb820e1f6f3e7daa13147e6ce437c7b8226e64592ffccab3db62459a6",
+      "record": "DPD-XAARS1",
+      "revision": 8,
+      "writer": {
+        "at": "2026-11-26T00:47:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:2a48316e354f55a7a4cfc1d5b589b59e43d8d84c8fcadb9804cfbff7676133d2",
+      "record": "DPD-XAARS1",
+      "revision": 9,
+      "writer": {
+        "at": "2026-11-26T02:27:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:6fbadedfe18ff4f4506e207e4440641c1503da6f9fd8bbe683bbcb558448c108",
+      "record": "DPD-ZMQ523",
+      "revision": 17,
+      "writer": {
+        "at": "2026-11-26T00:47:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:cc91428a3c67101a78d95723822ca140721bbe9bf08be2a0df26d87d45b6cde2",
+      "record": "DPD-ZMQ523",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-26T02:27:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:770d38eab5ce68cd2bb64d521a59ac2b2b60c9b9066979e383814862126253e5",
+      "record": "DPD-ZT8YY7",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-26T00:47:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:0cdfa052329dbba3a2732516110af5a8c24cd645d59b3f32feaa34ae9f167c98",
+      "record": "DPD-ZT8YY7",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-26T01:26:40+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:93b76015f42748cd4a72455ddaef86ee48d7a27687c4a20d74a01a1fb521defc",
+      "record": "DPD-ZT8YY7",
+      "revision": 20,
+      "writer": {
+        "at": "2026-11-26T02:27:57+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:43647c82139cdce92c0df278f20e1f26133bfa3e6c24a52b7a3f8ed524bd8a92",
+      "record": "INV-0TK9W7",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T00:47:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:3d7ce1c77c5e2c727b1e4cb075d593df83dbce149491d78bd635eb809b659681",
+      "record": "INV-0YAS0P",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T00:47:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:18a66b338f914c32353c9b2eccd663970c30438f4ba40163d5df2a59ff01cc7c",
+      "record": "INV-2Q2JKR",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T00:47:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:79f963d73f3116d60aaa7a9881d610c2086dbc1f3dcdb15fcc573ad3b0cb6fe5",
+      "record": "INV-FRMFFG",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T00:47:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:81fa94073a8d707f261b7260c0160351e624709bc243c07b9817a46564c471e6",
+      "record": "INV-TMKPZR",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T00:47:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:6147ae350b68a8af4c05c98131f61aae316b69671128c5aee4603362ed5781e8",
+      "record": "INV-TYX0QS",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T00:47:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:73f573a769479fb5a550050a2886688c92b87549ecf5e03846370b96effb9954",
+      "record": "INV-VYH6XV",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T00:47:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:831d88118894295616a62af2ca2861d892721db57f9b88776a889601121eebd7",
+      "record": "WKN-8071KE",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T00:47:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:8a0001df7dc7bb1f5649b65d10aa230cf2b9111363fcca7240e70c49ac818efc",
+      "record": "WKN-HG91TA",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T00:47:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:49cd7b2f69961c5960b0f7051ca72e3899b4bbfc192de22c6f3810f72f2c8642",
+      "record": "WKN-P93A5H",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T00:47:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:6ee1e674d193de3c5b8c6f45650e1523ab95c8e0b43e66b545935bf6c5644224",
+      "record": "WKN-RHCVCW",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T00:47:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    },
+    {
+      "contentDigest": "sha256:280338a978ab5c171dbf5a1763a9703c7d45e82e8e2c674705dd7c1ada253a7d",
+      "record": "WKN-V36M3W",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T00:47:13+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261125-DEP-L7",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+        "task": "261125-DEP"
+      }
+    }
+  ]
+}

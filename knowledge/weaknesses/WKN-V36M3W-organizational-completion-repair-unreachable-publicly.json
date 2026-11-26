@@ -1,0 +1,40 @@
+{
+  "anchor": {
+    "blob": "f13a0db1bb60b7f40310281a25580e64aeaa1fff",
+    "content": "sha256:5abd2be3ce4b84dd08899e3043795098297166a69169657cc38cc211b3733e8c",
+    "locator": {
+      "kind": "symbol",
+      "name": "record_organizational_completion_repair"
+    },
+    "path": "mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py"
+  },
+  "id": "WKN-V36M3W",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "261125-DEP-L7-curator-handoff.json"
+    },
+    "handoffEntry": "wkn-org-repair-unreachable",
+    "leaf": "261125-DEP-L7",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "261125-DEP-L7"
+  },
+  "state": "open",
+  "statement": "The organizational completion repair mutating path is unreachable from public MCP and CLI routes because record_organizational_completion_repair has no callers and control_operation refuses integrate generations as retired before cancellation.",
+  "writer": {
+    "at": "2026-11-26T00:47:13+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "task": "261125-DEP"
+  }
+}

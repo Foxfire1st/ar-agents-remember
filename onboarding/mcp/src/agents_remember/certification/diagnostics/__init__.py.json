@@ -244,27 +244,14 @@
       ]
     },
     "6": {
-      "note": "The R12-run-controlled executor consumes these contracts through the trusted authority launcher.\n\nAnchor: `admit_dagger_authority`",
+      "note": "The R12-run-controlled executor consumes these contracts through the trusted authority launcher.\n\nAnchor: `DiagnosticExecutionEngine`; `admit`",
       "targets": [
         {
           "anchor": {
-            "blob": "997e36a2cddf02b9054def7c6fce5086409f3f6e",
-            "content": "sha256:69d363a2385f12cebec6f59576b9fb216007e4577cdd19ca4512c4df245afd6b",
+            "blob": "318856c7b201ee6160de2bf0ba9093e0afd81b8a",
+            "content": "sha256:a37b2ae74fe7488cae6312add2835189a63d91e39ef5e8cf5d89d81dcc5f13c0",
             "locator": {
-              "kind": "symbol",
-              "name": "DiagnosticExecutionEngine"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "997e36a2cddf02b9054def7c6fce5086409f3f6e",
-            "content": "sha256:a6807eed494ec4c754298acd0795538953aaf5fcf3282502386b9f63c2ca1ab1",
-            "locator": {
-              "kind": "symbol",
-              "name": "admit"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py"
           },

@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/cli/dashboard_address.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3f1ec695e5131272c4180270ee35efa6b5ff40fa",
+        "content": "sha256:53239494da66b4ef460dc4a4a4e13e8f370130c0a50808d331accb2f112b17c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "chat_address_for"
+        }
+      },
+      "id": "RLZ-S5Y7EW",
+      "invariant": "INV-TMKPZR",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 item 4",
+        "leaf": "261125-DEP-L7"
+      },
+      "rationale": "Binds PaseoBridgeFailure prior to the try block while keeping the import lazy inside the active Paseo settings guard.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The address is answered only after the origin answers with a page.",
       "targets": [
         {
           "anchor": {
-            "blob": "bd1f706155535694723702370bcbdfb64849c202",
+            "blob": "f5004e3f8aab0d49d896e53f228f8c7dbf041656",
             "content": "sha256:4f07d132857c04fdfd47298f63897424297f5e1e482920bbe9a4efad50d5774b",
             "locator": {
               "kind": "symbol",
@@ -24,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd1f706155535694723702370bcbdfb64849c202",
+            "blob": "f5004e3f8aab0d49d896e53f228f8c7dbf041656",
             "content": "sha256:b4267ce911a138f03c3f540ee01f084c86dc81aec962340389cdb47e13b16d96",
             "locator": {
               "kind": "symbol",
@@ -36,7 +55,7 @@
         },
         {
           "anchor": {
-            "blob": "bd1f706155535694723702370bcbdfb64849c202",
+            "blob": "f5004e3f8aab0d49d896e53f228f8c7dbf041656",
             "content": "sha256:c9c09f5154f0fdc02aff81c6f35970d2611c6c52099a0cf0dd623c70ca2f00d0",
             "locator": {
               "kind": "symbol",
@@ -53,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c0abcb3674155b26a1d2bf83643c47d454800979",
+            "blob": "3f1ec695e5131272c4180270ee35efa6b5ff40fa",
             "content": "sha256:637fde14e767a78cb86fe2ce679d961415dda1a3f3e3f7fa821f305676d57911",
             "locator": {
               "kind": "symbol",
@@ -69,7 +88,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c0abcb3674155b26a1d2bf83643c47d454800979",
+            "blob": "3f1ec695e5131272c4180270ee35efa6b5ff40fa",
             "content": "sha256:d10347e78c6ed9b24d5a5b243a9870849c1acd040f4a1ac8ca16af2a86516731",
             "locator": {
               "kind": "symbol",
@@ -85,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c0abcb3674155b26a1d2bf83643c47d454800979",
+            "blob": "3f1ec695e5131272c4180270ee35efa6b5ff40fa",
             "content": "sha256:a216c49d03a6672ad57c1db84288cd330c5ad8cd2eba488ce4717e6e526742db",
             "locator": {
               "kind": "symbol",
@@ -93,6 +112,46 @@
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Lazy bridge import runs outside `except PaseoBridgeFailure` so import errors propagate directly while `PaseoBridgeFailure` reports `chatAddressDetail`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f1ec695e5131272c4180270ee35efa6b5ff40fa",
+            "content": "sha256:53239494da66b4ef460dc4a4a4e13e8f370130c0a50808d331accb2f112b17c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "chat_address_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5004e3f8aab0d49d896e53f228f8c7dbf041656",
+            "content": "sha256:d7a8874b4dc33814a2657360146e1aef3c42c1a69c49a3689f9ea535d7f08034",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_chat_address_for_surfaces_bridge_import_error"
+            },
+            "path": "mcp/tests/test_mik_r196_dashboard_address_truth.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f5004e3f8aab0d49d896e53f228f8c7dbf041656",
+            "content": "sha256:ab18b15b2fc7ed1adf152ddc1e8bb401afc763a4ae7270147f71d933d46085dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_chat_address_for_reports_bridge_failure_detail"
+            },
+            "path": "mcp/tests/test_mik_r196_dashboard_address_truth.py"
+          },
+          "kind": "test"
         }
       ]
     }

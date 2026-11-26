@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "2e79f14e621878f776217e876e3953c8a4903aec",
-    "commit": "50292a3bfed059fe4f0aa9f087a6156bf1b754f9",
+    "codeTree": "83eacca898d910be73255f63f549a2b0ef290fc8",
+    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
     "role": "curator",
-    "statement": "Verified line-by-line on synced code (base 50292a3b + L29): docs/guides/use-external-memory.md (lines 129-157, plus memory_init, context_packet roots, and closeout steps) remains accurate after L29; closeout and direct_landing still run the repository pre-commit hook on the exact candidate tree under orchestration.landing.commitCheckTimeoutSeconds (default 900s, user -> checkout -> main checkout system/settings.json precedence via commit_check_process.py) and write Commit-Check-Pass: tree=<tree> hook=<hook> with hook=none when no hook exists.",
-    "task": "261112-BUG-L29",
+    "statement": "docs/guides/use-external-memory.md remains accurate on the synced DEP-L7 candidate because fixing _JudgedHistoryClosing.restore in direct_landing.py preserves the documented external-memory closeout and restoration behavior.",
+    "task": "261125-DEP-L7",
     "uncommitted": true
   },
   "document": "docs/guides/use-external-memory.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -26,7 +26,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
     },
     {
-      "blob": "f6c05e150769e32c8c67cd6f806b4d4ec29d7140",
+      "blob": "87d2a6e6ab2d0174f030bcad540cf4202ab1c654",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },
@@ -67,14 +67,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T00:49:11+01:00",
+    "at": "2026-11-26T02:27:57+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L29",
+    "leaf": "261125-DEP-L7",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
-    "task": "261112-BUG"
+    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "task": "261125-DEP"
   }
 }

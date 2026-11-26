@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
+            "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
             "content": "sha256:073d4f17a220c088b85aa3658371831c8dff3635dd12990e270a8e72e8423aba",
             "locator": {
               "kind": "symbol",
@@ -37,12 +37,12 @@
         },
         {
           "anchor": {
-            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
+            "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
             "content": "sha256:beba92f6d0a8ff7ffc247b43994421c6b89bc1de22b6dcece08179a3d6de89a2",
             "locator": {
-              "end": 302,
+              "end": 303,
               "kind": "line_range",
-              "start": 290
+              "start": 291
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
           },

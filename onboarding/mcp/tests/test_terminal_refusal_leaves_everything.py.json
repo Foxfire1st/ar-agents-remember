@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Refusal-before-deletion and honest partial-deletion answers are pinned.",
+      "note": "Refusal-before-deletion and honest partial-deletion answers are pinned.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "9896dc76e68d49e2507f76d70cae2f287ac4c755",
-            "content": "sha256:3a153b16b7292c36d25d37e14ac43f41da037f4b1d51c0114907c0cb39dfa4fa",
+            "blob": "3cddf1a23d0626d6703551ad0b7c0dd0c2f2897c",
+            "content": "sha256:7f67ec8b09ca56175a9d8a9a3d8c7ef01c42c70c934fefaa1d4ced1384be74fa",
             "locator": {
               "kind": "file"
             }

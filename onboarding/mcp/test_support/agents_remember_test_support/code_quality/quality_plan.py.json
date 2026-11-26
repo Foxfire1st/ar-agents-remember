@@ -1,17 +1,35 @@
 {
   "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
+        "content": "sha256:2fcd238f7b6a8b9d985bf9437a0b0c6f14d29dbe2eec45708b99e042625025a0",
+        "locator": {
+          "kind": "symbol",
+          "name": "CheckConfig"
+        }
+      },
+      "id": "RLZ-93WX27",
+      "invariant": "INV-2Q2JKR",
+      "origin": {
+        "handoffEntry": "DEP-R07@v1 item 7",
+        "leaf": "261125-DEP-L7"
+      },
+      "rationale": "Annotates targeted_scope via the aliased quality_targeted module so the boolean targeted field no longer shadows the module in class scope.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Immutable inputs and no coverage-floor setting",
+      "note": "Immutable inputs and no coverage-floor setting\n\nAnchor: `CheckConfig`",
       "targets": [
         {
           "anchor": {
-            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
-            "content": "sha256:241e972ae0e6788982b66d38ebe0735b5498e5f06a396351a446d42e4d74a517",
+            "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
+            "content": "sha256:fe5869a9629919b2caeebeb0a03041b0547e3836ee41b732b423348749e3c02d",
             "locator": {
-              "kind": "symbol",
-              "name": "CheckConfig"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -23,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
+            "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
             "content": "sha256:10b854095f14037d602dab0dc7210a0441a03380b931c9552ade0e61e5dc2ebf",
             "locator": {
               "kind": "symbol",
@@ -39,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
+            "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
             "content": "sha256:e146e2871f698c7f60efbbede1cd1420f1a8129a2f7d672a412c931ebcbd35e6",
             "locator": {
               "kind": "symbol",
@@ -55,7 +73,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
+            "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
             "content": "sha256:34973876e5fd5002213ea349baada38cf1bebda64a1eadfd910fabbde3aba4bb",
             "locator": {
               "kind": "symbol",

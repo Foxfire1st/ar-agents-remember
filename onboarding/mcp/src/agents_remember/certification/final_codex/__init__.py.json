@@ -273,15 +273,14 @@
       ]
     },
     "7": {
-      "note": "The R14-run-controlled executor consumes these contracts through the trusted authority launcher.\n\nAnchor: `admit_dagger_authority`",
+      "note": "The R14-run-controlled executor consumes these contracts through the trusted authority launcher.\n\nAnchor: `FinalCodexExecutionEngine`",
       "targets": [
         {
           "anchor": {
-            "blob": "6ab21bbe4eb94185277fd51d2b6e610140c0f7ed",
-            "content": "sha256:65805b88f164c2accca73efb41dc1b032cbf8428a0385a5c99adf3b6ef352da6",
+            "blob": "0732386686b1d8882ce3fbf5a73b0c7a1a8d6b57",
+            "content": "sha256:1d997abc26d8168733e4e4fe347f6e55ea7b0f5a2cdedf3518e70f278a429daf",
             "locator": {
-              "kind": "symbol",
-              "name": "FinalCodexExecutionEngine"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py"
           },

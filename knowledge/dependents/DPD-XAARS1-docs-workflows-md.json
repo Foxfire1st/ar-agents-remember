@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "83eacca898d910be73255f63f549a2b0ef290fc8",
+    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
     "role": "curator",
-    "statement": "docs/workflows.md (lines 109-132, 207-219) accurately describes enclosure creation, lifecycle_finalize_task/worktree_cleanup/worktree_abandon removing worktrees and the enclosure folder, and agentArchive reporting {archived, alreadyArchived, gone, owed, leftAlone}.",
-    "task": "261112-BUG-L38",
+    "statement": "docs/workflows.md remains accurate on the synced DEP-L7 candidate because fixing _JudgedHistoryClosing.restore in direct_landing.py preserves the documented direct-landing and workflow-gate controls.",
+    "task": "261125-DEP-L7",
     "uncommitted": true
   },
   "document": "docs/workflows.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -91,7 +91,7 @@
       "path": "mcp/src/agents_remember/application/direct_execution_grants.py"
     },
     {
-      "blob": "f6c05e150769e32c8c67cd6f806b4d4ec29d7140",
+      "blob": "87d2a6e6ab2d0174f030bcad540cf4202ab1c654",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },
@@ -157,14 +157,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T19:57:06+01:00",
+    "at": "2026-11-26T02:27:57+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
+    "leaf": "261125-DEP-L7",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
-    "task": "261112-BUG"
+    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "task": "261125-DEP"
   }
 }

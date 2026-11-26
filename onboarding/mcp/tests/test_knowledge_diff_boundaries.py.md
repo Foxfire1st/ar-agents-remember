@@ -206,6 +206,7 @@ No configured cross-repository evidence is claimed.
 - The actual comparison matrix changes one payload field at a time. [58]
 
 
+
 - The test-only RowStore changes its text tree, rebuilds the index and reopens the read connection; candidate construction is independent, not a closed-database copy. [32]
 - Expansion asserts requested trees/roots and delimiter-safe command without HEAD; authored changed paths are an attributed subset, disjoint from the singleton unattributed gap, not an exact attributed-set census. [35]
 

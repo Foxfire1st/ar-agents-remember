@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "83eacca898d910be73255f63f549a2b0ef290fc8",
+    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
     "role": "curator",
-    "statement": "docs/design/python-evidence-system.md (lines 62-144) pins no test counts and accurately describes the seven accepting lanes, canonical catalog form, and source-derived consumers updated by L38.",
-    "task": "261112-BUG-L38",
+    "statement": "docs/design/python-evidence-system.md remains accurate on the synced DEP-L7 candidate because adding the four unit-regression modules (681 of 833 total) and their source-derived lifecycle consumer rows preserves every lane, canonical-ordering, and ownership rule.",
+    "task": "261125-DEP-L7",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 18,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "950bfd7c3c2db68a87d13d58bc6ce7e2d52ff634",
+      "blob": "f929554ebe4c1f8b1ec1adac53e0e2f8b193a25f",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "f2c4c96f66a6b968683a0d56f273c64d6114ac22",
+      "blob": "a3845f60a1550756085e05c474b659dfb0eadfc6",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },
@@ -107,14 +107,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T19:57:06+01:00",
+    "at": "2026-11-26T02:27:57+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
+    "leaf": "261125-DEP-L7",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
-    "task": "261112-BUG"
+    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "task": "261125-DEP"
   }
 }

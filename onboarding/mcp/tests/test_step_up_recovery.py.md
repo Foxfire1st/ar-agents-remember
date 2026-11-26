@@ -33,4 +33,3 @@ This card describes assertion/support/document source, not a test invocation, in
 - Source assertion: test_git_inventory_caps_bytes_before_serialization. The declaration is not an execution receipt. [8]
 - Source assertion: test_takeover_publication_is_write_once_and_checks_the_open_file. The declaration is not an execution receipt. [9]
 - The hung-child source case checks signal termination/reaping, durable partial recovery and later lock reuse, not an elapsed whole-start deadline. [10]
-

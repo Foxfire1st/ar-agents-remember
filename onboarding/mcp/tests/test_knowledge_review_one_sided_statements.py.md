@@ -174,7 +174,8 @@ Current source: The current lifecycle catalog declares test_knowledge_review_one
 - The exact lifecycle field row carries proposed and reviewed on the same authored revision. [9]
 - The renderer exercises synthetic before and after statement values in its own component fixture. [18]
 - The pair is built from independent fixtures. The after fixture names the leaf whose closed history proves the shared revision. [15]
-- The `unit-regression` lane selects `mcp/tests/test_knowledge_review_one_sided_statements.py` (`mcp/tests/test-evidence-lanes.toml:274`). [16]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_review_one_sided_statements.py` (`mcp/tests/test-evidence-lanes.toml:275`). [16]
+
 
 
 - An invariant text record stores one numeric revision and one statement. It accepts a separate optional title. [20]

@@ -1,0 +1,44 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Two unit tests verify that a failing lazy bridge import surfaces its own ImportError rather than crashing with UnboundLocalError inside except PaseoBridgeFailure while real bridge failures still report detail."
+  },
+  "applicability": "Host chat address derivation in cli/dashboard_address.py::chat_address_for when Paseo host settings are configured.",
+  "conditions": [
+    "A non-blank agent_id and configured Paseo host settings trigger the lazy bridge import."
+  ],
+  "exclusions": [
+    "Calls where agent_id is blank or Paseo settings are absent, which return before importing the bridge."
+  ],
+  "id": "INV-TMKPZR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_mik_r196_dashboard_address_truth.py::test_chat_address_for_surfaces_bridge_import_error; mcp/tests/test_mik_r196_dashboard_address_truth.py::test_chat_address_for_reports_bridge_failure_detail"
+      ],
+      "path": "261125-DEP-L7-curator-handoff.json"
+    },
+    "handoffEntry": "DEP-R07@v1 item 4",
+    "leaf": "261125-DEP-L7",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "chat_address_for performs its lazy import of PaseoBridgeFailure and bridge_call before entering try/except PaseoBridgeFailure so a failed import surfaces its own ImportError rather than UnboundLocalError.",
+  "supersedes": [],
+  "title": "chat_address_for imports PaseoBridgeFailure before entering try",
+  "writer": {
+    "at": "2026-11-26T00:47:13+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L7",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "task": "261125-DEP"
+  }
+}

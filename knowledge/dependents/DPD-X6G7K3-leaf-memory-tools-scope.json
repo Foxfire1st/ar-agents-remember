@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "2e79f14e621878f776217e876e3953c8a4903aec",
-    "commit": "50292a3bfed059fe4f0aa9f087a6156bf1b754f9",
+    "codeTree": "83eacca898d910be73255f63f549a2b0ef290fc8",
+    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
     "role": "curator",
-    "statement": "On synced code (base 50292a3b, combining 3.0.8, L38, and L29/R8/D167) the MCP reference passages verified for L29 are accurate: lines 284-292 state that the continued code-side merge commit runs git commit -m carrying Commit-Check-Pass when a runnable pre-commit hook exists and git commit --no-edit when none does (never --no-verify), in its own process session under orchestration.landing.commitCheckTimeoutSeconds (default 900s), streaming to a retained log under the Git common directory, answering sync-commit-check-failed with hook log, judged files, modified tracked files, and on timeout the time limit and surviving escaped PIDs while keeping HEAD, MERGE_HEAD, and staged merge intact with index rollback; lines 684-687 state that a host-run role agent receives its role tools once from agents-remember-task; and lines 737-743 preserve L38 at-most-once host-unreachable delivery alongside L37 five-minute provider-limit usage recheck and early-reset held-message drain; the document other sections were not reread for this confirmation.",
-    "task": "261112-BUG-L29",
+    "statement": "docs/reference/mcp-tools.md remains accurate on the synced DEP-L7 candidate because aliasing outside_scratch in lifecycle_operation_location.py preserves EnclosurePublicationArtifacts and leaves every MCP tool contract unchanged.",
+    "task": "261125-DEP-L7",
     "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 22,
+  "revision": 23,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -208,7 +208,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_terminal.py"
     },
     {
-      "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+      "blob": "5afff0ef3465cfcf57f12fc904698545d653f00b",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
     },
@@ -423,14 +423,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T00:49:11+01:00",
+    "at": "2026-11-26T02:27:57+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L29",
+    "leaf": "261125-DEP-L7",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
-    "task": "261112-BUG"
+    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "task": "261125-DEP"
   }
 }

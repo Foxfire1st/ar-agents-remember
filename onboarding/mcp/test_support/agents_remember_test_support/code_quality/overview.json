@@ -129,12 +129,35 @@
       "targets": [
         {
           "anchor": {
-            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
-            "content": "sha256:1704f22493373002fa8d4e04e82689e5f352cccabe15ef43096c3eabd4bf3555",
+            "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
+            "content": "sha256:2fcd238f7b6a8b9d985bf9437a0b0c6f14d29dbe2eec45708b99e042625025a0",
             "locator": {
-              "end": 168,
-              "kind": "line_range",
-              "start": 100
+              "kind": "symbol",
+              "name": "CheckConfig"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
+            "content": "sha256:75412649730b42b4acebfd88c37b83798c69f39cbc445d75abd367206d65f67b",
+            "locator": {
+              "kind": "symbol",
+              "name": "Step"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74d8f45632df896a730ed0acad9e3da298ce1deb",
+            "content": "sha256:10b854095f14037d602dab0dc7210a0441a03380b931c9552ade0e61e5dc2ebf",
+            "locator": {
+              "kind": "symbol",
+              "name": "quality_steps"
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
           },
