@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Proved by PyrightScopeConfigurationTests and prevents bare Pyright runs from scanning nested mcp/.venv or dashboard/node_modules for hours or matching tracked .dagger/ Python files in [tool.pyright] exclude."
+  },
+  "applicability": "Root pyproject.toml [tool.pyright] configuration for bare Pyright and editor runs across the checkout.",
+  "conditions": [
+    "include remains [\".\"] so the checkout's tracked Python files stay in scope.",
+    "Every exclude entry uses a depth-independent **/ pattern and matches zero tracked Python files from git ls-files '*.py'."
+  ],
+  "exclusions": [
+    "Blanket dot-folder patterns such as .* or **/.* in [tool.pyright] exclude, because tracked Python files live under .dagger/ (Pyright 1.1.414+'s own default dot-folder exclude applies independently).",
+    "Explicit file-list command-line invocations in .githooks/_gate.sh and quality_plan.py, which replace include while still applying exclude."
+  ],
+  "id": "INV-EQMWCB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Reviewer rerun: focused pytest 42 passed, 4 skipped on candidate tree 6233906597db9e470c437653d63f1c28af37db3b; validate_quality_config OK with 2,594 type paths; live bare Pyright checked 2,594 files with 0 errors; verdict notes/reports/reviewer/7c4e2b91-5a1f-4d8e-b3c2-9f6a1e4d8b37/role-launch/261112-BUG-L49-route-review-verdict.md",
+        "mcp/tests/test_code_quality_check_scope.py::PyrightScopeConfigurationTests::test_repo_pyright_config_excludes_nested_environments_and_keeps_tracked_python; validate_quality_config OK (2557 tracked .py on db236f3c6/105bd85c5652, 0 dropped); W1 Reviewer R1 PASS on 6233906597db/395a09500ce1."
+      ],
+      "path": "curator-handoff-l49.json"
+    },
+    "handoffEntry": "BUG-R49@v1 §1",
+    "leaf": "261112-BUG-L49",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Root pyproject.toml [tool.pyright] excludes virtual environments, dependency trees, build outputs, and caches at any depth without a blanket dot-folder pattern so [tool.pyright] exclude matches zero tracked Python files (including .dagger/) and validate_quality_config keeps passing.",
+  "supersedes": [],
+  "title": "Root [tool.pyright] excludes nested environments and keeps tracked Python",
+  "writer": {
+    "at": "2026-11-26T10:37:02+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L49",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "27d19192-331c-5dd7-9444-7bc54c5bc458",
+    "task": "261112-BUG"
+  }
+}

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "671ece4cbd090a47cbb540dd59f157804c676424",
-    "commit": "db236f3c6b164f19a905fb2174e5dc3543d21f9d",
+    "codeTree": "d5ffb4e005251208e31751ec2df07baf2653c788",
+    "commit": "a801c47d088d1b173ad2dfe4dc635b199433458d",
     "role": "curator",
-    "statement": "Audited CONTRIBUTING.md on L52-synced L51 code tree 671ece4c (base db236f3c/9f01ab59): tool registration, role allowlists, pre-commit rails, and test catalog references remain accurate after L52 + L51 updated test-evidence-lanes.toml; no contradiction.",
-    "task": "261112-BUG-L51",
+    "statement": "Audited CONTRIBUTING.md on 261112-BUG-L49 against synced post-L51 candidate d5ffb4e00525 (base a801c47d088d): seven test lanes, test-evidence-lanes.toml, evidence-lifecycle.toml, pyproject.toml, and .githooks/_gate.sh Pyright checks match live code with zero contradictions, and CONTRIBUTING.md makes no claim about [tool.pyright] exclude or bare pyright --project . runs.",
+    "task": "261112-BUG-L49",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 18,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+      "blob": "fef83712e9518a2b9f087e9f361d9f90ca27ef19",
       "kind": "file",
       "path": "pyproject.toml"
     },
@@ -207,14 +207,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T10:27:33+01:00",
+    "at": "2026-11-26T11:13:54+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L51",
+    "leaf": "261112-BUG-L49",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
+    "seat": "27d19192-331c-5dd7-9444-7bc54c5bc458",
     "task": "261112-BUG"
   }
 }

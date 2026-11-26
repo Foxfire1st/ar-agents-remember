@@ -58,7 +58,7 @@ substitute a host result for its certificate.
 
 The selected collected-case budgets, including parametrized cases, are enforced by the repository
 root `pyproject.toml`: `unit_case_budget` and `integration_case_budget` under
-`[tool.pytest.ini_options]` (`pyproject.toml:121`), the pair `pytest_collection_finish` reads.
+`[tool.pytest.ini_options]` (`pyproject.toml:127`), the pair `pytest_collection_finish` reads.
 **Measured on 2026-09-18 in the `260915-KS-L23` code worktree (code HEAD `2dcacb27`, where the pair sits
 at `pyproject.toml:244-245`; the file is unmodified there, so these are the committed values):
 2300 unit / 400 integration.** Read the enforced pair from those two
@@ -153,13 +153,22 @@ For more information on ruff usage use the official documentation: [Ruff Documen
 
 Pyright performs static type checking. It catches mismatches between typed public contracts and the values passed through application entry points, adapters, tests, and response builders before runtime.
 
-Common commands:
+Preferred whole-repository type-check commands (use the fast hook tier or the hook's explicit tracked-file-list form, rather than a bare run):
 
 ```text
-python -m pyright --project .                              # Type-check the configured project scope.
-python -m pyright --project . mcp/src/agents_remember      # Type-check package source paths.
-python -m pyright --project . mcp/src/agents_remember/models mcp/tests/test_quality_diagnostics.py
+.githooks/_gate.sh fast                                                                                         # Preferred: runs the fast gate including Pyright over all tracked Python files.
+git ls-files -z -- '*.py' | xargs -0 -s 262144 mcp/.venv/bin/python -m pyright --project . --pythonpath mcp/.venv/bin/python  # File-list form matching .githooks/_gate.sh (drop -s 262144 if xargs is non-GNU).
+mcp/.venv/bin/python -m pyright --project . --pythonpath mcp/.venv/bin/python mcp/src/agents_remember           # Type-check package source paths (a CLI file/dir list replaces [tool.pyright] include).
+mcp/.venv/bin/python -m pyright --project . --pythonpath mcp/.venv/bin/python mcp/src/agents_remember/models mcp/tests/test_quality_diagnostics.py
 ```
+
+Bare project-root form:
+
+```text
+mcp/.venv/bin/python -m pyright --project . --pythonpath mcp/.venv/bin/python                                   # Bare form: covers the checkout's tracked Python files after excluding nested .venv, node_modules, build/dist, and caches (Pyright 1.1.414+ also applies its default dot-folder exclude independently) (~1.8-2.4 min).
+```
+
+Root `pyproject.toml` `[tool.pyright]` keeps `include = ["."]` and excludes virtual environments, dependency trees, build outputs, and tool caches at any depth (`**/.venv`, `**/node_modules`, `**/venv`, `**/build`, `**/dist`, `**/__pycache__`, `**/*.egg-info`, `**/.cache`, `**/.mypy_cache`, `**/.pytest_cache`, `**/.ruff_cache`) without a blanket dot-folder rule because tracked Python lives under `.dagger/` (Pyright `1.1.414+`'s own default `**/.*` dot-folder exclude applies independently and excludes the 18 tracked `.dagger/` files from Pyright `1.1.414` runs, e.g., `2,539` of `2,557` tracked `.py` on `db236f3c` / `2,544` of `2,562` on `a801c47d`). Note that a CLI file list replaces `[tool.pyright] include`, while `[tool.pyright] exclude` still filters explicitly listed paths; keep `exclude` disjoint from `git ls-files '*.py'`. In a clean copy with bootstrapped `mcp/.venv` and `dashboard/node_modules`, the bare form finished in `107.778 s` wall (`107.167 s` Pyright; `143 s` in a live candidate worktree) checking `2,594` files with `0` diagnostics (matching the hook and wrapper runs identically, vs. `10,756` files and unfinished at a `900 s` stop before the change); on the synced `pyright 1.1.414` clean copy (`2,557` tracked `.py`), `.githooks/_gate.sh fast` passed all `11/11` checks.
 
 Pyright is part of both Dagger acceptance modes and must not be scoped out of them. Deterministic
 host Pyright remains permitted for fast feedback.
@@ -439,4 +448,4 @@ Releases**, not a `CHANGELOG.md`. `system/git-workflow.md` is retired; this is i
 - 2026-09-06T21:35:26+00:00 — Reconciled testing guidance to IAS d3610903 source policy: bounded host development suites, diagnostic coverage/production CRAP 20, and master-end full-suite/review ownership. No new verification result is claimed.
 - 2026-09-18 — The collected-case-budget paragraph above was restated at the value the repository actually enforces and now names its home: root `pyproject.toml` `[tool.pytest.ini_options]`, `unit_case_budget = 2300` (`:244`) and `integration_case_budget = 400` (`:245`), measured rather than copied (`grep -n 'case_budget' pyproject.toml` in the `260915-KS-L23` code worktree, code HEAD `2dcacb27`, 2026-09-18T18:17+02:00). It previously read **1000 unit /150 integration** — a stale reading that the root `pyproject.toml` has not enforced since the line grew past it, and one that would have made a terminal reader report the whole accumulation as hundreds of cases over budget. The paragraph now says the pair moves and where the raise history lives; the growth doctrine it carries is unchanged and no rail was lowered. `system/git-workflow.md`'s matching sentence was corrected in the same pass.
 
-The current declared pair is 10000 unit and 2000 integration selected cases at root pyproject.toml:333-334. The 2026-10-26 integration raise from 1000 to 2000 adds headroom while preserving both over-budget refusal directions; it does not weaken a case or move cases between lanes. Its source comment records scenario-level measurements (18.56/20.15 s original, 19.70 s grouped, 27.47 s repaired v2, 38.20 s v3), not whole-suite runtime. The 2026-09-18 2300/400 measurements above remain historical.
+The current declared pair is 10000 unit and 2000 integration selected cases at root pyproject.toml:339-340. The 2026-10-26 integration raise from 1000 to 2000 adds headroom while preserving both over-budget refusal directions; it does not weaken a case or move cases between lanes. Its source comment records scenario-level measurements (18.56/20.15 s original, 19.70 s grouped, 27.47 s repaired v2, 38.20 s v3), not whole-suite runtime. The 2026-09-18 2300/400 measurements above remain historical.

@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Together the two members guarantee both bare Pyright termination without scanning nested environments/caches and zero [tool.pyright] exclude drops on explicit file-list runs (distinguishing [tool.pyright] exclude from Pyright 1.1.414+'s independent default **/.* dot-folder exclusion), which neither member promises alone."
+  },
+  "guarantee": "Root [tool.pyright] exclude skips virtual environments, dependency trees, build outputs, and tool caches at any depth without matching any tracked Python file (including the 18 tracked files under .dagger/), so bare Pyright runs finish without scanning nested environments or caches and explicit file-list runs in .githooks/_gate.sh and quality_plan.py suffer zero [tool.pyright] exclude drops; Pyright 1.1.414+'s own default **/.* exclude applies independently to dot-folders such as .dagger/ (leaving non-dot tracked Python files, e.g. 2,544 of 2,562 on a801c47d, as the effective Pyright 1.1.414 checked set).",
+  "id": "FAM-WDBEQS",
+  "members": [
+    "INV-EQMWCB",
+    "INV-45HR10"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "curator-handoff-l49.json"
+    },
+    "handoffEntry": "fam-pyright-scope",
+    "leaf": "261112-BUG-L49",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "routes": [
+    "."
+  ],
+  "schema": "ar-family/v1",
+  "title": "Bare and file-list Pyright runs keep [tool.pyright] exclude disjoint from tracked Python",
+  "writer": {
+    "at": "2026-11-26T11:13:54+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L49",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "27d19192-331c-5dd7-9444-7bc54c5bc458",
+    "task": "261112-BUG"
+  }
+}
