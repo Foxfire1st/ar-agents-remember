@@ -375,12 +375,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07998f644724fafc06b2ad16936a627f111714dc",
+            "blob": "f717c183e60d68b48f43b14c15b6f29df125d1c8",
             "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
-              "end": 803,
+              "end": 804,
               "kind": "line_range",
-              "start": 803
+              "start": 804
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -434,12 +434,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07998f644724fafc06b2ad16936a627f111714dc",
+            "blob": "f717c183e60d68b48f43b14c15b6f29df125d1c8",
             "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
-              "end": 803,
+              "end": 804,
               "kind": "line_range",
-              "start": 803
+              "start": 804
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -477,7 +477,7 @@
       ]
     },
     "28": {
-      "note": "Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection.\n\nAnchor: file",
+      "note": "Twelve exact artifact consumer lists in the lifecycle catalog name this module. The dependency-ownership reader consumes the catalog for selection.",
       "targets": [
         {
           "anchor": {
@@ -507,8 +507,8 @@
         },
         {
           "anchor": {
-            "blob": "77ec2f25594a6238fa3a7d0a352c9029160eed5d",
-            "content": "sha256:10bb235e8b20543d3fd173bab42f0f675fe55d1c3978741c4904b5e9996443b8",
+            "blob": "ccdae27f166202bf07aa7a43bd27e807ee660cd7",
+            "content": "sha256:7716147bd1c4bdb47e1760f3036815e580322f4fe682f3e6bd9a4f73eeb3a31c",
             "locator": {
               "kind": "file"
             },

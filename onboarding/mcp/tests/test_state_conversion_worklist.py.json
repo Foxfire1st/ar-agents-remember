@@ -1,0 +1,240 @@
+{
+  "path": "mcp/tests/test_state_conversion_worklist.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "bdabae8b9cdabeb7bda959a3f330d1ac89a357b8",
+        "content": "sha256:d593dceff4686a252102bcd03d15a33ed6ca18d83676c85c19c07296e8217e18",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_predicate_accepts_every_valid_writer_stamp_source"
+        }
+      },
+      "facet": "Parametrizes state_conversion_only over valid conversion, agent, and product WriterStamp payloads and confirms each is accepted.",
+      "id": "PRF-3PMMZS",
+      "invariant": "INV-R2Q8SW",
+      "origin": {
+        "handoffEntry": "BUG-R55@v1 §1-3",
+        "leaf": "261112-BUG-L55"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "bdabae8b9cdabeb7bda959a3f330d1ac89a357b8",
+        "content": "sha256:70d609ab62404676f8ab5f71bbf4c219279716568cec5ca046171f272597a143",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_moved_and_converted_records_still_raise"
+        }
+      },
+      "facet": "Verifies renaming an invariant, family, or assumption while converting still raises touched_invariant, reached_family, and reconsideration_candidate.",
+      "id": "PRF-ANNN43",
+      "invariant": "INV-R2Q8SW",
+      "origin": {
+        "handoffEntry": "BUG-R55@v1 §1-3",
+        "leaf": "261112-BUG-L55"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "bdabae8b9cdabeb7bda959a3f330d1ac89a357b8",
+        "content": "sha256:81ca1043a3a7cc56d820c6760f638cbd3c46476933ee28906e4db2d70b054eca",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_predicate_handles_status_only_removal_and_rejects_formatting_or_bad_stamps"
+        }
+      },
+      "facet": "Verifies status-only removal on an already-stamped record passes while identical bytes, non-canonical base or candidate formatting, partial conversions, and invalid WriterStamp payloads return False.",
+      "id": "PRF-DZHVRK",
+      "invariant": "INV-R2Q8SW",
+      "origin": {
+        "handoffEntry": "BUG-R55@v1 §1-3",
+        "leaf": "261112-BUG-L55"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "bdabae8b9cdabeb7bda959a3f330d1ac89a357b8",
+        "content": "sha256:fa2cbe58c3829c267e5ef6f910510f92b44a62d2543c984fed10b648841084c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_rule_3_non_legacy_status_writer_change_and_field_edit_still_raise"
+        }
+      },
+      "facet": "Verifies non-legacy status edits, modifications or removals of an existing writer stamp, other field edits alongside conversion, and records absent on either side still count as changed and raise worklist items.",
+      "id": "PRF-H1C1WG",
+      "invariant": "INV-R2Q8SW",
+      "origin": {
+        "handoffEntry": "BUG-R55@v1 §1-3",
+        "leaf": "261112-BUG-L55"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "bdabae8b9cdabeb7bda959a3f330d1ac89a357b8",
+        "content": "sha256:1f87b5ed236cb08028d6650a9d22a09c2cb1666448e457abc382a7c864435b4a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_changed_markdown_sidecar_still_raises_on_converted_record"
+        }
+      },
+      "facet": "Parametrizes over edited, deleted, and added Markdown sidecars on a converted assumption and confirms touched_record still raises.",
+      "id": "PRF-JRF5D7",
+      "invariant": "INV-R2Q8SW",
+      "origin": {
+        "handoffEntry": "BUG-R55@v1 §1-3",
+        "leaf": "261112-BUG-L55"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "bdabae8b9cdabeb7bda959a3f330d1ac89a357b8",
+        "content": "sha256:400e50fa8d6334e882ea4320082fb0909afa41fb22d50c188f2d624eb3291632",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_plan_changes_satisfy_predicate_and_raise_no_worklist_items"
+        }
+      },
+      "facet": "Every record path in plan_state_conversion(...).changes (covering invariants, families, assumptions with sidecars, decisions with reconsider_on links, dependents, and both conversion and agent stamps) satisfies state_conversion_only and raises zero worklist items with empty reachedFamilies and zero classifiedEntries.",
+      "id": "PRF-NDFB2C",
+      "invariant": "INV-R2Q8SW",
+      "origin": {
+        "handoffEntry": "BUG-R55@v1 §1-3",
+        "leaf": "261112-BUG-L55"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "bdabae8b9cdabeb7bda959a3f330d1ac89a357b8",
+        "content": "sha256:dbeb24a7abefedce2671afe312b8c31d271cd07dd37c4a27125d8b5ac2a4ba22",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_raise_mark_only_and_deferral_answering_rule_are_unchanged"
+        }
+      },
+      "facet": "Confirms own-open _raise_mark_only exemption and deferralOnly record_row_open answering rules remain unchanged.",
+      "id": "PRF-VHM04K",
+      "invariant": "INV-R2Q8SW",
+      "origin": {
+        "handoffEntry": "BUG-R55@v1 §1-3",
+        "leaf": "261112-BUG-L55"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Every record path in a conversion plan satisfies `state_conversion_only` across both `conversion` and `agent` stamps and raises zero worklist items.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bdabae8b9cdabeb7bda959a3f330d1ac89a357b8",
+            "content": "sha256:400e50fa8d6334e882ea4320082fb0909afa41fb22d50c188f2d624eb3291632",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_plan_changes_satisfy_predicate_and_raise_no_worklist_items"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Valid `conversion`, `agent`, and `product` writer stamps satisfy `state_conversion_only`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bdabae8b9cdabeb7bda959a3f330d1ac89a357b8",
+            "content": "sha256:d593dceff4686a252102bcd03d15a33ed6ca18d83676c85c19c07296e8217e18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_predicate_accepts_every_valid_writer_stamp_source"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Status-only removal passes while identical bytes, non-canonical formatting, partial conversions, and invalid stamps return `False`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bdabae8b9cdabeb7bda959a3f330d1ac89a357b8",
+            "content": "sha256:81ca1043a3a7cc56d820c6760f638cbd3c46476933ee28906e4db2d70b054eca",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_predicate_handles_status_only_removal_and_rejects_formatting_or_bad_stamps"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Non-legacy status edits, existing writer modifications/removals, other field edits, and absent records still raise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bdabae8b9cdabeb7bda959a3f330d1ac89a357b8",
+            "content": "sha256:fa2cbe58c3829c267e5ef6f910510f92b44a62d2543c984fed10b648841084c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_rule_3_non_legacy_status_writer_change_and_field_edit_still_raise"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Moved and converted records still raise `touched_invariant`, `reached_family`, and `reconsideration_candidate`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bdabae8b9cdabeb7bda959a3f330d1ac89a357b8",
+            "content": "sha256:70d609ab62404676f8ab5f71bbf4c219279716568cec5ca046171f272597a143",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_moved_and_converted_records_still_raise"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Edited, deleted, or added Markdown sidecars on converted records still raise `touched_record`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bdabae8b9cdabeb7bda959a3f330d1ac89a357b8",
+            "content": "sha256:1f87b5ed236cb08028d6650a9d22a09c2cb1666448e457abc382a7c864435b4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_changed_markdown_sidecar_still_raises_on_converted_record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Own-open `_raise_mark_only` exemption and `deferralOnly` answering rules in `record_row_open` remain unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bdabae8b9cdabeb7bda959a3f330d1ac89a357b8",
+            "content": "sha256:dbeb24a7abefedce2671afe312b8c31d271cd07dd37c4a27125d8b5ac2a4ba22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_raise_mark_only_and_deferral_answering_rule_are_unchanged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

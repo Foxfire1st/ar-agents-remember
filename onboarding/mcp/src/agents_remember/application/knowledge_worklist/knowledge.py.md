@@ -26,9 +26,12 @@ over the exact bytes of each record file.
   entries by ID, each with the source path whose sidecar holds it), `entries_by_invariant`,
   `entries_by_path`, `families_of` (each invariant's families by the families' `members`), and `linked_from`
   (each record ID that another record's `links` name, used only as context).
-- `record_file(record_id)` returns the record's location and exact bytes, so "its record file differs" means
-  the bytes or the location differ. `history(owner_id)` reads an owner's history file. `anchor_document(anchor,
-  path)` is an entry's anchor with its source path filled in.
+- `record_file(record_id)` returns the record's location and exact bytes, so raw record comparison checks
+  location and bytes. `record_file_changed(candidate, record_id)` wraps `record_file` for the two
+  path-and-bytes worklist sites (`classify.py` and `reconsideration.py`): equal `(path, bytes)` returns
+  `False`, absence on either side or a moved path returns `True`, and an equal-path byte difference returns
+  `not state_conversion_only(before[1], after[1])`. `history(owner_id)` reads an owner's history file.
+  `anchor_document(anchor, path)` is an entry's anchor with its source path filled in.
 - `revision(record_id)` answers the stored `revision` of **any** record kind, through the derived index's
   parsed record and its document, not only for invariants and families. It answers `None` only for an
   unknown ID or a record whose `revision` is not an integer. Reading a dependent's revision is what MIK-R124
@@ -37,7 +40,7 @@ over the exact bytes of each record file.
 
 ### Conventions
 
-- Nothing is inferred from a name: identity is the parsed ID, and change is byte or location difference.
+- Nothing is inferred from a name: identity is the parsed ID, and record-file change is a moved/absent file or a byte difference beyond `state_conversion_only`.
 
 ### Invariants And Boundaries
 
@@ -79,6 +82,8 @@ No configured live documentation source was available for this pass.
 - A record's file: location and exact bytes. [8]
 - The `links` context. [9]
 - An unparseable K_C makes the run incomplete. [10]
+
+- `KnowledgeSide.record_file_changed` treats moved or absent records as changed and exempts equal-path diffs matching `state_conversion_only`. [11]
 
 ### Cross-Repo References
 

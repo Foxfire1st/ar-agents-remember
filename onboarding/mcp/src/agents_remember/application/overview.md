@@ -55,6 +55,8 @@ Ordinary operations guarded for converted knowledge refuse legacy memory using c
 
 Dependent-record deferrals span `knowledge_writer/deferrals.py` (`defer`, `redefer`, `lift`, `resolveDeferrals`, unedited-confirmation refusal, and `deferral_lifted` row enforcement), `knowledge_worklist/touched_records.py` (`deferralOnly`), `knowledge_gate/deferrals.py` (blocking due/post-sync checks and non-blocking orphan/pre-base warnings), and `knowledge_reader/deferrals.py` (`derive_deferrals` and `infer_reading_leaf`).
 
+Knowledge-worklist record-file change detection delegates equal-path JSON comparisons in `knowledge_changes`, `_Evaluation._record_file_trigger`, and `touched_record_items` to `state_conversion_only` (through `KnowledgeSide.record_file_changed` at the first two sites and directly beside Markdown-sidecar byte equality at the third) so canonical state-conversion-only diffs count as untouched without hiding moved records, changed sidecars, non-legacy status edits, writer changes, or formatting edits.
+
 ## Construction And Ownership
 
 The leaf knowledge gate charges retained Python graphs in its shared verdict and candidate parse memos. An oversized value stays available to the current evaluation and stays outside shared retention. Exact candidate files, code-tree reads and gate witnesses still determine whether reuse is valid. Detached quality calculations open their own request memo before computing a result.
@@ -807,3 +809,5 @@ Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review
 - The write route resolves the caller outside the handoff and supplies the owner-specific stamp. [539]
 
 - `knowledge_gate/document_staleness.py` classifies incremental and master-end dependent-document staleness, attributing own-leaf debt, checking post-landing parent repairs, filtering tip-only unverifiable links, and rendering per-kind answers and refusal messages. [543]
+
+- `KnowledgeSide.record_file_changed` and the three worklist comparison sites (`knowledge_changes`, `_Evaluation._record_file_trigger`, `touched_record_items`) treat canonical state-conversion-only record JSON diffs as untouched while preserving move, sidecar, non-legacy status, writer, and formatting detection. [544]

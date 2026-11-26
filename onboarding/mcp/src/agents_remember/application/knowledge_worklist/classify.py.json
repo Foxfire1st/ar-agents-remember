@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6a7959afbbb3e3b8b7136af8878ea3584aab48e8",
+        "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
         "content": "sha256:e77180af9a8cdbb8af2545c822be6fb1aff5a14865bd4c093437177f8410f172",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,24 @@
       },
       "rationale": "Classification names an unavailable recorded line blob instead of inventing a resolvable source.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
+        "content": "sha256:fa31a9b5909058c282dbc77c70945a4bbb8a8f53c85d501d2cba6e207af84c75",
+        "locator": {
+          "kind": "symbol",
+          "name": "knowledge_changes"
+        }
+      },
+      "id": "RLZ-FS11TD",
+      "invariant": "INV-R2Q8SW",
+      "origin": {
+        "handoffEntry": "BUG-R55@v1 §1-3",
+        "leaf": "261112-BUG-L55"
+      },
+      "rationale": "Delegates invariant and family record_changed detection to KnowledgeSide.record_file_changed so conversion-only record edits do not mark invariants touched or reach families.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -26,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a7959afbbb3e3b8b7136af8878ea3584aab48e8",
+            "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
             "content": "sha256:4dbfb242bae983d7cb2cc9f1f1df20eea8139016546ad5650d365fbd24a5b542",
             "locator": {
               "end": 231,
@@ -56,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a7959afbbb3e3b8b7136af8878ea3584aab48e8",
+            "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
             "content": "sha256:852afda0bb7d68f782a5b912eee61463df5b0d4bfe5eef55dd7af4e8ee64e2b3",
             "locator": {
               "kind": "symbol",
@@ -175,7 +193,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a7959afbbb3e3b8b7136af8878ea3584aab48e8",
+            "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
             "content": "sha256:e201bb785430cc5d69645245f726886ef7007ed5e38c80ca8b0155dda9c5dab3",
             "locator": {
               "end": 67,
@@ -210,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a7959afbbb3e3b8b7136af8878ea3584aab48e8",
+            "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
             "content": "sha256:4dbfb242bae983d7cb2cc9f1f1df20eea8139016546ad5650d365fbd24a5b542",
             "locator": {
               "end": 231,
@@ -240,7 +258,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a7959afbbb3e3b8b7136af8878ea3584aab48e8",
+            "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
             "content": "sha256:ea2e4109d534d506166d5aa5c24d157e75df0e019458e597c68d9bf769e73b23",
             "locator": {
               "kind": "symbol",
@@ -251,7 +269,7 @@
         },
         {
           "anchor": {
-            "blob": "6a7959afbbb3e3b8b7136af8878ea3584aab48e8",
+            "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
             "content": "sha256:4278ed28abbccb4cee2cec61b61aa6cd1d657d5a0474b8e6030e63640a7a64b2",
             "locator": {
               "kind": "symbol",
@@ -267,7 +285,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a7959afbbb3e3b8b7136af8878ea3584aab48e8",
+            "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
             "content": "sha256:5ff75114842a67be15ec8891167b86af8135afacaa331ec4072e7cd253c71842",
             "locator": {
               "end": 122,
@@ -284,7 +302,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a7959afbbb3e3b8b7136af8878ea3584aab48e8",
+            "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
             "content": "sha256:e77180af9a8cdbb8af2545c822be6fb1aff5a14865bd4c093437177f8410f172",
             "locator": {
               "end": 270,
@@ -315,12 +333,12 @@
       ]
     },
     "3": {
-      "note": "One entry's class and facts; the per-side content identity.\n\nAnchor: `Classification` `contents`",
+      "note": "One entry's class and facts; the per-side content identity.\n\nAnchor: `Classification`",
       "targets": [
         {
           "anchor": {
-            "blob": "6a7959afbbb3e3b8b7136af8878ea3584aab48e8",
-            "content": "sha256:9fd5550bebbae172636735ffeef85a007a2b96afc5dc2f28397e112d38a0d1fa",
+            "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
+            "content": "sha256:19193e97b88017f8136256dab82bd6536b0e1ac95edfd6e233aca791723a6f6a",
             "locator": {
               "kind": "file"
             }
@@ -334,7 +352,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a7959afbbb3e3b8b7136af8878ea3584aab48e8",
+            "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
             "content": "sha256:eb98968ac1345f2a07ea797b009653bc897ccffae40f4d404feba15e4c4fb86c",
             "locator": {
               "kind": "symbol",
@@ -350,7 +368,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a7959afbbb3e3b8b7136af8878ea3584aab48e8",
+            "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
             "content": "sha256:e77180af9a8cdbb8af2545c822be6fb1aff5a14865bd4c093437177f8410f172",
             "locator": {
               "end": 270,
@@ -367,7 +385,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a7959afbbb3e3b8b7136af8878ea3584aab48e8",
+            "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
             "content": "sha256:d3c6a457c3f7c232ece8b34718b15c76500b747acc6ea219ba76a45f5f2d25cf",
             "locator": {
               "kind": "symbol",
@@ -378,7 +396,7 @@
         },
         {
           "anchor": {
-            "blob": "6a7959afbbb3e3b8b7136af8878ea3584aab48e8",
+            "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
             "content": "sha256:33e478286fbcf0d026432a82ab7ac730cdeccbae2025c02bd82baa367e83616b",
             "locator": {
               "kind": "symbol",
@@ -394,7 +412,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a7959afbbb3e3b8b7136af8878ea3584aab48e8",
+            "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
             "content": "sha256:c51fbf3997d808f754ce7a4af4c221bff0563da1f5ff1541ed33e9502714a4f9",
             "locator": {
               "kind": "symbol",
@@ -410,7 +428,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a7959afbbb3e3b8b7136af8878ea3584aab48e8",
+            "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
             "content": "sha256:57f6b15a21b2a14a6d87f5bfac1a81d8636bd6900a6bb1192720cdfaa146852f",
             "locator": {
               "kind": "symbol",
@@ -422,12 +440,12 @@
       ]
     },
     "9": {
-      "note": "Added, retired and changed-record invariants; changed families.",
+      "note": "Added, retired and changed-record invariants and changed families, delegating record-file change detection to `KnowledgeSide.record_file_changed`.",
       "targets": [
         {
           "anchor": {
-            "blob": "6a7959afbbb3e3b8b7136af8878ea3584aab48e8",
-            "content": "sha256:95b3238796787cf78c1223da476248122db8a026dd93178dff903ed3f4a0b101",
+            "blob": "62c867961074e1ad58962d1e3ad6af57d2fa8fb0",
+            "content": "sha256:fa31a9b5909058c282dbc77c70945a4bbb8a8f53c85d501d2cba6e207af84c75",
             "locator": {
               "kind": "symbol",
               "name": "knowledge_changes"

@@ -47,7 +47,7 @@ re-anchored, and which K_B families' records changed. Since MIK-R14 it also clas
   `to_document()` is its facts form.
 - The classifier memoizes: each entry is classified once per run (`classify`, `classified`).
 - **Knowledge-side changes** (`knowledge_changes`):
-  - an invariant of K_B changed when its record file (location and bytes) differs;
+  - an invariant of K_B changed when `base.record_file_changed(candidate, invariant)` is true (path moved/absent, or bytes differ beyond `state_conversion_only`);
   - an entry ID only in K_C is `added` to its invariant; an entry ID only in K_B is `retired`; an entry that
     changed invariant is retired from one and added to the other;
   - an entry present on both sides with a different anchor or source path is `reanchored` (`_reanchor`),
@@ -61,7 +61,7 @@ re-anchored, and which K_B families' records changed. Since MIK-R14 it also clas
     `moved_or_absent` and `stale_at_base` exist for the worklist's own covering items, which the reviewer does not
     have), so the reviewer and the worklist share one definition-7 carry rule;
   - an invariant absent from K_B raises nothing (`note` ignores it);
-  - a K_B family changed when its record file differs.
+  - a K_B family changed when `base.record_file_changed(candidate, family)` is true (path moved/absent, or bytes differ beyond `state_conversion_only`).
 
 ### Conventions
 
@@ -105,8 +105,6 @@ No configured live documentation source was available for this pass.
 
 - Raising and covering classes. [2]
 
-- One entry's class and facts; the per-side content identity. [3]
-
 - Classify once per run. [4]
 
 
@@ -116,8 +114,10 @@ No configured live documentation source was available for this pass.
 - A `reconsider_on` link's anchor, classified like an entry with kind `link` and never recorded as one. [6]
 - The hunks that hit the range; `None` for a binary pair. [7]
 - The writer's carry-forward is not a re-anchor. [8]
-- Added, retired and changed-record invariants; changed families. [9]
 - A re-anchor is a change unless a covering class or the carry explains it; since MIK-L33 `_reanchor` asks the public `reanchored`, which asks `carried_mechanically`. [10]
+
+- One entry's class and facts; the per-side content identity. [3]
+- Added, retired and changed-record invariants and changed families, delegating record-file change detection to `KnowledgeSide.record_file_changed`. [9]
 - The link anchor triggers on `touched` and `moved_or_absent` and joins no entries. [11]
 - Stale takes precedence. [12]
 - Deletion, rename, ambiguity and a deleted range are `moved_or_absent`, with a mechanical match. [13]
