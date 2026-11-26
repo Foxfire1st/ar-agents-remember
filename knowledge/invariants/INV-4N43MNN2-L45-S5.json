@@ -19,5 +19,23 @@
   "schema": "ar-invariant/v1",
   "statement": "A curator hand-off entry whose retry key already holds a recorded allocation whose revision the candidate stores is not admitted again: its exact retry replays and can publish without any realization check, including operations committed before targets carried a rationale, while changed content under that key is refused allocation_content_conflict.",
   "status": "retired",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260921-ICR",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

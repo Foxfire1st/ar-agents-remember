@@ -37,6 +37,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Bound role-agent activity is published from host transitions and qualified per boot after registry recovery and a matching snapshot. Task activity is event driven. The held-delivery tick shares a parsed publication for recipient ending observations and a separate stamped idle usage selection. A separate send-time turn check can hold a message for a recipient in a turn.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L20",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

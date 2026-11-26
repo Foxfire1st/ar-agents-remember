@@ -27,6 +27,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "Each issue kind has its named shape: a task opens with purpose, links, requirement IDs, status and waits, then the named sections; a master carries grouped delivery, the open order and the folded requirement table; a sprint links its masters and end; a completed-master summary says what it set out to do, delivered and when.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L194",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

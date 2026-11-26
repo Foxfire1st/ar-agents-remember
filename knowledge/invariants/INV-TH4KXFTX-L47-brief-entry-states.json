@@ -22,6 +22,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Change-set and Intent review controls carry a one- or two-word state with data-review-state/data-review-code, and the owner's code, reason, offending input and next action sit in a closed disclosure beside the control rather than in or beside the entry as a paragraph.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L174",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

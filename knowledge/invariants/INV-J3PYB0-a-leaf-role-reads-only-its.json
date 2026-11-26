@@ -31,6 +31,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "An enclosed leaf role reads its own rendered leaf document and declared approved requirements as real task-documents files, with one INDEX artifact recording copied digests and named missing files before the first turn; public writes refresh only the exact bound copy set atomically.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L111",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

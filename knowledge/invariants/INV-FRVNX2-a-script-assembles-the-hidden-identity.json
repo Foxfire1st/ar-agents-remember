@@ -28,6 +28,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "The agent writes each body's hidden identity itself — ar-task and ar-kind, ar-parent except on the sprint, and one ar-requirement per current requirement — as the only hidden content; before a write it reads its own title and body against the omission rules, after it reads the issue back with gh issue view and compares, and every body stays under 65,536 bytes and is never split into comments.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L194",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

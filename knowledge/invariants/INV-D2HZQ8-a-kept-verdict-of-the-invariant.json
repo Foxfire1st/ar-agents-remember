@@ -32,6 +32,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A kept verdict of the invariant gate is served again only while every path resolution and existence probe its evaluation recorded still gives the recorded answer and every recorded file still has the recorded bytes. A requirement packet whose locator resolves to another file is therefore a miss also when that file holds identical bytes, and the next evaluation gives the verdict a fresh evaluation gives.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L3",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

@@ -31,8 +31,26 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "When the resolved memory layer holds `system/task-publication.md`, the Manager follows it: claiming a leaf assigns its issue and sets In progress before the start; after the landing and both pushes, close the issue. Without that file, publish nothing.",
-  "status": "proposed",
   "supersedes": [
     "INV-K50JTR"
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L194",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

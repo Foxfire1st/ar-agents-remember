@@ -29,5 +29,24 @@
     "task": "260928-MIK-L97"
   },
   "state": "closed",
-  "statement": "The served description of worktree_operation_control offers generations of a closeout and of an integrate, while only a direct landing leaves a generation and both kinds answer lifecycle-operation-missing."
+  "statement": "The served description of worktree_operation_control offers generations of a closeout and of an integrate, while only a direct landing leaves a generation and both kinds answer lifecycle-operation-missing.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L15",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

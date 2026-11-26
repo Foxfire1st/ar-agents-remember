@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "48c171029dbbe43e6ba940b9dd8f029422ab5663",
-    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
+    "codeTree": "73fc8a8e0c82f15e600a68e696494c112faebdd9",
+    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
     "role": "curator",
-    "statement": "Audited docs/design/python-evidence-system.md in full (lines 1-295) against DEP-synced L52 candidate 48c17102 (base 599cfaf8, where 261125-DEP-L2 confirmed rev 23): pins no artifact or test counts and accurately describes the seven accepting lanes, canonical catalog form, lifecycle rules, and source-derived consumers after L52 added dependent_deferrals_test_support.py and its two unit-regression suites.",
-    "task": "261112-BUG-L52",
+    "statement": "Verified on synced code 73fc8a8e (base 65911c75, post-BUG-L52/BUG-L51): docs/design/python-evidence-system.md pins no test or artifact counts and accurately describes the seven accepting lanes, canonical catalog layout, and source-derived consumer lists across all 830 cataloged modules (680 unit-regression) and 18 contracts / 123 artifacts in evidence-lifecycle.toml.",
+    "task": "261112-KNO-L6",
     "uncommitted": true
   },
   "document": "docs/design/python-evidence-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 24,
+  "revision": 25,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,12 +66,12 @@
       "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
     },
     {
-      "blob": "814eb72a6b0201d630870017a7044a31e10ffd4e",
+      "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
     {
-      "blob": "cf51351a6a923d7993013c5826ae2796a756b2b1",
+      "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
       "kind": "file",
       "path": "mcp/tests/evidence-lifecycle.toml"
     },
@@ -107,14 +107,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T08:25:07+01:00",
+    "at": "2026-11-26T12:12:35+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L52",
+    "leaf": "261112-KNO-L6",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
-    "task": "261112-BUG"
+    "seat": "b7c84d12-6e3f-4a91-9b22-5d4f7c8e9a01",
+    "task": "261112-KNO"
   }
 }

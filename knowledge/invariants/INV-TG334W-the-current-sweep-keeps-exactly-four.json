@@ -30,6 +30,24 @@
   "revision": 5,
   "schema": "ar-invariant/v1",
   "statement": "The composed self-contained sweep declares the retained empty envelope-loss and empty unmarked-not-ok pins after the admitted same-change repairs; its positive population is memory_baseline_adopt, not the retired search tools. The separate shared entry-point world has its own empty unmarked-not-ok pin. The ambient-state raiser pin, ambient-state matrix and their case have been removed; they are not current declarations or evidence. Exact-equality checks on the retained pins and historical same-change repair ownership remain; these declarations are not an executed new failure census.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L168",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

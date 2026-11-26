@@ -22,6 +22,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Dated L55 bound for the superseded walk: the directory-first sort key treated ENOENT, ENOTDIR, EBADF and ELOOP from a followed stat as not-a-directory and propagated every other error. Current folder endpoint: _folder_entries sorts directories first, case-folded, exact name breaking ties; per-entry stat failures of any errno are skipped by _folder_row and never fail the answer — the propagate-other-errors promise does not carry to per-entry stats; errors from opening or listing the folder itself propagate.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L126",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

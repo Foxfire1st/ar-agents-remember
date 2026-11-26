@@ -16,5 +16,23 @@
   "proposition": "R198/L191 had not landed or been activated at this leaf's APPLY, so R199's ordinary affected-knowledge obligation applied and the whole-pair anchor duty remained a publication condition.",
   "revision": 1,
   "schema": "ar-assumption/v1",
-  "status": "proposed"
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L192",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

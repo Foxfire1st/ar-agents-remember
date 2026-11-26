@@ -31,6 +31,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The stores the removed parts wrote under a coordination root are no longer read and no install deletes them; the install's result names them with count, size, every store and the two sentences, its answer carries all but the list, and only `agents-remember removed-stores` removes them, naming what it cannot read or remove and ending 1 then.",
-  "status": "accepted",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L168",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

@@ -25,6 +25,23 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "An immutable curator generation is read through one integrity owner that validates its content address, typed identity, projection, retained attestation and evidence without requiring reclaimed live quality files. The publication owner retains admitted code:, memory: and task: judgment evidence through its existing path/SHA/size artifact type, preserving the authored citation and hash. Strict live readiness still checks original live inputs. Legacy records retain their encoding: explicit task citations remain addressable; code/memory citations without owner custody are unavailable and never borrow current bytes.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260921-ICR",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

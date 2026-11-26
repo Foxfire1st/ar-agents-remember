@@ -1,0 +1,105 @@
+{
+  "path": "mcp/tests/test_knowledge_state_conversion_verdict_ref.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "375d8a8782cbfc1eae85209170b30a81d55e8f65",
+        "content": "sha256:09f30f452540381d42c5ccbcfd479e5860369bf109d80080e4f4025a14e1f448",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_review_fact_normalizes_report_verdict_refs"
+        }
+      },
+      "facet": "Demonstrates that absolute and relative role-reports and notes/reports paths, dot-slash prefixes, Windows separators, and surrounding whitespace normalize to durable notes/reports/<rel> without filesystem access.",
+      "id": "PRF-6363Q9",
+      "invariant": "INV-GSH11V",
+      "origin": {
+        "handoffEntry": "KNO-R06@v2 / row-738",
+        "leaf": "261112-KNO-L6"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "375d8a8782cbfc1eae85209170b30a81d55e8f65",
+        "content": "sha256:7984f4a32504dbbc9e749e2d80f499c9d5dae6a6653895b7d8e604a187f20f45",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_plan_state_conversion_writes_durable_verdict_refs_in_converted_reviews"
+        }
+      },
+      "facet": "Demonstrates end-to-end that plan_state_conversion writes durable notes/reports/<rel> verdictRef values into knowledge/history/converted-reviews.json across worktree and absolute input forms.",
+      "id": "PRF-FP4ENK",
+      "invariant": "INV-GSH11V",
+      "origin": {
+        "handoffEntry": "KNO-R06@v2 / row-738",
+        "leaf": "261112-KNO-L6"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "375d8a8782cbfc1eae85209170b30a81d55e8f65",
+        "content": "sha256:f53724e037e0b6e2b2ccc3eabea07e06e1e05009ee7e5905a1034acf6adda3d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_review_fact_leaves_invalid_or_non_report_refs_unchanged"
+        }
+      },
+      "facet": "Demonstrates that empty tails, .. traversal segments, non-report paths, and URLs containing /role-reports/ remain unchanged.",
+      "id": "PRF-Q68NAQ",
+      "invariant": "INV-GSH11V",
+      "origin": {
+        "handoffEntry": "KNO-R06@v2 / row-738",
+        "leaf": "261112-KNO-L6"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Parametrized cases verify that absolute and relative `role-reports` and `notes/reports` paths, `./` prefixes, Windows backslashes, and surrounding whitespace normalize to `notes/reports/<rel>`. [1]\n\nAnchor: `test_review_fact_normalizes_report_verdict_refs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "375d8a8782cbfc1eae85209170b30a81d55e8f65",
+            "content": "sha256:0bd6291e542966e889df10c0609e145c31a78d671c1b85afc926598aa41bb714",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Parametrized cases verify that empty tails, `..` path-traversal segments, non-report paths, and URLs containing `/role-reports/` remain unchanged. [2]\n\nAnchor: `test_review_fact_leaves_invalid_or_non_report_refs_unchanged`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "375d8a8782cbfc1eae85209170b30a81d55e8f65",
+            "content": "sha256:0bd6291e542966e889df10c0609e145c31a78d671c1b85afc926598aa41bb714",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "End-to-end conversion test verifies `plan_state_conversion` writes normalized `notes/reports/<rel>` `verdictRef` entries into `knowledge/history/converted-reviews.json` across worktree and absolute forms. [3]\n\nAnchor: `test_plan_state_conversion_writes_durable_verdict_refs_in_converted_reviews`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "375d8a8782cbfc1eae85209170b30a81d55e8f65",
+            "content": "sha256:0bd6291e542966e889df10c0609e145c31a78d671c1b85afc926598aa41bb714",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

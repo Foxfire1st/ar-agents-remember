@@ -30,6 +30,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "The notes reader left column is the shared ExplorerTree fed one folder at a time, loading the open note beyond the first part and emptying vanished folders with the server reason. The folder cache holds at most 32 folders except that the insertion folder and open-note ancestor chain are protected from LRU eviction; it may stand above 32 when every possible victim is protected.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-KNO-L3",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-KNO",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

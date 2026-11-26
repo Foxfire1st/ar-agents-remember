@@ -32,6 +32,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "For a path the parked candidate and the carried line both changed, the proof of restored parked work expects the one content git's own merge of the stash onto the carried head gives, with the merge the carried head's attributes prescribe for the path and the carried side first, and compares the worktree with it byte for byte.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L163",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

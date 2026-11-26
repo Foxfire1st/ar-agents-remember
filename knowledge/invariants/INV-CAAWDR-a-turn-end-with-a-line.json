@@ -29,6 +29,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A turn end with a line starting `WAITING FOR BACKGROUND:` declares a process wait. The declaration instructions ask for each process, its PID or log, and its expected end. A declaration alone sends no parent line. A same-turn handoff keeps the ordinary parent rules. A still-current declaration may arm one check after the handoff path returns. The default is three minutes and a declared delay is clamped to 1–30 minutes. One check can ask about both an open helper and background declaration. A later end that omits the background declaration, close or archive ends that wait.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L20",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

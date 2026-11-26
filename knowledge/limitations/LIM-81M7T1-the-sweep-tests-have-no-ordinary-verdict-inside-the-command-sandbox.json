@@ -27,5 +27,24 @@
     "No cause is established for the missing completion inside the command sandbox.",
     "No equivalence between the command sandbox and the outside route is claimed beyond the recorded runs.",
     "Whether an ordinary verdict inside the command sandbox is required belongs to MIK-R87 carry item 17, not to this leaf."
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L70",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

@@ -31,6 +31,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "A prepared leaf start cannot create an agent past its leaf's closing boundary and then publish a running retired start: the closing mark is read before replay and under the lock after creation, a not-yet-entered creation is refused, and an already-entered creation's minted target stays owed until its returned agent is archived and the start refused, without erasing the retirement record.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L76",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

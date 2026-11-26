@@ -27,6 +27,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "The action for an operation record of an enclosure without a live operation locator is a move by hand that does not overwrite, and its text tells the operator to choose an unused destination when one exists, to verify that the record has moved, and that a later build's adoption route replaces the step.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L41",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

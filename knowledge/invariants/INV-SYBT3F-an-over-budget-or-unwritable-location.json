@@ -31,6 +31,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "An over-budget recorded location is never cut, substituted, capped or omitted: the cut answer retains it exactly and ends with a hint naming the whole-result file. If the whole result could not be recorded, the answer retains logError with resultKept false and ends with a no-file hint that gives the logging reason. Location and hint remain when the recorded path and its hint cannot fit the 400-token target after other droppable content is removed.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L3",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

@@ -34,6 +34,24 @@
     "dashboard/src/panels"
   ],
   "schema": "ar-family/v1",
-  "status": "proposed",
-  "title": "Completed host-path tool calls land one bounded, attributed river row; failed writes are counted and restarts promise nothing"
+  "title": "Completed host-path tool calls land one bounded, attributed river row; failed writes are counted and restarts promise nothing",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L168",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

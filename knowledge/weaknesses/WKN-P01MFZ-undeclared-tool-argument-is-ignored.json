@@ -25,5 +25,23 @@
     "task": "260928-MIK-L97"
   },
   "state": "open",
-  "statement": "The docstring says that every undeclared input of a tool call is rejected before the handler runs, while a call that carries an undeclared argument is answered as if the argument were absent."
+  "statement": "The docstring says that every undeclared input of a tool call is rejected before the handler runs, while a call that carries an undeclared argument is answered as if the argument were absent.",
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

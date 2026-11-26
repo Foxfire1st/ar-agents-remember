@@ -23,6 +23,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Dated L55 bound for the superseded walk: the listing realpath-checked only symlink entries against the resolved root (one followed stat per entry; root resolved once). Current folder endpoint: confinement lives in the held-descriptor open (_open_confined_dir, O_NOFOLLOW); the per-entry decision stats without following and resolves only symlinks against the root. Each row costs one nofollow stat, plus a second followed stat for symlink entries after resolution; path resolution is paid for the root and for symlinks only; the DirEntry sort-before-check window description is retired with the walk.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L126",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

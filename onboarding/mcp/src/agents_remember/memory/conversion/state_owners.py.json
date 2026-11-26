@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fa5c03fb4578b27cded12d8784cdaace491ceea5",
+        "blob": "3bb4147cebb3bd8af48d26d9ea4b650733ba9d77",
+        "content": "sha256:b1bfeb4e49342b7d8877d77293c85fcc809408711552037d211afbb3d035cab5",
+        "locator": {
+          "kind": "symbol",
+          "name": "review_fact"
+        }
+      },
+      "id": "RLZ-J4NB64",
+      "invariant": "INV-GSH11V",
+      "origin": {
+        "handoffEntry": "KNO-R06@v2 / row-738",
+        "leaf": "261112-KNO-L6"
+      },
+      "rationale": "review_fact builds every converted review fact written to knowledge/history/converted-reviews.json and applies the durable-path normalization to each stored verdict reference.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3bb4147cebb3bd8af48d26d9ea4b650733ba9d77",
         "content": "sha256:22bc369023cb1ac3b4b658e634a22569bba11450684b3feaa1de9fb0e6e6cd9a",
         "locator": {
           "kind": "symbol",
@@ -18,6 +36,24 @@
       },
       "rationale": "Finds the owner of a current revision from the origin or the changed row, and none where neither says it.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3bb4147cebb3bd8af48d26d9ea4b650733ba9d77",
+        "content": "sha256:2be73e8447b5fbc3499e814fe705b911691965f28bf13b285b5f450c4e564694",
+        "locator": {
+          "kind": "symbol",
+          "name": "_durable_verdict_ref"
+        }
+      },
+      "id": "RLZ-MC07BR",
+      "invariant": "INV-GSH11V",
+      "origin": {
+        "handoffEntry": "KNO-R06@v2 / row-738",
+        "leaf": "261112-KNO-L6"
+      },
+      "rationale": "Performs the pure segment normalization that maps worktree and absolute report references to notes/reports/<rel> without reading the filesystem.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -26,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa5c03fb4578b27cded12d8784cdaace491ceea5",
+            "blob": "3bb4147cebb3bd8af48d26d9ea4b650733ba9d77",
             "content": "sha256:22bc369023cb1ac3b4b658e634a22569bba11450684b3feaa1de9fb0e6e6cd9a",
             "locator": {
               "kind": "symbol",
@@ -42,11 +78,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa5c03fb4578b27cded12d8784cdaace491ceea5",
+            "blob": "3bb4147cebb3bd8af48d26d9ea4b650733ba9d77",
             "content": "sha256:543f8b00e4152a3ad92ddac19e76a0964e5d869c7cd4e82996492cc46c69ccce",
             "locator": {
               "kind": "symbol",
               "name": "record_stamp"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`review_fact` applies `_durable_verdict_ref` and `_report_tail` to normalize worktree `role-reports` and absolute report paths into durable `notes/reports/<rel>` references without filesystem access, leaving empty tails, `..` traversal segments, URLs, and non-report paths unchanged. [3]\n\nAnchor: `review_fact`; `_durable_verdict_ref`; `_report_tail`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bb4147cebb3bd8af48d26d9ea4b650733ba9d77",
+            "content": "sha256:4c17fa52bc08630da767ab5f5502467d91fb4a6972da99fc69cea0e18bd110a7",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

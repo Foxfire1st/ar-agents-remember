@@ -30,6 +30,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Each sweep tick drains the receipts whose turn just ended, then the queued held receipts through a rotating slice, and only then walks at most thirty-two candidate receipt paths and reads at most thirty-two receipts; no recursive glob runs in the tick, history and bindings are never descended into, and the rotation reaches every queued receipt within a bounded number of ticks.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L171",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

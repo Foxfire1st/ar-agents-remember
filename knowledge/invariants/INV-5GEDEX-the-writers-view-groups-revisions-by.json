@@ -28,6 +28,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "The writers view groups revisions by role, harness and model, then counts reviewed, changed and retired revisions. Its index derives the current revision's review credit from the same content decision as the record view. The tool answer names a report with the revisions behind each count.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-KNO-L3",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-KNO",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

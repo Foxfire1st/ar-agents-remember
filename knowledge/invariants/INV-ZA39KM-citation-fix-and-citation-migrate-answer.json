@@ -30,6 +30,24 @@
   "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "`citation_fix` answers a contract that contradicts configured repository authority with `ok: false`, the status `configured-contract-authority-invalid`, the failing side and name, and the next action `developer-decision`, instead of raising; no other error is translated and `ENVELOPE_LOSING_RAISERS` stays empty. The retired `citation_migrate` MCP adapter is not part of this current response contract.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L202",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

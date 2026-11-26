@@ -38,6 +38,24 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "A completed task reopens from its master's state and completes again without limit: a leaf whose master and branches exist reopens from the master's current tip and a master reopens while its sprint is active, restored from the sprint's integration branch; a task already carrying the reopen tombstone answers `reopened` again with the same next step and writes nothing, while a live generation still meets the unchanged preflight refusal; the start after a reopen accepts the archived generation's reset contract, recreating the enclosure and naming `worktree_start` as the next step instead of refusing `terminal-archive-contract-mismatch`; a master's parent is its sprint, so `parent_task_name` is no longer an admission edge and the folder resolution uses the recorded value only when it names a folder other than the master's own; a master whose closeout and integration both completed but whose cleanup never ran reopens too, the reopen collecting the enclosure through the same cleanup transaction `worktree_cleanup` runs before it plans, while a master still in flight keeps its refusal; and the chain a master's closeout proves starts on the master's own line rather than at one exact commit, so a leaf that landed, was reopened and landed again is accepted at that later position in either direction, and only a position off the line refuses, naming `worktree_integrate` or `worktree_sync` rather than a contract-cell edit.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L190",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

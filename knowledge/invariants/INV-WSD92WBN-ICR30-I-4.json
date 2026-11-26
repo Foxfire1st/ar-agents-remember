@@ -26,6 +26,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "An undeclared process whose Agents Remember package was loaded from a linked Git checkout reads and writes coordination state only inside a disposable root under that checkout's own enclosure, and undeclared execution from the primary checkout is refused before any authority settings document is read.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L54",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

@@ -29,6 +29,24 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A revision becomes ready only after a static readiness check over its exact bytes — including a part-map check that refuses an inadmissible part id, a claim mark that is not a claim id of this revision, an unmapped claim and a claim whose basis does not resolve — and one real model-free load; a failed or unavailable load refuses publication and keeps the last ready revision.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L183",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

@@ -30,6 +30,24 @@
   "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "Common D107, reviewed-result-stands, ready-train, external-sources and permission non-bypass rulings retain their governing homes and are delivered; the serving-build producer boundary is stated once, in Curator orientation, and the curation and recovery operations send the reader there before any memory decision or write.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L84",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

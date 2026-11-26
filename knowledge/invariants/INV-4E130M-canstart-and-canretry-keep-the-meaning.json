@@ -30,6 +30,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "`canStart` and `canRetry` keep the meaning the launch leaf gave them and are computed from the receipt's status; no refresh touches an unresolved receipt; a finished turn is recorded as `completed` with the detail 'last turn finished; the agent is idle' and changes no AR task, review, requirement or Git state. A receipt that carries its leaf's closing mark and whose `leafArchive.startRefused` flag is true is the exception: `canStart`, `canRevive` and `canRetry` are false, the explicit `startRefused` flag is projected, and the status is `rejected` when the receipt's own target is already archived or gone; a marked receipt whose settlement has not set that flag keeps its ordinary status.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L100",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

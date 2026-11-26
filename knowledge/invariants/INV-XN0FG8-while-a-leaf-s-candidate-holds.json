@@ -35,6 +35,24 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "While a leaf's candidate holds another revision of an invariant, or another guarantee of a family, than the leaf's parent line, the leaf's governing row about that record -- its latest across its attempt files -- is the changed row of that change, or the row that retires the record. A later no_impact, moved or extended row about such an invariant, or a no_impact, assigned or rerouted row about such a family, leaves the item open at the gate and is refused by the validator at a commit that publishes the leaf. The writer accepts a changed row at an unchanged revision only as a restatement of the leaf's own changed row of that revision in an earlier attempt. The writer also enforces this governing-row rule before writing: for an ordinary leaf with a persisted worklist, every matching touched_invariant or stale_invariant item with a different recorded base revision, and every reached_family item flagged guarantee-changed, is checked by the same rule in the same run. A preceding item with no base revision does not waive a later matching changed-record item.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "260928-MIK-L54",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "260928-MIK",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }

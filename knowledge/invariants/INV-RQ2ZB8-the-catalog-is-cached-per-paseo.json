@@ -37,6 +37,24 @@
   "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "A launcher metadata request reads choices from the configured Paseo runtime. The panel requests feature options for the shown provider and model when it has no held answer for that pair. A new role start reads provider and model metadata and checks features for its resolved pair when needed. Within one operation the answer may be shared, but no process-lifetime cache controls later views or starts. Unavailable parts use the shared last successful answer with its timestamp; a part with no current or saved answer leaves configured values unchecked. Known agent/model/effort choices are validated before workspace or enclosure creation. Launcher rechecks, role-start preparation, tool-server checks, caller-harness checks, settings initialization and settings-driven explainer starts use this same resolver and saved-part policy.",
-  "status": "proposed",
-  "supersedes": []
+  "supersedes": [],
+  "writer": {
+    "at": "2026-11-26T12:07:40+01:00",
+    "by": "conversion",
+    "effort": "unknown",
+    "harness": "unknown",
+    "leaf": "261112-BUG-L19",
+    "model": "unknown",
+    "operation": "state-conversion",
+    "role": "unknown",
+    "seat": "unknown",
+    "task": "261112-BUG",
+    "unknown": {
+      "effort": "not recorded before writers were stamped",
+      "harness": "not recorded before writers were stamped",
+      "model": "not recorded before writers were stamped",
+      "role": "not recorded before writers were stamped",
+      "seat": "not recorded before writers were stamped"
+    }
+  }
 }
