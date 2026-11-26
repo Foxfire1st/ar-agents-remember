@@ -99,7 +99,9 @@ Investigator dispatch uses the existing selection admission lock; options expose
 
 
 
+
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [7]
+
 
 
 

@@ -377,7 +377,7 @@
         },
         {
           "anchor": {
-            "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
+            "blob": "864dd917963036bf4084b81f219ee468696d72b1",
             "content": "sha256:7b333b378a876d7d31a639417ee9e0bd1307a7960ea6f796ae4faf8a59e088c2",
             "locator": {
               "end": 146,
@@ -390,12 +390,12 @@
         },
         {
           "anchor": {
-            "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
+            "blob": "864dd917963036bf4084b81f219ee468696d72b1",
             "content": "sha256:97edf8baa55a0bc6ced1a095d16ddb6f54df877a79677ec3f72679cce84f5720",
             "locator": {
-              "end": 339,
+              "end": 337,
               "kind": "line_range",
-              "start": 329
+              "start": 327
             },
             "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
           },
@@ -714,7 +714,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "95481b01b9ebe75b1fbc9d7f37e1fbd74047f5c7",
+            "blob": "f334773dc898891b52dcadc7666638c67143f2af",
             "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
             "locator": {
               "kind": "symbol",
@@ -731,8 +731,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e534f5fd8f2a40b4364b4013daaab4744243356",
-            "content": "sha256:30c40467d843b85e5b5b7fee42d07a97945aea48e798c2e767530a31bf7a24e2",
+            "blob": "337ed34917a2c7ccf781661eaad5d7831d2a8d1a",
+            "content": "sha256:1b566df85c7f3854fe127e81d1037fd73413bd79875f2cc5d3918ab28f02497b",
             "locator": {
               "kind": "file"
             },
@@ -747,7 +747,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "95481b01b9ebe75b1fbc9d7f37e1fbd74047f5c7",
+            "blob": "f334773dc898891b52dcadc7666638c67143f2af",
             "content": "sha256:fad350e8510ef3d5275abfc15b970aba77dd3c03af6992e7609b01205cb07d4a",
             "locator": {
               "kind": "symbol",

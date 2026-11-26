@@ -23,7 +23,7 @@ role agents were recorded.
 
 ### Conventions
 
-The service writes only the launch receipts' archive fields and closed held-store settlement fields (`heldStoreClosures`, `heldWaiting`, `heldMessageLines`) and unlinks settled stores; it never rewrites launch status, the report or artifact references, or the task document.
+The service writes only the launch receipts' archive fields, `LeafAgentArchive` retirement attribution (`_record_retired_target` -> `settle_retirement(..., _TASK_FINISHED_RETIREMENT)` on confirmed `archived`/`gone` targets and prior already-archived/gone targets), and closed held-store settlement fields (`heldStoreClosures`, `heldWaiting`, `heldMessageLines`) and unlinks settled stores; it never rewrites launch status when refusing a closing start, the report or artifact references, or the task document.
 
 ### Invariants And Boundaries
 
@@ -41,7 +41,7 @@ The service writes only the launch receipts' archive fields and closed held-stor
 - Receipt marking happens under the existing lock before host I/O. [2]
 
 
-- A marked start is refused and a returned creation settled. [3]
+- A marked start is refused and a returned creation settled, with `_record_retired_target` recording `LeafAgentArchive` `retiredBy` attribution on confirmed archives. [3]
 
 - Recorded targets are validated and unreadable or conflicting records are named. [4]
 - The bounded host call settles debt and outcomes. [5]

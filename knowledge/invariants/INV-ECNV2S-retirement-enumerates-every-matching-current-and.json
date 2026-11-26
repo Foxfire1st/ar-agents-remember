@@ -5,13 +5,13 @@
     ],
     "justification": "The recorded behavioral fixture assertions guard this obligation; the proof facets distinguish their limited fixture behavior from real-host or full-final acceptance."
   },
-  "applicability": "Native retirement of a Worker, Reviewer or Curator by the recorded original starter, and the liveness check that steps a seat up.",
+  "applicability": "Native retirement of any role seat through retire_child under bound-caller scope, and the liveness check that steps a seat up.",
   "conditions": [
-    "Resolve all matching current and archived receipts before any archive effect.",
-    "Require the original starter even for a repeat reporting already-retired.",
-    "An active turn requires explicit interruption permission.",
-    "More than one matching record in any current/history mix is refused before any archive effect, with no host call and no disk write, so target uniqueness survives alongside starter authorization.",
-    "A seat whose publication shows a running subagent is retired or replaced only with the word that its work may be interrupted, and the refusal names the subagent; a step-up never interrupts a holder that has one."
+    "Resolve all matching current and archived receipts before any archive effect; more than one matching record in any current/history mix is refused with no host call and no disk write.",
+    "Verify bound-caller scope against current task membership before any archive effect or idempotent already-retired response (Architect any other seat; Orchestrator sprint+masters+leaves; Manager master+leaves; non-coordinators none; never self).",
+    "Refuse retiring a reserved seat during its first launch or before an uncertain launch replays, and refuse queuing new role_message traffic once retirement is recorded.",
+    "An unarchived role agent of any role in an active turn or whose publication shows a running provider subagent requires explicit interrupt permission, and the refusal names the active turn or subagent.",
+    "A step-up launch retains starter-only authority and never interrupts a holder in a turn or with a running subagent."
   ],
   "exclusions": [
     "The removed hosted-seat retirement machinery.",
@@ -30,9 +30,20 @@
     "leaf": "260928-MIK-L100",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Retirement enumerates every matching current and archived record first and refuses an agent recorded more than once, in any mix, with no host call and no disk write; starter authority is verified before retirement and idempotent success. A seat whose publication shows a running subagent is retired or replaced only with the word that its work may be interrupted, and it is busy for a step-up, which never interrupts it.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "Retirement admits a unique receipt of any role, enumerates every matching current and archived record first and refuses an agent recorded more than once, in any mix, with no host call and no disk write; bound-caller scope against current task membership is verified before retirement and idempotent repeat (Architect any other seat, Orchestrator its sprint's seats, Manager its master's and leaves' seats, non-coordinators none, never self). An unarchived role agent in an active turn or with a running provider subagent is retired or replaced only with explicit interrupt permission naming the active work, while a step-up retains starter-only authority and never interrupts a busy holder.",
+  "supersedes": [],
+  "title": "Any-role retirement checks uniqueness, scope, and interruption first",
+  "writer": {
+    "at": "2026-11-26T02:42:00+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L44",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+    "task": "261112-BUG"
+  }
 }

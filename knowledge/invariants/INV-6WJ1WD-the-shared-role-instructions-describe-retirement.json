@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized across core/every-role.md and roles/architect.md; omitting the scope rules or interrupt_turn=true causes Coordinators to misroute retirements or fail to release finished Investigators whose reporting turn is still active."
+  },
+  "applicability": "Shared role capsule instructions in core/every-role.md and Architect role instructions in roles/architect.md (plus their synced packaged copies).",
+  "conditions": [
+    "Shared every-role instructions state the Architect, Orchestrator, and Manager retirement scopes within the shared digest budget.",
+    "Architect instructions direct retiring a finished Investigator with agents-remember-task retire_child naming agent_id and role=\"investigator\" and supplying interrupt_turn=true when its reporting turn is still active."
+  ],
+  "exclusions": [
+    "Ongoing investigations whose final report has not yet been delivered."
+  ],
+  "id": "INV-6WJ1WD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "W2 expanded evidence E8, including the active reporting-turn and ongoing cases and measured capsule ceilings."
+      ],
+      "path": "l44-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R44@v1 rule 7",
+    "leaf": "261112-BUG-L44",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The shared role instructions describe retirement scope, and the Architect supplies explicit interruption permission when the turn that delivered a finished Investigator report is still active.",
+  "supersedes": [],
+  "title": "Role instructions state retirement scope and active-turn Investigator release",
+  "writer": {
+    "at": "2026-11-26T02:42:00+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L44",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+    "task": "261112-BUG"
+  }
+}

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "9a8f83c80b65c002f8b07f79bb2ee8377cdee42d",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "ede5d128e75765d40987bf3981b1d97ed4326bae",
+    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
     "role": "curator",
-    "statement": "Generator-renewed in L38 (9a8f83c8) byte-identical to docs/tool-details.md, mcp/src/agents_remember/package_data/runtime/docs/tool-details.md accurately documents all six runtime_install arguments, sharedHeldStores delivered counts without per-seat stores on preview or apply, reportPath custody for executed runs, and all other tool details.",
-    "task": "261112-BUG-L38",
+    "statement": "Verified packaged mcp/src/agents_remember/package_data/runtime/docs/tool-details.md on synced L44 code tree ede5d128 (base 150b9778): byte-identical to docs/tool-details.md after Worker 1796d73e fixed lines 442-450 for L44 scope-based any-role retirement.",
+    "task": "261112-BUG-L44",
     "uncommitted": true
   },
   "document": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 18,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -55,7 +55,7 @@
       "revision": 2
     },
     {
-      "blob": "546de651e86eb3b4a6e25ebbabe1e6945312f289",
+      "blob": "586b49eb166a7fe6ae774691cd3abe460b58ae9d",
       "kind": "file",
       "path": "docs/tool-details.md"
     },
@@ -125,12 +125,12 @@
       "path": "mcp/src/agents_remember/mcp/registration/memory.py"
     },
     {
-      "blob": "023e93b07cfc3def08a05238107dfa8eb68e292c",
+      "blob": "ece01dd4c4ea63eb902bf90bee6cb28136fa28cd",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_retire.py"
     },
     {
-      "blob": "29ac4d5e75a9e54475ec617732ab37e9e4fa8983",
+      "blob": "39f6d89796e397654995820c7fd5f3e8fd12c4b6",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
     },
@@ -234,14 +234,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T21:30:38+01:00",
+    "at": "2026-11-26T02:42:00+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
+    "leaf": "261112-BUG-L44",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
     "task": "261112-BUG"
   }
 }

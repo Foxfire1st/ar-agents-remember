@@ -44,12 +44,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07ae82d885e3cd87654354b19a373a5a9267b9db",
+            "blob": "b303d8c0e8e82693b482b31c72bae63fd379bd71",
             "content": "sha256:5e597b4f0667c3ce70b87d2d6b595b7e5c5d4e24757dc61c50b155a20b3276ff",
             "locator": {
-              "end": 661,
+              "end": 662,
               "kind": "line_range",
-              "start": 644
+              "start": 645
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },

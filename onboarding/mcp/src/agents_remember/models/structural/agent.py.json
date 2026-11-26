@@ -3,23 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The retained role Literal and native retirement request/response have no dispatch/shared-delivery DTO.",
+      "note": "`RetireChildRequest`, `RetirementIntent`, `RecordedSeatSelection`, `OpenChildSeat`, and `RetireChildResponse` define the native scope-based seat-retirement request/response wire shapes without dispatch/shared-delivery DTOs.",
       "targets": [
         {
           "anchor": {
-            "blob": "182e9581d550eb026fea26679a13a4d3022fd7a6",
-            "content": "sha256:3829c684ae59cffb1701fcae8c6e1137394ff4ea3518522b55546dd8e868a799",
-            "locator": {
-              "kind": "symbol",
-              "name": "StructuralRole"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "182e9581d550eb026fea26679a13a4d3022fd7a6",
-            "content": "sha256:92207c7a7b2c5909efa2533946bf10f82923f6e216bf97cf823ec61f291f05a9",
+            "blob": "acffd657fcf15d5eda272edc19945b210e3eda79",
+            "content": "sha256:3b9ef6ac6559d13ed4b87b560d8b5f29a4064b38eee3d12510f5cabf9b7632d2",
             "locator": {
               "kind": "symbol",
               "name": "RetireChildRequest"
@@ -29,8 +18,8 @@
         },
         {
           "anchor": {
-            "blob": "182e9581d550eb026fea26679a13a4d3022fd7a6",
-            "content": "sha256:b1ae3f3e8367d7483e8a5195dbc73ce53a1d4891942a35a5d28d0183a5ec81e5",
+            "blob": "acffd657fcf15d5eda272edc19945b210e3eda79",
+            "content": "sha256:0fc02497589a8901a800d573c77bd6c046be968b1feb19c26f0e8fa253573174",
             "locator": {
               "kind": "symbol",
               "name": "RetireChildResponse"
@@ -41,15 +30,26 @@
       ]
     },
     "2": {
-      "note": "The task-seat role literal holds seven canonical roles plus the system-specialist spelling.",
+      "note": "`RetireChildRequest.role` uses `LauncherRole` (all canonical roles including `bootstrap`) and `RetireChildResponse._canonical_role` normalizes through `canonical_role`.",
       "targets": [
         {
           "anchor": {
-            "blob": "182e9581d550eb026fea26679a13a4d3022fd7a6",
-            "content": "sha256:3829c684ae59cffb1701fcae8c6e1137394ff4ea3518522b55546dd8e868a799",
+            "blob": "acffd657fcf15d5eda272edc19945b210e3eda79",
+            "content": "sha256:3b9ef6ac6559d13ed4b87b560d8b5f29a4064b38eee3d12510f5cabf9b7632d2",
             "locator": {
               "kind": "symbol",
-              "name": "StructuralRole"
+              "name": "RetireChildRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "acffd657fcf15d5eda272edc19945b210e3eda79",
+            "content": "sha256:0fc02497589a8901a800d573c77bd6c046be968b1feb19c26f0e8fa253573174",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetireChildResponse"
             }
           },
           "kind": "code"

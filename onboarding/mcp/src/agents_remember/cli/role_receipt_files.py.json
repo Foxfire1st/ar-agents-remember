@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "88a95ecfda6809b6b8259b8b7c9ec01ff0fef9f8",
+        "blob": "38592a87d5d5ca8e3903d6e60aacdbda61464643",
         "content": "sha256:f24e033cca1cc382a8d8a78fa54bc07b7926b514890f44120f3d0c2b55f083b1",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,43 @@
     },
     {
       "anchor": {
-        "blob": "88a95ecfda6809b6b8259b8b7c9ec01ff0fef9f8",
+        "blob": "38592a87d5d5ca8e3903d6e60aacdbda61464643",
+        "content": "sha256:a9ec65263b3ec910f4e6f3f64771d90013ea34ae9b9042e8cc992ac2e8c8ae29",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_enumerated_receipt"
+        }
+      },
+      "id": "RLZ-F5NPAE",
+      "invariant": "INV-W9F1MJ",
+      "origin": {
+        "handoffEntry": "L3-W5-13",
+        "leaf": "261112-BUG-L3"
+      },
+      "rationale": "Enumeration is where a file is asked what it is, so the schema test belongs to the reader the retirement calls.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "38592a87d5d5ca8e3903d6e60aacdbda61464643",
+        "content": "sha256:9c201e6d275bd7a762302d83ff789295912745d9fcd0fce71ca7d40e19dc5a6d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_receipt"
+        }
+      },
+      "id": "RLZ-VYFJX1",
+      "invariant": "INV-4BT846",
+      "origin": {
+        "handoffEntry": "L140-R1-F02",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "`_read_receipt` at C still turns bytes that are not UTF-8, a number too long to convert and a nesting too deep into the same unreadable-record 409, plus the not-a-regular-file and schema 409s, so one damaged receipt cannot become a server failure; the span matches C.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "38592a87d5d5ca8e3903d6e60aacdbda61464643",
         "content": "sha256:f24e033cca1cc382a8d8a78fa54bc07b7926b514890f44120f3d0c2b55f083b1",
         "locator": {
           "kind": "symbol",
@@ -44,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88a95ecfda6809b6b8259b8b7c9ec01ff0fef9f8",
+            "blob": "38592a87d5d5ca8e3903d6e60aacdbda61464643",
             "content": "sha256:cafe0534213b85ff5f0809e6021ef3d1ca5458b65b99dfa6ff20f60eb2d2ce92",
             "locator": {
               "kind": "symbol",
@@ -60,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88a95ecfda6809b6b8259b8b7c9ec01ff0fef9f8",
+            "blob": "38592a87d5d5ca8e3903d6e60aacdbda61464643",
             "content": "sha256:98a3724deb8980c3692427443cb8f5ad58efa0ce54aff8288b8bfaf03bb30995",
             "locator": {
               "kind": "symbol",
@@ -76,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88a95ecfda6809b6b8259b8b7c9ec01ff0fef9f8",
+            "blob": "38592a87d5d5ca8e3903d6e60aacdbda61464643",
             "content": "sha256:bb68d9e8c51e68d409b10c045b2fe99d8290a5b7e5ad84c794031527f53ed950",
             "locator": {
               "kind": "symbol",
@@ -92,11 +128,49 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88a95ecfda6809b6b8259b8b7c9ec01ff0fef9f8",
+            "blob": "38592a87d5d5ca8e3903d6e60aacdbda61464643",
             "content": "sha256:147ddb0b34ad26572b0856e1c48a3ee1aa2d09ef671309575dad2a678b08fbcd",
             "locator": {
               "kind": "symbol",
               "name": "_move_receipt_to_history"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`_read_receipt` enforces regular-file and `RECEIPT_SCHEMA` checks with HTTP 409 refusals, `read_enumerated_receipt` skips other-schema JSON attachments via `_names_another_document`, and `_replace_receipt_bytes` atomically updates receipts under the lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38592a87d5d5ca8e3903d6e60aacdbda61464643",
+            "content": "sha256:9c201e6d275bd7a762302d83ff789295912745d9fcd0fce71ca7d40e19dc5a6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_receipt"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38592a87d5d5ca8e3903d6e60aacdbda61464643",
+            "content": "sha256:a9ec65263b3ec910f4e6f3f64771d90013ea34ae9b9042e8cc992ac2e8c8ae29",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_enumerated_receipt"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38592a87d5d5ca8e3903d6e60aacdbda61464643",
+            "content": "sha256:36e1b3f772f6519c93db33663d81f6aedf0797640ca22793be857435c2330125",
+            "locator": {
+              "kind": "symbol",
+              "name": "_replace_receipt_bytes"
             }
           },
           "kind": "code"

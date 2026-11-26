@@ -290,7 +290,9 @@ None.
 
 
 
+
 - Native launch construction and replay belong to the CLI launch owner. Catalog selection refuses unsupported model, effort and feature values when the corresponding fresh or saved offering is known. An unanswered catalog part leaves the corresponding configured choice unchecked. The host decides which permission mode it applies. [17]
+
 
 
 

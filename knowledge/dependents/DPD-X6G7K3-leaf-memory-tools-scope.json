@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "2e79f14e621878f776217e876e3953c8a4903aec",
-    "commit": "50292a3bfed059fe4f0aa9f087a6156bf1b754f9",
+    "codeTree": "ede5d128e75765d40987bf3981b1d97ed4326bae",
+    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
     "role": "curator",
-    "statement": "On synced code (base 50292a3b, combining 3.0.8, L38, and L29/R8/D167) the MCP reference passages verified for L29 are accurate: lines 284-292 state that the continued code-side merge commit runs git commit -m carrying Commit-Check-Pass when a runnable pre-commit hook exists and git commit --no-edit when none does (never --no-verify), in its own process session under orchestration.landing.commitCheckTimeoutSeconds (default 900s), streaming to a retained log under the Git common directory, answering sync-commit-check-failed with hook log, judged files, modified tracked files, and on timeout the time limit and surviving escaped PIDs while keeping HEAD, MERGE_HEAD, and staged merge intact with index rollback; lines 684-687 state that a host-run role agent receives its role tools once from agents-remember-task; and lines 737-743 preserve L38 at-most-once host-unreachable delivery alongside L37 five-minute provider-limit usage recheck and early-reset held-message drain; the document other sections were not reread for this confirmation.",
-    "task": "261112-BUG-L29",
+    "statement": "Verified docs/reference/mcp-tools.md on synced L44 code tree ede5d128 (base 150b9778) after Worker 1796d73e fixed the changed_document contradictions: lines 580, 619-623, and 651-660 accurately state scope-based any-role retire_child authority, open-child refusal, explicit interrupt_turn permission, and current-scope replacement rules alongside all standing MCP tool contracts.",
+    "task": "261112-BUG-L44",
     "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 22,
+  "revision": 23,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -98,7 +98,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
     },
     {
-      "blob": "29ac4d5e75a9e54475ec617732ab37e9e4fa8983",
+      "blob": "39f6d89796e397654995820c7fd5f3e8fd12c4b6",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
     },
@@ -128,7 +128,7 @@
       "path": "mcp/src/agents_remember/mcp/read_only.py"
     },
     {
-      "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
+      "blob": "864dd917963036bf4084b81f219ee468696d72b1",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
@@ -143,12 +143,12 @@
       "path": "mcp/src/agents_remember/cli/role_start_answer.py"
     },
     {
-      "blob": "d32955efa5176e04643993e613a83bece41b81d2",
+      "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
     },
     {
-      "blob": "9124be375703846117abf9f0f4fee05c1044befd",
+      "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
@@ -423,14 +423,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T00:49:11+01:00",
+    "at": "2026-11-26T02:42:00+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L29",
+    "leaf": "261112-BUG-L44",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
     "task": "261112-BUG"
   }
 }
