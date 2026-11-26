@@ -46,7 +46,7 @@ The explainer uses the ordinary frame binding and browser load. Reduced-motion a
 
 ## The Pinned Kit
 
-A draft refers to a pinned kit file by a path relative to the HTML, CSS or JavaScript module that names it. `render()` resolves those paths, verifies any draft copy under `kit/`, and stages the referenced files with the pinned kit's required companion and notice files. The page asset route reads the published assets from the live session’s revision and uses each asset's recorded media type.
+A draft refers to a pinned kit file by a path relative to the HTML, CSS or JavaScript module that names it. `render()` resolves those paths, verifies any draft copy under `kit/`, stages the referenced files with the pinned kit's required companion and notice files, and refuses publication as `kit-problem` when `kit_result.kit_problems` reports a missing notice or kit defect; request-scoped staging, draft admission (`stage_and_begin_draft`), and finished-staging pruning (`prune_finished_staging`) stay confined inside the workspace under the task lock, surfacing path or symlink escapes as `path-held`. The page asset route reads the published assets from the live session’s revision and uses each asset's recorded media type.
 
 ## Dashboard Write Guard
 
@@ -58,7 +58,7 @@ The explainer’s categories and grades remain its judgment, separate from chang
 
 Recorded and planned explanations use six private files for reading, selected changes, selected parts, individual explanations, the essay and the visual plan. The explainer assembles the page from the evidence-bearing essay and its figures. The central mechanism is a figure the reader drives, with the full explanation and still forms in the markup. A planned binding uses the current code and memory and marks the illustrated mechanism as intended.
 
-Readiness checks actual media attributes. The prospective load and publication both serve WebM and MP4 with their video media types.
+Both static readiness (`readiness.py`) and the browser prospective load (`canvas-prospective-load.mjs`, `prospective.py`, and `explainer_server.py`) check `audio` and `video` media controls, refusing autoplay, looping, or missing controls before publication. The prospective load and publication both serve WebM and MP4 with their video media types.
 
 ## Evidence
 
@@ -106,3 +106,6 @@ Readiness checks actual media attributes. The prospective load and publication b
 
 - Collecting shipped kit assets verifies each selected file against the shipped manifest and adds it under its contract path. [15]
 - Asset serving opens the live session’s revision and uses that revision’s recorded media type. [21]
+
+- Request-scoped staging, draft admission, and pruning remain confined inside the workspace under one task lock, surfacing `PathRefused` as `path-held`, and `render()` refuses publication as `kit-problem` when kit notices are missing. [22]
+- Prospective browser loading probes rendered and script-inserted `audio`/`video` elements and reports non-conforming media faults to block publication alongside static readiness. [23]

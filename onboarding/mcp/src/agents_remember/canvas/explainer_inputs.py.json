@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da5e9b1beec72b1ae136a19ea8ec92850da1e301",
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
             "content": "sha256:246f144f47289eb7436d5bcc146d32d29667e62709b0cf3eb416414dc5015dfd",
             "locator": {
-              "end": 59,
+              "end": 57,
               "kind": "line_range",
-              "start": 57
+              "start": 55
             },
             "path": "mcp/src/agents_remember/canvas/explainer_server.py"
           },

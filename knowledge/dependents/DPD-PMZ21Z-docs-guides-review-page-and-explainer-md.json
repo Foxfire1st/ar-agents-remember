@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "cc5ebb4ba64525d4aac92d7131bd7edfb1c7cf72",
+    "codeTree": "299008b8cc40e627ae89e165f925796332f94efc",
     "commit": "92391d7a916eb01388e24c65c410f647e7061ef9",
     "role": "curator",
-    "statement": "On settled crossing-6 tree cc5ebb4b (commit 92391d7a, combining crossing-5/EXP-L1 and BUG-L41 a772c901/8b648028), docs/guides/review-page-and-explainer.md accurately describes recorded and planned explanations (private inputs, first-request selected history, staged essay/figures/isolation, reference-only kit carry, complete still form, and capped advisory inventory), explainer_control plus the explainer's four dedicated tools and host-profile settings, review surface and explainer claim/ownership and launch-route interactions (remember_master_architect in role_launch_routes.py), and explainer retirement plus task cleanup/abandon/finalize leaving the explainer workspace intact; no BUG-L41 contradiction.",
-    "task": "261124-EXP",
-    "uncommitted": false
+    "statement": "Confirmed against synced EXP-L2 candidate 299008b8 (base 92391d7a, combining master crossing-6/BUG-L41 and EXP-L2): docs/guides/review-page-and-explainer.md remains accurate across recorded and planned explanations (private inputs, first-request selected history, staged essay/figures/isolation, reference-only kit carry, complete still form, and capped advisory inventory), explainer_control plus the explainer's four dedicated tools and host-profile settings, review surface and explainer claim/ownership and launch-route interactions (remember_master_architect in role_launch_routes.py), and explainer_server.py and explainer_workspace.py (including _copy_documents) for workspace preparation, staging, and publish-time media control checks; no BUG-L41 contradiction.",
+    "task": "261124-EXP-L2",
+    "uncommitted": true
   },
   "document": "docs/guides/review-page-and-explainer.md",
   "id": "DPD-PMZ21Z",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 14,
+  "revision": 15,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -236,12 +236,12 @@
       "path": "mcp/src/agents_remember/canvas/explainer_service.py"
     },
     {
-      "blob": "da5e9b1beec72b1ae136a19ea8ec92850da1e301",
+      "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_server.py"
     },
     {
-      "blob": "13cf3b30543d7aa5f15a6e42b3993580c1986ab3",
+      "blob": "5b1738c086693bc7df299c48692b82bb3c07b680",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
     },
@@ -308,7 +308,7 @@
     },
     {
       "anchor": {
-        "blob": "13cf3b30543d7aa5f15a6e42b3993580c1986ab3",
+        "blob": "5b1738c086693bc7df299c48692b82bb3c07b680",
         "content": "sha256:d73ff9f95167be72653452b5b743a38721425f51c6b7b3066cc63e3bd0de4092",
         "locator": {
           "kind": "symbol",
@@ -332,11 +332,11 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T05:26:51+01:00",
+    "at": "2026-11-26T05:37:56+01:00",
     "by": "agent",
-    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-6",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261124-EXP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
     "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",

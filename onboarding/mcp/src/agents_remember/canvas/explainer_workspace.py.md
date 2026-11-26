@@ -17,6 +17,7 @@ The bytes of one leaf's environment — two detached Git worktrees, the instruct
 - `retire_workspace` records the seat's process tree in a receipt before anything is archived; `settle_retire` archives the seat, ends its processes, removes the workspace and only then finishes the receipt.
 - A retire that cannot finish leaves the receipt pending with the step it reached and the paths it held, so a repeat finishes that receipt instead of starting a second one.
 - Both bindings copy the task and named requirement packets into `inputs/` and list selected leaf report paths and digests in `inputs/reports.md`. The reports stay in their canonical locations. A planned binding also copies its plan and effects into `planned/`.
+- `_copy_package_folder` refreshes shipped `starters/` and `exemplar/` under `guard_explainer_path`: it removes an existing directory (refusing destination or nested symlinks with `PathRefused`) and unlinks a stray regular non-symlink file before copying.
 
 ## Evidence
 
@@ -31,3 +32,5 @@ The bytes of one leaf's environment — two detached Git worktrees, the instruct
 - Build writes the inputs before it publishes the binding. [1]
 - Retire stores the process snapshot in a receipt before archival and removal. [5]
 - Retire finishes its receipt after archival, process cleanup and workspace removal. [6]
+
+- `_copy_package_folder` guards the destination, unlinks a stray regular non-symlink file at `starters/` or `exemplar/`, and continues to refuse symlinks before copying package files. [9]

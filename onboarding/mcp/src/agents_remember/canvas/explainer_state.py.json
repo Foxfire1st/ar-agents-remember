@@ -131,12 +131,12 @@
         },
         {
           "anchor": {
-            "blob": "13cf3b30543d7aa5f15a6e42b3993580c1986ab3",
+            "blob": "5b1738c086693bc7df299c48692b82bb3c07b680",
             "content": "sha256:a44d2dd1280492945c0545d16d2bdf34039be4bc990008e6b0767cefc7c37a96",
             "locator": {
-              "end": 985,
+              "end": 987,
               "kind": "line_range",
-              "start": 957
+              "start": 959
             },
             "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
           },

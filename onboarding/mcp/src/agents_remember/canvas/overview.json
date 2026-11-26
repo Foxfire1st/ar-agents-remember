@@ -189,6 +189,88 @@
         }
       ]
     },
+    "22": {
+      "note": "Request-scoped staging, draft admission, and pruning remain confined inside the workspace under one task lock, surfacing `PathRefused` as `path-held`, and `render()` refuses publication as `kit-problem` when kit notices are missing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+            "content": "sha256:b19b70f484b5883eebfeb4930d9b29528ebd9a9b22594a96487fc6683be7cf0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_and_begin_draft"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_staging.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+            "content": "sha256:916f479213fbf818bbf2772414c72f5bb38673ac31118e146b24e1172b188e88",
+            "locator": {
+              "kind": "symbol",
+              "name": "prune_finished_staging"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_staging.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+            "content": "sha256:15bb625e86159a8d25dbc9ec8d9630dbf47e6c49ec6dddf65059969301ee43ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_render_and_publish"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Prospective browser loading probes rendered and script-inserted `audio`/`video` elements and reports non-conforming media faults to block publication alongside static readiness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+            "content": "sha256:d69ddee6954ba2c8795e799529c612e1a7ae59751603a3036f3382b433422534",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe"
+            },
+            "path": "mcp/src/agents_remember/canvas/canvas-prospective-load.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+            "content": "sha256:fa5f3f622b52e89778a5afe8955ba94800769fe904fab7aa311a866d1e171b6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "mediaControlFaults"
+            },
+            "path": "mcp/src/agents_remember/canvas/canvas-prospective-load.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+            "content": "sha256:63e31a5defa726c236bc74f8d3d2ff55374b488b369fab6a1e49b19c59f562ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_media_faults"
+            },
+            "path": "mcp/src/agents_remember/canvas/prospective.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "6": {
       "note": "Revocation ends one channel or every channel of a frame, and the tombstone keeps the reason rather than the content.",
       "targets": [

@@ -1,0 +1,1539 @@
+{
+  "closed": true,
+  "leaf": "261124-EXP-L2",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-26T05:51:10+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261124-EXP-L2",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+      "task": "261124-EXP"
+    },
+    "reviewer": {
+      "at": "2026-11-26T05:51:10+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261124-EXP-L2",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "86c1436d-e005-5002-a732-b4fca68fd55e",
+      "task": "261124-EXP",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 3,
+    "tree": "05e35a0624d86d3861aeebcb2d928cd44757a06c",
+    "verdictRef": "notes/reports/reviewer/86c1436d-e005-5002-a732-b4fca68fd55e/261124-EXP-L2-memory-review-verdict.md"
+  },
+  "rows": [
+    {
+      "considered": [
+        "FAM-MS7NC5",
+        "FAM-GPNRVQ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-1BHVER",
+      "items": [],
+      "reason": "Examined FAM-MS7NC5 and FAM-GPNRVQ: runtime browser media-control probing is an independent reader-safety readiness rule outside both authoring-binding and durable-frame families.",
+      "revision": 1,
+      "subject": "membership:INV-R7P0AW"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1H9PBB",
+      "items": [
+        "sha256:193cb91634dcc9149140bf8bc1cb213389569b32425ed76154d4cdbf6de9e00b"
+      ],
+      "reason": "Updated explainer_staging.py card for DraftStagingRequest, _staging_root, _guard_recorded_path, guarded publish_working_directory/prune_finished_staging/discard_unused_staging, and task-locked stage_and_begin_draft.",
+      "sources": [
+        {
+          "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+          "path": "mcp/src/agents_remember/canvas/explainer_staging.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/explainer_staging.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-26KM9C",
+      "items": [
+        "sha256:be9f617ce6e68b36a9fd1c899aed821f73401a3454dc993ca215d226020db4eb"
+      ],
+      "reason": "Standard-library import additions (suppress, dataclass) in explainer_staging.py; carries no separate invariant.",
+      "subject": "hunk:sha256:be9f617ce6e68b36a9fd1c899aed821f73401a3454dc993ca215d226020db4eb"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "087e5433b66822d65261264bbc643b7ac630537e",
+            "content": "sha256:cf5ddeb6f2bcefbc47d0473ec56de89f41c3bfc6bd8bc87a8625acdfe537037d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_writer_is_gone"
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "before": {
+            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
+            "content": "sha256:9d68d4275a86b2791d2531bbe42f08a9bf2b2322c318e109e5e3fc43f62dc7a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_writer_is_gone"
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "id": "RLZ-S9Z4DX"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-2D6PKR",
+      "items": [
+        "sha256:7be1e8ce9cfe0ef63311e7050bba576efe895aee83633547bae9948d4a85a107"
+      ],
+      "reason": "_writer_is_gone now checks temp.name in _temps_in_flight for current-PID temps; impossible operating-system process numbers still never establish that a writer is gone.",
+      "revision": 1,
+      "subject": "INV-6AM3V9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2JATFP",
+      "items": [
+        "sha256:70922a7d5ea105a50bc3254f0caff4f05820669428a7805d1d37693a4ff46b6e"
+      ],
+      "reason": "Updated atomic_write.py card for basename-keyed _temps_in_flight tracking across distinct /proc/<pid>/fd/<N> descriptor paths.",
+      "sources": [
+        {
+          "blob": "087e5433b66822d65261264bbc643b7ac630537e",
+          "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/atomic_write.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "087e5433b66822d65261264bbc643b7ac630537e",
+            "content": "sha256:cf5ddeb6f2bcefbc47d0473ec56de89f41c3bfc6bd8bc87a8625acdfe537037d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_writer_is_gone"
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "before": {
+            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
+            "content": "sha256:9d68d4275a86b2791d2531bbe42f08a9bf2b2322c318e109e5e3fc43f62dc7a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_writer_is_gone"
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "id": "RLZ-RBHN6V"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-2VRMC4",
+      "items": [
+        "sha256:397a3863f652f576831bb032b94e3de6c584ff15e283b8d147a918d428eab9e7"
+      ],
+      "reason": "_writer_is_gone now checks temp.name in _temps_in_flight for current-PID temps; the OverflowError/ValueError impossible-PID branch is unchanged.",
+      "revision": 1,
+      "subject": "INV-5ZMMN3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-37JRSJ",
+      "items": [
+        "sha256:e31f0eebe27075f1837cb0fab1c927718c745a42716809a5da5010b12c499b4c"
+      ],
+      "reason": "Removed unused imports (begin_draft, read_draft, publish_working_directory, FrameAuthoring) in explainer_server.py after moving draft staging into stage_and_begin_draft; delete-only import cleanup carries no separate invariant.",
+      "subject": "hunk:sha256:e31f0eebe27075f1837cb0fab1c927718c745a42716809a5da5010b12c499b4c"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
+            "content": "sha256:14aecc8ddac90a5d0a0eafc4c96d7e033c41d56724792d1b9569842c07e12a32",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "c883e9093950ad17c032342760a1509dfd09b128",
+            "content": "sha256:baae241f5d74b2b2aa4cc3436d1770b83a1d681a17f4c5875d002f3898668fa2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-3XT7WV",
+      "items": [
+        "sha256:b881b5b67de6b849df7f98413195df7e2e94b5c6ef837f8883d6b435f44738f4"
+      ],
+      "reason": "Whole-file anchor on test-evidence-lanes.toml refreshed on synced candidate 8c536ee9 after merging BUG-L29 and EXP-L2 test_explainer_staging_and_checks.py; every listed test module exists on the candidate tree.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5H58BK",
+      "items": [
+        "sha256:53067aaed9619d8374091c0fd9bdc33af84b8660eb9253f95b3676631a897d68"
+      ],
+      "reason": "Updated explainer_workspace.py card for stray regular-file unlinking in _copy_package_folder while continuing to refuse symlinks.",
+      "sources": [
+        {
+          "blob": "5b1738c086693bc7df299c48692b82bb3c07b680",
+          "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/explainer_workspace.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6X3N2V",
+      "items": [
+        "sha256:ed869aed440466b165a26e0022deab4554789610e193443cb19d2e3ec9f0d5bc"
+      ],
+      "reason": "Import additions for PathRefused, guard_path, exclusive_file_lock, and frame models in explainer_staging.py; the confinement and locking rules are recorded on the functions that enforce them.",
+      "subject": "hunk:sha256:ed869aed440466b165a26e0022deab4554789610e193443cb19d2e3ec9f0d5bc"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+            "content": "sha256:166f2379f4bbb0fcbfd3649aa50b51ca545cb62d5f5c9b1cc9265780d1e0172a",
+            "locator": {
+              "end": 645,
+              "kind": "line_range",
+              "start": 644
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_server.py"
+          },
+          "before": {
+            "blob": "da5e9b1beec72b1ae136a19ea8ec92850da1e301",
+            "content": "sha256:a59480883df0bbe2aaf1af7cd61ce684fe8dda95d5b93bafb33c9e7f12013b5a",
+            "locator": {
+              "end": 647,
+              "kind": "line_range",
+              "start": 643
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_server.py"
+          },
+          "id": "RLZ-C37KKR"
+        },
+        {
+          "after": {
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+            "content": "sha256:4ea90317321752ce74a70ba9ad77ad23cd7f6855f21e892a0e5dc5b24ef51047",
+            "locator": {
+              "end": 614,
+              "kind": "line_range",
+              "start": 599
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_server.py"
+          },
+          "before": {
+            "blob": "da5e9b1beec72b1ae136a19ea8ec92850da1e301",
+            "content": "sha256:3ca275ab03a4aece0fc6b95a3c4c0e2e4ebc0440897a9b4422e94117524461d7",
+            "locator": {
+              "end": 614,
+              "kind": "line_range",
+              "start": 588
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_server.py"
+          },
+          "id": "RLZ-PB1W9Z"
+        },
+        {
+          "after": {
+            "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+            "content": "sha256:75407ffda52646a56ee6da0ab8b63d0d1d07b19b2d6dbb814d36738d1ccdc13a",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_working_directory"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_staging.py"
+          },
+          "before": {
+            "blob": "93c2214a895b14359c03ec975657f74a7870895f",
+            "content": "sha256:f69f46c5d984f2352e87061cc1b673850374fb8cd8d06d27428d351c98312e79",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_working_directory"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_staging.py"
+          },
+          "id": "RLZ-YTS48X"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7S7XCW",
+      "items": [
+        "sha256:8af9df9d3c14cfd99c2573f3bea463d4bee826875f3021575254fcaf426c4a0e"
+      ],
+      "reason": "publish_working_directory gained workspace confinement guards and _render_and_publish now delegates locked draft staging and unused-staging cleanup to stage_and_begin_draft while preserving pinned kit carry and run-report recording.",
+      "revision": 1,
+      "subject": "INV-ME5GYW"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
+            "content": "sha256:14aecc8ddac90a5d0a0eafc4c96d7e033c41d56724792d1b9569842c07e12a32",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "c883e9093950ad17c032342760a1509dfd09b128",
+            "content": "sha256:baae241f5d74b2b2aa4cc3436d1770b83a1d681a17f4c5875d002f3898668fa2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
+            "content": "sha256:051a7233fca931f2ce3725dd1d7bb63c4b7e7e09bd9b59c7ad3805886d4a8155",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "d56e7eb6befb9b9bd4a10c94369794817a1a0ed4",
+            "content": "sha256:dbca8f7330d34633008b31e48c6760da5c6e77ae6e7792e9bf2d886f7aa759f5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-93MX27",
+      "items": [
+        "sha256:bc099b346c200613e8e6aacd1ed02f3d109f7c93bbbba9341432777380242aa0"
+      ],
+      "reason": "Whole-file anchors on test-evidence-lanes.toml and evidence-lifecycle.toml refreshed on synced candidate 9f929793 (base 91bb8c5f) after merging BUG-L44 and EXP-L2 test_explainer_staging_and_checks.py; INV-1ZKP4R registrations are unchanged.",
+      "revision": 7,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A0SBY7",
+      "items": [
+        "sha256:e83414b6693c2a9047aa10bfb478e9ff4be7db14a7ebccfb743f40beb59e1e84"
+      ],
+      "reason": "Updated canvas/overview.md for workspace-confined locked publish staging, kit-problem refusal, runtime browser media-control probing, and stray-file replacement at starter/exemplar copy destinations.",
+      "sources": [
+        {
+          "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+          "path": "mcp/src/agents_remember/canvas/canvas-prospective-load.mjs"
+        },
+        {
+          "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+          "path": "mcp/src/agents_remember/canvas/explainer_server.py"
+        },
+        {
+          "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+          "path": "mcp/src/agents_remember/canvas/explainer_staging.py"
+        },
+        {
+          "blob": "5b1738c086693bc7df299c48692b82bb3c07b680",
+          "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
+        },
+        {
+          "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+          "path": "mcp/src/agents_remember/canvas/prospective.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B9W608",
+      "items": [
+        "sha256:e12efd5d7da598eaf8706849918e3666c1d416ac6f3ba1b921e280db8969ad78"
+      ],
+      "reason": "Removed unused imports (begin_draft, read_draft, publish_working_directory, FrameAuthoring) in explainer_server.py after moving draft staging into stage_and_begin_draft; delete-only import cleanup carries no separate invariant.",
+      "subject": "hunk:sha256:e12efd5d7da598eaf8706849918e3666c1d416ac6f3ba1b921e280db8969ad78"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-BJSXR2",
+      "items": [
+        "sha256:a9a676cee93e63d619b42f3eef2b1d0ddac69df2295f08aa755b7b5a87f4c2ba"
+      ],
+      "reason": "Confirmed against synced EXP-L2 candidate 299008b8 (base 92391d7a, combining master crossing-6/BUG-L41 and EXP-L2): docs/concepts.md remains accurate across core memory, task-topology, worktrees, role-lifecycle, briefs, index, gate contracts, tool answers, archived role agents, message filing, held messages, tool-log cancellation recording, and the explainer flow including _copy_package_folder in explainer_workspace.py unlinking a stray regular file before reseeding while still refusing symlinks; no BUG-L41 contradiction.",
+      "revision": 27,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-C7W78F",
+      "items": [
+        "sha256:99ecfb7b45604b626cbe7ecefe65bb5319ee354e0985715529211b97bb17a082"
+      ],
+      "reason": "Created onboarding card and sidecar for newly added test module test_explainer_staging_and_checks.py covering staging confinement, task-lock serialization, stray-file replacement, kit licence refusal, and runtime media-control probing.",
+      "sources": [
+        {
+          "blob": "9bd5f65c09739e5c993b1684d01df8636a23aaca",
+          "path": "mcp/tests/test_explainer_staging_and_checks.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_explainer_staging_and_checks.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1B87DB",
+          "revision": 1
+        },
+        {
+          "id": "INV-1DFJ7N",
+          "revision": 1
+        },
+        {
+          "id": "INV-3YSSTZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-4GQZ9S",
+          "revision": 1
+        },
+        {
+          "id": "INV-5ZMMN3",
+          "revision": 1
+        },
+        {
+          "id": "INV-6AM3V9",
+          "revision": 1
+        },
+        {
+          "id": "INV-6Q7947",
+          "revision": 1
+        },
+        {
+          "id": "INV-6S505X",
+          "revision": 2
+        },
+        {
+          "id": "INV-8AJVN0",
+          "revision": 1
+        },
+        {
+          "id": "INV-8MKBTB",
+          "revision": 1
+        },
+        {
+          "id": "INV-8NHCRK",
+          "revision": 2
+        },
+        {
+          "id": "INV-9YJV7Z",
+          "revision": 1
+        },
+        {
+          "id": "INV-AK4QYH",
+          "revision": 1
+        },
+        {
+          "id": "INV-C4PDDP",
+          "revision": 2
+        },
+        {
+          "id": "INV-CC0VTQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-CD2A7H",
+          "revision": 2
+        },
+        {
+          "id": "INV-DJ27N9",
+          "revision": 1
+        },
+        {
+          "id": "INV-E20AY2",
+          "revision": 1
+        },
+        {
+          "id": "INV-FQWZBE",
+          "revision": 1
+        },
+        {
+          "id": "INV-GCEAJJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-GYCF1R",
+          "revision": 1
+        },
+        {
+          "id": "INV-HKTN7W",
+          "revision": 1
+        },
+        {
+          "id": "INV-JQFXCQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-K79KP8",
+          "revision": 1
+        },
+        {
+          "id": "INV-M0ZQNJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-MVYAQ0",
+          "revision": 1
+        },
+        {
+          "id": "INV-PRMSPM",
+          "revision": 1
+        },
+        {
+          "id": "INV-Q157G2",
+          "revision": 1
+        },
+        {
+          "id": "INV-T1ZJXG",
+          "revision": 1
+        },
+        {
+          "id": "INV-T7VC8G",
+          "revision": 1
+        },
+        {
+          "id": "INV-WQ6Z6P",
+          "revision": 1
+        },
+        {
+          "id": "INV-X1AH5G",
+          "revision": 1
+        },
+        {
+          "id": "INV-Y0S1BZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-YQY9PX",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZJTNZY",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-DM4TTX",
+      "items": [
+        "sha256:7b72bb05dca207e87344596852b0bcaa3e349e456fe29c2033fbc27af372b17a"
+      ],
+      "reason": "FAM-A43781 is retired and was reached only through _writer_is_gone in atomic_write.py (INV-5ZMMN3, INV-6AM3V9); the impossible-PID handling of those members is unchanged and all 35 members remain at their recorded revisions.",
+      "revision": 1,
+      "subject": "FAM-A43781"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DYAQ2A",
+      "items": [
+        "sha256:b546becaa7eeba3617f560f9e34f97a977870cad096fbf31d5f467fa5b1f7d32"
+      ],
+      "reason": "Reviewed settle_retire in mcp/src/agents_remember/canvas/explainer_workspace.py: only _copy_package_folder changed in this leaf; settle_retire is byte-identical and the open fault still stands.",
+      "revision": 2,
+      "subject": "WKN-AJV5GY"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FB6VFW",
+      "items": [
+        "sha256:52aeeb758741697c415782c170f7aa3ca6f44692f20df3ba64e9e08b75c37ab1"
+      ],
+      "reason": "Import addition for begin_draft in explainer_staging.py; the serialization rule is recorded on stage_and_begin_draft.",
+      "subject": "hunk:sha256:52aeeb758741697c415782c170f7aa3ca6f44692f20df3ba64e9e08b75c37ab1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5b1738c086693bc7df299c48692b82bb3c07b680",
+            "content": "sha256:323ee4d49771b330cfdc5060399439ca702d08f7724b11c821924fdb4bab3cde",
+            "locator": {
+              "end": 527,
+              "kind": "line_range",
+              "start": 515
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
+          },
+          "before": {
+            "blob": "13cf3b30543d7aa5f15a6e42b3993580c1986ab3",
+            "content": "sha256:f3f0273e1c3b937374109f992968808246372dd6277a82ad23e047f95a82ade0",
+            "locator": {
+              "end": 527,
+              "kind": "line_range",
+              "start": 515
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
+          },
+          "id": "RLZ-VSXHF7"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GF0NW9",
+      "items": [
+        "sha256:c420f61dbb5806797b60b6c887d53060942ce75c6a3bcdb898d7ee5e94567582"
+      ],
+      "reason": "_copy_package_folder in explainer_workspace.py gained stray regular-file unlinking at lines 525-526 while continuing to copy the four shipped starters and README without altering the pinned kit.",
+      "revision": 1,
+      "subject": "INV-V4YCC7"
+    },
+    {
+      "considered": [
+        "FAM-MS7NC5",
+        "FAM-GPNRVQ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-GKRTYA",
+      "items": [],
+      "reason": "Examined FAM-MS7NC5 (comparison-scoped explainer authoring) and FAM-GPNRVQ (comparison-bound evidence and durable frames): staging path confinement and path-held refusal are standalone workspace-safety enforcement rather than part of authoring-binding or durable-frame guarantees.",
+      "revision": 1,
+      "subject": "membership:INV-Z8EJCV"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HK6MNM",
+      "items": [
+        "sha256:136adb9df702f4623fae5d610a77119b0f27a4acb0d1e1b308c1a9cfa12eaa1d"
+      ],
+      "reason": "Import update in explainer_server.py replacing discard_unused_staging with DraftStagingRequest; carries no separate invariant.",
+      "subject": "hunk:sha256:136adb9df702f4623fae5d610a77119b0f27a4acb0d1e1b308c1a9cfa12eaa1d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HM92P8",
+      "items": [
+        "sha256:e56095a78e34a19f1ee81c42f6411b3405d35cc9dd5824c50ba48113f7300bd5"
+      ],
+      "reason": "Removed unused imports (begin_draft, read_draft, publish_working_directory, FrameAuthoring) in explainer_server.py after moving draft staging into stage_and_begin_draft; delete-only import cleanup carries no separate invariant.",
+      "subject": "hunk:sha256:e56095a78e34a19f1ee81c42f6411b3405d35cc9dd5824c50ba48113f7300bd5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JZZK7N",
+      "items": [
+        "sha256:47273a6368588f2f46142e24952fb00e0e650f7cfcd16f210065b30d6e908594"
+      ],
+      "reason": "Import addition in explainer_server.py for PathRefused; the path-held refusal rule is recorded on _record_publication_refusal and _render_and_publish.",
+      "subject": "hunk:sha256:47273a6368588f2f46142e24952fb00e0e650f7cfcd16f210065b30d6e908594"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+            "content": "sha256:eff4497d2dfc6beaf675eb8ddaf9a7d9a939c4338936e1001a6b6fc71849eea3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_result"
+            },
+            "path": "mcp/src/agents_remember/canvas/prospective.py"
+          },
+          "before": {
+            "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+            "content": "sha256:7f77b8a90fd7125587e866f73ffef13f43c2a38e0ec966ceac3a895b975c07c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_result"
+            },
+            "path": "mcp/src/agents_remember/canvas/prospective.py"
+          },
+          "id": "RLZ-2Z5SWP"
+        },
+        {
+          "after": {
+            "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+            "content": "sha256:d8af6f1e366c299d28bef673e8e4697936c0137e4ef55a2c3e066bc10d6eccd6",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 417
+            },
+            "path": "mcp/src/agents_remember/canvas/canvas-prospective-load.mjs"
+          },
+          "before": {
+            "blob": "79ae6412f87adf2b5e33ab36974d3409129ef0ff",
+            "content": "sha256:9730082bf2b67392fcfa9a5a7e6c2e11261bd65ef3ff8485699783cc84b3cfcc",
+            "locator": {
+              "end": 439,
+              "kind": "line_range",
+              "start": 381
+            },
+            "path": "mcp/src/agents_remember/canvas/canvas-prospective-load.mjs"
+          },
+          "id": "RLZ-QQ4TZ4"
+        },
+        {
+          "after": {
+            "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+            "content": "sha256:d69ddee6954ba2c8795e799529c612e1a7ae59751603a3036f3382b433422534",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "mcp/src/agents_remember/canvas/canvas-prospective-load.mjs"
+          },
+          "before": {
+            "blob": "79ae6412f87adf2b5e33ab36974d3409129ef0ff",
+            "content": "sha256:87d67a10c5d0311f18d281ff545980766ece5f40cdae83618f1854a442d35594",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 163
+            },
+            "path": "mcp/src/agents_remember/canvas/canvas-prospective-load.mjs"
+          },
+          "id": "RLZ-TV9FAW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-K0C9HV",
+      "items": [
+        "sha256:f1610bb45d2ff6ea77129aabf1e69de3f581b01fe10db70fa161378922b86342"
+      ],
+      "reason": "Browser prospective load and _read_result gained media_faults extraction while preserving static readiness, part-map, claim/basis inventory separation, and fail-closed publication admission.",
+      "revision": 2,
+      "subject": "INV-40VGBY"
+    },
+    {
+      "considered": [
+        "FAM-MS7NC5",
+        "FAM-GPNRVQ",
+        "FAM-A43781"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-KMMT03",
+      "items": [],
+      "reason": "Examined FAM-MS7NC5, FAM-GPNRVQ, and retired FAM-A43781: task-lock serialization of draft staging/pruning and basename-keyed atomic temp tracking are standalone concurrency-safety rules not belonging to any live family.",
+      "revision": 1,
+      "subject": "membership:INV-CZKFXC"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M28A28",
+      "items": [
+        "sha256:b59379b783a586a80acfe58a534e075205f6da68496c2a1cb40ed088705a5283"
+      ],
+      "reason": "Removed unused imports (begin_draft, read_draft, publish_working_directory, FrameAuthoring) in explainer_server.py after moving draft staging into stage_and_begin_draft; delete-only import cleanup carries no separate invariant.",
+      "subject": "hunk:sha256:b59379b783a586a80acfe58a534e075205f6da68496c2a1cb40ed088705a5283"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MHJJ4V",
+      "items": [
+        "sha256:0c9628b6af86c40b55ce98036e8d98e88767b7268d28588c8bdbb681adc96fc7"
+      ],
+      "reason": "Module __all__ export of stage_and_begin_draft in explainer_staging.py; export plumbing carrying no separate invariant.",
+      "subject": "hunk:sha256:0c9628b6af86c40b55ce98036e8d98e88767b7268d28588c8bdbb681adc96fc7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+            "content": "sha256:0b69d34097e85e2c052aebdb9cf02c253ab2eaede75374af90fdd0b34105677e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_errors"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_server.py"
+          },
+          "before": {
+            "blob": "da5e9b1beec72b1ae136a19ea8ec92850da1e301",
+            "content": "sha256:e6ab04ed3c30f99c340cd9adfc4577ba270ada9780653b0cf8dc9c7e6eee3c9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_errors"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_server.py"
+          },
+          "id": "RLZ-1RTHQR"
+        },
+        {
+          "after": {
+            "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+            "content": "sha256:b870f4ef6473ebc6649e9861489a8e3631b47020e723c4a9ecf0b8a677d65536",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/canvas/canvas-prospective-load.mjs"
+          },
+          "before": {
+            "blob": "79ae6412f87adf2b5e33ab36974d3409129ef0ff",
+            "content": "sha256:970533987c6e83b7707c193927e495458835b001dc1dbe076519119435ac2547",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/canvas/canvas-prospective-load.mjs"
+          },
+          "id": "RLZ-BCE698"
+        },
+        {
+          "after": {
+            "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+            "content": "sha256:9b25ca113f34f9107ce1bb737dd8de0af9d0bcfa9223da59d7c5f6ea689c70dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_faults"
+            },
+            "path": "mcp/src/agents_remember/canvas/prospective.py"
+          },
+          "before": {
+            "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+            "content": "sha256:12a0488932a37386c68e0f954ea3a34a67c8494547e925794ac57bba63938243",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_faults"
+            },
+            "path": "mcp/src/agents_remember/canvas/prospective.py"
+          },
+          "id": "RLZ-DC213B"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-MPJZS0",
+      "items": [
+        "sha256:e7b31aab5dc164761dbd62ece4a22cd4d6d631d5ded60ee04fada8b28590b042"
+      ],
+      "reason": "canvas-prospective-load.mjs, _observed_faults, and run_errors added runtime media-control fault checks while keeping reduced-motion and quiet-mode gates removed.",
+      "revision": 1,
+      "subject": "INV-9C8QB5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MQRZWA",
+      "items": [
+        "sha256:ff4dfeb70152439ad52073844e1209a62e5ca00515ab4ebc45510bc43a2a8aee"
+      ],
+      "reason": "Module __all__ export of DraftStagingRequest in explainer_staging.py; export plumbing carrying no separate invariant.",
+      "subject": "hunk:sha256:ff4dfeb70152439ad52073844e1209a62e5ca00515ab4ebc45510bc43a2a8aee"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NSN76R",
+      "items": [
+        "sha256:9b01542107fb79f4f22dfb59418c5222401ad9e096fe0e27c64e50940caac372"
+      ],
+      "reason": "Reviewed mcp/overview.md against the basename-keyed _temps_in_flight update in kernel/atomic_write.py; the high-level package overview remains accurate without changes.",
+      "sources": [
+        {
+          "blob": "087e5433b66822d65261264bbc643b7ac630537e",
+          "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
+            "content": "sha256:14aecc8ddac90a5d0a0eafc4c96d7e033c41d56724792d1b9569842c07e12a32",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "c883e9093950ad17c032342760a1509dfd09b128",
+            "content": "sha256:baae241f5d74b2b2aa4cc3436d1770b83a1d681a17f4c5875d002f3898668fa2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
+            "content": "sha256:051a7233fca931f2ce3725dd1d7bb63c4b7e7e09bd9b59c7ad3805886d4a8155",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "d56e7eb6befb9b9bd4a10c94369794817a1a0ed4",
+            "content": "sha256:dbca8f7330d34633008b31e48c6760da5c6e77ae6e7792e9bf2d886f7aa759f5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-NYKX63",
+      "items": [
+        "sha256:5e461ba4abac2b703682082864b705647ac79a7d23db7009b8f409a1464c7040"
+      ],
+      "reason": "Whole-file anchors on test-evidence-lanes.toml and evidence-lifecycle.toml refreshed on synced candidate 9f929793 (base 91bb8c5f) after merging BUG-L44 and EXP-L2 test_explainer_staging_and_checks.py; INV-T8672G registrations are unchanged.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PQFSZS",
+      "items": [
+        "sha256:416b76e1afea24a4eadb98e12b4536c23dea7b80c070266874e36d163e2a7bc2"
+      ],
+      "reason": "Updated prospective.py card for ProspectiveResult.media_faults, _media_element_label, _media_faults, _read_result parsing, and _observed_faults consistency checks.",
+      "sources": [
+        {
+          "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+          "path": "mcp/src/agents_remember/canvas/prospective.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/prospective.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-PWHGHE",
+      "items": [
+        "sha256:7499f2353ed57474be042c619f74b370da7dc59380562311a94c4386f2434df2"
+      ],
+      "reason": "Confirmed against candidate 655669cd: docs/design/canvas-kit.md adds the known limit that pages load kit files by literal path and computed import() expressions are not carried automatically at reseed, matching kit_references.py and prospective.py.",
+      "revision": 5,
+      "subject": "DPD-QH1N0S"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+            "content": "sha256:861767bdf8921334c0b72e19e5b3234f3701651ebb271c4a6ebfd87c114fec07",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "mcp/src/agents_remember/canvas/prospective.py"
+          },
+          "before": {
+            "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+            "content": "sha256:3e6b62e146caa2247625e0566f72f378995ba9511dcaebd039fb04f47da2cead",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "mcp/src/agents_remember/canvas/prospective.py"
+          },
+          "id": "RLZ-AP5KNB"
+        },
+        {
+          "after": {
+            "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+            "content": "sha256:751654f4fccb6e98100fab850062c68439b44b3340ad9cfcf814fc4ffe65c6f8",
+            "locator": {
+              "end": 614,
+              "kind": "line_range",
+              "start": 584
+            },
+            "path": "mcp/src/agents_remember/canvas/prospective.py"
+          },
+          "before": {
+            "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+            "content": "sha256:340f9c28363c88858e6c1d2d6e4fabb65b3edc70cdf72edfaa954cb2f8b6ac3f",
+            "locator": {
+              "end": 575,
+              "kind": "line_range",
+              "start": 548
+            },
+            "path": "mcp/src/agents_remember/canvas/prospective.py"
+          },
+          "id": "RLZ-NKSYG9"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Q4479P",
+      "items": [
+        "sha256:59501b94f9436d6839c1f8a3cb07e654045f13f878a39af7a637a37068578b00"
+      ],
+      "reason": "diagnostics() and _observed_faults/_consistent in prospective.py shifted and gained media_faults handling while keeping ambitious non-faulting motion/canvas/SVG pages admissible.",
+      "revision": 1,
+      "subject": "INV-ES66EB"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Q5AMSN",
+      "items": [
+        "sha256:5900ba6a755d1f549fc8df70683d1fa2c1a397a74a01f2482bdd96311199d8c7"
+      ],
+      "reason": "Confirmed against synced EXP-L2 candidate 9f929793 (base 91bb8c5f, combining master crossing-5/BUG-L44 and EXP-L2): docs/design/python-evidence-system.md remains accurate across 833 cataloged modules (681 unit-regression, 125 integration) and 18 contracts / 122 artifacts.",
+      "revision": 21,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-QJ9PN7",
+      "items": [
+        "sha256:476ce325360837d87699c5ddd0ad13e761f9e30ecae631af50440c79d6b8ac07"
+      ],
+      "reason": "Confirmed against synced EXP-L2 candidate 9f929793 (base 91bb8c5f, combining master crossing-4/BUG-L29 and EXP-L2): docs/design/python-pytest-bootstrap.md remains accurate with the stress-durability lane anchor shifted to lines 852-854 in test-evidence-lanes.toml.",
+      "revision": 21,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QY8JD0",
+      "items": [
+        "sha256:46c779a6a8ed7c4d1f2e451475dc40dab77542df264858183d43b53fe749bdb8"
+      ],
+      "reason": "Updated mcp/tests/overview.md on synced EXP-L2 candidate 9f929793 (base 91bb8c5f) with merged catalog counts (18 contracts, 122 artifacts, 833 modules: 681 unit-regression, 125 integration) and EXP-L2 test coverage including test_explainer_staging_and_checks.py and test_atomic_write.py.",
+      "sources": [
+        {
+          "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "df9d59590d50a388d64cf149b60629030a922517",
+          "path": "mcp/tests/test_atomic_write.py"
+        },
+        {
+          "blob": "9bd5f65c09739e5c993b1684d01df8636a23aaca",
+          "path": "mcp/tests/test_explainer_staging_and_checks.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-QZM0WD",
+      "items": [
+        "sha256:36937d0113d9db380374407b3dfc678c594ef5939747935e7476663421268592"
+      ],
+      "reason": "Confirmed against synced EXP-L2 candidate 299008b8 (base 92391d7a, combining master crossing-6/BUG-L41 and EXP-L2): docs/guides/review-page-and-explainer.md remains accurate across recorded and planned explanations, explainer_control and host-profile settings, review surface and launch-route interactions (role_launch_routes.py), and explainer_server.py and explainer_workspace.py (including _copy_documents) for workspace preparation, staging, and publish-time media control checks; no BUG-L41 contradiction.",
+      "revision": 15,
+      "subject": "DPD-PMZ21Z"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
+            "content": "sha256:051a7233fca931f2ce3725dd1d7bb63c4b7e7e09bd9b59c7ad3805886d4a8155",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "d56e7eb6befb9b9bd4a10c94369794817a1a0ed4",
+            "content": "sha256:dbca8f7330d34633008b31e48c6760da5c6e77ae6e7792e9bf2d886f7aa759f5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
+            "content": "sha256:14aecc8ddac90a5d0a0eafc4c96d7e033c41d56724792d1b9569842c07e12a32",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "c883e9093950ad17c032342760a1509dfd09b128",
+            "content": "sha256:baae241f5d74b2b2aa4cc3436d1770b83a1d681a17f4c5875d002f3898668fa2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-R02FB0",
+      "items": [
+        "sha256:1146b18e9ed0790f6370932b3cd5b906abaf4494bd10e335acfea5b60642c1b2"
+      ],
+      "reason": "Whole-file anchors on evidence-lifecycle.toml and test-evidence-lanes.toml refreshed on synced candidate 9f929793 (base 91bb8c5f) after merging BUG-L44 and EXP-L2 exact consumer entries and unit-regression registration without duplicate identity.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RMFG16",
+      "items": [
+        "sha256:43220a996abaf778827d977f0110c2f06a616b6a52de36f111de9d77d123bcef",
+        "sha256:9a4d2f812adaeb87d847820a2d8fc329b66620a720fd1c704a653c25a5f209ad"
+      ],
+      "reason": "Updated test_atomic_write.py card for test_overlapping_writes_through_distinct_descriptor_paths_keep_in_flight_temps.",
+      "sources": [
+        {
+          "blob": "df9d59590d50a388d64cf149b60629030a922517",
+          "path": "mcp/tests/test_atomic_write.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_atomic_write.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+            "content": "sha256:f7ff2e76d8407c24c1b2e7122193482188525f5fa2d5e1e8f9b2f9cb3b151425",
+            "locator": {
+              "end": 565,
+              "kind": "line_range",
+              "start": 563
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_server.py"
+          },
+          "before": {
+            "blob": "da5e9b1beec72b1ae136a19ea8ec92850da1e301",
+            "content": "sha256:38ff6308ac9c31d6ead8c9477feba98cbf552bb4b5f021d519414fe6cb83c76a",
+            "locator": {
+              "end": 560,
+              "kind": "line_range",
+              "start": 557
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_server.py"
+          },
+          "id": "RLZ-DAP6J3"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-S8VKS2",
+      "items": [
+        "sha256:a3c47aa0b9c037c9a0ce3cdaefaa603aae5ba1aecabcd2ab31d02db2fc9d6798"
+      ],
+      "reason": "safe_build_inventory call block in explainer_server.py shifted to lines 563-565 after recording report['kitProblems']; advisory inventory behavior is unchanged.",
+      "revision": 1,
+      "subject": "INV-BFYNBN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T4HN02",
+      "items": [
+        "sha256:ad838080339ff7c2449efc58c2799c9c36aa531976a3f60170a7e0a082185452"
+      ],
+      "reason": "Removed legacy unguarded adopted-path comparison lines in discard_unused_staging in explainer_staging.py, superseded by the workspace-confined guard logic recorded under the staging confinement invariant.",
+      "subject": "hunk:sha256:ad838080339ff7c2449efc58c2799c9c36aa531976a3f60170a7e0a082185452"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-TRW7ZP",
+      "items": [],
+      "reason": "Confirmed against candidate 655669cd: docs/design/canvas-host.md architectural boundaries remain accurate for the explainer host; note that canvas-host.md was not edited in this leaf and still describes media-controls only under static readiness and omits the new kit-problem and path-held refusal codes.",
+      "revision": 8,
+      "subject": "DPD-7YCJ2B"
+    },
+    {
+      "considered": [
+        "FAM-MS7NC5",
+        "FAM-GPNRVQ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-V1QTV2",
+      "items": [],
+      "reason": "Examined FAM-MS7NC5 and FAM-GPNRVQ: stray regular-file replacement during starter/exemplar reseeding is a local workspace-preparation safeguard independent of both families.",
+      "revision": 1,
+      "subject": "membership:INV-7P3JK5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-V2VHP6",
+      "items": [
+        "sha256:515d2aa8024bb8f9902078d477d636d9092bde38a1ea866815fd32bf543a8dec"
+      ],
+      "reason": "Updated explainer_server.py card for path-held refusal translation, kit-problem publish refusal, media-controls run_errors/publish gating, stage_and_begin_draft delegation, and locked publish-time pruning.",
+      "sources": [
+        {
+          "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+          "path": "mcp/src/agents_remember/canvas/explainer_server.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/canvas/explainer_server.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-V53KJ5",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Updated evidence-lifecycle.toml card on synced EXP-L2 candidate 9f929793 (base 91bb8c5f) for the merged BUG-L29/BUG-L44 and EXP-L2 exact consumer entries referencing test_explainer_staging_and_checks.py (18 contracts / 122 artifacts).",
+      "sources": [
+        {
+          "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VD4VZW",
+      "items": [
+        "sha256:92e5457094097bd372e61e590df8c18cdcde1358a9efcae36439df007d244246"
+      ],
+      "reason": "Module-level _temps_in_flight type annotation and comment changed from set[Path] to set[str]; the basename-keyed concurrency invariant is realized by _writer_is_gone and atomic_write_bytes.",
+      "subject": "hunk:sha256:92e5457094097bd372e61e590df8c18cdcde1358a9efcae36439df007d244246"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W8SXCX",
+      "items": [
+        "sha256:e3543fef17be39f38b1af163e5230381a2cbc83a49b30261e2f3f4c6a9068d79"
+      ],
+      "reason": "Import addition in explainer_server.py for stage_and_begin_draft; the locking rule is recorded on stage_and_begin_draft and _render_and_publish.",
+      "subject": "hunk:sha256:e3543fef17be39f38b1af163e5230381a2cbc83a49b30261e2f3f4c6a9068d79"
+    },
+    {
+      "considered": [
+        "FAM-MS7NC5",
+        "FAM-GPNRVQ"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-WWJ0ZD",
+      "items": [],
+      "reason": "Examined FAM-MS7NC5 and FAM-GPNRVQ: refusing publication when referenced kit libraries lack a licence notice is a standalone kit-compliance gate not part of either family's guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-QGP009"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YAAAJH",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Updated test-evidence-lanes.toml card on synced EXP-L2 candidate 9f929793 (base 91bb8c5f) for the merged unit-regression registrations of BUG-L29 and EXP-L2 test_explainer_staging_and_checks.py (833 total / 681 unit-regression / 125 integration).",
+      "sources": [
+        {
+          "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:faecfdd20fb505e9f9fa9da0f715683e99cb2a74c359d1dddd6bcfb1b3257496",
+      "record": "DPD-71WYH4",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-26T03:09:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-EXP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:02e1349c56dc5d94c60d51196fae503d6c7afac3f74cecea418e68301a2a2be7",
+      "record": "DPD-71WYH4",
+      "revision": 26,
+      "writer": {
+        "at": "2026-11-26T04:51:07+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-EXP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:9491f27164c0c60ba2874b39321e0d3b9e579d95185c735a9815fa8a7d9dcf4a",
+      "record": "DPD-71WYH4",
+      "revision": 27,
+      "writer": {
+        "at": "2026-11-26T05:37:56+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-EXP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:9ad1acbcb4b5b2d72aa969f755f06ea157b9d9c5e46c502ebe88c682784ca4f7",
+      "record": "DPD-7YCJ2B",
+      "revision": 8,
+      "writer": {
+        "at": "2026-11-26T03:09:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-EXP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:4d219ea445ce3465dc36baeee17b8c248dba2b9cb109a60c94ec7436a88ae130",
+      "record": "DPD-PMZ21Z",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-26T03:09:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-EXP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:9276370ec311314aafabba0ebc990481b1c0076524b4d4d03ada3296f11edc33",
+      "record": "DPD-PMZ21Z",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-26T05:37:56+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-EXP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:035ff108b0c2e0743dc22a6fd959acc73e1f9302d209204520ebc251cef06155",
+      "record": "DPD-QH1N0S",
+      "revision": 5,
+      "writer": {
+        "at": "2026-11-26T03:09:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-EXP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:10cd6aef126b5b864c0604133525a9653c499ac565238330b824d61430dc808e",
+      "record": "DPD-ZMQ523",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-26T03:09:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-EXP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:fc019718bbd8773e78505ec6c582c2bc6197360c027d8e0721b67728f69f1f97",
+      "record": "DPD-ZMQ523",
+      "revision": 20,
+      "writer": {
+        "at": "2026-11-26T04:04:59+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-EXP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:d7b7e3982e989c732293a225147a45046bfa73f8c6544d77fb6a92e8f23bd77c",
+      "record": "DPD-ZMQ523",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-26T04:51:07+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-EXP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:b752304117d5c43cfd9e64af7a5298550c7e3324b03728e67ef6b10f94bd8c58",
+      "record": "DPD-ZT8YY7",
+      "revision": 20,
+      "writer": {
+        "at": "2026-11-26T03:09:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-EXP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:2e138666ccc757e99d2e426ea2b6d8eb67d580dec8cbe18ac33de1d97aaf5a75",
+      "record": "DPD-ZT8YY7",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-26T04:04:59+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-EXP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:49a12f986d522cdda57e9ce0ac28f4fa29c95f7e9a023eaba98733f4582dd70a",
+      "record": "INV-7P3JK5",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T03:09:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-EXP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:11221813b9a02ad1436927046c439a20d04de86da5a742f87b6ad595cb542b0d",
+      "record": "INV-CZKFXC",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T03:09:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-EXP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:0419ec7ae27824a7a75a1d38001a023c5e3677af0341ce45b7f02026e5d52446",
+      "record": "INV-QGP009",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T03:09:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-EXP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:aca71e7ca3282efadf110f93ac3fb1e25e184940b7164941d90205acf109c2a8",
+      "record": "INV-R7P0AW",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T03:09:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-EXP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:ea12709be58f528644b99e4cc9ba7fc3c5809fd57da86f4680ab504cb966507c",
+      "record": "INV-Z8EJCV",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T03:09:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261124-EXP-L2",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    }
+  ]
+}

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "79ae6412f87adf2b5e33ab36974d3409129ef0ff",
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
         "content": "sha256:196f3389f284be74eaaad7195f5647981b5ba96b620efd2e20408416373b6aff",
         "locator": {
           "end": 124,
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "79ae6412f87adf2b5e33ab36974d3409129ef0ff",
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
         "content": "sha256:80f4eb0d9b05c4495da622d3f242aeab4e8002a0496aebf1da6319eabc35da53",
         "locator": {
-          "end": 266,
+          "end": 301,
           "kind": "line_range",
-          "start": 219
+          "start": 254
         }
       },
       "id": "RLZ-713HTD",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "79ae6412f87adf2b5e33ab36974d3409129ef0ff",
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
         "content": "sha256:ea1a088ca7dbf82dd6b75f0ef79c7bdba63b0ac5f9a94c251799712f12eb8e11",
         "locator": {
-          "end": 379,
+          "end": 414,
           "kind": "line_range",
-          "start": 306
+          "start": 341
         }
       },
       "id": "RLZ-9PK2MJ",
@@ -60,8 +60,8 @@
     },
     {
       "anchor": {
-        "blob": "79ae6412f87adf2b5e33ab36974d3409129ef0ff",
-        "content": "sha256:970533987c6e83b7707c193927e495458835b001dc1dbe076519119435ac2547",
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+        "content": "sha256:b870f4ef6473ebc6649e9861489a8e3631b47020e723c4a9ecf0b8a677d65536",
         "locator": {
           "kind": "file"
         }
@@ -77,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "79ae6412f87adf2b5e33ab36974d3409129ef0ff",
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
         "content": "sha256:5c3e336aa38f1bb9c975ef9c19e575d4b7445ac16b9a6b0fbfd09edf4869e82e",
         "locator": {
           "end": 45,
@@ -96,12 +96,12 @@
     },
     {
       "anchor": {
-        "blob": "79ae6412f87adf2b5e33ab36974d3409129ef0ff",
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
         "content": "sha256:fb86c475c8f6c5254930791d5ad4d0eba3d0b1a20e6a359d741ab9e3ef159428",
         "locator": {
-          "end": 338,
+          "end": 373,
           "kind": "line_range",
-          "start": 325
+          "start": 360
         }
       },
       "id": "RLZ-Q43REH",
@@ -115,12 +115,12 @@
     },
     {
       "anchor": {
-        "blob": "79ae6412f87adf2b5e33ab36974d3409129ef0ff",
-        "content": "sha256:9730082bf2b67392fcfa9a5a7e6c2e11261bd65ef3ff8485699783cc84b3cfcc",
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+        "content": "sha256:d8af6f1e366c299d28bef673e8e4697936c0137e4ef55a2c3e066bc10d6eccd6",
         "locator": {
-          "end": 439,
+          "end": 481,
           "kind": "line_range",
-          "start": 381
+          "start": 417
         }
       },
       "id": "RLZ-QQ4TZ4",
@@ -134,12 +134,12 @@
     },
     {
       "anchor": {
-        "blob": "79ae6412f87adf2b5e33ab36974d3409129ef0ff",
-        "content": "sha256:87d67a10c5d0311f18d281ff545980766ece5f40cdae83618f1854a442d35594",
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+        "content": "sha256:d69ddee6954ba2c8795e799529c612e1a7ae59751603a3036f3382b433422534",
         "locator": {
-          "end": 194,
+          "end": 205,
           "kind": "line_range",
-          "start": 163
+          "start": 165
         }
       },
       "id": "RLZ-TV9FAW",
@@ -153,7 +153,7 @@
     },
     {
       "anchor": {
-        "blob": "79ae6412f87adf2b5e33ab36974d3409129ef0ff",
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
         "content": "sha256:c335395aeb3ce76e0758e37fac7c356e96e57188d71ded0378b3f56863b71597",
         "locator": {
           "end": 156,
@@ -169,6 +169,23 @@
       },
       "rationale": "Records the served asset after staged-path admission, preserving observation of what the browser actually fetched.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+        "content": "sha256:b870f4ef6473ebc6649e9861489a8e3631b47020e723c4a9ecf0b8a677d65536",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ZK7MRN",
+      "invariant": "INV-R7P0AW",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 6",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Probes every audio and video element in the rendered DOM before and after the post-load window for autoplay, loop, and controls, computes mediaControlFaults, and marks the prospective load failed when faults are present.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -177,7 +194,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "79ae6412f87adf2b5e33ab36974d3409129ef0ff",
+            "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
             "content": "sha256:5c3e336aa38f1bb9c975ef9c19e575d4b7445ac16b9a6b0fbfd09edf4869e82e",
             "locator": {
               "end": 45,
@@ -190,28 +207,27 @@
       ]
     },
     "2": {
-      "note": "The ordinary browser load reports page and console errors and failed or outside requests. It observes rendered content, claims and basis references, DOM inventory, successfully loaded local assets and visible paint. Registered render takes the ordinary browser observation and any advisory sweep before its publication readiness decision. The subsequent static `check_page` enforces authored HTML media controls before publication.",
+      "note": "The ordinary browser load reports page/console errors, failed or outside requests, rendered content, claims, basis references, DOM inventory, loaded assets, visible paint, and browser-observed `mediaElements`/`mediaFaults`; registered render gates publication on both this load and static `check_page`.",
       "targets": [
         {
           "anchor": {
-            "blob": "79ae6412f87adf2b5e33ab36974d3409129ef0ff",
-            "content": "sha256:92dc08e39233cd439a3f7754229bce3edf9a97c26a1805c8b6d041bf6e1f4ffe",
+            "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+            "content": "sha256:cec5f522a1fc296ecbecff71eb93b1adad160bf8ba24754cc1214a2e9f5c4557",
             "locator": {
-              "end": 437,
-              "kind": "line_range",
-              "start": 305
+              "kind": "symbol",
+              "name": "observeInBrowser"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+            "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
             "content": "sha256:e43163e27b4fbb1bd79911fd59454d063d3641088b2fccff15a572dfc0f4ac1b",
             "locator": {
-              "end": 325,
+              "end": 360,
               "kind": "line_range",
-              "start": 302
+              "start": 337
             },
             "path": "mcp/src/agents_remember/canvas/prospective.py"
           },
@@ -232,12 +248,12 @@
         },
         {
           "anchor": {
-            "blob": "da5e9b1beec72b1ae136a19ea8ec92850da1e301",
-            "content": "sha256:94df14bba92016c210c6271e2b13f838bec3d24c28d2d1ab8089a6aa584261b1",
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+            "content": "sha256:def53f2b8c26899166c96bafb6577fd016b7110e0c3e747aad7500955f623f51",
             "locator": {
-              "end": 562,
+              "end": 577,
               "kind": "line_range",
-              "start": 548
+              "start": 551
             },
             "path": "mcp/src/agents_remember/canvas/explainer_server.py"
           },
@@ -253,6 +269,33 @@
               "start": 419
             },
             "path": "mcp/src/agents_remember/canvas/readiness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`observe` collects every rendered `audio` and `video` element's `autoplay`, `loop`, and `controls` state, and `mediaControlFaults` reports non-conforming media rules that fail the browser load.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+            "content": "sha256:d69ddee6954ba2c8795e799529c612e1a7ae59751603a3036f3382b433422534",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88de870bf347c9cdddf8497bc57557a198ca0309",
+            "content": "sha256:fa5f3f622b52e89778a5afe8955ba94800769fe904fab7aa311a866d1e171b6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "mediaControlFaults"
+            }
           },
           "kind": "code"
         }

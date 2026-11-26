@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+        "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
         "content": "sha256:1f73e4b8b876fd17aeaea5ee1d51a0dd37966bb39079cba48c47c3d0cedc06ba",
         "locator": {
           "kind": "symbol",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
-        "content": "sha256:7f77b8a90fd7125587e866f73ffef13f43c2a38e0ec966ceac3a895b975c07c3",
+        "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+        "content": "sha256:eff4497d2dfc6beaf675eb8ddaf9a7d9a939c4338936e1001a6b6fc71849eea3",
         "locator": {
           "kind": "symbol",
           "name": "_read_result"
@@ -40,7 +40,43 @@
     },
     {
       "anchor": {
-        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+        "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+        "content": "sha256:eff4497d2dfc6beaf675eb8ddaf9a7d9a939c4338936e1001a6b6fc71849eea3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_result"
+        }
+      },
+      "id": "RLZ-3831CX",
+      "invariant": "INV-R7P0AW",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 6",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Parses browser mediaElements and mediaFaults into ProspectiveResult.media_faults.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+        "content": "sha256:9b25ca113f34f9107ce1bb737dd8de0af9d0bcfa9223da59d7c5f6ea689c70dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "_observed_faults"
+        }
+      },
+      "id": "RLZ-9GCG91",
+      "invariant": "INV-R7P0AW",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 6",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Includes result.media_faults in the consistency check so a browser payload claiming loaded despite media faults is rejected.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
         "content": "sha256:f438162ccd63fb40a29c5ac4b8387e1141de50565bb0283c031d24771971cb17",
         "locator": {
           "end": 112,
@@ -59,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+        "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
         "content": "sha256:5505812c0632523c3a24e23a476a842aba3f4221b29c9aefc30e1d4b43dadf08",
         "locator": {
           "kind": "symbol",
@@ -77,12 +113,12 @@
     },
     {
       "anchor": {
-        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
-        "content": "sha256:3e6b62e146caa2247625e0566f72f378995ba9511dcaebd039fb04f47da2cead",
+        "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+        "content": "sha256:861767bdf8921334c0b72e19e5b3234f3701651ebb271c4a6ebfd87c114fec07",
         "locator": {
-          "end": 132,
+          "end": 135,
           "kind": "line_range",
-          "start": 117
+          "start": 119
         }
       },
       "id": "RLZ-AP5KNB",
@@ -96,7 +132,7 @@
     },
     {
       "anchor": {
-        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+        "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
         "content": "sha256:f5965fdb0136c51741052066af5b9ddaa1d8739eec0e974861ec6f4a326acdc1",
         "locator": {
           "end": 109,
@@ -115,8 +151,8 @@
     },
     {
       "anchor": {
-        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
-        "content": "sha256:12a0488932a37386c68e0f954ea3a34a67c8494547e925794ac57bba63938243",
+        "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+        "content": "sha256:9b25ca113f34f9107ce1bb737dd8de0af9d0bcfa9223da59d7c5f6ea689c70dd",
         "locator": {
           "kind": "symbol",
           "name": "_observed_faults"
@@ -133,7 +169,7 @@
     },
     {
       "anchor": {
-        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+        "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
         "content": "sha256:0fc710c93f5f9507b15a3a212bd84f320be74141d10a63a89101cffe0cef03e6",
         "locator": {
           "kind": "symbol",
@@ -151,7 +187,7 @@
     },
     {
       "anchor": {
-        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+        "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
         "content": "sha256:f66dc5798d1cb133835e860bfa8b2361cc5c0a3fc767284902c35c5040c346af",
         "locator": {
           "kind": "symbol",
@@ -169,12 +205,12 @@
     },
     {
       "anchor": {
-        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
-        "content": "sha256:340f9c28363c88858e6c1d2d6e4fabb65b3edc70cdf72edfaa954cb2f8b6ac3f",
+        "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+        "content": "sha256:751654f4fccb6e98100fab850062c68439b44b3340ad9cfcf814fc4ffe65c6f8",
         "locator": {
-          "end": 575,
+          "end": 614,
           "kind": "line_range",
-          "start": 548
+          "start": 584
         }
       },
       "id": "RLZ-NKSYG9",
@@ -188,12 +224,12 @@
     },
     {
       "anchor": {
-        "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+        "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
         "content": "sha256:f168df9e7e16261dfff1b3f35f774aa4703d41e7e81a2d4bfedfa471263bec1f",
         "locator": {
-          "end": 181,
+          "end": 184,
           "kind": "line_range",
-          "start": 161
+          "start": 164
         }
       },
       "id": "RLZ-NMF7FS",
@@ -204,20 +240,77 @@
       },
       "rationale": "Accepts and reads optional browser inventory observations for the report.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+        "content": "sha256:8f21573600ecc24aa54c7f63a1f893c30af8f0ac5d11bffad067d3901ee1df9b",
+        "locator": {
+          "kind": "symbol",
+          "name": "ProspectiveResult"
+        }
+      },
+      "id": "RLZ-WSEPY8",
+      "invariant": "INV-R7P0AW",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 6",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Carries media_faults on the typed prospective-load result and surfaces them in diagnostics().",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+        "content": "sha256:63e31a5defa726c236bc74f8d3d2ff55374b488b369fab6a1e49b19c59f562ea",
+        "locator": {
+          "kind": "symbol",
+          "name": "_media_faults"
+        }
+      },
+      "id": "RLZ-XM412V",
+      "invariant": "INV-R7P0AW",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 6",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Re-derives and merges media control faults from observed mediaElements and reported mediaFaults so omitted browser fault summaries cannot hide non-conforming elements.",
+      "role": "enforcement"
     }
   ],
   "references": {
     "3": {
-      "note": "The Python reader validates separate basis and claim inventories and the marked parts against the static part map and bound packet. Loaded assets and DOM inventory are separate observations.",
+      "note": "The Python reader validates separate basis and claim inventories and marked parts against the static part map and bound packet, keeps loaded assets and DOM inventory separate, and populates `media_faults` via `_media_faults`.",
       "targets": [
         {
           "anchor": {
-            "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
-            "content": "sha256:bff505b3b1e71c7ed11618f163c3f9681a6fb7b69dcf29d7c08ee643dab952eb",
+            "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+            "content": "sha256:eff4497d2dfc6beaf675eb8ddaf9a7d9a939c4338936e1001a6b6fc71849eea3",
             "locator": {
-              "end": 545,
-              "kind": "line_range",
-              "start": 467
+              "kind": "symbol",
+              "name": "_read_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+            "content": "sha256:1f73e4b8b876fd17aeaea5ee1d51a0dd37966bb39079cba48c47c3d0cedc06ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_valid_inventory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+            "content": "sha256:0fc710c93f5f9507b15a3a212bd84f320be74141d10a63a89101cffe0cef03e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_rendered_citations"
             }
           },
           "kind": "code"
@@ -229,7 +322,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+            "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
             "content": "sha256:5505812c0632523c3a24e23a476a842aba3f4221b29c9aefc30e1d4b43dadf08",
             "locator": {
               "kind": "symbol",
@@ -245,11 +338,77 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+            "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
             "content": "sha256:0d6456514f9007f9521244994aa78ad90166a551b7679ef0177a74c264273b5d",
             "locator": {
               "kind": "symbol",
               "name": "browser"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`_media_faults` re-derives autoplay, loop, and missing-controls faults from observed `mediaElements` merged with reported `mediaFaults`, and `ProspectiveResult.diagnostics()` reports them under `media-controls:`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+            "content": "sha256:8f21573600ecc24aa54c7f63a1f893c30af8f0ac5d11bffad067d3901ee1df9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProspectiveResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+            "content": "sha256:63e31a5defa726c236bc74f8d3d2ff55374b488b369fab6a1e49b19c59f562ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_media_faults"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+            "content": "sha256:e71069cccd4dd65adce2474762b3fb8f0dfd403b0952789066f2c6edb2326f61",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`_observed_faults` and `_consistent` include `result.media_faults` so a nominally `loaded` payload carrying media faults is downgraded to `failed`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+            "content": "sha256:9b25ca113f34f9107ce1bb737dd8de0af9d0bcfa9223da59d7c5f6ea689c70dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_faults"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
+            "content": "sha256:ae6502108f8b4fc034c82b689086218fd1c1638291338fce0925ea98f8496f82",
+            "locator": {
+              "kind": "symbol",
+              "name": "_consistent"
             }
           },
           "kind": "code"

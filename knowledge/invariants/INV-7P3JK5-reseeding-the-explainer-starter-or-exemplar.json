@@ -1,0 +1,44 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Proved by test_copy_package_folder_replaces_stray_file_and_refuses_symlink and prevents a stray regular file at starters/ or exemplar/ from breaking workspace preparation while preserving symlink confinement refusal."
+  },
+  "applicability": "Refreshing shipped read-only package folders such as starters/ and exemplar/ inside an explainer workspace during workspace preparation.",
+  "conditions": [
+    "The destination lies under the guarded workspace root and holds an existing regular non-symlink file, directory, or symlink."
+  ],
+  "exclusions": [
+    "User-authored draft files under drafts/ or published snapshots under revisions/."
+  ],
+  "id": "INV-7P3JK5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_explainer_staging_and_checks.py::test_copy_package_folder_replaces_stray_file_and_refuses_symlink"
+      ],
+      "path": "261124-EXP-L2-curator-ingest"
+    },
+    "handoffEntry": "EXP-R02@v1 Item 3",
+    "leaf": "261124-EXP-L2",
+    "task": "261124-EXP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Reseeding the explainer starter or exemplar folder unlinks a stray regular file at the destination path before copying package files while continuing to refuse a symlink.",
+  "supersedes": [],
+  "title": "Explainer package reseeding replaces stray regular files while refusing symlinks",
+  "writer": {
+    "at": "2026-11-26T03:09:02+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-EXP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+    "task": "261124-EXP"
+  }
+}

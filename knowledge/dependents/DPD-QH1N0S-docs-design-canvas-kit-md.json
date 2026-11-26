@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8b54b8c117747b1a757a00d6441308aa1f569669",
-    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
+    "codeTree": "655669cda5e38eac94e12fd33da6c538ba90423e",
+    "commit": "ed29e40bb6a27dbba33b106b556da182e02a7429",
     "role": "curator",
-    "statement": "The kit design describes references contained relative to the referring file, automatic carry of shipped bytes, companions and notices, verification of draft kit bytes and private use of the supplied specimens.",
-    "task": "261124-EXP-L1",
+    "statement": "Confirmed against candidate 655669cd: docs/design/canvas-kit.md adds the known limit that pages load kit files by literal path and computed import() expressions are not carried automatically at reseed, matching kit_references.py and prospective.py.",
+    "task": "261124-EXP-L2",
     "uncommitted": true
   },
   "document": "docs/design/canvas-kit.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/tests/test_canvas_kit.py"
     },
     {
-      "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
+      "blob": "91cd6f9774fd246fc3e4ff49b1028a5bf4cdd440",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/prospective.py"
     },
@@ -89,5 +89,16 @@
       },
       "kind": "anchor"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T03:09:02+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-EXP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+    "task": "261124-EXP"
+  }
 }

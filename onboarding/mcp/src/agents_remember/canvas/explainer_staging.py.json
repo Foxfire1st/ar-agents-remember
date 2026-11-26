@@ -3,7 +3,115 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "93c2214a895b14359c03ec975657f74a7870895f",
+        "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+        "content": "sha256:916f479213fbf818bbf2772414c72f5bb38673ac31118e146b24e1172b188e88",
+        "locator": {
+          "kind": "symbol",
+          "name": "prune_finished_staging"
+        }
+      },
+      "id": "RLZ-2G1BDX",
+      "invariant": "INV-Z8EJCV",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 1",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Guards the staging root and every candidate child entry with guard_path before rmtree so symlinked staging directories or children cannot redirect deletion outside the workspace.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+        "content": "sha256:916f479213fbf818bbf2772414c72f5bb38673ac31118e146b24e1172b188e88",
+        "locator": {
+          "kind": "symbol",
+          "name": "prune_finished_staging"
+        }
+      },
+      "id": "RLZ-2T2X00",
+      "invariant": "INV-CZKFXC",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 2",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Acquires the re-entrant task lock around active_staging_dirs lookup and child removal so standalone and publish-time pruning serialize with stage_and_begin_draft.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+        "content": "sha256:07a394860e360aabd87fb16b078a200499a5339698bbfefa911785045fa2651f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_staging_root"
+        }
+      },
+      "id": "RLZ-6W0X05",
+      "invariant": "INV-Z8EJCV",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 1",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Guards workspace/publish-staging with guard_path before creation or inspection instead of pre-resolving a symlinked staging root.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+        "content": "sha256:866da756f10045759fdf9de62c18334bcdf9c8ffd0f32c2151e090cac17847e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_guard_recorded_path"
+        }
+      },
+      "id": "RLZ-9CGPPT",
+      "invariant": "INV-Z8EJCV",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 1",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Confines recorded resolved draft working paths against workspace.resolve() via guard_path so symlinked or escaped recorded paths are refused.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+        "content": "sha256:70e9c1841bf7ffd10034b90794d8ada4878044a92de4f206b6153dd87101e6b8",
+        "locator": {
+          "kind": "symbol",
+          "name": "discard_unused_staging"
+        }
+      },
+      "id": "RLZ-BFH02D",
+      "invariant": "INV-Z8EJCV",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 1",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Accepts the workspace root and guards publish_working against workspace.resolve() before removing an unused staging directory.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+        "content": "sha256:75407ffda52646a56ee6da0ab8b63d0d1d07b19b2d6dbb814d36738d1ccdc13a",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_working_directory"
+        }
+      },
+      "id": "RLZ-DH2MYC",
+      "invariant": "INV-Z8EJCV",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 1",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Guards the reused earlier draft path, staging root, and newly created staging directory before returning a publish working folder.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
         "content": "sha256:fff10a135292558fce5817916add015b7838c93cca2e6c0dbd9e020387e30404",
         "locator": {
           "kind": "symbol",
@@ -21,8 +129,26 @@
     },
     {
       "anchor": {
-        "blob": "93c2214a895b14359c03ec975657f74a7870895f",
-        "content": "sha256:f69f46c5d984f2352e87061cc1b673850374fb8cd8d06d27428d351c98312e79",
+        "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+        "content": "sha256:b19b70f484b5883eebfeb4930d9b29528ebd9a9b22594a96487fc6683be7cf0b",
+        "locator": {
+          "kind": "symbol",
+          "name": "stage_and_begin_draft"
+        }
+      },
+      "id": "RLZ-XZ8S7Y",
+      "invariant": "INV-CZKFXC",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 2",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Holds the task lock across read_draft, publish_working_directory, and begin_draft so a newly allocated staging directory is recorded as active before any prune can inspect staging.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+        "content": "sha256:75407ffda52646a56ee6da0ab8b63d0d1d07b19b2d6dbb814d36738d1ccdc13a",
         "locator": {
           "kind": "symbol",
           "name": "publish_working_directory"
@@ -40,16 +166,124 @@
   ],
   "references": {
     "1": {
-      "note": "Request staging preserves active draft ownership during allocation and cleanup.",
+      "note": "Request staging confines allocation, reuse, and cleanup inside the workspace under the task lock and preserves active draft ownership.",
       "targets": [
         {
           "anchor": {
-            "blob": "93c2214a895b14359c03ec975657f74a7870895f",
-            "content": "sha256:593d42506e436e26f69cffdc04bd3fe63cd3e141f61a83dfd9178507dc4ff02b",
+            "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+            "content": "sha256:75407ffda52646a56ee6da0ab8b63d0d1d07b19b2d6dbb814d36738d1ccdc13a",
             "locator": {
-              "end": 106,
-              "kind": "line_range",
-              "start": 41
+              "kind": "symbol",
+              "name": "publish_working_directory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+            "content": "sha256:916f479213fbf818bbf2772414c72f5bb38673ac31118e146b24e1172b188e88",
+            "locator": {
+              "kind": "symbol",
+              "name": "prune_finished_staging"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+            "content": "sha256:70e9c1841bf7ffd10034b90794d8ada4878044a92de4f206b6153dd87101e6b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "discard_unused_staging"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+            "content": "sha256:b19b70f484b5883eebfeb4930d9b29528ebd9a9b22594a96487fc6683be7cf0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_and_begin_draft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_staging_root`, `_guard_recorded_path`, `publish_working_directory`, and `discard_unused_staging` guard staging roots, reused paths, and discard targets with `guard_path` before use and refuse escaping or staging-root removals with `PathRefused`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+            "content": "sha256:07a394860e360aabd87fb16b078a200499a5339698bbfefa911785045fa2651f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_staging_root"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+            "content": "sha256:866da756f10045759fdf9de62c18334bcdf9c8ffd0f32c2151e090cac17847e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_guard_recorded_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+            "content": "sha256:70e9c1841bf7ffd10034b90794d8ada4878044a92de4f206b6153dd87101e6b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "discard_unused_staging"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`stage_and_begin_draft` and `prune_finished_staging` serialize draft lookup, staging creation, `begin_draft`, and completed-staging pruning under `exclusive_file_lock(task_lock(scope), \"review frame store\")`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+            "content": "sha256:ee4b355c7fb1dab42432abb6b30df5a092928fa99e7afc8a45c40290e0962f98",
+            "locator": {
+              "kind": "symbol",
+              "name": "DraftStagingRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+            "content": "sha256:916f479213fbf818bbf2772414c72f5bb38673ac31118e146b24e1172b188e88",
+            "locator": {
+              "kind": "symbol",
+              "name": "prune_finished_staging"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+            "content": "sha256:b19b70f484b5883eebfeb4930d9b29528ebd9a9b22594a96487fc6683be7cf0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_and_begin_draft"
             }
           },
           "kind": "code"

@@ -42,6 +42,7 @@ The catalog declares `test_mcp_cancelled_tool_log.py` as an exact consumer of `_
 
 
 
+
 ## Governing Overview
 
 The catalog declares `test_converted_onboarding_baseline.py` as a permanent unit-regression/local-composition migration proof owned by `memory/baseline.py`, with its stale-anchor refusal/repaired-adoption case as replacement node. Existing support/fixture consumer lists include the new census, publication-owner and note-revision suites. These are ownership and reachability declarations, not execution receipts.
@@ -301,6 +302,7 @@ The catalog declares 26 retained recording-artifact rows with their declared con
 ### Repo-Internal References (renewed)
 
 - The evidence catalogue registers the `canvas-host-and-presenter-cases` contract and its shared-support artifact `mcp/tests/canvas_host_test_support.py` with internal-canonical authority, affected cadence, permanent lifetime and its exact consumers. Anchor: file [306]
+
 
 ### Repository and External Document References
 
@@ -1068,11 +1070,13 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 - The held consumers of `mcp/tests/knowledge_index_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not an execution account. Anchor: file [285]
 
 
+
 - The current catalog declares three exact consumers for review_curator_fixture_support.py and eight for reviewer_leaf_view_support.py, including test_review_validation_reuse.py. [297]
 
 
 
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 122 artifacts. These source declarations establish no execution or passing result. [233]
+
 
 
 
@@ -1119,7 +1123,9 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - Knowledge-writer test support lists the crossing dependent writer test as a consumer. [341]
+
 
 
 
@@ -1205,7 +1211,9 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 122 artifacts. These source declarations establish no execution or passing result. [237]
+
 
 
 
@@ -1241,6 +1249,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 122 artifacts. These source declarations establish no execution or passing result. [255]
 
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 122 artifacts. These source declarations establish no execution or passing result. [256]
+
 
 
 
@@ -1298,7 +1307,9 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 
 
+
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 122 artifacts. These source declarations establish no execution or passing result. [274]
+
 
 
 

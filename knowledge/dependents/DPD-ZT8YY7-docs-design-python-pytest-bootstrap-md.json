@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "029ed9f701f14aca180f3615775e8d0e94541339",
+    "codeTree": "8c536ee9345e6ade67b325fd7db6725d79f0705f",
     "commit": "a1a08ec0f484592a5350a25f6fb7a6296c94d4fb",
     "role": "curator",
-    "statement": "On settled crossing-4 tree 029ed9f7 (commit a1a08ec0, combining EXP-L1 and BUG-L29), docs/design/python-pytest-bootstrap.md accurately describes lane-based -m 'not integration' selection with no pinned module counts across the 832 total cataloged modules (680 unit-regression including CAP-L4, EXP-L1's three canvas suites, and BUG-L29's test_githooks_l29_repairs.py and test_sync_commit_check.py; 125 integration; 3 public-contract; 23 architecture-fitness; 1 stress-durability), case budgets (10000/2000), --certify/coverage isolation, diagnostic-only CRAP/diff-coverage, conftest isolation, and the stress-durability bounded-memory stdio test's uninstrumented child coverage boundary (re-anchored to test-evidence-lanes.toml lines 851-853).",
-    "task": "261124-EXP",
-    "uncommitted": false
+    "statement": "Confirmed against synced EXP-L2 candidate 8c536ee9 (base a1a08ec0, combining master crossing-4/BUG-L29 and EXP-L2): docs/design/python-pytest-bootstrap.md accurately describes lane-based -m 'not integration' selection across 833 cataloged modules (681 unit-regression including test_githooks_l29_repairs.py, test_sync_commit_check.py, and test_explainer_staging_and_checks.py; 125 integration; 3 public-contract; 23 architecture-fitness; 1 stress-durability), case budgets (10000/2000), --certify/coverage isolation, diagnostic-only CRAP/diff-coverage, conftest isolation, and the stress-durability bounded-memory stdio test's uninstrumented child coverage boundary (re-anchored to test-evidence-lanes.toml lines 852-854).",
+    "task": "261124-EXP-L2",
+    "uncommitted": true
   },
   "document": "docs/design/python-pytest-bootstrap.md",
   "id": "DPD-ZT8YY7",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 20,
+  "revision": 21,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "99b864d6e0a4957dae565d02d5ce030c5d24e2c7",
+      "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -106,12 +106,12 @@
     },
     {
       "anchor": {
-        "blob": "99b864d6e0a4957dae565d02d5ce030c5d24e2c7",
+        "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
         "content": "sha256:cd1aadd0727e9055f7406e87eef73a6c7dd5a3457bbfc784c93a7ed4fc7eccc7",
         "locator": {
-          "end": 853,
+          "end": 854,
           "kind": "line_range",
-          "start": 851
+          "start": 852
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
@@ -134,11 +134,11 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T03:46:23+01:00",
+    "at": "2026-11-26T04:04:59+01:00",
     "by": "agent",
-    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-4",
     "effort": "high",
     "harness": "antigravity-acp",
+    "leaf": "261124-EXP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
     "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",

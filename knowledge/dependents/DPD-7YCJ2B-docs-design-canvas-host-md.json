@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8b54b8c117747b1a757a00d6441308aa1f569669",
-    "commit": "f41e34b43195feafb98f011d18e6a9b746b76c34",
+    "codeTree": "655669cda5e38eac94e12fd33da6c538ba90423e",
+    "commit": "ed29e40bb6a27dbba33b106b556da182e02a7429",
     "role": "curator",
-    "statement": "The host design keeps grant, asset, evidence, browser paint and physical storage checks binding, describes the interaction sweep and inventory as advisory, and records inventory omission and bounded-response spill locations while preserving publication identity.",
-    "task": "261124-EXP-L1",
+    "statement": "Confirmed against candidate 655669cd: docs/design/canvas-host.md architectural boundaries remain accurate for the explainer host; note that canvas-host.md was not edited in this leaf and still describes media-controls only under static readiness and omits the new kit-problem and path-held refusal codes.",
+    "task": "261124-EXP-L2",
     "uncommitted": true
   },
   "document": "docs/design/canvas-host.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -66,7 +66,7 @@
       "path": "mcp/src/agents_remember/canvas/presenter_tools.py"
     },
     {
-      "blob": "da5e9b1beec72b1ae136a19ea8ec92850da1e301",
+      "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_server.py"
     },
@@ -131,7 +131,7 @@
       "path": "dashboard/src/panels/review/explainer/RevisionFrame.tsx"
     },
     {
-      "blob": "13cf3b30543d7aa5f15a6e42b3993580c1986ab3",
+      "blob": "5b1738c086693bc7df299c48692b82bb3c07b680",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
     },
@@ -159,5 +159,16 @@
       },
       "kind": "anchor"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T03:09:02+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-EXP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+    "task": "261124-EXP"
+  }
 }
