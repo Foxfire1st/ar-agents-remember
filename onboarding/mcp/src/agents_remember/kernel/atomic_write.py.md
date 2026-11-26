@@ -15,7 +15,7 @@ On Windows `_fsync_directory` returns without flushing a directory handle. File 
 Owned atomic publication keeps the temporary descriptor open through rename and directory durability, then records its post-rename identity and payload digest. Pending announcements defer event judgment; failed durability clears the announcement, and a later destination stat never substitutes for the effect's descriptor.
 
 
-`atomic_write_bytes` writes, flushes and fsyncs its unique sibling temporary file, then calls `os.replace` directly. Its failure handler removes that temporary file, and its `finally` block releases the in-process in-flight mark. After replacement it removes only same-target abandoned temporaries whose writers are proven gone, then fsyncs the destination directory. A live or unknown writer keeps its temporary file; an invalid process number is treated as unknown, and Windows skips this cleanup. Cleanup does not promise that every leftover is removable. [9]
+`atomic_write_bytes` writes, flushes and fsyncs its unique sibling temporary file, then calls `os.replace` directly. Its failure handler removes that temporary file, and its `finally` block releases the in-process in-flight mark; `_temps_in_flight` keys in-flight marks by the per-call unique temporary filename (`tmp.name`, carrying pid and uuid4) rather than full `Path`, so concurrent same-process writers targeting the same directory through distinct `/proc/<pid>/fd/<N>` descriptor paths still recognize each other's in-flight temporaries in `_writer_is_gone`. After replacement it removes only same-target abandoned temporaries whose writers are proven gone, then fsyncs the destination directory. A live or unknown writer keeps its temporary file; an invalid process number is treated as unknown, and Windows skips this cleanup. Cleanup does not promise that every leftover is removable. [9]
 
 `atomic_replace` separately reports rename failure while the destination retains its previous bytes, or directory-fsync failure after the destination has changed and the source is absent. Neither a post-replacement directory-fsync failure nor cleanup is rollback. The removed `fsync_file` helper has no current public implementation; file fsync is performed inside `atomic_write_bytes`.
 
@@ -85,13 +85,16 @@ No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
 
-- `atomic_write_bytes` owns the current boundary described above. [6]
+- `atomic_write_bytes` owns the current boundary described above, keying in-flight temps by `tmp.name`. [6]
+
 - `atomic_replace` owns the current boundary described above. [7]
 - `_fsync_directory` owns the current boundary described above. [8]
-- The process probe and same-target abandoned-temp cleanup retain live, unknown and unremovable writers. [9]
+
+- The process probe and same-target abandoned-temp cleanup retain live, unknown and unremovable writers, recognizing in-flight same-process temps by unique basename. [9]
+
 - - The private temp this module writes before it replaces `path`. [10]
 
 - The directory flush runs where supported; on Windows this helper returns without flushing a directory handle. [11]
+- Atomic byte publication replaces the destination only after writing its temporary content; readers see the prior or replaced file. [12]
 
-- - Atomic byte publication replaces the destination only after writing its temporary content; readers see the prior or replaced file. [12]
 - - The atomic move of an already-written file onto a destination. [13]

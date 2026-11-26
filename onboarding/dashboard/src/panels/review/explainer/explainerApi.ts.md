@@ -32,4 +32,5 @@ The explanation view's routes and answers: state, revisions, update, removal, se
 - The state's answer carries both records. [9]
 
 
-- The state answer is read field by field, with the seat, the saved page, the stale record, the claims and the moved notice [2]
+
+- The client parses state fields and optional inventory or omission on the saved explanation and revision rows. The server’s saved-revision reader supplies an available summary or recorded omission for the addressed revision. [2]

@@ -1,0 +1,78 @@
+{
+  "closed": true,
+  "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-6",
+  "rows": [],
+  "schema": "ar-history/v1",
+  "sharedRevisions": [
+    {
+      "record": "DPD-71WYH4",
+      "revision": 25
+    },
+    {
+      "record": "DPD-EG5TYT",
+      "revision": 27
+    },
+    {
+      "record": "DPD-EJ2Y7Z",
+      "revision": 7
+    },
+    {
+      "record": "DPD-PMZ21Z",
+      "revision": 13
+    },
+    {
+      "record": "DPD-PYMM5P",
+      "revision": 6
+    }
+  ],
+  "written": [
+    {
+      "contentDigest": "sha256:0a1106bb4bd310c0c0ef05a78a2f6bdaedf6fc26c324459c30ed8fcbd6e0408c",
+      "record": "DPD-71WYH4",
+      "revision": 26,
+      "writer": {
+        "at": "2026-11-26T05:26:51+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-6",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:eac29cadfd6ffd5b166936501b57f9887508214f43ce6b7f52318047a851c634",
+      "record": "DPD-EG5TYT",
+      "revision": 28,
+      "writer": {
+        "at": "2026-11-26T05:26:51+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-6",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:df453667fd5265570347b9250e6eaf33289a7a6ea65cef91abaa60d8a850500b",
+      "record": "DPD-PMZ21Z",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-26T05:26:51+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-6",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+        "task": "261124-EXP"
+      }
+    }
+  ]
+}

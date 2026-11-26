@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/package_data/canvas/starters/ar-video-measured/index.html",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Scale and playback controls accompany the same measurements in the still markup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "166b7a0a000d85bbd98704af0eaeedcaf61e2282",
+            "content": "sha256:d192d158bdb184676e884e482b944552182ae95f4b3b5cba7d9435d5936ddf84",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 240
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

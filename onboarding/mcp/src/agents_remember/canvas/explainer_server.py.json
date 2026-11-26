@@ -3,7 +3,135 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+        "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+        "content": "sha256:0b69d34097e85e2c052aebdb9cf02c253ab2eaede75374af90fdd0b34105677e",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_errors"
+        }
+      },
+      "id": "RLZ-1RTHQR",
+      "invariant": "INV-9C8QB5",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §2",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Formats readiness, browser, picture, advisory-runner and publication diagnostics. The separate run_summary reads counts from the report, and interaction_coverage derives retained per-pass and overall revision coverage.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+        "content": "sha256:15bb625e86159a8d25dbc9ec8d9630dbf47e6c49ec6dddf65059969301ee43ba",
+        "locator": {
+          "kind": "symbol",
+          "name": "_render_and_publish"
+        }
+      },
+      "id": "RLZ-1WRQZC",
+      "invariant": "INV-R7P0AW",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 6",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Prevents publication whenever report.get('media_faults') is non-empty.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+        "content": "sha256:029a5b695fd01ba4ae47e57c35056dd2467e39b6079861181751ff9792c5bd09",
+        "locator": {
+          "kind": "symbol",
+          "name": "_record_publication_refusal"
+        }
+      },
+      "id": "RLZ-363AW2",
+      "invariant": "INV-Z8EJCV",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 1",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Translates PathRefused into a structured refused publication record with reason path-held and the error text.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+        "content": "sha256:15bb625e86159a8d25dbc9ec8d9630dbf47e6c49ec6dddf65059969301ee43ba",
+        "locator": {
+          "kind": "symbol",
+          "name": "_render_and_publish"
+        }
+      },
+      "id": "RLZ-B7FWCJ",
+      "invariant": "INV-QGP009",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 5",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Records kit_result.kit_problems on the report and refuses publish with reason kit-problem carrying those problems whenever any referenced kit library has a licence or kit problem.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+        "content": "sha256:166f2379f4bbb0fcbfd3649aa50b51ca545cb62d5f5c9b1cc9265780d1e0172a",
+        "locator": {
+          "end": 645,
+          "kind": "line_range",
+          "start": 644
+        }
+      },
+      "id": "RLZ-C37KKR",
+      "invariant": "INV-ME5GYW",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §3 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Catches FrameRefused, ExplainerRefused, and PathRefused across locked draft staging and publication while stage_and_begin_draft handles unused-staging cleanup internally.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+        "content": "sha256:f7ff2e76d8407c24c1b2e7122193482188525f5fa2d5e1e8f9b2f9cb3b151425",
+        "locator": {
+          "end": 565,
+          "kind": "line_range",
+          "start": 563
+        }
+      },
+      "id": "RLZ-DAP6J3",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Builds the advisory inventory and carries it in the render report when observations support it.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+        "content": "sha256:15bb625e86159a8d25dbc9ec8d9630dbf47e6c49ec6dddf65059969301ee43ba",
+        "locator": {
+          "kind": "symbol",
+          "name": "_render_and_publish"
+        }
+      },
+      "id": "RLZ-DHQEXH",
+      "invariant": "INV-Z8EJCV",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 1",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Catches PathRefused across staging, publication, and post-publish cleanup and records a refused publish instead of propagating an uncaught exception.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
         "content": "sha256:b555b69912c215ee9ef6efd82c6c2be2d5e676f7793517e194a1ff0e0c5ba416",
         "locator": {
           "kind": "symbol",
@@ -21,7 +149,45 @@
     },
     {
       "anchor": {
-        "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+        "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+        "content": "sha256:f329af989a731e213e1d9cba103d82e841017d5eb3f12ae5d5d51477e66e52d8",
+        "locator": {
+          "end": 642,
+          "kind": "line_range",
+          "start": 615
+        }
+      },
+      "id": "RLZ-K3VBHF",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Passes advisory inventory to the store under the shared task lock and projects the chosen result.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+        "content": "sha256:4ea90317321752ce74a70ba9ad77ad23cd7f6855f21e892a0e5dc5b24ef51047",
+        "locator": {
+          "end": 614,
+          "kind": "line_range",
+          "start": 599
+        }
+      },
+      "id": "RLZ-PB1W9Z",
+      "invariant": "INV-ME5GYW",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §3 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "The server adopts or stages the carried kit in the exact working folder handed to the frame store.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
         "content": "sha256:c9c1f05d5a7e1a5008bd0f0203a1d89a4da9b0b056869cf0f25d5bbb033a689f",
         "locator": {
           "kind": "symbol",
@@ -39,7 +205,7 @@
     },
     {
       "anchor": {
-        "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+        "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
         "content": "sha256:b555b69912c215ee9ef6efd82c6c2be2d5e676f7793517e194a1ff0e0c5ba416",
         "locator": {
           "kind": "symbol",
@@ -54,6 +220,79 @@
       },
       "rationale": "The only reachable publish path: a model-free load and a readiness report decide whether the frame store is written.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+        "content": "sha256:15bb625e86159a8d25dbc9ec8d9630dbf47e6c49ec6dddf65059969301ee43ba",
+        "locator": {
+          "kind": "symbol",
+          "name": "_render_and_publish"
+        }
+      },
+      "id": "RLZ-XFR60G",
+      "invariant": "INV-CZKFXC",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 2",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Routes draft staging through stage_and_begin_draft and invokes prune_finished_staging inside the publish task lock without taking another resource lock under it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+        "content": "sha256:b555b69912c215ee9ef6efd82c6c2be2d5e676f7793517e194a1ff0e0c5ba416",
+        "locator": {
+          "kind": "symbol",
+          "name": "render_and_publish"
+        }
+      },
+      "id": "RLZ-Y6BQ3R",
+      "invariant": "INV-ME5GYW",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §3",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Auto-carries referenced kit assets through explainer_staging and emits kitAssets in the render report.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+        "content": "sha256:0b69d34097e85e2c052aebdb9cf02c253ab2eaede75374af90fdd0b34105677e",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_errors"
+        }
+      },
+      "id": "RLZ-ZPVTYX",
+      "invariant": "INV-R7P0AW",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 6",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Includes media_faults from the prospective load report under media-controls errors returned by the render tool.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+        "content": "sha256:5df88789443206b592ff4175937149b2100da5f28e362308867b5241c7743e25",
+        "locator": {
+          "end": 555,
+          "kind": "line_range",
+          "start": 545
+        }
+      },
+      "id": "RLZ-ZWXBCZ",
+      "invariant": "INV-ME5GYW",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §3 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Builds the staged publication and browser inputs from the draft and the resolved pinned kit files.",
+      "role": "support"
     }
   ],
   "references": {
@@ -62,12 +301,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
             "content": "sha256:fbcd9e202928437d08908b92e776ac317dab15f88ed65afc7f68fe4380dcd16f",
             "locator": {
-              "end": 227,
+              "end": 239,
               "kind": "line_range",
-              "start": 183
+              "start": 195
             }
           },
           "kind": "code"
@@ -79,12 +318,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
             "content": "sha256:a0b6554ba6f9db2e2b5c52cccc59d26d7df8873e4868535a057689751f2e1a84",
             "locator": {
-              "end": 250,
+              "end": 262,
               "kind": "line_range",
-              "start": 230
+              "start": 242
             }
           },
           "kind": "code"
@@ -96,12 +335,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
             "content": "sha256:044fa4d05e91887f3e29d7237c91e15595d94d28a161d67142e37fa8d48c9398",
             "locator": {
-              "end": 275,
+              "end": 287,
               "kind": "line_range",
-              "start": 253
+              "start": 265
             }
           },
           "kind": "code"
@@ -109,16 +348,184 @@
       ]
     },
     "6": {
-      "note": "Publication happens only after the draft loaded and the readiness check passed, and a refusal leaves the ready revision untouched\n\nAnchor: `def _render_and_publish(`",
+      "note": "Publication follows static readiness, browser load without `media_faults`, clean kit resolution, and locked staging/pruning; a refusal (including `kit-problem` and `PathRefused` mapped to `path-held`) preserves the known ready revision.",
       "targets": [
         {
           "anchor": {
-            "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
-            "content": "sha256:139d1ff52a11f018f68f222da070fef30db98ebd76316a6aec4ec0042d82346f",
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+            "content": "sha256:15bb625e86159a8d25dbc9ec8d9630dbf47e6c49ec6dddf65059969301ee43ba",
             "locator": {
-              "end": 618,
+              "kind": "symbol",
+              "name": "_render_and_publish"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "660d761b7f74047d78b9cb8ddd43e8ed1ad18544",
+            "content": "sha256:820cb7068ccd3d62e6fffd5cb77b064338a49968f53f6ffa5409f243901a37a0",
+            "locator": {
+              "end": 839,
               "kind": "line_range",
-              "start": 508
+              "start": 808
+            },
+            "path": "mcp/src/agents_remember/application/review_frame_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Render resolves the authored draft's references, stages the matching shipped kit bytes, companions and notices, records `kitProblems` and refuses `kit-problem` on missing notices, gates publication on readiness and browser load including `media_faults`, preserves the ready revision on refusal, keeps the carried-kit list in the run report, and replaces `inventory` with `inventoryOmitted` on storage-limit omission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+            "content": "sha256:15bb625e86159a8d25dbc9ec8d9630dbf47e6c49ec6dddf65059969301ee43ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_render_and_publish"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+            "content": "sha256:1c8bdb89e76614b0cdd0c5f8745013c507b0b81fca5438c1a033049fb651ad05",
+            "locator": {
+              "end": 471,
+              "kind": "line_range",
+              "start": 464
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27db2f3972496d714e9d6401b99f11335432d2a4",
+            "content": "sha256:c5ff84a592dd1adcd0f24e457358873080cd7bb93511c248aeb7cd3ced3b814e",
+            "locator": {
+              "end": 494,
+              "kind": "line_range",
+              "start": 466
+            },
+            "path": "mcp/src/agents_remember/canvas/kit_references.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9bf8eabfcef238a74f392053306810d6e2d18c3f",
+            "content": "sha256:fff10a135292558fce5817916add015b7838c93cca2e6c0dbd9e020387e30404",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 261
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_staging.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7e7c6c474229bdaf8ec36896000452a46e7de8a0",
+            "content": "sha256:d2aed40957ffabbf4faef0de9ed35479cb84fe3a6b2b3701f722dd3b8c65f535",
+            "locator": {
+              "end": 607,
+              "kind": "line_range",
+              "start": 565
+            },
+            "path": "mcp/tests/test_canvas_starters_exemplar.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "`run_errors` formats observed diagnostics including `media-controls:` faults, `run_summary` counts passes, controls, readiness checks and errors from the report, and `interaction_coverage` derives per-pass and overall retained revision coverage from the advisory runner output.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+            "content": "sha256:0b69d34097e85e2c052aebdb9cf02c253ab2eaede75374af90fdd0b34105677e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_errors"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+            "content": "sha256:5ecd8f921e0affe04e3240ec9defd3fabc05138e255adb7f4960f516204b3af9",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_summary"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+            "content": "sha256:eff5c5095999d2bf882fe41362c71be8a7e6fc1e80eb17e5f96bd7ae4283b72a",
+            "locator": {
+              "kind": "symbol",
+              "name": "interaction_coverage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+            "content": "sha256:6a681ad29dc55e97db277b929c21dcc168a1d697081cabbba14984da757905a9",
+            "locator": {
+              "end": 592,
+              "kind": "line_range",
+              "start": 584
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+            "content": "sha256:890fe7050eea86abfb8f6a948a2e16f92968aea57b6ab34a3b6f63aacfb1c7c4",
+            "locator": {
+              "end": 628,
+              "kind": "line_range",
+              "start": 619
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`_record_publication_refusal` maps `PathRefused` to `path-held`, and `_render_and_publish` catches `PathRefused` across `stage_and_begin_draft`, locked `publish_revision`, and inside-lock `prune_finished_staging`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+            "content": "sha256:029a5b695fd01ba4ae47e57c35056dd2467e39b6079861181751ff9792c5bd09",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_publication_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b840a997e3eba514ae594998a73ad21caaf31842",
+            "content": "sha256:15bb625e86159a8d25dbc9ec8d9630dbf47e6c49ec6dddf65059969301ee43ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_render_and_publish"
             }
           },
           "kind": "code"

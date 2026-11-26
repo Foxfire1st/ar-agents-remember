@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "a2064ab5015b9c5ea51691fadb9330cf63151e9c",
-    "commit": "8722a0b18a72fabfa148e0ae00fc4d212e480c27",
+    "codeTree": "04c76787a21c478413c9d75543435f677602d33c",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "Verified across the clean merge of BUG-L41 (a772c9018) and DEP master (475ef19af): docs/features.md accurately summarizes role coordination, skill-tree packaging, worktrees, memory quality, and landing contracts with no contradiction from either disjoint parent.",
+    "statement": "Verified across the clean merge of 261124-EXP (ebd954778) and DEP master (69ba7b199): docs/features.md accurately summarizes role coordination, explainer pages, skill-tree packaging, worktrees, memory quality, and landing contracts.",
     "task": "261125-DEP",
     "uncommitted": false
   },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 28,
+  "revision": 29,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -286,18 +286,19 @@
         },
         "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
       },
+      "heading": "Loaded build identity",
       "kind": "anchor"
     },
     {
-      "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+      "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     }
   ],
   "writer": {
-    "at": "2026-11-26T05:35:06+01:00",
+    "at": "2026-11-26T06:50:36+01:00",
     "by": "agent",
-    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-2",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-4",
     "effort": "high",
     "harness": "antigravity-acp",
     "model": "gemini-4-neon-high",

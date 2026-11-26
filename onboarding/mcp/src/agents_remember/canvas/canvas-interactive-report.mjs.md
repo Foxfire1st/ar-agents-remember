@@ -2,15 +2,15 @@
 
 ## Governing Overview
 
-[Route overview](../overview.md)
+[Route overview](overview.md)
 
 ## Purpose
 
-Tooling, not product: the interactive report the renderer runs over a draft.
+Runs the renderer’s advisory sweep over a staged draft.
 
 ## Code Commentary
 
-This is build tooling rather than shipped product. It exercises every initially present control of a canvas draft at two widths, by click and by keyboard, and writes the statuses and pictures the render's interaction report carries. If it stops, a draft's dead control ships inside a render that reports itself as exercising everything: the failure surfaces two steps later, in a page a reviewer cannot operate.
+The shipped renderer runs an advisory sweep with click and keyboard at wide and narrow widths. It reports observed outcomes and what the deadline leaves unvisited, keeps available pictures and can resume observations for the same staged draft.
 
 ## Boundaries
 
@@ -18,6 +18,6 @@ The obligation above is the whole of what this file must keep true; the route ac
 
 ## Evidence
 
-- Every initially present control is exercised at both widths, so a control that does nothing cannot pass as covered. [1]
+- Four advisory width and input-method passes exercise initial controls and record those a deadline left unvisited. [1]
 
-- A control found in an earlier pass is not re-exercised at the cost of one never reached. [2]
+- A matching staged draft can resume completed ordinary passes and retain earlier observed controls from partial passes. Retired effects-off passes are excluded. [2]

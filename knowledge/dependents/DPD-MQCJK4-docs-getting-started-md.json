@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "ede5d128e75765d40987bf3981b1d97ed4326bae",
-    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
+    "codeTree": "af9e749296405ef22b6b165097e02cfef8e50570",
+    "commit": "91bb8c5f96005ee45998e3d5a3618fc28d250bdc",
     "role": "curator",
-    "statement": "Audited docs/getting-started.md line by line against synced L44 code tree ede5d128 (base 150b9778): onboarding steps and runtime setup remain accurate; no L44 contradiction.",
-    "task": "261112-BUG-L44",
-    "uncommitted": true
+    "statement": "On settled crossing-5 tree af9e7492 (commit 91bb8c5f, combining EXP-L1/crossing-4 and BUG-L44), docs/getting-started.md remains accurate for Python 3.14, package 3.0.8 (with mcp>=1.30.0,<2), Node >=22.13 / >=24, the five install steps, Bootstrap call, short overflow answers with log, dashboard --status behavior, Retry guidance for an unavailable embedded chat control, and runtime onboarding setup; no BUG-L44 contradiction.",
+    "task": "261124-EXP",
+    "uncommitted": false
   },
   "document": "docs/getting-started.md",
   "id": "DPD-MQCJK4",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 15,
+  "revision": 16,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/load.ts"
     },
     {
-      "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+      "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
       "kind": "file",
       "path": "dashboard/src/cockpit/paseoFrameControl.ts"
     },
@@ -132,14 +132,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T02:42:00+01:00",
+    "at": "2026-11-26T04:22:46+01:00",
     "by": "agent",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-5",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L44",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
-    "task": "261112-BUG"
+    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+    "task": "261124-EXP"
   }
 }

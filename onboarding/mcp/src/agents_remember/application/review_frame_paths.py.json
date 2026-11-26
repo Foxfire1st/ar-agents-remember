@@ -1,0 +1,44 @@
+{
+  "path": "mcp/src/agents_remember/application/review_frame_paths.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e26a8dc97f6f7e1927b4b91b3d5ecf47b3aff1ec",
+        "content": "sha256:a5e0ef3ddfa0ecf767e6f069228997663fa21169425826a2660a022c4f813e18",
+        "locator": {
+          "end": 48,
+          "kind": "line_range",
+          "start": 24
+        }
+      },
+      "id": "RLZ-YHFDRR",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Declares the canonical frame storage filenames and derives the shared task-wide lock resource.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Shared metadata and task-lock identities are defined once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e26a8dc97f6f7e1927b4b91b3d5ecf47b3aff1ec",
+            "content": "sha256:a5e0ef3ddfa0ecf767e6f069228997663fa21169425826a2660a022c4f813e18",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

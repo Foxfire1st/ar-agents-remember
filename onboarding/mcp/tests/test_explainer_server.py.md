@@ -4,6 +4,8 @@
 
 [Route overview](overview.md)
 
+The render report fixture carries ordinary width and method interaction results alongside report and revision isolation and typed publication outcomes.
+
 ## Purpose
 
 Tests the explainer’s mounted render and grade tools, their leaf binding and lock, bounded answers, publication records, and browser announcement and failure state.

@@ -200,16 +200,16 @@
       ]
     },
     "16": {
-      "note": "The unit-regression lane selects `mcp/tests/test_knowledge_review_one_sided_statements.py`. The lifecycle catalog lists `mcp/tests/test_knowledge_review_one_sided_statements.py` among the exact consumers of `mcp/tests/knowledge_rows_test_support.py`, `mcp/tests/read_scope_test_support.py`. These source declarations establish no execution or passing result.",
+      "note": "The lifecycle catalog lists `test_knowledge_review_one_sided_statements.py` among the exact consumers of `knowledge_rows_test_support.py`, `read_scope_test_support.py`. The lane catalog selects this same module.",
       "targets": [
         {
           "anchor": {
-            "blob": "c883e9093950ad17c032342760a1509dfd09b128",
+            "blob": "3c5a8f84a448a7483300af200817a5efd9313b8c",
             "content": "sha256:6c6eb717921aed553123e6ec0c05af608f1f0bb22e31ccf714a7e2642a3bd270",
             "locator": {
-              "end": 275,
+              "end": 279,
               "kind": "line_range",
-              "start": 275
+              "start": 279
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -217,12 +217,12 @@
         },
         {
           "anchor": {
-            "blob": "d56e7eb6befb9b9bd4a10c94369794817a1a0ed4",
-            "content": "sha256:7146dc257d151c5fe1fe4041c2e4a0c39f0f86443f712a018a5471824d073e3b",
+            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
+            "content": "sha256:3ae65a077f08de98629bdf3719aebee514a6e0e14475c7aa606e7fc5f78a9c17",
             "locator": {
-              "end": 3882,
+              "end": 3926,
               "kind": "line_range",
-              "start": 3834
+              "start": 3875
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -230,12 +230,12 @@
         },
         {
           "anchor": {
-            "blob": "d56e7eb6befb9b9bd4a10c94369794817a1a0ed4",
+            "blob": "1420f8d2b60f9d161764c28cabf4ed196c31f931",
             "content": "sha256:07593240d99226dcaa751e563ddc667da5f3e6cf9008fba7719d55447752bcce",
             "locator": {
-              "end": 4494,
+              "end": 4538,
               "kind": "line_range",
-              "start": 4466
+              "start": 4510
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

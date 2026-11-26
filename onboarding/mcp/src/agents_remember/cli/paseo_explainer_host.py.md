@@ -4,6 +4,8 @@
 
 [Route overview](../../../overview.md)
 
+The host’s initializing view already counts as live and in turn. A prior turn still distinguishes a closed seat from one that never began.
+
 ## Purpose
 
 The explainer seat’s adapter to the Paseo host: create or adopt without a first turn, send, resume, archive, inspect seat state, and cancel the exact turn.

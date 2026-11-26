@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
         "content": "sha256:3f1936de1758643ca02914d8e3193deeda73f6f0acbe73a19611841e03a56d0a",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
         "content": "sha256:a9089b8a548ba7ecff412d14754d31cfc3b50787e51d0de078db71c81149a5cf",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
-        "content": "sha256:4989d6a12e83a2bcc3fd3d3a0712ecc59b36562db9c375a4251dae6c7f5fcfa9",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "content": "sha256:af5dc785769c30b804b07153a6d37937db2dce2bf1369fd8b302bc00b7646a70",
         "locator": {
           "kind": "symbol",
           "name": "PaseoFrameControl.display"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
         "content": "sha256:3429c69cabae1586257f3c9c98077fffabfd6eef2f26aaf46c82f0e5b88e41e9",
         "locator": {
           "kind": "symbol",
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
-        "content": "sha256:d0445a449567c2c1d2541969be3506e2780b12b62d1d58ae09351be2a865f354",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "content": "sha256:a3f9bf4fdb4d938af04f2e6dcde7ddd418c4550738470bdeedb37e0fc1fc12e4",
         "locator": {
           "kind": "symbol",
           "name": "start"
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
         "content": "sha256:bc721665060d6db230bb7350061f28d1cfc39044b0b8c380bb04e73b7e243edb",
         "locator": {
           "kind": "symbol",
@@ -111,8 +111,8 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
-        "content": "sha256:4989d6a12e83a2bcc3fd3d3a0712ecc59b36562db9c375a4251dae6c7f5fcfa9",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "content": "sha256:af5dc785769c30b804b07153a6d37937db2dce2bf1369fd8b302bc00b7646a70",
         "locator": {
           "kind": "symbol",
           "name": "display"
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
         "content": "sha256:ee4c2bd20126b9f34b0a73bac442ef7394a40c1a138102a0579bf8def9ec28c8",
         "locator": {
           "kind": "symbol",
@@ -147,12 +147,12 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
-        "content": "sha256:56f04fe8bdd8388ef84a5ba075d99ac4c2a5bf0cd8555e11f47a8d2fdfd7c38a",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "content": "sha256:3ade5ee14778b26df1d8f6f7ae3d50de609593b4ef655540014be063ef0a5675",
         "locator": {
-          "end": 199,
+          "end": 216,
           "kind": "line_range",
-          "start": 165
+          "start": 173
         }
       },
       "id": "RLZ-AZSTHT",
@@ -166,7 +166,44 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "content": "sha256:af5dc785769c30b804b07153a6d37937db2dce2bf1369fd8b302bc00b7646a70",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl.display"
+        }
+      },
+      "id": "RLZ-BKMGA6",
+      "invariant": "INV-72AP2W",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §8",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Updates the selected agent and workspace, clears retry state on a changed or cleared target and synchronizes a ready frame to the selection.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "content": "sha256:a2be474f3acefef4f9e093a372c08f64850e06530ac3b4e95a93f28265c44bf2",
+        "locator": {
+          "end": 440,
+          "kind": "line_range",
+          "start": 396
+        }
+      },
+      "id": "RLZ-BMDEEW",
+      "invariant": "INV-72AP2W",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §8 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Retries a transient unavailable agent on the same supported frame for the current target and workspace.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
         "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
         "locator": {
           "kind": "symbol",
@@ -184,7 +221,7 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
         "content": "sha256:3652e0509fb6b267a048ef84202ea5ebf881a1a1d3b6e021f252bb008b7834cc",
         "locator": {
           "kind": "symbol",
@@ -202,8 +239,8 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
-        "content": "sha256:6c92851230026aa4cb5ae12b811a46e6d5282cdb818e5bc8d77b5a13885e977b",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "content": "sha256:52281ebf7b6dd95a60f924b028dcd748a9265eb69d73531b35121fcf23369af8",
         "locator": {
           "kind": "symbol",
           "name": "PaseoFrameControl.onShown"
@@ -220,8 +257,8 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
-        "content": "sha256:39ef2562efa6da62b3d2f194a66508f8b1fe282d549ab926b2036f16239ff672",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "content": "sha256:0a763a0b9fdf775cf149ddc77ca21a83db1c73aa1fa0699209981f55d716c9fe",
         "locator": {
           "kind": "symbol",
           "name": "PaseoFrameControl.onReady"
@@ -238,8 +275,8 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
-        "content": "sha256:4989d6a12e83a2bcc3fd3d3a0712ecc59b36562db9c375a4251dae6c7f5fcfa9",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "content": "sha256:af5dc785769c30b804b07153a6d37937db2dce2bf1369fd8b302bc00b7646a70",
         "locator": {
           "kind": "symbol",
           "name": "display"
@@ -256,7 +293,7 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
         "content": "sha256:ee4c2bd20126b9f34b0a73bac442ef7394a40c1a138102a0579bf8def9ec28c8",
         "locator": {
           "kind": "symbol",
@@ -274,7 +311,7 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
         "content": "sha256:421457bcb42cd6bdb13cb9f9eae3b76927955324849767e00264f7f448734ade",
         "locator": {
           "kind": "symbol",
@@ -292,12 +329,31 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
-        "content": "sha256:92cbd86891412ef52c23ed651bdef1d930c9b29abf77fd92319b43fcf114f79e",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "content": "sha256:4d73c19f273635e95cc6bb2cfdc811da7b45d21f382cd2337c281626f1eeed77",
         "locator": {
-          "end": 520,
+          "end": 38,
           "kind": "line_range",
-          "start": 75
+          "start": 35
+        }
+      },
+      "id": "RLZ-RX0G6H",
+      "invariant": "INV-72AP2W",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §8 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "The transient open retry has a finite progressive delay schedule.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "content": "sha256:07017c31afb5a9c1b75c0770ac96a8b82645c25fa8780cb769a875ed647b7268",
+        "locator": {
+          "end": 590,
+          "kind": "line_range",
+          "start": 78
         }
       },
       "id": "RLZ-SFPH0W",
@@ -311,8 +367,8 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
-        "content": "sha256:92cbd86891412ef52c23ed651bdef1d930c9b29abf77fd92319b43fcf114f79e",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+        "content": "sha256:07017c31afb5a9c1b75c0770ac96a8b82645c25fa8780cb769a875ed647b7268",
         "locator": {
           "kind": "symbol",
           "name": "PaseoFrameControl"
@@ -329,7 +385,7 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
         "content": "sha256:421457bcb42cd6bdb13cb9f9eae3b76927955324849767e00264f7f448734ade",
         "locator": {
           "kind": "symbol",
@@ -347,7 +403,7 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
         "content": "sha256:bc721665060d6db230bb7350061f28d1cfc39044b0b8c380bb04e73b7e243edb",
         "locator": {
           "kind": "symbol",
@@ -365,7 +421,7 @@
     },
     {
       "anchor": {
-        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
         "content": "sha256:c71a996880db63f28f763e0bbccda87ee98927f306160713ca8e2e795bfbb76b",
         "locator": {
           "kind": "symbol",
@@ -384,16 +440,16 @@
   ],
   "references": {
     "1": {
-      "note": "Ready changes message immediately; readiness-held changes and unavailable trailing settlement differ.\n\nAnchor: \"display(scope: string, target: PaseoAgentTarget \\| null): void {\"",
+      "note": "A ready frame sends the selected agent and workspace immediately. Held readiness and unavailable targets settle through separate paths.",
       "targets": [
         {
           "anchor": {
-            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
-            "content": "sha256:4989d6a12e83a2bcc3fd3d3a0712ecc59b36562db9c375a4251dae6c7f5fcfa9",
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "content": "sha256:af5dc785769c30b804b07153a6d37937db2dce2bf1369fd8b302bc00b7646a70",
             "locator": {
-              "end": 187,
+              "end": 204,
               "kind": "line_range",
-              "start": 165
+              "start": 173
             }
           },
           "kind": "code"
@@ -405,12 +461,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
             "content": "sha256:0056c576f8d01a30aa092a98dc330a6e072b6780418b1d58b6a37fe8faa07621",
             "locator": {
-              "end": 299,
+              "end": 328,
               "kind": "line_range",
-              "start": 288
+              "start": 317
             }
           },
           "kind": "code"
@@ -422,12 +478,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
             "content": "sha256:cbef9622e24b8e78204dff90ec919b400c9fc8c45686bd084bb912bf24d98046",
             "locator": {
-              "end": 358,
+              "end": 389,
               "kind": "line_range",
-              "start": 354
+              "start": 385
             }
           },
           "kind": "code"
@@ -435,16 +491,16 @@
       ]
     },
     "2": {
-      "note": "Ready capability negotiation attaches tray reporting and sends the latest held target.\n\nAnchor: \"private onReady(capabilities: PluginAbilities): void {\"",
+      "note": "Ready capability negotiation attaches tray reporting and sends the latest held target. An eligible transient retry can send the matching selection immediately.",
       "targets": [
         {
           "anchor": {
-            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
-            "content": "sha256:39ef2562efa6da62b3d2f194a66508f8b1fe282d549ab926b2036f16239ff672",
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "content": "sha256:0a763a0b9fdf775cf149ddc77ca21a83db1c73aa1fa0699209981f55d716c9fe",
             "locator": {
-              "end": 281,
+              "end": 310,
               "kind": "line_range",
-              "start": 263
+              "start": 280
             }
           },
           "kind": "code"
@@ -456,12 +512,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
             "content": "sha256:bc721665060d6db230bb7350061f28d1cfc39044b0b8c380bb04e73b7e243edb",
             "locator": {
-              "end": 389,
+              "end": 457,
               "kind": "line_range",
-              "start": 381
+              "start": 449
             }
           },
           "kind": "code"
@@ -473,12 +529,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
             "content": "sha256:a9089b8a548ba7ecff412d14754d31cfc3b50787e51d0de078db71c81149a5cf",
             "locator": {
-              "end": 418,
+              "end": 486,
               "kind": "line_range",
-              "start": 408
+              "start": 476
             }
           },
           "kind": "code"
@@ -490,12 +546,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
             "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
             "locator": {
-              "end": 209,
+              "end": 226,
               "kind": "line_range",
-              "start": 202
+              "start": 219
             }
           },
           "kind": "code"
@@ -507,12 +563,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
             "content": "sha256:421457bcb42cd6bdb13cb9f9eae3b76927955324849767e00264f7f448734ade",
             "locator": {
-              "end": 447,
+              "end": 515,
               "kind": "line_range",
-              "start": 433
+              "start": 501
             }
           },
           "kind": "code"
@@ -524,12 +580,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
             "content": "sha256:3652e0509fb6b267a048ef84202ea5ebf881a1a1d3b6e021f252bb008b7834cc",
             "locator": {
-              "end": 464,
+              "end": 532,
               "kind": "line_range",
-              "start": 453
+              "start": 521
             }
           },
           "kind": "code"
@@ -537,16 +593,16 @@
       ]
     },
     "8": {
-      "note": "Only the pending agent settles on drawn chat or the native load-failed pane.\n\nAnchor: \"private onShown(agentId: string \\| undefined, drawn: boolean): void {\"",
+      "note": "A drawn chat or native load-failure answer settles only the pending selection. Settlement clears its retry.",
       "targets": [
         {
           "anchor": {
-            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
-            "content": "sha256:6c92851230026aa4cb5ae12b811a46e6d5282cdb818e5bc8d77b5a13885e977b",
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "content": "sha256:52281ebf7b6dd95a60f924b028dcd748a9265eb69d73531b35121fcf23369af8",
             "locator": {
-              "end": 343,
+              "end": 374,
               "kind": "line_range",
-              "start": 335
+              "start": 364
             }
           },
           "kind": "code"
@@ -554,16 +610,16 @@
       ]
     },
     "9": {
-      "note": "Startup distinguishes ordinary document load from hidden preload.\n\nAnchor: \"start(available: AvailablePaseoFrame, afterRetry: boolean, preload = false): void {\"",
+      "note": "Frame startup distinguishes ordinary document load and hidden preload.",
       "targets": [
         {
           "anchor": {
-            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
-            "content": "sha256:d0445a449567c2c1d2541969be3506e2780b12b62d1d58ae09351be2a865f354",
+            "blob": "71deece51f15de37724bf2d20cc1dadab12cbe4a",
+            "content": "sha256:523f5969114bb95f202f01046cf560425421929de4e82f2b9a7494377d7ea164",
             "locator": {
-              "end": 139,
+              "end": 146,
               "kind": "line_range",
-              "start": 127
+              "start": 129
             }
           },
           "kind": "code"

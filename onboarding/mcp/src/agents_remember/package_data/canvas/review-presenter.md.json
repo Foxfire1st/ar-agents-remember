@@ -3,16 +3,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The installed capability prescribes six private authoring files, followed by the page as the seventh artifact.",
+      "note": "The capability places the evidence-bearing essay before the visual plan and draft figures, with page assembly seventh. A reader-driven figure explains the central mechanism and the whole explanation remains in the still markup.",
       "targets": [
         {
           "anchor": {
-            "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
-            "content": "sha256:d833ffc03a155f6506f7af8e0b198adca842a044314493134ce0b71af1ef80f1",
+            "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+            "content": "sha256:880c4b10981967f84354f6727692c5766eb7a06148bf1671327fe6f9bc986f76",
             "locator": {
-              "end": 62,
+              "end": 49,
               "kind": "line_range",
-              "start": 27
+              "start": 24
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+            "content": "sha256:3ada9214ef78c2233b273c6f85e2095fe1cb099402455601d20dd08520e3af1f",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 60
             }
           },
           "kind": "code"

@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/package_data/canvas/starters/open-generative-ui-trace/index.html",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The selectable chain and pinned detail accompany an ordered still description.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "651043528a0b9ee6ba4adc7ca4b2908eb92db681",
+            "content": "sha256:6519a13a241d686ee3e47fc23cf4ef0ac476ef14cd6fbf1abc484bbc32d28ee1",
+            "locator": {
+              "end": 454,
+              "kind": "line_range",
+              "start": 357
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

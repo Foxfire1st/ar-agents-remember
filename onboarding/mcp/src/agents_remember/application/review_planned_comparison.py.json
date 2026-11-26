@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The application adapters reach serving as one injected value, not a module-global binding\n\nAnchor: `def explainer_application_ports(`",
+      "note": "The application ports give serving the frame, evidence, comparison and optional revision inventory readers.",
       "targets": [
         {
           "anchor": {
-            "blob": "b0e01fe3622f5b1ae84b36a52de5797d964afe83",
-            "content": "sha256:7b6bd576aa3190bcd3951596bfe86fa363cd75bafe7611278091eb3f82101c47",
+            "blob": "ff99184da0cf1c7726804a03f34ed5da08cd4500",
+            "content": "sha256:f673f83a4c21d5c912ecc81f8f946f62529c116c9f5b7b9dddfb9bebc616f310",
             "locator": {
-              "end": 200,
+              "end": 206,
               "kind": "line_range",
-              "start": 176
+              "start": 180
             }
           },
           "kind": "code"
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0e01fe3622f5b1ae84b36a52de5797d964afe83",
+            "blob": "ff99184da0cf1c7726804a03f34ed5da08cd4500",
             "content": "sha256:cba676c370fc275565ee7b93c71fa39162d4ecc692eca3efceeaecfabcc6d3ef",
             "locator": {
-              "end": 153,
+              "end": 157,
               "kind": "line_range",
-              "start": 133
+              "start": 137
             }
           },
           "kind": "code"
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0e01fe3622f5b1ae84b36a52de5797d964afe83",
+            "blob": "ff99184da0cf1c7726804a03f34ed5da08cd4500",
             "content": "sha256:db439a6f7e6f089e904545f64128f0f762874012f204eab24834fdacb829c930",
             "locator": {
-              "end": 130,
+              "end": 134,
               "kind": "line_range",
-              "start": 91
+              "start": 95
             }
           },
           "kind": "code"
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0e01fe3622f5b1ae84b36a52de5797d964afe83",
+            "blob": "ff99184da0cf1c7726804a03f34ed5da08cd4500",
             "content": "sha256:ccf1e87d039630720550c37e2e769d2f079c593ad59e70c0913be4d424d00b67",
             "locator": {
-              "end": 173,
+              "end": 177,
               "kind": "line_range",
-              "start": 156
+              "start": 160
             }
           },
           "kind": "code"

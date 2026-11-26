@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "e08c810611259528c77765ddf47f51eb893f424b",
-    "commit": "10f2b5bb94ab96a48a5f226f6e63b9fe9f6fa4cb",
+    "codeTree": "049d3961dfb898bbd69253d9e0b878188fd1006b",
+    "commit": "ed29e40bb6a27dbba33b106b556da182e02a7429",
     "role": "curator",
-    "statement": "The roadmap links to the Concepts explanations of records, drift and worklist judgments and to the benchmark runner and benchmark case design. Reconfirmed after the BUG-L27 sync (code e08c8106).",
-    "task": "261112-KNO-L4",
-    "uncommitted": true
+    "statement": "On the merged code, all roadmap links into docs/concepts.md (records, drift, worklist judgments, intent review, and benchmark runner) and docs/benchmarks-methodology.md still resolve, and the cited worklist passage still states that a change brings a named decision back for the Curator's answer.",
+    "task": "261124-EXP",
+    "uncommitted": false
   },
   "document": "ROADMAP.md",
   "id": "DPD-3P9XTZ",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
     },
     {
-      "blob": "7eb31a98c36e64a405175740315e3170b66f448d",
+      "blob": "79e61e75ceab86d7d3e2e122bffc60df2f567f66",
       "kind": "file",
       "path": "docs/concepts.md"
     },
@@ -40,5 +40,16 @@
       "kind": "file",
       "path": "docs/benchmarks-methodology.md"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T00:51:29+01:00",
+    "by": "agent",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+    "task": "261124-EXP"
+  }
 }

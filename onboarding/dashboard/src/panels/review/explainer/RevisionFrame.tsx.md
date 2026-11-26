@@ -4,6 +4,8 @@
 
 [Route overview](../../overview.md)
 
+The first iframe load for a session sends the ordinary binding. A later load in that session is a departure that revokes that frame’s channel and reopens the saved revision. The dashboard owns its Effects preference, and the binding carries no effects field.
+
 ## Purpose
 
 Shows one retained revision of the explanation in the isolated host's frame, sends that frame the trusted stale ids, and turns the page's own offers into tray picks without starting a model.
@@ -26,8 +28,10 @@ Shows one retained revision of the explanation in the isolated host's frame, sen
 
 Binding checks here reject mismatching supplied protocol/session/revision/comparison fields and repeated string request ids; they do not require each optional field to exist. The host protocol remains the final validator of a forwarded envelope. Trusted stale-part envelopes keep the true total while sending at most 32 valid ids and naming dropped/truncated items.
 
-- Binding checks here reject mismatching supplied protocol/session/revision/comparison fields and repeated string request ids; they do not require each optional field to exist. The host protocol remains the final validator of a forwarded envelope. Trusted stale-part envelopes keep the true total while sending at most 32 valid ids and naming dropped/truncated items. [7]
+- The frame bounds the stale list and reports omitted or truncated parts. Forwarded messages reject mismatching supplied identities and repeated string request IDs. [7]
 
-- A stale part id must be a nonempty bounded lowercase id other than page; membership is checked when a nonempty knownPartIds list is supplied, while an omitted or empty list leaves only the shape checks. [2]
+- Stale-part IDs have a bounded lowercase form and exclude page. A nonempty known-part set also constrains membership. [2]
 
-- The frame listener accepts only its own frame window, bounds forwarding and rejects mismatching supplied protocol/session/revision/comparison fields and repeated string request ids before forwarding; absent optional identity fields remain subject to the host’s validator. [4]
+- The listener accepts its own frame window, bounds forwarding, rejects mismatches in supplied identity fields and rejects repeated string request IDs. [4]
+
+- The first iframe load for a session sends the ordinary binding. A later load in that session is a departure that revokes that frame’s channel and reopens the saved revision. The dashboard owns its Effects preference, and the binding carries no effects field. [8]

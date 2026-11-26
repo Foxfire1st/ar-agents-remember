@@ -12,7 +12,7 @@ The example treatment, and the boundary it cannot cross.
 
 An example treatment, shipped for guidance; a repository keeps its own beside TECHNIQUES.md and nothing falls back to this copy. It steers how an explanation page looks, reads, moves and responds, and nothing else - not what the explainer may read, write or start, and not the rules of evidence.
 
-The example treatment presents an essay that carries the full explanation. Figures support the essay where they help. The still form preserves the whole explanation.
+The essay and a reader-driven figure explain the central mechanism together. The markup holds the full explanation in still form. A planned comparison labels its mechanism as intended. Add secondary figures where they clarify the comparison.
 
 ## Boundaries
 
@@ -20,4 +20,4 @@ The obligation above is the whole of what this file must keep true; the route ac
 
 ## Evidence
 
-- The example treatment presents an essay that carries the full explanation. Figures support the essay where they help. The still form preserves the whole explanation. [1]
+- The example requires a complete still explanation and a figure the reader drives through the central mechanism, marked intended for a planned comparison. The dashboard quiet control has dashboard scope. [1]

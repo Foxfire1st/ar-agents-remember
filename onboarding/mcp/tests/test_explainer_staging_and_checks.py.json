@@ -1,0 +1,174 @@
+{
+  "path": "mcp/tests/test_explainer_staging_and_checks.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "9bd5f65c09739e5c993b1684d01df8636a23aaca",
+        "content": "sha256:e3bf9b888d050de52dfc7a7f38f30ada2bdacc1062be65a5a110ebcf54c0478c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_prune_and_render_draft_serialize_under_task_lock"
+        }
+      },
+      "facet": "Demonstrates that stage_and_begin_draft and prune_finished_staging serialize under the shared task lock without deleting an active staging folder and that concurrent identical renders complete without losing files.",
+      "id": "PRF-49WSF3",
+      "invariant": "INV-CZKFXC",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 2",
+        "leaf": "261124-EXP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9bd5f65c09739e5c993b1684d01df8636a23aaca",
+        "content": "sha256:d4677215d723d6ed0225d81053c847230f55de1d1e9e15834dc56a5f04ecb946",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_copy_package_folder_replaces_stray_file_and_refuses_symlink"
+        }
+      },
+      "facet": "Demonstrates that _copy_package_folder unlinks a stray regular file at the destination before copying package files while still raising PathRefused on a symlink destination.",
+      "id": "PRF-8YXJ2C",
+      "invariant": "INV-7P3JK5",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 3",
+        "leaf": "261124-EXP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9bd5f65c09739e5c993b1684d01df8636a23aaca",
+        "content": "sha256:7b33a7a5d04317c9c7d6581d310634ac5772686112bc78669fd15a90aa5378e8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_staging_guards_refuse_symlinks_and_surface_as_refused_publish"
+        }
+      },
+      "facet": "Demonstrates that symlinked staging roots, symlinked child entries, and escaped recorded staging paths are refused by guard_path and reported by explainer_server as a refused publication with reason path-held.",
+      "id": "PRF-FHEYWM",
+      "invariant": "INV-Z8EJCV",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 1",
+        "leaf": "261124-EXP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9bd5f65c09739e5c993b1684d01df8636a23aaca",
+        "content": "sha256:b5b49b644b1d4652989623fb6a1dd9e96e8a9eae333ab5ce21b8d2dcd13d4bd1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_render_refuses_publish_when_kit_licence_notice_is_missing"
+        }
+      },
+      "facet": "Demonstrates that missing licence notices reported in kit_result.kit_problems block publication with refusal reason kit-problem and record the problem messages on the render report.",
+      "id": "PRF-R7S0CV",
+      "invariant": "INV-QGP009",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 5",
+        "leaf": "261124-EXP-L2"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9bd5f65c09739e5c993b1684d01df8636a23aaca",
+        "content": "sha256:393536a60e26d3f10ad57cb6665fc22685d2852eb8d7871894283e7cf39d817e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_browser_render_refuses_script_inserted_nonconforming_media_and_publishes_conforming"
+        }
+      },
+      "facet": "Demonstrates that script-inserted autoplay, looping, or control-less media elements fail prospective browser loading and block publication while conforming media with controls publishes cleanly.",
+      "id": "PRF-TG4P6C",
+      "invariant": "INV-R7P0AW",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 6",
+        "leaf": "261124-EXP-L2"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Symlinked staging or state directories, escaped reused paths, and outside discard targets raise `PathRefused` directly and surface as `path-held` publish refusals without deleting outside marker files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bd5f65c09739e5c993b1684d01df8636a23aaca",
+            "content": "sha256:7b33a7a5d04317c9c7d6581d310634ac5772686112bc78669fd15a90aa5378e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_staging_guards_refuse_symlinks_and_surface_as_refused_publish"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Draft staging, pruning, and identical concurrent renders serialize under the re-entrant task lock without deleting in-flight staging, deadlocking, or failing on concurrent identical renders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bd5f65c09739e5c993b1684d01df8636a23aaca",
+            "content": "sha256:e3bf9b888d050de52dfc7a7f38f30ada2bdacc1062be65a5a110ebcf54c0478c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_prune_and_render_draft_serialize_under_task_lock"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_copy_package_folder` unlinks stray regular files at `starters` and `exemplar` before copying while continuing to refuse symlinks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bd5f65c09739e5c993b1684d01df8636a23aaca",
+            "content": "sha256:d4677215d723d6ed0225d81053c847230f55de1d1e9e15834dc56a5f04ecb946",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_copy_package_folder_replaces_stray_file_and_refuses_symlink"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A missing shipped kit licence notice refuses publish with `kit-problem` and `kit-file-absent` even when the draft carries the verified shipped kit asset.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bd5f65c09739e5c993b1684d01df8636a23aaca",
+            "content": "sha256:b5b49b644b1d4652989623fb6a1dd9e96e8a9eae333ab5ce21b8d2dcd13d4bd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_render_refuses_publish_when_kit_licence_notice_is_missing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Real Chromium prospective loading refuses script-inserted autoplay, loop, and controls-less media elements while publishing conforming script-inserted media.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bd5f65c09739e5c993b1684d01df8636a23aaca",
+            "content": "sha256:393536a60e26d3f10ad57cb6665fc22685d2852eb8d7871894283e7cf39d817e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_browser_render_refuses_script_inserted_nonconforming_media_and_publishes_conforming"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

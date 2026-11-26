@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "83eacca898d910be73255f63f549a2b0ef290fc8",
-    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
+    "codeTree": "04c76787a21c478413c9d75543435f677602d33c",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "docs/design/python-pytest-bootstrap.md remains accurate on the synced DEP-L7 candidate because the four new unit-regression modules (681 of 833 total), the quality_plan.py targeted-module alias, and the shifted stress-durability lane lines (852-854) preserve every pytest bootstrap and coverage-boundary rule.",
-    "task": "261125-DEP-L7",
-    "uncommitted": true
+    "statement": "Verified across the clean merge of 261124-EXP (ebd954778) and DEP master (69ba7b199): docs/design/python-pytest-bootstrap.md accurately describes lane-based pytest selection and quality_plan targeted-module aliases across both EXP-L2 and DEP-L7 test additions.",
+    "task": "261125-DEP",
+    "uncommitted": false
   },
   "document": "docs/design/python-pytest-bootstrap.md",
   "id": "DPD-ZT8YY7",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 20,
+  "revision": 22,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -31,7 +31,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "f929554ebe4c1f8b1ec1adac53e0e2f8b193a25f",
+      "blob": "17ca768ff83751a5d011aef59007a0ad278c68b6",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -75,6 +75,7 @@
         },
         "path": "mcp/tests/mcp_memory_bounded_fixture.py"
       },
+      "heading": "Uninstrumented warm-index child",
       "kind": "anchor"
     },
     {
@@ -87,6 +88,7 @@
         },
         "path": "mcp/tests/mcp_memory_bounded_stdio_support.py"
       },
+      "heading": "Uninstrumented measured server",
       "kind": "anchor"
     },
     {
@@ -99,12 +101,13 @@
         },
         "path": "mcp/tests/mcp_memory_bounded_stdio_support.py"
       },
+      "heading": "Measured workload",
       "kind": "anchor"
     },
     {
       "anchor": {
-        "blob": "f929554ebe4c1f8b1ec1adac53e0e2f8b193a25f",
-        "content": "sha256:cd1aadd0727e9055f7406e87eef73a6c7dd5a3457bbfc784c93a7ed4fc7eccc7",
+        "blob": "17ca768ff83751a5d011aef59007a0ad278c68b6",
+        "content": "sha256:d511bcc3a5fd6d565b5fb5bced6c752f6858a46a6a61173b204b7e35471bb8ff",
         "locator": {
           "end": 854,
           "kind": "line_range",
@@ -112,6 +115,7 @@
         },
         "path": "mcp/tests/test-evidence-lanes.toml"
       },
+      "heading": "Stress-durability case selection",
       "kind": "anchor"
     },
     {
@@ -125,18 +129,19 @@
         },
         "path": "pyproject.toml"
       },
+      "heading": "Default Coverage subprocess configuration",
       "kind": "anchor"
     }
   ],
   "writer": {
-    "at": "2026-11-26T02:27:57+01:00",
+    "at": "2026-11-26T06:50:36+01:00",
     "by": "agent",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-4",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L7",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "role": "manager",
+    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
     "task": "261125-DEP"
   }
 }

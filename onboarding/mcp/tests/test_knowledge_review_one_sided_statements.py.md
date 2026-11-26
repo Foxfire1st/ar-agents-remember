@@ -65,8 +65,8 @@ rather than against a shape that could be anything.
 ### Conventions
 
 `pytestmark = pytest.mark.evidence_unit` is the module's whole lane declaration; its membership is the
-`unit-regression` row at `mcp/tests/test-evidence-lanes.toml:274`, and its consumption of
-`read_scope_test_support` is the consumer row at `mcp/tests/evidence-lifecycle.toml:4455` on that
+`unit-regression` row at `mcp/tests/test-evidence-lanes.toml:277`, and its consumption of
+`read_scope_test_support` is the consumer row at `mcp/tests/evidence-lifecycle.toml:4525` on that
 artifact's `consumer_scope = "exact"` list. The import block is alphabetical within its groups, and
 the case functions are full sentences naming the rendering obligation they measure. Constants are
 module-level and upper-case, and each case's docstring states the property rather than the mechanics.
@@ -174,7 +174,7 @@ Current source: The current lifecycle catalog declares test_knowledge_review_one
 - The exact lifecycle field row carries proposed and reviewed on the same authored revision. [9]
 - The renderer exercises synthetic before and after statement values in its own component fixture. [18]
 - The pair is built from independent fixtures. The after fixture names the leaf whose closed history proves the shared revision. [15]
-- The `unit-regression` lane selects `mcp/tests/test_knowledge_review_one_sided_statements.py` (`mcp/tests/test-evidence-lanes.toml:275`). [16]
+- The `unit-regression` lane selects `mcp/tests/test_knowledge_review_one_sided_statements.py` (`mcp/tests/test-evidence-lanes.toml:280`). [16]
 
 
 

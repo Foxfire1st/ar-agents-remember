@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+        "blob": "e22a6ab623227839e565da4a349e7c535cb528eb",
         "content": "sha256:e6bca36003363243213754deb571b492e61c00d762481c984f860ecc931d8900",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
-        "content": "sha256:09fabb1b5cba6dfbb12c72f433831fc8e372a42962caa59dd8d648c008f46112",
+        "blob": "e22a6ab623227839e565da4a349e7c535cb528eb",
+        "content": "sha256:ade2edaaf5c390f1f4106d16bace35ad5e79f71d8042ee94d976daf5cf613906",
         "locator": {
           "kind": "symbol",
           "name": "test_the_capability_text_is_read_from_the_package_data_copy"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+        "blob": "e22a6ab623227839e565da4a349e7c535cb528eb",
         "content": "sha256:67b8308e8db7f7b5425d6e05773c40430b244b4cffec5656f7721717dc0ca2ef",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+        "blob": "e22a6ab623227839e565da4a349e7c535cb528eb",
         "content": "sha256:67b8308e8db7f7b5425d6e05773c40430b244b4cffec5656f7721717dc0ca2ef",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+        "blob": "e22a6ab623227839e565da4a349e7c535cb528eb",
         "content": "sha256:892d46d727b02d8644b85de13b94e8139155455ca916eb3118263744ccc8d728",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+            "blob": "e22a6ab623227839e565da4a349e7c535cb528eb",
             "content": "sha256:67b8308e8db7f7b5425d6e05773c40430b244b4cffec5656f7721717dc0ca2ef",
             "locator": {
               "kind": "symbol",
@@ -110,12 +110,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+            "blob": "e22a6ab623227839e565da4a349e7c535cb528eb",
             "content": "sha256:e6bca36003363243213754deb571b492e61c00d762481c984f860ecc931d8900",
             "locator": {
-              "end": 214,
+              "end": 221,
               "kind": "line_range",
-              "start": 169
+              "start": 176
             }
           },
           "kind": "test"
@@ -127,12 +127,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+            "blob": "e22a6ab623227839e565da4a349e7c535cb528eb",
             "content": "sha256:99b610d5fedf364bb89704b36807d067d1f41c4c815d44fb422e51c09a5f41cb",
             "locator": {
-              "end": 264,
+              "end": 271,
               "kind": "line_range",
-              "start": 250
+              "start": 257
             }
           },
           "kind": "test"
@@ -140,16 +140,15 @@
       ]
     },
     "4": {
-      "note": "The installed text contains the stage names and prescribed explanation wording and counts exactly 1,500 words.",
+      "note": "The installed capability names all six stages and the driven central mechanism. The case measures 1,446 words against the 1,500-word ceiling.",
       "targets": [
         {
           "anchor": {
-            "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
-            "content": "sha256:09fabb1b5cba6dfbb12c72f433831fc8e372a42962caa59dd8d648c008f46112",
+            "blob": "e22a6ab623227839e565da4a349e7c535cb528eb",
+            "content": "sha256:ade2edaaf5c390f1f4106d16bace35ad5e79f71d8042ee94d976daf5cf613906",
             "locator": {
-              "end": 112,
-              "kind": "line_range",
-              "start": 69
+              "kind": "symbol",
+              "name": "test_the_capability_text_is_read_from_the_package_data_copy"
             }
           },
           "kind": "test"
@@ -161,12 +160,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb23e42c8c558db5d04e9a5327f7dcfc19ba217e",
+            "blob": "e22a6ab623227839e565da4a349e7c535cb528eb",
             "content": "sha256:892d46d727b02d8644b85de13b94e8139155455ca916eb3118263744ccc8d728",
             "locator": {
-              "end": 146,
+              "end": 153,
               "kind": "line_range",
-              "start": 115
+              "start": 122
             }
           },
           "kind": "test"

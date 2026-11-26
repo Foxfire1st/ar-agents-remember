@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized across explainer_staging.py confinement guards and explainer_server.py refusal translation, proved by test_staging_guards_refuse_symlinks_and_surface_as_refused_publish, preventing symlinked or escaped staging paths from writing or deleting outside the workspace or raising uncaught errors."
+  },
+  "applicability": "Every directory or file path that explainer publish staging creates, reuses, prunes, or discards within an explainer workspace.",
+  "conditions": [
+    "Staging operates on an explainer workspace root with either workspace-relative or recorded resolved working paths."
+  ],
+  "exclusions": [
+    "Non-staging workspace copies such as kit, starters, exemplar, or published revision folders managed by explainer_workspace."
+  ],
+  "id": "INV-Z8EJCV",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_explainer_staging_and_checks.py::test_staging_guards_refuse_symlinks_and_surface_as_refused_publish"
+      ],
+      "path": "261124-EXP-L2-curator-ingest"
+    },
+    "handoffEntry": "EXP-R02@v1 Item 1",
+    "leaf": "261124-EXP-L2",
+    "task": "261124-EXP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every path that explainer publish staging creates, reuses, or removes is guarded inside the workspace with guard_path before use without pre-resolving, recorded paths use workspace.resolve() as root, and any PathRefused surfaces through explainer_server as a refused publish with reason path-held rather than an uncaught exception.",
+  "supersedes": [],
+  "title": "Explainer publish staging is confined to the workspace and surfaces path-held",
+  "writer": {
+    "at": "2026-11-26T03:09:02+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-EXP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+    "task": "261124-EXP"
+  }
+}

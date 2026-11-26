@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
+        "blob": "043f2fa321fe1807f65cb76d2a49e23887f3e9be",
         "content": "sha256:79eed616551e01614386dbb8a4a520173c0ab497f4b90b1c5e4fde40c80be8ea",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
+        "blob": "043f2fa321fe1807f65cb76d2a49e23887f3e9be",
         "content": "sha256:a1728df0ad659922a6e83babf6b38fba339cd29a309fd3d3aa0393ed8fe9d173",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
+        "blob": "043f2fa321fe1807f65cb76d2a49e23887f3e9be",
         "content": "sha256:c0814aa6b2dc5cd9069d375e1720e3ae9953b5a7158eb7e97189aacec73b3467",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
+        "blob": "043f2fa321fe1807f65cb76d2a49e23887f3e9be",
         "content": "sha256:54ad25438155a8811374bf50638a5b9b379b41f033598f1478465f876bc15b60",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,24 @@
     },
     {
       "anchor": {
-        "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
+        "blob": "043f2fa321fe1807f65cb76d2a49e23887f3e9be",
+        "content": "sha256:2a32a67a97dd5f10e473502120eae9ff52e9ccf4141eb253969f2dda96487d48",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_seat_state_reads_the_hosts_own_agent_view"
+        }
+      },
+      "facet": "Reads the host view and treats an initializing seat with turnActive false as live and in turn.",
+      "id": "PRF-P5R17W",
+      "invariant": "INV-72AP2W",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §8",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "043f2fa321fe1807f65cb76d2a49e23887f3e9be",
         "content": "sha256:fc46c2a1810f4dcca0f8e000760e7ddd8a3c98eb48a69a3876d424e237e4a069",
         "locator": {
           "kind": "symbol",
@@ -88,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
+        "blob": "043f2fa321fe1807f65cb76d2a49e23887f3e9be",
         "content": "sha256:6ca1b39639c53c08ffa3877f362265824430318f6ef79c1cee2378483d333005",
         "locator": {
           "kind": "symbol",
@@ -111,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
+            "blob": "043f2fa321fe1807f65cb76d2a49e23887f3e9be",
             "content": "sha256:806c45493bacbf420bba47f97bf25cb6003d7906be4a9a94fbf2a6ec1b2895c9",
             "locator": {
               "end": 239,
@@ -128,12 +145,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
+            "blob": "043f2fa321fe1807f65cb76d2a49e23887f3e9be",
             "content": "sha256:f8946e6b5d4c1f9500e0e367e3127eb1b79af72d81d49acb669eb914b6de309b",
             "locator": {
-              "end": 534,
+              "end": 542,
               "kind": "line_range",
-              "start": 489
+              "start": 497
             }
           },
           "kind": "test"
@@ -145,12 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
+            "blob": "043f2fa321fe1807f65cb76d2a49e23887f3e9be",
             "content": "sha256:79eed616551e01614386dbb8a4a520173c0ab497f4b90b1c5e4fde40c80be8ea",
             "locator": {
-              "end": 577,
+              "end": 585,
               "kind": "line_range",
-              "start": 535
+              "start": 543
             }
           },
           "kind": "test"
@@ -158,16 +175,15 @@
       ]
     },
     "4": {
-      "note": "Seat state comes from the host's own turn fields.",
+      "note": "The fixture reads seat state from the host view and checks an initializing seat stays live and in turn with `turnActive` false.",
       "targets": [
         {
           "anchor": {
-            "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
-            "content": "sha256:49f9670479181d7233316d5fe891df1d6ae5eb20a3f9ee03fb1e838d6bc7fabf",
+            "blob": "043f2fa321fe1807f65cb76d2a49e23887f3e9be",
+            "content": "sha256:2a32a67a97dd5f10e473502120eae9ff52e9ccf4141eb253969f2dda96487d48",
             "locator": {
-              "end": 420,
-              "kind": "line_range",
-              "start": 345
+              "kind": "symbol",
+              "name": "test_the_seat_state_reads_the_hosts_own_agent_view"
             }
           },
           "kind": "test"
@@ -179,12 +195,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
+            "blob": "043f2fa321fe1807f65cb76d2a49e23887f3e9be",
             "content": "sha256:3a0c86d2bcf485900c7b00d80913123a80335e48a10af80758165d2dde7e0063",
             "locator": {
-              "end": 487,
+              "end": 495,
               "kind": "line_range",
-              "start": 422
+              "start": 430
             }
           },
           "kind": "test"
@@ -196,12 +212,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
+            "blob": "043f2fa321fe1807f65cb76d2a49e23887f3e9be",
             "content": "sha256:a1728df0ad659922a6e83babf6b38fba339cd29a309fd3d3aa0393ed8fe9d173",
             "locator": {
-              "end": 1127,
+              "end": 1135,
               "kind": "line_range",
-              "start": 1049
+              "start": 1057
             }
           },
           "kind": "test"
@@ -213,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
+            "blob": "043f2fa321fe1807f65cb76d2a49e23887f3e9be",
             "content": "sha256:54ad25438155a8811374bf50638a5b9b379b41f033598f1478465f876bc15b60",
             "locator": {
               "kind": "symbol",
@@ -229,7 +245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
+            "blob": "043f2fa321fe1807f65cb76d2a49e23887f3e9be",
             "content": "sha256:ad3a4a473312f82d01d5ac34e89dbf810b07c52ccf0ff9fac9b1e9ca612c2fd1",
             "locator": {
               "end": 279,
@@ -246,7 +262,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03c43ee2771d46b0a04139119e7efc707c6eb142",
+            "blob": "043f2fa321fe1807f65cb76d2a49e23887f3e9be",
             "content": "sha256:5589a062a0131069d27a1db2b7237611c1b4fb83ea41289d1ab023986803ff38",
             "locator": {
               "kind": "symbol",

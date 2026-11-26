@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized across explainer_staging.py, explainer_server.py, and kernel/atomic_write.py, proved by task-lock serialization and overlapping descriptor-path tests, preventing active staging directories or in-flight atomic temp files from being deleted mid-render."
+  },
+  "applicability": "Explainer draft staging, publish-time or standalone staging pruning under a review frame task lock, and concurrent same-process atomic_write_bytes calls through distinct directory descriptors.",
+  "conditions": [
+    "Draft allocation and staging cleanup share the frame scope's re-entrant task lock without nesting another resource lock, and concurrent atomic writes share a process using unique pid-and-uuid temporary basenames."
+  ],
+  "exclusions": [
+    "Abandoned temporary files left by dead processes from other PIDs, which remain eligible for cleanup once the writer process is gone."
+  ],
+  "id": "INV-CZKFXC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_explainer_staging_and_checks.py::test_prune_and_render_draft_serialize_under_task_lock; mcp/tests/test_atomic_write.py::DirectoryFsyncTests::test_overlapping_writes_through_distinct_descriptor_paths_keep_in_flight_temps"
+      ],
+      "path": "261124-EXP-L2-curator-ingest"
+    },
+    "handoffEntry": "EXP-R02@v1 Item 2",
+    "leaf": "261124-EXP-L2",
+    "task": "261124-EXP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Reading any earlier draft, creating or reusing the publish staging folder, and recording begin_draft execute under one task lock through stage_and_begin_draft, prune_finished_staging runs under the same re-entrant task lock during publish without nesting another resource lock, and atomic_write keys in-flight temporaries by unique basename so concurrent identical renders finish cleanly without deleting each other's temporary files.",
+  "supersedes": [],
+  "title": "Draft staging, pruning, and descriptor-anchored atomic writes never race",
+  "writer": {
+    "at": "2026-11-26T03:09:02+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-EXP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+    "task": "261124-EXP"
+  }
+}

@@ -4,6 +4,8 @@
 
 [Route overview](../../overview.md)
 
+Each saved or comparison frame uses the matching validated revision’s inventory, with same-revision saved explanation fields available before the revision rows arrive. An omitted inventory can supply a separate plain reason under that frame.
+
 ## Purpose
 
 The Explanation reading body for the bound comparison: browser announcements and failures, first-request and build states, and retained revisions displayed in isolated frames.
@@ -37,7 +39,7 @@ The empty panel offers an end-to-end explanation. It also describes the optional
 
 
 - The body chooses the initial reading sentence, unreadable card, body without a revision, or retained-revision body. [1]
-- The single saved page renders one revision frame with FrameMeta, followed by the retirement notice. [4]
+- A saved page renders one revision frame and its FrameMeta, then a plain inventory omission reason if present and any retirement notice. [4]
 - A last-render failure is omitted from the top-level line without a shown revision; absent a failure, the pending browser announcement can appear with or without a page. [9]
 
 - The empty view describes the end-to-end explanation and optional grades and exposes an explicit Ask action. [2]

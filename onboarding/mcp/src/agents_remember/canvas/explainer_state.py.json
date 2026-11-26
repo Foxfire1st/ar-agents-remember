@@ -105,12 +105,12 @@
         },
         {
           "anchor": {
-            "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
+            "blob": "a5ef51116eced20249c8e763ec01115b9e6e5d76",
             "content": "sha256:35b2dd4b5f1ee1b046f2efb618403a430d3585a2e3ba169ed2dc8651192e023b",
             "locator": {
-              "end": 401,
+              "end": 413,
               "kind": "line_range",
-              "start": 394
+              "start": 406
             },
             "path": "mcp/src/agents_remember/canvas/explainer_paths.py"
           },
@@ -118,12 +118,12 @@
         },
         {
           "anchor": {
-            "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
+            "blob": "a5ef51116eced20249c8e763ec01115b9e6e5d76",
             "content": "sha256:a9b57917e1d385694fb1b4d9261534e7eb7766bda4c0e6a2701b1fea65ecb293",
             "locator": {
-              "end": 574,
+              "end": 586,
               "kind": "line_range",
-              "start": 552
+              "start": 564
             },
             "path": "mcp/src/agents_remember/canvas/explainer_paths.py"
           },
@@ -131,12 +131,12 @@
         },
         {
           "anchor": {
-            "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+            "blob": "5b1738c086693bc7df299c48692b82bb3c07b680",
             "content": "sha256:a44d2dd1280492945c0545d16d2bdf34039be4bc990008e6b0767cefc7c37a96",
             "locator": {
-              "end": 949,
+              "end": 987,
               "kind": "line_range",
-              "start": 921
+              "start": 959
             },
             "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
           },

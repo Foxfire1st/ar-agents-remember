@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Browser observations inform the inventory, storage decides under the shared task lock and the dashboard reads the saved revision. Storage and startup fixtures cover the limit and the omission across both writer and reader."
+  },
+  "applicability": "New revision publication through the registered render tool and the dashboard read of its saved revision.",
+  "conditions": [
+    "Available browser observations can be incomplete. The complete revision and its frame manifest do not depend on inventory construction.",
+    "The shared lock and physical-byte meter account for a retained inventory. Staging chooses the advisory file or the zero-byte storage-limit marker for an encodable inventory under the same task cap.",
+    "If construction yields no inventory the ordinary render can proceed and the dashboard need not show an inventory or reason. The advisory write can also fail without failing publication. The saved revision’s manifest stays independent of both."
+  ],
+  "exclusions": [
+    "Legacy standalone explainer state accounting outside the F14 revision-upload boundary.",
+    "Deletion of older revisions to make room for advisory inventory."
+  ],
+  "id": "INV-BFYNBN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_kit_references.py::test_inventory_helpers_and_summary_formatting; mcp/tests/test_canvas_kit_references.py::test_inventory_treats_observed_assets_as_used_and_unreferenced_kit_as_unused; mcp/tests/test_canvas_kit_references.py::test_dormant_unused_module_importing_kit_does_not_mark_library_used; mcp/tests/test_canvas_kit_references.py::test_build_inventory_surfaces_incomplete_dom_flag_and_summary; mcp/tests/test_canvas_kit_references.py::test_revision_inventory_sidecar_counts_in_task_meter_and_omits_without_room; mcp/tests/test_canvas_kit_references.py::test_inventory_sidecar_interleaved_second_leaf_publish_never_exceeds_task_cap; mcp/tests/test_canvas_kit_references.py::test_persist_revision_inventory_returns_false_without_raising_on_unwritable_or_missing; mcp/tests/test_canvas_motion.py::test_dom_inventory_counts_figures_techniques_and_code_excerpts; mcp/tests/test_canvas_motion.py::test_dom_inventory_distinguishes_untagged_containers_nested_figures_and_plain_pre; mcp/tests/test_canvas_motion.py::test_dom_inventory_scales_linearly_and_cap_incomplete_preserves_load_eligibility; mcp/tests/test_canvas_starters_exemplar.py::test_render_publishes_kit_by_reference_and_persists_inventory_sidecar; mcp/tests/test_canvas_starters_exemplar.py::test_render_reports_zero_figures_and_unused_asset_for_plain_page; mcp/tests/test_canvas_starters_exemplar.py::test_render_excludes_script_loaded_asset_and_flags_unreferenced_kit_copy; mcp/tests/test_canvas_starters_exemplar.py::test_render_inventory_sidecar_respects_task_byte_cap_and_omits_at_zero_headroom; mcp/tests/test_canvas_starters_exemplar.py::test_render_zero_headroom_omission_visible_at_first_dashboard_read_without_cap_drift; dashboard/src/panels/review/explainer/explainerModel.test.ts; dashboard/src/panels/review/explainer/ExplanationView.test.tsx",
+        "dashboard/src/panels/review/explainer/ExplanationView.test.tsx::\"shows a saved revision without an inventory and one plain reason line when storage-limit omitted it\""
+      ],
+      "path": "EXP-L1 independent curated records and source judgments"
+    },
+    "handoffEntry": "EXP-R01@v2 §6",
+    "leaf": "261124-EXP-L1",
+    "task": "261124-EXP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Registered render's inventory of figures, techniques, used kit libraries, code excerpts and unused assets is advisory. When the renderer builds an encodable inventory for a new revision, publication stages it beside the frame manifest if it fits the shared task byte cap. An oversized advisory inventory gets a storage-limit omission marker. The dashboard shows the addressed saved revision's available summary or recorded omission.",
+  "status": "proposed",
+  "supersedes": []
+}

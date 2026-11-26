@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "a2064ab5015b9c5ea51691fadb9330cf63151e9c",
-    "commit": "8722a0b18a72fabfa148e0ae00fc4d212e480c27",
+    "codeTree": "04c76787a21c478413c9d75543435f677602d33c",
+    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
     "role": "curator",
-    "statement": "Verified across the clean merge of BUG-L41 (a772c9018) and DEP master (475ef19af): docs/concepts.md accurately defines memory, task-topology, worktree, role-lifecycle, and landing contracts with no contradiction from either disjoint parent.",
+    "statement": "Verified across the clean merge of 261124-EXP (ebd954778) and DEP master (69ba7b199): docs/concepts.md accurately defines memory, task-topology, worktree, role-lifecycle, briefs, and landing contracts with no contradiction from either parent.",
     "task": "261125-DEP",
     "uncommitted": false
   },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 26,
+  "revision": 28,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -91,7 +91,7 @@
       "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
     },
     {
-      "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+      "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
       "kind": "file",
       "path": "dashboard/src/cockpit/Cockpit.tsx"
     },
@@ -146,7 +146,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
     },
     {
-      "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
+      "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
     },
@@ -301,7 +301,7 @@
       "path": "mcp/src/agents_remember/canvas/kit.py"
     },
     {
-      "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
+      "blob": "a5ef51116eced20249c8e763ec01115b9e6e5d76",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_paths.py"
     },
@@ -424,12 +424,12 @@
       "kind": "anchor"
     },
     {
-      "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+      "blob": "5b1738c086693bc7df299c48692b82bb3c07b680",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
     },
     {
-      "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+      "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     },
@@ -471,9 +471,9 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T05:35:06+01:00",
+    "at": "2026-11-26T06:50:36+01:00",
     "by": "agent",
-    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-2",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-4",
     "effort": "high",
     "harness": "antigravity-acp",
     "model": "gemini-4-neon-high",

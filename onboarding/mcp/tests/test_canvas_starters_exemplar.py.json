@@ -1,0 +1,213 @@
+{
+  "path": "mcp/tests/test_canvas_starters_exemplar.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "7e7c6c474229bdaf8ec36896000452a46e7de8a0",
+        "content": "sha256:beffbde7abe706aed8559e64685b8aeac4a7472de4538794d87144f20896233e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_each_starter_passes_readiness_and_browser_checks_alone"
+        }
+      },
+      "facet": "Runs each actual shipped starter through static readiness and the browser by itself.",
+      "id": "PRF-39K92C",
+      "invariant": "INV-V4YCC7",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §4",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7e7c6c474229bdaf8ec36896000452a46e7de8a0",
+        "content": "sha256:ec57c3202f8a84e4990a3e2e66b71312741074d463bf3beadc1c5e41d5a6fb6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_render_publishes_kit_by_reference_and_persists_inventory_sidecar"
+        }
+      },
+      "facet": "Publishes a real kit-by-reference draft and preserves the expected carried result.",
+      "id": "PRF-39ZA5Q",
+      "invariant": "INV-ME5GYW",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §3",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7e7c6c474229bdaf8ec36896000452a46e7de8a0",
+        "content": "sha256:4739eb825c8c6250f7d8d4aff3fbc5fd8194c2f5ffed96263adf66dfa0c2489c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_render_excludes_script_loaded_asset_and_flags_unreferenced_kit_copy"
+        }
+      },
+      "facet": "Uses browser-observed loaded assets and reports an unreferenced kit copy.",
+      "id": "PRF-4WSS7B",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7e7c6c474229bdaf8ec36896000452a46e7de8a0",
+        "content": "sha256:175c01d196485542806a8d50a84c616a70db448a8284c40e4cab86d476cc6add",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_render_refuses_tampered_draft_kit_copy_with_outside_kit_guidance"
+        }
+      },
+      "facet": "Refuses a tampered draft copy and reports the outside-kit placement remedy.",
+      "id": "PRF-5YM21H",
+      "invariant": "INV-ME5GYW",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §3",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7e7c6c474229bdaf8ec36896000452a46e7de8a0",
+        "content": "sha256:a21df97e9d039aab3222d15f6a0f642d76c3bbfb88c5cdcfcdaa45e4219bd688",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_render_zero_headroom_omission_visible_at_first_dashboard_read_without_cap_drift"
+        }
+      },
+      "facet": "Shows the omission on the first dashboard read without changing physical-byte accounting.",
+      "id": "PRF-6B0ZHH",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7e7c6c474229bdaf8ec36896000452a46e7de8a0",
+        "content": "sha256:76e557a419c88188049b731d62f2668bf586a2596df9a59f919c946898446681",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_render_reports_zero_figures_and_unused_asset_for_plain_page"
+        }
+      },
+      "facet": "Reports zero figures and an unused asset on a plain page.",
+      "id": "PRF-BFAAR2",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7e7c6c474229bdaf8ec36896000452a46e7de8a0",
+        "content": "sha256:ec67d94f7c4d8c17bf72c47510cf125f1a05fc1b0fcebe8c096c98fca2ca461c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_render_inventory_sidecar_respects_task_byte_cap_and_omits_at_zero_headroom"
+        }
+      },
+      "facet": "Publishes a fitting revision at zero sidecar headroom, preserves ready behavior and gives the omission notice.",
+      "id": "PRF-GF3DNY",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7e7c6c474229bdaf8ec36896000452a46e7de8a0",
+        "content": "sha256:7acdd1b4a45b9f4e54e1bf28e7f8adecff630cd5800c730367897751b3a9c934",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_render_preserves_active_kit_staging_across_refusal_and_distinct_renders"
+        }
+      },
+      "facet": "Preserves active staging through refusal and distinguishes successive render attempts.",
+      "id": "PRF-JYWYAN",
+      "invariant": "INV-ME5GYW",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §3",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7e7c6c474229bdaf8ec36896000452a46e7de8a0",
+        "content": "sha256:3c09b7f1a3f295c65043092c630cdc0ee56320a7cc13c8974b052805942935b3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_render_carries_commented_dynamic_import_and_unspaced_css_import"
+        }
+      },
+      "facet": "Carries a valid commented dynamic import and an unspaced CSS import through render.",
+      "id": "PRF-M8TT93",
+      "invariant": "INV-ME5GYW",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §3",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7e7c6c474229bdaf8ec36896000452a46e7de8a0",
+        "content": "sha256:a3c2b555851d3a909e4d82acd696af15d7384009747238532d34f37bacacc9c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_shipped_starters_and_exemplar_browser_behaviors"
+        }
+      },
+      "facet": "Exercises the real shipped starter controls and their still forms in the mounted browser fixtures.",
+      "id": "PRF-T6TC4B",
+      "invariant": "INV-V4YCC7",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §4",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7e7c6c474229bdaf8ec36896000452a46e7de8a0",
+        "content": "sha256:ec57c3202f8a84e4990a3e2e66b71312741074d463bf3beadc1c5e41d5a6fb6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_render_publishes_kit_by_reference_and_persists_inventory_sidecar"
+        }
+      },
+      "facet": "Writes the inventory beside the retained revision for a kit-by-reference render.",
+      "id": "PRF-TRFASW",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two-revision witness verifies physical bytes, the task meter and advisory omission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e7c6c474229bdaf8ec36896000452a46e7de8a0",
+            "content": "sha256:ec67d94f7c4d8c17bf72c47510cf125f1a05fc1b0fcebe8c096c98fca2ca461c",
+            "locator": {
+              "end": 669,
+              "kind": "line_range",
+              "start": 592
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

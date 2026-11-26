@@ -1,11 +1,11 @@
 {
   "anchor": {
-    "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
-    "content": "sha256:8b3efdde5f6c1f7931136d45555b3c6dfd1f4b88c8e0b834f0e0e652311cb681",
+    "blob": "ac51f2414ac5c8588768843d4d8f3d66a560acb0",
+    "content": "sha256:9f8b4a236d764ae918f3eda0da00badb75079443b4fde59af303747c60114322",
     "locator": {
-      "end": 275,
+      "end": 290,
       "kind": "line_range",
-      "start": 254
+      "start": 264
     },
     "path": "dashboard/src/explainer/model.ts"
   },
@@ -19,7 +19,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",

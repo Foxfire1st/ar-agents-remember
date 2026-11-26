@@ -293,12 +293,12 @@
         },
         {
           "anchor": {
-            "blob": "d150d3d4a3d2225914a9438a89c5b3faa980f15c",
+            "blob": "660d761b7f74047d78b9cb8ddd43e8ed1ad18544",
             "content": "sha256:1ac0f7abe8191209069d6bd81ebf1f08390ba93e3c2c6bbd51b3c744f56e6905",
             "locator": {
-              "end": 970,
+              "end": 942,
               "kind": "line_range",
-              "start": 961
+              "start": 933
             },
             "path": "mcp/src/agents_remember/application/review_frame_store.py"
           },

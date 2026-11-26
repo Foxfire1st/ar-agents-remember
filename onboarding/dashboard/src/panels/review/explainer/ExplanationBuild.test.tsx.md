@@ -6,7 +6,7 @@
 
 ## Purpose
 
-A test suite for explanation build.test.tsx.md: it drives the behaviour the commentary states and asserts it.
+The mounted explanation request and Build lifecycle, from request entry through progress, refusal and readiness.
 
 ## Code Commentary
 
@@ -14,8 +14,10 @@ No stale-parts block is drawn before a revision exists, even where the host cann
 
 ## Boundaries
 
-The obligation above is the whole of what this file must keep true; the route account says what the surrounding surface promises.
+The mounted request fixture shows Send and polling, completion closing the form, and a live rail phase with the chat holder visible. Its assertions stop at the holder.
 
 ## Evidence
 
 - No stale-parts block is drawn before a revision exists, even where the host cannot read staleness; once a revision exists the top badge states it [1]
+
+- The mounted request fixture shows Send and polling, completion closing the form, and a live rail phase with the chat holder visible. Its assertions stop at the holder. [2]

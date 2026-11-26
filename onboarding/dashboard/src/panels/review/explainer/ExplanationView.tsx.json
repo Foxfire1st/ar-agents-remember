@@ -3,7 +3,45 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+        "blob": "e742c068bb92d2d2fe83131f8f9dba08a4449e87",
+        "content": "sha256:889107e3fbf897109422511e0d89c932d1dae488f2e85334c2d8cbe86c3c9792",
+        "locator": {
+          "end": 649,
+          "kind": "line_range",
+          "start": 614
+        }
+      },
+      "id": "RLZ-64EE0V",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Shows one saved revision and its matching inventory omission reason when present.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "e742c068bb92d2d2fe83131f8f9dba08a4449e87",
+        "content": "sha256:bb96b0ddbc540b6a09d23d3150b31d57870e375eb8f2c5c7f31861ce11fdcdfa",
+        "locator": {
+          "end": 604,
+          "kind": "line_range",
+          "start": 559
+        }
+      },
+      "id": "RLZ-76RE8M",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Displays the addressed comparison frame and its plain inventory omission reason when present.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "e742c068bb92d2d2fe83131f8f9dba08a4449e87",
         "content": "sha256:1e5f73c5034a5b0d7053883c192a7aaf4d5f0daae2f2c688a80c9f5cd01748a9",
         "locator": {
           "kind": "symbol",
@@ -21,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+        "blob": "e742c068bb92d2d2fe83131f8f9dba08a4449e87",
         "content": "sha256:61accd8d6201ca0a20a37dbb1cf4f60f3f138de62dc0858a0027dd9a7b680e23",
         "locator": {
           "kind": "symbol",
@@ -39,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+        "blob": "e742c068bb92d2d2fe83131f8f9dba08a4449e87",
         "content": "sha256:fdb9f2e2f6f03fd8e5c9f3e2e8a3654476d56f248e895074a5cac77130e9d2ad",
         "locator": {
           "kind": "symbol",
@@ -57,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+        "blob": "e742c068bb92d2d2fe83131f8f9dba08a4449e87",
         "content": "sha256:73d1d31983b5fb974c3cfd2e5b1362f66dedc7907d22a9ecd6b19a146c4dafc9",
         "locator": {
           "kind": "symbol",
@@ -72,6 +110,25 @@
       },
       "rationale": "the same words over an earlier page, so the earlier page is not presented as the answer",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e742c068bb92d2d2fe83131f8f9dba08a4449e87",
+        "content": "sha256:034fb58c5e0371665f2b888a5901115e07823bf5602ccad2a814b29a96dcefcf",
+        "locator": {
+          "end": 557,
+          "kind": "line_range",
+          "start": 536
+        }
+      },
+      "id": "RLZ-VNB3E7",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Displays the selected revision’s advisory inventory with its standfirst.",
+      "role": "support"
     }
   ],
   "references": {
@@ -80,12 +137,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+            "blob": "e742c068bb92d2d2fe83131f8f9dba08a4449e87",
             "content": "sha256:a14520e0d595714cf0f30f9b66b6e02d18130afc6fd49c91d58f9eab1ab0bd26",
             "locator": {
-              "end": 464,
+              "end": 465,
               "kind": "line_range",
-              "start": 390
+              "start": 391
             }
           },
           "kind": "code"
@@ -97,12 +154,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+            "blob": "e742c068bb92d2d2fe83131f8f9dba08a4449e87",
             "content": "sha256:eb1209e854e5a23f0fd45d010d8c7cf4b359fbd9eb1498659123098600eecc34",
             "locator": {
-              "end": 501,
+              "end": 502,
               "kind": "line_range",
-              "start": 494
+              "start": 495
             }
           },
           "kind": "code"
@@ -114,12 +171,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+            "blob": "e742c068bb92d2d2fe83131f8f9dba08a4449e87",
             "content": "sha256:d3c17e47c437ec59f08f3ba8437bbf46c0fbd3b508d2c8865fa5faf46ef5f49f",
             "locator": {
-              "end": 510,
+              "end": 511,
               "kind": "line_range",
-              "start": 479
+              "start": 480
             }
           },
           "kind": "code"
@@ -131,12 +188,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+            "blob": "e742c068bb92d2d2fe83131f8f9dba08a4449e87",
             "content": "sha256:d82ca0d0a3201b03d86e7d4ceeb5afa0caaa8def07bc9b1fd7576ad89f0c2848",
             "locator": {
-              "end": 477,
+              "end": 478,
               "kind": "line_range",
-              "start": 466
+              "start": 467
             }
           },
           "kind": "code"
@@ -144,15 +201,16 @@
       ]
     },
     "4": {
-      "note": "The single saved page renders one revision frame with FrameMeta, followed by the retirement notice.",
+      "note": "A saved page renders one revision frame and its FrameMeta, then a plain inventory omission reason if present and any retirement notice.",
       "targets": [
         {
           "anchor": {
-            "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
-            "content": "sha256:01fc0bec198f9c3d1424bf993eddf5601e54e49dc777e33e8ec51340c27c5963",
+            "blob": "e742c068bb92d2d2fe83131f8f9dba08a4449e87",
+            "content": "sha256:889107e3fbf897109422511e0d89c932d1dae488f2e85334c2d8cbe86c3c9792",
             "locator": {
-              "kind": "symbol",
-              "name": "SingleSavedPage"
+              "end": 649,
+              "kind": "line_range",
+              "start": 614
             }
           },
           "kind": "code"
@@ -164,12 +222,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+            "blob": "e742c068bb92d2d2fe83131f8f9dba08a4449e87",
             "content": "sha256:9ad51e43a12e4609efcc3d2e57513d25a440c31b0b12ad130c2014be89266e99",
             "locator": {
-              "end": 210,
+              "end": 211,
               "kind": "line_range",
-              "start": 174
+              "start": 175
             }
           },
           "kind": "code"
@@ -181,12 +239,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+            "blob": "e742c068bb92d2d2fe83131f8f9dba08a4449e87",
             "content": "sha256:61accd8d6201ca0a20a37dbb1cf4f60f3f138de62dc0858a0027dd9a7b680e23",
             "locator": {
-              "end": 744,
+              "end": 762,
               "kind": "line_range",
-              "start": 710
+              "start": 728
             }
           },
           "kind": "code"
@@ -198,12 +256,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+            "blob": "e742c068bb92d2d2fe83131f8f9dba08a4449e87",
             "content": "sha256:8dad43da72a1edf7299fb7218f6f598aa7473856a47ae47bae3a0e4ab6a3b2bf",
             "locator": {
-              "end": 336,
+              "end": 337,
               "kind": "line_range",
-              "start": 332
+              "start": 333
             }
           },
           "kind": "code"
@@ -215,7 +273,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+            "blob": "e742c068bb92d2d2fe83131f8f9dba08a4449e87",
             "content": "sha256:1e5f73c5034a5b0d7053883c192a7aaf4d5f0daae2f2c688a80c9f5cd01748a9",
             "locator": {
               "kind": "symbol",
@@ -231,7 +289,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64b5ccc896e33ca687b7059a3811c906e487942c",
+            "blob": "e742c068bb92d2d2fe83131f8f9dba08a4449e87",
             "content": "sha256:73d1d31983b5fb974c3cfd2e5b1362f66dedc7907d22a9ecd6b19a146c4dafc9",
             "locator": {
               "kind": "symbol",

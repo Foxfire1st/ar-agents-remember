@@ -4,8 +4,44 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "89d28e15fd681587d33624b1665393538e1957ec",
-        "content": "sha256:9d68d4275a86b2791d2531bbe42f08a9bf2b2322c318e109e5e3fc43f62dc7a5",
+        "blob": "087e5433b66822d65261264bbc643b7ac630537e",
+        "content": "sha256:cb9334dc6a933b580230614ceb10e65427c388b06fa5c5c28135861feafba632",
+        "locator": {
+          "kind": "symbol",
+          "name": "atomic_write_bytes"
+        }
+      },
+      "id": "RLZ-J5FDXP",
+      "invariant": "INV-CZKFXC",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 2",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Registers and discards tmp.name in _temps_in_flight across the write and replace lifecycle so overlapping descriptor-anchored writes never unlink another thread's temporary file.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "087e5433b66822d65261264bbc643b7ac630537e",
+        "content": "sha256:cf5ddeb6f2bcefbc47d0473ec56de89f41c3bfc6bd8bc87a8625acdfe537037d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_writer_is_gone"
+        }
+      },
+      "id": "RLZ-KEEFMM",
+      "invariant": "INV-CZKFXC",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 2",
+        "leaf": "261124-EXP-L2"
+      },
+      "rationale": "Checks the per-call unique temporary basename against _temps_in_flight so concurrent same-process writers holding distinct /proc/<pid>/fd/<N> descriptors recognize each other's in-flight temporaries.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "087e5433b66822d65261264bbc643b7ac630537e",
+        "content": "sha256:cf5ddeb6f2bcefbc47d0473ec56de89f41c3bfc6bd8bc87a8625acdfe537037d",
         "locator": {
           "kind": "symbol",
           "name": "_writer_is_gone"
@@ -22,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "89d28e15fd681587d33624b1665393538e1957ec",
-        "content": "sha256:9d68d4275a86b2791d2531bbe42f08a9bf2b2322c318e109e5e3fc43f62dc7a5",
+        "blob": "087e5433b66822d65261264bbc643b7ac630537e",
+        "content": "sha256:cf5ddeb6f2bcefbc47d0473ec56de89f41c3bfc6bd8bc87a8625acdfe537037d",
         "locator": {
           "kind": "symbol",
           "name": "_writer_is_gone"
@@ -40,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "89d28e15fd681587d33624b1665393538e1957ec",
+        "blob": "087e5433b66822d65261264bbc643b7ac630537e",
         "content": "sha256:d730f90ae40fc73eb78b6d52e5b6c1bc275f198d10ba113f68558f0cfdd7800d",
         "locator": {
           "kind": "symbol",
@@ -63,7 +99,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
+            "blob": "087e5433b66822d65261264bbc643b7ac630537e",
             "content": "sha256:0c52da8b0e53e84a3bb0cc20695eaf4cb4ab919c3ba6fe29f4073a4e91604221",
             "locator": {
               "kind": "symbol",
@@ -79,10 +115,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
-            "content": "sha256:0d39c408c8aeab5e6a05b206e425027381fa898ef96c19be56040e6ec972b839",
+            "blob": "087e5433b66822d65261264bbc643b7ac630537e",
+            "content": "sha256:4cf5930ec964d7b4ef1fa82c802f354fed1c49f4af2b4eea25ac461abe1c8a9e",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_fsync_directory"
             }
           },
           "kind": "code"
@@ -90,12 +127,12 @@
       ]
     },
     "12": {
-      "note": "- Atomic byte publication replaces the destination only after writing its temporary content; readers see the prior or replaced file.",
+      "note": "Atomic byte publication replaces the destination only after writing its temporary content; readers see the prior or replaced file.",
       "targets": [
         {
           "anchor": {
-            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
-            "content": "sha256:dda284a873fdf52f96321c0880249feacf3e794f99349aa2f013068f3814f0e2",
+            "blob": "087e5433b66822d65261264bbc643b7ac630537e",
+            "content": "sha256:cb9334dc6a933b580230614ceb10e65427c388b06fa5c5c28135861feafba632",
             "locator": {
               "kind": "symbol",
               "name": "atomic_write_bytes"
@@ -110,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
+            "blob": "087e5433b66822d65261264bbc643b7ac630537e",
             "content": "sha256:c9512bef140c79174a59e947c84b245427033dc3e9a15b70406cef8e7ab22ce4",
             "locator": {
               "kind": "symbol",
@@ -122,12 +159,12 @@
       ]
     },
     "6": {
-      "note": "`atomic_write_bytes` owns the current boundary described above.",
+      "note": "`atomic_write_bytes` owns the current boundary described above, keying in-flight temps by `tmp.name`.",
       "targets": [
         {
           "anchor": {
-            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
-            "content": "sha256:dda284a873fdf52f96321c0880249feacf3e794f99349aa2f013068f3814f0e2",
+            "blob": "087e5433b66822d65261264bbc643b7ac630537e",
+            "content": "sha256:cb9334dc6a933b580230614ceb10e65427c388b06fa5c5c28135861feafba632",
             "locator": {
               "kind": "symbol",
               "name": "atomic_write_bytes"
@@ -142,7 +179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
+            "blob": "087e5433b66822d65261264bbc643b7ac630537e",
             "content": "sha256:c9512bef140c79174a59e947c84b245427033dc3e9a15b70406cef8e7ab22ce4",
             "locator": {
               "kind": "symbol",
@@ -158,7 +195,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
+            "blob": "087e5433b66822d65261264bbc643b7ac630537e",
             "content": "sha256:4cf5930ec964d7b4ef1fa82c802f354fed1c49f4af2b4eea25ac461abe1c8a9e",
             "locator": {
               "kind": "symbol",
@@ -170,12 +207,12 @@
       ]
     },
     "9": {
-      "note": "The process probe and same-target abandoned-temp cleanup retain live, unknown and unremovable writers.",
+      "note": "The process probe and same-target abandoned-temp cleanup retain live, unknown and unremovable writers, recognizing in-flight same-process temps by unique basename.",
       "targets": [
         {
           "anchor": {
-            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
-            "content": "sha256:9d68d4275a86b2791d2531bbe42f08a9bf2b2322c318e109e5e3fc43f62dc7a5",
+            "blob": "087e5433b66822d65261264bbc643b7ac630537e",
+            "content": "sha256:cf5ddeb6f2bcefbc47d0473ec56de89f41c3bfc6bd8bc87a8625acdfe537037d",
             "locator": {
               "kind": "symbol",
               "name": "_writer_is_gone"
@@ -185,7 +222,7 @@
         },
         {
           "anchor": {
-            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
+            "blob": "087e5433b66822d65261264bbc643b7ac630537e",
             "content": "sha256:d730f90ae40fc73eb78b6d52e5b6c1bc275f198d10ba113f68558f0cfdd7800d",
             "locator": {
               "kind": "symbol",

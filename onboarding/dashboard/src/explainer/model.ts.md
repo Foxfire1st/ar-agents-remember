@@ -19,7 +19,7 @@ The explainer column's pure rules: which chat the column selects, the placeholde
 
 ## Evidence
 
-- A running build takes precedence over an open form [2]
+- A running build takes precedence over an open form and a live seat. An observed live or closed seat takes precedence over a stale form. [2]
 
 
 - Only a failed build names a failed step and a reason [5]

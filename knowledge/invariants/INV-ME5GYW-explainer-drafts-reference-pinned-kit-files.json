@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Reference discovery and draft verification admit the pinned subset, staging carries it, and the render answer exposes the carried list. Parser, publish, tamper and staging tests cover the boundaries."
+  },
+  "applicability": "Pinned-kit references and reserved-kit copies in a staged explainer draft.",
+  "conditions": [
+    "Contained local HTML and CSS references and supported literal JavaScript imports resolve relative to their referring file.",
+    "Carried pinned files include their declared companions and notices. A pre-existing path under kit/ must match the corresponding shipped file.",
+    "The full run report and the optional bounded reply section carry the list independently of FrameManifest."
+  ],
+  "exclusions": [
+    "Custom files placed outside the reserved kit directory remain subject to ordinary asset admission.",
+    "Authoring specimens that are outside the draft assets."
+  ],
+  "id": "INV-ME5GYW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_kit_references.py::test_js_extractor_handles_static_reexport_and_dynamic_imports_only; mcp/tests/test_canvas_kit_references.py::test_js_and_css_extractors_handle_commented_dynamic_imports_and_css_strings; mcp/tests/test_canvas_kit_references.py::test_resolve_and_carry_kit_assets_includes_notices_and_handles_unknown_cleanly; mcp/tests/test_canvas_kit_references.py::test_modified_or_custom_kit_file_in_draft_is_refused_with_outside_kit_remedy; mcp/tests/test_canvas_starters_exemplar.py::test_render_publishes_kit_by_reference_and_persists_inventory_sidecar; mcp/tests/test_canvas_starters_exemplar.py::test_render_carries_commented_dynamic_import_and_unspaced_css_import; mcp/tests/test_canvas_starters_exemplar.py::test_render_preserves_active_kit_staging_across_refusal_and_distinct_renders; mcp/tests/test_canvas_starters_exemplar.py::test_render_refuses_tampered_draft_kit_copy_with_outside_kit_guidance"
+      ],
+      "path": "EXP-L1 independent curated records and source judgments"
+    },
+    "handoffEntry": "EXP-R01@v2 §3",
+    "leaf": "261124-EXP-L1",
+    "task": "261124-EXP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Explainer drafts refer to pinned kit files from HTML, CSS or JavaScript module imports. Render checks authored draft kit copies against the shipped kit, stages the referenced shipped bytes with their companions and notices, and records the complete carried list in the run report. The bounded reply carries the whole list when it fits and points to the report when it does not.",
+  "status": "proposed",
+  "supersedes": []
+}

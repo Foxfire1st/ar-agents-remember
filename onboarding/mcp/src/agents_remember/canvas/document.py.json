@@ -19,6 +19,24 @@
       },
       "rationale": "The bootstrap injected into the document delivers the binding as a synthetic local `message` event on the document's own window at `DOMContentLoaded`, after the document's listeners exist; the `MessageChannel` is the liveness path — `port2` to the parent, `port1` echoing what it receives — and the panel treats a missing echo or a second entry as a channel it will not use.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "394fa0843197b351b30df497c037e39e84f249cf",
+        "content": "sha256:e3fa195d209072f30d66e80794e5481c369ad3bc928742dcf14a01883bab64c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "bound_document"
+        }
+      },
+      "id": "RLZ-8FBPE7",
+      "invariant": "INV-9C8QB5",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §2",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Delivers ar-canvas-binding/v1 and liveness port without any effects field or document.documentElement.dataset.effects bridge.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {

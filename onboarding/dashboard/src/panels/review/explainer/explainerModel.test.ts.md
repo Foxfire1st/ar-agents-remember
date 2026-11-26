@@ -4,6 +4,8 @@
 
 [Route overview](../../overview.md)
 
+The standfirst cases check the displayed revision's summary and interaction coverage, including incomplete interaction passes, and the omission projection. The mounted ExplanationView case checks the label for incomplete inventory.
+
 ## Purpose
 
 Measures the page's pure decisions directly: labels, pinning, the removal offer, the phase, and the default compare pair.

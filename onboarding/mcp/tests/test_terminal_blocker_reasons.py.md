@@ -12,7 +12,7 @@ blockage an operator cannot read â€” and cannot tell apart from a spurious one â
 
 
 
-The cases are integration-lane members (`mcp/tests/test-evidence-lanes.toml:792`).
+The cases are integration-lane members (`mcp/tests/test-evidence-lanes.toml:801`).
 The complete lifecycle catalog declares this module as an exact consumer on **12**
 artifact rows. That dependency ownership and the ambient-role runner declaration
 are selection metadata, not execution evidence.

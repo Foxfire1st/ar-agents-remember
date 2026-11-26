@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
+        "blob": "ac51f2414ac5c8588768843d4d8f3d66a560acb0",
+        "content": "sha256:d8e558f29b8e620d52c31f650722b11859c81aa5fa21713a43273909e4136828",
+        "locator": {
+          "kind": "symbol",
+          "name": "phaseOf"
+        }
+      },
+      "id": "RLZ-87Y1GT",
+      "invariant": "INV-72AP2W",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §8",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Transitions out of first-request as soon as /state reports a live seat even if formOpen was still set.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "ac51f2414ac5c8588768843d4d8f3d66a560acb0",
         "content": "sha256:9449d1e3cfb4239ccd59d4f5f4c49d52c69ce506966d317f86386dcebb70e75a",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,45 @@
     },
     {
       "anchor": {
-        "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
+        "blob": "ac51f2414ac5c8588768843d4d8f3d66a560acb0",
+        "content": "sha256:977790d58a99ae821b3a1d9ebb2980635c8557de5c689834d514b132bcea8cec",
+        "locator": {
+          "end": 48,
+          "kind": "line_range",
+          "start": 44
+        }
+      },
+      "id": "RLZ-CSZDJR",
+      "invariant": "INV-72AP2W",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §8 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Recognizes an observed live or closed seat for phase selection.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "ac51f2414ac5c8588768843d4d8f3d66a560acb0",
+        "content": "sha256:d8e558f29b8e620d52c31f650722b11859c81aa5fa21713a43273909e4136828",
+        "locator": {
+          "end": 60,
+          "kind": "line_range",
+          "start": 53
+        }
+      },
+      "id": "RLZ-PKET1T",
+      "invariant": "INV-72AP2W",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §8 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Gives a running build and then an observed live or closed seat priority over the open request form.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "ac51f2414ac5c8588768843d4d8f3d66a560acb0",
         "content": "sha256:8f95989bc65f408648f072a4f66cbc81db33f312e0b242e0a25c01f65a8aea13",
         "locator": {
           "kind": "symbol",
@@ -44,12 +100,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
-            "content": "sha256:79ab5fe01ded09947d2dc25239cbab7ffc6921c4e9a1c4a4798f0ddd0d58f3df",
+            "blob": "ac51f2414ac5c8588768843d4d8f3d66a560acb0",
+            "content": "sha256:00e9585d09c9d22228c248c4fd6f228e73c4dcc1688cdd4b7ac1ae63ea0c0eb9",
             "locator": {
-              "end": 52,
+              "end": 35,
               "kind": "line_range",
-              "start": 31
+              "start": 30
             }
           },
           "kind": "code"
@@ -57,15 +113,16 @@
       ]
     },
     "2": {
-      "note": "A running build takes precedence over an open form",
+      "note": "A running build takes precedence over an open form and a live seat. An observed live or closed seat takes precedence over a stale form.",
       "targets": [
         {
           "anchor": {
-            "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
-            "content": "sha256:7b412bfbb4a275615c6968f0f407809b483fd60859fab49111be548bc58ca782",
+            "blob": "ac51f2414ac5c8588768843d4d8f3d66a560acb0",
+            "content": "sha256:e1d9477a4314c9e4adba53658f154efdea140db832384aef3e15c8e7cd026b9c",
             "locator": {
-              "kind": "symbol",
-              "name": "phaseOf"
+              "end": 60,
+              "kind": "line_range",
+              "start": 44
             }
           },
           "kind": "code"
@@ -77,12 +134,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
+            "blob": "ac51f2414ac5c8588768843d4d8f3d66a560acb0",
             "content": "sha256:33ec2715e58a23c92cab0e7f433473d6c8dc33c98a6090214f22937eb17a180f",
             "locator": {
-              "end": 171,
+              "end": 178,
               "kind": "line_range",
-              "start": 143
+              "start": 150
             }
           },
           "kind": "code"
@@ -94,12 +151,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
+            "blob": "ac51f2414ac5c8588768843d4d8f3d66a560acb0",
             "content": "sha256:299543fd146404c64abc12c15615a9f1ed8081c7623f2833104ac6424a6ad200",
             "locator": {
-              "end": 227,
+              "end": 234,
               "kind": "line_range",
-              "start": 204
+              "start": 211
             }
           },
           "kind": "code"
@@ -111,7 +168,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
+            "blob": "ac51f2414ac5c8588768843d4d8f3d66a560acb0",
             "content": "sha256:171e31cb59045b876b6ee125003240ed484128f3f1c3f1c17aa539808516a573",
             "locator": {
               "kind": "symbol",
@@ -127,12 +184,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "110a36da2d76f003ac2f90478df4c608fff4b052",
+            "blob": "ac51f2414ac5c8588768843d4d8f3d66a560acb0",
             "content": "sha256:7b9b9dbbe6c59db5b4241375d9abf109440c5e7d3f264e0708cc1364dfe836f8",
             "locator": {
-              "end": 406,
+              "end": 413,
               "kind": "line_range",
-              "start": 344
+              "start": 351
             }
           },
           "kind": "code"
@@ -157,7 +214,7 @@
         },
         {
           "anchor": {
-            "blob": "346cd25bf8a0d1a81e469e397609156fbc51826c",
+            "blob": "6c09da3948b2789d46d7aa0df59aae7fd7a34eda",
             "content": "sha256:d8dd5caf689bdbe2db487486d75979dd7ee8fb83ec7ccc687c1a6e9b42ebb1d1",
             "locator": {
               "end": 264,
