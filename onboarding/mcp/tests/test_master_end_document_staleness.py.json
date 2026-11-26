@@ -1,0 +1,373 @@
+{
+  "path": "mcp/tests/test_master_end_document_staleness.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+        "content": "sha256:9e24a0c9af9ead967efb8159285a951dc8eb8c42aa9b76ac93a3ba7bbd41158c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_own_leaf_document_confirmed_after_landing_passes"
+        }
+      },
+      "facet": "Rule 2.2 clearance: an own-leaf stale document confirmed after the leaf's landing is not refused.",
+      "id": "PRF-09N4KM",
+      "invariant": "INV-PVTE0M",
+      "origin": {
+        "handoffEntry": "BUG-R56@v1",
+        "leaf": "261112-BUG-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+        "content": "sha256:04af0a2d6cabe258da46dd4a7b02f39a4269fea30cd5ad4eb07cb3d3c09bf9d3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unresolvable_parent_ref_fails_closed"
+        }
+      },
+      "facet": "Rule 2.3 fail-closed boundary: an unresolvable parent ref from contract source branches leaves Rule 2.3 off.",
+      "id": "PRF-0C6631",
+      "invariant": "INV-PVTE0M",
+      "origin": {
+        "handoffEntry": "BUG-R56@v1",
+        "leaf": "261112-BUG-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+        "content": "sha256:79f7b754c62fbc603f38577cdcc4b101d185ad7d61dedf0a7807ed48e6930824",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_answer_and_refusal_message_name_all_four_kinds_apart"
+        }
+      },
+      "facet": "Rule 5 surface contract: landing_document_answer and DocumentStaleness.refusal_message name since-base, own-leaf, repaired-on-parent, and named-only kinds apart with reads and remedies.",
+      "id": "PRF-1RSJPK",
+      "invariant": "INV-PVTE0M",
+      "origin": {
+        "handoffEntry": "BUG-R56@v1",
+        "leaf": "261112-BUG-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+        "content": "sha256:da759d3cc8d69c0fe20ca85a358635ef8b9c0e422fa7b9562395200269733d1d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_leaf_pair_integrity_and_uncomputable_refusals"
+        }
+      },
+      "facet": "Rule 3 uncomputable boundary: an integrated leaf with unreadable pairs or with only one side an ancestor of the judged pair makes the master's end uncomputable and refused.",
+      "id": "PRF-3R1569",
+      "invariant": "INV-PVTE0M",
+      "origin": {
+        "handoffEntry": "BUG-R56@v1",
+        "leaf": "261112-BUG-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+        "content": "sha256:a54089543b583ae65f9bce98152c4f7bde3c0323846ea76ce3e904462fba327b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_checkpoint_landing_reports_debt_without_refusing"
+        }
+      },
+      "facet": "Rule 4 checkpoint boundary: a checkpoint landing keeps master_end=False and reports debt without refusing.",
+      "id": "PRF-4YJDN2",
+      "invariant": "INV-PVTE0M",
+      "origin": {
+        "handoffEntry": "BUG-R56@v1",
+        "leaf": "261112-BUG-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+        "content": "sha256:2e020bf366e88fd5fb10874451d724cff893fa69d2d26a8ad79235794540460e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_next_leaf_confirmation_at_previous_landed_commit_clears_debt"
+        }
+      },
+      "facet": "Non-strict ancestry: a next leaf's confirmation whose confirmed.commit equals the previous leaf's landed commit clears that leaf's debt.",
+      "id": "PRF-5R7489",
+      "invariant": "INV-PVTE0M",
+      "origin": {
+        "handoffEntry": "BUG-R56@v1",
+        "leaf": "261112-BUG-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+        "content": "sha256:d77e3aabb7115093a2ce15392ca8d4e6db5a022d6f157fbaf57cb2c0a1e3e299",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_repository_default_sync_moves_base_and_ignores_post_landing_sync"
+        }
+      },
+      "facet": "Rule 1 base resolution: a repository-default sync moves the standing base (with memoryBaseTo fallback) while a sync recorded after the judged landing is ignored.",
+      "id": "PRF-8JVTVB",
+      "invariant": "INV-PVTE0M",
+      "origin": {
+        "handoffEntry": "BUG-R56@v1",
+        "leaf": "261112-BUG-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+        "content": "sha256:0a4c440fea0cbb49c9a46eb8393a24b2719b8031e616b94f47b8d06f8da9e0a2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_parent_staleness_brought_by_sync_is_named_only"
+        }
+      },
+      "facet": "A document made stale on the parent line and brought in only by a sync is named only and refuses nothing.",
+      "id": "PRF-9GTPG9",
+      "invariant": "INV-PVTE0M",
+      "origin": {
+        "handoffEntry": "BUG-R56@v1",
+        "leaf": "261112-BUG-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+        "content": "sha256:de0a30880685648c54bef6db68b49347832df6f0336fa14876811e75e87c6c3c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unreadable_confirmed_commit_makes_end_uncomputable"
+        }
+      },
+      "facet": "A confirmed.commit unreadable in Git makes the master's end uncomputable and refused.",
+      "id": "PRF-EDZ87E",
+      "invariant": "INV-PVTE0M",
+      "origin": {
+        "handoffEntry": "BUG-R56@v1",
+        "leaf": "261112-BUG-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+        "content": "sha256:1cf4eeaf10d9fa619794efa83ba20dc5a005ff2ad0c669b71a6a83ba8167cdb1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_own_leaf_staleness_refuses_after_sync"
+        }
+      },
+      "facet": "Rule 2.2: a document made stale by the master's own integrated leaf still refuses after a sync moves the standing base, including after a squash-merged leaf.",
+      "id": "PRF-G9GF79",
+      "invariant": "INV-PVTE0M",
+      "origin": {
+        "handoffEntry": "BUG-R56@v1",
+        "leaf": "261112-BUG-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+        "content": "sha256:d1001d4ad2d60d87e583a1e23d7dfb96a888941956d9cda39482ffa02f47907f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_integration_gate_before_landing_refuses_even_when_parent_current"
+        }
+      },
+      "facet": "Rule 2.3 pre-landing boundary: before landing at integration_gate, a document still refuses even when current on the parent line.",
+      "id": "PRF-HSV5AC",
+      "invariant": "INV-PVTE0M",
+      "origin": {
+        "handoffEntry": "BUG-R56@v1",
+        "leaf": "261112-BUG-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+        "content": "sha256:4e922a01a36b9b54ffcd787860791fbb28b9d5369f604a7aee9e9b26fdfe8452",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unreadable_links_refuse_only_when_introduced_after_base"
+        }
+      },
+      "facet": "Rule 3 unverifiable boundary: a document with unreadable links refuses only when unreadable at the judged tip and readable at the standing base.",
+      "id": "PRF-NT3GAH",
+      "invariant": "INV-PVTE0M",
+      "origin": {
+        "handoffEntry": "BUG-R56@v1",
+        "leaf": "261112-BUG-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+        "content": "sha256:6d0f1b2cfff780f73b0336b4cc0c36822c1f49a002e2a5ec63ee818ae5703369",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_deferral_only_update_after_own_leaf_still_refuses"
+        }
+      },
+      "facet": "A deferral-only write after an own leaf leaves confirmed.commit unchanged and still refuses.",
+      "id": "PRF-SP7PPD",
+      "invariant": "INV-PVTE0M",
+      "origin": {
+        "handoffEntry": "BUG-R56@v1",
+        "leaf": "261112-BUG-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+        "content": "sha256:a299d6d5f88cd9dd93ed50420ed79e6e4ac80688ed0815adf7b5fd603ebd9325",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unlanded_master_work_refuses_since_base"
+        }
+      },
+      "facet": "Rule 2.1: a document made stale by the master's own unlanded work since the standing base is refused.",
+      "id": "PRF-WRSA0J",
+      "invariant": "INV-PVTE0M",
+      "origin": {
+        "handoffEntry": "BUG-R56@v1",
+        "leaf": "261112-BUG-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+        "content": "sha256:90f9e289d7d8fba7eba57ffbbb99111c27930f0edd294af12f5cf1347727d2f9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_repaired_on_parent_after_landing_refuses_nothing"
+        }
+      },
+      "facet": "Rule 2.3: after landing, a document refused by Rule 2.1 or 2.2 that is already current on the parent line's present tip is named as repaired and refuses nothing.",
+      "id": "PRF-XNRN92",
+      "invariant": "INV-PVTE0M",
+      "origin": {
+        "handoffEntry": "BUG-R56@v1",
+        "leaf": "261112-BUG-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+        "content": "sha256:6ca0fe8e455aa3a3413b89519745eb5b70221226740801fc043b4ef78dd59789",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_confirmed_after_leaf_then_restaled_by_sync_is_named_only"
+        }
+      },
+      "facet": "A document confirmed after an own leaf and later made stale again by a synced parent change is named only.",
+      "id": "PRF-Y5F4BQ",
+      "invariant": "INV-PVTE0M",
+      "origin": {
+        "handoffEntry": "BUG-R56@v1",
+        "leaf": "261112-BUG-L56"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`_Harness` constructs paired real Git code/memory repositories, canonical task documents, series/leaf enclosures, sync logs, and landing requests for master-end staleness tests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+            "content": "sha256:0a87421ddf2fdde1b42da65bb204e923cf363a0fa127a1fae5e840aa350d19f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Harness"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Dedicated tests cover since-base refusal, synced parent naming, merge/squash own-leaf attribution, confirmation clearing (including equal-commit and deferral-only), unreadable `confirmed.commit`, and post-landing vs pre-landing parent repair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+            "content": "sha256:1cf4eeaf10d9fa619794efa83ba20dc5a005ff2ad0c669b71a6a83ba8167cdb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_own_leaf_staleness_refuses_after_sync"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+            "content": "sha256:90f9e289d7d8fba7eba57ffbbb99111c27930f0edd294af12f5cf1347727d2f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repaired_on_parent_after_landing_refuses_nothing"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+            "content": "sha256:d1001d4ad2d60d87e583a1e23d7dfb96a888941956d9cda39482ffa02f47907f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_integration_gate_before_landing_refuses_even_when_parent_current"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Dedicated tests cover open/abandoned vs broken/one-sided leaf enclosures, tip-only unverifiable filtering, `repository-default` standing-base walks, checkpoints, and four-kind answer and refusal formatting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+            "content": "sha256:da759d3cc8d69c0fe20ca85a358635ef8b9c0e422fa7b9562395200269733d1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_pair_integrity_and_uncomputable_refusals"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+            "content": "sha256:d77e3aabb7115093a2ce15392ca8d4e6db5a022d6f157fbaf57cb2c0a1e3e299",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repository_default_sync_moves_base_and_ignores_post_landing_sync"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+            "content": "sha256:79f7b754c62fbc603f38577cdcc4b101d185ad7d61dedf0a7807ed48e6930824",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_answer_and_refusal_message_name_all_four_kinds_apart"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

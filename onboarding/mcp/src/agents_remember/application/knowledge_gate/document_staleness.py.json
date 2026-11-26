@@ -1,0 +1,175 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_gate/document_staleness.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+        "content": "sha256:eab9d8e679192a1d6b06e599be911e5d3cda7b8c2fefe7dcf5cbc2d4570b50a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "document_staleness"
+        }
+      },
+      "id": "RLZ-MD0K7K",
+      "invariant": "INV-ZHTFZ9",
+      "origin": {
+        "handoffEntry": "L118-W4",
+        "leaf": "260928-MIK-L118"
+      },
+      "rationale": "The landing document-staleness computation was extracted here from landing.py: an ordinary landing and a checkpoint read only the dependents a change can move, while a series master's end reads every document against the standing base, classifies since-base, own-leaf, repaired-on-parent, and named-only kinds apart, answers an uncomputable state as state and detail without a count and a tip-only unverifiable state with its documents, and leaves per-link movement detail to the dependent reader.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+        "content": "sha256:0d928acef9bdcdef079abfaea65bfbddc3220ac9061b1e6fadd33f34f2902ba8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_classify_master_end"
+        }
+      },
+      "id": "RLZ-QZ510W",
+      "invariant": "INV-PVTE0M",
+      "origin": {
+        "handoffEntry": "BUG-R56@v1",
+        "leaf": "261112-BUG-L56"
+      },
+      "rationale": "Splits the stale tip documents into since-base, own-leaf, repaired-on-parent and named-only, and filters unverifiable links to those unreadable at the tip while readable at the base.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+        "content": "sha256:eab9d8e679192a1d6b06e599be911e5d3cda7b8c2fefe7dcf5cbc2d4570b50a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "document_staleness"
+        }
+      },
+      "id": "RLZ-ZJMMWZ",
+      "invariant": "INV-PVTE0M",
+      "origin": {
+        "handoffEntry": "BUG-R56@v1",
+        "leaf": "261112-BUG-L56"
+      },
+      "rationale": "Owns the master-end computation: full reads at base and tip, the fail-closed exception fold, and the dispatch to the master-end classifier while the ordinary landing keeps its selective read.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`DocumentStaleness` holds split master-end ownership and repair fields and formats `answer()` with separate `refusedSinceBase`, `refusedByOwnLeaf`, `repairedOnParent`, and `namedOnly` sections and `refusal_message()`.\n\nAnchor: `DocumentStaleness.refusal_message`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+            "content": "sha256:954b9f303932bd1d866ed9c2c28ceafdb371666ca2da727c9d429f988d993751",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentStaleness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`document_staleness` dispatches incremental vs master-end evaluation and folds unreadable contract, leaf, and Git errors into `DocumentStaleness(uncomputable=...)`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+            "content": "sha256:eab9d8e679192a1d6b06e599be911e5d3cda7b8c2fefe7dcf5cbc2d4570b50a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "document_staleness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_classify_master_end` separates since-base staleness, own-leaf debt, post-landing parent repairs, named-only debt, and tip-only unverifiable links.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+            "content": "sha256:0d928acef9bdcdef079abfaea65bfbddc3220ac9061b1e6fadd33f34f2902ba8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_classify_master_end"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_master_integrated_leaves`, `_validated_leaf_pairs`, `_documents_made_stale_by_leaves`, and `_confirmed_after_leaf` attribute own-leaf staleness with fail-closed commit/ancestry validation and non-strict confirmation clearing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+            "content": "sha256:c1d42b9e5a898b13b8bff1932ade8b232c46b6df1ef7c88508d2235517a1b90c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_master_integrated_leaves"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+            "content": "sha256:2ed0df6f226fe88ecd33e28e730f4cbecaf770cfc37f37de1d59a0b992fc8522",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validated_leaf_pairs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+            "content": "sha256:9aa5f628067967bbc55a33d70402d56937a49571e64d801231103e83ac7aefd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_documents_made_stale_by_leaves"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+            "content": "sha256:b2067be7a6ee0bb9cc7ed4542e96bab3f6b1f531301dd104b56c0685ae4c0eb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_confirmed_after_leaf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`_repaired_on_parent` exempts documents current on the parent line only after both judged commits are ancestors of the resolved parent source branches, failing closed on any ref-resolution or read error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+            "content": "sha256:b840000335da5ce26ebac72ecb68e97177ef3b06bbcf7b90539556baf23d8ea7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_repaired_on_parent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

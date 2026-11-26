@@ -9001,6 +9001,47 @@
         }
       ]
     },
+    "543": {
+      "note": "`knowledge_gate/document_staleness.py` classifies incremental and master-end dependent-document staleness, attributing own-leaf debt, checking post-landing parent repairs, filtering tip-only unverifiable links, and rendering per-kind answers and refusal messages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+            "content": "sha256:eab9d8e679192a1d6b06e599be911e5d3cda7b8c2fefe7dcf5cbc2d4570b50a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "document_staleness"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/document_staleness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+            "content": "sha256:0d928acef9bdcdef079abfaea65bfbddc3220ac9061b1e6fadd33f34f2902ba8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_classify_master_end"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/document_staleness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+            "content": "sha256:954b9f303932bd1d866ed9c2c28ceafdb371666ca2da727c9d429f988d993751",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentStaleness"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/document_staleness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "55": {
       "note": "**The comparison's reader over its own two open snapshots, and the adapter's verbatim carry.**",
       "targets": [

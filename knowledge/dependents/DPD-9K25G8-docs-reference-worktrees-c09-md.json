@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "48c171029dbbe43e6ba940b9dd8f029422ab5663",
-    "commit": "599cfaf84f93661f99d44604b0cfa6e8c4a688d9",
+    "codeTree": "7195713289a089ccffa4b031d4ddcbf941781a99",
+    "commit": "da65eb23a46a9b67683b002fd418996e3f7486c5",
     "role": "curator",
-    "statement": "Audited docs/reference/worktrees-c09.md in full against DEP-synced L52 candidate 48c17102 (base 599cfaf8): closeout knowledge-gate refusal, route-review and clean-sync rules, staleDocuments landing boundary, and Manager approval boundary remain accurate.",
-    "task": "261112-BUG-L52",
+    "statement": "Audited docs/reference/worktrees-c09.md in full against post-sync L56 tree 71957132 (base da65eb23): worktree integration, checkpoint, and record-landing document-staleness contract remains accurate after moving master-end classification to document_staleness.py and updating landing_document_answer and record_landing_result; added document_staleness.py to stands_on.",
+    "task": "261112-BUG-L56",
     "uncommitted": true
   },
   "document": "docs/reference/worktrees-c09.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -116,7 +116,7 @@
     },
     {
       "anchor": {
-        "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+        "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
         "content": "sha256:31ca029c79aa590ea3515b8dd10dfb974048d8c0edc02ca52d666ff8333ae8fe",
         "locator": {
           "kind": "symbol",
@@ -169,8 +169,8 @@
     },
     {
       "anchor": {
-        "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
-        "content": "sha256:eb3dbe24602b4c8d3323b3383bbc854a47a9aed380f600ac28cc4b4dea436941",
+        "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
+        "content": "sha256:1dc6f2f24e5bab62fc6c0e7867ad5b32ddcf8beab9f504b32c1e843967994deb",
         "locator": {
           "kind": "symbol",
           "name": "landing_document_answer"
@@ -204,7 +204,7 @@
       "kind": "anchor"
     },
     {
-      "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
+      "blob": "c23087e8ef627349cbe6836f5adea40be938ce5c",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/landing.py"
     },
@@ -282,17 +282,22 @@
       "blob": "4fe5043c0194f5b54235220b52efc192f85617a7",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+    },
+    {
+      "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/knowledge_gate/document_staleness.py"
     }
   ],
   "writer": {
-    "at": "2026-11-26T08:25:07+01:00",
+    "at": "2026-11-26T19:03:01+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L52",
+    "leaf": "261112-BUG-L56",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
     "task": "261112-BUG"
   }
 }

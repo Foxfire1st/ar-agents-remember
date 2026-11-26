@@ -10,8 +10,11 @@
 landing answer: for a leaf's recorded landing, the leaf's history file must be `closed` in the landed memory commit
 (rule 3); for a master or checkpoint landing, every entry of the master's memory tree at a path the master's **net**
 code diff changed must be `current` at the master's code commit (rule 4). A landing that names a code base also
-derives whether the documents its dependent records describe became stale; that count is part of the landing answer,
-and only a master's end refuses for it (MIK-R124). The validator half of each landing runs in
+delegates dependent-document staleness to sibling [`document_staleness.py`](document_staleness.py.md) (re-exporting
+`DocumentStaleness`, `document_staleness`, and `_changed_paths`): the count is part of the landing answer, and only a
+master's end refuses for it, refusing only documents this master's own work made stale (since its standing base or in
+one of its own integrated leaves without a later confirmation) unless already repaired on the parent line after landing
+(MIK-R124). The validator half of each landing runs in
 the worktree layer through `memory_commit_refusal`, the one route entry point every memory commit route uses
 (MIK-R22 rule 8); this module adds only what the validator does not check.
 
@@ -63,9 +66,11 @@ the worktree layer through `memory_commit_refusal`, the one route entry point ev
 
 ## Dependent staleness at a landing (MIK-R124)
 
-`document_staleness(request, *, full=False)` derives, at the landing, which documents its dependent records describe
-are stale. It returns a `DocumentStaleness`: the documents this landing made stale, those already stale at its base,
-the documents it examined, how many dependent record bodies it read, and any state it could not establish.
+`landing.py` re-exports `DocumentStaleness`, `document_staleness`, and `_changed_paths` from sibling
+[`document_staleness.py`](document_staleness.py.md), which derives which documents a landing's dependent records
+describe are stale. `DocumentStaleness` splits master-end results into `made_stale_since_base`, `made_stale_by_leaf`
+(with `made_stale_by_leaf_ids`), `repaired_on_parent`, and `already_stale`, alongside `documents`, `examined`,
+`dependents_read`, `uncomputable`, and `unverifiable`.
 
 A document is stale when a link of its dependent record no longer holds the value the confirmation recorded: a file
 or anchor link's recorded bytes differ from C, an anchor's locator no longer resolves, or a record link's revision
@@ -83,28 +88,37 @@ The lookup is the layout marker's `dependent_links` index, which the writer buil
 exactly the dependent record files of the commit, the read is uncomputable rather than guessed, and a marker that
 cannot be read or a record whose linked revision cannot be fetched is reported the same way.
 
-The base is compared by the same rule. A document stale at the tip that was current at the base, or that had no
-record there, is one this landing made stale; one already stale at the base is named separately and refuses nothing.
+On an incremental landing (`full=False`), a document stale at the tip that was current or absent at the base is
+reported in `documents`, while one already stale at the base is named in `already_stale` and refuses nothing. On a
+master's end (`full=True`), comparison runs against `request.document_base` when supplied (the master's standing base);
+documents stale at both base and tip are checked against this master's own integrated leaf enclosures and refuse when
+an own leaf made them stale without a later `confirmed.commit` descending from the leaf's landed code commit; documents
+already current on the parent line after both commits landed are exempted in `repaired_on_parent`; remaining base-stale
+documents stay in `already_stale` and refuse nothing; and unverifiable links refuse only when unreadable at the tip
+while readable at the base.
 
-`DocumentStaleness.answer()` is the field the landing answer carries. It gives the count, the documents and the
-`knowledge_read` view that returns them (`view=dependent`, `staleOnly=true`, memory root of the landing's tree), and
-names any already-stale documents. An ordinary landing and a checkpoint leave the field out when they made no document stale. A master's end keeps the field while it
-has inherited debt to name, answering `count: 0` beside `alreadyStale` rather than omitting it; with neither newly nor
-inherited stale documents it omits the field as an ordinary landing does. A state that could not be established is
-never answered as a current document: an uncomputable read returns its state and reason in place of the count, and an
-unverifiable one returns its state, the reasons, the count and the documents — a failure answer therefore stands where
-a zero count would otherwise be left out.
+`DocumentStaleness.answer(name_already_stale=...)` is the field the landing answer carries. It gives `count`,
+`documents`, `read` (`view=dependent`, `staleOnly=true`, memory root of the landing's tree), `alreadyStale` when
+present, and per-kind sections (`refusedSinceBase`, `refusedByOwnLeaf` with `leaves`, `repairedOnParent`, and
+`namedOnly`) carrying their reads and refusal remedies. An ordinary landing and a checkpoint omit the field when
+`documents` is empty. A master's end (`name_already_stale=True`) keeps the field with `count: 0` whenever
+`already_stale` or `repaired_on_parent` is non-empty, omitting it only when nothing is named. An uncomputable read
+returns `state: "uncomputable"` and `detail` in place of the count, and an unverifiable one returns
+`state: "unverifiable"`, `detail`, `count`, and `documents`.
 
-Only a master's end refuses. It adds `knowledge-dependents-stale-at-master-end` with the count, the documents, the
-read and the remedy — a task of this master that changes the document or confirms it — or
-`knowledge-worklist-incomplete` when the count cannot be computed, or `knowledge-unverifiable-at-landing` when a
-document's state cannot be observed. A checkpoint and an ordinary landing disclose the same facts in their answer
-and refuse nothing: the landing happens, and its answer says how many documents it made stale (rule 4; rule 8).
+Only a master's end refuses. `_findings` adds `DEPENDENTS_STALE` (`knowledge-dependents-stale-at-master-end`) carrying
+`staleness.refusal_message()` — which names since-base, own-leaf (with leaf IDs and the `confirmed.commit` remedy),
+parent-repaired, and base-stale kinds apart — or `RUN_INCOMPLETE` (`knowledge-worklist-incomplete`) when the result is
+uncomputable, or `UNVERIFIABLE_AT_LANDING` (`knowledge-unverifiable-at-landing`) when tip-only links cannot be
+observed. A checkpoint and an ordinary landing disclose the same facts in their answer and refuse nothing (rule 4;
+rule 8).
 
 ## Evidence
 
 - Master landing authenticates newly closed owner history and excludes the converted review-facts companion. [9]
 - The landing selects dependents by changed source paths or linked record identities. [10]
+
+- `landing.py` re-exports `DocumentStaleness`, `document_staleness`, and `_changed_paths` from `document_staleness.py` and delegates master-end dependent refusal wording in `_findings` to `staleness.refusal_message()`. [11]
 
 
 

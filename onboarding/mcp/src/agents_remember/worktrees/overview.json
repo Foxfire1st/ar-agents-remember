@@ -318,7 +318,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
             "content": "sha256:0e914c4a4201a736995ead4f69844f263ebd65ab903cd81574d71f63a6a2364b",
             "locator": {
               "kind": "symbol",
@@ -507,6 +507,35 @@
               "name": "commit_bounded_code_merge"
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_code_merge_commit.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "123": {
+      "note": "`master_document_base` resolves a master's standing document base from `sync_log` ancestry (with `repository-default` and `original_base_pair` fallback), and `landing_document_answer` passes it with `series_contract` on `master_end=True`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
+            "content": "sha256:38dbd20072dcad40d19bd830a9e0aec031ccd25198b0bd473931e7be4e741b0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_document_base"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
+            "content": "sha256:1dc6f2f24e5bab62fc6c0e7867ad5b32ddcf8beab9f504b32c1e843967994deb",
+            "locator": {
+              "kind": "symbol",
+              "name": "landing_document_answer"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
           "kind": "code"
         }
@@ -1592,12 +1621,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
             "content": "sha256:b466f42e795fd802dbae6bb00d8fe62989057fedd2564d75ba324d84b6819d44",
             "locator": {
-              "end": 129,
+              "end": 131,
               "kind": "line_range",
-              "start": 118
+              "start": 120
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -1605,12 +1634,12 @@
         },
         {
           "anchor": {
-            "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
             "content": "sha256:eef13987a34229cd649ed3696f96e29fac806a2224f5b4e826951aa8a4314f2b",
             "locator": {
-              "end": 242,
+              "end": 244,
               "kind": "line_range",
-              "start": 192
+              "start": 194
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -1618,12 +1647,12 @@
         },
         {
           "anchor": {
-            "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
             "content": "sha256:0e914c4a4201a736995ead4f69844f263ebd65ab903cd81574d71f63a6a2364b",
             "locator": {
-              "end": 498,
+              "end": 538,
               "kind": "line_range",
-              "start": 459
+              "start": 499
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -1636,12 +1665,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
             "content": "sha256:a5c147627fe1f8cf5e8db8ff55b1c3f722040ac28b8e516b13dad98b58e66c5e",
             "locator": {
-              "end": 242,
+              "end": 244,
               "kind": "line_range",
-              "start": 206
+              "start": 208
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -1649,12 +1678,12 @@
         },
         {
           "anchor": {
-            "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
             "content": "sha256:67d47854920238903c844bd4769263945e3ecae17cf2d940b09799639597a8b1",
             "locator": {
-              "end": 356,
+              "end": 358,
               "kind": "line_range",
-              "start": 317
+              "start": 319
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -1667,12 +1696,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
             "content": "sha256:23ca989675c980a13bbe8de0e3fcc85e0c36f1a1128a2c3417dc1909671ad562",
             "locator": {
-              "end": 607,
+              "end": 647,
               "kind": "line_range",
-              "start": 558
+              "start": 598
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -1680,12 +1709,12 @@
         },
         {
           "anchor": {
-            "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
             "content": "sha256:3f096993a949203bf87250d0259c65b473c2499c874f4f9aa284b5e067c0f2c1",
             "locator": {
-              "end": 641,
+              "end": 681,
               "kind": "line_range",
-              "start": 614
+              "start": 654
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -1776,12 +1805,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
             "content": "sha256:4b6eedf47c266ae734b7843bd3a80f23fc9b2b2e766072cdd51f79400b1d0333",
             "locator": {
-              "end": 172,
+              "end": 174,
               "kind": "line_range",
-              "start": 154
+              "start": 156
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -1810,7 +1839,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
             "content": "sha256:6b4c04dfd9b35b403d74935df75e70d266ec4abe29546e36f92139e9313e049e",
             "locator": {
               "kind": "symbol",
@@ -1844,7 +1873,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
             "content": "sha256:7e62f02406a1bca57e4306035af6d5886206e02c2f674f2f64628597fec7b90e",
             "locator": {
               "kind": "symbol",
@@ -2094,12 +2123,12 @@
         },
         {
           "anchor": {
-            "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
             "content": "sha256:3f096993a949203bf87250d0259c65b473c2499c874f4f9aa284b5e067c0f2c1",
             "locator": {
-              "end": 641,
+              "end": 681,
               "kind": "line_range",
-              "start": 614
+              "start": 654
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -2298,16 +2327,15 @@
       ]
     },
     "90": {
-      "note": "**Retained historical source account — superseded by the current route account:** Completed closeout alone freezes history; latest attempt is closed with reversible exact-byte restoration",
+      "note": "Completed closeout alone freezes history; the latest owner attempt is closed with reversible exact-byte restoration.",
       "targets": [
         {
           "anchor": {
-            "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
             "content": "sha256:7e62f02406a1bca57e4306035af6d5886206e02c2f674f2f64628597fec7b90e",
             "locator": {
-              "end": 151,
-              "kind": "line_range",
-              "start": 139
+              "kind": "symbol",
+              "name": "closed_out_memory"
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -2315,12 +2343,35 @@
         },
         {
           "anchor": {
-            "blob": "5903ac44eba4dc61bf47d9feacbc190742bebbba",
-            "content": "sha256:5e782eb6fa8dd27c2740d48b24b4c8388b91d8c0d4003ad36d2ac368284bb241",
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
+            "content": "sha256:9055645ff3ba79a95ca391f43fa641ca8854b33ff9d2eebacc5fb23fb7d03327",
             "locator": {
-              "end": 432,
-              "kind": "line_range",
-              "start": 373
+              "kind": "symbol",
+              "name": "HistoryClosing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
+            "content": "sha256:6b4c04dfd9b35b403d74935df75e70d266ec4abe29546e36f92139e9313e049e",
+            "locator": {
+              "kind": "symbol",
+              "name": "latest_owner_history"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
+            "content": "sha256:0e914c4a4201a736995ead4f69844f263ebd65ab903cd81574d71f63a6a2364b",
+            "locator": {
+              "kind": "symbol",
+              "name": "close_owner_history"
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },

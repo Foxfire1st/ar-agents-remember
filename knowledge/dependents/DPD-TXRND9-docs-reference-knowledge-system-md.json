@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "6ed3e42315fdc9b59cfcc1e89ab5a1a7cad93223",
-    "commit": "8ccdd6fab4805894de5375e51c16ec3ff96628d2",
+    "codeTree": "7195713289a089ccffa4b031d4ddcbf941781a99",
+    "commit": "da65eb23a46a9b67683b002fd418996e3f7486c5",
     "role": "curator",
-    "statement": "Verified docs/reference/knowledge-system.md in full against L52 candidate 6ed3e423 (base 8ccdd6fa): lines 353-361 accurately describe task memory_quality_check reportOnlyFindings including landing-cut-card, landing-added-file, and all four dependent_flags entries (pre_base_stale_confirmation, deferral_lifted, deferral_orphaned, deferral_due_warning), and lines 504-508 accurately state that crossing sync merges records by field while merging DependentRecord.deferrals by deferral ID (DFR-*, omitting when empty).",
-    "task": "261112-BUG-L52",
+    "statement": "Audited docs/reference/knowledge-system.md in full against post-sync L56 tree 71957132 (base da65eb23): knowledge gate, dependent staleness, and refusal descriptions remain accurate after extracting document_staleness.py from landing.py; added document_staleness.py to stands_on.",
+    "task": "261112-BUG-L56",
     "uncommitted": true
   },
   "document": "docs/reference/knowledge-system.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -112,7 +112,7 @@
       "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
     },
     {
-      "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
+      "blob": "c23087e8ef627349cbe6836f5adea40be938ce5c",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/knowledge_gate/landing.py"
     },
@@ -262,7 +262,7 @@
       "path": "mcp/src/agents_remember/application/knowledge_reader/marks.py"
     },
     {
-      "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+      "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
     },
@@ -389,17 +389,22 @@
       },
       "heading": "Staged memory merge check",
       "kind": "anchor"
+    },
+    {
+      "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/knowledge_gate/document_staleness.py"
     }
   ],
   "writer": {
-    "at": "2026-11-26T07:36:37+01:00",
+    "at": "2026-11-26T19:03:01+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L52",
+    "leaf": "261112-BUG-L56",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "f8054645-8916-50cc-9611-9d6416b71178",
+    "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
     "task": "261112-BUG"
   }
 }

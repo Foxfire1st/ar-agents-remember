@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "671ece4cbd090a47cbb540dd59f157804c676424",
-    "commit": "db236f3c6b164f19a905fb2174e5dc3543d21f9d",
+    "codeTree": "7195713289a089ccffa4b031d4ddcbf941781a99",
+    "commit": "da65eb23a46a9b67683b002fd418996e3f7486c5",
     "role": "curator",
-    "statement": "Audited docs/reference/mcp-tools.md on L52-synced L51 code tree 671ece4c (base db236f3c/9f01ab59): MCP tool reference, role_start/role_start_set, dependent deferral semantics, and IDENTITY MISMATCH: notice semantics remain accurate; no contradiction.",
-    "task": "261112-BUG-L51",
+    "statement": "Audited docs/reference/mcp-tools.md in full against post-sync L56 tree 71957132 (base da65eb23): tool names, short fields, and record_landing / worktree_integrate descriptions remain accurate after _landing_request adopted master_document_base.",
+    "task": "261112-BUG-L56",
     "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 29,
+  "revision": 30,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -318,7 +318,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
     },
     {
-      "blob": "7d23ae76162f4a460267e846df44d8a6898eee8a",
+      "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
     },
@@ -423,14 +423,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T10:27:33+01:00",
+    "at": "2026-11-26T19:03:01+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L51",
+    "leaf": "261112-BUG-L56",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "d3e87258-b65a-5b27-8f60-6c7c0d9e5de1",
+    "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
     "task": "261112-BUG"
   }
 }

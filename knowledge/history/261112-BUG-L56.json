@@ -1,0 +1,1114 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L56",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-26T19:23:50+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L56",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-26T19:23:50+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L56",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "957bc80f-39f3-5f3c-98c0-ff676d8f3782",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 3,
+    "tree": "05d06ed94c3c6a39508aefb5cfc76fef652e3d1f",
+    "verdictRef": "notes/reports/reviewer/957bc80f-39f3-5f3c-98c0-ff676d8f3782/role-launch/261112-BUG-L56-M3-memory-verdict.md"
+  },
+  "rows": [
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-0N9XP2",
+      "items": [
+        "sha256:5ba2df45db18adc047d8b3e43d236e9f24292a6a9c25511a08f2217bb465337d"
+      ],
+      "reason": "Confirmed README.md on L56 candidate 71957132 (DEP-L6 synced base da65eb23) after record_landing.py adopted master_document_base; overview and workflow summary remain accurate.",
+      "revision": 15,
+      "subject": "DPD-CZBR1Q"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0PFP3T",
+      "items": [
+        "sha256:3596fa21e45c1c5b1ac54e38dc559d9b65954233fa2cd92990b8fd64a2e40798"
+      ],
+      "reason": "Removed now-unused original_base_pair import in worktrees/modules/integration_gate.py; import cleanup only.",
+      "subject": "hunk:sha256:3596fa21e45c1c5b1ac54e38dc559d9b65954233fa2cd92990b8fd64a2e40798"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-13CFAD",
+      "items": [],
+      "reason": "Confirmed docs/design/python-pytest-bootstrap.md on DEP-L6 synced L56 candidate 71957132 (base da65eb23) and re-anchored stress-durability in test-evidence-lanes.toml to lines 851-853.",
+      "revision": 29,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2GN6W2",
+      "items": [
+        "sha256:1047e38e3cc363065568c3d2d46cf4797d14a2e8d825598872336afc673b32a5"
+      ],
+      "reason": "Imported master_document_base in worktrees/modules/integration_gate.py; import wiring only.",
+      "subject": "hunk:sha256:1047e38e3cc363065568c3d2d46cf4797d14a2e8d825598872336afc673b32a5"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-33G5M8",
+      "items": [],
+      "reason": "Pre-existing base-stale dependent at da65eb23 (docs/install/hermes.md, owned by CAP-R05); L56 touches neither the document nor its stands_on links; left strictly untouched at HEAD 7aa3b80f.",
+      "revision": 11,
+      "subject": "DPD-GHEXS9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "07998f644724fafc06b2ad16936a627f111714dc",
+            "content": "sha256:e67145744d633b4b684004a2c7c34807cc338c0257b6e98fe5aeb288c1c765b6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
+            "content": "sha256:9e12455a29006e8962e631ef256c3e0786a47e915d0c3a668abae195175784f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "77ec2f25594a6238fa3a7d0a352c9029160eed5d",
+            "content": "sha256:10bb235e8b20543d3fd173bab42f0f675fe55d1c3978741c4904b5e9996443b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
+            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-411YS5",
+      "items": [
+        "sha256:f9762a8bdd7fa031c7e4959d5ea69bf52c2e774bb0e0a6b8763a48d77604c704"
+      ],
+      "reason": "evidence-lifecycle.toml and test-evidence-lanes.toml only added test_master_end_document_staleness.py; per-generation private scratch root policy is untouched.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4QDTBW",
+      "items": [
+        "sha256:7136cf6c8a8f68d4ffeb954a105746682db06e6c18855170fb889ce8ebba5ac6"
+      ],
+      "reason": "Updated onboarding card prose and sidecar anchors after extracting document_staleness.py and adding LandingRequest.contract and four-kind master-end refusal formatting.",
+      "sources": [
+        {
+          "blob": "c23087e8ef627349cbe6836f5adea40be938ce5c",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/landing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_gate/landing.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3817940555ea17f9d31013646c648a96699094b4",
+            "content": "sha256:a34bba277a886b4bc729fcb08173eae6d32c5eb945a5b9b8373906cbd8452167",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "before": {
+            "blob": "040e62b22663a8a8863684ba6ccb89d9bc054897",
+            "content": "sha256:b849d6a1edbadd1994470d6b5a41e9cc9a3d83a25b399a84d0dbcb635e2748b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "id": "PRF-A7FX3D"
+        },
+        {
+          "after": {
+            "blob": "3817940555ea17f9d31013646c648a96699094b4",
+            "content": "sha256:a34bba277a886b4bc729fcb08173eae6d32c5eb945a5b9b8373906cbd8452167",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "before": {
+            "blob": "040e62b22663a8a8863684ba6ccb89d9bc054897",
+            "content": "sha256:b849d6a1edbadd1994470d6b5a41e9cc9a3d83a25b399a84d0dbcb635e2748b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "id": "RLZ-AYEG7H"
+        },
+        {
+          "after": {
+            "blob": "cccd81fa3fd4617162592eed504a9eafc91a3503",
+            "content": "sha256:42b9f1f622b674871030148b042028464ecf0ea485ff31b17c261ed469ef167d",
+            "locator": {
+              "kind": "symbol",
+              "name": "integration_gate_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
+          },
+          "before": {
+            "blob": "d2f3e6ac1adf4ec90ff5a8150cb65d2e46941403",
+            "content": "sha256:786ec8f04b4a4208f1a3c7630a22745d96e8c226888c6076efe93e60f23e422b",
+            "locator": {
+              "kind": "symbol",
+              "name": "integration_gate_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
+          },
+          "id": "RLZ-PS6FJJ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-552F4Q",
+      "items": [
+        "sha256:acdd6d1d67405f85ccfc6fec65a8135d4debb74f7557927f9954a364ad18b0fd"
+      ],
+      "reason": "integration_gate_block and test_knowledge_gate_routes.py only updated master-end document base resolution and route-level staleness assertions; refusal of non-external contract modes on landing, gate, and closeout routes is unchanged.",
+      "revision": 1,
+      "subject": "INV-95NQR7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5HM005",
+      "items": [
+        "sha256:348d172f92f583479e5920b0fb8cb16b96f1185bde33dbc9ea444441131573e1"
+      ],
+      "reason": "Created onboarding card and sidecar documenting the new master-end document staleness computation, classification rules 2.1-2.3, leaf-pair checks, and refusal messages.",
+      "sources": [
+        {
+          "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/document_staleness.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_gate/document_staleness.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+            "content": "sha256:eab9d8e679192a1d6b06e599be911e5d3cda7b8c2fefe7dcf5cbc2d4570b50a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "document_staleness"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/document_staleness.py"
+          },
+          "before": {
+            "blob": "bd4f579900460a5da51f8ef4090aab62e053e7a8",
+            "content": "sha256:207e28b19ba6a7c8dff5d94f9345c3d04b0a0f0c0065d977e404c201c28e0eab",
+            "locator": {
+              "kind": "symbol",
+              "name": "document_staleness"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/landing.py"
+          },
+          "id": "RLZ-MD0K7K"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-7462TT",
+      "items": [
+        "sha256:6ca676b0991c8d3940dcaebc6081d9689fb3f6d6e1212800541684c0b3a1c84a"
+      ],
+      "reason": "Extracted document_staleness from application/knowledge_gate/landing.py into application/knowledge_gate/document_staleness.py; relocated RLZ-MD0K7K to the new module while INV-ZHTFZ9's statement remains verbatim at rev 1.",
+      "revision": 1,
+      "subject": "INV-ZHTFZ9"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-7D81CD",
+      "items": [
+        "sha256:08633a8d8be9488c1956ce09f5f1e519d81be0f4c42129b0fd816e4e99b422e8"
+      ],
+      "reason": "Confirmed docs/reference/mcp-tools.md on L56 candidate 71957132 (DEP-L6 synced base da65eb23) after _landing_request adopted master_document_base; all tool reference descriptions remain accurate.",
+      "revision": 30,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7YMS8G",
+      "items": [
+        "sha256:e3bd12a67ff9dadbdbe3ea413dace3bdf1f6dea9b9e322af4288f3b136d179cc"
+      ],
+      "reason": "Updated worktrees/modules overview and sidecar anchors for integration_gate.py and record_landing.py standing-base changes (and removed duplicate citation [72]).",
+      "sources": [
+        {
+          "blob": "cccd81fa3fd4617162592eed504a9eafc91a3503",
+          "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
+        },
+        {
+          "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
+          "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "07998f644724fafc06b2ad16936a627f111714dc",
+            "content": "sha256:e67145744d633b4b684004a2c7c34807cc338c0257b6e98fe5aeb288c1c765b6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
+            "content": "sha256:9e12455a29006e8962e631ef256c3e0786a47e915d0c3a668abae195175784f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-82A6JA",
+      "items": [
+        "sha256:1294064cf4c0b94e035031359dc86fb812e2247224ea0781d988e261f923a345"
+      ],
+      "reason": "test-evidence-lanes.toml only added test_master_end_document_staleness.py to the fast lane; removal of the provider-runtime integration rail from the shipped rail list is unchanged.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8PZ4NP",
+      "items": [],
+      "reason": "Pre-existing base-stale dependent at da65eb23 (docs/install/codex.md, owned by CAP-R05); L56 touches neither the document nor its stands_on links; left strictly untouched at HEAD 7aa3b80f.",
+      "revision": 8,
+      "subject": "DPD-GNFCSM"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-97T48J",
+      "items": [
+        "sha256:f9abf40e99c5729e92cc2bd508046a8fda86f14d76e4c57fe01858c054a14dcf"
+      ],
+      "reason": "Added contract field to LandingRequest dataclass in landing.py to thread the series contract into document_staleness; structural plumbing for BUG-R56@v1.",
+      "subject": "hunk:sha256:f9abf40e99c5729e92cc2bd508046a8fda86f14d76e4c57fe01858c054a14dcf"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A5E33D",
+      "items": [
+        "sha256:1f4a3866824f96bc2a2bb5843e17cbcd5ba702ac46132b4db1456210a56b5c17"
+      ],
+      "reason": "Updated onboarding card and sidecar anchors to document standing-base master_document_base wiring for final master landings while keeping checkpoints non-refusing.",
+      "sources": [
+        {
+          "blob": "cccd81fa3fd4617162592eed504a9eafc91a3503",
+          "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/integration_gate.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B7G2DD",
+      "items": [
+        "sha256:6b2231755535f6d024197fb8a9a5445214a917e6b85aba1d08fc9bd5688b0769"
+      ],
+      "reason": "Imported master_document_base in worktrees/modules/record_landing.py; import wiring only.",
+      "subject": "hunk:sha256:6b2231755535f6d024197fb8a9a5445214a917e6b85aba1d08fc9bd5688b0769"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BY3Y5W",
+      "items": [
+        "sha256:2d649f24e55fc0f677c030fa482bc0fb5391ee4bac968ed18689f11292583620"
+      ],
+      "reason": "Re-export imports of DocumentStaleness, document_staleness, and master-end helpers in landing.py; structural wiring covered by BUG-R56@v1 targets.",
+      "subject": "hunk:sha256:2d649f24e55fc0f677c030fa482bc0fb5391ee4bac968ed18689f11292583620"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-C57QBF",
+      "items": [
+        "sha256:00ac589522a4a1f631d460257bf2fccb3c31878029fcc2367e650e2d0971d63d",
+        "sha256:024322ca2c9b5ac2625e83161b0456501fe9bf180b546646fc379fc70911ce29",
+        "sha256:2a48bf09093e01f9c1bd26093dfc6379b9b91b4c7819d2426379c5ddf6748e8d",
+        "sha256:2eb6a19803c691c714af26a4268e2d9de1ebd773cc7d04dfc5322c66b835f65f",
+        "sha256:36250de963ad0536d6aebc9b240271fc22fd8181f97757cab9f03e3be1060dde",
+        "sha256:76a193c6fc99a68d2be4db5edf7db9994d136e5dbe334559a6967c95b73f5fe2",
+        "sha256:7fec27b6feade5cb4213eec53d7eebe072efc8ec8fa718b2fe318093d009033a",
+        "sha256:b5ecbb344c5db885b8c62197746f14937b5a570caf4238394852137e77131620",
+        "sha256:c5c5208ce60d6fd09279f5da8dba27b7816e4fc8ef80fdbb8e46c7d762220893",
+        "sha256:d4f2922e63026251929cf123a6c4d3929983a25ebe30d0dcb6f70f0851322caf",
+        "sha256:dc049c07130bf2ca054ef90a46eca4f317ef93c166df6443d4f59dfff613a95e",
+        "sha256:df56a0a1febd1a9635783ae08d4731a23c5c613a7af2de4bcc9fe11be1515df9",
+        "sha256:e176c98fc02de756aa53083b3bb36b335132c0a7649e44d0c8cbc873e2d75bb3",
+        "sha256:f9424b35a389ef80ae03c8d75cf62d1eb618facc07856cdc54449166c1a9eda4"
+      ],
+      "reason": "Mechanical import/fixture adjustments in test_mik_r118_r124_marks.py for document_staleness.py extraction did not change the card's scope or prose; sidecar anchors were refreshed by citation_fix.",
+      "sources": [
+        {
+          "blob": "d68f4f51d9bc0836fe9bfe700cdb820a417d248f",
+          "path": "mcp/tests/test_mik_r118_r124_marks.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_mik_r118_r124_marks.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CCRDG3",
+      "items": [
+        "sha256:e680ed9fedefc1581d56ad8753338d230f49116b6a0ec9b47306cc8a9822e753"
+      ],
+      "reason": "Removed unused model import in landing.py after extraction to document_staleness.py; carries no independent invariant.",
+      "subject": "hunk:sha256:e680ed9fedefc1581d56ad8753338d230f49116b6a0ec9b47306cc8a9822e753"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CK7B5Y",
+      "items": [
+        "sha256:b275ad521837af6a9acba1694450255cdaf339d9a5ceeca4c20f1bac4fd7cb21"
+      ],
+      "reason": "Added contract field to LandingRequest instantiation in worktrees/knowledge_gate.py; plumbing for BUG-R56@v1.",
+      "subject": "hunk:sha256:b275ad521837af6a9acba1694450255cdaf339d9a5ceeca4c20f1bac4fd7cb21"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DD6M3F",
+      "items": [
+        "sha256:427e7ab833d3d549682ee0a689a0e72a575f96ffe0e0b2083bed2c7f9658e6f8"
+      ],
+      "reason": "Added contract parameter threading in worktrees/knowledge_gate.py internal request builder; plumbing for BUG-R56@v1.",
+      "subject": "hunk:sha256:427e7ab833d3d549682ee0a689a0e72a575f96ffe0e0b2083bed2c7f9658e6f8"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-DHPHW9",
+      "items": [
+        "sha256:029aec32d21aea4910bfcd91c947fcbeb3e83410743bb45e2a4249348329e9c6"
+      ],
+      "reason": "Confirmed docs/reference/worktrees-c09.md on L56 candidate 71957132 (DEP-L6 synced base da65eb23) after updating landing_document_answer and record_landing_result for master_document_base and added document_staleness.py to stands_on.",
+      "revision": 13,
+      "subject": "DPD-9K25G8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ENY4PK",
+      "items": [
+        "sha256:c8c90b4edcfd5a7af28254302ad299ced518fd1da05f67862f758c50c928b65e"
+      ],
+      "reason": "Removed unused dependent-reader import in landing.py after extraction to document_staleness.py; carries no independent invariant.",
+      "subject": "hunk:sha256:c8c90b4edcfd5a7af28254302ad299ced518fd1da05f67862f758c50c928b65e"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EVTY85",
+      "items": [
+        "sha256:0e0f97918fc43d824c7d68f45c5ad83a841a51b4b3145f5bc13447b32ee6a130"
+      ],
+      "reason": "Updated tests overview and sidecar anchors to include test_master_end_document_staleness.py and updated test catalog counts.",
+      "sources": [
+        {
+          "blob": "77ec2f25594a6238fa3a7d0a352c9029160eed5d",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "07998f644724fafc06b2ad16936a627f111714dc",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "3817940555ea17f9d31013646c648a96699094b4",
+          "path": "mcp/tests/test_knowledge_gate_routes.py"
+        },
+        {
+          "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+          "path": "mcp/tests/test_master_end_document_staleness.py"
+        },
+        {
+          "blob": "d68f4f51d9bc0836fe9bfe700cdb820a417d248f",
+          "path": "mcp/tests/test_mik_r118_r124_marks.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "07998f644724fafc06b2ad16936a627f111714dc",
+            "content": "sha256:e67145744d633b4b684004a2c7c34807cc338c0257b6e98fe5aeb288c1c765b6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
+            "content": "sha256:9e12455a29006e8962e631ef256c3e0786a47e915d0c3a668abae195175784f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "77ec2f25594a6238fa3a7d0a352c9029160eed5d",
+            "content": "sha256:10bb235e8b20543d3fd173bab42f0f675fe55d1c3978741c4904b5e9996443b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
+            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-GPKGDX",
+      "items": [
+        "sha256:f51c64004171656faed47a8ccd82a4c582d5a6d72ba1421eefb64abfafb7b430"
+      ],
+      "reason": "Evidence catalog registrations in evidence-lifecycle.toml and test-evidence-lanes.toml only added test_master_end_document_staleness.py; silent role-agent turn-end notification and wake policy is untouched.",
+      "revision": 8,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H09GBA",
+      "items": [
+        "sha256:5087461207518b70da786dea323aa18f57ba9b907ef2d7f88e681cdb61807193"
+      ],
+      "reason": "Updated worktrees overview and sidecar anchors for master_document_base and series-contract wiring across worktrees/knowledge_gate.py.",
+      "sources": [
+        {
+          "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
+          "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J3CRA8",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Updated onboarding card and sidecar anchors to reflect registering test_master_end_document_staleness.py in the fast evidence lane.",
+      "sources": [
+        {
+          "blob": "07998f644724fafc06b2ad16936a627f111714dc",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-JAZ5GR",
+      "items": [],
+      "reason": "Confirmed CONTRIBUTING.md on L56 candidate 71957132 (DEP-L6 synced base da65eb23) after adding test_master_end_document_staleness.py to test-evidence-lanes.toml; all contributor test-lane and catalog guidance remains accurate.",
+      "revision": 21,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JCMKTB",
+      "items": [
+        "sha256:c197b25e371e7e655598c28ff31caa79227f2a5339af013a847841e161a623ca"
+      ],
+      "reason": "Removed now-unused original_base_pair import in worktrees/modules/record_landing.py; import cleanup only.",
+      "subject": "hunk:sha256:c197b25e371e7e655598c28ff31caa79227f2a5339af013a847841e161a623ca"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-K0R3RA",
+      "items": [
+        "sha256:c8c76c2657ebda337e0df4a8b2739d288a26dc9c71b99f286da5cf8ec124470d"
+      ],
+      "reason": "Confirmed docs/reference/knowledge-system.md on L56 candidate 71957132 (DEP-L6 synced base da65eb23) after extracting document_staleness.py from landing.py and added document_staleness.py to stands_on.",
+      "revision": 10,
+      "subject": "DPD-TXRND9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KC64W7",
+      "items": [
+        "sha256:7ce3efaeccd871f83f603a8c3df250860a1b52357f455a1e5211b4cad8cf79e8"
+      ],
+      "reason": "Updated application overview and sidecar references to include application/knowledge_gate/document_staleness.py and reflect the master-end staleness split.",
+      "sources": [
+        {
+          "blob": "b9165f63b94d23af5a195f81341c98d80df776a1",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/document_staleness.py"
+        },
+        {
+          "blob": "c23087e8ef627349cbe6836f5adea40be938ce5c",
+          "path": "mcp/src/agents_remember/application/knowledge_gate/landing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-39FYQE",
+          "revision": 1
+        },
+        {
+          "id": "INV-6GBJC6",
+          "revision": 1
+        },
+        {
+          "id": "INV-8R2CRC",
+          "revision": 1
+        },
+        {
+          "id": "INV-95NQR7",
+          "revision": 1
+        },
+        {
+          "id": "INV-V3N6NW",
+          "revision": 1
+        },
+        {
+          "id": "INV-WKM7SS",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-N2Y63X",
+      "items": [
+        "sha256:18323e2657c6aa1fbce7f4a9da93b3a9f7c72b9fd4ae1494cfc2a1e88d06fba0"
+      ],
+      "reason": "Examined all six members of FAM-Q5J2ZC (disabled-route named refusals) after integration_gate_block and test_knowledge_gate_routes.py touched INV-95NQR7; L56 changes only master-end document staleness base and classification and does not affect any disabled-route refusal member or the family's joint guarantee.",
+      "revision": 2,
+      "subject": "FAM-Q5J2ZC"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NBM4MN",
+      "items": [
+        "sha256:4620d3eb241d5fd7aec3a00fc3de37c5dbcd00a8028623fcebbe0dbc8b4e77fb"
+      ],
+      "reason": "Removed unused helper import in landing.py after moving staleness computation to document_staleness.py; carries no independent invariant.",
+      "subject": "hunk:sha256:4620d3eb241d5fd7aec3a00fc3de37c5dbcd00a8028623fcebbe0dbc8b4e77fb"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NDTRKW",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Updated onboarding card and sidecar anchors to reflect adding test_master_end_document_staleness.py to the evidence lifecycle catalog.",
+      "sources": [
+        {
+          "blob": "77ec2f25594a6238fa3a7d0a352c9029160eed5d",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PH9NHK",
+      "items": [
+        "sha256:47318b7296d905c4d979c5208b6b45e8a202f6300a64ea3ae9cfd37ac773d969"
+      ],
+      "reason": "Import update in worktrees/knowledge_gate.py for standing-base helpers; carries no independent invariant.",
+      "subject": "hunk:sha256:47318b7296d905c4d979c5208b6b45e8a202f6300a64ea3ae9cfd37ac773d969"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R7BVA1",
+      "items": [
+        "sha256:40bdadee6462a88eea65a71a36b94ee4a57599c119b4f2d262e526bb1fce8893"
+      ],
+      "reason": "Removed unused worktree/contract import in landing.py after extraction to document_staleness.py; carries no independent invariant.",
+      "subject": "hunk:sha256:40bdadee6462a88eea65a71a36b94ee4a57599c119b4f2d262e526bb1fce8893"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-REY78N",
+      "items": [],
+      "reason": "Pre-existing base-stale dependent at da65eb23 (docs/reference/settings-json.md, held for BUG master end per BUG-R56@v1); L56 touches neither the document nor its stands_on links; left strictly untouched at HEAD 7aa3b80f.",
+      "revision": 20,
+      "subject": "DPD-W0T9V9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RSHZAM",
+      "items": [],
+      "reason": "Left strictly untouched at HEAD 7aa3b80f per Manager ruling (20261126T175704Z): docs/design/python-evidence-system.md:102-104 carries a verified pre-existing contradiction ('and one fixture model in the test tree' uses exact-source, whereas all 4 exact-source artifacts live under scripts/e2e_harness/ and anchor_fixture_models.py uses exact). Do NOT falsely confirm; tracked for 261112-BUG master end per BUG-R56@v1:70.",
+      "revision": 26,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cccd81fa3fd4617162592eed504a9eafc91a3503",
+            "content": "sha256:42b9f1f622b674871030148b042028464ecf0ea485ff31b17c261ed469ef167d",
+            "locator": {
+              "kind": "symbol",
+              "name": "integration_gate_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
+          },
+          "before": {
+            "blob": "d2f3e6ac1adf4ec90ff5a8150cb65d2e46941403",
+            "content": "sha256:786ec8f04b4a4208f1a3c7630a22745d96e8c226888c6076efe93e60f23e422b",
+            "locator": {
+              "kind": "symbol",
+              "name": "integration_gate_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
+          },
+          "id": "RLZ-DH6NBY"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-RX8EPC",
+      "items": [
+        "sha256:66eded4c11cb4484e9f297824d437d55844ecdd493704c5cac25fcf13680e618"
+      ],
+      "reason": "integration_gate_block only switched its master-end document_base input to master_document_base; legacy-format memory refusal behavior is untouched.",
+      "revision": 4,
+      "subject": "INV-JT28KJ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S6XY0R",
+      "items": [
+        "sha256:5a77fe0bae97d7bb6ff3903bf58b56cf87545cee26ab85519e469757eda13454"
+      ],
+      "reason": "Updated onboarding card and sidecar anchors to document master_document_base and series-contract forwarding in landing_document_answer.",
+      "sources": [
+        {
+          "blob": "ea1448066a86b5539b47d264aeb989b354ad3de9",
+          "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/knowledge_gate.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "77ec2f25594a6238fa3a7d0a352c9029160eed5d",
+            "content": "sha256:10bb235e8b20543d3fd173bab42f0f675fe55d1c3978741c4904b5e9996443b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
+            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "07998f644724fafc06b2ad16936a627f111714dc",
+            "content": "sha256:e67145744d633b4b684004a2c7c34807cc338c0257b6e98fe5aeb288c1c765b6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
+            "content": "sha256:9e12455a29006e8962e631ef256c3e0786a47e915d0c3a668abae195175784f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-S8VK30",
+      "items": [
+        "sha256:62006b9de4a8d9d36061570cf22bc65fb5625ceb0eac40584118490821ce08f0"
+      ],
+      "reason": "evidence-lifecycle.toml and test-evidence-lanes.toml registered the new test module cleanly without duplicate identity or stale entries; evidence catalog boundary invariant continues to hold.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "considered": [
+        "FAM-FQ8TF2",
+        "FAM-NQQP2T"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-SBAJ1A",
+      "items": [
+        "sha256:180fd695954bfa026832c3884c776565e4316b91d034265aa7eb8329e5f53936"
+      ],
+      "reason": "Considered FAM-FQ8TF2 (dependent deferrals and pre-base staleness flags) and FAM-NQQP2T (every landing admits its actual pair). BUG-R56@v1 explicitly does not read deferrals and is scoped to master-end document staleness attribution rather than landing pair admission, so it stands as an independent invariant.",
+      "revision": 1,
+      "subject": "membership:INV-PVTE0M"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-THH1VB",
+      "items": [
+        "sha256:23ceb13aed7b97c450e77b4bfa5fae7634500d61e0c2718c8efce443cb7fc8e4"
+      ],
+      "reason": "Updated onboarding card and sidecar anchors to document _landing_request computing master_document_base against the judged landed pair.",
+      "sources": [
+        {
+          "blob": "8d9aef56d95f657acfd25c60a681d1b8ec4993b7",
+          "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/record_landing.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VZGDSW",
+      "items": [],
+      "reason": "Pre-existing base-stale dependent at da65eb23 (docs/install/pi.md, owned by CAP-R05); L56 touches neither the document nor its stands_on links; left strictly untouched at HEAD 7aa3b80f.",
+      "revision": 8,
+      "subject": "DPD-2B7PTY"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WA8RQG",
+      "items": [
+        "sha256:19222c751ec0198323c73ea76f08d337eafaf1faa01a79f77a0ba09085604977"
+      ],
+      "reason": "Import cleanup in application/knowledge_gate/landing.py after extracting document_staleness to document_staleness.py; carries no independent invariant.",
+      "subject": "hunk:sha256:19222c751ec0198323c73ea76f08d337eafaf1faa01a79f77a0ba09085604977"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WFD4ZB",
+      "items": [
+        "sha256:1e90ee1ce01bb587e46d827584ae44d11e9526062c5446498b3fc41b99972e6d"
+      ],
+      "reason": "Removed unused Git command import in landing.py after extraction to document_staleness.py; carries no independent invariant.",
+      "subject": "hunk:sha256:1e90ee1ce01bb587e46d827584ae44d11e9526062c5446498b3fc41b99972e6d"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Y7R6R0",
+      "items": [
+        "sha256:693d00690c8c6d2fd7d01758f9dda56a742585a8cc03f549b4a5bc0d26a25e6b"
+      ],
+      "reason": "Created onboarding card and sidecar documenting the 16 repository-built tests covering BUG-R56@v1 master-end staleness rules 1-5 and checkpoint boundaries.",
+      "sources": [
+        {
+          "blob": "a1c4eb0c55400c8009bc00950d59ff21d2a6c222",
+          "path": "mcp/tests/test_master_end_document_staleness.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_master_end_document_staleness.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-YFTEP3",
+      "items": [
+        "sha256:b1d17df81e270300f381c7ab2837e70958a81c48d67897b9854675ad0e8731c4"
+      ],
+      "reason": "Confirmed docs/workflows.md on L56 candidate 71957132 (DEP-L6 synced base da65eb23) after record_landing.py switched master-end staleness to master_document_base; workflow guidance remains accurate.",
+      "revision": 12,
+      "subject": "DPD-XAARS1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZA5R91",
+      "items": [
+        "sha256:67d7fdbd89f0ff7f98b9c40ccad732f4d9f05e2da9e0344b3a7e2b240290b39e"
+      ],
+      "reason": "Updated citation [25] note and sidecar anchor for the expanded master-end staleness route test in test_knowledge_gate_routes.py.",
+      "sources": [
+        {
+          "blob": "3817940555ea17f9d31013646c648a96699094b4",
+          "path": "mcp/tests/test_knowledge_gate_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_gate_routes.py"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:0618c9c8fa23ab20ec69841064eb9f4d990b3d85975882bb25856793c21c90d6",
+      "record": "DEC-DFN078",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T15:55:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L56",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:a07551b207153399b1f6993f8e8f108abe9bde856709e96971098c9deac876e8",
+      "record": "DPD-78737N",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-26T15:55:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L56",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:f25c3cebc6fd9d6492d45e55c619a6ab4e4dcb4af2e154dad67caee7120178ba",
+      "record": "DPD-78737N",
+      "revision": 20,
+      "writer": {
+        "at": "2026-11-26T18:45:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L56",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:5f758c20135598cd1cf1d670873d6ee59caa2db689edafac7adafebd8074da1a",
+      "record": "DPD-78737N",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-26T19:03:01+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L56",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:7cad53a6adb2bfa0fa7781eecdeb8650ca69689f9b4ae0ed7bfe60b9be9ee0ab",
+      "record": "DPD-9K25G8",
+      "revision": 13,
+      "writer": {
+        "at": "2026-11-26T19:03:01+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L56",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:9fc88e4b72e7b4bd281ac76540a2b0c72570bc539d77439696f72833ab7bced1",
+      "record": "DPD-CZBR1Q",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-26T19:03:01+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L56",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:60305a9cbbd6516a1376cbeffbbcd9809ddb198f7c458356e60390331cedbada",
+      "record": "DPD-TXRND9",
+      "revision": 10,
+      "writer": {
+        "at": "2026-11-26T19:03:01+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L56",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:916ea696dcdd3a866e1f93194e67e3634fe4ed97e6a69bcf7fa64ab01c2a6e58",
+      "record": "DPD-X6G7K3",
+      "revision": 30,
+      "writer": {
+        "at": "2026-11-26T19:03:01+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L56",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:626c3fbf6d36c75d663d89bad1851330ed1ba5cda9719d8a7118665d1ca96b71",
+      "record": "DPD-XAARS1",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-26T19:03:01+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L56",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:445dac0df7fbdf91d24139790825d5084ff4e6cbbb0d34762bc26ad1ebc3cf85",
+      "record": "DPD-ZT8YY7",
+      "revision": 27,
+      "writer": {
+        "at": "2026-11-26T15:55:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L56",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:feedae1a2cbdb78ae17602e7295cd706869a9ac2a248cd93eea63b977c44dfa7",
+      "record": "DPD-ZT8YY7",
+      "revision": 28,
+      "writer": {
+        "at": "2026-11-26T18:45:49+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L56",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:1b192cef4dfcf1cc38ce49e9a94d70fb16c9fe30e244a68c270d71e7e54005c7",
+      "record": "DPD-ZT8YY7",
+      "revision": 29,
+      "writer": {
+        "at": "2026-11-26T19:03:01+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L56",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:5e6d789df1bc450c2acbfcbce20bc045a57d2e75b7a99c1e67409278d15040f2",
+      "record": "INV-PVTE0M",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T15:55:02+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L56",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}
