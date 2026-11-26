@@ -6,13 +6,13 @@
     ],
     "justification": "The renewal budget planner writes generated measurements while the record and independent current-budget checks read authored ceilings; conflating these would silently let a routine text renewal authorize a ceiling increase."
   },
-  "applicability": "The instruction-renewal command and current capsule-budget record.",
+  "applicability": "The instruction-renewal command, scripts/instruction_renewal/budgets.py, and current capsule-budget record.",
   "conditions": [
-    "Current generated measurements are stored separately from authored ceiling decisions."
+    "Current generated measurements are stored separately from authored token-ceiling decisions in wire_budget.py."
   ],
   "exclusions": [
-    "Developer-approved authored ceiling changes, including D822, are separate from generated renewal.",
-    "A whole-current-record fingerprint or individual item budget is not required."
+    "Developer-approved authored ceiling changes, including D822 and CAP-R03 token ceilings, are separate from generated renewal.",
+    "A whole-current-record fingerprint or individual item word budget is not required."
   ],
   "id": "INV-4HZG3V",
   "origin": {
@@ -26,27 +26,20 @@
     "leaf": "261112-RSM-L1",
     "task": "261112-RSM"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Instruction renewal regenerates current measurements and source identities without changing authored ceilings; changing a ceiling remains the developer's decision.",
+  "statement": "Instruction renewal regenerates current measurements and source identities in capsule-budgets-current.json and checks compiled capsule tokens against authored COMPILED_CAPSULE_TOKEN_CEILINGS in wire_budget.py without changing authored ceilings; changing a ceiling remains the developer's decision.",
   "supersedes": [],
+  "title": "Instruction renewal regenerates measurements without changing token ceilings",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "261112-BUG-L8",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "261112-BUG",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T13:09:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

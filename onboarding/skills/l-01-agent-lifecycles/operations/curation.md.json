@@ -4,69 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:c8378e7534ca356f3f72832396b858027d1c259ad41002634bff75fac999173f",
+        "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+        "content": "sha256:0151dbe4e99b26af416eb3ad36dc70fb596ca7dbc734d503e6eb1e3f6651d295",
         "locator": {
-          "end": 45,
+          "end": 22,
           "kind": "line_range",
-          "start": 37
-        }
-      },
-      "id": "RLZ-090539",
-      "invariant": "INV-C8SVFY",
-      "origin": {
-        "handoffEntry": "PNT-R04@v1 §1 / F1",
-        "leaf": "260928-MIK-L90"
-      },
-      "rationale": "Curator verifies this build and launch intake before using any writer.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:0e09b6ab1a83ae89e79e4f82fb2ec9c70dc51cb35f517976b5bd816be5efb4f8",
-        "locator": {
-          "end": 87,
-          "kind": "line_range",
-          "start": 87
-        }
-      },
-      "id": "RLZ-0EMKR7",
-      "invariant": "INV-9DAS08",
-      "origin": {
-        "handoffEntry": "K3-9DAS08-curation-bounded-repair",
-        "leaf": "260928-MIK-L84"
-      },
-      "rationale": "The Curator applies the bounded encountered-memory repair, reports every repair and continues without a broad sweep.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:95e15343300e7269449f9701ecc5a9a1d9ab4340524ab0a51538e653b78a71d6",
-        "locator": {
-          "end": 45,
-          "kind": "line_range",
-          "start": 39
-        }
-      },
-      "id": "RLZ-0GEXHP",
-      "invariant": "INV-NNQR91",
-      "origin": {
-        "handoffEntry": "L71-CURRENT242-W-19",
-        "leaf": "260928-MIK-L71"
-      },
-      "rationale": "The canonical operations/curation.md carries the applicable own-file first-read/task_doc-only write and report/scratch instructions for its role/operation; it is the source the public generator ships.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:35a25b2c5ce29181a871db3be75c5e3b54065f48d39c51cc26ada21739694921",
-        "locator": {
-          "end": 82,
-          "kind": "line_range",
-          "start": 80
+          "start": 22
         }
       },
       "id": "RLZ-0MD7QE",
@@ -80,88 +23,12 @@
     },
     {
       "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:ec5f54146552ce1e00edd33226926235d27c46cf9218538a3d88ea43d08e2f5f",
+        "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+        "content": "sha256:bd7cf55dbb60b360f4b4cbb48348cb9bc94456f84ad85fec60cf6bff8497a64d",
         "locator": {
-          "end": 8,
+          "end": 25,
           "kind": "line_range",
-          "start": 8
-        }
-      },
-      "id": "RLZ-1BV7D5",
-      "invariant": "INV-ZNJ14G",
-      "origin": {
-        "handoffEntry": "K3-ZNJ14G-curation-direct-inputs",
-        "leaf": "260928-MIK-L84"
-      },
-      "rationale": "The Worker supplies its freeze and hand-off list, and the Reviewer its passed code freeze, directly to the Curator.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:70710b4a1d6956f454d3331cce749163b2cc9f0d78544cee5ef71196b617691f",
-        "locator": {
-          "end": 53,
-          "kind": "line_range",
-          "start": 53
-        }
-      },
-      "id": "RLZ-1K4M96",
-      "invariant": "INV-JAACMT",
-      "origin": {
-        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-continuation",
-        "leaf": "260928-MIK-L62"
-      },
-      "rationale": "A report naming an authorized next step needs no new Manager go and continues through the whole handover while retaining repairs, escalation and genuine stops.",
-      "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:42ec4631f132f99ee5d29b7a9998c0cf89d88cf761a12d56ddd0238c4a287920",
-        "locator": {
-          "end": 117,
-          "kind": "line_range",
-          "start": 117
-        }
-      },
-      "id": "RLZ-27TVRT",
-      "invariant": "INV-945YZ4",
-      "origin": {
-        "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
-        "leaf": "260928-MIK-L62"
-      },
-      "rationale": "The curation operation keeps partial and refused handovers partial, has faulty input corrected through the same tool, and keeps validator and gate findings as repairs. The covered correct-write recovery is reached through the shared every-role pointer.",
-      "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:2a5c035ee6e0326f7fb926dabaa881eaafb7b8785d8431e3a2678a2b12fb3484",
-        "locator": {
-          "end": 48,
-          "kind": "line_range",
-          "start": 47
-        }
-      },
-      "id": "RLZ-2JHTJ3",
-      "invariant": "INV-BCEZZM",
-      "origin": {
-        "handoffEntry": "MIK-R101@v1 rule 8",
-        "leaf": "260928-MIK-L101"
-      },
-      "rationale": "For every role, the curation operation points to orientation's 'Bind curation to the serving build' before any memory decision or write. That section carries the selected-serving-build and clean-main reference rule, the fixture-only leaf proof and the no-install, no-guard-disable exclusion.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:570f65d4463f660446da4117cf8877ea9b30088b26d2f7b0e0c516ee93b239f4",
-        "locator": {
-          "end": 95,
-          "kind": "line_range",
-          "start": 94
+          "start": 24
         }
       },
       "id": "RLZ-3VJ8EH",
@@ -170,55 +37,17 @@
         "handoffEntry": "L62-CUR-6db-attach-INV-BCEZZM",
         "leaf": "260928-MIK-L62"
       },
-      "rationale": "The Manager-directed authority paragraph retains the no-code/no-gate/no-lifecycle boundary while qualifying task-document edits only by the scoped recovery route.",
+      "rationale": "The Manager-scoped Curator authority block retains the no-Git, no-code/gate/lifecycle/contract/closeout, no-invented-hash, and no-silencing-attestation boundaries.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:3a6eb4dea3c62034f66cf7351a677e108bfe827ddc2ae01f77209a75cb7e2b8f",
+        "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+        "content": "sha256:de1372d7b5482f0ab0340e49130f58713c468baf6f7101a151adf96dc55aa208",
         "locator": {
-          "end": 129,
+          "end": 28,
           "kind": "line_range",
-          "start": 129
-        }
-      },
-      "id": "RLZ-4YAPS7",
-      "invariant": "INV-W24J6Q",
-      "origin": {
-        "handoffEntry": "R99-curator-notice-recovery",
-        "leaf": "260928-MIK-L99"
-      },
-      "rationale": "Before responding to failed delivery of a required Manager notice, the curation operation sends the Curator to the shared refused-handover rule: record the notice as pending, continue independent work, retry through role_message, and never turn it into a developer question in its own chat.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:bef223e783e831f66dc5eb4b95a0016af7749d9b83dd055234f22569eddf0fb2",
-        "locator": {
-          "end": 87,
-          "kind": "line_range",
-          "start": 85
-        }
-      },
-      "id": "RLZ-9AWEEA",
-      "invariant": "INV-9DAS08",
-      "origin": {
-        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-curator-healing",
-        "leaf": "260928-MIK-L62"
-      },
-      "rationale": "'Repair and republish' applies the bounded encountered-memory repair of the role's instructions, requires every repair to be reported, forbids a broad sweep and reruns the complete checks and independent fact-check before handover.",
-      "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:eb4e198080760eef7c684698ae343c4e2b0cbb66042e8d6ef3ff20e23a57596a",
-        "locator": {
-          "end": 106,
-          "kind": "line_range",
-          "start": 106
+          "start": 28
         }
       },
       "id": "RLZ-A0HXGR",
@@ -232,31 +61,12 @@
     },
     {
       "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:2771e8e7dabd805221cae30790e60c04eda4e5d7dc87d1dac6613ef8e3d8e8a5",
+        "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+        "content": "sha256:fd3ef1733c15f9e3d754bdc1d48e659680b1f226166f4ecfe7248d4196a6d6e6",
         "locator": {
-          "end": 59,
+          "end": 34,
           "kind": "line_range",
-          "start": 53
-        }
-      },
-      "id": "RLZ-B0CM8K",
-      "invariant": "INV-JAACMT",
-      "origin": {
-        "handoffEntry": "L62-CUR-6414-continuation",
-        "leaf": "260928-MIK-L62"
-      },
-      "rationale": "A next-authorized-step report needs no new Manager go; continue through the whole handover.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:8f50640da2d94e09cf1dc538da784d7394195b516df1cb2f2856c6e459ef0c6d",
-        "locator": {
-          "end": 18,
-          "kind": "line_range",
-          "start": 16
+          "start": 34
         }
       },
       "id": "RLZ-BB979Z",
@@ -265,36 +75,17 @@
         "handoffEntry": "K3-ZNJ14G-curation-ownership",
         "leaf": "260928-MIK-L84"
       },
-      "rationale": "Keeps leaf seats direct and the Manager on its occasions: Worker and Reviewer answer the Curator directly, the Manager reads leaf state from reports and keeps acceptance, landing and the Git transaction.",
+      "rationale": "Limits Manager notices during curation to named occasions (delivery/seat, authority, beyond-limit passes, disputed findings, reserved sync steps) while routing sync memory conflicts directly to Curator.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:2477b66e94545ed0eb95376f47432ea63ab0204e2083412e4fd8859888a014ff",
+        "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+        "content": "sha256:e5c2fe31c538d2c12223cbaf128a85a40718f85345556f04746b19595a3275f7",
         "locator": {
-          "end": 89,
+          "end": 31,
           "kind": "line_range",
-          "start": 85
-        }
-      },
-      "id": "RLZ-BJQYDS",
-      "invariant": "INV-QPY4KH",
-      "origin": {
-        "handoffEntry": "MIK-R84@v5 part1 / L62 memory-tool continuation",
-        "leaf": "260928-MIK-L84"
-      },
-      "rationale": "The curation workflow retains the same independent-tool continuation and dependent-stop instruction at its working step.",
-      "role": "unclassified"
-    },
-    {
-      "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:afb8b66d3e3681bacdfcd0bdd9bf5a876f7dffe4d93ff936d874880e00221dc3",
-        "locator": {
-          "end": 127,
-          "kind": "line_range",
-          "start": 125
+          "start": 28
         }
       },
       "id": "RLZ-EEEG4W",
@@ -303,36 +94,36 @@
         "handoffEntry": "MIK-R70@v1 rule 4",
         "leaf": "260928-MIK-L70"
       },
-      "rationale": "The curation handoff says terminal/finalizer evidence proves turn end only; it preserves direct independent memory review and excludes tool-generated acceptance claims.",
+      "rationale": "Retains curation as evidence (not a gate), writing the coherence record before turn end, and direct Reviewer delivery via role_message; terminal/finalizer vocabulary consolidated into core/acceptance.md and core/every-role.md:33.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:21fc90beb21fe2d30fcd2074fda73da23727db98408253021b5abc36e1e31d0e",
+        "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+        "content": "sha256:9f85003c16774856b35a5b600421ef95069ad7e99375c72a9ac209049d418afd",
         "locator": {
-          "end": 119,
+          "end": 28,
           "kind": "line_range",
-          "start": 119
+          "start": 22
         }
       },
-      "id": "RLZ-JKHSZ1",
-      "invariant": "INV-ZNJ14G",
+      "id": "RLZ-HVJ3RJ",
+      "invariant": "INV-AKRZAN",
       "origin": {
-        "handoffEntry": "K3-ZNJ14G-curation-questions",
-        "leaf": "260928-MIK-L84"
+        "handoffEntry": "MIK-R101@v1 rule 4",
+        "leaf": "260928-MIK-L101"
       },
-      "rationale": "A missing comparison side is asked of the Worker or the Reviewer directly; the Manager only about ownership or authority.",
+      "rationale": "Moved from roles/curator.md to operations/curation.md:22-28: retains OM-2 independent fact-check and states curation is evidence, not a gate, alongside coherence validation before closeout.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:42d400b476e16758642720966db54aa1abf4c7249f5ead40a9f9676a1e381b5a",
+        "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+        "content": "sha256:07e2d34b2b99a62cc4d18392dd5287e892d97d36ac7521c57f7cabcc6ad0536d",
         "locator": {
-          "end": 121,
+          "end": 34,
           "kind": "line_range",
-          "start": 121
+          "start": 31
         }
       },
       "id": "RLZ-K60P42",
@@ -346,50 +137,12 @@
     },
     {
       "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:42ec4631f132f99ee5d29b7a9998c0cf89d88cf761a12d56ddd0238c4a287920",
+        "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+        "content": "sha256:0d8033447f3f25da5d76aa7cca0262be110f5c3357645334f435d1454cfbf159",
         "locator": {
-          "end": 117,
+          "end": 31,
           "kind": "line_range",
-          "start": 117
-        }
-      },
-      "id": "RLZ-MSJDKH",
-      "invariant": "INV-BCEZZM",
-      "origin": {
-        "handoffEntry": "L62-CUR-6db-attach-INV-BCEZZM",
-        "leaf": "260928-MIK-L62"
-      },
-      "rationale": "Partial and refused handovers stay partial ('planned' and 'refused' wrote nothing), faulty input is corrected through the same tool, and validator and gate findings still require repair. Scoped correct-write recovery waives none of them.",
-      "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:3a0d8d5209986790723d647b44d6988b146968392d4fbc6b99fa40cd22b3edc0",
-        "locator": {
-          "end": 78,
-          "kind": "line_range",
-          "start": 70
-        }
-      },
-      "id": "RLZ-P04FKN",
-      "invariant": "INV-CAJ09X",
-      "origin": {
-        "handoffEntry": "BUG-R41.v1.rule-4",
-        "leaf": "261112-BUG-L41"
-      },
-      "rationale": "Requires the Curator's exact-pair knowledge_read(view='dependent', staleOnly=true, codeTreeId='working-tree') with before/after candidate match, full pagination and durable receipt.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:afb8b66d3e3681bacdfcd0bdd9bf5a876f7dffe4d93ff936d874880e00221dc3",
-        "locator": {
-          "end": 127,
-          "kind": "line_range",
-          "start": 125
+          "start": 31
         }
       },
       "id": "RLZ-PDP66S",
@@ -398,55 +151,17 @@
         "handoffEntry": "MIK-R70@v1 rule 4",
         "leaf": "260928-MIK-L70"
       },
-      "rationale": "This curation-operation handoff retains the turn-end-only boundary and direct Reviewer delivery; it is not a separate Curator certification.",
+      "rationale": "Retains direct Reviewer delivery via role_message and writing the coherence record before turn end without certifying acceptance; terminal/finalizer turn-end-only wording lives in core/acceptance.md.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:95e15343300e7269449f9701ecc5a9a1d9ab4340524ab0a51538e653b78a71d6",
+        "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+        "content": "sha256:0d8033447f3f25da5d76aa7cca0262be110f5c3357645334f435d1454cfbf159",
         "locator": {
-          "end": 45,
+          "end": 31,
           "kind": "line_range",
-          "start": 39
-        }
-      },
-      "id": "RLZ-PFT43W",
-      "invariant": "INV-K6Q2R4",
-      "origin": {
-        "handoffEntry": "PNT-R04@v1 §4 / F10",
-        "leaf": "260928-MIK-L90"
-      },
-      "rationale": "Curator intake preserves launch task-document and reader arguments.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:ae11de20c14693b77c0087cdfede1714a104c5912a8792075ffd695b19dc8fbf",
-        "locator": {
-          "end": 136,
-          "kind": "line_range",
-          "start": 134
-        }
-      },
-      "id": "RLZ-R4SKXV",
-      "invariant": "INV-7E3JNX",
-      "origin": {
-        "handoffEntry": "R99-8-own-sync",
-        "leaf": "260928-MIK-L99"
-      },
-      "rationale": "The curation operation sends memory conflicts from the Worker's leaf sync directly to the Curator and keeps the transaction steps with the Manager. Before repair, it points to 'Synchronize the leaf' for the content-only boundary and the Manager-staging and Worker-continuation sequence.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:c24c96165aec600b417ae27af700b1605034c7004de3a81df91339795cdc78a3",
-        "locator": {
-          "end": 134,
-          "kind": "line_range",
-          "start": 123
+          "start": 31
         }
       },
       "id": "RLZ-VESCVY",
@@ -455,17 +170,17 @@
         "handoffEntry": "R99-1-direct-loop",
         "leaf": "260928-MIK-L99"
       },
-      "rationale": "Owns direct producer intake and memory delivery to Reviewer without routing its result through Manager.",
+      "rationale": "Directs Curator to send its memory candidate directly to Reviewer via role_message and evidenced code concerns directly to Worker and Reviewer without routing through Manager.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:39a63615e2e0a6c98bac332902f388da9a0dc67b8a9398276b412b081f3b07f9",
+        "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+        "content": "sha256:1f54bb214e94a58f01c11aa885212c38b1c97f63a40ea481403c6c72143a1d05",
         "locator": {
-          "end": 48,
+          "end": 17,
           "kind": "line_range",
-          "start": 39
+          "start": 10
         }
       },
       "id": "RLZ-VXHQMN",
@@ -474,17 +189,17 @@
         "handoffEntry": "L71-CURRENT242-W-19",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "Canonical operations/curation.md carries task-bound own-file first reads of the rendered task and JSON file, exact reader scope, a writer bound to the selected serving build with every output inside the selected memory root, and a pointer to orientation's serving-build binding for the starting-server boundary.",
+      "rationale": "Canonical operations/curation.md carries writer output resolution in workspace.memoryRoot, worklist/reader workflow and checks propagated to the packaged runtime tree.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:933693580a5a12f17ae439142bcb4d4dde0a057bc42b0a6dbd1e66147fa33df8",
+        "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+        "content": "sha256:0151dbe4e99b26af416eb3ad36dc70fb596ca7dbc734d503e6eb1e3f6651d295",
         "locator": {
-          "end": 87,
+          "end": 22,
           "kind": "line_range",
-          "start": 80
+          "start": 22
         }
       },
       "id": "RLZ-WJQ4HW",
@@ -493,17 +208,17 @@
         "handoffEntry": "L62-CUR-6414-curator-healing",
         "leaf": "260928-MIK-L62"
       },
-      "rationale": "After bounded repairs, complete checks and independent fact-check remain before handover. Independent fact-check is required; findings repaired with full-operation rerun.",
+      "rationale": "Requires complete knowledge_integrity_check, full memory_quality_check (rerunning until curatorActionableCount=0 and ready-for-closeout), and non-authoring OM-2 independent fact-check before handover.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:57609ea7e4e2cd15478ea2d6a06753c91909f3cf40087357408bc3bef38e2ca4",
+        "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+        "content": "sha256:aae3b2e23b0d19e3e9f2ad76ea5b8fe0c658c147220fc66f0612a821d111354f",
         "locator": {
-          "end": 48,
+          "end": 12,
           "kind": "line_range",
-          "start": 37
+          "start": 12
         }
       },
       "id": "RLZ-X79EQQ",
@@ -512,17 +227,17 @@
         "handoffEntry": "PNT-R04@v1 §1 / F1",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "Curation verifies launching-build identity and supplied context before its public writer.",
+      "rationale": "Curation workflow verifies writer outputs resolve in workspace.memoryRoot and checks supplied worklist/diff context before ingest, while launching-build identity verification lives in reference/knowledge/serving-build.md.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-        "content": "sha256:0ec721e2cda7edb353995ddc6520df50cd3fcbb25669cf4b4efd25fc8dc13674",
+        "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+        "content": "sha256:038646a85a21b60a7623aab352fe707543d2325fcd2aa9dc369962a91d1de70e",
         "locator": {
-          "end": 59,
+          "end": 14,
           "kind": "line_range",
-          "start": 59
+          "start": 14
         }
       },
       "id": "RLZ-YFDXH3",
@@ -541,77 +256,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:6d499dd30edc6f4030acc944fdeb0303de4806508113d2fe5cf14a6850bf3dcb",
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:3e291c26f9c37dfbc095bde17c5d6fb0aeb249ee98c4c216c45e979681fa4345",
             "locator": {
-              "end": 127,
+              "end": 34,
               "kind": "line_range",
-              "start": 95
+              "start": 22
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:4e6bf8994a2889ebd2ead57252c36edc23ec9aaf19e314edbdf5f8746ae40f19",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:28011563333b27c409ff845e1f83f47d52bb01c7d61aac655649c3fea32cc513",
             "locator": {
-              "end": 120,
+              "end": 34,
               "kind": "line_range",
-              "start": 120
+              "start": 34
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC, the Manager-leaf-closeout stale dependent-document read and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:05f40ab633ee29cf06482af44815cb9153ce4617163e284413e4732c915fbae2",
-            "locator": {
-              "end": 140,
-              "kind": "line_range",
-              "start": 14
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC, the Manager-leaf-closeout stale dependent-document read and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:05f40ab633ee29cf06482af44815cb9153ce4617163e284413e4732c915fbae2",
-            "locator": {
-              "end": 140,
-              "kind": "line_range",
-              "start": 14
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC, the Manager-leaf-closeout stale dependent-document read and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:05f40ab633ee29cf06482af44815cb9153ce4617163e284413e4732c915fbae2",
-            "locator": {
-              "end": 140,
-              "kind": "line_range",
-              "start": 14
-            }
           },
           "kind": "code"
         }
@@ -636,71 +300,70 @@
       ]
     },
     "14": {
-      "note": "Current curation continues from a report to the next authorized step without a new Manager go. It verifies card sentences against source, repairs wrong or missing memory encountered along its way beyond quality-check findings, names each repair and makes no broad sweep. Code changes, requirement decisions and another leaf’s work return to their owner. A correction qualifies every affected false body claim; full checks and the independent fact-check run before handover.",
+      "note": "Current curation verifies card sentences against source, delegates bounded encountered-memory repairs (beyond quality-check findings, named, without a broad sweep) to reference/curator/exceptions-and-recovery.md, routes code concerns, requirement decisions and cross-leaf work to their owners, and requires full checks and the independent OM-2 fact-check before handover.",
       "targets": [
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:2771e8e7dabd805221cae30790e60c04eda4e5d7dc87d1dac6613ef8e3d8e8a5",
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:038646a85a21b60a7623aab352fe707543d2325fcd2aa9dc369962a91d1de70e",
             "locator": {
-              "end": 59,
+              "end": 14,
               "kind": "line_range",
-              "start": 53
+              "start": 14
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:0e09b6ab1a83ae89e79e4f82fb2ec9c70dc51cb35f517976b5bd816be5efb4f8",
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:0151dbe4e99b26af416eb3ad36dc70fb596ca7dbc734d503e6eb1e3f6651d295",
             "locator": {
-              "end": 87,
+              "end": 22,
               "kind": "line_range",
-              "start": 87
+              "start": 22
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
-            "content": "sha256:6876558a17c3bc01d04c1964ce78d2ac92f2ddef5ea7be0610c8117c1b7570ec",
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:07e2d34b2b99a62cc4d18392dd5287e892d97d36ac7521c57f7cabcc6ad0536d",
             "locator": {
-              "end": 107,
+              "end": 34,
               "kind": "line_range",
-              "start": 107
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+              "start": 31
+            }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
-            "content": "sha256:f898ec3148ecaeb74251252927c4c5e8ce0edfffdb5573f0e13004aec0353bc2",
+            "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+            "content": "sha256:a64ddf8f03e1653293d0a62f83ade239149d98096f2ad49e05b6a7e8399a7e40",
             "locator": {
-              "end": 172,
+              "end": 29,
               "kind": "line_range",
-              "start": 172
+              "start": 25
             },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator/exceptions-and-recovery.md"
           },
           "kind": "code"
         }
       ]
     },
     "15": {
-      "note": "Successful preparation precedes publication with one judgment per candidate, or an empty list, and validation.",
+      "note": "Successful preparation precedes publication with one judgment per candidate, or an empty list, and validation.\n\nAnchor: `curator_coherence`",
       "targets": [
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:eb4e198080760eef7c684698ae343c4e2b0cbb66042e8d6ef3ff20e23a57596a",
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:de1372d7b5482f0ab0340e49130f58713c468baf6f7101a151adf96dc55aa208",
             "locator": {
-              "end": 106,
+              "end": 28,
               "kind": "line_range",
-              "start": 106
+              "start": 28
             }
           },
           "kind": "code"
@@ -708,29 +371,30 @@
       ]
     },
     "2": {
-      "note": "Raw clean curation, the Manager-leaf-closeout stale dependent-document `knowledge_read` and the independent second-reader fact-check have separate obligations. The intake sentence names the task-read arguments by their dotted path, `documents[0].taskDocReadArgs`, which is where a first message's projection carries them.",
+      "note": "Full memory_quality_check, the Manager-leaf-closeout stale dependent-document knowledge_read (detailed in reference/curator/exceptions-and-recovery.md), and the independent non-authoring OM-2 fact-check are separate curation obligations.\n\nAnchor: `### Checks and gates`",
       "targets": [
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:a7f9e4d104d70eeb6cf638b18d79a318957805e2a2a3a631a4b7c71c16d68373",
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:49c14f0c4990f0c245d60c25bdf2130130212edde0154b58ded9bd31a5568d86",
             "locator": {
-              "end": 39,
+              "end": 22,
               "kind": "line_range",
-              "start": 39
+              "start": 20
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:39ce2c62b35abf09b62bb86f1c192bc6a3bd45b7fbd3cebd30672957adeadccb",
+            "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+            "content": "sha256:7238e190a72c9f1bbf9cf293135fbc6ffc8d64614e20597b8d91614f5a51c2f5",
             "locator": {
-              "end": 82,
+              "end": 19,
               "kind": "line_range",
-              "start": 66
-            }
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator/exceptions-and-recovery.md"
           },
           "kind": "code"
         }
@@ -753,102 +417,69 @@
       ]
     },
     "4": {
-      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC, the Manager-leaf-closeout stale dependent-document read and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
+      "note": "Current curation keeps Manager transaction ownership separate, requires full memory_quality_check, the Manager-leaf-closeout stale dependent-document read (detailed in reference/curator/exceptions-and-recovery.md) and the independent OM-2 fact-check, and pairs with separate MEMORY review (operations/review.md). Bounded repairs and genuine stops live in reference/curator/exceptions-and-recovery.md and scoped correct-write recovery in core/every-role.md; none of this grants Git, closeout or acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:05f40ab633ee29cf06482af44815cb9153ce4617163e284413e4732c915fbae2",
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:96f4895a7970e9bc64db271ed8a05fb8d0bff5084f514084ca873b1e82bcbd9e",
             "locator": {
-              "end": 140,
+              "end": 34,
               "kind": "line_range",
-              "start": 14
+              "start": 10
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC, the Manager-leaf-closeout stale dependent-document read and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:05f40ab633ee29cf06482af44815cb9153ce4617163e284413e4732c915fbae2",
+            "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+            "content": "sha256:7238e190a72c9f1bbf9cf293135fbc6ffc8d64614e20597b8d91614f5a51c2f5",
             "locator": {
-              "end": 140,
+              "end": 19,
               "kind": "line_range",
-              "start": 14
-            }
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator/exceptions-and-recovery.md"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC, the Manager-leaf-closeout stale dependent-document read and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:05f40ab633ee29cf06482af44815cb9153ce4617163e284413e4732c915fbae2",
+            "blob": "a95d72d0e4bf3905eb24a17d2eff08c20291d928",
+            "content": "sha256:1bf2d226ef69d28a534591a1d84d90b0211cf24b3c367a4058146f10ec9c5c36",
             "locator": {
-              "end": 140,
+              "end": 26,
               "kind": "line_range",
-              "start": 14
-            }
+              "start": 25
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator/exceptions-and-recovery.md"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC, the Manager-leaf-closeout stale dependent-document read and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:05f40ab633ee29cf06482af44815cb9153ce4617163e284413e4732c915fbae2",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:28011563333b27c409ff845e1f83f47d52bb01c7d61aac655649c3fea32cc513",
             "locator": {
-              "end": 140,
+              "end": 34,
               "kind": "line_range",
-              "start": 14
-            }
+              "start": 34
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC, the Manager-leaf-closeout stale dependent-document read and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:05f40ab633ee29cf06482af44815cb9153ce4617163e284413e4732c915fbae2",
+            "blob": "f5b3f64633a651c44081098ef5bb89203e068538",
+            "content": "sha256:5613c1b38b81f6009d10643368305f35a5c91d0eafa4f62a7ce8d33c916ee6ba",
             "locator": {
-              "end": 140,
+              "end": 27,
               "kind": "line_range",
-              "start": 14
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC, the Manager-leaf-closeout stale dependent-document read and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:05f40ab633ee29cf06482af44815cb9153ce4617163e284413e4732c915fbae2",
-            "locator": {
-              "end": 140,
-              "kind": "line_range",
-              "start": 14
-            }
+              "start": 27
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
           },
           "kind": "code"
         }

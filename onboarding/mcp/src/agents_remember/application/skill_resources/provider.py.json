@@ -4,7 +4,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+        "blob": "6a63e05ad44a1cc23203aa0cc2ca606714fb6bf6",
+        "content": "sha256:17aabecf1db0f7a55aa6bc46e3ea7de15aec069527a062adcd93039895b6b40e",
+        "locator": {
+          "kind": "symbol",
+          "name": "durable_composition_corpus_root"
+        }
+      },
+      "id": "RLZ-GF3X8B",
+      "invariant": "INV-ZA67WW",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-za67ww",
+        "leaf": "261124-CAP-L2"
+      },
+      "rationale": "Resolves the direct filesystem corpus root or atomically materializes non-Path archive packages into a digest-keyed durable cache so emitted links survive provider exit.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6a63e05ad44a1cc23203aa0cc2ca606714fb6bf6",
         "content": "sha256:5c093fea021c330d2c618bb11ee7902c52a15b4e661c6dbcceb21dffa645efd8",
         "locator": {
           "kind": "symbol",
@@ -27,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+            "blob": "6a63e05ad44a1cc23203aa0cc2ca606714fb6bf6",
             "content": "sha256:146af4dd9067ef159d8b70397b09e4592363f09462b22c07fb4b4d241a885469",
             "locator": {
               "kind": "symbol",
@@ -38,11 +56,27 @@
         },
         {
           "anchor": {
-            "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+            "blob": "6a63e05ad44a1cc23203aa0cc2ca606714fb6bf6",
             "content": "sha256:5c093fea021c330d2c618bb11ee7902c52a15b4e661c6dbcceb21dffa645efd8",
             "locator": {
               "kind": "symbol",
               "name": "shipped_skill_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "`durable_composition_corpus_root` resolves direct filesystem package data or atomically materializes archive packages into a digest-keyed durable cache with non-symlink `O_NOFOLLOW` verification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a63e05ad44a1cc23203aa0cc2ca606714fb6bf6",
+            "content": "sha256:17aabecf1db0f7a55aa6bc46e3ea7de15aec069527a062adcd93039895b6b40e",
+            "locator": {
+              "kind": "symbol",
+              "name": "durable_composition_corpus_root"
             }
           },
           "kind": "code"
@@ -54,12 +88,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+            "blob": "6a63e05ad44a1cc23203aa0cc2ca606714fb6bf6",
             "content": "sha256:b1aa6db26f9495b7eac841b60e70fbfb0730b9dbbdeb2a63197ed4bac2c762b8",
             "locator": {
-              "end": 63,
-              "kind": "line_range",
-              "start": 50
+              "kind": "symbol",
+              "name": "shipped_composition_corpus"
             }
           },
           "kind": "code"
@@ -71,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+            "blob": "6a63e05ad44a1cc23203aa0cc2ca606714fb6bf6",
             "content": "sha256:875b398ac284909470c22cd590b00381f0cc7d34b9d6a426faa82a6bd215d57b",
             "locator": {
               "kind": "symbol",
@@ -104,7 +137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:eb872cf7266eee92478bade771cd2a52d631a8387228cb01e1509650288f081b",
             "locator": {
               "end": 6,

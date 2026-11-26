@@ -1,0 +1,468 @@
+{
+  "closed": true,
+  "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+  "rows": [
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-3FMCGZ",
+      "items": [],
+      "reason": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: docs/features.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+      "revision": 35,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-3GMVJR",
+      "items": [],
+      "reason": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: docs/README.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+      "revision": 12,
+      "subject": "DPD-06057Y"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-4BDX83",
+      "items": [],
+      "reason": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: docs/getting-started.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+      "revision": 20,
+      "subject": "DPD-MQCJK4"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-6N2CNP",
+      "items": [],
+      "reason": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: docs/install/README.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+      "revision": 12,
+      "subject": "DPD-XV7QBE"
+    },
+    {
+      "deferralIds": [
+        "DFR-RBZQP6"
+      ],
+      "disposition": "re_deferred",
+      "id": "ROW-6NT0GV",
+      "items": [],
+      "reason": "Crossing merge resolution at 4559dabe8 combining BUG-L33 and CAP-L3: preserves open CAP-L5 deferral(s) (DFR-EBATAV) from CAP-L3 alongside L33's reconciled stands_on links on CONTRIBUTING.md.",
+      "revision": 25,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-BK9GMT",
+      "items": [],
+      "reason": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: docs/workflows.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+      "revision": 14,
+      "subject": "DPD-XAARS1"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-DZGFX2",
+      "items": [],
+      "reason": "Crossing merge resolution at 4559dabe8 combining BUG-L33 and CAP-L3: docs/design/python-pytest-bootstrap.md remains accurate over merged mcp/tests/test-evidence-lanes.toml (844 distinct modules: 692 unit-regression, 3 public-contract, 124 integration, 24 architecture-fitness, 1 stress-durability), with the stress-durability line-range anchor re-pointed to lines 863-865.",
+      "revision": 33,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-FS757V",
+      "items": [],
+      "reason": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: mcp/src/agents_remember/package_data/runtime/docs/tool-details.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+      "revision": 23,
+      "subject": "DPD-NGC2F6"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-GM43QA",
+      "items": [],
+      "reason": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: README.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+      "revision": 17,
+      "subject": "DPD-CZBR1Q"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-JSA8R3",
+      "items": [],
+      "reason": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: docs/guides/use-external-memory.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+      "revision": 9,
+      "subject": "DPD-9F0Q8G"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-M6VG1W",
+      "items": [],
+      "reason": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: docs/llms.txt remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+      "revision": 18,
+      "subject": "DPD-633P3W"
+    },
+    {
+      "deferralIds": [
+        "DFR-Y5Q4JY"
+      ],
+      "disposition": "re_deferred",
+      "id": "ROW-SX2G08",
+      "items": [],
+      "reason": "Crossing merge resolution at 4559dabe8 combining BUG-L33 and CAP-L3: preserves open CAP-L5 deferral(s) (DFR-YBSKMH) from CAP-L3 alongside L33's reconciled stands_on links on docs/concepts.md.",
+      "revision": 34,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-XR2EB0",
+      "items": [],
+      "reason": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: docs/tool-details.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+      "revision": 21,
+      "subject": "DPD-10YCT2"
+    },
+    {
+      "disposition": "changed",
+      "effect": "merge",
+      "id": "ROW-Y9TVZ4",
+      "items": [],
+      "reason": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: mcp/README.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+      "revision": 27,
+      "subject": "DPD-Q4APMS"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "sharedRevisions": [
+    {
+      "record": "DPD-06057Y",
+      "revision": 11
+    },
+    {
+      "record": "DPD-10YCT2",
+      "revision": 20
+    },
+    {
+      "record": "DPD-327MNX",
+      "revision": 11
+    },
+    {
+      "record": "DPD-633P3W",
+      "revision": 17
+    },
+    {
+      "record": "DPD-9F0Q8G",
+      "revision": 8
+    },
+    {
+      "record": "DPD-B540GW",
+      "revision": 17
+    },
+    {
+      "record": "DPD-CZBR1Q",
+      "revision": 16
+    },
+    {
+      "record": "DPD-MQCJK4",
+      "revision": 19
+    },
+    {
+      "record": "DPD-NGC2F6",
+      "revision": 22
+    },
+    {
+      "record": "DPD-Q4APMS",
+      "revision": 26
+    },
+    {
+      "record": "DPD-X6G7K3",
+      "revision": 31
+    },
+    {
+      "record": "DPD-XAARS1",
+      "revision": 13
+    },
+    {
+      "record": "DPD-XV7QBE",
+      "revision": 11
+    }
+  ],
+  "written": [
+    {
+      "contentDigest": "sha256:b1a2d9183ff47adf128495cc0e0052538c946b6efa944f4eb095bbfee7b4cab4",
+      "record": "DPD-06057Y",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-26T23:03:52+01:00",
+        "by": "agent",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:1caf537a469a752bbf15dce0073c55d98bdf9c73f4240657593ca7f5b020263a",
+      "record": "DPD-10YCT2",
+      "revision": 21,
+      "writer": {
+        "at": "2026-11-26T23:03:52+01:00",
+        "by": "agent",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:552efdb09275d56934d5a4dd71e2aec6c832492d1ab4f627d60a5188cde7ea6c",
+      "record": "DPD-327MNX",
+      "revision": 11,
+      "writer": {
+        "at": "2026-11-26T22:34:46+01:00",
+        "by": "product",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+        "effort": "none",
+        "harness": "product",
+        "model": "none",
+        "operation": "crossing-merge",
+        "role": "product",
+        "seat": "product",
+        "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
+      }
+    },
+    {
+      "contentDigest": "sha256:5806dd3f8084fa02aff82420f4abf09e018723174862fa6e8194aeea25f98556",
+      "record": "DPD-633P3W",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-26T23:03:52+01:00",
+        "by": "agent",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:07960f5bb47a0d88effd438659522d391b1d853fd1779065f9b20f260cf0a85f",
+      "record": "DPD-71WYH4",
+      "revision": 34,
+      "writer": {
+        "at": "2026-11-26T23:03:52+01:00",
+        "by": "agent",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:d1a5e9c695b0bb2f24a4ff5b244f497b73a27e69b3899194166e007670783736",
+      "record": "DPD-78737N",
+      "revision": 25,
+      "writer": {
+        "at": "2026-11-26T23:03:52+01:00",
+        "by": "agent",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:2d3ea3d2aecbb93e6aff51326aaedac1d75a998152a77f2184e9f7f0285d261a",
+      "record": "DPD-9F0Q8G",
+      "revision": 9,
+      "writer": {
+        "at": "2026-11-26T23:03:52+01:00",
+        "by": "agent",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:af8558da140faf6a4844deabc846a5015fa6651d5005c581aa4c36fab44abdba",
+      "record": "DPD-B540GW",
+      "revision": 17,
+      "writer": {
+        "at": "2026-11-26T22:34:46+01:00",
+        "by": "product",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+        "effort": "none",
+        "harness": "product",
+        "model": "none",
+        "operation": "crossing-merge",
+        "role": "product",
+        "seat": "product",
+        "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
+      }
+    },
+    {
+      "contentDigest": "sha256:4e6bec91444f661d84790a1ccaad0c471096377ca472619b079198d61f80570c",
+      "record": "DPD-CZBR1Q",
+      "revision": 17,
+      "writer": {
+        "at": "2026-11-26T23:03:52+01:00",
+        "by": "agent",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:ea30884931a580e32f411fe38bfcef64c1c8995038c2342d80240ff6939266c2",
+      "record": "DPD-EG5TYT",
+      "revision": 35,
+      "writer": {
+        "at": "2026-11-26T23:03:52+01:00",
+        "by": "agent",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:7fc461f7bffb2c1251d549ee6eeeb22dd378bab07e84e28ac68596c82f976606",
+      "record": "DPD-MQCJK4",
+      "revision": 20,
+      "writer": {
+        "at": "2026-11-26T23:03:52+01:00",
+        "by": "agent",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:bc771e6c323c42507d65e03c24617afdc43d3bc0f7c890771165994dfec61906",
+      "record": "DPD-NGC2F6",
+      "revision": 23,
+      "writer": {
+        "at": "2026-11-26T23:03:52+01:00",
+        "by": "agent",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:5ca77e1df42e7c876502c20fb0338c028dfb17eb3af8548df434d4a81478a732",
+      "record": "DPD-Q4APMS",
+      "revision": 27,
+      "writer": {
+        "at": "2026-11-26T23:03:52+01:00",
+        "by": "agent",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:aa28f5d20ab572a0c75621364be8ee4f964a14e532f5c7c629d161d49f0f6fa8",
+      "record": "DPD-X6G7K3",
+      "revision": 31,
+      "writer": {
+        "at": "2026-11-26T22:34:46+01:00",
+        "by": "product",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+        "effort": "none",
+        "harness": "product",
+        "model": "none",
+        "operation": "crossing-merge",
+        "role": "product",
+        "seat": "product",
+        "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
+      }
+    },
+    {
+      "contentDigest": "sha256:64bb97d0b8a65756b4e042710d551634e78efd73a3f58678b738e3c0ff7b80a3",
+      "record": "DPD-XAARS1",
+      "revision": 14,
+      "writer": {
+        "at": "2026-11-26T23:03:52+01:00",
+        "by": "agent",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:a7fc5d2f0748f0148bd3db37c35c6d3ccc634456580ee5332cfdaa48db7afbe2",
+      "record": "DPD-XV7QBE",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-26T23:03:52+01:00",
+        "by": "agent",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:17c8ed13070d9b9a87ff4a0257ee38f6ac543887f2ce4dd03be29523f7dee1d3",
+      "record": "DPD-ZT8YY7",
+      "revision": 33,
+      "writer": {
+        "at": "2026-11-26T23:03:52+01:00",
+        "by": "agent",
+        "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "manager",
+        "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

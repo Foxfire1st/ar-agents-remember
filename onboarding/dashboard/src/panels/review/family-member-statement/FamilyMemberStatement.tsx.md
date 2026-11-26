@@ -20,4 +20,3 @@ This is the inspected source contract, not an execution certificate. Parent and 
 
 - One changed statement passage in a family roster: `memberStatementPairs` owns the described branch. [1]
 - One changed statement passage in a family roster: `FamilyMemberStatement` owns the described branch. [2]
-

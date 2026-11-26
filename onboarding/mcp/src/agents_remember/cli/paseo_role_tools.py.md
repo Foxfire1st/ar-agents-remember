@@ -131,6 +131,7 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 
 
 
+
 - The public message call uses the imported recipient-resolution owner, report collection, prologue filing and held/native dispatch. Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use.
 
 

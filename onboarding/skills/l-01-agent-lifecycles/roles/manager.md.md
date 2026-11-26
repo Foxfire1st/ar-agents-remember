@@ -2,7 +2,7 @@
 
 ## Leaf stage starts
 
-The Manager starts a leaf's Worker alone at build, its Reviewer when the Worker asks at freeze and its Curator when the Reviewer reports code review passing, each with an individual `role_start` call. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested through the Manager's assigned reporting route with the Worker property/construction account and recorded approval. A child's held permission notice is relayed upward through the coordination permission-notice procedure; ordinary leaf peer artifacts are not couriered through Manager. On an `IDENTITY MISMATCH:` notice from a child seat, the Manager archives that seat, checks both its task folder and the folder named by the reported binding for writes, and starts a replacement.
+The Manager starts a leaf's Worker alone at build, its Reviewer when the Worker asks at freeze and its Curator when the Reviewer reports code review passing, each with an individual `role_start` call. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested through the Manager's assigned reporting route with the Worker property/construction account and recorded approval. Blocked starts are reported upward and undelivered messages are logged in the status file (child permission-notice relay lives in `operations/coordination.md` and `reference/coordination/shared/closeout-recovery.md`); ordinary leaf peer artifacts are not couriered through Manager. On an `IDENTITY MISMATCH:` notice from a child seat, the Manager archives that seat, checks both its task folder and the folder named by the reported binding for writes, and starts a replacement.
 
 The Manager answers skeletons that fill only gaps the plan leaves open. It sends a skeleton directly to the Architect—the direct-skeleton exception to routing Architect matters through an Orchestrator—only when the requirement asks for a pre-edit report, it changes a set placement or signature, or it adds an unlisted file, folder or public interface; the Worker writes bodies after the answer. A reported test file that fails at collection or does not import is a regression of a landed leaf, routed for repair at once rather than left as a mark. Under its explicit three-way authority split, the Manager decides: leaf order, seat starts and replacements, operational problems, ordinary requirement readings within the promise, pre/post-landing checks and delegated integration; steps, evidence form, proof tests/commands, non-source sandbox/scratch instruments, crew launch and helper script fixes, and scratch test setup from installed or locked dependencies; one rerun on the same operands after infrastructure failure and carrying a check's result when the tree diff shows it reads none of the changed files; test-only, fixture and catalog repairs within the requirement (before freeze or after a seal) when product behavior and promise stay unchanged, plus post-approval bookkeeping; precedent-covered matters (a case reservation covers only what it names, and role decisions remain the Manager's); skeletons within the planned structure; and routine paired closeout under standing series authority covering leaves of all masters (including standalone masters) when the exact candidate has passing code and memory reviews, passing listed final checks, a clean preview, an evidence map proving every item without waiver or substitution, and the Curator's report showing zero stale dependent-document rows. It sends to the Architect: first reports and qualifying skeletons, changes to what a requirement asks, beyond-settings rounds, step-up when the role's step-up setting names no model, a second same-kind infrastructure failure (with attempts), effects outside its worktree/scratch/task, closeout with waived/environmental/substituted evidence or an open scope question or explicit Architect hold, and sprint-line pushes, pull requests, main landings and releases. It sends to the developer the five developer-decision categories (new/dropped scope or promise change, developer-only actions/approvals, role-default overrides, small items costing ~1 hour or a second repair round/freeze with hours and proposal, and blockers none of its own decisions can remove).
 
@@ -14,7 +14,7 @@ The role text routes publication to the repository policy: when the resolved mem
 
 ## Message/file transport and return addressing
 
-Messages are short wake-ups naming work and files; report/verdict/evidence content travels in file-only `body` or existing-file `attach`, not pasted text. Within a shared task the files stay in its record and a leaf workspace exposes the folder link. Wake text uses the settings limit without a pinned number. The final report-path return uses the supplied parent role and task references. Architect matters, developer questions and permission notices use `role_message` to the reporting recipient recorded in the report (or handover parent ID; developer questions go in own chat without either), routing Architect matters through an assigned Orchestrator except direct qualifying skeleton handovers, with no status-only messages. These are distinct message purposes, not an ID exception to the return rule. Fixed launch-parent identity and existing role/peer/write/acceptance boundaries remain preserved.
+Message-file payload and receipt rules are routed from `roles/manager.md`'s Reference index to `reference/message-handover.md`. The final report-path return uses the supplied parent role and task references. Architect matters, developer questions and permission notices use `role_message` to the reporting recipient recorded in the report (or handover parent ID; developer questions go in own chat without either), routing Architect matters through an assigned Orchestrator except direct qualifying skeleton handovers, with no status-only messages. Fixed launch-parent identity and existing role/peer/write/acceptance boundaries remain preserved.
 
 ## Governing Overview
 
@@ -105,19 +105,18 @@ Before handling a child's question or returning the developer's answer, the Mana
 
 Manager retains one-master coordination, role starts/replacements, report-based state, delegated gate acceptance, transaction ownership and landing order. Manager sets no step for another agent. Worker, Reviewer and Curator completion bookkeeping does not transfer acceptance or publication authority to those roles; task stage is published by its native owner, with Manager correction/organizational-completion authority as the landed account states.
 
-The individual stage starts and the direct peer handovers are stated in the role and the coordination operation. The role also points to `reference/coordination/shared/master-state.md` before master-state updates and completion, including its abandoning section for `worktree_abandon` and `worktree_record_landing`. Its detail files are `reference/coordination/shared/child-questions.md`, `reference/coordination/shared/master-state.md`, `reference/coordination/shared/seat-recovery.md`, `reference/coordination/shared/third-rejected-round.md`, `reference/knowledge/commands.md`, `reference/message-handover.md`, `reference/refused-write.md`, `reference/sandbox-actors.md` and `reference/tasks/document-authoring.md`; the lane failure count (from `FAILED`, `SUBFAILED` and `ERROR` lines, grouped by test node, each failing node with an owner) is stated inline.
+The individual stage starts and direct peer handovers are stated in the role and the coordination operation. Its Reference index routes detailed procedures to `operations/coordination.md#start-leaf-stages-and-deliver-the-first-intake`, `reference/worker/sync-and-repairs.md#synchronize-the-leaf`, `reference/coordination/shared/closeout-recovery.md`, `reference/coordination/shared/seat-recovery.md`, `reference/coordination/shared/third-rejected-round.md`, `reference/coordination/shared/master-state.md`, `reference/tasks/document-authoring.md`, `reference/refused-write.md#apply-the-procedure-to-a-task-document-or-folder`, `reference/knowledge/commands.md`, `reference/message-handover.md`, `reference/sandbox-actors.md`, `reference/coordination/shared/child-questions.md`, `templates/curator-brief.md` and `templates/manager-brief.md`; the lane failure count (from `FAILED`, `SUBFAILED` and `ERROR` lines, grouped by test node) is stated inline.
 
 ## Settle precedents without adding repair stops
 
-Before escalating, Manager reads its own rulings and the Architect rulings for this master. Manager settles a same-kind occasion under the earlier ruling and names that ruling in its record. A case reservation covers only what it names, and the Manager's role decisions remain its own. Only an uncovered question goes up through the existing route. Beyond-limit rounds, out-of-requirement scope and developer decisions keep their existing escalation owners; this is not a new scope or approval grant.
-
-When the master line moves, Worker runs its supported leaf sync. If no path changed on both sides, Worker reruns focused tests and reports the code and memory pair to the Manager; mechanical checks derive again, and for a changed pair the Manager obtains the Curator's refreshed dependent-document read before routine closeout. No new freeze goes to Reviewer and no round begins. An overlapping path or a failing focused test instead needs the exact repair and one look by the same Reviewer. Native memory conflicts still go to Curator for content and Manager for capture, verification and staging before Worker continues the supported transaction.
+Before escalating, Manager reads its own rulings and the Architect rulings for this master. Manager settles a same-kind occasion under the earlier ruling and names that ruling in its record. A case reservation covers only what it names, and the Manager's role decisions remain its own. Only an uncovered question goes up through the existing route. Beyond-limit rounds, out-of-requirement scope and developer decisions keep their existing escalation owners; this is not a new scope or approval grant. Leaf sync and native memory-file conflict procedures are routed via the Reference index to `reference/worker/sync-and-repairs.md#synchronize-the-leaf`.
 
 A Worker repairing an owned finding needs no plan, account or go-ahead from Manager. Whole-stage delegation does not transfer gate, sync-transaction or landing authority.
 
 ## Evidence
 
 - When the resolved memory layer holds the publication file, the Manager follows it: claiming a leaf assigns its issue and sets In progress before the start, and the issue is closed after the landing and both pushes; without that file nothing is published. [14]
+
 
 ## Current Investigator contract impact
 
@@ -143,12 +142,16 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 
 - The Manager starts Worker alone at build, Reviewer at Worker freeze and Curator after code PASS using individual role_start calls under its canonical master. It keeps the returned IDs, report and handover paths with each assignment and reconciles an uncertain start with its original request ID. [2]
 
+
 - Normal leaf starts are individual stages: Worker at build, Reviewer at freeze and Curator after code PASS. Peer candidate, producer-list and memory handovers remain direct; Curator receives candidate-bound inputs and the Manager reads both verdicts and owns gate and transaction decisions. [3]
+
 
 
 - The Manager's report names its rulings, requirement-change and status records, developer-decision and final report-path messages, exact handover evidence and pending questions; its boundary keeps task truth and paired Git publication with their existing owners. [4]
 
+
 - Manager routes Architect matters, developer-needed matters and permission notices to the recorded reporting recipient or handover parent (routing Architect matters through an assigned Orchestrator except direct qualifying skeleton handovers), sends no status-only messages, records undelivered matters and continues independent work; the final report-path return uses the parent role with task references. [5]
+
 
 - Each leaf has one primary requirement revision and adjacent revisions remain constraints. The Manager inspects the complete changed-file diff, both verdicts and the Worker's report of any required final checks. It preserves stable requirement and finding identifiers and distinguishes implementation, review, curation and publication. [6]
 
@@ -159,11 +162,15 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 - The Manager settles precedent-covered matters with non-reclaiming case reservations, records approval for a round beyond the settings limit, sends Architect and developer matters upward, and owns stage boundaries and repair of its own mistaken records or addresses; covered correct writes use the named recovery route. [8]
 
 
+
 - Manager starts Worker, Reviewer and Curator individually at build, freeze and code PASS; ordinary peer handovers stay direct. It owns whole-stage transaction boundaries, repairs its own recording/address/input faults and requests beyond-settings rounds through its assigned reporting route with the Worker's property-and-construction account. [9]
+
 
 - Start, finalize and abandon publish task stage and mirror it into the master row; explicit status correction and organizational-master completion use task_doc set_status. The Manager also writes the master parts changed by each start and landing in that turn. [10]
 
+
 - The Manager sets no step for another agent; a Worker repairs its own sealed finding directly, and clean sync (with pair reporting and Curator refresh for a changed pair) versus overlap/failing focused tests follows the separately stated review rule. [11]
+
 
 - Manager gives no prior go-ahead for a Worker repairing its own sealed finding; after a clean sync focused tests rerun and the Manager obtains the Curator's refreshed read for a changed pair before routine closeout, while overlaps or failures require the exact repair and one Reviewer look. Before escalating, Manager applies a prior ruling of the same kind and names it in its record; a case reservation covers only what it names. [13]
 

@@ -7,7 +7,7 @@
   },
   "applicability": "Every role text and handover paragraph in skills/l-01-agent-lifecycles.",
   "conditions": [
-    "A role's output section is the single place its whole output is stated."
+    "A role's handover summary in its own role manual is the single place its whole owed output is stated."
   ],
   "exclusions": [
     "Brief templates, which carry values rather than rules (rule 5)."
@@ -24,27 +24,20 @@
     "leaf": "260928-MIK-L101",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Each role states its whole output in its own text, with one authoritative Result contract collecting every owed artifact.",
+  "statement": "Each coordinating role states its whole owed handover output in its own role text, collecting every owed artifact in one place while operations/coordination.md owns the handover protocol.",
   "supersedes": [],
+  "title": "Each coordinating role states its complete owed handover artifacts in one place",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L101",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T13:09:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

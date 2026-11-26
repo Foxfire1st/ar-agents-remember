@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "56daf6642402898075d164df4e26178499116006",
-    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
-    "role": "curator",
-    "statement": "mcp/README.md accurately states the uv-supplied Python 3.14 prerequisite and uv tool install --managed-python command matching mcp/pyproject.toml on synced base 65911c75 / candidate 56daf664.",
-    "task": "261112-BUG-L33",
-    "uncommitted": true
+    "codeTree": "99893607f698478a1186507fd937b71cae1f20dd",
+    "commit": "4559dabe83cb85443c79614f19d610b7ecc62aa9",
+    "role": "manager",
+    "statement": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: mcp/README.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+    "task": "261112-BUG",
+    "uncommitted": false
   },
   "document": "mcp/README.md",
   "id": "DPD-Q4APMS",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 26,
+  "revision": 27,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -41,7 +41,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
     {
-      "blob": "8d1b5e00d1cf12fac5ed5c9fbf2ad95dfd878573",
+      "blob": "7680a8ce4879b626d3f045071f4e515dcec16a8b",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
     },
@@ -62,14 +62,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T12:39:05+01:00",
+    "at": "2026-11-26T23:03:52+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L33",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
     "task": "261112-BUG"
   }
 }

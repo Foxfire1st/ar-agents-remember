@@ -157,12 +157,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7698616abcd31cb08bba4a158474703b7916d978",
+            "blob": "9a9e605ddca24ff31acafb03222552288800a88b",
             "content": "sha256:399c47806fb8a166316ff7d19aacc27f1dbb760787c49d8d109455617c117099",
             "locator": {
-              "end": 909,
+              "end": 910,
               "kind": "line_range",
-              "start": 864
+              "start": 865
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
@@ -170,12 +170,12 @@
         },
         {
           "anchor": {
-            "blob": "7698616abcd31cb08bba4a158474703b7916d978",
+            "blob": "9a9e605ddca24ff31acafb03222552288800a88b",
             "content": "sha256:c45fb78e112c526d891f699d9ece6ce7222c6787947686b57847fd26a3ad82f9",
             "locator": {
-              "end": 1054,
+              "end": 1055,
               "kind": "line_range",
-              "start": 1000
+              "start": 1001
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },

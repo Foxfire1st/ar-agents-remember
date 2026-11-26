@@ -318,20 +318,10 @@ Membership selects evidence without proving invocation.
 
 
 - The seven lane identities remain declared; this is membership, not execution. [863]
-
-
-- The lane catalog declares 836 distinct modules across seven lanes: 685 unit-regression, 3 public-contract, 124 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [864]
-
-
-- The lane catalog declares 836 distinct modules across seven lanes: 685 unit-regression, 3 public-contract, 124 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [867]
-
-
-- The lane catalog declares 836 distinct modules across seven lanes: 685 unit-regression, 3 public-contract, 124 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. The catalog retains the after-discovery, explainer, publication and landing-workflow cases and the four surviving L192 regression modules (the five removed provider-specific L192 suites are absent). The retired provider-current-state suite has no lane registration. [869]
-
-
-- The lane catalog declares 836 distinct modules across seven lanes: 685 unit-regression, 3 public-contract, 124 integration, 23 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [870]
-
-
+- The lane catalog declares 844 distinct modules across seven lanes: 692 unit-regression, 3 public-contract, 124 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [864]
+- The lane catalog declares 844 distinct modules across seven lanes: 692 unit-regression, 3 public-contract, 124 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [867]
+- The lane catalog declares 844 distinct modules across seven lanes: 692 unit-regression, 3 public-contract, 124 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. The catalog retains the after-discovery, explainer, publication and landing-workflow cases and the four surviving L192 regression modules (the five removed provider-specific L192 suites are absent). The retired provider-current-state suite has no lane registration. [869]
+- The lane catalog declares 844 distinct modules across seven lanes: 692 unit-regression, 3 public-contract, 124 integration, 24 architecture-fitness and one stress-durability module. Provider-conformance and migration are empty. These source declarations establish no execution or passing result. [870]
 - The four DEP-R07 type-checker defect regression modules are declared once each in unit-regression in canonical order; membership selects evidence and certifies no invocation. [882]
 
 

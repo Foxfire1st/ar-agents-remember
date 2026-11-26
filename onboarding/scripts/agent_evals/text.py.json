@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "61f54b8a307b3bf2f2dc2cd47db9a95fd5b59474",
-        "content": "sha256:839f171018f053983e6349038b256a6fb6174c84e54459dbdf0d3bde826caae8",
+        "blob": "dd7862a6e0c97b00404ce3c8152d35254de296a8",
+        "content": "sha256:a2a8fa290ecc306ffecf2c87f1557fd9cf5467303454b155594dd41a3af8714a",
         "locator": {
           "kind": "file"
         }
@@ -17,16 +17,34 @@
       },
       "rationale": "It captures the compiled role instructions and directly delivered detail identities from the composition manifest.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "dd7862a6e0c97b00404ce3c8152d35254de296a8",
+        "content": "sha256:6e4128ef42999eb3425d165ea73720ff86a80aac2e1c71aee30b5789f6c479d7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_captured_origins"
+        }
+      },
+      "id": "RLZ-H1BS2Z",
+      "invariant": "INV-40JW44",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-40jw44",
+        "leaf": "261124-CAP-L2"
+      },
+      "rationale": "Verifies both the full core/every-role.md source revision seal and exact Curator-filtered shared_block provenance during eval text capture.",
+      "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "Curator-applicable operations are compiled with the fixed synthetic task binding. Each captured instruction string prepends any shared role block to the rendered capsule, and detail references retain their content and revisions; the entries receive a digest. Captured text does not establish actual case authority or a trial result.",
+      "note": "`capture_curator_text` compiles Curator-applicable operations with a fixed synthetic task binding, prepending Curator-filtered `outcome.shared_block` under `## {SHARED_BLOCK_HEADING}` to the rendered capsule while retaining detail content, revisions, and digests without claiming case authority or a trial result.",
       "targets": [
         {
           "anchor": {
-            "blob": "61f54b8a307b3bf2f2dc2cd47db9a95fd5b59474",
-            "content": "sha256:1d1a13ce42da9b9f39633f72d3d4d198c8f05bfa8948d1a3f1b9cbcc73020556",
+            "blob": "dd7862a6e0c97b00404ce3c8152d35254de296a8",
+            "content": "sha256:f78b2dce64447fc85470ec27ba781be14f5a9fd4f4f315c86701df1ba4c10234",
             "locator": {
               "kind": "symbol",
               "name": "capture_curator_text"
@@ -37,12 +55,12 @@
       ]
     },
     "2": {
-      "note": "Captured instruction origins attribute the shared block to the one `core:every-role` source and offset the capsule's own origins past it; ambiguous provenance raises.",
+      "note": "`_captured_origins` verifies the full `core:every-role` source SHA-256 and exact `filter_shared_block` equality for `role`, attributes the shared block to that single source, offsets capsule origins past it, and raises `AuthorityError` on mismatch or ambiguity.",
       "targets": [
         {
           "anchor": {
-            "blob": "61f54b8a307b3bf2f2dc2cd47db9a95fd5b59474",
-            "content": "sha256:7e5323c59268da536c3ca18c6b93f9a4182066b4f3d54a4c17342d2c40245838",
+            "blob": "dd7862a6e0c97b00404ce3c8152d35254de296a8",
+            "content": "sha256:6e4128ef42999eb3425d165ea73720ff86a80aac2e1c71aee30b5789f6c479d7",
             "locator": {
               "kind": "symbol",
               "name": "_captured_origins"

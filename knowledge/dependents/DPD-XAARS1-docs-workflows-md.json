@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "d52a38f510c2bbc1a129cf2f4a34a6221b1c055d",
-    "commit": "8ea21d6bf4eac04aeef8e299c205f5350152cbcd",
-    "role": "curator",
-    "statement": "Audited docs/workflows.md on synced 261112-BUG-L54 candidate d52a38f5 (base 8ea21d6b): enclosure creation, direct execution, closeout, and landing workflow descriptions remain accurate after role_launch_workspace.py adopted COLLECTED_REPORT_DIRECTORY and ROLE_REPORT_DIRECTORY, with zero contradictions.",
-    "task": "261112-BUG-L54",
-    "uncommitted": true
+    "codeTree": "99893607f698478a1186507fd937b71cae1f20dd",
+    "commit": "4559dabe83cb85443c79614f19d610b7ecc62aa9",
+    "role": "manager",
+    "statement": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: docs/workflows.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+    "task": "261112-BUG",
+    "uncommitted": false
   },
   "document": "docs/workflows.md",
   "id": "DPD-XAARS1",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -96,22 +96,22 @@
       "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
     },
     {
-      "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+      "blob": "04140c248f496d59ae76fdda5f7c8a7d5bec193b",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/worktree_tools.py"
     },
     {
-      "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
+      "blob": "83407708c3f1db83dee844a65157e5d8d9149da7",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
     },
     {
-      "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
+      "blob": "3d68eb1c046e4357a4d5afedc522100c494b1624",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/planning.md"
     },
     {
-      "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
+      "blob": "ba302ee5ee35f8341db142ae02dcb244ca25fb98",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
     },
@@ -157,14 +157,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T20:41:46+01:00",
+    "at": "2026-11-26T23:03:52+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L54",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
     "task": "261112-BUG"
   }
 }

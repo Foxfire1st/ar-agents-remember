@@ -75,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
-            "content": "sha256:ae77c7eff1226d8870397005080d03c0f99eabf310dcbc00e03863b866aeb500",
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:7a96d53caa8144d1f7435186aa5da18d77ac925efdf085c1ab82d0b493c97f8a",
             "locator": {
-              "end": 79,
+              "end": 22,
               "kind": "line_range",
-              "start": 79
+              "start": 22
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },

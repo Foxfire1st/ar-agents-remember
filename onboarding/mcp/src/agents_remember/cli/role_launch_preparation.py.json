@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
-        "content": "sha256:0b132ecf5a590b87599449c0c4dbafb893d222229687460b9d4cd503d28910e2",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+        "content": "sha256:e7bbcf50e1749fb9bcd4c8359275d441474aa9cb723bb3f2101c1584430fb062",
         "locator": {
           "kind": "symbol",
           "name": "_AR_TOOL_SERVER_USAGE_TAIL"
@@ -17,13 +17,13 @@
         "handoffEntry": "KNO-R04@v1 rules 6–8",
         "leaf": "261112-KNO-L4"
       },
-      "rationale": "Delivers exact scoped reader instructions, conditional compact fields, fuller rule text and writer renewal guidance.",
+      "rationale": "Delivers the condensed normative AR tool-server usage and read_ar_files brief discovery guidance in Turn-1 role launches.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
-        "content": "sha256:98fbd77b7672b4cca22fe605161433c316af3e43afe3fc9d0b5a2144001621dd",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+        "content": "sha256:fde47895d944fa9f28411af0ed8ef6ec0fe2b050cfd0c702d39c97d704d3ac79",
         "locator": {
           "kind": "symbol",
           "name": "_task_document_read_metadata"
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
         "content": "sha256:366289482765a3f5819a634d4481d6f61447d4abed822bba8e4b639b341bb871",
         "locator": {
           "kind": "symbol",
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
-        "content": "sha256:6b363f905d3bf4865a8acf4f2dfadabb57fcdf9020cae5061607ebc583f37b77",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+        "content": "sha256:4c74bda42fba0577ea91744885f1159b1240212c03a77717e2b9d0ebc769af16",
         "locator": {
           "kind": "symbol",
           "name": "_compile_handover"
@@ -71,12 +71,12 @@
         "handoffEntry": "MIK-R93@v1 rules1,2,7,10",
         "leaf": "260928-MIK-L93"
       },
-      "rationale": "Compiles parented handover values using _developer_questions (role-aware coordinator vs leaf/investigator channel) and _owner_relation (with optional verified owning_architect_id).",
+      "rationale": "Compiles parented handover values using _developer_questions (role-aware coordinator vs leaf/investigator channel), _owner_relation (with optional verified owning_architect_id), and compact structured host.developerQuestionRoute alongside full prose fields in .handover.json.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
         "content": "sha256:d978199794e7d4da26ff9f5485d80bc07bebf8ca36115cb94b84d03f7587add1",
         "locator": {
           "kind": "symbol",
@@ -94,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
-        "content": "sha256:6b363f905d3bf4865a8acf4f2dfadabb57fcdf9020cae5061607ebc583f37b77",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+        "content": "sha256:4c74bda42fba0577ea91744885f1159b1240212c03a77717e2b9d0ebc769af16",
         "locator": {
           "kind": "symbol",
           "name": "_compile_handover"
@@ -107,13 +107,13 @@
         "handoffEntry": "RSM-R01-A7",
         "leaf": "261112-RSM-L1"
       },
-      "rationale": "The handover is the artifact every started role reads; this function writes its address and per-seat message arguments, and a sprint key must not appear for a master that has none.",
+      "rationale": "Compiles the complete handover artifact (.handover.json) including return addresses and leafSeats.roleMessageArguments (kept file-only by role_handover_projection), omitting sprint_document_ref for a master that has no sprint.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
-        "content": "sha256:6b363f905d3bf4865a8acf4f2dfadabb57fcdf9020cae5061607ebc583f37b77",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+        "content": "sha256:4c74bda42fba0577ea91744885f1159b1240212c03a77717e2b9d0ebc769af16",
         "locator": {
           "kind": "symbol",
           "name": "_compile_handover"
@@ -130,12 +130,11 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
-        "content": "sha256:3767742eb1562b12475352ffa77c55c949963aa02e68c37efbdb7ef62757e084",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+        "content": "sha256:fde47895d944fa9f28411af0ed8ef6ec0fe2b050cfd0c702d39c97d704d3ac79",
         "locator": {
-          "end": 386,
-          "kind": "line_range",
-          "start": 386
+          "kind": "symbol",
+          "name": "_task_document_read_metadata"
         }
       },
       "id": "RLZ-702R9Y",
@@ -144,12 +143,12 @@
         "handoffEntry": "L84-R1-05",
         "leaf": "260928-MIK-L84"
       },
-      "rationale": "The launch preparation text tells launched roles the same recovery for refused task_doc writes.",
+      "rationale": "Retains refused-write recovery guidance in first_read when shared_block lacks it and omits duplicate text only when delivered shared_block already carries the ladder.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
         "content": "sha256:366289482765a3f5819a634d4481d6f61447d4abed822bba8e4b639b341bb871",
         "locator": {
           "kind": "symbol",
@@ -167,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
         "content": "sha256:9410e1c9479a7f918a8df62ee08bd267c31f1f65bcc56f4551c3816fde8d0174",
         "locator": {
           "kind": "symbol",
@@ -185,7 +184,7 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
         "content": "sha256:ae9169abae6738fc9a561547d75cdeb72f64e1473ecaf76aed6a1ac03b18a254",
         "locator": {
           "kind": "symbol",
@@ -203,7 +202,7 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
         "content": "sha256:d978199794e7d4da26ff9f5485d80bc07bebf8ca36115cb94b84d03f7587add1",
         "locator": {
           "kind": "symbol",
@@ -221,7 +220,7 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
         "content": "sha256:366289482765a3f5819a634d4481d6f61447d4abed822bba8e4b639b341bb871",
         "locator": {
           "kind": "symbol",
@@ -239,7 +238,7 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
         "content": "sha256:ad12b44aa8d3cf322c080cbac6c1ca03847216bf2dc5936bb9d47489caaf37e6",
         "locator": {
           "kind": "symbol",
@@ -257,7 +256,7 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
         "content": "sha256:d6bee5d8e2ab2748115514e0f60af6b4be865d324bd52a5754df3646272561e7",
         "locator": {
           "kind": "symbol",
@@ -275,7 +274,7 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
         "content": "sha256:5e5430e36b61196467b614c0fd413bde32b78ef6de480fea36c5113b711a5667",
         "locator": {
           "kind": "symbol",
@@ -293,12 +292,12 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
         "content": "sha256:b87b6ecc7d7e28f1b9c34f446df57cb88dc7385093c958c95d89e1c88af1b2d0",
         "locator": {
-          "end": 255,
+          "end": 226,
           "kind": "line_range",
-          "start": 255
+          "start": 226
         }
       },
       "id": "RLZ-HZ21DS",
@@ -312,7 +311,7 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
         "content": "sha256:a22825664b51defd28eec8a582fb0e965eb88368f049472166db4e2d8324a82b",
         "locator": {
           "kind": "symbol",
@@ -330,8 +329,8 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
-        "content": "sha256:6b363f905d3bf4865a8acf4f2dfadabb57fcdf9020cae5061607ebc583f37b77",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+        "content": "sha256:4c74bda42fba0577ea91744885f1159b1240212c03a77717e2b9d0ebc769af16",
         "locator": {
           "kind": "symbol",
           "name": "_compile_handover"
@@ -348,7 +347,7 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
         "content": "sha256:5542a0b02a9c96defbdc4ac031b211ac4bd0575f874106446feb8d999cd2505c",
         "locator": {
           "kind": "symbol",
@@ -366,8 +365,26 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
-        "content": "sha256:b887bcd4995d6a305a8a1835bb81c9abcae82d2616d2532c3fda254f3bab7461",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+        "content": "sha256:fde47895d944fa9f28411af0ed8ef6ec0fe2b050cfd0c702d39c97d704d3ac79",
+        "locator": {
+          "kind": "symbol",
+          "name": "_task_document_read_metadata"
+        }
+      },
+      "id": "RLZ-NTG4NN",
+      "invariant": "INV-4BYFWJ",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 1",
+        "leaf": "261124-CAP-L3"
+      },
+      "rationale": "Produces concise first-read metadata and keeps the refused-write fallback intact when the shared block is absent.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+        "content": "sha256:25b8f341892b29b2b601b54941b67f0714626265f27c2be88067ee36dd44aea0",
         "locator": {
           "kind": "file"
         }
@@ -383,8 +400,8 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
-        "content": "sha256:6b363f905d3bf4865a8acf4f2dfadabb57fcdf9020cae5061607ebc583f37b77",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+        "content": "sha256:4c74bda42fba0577ea91744885f1159b1240212c03a77717e2b9d0ebc769af16",
         "locator": {
           "kind": "symbol",
           "name": "_compile_handover"
@@ -401,7 +418,7 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
         "content": "sha256:db06e400a6daf483d3384241587779fe2bf2a6c647584088ed59376447ddb473",
         "locator": {
           "kind": "symbol",
@@ -419,7 +436,7 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
         "content": "sha256:9410e1c9479a7f918a8df62ee08bd267c31f1f65bcc56f4551c3816fde8d0174",
         "locator": {
           "kind": "symbol",
@@ -437,8 +454,8 @@
     },
     {
       "anchor": {
-        "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
-        "content": "sha256:378541733deb789fdfbab42d885da34ec45bb3d3e9a81301d2604620506667ea",
+        "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+        "content": "sha256:751ebdd2bb0924968d8aff5a78584efa9df7a085c8c82c6213460c60ec874fb1",
         "locator": {
           "kind": "symbol",
           "name": "BRIEFS_SENTENCES"
@@ -460,12 +477,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
             "content": "sha256:366289482765a3f5819a634d4481d6f61447d4abed822bba8e4b639b341bb871",
             "locator": {
-              "end": 296,
-              "kind": "line_range",
-              "start": 236
+              "kind": "symbol",
+              "name": "prepare_role_handover"
             }
           },
           "kind": "code"
@@ -473,52 +489,15 @@
       ]
     },
     "10": {
-      "note": "The preparer compiles instructions, names the canonical task and copied documents, and records the starter and leaf peers through their bound role addresses.",
+      "note": "`_compile_handover` compiles instructions, names canonical task and copied documents, records starter and leaf peers through bound role addresses, and populates `host.developerQuestionRoute`.",
       "targets": [
         {
           "anchor": {
-            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
-            "content": "sha256:db51230583b517fbafaf251c76f72732a0c65fb6f840efe1be01a70a1fcddf45",
+            "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+            "content": "sha256:4c74bda42fba0577ea91744885f1159b1240212c03a77717e2b9d0ebc769af16",
             "locator": {
-              "end": 637,
-              "kind": "line_range",
-              "start": 585
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
-            "content": "sha256:303067d78f6c9a78c38cb353e4a087ea28944f5d4aa6765a90ce31a34959a736",
-            "locator": {
-              "end": 677,
-              "kind": "line_range",
-              "start": 647
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
-            "content": "sha256:2e6e7f02d4705d2f615ee206c2f75969664b9907c839df319d28eab28897d7bc",
-            "locator": {
-              "end": 750,
-              "kind": "line_range",
-              "start": 677
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
-            "content": "sha256:24f5ce386d9c4f4b6c4b097184cfa8139218598bdefb3f92a5111eaf9945db3f",
-            "locator": {
-              "end": 845,
-              "kind": "line_range",
-              "start": 826
+              "kind": "symbol",
+              "name": "_compile_handover"
             }
           },
           "kind": "code"
@@ -530,12 +509,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
-            "content": "sha256:e463008835101e58b6685e59ffec8f9fe1542bbcdf9e6e9a3b74651c8d18f0f9",
+            "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+            "content": "sha256:366289482765a3f5819a634d4481d6f61447d4abed822bba8e4b639b341bb871",
             "locator": {
-              "end": 273,
-              "kind": "line_range",
-              "start": 249
+              "kind": "symbol",
+              "name": "prepare_role_handover"
             }
           },
           "kind": "code"
@@ -547,7 +525,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
             "content": "sha256:d6bee5d8e2ab2748115514e0f60af6b4be865d324bd52a5754df3646272561e7",
             "locator": {
               "kind": "symbol",
@@ -559,28 +537,39 @@
       ]
     },
     "13": {
-      "note": "The handover composes source-bound details and includes the resulting instruction digest in the immutable message binding.",
+      "note": "`_compose_compact_instructions` resolves the durable corpus root, calls `compose_launch_instructions(..., compact_links=True)`, emits JSON-quoted `Link roots:`, and includes the instruction digest in the immutable message binding.",
       "targets": [
         {
           "anchor": {
-            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
-            "content": "sha256:aaa03f9f669d2daadf65021bf1ced6c588f65642f05419e47ca8c09772163b40",
+            "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+            "content": "sha256:f0fea7616dfd1fc56f8790def83c1495e0669bf6b15137d2570ea89006b95fc0",
             "locator": {
-              "end": 676,
-              "kind": "line_range",
-              "start": 647
+              "kind": "symbol",
+              "name": "_compose_compact_instructions"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
-            "content": "sha256:776cedf3f10fad549c1183da81edda0774134783577531b94f5ce206acf45b93",
+            "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+            "content": "sha256:15d46a6814d7914f5bc559f6fd258f1d3e67158cba1fa52b6a39dc27aaf80733",
             "locator": {
-              "end": 46,
+              "end": 662,
               "kind": "line_range",
-              "start": 24
+              "start": 646
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+            "content": "sha256:d9c3eee4a7c2b6fcb19706828dbc8d20f80a70dd8b9cbf91cb60eefe233bdc33",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 78
             },
             "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
           },
@@ -589,16 +578,28 @@
       ]
     },
     "14": {
-      "note": "Concrete frozen detail pointers retain existing user-note composition.\n\nAnchor: `write_detail_artifacts`",
+      "note": "Compact nested detail composition and user-note precedence delegate to `compose_launch_instructions` and `_write_nested_detail_artifacts`.",
       "targets": [
         {
           "anchor": {
-            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
-            "content": "sha256:139b0e0c2bf07ff0a4e05c7c4f3a62dc34b68b68f00fa332dc3540979dcb6830",
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+            "content": "sha256:d9c3eee4a7c2b6fcb19706828dbc8d20f80a70dd8b9cbf91cb60eefe233bdc33",
             "locator": {
-              "end": 33,
+              "kind": "symbol",
+              "name": "compose_launch_instructions"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+            "content": "sha256:b4b22b82b174353294e6141c6aec4d31641f992b94c43d6a5f752dee19a983d3",
+            "locator": {
+              "end": 274,
               "kind": "line_range",
-              "start": 28
+              "start": 232
             },
             "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
           },
@@ -611,7 +612,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
             "content": "sha256:c0ad5b8761a4da6a95ad5469b1e425605ac63fdf93b6f1d8a86f30d0a5412c53",
             "locator": {
               "kind": "symbol",
@@ -627,7 +628,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
             "content": "sha256:5e5430e36b61196467b614c0fd413bde32b78ef6de480fea36c5113b711a5667",
             "locator": {
               "kind": "symbol",
@@ -639,12 +640,12 @@
       ]
     },
     "17": {
-      "note": "First-read metadata names task_doc first, the same-tool refusal ladder for covered writes, and an open, logged hand write when no admitted route works.",
+      "note": "`_task_document_read_metadata` names `task_doc` first and conditionally deduplicates the `refused-write.md` ladder only when `shared_block` already carries it.",
       "targets": [
         {
           "anchor": {
-            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
-            "content": "sha256:98fbd77b7672b4cca22fe605161433c316af3e43afe3fc9d0b5a2144001621dd",
+            "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+            "content": "sha256:fde47895d944fa9f28411af0ed8ef6ec0fe2b050cfd0c702d39c97d704d3ac79",
             "locator": {
               "kind": "symbol",
               "name": "_task_document_read_metadata"
@@ -659,11 +660,39 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
             "content": "sha256:327c2ecef707377b3d1753bab2d319f8df963473f4c308575a916c6f9c33c75b",
             "locator": {
               "kind": "symbol",
               "name": "_ar_mcp_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "`_assembled_brief` compacts `shared_block` `skill://` URIs via `compact_skill_uri_links` and passes `link_roots` and condensed `_AR_TOOL_SERVER_USAGE*` into `BriefParts`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+            "content": "sha256:ecdb41dd706f756f348c934160969989fd62a3f3a2100364a3655df1bb56e918",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assembled_brief"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+            "content": "sha256:0d6489a9022b7f06f541fc2a02c07fd82762ff555725f607929c47d757b6a92b",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 115
             }
           },
           "kind": "code"
@@ -689,28 +718,28 @@
       ]
     },
     "4": {
-      "note": "The parented handover values: `ownerRelation` from `_owner_relation` and `developerQuestions` from `_developer_questions`; parentless launches keep the own-chat sentence, parented Orchestrator/Manager route developer questions to their recorded reporting recipient (else launch parent) and Architect matters through their assigned reporting route (with Orchestrator forwarding unchanged and Manager addressing qualifying direct skeletons to `owning_architect_id` when supplied), while other parented roles keep starter-ID developer-question routing.",
+      "note": "The parented handover values: `ownerRelation` from `_owner_relation`, `developerQuestions` from `_developer_questions` (with parented Orchestrator/Manager reporting-recipient routing and verified `owning_architect_id` direct skeletons), and compact structured `host.developerQuestionRoute` (`parent` vs `own-chat`).",
       "targets": [
         {
           "anchor": {
-            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
             "content": "sha256:988f678f4f6ecab32b811cbbdf8fa96959851eddd08b7695626abe9d348966d4",
             "locator": {
-              "end": 1062,
+              "end": 1050,
               "kind": "line_range",
-              "start": 954
+              "start": 942
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
             "content": "sha256:b618515131ca0b96fa12b0d3a442c98e758d026376d3fa7a023b053245501711",
             "locator": {
-              "end": 750,
+              "end": 735,
               "kind": "line_range",
-              "start": 743
+              "start": 728
             }
           },
           "kind": "code"
@@ -772,16 +801,15 @@
       ]
     },
     "8": {
-      "note": "An Investigator's assignment comes from `investigator_assignment` with the actual starting parent: a parented start takes its concern from the parent's first message, a parentless start asks the developer. Anchor: `investigator_assignment`",
+      "note": "An Investigator's assignment comes from `investigator_assignment` with the actual starting parent: a parented start takes its concern from the parent's first message, a parentless start asks the developer.",
       "targets": [
         {
           "anchor": {
-            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
-            "content": "sha256:3c96cf01a54136f94f456533307ae5eac3b4f1cf7a29741c60c47628d4c97c9f",
+            "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
+            "content": "sha256:5e5430e36b61196467b614c0fd413bde32b78ef6de480fea36c5113b711a5667",
             "locator": {
-              "end": 1108,
-              "kind": "line_range",
-              "start": 1107
+              "kind": "symbol",
+              "name": "_role_assignment"
             }
           },
           "kind": "code"
@@ -793,7 +821,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
+            "blob": "8491b7d6f5f579a7fe55ab83912e34e40cfe66e9",
             "content": "sha256:9410e1c9479a7f918a8df62ee08bd267c31f1f65bcc56f4551c3816fde8d0174",
             "locator": {
               "kind": "symbol",

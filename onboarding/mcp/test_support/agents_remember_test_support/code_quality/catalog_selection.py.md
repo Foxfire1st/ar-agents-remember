@@ -41,4 +41,3 @@ No configured external domain source applies.
 ### Cross-Repo References
 
 No cross-repository authority is used.
-

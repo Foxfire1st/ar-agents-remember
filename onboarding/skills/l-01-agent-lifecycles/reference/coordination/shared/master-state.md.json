@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4e3de569dc5a3bf0d619249053dde282df628694",
+        "blob": "9c1b5d87221ce0e669e5ce29ca1d7db400438ac6",
         "content": "sha256:0d7c24a180dc9b2dcd3a4ed271ee4a4fa6f0ce034982e071f1f3d7c2bae4d23f",
         "locator": {
           "end": 7,
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "4e3de569dc5a3bf0d619249053dde282df628694",
+        "blob": "9c1b5d87221ce0e669e5ce29ca1d7db400438ac6",
         "content": "sha256:16d05995c074e31a892ee77b7a892e2e7f1010cf965762324f4d4a505f17eb4d",
         "locator": {
-          "end": 17,
+          "end": 19,
           "kind": "line_range",
-          "start": 17
+          "start": 19
         }
       },
       "id": "RLZ-F5HVF3",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "4e3de569dc5a3bf0d619249053dde282df628694",
+        "blob": "9c1b5d87221ce0e669e5ce29ca1d7db400438ac6",
         "content": "sha256:4b90784759aa880ab30a8adc36938ee57795ec74602b8250496f554ee27fa9f2",
         "locator": {
-          "end": 15,
+          "end": 17,
           "kind": "line_range",
-          "start": 15
+          "start": 17
         }
       },
       "id": "RLZ-M2JNVX",
@@ -60,12 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "4e3de569dc5a3bf0d619249053dde282df628694",
+        "blob": "9c1b5d87221ce0e669e5ce29ca1d7db400438ac6",
         "content": "sha256:16d05995c074e31a892ee77b7a892e2e7f1010cf965762324f4d4a505f17eb4d",
         "locator": {
-          "end": 17,
+          "end": 19,
           "kind": "line_range",
-          "start": 17
+          "start": 19
         }
       },
       "id": "RLZ-TQAGWQ",
@@ -84,7 +84,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e3de569dc5a3bf0d619249053dde282df628694",
+            "blob": "9c1b5d87221ce0e669e5ce29ca1d7db400438ac6",
             "content": "sha256:eab722bceff756ba4eab4142f9702ea0310a4d27386fa9e8bd580f73882e7c54",
             "locator": {
               "end": 7,
@@ -101,12 +101,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e3de569dc5a3bf0d619249053dde282df628694",
+            "blob": "9c1b5d87221ce0e669e5ce29ca1d7db400438ac6",
             "content": "sha256:40bb7f4187504fe187678aa2104e83e95709f0cc3b2589447273c39ba9573411",
             "locator": {
-              "end": 11,
+              "end": 13,
               "kind": "line_range",
-              "start": 9
+              "start": 11
             }
           },
           "kind": "code"
@@ -114,16 +114,16 @@
       ]
     },
     "3": {
-      "note": "The Manager role points to the update, completion and abandonment sections before updating master state through completion.",
+      "note": "The Manager role reference index points here for master state (`task_doc`, `worktree_abandon`, `record_landing`).\n\nAnchor: `master-state.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
-            "content": "sha256:d30767e2a85aae5d77c891d7a58dd3c806dd78e3bf5fec0f53b1148acbc831fb",
+            "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+            "content": "sha256:49968f4b6153e8f37ac4c7a5ed36ee4f0ef798e523dcba9c977c806c4974c4dc",
             "locator": {
-              "end": 58,
+              "end": 41,
               "kind": "line_range",
-              "start": 58
+              "start": 41
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },

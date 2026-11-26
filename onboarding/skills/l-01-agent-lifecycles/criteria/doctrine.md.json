@@ -40,16 +40,29 @@
       ]
     },
     "2": {
-      "note": "The reviewer binding table selects doctrine where the review type and change surfaces require it.",
+      "note": "The reviewer binding table selects doctrine where the review type and change surfaces require it.\n\nAnchor: `doctrine`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:1f762636392a1025af19edf0cff6729b687350a2575e221e185d8ea49c58d5f3",
+            "blob": "c4c112e12bd15afade93565931c7d587ae796a58",
+            "content": "sha256:c487d408b028daf4e664c8f077c84ad5f97ef30fd1a8dd5ff92c6523e648ef23",
             "locator": {
-              "end": 63,
+              "end": 26,
               "kind": "line_range",
-              "start": 45
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/review/non-leaf-seams-and-catalogs.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:63dbd3d94730219ff908ee0515e512e7ccdf129f4eaf76aedf1f1a1ca566d12b",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -58,16 +71,16 @@
       ]
     },
     "3": {
-      "note": "Baseline mode and fix-verification are explicit supplied review modes, not inferred whole-review authority.",
+      "note": "Baseline mode and fix-verification are explicit supplied review modes, not inferred whole-review authority.\n\nAnchor: `fix-verification`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:8f2ee02adb5091afb65c3d528c202589d6edd193ad5ecc44c7c9035a3392ad13",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:0885b9b4f6b31329402f18aaa0e9c6d8f5ba2330639e791778d8394249ae5a94",
             "locator": {
-              "end": 31,
+              "end": 15,
               "kind": "line_range",
-              "start": 31
+              "start": 15
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },

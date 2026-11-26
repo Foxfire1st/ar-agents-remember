@@ -213,6 +213,18 @@
       "targets": [
         {
           "anchor": {
+            "blob": "57ccf35179ee1d0293f1637fa77a2c26912e0a03",
+            "content": "sha256:03591741d23875c6fd4212f57300594ae1880a052a55585ae606e44577992b06",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_admitted_capsule"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "8673a0cc0f664527b38318f5c02481ab5826e739",
             "content": "sha256:aa75e23fdd691b12c201fd1266731fe37791b47314333c073f6fe0d250e069a0",
             "locator": {
@@ -234,19 +246,6 @@
               "start": 319
             },
             "path": "mcp/src/agents_remember/models/role_capsules/types.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
-            "content": "sha256:d83e2d57f2e37404de9d44a0dd51cfb781229885bb74bc9f34618a97fcef8b59",
-            "locator": {
-              "end": 134,
-              "kind": "line_range",
-              "start": 93
-            },
-            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },
           "kind": "code"
         }

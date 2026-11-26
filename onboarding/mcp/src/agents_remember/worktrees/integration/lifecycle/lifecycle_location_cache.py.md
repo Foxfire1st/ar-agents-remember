@@ -20,4 +20,3 @@ Local implementation and executable evidence do not replace requirement authorit
 
 
 - Retain bounded lifecycle-location outcomes while root confinement and sampled file identities still match: contract identity is sampled before resolution; locator and manifest identities come from the same opens that consumed their bytes. Return a deep copy or equivalent named refusal; changed identities invalidate reuse, and inconsistent locator/manifest reads retry then refuse. [1]
-

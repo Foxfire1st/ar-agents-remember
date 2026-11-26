@@ -11,6 +11,25 @@
           "start": 5
         }
       },
+      "id": "RLZ-090539",
+      "invariant": "INV-C8SVFY",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §1 / F1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Moved from operations/curation.md (linked from roles/curator.md:27): Curator obtains the admitted launch interpreter from toolServer.command[0] and compares version, sourceDigest, packageRoot, pythonExecutable, and commit against server_info.servingBuild before any deciding CLI run or write.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "de70b768c3bed726da2c150d484c96d50649b388",
+        "content": "sha256:61c0fddb361669efa4ef28a937bbebfb680fe790be1db78db6968ddbb96b9fc7",
+        "locator": {
+          "end": 25,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
       "id": "RLZ-72RX6B",
       "invariant": "INV-BCEZZM",
       "origin": {
@@ -133,12 +152,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
-            "content": "sha256:b7a346481f83bb85d519f30a2438ca52add1f7ffcce33f80b418300bb3c4dad0",
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:150701e95748efe3a46e906dd02dcea6cadbc48a6b65046d24e1f85b0212525a",
             "locator": {
-              "end": 79,
+              "end": 27,
               "kind": "line_range",
-              "start": 79
+              "start": 27
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },

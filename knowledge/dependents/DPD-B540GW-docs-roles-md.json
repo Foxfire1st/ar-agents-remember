@@ -7,6 +7,19 @@
     "task": "261112-BUG-L54",
     "uncommitted": true
   },
+  "deferrals": [
+    {
+      "condition": {
+        "task": "261124-CAP-L5"
+      },
+      "createdAt": "2026-11-26T12:09:27.165390Z",
+      "createdByLeaf": "261124-CAP-L3",
+      "id": "DFR-YRD97K",
+      "owner": "261124-CAP",
+      "passage": "docs/roles.md ## What a role agent receives at its start (lines 214-240), ### How a long message travels (lines 299-305), ### What 'held' means (line 335), and ## Close a role agent (lines 426-433)",
+      "reason": "Directly contradicted by CAP-L1/L3: claims flat .detail-<sha256>.md files and opening AR handover artifacts line instead of nested <stem>.details/ and trailing locator; omits role-filtered shared block, 3-tier disclosure, and Poka-Yoke refusal pointers; owned by 261124-CAP-L5."
+    }
+  ],
   "document": "docs/roles.md",
   "id": "DPD-B540GW",
   "origin": {
@@ -177,14 +190,15 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T14:04:00+01:00",
-    "by": "agent",
-    "effort": "high",
-    "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L54",
-    "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
-    "task": "261112-BUG"
+    "at": "2026-11-26T22:34:46+01:00",
+    "by": "product",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+    "effort": "none",
+    "harness": "product",
+    "model": "none",
+    "operation": "crossing-merge",
+    "role": "product",
+    "seat": "product",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
   }
 }

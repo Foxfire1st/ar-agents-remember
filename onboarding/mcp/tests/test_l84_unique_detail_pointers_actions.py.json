@@ -1,0 +1,66 @@
+{
+  "path": "mcp/tests/test_l84_unique_detail_pointers_actions.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Full role/operation matrix test pins `every-role.md` filtering, `IN8.8` settings-authority pointer, and `MOVED_INDEX_POINTERS` with removal/duplication mutation checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d8b69b1bccd193cabf5f160f35878aebc14cd0b",
+            "content": "sha256:aeeea8e7ac9185318a01a46f2124d8414179f4cdd45f159439ea2ff6831fba2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_moved_piece_pointers_reach_each_required_compile_and_reject_removal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Leaf-creation and Architect action/task-layout tests verify retained-evidence lifecycle, 9 named Architect scenarios, and `requirement-design.md` sections with mutation teeth.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d8b69b1bccd193cabf5f160f35878aebc14cd0b",
+            "content": "sha256:79d0ef5b83c7b4dbf030deac07355fc0f72dc36a06fc0f65551a01e4a95a2776",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_architect_named_action_reads_and_pointer_removal"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2d8b69b1bccd193cabf5f160f35878aebc14cd0b",
+            "content": "sha256:9310b2af5bc411f93baabd13c450cc321047f6242aa60dfe9b7b0433deee64d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_architect_task_layout_reaches_its_existing_section"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Retirement stop boundary test confirms canonical `core/authority.md`, digested `core/every-role.md`, Manager's delivered `refused-write.md`, and other roles' served `skill://` link preserve permission stops.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d8b69b1bccd193cabf5f160f35878aebc14cd0b",
+            "content": "sha256:3ec17aa0ab62656d7a0252035737ed45dbef4485fb1c5eb952433e7548a8777d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retirement_shared_source_and_delivered_detail_preserve_stops"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

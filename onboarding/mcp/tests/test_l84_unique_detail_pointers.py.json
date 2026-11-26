@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
-        "content": "sha256:b6e676c67a9e6a73748131d8ef8bcef8a9df6588c635417db3aa9bf61f31cec3",
+        "blob": "6abe7293e1136f2d8f0e49ae48ebb34340e4db26",
+        "content": "sha256:1c4143ac99099cc2fbd9946f6fdfcce1165adc3834289084624ff9e0c1cd1311",
         "locator": {
           "kind": "symbol",
           "name": "test_every_native_first_message_has_one_pointer_per_action"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
-        "content": "sha256:631baa1d0eef91f0775cefab21ef17ec1dad1f2a4dc8e5a96cddef1705784630",
+        "blob": "6abe7293e1136f2d8f0e49ae48ebb34340e4db26",
+        "content": "sha256:9ac169cc0bd3683509f95891593dd74a3a4db9b069fcf00ac9ee69d86fda3b66",
         "locator": {
           "kind": "symbol",
           "name": "test_every_required_detail_has_one_pointer_in_all_real_compiles"
@@ -34,13 +34,30 @@
         "handoffEntry": "MIK-R84@v5 part1 / L62 step-detail delivery",
         "leaf": "260928-MIK-L84"
       }
+    },
+    {
+      "anchor": {
+        "blob": "6abe7293e1136f2d8f0e49ae48ebb34340e4db26",
+        "content": "sha256:1c4143ac99099cc2fbd9946f6fdfcce1165adc3834289084624ff9e0c1cd1311",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_native_first_message_has_one_pointer_per_action"
+        }
+      },
+      "facet": "Proves compact Markdown-table Reference indexes preserve exactly one pointer per action in every native first message.",
+      "id": "PRF-HGDQS3",
+      "invariant": "INV-TKJENS",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 3",
+        "leaf": "261124-CAP-L3"
+      }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
-        "content": "sha256:14716e77c11de950c79941afb83a515fc31769eb138780986d06f678b7de495f",
+        "blob": "6abe7293e1136f2d8f0e49ae48ebb34340e4db26",
+        "content": "sha256:6d641ce799e26c66f2874cd08565187baa0dccafaf3b7fcb9616ae2d8efd99a8",
         "locator": {
           "kind": "file"
         }
@@ -61,8 +78,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
-            "content": "sha256:6ecead5e2a2b0640bf3837449f0bd2667a483df35f3da9e6b022f5cd38e47008",
+            "blob": "6abe7293e1136f2d8f0e49ae48ebb34340e4db26",
+            "content": "sha256:c4202872472198b4558e23f139e4f4670bff4b496eb1e80d3d937a90cf33e044",
             "locator": {
               "kind": "symbol",
               "name": "ROLE_DETAILS"
@@ -77,12 +94,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
-            "content": "sha256:06bc9d278465eca6a0b9288274f889c7e21744fe7ad329451d3e9e575ed8548f",
+            "blob": "2d8b69b1bccd193cabf5f160f35878aebc14cd0b",
+            "content": "sha256:79d0ef5b83c7b4dbf030deac07355fc0f72dc36a06fc0f65551a01e4a95a2776",
             "locator": {
               "kind": "symbol",
               "name": "test_architect_named_action_reads_and_pointer_removal"
-            }
+            },
+            "path": "mcp/tests/test_l84_unique_detail_pointers_actions.py"
           },
           "kind": "test"
         }
@@ -93,12 +111,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
-            "content": "sha256:733c36702cad7c2dacf9ab1fc867588b06663a22994d00792804492853afa506",
+            "blob": "2d8b69b1bccd193cabf5f160f35878aebc14cd0b",
+            "content": "sha256:3ec17aa0ab62656d7a0252035737ed45dbef4485fb1c5eb952433e7548a8777d",
             "locator": {
               "kind": "symbol",
               "name": "test_retirement_shared_source_and_delivered_detail_preserve_stops"
-            }
+            },
+            "path": "mcp/tests/test_l84_unique_detail_pointers_actions.py"
           },
           "kind": "test"
         }
@@ -109,12 +128,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
-            "content": "sha256:b2f6489ca712d539a5a7979973ef9e600457f73cd9b04dcbde9d826e7b8b256a",
+            "blob": "2d8b69b1bccd193cabf5f160f35878aebc14cd0b",
+            "content": "sha256:445dd7f21e53a62ab8169fec38fc32d78c1d70a2d0ecb4d2a7e8ccae4179da7e",
             "locator": {
               "kind": "symbol",
               "name": "_assert_permission_owner_section"
-            }
+            },
+            "path": "mcp/tests/test_l84_unique_detail_pointers_actions.py"
           },
           "kind": "test"
         }
@@ -125,13 +145,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
-            "content": "sha256:c0076c3a8c9b4dd2d81f9448579dfd0fc1dfe6ae593943c9ba018ca2b40caed9",
+            "blob": "b4ce44619695f8b7017dc0814725a5d5bf55e380",
+            "content": "sha256:576d26d7f23a0cc1c86af97f66ded2d975e2ed8497c44e6da9fc3cfcf2a89c44",
             "locator": {
-              "end": 1090,
+              "end": 374,
               "kind": "line_range",
-              "start": 1053
-            }
+              "start": 336
+            },
+            "path": "mcp/tests/test_l84_unique_detail_pointers_rules.py"
           },
           "kind": "test"
         }
@@ -142,13 +163,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
-            "content": "sha256:4b1800671225c357f11d254dc4475a233ec7af0cd89788a661f5bb29d906aed4",
+            "blob": "b4ce44619695f8b7017dc0814725a5d5bf55e380",
+            "content": "sha256:503fe0d28836797f803d543d1059b68d3c68756a3223f03ab2898eea19fd1835",
             "locator": {
-              "end": 1144,
+              "end": 552,
               "kind": "line_range",
-              "start": 1097
-            }
+              "start": 492
+            },
+            "path": "mcp/tests/test_l84_unique_detail_pointers_rules.py"
           },
           "kind": "test"
         }
@@ -159,29 +181,31 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
-            "content": "sha256:080fe26983028da095583f7481ee313c7c90f9b42cdf65355fb50f5a19152966",
+            "blob": "b4ce44619695f8b7017dc0814725a5d5bf55e380",
+            "content": "sha256:43787c66e87d1e9473f5d7c8f0bc4cc95512fc0d76145b02e88a8a139fe7484c",
             "locator": {
               "kind": "symbol",
               "name": "test_grouped_action_reads_the_whole_delivered_owner"
-            }
+            },
+            "path": "mcp/tests/test_l84_unique_detail_pointers_rules.py"
           },
           "kind": "test"
         }
       ]
     },
     "16": {
-      "note": "The current pointer fixtures bind whole-record retrieval to its named knowledge-use detail.",
+      "note": "The moved-pointer fixture binds Curator's `Knowledge/CLI` index pointer to its named `reference/knowledge/use.md` detail.",
       "targets": [
         {
           "anchor": {
-            "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
-            "content": "sha256:848c37bea6d00243aeaeaece83cf974b13760e3b6d4bea59d43ecf167c435816",
+            "blob": "2d8b69b1bccd193cabf5f160f35878aebc14cd0b",
+            "content": "sha256:58801e0c0c3b2873aa2bbe70be7e661fda7f7a4bf0996b2ccc2172297cdc3188",
             "locator": {
-              "end": 577,
+              "end": 28,
               "kind": "line_range",
-              "start": 568
-            }
+              "start": 24
+            },
+            "path": "mcp/tests/test_l84_unique_detail_pointers_actions.py"
           },
           "kind": "test"
         }
@@ -192,8 +216,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
-            "content": "sha256:ea1fcdc2291d5a948819b9ee9b1a71e1a9650f81bd72479351a08133ba932b11",
+            "blob": "6abe7293e1136f2d8f0e49ae48ebb34340e4db26",
+            "content": "sha256:571a2668d02e4ac079b2ff39e1d765471e99487bab04e686530235f3f4dc33f1",
             "locator": {
               "kind": "symbol",
               "name": "_assert_coordination_start_owner"
@@ -208,8 +232,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
-            "content": "sha256:d1099772e83655ef962e1ea4e0f3192278c810d05724ba1e3b4b925d568dcfb7",
+            "blob": "6abe7293e1136f2d8f0e49ae48ebb34340e4db26",
+            "content": "sha256:7aca35d11214105853962873230e993bcaef28ecdb0285dac0baee80d6fea4d3",
             "locator": {
               "kind": "symbol",
               "name": "RESTORED_DUPLICATES"
@@ -224,12 +248,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
-            "content": "sha256:b6e676c67a9e6a73748131d8ef8bcef8a9df6588c635417db3aa9bf61f31cec3",
+            "blob": "6abe7293e1136f2d8f0e49ae48ebb34340e4db26",
+            "content": "sha256:1c4143ac99099cc2fbd9946f6fdfcce1165adc3834289084624ff9e0c1cd1311",
             "locator": {
-              "end": 480,
+              "end": 765,
               "kind": "line_range",
-              "start": 436
+              "start": 713
             }
           },
           "kind": "test"
@@ -241,12 +265,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
-            "content": "sha256:631baa1d0eef91f0775cefab21ef17ec1dad1f2a4dc8e5a96cddef1705784630",
+            "blob": "6abe7293e1136f2d8f0e49ae48ebb34340e4db26",
+            "content": "sha256:9ac169cc0bd3683509f95891593dd74a3a4db9b069fcf00ac9ee69d86fda3b66",
             "locator": {
-              "end": 565,
+              "end": 858,
               "kind": "line_range",
-              "start": 488
+              "start": 771
             }
           },
           "kind": "test"
@@ -258,13 +282,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
-            "content": "sha256:83641e951af68ab852f6698c5d1feb3b9a18ca885b3932bfc64aaa8989598f38",
+            "blob": "2d8b69b1bccd193cabf5f160f35878aebc14cd0b",
+            "content": "sha256:aeeea8e7ac9185318a01a46f2124d8414179f4cdd45f159439ea2ff6831fba2d",
             "locator": {
-              "end": 656,
+              "end": 145,
               "kind": "line_range",
-              "start": 599
-            }
+              "start": 62
+            },
+            "path": "mcp/tests/test_l84_unique_detail_pointers_actions.py"
           },
           "kind": "test"
         }
@@ -275,7 +300,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6322c06cce0cc35eda1ab66fbfa6def4cf1c8a9e",
+            "blob": "e1f5c91326a275ce4783936d724bc76992474d1b",
             "content": "sha256:a68845eb0d63ddca806624ccb4afa7e4d22bb84ea468da5d6571eafe23a0eb59",
             "locator": {
               "end": 36,
@@ -293,8 +318,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6322c06cce0cc35eda1ab66fbfa6def4cf1c8a9e",
-            "content": "sha256:9191717bf6b1d981687450f551209d2ffb13b83724129a5c3fa4b6ae509cc2e0",
+            "blob": "e1f5c91326a275ce4783936d724bc76992474d1b",
+            "content": "sha256:9504cbded00946f58621c3f4cb22973a3dc4b54d020ff45e160d3d2e555a29e8",
             "locator": {
               "end": 77,
               "kind": "line_range",
@@ -311,12 +336,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13611cb3c4dc5469cf39af884eb236b7d076544c",
-            "content": "sha256:8d8dcfefcecac0cbf45432764d9bf716f2fdc8a9286bc22eb75aca6ae805d793",
+            "blob": "2d8b69b1bccd193cabf5f160f35878aebc14cd0b",
+            "content": "sha256:66ce873d2cd781d573f2f445153e8973cda24059b2c7458eb338437960f0edcd",
             "locator": {
               "kind": "symbol",
               "name": "test_leaf_creation_reaches_retained_evidence_lifecycle_and_rejects_removal"
-            }
+            },
+            "path": "mcp/tests/test_l84_unique_detail_pointers_actions.py"
           },
           "kind": "test"
         }

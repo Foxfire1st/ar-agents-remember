@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a6453fda931f49a510b767fbeffa74e5c44be145",
-        "content": "sha256:3355277f0159c08b81ff09b690e8e52bc25e0b56c1786914511ea7635352a05a",
+        "blob": "789d7ee7555456feb7a9fa602495076ce5e4fac6",
+        "content": "sha256:dd445afb37603ad3e09a68dcb6fff5885567645ead66bae8f6025cfa017438eb",
         "locator": {
           "kind": "symbol",
           "name": "test_compiled_first_messages_across_roles_include_identity_self_check"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "a6453fda931f49a510b767fbeffa74e5c44be145",
-        "content": "sha256:d9a6dec295cc4acc7e0466c756df6c6e1b687cd72fa6e2a0d902d58097b21ef3",
+        "blob": "789d7ee7555456feb7a9fa602495076ce5e4fac6",
+        "content": "sha256:2fb8de09963d43966a509603db910954e3a5d5c1272f93787e727912fed5525b",
         "locator": {
           "kind": "symbol",
           "name": "test_brief_prompt_places_identity_self_check_in_preamble"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "a6453fda931f49a510b767fbeffa74e5c44be145",
+        "blob": "789d7ee7555456feb7a9fa602495076ce5e4fac6",
         "content": "sha256:2ece15f3a21c3ed0ecf517fddd1ce2e49f17644ef1e143ba4b1696da8e172cea",
         "locator": {
           "kind": "symbol",
@@ -56,11 +56,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Verifies all `server_info` identity self-check clauses and exact preamble ordering in `brief_prompt` between the AR-tools paragraph and first-read/instructions/handover sections.",
+      "note": "Verifies all `server_info` identity self-check clauses and exact preamble ordering in `brief_prompt` between the AR-tools paragraph and instructions/first-read/handover sections.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6453fda931f49a510b767fbeffa74e5c44be145",
+            "blob": "789d7ee7555456feb7a9fa602495076ce5e4fac6",
             "content": "sha256:c1650f5bbe4b56060728dcb450ee16dc9ddbaa78861360b968f8b36b688ce942",
             "locator": {
               "kind": "symbol",
@@ -71,8 +71,8 @@
         },
         {
           "anchor": {
-            "blob": "a6453fda931f49a510b767fbeffa74e5c44be145",
-            "content": "sha256:d9a6dec295cc4acc7e0466c756df6c6e1b687cd72fa6e2a0d902d58097b21ef3",
+            "blob": "789d7ee7555456feb7a9fa602495076ce5e4fac6",
+            "content": "sha256:2fb8de09963d43966a509603db910954e3a5d5c1272f93787e727912fed5525b",
             "locator": {
               "kind": "symbol",
               "name": "test_brief_prompt_places_identity_self_check_in_preamble"
@@ -87,8 +87,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6453fda931f49a510b767fbeffa74e5c44be145",
-            "content": "sha256:3355277f0159c08b81ff09b690e8e52bc25e0b56c1786914511ea7635352a05a",
+            "blob": "789d7ee7555456feb7a9fa602495076ce5e4fac6",
+            "content": "sha256:dd445afb37603ad3e09a68dcb6fff5885567645ead66bae8f6025cfa017438eb",
             "locator": {
               "kind": "symbol",
               "name": "test_compiled_first_messages_across_roles_include_identity_self_check"
@@ -103,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6453fda931f49a510b767fbeffa74e5c44be145",
+            "blob": "789d7ee7555456feb7a9fa602495076ce5e4fac6",
             "content": "sha256:556ed2a39725de8744835b247c083cdb6380b26371529eceb1e69200015ce6c3",
             "locator": {
               "kind": "symbol",
@@ -114,7 +114,7 @@
         },
         {
           "anchor": {
-            "blob": "a6453fda931f49a510b767fbeffa74e5c44be145",
+            "blob": "789d7ee7555456feb7a9fa602495076ce5e4fac6",
             "content": "sha256:2ed0bb03a00a94bb420f949214a56f5935838e00c3931a22b250d8bf3a92a9fb",
             "locator": {
               "kind": "symbol",
@@ -125,7 +125,7 @@
         },
         {
           "anchor": {
-            "blob": "a6453fda931f49a510b767fbeffa74e5c44be145",
+            "blob": "789d7ee7555456feb7a9fa602495076ce5e4fac6",
             "content": "sha256:2ece15f3a21c3ed0ecf517fddd1ce2e49f17644ef1e143ba4b1696da8e172cea",
             "locator": {
               "kind": "symbol",

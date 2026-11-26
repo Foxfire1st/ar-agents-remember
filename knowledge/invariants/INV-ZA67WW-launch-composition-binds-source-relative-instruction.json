@@ -6,13 +6,14 @@
     ],
     "justification": "Realized by the delivery mapping that carries source origins, the composer that writes and records the emitted detail files and the link binder; tests prove each inline link resolves to its own source without changing the compilation and that links in the emitted launch file resolve."
   },
-  "applicability": "Launch instructions composed for a native role start from the compiler-rendered instruction stream and its delivered step details.",
+  "applicability": "Launch instructions composed for a native role start from the compiler-rendered instruction stream, shared block, and delivered step details.",
   "conditions": [
     "The delivery carries source origins that cover the whole trusted instruction stream.",
-    "A relative link is resolved against the source file its part of the stream came from, or against the frozen detail file it names."
+    "A relative link is resolved against the durable corpus root or frozen detail file, keeping out-of-corpus paths absolute and reachable after provider exit.",
+    "Under compact_links=True, in-corpus links compact to skill/ and detail/ while standalone bind_markdown_links callers default to absolute paths."
   ],
   "exclusions": [
-    "Link-like text inside fenced examples and non-destination text, which stays unchanged.",
+    "Link-like text inside fenced examples, inline code spans, and non-destination text, which stays unchanged.",
     "The compiled semantic digest, which the binding does not change."
   ],
   "id": "INV-ZA67WW",
@@ -27,27 +28,20 @@
     "leaf": "260928-MIK-L84",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Launch composition binds source-relative instruction links to their admitted origins and retains separately delivered detail files with their actual emitted byte identity.",
+  "statement": "Launch composition resolves a durable starting-build composition corpus root (direct filesystem or digest-keyed atomic archive cache), binds source-relative instruction links and skill:// URIs to their admitted origins — emitting opt-in compact skill/ and detail/ Markdown links with JSON-quoted Link roots for Turn-1 launches while keeping standalone callers and frozen detail internals on absolute links — and retains separately delivered detail files with their actual emitted byte identity.",
   "supersedes": [],
+  "title": "Launch binds instruction links against durable corpus and frozen details",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L84",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-25T20:08:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+    "task": "261124-CAP"
   }
 }

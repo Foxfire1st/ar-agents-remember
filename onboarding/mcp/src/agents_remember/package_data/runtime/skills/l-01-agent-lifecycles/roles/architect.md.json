@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
-        "content": "sha256:2a016012e4d8b0490062e3eb9c8d74992ac2ff62f07ae53948c7ac1fb7260079",
+        "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
+        "content": "sha256:d3bfe1b26da3064cbb8de7ff8fb99bc0ed5048e3409f3c2b2154032fcdb173f5",
         "locator": {
           "kind": "file"
         }
@@ -21,12 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
-        "content": "sha256:a0f25cd9907e94e0a691e762cc7c49aeca193218d79948e1dc5193df32ae1c3c",
+        "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
+        "content": "sha256:fbcd6dfd797df3bb7889e29b9d67fef2db01c88699b3204afbab2213da320e57",
         "locator": {
-          "end": 66,
+          "end": 16,
           "kind": "line_range",
-          "start": 66
+          "start": 16
         }
       },
       "id": "RLZ-PAAE4A",
@@ -45,8 +45,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
-            "content": "sha256:2a016012e4d8b0490062e3eb9c8d74992ac2ff62f07ae53948c7ac1fb7260079",
+            "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
+            "content": "sha256:d3bfe1b26da3064cbb8de7ff8fb99bc0ed5048e3409f3c2b2154032fcdb173f5",
             "locator": {
               "kind": "file"
             }
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
+            "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
             "content": "sha256:4104d9271e630345b80d1841ec49ace38f4207770d99c58816ad7b113cdf933c",
             "locator": {
               "end": 3,
@@ -77,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
+            "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
             "content": "sha256:4642e8ea8de713715fb38326664bdaf76cf0a44f38d3a41013c8c03980288394",
             "locator": {
               "end": 6,
@@ -91,16 +91,16 @@
       ]
     },
     "4": {
-      "note": "The Architect's own checks, measurements, tests, builds and sandbox trials inform rulings, requirements and the developer but never take the place of a leaf's build, review, curation or gate; it changes no leaf's code or memory, grades nothing it wrote and works on a copy.",
+      "note": "The Architect's own checks, measurements, tests, builds and sandbox trials inform rulings, requirements and the developer but never take the place of a leaf's build, review, curation or gate; it changes no leaf's code or memory, grades nothing it wrote and works on a copy.\n\nAnchor: `## Boundaries`",
       "targets": [
         {
           "anchor": {
-            "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
-            "content": "sha256:ad7ed19fc78c3586c669dfed0807bbfdd542021337451a44e705451c9cebe936",
+            "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
+            "content": "sha256:fe564fde6efd69cb7a28a9f39f5f10b7d2da0dd411636b37dafc2f95ce7cabfa",
             "locator": {
-              "end": 212,
+              "end": 30,
               "kind": "line_range",
-              "start": 210
+              "start": 28
             }
           },
           "kind": "code"
@@ -108,16 +108,16 @@
       ]
     },
     "5": {
-      "note": "The Architect may grant a beyond-settings round when the sealed list has shrunk and the open repair is concrete; a repeated unchanged repair or a requirement-meaning dispute gets a ruling and no round. It reads the coordinating agent's rulings, requirement-change list and status file itself (coordinators send no status-only notices), names only the outcome needing the Architect in a case ruling while leaving Manager decisions with the Manager, and releases execution coordination after handover.",
+      "note": "The Architect may grant a beyond-settings round when the sealed list has shrunk and the open repair is concrete; a repeated unchanged repair or a requirement-meaning dispute gets a ruling and no round. It reads the coordinating agent's rulings, requirement-change list and status file itself (coordinators send no status-only notices), names only the outcome needing the Architect in a case ruling while leaving Manager decisions with the Manager, and releases execution coordination after handover.\n\nAnchor: `## Delegate and decide`",
       "targets": [
         {
           "anchor": {
-            "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
-            "content": "sha256:da626ca00e2814b8bc047517972157d6465252b7e0c39e2d32fcf228682287f3",
+            "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
+            "content": "sha256:5184f98f789d016572e257162d5dcb934913f4987c116bdcf05a3a8cbbbda56d",
             "locator": {
-              "end": 150,
+              "end": 26,
               "kind": "line_range",
-              "start": 146
+              "start": 18
             }
           },
           "kind": "code"
@@ -125,16 +125,16 @@
       ]
     },
     "6": {
-      "note": "A gate or validator repair does not silently free the task under test; the serving-build and synchronization route is preserved, and only a correct-input refusal of a covered write admits the bounded correct-write recovery.",
+      "note": "The Architect never bypasses checks or freezes animations, and gate repairs never free tasks under test.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
-            "content": "sha256:b4030c0d6c7648511cbec3ec172e0e38775c0690cb0e77da76432d58cfcd77ac",
+            "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
+            "content": "sha256:1c53373d869db14c575059e4094b29154a95bab56e314cda239d40c4b8063aa6",
             "locator": {
-              "end": 48,
+              "end": 12,
               "kind": "line_range",
-              "start": 48
+              "start": 12
             }
           },
           "kind": "code"
@@ -146,12 +146,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
+            "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
             "content": "sha256:0f16ae738e30bc0020b9f0e05f3737b8435aaa300719837aa33eb4eaa4c265ac",
             "locator": {
-              "end": 64,
+              "end": 14,
               "kind": "line_range",
-              "start": 64
+              "start": 14
             }
           },
           "kind": "code"

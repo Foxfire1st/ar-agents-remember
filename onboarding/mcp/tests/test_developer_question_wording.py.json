@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "f63778f710841bd578b27e43dfc13521e91c5508",
+        "blob": "ecd1f5b053d8f624f5146bc5cd5a783919d145e5",
         "content": "sha256:c80c2d0c3294603f003933d97de010a3d7c9aaa21b3178976eeb50e0ecae099e",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "f63778f710841bd578b27e43dfc13521e91c5508",
-        "content": "sha256:c013013da9880adf484b5a00a7f49ca4beeb9ed8ac9681465a223ff42cba3312",
+        "blob": "ecd1f5b053d8f624f5146bc5cd5a783919d145e5",
+        "content": "sha256:b0d3502eedb35e3a54d486bca55bcc3ac73279b4712645c166fe00536f4de8fc",
         "locator": {
           "kind": "symbol",
           "name": "test_each_parent_has_upward_notice_and_unchanged_downward_answer_duties"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "f63778f710841bd578b27e43dfc13521e91c5508",
+        "blob": "ecd1f5b053d8f624f5146bc5cd5a783919d145e5",
         "content": "sha256:19d28f4d232caef57721e6e512145676b42b4b3527a8f5cea05dc692b37fecd5",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "f63778f710841bd578b27e43dfc13521e91c5508",
+        "blob": "ecd1f5b053d8f624f5146bc5cd5a783919d145e5",
         "content": "sha256:393e9f2d9dd43c40978f3a8d4acd60736b12c1658217067ed2fe476e76ac38d8",
         "locator": {
           "kind": "symbol",
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "f63778f710841bd578b27e43dfc13521e91c5508",
-        "content": "sha256:e1416fb1a4046625e1ee8cd3d880dec66f77322db70275346ff19ac389273bdc",
+        "blob": "ecd1f5b053d8f624f5146bc5cd5a783919d145e5",
+        "content": "sha256:0163fa56a7e9af39f21875be2c8c6d42909c2e19a9c4a26063cdf7cb25891ae2",
         "locator": {
           "kind": "symbol",
           "name": "test_each_parentable_role_has_question_recovery_and_answer_provenance"
@@ -90,8 +90,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f63778f710841bd578b27e43dfc13521e91c5508",
-        "content": "sha256:ca73ae5af145e68184c743bc5470fafc5bd0d816465bb52f9e842e27882dce84",
+        "blob": "ecd1f5b053d8f624f5146bc5cd5a783919d145e5",
+        "content": "sha256:1f93098d5b65fdedf047c3736a6ffaae5ea5f8cfb334a77815f26efa659804bf",
         "locator": {
           "kind": "file"
         }
@@ -108,12 +108,12 @@
   ],
   "references": {
     "1": {
-      "note": "The parentable-role test checks question recovery and answer provenance in the shared orientation home, requires each selected role to carry its own pointer to that home without copying it, and checks transport clauses through each role's delivered message step and shared held paragraph.",
+      "note": "The parentable-role test checks question recovery and answer provenance in the shared orientation home, requires Worker/Reviewer/Curator to carry an orientation referral and Orchestrator/Manager/Investigator to carry their role question route without copying the orientation text, and checks transport clauses through each role's delivered message step and shared held paragraph.",
       "targets": [
         {
           "anchor": {
-            "blob": "f63778f710841bd578b27e43dfc13521e91c5508",
-            "content": "sha256:e1416fb1a4046625e1ee8cd3d880dec66f77322db70275346ff19ac389273bdc",
+            "blob": "ecd1f5b053d8f624f5146bc5cd5a783919d145e5",
+            "content": "sha256:0163fa56a7e9af39f21875be2c8c6d42909c2e19a9c4a26063cdf7cb25891ae2",
             "locator": {
               "kind": "symbol",
               "name": "test_each_parentable_role_has_question_recovery_and_answer_provenance"
@@ -124,12 +124,12 @@
       ]
     },
     "2": {
-      "note": "Starter-role checks require the shared upward permission notice and each role's referral to it, declared transport recovery and the child-question step; the answer clauses retain an own-authority answer, otherwise an unchanged upward question and unchanged quoted developer-answer provenance on the return path.",
+      "note": "Starter-role checks require `operations/coordination.md` to link the shared upward permission notice in `closeout-recovery.md` without copying it into starter roles, and check declared transport recovery and the child-question step; the answer clauses retain an own-authority answer, otherwise an unchanged upward question and unchanged quoted developer-answer provenance on the return path.",
       "targets": [
         {
           "anchor": {
-            "blob": "f63778f710841bd578b27e43dfc13521e91c5508",
-            "content": "sha256:c013013da9880adf484b5a00a7f49ca4beeb9ed8ac9681465a223ff42cba3312",
+            "blob": "ecd1f5b053d8f624f5146bc5cd5a783919d145e5",
+            "content": "sha256:b0d3502eedb35e3a54d486bca55bcc3ac73279b4712645c166fe00536f4de8fc",
             "locator": {
               "kind": "symbol",
               "name": "test_each_parent_has_upward_notice_and_unchanged_downward_answer_duties"
@@ -144,12 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f63778f710841bd578b27e43dfc13521e91c5508",
+            "blob": "ecd1f5b053d8f624f5146bc5cd5a783919d145e5",
             "content": "sha256:c80c2d0c3294603f003933d97de010a3d7c9aaa21b3178976eeb50e0ecae099e",
             "locator": {
-              "end": 317,
+              "end": 311,
               "kind": "line_range",
-              "start": 292
+              "start": 286
             }
           },
           "kind": "test"
@@ -161,12 +161,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f63778f710841bd578b27e43dfc13521e91c5508",
+            "blob": "ecd1f5b053d8f624f5146bc5cd5a783919d145e5",
             "content": "sha256:393e9f2d9dd43c40978f3a8d4acd60736b12c1658217067ed2fe476e76ac38d8",
             "locator": {
-              "end": 382,
+              "end": 370,
               "kind": "line_range",
-              "start": 346
+              "start": 334
             }
           },
           "kind": "test"
@@ -178,12 +178,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f63778f710841bd578b27e43dfc13521e91c5508",
+            "blob": "ecd1f5b053d8f624f5146bc5cd5a783919d145e5",
             "content": "sha256:19d28f4d232caef57721e6e512145676b42b4b3527a8f5cea05dc692b37fecd5",
             "locator": {
-              "end": 401,
+              "end": 389,
               "kind": "line_range",
-              "start": 385
+              "start": 373
             }
           },
           "kind": "test"
@@ -195,12 +195,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f63778f710841bd578b27e43dfc13521e91c5508",
+            "blob": "ecd1f5b053d8f624f5146bc5cd5a783919d145e5",
             "content": "sha256:393e9f2d9dd43c40978f3a8d4acd60736b12c1658217067ed2fe476e76ac38d8",
             "locator": {
-              "end": 382,
+              "end": 370,
               "kind": "line_range",
-              "start": 346
+              "start": 334
             }
           },
           "kind": "test"
@@ -212,7 +212,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f63778f710841bd578b27e43dfc13521e91c5508",
+            "blob": "ecd1f5b053d8f624f5146bc5cd5a783919d145e5",
             "content": "sha256:f6a27c353ac3aab16d2b6c4e75fbbe787b2be61f840ddc9680870471a134ecf4",
             "locator": {
               "kind": "symbol",
@@ -228,12 +228,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f63778f710841bd578b27e43dfc13521e91c5508",
+            "blob": "ecd1f5b053d8f624f5146bc5cd5a783919d145e5",
             "content": "sha256:ed9cbce2ee4bd763d3248aaee2369ba1962a4bc8fcdb783227dcebeb5c9c71df",
             "locator": {
-              "end": 194,
+              "end": 174,
               "kind": "line_range",
-              "start": 175
+              "start": 155
             }
           },
           "kind": "test"

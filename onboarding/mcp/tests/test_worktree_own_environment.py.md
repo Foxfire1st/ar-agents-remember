@@ -46,6 +46,7 @@ accounting contracts; no external source is claimed.
 
 - Every shipped copy of the Worker candidate-environment action must delegate environment setup and record the actual interpreter. [1]
 
+
 - Canonical instruction surfaces contain no named candidate-interpreter tokens. [2]
 
 - The token predicate rejects the retired wording rather than passing vacuously. [3]

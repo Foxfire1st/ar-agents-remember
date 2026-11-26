@@ -112,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+            "blob": "04140c248f496d59ae76fdda5f7c8a7d5bec193b",
             "content": "sha256:99b60ccfb9dc974c453576282bd0f5915fcafd5decd2148e81681e49c0b552cf",
             "locator": {
               "kind": "symbol",
@@ -129,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+            "blob": "04140c248f496d59ae76fdda5f7c8a7d5bec193b",
             "content": "sha256:945b3f36f81498a17271812f1acc73d17ec0b4924c9852afe0f64647a2f19ab9",
             "locator": {
               "kind": "symbol",
@@ -141,12 +141,12 @@
         },
         {
           "anchor": {
-            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+            "blob": "04140c248f496d59ae76fdda5f7c8a7d5bec193b",
             "content": "sha256:2d73db1c8f727a86815892b078c5ef034e4e36497e1ff1e8a5f78bde81e350a2",
             "locator": {
-              "end": 238,
+              "end": 239,
               "kind": "line_range",
-              "start": 231
+              "start": 232
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -159,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+            "blob": "04140c248f496d59ae76fdda5f7c8a7d5bec193b",
             "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
             "locator": {
               "kind": "symbol",
@@ -171,12 +171,12 @@
         },
         {
           "anchor": {
-            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+            "blob": "04140c248f496d59ae76fdda5f7c8a7d5bec193b",
             "content": "sha256:4c3fcc980bdb08db087bdea4a821292bdf5a16861c42fa70a89dbcc287eeb106",
             "locator": {
-              "end": 266,
+              "end": 267,
               "kind": "line_range",
-              "start": 243
+              "start": 244
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -205,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+            "blob": "04140c248f496d59ae76fdda5f7c8a7d5bec193b",
             "content": "sha256:0f5e5f76f9740340e9850fecf8d8481ab2ce7bef96881cc92bb1650fcdae2b0b",
             "locator": {
               "kind": "symbol",

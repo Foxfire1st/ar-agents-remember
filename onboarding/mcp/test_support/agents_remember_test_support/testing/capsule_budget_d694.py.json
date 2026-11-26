@@ -79,14 +79,14 @@
       ]
     },
     "5": {
-      "note": "The renewed d695 checker imports only current_capsule_ceiling from d694 and owns its own current-area and source findings.",
+      "note": "The renewed d695 checker no longer imports from d694; it owns its own current-area and source findings and pins d694's frozen helper hash in `_assert_history`.",
       "targets": [
         {
           "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
-            "content": "sha256:0e9003aff2d7476d4b2502d6fd8045eaaccc6e4a4b631ba83793f84dcf47dd59",
+            "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
+            "content": "sha256:526aeee20194f5441cbe7aac141f5ed0b9e735dc786b7e1b040d6deae2a6332e",
             "locator": {
-              "end": 12,
+              "end": 11,
               "kind": "line_range",
               "start": 7
             },
@@ -96,12 +96,25 @@
         },
         {
           "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
-            "content": "sha256:85752266acc5c90699f36386baa7915bd5be3a075117b4a522c1c29a12d96b01",
+            "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
+            "content": "sha256:494887d44fa059d3e03db0b012514ae7693c5ba854492d76623bbfe70b58d10e",
             "locator": {
-              "end": 109,
+              "end": 91,
               "kind": "line_range",
-              "start": 47
+              "start": 45
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
+            "content": "sha256:75af2672431670155e3a4078c58f19ccd71fcff86f96995a806e2f67f6e2f7e1",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 128
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
           },

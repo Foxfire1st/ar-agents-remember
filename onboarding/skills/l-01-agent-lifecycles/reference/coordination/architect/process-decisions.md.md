@@ -17,4 +17,5 @@ The Manager's standing rules are kept on one maintained page, not a ruling file 
 - One page of coordinating rules, one-line reports of formal decisions, and standing rulings applied first. [1]
 - Recurring dead ends and unresolved blockers go to the developer without granting rounds or scope. [2]
 - Mid-master process weaknesses are recorded, not rebuilt. [3]
+
 - The Architect role points here before deciding or escalating a coordination issue. [4]

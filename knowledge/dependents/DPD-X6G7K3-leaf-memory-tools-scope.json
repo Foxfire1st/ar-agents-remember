@@ -7,6 +7,19 @@
     "task": "261112-BUG-L33",
     "uncommitted": true
   },
+  "deferrals": [
+    {
+      "condition": {
+        "task": "261124-CAP-L5"
+      },
+      "createdAt": "2026-11-26T12:09:27.184476Z",
+      "createdByLeaf": "261124-CAP-L3",
+      "id": "DFR-YQ7ENB",
+      "owner": "261124-CAP",
+      "passage": "docs/reference/mcp-tools.md ## Tool answers (lines 73-77), ## Knowledge knowledge_write row (line 194), ### task_doc operations (lines 480-505), and ### Holds and refusals (lines 750-759)",
+      "reason": "Omits CAP-L3 Poka-Yoke See skill://...#<anchor>. refusal guidance pointers across six core refusal families including paseo_role_tools.py, review_history.py, and knowledge_write_answer.py refused-state notes; doc updates owned by 261124-CAP-L5."
+    }
+  ],
   "document": "docs/reference/mcp-tools.md",
   "id": "DPD-X6G7K3",
   "origin": {
@@ -423,14 +436,15 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T21:50:20+01:00",
-    "by": "agent",
-    "effort": "high",
-    "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L33",
-    "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
-    "task": "261112-BUG"
+    "at": "2026-11-26T22:34:46+01:00",
+    "by": "product",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+    "effort": "none",
+    "harness": "product",
+    "model": "none",
+    "operation": "crossing-merge",
+    "role": "product",
+    "seat": "product",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
   }
 }

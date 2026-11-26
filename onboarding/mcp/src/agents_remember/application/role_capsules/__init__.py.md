@@ -71,6 +71,8 @@ No sibling-repository contract consumes this boundary.
 
 No meaningful cross-repo references found.
 
-- The admitted compile entry point this package exports. Anchor: `compile_admitted_capsule` `CapsuleCompilationOutcome` [1]
+
+- The admitted compile entry point this package exports. [1]
+
 - The pure compile_role_capsule function integrates admitted source selection, operation audiences, verified task context, tools, skills and detail identities into a compiled capsule and its semantic digest. [3]
 - The sibling model package whose contract this boundary resolves inputs for. Anchor: `CapsuleBinding` `CapsuleSource` [4]

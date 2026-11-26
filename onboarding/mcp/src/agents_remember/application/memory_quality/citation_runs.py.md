@@ -26,4 +26,3 @@ Capacity refusal and runtime loss use the shared run contract. Background work i
 
 
 - The worker checks scope around the synchronous preview. [3]
-

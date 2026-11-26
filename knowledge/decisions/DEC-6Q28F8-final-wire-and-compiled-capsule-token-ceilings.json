@@ -1,0 +1,89 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Replaced temporary Phase 1 wire ceilings and additive appendix allowances with final single-source o200k_base token ceilings after weighing keeping Phase 1 allowances or word ceilings; governs every future capsule and handover change."
+  },
+  "alternatives": [
+    {
+      "option": "Option A: Enforce final non-ratcheting WIRE_TOKEN_CEILINGS (2,500t / 3,000t / 3,800t across all 8 default launch pairs, including heldOpeningPrompt prefixes, with Phase 1 appendix allowances removed) and 34-key COMPILED_CAPSULE_TOKEN_CEILINGS (1,500 / 2,000 / 2,600 / 1,500) in wire_budget.py, retiring siloed word-ceiling enforcement while keeping frozen D681/D682/D694 snapshots.",
+      "reason": "Eliminates competing word-vs-token gates and interim appendix allowances with one o200k_base token authority in wire_budget.py enforced identically by renewal and test gates.",
+      "status": "chosen"
+    },
+    {
+      "option": "Option B: Retain PHASE_1_WIRE_TOKEN_CEILINGS with additive 600/900-token appendix allowances and legacy word ceilings in capsule-budgets-current.json.",
+      "reason": "Keeps looser interim allowances and dual word/token ceilings that conflict with three-tier progressive disclosure and non-ratcheting token discipline.",
+      "reconsider_when": "If an approved future launch population requires a distinct appendix allowance model or tokenizer change.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "DEC-4PGWAW is superseded; PHASE_1_WIRE_TOKEN_CEILINGS, PHASE_1_HELD_APPENDIX_ALLOWANCE, and PHASE_1_LAUNCH_APPENDIX_ALLOWANCE are removed from wire_budget.py.",
+    "scripts/instruction_renewal/budgets.py checks COMPILED_CAPSULE_TOKEN_CEILINGS and retains word counts only as informational derived.current_measurements notices.",
+    "Any ceiling increase remains an explicit developer decision enforced by wire_budget.py and test_role_wire_token_budgets.py."
+  ],
+  "context": "CAP-L2 introduced interim PHASE_1_WIRE_TOKEN_CEILINGS with additive 600/900-token appendix allowances (DEC-4PGWAW) while legacy word ceilings remained in capsule-budgets-current.json. CAP-R03@v1 delivered three-tier progressive disclosure and inline handover deduplication, bringing all 8 default launch pairs (including heldOpeningPrompt prefixes) and all 34 compiled capsule matrix keys well below final token budgets.",
+  "decider": "Heading Architect and Developer under approved CAP-R03@v1 (D971, D972, D976, D1031, D1032, D1034)",
+  "id": "DEC-6Q28F8",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-ZVD184"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-7RHM8E"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+        "content": "sha256:13bfe4ca8cf8b9ee39b3d9d0ac2846f5f3bbc4e5f5e7fedfebc90bd365512dac",
+        "locator": {
+          "kind": "symbol",
+          "name": "WIRE_TOKEN_CEILINGS"
+        },
+        "path": "mcp/src/agents_remember/application/role_capsules/wire_budget.py"
+      }
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+        "content": "sha256:f745e1a189f6304eaa54fb922f62fbc044ee06f85a2abfd3fedf6f894a9f545a",
+        "locator": {
+          "kind": "symbol",
+          "name": "COMPILED_CAPSULE_TOKEN_CEILINGS"
+        },
+        "path": "mcp/src/agents_remember/application/role_capsules/wire_budget.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "261124-cap-l3-curation-handoff.json"
+    },
+    "handoffEntry": "dec-cap-r03-wire-ceilings",
+    "leaf": "261124-CAP-L3",
+    "task": "261124-CAP"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [
+    "DEC-4PGWAW"
+  ],
+  "writer": {
+    "at": "2026-11-26T13:09:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
+  }
+}

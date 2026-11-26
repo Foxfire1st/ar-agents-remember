@@ -365,9 +365,12 @@ These superseded descriptions retain their historical wording; the current accou
 - Ordinary converted closeout closes its history file and validates and gates the exact memory output. A failure before memory publication returns restores the preparations still holding the bytes closeout wrote. [1]
 - External closeout selects the substantive memory output and refreshes the cache afterwards. [29]
 - A fresh leaf closeout checks the cutover lock if its memory is unconverted. Recovery of an already recorded memory output takes the recovery path first. [51]
+
 - The packet-owned landing and terminal routes preserve domain predicates, check order and refusal-before-write while returning recognized task-state failures as state/code/sentence answers. Dry abandon, cleanup and refused closeout agree with the blocked real call rather than promising success; recognized CloseoutQueueError retains its original code. Cleanup's archive-ready/non-rejudgment branch is now factored through _cleanup_terminal_branch, not a new cleanup permission or force override. Integration distinguishes unfinished checkpoint from completed master. Record landing's conversion next step consumes one central probe-made case: exact merge-memory arguments for a converted line, actual first-conversion argv plus shlex.join display for never-converted input, none for unknown. Unrecognized caller/I/O/internal errors remain fail-closed exceptions, and this presentation changes neither sync nor publication authority. [86]
 
+
 - Closeout asks the converted candidate gate before publication, then rereads authority/candidate inside the publication owner. [64]
+
 - Fresh leaf closeout checks unconverted-memory cutover, closes owner history, commits or reuses the admitted memory output, and refreshes the cache. Converted recovery separately gates an already recorded output. [66]
 - The validator and mandatory gate judge the exact converted memory output, including recovered output. [67]
 - Memory publication rechecks the admitted tip and judged tree. A failure before publication returns restores its owned preparations where their bytes still match. Proof of the published commit runs afterwards. [68]

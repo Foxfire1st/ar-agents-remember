@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+        "blob": "d02e61066ff32afa05c31c3ea21eb0c30c44f937",
         "content": "sha256:2e5d409bd81ebdf2d00635ef576a0fb9a9676373e2e425bec1e875c8d7205260",
         "locator": {
           "end": 245,
@@ -23,8 +23,8 @@
     },
     {
       "anchor": {
-        "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
-        "content": "sha256:5ce515b3bf81888b46e25613d088a9fb776908820c7fbe6736a36fe40da95e52",
+        "blob": "de5bfce377d07e88f4fb82afd192c70c792d0cb6",
+        "content": "sha256:d3ebf66be940b45c18d6b49cef3510da4bb78a213860e56d2eb42a9cb3e0de18",
         "locator": {
           "kind": "file"
         }
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+        "blob": "d02e61066ff32afa05c31c3ea21eb0c30c44f937",
         "content": "sha256:e723ce82b895b1372a026ff77a394eab399373700e675bc530c48b8c3742d07b",
         "locator": {
           "end": 114,
@@ -59,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+        "blob": "d02e61066ff32afa05c31c3ea21eb0c30c44f937",
         "content": "sha256:dfff712ff9e62d449c9b6cb28ad7a4b36e61f0b70120c88ffdf444b7ea5b4a1a",
         "locator": {
           "end": 123,
@@ -78,7 +78,7 @@
     },
     {
       "anchor": {
-        "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+        "blob": "d02e61066ff32afa05c31c3ea21eb0c30c44f937",
         "content": "sha256:7d67b1d4cf3274f66830bdde45b0491b9fedb8ac70e291a2ef89d42bfb9e5634",
         "locator": {
           "end": 366,
@@ -116,7 +116,7 @@
     },
     {
       "anchor": {
-        "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+        "blob": "d02e61066ff32afa05c31c3ea21eb0c30c44f937",
         "content": "sha256:01e8726f339d3eb31140aa200e6a8a582ad503c8f4319e8aa9c26681557c92c7",
         "locator": {
           "end": 104,
@@ -136,12 +136,12 @@
   ],
   "references": {
     "1": {
-      "note": "Every verdict variant requires independently authored exact-ID/version, Worker-attempt and candidate adjudication in a separate immutable journal record with evidence-class and refutation rationale; a rejected requirement forbids PASS and PASS-WITH-NOTES.",
+      "note": "Every verdict variant requires independently authored exact-ID/version, Worker-attempt and candidate adjudication in a separate immutable journal record with evidence-class and refutation rationale; a rejected requirement forbids PASS and PASS-WITH-NOTES.\n\nAnchor: `## Mandatory Requirement Adjudication Block`",
       "targets": [
         {
           "anchor": {
-            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
-            "content": "sha256:b2e61626bb31a8f18e598c6ec372e324fc9577239c45a1f759cb3cc1f1bb981e",
+            "blob": "de5bfce377d07e88f4fb82afd192c70c792d0cb6",
+            "content": "sha256:900114e78e97925e331673c6ab88eea0d6ad5d2d0ea78c3587f6988f111e90db",
             "locator": {
               "end": 85,
               "kind": "line_range",
@@ -170,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+            "blob": "de5bfce377d07e88f4fb82afd192c70c792d0cb6",
             "content": "sha256:59504bf3f05646d070e33657503923adf813c96fb731ede95f6c0c2567d3ea82",
             "locator": {
               "end": 9,
@@ -182,8 +182,8 @@
         },
         {
           "anchor": {
-            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
-            "content": "sha256:bd293692969e36e2cf439c616ebdada63a4067637511d7a89029648553b52a45",
+            "blob": "de5bfce377d07e88f4fb82afd192c70c792d0cb6",
+            "content": "sha256:d6987552a41c9aa01def5b33fa7146795dbfbe31f27891d1cf0ffc3958bbcc51",
             "locator": {
               "end": 211,
               "kind": "line_range",
@@ -195,11 +195,11 @@
       ]
     },
     "3": {
-      "note": "A delta verification appends a dated section to the same verdict, records the preceding result, exact outstanding IDs and their fixed/unfixed dispositions, and retains earlier accepted adjudications; successor findings enter only through the review operation's three sanctioned routes.",
+      "note": "A delta verification appends a dated section to the same verdict, records the preceding result, exact outstanding IDs and their fixed/unfixed dispositions, and retains earlier accepted adjudications; successor findings enter only through the three sanctioned post-seal routes.\n\nAnchor: `## Post-seal routes`",
       "targets": [
         {
           "anchor": {
-            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+            "blob": "de5bfce377d07e88f4fb82afd192c70c792d0cb6",
             "content": "sha256:60537296c416b9236127764638e080d79056249ce69d710944c79b91a798a6cf",
             "locator": {
               "end": 367,
@@ -211,14 +211,14 @@
         },
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:9b07c2f58e4f0fb93835d37a61b435fb9d4762ce39be65159276132caed47a14",
+            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+            "content": "sha256:9417fb64e8acb1b7ad098e31c7f351df82d4e6819b687738d87cf27381d74cde",
             "locator": {
-              "end": 139,
+              "end": 29,
               "kind": "line_range",
-              "start": 133
+              "start": 19
             },
-            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+            "path": "skills/l-01-agent-lifecycles/reference/review/rounds-and-late-findings.md"
           },
           "kind": "code"
         }
@@ -229,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+            "blob": "de5bfce377d07e88f4fb82afd192c70c792d0cb6",
             "content": "sha256:1b3a2d2aa792e2d810b3c86716837f5954b077854cfbac5dceedb57325f99353",
             "locator": {
               "end": 19,
@@ -241,8 +241,8 @@
         },
         {
           "anchor": {
-            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
-            "content": "sha256:714e9a22fd362d57951d79a9c84bd6c1e61e55c906e545914057f6953c225c85",
+            "blob": "de5bfce377d07e88f4fb82afd192c70c792d0cb6",
+            "content": "sha256:65b3a46099ebf8170645b8ace8045c7046ebf829d4d0b7217557ddb0d10a97d2",
             "locator": {
               "end": 148,
               "kind": "line_range",
@@ -253,7 +253,7 @@
         },
         {
           "anchor": {
-            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+            "blob": "de5bfce377d07e88f4fb82afd192c70c792d0cb6",
             "content": "sha256:8c342f4bf69d6ec06504119fcaeac6de72e78789cb1d69e7dadda45437ae900e",
             "locator": {
               "end": 369,
@@ -270,8 +270,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
-            "content": "sha256:714e9a22fd362d57951d79a9c84bd6c1e61e55c906e545914057f6953c225c85",
+            "blob": "de5bfce377d07e88f4fb82afd192c70c792d0cb6",
+            "content": "sha256:65b3a46099ebf8170645b8ace8045c7046ebf829d4d0b7217557ddb0d10a97d2",
             "locator": {
               "end": 148,
               "kind": "line_range",
@@ -282,7 +282,7 @@
         },
         {
           "anchor": {
-            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+            "blob": "de5bfce377d07e88f4fb82afd192c70c792d0cb6",
             "content": "sha256:8c342f4bf69d6ec06504119fcaeac6de72e78789cb1d69e7dadda45437ae900e",
             "locator": {
               "end": 369,
@@ -294,12 +294,12 @@
         },
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:6913ea0e53f0eb04fe025c9cfe4c2376b7fa77a5ad52ccdfbe64ef3a5603ca38",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:0c52fca2d6d2fb9df85aae4b314eda370236c1e3934f3c8410c856462aa06ea1",
             "locator": {
-              "end": 73,
+              "end": 27,
               "kind": "line_range",
-              "start": 68
+              "start": 24
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -307,12 +307,12 @@
         },
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:48b8445332fed459a4e21ba40ee8348dc0597f51af95642ce0308eff17ce44d8",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:6353bc65c88f9697aaf80af4001d008f2c89a24cc28796385aacbd8f04488962",
             "locator": {
-              "end": 104,
+              "end": 38,
               "kind": "line_range",
-              "start": 100
+              "start": 34
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -320,14 +320,14 @@
         },
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:e327b424e1b40a28718e95315ca0d3af649c64847beb6464df45b174f668b1ae",
+            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+            "content": "sha256:dfbbe1e528ace4b0da870684b997e43796c09f4882aecb62a3a344745e482e8f",
             "locator": {
-              "end": 122,
+              "end": 9,
               "kind": "line_range",
-              "start": 116
+              "start": 9
             },
-            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+            "path": "skills/l-01-agent-lifecycles/reference/review/rounds-and-late-findings.md"
           },
           "kind": "code"
         }
@@ -338,7 +338,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+            "blob": "de5bfce377d07e88f4fb82afd192c70c792d0cb6",
             "content": "sha256:3cb36e449f4e38c07a1c109f4ca789471ec3679c429b0f47180ac428621f0c62",
             "locator": {
               "end": 44,
@@ -350,8 +350,8 @@
         },
         {
           "anchor": {
-            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
-            "content": "sha256:714e9a22fd362d57951d79a9c84bd6c1e61e55c906e545914057f6953c225c85",
+            "blob": "de5bfce377d07e88f4fb82afd192c70c792d0cb6",
+            "content": "sha256:65b3a46099ebf8170645b8ace8045c7046ebf829d4d0b7217557ddb0d10a97d2",
             "locator": {
               "end": 148,
               "kind": "line_range",
@@ -362,7 +362,7 @@
         },
         {
           "anchor": {
-            "blob": "a80d6453d841a3e55ae7089492615f3b39d00a94",
+            "blob": "de5bfce377d07e88f4fb82afd192c70c792d0cb6",
             "content": "sha256:60537296c416b9236127764638e080d79056249ce69d710944c79b91a798a6cf",
             "locator": {
               "end": 367,
@@ -375,29 +375,29 @@
       ]
     },
     "7": {
-      "note": "The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it.",
+      "note": "The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it.\n\nAnchor: `memory_quality_check`",
       "targets": [
         {
           "anchor": {
-            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
-            "content": "sha256:155ef4afcf451dd97bb394c8ea88ad2d5490020e566588b721418585927ef86d",
+            "blob": "35ce74bd5b8126e79a2c1ca5c3cc8c9792704ae9",
+            "content": "sha256:0151dbe4e99b26af416eb3ad36dc70fb596ca7dbc734d503e6eb1e3f6651d295",
             "locator": {
-              "end": 89,
+              "end": 22,
               "kind": "line_range",
-              "start": 89
+              "start": 22
             },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:b93a577df1d0cb295abb86c759ba75f1a052db0bf9fc44262b36ee9f48d3f01e",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
             "locator": {
-              "end": 72,
+              "end": 21,
               "kind": "line_range",
-              "start": 71
+              "start": 21
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -405,7 +405,7 @@
         }
       ]
     },
-    "8": {
+    "9": {
       "note": "Verdict artifacts and loop-review leaf verdicts are written in the handover's local `role-reports/` folder on a leaf (collected to `notes/reports/`) and under `notes/reports/` on other seams and plan reviews.",
       "targets": [
         {

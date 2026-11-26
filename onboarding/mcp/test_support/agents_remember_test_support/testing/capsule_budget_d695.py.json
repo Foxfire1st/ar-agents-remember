@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
-        "content": "sha256:07ca95902c239f33e5e728a7c73b00de550c5c8c65fb22612b067afd50cbb674",
+        "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
+        "content": "sha256:cd1a948965314694b8b9e4554c553bdc8c16e8e1d45311998e5b318419ace8da",
         "locator": {
           "kind": "file"
         }
@@ -15,7 +15,7 @@
         "handoffEntry": "L8-M2-F03-retain-ceiling-evidence-on-Y6GVZ7",
         "leaf": "261112-BUG-L8"
       },
-      "rationale": "This complete current-budget checker loads the generated measurement view, verifies detail/template and compiler/source populations and identities, compares fresh capsule/detail/digest sizes with authored ceilings without per-item budgets, measures ordinary templates without a detail ceiling, and separately authenticates the retained registry, snapshot helper, predecessor record and helper. The wrapper and subordinate helpers jointly realize the existing obligation; mutable current record and digest-map bytes are not frozen history.",
+      "rationale": "This current-budget checker loads the generated measurement view, verifies detail/template and compiler/source populations and identities, checks measurement freshness without word ceilings or per-item budgets, measures ordinary templates, and separately authenticates the retained historical registries and helpers.",
       "role": "enforcement"
     }
   ],
@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
             "content": "sha256:645cb437ad6dbf1ba6428e27c1b5310f9e8f280e6a9dafaffbaf4cf6f6adea40",
             "locator": {
-              "end": 141,
+              "end": 125,
               "kind": "line_range",
-              "start": 111
+              "start": 95
             }
           },
           "kind": "code"
@@ -38,16 +38,16 @@
       ]
     },
     "2": {
-      "note": "Detail and template populations are checked separately, and ordinary templates have measurements without a detail ceiling.",
+      "note": "Detail and template populations are checked separately, and `_current_area_findings` compares recorded measurements against actual sizes without enforcing word ceilings.",
       "targets": [
         {
           "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
-            "content": "sha256:ba6c20486c542c0f15f8cc92b58e6464ee45c09fed375c869138c7e26434d978",
+            "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
+            "content": "sha256:15fcde524fc809fb75a1f60bb9155826527f87e1b9b7fa8516e3428adeb6d745",
             "locator": {
-              "end": 77,
+              "end": 61,
               "kind": "line_range",
-              "start": 33
+              "start": 30
             }
           },
           "kind": "code"
@@ -59,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
             "content": "sha256:645cb437ad6dbf1ba6428e27c1b5310f9e8f280e6a9dafaffbaf4cf6f6adea40",
             "locator": {
-              "end": 141,
+              "end": 125,
               "kind": "line_range",
-              "start": 111
+              "start": 95
             }
           },
           "kind": "code"
@@ -76,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
             "content": "sha256:75af2672431670155e3a4078c58f19ccd71fcff86f96995a806e2f67f6e2f7e1",
             "locator": {
-              "end": 159,
+              "end": 143,
               "kind": "line_range",
-              "start": 144
+              "start": 128
             }
           },
           "kind": "code"
@@ -89,14 +89,14 @@
       ]
     },
     "5": {
-      "note": "Current measurements and inventories live under record[\"derived\"]. Renewable population, measurement and source findings name the shared renewal command; exceeding an authored ceiling instead names the developer's decision to raise it.",
+      "note": "Current measurements and inventories live under `record[\"derived\"]`. Renewable population, measurement, and source findings name the shared renewal command; authored word-ceiling checks are no longer enforced by this helper.",
       "targets": [
         {
           "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
-            "content": "sha256:c6d184f40dbceca5b00d8065898ff7154450dd3d8c4cc0d0140936cbf164da1d",
+            "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
+            "content": "sha256:c2ecd9bbeed152d8a79548f8fbd5fcc85c56bd16b9e3dffe42a23ae2d7ff4e63",
             "locator": {
-              "end": 44,
+              "end": 42,
               "kind": "line_range",
               "start": 9
             }
@@ -105,24 +105,24 @@
         },
         {
           "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
-            "content": "sha256:566cd4138538906715ef81f2473c8f0bfa1d6d88356c04189426646e182b1c5b",
+            "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
+            "content": "sha256:2d2dbc40b42e85784a1eca78117a32670bbc33b49aa4aba3f3ee8e3004322025",
             "locator": {
-              "end": 77,
+              "end": 61,
               "kind": "line_range",
-              "start": 48
+              "start": 45
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a16d43f162e3fb50979f2023100abada6dad9bbc",
+            "blob": "10ca20dcd2823cfe2b42bfb00ae948c88693ef13",
             "content": "sha256:b19817ba813a5b6add0e530b018282bdb3e00092feebcd1efda0dda2c2a0af15",
             "locator": {
-              "end": 107,
+              "end": 91,
               "kind": "line_range",
-              "start": 80
+              "start": 64
             }
           },
           "kind": "code"

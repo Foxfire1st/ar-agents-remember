@@ -69,7 +69,9 @@ No domain-documentation source is configured for this slice. The behavior descri
 
 
 
+
 - Structural/crossing report guidance. [2]
+
 
 
 
@@ -94,8 +96,11 @@ No domain-documentation source is configured for this slice. The behavior descri
 
 - A nonempty structural memory-merge report adds resolution.crossing and a named report summary, including all-converted diagnostics; converted selects crossing wording. With no report, no report-derived block or sentence is added. [19]
 
+
 - Parked-candidate reapply preview. [20]
+
 - Policy choice and non-mutating initial/active/cancel previews. [21]
+
 - Terminal and no-authority replay results remain distinct; the `continue` replay of a completed generation recomputes the worklist. [22]
 
 - Content-domain conflict and staged-resolution proof is delegated to the Git owner. [23]

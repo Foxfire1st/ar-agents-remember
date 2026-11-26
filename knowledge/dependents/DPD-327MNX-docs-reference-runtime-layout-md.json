@@ -7,6 +7,19 @@
     "task": "261112-BUG-L54",
     "uncommitted": true
   },
+  "deferrals": [
+    {
+      "condition": {
+        "task": "261124-CAP-L5"
+      },
+      "createdAt": "2026-11-26T12:09:27.126262Z",
+      "createdByLeaf": "261124-CAP-L3",
+      "id": "DFR-GNDY45",
+      "owner": "261124-CAP",
+      "passage": "docs/reference/runtime-layout.md ## The coordination root (lines 40-53) and ## Scratch folders (lines 141-153)",
+      "reason": "Omits CAP-L1/L3 <coordination-root>/.cache/skill-corpus/ durable corpus materialization and nested <stem>.details/ folders written beside role reports; doc updates owned by 261124-CAP-L5."
+    }
+  ],
   "document": "docs/reference/runtime-layout.md",
   "id": "DPD-327MNX",
   "origin": {
@@ -143,14 +156,15 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T14:04:00+01:00",
-    "by": "agent",
-    "effort": "high",
-    "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L54",
-    "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
-    "task": "261112-BUG"
+    "at": "2026-11-26T22:34:46+01:00",
+    "by": "product",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+    "effort": "none",
+    "harness": "product",
+    "model": "none",
+    "operation": "crossing-merge",
+    "role": "product",
+    "seat": "product",
+    "task": "261112_BUG-FIXES-AND-ISSUE-TRACKING"
   }
 }

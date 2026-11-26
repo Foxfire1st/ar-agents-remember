@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9ded4bca5ac476f63f808701e9c87d209d3868a7",
-        "content": "sha256:d19fed84aeb9534daac1453c7513d20ea358d5a78f58b703ae30bba9e5f921a8",
+        "blob": "72476b45772eef50c40f5c16400e213b150c682b",
+        "content": "sha256:b09a150b39c4cdc925457c1718fa4ae439c5f18797d96317d62501d682436099",
         "locator": {
           "kind": "symbol",
           "name": "bind_markdown_links"
@@ -18,6 +18,24 @@
       },
       "rationale": "This function resolves destinations from their original source path rather than from the emitted launch report.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "72476b45772eef50c40f5c16400e213b150c682b",
+        "content": "sha256:64a328708a55a51c45e053a1e1c1e3973f6346a2223da679ba990fb61f4e1c60",
+        "locator": {
+          "kind": "symbol",
+          "name": "compact_skill_uri_links"
+        }
+      },
+      "id": "RLZ-Q7PR52",
+      "invariant": "INV-ZA67WW",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-za67ww",
+        "leaf": "261124-CAP-L2"
+      },
+      "rationale": "Compacts skill://agents-remember/skills/l-01-agent-lifecycles/ URIs inside shared_block and baseline instructions using the Markdown code-masked scanner.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -26,8 +44,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ded4bca5ac476f63f808701e9c87d209d3868a7",
-            "content": "sha256:078b13a9411e289e705d47ef80c9bf3cd7d51dd1abcb2088d9e2f5735e087954",
+            "blob": "72476b45772eef50c40f5c16400e213b150c682b",
+            "content": "sha256:f1172003dd188850a158452a34d7c0a224064c61ee2ea13757771076e1e3440e",
             "locator": {
               "kind": "symbol",
               "name": "relative_destinations"
@@ -38,12 +56,12 @@
       ]
     },
     "2": {
-      "note": "Each destination is resolved from its source, mapped to a frozen target when one exists, and keeps its query and fragment.",
+      "note": "`bind_markdown_links` and `_format_bound_target` preserve default absolute binding (`compact_links=False`) and under opt-in `compact_links=True` bind frozen details to `detail/<rel>`, in-corpus files to `skill/<rel>`, out-of-corpus targets to absolute paths, and shipped `skill://` URIs via `compact_skill_uri_links`.",
       "targets": [
         {
           "anchor": {
-            "blob": "9ded4bca5ac476f63f808701e9c87d209d3868a7",
-            "content": "sha256:d19fed84aeb9534daac1453c7513d20ea358d5a78f58b703ae30bba9e5f921a8",
+            "blob": "72476b45772eef50c40f5c16400e213b150c682b",
+            "content": "sha256:b09a150b39c4cdc925457c1718fa4ae439c5f18797d96317d62501d682436099",
             "locator": {
               "kind": "symbol",
               "name": "bind_markdown_links"
@@ -58,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ded4bca5ac476f63f808701e9c87d209d3868a7",
+            "blob": "72476b45772eef50c40f5c16400e213b150c682b",
             "content": "sha256:358928073502e0d167abcb4423eaff1247ac76463843060537b6a1bf42bebb62",
             "locator": {
               "kind": "symbol",
@@ -74,11 +92,51 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ded4bca5ac476f63f808701e9c87d209d3868a7",
+            "blob": "72476b45772eef50c40f5c16400e213b150c682b",
             "content": "sha256:d0e8069a7391ef8a40b8cd51e931bfe842f65597ed05c8ade4d8bd99cd764262",
             "locator": {
               "kind": "symbol",
               "name": "_code_mask"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`SHIPPED_SKILL_URI_PREFIX`, `_all_link_destinations`, and `compact_skill_uri_links` compact shipped `skill://` URIs outside fenced, indented, and inline code while preserving query and fragment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72476b45772eef50c40f5c16400e213b150c682b",
+            "content": "sha256:64a328708a55a51c45e053a1e1c1e3973f6346a2223da679ba990fb61f4e1c60",
+            "locator": {
+              "kind": "symbol",
+              "name": "compact_skill_uri_links"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72476b45772eef50c40f5c16400e213b150c682b",
+            "content": "sha256:93cbd49c55f5b057a417d8870ce99774c53283af2e6aea4871b35264e84e5557",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72476b45772eef50c40f5c16400e213b150c682b",
+            "content": "sha256:f811858f5bf6c3ecc30959ee818aea08fdabeea2a45cc9fd15032457e0d6aee9",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 123
             }
           },
           "kind": "code"

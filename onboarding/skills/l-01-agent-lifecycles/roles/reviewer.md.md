@@ -17,19 +17,17 @@ This canonical role/operation requires messages to be short wake-ups naming requ
 [overview](overview.md)
 ## Purpose
 
-This is the canonical independent-review lifecycle. It inspects the exact candidate and adjudicates
-each stable requirement ID from the same applicable set dispatched to the worker.
+This is the canonical independent-review lifecycle for one leaf round on owner assignment against bound criteria. It inspects the exact candidate and adjudicates each stable requirement ID from the same applicable set dispatched to the worker.
 
-Memory review directs the Reviewer to inspect `memory_quality_check` report-only findings for pre-base-stale dependent confirmations and every `deferral_lifted` row per `OM-6` in `criteria/onboarding-memory.md`, while preserving existing capsule word ceilings.
+Memory curation review requires a full `memory_quality_check` (blocking on Curator-actionable findings), while `cutCards`, `addedFiles`, and `OM-6` pre-base-stale dependent-confirmation / `deferral_lifted` inspection rules live in `reference/review/rounds-and-late-findings.md` and `criteria/onboarding-memory.md` (linked from `roles/reviewer.md`).
 
 ## Code Commentary
 
-The Reviewer opens current saved briefs when present for the changed files and uses the touched-rule file when the start notice names one for the exact freeze. Fuller read replies can carry rule text. Compact rows can keep a brief pointer with saved freshness. `knowledge_read` locates whole records and their proof evidence for independent review.
-
+The Reviewer opens briefs (`read_ar_files`), calls `knowledge_read` on changed files, inspects every changed and unattributed file, checks card dates against commits, and preserves Curator producer fields.
 
 ### Bound native review intake
 
-Review only the owner’s explicit assignment. Read the rendered task document and canonical JSON at `documents[0].taskDocReadArgs.rendered_path` and `documents[0].taskDocReadArgs.json_path`, and use the tools on `agents-remember-task` only, with `arMcpContext.readerArguments` and actual bound schemas; per-call context includes the canonical task and enclosure contract. Read only the documents required by the assigned seam and write only contained task-local report artifacts. Missing fields/capabilities are reported gaps, not permission to switch AR servers or retrieve unscoped material.
+Review only the owner’s explicit assignment. Edit via `task_doc` and write reports under `notes/reports/` (AR tool server binding to `agents-remember-task` is declared once in `core/every-role.md`). Read only the documents required by the assigned seam and write only contained task-local report artifacts. Missing fields/capabilities are reported gaps, not permission to switch AR servers or retrieve unscoped material.
 
 The baseline inspects every changed file in the complete candidate, including unattributed files. Knowledge before/after, family interactions and unchanged sibling realizations add a review dimension rather than reducing that population. Preserve producer Curator hand-off fields for co-resolution. Peer clarification uses `role_message` with the handover's sibling role and exact leaf task references — the Worker about the candidate, the Curator about memory; a dashboard Reviewer needs no parent and starts no role. Developer questions go to the parent when one exists; without one they stay in the own chat.
 
@@ -61,11 +59,9 @@ The append target is the same single physical leaf journal that contains the wor
 reviewer's separately authored verdict links that journal anchor instead of duplicating the
 adjudication as another authority.
 
-**The declared knowledge effects.** Step 7 (`:74`) also checks: when the leaf's task document declares `expectedKnowledgeEffects`, the reviewer checks
-that declaration against the leaf's requirement packet — its declared subjects and effects match what the
-packet requires, with no effect missing and none invented — and a mismatch is a finding. The check is stated inline in step 7; it is not a criteria catalog entry. Who writes the declaration stays procedural; `task_doc` has no per-field role gate.
+**The declared knowledge effects.** Under `## Bind the seam and catalogs`, the Reviewer checks `expectedKnowledgeEffects` against the leaf's requirement packet and records any mismatch as a finding. Who writes the declaration stays procedural; `task_doc` has no per-field role gate.
 
-Beside the verdict, the reviewer emits **its own curator hand-off list** (`:94`) — its verdicts and
+Beside the verdict, the reviewer emits **its own curator hand-off list** (linked from `## Reference index` to `../templates/curator-handoff-list.md`) — its verdicts and
 findings in the shape `../templates/curator-handoff-list.md` owns, as data rather than as verdict prose
 for the curator to re-read. Each entry is one finding or one requirement adjudication, carrying the
 source it came from and the place it was found at, and a finding the reviewer minted carries its own
@@ -83,13 +79,13 @@ whose dependent record carries no confirmation.
 If the manifestation candidate moves before adjudication, the stale attempt is rejected and a
 successor is reviewed. A successor reuses the sealed reports rather than re-censusing routes.
 
-The role serves the assigned leaf/master/plan/super seams and the seam table still fixes the review candidate and verdict destination. Actual ownership comes from the explicit canonical assignment, rather than an inferred plane generation. For native clarification use the actual parent/task role through bound messaging; a dashboard Reviewer has no parent and needs none. The Reviewer starts no role.
+`roles/reviewer.md` binds the leaf review seam and its standing catalogs directly (`code-seam`, `report-verification`, `doctrine`, `onboarding-memory`; briefs never override catalogs) and routes non-leaf seams (`atomic-master integration`, `master-exit`, `plan review`, `super-exit`) and round-management details to `reference/review/non-leaf-seams-and-catalogs.md` and `reference/review/rounds-and-late-findings.md` in its Reference index. Actual ownership comes from the explicit canonical assignment, rather than an inferred plane generation. For native clarification use the actual parent/task role through bound messaging; a dashboard Reviewer has no parent and needs none. The Reviewer starts no role.
 
 ### Invariants And Boundaries
 
 Requirement adjudication and the durable-evidence stable-contract-or-expiry hold point
 are independent mandatory concerns. Accepted attempts remain closed.
-One reviewer role serves leaf, master, plan and super seams under an explicit assignment. Developer questions go to the parent when one exists, and peer clarification uses the actual parent/task role; a Reviewer without a parent asks in its own chat. The role text names hand-over values by their full path, such as `documents[0].taskDocReadArgs.rendered_path`, `workspace.memoryRoot` and `workspace.scratchRoot`, and carries no bare nested name.
+One reviewer role serves the leaf seam inline and non-leaf seams via `reference/review/non-leaf-seams-and-catalogs.md` under an explicit assignment. Developer questions go to the parent when one exists, and peer clarification uses the actual parent/task role; a Reviewer without a parent asks in its own chat.
 
 ## CCR-R12@v5 Transaction Boundary
 
@@ -97,13 +93,13 @@ Current role duty remains targeted/scoped evidence with failed or unrun results 
 
 ## Current composition and authoring contract
 
-Reviewer requires explicit independent assignment, exact seam/mode, approved revisions and ruling, immutable candidate and attempts, bound catalogs and check contract. The brief names no catalogs and the Reviewer chooses none: it binds them from the review type's row in the binding table and names them in the verdict's Catalog Binding section. It also asks the Worker for passing coding-guidelines handover results bound to the candidate tree and withholds code PASS without them. The requirement's listed final checks run after code PASS. Inputs, complete standing-criterion reporting, sealed findings, route coverage, verdict, producer list, route reports and immutable journal remain inline. Complete-diff review is not filtered by invariant attribution.
+Reviewer requires explicit independent assignment, exact seam/mode, approved revisions and ruling, immutable candidate and attempts, bound catalogs and check contract. The brief names no catalogs and the Reviewer chooses none: leaf reviews bind `code-seam`, `report-verification`, `doctrine` (docs/skills), and `onboarding-memory` (memory) directly and record them in Catalog Binding, while non-leaf seams bind from `reference/review/non-leaf-seams-and-catalogs.md`. It also requires clean-copy handover checks (withholding PASS until passing), targeted tests (full suites/drift on request or `## Final checks`), and full `memory_quality_check` for curation. Complete-diff review is not filtered by invariant attribution.
 
-The numbered steps hold knowledge before/after/family/sibling inspection and producer preservation, expectedKnowledgeEffects adjudication and the `cutCards`/`addedFiles` memory checks inline; the master-exit completeness duty is inline as well. Procedures sit behind "Before you …, read" pointers: `operations/review.md` (intake and leaf verdict handover, boundaries, code-round recording, round-limit verification, record-only recheck), `reference/review-baseline.md` (route partitioning, baseline evidence checks, the three lenses, sealing and focused-test selection), `reference/knowledge/use.md#reviewer-inspect-every-changed-file`, `reference/knowledge/commands.md`, `reference/message-handover.md`, `reference/sandbox-actors.md` and `operations/orientation.md` for developer questions.
+Its `## Reference index` routes detailed procedures to `reference/review/non-leaf-seams-and-catalogs.md`, `reference/review/rounds-and-late-findings.md`, `reference/review-baseline.md`, `reference/knowledge/use.md`, `reference/knowledge/commands.md`, `templates/verdict.md`, `templates/curator-handoff-list.md`, `reference/message-handover.md`, `reference/sandbox-actors.md`, `operations/orientation.md#ask-for-a-developer-decision`, and `core/acceptance.md`.
 
-The same Reviewer records code rounds and the separate memory lane; neither recording is Manager gate acceptance. Memory IDs/reports/count stay separate, with the same ordinary limit and recorded approval for extras. Verdicts are written in the handover's local report folder (`role-reports/` on a leaf, `notes/reports/` on other seams), and a memory `verdictRef` must name an existing file as an absolute path, `role-reports/<rel>`, or `notes/reports/<rel>`. Only a recorded passed last round plus a matching review step permits its own set_step done; cold reads, blocked verdicts and progress do not. No matching step means report and set nothing. Record-only unchanged-candidate checks retain the last round, and scoped fix verification cannot silently reset the sealed baseline.
+The same Reviewer records code rounds and the separate memory lane; neither recording is Manager gate acceptance. Memory IDs/reports/count stay separate, with the same ordinary limit and recorded approval for extras. Verdicts are written in the handover's local report folder (`role-reports/` on a leaf, `notes/reports/` on other seams), and a memory `verdictRef` must name an existing file as an absolute path, `role-reports/<rel>`, or `notes/reports/<rel>` (per `templates/verdict.md`). Only after the last round passes does the Reviewer mark its own review step `done` via `task_doc(set_step)`.
 
-When the candidate changes instruction texts, the Reviewer reviews them against `system/skill-writing-guidelines.md` when present, as it reviews code against `system/coding-guidelines.md` (code-seam criterion CS-7 checks every added or altered line). Ordinary review assumes honest agents. A finding names the operation or honest step that reaches its starting state. Adversarial review requires a request from the requirement or the developer. For a finding about every member of a set, it scripts a scan of the whole candidate and reruns that scan during verification.
+When the candidate changes code or instruction texts, the Reviewer requires repository guidelines (`system/tools.md`, `system/design-guidelines.md`, and coding/skill-writing guidelines) and binds `code-seam` (CS-7) and `doctrine` (D-6 -> CS-7). Whole-set scanning, forged-state rules, and stops live in `reference/review/rounds-and-late-findings.md`.
 
 No role starts, code/onboarding writes or Git publication are granted. Non-leaf seam recipients and owner recording, immutable attempt history, exact caller identity, permission stops and scratch/report custody remain.
 
@@ -119,9 +115,11 @@ Worker envelope, reviewer verdict template, manager exact-set dispatch, and gove
 
 - Every exact requirement attempt and candidate receives a separate independent accepted/rejected record. [1]
 
+
 - The verdict template structurally repeats one adjudication block per stable ID. [2]
 
 - The reviewer emits its own curator hand-off list in the shared producer shape. [3]
+
 
 
 ### Cross-Repo References
@@ -136,7 +134,7 @@ Master-exit review covers the exact organizational candidate or the atomic branc
 
 The Reviewer ends with a recorded verdict over the whole assigned requirement, its findings and coverage. Record-only repairs use the last recorded round without a new begin only on the authority-proven unchanged candidate; the sealed remainder can only shrink.
 
-Own work/instrument slips and invalid caller input are repaired through the same admitted tool and work continues. Stops remain permission prompts, correct-input product/AR refusals or unowned state, requirement-meaning questions, and effects outside the worktree/scratch/task. An unfinished final turn sends what is awaited, and from whom, to its parent with `role_message` on `agents-remember-task`. Worker/Reviewer repairs answer the required property and construction, not a succession of examples; extra-round requests carry that account.
+Own work/instrument slips and invalid caller input are repaired through the same admitted tool and work continues. Stops remain permission prompts, standing refusals outside covered-write recovery, requirement-meaning questions, and effects outside the worktree/scratch/task (detailed in `reference/review/rounds-and-late-findings.md`).
 
 The review budget is the settings number `orchestration.loops.defaults.maxRounds`, read at each begin; the effective task limit includes approved extras and is read from the `task_doc` answer. CODE and MEMORY retain separate counts under the same setting. Beyond-limit work needs recorded Architect or developer approval; the Manager requests it through its reporting route.
 
@@ -146,17 +144,22 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 
 ## Working files
 
-The Reviewer's closing paragraph sends temporary files, experiments and working copies to the hand-over's real `workspace.scratchRoot` and, for what must not live under the projects home (a sandbox root) and for one short `TMPDIR`, to `workspace.outsideScratchRoot`, with `XDG_CONFIG_HOME` inside `workspace.scratchRoot` and that root never removed. Product/tooling temporary files, test-runner temporary files and explicitly admitted repository sandboxes keep their own owners, and reports and evidence stay in the hand-over's local report folder for the product to copy to canonical notes before removal. Temporaries stay outside code, memory and tasks.
+`roles/reviewer.md` ends with its `## Reference index` table; scratch-root rules are carried by `core/every-role.md` and `reference/sandbox-actors.md` rather than a closing scratch paragraph in `roles/reviewer.md`.
 
-- The Reviewer seam table names organizational leaf, atomic-master integration, master-exit, portfolio plan and super-exit scope, start selection and verdict recipient; candidate identity comes from the intake rather than the hosting enclosure. [5]
+- Leaf binding never uses the hosting enclosure; the full five-seam table (organizational leaf, atomic-master integration, master-exit, portfolio plan and super-exit) and intake candidate identity rule live in reference/review/non-leaf-seams-and-catalogs.md. [5]
+
 
 - The Reviewer records ordinary CODE rounds and separately sealed MEMORY rounds under the actual task review-state limit; Manager gate acceptance and recorded architect/developer approval beyond the limit remain separate. [6]
 
+
 - The Reviewer stage ends at a recorded verdict covering the whole requirement, findings and coverage. Own-step completion waits for a passed recorded last round. Record-only repair reuses the last round only after every candidate finding closes and candidate bytes stay unchanged. A finding states the required property the candidate breaks and identifies the operation or honest step that reaches its starting state. The case supplies the proof. [7]
+
 
 - Organizational leaf route review sends code findings to Worker and memory findings to Curator; code PASS first notifies Manager so it can start Curator, and the ready-for-closeout notice names the passed freeze, both passed verdicts and any required final-check evidence. After repair it pairs the original report with the successor's targeted results. [9]
 
-- Reviewer intake uses exact rendered/JSON paths and actual scoped read schemas, reads only the assigned seam and writes only contained task-local report artifacts. [10]
+
+- Reviewer reads only the assigned seam's selected packets and rendered task files via file tools (no .json or unrelated corpus), edits canonical task docs via task_doc, and writes verdicts under notes/reports/. [10]
+
 
 - Reviewer requires the dispatched exact stable IDs and versions, the durable approval record, exact candidate and Worker attempts and the repository's tools; the catalogs come from the review type's row in the binding table, never from the brief or a choice during the review, and the verdict's Catalog Binding section names them. [11]
 
@@ -165,22 +168,30 @@ The Reviewer's closing paragraph sends temporary files, experiments and working 
 
 
 
-- Reviewer inspects every changed file of the complete candidate diff and reads the baseline detail at step 4; a subset never replaces the Curator's complete authoring memory-quality operation. [12]
+
+- Reviewer inspects every changed and unattributed file of the candidate diff, reads the linked review-baseline detail, and requires a full memory_quality_check on curation (blocking on Curator-actionable findings). [12]
 
 
 
-- Baseline is sealed under the step-4 baseline detail; fix verification reuses that sealed evidence and only listed IDs without a new-lens or whole-seam rediscovery mandate. [13]
+
+- Baseline is sealed under reference/review-baseline.md (linked from the Reference index); fix-verification checks sealed IDs only with no whole-review mandate. [13]
+
 
 - Each exact requirement revision is adjudicated accepted or rejected against its Worker attempt/candidate in a separate immutable reviewer record in the same leaf journal; Worker and earlier records stay unchanged. [14]
 
-- A baseline report includes every bound standing criterion. Fix verification reports the criteria used by the sealed findings. Review artifacts include the sealed findings, complete route coverage, the seam-shaped verdict written in the handover's local report folder (`role-reports/` on a leaf, `notes/reports/` on other seams) with Catalog Binding filled and memory `verdictRef` recorded as an existing absolute path, `role-reports/<rel>`, or `notes/reports/<rel>`, a producer-data handoff list, and durable reports for material routes. [15]
+
+- A baseline report includes every bound standing criterion. Fix verification reports the criteria used by the sealed findings. Review artifacts include the sealed findings, complete route coverage, the seam-shaped verdict written in the handover's local report folder (`role-reports/` on a leaf, `notes/reports/` on other seams) with its Catalog Binding section and memory `verdictRef` recorded as an existing absolute path, `role-reports/<rel>`, or `notes/reports/<rel>`, a producer-data handoff list and durable reports for material routes. [15]
+
 
 
 - The Reviewer records ordinary leaf CODE begin/result and separate MEMORY rounds with unchanged code state; Manager records beyond-settings authorization and retains gate acceptance. [17]
 
+
 - A moved review candidate is stale and requires a successor exact Worker attempt and reviewer record; changed scope or identity does not manufacture a new first review. [18]
 
 
+
 - Reviewer marks only its own named review step done after the last round is recorded passed, and its stage ends at a recorded verdict covering the whole requirement, findings and coverage. [19]
+
 
 - Reviewer repairs its own recording or evidence faults and answers input-fault refusals through the same tool; record-only repair preserves a round only while all candidate findings are closed and candidate bytes remain unchanged. [20]

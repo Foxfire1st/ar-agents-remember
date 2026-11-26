@@ -18,4 +18,5 @@ Before authoring, the author reads the task prose-field rules in `reference/task
 - The packet header records stable ID, version, freeze state, approval and supersession. [2]
 - The normative requirement is an independently falsifiable promise. [3]
 - Planned Structure gives placement and skeleton before code; Examples give conforming, violating and boundary cases. [4]
-- The Architect reads this template before writing a requirement packet. [5]
+
+- The Architect reaches this template via `reference/tasks/document-authoring.md` before writing a requirement packet. [5]

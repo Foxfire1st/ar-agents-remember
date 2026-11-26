@@ -92,10 +92,12 @@ No meaningful cross-repo references found.
 
 - The writing-profile marker participates in the positive canonical/copy loop; the seeded missing-copy case selects the Worker acceptance clause, not the profile. The three completion-truth markers and retired omissions remain. [7]
 
+
 - The projection mechanism whose behavior this module pins. [1]
 - The generated-skills profile scope and declaration select the single MCP package tree from canonical skills. [2]
 
 - The doctrine guard that owns which clauses each surface owes, whose wording this table quotes. [4]
+
 
 - The projected current acceptance and Worker boundaries retain their canonical owners and must reach every declared package copy; this is propagation evidence rather than a second meaning definition.
 
@@ -104,5 +106,6 @@ No meaningful cross-repo references found.
 - The boundary clauses are checked across canonical skills and every declaration-backed package target; synthetic missing-copy controls keep their original facets. [3]
 
 - The projected current acceptance and Worker boundaries retain their canonical owners and must reach every declared package copy; this is propagation evidence rather than a second meaning definition. [5]
+
 
 - Declaration-backed targets, pure profile projection and the normal-sync prevalidation matrix preserve unrelated profile fields and refuse bad profiles before target mutation. [6]

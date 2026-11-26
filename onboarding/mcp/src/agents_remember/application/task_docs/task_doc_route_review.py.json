@@ -338,12 +338,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "268fb78a4dd9640215b95691eb653e535db39358",
+            "blob": "c0582ee923f6298275f07bcc4c3afd348f64a44d",
             "content": "sha256:f682a022160f36e9b08ef27945830cddde96f1d87c31fa42f791aa898204e58c",
             "locator": {
-              "end": 309,
+              "end": 316,
               "kind": "line_range",
-              "start": 236
+              "start": 243
             },
             "path": "mcp/src/agents_remember/worktrees/review_history.py"
           },
@@ -538,7 +538,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
+            "blob": "535889af0914dabb5b62de8e8511b7429ab0df35",
             "content": "sha256:1bd5705068bb818ead3f9c2ddb232ebe3c68e5fa177ac13beb9f65a064808341",
             "locator": {
               "kind": "symbol",
@@ -555,7 +555,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa90cdbb2f503680cd674474047738de1cc4b91b",
+            "blob": "535889af0914dabb5b62de8e8511b7429ab0df35",
             "content": "sha256:cb4b111e923137661468aa784ee449c699836dcd393da4f0d3e0f36cdfa79340",
             "locator": {
               "kind": "symbol",

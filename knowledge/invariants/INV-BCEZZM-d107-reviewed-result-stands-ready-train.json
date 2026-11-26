@@ -5,9 +5,9 @@
     ],
     "justification": "Realized across operations/orientation.md (the serving-build home at 97-99 and the permission non-bypass sentence at 50), the pointers and rulings in operations/curation.md and operations/recovery.md, templates/curator-handoff-ingestion.md:53-60 (external-document reference shape) and reference/knowledge/serving-build.md; several files carry the obligation."
   },
-  "applicability": "The six ruled sentences, each standing in exactly one place: review, recovery, coordination, curation (producer and origin-evidence), orientation.",
+  "applicability": "The six ruled sentences across review, recovery, coordination, curation (producer and origin-evidence), orientation, and their Tier-2 governing references.",
   "conditions": [
-    "The selected serving build and clean main ruler stay inline in Curator orientation; the curation and recovery operations point to that section before any memory decision or write.",
+    "The selected serving build and clean main ruler remain grounded in Curator orientation and reference/knowledge/serving-build.md; curation and recovery route the reader there before any memory decision or write.",
     "The common reviewed-result, ready-train, external-document provenance and permission non-bypass homes remain unchanged in meaning.",
     "Only the separately admitted same-tool/input-class correct-write ladder qualifies normal tool-produced writes; its disclosure and retained checks remain mandatory."
   ],
@@ -27,27 +27,20 @@
     "leaf": "260928-MIK-L101",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-invariant/v1",
-  "statement": "Common D107, reviewed-result-stands, ready-train, external-sources and permission non-bypass rulings retain their governing homes and are delivered; the serving-build producer boundary is stated once, in Curator orientation, and the curation and recovery operations send the reader there before any memory decision or write.",
+  "statement": "Common D107, reviewed-result-stands, ready-train, external-sources and permission non-bypass rulings retain their governing homes and are delivered; the serving-build producer boundary stands in operations/orientation.md and reference/knowledge/serving-build.md, and roles/curator.md, operations/curation.md, and operations/recovery.md route the reader there before any memory decision or write.",
   "supersedes": [],
+  "title": "Common lifecycle rulings keep governing homes and serving-build routing",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L84",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T13:09:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

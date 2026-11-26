@@ -15,4 +15,3 @@ read_enclosures and read_engine_process_facts reuse a supplied per-tick Contract
 ## Evidence boundary
 
 This account is current source interpretation only. It creates no executed test/host/bootstrap result and supplies no new CODE or MEMORY grade.
-

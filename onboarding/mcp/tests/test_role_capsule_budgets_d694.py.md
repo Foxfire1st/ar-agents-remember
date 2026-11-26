@@ -29,10 +29,10 @@ Negative controls distinguish the frozen predecessor record `capsule-budgets-d69
 
 - Current measured keys reject stale sizes, orphan measurements and unregistered keys, with the renewal command named in the finding. [3]
 
-- The current classification checks bind declared-detail and ordinary-template populations to the manifest. Capsule, step-detail and digest ceiling failures name the measured size, ceiling and developer decision. [4]
+- The current classification checks bind declared-detail and ordinary-template populations to the manifest. Word ceilings for capsules, step details and the digest are retired while freshness checks remain, and `COMPILED_CAPSULE_TOKEN_CEILINGS` (34 matrix keys) enforce compiled-capsule token ceilings whose failures name the measured size, ceiling and developer's decision. [4]
+
 
 - An ordinary template above 2500 words carries no size limit. [5]
 
-- A declared-detail size above its 2500-word ceiling fails and names the size, ceiling and developer decision. [6]
 
 - Ordinary-template source identities and compiler-input revisions are checked; same-size content edits and missing sources produce findings that name the renewal command. [7]

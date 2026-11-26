@@ -5,9 +5,9 @@
     ],
     "justification": "Prevents silently spending an obsolete hard-coded review budget, losing recorded allowance history or admitting a record-only/wording claim beyond its actual boundary."
   },
-  "applicability": "Canonical lifecycle sources, derived instruction mirrors and the declared compiled role/operation matrices.",
+  "applicability": "Canonical lifecycle sources (Tier-1 manuals and linked Tier-2 details), derived instruction mirrors and the declared compiled role/operation matrices.",
   "conditions": [
-    "The explicit prohibited-number grammar and stage facet predicates apply; separate sync checks establish mirror equivalence."
+    "The explicit prohibited-number grammar and stage facet predicates apply across each owning Tier-1 or linked Tier-2 section; separate sync checks establish mirror equivalence."
   ],
   "exclusions": [
     "Numeric round labels and approved allowance examples are permitted.",
@@ -26,27 +26,20 @@
     "leaf": "260928-MIK-L116",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "No role source or compiled capsule names a review-round number; each of the worker, reviewer, curator and manager texts holds its stage-end facets (the rule 6-8 facets and the bound rule 5 and rule 9 sentences) in the owning sections the stage contract names.",
+  "statement": "No role source or compiled capsule names a review-round number; each of the worker, reviewer, curator and manager Tier-1 manuals together with its linked Tier-2 detail holds its stage-end facets (the rule 6-8 facets and the bound rule 5 and rule 9 sentences) in the owning sections the stage contract names.",
   "supersedes": [],
+  "title": "No review-round numbers in capsules; stage-end facets hold in owning sections",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L84",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T13:09:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

@@ -46,10 +46,12 @@ Transport and child-question details are checked from the emitted orientation ca
 
 
 
-- The parentable-role test checks question recovery and answer provenance in the shared orientation home, requires each selected role to carry its own pointer to that home without copying it, and checks transport clauses through each role's delivered message step and shared held paragraph. [1]
+- The parentable-role test checks question recovery and answer provenance in the shared orientation home, requires Worker/Reviewer/Curator to carry an orientation referral and Orchestrator/Manager/Investigator to carry their role question route without copying the orientation text, and checks transport clauses through each role's delivered message step and shared held paragraph. [1]
 
 
-- Starter-role checks require the shared upward permission notice and each role's referral to it, declared transport recovery and the child-question step; the answer clauses retain an own-authority answer, otherwise an unchanged upward question and unchanged quoted developer-answer provenance on the return path. [2]
+
+- Starter-role checks require `operations/coordination.md` to link the shared upward permission notice in `closeout-recovery.md` without copying it into starter roles, and check declared transport recovery and the child-question step; the answer clauses retain an own-authority answer, otherwise an unchanged upward question and unchanged quoted developer-answer provenance on the return path. [2]
+
 
 - `question_step` uses the declared source, the role's audience and that role's own pre-action pointer. For message transport it joins the emitted busy-refusal detail with the role's held-delivery paragraph, which must stand exactly once, audience-labelled, in the compiled orientation shared block (deleted clauses, a relabelled or extended paragraph and a duplicate fail); for child questions it follows the delivered return action's single link to the orientation section that owns answer attribution. Its clause-deletion controls read those actual details for busy/held recovery and unchanged developer-answer provenance; the other cases continue to read canonical source or compiled ownerRelation as appropriate. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [7]
 

@@ -199,6 +199,7 @@ No cross-repository evidence is required for these file-local claims.
 
 - The lane this module's contract suite is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_record_integrity.py" [26]
 
+
 - The status sets select recognized comparison cases; they do not reject every unknown status. [4]
 
 - The master-row comparison selects early, late or general mismatch rules for its findings. [15]

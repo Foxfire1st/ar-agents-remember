@@ -75,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "27304d9440781768d35f81acb95b018e57259de3",
-            "content": "sha256:8c62b18757d19287f52e995e6b9036407d02fbf608d1be9d8090466a23214be9",
+            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+            "content": "sha256:f07d40c7ab16b2a309491ccec79d5b5d6ee812473e622dbe8bb2647d9df95602",
             "locator": {
-              "end": 32,
+              "end": 25,
               "kind": "line_range",
-              "start": 32
+              "start": 25
             },
             "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
           },

@@ -8,11 +8,11 @@
   },
   "applicability": "Every role launch whose first message is sent to a host agent.",
   "conditions": [
-    "The line names the text artifact and the complete hand-over by absolute path and digest.",
+    "The trailing artifact line names the text artifact and the complete hand-over JSON by absolute path and digest.",
     "Both files exist before the message is sent; neither is written afterwards except by the restore of a saved launch."
   ],
   "exclusions": [
-    "A launch prepared before the second file existed, whose saved message keeps the one-file line."
+    "A launch prepared before CAP-L2 suffix placement or before the second file existed, whose saved receipt keeps its recorded legacy prefix or one-file line on replay."
   ],
   "id": "INV-5H5VR2",
   "origin": {
@@ -26,27 +26,20 @@
     "leaf": "260928-MIK-L185",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A role's first message opens with an artifact line naming both the hand-over text file and the complete hand-over JSON file by absolute path and digest, and both files are written before the message is sent.",
+  "statement": "A role's first message appends an artifact locator line as its trailing suffix line naming both the hand-over text file and the complete hand-over JSON file by absolute path and digest, and both files are written before the message is sent.",
   "supersedes": [],
+  "title": "First message appends handover artifact locator line after writing files",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L185",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-25T20:08:37+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9b5c4d2e-6a1f-4c8b-8d3e-7f2a1b9c6e4d",
+    "task": "261124-CAP"
   }
 }

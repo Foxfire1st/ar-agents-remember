@@ -7,6 +7,21 @@
     "task": "261112-BUG-L33",
     "uncommitted": true
   },
+  "deferrals": [
+    {
+      "condition": {
+        "file": "docs/concepts.md",
+        "task": "261124-CAP-L5"
+      },
+      "createdAt": "2026-11-26T22:03:54.860508Z",
+      "createdByLeaf": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+      "fileBlob": "f1cb10510be406895d2bb5d795a0ea2bb20909a7",
+      "id": "DFR-Y5Q4JY",
+      "owner": "261124-CAP",
+      "passage": "docs/concepts.md ### Role capsule (lines 622-627) and ### Handover (lines 629-634)",
+      "reason": "Crossing merge resolution at 4559dabe8: preserves open CAP-L5 deferral DFR-YBSKMH (omits CAP-L1/L3 3-tier progressive disclosure, role-filtered core/every-role.md, compact Link roots, trailing AR handover artifacts locator, slimmed inline projection, and Poka-Yoke skill:// refusal pointers; doc updates owned by 261124-CAP-L5)."
+    }
+  ],
   "document": "docs/concepts.md",
   "id": "DPD-71WYH4",
   "origin": {
@@ -17,7 +32,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 33,
+  "revision": 34,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -468,14 +483,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T21:50:20+01:00",
+    "at": "2026-11-26T23:03:52+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L33",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
     "task": "261112-BUG"
   }
 }

@@ -28,4 +28,3 @@ The source declares these checks. This card does not attest that pytest/Vitest, 
 
 
 - Synthetic gate-owned worklist states check rendered answered ROW witness text, stale and undecided reasons, legacy-side explanation and comparison-bound per-file/worklist summaries. The helper case supplies witness='counted change' but asserts only the verdict-state result '1 open'; it does not assert rendering of that witness text. Client presentation never decides gate acceptance. [1]
-

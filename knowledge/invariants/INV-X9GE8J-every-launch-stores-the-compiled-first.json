@@ -8,7 +8,7 @@
   },
   "applicability": "Creating the first-assignment files for a role launch.",
   "conditions": [
-    "The complete object is UTF-8 with a one-space indent and a final newline, and the projection's values equal the file's values at the same keys.",
+    "The complete object is UTF-8 with a one-space indent and a final newline, and every field kept by the deduplicated inline projection equals the file's value at that key.",
     "The receipt stores the complete file's path, canonical path, digest, size and its text."
   ],
   "exclusions": [
@@ -26,27 +26,20 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Every launch stores the compiled first message once as a plain-text hand-over artifact `<report path without its suffix>.handover.txt` and the complete hand-over object once as `<report path without its suffix>.handover.json`, each at most 1,048,576 bytes and created read-only (mode 0444) by a hard link of a finished temporary file: an existing file is reused only when it holds the same bytes, different content is refused and nothing changes, and a link at the file's own name is never followed. Both files are preflighted as one pair before either is written, and both exist before the start is sent.",
   "supersedes": [],
+  "title": "Every launch atomically creates immutable read-only handover text and JSON pair",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L185",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T13:09:23+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

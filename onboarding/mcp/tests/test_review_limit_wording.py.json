@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
-        "content": "sha256:35b46b16e26283431beb31ebcbe623858e42207cc2dac364badb7fd97dd46597",
+        "blob": "88ea72f056486f38b9e3b7506463885827821cdf",
+        "content": "sha256:c7cceae5bd1bd0467ccfd7c0305c851a51215aadb8d5410f5267cce5fde3191a",
         "locator": {
           "kind": "symbol",
           "name": "test_worker_stage_requires_named_clean_copy_checks_and_refuses_the_retired_rule"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
+        "blob": "88ea72f056486f38b9e3b7506463885827821cdf",
         "content": "sha256:a79bcd7620a4552898646b497b41c9bdca69ec742036fb20188632af66986e0b",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
+        "blob": "88ea72f056486f38b9e3b7506463885827821cdf",
         "content": "sha256:da4be66fad4859a66e09de02a3344c3a147af096446e81d83be37d38bce4f1f5",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
+        "blob": "88ea72f056486f38b9e3b7506463885827821cdf",
         "content": "sha256:ec340444e43d62304c3e19ff3ee9773631aa4d14527c4d45aebd525550cd3d1c",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
+        "blob": "88ea72f056486f38b9e3b7506463885827821cdf",
         "content": "sha256:807064e599e8c1d00db8002d3485c51832adb1dbd9d818dfeafc9abbc22d9732",
         "locator": {
           "kind": "symbol",
@@ -88,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
-        "content": "sha256:d3f74e604eac6700c9b5849ce63e0b0be852bc492a34f201e9fac52f2cf91089",
+        "blob": "88ea72f056486f38b9e3b7506463885827821cdf",
+        "content": "sha256:8e3562dc86d60bf9d686b21796c7a84a7d80abb628a22cb071fe44a63deb48fd",
         "locator": {
           "kind": "symbol",
           "name": "_section_missing"
@@ -105,11 +105,11 @@
     },
     {
       "anchor": {
-        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
-        "content": "sha256:d52ef903dd6a1641e59edd538283183cbbe911ec7d39817f3787e70b1ab54409",
+        "blob": "88ea72f056486f38b9e3b7506463885827821cdf",
+        "content": "sha256:fc14c1698326e82f7a71afd5cb5165a39aa379250114ae72a0a6184127e813ab",
         "locator": {
           "kind": "symbol",
-          "name": "REVIEWER_RECORD_POINTER"
+          "name": "REVIEWER_ROUNDS_LIMIT_CLAUSE"
         }
       },
       "facet": "The Reviewer's record-pointer sentence the check requires beside its stage facets (round limit from task_doc, pointers to round-limit verification and record-only rechecks).",
@@ -124,7 +124,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
+        "blob": "88ea72f056486f38b9e3b7506463885827821cdf",
         "content": "sha256:42d38daf02b893c35902b9729391307f74c28d5937bc3b2a36af9f1027984064",
         "locator": {
           "end": 121,
@@ -143,7 +143,7 @@
     },
     {
       "anchor": {
-        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
+        "blob": "88ea72f056486f38b9e3b7506463885827821cdf",
         "content": "sha256:2dbaab4852fc1c95bca0dc735510379693e43c1bf198438e89efe440d4c9f92c",
         "locator": {
           "kind": "symbol",
@@ -161,8 +161,8 @@
     },
     {
       "anchor": {
-        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
-        "content": "sha256:1be6f50cdf983c8f06ae5c45d6b069ec5a0e7c4dd9a9b092e905e412c30a152a",
+        "blob": "88ea72f056486f38b9e3b7506463885827821cdf",
+        "content": "sha256:54d6074e18734f5270696148485d29b6418264b999b9c0e0a95f0e698a5608a6",
         "locator": {
           "kind": "symbol",
           "name": "_section_of"
@@ -174,12 +174,12 @@
         "handoffEntry": "L116-W3-wording-oracle",
         "leaf": "260928-MIK-L116"
       },
-      "rationale": "This extractor binds every facet assertion to the single stage section so whole-file presence can never satisfy the check.",
+      "rationale": "Extracts one named Markdown section so each facet assertion binds to its owning section in the role, operation, or linked Tier-2 detail rather than whole-file presence.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
+        "blob": "88ea72f056486f38b9e3b7506463885827821cdf",
         "content": "sha256:bdebe569c19b4148f8e3fd4df02667a7a21eb6c6bd8f8534979d8a438928481c",
         "locator": {
           "end": 152,
@@ -198,12 +198,12 @@
     },
     {
       "anchor": {
-        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
-        "content": "sha256:35b46b16e26283431beb31ebcbe623858e42207cc2dac364badb7fd97dd46597",
+        "blob": "88ea72f056486f38b9e3b7506463885827821cdf",
+        "content": "sha256:c7cceae5bd1bd0467ccfd7c0305c851a51215aadb8d5410f5267cce5fde3191a",
         "locator": {
-          "end": 626,
+          "end": 716,
           "kind": "line_range",
-          "start": 605
+          "start": 694
         }
       },
       "id": "RLZ-M9GPDG",
@@ -217,10 +217,10 @@
     },
     {
       "anchor": {
-        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
-        "content": "sha256:447462ffdb8d36d809ead831e0c9a8bc20f0e9f323e98d77a8c62920e8bdd117",
+        "blob": "88ea72f056486f38b9e3b7506463885827821cdf",
+        "content": "sha256:3c8841ae81bc37efe504beb588fc4667c4630a4d256b26fb4e531875e55635de",
         "locator": {
-          "end": 442,
+          "end": 483,
           "kind": "line_range",
           "start": 164
         }
@@ -241,7 +241,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
+            "blob": "88ea72f056486f38b9e3b7506463885827821cdf",
             "content": "sha256:af98bd8aa55fb122c2c941301dd2eb8bef5362a48b52102b2c69487ad0b990b0",
             "locator": {
               "kind": "symbol",
@@ -257,7 +257,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
+            "blob": "88ea72f056486f38b9e3b7506463885827821cdf",
             "content": "sha256:ec340444e43d62304c3e19ff3ee9773631aa4d14527c4d45aebd525550cd3d1c",
             "locator": {
               "kind": "symbol",
@@ -269,12 +269,12 @@
       ]
     },
     "3": {
-      "note": "The specified Reviewer, Worker and Manager property/construction sentences survive source and compiled projections.",
+      "note": "The Reviewer, Worker and Manager property and construction sentences survive source and compiled projections.",
       "targets": [
         {
           "anchor": {
-            "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
-            "content": "sha256:2705e46482371922d94e3970e0acf1bbda85cbd87350ce62dfeb248111b2d881",
+            "blob": "88ea72f056486f38b9e3b7506463885827821cdf",
+            "content": "sha256:f38f7134d0eee7847cb6d55f1ffd8bd45ea8a79eea8d926ed47a498a9f7c7385",
             "locator": {
               "kind": "symbol",
               "name": "test_rule_nine_sentences_hold_for_reviewer_worker_manager"
@@ -285,12 +285,12 @@
       ]
     },
     "4": {
-      "note": "Stage-end checks bind each role’s required facets to its current owning section in source and compiled text; the Reviewer's record-recheck facets are owned by `operations/review.md`. Curator facets include clean quality, installed-writer versus manual provenance and covered-write recovery; Manager facets separate outside-authority block notices from local working-child wait recording with no message sent. Deletion/relocation controls require a real mutation, while round-number and rule-nine guards remain.",
+      "note": "Stage-end checks bind each role's required facets to its current owning section in source and compiled text; the Reviewer's record-recheck facets are owned by `reference/review/rounds-and-late-findings.md` (`## Recheck a repaired Worker record`). Curator facets include clean quality, installed-writer versus manual provenance and covered-write recovery; Manager facets separate outside-authority block notices from local working-child wait recording with no message sent. Deletion/relocation controls require a real mutation, while round-number and rule-nine guards remain.",
       "targets": [
         {
           "anchor": {
-            "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
-            "content": "sha256:ed510a767fec08faa7b2cc94376d382211ebc36637e66c4a643864a62f574f5a",
+            "blob": "88ea72f056486f38b9e3b7506463885827821cdf",
+            "content": "sha256:62c6a4ab3fb46cde2d35f9522cb57c0f3be9a7486ee640624fc6963a763152f1",
             "locator": {
               "kind": "symbol",
               "name": "STAGE_CONTRACTS"
@@ -305,7 +305,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
+            "blob": "88ea72f056486f38b9e3b7506463885827821cdf",
             "content": "sha256:1c907e54289bb9b0b2f0024aef6e02b4a1a2c74708786e9ad3936883e144c92a",
             "locator": {
               "kind": "symbol",
@@ -316,7 +316,7 @@
         },
         {
           "anchor": {
-            "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
+            "blob": "88ea72f056486f38b9e3b7506463885827821cdf",
             "content": "sha256:aafc62f80429ca0d7204b7e5944656236e036610eb32621ae40053b190613649",
             "locator": {
               "end": 153,

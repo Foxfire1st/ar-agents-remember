@@ -59,6 +59,25 @@
     {
       "anchor": {
         "blob": "cc7256c264f26cfec9ea56dae7ad2ffb6f0136bb",
+        "content": "sha256:4e09a45481d6041e1a4c45cbc141ebf65d7bc6d54a661ca84eefabad4cc40254",
+        "locator": {
+          "end": 18,
+          "kind": "line_range",
+          "start": 18
+        }
+      },
+      "id": "RLZ-MVDAQ8",
+      "invariant": "INV-5KBX7C",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-5KBX7C",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Moved from core/every-role.md to core/acceptance.md:18: closeout trees come by filename from the highest-numbered memory PASS and landing-check verdict, preserving Manager gate/evidence ownership.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "cc7256c264f26cfec9ea56dae7ad2ffb6f0136bb",
         "content": "sha256:029282b960ad449b8bfde36bc5b46d81abb39232409b6d49031da6df26d36326",
         "locator": {
           "end": 24,
@@ -197,18 +216,31 @@
       ]
     },
     "7": {
-      "note": "Selected Worker transport includes direct freeze handoff and producer-preserving post-PASS Curator list.",
+      "note": "Selected Worker transport includes direct freeze handoff and producer-preserving post-PASS Curator list.\n\nAnchor: `freeze-handoff`; `producer-list`",
       "targets": [
         {
           "anchor": {
-            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
-            "content": "sha256:1e25d569cb87815128f1ebaae7bbb7cd196c8c3d4b05ef25f13e9756cd12a514",
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:142bbcb890718878a721797553454ba3a3e926329b033e04245fbb8efed718db",
             "locator": {
-              "end": 90,
+              "end": 13,
               "kind": "line_range",
-              "start": 81
+              "start": 12
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ba302ee5ee35f8341db142ae02dcb244ca25fb98",
+            "content": "sha256:dbe7012c69c812e5e3aeec7d1ffaf73067579850be65a2eac35e151a81776b07",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
           },
           "kind": "code"
         }

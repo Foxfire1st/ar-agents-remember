@@ -2,7 +2,7 @@
 
 ## Current supported-pair account — R100/R116 composition
 
-MEMORY review stays separately sealed/counted and never opens or resets CODE review. Beyond the settings limit the architect or developer authorizes the pass and Manager records it. Curator owns corrected input/body/coherence work; transaction steps and external effects stay with their owners. The installed-build quality/coherence outcome and direct Reviewer handover remain separate from independent acceptance.
+Curation pairs with separate `reviewKind=memory` review in `operations/review.md` (which keeps separate sealed reports, finding IDs and pass count without opening or resetting CODE review). Curator owns corrected input/body/coherence work; transaction steps and external effects stay with their owners. The installed-build quality/coherence outcome and direct Reviewer handover remain separate from independent acceptance.
 
 
 ## Message/file transport
@@ -29,13 +29,13 @@ Reconcile current intent, ruled change intent and implemented reality, maintain 
 
 ## Current Contract
 
-MEMORY review keeps separate sealed reports, finding IDs and its own pass count, opening no CODE round or resetting its verdict/baseline. Its budget is the same settings limit as CODE; a further pass needs the Architect’s or developer’s words recorded by the Manager.
+Independent memory review (`reviewKind=memory`, governed by `operations/review.md#rounds`) keeps separate sealed reports, finding IDs and its own pass count without opening CODE rounds or resetting the code verdict/baseline.
 
-On an AR-launched Paseo capsule, `documents[0].taskDocReadArgs` supplies exact rendered_path and json_path file locations, opened with the harness's own file tools. task_doc writes and does not read. AR calls use agents-remember-task and the actual reader schemas: knowledge_read takes memoryRoot; context_packet and read_ar_files both take the exact supplied leaf task_context with the canonical task reference and enclosure contract. Read immutable baseline/candidate knowledge before semantic changes, contain outputs in the selected memory root and read admitted records back.
+Curation uses the actual reader schemas (bound to `agents-remember-task` via `core/every-role.md`): `knowledge_read` takes `workspace.memoryRoot`, and `context_packet` / `read_ar_files` take the exact supplied leaf `task_context`. Read immutable baseline/candidate knowledge and full `knowledge_diff` before semantic changes, verify writer outputs resolve in `workspace.memoryRoot`, and read admitted records back.
 
 On converted memory, normally admitted `knowledge-ingest --contract … --list … --authorization-ref … --commit --json` writes files with `entries`, `records` and `history`, including worklist/onboarding judgments and governing decisions; it publishes no dataset and has no `--baseline`, `--publish` or `--publish-to` option. Capsule-specific missing writer/command admission is reported as records not written; it admits no other runtime or internal writer.
 
-Normal curation requires the complete contract-scoped memory-quality operation, repair or exact blocked escalation of every curator-actionable finding, and reruns until the raw quality checklist is ready. Missing/stale coherence is cleared by the existing prepare → publish → validate authority. Scoped checks cannot stand for that full operation. For Manager leaf closeout, the complete curation checks also call `knowledge_read` on `agents-remember-task` with `memoryRoot` and `repositoryRoot` set to the paired leaf worktrees, `codeTreeId="working-tree"`, `view="dependent"` and `staleOnly=true`, match the code and memory candidates before and after the read, finish every page, confirm or correct each row, and record the exact pair, input, response `memoryTree.treeKey`, final `counts.total` and receipt in the curation report.
+Normal curation requires the complete contract-scoped `memory_quality_check`, repair or exact blocked escalation of every curator-actionable finding, and reruns until the raw quality checklist is ready (`### Checks and gates`). Missing/stale coherence is cleared by the existing prepare → publish → validate authority. Scoped checks cannot stand for that full operation. For Manager leaf closeout, the complete curation checks also require the stale dependent-document `knowledge_read` (`codeTreeId="working-tree"`, `view="dependent"`, `staleOnly=true`) detailed in `reference/curator/exceptions-and-recovery.md` and the independent non-authoring `OM-2` fact-check.
 
 Before converted-memory closeout, an independent seat that authored none of the leaf's cards or records fact-checks every changed card, sidecar and record statement against final code, every history row's disposition, effect and reason against the diff, and important omissions. Blocking findings are repaired with another full-quality run. This second reader is a lifecycle duty, not a check mechanically run by closeout. It preserves separate MEMORY/CODE reports and budgets and the one admitted producer/writer.
 
@@ -70,7 +70,8 @@ surface with its card and the governing history rows carries it.
 Before converted-memory closeout, a seat that authored none of the leaf cards or records independently checks every changed statement against final code, each history disposition/effect/reason against the diff and important omissions. Blocking findings are repaired with a full curation-operation rerun. This is a lifecycle duty, not a new closeout predicate or helper self-check; neither raw quality nor coherence substitutes for the second reader.
 
 
-- The curation contract keeps the Curator's memory reconciliation distinct from Worker, Reviewer and Manager ownership; the Manager owns the Git transaction. [6]
+- The curation operation keeps Curator memory reconciliation distinct from Worker, Reviewer and Manager ownership: Curator runs no Git writes, edits no code/gate/closeout state, repairs no code, and routes authority, disputes and reserved sync steps to the Manager. [6]
+
 
 
 ### Logic
@@ -96,11 +97,14 @@ No additional work is asserted by this card. Actual project publication and sema
 
 ### Repo-Internal References
 
-- Bound Paseo intake reads the rendered task and canonical JSON with the agent's own file tools, the knowledge writer keeps its ownership inside the selected memory root, and curation binds to the starting serving build. [8]
+- The curation workflow verifies writer outputs resolve in `workspace.memoryRoot` and reads scoped `knowledge_read` plus full `knowledge_diff` before semantic changes; orientation binds curation decisions and writes to the starting server or serving-build CLI. [8]
 
-- Normal workflow reconciles meaning, states invariant scope and grouping guarantees, and runs full quality checks (including the Manager leaf closeout dependent-document read) and independent fact-check before bounded repair. [9]
 
-- Authority gates and failure handling keep source and transaction ownership, tool scope and coherence with their owners; the memory candidate goes directly to the Reviewer and harness permission decisions are not bypassed. [10]
+- Normal workflow reconciles intent and code, ingests invariants in scope and updates families only with justification and a re-examined guarantee, and runs full quality checks (including the closeout stale `dependent` check) and the independent OM-2 fact-check. [9]
+
+
+- Curation boundaries keep code, Git and transaction ownership with their owners, require `curator_coherence` when `checklistStatus=coherence-required`, keep partial/refused handovers partial, and send the memory candidate directly to the Reviewer via `role_message`. [10]
+
 
 
 - An independent nonauthor fact-checks every changed curated statement and history-row judgment before converted-memory closeout, and blocking findings are repaired before closeout. [5]
@@ -129,6 +133,7 @@ No meaningful cross-repository implementation dependency.
 - Memory review keeps its own sealed reports, finding identifiers and pass count under the same ordinary limit as code review; a pass beyond the settings limit needs the Architect's or developer's instruction, which the Manager records. [3]
 
 
+
 - Before ingest, each hand-off target requires an authored rationale, directly or through an applicable entry-level default; the writer refuses unexplained targets on every run, before any file is written. [2]
 
 
@@ -136,6 +141,8 @@ No meaningful cross-repository implementation dependency.
 
 - Curation requires the complete memory-quality operation, the Manager leaf closeout dependent-document read (`view="dependent"`, `staleOnly=true`) recorded in the curation report, repair or blocked escalation of every Curator-actionable finding, and the independent fact-check before handover. [4]
 
+
 - Bound curation intake gives `knowledge_read` the workspace memory root and gives `context_packet` and `read_ar_files` the exact supplied leaf `task_context`. [7]
+
 
 - The mirror carries the same authoring fields as the canonical operation. [1]

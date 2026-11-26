@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "266bb77d9f283e6605193658145b39fd45228f6f",
+            "blob": "916169c6fcae655d619aae08b0c2cdf6fb28d1d3",
             "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
             "locator": {
               "kind": "symbol",
@@ -53,8 +53,8 @@
         },
         {
           "anchor": {
-            "blob": "266bb77d9f283e6605193658145b39fd45228f6f",
-            "content": "sha256:7353c3d687fe5dd1b45f8382108f44fbb105f007224fcffe13bf4ac02d0b6a98",
+            "blob": "916169c6fcae655d619aae08b0c2cdf6fb28d1d3",
+            "content": "sha256:79e17a62b7a42f938edfb4034d746d5788f57e963814189531346f512e6ca732",
             "locator": {
               "kind": "symbol",
               "name": "CURATION_POLICY_STATEMENTS"
@@ -135,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "266bb77d9f283e6605193658145b39fd45228f6f",
+            "blob": "916169c6fcae655d619aae08b0c2cdf6fb28d1d3",
             "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
             "locator": {
               "kind": "symbol",
@@ -294,7 +294,7 @@
         },
         {
           "anchor": {
-            "blob": "c98275f61330ba7b4223b38665b987eaa90a769d",
+            "blob": "857d597b2a56f1dbd72592afb5e5a72dba9c6221",
             "content": "sha256:559a620ddf3cecf6031fca15109270df200731fea2295943100dabd6cf7ba67e",
             "locator": {
               "kind": "symbol",
@@ -306,7 +306,7 @@
         },
         {
           "anchor": {
-            "blob": "07fb1ba05181fb4f0c5748dcd295674974c546bf",
+            "blob": "49fc986a0150f4795bf8487962a825b5db8b70fb",
             "content": "sha256:4fea96e541b8daf2d9fd6892f750f4237d26bf2af1fd4e79ae0c4c5216a7f1fd",
             "locator": {
               "kind": "symbol",
@@ -331,12 +331,12 @@
         },
         {
           "anchor": {
-            "blob": "07fb1ba05181fb4f0c5748dcd295674974c546bf",
+            "blob": "49fc986a0150f4795bf8487962a825b5db8b70fb",
             "content": "sha256:2c0ac44c32a8ab1f7e6e7c0a89ac5995737d14be3619dba9f6e8e4304e615d26",
             "locator": {
-              "end": 81,
+              "end": 103,
               "kind": "line_range",
-              "start": 70
+              "start": 92
             },
             "path": "mcp/tests/test_leaf_retirement_wording.py"
           },
@@ -582,12 +582,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5762b05720cabc75a824c11b8e33c378ba1cd12",
+            "blob": "9cb115f5d53a37b86b0b15bb5eeef532ec4a2a51",
             "content": "sha256:bf80377e15c35922b6d4fc8fc6be344ed221e11261ab5f4ea0f9ca2b46de60ad",
             "locator": {
-              "end": 305,
+              "end": 312,
               "kind": "line_range",
-              "start": 266
+              "start": 273
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/manifest_step_derivation.py"
           },
@@ -675,16 +675,16 @@
       ]
     },
     "42": {
-      "note": "The current pointer fixtures bind whole-record retrieval to its named knowledge-use detail.",
+      "note": "The current role pointer fixtures bind compact role reference-index rows to `reference/knowledge/use.md` (with section fragments pinned in `ROLE_POINTER_QUALIFICATIONS` for architect and investigator).",
       "targets": [
         {
           "anchor": {
-            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
-            "content": "sha256:df18848be7c15a5a88359f8ab84a22b9cb123b63aa5b4744e97b95a4bcddc31a",
+            "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
+            "content": "sha256:5b094ea565106d8229f98d8e51f01b8d813b5c16017f187614b02ca9d553518c",
             "locator": {
-              "end": 146,
+              "end": 29,
               "kind": "line_range",
-              "start": 136
+              "start": 26
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
           },
@@ -692,12 +692,12 @@
         },
         {
           "anchor": {
-            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
-            "content": "sha256:a7d33684a6845eef90c133841154faff0149c780d50d3a950fefe377a35bc0d0",
+            "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
+            "content": "sha256:c880f48902b3114220d46eda54a7946b96bf2ef6a67ba6873221343f391a93ec",
             "locator": {
-              "end": 180,
+              "end": 190,
               "kind": "line_range",
-              "start": 172
+              "start": 179
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
           },
@@ -705,12 +705,38 @@
         },
         {
           "anchor": {
-            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
-            "content": "sha256:c2d62ad1c7932d8d58d1f1b1b9d5d795f71c5f1abcf5ac77dbc9a374cf82455d",
+            "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
+            "content": "sha256:30d2180a3affb4d82f55591d1ad519499d5821b6185b73ccd3221ba1513ab4f8",
             "locator": {
-              "end": 281,
+              "end": 224,
               "kind": "line_range",
-              "start": 252
+              "start": 217
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
+            "content": "sha256:2627cdaad19c4fe09396d3b87c43c1af789ff5aba3c27ede4454256f586ed98e",
+            "locator": {
+              "end": 395,
+              "kind": "line_range",
+              "start": 390
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
+            "content": "sha256:37ab10dcd269257247ec0281f281bc1ec08dd922a91f0fa379403eed330ee112",
+            "locator": {
+              "end": 445,
+              "kind": "line_range",
+              "start": 441
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
           },

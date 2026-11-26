@@ -98,4 +98,5 @@ The authored file is the canonical contract; its measured byte-equal package cop
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [5]
 
+
 - The Worker reads the visual-explainer guidance before adding an optional walkthrough to its freeze report. [6]

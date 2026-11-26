@@ -35,7 +35,8 @@ This account is current source interpretation only. It creates no executed test/
 
 - Anchor: Separate document-bound and instructed-session Curator compilation identities. [9]
 
-- `delivered_foundation` checks the declared source, Curator role, delivery step, action pointer, delivered bytes and heading against the effective manifest and current capsule-budget view. Relative links must preserve their shipped target file and anchor. `foundation_delivery_controls` mutates the budget, heading, required sentence and declared pointer, then separately relocates the pointer. The sibling `test_curator_deduplication_keeps_distinct_authority_and_outcome_clauses` invokes both helpers with `FOUNDATION_AUTHORITY_CLAUSES`; this module does not define a delivered-procedure test. These are source assertions, not a fresh run or admission verdict. [15]
+- `delivered_foundation` and `foundation_delivery_controls` remain defined in this module (`136-259`), checking the declared source, Curator role, delivery step, action pointer, delivered bytes, heading, relative links, and mutation controls against the effective manifest and current capsule-budget view. The sibling `test_knowledge_correction_guidance.py` imports `FOUNDATION_AUTHORITY_CLAUSES`, `FOUNDATION_HEADING`, `FOUNDATION_SOURCE`, and `free_agent_capsule` from this module and invokes its own local `_delivered_foundation` and `_foundation_delivery_controls` helpers inside `test_curator_deduplication_keeps_distinct_authority_and_outcome_clauses`; this module does not define a delivered-procedure test. These are source assertions, not a fresh run or admission verdict. [15]
+
 
 - `served_body` looks up one served skill body and requires one readable catalog entry; neither current test calls this helper. [10]
 

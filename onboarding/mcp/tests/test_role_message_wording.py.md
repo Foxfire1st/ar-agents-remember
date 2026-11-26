@@ -63,8 +63,10 @@ controls; `scan_lines()`/`scan()` report a hit as `surface/relative: detail`, so
 
 - Message-file markers are checked through the declared shared message step for role and addressed-operation surfaces, and through each handover template's action pointers to the message-handover reference. Operation checks visit every declared recipient, including Worker implementation and Curator/Manager curation, and compiled prompt checks combine the role text with its delivered detail. [4]
 
+
 - The oracle keeps Reviewer- and Curator-specific file-message marker alternatives and requires each current delivered shared-step facet. Deleting a real marker must fail, and each role's alternatives must fail on unrelated surfaces. Declared operation recipients include both Curator and Manager curation; pointer, declaration, audience and step mutations must also fail. [5]
 
 - `message_step` reads the actual role/operation-aware shared detail. Reviewer direct-verdict ownership is checked in the review operation's intake-and-verdict section, and retired duplicate verdict directions fail reinsertion controls. Six curation handoff targets must resolve to exact headings; Bootstrap keeps its no-message own-chat route, and pointer/declaration/audience/step/action mutations fail. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [6]
+
 
 - Messaging roles, declared operation recipients and handover templates state the file-message markers; Bootstrap states its no-message own-chat route. [2]

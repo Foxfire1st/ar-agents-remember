@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
-    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
+    "codeTree": "d1e7bbbcff7450564c350d2a268ec406f0f97cfe",
+    "commit": "130545f8071e7c9fd369e170b0851da63abee6f6",
     "role": "curator",
-    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/reference/settings-json.md accurately matches the codebase: providers, providerDegradation and timeoutCaps.providerSetupSeconds are omitted from active settings, tolerated unread with reporting in server_info.unusedSettingsKeys, and paseoRuntime.providers remains documented for host harnesses.",
-    "task": "261125-DEP-L2",
+    "statement": "Audited docs/reference/settings-json.md in full (lines 1-1083) against synced Attempt-5 tree d1e7bbbc (base 130545f8; pre-base-stale on paseo_launch.py from BUG-L51): all settings keys, paseoRuntime rules, orchestration launch/extraArgs propagation, handover-locator recovery note, and First tool call preapproval grants remain accurate with no contradiction or omission from BUG-L51 seat-identity binding confirmation.",
+    "task": "261124-CAP-L3",
     "uncommitted": true
   },
   "document": "docs/reference/settings-json.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 20,
+  "revision": 21,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -154,7 +154,7 @@
       "path": "mcp/src/agents_remember/worktrees/role_handover_locator.py"
     },
     {
-      "blob": "ca833123cd3e62b5a60b14eaeb78fbb6b296c2f0",
+      "blob": "b5e9d3bc7a9d4c59e301eb81b9ea1b5ddfd7d1eb",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
@@ -235,14 +235,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T07:08:02+01:00",
+    "at": "2026-11-26T20:16:07+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L2",
+    "leaf": "261124-CAP-L3",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
-    "task": "261125-DEP"
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

@@ -17,4 +17,5 @@ Five short rules, each under its own heading: claimed sends are checked in the m
 - Sends are verified in the message log; preservation claims need a same-day run; a design's origin is established before calling it defective. [1]
 - The complete code path is read before ruling, re-read before overruling an agreed reading, and a wrong ruling is withdrawn plainly. [2]
 - Claims about files outside scratch are checked against the file, its creation time and the session record. [3]
+
 - The Architect role points here before ruling on a reported claim. [4]

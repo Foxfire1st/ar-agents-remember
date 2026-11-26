@@ -37,18 +37,18 @@
       ]
     },
     "3": {
-      "note": "The curation operation points here before promoting a historical oddity.\n\nAnchor: `intent-reconciliation.md`",
+      "note": "The Curator role reference index links this file under Intake/worklist.\n\nAnchor: `intent-reconciliation.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
-            "content": "sha256:2704060377d2a0e4bf65ca6aa5f180ddec76ffce165a1e725cdab1b78b38be31",
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:67fb6d96bb2468e8f612052ed821354037086861ff59d5c3eaf8f12ba753dae4",
             "locator": {
-              "end": 115,
+              "end": 28,
               "kind": "line_range",
-              "start": 115
+              "start": 28
             },
-            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
           "kind": "code"
         }

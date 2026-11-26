@@ -103,6 +103,7 @@ The verified byte-equal package copy is derived output, not an independent role/
 
 - The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]
 
+
 - Manager brief values bind execution nature and the canonical source edge without compiling branch names; each leaf's exact owned primary revision is compiled separately from adjacent dependency and preservation revisions before dispatch. [1]
 
 - The Manager brief binds the leaf journal, next handoff attempt, carried findings and frozen candidate evidence, deferring candidate binding, immutable records and invalid-record handling to acceptance; the master attempt summary stays rebuildable and non-gating. [3]
@@ -113,7 +114,9 @@ The verified byte-equal package copy is derived output, not an independent role/
 
 
 
+
 - Template values defer to canonical role/operation/core owners; requested review preserves exact sealed IDs and recorded extra-round authority. The Reviewer records CODE, the Manager owns the transaction and the normal Curator pass supplies complete memory-quality evidence. [5]
+
 
 
 

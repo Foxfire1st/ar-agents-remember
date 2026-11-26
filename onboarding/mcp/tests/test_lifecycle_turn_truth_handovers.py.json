@@ -1,0 +1,176 @@
+{
+  "path": "mcp/tests/test_lifecycle_turn_truth_handovers.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "2da604ccdc7941168ce368bca7cdd92d772e6882",
+        "content": "sha256:c0f89204befdacad16e6d177057bb647e152a65f75eca0f816302da5ac7d9243",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgreementAcrossTheRoleSetTests.test_delivered_coordinator_capsules_check_candidate_evidence_before_acceptance"
+        }
+      },
+      "facet": "Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation.",
+      "id": "PRF-T9EV7V",
+      "invariant": "INV-4E130M",
+      "origin": {
+        "handoffEntry": "Preservation (flags and acceptance)",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2da604ccdc7941168ce368bca7cdd92d772e6882",
+        "content": "sha256:063c8695dc795bbad5e8779d073b6d4b23e0760cc8bbdf3eb751a799709cdc8b",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgreementAcrossTheRoleSetTests.test_the_declared_roster_equals_the_surfaces_that_speak_the_vocabulary"
+        }
+      },
+      "facet": "Requires the declared roster to equal the canonical surfaces that use the completion vocabulary, in both directions.",
+      "id": "PRF-TX0CVG",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 4",
+        "leaf": "260928-MIK-L70"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2da604ccdc7941168ce368bca7cdd92d772e6882",
+        "content": "sha256:e0f1cb203b018a760be7900c53cfa9d1c7e7169373135b21239c125573a96df2",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgreementAcrossTheRoleSetTests.test_every_roster_surface_carries_the_mechanical_reading"
+        }
+      },
+      "facet": "Requires every surface on the roster to state the first half of the mechanical reading: that the terminal outcome only ends the turn.",
+      "id": "PRF-Z5EB64",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 4",
+        "leaf": "260928-MIK-L70"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2da604ccdc7941168ce368bca7cdd92d772e6882",
+        "content": "sha256:411f00599e091c77551963da418be62497840a8f1c5c15a78c18be4240ba44a2",
+        "locator": {
+          "end": 247,
+          "kind": "line_range",
+          "start": 168
+        }
+      },
+      "id": "RLZ-1PRTFZ",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-ZNJ14G",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Route-specific Worker and implementation source checks preserve Manager start notice, direct Reviewer delivery and exact-object handover content.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2da604ccdc7941168ce368bca7cdd92d772e6882",
+        "content": "sha256:eff9000261e0e44f8cbb63ee87b502382495a36a9de601fa5ceb4287f08b90b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgreementAcrossTheRoleSetTests._assert_owed"
+        }
+      },
+      "id": "RLZ-C6DX8W",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "K3-5TKYXM-template-referral-proof",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The owed-clause check used by every surface test: for a template that now refers to core/acceptance.md instead of restating the turn-end boundary, it checks that the relative link resolves to the shipped acceptance file and that the acceptance file states the owed clauses, then that the surface states its own owed clauses and contradicts none.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2da604ccdc7941168ce368bca7cdd92d772e6882",
+        "content": "sha256:bee39b54aeafc24c82080e05210cc07c3df81c325a51605ff80df96ef16a876c",
+        "locator": {
+          "end": 266,
+          "kind": "line_range",
+          "start": 249
+        }
+      },
+      "id": "RLZ-TM9N6T",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-ZNJ14G",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The route helper checks each Worker/operation handover clause and removes each clause in a mutant to ensure direct-route omissions fail.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`AgreementAcrossTheRoleSetTests` sweeps canonical surfaces for turn-truth contradictions, enforces roster/vocabulary parity, and checks owed boundary statements on `core/acceptance.md` and handover templates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2da604ccdc7941168ce368bca7cdd92d772e6882",
+            "content": "sha256:ef35dbe2ac2da8d5dec86e53955204c7447024e6c1b7f7c90f6c0ce001ef1b3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgreementAcrossTheRoleSetTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Direct Worker-to-Reviewer/Curator handovers and coordinator candidate-evidence checks are verified with mutation tests across roles, operations, core, and `sync-and-repairs.md`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2da604ccdc7941168ce368bca7cdd92d772e6882",
+            "content": "sha256:827684f930a2e8691f74b66ee2cc36c229ddee5b68bfc361cc8a3a2f824c3024",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_worker_hands_its_frozen_report_directly_to_the_reviewer"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2da604ccdc7941168ce368bca7cdd92d772e6882",
+            "content": "sha256:c0f89204befdacad16e6d177057bb647e152a65f75eca0f816302da5ac7d9243",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_delivered_coordinator_capsules_check_candidate_evidence_before_acceptance"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`ConvergenceTeethTests` confirms reconciled sites read clean while paired synthetic mutants, appended contradictions, and removed owed clauses fail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2da604ccdc7941168ce368bca7cdd92d772e6882",
+            "content": "sha256:9e73f68a57a45be926c152c274d7ec99f0ff4dedb4e3d1d6bf4555c168b80498",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConvergenceTeethTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -18,35 +18,50 @@ The module compiles through the helpers of `test_l84_capsule_delivery_proofs.py`
 - **Collaboration references.** The checks that the manifest's `tasks/collaboration-method` and `tasks/document-authoring` references equal the step and audiences derived from the first-message pointers live in `test_collaboration_reference_pointers.py`.
 - **Architect reads.** The Architect's document-authoring detail carries the retained-evidence pointer to `core/acceptance.md`; each `ARCHITECT_ACTION_READS` cue is one line that reads its delivered detail, which holds the clause in `ARCHITECT_ACTION_CLAUSES` (or the clause stands once in the shared block or the role file); the requirement-design detail keeps the task-layout sections.
 - **Refused writes.** For the Architect, Orchestrator, Manager and Worker, the shared paragraph on a correct-input refusal of a covered write keeps its boundary clauses. Only the Manager receives `reference/refused-write.md` as a detail; the other roles reach it through the paragraph's served `skill://` link. Both paths lead to the complete "Honor harness permission decisions" section of `operations/orientation.md`.
-- **Inline and short rules.** None of the detail files named in `INLINE_RULE_CLAUSES` is delivered or linked as a detail, and each of their rules stands once in its owning section of the shared block or the role file; deleting or doubling a clause fails. Each rule in `SHARED_SHORT_RULE_CLAUSES` stands once in the shared block, its digest-map unit is a digest unit whose lines hash to the recorded SHA-256, and the actions in `REMOVED_SHORT_RULE_ACTIONS` do not appear in the role's message.
+- **Inline and short rules.** None of the detail files named in `INLINE_RULE_CLAUSES` is delivered or linked as a detail, and each of their rules stands once in its owning section of the shared block or the role file; deleting or doubling a clause fails. Each rule in `SHARED_SHORT_RULE_CLAUSES` stands once in the shared block for its audience roles and is absent for other roles, its digest-map unit is a digest unit whose lines hash to the recorded SHA-256, and the actions in `REMOVED_SHORT_RULE_ACTIONS` do not appear in the role's message.
 - **Grouped actions.** Each `GROUPED_DETAIL_CLAUSES` action links the whole delivered detail with no section fragment, and the emitted detail holds every listed clause.
 
 ## Evidence
 
 - The complete per-role detail population is listed. [1]
+
 - The direct start pointers reach the complete start-and-first-intake procedure. [2]
+
 - Re-added duplicate pointers are enumerated by role, operation and source. [3]
 
+
 - Leaf authoring reaches the retained-evidence lifecycle. [9]
+
 - Architect action cues read their delivered detail and reject pointer removal. [10]
+
+
 - Only the Manager receives the refused-write detail; the other roles reach it through the served link. [11]
+
+
 - The permission owner section keeps every facet of its stop. [12]
 
 
 - Grouped actions read the whole delivered owner. [15]
 
+
 - Inline rules reach their owning sections and reject deletion. [13]
+
 
 - Short rules use the shared delivery and the removed step reads stay absent. [14]
 
+
 - Every first message has one pointer per action and the restored duplicates fail. [4]
+
 
 - Every compile delivers exactly its required details, each pointed to once per action. [5]
 
+
 - Moved action pointers reach each required compile and reject removal. [6]
+
 
 - The collaboration and authoring references equal their pointer-derived step and audiences. [7]
 
 - An extra audience or an outbound pointer in the method fails. [8]
 
-- The current pointer fixtures bind whole-record retrieval to its named knowledge-use detail. [16]
+
+- The moved-pointer fixture binds Curator's `Knowledge/CLI` index pointer to its named `reference/knowledge/use.md` detail. [16]

@@ -46,8 +46,11 @@ No Domain Documentation sources are configured; the evidence below is repository
 
 - Completed results retain status, blocking totals and report locations. [1]
 
+
 - The bounded blocking list preserves repair-loop order and whole-population count. [2]
+
 - A taken-over failure retains its own code and recovery action. [3]
+
 - Poll projection distinguishes live, absent and completed runs. [4]
 
 - Ordinary results project a nonnegative non-Boolean proof count and a bounded-key cache-build summary with a list-derived buildErrorCount. [6]

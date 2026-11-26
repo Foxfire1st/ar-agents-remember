@@ -1,0 +1,137 @@
+{
+  "path": "mcp/src/agents_remember/application/role_capsules/wire_budget.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+        "content": "sha256:edaf9eb0d77dc101aeb7fcd0d94adf938af51879b3c343e4508b62a0e3121d19",
+        "locator": {
+          "kind": "symbol",
+          "name": "evaluate_wire_token_ceilings"
+        }
+      },
+      "id": "RLZ-E6AQ06",
+      "invariant": "INV-ZVD184",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-zvd184",
+        "leaf": "261124-CAP-L2"
+      },
+      "rationale": "Checks measured Turn-1 prompt and compiled-capsule token counts against WIRE_TOKEN_CEILINGS (default) or COMPILED_CAPSULE_TOKEN_CEILINGS and reports every exceeded or unconfigured key.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+        "content": "sha256:d543aae5b6e562d1236a3945c000f7ce64ae9f776a7e0e666c31ef07989e72c3",
+        "locator": {
+          "kind": "symbol",
+          "name": "measure_compiled_capsule_tokens"
+        }
+      },
+      "id": "RLZ-VWRWKD",
+      "invariant": "INV-7RHM8E",
+      "origin": {
+        "handoffEntry": "CAP-R03@v1 Rule 5",
+        "leaf": "261124-CAP-L3"
+      },
+      "rationale": "Defines WIRE_TOKEN_CEILINGS, COMPILED_CAPSULE_TOKEN_CEILINGS, evaluate_wire_token_ceilings, and the single-source compiled-capsule token measurer.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+        "content": "sha256:b97e9a3b0ec6b0d0d140a10ec57351dfb7cec95694c5e513bdcfab80a9d6a362",
+        "locator": {
+          "kind": "symbol",
+          "name": "measure_wire_tokens"
+        }
+      },
+      "id": "RLZ-X48KF9",
+      "invariant": "INV-ZVD184",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-zvd184",
+        "leaf": "261124-CAP-L2"
+      },
+      "rationale": "Tokenizes normalized Turn-1 wire prompts with vendored o200k_base and disallowed_special=() for deterministic offline 0-variance measurement.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`WIRE_TOKEN_CEILINGS` exports immutable Turn-1 ceilings for all eight default launch pairs (2,500 / 3,000 / 3,800) beside 34-key `COMPILED_CAPSULE_TOKEN_CEILINGS` (1,500 / 2,000 / 2,600).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+            "content": "sha256:13bfe4ca8cf8b9ee39b3d9d0ac2846f5f3bbc4e5f5e7fedfebc90bd365512dac",
+            "locator": {
+              "kind": "symbol",
+              "name": "WIRE_TOKEN_CEILINGS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+            "content": "sha256:f745e1a189f6304eaa54fb922f62fbc044ee06f85a2abfd3fedf6f894a9f545a",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPILED_CAPSULE_TOKEN_CEILINGS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`measure_wire_tokens` loads the vendored offline `o200k_base` encoding, applies ordered normalizations, and tokenizes plain text with `disallowed_special=()`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+            "content": "sha256:b97e9a3b0ec6b0d0d140a10ec57351dfb7cec95694c5e513bdcfab80a9d6a362",
+            "locator": {
+              "kind": "symbol",
+              "name": "measure_wire_tokens"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`evaluate_wire_token_ceilings` defaults to `WIRE_TOKEN_CEILINGS` and reports unconfigured keys and strictly over-ceiling totals without ratcheting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+            "content": "sha256:edaf9eb0d77dc101aeb7fcd0d94adf938af51879b3c343e4508b62a0e3121d19",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_wire_token_ceilings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`measure_compiled_capsule_tokens` counts `o200k_base` tokens of the compact-bound role-filtered shared block plus compiled instructions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e72195e122202afa5ee1eb4ecfa6bc6c68940e2",
+            "content": "sha256:d543aae5b6e562d1236a3945c000f7ce64ae9f776a7e0e666c31ef07989e72c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "measure_compiled_capsule_tokens"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

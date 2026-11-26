@@ -19,4 +19,5 @@ The decision list (keep, reword or drop, with the deciding source line) is writt
 - Each sentence is decided individually; true sentences keep their wording; a sentence about what happens needs code that runs today. [1]
 - The decision list is written before editing and reported; reworded sentences are verified as new claims. [2]
 - False claims are repaired across all carriers, and past accounts move to the history row. [3]
+
 - The Curator role points here before editing a card or its paired notes. [4]

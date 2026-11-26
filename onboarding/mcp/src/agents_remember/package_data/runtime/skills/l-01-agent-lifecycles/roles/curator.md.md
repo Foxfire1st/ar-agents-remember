@@ -45,7 +45,7 @@ Explicit report-only admission writes its report/upstream message and claims non
 
 For the leaf pass, start the Curator only on the admitted leaf task document and its actual enclosure; never substitute a taskless session or fabricate a leaf, worktree or enclosure.
 
-Repository foundation is regular task work in the real task the user-started Architect opens. c-14 has the Architect open a registered foundation leaf under a master; the Curator is launched on that task document and writes only into its actual enclosure’s memory worktree. The separate foundation detail describes its under-master case. No taskless or instructed session substitutes for task admission, and no task or enclosure is fabricated. The writer routes, developer commit word and one-writer/independent-review boundaries remain distinct.
+Repository foundation is regular task work in the real task the user-started Architect opens (detailed in `reference/curator/repository-foundation.md`, linked from the Reference index): the Curator is launched on that leaf task document and writes only into its actual enclosure’s memory worktree. No taskless or instructed session substitutes for task admission, and no task or enclosure is fabricated. The writer routes, developer commit word and one-writer/independent-review boundaries remain distinct.
 
 - Foundation authoring is task work inside the Architect's task under the Curator rules; the seat is leaf-bound, and no taskless session stands in for task admission. \[12] Anchor: Foundation carrier and admission
 
@@ -143,25 +143,29 @@ Read authoring at Curation workflow 1: Reconcile, and card formats/citations at 
 
 - An overview starts with its title, an optional governing overview and its purpose heading, puts a change into the body section that owns its meaning, and ends with all numbered citation lines together. [10]
 
-- For every card cut by the quality check the Curator names the source evidence that makes the removed text untrue; text is never removed merely to clear a quality finding. [14]
 
-- The Curator also repairs wrong or missing memory it encounters while curating, whoever left it and beyond the quality check's findings, through the writer; it names each repair, makes no broad sweep and routes repairs needing code, a requirement decision or another leaf's work. [15]
 
 - Curation reconciles three bodies of evidence (current intent, ruled change intent and implemented reality) and succeeds when they agree or every material divergence has reached its answering seat. [2]
 
-- The Curator runs no Git write and edits no code, gate, lifecycle state, worktree contract or closeout state; it edits a task document only as its writer under its assignment with the scoped correct-write recovery, and advances no fingerprint to an uncommitted tree. [3]
+- The Curator runs no Git writes and edits no code, gate, lifecycle, contract or closeout state; it creates no fake hashes, uncommitted fingerprints or silencing attestations, starts no roles, and marks curation `done` via `task_doc(set_step)`. [3]
+
 
 - On converted memory a role agent that wrote none of the leaf's cards or records checks every changed card, sidecar and record statement by statement before closeout; judgment history belongs in content-bound Curator rows and a counted card edit alone never closes a trace. [6]
 
-- The Curator writes knowledge with knowledge_write or the admitted serving-build command-line writer with the task contract, handoff list and commit; the commit option authorizes file writes, not Git or acceptance. [7]
+- The Curator writes `onboarding/` and `knowledge/` via `knowledge_write` or the serving-build CLI with `--commit`/`commit: true` (writing files, not Git), and never edits derived indexes. [7]
 
-- When its part is complete the Curator marks only its own task-document step done through task_doc set_step with a one-line note; an incomplete, blocked or progress report never marks unfinished work done. [8]
 
-- The stage ends when task knowledge is written and checked and quality is clean, distinguishing installed-writer publication from scoped manual provenance; own faulty-input refusals and coherence findings are repaired through the same writer, and open permission prompts, other correct-input refusals, unowned state and requirement-meaning questions stop the work. [9]
+- The Curator marks its curation step `done` via `task_doc(set_step)`. [8]
 
-- Curation keeps reconciliation and memory writing with the Curator and the Git transaction with the Manager; the Curator runs no Git write, closeout preview or landing decision. [12]
 
-- The leaf pass starts only on a leaf task document, never taskless; registered tasks belong to a master, and no standalone leaf, fake task, worktree or enclosure is fabricated for the leaf or foundation route. [13]
+- The Curator fixes faulty inputs on the same writer, repairs its own, tool and coherence faults, and stops to tell the Manager after 3 failed repairs on one item. [9]
+
+
+- Curation is evidence, not a gate; the Curator runs no Git writes and edits no code, gate, lifecycle, contract or closeout state. [12]
+
+
+- The Curator starts on a leaf task document only (`Leaf task doc only`). [13]
+
 
 - The mirror carries the same effect contract as the canonical role. [1]
 

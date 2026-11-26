@@ -21,7 +21,7 @@ A Manager coordinates one selected master’s leaf owners and evidence; the ordi
 
 ## Current Contract
 
-The Manager hands a whole stage to its owner with its end state, not a chain of narrow steps. Its exactness belongs at sync to the master, closeout, integration, task end and agent starts. The review budget comes from `orchestration.loops.defaults.maxRounds`, read when the next round begins; agents read the effective task limit, including approved extra rounds, from `task_doc`’s `reviewState.limit` on `agents-remember-task`. Code and memory reviews use the same settings limit with separate counts and sealed findings. Beyond-limit work needs a recorded architect or developer approval, which the Manager requests through its assigned reporting route and records. A Reviewer finding states the required property the candidate breaks; the showing case is proof, not the finding. If a repair leaves that finding open, the Worker states the property for every case and proves the construction or changes it, reporting which. A beyond-limit request carries that property-and-construction account.
+The Manager hands a whole stage to its owner with its end state, not a chain of narrow steps. Its exactness belongs at sync to the master, closeout, integration, task end and agent starts. Review round budgets and beyond-limit procedures live in `operations/review.md` and `reference/coordination/shared/third-rejected-round.md` (linked from the Reference index); the Manager records Architect or developer extra-round approvals.
 
 Each of these stages repairs faults in its own work or instrument and corrects invalid input through the same tool, reports the repair, and continues. Apart from covered correct writes, which follow the shared recovery procedure, it stops for an open permission prompt, a guard/tool refusal that survives correct input or names unowned state, a requirement-meaning question beyond its own interpretation authority, or an effect outside its own worktree, scratch folder and task. When ending blocked outside its authority, the Manager notifies its reporting recipient; while a child works, it records the child's seat and awaited stage in its end line and status file and sends no wait message, while following shared helper waits; the existing role-specific stops and write boundaries remain.
 
@@ -77,7 +77,6 @@ When the master line moves, Worker runs its supported leaf sync. If no path chan
 
 - Selected-master scope, bound leaf loop, evidence inspection and AR publication ownership. [10]
 
-
 - The packaged Manager is the master-scoped owner of the leaf closeout chain. [11]
 
 
@@ -105,7 +104,8 @@ This packaged copy derives from the canonical roles/manager.md. The Manager insp
 - Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.
 
 
-- The Manager assigns a check or investigation that belongs to no leaf to an Investigator on its own master, naming its sprint when one commands it, never a leaf, and sends the scoped concern as its first role_message to the returned agent identifier. [1]
+- The Manager starts an Investigator via `role_start` on its master or sprint (never a leaf) and sends the concern as its first `role_message`. [1]
+
 
 
 - The Manager decides routine paired closeout under standing series authority (covering leaves of all masters, including standalone masters, with passing reviews, final checks, clean preview, full evidence map and Curator's zero-stale dependent-document read) and integration within delegated authority, sends non-routine closeouts and other Architect matters to the Architect, and requests beyond-settings rounds through its reporting route and records the approval. [7]
@@ -114,15 +114,18 @@ This packaged copy derives from the canonical roles/manager.md. The Manager insp
 
 
 
-- The Manager uses the exact sprint and master references, requirement packets, execution choice, candidate and report paths in its handover and reads only the selected master and the leaf documents needed for the current decision. [3]
+- The Manager uses its handover refs, packets and paths, reads docs via file tools and edits canonical docs via `task_doc` first, keeping each leaf's 1 primary requirement in its AR-paired enclosure. [3]
 
 
 - For ordinary delivery, the Manager calls role_start once per stage: Worker first at build, Reviewer at the freeze, and Curator after code review passes; prerequisite-sync reconciliation follows its separately admitted Curator start. [4]
 
 
 
-- The Manager hands over a whole stage with its exactness at agent starts, sync to the master's line, closeout, integration and task completion, and repairs its own mistaken records, wrong agent addresses, misread reports and faulty-input refusals through the same tool. [8]
+
+- The Manager hands over a whole stage (not a chain of steps), repairs its own mistakes and names repairs in the report, and stops for open permissions, standing refusals (except covered-write recovery), out-of-authority questions or outside effects. [8]
+
 
 - The generated Manager role directs leaf stages and relays through the shared leaf coordination procedures. [9]
+
 
 - MCP package data is copied from canonical skills and checked for drift. [6]

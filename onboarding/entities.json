@@ -412,12 +412,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
-            "content": "sha256:a24f755e11a82ef6d761c57256837868637f7e78a729919a467e01ed265caf03",
+            "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+            "content": "sha256:0edb8589638c6761408f17882cf898e9e9e2bcd5da29f2b12a6c5a9971679bba",
             "locator": {
-              "end": 60,
+              "end": 16,
               "kind": "line_range",
-              "start": 60
+              "start": 16
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
@@ -430,8 +430,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
-            "content": "sha256:95473e1da9c3027a19991c55617d9011c5c561e7d847352b7f7a018f5f21ea66",
+            "blob": "f21de0b64f65351d006b9584d9505233c87cecac",
+            "content": "sha256:d9c3eee4a7c2b6fcb19706828dbc8d20f80a70dd8b9cbf91cb60eefe233bdc33",
             "locator": {
               "kind": "symbol",
               "name": "compose_launch_instructions"

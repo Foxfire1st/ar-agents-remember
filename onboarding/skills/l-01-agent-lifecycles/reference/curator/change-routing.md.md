@@ -16,4 +16,5 @@ Changed source files get compact current contracts in their cards and sidecars, 
 
 - Every change-set and notes item is routed to its card, overview, catalog or last-resort Operational-Notes home, and route indexes are refreshed per leaf. [1]
 - A deleted or renamed source retires its card and re-points or removes every reference. [2]
+
 - The Curator role points here before routing a changed file or notes item. [3]

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-        "content": "sha256:ef7cda717ecdfe82fb296960de3b680038cde27566a253dd64fef38166b9f590",
+        "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+        "content": "sha256:2ebc6cb756bc4375b282337dcf8472558e110d12dbe052cc362695a92b5138d2",
         "locator": {
           "kind": "file"
         }
@@ -20,51 +20,17 @@
     }
   ],
   "references": {
-    "10": {
-      "note": "At master-exit the Reviewer accounts for every master requirement, leaf, substep and accepted gap fill; completion against task documents is an affirmative duty, not a formatting check.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:96d91410ac63c854beb796ebde0df02dbf75d99caa20a413072eef2e10573072",
-            "locator": {
-              "end": 109,
-              "kind": "line_range",
-              "start": 109
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "A master handover packet that reads as complete while silently omitting unfinished leaf work, a substep or an accepted gap fill has a blocking finding.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:96d91410ac63c854beb796ebde0df02dbf75d99caa20a413072eef2e10573072",
-            "locator": {
-              "end": 109,
-              "kind": "line_range",
-              "start": 109
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "13": {
-      "note": "Baseline review checks the Worker's targeted checks and past regressions for the requested scope. Full suites and drift reporting require an explicit developer request or a listing under the requirement's final checks.",
+      "note": "The Reviewer checks targeted tests, running full suites and drift reporting only on request or when listed under `## Final checks`.\n\nAnchor: `## Final checks`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:beb515195c077538c0df56ecf5730fc364dca116f02f42eadebd218cb645ca30",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
             "locator": {
-              "end": 71,
+              "end": 21,
               "kind": "line_range",
-              "start": 71
+              "start": 21
             }
           },
           "kind": "code"
@@ -89,68 +55,17 @@
         }
       ]
     },
-    "15": {
-      "note": "Super-exit review inspects changed paths and sidecars and route overviews among the integrated portfolio evidence.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:de14a62d1ae35536f0883d4dd26e62997fcb4a346e8b875db52ff0acdba7bc13",
-            "locator": {
-              "end": 111,
-              "kind": "line_range",
-              "start": 111
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "16": {
-      "note": "Full suites and drift reporting require an explicit developer request or a listing under the requirement's final checks. Normal curation always runs the complete `memory_quality_check`, which a subset cannot replace.\n\nAnchor: `memory_quality_check`",
+      "note": "Full suites and drift reporting run only on request or under `## Final checks`, while curation always requires full `memory_quality_check` (blocking on Curator-actionable findings).\n\nAnchor: `memory_quality_check`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:b93a577df1d0cb295abb86c759ba75f1a052db0bf9fc44262b36ee9f48d3f01e",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
             "locator": {
-              "end": 72,
+              "end": 21,
               "kind": "line_range",
-              "start": 71
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "At master-exit a baseline BLOCK goes to the owning Manager as decomposable fix leaves.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:aab5d64fee07fc705905ab72e236653e22d13c3d33211f6d248382f733142d91",
-            "locator": {
-              "end": 113,
-              "kind": "line_range",
-              "start": 113
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "At super-exit a baseline BLOCK goes to the Orchestrator as decomposable fix leaves.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:aab5d64fee07fc705905ab72e236653e22d13c3d33211f6d248382f733142d91",
-            "locator": {
-              "end": 113,
-              "kind": "line_range",
-              "start": 113
+              "start": 21
             }
           },
           "kind": "code"
@@ -158,29 +73,12 @@
       ]
     },
     "19": {
-      "note": "The Reviewer writes the verdict in the handover's local report folder (`role-reports/` on a leaf, `notes/reports/` on other seams) using the verdict template, records memory `verdictRef` as an existing absolute path, `role-reports/<rel>`, or `notes/reports/<rel>`, and writes fix-leaf descriptors for non-leaf baseline blocks.",
+      "note": "The Reviewer writes the verdict in the handover's local report folder (`role-reports/` on a leaf, `notes/reports/` on other seams) using the linked verdict template and records memory `verdictRef` as an existing absolute path, `role-reports/<rel>`, or `notes/reports/<rel>`.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:884d2eeb5de9fee1dbae57d6ad8040ece3a9a130c0242ee5494795e03fa5afe5",
-            "locator": {
-              "end": 97,
-              "kind": "line_range",
-              "start": 93
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The Reviewer independently examines one assigned seam or review round, refutes or confirms the claims against the bound criteria catalogs, and writes and hands over the verdict.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:aac4114a9a9192a7d2d9a2717e20dba32379fe50ddb7824b5a350b2db8bd659b",
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "content": "sha256:e54cda6062a6d8c97dda127874fc1d21bcfc5cbad9305900e2b2e0fb37d9c598",
             "locator": {
               "end": 8,
               "kind": "line_range",
@@ -188,20 +86,85 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2097020d94395b89f7b04d1f71853e7affbf42b0",
+            "content": "sha256:3dbf395d87e12a9b9c3809a8f906e57a2309f72d2b155ef839453316d606f9f1",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Reviewer independently examines one assigned seam or leaf review round against bound criteria catalogs and writes its verdict under `notes/reports/` (non-leaf seams are linked in the reference index).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:6919e97bff297720d458a09e458be4481229e2f3ccfea6b36cfc3879c47d99e5",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "22": {
-      "note": "The Reviewer may write its review artifacts, retrieve read-only through read_ar_files, use scoped system/tools.md checks and report templates, inspect full memory_quality_check curation evidence, run requested drift reporting and send the direct leaf messages and Manager notices; ordinary leaf begin/result records are evidence, not gate acceptance.",
+      "note": "The Reviewer writes verdicts under `notes/reports/`, edits via `task_doc`, reads briefs via `read_ar_files` and `knowledge_read`, checks `system/tools.md` targeted tests (and requested drift) plus full `memory_quality_check` curation evidence, and makes no gate decisions.\n\nAnchor: `read_ar_files`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:4b804fbfdb5b77766af81530322ecffd3d20a32ec3ff1d9dc69afd3bfaf3b974",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:9e78ccc65502b44c9c1bdcfbe9efbc1262589e00995d5951172c1ecb9b0fe197",
             "locator": {
-              "end": 117,
+              "end": 8,
               "kind": "line_range",
-              "start": 117
+              "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:0885b9b4f6b31329402f18aaa0e9c6d8f5ba2330639e791778d8394249ae5a94",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:fc72e534adf9e90c7dd26c389512e390c246cef2b36b5b042192db053871866c",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
             }
           },
           "kind": "code"
@@ -213,29 +176,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:8e56d5e3f247f76c29190f75c6950030a66324e29bf99877902367f2f0d842cb",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:fc72e534adf9e90c7dd26c389512e390c246cef2b36b5b042192db053871866c",
             "locator": {
-              "end": 119,
+              "end": 25,
               "kind": "line_range",
-              "start": 119
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "24": {
-      "note": "The role keeps the master-exit and super-exit seam rubrics and their blocking rule.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:6226ac8922d40e5b99d119974f2407d7924708362d112bbb3ce33179c58465b3",
-            "locator": {
-              "end": 113,
-              "kind": "line_range",
-              "start": 105
+              "start": 25
             }
           },
           "kind": "code"
@@ -243,82 +189,14 @@
       ]
     },
     "26": {
-      "note": "Review starts only on the owner's assignment, reads the rendered task document and canonical JSON at the handover's taskDocReadArgs paths, and requires every applicable intake input before candidate inspection.",
+      "note": "Review starts on owner assignment and requires mode, seam, requirement IDs/versions/packets/approval, exact candidate with passing clean-copy checks, Worker attempts, and `system/tools.md`/guidelines before inspecting.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:5dc858e47337a03f2a79a6e0253bbec67791aed78be88f9cd5303e7c98a76e21",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:5881cc7ceafb6e967c542a3c2a21c2fd7aeafd340d8b79ce9e92a28f839f1c1b",
             "locator": {
-              "end": 22,
-              "kind": "line_range",
-              "start": 14
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "27": {
-      "note": "A baseline review reports every standing criterion, the sealed baseline findings with stable identifiers, evidence and fix-acceptance criteria, and a complete route-coverage table.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:a2eb992e49151a06c77753df952d3919d5bae530494444040a67cad34277e373",
-            "locator": {
-              "end": 92,
-              "kind": "line_range",
-              "start": 90
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "The Reviewer's permitted read and check surface and its prohibitions on implementing, recording task acceptance, starting roles, publishing Git, deciding gates and absorbing another seat's work.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:87c7eb465b46c50201fa7699af9f73737e968ab17ffbbe0055a987b87ccf1b79",
-            "locator": {
-              "end": 119,
-              "kind": "line_range",
-              "start": 117
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "29": {
-      "note": "Reviewer leaf messages use role_message on agents-remember-task with the handover's sibling role and exact leaf task references; product-supplied agent identifiers stay whole and unchanged.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:548b3cb042ea4b82d8124ed5e747dc87baf9ebc06b9874f2b8961b920fdd4616",
-            "locator": {
-              "end": 101,
-              "kind": "line_range",
-              "start": 101
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The Reviewer's brief starts the work, and the verdict artifact is its durable handoff.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:aac4114a9a9192a7d2d9a2717e20dba32379fe50ddb7824b5a350b2db8bd659b",
-            "locator": {
-              "end": 8,
+              "end": 15,
               "kind": "line_range",
               "start": 8
             }
@@ -327,34 +205,34 @@
         }
       ]
     },
-    "30": {
-      "note": "The Reviewer returns exit-seam fix leaves to the seat it reports to: the owning Manager at master-exit, the Orchestrator at super-exit.",
+    "28": {
+      "note": "The Reviewer's permitted read and check surface and its prohibitions on implementing, recording task acceptance, starting roles, publishing Git, deciding gates and absorbing another seat's work.\n\nAnchor: `## Boundaries`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:aab5d64fee07fc705905ab72e236653e22d13c3d33211f6d248382f733142d91",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:79ba9b6179e2ba6d5a73e17090761b4db0c9f88b52ed251ae68d2a44f023dd85",
             "locator": {
-              "end": 113,
+              "end": 25,
               "kind": "line_range",
-              "start": 113
+              "start": 21
             }
           },
           "kind": "code"
         }
       ]
     },
-    "31": {
-      "note": "The Reviewer reads the current review-state limit from the task_doc answer and never runs an unapproved round or splits the scope to avoid that limit.\n\nAnchor: `task_doc`",
+    "3": {
+      "note": "The Reviewer starts on owner assignment after receiving the required intake and writes its durable verdict under `notes/reports/`.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:f74aef61c9ab9702980b7cf1c39bead164c8055b722f9e86c19ea8b2af543020",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:5881cc7ceafb6e967c542a3c2a21c2fd7aeafd340d8b79ce9e92a28f839f1c1b",
             "locator": {
-              "end": 133,
+              "end": 15,
               "kind": "line_range",
-              "start": 133
+              "start": 8
             }
           },
           "kind": "code"
@@ -362,50 +240,16 @@
       ]
     },
     "32": {
-      "note": "The stage ends with a recorded verdict covering the whole requirement, its findings and coverage; the review step is marked done through task_doc only after the last round is recorded as passed.\n\nAnchor: `task_doc`",
+      "note": "The Reviewer marks review `done` via `task_doc(set_step)` only after the last round passes.\n\nAnchor: `task_doc(set_step)`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:4f2f17ddbd2db73eac599a91725f176a4d0295861b0742c576b9ba16eecbaf28",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:ea0fe48290b138f15f34b2663888b5395e0436081f248382377e82120c685db6",
             "locator": {
-              "end": 141,
+              "end": 27,
               "kind": "line_range",
-              "start": 141
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "33": {
-      "note": "When reviewing the Curator's memory change the Reviewer inspects the quality result's cutCards and addedFiles reports: text removed without a named change and a file added outside the knowledge without a place in the task's requirement are findings.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:14e80df471d03133a39eecb25ea74a73b191b6a132788e844d4ca7bb5c67b5f5",
-            "locator": {
-              "end": 76,
-              "kind": "line_range",
-              "start": 76
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "34": {
-      "note": "The Reviewer reads the rendered task document and canonical JSON at the supplied taskDocReadArgs paths, reads only the seam's required documents, and uses the Agents Remember tools on agents-remember-task only.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:75bdfd1e3392bb1485d7b16d3e2f9f098e4198177a4104b1dac2c20f566f78d5",
-            "locator": {
-              "end": 16,
-              "kind": "line_range",
-              "start": 14
+              "start": 27
             }
           },
           "kind": "code"
@@ -469,12 +313,12 @@
         },
         {
           "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:d5658ed4652da3bfa455043e9cf1f887e9078ec6e75677387e870eaad18704bc",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:59383bc386468c67140145e7b66a4bc88706246ffcdbf46e0e96803c3c371842",
             "locator": {
-              "end": 70,
+              "end": 21,
               "kind": "line_range",
-              "start": 70
+              "start": 21
             }
           },
           "kind": "code"
@@ -482,16 +326,16 @@
       ]
     },
     "5": {
-      "note": "The Reviewer refuses another seat's pasted brief and reports it to the seam's decider, and never absorbs another seat's work.",
+      "note": "The Reviewer prohibits seat absorption alongside code/onboarding edits, requirement rewrites, task acceptance, role starts, Git publishes, gate decisions and operator-setting changes.\n\nAnchor: `## Boundaries`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:8e56d5e3f247f76c29190f75c6950030a66324e29bf99877902367f2f0d842cb",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:07d3356c259adf2ecf75dd2bc2cf51e60b16ba242bedc572cc9b7396fbb98454",
             "locator": {
-              "end": 119,
+              "end": 25,
               "kind": "line_range",
-              "start": 119
+              "start": 23
             }
           },
           "kind": "code"
@@ -503,7 +347,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac68be08ca465ac374e4f75b153e1bdc1dd9ab01",
+            "blob": "be47faf621df002b92e29c9a1de0f3c75de115b8",
             "content": "sha256:3f6a0bdee8a890e921cec773cf003c3a7e1844735bb77a8d82c99aa74ac9091f",
             "locator": {
               "end": 11,
@@ -517,33 +361,16 @@
       ]
     },
     "7": {
-      "note": "The Reviewer requires the catalogs bound by its review type and does not choose catalogs during the review.",
+      "note": "The Reviewer binds the seam's required criteria catalogs (`code-seam`, `report-verification`, plus `doctrine` for docs/skills and `onboarding-memory` for memory); briefs never override catalogs, and bound catalogs are recorded in Catalog Binding.\n\nAnchor: `## Bind the seam and catalogs`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:041a961530e6277dbeea44334ad6ed9c990749f8cf5aaa689b4851b49e6cf906",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:c504cb8a5c43e969019019c4ccc980365860621283e588f0d228b592edbee232",
             "locator": {
-              "end": 39,
+              "end": 19,
               "kind": "line_range",
-              "start": 39
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Each review type binds a fixed set of criteria catalogs, listed in the role's review-type table from master-exit and super-exit to leaf, integration, full-loop and plan review.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:d1ce4aecd9144c86956f2c289fac885f4a84a27d25451c2b0d9b9cf6b0c38ae0",
-            "locator": {
-              "end": 64,
-              "kind": "line_range",
-              "start": 57
+              "start": 17
             }
           },
           "kind": "code"

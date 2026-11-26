@@ -1,10 +1,10 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations",
-      "guarded_by_test"
+      "guarded_by_test",
+      "prevents_costly_mistake"
     ],
-    "justification": "Stated in the Curator role and in the curation operation, and a test requires both clauses on every delivered Curator surface; without it one failed tool would stop all independent curation work."
+    "justification": "Consolidated into reference/curator/exceptions-and-recovery.md and proven by PRF-0YAG6Q; without it one failed memory tool would needlessly halt all independent curation work."
   },
   "applicability": "A Curator pass in which one admitted memory tool fails.",
   "conditions": [

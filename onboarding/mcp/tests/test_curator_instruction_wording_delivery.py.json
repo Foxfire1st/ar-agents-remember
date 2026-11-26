@@ -1,0 +1,119 @@
+{
+  "path": "mcp/tests/test_curator_instruction_wording_delivery.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ec4d38da8fcb648317dd51a96ce0531aeb5715d2",
+        "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
+        "locator": {
+          "kind": "symbol",
+          "name": "CuratorInstructionWordingDeliveryTests.test_manifest_descriptions_follow_the_coordination_default"
+        }
+      },
+      "facet": "The four composition-manifest seat and purpose descriptions state the one-Manager/one-Orchestrator default and the developer's choice.",
+      "id": "PRF-0E0V75",
+      "invariant": "INV-A6GAKX",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+        "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ec4d38da8fcb648317dd51a96ce0531aeb5715d2",
+        "content": "sha256:856ee056a8c25c910e47eccc52712f698feb0a24edf428ab02c57ea1e06d0886",
+        "locator": {
+          "kind": "symbol",
+          "name": "CuratorInstructionWordingDeliveryTests.test_the_curator_writer_is_admitted_for_the_selected_runtime"
+        }
+      },
+      "facet": "Pins the Curator's exact-pair dependent knowledge_read parameters, before/after candidate matching and memoryTree.treeKey/counts.total/receipt report requirements.",
+      "id": "PRF-RQFCB4",
+      "invariant": "INV-CAJ09X",
+      "origin": {
+        "handoffEntry": "BUG-R41.v1.rule-4",
+        "leaf": "261112-BUG-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ec4d38da8fcb648317dd51a96ce0531aeb5715d2",
+        "content": "sha256:856ee056a8c25c910e47eccc52712f698feb0a24edf428ab02c57ea1e06d0886",
+        "locator": {
+          "kind": "symbol",
+          "name": "CuratorInstructionWordingDeliveryTests.test_the_curator_writer_is_admitted_for_the_selected_runtime"
+        }
+      },
+      "facet": "Requires the Curator's role and operation text to carry the writer admission by reference and the parser to refuse the retired publication options.",
+      "id": "PRF-S4JV63",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "MIK-R194@v1 rule 10",
+        "leaf": "260928-MIK-L186"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`_deliver_indexed_detail` proves compiled detail-pointer emission, byte parity with canonical skills, and launch-instruction link rewriting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec4d38da8fcb648317dd51a96ce0531aeb5715d2",
+            "content": "sha256:89722bf5c2571a258603dda9a9f229ea6c318771d732aa42c96d7a2698c1464a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_indexed_detail"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Coordination-route, Git-comparison, and cross-role message-handover helpers verify compiled shared-block clauses and detail links with mutation checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec4d38da8fcb648317dd51a96ce0531aeb5715d2",
+            "content": "sha256:ad23eafda28ab2967b950e6c7d85a9d8f5cfb518d932b63e976cf6cdbdfc1367",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_coordination_routes"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ec4d38da8fcb648317dd51a96ce0531aeb5715d2",
+            "content": "sha256:674552f2e428761d62fa9123ab4e79952f9f6fa97489e670d4d16f11f12fbca8",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_message_handover_delivery"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`CuratorInstructionWordingDeliveryTests` pins the 8 failed scenario steps, Reviewer intake wait, refused-write ladder, manifest role descriptions/tools, and `knowledge-ingest` CLI admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec4d38da8fcb648317dd51a96ce0531aeb5715d2",
+            "content": "sha256:5121cd2348a7ee11d27ea592621e08cfb30b0f455fbb02fa303fb9713787a0db",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorInstructionWordingDeliveryTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

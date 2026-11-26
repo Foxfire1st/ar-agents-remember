@@ -37,16 +37,16 @@
       ]
     },
     "3": {
-      "note": "The Curator role links the decision section before authoring a decision record.",
+      "note": "The Curator role reference index links this file under Cards/style.\n\nAnchor: `governing-sources.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
-            "content": "sha256:589f2cf80782d37464131fb8068c59515ac08c384d15c0618850501e0161bff4",
+            "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+            "content": "sha256:52d4838f16d0fb55b773eeb76b36080275f27719c941cbd940b0fa753a171f4b",
             "locator": {
-              "end": 73,
+              "end": 30,
               "kind": "line_range",
-              "start": 73
+              "start": 30
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },

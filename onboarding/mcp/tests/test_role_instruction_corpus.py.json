@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
+        "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
         "content": "sha256:51e26760b792682d1dda82ee0050babfc1a1fd3da4dd3b2dc18a35293d9385e2",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
+        "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
         "content": "sha256:a299d712543a1c91d213a2773ed8b56ea87dd0a171a76de1a75d2bd980aa02e2",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
+        "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
         "content": "sha256:51e26760b792682d1dda82ee0050babfc1a1fd3da4dd3b2dc18a35293d9385e2",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
+        "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
         "content": "sha256:43d488b8f085d000371db395f0f9ded1d856123893b2225ad1ea8b29d291e4d4",
         "locator": {
           "kind": "symbol",
@@ -71,24 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
-        "content": "sha256:a1c68282fc876f23e3507165b6a1ad9454eaf58a35ef929883ccbb71e56c0036",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_role_names_its_publication_moments"
-        }
-      },
-      "facet": "For the Manager and the Architect, the role's publication clause stands once in the source and once in the package copy, and the generic 'When publishing task work' sentence is refused.",
-      "id": "PRF-EPK1G4",
-      "invariant": "INV-A6TJRJ",
-      "origin": {
-        "handoffEntry": "L84-CUR-07-architect",
-        "leaf": "260928-MIK-L84"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
+        "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
         "content": "sha256:51e26760b792682d1dda82ee0050babfc1a1fd3da4dd3b2dc18a35293d9385e2",
         "locator": {
           "kind": "symbol",
@@ -105,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
-        "content": "sha256:ef738d1a825cef58aaf8872ce65669d47f77d5bc104e6d3ced0145517000bcef",
+        "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
+        "content": "sha256:392408864951ae724473dfe558c772ac4c373def6ffcc126ab519255a172e710",
         "locator": {
           "kind": "symbol",
           "name": "CurationPolicyTests.test_every_generated_copy_carries_the_policy_its_canonical_original_states"
@@ -122,24 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
-        "content": "sha256:a1c68282fc876f23e3507165b6a1ad9454eaf58a35ef929883ccbb71e56c0036",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_role_names_its_publication_moments"
-        }
-      },
-      "facet": "For the Manager and the Architect, the role's publication clause stands once in the source and once in the package copy, and the generic 'When publishing task work' sentence is refused.",
-      "id": "PRF-XFN1ZP",
-      "invariant": "INV-25E23P",
-      "origin": {
-        "handoffEntry": "L84-CUR-07",
-        "leaf": "260928-MIK-L84"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
+        "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
         "content": "sha256:5eeb8a9872166abc64baac5102d3fba23c8e68ba96f11f93bb3592c27b316b0e",
         "locator": {
           "kind": "symbol",
@@ -158,8 +124,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
-        "content": "sha256:ef738d1a825cef58aaf8872ce65669d47f77d5bc104e6d3ced0145517000bcef",
+        "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
+        "content": "sha256:392408864951ae724473dfe558c772ac4c373def6ffcc126ab519255a172e710",
         "locator": {
           "kind": "symbol",
           "name": "CurationPolicyTests.test_every_generated_copy_carries_the_policy_its_canonical_original_states"
@@ -181,12 +147,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
+            "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
             "content": "sha256:661dffee802e82084f6713b5f70e2619b8d89e9da6a0c6936eff222b688f4c17",
             "locator": {
-              "end": 168,
+              "end": 166,
               "kind": "line_range",
-              "start": 155
+              "start": 153
             }
           },
           "kind": "test"
@@ -198,7 +164,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
+            "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
             "content": "sha256:3d8ddf6e7a091da09769dff9f9a7aa88457bece00c58b671dc1097ac331efdc3",
             "locator": {
               "kind": "symbol",
@@ -214,7 +180,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:db9c1016ec2b2f95f7ebc1d9895edf41f06d2ac6a748c9f18fcde8649748dcd6",
             "locator": {
               "end": 2,
@@ -227,7 +193,7 @@
         },
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:f657ca4a79e44dd339e0199c6c5a7f219c9b2ada1d263c310bdbe5e1e188294d",
             "locator": {
               "end": 4,
@@ -240,7 +206,7 @@
         },
         {
           "anchor": {
-            "blob": "8a146dddeee47245c130f0596de59022608bb40f",
+            "blob": "57a90953b1c2c9912ec5dd1ed5fe70003dcf9c03",
             "content": "sha256:a99ff78812f4ba8840370589fc2dc832d742c95ffe58e905f5b9e14eec6ce5f7",
             "locator": {
               "end": 16,
@@ -258,12 +224,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
+            "blob": "ff2eae976c861e510be5083bd447b0c14b1bfbf3",
             "content": "sha256:edeee161a2a6dffe3f9f3ff927a4bd14cf11c4b6417f4e90d4b9600e2b1f2388",
             "locator": {
               "kind": "symbol",
               "name": "test_the_curator_hand_off_list_contract_has_one_home_its_consequences_declared"
-            }
+            },
+            "path": "mcp/tests/test_role_instruction_corpus_policies.py"
           },
           "kind": "test"
         }
@@ -274,12 +241,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
+            "blob": "ff2eae976c861e510be5083bd447b0c14b1bfbf3",
             "content": "sha256:7020da9e33011db12df983119555d90e2149e62c74b13524e8cd4d13a2acee9d",
             "locator": {
               "kind": "symbol",
               "name": "test_native_new_master_then_indexed_leaf_dependencies"
-            }
+            },
+            "path": "mcp/tests/test_role_instruction_corpus_policies.py"
           },
           "kind": "test"
         }
@@ -290,24 +258,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
+            "blob": "ff2eae976c861e510be5083bd447b0c14b1bfbf3",
             "content": "sha256:edeee161a2a6dffe3f9f3ff927a4bd14cf11c4b6417f4e90d4b9600e2b1f2388",
             "locator": {
-              "end": 684,
+              "end": 125,
               "kind": "line_range",
-              "start": 602
-            }
+              "start": 43
+            },
+            "path": "mcp/tests/test_role_instruction_corpus_policies.py"
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
+            "blob": "6983a8e65e2ff17eb939868de29781202120fb02",
             "content": "sha256:8ddd4575a7efa1cecedb1b1bc65ee975422cf82336a25023f8b81f1c021b05a0",
             "locator": {
-              "end": 1036,
+              "end": 943,
               "kind": "line_range",
-              "start": 1027
+              "start": 934
             }
           },
           "kind": "test"
@@ -319,37 +288,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
-            "content": "sha256:ccb3f6df0d76780cce081f20922730214b87084f6a75855342865413ae756cfb",
+            "blob": "ff2eae976c861e510be5083bd447b0c14b1bfbf3",
+            "content": "sha256:7abfa53d4890e0ef993b3cdb2cfc013aeb6c2751da8e66df35391f6c82b82210",
             "locator": {
-              "end": 1261,
+              "end": 364,
               "kind": "line_range",
-              "start": 1120
-            }
+              "start": 284
+            },
+            "path": "mcp/tests/test_role_instruction_corpus_policies.py"
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
-            "content": "sha256:624dbe7119fb7d728022517ca5270aeeb7361305d1ee52beda664cc1f7dadd3b",
+            "blob": "ff2eae976c861e510be5083bd447b0c14b1bfbf3",
+            "content": "sha256:6b913a962edfb4ea09a325079537c15f5f34ee97a77e4ea4f218b32e6b82d28f",
             "locator": {
-              "end": 1073,
+              "end": 486,
               "kind": "line_range",
-              "start": 1071
-            }
+              "start": 410
+            },
+            "path": "mcp/tests/test_role_instruction_corpus_policies.py"
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
-            "content": "sha256:35070a35700e11ec647e235039c8fecba34d2ab69712b70d73eb2d4a4feb5c0c",
+            "blob": "ff2eae976c861e510be5083bd447b0c14b1bfbf3",
+            "content": "sha256:e8e53dcbf89910601bf40f53134d6375774a18c728a5ab2f7294d0da5c27d508",
             "locator": {
-              "end": 1081,
+              "end": 494,
               "kind": "line_range",
-              "start": 1076
-            }
+              "start": 489
+            },
+            "path": "mcp/tests/test_role_instruction_corpus_policies.py"
           },
           "kind": "test"
         }
@@ -360,12 +332,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
+            "blob": "ff2eae976c861e510be5083bd447b0c14b1bfbf3",
             "content": "sha256:f5d721cebf410518865853530b627f16d82eb2ec529bcefa9741c4df80ed0783",
             "locator": {
               "kind": "symbol",
               "name": "test_root_instructions_name_no_retired_job_lens_or_phase"
-            }
+            },
+            "path": "mcp/tests/test_role_instruction_corpus_policies.py"
           },
           "kind": "test"
         }
@@ -376,12 +349,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9be42f6fe0d7f3fea34d6719a2a2efc93b370034",
-            "content": "sha256:a1c68282fc876f23e3507165b6a1ad9454eaf58a35ef929883ccbb71e56c0036",
+            "blob": "ff2eae976c861e510be5083bd447b0c14b1bfbf3",
+            "content": "sha256:21c5f99232624906e28b1151346f089bd59f120ee32e0053cfb775eaff04cbab",
             "locator": {
               "kind": "symbol",
               "name": "test_role_names_its_publication_moments"
-            }
+            },
+            "path": "mcp/tests/test_role_instruction_corpus_policies.py"
           },
           "kind": "test"
         }

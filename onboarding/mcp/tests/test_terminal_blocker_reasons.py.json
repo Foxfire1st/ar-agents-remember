@@ -316,12 +316,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "722cc1e1391608a0205b895d30ad544fd72821f0",
+            "blob": "04140c248f496d59ae76fdda5f7c8a7d5bec193b",
             "content": "sha256:2168526df675af4e03f114b9201b7219844679cab9a794f483c8a74e89c80131",
             "locator": {
-              "end": 771,
+              "end": 772,
               "kind": "line_range",
-              "start": 751
+              "start": 752
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -375,12 +375,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0217cb383959a2f2d36d95c89a033fd579b3d3c3",
+            "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
             "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
-              "end": 807,
+              "end": 811,
               "kind": "line_range",
-              "start": 807
+              "start": 811
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -434,12 +434,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0217cb383959a2f2d36d95c89a033fd579b3d3c3",
+            "blob": "0ead0dc47f0f15803b75bc729592171285e74445",
             "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
             "locator": {
-              "end": 807,
+              "end": 811,
               "kind": "line_range",
-              "start": 807
+              "start": 811
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -507,8 +507,8 @@
         },
         {
           "anchor": {
-            "blob": "aa513b895151d1974046b6c030d57fd81fcc5903",
-            "content": "sha256:bcd58ee83e557f32a409bec20d137ed9023ee9e74e9ad4b44acd83a495a5c1c1",
+            "blob": "884bfca77d3918141360d799434cf4234f069731",
+            "content": "sha256:62bc4db710a08a45a38afbf5f22c6fa4e70fc95949046da92c5c4312906fbada",
             "locator": {
               "kind": "file"
             },

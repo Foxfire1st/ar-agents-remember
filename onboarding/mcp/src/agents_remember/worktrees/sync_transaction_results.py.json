@@ -3,14 +3,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Retained conflict shapes.\n\nAnchor: `resolution_required`",
+      "note": "Retained conflict shapes.",
       "targets": [
         {
           "anchor": {
-            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
-            "content": "sha256:ebcd26e09a6ec6c799da69a51aa3f236ece645c38f65bf9c947ed8fae1ad6091",
+            "blob": "bf68b8aab3308dc9ed6b1a0f264c0e49a5ca892a",
+            "content": "sha256:e6f9e46eaf4da7d787b4d644e4e512bd9203e97d14de2c01df0b870811c576cb",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "resolution_required"
             }
           },
           "kind": "code"
@@ -22,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
+            "blob": "bf68b8aab3308dc9ed6b1a0f264c0e49a5ca892a",
             "content": "sha256:1878b0e5f75356e4c1f49f02da11786351b0b85f974ec6fcbd1eb47f0f3c6766",
             "locator": {
               "kind": "symbol",
@@ -52,14 +53,15 @@
       ]
     },
     "19": {
-      "note": "A nonempty structural memory-merge report adds resolution.crossing and a named report summary, including all-converted diagnostics; converted selects crossing wording. With no report, no report-derived block or sentence is added.\n\nAnchor: `resolution_required`",
+      "note": "A nonempty structural memory-merge report adds resolution.crossing and a named report summary, including all-converted diagnostics; converted selects crossing wording. With no report, no report-derived block or sentence is added.",
       "targets": [
         {
           "anchor": {
-            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
-            "content": "sha256:ebcd26e09a6ec6c799da69a51aa3f236ece645c38f65bf9c947ed8fae1ad6091",
+            "blob": "bf68b8aab3308dc9ed6b1a0f264c0e49a5ca892a",
+            "content": "sha256:e6f9e46eaf4da7d787b4d644e4e512bd9203e97d14de2c01df0b870811c576cb",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "resolution_required"
             }
           },
           "kind": "code"
@@ -67,14 +69,15 @@
       ]
     },
     "2": {
-      "note": "Structural/crossing report guidance.\n\nAnchor: `resolution_required`",
+      "note": "Structural/crossing report guidance.",
       "targets": [
         {
           "anchor": {
-            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
-            "content": "sha256:ebcd26e09a6ec6c799da69a51aa3f236ece645c38f65bf9c947ed8fae1ad6091",
+            "blob": "bf68b8aab3308dc9ed6b1a0f264c0e49a5ca892a",
+            "content": "sha256:e6f9e46eaf4da7d787b4d644e4e512bd9203e97d14de2c01df0b870811c576cb",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "resolution_required"
             }
           },
           "kind": "code"
@@ -86,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
+            "blob": "bf68b8aab3308dc9ed6b1a0f264c0e49a5ca892a",
             "content": "sha256:47b3626ec658f1a140d3d84f54825cea606f9844e1823a285fc99e4abd0c356a",
             "locator": {
               "kind": "symbol",
@@ -102,8 +105,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
-            "content": "sha256:814421fd80b8de327b0538736c165b2fd9bb006ebc83b17f5ccc123b5d70e298",
+            "blob": "bf68b8aab3308dc9ed6b1a0f264c0e49a5ca892a",
+            "content": "sha256:fafcd3db8ca8819efd0bad6130c4e6d5aa6573c793703eddd60cd0e25415d3e2",
             "locator": {
               "kind": "symbol",
               "name": "memory_choice_required"
@@ -118,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
+            "blob": "bf68b8aab3308dc9ed6b1a0f264c0e49a5ca892a",
             "content": "sha256:1878b0e5f75356e4c1f49f02da11786351b0b85f974ec6fcbd1eb47f0f3c6766",
             "locator": {
               "kind": "symbol",
@@ -151,7 +154,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
+            "blob": "bf68b8aab3308dc9ed6b1a0f264c0e49a5ca892a",
             "content": "sha256:7d1bdc548db442522a0c6565283b8f46591f17a779f25a89ed58c613d892e3a4",
             "locator": {
               "kind": "symbol",
@@ -167,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
+            "blob": "bf68b8aab3308dc9ed6b1a0f264c0e49a5ca892a",
             "content": "sha256:47b3626ec658f1a140d3d84f54825cea606f9844e1823a285fc99e4abd0c356a",
             "locator": {
               "kind": "symbol",
@@ -183,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
+            "blob": "bf68b8aab3308dc9ed6b1a0f264c0e49a5ca892a",
             "content": "sha256:b0537fc0472a2f83dc6658015d52bee65fb05a06175fee2147d4ea0ad0f85599",
             "locator": {
               "kind": "symbol",

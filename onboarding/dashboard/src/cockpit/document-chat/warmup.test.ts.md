@@ -20,4 +20,3 @@ Local implementation and executable evidence do not replace requirement authorit
 
 
 - Direct readWarmupStatus calls with stubbed fetch check the running line/pending list, parsed agent states/reasons and in-flight list, a completed status with null line/empty pending, and null after fetch rejection. These cases do not mount the warmup owner or exercise selection. [1]
-

@@ -34,12 +34,12 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "3d76a044213855d41145b1a068852c71b9bd040c",
-        "content": "sha256:eda4d6d552621ffa50f464db8b3fdfa732f386380ad36052f2cd2749ff50a422",
+        "blob": "a4e45cb987263a4f8332f84ae478fe37b4817882",
+        "content": "sha256:17f539c89ea4c7696e8a6e7bb9ba4e2acd252177101f7f6e677d55fd60f9d076",
         "locator": {
-          "end": 148,
+          "end": 15,
           "kind": "line_range",
-          "start": 142
+          "start": 15
         },
         "path": "skills/l-01-agent-lifecycles/roles/curator.md"
       }
@@ -68,27 +68,19 @@
     "leaf": "260928-MIK-L99",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": [],
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L84",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T20:34:48+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-CAP-L3",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "917aa0fb-4930-5289-932c-5894b7081491",
+    "task": "261124-CAP"
   }
 }

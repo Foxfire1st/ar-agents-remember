@@ -1,9 +1,9 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations"
+      "prevents_costly_mistake"
     ],
-    "justification": "The Reviewer role sets the finding standard and the review operation uses it at the sealed-list boundary."
+    "justification": "Consolidated into reference/review/rounds-and-late-findings.md (linked by roles/reviewer.md and operations/review.md); without this honest-agent proportionality bound, reviews waste rounds and add defensive guards for impossible hand-crafted states."
   },
   "applicability": "Ordinary independent review and the decision to add a guard.",
   "conditions": [

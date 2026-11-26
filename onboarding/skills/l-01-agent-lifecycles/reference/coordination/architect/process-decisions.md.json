@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96e8210cc58e42d2df0d82c2bbd6a6f0586bfabb",
+            "blob": "9372248583530f6edc37818277c34693233b1923",
             "content": "sha256:173fe38dc0574b49b853acb108da01b2745f09adcdb280ed6081d1eac44c2b3b",
             "locator": {
               "end": 15,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96e8210cc58e42d2df0d82c2bbd6a6f0586bfabb",
+            "blob": "9372248583530f6edc37818277c34693233b1923",
             "content": "sha256:263b4fabd19ab33b30b9f54e8477a099994ae9e05dd8f2571006acc5f04c7e4b",
             "locator": {
               "end": 23,
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96e8210cc58e42d2df0d82c2bbd6a6f0586bfabb",
+            "blob": "9372248583530f6edc37818277c34693233b1923",
             "content": "sha256:3148234a9b9f52ce574c844fb539603605fe5a623503e48cb14f90a7fcef980f",
             "locator": {
               "end": 27,
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d6d1f4612c74b0762cc4ef108116679a20ace22",
-            "content": "sha256:f64e3b56a4d253a4a702acecc53fa48333b398950105fe322d8a92773cace2f4",
+            "blob": "01f172a37451af1daaba446560f943e57c27b1dc",
+            "content": "sha256:5287b9da2b27a0fe0982273c85dabd573730fd0491dc567eea0965e501cbe3a5",
             "locator": {
-              "end": 116,
+              "end": 38,
               "kind": "line_range",
-              "start": 116
+              "start": 38
             },
             "path": "skills/l-01-agent-lifecycles/roles/architect.md"
           },

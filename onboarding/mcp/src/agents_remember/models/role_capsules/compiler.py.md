@@ -112,7 +112,9 @@ The compiler reads and validates contract markers in role and operation blocks b
 ## Evidence
 
 
+
 - Launch copies detail files, substitutes paths, and records frozen revisions. [9]
+
 
 - Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources. [10]
 
@@ -162,5 +164,7 @@ not a runtime boundary of this module, and no eve code is imported.
 
 No meaningful cross-repo references found.
 
+
 - The application entry point that admits bytes from disk and calls this compiler, returning success or refusal as a value. [1]
+
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [12]

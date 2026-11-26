@@ -22,4 +22,5 @@ The Architect, Manager and Worker roles point here before authoring or editing t
 - Task fields carry their own prose, with `freeform` sections for further narrative. [2]
 - Code work shows structure and skeletons first, with leaf and master example rules. [3]
 - Decisions are appended and superseded packets keep their version-addressed path. [4]
+
 - The Architect role points here before authoring a task document or requirement packet. [5]

@@ -1,231 +1,61 @@
 # mcp/src/agents_remember/cli/role_launch_preparation.py
 
+## Governing Overview
+
+[overview](../../../overview.md)
+
 ## Purpose
 
 Resolve launch defaults, workspace, scoped readers, instructions and handover before native creation.
 
-## Governing Overview
-
-[overview](../../../overview.md)
-
-## Current Contract — Scoped Launch And Settings Changes
-
-prepare_role_handover accepts optional step_up reason and owning_architect_id (threaded through RoleHandoverRequest into _owner_relation), selects defaults from current task/receipt/decision facts, and validates the resulting provider/model/mode/features against the host catalog before workspace/enclosure creation. Ordinary roles without an alternative continue using their own choices.
-
-_role_defaults delegates settings projection to role_launch_defaults while retaining the host role read. _compile_handover delegates to compose_launch_instructions, freezing admitted D301/R125 detail bytes beside the report and binding concrete pointers before existing user append/<overwrite> semantics. _compile_handover populates host.developerQuestions via _developer_questions(started_by, context.role) and host.ownerRelation via _owner_relation(..., owning_architect_id=request.owning_architect_id). Parentless launches retain own-chat wording. Parented orchestrator and manager roles get coordinator-specific developerQuestions directing role_message to the reporting recipient recorded in their report (otherwise the launch parent's agent ID) and recording pending decisions through their role's question procedure, while other parented roles keep starter-ID routing. For parented orchestrator and manager roles, _owner_relation routes Architect matters and developer questions through the role's assigned reporting route, directs permission notices and closeout results to the role text, sends the final report path to the return address, appends unchanged Architect-matter forwarding for orchestrator, and appends direct qualifying-skeleton addressing to owning_architect_id for manager when supplied.
-
-Canonical task JSON/rendered copy metadata, missingCopies disclosure, report/scratch custody, exact parent and leafSeats peer routing, taskless scope and grant-aware revival remain separate existing contracts. A leaf of a master that no sprint commands gets leafSeats peer arguments and a manager return address without a `sprint_document_ref`: the master and leaf are the whole selection then, and a `sprint_document_ref` appears only when the selection has a sprint. A source-bound handover is not code/memory acceptance or live-host proof.
-
-## Current operative account — MIK-R112
-
-- Launch-aware AR guidance follows the launch's actual exclusion record, not a universal exclusion_applied=False. A known AR server on Claude gets record-backed providerOptions MCP exclusion and omits the other-server choice; unknown/indeterminate acceptance and other harnesses retain their conditional choice wording. This is source-owned instruction selection, not new real-host acceptance.
-- MIK-R109 changes the read guidance to a `files` list of repository-relative path strings. `read_ar_files` names knowledge locations and can carry a bounded short brief with governing rule text. Use native file tools for the current saved brief when present and for named source or card files. A compact reply can point to a missing saved brief. Exact leaf `readerArguments` and the missing-`task_context` capability refusal remain unchanged.
-- The compiled role-message guidance distinguishes host acceptance from product holding: permission prompts, unfinished starts and unwritable turns are held and later delivered in order. A held permission wait still reports permission-pending. Actual parent identity, leaf peer references, permission non-bypass and report ownership do not change; product holding grants no right to answer a harness permission prompt.
-
-### Source and authority bounds
-
-- Source comparison: `mcp/src/agents_remember/cli/role_launch_preparation.py:172 (def _ar_tool_server_usage)`.
-- Source comparison: `mcp/src/agents_remember/cli/role_launch_preparation.py:752 ("arMcpUsage": _ar_tool_server_usage)`.
-- Source comparison: `mcp/src/agents_remember/cli/role_launch_preparation.py:546-582 (_assembled_brief assembles BriefParts and delegates to role_brief_message.brief_prompt)`.
-
-Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
-
-## Current account — the preparer's own boundary (MIK-R193)
-
-The preparer assembles a launch: it resolves the selection, writes the task-document copies and the folder set, compiles the hand-over object, and calls `role_brief_message.brief_prompt` to compose the first message and the complete hand-over's content. It publishes neither hand-over file — `role_launch_routes` calls `role_handover_publication.publish_handover_files` before the start is sent — and it sends nothing. What stays here is the launch's inputs, the shared direction constant and the call that builds.
-
-The report path and its folder name have their own owner, `role_report_preparation.role_report_path`. That owner computes the request-qualified report name and settles the request's hand-over locator at the canonical report folder before the report folder or any frozen detail is written, so a colliding or retargeted alias refuses the launch at preparation rather than after content exists. This module imports that owner and keeps no report-folder constant of its own.
-
-The same module carries the one instruction every role's first message repeats about dividing work, as `SPLIT_WORK_DIRECTION`: inside its own assignment a role splits independent work across helpers — its harness's sub-agents — from the start, and helpers have no cap; another role's work goes to the role-start tool, never to a helper; working through independent parts in series is the exception and names its reason (a gate, a shared-file one-writer dependency, a ruling, or a harness without sub-agents); the role stays the single writer of its stage's records and verifies every helper's part; and its report says how it split the work, or why it could not be split. It states a corpus requirement rather than a new record of its own. The direction stands once in the outer first message, before the AR-tools and first-read paragraphs and before the capsule that follows them, and `test_role_first_message.py` asserts that placement and its once-only count directly; the text itself is the `SPLIT_WORK_DIRECTION` constant defined in this module and passed to the brief builder at `direction=SPLIT_WORK_DIRECTION`.
-
-## Grant-backed leaf preparation and revival
-
-Leaf revival recomputes the canonical task/contract pair before comparing the saved receipt: a current readable direct grant binds the exact leaf to the master series contract; an ungranted leaf retains its canonical enclosure. Unreadable grant evidence refuses without caller-root fallback. The comparison precedes bridge revival and creates/starts nothing; a receipt is evidence, not cached permission. Handover reader arguments carry this actual contractPath and copied-document location.
-
-## Current source contract evidence
-
-- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.
-
-Retained authoring-row wording:
-
-Finding: The preparer carries bound canonical/read-copy metadata, composes source-bound instructions and preserves parent/peer routing. Source inspection establishes these implementation boundaries, not live-host execution or acceptance.
-
-Anchor:
-
-Source: mcp/src/agents_remember/cli/role_launch_preparation.py:1-1065
-
-
-
-## Synced current-source qualification
-
-Granted direct-leaf revival binds the canonical leaf to its master series contract through the readable explicit grant; other leaves keep enclosure binding. Unreadable grant data refuses rather than falling back. This new-base preservation is not a Curator-issued grant.
-
-
-## Current source contract
-
-Task-document first-read metadata says to use task_doc first. A correct-input refusal of a covered write (task_doc edits, including an admitted task retirement or folder movement, knowledge_write, citation_fix, citation_note_revision and curator_coherence publication) follows the same-tool/input-class ladder in reference/refused-write.md before a stop applies; if no admitted route works, the agent records the refusal, tells the owner, then makes that write openly by hand and logs it. The owning next publication refreshes renders/projections, and rendered copies are never parsed back. The same instruction retains stops for read/check/validation/sync refusals, starts, other product guards and commit gates; it is not a permission bypass.
-
-- First-read metadata names task_doc first, the same-tool refusal ladder for covered writes, and an open, logged hand write when no admitted route works. [17]
-
-## Historical original card — preserved, not the current operative account
-
-<details>
-<summary>Retained original source accounts and producer history</summary>
-
-## Governing Overview
-
-[overview](../../../overview.md)
-
-## Purpose
-
-Resolves role defaults, workspace, admitted reader scope, compiled capsule and handover before native creation.
-
 ## Code Commentary
 
-The shared launch message directs opening a saved source brief before editing when available. It explains which compact fields can be present and that fuller rows can carry rule text. The next write covering the file or its folder renews a missing or older saved brief when the writer can refresh it. It explains the directory indexes, the reserved index-free task moment directory and the conditions under which a source has a brief.
+`prepare_role_handover` accepts an optional `step_up` reason, selects defaults from current task, receipt, and decision facts, and validates the resulting provider, model, mode, and features against the host catalog (including the native Antigravity refusal) before workspace or enclosure creation. Ordinary roles without an alternative continue using their own choices.
 
+`_role_defaults` delegates settings projection to `role_launch_defaults` while retaining the host role read. `_compile_handover` delegates instruction composition through `_compose_compact_instructions`, which resolves `durable_composition_corpus_root(cache_root=coordination_root / ".cache" / "skill-corpus")`, calls `compose_launch_instructions(..., compact_links=True, corpus_root=durable_root)` to freeze detail bytes under symlink-confined `<stem>.details/<source_path>` and compose user append/`<overwrite>` notes, and emits JSON-quoted `Link roots: skill="..."` (plus `, detail="..."` via `nested_detail_root` when `detailReferences` is non-empty). `_assembled_brief` compacts `capsule.shared_block` with `compact_skill_uri_links` and passes `BriefParts` (including `link_roots`) to `role_brief_message.brief_prompt`.
 
-### Current Contract
+Canonical task JSON and rendered copy metadata (`_prepare_task_document_files`, `_task_document_copy_lists`), `missingCopies` disclosure, request-scoped report/scratch custody (`_prepare_role_folders`), exact parent and `leafSeats` peer routing, taskless scope, and grant-aware revival remain separate contracts. A leaf of a master that no sprint commands gets `leafSeats` peer arguments and a manager return address without a `sprint_document_ref`; `sprint_document_ref` appears only when the selection has a sprint. For every launch, `_compile_handover` writes full `ownerRelation` and `developerQuestions` into `.handover.json` alongside compact structured `host.developerQuestionRoute` (`{"mode": "parent", "agentId": started_by.agent_id}` when parented, `{"mode": "own-chat"}` when parentless) for the slim wire projection. A source-bound handover is not code/memory acceptance or live-host proof.
 
-The launch preparer consumes resolved task identity and canonical files without calling the removed task_doc.get. Read metadata names json_path/rendered_path instead of an operation=get request. taskDocumentFiles includes the own-leaf copy set derived from INDEX, absolute file locations and missingCopies. Compiled task context and launch admission keep their existing owners; file copies do not become task authority or a historical approval witness.
+- Launch-aware AR guidance (`_ar_tool_server_usage`, `_brief_servers`) follows the launch's actual exclusion record rather than a universal `exclusion_applied=False`: a known AR server on Claude receives record-backed `providerOptions` MCP exclusion and omits `_AR_OTHER_SERVER_CHOICE`, while unknown/indeterminate acceptance and other harnesses retain conditional choice wording.
+- Condensed `_AR_TOOL_SERVER_USAGE_HEAD`, `BRIEFS_SENTENCES`, and `_AR_TOOL_SERVER_USAGE_TAIL` direct `read_ar_files` with a `files` list of repository-relative path strings, native file tools for saved briefs (`briefs/<path>.md`, with `INDEX.md` in source brief folders and no index in `briefs/_task/`) and source/card files, `arMcpContext.readerArguments.shared`, and stopping on missing `task_context` schema support.
+- Compiled `roleTools.usage` distinguishes host acceptance from product holding (permission prompts, unfinished starts, and unwritable turns are held and drained in order without granting permission bypass) and states that chat text answers only a waiting caller while other handovers go via `role_message`.
 
-> **Retained historical source account — superseded by the current contract:**
-> prepare_role_handover validates selection before workspace/enclosure changes. _ar_mcp_context carries exact taskDocReadArgs and per-call taskContext; leaf enclosure roots come from canonical authority, while real sprint/master roles share their selected Projects task workspace. _compile_handover records launcher/native parent ownership, operation, source build and canonical artifact/report locations; Revive only compares saved/current leaf scope. MIK-R93@v1 makes both host values depend on one condition: any role with a starting parent receives the parent-routed `developerQuestions` that sends the developer's decision to the parent agent id with `role_message` and keeps working, and `_owner_relation(started_by, role=...)` names the parent — for a leaf Worker, Reviewer or Curator with the direct sibling seat routes and no routine result to the parent — while every parentless or dashboard launch keeps the base sentence. That preserved baseline remains historical; the current approved Investigator exception below states which concern/delegation wording and derived seals change, while unrelated ownership and parent identity remain protected.
+The preparer assembles a launch: it resolves the selection, writes the task-document copies and folder set, compiles the handover object, and calls `role_brief_message.brief_prompt` to compose the first message and complete handover content. It publishes neither handover file (`role_launch_routes` calls `role_handover_publication.publish_handover_files` before sending) and sends nothing.
 
-## 260928-MIK-L99 — a leaf's agents hand over to each other
+`role_report_preparation.role_report_path` owns the request-qualified report path and settles the request's handover locator at the canonical report folder before writing the report folder or frozen details, refusing a colliding or retargeted alias before content exists.
 
-`_compile_handover` appends exactly one value for a leaf Worker, Reviewer or Curator: `leafSeats` with the three seat roles and, for each other seat, the exact `role_message` arguments containing the canonical master and leaf references, with the sprint reference only when the selection has one, and no sibling agent id. Every other role's handover keeps its values byte for byte under identical compiled inputs; the declarative addition is the leaf's only production runtime change, while the derived capsule and skill-revision digests change with the source revision, so the preservation claim is same-input, not cross-revision.
+`SPLIT_WORK_DIRECTION` defines the split-work rule (parallel own-assignment helpers from the start with no cap, another role through `role_start`, named serial exceptions, single writer of stage records, helper verification, and reporting how work was split or why not). It stands once in the static immutable prefix before `ar_tools`, `shared_block`, and the compiled capsule, while `started_from`, `first_read`, and `Link roots:` follow after the capsule under `## Launch Context`.
 
-## 260928-MIK-R93 — parent-presence handover values
+Leaf revival (`_verify_leaf_revival_scope`, `_revival_contract_path`, `_recorded_leaf_scope`) recomputes the canonical task/contract pair before comparing the saved receipt: a current readable direct grant binds the exact leaf to the master series contract, an ungranted leaf retains its canonical enclosure, and unreadable grant evidence refuses without fallback.
 
-The condition is now parent presence: every parentable role (orchestrator, manager, worker, reviewer, curator, investigator) gets the parent-routed `developerQuestions` naming the actual parent agent id, and the leaf Worker, Reviewer and Curator additionally get `leafSeats` peer routes with no routine result ordered to the parent. Every parentless or dashboard launch keeps the base sentence byte for byte; native parent identity and unrelated tool grants remain unchanged; the approved R98 concern/delegation wording exception is stated below.
+`_task_document_read_metadata` tells launched roles to read the rendered task document with native file tools, use `task_doc` first, and never parse rendered copies back. When `shared_block` is present and already carries the `refused-write.md` ladder and `"never keep a blanket ban on writing it by hand"`, `_task_document_read_metadata` conditionally omits the duplicate recovery ladder from `first_read`; when `shared_block` is absent or lacks those phrases, it retains the full `refused-write.md` recovery clause so no witnessed launch loses the rule.
 
-## 260928-MIK-L172 — the compiled hand-over sends, it does not point at the chat
-
-The `roleTools.usage` value this module compiles now tells a role that a reply in a turn reaches its sender only when that sender waits on its own call, and that otherwise the answer goes with `role_message` to that agent id; a refusal still names its reason. The compiled capsule keeps the same tool grants, parent identity and report path, so this is instruction text only.
-
-## Host-resolved choices, folders, copies and instructions
-
-> **Retained historical source account — superseded by the current contract:**
-> `_role_defaults` now carries mode, feature values, notes, the host role profile, settings sources and per-choice field origins into one launch-default record. `_prepare_role_folders` allocates per-request report and scratch roots — leaf roles under the group's real `role-reports/<role>/<requestId>` and `scratch/<role>/<requestId>`, other roles under `.agents-remember/role-executions/<requestId>` — refusing links and outside roots. `_prepare_task_document_files` publishes the leaf's own rendered document under `task-documents/` before the first turn. `_compile_handover` composes user plaintext over the capsule baseline (a first-nonblank-line `<overwrite>` tag replaces the baseline, otherwise append), records launch-choice metadata with sources and digests, and names the canonical report path; the brief tells the agent to read the rendered files with its own file tools and to change documents through `task_doc` only.
+`ROLE_START_OPERATIONS` binds `bootstrap` alongside the other seven roles to its capsule operation. Taskless assignments (architect, investigator, bootstrap) live in `cli.role_launch_assignments`, with `investigator_assignment` selecting parent-first-message vs developer-request wording from `started_by`. Enclosure preparation (`_leaf_contract_path`, `_resolve_workspace`, `_ensure_leaf_enclosure`) lives in `cli/role_launch_workspace.py`.
 
 ## Evidence
 
-
+- Frozen implementation of `_ar_mcp_context` supporting leaf and configured-project reader arguments. [2]
+- The `_resolve_workspace` implementation lives in its extracted owner `cli/role_launch_workspace.py`. [3]
+- Independent views read fresh metadata, Start reads metadata then its selected pair, and explicit Refresh renews discovery. [5]
+- Launch validation rejects unoffered selections; an unoffered model refuses before the workspace resolver is called. [6]
+- Changed/missing saved scope refuses with both pairs, no bridge/write/enclosure creation. [7]
+- Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [9]
+- Defaults extraction preserves host-role lookup. [12]
+- The capsule operation each launcher role is compiled from, including the free agent. [15]
+- The assignment the bootstrap seat carries, which names no task. [16]
 
 - The shared preparer resolves launch choices before workspace preparation, then compiles the bound task readers and handover. [1]
 
+- The parented handover values: `ownerRelation` from `_owner_relation` (with verified `owning_architect_id` direct skeletons), `developerQuestions` from `_developer_questions`, and compact structured `host.developerQuestionRoute` (`parent` vs `own-chat`). [4]
+- An Investigator's assignment comes from `investigator_assignment` with the actual starting parent: a parented start takes its concern from the parent's first message, a parentless start asks the developer. [8]
 
-
-- Frozen implementation of _ar_mcp_context supporting the stated file behavior. [2]
-
-
-> Retained earlier citation wording: - The `_resolve_workspace` implementation now lives in its extracted owner.
-
-
-
-
-
-- Launch validation rejects unoffered selections. An unoffered model refuses before the workspace resolver is called. [6]
-
-
-- Changed/missing saved scope refuses with both pairs, no bridge/write/enclosure creation. [7]
-
-
-## MIK-R95 Workspace Owner Extracted
-
-The enclosure preparation owner moved to `role_launch_workspace.py`: `_leaf_contract_path`, `_resolve_workspace`, `_ensure_leaf_enclosure` and the new `_recorded_parent`/`_preparation_refusal`/`_start_leaf_enclosure` live there, and this module imports `_leaf_contract_path`/`_resolve_workspace` from it. `prepare_role_handover` keeps the capsule/handover compilation and owner-relation values unchanged.
-
-## Investigator scope and request identity
-
-Investigator’s actual started_by parent selects the concern-from-first-message assignment; a parentless start uses the developer request. Selected sprint/master report paths are task-owned and request-qualified. Only the approved Investigator and coordinating-role handover wording changes and derived seals depart from the earlier preservation rule; exact parent identity, leafSeats peer arguments and unrelated handover behavior remain unchanged.
-
-
-Retained authoring-row wording:
-
-Finding: The current source implements this file’s stated Investigator boundary.
-
-Anchor:
-
-Source: mcp/src/agents_remember/cli/role_launch_preparation.py:1-752
-
-
-
-## Refreshed current evidence
-
-Retained authoring-row wording:
-
-Finding: Frozen implementation of the narrow parented-coordinator handover values.
-
-Anchor:
-
-Source: mcp/src/agents_remember/cli/role_launch_preparation.py
-
-
-- Independent views read fresh metadata, Start reads metadata then its selected pair, and explicit Refresh renews discovery. [5]
-
-
-
-</details>
-
-Retained authoring-row wording:
-
-Finding: Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use.
-
-Anchor:
-
-Source: mcp/src/agents_remember/cli/role_launch_preparation.py:1-963
-
-
-
-
-
-## Evidence
-
-
+- `_compile_handover` compiles instructions, names canonical task and copied documents, records starter and leaf peers through bound role addresses, and populates `host.developerQuestionRoute`. [10]
 
 - Selection validation and the native Antigravity refusal run before workspace and enclosure preparation. [11]
 
+- `_compose_compact_instructions` resolves the durable corpus root, calls `compose_launch_instructions(..., compact_links=True)`, emits JSON-quoted `Link roots:`, and includes the instruction digest in the immutable message binding. [13]
 
+- Compact nested detail composition and user-note precedence delegate to `compose_launch_instructions` and `_write_nested_detail_artifacts`. [14]
 
-- Defaults extraction preserves host-role lookup. [12]
-
-
-
-- The preparer compiles instructions, names the canonical task and copied documents, and records the starter and leaf peers through their bound role addresses. [10]
-
-
-
-
-- The handover composes source-bound details and includes the resulting instruction digest in the immutable message binding. [13]
-
-
-
-
-
-- Concrete frozen detail pointers retain existing user-note composition. [14]
-
-## The bootstrap capsule and the assignment owner
-
-`ROLE_START_OPERATIONS` binds `bootstrap` to its capsule operation, so the free agent is compiled from the same capsule the role documents describe rather than from a second corpus. The assignment sentences of the three roles a launch admits without a canonical task — architect, investigator and bootstrap — are owned by `cli.role_launch_assignments`, and `_role_assignment` returns the bootstrap sentence for that role instead of asserting a selected task. Nothing else in preparation changes for the existing roles.
-
-- The capsule operation each launcher role is compiled from, including the free agent. [15]
-
-- The assignment the bootstrap seat carries, which names no task. [16]
-
-
-
-- The `_resolve_workspace` implementation now lives in its extracted owner. Anchor: actual current supporting source [3]
-
-
-
-
-- The parented handover values: `ownerRelation` from `_owner_relation` and `developerQuestions` from `_developer_questions`; parentless launches keep the own-chat sentence, parented Orchestrator/Manager route developer questions to their recorded reporting recipient (else launch parent) and Architect matters through their assigned reporting route (with Orchestrator forwarding unchanged and Manager addressing qualifying direct skeletons to `owning_architect_id` when supplied), while other parented roles keep starter-ID developer-question routing. [4]
-
-
-
-
-- An Investigator's assignment comes from `investigator_assignment` with the actual starting parent: a parented start takes its concern from the parent's first message, a parentless start asks the developer. Anchor: `investigator_assignment` [8]
-
-
-- Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [9]
+- `_task_document_read_metadata` names `task_doc` first and conditionally deduplicates the `refused-write.md` ladder only when `shared_block` already carries it. [17]
+- `_assembled_brief` compacts `shared_block` `skill://` URIs via `compact_skill_uri_links` and passes `link_roots` and condensed `_AR_TOOL_SERVER_USAGE*` into `BriefParts`. [21]

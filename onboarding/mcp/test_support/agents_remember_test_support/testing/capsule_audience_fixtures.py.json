@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
-        "content": "sha256:900d32a2974249f9231c0db13332a5818a8705aabc2bb774cdd3ca97628b9e79",
+        "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
+        "content": "sha256:dad620857d6b0418ed9c7321187742ac6d97a3ddfd0d19aeb3141807c32af5a6",
         "locator": {
           "kind": "file"
         }
@@ -21,12 +21,12 @@
   ],
   "references": {
     "1": {
-      "note": "Role pointer actions are pairs of reference path and action prefix.\n\nAnchor: `ROLE_POINTER_ACTIONS`",
+      "note": "Role pointer actions are pairs of reference path and action prefix.",
       "targets": [
         {
           "anchor": {
-            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
-            "content": "sha256:900d32a2974249f9231c0db13332a5818a8705aabc2bb774cdd3ca97628b9e79",
+            "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
+            "content": "sha256:dad620857d6b0418ed9c7321187742ac6d97a3ddfd0d19aeb3141807c32af5a6",
             "locator": {
               "kind": "file"
             }
@@ -40,12 +40,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
+            "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
             "content": "sha256:72d7ec27a9a28fe3f7a30cb7b96a085e26a83e1e4de498fae932c749753b0481",
             "locator": {
-              "end": 383,
+              "end": 323,
               "kind": "line_range",
-              "start": 338
+              "start": 278
             }
           },
           "kind": "code"
@@ -57,8 +57,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
-            "content": "sha256:6213f6a1ca7c3cfc20bec23f4af05f3c3b5041f7e6502b85778cf54f767c90e7",
+            "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
+            "content": "sha256:a6e7aa278dc4c8266af100e50ffb4bf5ad1769b74c546c3402e8645c0b807f45",
             "locator": {
               "kind": "symbol",
               "name": "SHARED_SHORT_RULE_CLAUSES"
@@ -73,8 +73,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
-            "content": "sha256:900d32a2974249f9231c0db13332a5818a8705aabc2bb774cdd3ca97628b9e79",
+            "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
+            "content": "sha256:dad620857d6b0418ed9c7321187742ac6d97a3ddfd0d19aeb3141807c32af5a6",
             "locator": {
               "kind": "file"
             }
@@ -88,8 +88,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
-            "content": "sha256:900d32a2974249f9231c0db13332a5818a8705aabc2bb774cdd3ca97628b9e79",
+            "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
+            "content": "sha256:dad620857d6b0418ed9c7321187742ac6d97a3ddfd0d19aeb3141807c32af5a6",
             "locator": {
               "kind": "file"
             }
@@ -99,40 +99,52 @@
       ]
     },
     "7": {
-      "note": "The current pointer fixtures bind whole-record retrieval to its named knowledge-use detail.",
+      "note": "The current pointer fixtures bind `reference/knowledge/use.md` to compact table-row prefixes for Architect, Worker, Curator, Reviewer, and Investigator, with section qualifications for Architect and Investigator.",
       "targets": [
         {
           "anchor": {
-            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
-            "content": "sha256:df18848be7c15a5a88359f8ab84a22b9cb123b63aa5b4744e97b95a4bcddc31a",
+            "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
+            "content": "sha256:5b094ea565106d8229f98d8e51f01b8d813b5c16017f187614b02ca9d553518c",
             "locator": {
-              "end": 146,
+              "end": 29,
               "kind": "line_range",
-              "start": 136
+              "start": 26
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
-            "content": "sha256:a7d33684a6845eef90c133841154faff0149c780d50d3a950fefe377a35bc0d0",
+            "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
+            "content": "sha256:2ff26bc2387aa6952ec75eeeb3348c9f2ba9b9cefcefb233575671be56fb248f",
             "locator": {
-              "end": 180,
+              "end": 228,
               "kind": "line_range",
-              "start": 172
+              "start": 178
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "8417da560b3a0984b993fb8385a9d47db8ec2fe6",
-            "content": "sha256:c2d62ad1c7932d8d58d1f1b1b9d5d795f71c5f1abcf5ac77dbc9a374cf82455d",
+            "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
+            "content": "sha256:ca6748b331bc63270f065bb2082a43b4a26690af27c73d94165ffa3a3cc4d32c",
             "locator": {
-              "end": 281,
+              "end": 394,
               "kind": "line_range",
-              "start": 252
+              "start": 390
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85ffda504a3a4dca176a744725ede99b964b1afe",
+            "content": "sha256:83b215cc7ae5fa5977a794bd6e244a39a69b3ddfb30e0801f6b61d43afaf9291",
+            "locator": {
+              "end": 444,
+              "kind": "line_range",
+              "start": 440
             }
           },
           "kind": "code"

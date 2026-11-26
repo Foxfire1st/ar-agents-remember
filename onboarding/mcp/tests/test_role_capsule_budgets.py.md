@@ -38,7 +38,8 @@ The current record sets capsule ceilings of 5500 words for Architect, 4600 for M
 
 - The budget registry test requires capsule keys to equal the manifest-derived role/operation/launcher matrix, detail keys to equal every declared detail source, and the digest entry to contain exactly size_words. [1]
 
-- The tests measure whitespace-split words from freshly rendered capsule instructions, complete declared detail sources and the separately delivered every-role digest, then compare them with renewed measurements and authored role, detail and digest ceilings. Exact populations reject omissions and orphans. Historical fixture mutation controls separately exercise exact and over-limit inputs. These are source assertions, not a fresh test run. [3]
+- The tests measure whitespace-split words from freshly rendered capsule instructions, complete declared detail sources and the separately delivered every-role digest, then compare them with renewed measurements in `capsule-budgets-current.json` (current word ceilings are retired; only freshness and exact population completeness are checked). Exact populations reject omissions and orphans. Historical fixture mutation controls separately exercise exact and over-limit inputs. These are source assertions, not a fresh test run. [3]
+
 
 
 
@@ -46,4 +47,4 @@ The current record sets capsule ceilings of 5500 words for Architect, 4600 for M
 
 ### Repo-Internal References (renewed)
 
-- The current record sets capsule ceilings of 5500 words for Architect, 4600 for Manager, 4537 for Curator, 4200 for Reviewer, 4000 for Bootstrap, 3800 for Orchestrator and 3742 for other roles; declared step details have a 2500-word ceiling and the separately delivered every-role digest a 2327-word ceiling. Registry completeness, exact renewed measurements and ceiling controls apply independently. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [4]
+- While `capsule-budgets-current.json` retains historical word-ceiling fields (5500 Architect, 4600 Manager, 4537 Curator, 4200 Reviewer, 4000 Bootstrap, 3800 Orchestrator, 3742 other roles; 2500 step-detail; 2327 digest), `_current_area_findings` in `capsule_budget_d695.py` no longer enforces word ceilings and checks only registry completeness and exact renewed measurement freshness. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [4]

@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "814fd2ebf624596c42f60f2e7c93b3a3a3ac6fc3",
-    "commit": "4bf4b66edfb43ed63e4010071296c9cf0991b55b",
-    "role": "curator",
-    "statement": "Audited docs/guides/use-external-memory.md on 261112-BUG-L54 candidate 814fd2eb: external-memory layout, attribution, and closeout step-4 history closing remain accurate after L54's unmapped verdictRef note in closeout_external.py, and the guide makes no claim about review.verdictRef or notes/reports/.",
-    "task": "261112-BUG-L54",
-    "uncommitted": true
+    "codeTree": "99893607f698478a1186507fd937b71cae1f20dd",
+    "commit": "4559dabe83cb85443c79614f19d610b7ecc62aa9",
+    "role": "manager",
+    "statement": "Crossing merge resolution at 4559dabe8 combining BUG-L33/L54 and CAP-L3 confirmations: docs/guides/use-external-memory.md remains accurate against the merged code commit after reconciling both branches' stands_on blobs.",
+    "task": "261112-BUG",
+    "uncommitted": false
   },
   "document": "docs/guides/use-external-memory.md",
   "id": "DPD-9F0Q8G",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -46,7 +46,7 @@
       "path": "mcp/src/agents_remember/kernel/memory_init.py"
     },
     {
-      "blob": "6766834541c24208edbc97f65c23704f7ed21c77",
+      "blob": "d02ab2dfa46b85ac8cfde5565f1f510161df9de8",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
     },
@@ -67,14 +67,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T14:04:00+01:00",
+    "at": "2026-11-26T23:03:52+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L54",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "c9b90605-3453-5689-9437-026f0ca22b53",
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
     "task": "261112-BUG"
   }
 }

@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The Investigator starts without a task reference, on a sprint, or on a sprint and master, never on a leaf; its concern arrives in its parent's first role_message, or from the developer's request when it has no parent, and a missing concern or scope is asked for, never invented. Anchor: `role_message`",
+      "note": "The Investigator starts taskless in Projects, on a sprint, on a standalone master, or on both, never on a leaf; its concern arrives in its parent's first `role_message` (or from the developer in own chat when parentless), and missing concern, IDs or repos are asked for, never invented.\n\nAnchor: `role_message`",
       "targets": [
         {
           "anchor": {
-            "blob": "27304d9440781768d35f81acb95b018e57259de3",
-            "content": "sha256:d5a3b7cdc117bbcde5d50c5c14b1e7b5deb8076f8e00f74f9787366ba7716622",
+            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+            "content": "sha256:9018aee88d37ea4fee05c3cb6433890dfea2013b46bb21f717603099d1cf51dc",
             "locator": {
-              "end": 18,
+              "end": 8,
               "kind": "line_range",
-              "start": 10
+              "start": 8
             }
           },
           "kind": "code"
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "27304d9440781768d35f81acb95b018e57259de3",
+            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
             "content": "sha256:5050eddc7ae94d38b46a52289e4c291723543e9cce31cc1f0776945fc590a448",
             "locator": {
-              "end": 54,
+              "end": 14,
               "kind": "line_range",
-              "start": 54
+              "start": 14
             }
           },
           "kind": "code"
@@ -93,12 +93,12 @@
         },
         {
           "anchor": {
-            "blob": "27304d9440781768d35f81acb95b018e57259de3",
-            "content": "sha256:7ed2be0e3c7ebe89f48eb29c7b1896b096d32c896b31ca9d27bd68275256c5bb",
+            "blob": "275ed01a6aaf6f2ba3ad6dfb8faa96087d21a15e",
+            "content": "sha256:778ee42f92164df78ad8967d34e57914445a542ceb17e43d1534d081d2f5e9e1",
             "locator": {
-              "end": 28,
+              "end": 12,
               "kind": "line_range",
-              "start": 28
+              "start": 12
             }
           },
           "kind": "code"

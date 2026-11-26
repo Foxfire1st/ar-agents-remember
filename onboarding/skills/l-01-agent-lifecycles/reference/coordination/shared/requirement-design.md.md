@@ -23,4 +23,5 @@ The Architect role points here before authoring or amending a requirement and it
 - One request is one task, a split is proposed, new tasks get one major step per role, and existing tasks keep their structure. [3]
 - Release to a Worker follows the shared restriction-disclosure sections. [4]
 - Controls get one named location, and the dashboard stays usable with no agent active. [5]
+
 - The Architect role points here before authoring or amending a requirement. [6]

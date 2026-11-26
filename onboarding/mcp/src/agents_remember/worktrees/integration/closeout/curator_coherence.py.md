@@ -166,7 +166,9 @@ card).
 - Exact current judgments project into separate content and route no-impact sets. [4]
 - Candidate task context resolves the selected leaf and master, passes the commanding sprint executionGraph when present, and passes no authored graph for a standalone master. [5]
 - Currentness rederives the declared dependencies, validates the complete attestation and requires its measured quality binding. `_QualityAttestationSource` retains the attestation/report paths, pair identity and both candidate trees. [7]
+
 - The closeout validator's gate over the exact candidate, refusing with every finding (MIK-R09). [9]
+
 - The closeout validator refuses until the gate passes and never runs ungated. Anchor: `test_the_closeout_validator_refuses_until_the_gate_passes_and_never_runs_ungated` [10]
 - Current readiness still validates live inputs and dependencies. [11]
 

@@ -17,7 +17,9 @@ The request's own directory alias is what makes a hand-over artifact reachable a
 - The locator is one link of the report folder, and a repeat of the same request reuses the link it made. [1]
 - A locator that would lead to another folder, or a real directory standing at its name, is refused and nothing is changed. [2]
 - A lost locator is rebuilt at the same place over the same bytes, leaving the artifact's inode and modification time as they were. [3]
+
 - A deep report folder publishes one bounded locator whose path opens the artifact's own read-only bytes and is named by the artifact line and the first message. [4]
+
 - The locator path is exactly as long at a shallow and a deep folder, and is the product root plus the request id plus the artifact name. [5]
 - A link at the artifact's own name is never followed through a locator. [6]
 - The end of resumability removes the alias and never the report folder or its report. [7]

@@ -111,12 +111,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a42900178a410a9183721dcc9ab895b774e18d5",
-            "content": "sha256:e578eb7df8257d148c701e9d1b344c75c53c02405e24fb3cd993719daae7a823",
+            "blob": "4b74d6e21007ef2483d9d54e644bef007511beb8",
+            "content": "sha256:0c2cdcc0ef2c6986c11711f1ac7063f1f9cad99f30bc104aadf207b11d43a5e2",
             "locator": {
-              "end": 93,
+              "end": 12,
               "kind": "line_range",
-              "start": 89
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b74d6e21007ef2483d9d54e644bef007511beb8",
+            "content": "sha256:45d869af989d64a54cd5a49e8e2e1dd7bd9389230b716ceaeea931b263b1ebb3",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
             },
             "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
           },

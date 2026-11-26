@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:cada9e7d8f2ddc20bc85318bcfc1026e8c04e2221f9b24bf9447d4230d4e4614",
+        "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+        "content": "sha256:855ae6401e9e885c23025bdad8c747bf4158f3c15d26ff729d2e1be65d4aaca1",
         "locator": {
-          "end": 56,
+          "end": 14,
           "kind": "line_range",
-          "start": 56
+          "start": 14
         }
       },
       "id": "RLZ-06Q86T",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:f8e91b1d9a28194f42e8b1acedf204973fc0d7c152c7c86bd80d7007df3ec827",
+        "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+        "content": "sha256:28011563333b27c409ff845e1f83f47d52bb01c7d61aac655649c3fea32cc513",
         "locator": {
-          "end": 118,
+          "end": 34,
           "kind": "line_range",
-          "start": 118
+          "start": 34
         }
       },
       "id": "RLZ-0R6J6V",
@@ -36,36 +36,17 @@
         "handoffEntry": "L84-P5-19 / L84-P5-18 pair 6",
         "leaf": "260928-MIK-L84"
       },
-      "rationale": "The review boundaries state the Manager's part: gate acceptance and recording the extra-round approval.",
+      "rationale": "The review Rounds section states the Manager's part: gate acceptance and recording Architect/developer extra-round approvals.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:034f69214d19c325840b8cf1193f76a7d8f44a6ccbd39ac5092c2f4d7c4def6b",
+        "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+        "content": "sha256:ae5364c0e4462ef592f09267f85ee3063553b9e75da24a385a8313b5b14c7948",
         "locator": {
-          "end": 143,
+          "end": 38,
           "kind": "line_range",
-          "start": 133
-        }
-      },
-      "id": "RLZ-2TS1BF",
-      "invariant": "INV-WEF33P",
-      "origin": {
-        "handoffEntry": "BUG-R12@v1 §4",
-        "leaf": "261112-BUG-L12"
-      },
-      "rationale": "This section names the three sanctioned routes, scopes reopening to the added point, assigns the successor repair and identifies the approval boundary.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:a2a8d5ba879cde012dffca3ce756c235c2b57658db6afbdfc81ed82f561ddf57",
-        "locator": {
-          "end": 123,
-          "kind": "line_range",
-          "start": 121
+          "start": 38
         }
       },
       "id": "RLZ-4KB0MB",
@@ -79,31 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:91f2a7a09ab1ba97b7830d091203621215f250350dcf1d06dd8b6ea9ff33fb6f",
+        "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+        "content": "sha256:313364836242a84892d594c21a95e1c0d6b08e37eeb78fd268b6c26d37d30fab",
         "locator": {
-          "end": 79,
+          "end": 4,
           "kind": "line_range",
-          "start": 79
-        }
-      },
-      "id": "RLZ-AMVJK6",
-      "invariant": "INV-CAJ09X",
-      "origin": {
-        "handoffEntry": "BUG-R41.v1.rule-4",
-        "leaf": "261112-BUG-L41"
-      },
-      "rationale": "Retains the existing review on a clean sync while expecting the Manager to obtain the Curator's refreshed read for a changed pair before routine closeout.",
-      "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:45d120a106e80247dd87b12e2244a5e0e636cae5369f2b68ab2ef91b3d30075e",
-        "locator": {
-          "end": 8,
-          "kind": "line_range",
-          "start": 8
+          "start": 4
         }
       },
       "id": "RLZ-B1MFGH",
@@ -112,36 +74,17 @@
         "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-architect-advice",
         "leaf": "260928-MIK-L62"
       },
-      "rationale": "The optional advisory lane leaves the Reviewer verdict as the grade; advisory findings go to that Reviewer for explicit rulings, with disagreement owned by Architect/developer.",
+      "rationale": "Cold reads open no round and advisory Investigators report only to Architect while Reviewer's verdict stays the grade.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:6cdc52f8a3d877c0c44e23f94eb53d1b173ad177c8c9a3a424ba6e374f2c216e",
+        "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+        "content": "sha256:0c52fca2d6d2fb9df85aae4b314eda370236c1e3934f3c8410c856462aa06ea1",
         "locator": {
-          "end": 38,
+          "end": 27,
           "kind": "line_range",
-          "start": 31
-        }
-      },
-      "id": "RLZ-B6YVXW",
-      "invariant": "INV-EM1Y66",
-      "origin": {
-        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-architect-advice",
-        "leaf": "260928-MIK-L62"
-      },
-      "rationale": "The optional advisory lane leaves the Reviewer verdict as the grade; advisory findings go to that Reviewer for explicit rulings, with disagreement owned by Architect/developer.",
-      "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:6913ea0e53f0eb04fe025c9cfe4c2376b7fa77a5ad52ccdfbe64ef3a5603ca38",
-        "locator": {
-          "end": 73,
-          "kind": "line_range",
-          "start": 68
+          "start": 24
         }
       },
       "id": "RLZ-B884C1",
@@ -155,12 +98,12 @@
     },
     {
       "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:06fbd4fb6bc50d09868215fcc21930d88110eb2d2635e815a9b2f22982b47c2c",
+        "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+        "content": "sha256:11fd22b07d4dd111efa96d4cc6582167408ec45f2e63ae144e916a5f71f43368",
         "locator": {
-          "end": 61,
+          "end": 19,
           "kind": "line_range",
-          "start": 61
+          "start": 19
         }
       },
       "id": "RLZ-B94KKE",
@@ -174,48 +117,12 @@
     },
     {
       "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:5c35496fae6f3888d303621708017385f7ea56cb5cd1936944d7abad24ed0c43",
+        "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+        "content": "sha256:11fd22b07d4dd111efa96d4cc6582167408ec45f2e63ae144e916a5f71f43368",
         "locator": {
-          "end": 122,
+          "end": 19,
           "kind": "line_range",
-          "start": 122
-        }
-      },
-      "id": "RLZ-CA7Z9P",
-      "invariant": "INV-8SBKWP",
-      "origin": {
-        "handoffEntry": "Curator W7 hunk attribution §3",
-        "leaf": "261112-BUG-L12"
-      },
-      "rationale": "The ready-for-closeout notice takes the original run and the repaired tree’s targeted results together.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:41e39c0afc0d224ec74944153958d9e37b0b083c4c9679e67554e363c88d1b6b",
-        "locator": {
-          "kind": "file"
-        }
-      },
-      "id": "RLZ-FCFNZX",
-      "invariant": "INV-82NDFH",
-      "origin": {
-        "handoffEntry": "BUG-R52@v2 §7",
-        "leaf": "261112-BUG-L52"
-      },
-      "rationale": "Requires memory verdicts in the reviewer-scoped boundaries block to sign OM-6 items and attach base and candidate staleOnly=true receipts.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:06fbd4fb6bc50d09868215fcc21930d88110eb2d2635e815a9b2f22982b47c2c",
-        "locator": {
-          "end": 61,
-          "kind": "line_range",
-          "start": 61
+          "start": 19
         }
       },
       "id": "RLZ-FQ21R4",
@@ -229,31 +136,12 @@
     },
     {
       "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:18ff460ac0025989fa8d4c4aa7dd7c0cfceb7157f0651bf65d1b943be87baa0c",
+        "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+        "content": "sha256:28011563333b27c409ff845e1f83f47d52bb01c7d61aac655649c3fea32cc513",
         "locator": {
-          "end": 141,
+          "end": 34,
           "kind": "line_range",
-          "start": 141
-        }
-      },
-      "id": "RLZ-H5BG3V",
-      "invariant": "INV-WEF33P",
-      "origin": {
-        "handoffEntry": "Curator W7 hunk attribution §4",
-        "leaf": "261112-BUG-L12"
-      },
-      "rationale": "The repair review counts and remains subject to existing beyond-limit authority.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:beed60d3fa667dc0be2373acdfa033172a4c3d37f20e5d689734fa511662c833",
-        "locator": {
-          "end": 120,
-          "kind": "line_range",
-          "start": 86
+          "start": 34
         }
       },
       "id": "RLZ-MN85JH",
@@ -267,31 +155,12 @@
     },
     {
       "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:d8ff27971edda2d4599a0dc3dc0ec61f5afc63c9c21cae9c6a2d8ad152aed318",
+        "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+        "content": "sha256:68376532242411093b547d88469d16f43a63ead68de25f4b0505c8378bef1f16",
         "locator": {
-          "end": 131,
+          "end": 41,
           "kind": "line_range",
-          "start": 131
-        }
-      },
-      "id": "RLZ-N6SDG2",
-      "invariant": "INV-KJACVA",
-      "origin": {
-        "handoffEntry": "BUG-R12@v1 §6",
-        "leaf": "261112-BUG-L12"
-      },
-      "rationale": "The review boundary excludes states built by hand to defeat a check from findings and guards.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:1ed5ca972fd729804f76f31330ead6a3f20ea27daf5bc94c7df8ca0d098d8884",
-        "locator": {
-          "end": 143,
-          "kind": "line_range",
-          "start": 126
+          "start": 41
         }
       },
       "id": "RLZ-R5RASM",
@@ -300,74 +169,17 @@
         "handoffEntry": "R99-D95-curator-code-concerns",
         "leaf": "260928-MIK-L99"
       },
-      "rationale": "Requires an answer/adjudication and separate code-concern evidence without silently changing fixed-list IDs.",
+      "rationale": "Directs Reviewer to answer Curator's evidenced code concern directly to Curator and Worker (reopen or explain rejection) and route disputes to Manager.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:9857bf4edd2a1ff789b52bdb73f11d5a1f300accd9b2af8a0416075a71b03f81",
+        "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+        "content": "sha256:e951a5b34e5e615635af3096d540f830c9c8818ef55ba5ff655fa6a8d785eee6",
         "locator": {
-          "end": 57,
+          "end": 29,
           "kind": "line_range",
-          "start": 56
-        }
-      },
-      "id": "RLZ-S6NXKG",
-      "invariant": "INV-5BPF6M",
-      "origin": {
-        "handoffEntry": "Curator W7 hunk attribution §2",
-        "leaf": "261112-BUG-L12"
-      },
-      "rationale": "The review output excludes final checks from the evidence of a round.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:3944c29057c5baeb2f1e04381e74c07ebc4798ba9f5d9bc6bcd1b0219b52a02b",
-        "locator": {
-          "end": 90,
-          "kind": "line_range",
-          "start": 90
-        }
-      },
-      "id": "RLZ-TVE0C2",
-      "invariant": "INV-WEF33P",
-      "origin": {
-        "handoffEntry": "Curator W8 M02 no-round recording",
-        "leaf": "261112-BUG-L12"
-      },
-      "rationale": "The recording procedure names addedFindings, record_review and record_route_review and states that an addition spends no round.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:0af4b6a2a90a4908da58ff5014766dd5cfaec4eb66f2c6f34fbae1456c3fa2c9",
-        "locator": {
-          "end": 104,
-          "kind": "line_range",
-          "start": 104
-        }
-      },
-      "id": "RLZ-V5SQ32",
-      "invariant": "INV-S9H78W",
-      "origin": {
-        "handoffEntry": "L84-P5-19 / L84-P5-18 pair 6",
-        "leaf": "260928-MIK-L84"
-      },
-      "rationale": "The fix-verification-at-the-limit section states who approves a round beyond the limit, in the Architect's ruled wording.",
-      "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:7e81014696e3c8542f82571ea2555f7826deb6a3abc41126378f20e3646451e9",
-        "locator": {
-          "end": 83,
-          "kind": "line_range",
-          "start": 75
+          "start": 29
         }
       },
       "id": "RLZ-VV75SF",
@@ -376,26 +188,7 @@
         "handoffEntry": "K3-ZNJ14G-review-leaf-handover",
         "leaf": "260928-MIK-L84"
       },
-      "rationale": "Every leaf handover names the leaf, exact object, report or verdict path and the whole next stretch; the Worker's freeze message reaches the Reviewer directly as a factual handover.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-        "content": "sha256:b757be98da81c9493eb27b6b22404bf2eda8f02da7d71cbdd9d74fcb364a70c8",
-        "locator": {
-          "end": 104,
-          "kind": "line_range",
-          "start": 86
-        }
-      },
-      "id": "RLZ-ZP7MHN",
-      "invariant": "INV-V7M37D",
-      "origin": {
-        "handoffEntry": "R99-2a-code-memory-lanes",
-        "leaf": "260928-MIK-L99"
-      },
-      "rationale": "Names supported begin/result calls, preserves refusals and separates gate acceptance from evidence.",
+      "rationale": "Requires every leaf review handover to name the leaf, candidate, path and next stretch using sibling role, leaf refs and whole IDs.",
       "role": "primary-authority"
     }
   ],
@@ -405,12 +198,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:6913ea0e53f0eb04fe025c9cfe4c2376b7fa77a5ad52ccdfbe64ef3a5603ca38",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:0c52fca2d6d2fb9df85aae4b314eda370236c1e3934f3c8410c856462aa06ea1",
             "locator": {
-              "end": 73,
+              "end": 27,
               "kind": "line_range",
-              "start": 68
+              "start": 24
             }
           },
           "kind": "code"
@@ -422,25 +215,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:20e89a40d302bcf0f55b93eec944dfac9d80bd0185d2ab3673254acffc5365ee",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:855ae6401e9e885c23025bdad8c747bf4158f3c15d26ff729d2e1be65d4aaca1",
             "locator": {
-              "end": 54,
+              "end": 14,
               "kind": "line_range",
-              "start": 54
+              "start": 14
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:48b8445332fed459a4e21ba40ee8348dc0597f51af95642ce0308eff17ce44d8",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:28011563333b27c409ff845e1f83f47d52bb01c7d61aac655649c3fea32cc513",
             "locator": {
-              "end": 104,
+              "end": 34,
               "kind": "line_range",
-              "start": 100
+              "start": 34
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+            "content": "sha256:dfbbe1e528ace4b0da870684b997e43796c09f4882aecb62a3a344745e482e8f",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/review/rounds-and-late-findings.md"
           },
           "kind": "code"
         }
@@ -451,12 +257,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d4a6f0d18ff7d65de6ae403b364616a6fc7a723",
-            "content": "sha256:8e56d5e3f247f76c29190f75c6950030a66324e29bf99877902367f2f0d842cb",
+            "blob": "8c1894848a802df1ee6f617b4fb173f5e472fd88",
+            "content": "sha256:fc72e534adf9e90c7dd26c389512e390c246cef2b36b5b042192db053871866c",
             "locator": {
-              "end": 119,
+              "end": 25,
               "kind": "line_range",
-              "start": 119
+              "start": 25
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -464,24 +270,12 @@
         },
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:3cff65b86d44b6d4ded161b897410a3c1cc29874e0035b79e14aa8bade04ba99",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:28011563333b27c409ff845e1f83f47d52bb01c7d61aac655649c3fea32cc513",
             "locator": {
-              "end": 88,
+              "end": 34,
               "kind": "line_range",
-              "start": 86
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:a8cf97939d549365f28f41a2e5bd76aad85ca7fd9c57591a52560fb7e2da374c",
-            "locator": {
-              "end": 120,
-              "kind": "line_range",
-              "start": 116
+              "start": 34
             }
           },
           "kind": "code"
@@ -506,13 +300,39 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:79edffcb0191f5abdf2430acd653a9021ce3e58a2265ca1fccf29167c894a5f3",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:2aac101d37bd5edefac27addc6f939bec709604f4a9cd0f61b1cd75d92dc3cfb",
             "locator": {
-              "end": 120,
+              "end": 34,
               "kind": "line_range",
-              "start": 79
+              "start": 29
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+            "content": "sha256:c91076be4bc827b8025bb1683bf30bbb18ae00df392f14c2e3c9d516405bccdb",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/review/rounds-and-late-findings.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "345008053e007cf0ca4e57917a2f17501f1f7eee",
+            "content": "sha256:822575dcc6c770f1cfa66170c5b605d9403bc391c975c579986e7f01117ee5ec",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/worker/sync-and-repairs.md"
           },
           "kind": "code"
         }
@@ -523,8 +343,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:41e39c0afc0d224ec74944153958d9e37b0b083c4c9679e67554e363c88d1b6b",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:5c770126e2c131e76f7ccfe647270630b891bc55adda0d719bcad60ccafd9858",
             "locator": {
               "kind": "file"
             }
@@ -534,12 +354,25 @@
       ]
     },
     "6": {
-      "note": "Current review separates common mode/round boundaries from Reviewer handover, record-only repair and code-concern duties, and records MEMORY as a separate lane under the same settings limit.",
+      "note": "Current review separates common output/round/boundary rules from Architect advisory-review routing and Reviewer handover and code-concern duties, records MEMORY as a separate lane under the same settings limit, and delegates record-only repair checks to reference/review/rounds-and-late-findings.md.",
       "targets": [
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:41e39c0afc0d224ec74944153958d9e37b0b083c4c9679e67554e363c88d1b6b",
+            "blob": "ffbb2b8e5865533b8e92cf29b853271a7403e515",
+            "content": "sha256:c799b4928c28ffd65b5ffcc39e7441f3f5e7a4c532deb187b7d91fc1562b821c",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/review/rounds-and-late-findings.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:5c770126e2c131e76f7ccfe647270630b891bc55adda0d719bcad60ccafd9858",
             "locator": {
               "kind": "file"
             }
@@ -549,33 +382,46 @@
       ]
     },
     "8": {
-      "note": "Reviewer returns a repair freeze missing its per-finding entries without counting a round, and receives no new freeze or round for a clean sync (where the Manager obtains the Curator's read for a changed pair before routine closeout).",
+      "note": "Reviewer returns a repair freeze missing its per-finding entries without counting a round, and receives no new freeze or round for a clean sync (where the Manager obtains the Curator's read for a changed pair before routine closeout).\n\nAnchor: \"return reports missing per-finding entries\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:9420aeadd22432a0871ce235fa7690886197f61d54181f87bcd844c63f52e052",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:e951a5b34e5e615635af3096d540f830c9c8818ef55ba5ff655fa6a8d785eee6",
             "locator": {
-              "end": 81,
+              "end": 29,
               "kind": "line_range",
-              "start": 79
+              "start": 29
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "345008053e007cf0ca4e57917a2f17501f1f7eee",
+            "content": "sha256:822575dcc6c770f1cfa66170c5b605d9403bc391c975c579986e7f01117ee5ec",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/worker/sync-and-repairs.md"
           },
           "kind": "code"
         }
       ]
     },
     "9": {
-      "note": "A baseline review reruns and repeats the Worker's focused-test search, and fix-verification applies it to the repair's own names.\n\nAnchor: \"In a baseline review, rerun the Worker's recorded focused-test list\"",
+      "note": "A baseline review reruns and repeats the Worker's focused-test search, and fix-verification applies it to the repair's own names.\n\nAnchor: \"rerun Worker's focused tests\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7c09bdfb621e0f6f4d01e9f8c1a761b46881e74d",
-            "content": "sha256:06fbd4fb6bc50d09868215fcc21930d88110eb2d2635e815a9b2f22982b47c2c",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:11fd22b07d4dd111efa96d4cc6582167408ec45f2e63ae144e916a5f71f43368",
             "locator": {
-              "end": 61,
+              "end": 19,
               "kind": "line_range",
-              "start": 61
+              "start": 19
             }
           },
           "kind": "code"

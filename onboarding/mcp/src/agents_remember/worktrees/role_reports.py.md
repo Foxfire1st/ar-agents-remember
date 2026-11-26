@@ -18,7 +18,7 @@ Reclamation removes launch locators (and only those aliases): `close_execution_r
 
 `COLLECTED_REPORT_DIRECTORY` (`"notes/reports"`) and derived `COLLECTED_REPORT_PARTS` sit beside `ROLE_REPORT_DIRECTORY` and `LEGACY_ROLE_REPORT_ALIAS` as the single definition of the collected report root consumed by `collect_group_reports` and every role-launch `taskReportRoot` producer (`cli/role_launch_enclosure.py`, `cli/role_launch_workspace.py`). `collected_report_ref(relative)` maps a relative path under `role-reports/` to `notes/reports/<rel>` (refusing empty or `..` traversal with `ValueError`); `is_collected_report_ref(reference)` returns `True` only for non-absolute task-relative `notes/reports/<rel>` paths without `..` traversal.
 
-The explainer's report inventory uses the canonical collection named by each selected execution receipt. It lists regular text reports and admits a JSON measurement when an explicitly cited local path resolves to that collection. It excludes launch handovers and their detail carriers.
+The explainer's report inventory uses the canonical collection named by each selected execution receipt. It lists regular text reports and admits a JSON measurement when an explicitly cited local path resolves to that collection. `_launch_carrier` excludes launch handovers (`.handover.txt`, `.handover.json`), legacy flat detail snapshots (`<stem>.detail-*`), nested detail trees (`<stem>.details/**`), direct opening offload sidecars (`<stem>.opening-message.md`), and held-batch offload sidecars (`<stem>.held-batch-*.md`).
 
 ## Evidence
 
@@ -26,11 +26,10 @@ The explainer's report inventory uses the canonical collection named by each sel
 - Report folders copy safe regular files with stamp checks, fsynced staging and atomic replacement. [1]
 
 - Execution receipts collect through the same collector. [2]
-
 - Group collection serves terminal cleanup and abandon paths and targets `contract.task_root / COLLECTED_REPORT_DIRECTORY`. [3]
-- `collected_report_ref` and `is_collected_report_ref` define and validate the canonical `notes/reports/<rel>` collected form beside `ROLE_REPORT_DIRECTORY`. [6]
-
-
+- `collected_report_ref` and `is_collected_report_ref` define and validate the canonical `notes/reports/<rel>` collected form beside `ROLE_REPORT_DIRECTORY`. [8]
 - Canonical report discovery intersects cited JSON paths with eligible files in the execution collection. [5]
 
 - Group folder removal collects evidence before reclaiming the local folders. [4]
+
+- `_launch_carrier` excludes `.handover.txt`, `.handover.json`, legacy `.detail-*`, nested `.details/**`, `.opening-message.md`, and `.held-batch-*.md` launch carriers from `canonical_execution_reports`. [7]

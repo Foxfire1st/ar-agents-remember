@@ -19,4 +19,4 @@ An atomic master's document must read `abandoned` or `Completed` before `worktre
 - Master updates follow every start, handover and landing in the same turn and leave product-mirrored fields with their owner. [1]
 - A master is not reported complete while documentation made stale by its tasks remains. [2]
 
-- The Manager role points to the update, completion and abandonment sections before updating master state through completion. [3]
+- The Manager role reference index points here for master state (`task_doc`, `worktree_abandon`, `record_landing`). [3]

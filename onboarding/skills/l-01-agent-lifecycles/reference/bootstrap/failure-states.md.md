@@ -17,7 +17,9 @@ The sections keep the product's own distinctions rather than collapsing them: a 
 ## Evidence
 
 - The detail is read only when a step returns a state the seat cannot name, and the role's stop rules stay in force. [1]
+
 - The Bootstrap operation points to the failure states at that moment. [2]
+
 - Setup states stay distinct: unsupported topology preserves the memory root, a dirty repository is read before adoption, and a coordination root is never built by hand. [3]
 - Foundation states, a refused admission and an unusable object are reported with their own codes, and none is worked around. [4]
 - Settings states are reported with their path; a refused write is the developer's decision. [5]

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+        "blob": "489999cf6e93695e868a9dbdf3d6becac4375052",
         "content": "sha256:40c3ca1843275f3294deab0bc52a53a6eb8651e0d6b998f7279ccbafa4b33915",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,42 @@
       },
       "rationale": "The line the message carries is composed here, so this is where the second file's name and digest become part of the first message.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "489999cf6e93695e868a9dbdf3d6becac4375052",
+        "content": "sha256:30a50faf7be8858080ed4ba34e818bf7b52e323afa125490f0e5b6ac1a9c16c7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_checked_handover_file"
+        }
+      },
+      "id": "RLZ-DSA9VX",
+      "invariant": "INV-87JRHY",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-87jrhy",
+        "leaf": "261124-CAP-L2"
+      },
+      "rationale": "Validates the recorded complete handoverFile against structural boundary candidates before handoverArtifact so complete-file diagnostic priority is preserved.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "489999cf6e93695e868a9dbdf3d6becac4375052",
+        "content": "sha256:ccbdba8f1dea4f864dd1bc19104b272b3fe8a0dde352068185158515be77c84b",
+        "locator": {
+          "kind": "symbol",
+          "name": "handover_envelope_candidates"
+        }
+      },
+      "id": "RLZ-VPZWMH",
+      "invariant": "INV-87JRHY",
+      "origin": {
+        "handoffEntry": "cap-l2-inv-87jrhy",
+        "leaf": "261124-CAP-L2"
+      },
+      "rationale": "Collects structural suffix and legacy prefix boundary candidates without premature multi-shape rejection so both _checked_handover_file and resolve_handover_envelope inspect the same candidate lines.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -26,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+            "blob": "489999cf6e93695e868a9dbdf3d6becac4375052",
             "content": "sha256:0b28b7334d4e5648880bece5e863cd7a3de84608e997ea73d6d4ba464e8c75ae",
             "locator": {
               "kind": "symbol",
@@ -37,7 +73,7 @@
         },
         {
           "anchor": {
-            "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+            "blob": "489999cf6e93695e868a9dbdf3d6becac4375052",
             "content": "sha256:112f66fdd066e4b20fc5b1b6908fe4a5176ef9fc5e88269100f16f0cef7be158",
             "locator": {
               "kind": "symbol",
@@ -53,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+            "blob": "489999cf6e93695e868a9dbdf3d6becac4375052",
             "content": "sha256:4c1a167b8245bc751eed87855e9920e6bf5cee58100dfdaca10351a64cb492a4",
             "locator": {
               "kind": "symbol",
@@ -69,7 +105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+            "blob": "489999cf6e93695e868a9dbdf3d6becac4375052",
             "content": "sha256:112f66fdd066e4b20fc5b1b6908fe4a5176ef9fc5e88269100f16f0cef7be158",
             "locator": {
               "kind": "symbol",
@@ -85,11 +121,39 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+            "blob": "489999cf6e93695e868a9dbdf3d6becac4375052",
             "content": "sha256:f758b2da39425a5c05eb1e036d1a80a849637d0a5e05c6f3b25cfbcd3c33165f",
             "locator": {
               "kind": "symbol",
               "name": "restore_handover_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`handover_envelope_candidates` collects both suffix and legacy-prefix boundary candidates and `_checked_handover_file` preserves complete-file diagnostic priority while verifying `handover_file_line` against candidate locators.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "489999cf6e93695e868a9dbdf3d6becac4375052",
+            "content": "sha256:ccbdba8f1dea4f864dd1bc19104b272b3fe8a0dde352068185158515be77c84b",
+            "locator": {
+              "kind": "symbol",
+              "name": "handover_envelope_candidates"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "489999cf6e93695e868a9dbdf3d6becac4375052",
+            "content": "sha256:30a50faf7be8858080ed4ba34e818bf7b52e323afa125490f0e5b6ac1a9c16c7",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 181
             }
           },
           "kind": "code"

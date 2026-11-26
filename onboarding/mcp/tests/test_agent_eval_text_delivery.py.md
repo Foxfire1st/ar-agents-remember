@@ -21,6 +21,7 @@ The source declares controlled assertions and retained-data scenarios. Delivered
 - The source defines this file's responsibility and the boundaries described here. [1]
 
 - The current curator capture keeps the every-role shared prefix as the first origin and every compiled instruction unit's origin contiguously after it, and binding freezes the shipped detail body without mutating the capture. [2]
+
 - Missing, empty, gapped, overlapping, short, duplicated, non-integer, absolute, escaping or wrongly shaped origins are refused with a detail fault and nothing is written. [3]
 - A compiled manifest whose every-role source is missing, duplicated or at another revision makes the capture refuse as ambiguous provenance. [4]
 - A rewritten detail is identified by its emitted bytes (size and digest), and same-size or size-changing damage stays a validation unknown. [5]

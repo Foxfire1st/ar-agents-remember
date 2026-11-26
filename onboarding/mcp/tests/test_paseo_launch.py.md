@@ -53,18 +53,13 @@ coordination root and read the receipt from the path the route reports.
 
 ## Bounded locator at any report depth
 
-`DeepLaunchFolderTests` compiles one launch at a shallow report folder and another under a deeply nested one. At both depths the stored artifact is beside its report under its own name and mode `0444`, the reference's `path` is the request's locator, the note stays within `RECOVERY_NOTE_LIMIT` and names the locator with the artifact's SHA-256, and the first message's first line names the same pair; the two notes are one length once the role is set aside, and the two locator paths are equally long while the deep artifact's own path is at least 318 characters. A further case plants a locator that leads to another folder and finds the launch refused with a 409 before it starts: no runtime call, no receipt, nothing written in the foreign folder, and the alias unchanged.
+`DeepLaunchFolderTests` compiles one launch at a shallow report folder and another under a deeply nested one. At both depths the stored artifact is beside its report under its own name and mode `0444`, the reference's `path` is the request's locator, the note stays within `RECOVERY_NOTE_LIMIT` and names the locator with the artifact's SHA-256, and the first message's last line names the same pair; the two notes are one length once the role is set aside, and the two locator paths are equally long while the deep artifact's own path is at least 318 characters. A further case plants a locator that leads to another folder and finds the launch refused with a 409 before it starts: no runtime call, no receipt, nothing written in the foreign folder, and the alias unchanged.
 
 The fixture now gives the process a short temporary home of its own, as a real account has, because each launch keeps its locator under it. `RoleFolderAndIdentityTests` reads that home after the launch census and finds one locator symlink per request and no file at all, with no harness configuration there.
 
 ## Evidence
 
-
-
-
 - Dispatch fixtures cover refusal boundaries, ACP task-server binding, feature-value merging and recovery notes at both report depths. [1]
-
-
 
 
 

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "30ae36e7830f53cd596fe318d9ce7fa0ee0b1ccb",
-        "content": "sha256:9fdb89215a63fb5b0a93a64b3624f95306a9156e46ac6f102ccd5ff7f0a0bf1f",
+        "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
+        "content": "sha256:b1e498e8b2e816d120f2b53edbca1ac4af6250bb2c0855ecddce4fca073ce582",
         "locator": {
           "kind": "file"
         }
@@ -21,16 +21,16 @@
   ],
   "references": {
     "2": {
-      "note": "The packaged budget registry records approved word ceilings and the current renewal measurements for instruction capsules.",
+      "note": "The packaged budget registry records approved word ceilings and the current renewal measurements for instruction capsules.\n\nAnchor: `current_capsule_ceilings_words`; `current_measurements`",
       "targets": [
         {
           "anchor": {
-            "blob": "30ae36e7830f53cd596fe318d9ce7fa0ee0b1ccb",
-            "content": "sha256:bf2e6bff1ca2910a305e4acc1807603385c9a64f4f3d334e96cd12a4ac50f577",
+            "blob": "b65a359349f3e498be426a2a0ced82afaa0a13e1",
+            "content": "sha256:c4b950ffd0f621132ae9d8605977e0490612e7e7f30064653024f6fe5311d068",
             "locator": {
-              "end": 6265,
+              "end": 6282,
               "kind": "line_range",
-              "start": 6186
+              "start": 6165
             }
           },
           "kind": "code"

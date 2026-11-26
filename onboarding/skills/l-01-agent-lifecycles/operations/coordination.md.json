@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-        "content": "sha256:924b060a4b8c36e11b40bc831e7489595dc7dcd49886f87d91f1b28506fc505a",
+        "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+        "content": "sha256:808723c6b3dcd79b8c87e5fb5b1303645a01aed31bbdb333e8fc04b6257d57c3",
         "locator": {
-          "end": 130,
+          "end": 45,
           "kind": "line_range",
-          "start": 118
+          "start": 43
         }
       },
       "id": "RLZ-3PNEK4",
@@ -18,17 +18,17 @@
         "handoffEntry": "L117-R07",
         "leaf": "260928-MIK-L117"
       },
-      "rationale": "The coordination operation's 'Message files and receipts' section keeps the body/attach transport and its size rules for the addressed seats: body has no length limit and goes into the message file, over-limit text is refused at the settings' limit, attach names existing files, and the recipient reads the filed message. It points to the message-handover detail for the messages-as-files sentence.",
+      "rationale": "The coordination operation's Message files and receipts section states unlimited body, refused over-limit text, SHA-256 hashed attach files, and links reference/message-handover.md#find-filed-messages-and-receipts (role Reference indexes link full message-handover.md).",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-        "content": "sha256:f5b1555370a079cdd0e1eb38c77a48aca8a10d353048dbddb89a1899f600af37",
+        "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+        "content": "sha256:680a90a24371645f97531f39392100e3a6c5ea5bbb83c657c04d9f27cdda6777",
         "locator": {
-          "end": 54,
+          "end": 24,
           "kind": "line_range",
-          "start": 49
+          "start": 21
         }
       },
       "id": "RLZ-4Q6AFR",
@@ -42,12 +42,12 @@
     },
     {
       "anchor": {
-        "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-        "content": "sha256:019afe8004125db2bfa940719d3c7184bced393682fe069b88120b8f68944f8e",
+        "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+        "content": "sha256:84045b9b913f116f7c41043650f2f0eacc6875ff0e497a10ef7da459b649c873",
         "locator": {
-          "end": 43,
+          "end": 19,
           "kind": "line_range",
-          "start": 36
+          "start": 19
         }
       },
       "id": "RLZ-7JXN0P",
@@ -61,31 +61,12 @@
     },
     {
       "anchor": {
-        "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-        "content": "sha256:85bed0324081de8ea968ee0fef0e0853d62566703c401e3d1dc522b10e94f69b",
-        "locator": {
-          "end": 137,
-          "kind": "line_range",
-          "start": 133
-        }
-      },
-      "id": "RLZ-8Q22MW",
-      "invariant": "INV-760TKM",
-      "origin": {
-        "handoffEntry": "BUG-R15@v1 item 5",
-        "leaf": "261112-BUG-L15"
-      },
-      "rationale": "Directs roles to the synchronous closeout result and retry and to generation-bound controls for a direct landing.",
-      "role": "unclassified"
-    },
-    {
-      "anchor": {
-        "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
+        "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
         "content": "sha256:c7a3a5d1cdb7556efb1507e4ceaaad362561cc3df7e2725ce4111ba549031d19",
         "locator": {
-          "end": 71,
+          "end": 32,
           "kind": "line_range",
-          "start": 71
+          "start": 32
         }
       },
       "id": "RLZ-9YBJRC",
@@ -99,12 +80,12 @@
     },
     {
       "anchor": {
-        "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-        "content": "sha256:f332ba74e215960dd5e42b38683a59bca0ffaa8cc7d649ca538bebfda2d56e78",
+        "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+        "content": "sha256:416cb297f7428a946edbb490f286f54f2c0abe717557a5e64bb42b3c119d8261",
         "locator": {
-          "end": 29,
+          "end": 12,
           "kind": "line_range",
-          "start": 16
+          "start": 10
         }
       },
       "id": "RLZ-AH5XYY",
@@ -118,31 +99,12 @@
     },
     {
       "anchor": {
-        "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-        "content": "sha256:8a0b82175688104b94db716dc406de42d5753414bc5b216eab794b1516097d1e",
+        "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+        "content": "sha256:79271ab51896b79fdc660171b400277c92c990c39398c882f8d24b2f02cb747d",
         "locator": {
-          "end": 68,
+          "end": 17,
           "kind": "line_range",
-          "start": 68
-        }
-      },
-      "id": "RLZ-AR1TJG",
-      "invariant": "INV-S9H78W",
-      "origin": {
-        "handoffEntry": "L84-P5-19 / L84-P5-18 pair 6",
-        "leaf": "260928-MIK-L84"
-      },
-      "rationale": "This sentence is the home of the rule: the Manager records the Architect's or developer's approval for an extra round.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-        "content": "sha256:69cdd04a7a7269e9c7336747a8deea48b63f1791e9363b6e377443dcc88af6f3",
-        "locator": {
-          "end": 45,
-          "kind": "line_range",
-          "start": 34
+          "start": 15
         }
       },
       "id": "RLZ-E0YDQM",
@@ -156,31 +118,12 @@
     },
     {
       "anchor": {
-        "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-        "content": "sha256:790f9bbaf224d7945aa19ac524f2d05bdab9bc5e8a53200cc1f51c68983ad7e6",
+        "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+        "content": "sha256:7449f6a6301586ee899d3d212c6094da04da86a7d32299bfe6449d38aa2956c5",
         "locator": {
-          "end": 161,
+          "end": 24,
           "kind": "line_range",
-          "start": 155
-        }
-      },
-      "id": "RLZ-GNQNEF",
-      "invariant": "INV-7FMDAS",
-      "origin": {
-        "handoffEntry": "MIK-R93@v1 rules3,4,5,8,9",
-        "leaf": "260928-MIK-L93"
-      },
-      "rationale": "The coordinating operation owns the same parent notice and top-chat presentation duty for each supported coordinator.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-        "content": "sha256:52f4994c54230316b42db3afca8b85db3d1863de79213b966b77c3698d1b2fa4",
-        "locator": {
-          "end": 112,
-          "kind": "line_range",
-          "start": 112
+          "start": 23
         }
       },
       "id": "RLZ-H0W6SX",
@@ -189,17 +132,17 @@
         "handoffEntry": "L72/MIK-R72@v2-repair-and-evidence-actor",
         "leaf": "260928-MIK-L72"
       },
-      "rationale": "The messaging paragraph's follow-through sentence names the Orchestrator, Manager or developer-direct-coordinating Architect following assignments to completion.",
+      "rationale": "States for Architect and Orchestrator that the Manager decides gates and retains closeout, integration, status, acceptance and landing order without relaying freeze, finding, verdict or memory changes.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-        "content": "sha256:658d86408ff0a560d2de19134f7cc93873ba58d86812d3e979987dfccca6d2e4",
+        "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+        "content": "sha256:2e66323054b1edbdf83ef0164e473d897397499c201aa955aee64e0bc49a9969",
         "locator": {
-          "end": 88,
+          "end": 41,
           "kind": "line_range",
-          "start": 75
+          "start": 34
         }
       },
       "id": "RLZ-JF7EP8",
@@ -213,31 +156,12 @@
     },
     {
       "anchor": {
-        "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-        "content": "sha256:67cfb4b6770e4a1a10722650d6dce0b6441b30d9a7fa7d5e6c63921db142662e",
+        "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+        "content": "sha256:f0017a86dac93a07d89bea109ab55a3ad0b23feceb3d1e53d52954f2cf144d4c",
         "locator": {
-          "end": 137,
+          "end": 8,
           "kind": "line_range",
-          "start": 137
-        }
-      },
-      "id": "RLZ-KZEKN1",
-      "invariant": "INV-H4PZ9X",
-      "origin": {
-        "handoffEntry": "L7-CUR-PRESENTATION-01",
-        "leaf": "261112-BUG-L7"
-      },
-      "rationale": "Direct-landing operators read the current generation and advertised controls from status before operating that journal.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-        "content": "sha256:954b446cd02ec45a522b21009929298bae809cad14ebe79c27c17915009ca750",
-        "locator": {
-          "end": 12,
-          "kind": "line_range",
-          "start": 8
+          "start": 6
         }
       },
       "id": "RLZ-MEGZSD",
@@ -251,29 +175,10 @@
     },
     {
       "anchor": {
-        "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-        "content": "sha256:bd3a20f5f71f639cf00f5112e8f6050ae7cce858a549bbc628592f30268e9681",
+        "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+        "content": "sha256:7c22e366632a7d6b7a7a71bae0e3e357d5d47c8eacb0ac8eecc7473f56005bf6",
         "locator": {
-          "end": 151,
-          "kind": "line_range",
-          "start": 151
-        }
-      },
-      "id": "RLZ-P0ZH30",
-      "invariant": "INV-4E130M",
-      "origin": {
-        "handoffEntry": "Preservation (flags and acceptance)",
-        "leaf": "260928-MIK-L90"
-      },
-      "rationale": "The execution-metadata paragraph keeps an agent's turn or Paseo status from becoming a second requirement or acceptance evidence.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-        "content": "sha256:954b446cd02ec45a522b21009929298bae809cad14ebe79c27c17915009ca750",
-        "locator": {
-          "end": 12,
+          "end": 8,
           "kind": "line_range",
           "start": 8
         }
@@ -289,12 +194,12 @@
     },
     {
       "anchor": {
-        "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-        "content": "sha256:6f253c5260ba77ffaa6de12bfbf97e5f16460ff43a1ab78d5da18bcf6b243373",
+        "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+        "content": "sha256:b77bbf32ad9c7cb86b27bc7e45c803fc81744faaf72ad9747c85e93131b5e229",
         "locator": {
-          "end": 88,
+          "end": 36,
           "kind": "line_range",
-          "start": 36
+          "start": 17
         }
       },
       "id": "RLZ-XF8A3Q",
@@ -313,48 +218,49 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-            "content": "sha256:999e03192c61e53743e0c273ef34fe1d14f8cf61aa8cf0a41e7a3944a4a42bd0",
+            "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+            "content": "sha256:affa21a43d60483dba93179a5854c0af70a0d90463222c708f3fb4c51fe9e182",
             "locator": {
-              "end": 54,
+              "end": 29,
               "kind": "line_range",
-              "start": 36
+              "start": 17
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-            "content": "sha256:7b806c031d620fb6cce691ed938c955b015034e2f2f627df4ca9e00d27bb29cc",
+            "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+            "content": "sha256:3cbdc25638d35f1e4d79abd08dc1c54283c9ae7aa40bfdbce3d18183a647e159",
             "locator": {
-              "end": 68,
+              "end": 41,
               "kind": "line_range",
-              "start": 66
+              "start": 41
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-            "content": "sha256:e9d9fcb96dce21a081b759573933397dd94a5277200c23c4bc62da53b4ca71bb",
+            "blob": "59bfb0b8a030de20fcf89d3fa10cc8e426c9e2e5",
+            "content": "sha256:28011563333b27c409ff845e1f83f47d52bb01c7d61aac655649c3fea32cc513",
             "locator": {
-              "end": 92,
+              "end": 34,
               "kind": "line_range",
-              "start": 86
-            }
+              "start": 34
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+            "blob": "317bd1841f51d34dc9f8c15551825eab5b2bcb95",
             "content": "sha256:43a237b71226c82c463b7fac58501da99492535033f970fc0c9d819bf9b7c0e4",
             "locator": {
-              "end": 435,
+              "end": 438,
               "kind": "line_range",
-              "start": 399
+              "start": 402
             },
             "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
           },
@@ -375,12 +281,12 @@
         },
         {
           "anchor": {
-            "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+            "blob": "b6d9611c679ce1bd610fc8ebcf0abeba9114cc6b",
             "content": "sha256:a5ff0faa4d1e9ac831a5037b1778e436dddbb09d87afa78fb5783a0bd2e660bf",
             "locator": {
-              "end": 238,
+              "end": 240,
               "kind": "line_range",
-              "start": 174
+              "start": 176
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
@@ -388,12 +294,12 @@
         },
         {
           "anchor": {
-            "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
-            "content": "sha256:4b94a4328b555ac9dc69ab062cf5661cb065dba3e3fa4928344a6921133780c1",
+            "blob": "b6d9611c679ce1bd610fc8ebcf0abeba9114cc6b",
+            "content": "sha256:9852e0f1c86f3d15b0975ff8c82ce6c1276f302e0e097ea8417298647ed231c7",
             "locator": {
-              "end": 398,
+              "end": 417,
               "kind": "line_range",
-              "start": 289
+              "start": 296
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
@@ -414,12 +320,12 @@
         },
         {
           "anchor": {
-            "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+            "blob": "b6d9611c679ce1bd610fc8ebcf0abeba9114cc6b",
             "content": "sha256:f9ee6451eead98f3bcde072fbeccd959f7dd6d1679021dae0b96a779499ffe83",
             "locator": {
-              "end": 998,
+              "end": 1007,
               "kind": "line_range",
-              "start": 948
+              "start": 957
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
@@ -427,12 +333,12 @@
         },
         {
           "anchor": {
-            "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+            "blob": "b6d9611c679ce1bd610fc8ebcf0abeba9114cc6b",
             "content": "sha256:633c8c08df3553407d329b91fbcb568e13ac557d18a253948f535c308b51daca",
             "locator": {
-              "end": 1041,
+              "end": 1050,
               "kind": "line_range",
-              "start": 1015
+              "start": 1024
             },
             "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
@@ -445,8 +351,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-            "content": "sha256:03f9c7f6023ebf49b0d85e781faa35f95cbeac2aa89d3a1e9cdd9fe95ad3fa89",
+            "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+            "content": "sha256:420aa8aaf6bf16abf298a95bd011b4a3d69d5bff818865168531798e53c5c968",
             "locator": {
               "kind": "file"
             }
@@ -456,14 +362,14 @@
       ]
     },
     "3": {
-      "note": "Current common coordination text retains exact role/task bindings, individual stage starts, direct peer handovers and receipt/permission boundaries. Its Manager audience receives start notices, routine-state/report duties and the first-intake instruction; audience markers do not create another owner.",
+      "note": "Current coordination text keeps exact role/task bindings all-role, scopes individual stage starts, direct peer handovers, messaging, receipts and closeout-recovery/permission links to coordinating roles, and scopes the first Reviewer intake and admitted-notice boundary to Manager; audience markers do not create another owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-            "content": "sha256:8a603615602806829a44a7f41dc21781834ee0e0673c53021b228f821f1d167e",
+            "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+            "content": "sha256:19aad006e2d0bc9e8acdbb617ed6d1c38bdbc3f6e9f0cbe788aa8951f6eebc50",
             "locator": {
-              "end": 130,
+              "end": 54,
               "kind": "line_range",
               "start": 4
             }
@@ -473,23 +379,23 @@
       ]
     },
     "4": {
-      "note": "Current coordination distinguishes common seat/message boundaries from the Manager-specific start, intake and report duties. Worker starts at build, Reviewer at freeze and Curator after code PASS; the recipient reads the exact object and the sender does not resend a held message.",
+      "note": "Current coordination separates coordinating-role stage-start and seat/message boundaries from Manager-specific first Reviewer intake and notice duties. Worker starts at build, Reviewer at freeze and Curator after code PASS; the recipient reads the exact object and the sender does not resend a held message.",
       "targets": [
         {
           "anchor": {
-            "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-            "content": "sha256:1fc90d3d406b8a76c0df0d0b7b25d5d17a1a8fa28f4e536044afe6827c9a8a64",
+            "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+            "content": "sha256:c767e017d2b96707f9b65f307561f0f70b03a2f54c70a44a957621f8f6095e42",
             "locator": {
-              "end": 81,
+              "end": 41,
               "kind": "line_range",
-              "start": 33
+              "start": 14
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "b90508e32ca01aad41af4242409e6ab533ad2175",
+            "blob": "f6902925631dc9f3ccc6fcc52d20c7b019f8831e",
             "content": "sha256:008a9d834646564a39bfc0b0f957c855878328eca3c3e4fb664c80e66df6e370",
             "locator": {
               "end": 108,
@@ -497,6 +403,19 @@
               "start": 108
             },
             "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5b3f64633a651c44081098ef5bb89203e068538",
+            "content": "sha256:e3bd9cbd6d06b7c24baa2e253992c4153180725109a5b5ef4af0225f9985a03b",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
           },
           "kind": "code"
         }
@@ -507,12 +426,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-            "content": "sha256:8051c8648bc277b1c1a20950d8ddf0e001ee6d4259e31c7f37df692e1092f27a",
+            "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+            "content": "sha256:71401a678fd5759398a31e8250d27cc5e477c1bb40832a69ba49045bc64a1054",
             "locator": {
-              "end": 77,
+              "end": 36,
               "kind": "line_range",
-              "start": 77
+              "start": 36
             }
           },
           "kind": "code"

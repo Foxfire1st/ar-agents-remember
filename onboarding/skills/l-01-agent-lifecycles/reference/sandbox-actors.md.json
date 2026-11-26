@@ -1,13 +1,33 @@
 {
   "path": "skills/l-01-agent-lifecycles/reference/sandbox-actors.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2a60d7ce8ba2376f535421e040d2d868c66e23b2",
+        "content": "sha256:16510f04aaea02e3262822f412ef9259df9dac4a40b1abe09895df54a777ed40",
+        "locator": {
+          "end": 31,
+          "kind": "line_range",
+          "start": 29
+        }
+      },
+      "id": "RLZ-7N3ZTY",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "Single Tier-2 home for the workspace.scratchRoot and workspace.outsideScratchRoot working-files rule, linked by Worker, Reviewer and Curator.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "Sandbox settings are bound per run; a user-level harness file created by an agent is reported, not changed.",
       "targets": [
         {
           "anchor": {
-            "blob": "18fcb79cc562579422d0426a70b817bb09428a2f",
+            "blob": "2a60d7ce8ba2376f535421e040d2d868c66e23b2",
             "content": "sha256:1469a9b13d909d6450a1cf6a10f5db18446875e13a6c6ec069eb1ca982d215a3",
             "locator": {
               "end": 11,
@@ -24,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18fcb79cc562579422d0426a70b817bb09428a2f",
+            "blob": "2a60d7ce8ba2376f535421e040d2d868c66e23b2",
             "content": "sha256:5400e03f4fb685ed142c0faf477e33b81787a15cf678e81e6ff17e95363af7ab",
             "locator": {
               "end": 15,
@@ -41,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18fcb79cc562579422d0426a70b817bb09428a2f",
+            "blob": "2a60d7ce8ba2376f535421e040d2d868c66e23b2",
             "content": "sha256:9a76db47a4276c54edc00b34a4711422260dc43ec25508dad5a0326510180366",
             "locator": {
               "end": 23,
@@ -58,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18fcb79cc562579422d0426a70b817bb09428a2f",
+            "blob": "2a60d7ce8ba2376f535421e040d2d868c66e23b2",
             "content": "sha256:bc01568dd75c96fcf7861837c263d2f43a0f5d5ca2ea54383a8bef7ce06d7eef",
             "locator": {
               "end": 27,
@@ -71,18 +91,35 @@
       ]
     },
     "5": {
-      "note": "The Worker role points here before configuring a sandbox harness, its launch home or actor starts.\n\nAnchor: `sandbox-actors.md`",
+      "note": "The Worker role links this detail from its Reference index.\n\nAnchor: `sandbox-actors.md`",
       "targets": [
         {
           "anchor": {
-            "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
-            "content": "sha256:922bd7441b46682d6f64031ae00b017082b60a9d783c5dd9b467adb5a13224ae",
+            "blob": "f06722097174cd0fc3e8277787b9e202f3ba1814",
+            "content": "sha256:0e9545099b8cf89c8f504cd3ccfe210f3987346df3d8d6cce8c84919b290bbec",
             "locator": {
-              "end": 49,
+              "end": 24,
               "kind": "line_range",
-              "start": 49
+              "start": 24
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Working files stay in `workspace.scratchRoot`, `workspace.outsideScratchRoot` holds outside-projects sandbox roots and one short `TMPDIR`, `XDG_CONFIG_HOME` stays in `workspace.scratchRoot`, and neither root is removed by the seat.\n\nAnchor: `Keep working files in the handover's scratch roots`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a60d7ce8ba2376f535421e040d2d868c66e23b2",
+            "content": "sha256:16510f04aaea02e3262822f412ef9259df9dac4a40b1abe09895df54a777ed40",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 29
+            }
           },
           "kind": "code"
         }

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
-        "content": "sha256:3f72f28bc433ea42d80d08722465ba9dd4f892d6e1c3ea1ab6573f8d5c178b4c",
+        "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+        "content": "sha256:e2cd502a21767b2c74ec009218f811a8b8c13ab3e25691f2b702f82deeadbc81",
         "locator": {
           "kind": "file"
         }
@@ -20,12 +20,12 @@
     },
     {
       "anchor": {
-        "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
-        "content": "sha256:467bcf23afce8f34cd2d973855a638951417860401fe5f6548616b2c5e30d6ed",
+        "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+        "content": "sha256:0edb8589638c6761408f17882cf898e9e9e2bcd5da29f2b12a6c5a9971679bba",
         "locator": {
-          "end": 62,
+          "end": 16,
           "kind": "line_range",
-          "start": 62
+          "start": 16
         }
       },
       "id": "RLZ-KYFQZV",
@@ -40,16 +40,16 @@
   ],
   "references": {
     "1": {
-      "note": "The Manager assigns a check or investigation that belongs to no leaf to an Investigator on its own master, naming its sprint when one commands it, never a leaf, and sends the scoped concern as its first role_message to the returned agent identifier.",
+      "note": "The Manager starts an Investigator via `role_start` on its master or sprint (never a leaf) and sends the concern as its first `role_message`.\n\nAnchor: `role_message`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
-            "content": "sha256:03abbaf25790fab39e4c6483eb7d8816faaf88d4f5aaeadf882a25cdb0a2282a",
+            "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+            "content": "sha256:9a74bb2d53098d8b1b421544cc20ba13cba1ccdeab155dafd9d73a1ef63ad0be",
             "locator": {
-              "end": 94,
+              "end": 26,
               "kind": "line_range",
-              "start": 94
+              "start": 26
             }
           },
           "kind": "code"
@@ -61,10 +61,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
-            "content": "sha256:024c745ff48fc5a3708fefca5f763ac9f7d1dad0f6fa5f583e63a0a308cb51e6",
+            "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+            "content": "sha256:f154aa74044402c2a88d429232a5d2e9e8d4df1bf215338c1ca76c4eab4cc56e",
             "locator": {
-              "end": 20,
+              "end": 12,
               "kind": "line_range",
               "start": 8
             }
@@ -73,36 +73,36 @@
         },
         {
           "anchor": {
-            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
-            "content": "sha256:094e1b29faf2935410df49b67fa78bd4878c57129c7efd0fd303a4ae01354ec0",
+            "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+            "content": "sha256:0edb8589638c6761408f17882cf898e9e9e2bcd5da29f2b12a6c5a9971679bba",
             "locator": {
-              "end": 54,
+              "end": 16,
               "kind": "line_range",
-              "start": 54
+              "start": 16
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
-            "content": "sha256:0e478940b529312c2d7f5242cb5a8e6eb0605c5fd5fbea99714623c6108a78a7",
+            "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+            "content": "sha256:7e652cae87a982065c8ecdfe8ab93d7c9729427241bbeacb9bd74a403853cd20",
             "locator": {
-              "end": 77,
+              "end": 20,
               "kind": "line_range",
-              "start": 68
+              "start": 20
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
-            "content": "sha256:d0f284c8ad851a477d3647591ed38b9b15e7fe37fe3139dbda08baf43a2178af",
+            "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+            "content": "sha256:c7cdb13fa61e7bf0f6c2bcd74da9568e2f4aa7801633c2f7e6fba73378f69417",
             "locator": {
-              "end": 150,
+              "end": 34,
               "kind": "line_range",
-              "start": 150
+              "start": 34
             }
           },
           "kind": "code"
@@ -114,8 +114,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
-            "content": "sha256:de2d458b42190f0bff9574616d3d8f0dabdb06c0ff8621c202691845745a8423",
+            "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+            "content": "sha256:b9df053446c56931d6430a9fe43d3d571f000bfe2c0fcab6da419cb53ddb5046",
             "locator": {
               "end": 8,
               "kind": "line_range",
@@ -126,24 +126,24 @@
         },
         {
           "anchor": {
-            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
-            "content": "sha256:094e1b29faf2935410df49b67fa78bd4878c57129c7efd0fd303a4ae01354ec0",
+            "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+            "content": "sha256:0edb8589638c6761408f17882cf898e9e9e2bcd5da29f2b12a6c5a9971679bba",
             "locator": {
-              "end": 54,
+              "end": 16,
               "kind": "line_range",
-              "start": 54
+              "start": 16
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
-            "content": "sha256:0e478940b529312c2d7f5242cb5a8e6eb0605c5fd5fbea99714623c6108a78a7",
+            "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+            "content": "sha256:7e652cae87a982065c8ecdfe8ab93d7c9729427241bbeacb9bd74a403853cd20",
             "locator": {
-              "end": 77,
+              "end": 20,
               "kind": "line_range",
-              "start": 68
+              "start": 20
             }
           },
           "kind": "code"
@@ -155,10 +155,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
-            "content": "sha256:27fa07caf1a13490f9337412455a7d93a7a40df699f85eef0a32630ed8d587da",
+            "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+            "content": "sha256:cb1ba595a43ba578cf122cc5b532baad12380ca57461d67ebcbe178ded6246e8",
             "locator": {
-              "end": 10,
+              "end": 8,
               "kind": "line_range",
               "start": 8
             }
@@ -167,12 +167,12 @@
         },
         {
           "anchor": {
-            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
-            "content": "sha256:3911f6651ac410c07fee5cb5c220fa430b982b04c9edb4e980883c713984b64f",
+            "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+            "content": "sha256:6de36376de7275f5d5b70108de423ae5f52ff9fef9c440b887d6377e773a6f25",
             "locator": {
-              "end": 125,
+              "end": 32,
               "kind": "line_range",
-              "start": 121
+              "start": 32
             }
           },
           "kind": "code"
@@ -180,16 +180,16 @@
       ]
     },
     "3": {
-      "note": "The Manager uses the exact sprint and master references, requirement packets, execution choice, candidate and report paths in its handover and reads only the selected master and the leaf documents needed for the current decision.",
+      "note": "The Manager uses its handover refs, packets and paths, reads docs via file tools and edits canonical docs via `task_doc` first, keeping each leaf's 1 primary requirement in its AR-paired enclosure.\n\nAnchor: `## Read the assignment and keep its scope`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
-            "content": "sha256:b77c58711527228737f64010e66afeec55a3a0b65ffd34524ca0a9dacc5aee49",
+            "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+            "content": "sha256:a98bbebc5f39af4e08b372977ae08090d6d298e4a23e6ab0bdf955036507e70d",
             "locator": {
-              "end": 16,
+              "end": 12,
               "kind": "line_range",
-              "start": 16
+              "start": 10
             }
           },
           "kind": "code"
@@ -197,16 +197,16 @@
       ]
     },
     "4": {
-      "note": "For ordinary delivery, the Manager calls role_start once per stage: Worker first at build, Reviewer at the freeze, and Curator after code review passes; prerequisite-sync reconciliation follows its separately admitted Curator start.",
+      "note": "For ordinary delivery, the Manager calls role_start once per stage: Worker first at build, Reviewer at the freeze, and Curator after code review passes; prerequisite-sync reconciliation follows its separately admitted Curator start.\n\nAnchor: `role_start`",
       "targets": [
         {
           "anchor": {
-            "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
-            "content": "sha256:019afe8004125db2bfa940719d3c7184bced393682fe069b88120b8f68944f8e",
+            "blob": "a5411575096c5a8f52ba494e0faf38758052ae79",
+            "content": "sha256:6e4cd928235d6270c2c78ca79fcbf9469f1eda036c02803d30b3419895c29420",
             "locator": {
-              "end": 43,
+              "end": 19,
               "kind": "line_range",
-              "start": 36
+              "start": 17
             },
             "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
           },
@@ -290,16 +290,16 @@
       ]
     },
     "7": {
-      "note": "The Manager decides routine paired closeout under standing series authority (covering leaves of all masters, including standalone masters, with passing reviews, final checks, clean preview, full evidence map and Curator's zero-stale dependent-document read) and integration within delegated authority, sends non-routine closeouts and other Architect matters to the Architect, and requests beyond-settings rounds through its reporting route and records the approval.",
+      "note": "The Manager decides routine paired closeout under standing series authority (covering leaves of all masters, including standalone masters, with passing reviews, final checks, clean preview, full evidence map and Curator's zero-stale dependent-document read) and integration within delegated authority, sends non-routine closeouts and other Architect matters to the Architect, and requests beyond-settings rounds through its reporting route and records the approval.\n\nAnchor: `## Make decisions within your authority`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
-            "content": "sha256:aff8eb74ba5a5ad509cdc50efe12723f00224eac812462ad15e973333e7a368e",
+            "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+            "content": "sha256:ab35614a239d817ed949856be3202b12b6a6b30bee69ed3067059661ebb83686",
             "locator": {
-              "end": 96,
+              "end": 26,
               "kind": "line_range",
-              "start": 68
+              "start": 18
             }
           },
           "kind": "code"
@@ -307,16 +307,28 @@
       ]
     },
     "8": {
-      "note": "The Manager hands over a whole stage with its exactness at agent starts, sync to the master's line, closeout, integration and task completion, and repairs its own mistaken records, wrong agent addresses, misread reports and faulty-input refusals through the same tool.",
+      "note": "The Manager hands over a whole stage (not a chain of steps), repairs its own mistakes and names repairs in the report, and stops for open permissions, standing refusals (except covered-write recovery), out-of-authority questions or outside effects.",
       "targets": [
         {
           "anchor": {
-            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
-            "content": "sha256:455f8bcbbd3f9120fc0f9a9d7035d3d25db1cb294c73f84eed41346a9d1f0a72",
+            "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+            "content": "sha256:0edb8589638c6761408f17882cf898e9e9e2bcd5da29f2b12a6c5a9971679bba",
             "locator": {
-              "end": 139,
+              "end": 16,
               "kind": "line_range",
-              "start": 137
+              "start": 16
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+            "content": "sha256:c7cdb13fa61e7bf0f6c2bcd74da9568e2f4aa7801633c2f7e6fba73378f69417",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
             }
           },
           "kind": "code"
@@ -328,12 +340,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4f28c9f6b32f5a12c6ce7febbdf805ba8e0bd0a",
-            "content": "sha256:094e1b29faf2935410df49b67fa78bd4878c57129c7efd0fd303a4ae01354ec0",
+            "blob": "cfff58d80f6409a6a9ad222afc8fdb073224a48e",
+            "content": "sha256:0edb8589638c6761408f17882cf898e9e9e2bcd5da29f2b12a6c5a9971679bba",
             "locator": {
-              "end": 54,
+              "end": 16,
               "kind": "line_range",
-              "start": 54
+              "start": 16
             }
           },
           "kind": "code"

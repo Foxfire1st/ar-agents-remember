@@ -27,5 +27,7 @@ The derivation is `manifest_mismatches` in `agents_remember_test_support.testing
 ### Repo-Internal References (renewed)
 
 - Only mismatches of the two keyed references are kept, none is allowed, and the collaboration method must have a nonblank composed step. Both assertions name the renewal command. [1]
+
 - Adding an unpointed role to the derived collaboration audience and moving its inbound pointer into the method itself both fail. [3]
+
 - Removing the Worker from the derived document-authoring audience fails. [4]

@@ -28,13 +28,13 @@ The instruction is how coordinating roles start and message AR roles on Paseo: t
 
 When a start is refused as `intent-review-open`, the Manager waits for the Architect's `go` and does not retry the start.
 
-Read the synchronous `worktree_closeout_apply` result and inspect per-leg transaction evidence if the call is interrupted. After correcting the blocker, repeat the apply with the applicable authority and explicit messages for enabled legs; the Manager applies under its standing leaf authority without Orchestrator release and sends the coordinating Orchestrator the factual result or refusal. If a task edit affects closeout evidence, re-prove it before retrying. For a direct landing, read the current generation and advertised action from `worktree_status` and pass that generation to `worktree_operation_control`.
+Unfinished closeout recovery, task-edit projection rebuilds, and child permission-notice relays are delegated to `reference/coordination/shared/closeout-recovery.md`.
 
 ## Current composition and authoring contract
 
 The common instructions retain explicit canonical bindings, allowed role starts, same-request recovery and exact-seat refusal. The individual leaf-stage starts (Worker at build, Reviewer at the freeze, Curator when curation begins) and the direct peer repair handovers sit in the Architect/Orchestrator/Manager section. Held messages, permission-prompt handling, file payloads and ordinary report returns retain their established boundaries.
 
-The Manager-only section delivers the first Reviewer intake and holds report reading, next-seat tracking and the sender-retry occasion; Architect/Orchestrator/Manager sections cover leaf stages, closeout recovery and task-edit projections; all-role sections cover message addressing, waiting calls, files, reassessment and permission notices. Audience markers do not transfer Manager work or create a new authority.
+The Manager-only section delivers the first Reviewer intake; Architect/Orchestrator sections state Manager gate/ordering retention; Architect/Orchestrator/Manager sections cover leaf stages, landing order, message addressing/waiting/files, closeout recovery, task-edit projections and permission-notice relays; all-role text covers canonical `role_start`/`role_message` binding, coordination-owner choice and canonical role starts. Audience markers do not transfer Manager work or create a new authority.
 
 The Worker reports listed final-check results and their code tree to both the Manager and the Reviewer. The Manager uses the report with both verdicts at the gate, with targeted results beside the original run after repair.
 
@@ -61,8 +61,11 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 
 
 
-- Current common coordination text retains exact role/task bindings, individual stage starts, direct peer handovers and receipt/permission boundaries. Its Manager audience receives start notices, routine-state/report duties and the first-intake instruction; audience markers do not create another owner. [3]
 
-- Current coordination distinguishes common seat/message boundaries from the Manager-specific start, intake and report duties. Worker starts at build, Reviewer at freeze and Curator after code PASS; the recipient reads the exact object and the sender does not resend a held message. [4]
+- Current coordination text keeps exact role/task bindings all-role, scopes individual stage starts, direct peer handovers, messaging, receipts and closeout-recovery/permission links to coordinating roles, and scopes the first Reviewer intake and admitted-notice boundary to Manager; audience markers do not create another owner. [3]
+
+
+- Current coordination separates coordinating-role stage-start and seat/message boundaries from Manager-specific first Reviewer intake and notice duties. Worker starts at build, Reviewer at freeze and Curator after code PASS; the recipient reads the exact object and the sender does not resend a held message. [4]
+
 
 - A Manager receiving intent-review-open waits for the Architect's go and never retries the start. [5]

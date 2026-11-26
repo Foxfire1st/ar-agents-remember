@@ -111,6 +111,7 @@ The generated route index lists the source files of this route and their cards.
 
 - The curation-doctrine registry of retired statements. The statements a compact canonical instruction source must make. [13]
 
+
 - The lifecycle loader starts with canonical-form findings and then validates against the source tree. [15]
 
 - The lane loader reports noncanonical lane lists and compares declared files with test modules. [16]
@@ -150,6 +151,7 @@ The generated route index lists the source files of this route and their cards.
 - Fixture Git uses a private HOME and captures command failure output. [40]
 - Crossing fixture controls compare attributed state and writer before and after selecting or converting bytes. [41]
 
-- The current pointer fixtures bind whole-record retrieval to its named knowledge-use detail. [42]
+- The current role pointer fixtures bind compact role reference-index rows to `reference/knowledge/use.md` (with section fragments pinned in `ROLE_POINTER_QUALIFICATIONS` for architect and investigator). [42]
+
 
 - The deterministic Git hook fast tier invokes the lifecycle-catalog command; the targeted tier calls that same fast tier. [25]

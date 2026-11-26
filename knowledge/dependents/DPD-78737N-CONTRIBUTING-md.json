@@ -7,6 +7,21 @@
     "task": "261112-BUG-L33",
     "uncommitted": true
   },
+  "deferrals": [
+    {
+      "condition": {
+        "file": "CONTRIBUTING.md",
+        "task": "261124-CAP-L5"
+      },
+      "createdAt": "2026-11-26T22:03:54.865746Z",
+      "createdByLeaf": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
+      "fileBlob": "ac831ad774991e534a3fb3a6fa10d11a7b43dd81",
+      "id": "DFR-RBZQP6",
+      "owner": "261124-CAP",
+      "passage": "CONTRIBUTING.md ## Generated copies (lines 150-152) and ### Lanes (lines 230-259)",
+      "reason": "Crossing merge resolution at 4559dabe8: preserves open CAP-L5 deferral DFR-EBATAV (CAP-L3 retired word ceilings in scripts/instruction_renewal/budgets.py in favor of COMPILED_CAPSULE_TOKEN_CEILINGS and WIRE_TOKEN_CEILINGS; also pre-base stale on test-evidence-lanes.toml and explicitly assigned to 261124-CAP-L5)."
+    }
+  ],
   "document": "CONTRIBUTING.md",
   "id": "DPD-78737N",
   "origin": {
@@ -17,7 +32,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 24,
+  "revision": 25,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -212,14 +227,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T21:50:20+01:00",
+    "at": "2026-11-26T23:03:52+01:00",
     "by": "agent",
+    "crossing": "261112_BUG-FIXES-AND-ISSUE-TRACKING-crossing-3",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L33",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "c2a2ea5c-5784-4fce-94c8-7fe8d3a767a3",
+    "role": "manager",
+    "seat": "db72ffd3-c1ff-4498-a001-a933a6cc638f",
     "task": "261112-BUG"
   }
 }

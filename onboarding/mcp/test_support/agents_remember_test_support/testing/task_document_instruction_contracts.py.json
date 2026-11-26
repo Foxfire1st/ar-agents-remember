@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f3f5b9c86eef0e07db96a67ffa66b1d571facc4c",
-        "content": "sha256:d700fc1d801b446abf3b6f3975f9a84287d772eb1e5b3cd21ed7ca4a5112d53d",
+        "blob": "adde62e6ff4651f12148b0b8eb2fcbcca8d05a31",
+        "content": "sha256:d4a143eb1293acc11376d0383fede0ca25721ffc298326e5714ce3f068eb6bb3",
         "locator": {
           "kind": "file"
         }
@@ -21,12 +21,12 @@
   ],
   "references": {
     "1": {
-      "note": "The four authoring entry points and their exact pointer sentences.",
+      "note": "The four authoring entry points and their exact pointer link (`roles/architect.md`) or sentences (templates).",
       "targets": [
         {
           "anchor": {
-            "blob": "f3f5b9c86eef0e07db96a67ffa66b1d571facc4c",
-            "content": "sha256:f46d2ae3b3f48297f40119123e4bb90805a079bf8f4b72d20fdf5fc219eacb14",
+            "blob": "adde62e6ff4651f12148b0b8eb2fcbcca8d05a31",
+            "content": "sha256:f1f355c5bd3b13c517f9f5d05315365de72274921d966fb6c675114e5489af7f",
             "locator": {
               "kind": "symbol",
               "name": "POINTERS"
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f3f5b9c86eef0e07db96a67ffa66b1d571facc4c",
+            "blob": "adde62e6ff4651f12148b0b8eb2fcbcca8d05a31",
             "content": "sha256:cd31bf754e7d98d22a5810137826ac02ed4a918c59f4b4dabad6680efbc7a550",
             "locator": {
               "kind": "symbol",
@@ -57,12 +57,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f3f5b9c86eef0e07db96a67ffa66b1d571facc4c",
-            "content": "sha256:9128308b5fef88cf3a40addeff5ca46b2c68b464d55563a93500fcfcabe117ff",
+            "blob": "adde62e6ff4651f12148b0b8eb2fcbcca8d05a31",
+            "content": "sha256:b700c94a3cf7586678e2abbc3ddc71afec54b509d0c38d3cc08b5c494961b06b",
             "locator": {
-              "end": 139,
+              "end": 126,
               "kind": "line_range",
-              "start": 71
+              "start": 65
             }
           },
           "kind": "code"

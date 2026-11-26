@@ -14,12 +14,9 @@ Compiles Curator-applicable operations through the production composition manife
 
 Compilation uses a fixed synthetic task binding. Text signatures and detail content do not establish actual case authority or a trial result.
 
-Each captured entry also records its instruction origins: the shared role block is attributed to the single `core:every-role` manifest source, and the compiled capsule's source spans are offset past that block. An ambiguous shared-block source refuses the capture.
+Each captured entry also records its instruction origins: `_captured_origins` attributes the shared role block to the single `core:every-role` manifest source, verifies the full on-disk `core/every-role.md` SHA-256 against the manifest source revision, verifies that `shared_block` equals `filter_shared_block(source_bytes.decode("utf-8"), role)`, and offsets the compiled capsule's source spans past that block. A non-unique shared-block source, missing `shared_block`, digest mismatch, or filtered-text mismatch raises `AuthorityError`.
 
 ## Evidence
 
-- The source defines this file's responsibility and the boundaries described here.
-
-- Curator-applicable operations are compiled with the fixed synthetic task binding. Each captured instruction string prepends any shared role block to the rendered capsule, and detail references retain their content and revisions; the entries receive a digest. Captured text does not establish actual case authority or a trial result. [1]
-
-- Captured instruction origins attribute the shared block to the one `core:every-role` source and offset the capsule's own origins past it; ambiguous provenance raises. [2]
+- `capture_curator_text` compiles Curator-applicable operations with a fixed synthetic task binding, prepending Curator-filtered `outcome.shared_block` under `## {SHARED_BLOCK_HEADING}` to the rendered capsule while retaining detail content, revisions, and digests without claiming case authority or a trial result. [1]
+- `_captured_origins` verifies the full `core:every-role` source SHA-256 and exact `filter_shared_block` equality for `role`, attributes the shared block to that single source, offsets capsule origins past it, and raises `AuthorityError` on mismatch or ambiguity. [2]

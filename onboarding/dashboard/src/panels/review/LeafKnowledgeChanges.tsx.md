@@ -119,6 +119,3 @@ source; requirement/provenance names are not fresh runtime evidence.
 ### Cross-Repo References
 
 No new cross-repository boundary is introduced by these presentation helpers.
-
-
-
