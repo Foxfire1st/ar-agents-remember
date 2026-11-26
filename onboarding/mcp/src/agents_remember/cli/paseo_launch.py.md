@@ -77,7 +77,9 @@ is archived and refused when the response returns. Ordinary launches without a m
 
 
 
+
 - The runtime opens the saved workspace, checks the leaf closing boundary, submits the saved agent call and classifies the reply. [3]
+
 
 
 - Checks interpreter, -P module invocation, source, selected settings and single canonical server definition. [6]

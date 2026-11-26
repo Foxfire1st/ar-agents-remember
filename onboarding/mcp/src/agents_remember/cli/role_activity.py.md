@@ -16,4 +16,5 @@ Receipt identity construction is shared with dashboard registry recovery. Runtim
 
 
 
+
 - Publish receipt-bound role identity before native start or resume can emit its first event. [1]

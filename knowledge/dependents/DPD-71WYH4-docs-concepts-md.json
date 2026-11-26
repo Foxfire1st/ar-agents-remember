@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "83eacca898d910be73255f63f549a2b0ef290fc8",
-    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
+    "codeTree": "8ea42050052b7759840852ac3aae11fd0aad2818",
+    "commit": "475ef19af89cdf0981530dd2b8bf40475975e0e3",
     "role": "curator",
-    "statement": "docs/concepts.md remains accurate on the synced DEP-L7 candidate because the 3.0.8 version bump in mcp/pyproject.toml and the _JudgedHistoryClosing.restore boolean fix in direct_landing.py leave every memory concept, brief, index, and gate contract unchanged.",
-    "task": "261125-DEP-L7",
-    "uncommitted": true
+    "statement": "Verified across the clean merge of BUG-L44 (3ee3b10c9) and DEP-L7 (b30330984): docs/concepts.md accurately defines memory, task-topology, role-lifecycle, and landing contracts with no contradiction from either disjoint parent.",
+    "task": "261125-DEP",
+    "uncommitted": false
   },
   "document": "docs/concepts.md",
   "id": "DPD-71WYH4",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 24,
+  "revision": 25,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -226,7 +226,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
     },
     {
-      "blob": "9124be375703846117abf9f0f4fee05c1044befd",
+      "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
     },
@@ -321,12 +321,12 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },
     {
-      "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+      "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/every-role.md"
     },
     {
-      "blob": "775f056813e59e9f1426a560af777dc2be162c85",
+      "blob": "f3af24af7475972287d1f7b3f906b9f2772d4f15",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/authority.md"
     },
@@ -341,7 +341,7 @@
       "path": "skills/l-01-agent-lifecycles/operations/review.md"
     },
     {
-      "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
+      "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/architect.md"
     },
@@ -471,14 +471,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T02:27:57+01:00",
+    "at": "2026-11-26T04:05:27+01:00",
     "by": "agent",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-1",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L7",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "role": "manager",
+    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
     "task": "261125-DEP"
   }
 }

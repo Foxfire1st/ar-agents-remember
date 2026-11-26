@@ -349,10 +349,10 @@
         },
         {
           "anchor": {
-            "blob": "9124be375703846117abf9f0f4fee05c1044befd",
-            "content": "sha256:18047a903ab86ebc63bfb05b15a195b3e10a448a0bb6230c148faf6126b19d63",
+            "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+            "content": "sha256:43a237b71226c82c463b7fac58501da99492535033f970fc0c9d819bf9b7c0e4",
             "locator": {
-              "end": 433,
+              "end": 435,
               "kind": "line_range",
               "start": 399
             },
@@ -401,12 +401,12 @@
         },
         {
           "anchor": {
-            "blob": "07ae82d885e3cd87654354b19a373a5a9267b9db",
+            "blob": "b303d8c0e8e82693b482b31c72bae63fd379bd71",
             "content": "sha256:f633e9b58ad2567a3f1a80672465bb4923934912e7457c0d55a59b5291eebc2b",
             "locator": {
-              "end": 1148,
+              "end": 1152,
               "kind": "line_range",
-              "start": 1121
+              "start": 1125
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -489,7 +489,7 @@
         },
         {
           "anchor": {
-            "blob": "775f056813e59e9f1426a560af777dc2be162c85",
+            "blob": "f3af24af7475972287d1f7b3f906b9f2772d4f15",
             "content": "sha256:008a9d834646564a39bfc0b0f957c855878328eca3c3e4fb664c80e66df6e370",
             "locator": {
               "end": 108,

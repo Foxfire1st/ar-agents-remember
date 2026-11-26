@@ -20,5 +20,7 @@ The former receipt-local observer is imported under its old private name, so exi
 
 - Observed model and requestedModel remain distinct. [1]
 - Observed values and mode/feature warnings retain source attribution. [2]
+
 - A created outcome invokes the imported receipt seam. [3]
+
 - Test source preserves requested default, observed model and same-request correction. [4]

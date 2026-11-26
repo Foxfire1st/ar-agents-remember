@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "83eacca898d910be73255f63f549a2b0ef290fc8",
-    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
+    "codeTree": "8ea42050052b7759840852ac3aae11fd0aad2818",
+    "commit": "475ef19af89cdf0981530dd2b8bf40475975e0e3",
     "role": "curator",
-    "statement": "docs/features.md remains accurate on the synced DEP-L7 candidate because preserving HistoryClosing.restore's boolean contract in direct_landing.py changes no documented feature, tool boundary, or landing control.",
-    "task": "261125-DEP-L7",
-    "uncommitted": true
+    "statement": "Verified across the clean merge of BUG-L44 (3ee3b10c9) and DEP-L7 (b30330984): docs/features.md feature summaries, skill-tree packaging, and closeout/role/landing contracts remain accurate with no contradiction from either disjoint parent.",
+    "task": "261125-DEP",
+    "uncommitted": false
   },
   "document": "docs/features.md",
   "id": "DPD-EG5TYT",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 26,
+  "revision": 27,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -218,7 +218,7 @@
       "path": "mcp/src/agents_remember/memory/carryover_evidence.py"
     },
     {
-      "blob": "cf9346b882f004a6e62bcbf44af0cce112b5eb4d",
+      "blob": "864dd917963036bf4084b81f219ee468696d72b1",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
@@ -295,14 +295,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T02:27:57+01:00",
+    "at": "2026-11-26T04:05:27+01:00",
     "by": "agent",
+    "crossing": "261125_DEPENDENCIES-BROUGHT-CURRENT-crossing-1",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L7",
     "model": "gemini-4-neon-high",
-    "role": "curator",
-    "seat": "8b76ebfa-c39a-4246-b875-ff5d42916023",
+    "role": "manager",
+    "seat": "4ad83c44-87fc-4054-bfb6-96cbac35e909",
     "task": "261125-DEP"
   }
 }

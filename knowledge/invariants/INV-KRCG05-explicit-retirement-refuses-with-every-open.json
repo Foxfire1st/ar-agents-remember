@@ -1,0 +1,44 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Enforced in role_retire.py (_require_no_open_children) and guarded by explicit open-child refusal and successor-Manager retirement tests."
+  },
+  "applicability": "Explicit retire_child calls targeting a role seat that has started child role seats.",
+  "conditions": [
+    "Evaluate child receipts by launch parent identity, recorded retirement status, and live host state before archiving the parent.",
+    "Refuse with every open child seat named until those children retire; replacement instead preserves surviving children for the successor."
+  ],
+  "exclusions": [
+    "Replacing starts via role_start, which preserve surviving children for the successor Manager or Orchestrator."
+  ],
+  "id": "INV-KRCG05",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "W2 expanded evidence E7 and the existing turn_ended.test.ts archived/missing-parent cases."
+      ],
+      "path": "l44-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R44@v1 rule 6",
+    "leaf": "261112-BUG-L44",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Explicit retirement refuses with every open child seat named, and a successor Manager can retire a surviving child of its predecessor within its master.",
+  "supersedes": [],
+  "title": "Explicit retirement refuses while any child seat remains open",
+  "writer": {
+    "at": "2026-11-26T02:42:00+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L44",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+    "task": "261112-BUG"
+  }
+}

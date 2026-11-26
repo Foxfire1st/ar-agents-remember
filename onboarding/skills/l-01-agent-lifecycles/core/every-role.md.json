@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+        "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
         "content": "sha256:bd5f642568a16b212d99a96f46cbd4296dad6f896fba09e43331b96679fd902a",
         "locator": {
           "end": 63,
@@ -22,7 +22,26 @@
     },
     {
       "anchor": {
-        "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+        "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
+        "content": "sha256:9f9759235f4c0a8f57c6fca59487062009e24e90cb92c3cb5b25a9b3180a696d",
+        "locator": {
+          "end": 35,
+          "kind": "line_range",
+          "start": 35
+        }
+      },
+      "id": "RLZ-7HMV9A",
+      "invariant": "INV-6WJ1WD",
+      "origin": {
+        "handoffEntry": "BUG-R44@v1 rule 7",
+        "leaf": "261112-BUG-L44"
+      },
+      "rationale": "Gives all three caller roles their respective retirement scope.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
         "content": "sha256:fed9eb1908a57057bffc44fe5f38dd028d624e4a06c56d03e4c2c3df78a8193f",
         "locator": {
           "end": 63,
@@ -41,7 +60,7 @@
     },
     {
       "anchor": {
-        "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+        "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
         "content": "sha256:c3f3e2b4092731aaf56133904887433a289f0b29c993cc0e5425dfeee1eec41c",
         "locator": {
           "end": 133,
@@ -60,7 +79,7 @@
     },
     {
       "anchor": {
-        "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+        "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
         "content": "sha256:9eb4bebc4833c06bbdc6d1ea71621a417743e89b603c80e800dc6b53256ca201",
         "locator": {
           "end": 63,
@@ -79,7 +98,7 @@
     },
     {
       "anchor": {
-        "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+        "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
         "content": "sha256:0423c63d873969296820c17d7e9628363f5f7928d402a36fb0e86317d7995afa",
         "locator": {
           "end": 77,
@@ -98,8 +117,8 @@
     },
     {
       "anchor": {
-        "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
-        "content": "sha256:5258a0a3b9d50a4e7b5fba3bdafde59bd139b5959876b4b3c6b2d81e3d50e7a7",
+        "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
+        "content": "sha256:690e2aabfa5461ed80f05be7775f2e060aa56f93f7ec3bff775b52074f375ea6",
         "locator": {
           "kind": "file"
         }
@@ -115,7 +134,7 @@
     },
     {
       "anchor": {
-        "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+        "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
         "content": "sha256:94911875e5e2a8f43621fff80235373d45d9755de8ae61b4c1bace6fa903828b",
         "locator": {
           "end": 129,
@@ -134,8 +153,8 @@
     },
     {
       "anchor": {
-        "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
-        "content": "sha256:5258a0a3b9d50a4e7b5fba3bdafde59bd139b5959876b4b3c6b2d81e3d50e7a7",
+        "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
+        "content": "sha256:690e2aabfa5461ed80f05be7775f2e060aa56f93f7ec3bff775b52074f375ea6",
         "locator": {
           "kind": "file"
         }
@@ -152,12 +171,12 @@
   ],
   "references": {
     "1": {
-      "note": "The digest states shared and role-qualified duties; its source-unit mapping lives in the digest map.",
+      "note": "The digest states shared and role-qualified duties, including scope-based `retire_child` authority; its source-unit mapping lives in the digest map.",
       "targets": [
         {
           "anchor": {
-            "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
-            "content": "sha256:5258a0a3b9d50a4e7b5fba3bdafde59bd139b5959876b4b3c6b2d81e3d50e7a7",
+            "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
+            "content": "sha256:690e2aabfa5461ed80f05be7775f2e060aa56f93f7ec3bff775b52074f375ea6",
             "locator": {
               "end": 151,
               "kind": "line_range",
@@ -191,7 +210,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+            "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
             "content": "sha256:6ce7f2282bb2c70bbbb00af7bdf717ed6b5543e28e987a826f373de710e9c19f",
             "locator": {
               "end": 17,
@@ -208,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+            "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
             "content": "sha256:51d510abac5e2045394115cfbafa29fd2cfdca30ed869635078434d082cf7698",
             "locator": {
               "end": 117,
@@ -221,12 +240,12 @@
       ]
     },
     "5": {
-      "note": "`role_start` names no mode, and the overridden-start instruction concerns the seat's features.",
+      "note": "`role_start` names no mode, the overridden-start instruction concerns the seat's features, and `retire_child` applies by role scope.\n\nAnchor: `Start and configure role agents`",
       "targets": [
         {
           "anchor": {
-            "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
-            "content": "sha256:cc45232388e7d26649e738124f29735cd8f9c81f74d6620d8c9bcca72a68b970",
+            "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
+            "content": "sha256:6b6e44804eb021f9a409a1c331b61657999986445c8064e1fd4a0521221f26bc",
             "locator": {
               "end": 35,
               "kind": "line_range",

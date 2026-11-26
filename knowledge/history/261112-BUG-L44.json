@@ -1,0 +1,4001 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L44",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-26T03:31:18+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L44",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-26T03:31:18+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L44",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "95274839-6231-5d4d-bf5b-8524c8ec6615",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 1,
+    "tree": "e890d53482a42f0c36762eda300d4374c2b2d8a1",
+    "verdictRef": "notes/reports/reviewer/95274839-6231-5d4d-bf5b-8524c8ec6615/role-launch/261112-BUG-L44-memory-r1-verdict.md"
+  },
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "38592a87d5d5ca8e3903d6e60aacdbda61464643",
+            "content": "sha256:9c201e6d275bd7a762302d83ff789295912745d9fcd0fce71ca7d40e19dc5a6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_receipt_files.py"
+          },
+          "before": {
+            "blob": "d7b45112bae598c1364e045d6c0a11d384b90c95",
+            "content": "sha256:9c201e6d275bd7a762302d83ff789295912745d9fcd0fce71ca7d40e19dc5a6d",
+            "locator": {
+              "end": 812,
+              "kind": "line_range",
+              "start": 780
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-VYFJX1"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-01KNDJ",
+      "items": [
+        "sha256:892747317359545af94c2d490a48f93a2f8bbe0f9dff6b8cd7242800a0616a5c"
+      ],
+      "reason": "L44 extracted _read_receipt from role_launch_receipts.py into role_receipt_files.py without changing its receipt-reading invariant; moved RLZ-VYFJX1 to role_receipt_files.py::_read_receipt.",
+      "revision": 1,
+      "subject": "INV-4BT846"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-03FJFT",
+      "items": [
+        "sha256:fcb2ae4c74a4a12761820d897b2aeacbd53e12597f1949a829e9601df6da17ab"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/mcp/tools/role_agents.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "48881a85c6a221bc13f7b46c93aea78a126f0c3d",
+          "path": "mcp/src/agents_remember/mcp/tools/role_agents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/tools/role_agents.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-043T8F",
+      "items": [],
+      "reason": "Audited docs/README.md line by line against synced L44 code tree ede5d128 (base 150b9778): documentation index and role/reference links remain accurate; no L44 contradiction.",
+      "revision": 9,
+      "subject": "DPD-06057Y"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-05PCT5",
+      "items": [
+        "sha256:92e4da8dccddc3e499190211ef9cc224048bcc4f3b05f498e92197cabee064d0"
+      ],
+      "reason": "Reviewed roles overview against L44 architect.md finished-Investigator retirement addition; roles overview prose remains accurate while architect.md card carries the updated contract.",
+      "sources": [
+        {
+          "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+          "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-08FM7Y",
+      "items": [
+        "sha256:ebf9128f30175c594a7679bc4d477047235821960ed313cbcb8bc97d45f0dad0"
+      ],
+      "reason": "Verified docs/tool-details.md on synced L44 code tree ede5d128 (base 150b9778) after Worker 1796d73e fixed lines 442-450: retire_child and role-agent tool details accurately reflect scope-based any-role retirement (Architect, Orchestrator, Manager), open-child refusal, interrupt_turn permission, and host-refresh retirement settlement.",
+      "revision": 17,
+      "subject": "DPD-10YCT2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fd9304df53fb77cd6a7559eee7065b93f3659c76",
+            "content": "sha256:b685a0db81148b0a99222ab425a934fe31ded688b78882aafbcdaa0adf6b839f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
+            "content": "sha256:c0ea2ca65b1e9902437153e20f00c936b05f9f670212149ca4f668a5ace6ce9a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-RHRQZQ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-0AK3Z7",
+      "items": [
+        "sha256:08dae4cc9592382f5491168c9290f84a63d5a88afc20e8f5c71fcaff1cc59a13"
+      ],
+      "reason": "Reviewed INV-4HZG3V against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-RHRQZQ) at C.",
+      "revision": 2,
+      "subject": "INV-4HZG3V"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-0DEP53",
+      "items": [
+        "sha256:f5d67e95aa0e4337c4a58546351c5ca405e3e0c42a10fd1403d76399ee730e32"
+      ],
+      "reason": "Re-anchored open weakness WKN-K3PPJY on mcp/src/agents_remember/cli/role_message_delivery.py at synced L44 code tree ede5d128; the underlying weakness remains open and unchanged by L44.",
+      "revision": 3,
+      "subject": "WKN-K3PPJY"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0G5A4K",
+      "items": [
+        "sha256:0b434b2024dedc02930fa71d8a37f037c69ea10e054f5f62417773df8115d06f",
+        "sha256:180d87d7694730ff251752b51d0102ef706a837d20627b4407cc46107c83d595",
+        "sha256:24807849044242d85dae15a3363b57cf5651d2b3ce83bafdeec1cccedc872e97",
+        "sha256:34ce17a5fbd895f6e5f17e052b796ada39732f24cd1e36d0aff05cd1362203bf",
+        "sha256:96ea694f41b91d9429cb45770222c99332da2e2095b582858ac1889713e31c8b",
+        "sha256:a00c7c1eb71f7f14cff00eeb3b2a4522275f706e32c6662019ab7d20027661b3",
+        "sha256:d2aeea600818301dafa643114f4042bc4a14af54b6580c9d7b587fdadbe4ebb5",
+        "sha256:d3cde6e047e8b5755aff4a3f75a250629fff7bb416e4e330dc956dbd0a4eacb6"
+      ],
+      "reason": "Reviewed test card against L44 replacement/host-retirement test additions; card prose remains accurate and new L44 proofs attach directly to its sidecar.",
+      "sources": [
+        {
+          "blob": "f334773dc898891b52dcadc7666638c67143f2af",
+          "path": "mcp/tests/test_paseo_launch_outcomes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_launch_outcomes.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+            "content": "sha256:52019c6d8f693081fa51c2184d646b290d1d6b129626b2e4bc6ce41f1410eb2f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
+            "content": "sha256:f5e83f13d0e4c3c07041b58d2d7c98a926d2a2d9ba3001cca4147c40eabcb3d6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-JK07JX"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-0SH93T",
+      "items": [
+        "sha256:8e3cbbd61465b43c05cbdf686486e836190ce0402d33e6da5e5002c9a814dd84"
+      ],
+      "reason": "Reviewed INV-NC6F6V against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-JK07JX) at C.",
+      "revision": 1,
+      "subject": "INV-NC6F6V"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
+            "content": "sha256:693557f736f9dda1be1d000249c7c703fb21dbb579c37a9e0d152a5524e0380e",
+            "locator": {
+              "kind": "symbol",
+              "name": "begin_held_generation"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_store.py"
+          },
+          "before": {
+            "blob": "11068f1c19e01f2ca9eb9e0f7fad668a702a60e4",
+            "content": "sha256:fbe221cb301070004df5bf0dc92f557f764a153f0227728576cf065f92e2ba39",
+            "locator": {
+              "kind": "symbol",
+              "name": "begin_held_generation"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_store.py"
+          },
+          "id": "RLZ-BAG710"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-1D59SK",
+      "items": [
+        "sha256:d44631fe4f42d76d17fc19613378809c3719c977a32cd989b0e16babc7e84768"
+      ],
+      "reason": "Reviewed INV-HJ790A against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-BAG710) at C.",
+      "revision": 1,
+      "subject": "INV-HJ790A"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1ERKQH",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Updated onboarding:mcp/tests/evidence-lifecycle.toml Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "d56e7eb6befb9b9bd4a10c94369794817a1a0ed4",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1GTSHV",
+      "items": [
+        "sha256:7347c1af0b4ca6b8bf9ed532be8cbf15d1956113ec5cf7ef4ed720768e0ae0ff"
+      ],
+      "reason": "Updated onboarding:mcp/tests/overview Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "d56e7eb6befb9b9bd4a10c94369794817a1a0ed4",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "beb2c2e9c04e06f72ac76f6427e86e81f0d9fd3c",
+          "path": "mcp/tests/test_closed_held_store.py"
+        },
+        {
+          "blob": "da6dd3e28060024e65850e69b35dd4b40d376841",
+          "path": "mcp/tests/test_held_queue.py"
+        },
+        {
+          "blob": "978921d19356c6717d6f89e06a9dcf4b674869e9",
+          "path": "mcp/tests/test_leaf_agent_archive.py"
+        },
+        {
+          "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+          "path": "mcp/tests/test_native_retire.py"
+        },
+        {
+          "blob": "f71ac409630934455f17aaa78656bea352b62bd9",
+          "path": "mcp/tests/test_paseo_bridge_agents.py"
+        },
+        {
+          "blob": "f334773dc898891b52dcadc7666638c67143f2af",
+          "path": "mcp/tests/test_paseo_launch_outcomes.py"
+        },
+        {
+          "blob": "337ed34917a2c7ccf781661eaad5d7831d2a8d1a",
+          "path": "mcp/tests/test_paseo_launch_repeat.py"
+        },
+        {
+          "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
+          "path": "mcp/tests/test_paseo_role_messages.py"
+        },
+        {
+          "blob": "20188aae5eb7ce82590fed2caa03f0f6920fc3c2",
+          "path": "mcp/tests/test_provider_limit_hold.py"
+        },
+        {
+          "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
+          "path": "mcp/tests/tool_entry_point_sweep_support.py"
+        },
+        {
+          "blob": "387507cf826bf8255675d217a08ca53916808aed",
+          "path": "mcp/tests/tool_entry_point_world.py"
+        },
+        {
+          "blob": "ba34b5c4115d5fcbdaf0244d930beee6cd800859",
+          "path": "mcp/tests/tool_refusal_census_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1N6JHG",
+      "items": [],
+      "reason": "Per standing order and D167/D617/D560 dependent honesty: docs/install/pi.md is an out-of-scope standing-order install guide with pre-existing non-L44 drift; leaving DPD-2B7PTY untouched at HEAD rev 8.",
+      "revision": 8,
+      "subject": "DPD-2B7PTY"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "13a9b3376ae9479d82437a1a80015e483137b2e4",
+            "content": "sha256:c19bf6d917289bf4fcab60edcd341ec5e69ab145828a402fe0a4f1c82e20efa8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_agents"
+            },
+            "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+          },
+          "before": {
+            "blob": "ccabb0812fc41ffa3ff5fbb06c73bf6f019c8d46",
+            "content": "sha256:30415cc3de8770663243189a3306756bc53585d7818bdad9f3c9701f4a705a19",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_agents"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+          },
+          "id": "RLZ-A9DFWX"
+        },
+        {
+          "after": {
+            "blob": "71deb153ab6a3e0cfbd99be6c23ec127f12d2bf2",
+            "content": "sha256:08e867468f7046e6162e8636fd4a289b83d7ad4f4e323b8b8625abd2a1862105",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+          },
+          "before": {
+            "blob": "ccabb0812fc41ffa3ff5fbb06c73bf6f019c8d46",
+            "content": "sha256:0739fce31f3f031e0a8bd09fb22aace57cb61faf9d22f6949fc0dcf92464ff97",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+          },
+          "id": "RLZ-HJ854G"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-1XSMZ2",
+      "items": [
+        "sha256:90b0aebe12359f6733a269e87158f23528981e1311345707db0bde7496a6e5f9"
+      ],
+      "reason": "L44 moved _live_agents from paseo_role_recipients.py into role_message_delivery.py (re-imported by paseo_role_recipients.py) while preserving recipient liveness rules; moved RLZ-A9DFWX and re-anchored RLZ-HJ854G.",
+      "revision": 2,
+      "subject": "INV-R9S24S"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-205Z93",
+      "items": [
+        "sha256:6fc2447bb811ebbd6e6f049fa9dbe15180d2f0d0a298c48b437a3fae5e052e70"
+      ],
+      "reason": "Updated onboarding:skills/l-01-agent-lifecycles/core/every-role.md Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
+          "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/core/every-role.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ca833123cd3e62b5a60b14eaeb78fbb6b296c2f0",
+            "content": "sha256:b0244874844f1af12745f858c0a0087855b1fbfdb2ca708ab5ffd6fe95252ac9",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "0fc638828611b97d33b29b06297cc62431902dc2",
+            "content": "sha256:70a382c2b54b0125df1d500da21f204ba24890de8b652dcacc210f71514eddcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-2MSXRD"
+        },
+        {
+          "after": {
+            "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+            "content": "sha256:ee9abcea2f0ddddf34af145574f256e722a27c8e349f26675283902c63f3f69c",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_retired_start"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "before": {
+            "blob": "c48ca229b9323e6efc93bc2cbf6c69accff4d964",
+            "content": "sha256:285d6d8e162be63efcc05481fed3242e24f05e6c8e83d5f39f8d0854bf99f735",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_retired_start"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "id": "RLZ-5VCJGH"
+        },
+        {
+          "after": {
+            "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+            "content": "sha256:9d15387e2c9609e327759f36c60898b2a355c53ebefe9b259f0f4e8913a001da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "d7b45112bae598c1364e045d6c0a11d384b90c95",
+            "content": "sha256:632cbffac4dcd2cb8a116554c4f0b8090da94560fb9f076ab63a92bdc7dd33c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-RFNY7Y"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-26EFTE",
+      "items": [
+        "sha256:ab25a2b8db31b2652533a44dbc5d7bce72a0af075ee0a0604a6271bcefbedc01"
+      ],
+      "reason": "Reviewed INV-AJKQV2 against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-2MSXRD, RLZ-5VCJGH, RLZ-RFNY7Y) at C.",
+      "revision": 1,
+      "subject": "INV-AJKQV2"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-29W3DC",
+      "items": [],
+      "reason": "Audited docs/architecture.md line by line against synced L44 code tree ede5d128 (base 150b9778): system layers, MCP server dispatch, and role-execution boundaries remain accurate; no L44 contradiction.",
+      "revision": 19,
+      "subject": "DPD-86HJGF"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2EF474",
+      "items": [],
+      "reason": "Per standing order and D167/D617/D560 dependent honesty: docs/reference/resolver-c08.md is an out-of-scope standing-order reference document with pre-existing non-L44 drift; leaving DPD-EJ2Y7Z untouched at HEAD rev 7.",
+      "revision": 7,
+      "subject": "DPD-EJ2Y7Z"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2KBCQH",
+      "items": [
+        "sha256:0b354511d8f340b80cc53d735636e6443782e091f541fed5fa06404a85f6d376"
+      ],
+      "reason": "Module constant _TASK_FINISHED_RETIREMENT in role_launch_archive.py supplying the fixed Retirement payload for leaf-close archival.",
+      "subject": "hunk:sha256:0b354511d8f340b80cc53d735636e6443782e091f541fed5fa06404a85f6d376"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R44",
+          "packet": "requirements/BUG-R44-v1-any-role-agent-can-be-retired-within-scope.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+            "content": "sha256:e9586f259d7aca10a79dfd3129690a49909d2fc2c93210be5de6101e5c353a55",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeRetireTests.test_the_architect_retires_bootstrap"
+            },
+            "path": "mcp/tests/test_native_retire.py"
+          },
+          "before": "absent",
+          "id": "PRF-04DYEW"
+        },
+        {
+          "after": {
+            "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+            "content": "sha256:e10e0db5c337a2986822670908427b402ae485e0591c7a4914cb30547cc49bb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeRetireTests.test_a_reserved_agent_cannot_be_retired_before_an_uncertain_launch_replays"
+            },
+            "path": "mcp/tests/test_native_retire.py"
+          },
+          "before": "absent",
+          "id": "PRF-35S9HR"
+        },
+        {
+          "after": {
+            "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+            "content": "sha256:e8cdb342bbb6f9c191150dc42541e59689e97d1b55fb9cf22662b6720f4fa4d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeRetireTests.test_a_nonleaf_turn_and_subagents_need_interrupt_permission"
+            },
+            "path": "mcp/tests/test_native_retire.py"
+          },
+          "before": "absent",
+          "id": "PRF-4RTBCA"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "f7ebff0f4a76bce6b4a0aefb1dc748ab271b619e",
+            "content": "sha256:a8d366c6382e21cde7b73bbd83d6030df90eaba3755d93aff5e57315fc6c50a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeRetireTests.test_an_unauthorized_repeat_after_retirement_is_refused"
+            },
+            "path": "mcp/tests/test_native_retire.py"
+          },
+          "id": "PRF-8P489J"
+        },
+        {
+          "after": {
+            "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+            "content": "sha256:82a596248eddca065a29c8538e99568cda4defb300dc45244ed4052233076968",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeRetireTests.test_an_unauthorized_repeat_after_retirement_is_refused"
+            },
+            "path": "mcp/tests/test_native_retire.py"
+          },
+          "before": "absent",
+          "id": "PRF-G1VR4F"
+        },
+        {
+          "after": {
+            "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+            "content": "sha256:0f0535f3dca42a9dc12bfe40abad44a8429152f56796d486f7495bc135de4c51",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeRetireTests.test_a_reserved_agent_cannot_be_retired_during_its_first_launch"
+            },
+            "path": "mcp/tests/test_native_retire.py"
+          },
+          "before": "absent",
+          "id": "PRF-K5A73A"
+        },
+        {
+          "after": {
+            "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+            "content": "sha256:a2f5d7aa269344033e78d4fee351db7e273a16a8e1a669912f22ef60f03433b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeRetireTests.test_an_orchestrator_retires_a_manager_after_its_master_is_attached"
+            },
+            "path": "mcp/tests/test_native_retire.py"
+          },
+          "before": "absent",
+          "id": "PRF-MEGHRA"
+        },
+        {
+          "after": {
+            "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+            "content": "sha256:522e89dbc583b0180617044dd7235434f6f526c6a34296b9769ae1f6ca959d90",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeRetireTests.test_a_manager_retires_a_worker_another_manager_started"
+            },
+            "path": "mcp/tests/test_native_retire.py"
+          },
+          "before": "absent",
+          "id": "PRF-NVBM4V"
+        },
+        {
+          "after": {
+            "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+            "content": "sha256:e6bce367bfef3fbdb3b91e2bda746d181fa7fc79ecfa4880d20a32fc8abb804f",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeRetireTests.test_a_current_plus_history_record_is_refused_without_effects"
+            },
+            "path": "mcp/tests/test_native_retire.py"
+          },
+          "before": {
+            "blob": "f7ebff0f4a76bce6b4a0aefb1dc748ab271b619e",
+            "content": "sha256:e6bce367bfef3fbdb3b91e2bda746d181fa7fc79ecfa4880d20a32fc8abb804f",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeRetireTests.test_a_current_plus_history_record_is_refused_without_effects"
+            },
+            "path": "mcp/tests/test_native_retire.py"
+          },
+          "id": "PRF-T9DTY3"
+        },
+        {
+          "after": {
+            "blob": "ece01dd4c4ea63eb902bf90bee6cb28136fa28cd",
+            "content": "sha256:a79d0c33f0b89f86759db5d4000bc6abf6700c28598d08035add04798fc39054",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retire_seat"
+            },
+            "path": "mcp/src/agents_remember/cli/role_retire.py"
+          },
+          "before": "absent",
+          "id": "RLZ-950ZHS"
+        },
+        {
+          "after": {
+            "blob": "ece01dd4c4ea63eb902bf90bee6cb28136fa28cd",
+            "content": "sha256:a3b58e491a84597ee9380c7ee49b47335f5b8d7421df8e0ae77b9d2f4adcfc1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_interruptible"
+            },
+            "path": "mcp/src/agents_remember/cli/role_retire.py"
+          },
+          "before": "absent",
+          "id": "RLZ-BPDA7T"
+        },
+        {
+          "after": {
+            "blob": "99a24f57b61e8a3d8b8bee85cb5dddf0cf58d8ee",
+            "content": "sha256:0713cda724d95bce278b145173d394cb5ba50076d2bbe17dfb9cfa3181d8bd37",
+            "locator": {
+              "kind": "symbol",
+              "name": "retirement_scope_refusal"
+            },
+            "path": "mcp/src/agents_remember/application/seat_retirement_scope.py"
+          },
+          "before": "absent",
+          "id": "RLZ-D7R4H8"
+        },
+        {
+          "after": {
+            "blob": "ece01dd4c4ea63eb902bf90bee6cb28136fa28cd",
+            "content": "sha256:61dfd5fc14e21eac0ecc7f4b8043931d62a523d6b9c1b0c85355840bf1e1a8a9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_retire.py"
+          },
+          "before": {
+            "blob": "023e93b07cfc3def08a05238107dfa8eb68e292c",
+            "content": "sha256:050fcd86580f9175c21ef4687b22fc6d3ca94e3f795a822b882234a1aaf8b04e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_retire.py"
+          },
+          "id": "RLZ-FRTZHC"
+        },
+        {
+          "after": {
+            "blob": "ece01dd4c4ea63eb902bf90bee6cb28136fa28cd",
+            "content": "sha256:1a7e89431c0e75a80d3ded10338a12aa844516ec681f322f80278d8abc878c4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_locate_seat"
+            },
+            "path": "mcp/src/agents_remember/cli/role_retire.py"
+          },
+          "before": {
+            "blob": "023e93b07cfc3def08a05238107dfa8eb68e292c",
+            "content": "sha256:c4a09ad1ec544cd29b1694a272d7ed9a69e5c6ca29d912bc3aa15e8f7c5c960b",
+            "locator": {
+              "end": 409,
+              "kind": "line_range",
+              "start": 371
+            },
+            "path": "mcp/src/agents_remember/cli/role_retire.py"
+          },
+          "id": "RLZ-HPM77Q"
+        },
+        {
+          "after": {
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "content": "sha256:faf62f628b6b3cc40d09e88492c3b00df4e2da3b03c163ece19db1ac6de8c808",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "before": {
+            "blob": "d32955efa5176e04643993e613a83bece41b81d2",
+            "content": "sha256:3d5c16e7a2848c643f372e47c8e0ffca1a3b9b9a19358474036c60dff4b0757d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "id": "RLZ-KN9SG0"
+        },
+        {
+          "after": {
+            "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+            "content": "sha256:f4f621f795cc4b6ea9f70cc589aead630fd4562fbe42b1961b5594f8b3f757cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_or_hold"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": "absent",
+          "id": "RLZ-QBFBXB"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-2XNTA7",
+      "items": [
+        "sha256:fe58455c407cb4addb3fc11b4a243d0c57715b546b3801c585de9b9ed6168f66"
+      ],
+      "reason": "Reconciled INV-ECNV2S from starter-only leaf retirement to BUG-R44@v1 scope-based any-role retirement (Architect any other seat; Orchestrator sprint seats; Manager master+leaf seats; non-coordinators none; never self) while preserving unique-receipt enumeration with zero effects on duplicates, authorization before idempotent repeat, explicit interrupt_turn permission for active turns or running provider subagents across all roles, and starter-only non-interrupting step-up checks. Re-anchored RLZ-HPM77Q to _locate_seat, replaced outdated starter-only proof facet PRF-8P489J via BUG-R44@v1 rules 1–2 proofs, and attached rules 1–2 and rule 5 targets and proofs. Evidence (BUG-R44@v1 rules 1–2): W2 expanded evidence E2/E3. Reconcile INV-ECNV2S revision 2 for the changed roles and scope. Keep uniqueness, authorization before repeat, interruption, and step-up clauses. Evidence (BUG-R44@v1 rule 5): W2 expanded evidence E6 and INV-ECNV2S preservation.",
+      "revision": 3,
+      "subject": "INV-ECNV2S"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "13a9b3376ae9479d82437a1a80015e483137b2e4",
+            "content": "sha256:c98f879340a6a477969e293907205445a7ab814cd32a0071e35c2fbe3ffe5592",
+            "locator": {
+              "kind": "symbol",
+              "name": "_archived_with_successor"
+            },
+            "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+          },
+          "before": {
+            "blob": "884be3932be6c36301d2afd226c15500538d2c46",
+            "content": "sha256:78916eaa8221a6d488a649c136a140981d73d689bd5a11d962230aa37a2d7e80",
+            "locator": {
+              "kind": "symbol",
+              "name": "_archived_with_successor"
+            },
+            "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+          },
+          "id": "RLZ-TR3S12"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-35TFP7",
+      "items": [
+        "sha256:ef92bfb9d832828c074b72ff91ce120eeb45fce862e866b31e3d9653d9e55e6d"
+      ],
+      "reason": "Reviewed INV-ZYW4CT against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-TR3S12) at C.",
+      "revision": 1,
+      "subject": "INV-ZYW4CT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3VKCYT",
+      "items": [
+        "sha256:798bf10daec36b1b388a7c3269be8b7885bad95f1f9052746d508557dbf928eb"
+      ],
+      "reason": "Test-fixture adjustment in test_held_queue.py passing interrupt_turn=True when retiring an active Worker; test helper call carries no standalone invariant.",
+      "subject": "hunk:sha256:798bf10daec36b1b388a7c3269be8b7885bad95f1f9052746d508557dbf928eb"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-3VRRFG",
+      "items": [
+        "sha256:df11d7ceef3ff5abc05d5bfbb6ba41296b06d26e7888db8482c8e86d95145c07"
+      ],
+      "reason": "Re-anchored open weakness WKN-CS209S on mcp/src/agents_remember/cli/paseo_role_tools.py at synced L44 code tree ede5d128; the underlying weakness remains open and unchanged by L44.",
+      "revision": 3,
+      "subject": "WKN-CS209S"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-3W9V1K",
+      "items": [
+        "sha256:5b2108f1f97e0d70e61e67f43cea8292e5e22501962eb44575d4986d4cbe98bc"
+      ],
+      "reason": "Verified docs/reference/mcp-tools.md on synced L44 code tree ede5d128 (base 150b9778) after Worker 1796d73e fixed the changed_document contradictions: lines 580, 619-623, and 651-660 accurately state scope-based any-role retire_child authority, open-child refusal, explicit interrupt_turn permission, and current-scope replacement rules alongside all standing MCP tool contracts.",
+      "revision": 23,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fbfd754fe7a8c8f3265ae081d3d1248798e9a322",
+            "content": "sha256:73aa0f24493fcebdb5becdc670301647433a74c3dfee604051737e42c19fdcb9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "before": {
+            "blob": "2c7dc6d83d1492b30d3948afc4f131805f1a373f",
+            "content": "sha256:8938f7dc698a85538e3e29ff6bb407898d7dc6dc980869c4299097afb7cd446f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "id": "RLZ-VP8NQM"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-426NVW",
+      "items": [
+        "sha256:2cfdcef7a22030d7f9e7d6150cf75abfe494a113fa9f1a90075aa247fb8f0a5d"
+      ],
+      "reason": "Reviewed INV-WHEFVS against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-VP8NQM) at C.",
+      "revision": 3,
+      "subject": "INV-WHEFVS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "content": "sha256:2bb12e9478a7e11a7c366686d5d406947c94e1ce455dcd3445e06dee87e364b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_reading"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "before": {
+            "blob": "d32955efa5176e04643993e613a83bece41b81d2",
+            "content": "sha256:d67c12d7f4b52e81cc0a88c75b5d12f092803e2b71f161290a60af8422b7684a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_reading"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "id": "RLZ-6THTQ3"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-4561JA",
+      "items": [
+        "sha256:466c64d3508a3a85fcfe87e88760d082edefe06cc0523ebd816a3ba750aff7f8"
+      ],
+      "reason": "Reviewed INV-QQEHVM against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-6THTQ3) at C.",
+      "revision": 1,
+      "subject": "INV-QQEHVM"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4CJ7H0",
+          "revision": 1
+        },
+        {
+          "id": "INV-8WCSQ7",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VQQ7W",
+          "revision": 2
+        },
+        {
+          "id": "INV-AJKQV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-F1TY2E",
+          "revision": 2
+        },
+        {
+          "id": "INV-FEB6Y6",
+          "revision": 2
+        },
+        {
+          "id": "INV-GM5MS3",
+          "revision": 1
+        },
+        {
+          "id": "INV-HBMPXC",
+          "revision": 1
+        },
+        {
+          "id": "INV-K43DJZ",
+          "revision": 3
+        },
+        {
+          "id": "INV-PRP52X",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPXD65",
+          "revision": 1
+        },
+        {
+          "id": "INV-W41C85",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-45CCZH",
+      "items": [
+        "sha256:b648184e094040d8e26b6f52c4ed354293e7a98dae852304b3fba084f6d3372b"
+      ],
+      "reason": "Examined all 12 members of FAM-VNK792 (INV-F1TY2E, INV-8WCSQ7, INV-PRP52X, INV-K43DJZ, INV-9VQQ7W, INV-W41C85, INV-FEB6Y6, INV-GM5MS3, INV-VPXD65, INV-AJKQV2, INV-HBMPXC, INV-4CJ7H0) at current candidate revisions on code tree ede5d128: the family's joint guarantee and routes remain true and unchanged under L44.",
+      "revision": 3,
+      "subject": "FAM-VNK792"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-47PA2J",
+      "items": [
+        "sha256:24221f0b9885a6d4bc7fefa4c11faeb021175d2761d1601c2d618e85af7cb395"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/paseo_role_start.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "864dd917963036bf4084b81f219ee468696d72b1",
+          "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_role_start.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-498X2E",
+      "items": [
+        "sha256:90df601183e45a203cc562410804d9903eda39d55f00736dfb38566e0a3eda7c"
+      ],
+      "reason": "Call to _record_predecessor_debt in role_launch_outcome.py; predecessor settlement obligation is governed by rule 3.",
+      "subject": "hunk:sha256:90df601183e45a203cc562410804d9903eda39d55f00736dfb38566e0a3eda7c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4BDPCD",
+      "items": [
+        "sha256:dea69b3ef98279aaa2df91d60fd66e008655ec7691353aa29d088599139247ee"
+      ],
+      "reason": "Delete-only hunk in role_receipt_files.py removing trailing duplicate blank/import lines after receipt-helper extraction.",
+      "subject": "hunk:sha256:dea69b3ef98279aaa2df91d60fd66e008655ec7691353aa29d088599139247ee"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4EM6AN",
+      "items": [
+        "sha256:e019375fc5b32a9d6bf6214d11f08aea5697b0c633199853cdcea35a5e899c27"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_retirement_receipt.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "c2c650ce0ca1c3aa0e2e4f8acc52a33e8edc9ec8",
+          "path": "mcp/src/agents_remember/cli/role_retirement_receipt.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_retirement_receipt.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4P8VHY",
+      "items": [
+        "sha256:5bcbb80d608f09bcbb42c313daceeedff03fac6269cb36f09b80c262a8b66af0"
+      ],
+      "reason": "Guard clause in role_held_store.py preserving rejected prepared-start status when recording retirement fields; supports rule 3/4 preservation without a separate invariant.",
+      "subject": "hunk:sha256:5bcbb80d608f09bcbb42c313daceeedff03fac6269cb36f09b80c262a8b66af0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "387507cf826bf8255675d217a08ca53916808aed",
+            "content": "sha256:736236a18d3024d5540c359844ae038261e2a7ba2966639a75382df1ca7c6e8b",
+            "locator": {
+              "end": 916,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:749bf2c0a6f0b0968338fd50f754af15cb1791e1163ef62f60bba088bb3f45e0",
+            "locator": {
+              "end": 889,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-20QKDA"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-50ARWM",
+      "items": [
+        "sha256:963334bfbf5c0125e6697ff35dff860df125da9c4bf1cdd4e724521bbf4f906d"
+      ],
+      "reason": "Reviewed INV-TG334W against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-20QKDA) at C.",
+      "revision": 5,
+      "subject": "INV-TG334W"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-56NHJW",
+      "items": [],
+      "reason": "Per standing order and D167/D617/D560 dependent honesty: docs/install/hermes.md is an out-of-scope standing-order install guide with pre-existing non-L44 drift; leaving DPD-GHEXS9 untouched at HEAD rev 11.",
+      "revision": 11,
+      "subject": "DPD-GHEXS9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5A7V4Z",
+      "items": [
+        "sha256:e9033d911c89e0c2b036e7a290a0fb39f40738915ccf6e5b84e3497096ad4449"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_held_store.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
+          "path": "mcp/src/agents_remember/cli/role_held_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_held_store.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+            "content": "sha256:52019c6d8f693081fa51c2184d646b290d1d6b129626b2e4bc6ce41f1410eb2f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
+            "content": "sha256:f5e83f13d0e4c3c07041b58d2d7c98a926d2a2d9ba3001cca4147c40eabcb3d6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-59K606"
+        },
+        {
+          "after": {
+            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+            "content": "sha256:52019c6d8f693081fa51c2184d646b290d1d6b129626b2e4bc6ce41f1410eb2f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
+            "content": "sha256:f5e83f13d0e4c3c07041b58d2d7c98a926d2a2d9ba3001cca4147c40eabcb3d6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-5WT1RY"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-5CC15M",
+      "items": [
+        "sha256:82e40a72ebf851645aeb5858928cd0de60d65430af464149a30afc020926c8c5"
+      ],
+      "reason": "Reviewed INV-NNQR91 against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-59K606, RLZ-5WT1RY) at C.",
+      "revision": 3,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5J475A",
+      "items": [
+        "sha256:65b7222feecd7dfc489b3a5d924433d703e9d52d5f2030cfc7d4b3b67ee068da"
+      ],
+      "reason": "Standard-library import (UTC, datetime) in role_receipt_files.py supporting _now_iso helper; carries no standalone invariant.",
+      "subject": "hunk:sha256:65b7222feecd7dfc489b3a5d924433d703e9d52d5f2030cfc7d4b3b67ee068da"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5NCPDK",
+      "items": [
+        "sha256:303e8def883c7e720430e5eea93be497b0cd48f130874621fda42e27eab7dabb"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_message_delivery.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "13a9b3376ae9479d82437a1a80015e483137b2e4",
+          "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_message_delivery.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5SBBRA",
+      "items": [
+        "sha256:0795f9c7a5ce51dad5b6298213af7dc0093c7e74f0cff7700094d206d772fa6f"
+      ],
+      "reason": "Standard-library import (stat) in role_receipt_files.py supporting extracted _read_receipt; carries no standalone invariant.",
+      "subject": "hunk:sha256:0795f9c7a5ce51dad5b6298213af7dc0093c7e74f0cff7700094d206d772fa6f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5TMMFZ",
+      "items": [
+        "sha256:63c44ae1bbe77f32c52a1dc3511736f883a27c90a2b0a9702b2ebf95fdf44a7f"
+      ],
+      "reason": "Updated onboarding:skills/l-01-agent-lifecycles/templates/manager-brief.md Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "fbfd754fe7a8c8f3265ae081d3d1248798e9a322",
+          "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/templates/manager-brief.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5WTBDK",
+      "items": [
+        "sha256:3c0590dac009008d632a332aca0d2d2304c3553b7ea04e3d17ce7429578ec152"
+      ],
+      "reason": "Updated onboarding:mcp/overview Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "b303d8c0e8e82693b482b31c72bae63fd379bd71",
+          "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+        },
+        {
+          "blob": "ca833123cd3e62b5a60b14eaeb78fbb6b296c2f0",
+          "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+        },
+        {
+          "blob": "71deb153ab6a3e0cfbd99be6c23ec127f12d2bf2",
+          "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+        },
+        {
+          "blob": "864dd917963036bf4084b81f219ee468696d72b1",
+          "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+        },
+        {
+          "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+          "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+        },
+        {
+          "blob": "9629b1c46fc1f14500f5d3a931269a66e7582957",
+          "path": "mcp/src/agents_remember/cli/role_held_store.py"
+        },
+        {
+          "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+          "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+        },
+        {
+          "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+          "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+        },
+        {
+          "blob": "e0ef3910426a932d881fa0310209f25ca25a358f",
+          "path": "mcp/src/agents_remember/cli/role_launch_outcome.py"
+        },
+        {
+          "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+          "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+        },
+        {
+          "blob": "13a9b3376ae9479d82437a1a80015e483137b2e4",
+          "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+        },
+        {
+          "blob": "38592a87d5d5ca8e3903d6e60aacdbda61464643",
+          "path": "mcp/src/agents_remember/cli/role_receipt_files.py"
+        },
+        {
+          "blob": "ece01dd4c4ea63eb902bf90bee6cb28136fa28cd",
+          "path": "mcp/src/agents_remember/cli/role_retire.py"
+        },
+        {
+          "blob": "c2c650ce0ca1c3aa0e2e4f8acc52a33e8edc9ec8",
+          "path": "mcp/src/agents_remember/cli/role_retirement_receipt.py"
+        },
+        {
+          "blob": "fd9304df53fb77cd6a7559eee7065b93f3659c76",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "f3af24af7475972287d1f7b3f906b9f2772d4f15",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/authority.md"
+        },
+        {
+          "blob": "3bc489d314743351f3350d30871fb9ca2bea066c",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+        },
+        {
+          "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/every-role.md"
+        },
+        {
+          "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+        },
+        {
+          "blob": "fbfd754fe7a8c8f3265ae081d3d1248798e9a322",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f3af24af7475972287d1f7b3f906b9f2772d4f15",
+            "content": "sha256:2d50731c884d1f7caffc7826df214a33bc63a1b8c2c7c0bfb36129ff01d2c24c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "before": {
+            "blob": "775f056813e59e9f1426a560af777dc2be162c85",
+            "content": "sha256:c142da074d1cd549f0fd3725e3a3ef1412bfed722d3d6b3598b78012173a3236",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "id": "RLZ-VCT9ZR"
+        },
+        {
+          "after": {
+            "blob": "fbfd754fe7a8c8f3265ae081d3d1248798e9a322",
+            "content": "sha256:73aa0f24493fcebdb5becdc670301647433a74c3dfee604051737e42c19fdcb9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "before": {
+            "blob": "2c7dc6d83d1492b30d3948afc4f131805f1a373f",
+            "content": "sha256:8938f7dc698a85538e3e29ff6bb407898d7dc6dc980869c4299097afb7cd446f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "id": "RLZ-WR7C61"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-65MQGE",
+      "items": [
+        "sha256:059ec08717b7d4fc137ebd13bf388f2867f933585bd6e6e70e72759b2f39f469"
+      ],
+      "reason": "Reviewed INV-HGSFJ8 against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-VCT9ZR, RLZ-WR7C61) at C.",
+      "revision": 5,
+      "subject": "INV-HGSFJ8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6CCKG2",
+      "items": [],
+      "reason": "Per standing order and D167/D617/D560 dependent honesty: docs/design/python-evidence-system.md is an out-of-scope standing-order document with pre-existing non-L44 drift; leaving DPD-ZMQ523 untouched at HEAD rev 17.",
+      "revision": 17,
+      "subject": "DPD-ZMQ523"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d56e7eb6befb9b9bd4a10c94369794817a1a0ed4",
+            "content": "sha256:dbca8f7330d34633008b31e48c6760da5c6e77ae6e7792e9bf2d886f7aa759f5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "5ec887831fa860b5f4478321f94a6966ae51159c",
+            "content": "sha256:fa2e21ee4f5a648365c96f99bf7b45fec9e8e3eb6dc086daaab1c0b4a6375dfe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-6CYRH5",
+      "items": [
+        "sha256:122c1762da9215c6bdd662ddffb3383eeba173cefe9693a610e2148d198c72f4"
+      ],
+      "reason": "Reviewed INV-T8672G against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-H44S0N) at C.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6FB7F5",
+      "items": [
+        "sha256:df126ae31c1a803742ae22eb8517057637026ca8336a31da46c070cc20699771"
+      ],
+      "reason": "Updated onboarding:skills/l-01-agent-lifecycles/roles/architect.md Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+          "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fd9304df53fb77cd6a7559eee7065b93f3659c76",
+            "content": "sha256:b685a0db81148b0a99222ab425a934fe31ded688b78882aafbcdaa0adf6b839f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
+            "content": "sha256:c0ea2ca65b1e9902437153e20f00c936b05f9f670212149ca4f668a5ace6ce9a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-6G7KNB",
+      "items": [
+        "sha256:08788c4210480343bc24acb296a5716698db528d8482629975ca7c78a1ae8598"
+      ],
+      "reason": "Reviewed INV-Y6GVZ7 against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-9FX5WR) at C.",
+      "revision": 6,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-6JHMZV",
+      "items": [],
+      "reason": "Audited docs/host.md line by line against synced L44 code tree ede5d128 (base 150b9778) and refreshed its two shifted line_range stands_on anchors (role_launch_preparation.py:235-249 and paseo_bridge.mjs:720-737): host integration and bridge behavior remain accurate.",
+      "revision": 16,
+      "subject": "DPD-K2QMWQ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+            "content": "sha256:a2412406461a5d2a87b9634e38a0f7bd09ba91b5dfa9079b3ed9282ba73eab3b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "d7b45112bae598c1364e045d6c0a11d384b90c95",
+            "content": "sha256:46171310358f3bfa5fd0b14dfceddb7b21a8f509f47b32af2b16bfafb59249ce",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-SA35BD"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-6M2F13",
+      "items": [
+        "sha256:5cd77e34cff6197d10deb9ea90b14631844d347945bf03072bc57add5ae521db"
+      ],
+      "reason": "Reviewed INV-87JRHY against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-SA35BD) at C.",
+      "revision": 2,
+      "subject": "INV-87JRHY"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6RG05Z",
+      "items": [
+        "sha256:a6d9091dfa1890a8a877a02b805e2855da16e5e76f268be20230a883bc3a346a"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_retire.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "ece01dd4c4ea63eb902bf90bee6cb28136fa28cd",
+          "path": "mcp/src/agents_remember/cli/role_retire.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_retire.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-6ZQ02V",
+      "items": [],
+      "reason": "Audited mcp/README.md line by line against synced L44 code tree ede5d128 (base 150b9778): MCP package overview and runtime entry points remain accurate; no L44 contradiction.",
+      "revision": 22,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-73MF4V",
+      "items": [
+        "sha256:c3e5c5aa35a288ce6d9458a5f62be4971539981fc24416e8d412ee9bb3ff4b6f"
+      ],
+      "reason": "Verified packaged mcp/src/agents_remember/package_data/runtime/docs/tool-details.md on synced L44 code tree ede5d128 (base 150b9778): byte-identical to docs/tool-details.md after Worker 1796d73e fixed lines 442-450 for L44 scope-based any-role retirement.",
+      "revision": 18,
+      "subject": "DPD-NGC2F6"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-78BRCV",
+      "items": [],
+      "reason": "Per standing order and D167/D617/D560 dependent honesty: docs/install/codex.md is an out-of-scope standing-order install guide with pre-existing non-L44 drift; leaving DPD-GNFCSM untouched at HEAD rev 8.",
+      "revision": 8,
+      "subject": "DPD-GNFCSM"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7AZ291",
+      "items": [
+        "sha256:e93aa5f4675ed6c9e4dc73ddaba80fec875c8013328446cad582fb7fbf34b40c"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_launch_outcome.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "e0ef3910426a932d881fa0310209f25ca25a358f",
+          "path": "mcp/src/agents_remember/cli/role_launch_outcome.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_outcome.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7E8ETY",
+      "items": [
+        "sha256:c799a0c38d99835e360cc61c22bb0d615c802a5b93af92a3bb9cf2e073b124df"
+      ],
+      "reason": "Delete-only hunk in role_launch_outcome.py removing inline pendingArchiveAgentId handling now factored into _record_predecessor_debt.",
+      "subject": "hunk:sha256:c799a0c38d99835e360cc61c22bb0d615c802a5b93af92a3bb9cf2e073b124df"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-7FN8MA",
+      "items": [],
+      "reason": "Audited docs/llms.txt line by line against synced L44 code tree ede5d128 (base 150b9778): documentation links and shipped skill-tree references remain accurate; no L44 contradiction.",
+      "revision": 15,
+      "subject": "DPD-633P3W"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7FYRBJ",
+      "items": [
+        "sha256:57246da831c2e1e8407c187a38d9bae4c118d5fc1169726306f4aefa9a02b4ee"
+      ],
+      "reason": "Refusal prose adjustment in paseo_role_start.py replacing starter wording with scope-over-seat wording; authority rule is governed by INV-ECNV2S.",
+      "subject": "hunk:sha256:57246da831c2e1e8407c187a38d9bae4c118d5fc1169726306f4aefa9a02b4ee"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "978921d19356c6717d6f89e06a9dcf4b674869e9",
+            "content": "sha256:4d609813914fdfa84a594e30d39df37ae2ab2a76a117c6465347018347e10808",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_history_retry_and_other_selections_preserve_every_artifact"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "before": {
+            "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
+            "content": "sha256:d68a2077c263ec62a9a28e3eedeba77b6d154acaa4bea2409c9dab2cb3d83dc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_history_retry_and_other_selections_preserve_every_artifact"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "id": "PRF-ZDRBH3"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-7XE2YN",
+      "items": [
+        "sha256:a6a03f3270ece61cff24d8d5cdbf029c921fd0c90d615e4bd8c0e322bd8a40e2"
+      ],
+      "reason": "Reviewed INV-9VQQ7W against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (PRF-ZDRBH3) at C.",
+      "revision": 2,
+      "subject": "INV-9VQQ7W"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+            "content": "sha256:f4f621f795cc4b6ea9f70cc589aead630fd4562fbe42b1961b5594f8b3f757cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_or_hold"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "9124be375703846117abf9f0f4fee05c1044befd",
+            "content": "sha256:242903221b0fe9124d4a771bbe1d8a4f3e310777cefec81070989063bebf1fd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_or_hold"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-NJJDFT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-7Y0BP6",
+      "items": [
+        "sha256:cad21e8906078cf42e52dfc24900dbbe20ab47e5f398fbff3f0671a76889f342"
+      ],
+      "reason": "Reviewed INV-AMJAZT against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-NJJDFT) at C.",
+      "revision": 1,
+      "subject": "INV-AMJAZT"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8E8Z9Q",
+      "items": [
+        "sha256:a392b1d80b2eff18d7817d7fb9e13c99b8470b77f8663bfc3560635f3a671148"
+      ],
+      "reason": "Updated onboarding:skills/l-01-agent-lifecycles/overview Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "fd9304df53fb77cd6a7559eee7065b93f3659c76",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "f3af24af7475972287d1f7b3f906b9f2772d4f15",
+          "path": "skills/l-01-agent-lifecycles/core/authority.md"
+        },
+        {
+          "blob": "3bc489d314743351f3350d30871fb9ca2bea066c",
+          "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+        },
+        {
+          "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
+          "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+        },
+        {
+          "blob": "fbfd754fe7a8c8f3265ae081d3d1248798e9a322",
+          "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "978921d19356c6717d6f89e06a9dcf4b674869e9",
+            "content": "sha256:4d609813914fdfa84a594e30d39df37ae2ab2a76a117c6465347018347e10808",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_history_retry_and_other_selections_preserve_every_artifact"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "before": {
+            "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
+            "content": "sha256:d68a2077c263ec62a9a28e3eedeba77b6d154acaa4bea2409c9dab2cb3d83dc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_history_retry_and_other_selections_preserve_every_artifact"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "id": "PRF-4X8YX5"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8K6ZRX",
+      "items": [
+        "sha256:5a29af4e5058f0ea4d0a4c0e3057d7a07104cd70961eaf71deb1b12c298e519e"
+      ],
+      "reason": "Reviewed INV-F1TY2E against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (PRF-4X8YX5) at C.",
+      "revision": 2,
+      "subject": "INV-F1TY2E"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8S09JT",
+      "items": [
+        "sha256:ac607aac29d761c3899ef31ec42b16033f483509d0f8aefb55b103410e7f5441"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_launch_archive.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+          "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_archive.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-8XRS7J",
+      "items": [],
+      "reason": "Audited docs/features.md line by line against synced L44 code tree ede5d128 (base 150b9778): feature summaries, skill-tree packaging, and closeout/role capabilities remain accurate; no L44 contradiction.",
+      "revision": 26,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-98RD9Q",
+      "items": [],
+      "reason": "Audited README.md line by line against synced L44 code tree ede5d128 (base 150b9778): overview, role-agent concepts, and install/usage pointers remain accurate; no L44 contradiction.",
+      "revision": 12,
+      "subject": "DPD-CZBR1Q"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ca833123cd3e62b5a60b14eaeb78fbb6b296c2f0",
+            "content": "sha256:111e2cfaf503898c62df5dc4cdcdab5a1818a80e5b42db3fd9a80001b1e9dd4e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "0fc638828611b97d33b29b06297cc62431902dc2",
+            "content": "sha256:cc212fc75eaa958de5e56631d1e2c050bb8493548b40157f9e8e3e685238abff",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-2GJ47Y"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-9EHPGN",
+      "items": [
+        "sha256:95c876a68743f8026ee50f7c3ba03ffd9ab4d6952edc40581bab7eeb1ffbf0ef"
+      ],
+      "reason": "Reviewed INV-9DMNQS against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-2GJ47Y) at C.",
+      "revision": 1,
+      "subject": "INV-9DMNQS"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9RCSB8",
+      "items": [
+        "sha256:accadfd7496bde6c4be649be07d2cba4519f6e209460c0cb2d331d2629dcb0e4"
+      ],
+      "reason": "Reviewed test card against L44 interrupt_turn=True fixture adjustment; card prose remains accurate with only mechanical reference refresh.",
+      "sources": [
+        {
+          "blob": "da6dd3e28060024e65850e69b35dd4b40d376841",
+          "path": "mcp/tests/test_held_queue.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_held_queue.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "content": "sha256:2bb12e9478a7e11a7c366686d5d406947c94e1ce455dcd3445e06dee87e364b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_reading"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "before": {
+            "blob": "d32955efa5176e04643993e613a83bece41b81d2",
+            "content": "sha256:d67c12d7f4b52e81cc0a88c75b5d12f092803e2b71f161290a60af8422b7684a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_reading"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "id": "RLZ-7FJJDH"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-A63SY9",
+      "items": [
+        "sha256:e4d30c99b785ed039c7f6f24dee25c0ee7bf844857cae2896e5c5f09a7c81f09"
+      ],
+      "reason": "Reviewed INV-F6CAGC against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-7FJJDH) at C.",
+      "revision": 2,
+      "subject": "INV-F6CAGC"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AE4E5Y",
+      "items": [
+        "sha256:8cc9f4912608f717af621f7e28ea86d15f7c772bad7addede4f274fb5c439012"
+      ],
+      "reason": "Refactored return line in role_launch_outcome.py passing receipt to _refused_outcome; carries no standalone invariant.",
+      "subject": "hunk:sha256:8cc9f4912608f717af621f7e28ea86d15f7c772bad7addede4f274fb5c439012"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-AFHY9G",
+      "items": [],
+      "reason": "Audited docs/concepts.md line by line against synced L44 code tree ede5d128 (base 150b9778): core memory, task-topology, and role-lifecycle concepts remain accurate; no L44 contradiction.",
+      "revision": 24,
+      "subject": "DPD-71WYH4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ANPH4D",
+      "items": [
+        "sha256:5b80b00ff5e1a7a6cecb57b965162eee612c420b8ea9effa7c4e376594fbea15"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_receipt_files.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "38592a87d5d5ca8e3903d6e60aacdbda61464643",
+          "path": "mcp/src/agents_remember/cli/role_receipt_files.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_receipt_files.py"
+    },
+    {
+      "considered": [
+        "FAM-2BRZW7",
+        "FAM-7AEA19",
+        "FAM-CR0HHJ",
+        "FAM-GDXSJG",
+        "FAM-N36SWD",
+        "FAM-TE2628",
+        "FAM-VNK792"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-AT9TBS",
+      "items": [],
+      "reason": "Examined all seven reached retirement, liveness, launch, and instruction families; INV-KRCG05 (explicit retirement open-child refusal and successor-Manager child retirement) stands as a self-contained L44 invariant without altering any existing family's independent joint guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-KRCG05"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B5CNK8",
+      "items": [
+        "sha256:b163e8c35e831b3c0dc9189dd867c15d8aac5242a774b4d7fe7d61190b8322c5"
+      ],
+      "reason": "Helper predicate _prepared_start_refused in role_held_store.py identifying rejected prepared-start receipts; local helper without a standalone invariant.",
+      "subject": "hunk:sha256:b163e8c35e831b3c0dc9189dd867c15d8aac5242a774b4d7fe7d61190b8322c5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BEK3P2",
+      "items": [
+        "sha256:917b0f712cb74d9d94071778c0d675c75ef010a94b838da491a68f5d30a18ab7"
+      ],
+      "reason": "Inline comment update in paseo_role_start.py explaining that seat replacement requires a bound caller with scope or the dashboard launcher.",
+      "subject": "hunk:sha256:917b0f712cb74d9d94071778c0d675c75ef010a94b838da491a68f5d30a18ab7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BHH434",
+      "items": [
+        "sha256:0721be906276b9db2d4e85848392f09c7ddcb0b05139cc1a988f31d9c5e1f692",
+        "sha256:0dece9c1337b32a4b2bc9efddc04f4e6de86c52d4180fd22c7994a8d2d840388",
+        "sha256:191ee3426a1476338eb82e537126671049f3b3e9ff9a7d49e3b0fb2b3b23a829",
+        "sha256:5f3917721d1158e7ed7a80ab4347e3f59fe41ab957e5f64eabddc8524777142e",
+        "sha256:611213194baaac31cb47a23d165a67604da899258bca3909381b1e4ffdac666c",
+        "sha256:676f21bec6e8353f5032ccd30a34562802804e8f6b4a4512cf80cf7aa5425348",
+        "sha256:845c2d0fe34b3f372e8b5a434d5d8d3581451a0575934d7c826d878e43b655f2",
+        "sha256:9bee72606abb09214153982fb5a05e00d7e4287d6d3db2fc4cd566979b7561b5",
+        "sha256:a72ce0f66c90bc54415ae1980103515f31ab1505f0b9986e385686789c5c9c1f",
+        "sha256:a9aa467d834204680af436bdef95be5d583ea8ee8a5012141adbdb9eff03ae54",
+        "sha256:adfa25ebb52ff2bfdaa1710df4544d3f776a0b87b9ca465792cdc71b96b033d8",
+        "sha256:ba38426679dc4f76a6dce3f531ddb5288a91d329f3657b9cdbc55a314a6ea31a"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/models/structural/agent.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "acffd657fcf15d5eda272edc19945b210e3eda79",
+          "path": "mcp/src/agents_remember/models/structural/agent.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/structural/agent.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C13GNC",
+      "items": [
+        "sha256:a6ece78cde9351de6940fa708360fd700aa3b114e20d5da25ec7a7fae27bbbb6"
+      ],
+      "reason": "Test-fixture sweep payload adjustment in tool_entry_point_sweep_support.py supplying a valid UUID agent_id for retire_child sweep; carries no standalone invariant.",
+      "subject": "hunk:sha256:a6ece78cde9351de6940fa708360fd700aa3b114e20d5da25ec7a7fae27bbbb6"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3bc489d314743351f3350d30871fb9ca2bea066c",
+            "content": "sha256:6131cc9662d81e6245397385389bb90322928c3b4bc014915aaae55e99bfa1d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "2a41f5a91d7bea2adc250c7ca8b73e300a91325a",
+            "content": "sha256:f148fcbbb9b66ff5390970787dd6b2a93568c7c44fd0462722510773ae6d0dd8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-0E8J78"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-C206XC",
+      "items": [
+        "sha256:6ee290f8ad2daf1221c51e8c92b4ef89977217b3e7f674fa779cbf7dd219b957"
+      ],
+      "reason": "Reviewed INV-HN54VG against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-0E8J78) at C.",
+      "revision": 1,
+      "subject": "INV-HN54VG"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-C53XZF",
+      "items": [],
+      "reason": "Per Manager GO ruling (20261126T011611Z) and D167/D617/D560 dependent honesty: docs/reference/settings-json.md is not a changed_document in L44 and lines 1098-1099 carry pre-existing non-L44 drift; leaving DPD-W0T9V9 untouched at HEAD rev 17.",
+      "revision": 17,
+      "subject": "DPD-W0T9V9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CC05NA",
+      "items": [
+        "sha256:1b70493a36fecb2061560f801f34861da0d6aa622a13cb1926df40a64eb65836"
+      ],
+      "reason": "Reviewed test card against L44 W3 F05 fixture repair (supplying receipt={}); card prose remains accurate with only mechanical reference refresh.",
+      "sources": [
+        {
+          "blob": "20188aae5eb7ce82590fed2caa03f0f6920fc3c2",
+          "path": "mcp/tests/test_provider_limit_hold.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_provider_limit_hold.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DMSTHA",
+      "items": [
+        "sha256:9e8629633870610e25a080bf951088fd3ca2952fc59f898657af3649d8fd8622"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_launch_receipts.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+          "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_receipts.py"
+    },
+    {
+      "considered": [
+        "FAM-2BRZW7",
+        "FAM-7AEA19",
+        "FAM-CR0HHJ",
+        "FAM-GDXSJG",
+        "FAM-N36SWD",
+        "FAM-TE2628",
+        "FAM-VNK792"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-EBSJK0",
+      "items": [],
+      "reason": "Examined all seven reached retirement, liveness, launch, and instruction families; INV-6WJ1WD (role instruction retirement-scope and finished-Investigator interruption wording) stands as a self-contained L44 invariant without altering any existing family's independent joint guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-6WJ1WD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "13a9b3376ae9479d82437a1a80015e483137b2e4",
+            "content": "sha256:c98f879340a6a477969e293907205445a7ab814cd32a0071e35c2fbe3ffe5592",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+          },
+          "before": {
+            "blob": "884be3932be6c36301d2afd226c15500538d2c46",
+            "content": "sha256:78916eaa8221a6d488a649c136a140981d73d689bd5a11d962230aa37a2d7e80",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "mcp/src/agents_remember/cli/role_message_delivery.py"
+          },
+          "id": "RLZ-XV9NR8"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ET2Z6D",
+      "items": [
+        "sha256:2f6eac225ba42fa1368d2bb3978e098c9f34dbfa99f6d7e57e18077f9b975d0e"
+      ],
+      "reason": "Reviewed INV-82ZTHK against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-XV9NR8) at C.",
+      "revision": 3,
+      "subject": "INV-82ZTHK"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-F03C36",
+      "items": [
+        "sha256:2fc5962169e5c3024422867495bdff0b3a6306bbd100a634ab2e0771036904c8"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/role_launch_liveness.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+          "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_liveness.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F51JKH",
+      "items": [
+        "sha256:90e9422d7989cef215dff56c321af7bf8ebf8d9a53e07f0ea465acd82c9ff358"
+      ],
+      "reason": "Import statement in role_launch_archive.py bringing in Retirement and settle_retirement from role_retirement_receipt; carries no standalone invariant.",
+      "subject": "hunk:sha256:90e9422d7989cef215dff56c321af7bf8ebf8d9a53e07f0ea465acd82c9ff358"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8XCZY1",
+          "revision": 1
+        },
+        {
+          "id": "INV-N70HF0",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0DCW1",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z1HWDF",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-FRCJT7",
+      "items": [
+        "sha256:cac40c80dac54365843110e7c22e62cfbfc98a92267e0f19d0e0332f67450863"
+      ],
+      "reason": "Examined all 4 members of FAM-2BRZW7 (INV-8XCZY1, INV-N70HF0, INV-Z0DCW1, INV-Z1HWDF) at current candidate revisions on code tree ede5d128: the family's joint guarantee and routes remain true and unchanged under L44.",
+      "revision": 1,
+      "subject": "FAM-2BRZW7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
+            "content": "sha256:8bd0054d219a37165d511a1f83b923981c6fa52feace648a497f57cd97d81692",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageTests"
+            },
+            "path": "mcp/tests/test_paseo_role_messages.py"
+          },
+          "before": {
+            "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+            "content": "sha256:271bbbbe1a0fe86ab57dc371d0b9e18527a151c2c4d355c76f911e15419ea5cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageTests"
+            },
+            "path": "mcp/tests/test_paseo_role_messages.py"
+          },
+          "id": "PRF-ZXXEXP"
+        },
+        {
+          "after": {
+            "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
+            "content": "sha256:8bd0054d219a37165d511a1f83b923981c6fa52feace648a497f57cd97d81692",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageTests"
+            },
+            "path": "mcp/tests/test_paseo_role_messages.py"
+          },
+          "before": {
+            "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+            "content": "sha256:271bbbbe1a0fe86ab57dc371d0b9e18527a151c2c4d355c76f911e15419ea5cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageTests"
+            },
+            "path": "mcp/tests/test_paseo_role_messages.py"
+          },
+          "id": "RLZ-QSMYXH"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-G29RW5",
+      "items": [
+        "sha256:d9aba78317d65d7fb8099319d9a31b8d3503c8eaec25e0d7c707f4739d81c404"
+      ],
+      "reason": "Reviewed INV-3PV53M against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (PRF-ZXXEXP, RLZ-QSMYXH) at C.",
+      "revision": 1,
+      "subject": "INV-3PV53M"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G9M6W9",
+      "items": [
+        "sha256:7d72c8b088f87ae0c9c1124fc4c6248664a3ae94c74b53f32134e895f02fb711"
+      ],
+      "reason": "Helper predicate receipt_is_explicitly_retired in role_held_store.py distinguishing product-owned retirement from host discovery; supports rule 4 settlement.",
+      "subject": "hunk:sha256:7d72c8b088f87ae0c9c1124fc4c6248664a3ae94c74b53f32134e895f02fb711"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GG4AVZ",
+      "items": [
+        "sha256:fdd6f0e69023769c93e6b078b757c3835a71f492b352624896f9a6033888a7dc"
+      ],
+      "reason": "Key-tuple selection in role_held_store.py avoiding overwriting status/detail on a rejected prepared start; local implementation detail of receipt merge.",
+      "subject": "hunk:sha256:fdd6f0e69023769c93e6b078b757c3835a71f492b352624896f9a6033888a7dc"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "39f6d89796e397654995820c7fd5f3e8fd12c4b6",
+            "content": "sha256:bb4d5fdb0e6276216af40da68575df3df3d80e36dc12d6ac6eb1a8a2506e31e9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
+          },
+          "before": {
+            "blob": "29ac4d5e75a9e54475ec617732ab37e9e4fa8983",
+            "content": "sha256:4840210cc9347c841af2b4c440ce6decbf387a0bdb002881328e896e4c959c48",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
+          },
+          "id": "RLZ-0F4MRE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-GNBFMS",
+      "items": [
+        "sha256:1aed438f5e44598671c0421a6f1a2bc64f24dc9b78ecdc3c0b884b81fa1697be"
+      ],
+      "reason": "Reviewed INV-06MGX9 against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-0F4MRE) at C.",
+      "revision": 1,
+      "subject": "INV-06MGX9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GW9HYV",
+      "items": [
+        "sha256:078fbfd401de19b6e8b99e4fcba20acadc086ef4cfa4e46e1fc954e82e42bab3"
+      ],
+      "reason": "Comment-only update in paseo_bridge.mjs documenting paseo_archive_refused return code; behavior is already governed by archiveAgent invariants.",
+      "subject": "hunk:sha256:078fbfd401de19b6e8b99e4fcba20acadc086ef4cfa4e46e1fc954e82e42bab3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GZ9YT2",
+      "items": [
+        "sha256:94ce51584c64c766b3d6eee50404d08e138765b308ae00a4888b2edbd295beec"
+      ],
+      "reason": "Reviewed card against L44 changes (extraction of _live_agents to role_message_delivery.py, re-imported here); card prose remains accurate and sidecar received only mechanical citation_fix refresh.",
+      "sources": [
+        {
+          "blob": "71deb153ab6a3e0cfbd99be6c23ec127f12d2bf2",
+          "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_role_recipients.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f3af24af7475972287d1f7b3f906b9f2772d4f15",
+            "content": "sha256:2d50731c884d1f7caffc7826df214a33bc63a1b8c2c7c0bfb36129ff01d2c24c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "before": {
+            "blob": "775f056813e59e9f1426a560af777dc2be162c85",
+            "content": "sha256:c142da074d1cd549f0fd3725e3a3ef1412bfed722d3d6b3598b78012173a3236",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "id": "RLZ-BNWWSD"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-HB548D",
+      "items": [
+        "sha256:01d275e496721d14f99e369787038da7fe22d928b109fbaed22e9644defb6272"
+      ],
+      "reason": "Reviewed INV-CQCPAD against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-BNWWSD) at C.",
+      "revision": 3,
+      "subject": "INV-CQCPAD"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HH4DP9",
+      "items": [
+        "sha256:bb96dd2068f597bcde0678693ca16a11458608e09cbb984a656e13534a0c8d53"
+      ],
+      "reason": "Reviewed test-support card against L44 retire_child UUID sweep payload update; card prose remains accurate with only mechanical reference refresh.",
+      "sources": [
+        {
+          "blob": "34e909380c5e5a2ce83ff358c965a55820146db5",
+          "path": "mcp/tests/tool_entry_point_sweep_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/tool_entry_point_sweep_support.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4BT846",
+          "revision": 1
+        },
+        {
+          "id": "INV-5VK3JP",
+          "revision": 1
+        },
+        {
+          "id": "INV-GD0F05",
+          "revision": 1
+        },
+        {
+          "id": "INV-T3JTQ2",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZB0WFP",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-HPJY67",
+      "items": [
+        "sha256:0189cedad88b2c1bbc1cbc31f2fef9eff6c788844b90ad7203dd1182ec8f3a81"
+      ],
+      "reason": "Examined all 5 members of FAM-M36XBW (INV-T3JTQ2, INV-4BT846, INV-5VK3JP, INV-GD0F05, INV-ZB0WFP) at current candidate revisions on code tree ede5d128: the family's joint guarantee and routes remain true and unchanged under L44.",
+      "revision": 1,
+      "subject": "FAM-M36XBW"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HT11BV",
+      "items": [
+        "sha256:928c614b418c1c86181cfcb8d5ecea4d5b3209bea906f5e1c9696703af1ea36e"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/paseo_role_tools.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+          "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_role_tools.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "38592a87d5d5ca8e3903d6e60aacdbda61464643",
+            "content": "sha256:a9ec65263b3ec910f4e6f3f64771d90013ea34ae9b9042e8cc992ac2e8c8ae29",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_enumerated_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_receipt_files.py"
+          },
+          "before": {
+            "blob": "d7b45112bae598c1364e045d6c0a11d384b90c95",
+            "content": "sha256:a9ec65263b3ec910f4e6f3f64771d90013ea34ae9b9042e8cc992ac2e8c8ae29",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_enumerated_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-F5NPAE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-HVFKCE",
+      "items": [
+        "sha256:07f7cd8ce5f2907efb50b5cc8fa711e3cdd6bfdc97a97076de91ec185b6e82e8"
+      ],
+      "reason": "L44 extracted read_enumerated_receipt from role_launch_receipts.py into role_receipt_files.py with identical enumerated-receipt handling; moved RLZ-F5NPAE to role_receipt_files.py::read_enumerated_receipt.",
+      "revision": 1,
+      "subject": "INV-W9F1MJ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f3af24af7475972287d1f7b3f906b9f2772d4f15",
+            "content": "sha256:2d50731c884d1f7caffc7826df214a33bc63a1b8c2c7c0bfb36129ff01d2c24c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "before": {
+            "blob": "775f056813e59e9f1426a560af777dc2be162c85",
+            "content": "sha256:c142da074d1cd549f0fd3725e3a3ef1412bfed722d3d6b3598b78012173a3236",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "id": "RLZ-EK96T9"
+        },
+        {
+          "after": {
+            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+            "content": "sha256:52019c6d8f693081fa51c2184d646b290d1d6b129626b2e4bc6ce41f1410eb2f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
+            "content": "sha256:f5e83f13d0e4c3c07041b58d2d7c98a926d2a2d9ba3001cca4147c40eabcb3d6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-ZXH055"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-J4DFH1",
+      "items": [
+        "sha256:47c5762d805bb63e616e168a14411458381d713607f609b44938b01e43dadd5a"
+      ],
+      "reason": "Reviewed INV-7VZRZW against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-EK96T9, RLZ-ZXH055) at C.",
+      "revision": 1,
+      "subject": "INV-7VZRZW"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J83HSX",
+      "items": [
+        "sha256:ff8d569c96485fc8fbfbcd4c9911c0aaa2387f3c1e57bf6fac8031dc707aa352"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/mcp/registration/seat_retirement.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "39f6d89796e397654995820c7fd5f3e8fd12c4b6",
+          "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/seat_retirement.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JBBXP9",
+      "items": [
+        "sha256:045f7fa2b3fa5dc5a1a9607ea5fdc3a9a88da2387eb8d04b5d8d6445e80dcbc2"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/cli/paseo_launch.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "ca833123cd3e62b5a60b14eaeb78fbb6b296c2f0",
+          "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_launch.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-JYP1NJ",
+      "items": [
+        "sha256:7606add7d40fa381cde983c906f118bcab32e3489e1a6c8287c087f8f9874e0f"
+      ],
+      "reason": "Re-anchored open weakness WKN-6RT10Q on mcp/src/agents_remember/cli/paseo_role_tools.py at synced L44 code tree ede5d128; the underlying weakness remains open and unchanged by L44.",
+      "revision": 3,
+      "subject": "WKN-6RT10Q"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JYZ91P",
+      "items": [
+        "sha256:873ccb476dcb1fbc90f87cd5a2d7ad5423a53d46ea5d5d5f49d71b243f2ad720"
+      ],
+      "reason": "Reviewed overview against L44 seat_retirement.py changes; overview prose remains accurate with no Markdown edit required.",
+      "sources": [
+        {
+          "blob": "39f6d89796e397654995820c7fd5f3e8fd12c4b6",
+          "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-GV3NYM",
+          "revision": 1
+        },
+        {
+          "id": "INV-HJ790A",
+          "revision": 1
+        },
+        {
+          "id": "INV-J8FGWF",
+          "revision": 1
+        },
+        {
+          "id": "INV-M7BT2R",
+          "revision": 1
+        },
+        {
+          "id": "INV-R850AZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-XX08QF",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-K4DKXQ",
+      "items": [
+        "sha256:cce0576bc7921240af07639c3d816efcc8284e6a451be0028cf08c2c09b06f95"
+      ],
+      "reason": "Examined all 6 members of FAM-TE2628 (INV-R850AZ, INV-HJ790A, INV-M7BT2R, INV-J8FGWF, INV-XX08QF, INV-GV3NYM) at current candidate revisions on code tree ede5d128: the family's joint guarantee and routes remain true and unchanged under L44.",
+      "revision": 1,
+      "subject": "FAM-TE2628"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 4
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-KA01M5",
+      "items": [
+        "sha256:b4dfa7ecf96d730f9a2f2aa0cb139e4e33f371034d0dc889e118b27ffb8f54e9"
+      ],
+      "reason": "Examined all 2 members of FAM-GDXSJG (INV-63Z0MN, INV-NNQR91) at current candidate revisions on code tree ede5d128: the family's joint guarantee and routes remain true and unchanged under L44.",
+      "revision": 8,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MPN4AQ",
+      "items": [
+        "sha256:eaa84475644f8464896e95438ebbb086dc909d79ac5613d76ae4928804efc301"
+      ],
+      "reason": "Updated onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "fd9304df53fb77cd6a7559eee7065b93f3659c76",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MQT7QQ",
+      "items": [
+        "sha256:d2f9f5b8437e5934bda1c8ae58a7c4a21f9559fb55886da69e291bd0bf5e1495",
+        "sha256:d80fe1bb1268f0fccdb27f61037c9e850864a8c57ffa8c9c35b0b6730252ebe4"
+      ],
+      "reason": "Updated onboarding:mcp/tests/tool_refusal_census_support.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "ba34b5c4115d5fcbdaf0244d930beee6cd800859",
+          "path": "mcp/tests/tool_refusal_census_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/tool_refusal_census_support.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NB5J82",
+      "items": [
+        "sha256:6e9eee1b444571670acd4a1d3ef6cd2a935b6c492d560954df91c95e7bcd28b0"
+      ],
+      "reason": "Reviewed structural overview against L44 agent.py RetirementIntent/retiredBy additions; overview prose remains accurate and agent.py card carries the detailed update.",
+      "sources": [
+        {
+          "blob": "acffd657fcf15d5eda272edc19945b210e3eda79",
+          "path": "mcp/src/agents_remember/models/structural/agent.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/structural/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NH9T6N",
+      "items": [
+        "sha256:c82b4dc0e1150ed003753538a3b106adffae884c9c218aa01b6a36bf1e1ff244"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/application/overview Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "99a24f57b61e8a3d8b8bee85cb5dddf0cf58d8ee",
+          "path": "mcp/src/agents_remember/application/seat_retirement_scope.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b303d8c0e8e82693b482b31c72bae63fd379bd71",
+            "content": "sha256:952d5e8b06ad3f5c89d83c07111787f3737a0939a5dcd9b0b4ce0fe0dcac8b4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "archiveAgent"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": {
+            "blob": "07ae82d885e3cd87654354b19a373a5a9267b9db",
+            "content": "sha256:1eb47e79656d46d170216bb1f9900e74a177c1225bbc89c59edaf3309a15c509",
+            "locator": {
+              "kind": "symbol",
+              "name": "archiveAgent"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-VXDQ6B"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-NKB9PM",
+      "items": [
+        "sha256:58d03e40d02ed44eb1fefb32ec02862528ef1916b957598b7a2ba0b7fe77c3d0"
+      ],
+      "reason": "Reviewed INV-PRP52X against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-VXDQ6B) at C.",
+      "revision": 1,
+      "subject": "INV-PRP52X"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NXQ8GW",
+      "items": [
+        "sha256:26ba1cb1ec921ec39cc35b1d1aedc3cfce2affa3f221143ab9ce2de973799395",
+        "sha256:918ccc4f8176249d2001c08cbaf07082c82ea173e0fad181165ab791dc520f9a",
+        "sha256:9bfa2e48ee2d701b13e8c5f0c472d4b72576acbe05768af787849f261615cc11"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_paseo_bridge_agents.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "f71ac409630934455f17aaa78656bea352b62bd9",
+          "path": "mcp/tests/test_paseo_bridge_agents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_bridge_agents.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NZFX8W",
+      "items": [
+        "sha256:03259c17e2932ab0413c193fe6e4aa470c78213fe6d23eb4737fdf2906d85218"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/mcp/tools/overview Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "48881a85c6a221bc13f7b46c93aea78a126f0c3d",
+          "path": "mcp/src/agents_remember/mcp/tools/role_agents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/tools/overview"
+    },
+    {
+      "considered": [
+        "FAM-2BRZW7",
+        "FAM-7AEA19",
+        "FAM-CR0HHJ",
+        "FAM-GDXSJG",
+        "FAM-N36SWD",
+        "FAM-TE2628",
+        "FAM-VNK792"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-P09SPP",
+      "items": [],
+      "reason": "Examined all seven reached retirement, liveness, launch, and instruction families; INV-QDYC5F (host-refresh single-close and pending-retirement deferral) stands as a self-contained L44 invariant without altering any existing family's independent joint guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-QDYC5F"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7SARPM",
+          "revision": 1
+        },
+        {
+          "id": "INV-7XBR6C",
+          "revision": 2
+        },
+        {
+          "id": "INV-85VB61",
+          "revision": 2
+        },
+        {
+          "id": "INV-8PK7FQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-CQCPAD",
+          "revision": 3
+        },
+        {
+          "id": "INV-MM4B51",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-P35YX7",
+      "items": [
+        "sha256:7f7c339f7d8aaced5613bc5b1c63c382df8788f672a9b0cf96a29bf6d2e6781c"
+      ],
+      "reason": "Examined all 6 members of FAM-CR0HHJ (INV-7SARPM, INV-7XBR6C, INV-85VB61, INV-8PK7FQ, INV-CQCPAD, INV-MM4B51) at current candidate revisions on code tree ede5d128: the family's joint guarantee and routes remain true and unchanged under L44.",
+      "revision": 4,
+      "subject": "FAM-CR0HHJ"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-P8071F",
+      "items": [],
+      "reason": "Audited docs/getting-started.md line by line against synced L44 code tree ede5d128 (base 150b9778): onboarding steps and runtime setup remain accurate; no L44 contradiction.",
+      "revision": 15,
+      "subject": "DPD-MQCJK4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PHXCTB",
+      "items": [
+        "sha256:0442bc66664c03735bf0fd7de5c0479240250241f0f296ee74da6170c2f407a7"
+      ],
+      "reason": "Helper _record_predecessor_debt in role_launch_outcome.py tracking or clearing pendingArchiveAgentId based on outcome.predecessor_settled; supports rule 3.",
+      "subject": "hunk:sha256:0442bc66664c03735bf0fd7de5c0479240250241f0f296ee74da6170c2f407a7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "content": "sha256:1d44ab80429deb2b5efbc08cc39b39549d6e4e7a3acfd8ba92f161432335b2ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_host_archive"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "before": {
+            "blob": "d32955efa5176e04643993e613a83bece41b81d2",
+            "content": "sha256:728c34dd23efbe1b793e5a7d312810e54461cb5720cb1dcda45e0ef786a48870",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_reading"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "id": "RLZ-H2H238"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-PS0ECM",
+      "items": [
+        "sha256:ccadde458ac23af03fc0d5aaecfda0c6c598dc375c25b7ed3344e1f78d330704"
+      ],
+      "reason": "L44 refactored _publish_reading into _observe_host_archive inside role_launch_liveness.py while preserving liveness-observation guarantees; moved RLZ-H2H238 to _observe_host_archive.",
+      "revision": 1,
+      "subject": "INV-M7BT2R"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "18addab0cbd54ad6682f53a5782eea6cb6f0d26e",
+            "content": "sha256:ec64f336cb0127273bd6db45bc49ae5198669d9abb6f56be99e0c2b0055182a1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "9124be375703846117abf9f0f4fee05c1044befd",
+            "content": "sha256:1764da55dc7d25c854bf9869ec0c028d5235b79e51a4c80ef9f7c1ea8c4b79a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-4AJ94X"
+        },
+        {
+          "after": {
+            "blob": "20188aae5eb7ce82590fed2caa03f0f6920fc3c2",
+            "content": "sha256:fb3c96ef40c353e77cce6d50aad456ffaf38930cbf15987b78dfd29fce4bf165",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_provider_limit_hold.py"
+          },
+          "before": {
+            "blob": "e0d30a265d068f0d71659b99c1f9845a3f5c0f5d",
+            "content": "sha256:ac5bae9424b8cd24a2d0a91917a405268ac7ecffde723a2477e300f240e1d853",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_provider_limit_hold.py"
+          },
+          "id": "RLZ-G2ZAMP"
+        },
+        {
+          "after": {
+            "blob": "d56e7eb6befb9b9bd4a10c94369794817a1a0ed4",
+            "content": "sha256:dbca8f7330d34633008b31e48c6760da5c6e77ae6e7792e9bf2d886f7aa759f5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "5ec887831fa860b5f4478321f94a6966ae51159c",
+            "content": "sha256:fa2e21ee4f5a648365c96f99bf7b45fec9e8e3eb6dc086daaab1c0b4a6375dfe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-QDS643",
+      "items": [
+        "sha256:457420da319163afd45884eec6e81234414eb9bf2475277e44a6a023548e2aa3"
+      ],
+      "reason": "Reviewed INV-1ZKP4R against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-4AJ94X, RLZ-G2ZAMP, RLZ-GEMVNE) at C.",
+      "revision": 7,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fcabd7c6218e76a2c1bdcac995b240c7a2930254",
+            "content": "sha256:ee9abcea2f0ddddf34af145574f256e722a27c8e349f26675283902c63f3f69c",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_retired_start"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "before": {
+            "blob": "c48ca229b9323e6efc93bc2cbf6c69accff4d964",
+            "content": "sha256:285d6d8e162be63efcc05481fed3242e24f05e6c8e83d5f39f8d0854bf99f735",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_retired_start"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_archive.py"
+          },
+          "id": "RLZ-DBTE97"
+        },
+        {
+          "after": {
+            "blob": "ca833123cd3e62b5a60b14eaeb78fbb6b296c2f0",
+            "content": "sha256:b0244874844f1af12745f858c0a0087855b1fbfdb2ca708ab5ffd6fe95252ac9",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "0fc638828611b97d33b29b06297cc62431902dc2",
+            "content": "sha256:70a382c2b54b0125df1d500da21f204ba24890de8b652dcacc210f71514eddcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-PMMCQ0"
+        },
+        {
+          "after": {
+            "blob": "6d75f4dbf7adb80a38daafefd923d87b52bb57fd",
+            "content": "sha256:9d15387e2c9609e327759f36c60898b2a355c53ebefe9b259f0f4e8913a001da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "d7b45112bae598c1364e045d6c0a11d384b90c95",
+            "content": "sha256:632cbffac4dcd2cb8a116554c4f0b8090da94560fb9f076ab63a92bdc7dd33c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-S018M9"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-R7W0X1",
+      "items": [
+        "sha256:4bd5593248764faa2c975f0cdde824e668d08f8d41fd1d077f32ba1b6bd469ee"
+      ],
+      "reason": "Reviewed INV-VPXD65 against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-DBTE97, RLZ-PMMCQ0, RLZ-S018M9) at C.",
+      "revision": 1,
+      "subject": "INV-VPXD65"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "39f6d89796e397654995820c7fd5f3e8fd12c4b6",
+            "content": "sha256:74a02fb1073233327d9fe3394068a1f52b638eb057822c49590646fd4d6d92e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_seat_retirement_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
+          },
+          "before": {
+            "blob": "29ac4d5e75a9e54475ec617732ab37e9e4fa8983",
+            "content": "sha256:475620457edee297f7dbb79428b6537cc2f7e773fffd18b8f44b18602fa8db81",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_seat_retirement_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
+          },
+          "id": "RLZ-3DVWXE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-R8S0TX",
+      "items": [
+        "sha256:f7fdcd25e14b9ac048f311acc64593aa3d3fe5156b5883edbb5a882e05769a03"
+      ],
+      "reason": "Reviewed INV-990KQM against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-3DVWXE) at C.",
+      "revision": 1,
+      "subject": "INV-990KQM"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-RKMESV",
+      "items": [
+        "sha256:ba4b300764fd958e8c92fd544e682969b6f8bcef8b46e4319aa3c539b76ef970"
+      ],
+      "reason": "Verified docs/roles.md on synced L44 code tree ede5d128 (base 150b9778) after Worker 1796d73e fixed line 28 alongside lines 419-424: role responsibilities and retirement scope for Architect, Orchestrator, Manager, and finished Investigators match live code and skills.",
+      "revision": 12,
+      "subject": "DPD-B540GW"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RNR2SJ",
+      "items": [
+        "sha256:b03ad3fead9cb586c79468e4d9c8406eb1678521c15ce8e4be5493a97ff500f4"
+      ],
+      "reason": "Call site in role_launch_archive.py invoking ArchiveAttempt._record_retired_target after confirmed archival; obligation is owned by rule 4 on _record_retired_target.",
+      "subject": "hunk:sha256:b03ad3fead9cb586c79468e4d9c8406eb1678521c15ce8e4be5493a97ff500f4"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7FMDAS",
+          "revision": 2
+        },
+        {
+          "id": "INV-82ZTHK",
+          "revision": 3
+        },
+        {
+          "id": "INV-8AMSGV",
+          "revision": 4
+        },
+        {
+          "id": "INV-9S49CW",
+          "revision": 2
+        },
+        {
+          "id": "INV-HGSFJ8",
+          "revision": 5
+        }
+      ],
+      "id": "ROW-RV6G7J",
+      "items": [
+        "sha256:c8b425f5f869451cbb842e3de90cdab10519284406597a32c61639ce25e9c76b"
+      ],
+      "reason": "Examined all 5 members of FAM-7AEA19 (INV-8AMSGV, INV-9S49CW, INV-7FMDAS, INV-82ZTHK, INV-HGSFJ8) at current candidate revisions on code tree ede5d128: the family's joint guarantee and routes remain true and unchanged under L44.",
+      "revision": 2,
+      "subject": "FAM-7AEA19"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RYM6MP",
+      "items": [
+        "sha256:d401279f846e36863a766e2b17a375ba19dae9cd98542a35930bacdf86abd785"
+      ],
+      "reason": "Call site in role_launch_archive.py invoking _record_retired_target on archived/gone outcome; governed by rule 4 on _record_retired_target.",
+      "subject": "hunk:sha256:d401279f846e36863a766e2b17a375ba19dae9cd98542a35930bacdf86abd785"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-SCK2NX",
+      "items": [],
+      "reason": "Audited docs/install/README.md line by line against synced L44 code tree ede5d128 (base 150b9778): installer index and harness install overview remain accurate; no L44 contradiction.",
+      "revision": 9,
+      "subject": "DPD-XV7QBE"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+            "content": "sha256:52019c6d8f693081fa51c2184d646b290d1d6b129626b2e4bc6ce41f1410eb2f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
+            "content": "sha256:f5e83f13d0e4c3c07041b58d2d7c98a926d2a2d9ba3001cca4147c40eabcb3d6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-FKZS6D"
+        },
+        {
+          "after": {
+            "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
+            "content": "sha256:690e2aabfa5461ed80f05be7775f2e060aa56f93f7ec3bff775b52074f375ea6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "before": {
+            "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+            "content": "sha256:5258a0a3b9d50a4e7b5fba3bdafde59bd139b5959876b4b3c6b2d81e3d50e7a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "id": "RLZ-RXRS9D"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-SCXKV2",
+      "items": [
+        "sha256:a8361743109ffaed3e592d8f243992ede9127512da7d70a802597e8bf041d70f"
+      ],
+      "reason": "Reviewed INV-GWA6VR against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-FKZS6D, RLZ-RXRS9D) at C.",
+      "revision": 1,
+      "subject": "INV-GWA6VR"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SK43T1",
+      "items": [
+        "sha256:ffc35aa9bedacf6bf8de950910092cf71f6e90e68f7bcff670a92c6467619a7b"
+      ],
+      "reason": "Updated onboarding:skills/l-01-agent-lifecycles/core/digest-map.json Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "3bc489d314743351f3350d30871fb9ca2bea066c",
+          "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/core/digest-map.json"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-SMPQHB",
+      "items": [],
+      "reason": "Audited docs/reference/role-capsules.md line by line against synced L44 code tree ede5d128 (base 150b9778): capsule structure, budgets, and compiler references remain accurate; no L44 contradiction.",
+      "revision": 7,
+      "subject": "DPD-QFGFS0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "978921d19356c6717d6f89e06a9dcf4b674869e9",
+            "content": "sha256:4d609813914fdfa84a594e30d39df37ae2ab2a76a117c6465347018347e10808",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_history_retry_and_other_selections_preserve_every_artifact"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "before": {
+            "blob": "f5ccc6b04e328cb39647a45c778719efb3303067",
+            "content": "sha256:d68a2077c263ec62a9a28e3eedeba77b6d154acaa4bea2409c9dab2cb3d83dc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_history_retry_and_other_selections_preserve_every_artifact"
+            },
+            "path": "mcp/tests/test_leaf_agent_archive.py"
+          },
+          "id": "PRF-JBVHYN"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-T46MZN",
+      "items": [
+        "sha256:14e6ec13f6880dcc575196a8ce576750a93eb3b60d56d2bf917802451e6585e0"
+      ],
+      "reason": "Reviewed INV-W41C85 against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (PRF-JBVHYN) at C.",
+      "revision": 2,
+      "subject": "INV-W41C85"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
+            "content": "sha256:30f0a2e73c76e75d2bc1b2f4fe9f043f3c2fbeb5715173da412a1a61e859fd64",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageTests.test_a_leaf_seat_with_two_live_agents_refuses_by_role"
+            },
+            "path": "mcp/tests/test_paseo_role_messages.py"
+          },
+          "before": {
+            "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+            "content": "sha256:ccd3e84f8514500c45a85b2ffb004da1b76737072252d749a7548586721597ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageTests.test_a_leaf_seat_with_two_live_agents_refuses_by_role"
+            },
+            "path": "mcp/tests/test_paseo_role_messages.py"
+          },
+          "id": "PRF-3VCEZ3"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-T7KYGW",
+      "items": [
+        "sha256:6167a0a711c5e390f35638622ab1db640502b5dd286dc9c3270e8b0e174ba4dd"
+      ],
+      "reason": "Reviewed INV-RTQCXN against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (PRF-3VCEZ3) at C.",
+      "revision": 1,
+      "subject": "INV-RTQCXN"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "75b87463d56735c381998eb394124669f4a58e3c",
+            "content": "sha256:a311dade3beff7943b46de7c325c17cf7d55cb18c411a70dbdb8471ada2391ee",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "before": {
+            "blob": "335d4461282e2836f4af863df677d07e72ff461a",
+            "content": "sha256:351dc0d7c23dafa674a88c17438f4453873ee005d860406eb501db373f0d7ed3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-7YMNE5"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-V27GSJ",
+      "items": [
+        "sha256:11e9cb3bca8af919ad281c42d7e071ba86bff48a5a73dc1fd2f39a709e8cfe03"
+      ],
+      "reason": "Reviewed INV-6ZZXV3 against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-7YMNE5) at C.",
+      "revision": 1,
+      "subject": "INV-6ZZXV3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c2c650ce0ca1c3aa0e2e4f8acc52a33e8edc9ec8",
+            "content": "sha256:852a3bb453ea0ab6ffe4546ff08422e621584f25159c96e3ccd305e4cdda3d67",
+            "locator": {
+              "kind": "symbol",
+              "name": "finish_replacing_predecessor"
+            },
+            "path": "mcp/src/agents_remember/cli/role_retirement_receipt.py"
+          },
+          "before": {
+            "blob": "d7b45112bae598c1364e045d6c0a11d384b90c95",
+            "content": "sha256:f0d882fa36fd738c83a36932b1de094cad0e96e69832602a77b24138a1c689c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settle_predecessor_reports"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-0KXGKD"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-V9S3M8",
+      "items": [
+        "sha256:cbc3370ad95d370a10915aacbff7bbb84325aed4c6786a01a551eb0b6f990a51"
+      ],
+      "reason": "L44 moved predecessor-report settlement from role_launch_receipts.py::_settle_predecessor_reports into role_retirement_receipt.py::finish_replacing_predecessor while preserving its invariant; moved RLZ-0KXGKD.",
+      "revision": 1,
+      "subject": "INV-Z0DCW1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VESW8V",
+      "items": [
+        "sha256:b24e96fdac2faf0c436e15afcd33e01fc7c267656182e39105067cd67354cb58"
+      ],
+      "reason": "Updated onboarding:mcp/tests/tool_entry_point_world.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "387507cf826bf8255675d217a08ca53916808aed",
+          "path": "mcp/tests/tool_entry_point_world.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/tool_entry_point_world.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VMD9QC",
+      "items": [
+        "sha256:937babf68f2b17a65e779fbb0fef3a00a094fa4ea713846fc9d893275d4bf357",
+        "sha256:e78c4bf6d40bd2d511f37ce72fdbcb2104299d171eb6b42c70339fde3e5681ac"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_paseo_launch_repeat.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "337ed34917a2c7ccf781661eaad5d7831d2a8d1a",
+          "path": "mcp/tests/test_paseo_launch_repeat.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_launch_repeat.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-W3STG1",
+      "items": [
+        "sha256:d37f449d3e13266489a4671e36e39132741a78d5d6e4ff680f79521dc54f2318"
+      ],
+      "reason": "Re-anchored open weakness WKN-GY12WH on mcp/src/agents_remember/cli/paseo_role_tools.py at synced L44 code tree ede5d128; the underlying weakness remains open and unchanged by L44.",
+      "revision": 3,
+      "subject": "WKN-GY12WH"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2KVT5S",
+          "revision": 1
+        },
+        {
+          "id": "INV-6ZZXV3",
+          "revision": 1
+        },
+        {
+          "id": "INV-795NRN",
+          "revision": 1
+        },
+        {
+          "id": "INV-JDZG62",
+          "revision": 1
+        },
+        {
+          "id": "INV-KM9V3K",
+          "revision": 1
+        },
+        {
+          "id": "INV-XN49FH",
+          "revision": 1
+        },
+        {
+          "id": "INV-YEQENJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-W4X9NP",
+      "items": [
+        "sha256:9e31ad4cd104a0f92f169835b4f5d24d392888ff2c148b4c46f277e823b6a1ae"
+      ],
+      "reason": "Examined all 7 members of FAM-FD58VB (INV-795NRN, INV-YEQENJ, INV-JDZG62, INV-2KVT5S, INV-KM9V3K, INV-XN49FH, INV-6ZZXV3) at current candidate revisions on code tree ede5d128: the family's joint guarantee and routes remain true and unchanged under L44.",
+      "revision": 1,
+      "subject": "FAM-FD58VB"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3bc489d314743351f3350d30871fb9ca2bea066c",
+            "content": "sha256:6131cc9662d81e6245397385389bb90322928c3b4bc014915aaae55e99bfa1d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "2a41f5a91d7bea2adc250c7ca8b73e300a91325a",
+            "content": "sha256:f148fcbbb9b66ff5390970787dd6b2a93568c7c44fd0462722510773ae6d0dd8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-BZ71PH"
+        },
+        {
+          "after": {
+            "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
+            "content": "sha256:690e2aabfa5461ed80f05be7775f2e060aa56f93f7ec3bff775b52074f375ea6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "before": {
+            "blob": "7e7527286710a6a1ecc7a9cc4f28e492e6f1fef0",
+            "content": "sha256:5258a0a3b9d50a4e7b5fba3bdafde59bd139b5959876b4b3c6b2d81e3d50e7a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "id": "RLZ-HR7SPS"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-WSKKPT",
+      "items": [
+        "sha256:73af3198cf047e1113ffd9593b5728c1a081c89c5f2eea92a060e9e588d3214b"
+      ],
+      "reason": "Reviewed INV-40JW44 against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-BZ71PH, RLZ-HR7SPS) at C.",
+      "revision": 1,
+      "subject": "INV-40JW44"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WWA50K",
+      "items": [],
+      "reason": "Per standing order and D167/D617/D560 dependent honesty: docs/reference/harnesses.md is an out-of-scope standing-order reference document with pre-existing non-L44 drift; leaving DPD-PYMM5P untouched at HEAD rev 6.",
+      "revision": 6,
+      "subject": "DPD-PYMM5P"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "340c7e95a49de435168e7cef6016e257e824ff76",
+            "content": "sha256:a01f287d06908ddec81c6e33694b49dc6d9edee81bfc4e47536e5570526db0a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconcile_prior_execution"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "before": {
+            "blob": "d32955efa5176e04643993e613a83bece41b81d2",
+            "content": "sha256:0c94311fa2c8b49175a712dd77a9e8de1bcbcf7528b18fd1cd8aeca4ce28f4eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconcile_prior_execution"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+          },
+          "id": "RLZ-ME9W68"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-X2SDEH",
+      "items": [
+        "sha256:de61080e65ed0cb5cf19a1e6c6c79725d2d66109132cad3c9a93a379a374c16e"
+      ],
+      "reason": "Reviewed INV-ZD9BK1 against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-ME9W68) at C.",
+      "revision": 3,
+      "subject": "INV-ZD9BK1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-X8GCR0",
+      "items": [
+        "sha256:96cae23e1fe39a639f9a0352110fecbed8e3b7c4922429e5166d8f3df1849c51"
+      ],
+      "reason": "Updated onboarding:mcp/src/agents_remember/application/seat_retirement_scope.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "99a24f57b61e8a3d8b8bee85cb5dddf0cf58d8ee",
+          "path": "mcp/src/agents_remember/application/seat_retirement_scope.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/seat_retirement_scope.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-40JW44",
+          "revision": 1
+        },
+        {
+          "id": "INV-7KDG7C",
+          "revision": 1
+        },
+        {
+          "id": "INV-MQ3K06",
+          "revision": 1
+        },
+        {
+          "id": "INV-WR3J18",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZA67WW",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-XBHP5M",
+      "items": [
+        "sha256:927d279d8906327c1d2092ebcbee13eb42fb9b6e0f1c5df1e46cec3b4aec5133"
+      ],
+      "reason": "Examined all 5 members of FAM-N36SWD (INV-WR3J18, INV-7KDG7C, INV-MQ3K06, INV-ZA67WW, INV-40JW44) at current candidate revisions on code tree ede5d128: the family's joint guarantee and routes remain true and unchanged under L44.",
+      "revision": 3,
+      "subject": "FAM-N36SWD"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XN1V2S",
+      "items": [
+        "sha256:0379cde2ae0cd75fe0b0251f31fabb824b0f21881ce608ee76b52fe30ce9841e",
+        "sha256:3a120a852d143cdb7a812334f9d828f1f41fc0107bb81a899a734dd311eca4a2",
+        "sha256:6d686638b3be62faf57341cc7688ff725a2449647bfd477228e76a4c7354f391"
+      ],
+      "reason": "Reviewed test card against L44 held-store test adjustments; card prose remains accurate with only mechanical reference refresh.",
+      "sources": [
+        {
+          "blob": "beb2c2e9c04e06f72ac76f6427e86e81f0d9fd3c",
+          "path": "mcp/tests/test_closed_held_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_closed_held_store.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y2MZAQ",
+      "items": [
+        "sha256:d20b15d16c18eb88d5b1434d9c4355c4dbde683f3c0dd5c0102747dd9fc69b8c"
+      ],
+      "reason": "Delete-only hunk in mcp/tools/role_agents.py removing obsolete starter-only docstring/parameter detail superseded by scope-based retirement.",
+      "subject": "hunk:sha256:d20b15d16c18eb88d5b1434d9c4355c4dbde683f3c0dd5c0102747dd9fc69b8c"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Y4DNYJ",
+      "items": [
+        "sha256:08df4171605c8bc71b0226dccb9f1b86a2cc6ed6ef62557181ea0664bceca334",
+        "sha256:32798e4a186a9a2bcc7e6cfd8753e0735362627337ff4ed1360c294394c59c05",
+        "sha256:4480e9b7c549927349951f75b17de97243b14f0ab4cbb399b7e6ed60bb1bc6a1",
+        "sha256:48daad733be6c6b320a726697302370a63b4f569c5b276670d22c397ba6bc762",
+        "sha256:4eb1d655a9d5759ff875aa61acb3d3538962ac455af5fda4b1315593397b2241",
+        "sha256:6dc91392f706d15ac8e288551044baf31ea1de2bf674cdee07a34e5bfd3fbf01",
+        "sha256:7b05b00fd0b2dbf4b4465370a9dd5535a9cefbc3f7d72186371792ec1cd78e42",
+        "sha256:7fc3238bddfffa1ce7f18143a53886e87384dc58dffa87052c9475fd7a5f82cc",
+        "sha256:814069583be65cb390839dd8de7acf4b2fa90cd14b110b36072a0ba3decaad44",
+        "sha256:8d2f5e2c07591d28a6b9c332cb704bff0e877b16360849f46470141b1d1e8555",
+        "sha256:90aa4c031a0fac903b4ba0a54eb6da992d1d22fa77b1c2406c375e186e5fb717",
+        "sha256:9367ae0d4c0efc56b549c1720e998c5dfa91d6a94fe947159f628a739da171e4",
+        "sha256:9c5a037a8b89b77bc0b201f521f4ca9d3fc382c71ce5daea774eacbe40d79b22",
+        "sha256:9dec731e14c02b1de32a345287da53160527f465c2cb25a8a1ffff2a951c260b",
+        "sha256:a0cb0baadd57f34686d02fb7687b604e96149825ef60dac01fe3ce7024b88e41",
+        "sha256:a0ff1a0bf40027767881e6e53c10b72a0e9c433614d86cfd5dc46bece250fefa",
+        "sha256:a2a9db5149d42a5b9ecbe91eeb7ed4cd2598bb1c62a348bfcc22594f3e16f2a4",
+        "sha256:a2da83dd3b13086b335131f5e8310eb2d8e3ba84f57e6052f9fa200bfc7bdd7f",
+        "sha256:a47c37a130af6be6f5c361c9f386e65aa18455c51657cf2916df1dd8be475781",
+        "sha256:aab9006407bc53de914e7b767ed847e63fe336bceacfde35f1d421f62599d720",
+        "sha256:cccb640405c5fe03a3bcd84c94d47e3fd0d6a5a7506f7115cc1fc291f5f82e46",
+        "sha256:dcf71f2334397edfc3c29bccef98dd2195b459de75831a19060c715f7a8ed6f1",
+        "sha256:e57c19df21e7b3387d4f9c13e7b537e3bedfc19c69213de943cfc65ed558e492",
+        "sha256:fc6cddd953f52e4f3af6364a31defc4f996940a36422a500c6d5736559a09ce2",
+        "sha256:fe0e3dd2baebd891ed56d07658a5a9b86530f7aa05266680191a1cdecac1c57a"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_native_retire.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "07374da07c81eeac19c531213355db6afeb44b35",
+          "path": "mcp/tests/test_native_retire.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_native_retire.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-Y8FGBM",
+      "items": [],
+      "reason": "Audited docs/install/claude-code.md line by line against synced L44 code tree ede5d128 (base 150b9778): Claude Code installation and MCP configuration remain accurate; no L44 contradiction.",
+      "revision": 12,
+      "subject": "DPD-3E9E2R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YSQMS5",
+      "items": [
+        "sha256:66d20561c308c0ee7cb7473d99159f1817c81536d22343c2280c54b4cb7c1679"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_paseo_role_messages.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "b314a7b4700a8fdac2fbc74584aa8ac59962385c",
+          "path": "mcp/tests/test_paseo_role_messages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_role_messages.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YT37VD",
+      "items": [
+        "sha256:836a4b21a2f5113f4d49a23743374e7f83cd9cbe2c76171a8f04c6490a9574fd",
+        "sha256:ddbf26fd5b3a31e86ab6ea8cc4b1150a95da2f9c10822937568d1cf9850b39f4"
+      ],
+      "reason": "Updated onboarding:mcp/tests/test_leaf_agent_archive.py Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "978921d19356c6717d6f89e06a9dcf4b674869e9",
+          "path": "mcp/tests/test_leaf_agent_archive.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_leaf_agent_archive.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+            "content": "sha256:52019c6d8f693081fa51c2184d646b290d1d6b129626b2e4bc6ce41f1410eb2f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "2409436603223ce18654fb5e05f92a29a102b30f",
+            "content": "sha256:f5e83f13d0e4c3c07041b58d2d7c98a926d2a2d9ba3001cca4147c40eabcb3d6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-SZMT6X"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YTZ213",
+      "items": [
+        "sha256:46f023112e5557e38468758ced57857b097915c4362e4ab3107a03ae53fff369"
+      ],
+      "reason": "Reviewed INV-7FMDAS against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-SZMT6X) at C.",
+      "revision": 2,
+      "subject": "INV-7FMDAS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d56e7eb6befb9b9bd4a10c94369794817a1a0ed4",
+            "content": "sha256:dbca8f7330d34633008b31e48c6760da5c6e77ae6e7792e9bf2d886f7aa759f5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "5ec887831fa860b5f4478321f94a6966ae51159c",
+            "content": "sha256:fa2e21ee4f5a648365c96f99bf7b45fec9e8e3eb6dc086daaab1c0b4a6375dfe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Z387NJ",
+      "items": [
+        "sha256:e74dbddddc9856d1f1e9b6a080d093aebbccf2320127a3b7491d34326868a3ad"
+      ],
+      "reason": "Reviewed INV-H1BCMX against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-8RHQED) at C.",
+      "revision": 3,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZT67YN",
+      "items": [
+        "sha256:21fbc206f24f7d3847edb6b618951558374cbbd1c0a3e46e03982d07ec4037d3"
+      ],
+      "reason": "Updated onboarding:skills/l-01-agent-lifecycles/core/authority.md Markdown/references for L44 scope-based any-role retirement and re-authored stale citation anchors via citation_fix on code tree ede5d128.",
+      "sources": [
+        {
+          "blob": "f3af24af7475972287d1f7b3f906b9f2772d4f15",
+          "path": "skills/l-01-agent-lifecycles/core/authority.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/core/authority.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fd9304df53fb77cd6a7559eee7065b93f3659c76",
+            "content": "sha256:b685a0db81148b0a99222ab425a934fe31ded688b78882aafbcdaa0adf6b839f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "650d9a8ac6e5a53ebea30427867c169c735913c6",
+            "content": "sha256:c0ea2ca65b1e9902437153e20f00c936b05f9f670212149ca4f668a5ace6ce9a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9J6CEC"
+        },
+        {
+          "after": {
+            "blob": "3bc489d314743351f3350d30871fb9ca2bea066c",
+            "content": "sha256:6131cc9662d81e6245397385389bb90322928c3b4bc014915aaae55e99bfa1d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "2a41f5a91d7bea2adc250c7ca8b73e300a91325a",
+            "content": "sha256:f148fcbbb9b66ff5390970787dd6b2a93568c7c44fd0462722510773ae6d0dd8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-WZZ5BF"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZXKGFQ",
+      "items": [
+        "sha256:b32eff2b45de78398ca4cf4fc4e6b4b443b9a80c7788e6ad398987df9460cc9c"
+      ],
+      "reason": "Reviewed INV-EHJV8E against L44 changes on code tree ede5d128: the invariant statement and contract hold unchanged; re-anchored touched entries (RLZ-9J6CEC, RLZ-WZZ5BF) at C.",
+      "revision": 1,
+      "subject": "INV-EHJV8E"
+    },
+    {
+      "considered": [
+        "FAM-2BRZW7",
+        "FAM-7AEA19",
+        "FAM-CR0HHJ",
+        "FAM-GDXSJG",
+        "FAM-N36SWD",
+        "FAM-TE2628",
+        "FAM-VNK792"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-ZXQ2TM",
+      "items": [],
+      "reason": "Examined all seven reached retirement, liveness, launch, and instruction families; INV-0X3E1T (replacement predecessor retirement reservation and host-confirmed settlement) stands as a self-contained L44 invariant without altering any existing family's independent joint guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-0X3E1T"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:ef21b2f645653959d217840d20e0d27169ab7c8c9196dcb1b7632025e4ecbda6",
+      "record": "DPD-06057Y",
+      "revision": 9,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:36c48179ac0168564b1015488b56e09316d0ea4e5aed3c0721e9b8d2db86be1f",
+      "record": "DPD-10YCT2",
+      "revision": 17,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:abdff11bc351a8ae6431c1b82785cf064a5eb17feb3fcd2088ce3b5323ce56d3",
+      "record": "DPD-3E9E2R",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:70da4c3635d603475eded81bac8f455dfa11ccb14dc5615adf6b0b6b940f365e",
+      "record": "DPD-633P3W",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:63fc9b5ecfed76254ff402395aff6e81279bec0a73915f3908dbaa799c4f2874",
+      "record": "DPD-71WYH4",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:627896c40e48c07da040a73bc20c6dbd6c669c97aca4be86091ea89f8a463b80",
+      "record": "DPD-86HJGF",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:033812490cc4aab1df817a3c01b5c8831e6a066f90fc49d4e6b0c9022b82d951",
+      "record": "DPD-B540GW",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:db21787534960cb7fe8f1b40cfbb3b2b9e394cbe42c15d63d6bbb7537a79fa8b",
+      "record": "DPD-CZBR1Q",
+      "revision": 12,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:c87b6174d128ae8db9a9dbf77bf0ad6e1e1c431b07cee964753ae99d68e58662",
+      "record": "DPD-EG5TYT",
+      "revision": 26,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:d9a16f34ffc8e41b2bdf8b97ad141c3299d7e805bdafa8811659361ddf4630eb",
+      "record": "DPD-K2QMWQ",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:2653a3bb5ed767b9bda06271d08857f568bc0fcbeccbf094367f9f0b3d430818",
+      "record": "DPD-MQCJK4",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:6ffdf87979351495a4cbddec00ab98ddac368575a7cca6daddd5a0be80ae5362",
+      "record": "DPD-NGC2F6",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:3f3dd521ee990e258faccb0d5a9d7df09f3cf03f819e8dc1c6584129de14877e",
+      "record": "DPD-Q4APMS",
+      "revision": 22,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:897367e381cb2635346bc79c93d4182e984ab24a4b8767a30fd578f0306d126c",
+      "record": "DPD-QFGFS0",
+      "revision": 7,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:bc235889cb505e99134f1a3c07835fbead76dc16485a3e63a8cea933b6e92375",
+      "record": "DPD-X6G7K3",
+      "revision": 23,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:c3029cf32899cddeeab0da530b885c5309c360e371172905e2d7418a4f6585b9",
+      "record": "DPD-XV7QBE",
+      "revision": 9,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:139d394f164548d2ea515c6bedd0d6acce979ee9d23b7d289a9228c9faf54d04",
+      "record": "INV-0X3E1T",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:cf389c6ec50da2b0d63e2b1d5c0424f85f14508976df96564ab647987cf6afd9",
+      "record": "INV-6WJ1WD",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:6cb6143954372a4667ac28373f02d04969050d38bc0de377e2ab0c683d6395ec",
+      "record": "INV-ECNV2S",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:129dc307c4b3466bd1ca82c203cabc1263a3c553964e8bb74e9dad6ffb8192b6",
+      "record": "INV-KRCG05",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:1bcba234a4a5349448d453c448a2066022ac288f9c5149a7c6ae3e5866c7030f",
+      "record": "INV-QDYC5F",
+      "revision": 1,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:f4cde964d9a8cef9aa076129fe3daba25fda15c58355e0b16206082c13a392d1",
+      "record": "WKN-6RT10Q",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:d6f86c14e2a18286b1e6de96caa5072a142329ff2f38dc5a813eb3edd1fda9a2",
+      "record": "WKN-CS209S",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:725d3b8a4f971c8c1b81609feac0b75ae866b05c33535a8a75cfd2ac29ec92b5",
+      "record": "WKN-GY12WH",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:61ddd17f72cd49833b42ba02c1fa5949ef2a8668a858b9bcc802c786bcdda9fb",
+      "record": "WKN-K3PPJY",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-26T02:42:00+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L44",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

@@ -122,13 +122,17 @@ The anchors below identify current behaviour of this module; they are not execut
 they make no acceptance claim.
 
 
+
 - One production failure invocation per advertised tool, keyed by tool name and asserted equal to the roster in both directions. [1]
+
 
 - The driver: roster equality first, then one drive per tool, with the lifecycle arranged so `lifecycle_start`'s own failure path is measured. (Historical caption; obsolete.)
 - An absent contract path inside the coordination root, for the contract-address family. [3]
 - A contract-shaped path outside the coordination root, for the confinement refusals. [4]
 
+
 - The fixture document addresses a tool must resolve to reach a later refusal. [5]
+
 
 
 - The advertised roster the table is asserted equal to before anything is driven. [6]
@@ -150,10 +154,13 @@ No repository or external-system boundary is proved by this module.
 </details>
 
 
+
 - The direct-landing failure input includes its explicit absent canonical leaf. [9]
 
 
+
 ## Current source evidence
+
 
 
 - The failure table includes user_settings_init with target host-authority as a refusal input, not successful host or settings execution. [10]

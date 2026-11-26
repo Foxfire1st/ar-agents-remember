@@ -54,15 +54,14 @@
       ]
     },
     "3": {
-      "note": "A created outcome invokes the imported receipt seam.",
+      "note": "A created outcome invokes the imported receipt seam.\n\nAnchor: `publish_launch_outcome`",
       "targets": [
         {
           "anchor": {
-            "blob": "7a5856e55ebfa867ec97add374ebe1a33174adb2",
-            "content": "sha256:960687ba725703cfd98e745a0db18fa6d1bc861426c6548a6a9ed75897ae7f90",
+            "blob": "e0ef3910426a932d881fa0310209f25ca25a358f",
+            "content": "sha256:6ef8e50b42bacc6c624c3559c082efb69c320c460c36a739153705d87fecce8c",
             "locator": {
-              "kind": "symbol",
-              "name": "publish_launch_outcome"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/role_launch_outcome.py"
           },

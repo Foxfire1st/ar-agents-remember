@@ -269,10 +269,14 @@ they make no acceptance claim.
 
 - The fixture check asserts settings path prefixes for code and memory, its coordination-root identity and an empty provider configuration. [10]
 
+
 - The measured population and the production invocation per tool, kept in a support module so a probe can drive the same census. [11]
 
 
+
+
 - The driver that refuses a table which is not the roster before it drives anything. [12]
+
 
 
 - The one `T34` tool the sweep still repairs — `memory_baseline_adopt` — re-exported by the sweep module beside the pin it left.

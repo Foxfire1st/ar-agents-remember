@@ -1086,7 +1086,9 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 - The read_scope_test_support artifact registers test_comparison_changeset as an exact consumer of knowledge-read-scope-cases. Anchor: file [304]
 
 
+
 - The three Paseo support rows — launch, role tools and runtime — register the developer-message consumer test_developer_messages.py and declare in-process fidelity. The `paseo_role_tools_test_support.py` artifact row declares `test_developer_messages.py` as an exact consumer. The `paseo_runtime_test_support.py` artifact row declares `test_developer_messages.py` as an exact consumer. Anchor: file [309]
+
 
 
 - The unit-regression lane names the re-point and recovery modules where its order puts them. Anchor: file [314]
@@ -1457,6 +1459,7 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 
 - The settings-guard artifact declares test_developer_messages.py as an exact consumer. Anchor: file [307]
 
+
 - The two new modules appear on the settings-guard, coherence-support, L110-rows and Node-lockfile consumer lists. [327]
 
 - The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 121 artifacts. These source declarations establish no execution or passing result. [233]
@@ -1590,4 +1593,4 @@ The BUG-R03 candidate catalog declares `test_sprint_archive_enclosures.py` on th
 - The lifecycle catalog declares `mcp/tests/test_githooks_l29_repairs.py` and `mcp/tests/test_sync_commit_check.py` as exact consumers on the user-settings guard and portable Node-lockfile artifacts. [343]
 
 
-- The four DEP-R07 type-checker defect regression modules are declared as exact consumers on the settings-guard and Node-lockfile rows, and `test_organizational_completion_repair.py` is also declared on `node/package.json` and `repository_profile_test_support.py`. [344]
+- The four DEP-R07 type-checker defect regression modules are declared as exact consumers on the settings-guard and Node-lockfile rows, and `test_organizational_completion_repair.py` is also declared on `node/package.json` and `repository_profile_test_support.py`. [345]
