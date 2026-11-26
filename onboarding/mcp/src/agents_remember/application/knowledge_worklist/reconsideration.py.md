@@ -27,8 +27,7 @@ returns the items, each with `satisfiedBy`, and a `reconsideration.links` summar
   suppresses nothing and raises no item merely by being new. This extends Q5 through MIK-R148@v1; it does not
   add a trigger or change the meaning of the two answering rows.
 - **Triggers (rule 1), one per target type** (`_evaluate`):
-  - a record ID (`_record_trigger`): `record_file` when its record file's location or bytes differ K_B→K_C
-    (`KnowledgeSide.record_file`, as MIK-R08 compares records), else `history_row` when this leaf's history file
+  - a record ID (`_record_trigger`): `record_file` when `KnowledgeSide.record_file_changed` reports a path/existence change or a byte difference beyond `state_conversion_only`, else `history_row` when this leaf's history file
     in K_C holds a row about it with one of `TRIGGERING_DISPOSITIONS` (`history.row_about`);
   - a `DEC-` target never fires: the summary notes "one hop: a change to a decision never chains on" (rule 3);
   - a `route:<dir>` target first fires `route_absent` when CodeTrees has at least one base path and no candidate path beneath the directory. Otherwise a qualifying family row fires `history_row` when either side gives the family a route equal to or under that directory (`.` covers all). Rerouted/retired/deleted dispositions qualify, as does a changed family row whose routes differ. A guarantee-only change does not. No registered row uses the route itself as subject.
@@ -105,8 +104,6 @@ No configured live documentation source was available for this pass.
 - The route dispositions and the decision prefix of the one-hop guard. [2]
 - The kind registered with its facts, satisfying row and owner. [3]
 
-- What the triggers read: both sides, the anchor classifier, the owner and the coordination root. [4]
-
 - The run's items and link summary. [5]
 
 - A superseded link reports skipped, null trigger and successor IDs. [6]
@@ -117,7 +114,8 @@ No configured live documentation source was available for this pass.
 
 - Skipped-link summary or fired-link evaluation. [8]
 
-- Record targets: route, one-hop note, record file, then a triggering row. [9]
+- What the triggers read: both sides, the anchor classifier, the owner and the coordination root. [4]
+- Record targets: route, one-hop note, record file (exempting state-conversion-only diffs via `KnowledgeSide.record_file_changed`), then a triggering row. [9]
 
 
 

@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_worklist/knowledge.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "536c74dfbc955bca3aadf18584505c9b04d68114",
+        "content": "sha256:6cb75cb319c239664c990bbd335e5a3c61df2740603008a708cceddb2e330599",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeSide.record_file_changed"
+        }
+      },
+      "id": "RLZ-ED49HQ",
+      "invariant": "INV-R2Q8SW",
+      "origin": {
+        "handoffEntry": "BUG-R55@v1 §1-3",
+        "leaf": "261112-BUG-L55"
+      },
+      "rationale": "Combines record-path and existence checks with state_conversion_only for the two path-and-bytes worklist sites so moved or absent records still count as changed.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Sides are parsed by the index builder; a side that does not parse whole is unreadable input.\n\nAnchor: \"That side is **unreadable input** (MIK-R08 rule 4)\"",
       "targets": [
         {
           "anchor": {
-            "blob": "6cc3aa8a6c7228274a20c580e2a8061fef08cc86",
+            "blob": "536c74dfbc955bca3aadf18584505c9b04d68114",
             "content": "sha256:f238e0faf5dfc7a7c07ec0548312c14689c658a882481b6b6f4cc2bf8c8a8c25",
             "locator": {
               "end": 13,
@@ -36,12 +55,28 @@
         }
       ]
     },
+    "11": {
+      "note": "`KnowledgeSide.record_file_changed` treats moved or absent records as changed and exempts equal-path diffs matching `state_conversion_only`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "536c74dfbc955bca3aadf18584505c9b04d68114",
+            "content": "sha256:6cb75cb319c239664c990bbd335e5a3c61df2740603008a708cceddb2e330599",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_file_changed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The unreadable-side error naming each failing file.",
       "targets": [
         {
           "anchor": {
-            "blob": "6cc3aa8a6c7228274a20c580e2a8061fef08cc86",
+            "blob": "536c74dfbc955bca3aadf18584505c9b04d68114",
             "content": "sha256:ec9bb4acb949d2362b38586c3ad91ce00963e173333694c8e6fef968807ffbab",
             "locator": {
               "kind": "symbol",
@@ -57,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6cc3aa8a6c7228274a20c580e2a8061fef08cc86",
+            "blob": "536c74dfbc955bca3aadf18584505c9b04d68114",
             "content": "sha256:57a8fe84da8c4ba8ce2f986874ee153f8bcd3ac61043527bda1751dbc23a10ab",
             "locator": {
               "kind": "symbol",
@@ -73,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6cc3aa8a6c7228274a20c580e2a8061fef08cc86",
+            "blob": "536c74dfbc955bca3aadf18584505c9b04d68114",
             "content": "sha256:59bda33f0c5d1d066d0acb2dfdd29d117458f4fca4f1b8c325ba6b9d61ffb9e9",
             "locator": {
               "kind": "symbol",
@@ -84,7 +119,7 @@
         },
         {
           "anchor": {
-            "blob": "6cc3aa8a6c7228274a20c580e2a8061fef08cc86",
+            "blob": "536c74dfbc955bca3aadf18584505c9b04d68114",
             "content": "sha256:67e842af11d445256e17fc912c08eac5e38d5528c43d84609528732e8e58af3e",
             "locator": {
               "kind": "symbol",
@@ -100,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6cc3aa8a6c7228274a20c580e2a8061fef08cc86",
+            "blob": "536c74dfbc955bca3aadf18584505c9b04d68114",
             "content": "sha256:57fad7a008d5eb28b5a0e8b349d9df930b95aaae8d11127ab185efff2c702547",
             "locator": {
               "kind": "symbol",
@@ -116,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6cc3aa8a6c7228274a20c580e2a8061fef08cc86",
+            "blob": "536c74dfbc955bca3aadf18584505c9b04d68114",
             "content": "sha256:63c04affa76c9675906ce5e5ab75db72e618e5709bde74c3bf52c26681f72091",
             "locator": {
               "kind": "symbol",
@@ -132,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6cc3aa8a6c7228274a20c580e2a8061fef08cc86",
+            "blob": "536c74dfbc955bca3aadf18584505c9b04d68114",
             "content": "sha256:bc46fac67e32079fdcf97aeabbd77391cde9cfea5b541d7f6b771876d20e31ac",
             "locator": {
               "kind": "symbol",

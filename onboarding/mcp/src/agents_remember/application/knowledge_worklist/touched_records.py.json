@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "69c1012455aa95dc37cfd6355ab2fb6d823f4919",
+        "blob": "fee659a7873ec2265d2600db9c2f6ed2c2b6c86d",
         "content": "sha256:c44c15cc4e04c1631a40d31c8d9321f37f76e3f6a2e58b6dce3342565b55c0ce",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,24 @@
       },
       "rationale": "Marks touched_record items whose DependentRecord changed only in deferrals with deferralOnly=True.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "fee659a7873ec2265d2600db9c2f6ed2c2b6c86d",
+        "content": "sha256:ae2129502e628eb1ee57f9b85c1720576cbf8f4e4462a00551086ca2ccf78382",
+        "locator": {
+          "kind": "symbol",
+          "name": "touched_record_items"
+        }
+      },
+      "id": "RLZ-QBEMQZ",
+      "invariant": "INV-R2Q8SW",
+      "origin": {
+        "handoffEntry": "BUG-R55@v1 §1-3",
+        "leaf": "261112-BUG-L55"
+      },
+      "rationale": "Exempts conversion-only JSON diffs via state_conversion_only only when the Markdown sidecar bytes match, preserving sidecar-change detection, _raise_mark_only, and deferral-only classification.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -26,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69c1012455aa95dc37cfd6355ab2fb6d823f4919",
+            "blob": "fee659a7873ec2265d2600db9c2f6ed2c2b6c86d",
             "content": "sha256:2d528873db708db3ddfb0d3ed6e221bcef037e5afcddfeba0598dbbecaac4735",
             "locator": {
               "kind": "symbol",
@@ -42,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69c1012455aa95dc37cfd6355ab2fb6d823f4919",
+            "blob": "fee659a7873ec2265d2600db9c2f6ed2c2b6c86d",
             "content": "sha256:096d9cb7186a85d5370af72424bd5d596522c32c5b6afa396a6f0e4be254c967",
             "locator": {
               "kind": "symbol",
@@ -58,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69c1012455aa95dc37cfd6355ab2fb6d823f4919",
+            "blob": "fee659a7873ec2265d2600db9c2f6ed2c2b6c86d",
             "content": "sha256:7782868644b47a9c062c105ea6db500ff2989711e4e39dfb79c762f0f61d55a9",
             "locator": {
               "kind": "symbol",
@@ -70,14 +88,15 @@
       ]
     },
     "4": {
-      "note": "Exact JSON/prose comparison of base records emits revision/status facts and leaves structural deletion elsewhere.",
+      "note": "JSON/prose comparison of base records skips unchanged or `state_conversion_only` JSON diffs when Markdown sidecars match, emits revision/status facts, and leaves structural deletion elsewhere.",
       "targets": [
         {
           "anchor": {
-            "blob": "69c1012455aa95dc37cfd6355ab2fb6d823f4919",
-            "content": "sha256:805b5e0808de32e51ba3e474c71498564a9674f090d36a4e72ded763d214c15a",
+            "blob": "fee659a7873ec2265d2600db9c2f6ed2c2b6c86d",
+            "content": "sha256:ae2129502e628eb1ee57f9b85c1720576cbf8f4e4462a00551086ca2ccf78382",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "touched_record_items"
             }
           },
           "kind": "code"

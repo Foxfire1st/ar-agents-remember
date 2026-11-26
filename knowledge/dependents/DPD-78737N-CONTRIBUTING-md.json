@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "7195713289a089ccffa4b031d4ddcbf941781a99",
-    "commit": "da65eb23a46a9b67683b002fd418996e3f7486c5",
+    "codeTree": "9e4253083b9c82a529c2278581efaf3f6db01fe4",
+    "commit": "ebc3a1748de3af2882b5ab66e48b6a7e26bdaae8",
     "role": "curator",
-    "statement": "Audited CONTRIBUTING.md in full against DEP-L6 synced L56 tree 71957132 (base da65eb23): adding test_master_end_document_staleness.py to test-evidence-lanes.toml changes no lane names, commands, or contributor guidance, and all stands_on links remain accurate.",
-    "task": "261112-BUG-L56",
+    "statement": "Audited CONTRIBUTING.md in full against synced L55 candidate 9e4253083b9c (base ebc3a1748de3, post-DEP-L6/L35/L56): its seven-lane manifest, canonical catalog, runtime-asset, and hook passages pin no module counts and remain accurate across all 833 cataloged modules (683 unit-regression including test_state_conversion_worklist.py).",
+    "task": "261112-BUG-L55",
     "uncommitted": true
   },
   "document": "CONTRIBUTING.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L202",
     "task": "260928-MIK"
   },
-  "revision": 21,
+  "revision": 22,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,7 +61,7 @@
       "path": "mcp/tests/conftest.py"
     },
     {
-      "blob": "07998f644724fafc06b2ad16936a627f111714dc",
+      "blob": "f717c183e60d68b48f43b14c15b6f29df125d1c8",
       "kind": "file",
       "path": "mcp/tests/test-evidence-lanes.toml"
     },
@@ -207,14 +207,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T19:03:01+01:00",
+    "at": "2026-11-26T19:49:06+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L56",
+    "leaf": "261112-BUG-L55",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9185f400-ae71-5822-8259-c15660a8b0a5",
+    "seat": "edba1d95-0f5c-5568-9011-f70fbc44f97b",
     "task": "261112-BUG"
   }
 }

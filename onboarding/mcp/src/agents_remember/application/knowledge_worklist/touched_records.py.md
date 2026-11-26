@@ -6,7 +6,7 @@
 
 ## Purpose
 
-This module registers `touched_record` and detects exact JSON or Markdown changes to decisions and facet records that existed in the memory base. Its facts carry both sides' revisions and statuses; the satisfying leaf `record` row must match the candidate revision and the kind of change.
+This module registers `touched_record` and detects JSON or Markdown changes to decisions and facet records that existed in the memory base, exempting state-conversion-only JSON diffs (`state_conversion_only`) when the Markdown sidecar bytes match. Its facts carry both sides' revisions and statuses; the satisfying leaf `record` row must match the candidate revision and the kind of change.
 
 `_deferral_only_dependent_change` detects when a `DependentRecord` changed only in `deferrals` (plus `revision`/`writer`) with unchanged Markdown and marks its `touched_record` item with `facts["deferralOnly"] = True`.
 
@@ -14,7 +14,7 @@ This module registers `touched_record` and detects exact JSON or Markdown change
 
 ### Logic
 
-The detector filters base record IDs by the supported decision/facet prefixes, locates the JSON and optional Markdown on both sides, and compares their bytes. A new record raises no item because iteration starts from the base. A missing candidate record is left to structural validation, not silently treated as a retirement judgment.
+The detector filters base record IDs by the supported decision/facet prefixes, locates the JSON and optional Markdown on both sides, and compares their bytes. When Markdown sidecar bytes match and the JSON diff satisfies `state_conversion_only`, the record is skipped as untouched; any Markdown change, addition, or deletion still raises. A new record raises no item because iteration starts from the base. A missing candidate record is left to structural validation, not silently treated as a retirement judgment.
 
 The weakness prefix is removed from the detector's subject prefixes: a changed weakness record raises no `touched_record` item. What can raise instead is the advisory `weakness_anchor` item MIK-R118 defines, and only under its own predicates: it is assembled from the code change paths, so it needs an open weakness at the base whose anchor lies at a changed code path — a new weakness, a record-only change, a closed weakness or a change outside the anchor raises nothing. A weakness still takes a `record` history row when a leaf names one, so the item's subject pattern stays the full record-row pattern. The two statuses an item carries are read through `record_status`, the one lifecycle word for records that carry one.
 
@@ -35,4 +35,4 @@ The only status-mark exemption is a JSON-only change to `under_reconsideration` 
 - A qualifying raise must belong to the current owner and an open individual history file. [2]
 - The status-only exemption rejects other JSON field changes. [3]
 
-- Exact JSON/prose comparison of base records emits revision/status facts and leaves structural deletion elsewhere. [4]
+- JSON/prose comparison of base records skips unchanged or `state_conversion_only` JSON diffs when Markdown sidecars match, emits revision/status facts, and leaves structural deletion elsewhere. [4]

@@ -94,7 +94,7 @@ The deletion-cancellation module is declared as a consumer of the existing `_use
 
 The role-tool-scope module, `test_role_tool_scope.py`, is declared as an exact consumer of the existing `_user_settings_guard.py` and Node-profile `package-lock.json` artifacts, and of no other artifact; membership is dependency accounting and certifies no invocation.
 
-The tool-schema-compaction module, `test_tool_schema_compaction.py`, is likewise declared as an exact consumer of the existing `_user_settings_guard.py` (line 860) and Node-profile `package-lock.json` (line 3365) artifacts, and of no other artifact; membership is dependency accounting and certifies no invocation.
+The tool-schema-compaction module, `test_tool_schema_compaction.py`, is likewise declared as an exact consumer of the existing `_user_settings_guard.py` (line 864) and Node-profile `package-lock.json` (line 3373) artifacts, and of no other artifact; membership is dependency accounting and certifies no invocation. `test_state_conversion_worklist.py` is declared as an exact consumer of `_user_settings_guard.py` (line 780) and the portable Node-profile `package-lock.json` (line 3289) artifacts; membership is dependency accounting and certifies no invocation.
 
 The four DEP-R07 type-checker defect regression modules (`test_judged_history_closing_restore.py`, `test_organizational_completion_repair.py`, `test_quality_continuation_declaration.py`, and `test_type_hint_contracts.py`) are declared as exact consumers of `_user_settings_guard.py` and the portable Node-profile `package-lock.json` artifact, and `test_organizational_completion_repair.py` is additionally declared on `fixtures/repository_profiles/node/package.json` and `repository_profile_test_support.py`. Membership is dependency accounting and certifies no invocation.
 
@@ -1615,3 +1615,5 @@ Historical BUG-R03 observation: the BUG-R03 candidate catalog declared `test_spr
 - The catalog declares 26 recording artifacts with their consumer ownership. Issue 414 owns the general derivation limitation. [320]
 
 - `mcp/tests/test_master_end_document_staleness.py` is declared as an exact consumer of `_user_settings_guard.py` and the portable Node-profile `package-lock.json` artifact, and of no other artifact. [512]
+
+- `mcp/tests/test_state_conversion_worklist.py` is declared as an exact consumer of `_user_settings_guard.py` and the portable Node-profile `package-lock.json`. [513]
