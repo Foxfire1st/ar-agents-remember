@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
-        "content": "sha256:6a2208eb6f554a28bbecd72e107945c3e69b9c00858fba00121a9490ced5900b",
+        "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+        "content": "sha256:5473922e477f1d23077e1c52e3a29574b450c69f40a51227ff820b75eee52abe",
         "locator": {
           "end": 197,
           "kind": "line_range",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+        "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
         "content": "sha256:87f28dc9b669f1f6b9ed43725fb1f447f52c69129f615393163367c630e25b4c",
         "locator": {
-          "end": 165,
+          "end": 253,
           "kind": "line_range",
-          "start": 155
+          "start": 243
         }
       },
       "id": "RLZ-RC1F6S",
@@ -41,8 +41,25 @@
     },
     {
       "anchor": {
-        "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
-        "content": "sha256:665a2353891a4675e64485f289f4a1aa463be468cf0c5f80d8db38a8ca5f91dc",
+        "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+        "content": "sha256:5a4fb80c820446dad4bf119c03adab2a75b598039272038073a3a5719c36a9f8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-T3VYFT",
+      "invariant": "INV-AFVK1G",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §3 (R1-R6)",
+        "leaf": "261112-BUG-L29"
+      },
+      "rationale": "Implements R1 (256 KiB GNU xargs on Linux), R2 (single hook-batch scope call), R3 (concurrent Python and Dashboard rails with fixed-order buffered replay), R4 (content-hashed .eslintcache flags), and R6 (PYRIGHT_PYTHON_IGNORE_WARNINGS=1 scoped to Pyright).",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+        "content": "sha256:5a4fb80c820446dad4bf119c03adab2a75b598039272038073a3a5719c36a9f8",
         "locator": {
           "kind": "file"
         }
@@ -63,12 +80,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
             "content": "sha256:3c510f439ca02f94c1e2065caa30de2d1e43780f9709d1395102e302bca21803",
             "locator": {
-              "end": 165,
+              "end": 253,
               "kind": "line_range",
-              "start": 153
+              "start": 241
             }
           },
           "kind": "code"
@@ -76,16 +93,16 @@
       ]
     },
     "2": {
-      "note": "The fast tier runs the prerequisite look first and the dashboard checks last.\n\nAnchor: `run_fast_checks`",
+      "note": "The fast tier runs the prerequisite look first and the dashboard checks last.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
-            "content": "sha256:7562f9d7d594338030b4643310f27cc838367abc2008f73f95e5c8289e1a750d",
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "content": "sha256:9296aca73a06b743e8f21c6266eeb2ae9ab93d480020bd1db75eb990412a1967",
             "locator": {
-              "end": 240,
+              "end": 370,
               "kind": "line_range",
-              "start": 195
+              "start": 360
             }
           },
           "kind": "code"
@@ -97,12 +114,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
             "content": "sha256:7c0d5c094f2bf6c5b309521029214fe0efb7db01e37d8564a88bf3691af14ade",
             "locator": {
-              "end": 252,
+              "end": 383,
               "kind": "line_range",
-              "start": 242
+              "start": 373
             }
           },
           "kind": "code"
@@ -114,12 +131,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
-            "content": "sha256:73a594d90b8333d2f72ef24fe2c0d0d114de60c9800e9e78aa993f7db9d09ed5",
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "content": "sha256:95d6efa9b1da890738319cddbc353707aa26254d87e7579c6a38efe7a24714ff",
             "locator": {
-              "end": 387,
+              "end": 521,
               "kind": "line_range",
-              "start": 337
+              "start": 475
             }
           },
           "kind": "code"
@@ -131,12 +148,80 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
             "content": "sha256:27fe655abb2ea763185226fb34c82b37761e0c179352982a2b5e39ba588e95de",
             "locator": {
               "end": 80,
               "kind": "line_range",
               "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One 256 KiB xargs batch passes the tracked Python population to Ruff and Pyright.\n\nAnchor: `over_tracked_python`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "content": "sha256:7231015a8b4e3dfd37705c308a94755b07fa0b80c68578487937e6fba1a0b81b",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 180
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Every tier scope line is rendered by one scope-batch invocation.\n\nAnchor: `prepare_scope_batch`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "content": "sha256:c8fd6fe9f78b53735c8c4cd1593918d4661f9644e4d4fdc6955c8f3cf97625a5",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 193
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The Python and dashboard rails overlap while their output keeps fixed order.\n\nAnchor: `run_concurrent_rails`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "content": "sha256:71ae774b41650b4d39665fd31a77e13cc7edbc2fef5461cb9d05ff62c92cd1ac",
+            "locator": {
+              "end": 357,
+              "kind": "line_range",
+              "start": 327
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The warm caches are content-addressed and the Pyright wrapper notice is silenced.\n\nAnchor: `python_rail_checks`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "content": "sha256:4941e757e58d2c12b00c4054aed30866f4a5f68ce72848ee1fb6cdce0b9c8069",
+            "locator": {
+              "end": 325,
+              "kind": "line_range",
+              "start": 289
             }
           },
           "kind": "code"

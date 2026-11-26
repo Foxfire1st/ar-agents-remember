@@ -33,6 +33,7 @@ The contributor guide prescribes renewal for instruction facts and the generated
 - The skills reference names the exact renewal command for the generated skills copy and points to the contributor rules. [5]
 - The release checklist requires a clean renewal check and current instruction facts and package copies, including tool-details. [6]
 - The hook checks projection, skills and runtime copies. Skills use the instruction renewal command. [7]
+- The targeted tier invokes the fast tier. [10]
+
 - The hook runs the named copy checker with the check flag. [8]
 - The fast tier invokes the generated copy checks. [9]
-- The targeted tier invokes the fast tier. [10]

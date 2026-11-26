@@ -101,9 +101,7 @@ No repository-relative Domain Documentation source applies; the two external Typ
 
 - Consumer: every projection builder takes `Overrides<O, Node>`. [6]
 
-- The app project's whole `compilerOptions` block — `strict` is on, `resolveJsonModule` is on, and no `exactOptionalPropertyTypes` entry appears anywhere in it. That absence is the config fact this file exists to answer. [8]
 
-- tsconfig.driver.json currently enables strict driver checks for e2e and playwright.config.ts; its compilerOptions omit exactOptionalPropertyTypes. [9]
 
 
 ### Cross-Repo References
@@ -113,3 +111,6 @@ in-repo test fixtures.
 
 
 - Import and boundary review found the same-repository `wire.ts` consumer. [10]
+
+- The app project's whole `compilerOptions` block — `strict` is on, `resolveJsonModule` is on, and no `exactOptionalPropertyTypes` entry appears anywhere in it. That absence is the config fact this file exists to answer. [8]
+- tsconfig.driver.json currently enables strict driver checks for e2e and playwright.config.ts; its compilerOptions omit exactOptionalPropertyTypes. [9]

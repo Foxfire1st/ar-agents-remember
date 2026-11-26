@@ -111,9 +111,10 @@ The validator command is run by the Git hook gate (`.githooks/_gate.sh`), by the
 - A replacement is a registered contract or an existing node selector. [11]
 - The validator loads the lifecycle catalog and then the lane manifest on one cached source graph; `--write` goes to the rewrite. [12]
 - A refused rewrite prints that nothing was written and returns 1. [13]
-- The Git hook gate runs the validator command. [14]
 - The quality plan's evidence-lifecycle step runs the validator command. [15]
 
 - The loader collects every finding and raises one error that lists them; `build_facts` lets a caller supply the source graph. [16]
 - A catalog that cannot be read or parsed is refused with the shared refusal text. [17]
 - An artifact or consumer whose file is gone is a finding (the consumer finding names the command only where the command repairs the row), and declared and observed consumers are compared as sets. [18]
+
+- The Git hook gate runs the validator command. [14]

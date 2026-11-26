@@ -1,0 +1,48 @@
+{
+  "anchor": {
+    "blob": "ed95bd4e84b0374d2e902ef5538a971118ddb69d",
+    "content": "sha256:9ad1b9c1fb5523cd76fba51e1323285bb09d3aee483d7d4daf21bd2b50382b9c",
+    "locator": {
+      "end": 844,
+      "kind": "line_range",
+      "start": 689
+    },
+    "path": "mcp/tests/test_landing_commit_check.py"
+  },
+  "id": "WKN-6Q7A5G",
+  "kind": "time",
+  "measurement": {
+    "commit": "a255762caa9b5f87ed2eda5c6cb80162a9169664",
+    "date": "2026-11-24",
+    "how": "Sum of ordinary-unit pytest.jsonl call durations across the three wait tests in L21 (60.04 in L20)",
+    "number": 60.27,
+    "unit": "worker-s"
+  },
+  "origin": {
+    "handoff": {
+      "path": "L29-curator-handoff-pass1"
+    },
+    "handoffEntry": "l29-r7-landing-commit-check-waits",
+    "leaf": "261112-BUG-L29",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "261112-BUG-L29"
+  },
+  "state": "open",
+  "statement": "Three real-sleep timeout and escaped-holder tests in test_landing_commit_check.py consume ~60 worker-seconds per unit lane run (R7 not admitted by Architect ruling 27c406e4; 261112-BUG-L30 owns timing reliability).",
+  "writer": {
+    "at": "2026-11-25T18:10:27+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L29",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+    "task": "261112-BUG"
+  }
+}

@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4f84319f540b34af2161212763a118f5e52b00e1",
-        "content": "sha256:bf4873fb9c5c94152c6d18a96b06110586f28d38c2ffe4e48cec653b515b7cac",
+        "blob": "335d4461282e2836f4af863df677d07e72ff461a",
+        "content": "sha256:dcb8284fcc1232af8fd4ffcb07378fc99d243cff2c098333a64a2622d9037709",
+        "locator": {
+          "end": 292,
+          "kind": "line_range",
+          "start": 284
+        }
+      },
+      "id": "RLZ-6VTKE9",
+      "invariant": "INV-RXGZM9",
+      "origin": {
+        "handoffEntry": "BUG-R29@v1 §5",
+        "leaf": "261112-BUG-L29"
+      },
+      "rationale": "Documents continued code-side sync's bounded execution (git commit -m carrying Commit-Check-Pass when a runnable pre-commit hook exists and git commit --no-edit when none does, never --no-verify) and sync-commit-check-failed response on failure, tracked-file mutation, or timeout.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "335d4461282e2836f4af863df677d07e72ff461a",
+        "content": "sha256:351dc0d7c23dafa674a88c17438f4453873ee005d860406eb501db373f0d7ed3",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "4f84319f540b34af2161212763a118f5e52b00e1",
+        "blob": "335d4461282e2836f4af863df677d07e72ff461a",
         "content": "sha256:5d38041c61e04900f04a05f44d7075f36d2b8e6523fc5998170ad1e52355a4eb",
         "locator": {
           "end": 193,
@@ -39,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "4f84319f540b34af2161212763a118f5e52b00e1",
+        "blob": "335d4461282e2836f4af863df677d07e72ff461a",
         "content": "sha256:c7540979d3a62a3a624f13deb0b007ef6ba180b93b928c00f2fd5e0070564323",
         "locator": {
-          "end": 352,
+          "end": 361,
           "kind": "line_range",
-          "start": 350
+          "start": 359
         }
       },
       "id": "RLZ-WA23J8",
@@ -58,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "4f84319f540b34af2161212763a118f5e52b00e1",
+        "blob": "335d4461282e2836f4af863df677d07e72ff461a",
         "content": "sha256:0e7e68f341dd314364c32fd2ef4c5d6ba80ffdae6155d99d40f9774fba6f454f",
         "locator": {
-          "end": 298,
+          "end": 307,
           "kind": "line_range",
-          "start": 296
+          "start": 305
         }
       },
       "id": "RLZ-YKJ4F4",
@@ -82,12 +101,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f84319f540b34af2161212763a118f5e52b00e1",
+            "blob": "335d4461282e2836f4af863df677d07e72ff461a",
             "content": "sha256:0e7e68f341dd314364c32fd2ef4c5d6ba80ffdae6155d99d40f9774fba6f454f",
             "locator": {
-              "end": 298,
+              "end": 307,
               "kind": "line_range",
-              "start": 296
+              "start": 305
             }
           },
           "kind": "code"
@@ -99,12 +118,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f84319f540b34af2161212763a118f5e52b00e1",
+            "blob": "335d4461282e2836f4af863df677d07e72ff461a",
             "content": "sha256:c7540979d3a62a3a624f13deb0b007ef6ba180b93b928c00f2fd5e0070564323",
             "locator": {
-              "end": 352,
+              "end": 361,
               "kind": "line_range",
-              "start": 350
+              "start": 359
             }
           },
           "kind": "code"
@@ -116,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f84319f540b34af2161212763a118f5e52b00e1",
+            "blob": "335d4461282e2836f4af863df677d07e72ff461a",
             "content": "sha256:160b175698e090ecf9d4d4ad876435efdba2304db6d6e355814d7360742bf932",
             "locator": {
               "end": 5,

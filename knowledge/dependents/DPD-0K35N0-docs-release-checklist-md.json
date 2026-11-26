@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "4ebb429de6b3034e7bff1922b3f8982b2ccafa07",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "2e79f14e621878f776217e876e3953c8a4903aec",
+    "commit": "50292a3bfed059fe4f0aa9f087a6156bf1b754f9",
     "role": "curator",
-    "statement": "docs/release-checklist.md remains accurate after the mcp>=1.30.0,<2 floor update, contract.json Node 26.13.1 bump, and version.py 3.0.7 alignment because release checks and contract field rules stay unchanged.",
-    "task": "261125-DEP-L1",
+    "statement": "Verified line-by-line on synced code (base 50292a3b + L29): docs/release-checklist.md (lines 1-152) remains accurate after L29 .githooks/_gate.sh performance repairs (single-invocation scope batch, 256 KiB GNU xargs, content-hashed ESLint cache, concurrent rails) and the 3.0.8 version alignment in mcp/pyproject.toml, version.py, and README.md; all deterministic hook checks, CI/publish workflows, host/plugin contract rules, and --config CLI checks match live code.",
+    "task": "261112-BUG-L29",
     "uncommitted": true
   },
   "document": "docs/release-checklist.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+      "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
       "kind": "file",
       "path": ".githooks/_gate.sh"
     },
@@ -36,12 +36,12 @@
       "path": ".github/workflows/publish-mcp-to-pypi.yml"
     },
     {
-      "blob": "185b1aa00db3b799b325cf6649ccfe9915e08a87",
+      "blob": "ff3aea61c7bba961f679669044683a5817fba1bd",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },
     {
-      "blob": "eb999d6f1626d6b697870c0ca35f8d7d24eb77cb",
+      "blob": "3a90a71f3c01e73e7f0442a89cd5c26d252f90e7",
       "kind": "file",
       "path": "mcp/src/agents_remember/kernel/primitives/version.py"
     },
@@ -137,14 +137,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T20:08:06+01:00",
+    "at": "2026-11-26T00:49:11+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L1",
+    "leaf": "261112-BUG-L29",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b5f00ccb-ae71-451c-bfff-3ee2a7ac6155",
-    "task": "261125-DEP"
+    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+    "task": "261112-BUG"
   }
 }

@@ -158,7 +158,7 @@ Retain the qualified L74 read boundary as inherited semantic intent: reads inclu
 
 Current Python package metadata accepts `>=3.14,<3.15`; managed development/CI pins 3.14.8. Ordinary pytest selects unit, integration or combined populations under declared case ceilings and supplies development feedback. New tests must protect distinct consequential behavior, with overlapping support consolidated; budgets are ceilings, not targets, and increases require an explicit tradeoff. Only pinned Dagger and existing lifecycle owners produce certifying evidence. Coverage is diagnostic; production CRAP 20 is a review trigger. Ruff lint/format, typing, structural checks and failures enforce. Ruff owns complexity enforcement; Radon reports and supplies CRAP's complexity term, and a successful Radon exit proves no gate passed. Policy forbids resolving complexity by invented baselines, suppression or widened limits; separately retained source suppressions are implementation qualifications rather than permission for new ones.
 
-Retain the hook account with its scope: fast pre-commit checks staged generated assets, lint, format, typing, test catalogs and dashboard checks; targeted pre-push repeats deterministic checks; neither runs tests; the full tier refuses host full-suite execution and names the pinned Dagger graph. Both tiers first look for `dashboard/node_modules` and `npm` when `dashboard/package.json` exists, so a tree without them fails with the `npm ci` instruction before Ruff runs; a tree without the dashboard package still skips the frontend rail. The [hook script's card](.githooks/_gate.sh.md) explains the tiers. Staged isolation parks/restores unstaged and untracked content except during in-progress Git operations, refuses a moved stash and gives recovery instructions. The shared repository stash can contain an interrupted gate's entry. The quality wrapper reports relevant untracked inputs separately and runs the staged candidate in a separate clone; missing diagnostic input or calculation failure fails its rail, while production metric threshold findings remain nonblocking reports.
+Retain the hook account with its scope: fast pre-commit checks staged generated assets, lint, format, typing, test catalogs and dashboard checks; targeted pre-push repeats deterministic checks; neither runs tests; the full tier refuses host full-suite execution and names the pinned Dagger graph. Both tiers first look for `dashboard/node_modules` and `npm` when `dashboard/package.json` exists, so a tree without them fails with the `npm ci` instruction before Ruff runs; a tree without the dashboard package still skips the frontend rail. The [hook script's card](.githooks/_gate.sh.md) explains the tiers. The fast tier passes the tracked Python population through one 256 KiB GNU xargs batch, derives every scope line in one invocation, runs the Python and dashboard rails concurrently with Python's output first, and reuses a content-addressed ESLint cache and incremental TypeScript build-info; `.eslintcache` and the build-info files are gitignored. A continued code-side sync commit runs its commit check under the same 900-second bound and session ownership as a closeout; a timeout or a hook mutation keeps `HEAD`, `MERGE_HEAD` and the staged merge and answers `sync-commit-check-failed` with the log and judged paths. Staged isolation parks/restores unstaged and untracked content except during in-progress Git operations, refuses a moved stash and gives recovery instructions. The shared repository stash can contain an interrupted gate's entry. The quality wrapper reports relevant untracked inputs separately and runs the staged candidate in a separate clone; missing diagnostic input or calculation failure fails its rail, while production metric threshold findings remain nonblocking reports.
 
 The two test catalogs remain canonical classification/lifecycle data, union-merged by Git attributes. Their repair command orders/deduplicates known lists, derives consumers when source supports them and removes obsolete paths except the named all-consumers-missing case; it does not invent rows or assign lanes. Invalid forms and interleaved union rows refuse with named repair, and base-revision parsing uses the same reader. No catalog row count or byte digest is pinned. Git exempts generated dashboard JavaScript from trailing-whitespace checks and skips whitespace checks for the byte-preserved Paseo server fixtures. The vendored tokenizer vocabulary is marked binary to prevent line-ending changes.
 
@@ -582,15 +582,12 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Retained reference account (no fresh execution or acceptance inferred): The hook gate's tiers. [122]
 
-- Retained reference account (no fresh execution or acceptance inferred): When staged isolation is needed and safe, the fast tier parks unstaged and untracked content and attempts restoration on exit; a failed restoration retains recovery instructions. [123]
 
-- Retained reference account (no fresh execution or acceptance inferred): The fast tier's checks, with the validator of the two test catalogs. [124]
 
 - Retained reference account (no fresh execution or acceptance inferred): The source checkout distinguishes installed runtime work from sibling-repo work and keeps implementation approval separate from commit approval. [275]
 
 - Retained reference account (no fresh execution or acceptance inferred): Skill synchronization treats root `skills/` as canonical and exposes a check form. [277]
 
-- Contributor guidance separates host feedback from Dagger-owned certifying evidence. [281]
 
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [339]
 
@@ -625,7 +622,6 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 
 - Contributor guidance routes instruction renewal through one command and keeps authored ceilings separate from measured facts. [369]
 
-- Retained reference account (no fresh execution or acceptance inferred): Contributor guidance separates host feedback from Dagger-owned certifying evidence. [40]
 
 - **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): The launcher seam: AR resolves the role hierarchy, task capsule and report scope, Paseo owns the agent session, and the receipt retains the execution reference and does not update task, review, curation or Git state. [137]
 
@@ -699,3 +695,11 @@ Historical L111 predecessor account, not the composed R113 roster: - Historical 
 - Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's writer input section. Anchor: `## The writer's input sections` [21]
 
 - Canonical source-bound onboarding and separate row domains. [331]
+
+
+- The fast tier uses one 256 KiB xargs batch, one scope-batch invocation, concurrent rails and the warm caches. [371]
+- A continued sync commit is bounded, logged, conditionally stamped when a runnable hook exists, and refused with the staged merge intact. [372]
+- Retained reference account (no fresh execution or acceptance inferred): When staged isolation is needed and safe, the fast tier parks unstaged and untracked content and attempts restoration on exit; a failed restoration retains recovery instructions. [123]
+- Retained reference account (no fresh execution or acceptance inferred): The fast tier's checks, with the validator of the two test catalogs. [124]
+- Contributor guidance separates host feedback from Dagger-owned certifying evidence. [281]
+- Retained reference account (no fresh execution or acceptance inferred): Contributor guidance separates host feedback from Dagger-owned certifying evidence. [40]

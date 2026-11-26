@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "978e410ca88ebabc20fc598a05870dd8f8efed1a",
-    "commit": "e8a96f6e2255155d733dd15dcba56bd26e46097e",
+    "codeTree": "2e79f14e621878f776217e876e3953c8a4903aec",
+    "commit": "50292a3bfed059fe4f0aa9f087a6156bf1b754f9",
     "role": "curator",
-    "statement": "The external-memory guide describes preserving scaffold files and refreshing eligible briefs after a converted layout effectively ignores the brief folder, and explains why an open worklist item or validator refusal blocks exact-tree closeout.",
-    "task": "261112-KNO-L4",
+    "statement": "Verified line-by-line on synced code (base 50292a3b + L29): docs/guides/use-external-memory.md (lines 129-157, plus memory_init, context_packet roots, and closeout steps) remains accurate after L29; closeout and direct_landing still run the repository pre-commit hook on the exact candidate tree under orchestration.landing.commitCheckTimeoutSeconds (default 900s, user -> checkout -> main checkout system/settings.json precedence via commit_check_process.py) and write Commit-Check-Pass: tree=<tree> hook=<hook> with hook=none when no hook exists.",
+    "task": "261112-BUG-L29",
     "uncommitted": true
   },
   "document": "docs/guides/use-external-memory.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
     },
     {
-      "blob": "d35463d6c2b0bc1953df6b6e2cd1fcca533a515d",
+      "blob": "de0a8a0b0119a78dd5df51e3d24f2f84b65b0b0f",
       "kind": "file",
       "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
     },
@@ -65,5 +65,16 @@
       "kind": "file",
       "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T00:49:11+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L29",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+    "task": "261112-BUG"
+  }
 }

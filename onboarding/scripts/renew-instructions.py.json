@@ -59,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
             "content": "sha256:e58af3797b578f908d94c631fe6777b9237bcc89dd6cc5ee8dd49c83e90e84d4",
             "locator": {
-              "end": 245,
+              "end": 376,
               "kind": "line_range",
-              "start": 242
+              "start": 373
             },
             "path": ".githooks/_gate.sh"
           },
@@ -136,12 +136,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e27262761cee5ab5e0177ca4774cc2a60bf3fcb5",
+            "blob": "5b7cc10ea678be4d50d94a02f248dc6c5cdd33d9",
             "content": "sha256:42a9e92ade669055808420d32249af664fc66fe70b463643090dacc68c31429e",
             "locator": {
-              "end": 155,
+              "end": 159,
               "kind": "line_range",
-              "start": 126
+              "start": 130
             },
             "path": "CONTRIBUTING.md"
           },
@@ -190,12 +190,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
             "content": "sha256:e76b38247a58a8949f9ec1d865953f4c5988b1c6e8970d3345a10c8ae2764201",
             "locator": {
-              "end": 112,
+              "end": 217,
               "kind": "line_range",
-              "start": 105
+              "start": 210
             },
             "path": ".githooks/_gate.sh"
           },
@@ -208,12 +208,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
-            "content": "sha256:5efac00700b2dce39d53e18404bec6661e98143d6832d044427f527d1db629a7",
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "content": "sha256:f85db749af65577dfa4202a007c1f2fef02d16e3cceecd87151258c006608012",
             "locator": {
-              "end": 135,
+              "end": 239,
               "kind": "line_range",
-              "start": 124
+              "start": 228
             },
             "path": ".githooks/_gate.sh"
           },
@@ -226,12 +226,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9f77ec48d633dd434ff48fbb6b45064c96fb3b1",
-            "content": "sha256:f69be61f5c4ad209a013a13674aea97359197180adae4727c362c9ac303faa12",
+            "blob": "8564e4e3097ddfc31f3477d3bbf9f4c2a657a6b6",
+            "content": "sha256:7ff55d586fdb51fc29b48518712d01a5a8491f80b5fa2a235a5dc92efddfa3b3",
             "locator": {
-              "end": 201,
+              "end": 215,
               "kind": "line_range",
-              "start": 195
+              "start": 210
             },
             "path": ".githooks/_gate.sh"
           },
