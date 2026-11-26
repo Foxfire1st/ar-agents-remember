@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/serving/projections/task_input_plan.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "777f38e68f2fab4c21d6c343dd6d64fd9910dabe",
+        "content": "sha256:2c4d539c92202a9df3857fb8efc06d8227defb09a0ac15757f8278c1f7a96a88",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskInputPlan.topology_candidate"
+        }
+      },
+      "id": "RLZ-XSPDAX",
+      "invariant": "INV-TTYYP8",
+      "origin": {
+        "handoffEntry": "BUG-R35@v1 §1",
+        "leaf": "261112-BUG-L35"
+      },
+      "rationale": "Filters receipt-directory topology candidates through the shared SKIPPED_RECEIPT_DIRS exclusions.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "task_input_plan is the single input plan both paths use.",

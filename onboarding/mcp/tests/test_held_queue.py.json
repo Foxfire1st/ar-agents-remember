@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "da6dd3e28060024e65850e69b35dd4b40d376841",
+        "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
+        "content": "sha256:b701251cb5f8e111eaa1e574dd8647aa4ad1fff4f22a47f773aaeefa73499a9c",
+        "locator": {
+          "kind": "symbol",
+          "name": "HeldSweepBoundsTests.test_receipt_helpers_warn_once_when_a_read_fails"
+        }
+      },
+      "facet": "_readable_queued_receipt, _refresh_waiting_count(HeldSeatRef), and apply_drain_to_receipt each log one warning naming a malformed receipt path and return cleanly without raising.",
+      "id": "PRF-2JBHS1",
+      "invariant": "INV-SB6HQS",
+      "origin": {
+        "handoffEntry": "BUG-R35@v1 §2",
+        "leaf": "261112-BUG-L35"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
         "content": "sha256:954aa57757efe2da09187b97199e426d0f77a70970e9ea3f8d0603ddca6b20b9",
         "locator": {
           "kind": "symbol",
@@ -20,7 +37,24 @@
     },
     {
       "anchor": {
-        "blob": "da6dd3e28060024e65850e69b35dd4b40d376841",
+        "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
+        "content": "sha256:aa80ff3f8b23fffb5b453247de81390d0d13ec501a326d9e840245fa9055078a",
+        "locator": {
+          "kind": "symbol",
+          "name": "HeldSweepBoundsTests.test_bad_receipts_do_not_abort_a_tick_with_valid_work"
+        }
+      },
+      "facet": "Malformed and non-receipt JSON files in a sessions directory each emit one warning naming their path while sweep_held_messages still drains a valid receipt in the same tick.",
+      "id": "PRF-8SXG1G",
+      "invariant": "INV-SB6HQS",
+      "origin": {
+        "handoffEntry": "BUG-R35@v1 §2",
+        "leaf": "261112-BUG-L35"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
         "content": "sha256:b5628cdf91c7c2875e3b56b4fd8ff5febfef71ab05586d934879c646aa7b0e60",
         "locator": {
           "kind": "symbol",
@@ -37,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "da6dd3e28060024e65850e69b35dd4b40d376841",
+        "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
         "content": "sha256:fd4c6b5a1122589a15a6cbdc63cb13aebeb3ae6005e3e202c0c439b03c5a8af8",
         "locator": {
           "kind": "symbol",
@@ -54,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "da6dd3e28060024e65850e69b35dd4b40d376841",
+        "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
         "content": "sha256:230c811d8596a9daeba0c27a483d7bab8cfdfd7590fb8a0b3b9e78edcabd0bae",
         "locator": {
           "kind": "symbol",
@@ -71,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "da6dd3e28060024e65850e69b35dd4b40d376841",
+        "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
         "content": "sha256:c7f86b3d48bf1f9bab0b3f4992ee6cbc96cae4379054378a1b80c631abb1a8db",
         "locator": {
           "kind": "symbol",
@@ -88,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "da6dd3e28060024e65850e69b35dd4b40d376841",
+        "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
         "content": "sha256:14cecad0b9134245fc4d27c623fdad37bef7d62053fd89591a29c58d5d4c2613",
         "locator": {
           "kind": "symbol",
@@ -105,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "da6dd3e28060024e65850e69b35dd4b40d376841",
+        "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
         "content": "sha256:4f255b4bd62a356dcf481ed89f2e492f8fc46c56ad3e3f7c948248729e567ede",
         "locator": {
           "kind": "symbol",
@@ -122,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "da6dd3e28060024e65850e69b35dd4b40d376841",
+        "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
         "content": "sha256:db8ec14de2db02a0d0a11bc0b32330f3def0c65f4c80f4e4e7985034399963ac",
         "locator": {
           "kind": "symbol",
@@ -139,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "da6dd3e28060024e65850e69b35dd4b40d376841",
+        "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
         "content": "sha256:b08e61e97f3fc0ed511e1f29bd20740d3e3901d98fc8366a3428971a9675e4b3",
         "locator": {
           "kind": "symbol",
@@ -156,7 +190,7 @@
     },
     {
       "anchor": {
-        "blob": "da6dd3e28060024e65850e69b35dd4b40d376841",
+        "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
         "content": "sha256:ad461d3e3f0fe227556cc7d6f9f26cca3c32a59eeb539869401951bbc0d0b228",
         "locator": {
           "kind": "symbol",
@@ -170,12 +204,29 @@
         "handoffEntry": "L100-R100-4a-bounded-census",
         "leaf": "260928-MIK-L100"
       }
+    },
+    {
+      "anchor": {
+        "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
+        "content": "sha256:acc56a2aafff789e9158de53318b03a21a0774167740453d564ac6a1c7b7be18",
+        "locator": {
+          "kind": "symbol",
+          "name": "HeldSweepBoundsTests.test_receipt_writers_warn_once_when_the_locked_read_fails"
+        }
+      },
+      "facet": "_refresh_waiting_count(HeldSeatRef) and apply_drain_to_receipt each log one warning naming the path and return cleanly when the locked write rereads a corrupted receipt.",
+      "id": "PRF-ZE2VTF",
+      "invariant": "INV-SB6HQS",
+      "origin": {
+        "handoffEntry": "BUG-R35@v1 §2",
+        "leaf": "261112-BUG-L35"
+      }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "da6dd3e28060024e65850e69b35dd4b40d376841",
+        "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
         "content": "sha256:db8ec14de2db02a0d0a11bc0b32330f3def0c65f4c80f4e4e7985034399963ac",
         "locator": {
           "kind": "symbol",
@@ -198,12 +249,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da6dd3e28060024e65850e69b35dd4b40d376841",
+            "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
             "content": "sha256:32ab64fe0bfb9c892aa1871a056d547db93ddc6a0ff45c315d3a0608f092d124",
             "locator": {
-              "end": 179,
+              "end": 180,
               "kind": "line_range",
-              "start": 155
+              "start": 156
             }
           },
           "kind": "test"
@@ -215,12 +266,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da6dd3e28060024e65850e69b35dd4b40d376841",
+            "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
             "content": "sha256:672e504a330519d0d4f96a5044ac584c6357f0d8beaf06e38523964f99069a8c",
             "locator": {
-              "end": 208,
+              "end": 209,
               "kind": "line_range",
-              "start": 181
+              "start": 182
             }
           },
           "kind": "test"
@@ -232,12 +283,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da6dd3e28060024e65850e69b35dd4b40d376841",
+            "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
             "content": "sha256:9292362904196583a34ac42fffee1b0451b2301e2407bd08f26011db1a52a225",
             "locator": {
-              "end": 257,
+              "end": 258,
               "kind": "line_range",
-              "start": 210
+              "start": 211
             }
           },
           "kind": "test"
@@ -249,12 +300,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da6dd3e28060024e65850e69b35dd4b40d376841",
+            "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
             "content": "sha256:9fa9143794ef138f9316035d7b4a9a46aa5819cd4c06a51d504a52eee873a99d",
             "locator": {
-              "end": 320,
+              "end": 321,
               "kind": "line_range",
-              "start": 289
+              "start": 290
             }
           },
           "kind": "test"
@@ -266,12 +317,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da6dd3e28060024e65850e69b35dd4b40d376841",
+            "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
             "content": "sha256:4ab4752be40ffa8d5c106920ca5cb9aa52dee688d76ad2af4499311abb17306a",
             "locator": {
-              "end": 613,
+              "end": 614,
               "kind": "line_range",
-              "start": 584
+              "start": 585
             }
           },
           "kind": "test"

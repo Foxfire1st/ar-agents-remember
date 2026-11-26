@@ -5,10 +5,11 @@
     ],
     "justification": "The log line and the recounted total are one promise about a failing pass; both cases witness it."
   },
-  "applicability": "Every sweep or drain pass over a held store.",
+  "applicability": "Every sweep or drain pass and receipt read/write helper over a held store.",
   "conditions": [
     "A failed pass names the recipient and the reason in one log line.",
-    "The receipt's count of held messages is recounted from the store it holds."
+    "The receipt's count of held messages is recounted from the store it holds.",
+    "_sweep_receipt, _readable_queued_receipt, _refresh_waiting_count, apply_drain_to_receipt, and _apply_drain_result catch HTTPException alongside ValueError on receipt reads and OSError on receipt writes (preserving HeldSeatClosed as a silent False return in apply_drain_to_receipt), logging one warning naming the path and returning cleanly so valid receipts still drain in the same tick."
   ],
   "exclusions": [
     "A pass that pauses for an unreadable store is reported under this clause, not swallowed."
@@ -25,27 +26,20 @@
     "leaf": "260928-MIK-L171",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A drain that fails writes one line naming the recipient and the reason, and a receipt's waiting count is recounted from its own store rather than published stale while the store cannot be read.",
+  "statement": "A drain that fails writes one line naming the recipient and the reason, a receipt's waiting count is recounted from its own store rather than published stale while the store cannot be read, and malformed or non-receipt JSON read or write rejections warn once naming the path and return cleanly without aborting a held-message sweep tick.",
   "supersedes": [],
+  "title": "Failed drains log once and malformed receipts never abort sweeps",
   "writer": {
-    "at": "2026-11-26T12:07:40+01:00",
-    "by": "conversion",
-    "effort": "unknown",
-    "harness": "unknown",
-    "leaf": "260928-MIK-L171",
-    "model": "unknown",
-    "operation": "state-conversion",
-    "role": "unknown",
-    "seat": "unknown",
-    "task": "260928-MIK",
-    "unknown": {
-      "effort": "not recorded before writers were stamped",
-      "harness": "not recorded before writers were stamped",
-      "model": "not recorded before writers were stamped",
-      "role": "not recorded before writers were stamped",
-      "seat": "not recorded before writers were stamped"
-    }
+    "at": "2026-11-26T01:27:15+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L35",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c57c6add-929a-55e6-aafd-7ff4a1800a9c",
+    "task": "261112-BUG"
   }
 }

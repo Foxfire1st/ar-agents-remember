@@ -1,0 +1,933 @@
+{
+  "closed": true,
+  "leaf": "261112-BUG-L35",
+  "review": {
+    "handedOverBy": {
+      "at": "2026-11-26T12:21:19+01:00",
+      "by": "agent",
+      "effort": "high",
+      "harness": "antigravity-acp",
+      "leaf": "261112-BUG-L35",
+      "model": "gemini-4-neon-high",
+      "role": "curator",
+      "seat": "c57c6add-929a-55e6-aafd-7ff4a1800a9c",
+      "task": "261112-BUG"
+    },
+    "reviewer": {
+      "at": "2026-11-26T12:21:19+01:00",
+      "by": "agent",
+      "effort": "unknown",
+      "harness": "hermes",
+      "leaf": "261112-BUG-L35",
+      "model": "opencode-go:deepseek-v4.1-flash",
+      "role": "reviewer",
+      "seat": "f22a6955-667f-50e1-864d-059b428a01b4",
+      "task": "261112-BUG",
+      "unknown": {
+        "effort": "the launch receipt does not hold the effort"
+      }
+    },
+    "round": 2,
+    "tree": "37030e9848a89e3dd9e08b3f3520828433f26abe",
+    "verdictRef": "notes/reports/reviewer/f22a6955-667f-50e1-864d-059b428a01b4/role-launch/L35-memory-round-2-verdict.md"
+  },
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0QQD4S",
+      "items": [
+        "sha256:a594d0fba663b0eb214a44d4da9693f553a40a947ba7865115c38ce35251d823"
+      ],
+      "reason": "Lines 742-801 of mcp/tests/test_held_queue.py add three regression test methods in HeldSweepBoundsTests recorded as proves entries (PRF-G31VYK, PRF-3D00YA, PRF-WAD42R) for INV-SB6HQS rather than a new code-side invariant realization.",
+      "subject": "hunk:sha256:a594d0fba663b0eb214a44d4da9693f553a40a947ba7865115c38ce35251d823"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-21E4J1",
+      "items": [
+        "sha256:681e9d2116b925592f25a58d1e722d0e3c34954244c7d1ff052f38f25461fe0d"
+      ],
+      "reason": "Lines 762-824 of mcp/tests/test_held_queue.py add three regression test methods in HeldSweepBoundsTests recorded as proves entries for INV-SB6HQS rather than a new code-side invariant realization.",
+      "subject": "hunk:sha256:681e9d2116b925592f25a58d1e722d0e3c34954244c7d1ff052f38f25461fe0d"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-29NJVB",
+      "items": [
+        "sha256:b5ae7593a94611913cf4afac18ec137f1fda946694b1e1a21be63fbdb24925df"
+      ],
+      "reason": "Preserved merged L51 and L35 Delivery/Bounded actor prose and re-anchored references [1]-[3] to durable symbol/line-range targets on synced 65911c75.",
+      "sources": [
+        {
+          "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+          "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_held_messages.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3GQN5S",
+      "items": [
+        "sha256:e4951ac736d4eb80e8a0b0be2971ef3a2c4b2a149886fa0d371dae9295a34a2f"
+      ],
+      "reason": "Route prose remains accurate; narrowed reference [22] in serving/overview.json to is_projection_input_event and refreshed refs [113], [114], [132] on synced 65911c75.",
+      "sources": [
+        {
+          "blob": "fae50c110f9d016eaed38b6987bfd6d75f07626a",
+          "path": "mcp/src/agents_remember/serving/change_watcher.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3YVMVM",
+      "items": [
+        "sha256:cc57fff7ce98e1a46074ed1cc5341f0871800f9fa73f49a996414ee1bcba8465"
+      ],
+      "reason": "The tests overview delegates per-module case lists to individual test cards and added no test modules or lane-catalog changes on synced 65911c75.",
+      "sources": [
+        {
+          "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
+          "path": "mcp/tests/test_held_queue.py"
+        },
+        {
+          "blob": "6a051ab4fec976c826c085972c11fa0daa6a5dc6",
+          "path": "mcp/tests/test_host_activity_projection.py"
+        },
+        {
+          "blob": "1e38dad1c07233d5a501aaf7f0ce62038ab7dd84",
+          "path": "mcp/tests/test_projection_watch_plan_native.py"
+        },
+        {
+          "blob": "0c3789ae289d743c6105a63faedb75e350a84960",
+          "path": "mcp/tests/test_task_input_plan_edges.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-59EGB6",
+      "items": [
+        "sha256:47cd65ac66f6a14da974e8cfce71d423ab350fce611052fda2bf83d682f7dc47"
+      ],
+      "reason": "Line 28 of mcp/tests/test_held_queue.py imports HeldSeatRef and held_seat_ref from role_held_store for the INV-SB6HQS malformed-receipt helper and writer regression proofs rather than introducing a code-side invariant realization.",
+      "subject": "hunk:sha256:47cd65ac66f6a14da974e8cfce71d423ab350fce611052fda2bf83d682f7dc47"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R35",
+          "packet": "requirements/BUG-R35-v1-held-sweep-skips-messages-and-deduplicates-unstamped-turn-ends.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "6a051ab4fec976c826c085972c11fa0daa6a5dc6",
+            "content": "sha256:f4771fc6647d7d671672b78d231ad6cc1f463613a3164d813ebbb0117e676a56",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unstamped_turn_ends_trigger_delivery_once_per_plugin_boot"
+            },
+            "path": "mcp/tests/test_host_activity_projection.py"
+          },
+          "before": "absent",
+          "id": "PRF-1VKM5A"
+        },
+        {
+          "after": {
+            "blob": "1a1c3df8af8b35eca696e9bd3674a7de21cbc757",
+            "content": "sha256:158cf8a5c6092fd46d58d316bd23c744fdbb960b0d56e71e32afee79b6a485f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ParsedPublication"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "before": "absent",
+          "id": "RLZ-1EHT94"
+        },
+        {
+          "after": {
+            "blob": "1a1c3df8af8b35eca696e9bd3674a7de21cbc757",
+            "content": "sha256:439718eaf86d39a7095d95bc585d77b1d20716efc9250d53ecdf093c4c3a0c76",
+            "locator": {
+              "kind": "symbol",
+              "name": "new_stamped_ends"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "before": "absent",
+          "id": "RLZ-ER7DSD"
+        },
+        {
+          "after": {
+            "blob": "1a1c3df8af8b35eca696e9bd3674a7de21cbc757",
+            "content": "sha256:84bcc5fa8cd7dffab4e44c9a83a2f6da1cb7bb6ee256e76a008a85c007e5667b",
+            "locator": {
+              "kind": "symbol",
+              "name": "turn_ended_agents"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "before": {
+            "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
+            "content": "sha256:5e4a32d2dc7df5a3a35bfcdd918b414675462cc2158dea4ba2c5276e65f6c595",
+            "locator": {
+              "kind": "symbol",
+              "name": "turn_ended_agents"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "id": "RLZ-M56SSK"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-5B6PT1",
+      "items": [
+        "sha256:2164d3fc105a8b82b6fc33dd5beef72cd95e57064f40e4fd6ae56f50424ffe40"
+      ],
+      "reason": "Strengthened INV-4DQMNE so turn_ended_agents deduplicates unstamped idle, closed, and ended observations per reader using unstamped:<boot_id> from _ParsedPublication.boot_id without fabricating eventAt or affecting new_stamped_ends; re-anchored RLZ-M56SSK and attached _ParsedPublication, new_stamped_ends, and the boot-dedup proof. Evidence (BUG-R35@v1 §3): mcp/tests/test_host_activity_projection.py::test_unstamped_turn_ends_trigger_delivery_once_per_plugin_boot",
+      "revision": 4,
+      "subject": "INV-4DQMNE"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-637T59",
+      "items": [
+        "sha256:211b321986863ce9f518deafedede48ccbd391a488baacfd44cc9b00abca84cf",
+        "sha256:300e8c02662a16d1895b94a6613363d7c15439a0241004b9e4bcac2058292070",
+        "sha256:354344988aa6bcbb6567ff88ba851b2343f4bce34749b816e23d7e2e16fa3fa4",
+        "sha256:539f953bd326129b47f5bd6dc70575e94b71921687c3e8f3027d89cfd1e618ee",
+        "sha256:aeb71681a8e881b8f71673cf58eceae00382d65b757969e5cfdc339ca3d0a89e",
+        "sha256:e30892bbe2913a88f626243834199de447d0838dd494fdcd496574916cd307ba"
+      ],
+      "reason": "The card states the high-level TaskInputPlan-to-native-walk parity obligation without enumerating skip directories or individual test cases; extending test_receipt_content_skip_rules_match_native_walk to cover messages keeps its prose accurate.",
+      "sources": [
+        {
+          "blob": "0c3789ae289d743c6105a63faedb75e350a84960",
+          "path": "mcp/tests/test_task_input_plan_edges.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_task_input_plan_edges.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "802c7cd00c27da17b33047c83f9429adc1d88958",
+            "content": "sha256:b17e2528de863efe31fa0e397fc1fc47c0859e54e2cc79734106e158972a2109",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_discovery.py"
+          },
+          "before": {
+            "blob": "a2373b697bbeca8395cc639ff1f5be34d1bd95ea",
+            "content": "sha256:fc5c4aa0bbb3634633a6e5d466fa8cba34ceb928f977a9cfff278f67d78de622",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_discovery.py"
+          },
+          "id": "RLZ-DJMVJX"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-6A0P6C",
+      "items": [
+        "sha256:17a7132c50be4d07153c8bf971ceb8d09e36d88ca1822fcab4e457edd35616f1"
+      ],
+      "reason": "Re-anchored the whole-file held_store_discovery.py realization after adding messages to SKIPPED_RECEIPT_DIRS; the 256-entry budget, resumable walkers, and depth caps are unchanged.",
+      "revision": 1,
+      "subject": "INV-XP08W1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-84QJGJ",
+      "items": [
+        "sha256:3a97e10ceda0732fa34a54887a3a2f2f41ea81abae36d6750b023e63aebca233",
+        "sha256:701cd058f3cbc359863ea06758100be6ce1b8dee1b04e6cd7d3e63e2f68531c7",
+        "sha256:868546e7261768813023b37afa174b13973f3df08c7bd8f070977b8c80a76604"
+      ],
+      "reason": "Retained documentation for parametrized test_held_watch_admits_receipts_and_ignores_taskless_message_artifacts and refreshed ref [1] on synced 65911c75.",
+      "sources": [
+        {
+          "blob": "1e38dad1c07233d5a501aaf7f0ce62038ab7dd84",
+          "path": "mcp/tests/test_projection_watch_plan_native.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_projection_watch_plan_native.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A103JS",
+      "items": [
+        "sha256:df97412a825ffe2f6927267b4a601ab5c21ac11fd7a976227fe192666099b4eb"
+      ],
+      "reason": "Updated Code Commentary to include messages in SKIPPED_RECEIPT_DIRS and corrected pre-existing inaccuracies in receipt_holder, receipt_holder_chain, task_receipt_steps, ReceiptRootWalk, and _StepWalk descriptions.",
+      "sources": [
+        {
+          "blob": "802c7cd00c27da17b33047c83f9429adc1d88958",
+          "path": "mcp/src/agents_remember/controlplane/held_store_discovery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/controlplane/held_store_discovery.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AK1PSA",
+      "items": [
+        "sha256:accadfd7496bde6c4be649be07d2cba4519f6e209460c0cb2d331d2629dcb0e4"
+      ],
+      "reason": "Retained the Bounds bullet documenting the three malformed/non-receipt JSON warning regression tests in HeldSweepBoundsTests and refreshed references [1]-[5] on synced 65911c75.",
+      "sources": [
+        {
+          "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
+          "path": "mcp/tests/test_held_queue.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_held_queue.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R35",
+          "packet": "requirements/BUG-R35-v1-held-sweep-skips-messages-and-deduplicates-unstamped-turn-ends.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "1e38dad1c07233d5a501aaf7f0ce62038ab7dd84",
+            "content": "sha256:d9be33bea8acc1019715b3278354546442b7aba46e81bb73afad7a3859972610",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_held_watch_admits_receipts_and_ignores_taskless_message_artifacts"
+            },
+            "path": "mcp/tests/test_projection_watch_plan_native.py"
+          },
+          "before": "absent",
+          "id": "PRF-SP6E50"
+        },
+        {
+          "after": {
+            "blob": "fae50c110f9d016eaed38b6987bfd6d75f07626a",
+            "content": "sha256:0db3fc7b61e70c8ee81d64524761baa87550b27d1c7f0ae1bddaf922daf1c0bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionWatchPlan.admits_file"
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
+          },
+          "before": "absent",
+          "id": "RLZ-FGDVRA"
+        },
+        {
+          "after": {
+            "blob": "fae50c110f9d016eaed38b6987bfd6d75f07626a",
+            "content": "sha256:2d4cfde9b788a8c22f8d7f23be6b961768fc82f595761b505f1016f02255b1c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
+          },
+          "before": {
+            "blob": "8137851d089d6e8de0785d0a545a42cbecc8d32e",
+            "content": "sha256:6f2acac1b2296df7a8e5be4fdd28fbe15cee03ce4eaf2c9e2b4ec26d38d36a6f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
+          },
+          "id": "RLZ-H1B0AG"
+        },
+        {
+          "after": {
+            "blob": "fae50c110f9d016eaed38b6987bfd6d75f07626a",
+            "content": "sha256:65fdcc6cb406903e36df4615220e8afaf223bb8162a21cd2b583e66da17f8adf",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_held_receipt"
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
+          },
+          "before": "absent",
+          "id": "RLZ-RGHKW9"
+        },
+        {
+          "after": {
+            "blob": "fae50c110f9d016eaed38b6987bfd6d75f07626a",
+            "content": "sha256:d19909de150f8f9140f8b4037775295c74bafbc43ed3d6da05592dec4440e4e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "projection_domains_for_paths"
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
+          },
+          "before": "absent",
+          "id": "RLZ-ZYJESJ"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-BBZZGG",
+      "items": [
+        "sha256:8a24af7613ebe3a258d8ea0bea0246ba737517a3d3cd685b3e539e158768be51"
+      ],
+      "reason": "Strengthened INV-SVSW7T so held-receipt watch admission and domain matching exclude history, message-bindings, and messages beneath notes/reports/paseo-native-executions while preserving real taskless and task-bound receipt invalidation regardless of ancestor directory names; re-anchored RLZ-H1B0AG and attached is_held_receipt, ProjectionWatchPlan.admits_file, projection_domains_for_paths, and the parametrized watch-admission proof on synced 65911c75. Evidence (BUG-R35@v1 §4): mcp/tests/test_projection_watch_plan_native.py::test_held_watch_admits_receipts_and_ignores_taskless_message_artifacts (ordinary-root, earlier-notes and receipt-like-ancestor)",
+      "revision": 2,
+      "subject": "INV-SVSW7T"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+            "content": "sha256:9ba4a9d2cd2a9a4d80b9c2e464adff6d0711f4a2d502b670fae7db49f77fae16",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+            "content": "sha256:af49b313ef273b099041dd612f7b29988763667e21d0382af8b16e8b39c1d245",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-83E20B"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-BVAH95",
+      "items": [
+        "sha256:24f988f717878722af4636dea409d48730a86ab1fee23bc0458e4fe46f7a60df"
+      ],
+      "reason": "Re-anchored the whole-file role_held_messages.py realization on synced 65911c75 after adding HTTPException warning handlers in receipt read/write helpers; the silent-end, send-back, declared-wait, and provider-limit rules are unchanged.",
+      "revision": 8,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R35",
+          "packet": "requirements/BUG-R35-v1-held-sweep-skips-messages-and-deduplicates-unstamped-turn-ends.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
+            "content": "sha256:b701251cb5f8e111eaa1e574dd8647aa4ad1fff4f22a47f773aaeefa73499a9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "HeldSweepBoundsTests.test_receipt_helpers_warn_once_when_a_read_fails"
+            },
+            "path": "mcp/tests/test_held_queue.py"
+          },
+          "before": "absent",
+          "id": "PRF-2JBHS1"
+        },
+        {
+          "after": {
+            "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
+            "content": "sha256:aa80ff3f8b23fffb5b453247de81390d0d13ec501a326d9e840245fa9055078a",
+            "locator": {
+              "kind": "symbol",
+              "name": "HeldSweepBoundsTests.test_bad_receipts_do_not_abort_a_tick_with_valid_work"
+            },
+            "path": "mcp/tests/test_held_queue.py"
+          },
+          "before": "absent",
+          "id": "PRF-8SXG1G"
+        },
+        {
+          "after": {
+            "blob": "6a1c63627ffbbeb01b30b437a2e8437cab8232cd",
+            "content": "sha256:acc56a2aafff789e9158de53318b03a21a0774167740453d564ac6a1c7b7be18",
+            "locator": {
+              "kind": "symbol",
+              "name": "HeldSweepBoundsTests.test_receipt_writers_warn_once_when_the_locked_read_fails"
+            },
+            "path": "mcp/tests/test_held_queue.py"
+          },
+          "before": "absent",
+          "id": "PRF-ZE2VTF"
+        },
+        {
+          "after": {
+            "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+            "content": "sha256:0f56026d2282c75995fe899363cb20f80788dd3465a7a674607e4a232dbe8602",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sweep_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": {
+            "blob": "3a756a13f69f784b4c66a2225d4578247a310a48",
+            "content": "sha256:9d5475340d5e38478149c544311264cc8ab47503df9529a722ee06f5be357425",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sweep_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "id": "RLZ-205RZ4"
+        },
+        {
+          "after": {
+            "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+            "content": "sha256:a5e592ddd5718311391209f72d34b54ed7c579ae91e2667ccf4796e59366d9e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_drain_to_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": "absent",
+          "id": "RLZ-27ZNFR"
+        },
+        {
+          "after": {
+            "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+            "content": "sha256:14fe910ca3c8ef9a7f152d5f4b8271fb6f9e5bc69855a148917f3352da021dd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_waiting_count"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": "absent",
+          "id": "RLZ-K9PMVJ"
+        },
+        {
+          "after": {
+            "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+            "content": "sha256:c539236032322492374f2b7e17952dc1df5c22015cf49a754016529e54edfae6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_drain_result"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": "absent",
+          "id": "RLZ-QS13W5"
+        },
+        {
+          "after": {
+            "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+            "content": "sha256:fcde7137e7db205cfbe255b6fb8f99ea44a285543dcafd878d283bfc97434ccd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_readable_queued_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "before": "absent",
+          "id": "RLZ-Z9X42D"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-F3YGFG",
+      "items": [
+        "sha256:780fe23f8df5e01b2bd730d8fb8e279bed8e85e7c6a3f8d651bcff3e5d49191a"
+      ],
+      "reason": "Strengthened INV-SB6HQS so malformed or non-receipt JSON rejections raising HTTPException log one warning naming the path and return cleanly across _sweep_receipt, _readable_queued_receipt, _refresh_waiting_count, apply_drain_to_receipt (preserving HeldSeatClosed), and _apply_drain_result without aborting the sweep tick; re-anchored RLZ-205RZ4 and attached the four helper realizations and three regression proofs on synced 65911c75. Evidence (BUG-R35@v1 §2): mcp/tests/test_held_queue.py::HeldSweepBoundsTests::test_bad_receipts_do_not_abort_a_tick_with_valid_work\nmcp/tests/test_held_queue.py::HeldSweepBoundsTests::test_receipt_helpers_warn_once_when_a_read_fails\nmcp/tests/test_held_queue.py::HeldSweepBoundsTests::test_receipt_writers_warn_once_when_the_locked_read_fails",
+      "revision": 2,
+      "subject": "INV-SB6HQS"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-F5PD3X",
+      "items": [
+        "sha256:d3f01d1e2e5fa2f6c65796bee0e048c37cc8e48617fadfe1d9d9c47f71e521a3"
+      ],
+      "reason": "The MCP package overview describes role_held_messages.py only at package-ownership level; merged L51+L35 changes leave overview prose accurate with ref [325] refreshed.",
+      "sources": [
+        {
+          "blob": "26c93c84b3cfac66e8f6b3ba97b27b0b3d61a4f3",
+          "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FSMS0C",
+      "items": [
+        "sha256:1f04f5794e86cfc12bfbbb7b0ec5bbdfb9a8450b8b1a28e4e209065b218c7324"
+      ],
+      "reason": "The projections overview covers HostActivityInput reconciliation and usage_read_batch, both unchanged by adding boot_id and unstamped turn-end deduplication in turn_ended_agents.",
+      "sources": [
+        {
+          "blob": "1a1c3df8af8b35eca696e9bd3674a7de21cbc757",
+          "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FVANF8",
+      "items": [
+        "sha256:7110f60d5fe2a9ebeaf8d4f5ba293b70022254593a2678f153c0a2a2ad61ea2d"
+      ],
+      "reason": "The controlplane overview summarizes held_store_discovery.py at route level without listing SKIPPED_RECEIPT_DIRS; adding messages preserves bounded discovery prose unchanged.",
+      "sources": [
+        {
+          "blob": "802c7cd00c27da17b33047c83f9429adc1d88958",
+          "path": "mcp/src/agents_remember/controlplane/held_store_discovery.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/controlplane/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JGJNRH",
+      "items": [
+        "sha256:6f22d09525b816c3cb8c267074c0dbbe94f3c67c686b51781703268334419538"
+      ],
+      "reason": "Line 20 of mcp/tests/test_held_queue.py imports role_held_store to patch role_held_store.recount_waiting_for in HeldSweepBoundsTests.test_receipt_writers_warn_once_when_the_locked_read_fails (proves entry for INV-SB6HQS) rather than introducing a code-side invariant realization.",
+      "subject": "hunk:sha256:6f22d09525b816c3cb8c267074c0dbbe94f3c67c686b51781703268334419538"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6a051ab4fec976c826c085972c11fa0daa6a5dc6",
+            "content": "sha256:213806c146d83a275e739adda61ed058240cb2889ad227042769d06218ce8e75",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_host_activity_projection.py"
+          },
+          "before": {
+            "blob": "c79e4d87943bb77c433a42a2ceccca6602a78e9c",
+            "content": "sha256:4019781e54a885042524f070c0a233d3e5b4b0e03d8b3969828b2ddd99297d41",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_host_activity_projection.py"
+          },
+          "id": "RLZ-7FNE6M"
+        },
+        {
+          "after": {
+            "blob": "1a1c3df8af8b35eca696e9bd3674a7de21cbc757",
+            "content": "sha256:b5bb68dc1c466d1e2e1521a3773dcbfd799beee1e61598ca3e61d4bbc0786a35",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "before": {
+            "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
+            "content": "sha256:d64f2d6a5a5bff85890f694507bc691b989fb85db3666dcc22892876a9143c4b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "id": "RLZ-MZV75N"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-MY3ABH",
+      "items": [
+        "sha256:e3c224223c8d4e569bc9925361c8794654ac1b01ce5780ca53993a84df15afe3"
+      ],
+      "reason": "Re-anchored the whole-file host_activity.py and test_host_activity_projection.py realizations after adding boot_id and unstamped turn-end deduplication plus its unit test; task stage, activity, and age authority in HostActivityInput and task_state are unchanged.",
+      "revision": 4,
+      "subject": "INV-VDWN33"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N81BZ4",
+      "items": [
+        "sha256:7c0f070c3372a4f95a35078d1704c1c37ef403e5d6967c2148cc1245552e1ef5"
+      ],
+      "reason": "The compute weakness stands unchanged: _executions_roots in mcp/src/agents_remember/cli/role_held_messages.py shifted by two lines from the fastapi import, kept identical symbol content (sha256:d00e0ff016527511ecd092adbadf515512867bdd3182bf3ca0482e1f0e544f3e), and still enumerates all task roots via receipt_roots before bounded receipt walks.",
+      "revision": 2,
+      "subject": "WKN-V8X6D3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Q28T7K",
+      "items": [
+        "sha256:9acbfc102d3736d9d126af9db1dabfd0665449413d3019a9a9fb75ba2b6f9829"
+      ],
+      "reason": "Preserved upstream and L35 prose for ProjectionWatchPlan.admits_file, is_held_receipt, and projection_domains_for_paths, re-authored ref [3] and verified refs [27]-[29] on synced 65911c75.",
+      "sources": [
+        {
+          "blob": "fae50c110f9d016eaed38b6987bfd6d75f07626a",
+          "path": "mcp/src/agents_remember/serving/change_watcher.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/change_watcher.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-MGGEBY",
+          "revision": 2
+        },
+        {
+          "id": "INV-VDWN33",
+          "revision": 4
+        },
+        {
+          "id": "INV-WQ8YGE",
+          "revision": 2
+        },
+        {
+          "id": "INV-X0KED3",
+          "revision": 3
+        },
+        {
+          "id": "INV-XZYGEB",
+          "revision": 3
+        },
+        {
+          "id": "INV-YK0D2W",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0BXKJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-SCJ4FG",
+      "items": [
+        "sha256:741f134f56043bf1ed1f8208111e3b239d9c724e9d2bcdbed968a908f5860fb9"
+      ],
+      "reason": "Examined all seven members after re-anchoring INV-VDWN33; L35 only added boot-scoped unstamped turn-end deduplication for held delivery and left task stage, activity, age, and HostActivityInput reconciliation unchanged.",
+      "revision": 5,
+      "subject": "FAM-14NZRC"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TWYZZ2",
+      "items": [
+        "sha256:3021417deb97430dfa3db265c152b667951871ac21f5b4d98122834492e77dbe"
+      ],
+      "reason": "Documented test_unstamped_turn_ends_trigger_delivery_once_per_plugin_boot, corrected the shifted stale-reply line reference to :172-189, and narrowed references [5] and [6] from whole-file to test-symbol anchors.",
+      "sources": [
+        {
+          "blob": "6a051ab4fec976c826c085972c11fa0daa6a5dc6",
+          "path": "mcp/tests/test_host_activity_projection.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_host_activity_projection.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-X3F598",
+      "items": [
+        "sha256:32615260edd7c080a9951bd273d0c7b60accc2d751658a17c189c99dc4617370"
+      ],
+      "reason": "Updated Turn-end and second-view reads and Shared held-delivery publication parse prose to record _ParsedPublication.boot_id and boot-scoped unstamped:<boot_id> deduplication in turn_ended_agents.",
+      "sources": [
+        {
+          "blob": "1a1c3df8af8b35eca696e9bd3674a7de21cbc757",
+          "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/host_activity.py"
+    },
+    {
+      "because": [
+        {
+          "id": "BUG-R35",
+          "packet": "requirements/BUG-R35-v1-held-sweep-skips-messages-and-deduplicates-unstamped-turn-ends.md",
+          "task": {
+            "path": "261112_bug-fixes-and-issue-tracking",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "0c3789ae289d743c6105a63faedb75e350a84960",
+            "content": "sha256:a6044eb045683f8ded9bdc14606c6f16a723185dbc00800f9a29ba8970296aaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_receipt_content_skip_rules_match_native_walk"
+            },
+            "path": "mcp/tests/test_task_input_plan_edges.py"
+          },
+          "before": "absent",
+          "id": "PRF-WT9A89"
+        },
+        {
+          "after": {
+            "blob": "802c7cd00c27da17b33047c83f9429adc1d88958",
+            "content": "sha256:dfd39818f486a85e9a1992a73930e77b757646a01d8b6c938b12cbf49e2d592c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKIPPED_RECEIPT_DIRS"
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_discovery.py"
+          },
+          "before": "absent",
+          "id": "RLZ-G4TQKD"
+        },
+        {
+          "after": {
+            "blob": "777f38e68f2fab4c21d6c343dd6d64fd9910dabe",
+            "content": "sha256:2c4d539c92202a9df3857fb8efc06d8227defb09a0ac15757f8278c1f7a96a88",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskInputPlan.topology_candidate"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/task_input_plan.py"
+          },
+          "before": "absent",
+          "id": "RLZ-XSPDAX"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-XBNNQK",
+      "items": [],
+      "reason": "Strengthened INV-TTYYP8 to include messages alongside history and message-bindings in SKIPPED_RECEIPT_DIRS, attached SKIPPED_RECEIPT_DIRS and TaskInputPlan.topology_candidate realizations plus the skip-rule parity proof, and preserved the 32-read/32-drain sweep budgets. Evidence (BUG-R35@v1 §1): mcp/tests/test_task_input_plan_edges.py::test_receipt_content_skip_rules_match_native_walk",
+      "revision": 3,
+      "subject": "INV-TTYYP8"
+    },
+    {
+      "disposition": "rerouted",
+      "examined": [
+        {
+          "id": "INV-ATA2Z7",
+          "revision": 1
+        },
+        {
+          "id": "INV-PJA167",
+          "revision": 2
+        },
+        {
+          "id": "INV-TTYYP8",
+          "revision": 3
+        },
+        {
+          "id": "INV-Y1SDE2",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-Y1R1WW",
+      "items": [],
+      "reason": "Examined all four members after strengthening INV-TTYYP8 to skip messages subdirectories and attaching TaskInputPlan.topology_candidate as a support realization; added mcp/src/agents_remember/serving/projections to FAM-S140B6 routes so every member realization is covered. Real held receipts live under sessions or task holders, never under messages, so the family guarantee remains intact.",
+      "revision": 3,
+      "subject": "FAM-S140B6"
+    }
+  ],
+  "schema": "ar-history/v1",
+  "written": [
+    {
+      "contentDigest": "sha256:acc8f72b7e8757a09c0f07fc0246ea4733cf62ccae7ab8263540cc3252851965",
+      "record": "FAM-S140B6",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-25T17:49:01+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L35",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c57c6add-929a-55e6-aafd-7ff4a1800a9c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:6091f3f5b124233a0f436a58eebced2b6a97fcb825f955ab2a1efd20a1f630bb",
+      "record": "INV-4DQMNE",
+      "revision": 4,
+      "writer": {
+        "at": "2026-11-25T17:49:01+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L35",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c57c6add-929a-55e6-aafd-7ff4a1800a9c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:b514f29e7f44db6d234abb701d172bf76d08f6c38f4df0aff1d03316695bdf61",
+      "record": "INV-SB6HQS",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-26T01:27:15+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L35",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c57c6add-929a-55e6-aafd-7ff4a1800a9c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:a286ccf6bd899877537bb30b45b7037801cce56554943ea69dba7c7507a1b347",
+      "record": "INV-SVSW7T",
+      "revision": 2,
+      "writer": {
+        "at": "2026-11-25T17:49:01+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L35",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c57c6add-929a-55e6-aafd-7ff4a1800a9c",
+        "task": "261112-BUG"
+      }
+    },
+    {
+      "contentDigest": "sha256:6935ad9e48d6e1caee843e8491c788387e693560b42dd070ad517ffa6980fc38",
+      "record": "INV-TTYYP8",
+      "revision": 3,
+      "writer": {
+        "at": "2026-11-25T17:49:01+01:00",
+        "by": "agent",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "leaf": "261112-BUG-L35",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c57c6add-929a-55e6-aafd-7ff4a1800a9c",
+        "task": "261112-BUG"
+      }
+    }
+  ]
+}

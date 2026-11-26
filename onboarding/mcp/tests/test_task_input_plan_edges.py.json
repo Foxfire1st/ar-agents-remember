@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_task_input_plan_edges.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "0c3789ae289d743c6105a63faedb75e350a84960",
+        "content": "sha256:a6044eb045683f8ded9bdc14606c6f16a723185dbc00800f9a29ba8970296aaa",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_receipt_content_skip_rules_match_native_walk"
+        }
+      },
+      "facet": "Both ReceiptWalk and task_input_plan skip history, message-bindings, and messages subdirectories with zero os.scandir calls into any skipped directory while keeping valid receipts.",
+      "id": "PRF-WT9A89",
+      "invariant": "INV-TTYYP8",
+      "origin": {
+        "handoffEntry": "BUG-R35@v1 §1",
+        "leaf": "261112-BUG-L35"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aeffb5372d31689327d99f34f74125a41e10345c",
+            "blob": "0c3789ae289d743c6105a63faedb75e350a84960",
             "content": "sha256:0161e5b1f20e63302026fb20765cc718858b2e43612ee6d36388d6e48bb5a2ba",
             "locator": {
               "kind": "symbol",

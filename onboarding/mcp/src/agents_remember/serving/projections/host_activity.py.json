@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
+        "blob": "1a1c3df8af8b35eca696e9bd3674a7de21cbc757",
+        "content": "sha256:158cf8a5c6092fd46d58d316bd23c744fdbb960b0d56e71e32afee79b6a485f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ParsedPublication"
+        }
+      },
+      "id": "RLZ-1EHT94",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "BUG-R35@v1 §3",
+        "leaf": "261112-BUG-L35"
+      },
+      "rationale": "Retains publication.bootId alongside the cached ending and stamped-idle selections so turn_ended_agents can form boot-scoped unstamped bookmarks.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "1a1c3df8af8b35eca696e9bd3674a7de21cbc757",
         "content": "sha256:a6b07b45c63823bf9788ef74b4aecc45883351cfa7eb3ddf4fb9d39e650f5d15",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
+        "blob": "1a1c3df8af8b35eca696e9bd3674a7de21cbc757",
         "content": "sha256:821cd5dc92b5a85facbef521d552ebb1ac7a1bbdff82babb3dab423a3f8f06bb",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,25 @@
     },
     {
       "anchor": {
-        "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
+        "blob": "1a1c3df8af8b35eca696e9bd3674a7de21cbc757",
+        "content": "sha256:439718eaf86d39a7095d95bc585d77b1d20716efc9250d53ecdf093c4c3a0c76",
+        "locator": {
+          "kind": "symbol",
+          "name": "new_stamped_ends"
+        }
+      },
+      "id": "RLZ-ER7DSD",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "BUG-R35@v1 §3",
+        "leaf": "261112-BUG-L35"
+      },
+      "rationale": "Remains unaffected by boot-scoped unstamped bookmarking and continues emitting only newly stamped idle observations.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "1a1c3df8af8b35eca696e9bd3674a7de21cbc757",
         "content": "sha256:b89e535d05d3270d1d44c2c5e169d84c685f30b6849c2808453bd7d6303eec60",
         "locator": {
           "kind": "symbol",
@@ -57,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
-        "content": "sha256:5e4a32d2dc7df5a3a35bfcdd918b414675462cc2158dea4ba2c5276e65f6c595",
+        "blob": "1a1c3df8af8b35eca696e9bd3674a7de21cbc757",
+        "content": "sha256:84bcc5fa8cd7dffab4e44c9a83a2f6da1cb7bb6ee256e76a008a85c007e5667b",
         "locator": {
           "kind": "symbol",
           "name": "turn_ended_agents"
@@ -70,13 +106,13 @@
         "handoffEntry": "MIK-R171@v1 rule 1",
         "leaf": "260928-MIK-L171"
       },
-      "rationale": "The held-delivery tick rechecks idle, closed and ended publication observations and deduplicates event stamps.",
+      "rationale": "The held-delivery tick rechecks idle, closed and ended publication observations and deduplicates both eventAt stamps and boot-scoped unstamped:<boot_id> bookmarks per reader.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
-        "content": "sha256:d64f2d6a5a5bff85890f694507bc691b989fb85db3666dcc22892876a9143c4b",
+        "blob": "1a1c3df8af8b35eca696e9bd3674a7de21cbc757",
+        "content": "sha256:b5bb68dc1c466d1e2e1521a3773dcbfd799beee1e61598ca3e61d4bbc0786a35",
         "locator": {
           "kind": "file"
         }
@@ -97,12 +133,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7ef6e6467dbb85e94c1a25cad0abdf4493c5b1d",
+            "blob": "1a1c3df8af8b35eca696e9bd3674a7de21cbc757",
             "content": "sha256:b89e535d05d3270d1d44c2c5e169d84c685f30b6849c2808453bd7d6303eec60",
             "locator": {
-              "end": 357,
+              "end": 364,
               "kind": "line_range",
-              "start": 270
+              "start": 277
             }
           },
           "kind": "code"
