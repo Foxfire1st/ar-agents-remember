@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "049d3961dfb898bbd69253d9e0b878188fd1006b",
-    "commit": "ed29e40bb6a27dbba33b106b556da182e02a7429",
+    "codeTree": "cc5ebb4ba64525d4aac92d7131bd7edfb1c7cf72",
+    "commit": "92391d7a916eb01388e24c65c410f647e7061ef9",
     "role": "curator",
-    "statement": "On settled tree 049d3961 (commit ed29e40b), docs/guides/review-page-and-explainer.md accurately describes recorded and planned explanations (private inputs, first-request selected history, staged essay/figures/isolation, reference-only kit carry, complete still form, and capped advisory inventory), explainer_control plus the explainer's four dedicated tools and host-profile settings (unchanged by CAP-L4's docstring shortening), and explainer retirement plus task cleanup/abandon/finalize leaving the explainer workspace intact.",
+    "statement": "On settled crossing-6 tree cc5ebb4b (commit 92391d7a, combining crossing-5/EXP-L1 and BUG-L41 a772c901/8b648028), docs/guides/review-page-and-explainer.md accurately describes recorded and planned explanations (private inputs, first-request selected history, staged essay/figures/isolation, reference-only kit carry, complete still form, and capped advisory inventory), explainer_control plus the explainer's four dedicated tools and host-profile settings, review surface and explainer claim/ownership and launch-route interactions (remember_master_architect in role_launch_routes.py), and explainer retirement plus task cleanup/abandon/finalize leaving the explainer workspace intact; no BUG-L41 contradiction.",
     "task": "261124-EXP",
     "uncommitted": false
   },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 13,
+  "revision": 14,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -251,7 +251,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer.py"
     },
     {
-      "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
+      "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     },
@@ -332,14 +332,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T00:51:29+01:00",
+    "at": "2026-11-26T05:26:51+01:00",
     "by": "agent",
-    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-6",
     "effort": "high",
     "harness": "antigravity-acp",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
     "task": "261124-EXP"
   }
 }

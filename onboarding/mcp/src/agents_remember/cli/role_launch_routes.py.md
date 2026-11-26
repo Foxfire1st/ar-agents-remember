@@ -10,7 +10,7 @@ Registers role launcher options/dispatch/result/frame APIs and serializes prepar
 
 ## Code Commentary
 
-After the Manager owns its starting receipt, the route records an Architect address when it can identify one. For an Orchestrator starter, recording that address requires an Architect receipt for the starter’s recorded parent. Launch proceeds if the lookup finds no address or the write fails.
+After the Manager owns its starting receipt, the route records an Architect address when it can identify one. For an Orchestrator starter, identifying that address requires both a corroborated Orchestrator launch receipt whose `agentId` matches `started_by.agent_id` and an Architect launch receipt for that receipt's `parentAgentId`. Launch proceeds if the lookup finds no address or the write fails.
 
 ### Current Contract
 
@@ -151,7 +151,7 @@ The dispatch endpoint takes the lock first and decides inside it: `role_launch_a
 
 - The Manager records an Architect address when available. An Orchestrator starter’s parent receipt determines whether the address can be recorded. The launch proceeds when the lookup or write fails. [22]
 
-After creating the starting receipt, the launch calls `_record_manager_start` before native execution. For an Orchestrator starter, `_architect_behind` verifies that the recorded parent has an Architect launch receipt.
+After creating the starting receipt, the launch calls `_record_manager_start` before native execution. For an Orchestrator starter, `_architect_behind` reads the Orchestrator's launch receipt through `_orchestrator_parent`, requires `receipt.get("agentId") == started_by.agent_id` to corroborate the starter's own receipt, and then verifies that its `parentAgentId` has an Architect launch receipt; `role_start_execution.start_execution` also calls `_architect_behind` before handover preparation to pass `owning_architect_id` for a parented Manager.
 
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/role_launch_routes.py:1-640 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b40efb87cc614ff1751c296da2c47e6f85b195f4; mcp/src/agents_remember/cli/role_launch_routes.py:1-906 - the region it cited is not in the file at the candidate and no re-point was possible. Retired means the anchor no longer stands, not that the cited subject was deleted.

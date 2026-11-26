@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "bebb70ce8a4582d088e0813c2842ce9007df592d",
-    "commit": "3336406ea1d2e6e6ff38f05042e824fa1393163b",
+    "codeTree": "5c005c7831f0d9de8daf17d4a98ef807fc0b9869",
+    "commit": "3ee3b10c90fecdf81b54c96c784e481f33423522",
     "role": "curator",
-    "statement": "docs/workflows.md (lines 109-132, 207-219) accurately describes enclosure creation, lifecycle_finalize_task/worktree_cleanup/worktree_abandon removing worktrees and the enclosure folder, and agentArchive reporting {archived, alreadyArchived, gone, owed, leftAlone}.",
-    "task": "261112-BUG-L38",
+    "statement": "Verified docs/workflows.md on synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db): updated lines 161-166 accurately describe the Manager's standing leaf authority (covering leaves of all masters, including standalone masters) to run worktree_closeout_preview itself and call worktree_closeout_apply with that recorded standing authority as intent_note without presenting a dry-run preview first, while explicit-approval closeouts still present a dry-run preview.",
+    "task": "261112-BUG-L41",
     "uncommitted": true
   },
   "document": "docs/workflows.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 8,
+  "revision": 9,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -101,7 +101,7 @@
       "path": "mcp/src/agents_remember/application/worktree_tools.py"
     },
     {
-      "blob": "c2426230380980e4bc23b6a77896fbfdf59c6821",
+      "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
     },
@@ -111,7 +111,7 @@
       "path": "skills/l-01-agent-lifecycles/operations/planning.md"
     },
     {
-      "blob": "8df1753c138980d015641171fd9ced522dfc5664",
+      "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
     },
@@ -157,14 +157,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T19:57:06+01:00",
+    "at": "2026-11-26T04:22:40+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L38",
+    "leaf": "261112-BUG-L41",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "1e4ea1d4-a2b1-5a4d-b9b2-076a77d1995a",
+    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
     "task": "261112-BUG"
   }
 }

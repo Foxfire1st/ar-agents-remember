@@ -37,7 +37,7 @@ which is what makes it a class detector rather than a spelling list.
 ### Conventions
 
 `STAGE_CONTRACTS` gives every facet its owning document, heading, current clause and the clause its deletion
-control removes; the Reviewer also needs `REVIEWER_RECORD_POINTER` in its own role section. Curator facets directly name its current stage-end obligations, including manual provenance and covered-write recovery. `STOPS` and `STAGE_PARTS` name the facet identities that `STAGE_CONTRACTS` binds to their owning sections.
+control removes; the Reviewer also needs `REVIEWER_RECORD_POINTER` in its own role section. Curator facets directly name its current stage-end obligations, including manual provenance and covered-write recovery. Manager facets distinguish notifying its reporting recipient on outside-authority blocks from recording a working-child wait in its end line and status file with no message sent. `STOPS` and `STAGE_PARTS` name the facet identities that `STAGE_CONTRACTS` binds to their owning sections.
 
 ### Invariants And Boundaries
 
@@ -53,6 +53,5 @@ Worker stage completion requires the handover checks named in workspace.memoryRo
 
 - The Reviewer, Worker and Manager property and construction sentences survive source and compiled projections. [3]
 
-- Stage-end checks bind each role’s required facets to its current owning section in source and compiled text; the Reviewer's record-recheck facets are owned by `operations/review.md`. Curator facets include clean quality, installed-writer versus manual provenance and covered-write recovery. Deletion/relocation controls require a real mutation, while round-number and rule-nine guards remain. [4]
-
+- Stage-end checks bind each role’s required facets to its current owning section in source and compiled text; the Reviewer's record-recheck facets are owned by `operations/review.md`. Curator facets include clean quality, installed-writer versus manual provenance and covered-write recovery; Manager facets separate outside-authority block notices from local working-child wait recording with no message sent. Deletion/relocation controls require a real mutation, while round-number and rule-nine guards remain. [4]
 - Worker stage completion requires the handover checks named in workspace.memoryRoot/system/coding-guidelines.md on a clean copy of the frozen candidate and reports to the Reviewer and Manager. A dedicated control rejects replacement by or reinsertion of the retired fixed focused-tests/lint/type sentence. Curator stage facets directly preserve covered-write recovery, manual provenance and stop boundaries. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [5]

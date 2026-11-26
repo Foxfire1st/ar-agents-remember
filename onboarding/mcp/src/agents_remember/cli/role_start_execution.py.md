@@ -12,13 +12,13 @@ Prepare and reserve one exact role start before route receipt publication.
 
 start_execution enters the launch-only tolerate_unreadable_review scope, resolves canonical context/binding/digest, performs taskless migration and checks a same-request receipt before fresh preparation. Same-request replay is answered from frozen inputs, not recompilation against a changed task or capsule.
 
-It refuses reused request IDs, carries an explicit reason to preparation, then asks step_up_request to infer an existing base holder only after host choice validation. It marks prepared stepUp, applies the route’s reservation/caller/occupancy guards and constructs _PreparedRoleStart for the existing native publication path.
+It refuses reused request IDs, carries an explicit step-up reason (and, for a parented Manager when `route._architect_behind` resolves a non-None architect ID, `owning_architect_id`) to `route.prepare_role_handover`, then asks `step_up_request` to infer an existing base holder only after host choice validation. It marks prepared stepUp, applies the route’s reservation/caller/occupancy guards and constructs _PreparedRoleStart for the existing native publication path.
 
 The context-local fallback permits broken review evidence to be read diagnostically, preserves its raw bytes on incidental publication and does not relax other task facts or ordinary task/review readers. No extra review round, finding reset, settings write or second execution store is created.
 
 ## Evidence
 
-- Exact replay precedes fresh preparation and validated successor reservation. [1]
+- Exact replay precedes fresh preparation (including `owning_architect_id` lookup for a parented Manager) and validated successor reservation. [1]
 - The diagnostic scope resets on exit. [2]
 - Validated alternatives may infer a base holder without interrupt permission. [3]
 - Canonical malformed review source test preserves task bytes and strict ordinary reads. [4]

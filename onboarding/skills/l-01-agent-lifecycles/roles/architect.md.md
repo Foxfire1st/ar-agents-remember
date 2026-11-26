@@ -2,7 +2,7 @@
 
 ## Rounds and starts
 
-Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance.
+Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance. The Architect hands the Manager its execution decisions and routine paired closeout (`roles/manager.md#make-decisions-within-your-authority`), delegates sprint execution and its authority to the Orchestrator, reads the coordinating agent's rulings, requirement-change list and status file itself without status-only notices, aligns requirement text within the promise, sends new/dropped scope and promise changes to the developer, and in a case ruling names only the outcome that needs the Architect while leaving each decision belonging to the Manager with the Manager.
 
 - The Architect may grant a beyond-settings round for a concrete shrinking repair set, and an unchanged failed repair or disputed requirement meaning needs a ruling instead. [5]
 

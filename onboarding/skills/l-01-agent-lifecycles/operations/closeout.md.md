@@ -12,7 +12,7 @@ The closeout operation instruction.
 
 The instruction defines the evidence and authority boundaries around an existing paired closeout; `worktree_closeout_preview` and `worktree_closeout_apply` on `agents-remember-task` own the transaction procedure. It binds the accepted inputs and evidence, names the invariant-gate judgment at each publication step and the refusal codes `knowledge-gate-refused` and `direct-landing-knowledge-gate-refused`, sends gate findings to the Curator, and allows no completion claim before the owning tool's result is read back. Closeout is never a Worker, Reviewer or Curator task.
 
-A Manager or Orchestrator coordinates the closeout under supplied task authority. In a flat run with neither, the owning Architect may coordinate the same transaction only with the developer's explicit commit approval for that closeout, or with authority the developer delegated for the series and recorded in the task document. The closeout owner uses the passed code and memory verdicts and the required final-check evidence. A failed final check carries the original report and the successor's targeted results. Closeout reads that evidence without rerunning the final checks.
+The Manager uses its standing leaf authority for routine paired closeout, while an Orchestrator uses its supplied task authority. For routine Manager leaf closeout, a clean preview returns `would-closeout`, `commit-approval-pending` and `request_commit_approval`; when `commit_approval_required` is true, the Manager passes its standing leaf authority as `intent_note` to `worktree_closeout_apply` with the previewed messages for enabled legs, while holds, refusals and closeout exceptions keep their existing routes. When clean sync changes the code or memory candidate, the Manager obtains the existing Curator's refreshed dependent-document read for the resulting pair before routine closeout while keeping the existing review. In a flat run with neither, the owning Architect may coordinate the same transaction only with the developer's explicit commit approval for that closeout, or with authority the developer delegated for the series and recorded in the task document. The closeout owner uses the passed code and memory verdicts and the required final-check evidence. A failed final check carries the original report and the successor's targeted results. Closeout reads that evidence without rerunning the final checks.
 
 For converted memory, closeout refuses a non-current entry at a path in the task’s own code diff.
 
@@ -23,6 +23,5 @@ No separate reference list: the file's sidecar carries the realization entries f
 ## Canonical Source Ownership
 
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
-
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [1]

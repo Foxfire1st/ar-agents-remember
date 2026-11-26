@@ -7863,8 +7863,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
-            "content": "sha256:3b34393f0b357d071f668e74480e8e725c621bfc56c982345066a9634b462213",
+            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+            "content": "sha256:6b2927ce68942515ee2024d7e0db01fc5e545ea347bf4f173ec213bd67ff3722",
             "locator": {
               "kind": "symbol",
               "name": "test_a_clean_sync_keeps_the_review_and_a_repair_stays_visible"

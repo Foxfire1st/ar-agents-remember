@@ -7,7 +7,7 @@ When a send answers `held`, the Orchestrator follows the held-delivery rule: the
 
 ## Message/file transport and return addressing
 
-Messages are short wake-ups naming work and files; report/verdict/evidence content travels in file-only `body` or existing-file `attach`, not pasted text. Within a shared task the files stay in its record and a leaf workspace exposes the folder link. Wake text uses the settings limit without a pinned number. Developer-decision messages and the one finished-or-unfinishable report-path message go with `role_message` on `agents-remember-task` to the parent agent ID in the handover.
+Messages are short wake-ups naming work and files; report/verdict/evidence content travels in file-only `body` or existing-file `attach`, not pasted text. Within a shared task the files stay in its record and a leaf workspace exposes the folder link. Wake text uses the settings limit without a pinned number. The Orchestrator forwards the Manager's matters for the Architect unchanged, and sends developer questions, child permission notices and the finished-or-unfinishable report-path message with `role_message` on `agents-remember-task` to the parent agent ID in the handover, sending no status-only messages or other landing notices.
 
 
 ## Governing Overview
@@ -20,11 +20,11 @@ A native Orchestrator coordinates one selected sprint’s tasks and owners at Pr
 
 ## Current Contract
 
-Read only the canonical task/packet/report/predecessor facts needed for the current decision. Read the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Missing requirement or owner facts are named from their source.
+Read only the canonical task/packet/report/predecessor facts needed for the current decision. Read the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` first, because edits to copies are never read back and are lost on the next publication. Missing requirement or owner facts are named from their source.
 
 Start distinct Manager, Worker, Reviewer and Curator agents only under the selected sprint; reuse each existing Manager named by the Architect and start one Manager per other master. Keep actual IDs, reconcile unknown starts by the same request ID and follow assignments through bound messages/results without a separate poller.
 
-Verify each Manager's delivery and aggregate evidence; it may inspect the supplied actual diffs for acceptance without taking over the leaf-diff or repair loop, which the Manager owns. Request independent review and affected curation when the brief or risk requires it. The leaf's Worker and Reviewer send their Curator hand-off lists directly to the Curator with producer data unchanged; the Orchestrator reads their reports for state and does not relay that data.
+Verify each Manager's delivery and aggregate evidence; it may inspect the supplied actual diffs for acceptance without taking over the leaf-diff or repair loop, which the Manager owns. Request independent review and affected curation when the brief or risk requires it. The leaf's Worker and Reviewer send their Curator hand-off lists directly to the Curator with producer data unchanged; the Orchestrator reads their reports for state and does not relay that data. The Manager answers skeletons within the planned structure and sends skeletons requiring Architect input directly to the Architect; the Worker writes bodies after the answer.
 
 ## Conventions
 
@@ -32,7 +32,7 @@ Canonical skills/l-01-agent-lifecycles/roles/orchestrator.md owns the instructio
 
 ## Invariants And Boundaries
 
-Paseo turn status is execution metadata, not AR acceptance/landing. A parent-bound Orchestrator sends its parent only the five developer-decision occasions, child permission notices and the one finished-or-unfinishable report path, while ordinary requirement readings and operational rulings stay with it; without a parent it reports in its own chat. No fabricated task, identity, duplicate execution or second semantic ledger.
+Paseo turn status is execution metadata, not AR acceptance/landing. A parent-bound Orchestrator forwards the Manager's matters for the Architect unchanged and sends developer-decision questions, child permission notices and the finished-or-unfinishable report path to its parent agent ID (sending no status-only messages or other landing notices), while ordinary requirement readings and operational rulings stay with it; without a parent it reports in its own chat. No fabricated task, identity, duplicate execution or second semantic ledger.
 
 ## Code Commentary
 
@@ -93,4 +93,4 @@ This packaged copy derives from the canonical roles/orchestrator.md. The Orchest
 
 - The Orchestrator reuses each existing Manager named in the Architect's handover and starts one Manager for each other master with role_start under its own sprint; those Managers coordinate their Workers, Reviewers and Curators. [1]
 
-- The Orchestrator sends the Architect only developer-requiring questions and child permission notices with role_message to the parent agent ID, keeps ordinary requirement readings and operational rulings itself, and follows the held-delivery rule when a send answers held. [3]
+- The Orchestrator keeps ordinary requirement readings and operational rulings itself, forwards the Manager's matters for the Architect unchanged and sends developer questions, child permission notices and the final report path with `role_message` to the parent agent ID (sending no status-only messages or other landing notices), and follows the held-delivery rule when a send answers held. [3]

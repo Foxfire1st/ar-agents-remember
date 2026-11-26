@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
-        "content": "sha256:cc9d8feff01ce8f45d541bc6f486c47d8489ff0065635e7b9bf8cbd61b9befe2",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
+        "content": "sha256:772c3eacd6ba82c381db64f235097b104abd9c406df7b8c5d2f7c515d356a67f",
         "locator": {
           "kind": "file"
         }
@@ -20,12 +20,12 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:eb4e198080760eef7c684698ae343c4e2b0cbb66042e8d6ef3ff20e23a57596a",
         "locator": {
-          "end": 105,
+          "end": 106,
           "kind": "line_range",
-          "start": 105
+          "start": 106
         }
       },
       "id": "RLZ-Y2N80G",
@@ -62,12 +62,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
             "content": "sha256:c635b5be074d3969eaac93c07c843732ffe7e3ffcfecf262bdd44f0abf8d990a",
             "locator": {
-              "end": 137,
+              "end": 138,
               "kind": "line_range",
-              "start": 91
+              "start": 92
             }
           },
           "kind": "code"
@@ -97,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
             "content": "sha256:9e9944d63194f324901c323ea44e17de128c1ec91130b5f6db17f985d0bdda27",
             "locator": {
               "end": 120,
@@ -111,14 +111,14 @@
       ]
     },
     "4": {
-      "note": "Curation requires the complete memory-quality operation, repair or blocked escalation of every Curator-actionable finding, and the independent fact-check before handover.\n\nAnchor: `### Run the complete curation checks`",
+      "note": "Curation requires the complete memory-quality operation, the Manager leaf closeout dependent-document read (`view=\"dependent\"`, `staleOnly=true`) recorded in the curation report, repair or blocked escalation of every Curator-actionable finding, and the independent fact-check before handover.",
       "targets": [
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
-            "content": "sha256:db65dc985969ebc8e5b64d0ce9593b984258d567b99e8d79fe21a045b106b5d8",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
+            "content": "sha256:39ce2c62b35abf09b62bb86f1c192bc6a3bd45b7fbd3cebd30672957adeadccb",
             "locator": {
-              "end": 86,
+              "end": 82,
               "kind": "line_range",
               "start": 66
             }
@@ -150,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
             "content": "sha256:3029b7de9d851727fdb01a288c2986818568e774026d1de8c2630c376165bf35",
             "locator": {
               "end": 18,
@@ -168,7 +168,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
+            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
             "content": "sha256:edc232d51e2788d3654820f24d3f8643cc7b81beddfac83a7ee85c662384c447",
             "locator": {
               "end": 18,
@@ -186,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
             "content": "sha256:57609ea7e4e2cd15478ea2d6a06753c91909f3cf40087357408bc3bef38e2ca4",
             "locator": {
               "end": 48,
@@ -199,14 +199,14 @@
       ]
     },
     "9": {
-      "note": "Normal workflow reconciles meaning, states invariant scope and grouping guarantees, and runs full quality and independent fact-check before bounded repair.\n\nAnchor: `## Normal workflow`",
+      "note": "Normal workflow reconciles meaning, states invariant scope and grouping guarantees, and runs full quality checks (including the Manager leaf closeout dependent-document read) and independent fact-check before bounded repair.",
       "targets": [
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
-            "content": "sha256:9b8f0427496a9f6ddafd3ab290ea85087319adc63dceb9ea6be818a8f888d084",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
+            "content": "sha256:cc810c0daa50a8d74828cf58ea98249fb39426bdeddd4183ec0daca4b00e5abe",
             "locator": {
-              "end": 86,
+              "end": 89,
               "kind": "line_range",
               "start": 51
             }

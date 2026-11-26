@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+        "content": "sha256:6b2927ce68942515ee2024d7e0db01fc5e545ea347bf4f173ec213bd67ff3722",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_a_clean_sync_keeps_the_review_and_a_repair_stays_visible"
+        }
+      },
+      "facet": "Pins the clean-sync pair reporting and Curator dependent-read refresh clauses at the Worker, Reviewer and Manager delivered surfaces.",
+      "id": "PRF-1XB5Y1",
+      "invariant": "INV-CAJ09X",
+      "origin": {
+        "handoffEntry": "BUG-R41.v1.rule-4",
+        "leaf": "261112-BUG-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
         "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
         "locator": {
           "kind": "symbol",
@@ -20,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
         "content": "sha256:4b198cf4afbc62422b01831badf05d3c18e915c9bfc1ce1755d3a36e58759c8c",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
         "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
         "content": "sha256:274ce8ef931c7d14a8253190b0a287b975ede8ccb31d977a87154f10aa7f2266",
         "locator": {
           "kind": "symbol",
@@ -71,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
         "content": "sha256:723a5dc6ca79feb36850e6576218d7da572544a06b7652b47f9e9cae1b7272d2",
         "locator": {
           "kind": "symbol",
@@ -88,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
-        "content": "sha256:597d36c6d56948a3fc368f9e6f1220b886b9bae310bda2bac1a4485365b7a8fc",
+        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+        "content": "sha256:c8cdb62001fc7bd5ee4994649538fcca62b6163c42438fed3ef44c5c333f7f7f",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_the_capsules_send_a_return_and_never_point_at_the_agent_chat"
@@ -105,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
         "content": "sha256:7d62713e2925b032145b1422f140b529ba59fef6ed9510341bd8e2e8119bcd26",
         "locator": {
           "kind": "symbol",
@@ -122,8 +139,8 @@
     },
     {
       "anchor": {
-        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
-        "content": "sha256:07db58677dcdeecd3935f1f54f3c5c4d09f71fdfeb07e2ade7d7af74760a5b6c",
+        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+        "content": "sha256:b238350f2b71eaec2a3832d93c4c7c538aeb25684baf178884dee5f56f7a1890",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_direct_closeout_keeps_the_architect_and_its_existing_gates"
@@ -139,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
         "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
         "locator": {
           "kind": "symbol",
@@ -156,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
         "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
         "locator": {
           "kind": "symbol",
@@ -173,7 +190,7 @@
     },
     {
       "anchor": {
-        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
         "content": "sha256:7d62713e2925b032145b1422f140b529ba59fef6ed9510341bd8e2e8119bcd26",
         "locator": {
           "kind": "symbol",
@@ -190,7 +207,7 @@
     },
     {
       "anchor": {
-        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
         "content": "sha256:7d62713e2925b032145b1422f140b529ba59fef6ed9510341bd8e2e8119bcd26",
         "locator": {
           "kind": "symbol",
@@ -207,7 +224,7 @@
     },
     {
       "anchor": {
-        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
         "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
         "locator": {
           "kind": "symbol",
@@ -224,7 +241,7 @@
     },
     {
       "anchor": {
-        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
         "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
         "locator": {
           "kind": "symbol",
@@ -238,13 +255,30 @@
         "handoffEntry": "L112-current-proof-INV-A8E0YE",
         "leaf": "260928-MIK-L112"
       }
+    },
+    {
+      "anchor": {
+        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+        "content": "sha256:b238350f2b71eaec2a3832d93c4c7c538aeb25684baf178884dee5f56f7a1890",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_direct_closeout_keeps_the_architect_and_its_existing_gates"
+        }
+      },
+      "facet": "Pins the clean-preview commit-approval-pending/request_commit_approval and standing leaf authority intent_note clauses alongside the Architect's flat-mode closeout gates.",
+      "id": "PRF-YEX878",
+      "invariant": "INV-CAJ09X",
+      "origin": {
+        "handoffEntry": "BUG-R41.v1.rule-4",
+        "leaf": "261112-BUG-L41"
+      }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
-        "content": "sha256:5e5898fb95490974e8218bfc66a54ceefb37778c948ba7c591dea90e5e9705f5",
+        "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+        "content": "sha256:cd4364036693d6365b6a03b0bcb469eca254e3829d5af74cd29c2cac0bea30b2",
         "locator": {
           "kind": "file"
         }
@@ -261,12 +295,12 @@
   ],
   "references": {
     "1": {
-      "note": "Instruction cases assert Investigator scope/report/mutation boundaries, current coordination, positive leaf-seat obligations, the task-tool-server vocabulary and compiled return/await channels. Their assertions distinguish a stored file from an explicit handover and establish no fresh test run. Anchor: `test_investigator_scope_report_and_authority_are_explicit`",
+      "note": "Instruction cases assert Investigator scope/report/mutation boundaries, current coordination, positive leaf-seat obligations, the task-tool-server vocabulary and compiled return/await channels. Their assertions distinguish a stored file from an explicit handover and establish no fresh test run.\n\nAnchor: `test_investigator_scope_report_and_authority_are_explicit`",
       "targets": [
         {
           "anchor": {
-            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
-            "content": "sha256:5e5898fb95490974e8218bfc66a54ceefb37778c948ba7c591dea90e5e9705f5",
+            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+            "content": "sha256:cd4364036693d6365b6a03b0bcb469eca254e3829d5af74cd29c2cac0bea30b2",
             "locator": {
               "kind": "file"
             }
@@ -276,12 +310,12 @@
       ]
     },
     "10": {
-      "note": "The Architect's flat-mode closeout gates and its kept clause stay pinned.",
+      "note": "The Architect's flat-mode closeout gates, its kept clause, and the clean-preview `commit-approval-pending`/`request_commit_approval` and `intent_note` clauses stay pinned.",
       "targets": [
         {
           "anchor": {
-            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
-            "content": "sha256:07db58677dcdeecd3935f1f54f3c5c4d09f71fdfeb07e2ade7d7af74760a5b6c",
+            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+            "content": "sha256:b238350f2b71eaec2a3832d93c4c7c538aeb25684baf178884dee5f56f7a1890",
             "locator": {
               "kind": "symbol",
               "name": "test_direct_closeout_keeps_the_architect_and_its_existing_gates"
@@ -296,12 +330,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
             "content": "sha256:55093994ed36b5cdba470e68ec76b9905f2fd0e34ffc06daecdd2486bd38b4c5",
             "locator": {
-              "end": 657,
+              "end": 667,
               "kind": "line_range",
-              "start": 633
+              "start": 643
             }
           },
           "kind": "test"
@@ -313,12 +347,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c0dbffc4e74ab5390b6aeea856cf49b655dbcb5",
+            "blob": "88d299d3b9c302c162bf1c0ea404b32c9cc7f44e",
             "content": "sha256:72da68e7f9ab8ce621744a91634b6de07a415d20c3103c15042f6129fdc4e13e",
             "locator": {
-              "end": 286,
+              "end": 268,
               "kind": "line_range",
-              "start": 281
+              "start": 263
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/coordination_wording.py"
           },
@@ -331,8 +365,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
-            "content": "sha256:5e5898fb95490974e8218bfc66a54ceefb37778c948ba7c591dea90e5e9705f5",
+            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+            "content": "sha256:cd4364036693d6365b6a03b0bcb469eca254e3829d5af74cd29c2cac0bea30b2",
             "locator": {
               "kind": "file"
             }
@@ -342,14 +376,15 @@
       ]
     },
     "2": {
-      "note": "The Investigator wording case checks scoped concern intake, report and remediation authority, and the canonical investigator role; no system-specialist role file, manifest entry or router mention remains. Anchor: `test_investigator_scope_report_and_authority_are_explicit`",
+      "note": "The Investigator wording case checks scoped concern intake, report and remediation authority, and the canonical investigator role; no system-specialist role file, manifest entry or router mention remains.",
       "targets": [
         {
           "anchor": {
-            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
-            "content": "sha256:5e5898fb95490974e8218bfc66a54ceefb37778c948ba7c591dea90e5e9705f5",
+            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+            "content": "sha256:52615b78ef5ae83aa69fc0880ee0b4cd09fa51eb2a1f415ed6ec43671cdbe695",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_investigator_scope_report_and_authority_are_explicit"
             }
           },
           "kind": "test"
@@ -361,12 +396,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df08052ea2ac291d0c2d31037901f356f1c7f718",
-            "content": "sha256:bfd543f8f89f301f5c3eab6e35f8bba6a78a2237bbedc36f5b3ecdf48a3d3901",
+            "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
+            "content": "sha256:9e4676d614d94bd04f3c7cccdeecdb8bbcf7654d75f45f912c65e40be5bd45d8",
             "locator": {
-              "end": 291,
+              "end": 310,
               "kind": "line_range",
-              "start": 241
+              "start": 249
             },
             "path": "mcp/tests/test_role_instruction_wording_handover.py"
           },
@@ -374,12 +409,12 @@
         },
         {
           "anchor": {
-            "blob": "df08052ea2ac291d0c2d31037901f356f1c7f718",
-            "content": "sha256:3efde9b8c1fc990a5c0eb061c7c8c49e42667b72632334189d15e3803e8ee7c1",
+            "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
+            "content": "sha256:f0ffb96fb8201ad950574785e2722476b170f90814864f506583edc8d7c3dc12",
             "locator": {
-              "end": 349,
+              "end": 367,
               "kind": "line_range",
-              "start": 293
+              "start": 312
             },
             "path": "mcp/tests/test_role_instruction_wording_handover.py"
           },
@@ -388,16 +423,16 @@
       ]
     },
     "4": {
-      "note": "Current instruction cases require staged individual Manager starts: Worker at build, Reviewer at freeze and Curator after code PASS. Handover tests keep actual-parent developer questions distinct from ordinary role/task returns and pin held-message ordering and permission boundaries. The tool-description census still covers role_start_set beside role_start and role_message; those source-text checks prove no live recipient or host consumption.",
+      "note": "Current instruction cases require staged individual Manager starts: Worker at build, Reviewer at freeze and Curator after code PASS. Handover tests keep agent-ID and recorded-reporting-recipient developer questions distinct from ordinary role/task returns and pin held-message ordering and permission boundaries. The tool-description census still covers role_start_set beside role_start and role_message; those source-text checks prove no live recipient or host consumption.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c0dbffc4e74ab5390b6aeea856cf49b655dbcb5",
+            "blob": "88d299d3b9c302c162bf1c0ea404b32c9cc7f44e",
             "content": "sha256:54447e41fee0ce4ee13b795280e8542917d58b90d1e5d6cf8abc94253d45e793",
             "locator": {
-              "end": 371,
+              "end": 327,
               "kind": "line_range",
-              "start": 364
+              "start": 320
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/coordination_wording.py"
           },
@@ -405,12 +440,12 @@
         },
         {
           "anchor": {
-            "blob": "df08052ea2ac291d0c2d31037901f356f1c7f718",
-            "content": "sha256:45ba33f96964dcb2bbf4814d441e2e358c3a8ee06ecfe9d9c1e541bf5f52c343",
+            "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
+            "content": "sha256:0b160505c583f56c9b76d0c4b49f7ec0b2bf93226a49affe613ae8708a3e1cb1",
             "locator": {
-              "end": 349,
+              "end": 367,
               "kind": "line_range",
-              "start": 241
+              "start": 249
             },
             "path": "mcp/tests/test_role_instruction_wording_handover.py"
           },
@@ -418,12 +453,12 @@
         },
         {
           "anchor": {
-            "blob": "df08052ea2ac291d0c2d31037901f356f1c7f718",
+            "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
             "content": "sha256:99d9a15544fa7a90438783ee67bc3d615605f7261eba294f99750b4d940a1d4e",
             "locator": {
-              "end": 521,
+              "end": 570,
               "kind": "line_range",
-              "start": 410
+              "start": 459
             },
             "path": "mcp/tests/test_role_instruction_wording_handover.py"
           },
@@ -431,12 +466,12 @@
         },
         {
           "anchor": {
-            "blob": "df08052ea2ac291d0c2d31037901f356f1c7f718",
+            "blob": "ba6aa59a2223e9ab382465f05895d583ae572b19",
             "content": "sha256:94c5f37416ddc8bef7ae9621e505d7848443b7ee3842afcc7c89f34036542b52",
             "locator": {
-              "end": 661,
+              "end": 710,
               "kind": "line_range",
-              "start": 560
+              "start": 609
             },
             "path": "mcp/tests/test_role_instruction_wording_handover.py"
           },
@@ -449,7 +484,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
             "content": "sha256:7d62713e2925b032145b1422f140b529ba59fef6ed9510341bd8e2e8119bcd26",
             "locator": {
               "kind": "symbol",
@@ -465,7 +500,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
+            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
             "content": "sha256:55093994ed36b5cdba470e68ec76b9905f2fd0e34ffc06daecdd2486bd38b4c5",
             "locator": {
               "kind": "symbol",
@@ -494,12 +529,12 @@
       ]
     },
     "9": {
-      "note": "The conditional sync and visible direct-repair clauses are pinned at their delivered audiences.",
+      "note": "The conditional sync (including the Curator's refreshed read for a changed pair before routine closeout), Manager precedent and visible direct-repair clauses are pinned at their delivered audiences.",
       "targets": [
         {
           "anchor": {
-            "blob": "07a3ff53ee2371f44d94d65f221a151f0c3e2b5f",
-            "content": "sha256:3b34393f0b357d071f668e74480e8e725c621bfc56c982345066a9634b462213",
+            "blob": "b410de1404a3e198ee8ee2f5fa448a33b681e0e9",
+            "content": "sha256:6b2927ce68942515ee2024d7e0db01fc5e545ea347bf4f173ec213bd67ff3722",
             "locator": {
               "kind": "symbol",
               "name": "test_a_clean_sync_keeps_the_review_and_a_repair_stays_visible"

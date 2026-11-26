@@ -8,7 +8,9 @@
   },
   "applicability": "A Manager or Orchestrator started under the Architect or an Orchestrator, including one whose reporting recipient changed with a second master.",
   "conditions": [
-    "A matter is one of the five developer-needed categories, or the whole assignment is finished or cannot be finished."
+    "A matter is categorized under You decide, Send to the Architect, or Send to the developer, or the whole assignment finishes/cannot finish.",
+    "An Architect case ruling names only the outcome requiring the Architect and leaves each decision belonging to the Manager with the Manager.",
+    "An Orchestrator forwards a Manager's Architect matters unchanged on the same parent route while keeping ordinary sprint operational rulings and requirement readings within the promise."
   ],
   "exclusions": [
     "A dashboard-started coordinator, which puts a developer decision in its own chat and invents no parent.",
@@ -26,9 +28,20 @@
     "leaf": "260928-MIK-L72",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "The agent directly under the Architect, Manager or Orchestrator, decides everything that does not need the developer (its leaf order and starts, operational problems, requirement readings inside the intended promise, repair rounds, landing checks and delegated closeout and integration), answers its own role agents instead of forwarding them, keeps a durable rulings record, requirement-change list and status file under the task's notes for the Architect to read, and reaches the Architect or its reporting recipient only for the five developer-needed categories and one final report-path notice.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "A Manager operates under one explicit three-way boundary: it decides its own execution, construction, precedent-covered matters (a case reservation covers only what it names and never takes back Manager authority), skeletons filling planned gaps, delegated integration, and standing routine paired closeout across all masters including standalone masters; it sends named Architect matters (first reports, qualifying skeletons direct to the Architect, requirement changes, beyond-settings rounds, unconfigured step-ups, second same-kind infrastructure failures, outside-worktree/scratch/task effects, non-routine closeouts, and sprint-line pushes/PRs/main landings/releases) and the five developer-decision categories through its reporting recipient (an assigned Orchestrator forwards Architect matters unchanged, except direct qualifying skeletons); it sends no status-only messages while keeping durable rulings, requirement-change and status records for the Architect to read; and an Architect case ruling names only the outcome needing the Architect while preserving Manager decisions.",
+  "supersedes": [],
+  "title": "Manager three-way authority split, Architect rulings and Orchestrator relay",
+  "writer": {
+    "at": "2026-11-26T02:58:55+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L41",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+    "task": "261112-BUG"
+  }
 }

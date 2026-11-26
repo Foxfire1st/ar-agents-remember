@@ -39,14 +39,14 @@
       ]
     },
     "3": {
-      "note": "Launch scope opts in to review-only tolerance and forwards the same request reason.\n\nAnchor: L21–L65",
+      "note": "Launch scope opts in to review-only tolerance and forwards the same request reason.",
       "targets": [
         {
           "anchor": {
-            "blob": "2180646ada633e3ccf9e292f1c4fd632d5d32a6f",
-            "content": "sha256:5fe1ad5d62604e25c59f356dfc0cd2c60397b74344624a2d74a62b5a49fedc9a",
+            "blob": "c812eb84e3b5c0f807f8f76389156aa1a5c1986f",
+            "content": "sha256:4ae3a3069287ed36f11ceb88ef08e23f8260cd2c6ce1d7a68a2de2718fe3e62f",
             "locator": {
-              "end": 68,
+              "end": 73,
               "kind": "line_range",
               "start": 24
             },

@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "af9e749296405ef22b6b165097e02cfef8e50570",
-    "commit": "91bb8c5f96005ee45998e3d5a3618fc28d250bdc",
+    "codeTree": "cc5ebb4ba64525d4aac92d7131bd7edfb1c7cf72",
+    "commit": "92391d7a916eb01388e24c65c410f647e7061ef9",
     "role": "curator",
-    "statement": "On settled crossing-5 tree af9e7492 (commit 91bb8c5f, combining EXP-L1/crossing-4 and BUG-L44), docs/features.md accurately describes feature summaries, skill-tree packaging, closeout/role capabilities, private evidence-bearing explainer essay/figure/page assembly, and read-only versus mutating MCP tool trust boundaries, typed tool boundaries, answer token bounds, and tool-log locations; no BUG-L44 contradiction.",
+    "statement": "On settled crossing-6 tree cc5ebb4b (commit 92391d7a, combining crossing-5/EXP-L1 and BUG-L41 a772c901/8b648028), docs/features.md accurately describes feature summaries, skill-tree packaging, role coordination, worktrees, memory quality, closeout/role capabilities, private evidence-bearing explainer essay/figure/page assembly, and read-only versus mutating MCP tool trust boundaries, typed tool boundaries, answer token bounds, and tool-log locations; no BUG-L41 contradiction.",
     "task": "261124-EXP",
     "uncommitted": false
   },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 27,
+  "revision": 28,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -93,7 +93,7 @@
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
     {
-      "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
+      "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
@@ -223,7 +223,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
     {
-      "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+      "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
     },
@@ -296,9 +296,9 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T04:22:46+01:00",
+    "at": "2026-11-26T05:26:51+01:00",
     "by": "agent",
-    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-5",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-6",
     "effort": "high",
     "harness": "antigravity-acp",
     "model": "gemini-4-neon-high",

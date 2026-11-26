@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-        "content": "sha256:87c250dd7599b8b3c3ffc17ff8797f33c95e8f1b8aef977c7e13b0a223503e71",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+        "content": "sha256:bcd649f532341c2b33a3c412d91b7f8027cba2c8ddc686d68fc5cf0e20762d3d",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+        "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
         "content": "sha256:467bcf23afce8f34cd2d973855a638951417860401fe5f6548616b2c5e30d6ed",
         "locator": {
           "end": 60,
@@ -44,12 +44,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:03abbaf25790fab39e4c6483eb7d8816faaf88d4f5aaeadf882a25cdb0a2282a",
             "locator": {
-              "end": 70,
+              "end": 92,
               "kind": "line_range",
-              "start": 70
+              "start": 92
             }
           },
           "kind": "code"
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:03b041d91886a8b89401fe7ae293a732be2e2edb458133e2aed68c4c90c8d613",
             "locator": {
               "end": 20,
@@ -73,8 +73,8 @@
         },
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-            "content": "sha256:a3589c9862d0932cadf3afc969270cd9951ba1845ad647f159a760b6b5a03734",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:094e1b29faf2935410df49b67fa78bd4878c57129c7efd0fd303a4ae01354ec0",
             "locator": {
               "end": 52,
               "kind": "line_range",
@@ -85,10 +85,10 @@
         },
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-            "content": "sha256:937a8514506196ed341caeb9e259da49107d02ff0b2ea16742cfed2853c83c8e",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:0e478940b529312c2d7f5242cb5a8e6eb0605c5fd5fbea99714623c6108a78a7",
             "locator": {
-              "end": 66,
+              "end": 75,
               "kind": "line_range",
               "start": 66
             }
@@ -97,12 +97,12 @@
         },
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:d0f284c8ad851a477d3647591ed38b9b15e7fe37fe3139dbda08baf43a2178af",
             "locator": {
-              "end": 136,
+              "end": 148,
               "kind": "line_range",
-              "start": 136
+              "start": 148
             }
           },
           "kind": "code"
@@ -114,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:68477b3e51a3ea1d99187768d3652db779138f1a4dc87909db818bac2811106b",
             "locator": {
               "end": 8,
@@ -126,8 +126,8 @@
         },
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-            "content": "sha256:a3589c9862d0932cadf3afc969270cd9951ba1845ad647f159a760b6b5a03734",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:094e1b29faf2935410df49b67fa78bd4878c57129c7efd0fd303a4ae01354ec0",
             "locator": {
               "end": 52,
               "kind": "line_range",
@@ -138,10 +138,10 @@
         },
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-            "content": "sha256:937a8514506196ed341caeb9e259da49107d02ff0b2ea16742cfed2853c83c8e",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:0e478940b529312c2d7f5242cb5a8e6eb0605c5fd5fbea99714623c6108a78a7",
             "locator": {
-              "end": 66,
+              "end": 75,
               "kind": "line_range",
               "start": 66
             }
@@ -151,11 +151,11 @@
       ]
     },
     "2": {
-      "note": "The packaged Manager coordinates one selected master and does not own the portfolio; it reports through its launch parent's role and task references, with developer-needed questions routed to an Architect-instructed reporting recipient when that exception is recorded.",
+      "note": "The packaged Manager coordinates one selected master and does not own the portfolio; it sends its final report path to its launch parent's role and task references, and routes Architect matters (except direct qualifying skeleton handovers), developer-needed questions and permission notices to an Architect-instructed reporting recipient when recorded, otherwise its launch parent ID.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:e813a8cb5ba071e8323562245c7d58e50823b0bf8c24a68b225f1b0cbd1afac7",
             "locator": {
               "end": 10,
@@ -167,12 +167,12 @@
         },
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-            "content": "sha256:4cdb779c4e271484fd685854e246ba5a3fb6ffd4b22ad7ab1f8349d1e00d5586",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:3911f6651ac410c07fee5cb5c220fa430b982b04c9edb4e980883c713984b64f",
             "locator": {
-              "end": 111,
+              "end": 123,
               "kind": "line_range",
-              "start": 107
+              "start": 119
             }
           },
           "kind": "code"
@@ -184,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:b77c58711527228737f64010e66afeec55a3a0b65ffd34524ca0a9dacc5aee49",
             "locator": {
               "end": 16,
@@ -201,7 +201,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
+            "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
             "content": "sha256:019afe8004125db2bfa940719d3c7184bced393682fe069b88120b8f68944f8e",
             "locator": {
               "end": 43,
@@ -290,14 +290,14 @@
       ]
     },
     "7": {
-      "note": "The Manager decides paired closeout and integration within its delegated authority and, for a round beyond the settings limit, requests approval through its reporting route and records the approval.",
+      "note": "The Manager decides routine paired closeout under standing series authority (covering leaves of all masters, including standalone masters, with passing reviews, final checks, clean preview, full evidence map and Curator's zero-stale dependent-document read) and integration within delegated authority, sends non-routine closeouts and other Architect matters to the Architect, and requests beyond-settings rounds through its reporting route and records the approval.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-            "content": "sha256:a7816501b4040bbf96b845c51d51a661f13515d2e64db6e4d6381c88a165eb3a",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:aff8eb74ba5a5ad509cdc50efe12723f00224eac812462ad15e973333e7a368e",
             "locator": {
-              "end": 74,
+              "end": 94,
               "kind": "line_range",
               "start": 66
             }
@@ -311,12 +311,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
             "content": "sha256:455f8bcbbd3f9120fc0f9a9d7035d3d25db1cb294c73f84eed41346a9d1f0a72",
             "locator": {
-              "end": 125,
+              "end": 137,
               "kind": "line_range",
-              "start": 123
+              "start": 135
             }
           },
           "kind": "code"
@@ -324,12 +324,12 @@
       ]
     },
     "9": {
-      "note": "The generated Manager role directs handovers, repair loops, review rounds, memory passes and relays through the shared leaf coordination procedures.",
+      "note": "The generated Manager role directs leaf stages and relays through the shared leaf coordination procedures.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
-            "content": "sha256:a3589c9862d0932cadf3afc969270cd9951ba1845ad647f159a760b6b5a03734",
+            "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
+            "content": "sha256:094e1b29faf2935410df49b67fa78bd4878c57129c7efd0fd303a4ae01354ec0",
             "locator": {
               "end": 52,
               "kind": "line_range",

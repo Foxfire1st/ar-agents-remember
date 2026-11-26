@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Realized across the Manager role, manager-brief template and closeout/coordination/curation/implementation/review operations, guarded by wording and end-to-end preview tests, and required to complete FAM-PNH1QS's delegated coordination boundary."
+  },
+  "applicability": "Routine leaf paired closeout coordinated by a Manager across all masters, including standalone masters, together with the Curator's closeout check set and clean-sync refresh path.",
+  "conditions": [
+    "The exact candidate has passing code and memory reviews, passing listed final checks, a clean closeout preview, an evidence map proving every item without waiver or substitution, and the Curator's report showing zero stale dependent-document rows from an exact-pair knowledge_read(view='dependent', staleOnly=true, codeTreeId='working-tree').",
+    "When a clean closeout preview returns commit_approval_required=true (would-closeout / commit-approval-pending / request_commit_approval), the Manager passes its standing leaf authority as intent_note to worktree_closeout_apply with explicit messages for enabled legs.",
+    "When a clean sync changes the code or memory pair, the Worker reruns focused tests and reports the pair, the existing review stays, and the Manager obtains the existing Curator's refreshed dependent-document read on the resulting pair before routine closeout."
+  ],
+  "exclusions": [
+    "Non-routine closeouts with waived, environmental or substituted evidence, an open scope question, or an explicit Architect hold, which route to the Architect.",
+    "Final-work developer commit approvals, sprint-line pushes, pull requests, main landings and releases, which keep their existing Architect or developer authority.",
+    "Overlapping-path or failing-test sync repairs, which require exact repair and one look by the same Reviewer."
+  ],
+  "id": "INV-CAJ09X",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L41-W2-producer-list.json#BUG-R41.v1.rule-4; L41-R2-verdict.md (L41-R1-F3, L41-R1-F4); requirement BUG-R41@v1 rule 4"
+      ],
+      "path": "l41-curation-handoff.json"
+    },
+    "handoffEntry": "BUG-R41.v1.rule-4",
+    "leaf": "261112-BUG-L41",
+    "task": "261112-BUG"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Manager applies routine paired closeout across all masters (including standalone masters) under standing series authority when the exact candidate has passing code and memory reviews, passing listed final checks, a clean preview (passing standing leaf authority as intent_note when commit_approval_required is true), an unwaived evidence map, and the Curator's exact-pair stale-dependent knowledge_read showing zero stale dependent-document rows (refreshed by the existing Curator after any clean sync that changes the pair while keeping the existing review).",
+  "supersedes": [],
+  "title": "Manager standing routine paired closeout and zero-stale dependent proof",
+  "writer": {
+    "at": "2026-11-26T02:58:55+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L41",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+    "task": "261112-BUG"
+  }
+}

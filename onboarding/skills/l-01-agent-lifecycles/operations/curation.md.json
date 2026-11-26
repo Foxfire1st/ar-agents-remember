@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:c8378e7534ca356f3f72832396b858027d1c259ad41002634bff75fac999173f",
         "locator": {
           "end": 45,
@@ -23,12 +23,12 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:0e09b6ab1a83ae89e79e4f82fb2ec9c70dc51cb35f517976b5bd816be5efb4f8",
         "locator": {
-          "end": 86,
+          "end": 87,
           "kind": "line_range",
-          "start": 86
+          "start": 87
         }
       },
       "id": "RLZ-0EMKR7",
@@ -42,7 +42,7 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:95e15343300e7269449f9701ecc5a9a1d9ab4340524ab0a51538e653b78a71d6",
         "locator": {
           "end": 45,
@@ -61,12 +61,12 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:35a25b2c5ce29181a871db3be75c5e3b54065f48d39c51cc26ada21739694921",
         "locator": {
-          "end": 81,
+          "end": 82,
           "kind": "line_range",
-          "start": 79
+          "start": 80
         }
       },
       "id": "RLZ-0MD7QE",
@@ -80,7 +80,7 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:ec5f54146552ce1e00edd33226926235d27c46cf9218538a3d88ea43d08e2f5f",
         "locator": {
           "end": 8,
@@ -99,7 +99,7 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:70710b4a1d6956f454d3331cce749163b2cc9f0d78544cee5ef71196b617691f",
         "locator": {
           "end": 53,
@@ -118,12 +118,12 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:42ec4631f132f99ee5d29b7a9998c0cf89d88cf761a12d56ddd0238c4a287920",
         "locator": {
-          "end": 116,
+          "end": 117,
           "kind": "line_range",
-          "start": 116
+          "start": 117
         }
       },
       "id": "RLZ-27TVRT",
@@ -137,7 +137,7 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:2a5c035ee6e0326f7fb926dabaa881eaafb7b8785d8431e3a2678a2b12fb3484",
         "locator": {
           "end": 48,
@@ -156,12 +156,12 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:570f65d4463f660446da4117cf8877ea9b30088b26d2f7b0e0c516ee93b239f4",
         "locator": {
-          "end": 94,
+          "end": 95,
           "kind": "line_range",
-          "start": 93
+          "start": 94
         }
       },
       "id": "RLZ-3VJ8EH",
@@ -175,12 +175,12 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:3a6eb4dea3c62034f66cf7351a677e108bfe827ddc2ae01f77209a75cb7e2b8f",
         "locator": {
-          "end": 128,
+          "end": 129,
           "kind": "line_range",
-          "start": 128
+          "start": 129
         }
       },
       "id": "RLZ-4YAPS7",
@@ -194,12 +194,12 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:bef223e783e831f66dc5eb4b95a0016af7749d9b83dd055234f22569eddf0fb2",
         "locator": {
-          "end": 86,
+          "end": 87,
           "kind": "line_range",
-          "start": 84
+          "start": 85
         }
       },
       "id": "RLZ-9AWEEA",
@@ -213,12 +213,12 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:eb4e198080760eef7c684698ae343c4e2b0cbb66042e8d6ef3ff20e23a57596a",
         "locator": {
-          "end": 105,
+          "end": 106,
           "kind": "line_range",
-          "start": 105
+          "start": 106
         }
       },
       "id": "RLZ-A0HXGR",
@@ -232,7 +232,7 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:2771e8e7dabd805221cae30790e60c04eda4e5d7dc87d1dac6613ef8e3d8e8a5",
         "locator": {
           "end": 59,
@@ -251,7 +251,7 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:8f50640da2d94e09cf1dc538da784d7394195b516df1cb2f2856c6e459ef0c6d",
         "locator": {
           "end": 18,
@@ -270,12 +270,12 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:2477b66e94545ed0eb95376f47432ea63ab0204e2083412e4fd8859888a014ff",
         "locator": {
-          "end": 88,
+          "end": 89,
           "kind": "line_range",
-          "start": 84
+          "start": 85
         }
       },
       "id": "RLZ-BJQYDS",
@@ -289,12 +289,12 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:afb8b66d3e3681bacdfcd0bdd9bf5a876f7dffe4d93ff936d874880e00221dc3",
         "locator": {
-          "end": 126,
+          "end": 127,
           "kind": "line_range",
-          "start": 124
+          "start": 125
         }
       },
       "id": "RLZ-EEEG4W",
@@ -308,12 +308,12 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:21fc90beb21fe2d30fcd2074fda73da23727db98408253021b5abc36e1e31d0e",
         "locator": {
-          "end": 118,
+          "end": 119,
           "kind": "line_range",
-          "start": 118
+          "start": 119
         }
       },
       "id": "RLZ-JKHSZ1",
@@ -327,12 +327,12 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:42d400b476e16758642720966db54aa1abf4c7249f5ead40a9f9676a1e381b5a",
         "locator": {
-          "end": 120,
+          "end": 121,
           "kind": "line_range",
-          "start": 120
+          "start": 121
         }
       },
       "id": "RLZ-K60P42",
@@ -346,12 +346,12 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:42ec4631f132f99ee5d29b7a9998c0cf89d88cf761a12d56ddd0238c4a287920",
         "locator": {
-          "end": 116,
+          "end": 117,
           "kind": "line_range",
-          "start": 116
+          "start": 117
         }
       },
       "id": "RLZ-MSJDKH",
@@ -365,12 +365,31 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
+        "content": "sha256:3a0d8d5209986790723d647b44d6988b146968392d4fbc6b99fa40cd22b3edc0",
+        "locator": {
+          "end": 78,
+          "kind": "line_range",
+          "start": 70
+        }
+      },
+      "id": "RLZ-P04FKN",
+      "invariant": "INV-CAJ09X",
+      "origin": {
+        "handoffEntry": "BUG-R41.v1.rule-4",
+        "leaf": "261112-BUG-L41"
+      },
+      "rationale": "Requires the Curator's exact-pair knowledge_read(view='dependent', staleOnly=true, codeTreeId='working-tree') with before/after candidate match, full pagination and durable receipt.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:afb8b66d3e3681bacdfcd0bdd9bf5a876f7dffe4d93ff936d874880e00221dc3",
         "locator": {
-          "end": 126,
+          "end": 127,
           "kind": "line_range",
-          "start": 124
+          "start": 125
         }
       },
       "id": "RLZ-PDP66S",
@@ -384,7 +403,7 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:95e15343300e7269449f9701ecc5a9a1d9ab4340524ab0a51538e653b78a71d6",
         "locator": {
           "end": 45,
@@ -403,12 +422,12 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:ae11de20c14693b77c0087cdfede1714a104c5912a8792075ffd695b19dc8fbf",
         "locator": {
-          "end": 135,
+          "end": 136,
           "kind": "line_range",
-          "start": 133
+          "start": 134
         }
       },
       "id": "RLZ-R4SKXV",
@@ -422,12 +441,12 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:c24c96165aec600b417ae27af700b1605034c7004de3a81df91339795cdc78a3",
         "locator": {
-          "end": 133,
+          "end": 134,
           "kind": "line_range",
-          "start": 122
+          "start": 123
         }
       },
       "id": "RLZ-VESCVY",
@@ -441,7 +460,7 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:39a63615e2e0a6c98bac332902f388da9a0dc67b8a9398276b412b081f3b07f9",
         "locator": {
           "end": 48,
@@ -460,12 +479,12 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:933693580a5a12f17ae439142bcb4d4dde0a057bc42b0a6dbd1e66147fa33df8",
         "locator": {
-          "end": 86,
+          "end": 87,
           "kind": "line_range",
-          "start": 79
+          "start": 80
         }
       },
       "id": "RLZ-WJQ4HW",
@@ -479,7 +498,7 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:57609ea7e4e2cd15478ea2d6a06753c91909f3cf40087357408bc3bef38e2ca4",
         "locator": {
           "end": 48,
@@ -498,7 +517,7 @@
     },
     {
       "anchor": {
-        "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+        "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
         "content": "sha256:0ec721e2cda7edb353995ddc6520df50cd3fcbb25669cf4b4efd25fc8dc13674",
         "locator": {
           "end": 59,
@@ -522,19 +541,19 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
             "content": "sha256:6d499dd30edc6f4030acc944fdeb0303de4806508113d2fe5cf14a6850bf3dcb",
             "locator": {
-              "end": 126,
+              "end": 127,
               "kind": "line_range",
-              "start": 94
+              "start": 95
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+            "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
             "content": "sha256:4e6bf8994a2889ebd2ead57252c36edc23ec9aaf19e314edbdf5f8746ae40f19",
             "locator": {
               "end": 120,
@@ -548,14 +567,14 @@
       ]
     },
     "10": {
-      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC, the Manager-leaf-closeout stale dependent-document read and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
-            "content": "sha256:a65200b70edb23380aaf6f67eaf5bf6f61721cab3ecf71262501e5f0f7dce4dd",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
+            "content": "sha256:05f40ab633ee29cf06482af44815cb9153ce4617163e284413e4732c915fbae2",
             "locator": {
-              "end": 139,
+              "end": 140,
               "kind": "line_range",
               "start": 14
             }
@@ -565,14 +584,14 @@
       ]
     },
     "11": {
-      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC, the Manager-leaf-closeout stale dependent-document read and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
-            "content": "sha256:a65200b70edb23380aaf6f67eaf5bf6f61721cab3ecf71262501e5f0f7dce4dd",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
+            "content": "sha256:05f40ab633ee29cf06482af44815cb9153ce4617163e284413e4732c915fbae2",
             "locator": {
-              "end": 139,
+              "end": 140,
               "kind": "line_range",
               "start": 14
             }
@@ -582,14 +601,14 @@
       ]
     },
     "12": {
-      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC, the Manager-leaf-closeout stale dependent-document read and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
-            "content": "sha256:a65200b70edb23380aaf6f67eaf5bf6f61721cab3ecf71262501e5f0f7dce4dd",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
+            "content": "sha256:05f40ab633ee29cf06482af44815cb9153ce4617163e284413e4732c915fbae2",
             "locator": {
-              "end": 139,
+              "end": 140,
               "kind": "line_range",
               "start": 14
             }
@@ -621,7 +640,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
             "content": "sha256:2771e8e7dabd805221cae30790e60c04eda4e5d7dc87d1dac6613ef8e3d8e8a5",
             "locator": {
               "end": 59,
@@ -633,19 +652,19 @@
         },
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
             "content": "sha256:0e09b6ab1a83ae89e79e4f82fb2ec9c70dc51cb35f517976b5bd816be5efb4f8",
             "locator": {
-              "end": 86,
+              "end": 87,
               "kind": "line_range",
-              "start": 86
+              "start": 87
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
+            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
             "content": "sha256:6876558a17c3bc01d04c1964ce78d2ac92f2ddef5ea7be0610c8117c1b7570ec",
             "locator": {
               "end": 107,
@@ -658,7 +677,7 @@
         },
         {
           "anchor": {
-            "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
+            "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
             "content": "sha256:f898ec3148ecaeb74251252927c4c5e8ce0edfffdb5573f0e13004aec0353bc2",
             "locator": {
               "end": 172,
@@ -676,12 +695,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
             "content": "sha256:eb4e198080760eef7c684698ae343c4e2b0cbb66042e8d6ef3ff20e23a57596a",
             "locator": {
-              "end": 105,
+              "end": 106,
               "kind": "line_range",
-              "start": 105
+              "start": 106
             }
           },
           "kind": "code"
@@ -689,11 +708,11 @@
       ]
     },
     "2": {
-      "note": "Raw clean curation and the independent second-reader fact-check have separate obligations. The intake sentence names the task-read arguments by their dotted path, `documents[0].taskDocReadArgs`, which is where a first message's projection carries them.\n\nAnchor: `documents[0].taskDocReadArgs`",
+      "note": "Raw clean curation, the Manager-leaf-closeout stale dependent-document `knowledge_read` and the independent second-reader fact-check have separate obligations. The intake sentence names the task-read arguments by their dotted path, `documents[0].taskDocReadArgs`, which is where a first message's projection carries them.",
       "targets": [
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
             "content": "sha256:a7f9e4d104d70eeb6cf638b18d79a318957805e2a2a3a631a4b7c71c16d68373",
             "locator": {
               "end": 39,
@@ -705,10 +724,10 @@
         },
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
-            "content": "sha256:275b225de5ac6b2d7a15a3ae2a7d46e86a6698ddd550bc41f1687989fd34be94",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
+            "content": "sha256:39ce2c62b35abf09b62bb86f1c192bc6a3bd45b7fbd3cebd30672957adeadccb",
             "locator": {
-              "end": 81,
+              "end": 82,
               "kind": "line_range",
               "start": 66
             }
@@ -734,14 +753,14 @@
       ]
     },
     "4": {
-      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC, the Manager-leaf-closeout stale dependent-document read and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
-            "content": "sha256:a65200b70edb23380aaf6f67eaf5bf6f61721cab3ecf71262501e5f0f7dce4dd",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
+            "content": "sha256:05f40ab633ee29cf06482af44815cb9153ce4617163e284413e4732c915fbae2",
             "locator": {
-              "end": 139,
+              "end": 140,
               "kind": "line_range",
               "start": 14
             }
@@ -751,14 +770,14 @@
       ]
     },
     "5": {
-      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC, the Manager-leaf-closeout stale dependent-document read and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
-            "content": "sha256:a65200b70edb23380aaf6f67eaf5bf6f61721cab3ecf71262501e5f0f7dce4dd",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
+            "content": "sha256:05f40ab633ee29cf06482af44815cb9153ce4617163e284413e4732c915fbae2",
             "locator": {
-              "end": 139,
+              "end": 140,
               "kind": "line_range",
               "start": 14
             }
@@ -768,14 +787,14 @@
       ]
     },
     "6": {
-      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC, the Manager-leaf-closeout stale dependent-document read and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
-            "content": "sha256:a65200b70edb23380aaf6f67eaf5bf6f61721cab3ecf71262501e5f0f7dce4dd",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
+            "content": "sha256:05f40ab633ee29cf06482af44815cb9153ce4617163e284413e4732c915fbae2",
             "locator": {
-              "end": 139,
+              "end": 140,
               "kind": "line_range",
               "start": 14
             }
@@ -785,14 +804,14 @@
       ]
     },
     "7": {
-      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC, the Manager-leaf-closeout stale dependent-document read and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
-            "content": "sha256:a65200b70edb23380aaf6f67eaf5bf6f61721cab3ecf71262501e5f0f7dce4dd",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
+            "content": "sha256:05f40ab633ee29cf06482af44815cb9153ce4617163e284413e4732c915fbae2",
             "locator": {
-              "end": 139,
+              "end": 140,
               "kind": "line_range",
               "start": 14
             }
@@ -802,14 +821,14 @@
       ]
     },
     "8": {
-      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC, the Manager-leaf-closeout stale dependent-document read and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
-            "content": "sha256:a65200b70edb23380aaf6f67eaf5bf6f61721cab3ecf71262501e5f0f7dce4dd",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
+            "content": "sha256:05f40ab633ee29cf06482af44815cb9153ce4617163e284413e4732c915fbae2",
             "locator": {
-              "end": 139,
+              "end": 140,
               "kind": "line_range",
               "start": 14
             }
@@ -819,14 +838,14 @@
       ]
     },
     "9": {
-      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC, the Manager-leaf-closeout stale dependent-document read and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "af7b1fde33951ebfa1d020728dc8117dbc5cad9f",
-            "content": "sha256:a65200b70edb23380aaf6f67eaf5bf6f61721cab3ecf71262501e5f0f7dce4dd",
+            "blob": "18240d05b919ec88d42176d78842411ba1e6a369",
+            "content": "sha256:05f40ab633ee29cf06482af44815cb9153ce4617163e284413e4732c915fbae2",
             "locator": {
-              "end": 139,
+              "end": 140,
               "kind": "line_range",
               "start": 14
             }

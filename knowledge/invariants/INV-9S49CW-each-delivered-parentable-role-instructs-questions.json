@@ -8,9 +8,9 @@
   },
   "applicability": "Every canonical role source or multi-role operation delivered in a capsule whose handover can name a parent.",
   "conditions": [
-    "The delivered text states the parent-routed question channel and the final-await ending for a role with a parent.",
+    "The delivered text states the recipient-or-parent question channel; when no independent work remains after sending a developer question, the Manager records the wait in its end line and status file without sending a wait message, while other parented roles send what they await and from whom with role_message.",
     "An actual busy refusal keeps the question under 'Pending developer questions' in the report and is retried before the turn ends.",
-    "Only an unreachable parent (archived, not found, not resumable, no runtime configured, host unreachable) opens the own chat.",
+    "Only an unreachable parent or recipient (archived, not found, not resumable, no runtime configured, host unreachable) opens the own chat.",
     "A relayed answer is recognized only with the three rule-5 marks and is recorded with the quoted words where the role requires a record.",
     "A product-held answer is taken waiting work and is not sent again; the developer-only permission prompt and upward named-chat notice remain."
   ],
@@ -31,9 +31,20 @@
     "leaf": "260928-MIK-L93",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Each delivered parentable role instructs questions to the parent, independent work without a developer wait, pending-report recovery for busy delivery, own-chat recovery only for an unreachable parent, and recorded quoted developer answers with the receiving agent ID.",
-  "status": "proposed",
-  "supersedes": []
+  "statement": "Each delivered parentable role instructs developer questions to the instructed reporting recipient (else the parent), continues independent work without waiting, records an already-sent wait locally in the Manager's end line and status file without sending a second wait message (while other parented roles send what they await with role_message), preserves pending-report recovery for busy delivery, limits own-chat recovery to an unreachable recipient/parent, and records quoted developer answers with the receiving agent ID.",
+  "supersedes": [],
+  "title": "Parent-routed developer questions, local Manager wait and answer provenance",
+  "writer": {
+    "at": "2026-11-26T02:58:55+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261112-BUG-L41",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
+    "task": "261112-BUG"
+  }
 }

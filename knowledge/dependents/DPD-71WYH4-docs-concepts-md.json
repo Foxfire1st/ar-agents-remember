@@ -1,9 +1,9 @@
 {
   "confirmed": {
-    "codeTree": "af9e749296405ef22b6b165097e02cfef8e50570",
-    "commit": "91bb8c5f96005ee45998e3d5a3618fc28d250bdc",
+    "codeTree": "cc5ebb4ba64525d4aac92d7131bd7edfb1c7cf72",
+    "commit": "92391d7a916eb01388e24c65c410f647e7061ef9",
     "role": "curator",
-    "statement": "On settled crossing-5 tree af9e7492 (commit 91bb8c5f, combining EXP-L1/crossing-4 and BUG-L44), docs/concepts.md remains accurate across core memory, task-topology, role-lifecycle, briefs, index, gate contracts, tool answers, archived role agents (recipient-archived), message filing, held messages, archive-before-enclosure-removal, tool-log cancellation recording, and the explainer flow from private task copies, report provenance, starters/exemplar, and staged essay/figures to a page with reference-based kit carry, a reader-driven central mechanism, and complete still content; no BUG-L44 contradiction.",
+    "statement": "On settled crossing-6 tree cc5ebb4b (commit 92391d7a, combining crossing-5/EXP-L1 and BUG-L41 a772c901/8b648028), docs/concepts.md remains accurate across core memory, task-topology, worktrees, role-lifecycle, briefs, index, gate contracts, tool answers, archived role agents (recipient-archived), message filing, held messages, archive-before-enclosure-removal, tool-log cancellation recording, and the explainer flow from private task copies, report provenance, starters/exemplar, and staged essay/figures to a page with reference-based kit carry, a reader-driven central mechanism, and complete still content; no BUG-L41 contradiction.",
     "task": "261124-EXP",
     "uncommitted": false
   },
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 25,
+  "revision": 26,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -321,32 +321,32 @@
       "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
     },
     {
-      "blob": "1daae4cdbc551cc0555dbaa15961cad357c3ec94",
+      "blob": "28100704d5444ebd1dc7009eb9018e2fba4f1420",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/every-role.md"
     },
     {
-      "blob": "f3af24af7475972287d1f7b3f906b9f2772d4f15",
+      "blob": "b90508e32ca01aad41af4242409e6ab533ad2175",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/authority.md"
     },
     {
-      "blob": "c2426230380980e4bc23b6a77896fbfdf59c6821",
+      "blob": "d22527e0c5a4c31feb2758382335accc15cb9c86",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
     },
     {
-      "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+      "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/review.md"
     },
     {
-      "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+      "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/architect.md"
     },
     {
-      "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+      "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/manager.md"
     },
@@ -471,9 +471,9 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T04:22:46+01:00",
+    "at": "2026-11-26T05:26:51+01:00",
     "by": "agent",
-    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-5",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-6",
     "effort": "high",
     "harness": "antigravity-acp",
     "model": "gemini-4-neon-high",
