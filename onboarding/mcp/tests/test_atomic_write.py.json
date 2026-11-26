@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "62611696718726c5effaddae1e5ab17e7d32ed29",
+        "blob": "df9d59590d50a388d64cf149b60629030a922517",
         "content": "sha256:ac01eb301d97b2966443b8d9cbbfb312f45a9a85fe6175470731abe80b5805a6",
         "locator": {
           "kind": "symbol",
@@ -17,6 +17,23 @@
         "handoffEntry": "L41-continuation-O1",
         "leaf": "260928-MIK-L41"
       }
+    },
+    {
+      "anchor": {
+        "blob": "df9d59590d50a388d64cf149b60629030a922517",
+        "content": "sha256:edc078aace4b4217243d98687e167ef7a247c826c35749ac31b2ccf0cedc94b9",
+        "locator": {
+          "kind": "symbol",
+          "name": "DirectoryFsyncTests.test_overlapping_writes_through_distinct_descriptor_paths_keep_in_flight_temps"
+        }
+      },
+      "facet": "Demonstrates that overlapping same-process atomic_write_bytes calls through distinct /proc/<pid>/fd/<N> descriptor paths retain each other's in-flight temporary files by unique basename.",
+      "id": "PRF-SA4X44",
+      "invariant": "INV-CZKFXC",
+      "origin": {
+        "handoffEntry": "EXP-R02@v1 Item 2",
+        "leaf": "261124-EXP-L2"
+      }
     }
   ],
   "realizes": [],
@@ -26,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62611696718726c5effaddae1e5ab17e7d32ed29",
+            "blob": "df9d59590d50a388d64cf149b60629030a922517",
             "content": "sha256:56df7cf05d58b01c51ca53b56fe3a2cbe6a57df7de2114c4dd376798fdd50f65",
             "locator": {
               "kind": "symbol",
@@ -37,7 +54,7 @@
         },
         {
           "anchor": {
-            "blob": "62611696718726c5effaddae1e5ab17e7d32ed29",
+            "blob": "df9d59590d50a388d64cf149b60629030a922517",
             "content": "sha256:d6e9f4088264a3b40304b0ac3613780ac9d7d32901146a28905669055610dade",
             "locator": {
               "end": 46,
@@ -54,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62611696718726c5effaddae1e5ab17e7d32ed29",
+            "blob": "df9d59590d50a388d64cf149b60629030a922517",
             "content": "sha256:0b46c25ccd859c02ac3d1dc55c928540290abb49e6c8063dc7f24bfb2697cfd5",
             "locator": {
               "kind": "symbol",
@@ -65,7 +82,7 @@
         },
         {
           "anchor": {
-            "blob": "62611696718726c5effaddae1e5ab17e7d32ed29",
+            "blob": "df9d59590d50a388d64cf149b60629030a922517",
             "content": "sha256:566fd33a1e3a0881048916b7de29c6188b0a5283300ab1ea2a993a09e23fdb59",
             "locator": {
               "end": 65,
@@ -82,7 +99,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62611696718726c5effaddae1e5ab17e7d32ed29",
+            "blob": "df9d59590d50a388d64cf149b60629030a922517",
             "content": "sha256:706ce8f976fffe9dc4d1c3766bb33edc7bfd26adbab363e3578c4e25cb388c6a",
             "locator": {
               "kind": "symbol",
@@ -93,7 +110,7 @@
         },
         {
           "anchor": {
-            "blob": "62611696718726c5effaddae1e5ab17e7d32ed29",
+            "blob": "df9d59590d50a388d64cf149b60629030a922517",
             "content": "sha256:0d5ddcac1b2d6238aa7f3938d5fc8e3722a0398ae8dd3fcf18f3ac464218d83b",
             "locator": {
               "end": 81,
@@ -110,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62611696718726c5effaddae1e5ab17e7d32ed29",
+            "blob": "df9d59590d50a388d64cf149b60629030a922517",
             "content": "sha256:308b841d91a553d94bb9273d21270c5dcf2de7039e6ed80848d4c93e46b5a59e",
             "locator": {
               "kind": "symbol",
@@ -121,7 +138,7 @@
         },
         {
           "anchor": {
-            "blob": "62611696718726c5effaddae1e5ab17e7d32ed29",
+            "blob": "df9d59590d50a388d64cf149b60629030a922517",
             "content": "sha256:24c536ca6d15fdc2904b699ec02f75e91c61fd5a3a82dee4f71e8c0bda17f6ce",
             "locator": {
               "end": 95,
@@ -138,12 +155,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62611696718726c5effaddae1e5ab17e7d32ed29",
+            "blob": "df9d59590d50a388d64cf149b60629030a922517",
             "content": "sha256:32bc41f91caf5617e628e43726543f3b589196ca0330bcbd049c33c84a6afe33",
             "locator": {
-              "end": 185,
+              "end": 216,
               "kind": "line_range",
-              "start": 179
+              "start": 210
             }
           },
           "kind": "test"
@@ -155,7 +172,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "62611696718726c5effaddae1e5ab17e7d32ed29",
+            "blob": "df9d59590d50a388d64cf149b60629030a922517",
             "content": "sha256:d5795660932e55e872fa783ca85f2dbcf78fe3bfe39b0b7879573f58d3900743",
             "locator": {
               "kind": "symbol",
@@ -166,12 +183,28 @@
         },
         {
           "anchor": {
-            "blob": "62611696718726c5effaddae1e5ab17e7d32ed29",
+            "blob": "df9d59590d50a388d64cf149b60629030a922517",
             "content": "sha256:a08e32f2834a86d561fbb737755513385fd23eda1d853cb3947431adade487aa",
             "locator": {
-              "end": 199,
+              "end": 230,
               "kind": "line_range",
-              "start": 188
+              "start": 219
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Overlapping writes to the same directory through distinct `/proc/<pid>/fd/<N>` descriptor paths preserve each other's in-flight temporaries and leave no temp leftovers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df9d59590d50a388d64cf149b60629030a922517",
+            "content": "sha256:edc078aace4b4217243d98687e167ef7a247c826c35749ac31b2ccf0cedc94b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_overlapping_writes_through_distinct_descriptor_paths_keep_in_flight_temps"
             }
           },
           "kind": "test"

@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
+            "blob": "4940bf51abaa88808944911ba3c7f10f7963552a",
             "content": "sha256:9e148b77602a2a99d63cf67a9c9b59e30bce0fba53aa906f22af376fd43e098d",
             "locator": {
-              "end": 368,
+              "end": 374,
               "kind": "line_range",
-              "start": 351
+              "start": 357
             }
           },
           "kind": "code"
@@ -20,15 +20,42 @@
       ]
     },
     "2": {
-      "note": "The state answer is read field by field, with the seat, the saved page, the stale record, the claims and the moved notice\n\nAnchor: `export function parseState(`",
+      "note": "The client parses state fields and optional inventory or omission on the saved explanation and revision rows. The server’s saved-revision reader supplies an available summary or recorded omission for the addressed revision.",
       "targets": [
         {
           "anchor": {
-            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
-            "content": "sha256:4b51eee548663d4b7c0e7962648b7320025f887eb5047f0f0bd45da057c9ca4c",
+            "blob": "4940bf51abaa88808944911ba3c7f10f7963552a",
+            "content": "sha256:f80e0c90042e68c67e7a14fd1c3682ff266a3379e5499a94dd3fe27b9d9a594b",
             "locator": {
-              "kind": "file"
+              "end": 723,
+              "kind": "line_range",
+              "start": 699
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4940bf51abaa88808944911ba3c7f10f7963552a",
+            "content": "sha256:8095e8a85ff6da3a8d0881cd0e0e595fef9d16f2ba8bce3f351ddf13b4a75040",
+            "locator": {
+              "end": 906,
+              "kind": "line_range",
+              "start": 858
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3015b0da6c8383eced9ba91e181ff4f9b6473130",
+            "content": "sha256:bbf6778bdc078fdd123655ad79177bb1eca6924acd37606bd9fcb485c5b5b280",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/serving/explainer_inventory.py"
           },
           "kind": "code"
         }
@@ -39,12 +66,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
+            "blob": "4940bf51abaa88808944911ba3c7f10f7963552a",
             "content": "sha256:4d3006dddf1634e6cd2c768545093d17c82a46a0aee7cf8ab36a3b866724ce79",
             "locator": {
-              "end": 1236,
+              "end": 1222,
               "kind": "line_range",
-              "start": 923
+              "start": 909
             }
           },
           "kind": "code"
@@ -56,12 +83,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
+            "blob": "4940bf51abaa88808944911ba3c7f10f7963552a",
             "content": "sha256:43c367b514ed40ba2d5623b5593df7bd5ce4e74312281f6bba46b1de26aad0f5",
             "locator": {
-              "end": 1019,
+              "end": 1005,
               "kind": "line_range",
-              "start": 1010
+              "start": 996
             }
           },
           "kind": "code"
@@ -73,12 +100,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
+            "blob": "4940bf51abaa88808944911ba3c7f10f7963552a",
             "content": "sha256:ab7d96ea39ea830ab17402fcde00b8d7e3f620e10e54a08338c8a645f6f2c4c8",
             "locator": {
-              "end": 1203,
+              "end": 1189,
               "kind": "line_range",
-              "start": 1174
+              "start": 1160
             }
           },
           "kind": "code"
@@ -90,12 +117,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
+            "blob": "4940bf51abaa88808944911ba3c7f10f7963552a",
             "content": "sha256:63eeefb2805e43aa24ce9560ff34266b572024c487d79fcbe83538eaa07a82e4",
             "locator": {
-              "end": 1231,
+              "end": 1217,
               "kind": "line_range",
-              "start": 1208
+              "start": 1194
             }
           },
           "kind": "code"
@@ -107,7 +134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
+            "blob": "4940bf51abaa88808944911ba3c7f10f7963552a",
             "content": "sha256:0468bb95899d07187da02662a5c20b2a75bb9ab9a23e67072da7ed6be1c06854",
             "locator": {
               "kind": "symbol",
@@ -123,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
+            "blob": "4940bf51abaa88808944911ba3c7f10f7963552a",
             "content": "sha256:cf85eec27173d9a1d1b456e8f89e13e66f117b25841307055099b781e5f0c659",
             "locator": {
               "kind": "symbol",
@@ -139,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
+            "blob": "4940bf51abaa88808944911ba3c7f10f7963552a",
             "content": "sha256:44ffe716d8eb224f4790b1e6f89b5444f319e62baf5e2972bc5a379abd0f283b",
             "locator": {
               "kind": "symbol",
@@ -150,12 +177,12 @@
         },
         {
           "anchor": {
-            "blob": "6999197d9e93d7080861dcf228988a9100c46e50",
+            "blob": "4940bf51abaa88808944911ba3c7f10f7963552a",
             "content": "sha256:4f26c52eeabe93550756d4889ccb9be3c13453f77b46506190d49e4b09c2b917",
             "locator": {
-              "end": 865,
+              "end": 872,
               "kind": "line_range",
-              "start": 865
+              "start": 872
             }
           },
           "kind": "code"

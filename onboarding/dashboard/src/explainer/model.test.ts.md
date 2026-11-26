@@ -4,6 +4,8 @@
 
 [Route overview](../overview.md)
 
+The phase cases cover a running build taking priority and an observed live or closed seat taking priority over stale first-request form state.
+
 ## Purpose
 
 Specifies the column's pure rules without a DOM: the selection and status words, the placeholder, the form's target and refusal, the build's percentages, later references, Retire's lists and the header's menu.

@@ -42,4 +42,4 @@ Update and Retire clear the leaf's process-local moved notice only after their s
 - The state payload carries both records. [10]
 
 
-- Comparison/evidence preparation rechecks operands; retained state carries its own claims and staleness; Update/Retire clear notices after service results; explicit removal and planned reads retain owner refusals; cancel preserves host uncertainty and measured revision equality. [7]
+- The state read projects the selected comparison, retained claims and staleness, task usage, workspace identity and saved revision inventory or an omission reason from bound readers. [7]

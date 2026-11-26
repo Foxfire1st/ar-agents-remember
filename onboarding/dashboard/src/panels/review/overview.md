@@ -4,6 +4,8 @@
 
 [Panels overview](../overview.md)
 
+A retained explanation can show the saved revision’s advisory inventory beside its interaction coverage. The frame can also give the storage-limit omission as a plain reason. Both follow the addressed revision.
+
 ## What This Area Is
 
 The intent reviewer reads one leaf comparison as a page of changed intent and recorded source locations. Its navigation tree and reading column share one ordered change-set model. A named target selects its subject; an unnamed opening stays unselected. The page presents recorded facts and judgments without authoring knowledge or granting lifecycle approval.

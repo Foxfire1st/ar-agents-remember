@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/application/review_frame_inventory.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9d53559330f7a2630fa85c830765525b6cafa3de",
+        "content": "sha256:6cac3d48524103467a899f40da2f9945d5948ea8f1a890c9b4972355f7a538d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_revision_inventory_staging"
+        }
+      },
+      "id": "RLZ-GNG06M",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Selects inventory.json or the zero-byte storage-limit omission marker from exact post-publish byte usage so _write_revision promotes the sidecar or marker atomically before revisions/<n> and ready.json become visible to dashboard routes, while persist_revision_inventory_within_limit enforces the same live-measured task-lock boundary for standalone calls.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Staging writes the selected inventory or omission marker before revision promotion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d53559330f7a2630fa85c830765525b6cafa3de",
+            "content": "sha256:bfb18f521e4eaea9fa0ddeff02f7de14f3ff04b96ddaa2c2937bc311354e5eca",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

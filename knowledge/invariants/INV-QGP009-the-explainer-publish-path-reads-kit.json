@@ -1,0 +1,44 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Proved by test_render_refuses_publish_when_kit_licence_notice_is_missing and prevents publishing a page carrying third-party kit assets without their required licence notice."
+  },
+  "applicability": "Explainer render and publish invocations that carry referenced pinned kit libraries through carry_kit_assets.",
+  "conditions": [
+    "kit_result.kit_problems is non-empty because a referenced kit library lacks its required licence notice or fails shipped-kit verification."
+  ],
+  "exclusions": [
+    "Explainer drafts that reference no pinned kit files and carry no kit/ assets."
+  ],
+  "id": "INV-QGP009",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_explainer_staging_and_checks.py::test_render_refuses_publish_when_kit_licence_notice_is_missing"
+      ],
+      "path": "261124-EXP-L2-curator-ingest"
+    },
+    "handoffEntry": "EXP-R02@v1 Item 5",
+    "leaf": "261124-EXP-L2",
+    "task": "261124-EXP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The explainer publish path reads kit_result.kit_problems and refuses publication with those problem messages when a referenced kit library lacks its licence notice.",
+  "supersedes": [],
+  "title": "Explainer publication refuses kit libraries that lack a licence notice",
+  "writer": {
+    "at": "2026-11-26T03:09:02+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261124-EXP-L2",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+    "task": "261124-EXP"
+  }
+}

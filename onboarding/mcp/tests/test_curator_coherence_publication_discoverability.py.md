@@ -70,8 +70,8 @@ enclosure-shaped path, and `_REFUSAL_PREFIX` (`:53`) is asserted before being st
 carries **no `pytestmark`**. The former card recorded append-only registration at its earlier source epoch. Its direct imports include `agents_remember`
 models, `pydantic` and `pytest`; direct imports do not determine the complete governed
 consumer population. The merged `mcp/tests/evidence-lifecycle.toml` declares this module
-on exactly two artifact consumer lists: `mcp/tests/_user_settings_guard.py` at line 239
-and `mcp/tests/fixtures/repository_profiles/node/package-lock.json` at line 2659.
+on exactly two artifact consumer lists: `mcp/tests/_user_settings_guard.py`
+and `mcp/tests/fixtures/repository_profiles/node/package-lock.json`.
 These are catalog declarations, not fresh collection or execution evidence.
 
 ### Invariants And Boundaries

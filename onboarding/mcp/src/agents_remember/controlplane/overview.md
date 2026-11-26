@@ -68,7 +68,7 @@ These former current claims are retained as history, not as instructions or pres
 
 - Mutex/flock exclusion is reentrant and capability-probed  Anchor: exclusive_file_lock; _verify_lock_capability [16]
 
-- Atomic publication fsyncs content and replaces before directory flush; Windows directory flush is unavailable  Anchor: atomic_write_bytes; _fsync_directory [17]
+- Atomic publication fsyncs content and replaces before directory flush; Windows directory flush is unavailable. [17]
 
 - Approval spending folds/evaluates/applies under one log lock  Anchor: claim_approval [19]
 

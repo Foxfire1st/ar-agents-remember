@@ -1,0 +1,43 @@
+{
+  "path": "dashboard/src/cockpit/PaseoChatFrame.retry.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ce97500e5b9eba9d55a78b9d9bebd41c7e0056a3",
+        "content": "sha256:abc758d211d285c19166e444a1b0750a41103d9c6e692bfbfd24aeb99071b681",
+        "locator": {
+          "kind": "symbol",
+          "name": "automatically retries ar.open for an unchanged mounted explainer agent after transient agent-not-found without reloading the iframe"
+        }
+      },
+      "facet": "Retries the same target by control message after a transient failure while retaining the existing iframe.",
+      "id": "PRF-26P1ZV",
+      "invariant": "INV-72AP2W",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §8 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The retry cases exercise ready binding, cancellation and terminal settlement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce97500e5b9eba9d55a78b9d9bebd41c7e0056a3",
+            "content": "sha256:bc970550fe3512593bc6f761de1e87a06c9029f97eb704c6628ba06b9320ae1e",
+            "locator": {
+              "end": 358,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

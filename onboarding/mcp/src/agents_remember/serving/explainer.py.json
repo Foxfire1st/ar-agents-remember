@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "10f569c1318379f138031430a2b49a34d97d815f",
+        "blob": "77095097fe2e98f2560ea8af062084be0fe6ec87",
         "content": "sha256:1e8010f5318267f056fd72cc71f8817f4a43975ef24e9144207983451cdcc51e",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,26 @@
     },
     {
       "anchor": {
-        "blob": "10f569c1318379f138031430a2b49a34d97d815f",
+        "blob": "77095097fe2e98f2560ea8af062084be0fe6ec87",
+        "content": "sha256:64f1f450aefd3f157f6c0c5bf8f93764e63cd39cb27092ede807d14ac52c1a1b",
+        "locator": {
+          "end": 890,
+          "kind": "line_range",
+          "start": 850
+        }
+      },
+      "id": "RLZ-3K80NJ",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Projects the bound revision's inventory fields through the ordinary state answer.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "77095097fe2e98f2560ea8af062084be0fe6ec87",
         "content": "sha256:bff353ecb80092d5ca2e446b8bbdaa70e99198223c6d4c828dff4ae100216627",
         "locator": {
           "kind": "symbol",
@@ -39,7 +58,45 @@
     },
     {
       "anchor": {
-        "blob": "10f569c1318379f138031430a2b49a34d97d815f",
+        "blob": "77095097fe2e98f2560ea8af062084be0fe6ec87",
+        "content": "sha256:bf7361d55fefb0d2f16767f9601a580fa02a4b27bd4b252da3d0e3bccf7bcb2e",
+        "locator": {
+          "end": 525,
+          "kind": "line_range",
+          "start": 500
+        }
+      },
+      "id": "RLZ-82FQ1P",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Joins retained revision manifests to advisory inventory for each actual addressed revision.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "77095097fe2e98f2560ea8af062084be0fe6ec87",
+        "content": "sha256:eadce363bdba0d774ebd66b707835dbbe5b376e98baa2e8924c6987b10967840",
+        "locator": {
+          "end": 735,
+          "kind": "line_range",
+          "start": 717
+        }
+      },
+      "id": "RLZ-DDYE91",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Reads advisory inventory through the selected frame's bound readers when projecting staleness.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "77095097fe2e98f2560ea8af062084be0fe6ec87",
         "content": "sha256:2cf134151b61ff740e25848fd4d47c0cd0e3fc1288981391218ee13e2d2a11a1",
         "locator": {
           "kind": "symbol",
@@ -57,7 +114,25 @@
     },
     {
       "anchor": {
-        "blob": "10f569c1318379f138031430a2b49a34d97d815f",
+        "blob": "77095097fe2e98f2560ea8af062084be0fe6ec87",
+        "content": "sha256:9946d4012d5b4300c6ce921448bcbe1ee9888d4715f7e29582504e09a688036e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_state_payload"
+        }
+      },
+      "id": "RLZ-NA107P",
+      "invariant": "INV-72AP2W",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §8",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "State reports the physical workspace path separately, exposes saved host workspace identity when present and may give a null host ID.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "77095097fe2e98f2560ea8af062084be0fe6ec87",
         "content": "sha256:a6983bc4f4e020e79459ce4f3e95c9e7ff7aab1aeb0f93994367b3f33d7cc9fd",
         "locator": {
           "kind": "symbol",
@@ -72,6 +147,44 @@
       },
       "rationale": "This composition prepares the packet through the existing comparison owner, passes the bound owner/reference and receipts, and turns absent required preparation input into the named evidence-source-unavailable refusal.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "77095097fe2e98f2560ea8af062084be0fe6ec87",
+        "content": "sha256:1ccae0dca96a66bfa3d935f9e834daf745b8d45f7c4b655b00759a618a9517a7",
+        "locator": {
+          "end": 178,
+          "kind": "line_range",
+          "start": 167
+        }
+      },
+      "id": "RLZ-S3AWCD",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Declares the optional addressed-frame readers for persisted inventory and explicit omission.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "77095097fe2e98f2560ea8af062084be0fe6ec87",
+        "content": "sha256:78f96f9e291212bab0f4ef54467a40a7b48eb7ae017789c2519c3e2cc6eaa9ed",
+        "locator": {
+          "end": 777,
+          "kind": "line_range",
+          "start": 753
+        }
+      },
+      "id": "RLZ-YPFY6P",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Writes the summary or omission field when the addressed revision has either outcome.",
+      "role": "support"
     }
   ],
   "references": {
@@ -80,12 +193,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10f569c1318379f138031430a2b49a34d97d815f",
+            "blob": "77095097fe2e98f2560ea8af062084be0fe6ec87",
             "content": "sha256:2582b8ec6566aaf2ddbb4f2b7ae75e6f345c077fc9f4b7a69f7fd9a41262742e",
             "locator": {
-              "end": 458,
+              "end": 464,
               "kind": "line_range",
-              "start": 407
+              "start": 413
             }
           },
           "kind": "code"
@@ -97,12 +210,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10f569c1318379f138031430a2b49a34d97d815f",
+            "blob": "77095097fe2e98f2560ea8af062084be0fe6ec87",
             "content": "sha256:0abeaa88ab6e89bf82c0683753560fd78c5bb062fb74d3ac356a36eeb51b48cc",
             "locator": {
-              "end": 851,
+              "end": 894,
               "kind": "line_range",
-              "start": 845
+              "start": 888
             }
           },
           "kind": "code"
@@ -110,14 +223,16 @@
       ]
     },
     "7": {
-      "note": "Comparison/evidence preparation rechecks operands; retained state carries its own claims and staleness; Update/Retire clear notices after service results; explicit removal and planned reads retain owner refusals; cancel preserves host uncertainty and measured revision equality.\n\nAnchor: `_state_payload`",
+      "note": "The state read projects the selected comparison, retained claims and staleness, task usage, workspace identity and saved revision inventory or an omission reason from bound readers.",
       "targets": [
         {
           "anchor": {
-            "blob": "10f569c1318379f138031430a2b49a34d97d815f",
-            "content": "sha256:4216fed0148fa2b88819af43aa122893bb38a5e1b25274e0906bb2366b387856",
+            "blob": "77095097fe2e98f2560ea8af062084be0fe6ec87",
+            "content": "sha256:9946d4012d5b4300c6ce921448bcbe1ee9888d4715f7e29582504e09a688036e",
             "locator": {
-              "kind": "file"
+              "end": 910,
+              "kind": "line_range",
+              "start": 828
             }
           },
           "kind": "code"
@@ -129,7 +244,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10f569c1318379f138031430a2b49a34d97d815f",
+            "blob": "77095097fe2e98f2560ea8af062084be0fe6ec87",
             "content": "sha256:1e8010f5318267f056fd72cc71f8817f4a43975ef24e9144207983451cdcc51e",
             "locator": {
               "kind": "symbol",
@@ -145,7 +260,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10f569c1318379f138031430a2b49a34d97d815f",
+            "blob": "77095097fe2e98f2560ea8af062084be0fe6ec87",
             "content": "sha256:2cf134151b61ff740e25848fd4d47c0cd0e3fc1288981391218ee13e2d2a11a1",
             "locator": {
               "kind": "symbol",

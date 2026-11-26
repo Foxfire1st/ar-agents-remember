@@ -4,6 +4,8 @@
 
 [Route overview](../overview.md)
 
+The state fixture supplies a host workspace ID separately from its physical workspace and checks which field selects the embedded chat.
+
 ## Purpose
 
 Specifies the explainer's client: the four routes, the several spellings the host may answer in, the refusals that keep the page usable, and the receipt and delivery shapes.

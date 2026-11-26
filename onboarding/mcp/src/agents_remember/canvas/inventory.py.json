@@ -1,0 +1,61 @@
+{
+  "path": "mcp/src/agents_remember/canvas/inventory.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "47f0717f0ea0917d5ca8d7c92a850ae3e5aed022",
+        "content": "sha256:8c4b557b6d7d222ed110806ad83629e08ecb8061b6312a35f935c55aaaf725b3",
+        "locator": {
+          "kind": "symbol",
+          "name": "inventory_summary"
+        }
+      },
+      "id": "RLZ-8RD094",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Formats the concise one-line inventory summary displayed in the dashboard header.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "47f0717f0ea0917d5ca8d7c92a850ae3e5aed022",
+        "content": "sha256:7899653a92ba5bc490e822fd004ddba528f3e59883d63e1157bfd171cd13e87d",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_inventory"
+        }
+      },
+      "id": "RLZ-K8BGM4",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Assembles the non-blocking inventory object through a single consolidated draft-graph traversal from browser DOM facts, observed runtime-loaded assets, referenced kit libraries, and reachable draft assets so script-loaded assets are used and unreferenced pinned kit copies are flagged unused.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Inventory construction separates observed figures, reachable assets and code counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47f0717f0ea0917d5ca8d7c92a850ae3e5aed022",
+            "content": "sha256:7899653a92ba5bc490e822fd004ddba528f3e59883d63e1157bfd171cd13e87d",
+            "locator": {
+              "end": 494,
+              "kind": "line_range",
+              "start": 465
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

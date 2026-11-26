@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "5c005c7831f0d9de8daf17d4a98ef807fc0b9869",
-    "commit": "3ee3b10c90fecdf81b54c96c784e481f33423522",
+    "codeTree": "299008b8cc40e627ae89e165f925796332f94efc",
+    "commit": "92391d7a916eb01388e24c65c410f647e7061ef9",
     "role": "curator",
-    "statement": "Verified docs/concepts.md on synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db): conceptual definitions of memory, task topology, worktrees, and role lifecycles remain accurate with no L41 contradiction.",
-    "task": "261112-BUG-L41",
+    "statement": "Confirmed against synced EXP-L2 candidate 299008b8 (base 92391d7a, combining master crossing-6/BUG-L41 and EXP-L2): docs/concepts.md remains accurate across core memory, task-topology, worktrees, role-lifecycle, briefs, index, gate contracts, tool answers, archived role agents (recipient-archived), message filing, held messages, archive-before-enclosure-removal, tool-log cancellation recording, and the explainer flow including _copy_package_folder in explainer_workspace.py unlinking a stray regular file before reseeding while still refusing symlinks; no BUG-L41 contradiction.",
+    "task": "261124-EXP-L2",
     "uncommitted": true
   },
   "document": "docs/concepts.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 25,
+  "revision": 27,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -91,7 +91,7 @@
       "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
     },
     {
-      "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+      "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
       "kind": "file",
       "path": "dashboard/src/cockpit/Cockpit.tsx"
     },
@@ -146,7 +146,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
     },
     {
-      "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
+      "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
     },
@@ -301,7 +301,7 @@
       "path": "mcp/src/agents_remember/canvas/kit.py"
     },
     {
-      "blob": "a390de60e90909c85876b351b2e2505910fd17cd",
+      "blob": "a5ef51116eced20249c8e763ec01115b9e6e5d76",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_paths.py"
     },
@@ -424,12 +424,12 @@
       "kind": "anchor"
     },
     {
-      "blob": "064178b23dcb0acd6cfab96ec78560051137e60c",
+      "blob": "5b1738c086693bc7df299c48692b82bb3c07b680",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
     },
     {
-      "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+      "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
       "kind": "file",
       "path": "mcp/src/agents_remember/canvas/review-presenter.md"
     },
@@ -471,14 +471,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T04:22:40+01:00",
+    "at": "2026-11-26T05:37:56+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L41",
+    "leaf": "261124-EXP-L2",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
-    "task": "261112-BUG"
+    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+    "task": "261124-EXP"
   }
 }

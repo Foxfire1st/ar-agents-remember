@@ -1,5 +1,25 @@
 {
   "path": "dashboard/src/panels/review/explainer/RevisionFrameProtocol.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "740f87cc40803a6c42087cbafe4e7d14ce46ae60",
+        "content": "sha256:e4fde7b629ad33770e2df561a6937adcfb74d53e763a4845af143b8e93883d66",
+        "locator": {
+          "end": 178,
+          "kind": "line_range",
+          "start": 122
+        }
+      },
+      "facet": "Exercises the exact mounted binding with the two initial dashboard preferences and subsequent changes. The iframe stays mounted and the ordinary binding is sent once.",
+      "id": "PRF-PPBVNX",
+      "invariant": "INV-9C8QB5",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §2 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "49d4fa81a178e22c5d362440d53739cd5dbeaa5f",
+            "blob": "740f87cc40803a6c42087cbafe4e7d14ce46ae60",
             "content": "sha256:926ec5b465e4f40aedb6f34e010177840dd888ae1ce897bc69924321128a2ce6",
             "locator": {
               "end": 81,

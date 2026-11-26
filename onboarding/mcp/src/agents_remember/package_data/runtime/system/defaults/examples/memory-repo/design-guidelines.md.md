@@ -20,4 +20,4 @@ The shipped example governs the look and lets the essay guide the choice of figu
 
 ## Evidence
 
-- The shipped example governs the look and lets the essay guide the choice of figures. [1]
+- The example asks the designer and reviewer to operate the central figure with keyboard and narrow widths, read the full explanation in the initial markup and apply reduced-motion and quiet checks to dashboard surfaces. [1]

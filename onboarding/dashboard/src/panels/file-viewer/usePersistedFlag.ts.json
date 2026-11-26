@@ -70,12 +70,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
+            "blob": "dfe3e58cde4ac1927db493e04ea33c243cf9b653",
             "content": "sha256:455feb20e68551d26878739be9cd8966b7b5a2d7bedf78e315765fa9574ae959",
             "locator": {
-              "end": 207,
+              "end": 208,
               "kind": "line_range",
-              "start": 206
+              "start": 207
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -88,14 +88,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73b017be047a2ef283419c3a55df0a1fdd5b7ab2",
-            "content": "sha256:fa5ef98bacf05b79a0ad66cc689f8c33445480853643065bbf8a31b4b3bae3ee",
+            "blob": "f2c4b01f553f5f6e0bfc41852324e6f187be5d8f",
+            "content": "sha256:aceef5ba54cc3ea3f2d5bc007d36b2fc96c5602dad2318f636c19a0426bf0eed",
             "locator": {
-              "end": 881,
+              "end": 21,
               "kind": "line_range",
-              "start": 847
+              "start": 12
             },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
+            "path": "dashboard/src/cockpit/EffectsToggle.tsx"
           },
           "kind": "code"
         }

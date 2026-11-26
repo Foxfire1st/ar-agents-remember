@@ -1,0 +1,230 @@
+{
+  "path": "mcp/tests/test_canvas_kit_references.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "831a4d7263f9eb9e542484ab988a51ea1069bdc9",
+        "content": "sha256:290d666ef9f6efaaa34fd3e7a835897b1201ab9809cfb3f76c7ced817773970b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_js_extractor_handles_static_reexport_and_dynamic_imports_only"
+        }
+      },
+      "facet": "Recognizes static, re-export and literal dynamic module imports.",
+      "id": "PRF-0ESRZ4",
+      "invariant": "INV-ME5GYW",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §3",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "831a4d7263f9eb9e542484ab988a51ea1069bdc9",
+        "content": "sha256:be8254180f349587828051afdafe0ad08b58ce6f95e643f7b4ba0092e6cbdae2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_inventory_helpers_and_summary_formatting"
+        }
+      },
+      "facet": "Projects inventory observations into the short summary.",
+      "id": "PRF-5C02XC",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "831a4d7263f9eb9e542484ab988a51ea1069bdc9",
+        "content": "sha256:42f0e2baca54abae5d0e93b6752dd4743bd76b3fc86579ba55dd9b14cadd272c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_inventory_treats_observed_assets_as_used_and_unreferenced_kit_as_unused"
+        }
+      },
+      "facet": "Distinguishes observed usage from an unreferenced copied kit asset.",
+      "id": "PRF-5VXG61",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "831a4d7263f9eb9e542484ab988a51ea1069bdc9",
+        "content": "sha256:26a078bc45047ee492cbbb2a85f728ba4249afb0a7d4845d7492c63715caf108",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_dormant_unused_module_importing_kit_does_not_mark_library_used"
+        }
+      },
+      "facet": "Keeps a dormant module’s kit imports out of the observed library count.",
+      "id": "PRF-63DR57",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "831a4d7263f9eb9e542484ab988a51ea1069bdc9",
+        "content": "sha256:52edf0bc3cab795275a4a82c29312a6ab82da6923d3b44b881d233b1dc6a91e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_resolve_and_carry_kit_assets_includes_notices_and_handles_unknown_cleanly"
+        }
+      },
+      "facet": "Carries declared notices and handles an unknown pinned reference.",
+      "id": "PRF-6FGG7A",
+      "invariant": "INV-ME5GYW",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §3",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "831a4d7263f9eb9e542484ab988a51ea1069bdc9",
+        "content": "sha256:bc19e64fe78e748abb10715e3479a085ed53d999b133cd060c321b74dcfe6c60",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_build_inventory_surfaces_incomplete_dom_flag_and_summary"
+        }
+      },
+      "facet": "Keeps the incomplete DOM observation flag with the summary.",
+      "id": "PRF-CCNDMT",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "831a4d7263f9eb9e542484ab988a51ea1069bdc9",
+        "content": "sha256:b7e1a805e9f016176dce2b0cfc1e0f3a996b98937569bc05bf6e0e103009fee7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_revision_inventory_sidecar_counts_in_task_meter_and_omits_without_room"
+        }
+      },
+      "facet": "Includes an inventory sidecar in task usage and omits it without headroom.",
+      "id": "PRF-CXGA55",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "831a4d7263f9eb9e542484ab988a51ea1069bdc9",
+        "content": "sha256:7edfc38e0548fed4b6f6fd485fdcf4b1c8fbb8b8177bdee938288a26d16c8f12",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_inventory_sidecar_interleaved_second_leaf_publish_never_exceeds_task_cap"
+        }
+      },
+      "facet": "Serializes the two-leaf case within the one task-wide physical cap.",
+      "id": "PRF-DH787J",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "831a4d7263f9eb9e542484ab988a51ea1069bdc9",
+        "content": "sha256:2223ced68422e7de5aaecea8758ce3637219aa0e4a7701ebb4707b51e1cc13fb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_modified_or_custom_kit_file_in_draft_is_refused_with_outside_kit_remedy"
+        }
+      },
+      "facet": "Refuses changed or custom bytes inside the reserved directory with the outside-kit remedy.",
+      "id": "PRF-JPKP4X",
+      "invariant": "INV-ME5GYW",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §3",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "831a4d7263f9eb9e542484ab988a51ea1069bdc9",
+        "content": "sha256:b154267eb3be155dc547faba65a4cbd381ab0edd89c0fcfc52d631c838f900d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_workspace_copies_starters_and_exemplar_and_skips_kit_when_seeding_draft"
+        }
+      },
+      "facet": "Copies fixture-provided starter and exemplar files on Build. Update refreshes the fixtures and removes stale inputs. Draft seeding skips the top-level reserved kit and keeps the carried file in the retained revision.",
+      "id": "PRF-P0SGCA",
+      "invariant": "INV-V4YCC7",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §4",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "831a4d7263f9eb9e542484ab988a51ea1069bdc9",
+        "content": "sha256:2e7c275b9f00f3b82f559970dd1f423dd9db7ab0bca29ca6430a551c33106903",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_js_and_css_extractors_handle_commented_dynamic_imports_and_css_strings"
+        }
+      },
+      "facet": "Separates literal JavaScript and CSS references from commented or quoted lookalikes.",
+      "id": "PRF-YC1FT1",
+      "invariant": "INV-ME5GYW",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §3",
+        "leaf": "261124-EXP-L1"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "831a4d7263f9eb9e542484ab988a51ea1069bdc9",
+        "content": "sha256:fc30f9ca15dd4d48d8ed01eda42f6960196db78ae56dce4ebd8890af91a981fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_persist_revision_inventory_returns_false_without_raising_on_unwritable_or_missing"
+        }
+      },
+      "facet": "Reports unavailable optional persistence without raising.",
+      "id": "PRF-Z9X73A",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Reference carriage and altered draft-kit bytes have separate expectations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "831a4d7263f9eb9e542484ab988a51ea1069bdc9",
+            "content": "sha256:686800339ae4f39660a350ce6364a3eafcc79944928fb4a0a7158d519414fb40",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

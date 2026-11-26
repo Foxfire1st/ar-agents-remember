@@ -1,12 +1,16 @@
 {
   "anchor": {
-    "blob": "af706a40fa249d69356fdd58e36be475c59f5a58",
+    "blob": "0a3f4a97128412fafb39a38d7da3d8b6136d6cb8",
     "content": "sha256:874be24e58d3a8695d8dd185899fa99422a3112bcb6386b3c0e8ae772d7c533e",
     "locator": {
       "kind": "symbol",
       "name": "DEFAULT_TIMEOUT_SECONDS"
     },
     "path": "mcp/src/agents_remember/canvas/prospective.py"
+  },
+  "closed": {
+    "reason": "The ordinary browser load has an independent result, followed by four advisory interaction passes whose unvisited coverage is reported separately.",
+    "task": "261124-EXP-L1"
   },
   "id": "WKN-0FX9KZ",
   "kind": "time",
@@ -18,12 +22,12 @@
     "leaf": "260928-MIK-L201",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928-MIK-L201"
   },
-  "state": "open",
+  "state": "closed",
   "statement": "L183's five interaction passes take about 120 s of the load process's 180 s window, so a larger page splits across renders and each successor publishes its own stated coverage."
 }

@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/package_data/canvas/starters/motion-canvas-step-through/index.html",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The reader can step or play through a sequence that is also stated in markup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2243b09c28cfad7024b5bb45cc6924e0c4f8fe81",
+            "content": "sha256:17adea5737582ab39f6bcda0d3a86850dc683f22cb3a982c9bb393ac16182aca",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 226
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

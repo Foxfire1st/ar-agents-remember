@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "654d5eacb7b3070e1a3e17aa50a5cc9a44be6c09",
-    "commit": "babbd912757d905a69e7b9409b0b89bd528f4db3",
+    "codeTree": "af9e749296405ef22b6b165097e02cfef8e50570",
+    "commit": "91bb8c5f96005ee45998e3d5a3618fc28d250bdc",
     "role": "curator",
-    "statement": "On synced code 654d5eac (base babbd9127) the settings reference passages touched across CAP-L4 and L29 are accurate: lines 40-41 accurately state that agents-remember-mcp requires --config naming an absolute path to the trusted settings file with no default when omitted, matching mcp/src/agents_remember/mcp/server.py:483-487; lines 86-129 match tool_answer_log.py for ar-tools-<YYYY-MM-DD>.jsonl naming, 14-day keepDays, 256 MiB maxBytes, 64 MiB enclosureMaxBytes, and <omitted>/<env>/>200-char redaction; lines 481 and 925-932 accurately apply commitCheckTimeoutSeconds to landing and continued code-sync commit checks; and lines 612-615 and 1126-1133 match cli/paseo_catalog.py and cli/paseo_seat_policy.py on mode precedence (start call, host role, settings, host default) and per-harness first-call grants (Codex role roster, Claude server_info, none elsewhere, plus explainer tools on both); the document's other sections were not reread for this confirmation.",
-    "task": "261112-BUG-L29",
-    "uncommitted": true
+    "statement": "On settled crossing-5 tree af9e7492 (commit 91bb8c5f, combining EXP-L1/crossing-4 and BUG-L44), docs/reference/settings-json.md remains accurate across all four settings files, agents-remember-mcp --config absolute path requirement, tool-log rotation/redaction, orchestration.landing.commitCheckTimeoutSeconds, mode precedence and per-harness first-call grants, timeoutCaps.providerSetupSeconds, user-settings permission reporting (444/555 and openUserSettings), paseoRuntime authority rules, and role-executions folder creation; unchanged by BUG-L44's paseo_launch.py retirement/interruption updates.",
+    "task": "261124-EXP",
+    "uncommitted": false
   },
   "document": "docs/reference/settings-json.md",
   "id": "DPD-W0T9V9",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 19,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -164,7 +164,7 @@
       "path": "mcp/src/agents_remember/worktrees/role_handover_locator.py"
     },
     {
-      "blob": "0fc638828611b97d33b29b06297cc62431902dc2",
+      "blob": "ca833123cd3e62b5a60b14eaeb78fbb6b296c2f0",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/paseo_launch.py"
     },
@@ -243,14 +243,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-25T23:13:05+01:00",
+    "at": "2026-11-26T04:22:46+01:00",
     "by": "agent",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-5",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L29",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
-    "task": "261112-BUG"
+    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+    "task": "261124-EXP"
   }
 }

@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
-        "content": "sha256:1b53086abd38efe768e5203e24f452bb763deae5806ae341d8b0bab8a571e491",
+        "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+        "content": "sha256:06a32814144253c86253119eb9d86f0723f8dac599a0a8236c170cd18b9f4c06",
         "locator": {
           "end": 49,
           "kind": "line_range",
@@ -23,10 +23,29 @@
     },
     {
       "anchor": {
-        "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
-        "content": "sha256:415fa9c9cf0b8a738d3eb3a5c8313b0aeb11140bfaa1b96ee054c9bc3e293fff",
+        "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+        "content": "sha256:071850472ecaf6707fdee350163cbc42e9f2006d1c62be215641b1c7aefdfe26",
         "locator": {
-          "end": 63,
+          "end": 142,
+          "kind": "line_range",
+          "start": 137
+        }
+      },
+      "id": "RLZ-1TKMCY",
+      "invariant": "INV-ME5GYW",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §3 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Teaches explicit kit references and automatic carry, with the shipped starter guide available for the reserved-copy rule.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+        "content": "sha256:3ada9214ef78c2233b273c6f85e2095fe1cb099402455601d20dd08520e3af1f",
+        "locator": {
+          "end": 64,
           "kind": "line_range",
           "start": 60
         }
@@ -37,13 +56,32 @@
         "handoffEntry": "BUG-R13@v1 rule 3 — text carries the content",
         "leaf": "261112-BUG-L13"
       },
-      "rationale": "The capability text states the rule that replaces the old motion-first instruction.",
+      "rationale": "Requires a reader-driven central figure and the complete still explanation, with intended mechanism language for a planned page.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
-        "content": "sha256:57c7a68bb8871dc04c5c835895afe5599a83700dcf9d55182fb36875fc0ce0ab",
+        "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+        "content": "sha256:ed3bb5d5cc1be92bbec1cc2254ae868cb90e62216fe316305fe457e1a554280f",
+        "locator": {
+          "end": 20,
+          "kind": "line_range",
+          "start": 10
+        }
+      },
+      "id": "RLZ-FEYFB8",
+      "invariant": "INV-V4YCC7",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §4 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Lists the working starter set and its README among the explainer’s private reading inputs.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+        "content": "sha256:0b1582410ecd675257327b6ce0d5890d33e86b2946153bb4f73fb248426eb47c",
         "locator": {
           "end": 55,
           "kind": "line_range",
@@ -58,20 +96,51 @@
       },
       "rationale": "The capability text gives the planned variant and the intended marking.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+        "content": "sha256:395ca77ee89933b5b94218235ba7b476e0d287c4f9aef07911f5eb98a29eb6a8",
+        "locator": {
+          "end": 84,
+          "kind": "line_range",
+          "start": 76
+        }
+      },
+      "id": "RLZ-N1VS3R",
+      "invariant": "INV-9C8QB5",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §2 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "The authoring instructions describe the standalone page as outside the dashboard's reduced-motion and quiet checks.",
+      "role": "support"
     }
   ],
   "references": {
     "1": {
-      "note": "The capability prescribes the six private authoring files, followed by page assembly as the seventh artifact.",
+      "note": "The capability places the evidence-bearing essay before the visual plan and draft figures, with page assembly seventh. A reader-driven figure explains the central mechanism and the whole explanation remains in the still markup.",
       "targets": [
         {
           "anchor": {
-            "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
-            "content": "sha256:d833ffc03a155f6506f7af8e0b198adca842a044314493134ce0b71af1ef80f1",
+            "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+            "content": "sha256:880c4b10981967f84354f6727692c5766eb7a06148bf1671327fe6f9bc986f76",
             "locator": {
-              "end": 62,
+              "end": 49,
               "kind": "line_range",
-              "start": 27
+              "start": 24
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+            "content": "sha256:3ada9214ef78c2233b273c6f85e2095fe1cb099402455601d20dd08520e3af1f",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 60
             }
           },
           "kind": "code"
@@ -83,8 +152,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
-            "content": "sha256:d860d6257a3fd4ee05156b7b87709572bf381560f204193740a20b4694caf334",
+            "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
+            "content": "sha256:de3208ed0a91ec6f24a461063f55ef2db7cd30a594d2c4df09ec17510cbf75cb",
             "locator": {
               "end": 20,
               "kind": "line_range",
@@ -95,12 +164,12 @@
         },
         {
           "anchor": {
-            "blob": "53449b899090160eaec079a197e42ee1c741ac4c",
+            "blob": "763ee6ff9ca67cb94b53c69c16f295f07440845f",
             "content": "sha256:0270004776f9f7584181784a8d8f9d2b3d89c9ba617d5ce424e59c0d77812bf8",
             "locator": {
-              "end": 69,
+              "end": 71,
               "kind": "line_range",
-              "start": 64
+              "start": 66
             }
           },
           "kind": "code"

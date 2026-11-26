@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "bcf4a7110c9d9430d275d3c10e4315aed34f3089",
-    "commit": "3ee3b10c90fecdf81b54c96c784e481f33423522",
+    "codeTree": "1717764f7fb769fcdb42434d8173a3ac0fa82aa7",
+    "commit": "f9e394c5499267ac4ad55b8b6bc9331cef1239bc",
     "role": "curator",
-    "statement": "Verified docs/reference/mcp-tools.md on synced L53 candidate bcf4a711 (base 3ee3b10c): line 276 names worktrees/sync_transaction_git/_merge.py with the repository GitHub blob URL, line 193 matches knowledge_read's seven advertised views (source_context, invariant, family, record, weakness, dependent, writers) at registration/knowledge.py:106, and line 756's message-file-failed refusal matches _filing_seat_lock alongside the standing tool reference contracts.",
-    "task": "261112-BUG-L53",
-    "uncommitted": true
+    "statement": "On settled crossing-7 tree 1717764f (commit f9e394c5, combining crossing-6/EXP-L1 and BUG-L53 8ccdd6fa/605fa6b0), docs/reference/mcp-tools.md remains accurate across both sides: BUG-L53 line 276 naming worktrees/sync_transaction_git/_merge.py with the GitHub blob URL, line 193 matching knowledge_read's seven advertised views (source_context, invariant, family, record, weakness, dependent, writers) at registration/knowledge.py:106, and line 756's message-file-failed refusal matching _filing_seat_lock; alongside BUG-L44 scope-based any-role retire_child authority, open-child refusal, explicit interrupt_turn permission, and current-scope replacement rules (lines 580, 619-623, 651-660), BUG-L29 continued code-side merge commit rules under orchestration.landing.commitCheckTimeoutSeconds and host-run single-server grants on agents-remember-task, all 44 public tools and the four dedicated explainer tools after EXP-L1's inventory/kitAssets/inventoryOmitted packing in explainer_tools.py, and L38/L37 runtime_install, worktree_cleanup/abandon, and role_message refusal/held-drain semantics.",
+    "task": "261124-EXP",
+    "uncommitted": false
   },
   "document": "docs/reference/mcp-tools.md",
   "id": "DPD-X6G7K3",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 24,
+  "revision": 25,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -73,7 +73,7 @@
       "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
     },
     {
-      "blob": "f79b28fc4c7cf5d9206befb180e5c3f05ec7f07b",
+      "blob": "08878de59bcb49998d1096b4cb148c7c635daa2b",
       "kind": "file",
       "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
     },
@@ -423,14 +423,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T04:12:31+01:00",
+    "at": "2026-11-26T06:04:40+01:00",
     "by": "agent",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-7",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L53",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "b9f64d3c-3162-5567-b54e-88aa98a966d2",
-    "task": "261112-BUG"
+    "seat": "e054fd2a-3d5c-5f12-87c3-aa9f2d460768",
+    "task": "261124-EXP"
   }
 }

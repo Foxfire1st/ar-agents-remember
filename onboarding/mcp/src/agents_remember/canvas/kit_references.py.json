@@ -1,0 +1,61 @@
+{
+  "path": "mcp/src/agents_remember/canvas/kit_references.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "27db2f3972496d714e9d6401b99f11335432d2a4",
+        "content": "sha256:2f1741b05140672e77d03d7b088a5e4f512e7b0f36d86407dd2f45c6337dc005",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_kit_references"
+        }
+      },
+      "id": "RLZ-E0B06E",
+      "invariant": "INV-ME5GYW",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §3",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Parses HTML/SVG, top-level CSS @import/url() via a comment/string/brace-aware scanner, and tree-sitter-javascript module imports (skipping leading comment nodes in dynamic imports) to resolve kit/<library>/<version>/... references and collect kit_assets() payloads.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "27db2f3972496d714e9d6401b99f11335432d2a4",
+        "content": "sha256:ff463f4efb55d1b6b3ee7195f450829f3cb910d89bc8a13a0b2ab8d40003fc08",
+        "locator": {
+          "kind": "symbol",
+          "name": "verify_kit_assets"
+        }
+      },
+      "id": "RLZ-XBN7Q2",
+      "invariant": "INV-ME5GYW",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §3",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Compares any pre-existing drafts/assets/kit/ copy byte-for-byte and by SHA-256 against the shipped kit and refuses mismatches with guidance to place changed copies outside kit/.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The draft copy verifier compares exact bytes, size and manifest digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27db2f3972496d714e9d6401b99f11335432d2a4",
+            "content": "sha256:ff463f4efb55d1b6b3ee7195f450829f3cb910d89bc8a13a0b2ab8d40003fc08",
+            "locator": {
+              "end": 458,
+              "kind": "line_range",
+              "start": 423
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

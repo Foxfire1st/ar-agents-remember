@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+        "blob": "94ad037e32eea2957f5c4f5fadc38eb9d4ba2a6d",
+        "content": "sha256:ebc012bcaad05179d840344a2c1c1c83c8839665f32b68dbca203748bf16f344",
+        "locator": {
+          "kind": "symbol",
+          "name": "handle_build"
+        }
+      },
+      "id": "RLZ-C9WA8J",
+      "invariant": "INV-72AP2W",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §8",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Build returns the provenance workspace ID when recorded and otherwise falls back to the physical workspace path for its workspace ID and nested seat result.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "94ad037e32eea2957f5c4f5fadc38eb9d4ba2a6d",
         "content": "sha256:6e4dcb9d28baa2852fe9c99beac45d86ce8b6e92e73b3c51476ef66a528aa526",
         "locator": {
           "kind": "symbol",
@@ -21,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
-        "content": "sha256:a944503f0a793990c545d10b39d41a29fb496ca1874a34698600c5395d9a3590",
+        "blob": "94ad037e32eea2957f5c4f5fadc38eb9d4ba2a6d",
+        "content": "sha256:ebc012bcaad05179d840344a2c1c1c83c8839665f32b68dbca203748bf16f344",
         "locator": {
           "kind": "symbol",
           "name": "handle_build"
@@ -44,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+            "blob": "94ad037e32eea2957f5c4f5fadc38eb9d4ba2a6d",
             "content": "sha256:222eac6bbc4de4e08674df28005dd484ea1339a829368090e1edba7fb771649a",
             "locator": {
               "kind": "symbol",
@@ -60,24 +78,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+            "blob": "94ad037e32eea2957f5c4f5fadc38eb9d4ba2a6d",
             "content": "sha256:6454816986269d0c04eebe083e9a2ebb78d741102690320e150f6e0a57651328",
             "locator": {
-              "end": 110,
+              "end": 111,
               "kind": "line_range",
-              "start": 70
+              "start": 71
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "39c31514fa4a68a98b07322be75ddff9da884092",
+            "blob": "94ad037e32eea2957f5c4f5fadc38eb9d4ba2a6d",
             "content": "sha256:e4d997ab0b0bec4730706a3c282ac7e68b2edc63aeceac66ed02965fcc8b6eb1",
             "locator": {
-              "end": 216,
+              "end": 217,
               "kind": "line_range",
-              "start": 194
+              "start": 195
             }
           },
           "kind": "code"
@@ -118,6 +136,36 @@
               "start": 859
             },
             "path": "mcp/src/agents_remember/canvas/explainer_service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Build returns the provenance host workspace ID when available and falls back to the physical workspace path otherwise, both in workspaceId and the nested Seat result. State reads stored host identity separately and can report null when there is no recorded ID.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94ad037e32eea2957f5c4f5fadc38eb9d4ba2a6d",
+            "content": "sha256:2f40e2c6984330a7bd1aefc90150b06fcb7a226f377fd3faa6656d23f0b0feee",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 236
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "77095097fe2e98f2560ea8af062084be0fe6ec87",
+            "content": "sha256:14777d65d3efbec89f6a15c64c766ccf4430f561b9e4466a95ab2e12f644fa7c",
+            "locator": {
+              "end": 879,
+              "kind": "line_range",
+              "start": 872
+            },
+            "path": "mcp/src/agents_remember/serving/explainer.py"
           },
           "kind": "code"
         }

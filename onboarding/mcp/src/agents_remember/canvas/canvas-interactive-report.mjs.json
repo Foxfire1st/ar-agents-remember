@@ -1,18 +1,36 @@
 {
   "path": "mcp/src/agents_remember/canvas/canvas-interactive-report.mjs",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8f69e883c5dee5b6c1f336e851a7b5fc5c79d72d",
+        "content": "sha256:d379556cb914d54d51afe03a477ccf16f031d01ff27e778fdb49b1577e116409",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-GRJJ51",
+      "invariant": "INV-ES66EB",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §1",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Runs four ordinary viewport/input passes (1280-click, 1280-keyboard, 390-click, 390-keyboard) with no effects-off pass, projects resumed passes strictly to the current output schema (stripping legacy effects/reducedMotion/motion fields and ignoring legacy effects: false passes), keeps deadline-unvisited passes and controls in unvisited/notReached metadata rather than pass errors, and separates screenshot timeout from control action timeout.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Every initially present control is exercised at both widths, so a control that does nothing cannot pass as covered.",
+      "note": "Four advisory width and input-method passes exercise initial controls and record those a deadline left unvisited.",
       "targets": [
         {
           "anchor": {
-            "blob": "3933cf324eac11897a241637768e81f5267f7374",
-            "content": "sha256:bb4e3dc5a52ca5542dc9246ec008fcaabe7ee892c957c3c7c7f046b479776e7d",
+            "blob": "8f69e883c5dee5b6c1f336e851a7b5fc5c79d72d",
+            "content": "sha256:3cbefbeddce3793000d76c61699895bd3eadac45ee675616d630def2d1b22718",
             "locator": {
-              "end": 151,
+              "end": 300,
               "kind": "line_range",
-              "start": 151
+              "start": 231
             }
           },
           "kind": "code"
@@ -20,15 +38,28 @@
       ]
     },
     "2": {
-      "note": "A control found in an earlier pass is not re-exercised at the cost of one never reached.",
+      "note": "A matching staged draft can resume completed ordinary passes and retain earlier observed controls from partial passes. Retired effects-off passes are excluded.",
       "targets": [
         {
           "anchor": {
-            "blob": "3933cf324eac11897a241637768e81f5267f7374",
-            "content": "sha256:25383f65e28f753cad4cbe15711f12ee911c36ae5d6f98ebd74735032841e650",
+            "blob": "8f69e883c5dee5b6c1f336e851a7b5fc5c79d72d",
+            "content": "sha256:d7f24f0e0947b310362535f049abafa029a2463caba8008d637d45236993be86",
             "locator": {
-              "kind": "symbol",
-              "name": "earlierPass"
+              "end": 227,
+              "kind": "line_range",
+              "start": 201
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f69e883c5dee5b6c1f336e851a7b5fc5c79d72d",
+            "content": "sha256:522818461b2fd76a821693e4f34d474059eaf12343efeb335f5bc18c3bd9a16c",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 259
             }
           },
           "kind": "code"

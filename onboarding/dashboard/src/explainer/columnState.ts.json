@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6413f12bafcbb3a2598bec286bc3bac8cabcec74",
+        "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
+        "content": "sha256:d2ecd23d85c7895c638576d4e23a11af114eedbfcfa83dad9fe4c26752a43378",
+        "locator": {
+          "end": 212,
+          "kind": "line_range",
+          "start": 195
+        }
+      },
+      "id": "RLZ-19NBKK",
+      "invariant": "INV-72AP2W",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §8 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "A first-request clear closes the matching Operations form.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
         "content": "sha256:7bfcb72d3a8d5969e880309bec97e18e7b539dc5a6df3ede8291694aae41ce74",
         "locator": {
           "kind": "symbol",
@@ -21,7 +40,45 @@
     },
     {
       "anchor": {
-        "blob": "6413f12bafcbb3a2598bec286bc3bac8cabcec74",
+        "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
+        "content": "sha256:bb8f6b676753bab374286098e3c0263a38b6989bd194dc1dc56f9dedd36f0b90",
+        "locator": {
+          "end": 136,
+          "kind": "line_range",
+          "start": 111
+        }
+      },
+      "id": "RLZ-A9EQB6",
+      "invariant": "INV-72AP2W",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §8 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "An active leaf subscribes to matching publication changes and rereads the selected explainer state.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
+        "content": "sha256:a432fc33697c9ddb9f172ef455c3ecbea0e692884a1ba12f35df9ac55aa0d88e",
+        "locator": {
+          "end": 266,
+          "kind": "line_range",
+          "start": 255
+        }
+      },
+      "id": "RLZ-G09A0J",
+      "invariant": "INV-72AP2W",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §8 Curator source placements",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "An observed live or closed seat replaces stale first-request form state.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
         "content": "sha256:090fb273e0bd4aaab0219247aba6f734114dee26e8f4755eff72429878214e38",
         "locator": {
           "kind": "symbol",
@@ -39,7 +96,7 @@
     },
     {
       "anchor": {
-        "blob": "6413f12bafcbb3a2598bec286bc3bac8cabcec74",
+        "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
         "content": "sha256:a91a7e6d574ea9cac96eec54d7bebb019704fc1b518107cb4e55e92ed58d923b",
         "locator": {
           "kind": "symbol",
@@ -57,7 +114,7 @@
     },
     {
       "anchor": {
-        "blob": "6413f12bafcbb3a2598bec286bc3bac8cabcec74",
+        "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
         "content": "sha256:9606ac92682372e2141ea4c8722a9a17c5e45d93e0f9238b7c25d8785f7a765b",
         "locator": {
           "kind": "symbol",
@@ -75,7 +132,7 @@
     },
     {
       "anchor": {
-        "blob": "6413f12bafcbb3a2598bec286bc3bac8cabcec74",
+        "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
         "content": "sha256:3dc3ab4a4de67fc00b322b38f1f067ac8a1b409e7d53b2b53c9978e0cba30109",
         "locator": {
           "kind": "symbol",
@@ -90,20 +147,38 @@
       },
       "rationale": "Guards a concurrent Send, keeps its request identifier across refusals and submits the explicit build request while retaining failed request state.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
+        "content": "sha256:ae9ffc6a35933b5238f539f969ca660ee7f38275e7954b4c3903924b17fd5bc1",
+        "locator": {
+          "kind": "symbol",
+          "name": "useExplainerColumn"
+        }
+      },
+      "id": "RLZ-VX6PHH",
+      "invariant": "INV-72AP2W",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §8",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Subscribes to review.explainer.changed SSE events and first-request submission changes so the column opens the live chat without view navigation.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
     "1": {
-      "note": "A build and an in-flight Send are re-read on an interval that clears when both stop\n\nAnchor: `setInterval`",
+      "note": "The active leaf column reads state and subscribes to explainer changes. A running build, in-flight Send or bounded delivery follow can keep polling active. A failed Send enters this follow only while the state has not named a build. The follow deadline stops reads inside the timer callback, while effect cleanup clears the timer. Explicit Retry can request another read.",
       "targets": [
         {
           "anchor": {
-            "blob": "6413f12bafcbb3a2598bec286bc3bac8cabcec74",
-            "content": "sha256:109b07ec2f03ca5346db1aa4d29a73ffd1785eb51889daf00d84e5592b736b45",
+            "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
+            "content": "sha256:a31eb7010c4857552e43c879b082c534260613f921420ad8b198dc9e42757624",
             "locator": {
-              "end": 640,
+              "end": 177,
               "kind": "line_range",
-              "start": 148
+              "start": 138
             }
           },
           "kind": "code"
@@ -115,12 +190,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6413f12bafcbb3a2598bec286bc3bac8cabcec74",
+            "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
             "content": "sha256:9606ac92682372e2141ea4c8722a9a17c5e45d93e0f9238b7c25d8785f7a765b",
             "locator": {
-              "end": 298,
+              "end": 318,
               "kind": "line_range",
-              "start": 271
+              "start": 291
             }
           },
           "kind": "code"
@@ -132,7 +207,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6413f12bafcbb3a2598bec286bc3bac8cabcec74",
+            "blob": "15009099c4b819417e69d8a372b829a2ad29392a",
             "content": "sha256:ae9ffc6a35933b5238f539f969ca660ee7f38275e7954b4c3903924b17fd5bc1",
             "locator": {
               "kind": "symbol",

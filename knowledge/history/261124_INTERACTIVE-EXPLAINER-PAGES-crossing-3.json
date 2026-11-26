@@ -1,0 +1,206 @@
+{
+  "closed": true,
+  "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+  "rows": [],
+  "schema": "ar-history/v1",
+  "sharedRevisions": [
+    {
+      "record": "WKN-MF4K6D",
+      "revision": 2
+    }
+  ],
+  "written": [
+    {
+      "contentDigest": "sha256:39bac2961fdadc6102d9cd42fe9b73400d42668ba623dbf49a7c4bf3ed0af4ec",
+      "record": "DPD-23C91T",
+      "revision": 10,
+      "writer": {
+        "at": "2026-11-26T00:51:29+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:b0bc808b57f29ee4474a0c8ebd9b627d5e4911a955b15a6830373b3501b45c03",
+      "record": "DPD-3P9XTZ",
+      "revision": 9,
+      "writer": {
+        "at": "2026-11-26T00:51:29+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:cecce4a88b196e83ee2bb0c5ea10e9af138fb3767280748242f77f70040989d9",
+      "record": "DPD-71WYH4",
+      "revision": 24,
+      "writer": {
+        "at": "2026-11-26T00:51:29+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:9085c8960cf6c8f2832c4b9feb6ef9b4330a013156f4f614c193c63ef1ab59f8",
+      "record": "DPD-EG5TYT",
+      "revision": 26,
+      "writer": {
+        "at": "2026-11-26T00:51:29+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:f598f2565ad23cfc5f3782e8c1be7de8f507733b8a0518ae6812737ec817da7d",
+      "record": "DPD-EJ2Y7Z",
+      "revision": 7,
+      "writer": {
+        "at": "2026-11-26T00:51:29+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:f9d77f347ec0c8e5ef6e48d60bbb5c1ef2c805701c489bf3208a88b39f862a1c",
+      "record": "DPD-MQCJK4",
+      "revision": 15,
+      "writer": {
+        "at": "2026-11-26T00:51:29+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:0ca22104c2924673b0dbd1802728060480fe299da7f3676c00ade359031243b1",
+      "record": "DPD-PMZ21Z",
+      "revision": 13,
+      "writer": {
+        "at": "2026-11-26T00:51:29+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:1c6f90013798f3d431184ea110d796a928a8ccaf9ce2a15c83f41415c93e9981",
+      "record": "DPD-PYMM5P",
+      "revision": 6,
+      "writer": {
+        "at": "2026-11-26T00:51:29+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:034091ceb386d2fcf065365394f51b59308cecaaadb383cb9132fd6ae228ef78",
+      "record": "DPD-W0T9V9",
+      "revision": 16,
+      "writer": {
+        "at": "2026-11-26T00:51:29+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:1408d5dc5ce490e88cd5fd2f8f8c9427e8e253f2504a1ebd1567f7dc508092c9",
+      "record": "DPD-X6G7K3",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-26T00:51:29+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:907ad2a43799716d768af896567fb874dd50851a2b47a771246fcd430e44cb3d",
+      "record": "DPD-ZMQ523",
+      "revision": 18,
+      "writer": {
+        "at": "2026-11-26T00:51:29+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+        "task": "261124-EXP"
+      }
+    },
+    {
+      "contentDigest": "sha256:0731c41954679932c99917515999f758954660570c0d8a1d5cc5375b0dddb6ff",
+      "record": "DPD-ZT8YY7",
+      "revision": 19,
+      "writer": {
+        "at": "2026-11-26T00:51:29+01:00",
+        "by": "agent",
+        "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+        "effort": "high",
+        "harness": "antigravity-acp",
+        "model": "gemini-4-neon-high",
+        "role": "curator",
+        "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+        "task": "261124-EXP"
+      }
+    }
+  ]
+}

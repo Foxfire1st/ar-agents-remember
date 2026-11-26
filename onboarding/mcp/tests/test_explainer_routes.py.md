@@ -4,6 +4,8 @@
 
 [Route overview](overview.md)
 
+The Build and State fixture writes Paseo workspace provenance and asserts that both routes return that host workspace ID separately from the physical workspace path.
+
 ## Purpose
 
 The page's routes answer what a page cannot recompute: the trusted list of the revision it shows, the moved notice as the watcher gave it, a plan for a planning leaf only, the developer's own removal, and an Update's counts.
@@ -30,4 +32,4 @@ The cancel route forwards the exact seat/request pair from the leaf ledger, repo
 
 - The cancel route forwards the exact seat/request pair from the leaf ledger, reports stopped-turn and prevented-publication facts from its host reply, marks a request the ledger never saw uncertain, and rejects a missing request ID. This fixture-level route assertion does not certify a live host cancellation. [7]
 
-
+- The Build and State fixture writes Paseo workspace provenance and asserts that both routes return that host workspace ID separately from the physical workspace path. [8]

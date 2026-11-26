@@ -5,13 +5,14 @@
     ],
     "justification": "The capability and the example treatment both govern the relation between the essay and a supporting figure."
   },
-  "applicability": "The essay and the supporting figures in a recorded or planned explanation.",
+  "applicability": "The evidence essay, central figure and still explanation in a recorded or planned explainer page.",
   "conditions": [
-    "The explainer completes the essay with evidence before planning or making visuals.",
-    "The published page carries the complete explanation in readable text."
+    "The explainer completes the private evidence-bearing essay before planning or making figures.",
+    "A planned page marks the central mechanism as intended."
   ],
   "exclusions": [
-    "Figure behavior and visual treatment still apply when a figure is used."
+    "Secondary parts can stay in prose.",
+    "Advisory inventory reports observed figures independently of this authoring obligation."
   ],
   "id": "INV-X073BM",
   "origin": {
@@ -25,9 +26,9 @@
     "leaf": "261112-BUG-L13",
     "task": "261112-BUG"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The essay carries the content; a visual is made only where it helps a part of the essay, and the page reads in full without animations.",
+  "statement": "Each recorded or planned explainer page shows its central mechanism in a figure the reader drives and carries the complete explanation in its still markup.",
   "status": "proposed",
   "supersedes": []
 }

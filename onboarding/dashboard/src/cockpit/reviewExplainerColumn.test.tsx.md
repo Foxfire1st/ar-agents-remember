@@ -4,6 +4,8 @@
 
 [Route overview](../overview.md)
 
+The composed Operations case mounts CockpitShell, the review right rail and DocumentChat. It follows the selected explainer from Build through a live chat and an eligible transient open retry in one persistent iframe.
+
 ## Purpose
 
 Specifies the cockpit seam: the review rail hands the column its leaf, the pane shows the explainer or its placeholder and never the task's Worker, and a page without an explainer keeps its own chat.
@@ -21,3 +23,5 @@ Specifies the cockpit seam: the review rail hands the column its leaf, the pane 
 - An Operations leaf document shows Retire and retires a cold explainer [2]
 - The frame node and the draft survive switching between Operations and Review [3]
 - A page without an explainer keeps the document's own chat and reads no explainer state [4]
+
+- The composed Operations case mounts CockpitShell, the review right rail and DocumentChat. It follows the selected explainer from Build through a live chat and an eligible transient open retry in one persistent iframe. [5]

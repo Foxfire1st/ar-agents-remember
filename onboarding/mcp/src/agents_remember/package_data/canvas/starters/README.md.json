@@ -1,0 +1,77 @@
+{
+  "path": "mcp/src/agents_remember/package_data/canvas/starters/README.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e261f84091db2b660e352198c902cc488745fb85",
+        "content": "sha256:c64b821765f22f82f376d641f9731fbf64c44d2041979e95ac1f1ef5495b8ace",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7T4FZ0",
+      "invariant": "INV-V4YCC7",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §4",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Documents how explainer pages import pinned kit files by reference, explains that no reduced-motion or quiet-mode check applies to explainer pages and the dashboard's quiet switch does not apply to them, and guides adaptation of the four shipped starters without retired effects or reduced-motion wiring.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The starter table and adaptation steps identify each working figure and the ordinary frame behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e261f84091db2b660e352198c902cc488745fb85",
+            "content": "sha256:bb14454720018f969b435e9d65c8bdfd5595f692291a0da412a15151d8a7c270",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The guide gives the contained reference forms, the verifier attribution and the remedy for custom copies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e261f84091db2b660e352198c902cc488745fb85",
+            "content": "sha256:63ef5aa3549ff22868301e5c2fcc9fe8e8dc0746ac59812fcd255b0d44065e29",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Draft kit entries are compared with the shipped bytes, manifest byte sizes and SHA-256 digests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27db2f3972496d714e9d6401b99f11335432d2a4",
+            "content": "sha256:ff463f4efb55d1b6b3ee7195f450829f3cb910d89bc8a13a0b2ab8d40003fc08",
+            "locator": {
+              "end": 458,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/src/agents_remember/canvas/kit_references.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

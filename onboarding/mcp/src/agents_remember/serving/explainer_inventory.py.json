@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/serving/explainer_inventory.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3015b0da6c8383eced9ba91e181ff4f9b6473130",
+        "content": "sha256:4fdf87e5d721cb222d8f4f709f7e2db1522ced3a02d7c5a9ae94f55572b0c45a",
+        "locator": {
+          "kind": "symbol",
+          "name": "manifest_inventory_lines"
+        }
+      },
+      "id": "RLZ-9E6H27",
+      "invariant": "INV-BFYNBN",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §6",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Projects revision inventory summary and omission lines for explainer HTTP routes using one frame lookup per shared read or the already-resolved revision-list frame.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The inventory view shares a frame lookup and reads the same revision for both fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3015b0da6c8383eced9ba91e181ff4f9b6473130",
+            "content": "sha256:bbf6778bdc078fdd123655ad79177bb1eca6924acd37606bd9fcb485c5b5b280",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

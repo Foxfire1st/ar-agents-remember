@@ -5,7 +5,7 @@
     ],
     "justification": "The reading inputs, binding continuity and essay-first publication stages jointly preserve traceability from the selected leaf to the page."
   },
-  "guarantee": "The explainer can trace a published explanation to the selected binding through private staged evidence and an essay complete before it creates supporting visuals.",
+  "guarantee": "An explainer traces its published page to the selected recorded or planned binding through private staged evidence. It completes the evidence-bearing essay before building figures, shows the central mechanism through a reader-driven figure, and preserves the complete explanation in its still markup.",
   "id": "FAM-MS7NC5",
   "members": [
     "INV-0B3Q36",
@@ -23,7 +23,7 @@
     "leaf": "261112-BUG-L13",
     "task": "261112-BUG"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "docs/guides",
     "mcp/src/agents_remember/canvas",

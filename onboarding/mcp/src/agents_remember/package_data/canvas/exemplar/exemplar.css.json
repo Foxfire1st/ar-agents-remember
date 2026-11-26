@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/package_data/canvas/exemplar/exemplar.css",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Responsive rules preserve ordinary controls and still-form layout at narrow widths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "774baea363dda7ee9971f8e9a55b27b2755364d0",
+            "content": "sha256:6957851627d7ad76d3e706f05e70255afc752144c194a7d1c6d70be7fb5e2fcc",
+            "locator": {
+              "end": 944,
+              "kind": "line_range",
+              "start": 881
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

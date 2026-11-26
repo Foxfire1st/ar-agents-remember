@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/canvas/canvas-dom-inventory.mjs",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "950ae31b46a5f04df08df0fd5932d57a60a2fd52",
+        "content": "sha256:5a8ea6d337c761a7986c6667cf8c13b182079559e7dbc4ef26e598991f0c92ff",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KF6YWZ",
+      "invariant": "INV-9C8QB5",
+      "origin": {
+        "handoffEntry": "EXP-R01@v2 §2",
+        "leaf": "261124-EXP-L1"
+      },
+      "rationale": "Retains only the bounded linear O(N) report-only DOM inventory scanner extracted after removing canvas-quiet-motion.mjs.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The browser counts identified figure containers and highlighted or plain excerpts and carries incomplete observation as inventory metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "950ae31b46a5f04df08df0fd5932d57a60a2fd52",
+            "content": "sha256:5a8ea6d337c761a7986c6667cf8c13b182079559e7dbc4ef26e598991f0c92ff",
+            "locator": {
+              "end": 357,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

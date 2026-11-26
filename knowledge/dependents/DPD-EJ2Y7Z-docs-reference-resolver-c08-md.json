@@ -1,11 +1,11 @@
 {
   "confirmed": {
-    "codeTree": "cc81897b5c77098790701dfdb82dbf8ed0750807",
-    "commit": "a5a631ca5fe4e27d0b8affa2d8c077d09712b434",
+    "codeTree": "049d3961dfb898bbd69253d9e0b878188fd1006b",
+    "commit": "ed29e40bb6a27dbba33b106b556da182e02a7429",
     "role": "curator",
-    "statement": "The resolver reference still accurately binds context_packet to the leaf's task reference and places the full fact blocks in the log file; the role_start bound and warning-fitting changes do not touch it.",
-    "task": "261112-KNO-L4",
-    "uncommitted": true
+    "statement": "On settled tree 049d3961 (commit ed29e40b), docs/reference/resolver-c08.md remains accurate: context_packet's 360-token answer exception, slim answer fields, and log-recorded whole-result contract are unchanged in mcp/src/agents_remember/models/tools/tool_answer.py (which only updated a read_ar_files comment and added sharedHeldStores to RUNTIME_INSTALL_ANSWER_FIELDS), and serialize.py::context_to_dict matches every documented resolved fact.",
+    "task": "261124-EXP",
+    "uncommitted": false
   },
   "document": "docs/reference/resolver-c08.md",
   "id": "DPD-EJ2Y7Z",
@@ -68,7 +68,7 @@
       "path": "mcp/src/agents_remember/kernel/git_facts.py"
     },
     {
-      "blob": "0545be4ce99a465c6e590e0c19385c91e54191db",
+      "blob": "64084f98803199c3d7bae4ce76810611b0578a13",
       "kind": "file",
       "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
     },
@@ -77,5 +77,16 @@
       "kind": "file",
       "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
     }
-  ]
+  ],
+  "writer": {
+    "at": "2026-11-26T00:51:29+01:00",
+    "by": "agent",
+    "crossing": "261124_INTERACTIVE-EXPLAINER-PAGES-crossing-3",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "c7b3a91e-4d28-4f6a-9c52-8e1f0a3b7d42",
+    "task": "261124-EXP"
+  }
 }
