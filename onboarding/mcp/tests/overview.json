@@ -1497,33 +1497,6 @@
         }
       ]
     },
-    "1498": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 837 distinct modules across seven lane identities. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
-            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
-            "content": "sha256:9e12455a29006e8962e631ef256c3e0786a47e915d0c3a668abae195175784f6",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "1499": {
       "note": "The movement module uses synthetic index-shaped rows with production composition; converted-tree public-resolution cases provide separate evidence.",
       "targets": [
@@ -2227,60 +2200,6 @@
               "name": "content_fixture"
             },
             "path": "mcp/tests/test_knowledge_review_source_content.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1529": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 837 distinct modules across seven lane identities. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
-            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
-            "content": "sha256:9e12455a29006e8962e631ef256c3e0786a47e915d0c3a668abae195175784f6",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1530": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 837 distinct modules across seven lane identities. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
-            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
-            "content": "sha256:9e12455a29006e8962e631ef256c3e0786a47e915d0c3a668abae195175784f6",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
           },
           "kind": "test"
         }
@@ -4585,33 +4504,6 @@
               "start": 252
             },
             "path": "mcp/tests/test_knowledge_review_resolution_and_route.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "1647": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 837 distinct modules across seven lane identities. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
-            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "89248d838aeeb8f4a08b5fec7bc28292df1e1eaa",
-            "content": "sha256:9e12455a29006e8962e631ef256c3e0786a47e915d0c3a668abae195175784f6",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
           },
           "kind": "test"
         }
@@ -10632,6 +10524,114 @@
               "kind": "file"
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1883": {
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 837 distinct modules across seven lane identities. These source declarations establish no execution or passing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
+            "content": "sha256:6f72608693b61ab3410fbe00859e05d76338f733f8a87069f712cb07b1f8d90d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1884": {
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 837 distinct modules across seven lane identities. These source declarations establish no execution or passing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
+            "content": "sha256:6f72608693b61ab3410fbe00859e05d76338f733f8a87069f712cb07b1f8d90d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1885": {
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 837 distinct modules across seven lane identities. These source declarations establish no execution or passing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
+            "content": "sha256:6f72608693b61ab3410fbe00859e05d76338f733f8a87069f712cb07b1f8d90d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "1886": {
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. The lane catalog selects 837 distinct modules across seven lane identities. These source declarations establish no execution or passing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ded83d1ed1f47c9e3eecadc5e38e0d43a0dac10c",
+            "content": "sha256:6f72608693b61ab3410fbe00859e05d76338f733f8a87069f712cb07b1f8d90d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
           },
           "kind": "test"
         }

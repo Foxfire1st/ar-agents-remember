@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
+        "blob": "a8b75f7b17de17cc980f83fd2077f17befd72e7a",
         "content": "sha256:bfc4ee2c439ed9f3f6c70824ea9beadc4b4ba0240035daaf1e5fc7d4617192e0",
         "locator": {
-          "end": 2990,
+          "end": 2992,
           "kind": "line_range",
-          "start": 2990
+          "start": 2992
         }
       },
       "id": "RLZ-1WK7P0",
@@ -40,12 +40,12 @@
     },
     {
       "anchor": {
-        "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
+        "blob": "a8b75f7b17de17cc980f83fd2077f17befd72e7a",
         "content": "sha256:0619c308bf7e3693bf4e089706e2a4e4e9afbb4bc5265d6af206f1913cb75c7f",
         "locator": {
-          "end": 4381,
+          "end": 4383,
           "kind": "line_range",
-          "start": 4381
+          "start": 4383
         }
       },
       "id": "RLZ-A31DQW",
@@ -93,12 +93,12 @@
     },
     {
       "anchor": {
-        "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
+        "blob": "a8b75f7b17de17cc980f83fd2077f17befd72e7a",
         "content": "sha256:2850f75115d97a8e9361014f78331d9d3aa97c0bda2d1eeee86f0137e933220a",
         "locator": {
-          "end": 1315,
+          "end": 1316,
           "kind": "line_range",
-          "start": 1315
+          "start": 1316
         }
       },
       "id": "RLZ-TB9TST",
@@ -112,12 +112,12 @@
     },
     {
       "anchor": {
-        "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
+        "blob": "a8b75f7b17de17cc980f83fd2077f17befd72e7a",
         "content": "sha256:74ff6bbb6ab3e6c1659d7601677a67294699baad4edbdcf2f46ef402a396b938",
         "locator": {
-          "end": 3279,
+          "end": 3281,
           "kind": "line_range",
-          "start": 3279
+          "start": 3281
         }
       },
       "id": "RLZ-VQZWNZ",
@@ -530,21 +530,6 @@
         }
       ]
     },
-    "233": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
-            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "234": {
       "note": "The current lifecycle catalog declares test_planned_knowledge_effects.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/reconsideration_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_planned_knowledge_effects.py` as an exact consumer. The `reconsideration_test_support.py` artifact row declares `test_planned_knowledge_effects.py` as an exact consumer.",
       "targets": [
@@ -662,21 +647,6 @@
               "end": 3923,
               "kind": "line_range",
               "start": 3923
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "237": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
-            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
-            "locator": {
-              "kind": "file"
             }
           },
           "kind": "test"
@@ -987,21 +957,6 @@
         }
       ]
     },
-    "246": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
-            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "247": {
       "note": "Closeout-input support declares test_automatic_post_integration_cleanup.py and test_cleanup_repeated_archive_ready.py among its exact consumers. Anchor: file",
       "targets": [
@@ -1013,66 +968,6 @@
               "end": 1161,
               "kind": "line_range",
               "start": 1134
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "248": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
-            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "249": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
-            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "250": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
-            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "251": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
-            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
-            "locator": {
-              "kind": "file"
             }
           },
           "kind": "test"
@@ -1092,21 +987,6 @@
               "start": 254
             },
             "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "253": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
-            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
-            "locator": {
-              "kind": "file"
-            }
           },
           "kind": "test"
         }
@@ -1135,36 +1015,6 @@
               "end": 1161,
               "kind": "line_range",
               "start": 1134
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "255": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
-            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "256": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
-            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
-            "locator": {
-              "kind": "file"
             }
           },
           "kind": "test"
@@ -1337,21 +1187,6 @@
               "end": 5340,
               "kind": "line_range",
               "start": 5337
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "265": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
-            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
-            "locator": {
-              "kind": "file"
             }
           },
           "kind": "test"
@@ -1710,21 +1545,6 @@
               "end": 3885,
               "kind": "line_range",
               "start": 3849
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "274": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
-            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
-            "locator": {
-              "kind": "file"
             }
           },
           "kind": "test"
@@ -2878,21 +2698,6 @@
         }
       ]
     },
-    "311": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
-            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "313": {
       "note": "The current lifecycle catalog declares test_curator_instruction_wording.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_conversion_test_support.py, mcp/tests/lifecycle_enclosure_test_support.py, mcp/tests/paseo_launch_test_support.py, mcp/tests/paseo_role_tools_test_support.py, mcp/tests/paseo_runtime_test_support.py, mcp/tests/role_first_message_support.py, mcp/tests/role_instruction_wording_support.py and mcp/tests/writer_worklist_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence.",
       "targets": [
@@ -2983,21 +2788,6 @@
               "start": 463
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "315": {
-      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f2f57da8e43a0c598ee977fdf7d6bb7a2ce1a001",
-            "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
-            "locator": {
-              "kind": "file"
-            }
           },
           "kind": "test"
         }
@@ -3430,6 +3220,245 @@
             "content": "sha256:b0c0fbcb8d787c941070adfbea78aec31febc87bc5504124f7cbbff5ae155021",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "497": {
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "498": {
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "499": {
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "500": {
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "501": {
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "502": {
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "503": {
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "504": {
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "505": {
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "506": {
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "507": {
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "508": {
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "509": {
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "510": {
+      "note": "The lifecycle catalog declares schema ar-test-evidence-lifecycle/v3 with 18 contracts and 123 artifacts. These source declarations establish no execution or passing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:f43bf663c9cd9d792b935508ddec8dcc177d978cc566c7948f131ff4b5703f36",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "511": {
+      "note": "The lifecycle catalog declares `mcp/tests/test_code_quality_dashboard_lint_scope.py` as an exact consumer of `_user_settings_guard.py` and the Node-profile `package-lock.json` fixture; membership is dependency reachability accounting, not test execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:8465fdb7d2e52d0ea4fbb661b69a1dd1e7936eedc95cfb5ccaf46f87e1953c4a",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 217
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e762335cff126cf520bbc6d53794fe4ea1bfe70c",
+            "content": "sha256:8465fdb7d2e52d0ea4fbb661b69a1dd1e7936eedc95cfb5ccaf46f87e1953c4a",
+            "locator": {
+              "end": 2723,
+              "kind": "line_range",
+              "start": 2723
             }
           },
           "kind": "test"

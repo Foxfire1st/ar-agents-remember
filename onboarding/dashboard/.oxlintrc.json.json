@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/.oxlintrc.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8cfbfe42cda23045025c901a5c99af2d5318b9f9",
+        "content": "sha256:4255553124f5eb32950c5a0af53aaffea3596648e269efd87a5b6d088f9314c2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-6WHS2Q",
+      "invariant": "INV-9Z6JJ0",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §1 (oxlint)",
+        "leaf": "261125-DEP-L6"
+      },
+      "rationale": "Declares the 119 mapped active ESLint rules across src, test, e2e/config.ts, and JS/MJS/CJS file groups plus the no-restricted-imports guard for typescript-compiler-api, with all default categories off.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

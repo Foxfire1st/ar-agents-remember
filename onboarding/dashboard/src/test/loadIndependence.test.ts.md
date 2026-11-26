@@ -10,7 +10,7 @@ A source guard against reintroducing local wait ceilings, unmarked real timer sl
 
 ## Code Commentary
 
-`scan` masks literal data with the existing TypeScript parser before removing comments, preserving source lines and quoted timeout property keys. It reports timeout properties, local `vi.setConfig` bounds, literal trailing test/hook bounds (including exponent notation), nonzero `setTimeout` delays and clock-based less/greater-than assertions. Clock assignments may span ordinary lines. A nonempty `// load-independent: <reason>` comment on the finding line or preceding line exempts that finding; marker text inside literal data is not an exemption. Zero-delay event-loop turns and ordinary clock data are accepted.
+`scan` masks literal data with the TypeScript 6 parser (imported via the allowlisted `typescript-compiler-api` compatibility alias until TypeScript 7's programmatic API leaves `unstable/`, tracked in `wireFixtureGuard.ts.md`) before removing comments, preserving source lines and quoted timeout property keys. It reports timeout properties, local `vi.setConfig` bounds, literal trailing test/hook bounds (including exponent notation), nonzero `setTimeout` delays and clock-based less/greater-than assertions. Clock assignments may span ordinary lines. A nonempty `// load-independent: <reason>` comment on the finding line or preceding line exempts that finding; marker text inside literal data is not an exemption. Zero-delay event-loop turns and ordinary clock data are accepted.
 
 The population walk covers `.test`/`.test-utils` TS/TSX/MJS files under dashboard `src` and `scripts`, plus TypeScript/TSX/MJS files under `src/test`. The suite scans itself as well as synthetic positive, marker and literal/comment controls and expects an empty reported worklist.
 
@@ -26,3 +26,5 @@ No Domain Documentation source is configured. The direct source below defines th
 - The scanner reports local bounds, nonzero sleeps and direct/assigned clock inequalities. [2]
 - Synthetic positive and marker controls include multiline/exponent/literal-delimiter regressions. [3]
 - The actual dashboard test-support population is scanned and must return an empty worklist. [4]
+
+- AST parser helpers are imported from `typescript-compiler-api` (`npm:typescript@^6.0.3`), allowlisted in `dashboard/.oxlintrc.json`. [5]

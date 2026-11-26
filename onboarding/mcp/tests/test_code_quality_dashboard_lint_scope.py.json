@@ -1,0 +1,190 @@
+{
+  "path": "mcp/tests/test_code_quality_dashboard_lint_scope.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "835962b30dbb44210c9ddaf2e0b22f2f08b95bea",
+        "content": "sha256:8cdb27c169afb8c0ee4affdc3b9407e5688478e25a9cf4cb3622a6ed112bab8c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_parse_oxlint_result_files_counts_distinct_files_with_findings"
+        }
+      },
+      "facet": "Deduplicates multiple oxlint diagnostics on the same file into distinct finding paths.",
+      "id": "PRF-9EZNJG",
+      "invariant": "INV-9Z6JJ0",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §1 (oxlint)",
+        "leaf": "261125-DEP-L6"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "835962b30dbb44210c9ddaf2e0b22f2f08b95bea",
+        "content": "sha256:9e9a4175be472005e8e0d5db849026c07ce9d518828dde775d5b3e11b2f212d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_parse_oxlint_result_files_allows_clean_run_when_files_were_checked"
+        }
+      },
+      "facet": "Accepts an empty diagnostics list when oxlint reports a positive number_of_files.",
+      "id": "PRF-G367BW",
+      "invariant": "INV-9Z6JJ0",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §1 (oxlint)",
+        "leaf": "261125-DEP-L6"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "835962b30dbb44210c9ddaf2e0b22f2f08b95bea",
+        "content": "sha256:f5417ad4bad58c10b0618d392dc2bcad47b70f939281cd7f5bc83641b9c31692",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_dashboard_lint_scope_line_reports_clean_run_and_missing_config"
+        }
+      },
+      "facet": "Reports zero finding files on exit code 0 and raises ScopeReportingError on missing .oxlintrc.json, missing oxlint binary, or exit code 2.",
+      "id": "PRF-G6ETV8",
+      "invariant": "INV-9Z6JJ0",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §1 (oxlint)",
+        "leaf": "261125-DEP-L6"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "835962b30dbb44210c9ddaf2e0b22f2f08b95bea",
+        "content": "sha256:55dece879862a657d295cf3ddb7a3a867f88cb9f02dbf92384ed0e54dcfea193",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_parse_oxlint_result_files_rejects_malformed_or_empty_scope"
+        }
+      },
+      "facet": "Rejects invalid JSON, non-object payloads, zero or boolean number_of_files, non-list diagnostics, and empty filenames with ScopeError.",
+      "id": "PRF-M9RCQC",
+      "invariant": "INV-9Z6JJ0",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §1 (oxlint)",
+        "leaf": "261125-DEP-L6"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "835962b30dbb44210c9ddaf2e0b22f2f08b95bea",
+        "content": "sha256:e8c37ee64b3b523381241402db3945f18e1f7c28f91c0ff705779188899bb712",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_oxlint_result_files_and_dashboard_lint_scope_line"
+        }
+      },
+      "facet": "Executes the installed oxlint binary on exit code 1 with findings and formats the dashboard-lint scope provenance line.",
+      "id": "PRF-NX1TBH",
+      "invariant": "INV-9Z6JJ0",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §1 (oxlint)",
+        "leaf": "261125-DEP-L6"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Temporary executable fake `oxlint` shim writes canned stdout and exit code under `node_modules/.bin/oxlint`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "835962b30dbb44210c9ddaf2e0b22f2f08b95bea",
+            "content": "sha256:55c4ef56cd98ffa68321efc57fc72ba8e1fe2ac741f175a5bfd84ebd7697a0f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_fake_oxlint"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Deduplicates multiple diagnostics per file into distinct finding `Path` entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "835962b30dbb44210c9ddaf2e0b22f2f08b95bea",
+            "content": "sha256:8cdb27c169afb8c0ee4affdc3b9407e5688478e25a9cf4cb3622a6ed112bab8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parse_oxlint_result_files_counts_distinct_files_with_findings"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Admits an empty `diagnostics` list when `number_of_files` is positive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "835962b30dbb44210c9ddaf2e0b22f2f08b95bea",
+            "content": "sha256:9e9a4175be472005e8e0d5db849026c07ce9d518828dde775d5b3e11b2f212d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parse_oxlint_result_files_allows_clean_run_when_files_were_checked"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Rejects malformed JSON, non-object payloads, zero or boolean `number_of_files`, non-list `diagnostics`, and empty diagnostic `filename` with `ScopeError`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "835962b30dbb44210c9ddaf2e0b22f2f08b95bea",
+            "content": "sha256:55dece879862a657d295cf3ddb7a3a867f88cb9f02dbf92384ed0e54dcfea193",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parse_oxlint_result_files_rejects_malformed_or_empty_scope"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Verifies `oxlint_result_files` and `dashboard_scope_line(..., \"lint\")` on exit code `1` with findings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "835962b30dbb44210c9ddaf2e0b22f2f08b95bea",
+            "content": "sha256:e8c37ee64b3b523381241402db3945f18e1f7c28f91c0ff705779188899bb712",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_oxlint_result_files_and_dashboard_lint_scope_line"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Verifies `dashboard_lint_scope_line` clean run (`0 oxlint files with findings`) and `ScopeReportingError` on missing `.oxlintrc.json`, missing `oxlint` binary, and exit code `2`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "835962b30dbb44210c9ddaf2e0b22f2f08b95bea",
+            "content": "sha256:f5417ad4bad58c10b0618d392dc2bcad47b70f939281cd7f5bc83641b9c31692",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dashboard_lint_scope_line_reports_clean_run_and_missing_config"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

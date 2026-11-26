@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f8aa99814c14c39ac32e90229e98df92a01b2da2",
+        "blob": "5b05b051bd8b7a427b5f060d83256065b997d426",
+        "content": "sha256:876561a38092d4f85d8d851e0aaa533424aade8453d630323a6546aa8dd1687a",
+        "locator": {
+          "kind": "symbol",
+          "name": "dashboard_lint_scope_line"
+        }
+      },
+      "id": "RLZ-6NGMEP",
+      "invariant": "INV-9Z6JJ0",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §1 (oxlint) post-sync reattach",
+        "leaf": "261125-DEP-L6"
+      },
+      "rationale": "Checks dashboard/.oxlintrc.json instead of removed eslint.config.js and reports distinct oxlint files with findings.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5b05b051bd8b7a427b5f060d83256065b997d426",
         "content": "sha256:ba05c5be6a6d6337a9a9810c5c8dbc7118444f9d2adbb9b203e5b83426840e1f",
         "locator": {
           "kind": "symbol",
@@ -26,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8aa99814c14c39ac32e90229e98df92a01b2da2",
+            "blob": "5b05b051bd8b7a427b5f060d83256065b997d426",
             "content": "sha256:b12fd33d3263e6b4edeb7641f7259842f703c789734cb9da1012c82b0416e481",
             "locator": {
               "kind": "symbol",
@@ -42,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8aa99814c14c39ac32e90229e98df92a01b2da2",
+            "blob": "5b05b051bd8b7a427b5f060d83256065b997d426",
             "content": "sha256:372ab5654c69a563f287b80805a30e02f3e54937e4f98d0cc03e88c7a42e47c2",
             "locator": {
               "kind": "symbol",
@@ -58,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8aa99814c14c39ac32e90229e98df92a01b2da2",
+            "blob": "5b05b051bd8b7a427b5f060d83256065b997d426",
             "content": "sha256:09b68cfdf029d1425e88e55fcd940271ef0582a1dfb69a226113c96baf894856",
             "locator": {
               "kind": "symbol",
@@ -74,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8aa99814c14c39ac32e90229e98df92a01b2da2",
+            "blob": "5b05b051bd8b7a427b5f060d83256065b997d426",
             "content": "sha256:a95c01baea71fc4b47db4679a36031323131bfe740027a849f5213a9415867ad",
             "locator": {
               "kind": "symbol",
@@ -90,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8aa99814c14c39ac32e90229e98df92a01b2da2",
+            "blob": "5b05b051bd8b7a427b5f060d83256065b997d426",
             "content": "sha256:66cc50b8e4ed4b9679544d8bae28f83f7796d07393cb5e00a6cd436871ce5af9",
             "locator": {
               "kind": "symbol",
@@ -106,7 +124,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8aa99814c14c39ac32e90229e98df92a01b2da2",
+            "blob": "5b05b051bd8b7a427b5f060d83256065b997d426",
             "content": "sha256:ba05c5be6a6d6337a9a9810c5c8dbc7118444f9d2adbb9b203e5b83426840e1f",
             "locator": {
               "kind": "symbol",
@@ -122,11 +140,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8aa99814c14c39ac32e90229e98df92a01b2da2",
+            "blob": "5b05b051bd8b7a427b5f060d83256065b997d426",
             "content": "sha256:b1ae42948e2d0b2853a80a1a7d0cb9ece12be4337f3c71b322972d148619a465",
             "locator": {
               "kind": "symbol",
               "name": "_hook_batch_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Dashboard oxlint scope provenance and missing-config refusal.\n\nAnchor: `dashboard_lint_scope_line`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b05b051bd8b7a427b5f060d83256065b997d426",
+            "content": "sha256:260ad34a408f570bb5db10812eedfd69e2d3b5e9fbfcb086f8bea1eed633a4f4",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

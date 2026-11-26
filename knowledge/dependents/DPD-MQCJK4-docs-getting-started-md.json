@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "875d714297de0602c63c6ad4127955d10906ddf2",
-    "commit": "9aaec2b8a9d05faec77ed64e645e23befcdfd7bf",
+    "codeTree": "9af497f7bb994eac3c3bb8c69069d5e8d702cb58",
+    "commit": "65911c75fbe4207e06e325dd50a6940f57330920",
     "role": "curator",
-    "statement": "On 261125-DEP-L2 synced onto 9aaec2b8a9d0 (261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 + DEP-L7), docs/getting-started.md accurately matches the codebase after its standing files were updated for DEP-R02@v1 provider removal and 261124-EXP + BUG-L53 + BUG-L41 + BUG-L44 sync; no search-provider, CodeGraphContext, GrepAI, or stale version claims remain.",
-    "task": "261125-DEP-L2",
+    "statement": "docs/getting-started.md remains accurate on 9af497f7bb99 because npm run build and npm run dev scripts, dashboard entry points, and installation steps are unchanged after swapping ESLint for oxlint and upgrading TypeScript to 7.0.2.",
+    "task": "261125-DEP-L6",
     "uncommitted": true
   },
   "document": "docs/getting-started.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 17,
+  "revision": 18,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -51,7 +51,7 @@
       "path": "scripts/sync-dashboard.py"
     },
     {
-      "blob": "703d4a247784c78f117744a0a9bc41e7e1cd015b",
+      "blob": "9f2e68edb2191a0eafbbb0148baead33d08e37d4",
       "kind": "file",
       "path": "dashboard/package.json"
     },
@@ -121,7 +121,7 @@
       "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
     },
     {
-      "blob": "54716765bc1750c66e59dede91399bff650d0655",
+      "blob": "9198c4f4ce12d5d17e469b271028357fb1a1ecb5",
       "kind": "file",
       "path": "dashboard/package-lock.json"
     },
@@ -132,14 +132,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T07:08:02+01:00",
+    "at": "2026-11-26T12:08:02+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261125-DEP-L2",
+    "leaf": "261125-DEP-L6",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "c4eee037-1bba-45a0-aa8f-ec6209cfe66a",
+    "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
     "task": "261125-DEP"
   }
 }

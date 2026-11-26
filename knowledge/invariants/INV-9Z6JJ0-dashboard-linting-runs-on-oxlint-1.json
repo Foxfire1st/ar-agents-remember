@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized across dashboard/.oxlintrc.json, dashboard/package.json, code_quality/scope.py, and code_quality/scope_reporting.py and guarded by mcp/tests/test_code_quality_dashboard_lint_scope.py, preventing hooks or CI from running a deleted ESLint config or accepting malformed or zero-file oxlint scopes."
+  },
+  "applicability": "Dashboard static linting under dashboard/ and its code-quality scope provenance readers under mcp/test_support/agents_remember_test_support/code_quality/.",
+  "conditions": [
+    "dashboard/.oxlintrc.json disables default categories and enables the 119 mapped active ESLint rules across the four file-group overrides plus the restricted-import guard.",
+    "code_quality/scope.py and scope_reporting.py validate positive integer number_of_files and non-empty string diagnostic filenames before reporting distinct files with findings."
+  ],
+  "exclusions": [
+    "Type-aware oxlint rules or new lint rules not active in the removed ESLint config.",
+    "no-octal across all groups and JS-only no-dupe-args, which are syntax errors in strict ESM and TypeScript."
+  ],
+  "id": "INV-9Z6JJ0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_code_quality_dashboard_lint_scope.py::test_oxlint_result_files_and_dashboard_lint_scope_line and clean-copy npm run lint (0 warnings, 0 errors across 720 files) and DEP-L6-rule-map.md",
+        "mcp/tests/test_code_quality_dashboard_lint_scope.py::test_oxlint_result_files_and_dashboard_lint_scope_line, npm run lint (0 warnings, 0 errors across 722 files including 261124-EXP), and DEP-L6-rule-map.md"
+      ],
+      "path": "l6-handoff.json"
+    },
+    "handoffEntry": "DEP-R06@v1 §1 (oxlint)",
+    "leaf": "261125-DEP-L6",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Dashboard linting runs on oxlint 1.95.0 with dashboard/.oxlintrc.json carrying 119 of 121 mapped active ESLint rules across all four file groups (only no-octal and JS-only no-dupe-args are absent, both syntax errors in strict ESM and TypeScript), ESLint and its plugins are removed, and code_quality/scope.py and scope_reporting.py read oxlint JSON distinct finding files with unit test coverage.",
+  "supersedes": [],
+  "title": "Dashboard lint runs on oxlint with matching rules and JSON scope",
+  "writer": {
+    "at": "2026-11-26T08:53:12+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L6",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+    "task": "261125-DEP"
+  }
+}

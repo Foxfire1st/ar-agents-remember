@@ -117,6 +117,12 @@ cast in an already-listed file fails and an exemption cannot outlive its reason.
   borrows this program specifically because the flag is off.
 - This module is a library. It performs no assertions and owns no policy — the registry, the planted
   bypasses and the vacuity checks all live in `wireFixtureGuard.test.ts`.
+- **Isolated TypeScript 6 compiler-API alias.** Dashboard typechecking and builds run on TypeScript 7
+  (`"typescript": "^7.0.2"` in `dashboard/package.json`), which exposes programmatic compiler APIs only
+  under `typescript/unstable/*`. This file (`:75`), `fixtureOverrides.test.ts` (`:1`), and
+  `loadIndependence.test.ts` (`:5-12`) are the only files permitted to import
+  `"typescript-compiler-api"` (`"npm:typescript@^6.0.3"`), enforced by `eslint/no-restricted-imports` in
+  `dashboard/.oxlintrc.json` with an override limited to those three paths.
 
 ### Historical Card Scope
 
@@ -164,11 +170,13 @@ repair. The retained syntactic limits are described below.
 this freeze); the builders carry the constraint themselves instead
    (`fixtures/overrides.ts`, proven by `fixtureOverrides.test.ts`).
 
+**Open item — TypeScript 6 compiler-API compatibility alias (Architect 97e0320d Condition 4).** `dashboard/src/test/wireFixtureGuard.ts`, `dashboard/src/test/fixtureOverrides.test.ts`, and `dashboard/src/test/loadIndependence.test.ts` currently import `"typescript-compiler-api"` (`npm:typescript@^6.0.3`) because TypeScript 7's programmatic API remains under `unstable/`. Once TypeScript 7's programmatic API leaves `unstable/`, port all three files to it and remove both `"typescript-compiler-api"` from `dashboard/package.json` and the `eslint/no-restricted-imports` rule and override from `dashboard/.oxlintrc.json`.
+
 ## Evidence
 
 ### Docs References
 
-The sweep is written against the TypeScript compiler API, and three specific language behaviours are
+The sweep is written against the TypeScript 6 compiler API (imported via the `typescript-compiler-api` compatibility alias), and three specific language behaviours are
 what the rules exist to compensate for: excess-property checking applies only to *fresh* object
 literals, it is weakened against a non-discriminated union, and `any` is assignable to everything.
 
@@ -206,10 +214,11 @@ External language references retained for reading only: [TypeScript Wiki — Usi
 
 - Gap 5's answer: the call-site constraint the builders carry instead of the project-wide flag. [21]
 
+- `wireFixtureGuard.ts`, `fixtureOverrides.test.ts`, and `loadIndependence.test.ts` import the TypeScript 6 compiler API via the `typescript-compiler-api` (`npm:typescript@^6.0.3`) alias, restricted to those three paths by `eslint/no-restricted-imports` in `dashboard/.oxlintrc.json` while `typescript` runs on `^7.0.2`. [23]
+
 ### Cross-Repo References
 
 No cross-repository boundary. The sweep runs entirely over `dashboard/` sources in this repository; the
-"wire" it polices is a Python↔TypeScript seam inside `agents-remember`, and the TypeScript compiler is a
-devDependency rather than a system boundary.
+"wire" it polices is a Python↔TypeScript seam inside `agents-remember`, and TypeScript 7 (`typescript`) plus the temporary TypeScript 6 compiler-API alias (`typescript-compiler-api`) are devDependencies rather than a system boundary.
 
 - The scanned roots are all inside `dashboard/`; nothing outside this repository is read. [22]

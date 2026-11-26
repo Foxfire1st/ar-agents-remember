@@ -1,0 +1,146 @@
+{
+  "path": "dashboard/src/test/cssEscape.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "7f1f723a8041a749a82242a766eb14dda62c4329",
+        "content": "sha256:1e29185bb01f95d212e6fac9d42d65d46392699103fd3a77d15562e08968eac3",
+        "locator": {
+          "kind": "symbol",
+          "name": "CSS.escape test setup stand-in (CSSOM identifier serialization) > escapes a leading digit as a hex code point followed by a space"
+        }
+      },
+      "facet": "Verifies leading ASCII digits serialize as hex code point plus trailing space.",
+      "id": "PRF-3APWWC",
+      "invariant": "INV-K5MG2M",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §5 (CSS.escape stand-in)",
+        "leaf": "261125-DEP-L6"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f1f723a8041a749a82242a766eb14dda62c4329",
+        "content": "sha256:bf7e87b217c5985738fe0ff5a3b0d46935805610963a0053dbe87614a313730c",
+        "locator": {
+          "kind": "symbol",
+          "name": "CSS.escape test setup stand-in (CSSOM identifier serialization) > produces valid querySelector attribute selectors for leading-digit and hyphen-digit values"
+        }
+      },
+      "facet": "Verifies escaped keys round-trip through DOM root.querySelector unquoted and quoted attribute selectors.",
+      "id": "PRF-84SZ5Z",
+      "invariant": "INV-K5MG2M",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §5 (CSS.escape stand-in)",
+        "leaf": "261125-DEP-L6"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f1f723a8041a749a82242a766eb14dda62c4329",
+        "content": "sha256:dec29914824dff0c5e9f3a7691bb63de074ba4ab8bacffcf3711634bf312d1bb",
+        "locator": {
+          "kind": "symbol",
+          "name": "CSS.escape test setup stand-in (CSSOM identifier serialization) > escapes a standalone hyphen and leaves double-hyphen custom properties intact"
+        }
+      },
+      "facet": "Verifies standalone hyphen escapes to \\- while custom properties and hyphen-letter names stay unchanged.",
+      "id": "PRF-AF4Q5P",
+      "invariant": "INV-K5MG2M",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §5 (CSS.escape stand-in)",
+        "leaf": "261125-DEP-L6"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f1f723a8041a749a82242a766eb14dda62c4329",
+        "content": "sha256:e760a35fb4bde4f77771531a8dce7017aa007ca2ecc866bdc083cc001162a1d8",
+        "locator": {
+          "kind": "symbol",
+          "name": "CSS.escape test setup stand-in (CSSOM identifier serialization) > escapes a hyphen followed by a digit per CSSOM rules"
+        }
+      },
+      "facet": "Verifies hyphen-followed-by-digit pairs escape the digit as hex plus space.",
+      "id": "PRF-KGF671",
+      "invariant": "INV-K5MG2M",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §5 (CSS.escape stand-in)",
+        "leaf": "261125-DEP-L6"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f1f723a8041a749a82242a766eb14dda62c4329",
+        "content": "sha256:f9e76c701c486b54be3e7b8f1efcc6db53d4504b3eea3d551101cf63b79c6c45",
+        "locator": {
+          "kind": "symbol",
+          "name": "CSS.escape test setup stand-in (CSSOM identifier serialization) > handles NULL, ASCII control characters, punctuation, and plain identifiers"
+        }
+      },
+      "facet": "Verifies empty string, NULL to U+FFFD, ASCII controls, punctuation escaping, and plain identifier passthrough.",
+      "id": "PRF-WQW4NK",
+      "invariant": "INV-K5MG2M",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §5 (CSS.escape stand-in)",
+        "leaf": "261125-DEP-L6"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Five Vitest cases check leading digits, hyphen-digit pairs, standalone hyphen vs custom properties, NULL/controls/punctuation, and `querySelector` attribute selectors against `CSS.escape`.\n\nAnchor: `CSS.escape test setup stand-in (CSSOM identifier serialization)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f1f723a8041a749a82242a766eb14dda62c4329",
+            "content": "sha256:9be759a70a37774a7f318af94474f70e8b26fceb232b85ccf53965af911bc08f",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The stand-in under test implements CSSOM identifier serialization in the shared Vitest jsdom bootstrap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b97ed5dd5e1b25ed82fa8116e41bffee923e3e8f",
+            "content": "sha256:9c2d05a20f0a3ffb38281bfc064adff0becfc2815e106990cf37bb4b1bf689c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "escapeCssIdent"
+            },
+            "path": "dashboard/src/test/setup.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Vitest loads `setup.ts` via `setupFiles` before running this suite.\n\nAnchor: `setupFiles`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e11c5781a563030ed73ad70c65b5c1e87a440b6",
+            "content": "sha256:df0eb71568932412be1fcd8f8ccf6c6ff433cce5a2fbffabf8eb7e04dad20b32",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "dashboard/vitest.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

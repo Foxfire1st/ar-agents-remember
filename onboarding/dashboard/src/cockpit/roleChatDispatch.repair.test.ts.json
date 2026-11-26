@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7860c3fbe10e318fe907d8511f6ea3622dd389e6",
-            "content": "sha256:efe586a22d79911985131bb64895bb94a18a5d2b23c4e6ed9560072cf74abd62",
+            "blob": "3d3204732da1df7366a785396d8f848118b661c0",
+            "content": "sha256:53a305090cec8c34fe7cfdbeebd4416f9da91257c73d262673b529d99634cadf",
             "locator": {
               "kind": "file"
             }
@@ -18,14 +18,14 @@
       ]
     },
     "2": {
-      "note": "The new case dispatches start from an occupied completed task seat with a stepUp reason, captures the exact role/task/request/action payload and excludes agentOverride even when the stub dispatch returns 409. Existing mismatched-receipt, offline-scope and current-notification cases remain.\n\nAnchor: Current test/support source",
+      "note": "The new case dispatches start from an occupied completed task seat with a stepUp reason, captures the exact role/task/request/action payload and excludes agentOverride even when the stub dispatch returns 409. Existing mismatched-receipt, offline-scope and current-notification cases remain.",
       "targets": [
         {
           "anchor": {
-            "blob": "7860c3fbe10e318fe907d8511f6ea3622dd389e6",
-            "content": "sha256:efe586a22d79911985131bb64895bb94a18a5d2b23c4e6ed9560072cf74abd62",
+            "blob": "3d3204732da1df7366a785396d8f848118b661c0",
+            "content": "sha256:53a305090cec8c34fe7cfdbeebd4416f9da91257c73d262673b529d99634cadf",
             "locator": {
-              "end": 319,
+              "end": 327,
               "kind": "line_range",
               "start": 1
             }

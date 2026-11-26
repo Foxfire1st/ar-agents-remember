@@ -446,7 +446,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
             "content": "sha256:f61cf8f9a051b605a4575cddd0ff12ed2045d6f2c788d24ed4784e861ffd2bde",
             "locator": {
               "end": 134,
@@ -459,12 +459,12 @@
         },
         {
           "anchor": {
-            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "blob": "8bcd1ce3a8b7b2018f19c677967a6d5e43baecd5",
             "content": "sha256:180034bc767c1eb40e029e3cab1e52160386f38e9f4c3ba537f78a8e71e5e520",
             "locator": {
-              "end": 440,
+              "end": 460,
               "kind": "line_range",
-              "start": 417
+              "start": 437
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/scope.py"
           },

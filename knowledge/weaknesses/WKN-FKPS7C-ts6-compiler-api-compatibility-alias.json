@@ -1,0 +1,39 @@
+{
+  "anchor": {
+    "blob": "96f3e45719d2bb6f9ddbcf020c9a2a362fbd4c5e",
+    "content": "sha256:40b406df04ff5e7176d0a5cb30b1edd8dd52b1914c4badc5db26bae017eb6b77",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "dashboard/src/test/wireFixtureGuard.ts"
+  },
+  "id": "WKN-FKPS7C",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "l6-handoff.json"
+    },
+    "handoffEntry": "WKN-DEP-L6-TS6-COMPILER-API-ALIAS",
+    "leaf": "261125-DEP-L6",
+    "task": "261125-DEP"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "261125-DEP-L6"
+  },
+  "state": "open",
+  "statement": "Three dashboard test files (wireFixtureGuard.ts, fixtureOverrides.test.ts, loadIndependence.test.ts) import the TypeScript 6.0.3 compatibility alias typescript-compiler-api because TypeScript 7.0.2 exposes programmatic compiler APIs only under typescript/unstable/*; port them and remove the alias and .oxlintrc.json override once TypeScript 7's programmatic API leaves unstable/.",
+  "writer": {
+    "at": "2026-11-26T00:38:22+01:00",
+    "by": "agent",
+    "effort": "high",
+    "harness": "antigravity-acp",
+    "leaf": "261125-DEP-L6",
+    "model": "gemini-4-neon-high",
+    "role": "curator",
+    "seat": "b9fcdfbf-a6f2-4121-9f3e-fd22cce4c0be",
+    "task": "261125-DEP"
+  }
+}

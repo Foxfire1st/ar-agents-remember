@@ -3,24 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
-        "content": "sha256:0bb6213f9b823ada9fe009d5816babb9335d07da191681395f0c2795dfc0ecba",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_r4_r5_caches_are_gitignored_and_do_not_trip_landing_commit_check"
-        }
-      },
-      "facet": "The ESLint and tsc caches are gitignored and do not trip the landing check.",
-      "id": "PRF-1CAWSR",
-      "invariant": "INV-AFVK1G",
-      "origin": {
-        "handoffEntry": "BUG-R29@v1 §3 (R1-R6)",
-        "leaf": "261112-BUG-L29"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+        "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
         "content": "sha256:a4cf3e823d1eab486105dcab070ddd4ec74cd99da650f6c63714e94c8bab44f8",
         "locator": {
           "kind": "symbol",
@@ -37,7 +20,41 @@
     },
     {
       "anchor": {
-        "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+        "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+        "content": "sha256:f0f7739658860948b00286f3111654bc5535374b189ee7ec354bc5c3e6b79b79",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_r4_gate_runs_dashboard_lint_without_eslint_cache_flags"
+        }
+      },
+      "facet": "Proves .githooks/_gate.sh invokes dashboard lint without ESLint --cache or .eslintcache flags.",
+      "id": "PRF-DFBGN1",
+      "invariant": "INV-AFVK1G",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §6 (BUG-L29 hook adaptation for oxlint)",
+        "leaf": "261125-DEP-L6"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+        "content": "sha256:0d76f0606be5870e91657b531c85d31bc75c26c14ef2df98f65d68fcdf317717",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_r5_tsc_caches_are_gitignored_and_do_not_trip_landing_commit_check"
+        }
+      },
+      "facet": "Proves incremental tsc build-info caches stay gitignored and do not trip the landing check.",
+      "id": "PRF-DMWPZ1",
+      "invariant": "INV-AFVK1G",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §6 (BUG-L29 hook adaptation for oxlint)",
+        "leaf": "261125-DEP-L6"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
         "content": "sha256:bf37e6eb94c319476acc6f49beb17656a10b5d06695b9d549820461332734a68",
         "locator": {
           "kind": "symbol",
@@ -54,24 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
-        "content": "sha256:faa3a34caf7ef3d4f02f77103fc6e0cdbd13639c7f23cb57b842c221231a24e8",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_r4_eslint_content_cache_catches_introduced_lint_error"
-        }
-      },
-      "facet": "The ESLint content cache still catches an introduced lint error.",
-      "id": "PRF-JA52M5",
-      "invariant": "INV-AFVK1G",
-      "origin": {
-        "handoffEntry": "BUG-R29@v1 §3 (R1-R6)",
-        "leaf": "261112-BUG-L29"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+        "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
         "content": "sha256:41608a2c26ad51729595a417158c325aa91c7fb8ddaadc7507290409d9bf442d",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+        "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
         "content": "sha256:33232bdf3d3c37e6d93c3d78772d335bbb7571aec577ec06e06b819cd32c2d50",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+        "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
         "content": "sha256:f095f77ce2e22a834f40e2f6942c2bed345b04f968156c646ef5ec88945aa65b",
         "locator": {
           "kind": "symbol",
@@ -119,6 +119,23 @@
         "handoffEntry": "BUG-R29@v1 §3 (R1-R6)",
         "leaf": "261112-BUG-L29"
       }
+    },
+    {
+      "anchor": {
+        "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+        "content": "sha256:6f62fb1358eb8e63408093c78f0ac933a41a88c7f616fc7d390fe4899fc890c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_r4_oxlint_catches_introduced_lint_error"
+        }
+      },
+      "facet": "Proves cache-free oxlint still catches an introduced lint error even with preserved mtime.",
+      "id": "PRF-ZRJEJY",
+      "invariant": "INV-AFVK1G",
+      "origin": {
+        "handoffEntry": "DEP-R06@v1 §6 (BUG-L29 hook adaptation for oxlint)",
+        "leaf": "261125-DEP-L6"
+      }
     }
   ],
   "realizes": [],
@@ -128,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
             "content": "sha256:33232bdf3d3c37e6d93c3d78772d335bbb7571aec577ec06e06b819cd32c2d50",
             "locator": {
               "kind": "symbol",
@@ -144,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
             "content": "sha256:41608a2c26ad51729595a417158c325aa91c7fb8ddaadc7507290409d9bf442d",
             "locator": {
               "kind": "symbol",
@@ -155,7 +172,7 @@
         },
         {
           "anchor": {
-            "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
             "content": "sha256:432676426b9f5d241cbed116ad25b03e41cdbc3b6578acdb682e486eb5ced1d2",
             "locator": {
               "end": 329,
@@ -172,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
             "content": "sha256:bf37e6eb94c319476acc6f49beb17656a10b5d06695b9d549820461332734a68",
             "locator": {
               "kind": "symbol",
@@ -184,15 +201,14 @@
       ]
     },
     "4": {
-      "note": "The ESLint and tsc caches stay gitignored and do not trip the landing check.",
+      "note": "The incremental tsc build-info caches stay gitignored and do not trip the landing check.\n\nAnchor: `test_r5_tsc_caches_are_gitignored_and_do_not_trip_landing_commit_check`",
       "targets": [
         {
           "anchor": {
-            "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
-            "content": "sha256:0bb6213f9b823ada9fe009d5816babb9335d07da191681395f0c2795dfc0ecba",
+            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
+            "content": "sha256:c488c84cee4363ad94c6397cdf995f6d818edbfca63ab2b98a226b981d0e38c4",
             "locator": {
-              "kind": "symbol",
-              "name": "test_r4_r5_caches_are_gitignored_and_do_not_trip_landing_commit_check"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -204,7 +220,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9313f9fe59ee82e1275e10a067d198a4fea90fbd",
+            "blob": "e1bc3b7954c6ae378bdaf57a8c3960e1829319b7",
             "content": "sha256:a4cf3e823d1eab486105dcab070ddd4ec74cd99da650f6c63714e94c8bab44f8",
             "locator": {
               "kind": "symbol",
