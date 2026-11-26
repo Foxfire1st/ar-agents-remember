@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "2e79f14e621878f776217e876e3953c8a4903aec",
-    "commit": "50292a3bfed059fe4f0aa9f087a6156bf1b754f9",
+    "codeTree": "ad428e04cd4dcd80447499ffa6ea638b07e20e5d",
+    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
     "role": "curator",
-    "statement": "Verified line-by-line on synced code (base 50292a3b + L29): docs/reference/worktrees-c09.md (lines 165-187, plus worktree_sync references at 159-163, 225-228, 270-279, 368-371) remains accurate after L29; publication-owner hook resolution, refusal conditions including unrunnable and commitCheckTimeoutSeconds, closeout and direct_landing Commit-Check-Pass with hook=none when absent, worktree_integrate trailer acceptance and scratch-worktree fallback, unchanged-side skipping, and memory_baseline_adopt Code-Commit-only behavior all match live code.",
-    "task": "261112-BUG-L29",
+    "statement": "Verified docs/reference/worktrees-c09.md on synced L41 candidate ad428e04 (main 150b9778/d05a7e86): updated lines 354-360 accurately explain how the Manager's standing leaf authority answers a clean routine closeout preview's approval stop via intent_note while keeping developer commit approval for final work and Architect holds/exceptions.",
+    "task": "261112-BUG-L41",
     "uncommitted": true
   },
   "document": "docs/reference/worktrees-c09.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 9,
+  "revision": 10,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -234,7 +234,7 @@
       "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py"
     },
     {
-      "blob": "8df1753c138980d015641171fd9ced522dfc5664",
+      "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
     },
@@ -254,7 +254,7 @@
       "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
     },
     {
-      "blob": "434117cf03748419c7abacc93e7639b35fc3d3a2",
+      "blob": "0095a0ff0e8a506c947d55019dd66d8daa167aa0",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/review.md"
     },
@@ -285,14 +285,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T00:49:11+01:00",
+    "at": "2026-11-26T02:58:55+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L29",
+    "leaf": "261112-BUG-L41",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "9b63a357-589f-425c-aaa7-b5a3b09ac826",
+    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
     "task": "261112-BUG"
   }
 }

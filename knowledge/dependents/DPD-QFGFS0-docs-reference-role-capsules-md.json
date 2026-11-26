@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ede5d128e75765d40987bf3981b1d97ed4326bae",
-    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
+    "codeTree": "5c005c7831f0d9de8daf17d4a98ef807fc0b9869",
+    "commit": "3ee3b10c90fecdf81b54c96c784e481f33423522",
     "role": "curator",
-    "statement": "Audited docs/reference/role-capsules.md line by line against synced L44 code tree ede5d128 (base 150b9778): capsule structure, budgets, and compiler references remain accurate; no L44 contradiction.",
-    "task": "261112-BUG-L44",
+    "statement": "Verified docs/reference/role-capsules.md on synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db): updated lines 53-57 accurately state the Manager wait carve-out—that a Manager waiting on a working child or on an already-sent developer question records that wait in its end line and status file, sends no role_message for the wait, and declares a valid named wait with that end line—and the rest of the capsule reference remains accurate.",
+    "task": "261112-BUG-L41",
     "uncommitted": true
   },
   "document": "docs/reference/role-capsules.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 7,
+  "revision": 8,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -71,7 +71,7 @@
       "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
     },
     {
-      "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+      "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
@@ -82,14 +82,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T02:42:00+01:00",
+    "at": "2026-11-26T04:22:40+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L44",
+    "leaf": "261112-BUG-L41",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
     "task": "261112-BUG"
   }
 }

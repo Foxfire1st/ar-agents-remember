@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ede5d128e75765d40987bf3981b1d97ed4326bae",
-    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
+    "codeTree": "5c005c7831f0d9de8daf17d4a98ef807fc0b9869",
+    "commit": "3ee3b10c90fecdf81b54c96c784e481f33423522",
     "role": "curator",
-    "statement": "Verified docs/roles.md on synced L44 code tree ede5d128 (base 150b9778) after Worker 1796d73e fixed line 28 alongside lines 419-424: role responsibilities and retirement scope for Architect, Orchestrator, Manager, and finished Investigators match live code and skills.",
-    "task": "261112-BUG-L44",
+    "statement": "Verified docs/roles.md on synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db): updated passages accurately state Investigator scope including a standalone master (line 28), the Manager's Architect-reserved upward matters alongside developer-decision questions with Orchestrator unchanged forwarding and the direct route for qualifying skeletons (lines 142-147), the Manager wait carve-out recording a working-child or already-sent developer-question wait in its end line and status file with no role_message (lines 273-276), and Manager developer-question routing to an assigned Orchestrator reporting recipient while its launch parent stays fixed (lines 353-356), alongside L44 retirement scope.",
+    "task": "261112-BUG-L41",
     "uncommitted": true
   },
   "document": "docs/roles.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 12,
+  "revision": 13,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -61,7 +61,7 @@
       "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
     },
     {
-      "blob": "a1f069e419ffe08785169f62071677130931c7b0",
+      "blob": "14ef1f2329b844affdaabf96be2ab950de45ae75",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
     },
@@ -106,7 +106,7 @@
       "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
     },
     {
-      "blob": "7ced056252216e12f8ce4723d77c92194b535e61",
+      "blob": "1b6ea616d7925413dac34505c767d9673fd9c80e",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/architect.md"
     },
@@ -116,7 +116,7 @@
       "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
     },
     {
-      "blob": "ec7d0b8fa306084878c7823316023007eb5c8bc2",
+      "blob": "a5e5850910f15122f4c36b9762f352f918e0ecb6",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/curator.md"
     },
@@ -126,12 +126,12 @@
       "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
     },
     {
-      "blob": "1fe0e5a4e9c8a25ffabaa0cc0f4c12308919dc6c",
+      "blob": "0aa03752ba3c7f6da6f9dab019e87102ef227194",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/manager.md"
     },
     {
-      "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+      "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
     },
@@ -141,7 +141,7 @@
       "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
     },
     {
-      "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
+      "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
@@ -151,12 +151,12 @@
       "path": "skills/l-01-agent-lifecycles/core/launcher.md"
     },
     {
-      "blob": "f3af24af7475972287d1f7b3f906b9f2772d4f15",
+      "blob": "b90508e32ca01aad41af4242409e6ab533ad2175",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/core/authority.md"
     },
     {
-      "blob": "6e67312b50b841915761efc1b6fbd38b0001ffdd",
+      "blob": "3bd58cc3c5aecee439c1682b1dfe825225adefcf",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
     },
@@ -166,25 +166,25 @@
       "path": "mcp/src/agents_remember/tasks/route_review.py"
     },
     {
-      "blob": "8df1753c138980d015641171fd9ced522dfc5664",
+      "blob": "0eeb77ca35fdf05f4afa7cb2a67b2014a5481e6b",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
     },
     {
-      "blob": "7b38e69a88cc66b1149f3e2805028690bbc71019",
+      "blob": "92d7876e4b2f6a400eae4679448bcb24910f82cc",
       "kind": "file",
       "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
     }
   ],
   "writer": {
-    "at": "2026-11-26T02:42:00+01:00",
+    "at": "2026-11-26T04:22:40+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L44",
+    "leaf": "261112-BUG-L41",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
     "task": "261112-BUG"
   }
 }

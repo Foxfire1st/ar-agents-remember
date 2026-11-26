@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
         "content": "sha256:35b46b16e26283431beb31ebcbe623858e42207cc2dac364badb7fd97dd46597",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
         "content": "sha256:a79bcd7620a4552898646b497b41c9bdca69ec742036fb20188632af66986e0b",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
         "content": "sha256:da4be66fad4859a66e09de02a3344c3a147af096446e81d83be37d38bce4f1f5",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
         "content": "sha256:ec340444e43d62304c3e19ff3ee9773631aa4d14527c4d45aebd525550cd3d1c",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
         "content": "sha256:807064e599e8c1d00db8002d3485c51832adb1dbd9d818dfeafc9abbc22d9732",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
         "content": "sha256:d3f74e604eac6700c9b5849ce63e0b0be852bc492a34f201e9fac52f2cf91089",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
         "content": "sha256:d52ef903dd6a1641e59edd538283183cbbe911ec7d39817f3787e70b1ab54409",
         "locator": {
           "kind": "symbol",
@@ -124,7 +124,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
         "content": "sha256:42d38daf02b893c35902b9729391307f74c28d5937bc3b2a36af9f1027984064",
         "locator": {
           "end": 121,
@@ -143,7 +143,7 @@
     },
     {
       "anchor": {
-        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
         "content": "sha256:2dbaab4852fc1c95bca0dc735510379693e43c1bf198438e89efe440d4c9f92c",
         "locator": {
           "kind": "symbol",
@@ -161,7 +161,7 @@
     },
     {
       "anchor": {
-        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
         "content": "sha256:1be6f50cdf983c8f06ae5c45d6b069ec5a0e7c4dd9a9b092e905e412c30a152a",
         "locator": {
           "kind": "symbol",
@@ -179,7 +179,7 @@
     },
     {
       "anchor": {
-        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
         "content": "sha256:bdebe569c19b4148f8e3fd4df02667a7a21eb6c6bd8f8534979d8a438928481c",
         "locator": {
           "end": 152,
@@ -198,7 +198,7 @@
     },
     {
       "anchor": {
-        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
         "content": "sha256:35b46b16e26283431beb31ebcbe623858e42207cc2dac364badb7fd97dd46597",
         "locator": {
           "end": 626,
@@ -217,10 +217,10 @@
     },
     {
       "anchor": {
-        "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
-        "content": "sha256:f6c8eda0f3fcc573232744df8cbf57a0502c26fb6dc91c0059da961dffeaa141",
+        "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
+        "content": "sha256:447462ffdb8d36d809ead831e0c9a8bc20f0e9f323e98d77a8c62920e8bdd117",
         "locator": {
-          "end": 441,
+          "end": 442,
           "kind": "line_range",
           "start": 164
         }
@@ -241,7 +241,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+            "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
             "content": "sha256:af98bd8aa55fb122c2c941301dd2eb8bef5362a48b52102b2c69487ad0b990b0",
             "locator": {
               "kind": "symbol",
@@ -257,7 +257,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+            "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
             "content": "sha256:ec340444e43d62304c3e19ff3ee9773631aa4d14527c4d45aebd525550cd3d1c",
             "locator": {
               "kind": "symbol",
@@ -273,7 +273,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+            "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
             "content": "sha256:2705e46482371922d94e3970e0acf1bbda85cbd87350ce62dfeb248111b2d881",
             "locator": {
               "kind": "symbol",
@@ -285,12 +285,12 @@
       ]
     },
     "4": {
-      "note": "Stage-end checks bind each role’s required facets to its current owning section in source and compiled text; the Reviewer's record-recheck facets are owned by `operations/review.md`. Curator facets include clean quality, installed-writer versus manual provenance and covered-write recovery. Deletion/relocation controls require a real mutation, while round-number and rule-nine guards remain.",
+      "note": "Stage-end checks bind each role’s required facets to its current owning section in source and compiled text; the Reviewer's record-recheck facets are owned by `operations/review.md`. Curator facets include clean quality, installed-writer versus manual provenance and covered-write recovery; Manager facets separate outside-authority block notices from local working-child wait recording with no message sent. Deletion/relocation controls require a real mutation, while round-number and rule-nine guards remain.",
       "targets": [
         {
           "anchor": {
-            "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
-            "content": "sha256:26bc0620b4566f0920efdfd7cbcdcb26b1eb1dea3f10026f2428e230e9dcd384",
+            "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
+            "content": "sha256:ed510a767fec08faa7b2cc94376d382211ebc36637e66c4a643864a62f574f5a",
             "locator": {
               "kind": "symbol",
               "name": "STAGE_CONTRACTS"
@@ -305,8 +305,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
-            "content": "sha256:7e8d49dca75aa03b8514fcd1f7ef9ae02e6abae977b31624997ed3c29d2e2d44",
+            "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
+            "content": "sha256:1c907e54289bb9b0b2f0024aef6e02b4a1a2c74708786e9ad3936883e144c92a",
             "locator": {
               "kind": "symbol",
               "name": "STAGE_PARTS"
@@ -316,7 +316,7 @@
         },
         {
           "anchor": {
-            "blob": "c5cc8718c2290bda9c7e0fd1a11a8a44191bb63b",
+            "blob": "9841c62e6e131feddea9f61746fb166b09bef940",
             "content": "sha256:aafc62f80429ca0d7204b7e5944656236e036610eb32621ae40053b190613649",
             "locator": {
               "end": 153,

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "ede5d128e75765d40987bf3981b1d97ed4326bae",
-    "commit": "150b97781827888c28b0d0dcd8dfd7040f38ff6b",
+    "codeTree": "5c005c7831f0d9de8daf17d4a98ef807fc0b9869",
+    "commit": "3ee3b10c90fecdf81b54c96c784e481f33423522",
     "role": "curator",
-    "statement": "Audited docs/features.md line by line against synced L44 code tree ede5d128 (base 150b9778): feature summaries, skill-tree packaging, and closeout/role capabilities remain accurate; no L44 contradiction.",
-    "task": "261112-BUG-L44",
+    "statement": "Verified docs/features.md on synced L41 candidate 5c005c78 (main 3ee3b10c90/da99e590db): feature summaries of role coordination, skill packaging, worktrees, and memory quality remain accurate with no L41 contradiction.",
+    "task": "261112-BUG-L41",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 26,
+  "revision": 27,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -93,7 +93,7 @@
       "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
     },
     {
-      "blob": "8123e12ff1452ccb2174f0d56690a6b4a8264045",
+      "blob": "14d09bc09783ceeea3808bd6104c1b08c352bee7",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/worker.md"
     },
@@ -223,7 +223,7 @@
       "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
     },
     {
-      "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+      "blob": "072061ee2aa5cdb35e993af402601fc6055ea5eb",
       "kind": "file",
       "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
     },
@@ -295,14 +295,14 @@
     }
   ],
   "writer": {
-    "at": "2026-11-26T02:42:00+01:00",
+    "at": "2026-11-26T04:22:40+01:00",
     "by": "agent",
     "effort": "high",
     "harness": "antigravity-acp",
-    "leaf": "261112-BUG-L44",
+    "leaf": "261112-BUG-L41",
     "model": "gemini-4-neon-high",
     "role": "curator",
-    "seat": "8d07c96f-a35b-57ce-8859-9ec42b6a0d5c",
+    "seat": "ad022c47-4c94-5461-83e2-8347b5f62f65",
     "task": "261112-BUG"
   }
 }

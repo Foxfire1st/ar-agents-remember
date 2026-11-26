@@ -28,7 +28,7 @@ The instruction is how coordinating roles start and message AR roles on Paseo: t
 
 When a start is refused as `intent-review-open`, the Manager waits for the Architect's `go` and does not retry the start.
 
-Read the synchronous `worktree_closeout_apply` result and inspect per-leg transaction evidence if the call is interrupted. After correcting the blocker, repeat the apply with recorded approval and explicit messages for enabled legs. If a task edit affects closeout evidence, re-prove it before retrying. For a direct landing, read the current generation and advertised action from `worktree_status` and pass that generation to `worktree_operation_control`.
+Read the synchronous `worktree_closeout_apply` result and inspect per-leg transaction evidence if the call is interrupted. After correcting the blocker, repeat the apply with the applicable authority and explicit messages for enabled legs; the Manager applies under its standing leaf authority without Orchestrator release and sends the coordinating Orchestrator the factual result or refusal. If a task edit affects closeout evidence, re-prove it before retrying. For a direct landing, read the current generation and advertised action from `worktree_status` and pass that generation to `worktree_operation_control`.
 
 ## Current composition and authoring contract
 
@@ -55,6 +55,7 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [2]
+
 
 
 

@@ -159,14 +159,14 @@
       ]
     },
     "4": {
-      "note": "The public boundary scenarios consume the shared builders. Anchor: `checkpoint_landing_test_support`",
+      "note": "The public boundary scenarios consume the shared builders.\n\nAnchor: `checkpoint_landing_test_support`",
       "targets": [
         {
           "anchor": {
-            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
-            "content": "sha256:dc7b615860987c8324de1ad54311b1b5675e4c8fe023617e0bf4d5103b544aee",
+            "blob": "93c6dc8ab0380576d3c6defa998979f4e2d7fad1",
+            "content": "sha256:8c735e580f642138e3cc48e224bb532c2626930d47ce916b1173413b88e1ef19",
             "locator": {
-              "end": 310,
+              "end": 314,
               "kind": "line_range",
               "start": 295
             },
@@ -176,7 +176,7 @@
         },
         {
           "anchor": {
-            "blob": "a14d843a1cbece2eae19e31314893787c330757e",
+            "blob": "93c6dc8ab0380576d3c6defa998979f4e2d7fad1",
             "content": "sha256:3cf8913a1a8d5d89218699f63115ecc1e35a05b3413a010d58147677657f6a34",
             "locator": {
               "end": 38,
